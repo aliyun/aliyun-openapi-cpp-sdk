@@ -43,15 +43,6 @@ void GetGatewayDomainDetailRequest::setGatewayUniqueId(const std::string &gatewa
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
 }
 
-std::string GetGatewayDomainDetailRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void GetGatewayDomainDetailRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 std::string GetGatewayDomainDetailRequest::getId() const {
   return id_;
 }
@@ -59,5 +50,14 @@ std::string GetGatewayDomainDetailRequest::getId() const {
 void GetGatewayDomainDetailRequest::setId(const std::string &id) {
   id_ = id;
   setParameter(std::string("Id"), id);
+}
+
+std::string GetGatewayDomainDetailRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void GetGatewayDomainDetailRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

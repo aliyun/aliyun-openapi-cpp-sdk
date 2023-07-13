@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::ListAnsServiceClustersRequest;
 
 ListAnsServiceClustersRequest::ListAnsServiceClustersRequest()
     : RpcServiceRequest("mse", "2019-05-31", "ListAnsServiceClusters") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 ListAnsServiceClustersRequest::~ListAnsServiceClustersRequest() {}
@@ -59,15 +59,6 @@ std::string ListAnsServiceClustersRequest::getNamespaceId() const {
 void ListAnsServiceClustersRequest::setNamespaceId(const std::string &namespaceId) {
   namespaceId_ = namespaceId;
   setParameter(std::string("NamespaceId"), namespaceId);
-}
-
-std::string ListAnsServiceClustersRequest::getRequestPars() const {
-  return requestPars_;
-}
-
-void ListAnsServiceClustersRequest::setRequestPars(const std::string &requestPars) {
-  requestPars_ = requestPars;
-  setParameter(std::string("RequestPars"), requestPars);
 }
 
 int ListAnsServiceClustersRequest::getPageSize() const {

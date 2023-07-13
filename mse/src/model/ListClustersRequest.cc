@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::ListClustersRequest;
 
 ListClustersRequest::ListClustersRequest()
     : RpcServiceRequest("mse", "2019-05-31", "ListClusters") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 ListClustersRequest::~ListClustersRequest() {}
@@ -32,15 +32,6 @@ std::string ListClustersRequest::getMseSessionId() const {
 void ListClustersRequest::setMseSessionId(const std::string &mseSessionId) {
   mseSessionId_ = mseSessionId;
   setParameter(std::string("MseSessionId"), mseSessionId);
-}
-
-std::string ListClustersRequest::getClusterAliasName() const {
-  return clusterAliasName_;
-}
-
-void ListClustersRequest::setClusterAliasName(const std::string &clusterAliasName) {
-  clusterAliasName_ = clusterAliasName;
-  setParameter(std::string("ClusterAliasName"), clusterAliasName);
 }
 
 int ListClustersRequest::getPageNum() const {
@@ -88,15 +79,6 @@ void ListClustersRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string ListClustersRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void ListClustersRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 std::vector<ListClustersRequest::Tag> ListClustersRequest::getTag() const {
   return tag_;
 }
@@ -109,5 +91,23 @@ void ListClustersRequest::setTag(const std::vector<ListClustersRequest::Tag> &ta
     setParameter(tagObjStr + ".Value", tagObj.value);
     setParameter(tagObjStr + ".Key", tagObj.key);
   }
+}
+
+std::string ListClustersRequest::getClusterAliasName() const {
+  return clusterAliasName_;
+}
+
+void ListClustersRequest::setClusterAliasName(const std::string &clusterAliasName) {
+  clusterAliasName_ = clusterAliasName;
+  setParameter(std::string("ClusterAliasName"), clusterAliasName);
+}
+
+std::string ListClustersRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void ListClustersRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

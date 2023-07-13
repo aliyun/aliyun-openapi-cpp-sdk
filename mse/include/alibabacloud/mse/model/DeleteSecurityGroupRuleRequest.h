@@ -34,16 +34,16 @@ public:
 	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
 	long getId() const;
 	void setId(long id);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
-	std::string acceptLanguage_;
 	long id_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Mse

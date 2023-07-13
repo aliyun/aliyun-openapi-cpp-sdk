@@ -43,15 +43,6 @@ void DeleteSecurityGroupRuleRequest::setGatewayUniqueId(const std::string &gatew
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
 }
 
-std::string DeleteSecurityGroupRuleRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void DeleteSecurityGroupRuleRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 long DeleteSecurityGroupRuleRequest::getId() const {
   return id_;
 }
@@ -59,5 +50,14 @@ long DeleteSecurityGroupRuleRequest::getId() const {
 void DeleteSecurityGroupRuleRequest::setId(long id) {
   id_ = id;
   setParameter(std::string("Id"), std::to_string(id));
+}
+
+std::string DeleteSecurityGroupRuleRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void DeleteSecurityGroupRuleRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

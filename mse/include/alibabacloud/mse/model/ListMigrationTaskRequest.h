@@ -38,18 +38,18 @@ public:
 	void setRequestPars(const std::string &requestPars);
 	long getPageSize() const;
 	void setPageSize(long pageSize);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getOriginInstanceName() const;
 	void setOriginInstanceName(const std::string &originInstanceName);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
 	long pageNum_;
 	std::string requestPars_;
 	long pageSize_;
-	std::string acceptLanguage_;
 	std::string originInstanceName_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Mse

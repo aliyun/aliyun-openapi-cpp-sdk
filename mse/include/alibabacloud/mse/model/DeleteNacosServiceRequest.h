@@ -32,24 +32,24 @@ public:
 	~DeleteNacosServiceRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
+	std::string getNamespaceId() const;
+	void setNamespaceId(const std::string &namespaceId);
+	std::string getServiceName() const;
+	void setServiceName(const std::string &serviceName);
 	std::string getGroupName() const;
 	void setGroupName(const std::string &groupName);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
-	std::string getNamespaceId() const;
-	void setNamespaceId(const std::string &namespaceId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
-	std::string getServiceName() const;
-	void setServiceName(const std::string &serviceName);
 
 private:
 	std::string mseSessionId_;
+	std::string namespaceId_;
+	std::string serviceName_;
 	std::string groupName_;
 	std::string instanceId_;
-	std::string namespaceId_;
 	std::string acceptLanguage_;
-	std::string serviceName_;
 };
 } // namespace Model
 } // namespace Mse

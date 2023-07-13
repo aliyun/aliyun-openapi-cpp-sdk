@@ -54,18 +54,14 @@ namespace AlibabaCloud
 				explicit QueryGovernanceKubernetesClusterResult(const std::string &payload);
 				~QueryGovernanceKubernetesClusterResult();
 				std::string getMessage()const;
-				int getHttpStatusCode()const;
 				Data getData()const;
-				int getCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				int httpStatusCode_;
 				Data data_;
-				int code_;
 				bool success_;
 
 			};

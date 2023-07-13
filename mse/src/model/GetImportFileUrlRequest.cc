@@ -34,6 +34,15 @@ void GetImportFileUrlRequest::setMseSessionId(const std::string &mseSessionId) {
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
+std::string GetImportFileUrlRequest::getNamespaceId() const {
+  return namespaceId_;
+}
+
+void GetImportFileUrlRequest::setNamespaceId(const std::string &namespaceId) {
+  namespaceId_ = namespaceId;
+  setParameter(std::string("NamespaceId"), namespaceId);
+}
+
 std::string GetImportFileUrlRequest::getContentType() const {
   return contentType_;
 }
@@ -50,15 +59,6 @@ std::string GetImportFileUrlRequest::getInstanceId() const {
 void GetImportFileUrlRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string GetImportFileUrlRequest::getNamespaceId() const {
-  return namespaceId_;
-}
-
-void GetImportFileUrlRequest::setNamespaceId(const std::string &namespaceId) {
-  namespaceId_ = namespaceId;
-  setParameter(std::string("NamespaceId"), namespaceId);
 }
 
 std::string GetImportFileUrlRequest::getAcceptLanguage() const {

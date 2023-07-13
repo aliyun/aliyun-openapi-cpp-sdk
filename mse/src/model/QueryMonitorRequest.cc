@@ -20,19 +20,10 @@ using AlibabaCloud::Mse::Model::QueryMonitorRequest;
 
 QueryMonitorRequest::QueryMonitorRequest()
     : RpcServiceRequest("mse", "2019-05-31", "QueryMonitor") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 QueryMonitorRequest::~QueryMonitorRequest() {}
-
-std::string QueryMonitorRequest::getMonitorType() const {
-  return monitorType_;
-}
-
-void QueryMonitorRequest::setMonitorType(const std::string &monitorType) {
-  monitorType_ = monitorType;
-  setParameter(std::string("MonitorType"), monitorType);
-}
 
 std::string QueryMonitorRequest::getMseSessionId() const {
   return mseSessionId_;
@@ -41,6 +32,33 @@ std::string QueryMonitorRequest::getMseSessionId() const {
 void QueryMonitorRequest::setMseSessionId(const std::string &mseSessionId) {
   mseSessionId_ = mseSessionId;
   setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
+long QueryMonitorRequest::getStartTime() const {
+  return startTime_;
+}
+
+void QueryMonitorRequest::setStartTime(long startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), std::to_string(startTime));
+}
+
+std::string QueryMonitorRequest::getRequestPars() const {
+  return requestPars_;
+}
+
+void QueryMonitorRequest::setRequestPars(const std::string &requestPars) {
+  requestPars_ = requestPars;
+  setParameter(std::string("RequestPars"), requestPars);
+}
+
+std::string QueryMonitorRequest::getMonitorType() const {
+  return monitorType_;
+}
+
+void QueryMonitorRequest::setMonitorType(const std::string &monitorType) {
+  monitorType_ = monitorType;
+  setParameter(std::string("MonitorType"), monitorType);
 }
 
 long QueryMonitorRequest::getEndTime() const {
@@ -61,15 +79,6 @@ void QueryMonitorRequest::setClusterId(const std::string &clusterId) {
   setParameter(std::string("ClusterId"), clusterId);
 }
 
-long QueryMonitorRequest::getStartTime() const {
-  return startTime_;
-}
-
-void QueryMonitorRequest::setStartTime(long startTime) {
-  startTime_ = startTime;
-  setParameter(std::string("StartTime"), std::to_string(startTime));
-}
-
 std::string QueryMonitorRequest::getInstanceId() const {
   return instanceId_;
 }
@@ -77,15 +86,6 @@ std::string QueryMonitorRequest::getInstanceId() const {
 void QueryMonitorRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string QueryMonitorRequest::getRequestPars() const {
-  return requestPars_;
-}
-
-void QueryMonitorRequest::setRequestPars(const std::string &requestPars) {
-  requestPars_ = requestPars;
-  setParameter(std::string("RequestPars"), requestPars);
 }
 
 std::string QueryMonitorRequest::getAcceptLanguage() const {

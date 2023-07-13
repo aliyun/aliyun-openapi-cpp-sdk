@@ -34,42 +34,6 @@ void CreateOrUpdateSwimmingLaneGroupRequest::setMseSessionId(const std::string &
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string CreateOrUpdateSwimmingLaneGroupRequest::getSource() const {
-  return source_;
-}
-
-void CreateOrUpdateSwimmingLaneGroupRequest::setSource(const std::string &source) {
-  source_ = source;
-  setParameter(std::string("Source"), source);
-}
-
-std::string CreateOrUpdateSwimmingLaneGroupRequest::getGmtModified() const {
-  return gmtModified_;
-}
-
-void CreateOrUpdateSwimmingLaneGroupRequest::setGmtModified(const std::string &gmtModified) {
-  gmtModified_ = gmtModified;
-  setParameter(std::string("GmtModified"), gmtModified);
-}
-
-std::string CreateOrUpdateSwimmingLaneGroupRequest::getUserId() const {
-  return userId_;
-}
-
-void CreateOrUpdateSwimmingLaneGroupRequest::setUserId(const std::string &userId) {
-  userId_ = userId;
-  setParameter(std::string("UserId"), userId);
-}
-
-std::string CreateOrUpdateSwimmingLaneGroupRequest::getLicenseKey() const {
-  return licenseKey_;
-}
-
-void CreateOrUpdateSwimmingLaneGroupRequest::setLicenseKey(const std::string &licenseKey) {
-  licenseKey_ = licenseKey;
-  setParameter(std::string("LicenseKey"), licenseKey);
-}
-
 std::string CreateOrUpdateSwimmingLaneGroupRequest::getAppIds() const {
   return appIds_;
 }
@@ -77,15 +41,6 @@ std::string CreateOrUpdateSwimmingLaneGroupRequest::getAppIds() const {
 void CreateOrUpdateSwimmingLaneGroupRequest::setAppIds(const std::string &appIds) {
   appIds_ = appIds;
   setParameter(std::string("AppIds"), appIds);
-}
-
-bool CreateOrUpdateSwimmingLaneGroupRequest::getMessageQueueGrayEnable() const {
-  return messageQueueGrayEnable_;
-}
-
-void CreateOrUpdateSwimmingLaneGroupRequest::setMessageQueueGrayEnable(bool messageQueueGrayEnable) {
-  messageQueueGrayEnable_ = messageQueueGrayEnable;
-  setParameter(std::string("MessageQueueGrayEnable"), messageQueueGrayEnable ? "true" : "false");
 }
 
 bool CreateOrUpdateSwimmingLaneGroupRequest::getDbGrayEnable() const {
@@ -106,15 +61,6 @@ void CreateOrUpdateSwimmingLaneGroupRequest::setEnable(bool enable) {
   setParameter(std::string("Enable"), enable ? "true" : "false");
 }
 
-std::string CreateOrUpdateSwimmingLaneGroupRequest::getEntryApp() const {
-  return entryApp_;
-}
-
-void CreateOrUpdateSwimmingLaneGroupRequest::setEntryApp(const std::string &entryApp) {
-  entryApp_ = entryApp;
-  setParameter(std::string("EntryApp"), entryApp);
-}
-
 long CreateOrUpdateSwimmingLaneGroupRequest::getId() const {
   return id_;
 }
@@ -122,15 +68,6 @@ long CreateOrUpdateSwimmingLaneGroupRequest::getId() const {
 void CreateOrUpdateSwimmingLaneGroupRequest::setId(long id) {
   id_ = id;
   setParameter(std::string("Id"), std::to_string(id));
-}
-
-std::string CreateOrUpdateSwimmingLaneGroupRequest::getGmtCreate() const {
-  return gmtCreate_;
-}
-
-void CreateOrUpdateSwimmingLaneGroupRequest::setGmtCreate(const std::string &gmtCreate) {
-  gmtCreate_ = gmtCreate;
-  setParameter(std::string("GmtCreate"), gmtCreate);
 }
 
 std::string CreateOrUpdateSwimmingLaneGroupRequest::getName() const {
@@ -151,24 +88,6 @@ void CreateOrUpdateSwimmingLaneGroupRequest::setMessageQueueFilterSide(const std
   setParameter(std::string("MessageQueueFilterSide"), messageQueueFilterSide);
 }
 
-std::string CreateOrUpdateSwimmingLaneGroupRequest::get_Namespace() const {
-  return _namespace_;
-}
-
-void CreateOrUpdateSwimmingLaneGroupRequest::set_Namespace(const std::string &_namespace) {
-  _namespace_ = _namespace;
-  setParameter(std::string("Namespace"), _namespace);
-}
-
-std::string CreateOrUpdateSwimmingLaneGroupRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void CreateOrUpdateSwimmingLaneGroupRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 std::string CreateOrUpdateSwimmingLaneGroupRequest::getRegion() const {
   return region_;
 }
@@ -185,5 +104,50 @@ int CreateOrUpdateSwimmingLaneGroupRequest::getStatus() const {
 void CreateOrUpdateSwimmingLaneGroupRequest::setStatus(int status) {
   status_ = status;
   setParameter(std::string("Status"), std::to_string(status));
+}
+
+bool CreateOrUpdateSwimmingLaneGroupRequest::getMessageQueueGrayEnable() const {
+  return messageQueueGrayEnable_;
+}
+
+void CreateOrUpdateSwimmingLaneGroupRequest::setMessageQueueGrayEnable(bool messageQueueGrayEnable) {
+  messageQueueGrayEnable_ = messageQueueGrayEnable;
+  setParameter(std::string("MessageQueueGrayEnable"), messageQueueGrayEnable ? "true" : "false");
+}
+
+std::string CreateOrUpdateSwimmingLaneGroupRequest::getEntryApp() const {
+  return entryApp_;
+}
+
+void CreateOrUpdateSwimmingLaneGroupRequest::setEntryApp(const std::string &entryApp) {
+  entryApp_ = entryApp;
+  setParameter(std::string("EntryApp"), entryApp);
+}
+
+bool CreateOrUpdateSwimmingLaneGroupRequest::getRecordCanaryDetail() const {
+  return recordCanaryDetail_;
+}
+
+void CreateOrUpdateSwimmingLaneGroupRequest::setRecordCanaryDetail(bool recordCanaryDetail) {
+  recordCanaryDetail_ = recordCanaryDetail;
+  setParameter(std::string("RecordCanaryDetail"), recordCanaryDetail ? "true" : "false");
+}
+
+std::string CreateOrUpdateSwimmingLaneGroupRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void CreateOrUpdateSwimmingLaneGroupRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
+}
+
+std::string CreateOrUpdateSwimmingLaneGroupRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void CreateOrUpdateSwimmingLaneGroupRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

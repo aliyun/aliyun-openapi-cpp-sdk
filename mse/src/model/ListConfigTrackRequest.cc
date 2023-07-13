@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::ListConfigTrackRequest;
 
 ListConfigTrackRequest::ListConfigTrackRequest()
     : RpcServiceRequest("mse", "2019-05-31", "ListConfigTrack") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 ListConfigTrackRequest::~ListConfigTrackRequest() {}
@@ -70,24 +70,6 @@ void ListConfigTrackRequest::setRequestPars(const std::string &requestPars) {
   setParameter(std::string("RequestPars"), requestPars);
 }
 
-long ListConfigTrackRequest::getEndTs() const {
-  return endTs_;
-}
-
-void ListConfigTrackRequest::setEndTs(long endTs) {
-  endTs_ = endTs;
-  setParameter(std::string("EndTs"), std::to_string(endTs));
-}
-
-long ListConfigTrackRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListConfigTrackRequest::setPageSize(long pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 std::string ListConfigTrackRequest::getGroup() const {
   return group_;
 }
@@ -106,15 +88,6 @@ void ListConfigTrackRequest::setIp(const std::string &ip) {
   setParameter(std::string("Ip"), ip);
 }
 
-bool ListConfigTrackRequest::getReverse() const {
-  return reverse_;
-}
-
-void ListConfigTrackRequest::setReverse(bool reverse) {
-  reverse_ = reverse;
-  setParameter(std::string("Reverse"), reverse ? "true" : "false");
-}
-
 std::string ListConfigTrackRequest::getInstanceId() const {
   return instanceId_;
 }
@@ -122,6 +95,33 @@ std::string ListConfigTrackRequest::getInstanceId() const {
 void ListConfigTrackRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
+}
+
+long ListConfigTrackRequest::getEndTs() const {
+  return endTs_;
+}
+
+void ListConfigTrackRequest::setEndTs(long endTs) {
+  endTs_ = endTs;
+  setParameter(std::string("EndTs"), std::to_string(endTs));
+}
+
+long ListConfigTrackRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListConfigTrackRequest::setPageSize(long pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+bool ListConfigTrackRequest::getReverse() const {
+  return reverse_;
+}
+
+void ListConfigTrackRequest::setReverse(bool reverse) {
+  reverse_ = reverse;
+  setParameter(std::string("Reverse"), reverse ? "true" : "false");
 }
 
 std::string ListConfigTrackRequest::getDataId() const {

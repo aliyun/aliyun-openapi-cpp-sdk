@@ -30,28 +30,28 @@ class ALIBABACLOUD_MSE_EXPORT QueryConfigRequest : public RpcServiceRequest {
 public:
 	QueryConfigRequest();
 	~QueryConfigRequest();
-	bool getNeedRunningConf() const;
-	void setNeedRunningConf(bool needRunningConf);
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
+	std::string getRequestPars() const;
+	void setRequestPars(const std::string &requestPars);
+	bool getNeedRunningConf() const;
+	void setNeedRunningConf(bool needRunningConf);
 	std::string getConfigType() const;
 	void setConfigType(const std::string &configType);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
-	std::string getRequestPars() const;
-	void setRequestPars(const std::string &requestPars);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
-	bool needRunningConf_;
 	std::string mseSessionId_;
+	std::string requestPars_;
+	bool needRunningConf_;
 	std::string configType_;
 	std::string clusterId_;
 	std::string instanceId_;
-	std::string requestPars_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

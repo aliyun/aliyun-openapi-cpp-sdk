@@ -32,15 +32,54 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_MSE_EXPORT CreateOrUpdateSwimmingLaneGroupResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					std::string region11;
+					int status13;
+					bool messageQueueGrayEnable;
+					std::string entryApp10;
+					std::string _namespace8;
+					std::string source;
+					std::string name;
+					std::string messageQueueFilterSide;
+					std::string enable;
+					std::vector<std::string> applicationList;
+					bool recordCanaryDetail;
+					std::string name1;
+					long id9;
+					std::string entryApp;
+					int status;
+					std::string messageQueueFilterSide5;
+					std::string _namespace;
+					std::string source3;
+					std::string dbGrayEnable;
+					std::string userId;
+					std::string region;
+					std::string dbGrayEnable2;
+					long id;
+					std::string enable7;
+					std::string userId4;
+					std::string appIds;
+					std::string appIds6;
+					bool messageQueueGrayEnable12;
+				};
 
 
 				CreateOrUpdateSwimmingLaneGroupResult();
 				explicit CreateOrUpdateSwimmingLaneGroupResult(const std::string &payload);
 				~CreateOrUpdateSwimmingLaneGroupResult();
+				std::string getMessage()const;
+				Data getData()const;
+				std::string getErrorCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
+				Data data_;
+				std::string errorCode_;
+				bool success_;
 
 			};
 		}

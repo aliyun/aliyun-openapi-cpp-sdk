@@ -61,15 +61,6 @@ void ListMigrationTaskRequest::setPageSize(long pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string ListMigrationTaskRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void ListMigrationTaskRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 std::string ListMigrationTaskRequest::getOriginInstanceName() const {
   return originInstanceName_;
 }
@@ -77,5 +68,14 @@ std::string ListMigrationTaskRequest::getOriginInstanceName() const {
 void ListMigrationTaskRequest::setOriginInstanceName(const std::string &originInstanceName) {
   originInstanceName_ = originInstanceName;
   setParameter(std::string("OriginInstanceName"), originInstanceName);
+}
+
+std::string ListMigrationTaskRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void ListMigrationTaskRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

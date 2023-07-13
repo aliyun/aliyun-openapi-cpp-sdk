@@ -43,6 +43,15 @@ void GetKubernetesSourceRequest::setGatewayUniqueId(const std::string &gatewayUn
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
 }
 
+bool GetKubernetesSourceRequest::getIsAll() const {
+  return isAll_;
+}
+
+void GetKubernetesSourceRequest::setIsAll(bool isAll) {
+  isAll_ = isAll;
+  setParameter(std::string("IsAll"), isAll ? "true" : "false");
+}
+
 std::string GetKubernetesSourceRequest::getVpcId() const {
   return vpcId_;
 }

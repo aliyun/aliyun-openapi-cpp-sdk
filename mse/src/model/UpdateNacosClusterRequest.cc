@@ -52,6 +52,24 @@ void UpdateNacosClusterRequest::setCheckPort(int checkPort) {
   setParameter(std::string("CheckPort"), std::to_string(checkPort));
 }
 
+std::string UpdateNacosClusterRequest::getNamespaceId() const {
+  return namespaceId_;
+}
+
+void UpdateNacosClusterRequest::setNamespaceId(const std::string &namespaceId) {
+  namespaceId_ = namespaceId;
+  setParameter(std::string("NamespaceId"), namespaceId);
+}
+
+std::string UpdateNacosClusterRequest::getServiceName() const {
+  return serviceName_;
+}
+
+void UpdateNacosClusterRequest::setServiceName(const std::string &serviceName) {
+  serviceName_ = serviceName;
+  setParameter(std::string("ServiceName"), serviceName);
+}
+
 std::string UpdateNacosClusterRequest::getGroupName() const {
   return groupName_;
 }
@@ -70,15 +88,6 @@ void UpdateNacosClusterRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string UpdateNacosClusterRequest::getNamespaceId() const {
-  return namespaceId_;
-}
-
-void UpdateNacosClusterRequest::setNamespaceId(const std::string &namespaceId) {
-  namespaceId_ = namespaceId;
-  setParameter(std::string("NamespaceId"), namespaceId);
-}
-
 std::string UpdateNacosClusterRequest::getHealthChecker() const {
   return healthChecker_;
 }
@@ -95,15 +104,6 @@ std::string UpdateNacosClusterRequest::getAcceptLanguage() const {
 void UpdateNacosClusterRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
-std::string UpdateNacosClusterRequest::getServiceName() const {
-  return serviceName_;
-}
-
-void UpdateNacosClusterRequest::setServiceName(const std::string &serviceName) {
-  serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), serviceName);
 }
 
 bool UpdateNacosClusterRequest::getUseInstancePortForCheck() const {

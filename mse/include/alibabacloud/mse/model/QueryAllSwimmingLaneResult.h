@@ -32,15 +32,70 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_MSE_EXPORT QueryAllSwimmingLaneResult : public ServiceResult
 			{
 			public:
+				struct SwimmingLaneGroup
+				{
+					struct EntryRule
+					{
+						struct RestItemsItem
+						{
+							std::string type;
+							std::string cond;
+							std::vector<std::string> nameList;
+							std::string datum;
+							int rate;
+							std::string value;
+							std::string _operator;
+							int divisor;
+							std::string name;
+							int remainder;
+						};
+						std::string path;
+						std::string condition;
+						std::vector<EntryRule::RestItemsItem> restItems;
+						std::vector<std::string> paths;
+					};
+					int status;
+					std::string regionId5;
+					bool messageQueueGrayEnable;
+					std::string gmtModified;
+					std::string _namespace;
+					std::string name;
+					std::string groupId;
+					std::string entryRule;
+					std::string gmtCreate;
+					std::vector<SwimmingLaneGroup::EntryRule> entryRules;
+					std::string groupId6;
+					std::string userId;
+					std::string enable3;
+					long id4;
+					std::string messageQueueFilterSide;
+					std::string enable;
+					std::string tag7;
+					long id;
+					std::string regionId;
+					std::string tag;
+					bool recordCanaryDetail;
+					bool enableRules;
+					std::string name1;
+					std::string userId2;
+				};
 
 
 				QueryAllSwimmingLaneResult();
 				explicit QueryAllSwimmingLaneResult(const std::string &payload);
 				~QueryAllSwimmingLaneResult();
+				std::string getMessage()const;
+				std::vector<SwimmingLaneGroup> getData()const;
+				std::string getErrorCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
+				std::vector<SwimmingLaneGroup> data_;
+				std::string errorCode_;
+				bool success_;
 
 			};
 		}

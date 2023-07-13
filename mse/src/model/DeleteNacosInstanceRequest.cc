@@ -43,15 +43,6 @@ void DeleteNacosInstanceRequest::setClusterName(const std::string &clusterName) 
   setParameter(std::string("ClusterName"), clusterName);
 }
 
-std::string DeleteNacosInstanceRequest::getIp() const {
-  return ip_;
-}
-
-void DeleteNacosInstanceRequest::setIp(const std::string &ip) {
-  ip_ = ip;
-  setParameter(std::string("Ip"), ip);
-}
-
 bool DeleteNacosInstanceRequest::getEphemeral() const {
   return ephemeral_;
 }
@@ -59,6 +50,33 @@ bool DeleteNacosInstanceRequest::getEphemeral() const {
 void DeleteNacosInstanceRequest::setEphemeral(bool ephemeral) {
   ephemeral_ = ephemeral;
   setParameter(std::string("Ephemeral"), ephemeral ? "true" : "false");
+}
+
+std::string DeleteNacosInstanceRequest::getNamespaceId() const {
+  return namespaceId_;
+}
+
+void DeleteNacosInstanceRequest::setNamespaceId(const std::string &namespaceId) {
+  namespaceId_ = namespaceId;
+  setParameter(std::string("NamespaceId"), namespaceId);
+}
+
+std::string DeleteNacosInstanceRequest::getServiceName() const {
+  return serviceName_;
+}
+
+void DeleteNacosInstanceRequest::setServiceName(const std::string &serviceName) {
+  serviceName_ = serviceName;
+  setParameter(std::string("ServiceName"), serviceName);
+}
+
+std::string DeleteNacosInstanceRequest::getIp() const {
+  return ip_;
+}
+
+void DeleteNacosInstanceRequest::setIp(const std::string &ip) {
+  ip_ = ip;
+  setParameter(std::string("Ip"), ip);
 }
 
 std::string DeleteNacosInstanceRequest::getGroupName() const {
@@ -79,15 +97,6 @@ void DeleteNacosInstanceRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string DeleteNacosInstanceRequest::getNamespaceId() const {
-  return namespaceId_;
-}
-
-void DeleteNacosInstanceRequest::setNamespaceId(const std::string &namespaceId) {
-  namespaceId_ = namespaceId;
-  setParameter(std::string("NamespaceId"), namespaceId);
-}
-
 int DeleteNacosInstanceRequest::getPort() const {
   return port_;
 }
@@ -104,14 +113,5 @@ std::string DeleteNacosInstanceRequest::getAcceptLanguage() const {
 void DeleteNacosInstanceRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
-std::string DeleteNacosInstanceRequest::getServiceName() const {
-  return serviceName_;
-}
-
-void DeleteNacosInstanceRequest::setServiceName(const std::string &serviceName) {
-  serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), serviceName);
 }
 

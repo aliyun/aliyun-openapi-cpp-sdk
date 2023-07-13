@@ -25,15 +25,6 @@ DeleteServiceSourceRequest::DeleteServiceSourceRequest()
 
 DeleteServiceSourceRequest::~DeleteServiceSourceRequest() {}
 
-long DeleteServiceSourceRequest::getSourceId() const {
-  return sourceId_;
-}
-
-void DeleteServiceSourceRequest::setSourceId(long sourceId) {
-  sourceId_ = sourceId;
-  setParameter(std::string("SourceId"), std::to_string(sourceId));
-}
-
 std::string DeleteServiceSourceRequest::getMseSessionId() const {
   return mseSessionId_;
 }
@@ -50,6 +41,15 @@ std::string DeleteServiceSourceRequest::getGatewayUniqueId() const {
 void DeleteServiceSourceRequest::setGatewayUniqueId(const std::string &gatewayUniqueId) {
   gatewayUniqueId_ = gatewayUniqueId;
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
+}
+
+long DeleteServiceSourceRequest::getSourceId() const {
+  return sourceId_;
+}
+
+void DeleteServiceSourceRequest::setSourceId(long sourceId) {
+  sourceId_ = sourceId;
+  setParameter(std::string("SourceId"), std::to_string(sourceId));
 }
 
 std::string DeleteServiceSourceRequest::getAcceptLanguage() const {

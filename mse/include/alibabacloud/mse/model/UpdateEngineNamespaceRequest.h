@@ -32,29 +32,29 @@ public:
 	~UpdateEngineNamespaceRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
+	int getServiceCount() const;
+	void setServiceCount(int serviceCount);
+	std::string getId() const;
+	void setId(const std::string &id);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
-	int getServiceCount() const;
-	void setServiceCount(int serviceCount);
 	std::string getName() const;
 	void setName(const std::string &name);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
-	std::string getId() const;
-	void setId(const std::string &id);
 	std::string getDesc() const;
 	void setDesc(const std::string &desc);
 
 private:
 	std::string mseSessionId_;
+	int serviceCount_;
+	std::string id_;
 	std::string clusterId_;
 	std::string instanceId_;
-	int serviceCount_;
 	std::string name_;
 	std::string acceptLanguage_;
-	std::string id_;
 	std::string desc_;
 };
 } // namespace Model

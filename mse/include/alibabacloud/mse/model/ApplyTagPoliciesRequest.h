@@ -36,12 +36,16 @@ public:
 	void setRules(const std::string &rules);
 	std::string getSource() const;
 	void setSource(const std::string &source);
+	std::string getAppName() const;
+	void setAppName(const std::string &appName);
 	std::string getNamespaceId() const;
 	void setNamespaceId(const std::string &namespaceId);
 	bool getEnable() const;
 	void setEnable(bool enable);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
+	std::string get_Namespace() const;
+	void set_Namespace(const std::string &_namespace);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getRegion() const;
@@ -51,9 +55,11 @@ private:
 	std::string mseSessionId_;
 	std::string rules_;
 	std::string source_;
+	std::string appName_;
 	std::string namespaceId_;
 	bool enable_;
 	std::string appId_;
+	std::string _namespace_;
 	std::string acceptLanguage_;
 	std::string region_;
 };

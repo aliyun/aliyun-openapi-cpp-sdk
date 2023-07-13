@@ -34,22 +34,13 @@ void ExportNacosConfigRequest::setMseSessionId(const std::string &mseSessionId) 
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string ExportNacosConfigRequest::getInstanceId() const {
-  return instanceId_;
+std::string ExportNacosConfigRequest::getDataIds() const {
+  return dataIds_;
 }
 
-void ExportNacosConfigRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string ExportNacosConfigRequest::getDataId() const {
-  return dataId_;
-}
-
-void ExportNacosConfigRequest::setDataId(const std::string &dataId) {
-  dataId_ = dataId;
-  setParameter(std::string("DataId"), dataId);
+void ExportNacosConfigRequest::setDataIds(const std::string &dataIds) {
+  dataIds_ = dataIds;
+  setParameter(std::string("DataIds"), dataIds);
 }
 
 std::string ExportNacosConfigRequest::getAppName() const {
@@ -70,6 +61,33 @@ void ExportNacosConfigRequest::setNamespaceId(const std::string &namespaceId) {
   setParameter(std::string("NamespaceId"), namespaceId);
 }
 
+std::string ExportNacosConfigRequest::getGroup() const {
+  return group_;
+}
+
+void ExportNacosConfigRequest::setGroup(const std::string &group) {
+  group_ = group;
+  setParameter(std::string("Group"), group);
+}
+
+std::string ExportNacosConfigRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ExportNacosConfigRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string ExportNacosConfigRequest::getDataId() const {
+  return dataId_;
+}
+
+void ExportNacosConfigRequest::setDataId(const std::string &dataId) {
+  dataId_ = dataId;
+  setParameter(std::string("DataId"), dataId);
+}
+
 std::string ExportNacosConfigRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }
@@ -86,14 +104,5 @@ std::string ExportNacosConfigRequest::getIds() const {
 void ExportNacosConfigRequest::setIds(const std::string &ids) {
   ids_ = ids;
   setParameter(std::string("Ids"), ids);
-}
-
-std::string ExportNacosConfigRequest::getGroup() const {
-  return group_;
-}
-
-void ExportNacosConfigRequest::setGroup(const std::string &group) {
-  group_ = group;
-  setParameter(std::string("Group"), group);
 }
 

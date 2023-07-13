@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::ListEngineNamespacesRequest;
 
 ListEngineNamespacesRequest::ListEngineNamespacesRequest()
     : RpcServiceRequest("mse", "2019-05-31", "ListEngineNamespaces") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 ListEngineNamespacesRequest::~ListEngineNamespacesRequest() {}
@@ -34,15 +34,6 @@ void ListEngineNamespacesRequest::setMseSessionId(const std::string &mseSessionI
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string ListEngineNamespacesRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void ListEngineNamespacesRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
-}
-
 int ListEngineNamespacesRequest::getPageNum() const {
   return pageNum_;
 }
@@ -52,15 +43,6 @@ void ListEngineNamespacesRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
-std::string ListEngineNamespacesRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ListEngineNamespacesRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 int ListEngineNamespacesRequest::getPageSize() const {
   return pageSize_;
 }
@@ -68,6 +50,24 @@ int ListEngineNamespacesRequest::getPageSize() const {
 void ListEngineNamespacesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListEngineNamespacesRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void ListEngineNamespacesRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
+}
+
+std::string ListEngineNamespacesRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ListEngineNamespacesRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
 std::string ListEngineNamespacesRequest::getAcceptLanguage() const {

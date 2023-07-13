@@ -32,15 +32,63 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_MSE_EXPORT QuerySwimmingLaneByIdResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					struct EntryRule
+					{
+						struct RestItemsItem
+						{
+							std::string type;
+							std::string cond;
+							std::vector<std::string> nameList;
+							std::string datum;
+							int rate;
+							std::string value;
+							std::string _operator;
+							int divisor;
+							std::string name;
+							int remainder;
+						};
+						std::string path;
+						std::string condition;
+						std::vector<EntryRule::RestItemsItem> restItems;
+						std::vector<std::string> paths;
+					};
+					int status;
+					std::vector<EntryRule> entryRules;
+					std::string gmtModified;
+					std::string gatewaySwimmingLaneRouteJson;
+					std::string name;
+					long groupId;
+					std::string entryRule;
+					std::string gmtCreate;
+					bool enable;
+					long id;
+					std::string tag;
+					std::string regionId;
+					bool enableRules;
+				};
 
 
 				QuerySwimmingLaneByIdResult();
 				explicit QuerySwimmingLaneByIdResult(const std::string &payload);
 				~QuerySwimmingLaneByIdResult();
+				std::string getMessage()const;
+				int getHttpStatusCode()const;
+				Data getData()const;
+				std::string getErrorCode()const;
+				int getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
+				int httpStatusCode_;
+				Data data_;
+				std::string errorCode_;
+				int code_;
+				bool success_;
 
 			};
 		}

@@ -34,15 +34,6 @@ void GetImageRequest::setMseSessionId(const std::string &mseSessionId) {
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string GetImageRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void GetImageRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 std::string GetImageRequest::getVersionCode() const {
   return versionCode_;
 }
@@ -50,5 +41,14 @@ std::string GetImageRequest::getVersionCode() const {
 void GetImageRequest::setVersionCode(const std::string &versionCode) {
   versionCode_ = versionCode;
   setParameter(std::string("VersionCode"), versionCode);
+}
+
+std::string GetImageRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void GetImageRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

@@ -32,15 +32,15 @@ public:
 	~GetImageRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getVersionCode() const;
 	void setVersionCode(const std::string &versionCode);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
-	std::string acceptLanguage_;
 	std::string versionCode_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Mse

@@ -80,6 +80,14 @@ void GetGatewayResult::parse(const std::string &payload)
 		data_.mseTag = dataNode["MseTag"].asString();
 	if(!dataNode["ResourceGroupId"].isNull())
 		data_.resourceGroupId = dataNode["ResourceGroupId"].asString();
+	if(!dataNode["TotalReplica"].isNull())
+		data_.totalReplica = std::stoi(dataNode["TotalReplica"].asString());
+	if(!dataNode["Elastic"].isNull())
+		data_.elastic = dataNode["Elastic"].asString() == "true";
+	if(!dataNode["ElasticReplica"].isNull())
+		data_.elasticReplica = std::stoi(dataNode["ElasticReplica"].asString());
+	if(!dataNode["ElasticType"].isNull())
+		data_.elasticType = dataNode["ElasticType"].asString();
 	auto xtraceDetailsNode = dataNode["XtraceDetails"];
 	if(!xtraceDetailsNode["Sample"].isNull())
 		data_.xtraceDetails.sample = std::stoi(xtraceDetailsNode["Sample"].asString());
@@ -92,6 +100,23 @@ void GetGatewayResult::parse(const std::string &payload)
 		data_.logConfigDetails.projectName = logConfigDetailsNode["ProjectName"].asString();
 	if(!logConfigDetailsNode["LogStoreName"].isNull())
 		data_.logConfigDetails.logStoreName = logConfigDetailsNode["LogStoreName"].asString();
+	auto elasticPolicyNode = dataNode["ElasticPolicy"];
+	if(!elasticPolicyNode["MaxReplica"].isNull())
+		data_.elasticPolicy.maxReplica = std::stoi(elasticPolicyNode["MaxReplica"].asString());
+	if(!elasticPolicyNode["ElasticType"].isNull())
+		data_.elasticPolicy.elasticType = elasticPolicyNode["ElasticType"].asString();
+	auto allTimePolicyListNode = elasticPolicyNode["TimePolicyList"]["timePolicyListItem"];
+	for (auto elasticPolicyNodeTimePolicyListtimePolicyListItem : allTimePolicyListNode)
+	{
+		Data::ElasticPolicy::TimePolicyListItem timePolicyListItemObject;
+		if(!elasticPolicyNodeTimePolicyListtimePolicyListItem["DesiredReplica"].isNull())
+			timePolicyListItemObject.desiredReplica = std::stoi(elasticPolicyNodeTimePolicyListtimePolicyListItem["DesiredReplica"].asString());
+		if(!elasticPolicyNodeTimePolicyListtimePolicyListItem["StartTime"].isNull())
+			timePolicyListItemObject.startTime = elasticPolicyNodeTimePolicyListtimePolicyListItem["StartTime"].asString();
+		if(!elasticPolicyNodeTimePolicyListtimePolicyListItem["EndTime"].isNull())
+			timePolicyListItemObject.endTime = elasticPolicyNodeTimePolicyListtimePolicyListItem["EndTime"].asString();
+		data_.elasticPolicy.timePolicyList.push_back(timePolicyListItemObject);
+	}
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Message"].isNull())

@@ -34,6 +34,24 @@ void QueryInstancesInfoRequest::setMseSessionId(const std::string &mseSessionId)
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
+std::string QueryInstancesInfoRequest::getRegionId() const {
+  return regionId_;
+}
+
+void QueryInstancesInfoRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string QueryInstancesInfoRequest::getRequestPars() const {
+  return requestPars_;
+}
+
+void QueryInstancesInfoRequest::setRequestPars(const std::string &requestPars) {
+  requestPars_ = requestPars;
+  setParameter(std::string("RequestPars"), requestPars);
+}
+
 std::string QueryInstancesInfoRequest::getOrderId() const {
   return orderId_;
 }
@@ -59,24 +77,6 @@ std::string QueryInstancesInfoRequest::getInstanceId() const {
 void QueryInstancesInfoRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string QueryInstancesInfoRequest::getRegionId() const {
-  return regionId_;
-}
-
-void QueryInstancesInfoRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
-std::string QueryInstancesInfoRequest::getRequestPars() const {
-  return requestPars_;
-}
-
-void QueryInstancesInfoRequest::setRequestPars(const std::string &requestPars) {
-  requestPars_ = requestPars;
-  setParameter(std::string("RequestPars"), requestPars);
 }
 
 std::string QueryInstancesInfoRequest::getAcceptLanguage() const {

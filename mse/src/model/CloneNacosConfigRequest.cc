@@ -43,6 +43,24 @@ void CloneNacosConfigRequest::setTargetNamespaceId(const std::string &targetName
   setParameter(std::string("TargetNamespaceId"), targetNamespaceId);
 }
 
+std::string CloneNacosConfigRequest::getOriginNamespaceId() const {
+  return originNamespaceId_;
+}
+
+void CloneNacosConfigRequest::setOriginNamespaceId(const std::string &originNamespaceId) {
+  originNamespaceId_ = originNamespaceId;
+  setParameter(std::string("OriginNamespaceId"), originNamespaceId);
+}
+
+std::string CloneNacosConfigRequest::getPolicy() const {
+  return policy_;
+}
+
+void CloneNacosConfigRequest::setPolicy(const std::string &policy) {
+  policy_ = policy;
+  setParameter(std::string("Policy"), policy);
+}
+
 std::string CloneNacosConfigRequest::getInstanceId() const {
   return instanceId_;
 }
@@ -68,23 +86,5 @@ std::string CloneNacosConfigRequest::getIds() const {
 void CloneNacosConfigRequest::setIds(const std::string &ids) {
   ids_ = ids;
   setParameter(std::string("Ids"), ids);
-}
-
-std::string CloneNacosConfigRequest::getOriginNamespaceId() const {
-  return originNamespaceId_;
-}
-
-void CloneNacosConfigRequest::setOriginNamespaceId(const std::string &originNamespaceId) {
-  originNamespaceId_ = originNamespaceId;
-  setParameter(std::string("OriginNamespaceId"), originNamespaceId);
-}
-
-std::string CloneNacosConfigRequest::getPolicy() const {
-  return policy_;
-}
-
-void CloneNacosConfigRequest::setPolicy(const std::string &policy) {
-  policy_ = policy;
-  setParameter(std::string("Policy"), policy);
 }
 

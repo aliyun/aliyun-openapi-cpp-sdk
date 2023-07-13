@@ -40,20 +40,20 @@ public:
 	void setNamespaceId(const std::string &namespaceId);
 	std::string getRequestPars() const;
 	void setRequestPars(const std::string &requestPars);
+	std::string getGroup() const;
+	void setGroup(const std::string &group);
+	std::string getIp() const;
+	void setIp(const std::string &ip);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	long getEndTs() const;
 	void setEndTs(long endTs);
 	long getPageSize() const;
 	void setPageSize(long pageSize);
 	std::string getServiceName() const;
 	void setServiceName(const std::string &serviceName);
-	std::string getGroup() const;
-	void setGroup(const std::string &group);
-	std::string getIp() const;
-	void setIp(const std::string &ip);
 	bool getReverse() const;
 	void setReverse(bool reverse);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
@@ -63,13 +63,13 @@ private:
 	long pageNum_;
 	std::string namespaceId_;
 	std::string requestPars_;
+	std::string group_;
+	std::string ip_;
+	std::string instanceId_;
 	long endTs_;
 	long pageSize_;
 	std::string serviceName_;
-	std::string group_;
-	std::string ip_;
 	bool reverse_;
-	std::string instanceId_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

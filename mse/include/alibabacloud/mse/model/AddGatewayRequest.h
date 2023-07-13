@@ -32,6 +32,10 @@ public:
 		std::string value;
 		std::string key;
 	};
+	struct ZoneInfo {
+		std::string vSwitchId;
+		std::string zoneId;
+	};
 	AddGatewayRequest();
 	~AddGatewayRequest();
 	std::string getMseSessionId() const;
@@ -40,12 +44,8 @@ public:
 	void setInternetSlbSpec(const std::string &internetSlbSpec);
 	bool getEnableXtrace() const;
 	void setEnableXtrace(bool enableXtrace);
-	std::string getXtraceRatio() const;
-	void setXtraceRatio(const std::string &xtraceRatio);
 	int getReplica() const;
 	void setReplica(int replica);
-	std::string getVSwitchId2() const;
-	void setVSwitchId2(const std::string &vSwitchId2);
 	bool getEnableHardwareAcceleration() const;
 	void setEnableHardwareAcceleration(bool enableHardwareAcceleration);
 	bool getEnableSls() const;
@@ -54,42 +54,55 @@ public:
 	void setSpec(const std::string &spec);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getRequestPars() const;
+	void setRequestPars(const std::string &requestPars);
 	bool getEnterpriseSecurityGroup() const;
 	void setEnterpriseSecurityGroup(bool enterpriseSecurityGroup);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
-	std::string getVpc() const;
-	void setVpc(const std::string &vpc);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getSlbSpec() const;
 	void setSlbSpec(const std::string &slbSpec);
 	std::string getName() const;
 	void setName(const std::string &name);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getRegion() const;
 	void setRegion(const std::string &region);
+	std::vector<ZoneInfo> getZoneInfo() const;
+	void setZoneInfo(const std::vector<ZoneInfo> &zoneInfo);
+	std::string getXtraceRatio() const;
+	void setXtraceRatio(const std::string &xtraceRatio);
+	std::string getVSwitchId2() const;
+	void setVSwitchId2(const std::string &vSwitchId2);
+	std::string getVpc() const;
+	void setVpc(const std::string &vpc);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
+	std::string getChargeType() const;
+	void setChargeType(const std::string &chargeType);
 
 private:
 	std::string mseSessionId_;
 	std::string internetSlbSpec_;
 	bool enableXtrace_;
-	std::string xtraceRatio_;
 	int replica_;
-	std::string vSwitchId2_;
 	bool enableHardwareAcceleration_;
 	bool enableSls_;
 	std::string spec_;
 	std::string resourceGroupId_;
+	std::string requestPars_;
 	bool enterpriseSecurityGroup_;
 	std::vector<Tag> tag_;
-	std::string vpc_;
 	std::string vSwitchId_;
 	std::string slbSpec_;
 	std::string name_;
-	std::string acceptLanguage_;
 	std::string region_;
+	std::vector<ZoneInfo> zoneInfo_;
+	std::string xtraceRatio_;
+	std::string vSwitchId2_;
+	std::string vpc_;
+	std::string acceptLanguage_;
+	std::string chargeType_;
 };
 } // namespace Model
 } // namespace Mse

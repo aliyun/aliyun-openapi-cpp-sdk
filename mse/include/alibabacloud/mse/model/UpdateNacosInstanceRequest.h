@@ -38,12 +38,8 @@ public:
 	void setClusterName(const std::string &clusterName);
 	bool getEphemeral() const;
 	void setEphemeral(bool ephemeral);
-	bool getEnabled() const;
-	void setEnabled(bool enabled);
 	std::string getNamespaceId() const;
 	void setNamespaceId(const std::string &namespaceId);
-	std::string getServiceName() const;
-	void setServiceName(const std::string &serviceName);
 	std::string getIp() const;
 	void setIp(const std::string &ip);
 	std::string getWeight() const;
@@ -54,6 +50,10 @@ public:
 	void setInstanceId(const std::string &instanceId);
 	int getPort() const;
 	void setPort(int port);
+	bool getEnabled() const;
+	void setEnabled(bool enabled);
+	std::string getServiceName() const;
+	void setServiceName(const std::string &serviceName);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
@@ -62,14 +62,14 @@ private:
 	std::string metadata_;
 	std::string clusterName_;
 	bool ephemeral_;
-	bool enabled_;
 	std::string namespaceId_;
-	std::string serviceName_;
 	std::string ip_;
 	std::string weight_;
 	std::string groupName_;
 	std::string instanceId_;
 	int port_;
+	bool enabled_;
+	std::string serviceName_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

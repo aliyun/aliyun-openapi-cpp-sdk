@@ -32,24 +32,24 @@ public:
 	~ImportNacosConfigRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
 	std::string getNamespaceId() const;
 	void setNamespaceId(const std::string &namespaceId);
+	std::string getPolicy() const;
+	void setPolicy(const std::string &policy);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getFileUrl() const;
 	void setFileUrl(const std::string &fileUrl);
-	std::string getPolicy() const;
-	void setPolicy(const std::string &policy);
 
 private:
 	std::string mseSessionId_;
-	std::string instanceId_;
 	std::string namespaceId_;
+	std::string policy_;
+	std::string instanceId_;
 	std::string acceptLanguage_;
 	std::string fileUrl_;
-	std::string policy_;
 };
 } // namespace Model
 } // namespace Mse

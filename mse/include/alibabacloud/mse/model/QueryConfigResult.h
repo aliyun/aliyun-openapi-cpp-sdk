@@ -44,12 +44,14 @@ namespace AlibabaCloud
 					bool openSuperAcl;
 					bool namingCreateServiceSupported;
 					bool configSecretSupported;
+					bool eurekaSupported;
 					std::string passWord;
 					std::string jvmFlagsCustom;
 					bool configAuthEnabled;
 					std::string autopurgePurgeInterval;
 					bool mCPSupported;
 					bool namingAuthSupported;
+					bool tLSEnabled;
 					std::string clusterName;
 					bool configSecretEnabled;
 					NacosRunningEnv nacosRunningEnv;

@@ -72,16 +72,20 @@ void GetApplicationListResult::parse(const std::string &payload)
 			applicationListObject.regionId = dataNodeResultApplicationList["RegionId"].asString();
 		if(!dataNodeResultApplicationList["Namespace"].isNull())
 			applicationListObject._namespace = dataNodeResultApplicationList["Namespace"].asString();
+		if(!dataNodeResultApplicationList["TagCount"].isNull())
+			applicationListObject.tagCount = std::stol(dataNodeResultApplicationList["TagCount"].asString());
 		data_.result.push_back(applicationListObject);
 	}
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -98,6 +102,11 @@ int GetApplicationListResult::getHttpStatusCode()const
 GetApplicationListResult::Data GetApplicationListResult::getData()const
 {
 	return data_;
+}
+
+std::string GetApplicationListResult::getErrorCode()const
+{
+	return errorCode_;
 }
 
 int GetApplicationListResult::getCode()const

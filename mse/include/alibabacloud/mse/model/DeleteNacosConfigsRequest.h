@@ -32,10 +32,10 @@ public:
 	~DeleteNacosConfigsRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
 	std::string getNamespaceId() const;
 	void setNamespaceId(const std::string &namespaceId);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getIds() const;
@@ -43,8 +43,8 @@ public:
 
 private:
 	std::string mseSessionId_;
-	std::string instanceId_;
 	std::string namespaceId_;
+	std::string instanceId_;
 	std::string acceptLanguage_;
 	std::string ids_;
 };

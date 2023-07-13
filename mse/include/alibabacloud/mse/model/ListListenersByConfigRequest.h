@@ -32,27 +32,27 @@ public:
 	~ListListenersByConfigRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
-	std::string getDataId() const;
-	void setDataId(const std::string &dataId);
 	std::string getNamespaceId() const;
 	void setNamespaceId(const std::string &namespaceId);
 	std::string getRequestPars() const;
 	void setRequestPars(const std::string &requestPars);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getGroup() const;
 	void setGroup(const std::string &group);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getDataId() const;
+	void setDataId(const std::string &dataId);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
-	std::string instanceId_;
-	std::string dataId_;
 	std::string namespaceId_;
 	std::string requestPars_;
-	std::string acceptLanguage_;
 	std::string group_;
+	std::string instanceId_;
+	std::string dataId_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Mse

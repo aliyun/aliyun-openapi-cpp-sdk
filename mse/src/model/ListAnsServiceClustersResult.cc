@@ -52,6 +52,8 @@ void ListAnsServiceClustersResult::parse(const std::string &payload)
 		data_.metadata = dataNode["Metadata"].asString();
 	if(!dataNode["Ephemeral"].isNull())
 		data_.ephemeral = dataNode["Ephemeral"].asString() == "true";
+	if(!dataNode["Source"].isNull())
+		data_.source = dataNode["Source"].asString();
 	auto allClustersNode = dataNode["Clusters"]["NacosAnsCluster"];
 	for (auto dataNodeClustersNacosAnsCluster : allClustersNode)
 	{
@@ -72,13 +74,39 @@ void ListAnsServiceClustersResult::parse(const std::string &payload)
 			nacosAnsClusterObject.metadata = dataNodeClustersNacosAnsCluster["Metadata"].asString();
 		data_.clusters.push_back(nacosAnsClusterObject);
 	}
+	auto appDetailNode = dataNode["AppDetail"];
+	if(!appDetailNode["AppId"].isNull())
+		data_.appDetail.appId = appDetailNode["AppId"].asString();
+	if(!appDetailNode["AppName"].isNull())
+		data_.appDetail.appName = appDetailNode["AppName"].asString();
+	if(!appDetailNode["Port"].isNull())
+		data_.appDetail.port = std::stoi(appDetailNode["Port"].asString());
+	if(!appDetailNode["CheckType"].isNull())
+		data_.appDetail.checkType = appDetailNode["CheckType"].asString();
+	if(!appDetailNode["CheckPath"].isNull())
+		data_.appDetail.checkPath = appDetailNode["CheckPath"].asString();
+	if(!appDetailNode["CheckTimeout"].isNull())
+		data_.appDetail.checkTimeout = std::stoi(appDetailNode["CheckTimeout"].asString());
+	if(!appDetailNode["CheckInternal"].isNull())
+		data_.appDetail.checkInternal = std::stoi(appDetailNode["CheckInternal"].asString());
+	if(!appDetailNode["HealthyCheckTimes"].isNull())
+		data_.appDetail.healthyCheckTimes = std::stoi(appDetailNode["HealthyCheckTimes"].asString());
+	if(!appDetailNode["UnhealthyCheckTimes"].isNull())
+		data_.appDetail.unhealthyCheckTimes = std::stoi(appDetailNode["UnhealthyCheckTimes"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["HttpCode"].isNull())
+		httpCode_ = value["HttpCode"].asString();
 
+}
+
+std::string ListAnsServiceClustersResult::getHttpCode()const
+{
+	return httpCode_;
 }
 
 std::string ListAnsServiceClustersResult::getMessage()const

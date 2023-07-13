@@ -32,10 +32,10 @@ public:
 	~ListClusterTypesRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
-	std::string getConnectType() const;
-	void setConnectType(const std::string &connectType);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getConnectType() const;
+	void setConnectType(const std::string &connectType);
 	std::string getMseVersion() const;
 	void setMseVersion(const std::string &mseVersion);
 	std::string getAcceptLanguage() const;
@@ -43,8 +43,8 @@ public:
 
 private:
 	std::string mseSessionId_;
-	std::string connectType_;
 	std::string regionId_;
+	std::string connectType_;
 	std::string mseVersion_;
 	std::string acceptLanguage_;
 };

@@ -43,6 +43,15 @@ void DeleteGatewaySlbRequest::setMseSessionId(const std::string &mseSessionId) {
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
+std::string DeleteGatewaySlbRequest::getSlbId() const {
+  return slbId_;
+}
+
+void DeleteGatewaySlbRequest::setSlbId(const std::string &slbId) {
+  slbId_ = slbId;
+  setParameter(std::string("SlbId"), slbId);
+}
+
 std::string DeleteGatewaySlbRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

@@ -34,6 +34,24 @@ void DeleteNacosServiceRequest::setMseSessionId(const std::string &mseSessionId)
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
+std::string DeleteNacosServiceRequest::getNamespaceId() const {
+  return namespaceId_;
+}
+
+void DeleteNacosServiceRequest::setNamespaceId(const std::string &namespaceId) {
+  namespaceId_ = namespaceId;
+  setParameter(std::string("NamespaceId"), namespaceId);
+}
+
+std::string DeleteNacosServiceRequest::getServiceName() const {
+  return serviceName_;
+}
+
+void DeleteNacosServiceRequest::setServiceName(const std::string &serviceName) {
+  serviceName_ = serviceName;
+  setParameter(std::string("ServiceName"), serviceName);
+}
+
 std::string DeleteNacosServiceRequest::getGroupName() const {
   return groupName_;
 }
@@ -52,15 +70,6 @@ void DeleteNacosServiceRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string DeleteNacosServiceRequest::getNamespaceId() const {
-  return namespaceId_;
-}
-
-void DeleteNacosServiceRequest::setNamespaceId(const std::string &namespaceId) {
-  namespaceId_ = namespaceId;
-  setParameter(std::string("NamespaceId"), namespaceId);
-}
-
 std::string DeleteNacosServiceRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }
@@ -68,14 +77,5 @@ std::string DeleteNacosServiceRequest::getAcceptLanguage() const {
 void DeleteNacosServiceRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
-std::string DeleteNacosServiceRequest::getServiceName() const {
-  return serviceName_;
-}
-
-void DeleteNacosServiceRequest::setServiceName(const std::string &serviceName) {
-  serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), serviceName);
 }
 

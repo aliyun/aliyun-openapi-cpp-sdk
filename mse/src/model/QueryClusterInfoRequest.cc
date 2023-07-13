@@ -25,15 +25,6 @@ QueryClusterInfoRequest::QueryClusterInfoRequest()
 
 QueryClusterInfoRequest::~QueryClusterInfoRequest() {}
 
-bool QueryClusterInfoRequest::getAclSwitch() const {
-  return aclSwitch_;
-}
-
-void QueryClusterInfoRequest::setAclSwitch(bool aclSwitch) {
-  aclSwitch_ = aclSwitch;
-  setParameter(std::string("AclSwitch"), aclSwitch ? "true" : "false");
-}
-
 std::string QueryClusterInfoRequest::getMseSessionId() const {
   return mseSessionId_;
 }
@@ -41,6 +32,33 @@ std::string QueryClusterInfoRequest::getMseSessionId() const {
 void QueryClusterInfoRequest::setMseSessionId(const std::string &mseSessionId) {
   mseSessionId_ = mseSessionId;
   setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
+std::string QueryClusterInfoRequest::getRegionId() const {
+  return regionId_;
+}
+
+void QueryClusterInfoRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string QueryClusterInfoRequest::getRequestPars() const {
+  return requestPars_;
+}
+
+void QueryClusterInfoRequest::setRequestPars(const std::string &requestPars) {
+  requestPars_ = requestPars;
+  setParameter(std::string("RequestPars"), requestPars);
+}
+
+bool QueryClusterInfoRequest::getAclSwitch() const {
+  return aclSwitch_;
+}
+
+void QueryClusterInfoRequest::setAclSwitch(bool aclSwitch) {
+  aclSwitch_ = aclSwitch;
+  setParameter(std::string("AclSwitch"), aclSwitch ? "true" : "false");
 }
 
 std::string QueryClusterInfoRequest::getOrderId() const {
@@ -68,24 +86,6 @@ std::string QueryClusterInfoRequest::getInstanceId() const {
 void QueryClusterInfoRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string QueryClusterInfoRequest::getRegionId() const {
-  return regionId_;
-}
-
-void QueryClusterInfoRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
-std::string QueryClusterInfoRequest::getRequestPars() const {
-  return requestPars_;
-}
-
-void QueryClusterInfoRequest::setRequestPars(const std::string &requestPars) {
-  requestPars_ = requestPars;
-  setParameter(std::string("RequestPars"), requestPars);
 }
 
 std::string QueryClusterInfoRequest::getAcceptLanguage() const {

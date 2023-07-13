@@ -38,22 +38,22 @@ public:
 	void setPageNum(int pageNum);
 	std::string getNamespaceId() const;
 	void setNamespaceId(const std::string &namespaceId);
+	std::string getRequestPars() const;
+	void setRequestPars(const std::string &requestPars);
+	std::string getGroupName() const;
+	void setGroupName(const std::string &groupName);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	std::string getRequestPars() const;
-	void setRequestPars(const std::string &requestPars);
 	std::string getServiceName() const;
 	void setServiceName(const std::string &serviceName);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
-	std::string getGroupName() const;
-	void setGroupName(const std::string &groupName);
 	std::string getHasIpCount() const;
 	void setHasIpCount(const std::string &hasIpCount);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
@@ -62,14 +62,14 @@ private:
 	std::string clusterName_;
 	int pageNum_;
 	std::string namespaceId_;
+	std::string requestPars_;
+	std::string groupName_;
+	std::string instanceId_;
 	std::string regionId_;
 	int pageSize_;
-	std::string requestPars_;
 	std::string serviceName_;
 	std::string clusterId_;
-	std::string groupName_;
 	std::string hasIpCount_;
-	std::string instanceId_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

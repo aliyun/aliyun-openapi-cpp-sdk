@@ -34,6 +34,15 @@ void ModifyGovernanceKubernetesClusterRequest::setMseSessionId(const std::string
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
+std::string ModifyGovernanceKubernetesClusterRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyGovernanceKubernetesClusterRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyGovernanceKubernetesClusterRequest::getNamespaceInfos() const {
   return namespaceInfos_;
 }
@@ -50,15 +59,6 @@ std::string ModifyGovernanceKubernetesClusterRequest::getClusterId() const {
 void ModifyGovernanceKubernetesClusterRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
   setParameter(std::string("ClusterId"), clusterId);
-}
-
-std::string ModifyGovernanceKubernetesClusterRequest::getRegionId() const {
-  return regionId_;
-}
-
-void ModifyGovernanceKubernetesClusterRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string ModifyGovernanceKubernetesClusterRequest::getAcceptLanguage() const {

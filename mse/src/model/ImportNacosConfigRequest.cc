@@ -34,15 +34,6 @@ void ImportNacosConfigRequest::setMseSessionId(const std::string &mseSessionId) 
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string ImportNacosConfigRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ImportNacosConfigRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 std::string ImportNacosConfigRequest::getNamespaceId() const {
   return namespaceId_;
 }
@@ -50,6 +41,24 @@ std::string ImportNacosConfigRequest::getNamespaceId() const {
 void ImportNacosConfigRequest::setNamespaceId(const std::string &namespaceId) {
   namespaceId_ = namespaceId;
   setParameter(std::string("NamespaceId"), namespaceId);
+}
+
+std::string ImportNacosConfigRequest::getPolicy() const {
+  return policy_;
+}
+
+void ImportNacosConfigRequest::setPolicy(const std::string &policy) {
+  policy_ = policy;
+  setParameter(std::string("Policy"), policy);
+}
+
+std::string ImportNacosConfigRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ImportNacosConfigRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
 std::string ImportNacosConfigRequest::getAcceptLanguage() const {
@@ -68,14 +77,5 @@ std::string ImportNacosConfigRequest::getFileUrl() const {
 void ImportNacosConfigRequest::setFileUrl(const std::string &fileUrl) {
   fileUrl_ = fileUrl;
   setParameter(std::string("FileUrl"), fileUrl);
-}
-
-std::string ImportNacosConfigRequest::getPolicy() const {
-  return policy_;
-}
-
-void ImportNacosConfigRequest::setPolicy(const std::string &policy) {
-  policy_ = policy;
-  setParameter(std::string("Policy"), policy);
 }
 

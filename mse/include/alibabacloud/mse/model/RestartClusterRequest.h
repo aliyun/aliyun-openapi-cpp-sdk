@@ -32,23 +32,23 @@ public:
 	~RestartClusterRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
-	std::string getClusterId() const;
-	void setClusterId(const std::string &clusterId);
 	std::string getPodNameList() const;
 	void setPodNameList(const std::string &podNameList);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
 	std::string getRequestPars() const;
 	void setRequestPars(const std::string &requestPars);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
-	std::string clusterId_;
 	std::string podNameList_;
-	std::string instanceId_;
 	std::string requestPars_;
+	std::string clusterId_;
+	std::string instanceId_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

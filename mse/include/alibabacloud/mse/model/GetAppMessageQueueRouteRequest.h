@@ -32,8 +32,12 @@ public:
 	~GetAppMessageQueueRouteRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
+	std::string getAppName() const;
+	void setAppName(const std::string &appName);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
+	std::string get_Namespace() const;
+	void set_Namespace(const std::string &_namespace);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getRegion() const;
@@ -41,7 +45,9 @@ public:
 
 private:
 	std::string mseSessionId_;
+	std::string appName_;
 	std::string appId_;
+	std::string _namespace_;
 	std::string acceptLanguage_;
 	std::string region_;
 };

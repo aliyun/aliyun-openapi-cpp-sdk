@@ -43,15 +43,6 @@ void ListClusterHealthCheckTaskRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
-std::string ListClusterHealthCheckTaskRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ListClusterHealthCheckTaskRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 std::string ListClusterHealthCheckTaskRequest::getRegionId() const {
   return regionId_;
 }
@@ -77,6 +68,15 @@ std::string ListClusterHealthCheckTaskRequest::getRequestPars() const {
 void ListClusterHealthCheckTaskRequest::setRequestPars(const std::string &requestPars) {
   requestPars_ = requestPars;
   setParameter(std::string("RequestPars"), requestPars);
+}
+
+std::string ListClusterHealthCheckTaskRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ListClusterHealthCheckTaskRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
 std::string ListClusterHealthCheckTaskRequest::getAcceptLanguage() const {

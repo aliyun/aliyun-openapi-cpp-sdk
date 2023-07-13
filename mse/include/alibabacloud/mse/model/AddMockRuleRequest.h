@@ -34,43 +34,43 @@ public:
 	void setMseSessionId(const std::string &mseSessionId);
 	std::string getExtraJson() const;
 	void setExtraJson(const std::string &extraJson);
-	std::string getProviderAppId() const;
-	void setProviderAppId(const std::string &providerAppId);
 	std::string getSource() const;
 	void setSource(const std::string &source);
 	bool getEnable() const;
 	void setEnable(bool enable);
 	std::string getScMockItems() const;
 	void setScMockItems(const std::string &scMockItems);
+	std::string getName() const;
+	void setName(const std::string &name);
+	std::string getRegion() const;
+	void setRegion(const std::string &region);
+	std::string getProviderAppId() const;
+	void setProviderAppId(const std::string &providerAppId);
 	std::string getProviderAppName() const;
 	void setProviderAppName(const std::string &providerAppName);
 	std::string getConsumerAppIds() const;
 	void setConsumerAppIds(const std::string &consumerAppIds);
 	std::string getDubboMockItems() const;
 	void setDubboMockItems(const std::string &dubboMockItems);
-	std::string getName() const;
-	void setName(const std::string &name);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 	long getMockType() const;
 	void setMockType(long mockType);
-	std::string getRegion() const;
-	void setRegion(const std::string &region);
 
 private:
 	std::string mseSessionId_;
 	std::string extraJson_;
-	std::string providerAppId_;
 	std::string source_;
 	bool enable_;
 	std::string scMockItems_;
+	std::string name_;
+	std::string region_;
+	std::string providerAppId_;
 	std::string providerAppName_;
 	std::string consumerAppIds_;
 	std::string dubboMockItems_;
-	std::string name_;
 	std::string acceptLanguage_;
 	long mockType_;
-	std::string region_;
 };
 } // namespace Model
 } // namespace Mse

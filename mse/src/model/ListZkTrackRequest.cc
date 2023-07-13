@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::ListZkTrackRequest;
 
 ListZkTrackRequest::ListZkTrackRequest()
     : RpcServiceRequest("mse", "2019-05-31", "ListZkTrack") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 ListZkTrackRequest::~ListZkTrackRequest() {}

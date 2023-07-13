@@ -77,6 +77,7 @@ namespace AlibabaCloud
 					std::string intranetAddress;
 					long diskCapacity;
 					std::string vpcId;
+					std::vector<std::string> expectZones;
 					std::string pubNetworkFlow;
 					std::string chargeType;
 					std::string regionId;

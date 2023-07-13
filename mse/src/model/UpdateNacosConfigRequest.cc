@@ -52,15 +52,6 @@ void UpdateNacosConfigRequest::setType(const std::string &type) {
   setParameter(std::string("Type"), type);
 }
 
-std::string UpdateNacosConfigRequest::getContent() const {
-  return content_;
-}
-
-void UpdateNacosConfigRequest::setContent(const std::string &content) {
-  content_ = content;
-  setParameter(std::string("Content"), content);
-}
-
 std::string UpdateNacosConfigRequest::getAppName() const {
   return appName_;
 }
@@ -115,6 +106,24 @@ void UpdateNacosConfigRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
+std::string UpdateNacosConfigRequest::getDesc() const {
+  return desc_;
+}
+
+void UpdateNacosConfigRequest::setDesc(const std::string &desc) {
+  desc_ = desc;
+  setParameter(std::string("Desc"), desc);
+}
+
+std::string UpdateNacosConfigRequest::getContent() const {
+  return content_;
+}
+
+void UpdateNacosConfigRequest::setContent(const std::string &content) {
+  content_ = content;
+  setParameter(std::string("Content"), content);
+}
+
 std::string UpdateNacosConfigRequest::getDataId() const {
   return dataId_;
 }
@@ -131,15 +140,6 @@ std::string UpdateNacosConfigRequest::getAcceptLanguage() const {
 void UpdateNacosConfigRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
-std::string UpdateNacosConfigRequest::getDesc() const {
-  return desc_;
-}
-
-void UpdateNacosConfigRequest::setDesc(const std::string &desc) {
-  desc_ = desc;
-  setParameter(std::string("Desc"), desc);
 }
 
 std::string UpdateNacosConfigRequest::getMd5() const {

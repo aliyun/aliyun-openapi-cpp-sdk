@@ -34,25 +34,25 @@ public:
 	void setMseSessionId(const std::string &mseSessionId);
 	std::string getTargetNamespaceId() const;
 	void setTargetNamespaceId(const std::string &targetNamespaceId);
+	std::string getOriginNamespaceId() const;
+	void setOriginNamespaceId(const std::string &originNamespaceId);
+	std::string getPolicy() const;
+	void setPolicy(const std::string &policy);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getIds() const;
 	void setIds(const std::string &ids);
-	std::string getOriginNamespaceId() const;
-	void setOriginNamespaceId(const std::string &originNamespaceId);
-	std::string getPolicy() const;
-	void setPolicy(const std::string &policy);
 
 private:
 	std::string mseSessionId_;
 	std::string targetNamespaceId_;
+	std::string originNamespaceId_;
+	std::string policy_;
 	std::string instanceId_;
 	std::string acceptLanguage_;
 	std::string ids_;
-	std::string originNamespaceId_;
-	std::string policy_;
 };
 } // namespace Model
 } // namespace Mse

@@ -39,6 +39,35 @@ void GetTagsBySwimmingLaneGroupIdResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allData = value["Data"]["Tags"];
+	for (const auto &item : allData)
+		data_.push_back(item.asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string GetTagsBySwimmingLaneGroupIdResult::getMessage()const
+{
+	return message_;
+}
+
+std::vector<std::string> GetTagsBySwimmingLaneGroupIdResult::getData()const
+{
+	return data_;
+}
+
+std::string GetTagsBySwimmingLaneGroupIdResult::getErrorCode()const
+{
+	return errorCode_;
+}
+
+bool GetTagsBySwimmingLaneGroupIdResult::getSuccess()const
+{
+	return success_;
 }
 

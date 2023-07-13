@@ -34,6 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					struct AppDetail
+					{
+						std::string appId;
+						int checkTimeout;
+						std::string checkType;
+						int unhealthyCheckTimes;
+						int port;
+						int healthyCheckTimes;
+						int checkInternal;
+						std::string appName;
+						std::string checkPath;
+					};
 					struct NacosAnsCluster
 					{
 						int defaultCheckPort;
@@ -50,6 +62,8 @@ namespace AlibabaCloud
 					std::string metadata;
 					float protectThreshold;
 					bool ephemeral;
+					AppDetail appDetail;
+					std::string source;
 					std::string name;
 				};
 
@@ -57,6 +71,7 @@ namespace AlibabaCloud
 				ListAnsServiceClustersResult();
 				explicit ListAnsServiceClustersResult(const std::string &payload);
 				~ListAnsServiceClustersResult();
+				std::string getHttpCode()const;
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getErrorCode()const;
@@ -65,6 +80,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string httpCode_;
 				std::string message_;
 				Data data_;
 				std::string errorCode_;

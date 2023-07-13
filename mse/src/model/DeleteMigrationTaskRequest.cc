@@ -43,15 +43,6 @@ void DeleteMigrationTaskRequest::setRequestPars(const std::string &requestPars) 
   setParameter(std::string("RequestPars"), requestPars);
 }
 
-std::string DeleteMigrationTaskRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void DeleteMigrationTaskRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 std::string DeleteMigrationTaskRequest::getId() const {
   return id_;
 }
@@ -59,5 +50,14 @@ std::string DeleteMigrationTaskRequest::getId() const {
 void DeleteMigrationTaskRequest::setId(const std::string &id) {
   id_ = id;
   setParameter(std::string("Id"), id);
+}
+
+std::string DeleteMigrationTaskRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void DeleteMigrationTaskRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

@@ -34,6 +34,24 @@ void UpdateEngineNamespaceRequest::setMseSessionId(const std::string &mseSession
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
+int UpdateEngineNamespaceRequest::getServiceCount() const {
+  return serviceCount_;
+}
+
+void UpdateEngineNamespaceRequest::setServiceCount(int serviceCount) {
+  serviceCount_ = serviceCount;
+  setParameter(std::string("ServiceCount"), std::to_string(serviceCount));
+}
+
+std::string UpdateEngineNamespaceRequest::getId() const {
+  return id_;
+}
+
+void UpdateEngineNamespaceRequest::setId(const std::string &id) {
+  id_ = id;
+  setParameter(std::string("Id"), id);
+}
+
 std::string UpdateEngineNamespaceRequest::getClusterId() const {
   return clusterId_;
 }
@@ -52,15 +70,6 @@ void UpdateEngineNamespaceRequest::setInstanceId(const std::string &instanceId) 
   setParameter(std::string("InstanceId"), instanceId);
 }
 
-int UpdateEngineNamespaceRequest::getServiceCount() const {
-  return serviceCount_;
-}
-
-void UpdateEngineNamespaceRequest::setServiceCount(int serviceCount) {
-  serviceCount_ = serviceCount;
-  setParameter(std::string("ServiceCount"), std::to_string(serviceCount));
-}
-
 std::string UpdateEngineNamespaceRequest::getName() const {
   return name_;
 }
@@ -77,15 +86,6 @@ std::string UpdateEngineNamespaceRequest::getAcceptLanguage() const {
 void UpdateEngineNamespaceRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
-std::string UpdateEngineNamespaceRequest::getId() const {
-  return id_;
-}
-
-void UpdateEngineNamespaceRequest::setId(const std::string &id) {
-  id_ = id;
-  setParameter(std::string("Id"), id);
 }
 
 std::string UpdateEngineNamespaceRequest::getDesc() const {

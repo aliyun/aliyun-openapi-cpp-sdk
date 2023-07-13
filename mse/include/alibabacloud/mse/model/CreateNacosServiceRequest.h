@@ -34,30 +34,30 @@ public:
 	void setMseSessionId(const std::string &mseSessionId);
 	bool getEphemeral() const;
 	void setEphemeral(bool ephemeral);
+	std::string getNamespaceId() const;
+	void setNamespaceId(const std::string &namespaceId);
+	std::string getServiceName() const;
+	void setServiceName(const std::string &serviceName);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	std::string getGroupName() const;
 	void setGroupName(const std::string &groupName);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
-	std::string getNamespaceId() const;
-	void setNamespaceId(const std::string &namespaceId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
-	std::string getServiceName() const;
-	void setServiceName(const std::string &serviceName);
 	std::string getProtectThreshold() const;
 	void setProtectThreshold(const std::string &protectThreshold);
 
 private:
 	std::string mseSessionId_;
 	bool ephemeral_;
+	std::string namespaceId_;
+	std::string serviceName_;
 	std::string clusterId_;
 	std::string groupName_;
 	std::string instanceId_;
-	std::string namespaceId_;
 	std::string acceptLanguage_;
-	std::string serviceName_;
 	std::string protectThreshold_;
 };
 } // namespace Model

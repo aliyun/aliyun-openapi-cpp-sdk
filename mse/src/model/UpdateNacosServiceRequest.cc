@@ -34,6 +34,24 @@ void UpdateNacosServiceRequest::setMseSessionId(const std::string &mseSessionId)
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
+std::string UpdateNacosServiceRequest::getNamespaceId() const {
+  return namespaceId_;
+}
+
+void UpdateNacosServiceRequest::setNamespaceId(const std::string &namespaceId) {
+  namespaceId_ = namespaceId;
+  setParameter(std::string("NamespaceId"), namespaceId);
+}
+
+std::string UpdateNacosServiceRequest::getServiceName() const {
+  return serviceName_;
+}
+
+void UpdateNacosServiceRequest::setServiceName(const std::string &serviceName) {
+  serviceName_ = serviceName;
+  setParameter(std::string("ServiceName"), serviceName);
+}
+
 std::string UpdateNacosServiceRequest::getClusterId() const {
   return clusterId_;
 }
@@ -61,15 +79,6 @@ void UpdateNacosServiceRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string UpdateNacosServiceRequest::getNamespaceId() const {
-  return namespaceId_;
-}
-
-void UpdateNacosServiceRequest::setNamespaceId(const std::string &namespaceId) {
-  namespaceId_ = namespaceId;
-  setParameter(std::string("NamespaceId"), namespaceId);
-}
-
 std::string UpdateNacosServiceRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }
@@ -77,15 +86,6 @@ std::string UpdateNacosServiceRequest::getAcceptLanguage() const {
 void UpdateNacosServiceRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
-std::string UpdateNacosServiceRequest::getServiceName() const {
-  return serviceName_;
-}
-
-void UpdateNacosServiceRequest::setServiceName(const std::string &serviceName) {
-  serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), serviceName);
 }
 
 std::string UpdateNacosServiceRequest::getProtectThreshold() const {

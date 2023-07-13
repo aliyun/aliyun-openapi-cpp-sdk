@@ -37,10 +37,18 @@ namespace AlibabaCloud
 				GetTagsBySwimmingLaneGroupIdResult();
 				explicit GetTagsBySwimmingLaneGroupIdResult(const std::string &payload);
 				~GetTagsBySwimmingLaneGroupIdResult();
+				std::string getMessage()const;
+				std::vector<std::string> getData()const;
+				std::string getErrorCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
+				std::vector<std::string> data_;
+				std::string errorCode_;
+				bool success_;
 
 			};
 		}

@@ -43,6 +43,15 @@ void DeleteSwimmingLaneRequest::setLaneId(long laneId) {
   setParameter(std::string("LaneId"), std::to_string(laneId));
 }
 
+std::string DeleteSwimmingLaneRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void DeleteSwimmingLaneRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
+}
+
 std::string DeleteSwimmingLaneRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }

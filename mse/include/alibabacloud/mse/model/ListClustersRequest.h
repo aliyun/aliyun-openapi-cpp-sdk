@@ -36,8 +36,6 @@ public:
 	~ListClustersRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
-	std::string getClusterAliasName() const;
-	void setClusterAliasName(const std::string &clusterAliasName);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
 	std::string getResourceGroupId() const;
@@ -48,21 +46,23 @@ public:
 	void setRequestPars(const std::string &requestPars);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
+	std::string getClusterAliasName() const;
+	void setClusterAliasName(const std::string &clusterAliasName);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
-	std::string clusterAliasName_;
 	int pageNum_;
 	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string requestPars_;
 	int pageSize_;
-	std::string acceptLanguage_;
 	std::vector<Tag> tag_;
+	std::string clusterAliasName_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Mse

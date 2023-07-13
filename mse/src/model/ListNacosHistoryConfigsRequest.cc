@@ -43,24 +43,6 @@ void ListNacosHistoryConfigsRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
-std::string ListNacosHistoryConfigsRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ListNacosHistoryConfigsRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string ListNacosHistoryConfigsRequest::getDataId() const {
-  return dataId_;
-}
-
-void ListNacosHistoryConfigsRequest::setDataId(const std::string &dataId) {
-  dataId_ = dataId;
-  setParameter(std::string("DataId"), dataId);
-}
-
 std::string ListNacosHistoryConfigsRequest::getRegionId() const {
   return regionId_;
 }
@@ -97,15 +79,6 @@ void ListNacosHistoryConfigsRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string ListNacosHistoryConfigsRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void ListNacosHistoryConfigsRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 std::string ListNacosHistoryConfigsRequest::getGroup() const {
   return group_;
 }
@@ -113,5 +86,32 @@ std::string ListNacosHistoryConfigsRequest::getGroup() const {
 void ListNacosHistoryConfigsRequest::setGroup(const std::string &group) {
   group_ = group;
   setParameter(std::string("Group"), group);
+}
+
+std::string ListNacosHistoryConfigsRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ListNacosHistoryConfigsRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string ListNacosHistoryConfigsRequest::getDataId() const {
+  return dataId_;
+}
+
+void ListNacosHistoryConfigsRequest::setDataId(const std::string &dataId) {
+  dataId_ = dataId;
+  setParameter(std::string("DataId"), dataId);
+}
+
+std::string ListNacosHistoryConfigsRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void ListNacosHistoryConfigsRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

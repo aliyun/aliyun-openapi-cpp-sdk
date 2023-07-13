@@ -64,12 +64,8 @@ void QueryGovernanceKubernetesClusterResult::parse(const std::string &payload)
 			clusterListObject.pilotStartTime = dataNodeResultClusterList["PilotStartTime"].asString();
 		data_.result.push_back(clusterListObject);
 	}
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 
@@ -80,19 +76,9 @@ std::string QueryGovernanceKubernetesClusterResult::getMessage()const
 	return message_;
 }
 
-int QueryGovernanceKubernetesClusterResult::getHttpStatusCode()const
-{
-	return httpStatusCode_;
-}
-
 QueryGovernanceKubernetesClusterResult::Data QueryGovernanceKubernetesClusterResult::getData()const
 {
 	return data_;
-}
-
-int QueryGovernanceKubernetesClusterResult::getCode()const
-{
-	return code_;
 }
 
 bool QueryGovernanceKubernetesClusterResult::getSuccess()const

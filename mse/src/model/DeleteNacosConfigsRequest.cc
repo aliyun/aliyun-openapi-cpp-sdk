@@ -34,15 +34,6 @@ void DeleteNacosConfigsRequest::setMseSessionId(const std::string &mseSessionId)
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string DeleteNacosConfigsRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void DeleteNacosConfigsRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 std::string DeleteNacosConfigsRequest::getNamespaceId() const {
   return namespaceId_;
 }
@@ -50,6 +41,15 @@ std::string DeleteNacosConfigsRequest::getNamespaceId() const {
 void DeleteNacosConfigsRequest::setNamespaceId(const std::string &namespaceId) {
   namespaceId_ = namespaceId;
   setParameter(std::string("NamespaceId"), namespaceId);
+}
+
+std::string DeleteNacosConfigsRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void DeleteNacosConfigsRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
 std::string DeleteNacosConfigsRequest::getAcceptLanguage() const {

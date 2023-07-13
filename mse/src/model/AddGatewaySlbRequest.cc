@@ -88,6 +88,20 @@ void AddGatewaySlbRequest::setVServerGroupId(const std::string &vServerGroupId) 
   setParameter(std::string("VServerGroupId"), vServerGroupId);
 }
 
+std::vector<AddGatewaySlbRequest::VServiceList> AddGatewaySlbRequest::getVServiceList() const {
+  return vServiceList_;
+}
+
+void AddGatewaySlbRequest::setVServiceList(const std::vector<AddGatewaySlbRequest::VServiceList> &vServiceList) {
+  vServiceList_ = vServiceList;
+  for(int dep1 = 0; dep1 != vServiceList.size(); dep1++) {
+    setParameter(std::string("VServiceList") + "." + std::to_string(dep1 + 1) + ".VServerGroupId", vServiceList[dep1].vServerGroupId);
+    setParameter(std::string("VServiceList") + "." + std::to_string(dep1 + 1) + ".Protocol", vServiceList[dep1].protocol);
+    setParameter(std::string("VServiceList") + "." + std::to_string(dep1 + 1) + ".Port", std::to_string(vServiceList[dep1].port));
+    setParameter(std::string("VServiceList") + "." + std::to_string(dep1 + 1) + ".VServerGroupName", vServiceList[dep1].vServerGroupName);
+  }
+}
+
 std::string AddGatewaySlbRequest::getHttpsVServerGroupId() const {
   return httpsVServerGroupId_;
 }

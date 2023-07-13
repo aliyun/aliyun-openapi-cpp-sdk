@@ -25,15 +25,6 @@ QueryClusterDetailRequest::QueryClusterDetailRequest()
 
 QueryClusterDetailRequest::~QueryClusterDetailRequest() {}
 
-bool QueryClusterDetailRequest::getAclSwitch() const {
-  return aclSwitch_;
-}
-
-void QueryClusterDetailRequest::setAclSwitch(bool aclSwitch) {
-  aclSwitch_ = aclSwitch;
-  setParameter(std::string("AclSwitch"), aclSwitch ? "true" : "false");
-}
-
 std::string QueryClusterDetailRequest::getMseSessionId() const {
   return mseSessionId_;
 }
@@ -41,6 +32,15 @@ std::string QueryClusterDetailRequest::getMseSessionId() const {
 void QueryClusterDetailRequest::setMseSessionId(const std::string &mseSessionId) {
   mseSessionId_ = mseSessionId;
   setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
+bool QueryClusterDetailRequest::getAclSwitch() const {
+  return aclSwitch_;
+}
+
+void QueryClusterDetailRequest::setAclSwitch(bool aclSwitch) {
+  aclSwitch_ = aclSwitch;
+  setParameter(std::string("AclSwitch"), aclSwitch ? "true" : "false");
 }
 
 std::string QueryClusterDetailRequest::getOrderId() const {

@@ -45,28 +45,45 @@ namespace AlibabaCloud
 						std::string projectName;
 						bool logEnabled;
 					};
-					int status;
+					struct ElasticPolicy
+					{
+						struct TimePolicyListItem
+						{
+							std::string endTime;
+							std::string startTime;
+							int desiredReplica;
+						};
+						std::string elasticType;
+						int maxReplica;
+						std::vector<TimePolicyListItem> timePolicyList;
+					};
+					std::string elasticType;
 					std::string resourceGroupId;
-					std::string instanceId;
 					XtraceDetails xtraceDetails;
 					std::string vpc;
 					std::string gmtModified;
 					std::string vswitch2;
+					std::string name;
+					std::string statusDesc;
+					std::string mseTag;
+					bool elastic;
+					std::string vswitch;
+					LogConfigDetails logConfigDetails;
+					int status;
+					std::string instanceId;
+					ElasticPolicy elasticPolicy;
+					int totalReplica;
 					std::string securityGroup;
 					int replica;
 					std::string endDate;
-					std::string name;
 					std::string gatewayUniqueId;
-					std::string statusDesc;
 					std::string gmtCreate;
-					std::string mseTag;
 					std::string chargeType;
 					std::string region;
 					std::string primaryUser;
-					std::string vswitch;
 					long id;
 					std::string spec;
-					LogConfigDetails logConfigDetails;
+					int elasticReplica;
 				};
 
 

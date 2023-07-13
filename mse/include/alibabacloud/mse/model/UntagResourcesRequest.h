@@ -30,27 +30,27 @@ class ALIBABACLOUD_MSE_EXPORT UntagResourcesRequest : public RpcServiceRequest {
 public:
 	UntagResourcesRequest();
 	~UntagResourcesRequest();
-	bool getAll() const;
-	void setAll(bool all);
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	bool getAll() const;
+	void setAll(bool all);
 	std::vector<std::string> getResourceId() const;
 	void setResourceId(const std::vector<std::string> &resourceId);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::vector<std::string> getTagKey() const;
 	void setTagKey(const std::vector<std::string> &tagKey);
 
 private:
-	bool all_;
 	std::string mseSessionId_;
+	std::string regionId_;
+	bool all_;
 	std::vector<std::string> resourceId_;
 	std::string resourceType_;
-	std::string regionId_;
 	std::string acceptLanguage_;
 	std::vector<std::string> tagKey_;
 };

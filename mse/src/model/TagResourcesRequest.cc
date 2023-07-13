@@ -34,6 +34,29 @@ void TagResourcesRequest::setMseSessionId(const std::string &mseSessionId) {
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
+std::string TagResourcesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void TagResourcesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::vector<TagResourcesRequest::Tag> TagResourcesRequest::getTag() const {
+  return tag_;
+}
+
+void TagResourcesRequest::setTag(const std::vector<TagResourcesRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 std::vector<std::string> TagResourcesRequest::getResourceId() const {
   return resourceId_;
 }
@@ -51,15 +74,6 @@ void TagResourcesRequest::setResourceType(const std::string &resourceType) {
   setParameter(std::string("ResourceType"), resourceType);
 }
 
-std::string TagResourcesRequest::getRegionId() const {
-  return regionId_;
-}
-
-void TagResourcesRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string TagResourcesRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }
@@ -67,19 +81,5 @@ std::string TagResourcesRequest::getAcceptLanguage() const {
 void TagResourcesRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
-std::vector<TagResourcesRequest::Tag> TagResourcesRequest::getTag() const {
-  return tag_;
-}
-
-void TagResourcesRequest::setTag(const std::vector<TagResourcesRequest::Tag> &tag) {
-  tag_ = tag;
-  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
-  auto tagObj = tag.at(dep1);
-  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
-    setParameter(tagObjStr + ".Value", tagObj.value);
-    setParameter(tagObjStr + ".Key", tagObj.key);
-  }
 }
 

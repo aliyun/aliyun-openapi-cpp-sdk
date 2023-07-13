@@ -25,15 +25,6 @@ UpdateConfigRequest::UpdateConfigRequest()
 
 UpdateConfigRequest::~UpdateConfigRequest() {}
 
-std::string UpdateConfigRequest::getOpenSuperAcl() const {
-  return openSuperAcl_;
-}
-
-void UpdateConfigRequest::setOpenSuperAcl(const std::string &openSuperAcl) {
-  openSuperAcl_ = openSuperAcl;
-  setBodyParameter(std::string("OpenSuperAcl"), openSuperAcl);
-}
-
 std::string UpdateConfigRequest::getMseSessionId() const {
   return mseSessionId_;
 }
@@ -61,24 +52,6 @@ void UpdateConfigRequest::setPassWord(const std::string &passWord) {
   setParameter(std::string("PassWord"), passWord);
 }
 
-std::string UpdateConfigRequest::getSnapshotCount() const {
-  return snapshotCount_;
-}
-
-void UpdateConfigRequest::setSnapshotCount(const std::string &snapshotCount) {
-  snapshotCount_ = snapshotCount;
-  setParameter(std::string("SnapshotCount"), snapshotCount);
-}
-
-std::string UpdateConfigRequest::getMinSessionTimeout() const {
-  return minSessionTimeout_;
-}
-
-void UpdateConfigRequest::setMinSessionTimeout(const std::string &minSessionTimeout) {
-  minSessionTimeout_ = minSessionTimeout;
-  setParameter(std::string("MinSessionTimeout"), minSessionTimeout);
-}
-
 std::string UpdateConfigRequest::getMaxClientCnxns() const {
   return maxClientCnxns_;
 }
@@ -97,15 +70,6 @@ void UpdateConfigRequest::setRequestPars(const std::string &requestPars) {
   setParameter(std::string("RequestPars"), requestPars);
 }
 
-std::string UpdateConfigRequest::getJuteMaxbuffer() const {
-  return juteMaxbuffer_;
-}
-
-void UpdateConfigRequest::setJuteMaxbuffer(const std::string &juteMaxbuffer) {
-  juteMaxbuffer_ = juteMaxbuffer;
-  setParameter(std::string("JuteMaxbuffer"), juteMaxbuffer);
-}
-
 bool UpdateConfigRequest::getNamingAuthEnabled() const {
   return namingAuthEnabled_;
 }
@@ -113,15 +77,6 @@ bool UpdateConfigRequest::getNamingAuthEnabled() const {
 void UpdateConfigRequest::setNamingAuthEnabled(bool namingAuthEnabled) {
   namingAuthEnabled_ = namingAuthEnabled;
   setParameter(std::string("NamingAuthEnabled"), namingAuthEnabled ? "true" : "false");
-}
-
-std::string UpdateConfigRequest::getConfigType() const {
-  return configType_;
-}
-
-void UpdateConfigRequest::setConfigType(const std::string &configType) {
-  configType_ = configType;
-  setParameter(std::string("ConfigType"), configType);
 }
 
 std::string UpdateConfigRequest::getExtendedTypesEnable() const {
@@ -142,15 +97,6 @@ void UpdateConfigRequest::setAutopurgeSnapRetainCount(const std::string &autopur
   setParameter(std::string("AutopurgeSnapRetainCount"), autopurgeSnapRetainCount);
 }
 
-std::string UpdateConfigRequest::getMaxSessionTimeout() const {
-  return maxSessionTimeout_;
-}
-
-void UpdateConfigRequest::setMaxSessionTimeout(const std::string &maxSessionTimeout) {
-  maxSessionTimeout_ = maxSessionTimeout;
-  setParameter(std::string("MaxSessionTimeout"), maxSessionTimeout);
-}
-
 bool UpdateConfigRequest::getConfigSecretEnabled() const {
   return configSecretEnabled_;
 }
@@ -169,24 +115,6 @@ void UpdateConfigRequest::setMCPEnabled(bool mCPEnabled) {
   setParameter(std::string("MCPEnabled"), mCPEnabled ? "true" : "false");
 }
 
-std::string UpdateConfigRequest::getTickTime() const {
-  return tickTime_;
-}
-
-void UpdateConfigRequest::setTickTime(const std::string &tickTime) {
-  tickTime_ = tickTime;
-  setParameter(std::string("TickTime"), tickTime);
-}
-
-std::string UpdateConfigRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void UpdateConfigRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
-}
-
 std::string UpdateConfigRequest::getSyncLimit() const {
   return syncLimit_;
 }
@@ -203,6 +131,96 @@ std::string UpdateConfigRequest::getInstanceId() const {
 void UpdateConfigRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
+}
+
+bool UpdateConfigRequest::getTLSEnabled() const {
+  return tLSEnabled_;
+}
+
+void UpdateConfigRequest::setTLSEnabled(bool tLSEnabled) {
+  tLSEnabled_ = tLSEnabled;
+  setParameter(std::string("TLSEnabled"), tLSEnabled ? "true" : "false");
+}
+
+std::string UpdateConfigRequest::getOpenSuperAcl() const {
+  return openSuperAcl_;
+}
+
+void UpdateConfigRequest::setOpenSuperAcl(const std::string &openSuperAcl) {
+  openSuperAcl_ = openSuperAcl;
+  setBodyParameter(std::string("OpenSuperAcl"), openSuperAcl);
+}
+
+bool UpdateConfigRequest::getEurekaSupported() const {
+  return eurekaSupported_;
+}
+
+void UpdateConfigRequest::setEurekaSupported(bool eurekaSupported) {
+  eurekaSupported_ = eurekaSupported;
+  setParameter(std::string("EurekaSupported"), eurekaSupported ? "true" : "false");
+}
+
+std::string UpdateConfigRequest::getSnapshotCount() const {
+  return snapshotCount_;
+}
+
+void UpdateConfigRequest::setSnapshotCount(const std::string &snapshotCount) {
+  snapshotCount_ = snapshotCount;
+  setParameter(std::string("SnapshotCount"), snapshotCount);
+}
+
+std::string UpdateConfigRequest::getMinSessionTimeout() const {
+  return minSessionTimeout_;
+}
+
+void UpdateConfigRequest::setMinSessionTimeout(const std::string &minSessionTimeout) {
+  minSessionTimeout_ = minSessionTimeout;
+  setParameter(std::string("MinSessionTimeout"), minSessionTimeout);
+}
+
+std::string UpdateConfigRequest::getJuteMaxbuffer() const {
+  return juteMaxbuffer_;
+}
+
+void UpdateConfigRequest::setJuteMaxbuffer(const std::string &juteMaxbuffer) {
+  juteMaxbuffer_ = juteMaxbuffer;
+  setParameter(std::string("JuteMaxbuffer"), juteMaxbuffer);
+}
+
+std::string UpdateConfigRequest::getConfigType() const {
+  return configType_;
+}
+
+void UpdateConfigRequest::setConfigType(const std::string &configType) {
+  configType_ = configType;
+  setParameter(std::string("ConfigType"), configType);
+}
+
+std::string UpdateConfigRequest::getMaxSessionTimeout() const {
+  return maxSessionTimeout_;
+}
+
+void UpdateConfigRequest::setMaxSessionTimeout(const std::string &maxSessionTimeout) {
+  maxSessionTimeout_ = maxSessionTimeout;
+  setParameter(std::string("MaxSessionTimeout"), maxSessionTimeout);
+}
+
+std::string UpdateConfigRequest::getTickTime() const {
+  return tickTime_;
+}
+
+void UpdateConfigRequest::setTickTime(const std::string &tickTime) {
+  tickTime_ = tickTime;
+  setParameter(std::string("TickTime"), tickTime);
+}
+
+std::string UpdateConfigRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void UpdateConfigRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string UpdateConfigRequest::getAutopurgePurgeInterval() const {

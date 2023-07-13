@@ -132,6 +132,9 @@ void QueryClusterInfoResult::parse(const std::string &payload)
 			instanceModelObject.zone = dataNodeInstanceModelsInstanceModel["Zone"].asString();
 		data_.instanceModels.push_back(instanceModelObject);
 	}
+		auto allExpectZones = dataNode["ExpectZones"]["ExpectZone"];
+		for (auto value : allExpectZones)
+			data_.expectZones.push_back(value.asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["ErrorCode"].isNull())

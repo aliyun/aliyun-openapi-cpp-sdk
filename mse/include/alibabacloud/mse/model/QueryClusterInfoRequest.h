@@ -30,31 +30,31 @@ class ALIBABACLOUD_MSE_EXPORT QueryClusterInfoRequest : public RpcServiceRequest
 public:
 	QueryClusterInfoRequest();
 	~QueryClusterInfoRequest();
-	bool getAclSwitch() const;
-	void setAclSwitch(bool aclSwitch);
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getRequestPars() const;
+	void setRequestPars(const std::string &requestPars);
+	bool getAclSwitch() const;
+	void setAclSwitch(bool aclSwitch);
 	std::string getOrderId() const;
 	void setOrderId(const std::string &orderId);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
-	std::string getRequestPars() const;
-	void setRequestPars(const std::string &requestPars);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
-	bool aclSwitch_;
 	std::string mseSessionId_;
+	std::string regionId_;
+	std::string requestPars_;
+	bool aclSwitch_;
 	std::string orderId_;
 	std::string clusterId_;
 	std::string instanceId_;
-	std::string regionId_;
-	std::string requestPars_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

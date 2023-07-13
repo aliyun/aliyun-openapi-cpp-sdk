@@ -32,8 +32,6 @@ public:
 	~ListEurekaServicesRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
-	std::string getClusterId() const;
-	void setClusterId(const std::string &clusterId);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
 	std::string getRegionId() const;
@@ -42,16 +40,18 @@ public:
 	void setRequestPars(const std::string &requestPars);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
-	std::string clusterId_;
 	int pageNum_;
 	std::string regionId_;
 	std::string requestPars_;
 	int pageSize_;
+	std::string clusterId_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

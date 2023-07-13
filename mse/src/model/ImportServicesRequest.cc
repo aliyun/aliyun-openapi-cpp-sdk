@@ -79,6 +79,24 @@ void ImportServicesRequest::setSourceType(const std::string &sourceType) {
   setParameter(std::string("SourceType"), sourceType);
 }
 
+std::string ImportServicesRequest::getFcServiceName() const {
+  return fcServiceName_;
+}
+
+void ImportServicesRequest::setFcServiceName(const std::string &fcServiceName) {
+  fcServiceName_ = fcServiceName;
+  setParameter(std::string("FcServiceName"), fcServiceName);
+}
+
+std::string ImportServicesRequest::getFcVersion() const {
+  return fcVersion_;
+}
+
+void ImportServicesRequest::setFcVersion(const std::string &fcVersion) {
+  fcVersion_ = fcVersion;
+  setParameter(std::string("FcVersion"), fcVersion);
+}
+
 std::string ImportServicesRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }

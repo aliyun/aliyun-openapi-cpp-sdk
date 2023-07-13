@@ -34,24 +34,6 @@ void ListListenersByIpRequest::setMseSessionId(const std::string &mseSessionId) 
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string ListListenersByIpRequest::getIp() const {
-  return ip_;
-}
-
-void ListListenersByIpRequest::setIp(const std::string &ip) {
-  ip_ = ip;
-  setParameter(std::string("Ip"), ip);
-}
-
-std::string ListListenersByIpRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ListListenersByIpRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 std::string ListListenersByIpRequest::getNamespaceId() const {
   return namespaceId_;
 }
@@ -68,6 +50,24 @@ std::string ListListenersByIpRequest::getRequestPars() const {
 void ListListenersByIpRequest::setRequestPars(const std::string &requestPars) {
   requestPars_ = requestPars;
   setParameter(std::string("RequestPars"), requestPars);
+}
+
+std::string ListListenersByIpRequest::getIp() const {
+  return ip_;
+}
+
+void ListListenersByIpRequest::setIp(const std::string &ip) {
+  ip_ = ip;
+  setParameter(std::string("Ip"), ip);
+}
+
+std::string ListListenersByIpRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ListListenersByIpRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
 std::string ListListenersByIpRequest::getAcceptLanguage() const {

@@ -34,15 +34,6 @@ void QueryZnodeDetailRequest::setMseSessionId(const std::string &mseSessionId) {
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string QueryZnodeDetailRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void QueryZnodeDetailRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
-}
-
 std::string QueryZnodeDetailRequest::getPath() const {
   return path_;
 }
@@ -52,15 +43,6 @@ void QueryZnodeDetailRequest::setPath(const std::string &path) {
   setParameter(std::string("Path"), path);
 }
 
-std::string QueryZnodeDetailRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void QueryZnodeDetailRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 std::string QueryZnodeDetailRequest::getRequestPars() const {
   return requestPars_;
 }
@@ -68,6 +50,24 @@ std::string QueryZnodeDetailRequest::getRequestPars() const {
 void QueryZnodeDetailRequest::setRequestPars(const std::string &requestPars) {
   requestPars_ = requestPars;
   setParameter(std::string("RequestPars"), requestPars);
+}
+
+std::string QueryZnodeDetailRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void QueryZnodeDetailRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
+}
+
+std::string QueryZnodeDetailRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void QueryZnodeDetailRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
 std::string QueryZnodeDetailRequest::getAcceptLanguage() const {

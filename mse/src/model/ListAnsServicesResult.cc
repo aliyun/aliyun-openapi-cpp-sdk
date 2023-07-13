@@ -53,6 +53,8 @@ void ListAnsServicesResult::parse(const std::string &payload)
 			dataObject.name = valueDataSimpleNacosAnsService["Name"].asString();
 		if(!valueDataSimpleNacosAnsService["ClusterCount"].isNull())
 			dataObject.clusterCount = std::stoi(valueDataSimpleNacosAnsService["ClusterCount"].asString());
+		if(!valueDataSimpleNacosAnsService["Source"].isNull())
+			dataObject.source = valueDataSimpleNacosAnsService["Source"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["HttpCode"].isNull())

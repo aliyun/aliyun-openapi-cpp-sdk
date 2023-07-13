@@ -94,6 +94,10 @@ void QueryConfigResult::parse(const std::string &payload)
 		data_.configContentLimit = std::stol(dataNode["ConfigContentLimit"].asString());
 	if(!dataNode["ExtendedTypesEnable"].isNull())
 		data_.extendedTypesEnable = dataNode["ExtendedTypesEnable"].asString() == "true";
+	if(!dataNode["EurekaSupported"].isNull())
+		data_.eurekaSupported = dataNode["EurekaSupported"].asString() == "true";
+	if(!dataNode["TLSEnabled"].isNull())
+		data_.tLSEnabled = dataNode["TLSEnabled"].asString() == "true";
 	auto nacosRunningEnvNode = dataNode["NacosRunningEnv"];
 	if(!nacosRunningEnvNode["emptyProtect"].isNull())
 		data_.nacosRunningEnv.emptyProtect = nacosRunningEnvNode["emptyProtect"].asString() == "true";

@@ -32,23 +32,23 @@ public:
 	~ListInstanceCountRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
-	std::string getClusterType() const;
-	void setClusterType(const std::string &clusterType);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getMseVersion() const;
-	void setMseVersion(const std::string &mseVersion);
 	std::string getRequestPars() const;
 	void setRequestPars(const std::string &requestPars);
+	std::string getClusterType() const;
+	void setClusterType(const std::string &clusterType);
+	std::string getMseVersion() const;
+	void setMseVersion(const std::string &mseVersion);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
-	std::string clusterType_;
 	std::string regionId_;
-	std::string mseVersion_;
 	std::string requestPars_;
+	std::string clusterType_;
+	std::string mseVersion_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

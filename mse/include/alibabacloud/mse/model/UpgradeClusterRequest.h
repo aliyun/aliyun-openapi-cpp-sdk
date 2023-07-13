@@ -30,22 +30,22 @@ class ALIBABACLOUD_MSE_EXPORT UpgradeClusterRequest : public RpcServiceRequest {
 public:
 	UpgradeClusterRequest();
 	~UpgradeClusterRequest();
-	std::string getUpgradeVersion() const;
-	void setUpgradeVersion(const std::string &upgradeVersion);
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
 	std::string getRequestPars() const;
 	void setRequestPars(const std::string &requestPars);
+	std::string getUpgradeVersion() const;
+	void setUpgradeVersion(const std::string &upgradeVersion);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
-	std::string upgradeVersion_;
 	std::string mseSessionId_;
-	std::string instanceId_;
 	std::string requestPars_;
+	std::string upgradeVersion_;
+	std::string instanceId_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

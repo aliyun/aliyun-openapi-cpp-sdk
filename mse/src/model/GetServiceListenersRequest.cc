@@ -61,6 +61,33 @@ void GetServiceListenersRequest::setNamespaceId(const std::string &namespaceId) 
   setParameter(std::string("NamespaceId"), namespaceId);
 }
 
+std::string GetServiceListenersRequest::getRequestPars() const {
+  return requestPars_;
+}
+
+void GetServiceListenersRequest::setRequestPars(const std::string &requestPars) {
+  requestPars_ = requestPars;
+  setParameter(std::string("RequestPars"), requestPars);
+}
+
+std::string GetServiceListenersRequest::getGroupName() const {
+  return groupName_;
+}
+
+void GetServiceListenersRequest::setGroupName(const std::string &groupName) {
+  groupName_ = groupName;
+  setParameter(std::string("GroupName"), groupName);
+}
+
+std::string GetServiceListenersRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void GetServiceListenersRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
 std::string GetServiceListenersRequest::getRegionId() const {
   return regionId_;
 }
@@ -77,15 +104,6 @@ int GetServiceListenersRequest::getPageSize() const {
 void GetServiceListenersRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
-std::string GetServiceListenersRequest::getRequestPars() const {
-  return requestPars_;
-}
-
-void GetServiceListenersRequest::setRequestPars(const std::string &requestPars) {
-  requestPars_ = requestPars;
-  setParameter(std::string("RequestPars"), requestPars);
 }
 
 std::string GetServiceListenersRequest::getServiceName() const {
@@ -106,15 +124,6 @@ void GetServiceListenersRequest::setClusterId(const std::string &clusterId) {
   setParameter(std::string("ClusterId"), clusterId);
 }
 
-std::string GetServiceListenersRequest::getGroupName() const {
-  return groupName_;
-}
-
-void GetServiceListenersRequest::setGroupName(const std::string &groupName) {
-  groupName_ = groupName;
-  setParameter(std::string("GroupName"), groupName);
-}
-
 std::string GetServiceListenersRequest::getHasIpCount() const {
   return hasIpCount_;
 }
@@ -122,15 +131,6 @@ std::string GetServiceListenersRequest::getHasIpCount() const {
 void GetServiceListenersRequest::setHasIpCount(const std::string &hasIpCount) {
   hasIpCount_ = hasIpCount;
   setParameter(std::string("HasIpCount"), hasIpCount);
-}
-
-std::string GetServiceListenersRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void GetServiceListenersRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
 }
 
 std::string GetServiceListenersRequest::getAcceptLanguage() const {

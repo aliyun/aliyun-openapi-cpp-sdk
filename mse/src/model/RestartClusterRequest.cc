@@ -34,15 +34,6 @@ void RestartClusterRequest::setMseSessionId(const std::string &mseSessionId) {
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string RestartClusterRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void RestartClusterRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
-}
-
 std::string RestartClusterRequest::getPodNameList() const {
   return podNameList_;
 }
@@ -52,15 +43,6 @@ void RestartClusterRequest::setPodNameList(const std::string &podNameList) {
   setParameter(std::string("PodNameList"), podNameList);
 }
 
-std::string RestartClusterRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void RestartClusterRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 std::string RestartClusterRequest::getRequestPars() const {
   return requestPars_;
 }
@@ -68,6 +50,24 @@ std::string RestartClusterRequest::getRequestPars() const {
 void RestartClusterRequest::setRequestPars(const std::string &requestPars) {
   requestPars_ = requestPars;
   setParameter(std::string("RequestPars"), requestPars);
+}
+
+std::string RestartClusterRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void RestartClusterRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
+}
+
+std::string RestartClusterRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void RestartClusterRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
 std::string RestartClusterRequest::getAcceptLanguage() const {

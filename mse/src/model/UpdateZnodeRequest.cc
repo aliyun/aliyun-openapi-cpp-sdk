@@ -43,15 +43,6 @@ void UpdateZnodeRequest::setData(const std::string &data) {
   setParameter(std::string("Data"), data);
 }
 
-std::string UpdateZnodeRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void UpdateZnodeRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
-}
-
 std::string UpdateZnodeRequest::getPath() const {
   return path_;
 }
@@ -68,6 +59,15 @@ std::string UpdateZnodeRequest::getRequestPars() const {
 void UpdateZnodeRequest::setRequestPars(const std::string &requestPars) {
   requestPars_ = requestPars;
   setParameter(std::string("RequestPars"), requestPars);
+}
+
+std::string UpdateZnodeRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void UpdateZnodeRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string UpdateZnodeRequest::getAcceptLanguage() const {

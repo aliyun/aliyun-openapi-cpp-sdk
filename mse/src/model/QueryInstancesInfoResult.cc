@@ -61,6 +61,8 @@ void QueryInstancesInfoResult::parse(const std::string &payload)
 			dataObject.clientPort = valueDataInstanceModels["ClientPort"].asString();
 		if(!valueDataInstanceModels["Zone"].isNull())
 			dataObject.zone = valueDataInstanceModels["Zone"].asString();
+		if(!valueDataInstanceModels["ZoneDistributed"].isNull())
+			dataObject.zoneDistributed = valueDataInstanceModels["ZoneDistributed"].asString() == "true";
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

@@ -34,21 +34,21 @@ public:
 	void setMseSessionId(const std::string &mseSessionId);
 	std::string getClusterName() const;
 	void setClusterName(const std::string &clusterName);
-	std::string getClusterId() const;
-	void setClusterId(const std::string &clusterId);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
 	std::string clusterName_;
-	std::string clusterId_;
 	int pageNumber_;
 	int pageSize_;
+	std::string clusterId_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

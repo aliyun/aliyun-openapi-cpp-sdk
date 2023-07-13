@@ -34,23 +34,6 @@ void ListTagResourcesRequest::setMseSessionId(const std::string &mseSessionId) {
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::vector<std::string> ListTagResourcesRequest::getResourceId() const {
-  return resourceId_;
-}
-
-void ListTagResourcesRequest::setResourceId(const std::vector<std::string> &resourceId) {
-  resourceId_ = resourceId;
-}
-
-std::string ListTagResourcesRequest::getResourceType() const {
-  return resourceType_;
-}
-
-void ListTagResourcesRequest::setResourceType(const std::string &resourceType) {
-  resourceType_ = resourceType;
-  setParameter(std::string("ResourceType"), resourceType);
-}
-
 std::string ListTagResourcesRequest::getRegionId() const {
   return regionId_;
 }
@@ -69,15 +52,6 @@ void ListTagResourcesRequest::setNextToken(const std::string &nextToken) {
   setParameter(std::string("NextToken"), nextToken);
 }
 
-std::string ListTagResourcesRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void ListTagResourcesRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 std::vector<ListTagResourcesRequest::Tag> ListTagResourcesRequest::getTag() const {
   return tag_;
 }
@@ -90,5 +64,31 @@ void ListTagResourcesRequest::setTag(const std::vector<ListTagResourcesRequest::
     setParameter(tagObjStr + ".Value", tagObj.value);
     setParameter(tagObjStr + ".Key", tagObj.key);
   }
+}
+
+std::vector<std::string> ListTagResourcesRequest::getResourceId() const {
+  return resourceId_;
+}
+
+void ListTagResourcesRequest::setResourceId(const std::vector<std::string> &resourceId) {
+  resourceId_ = resourceId;
+}
+
+std::string ListTagResourcesRequest::getResourceType() const {
+  return resourceType_;
+}
+
+void ListTagResourcesRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
+}
+
+std::string ListTagResourcesRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void ListTagResourcesRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

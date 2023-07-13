@@ -43,15 +43,6 @@ void CreateZnodeRequest::setData(const std::string &data) {
   setParameter(std::string("Data"), data);
 }
 
-std::string CreateZnodeRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void CreateZnodeRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
-}
-
 std::string CreateZnodeRequest::getPath() const {
   return path_;
 }
@@ -59,6 +50,15 @@ std::string CreateZnodeRequest::getPath() const {
 void CreateZnodeRequest::setPath(const std::string &path) {
   path_ = path;
   setParameter(std::string("Path"), path);
+}
+
+std::string CreateZnodeRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void CreateZnodeRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string CreateZnodeRequest::getAcceptLanguage() const {

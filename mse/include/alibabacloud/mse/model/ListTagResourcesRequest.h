@@ -36,27 +36,27 @@ public:
 	~ListTagResourcesRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
-	std::vector<std::string> getResourceId() const;
-	void setResourceId(const std::vector<std::string> &resourceId);
-	std::string getResourceType() const;
-	void setResourceType(const std::string &resourceType);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
+	std::vector<std::string> getResourceId() const;
+	void setResourceId(const std::vector<std::string> &resourceId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
-	std::vector<std::string> resourceId_;
-	std::string resourceType_;
 	std::string regionId_;
 	std::string nextToken_;
-	std::string acceptLanguage_;
 	std::vector<Tag> tag_;
+	std::vector<std::string> resourceId_;
+	std::string resourceType_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Mse

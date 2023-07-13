@@ -34,13 +34,22 @@ public:
 	void setMseSessionId(const std::string &mseSessionId);
 	long getGroupId() const;
 	void setGroupId(long groupId);
+	std::string get_Namespace() const;
+	void set_Namespace(const std::string &_namespace);
+	std::string getName() const;
+	void setName(const std::string &name);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
+	std::string getRegion() const;
+	void setRegion(const std::string &region);
 
 private:
 	std::string mseSessionId_;
 	long groupId_;
+	std::string _namespace_;
+	std::string name_;
 	std::string acceptLanguage_;
+	std::string region_;
 };
 } // namespace Model
 } // namespace Mse

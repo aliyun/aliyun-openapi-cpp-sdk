@@ -34,24 +34,24 @@ public:
 	void setMseSessionId(const std::string &mseSessionId);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getRequestPars() const;
 	void setRequestPars(const std::string &requestPars);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
 	int pageNum_;
-	std::string instanceId_;
 	std::string regionId_;
 	int pageSize_;
 	std::string requestPars_;
+	std::string instanceId_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

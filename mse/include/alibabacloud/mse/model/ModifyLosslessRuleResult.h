@@ -37,18 +37,10 @@ namespace AlibabaCloud
 				ModifyLosslessRuleResult();
 				explicit ModifyLosslessRuleResult(const std::string &payload);
 				~ModifyLosslessRuleResult();
-				std::string getHttpCode()const;
-				std::string getMessage()const;
-				std::string getErrorCode()const;
-				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string httpCode_;
-				std::string message_;
-				std::string errorCode_;
-				bool success_;
 
 			};
 		}

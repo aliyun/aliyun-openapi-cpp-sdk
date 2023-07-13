@@ -49,6 +49,10 @@ public:
 	void setTlsSetting(const std::string &tlsSetting);
 	std::string getSourceType() const;
 	void setSourceType(const std::string &sourceType);
+	std::string getFcServiceName() const;
+	void setFcServiceName(const std::string &fcServiceName);
+	std::string getFcVersion() const;
+	void setFcVersion(const std::string &fcVersion);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
@@ -58,6 +62,8 @@ private:
 	std::vector<ServiceList> serviceList_;
 	std::string tlsSetting_;
 	std::string sourceType_;
+	std::string fcServiceName_;
+	std::string fcVersion_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

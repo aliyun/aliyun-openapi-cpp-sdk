@@ -40,6 +40,8 @@ public:
 	void setClusterId(const std::string &clusterId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::string getMseVersion() const;
+	void setMseVersion(const std::string &mseVersion);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
@@ -49,6 +51,7 @@ private:
 	int instanceCount_;
 	std::string clusterId_;
 	std::string instanceId_;
+	std::string mseVersion_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

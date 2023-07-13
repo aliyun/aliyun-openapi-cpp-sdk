@@ -51,6 +51,7 @@ namespace AlibabaCloud
 							std::string name;
 						};
 						std::string appId;
+						std::string _namespace;
 						long routeStatus;
 						std::vector<ApplicationList::RouteRule> routeRules;
 						std::string appName;
@@ -68,7 +69,6 @@ namespace AlibabaCloud
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
 				Data getData()const;
-				int getCode()const;
 				bool getSuccess()const;
 
 			protected:
@@ -77,7 +77,6 @@ namespace AlibabaCloud
 				std::string message_;
 				int httpStatusCode_;
 				Data data_;
-				int code_;
 				bool success_;
 
 			};

@@ -43,15 +43,6 @@ void QueryGovernanceKubernetesClusterRequest::setClusterName(const std::string &
   setParameter(std::string("ClusterName"), clusterName);
 }
 
-std::string QueryGovernanceKubernetesClusterRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void QueryGovernanceKubernetesClusterRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
-}
-
 int QueryGovernanceKubernetesClusterRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -68,6 +59,15 @@ int QueryGovernanceKubernetesClusterRequest::getPageSize() const {
 void QueryGovernanceKubernetesClusterRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string QueryGovernanceKubernetesClusterRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void QueryGovernanceKubernetesClusterRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string QueryGovernanceKubernetesClusterRequest::getAcceptLanguage() const {

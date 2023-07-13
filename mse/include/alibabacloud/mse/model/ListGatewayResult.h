@@ -41,6 +41,19 @@ namespace AlibabaCloud
 							bool enableWaf;
 							bool supportWaf;
 						};
+						struct ElasticPolicy
+						{
+							struct TimePolicyListItem
+							{
+								std::string endTime;
+								std::string startTime;
+								int desiredReplica;
+							};
+							std::string elasticType;
+							bool elastic;
+							int maxReplica;
+							std::vector<TimePolicyListItem> timePolicyList;
+						};
 						struct SlbItem
 						{
 							std::string slbId;
@@ -64,6 +77,7 @@ namespace AlibabaCloud
 							std::string slbSpec;
 							std::string internetNetworkFlow;
 						};
+						std::string elasticType;
 						std::string resourceGroupId;
 						std::string currentVersion;
 						std::vector<Gateways::SlbItem> slb;
@@ -76,12 +90,15 @@ namespace AlibabaCloud
 						std::string statusDesc;
 						bool armsOn;
 						std::string mseTag;
+						bool elastic;
 						std::vector<Gateways::InternetSlbItem> internetSlb;
 						std::string gatewayVersion;
 						int status;
 						bool supportWasm;
 						bool mustUpgrade;
 						std::string instanceId;
+						ElasticPolicy elasticPolicy;
+						int totalReplica;
 						bool ahasOn;
 						int replica;
 						std::string endDate;
@@ -96,6 +113,8 @@ namespace AlibabaCloud
 						long id;
 						std::string tag;
 						std::string spec;
+						std::string elasticInstanceId;
+						int elasticReplica;
 					};
 					int pageSize;
 					int pageNumber;

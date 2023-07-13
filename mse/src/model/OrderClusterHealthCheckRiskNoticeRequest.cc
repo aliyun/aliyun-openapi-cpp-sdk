@@ -34,6 +34,24 @@ void OrderClusterHealthCheckRiskNoticeRequest::setMseSessionId(const std::string
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
+std::string OrderClusterHealthCheckRiskNoticeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void OrderClusterHealthCheckRiskNoticeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string OrderClusterHealthCheckRiskNoticeRequest::getRequestPars() const {
+  return requestPars_;
+}
+
+void OrderClusterHealthCheckRiskNoticeRequest::setRequestPars(const std::string &requestPars) {
+  requestPars_ = requestPars;
+  setParameter(std::string("RequestPars"), requestPars);
+}
+
 bool OrderClusterHealthCheckRiskNoticeRequest::getMute() const {
   return mute_;
 }
@@ -61,15 +79,6 @@ void OrderClusterHealthCheckRiskNoticeRequest::setNoticeType(const std::string &
   setParameter(std::string("NoticeType"), noticeType);
 }
 
-std::string OrderClusterHealthCheckRiskNoticeRequest::getRegionId() const {
-  return regionId_;
-}
-
-void OrderClusterHealthCheckRiskNoticeRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string OrderClusterHealthCheckRiskNoticeRequest::getRiskCode() const {
   return riskCode_;
 }
@@ -77,15 +86,6 @@ std::string OrderClusterHealthCheckRiskNoticeRequest::getRiskCode() const {
 void OrderClusterHealthCheckRiskNoticeRequest::setRiskCode(const std::string &riskCode) {
   riskCode_ = riskCode;
   setParameter(std::string("RiskCode"), riskCode);
-}
-
-std::string OrderClusterHealthCheckRiskNoticeRequest::getRequestPars() const {
-  return requestPars_;
-}
-
-void OrderClusterHealthCheckRiskNoticeRequest::setRequestPars(const std::string &requestPars) {
-  requestPars_ = requestPars;
-  setParameter(std::string("RequestPars"), requestPars);
 }
 
 std::string OrderClusterHealthCheckRiskNoticeRequest::getAcceptLanguage() const {

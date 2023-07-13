@@ -38,10 +38,12 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
-	std::string getAppId() const;
-	void setAppId(const std::string &appId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getAppId() const;
+	void setAppId(const std::string &appId);
+	std::string get_Namespace() const;
+	void set_Namespace(const std::string &_namespace);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getRegion() const;
@@ -52,8 +54,9 @@ private:
 	std::string source_;
 	int pageNumber_;
 	std::string appName_;
-	std::string appId_;
 	int pageSize_;
+	std::string appId_;
+	std::string _namespace_;
 	std::string acceptLanguage_;
 	std::string region_;
 };

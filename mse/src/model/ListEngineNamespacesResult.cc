@@ -57,6 +57,8 @@ void ListEngineNamespacesResult::parse(const std::string &payload)
 			dataObject.configCount = std::stoi(valueDataNamespace["ConfigCount"].asString());
 		if(!valueDataNamespace["ServiceCount"].isNull())
 			dataObject.serviceCount = valueDataNamespace["ServiceCount"].asString();
+		if(!valueDataNamespace["SourceType"].isNull())
+			dataObject.sourceType = valueDataNamespace["SourceType"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["HttpCode"].isNull())

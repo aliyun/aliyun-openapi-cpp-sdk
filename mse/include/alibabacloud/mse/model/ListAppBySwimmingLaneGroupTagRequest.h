@@ -32,18 +32,21 @@ public:
 	~ListAppBySwimmingLaneGroupTagRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
-	long getGroupId() const;
-	void setGroupId(long groupId);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getTag() const;
 	void setTag(const std::string &tag);
+	long getGroupId() const;
+	void setGroupId(long groupId);
+	std::string get_Namespace() const;
+	void set_Namespace(const std::string &_namespace);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
-	long groupId_;
-	std::string acceptLanguage_;
 	std::string tag_;
+	long groupId_;
+	std::string _namespace_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Mse

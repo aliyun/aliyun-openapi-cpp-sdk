@@ -38,8 +38,6 @@ public:
 	void setPageNum(int pageNum);
 	std::string getNamespaceId() const;
 	void setNamespaceId(const std::string &namespaceId);
-	std::string getRequestPars() const;
-	void setRequestPars(const std::string &requestPars);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getServiceName() const;
@@ -58,7 +56,6 @@ private:
 	std::string clusterName_;
 	int pageNum_;
 	std::string namespaceId_;
-	std::string requestPars_;
 	int pageSize_;
 	std::string serviceName_;
 	std::string clusterId_;

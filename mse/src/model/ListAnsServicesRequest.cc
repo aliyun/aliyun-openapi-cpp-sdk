@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::ListAnsServicesRequest;
 
 ListAnsServicesRequest::ListAnsServicesRequest()
     : RpcServiceRequest("mse", "2019-05-31", "ListAnsServices") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 ListAnsServicesRequest::~ListAnsServicesRequest() {}
@@ -32,6 +32,15 @@ std::string ListAnsServicesRequest::getMseSessionId() const {
 void ListAnsServicesRequest::setMseSessionId(const std::string &mseSessionId) {
   mseSessionId_ = mseSessionId;
   setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
+std::string ListAnsServicesRequest::getClusterName() const {
+  return clusterName_;
+}
+
+void ListAnsServicesRequest::setClusterName(const std::string &clusterName) {
+  clusterName_ = clusterName;
+  setParameter(std::string("ClusterName"), clusterName);
 }
 
 int ListAnsServicesRequest::getPageNum() const {
@@ -61,6 +70,33 @@ void ListAnsServicesRequest::setRequestPars(const std::string &requestPars) {
   setParameter(std::string("RequestPars"), requestPars);
 }
 
+std::string ListAnsServicesRequest::getGroupName() const {
+  return groupName_;
+}
+
+void ListAnsServicesRequest::setGroupName(const std::string &groupName) {
+  groupName_ = groupName;
+  setParameter(std::string("GroupName"), groupName);
+}
+
+std::string ListAnsServicesRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ListAnsServicesRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string ListAnsServicesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ListAnsServicesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int ListAnsServicesRequest::getPageSize() const {
   return pageSize_;
 }
@@ -88,15 +124,6 @@ void ListAnsServicesRequest::setClusterId(const std::string &clusterId) {
   setParameter(std::string("ClusterId"), clusterId);
 }
 
-std::string ListAnsServicesRequest::getGroupName() const {
-  return groupName_;
-}
-
-void ListAnsServicesRequest::setGroupName(const std::string &groupName) {
-  groupName_ = groupName;
-  setParameter(std::string("GroupName"), groupName);
-}
-
 std::string ListAnsServicesRequest::getHasIpCount() const {
   return hasIpCount_;
 }
@@ -104,15 +131,6 @@ std::string ListAnsServicesRequest::getHasIpCount() const {
 void ListAnsServicesRequest::setHasIpCount(const std::string &hasIpCount) {
   hasIpCount_ = hasIpCount;
   setParameter(std::string("HasIpCount"), hasIpCount);
-}
-
-std::string ListAnsServicesRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ListAnsServicesRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
 }
 
 std::string ListAnsServicesRequest::getAcceptLanguage() const {

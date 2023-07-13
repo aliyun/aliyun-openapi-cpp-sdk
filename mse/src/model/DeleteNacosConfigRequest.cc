@@ -34,24 +34,6 @@ void DeleteNacosConfigRequest::setMseSessionId(const std::string &mseSessionId) 
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string DeleteNacosConfigRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void DeleteNacosConfigRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string DeleteNacosConfigRequest::getDataId() const {
-  return dataId_;
-}
-
-void DeleteNacosConfigRequest::setDataId(const std::string &dataId) {
-  dataId_ = dataId;
-  setParameter(std::string("DataId"), dataId);
-}
-
 std::string DeleteNacosConfigRequest::getNamespaceId() const {
   return namespaceId_;
 }
@@ -59,15 +41,6 @@ std::string DeleteNacosConfigRequest::getNamespaceId() const {
 void DeleteNacosConfigRequest::setNamespaceId(const std::string &namespaceId) {
   namespaceId_ = namespaceId;
   setParameter(std::string("NamespaceId"), namespaceId);
-}
-
-std::string DeleteNacosConfigRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void DeleteNacosConfigRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 
 bool DeleteNacosConfigRequest::getBeta() const {
@@ -86,5 +59,32 @@ std::string DeleteNacosConfigRequest::getGroup() const {
 void DeleteNacosConfigRequest::setGroup(const std::string &group) {
   group_ = group;
   setParameter(std::string("Group"), group);
+}
+
+std::string DeleteNacosConfigRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void DeleteNacosConfigRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string DeleteNacosConfigRequest::getDataId() const {
+  return dataId_;
+}
+
+void DeleteNacosConfigRequest::setDataId(const std::string &dataId) {
+  dataId_ = dataId;
+  setParameter(std::string("DataId"), dataId);
+}
+
+std::string DeleteNacosConfigRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void DeleteNacosConfigRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

@@ -34,15 +34,6 @@ void ListClusterTypesRequest::setMseSessionId(const std::string &mseSessionId) {
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string ListClusterTypesRequest::getConnectType() const {
-  return connectType_;
-}
-
-void ListClusterTypesRequest::setConnectType(const std::string &connectType) {
-  connectType_ = connectType;
-  setParameter(std::string("ConnectType"), connectType);
-}
-
 std::string ListClusterTypesRequest::getRegionId() const {
   return regionId_;
 }
@@ -50,6 +41,15 @@ std::string ListClusterTypesRequest::getRegionId() const {
 void ListClusterTypesRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string ListClusterTypesRequest::getConnectType() const {
+  return connectType_;
+}
+
+void ListClusterTypesRequest::setConnectType(const std::string &connectType) {
+  connectType_ = connectType;
+  setParameter(std::string("ConnectType"), connectType);
 }
 
 std::string ListClusterTypesRequest::getMseVersion() const {

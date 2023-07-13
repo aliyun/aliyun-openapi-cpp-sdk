@@ -70,6 +70,33 @@ void ListNamingTrackRequest::setRequestPars(const std::string &requestPars) {
   setParameter(std::string("RequestPars"), requestPars);
 }
 
+std::string ListNamingTrackRequest::getGroup() const {
+  return group_;
+}
+
+void ListNamingTrackRequest::setGroup(const std::string &group) {
+  group_ = group;
+  setParameter(std::string("Group"), group);
+}
+
+std::string ListNamingTrackRequest::getIp() const {
+  return ip_;
+}
+
+void ListNamingTrackRequest::setIp(const std::string &ip) {
+  ip_ = ip;
+  setParameter(std::string("Ip"), ip);
+}
+
+std::string ListNamingTrackRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ListNamingTrackRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
 long ListNamingTrackRequest::getEndTs() const {
   return endTs_;
 }
@@ -97,24 +124,6 @@ void ListNamingTrackRequest::setServiceName(const std::string &serviceName) {
   setParameter(std::string("ServiceName"), serviceName);
 }
 
-std::string ListNamingTrackRequest::getGroup() const {
-  return group_;
-}
-
-void ListNamingTrackRequest::setGroup(const std::string &group) {
-  group_ = group;
-  setParameter(std::string("Group"), group);
-}
-
-std::string ListNamingTrackRequest::getIp() const {
-  return ip_;
-}
-
-void ListNamingTrackRequest::setIp(const std::string &ip) {
-  ip_ = ip;
-  setParameter(std::string("Ip"), ip);
-}
-
 bool ListNamingTrackRequest::getReverse() const {
   return reverse_;
 }
@@ -122,15 +131,6 @@ bool ListNamingTrackRequest::getReverse() const {
 void ListNamingTrackRequest::setReverse(bool reverse) {
   reverse_ = reverse;
   setParameter(std::string("Reverse"), reverse ? "true" : "false");
-}
-
-std::string ListNamingTrackRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ListNamingTrackRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
 }
 
 std::string ListNamingTrackRequest::getAcceptLanguage() const {

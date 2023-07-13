@@ -43,6 +43,24 @@ void GetNacosHistoryConfigRequest::setNid(const std::string &nid) {
   setParameter(std::string("Nid"), nid);
 }
 
+std::string GetNacosHistoryConfigRequest::getNamespaceId() const {
+  return namespaceId_;
+}
+
+void GetNacosHistoryConfigRequest::setNamespaceId(const std::string &namespaceId) {
+  namespaceId_ = namespaceId;
+  setParameter(std::string("NamespaceId"), namespaceId);
+}
+
+std::string GetNacosHistoryConfigRequest::getGroup() const {
+  return group_;
+}
+
+void GetNacosHistoryConfigRequest::setGroup(const std::string &group) {
+  group_ = group;
+  setParameter(std::string("Group"), group);
+}
+
 std::string GetNacosHistoryConfigRequest::getInstanceId() const {
   return instanceId_;
 }
@@ -61,15 +79,6 @@ void GetNacosHistoryConfigRequest::setDataId(const std::string &dataId) {
   setParameter(std::string("DataId"), dataId);
 }
 
-std::string GetNacosHistoryConfigRequest::getNamespaceId() const {
-  return namespaceId_;
-}
-
-void GetNacosHistoryConfigRequest::setNamespaceId(const std::string &namespaceId) {
-  namespaceId_ = namespaceId;
-  setParameter(std::string("NamespaceId"), namespaceId);
-}
-
 std::string GetNacosHistoryConfigRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }
@@ -77,14 +86,5 @@ std::string GetNacosHistoryConfigRequest::getAcceptLanguage() const {
 void GetNacosHistoryConfigRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
-std::string GetNacosHistoryConfigRequest::getGroup() const {
-  return group_;
-}
-
-void GetNacosHistoryConfigRequest::setGroup(const std::string &group) {
-  group_ = group;
-  setParameter(std::string("Group"), group);
 }
 

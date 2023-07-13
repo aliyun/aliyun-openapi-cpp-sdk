@@ -34,12 +34,15 @@ public:
 	void setMseSessionId(const std::string &mseSessionId);
 	long getLaneId() const;
 	void setLaneId(long laneId);
+	std::string get_Namespace() const;
+	void set_Namespace(const std::string &_namespace);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
 	long laneId_;
+	std::string _namespace_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

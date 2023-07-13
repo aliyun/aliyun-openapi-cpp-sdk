@@ -43,15 +43,6 @@ void DeleteAuthResourceRequest::setGatewayUniqueId(const std::string &gatewayUni
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
 }
 
-std::string DeleteAuthResourceRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void DeleteAuthResourceRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 long DeleteAuthResourceRequest::getId() const {
   return id_;
 }
@@ -59,5 +50,14 @@ long DeleteAuthResourceRequest::getId() const {
 void DeleteAuthResourceRequest::setId(long id) {
   id_ = id;
   setParameter(std::string("Id"), std::to_string(id));
+}
+
+std::string DeleteAuthResourceRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void DeleteAuthResourceRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

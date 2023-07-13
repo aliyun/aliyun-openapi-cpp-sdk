@@ -141,6 +141,7 @@ namespace AlibabaCloud
 						long serviceId;
 						std::string name;
 					};
+					std::string policies;
 					std::string gmtModified;
 					std::string destinationType;
 					HeaderOp headerOp;

@@ -34,6 +34,8 @@ public:
 	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
+	bool getIsAll() const;
+	void setIsAll(bool isAll);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
 	std::string getAcceptLanguage() const;
@@ -42,6 +44,7 @@ public:
 private:
 	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
+	bool isAll_;
 	std::string vpcId_;
 	std::string acceptLanguage_;
 };

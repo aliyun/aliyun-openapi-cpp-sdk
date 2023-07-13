@@ -34,6 +34,15 @@ void DeleteEngineNamespaceRequest::setMseSessionId(const std::string &mseSession
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
+std::string DeleteEngineNamespaceRequest::getId() const {
+  return id_;
+}
+
+void DeleteEngineNamespaceRequest::setId(const std::string &id) {
+  id_ = id;
+  setParameter(std::string("Id"), id);
+}
+
 std::string DeleteEngineNamespaceRequest::getClusterId() const {
   return clusterId_;
 }
@@ -59,14 +68,5 @@ std::string DeleteEngineNamespaceRequest::getAcceptLanguage() const {
 void DeleteEngineNamespaceRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
-std::string DeleteEngineNamespaceRequest::getId() const {
-  return id_;
-}
-
-void DeleteEngineNamespaceRequest::setId(const std::string &id) {
-  id_ = id;
-  setParameter(std::string("Id"), id);
 }
 

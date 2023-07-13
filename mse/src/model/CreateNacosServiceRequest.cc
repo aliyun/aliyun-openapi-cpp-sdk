@@ -43,6 +43,24 @@ void CreateNacosServiceRequest::setEphemeral(bool ephemeral) {
   setParameter(std::string("Ephemeral"), ephemeral ? "true" : "false");
 }
 
+std::string CreateNacosServiceRequest::getNamespaceId() const {
+  return namespaceId_;
+}
+
+void CreateNacosServiceRequest::setNamespaceId(const std::string &namespaceId) {
+  namespaceId_ = namespaceId;
+  setParameter(std::string("NamespaceId"), namespaceId);
+}
+
+std::string CreateNacosServiceRequest::getServiceName() const {
+  return serviceName_;
+}
+
+void CreateNacosServiceRequest::setServiceName(const std::string &serviceName) {
+  serviceName_ = serviceName;
+  setParameter(std::string("ServiceName"), serviceName);
+}
+
 std::string CreateNacosServiceRequest::getClusterId() const {
   return clusterId_;
 }
@@ -70,15 +88,6 @@ void CreateNacosServiceRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string CreateNacosServiceRequest::getNamespaceId() const {
-  return namespaceId_;
-}
-
-void CreateNacosServiceRequest::setNamespaceId(const std::string &namespaceId) {
-  namespaceId_ = namespaceId;
-  setParameter(std::string("NamespaceId"), namespaceId);
-}
-
 std::string CreateNacosServiceRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }
@@ -86,15 +95,6 @@ std::string CreateNacosServiceRequest::getAcceptLanguage() const {
 void CreateNacosServiceRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
-std::string CreateNacosServiceRequest::getServiceName() const {
-  return serviceName_;
-}
-
-void CreateNacosServiceRequest::setServiceName(const std::string &serviceName) {
-  serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), serviceName);
 }
 
 std::string CreateNacosServiceRequest::getProtectThreshold() const {

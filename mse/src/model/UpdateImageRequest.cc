@@ -34,6 +34,15 @@ void UpdateImageRequest::setMseSessionId(const std::string &mseSessionId) {
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
+std::string UpdateImageRequest::getVersionCode() const {
+  return versionCode_;
+}
+
+void UpdateImageRequest::setVersionCode(const std::string &versionCode) {
+  versionCode_ = versionCode;
+  setParameter(std::string("VersionCode"), versionCode);
+}
+
 std::string UpdateImageRequest::getClusterId() const {
   return clusterId_;
 }
@@ -50,14 +59,5 @@ std::string UpdateImageRequest::getAcceptLanguage() const {
 void UpdateImageRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
-std::string UpdateImageRequest::getVersionCode() const {
-  return versionCode_;
-}
-
-void UpdateImageRequest::setVersionCode(const std::string &versionCode) {
-  versionCode_ = versionCode;
-  setParameter(std::string("VersionCode"), versionCode);
 }
 

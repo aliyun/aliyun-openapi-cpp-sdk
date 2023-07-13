@@ -52,15 +52,6 @@ void AddGatewayRequest::setEnableXtrace(bool enableXtrace) {
   setParameter(std::string("EnableXtrace"), enableXtrace ? "true" : "false");
 }
 
-std::string AddGatewayRequest::getXtraceRatio() const {
-  return xtraceRatio_;
-}
-
-void AddGatewayRequest::setXtraceRatio(const std::string &xtraceRatio) {
-  xtraceRatio_ = xtraceRatio;
-  setParameter(std::string("XtraceRatio"), xtraceRatio);
-}
-
 int AddGatewayRequest::getReplica() const {
   return replica_;
 }
@@ -68,15 +59,6 @@ int AddGatewayRequest::getReplica() const {
 void AddGatewayRequest::setReplica(int replica) {
   replica_ = replica;
   setParameter(std::string("Replica"), std::to_string(replica));
-}
-
-std::string AddGatewayRequest::getVSwitchId2() const {
-  return vSwitchId2_;
-}
-
-void AddGatewayRequest::setVSwitchId2(const std::string &vSwitchId2) {
-  vSwitchId2_ = vSwitchId2;
-  setParameter(std::string("VSwitchId2"), vSwitchId2);
 }
 
 bool AddGatewayRequest::getEnableHardwareAcceleration() const {
@@ -115,6 +97,15 @@ void AddGatewayRequest::setResourceGroupId(const std::string &resourceGroupId) {
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string AddGatewayRequest::getRequestPars() const {
+  return requestPars_;
+}
+
+void AddGatewayRequest::setRequestPars(const std::string &requestPars) {
+  requestPars_ = requestPars;
+  setParameter(std::string("RequestPars"), requestPars);
+}
+
 bool AddGatewayRequest::getEnterpriseSecurityGroup() const {
   return enterpriseSecurityGroup_;
 }
@@ -136,15 +127,6 @@ void AddGatewayRequest::setTag(const std::vector<AddGatewayRequest::Tag> &tag) {
     setParameter(tagObjStr + ".Value", tagObj.value);
     setParameter(tagObjStr + ".Key", tagObj.key);
   }
-}
-
-std::string AddGatewayRequest::getVpc() const {
-  return vpc_;
-}
-
-void AddGatewayRequest::setVpc(const std::string &vpc) {
-  vpc_ = vpc;
-  setParameter(std::string("Vpc"), vpc);
 }
 
 std::string AddGatewayRequest::getVSwitchId() const {
@@ -174,6 +156,54 @@ void AddGatewayRequest::setName(const std::string &name) {
   setParameter(std::string("Name"), name);
 }
 
+std::string AddGatewayRequest::getRegion() const {
+  return region_;
+}
+
+void AddGatewayRequest::setRegion(const std::string &region) {
+  region_ = region;
+  setParameter(std::string("Region"), region);
+}
+
+std::vector<AddGatewayRequest::ZoneInfo> AddGatewayRequest::getZoneInfo() const {
+  return zoneInfo_;
+}
+
+void AddGatewayRequest::setZoneInfo(const std::vector<AddGatewayRequest::ZoneInfo> &zoneInfo) {
+  zoneInfo_ = zoneInfo;
+  for(int dep1 = 0; dep1 != zoneInfo.size(); dep1++) {
+    setParameter(std::string("ZoneInfo") + "." + std::to_string(dep1 + 1) + ".VSwitchId", zoneInfo[dep1].vSwitchId);
+    setParameter(std::string("ZoneInfo") + "." + std::to_string(dep1 + 1) + ".ZoneId", zoneInfo[dep1].zoneId);
+  }
+}
+
+std::string AddGatewayRequest::getXtraceRatio() const {
+  return xtraceRatio_;
+}
+
+void AddGatewayRequest::setXtraceRatio(const std::string &xtraceRatio) {
+  xtraceRatio_ = xtraceRatio;
+  setParameter(std::string("XtraceRatio"), xtraceRatio);
+}
+
+std::string AddGatewayRequest::getVSwitchId2() const {
+  return vSwitchId2_;
+}
+
+void AddGatewayRequest::setVSwitchId2(const std::string &vSwitchId2) {
+  vSwitchId2_ = vSwitchId2;
+  setParameter(std::string("VSwitchId2"), vSwitchId2);
+}
+
+std::string AddGatewayRequest::getVpc() const {
+  return vpc_;
+}
+
+void AddGatewayRequest::setVpc(const std::string &vpc) {
+  vpc_ = vpc;
+  setParameter(std::string("Vpc"), vpc);
+}
+
 std::string AddGatewayRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }
@@ -183,12 +213,12 @@ void AddGatewayRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 
-std::string AddGatewayRequest::getRegion() const {
-  return region_;
+std::string AddGatewayRequest::getChargeType() const {
+  return chargeType_;
 }
 
-void AddGatewayRequest::setRegion(const std::string &region) {
-  region_ = region;
-  setParameter(std::string("Region"), region);
+void AddGatewayRequest::setChargeType(const std::string &chargeType) {
+  chargeType_ = chargeType;
+  setParameter(std::string("ChargeType"), chargeType);
 }
 

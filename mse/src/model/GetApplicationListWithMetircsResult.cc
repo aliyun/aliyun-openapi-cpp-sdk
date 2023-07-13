@@ -50,16 +50,20 @@ void GetApplicationListWithMetircsResult::parse(const std::string &payload)
 	for (auto dataNodeResultApplicationList : allResultNode)
 	{
 		Data::ApplicationList applicationListObject;
+		if(!dataNodeResultApplicationList["RegionId"].isNull())
+			applicationListObject.regionId = dataNodeResultApplicationList["RegionId"].asString();
+		if(!dataNodeResultApplicationList["Namespace"].isNull())
+			applicationListObject._namespace = dataNodeResultApplicationList["Namespace"].asString();
+		if(!dataNodeResultApplicationList["AppName"].isNull())
+			applicationListObject.appName = dataNodeResultApplicationList["AppName"].asString();
+		if(!dataNodeResultApplicationList["AppId"].isNull())
+			applicationListObject.appId = dataNodeResultApplicationList["AppId"].asString();
 		if(!dataNodeResultApplicationList["Status"].isNull())
 			applicationListObject.status = std::stol(dataNodeResultApplicationList["Status"].asString());
 		if(!dataNodeResultApplicationList["ExtraInfo"].isNull())
 			applicationListObject.extraInfo = dataNodeResultApplicationList["ExtraInfo"].asString();
-		if(!dataNodeResultApplicationList["AppName"].isNull())
-			applicationListObject.appName = dataNodeResultApplicationList["AppName"].asString();
 		if(!dataNodeResultApplicationList["LicenseKey"].isNull())
 			applicationListObject.licenseKey = dataNodeResultApplicationList["LicenseKey"].asString();
-		if(!dataNodeResultApplicationList["AppId"].isNull())
-			applicationListObject.appId = dataNodeResultApplicationList["AppId"].asString();
 		if(!dataNodeResultApplicationList["UserId"].isNull())
 			applicationListObject.userId = dataNodeResultApplicationList["UserId"].asString();
 		if(!dataNodeResultApplicationList["InstancesNumber"].isNull())
@@ -68,10 +72,10 @@ void GetApplicationListWithMetircsResult::parse(const std::string &payload)
 			applicationListObject.source = dataNodeResultApplicationList["Source"].asString();
 		if(!dataNodeResultApplicationList["Language"].isNull())
 			applicationListObject.language = dataNodeResultApplicationList["Language"].asString();
-		if(!dataNodeResultApplicationList["RegionId"].isNull())
-			applicationListObject.regionId = dataNodeResultApplicationList["RegionId"].asString();
-		if(!dataNodeResultApplicationList["Namespace"].isNull())
-			applicationListObject._namespace = dataNodeResultApplicationList["Namespace"].asString();
+		if(!dataNodeResultApplicationList["TagCount"].isNull())
+			applicationListObject.tagCount = std::stol(dataNodeResultApplicationList["TagCount"].asString());
+		if(!dataNodeResultApplicationList["AppType"].isNull())
+			applicationListObject.appType = std::stoi(dataNodeResultApplicationList["AppType"].asString());
 		auto allCurMetricsNode = dataNodeResultApplicationList["CurMetrics"]["curMetricsItem"];
 		for (auto dataNodeResultApplicationListCurMetricscurMetricsItem : allCurMetricsNode)
 		{

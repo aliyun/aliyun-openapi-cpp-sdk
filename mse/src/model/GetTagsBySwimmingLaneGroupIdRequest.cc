@@ -43,6 +43,15 @@ void GetTagsBySwimmingLaneGroupIdRequest::setGroupId(long groupId) {
   setParameter(std::string("GroupId"), std::to_string(groupId));
 }
 
+std::string GetTagsBySwimmingLaneGroupIdRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void GetTagsBySwimmingLaneGroupIdRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
+}
+
 std::string GetTagsBySwimmingLaneGroupIdRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }

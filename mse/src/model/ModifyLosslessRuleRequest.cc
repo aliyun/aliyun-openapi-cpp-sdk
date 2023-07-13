@@ -34,33 +34,6 @@ void ModifyLosslessRuleRequest::setMseSessionId(const std::string &mseSessionId)
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-long ModifyLosslessRuleRequest::getDelayTime() const {
-  return delayTime_;
-}
-
-void ModifyLosslessRuleRequest::setDelayTime(long delayTime) {
-  delayTime_ = delayTime;
-  setParameter(std::string("DelayTime"), std::to_string(delayTime));
-}
-
-std::string ModifyLosslessRuleRequest::getSource() const {
-  return source_;
-}
-
-void ModifyLosslessRuleRequest::setSource(const std::string &source) {
-  source_ = source;
-  setParameter(std::string("Source"), source);
-}
-
-long ModifyLosslessRuleRequest::getWarmupTime() const {
-  return warmupTime_;
-}
-
-void ModifyLosslessRuleRequest::setWarmupTime(long warmupTime) {
-  warmupTime_ = warmupTime;
-  setParameter(std::string("WarmupTime"), std::to_string(warmupTime));
-}
-
 std::string ModifyLosslessRuleRequest::getAppName() const {
   return appName_;
 }
@@ -68,24 +41,6 @@ std::string ModifyLosslessRuleRequest::getAppName() const {
 void ModifyLosslessRuleRequest::setAppName(const std::string &appName) {
   appName_ = appName;
   setParameter(std::string("AppName"), appName);
-}
-
-bool ModifyLosslessRuleRequest::getRelated() const {
-  return related_;
-}
-
-void ModifyLosslessRuleRequest::setRelated(bool related) {
-  related_ = related;
-  setParameter(std::string("Related"), related ? "true" : "false");
-}
-
-std::string ModifyLosslessRuleRequest::getRegionId() const {
-  return regionId_;
-}
-
-void ModifyLosslessRuleRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 
 bool ModifyLosslessRuleRequest::getEnable() const {
@@ -106,13 +61,49 @@ void ModifyLosslessRuleRequest::setAligned(bool aligned) {
   setParameter(std::string("Aligned"), aligned ? "true" : "false");
 }
 
-int ModifyLosslessRuleRequest::getShutdownWaitSeconds() const {
-  return shutdownWaitSeconds_;
+int ModifyLosslessRuleRequest::getFuncType() const {
+  return funcType_;
 }
 
-void ModifyLosslessRuleRequest::setShutdownWaitSeconds(int shutdownWaitSeconds) {
-  shutdownWaitSeconds_ = shutdownWaitSeconds;
-  setParameter(std::string("ShutdownWaitSeconds"), std::to_string(shutdownWaitSeconds));
+void ModifyLosslessRuleRequest::setFuncType(int funcType) {
+  funcType_ = funcType;
+  setParameter(std::string("FuncType"), std::to_string(funcType));
+}
+
+int ModifyLosslessRuleRequest::getDelayTime() const {
+  return delayTime_;
+}
+
+void ModifyLosslessRuleRequest::setDelayTime(int delayTime) {
+  delayTime_ = delayTime;
+  setParameter(std::string("DelayTime"), std::to_string(delayTime));
+}
+
+int ModifyLosslessRuleRequest::getWarmupTime() const {
+  return warmupTime_;
+}
+
+void ModifyLosslessRuleRequest::setWarmupTime(int warmupTime) {
+  warmupTime_ = warmupTime;
+  setParameter(std::string("WarmupTime"), std::to_string(warmupTime));
+}
+
+bool ModifyLosslessRuleRequest::getRelated() const {
+  return related_;
+}
+
+void ModifyLosslessRuleRequest::setRelated(bool related) {
+  related_ = related;
+  setParameter(std::string("Related"), related ? "true" : "false");
+}
+
+std::string ModifyLosslessRuleRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyLosslessRuleRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 bool ModifyLosslessRuleRequest::getNotice() const {
@@ -131,15 +122,6 @@ bool ModifyLosslessRuleRequest::getLossLessDetail() const {
 void ModifyLosslessRuleRequest::setLossLessDetail(bool lossLessDetail) {
   lossLessDetail_ = lossLessDetail;
   setParameter(std::string("LossLessDetail"), lossLessDetail ? "true" : "false");
-}
-
-long ModifyLosslessRuleRequest::getFuncType() const {
-  return funcType_;
-}
-
-void ModifyLosslessRuleRequest::setFuncType(long funcType) {
-  funcType_ = funcType;
-  setParameter(std::string("FuncType"), std::to_string(funcType));
 }
 
 std::string ModifyLosslessRuleRequest::getAppId() const {

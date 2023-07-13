@@ -32,27 +32,27 @@ public:
 	~GetNacosConfigRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
-	std::string getDataId() const;
-	void setDataId(const std::string &dataId);
 	std::string getNamespaceId() const;
 	void setNamespaceId(const std::string &namespaceId);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
 	bool getBeta() const;
 	void setBeta(bool beta);
 	std::string getGroup() const;
 	void setGroup(const std::string &group);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getDataId() const;
+	void setDataId(const std::string &dataId);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
-	std::string instanceId_;
-	std::string dataId_;
 	std::string namespaceId_;
-	std::string acceptLanguage_;
 	bool beta_;
 	std::string group_;
+	std::string instanceId_;
+	std::string dataId_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Mse

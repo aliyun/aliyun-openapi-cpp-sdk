@@ -34,6 +34,15 @@ void RetryClusterRequest::setMseSessionId(const std::string &mseSessionId) {
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
+std::string RetryClusterRequest::getRequestPars() const {
+  return requestPars_;
+}
+
+void RetryClusterRequest::setRequestPars(const std::string &requestPars) {
+  requestPars_ = requestPars;
+  setParameter(std::string("RequestPars"), requestPars);
+}
+
 std::string RetryClusterRequest::getClusterId() const {
   return clusterId_;
 }
@@ -50,15 +59,6 @@ std::string RetryClusterRequest::getInstanceId() const {
 void RetryClusterRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string RetryClusterRequest::getRequestPars() const {
-  return requestPars_;
-}
-
-void RetryClusterRequest::setRequestPars(const std::string &requestPars) {
-  requestPars_ = requestPars;
-  setParameter(std::string("RequestPars"), requestPars);
 }
 
 std::string RetryClusterRequest::getAcceptLanguage() const {

@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					int ipCount;
 					int healthyInstanceCount;
 					int clusterCount;
+					std::string source;
 					std::string name;
 				};
 

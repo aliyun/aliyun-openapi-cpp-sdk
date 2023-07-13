@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string role;
 					std::string podName;
+					bool zoneDistributed;
 					std::string internetIp;
 					std::string creationTimestamp;
 					std::string singleTunnelVip;

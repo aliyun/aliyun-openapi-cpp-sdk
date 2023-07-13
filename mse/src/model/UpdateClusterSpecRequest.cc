@@ -70,6 +70,15 @@ void UpdateClusterSpecRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
+std::string UpdateClusterSpecRequest::getMseVersion() const {
+  return mseVersion_;
+}
+
+void UpdateClusterSpecRequest::setMseVersion(const std::string &mseVersion) {
+  mseVersion_ = mseVersion;
+  setParameter(std::string("MseVersion"), mseVersion);
+}
+
 std::string UpdateClusterSpecRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }

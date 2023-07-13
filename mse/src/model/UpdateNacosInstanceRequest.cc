@@ -61,15 +61,6 @@ void UpdateNacosInstanceRequest::setEphemeral(bool ephemeral) {
   setParameter(std::string("Ephemeral"), ephemeral ? "true" : "false");
 }
 
-bool UpdateNacosInstanceRequest::getEnabled() const {
-  return enabled_;
-}
-
-void UpdateNacosInstanceRequest::setEnabled(bool enabled) {
-  enabled_ = enabled;
-  setParameter(std::string("Enabled"), enabled ? "true" : "false");
-}
-
 std::string UpdateNacosInstanceRequest::getNamespaceId() const {
   return namespaceId_;
 }
@@ -77,15 +68,6 @@ std::string UpdateNacosInstanceRequest::getNamespaceId() const {
 void UpdateNacosInstanceRequest::setNamespaceId(const std::string &namespaceId) {
   namespaceId_ = namespaceId;
   setParameter(std::string("NamespaceId"), namespaceId);
-}
-
-std::string UpdateNacosInstanceRequest::getServiceName() const {
-  return serviceName_;
-}
-
-void UpdateNacosInstanceRequest::setServiceName(const std::string &serviceName) {
-  serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), serviceName);
 }
 
 std::string UpdateNacosInstanceRequest::getIp() const {
@@ -131,6 +113,24 @@ int UpdateNacosInstanceRequest::getPort() const {
 void UpdateNacosInstanceRequest::setPort(int port) {
   port_ = port;
   setParameter(std::string("Port"), std::to_string(port));
+}
+
+bool UpdateNacosInstanceRequest::getEnabled() const {
+  return enabled_;
+}
+
+void UpdateNacosInstanceRequest::setEnabled(bool enabled) {
+  enabled_ = enabled;
+  setParameter(std::string("Enabled"), enabled ? "true" : "false");
+}
+
+std::string UpdateNacosInstanceRequest::getServiceName() const {
+  return serviceName_;
+}
+
+void UpdateNacosInstanceRequest::setServiceName(const std::string &serviceName) {
+  serviceName_ = serviceName;
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
 std::string UpdateNacosInstanceRequest::getAcceptLanguage() const {

@@ -34,24 +34,6 @@ void ImportZookeeperDataRequest::setMseSessionId(const std::string &mseSessionId
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string ImportZookeeperDataRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ImportZookeeperDataRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string ImportZookeeperDataRequest::getFileName() const {
-  return fileName_;
-}
-
-void ImportZookeeperDataRequest::setFileName(const std::string &fileName) {
-  fileName_ = fileName;
-  setParameter(std::string("FileName"), fileName);
-}
-
 std::string ImportZookeeperDataRequest::getRegionId() const {
   return regionId_;
 }
@@ -68,6 +50,24 @@ std::string ImportZookeeperDataRequest::getRequestPars() const {
 void ImportZookeeperDataRequest::setRequestPars(const std::string &requestPars) {
   requestPars_ = requestPars;
   setParameter(std::string("RequestPars"), requestPars);
+}
+
+std::string ImportZookeeperDataRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ImportZookeeperDataRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string ImportZookeeperDataRequest::getFileName() const {
+  return fileName_;
+}
+
+void ImportZookeeperDataRequest::setFileName(const std::string &fileName) {
+  fileName_ = fileName;
+  setParameter(std::string("FileName"), fileName);
 }
 
 std::string ImportZookeeperDataRequest::getAcceptLanguage() const {

@@ -32,29 +32,29 @@ public:
 	~OrderClusterHealthCheckRiskNoticeRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getRequestPars() const;
+	void setRequestPars(const std::string &requestPars);
 	bool getMute() const;
 	void setMute(bool mute);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getNoticeType() const;
 	void setNoticeType(const std::string &noticeType);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	std::string getRiskCode() const;
 	void setRiskCode(const std::string &riskCode);
-	std::string getRequestPars() const;
-	void setRequestPars(const std::string &requestPars);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
+	std::string regionId_;
+	std::string requestPars_;
 	bool mute_;
 	std::string instanceId_;
 	std::string noticeType_;
-	std::string regionId_;
 	std::string riskCode_;
-	std::string requestPars_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

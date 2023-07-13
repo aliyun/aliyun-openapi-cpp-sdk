@@ -34,15 +34,6 @@ void ListEurekaServicesRequest::setMseSessionId(const std::string &mseSessionId)
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string ListEurekaServicesRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void ListEurekaServicesRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
-}
-
 int ListEurekaServicesRequest::getPageNum() const {
   return pageNum_;
 }
@@ -77,6 +68,15 @@ int ListEurekaServicesRequest::getPageSize() const {
 void ListEurekaServicesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListEurekaServicesRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void ListEurekaServicesRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string ListEurekaServicesRequest::getAcceptLanguage() const {

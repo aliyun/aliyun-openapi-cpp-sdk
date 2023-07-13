@@ -39,34 +39,6 @@ void ModifyLosslessRuleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["HttpCode"].isNull())
-		httpCode_ = value["HttpCode"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 
-}
-
-std::string ModifyLosslessRuleResult::getHttpCode()const
-{
-	return httpCode_;
-}
-
-std::string ModifyLosslessRuleResult::getMessage()const
-{
-	return message_;
-}
-
-std::string ModifyLosslessRuleResult::getErrorCode()const
-{
-	return errorCode_;
-}
-
-bool ModifyLosslessRuleResult::getSuccess()const
-{
-	return success_;
 }
 

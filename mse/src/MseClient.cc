@@ -51,6 +51,42 @@ MseClient::MseClient(const std::string & accessKeyId, const std::string & access
 MseClient::~MseClient()
 {}
 
+MseClient::AddAuthPolicyOutcome MseClient::addAuthPolicy(const AddAuthPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddAuthPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddAuthPolicyOutcome(AddAuthPolicyResult(outcome.result()));
+	else
+		return AddAuthPolicyOutcome(outcome.error());
+}
+
+void MseClient::addAuthPolicyAsync(const AddAuthPolicyRequest& request, const AddAuthPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addAuthPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::AddAuthPolicyOutcomeCallable MseClient::addAuthPolicyCallable(const AddAuthPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddAuthPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->addAuthPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::AddAuthResourceOutcome MseClient::addAuthResource(const AddAuthResourceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +189,42 @@ MseClient::AddGatewayOutcomeCallable MseClient::addGatewayCallable(const AddGate
 			[this, request]()
 			{
 			return this->addGateway(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::AddGatewayAuthConsumerOutcome MseClient::addGatewayAuthConsumer(const AddGatewayAuthConsumerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddGatewayAuthConsumerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddGatewayAuthConsumerOutcome(AddGatewayAuthConsumerResult(outcome.result()));
+	else
+		return AddGatewayAuthConsumerOutcome(outcome.error());
+}
+
+void MseClient::addGatewayAuthConsumerAsync(const AddGatewayAuthConsumerRequest& request, const AddGatewayAuthConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addGatewayAuthConsumer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::AddGatewayAuthConsumerOutcomeCallable MseClient::addGatewayAuthConsumerCallable(const AddGatewayAuthConsumerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddGatewayAuthConsumerOutcome()>>(
+			[this, request]()
+			{
+			return this->addGatewayAuthConsumer(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -627,6 +699,42 @@ MseClient::CreateApplicationOutcomeCallable MseClient::createApplicationCallable
 	return task->get_future();
 }
 
+MseClient::CreateCircuitBreakerRuleOutcome MseClient::createCircuitBreakerRule(const CreateCircuitBreakerRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCircuitBreakerRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCircuitBreakerRuleOutcome(CreateCircuitBreakerRuleResult(outcome.result()));
+	else
+		return CreateCircuitBreakerRuleOutcome(outcome.error());
+}
+
+void MseClient::createCircuitBreakerRuleAsync(const CreateCircuitBreakerRuleRequest& request, const CreateCircuitBreakerRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCircuitBreakerRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::CreateCircuitBreakerRuleOutcomeCallable MseClient::createCircuitBreakerRuleCallable(const CreateCircuitBreakerRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCircuitBreakerRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->createCircuitBreakerRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::CreateClusterOutcome MseClient::createCluster(const CreateClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +801,42 @@ MseClient::CreateEngineNamespaceOutcomeCallable MseClient::createEngineNamespace
 			[this, request]()
 			{
 			return this->createEngineNamespace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::CreateFlowRuleOutcome MseClient::createFlowRule(const CreateFlowRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFlowRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFlowRuleOutcome(CreateFlowRuleResult(outcome.result()));
+	else
+		return CreateFlowRuleOutcome(outcome.error());
+}
+
+void MseClient::createFlowRuleAsync(const CreateFlowRuleRequest& request, const CreateFlowRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFlowRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::CreateFlowRuleOutcomeCallable MseClient::createFlowRuleCallable(const CreateFlowRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFlowRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->createFlowRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -987,6 +1131,42 @@ MseClient::DeleteAuthResourceOutcomeCallable MseClient::deleteAuthResourceCallab
 	return task->get_future();
 }
 
+MseClient::DeleteCircuitBreakerRulesOutcome MseClient::deleteCircuitBreakerRules(const DeleteCircuitBreakerRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCircuitBreakerRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCircuitBreakerRulesOutcome(DeleteCircuitBreakerRulesResult(outcome.result()));
+	else
+		return DeleteCircuitBreakerRulesOutcome(outcome.error());
+}
+
+void MseClient::deleteCircuitBreakerRulesAsync(const DeleteCircuitBreakerRulesRequest& request, const DeleteCircuitBreakerRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCircuitBreakerRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::DeleteCircuitBreakerRulesOutcomeCallable MseClient::deleteCircuitBreakerRulesCallable(const DeleteCircuitBreakerRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCircuitBreakerRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCircuitBreakerRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::DeleteClusterOutcome MseClient::deleteCluster(const DeleteClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1059,6 +1239,42 @@ MseClient::DeleteEngineNamespaceOutcomeCallable MseClient::deleteEngineNamespace
 	return task->get_future();
 }
 
+MseClient::DeleteFlowRulesOutcome MseClient::deleteFlowRules(const DeleteFlowRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteFlowRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteFlowRulesOutcome(DeleteFlowRulesResult(outcome.result()));
+	else
+		return DeleteFlowRulesOutcome(outcome.error());
+}
+
+void MseClient::deleteFlowRulesAsync(const DeleteFlowRulesRequest& request, const DeleteFlowRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteFlowRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::DeleteFlowRulesOutcomeCallable MseClient::deleteFlowRulesCallable(const DeleteFlowRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteFlowRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteFlowRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::DeleteGatewayOutcome MseClient::deleteGateway(const DeleteGatewayRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1089,6 +1305,78 @@ MseClient::DeleteGatewayOutcomeCallable MseClient::deleteGatewayCallable(const D
 			[this, request]()
 			{
 			return this->deleteGateway(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::DeleteGatewayAuthConsumerOutcome MseClient::deleteGatewayAuthConsumer(const DeleteGatewayAuthConsumerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteGatewayAuthConsumerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteGatewayAuthConsumerOutcome(DeleteGatewayAuthConsumerResult(outcome.result()));
+	else
+		return DeleteGatewayAuthConsumerOutcome(outcome.error());
+}
+
+void MseClient::deleteGatewayAuthConsumerAsync(const DeleteGatewayAuthConsumerRequest& request, const DeleteGatewayAuthConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteGatewayAuthConsumer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::DeleteGatewayAuthConsumerOutcomeCallable MseClient::deleteGatewayAuthConsumerCallable(const DeleteGatewayAuthConsumerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteGatewayAuthConsumerOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteGatewayAuthConsumer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::DeleteGatewayAuthConsumerResourceOutcome MseClient::deleteGatewayAuthConsumerResource(const DeleteGatewayAuthConsumerResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteGatewayAuthConsumerResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteGatewayAuthConsumerResourceOutcome(DeleteGatewayAuthConsumerResourceResult(outcome.result()));
+	else
+		return DeleteGatewayAuthConsumerResourceOutcome(outcome.error());
+}
+
+void MseClient::deleteGatewayAuthConsumerResourceAsync(const DeleteGatewayAuthConsumerResourceRequest& request, const DeleteGatewayAuthConsumerResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteGatewayAuthConsumerResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::DeleteGatewayAuthConsumerResourceOutcomeCallable MseClient::deleteGatewayAuthConsumerResourceCallable(const DeleteGatewayAuthConsumerResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteGatewayAuthConsumerResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteGatewayAuthConsumerResource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1455,6 +1743,42 @@ MseClient::DeleteNacosServiceOutcomeCallable MseClient::deleteNacosServiceCallab
 	return task->get_future();
 }
 
+MseClient::DeleteNamespaceOutcome MseClient::deleteNamespace(const DeleteNamespaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteNamespaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteNamespaceOutcome(DeleteNamespaceResult(outcome.result()));
+	else
+		return DeleteNamespaceOutcome(outcome.error());
+}
+
+void MseClient::deleteNamespaceAsync(const DeleteNamespaceRequest& request, const DeleteNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteNamespace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::DeleteNamespaceOutcomeCallable MseClient::deleteNamespaceCallable(const DeleteNamespaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteNamespaceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteNamespace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::DeleteSecurityGroupRuleOutcome MseClient::deleteSecurityGroupRule(const DeleteSecurityGroupRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1671,6 +1995,78 @@ MseClient::ExportNacosConfigOutcomeCallable MseClient::exportNacosConfigCallable
 	return task->get_future();
 }
 
+MseClient::ExportZookeeperDataOutcome MseClient::exportZookeeperData(const ExportZookeeperDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExportZookeeperDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExportZookeeperDataOutcome(ExportZookeeperDataResult(outcome.result()));
+	else
+		return ExportZookeeperDataOutcome(outcome.error());
+}
+
+void MseClient::exportZookeeperDataAsync(const ExportZookeeperDataRequest& request, const ExportZookeeperDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, exportZookeeperData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ExportZookeeperDataOutcomeCallable MseClient::exportZookeeperDataCallable(const ExportZookeeperDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExportZookeeperDataOutcome()>>(
+			[this, request]()
+			{
+			return this->exportZookeeperData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::FetchLosslessRuleListOutcome MseClient::fetchLosslessRuleList(const FetchLosslessRuleListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FetchLosslessRuleListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FetchLosslessRuleListOutcome(FetchLosslessRuleListResult(outcome.result()));
+	else
+		return FetchLosslessRuleListOutcome(outcome.error());
+}
+
+void MseClient::fetchLosslessRuleListAsync(const FetchLosslessRuleListRequest& request, const FetchLosslessRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, fetchLosslessRuleList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::FetchLosslessRuleListOutcomeCallable MseClient::fetchLosslessRuleListCallable(const FetchLosslessRuleListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FetchLosslessRuleListOutcome()>>(
+			[this, request]()
+			{
+			return this->fetchLosslessRuleList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::GetAppMessageQueueRouteOutcome MseClient::getAppMessageQueueRoute(const GetAppMessageQueueRouteRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1881,6 +2277,42 @@ MseClient::GetGatewayOutcomeCallable MseClient::getGatewayCallable(const GetGate
 			[this, request]()
 			{
 			return this->getGateway(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::GetGatewayAuthConsumerDetailOutcome MseClient::getGatewayAuthConsumerDetail(const GetGatewayAuthConsumerDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetGatewayAuthConsumerDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetGatewayAuthConsumerDetailOutcome(GetGatewayAuthConsumerDetailResult(outcome.result()));
+	else
+		return GetGatewayAuthConsumerDetailOutcome(outcome.error());
+}
+
+void MseClient::getGatewayAuthConsumerDetailAsync(const GetGatewayAuthConsumerDetailRequest& request, const GetGatewayAuthConsumerDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getGatewayAuthConsumerDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::GetGatewayAuthConsumerDetailOutcomeCallable MseClient::getGatewayAuthConsumerDetailCallable(const GetGatewayAuthConsumerDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetGatewayAuthConsumerDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getGatewayAuthConsumerDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2175,6 +2607,42 @@ MseClient::GetKubernetesSourceOutcomeCallable MseClient::getKubernetesSourceCall
 	return task->get_future();
 }
 
+MseClient::GetLosslessRuleByAppOutcome MseClient::getLosslessRuleByApp(const GetLosslessRuleByAppRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetLosslessRuleByAppOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetLosslessRuleByAppOutcome(GetLosslessRuleByAppResult(outcome.result()));
+	else
+		return GetLosslessRuleByAppOutcome(outcome.error());
+}
+
+void MseClient::getLosslessRuleByAppAsync(const GetLosslessRuleByAppRequest& request, const GetLosslessRuleByAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getLosslessRuleByApp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::GetLosslessRuleByAppOutcomeCallable MseClient::getLosslessRuleByAppCallable(const GetLosslessRuleByAppRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetLosslessRuleByAppOutcome()>>(
+			[this, request]()
+			{
+			return this->getLosslessRuleByApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::GetMseFeatureSwitchOutcome MseClient::getMseFeatureSwitch(const GetMseFeatureSwitchRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2463,6 +2931,42 @@ MseClient::GetServiceListOutcomeCallable MseClient::getServiceListCallable(const
 	return task->get_future();
 }
 
+MseClient::GetServiceListPageOutcome MseClient::getServiceListPage(const GetServiceListPageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetServiceListPageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetServiceListPageOutcome(GetServiceListPageResult(outcome.result()));
+	else
+		return GetServiceListPageOutcome(outcome.error());
+}
+
+void MseClient::getServiceListPageAsync(const GetServiceListPageRequest& request, const GetServiceListPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getServiceListPage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::GetServiceListPageOutcomeCallable MseClient::getServiceListPageCallable(const GetServiceListPageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetServiceListPageOutcome()>>(
+			[this, request]()
+			{
+			return this->getServiceListPage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::GetServiceListenersOutcome MseClient::getServiceListeners(const GetServiceListenersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2493,6 +2997,42 @@ MseClient::GetServiceListenersOutcomeCallable MseClient::getServiceListenersCall
 			[this, request]()
 			{
 			return this->getServiceListeners(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::GetServiceMethodPageOutcome MseClient::getServiceMethodPage(const GetServiceMethodPageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetServiceMethodPageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetServiceMethodPageOutcome(GetServiceMethodPageResult(outcome.result()));
+	else
+		return GetServiceMethodPageOutcome(outcome.error());
+}
+
+void MseClient::getServiceMethodPageAsync(const GetServiceMethodPageRequest& request, const GetServiceMethodPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getServiceMethodPage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::GetServiceMethodPageOutcomeCallable MseClient::getServiceMethodPageCallable(const GetServiceMethodPageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetServiceMethodPageOutcome()>>(
+			[this, request]()
+			{
+			return this->getServiceMethodPage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2859,6 +3399,78 @@ MseClient::ListApplicationsWithTagRulesOutcomeCallable MseClient::listApplicatio
 	return task->get_future();
 }
 
+MseClient::ListAuthPolicyOutcome MseClient::listAuthPolicy(const ListAuthPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAuthPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAuthPolicyOutcome(ListAuthPolicyResult(outcome.result()));
+	else
+		return ListAuthPolicyOutcome(outcome.error());
+}
+
+void MseClient::listAuthPolicyAsync(const ListAuthPolicyRequest& request, const ListAuthPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAuthPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ListAuthPolicyOutcomeCallable MseClient::listAuthPolicyCallable(const ListAuthPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAuthPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->listAuthPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::ListCircuitBreakerRulesOutcome MseClient::listCircuitBreakerRules(const ListCircuitBreakerRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCircuitBreakerRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCircuitBreakerRulesOutcome(ListCircuitBreakerRulesResult(outcome.result()));
+	else
+		return ListCircuitBreakerRulesOutcome(outcome.error());
+}
+
+void MseClient::listCircuitBreakerRulesAsync(const ListCircuitBreakerRulesRequest& request, const ListCircuitBreakerRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCircuitBreakerRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ListCircuitBreakerRulesOutcomeCallable MseClient::listCircuitBreakerRulesCallable(const ListCircuitBreakerRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCircuitBreakerRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->listCircuitBreakerRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::ListClusterConnectionTypesOutcome MseClient::listClusterConnectionTypes(const ListClusterConnectionTypesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3183,6 +3795,78 @@ MseClient::ListEurekaServicesOutcomeCallable MseClient::listEurekaServicesCallab
 	return task->get_future();
 }
 
+MseClient::ListExportZookeeperDataOutcome MseClient::listExportZookeeperData(const ListExportZookeeperDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListExportZookeeperDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListExportZookeeperDataOutcome(ListExportZookeeperDataResult(outcome.result()));
+	else
+		return ListExportZookeeperDataOutcome(outcome.error());
+}
+
+void MseClient::listExportZookeeperDataAsync(const ListExportZookeeperDataRequest& request, const ListExportZookeeperDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listExportZookeeperData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ListExportZookeeperDataOutcomeCallable MseClient::listExportZookeeperDataCallable(const ListExportZookeeperDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListExportZookeeperDataOutcome()>>(
+			[this, request]()
+			{
+			return this->listExportZookeeperData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::ListFlowRulesOutcome MseClient::listFlowRules(const ListFlowRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListFlowRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListFlowRulesOutcome(ListFlowRulesResult(outcome.result()));
+	else
+		return ListFlowRulesOutcome(outcome.error());
+}
+
+void MseClient::listFlowRulesAsync(const ListFlowRulesRequest& request, const ListFlowRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listFlowRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ListFlowRulesOutcomeCallable MseClient::listFlowRulesCallable(const ListFlowRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListFlowRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->listFlowRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::ListGatewayOutcome MseClient::listGateway(const ListGatewayRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3213,6 +3897,78 @@ MseClient::ListGatewayOutcomeCallable MseClient::listGatewayCallable(const ListG
 			[this, request]()
 			{
 			return this->listGateway(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::ListGatewayAuthConsumerOutcome MseClient::listGatewayAuthConsumer(const ListGatewayAuthConsumerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListGatewayAuthConsumerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListGatewayAuthConsumerOutcome(ListGatewayAuthConsumerResult(outcome.result()));
+	else
+		return ListGatewayAuthConsumerOutcome(outcome.error());
+}
+
+void MseClient::listGatewayAuthConsumerAsync(const ListGatewayAuthConsumerRequest& request, const ListGatewayAuthConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listGatewayAuthConsumer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ListGatewayAuthConsumerOutcomeCallable MseClient::listGatewayAuthConsumerCallable(const ListGatewayAuthConsumerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListGatewayAuthConsumerOutcome()>>(
+			[this, request]()
+			{
+			return this->listGatewayAuthConsumer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::ListGatewayAuthConsumerResourceOutcome MseClient::listGatewayAuthConsumerResource(const ListGatewayAuthConsumerResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListGatewayAuthConsumerResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListGatewayAuthConsumerResourceOutcome(ListGatewayAuthConsumerResourceResult(outcome.result()));
+	else
+		return ListGatewayAuthConsumerResourceOutcome(outcome.error());
+}
+
+void MseClient::listGatewayAuthConsumerResourceAsync(const ListGatewayAuthConsumerResourceRequest& request, const ListGatewayAuthConsumerResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listGatewayAuthConsumerResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ListGatewayAuthConsumerResourceOutcomeCallable MseClient::listGatewayAuthConsumerResourceCallable(const ListGatewayAuthConsumerResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListGatewayAuthConsumerResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->listGatewayAuthConsumerResource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3285,6 +4041,42 @@ MseClient::ListGatewayRouteOutcomeCallable MseClient::listGatewayRouteCallable(c
 			[this, request]()
 			{
 			return this->listGatewayRoute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::ListGatewayRouteOnAuthOutcome MseClient::listGatewayRouteOnAuth(const ListGatewayRouteOnAuthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListGatewayRouteOnAuthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListGatewayRouteOnAuthOutcome(ListGatewayRouteOnAuthResult(outcome.result()));
+	else
+		return ListGatewayRouteOnAuthOutcome(outcome.error());
+}
+
+void MseClient::listGatewayRouteOnAuthAsync(const ListGatewayRouteOnAuthRequest& request, const ListGatewayRouteOnAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listGatewayRouteOnAuth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ListGatewayRouteOnAuthOutcomeCallable MseClient::listGatewayRouteOnAuthCallable(const ListGatewayRouteOnAuthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListGatewayRouteOnAuthOutcome()>>(
+			[this, request]()
+			{
+			return this->listGatewayRouteOnAuth(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4551,6 +5343,42 @@ MseClient::QueryMonitorOutcomeCallable MseClient::queryMonitorCallable(const Que
 	return task->get_future();
 }
 
+MseClient::QueryNamespaceOutcome MseClient::queryNamespace(const QueryNamespaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryNamespaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryNamespaceOutcome(QueryNamespaceResult(outcome.result()));
+	else
+		return QueryNamespaceOutcome(outcome.error());
+}
+
+void MseClient::queryNamespaceAsync(const QueryNamespaceRequest& request, const QueryNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryNamespace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::QueryNamespaceOutcomeCallable MseClient::queryNamespaceCallable(const QueryNamespaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryNamespaceOutcome()>>(
+			[this, request]()
+			{
+			return this->queryNamespace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::QuerySlbSpecOutcome MseClient::querySlbSpec(const QuerySlbSpecRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4653,6 +5481,78 @@ MseClient::QueryZnodeDetailOutcomeCallable MseClient::queryZnodeDetailCallable(c
 			[this, request]()
 			{
 			return this->queryZnodeDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::RemoveApplicationOutcome MseClient::removeApplication(const RemoveApplicationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveApplicationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveApplicationOutcome(RemoveApplicationResult(outcome.result()));
+	else
+		return RemoveApplicationOutcome(outcome.error());
+}
+
+void MseClient::removeApplicationAsync(const RemoveApplicationRequest& request, const RemoveApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeApplication(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::RemoveApplicationOutcomeCallable MseClient::removeApplicationCallable(const RemoveApplicationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveApplicationOutcome()>>(
+			[this, request]()
+			{
+			return this->removeApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::RemoveAuthPolicyOutcome MseClient::removeAuthPolicy(const RemoveAuthPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveAuthPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveAuthPolicyOutcome(RemoveAuthPolicyResult(outcome.result()));
+	else
+		return RemoveAuthPolicyOutcome(outcome.error());
+}
+
+void MseClient::removeAuthPolicyAsync(const RemoveAuthPolicyRequest& request, const RemoveAuthPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeAuthPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::RemoveAuthPolicyOutcomeCallable MseClient::removeAuthPolicyCallable(const RemoveAuthPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveAuthPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->removeAuthPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4875,6 +5775,42 @@ MseClient::UpdateAclOutcomeCallable MseClient::updateAclCallable(const UpdateAcl
 	return task->get_future();
 }
 
+MseClient::UpdateAuthPolicyOutcome MseClient::updateAuthPolicy(const UpdateAuthPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAuthPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAuthPolicyOutcome(UpdateAuthPolicyResult(outcome.result()));
+	else
+		return UpdateAuthPolicyOutcome(outcome.error());
+}
+
+void MseClient::updateAuthPolicyAsync(const UpdateAuthPolicyRequest& request, const UpdateAuthPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAuthPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdateAuthPolicyOutcomeCallable MseClient::updateAuthPolicyCallable(const UpdateAuthPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAuthPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAuthPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::UpdateBlackWhiteListOutcome MseClient::updateBlackWhiteList(const UpdateBlackWhiteListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4905,6 +5841,42 @@ MseClient::UpdateBlackWhiteListOutcomeCallable MseClient::updateBlackWhiteListCa
 			[this, request]()
 			{
 			return this->updateBlackWhiteList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::UpdateCircuitBreakerRuleOutcome MseClient::updateCircuitBreakerRule(const UpdateCircuitBreakerRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateCircuitBreakerRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateCircuitBreakerRuleOutcome(UpdateCircuitBreakerRuleResult(outcome.result()));
+	else
+		return UpdateCircuitBreakerRuleOutcome(outcome.error());
+}
+
+void MseClient::updateCircuitBreakerRuleAsync(const UpdateCircuitBreakerRuleRequest& request, const UpdateCircuitBreakerRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateCircuitBreakerRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdateCircuitBreakerRuleOutcomeCallable MseClient::updateCircuitBreakerRuleCallable(const UpdateCircuitBreakerRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateCircuitBreakerRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->updateCircuitBreakerRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5055,6 +6027,186 @@ MseClient::UpdateEngineNamespaceOutcomeCallable MseClient::updateEngineNamespace
 	return task->get_future();
 }
 
+MseClient::UpdateFlowRuleOutcome MseClient::updateFlowRule(const UpdateFlowRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateFlowRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateFlowRuleOutcome(UpdateFlowRuleResult(outcome.result()));
+	else
+		return UpdateFlowRuleOutcome(outcome.error());
+}
+
+void MseClient::updateFlowRuleAsync(const UpdateFlowRuleRequest& request, const UpdateFlowRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateFlowRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdateFlowRuleOutcomeCallable MseClient::updateFlowRuleCallable(const UpdateFlowRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateFlowRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->updateFlowRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::UpdateGatewayAuthConsumerOutcome MseClient::updateGatewayAuthConsumer(const UpdateGatewayAuthConsumerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateGatewayAuthConsumerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateGatewayAuthConsumerOutcome(UpdateGatewayAuthConsumerResult(outcome.result()));
+	else
+		return UpdateGatewayAuthConsumerOutcome(outcome.error());
+}
+
+void MseClient::updateGatewayAuthConsumerAsync(const UpdateGatewayAuthConsumerRequest& request, const UpdateGatewayAuthConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateGatewayAuthConsumer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdateGatewayAuthConsumerOutcomeCallable MseClient::updateGatewayAuthConsumerCallable(const UpdateGatewayAuthConsumerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateGatewayAuthConsumerOutcome()>>(
+			[this, request]()
+			{
+			return this->updateGatewayAuthConsumer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::UpdateGatewayAuthConsumerResourceOutcome MseClient::updateGatewayAuthConsumerResource(const UpdateGatewayAuthConsumerResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateGatewayAuthConsumerResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateGatewayAuthConsumerResourceOutcome(UpdateGatewayAuthConsumerResourceResult(outcome.result()));
+	else
+		return UpdateGatewayAuthConsumerResourceOutcome(outcome.error());
+}
+
+void MseClient::updateGatewayAuthConsumerResourceAsync(const UpdateGatewayAuthConsumerResourceRequest& request, const UpdateGatewayAuthConsumerResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateGatewayAuthConsumerResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdateGatewayAuthConsumerResourceOutcomeCallable MseClient::updateGatewayAuthConsumerResourceCallable(const UpdateGatewayAuthConsumerResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateGatewayAuthConsumerResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->updateGatewayAuthConsumerResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::UpdateGatewayAuthConsumerResourceStatusOutcome MseClient::updateGatewayAuthConsumerResourceStatus(const UpdateGatewayAuthConsumerResourceStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateGatewayAuthConsumerResourceStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateGatewayAuthConsumerResourceStatusOutcome(UpdateGatewayAuthConsumerResourceStatusResult(outcome.result()));
+	else
+		return UpdateGatewayAuthConsumerResourceStatusOutcome(outcome.error());
+}
+
+void MseClient::updateGatewayAuthConsumerResourceStatusAsync(const UpdateGatewayAuthConsumerResourceStatusRequest& request, const UpdateGatewayAuthConsumerResourceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateGatewayAuthConsumerResourceStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdateGatewayAuthConsumerResourceStatusOutcomeCallable MseClient::updateGatewayAuthConsumerResourceStatusCallable(const UpdateGatewayAuthConsumerResourceStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateGatewayAuthConsumerResourceStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->updateGatewayAuthConsumerResourceStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::UpdateGatewayAuthConsumerStatusOutcome MseClient::updateGatewayAuthConsumerStatus(const UpdateGatewayAuthConsumerStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateGatewayAuthConsumerStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateGatewayAuthConsumerStatusOutcome(UpdateGatewayAuthConsumerStatusResult(outcome.result()));
+	else
+		return UpdateGatewayAuthConsumerStatusOutcome(outcome.error());
+}
+
+void MseClient::updateGatewayAuthConsumerStatusAsync(const UpdateGatewayAuthConsumerStatusRequest& request, const UpdateGatewayAuthConsumerStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateGatewayAuthConsumerStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdateGatewayAuthConsumerStatusOutcomeCallable MseClient::updateGatewayAuthConsumerStatusCallable(const UpdateGatewayAuthConsumerStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateGatewayAuthConsumerStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->updateGatewayAuthConsumerStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::UpdateGatewayDomainOutcome MseClient::updateGatewayDomain(const UpdateGatewayDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5193,6 +6345,42 @@ MseClient::UpdateGatewayRouteOutcomeCallable MseClient::updateGatewayRouteCallab
 			[this, request]()
 			{
 			return this->updateGatewayRoute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::UpdateGatewayRouteAuthOutcome MseClient::updateGatewayRouteAuth(const UpdateGatewayRouteAuthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateGatewayRouteAuthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateGatewayRouteAuthOutcome(UpdateGatewayRouteAuthResult(outcome.result()));
+	else
+		return UpdateGatewayRouteAuthOutcome(outcome.error());
+}
+
+void MseClient::updateGatewayRouteAuthAsync(const UpdateGatewayRouteAuthRequest& request, const UpdateGatewayRouteAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateGatewayRouteAuth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdateGatewayRouteAuthOutcomeCallable MseClient::updateGatewayRouteAuthCallable(const UpdateGatewayRouteAuthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateGatewayRouteAuthOutcome()>>(
+			[this, request]()
+			{
+			return this->updateGatewayRouteAuth(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

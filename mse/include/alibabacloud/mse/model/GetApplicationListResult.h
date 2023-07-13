@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					{
 						long status;
 						int instancesNumber;
+						long tagCount;
 						std::string appId;
 						std::string language;
 						std::string userId;
@@ -61,6 +62,7 @@ namespace AlibabaCloud
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
 				Data getData()const;
+				std::string getErrorCode()const;
 				int getCode()const;
 				bool getSuccess()const;
 
@@ -70,6 +72,7 @@ namespace AlibabaCloud
 				std::string message_;
 				int httpStatusCode_;
 				Data data_;
+				std::string errorCode_;
 				int code_;
 				bool success_;
 

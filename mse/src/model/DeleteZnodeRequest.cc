@@ -34,15 +34,6 @@ void DeleteZnodeRequest::setMseSessionId(const std::string &mseSessionId) {
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string DeleteZnodeRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void DeleteZnodeRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
-}
-
 std::string DeleteZnodeRequest::getPath() const {
   return path_;
 }
@@ -59,6 +50,15 @@ std::string DeleteZnodeRequest::getRequestPars() const {
 void DeleteZnodeRequest::setRequestPars(const std::string &requestPars) {
   requestPars_ = requestPars;
   setParameter(std::string("RequestPars"), requestPars);
+}
+
+std::string DeleteZnodeRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void DeleteZnodeRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string DeleteZnodeRequest::getAcceptLanguage() const {

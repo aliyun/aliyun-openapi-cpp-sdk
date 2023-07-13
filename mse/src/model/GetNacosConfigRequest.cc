@@ -34,24 +34,6 @@ void GetNacosConfigRequest::setMseSessionId(const std::string &mseSessionId) {
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string GetNacosConfigRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void GetNacosConfigRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string GetNacosConfigRequest::getDataId() const {
-  return dataId_;
-}
-
-void GetNacosConfigRequest::setDataId(const std::string &dataId) {
-  dataId_ = dataId;
-  setParameter(std::string("DataId"), dataId);
-}
-
 std::string GetNacosConfigRequest::getNamespaceId() const {
   return namespaceId_;
 }
@@ -59,15 +41,6 @@ std::string GetNacosConfigRequest::getNamespaceId() const {
 void GetNacosConfigRequest::setNamespaceId(const std::string &namespaceId) {
   namespaceId_ = namespaceId;
   setParameter(std::string("NamespaceId"), namespaceId);
-}
-
-std::string GetNacosConfigRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void GetNacosConfigRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 
 bool GetNacosConfigRequest::getBeta() const {
@@ -86,5 +59,32 @@ std::string GetNacosConfigRequest::getGroup() const {
 void GetNacosConfigRequest::setGroup(const std::string &group) {
   group_ = group;
   setParameter(std::string("Group"), group);
+}
+
+std::string GetNacosConfigRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void GetNacosConfigRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string GetNacosConfigRequest::getDataId() const {
+  return dataId_;
+}
+
+void GetNacosConfigRequest::setDataId(const std::string &dataId) {
+  dataId_ = dataId;
+  setParameter(std::string("DataId"), dataId);
+}
+
+std::string GetNacosConfigRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void GetNacosConfigRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

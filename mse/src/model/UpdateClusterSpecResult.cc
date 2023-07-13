@@ -49,6 +49,8 @@ void UpdateClusterSpecResult::parse(const std::string &payload)
 		success_ = value["Success"].asString() == "true";
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 
@@ -65,6 +67,11 @@ int UpdateClusterSpecResult::getHttpStatusCode()const
 std::string UpdateClusterSpecResult::getData()const
 {
 	return data_;
+}
+
+std::string UpdateClusterSpecResult::getErrorCode()const
+{
+	return errorCode_;
 }
 
 int UpdateClusterSpecResult::getCode()const

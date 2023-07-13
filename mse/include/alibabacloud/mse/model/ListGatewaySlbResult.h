@@ -34,6 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct Sources
 				{
+					struct Service
+					{
+						std::string vServerGroupId;
+						std::string port;
+						std::string vServerGroupName;
+						std::string protocol;
+					};
 					std::string slbId;
 					int httpPort;
 					std::string vServerGroupId;
@@ -47,8 +54,10 @@ namespace AlibabaCloud
 					std::string gmtCreate;
 					std::string gatewaySlbMode;
 					std::string slbIp;
+					std::string vsMetaInfo;
 					int serviceWeight;
 					std::string id;
+					std::vector<Sources::Service> vServiceList;
 					int httpsPort;
 				};
 

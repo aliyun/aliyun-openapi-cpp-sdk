@@ -25,15 +25,6 @@ UntagResourcesRequest::UntagResourcesRequest()
 
 UntagResourcesRequest::~UntagResourcesRequest() {}
 
-bool UntagResourcesRequest::getAll() const {
-  return all_;
-}
-
-void UntagResourcesRequest::setAll(bool all) {
-  all_ = all;
-  setParameter(std::string("All"), all ? "true" : "false");
-}
-
 std::string UntagResourcesRequest::getMseSessionId() const {
   return mseSessionId_;
 }
@@ -41,6 +32,24 @@ std::string UntagResourcesRequest::getMseSessionId() const {
 void UntagResourcesRequest::setMseSessionId(const std::string &mseSessionId) {
   mseSessionId_ = mseSessionId;
   setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
+std::string UntagResourcesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UntagResourcesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+bool UntagResourcesRequest::getAll() const {
+  return all_;
+}
+
+void UntagResourcesRequest::setAll(bool all) {
+  all_ = all;
+  setParameter(std::string("All"), all ? "true" : "false");
 }
 
 std::vector<std::string> UntagResourcesRequest::getResourceId() const {
@@ -58,15 +67,6 @@ std::string UntagResourcesRequest::getResourceType() const {
 void UntagResourcesRequest::setResourceType(const std::string &resourceType) {
   resourceType_ = resourceType;
   setParameter(std::string("ResourceType"), resourceType);
-}
-
-std::string UntagResourcesRequest::getRegionId() const {
-  return regionId_;
-}
-
-void UntagResourcesRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string UntagResourcesRequest::getAcceptLanguage() const {

@@ -34,10 +34,6 @@ public:
 	void setMseSessionId(const std::string &mseSessionId);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
-	std::string getDataId() const;
-	void setDataId(const std::string &dataId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNamespaceId() const;
@@ -46,22 +42,26 @@ public:
 	void setRequestPars(const std::string &requestPars);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getGroup() const;
 	void setGroup(const std::string &group);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getDataId() const;
+	void setDataId(const std::string &dataId);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
 	int pageNum_;
-	std::string instanceId_;
-	std::string dataId_;
 	std::string regionId_;
 	std::string namespaceId_;
 	std::string requestPars_;
 	int pageSize_;
-	std::string acceptLanguage_;
 	std::string group_;
+	std::string instanceId_;
+	std::string dataId_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Mse

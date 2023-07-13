@@ -34,70 +34,6 @@ void CreateOrUpdateSwimmingLaneRequest::setMseSessionId(const std::string &mseSe
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string CreateOrUpdateSwimmingLaneRequest::getSource() const {
-  return source_;
-}
-
-void CreateOrUpdateSwimmingLaneRequest::setSource(const std::string &source) {
-  source_ = source;
-  setParameter(std::string("Source"), source);
-}
-
-std::string CreateOrUpdateSwimmingLaneRequest::getGmtModified() const {
-  return gmtModified_;
-}
-
-void CreateOrUpdateSwimmingLaneRequest::setGmtModified(const std::string &gmtModified) {
-  gmtModified_ = gmtModified;
-  setParameter(std::string("GmtModified"), gmtModified);
-}
-
-std::string CreateOrUpdateSwimmingLaneRequest::getUserId() const {
-  return userId_;
-}
-
-void CreateOrUpdateSwimmingLaneRequest::setUserId(const std::string &userId) {
-  userId_ = userId;
-  setParameter(std::string("UserId"), userId);
-}
-
-std::string CreateOrUpdateSwimmingLaneRequest::getLicenseKey() const {
-  return licenseKey_;
-}
-
-void CreateOrUpdateSwimmingLaneRequest::setLicenseKey(const std::string &licenseKey) {
-  licenseKey_ = licenseKey;
-  setParameter(std::string("LicenseKey"), licenseKey);
-}
-
-CreateOrUpdateSwimmingLaneRequest::GatewaySwimmingLaneRouteJson CreateOrUpdateSwimmingLaneRequest::getGatewaySwimmingLaneRouteJson() const {
-  return gatewaySwimmingLaneRouteJson_;
-}
-
-void CreateOrUpdateSwimmingLaneRequest::setGatewaySwimmingLaneRouteJson(const CreateOrUpdateSwimmingLaneRequest::GatewaySwimmingLaneRouteJson &gatewaySwimmingLaneRouteJson) {
-  gatewaySwimmingLaneRouteJson_ = gatewaySwimmingLaneRouteJson;
-  setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".GatewayUniqueId", gatewaySwimmingLaneRouteJson.gatewayUniqueId);
-  for(int dep1 = 0; dep1 != gatewaySwimmingLaneRouteJson.routeIdList.size(); dep1++) {
-    setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".RouteIdList." + std::to_string(dep1 + 1), std::to_string(gatewaySwimmingLaneRouteJson.routeIdList[dep1]));
-  }
-  for(int dep1 = 0; dep1 != gatewaySwimmingLaneRouteJson.conditions.size(); dep1++) {
-    setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".Conditions." + std::to_string(dep1 + 1) + ".Name", gatewaySwimmingLaneRouteJson.conditions[dep1].name);
-    setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".Conditions." + std::to_string(dep1 + 1) + ".Type", gatewaySwimmingLaneRouteJson.conditions[dep1].type);
-    setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".Conditions." + std::to_string(dep1 + 1) + ".Cond", gatewaySwimmingLaneRouteJson.conditions[dep1].cond);
-    setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".Conditions." + std::to_string(dep1 + 1) + ".Value", gatewaySwimmingLaneRouteJson.conditions[dep1].value);
-  }
-  setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".GatewayId", std::to_string(gatewaySwimmingLaneRouteJson.gatewayId));
-}
-
-std::string CreateOrUpdateSwimmingLaneRequest::getRegionId() const {
-  return regionId_;
-}
-
-void CreateOrUpdateSwimmingLaneRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string CreateOrUpdateSwimmingLaneRequest::getEntryRule() const {
   return entryRule_;
 }
@@ -146,20 +82,18 @@ void CreateOrUpdateSwimmingLaneRequest::setEntryRules(const std::vector<CreateOr
     for(int dep2 = 0; dep2 != entryRulesObj.restItems.size(); dep2++) {
     auto restItemsObj = entryRulesObj.restItems.at(dep2);
     std::string restItemsObjStr = entryRulesObjStr + ".RestItems" + "." + std::to_string(dep2 + 1);
-      setParameter(restItemsObjStr + ".Datum", restItemsObj.datum);
-      setParameter(restItemsObjStr + ".Divisor", std::to_string(restItemsObj.divisor));
-      setParameter(restItemsObjStr + ".Rate", std::to_string(restItemsObj.rate));
-      setParameter(restItemsObjStr + ".Name", restItemsObj.name);
-      setParameter(restItemsObjStr + ".Type", restItemsObj.type);
-      setParameter(restItemsObjStr + ".Cond", restItemsObj.cond);
-      setParameter(restItemsObjStr + ".Remainder", std::to_string(restItemsObj.remainder));
-      setParameter(restItemsObjStr + ".Value", restItemsObj.value);
-      setParameter(restItemsObjStr + ".Operator", restItemsObj._operator);
+      setBodyParameter(restItemsObjStr + ".Datum", restItemsObj.datum);
+      setBodyParameter(restItemsObjStr + ".Divisor", std::to_string(restItemsObj.divisor));
+      setBodyParameter(restItemsObjStr + ".Rate", std::to_string(restItemsObj.rate));
+      setBodyParameter(restItemsObjStr + ".Name", restItemsObj.name);
+      setBodyParameter(restItemsObjStr + ".Type", restItemsObj.type);
+      setBodyParameter(restItemsObjStr + ".Cond", restItemsObj.cond);
+      setBodyParameter(restItemsObjStr + ".Remainder", std::to_string(restItemsObj.remainder));
+      setBodyParameter(restItemsObjStr + ".Value", restItemsObj.value);
+      setBodyParameter(restItemsObjStr + ".Operator", restItemsObj._operator);
     }
-    setParameter(entryRulesObjStr + ".Path", entryRulesObj.path);
-    setParameter(entryRulesObjStr + ".Condition", entryRulesObj.condition);
-    setParameter(entryRulesObjStr + ".Enable", entryRulesObj.enable ? "true" : "false");
-    setParameter(entryRulesObjStr + ".Priority", std::to_string(entryRulesObj.priority));
+    setBodyParameter(entryRulesObjStr + ".Condition", entryRulesObj.condition);
+    setBodyParameter(entryRulesObjStr + ".Priority", std::to_string(entryRulesObj.priority));
   }
 }
 
@@ -170,15 +104,6 @@ long CreateOrUpdateSwimmingLaneRequest::getGroupId() const {
 void CreateOrUpdateSwimmingLaneRequest::setGroupId(long groupId) {
   groupId_ = groupId;
   setParameter(std::string("GroupId"), std::to_string(groupId));
-}
-
-std::string CreateOrUpdateSwimmingLaneRequest::getGmtCreate() const {
-  return gmtCreate_;
-}
-
-void CreateOrUpdateSwimmingLaneRequest::setGmtCreate(const std::string &gmtCreate) {
-  gmtCreate_ = gmtCreate;
-  setParameter(std::string("GmtCreate"), gmtCreate);
 }
 
 bool CreateOrUpdateSwimmingLaneRequest::getEnableRules() const {
@@ -199,6 +124,43 @@ void CreateOrUpdateSwimmingLaneRequest::setName(const std::string &name) {
   setParameter(std::string("Name"), name);
 }
 
+CreateOrUpdateSwimmingLaneRequest::GatewaySwimmingLaneRouteJson CreateOrUpdateSwimmingLaneRequest::getGatewaySwimmingLaneRouteJson() const {
+  return gatewaySwimmingLaneRouteJson_;
+}
+
+void CreateOrUpdateSwimmingLaneRequest::setGatewaySwimmingLaneRouteJson(const CreateOrUpdateSwimmingLaneRequest::GatewaySwimmingLaneRouteJson &gatewaySwimmingLaneRouteJson) {
+  gatewaySwimmingLaneRouteJson_ = gatewaySwimmingLaneRouteJson;
+  setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".GatewayUniqueId", gatewaySwimmingLaneRouteJson.gatewayUniqueId);
+  for(int dep1 = 0; dep1 != gatewaySwimmingLaneRouteJson.routeIdList.size(); dep1++) {
+    setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".RouteIdList." + std::to_string(dep1 + 1), std::to_string(gatewaySwimmingLaneRouteJson.routeIdList[dep1]));
+  }
+  for(int dep1 = 0; dep1 != gatewaySwimmingLaneRouteJson.conditions.size(); dep1++) {
+    setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".Conditions." + std::to_string(dep1 + 1) + ".Name", gatewaySwimmingLaneRouteJson.conditions[dep1].name);
+    setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".Conditions." + std::to_string(dep1 + 1) + ".Type", gatewaySwimmingLaneRouteJson.conditions[dep1].type);
+    setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".Conditions." + std::to_string(dep1 + 1) + ".Cond", gatewaySwimmingLaneRouteJson.conditions[dep1].cond);
+    setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".Conditions." + std::to_string(dep1 + 1) + ".Value", gatewaySwimmingLaneRouteJson.conditions[dep1].value);
+  }
+  setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".GatewayId", std::to_string(gatewaySwimmingLaneRouteJson.gatewayId));
+}
+
+std::string CreateOrUpdateSwimmingLaneRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateOrUpdateSwimmingLaneRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string CreateOrUpdateSwimmingLaneRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void CreateOrUpdateSwimmingLaneRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
+}
+
 std::string CreateOrUpdateSwimmingLaneRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }
@@ -206,14 +168,5 @@ std::string CreateOrUpdateSwimmingLaneRequest::getAcceptLanguage() const {
 void CreateOrUpdateSwimmingLaneRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
-int CreateOrUpdateSwimmingLaneRequest::getStatus() const {
-  return status_;
-}
-
-void CreateOrUpdateSwimmingLaneRequest::setStatus(int status) {
-  status_ = status;
-  setParameter(std::string("Status"), std::to_string(status));
 }
 

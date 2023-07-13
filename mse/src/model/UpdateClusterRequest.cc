@@ -34,6 +34,15 @@ void UpdateClusterRequest::setMseSessionId(const std::string &mseSessionId) {
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
+std::string UpdateClusterRequest::getRequestPars() const {
+  return requestPars_;
+}
+
+void UpdateClusterRequest::setRequestPars(const std::string &requestPars) {
+  requestPars_ = requestPars;
+  setParameter(std::string("RequestPars"), requestPars);
+}
+
 std::string UpdateClusterRequest::getClusterAliasName() const {
   return clusterAliasName_;
 }
@@ -59,15 +68,6 @@ std::string UpdateClusterRequest::getInstanceId() const {
 void UpdateClusterRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string UpdateClusterRequest::getRequestPars() const {
-  return requestPars_;
-}
-
-void UpdateClusterRequest::setRequestPars(const std::string &requestPars) {
-  requestPars_ = requestPars;
-  setParameter(std::string("RequestPars"), requestPars);
 }
 
 std::string UpdateClusterRequest::getAcceptLanguage() const {

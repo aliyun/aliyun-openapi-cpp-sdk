@@ -61,6 +61,15 @@ void ListApplicationsWithTagRulesRequest::setAppName(const std::string &appName)
   setParameter(std::string("AppName"), appName);
 }
 
+int ListApplicationsWithTagRulesRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListApplicationsWithTagRulesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
 std::string ListApplicationsWithTagRulesRequest::getAppId() const {
   return appId_;
 }
@@ -70,13 +79,13 @@ void ListApplicationsWithTagRulesRequest::setAppId(const std::string &appId) {
   setParameter(std::string("AppId"), appId);
 }
 
-int ListApplicationsWithTagRulesRequest::getPageSize() const {
-  return pageSize_;
+std::string ListApplicationsWithTagRulesRequest::get_Namespace() const {
+  return _namespace_;
 }
 
-void ListApplicationsWithTagRulesRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
+void ListApplicationsWithTagRulesRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
 }
 
 std::string ListApplicationsWithTagRulesRequest::getAcceptLanguage() const {

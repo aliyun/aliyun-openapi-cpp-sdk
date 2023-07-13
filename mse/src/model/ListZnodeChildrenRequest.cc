@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::ListZnodeChildrenRequest;
 
 ListZnodeChildrenRequest::ListZnodeChildrenRequest()
     : RpcServiceRequest("mse", "2019-05-31", "ListZnodeChildren") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 ListZnodeChildrenRequest::~ListZnodeChildrenRequest() {}
@@ -34,15 +34,6 @@ void ListZnodeChildrenRequest::setMseSessionId(const std::string &mseSessionId) 
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string ListZnodeChildrenRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void ListZnodeChildrenRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
-}
-
 std::string ListZnodeChildrenRequest::getPath() const {
   return path_;
 }
@@ -50,6 +41,15 @@ std::string ListZnodeChildrenRequest::getPath() const {
 void ListZnodeChildrenRequest::setPath(const std::string &path) {
   path_ = path;
   setParameter(std::string("Path"), path);
+}
+
+std::string ListZnodeChildrenRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void ListZnodeChildrenRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string ListZnodeChildrenRequest::getAcceptLanguage() const {

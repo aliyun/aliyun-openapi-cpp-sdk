@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					int type;
 					int quota;
 					int configCount;
+					std::string sourceType;
 					std::string namespaceShowName;
 					std::string _namespace;
 					std::string namespaceDesc;

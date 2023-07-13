@@ -76,6 +76,8 @@ void GetGatewayRouteDetailResult::parse(const std::string &payload)
 		data_.ahasStatus = std::stoi(dataNode["AhasStatus"].asString());
 	if(!dataNode["Fallback"].isNull())
 		data_.fallback = dataNode["Fallback"].asString() == "true";
+	if(!dataNode["Policies"].isNull())
+		data_.policies = dataNode["Policies"].asString();
 	auto allRouteServicesNode = dataNode["RouteServices"]["RouteServicesItem"];
 	for (auto dataNodeRouteServicesRouteServicesItem : allRouteServicesNode)
 	{

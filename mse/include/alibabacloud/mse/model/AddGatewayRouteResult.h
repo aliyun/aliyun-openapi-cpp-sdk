@@ -40,6 +40,7 @@ namespace AlibabaCloud
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
 				long getData()const;
+				std::string getErrorCode()const;
 				int getCode()const;
 				bool getSuccess()const;
 
@@ -49,6 +50,7 @@ namespace AlibabaCloud
 				std::string message_;
 				int httpStatusCode_;
 				long data_;
+				std::string errorCode_;
 				int code_;
 				bool success_;
 

@@ -50,6 +50,8 @@ void ListApplicationsWithTagRulesResult::parse(const std::string &payload)
 	for (auto dataNodeResultApplicationList : allResultNode)
 	{
 		Data::ApplicationList applicationListObject;
+		if(!dataNodeResultApplicationList["Namespace"].isNull())
+			applicationListObject._namespace = dataNodeResultApplicationList["Namespace"].asString();
 		if(!dataNodeResultApplicationList["AppName"].isNull())
 			applicationListObject.appName = dataNodeResultApplicationList["AppName"].asString();
 		if(!dataNodeResultApplicationList["AppId"].isNull())
@@ -90,8 +92,6 @@ void ListApplicationsWithTagRulesResult::parse(const std::string &payload)
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 
@@ -110,11 +110,6 @@ int ListApplicationsWithTagRulesResult::getHttpStatusCode()const
 ListApplicationsWithTagRulesResult::Data ListApplicationsWithTagRulesResult::getData()const
 {
 	return data_;
-}
-
-int ListApplicationsWithTagRulesResult::getCode()const
-{
-	return code_;
 }
 
 bool ListApplicationsWithTagRulesResult::getSuccess()const

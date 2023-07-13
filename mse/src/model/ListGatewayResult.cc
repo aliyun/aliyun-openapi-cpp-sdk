@@ -108,6 +108,16 @@ void ListGatewayResult::parse(const std::string &payload)
 			gatewaysObject.mseTag = dataNodeResultGateways["MseTag"].asString();
 		if(!dataNodeResultGateways["ResourceGroupId"].isNull())
 			gatewaysObject.resourceGroupId = dataNodeResultGateways["ResourceGroupId"].asString();
+		if(!dataNodeResultGateways["TotalReplica"].isNull())
+			gatewaysObject.totalReplica = std::stoi(dataNodeResultGateways["TotalReplica"].asString());
+		if(!dataNodeResultGateways["Elastic"].isNull())
+			gatewaysObject.elastic = dataNodeResultGateways["Elastic"].asString() == "true";
+		if(!dataNodeResultGateways["ElasticReplica"].isNull())
+			gatewaysObject.elasticReplica = std::stoi(dataNodeResultGateways["ElasticReplica"].asString());
+		if(!dataNodeResultGateways["ElasticType"].isNull())
+			gatewaysObject.elasticType = dataNodeResultGateways["ElasticType"].asString();
+		if(!dataNodeResultGateways["ElasticInstanceId"].isNull())
+			gatewaysObject.elasticInstanceId = dataNodeResultGateways["ElasticInstanceId"].asString();
 		auto allSlbNode = dataNodeResultGateways["Slb"]["slbItem"];
 		for (auto dataNodeResultGatewaysSlbslbItem : allSlbNode)
 		{
@@ -159,6 +169,25 @@ void ListGatewayResult::parse(const std::string &payload)
 			gatewaysObject.initConfig.enableWaf = initConfigNode["EnableWaf"].asString() == "true";
 		if(!initConfigNode["SupportWaf"].isNull())
 			gatewaysObject.initConfig.supportWaf = initConfigNode["SupportWaf"].asString() == "true";
+		auto elasticPolicyNode = value["ElasticPolicy"];
+		if(!elasticPolicyNode["Elastic"].isNull())
+			gatewaysObject.elasticPolicy.elastic = elasticPolicyNode["Elastic"].asString() == "true";
+		if(!elasticPolicyNode["MaxReplica"].isNull())
+			gatewaysObject.elasticPolicy.maxReplica = std::stoi(elasticPolicyNode["MaxReplica"].asString());
+		if(!elasticPolicyNode["ElasticType"].isNull())
+			gatewaysObject.elasticPolicy.elasticType = elasticPolicyNode["ElasticType"].asString();
+		auto allTimePolicyListNode = elasticPolicyNode["TimePolicyList"]["timePolicyListItem"];
+		for (auto elasticPolicyNodeTimePolicyListtimePolicyListItem : allTimePolicyListNode)
+		{
+			Data::Gateways::ElasticPolicy::TimePolicyListItem timePolicyListItemObject;
+			if(!elasticPolicyNodeTimePolicyListtimePolicyListItem["DesiredReplica"].isNull())
+				timePolicyListItemObject.desiredReplica = std::stoi(elasticPolicyNodeTimePolicyListtimePolicyListItem["DesiredReplica"].asString());
+			if(!elasticPolicyNodeTimePolicyListtimePolicyListItem["StartTime"].isNull())
+				timePolicyListItemObject.startTime = elasticPolicyNodeTimePolicyListtimePolicyListItem["StartTime"].asString();
+			if(!elasticPolicyNodeTimePolicyListtimePolicyListItem["EndTime"].isNull())
+				timePolicyListItemObject.endTime = elasticPolicyNodeTimePolicyListtimePolicyListItem["EndTime"].asString();
+			gatewaysObject.elasticPolicy.timePolicyList.push_back(timePolicyListItemObject);
+		}
 		data_.result.push_back(gatewaysObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

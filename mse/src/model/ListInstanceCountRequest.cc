@@ -34,15 +34,6 @@ void ListInstanceCountRequest::setMseSessionId(const std::string &mseSessionId) 
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string ListInstanceCountRequest::getClusterType() const {
-  return clusterType_;
-}
-
-void ListInstanceCountRequest::setClusterType(const std::string &clusterType) {
-  clusterType_ = clusterType;
-  setParameter(std::string("ClusterType"), clusterType);
-}
-
 std::string ListInstanceCountRequest::getRegionId() const {
   return regionId_;
 }
@@ -52,15 +43,6 @@ void ListInstanceCountRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ListInstanceCountRequest::getMseVersion() const {
-  return mseVersion_;
-}
-
-void ListInstanceCountRequest::setMseVersion(const std::string &mseVersion) {
-  mseVersion_ = mseVersion;
-  setParameter(std::string("MseVersion"), mseVersion);
-}
-
 std::string ListInstanceCountRequest::getRequestPars() const {
   return requestPars_;
 }
@@ -68,6 +50,24 @@ std::string ListInstanceCountRequest::getRequestPars() const {
 void ListInstanceCountRequest::setRequestPars(const std::string &requestPars) {
   requestPars_ = requestPars;
   setParameter(std::string("RequestPars"), requestPars);
+}
+
+std::string ListInstanceCountRequest::getClusterType() const {
+  return clusterType_;
+}
+
+void ListInstanceCountRequest::setClusterType(const std::string &clusterType) {
+  clusterType_ = clusterType;
+  setParameter(std::string("ClusterType"), clusterType);
+}
+
+std::string ListInstanceCountRequest::getMseVersion() const {
+  return mseVersion_;
+}
+
+void ListInstanceCountRequest::setMseVersion(const std::string &mseVersion) {
+  mseVersion_ = mseVersion;
+  setParameter(std::string("MseVersion"), mseVersion);
 }
 
 std::string ListInstanceCountRequest::getAcceptLanguage() const {

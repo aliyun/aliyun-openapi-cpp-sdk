@@ -34,24 +34,6 @@ void ListListenersByConfigRequest::setMseSessionId(const std::string &mseSession
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
-std::string ListListenersByConfigRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ListListenersByConfigRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string ListListenersByConfigRequest::getDataId() const {
-  return dataId_;
-}
-
-void ListListenersByConfigRequest::setDataId(const std::string &dataId) {
-  dataId_ = dataId;
-  setParameter(std::string("DataId"), dataId);
-}
-
 std::string ListListenersByConfigRequest::getNamespaceId() const {
   return namespaceId_;
 }
@@ -70,15 +52,6 @@ void ListListenersByConfigRequest::setRequestPars(const std::string &requestPars
   setParameter(std::string("RequestPars"), requestPars);
 }
 
-std::string ListListenersByConfigRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void ListListenersByConfigRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 std::string ListListenersByConfigRequest::getGroup() const {
   return group_;
 }
@@ -86,5 +59,32 @@ std::string ListListenersByConfigRequest::getGroup() const {
 void ListListenersByConfigRequest::setGroup(const std::string &group) {
   group_ = group;
   setParameter(std::string("Group"), group);
+}
+
+std::string ListListenersByConfigRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ListListenersByConfigRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string ListListenersByConfigRequest::getDataId() const {
+  return dataId_;
+}
+
+void ListListenersByConfigRequest::setDataId(const std::string &dataId) {
+  dataId_ = dataId;
+  setParameter(std::string("DataId"), dataId);
+}
+
+std::string ListListenersByConfigRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void ListListenersByConfigRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

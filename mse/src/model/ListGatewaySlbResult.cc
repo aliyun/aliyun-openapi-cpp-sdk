@@ -75,6 +75,22 @@ void ListGatewaySlbResult::parse(const std::string &payload)
 			dataObject.editEnable = valueDataSources["EditEnable"].asString() == "true";
 		if(!valueDataSources["HttpsVServerGroupId"].isNull())
 			dataObject.httpsVServerGroupId = valueDataSources["HttpsVServerGroupId"].asString();
+		if(!valueDataSources["VsMetaInfo"].isNull())
+			dataObject.vsMetaInfo = valueDataSources["VsMetaInfo"].asString();
+		auto allVServiceListNode = valueDataSources["VServiceList"]["service"];
+		for (auto valueDataSourcesVServiceListservice : allVServiceListNode)
+		{
+			Sources::Service vServiceListObject;
+			if(!valueDataSourcesVServiceListservice["Port"].isNull())
+				vServiceListObject.port = valueDataSourcesVServiceListservice["Port"].asString();
+			if(!valueDataSourcesVServiceListservice["Protocol"].isNull())
+				vServiceListObject.protocol = valueDataSourcesVServiceListservice["Protocol"].asString();
+			if(!valueDataSourcesVServiceListservice["VServerGroupId"].isNull())
+				vServiceListObject.vServerGroupId = valueDataSourcesVServiceListservice["VServerGroupId"].asString();
+			if(!valueDataSourcesVServiceListservice["VServerGroupName"].isNull())
+				vServiceListObject.vServerGroupName = valueDataSourcesVServiceListservice["VServerGroupName"].asString();
+			dataObject.vServiceList.push_back(vServiceListObject);
+		}
 		data_.push_back(dataObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

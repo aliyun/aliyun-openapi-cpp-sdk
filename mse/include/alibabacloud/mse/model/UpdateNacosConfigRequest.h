@@ -36,8 +36,6 @@ public:
 	void setEncryptedDataKey(const std::string &encryptedDataKey);
 	std::string getType() const;
 	void setType(const std::string &type);
-	std::string getContent() const;
-	void setContent(const std::string &content);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
 	std::string getNamespaceId() const;
@@ -50,12 +48,14 @@ public:
 	void setBetaIps(const std::string &betaIps);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::string getDesc() const;
+	void setDesc(const std::string &desc);
+	std::string getContent() const;
+	void setContent(const std::string &content);
 	std::string getDataId() const;
 	void setDataId(const std::string &dataId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
-	std::string getDesc() const;
-	void setDesc(const std::string &desc);
 	std::string getMd5() const;
 	void setMd5(const std::string &md5);
 
@@ -63,16 +63,16 @@ private:
 	std::string mseSessionId_;
 	std::string encryptedDataKey_;
 	std::string type_;
-	std::string content_;
 	std::string appName_;
 	std::string namespaceId_;
 	std::string group_;
 	std::string tags_;
 	std::string betaIps_;
 	std::string instanceId_;
+	std::string desc_;
+	std::string content_;
 	std::string dataId_;
 	std::string acceptLanguage_;
-	std::string desc_;
 	std::string md5_;
 };
 } // namespace Model

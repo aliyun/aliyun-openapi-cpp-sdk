@@ -43,15 +43,6 @@ void DeleteGatewayDomainRequest::setGatewayUniqueId(const std::string &gatewayUn
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
 }
 
-std::string DeleteGatewayDomainRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void DeleteGatewayDomainRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 std::string DeleteGatewayDomainRequest::getId() const {
   return id_;
 }
@@ -59,5 +50,14 @@ std::string DeleteGatewayDomainRequest::getId() const {
 void DeleteGatewayDomainRequest::setId(const std::string &id) {
   id_ = id;
   setParameter(std::string("Id"), id);
+}
+
+std::string DeleteGatewayDomainRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void DeleteGatewayDomainRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

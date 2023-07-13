@@ -34,6 +34,15 @@ void GetEngineNamepaceRequest::setMseSessionId(const std::string &mseSessionId) 
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
+std::string GetEngineNamepaceRequest::getId() const {
+  return id_;
+}
+
+void GetEngineNamepaceRequest::setId(const std::string &id) {
+  id_ = id;
+  setParameter(std::string("Id"), id);
+}
+
 std::string GetEngineNamepaceRequest::getClusterId() const {
   return clusterId_;
 }
@@ -59,14 +68,5 @@ std::string GetEngineNamepaceRequest::getAcceptLanguage() const {
 void GetEngineNamepaceRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
-std::string GetEngineNamepaceRequest::getId() const {
-  return id_;
-}
-
-void GetEngineNamepaceRequest::setId(const std::string &id) {
-  id_ = id;
-  setParameter(std::string("Id"), id);
 }
 

@@ -28,6 +28,12 @@ namespace Mse {
 namespace Model {
 class ALIBABACLOUD_MSE_EXPORT AddGatewaySlbRequest : public RpcServiceRequest {
 public:
+	struct VServiceList {
+		std::string vServerGroupId;
+		std::string protocol;
+		int port;
+		std::string vServerGroupName;
+	};
 	AddGatewaySlbRequest();
 	~AddGatewaySlbRequest();
 	std::string getMseSessionId() const;
@@ -44,6 +50,8 @@ public:
 	void setServiceWeight(int serviceWeight);
 	std::string getVServerGroupId() const;
 	void setVServerGroupId(const std::string &vServerGroupId);
+	std::vector<VServiceList> getVServiceList() const;
+	void setVServiceList(const std::vector<VServiceList> &vServiceList);
 	std::string getHttpsVServerGroupId() const;
 	void setHttpsVServerGroupId(const std::string &httpsVServerGroupId);
 	std::string getAcceptLanguage() const;
@@ -59,6 +67,7 @@ private:
 	int httpPort_;
 	int serviceWeight_;
 	std::string vServerGroupId_;
+	std::vector<VServiceList> vServiceList_;
 	std::string httpsVServerGroupId_;
 	std::string acceptLanguage_;
 	int httpsPort_;

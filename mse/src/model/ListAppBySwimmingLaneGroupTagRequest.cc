@@ -34,6 +34,15 @@ void ListAppBySwimmingLaneGroupTagRequest::setMseSessionId(const std::string &ms
   setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
+std::string ListAppBySwimmingLaneGroupTagRequest::getTag() const {
+  return tag_;
+}
+
+void ListAppBySwimmingLaneGroupTagRequest::setTag(const std::string &tag) {
+  tag_ = tag;
+  setParameter(std::string("Tag"), tag);
+}
+
 long ListAppBySwimmingLaneGroupTagRequest::getGroupId() const {
   return groupId_;
 }
@@ -43,6 +52,15 @@ void ListAppBySwimmingLaneGroupTagRequest::setGroupId(long groupId) {
   setParameter(std::string("GroupId"), std::to_string(groupId));
 }
 
+std::string ListAppBySwimmingLaneGroupTagRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void ListAppBySwimmingLaneGroupTagRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
+}
+
 std::string ListAppBySwimmingLaneGroupTagRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }
@@ -50,14 +68,5 @@ std::string ListAppBySwimmingLaneGroupTagRequest::getAcceptLanguage() const {
 void ListAppBySwimmingLaneGroupTagRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
-std::string ListAppBySwimmingLaneGroupTagRequest::getTag() const {
-  return tag_;
-}
-
-void ListAppBySwimmingLaneGroupTagRequest::setTag(const std::string &tag) {
-  tag_ = tag;
-  setParameter(std::string("Tag"), tag);
 }
 

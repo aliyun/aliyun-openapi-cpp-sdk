@@ -28,6 +28,45 @@ namespace Mse {
 namespace Model {
 class ALIBABACLOUD_MSE_EXPORT UpdateGatewayRouteRequest : public RpcServiceRequest {
 public:
+	struct Predicates {
+		struct PathPredicates {
+			std::string path;
+			bool ignoreCase;
+			std::string type;
+		};
+		PathPredicates pathPredicates;
+		std::string string;
+		std::vector<std::string> methodPredicates;
+		struct HeaderPredicatesItem {
+			std::string type;
+			std::string value;
+			std::string key;
+		};
+		HeaderPredicatesItem headerPredicatesItem;
+		std::vector<HeaderPredicatesItem> headerPredicates;
+		struct QueryPredicatesItem {
+			std::string type;
+			std::string value;
+			std::string key;
+		};
+		QueryPredicatesItem queryPredicatesItem;
+		std::vector<QueryPredicatesItem> queryPredicates;
+	};
+	struct DirectResponseJSON {
+		long code;
+		std::string body;
+	};
+	struct FallbackServices {
+		std::string agreementType;
+		std::string name;
+		std::string _namespace;
+		std::string sourceType;
+		long serviceId;
+		int percent;
+		std::string version;
+		std::string groupName;
+		int servicePort;
+	};
 	struct Services {
 		struct HttpDubboTranscoder {
 			std::string dubboServiceName;
@@ -62,102 +101,63 @@ public:
 		std::string groupName;
 		int servicePort;
 	};
-	struct Predicates {
-		struct PathPredicates {
-			std::string path;
-			bool ignoreCase;
-			std::string type;
-		};
-		PathPredicates pathPredicates;
-		std::string string;
-		std::vector<std::string> methodPredicates;
-		struct HeaderPredicatesItem {
-			std::string type;
-			std::string value;
-			std::string key;
-		};
-		HeaderPredicatesItem headerPredicatesItem;
-		std::vector<HeaderPredicatesItem> headerPredicates;
-		struct QueryPredicatesItem {
-			std::string type;
-			std::string value;
-			std::string key;
-		};
-		QueryPredicatesItem queryPredicatesItem;
-		std::vector<QueryPredicatesItem> queryPredicates;
-	};
 	struct RedirectJSON {
 		std::string path;
 		int code;
 		std::string host;
 	};
-	struct DirectResponseJSON {
-		long code;
-		std::string body;
-	};
-	struct FallbackServices {
-		std::string agreementType;
-		std::string name;
-		std::string _namespace;
-		std::string sourceType;
-		long serviceId;
-		int percent;
-		std::string version;
-		std::string groupName;
-		int servicePort;
-	};
 	UpdateGatewayRouteRequest();
 	~UpdateGatewayRouteRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
-	std::string getGatewayUniqueId() const;
-	void setGatewayUniqueId(const std::string &gatewayUniqueId);
-	std::string getDestinationType() const;
-	void setDestinationType(const std::string &destinationType);
 	std::string getDomainIdListJSON() const;
 	void setDomainIdListJSON(const std::string &domainIdListJSON);
 	long getId() const;
 	void setId(long id);
 	long getGatewayId() const;
 	void setGatewayId(long gatewayId);
-	int getRouteOrder() const;
-	void setRouteOrder(int routeOrder);
 	bool getEnableWaf() const;
 	void setEnableWaf(bool enableWaf);
-	std::vector<Services> getServices() const;
-	void setServices(const std::vector<Services> &services);
 	Predicates getPredicates() const;
 	void setPredicates(const Predicates &predicates);
-	RedirectJSON getRedirectJSON() const;
-	void setRedirectJSON(const RedirectJSON &redirectJSON);
 	DirectResponseJSON getDirectResponseJSON() const;
 	void setDirectResponseJSON(const DirectResponseJSON &directResponseJSON);
 	std::string getName() const;
 	void setName(const std::string &name);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::vector<FallbackServices> getFallbackServices() const;
 	void setFallbackServices(const std::vector<FallbackServices> &fallbackServices);
 	bool getFallback() const;
 	void setFallback(bool fallback);
+	std::string getGatewayUniqueId() const;
+	void setGatewayUniqueId(const std::string &gatewayUniqueId);
+	std::string getDestinationType() const;
+	void setDestinationType(const std::string &destinationType);
+	int getRouteOrder() const;
+	void setRouteOrder(int routeOrder);
+	std::vector<Services> getServices() const;
+	void setServices(const std::vector<Services> &services);
+	RedirectJSON getRedirectJSON() const;
+	void setRedirectJSON(const RedirectJSON &redirectJSON);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
-	std::string gatewayUniqueId_;
-	std::string destinationType_;
 	std::string domainIdListJSON_;
 	long id_;
 	long gatewayId_;
-	int routeOrder_;
 	bool enableWaf_;
-	std::vector<Services> services_;
 	Predicates predicates_;
-	RedirectJSON redirectJSON_;
 	DirectResponseJSON directResponseJSON_;
 	std::string name_;
-	std::string acceptLanguage_;
 	std::vector<FallbackServices> fallbackServices_;
 	bool fallback_;
+	std::string gatewayUniqueId_;
+	std::string destinationType_;
+	int routeOrder_;
+	std::vector<Services> services_;
+	RedirectJSON redirectJSON_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Mse

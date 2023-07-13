@@ -32,20 +32,20 @@ public:
 	~ModifyGovernanceKubernetesClusterRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getNamespaceInfos() const;
 	void setNamespaceInfos(const std::string &namespaceInfos);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
+	std::string regionId_;
 	std::string namespaceInfos_;
 	std::string clusterId_;
-	std::string regionId_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

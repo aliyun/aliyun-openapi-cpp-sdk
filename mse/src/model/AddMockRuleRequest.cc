@@ -43,15 +43,6 @@ void AddMockRuleRequest::setExtraJson(const std::string &extraJson) {
   setParameter(std::string("ExtraJson"), extraJson);
 }
 
-std::string AddMockRuleRequest::getProviderAppId() const {
-  return providerAppId_;
-}
-
-void AddMockRuleRequest::setProviderAppId(const std::string &providerAppId) {
-  providerAppId_ = providerAppId;
-  setParameter(std::string("ProviderAppId"), providerAppId);
-}
-
 std::string AddMockRuleRequest::getSource() const {
   return source_;
 }
@@ -77,6 +68,33 @@ std::string AddMockRuleRequest::getScMockItems() const {
 void AddMockRuleRequest::setScMockItems(const std::string &scMockItems) {
   scMockItems_ = scMockItems;
   setParameter(std::string("ScMockItems"), scMockItems);
+}
+
+std::string AddMockRuleRequest::getName() const {
+  return name_;
+}
+
+void AddMockRuleRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
+}
+
+std::string AddMockRuleRequest::getRegion() const {
+  return region_;
+}
+
+void AddMockRuleRequest::setRegion(const std::string &region) {
+  region_ = region;
+  setParameter(std::string("Region"), region);
+}
+
+std::string AddMockRuleRequest::getProviderAppId() const {
+  return providerAppId_;
+}
+
+void AddMockRuleRequest::setProviderAppId(const std::string &providerAppId) {
+  providerAppId_ = providerAppId;
+  setParameter(std::string("ProviderAppId"), providerAppId);
 }
 
 std::string AddMockRuleRequest::getProviderAppName() const {
@@ -106,15 +124,6 @@ void AddMockRuleRequest::setDubboMockItems(const std::string &dubboMockItems) {
   setParameter(std::string("DubboMockItems"), dubboMockItems);
 }
 
-std::string AddMockRuleRequest::getName() const {
-  return name_;
-}
-
-void AddMockRuleRequest::setName(const std::string &name) {
-  name_ = name;
-  setParameter(std::string("Name"), name);
-}
-
 std::string AddMockRuleRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }
@@ -131,14 +140,5 @@ long AddMockRuleRequest::getMockType() const {
 void AddMockRuleRequest::setMockType(long mockType) {
   mockType_ = mockType;
   setParameter(std::string("MockType"), std::to_string(mockType));
-}
-
-std::string AddMockRuleRequest::getRegion() const {
-  return region_;
-}
-
-void AddMockRuleRequest::setRegion(const std::string &region) {
-  region_ = region;
-  setParameter(std::string("Region"), region);
 }
 

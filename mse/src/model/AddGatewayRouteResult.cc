@@ -49,6 +49,8 @@ void AddGatewayRouteResult::parse(const std::string &payload)
 		success_ = value["Success"].asString() == "true";
 	if(!value["Data"].isNull())
 		data_ = std::stol(value["Data"].asString());
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 
@@ -65,6 +67,11 @@ int AddGatewayRouteResult::getHttpStatusCode()const
 long AddGatewayRouteResult::getData()const
 {
 	return data_;
+}
+
+std::string AddGatewayRouteResult::getErrorCode()const
+{
+	return errorCode_;
 }
 
 int AddGatewayRouteResult::getCode()const

@@ -32,15 +32,60 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_MSE_EXPORT QueryAllSwimmingLaneGroupResult : public ServiceResult
 			{
 			public:
+				struct SwimmingLaneGroup
+				{
+					std::string region11;
+					int status13;
+					bool messageQueueGrayEnable;
+					std::string entryApp10;
+					std::string _namespace8;
+					std::string source;
+					std::string name;
+					std::string messageQueueFilterSide;
+					std::string enable;
+					std::vector<std::string> applicationList;
+					bool recordCanaryDetail;
+					std::string name1;
+					long id9;
+					std::string entryApp;
+					int status;
+					std::string messageQueueFilterSide5;
+					std::string _namespace;
+					std::string source3;
+					std::string dbGrayEnable;
+					std::string userId;
+					std::string region;
+					std::string dbGrayEnable2;
+					long id;
+					std::string enable7;
+					std::string userId4;
+					std::string appIds;
+					std::string appIds6;
+					bool messageQueueGrayEnable12;
+				};
 
 
 				QueryAllSwimmingLaneGroupResult();
 				explicit QueryAllSwimmingLaneGroupResult(const std::string &payload);
 				~QueryAllSwimmingLaneGroupResult();
+				std::string getMessage()const;
+				int getHttpStatusCode()const;
+				std::vector<SwimmingLaneGroup> getData()const;
+				std::string getErrorCode()const;
+				std::string getDynamicMessage()const;
+				int getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
+				int httpStatusCode_;
+				std::vector<SwimmingLaneGroup> data_;
+				std::string errorCode_;
+				std::string dynamicMessage_;
+				int code_;
+				bool success_;
 
 			};
 		}

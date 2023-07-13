@@ -52,6 +52,15 @@ void ApplyTagPoliciesRequest::setSource(const std::string &source) {
   setParameter(std::string("Source"), source);
 }
 
+std::string ApplyTagPoliciesRequest::getAppName() const {
+  return appName_;
+}
+
+void ApplyTagPoliciesRequest::setAppName(const std::string &appName) {
+  appName_ = appName;
+  setParameter(std::string("AppName"), appName);
+}
+
 std::string ApplyTagPoliciesRequest::getNamespaceId() const {
   return namespaceId_;
 }
@@ -77,6 +86,15 @@ std::string ApplyTagPoliciesRequest::getAppId() const {
 void ApplyTagPoliciesRequest::setAppId(const std::string &appId) {
   appId_ = appId;
   setParameter(std::string("AppId"), appId);
+}
+
+std::string ApplyTagPoliciesRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void ApplyTagPoliciesRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
 }
 
 std::string ApplyTagPoliciesRequest::getAcceptLanguage() const {

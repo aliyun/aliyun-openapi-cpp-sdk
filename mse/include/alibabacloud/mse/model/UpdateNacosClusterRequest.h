@@ -36,18 +36,18 @@ public:
 	void setClusterName(const std::string &clusterName);
 	int getCheckPort() const;
 	void setCheckPort(int checkPort);
+	std::string getNamespaceId() const;
+	void setNamespaceId(const std::string &namespaceId);
+	std::string getServiceName() const;
+	void setServiceName(const std::string &serviceName);
 	std::string getGroupName() const;
 	void setGroupName(const std::string &groupName);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
-	std::string getNamespaceId() const;
-	void setNamespaceId(const std::string &namespaceId);
 	std::string getHealthChecker() const;
 	void setHealthChecker(const std::string &healthChecker);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
-	std::string getServiceName() const;
-	void setServiceName(const std::string &serviceName);
 	bool getUseInstancePortForCheck() const;
 	void setUseInstancePortForCheck(bool useInstancePortForCheck);
 
@@ -55,12 +55,12 @@ private:
 	std::string mseSessionId_;
 	std::string clusterName_;
 	int checkPort_;
+	std::string namespaceId_;
+	std::string serviceName_;
 	std::string groupName_;
 	std::string instanceId_;
-	std::string namespaceId_;
 	std::string healthChecker_;
 	std::string acceptLanguage_;
-	std::string serviceName_;
 	bool useInstancePortForCheck_;
 };
 } // namespace Model

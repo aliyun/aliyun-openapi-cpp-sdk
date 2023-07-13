@@ -34,18 +34,18 @@ public:
 	void setMseSessionId(const std::string &mseSessionId);
 	std::string getData() const;
 	void setData(const std::string &data);
-	std::string getClusterId() const;
-	void setClusterId(const std::string &clusterId);
 	std::string getPath() const;
 	void setPath(const std::string &path);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string mseSessionId_;
 	std::string data_;
-	std::string clusterId_;
 	std::string path_;
+	std::string clusterId_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

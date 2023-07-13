@@ -32,21 +32,21 @@ public:
 	~DeleteEngineNamespaceRequest();
 	std::string getMseSessionId() const;
 	void setMseSessionId(const std::string &mseSessionId);
+	std::string getId() const;
+	void setId(const std::string &id);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
-	std::string getId() const;
-	void setId(const std::string &id);
 
 private:
 	std::string mseSessionId_;
+	std::string id_;
 	std::string clusterId_;
 	std::string instanceId_;
 	std::string acceptLanguage_;
-	std::string id_;
 };
 } // namespace Model
 } // namespace Mse

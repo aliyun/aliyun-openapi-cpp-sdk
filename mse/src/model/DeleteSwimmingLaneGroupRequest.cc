@@ -43,6 +43,24 @@ void DeleteSwimmingLaneGroupRequest::setGroupId(long groupId) {
   setParameter(std::string("GroupId"), std::to_string(groupId));
 }
 
+std::string DeleteSwimmingLaneGroupRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void DeleteSwimmingLaneGroupRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
+}
+
+std::string DeleteSwimmingLaneGroupRequest::getName() const {
+  return name_;
+}
+
+void DeleteSwimmingLaneGroupRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
+}
+
 std::string DeleteSwimmingLaneGroupRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }
@@ -50,5 +68,14 @@ std::string DeleteSwimmingLaneGroupRequest::getAcceptLanguage() const {
 void DeleteSwimmingLaneGroupRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
+}
+
+std::string DeleteSwimmingLaneGroupRequest::getRegion() const {
+  return region_;
+}
+
+void DeleteSwimmingLaneGroupRequest::setRegion(const std::string &region) {
+  region_ = region;
+  setParameter(std::string("Region"), region);
 }
 
