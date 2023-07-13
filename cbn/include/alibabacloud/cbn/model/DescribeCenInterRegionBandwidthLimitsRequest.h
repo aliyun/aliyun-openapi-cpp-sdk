@@ -36,6 +36,8 @@ public:
 	void setCenId(const std::string &cenId);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getTrRegionId() const;
+	void setTrRegionId(const std::string &trRegionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getResourceOwnerAccount() const;
@@ -51,6 +53,7 @@ private:
 	long resourceOwnerId_;
 	std::string cenId_;
 	int pageNumber_;
+	std::string trRegionId_;
 	int pageSize_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

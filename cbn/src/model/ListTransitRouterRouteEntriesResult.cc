@@ -75,6 +75,29 @@ void ListTransitRouterRouteEntriesResult::parse(const std::string &payload)
 			transitRouterRouteEntriesObject.transitRouterRouteEntryOriginResourceId = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryOriginResourceId"].asString();
 		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["PrefixListId"].isNull())
 			transitRouterRouteEntriesObject.prefixListId = valueTransitRouterRouteEntriesTransitRouterRouteEntry["PrefixListId"].asString();
+		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["Preference"].isNull())
+			transitRouterRouteEntriesObject.preference = std::stoi(valueTransitRouterRouteEntriesTransitRouterRouteEntry["Preference"].asString());
+		auto pathAttributesNode = value["PathAttributes"];
+		if(!pathAttributesNode["OriginInstanceId"].isNull())
+			transitRouterRouteEntriesObject.pathAttributes.originInstanceId = pathAttributesNode["OriginInstanceId"].asString();
+		if(!pathAttributesNode["OriginInstanceType"].isNull())
+			transitRouterRouteEntriesObject.pathAttributes.originInstanceType = pathAttributesNode["OriginInstanceType"].asString();
+		if(!pathAttributesNode["OriginRouteType"].isNull())
+			transitRouterRouteEntriesObject.pathAttributes.originRouteType = pathAttributesNode["OriginRouteType"].asString();
+		if(!pathAttributesNode["Preference"].isNull())
+			transitRouterRouteEntriesObject.pathAttributes.preference = std::stoi(pathAttributesNode["Preference"].asString());
+			auto allCommunities1 = pathAttributesNode["Communities"]["Community"];
+			for (auto value : allCommunities1)
+				transitRouterRouteEntriesObject.pathAttributes.communities1.push_back(value.asString());
+			auto allAsPaths2 = pathAttributesNode["AsPaths"]["AsPath"];
+			for (auto value : allAsPaths2)
+				transitRouterRouteEntriesObject.pathAttributes.asPaths2.push_back(value.asString());
+		auto allCommunities = value["Communities"]["Community"];
+		for (auto value : allCommunities)
+			transitRouterRouteEntriesObject.communities.push_back(value.asString());
+		auto allAsPaths = value["AsPaths"]["AsPath"];
+		for (auto value : allAsPaths)
+			transitRouterRouteEntriesObject.asPaths.push_back(value.asString());
 		transitRouterRouteEntries_.push_back(transitRouterRouteEntriesObject);
 	}
 	if(!value["NextToken"].isNull())

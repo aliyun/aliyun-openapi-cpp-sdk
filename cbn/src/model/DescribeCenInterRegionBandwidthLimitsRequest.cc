@@ -52,6 +52,15 @@ void DescribeCenInterRegionBandwidthLimitsRequest::setPageNumber(int pageNumber)
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeCenInterRegionBandwidthLimitsRequest::getTrRegionId() const {
+  return trRegionId_;
+}
+
+void DescribeCenInterRegionBandwidthLimitsRequest::setTrRegionId(const std::string &trRegionId) {
+  trRegionId_ = trRegionId;
+  setParameter(std::string("TrRegionId"), trRegionId);
+}
+
 int DescribeCenInterRegionBandwidthLimitsRequest::getPageSize() const {
   return pageSize_;
 }
