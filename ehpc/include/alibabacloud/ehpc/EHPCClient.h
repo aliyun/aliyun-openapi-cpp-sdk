@@ -104,6 +104,8 @@
 #include "model/DescribeNFSClientStatusResult.h"
 #include "model/DescribePriceRequest.h"
 #include "model/DescribePriceResult.h"
+#include "model/DescribeServerlessJobsRequest.h"
+#include "model/DescribeServerlessJobsResult.h"
 #include "model/EditJobTemplateRequest.h"
 #include "model/EditJobTemplateResult.h"
 #include "model/GetAccountingReportRequest.h"
@@ -196,6 +198,8 @@
 #include "model/ListRegionsResult.h"
 #include "model/ListSecurityGroupsRequest.h"
 #include "model/ListSecurityGroupsResult.h"
+#include "model/ListServerlessJobsRequest.h"
+#include "model/ListServerlessJobsResult.h"
 #include "model/ListSoftwaresRequest.h"
 #include "model/ListSoftwaresResult.h"
 #include "model/ListTagResourcesRequest.h"
@@ -266,10 +270,14 @@
 #include "model/StopJobsResult.h"
 #include "model/StopNodesRequest.h"
 #include "model/StopNodesResult.h"
+#include "model/StopServerlessJobsRequest.h"
+#include "model/StopServerlessJobsResult.h"
 #include "model/StopVisualServiceRequest.h"
 #include "model/StopVisualServiceResult.h"
 #include "model/SubmitJobRequest.h"
 #include "model/SubmitJobResult.h"
+#include "model/SubmitServerlessJobRequest.h"
+#include "model/SubmitServerlessJobResult.h"
 #include "model/SummaryImagesRequest.h"
 #include "model/SummaryImagesResult.h"
 #include "model/SummaryImagesInfoRequest.h"
@@ -420,6 +428,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribePriceResult> DescribePriceOutcome;
 			typedef std::future<DescribePriceOutcome> DescribePriceOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DescribePriceRequest&, const DescribePriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePriceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeServerlessJobsResult> DescribeServerlessJobsOutcome;
+			typedef std::future<DescribeServerlessJobsOutcome> DescribeServerlessJobsOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::DescribeServerlessJobsRequest&, const DescribeServerlessJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessJobsAsyncHandler;
 			typedef Outcome<Error, Model::EditJobTemplateResult> EditJobTemplateOutcome;
 			typedef std::future<EditJobTemplateOutcome> EditJobTemplateOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::EditJobTemplateRequest&, const EditJobTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EditJobTemplateAsyncHandler;
@@ -558,6 +569,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListSecurityGroupsResult> ListSecurityGroupsOutcome;
 			typedef std::future<ListSecurityGroupsOutcome> ListSecurityGroupsOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListSecurityGroupsRequest&, const ListSecurityGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSecurityGroupsAsyncHandler;
+			typedef Outcome<Error, Model::ListServerlessJobsResult> ListServerlessJobsOutcome;
+			typedef std::future<ListServerlessJobsOutcome> ListServerlessJobsOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::ListServerlessJobsRequest&, const ListServerlessJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListServerlessJobsAsyncHandler;
 			typedef Outcome<Error, Model::ListSoftwaresResult> ListSoftwaresOutcome;
 			typedef std::future<ListSoftwaresOutcome> ListSoftwaresOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListSoftwaresRequest&, const ListSoftwaresOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSoftwaresAsyncHandler;
@@ -663,12 +677,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopNodesResult> StopNodesOutcome;
 			typedef std::future<StopNodesOutcome> StopNodesOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::StopNodesRequest&, const StopNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopNodesAsyncHandler;
+			typedef Outcome<Error, Model::StopServerlessJobsResult> StopServerlessJobsOutcome;
+			typedef std::future<StopServerlessJobsOutcome> StopServerlessJobsOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::StopServerlessJobsRequest&, const StopServerlessJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopServerlessJobsAsyncHandler;
 			typedef Outcome<Error, Model::StopVisualServiceResult> StopVisualServiceOutcome;
 			typedef std::future<StopVisualServiceOutcome> StopVisualServiceOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::StopVisualServiceRequest&, const StopVisualServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopVisualServiceAsyncHandler;
 			typedef Outcome<Error, Model::SubmitJobResult> SubmitJobOutcome;
 			typedef std::future<SubmitJobOutcome> SubmitJobOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::SubmitJobRequest&, const SubmitJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitJobAsyncHandler;
+			typedef Outcome<Error, Model::SubmitServerlessJobResult> SubmitServerlessJobOutcome;
+			typedef std::future<SubmitServerlessJobOutcome> SubmitServerlessJobOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::SubmitServerlessJobRequest&, const SubmitServerlessJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitServerlessJobAsyncHandler;
 			typedef Outcome<Error, Model::SummaryImagesResult> SummaryImagesOutcome;
 			typedef std::future<SummaryImagesOutcome> SummaryImagesOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::SummaryImagesRequest&, const SummaryImagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SummaryImagesAsyncHandler;
@@ -824,6 +844,9 @@ namespace AlibabaCloud
 			DescribePriceOutcome describePrice(const Model::DescribePriceRequest &request)const;
 			void describePriceAsync(const Model::DescribePriceRequest& request, const DescribePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePriceOutcomeCallable describePriceCallable(const Model::DescribePriceRequest& request) const;
+			DescribeServerlessJobsOutcome describeServerlessJobs(const Model::DescribeServerlessJobsRequest &request)const;
+			void describeServerlessJobsAsync(const Model::DescribeServerlessJobsRequest& request, const DescribeServerlessJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeServerlessJobsOutcomeCallable describeServerlessJobsCallable(const Model::DescribeServerlessJobsRequest& request) const;
 			EditJobTemplateOutcome editJobTemplate(const Model::EditJobTemplateRequest &request)const;
 			void editJobTemplateAsync(const Model::EditJobTemplateRequest& request, const EditJobTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EditJobTemplateOutcomeCallable editJobTemplateCallable(const Model::EditJobTemplateRequest& request) const;
@@ -962,6 +985,9 @@ namespace AlibabaCloud
 			ListSecurityGroupsOutcome listSecurityGroups(const Model::ListSecurityGroupsRequest &request)const;
 			void listSecurityGroupsAsync(const Model::ListSecurityGroupsRequest& request, const ListSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSecurityGroupsOutcomeCallable listSecurityGroupsCallable(const Model::ListSecurityGroupsRequest& request) const;
+			ListServerlessJobsOutcome listServerlessJobs(const Model::ListServerlessJobsRequest &request)const;
+			void listServerlessJobsAsync(const Model::ListServerlessJobsRequest& request, const ListServerlessJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListServerlessJobsOutcomeCallable listServerlessJobsCallable(const Model::ListServerlessJobsRequest& request) const;
 			ListSoftwaresOutcome listSoftwares(const Model::ListSoftwaresRequest &request)const;
 			void listSoftwaresAsync(const Model::ListSoftwaresRequest& request, const ListSoftwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSoftwaresOutcomeCallable listSoftwaresCallable(const Model::ListSoftwaresRequest& request) const;
@@ -1067,12 +1093,18 @@ namespace AlibabaCloud
 			StopNodesOutcome stopNodes(const Model::StopNodesRequest &request)const;
 			void stopNodesAsync(const Model::StopNodesRequest& request, const StopNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopNodesOutcomeCallable stopNodesCallable(const Model::StopNodesRequest& request) const;
+			StopServerlessJobsOutcome stopServerlessJobs(const Model::StopServerlessJobsRequest &request)const;
+			void stopServerlessJobsAsync(const Model::StopServerlessJobsRequest& request, const StopServerlessJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopServerlessJobsOutcomeCallable stopServerlessJobsCallable(const Model::StopServerlessJobsRequest& request) const;
 			StopVisualServiceOutcome stopVisualService(const Model::StopVisualServiceRequest &request)const;
 			void stopVisualServiceAsync(const Model::StopVisualServiceRequest& request, const StopVisualServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopVisualServiceOutcomeCallable stopVisualServiceCallable(const Model::StopVisualServiceRequest& request) const;
 			SubmitJobOutcome submitJob(const Model::SubmitJobRequest &request)const;
 			void submitJobAsync(const Model::SubmitJobRequest& request, const SubmitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitJobOutcomeCallable submitJobCallable(const Model::SubmitJobRequest& request) const;
+			SubmitServerlessJobOutcome submitServerlessJob(const Model::SubmitServerlessJobRequest &request)const;
+			void submitServerlessJobAsync(const Model::SubmitServerlessJobRequest& request, const SubmitServerlessJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitServerlessJobOutcomeCallable submitServerlessJobCallable(const Model::SubmitServerlessJobRequest& request) const;
 			SummaryImagesOutcome summaryImages(const Model::SummaryImagesRequest &request)const;
 			void summaryImagesAsync(const Model::SummaryImagesRequest& request, const SummaryImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SummaryImagesOutcomeCallable summaryImagesCallable(const Model::SummaryImagesRequest& request) const;

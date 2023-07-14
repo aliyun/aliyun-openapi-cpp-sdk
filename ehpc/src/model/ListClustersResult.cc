@@ -99,6 +99,8 @@ void ListClustersResult::parse(const std::string &payload)
 			clustersObject.location = valueClustersClusterInfoSimple["Location"].asString();
 		if(!valueClustersClusterInfoSimple["ClientVersion"].isNull())
 			clustersObject.clientVersion = valueClustersClusterInfoSimple["ClientVersion"].asString();
+		if(!valueClustersClusterInfoSimple["ResourceGroupId"].isNull())
+			clustersObject.resourceGroupId = valueClustersClusterInfoSimple["ResourceGroupId"].asString();
 		if(!valueClustersClusterInfoSimple["HasPlugin"].isNull())
 			clustersObject.hasPlugin = valueClustersClusterInfoSimple["HasPlugin"].asString() == "true";
 		auto managersNode = value["Managers"];

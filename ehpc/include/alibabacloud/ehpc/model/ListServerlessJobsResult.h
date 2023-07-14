@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_LISTQUEUESRESULT_H_
-#define ALIBABACLOUD_EHPC_MODEL_LISTQUEUESRESULT_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_LISTSERVERLESSJOBSRESULT_H_
+#define ALIBABACLOUD_EHPC_MODEL_LISTSERVERLESSJOBSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT ListQueuesResult : public ServiceResult
+			class ALIBABACLOUD_EHPC_EXPORT ListServerlessJobsResult : public ServiceResult
 			{
 			public:
-				struct QueueInfo
+				struct JobInfo
 				{
-					struct Instance
-					{
-						float spotPriceLimit;
-						std::string instanceType;
-					};
-					std::string deploymentSetId;
-					std::string hostNameSuffix;
-					std::string type;
-					std::vector<QueueInfo::Instance> spotInstanceTypes;
-					bool enableAutoGrow;
-					std::string resourceGroupId;
-					std::string imageId;
-					std::string hostNamePrefix;
-					std::string queueName;
-					std::string spotStrategy;
-					std::vector<std::string> computeInstanceType;
+					std::string owner;
+					std::string endTime;
+					std::string state;
+					std::string priority;
+					bool isArrayJob;
+					std::string startTime;
+					std::string id;
+					std::string submitTime;
+					std::string queue;
+					std::string name;
 				};
 
 
-				ListQueuesResult();
-				explicit ListQueuesResult(const std::string &payload);
-				~ListQueuesResult();
-				std::vector<QueueInfo> getQueues()const;
+				ListServerlessJobsResult();
+				explicit ListServerlessJobsResult(const std::string &payload);
+				~ListServerlessJobsResult();
+				int getTotalCount()const;
+				long getPageSize()const;
+				std::vector<JobInfo> getJobs()const;
+				long getPageNumber()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<QueueInfo> queues_;
+				int totalCount_;
+				long pageSize_;
+				std::vector<JobInfo> jobs_;
+				long pageNumber_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_LISTQUEUESRESULT_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_LISTSERVERLESSJOBSRESULT_H_

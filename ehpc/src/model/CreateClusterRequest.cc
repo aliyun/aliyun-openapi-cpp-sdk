@@ -51,6 +51,25 @@ void CreateClusterRequest::setAdditionalVolumes(const std::vector<CreateClusterR
   }
 }
 
+std::vector<CreateClusterRequest::AddOns> CreateClusterRequest::getAddOns() const {
+  return addOns_;
+}
+
+void CreateClusterRequest::setAddOns(const std::vector<CreateClusterRequest::AddOns> &addOns) {
+  addOns_ = addOns;
+  for(int dep1 = 0; dep1 != addOns.size(); dep1++) {
+  auto addOnsObj = addOns.at(dep1);
+  std::string addOnsObjStr = std::string("AddOns") + "." + std::to_string(dep1 + 1);
+    setParameter(addOnsObjStr + ".DeployMode", addOnsObj.deployMode);
+    setParameter(addOnsObjStr + ".Port", std::to_string(addOnsObj.port));
+    setParameter(addOnsObjStr + ".ConfigFile", addOnsObj.configFile);
+    setParameter(addOnsObjStr + ".DefaultStart", addOnsObj.defaultStart ? "true" : "false");
+    setParameter(addOnsObjStr + ".Name", addOnsObj.name);
+    setParameter(addOnsObjStr + ".DBType", addOnsObj.dBType);
+    setParameter(addOnsObjStr + ".Version", addOnsObj.version);
+  }
+}
+
 std::string CreateClusterRequest::getEcsOrderManagerInstanceType() const {
   return ecsOrderManagerInstanceType_;
 }
@@ -76,6 +95,15 @@ std::string CreateClusterRequest::getSecurityGroupName() const {
 void CreateClusterRequest::setSecurityGroupName(const std::string &securityGroupName) {
   securityGroupName_ = securityGroupName;
   setParameter(std::string("SecurityGroupName"), securityGroupName);
+}
+
+bool CreateClusterRequest::getWithoutNas() const {
+  return withoutNas_;
+}
+
+void CreateClusterRequest::setWithoutNas(bool withoutNas) {
+  withoutNas_ = withoutNas;
+  setParameter(std::string("WithoutNas"), withoutNas ? "true" : "false");
 }
 
 std::string CreateClusterRequest::getImageOwnerAlias() const {
@@ -445,6 +473,15 @@ std::string CreateClusterRequest::getSystemDiskType() const {
 void CreateClusterRequest::setSystemDiskType(const std::string &systemDiskType) {
   systemDiskType_ = systemDiskType;
   setParameter(std::string("SystemDiskType"), systemDiskType);
+}
+
+std::string CreateClusterRequest::getDeploymentSetId() const {
+  return deploymentSetId_;
+}
+
+void CreateClusterRequest::setDeploymentSetId(const std::string &deploymentSetId) {
+  deploymentSetId_ = deploymentSetId;
+  setParameter(std::string("DeploymentSetId"), deploymentSetId);
 }
 
 std::string CreateClusterRequest::getVolumeProtocol() const {

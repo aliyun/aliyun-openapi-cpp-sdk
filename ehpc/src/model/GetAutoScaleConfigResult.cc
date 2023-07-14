@@ -77,6 +77,8 @@ void GetAutoScaleConfigResult::parse(const std::string &payload)
 			queuesObject.maxNodesPerCycle = std::stol(valueQueuesQueueInfo["MaxNodesPerCycle"].asString());
 		if(!valueQueuesQueueInfo["MinNodesPerCycle"].isNull())
 			queuesObject.minNodesPerCycle = std::stol(valueQueuesQueueInfo["MinNodesPerCycle"].asString());
+		if(!valueQueuesQueueInfo["SortedByInventory"].isNull())
+			queuesObject.sortedByInventory = valueQueuesQueueInfo["SortedByInventory"].asString() == "true";
 		auto allInstanceTypesNode = valueQueuesQueueInfo["InstanceTypes"]["InstanceTypeInfo"];
 		for (auto valueQueuesQueueInfoInstanceTypesInstanceTypeInfo : allInstanceTypesNode)
 		{
@@ -151,6 +153,10 @@ void GetAutoScaleConfigResult::parse(const std::string &payload)
 		clusterId_ = value["ClusterId"].asString();
 	if(!value["Uid"].isNull())
 		uid_ = value["Uid"].asString();
+	if(!value["ComputeEnableHt"].isNull())
+		computeEnableHt_ = value["ComputeEnableHt"].asString() == "true";
+	if(!value["DnsConfig"].isNull())
+		dnsConfig_ = value["DnsConfig"].asString();
 
 }
 
@@ -162,6 +168,11 @@ int GetAutoScaleConfigResult::getExtraNodesGrowRatio()const
 bool GetAutoScaleConfigResult::getEnableAutoGrow()const
 {
 	return enableAutoGrow_;
+}
+
+bool GetAutoScaleConfigResult::getComputeEnableHt()const
+{
+	return computeEnableHt_;
 }
 
 std::string GetAutoScaleConfigResult::getClusterId()const
@@ -207,6 +218,11 @@ std::string GetAutoScaleConfigResult::getUid()const
 int GetAutoScaleConfigResult::getGrowTimeoutInMinutes()const
 {
 	return growTimeoutInMinutes_;
+}
+
+std::string GetAutoScaleConfigResult::getDnsConfig()const
+{
+	return dnsConfig_;
 }
 
 std::string GetAutoScaleConfigResult::getImageId()const

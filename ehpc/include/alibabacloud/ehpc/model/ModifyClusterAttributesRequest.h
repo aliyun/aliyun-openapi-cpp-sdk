@@ -28,6 +28,13 @@ namespace EHPC {
 namespace Model {
 class ALIBABACLOUD_EHPC_EXPORT ModifyClusterAttributesRequest : public RpcServiceRequest {
 public:
+	struct WinAdPar {
+		std::string adUser;
+		std::string adUserPasswd;
+		std::string adIp;
+		std::string fallbackHomeDir;
+		std::string adDc;
+	};
 	ModifyClusterAttributesRequest();
 	~ModifyClusterAttributesRequest();
 	std::string getImageId() const;
@@ -46,6 +53,8 @@ public:
 	void setRamNodeTypes(const std::vector<std::string> &ramNodeTypes);
 	std::string getPassword() const;
 	void setPassword(const std::string &password);
+	WinAdPar getWinAdPar() const;
+	void setWinAdPar(const WinAdPar &winAdPar);
 	std::string getName() const;
 	void setName(const std::string &name);
 
@@ -58,6 +67,7 @@ private:
 	std::string imageOwnerAlias_;
 	std::vector<std::string> ramNodeTypes_;
 	std::string password_;
+	WinAdPar winAdPar_;
 	std::string name_;
 };
 } // namespace Model

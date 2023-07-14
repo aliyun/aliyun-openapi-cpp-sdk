@@ -64,6 +64,7 @@ namespace AlibabaCloud
 					};
 					std::string imageOwnerAlias;
 					std::string description;
+					std::string resourceGroupId;
 					std::string nodePrefix;
 					std::string instanceChargeType;
 					float computeSpotPriceLimit;

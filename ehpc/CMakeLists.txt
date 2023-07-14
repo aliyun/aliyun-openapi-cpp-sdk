@@ -103,6 +103,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/DescribeNFSClientStatusResult.h
 	include/alibabacloud/ehpc/model/DescribePriceRequest.h
 	include/alibabacloud/ehpc/model/DescribePriceResult.h
+	include/alibabacloud/ehpc/model/DescribeServerlessJobsRequest.h
+	include/alibabacloud/ehpc/model/DescribeServerlessJobsResult.h
 	include/alibabacloud/ehpc/model/EditJobTemplateRequest.h
 	include/alibabacloud/ehpc/model/EditJobTemplateResult.h
 	include/alibabacloud/ehpc/model/GetAccountingReportRequest.h
@@ -195,6 +197,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/ListRegionsResult.h
 	include/alibabacloud/ehpc/model/ListSecurityGroupsRequest.h
 	include/alibabacloud/ehpc/model/ListSecurityGroupsResult.h
+	include/alibabacloud/ehpc/model/ListServerlessJobsRequest.h
+	include/alibabacloud/ehpc/model/ListServerlessJobsResult.h
 	include/alibabacloud/ehpc/model/ListSoftwaresRequest.h
 	include/alibabacloud/ehpc/model/ListSoftwaresResult.h
 	include/alibabacloud/ehpc/model/ListTagResourcesRequest.h
@@ -265,10 +269,14 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/StopJobsResult.h
 	include/alibabacloud/ehpc/model/StopNodesRequest.h
 	include/alibabacloud/ehpc/model/StopNodesResult.h
+	include/alibabacloud/ehpc/model/StopServerlessJobsRequest.h
+	include/alibabacloud/ehpc/model/StopServerlessJobsResult.h
 	include/alibabacloud/ehpc/model/StopVisualServiceRequest.h
 	include/alibabacloud/ehpc/model/StopVisualServiceResult.h
 	include/alibabacloud/ehpc/model/SubmitJobRequest.h
 	include/alibabacloud/ehpc/model/SubmitJobResult.h
+	include/alibabacloud/ehpc/model/SubmitServerlessJobRequest.h
+	include/alibabacloud/ehpc/model/SubmitServerlessJobResult.h
 	include/alibabacloud/ehpc/model/SummaryImagesRequest.h
 	include/alibabacloud/ehpc/model/SummaryImagesResult.h
 	include/alibabacloud/ehpc/model/SummaryImagesInfoRequest.h
@@ -372,6 +380,8 @@ set(ehpc_src
 	src/model/DescribeNFSClientStatusResult.cc
 	src/model/DescribePriceRequest.cc
 	src/model/DescribePriceResult.cc
+	src/model/DescribeServerlessJobsRequest.cc
+	src/model/DescribeServerlessJobsResult.cc
 	src/model/EditJobTemplateRequest.cc
 	src/model/EditJobTemplateResult.cc
 	src/model/GetAccountingReportRequest.cc
@@ -464,6 +474,8 @@ set(ehpc_src
 	src/model/ListRegionsResult.cc
 	src/model/ListSecurityGroupsRequest.cc
 	src/model/ListSecurityGroupsResult.cc
+	src/model/ListServerlessJobsRequest.cc
+	src/model/ListServerlessJobsResult.cc
 	src/model/ListSoftwaresRequest.cc
 	src/model/ListSoftwaresResult.cc
 	src/model/ListTagResourcesRequest.cc
@@ -534,10 +546,14 @@ set(ehpc_src
 	src/model/StopJobsResult.cc
 	src/model/StopNodesRequest.cc
 	src/model/StopNodesResult.cc
+	src/model/StopServerlessJobsRequest.cc
+	src/model/StopServerlessJobsResult.cc
 	src/model/StopVisualServiceRequest.cc
 	src/model/StopVisualServiceResult.cc
 	src/model/SubmitJobRequest.cc
 	src/model/SubmitJobResult.cc
+	src/model/SubmitServerlessJobRequest.cc
+	src/model/SubmitServerlessJobResult.cc
 	src/model/SummaryImagesRequest.cc
 	src/model/SummaryImagesResult.cc
 	src/model/SummaryImagesInfoRequest.cc

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_UPDATEQUEUECONFIGREQUEST_H_
-#define ALIBABACLOUD_EHPC_MODEL_UPDATEQUEUECONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_DESCRIBESERVERLESSJOBSREQUEST_H_
+#define ALIBABACLOUD_EHPC_MODEL_DESCRIBESERVERLESSJOBSREQUEST_H_
 
 #include <alibabacloud/ehpc/EHPCExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,23 @@
 namespace AlibabaCloud {
 namespace EHPC {
 namespace Model {
-class ALIBABACLOUD_EHPC_EXPORT UpdateQueueConfigRequest : public RpcServiceRequest {
+class ALIBABACLOUD_EHPC_EXPORT DescribeServerlessJobsRequest : public RpcServiceRequest {
 public:
-	UpdateQueueConfigRequest();
-	~UpdateQueueConfigRequest();
-	std::string getDeploymentSetId() const;
-	void setDeploymentSetId(const std::string &deploymentSetId);
-	std::string getQueueName() const;
-	void setQueueName(const std::string &queueName);
+	DescribeServerlessJobsRequest();
+	~DescribeServerlessJobsRequest();
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getResourceGroupId() const;
-	void setResourceGroupId(const std::string &resourceGroupId);
-	std::string getComputeInstanceType() const;
-	void setComputeInstanceType(const std::string &computeInstanceType);
+	std::vector<std::string> getJobIds() const;
+	void setJobIds(const std::vector<std::string> &jobIds);
 
 private:
-	std::string deploymentSetId_;
-	std::string queueName_;
 	std::string clusterId_;
 	std::string accessKeyId_;
-	std::string resourceGroupId_;
-	std::string computeInstanceType_;
+	std::vector<std::string> jobIds_;
 };
 } // namespace Model
 } // namespace EHPC
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_EHPC_MODEL_UPDATEQUEUECONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_DESCRIBESERVERLESSJOBSREQUEST_H_

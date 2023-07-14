@@ -30,16 +30,22 @@ class ALIBABACLOUD_EHPC_EXPORT AddQueueRequest : public RpcServiceRequest {
 public:
 	AddQueueRequest();
 	~AddQueueRequest();
+	std::string getDeploymentSetId() const;
+	void setDeploymentSetId(const std::string &deploymentSetId);
 	std::string getQueueName() const;
 	void setQueueName(const std::string &queueName);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
+	std::string getNetworkInterfaceTrafficMode() const;
+	void setNetworkInterfaceTrafficMode(const std::string &networkInterfaceTrafficMode);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 
 private:
+	std::string deploymentSetId_;
 	std::string queueName_;
 	std::string clusterId_;
+	std::string networkInterfaceTrafficMode_;
 	std::string accessKeyId_;
 };
 } // namespace Model

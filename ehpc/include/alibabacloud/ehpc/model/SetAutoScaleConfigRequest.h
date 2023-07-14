@@ -31,6 +31,7 @@ public:
 	struct Queues {
 		std::string queueName;
 		std::string systemDiskLevel;
+		bool sortedByInventory;
 		struct InstanceTypes {
 			std::string vSwitchId;
 			std::string spotStrategy;
@@ -69,6 +70,8 @@ public:
 	~SetAutoScaleConfigRequest();
 	std::string getImageId() const;
 	void setImageId(const std::string &imageId);
+	std::string getDnsConfig() const;
+	void setDnsConfig(const std::string &dnsConfig);
 	float getSpotPriceLimit() const;
 	void setSpotPriceLimit(float spotPriceLimit);
 	std::string getAccessKeyId() const;
@@ -91,6 +94,8 @@ public:
 	void setSpotStrategy(const std::string &spotStrategy);
 	int getMaxNodesInCluster() const;
 	void setMaxNodesInCluster(int maxNodesInCluster);
+	bool getComputeEnableHt() const;
+	void setComputeEnableHt(bool computeEnableHt);
 	int getShrinkIntervalInMinutes() const;
 	void setShrinkIntervalInMinutes(int shrinkIntervalInMinutes);
 	std::vector<Queues> getQueues() const;
@@ -102,6 +107,7 @@ public:
 
 private:
 	std::string imageId_;
+	std::string dnsConfig_;
 	float spotPriceLimit_;
 	std::string accessKeyId_;
 	std::string excludeNodes_;
@@ -113,6 +119,7 @@ private:
 	bool enableAutoShrink_;
 	std::string spotStrategy_;
 	int maxNodesInCluster_;
+	bool computeEnableHt_;
 	int shrinkIntervalInMinutes_;
 	std::vector<Queues> queues_;
 	int growIntervalInMinutes_;

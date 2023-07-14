@@ -97,6 +97,15 @@ void CreateHybridClusterRequest::setPassword(const std::string &password) {
   setParameter(std::string("Password"), password);
 }
 
+std::string CreateHybridClusterRequest::getHybridClusterOpMode() const {
+  return hybridClusterOpMode_;
+}
+
+void CreateHybridClusterRequest::setHybridClusterOpMode(const std::string &hybridClusterOpMode) {
+  hybridClusterOpMode_ = hybridClusterOpMode;
+  setParameter(std::string("HybridClusterOpMode"), hybridClusterOpMode);
+}
+
 CreateHybridClusterRequest::WinAdPar CreateHybridClusterRequest::getWinAdPar() const {
   return winAdPar_;
 }
@@ -264,6 +273,7 @@ CreateHybridClusterRequest::OpenldapPar CreateHybridClusterRequest::getOpenldapP
 
 void CreateHybridClusterRequest::setOpenldapPar(const CreateHybridClusterRequest::OpenldapPar &openldapPar) {
   openldapPar_ = openldapPar;
+  setParameter(std::string("OpenldapPar") + ".FallbackHomeDir", openldapPar.fallbackHomeDir);
   setParameter(std::string("OpenldapPar") + ".BaseDn", openldapPar.baseDn);
   setParameter(std::string("OpenldapPar") + ".LdapServerIp", openldapPar.ldapServerIp);
 }

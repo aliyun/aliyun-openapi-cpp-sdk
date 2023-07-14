@@ -96,10 +96,40 @@ void DescribeClusterResult::parse(const std::string &payload)
 		clusterInfo_.id = clusterInfoNode["Id"].asString();
 	if(!clusterInfoNode["ClientVersion"].isNull())
 		clusterInfo_.clientVersion = clusterInfoNode["ClientVersion"].asString();
+	if(!clusterInfoNode["ZoneId"].isNull())
+		clusterInfo_.zoneId = clusterInfoNode["ZoneId"].asString();
+	if(!clusterInfoNode["ResourceGroupId"].isNull())
+		clusterInfo_.resourceGroupId = clusterInfoNode["ResourceGroupId"].asString();
 	if(!clusterInfoNode["RamRoleName"].isNull())
 		clusterInfo_.ramRoleName = clusterInfoNode["RamRoleName"].asString();
 	if(!clusterInfoNode["RamNodeTypes"].isNull())
 		clusterInfo_.ramNodeTypes = clusterInfoNode["RamNodeTypes"].asString();
+	if(!clusterInfoNode["ClusterVersion"].isNull())
+		clusterInfo_.clusterVersion = clusterInfoNode["ClusterVersion"].asString();
+	if(!clusterInfoNode["WithoutAgent"].isNull())
+		clusterInfo_.withoutAgent = std::stoi(clusterInfoNode["WithoutAgent"].asString());
+	if(!clusterInfoNode["Plugin"].isNull())
+		clusterInfo_.plugin = clusterInfoNode["Plugin"].asString();
+	if(!clusterInfoNode["SchedulerPreInstall"].isNull())
+		clusterInfo_.schedulerPreInstall = std::stoi(clusterInfoNode["SchedulerPreInstall"].asString());
+	if(!clusterInfoNode["Domain"].isNull())
+		clusterInfo_.domain = clusterInfoNode["Domain"].asString();
+	if(!clusterInfoNode["OpenldapPar"].isNull())
+		clusterInfo_.openldapPar = clusterInfoNode["OpenldapPar"].asString();
+	if(!clusterInfoNode["WinAdPar"].isNull())
+		clusterInfo_.winAdPar = clusterInfoNode["WinAdPar"].asString();
+	if(!clusterInfoNode["Period"].isNull())
+		clusterInfo_.period = clusterInfoNode["Period"].asString();
+	if(!clusterInfoNode["PeriodUnit"].isNull())
+		clusterInfo_.periodUnit = clusterInfoNode["PeriodUnit"].asString();
+	if(!clusterInfoNode["AutoRenewPeriod"].isNull())
+		clusterInfo_.autoRenewPeriod = clusterInfoNode["AutoRenewPeriod"].asString();
+	if(!clusterInfoNode["AutoRenew"].isNull())
+		clusterInfo_.autoRenew = clusterInfoNode["AutoRenew"].asString();
+	if(!clusterInfoNode["ComputeSpotStrategy"].isNull())
+		clusterInfo_.computeSpotStrategy = clusterInfoNode["ComputeSpotStrategy"].asString();
+	if(!clusterInfoNode["ComputeSpotPriceLimit"].isNull())
+		clusterInfo_.computeSpotPriceLimit = clusterInfoNode["ComputeSpotPriceLimit"].asString();
 	auto allApplicationsNode = clusterInfoNode["Applications"]["ApplicationInfo"];
 	for (auto clusterInfoNodeApplicationsApplicationInfo : allApplicationsNode)
 	{
@@ -134,6 +164,40 @@ void DescribeClusterResult::parse(const std::string &payload)
 			onPremiseInfoItemObject.iP = clusterInfoNodeOnPremiseInfoOnPremiseInfoItem["IP"].asString();
 		clusterInfo_.onPremiseInfo.push_back(onPremiseInfoItemObject);
 	}
+	auto allAddOnsInfoNode = clusterInfoNode["AddOnsInfo"]["AddOnsInfoItem"];
+	for (auto clusterInfoNodeAddOnsInfoAddOnsInfoItem : allAddOnsInfoNode)
+	{
+		ClusterInfo::AddOnsInfoItem addOnsInfoItemObject;
+		if(!clusterInfoNodeAddOnsInfoAddOnsInfoItem["SoftwareId"].isNull())
+			addOnsInfoItemObject.softwareId = clusterInfoNodeAddOnsInfoAddOnsInfoItem["SoftwareId"].asString();
+		if(!clusterInfoNodeAddOnsInfoAddOnsInfoItem["DeployMode"].isNull())
+			addOnsInfoItemObject.deployMode = clusterInfoNodeAddOnsInfoAddOnsInfoItem["DeployMode"].asString();
+		if(!clusterInfoNodeAddOnsInfoAddOnsInfoItem["Port"].isNull())
+			addOnsInfoItemObject.port = std::stoi(clusterInfoNodeAddOnsInfoAddOnsInfoItem["Port"].asString());
+		if(!clusterInfoNodeAddOnsInfoAddOnsInfoItem["Status"].isNull())
+			addOnsInfoItemObject.status = clusterInfoNodeAddOnsInfoAddOnsInfoItem["Status"].asString();
+		if(!clusterInfoNodeAddOnsInfoAddOnsInfoItem["URL"].isNull())
+			addOnsInfoItemObject.uRL = clusterInfoNodeAddOnsInfoAddOnsInfoItem["URL"].asString();
+		clusterInfo_.addOnsInfo.push_back(addOnsInfoItemObject);
+	}
+	auto allNodesNode = clusterInfoNode["Nodes"]["NodesInfo"];
+	for (auto clusterInfoNodeNodesNodesInfo : allNodesNode)
+	{
+		ClusterInfo::NodesInfo nodesInfoObject;
+		if(!clusterInfoNodeNodesNodesInfo["Role"].isNull())
+			nodesInfoObject.role = clusterInfoNodeNodesNodesInfo["Role"].asString();
+		if(!clusterInfoNodeNodesNodesInfo["HostName"].isNull())
+			nodesInfoObject.hostName = clusterInfoNodeNodesNodesInfo["HostName"].asString();
+		if(!clusterInfoNodeNodesNodesInfo["IpAddress"].isNull())
+			nodesInfoObject.ipAddress = clusterInfoNodeNodesNodesInfo["IpAddress"].asString();
+		if(!clusterInfoNodeNodesNodesInfo["AccountType"].isNull())
+			nodesInfoObject.accountType = clusterInfoNodeNodesNodesInfo["AccountType"].asString();
+		if(!clusterInfoNodeNodesNodesInfo["Dir"].isNull())
+			nodesInfoObject.dir = clusterInfoNodeNodesNodesInfo["Dir"].asString();
+		if(!clusterInfoNodeNodesNodesInfo["SchedulerType"].isNull())
+			nodesInfoObject.schedulerType = clusterInfoNodeNodesNodesInfo["SchedulerType"].asString();
+		clusterInfo_.nodes.push_back(nodesInfoObject);
+	}
 	auto ecsInfoNode = clusterInfoNode["EcsInfo"];
 	auto managerNode = ecsInfoNode["Manager"];
 	if(!managerNode["InstanceType"].isNull())
@@ -155,6 +219,13 @@ void DescribeClusterResult::parse(const std::string &payload)
 		clusterInfo_.ecsInfo.proxyMgr.instanceType = proxyMgrNode["InstanceType"].asString();
 	if(!proxyMgrNode["Count"].isNull())
 		clusterInfo_.ecsInfo.proxyMgr.count = std::stoi(proxyMgrNode["Count"].asString());
+	auto initialImageNode = clusterInfoNode["InitialImage"];
+	if(!initialImageNode["OsTag"].isNull())
+		clusterInfo_.initialImage.osTag = initialImageNode["OsTag"].asString();
+	if(!initialImageNode["ImageOwnerAlias"].isNull())
+		clusterInfo_.initialImage.imageOwnerAlias = initialImageNode["ImageOwnerAlias"].asString();
+	if(!initialImageNode["ImageId"].isNull())
+		clusterInfo_.initialImage.imageId = initialImageNode["ImageId"].asString();
 
 }
 

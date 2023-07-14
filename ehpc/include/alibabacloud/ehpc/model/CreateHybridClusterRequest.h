@@ -39,6 +39,7 @@ public:
 		std::string url;
 	};
 	struct OpenldapPar {
+		std::string fallbackHomeDir;
 		std::string baseDn;
 		std::string ldapServerIp;
 	};
@@ -71,6 +72,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getPassword() const;
 	void setPassword(const std::string &password);
+	std::string getHybridClusterOpMode() const;
+	void setHybridClusterOpMode(const std::string &hybridClusterOpMode);
 	WinAdPar getWinAdPar() const;
 	void setWinAdPar(const WinAdPar &winAdPar);
 	float getComputeSpotPriceLimit() const;
@@ -147,6 +150,7 @@ private:
 	std::string imageOwnerAlias_;
 	std::string resourceGroupId_;
 	std::string password_;
+	std::string hybridClusterOpMode_;
 	WinAdPar winAdPar_;
 	float computeSpotPriceLimit_;
 	std::string onPremiseVolumeLocalPath_;

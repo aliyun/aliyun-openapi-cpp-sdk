@@ -1527,6 +1527,42 @@ EHPCClient::DescribePriceOutcomeCallable EHPCClient::describePriceCallable(const
 	return task->get_future();
 }
 
+EHPCClient::DescribeServerlessJobsOutcome EHPCClient::describeServerlessJobs(const DescribeServerlessJobsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeServerlessJobsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeServerlessJobsOutcome(DescribeServerlessJobsResult(outcome.result()));
+	else
+		return DescribeServerlessJobsOutcome(outcome.error());
+}
+
+void EHPCClient::describeServerlessJobsAsync(const DescribeServerlessJobsRequest& request, const DescribeServerlessJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeServerlessJobs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::DescribeServerlessJobsOutcomeCallable EHPCClient::describeServerlessJobsCallable(const DescribeServerlessJobsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeServerlessJobsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeServerlessJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::EditJobTemplateOutcome EHPCClient::editJobTemplate(const EditJobTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3183,6 +3219,42 @@ EHPCClient::ListSecurityGroupsOutcomeCallable EHPCClient::listSecurityGroupsCall
 	return task->get_future();
 }
 
+EHPCClient::ListServerlessJobsOutcome EHPCClient::listServerlessJobs(const ListServerlessJobsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListServerlessJobsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListServerlessJobsOutcome(ListServerlessJobsResult(outcome.result()));
+	else
+		return ListServerlessJobsOutcome(outcome.error());
+}
+
+void EHPCClient::listServerlessJobsAsync(const ListServerlessJobsRequest& request, const ListServerlessJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listServerlessJobs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::ListServerlessJobsOutcomeCallable EHPCClient::listServerlessJobsCallable(const ListServerlessJobsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListServerlessJobsOutcome()>>(
+			[this, request]()
+			{
+			return this->listServerlessJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::ListSoftwaresOutcome EHPCClient::listSoftwares(const ListSoftwaresRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4443,6 +4515,42 @@ EHPCClient::StopNodesOutcomeCallable EHPCClient::stopNodesCallable(const StopNod
 	return task->get_future();
 }
 
+EHPCClient::StopServerlessJobsOutcome EHPCClient::stopServerlessJobs(const StopServerlessJobsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopServerlessJobsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopServerlessJobsOutcome(StopServerlessJobsResult(outcome.result()));
+	else
+		return StopServerlessJobsOutcome(outcome.error());
+}
+
+void EHPCClient::stopServerlessJobsAsync(const StopServerlessJobsRequest& request, const StopServerlessJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopServerlessJobs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::StopServerlessJobsOutcomeCallable EHPCClient::stopServerlessJobsCallable(const StopServerlessJobsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopServerlessJobsOutcome()>>(
+			[this, request]()
+			{
+			return this->stopServerlessJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::StopVisualServiceOutcome EHPCClient::stopVisualService(const StopVisualServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4509,6 +4617,42 @@ EHPCClient::SubmitJobOutcomeCallable EHPCClient::submitJobCallable(const SubmitJ
 			[this, request]()
 			{
 			return this->submitJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::SubmitServerlessJobOutcome EHPCClient::submitServerlessJob(const SubmitServerlessJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitServerlessJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitServerlessJobOutcome(SubmitServerlessJobResult(outcome.result()));
+	else
+		return SubmitServerlessJobOutcome(outcome.error());
+}
+
+void EHPCClient::submitServerlessJobAsync(const SubmitServerlessJobRequest& request, const SubmitServerlessJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitServerlessJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::SubmitServerlessJobOutcomeCallable EHPCClient::submitServerlessJobCallable(const SubmitServerlessJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitServerlessJobOutcome()>>(
+			[this, request]()
+			{
+			return this->submitServerlessJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

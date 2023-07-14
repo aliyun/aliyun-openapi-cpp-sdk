@@ -31,6 +31,7 @@ public:
 	struct AdditionalVolumes {
 		std::string volumeType;
 		std::string volumeProtocol;
+		std::string volumeMountOption;
 		std::string localDirectory;
 		std::string remoteDirectory;
 		struct Roles {

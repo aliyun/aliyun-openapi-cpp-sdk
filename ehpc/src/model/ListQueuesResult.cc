@@ -59,6 +59,8 @@ void ListQueuesResult::parse(const std::string &payload)
 			queuesObject.hostNameSuffix = valueQueuesQueueInfo["HostNameSuffix"].asString();
 		if(!valueQueuesQueueInfo["SpotStrategy"].isNull())
 			queuesObject.spotStrategy = valueQueuesQueueInfo["SpotStrategy"].asString();
+		if(!valueQueuesQueueInfo["DeploymentSetId"].isNull())
+			queuesObject.deploymentSetId = valueQueuesQueueInfo["DeploymentSetId"].asString();
 		auto allSpotInstanceTypesNode = valueQueuesQueueInfo["SpotInstanceTypes"]["Instance"];
 		for (auto valueQueuesQueueInfoSpotInstanceTypesInstance : allSpotInstanceTypesNode)
 		{

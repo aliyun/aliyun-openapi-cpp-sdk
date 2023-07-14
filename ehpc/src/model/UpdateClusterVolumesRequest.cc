@@ -36,6 +36,7 @@ void UpdateClusterVolumesRequest::setAdditionalVolumes(const std::vector<UpdateC
   std::string additionalVolumesObjStr = std::string("AdditionalVolumes") + "." + std::to_string(dep1 + 1);
     setParameter(additionalVolumesObjStr + ".VolumeType", additionalVolumesObj.volumeType);
     setParameter(additionalVolumesObjStr + ".VolumeProtocol", additionalVolumesObj.volumeProtocol);
+    setParameter(additionalVolumesObjStr + ".VolumeMountOption", additionalVolumesObj.volumeMountOption);
     setParameter(additionalVolumesObjStr + ".LocalDirectory", additionalVolumesObj.localDirectory);
     setParameter(additionalVolumesObjStr + ".RemoteDirectory", additionalVolumesObj.remoteDirectory);
     for(int dep2 = 0; dep2 != additionalVolumesObj.roles.size(); dep2++) {

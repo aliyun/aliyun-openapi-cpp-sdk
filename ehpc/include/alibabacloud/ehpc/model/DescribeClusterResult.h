@@ -61,6 +61,12 @@ namespace AlibabaCloud
 						ProxyMgr proxyMgr;
 						Manager manager;
 					};
+					struct InitialImage
+					{
+						std::string imageOwnerAlias;
+						std::string osTag;
+						std::string imageId;
+					};
 					struct ApplicationInfo
 					{
 						std::string version;
@@ -78,40 +84,75 @@ namespace AlibabaCloud
 						std::string iP;
 						std::string hostName;
 					};
+					struct AddOnsInfoItem
+					{
+						std::string status;
+						std::string softwareId;
+						std::string deployMode;
+						int port;
+						std::string uRL;
+					};
+					struct NodesInfo
+					{
+						std::string role;
+						std::string ipAddress;
+						std::string schedulerType;
+						std::string dir;
+						std::string accountType;
+						std::string hostName;
+					};
 					std::string volumeProtocol;
+					std::string resourceGroupId;
+					std::vector<AddOnsInfoItem> addOnsInfo;
+					std::string name;
+					std::string volumeId;
+					std::string ramRoleName;
+					std::string deployMode;
+					std::string openldapPar;
+					std::string imageId;
+					std::string status;
+					std::vector<PostInstallScriptInfo> postInstallScripts;
+					std::string vSwitchId;
+					std::string period;
+					std::string computeSpotStrategy;
+					std::string volumeMountpoint;
+					std::string vpcId;
+					EcsInfo ecsInfo;
+					std::string id;
+					std::string domain;
+					InitialImage initialImage;
+					std::string periodUnit;
 					std::string imageOwnerAlias;
 					std::string description;
+					std::string autoRenew;
+					std::string computeSpotPriceLimit;
 					std::string ramNodeTypes;
 					std::string clientVersion;
 					std::vector<OnPremiseInfoItem> onPremiseInfo;
-					std::string name;
-					std::string volumeId;
+					std::string winAdPar;
 					std::string volumeType;
-					std::string ramRoleName;
-					std::string deployMode;
-					std::string imageId;
-					std::string status;
+					int schedulerPreInstall;
+					std::string autoRenewPeriod;
 					std::string keyPairName;
 					std::string remoteDirectory;
 					std::string sccClusterId;
 					std::vector<ApplicationInfo> applications;
-					std::vector<PostInstallScriptInfo> postInstallScripts;
+					std::string zoneId;
+					std::string clusterVersion;
 					std::string securityGroupId;
 					std::string createTime;
-					std::string vSwitchId;
 					std::string schedulerType;
 					std::string accountType;
+					std::vector<NodesInfo> nodes;
 					std::string baseOsTag;
-					std::string volumeMountpoint;
+					int withoutAgent;
 					std::string imageName;
-					std::string vpcId;
-					EcsInfo ecsInfo;
 					bool haEnable;
 					std::string osTag;
 					std::string ecsChargeType;
 					std::string regionId;
-					std::string id;
 					std::string location;
+					std::string plugin;
 				};
 
 

@@ -96,6 +96,19 @@ void ModifyClusterAttributesRequest::setPassword(const std::string &password) {
   setParameter(std::string("Password"), password);
 }
 
+ModifyClusterAttributesRequest::WinAdPar ModifyClusterAttributesRequest::getWinAdPar() const {
+  return winAdPar_;
+}
+
+void ModifyClusterAttributesRequest::setWinAdPar(const ModifyClusterAttributesRequest::WinAdPar &winAdPar) {
+  winAdPar_ = winAdPar;
+  setParameter(std::string("WinAdPar") + ".AdUser", winAdPar.adUser);
+  setParameter(std::string("WinAdPar") + ".AdUserPasswd", winAdPar.adUserPasswd);
+  setParameter(std::string("WinAdPar") + ".AdIp", winAdPar.adIp);
+  setParameter(std::string("WinAdPar") + ".FallbackHomeDir", winAdPar.fallbackHomeDir);
+  setParameter(std::string("WinAdPar") + ".AdDc", winAdPar.adDc);
+}
+
 std::string ModifyClusterAttributesRequest::getName() const {
   return name_;
 }

@@ -25,6 +25,15 @@ AddQueueRequest::AddQueueRequest()
 
 AddQueueRequest::~AddQueueRequest() {}
 
+std::string AddQueueRequest::getDeploymentSetId() const {
+  return deploymentSetId_;
+}
+
+void AddQueueRequest::setDeploymentSetId(const std::string &deploymentSetId) {
+  deploymentSetId_ = deploymentSetId;
+  setParameter(std::string("DeploymentSetId"), deploymentSetId);
+}
+
 std::string AddQueueRequest::getQueueName() const {
   return queueName_;
 }
@@ -41,6 +50,15 @@ std::string AddQueueRequest::getClusterId() const {
 void AddQueueRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
   setParameter(std::string("ClusterId"), clusterId);
+}
+
+std::string AddQueueRequest::getNetworkInterfaceTrafficMode() const {
+  return networkInterfaceTrafficMode_;
+}
+
+void AddQueueRequest::setNetworkInterfaceTrafficMode(const std::string &networkInterfaceTrafficMode) {
+  networkInterfaceTrafficMode_ = networkInterfaceTrafficMode;
+  setParameter(std::string("NetworkInterfaceTrafficMode"), networkInterfaceTrafficMode);
 }
 
 std::string AddQueueRequest::getAccessKeyId() const {

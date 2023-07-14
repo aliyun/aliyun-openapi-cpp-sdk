@@ -25,6 +25,15 @@ UpdateQueueConfigRequest::UpdateQueueConfigRequest()
 
 UpdateQueueConfigRequest::~UpdateQueueConfigRequest() {}
 
+std::string UpdateQueueConfigRequest::getDeploymentSetId() const {
+  return deploymentSetId_;
+}
+
+void UpdateQueueConfigRequest::setDeploymentSetId(const std::string &deploymentSetId) {
+  deploymentSetId_ = deploymentSetId;
+  setParameter(std::string("DeploymentSetId"), deploymentSetId);
+}
+
 std::string UpdateQueueConfigRequest::getQueueName() const {
   return queueName_;
 }

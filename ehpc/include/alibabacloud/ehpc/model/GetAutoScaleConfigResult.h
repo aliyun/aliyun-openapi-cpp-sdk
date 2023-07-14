@@ -57,6 +57,7 @@ namespace AlibabaCloud
 					std::string hostNameSuffix;
 					int minNodesInQueue;
 					int maxNodesInQueue;
+					bool sortedByInventory;
 					std::vector<QueueInfo::DataDisksInfo> dataDisks;
 					bool enableAutoGrow;
 					std::string resourceGroupId;
@@ -81,6 +82,7 @@ namespace AlibabaCloud
 				~GetAutoScaleConfigResult();
 				int getExtraNodesGrowRatio()const;
 				bool getEnableAutoGrow()const;
+				bool getComputeEnableHt()const;
 				std::string getClusterId()const;
 				int getMaxNodesInCluster()const;
 				int getShrinkIdleTimes()const;
@@ -90,6 +92,7 @@ namespace AlibabaCloud
 				int getGrowIntervalInMinutes()const;
 				std::string getUid()const;
 				int getGrowTimeoutInMinutes()const;
+				std::string getDnsConfig()const;
 				std::string getImageId()const;
 				int getShrinkIntervalInMinutes()const;
 				float getSpotPriceLimit()const;
@@ -102,6 +105,7 @@ namespace AlibabaCloud
 			private:
 				int extraNodesGrowRatio_;
 				bool enableAutoGrow_;
+				bool computeEnableHt_;
 				std::string clusterId_;
 				int maxNodesInCluster_;
 				int shrinkIdleTimes_;
@@ -111,6 +115,7 @@ namespace AlibabaCloud
 				int growIntervalInMinutes_;
 				std::string uid_;
 				int growTimeoutInMinutes_;
+				std::string dnsConfig_;
 				std::string imageId_;
 				int shrinkIntervalInMinutes_;
 				float spotPriceLimit_;

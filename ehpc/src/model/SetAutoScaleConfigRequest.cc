@@ -34,6 +34,15 @@ void SetAutoScaleConfigRequest::setImageId(const std::string &imageId) {
   setParameter(std::string("ImageId"), imageId);
 }
 
+std::string SetAutoScaleConfigRequest::getDnsConfig() const {
+  return dnsConfig_;
+}
+
+void SetAutoScaleConfigRequest::setDnsConfig(const std::string &dnsConfig) {
+  dnsConfig_ = dnsConfig;
+  setParameter(std::string("DnsConfig"), dnsConfig);
+}
+
 float SetAutoScaleConfigRequest::getSpotPriceLimit() const {
   return spotPriceLimit_;
 }
@@ -133,6 +142,15 @@ void SetAutoScaleConfigRequest::setMaxNodesInCluster(int maxNodesInCluster) {
   setParameter(std::string("MaxNodesInCluster"), std::to_string(maxNodesInCluster));
 }
 
+bool SetAutoScaleConfigRequest::getComputeEnableHt() const {
+  return computeEnableHt_;
+}
+
+void SetAutoScaleConfigRequest::setComputeEnableHt(bool computeEnableHt) {
+  computeEnableHt_ = computeEnableHt;
+  setParameter(std::string("ComputeEnableHt"), computeEnableHt ? "true" : "false");
+}
+
 int SetAutoScaleConfigRequest::getShrinkIntervalInMinutes() const {
   return shrinkIntervalInMinutes_;
 }
@@ -153,6 +171,7 @@ void SetAutoScaleConfigRequest::setQueues(const std::vector<SetAutoScaleConfigRe
   std::string queuesObjStr = std::string("Queues") + "." + std::to_string(dep1 + 1);
     setParameter(queuesObjStr + ".QueueName", queuesObj.queueName);
     setParameter(queuesObjStr + ".SystemDiskLevel", queuesObj.systemDiskLevel);
+    setParameter(queuesObjStr + ".SortedByInventory", queuesObj.sortedByInventory ? "true" : "false");
     for(int dep2 = 0; dep2 != queuesObj.instanceTypes.size(); dep2++) {
     auto instanceTypesObj = queuesObj.instanceTypes.at(dep2);
     std::string instanceTypesObjStr = queuesObjStr + ".InstanceTypes" + "." + std::to_string(dep2 + 1);

@@ -43,6 +43,15 @@ public:
 		std::string location;
 		std::string jobQueue;
 	};
+	struct AddOns {
+		std::string deployMode;
+		float port;
+		std::string configFile;
+		bool defaultStart;
+		std::string name;
+		std::string dBType;
+		std::string version;
+	};
 	struct Tag {
 		std::string value;
 		std::string key;
@@ -58,12 +67,16 @@ public:
 	~CreateClusterRequest();
 	std::vector<AdditionalVolumes> getAdditionalVolumes() const;
 	void setAdditionalVolumes(const std::vector<AdditionalVolumes> &additionalVolumes);
+	std::vector<AddOns> getAddOns() const;
+	void setAddOns(const std::vector<AddOns> &addOns);
 	std::string getEcsOrderManagerInstanceType() const;
 	void setEcsOrderManagerInstanceType(const std::string &ecsOrderManagerInstanceType);
 	std::string getKeyPairName() const;
 	void setKeyPairName(const std::string &keyPairName);
 	std::string getSecurityGroupName() const;
 	void setSecurityGroupName(const std::string &securityGroupName);
+	bool getWithoutNas() const;
+	void setWithoutNas(bool withoutNas);
 	std::string getImageOwnerAlias() const;
 	void setImageOwnerAlias(const std::string &imageOwnerAlias);
 	std::string getDeployMode() const;
@@ -144,6 +157,8 @@ public:
 	void setVolumeType(const std::string &volumeType);
 	std::string getSystemDiskType() const;
 	void setSystemDiskType(const std::string &systemDiskType);
+	std::string getDeploymentSetId() const;
+	void setDeploymentSetId(const std::string &deploymentSetId);
 	std::string getVolumeProtocol() const;
 	void setVolumeProtocol(const std::string &volumeProtocol);
 	std::string getClientVersion() const;
@@ -181,9 +196,11 @@ public:
 
 private:
 	std::vector<AdditionalVolumes> additionalVolumes_;
+	std::vector<AddOns> addOns_;
 	std::string ecsOrderManagerInstanceType_;
 	std::string keyPairName_;
 	std::string securityGroupName_;
+	bool withoutNas_;
 	std::string imageOwnerAlias_;
 	std::string deployMode_;
 	int ecsOrderManagerCount_;
@@ -224,6 +241,7 @@ private:
 	std::string accessKeyId_;
 	std::string volumeType_;
 	std::string systemDiskType_;
+	std::string deploymentSetId_;
 	std::string volumeProtocol_;
 	std::string clientVersion_;
 	std::string osTag_;

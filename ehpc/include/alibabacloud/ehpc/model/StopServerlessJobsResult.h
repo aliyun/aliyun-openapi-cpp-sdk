@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_LISTQUEUESRESULT_H_
-#define ALIBABACLOUD_EHPC_MODEL_LISTQUEUESRESULT_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_STOPSERVERLESSJOBSRESULT_H_
+#define ALIBABACLOUD_EHPC_MODEL_STOPSERVERLESSJOBSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT ListQueuesResult : public ServiceResult
+			class ALIBABACLOUD_EHPC_EXPORT StopServerlessJobsResult : public ServiceResult
 			{
 			public:
-				struct QueueInfo
-				{
-					struct Instance
-					{
-						float spotPriceLimit;
-						std::string instanceType;
-					};
-					std::string deploymentSetId;
-					std::string hostNameSuffix;
-					std::string type;
-					std::vector<QueueInfo::Instance> spotInstanceTypes;
-					bool enableAutoGrow;
-					std::string resourceGroupId;
-					std::string imageId;
-					std::string hostNamePrefix;
-					std::string queueName;
-					std::string spotStrategy;
-					std::vector<std::string> computeInstanceType;
-				};
 
 
-				ListQueuesResult();
-				explicit ListQueuesResult(const std::string &payload);
-				~ListQueuesResult();
-				std::vector<QueueInfo> getQueues()const;
+				StopServerlessJobsResult();
+				explicit StopServerlessJobsResult(const std::string &payload);
+				~StopServerlessJobsResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<QueueInfo> queues_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_LISTQUEUESRESULT_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_STOPSERVERLESSJOBSRESULT_H_
