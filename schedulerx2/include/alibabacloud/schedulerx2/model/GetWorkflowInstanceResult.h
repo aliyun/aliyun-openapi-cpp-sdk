@@ -53,6 +53,7 @@ namespace AlibabaCloud
 							long jobInstanceId;
 							std::string workAddr;
 							std::string startTime;
+							std::string jobName;
 							std::string dataTime;
 							long jobId;
 							std::string result;
