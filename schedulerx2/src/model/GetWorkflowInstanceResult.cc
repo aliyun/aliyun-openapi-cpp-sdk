@@ -74,6 +74,8 @@ void GetWorkflowInstanceResult::parse(const std::string &payload)
 			nodeObject.result = wfInstanceDagNodeNodesNode["Result"].asString();
 		if(!wfInstanceDagNodeNodesNode["Attempt"].isNull())
 			nodeObject.attempt = std::stoi(wfInstanceDagNodeNodesNode["Attempt"].asString());
+		if(!wfInstanceDagNodeNodesNode["Status"].isNull())
+			nodeObject.status = std::stoi(wfInstanceDagNodeNodesNode["Status"].asString());
 		data_.wfInstanceDag.nodes.push_back(nodeObject);
 	}
 	auto allEdgesNode = wfInstanceDagNode["Edges"]["Edge"];

@@ -39,15 +39,18 @@ namespace AlibabaCloud
 						int status;
 						int triggerType;
 						std::string progress;
+						std::string parameters;
 						std::string endTime;
 						long instanceId;
 						std::string workAddr;
 						std::string startTime;
+						std::string jobName;
 						std::string dataTime;
 						std::string result;
 						int timeType;
 						std::string executor;
 						std::string scheduleTime;
+						std::string traceId;
 						long jobId;
 					};
 					JobInstanceDetail jobInstanceDetail;

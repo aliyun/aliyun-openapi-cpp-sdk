@@ -67,6 +67,12 @@ void GetJobInstanceResult::parse(const std::string &payload)
 		data_.jobInstanceDetail.dataTime = jobInstanceDetailNode["DataTime"].asString();
 	if(!jobInstanceDetailNode["WorkAddr"].isNull())
 		data_.jobInstanceDetail.workAddr = jobInstanceDetailNode["WorkAddr"].asString();
+	if(!jobInstanceDetailNode["Parameters"].isNull())
+		data_.jobInstanceDetail.parameters = jobInstanceDetailNode["Parameters"].asString();
+	if(!jobInstanceDetailNode["JobName"].isNull())
+		data_.jobInstanceDetail.jobName = jobInstanceDetailNode["JobName"].asString();
+	if(!jobInstanceDetailNode["TraceId"].isNull())
+		data_.jobInstanceDetail.traceId = jobInstanceDetailNode["TraceId"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())

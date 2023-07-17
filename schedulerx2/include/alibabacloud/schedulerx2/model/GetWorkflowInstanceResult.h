@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					{
 						struct Node
 						{
+							int status;
 							std::string endTime;
 							std::string scheduleTime;
 							int attempt;
