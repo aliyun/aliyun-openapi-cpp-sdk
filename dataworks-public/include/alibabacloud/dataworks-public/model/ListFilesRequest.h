@@ -34,14 +34,22 @@ public:
 	void setOwner(const std::string &owner);
 	std::string getFileTypes() const;
 	void setFileTypes(const std::string &fileTypes);
+	bool getNeedContent() const;
+	void setNeedContent(bool needContent);
+	bool getNeedAbsoluteFolderPath() const;
+	void setNeedAbsoluteFolderPath(bool needAbsoluteFolderPath);
 	std::string getProjectIdentifier() const;
 	void setProjectIdentifier(const std::string &projectIdentifier);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getFileIdIn() const;
+	void setFileIdIn(const std::string &fileIdIn);
 	std::string getFileFolderPath() const;
 	void setFileFolderPath(const std::string &fileFolderPath);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getExactFileName() const;
+	void setExactFileName(const std::string &exactFileName);
 	std::string getKeyword() const;
 	void setKeyword(const std::string &keyword);
 	long getProjectId() const;
@@ -54,10 +62,14 @@ public:
 private:
 	std::string owner_;
 	std::string fileTypes_;
+	bool needContent_;
+	bool needAbsoluteFolderPath_;
 	std::string projectIdentifier_;
 	int pageNumber_;
+	std::string fileIdIn_;
 	std::string fileFolderPath_;
 	int pageSize_;
+	std::string exactFileName_;
 	std::string keyword_;
 	long projectId_;
 	std::string useType_;

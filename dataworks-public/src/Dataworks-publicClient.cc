@@ -1275,6 +1275,42 @@ Dataworks_publicClient::CreateRemindOutcomeCallable Dataworks_publicClient::crea
 	return task->get_future();
 }
 
+Dataworks_publicClient::CreateResourceFileOutcome Dataworks_publicClient::createResourceFile(const CreateResourceFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateResourceFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateResourceFileOutcome(CreateResourceFileResult(outcome.result()));
+	else
+		return CreateResourceFileOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::createResourceFileAsync(const CreateResourceFileRequest& request, const CreateResourceFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createResourceFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::CreateResourceFileOutcomeCallable Dataworks_publicClient::createResourceFileCallable(const CreateResourceFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateResourceFileOutcome()>>(
+			[this, request]()
+			{
+			return this->createResourceFile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::CreateTableOutcome Dataworks_publicClient::createTable(const CreateTableRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

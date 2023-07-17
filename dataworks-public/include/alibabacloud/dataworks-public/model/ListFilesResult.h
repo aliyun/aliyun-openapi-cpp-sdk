@@ -50,6 +50,7 @@ namespace AlibabaCloud
 						int fileType;
 						std::string lastEditUser;
 						std::string content;
+						std::string absoluteFolderPath;
 						int commitStatus;
 						long nodeId;
 						bool autoParsing;

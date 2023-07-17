@@ -89,6 +89,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/CreateQualityRuleResult.h
 	include/alibabacloud/dataworks-public/model/CreateRemindRequest.h
 	include/alibabacloud/dataworks-public/model/CreateRemindResult.h
+	include/alibabacloud/dataworks-public/model/CreateResourceFileRequest.h
+	include/alibabacloud/dataworks-public/model/CreateResourceFileResult.h
 	include/alibabacloud/dataworks-public/model/CreateTableRequest.h
 	include/alibabacloud/dataworks-public/model/CreateTableResult.h
 	include/alibabacloud/dataworks-public/model/CreateTableLevelRequest.h
@@ -604,6 +606,8 @@ set(dataworks-public_src
 	src/model/CreateQualityRuleResult.cc
 	src/model/CreateRemindRequest.cc
 	src/model/CreateRemindResult.cc
+	src/model/CreateResourceFileRequest.cc
+	src/model/CreateResourceFileResult.cc
 	src/model/CreateTableRequest.cc
 	src/model/CreateTableResult.cc
 	src/model/CreateTableLevelRequest.cc

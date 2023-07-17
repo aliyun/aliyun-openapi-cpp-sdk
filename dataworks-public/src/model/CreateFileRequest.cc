@@ -142,6 +142,15 @@ void CreateFileRequest::setInputList(const std::string &inputList) {
   setBodyParameter(std::string("InputList"), inputList);
 }
 
+bool CreateFileRequest::getCreateFolderIfNotExists() const {
+  return createFolderIfNotExists_;
+}
+
+void CreateFileRequest::setCreateFolderIfNotExists(bool createFolderIfNotExists) {
+  createFolderIfNotExists_ = createFolderIfNotExists;
+  setBodyParameter(std::string("CreateFolderIfNotExists"), createFolderIfNotExists ? "true" : "false");
+}
+
 std::string CreateFileRequest::getRerunMode() const {
   return rerunMode_;
 }

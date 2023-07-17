@@ -43,6 +43,24 @@ void ListFilesRequest::setFileTypes(const std::string &fileTypes) {
   setBodyParameter(std::string("FileTypes"), fileTypes);
 }
 
+bool ListFilesRequest::getNeedContent() const {
+  return needContent_;
+}
+
+void ListFilesRequest::setNeedContent(bool needContent) {
+  needContent_ = needContent;
+  setBodyParameter(std::string("NeedContent"), needContent ? "true" : "false");
+}
+
+bool ListFilesRequest::getNeedAbsoluteFolderPath() const {
+  return needAbsoluteFolderPath_;
+}
+
+void ListFilesRequest::setNeedAbsoluteFolderPath(bool needAbsoluteFolderPath) {
+  needAbsoluteFolderPath_ = needAbsoluteFolderPath;
+  setBodyParameter(std::string("NeedAbsoluteFolderPath"), needAbsoluteFolderPath ? "true" : "false");
+}
+
 std::string ListFilesRequest::getProjectIdentifier() const {
   return projectIdentifier_;
 }
@@ -61,6 +79,15 @@ void ListFilesRequest::setPageNumber(int pageNumber) {
   setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string ListFilesRequest::getFileIdIn() const {
+  return fileIdIn_;
+}
+
+void ListFilesRequest::setFileIdIn(const std::string &fileIdIn) {
+  fileIdIn_ = fileIdIn;
+  setBodyParameter(std::string("FileIdIn"), fileIdIn);
+}
+
 std::string ListFilesRequest::getFileFolderPath() const {
   return fileFolderPath_;
 }
@@ -77,6 +104,15 @@ int ListFilesRequest::getPageSize() const {
 void ListFilesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListFilesRequest::getExactFileName() const {
+  return exactFileName_;
+}
+
+void ListFilesRequest::setExactFileName(const std::string &exactFileName) {
+  exactFileName_ = exactFileName;
+  setBodyParameter(std::string("ExactFileName"), exactFileName);
 }
 
 std::string ListFilesRequest::getKeyword() const {

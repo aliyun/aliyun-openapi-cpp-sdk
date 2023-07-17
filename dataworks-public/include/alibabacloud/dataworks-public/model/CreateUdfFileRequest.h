@@ -30,6 +30,8 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateUdfFileRequest : public RpcServ
 public:
 	CreateUdfFileRequest();
 	~CreateUdfFileRequest();
+	bool getCreateFolderIfNotExists() const;
+	void setCreateFolderIfNotExists(bool createFolderIfNotExists);
 	std::string getReturnValue() const;
 	void setReturnValue(const std::string &returnValue);
 	std::string getResources() const;
@@ -56,6 +58,7 @@ public:
 	void setProjectId(long projectId);
 
 private:
+	bool createFolderIfNotExists_;
 	std::string returnValue_;
 	std::string resources_;
 	std::string functionType_;

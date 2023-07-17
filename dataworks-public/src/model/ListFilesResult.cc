@@ -92,6 +92,8 @@ void ListFilesResult::parse(const std::string &payload)
 			fileObject.content = dataNodeFilesFile["Content"].asString();
 		if(!dataNodeFilesFile["NodeId"].isNull())
 			fileObject.nodeId = std::stol(dataNodeFilesFile["NodeId"].asString());
+		if(!dataNodeFilesFile["AbsoluteFolderPath"].isNull())
+			fileObject.absoluteFolderPath = dataNodeFilesFile["AbsoluteFolderPath"].asString();
 		data_.files.push_back(fileObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

@@ -25,6 +25,15 @@ CreateUdfFileRequest::CreateUdfFileRequest()
 
 CreateUdfFileRequest::~CreateUdfFileRequest() {}
 
+bool CreateUdfFileRequest::getCreateFolderIfNotExists() const {
+  return createFolderIfNotExists_;
+}
+
+void CreateUdfFileRequest::setCreateFolderIfNotExists(bool createFolderIfNotExists) {
+  createFolderIfNotExists_ = createFolderIfNotExists;
+  setBodyParameter(std::string("CreateFolderIfNotExists"), createFolderIfNotExists ? "true" : "false");
+}
+
 std::string CreateUdfFileRequest::getReturnValue() const {
   return returnValue_;
 }

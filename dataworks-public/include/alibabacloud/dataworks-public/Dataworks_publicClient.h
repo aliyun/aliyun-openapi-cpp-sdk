@@ -90,6 +90,8 @@
 #include "model/CreateQualityRuleResult.h"
 #include "model/CreateRemindRequest.h"
 #include "model/CreateRemindResult.h"
+#include "model/CreateResourceFileRequest.h"
+#include "model/CreateResourceFileResult.h"
 #include "model/CreateTableRequest.h"
 #include "model/CreateTableResult.h"
 #include "model/CreateTableLevelRequest.h"
@@ -645,6 +647,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateRemindResult> CreateRemindOutcome;
 			typedef std::future<CreateRemindOutcome> CreateRemindOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateRemindRequest&, const CreateRemindOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRemindAsyncHandler;
+			typedef Outcome<Error, Model::CreateResourceFileResult> CreateResourceFileOutcome;
+			typedef std::future<CreateResourceFileOutcome> CreateResourceFileOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateResourceFileRequest&, const CreateResourceFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceFileAsyncHandler;
 			typedef Outcome<Error, Model::CreateTableResult> CreateTableOutcome;
 			typedef std::future<CreateTableOutcome> CreateTableOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateTableRequest&, const CreateTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTableAsyncHandler;
@@ -1418,6 +1423,9 @@ namespace AlibabaCloud
 			CreateRemindOutcome createRemind(const Model::CreateRemindRequest &request)const;
 			void createRemindAsync(const Model::CreateRemindRequest& request, const CreateRemindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRemindOutcomeCallable createRemindCallable(const Model::CreateRemindRequest& request) const;
+			CreateResourceFileOutcome createResourceFile(const Model::CreateResourceFileRequest &request)const;
+			void createResourceFileAsync(const Model::CreateResourceFileRequest& request, const CreateResourceFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateResourceFileOutcomeCallable createResourceFileCallable(const Model::CreateResourceFileRequest& request) const;
 			CreateTableOutcome createTable(const Model::CreateTableRequest &request)const;
 			void createTableAsync(const Model::CreateTableRequest& request, const CreateTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTableOutcomeCallable createTableCallable(const Model::CreateTableRequest& request) const;

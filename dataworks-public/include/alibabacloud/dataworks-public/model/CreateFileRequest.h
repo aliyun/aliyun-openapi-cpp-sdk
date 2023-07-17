@@ -56,6 +56,8 @@ public:
 	void setAutoRerunIntervalMillis(int autoRerunIntervalMillis);
 	std::string getInputList() const;
 	void setInputList(const std::string &inputList);
+	bool getCreateFolderIfNotExists() const;
+	void setCreateFolderIfNotExists(bool createFolderIfNotExists);
 	std::string getRerunMode() const;
 	void setRerunMode(const std::string &rerunMode);
 	std::string getConnectionName() const;
@@ -105,6 +107,7 @@ private:
 	std::string owner_;
 	int autoRerunIntervalMillis_;
 	std::string inputList_;
+	bool createFolderIfNotExists_;
 	std::string rerunMode_;
 	std::string connectionName_;
 	std::string outputParameters_;
