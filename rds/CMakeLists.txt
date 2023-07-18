@@ -91,6 +91,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/CreateOnlineDatabaseTaskResult.h
 	include/alibabacloud/rds/model/CreateParameterGroupRequest.h
 	include/alibabacloud/rds/model/CreateParameterGroupResult.h
+	include/alibabacloud/rds/model/CreatePostgresExtensionsRequest.h
+	include/alibabacloud/rds/model/CreatePostgresExtensionsResult.h
 	include/alibabacloud/rds/model/CreateReadOnlyDBInstanceRequest.h
 	include/alibabacloud/rds/model/CreateReadOnlyDBInstanceResult.h
 	include/alibabacloud/rds/model/CreateSecretRequest.h
@@ -123,6 +125,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DeleteGadInstanceResult.h
 	include/alibabacloud/rds/model/DeleteParameterGroupRequest.h
 	include/alibabacloud/rds/model/DeleteParameterGroupResult.h
+	include/alibabacloud/rds/model/DeletePostgresExtensionsRequest.h
+	include/alibabacloud/rds/model/DeletePostgresExtensionsResult.h
 	include/alibabacloud/rds/model/DeleteSecretRequest.h
 	include/alibabacloud/rds/model/DeleteSecretResult.h
 	include/alibabacloud/rds/model/DeleteSlotRequest.h
@@ -289,6 +293,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeParameterTemplatesResult.h
 	include/alibabacloud/rds/model/DescribeParametersRequest.h
 	include/alibabacloud/rds/model/DescribeParametersResult.h
+	include/alibabacloud/rds/model/DescribePostgresExtensionsRequest.h
+	include/alibabacloud/rds/model/DescribePostgresExtensionsResult.h
 	include/alibabacloud/rds/model/DescribePriceRequest.h
 	include/alibabacloud/rds/model/DescribePriceResult.h
 	include/alibabacloud/rds/model/DescribeRdsResourceSettingsRequest.h
@@ -519,6 +525,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/UnlockAccountResult.h
 	include/alibabacloud/rds/model/UntagResourcesRequest.h
 	include/alibabacloud/rds/model/UntagResourcesResult.h
+	include/alibabacloud/rds/model/UpdatePostgresExtensionsRequest.h
+	include/alibabacloud/rds/model/UpdatePostgresExtensionsResult.h
 	include/alibabacloud/rds/model/UpdateUserBackupFileRequest.h
 	include/alibabacloud/rds/model/UpdateUserBackupFileResult.h
 	include/alibabacloud/rds/model/UpgradeDBInstanceEngineVersionRequest.h
@@ -604,6 +612,8 @@ set(rds_src
 	src/model/CreateOnlineDatabaseTaskResult.cc
 	src/model/CreateParameterGroupRequest.cc
 	src/model/CreateParameterGroupResult.cc
+	src/model/CreatePostgresExtensionsRequest.cc
+	src/model/CreatePostgresExtensionsResult.cc
 	src/model/CreateReadOnlyDBInstanceRequest.cc
 	src/model/CreateReadOnlyDBInstanceResult.cc
 	src/model/CreateSecretRequest.cc
@@ -636,6 +646,8 @@ set(rds_src
 	src/model/DeleteGadInstanceResult.cc
 	src/model/DeleteParameterGroupRequest.cc
 	src/model/DeleteParameterGroupResult.cc
+	src/model/DeletePostgresExtensionsRequest.cc
+	src/model/DeletePostgresExtensionsResult.cc
 	src/model/DeleteSecretRequest.cc
 	src/model/DeleteSecretResult.cc
 	src/model/DeleteSlotRequest.cc
@@ -802,6 +814,8 @@ set(rds_src
 	src/model/DescribeParameterTemplatesResult.cc
 	src/model/DescribeParametersRequest.cc
 	src/model/DescribeParametersResult.cc
+	src/model/DescribePostgresExtensionsRequest.cc
+	src/model/DescribePostgresExtensionsResult.cc
 	src/model/DescribePriceRequest.cc
 	src/model/DescribePriceResult.cc
 	src/model/DescribeRdsResourceSettingsRequest.cc
@@ -1032,6 +1046,8 @@ set(rds_src
 	src/model/UnlockAccountResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc
+	src/model/UpdatePostgresExtensionsRequest.cc
+	src/model/UpdatePostgresExtensionsResult.cc
 	src/model/UpdateUserBackupFileRequest.cc
 	src/model/UpdateUserBackupFileResult.cc
 	src/model/UpgradeDBInstanceEngineVersionRequest.cc

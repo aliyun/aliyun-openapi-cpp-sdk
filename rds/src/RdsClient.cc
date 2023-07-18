@@ -1311,6 +1311,42 @@ RdsClient::CreateParameterGroupOutcomeCallable RdsClient::createParameterGroupCa
 	return task->get_future();
 }
 
+RdsClient::CreatePostgresExtensionsOutcome RdsClient::createPostgresExtensions(const CreatePostgresExtensionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreatePostgresExtensionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreatePostgresExtensionsOutcome(CreatePostgresExtensionsResult(outcome.result()));
+	else
+		return CreatePostgresExtensionsOutcome(outcome.error());
+}
+
+void RdsClient::createPostgresExtensionsAsync(const CreatePostgresExtensionsRequest& request, const CreatePostgresExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createPostgresExtensions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::CreatePostgresExtensionsOutcomeCallable RdsClient::createPostgresExtensionsCallable(const CreatePostgresExtensionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreatePostgresExtensionsOutcome()>>(
+			[this, request]()
+			{
+			return this->createPostgresExtensions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::CreateReadOnlyDBInstanceOutcome RdsClient::createReadOnlyDBInstance(const CreateReadOnlyDBInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1881,6 +1917,42 @@ RdsClient::DeleteParameterGroupOutcomeCallable RdsClient::deleteParameterGroupCa
 			[this, request]()
 			{
 			return this->deleteParameterGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DeletePostgresExtensionsOutcome RdsClient::deletePostgresExtensions(const DeletePostgresExtensionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePostgresExtensionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePostgresExtensionsOutcome(DeletePostgresExtensionsResult(outcome.result()));
+	else
+		return DeletePostgresExtensionsOutcome(outcome.error());
+}
+
+void RdsClient::deletePostgresExtensionsAsync(const DeletePostgresExtensionsRequest& request, const DeletePostgresExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePostgresExtensions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DeletePostgresExtensionsOutcomeCallable RdsClient::deletePostgresExtensionsCallable(const DeletePostgresExtensionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePostgresExtensionsOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePostgresExtensions(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4869,6 +4941,42 @@ RdsClient::DescribeParametersOutcomeCallable RdsClient::describeParametersCallab
 			[this, request]()
 			{
 			return this->describeParameters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribePostgresExtensionsOutcome RdsClient::describePostgresExtensions(const DescribePostgresExtensionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePostgresExtensionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePostgresExtensionsOutcome(DescribePostgresExtensionsResult(outcome.result()));
+	else
+		return DescribePostgresExtensionsOutcome(outcome.error());
+}
+
+void RdsClient::describePostgresExtensionsAsync(const DescribePostgresExtensionsRequest& request, const DescribePostgresExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePostgresExtensions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribePostgresExtensionsOutcomeCallable RdsClient::describePostgresExtensionsCallable(const DescribePostgresExtensionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePostgresExtensionsOutcome()>>(
+			[this, request]()
+			{
+			return this->describePostgresExtensions(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9009,6 +9117,42 @@ RdsClient::UntagResourcesOutcomeCallable RdsClient::untagResourcesCallable(const
 			[this, request]()
 			{
 			return this->untagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::UpdatePostgresExtensionsOutcome RdsClient::updatePostgresExtensions(const UpdatePostgresExtensionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePostgresExtensionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePostgresExtensionsOutcome(UpdatePostgresExtensionsResult(outcome.result()));
+	else
+		return UpdatePostgresExtensionsOutcome(outcome.error());
+}
+
+void RdsClient::updatePostgresExtensionsAsync(const UpdatePostgresExtensionsRequest& request, const UpdatePostgresExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePostgresExtensions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::UpdatePostgresExtensionsOutcomeCallable RdsClient::updatePostgresExtensionsCallable(const UpdatePostgresExtensionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePostgresExtensionsOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePostgresExtensions(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

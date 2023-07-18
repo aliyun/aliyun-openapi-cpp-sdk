@@ -92,6 +92,8 @@
 #include "model/CreateOnlineDatabaseTaskResult.h"
 #include "model/CreateParameterGroupRequest.h"
 #include "model/CreateParameterGroupResult.h"
+#include "model/CreatePostgresExtensionsRequest.h"
+#include "model/CreatePostgresExtensionsResult.h"
 #include "model/CreateReadOnlyDBInstanceRequest.h"
 #include "model/CreateReadOnlyDBInstanceResult.h"
 #include "model/CreateSecretRequest.h"
@@ -124,6 +126,8 @@
 #include "model/DeleteGadInstanceResult.h"
 #include "model/DeleteParameterGroupRequest.h"
 #include "model/DeleteParameterGroupResult.h"
+#include "model/DeletePostgresExtensionsRequest.h"
+#include "model/DeletePostgresExtensionsResult.h"
 #include "model/DeleteSecretRequest.h"
 #include "model/DeleteSecretResult.h"
 #include "model/DeleteSlotRequest.h"
@@ -290,6 +294,8 @@
 #include "model/DescribeParameterTemplatesResult.h"
 #include "model/DescribeParametersRequest.h"
 #include "model/DescribeParametersResult.h"
+#include "model/DescribePostgresExtensionsRequest.h"
+#include "model/DescribePostgresExtensionsResult.h"
 #include "model/DescribePriceRequest.h"
 #include "model/DescribePriceResult.h"
 #include "model/DescribeRdsResourceSettingsRequest.h"
@@ -520,6 +526,8 @@
 #include "model/UnlockAccountResult.h"
 #include "model/UntagResourcesRequest.h"
 #include "model/UntagResourcesResult.h"
+#include "model/UpdatePostgresExtensionsRequest.h"
+#include "model/UpdatePostgresExtensionsResult.h"
 #include "model/UpdateUserBackupFileRequest.h"
 #include "model/UpdateUserBackupFileResult.h"
 #include "model/UpgradeDBInstanceEngineVersionRequest.h"
@@ -646,6 +654,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateParameterGroupResult> CreateParameterGroupOutcome;
 			typedef std::future<CreateParameterGroupOutcome> CreateParameterGroupOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CreateParameterGroupRequest&, const CreateParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateParameterGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreatePostgresExtensionsResult> CreatePostgresExtensionsOutcome;
+			typedef std::future<CreatePostgresExtensionsOutcome> CreatePostgresExtensionsOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::CreatePostgresExtensionsRequest&, const CreatePostgresExtensionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePostgresExtensionsAsyncHandler;
 			typedef Outcome<Error, Model::CreateReadOnlyDBInstanceResult> CreateReadOnlyDBInstanceOutcome;
 			typedef std::future<CreateReadOnlyDBInstanceOutcome> CreateReadOnlyDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CreateReadOnlyDBInstanceRequest&, const CreateReadOnlyDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateReadOnlyDBInstanceAsyncHandler;
@@ -694,6 +705,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteParameterGroupResult> DeleteParameterGroupOutcome;
 			typedef std::future<DeleteParameterGroupOutcome> DeleteParameterGroupOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DeleteParameterGroupRequest&, const DeleteParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteParameterGroupAsyncHandler;
+			typedef Outcome<Error, Model::DeletePostgresExtensionsResult> DeletePostgresExtensionsOutcome;
+			typedef std::future<DeletePostgresExtensionsOutcome> DeletePostgresExtensionsOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DeletePostgresExtensionsRequest&, const DeletePostgresExtensionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePostgresExtensionsAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSecretResult> DeleteSecretOutcome;
 			typedef std::future<DeleteSecretOutcome> DeleteSecretOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DeleteSecretRequest&, const DeleteSecretOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecretAsyncHandler;
@@ -943,6 +957,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeParametersResult> DescribeParametersOutcome;
 			typedef std::future<DescribeParametersOutcome> DescribeParametersOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeParametersRequest&, const DescribeParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParametersAsyncHandler;
+			typedef Outcome<Error, Model::DescribePostgresExtensionsResult> DescribePostgresExtensionsOutcome;
+			typedef std::future<DescribePostgresExtensionsOutcome> DescribePostgresExtensionsOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribePostgresExtensionsRequest&, const DescribePostgresExtensionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePostgresExtensionsAsyncHandler;
 			typedef Outcome<Error, Model::DescribePriceResult> DescribePriceOutcome;
 			typedef std::future<DescribePriceOutcome> DescribePriceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribePriceRequest&, const DescribePriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePriceAsyncHandler;
@@ -1288,6 +1305,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
 			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UpdatePostgresExtensionsResult> UpdatePostgresExtensionsOutcome;
+			typedef std::future<UpdatePostgresExtensionsOutcome> UpdatePostgresExtensionsOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::UpdatePostgresExtensionsRequest&, const UpdatePostgresExtensionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePostgresExtensionsAsyncHandler;
 			typedef Outcome<Error, Model::UpdateUserBackupFileResult> UpdateUserBackupFileOutcome;
 			typedef std::future<UpdateUserBackupFileOutcome> UpdateUserBackupFileOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::UpdateUserBackupFileRequest&, const UpdateUserBackupFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserBackupFileAsyncHandler;
@@ -1416,6 +1436,9 @@ namespace AlibabaCloud
 			CreateParameterGroupOutcome createParameterGroup(const Model::CreateParameterGroupRequest &request)const;
 			void createParameterGroupAsync(const Model::CreateParameterGroupRequest& request, const CreateParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateParameterGroupOutcomeCallable createParameterGroupCallable(const Model::CreateParameterGroupRequest& request) const;
+			CreatePostgresExtensionsOutcome createPostgresExtensions(const Model::CreatePostgresExtensionsRequest &request)const;
+			void createPostgresExtensionsAsync(const Model::CreatePostgresExtensionsRequest& request, const CreatePostgresExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreatePostgresExtensionsOutcomeCallable createPostgresExtensionsCallable(const Model::CreatePostgresExtensionsRequest& request) const;
 			CreateReadOnlyDBInstanceOutcome createReadOnlyDBInstance(const Model::CreateReadOnlyDBInstanceRequest &request)const;
 			void createReadOnlyDBInstanceAsync(const Model::CreateReadOnlyDBInstanceRequest& request, const CreateReadOnlyDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateReadOnlyDBInstanceOutcomeCallable createReadOnlyDBInstanceCallable(const Model::CreateReadOnlyDBInstanceRequest& request) const;
@@ -1464,6 +1487,9 @@ namespace AlibabaCloud
 			DeleteParameterGroupOutcome deleteParameterGroup(const Model::DeleteParameterGroupRequest &request)const;
 			void deleteParameterGroupAsync(const Model::DeleteParameterGroupRequest& request, const DeleteParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteParameterGroupOutcomeCallable deleteParameterGroupCallable(const Model::DeleteParameterGroupRequest& request) const;
+			DeletePostgresExtensionsOutcome deletePostgresExtensions(const Model::DeletePostgresExtensionsRequest &request)const;
+			void deletePostgresExtensionsAsync(const Model::DeletePostgresExtensionsRequest& request, const DeletePostgresExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeletePostgresExtensionsOutcomeCallable deletePostgresExtensionsCallable(const Model::DeletePostgresExtensionsRequest& request) const;
 			DeleteSecretOutcome deleteSecret(const Model::DeleteSecretRequest &request)const;
 			void deleteSecretAsync(const Model::DeleteSecretRequest& request, const DeleteSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSecretOutcomeCallable deleteSecretCallable(const Model::DeleteSecretRequest& request) const;
@@ -1713,6 +1739,9 @@ namespace AlibabaCloud
 			DescribeParametersOutcome describeParameters(const Model::DescribeParametersRequest &request)const;
 			void describeParametersAsync(const Model::DescribeParametersRequest& request, const DescribeParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeParametersOutcomeCallable describeParametersCallable(const Model::DescribeParametersRequest& request) const;
+			DescribePostgresExtensionsOutcome describePostgresExtensions(const Model::DescribePostgresExtensionsRequest &request)const;
+			void describePostgresExtensionsAsync(const Model::DescribePostgresExtensionsRequest& request, const DescribePostgresExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePostgresExtensionsOutcomeCallable describePostgresExtensionsCallable(const Model::DescribePostgresExtensionsRequest& request) const;
 			DescribePriceOutcome describePrice(const Model::DescribePriceRequest &request)const;
 			void describePriceAsync(const Model::DescribePriceRequest& request, const DescribePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePriceOutcomeCallable describePriceCallable(const Model::DescribePriceRequest& request) const;
@@ -2058,6 +2087,9 @@ namespace AlibabaCloud
 			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
 			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
+			UpdatePostgresExtensionsOutcome updatePostgresExtensions(const Model::UpdatePostgresExtensionsRequest &request)const;
+			void updatePostgresExtensionsAsync(const Model::UpdatePostgresExtensionsRequest& request, const UpdatePostgresExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdatePostgresExtensionsOutcomeCallable updatePostgresExtensionsCallable(const Model::UpdatePostgresExtensionsRequest& request) const;
 			UpdateUserBackupFileOutcome updateUserBackupFile(const Model::UpdateUserBackupFileRequest &request)const;
 			void updateUserBackupFileAsync(const Model::UpdateUserBackupFileRequest& request, const UpdateUserBackupFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateUserBackupFileOutcomeCallable updateUserBackupFileCallable(const Model::UpdateUserBackupFileRequest& request) const;
