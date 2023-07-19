@@ -19,7 +19,7 @@
 using AlibabaCloud::Dts::Model::DescribeSynchronizationObjectModifyStatusRequest;
 
 DescribeSynchronizationObjectModifyStatusRequest::DescribeSynchronizationObjectModifyStatusRequest()
-    : RpcServiceRequest("dts", "2019-09-01", "DescribeSynchronizationObjectModifyStatus") {
+    : RpcServiceRequest("dts", "2020-01-01", "DescribeSynchronizationObjectModifyStatus") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -41,6 +41,33 @@ std::string DescribeSynchronizationObjectModifyStatusRequest::getOwnerId() const
 void DescribeSynchronizationObjectModifyStatusRequest::setOwnerId(const std::string &ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), ownerId);
+}
+
+std::string DescribeSynchronizationObjectModifyStatusRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DescribeSynchronizationObjectModifyStatusRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DescribeSynchronizationObjectModifyStatusRequest::getAccountId() const {
+  return accountId_;
+}
+
+void DescribeSynchronizationObjectModifyStatusRequest::setAccountId(const std::string &accountId) {
+  accountId_ = accountId;
+  setParameter(std::string("AccountId"), accountId);
+}
+
+std::string DescribeSynchronizationObjectModifyStatusRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeSynchronizationObjectModifyStatusRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string DescribeSynchronizationObjectModifyStatusRequest::getTaskId() const {

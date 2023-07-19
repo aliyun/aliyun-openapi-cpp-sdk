@@ -19,7 +19,7 @@
 using AlibabaCloud::Dts::Model::ConfigureSynchronizationJobRequest;
 
 ConfigureSynchronizationJobRequest::ConfigureSynchronizationJobRequest()
-    : RpcServiceRequest("dts", "2019-09-01", "ConfigureSynchronizationJob") {
+    : RpcServiceRequest("dts", "2020-01-01", "ConfigureSynchronizationJob") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -67,7 +67,7 @@ std::string ConfigureSynchronizationJobRequest::getSynchronizationObjects() cons
 
 void ConfigureSynchronizationJobRequest::setSynchronizationObjects(const std::string &synchronizationObjects) {
   synchronizationObjects_ = synchronizationObjects;
-  setParameter(std::string("SynchronizationObjects"), synchronizationObjects);
+  setBodyParameter(std::string("SynchronizationObjects"), synchronizationObjects);
 }
 
 std::string ConfigureSynchronizationJobRequest::getDestinationEndpointPassword() const {
@@ -77,24 +77,6 @@ std::string ConfigureSynchronizationJobRequest::getDestinationEndpointPassword()
 void ConfigureSynchronizationJobRequest::setDestinationEndpointPassword(const std::string &destinationEndpointPassword) {
   destinationEndpointPassword_ = destinationEndpointPassword;
   setParameter(std::string("DestinationEndpoint.Password"), destinationEndpointPassword);
-}
-
-bool ConfigureSynchronizationJobRequest::getDataInitialization() const {
-  return dataInitialization_;
-}
-
-void ConfigureSynchronizationJobRequest::setDataInitialization(bool dataInitialization) {
-  dataInitialization_ = dataInitialization;
-  setParameter(std::string("DataInitialization"), dataInitialization ? "true" : "false");
-}
-
-bool ConfigureSynchronizationJobRequest::getStructureInitialization() const {
-  return structureInitialization_;
-}
-
-void ConfigureSynchronizationJobRequest::setStructureInitialization(bool structureInitialization) {
-  structureInitialization_ = structureInitialization;
-  setParameter(std::string("StructureInitialization"), structureInitialization ? "true" : "false");
 }
 
 bool ConfigureSynchronizationJobRequest::getPartitionKeyModifyTime_Minute() const {
@@ -115,15 +97,6 @@ void ConfigureSynchronizationJobRequest::setPartitionKeyModifyTime_Day(bool part
   setParameter(std::string("PartitionKey.ModifyTime_Day"), partitionKeyModifyTime_Day ? "true" : "false");
 }
 
-std::string ConfigureSynchronizationJobRequest::getSourceEndpointInstanceType() const {
-  return sourceEndpointInstanceType_;
-}
-
-void ConfigureSynchronizationJobRequest::setSourceEndpointInstanceType(const std::string &sourceEndpointInstanceType) {
-  sourceEndpointInstanceType_ = sourceEndpointInstanceType;
-  setParameter(std::string("SourceEndpoint.InstanceType"), sourceEndpointInstanceType);
-}
-
 std::string ConfigureSynchronizationJobRequest::getSynchronizationJobId() const {
   return synchronizationJobId_;
 }
@@ -142,6 +115,15 @@ void ConfigureSynchronizationJobRequest::setSynchronizationJobName(const std::st
   setParameter(std::string("SynchronizationJobName"), synchronizationJobName);
 }
 
+std::string ConfigureSynchronizationJobRequest::getAccountId() const {
+  return accountId_;
+}
+
+void ConfigureSynchronizationJobRequest::setAccountId(const std::string &accountId) {
+  accountId_ = accountId;
+  setParameter(std::string("AccountId"), accountId);
+}
+
 std::string ConfigureSynchronizationJobRequest::getSourceEndpointUserName() const {
   return sourceEndpointUserName_;
 }
@@ -151,13 +133,13 @@ void ConfigureSynchronizationJobRequest::setSourceEndpointUserName(const std::st
   setParameter(std::string("SourceEndpoint.UserName"), sourceEndpointUserName);
 }
 
-bool ConfigureSynchronizationJobRequest::getPartitionKeyModifyTime_Month() const {
-  return partitionKeyModifyTime_Month_;
+std::string ConfigureSynchronizationJobRequest::getSourceEndpointDatabaseName() const {
+  return sourceEndpointDatabaseName_;
 }
 
-void ConfigureSynchronizationJobRequest::setPartitionKeyModifyTime_Month(bool partitionKeyModifyTime_Month) {
-  partitionKeyModifyTime_Month_ = partitionKeyModifyTime_Month;
-  setParameter(std::string("PartitionKey.ModifyTime_Month"), partitionKeyModifyTime_Month ? "true" : "false");
+void ConfigureSynchronizationJobRequest::setSourceEndpointDatabaseName(const std::string &sourceEndpointDatabaseName) {
+  sourceEndpointDatabaseName_ = sourceEndpointDatabaseName;
+  setParameter(std::string("SourceEndpoint.DatabaseName"), sourceEndpointDatabaseName);
 }
 
 std::string ConfigureSynchronizationJobRequest::getSourceEndpointPort() const {
@@ -176,15 +158,6 @@ std::string ConfigureSynchronizationJobRequest::getSourceEndpointOwnerID() const
 void ConfigureSynchronizationJobRequest::setSourceEndpointOwnerID(const std::string &sourceEndpointOwnerID) {
   sourceEndpointOwnerID_ = sourceEndpointOwnerID;
   setParameter(std::string("SourceEndpoint.OwnerID"), sourceEndpointOwnerID);
-}
-
-std::string ConfigureSynchronizationJobRequest::getDestinationEndpointUserName() const {
-  return destinationEndpointUserName_;
-}
-
-void ConfigureSynchronizationJobRequest::setDestinationEndpointUserName(const std::string &destinationEndpointUserName) {
-  destinationEndpointUserName_ = destinationEndpointUserName;
-  setParameter(std::string("DestinationEndpoint.UserName"), destinationEndpointUserName);
 }
 
 std::string ConfigureSynchronizationJobRequest::getDestinationEndpointPort() const {
@@ -223,15 +196,6 @@ void ConfigureSynchronizationJobRequest::setOwnerId(const std::string &ownerId) 
   setParameter(std::string("OwnerId"), ownerId);
 }
 
-bool ConfigureSynchronizationJobRequest::getPartitionKeyModifyTime_Hour() const {
-  return partitionKeyModifyTime_Hour_;
-}
-
-void ConfigureSynchronizationJobRequest::setPartitionKeyModifyTime_Hour(bool partitionKeyModifyTime_Hour) {
-  partitionKeyModifyTime_Hour_ = partitionKeyModifyTime_Hour;
-  setParameter(std::string("PartitionKey.ModifyTime_Hour"), partitionKeyModifyTime_Hour ? "true" : "false");
-}
-
 std::string ConfigureSynchronizationJobRequest::getSourceEndpointPassword() const {
   return sourceEndpointPassword_;
 }
@@ -239,15 +203,6 @@ std::string ConfigureSynchronizationJobRequest::getSourceEndpointPassword() cons
 void ConfigureSynchronizationJobRequest::setSourceEndpointPassword(const std::string &sourceEndpointPassword) {
   sourceEndpointPassword_ = sourceEndpointPassword;
   setParameter(std::string("SourceEndpoint.Password"), sourceEndpointPassword);
-}
-
-std::string ConfigureSynchronizationJobRequest::getMigrationReserved() const {
-  return migrationReserved_;
-}
-
-void ConfigureSynchronizationJobRequest::setMigrationReserved(const std::string &migrationReserved) {
-  migrationReserved_ = migrationReserved;
-  setParameter(std::string("MigrationReserved"), migrationReserved);
 }
 
 std::string ConfigureSynchronizationJobRequest::getDestinationEndpointIP() const {
@@ -275,5 +230,95 @@ std::string ConfigureSynchronizationJobRequest::getSynchronizationDirection() co
 void ConfigureSynchronizationJobRequest::setSynchronizationDirection(const std::string &synchronizationDirection) {
   synchronizationDirection_ = synchronizationDirection;
   setParameter(std::string("SynchronizationDirection"), synchronizationDirection);
+}
+
+bool ConfigureSynchronizationJobRequest::getDataInitialization() const {
+  return dataInitialization_;
+}
+
+void ConfigureSynchronizationJobRequest::setDataInitialization(bool dataInitialization) {
+  dataInitialization_ = dataInitialization;
+  setParameter(std::string("DataInitialization"), dataInitialization ? "true" : "false");
+}
+
+bool ConfigureSynchronizationJobRequest::getStructureInitialization() const {
+  return structureInitialization_;
+}
+
+void ConfigureSynchronizationJobRequest::setStructureInitialization(bool structureInitialization) {
+  structureInitialization_ = structureInitialization;
+  setParameter(std::string("StructureInitialization"), structureInitialization ? "true" : "false");
+}
+
+std::string ConfigureSynchronizationJobRequest::getSourceEndpointInstanceType() const {
+  return sourceEndpointInstanceType_;
+}
+
+void ConfigureSynchronizationJobRequest::setSourceEndpointInstanceType(const std::string &sourceEndpointInstanceType) {
+  sourceEndpointInstanceType_ = sourceEndpointInstanceType;
+  setParameter(std::string("SourceEndpoint.InstanceType"), sourceEndpointInstanceType);
+}
+
+std::string ConfigureSynchronizationJobRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void ConfigureSynchronizationJobRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string ConfigureSynchronizationJobRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ConfigureSynchronizationJobRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+bool ConfigureSynchronizationJobRequest::getPartitionKeyModifyTime_Month() const {
+  return partitionKeyModifyTime_Month_;
+}
+
+void ConfigureSynchronizationJobRequest::setPartitionKeyModifyTime_Month(bool partitionKeyModifyTime_Month) {
+  partitionKeyModifyTime_Month_ = partitionKeyModifyTime_Month;
+  setParameter(std::string("PartitionKey.ModifyTime_Month"), partitionKeyModifyTime_Month ? "true" : "false");
+}
+
+std::string ConfigureSynchronizationJobRequest::getDestinationEndpointUserName() const {
+  return destinationEndpointUserName_;
+}
+
+void ConfigureSynchronizationJobRequest::setDestinationEndpointUserName(const std::string &destinationEndpointUserName) {
+  destinationEndpointUserName_ = destinationEndpointUserName;
+  setParameter(std::string("DestinationEndpoint.UserName"), destinationEndpointUserName);
+}
+
+bool ConfigureSynchronizationJobRequest::getPartitionKeyModifyTime_Hour() const {
+  return partitionKeyModifyTime_Hour_;
+}
+
+void ConfigureSynchronizationJobRequest::setPartitionKeyModifyTime_Hour(bool partitionKeyModifyTime_Hour) {
+  partitionKeyModifyTime_Hour_ = partitionKeyModifyTime_Hour;
+  setParameter(std::string("PartitionKey.ModifyTime_Hour"), partitionKeyModifyTime_Hour ? "true" : "false");
+}
+
+std::string ConfigureSynchronizationJobRequest::getDestinationEndpointDataBaseName() const {
+  return destinationEndpointDataBaseName_;
+}
+
+void ConfigureSynchronizationJobRequest::setDestinationEndpointDataBaseName(const std::string &destinationEndpointDataBaseName) {
+  destinationEndpointDataBaseName_ = destinationEndpointDataBaseName;
+  setParameter(std::string("DestinationEndpoint.DataBaseName"), destinationEndpointDataBaseName);
+}
+
+std::string ConfigureSynchronizationJobRequest::getMigrationReserved() const {
+  return migrationReserved_;
+}
+
+void ConfigureSynchronizationJobRequest::setMigrationReserved(const std::string &migrationReserved) {
+  migrationReserved_ = migrationReserved;
+  setParameter(std::string("MigrationReserved"), migrationReserved);
 }
 

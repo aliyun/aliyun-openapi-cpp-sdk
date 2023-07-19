@@ -32,6 +32,20 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DTS_EXPORT DescribeSynchronizationObjectModifyStatusResult : public ServiceResult
 			{
 			public:
+				struct DataInitializationStatus
+				{
+					std::string status;
+					std::string progress;
+					std::string percent;
+					std::string errorMessage;
+				};
+				struct DataSynchronizationStatus
+				{
+					std::string status;
+					std::string percent;
+					std::string errorMessage;
+					std::string delay;
+				};
 				struct PrecheckStatus
 				{
 					struct CheckItem
@@ -52,20 +66,6 @@ namespace AlibabaCloud
 					std::string percent;
 					std::string errorMessage;
 				};
-				struct DataInitializationStatus
-				{
-					std::string status;
-					std::string progress;
-					std::string percent;
-					std::string errorMessage;
-				};
-				struct DataSynchronizationStatus
-				{
-					std::string status;
-					std::string percent;
-					std::string errorMessage;
-					std::string delay;
-				};
 
 
 				DescribeSynchronizationObjectModifyStatusResult();
@@ -75,8 +75,11 @@ namespace AlibabaCloud
 				PrecheckStatus getPrecheckStatus()const;
 				DataInitializationStatus getDataInitializationStatus()const;
 				std::string getErrorMessage()const;
-				StructureInitializationStatus getStructureInitializationStatus()const;
+				std::string getErrMessage()const;
+				std::string getSuccess()const;
 				DataSynchronizationStatus getDataSynchronizationStatus()const;
+				StructureInitializationStatus getStructureInitializationStatus()const;
+				std::string getErrCode()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -85,8 +88,11 @@ namespace AlibabaCloud
 				PrecheckStatus precheckStatus_;
 				DataInitializationStatus dataInitializationStatus_;
 				std::string errorMessage_;
-				StructureInitializationStatus structureInitializationStatus_;
+				std::string errMessage_;
+				std::string success_;
 				DataSynchronizationStatus dataSynchronizationStatus_;
+				StructureInitializationStatus structureInitializationStatus_;
+				std::string errCode_;
 
 			};
 		}

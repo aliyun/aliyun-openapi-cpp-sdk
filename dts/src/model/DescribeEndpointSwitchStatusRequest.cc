@@ -19,7 +19,7 @@
 using AlibabaCloud::Dts::Model::DescribeEndpointSwitchStatusRequest;
 
 DescribeEndpointSwitchStatusRequest::DescribeEndpointSwitchStatusRequest()
-    : RpcServiceRequest("dts", "2019-09-01", "DescribeEndpointSwitchStatus") {
+    : RpcServiceRequest("dts", "2020-01-01", "DescribeEndpointSwitchStatus") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -41,6 +41,33 @@ std::string DescribeEndpointSwitchStatusRequest::getOwnerId() const {
 void DescribeEndpointSwitchStatusRequest::setOwnerId(const std::string &ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), ownerId);
+}
+
+std::string DescribeEndpointSwitchStatusRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DescribeEndpointSwitchStatusRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DescribeEndpointSwitchStatusRequest::getAccountId() const {
+  return accountId_;
+}
+
+void DescribeEndpointSwitchStatusRequest::setAccountId(const std::string &accountId) {
+  accountId_ = accountId;
+  setParameter(std::string("AccountId"), accountId);
+}
+
+std::string DescribeEndpointSwitchStatusRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeEndpointSwitchStatusRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string DescribeEndpointSwitchStatusRequest::getTaskId() const {

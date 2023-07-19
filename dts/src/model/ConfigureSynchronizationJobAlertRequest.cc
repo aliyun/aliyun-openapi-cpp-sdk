@@ -19,11 +19,56 @@
 using AlibabaCloud::Dts::Model::ConfigureSynchronizationJobAlertRequest;
 
 ConfigureSynchronizationJobAlertRequest::ConfigureSynchronizationJobAlertRequest()
-    : RpcServiceRequest("dts", "2019-09-01", "ConfigureSynchronizationJobAlert") {
+    : RpcServiceRequest("dts", "2020-01-01", "ConfigureSynchronizationJobAlert") {
   setMethod(HttpRequest::Method::Post);
 }
 
 ConfigureSynchronizationJobAlertRequest::~ConfigureSynchronizationJobAlertRequest() {}
+
+std::string ConfigureSynchronizationJobAlertRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void ConfigureSynchronizationJobAlertRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string ConfigureSynchronizationJobAlertRequest::getSynchronizationJobId() const {
+  return synchronizationJobId_;
+}
+
+void ConfigureSynchronizationJobAlertRequest::setSynchronizationJobId(const std::string &synchronizationJobId) {
+  synchronizationJobId_ = synchronizationJobId;
+  setParameter(std::string("SynchronizationJobId"), synchronizationJobId);
+}
+
+std::string ConfigureSynchronizationJobAlertRequest::getAccountId() const {
+  return accountId_;
+}
+
+void ConfigureSynchronizationJobAlertRequest::setAccountId(const std::string &accountId) {
+  accountId_ = accountId;
+  setParameter(std::string("AccountId"), accountId);
+}
+
+std::string ConfigureSynchronizationJobAlertRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ConfigureSynchronizationJobAlertRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string ConfigureSynchronizationJobAlertRequest::getDelayAlertPhone() const {
+  return delayAlertPhone_;
+}
+
+void ConfigureSynchronizationJobAlertRequest::setDelayAlertPhone(const std::string &delayAlertPhone) {
+  delayAlertPhone_ = delayAlertPhone;
+  setParameter(std::string("DelayAlertPhone"), delayAlertPhone);
+}
 
 std::string ConfigureSynchronizationJobAlertRequest::getDelayOverSeconds() const {
   return delayOverSeconds_;
@@ -52,15 +97,6 @@ void ConfigureSynchronizationJobAlertRequest::setOwnerId(const std::string &owne
   setParameter(std::string("OwnerId"), ownerId);
 }
 
-std::string ConfigureSynchronizationJobAlertRequest::getSynchronizationJobId() const {
-  return synchronizationJobId_;
-}
-
-void ConfigureSynchronizationJobAlertRequest::setSynchronizationJobId(const std::string &synchronizationJobId) {
-  synchronizationJobId_ = synchronizationJobId;
-  setParameter(std::string("SynchronizationJobId"), synchronizationJobId);
-}
-
 std::string ConfigureSynchronizationJobAlertRequest::getErrorAlertPhone() const {
   return errorAlertPhone_;
 }
@@ -68,15 +104,6 @@ std::string ConfigureSynchronizationJobAlertRequest::getErrorAlertPhone() const 
 void ConfigureSynchronizationJobAlertRequest::setErrorAlertPhone(const std::string &errorAlertPhone) {
   errorAlertPhone_ = errorAlertPhone;
   setParameter(std::string("ErrorAlertPhone"), errorAlertPhone);
-}
-
-std::string ConfigureSynchronizationJobAlertRequest::getDelayAlertPhone() const {
-  return delayAlertPhone_;
-}
-
-void ConfigureSynchronizationJobAlertRequest::setDelayAlertPhone(const std::string &delayAlertPhone) {
-  delayAlertPhone_ = delayAlertPhone;
-  setParameter(std::string("DelayAlertPhone"), delayAlertPhone);
 }
 
 std::string ConfigureSynchronizationJobAlertRequest::getErrorAlertStatus() const {
