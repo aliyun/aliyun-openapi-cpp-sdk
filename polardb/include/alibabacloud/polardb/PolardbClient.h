@@ -206,6 +206,8 @@
 #include "model/ModifyAutoRenewAttributeResult.h"
 #include "model/ModifyBackupPolicyRequest.h"
 #include "model/ModifyBackupPolicyResult.h"
+#include "model/ModifyDBClusterRequest.h"
+#include "model/ModifyDBClusterResult.h"
 #include "model/ModifyDBClusterAccessWhitelistRequest.h"
 #include "model/ModifyDBClusterAccessWhitelistResult.h"
 #include "model/ModifyDBClusterAndNodesParametersRequest.h"
@@ -579,6 +581,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyBackupPolicyResult> ModifyBackupPolicyOutcome;
 			typedef std::future<ModifyBackupPolicyOutcome> ModifyBackupPolicyOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyBackupPolicyRequest&, const ModifyBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupPolicyAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDBClusterResult> ModifyDBClusterOutcome;
+			typedef std::future<ModifyDBClusterOutcome> ModifyDBClusterOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::ModifyDBClusterRequest&, const ModifyDBClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDBClusterAccessWhitelistResult> ModifyDBClusterAccessWhitelistOutcome;
 			typedef std::future<ModifyDBClusterAccessWhitelistOutcome> ModifyDBClusterAccessWhitelistOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyDBClusterAccessWhitelistRequest&, const ModifyDBClusterAccessWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterAccessWhitelistAsyncHandler;
@@ -992,6 +997,9 @@ namespace AlibabaCloud
 			ModifyBackupPolicyOutcome modifyBackupPolicy(const Model::ModifyBackupPolicyRequest &request)const;
 			void modifyBackupPolicyAsync(const Model::ModifyBackupPolicyRequest& request, const ModifyBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBackupPolicyOutcomeCallable modifyBackupPolicyCallable(const Model::ModifyBackupPolicyRequest& request) const;
+			ModifyDBClusterOutcome modifyDBCluster(const Model::ModifyDBClusterRequest &request)const;
+			void modifyDBClusterAsync(const Model::ModifyDBClusterRequest& request, const ModifyDBClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDBClusterOutcomeCallable modifyDBClusterCallable(const Model::ModifyDBClusterRequest& request) const;
 			ModifyDBClusterAccessWhitelistOutcome modifyDBClusterAccessWhitelist(const Model::ModifyDBClusterAccessWhitelistRequest &request)const;
 			void modifyDBClusterAccessWhitelistAsync(const Model::ModifyDBClusterAccessWhitelistRequest& request, const ModifyDBClusterAccessWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBClusterAccessWhitelistOutcomeCallable modifyDBClusterAccessWhitelistCallable(const Model::ModifyDBClusterAccessWhitelistRequest& request) const;
