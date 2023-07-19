@@ -195,6 +195,42 @@ RdsClient::AllocateReadWriteSplittingConnectionOutcomeCallable RdsClient::alloca
 	return task->get_future();
 }
 
+RdsClient::AttachWhitelistTemplateToInstanceOutcome RdsClient::attachWhitelistTemplateToInstance(const AttachWhitelistTemplateToInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AttachWhitelistTemplateToInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AttachWhitelistTemplateToInstanceOutcome(AttachWhitelistTemplateToInstanceResult(outcome.result()));
+	else
+		return AttachWhitelistTemplateToInstanceOutcome(outcome.error());
+}
+
+void RdsClient::attachWhitelistTemplateToInstanceAsync(const AttachWhitelistTemplateToInstanceRequest& request, const AttachWhitelistTemplateToInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, attachWhitelistTemplateToInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::AttachWhitelistTemplateToInstanceOutcomeCallable RdsClient::attachWhitelistTemplateToInstanceCallable(const AttachWhitelistTemplateToInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AttachWhitelistTemplateToInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->attachWhitelistTemplateToInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::CalculateDBInstanceWeightOutcome RdsClient::calculateDBInstanceWeight(const CalculateDBInstanceWeightRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2241,6 +2277,42 @@ RdsClient::DescribeActiveOperationTasksOutcomeCallable RdsClient::describeActive
 			[this, request]()
 			{
 			return this->describeActiveOperationTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeAllWhitelistTemplateOutcome RdsClient::describeAllWhitelistTemplate(const DescribeAllWhitelistTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAllWhitelistTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAllWhitelistTemplateOutcome(DescribeAllWhitelistTemplateResult(outcome.result()));
+	else
+		return DescribeAllWhitelistTemplateOutcome(outcome.error());
+}
+
+void RdsClient::describeAllWhitelistTemplateAsync(const DescribeAllWhitelistTemplateRequest& request, const DescribeAllWhitelistTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAllWhitelistTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeAllWhitelistTemplateOutcomeCallable RdsClient::describeAllWhitelistTemplateCallable(const DescribeAllWhitelistTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAllWhitelistTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAllWhitelistTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4479,6 +4551,42 @@ RdsClient::DescribeInstanceKeywordsOutcomeCallable RdsClient::describeInstanceKe
 	return task->get_future();
 }
 
+RdsClient::DescribeInstanceLinkedWhitelistTemplateOutcome RdsClient::describeInstanceLinkedWhitelistTemplate(const DescribeInstanceLinkedWhitelistTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceLinkedWhitelistTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceLinkedWhitelistTemplateOutcome(DescribeInstanceLinkedWhitelistTemplateResult(outcome.result()));
+	else
+		return DescribeInstanceLinkedWhitelistTemplateOutcome(outcome.error());
+}
+
+void RdsClient::describeInstanceLinkedWhitelistTemplateAsync(const DescribeInstanceLinkedWhitelistTemplateRequest& request, const DescribeInstanceLinkedWhitelistTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceLinkedWhitelistTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeInstanceLinkedWhitelistTemplateOutcomeCallable RdsClient::describeInstanceLinkedWhitelistTemplateCallable(const DescribeInstanceLinkedWhitelistTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceLinkedWhitelistTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceLinkedWhitelistTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DescribeLocalAvailableRecoveryTimeOutcome RdsClient::describeLocalAvailableRecoveryTime(const DescribeLocalAvailableRecoveryTimeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5811,6 +5919,78 @@ RdsClient::DescribeVSwitchesOutcomeCallable RdsClient::describeVSwitchesCallable
 	return task->get_future();
 }
 
+RdsClient::DescribeWhitelistTemplateOutcome RdsClient::describeWhitelistTemplate(const DescribeWhitelistTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeWhitelistTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeWhitelistTemplateOutcome(DescribeWhitelistTemplateResult(outcome.result()));
+	else
+		return DescribeWhitelistTemplateOutcome(outcome.error());
+}
+
+void RdsClient::describeWhitelistTemplateAsync(const DescribeWhitelistTemplateRequest& request, const DescribeWhitelistTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeWhitelistTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeWhitelistTemplateOutcomeCallable RdsClient::describeWhitelistTemplateCallable(const DescribeWhitelistTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeWhitelistTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->describeWhitelistTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeWhitelistTemplateLinkedInstanceOutcome RdsClient::describeWhitelistTemplateLinkedInstance(const DescribeWhitelistTemplateLinkedInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeWhitelistTemplateLinkedInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeWhitelistTemplateLinkedInstanceOutcome(DescribeWhitelistTemplateLinkedInstanceResult(outcome.result()));
+	else
+		return DescribeWhitelistTemplateLinkedInstanceOutcome(outcome.error());
+}
+
+void RdsClient::describeWhitelistTemplateLinkedInstanceAsync(const DescribeWhitelistTemplateLinkedInstanceRequest& request, const DescribeWhitelistTemplateLinkedInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeWhitelistTemplateLinkedInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeWhitelistTemplateLinkedInstanceOutcomeCallable RdsClient::describeWhitelistTemplateLinkedInstanceCallable(const DescribeWhitelistTemplateLinkedInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeWhitelistTemplateLinkedInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeWhitelistTemplateLinkedInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DestroyDBInstanceOutcome RdsClient::destroyDBInstance(const DestroyDBInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5877,6 +6057,42 @@ RdsClient::DetachGadInstanceMemberOutcomeCallable RdsClient::detachGadInstanceMe
 			[this, request]()
 			{
 			return this->detachGadInstanceMember(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DetachWhitelistTemplateToInstanceOutcome RdsClient::detachWhitelistTemplateToInstance(const DetachWhitelistTemplateToInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetachWhitelistTemplateToInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetachWhitelistTemplateToInstanceOutcome(DetachWhitelistTemplateToInstanceResult(outcome.result()));
+	else
+		return DetachWhitelistTemplateToInstanceOutcome(outcome.error());
+}
+
+void RdsClient::detachWhitelistTemplateToInstanceAsync(const DetachWhitelistTemplateToInstanceRequest& request, const DetachWhitelistTemplateToInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detachWhitelistTemplateToInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DetachWhitelistTemplateToInstanceOutcomeCallable RdsClient::detachWhitelistTemplateToInstanceCallable(const DetachWhitelistTemplateToInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetachWhitelistTemplateToInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->detachWhitelistTemplateToInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8109,6 +8325,42 @@ RdsClient::ModifySecurityIpsOutcomeCallable RdsClient::modifySecurityIpsCallable
 			[this, request]()
 			{
 			return this->modifySecurityIps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ModifyWhitelistTemplateOutcome RdsClient::modifyWhitelistTemplate(const ModifyWhitelistTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyWhitelistTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyWhitelistTemplateOutcome(ModifyWhitelistTemplateResult(outcome.result()));
+	else
+		return ModifyWhitelistTemplateOutcome(outcome.error());
+}
+
+void RdsClient::modifyWhitelistTemplateAsync(const ModifyWhitelistTemplateRequest& request, const ModifyWhitelistTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyWhitelistTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyWhitelistTemplateOutcomeCallable RdsClient::modifyWhitelistTemplateCallable(const ModifyWhitelistTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyWhitelistTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyWhitelistTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

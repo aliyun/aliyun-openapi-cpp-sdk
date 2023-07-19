@@ -30,6 +30,8 @@
 #include "model/AllocateInstancePublicConnectionResult.h"
 #include "model/AllocateReadWriteSplittingConnectionRequest.h"
 #include "model/AllocateReadWriteSplittingConnectionResult.h"
+#include "model/AttachWhitelistTemplateToInstanceRequest.h"
+#include "model/AttachWhitelistTemplateToInstanceResult.h"
 #include "model/CalculateDBInstanceWeightRequest.h"
 #include "model/CalculateDBInstanceWeightResult.h"
 #include "model/CancelImportRequest.h"
@@ -144,6 +146,8 @@
 #include "model/DescribeActionEventPolicyResult.h"
 #include "model/DescribeActiveOperationTasksRequest.h"
 #include "model/DescribeActiveOperationTasksResult.h"
+#include "model/DescribeAllWhitelistTemplateRequest.h"
+#include "model/DescribeAllWhitelistTemplateResult.h"
 #include "model/DescribeAnalyticdbByPrimaryDBInstanceRequest.h"
 #include "model/DescribeAnalyticdbByPrimaryDBInstanceResult.h"
 #include "model/DescribeAvailableClassesRequest.h"
@@ -268,6 +272,8 @@
 #include "model/DescribeInstanceCrossBackupPolicyResult.h"
 #include "model/DescribeInstanceKeywordsRequest.h"
 #include "model/DescribeInstanceKeywordsResult.h"
+#include "model/DescribeInstanceLinkedWhitelistTemplateRequest.h"
+#include "model/DescribeInstanceLinkedWhitelistTemplateResult.h"
 #include "model/DescribeLocalAvailableRecoveryTimeRequest.h"
 #include "model/DescribeLocalAvailableRecoveryTimeResult.h"
 #include "model/DescribeLogBackupFilesRequest.h"
@@ -342,10 +348,16 @@
 #include "model/DescribeUpgradeMajorVersionTasksResult.h"
 #include "model/DescribeVSwitchesRequest.h"
 #include "model/DescribeVSwitchesResult.h"
+#include "model/DescribeWhitelistTemplateRequest.h"
+#include "model/DescribeWhitelistTemplateResult.h"
+#include "model/DescribeWhitelistTemplateLinkedInstanceRequest.h"
+#include "model/DescribeWhitelistTemplateLinkedInstanceResult.h"
 #include "model/DestroyDBInstanceRequest.h"
 #include "model/DestroyDBInstanceResult.h"
 #include "model/DetachGadInstanceMemberRequest.h"
 #include "model/DetachGadInstanceMemberResult.h"
+#include "model/DetachWhitelistTemplateToInstanceRequest.h"
+#include "model/DetachWhitelistTemplateToInstanceResult.h"
 #include "model/GetDBInstanceTopologyRequest.h"
 #include "model/GetDBInstanceTopologyResult.h"
 #include "model/GetDbProxyInstanceSslRequest.h"
@@ -470,6 +482,8 @@
 #include "model/ModifySecurityGroupConfigurationResult.h"
 #include "model/ModifySecurityIpsRequest.h"
 #include "model/ModifySecurityIpsResult.h"
+#include "model/ModifyWhitelistTemplateRequest.h"
+#include "model/ModifyWhitelistTemplateResult.h"
 #include "model/PurgeDBInstanceLogRequest.h"
 #include "model/PurgeDBInstanceLogResult.h"
 #include "model/QueryNotifyRequest.h"
@@ -561,6 +575,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AllocateReadWriteSplittingConnectionResult> AllocateReadWriteSplittingConnectionOutcome;
 			typedef std::future<AllocateReadWriteSplittingConnectionOutcome> AllocateReadWriteSplittingConnectionOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::AllocateReadWriteSplittingConnectionRequest&, const AllocateReadWriteSplittingConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocateReadWriteSplittingConnectionAsyncHandler;
+			typedef Outcome<Error, Model::AttachWhitelistTemplateToInstanceResult> AttachWhitelistTemplateToInstanceOutcome;
+			typedef std::future<AttachWhitelistTemplateToInstanceOutcome> AttachWhitelistTemplateToInstanceOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::AttachWhitelistTemplateToInstanceRequest&, const AttachWhitelistTemplateToInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachWhitelistTemplateToInstanceAsyncHandler;
 			typedef Outcome<Error, Model::CalculateDBInstanceWeightResult> CalculateDBInstanceWeightOutcome;
 			typedef std::future<CalculateDBInstanceWeightOutcome> CalculateDBInstanceWeightOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CalculateDBInstanceWeightRequest&, const CalculateDBInstanceWeightOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CalculateDBInstanceWeightAsyncHandler;
@@ -732,6 +749,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeActiveOperationTasksResult> DescribeActiveOperationTasksOutcome;
 			typedef std::future<DescribeActiveOperationTasksOutcome> DescribeActiveOperationTasksOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeActiveOperationTasksRequest&, const DescribeActiveOperationTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActiveOperationTasksAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAllWhitelistTemplateResult> DescribeAllWhitelistTemplateOutcome;
+			typedef std::future<DescribeAllWhitelistTemplateOutcome> DescribeAllWhitelistTemplateOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeAllWhitelistTemplateRequest&, const DescribeAllWhitelistTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllWhitelistTemplateAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAnalyticdbByPrimaryDBInstanceResult> DescribeAnalyticdbByPrimaryDBInstanceOutcome;
 			typedef std::future<DescribeAnalyticdbByPrimaryDBInstanceOutcome> DescribeAnalyticdbByPrimaryDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeAnalyticdbByPrimaryDBInstanceRequest&, const DescribeAnalyticdbByPrimaryDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnalyticdbByPrimaryDBInstanceAsyncHandler;
@@ -918,6 +938,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceKeywordsResult> DescribeInstanceKeywordsOutcome;
 			typedef std::future<DescribeInstanceKeywordsOutcome> DescribeInstanceKeywordsOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeInstanceKeywordsRequest&, const DescribeInstanceKeywordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceKeywordsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeInstanceLinkedWhitelistTemplateResult> DescribeInstanceLinkedWhitelistTemplateOutcome;
+			typedef std::future<DescribeInstanceLinkedWhitelistTemplateOutcome> DescribeInstanceLinkedWhitelistTemplateOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeInstanceLinkedWhitelistTemplateRequest&, const DescribeInstanceLinkedWhitelistTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceLinkedWhitelistTemplateAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLocalAvailableRecoveryTimeResult> DescribeLocalAvailableRecoveryTimeOutcome;
 			typedef std::future<DescribeLocalAvailableRecoveryTimeOutcome> DescribeLocalAvailableRecoveryTimeOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeLocalAvailableRecoveryTimeRequest&, const DescribeLocalAvailableRecoveryTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLocalAvailableRecoveryTimeAsyncHandler;
@@ -1029,12 +1052,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVSwitchesResult> DescribeVSwitchesOutcome;
 			typedef std::future<DescribeVSwitchesOutcome> DescribeVSwitchesOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeVSwitchesRequest&, const DescribeVSwitchesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVSwitchesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeWhitelistTemplateResult> DescribeWhitelistTemplateOutcome;
+			typedef std::future<DescribeWhitelistTemplateOutcome> DescribeWhitelistTemplateOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeWhitelistTemplateRequest&, const DescribeWhitelistTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhitelistTemplateAsyncHandler;
+			typedef Outcome<Error, Model::DescribeWhitelistTemplateLinkedInstanceResult> DescribeWhitelistTemplateLinkedInstanceOutcome;
+			typedef std::future<DescribeWhitelistTemplateLinkedInstanceOutcome> DescribeWhitelistTemplateLinkedInstanceOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeWhitelistTemplateLinkedInstanceRequest&, const DescribeWhitelistTemplateLinkedInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhitelistTemplateLinkedInstanceAsyncHandler;
 			typedef Outcome<Error, Model::DestroyDBInstanceResult> DestroyDBInstanceOutcome;
 			typedef std::future<DestroyDBInstanceOutcome> DestroyDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DestroyDBInstanceRequest&, const DestroyDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DestroyDBInstanceAsyncHandler;
 			typedef Outcome<Error, Model::DetachGadInstanceMemberResult> DetachGadInstanceMemberOutcome;
 			typedef std::future<DetachGadInstanceMemberOutcome> DetachGadInstanceMemberOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DetachGadInstanceMemberRequest&, const DetachGadInstanceMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachGadInstanceMemberAsyncHandler;
+			typedef Outcome<Error, Model::DetachWhitelistTemplateToInstanceResult> DetachWhitelistTemplateToInstanceOutcome;
+			typedef std::future<DetachWhitelistTemplateToInstanceOutcome> DetachWhitelistTemplateToInstanceOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DetachWhitelistTemplateToInstanceRequest&, const DetachWhitelistTemplateToInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachWhitelistTemplateToInstanceAsyncHandler;
 			typedef Outcome<Error, Model::GetDBInstanceTopologyResult> GetDBInstanceTopologyOutcome;
 			typedef std::future<GetDBInstanceTopologyOutcome> GetDBInstanceTopologyOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::GetDBInstanceTopologyRequest&, const GetDBInstanceTopologyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDBInstanceTopologyAsyncHandler;
@@ -1221,6 +1253,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifySecurityIpsResult> ModifySecurityIpsOutcome;
 			typedef std::future<ModifySecurityIpsOutcome> ModifySecurityIpsOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifySecurityIpsRequest&, const ModifySecurityIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityIpsAsyncHandler;
+			typedef Outcome<Error, Model::ModifyWhitelistTemplateResult> ModifyWhitelistTemplateOutcome;
+			typedef std::future<ModifyWhitelistTemplateOutcome> ModifyWhitelistTemplateOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyWhitelistTemplateRequest&, const ModifyWhitelistTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWhitelistTemplateAsyncHandler;
 			typedef Outcome<Error, Model::PurgeDBInstanceLogResult> PurgeDBInstanceLogOutcome;
 			typedef std::future<PurgeDBInstanceLogOutcome> PurgeDBInstanceLogOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::PurgeDBInstanceLogRequest&, const PurgeDBInstanceLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PurgeDBInstanceLogAsyncHandler;
@@ -1343,6 +1378,9 @@ namespace AlibabaCloud
 			AllocateReadWriteSplittingConnectionOutcome allocateReadWriteSplittingConnection(const Model::AllocateReadWriteSplittingConnectionRequest &request)const;
 			void allocateReadWriteSplittingConnectionAsync(const Model::AllocateReadWriteSplittingConnectionRequest& request, const AllocateReadWriteSplittingConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AllocateReadWriteSplittingConnectionOutcomeCallable allocateReadWriteSplittingConnectionCallable(const Model::AllocateReadWriteSplittingConnectionRequest& request) const;
+			AttachWhitelistTemplateToInstanceOutcome attachWhitelistTemplateToInstance(const Model::AttachWhitelistTemplateToInstanceRequest &request)const;
+			void attachWhitelistTemplateToInstanceAsync(const Model::AttachWhitelistTemplateToInstanceRequest& request, const AttachWhitelistTemplateToInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AttachWhitelistTemplateToInstanceOutcomeCallable attachWhitelistTemplateToInstanceCallable(const Model::AttachWhitelistTemplateToInstanceRequest& request) const;
 			CalculateDBInstanceWeightOutcome calculateDBInstanceWeight(const Model::CalculateDBInstanceWeightRequest &request)const;
 			void calculateDBInstanceWeightAsync(const Model::CalculateDBInstanceWeightRequest& request, const CalculateDBInstanceWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CalculateDBInstanceWeightOutcomeCallable calculateDBInstanceWeightCallable(const Model::CalculateDBInstanceWeightRequest& request) const;
@@ -1514,6 +1552,9 @@ namespace AlibabaCloud
 			DescribeActiveOperationTasksOutcome describeActiveOperationTasks(const Model::DescribeActiveOperationTasksRequest &request)const;
 			void describeActiveOperationTasksAsync(const Model::DescribeActiveOperationTasksRequest& request, const DescribeActiveOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeActiveOperationTasksOutcomeCallable describeActiveOperationTasksCallable(const Model::DescribeActiveOperationTasksRequest& request) const;
+			DescribeAllWhitelistTemplateOutcome describeAllWhitelistTemplate(const Model::DescribeAllWhitelistTemplateRequest &request)const;
+			void describeAllWhitelistTemplateAsync(const Model::DescribeAllWhitelistTemplateRequest& request, const DescribeAllWhitelistTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAllWhitelistTemplateOutcomeCallable describeAllWhitelistTemplateCallable(const Model::DescribeAllWhitelistTemplateRequest& request) const;
 			DescribeAnalyticdbByPrimaryDBInstanceOutcome describeAnalyticdbByPrimaryDBInstance(const Model::DescribeAnalyticdbByPrimaryDBInstanceRequest &request)const;
 			void describeAnalyticdbByPrimaryDBInstanceAsync(const Model::DescribeAnalyticdbByPrimaryDBInstanceRequest& request, const DescribeAnalyticdbByPrimaryDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAnalyticdbByPrimaryDBInstanceOutcomeCallable describeAnalyticdbByPrimaryDBInstanceCallable(const Model::DescribeAnalyticdbByPrimaryDBInstanceRequest& request) const;
@@ -1700,6 +1741,9 @@ namespace AlibabaCloud
 			DescribeInstanceKeywordsOutcome describeInstanceKeywords(const Model::DescribeInstanceKeywordsRequest &request)const;
 			void describeInstanceKeywordsAsync(const Model::DescribeInstanceKeywordsRequest& request, const DescribeInstanceKeywordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceKeywordsOutcomeCallable describeInstanceKeywordsCallable(const Model::DescribeInstanceKeywordsRequest& request) const;
+			DescribeInstanceLinkedWhitelistTemplateOutcome describeInstanceLinkedWhitelistTemplate(const Model::DescribeInstanceLinkedWhitelistTemplateRequest &request)const;
+			void describeInstanceLinkedWhitelistTemplateAsync(const Model::DescribeInstanceLinkedWhitelistTemplateRequest& request, const DescribeInstanceLinkedWhitelistTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeInstanceLinkedWhitelistTemplateOutcomeCallable describeInstanceLinkedWhitelistTemplateCallable(const Model::DescribeInstanceLinkedWhitelistTemplateRequest& request) const;
 			DescribeLocalAvailableRecoveryTimeOutcome describeLocalAvailableRecoveryTime(const Model::DescribeLocalAvailableRecoveryTimeRequest &request)const;
 			void describeLocalAvailableRecoveryTimeAsync(const Model::DescribeLocalAvailableRecoveryTimeRequest& request, const DescribeLocalAvailableRecoveryTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLocalAvailableRecoveryTimeOutcomeCallable describeLocalAvailableRecoveryTimeCallable(const Model::DescribeLocalAvailableRecoveryTimeRequest& request) const;
@@ -1811,12 +1855,21 @@ namespace AlibabaCloud
 			DescribeVSwitchesOutcome describeVSwitches(const Model::DescribeVSwitchesRequest &request)const;
 			void describeVSwitchesAsync(const Model::DescribeVSwitchesRequest& request, const DescribeVSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVSwitchesOutcomeCallable describeVSwitchesCallable(const Model::DescribeVSwitchesRequest& request) const;
+			DescribeWhitelistTemplateOutcome describeWhitelistTemplate(const Model::DescribeWhitelistTemplateRequest &request)const;
+			void describeWhitelistTemplateAsync(const Model::DescribeWhitelistTemplateRequest& request, const DescribeWhitelistTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeWhitelistTemplateOutcomeCallable describeWhitelistTemplateCallable(const Model::DescribeWhitelistTemplateRequest& request) const;
+			DescribeWhitelistTemplateLinkedInstanceOutcome describeWhitelistTemplateLinkedInstance(const Model::DescribeWhitelistTemplateLinkedInstanceRequest &request)const;
+			void describeWhitelistTemplateLinkedInstanceAsync(const Model::DescribeWhitelistTemplateLinkedInstanceRequest& request, const DescribeWhitelistTemplateLinkedInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeWhitelistTemplateLinkedInstanceOutcomeCallable describeWhitelistTemplateLinkedInstanceCallable(const Model::DescribeWhitelistTemplateLinkedInstanceRequest& request) const;
 			DestroyDBInstanceOutcome destroyDBInstance(const Model::DestroyDBInstanceRequest &request)const;
 			void destroyDBInstanceAsync(const Model::DestroyDBInstanceRequest& request, const DestroyDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DestroyDBInstanceOutcomeCallable destroyDBInstanceCallable(const Model::DestroyDBInstanceRequest& request) const;
 			DetachGadInstanceMemberOutcome detachGadInstanceMember(const Model::DetachGadInstanceMemberRequest &request)const;
 			void detachGadInstanceMemberAsync(const Model::DetachGadInstanceMemberRequest& request, const DetachGadInstanceMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachGadInstanceMemberOutcomeCallable detachGadInstanceMemberCallable(const Model::DetachGadInstanceMemberRequest& request) const;
+			DetachWhitelistTemplateToInstanceOutcome detachWhitelistTemplateToInstance(const Model::DetachWhitelistTemplateToInstanceRequest &request)const;
+			void detachWhitelistTemplateToInstanceAsync(const Model::DetachWhitelistTemplateToInstanceRequest& request, const DetachWhitelistTemplateToInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetachWhitelistTemplateToInstanceOutcomeCallable detachWhitelistTemplateToInstanceCallable(const Model::DetachWhitelistTemplateToInstanceRequest& request) const;
 			GetDBInstanceTopologyOutcome getDBInstanceTopology(const Model::GetDBInstanceTopologyRequest &request)const;
 			void getDBInstanceTopologyAsync(const Model::GetDBInstanceTopologyRequest& request, const GetDBInstanceTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDBInstanceTopologyOutcomeCallable getDBInstanceTopologyCallable(const Model::GetDBInstanceTopologyRequest& request) const;
@@ -2003,6 +2056,9 @@ namespace AlibabaCloud
 			ModifySecurityIpsOutcome modifySecurityIps(const Model::ModifySecurityIpsRequest &request)const;
 			void modifySecurityIpsAsync(const Model::ModifySecurityIpsRequest& request, const ModifySecurityIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySecurityIpsOutcomeCallable modifySecurityIpsCallable(const Model::ModifySecurityIpsRequest& request) const;
+			ModifyWhitelistTemplateOutcome modifyWhitelistTemplate(const Model::ModifyWhitelistTemplateRequest &request)const;
+			void modifyWhitelistTemplateAsync(const Model::ModifyWhitelistTemplateRequest& request, const ModifyWhitelistTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyWhitelistTemplateOutcomeCallable modifyWhitelistTemplateCallable(const Model::ModifyWhitelistTemplateRequest& request) const;
 			PurgeDBInstanceLogOutcome purgeDBInstanceLog(const Model::PurgeDBInstanceLogRequest &request)const;
 			void purgeDBInstanceLogAsync(const Model::PurgeDBInstanceLogRequest& request, const PurgeDBInstanceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PurgeDBInstanceLogOutcomeCallable purgeDBInstanceLogCallable(const Model::PurgeDBInstanceLogRequest& request) const;

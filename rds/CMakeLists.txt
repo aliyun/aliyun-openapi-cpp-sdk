@@ -29,6 +29,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/AllocateInstancePublicConnectionResult.h
 	include/alibabacloud/rds/model/AllocateReadWriteSplittingConnectionRequest.h
 	include/alibabacloud/rds/model/AllocateReadWriteSplittingConnectionResult.h
+	include/alibabacloud/rds/model/AttachWhitelistTemplateToInstanceRequest.h
+	include/alibabacloud/rds/model/AttachWhitelistTemplateToInstanceResult.h
 	include/alibabacloud/rds/model/CalculateDBInstanceWeightRequest.h
 	include/alibabacloud/rds/model/CalculateDBInstanceWeightResult.h
 	include/alibabacloud/rds/model/CancelImportRequest.h
@@ -143,6 +145,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeActionEventPolicyResult.h
 	include/alibabacloud/rds/model/DescribeActiveOperationTasksRequest.h
 	include/alibabacloud/rds/model/DescribeActiveOperationTasksResult.h
+	include/alibabacloud/rds/model/DescribeAllWhitelistTemplateRequest.h
+	include/alibabacloud/rds/model/DescribeAllWhitelistTemplateResult.h
 	include/alibabacloud/rds/model/DescribeAnalyticdbByPrimaryDBInstanceRequest.h
 	include/alibabacloud/rds/model/DescribeAnalyticdbByPrimaryDBInstanceResult.h
 	include/alibabacloud/rds/model/DescribeAvailableClassesRequest.h
@@ -267,6 +271,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeInstanceCrossBackupPolicyResult.h
 	include/alibabacloud/rds/model/DescribeInstanceKeywordsRequest.h
 	include/alibabacloud/rds/model/DescribeInstanceKeywordsResult.h
+	include/alibabacloud/rds/model/DescribeInstanceLinkedWhitelistTemplateRequest.h
+	include/alibabacloud/rds/model/DescribeInstanceLinkedWhitelistTemplateResult.h
 	include/alibabacloud/rds/model/DescribeLocalAvailableRecoveryTimeRequest.h
 	include/alibabacloud/rds/model/DescribeLocalAvailableRecoveryTimeResult.h
 	include/alibabacloud/rds/model/DescribeLogBackupFilesRequest.h
@@ -341,10 +347,16 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeUpgradeMajorVersionTasksResult.h
 	include/alibabacloud/rds/model/DescribeVSwitchesRequest.h
 	include/alibabacloud/rds/model/DescribeVSwitchesResult.h
+	include/alibabacloud/rds/model/DescribeWhitelistTemplateRequest.h
+	include/alibabacloud/rds/model/DescribeWhitelistTemplateResult.h
+	include/alibabacloud/rds/model/DescribeWhitelistTemplateLinkedInstanceRequest.h
+	include/alibabacloud/rds/model/DescribeWhitelistTemplateLinkedInstanceResult.h
 	include/alibabacloud/rds/model/DestroyDBInstanceRequest.h
 	include/alibabacloud/rds/model/DestroyDBInstanceResult.h
 	include/alibabacloud/rds/model/DetachGadInstanceMemberRequest.h
 	include/alibabacloud/rds/model/DetachGadInstanceMemberResult.h
+	include/alibabacloud/rds/model/DetachWhitelistTemplateToInstanceRequest.h
+	include/alibabacloud/rds/model/DetachWhitelistTemplateToInstanceResult.h
 	include/alibabacloud/rds/model/GetDBInstanceTopologyRequest.h
 	include/alibabacloud/rds/model/GetDBInstanceTopologyResult.h
 	include/alibabacloud/rds/model/GetDbProxyInstanceSslRequest.h
@@ -469,6 +481,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifySecurityGroupConfigurationResult.h
 	include/alibabacloud/rds/model/ModifySecurityIpsRequest.h
 	include/alibabacloud/rds/model/ModifySecurityIpsResult.h
+	include/alibabacloud/rds/model/ModifyWhitelistTemplateRequest.h
+	include/alibabacloud/rds/model/ModifyWhitelistTemplateResult.h
 	include/alibabacloud/rds/model/PurgeDBInstanceLogRequest.h
 	include/alibabacloud/rds/model/PurgeDBInstanceLogResult.h
 	include/alibabacloud/rds/model/QueryNotifyRequest.h
@@ -550,6 +564,8 @@ set(rds_src
 	src/model/AllocateInstancePublicConnectionResult.cc
 	src/model/AllocateReadWriteSplittingConnectionRequest.cc
 	src/model/AllocateReadWriteSplittingConnectionResult.cc
+	src/model/AttachWhitelistTemplateToInstanceRequest.cc
+	src/model/AttachWhitelistTemplateToInstanceResult.cc
 	src/model/CalculateDBInstanceWeightRequest.cc
 	src/model/CalculateDBInstanceWeightResult.cc
 	src/model/CancelImportRequest.cc
@@ -664,6 +680,8 @@ set(rds_src
 	src/model/DescribeActionEventPolicyResult.cc
 	src/model/DescribeActiveOperationTasksRequest.cc
 	src/model/DescribeActiveOperationTasksResult.cc
+	src/model/DescribeAllWhitelistTemplateRequest.cc
+	src/model/DescribeAllWhitelistTemplateResult.cc
 	src/model/DescribeAnalyticdbByPrimaryDBInstanceRequest.cc
 	src/model/DescribeAnalyticdbByPrimaryDBInstanceResult.cc
 	src/model/DescribeAvailableClassesRequest.cc
@@ -788,6 +806,8 @@ set(rds_src
 	src/model/DescribeInstanceCrossBackupPolicyResult.cc
 	src/model/DescribeInstanceKeywordsRequest.cc
 	src/model/DescribeInstanceKeywordsResult.cc
+	src/model/DescribeInstanceLinkedWhitelistTemplateRequest.cc
+	src/model/DescribeInstanceLinkedWhitelistTemplateResult.cc
 	src/model/DescribeLocalAvailableRecoveryTimeRequest.cc
 	src/model/DescribeLocalAvailableRecoveryTimeResult.cc
 	src/model/DescribeLogBackupFilesRequest.cc
@@ -862,10 +882,16 @@ set(rds_src
 	src/model/DescribeUpgradeMajorVersionTasksResult.cc
 	src/model/DescribeVSwitchesRequest.cc
 	src/model/DescribeVSwitchesResult.cc
+	src/model/DescribeWhitelistTemplateRequest.cc
+	src/model/DescribeWhitelistTemplateResult.cc
+	src/model/DescribeWhitelistTemplateLinkedInstanceRequest.cc
+	src/model/DescribeWhitelistTemplateLinkedInstanceResult.cc
 	src/model/DestroyDBInstanceRequest.cc
 	src/model/DestroyDBInstanceResult.cc
 	src/model/DetachGadInstanceMemberRequest.cc
 	src/model/DetachGadInstanceMemberResult.cc
+	src/model/DetachWhitelistTemplateToInstanceRequest.cc
+	src/model/DetachWhitelistTemplateToInstanceResult.cc
 	src/model/GetDBInstanceTopologyRequest.cc
 	src/model/GetDBInstanceTopologyResult.cc
 	src/model/GetDbProxyInstanceSslRequest.cc
@@ -990,6 +1016,8 @@ set(rds_src
 	src/model/ModifySecurityGroupConfigurationResult.cc
 	src/model/ModifySecurityIpsRequest.cc
 	src/model/ModifySecurityIpsResult.cc
+	src/model/ModifyWhitelistTemplateRequest.cc
+	src/model/ModifyWhitelistTemplateResult.cc
 	src/model/PurgeDBInstanceLogRequest.cc
 	src/model/PurgeDBInstanceLogResult.cc
 	src/model/QueryNotifyRequest.cc
