@@ -2175,6 +2175,42 @@ SWAS_OPENClient::StartInstancesOutcomeCallable SWAS_OPENClient::startInstancesCa
 	return task->get_future();
 }
 
+SWAS_OPENClient::StartTerminalSessionOutcome SWAS_OPENClient::startTerminalSession(const StartTerminalSessionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartTerminalSessionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartTerminalSessionOutcome(StartTerminalSessionResult(outcome.result()));
+	else
+		return StartTerminalSessionOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::startTerminalSessionAsync(const StartTerminalSessionRequest& request, const StartTerminalSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startTerminalSession(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::StartTerminalSessionOutcomeCallable SWAS_OPENClient::startTerminalSessionCallable(const StartTerminalSessionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartTerminalSessionOutcome()>>(
+			[this, request]()
+			{
+			return this->startTerminalSession(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::StopDatabaseInstanceOutcome SWAS_OPENClient::stopDatabaseInstance(const StopDatabaseInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

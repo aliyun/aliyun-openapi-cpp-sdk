@@ -139,6 +139,8 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/StartInstanceResult.h
 	include/alibabacloud/swas-open/model/StartInstancesRequest.h
 	include/alibabacloud/swas-open/model/StartInstancesResult.h
+	include/alibabacloud/swas-open/model/StartTerminalSessionRequest.h
+	include/alibabacloud/swas-open/model/StartTerminalSessionResult.h
 	include/alibabacloud/swas-open/model/StopDatabaseInstanceRequest.h
 	include/alibabacloud/swas-open/model/StopDatabaseInstanceResult.h
 	include/alibabacloud/swas-open/model/StopInstanceRequest.h
@@ -276,6 +278,8 @@ set(swas-open_src
 	src/model/StartInstanceResult.cc
 	src/model/StartInstancesRequest.cc
 	src/model/StartInstancesResult.cc
+	src/model/StartTerminalSessionRequest.cc
+	src/model/StartTerminalSessionResult.cc
 	src/model/StopDatabaseInstanceRequest.cc
 	src/model/StopDatabaseInstanceResult.cc
 	src/model/StopInstanceRequest.cc

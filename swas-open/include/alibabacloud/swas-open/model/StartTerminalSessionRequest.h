@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_LISTINSTANCESREQUEST_H_
-#define ALIBABACLOUD_SWAS_OPEN_MODEL_LISTINSTANCESREQUEST_H_
+#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_STARTTERMINALSESSIONREQUEST_H_
+#define ALIBABACLOUD_SWAS_OPEN_MODEL_STARTTERMINALSESSIONREQUEST_H_
 
 #include <alibabacloud/swas-open/SWAS_OPENExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,20 @@
 namespace AlibabaCloud {
 namespace SWAS_OPEN {
 namespace Model {
-class ALIBABACLOUD_SWAS_OPEN_EXPORT ListInstancesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SWAS_OPEN_EXPORT StartTerminalSessionRequest : public RpcServiceRequest {
 public:
-	ListInstancesRequest();
-	~ListInstancesRequest();
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
+	StartTerminalSessionRequest();
+	~StartTerminalSessionRequest();
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getInstanceIds() const;
-	void setInstanceIds(const std::string &instanceIds);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::string getPublicIpAddresses() const;
-	void setPublicIpAddresses(const std::string &publicIpAddresses);
-	std::string getChargeType() const;
-	void setChargeType(const std::string &chargeType);
-	std::string getStatus() const;
-	void setStatus(const std::string &status);
 
 private:
-	int pageNumber_;
+	std::string instanceId_;
 	std::string regionId_;
-	std::string instanceIds_;
-	int pageSize_;
-	std::string publicIpAddresses_;
-	std::string chargeType_;
-	std::string status_;
 };
 } // namespace Model
 } // namespace SWAS_OPEN
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_LISTINSTANCESREQUEST_H_
+#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_STARTTERMINALSESSIONREQUEST_H_

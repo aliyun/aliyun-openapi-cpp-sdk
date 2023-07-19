@@ -140,6 +140,8 @@
 #include "model/StartInstanceResult.h"
 #include "model/StartInstancesRequest.h"
 #include "model/StartInstancesResult.h"
+#include "model/StartTerminalSessionRequest.h"
+#include "model/StartTerminalSessionResult.h"
 #include "model/StopDatabaseInstanceRequest.h"
 #include "model/StopDatabaseInstanceResult.h"
 #include "model/StopInstanceRequest.h"
@@ -342,6 +344,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StartInstancesResult> StartInstancesOutcome;
 			typedef std::future<StartInstancesOutcome> StartInstancesOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::StartInstancesRequest&, const StartInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartInstancesAsyncHandler;
+			typedef Outcome<Error, Model::StartTerminalSessionResult> StartTerminalSessionOutcome;
+			typedef std::future<StartTerminalSessionOutcome> StartTerminalSessionOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::StartTerminalSessionRequest&, const StartTerminalSessionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartTerminalSessionAsyncHandler;
 			typedef Outcome<Error, Model::StopDatabaseInstanceResult> StopDatabaseInstanceOutcome;
 			typedef std::future<StopDatabaseInstanceOutcome> StopDatabaseInstanceOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::StopDatabaseInstanceRequest&, const StopDatabaseInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopDatabaseInstanceAsyncHandler;
@@ -548,6 +553,9 @@ namespace AlibabaCloud
 			StartInstancesOutcome startInstances(const Model::StartInstancesRequest &request)const;
 			void startInstancesAsync(const Model::StartInstancesRequest& request, const StartInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartInstancesOutcomeCallable startInstancesCallable(const Model::StartInstancesRequest& request) const;
+			StartTerminalSessionOutcome startTerminalSession(const Model::StartTerminalSessionRequest &request)const;
+			void startTerminalSessionAsync(const Model::StartTerminalSessionRequest& request, const StartTerminalSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartTerminalSessionOutcomeCallable startTerminalSessionCallable(const Model::StartTerminalSessionRequest& request) const;
 			StopDatabaseInstanceOutcome stopDatabaseInstance(const Model::StopDatabaseInstanceRequest &request)const;
 			void stopDatabaseInstanceAsync(const Model::StopDatabaseInstanceRequest& request, const StopDatabaseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopDatabaseInstanceOutcomeCallable stopDatabaseInstanceCallable(const Model::StopDatabaseInstanceRequest& request) const;

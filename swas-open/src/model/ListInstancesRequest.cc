@@ -79,3 +79,12 @@ void ListInstancesRequest::setChargeType(const std::string &chargeType) {
   setParameter(std::string("ChargeType"), chargeType);
 }
 
+std::string ListInstancesRequest::getStatus() const {
+  return status_;
+}
+
+void ListInstancesRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
+}
+
