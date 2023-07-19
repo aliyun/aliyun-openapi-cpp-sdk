@@ -47,14 +47,6 @@ void DescribeSynchronizationJobStatusResult::parse(const std::string &payload)
 			synchronizationObjectsObject.newSchemaName = valueSynchronizationObjectsSynchronizationObject["NewSchemaName"].asString();
 		if(!valueSynchronizationObjectsSynchronizationObject["SchemaName"].isNull())
 			synchronizationObjectsObject.schemaName = valueSynchronizationObjectsSynchronizationObject["SchemaName"].asString();
-		auto allTableExcludesNode = valueSynchronizationObjectsSynchronizationObject["TableExcludes"]["TableExclude"];
-		for (auto valueSynchronizationObjectsSynchronizationObjectTableExcludesTableExclude : allTableExcludesNode)
-		{
-			SynchronizationObject::TableExclude tableExcludesObject;
-			if(!valueSynchronizationObjectsSynchronizationObjectTableExcludesTableExclude["TableName"].isNull())
-				tableExcludesObject.tableName = valueSynchronizationObjectsSynchronizationObjectTableExcludesTableExclude["TableName"].asString();
-			synchronizationObjectsObject.tableExcludes.push_back(tableExcludesObject);
-		}
 		auto allTableIncludesNode = valueSynchronizationObjectsSynchronizationObject["TableIncludes"]["TableInclude"];
 		for (auto valueSynchronizationObjectsSynchronizationObjectTableIncludesTableInclude : allTableIncludesNode)
 		{
@@ -63,48 +55,42 @@ void DescribeSynchronizationJobStatusResult::parse(const std::string &payload)
 				tableIncludesObject.tableName = valueSynchronizationObjectsSynchronizationObjectTableIncludesTableInclude["TableName"].asString();
 			synchronizationObjectsObject.tableIncludes.push_back(tableIncludesObject);
 		}
+		auto allTableExcludesNode = valueSynchronizationObjectsSynchronizationObject["TableExcludes"]["TableExclude"];
+		for (auto valueSynchronizationObjectsSynchronizationObjectTableExcludesTableExclude : allTableExcludesNode)
+		{
+			SynchronizationObject::TableExclude tableExcludesObject;
+			if(!valueSynchronizationObjectsSynchronizationObjectTableExcludesTableExclude["TableName"].isNull())
+				tableExcludesObject.tableName = valueSynchronizationObjectsSynchronizationObjectTableExcludesTableExclude["TableName"].asString();
+			synchronizationObjectsObject.tableExcludes.push_back(tableExcludesObject);
+		}
 		synchronizationObjects_.push_back(synchronizationObjectsObject);
 	}
-	auto dataInitializationStatusNode = value["DataInitializationStatus"];
-	if(!dataInitializationStatusNode["Status"].isNull())
-		dataInitializationStatus_.status = dataInitializationStatusNode["Status"].asString();
-	if(!dataInitializationStatusNode["Percent"].isNull())
-		dataInitializationStatus_.percent = dataInitializationStatusNode["Percent"].asString();
-	if(!dataInitializationStatusNode["ErrorMessage"].isNull())
-		dataInitializationStatus_.errorMessage = dataInitializationStatusNode["ErrorMessage"].asString();
-	if(!dataInitializationStatusNode["Progress"].isNull())
-		dataInitializationStatus_.progress = dataInitializationStatusNode["Progress"].asString();
-	auto dataSynchronizationStatusNode = value["DataSynchronizationStatus"];
-	if(!dataSynchronizationStatusNode["Status"].isNull())
-		dataSynchronizationStatus_.status = dataSynchronizationStatusNode["Status"].asString();
-	if(!dataSynchronizationStatusNode["Delay"].isNull())
-		dataSynchronizationStatus_.delay = dataSynchronizationStatusNode["Delay"].asString();
-	if(!dataSynchronizationStatusNode["Percent"].isNull())
-		dataSynchronizationStatus_.percent = dataSynchronizationStatusNode["Percent"].asString();
-	if(!dataSynchronizationStatusNode["ErrorMessage"].isNull())
-		dataSynchronizationStatus_.errorMessage = dataSynchronizationStatusNode["ErrorMessage"].asString();
-	if(!dataSynchronizationStatusNode["DelayMillis"].isNull())
-		dataSynchronizationStatus_.delayMillis = std::stol(dataSynchronizationStatusNode["DelayMillis"].asString());
-	if(!dataSynchronizationStatusNode["Checkpoint"].isNull())
-		dataSynchronizationStatus_.checkpoint = dataSynchronizationStatusNode["Checkpoint"].asString();
+	auto sourceEndpointNode = value["SourceEndpoint"];
+	if(!sourceEndpointNode["InstanceId"].isNull())
+		sourceEndpoint_.instanceId = sourceEndpointNode["InstanceId"].asString();
+	if(!sourceEndpointNode["InstanceType"].isNull())
+		sourceEndpoint_.instanceType = sourceEndpointNode["InstanceType"].asString();
+	if(!sourceEndpointNode["IP"].isNull())
+		sourceEndpoint_.iP = sourceEndpointNode["IP"].asString();
+	if(!sourceEndpointNode["Port"].isNull())
+		sourceEndpoint_.port = sourceEndpointNode["Port"].asString();
+	if(!sourceEndpointNode["UserName"].isNull())
+		sourceEndpoint_.userName = sourceEndpointNode["UserName"].asString();
+	if(!sourceEndpointNode["EngineName"].isNull())
+		sourceEndpoint_.engineName = sourceEndpointNode["EngineName"].asString();
 	auto destinationEndpointNode = value["DestinationEndpoint"];
 	if(!destinationEndpointNode["InstanceId"].isNull())
 		destinationEndpoint_.instanceId = destinationEndpointNode["InstanceId"].asString();
-	if(!destinationEndpointNode["IP"].isNull())
-		destinationEndpoint_.iP = destinationEndpointNode["IP"].asString();
 	if(!destinationEndpointNode["InstanceType"].isNull())
 		destinationEndpoint_.instanceType = destinationEndpointNode["InstanceType"].asString();
+	if(!destinationEndpointNode["IP"].isNull())
+		destinationEndpoint_.iP = destinationEndpointNode["IP"].asString();
 	if(!destinationEndpointNode["Port"].isNull())
 		destinationEndpoint_.port = destinationEndpointNode["Port"].asString();
 	if(!destinationEndpointNode["UserName"].isNull())
 		destinationEndpoint_.userName = destinationEndpointNode["UserName"].asString();
 	if(!destinationEndpointNode["EngineName"].isNull())
 		destinationEndpoint_.engineName = destinationEndpointNode["EngineName"].asString();
-	auto performanceNode = value["Performance"];
-	if(!performanceNode["RPS"].isNull())
-		performance_.rPS = performanceNode["RPS"].asString();
-	if(!performanceNode["FLOW"].isNull())
-		performance_.fLOW = performanceNode["FLOW"].asString();
 	auto precheckStatusNode = value["PrecheckStatus"];
 	if(!precheckStatusNode["Status"].isNull())
 		precheckStatus_.status = precheckStatusNode["Status"].asString();
@@ -124,63 +110,70 @@ void DescribeSynchronizationJobStatusResult::parse(const std::string &payload)
 			checkItemObject.repairMethod = precheckStatusNodeDetailCheckItem["RepairMethod"].asString();
 		precheckStatus_.detail.push_back(checkItemObject);
 	}
-	auto sourceEndpointNode = value["SourceEndpoint"];
-	if(!sourceEndpointNode["InstanceId"].isNull())
-		sourceEndpoint_.instanceId = sourceEndpointNode["InstanceId"].asString();
-	if(!sourceEndpointNode["IP"].isNull())
-		sourceEndpoint_.iP = sourceEndpointNode["IP"].asString();
-	if(!sourceEndpointNode["InstanceType"].isNull())
-		sourceEndpoint_.instanceType = sourceEndpointNode["InstanceType"].asString();
-	if(!sourceEndpointNode["Port"].isNull())
-		sourceEndpoint_.port = sourceEndpointNode["Port"].asString();
-	if(!sourceEndpointNode["UserName"].isNull())
-		sourceEndpoint_.userName = sourceEndpointNode["UserName"].asString();
-	if(!sourceEndpointNode["EngineName"].isNull())
-		sourceEndpoint_.engineName = sourceEndpointNode["EngineName"].asString();
 	auto structureInitializationStatusNode = value["StructureInitializationStatus"];
 	if(!structureInitializationStatusNode["Status"].isNull())
 		structureInitializationStatus_.status = structureInitializationStatusNode["Status"].asString();
 	if(!structureInitializationStatusNode["Percent"].isNull())
 		structureInitializationStatus_.percent = structureInitializationStatusNode["Percent"].asString();
-	if(!structureInitializationStatusNode["ErrorMessage"].isNull())
-		structureInitializationStatus_.errorMessage = structureInitializationStatusNode["ErrorMessage"].asString();
 	if(!structureInitializationStatusNode["Progress"].isNull())
 		structureInitializationStatus_.progress = structureInitializationStatusNode["Progress"].asString();
+	if(!structureInitializationStatusNode["ErrorMessage"].isNull())
+		structureInitializationStatus_.errorMessage = structureInitializationStatusNode["ErrorMessage"].asString();
+	auto dataInitializationStatusNode = value["DataInitializationStatus"];
+	if(!dataInitializationStatusNode["Status"].isNull())
+		dataInitializationStatus_.status = dataInitializationStatusNode["Status"].asString();
+	if(!dataInitializationStatusNode["Percent"].isNull())
+		dataInitializationStatus_.percent = dataInitializationStatusNode["Percent"].asString();
+	if(!dataInitializationStatusNode["Progress"].isNull())
+		dataInitializationStatus_.progress = dataInitializationStatusNode["Progress"].asString();
+	if(!dataInitializationStatusNode["ErrorMessage"].isNull())
+		dataInitializationStatus_.errorMessage = dataInitializationStatusNode["ErrorMessage"].asString();
+	auto dataSynchronizationStatusNode = value["DataSynchronizationStatus"];
+	if(!dataSynchronizationStatusNode["Status"].isNull())
+		dataSynchronizationStatus_.status = dataSynchronizationStatusNode["Status"].asString();
+	if(!dataSynchronizationStatusNode["Delay"].isNull())
+		dataSynchronizationStatus_.delay = dataSynchronizationStatusNode["Delay"].asString();
+	if(!dataSynchronizationStatusNode["Percent"].isNull())
+		dataSynchronizationStatus_.percent = dataSynchronizationStatusNode["Percent"].asString();
+	if(!dataSynchronizationStatusNode["ErrorMessage"].isNull())
+		dataSynchronizationStatus_.errorMessage = dataSynchronizationStatusNode["ErrorMessage"].asString();
+	if(!dataSynchronizationStatusNode["Checkpoint"].isNull())
+		dataSynchronizationStatus_.checkpoint = dataSynchronizationStatusNode["Checkpoint"].asString();
+	auto performanceNode = value["Performance"];
+	if(!performanceNode["RPS"].isNull())
+		performance_.rPS = performanceNode["RPS"].asString();
+	if(!performanceNode["FLOW"].isNull())
+		performance_.fLOW = performanceNode["FLOW"].asString();
 	if(!value["SynchronizationJobName"].isNull())
 		synchronizationJobName_ = value["SynchronizationJobName"].asString();
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
 	if(!value["DataInitialization"].isNull())
 		dataInitialization_ = value["DataInitialization"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
 	if(!value["Delay"].isNull())
 		delay_ = value["Delay"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["ExpireTime"].isNull())
 		expireTime_ = value["ExpireTime"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
-	if(!value["StructureInitialization"].isNull())
-		structureInitialization_ = value["StructureInitialization"].asString();
 	if(!value["PayType"].isNull())
 		payType_ = value["PayType"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
+	if(!value["StructureInitialization"].isNull())
+		structureInitialization_ = value["StructureInitialization"].asString();
 	if(!value["SynchronizationJobClass"].isNull())
 		synchronizationJobClass_ = value["SynchronizationJobClass"].asString();
 	if(!value["SynchronizationJobId"].isNull())
 		synchronizationJobId_ = value["SynchronizationJobId"].asString();
-	if(!value["DelayMillis"].isNull())
-		delayMillis_ = std::stol(value["DelayMillis"].asString());
 	if(!value["SynchronizationDirection"].isNull())
 		synchronizationDirection_ = value["SynchronizationDirection"].asString();
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
 	if(!value["Checkpoint"].isNull())
 		checkpoint_ = value["Checkpoint"].asString();
 
+}
+
+std::string DescribeSynchronizationJobStatusResult::getStatus()const
+{
+	return status_;
 }
 
 std::vector<DescribeSynchronizationJobStatusResult::SynchronizationObject> DescribeSynchronizationJobStatusResult::getSynchronizationObjects()const
@@ -193,46 +186,6 @@ DescribeSynchronizationJobStatusResult::DataInitializationStatus DescribeSynchro
 	return dataInitializationStatus_;
 }
 
-std::string DescribeSynchronizationJobStatusResult::getTaskId()const
-{
-	return taskId_;
-}
-
-std::string DescribeSynchronizationJobStatusResult::getDelay()const
-{
-	return delay_;
-}
-
-std::string DescribeSynchronizationJobStatusResult::getSuccess()const
-{
-	return success_;
-}
-
-long DescribeSynchronizationJobStatusResult::getDelayMillis()const
-{
-	return delayMillis_;
-}
-
-std::string DescribeSynchronizationJobStatusResult::getDataInitialization()const
-{
-	return dataInitialization_;
-}
-
-std::string DescribeSynchronizationJobStatusResult::getSynchronizationJobClass()const
-{
-	return synchronizationJobClass_;
-}
-
-DescribeSynchronizationJobStatusResult::DataSynchronizationStatus DescribeSynchronizationJobStatusResult::getDataSynchronizationStatus()const
-{
-	return dataSynchronizationStatus_;
-}
-
-std::string DescribeSynchronizationJobStatusResult::getStatus()const
-{
-	return status_;
-}
-
 std::string DescribeSynchronizationJobStatusResult::getSynchronizationJobName()const
 {
 	return synchronizationJobName_;
@@ -243,14 +196,9 @@ std::string DescribeSynchronizationJobStatusResult::getPayType()const
 	return payType_;
 }
 
-std::string DescribeSynchronizationJobStatusResult::getErrMessage()const
+std::string DescribeSynchronizationJobStatusResult::getDelay()const
 {
-	return errMessage_;
-}
-
-std::string DescribeSynchronizationJobStatusResult::getErrCode()const
-{
-	return errCode_;
+	return delay_;
 }
 
 DescribeSynchronizationJobStatusResult::PrecheckStatus DescribeSynchronizationJobStatusResult::getPrecheckStatus()const
@@ -266,6 +214,11 @@ std::string DescribeSynchronizationJobStatusResult::getSynchronizationJobId()con
 std::string DescribeSynchronizationJobStatusResult::getCheckpoint()const
 {
 	return checkpoint_;
+}
+
+std::string DescribeSynchronizationJobStatusResult::getDataInitialization()const
+{
+	return dataInitialization_;
 }
 
 DescribeSynchronizationJobStatusResult::DestinationEndpoint DescribeSynchronizationJobStatusResult::getDestinationEndpoint()const
@@ -298,6 +251,11 @@ std::string DescribeSynchronizationJobStatusResult::getExpireTime()const
 	return expireTime_;
 }
 
+std::string DescribeSynchronizationJobStatusResult::getSynchronizationJobClass()const
+{
+	return synchronizationJobClass_;
+}
+
 std::string DescribeSynchronizationJobStatusResult::getSynchronizationDirection()const
 {
 	return synchronizationDirection_;
@@ -306,5 +264,10 @@ std::string DescribeSynchronizationJobStatusResult::getSynchronizationDirection(
 DescribeSynchronizationJobStatusResult::StructureInitializationStatus DescribeSynchronizationJobStatusResult::getStructureInitializationStatus()const
 {
 	return structureInitializationStatus_;
+}
+
+DescribeSynchronizationJobStatusResult::DataSynchronizationStatus DescribeSynchronizationJobStatusResult::getDataSynchronizationStatus()const
+{
+	return dataSynchronizationStatus_;
 }
 

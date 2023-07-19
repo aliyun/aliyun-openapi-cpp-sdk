@@ -30,39 +30,30 @@ class ALIBABACLOUD_DTS_EXPORT ConfigureSynchronizationJobAlertRequest : public R
 public:
 	ConfigureSynchronizationJobAlertRequest();
 	~ConfigureSynchronizationJobAlertRequest();
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSynchronizationJobId() const;
-	void setSynchronizationJobId(const std::string &synchronizationJobId);
-	std::string getAccountId() const;
-	void setAccountId(const std::string &accountId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
-	std::string getDelayAlertPhone() const;
-	void setDelayAlertPhone(const std::string &delayAlertPhone);
 	std::string getDelayOverSeconds() const;
 	void setDelayOverSeconds(const std::string &delayOverSeconds);
 	std::string getDelayAlertStatus() const;
 	void setDelayAlertStatus(const std::string &delayAlertStatus);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
+	std::string getSynchronizationJobId() const;
+	void setSynchronizationJobId(const std::string &synchronizationJobId);
 	std::string getErrorAlertPhone() const;
 	void setErrorAlertPhone(const std::string &errorAlertPhone);
+	std::string getDelayAlertPhone() const;
+	void setDelayAlertPhone(const std::string &delayAlertPhone);
 	std::string getErrorAlertStatus() const;
 	void setErrorAlertStatus(const std::string &errorAlertStatus);
 	std::string getSynchronizationDirection() const;
 	void setSynchronizationDirection(const std::string &synchronizationDirection);
 
 private:
-	std::string accessKeyId_;
-	std::string synchronizationJobId_;
-	std::string accountId_;
-	std::string regionId_;
-	std::string delayAlertPhone_;
 	std::string delayOverSeconds_;
 	std::string delayAlertStatus_;
 	std::string ownerId_;
+	std::string synchronizationJobId_;
 	std::string errorAlertPhone_;
+	std::string delayAlertPhone_;
 	std::string errorAlertStatus_;
 	std::string synchronizationDirection_;
 };

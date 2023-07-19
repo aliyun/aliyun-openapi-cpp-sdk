@@ -19,74 +19,11 @@
 using AlibabaCloud::Dts::Model::CreateSynchronizationJobRequest;
 
 CreateSynchronizationJobRequest::CreateSynchronizationJobRequest()
-    : RpcServiceRequest("dts", "2020-01-01", "CreateSynchronizationJob") {
+    : RpcServiceRequest("dts", "2019-09-01", "CreateSynchronizationJob") {
   setMethod(HttpRequest::Method::Post);
 }
 
 CreateSynchronizationJobRequest::~CreateSynchronizationJobRequest() {}
-
-std::string CreateSynchronizationJobRequest::getClientToken() const {
-  return clientToken_;
-}
-
-void CreateSynchronizationJobRequest::setClientToken(const std::string &clientToken) {
-  clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), clientToken);
-}
-
-std::string CreateSynchronizationJobRequest::getNetworkType() const {
-  return networkType_;
-}
-
-void CreateSynchronizationJobRequest::setNetworkType(const std::string &networkType) {
-  networkType_ = networkType;
-  setParameter(std::string("networkType"), networkType);
-}
-
-std::string CreateSynchronizationJobRequest::getSourceEndpointInstanceType() const {
-  return sourceEndpointInstanceType_;
-}
-
-void CreateSynchronizationJobRequest::setSourceEndpointInstanceType(const std::string &sourceEndpointInstanceType) {
-  sourceEndpointInstanceType_ = sourceEndpointInstanceType;
-  setParameter(std::string("SourceEndpoint.InstanceType"), sourceEndpointInstanceType);
-}
-
-std::string CreateSynchronizationJobRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void CreateSynchronizationJobRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string CreateSynchronizationJobRequest::getAccountId() const {
-  return accountId_;
-}
-
-void CreateSynchronizationJobRequest::setAccountId(const std::string &accountId) {
-  accountId_ = accountId;
-  setParameter(std::string("AccountId"), accountId);
-}
-
-std::string CreateSynchronizationJobRequest::getRegionId() const {
-  return regionId_;
-}
-
-void CreateSynchronizationJobRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
-std::string CreateSynchronizationJobRequest::getSynchronizationJobClass() const {
-  return synchronizationJobClass_;
-}
-
-void CreateSynchronizationJobRequest::setSynchronizationJobClass(const std::string &synchronizationJobClass) {
-  synchronizationJobClass_ = synchronizationJobClass;
-  setParameter(std::string("SynchronizationJobClass"), synchronizationJobClass);
-}
 
 std::string CreateSynchronizationJobRequest::getPeriod() const {
   return period_;
@@ -106,6 +43,15 @@ void CreateSynchronizationJobRequest::setDestRegion(const std::string &destRegio
   setParameter(std::string("DestRegion"), destRegion);
 }
 
+std::string CreateSynchronizationJobRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void CreateSynchronizationJobRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
 std::string CreateSynchronizationJobRequest::getTopology() const {
   return topology_;
 }
@@ -113,6 +59,15 @@ std::string CreateSynchronizationJobRequest::getTopology() const {
 void CreateSynchronizationJobRequest::setTopology(const std::string &topology) {
   topology_ = topology;
   setParameter(std::string("Topology"), topology);
+}
+
+std::string CreateSynchronizationJobRequest::getNetworkType() const {
+  return networkType_;
+}
+
+void CreateSynchronizationJobRequest::setNetworkType(const std::string &networkType) {
+  networkType_ = networkType;
+  setParameter(std::string("networkType"), networkType);
 }
 
 std::string CreateSynchronizationJobRequest::getOwnerId() const {
@@ -133,13 +88,22 @@ void CreateSynchronizationJobRequest::setUsedTime(int usedTime) {
   setParameter(std::string("UsedTime"), std::to_string(usedTime));
 }
 
-int CreateSynchronizationJobRequest::getDBInstanceCount() const {
-  return dBInstanceCount_;
+std::string CreateSynchronizationJobRequest::getSourceEndpointInstanceType() const {
+  return sourceEndpointInstanceType_;
 }
 
-void CreateSynchronizationJobRequest::setDBInstanceCount(int dBInstanceCount) {
-  dBInstanceCount_ = dBInstanceCount;
-  setParameter(std::string("DBInstanceCount"), std::to_string(dBInstanceCount));
+void CreateSynchronizationJobRequest::setSourceEndpointInstanceType(const std::string &sourceEndpointInstanceType) {
+  sourceEndpointInstanceType_ = sourceEndpointInstanceType;
+  setParameter(std::string("SourceEndpoint.InstanceType"), sourceEndpointInstanceType);
+}
+
+std::string CreateSynchronizationJobRequest::getSynchronizationJobClass() const {
+  return synchronizationJobClass_;
+}
+
+void CreateSynchronizationJobRequest::setSynchronizationJobClass(const std::string &synchronizationJobClass) {
+  synchronizationJobClass_ = synchronizationJobClass;
+  setParameter(std::string("SynchronizationJobClass"), synchronizationJobClass);
 }
 
 std::string CreateSynchronizationJobRequest::getSourceRegion() const {

@@ -43,12 +43,6 @@ void DescribeEndpointSwitchStatusResult::parse(const std::string &payload)
 		status_ = value["Status"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 
 }
 
@@ -60,20 +54,5 @@ std::string DescribeEndpointSwitchStatusResult::getStatus()const
 std::string DescribeEndpointSwitchStatusResult::getErrorMessage()const
 {
 	return errorMessage_;
-}
-
-std::string DescribeEndpointSwitchStatusResult::getErrMessage()const
-{
-	return errMessage_;
-}
-
-std::string DescribeEndpointSwitchStatusResult::getSuccess()const
-{
-	return success_;
-}
-
-std::string DescribeEndpointSwitchStatusResult::getErrCode()const
-{
-	return errCode_;
 }
 

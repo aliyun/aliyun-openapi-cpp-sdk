@@ -19,7 +19,7 @@
 using AlibabaCloud::Dts::Model::ConfigureSynchronizationJobRequest;
 
 ConfigureSynchronizationJobRequest::ConfigureSynchronizationJobRequest()
-    : RpcServiceRequest("dts", "2020-01-01", "ConfigureSynchronizationJob") {
+    : RpcServiceRequest("dts", "2019-09-01", "ConfigureSynchronizationJob") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -67,7 +67,7 @@ std::string ConfigureSynchronizationJobRequest::getSynchronizationObjects() cons
 
 void ConfigureSynchronizationJobRequest::setSynchronizationObjects(const std::string &synchronizationObjects) {
   synchronizationObjects_ = synchronizationObjects;
-  setBodyParameter(std::string("SynchronizationObjects"), synchronizationObjects);
+  setParameter(std::string("SynchronizationObjects"), synchronizationObjects);
 }
 
 std::string ConfigureSynchronizationJobRequest::getDestinationEndpointPassword() const {
@@ -124,15 +124,6 @@ void ConfigureSynchronizationJobRequest::setSourceEndpointInstanceType(const std
   setParameter(std::string("SourceEndpoint.InstanceType"), sourceEndpointInstanceType);
 }
 
-std::string ConfigureSynchronizationJobRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void ConfigureSynchronizationJobRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string ConfigureSynchronizationJobRequest::getSynchronizationJobId() const {
   return synchronizationJobId_;
 }
@@ -151,24 +142,6 @@ void ConfigureSynchronizationJobRequest::setSynchronizationJobName(const std::st
   setParameter(std::string("SynchronizationJobName"), synchronizationJobName);
 }
 
-std::string ConfigureSynchronizationJobRequest::getAccountId() const {
-  return accountId_;
-}
-
-void ConfigureSynchronizationJobRequest::setAccountId(const std::string &accountId) {
-  accountId_ = accountId;
-  setParameter(std::string("AccountId"), accountId);
-}
-
-std::string ConfigureSynchronizationJobRequest::getRegionId() const {
-  return regionId_;
-}
-
-void ConfigureSynchronizationJobRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string ConfigureSynchronizationJobRequest::getSourceEndpointUserName() const {
   return sourceEndpointUserName_;
 }
@@ -176,15 +149,6 @@ std::string ConfigureSynchronizationJobRequest::getSourceEndpointUserName() cons
 void ConfigureSynchronizationJobRequest::setSourceEndpointUserName(const std::string &sourceEndpointUserName) {
   sourceEndpointUserName_ = sourceEndpointUserName;
   setParameter(std::string("SourceEndpoint.UserName"), sourceEndpointUserName);
-}
-
-std::string ConfigureSynchronizationJobRequest::getSourceEndpointDatabaseName() const {
-  return sourceEndpointDatabaseName_;
-}
-
-void ConfigureSynchronizationJobRequest::setSourceEndpointDatabaseName(const std::string &sourceEndpointDatabaseName) {
-  sourceEndpointDatabaseName_ = sourceEndpointDatabaseName;
-  setParameter(std::string("SourceEndpoint.DatabaseName"), sourceEndpointDatabaseName);
 }
 
 bool ConfigureSynchronizationJobRequest::getPartitionKeyModifyTime_Month() const {
@@ -266,15 +230,6 @@ bool ConfigureSynchronizationJobRequest::getPartitionKeyModifyTime_Hour() const 
 void ConfigureSynchronizationJobRequest::setPartitionKeyModifyTime_Hour(bool partitionKeyModifyTime_Hour) {
   partitionKeyModifyTime_Hour_ = partitionKeyModifyTime_Hour;
   setParameter(std::string("PartitionKey.ModifyTime_Hour"), partitionKeyModifyTime_Hour ? "true" : "false");
-}
-
-std::string ConfigureSynchronizationJobRequest::getDestinationEndpointDataBaseName() const {
-  return destinationEndpointDataBaseName_;
-}
-
-void ConfigureSynchronizationJobRequest::setDestinationEndpointDataBaseName(const std::string &destinationEndpointDataBaseName) {
-  destinationEndpointDataBaseName_ = destinationEndpointDataBaseName;
-  setParameter(std::string("DestinationEndpoint.DataBaseName"), destinationEndpointDataBaseName);
 }
 
 std::string ConfigureSynchronizationJobRequest::getSourceEndpointPassword() const {

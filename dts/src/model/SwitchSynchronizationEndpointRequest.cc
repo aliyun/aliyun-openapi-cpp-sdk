@@ -19,19 +19,37 @@
 using AlibabaCloud::Dts::Model::SwitchSynchronizationEndpointRequest;
 
 SwitchSynchronizationEndpointRequest::SwitchSynchronizationEndpointRequest()
-    : RpcServiceRequest("dts", "2020-01-01", "SwitchSynchronizationEndpoint") {
+    : RpcServiceRequest("dts", "2019-09-01", "SwitchSynchronizationEndpoint") {
   setMethod(HttpRequest::Method::Post);
 }
 
 SwitchSynchronizationEndpointRequest::~SwitchSynchronizationEndpointRequest() {}
 
-std::string SwitchSynchronizationEndpointRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string SwitchSynchronizationEndpointRequest::getEndpointInstanceType() const {
+  return endpointInstanceType_;
 }
 
-void SwitchSynchronizationEndpointRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void SwitchSynchronizationEndpointRequest::setEndpointInstanceType(const std::string &endpointInstanceType) {
+  endpointInstanceType_ = endpointInstanceType;
+  setParameter(std::string("Endpoint.InstanceType"), endpointInstanceType);
+}
+
+std::string SwitchSynchronizationEndpointRequest::getEndpointIP() const {
+  return endpointIP_;
+}
+
+void SwitchSynchronizationEndpointRequest::setEndpointIP(const std::string &endpointIP) {
+  endpointIP_ = endpointIP;
+  setParameter(std::string("Endpoint.IP"), endpointIP);
+}
+
+std::string SwitchSynchronizationEndpointRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void SwitchSynchronizationEndpointRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 
 std::string SwitchSynchronizationEndpointRequest::getSynchronizationJobId() const {
@@ -52,24 +70,6 @@ void SwitchSynchronizationEndpointRequest::setEndpointType(const std::string &en
   setParameter(std::string("Endpoint.Type"), endpointType);
 }
 
-std::string SwitchSynchronizationEndpointRequest::getAccountId() const {
-  return accountId_;
-}
-
-void SwitchSynchronizationEndpointRequest::setAccountId(const std::string &accountId) {
-  accountId_ = accountId;
-  setParameter(std::string("AccountId"), accountId);
-}
-
-std::string SwitchSynchronizationEndpointRequest::getRegionId() const {
-  return regionId_;
-}
-
-void SwitchSynchronizationEndpointRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string SwitchSynchronizationEndpointRequest::getEndpointPort() const {
   return endpointPort_;
 }
@@ -77,51 +77,6 @@ std::string SwitchSynchronizationEndpointRequest::getEndpointPort() const {
 void SwitchSynchronizationEndpointRequest::setEndpointPort(const std::string &endpointPort) {
   endpointPort_ = endpointPort;
   setParameter(std::string("Endpoint.Port"), endpointPort);
-}
-
-std::string SwitchSynchronizationEndpointRequest::getEndpointInstanceType() const {
-  return endpointInstanceType_;
-}
-
-void SwitchSynchronizationEndpointRequest::setEndpointInstanceType(const std::string &endpointInstanceType) {
-  endpointInstanceType_ = endpointInstanceType;
-  setParameter(std::string("Endpoint.InstanceType"), endpointInstanceType);
-}
-
-std::string SwitchSynchronizationEndpointRequest::getSourceEndpointOwnerID() const {
-  return sourceEndpointOwnerID_;
-}
-
-void SwitchSynchronizationEndpointRequest::setSourceEndpointOwnerID(const std::string &sourceEndpointOwnerID) {
-  sourceEndpointOwnerID_ = sourceEndpointOwnerID;
-  setParameter(std::string("SourceEndpoint.OwnerID"), sourceEndpointOwnerID);
-}
-
-std::string SwitchSynchronizationEndpointRequest::getSourceEndpointRole() const {
-  return sourceEndpointRole_;
-}
-
-void SwitchSynchronizationEndpointRequest::setSourceEndpointRole(const std::string &sourceEndpointRole) {
-  sourceEndpointRole_ = sourceEndpointRole;
-  setParameter(std::string("SourceEndpoint.Role"), sourceEndpointRole);
-}
-
-std::string SwitchSynchronizationEndpointRequest::getEndpointIP() const {
-  return endpointIP_;
-}
-
-void SwitchSynchronizationEndpointRequest::setEndpointIP(const std::string &endpointIP) {
-  endpointIP_ = endpointIP;
-  setParameter(std::string("Endpoint.IP"), endpointIP);
-}
-
-std::string SwitchSynchronizationEndpointRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void SwitchSynchronizationEndpointRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
 }
 
 std::string SwitchSynchronizationEndpointRequest::getEndpointInstanceId() const {

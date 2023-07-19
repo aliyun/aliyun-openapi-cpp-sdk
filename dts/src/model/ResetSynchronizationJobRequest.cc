@@ -19,7 +19,7 @@
 using AlibabaCloud::Dts::Model::ResetSynchronizationJobRequest;
 
 ResetSynchronizationJobRequest::ResetSynchronizationJobRequest()
-    : RpcServiceRequest("dts", "2020-01-01", "ResetSynchronizationJob") {
+    : RpcServiceRequest("dts", "2019-09-01", "ResetSynchronizationJob") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -34,15 +34,6 @@ void ResetSynchronizationJobRequest::setOwnerId(const std::string &ownerId) {
   setParameter(std::string("OwnerId"), ownerId);
 }
 
-std::string ResetSynchronizationJobRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void ResetSynchronizationJobRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string ResetSynchronizationJobRequest::getSynchronizationJobId() const {
   return synchronizationJobId_;
 }
@@ -50,24 +41,6 @@ std::string ResetSynchronizationJobRequest::getSynchronizationJobId() const {
 void ResetSynchronizationJobRequest::setSynchronizationJobId(const std::string &synchronizationJobId) {
   synchronizationJobId_ = synchronizationJobId;
   setParameter(std::string("SynchronizationJobId"), synchronizationJobId);
-}
-
-std::string ResetSynchronizationJobRequest::getAccountId() const {
-  return accountId_;
-}
-
-void ResetSynchronizationJobRequest::setAccountId(const std::string &accountId) {
-  accountId_ = accountId;
-  setParameter(std::string("AccountId"), accountId);
-}
-
-std::string ResetSynchronizationJobRequest::getRegionId() const {
-  return regionId_;
-}
-
-void ResetSynchronizationJobRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string ResetSynchronizationJobRequest::getSynchronizationDirection() const {
