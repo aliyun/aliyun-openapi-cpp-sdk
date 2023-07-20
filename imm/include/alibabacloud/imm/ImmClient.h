@@ -126,8 +126,6 @@
 #include "model/ExtractDocumentTextResult.h"
 #include "model/FuzzyQueryRequest.h"
 #include "model/FuzzyQueryResult.h"
-#include "model/GenerateVideoPlaylistRequest.h"
-#include "model/GenerateVideoPlaylistResult.h"
 #include "model/GenerateWebofficeTokenRequest.h"
 #include "model/GenerateWebofficeTokenResult.h"
 #include "model/GetBatchRequest.h"
@@ -172,8 +170,6 @@
 #include "model/ListTasksResult.h"
 #include "model/ListTriggersRequest.h"
 #include "model/ListTriggersResult.h"
-#include "model/LiveTranscodingRequest.h"
-#include "model/LiveTranscodingResult.h"
 #include "model/QueryFigureClustersRequest.h"
 #include "model/QueryFigureClustersResult.h"
 #include "model/QueryLocationDateClustersRequest.h"
@@ -381,9 +377,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::FuzzyQueryResult> FuzzyQueryOutcome;
 			typedef std::future<FuzzyQueryOutcome> FuzzyQueryOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::FuzzyQueryRequest&, const FuzzyQueryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FuzzyQueryAsyncHandler;
-			typedef Outcome<Error, Model::GenerateVideoPlaylistResult> GenerateVideoPlaylistOutcome;
-			typedef std::future<GenerateVideoPlaylistOutcome> GenerateVideoPlaylistOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::GenerateVideoPlaylistRequest&, const GenerateVideoPlaylistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateVideoPlaylistAsyncHandler;
 			typedef Outcome<Error, Model::GenerateWebofficeTokenResult> GenerateWebofficeTokenOutcome;
 			typedef std::future<GenerateWebofficeTokenOutcome> GenerateWebofficeTokenOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GenerateWebofficeTokenRequest&, const GenerateWebofficeTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateWebofficeTokenAsyncHandler;
@@ -450,9 +443,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTriggersResult> ListTriggersOutcome;
 			typedef std::future<ListTriggersOutcome> ListTriggersOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::ListTriggersRequest&, const ListTriggersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTriggersAsyncHandler;
-			typedef Outcome<Error, Model::LiveTranscodingResult> LiveTranscodingOutcome;
-			typedef std::future<LiveTranscodingOutcome> LiveTranscodingOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::LiveTranscodingRequest&, const LiveTranscodingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LiveTranscodingAsyncHandler;
 			typedef Outcome<Error, Model::QueryFigureClustersResult> QueryFigureClustersOutcome;
 			typedef std::future<QueryFigureClustersOutcome> QueryFigureClustersOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::QueryFigureClustersRequest&, const QueryFigureClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryFigureClustersAsyncHandler;
@@ -677,9 +667,6 @@ namespace AlibabaCloud
 			FuzzyQueryOutcome fuzzyQuery(const Model::FuzzyQueryRequest &request)const;
 			void fuzzyQueryAsync(const Model::FuzzyQueryRequest& request, const FuzzyQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FuzzyQueryOutcomeCallable fuzzyQueryCallable(const Model::FuzzyQueryRequest& request) const;
-			GenerateVideoPlaylistOutcome generateVideoPlaylist(const Model::GenerateVideoPlaylistRequest &request)const;
-			void generateVideoPlaylistAsync(const Model::GenerateVideoPlaylistRequest& request, const GenerateVideoPlaylistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GenerateVideoPlaylistOutcomeCallable generateVideoPlaylistCallable(const Model::GenerateVideoPlaylistRequest& request) const;
 			GenerateWebofficeTokenOutcome generateWebofficeToken(const Model::GenerateWebofficeTokenRequest &request)const;
 			void generateWebofficeTokenAsync(const Model::GenerateWebofficeTokenRequest& request, const GenerateWebofficeTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GenerateWebofficeTokenOutcomeCallable generateWebofficeTokenCallable(const Model::GenerateWebofficeTokenRequest& request) const;
@@ -746,9 +733,6 @@ namespace AlibabaCloud
 			ListTriggersOutcome listTriggers(const Model::ListTriggersRequest &request)const;
 			void listTriggersAsync(const Model::ListTriggersRequest& request, const ListTriggersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTriggersOutcomeCallable listTriggersCallable(const Model::ListTriggersRequest& request) const;
-			LiveTranscodingOutcome liveTranscoding(const Model::LiveTranscodingRequest &request)const;
-			void liveTranscodingAsync(const Model::LiveTranscodingRequest& request, const LiveTranscodingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			LiveTranscodingOutcomeCallable liveTranscodingCallable(const Model::LiveTranscodingRequest& request) const;
 			QueryFigureClustersOutcome queryFigureClusters(const Model::QueryFigureClustersRequest &request)const;
 			void queryFigureClustersAsync(const Model::QueryFigureClustersRequest& request, const QueryFigureClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryFigureClustersOutcomeCallable queryFigureClustersCallable(const Model::QueryFigureClustersRequest& request) const;

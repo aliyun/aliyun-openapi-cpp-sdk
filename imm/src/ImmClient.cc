@@ -1923,42 +1923,6 @@ ImmClient::FuzzyQueryOutcomeCallable ImmClient::fuzzyQueryCallable(const FuzzyQu
 	return task->get_future();
 }
 
-ImmClient::GenerateVideoPlaylistOutcome ImmClient::generateVideoPlaylist(const GenerateVideoPlaylistRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GenerateVideoPlaylistOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GenerateVideoPlaylistOutcome(GenerateVideoPlaylistResult(outcome.result()));
-	else
-		return GenerateVideoPlaylistOutcome(outcome.error());
-}
-
-void ImmClient::generateVideoPlaylistAsync(const GenerateVideoPlaylistRequest& request, const GenerateVideoPlaylistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, generateVideoPlaylist(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::GenerateVideoPlaylistOutcomeCallable ImmClient::generateVideoPlaylistCallable(const GenerateVideoPlaylistRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GenerateVideoPlaylistOutcome()>>(
-			[this, request]()
-			{
-			return this->generateVideoPlaylist(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::GenerateWebofficeTokenOutcome ImmClient::generateWebofficeToken(const GenerateWebofficeTokenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2745,42 +2709,6 @@ ImmClient::ListTriggersOutcomeCallable ImmClient::listTriggersCallable(const Lis
 			[this, request]()
 			{
 			return this->listTriggers(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ImmClient::LiveTranscodingOutcome ImmClient::liveTranscoding(const LiveTranscodingRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return LiveTranscodingOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return LiveTranscodingOutcome(LiveTranscodingResult(outcome.result()));
-	else
-		return LiveTranscodingOutcome(outcome.error());
-}
-
-void ImmClient::liveTranscodingAsync(const LiveTranscodingRequest& request, const LiveTranscodingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, liveTranscoding(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::LiveTranscodingOutcomeCallable ImmClient::liveTranscodingCallable(const LiveTranscodingRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<LiveTranscodingOutcome()>>(
-			[this, request]()
-			{
-			return this->liveTranscoding(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

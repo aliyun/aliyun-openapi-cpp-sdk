@@ -125,8 +125,6 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/ExtractDocumentTextResult.h
 	include/alibabacloud/imm/model/FuzzyQueryRequest.h
 	include/alibabacloud/imm/model/FuzzyQueryResult.h
-	include/alibabacloud/imm/model/GenerateVideoPlaylistRequest.h
-	include/alibabacloud/imm/model/GenerateVideoPlaylistResult.h
 	include/alibabacloud/imm/model/GenerateWebofficeTokenRequest.h
 	include/alibabacloud/imm/model/GenerateWebofficeTokenResult.h
 	include/alibabacloud/imm/model/GetBatchRequest.h
@@ -171,8 +169,6 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/ListTasksResult.h
 	include/alibabacloud/imm/model/ListTriggersRequest.h
 	include/alibabacloud/imm/model/ListTriggersResult.h
-	include/alibabacloud/imm/model/LiveTranscodingRequest.h
-	include/alibabacloud/imm/model/LiveTranscodingResult.h
 	include/alibabacloud/imm/model/QueryFigureClustersRequest.h
 	include/alibabacloud/imm/model/QueryFigureClustersResult.h
 	include/alibabacloud/imm/model/QueryLocationDateClustersRequest.h
@@ -322,8 +318,6 @@ set(imm_src
 	src/model/ExtractDocumentTextResult.cc
 	src/model/FuzzyQueryRequest.cc
 	src/model/FuzzyQueryResult.cc
-	src/model/GenerateVideoPlaylistRequest.cc
-	src/model/GenerateVideoPlaylistResult.cc
 	src/model/GenerateWebofficeTokenRequest.cc
 	src/model/GenerateWebofficeTokenResult.cc
 	src/model/GetBatchRequest.cc
@@ -368,8 +362,6 @@ set(imm_src
 	src/model/ListTasksResult.cc
 	src/model/ListTriggersRequest.cc
 	src/model/ListTriggersResult.cc
-	src/model/LiveTranscodingRequest.cc
-	src/model/LiveTranscodingResult.cc
 	src/model/QueryFigureClustersRequest.cc
 	src/model/QueryFigureClustersResult.cc
 	src/model/QueryLocationDateClustersRequest.cc
