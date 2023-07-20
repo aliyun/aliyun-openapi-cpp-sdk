@@ -43,26 +43,26 @@ void ListServerlessJobsResult::parse(const std::string &payload)
 	for (auto valueJobsJobInfo : allJobsNode)
 	{
 		JobInfo jobsObject;
-		if(!valueJobsJobInfo["Id"].isNull())
-			jobsObject.id = valueJobsJobInfo["Id"].asString();
-		if(!valueJobsJobInfo["Name"].isNull())
-			jobsObject.name = valueJobsJobInfo["Name"].asString();
-		if(!valueJobsJobInfo["Owner"].isNull())
-			jobsObject.owner = valueJobsJobInfo["Owner"].asString();
-		if(!valueJobsJobInfo["IsArrayJob"].isNull())
-			jobsObject.isArrayJob = valueJobsJobInfo["IsArrayJob"].asString() == "true";
+		if(!valueJobsJobInfo["JobId"].isNull())
+			jobsObject.jobId = valueJobsJobInfo["JobId"].asString();
+		if(!valueJobsJobInfo["JobName"].isNull())
+			jobsObject.jobName = valueJobsJobInfo["JobName"].asString();
 		if(!valueJobsJobInfo["State"].isNull())
 			jobsObject.state = valueJobsJobInfo["State"].asString();
+		if(!valueJobsJobInfo["Priority"].isNull())
+			jobsObject.priority = valueJobsJobInfo["Priority"].asString();
+		if(!valueJobsJobInfo["Queue"].isNull())
+			jobsObject.queue = valueJobsJobInfo["Queue"].asString();
+		if(!valueJobsJobInfo["User"].isNull())
+			jobsObject.user = valueJobsJobInfo["User"].asString();
 		if(!valueJobsJobInfo["SubmitTime"].isNull())
 			jobsObject.submitTime = valueJobsJobInfo["SubmitTime"].asString();
 		if(!valueJobsJobInfo["StartTime"].isNull())
 			jobsObject.startTime = valueJobsJobInfo["StartTime"].asString();
 		if(!valueJobsJobInfo["EndTime"].isNull())
 			jobsObject.endTime = valueJobsJobInfo["EndTime"].asString();
-		if(!valueJobsJobInfo["Priority"].isNull())
-			jobsObject.priority = valueJobsJobInfo["Priority"].asString();
-		if(!valueJobsJobInfo["Queue"].isNull())
-			jobsObject.queue = valueJobsJobInfo["Queue"].asString();
+		if(!valueJobsJobInfo["IsArrayJob"].isNull())
+			jobsObject.isArrayJob = valueJobsJobInfo["IsArrayJob"].asString() == "true";
 		jobs_.push_back(jobsObject);
 	}
 	if(!value["TotalCount"].isNull())

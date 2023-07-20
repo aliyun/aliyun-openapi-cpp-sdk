@@ -43,28 +43,28 @@ void DescribeServerlessJobsResult::parse(const std::string &payload)
 	for (auto valueJobInfosJobInfo : allJobInfosNode)
 	{
 		JobInfo jobInfosObject;
-		if(!valueJobInfosJobInfo["EndTime"].isNull())
-			jobInfosObject.endTime = std::stol(valueJobInfosJobInfo["EndTime"].asString());
-		if(!valueJobInfosJobInfo["Id"].isNull())
-			jobInfosObject.id = valueJobInfosJobInfo["Id"].asString();
-		if(!valueJobInfosJobInfo["IsArrayJob"].isNull())
-			jobInfosObject.isArrayJob = valueJobInfosJobInfo["IsArrayJob"].asString() == "true";
-		if(!valueJobInfosJobInfo["LastModifyTime"].isNull())
-			jobInfosObject.lastModifyTime = std::stol(valueJobInfosJobInfo["LastModifyTime"].asString());
-		if(!valueJobInfosJobInfo["Name"].isNull())
-			jobInfosObject.name = valueJobInfosJobInfo["Name"].asString();
-		if(!valueJobInfosJobInfo["Owner"].isNull())
-			jobInfosObject.owner = valueJobInfosJobInfo["Owner"].asString();
+		if(!valueJobInfosJobInfo["JobId"].isNull())
+			jobInfosObject.jobId = valueJobInfosJobInfo["JobId"].asString();
+		if(!valueJobInfosJobInfo["JobName"].isNull())
+			jobInfosObject.jobName = valueJobInfosJobInfo["JobName"].asString();
+		if(!valueJobInfosJobInfo["State"].isNull())
+			jobInfosObject.state = valueJobInfosJobInfo["State"].asString();
 		if(!valueJobInfosJobInfo["Priority"].isNull())
 			jobInfosObject.priority = std::stol(valueJobInfosJobInfo["Priority"].asString());
 		if(!valueJobInfosJobInfo["Queue"].isNull())
 			jobInfosObject.queue = valueJobInfosJobInfo["Queue"].asString();
-		if(!valueJobInfosJobInfo["StartTime"].isNull())
-			jobInfosObject.startTime = std::stol(valueJobInfosJobInfo["StartTime"].asString());
-		if(!valueJobInfosJobInfo["State"].isNull())
-			jobInfosObject.state = valueJobInfosJobInfo["State"].asString();
+		if(!valueJobInfosJobInfo["User"].isNull())
+			jobInfosObject.user = valueJobInfosJobInfo["User"].asString();
 		if(!valueJobInfosJobInfo["SubmitTime"].isNull())
 			jobInfosObject.submitTime = std::stol(valueJobInfosJobInfo["SubmitTime"].asString());
+		if(!valueJobInfosJobInfo["StartTime"].isNull())
+			jobInfosObject.startTime = std::stol(valueJobInfosJobInfo["StartTime"].asString());
+		if(!valueJobInfosJobInfo["EndTime"].isNull())
+			jobInfosObject.endTime = std::stol(valueJobInfosJobInfo["EndTime"].asString());
+		if(!valueJobInfosJobInfo["LastModifyTime"].isNull())
+			jobInfosObject.lastModifyTime = std::stol(valueJobInfosJobInfo["LastModifyTime"].asString());
+		if(!valueJobInfosJobInfo["IsArrayJob"].isNull())
+			jobInfosObject.isArrayJob = valueJobInfosJobInfo["IsArrayJob"].asString() == "true";
 		auto allContainerGroupsNode = valueJobInfosJobInfo["ContainerGroups"]["ContainerGroup"];
 		for (auto valueJobInfosJobInfoContainerGroupsContainerGroup : allContainerGroupsNode)
 		{
@@ -73,30 +73,38 @@ void DescribeServerlessJobsResult::parse(const std::string &payload)
 				containerGroupsObject.containerGroupId = valueJobInfosJobInfoContainerGroupsContainerGroup["ContainerGroupId"].asString();
 			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["ContainerGroupName"].isNull())
 				containerGroupsObject.containerGroupName = valueJobInfosJobInfoContainerGroupsContainerGroup["ContainerGroupName"].asString();
+			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["Status"].isNull())
+				containerGroupsObject.status = valueJobInfosJobInfoContainerGroupsContainerGroup["Status"].asString();
+			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["InstanceType"].isNull())
+				containerGroupsObject.instanceType = valueJobInfosJobInfoContainerGroupsContainerGroup["InstanceType"].asString();
+			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["SpotStrategy"].isNull())
+				containerGroupsObject.spotStrategy = valueJobInfosJobInfoContainerGroupsContainerGroup["SpotStrategy"].asString();
+			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["SpotPriceLimit"].isNull())
+				containerGroupsObject.spotPriceLimit = std::stof(valueJobInfosJobInfoContainerGroupsContainerGroup["SpotPriceLimit"].asString());
 			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["Cpu"].isNull())
 				containerGroupsObject.cpu = std::stof(valueJobInfosJobInfoContainerGroupsContainerGroup["Cpu"].asString());
+			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["Memory"].isNull())
+				containerGroupsObject.memory = std::stof(valueJobInfosJobInfoContainerGroupsContainerGroup["Memory"].asString());
 			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["CreationTime"].isNull())
 				containerGroupsObject.creationTime = valueJobInfosJobInfoContainerGroupsContainerGroup["CreationTime"].asString();
+			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["SucceededTime"].isNull())
+				containerGroupsObject.succeededTime = valueJobInfosJobInfoContainerGroupsContainerGroup["SucceededTime"].asString();
+			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["ExpiredTime"].isNull())
+				containerGroupsObject.expiredTime = valueJobInfosJobInfoContainerGroupsContainerGroup["ExpiredTime"].asString();
+			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["FailedTime"].isNull())
+				containerGroupsObject.failedTime = valueJobInfosJobInfoContainerGroupsContainerGroup["FailedTime"].asString();
 			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["Discount"].isNull())
 				containerGroupsObject.discount = std::stol(valueJobInfosJobInfoContainerGroupsContainerGroup["Discount"].asString());
 			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["EniInstanceId"].isNull())
 				containerGroupsObject.eniInstanceId = valueJobInfosJobInfoContainerGroupsContainerGroup["EniInstanceId"].asString();
 			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["EphemeralStorage"].isNull())
 				containerGroupsObject.ephemeralStorage = std::stol(valueJobInfosJobInfoContainerGroupsContainerGroup["EphemeralStorage"].asString());
-			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["ExpiredTime"].isNull())
-				containerGroupsObject.expiredTime = valueJobInfosJobInfoContainerGroupsContainerGroup["ExpiredTime"].asString();
-			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["FailedTime"].isNull())
-				containerGroupsObject.failedTime = valueJobInfosJobInfoContainerGroupsContainerGroup["FailedTime"].asString();
-			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["InstanceType"].isNull())
-				containerGroupsObject.instanceType = valueJobInfosJobInfoContainerGroupsContainerGroup["InstanceType"].asString();
 			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["InternetIp"].isNull())
 				containerGroupsObject.internetIp = valueJobInfosJobInfoContainerGroupsContainerGroup["InternetIp"].asString();
 			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["IntranetIp"].isNull())
 				containerGroupsObject.intranetIp = valueJobInfosJobInfoContainerGroupsContainerGroup["IntranetIp"].asString();
 			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["Ipv6Address"].isNull())
 				containerGroupsObject.ipv6Address = valueJobInfosJobInfoContainerGroupsContainerGroup["Ipv6Address"].asString();
-			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["Memory"].isNull())
-				containerGroupsObject.memory = std::stof(valueJobInfosJobInfoContainerGroupsContainerGroup["Memory"].asString());
 			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["RamRoleName"].isNull())
 				containerGroupsObject.ramRoleName = valueJobInfosJobInfoContainerGroupsContainerGroup["RamRoleName"].asString();
 			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["RegionId"].isNull())
@@ -107,14 +115,6 @@ void DescribeServerlessJobsResult::parse(const std::string &payload)
 				containerGroupsObject.restartPolicy = valueJobInfosJobInfoContainerGroupsContainerGroup["RestartPolicy"].asString();
 			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["SecurityGroupId"].isNull())
 				containerGroupsObject.securityGroupId = valueJobInfosJobInfoContainerGroupsContainerGroup["SecurityGroupId"].asString();
-			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["SpotPriceLimit"].isNull())
-				containerGroupsObject.spotPriceLimit = std::stof(valueJobInfosJobInfoContainerGroupsContainerGroup["SpotPriceLimit"].asString());
-			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["SpotStrategy"].isNull())
-				containerGroupsObject.spotStrategy = valueJobInfosJobInfoContainerGroupsContainerGroup["SpotStrategy"].asString();
-			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["Status"].isNull())
-				containerGroupsObject.status = valueJobInfosJobInfoContainerGroupsContainerGroup["Status"].asString();
-			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["SucceededTime"].isNull())
-				containerGroupsObject.succeededTime = valueJobInfosJobInfoContainerGroupsContainerGroup["SucceededTime"].asString();
 			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["TenantEniInstanceId"].isNull())
 				containerGroupsObject.tenantEniInstanceId = valueJobInfosJobInfoContainerGroupsContainerGroup["TenantEniInstanceId"].asString();
 			if(!valueJobInfosJobInfoContainerGroupsContainerGroup["TenantEniIp"].isNull())
@@ -300,6 +300,46 @@ void DescribeServerlessJobsResult::parse(const std::string &payload)
 					containersObject.commands.push_back(value.asString());
 				containerGroupsObject.containers.push_back(containersObject);
 			}
+			auto allVolumesNode = valueJobInfosJobInfoContainerGroupsContainerGroup["Volumes"]["Volume"];
+			for (auto valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume : allVolumesNode)
+			{
+				JobInfo::ContainerGroup::Volume volumesObject;
+				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["DiskVolumeDiskId"].isNull())
+					volumesObject.diskVolumeDiskId = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["DiskVolumeDiskId"].asString();
+				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["DiskVolumeFsType"].isNull())
+					volumesObject.diskVolumeFsType = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["DiskVolumeFsType"].asString();
+				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["EmptyDirVolumeMedium"].isNull())
+					volumesObject.emptyDirVolumeMedium = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["EmptyDirVolumeMedium"].asString();
+				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["EmptyDirVolumeSizeLimit"].isNull())
+					volumesObject.emptyDirVolumeSizeLimit = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["EmptyDirVolumeSizeLimit"].asString();
+				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["FlexVolumeDriver"].isNull())
+					volumesObject.flexVolumeDriver = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["FlexVolumeDriver"].asString();
+				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["FlexVolumeFsType"].isNull())
+					volumesObject.flexVolumeFsType = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["FlexVolumeFsType"].asString();
+				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["FlexVolumeOptions"].isNull())
+					volumesObject.flexVolumeOptions = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["FlexVolumeOptions"].asString();
+				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["NFSVolumePath"].isNull())
+					volumesObject.nFSVolumePath = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["NFSVolumePath"].asString();
+				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["NFSVolumeReadOnly"].isNull())
+					volumesObject.nFSVolumeReadOnly = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["NFSVolumeReadOnly"].asString() == "true";
+				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["NFSVolumeServer"].isNull())
+					volumesObject.nFSVolumeServer = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["NFSVolumeServer"].asString();
+				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["Name"].isNull())
+					volumesObject.name = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["Name"].asString();
+				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["Type"].isNull())
+					volumesObject.type = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["Type"].asString();
+				auto allConfigFileVolumeConfigFileToPathsNode = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["ConfigFileVolumeConfigFileToPaths"]["ConfigFileVolumeConfigFileToPath"];
+				for (auto valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolumeConfigFileVolumeConfigFileToPathsConfigFileVolumeConfigFileToPath : allConfigFileVolumeConfigFileToPathsNode)
+				{
+					JobInfo::ContainerGroup::Volume::ConfigFileVolumeConfigFileToPath configFileVolumeConfigFileToPathsObject;
+					if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolumeConfigFileVolumeConfigFileToPathsConfigFileVolumeConfigFileToPath["Content"].isNull())
+						configFileVolumeConfigFileToPathsObject.content = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolumeConfigFileVolumeConfigFileToPathsConfigFileVolumeConfigFileToPath["Content"].asString();
+					if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolumeConfigFileVolumeConfigFileToPathsConfigFileVolumeConfigFileToPath["Path"].isNull())
+						configFileVolumeConfigFileToPathsObject.path = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolumeConfigFileVolumeConfigFileToPathsConfigFileVolumeConfigFileToPath["Path"].asString();
+					volumesObject.configFileVolumeConfigFileToPaths.push_back(configFileVolumeConfigFileToPathsObject);
+				}
+				containerGroupsObject.volumes.push_back(volumesObject);
+			}
 			auto allEventsNode = valueJobInfosJobInfoContainerGroupsContainerGroup["Events"]["Event"];
 			for (auto valueJobInfosJobInfoContainerGroupsContainerGroupEventsEvent : allEventsNode)
 			{
@@ -451,46 +491,6 @@ void DescribeServerlessJobsResult::parse(const std::string &payload)
 				if(!valueJobInfosJobInfoContainerGroupsContainerGroupTagsTag["Value"].isNull())
 					tagsObject.value = valueJobInfosJobInfoContainerGroupsContainerGroupTagsTag["Value"].asString();
 				containerGroupsObject.tags.push_back(tagsObject);
-			}
-			auto allVolumesNode = valueJobInfosJobInfoContainerGroupsContainerGroup["Volumes"]["Volume"];
-			for (auto valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume : allVolumesNode)
-			{
-				JobInfo::ContainerGroup::Volume volumesObject;
-				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["DiskVolumeDiskId"].isNull())
-					volumesObject.diskVolumeDiskId = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["DiskVolumeDiskId"].asString();
-				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["DiskVolumeFsType"].isNull())
-					volumesObject.diskVolumeFsType = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["DiskVolumeFsType"].asString();
-				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["EmptyDirVolumeMedium"].isNull())
-					volumesObject.emptyDirVolumeMedium = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["EmptyDirVolumeMedium"].asString();
-				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["EmptyDirVolumeSizeLimit"].isNull())
-					volumesObject.emptyDirVolumeSizeLimit = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["EmptyDirVolumeSizeLimit"].asString();
-				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["FlexVolumeDriver"].isNull())
-					volumesObject.flexVolumeDriver = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["FlexVolumeDriver"].asString();
-				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["FlexVolumeFsType"].isNull())
-					volumesObject.flexVolumeFsType = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["FlexVolumeFsType"].asString();
-				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["FlexVolumeOptions"].isNull())
-					volumesObject.flexVolumeOptions = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["FlexVolumeOptions"].asString();
-				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["NFSVolumePath"].isNull())
-					volumesObject.nFSVolumePath = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["NFSVolumePath"].asString();
-				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["NFSVolumeReadOnly"].isNull())
-					volumesObject.nFSVolumeReadOnly = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["NFSVolumeReadOnly"].asString() == "true";
-				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["NFSVolumeServer"].isNull())
-					volumesObject.nFSVolumeServer = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["NFSVolumeServer"].asString();
-				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["Name"].isNull())
-					volumesObject.name = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["Name"].asString();
-				if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["Type"].isNull())
-					volumesObject.type = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["Type"].asString();
-				auto allConfigFileVolumeConfigFileToPathsNode = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolume["ConfigFileVolumeConfigFileToPaths"]["ConfigFileVolumeConfigFileToPath"];
-				for (auto valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolumeConfigFileVolumeConfigFileToPathsConfigFileVolumeConfigFileToPath : allConfigFileVolumeConfigFileToPathsNode)
-				{
-					JobInfo::ContainerGroup::Volume::ConfigFileVolumeConfigFileToPath configFileVolumeConfigFileToPathsObject;
-					if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolumeConfigFileVolumeConfigFileToPathsConfigFileVolumeConfigFileToPath["Content"].isNull())
-						configFileVolumeConfigFileToPathsObject.content = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolumeConfigFileVolumeConfigFileToPathsConfigFileVolumeConfigFileToPath["Content"].asString();
-					if(!valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolumeConfigFileVolumeConfigFileToPathsConfigFileVolumeConfigFileToPath["Path"].isNull())
-						configFileVolumeConfigFileToPathsObject.path = valueJobInfosJobInfoContainerGroupsContainerGroupVolumesVolumeConfigFileVolumeConfigFileToPathsConfigFileVolumeConfigFileToPath["Path"].asString();
-					volumesObject.configFileVolumeConfigFileToPaths.push_back(configFileVolumeConfigFileToPathsObject);
-				}
-				containerGroupsObject.volumes.push_back(volumesObject);
 			}
 			auto dnsConfigNode = value["DnsConfig"];
 			auto allOptionsNode = dnsConfigNode["Options"]["Option"];

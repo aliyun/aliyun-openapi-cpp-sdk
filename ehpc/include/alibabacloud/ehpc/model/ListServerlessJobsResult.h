@@ -34,16 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct JobInfo
 				{
-					std::string owner;
+					std::string user;
 					std::string endTime;
 					std::string state;
 					std::string priority;
 					bool isArrayJob;
+					std::string jobName;
 					std::string startTime;
-					std::string id;
-					std::string submitTime;
 					std::string queue;
-					std::string name;
+					std::string submitTime;
+					std::string jobId;
 				};
 
 

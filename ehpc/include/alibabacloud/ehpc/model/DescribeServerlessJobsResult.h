@@ -190,6 +190,27 @@ namespace AlibabaCloud
 							bool tty;
 							std::vector<std::string> commands;
 						};
+						struct Volume
+						{
+							struct ConfigFileVolumeConfigFileToPath
+							{
+								std::string path;
+								std::string content;
+							};
+							std::string emptyDirVolumeSizeLimit;
+							std::string flexVolumeFsType;
+							std::string nFSVolumeServer;
+							std::vector<Volume::ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths;
+							bool nFSVolumeReadOnly;
+							std::string name;
+							std::string nFSVolumePath;
+							std::string type;
+							std::string flexVolumeDriver;
+							std::string diskVolumeDiskId;
+							std::string flexVolumeOptions;
+							std::string emptyDirVolumeMedium;
+							std::string diskVolumeFsType;
+						};
 						struct Event
 						{
 							std::string type;
@@ -288,27 +309,6 @@ namespace AlibabaCloud
 							std::string value;
 							std::string key;
 						};
-						struct Volume
-						{
-							struct ConfigFileVolumeConfigFileToPath
-							{
-								std::string path;
-								std::string content;
-							};
-							std::string emptyDirVolumeSizeLimit;
-							std::string flexVolumeFsType;
-							std::string nFSVolumeServer;
-							std::vector<Volume::ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths;
-							bool nFSVolumeReadOnly;
-							std::string name;
-							std::string nFSVolumePath;
-							std::string type;
-							std::string flexVolumeDriver;
-							std::string diskVolumeDiskId;
-							std::string flexVolumeOptions;
-							std::string emptyDirVolumeMedium;
-							std::string diskVolumeFsType;
-						};
 						long discount;
 						std::string resourceGroupId;
 						float memory;
@@ -328,8 +328,8 @@ namespace AlibabaCloud
 						float spotPriceLimit;
 						std::string instanceType;
 						std::vector<ContainerGroup::Tag> tags;
-						std::string ipv6Address;
 						std::string spotStrategy;
+						std::string ipv6Address;
 						std::string status;
 						std::string tenantEniIp;
 						std::vector<ContainerGroup::InitContainer> initContainers;
@@ -348,19 +348,19 @@ namespace AlibabaCloud
 						std::string regionId;
 						long ephemeralStorage;
 					};
-					std::string owner;
+					std::string user;
 					std::vector<JobInfo::ContainerGroup> containerGroups;
 					long endTime;
 					long priority;
+					std::string jobName;
 					long startTime;
 					long lastModifyTime;
 					long submitTime;
-					std::string name;
 					ArrayProperties arrayProperties;
 					std::string state;
 					bool isArrayJob;
-					std::string id;
 					std::string queue;
+					std::string jobId;
 				};
 
 
