@@ -57,15 +57,22 @@ void DescribeRegionBandwidthQuotaResult::parse(const std::string &payload)
 				instanceInfoObject.instanceNumber = std::stol(valueBandwidthQuota带宽配额InstanceInfo实例信息["InstanceNumber"].asString());
 			bandwidthQuotaObject.instanceInfo.push_back(instanceInfoObject);
 		}
-		auto bandwidthInfoNode = value["BandwidthInfo"];
-		if(!bandwidthInfoNode["MonthMax"].isNull())
-			bandwidthQuotaObject.bandwidthInfo.monthMax = std::stol(bandwidthInfoNode["MonthMax"].asString());
-		if(!bandwidthInfoNode["WeekMax"].isNull())
-			bandwidthQuotaObject.bandwidthInfo.weekMax = std::stol(bandwidthInfoNode["WeekMax"].asString());
-		if(!bandwidthInfoNode["MonthAverageQuota"].isNull())
-			bandwidthQuotaObject.bandwidthInfo.monthAverageQuota = std::stol(bandwidthInfoNode["MonthAverageQuota"].asString());
-		if(!bandwidthInfoNode["WeekAverageQuota"].isNull())
-			bandwidthQuotaObject.bandwidthInfo.weekAverageQuota = std::stol(bandwidthInfoNode["WeekAverageQuota"].asString());
+		auto allBandwidthInfoNode = valueBandwidthQuota带宽配额["BandwidthInfo"]["带宽信息"];
+		for (auto valueBandwidthQuota带宽配额BandwidthInfo带宽信息 : allBandwidthInfoNode)
+		{
+			带宽配额::带宽信息 bandwidthInfoObject;
+			if(!valueBandwidthQuota带宽配额BandwidthInfo带宽信息["MonthMax"].isNull())
+				bandwidthInfoObject.monthMax = std::stol(valueBandwidthQuota带宽配额BandwidthInfo带宽信息["MonthMax"].asString());
+			if(!valueBandwidthQuota带宽配额BandwidthInfo带宽信息["WeekMax"].isNull())
+				bandwidthInfoObject.weekMax = std::stol(valueBandwidthQuota带宽配额BandwidthInfo带宽信息["WeekMax"].asString());
+			if(!valueBandwidthQuota带宽配额BandwidthInfo带宽信息["MonthAverageQuota"].isNull())
+				bandwidthInfoObject.monthAverageQuota = std::stol(valueBandwidthQuota带宽配额BandwidthInfo带宽信息["MonthAverageQuota"].asString());
+			if(!valueBandwidthQuota带宽配额BandwidthInfo带宽信息["WeekAverageQuota"].isNull())
+				bandwidthInfoObject.weekAverageQuota = std::stol(valueBandwidthQuota带宽配额BandwidthInfo带宽信息["WeekAverageQuota"].asString());
+			if(!valueBandwidthQuota带宽配额BandwidthInfo带宽信息["Isp"].isNull())
+				bandwidthInfoObject.isp = valueBandwidthQuota带宽配额BandwidthInfo带宽信息["Isp"].asString();
+			bandwidthQuotaObject.bandwidthInfo.push_back(bandwidthInfoObject);
+		}
 		bandwidthQuota_.push_back(bandwidthQuotaObject);
 	}
 

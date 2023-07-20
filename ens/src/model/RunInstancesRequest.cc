@@ -95,6 +95,7 @@ RunInstancesRequest::SystemDisk RunInstancesRequest::getSystemDisk() const {
 void RunInstancesRequest::setSystemDisk(const RunInstancesRequest::SystemDisk &systemDisk) {
   systemDisk_ = systemDisk;
   setParameter(std::string("SystemDisk") + ".Size", std::to_string(systemDisk.size));
+  setParameter(std::string("SystemDisk") + ".Category", systemDisk.category);
 }
 
 std::string RunInstancesRequest::getNetDistrictCode() const {

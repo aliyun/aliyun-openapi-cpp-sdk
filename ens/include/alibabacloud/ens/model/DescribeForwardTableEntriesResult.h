@@ -36,11 +36,16 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string externalPort;
+					std::string standbyExternalIpIsp;
 					std::string externalIp;
 					std::string forwardEntryId;
+					std::string standbyEnsRegionId;
+					std::string externalIpIsp;
 					std::string ipProtocol;
+					std::string standbyExternalIp;
 					std::string internalPort;
 					std::string healthCheckPort;
+					std::string standbyStatus;
 					std::string natGatewayId;
 					std::string forwardEntryName;
 					std::string internalIp;

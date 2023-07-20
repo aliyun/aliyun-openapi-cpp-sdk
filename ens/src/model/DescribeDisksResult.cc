@@ -69,6 +69,8 @@ void DescribeDisksResult::parse(const std::string &payload)
 			disksObject.portable = valueDisksDisksItem["Portable"].asString() == "true";
 		if(!valueDisksDisksItem["SnapshotId"].isNull())
 			disksObject.snapshotId = valueDisksDisksItem["SnapshotId"].asString();
+		if(!valueDisksDisksItem["SerialId"].isNull())
+			disksObject.serialId = valueDisksDisksItem["SerialId"].asString();
 		disks_.push_back(disksObject);
 	}
 	if(!value["Code"].isNull())

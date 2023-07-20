@@ -40,6 +40,8 @@ public:
 	void setHealthCheckPort(int healthCheckPort);
 	std::string getExternalPort() const;
 	void setExternalPort(const std::string &externalPort);
+	std::string getStandbyExternalIp() const;
+	void setStandbyExternalIp(const std::string &standbyExternalIp);
 	std::string getNatGatewayId() const;
 	void setNatGatewayId(const std::string &natGatewayId);
 	std::string getForwardEntryName() const;
@@ -53,6 +55,7 @@ private:
 	std::string ipProtocol_;
 	int healthCheckPort_;
 	std::string externalPort_;
+	std::string standbyExternalIp_;
 	std::string natGatewayId_;
 	std::string forwardEntryName_;
 	std::string internalPort_;

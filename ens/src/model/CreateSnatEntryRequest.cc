@@ -25,15 +25,6 @@ CreateSnatEntryRequest::CreateSnatEntryRequest()
 
 CreateSnatEntryRequest::~CreateSnatEntryRequest() {}
 
-std::string CreateSnatEntryRequest::getSourceCIDR() const {
-  return sourceCIDR_;
-}
-
-void CreateSnatEntryRequest::setSourceCIDR(const std::string &sourceCIDR) {
-  sourceCIDR_ = sourceCIDR;
-  setParameter(std::string("SourceCIDR"), sourceCIDR);
-}
-
 std::string CreateSnatEntryRequest::getSnatIp() const {
   return snatIp_;
 }
@@ -59,6 +50,24 @@ std::string CreateSnatEntryRequest::getSourceNetworkId() const {
 void CreateSnatEntryRequest::setSourceNetworkId(const std::string &sourceNetworkId) {
   sourceNetworkId_ = sourceNetworkId;
   setParameter(std::string("SourceNetworkId"), sourceNetworkId);
+}
+
+std::string CreateSnatEntryRequest::getStandbySnatIp() const {
+  return standbySnatIp_;
+}
+
+void CreateSnatEntryRequest::setStandbySnatIp(const std::string &standbySnatIp) {
+  standbySnatIp_ = standbySnatIp;
+  setParameter(std::string("StandbySnatIp"), standbySnatIp);
+}
+
+std::string CreateSnatEntryRequest::getSourceCIDR() const {
+  return sourceCIDR_;
+}
+
+void CreateSnatEntryRequest::setSourceCIDR(const std::string &sourceCIDR) {
+  sourceCIDR_ = sourceCIDR;
+  setParameter(std::string("SourceCIDR"), sourceCIDR);
 }
 
 std::string CreateSnatEntryRequest::getNatGatewayId() const {

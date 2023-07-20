@@ -25,6 +25,15 @@ DescribeEnsSaleControlAvailableResourceRequest::DescribeEnsSaleControlAvailableR
 
 DescribeEnsSaleControlAvailableResourceRequest::~DescribeEnsSaleControlAvailableResourceRequest() {}
 
+std::string DescribeEnsSaleControlAvailableResourceRequest::getCustomAccount() const {
+  return customAccount_;
+}
+
+void DescribeEnsSaleControlAvailableResourceRequest::setCustomAccount(const std::string &customAccount) {
+  customAccount_ = customAccount;
+  setParameter(std::string("CustomAccount"), customAccount);
+}
+
 std::string DescribeEnsSaleControlAvailableResourceRequest::getCommodityCode() const {
   return commodityCode_;
 }

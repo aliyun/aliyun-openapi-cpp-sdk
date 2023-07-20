@@ -50,7 +50,9 @@ namespace AlibabaCloud
 				std::vector<Snatip> getSnatIps()const;
 				std::string getSnatEntryId()const;
 				std::string getSnatIp()const;
+				std::string getStandbyStatus()const;
 				std::string getNatGatewayId()const;
+				std::string getStandbySnatIp()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -62,7 +64,9 @@ namespace AlibabaCloud
 				std::vector<Snatip> snatIps_;
 				std::string snatEntryId_;
 				std::string snatIp_;
+				std::string standbyStatus_;
 				std::string natGatewayId_;
+				std::string standbySnatIp_;
 
 			};
 		}

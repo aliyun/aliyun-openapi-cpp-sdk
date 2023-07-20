@@ -5163,6 +5163,78 @@ EnsClient::DescribeVSwitchesOutcomeCallable EnsClient::describeVSwitchesCallable
 	return task->get_future();
 }
 
+EnsClient::DescribeWorkflowOutcome EnsClient::describeWorkflow(const DescribeWorkflowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeWorkflowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeWorkflowOutcome(DescribeWorkflowResult(outcome.result()));
+	else
+		return DescribeWorkflowOutcome(outcome.error());
+}
+
+void EnsClient::describeWorkflowAsync(const DescribeWorkflowRequest& request, const DescribeWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeWorkflow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeWorkflowOutcomeCallable EnsClient::describeWorkflowCallable(const DescribeWorkflowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeWorkflowOutcome()>>(
+			[this, request]()
+			{
+			return this->describeWorkflow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeWorkflowActivityOutcome EnsClient::describeWorkflowActivity(const DescribeWorkflowActivityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeWorkflowActivityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeWorkflowActivityOutcome(DescribeWorkflowActivityResult(outcome.result()));
+	else
+		return DescribeWorkflowActivityOutcome(outcome.error());
+}
+
+void EnsClient::describeWorkflowActivityAsync(const DescribeWorkflowActivityRequest& request, const DescribeWorkflowActivityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeWorkflowActivity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeWorkflowActivityOutcomeCallable EnsClient::describeWorkflowActivityCallable(const DescribeWorkflowActivityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeWorkflowActivityOutcome()>>(
+			[this, request]()
+			{
+			return this->describeWorkflowActivity(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DetachDiskOutcome EnsClient::detachDisk(const DetachDiskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7071,6 +7143,78 @@ EnsClient::RestartDeviceInstanceOutcomeCallable EnsClient::restartDeviceInstance
 	return task->get_future();
 }
 
+EnsClient::RestartWorkflowOutcome EnsClient::restartWorkflow(const RestartWorkflowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RestartWorkflowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RestartWorkflowOutcome(RestartWorkflowResult(outcome.result()));
+	else
+		return RestartWorkflowOutcome(outcome.error());
+}
+
+void EnsClient::restartWorkflowAsync(const RestartWorkflowRequest& request, const RestartWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, restartWorkflow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::RestartWorkflowOutcomeCallable EnsClient::restartWorkflowCallable(const RestartWorkflowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RestartWorkflowOutcome()>>(
+			[this, request]()
+			{
+			return this->restartWorkflow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::RetryWorkflowOutcome EnsClient::retryWorkflow(const RetryWorkflowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RetryWorkflowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RetryWorkflowOutcome(RetryWorkflowResult(outcome.result()));
+	else
+		return RetryWorkflowOutcome(outcome.error());
+}
+
+void EnsClient::retryWorkflowAsync(const RetryWorkflowRequest& request, const RetryWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, retryWorkflow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::RetryWorkflowOutcomeCallable EnsClient::retryWorkflowCallable(const RetryWorkflowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RetryWorkflowOutcome()>>(
+			[this, request]()
+			{
+			return this->retryWorkflow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::RevokeSecurityGroupOutcome EnsClient::revokeSecurityGroup(const RevokeSecurityGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7173,6 +7317,42 @@ EnsClient::RollbackApplicationOutcomeCallable EnsClient::rollbackApplicationCall
 			[this, request]()
 			{
 			return this->rollbackApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::RollbackWorkflowOutcome EnsClient::rollbackWorkflow(const RollbackWorkflowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RollbackWorkflowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RollbackWorkflowOutcome(RollbackWorkflowResult(outcome.result()));
+	else
+		return RollbackWorkflowOutcome(outcome.error());
+}
+
+void EnsClient::rollbackWorkflowAsync(const RollbackWorkflowRequest& request, const RollbackWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rollbackWorkflow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::RollbackWorkflowOutcomeCallable EnsClient::rollbackWorkflowCallable(const RollbackWorkflowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RollbackWorkflowOutcome()>>(
+			[this, request]()
+			{
+			return this->rollbackWorkflow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7821,6 +8001,42 @@ EnsClient::StopSnatIpForSnatEntryOutcomeCallable EnsClient::stopSnatIpForSnatEnt
 			[this, request]()
 			{
 			return this->stopSnatIpForSnatEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::TerminateWorkflowOutcome EnsClient::terminateWorkflow(const TerminateWorkflowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TerminateWorkflowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TerminateWorkflowOutcome(TerminateWorkflowResult(outcome.result()));
+	else
+		return TerminateWorkflowOutcome(outcome.error());
+}
+
+void EnsClient::terminateWorkflowAsync(const TerminateWorkflowRequest& request, const TerminateWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, terminateWorkflow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::TerminateWorkflowOutcomeCallable EnsClient::terminateWorkflowCallable(const TerminateWorkflowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TerminateWorkflowOutcome()>>(
+			[this, request]()
+			{
+			return this->terminateWorkflow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -69,6 +69,10 @@ void DescribeEnsEipAddressesResult::parse(const std::string &payload)
 			eipAddressesObject.status = valueEipAddressesEipAddress["Status"].asString();
 		if(!valueEipAddressesEipAddress["Isp"].isNull())
 			eipAddressesObject.isp = valueEipAddressesEipAddress["Isp"].asString();
+		if(!valueEipAddressesEipAddress["Standby"].isNull())
+			eipAddressesObject.standby = valueEipAddressesEipAddress["Standby"].asString() == "true";
+		if(!valueEipAddressesEipAddress["IpStatus"].isNull())
+			eipAddressesObject.ipStatus = valueEipAddressesEipAddress["IpStatus"].asString();
 		eipAddresses_.push_back(eipAddressesObject);
 	}
 	if(!value["PageNumber"].isNull())

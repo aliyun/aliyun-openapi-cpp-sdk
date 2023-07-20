@@ -39,12 +39,14 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string allocationId;
 					std::string isp;
+					bool standby;
 					std::string internetChargeType;
 					std::string name;
 					std::string allocationTime;
 					std::string chargeType;
 					int bandwidth;
 					std::string ipAddress;
+					std::string ipStatus;
 					std::string instanceType;
 					std::string ensRegionId;
 				};

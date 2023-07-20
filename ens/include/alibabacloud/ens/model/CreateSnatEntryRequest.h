@@ -30,24 +30,27 @@ class ALIBABACLOUD_ENS_EXPORT CreateSnatEntryRequest : public RpcServiceRequest 
 public:
 	CreateSnatEntryRequest();
 	~CreateSnatEntryRequest();
-	std::string getSourceCIDR() const;
-	void setSourceCIDR(const std::string &sourceCIDR);
 	std::string getSnatIp() const;
 	void setSnatIp(const std::string &snatIp);
 	std::string getSourceVSwitchId() const;
 	void setSourceVSwitchId(const std::string &sourceVSwitchId);
 	std::string getSourceNetworkId() const;
 	void setSourceNetworkId(const std::string &sourceNetworkId);
+	std::string getStandbySnatIp() const;
+	void setStandbySnatIp(const std::string &standbySnatIp);
+	std::string getSourceCIDR() const;
+	void setSourceCIDR(const std::string &sourceCIDR);
 	std::string getNatGatewayId() const;
 	void setNatGatewayId(const std::string &natGatewayId);
 	std::string getSnatEntryName() const;
 	void setSnatEntryName(const std::string &snatEntryName);
 
 private:
-	std::string sourceCIDR_;
 	std::string snatIp_;
 	std::string sourceVSwitchId_;
 	std::string sourceNetworkId_;
+	std::string standbySnatIp_;
+	std::string sourceCIDR_;
 	std::string natGatewayId_;
 	std::string snatEntryName_;
 };

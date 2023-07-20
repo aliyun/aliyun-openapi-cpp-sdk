@@ -55,6 +55,24 @@ void DescribeSnatTableEntriesResult::parse(const std::string &payload)
 			snatTableEntriesObject.snatEntryName = valueSnatTableEntriesSnatTableEntry["SnatEntryName"].asString();
 		if(!valueSnatTableEntriesSnatTableEntry["Status"].isNull())
 			snatTableEntriesObject.status = valueSnatTableEntriesSnatTableEntry["Status"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["StandbySnatIp"].isNull())
+			snatTableEntriesObject.standbySnatIp = valueSnatTableEntriesSnatTableEntry["StandbySnatIp"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["StandbyStatus"].isNull())
+			snatTableEntriesObject.standbyStatus = valueSnatTableEntriesSnatTableEntry["StandbyStatus"].asString();
+		auto allSnatIpsNode = valueSnatTableEntriesSnatTableEntry["SnatIps"]["snatIp"];
+		for (auto valueSnatTableEntriesSnatTableEntrySnatIpssnatIp : allSnatIpsNode)
+		{
+			SnatTableEntry::SnatIp snatIpsObject;
+			if(!valueSnatTableEntriesSnatTableEntrySnatIpssnatIp["Ip"].isNull())
+				snatIpsObject.ip = valueSnatTableEntriesSnatTableEntrySnatIpssnatIp["Ip"].asString();
+			if(!valueSnatTableEntriesSnatTableEntrySnatIpssnatIp["Isp"].isNull())
+				snatIpsObject.isp = valueSnatTableEntriesSnatTableEntrySnatIpssnatIp["Isp"].asString();
+			if(!valueSnatTableEntriesSnatTableEntrySnatIpssnatIp["EnsRegionId"].isNull())
+				snatIpsObject.ensRegionId = valueSnatTableEntriesSnatTableEntrySnatIpssnatIp["EnsRegionId"].asString();
+			if(!valueSnatTableEntriesSnatTableEntrySnatIpssnatIp["Standby"].isNull())
+				snatIpsObject.standby = valueSnatTableEntriesSnatTableEntrySnatIpssnatIp["Standby"].asString() == "true";
+			snatTableEntriesObject.snatIps.push_back(snatIpsObject);
+		}
 		snatTableEntries_.push_back(snatTableEntriesObject);
 	}
 	if(!value["PageNumber"].isNull())

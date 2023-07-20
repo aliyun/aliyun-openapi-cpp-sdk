@@ -61,6 +61,15 @@ void DescribeSnatTableEntriesRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+bool DescribeSnatTableEntriesRequest::getShowDetail() const {
+  return showDetail_;
+}
+
+void DescribeSnatTableEntriesRequest::setShowDetail(bool showDetail) {
+  showDetail_ = showDetail;
+  setParameter(std::string("ShowDetail"), showDetail ? "true" : "false");
+}
+
 int DescribeSnatTableEntriesRequest::getPageSize() const {
   return pageSize_;
 }

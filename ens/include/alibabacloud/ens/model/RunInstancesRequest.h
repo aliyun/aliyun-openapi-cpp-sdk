@@ -30,6 +30,7 @@ class ALIBABACLOUD_ENS_EXPORT RunInstancesRequest : public RpcServiceRequest {
 public:
 	struct SystemDisk {
 		long size;
+		std::string category;
 	};
 	struct DataDisk {
 		long size;

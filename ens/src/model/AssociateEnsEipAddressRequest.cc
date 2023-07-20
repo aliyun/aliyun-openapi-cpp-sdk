@@ -25,6 +25,15 @@ AssociateEnsEipAddressRequest::AssociateEnsEipAddressRequest()
 
 AssociateEnsEipAddressRequest::~AssociateEnsEipAddressRequest() {}
 
+bool AssociateEnsEipAddressRequest::getStandby() const {
+  return standby_;
+}
+
+void AssociateEnsEipAddressRequest::setStandby(bool standby) {
+  standby_ = standby;
+  setParameter(std::string("Standby"), standby ? "true" : "false");
+}
+
 std::string AssociateEnsEipAddressRequest::getAllocationId() const {
   return allocationId_;
 }

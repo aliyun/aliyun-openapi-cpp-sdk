@@ -63,6 +63,16 @@ void DescribeForwardTableEntriesResult::parse(const std::string &payload)
 			forwardTableEntriesObject.ipProtocol = valueForwardTableEntriesForwardTableEntry["IpProtocol"].asString();
 		if(!valueForwardTableEntriesForwardTableEntry["HealthCheckPort"].isNull())
 			forwardTableEntriesObject.healthCheckPort = valueForwardTableEntriesForwardTableEntry["HealthCheckPort"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["StandbyExternalIp"].isNull())
+			forwardTableEntriesObject.standbyExternalIp = valueForwardTableEntriesForwardTableEntry["StandbyExternalIp"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["StandbyStatus"].isNull())
+			forwardTableEntriesObject.standbyStatus = valueForwardTableEntriesForwardTableEntry["StandbyStatus"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["ExternalIpIsp"].isNull())
+			forwardTableEntriesObject.externalIpIsp = valueForwardTableEntriesForwardTableEntry["ExternalIpIsp"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["StandbyExternalIpIsp"].isNull())
+			forwardTableEntriesObject.standbyExternalIpIsp = valueForwardTableEntriesForwardTableEntry["StandbyExternalIpIsp"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["StandbyEnsRegionId"].isNull())
+			forwardTableEntriesObject.standbyEnsRegionId = valueForwardTableEntriesForwardTableEntry["StandbyEnsRegionId"].asString();
 		forwardTableEntries_.push_back(forwardTableEntriesObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -34,12 +34,22 @@ namespace AlibabaCloud
 			public:
 				struct SnatTableEntry
 				{
+					struct SnatIp
+					{
+						std::string ip;
+						std::string isp;
+						std::string ensRegionId;
+						bool standby;
+					};
 					std::string status;
 					std::string snatEntryName;
 					std::string sourceCIDR;
+					std::vector<SnatTableEntry::SnatIp> snatIps;
 					std::string snatEntryId;
 					std::string snatIp;
+					std::string standbyStatus;
 					std::string natGatewayId;
+					std::string standbySnatIp;
 				};
 
 

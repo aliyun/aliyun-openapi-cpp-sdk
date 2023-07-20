@@ -38,6 +38,8 @@ public:
 	void setSourceCIDR(const std::string &sourceCIDR);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	bool getShowDetail() const;
+	void setShowDetail(bool showDetail);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getNatGatewayId() const;
@@ -50,6 +52,7 @@ private:
 	std::string snatEntryId_;
 	std::string sourceCIDR_;
 	int pageNumber_;
+	bool showDetail_;
 	int pageSize_;
 	std::string natGatewayId_;
 	std::string snatEntryName_;

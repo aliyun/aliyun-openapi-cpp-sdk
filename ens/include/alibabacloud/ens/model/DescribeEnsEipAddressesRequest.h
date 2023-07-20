@@ -38,6 +38,8 @@ public:
 	void setEnsRegionId(const std::string &ensRegionId);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
+	std::string getStandby() const;
+	void setStandby(const std::string &standby);
 	std::string getAllocationId() const;
 	void setAllocationId(const std::string &allocationId);
 	int getPageNumber() const;
@@ -54,6 +56,7 @@ private:
 	std::string eipAddress_;
 	std::string ensRegionId_;
 	std::string status_;
+	std::string standby_;
 	std::string allocationId_;
 	int pageNumber_;
 	std::string associatedInstanceType_;

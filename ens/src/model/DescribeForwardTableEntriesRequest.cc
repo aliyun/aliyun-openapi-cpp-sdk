@@ -61,6 +61,15 @@ void DescribeForwardTableEntriesRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+bool DescribeForwardTableEntriesRequest::getShowDetail() const {
+  return showDetail_;
+}
+
+void DescribeForwardTableEntriesRequest::setShowDetail(bool showDetail) {
+  showDetail_ = showDetail;
+  setParameter(std::string("ShowDetail"), showDetail ? "true" : "false");
+}
+
 std::string DescribeForwardTableEntriesRequest::getForwardEntryId() const {
   return forwardEntryId_;
 }

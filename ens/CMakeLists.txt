@@ -305,6 +305,10 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeUserBandWidthDataResult.h
 	include/alibabacloud/ens/model/DescribeVSwitchesRequest.h
 	include/alibabacloud/ens/model/DescribeVSwitchesResult.h
+	include/alibabacloud/ens/model/DescribeWorkflowRequest.h
+	include/alibabacloud/ens/model/DescribeWorkflowResult.h
+	include/alibabacloud/ens/model/DescribeWorkflowActivityRequest.h
+	include/alibabacloud/ens/model/DescribeWorkflowActivityResult.h
 	include/alibabacloud/ens/model/DetachDiskRequest.h
 	include/alibabacloud/ens/model/DetachDiskResult.h
 	include/alibabacloud/ens/model/DistApplicationDataRequest.h
@@ -411,12 +415,18 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/ResizeDiskResult.h
 	include/alibabacloud/ens/model/RestartDeviceInstanceRequest.h
 	include/alibabacloud/ens/model/RestartDeviceInstanceResult.h
+	include/alibabacloud/ens/model/RestartWorkflowRequest.h
+	include/alibabacloud/ens/model/RestartWorkflowResult.h
+	include/alibabacloud/ens/model/RetryWorkflowRequest.h
+	include/alibabacloud/ens/model/RetryWorkflowResult.h
 	include/alibabacloud/ens/model/RevokeSecurityGroupRequest.h
 	include/alibabacloud/ens/model/RevokeSecurityGroupResult.h
 	include/alibabacloud/ens/model/RevokeSecurityGroupEgressRequest.h
 	include/alibabacloud/ens/model/RevokeSecurityGroupEgressResult.h
 	include/alibabacloud/ens/model/RollbackApplicationRequest.h
 	include/alibabacloud/ens/model/RollbackApplicationResult.h
+	include/alibabacloud/ens/model/RollbackWorkflowRequest.h
+	include/alibabacloud/ens/model/RollbackWorkflowResult.h
 	include/alibabacloud/ens/model/RunInstancesRequest.h
 	include/alibabacloud/ens/model/RunInstancesResult.h
 	include/alibabacloud/ens/model/RunServiceScheduleRequest.h
@@ -453,6 +463,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/StopLoadBalancerListenerResult.h
 	include/alibabacloud/ens/model/StopSnatIpForSnatEntryRequest.h
 	include/alibabacloud/ens/model/StopSnatIpForSnatEntryResult.h
+	include/alibabacloud/ens/model/TerminateWorkflowRequest.h
+	include/alibabacloud/ens/model/TerminateWorkflowResult.h
 	include/alibabacloud/ens/model/UnAssociateEnsEipAddressRequest.h
 	include/alibabacloud/ens/model/UnAssociateEnsEipAddressResult.h
 	include/alibabacloud/ens/model/UnassignPrivateIpAddressesRequest.h
@@ -752,6 +764,10 @@ set(ens_src
 	src/model/DescribeUserBandWidthDataResult.cc
 	src/model/DescribeVSwitchesRequest.cc
 	src/model/DescribeVSwitchesResult.cc
+	src/model/DescribeWorkflowRequest.cc
+	src/model/DescribeWorkflowResult.cc
+	src/model/DescribeWorkflowActivityRequest.cc
+	src/model/DescribeWorkflowActivityResult.cc
 	src/model/DetachDiskRequest.cc
 	src/model/DetachDiskResult.cc
 	src/model/DistApplicationDataRequest.cc
@@ -858,12 +874,18 @@ set(ens_src
 	src/model/ResizeDiskResult.cc
 	src/model/RestartDeviceInstanceRequest.cc
 	src/model/RestartDeviceInstanceResult.cc
+	src/model/RestartWorkflowRequest.cc
+	src/model/RestartWorkflowResult.cc
+	src/model/RetryWorkflowRequest.cc
+	src/model/RetryWorkflowResult.cc
 	src/model/RevokeSecurityGroupRequest.cc
 	src/model/RevokeSecurityGroupResult.cc
 	src/model/RevokeSecurityGroupEgressRequest.cc
 	src/model/RevokeSecurityGroupEgressResult.cc
 	src/model/RollbackApplicationRequest.cc
 	src/model/RollbackApplicationResult.cc
+	src/model/RollbackWorkflowRequest.cc
+	src/model/RollbackWorkflowResult.cc
 	src/model/RunInstancesRequest.cc
 	src/model/RunInstancesResult.cc
 	src/model/RunServiceScheduleRequest.cc
@@ -900,6 +922,8 @@ set(ens_src
 	src/model/StopLoadBalancerListenerResult.cc
 	src/model/StopSnatIpForSnatEntryRequest.cc
 	src/model/StopSnatIpForSnatEntryResult.cc
+	src/model/TerminateWorkflowRequest.cc
+	src/model/TerminateWorkflowResult.cc
 	src/model/UnAssociateEnsEipAddressRequest.cc
 	src/model/UnAssociateEnsEipAddressResult.cc
 	src/model/UnassignPrivateIpAddressesRequest.cc

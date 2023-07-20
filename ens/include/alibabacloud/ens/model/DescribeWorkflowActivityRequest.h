@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_ASSOCIATEENSEIPADDRESSREQUEST_H_
-#define ALIBABACLOUD_ENS_MODEL_ASSOCIATEENSEIPADDRESSREQUEST_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBEWORKFLOWACTIVITYREQUEST_H_
+#define ALIBABACLOUD_ENS_MODEL_DESCRIBEWORKFLOWACTIVITYREQUEST_H_
 
 #include <alibabacloud/ens/EnsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,17 @@
 namespace AlibabaCloud {
 namespace Ens {
 namespace Model {
-class ALIBABACLOUD_ENS_EXPORT AssociateEnsEipAddressRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ENS_EXPORT DescribeWorkflowActivityRequest : public RpcServiceRequest {
 public:
-	AssociateEnsEipAddressRequest();
-	~AssociateEnsEipAddressRequest();
-	bool getStandby() const;
-	void setStandby(bool standby);
-	std::string getAllocationId() const;
-	void setAllocationId(const std::string &allocationId);
-	std::string getInstanceType() const;
-	void setInstanceType(const std::string &instanceType);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
+	DescribeWorkflowActivityRequest();
+	~DescribeWorkflowActivityRequest();
+	std::string getWorkFlowId() const;
+	void setWorkFlowId(const std::string &workFlowId);
 
 private:
-	bool standby_;
-	std::string allocationId_;
-	std::string instanceType_;
-	std::string instanceId_;
+	std::string workFlowId_;
 };
 } // namespace Model
 } // namespace Ens
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ENS_MODEL_ASSOCIATEENSEIPADDRESSREQUEST_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBEWORKFLOWACTIVITYREQUEST_H_

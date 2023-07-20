@@ -30,6 +30,8 @@ class ALIBABACLOUD_ENS_EXPORT DescribeEnsSaleControlStockRequest : public RpcSer
 public:
 	DescribeEnsSaleControlStockRequest();
 	~DescribeEnsSaleControlStockRequest();
+	std::string getCustomAccount() const;
+	void setCustomAccount(const std::string &customAccount);
 	std::string getCommodityCode() const;
 	void setCommodityCode(const std::string &commodityCode);
 	std::string getModuleCode() const;
@@ -40,6 +42,7 @@ public:
 	void setOrderType(const std::string &orderType);
 
 private:
+	std::string customAccount_;
 	std::string commodityCode_;
 	std::string moduleCode_;
 	std::string aliUidAccount_;

@@ -133,6 +133,15 @@ void CreateARMServerInstancesRequest::set_NameSpace(const std::string &_nameSpac
   setParameter(std::string("NameSpace"), _nameSpace);
 }
 
+std::string CreateARMServerInstancesRequest::getServerName() const {
+  return serverName_;
+}
+
+void CreateARMServerInstancesRequest::setServerName(const std::string &serverName) {
+  serverName_ = serverName;
+  setParameter(std::string("ServerName"), serverName);
+}
+
 std::string CreateARMServerInstancesRequest::getPayType() const {
   return payType_;
 }

@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ens/model/DescribeSnatAttributeRequest.h>
+#include <alibabacloud/ens/model/DescribeWorkflowActivityRequest.h>
 
-using AlibabaCloud::Ens::Model::DescribeSnatAttributeRequest;
+using AlibabaCloud::Ens::Model::DescribeWorkflowActivityRequest;
 
-DescribeSnatAttributeRequest::DescribeSnatAttributeRequest()
-    : RpcServiceRequest("ens", "2017-11-10", "DescribeSnatAttribute") {
+DescribeWorkflowActivityRequest::DescribeWorkflowActivityRequest()
+    : RpcServiceRequest("ens", "2017-11-10", "DescribeWorkflowActivity") {
   setMethod(HttpRequest::Method::Post);
 }
 
-DescribeSnatAttributeRequest::~DescribeSnatAttributeRequest() {}
+DescribeWorkflowActivityRequest::~DescribeWorkflowActivityRequest() {}
 
-std::string DescribeSnatAttributeRequest::getSnatEntryId() const {
-  return snatEntryId_;
+std::string DescribeWorkflowActivityRequest::getWorkFlowId() const {
+  return workFlowId_;
 }
 
-void DescribeSnatAttributeRequest::setSnatEntryId(const std::string &snatEntryId) {
-  snatEntryId_ = snatEntryId;
-  setParameter(std::string("SnatEntryId"), snatEntryId);
+void DescribeWorkflowActivityRequest::setWorkFlowId(const std::string &workFlowId) {
+  workFlowId_ = workFlowId;
+  setParameter(std::string("WorkFlowId"), workFlowId);
 }
 

@@ -61,6 +61,15 @@ void DescribeEnsEipAddressesRequest::setStatus(const std::string &status) {
   setParameter(std::string("Status"), status);
 }
 
+std::string DescribeEnsEipAddressesRequest::getStandby() const {
+  return standby_;
+}
+
+void DescribeEnsEipAddressesRequest::setStandby(const std::string &standby) {
+  standby_ = standby;
+  setParameter(std::string("Standby"), standby);
+}
+
 std::string DescribeEnsEipAddressesRequest::getAllocationId() const {
   return allocationId_;
 }

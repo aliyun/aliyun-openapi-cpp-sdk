@@ -34,19 +34,20 @@ namespace AlibabaCloud
 			public:
 				struct 带宽配额
 				{
-					struct BandwidthInfo
-					{
-						long monthAverageQuota;
-						long monthMax;
-						long weekAverageQuota;
-						long weekMax;
-					};
 					struct 实例信息
 					{
 						long instanceNumber;
 						std::string instanceSpec;
 					};
-					BandwidthInfo bandwidthInfo;
+					struct 带宽信息
+					{
+						long monthAverageQuota;
+						long monthMax;
+						long weekAverageQuota;
+						std::string isp;
+						long weekMax;
+					};
+					std::vector<带宽配额::带宽信息> bandwidthInfo;
 					std::string regionId;
 					std::vector<带宽配额::实例信息> instanceInfo;
 					std::string date;

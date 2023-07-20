@@ -65,6 +65,10 @@ void DescribeSnatAttributeResult::parse(const std::string &payload)
 		status_ = value["Status"].asString();
 	if(!value["CreationTime"].isNull())
 		creationTime_ = value["CreationTime"].asString();
+	if(!value["StandbySnatIp"].isNull())
+		standbySnatIp_ = value["StandbySnatIp"].asString();
+	if(!value["StandbyStatus"].isNull())
+		standbyStatus_ = value["StandbyStatus"].asString();
 
 }
 
@@ -103,8 +107,18 @@ std::string DescribeSnatAttributeResult::getSnatIp()const
 	return snatIp_;
 }
 
+std::string DescribeSnatAttributeResult::getStandbyStatus()const
+{
+	return standbyStatus_;
+}
+
 std::string DescribeSnatAttributeResult::getNatGatewayId()const
 {
 	return natGatewayId_;
+}
+
+std::string DescribeSnatAttributeResult::getStandbySnatIp()const
+{
+	return standbySnatIp_;
 }
 

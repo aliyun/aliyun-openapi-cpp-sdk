@@ -70,6 +70,15 @@ void CreateForwardEntryRequest::setExternalPort(const std::string &externalPort)
   setParameter(std::string("ExternalPort"), externalPort);
 }
 
+std::string CreateForwardEntryRequest::getStandbyExternalIp() const {
+  return standbyExternalIp_;
+}
+
+void CreateForwardEntryRequest::setStandbyExternalIp(const std::string &standbyExternalIp) {
+  standbyExternalIp_ = standbyExternalIp;
+  setParameter(std::string("StandbyExternalIp"), standbyExternalIp);
+}
+
 std::string CreateForwardEntryRequest::getNatGatewayId() const {
   return natGatewayId_;
 }

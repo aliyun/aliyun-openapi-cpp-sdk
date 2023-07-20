@@ -38,6 +38,8 @@ public:
 	void setIpProtocol(const std::string &ipProtocol);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	bool getShowDetail() const;
+	void setShowDetail(bool showDetail);
 	std::string getForwardEntryId() const;
 	void setForwardEntryId(const std::string &forwardEntryId);
 	int getPageSize() const;
@@ -52,6 +54,7 @@ private:
 	std::string externalIp_;
 	std::string ipProtocol_;
 	int pageNumber_;
+	bool showDetail_;
 	std::string forwardEntryId_;
 	int pageSize_;
 	std::string natGatewayId_;

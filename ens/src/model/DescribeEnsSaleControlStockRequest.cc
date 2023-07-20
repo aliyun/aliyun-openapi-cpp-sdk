@@ -25,6 +25,15 @@ DescribeEnsSaleControlStockRequest::DescribeEnsSaleControlStockRequest()
 
 DescribeEnsSaleControlStockRequest::~DescribeEnsSaleControlStockRequest() {}
 
+std::string DescribeEnsSaleControlStockRequest::getCustomAccount() const {
+  return customAccount_;
+}
+
+void DescribeEnsSaleControlStockRequest::setCustomAccount(const std::string &customAccount) {
+  customAccount_ = customAccount;
+  setParameter(std::string("CustomAccount"), customAccount);
+}
+
 std::string DescribeEnsSaleControlStockRequest::getCommodityCode() const {
   return commodityCode_;
 }

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBEDISKSRESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBEDISKSRESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBEWORKFLOWRESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_DESCRIBEWORKFLOWRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,48 +29,44 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT DescribeDisksResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT DescribeWorkflowResult : public ServiceResult
 			{
 			public:
-				struct DisksItem
+				struct WorkFlowInfos
 				{
+					std::string gmtStart;
 					std::string status;
-					std::string category;
 					std::string instanceId;
-					int size;
-					std::string diskChargeType;
-					std::string diskName;
-					std::string instanceName;
-					bool portable;
-					std::string snapshotId;
-					std::string type;
-					std::string creationTime;
-					std::string serialId;
+					std::string priority;
+					std::string workerNode;
+					std::string bizType;
+					std::string duration;
+					std::string workflowId;
+					std::string initAttributes;
+					std::string name;
+					std::string gmtEnd;
+					std::string gmtCreate;
+					std::string gmtExpire;
+					std::string gmtModify;
+					std::string id;
 					std::string ensRegionId;
-					std::string diskId;
+					std::string bussinessId;
+					std::string aliUid;
 				};
 
 
-				DescribeDisksResult();
-				explicit DescribeDisksResult(const std::string &payload);
-				~DescribeDisksResult();
-				int getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<DisksItem> getDisks()const;
-				int getCode()const;
+				DescribeWorkflowResult();
+				explicit DescribeWorkflowResult(const std::string &payload);
+				~DescribeWorkflowResult();
+				std::vector<WorkFlowInfos> getWorkFlowInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				int pageSize_;
-				int pageNumber_;
-				std::vector<DisksItem> disks_;
-				int code_;
+				std::vector<WorkFlowInfos> workFlowInfo_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBEDISKSRESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBEWORKFLOWRESULT_H_

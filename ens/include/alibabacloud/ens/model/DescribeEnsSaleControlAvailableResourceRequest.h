@@ -30,12 +30,15 @@ class ALIBABACLOUD_ENS_EXPORT DescribeEnsSaleControlAvailableResourceRequest : p
 public:
 	DescribeEnsSaleControlAvailableResourceRequest();
 	~DescribeEnsSaleControlAvailableResourceRequest();
+	std::string getCustomAccount() const;
+	void setCustomAccount(const std::string &customAccount);
 	std::string getCommodityCode() const;
 	void setCommodityCode(const std::string &commodityCode);
 	std::string getOrderType() const;
 	void setOrderType(const std::string &orderType);
 
 private:
+	std::string customAccount_;
 	std::string commodityCode_;
 	std::string orderType_;
 };
