@@ -33,3 +33,12 @@ void OperationCancelIgnoreSuspEventRequest::setSecurityEventIds(const std::vecto
   securityEventIds_ = securityEventIds;
 }
 
+std::string OperationCancelIgnoreSuspEventRequest::getRemark() const {
+  return remark_;
+}
+
+void OperationCancelIgnoreSuspEventRequest::setRemark(const std::string &remark) {
+  remark_ = remark;
+  setParameter(std::string("Remark"), remark);
+}
+

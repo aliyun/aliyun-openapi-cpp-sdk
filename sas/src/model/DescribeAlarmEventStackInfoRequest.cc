@@ -61,6 +61,15 @@ void DescribeAlarmEventStackInfoRequest::setLang(const std::string &lang) {
   setParameter(std::string("Lang"), lang);
 }
 
+long DescribeAlarmEventStackInfoRequest::getResourceDirectoryAccountId() const {
+  return resourceDirectoryAccountId_;
+}
+
+void DescribeAlarmEventStackInfoRequest::setResourceDirectoryAccountId(long resourceDirectoryAccountId) {
+  resourceDirectoryAccountId_ = resourceDirectoryAccountId;
+  setParameter(std::string("ResourceDirectoryAccountId"), std::to_string(resourceDirectoryAccountId));
+}
+
 std::string DescribeAlarmEventStackInfoRequest::getUniqueInfo() const {
   return uniqueInfo_;
 }

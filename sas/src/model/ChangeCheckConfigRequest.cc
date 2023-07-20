@@ -68,6 +68,36 @@ void ChangeCheckConfigRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::vector<ChangeCheckConfigRequest::RemovedCheck> ChangeCheckConfigRequest::getRemovedCheck() const {
+  return removedCheck_;
+}
+
+void ChangeCheckConfigRequest::setRemovedCheck(const std::vector<ChangeCheckConfigRequest::RemovedCheck> &removedCheck) {
+  removedCheck_ = removedCheck;
+  for(int dep1 = 0; dep1 != removedCheck.size(); dep1++) {
+    setParameter(std::string("RemovedCheck") + "." + std::to_string(dep1 + 1) + ".SectionId", std::to_string(removedCheck[dep1].sectionId));
+    setParameter(std::string("RemovedCheck") + "." + std::to_string(dep1 + 1) + ".CheckId", std::to_string(removedCheck[dep1].checkId));
+  }
+}
+
+bool ChangeCheckConfigRequest::getEnableAddCheck() const {
+  return enableAddCheck_;
+}
+
+void ChangeCheckConfigRequest::setEnableAddCheck(bool enableAddCheck) {
+  enableAddCheck_ = enableAddCheck;
+  setParameter(std::string("EnableAddCheck"), enableAddCheck ? "true" : "false");
+}
+
+bool ChangeCheckConfigRequest::getEnableAutoCheck() const {
+  return enableAutoCheck_;
+}
+
+void ChangeCheckConfigRequest::setEnableAutoCheck(bool enableAutoCheck) {
+  enableAutoCheck_ = enableAutoCheck;
+  setParameter(std::string("EnableAutoCheck"), enableAutoCheck ? "true" : "false");
+}
+
 int ChangeCheckConfigRequest::getEndTime() const {
   return endTime_;
 }
@@ -75,5 +105,17 @@ int ChangeCheckConfigRequest::getEndTime() const {
 void ChangeCheckConfigRequest::setEndTime(int endTime) {
   endTime_ = endTime;
   setParameter(std::string("EndTime"), std::to_string(endTime));
+}
+
+std::vector<ChangeCheckConfigRequest::AddedCheck> ChangeCheckConfigRequest::getAddedCheck() const {
+  return addedCheck_;
+}
+
+void ChangeCheckConfigRequest::setAddedCheck(const std::vector<ChangeCheckConfigRequest::AddedCheck> &addedCheck) {
+  addedCheck_ = addedCheck;
+  for(int dep1 = 0; dep1 != addedCheck.size(); dep1++) {
+    setParameter(std::string("AddedCheck") + "." + std::to_string(dep1 + 1) + ".SectionId", std::to_string(addedCheck[dep1].sectionId));
+    setParameter(std::string("AddedCheck") + "." + std::to_string(dep1 + 1) + ".CheckId", std::to_string(addedCheck[dep1].checkId));
+  }
 }
 

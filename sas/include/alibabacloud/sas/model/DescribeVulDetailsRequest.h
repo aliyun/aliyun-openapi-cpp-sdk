@@ -36,6 +36,8 @@ public:
 	void setSourceIp(const std::string &sourceIp);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	long getResourceDirectoryAccountId() const;
+	void setResourceDirectoryAccountId(long resourceDirectoryAccountId);
 	std::string getAliasName() const;
 	void setAliasName(const std::string &aliasName);
 	std::string getName() const;
@@ -45,6 +47,7 @@ private:
 	std::string type_;
 	std::string sourceIp_;
 	std::string lang_;
+	long resourceDirectoryAccountId_;
 	std::string aliasName_;
 	std::string name_;
 };

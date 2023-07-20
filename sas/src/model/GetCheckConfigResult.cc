@@ -39,21 +39,31 @@ void GetCheckConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStandardsNode = value["Standards"]["StandardsItem"];
-	for (auto valueStandardsStandardsItem : allStandardsNode)
+	auto allStandardsNode = value["Standards"]["Standard"];
+	for (auto valueStandardsStandard : allStandardsNode)
 	{
-		StandardsItem standardsObject;
-		if(!valueStandardsStandardsItem["Id"].isNull())
-			standardsObject.id = std::stol(valueStandardsStandardsItem["Id"].asString());
-		if(!valueStandardsStandardsItem["ShowName"].isNull())
-			standardsObject.showName = valueStandardsStandardsItem["ShowName"].asString();
-		if(!valueStandardsStandardsItem["Type"].isNull())
-			standardsObject.type = valueStandardsStandardsItem["Type"].asString();
-		if(!valueStandardsStandardsItem["Status"].isNull())
-			standardsObject.status = valueStandardsStandardsItem["Status"].asString();
+		Standard standardsObject;
+		if(!valueStandardsStandard["Id"].isNull())
+			standardsObject.id = std::stol(valueStandardsStandard["Id"].asString());
+		if(!valueStandardsStandard["ShowName"].isNull())
+			standardsObject.showName = valueStandardsStandard["ShowName"].asString();
+		if(!valueStandardsStandard["Type"].isNull())
+			standardsObject.type = valueStandardsStandard["Type"].asString();
+		if(!valueStandardsStandard["Status"].isNull())
+			standardsObject.status = valueStandardsStandard["Status"].asString();
 		standards_.push_back(standardsObject);
 	}
-	auto allCycleDays = value["CycleDays"]["CycleDays"];
+	auto allSelectedChecksNode = value["SelectedChecks"]["SelectedCheck"];
+	for (auto valueSelectedChecksSelectedCheck : allSelectedChecksNode)
+	{
+		SelectedCheck selectedChecksObject;
+		if(!valueSelectedChecksSelectedCheck["CheckId"].isNull())
+			selectedChecksObject.checkId = std::stol(valueSelectedChecksSelectedCheck["CheckId"].asString());
+		if(!valueSelectedChecksSelectedCheck["SectionId"].isNull())
+			selectedChecksObject.sectionId = std::stol(valueSelectedChecksSelectedCheck["SectionId"].asString());
+		selectedChecks_.push_back(selectedChecksObject);
+	}
+	auto allCycleDays = value["CycleDays"]["CycleDay"];
 	for (const auto &item : allCycleDays)
 		cycleDays_.push_back(item.asString());
 	if(!value["StartTime"].isNull())
@@ -62,7 +72,16 @@ void GetCheckConfigResult::parse(const std::string &payload)
 		endTime_ = std::stoi(value["EndTime"].asString());
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
+	if(!value["EnableAutoCheck"].isNull())
+		enableAutoCheck_ = value["EnableAutoCheck"].asString() == "true";
+	if(!value["EnableAddCheck"].isNull())
+		enableAddCheck_ = value["EnableAddCheck"].asString() == "true";
 
+}
+
+std::vector<GetCheckConfigResult::SelectedCheck> GetCheckConfigResult::getSelectedChecks()const
+{
+	return selectedChecks_;
 }
 
 int GetCheckConfigResult::getEndTime()const
@@ -70,9 +89,19 @@ int GetCheckConfigResult::getEndTime()const
 	return endTime_;
 }
 
+bool GetCheckConfigResult::getEnableAutoCheck()const
+{
+	return enableAutoCheck_;
+}
+
 std::vector<std::string> GetCheckConfigResult::getCycleDays()const
 {
 	return cycleDays_;
+}
+
+bool GetCheckConfigResult::getEnableAddCheck()const
+{
+	return enableAddCheck_;
 }
 
 int GetCheckConfigResult::getStartTime()const
@@ -85,7 +114,7 @@ std::string GetCheckConfigResult::getData()const
 	return data_;
 }
 
-std::vector<GetCheckConfigResult::StandardsItem> GetCheckConfigResult::getStandards()const
+std::vector<GetCheckConfigResult::Standard> GetCheckConfigResult::getStandards()const
 {
 	return standards_;
 }

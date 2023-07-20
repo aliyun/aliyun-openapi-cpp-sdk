@@ -63,6 +63,7 @@ namespace AlibabaCloud
 					std::string riskStatus;
 					int vulCount;
 					std::string imageRepoName;
+					int exposed;
 					std::string nodeInfo;
 					std::string podIp;
 					std::string alarmStatus;
@@ -70,6 +71,7 @@ namespace AlibabaCloud
 					std::string imageRepoTag;
 					std::string hcStatus;
 					std::string updateMark;
+					std::string exposedDetail;
 				};
 
 

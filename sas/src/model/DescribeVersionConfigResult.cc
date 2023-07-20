@@ -109,6 +109,14 @@ void DescribeVersionConfigResult::parse(const std::string &payload)
 		isNewMultiVersion_ = value["IsNewMultiVersion"].asString() == "true";
 	if(!value["ThreatAnalysisCapacity"].isNull())
 		threatAnalysisCapacity_ = std::stol(value["ThreatAnalysisCapacity"].asString());
+	if(!value["CspmCapacity"].isNull())
+		cspmCapacity_ = std::stol(value["CspmCapacity"].asString());
+	if(!value["VulFixCapacity"].isNull())
+		vulFixCapacity_ = std::stol(value["VulFixCapacity"].asString());
+	if(!value["RaspCapacity"].isNull())
+		raspCapacity_ = std::stol(value["RaspCapacity"].asString());
+	if(!value["AgentlessCapacity"].isNull())
+		agentlessCapacity_ = std::stol(value["AgentlessCapacity"].asString());
 
 }
 
@@ -135,6 +143,11 @@ long DescribeVersionConfigResult::getAppWhiteListAuthCount()const
 int DescribeVersionConfigResult::getLogTime()const
 {
 	return logTime_;
+}
+
+long DescribeVersionConfigResult::getRaspCapacity()const
+{
+	return raspCapacity_;
 }
 
 int DescribeVersionConfigResult::getSasLog()const
@@ -187,6 +200,11 @@ int DescribeVersionConfigResult::getAllowPartialBuy()const
 	return allowPartialBuy_;
 }
 
+long DescribeVersionConfigResult::getAgentlessCapacity()const
+{
+	return agentlessCapacity_;
+}
+
 int DescribeVersionConfigResult::getWebLock()const
 {
 	return webLock_;
@@ -212,6 +230,11 @@ long DescribeVersionConfigResult::getHoneypotCapacity()const
 	return honeypotCapacity_;
 }
 
+long DescribeVersionConfigResult::getVulFixCapacity()const
+{
+	return vulFixCapacity_;
+}
+
 int DescribeVersionConfigResult::getAssetLevel()const
 {
 	return assetLevel_;
@@ -235,6 +258,11 @@ long DescribeVersionConfigResult::getCreateTime()const
 int DescribeVersionConfigResult::getSasScreen()const
 {
 	return sasScreen_;
+}
+
+long DescribeVersionConfigResult::getCspmCapacity()const
+{
+	return cspmCapacity_;
 }
 
 bool DescribeVersionConfigResult::getIsSasOpening()const

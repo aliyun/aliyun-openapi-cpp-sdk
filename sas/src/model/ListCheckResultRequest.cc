@@ -57,6 +57,15 @@ void ListCheckResultRequest::setInstanceTypes(const std::vector<std::string> &in
   instanceTypes_ = instanceTypes;
 }
 
+bool ListCheckResultRequest::getCustomParam() const {
+  return customParam_;
+}
+
+void ListCheckResultRequest::setCustomParam(bool customParam) {
+  customParam_ = customParam;
+  setParameter(std::string("CustomParam"), customParam ? "true" : "false");
+}
+
 std::string ListCheckResultRequest::getCheckKey() const {
   return checkKey_;
 }

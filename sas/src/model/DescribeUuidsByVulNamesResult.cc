@@ -57,11 +57,18 @@ void DescribeUuidsByVulNamesResult::parse(const std::string &payload)
 			machineInfoStatisticsObject.regionId = valueMachineInfoStatisticsMachineInfoStatistic["RegionId"].asString();
 		machineInfoStatistics_.push_back(machineInfoStatisticsObject);
 	}
+	if(!value["VulCount"].isNull())
+		vulCount_ = std::stoi(value["VulCount"].asString());
 
 }
 
 std::vector<DescribeUuidsByVulNamesResult::MachineInfoStatistic> DescribeUuidsByVulNamesResult::getMachineInfoStatistics()const
 {
 	return machineInfoStatistics_;
+}
+
+int DescribeUuidsByVulNamesResult::getVulCount()const
+{
+	return vulCount_;
 }
 

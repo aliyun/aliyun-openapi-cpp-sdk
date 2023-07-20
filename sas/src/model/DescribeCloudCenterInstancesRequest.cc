@@ -70,6 +70,15 @@ void DescribeCloudCenterInstancesRequest::setNoPage(bool noPage) {
   setParameter(std::string("NoPage"), noPage ? "true" : "false");
 }
 
+std::string DescribeCloudCenterInstancesRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void DescribeCloudCenterInstancesRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
 int DescribeCloudCenterInstancesRequest::getPageSize() const {
   return pageSize_;
 }
@@ -97,13 +106,22 @@ void DescribeCloudCenterInstancesRequest::setLang(const std::string &lang) {
   setParameter(std::string("Lang"), lang);
 }
 
-std::string DescribeCloudCenterInstancesRequest::getResourceDirectoryAccountId() const {
+long DescribeCloudCenterInstancesRequest::getResourceDirectoryAccountId() const {
   return resourceDirectoryAccountId_;
 }
 
-void DescribeCloudCenterInstancesRequest::setResourceDirectoryAccountId(const std::string &resourceDirectoryAccountId) {
+void DescribeCloudCenterInstancesRequest::setResourceDirectoryAccountId(long resourceDirectoryAccountId) {
   resourceDirectoryAccountId_ = resourceDirectoryAccountId;
-  setParameter(std::string("ResourceDirectoryAccountId"), resourceDirectoryAccountId);
+  setParameter(std::string("ResourceDirectoryAccountId"), std::to_string(resourceDirectoryAccountId));
+}
+
+bool DescribeCloudCenterInstancesRequest::getUseNextToken() const {
+  return useNextToken_;
+}
+
+void DescribeCloudCenterInstancesRequest::setUseNextToken(bool useNextToken) {
+  useNextToken_ = useNextToken;
+  setParameter(std::string("UseNextToken"), useNextToken ? "true" : "false");
 }
 
 int DescribeCloudCenterInstancesRequest::getCurrentPage() const {

@@ -86,6 +86,8 @@ public:
 	void setModifyTsStart(long modifyTsStart);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	long getResourceDirectoryAccountId() const;
+	void setResourceDirectoryAccountId(long resourceDirectoryAccountId);
 	std::string getAssetType() const;
 	void setAssetType(const std::string &assetType);
 	std::string getDealed() const;
@@ -126,6 +128,7 @@ private:
 	int pageSize_;
 	long modifyTsStart_;
 	std::string lang_;
+	long resourceDirectoryAccountId_;
 	std::string assetType_;
 	std::string dealed_;
 	int currentPage_;

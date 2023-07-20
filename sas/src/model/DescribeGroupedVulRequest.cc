@@ -241,6 +241,15 @@ void DescribeGroupedVulRequest::setLastTsStart(long lastTsStart) {
   setParameter(std::string("LastTsStart"), std::to_string(lastTsStart));
 }
 
+long DescribeGroupedVulRequest::getResourceDirectoryAccountId() const {
+  return resourceDirectoryAccountId_;
+}
+
+void DescribeGroupedVulRequest::setResourceDirectoryAccountId(long resourceDirectoryAccountId) {
+  resourceDirectoryAccountId_ = resourceDirectoryAccountId;
+  setParameter(std::string("ResourceDirectoryAccountId"), std::to_string(resourceDirectoryAccountId));
+}
+
 std::string DescribeGroupedVulRequest::getAssetType() const {
   return assetType_;
 }

@@ -48,6 +48,7 @@ namespace AlibabaCloud
 					std::string instanceId;
 					long id;
 					std::string regionId;
+					std::string statusMessage;
 				};
 				struct ColumnsItem
 				{

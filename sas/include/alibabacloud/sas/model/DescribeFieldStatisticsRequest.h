@@ -30,17 +30,20 @@ class ALIBABACLOUD_SAS_EXPORT DescribeFieldStatisticsRequest : public RpcService
 public:
 	DescribeFieldStatisticsRequest();
 	~DescribeFieldStatisticsRequest();
-	std::string getMachineTypes() const;
-	void setMachineTypes(const std::string &machineTypes);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	long getResourceDirectoryAccountId() const;
+	void setResourceDirectoryAccountId(long resourceDirectoryAccountId);
+	std::string getMachineTypes() const;
+	void setMachineTypes(const std::string &machineTypes);
 
 private:
-	std::string machineTypes_;
 	std::string sourceIp_;
 	std::string regionId_;
+	long resourceDirectoryAccountId_;
+	std::string machineTypes_;
 };
 } // namespace Model
 } // namespace Sas

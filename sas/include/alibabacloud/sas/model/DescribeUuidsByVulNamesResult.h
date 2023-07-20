@@ -47,11 +47,13 @@ namespace AlibabaCloud
 				explicit DescribeUuidsByVulNamesResult(const std::string &payload);
 				~DescribeUuidsByVulNamesResult();
 				std::vector<MachineInfoStatistic> getMachineInfoStatistics()const;
+				int getVulCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<MachineInfoStatistic> machineInfoStatistics_;
+				int vulCount_;
 
 			};
 		}

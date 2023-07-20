@@ -65,6 +65,8 @@ void ListCheckResultResult::parse(const std::string &payload)
 			checksObject.lastCheckTime = std::stol(valueChecksChecksItem["LastCheckTime"].asString());
 		if(!valueChecksChecksItem["TrialPermission"].isNull())
 			checksObject.trialPermission = valueChecksChecksItem["TrialPermission"].asString() == "true";
+		if(!valueChecksChecksItem["StatusMessage"].isNull())
+			checksObject.statusMessage = valueChecksChecksItem["StatusMessage"].asString();
 		auto allCheckPoliciesNode = valueChecksChecksItem["CheckPolicies"]["CheckPolicie"];
 		for (auto valueChecksChecksItemCheckPoliciesCheckPolicie : allCheckPoliciesNode)
 		{

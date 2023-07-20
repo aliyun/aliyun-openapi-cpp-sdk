@@ -32,32 +32,43 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SAS_EXPORT GetCheckConfigResult : public ServiceResult
 			{
 			public:
-				struct StandardsItem
+				struct Standard
 				{
 					std::string status;
 					std::string type;
 					long id;
 					std::string showName;
 				};
+				struct SelectedCheck
+				{
+					long checkId;
+					long sectionId;
+				};
 
 
 				GetCheckConfigResult();
 				explicit GetCheckConfigResult(const std::string &payload);
 				~GetCheckConfigResult();
+				std::vector<SelectedCheck> getSelectedChecks()const;
 				int getEndTime()const;
+				bool getEnableAutoCheck()const;
 				std::vector<std::string> getCycleDays()const;
+				bool getEnableAddCheck()const;
 				int getStartTime()const;
 				std::string getData()const;
-				std::vector<StandardsItem> getStandards()const;
+				std::vector<Standard> getStandards()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<SelectedCheck> selectedChecks_;
 				int endTime_;
+				bool enableAutoCheck_;
 				std::vector<std::string> cycleDays_;
+				bool enableAddCheck_;
 				int startTime_;
 				std::string data_;
-				std::vector<StandardsItem> standards_;
+				std::vector<Standard> standards_;
 
 			};
 		}

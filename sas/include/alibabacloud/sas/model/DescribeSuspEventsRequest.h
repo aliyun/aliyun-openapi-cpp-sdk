@@ -72,6 +72,8 @@ public:
 	void setPageSize(const std::string &pageSize);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	long getResourceDirectoryAccountId() const;
+	void setResourceDirectoryAccountId(long resourceDirectoryAccountId);
 	std::string getDealed() const;
 	void setDealed(const std::string &dealed);
 	std::string getCurrentPage() const;
@@ -115,6 +117,7 @@ private:
 	std::string containerFieldValue_;
 	std::string pageSize_;
 	std::string lang_;
+	long resourceDirectoryAccountId_;
 	std::string dealed_;
 	std::string currentPage_;
 	std::string clusterId_;

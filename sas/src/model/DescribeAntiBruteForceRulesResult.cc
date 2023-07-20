@@ -61,6 +61,8 @@ void DescribeAntiBruteForceRulesResult::parse(const std::string &payload)
 			rulesObject.id = std::stol(valueRulesAntiBruteForceRule["Id"].asString());
 		if(!valueRulesAntiBruteForceRule["CreateTime"].isNull())
 			rulesObject.createTime = valueRulesAntiBruteForceRule["CreateTime"].asString();
+		if(!valueRulesAntiBruteForceRule["CreateTimestamp"].isNull())
+			rulesObject.createTimestamp = std::stol(valueRulesAntiBruteForceRule["CreateTimestamp"].asString());
 		auto allUuidList = value["UuidList"]["uuid"];
 		for (auto value : allUuidList)
 			rulesObject.uuidList.push_back(value.asString());

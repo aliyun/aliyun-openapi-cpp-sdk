@@ -52,6 +52,15 @@ void DescribeVulDetailsRequest::setLang(const std::string &lang) {
   setParameter(std::string("Lang"), lang);
 }
 
+long DescribeVulDetailsRequest::getResourceDirectoryAccountId() const {
+  return resourceDirectoryAccountId_;
+}
+
+void DescribeVulDetailsRequest::setResourceDirectoryAccountId(long resourceDirectoryAccountId) {
+  resourceDirectoryAccountId_ = resourceDirectoryAccountId;
+  setParameter(std::string("ResourceDirectoryAccountId"), std::to_string(resourceDirectoryAccountId));
+}
+
 std::string DescribeVulDetailsRequest::getAliasName() const {
   return aliasName_;
 }

@@ -25,15 +25,6 @@ DescribeFieldStatisticsRequest::DescribeFieldStatisticsRequest()
 
 DescribeFieldStatisticsRequest::~DescribeFieldStatisticsRequest() {}
 
-std::string DescribeFieldStatisticsRequest::getMachineTypes() const {
-  return machineTypes_;
-}
-
-void DescribeFieldStatisticsRequest::setMachineTypes(const std::string &machineTypes) {
-  machineTypes_ = machineTypes;
-  setParameter(std::string("MachineTypes"), machineTypes);
-}
-
 std::string DescribeFieldStatisticsRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -50,5 +41,23 @@ std::string DescribeFieldStatisticsRequest::getRegionId() const {
 void DescribeFieldStatisticsRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+long DescribeFieldStatisticsRequest::getResourceDirectoryAccountId() const {
+  return resourceDirectoryAccountId_;
+}
+
+void DescribeFieldStatisticsRequest::setResourceDirectoryAccountId(long resourceDirectoryAccountId) {
+  resourceDirectoryAccountId_ = resourceDirectoryAccountId;
+  setParameter(std::string("ResourceDirectoryAccountId"), std::to_string(resourceDirectoryAccountId));
+}
+
+std::string DescribeFieldStatisticsRequest::getMachineTypes() const {
+  return machineTypes_;
+}
+
+void DescribeFieldStatisticsRequest::setMachineTypes(const std::string &machineTypes) {
+  machineTypes_ = machineTypes;
+  setParameter(std::string("MachineTypes"), machineTypes);
 }
 

@@ -36,6 +36,8 @@ public:
 	void setFrom(const std::string &from);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	long getResourceDirectoryAccountId() const;
+	void setResourceDirectoryAccountId(long resourceDirectoryAccountId);
 	int getSuspiciousEventId() const;
 	void setSuspiciousEventId(int suspiciousEventId);
 
@@ -43,6 +45,7 @@ private:
 	std::string sourceIp_;
 	std::string from_;
 	std::string lang_;
+	long resourceDirectoryAccountId_;
 	int suspiciousEventId_;
 };
 } // namespace Model

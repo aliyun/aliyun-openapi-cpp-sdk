@@ -32,9 +32,12 @@ public:
 	~OperationCancelIgnoreSuspEventRequest();
 	std::vector<long> getSecurityEventIds() const;
 	void setSecurityEventIds(const std::vector<long> &securityEventIds);
+	std::string getRemark() const;
+	void setRemark(const std::string &remark);
 
 private:
 	std::vector<long> securityEventIds_;
+	std::string remark_;
 };
 } // namespace Model
 } // namespace Sas

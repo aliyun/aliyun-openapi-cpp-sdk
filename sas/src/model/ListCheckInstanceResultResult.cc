@@ -53,6 +53,8 @@ void ListCheckInstanceResultResult::parse(const std::string &payload)
 			basicDataObject.instanceId = valueBasicDataBasicDataItem["InstanceId"].asString();
 		if(!valueBasicDataBasicDataItem["InstanceName"].isNull())
 			basicDataObject.instanceName = valueBasicDataBasicDataItem["InstanceName"].asString();
+		if(!valueBasicDataBasicDataItem["StatusMessage"].isNull())
+			basicDataObject.statusMessage = valueBasicDataBasicDataItem["StatusMessage"].asString();
 		basicData_.push_back(basicDataObject);
 	}
 	auto allColumnsNode = value["Columns"]["ColumnsItem"];

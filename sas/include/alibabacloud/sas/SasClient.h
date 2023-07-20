@@ -30,6 +30,8 @@
 #include "model/AddCheckResultWhiteListResult.h"
 #include "model/AddClientUserDefineRuleRequest.h"
 #include "model/AddClientUserDefineRuleResult.h"
+#include "model/AddImageVulWhiteListRequest.h"
+#include "model/AddImageVulWhiteListResult.h"
 #include "model/AddInstallCodeRequest.h"
 #include "model/AddInstallCodeResult.h"
 #include "model/AddPrivateRegistryRequest.h"
@@ -48,6 +50,8 @@
 #include "model/BindAuthToMachineResult.h"
 #include "model/CancelOnceTaskRequest.h"
 #include "model/CancelOnceTaskResult.h"
+#include "model/ChangeAssetRefreshTaskConfigRequest.h"
+#include "model/ChangeAssetRefreshTaskConfigResult.h"
 #include "model/ChangeCheckConfigRequest.h"
 #include "model/ChangeCheckConfigResult.h"
 #include "model/ChangeCheckCustomConfigRequest.h"
@@ -60,6 +64,8 @@
 #include "model/CheckUserHasEcsResult.h"
 #include "model/ConfirmVirusEventsRequest.h"
 #include "model/ConfirmVirusEventsResult.h"
+#include "model/CreateAgentlessScanTaskRequest.h"
+#include "model/CreateAgentlessScanTaskResult.h"
 #include "model/CreateAntiBruteForceRuleRequest.h"
 #include "model/CreateAntiBruteForceRuleResult.h"
 #include "model/CreateAssetSelectionConfigRequest.h"
@@ -98,6 +104,8 @@
 #include "model/CreateRestoreJobResult.h"
 #include "model/CreateServiceLinkedRoleRequest.h"
 #include "model/CreateServiceLinkedRoleResult.h"
+#include "model/CreateServiceTrailRequest.h"
+#include "model/CreateServiceTrailResult.h"
 #include "model/CreateSimilarSecurityEventsQueryTaskRequest.h"
 #include "model/CreateSimilarSecurityEventsQueryTaskResult.h"
 #include "model/CreateSuspEventNoteRequest.h"
@@ -114,6 +122,8 @@
 #include "model/DeleteBackupPolicyResult.h"
 #include "model/DeleteBackupPolicyMachineRequest.h"
 #include "model/DeleteBackupPolicyMachineResult.h"
+#include "model/DeleteBinarySecurityPolicyRequest.h"
+#include "model/DeleteBinarySecurityPolicyResult.h"
 #include "model/DeleteClientUserDefineRuleRequest.h"
 #include "model/DeleteClientUserDefineRuleResult.h"
 #include "model/DeleteCustomBlockRecordRequest.h"
@@ -142,6 +152,8 @@
 #include "model/DeletePrivateRegistryResult.h"
 #include "model/DeleteSecurityEventMarkMissListRequest.h"
 #include "model/DeleteSecurityEventMarkMissListResult.h"
+#include "model/DeleteServiceTrailRequest.h"
+#include "model/DeleteServiceTrailResult.h"
 #include "model/DeleteStrategyRequest.h"
 #include "model/DeleteStrategyResult.h"
 #include "model/DeleteSuspEventNodeRequest.h"
@@ -364,6 +376,8 @@
 #include "model/DescribeImageStatisticsResult.h"
 #include "model/DescribeImageVulListRequest.h"
 #include "model/DescribeImageVulListResult.h"
+#include "model/DescribeImageVulWhiteListRequest.h"
+#include "model/DescribeImageVulWhiteListResult.h"
 #include "model/DescribeInstallCaptchaRequest.h"
 #include "model/DescribeInstallCaptchaResult.h"
 #include "model/DescribeInstallCodeRequest.h"
@@ -394,6 +408,8 @@
 #include "model/DescribeMachineCanRebootResult.h"
 #include "model/DescribeModuleConfigRequest.h"
 #include "model/DescribeModuleConfigResult.h"
+#include "model/DescribeMonitorAccountsRequest.h"
+#include "model/DescribeMonitorAccountsResult.h"
 #include "model/DescribeNoticeConfigRequest.h"
 #include "model/DescribeNoticeConfigResult.h"
 #include "model/DescribeNsasSuspEventTypeRequest.h"
@@ -468,6 +484,8 @@
 #include "model/DescribeSecureSuggestionResult.h"
 #include "model/DescribeSecurityCheckScheduleConfigRequest.h"
 #include "model/DescribeSecurityCheckScheduleConfigResult.h"
+#include "model/DescribeSecurityEventMarkMissListRequest.h"
+#include "model/DescribeSecurityEventMarkMissListResult.h"
 #include "model/DescribeSecurityEventOperationStatusRequest.h"
 #include "model/DescribeSecurityEventOperationStatusResult.h"
 #include "model/DescribeSecurityEventOperationsRequest.h"
@@ -620,6 +638,8 @@
 #include "model/FixCheckWarningsResult.h"
 #include "model/GenerateOnceTaskRequest.h"
 #include "model/GenerateOnceTaskResult.h"
+#include "model/GetAgentlessTaskCountRequest.h"
+#include "model/GetAgentlessTaskCountResult.h"
 #include "model/GetAlarmMachineCountRequest.h"
 #include "model/GetAlarmMachineCountResult.h"
 #include "model/GetAppNetworkRequest.h"
@@ -644,6 +664,8 @@
 #include "model/GetCheckRiskStatisticsResult.h"
 #include "model/GetCheckSummaryRequest.h"
 #include "model/GetCheckSummaryResult.h"
+#include "model/GetClientRatioStatisticRequest.h"
+#include "model/GetClientRatioStatisticResult.h"
 #include "model/GetClientUserDefineRuleRequest.h"
 #include "model/GetClientUserDefineRuleResult.h"
 #include "model/GetCloudAssetCriteriaRequest.h"
@@ -686,6 +708,8 @@
 #include "model/GetPropertyScheduleConfigResult.h"
 #include "model/GetRulesCountRequest.h"
 #include "model/GetRulesCountResult.h"
+#include "model/GetServiceTrailRequest.h"
+#include "model/GetServiceTrailResult.h"
 #include "model/GetSuspiciousStatisticsRequest.h"
 #include "model/GetSuspiciousStatisticsResult.h"
 #include "model/GetVulStatisticsRequest.h"
@@ -710,6 +734,16 @@
 #include "model/InstallUniBackupAgentResult.h"
 #include "model/JoinWebLockProcessWhiteListRequest.h"
 #include "model/JoinWebLockProcessWhiteListResult.h"
+#include "model/ListAgentlessRegionRequest.h"
+#include "model/ListAgentlessRegionResult.h"
+#include "model/ListAgentlessRelateMaliciousRequest.h"
+#include "model/ListAgentlessRelateMaliciousResult.h"
+#include "model/ListAgentlessRiskUuidRequest.h"
+#include "model/ListAgentlessRiskUuidResult.h"
+#include "model/ListAgentlessTaskRequest.h"
+#include "model/ListAgentlessTaskResult.h"
+#include "model/ListAssetRefreshTaskConfigRequest.h"
+#include "model/ListAssetRefreshTaskConfigResult.h"
 #include "model/ListAssetSelectionSelectedTargetRequest.h"
 #include "model/ListAssetSelectionSelectedTargetResult.h"
 #include "model/ListAssetSelectionTargetRequest.h"
@@ -1017,6 +1051,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddClientUserDefineRuleResult> AddClientUserDefineRuleOutcome;
 			typedef std::future<AddClientUserDefineRuleOutcome> AddClientUserDefineRuleOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::AddClientUserDefineRuleRequest&, const AddClientUserDefineRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddClientUserDefineRuleAsyncHandler;
+			typedef Outcome<Error, Model::AddImageVulWhiteListResult> AddImageVulWhiteListOutcome;
+			typedef std::future<AddImageVulWhiteListOutcome> AddImageVulWhiteListOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::AddImageVulWhiteListRequest&, const AddImageVulWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddImageVulWhiteListAsyncHandler;
 			typedef Outcome<Error, Model::AddInstallCodeResult> AddInstallCodeOutcome;
 			typedef std::future<AddInstallCodeOutcome> AddInstallCodeOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::AddInstallCodeRequest&, const AddInstallCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddInstallCodeAsyncHandler;
@@ -1044,6 +1081,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CancelOnceTaskResult> CancelOnceTaskOutcome;
 			typedef std::future<CancelOnceTaskOutcome> CancelOnceTaskOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::CancelOnceTaskRequest&, const CancelOnceTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelOnceTaskAsyncHandler;
+			typedef Outcome<Error, Model::ChangeAssetRefreshTaskConfigResult> ChangeAssetRefreshTaskConfigOutcome;
+			typedef std::future<ChangeAssetRefreshTaskConfigOutcome> ChangeAssetRefreshTaskConfigOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::ChangeAssetRefreshTaskConfigRequest&, const ChangeAssetRefreshTaskConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeAssetRefreshTaskConfigAsyncHandler;
 			typedef Outcome<Error, Model::ChangeCheckConfigResult> ChangeCheckConfigOutcome;
 			typedef std::future<ChangeCheckConfigOutcome> ChangeCheckConfigOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::ChangeCheckConfigRequest&, const ChangeCheckConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeCheckConfigAsyncHandler;
@@ -1062,6 +1102,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ConfirmVirusEventsResult> ConfirmVirusEventsOutcome;
 			typedef std::future<ConfirmVirusEventsOutcome> ConfirmVirusEventsOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::ConfirmVirusEventsRequest&, const ConfirmVirusEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmVirusEventsAsyncHandler;
+			typedef Outcome<Error, Model::CreateAgentlessScanTaskResult> CreateAgentlessScanTaskOutcome;
+			typedef std::future<CreateAgentlessScanTaskOutcome> CreateAgentlessScanTaskOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::CreateAgentlessScanTaskRequest&, const CreateAgentlessScanTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAgentlessScanTaskAsyncHandler;
 			typedef Outcome<Error, Model::CreateAntiBruteForceRuleResult> CreateAntiBruteForceRuleOutcome;
 			typedef std::future<CreateAntiBruteForceRuleOutcome> CreateAntiBruteForceRuleOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::CreateAntiBruteForceRuleRequest&, const CreateAntiBruteForceRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAntiBruteForceRuleAsyncHandler;
@@ -1119,6 +1162,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateServiceLinkedRoleResult> CreateServiceLinkedRoleOutcome;
 			typedef std::future<CreateServiceLinkedRoleOutcome> CreateServiceLinkedRoleOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::CreateServiceLinkedRoleRequest&, const CreateServiceLinkedRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceLinkedRoleAsyncHandler;
+			typedef Outcome<Error, Model::CreateServiceTrailResult> CreateServiceTrailOutcome;
+			typedef std::future<CreateServiceTrailOutcome> CreateServiceTrailOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::CreateServiceTrailRequest&, const CreateServiceTrailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceTrailAsyncHandler;
 			typedef Outcome<Error, Model::CreateSimilarSecurityEventsQueryTaskResult> CreateSimilarSecurityEventsQueryTaskOutcome;
 			typedef std::future<CreateSimilarSecurityEventsQueryTaskOutcome> CreateSimilarSecurityEventsQueryTaskOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::CreateSimilarSecurityEventsQueryTaskRequest&, const CreateSimilarSecurityEventsQueryTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSimilarSecurityEventsQueryTaskAsyncHandler;
@@ -1143,6 +1189,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteBackupPolicyMachineResult> DeleteBackupPolicyMachineOutcome;
 			typedef std::future<DeleteBackupPolicyMachineOutcome> DeleteBackupPolicyMachineOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DeleteBackupPolicyMachineRequest&, const DeleteBackupPolicyMachineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBackupPolicyMachineAsyncHandler;
+			typedef Outcome<Error, Model::DeleteBinarySecurityPolicyResult> DeleteBinarySecurityPolicyOutcome;
+			typedef std::future<DeleteBinarySecurityPolicyOutcome> DeleteBinarySecurityPolicyOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DeleteBinarySecurityPolicyRequest&, const DeleteBinarySecurityPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBinarySecurityPolicyAsyncHandler;
 			typedef Outcome<Error, Model::DeleteClientUserDefineRuleResult> DeleteClientUserDefineRuleOutcome;
 			typedef std::future<DeleteClientUserDefineRuleOutcome> DeleteClientUserDefineRuleOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DeleteClientUserDefineRuleRequest&, const DeleteClientUserDefineRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClientUserDefineRuleAsyncHandler;
@@ -1185,6 +1234,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteSecurityEventMarkMissListResult> DeleteSecurityEventMarkMissListOutcome;
 			typedef std::future<DeleteSecurityEventMarkMissListOutcome> DeleteSecurityEventMarkMissListOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DeleteSecurityEventMarkMissListRequest&, const DeleteSecurityEventMarkMissListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityEventMarkMissListAsyncHandler;
+			typedef Outcome<Error, Model::DeleteServiceTrailResult> DeleteServiceTrailOutcome;
+			typedef std::future<DeleteServiceTrailOutcome> DeleteServiceTrailOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DeleteServiceTrailRequest&, const DeleteServiceTrailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceTrailAsyncHandler;
 			typedef Outcome<Error, Model::DeleteStrategyResult> DeleteStrategyOutcome;
 			typedef std::future<DeleteStrategyOutcome> DeleteStrategyOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DeleteStrategyRequest&, const DeleteStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStrategyAsyncHandler;
@@ -1518,6 +1570,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeImageVulListResult> DescribeImageVulListOutcome;
 			typedef std::future<DescribeImageVulListOutcome> DescribeImageVulListOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeImageVulListRequest&, const DescribeImageVulListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageVulListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeImageVulWhiteListResult> DescribeImageVulWhiteListOutcome;
+			typedef std::future<DescribeImageVulWhiteListOutcome> DescribeImageVulWhiteListOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeImageVulWhiteListRequest&, const DescribeImageVulWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageVulWhiteListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstallCaptchaResult> DescribeInstallCaptchaOutcome;
 			typedef std::future<DescribeInstallCaptchaOutcome> DescribeInstallCaptchaOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeInstallCaptchaRequest&, const DescribeInstallCaptchaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstallCaptchaAsyncHandler;
@@ -1563,6 +1618,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeModuleConfigResult> DescribeModuleConfigOutcome;
 			typedef std::future<DescribeModuleConfigOutcome> DescribeModuleConfigOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeModuleConfigRequest&, const DescribeModuleConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModuleConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMonitorAccountsResult> DescribeMonitorAccountsOutcome;
+			typedef std::future<DescribeMonitorAccountsOutcome> DescribeMonitorAccountsOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeMonitorAccountsRequest&, const DescribeMonitorAccountsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonitorAccountsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeNoticeConfigResult> DescribeNoticeConfigOutcome;
 			typedef std::future<DescribeNoticeConfigOutcome> DescribeNoticeConfigOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeNoticeConfigRequest&, const DescribeNoticeConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNoticeConfigAsyncHandler;
@@ -1674,6 +1732,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSecurityCheckScheduleConfigResult> DescribeSecurityCheckScheduleConfigOutcome;
 			typedef std::future<DescribeSecurityCheckScheduleConfigOutcome> DescribeSecurityCheckScheduleConfigOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeSecurityCheckScheduleConfigRequest&, const DescribeSecurityCheckScheduleConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityCheckScheduleConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSecurityEventMarkMissListResult> DescribeSecurityEventMarkMissListOutcome;
+			typedef std::future<DescribeSecurityEventMarkMissListOutcome> DescribeSecurityEventMarkMissListOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeSecurityEventMarkMissListRequest&, const DescribeSecurityEventMarkMissListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityEventMarkMissListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSecurityEventOperationStatusResult> DescribeSecurityEventOperationStatusOutcome;
 			typedef std::future<DescribeSecurityEventOperationStatusOutcome> DescribeSecurityEventOperationStatusOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeSecurityEventOperationStatusRequest&, const DescribeSecurityEventOperationStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityEventOperationStatusAsyncHandler;
@@ -1902,6 +1963,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GenerateOnceTaskResult> GenerateOnceTaskOutcome;
 			typedef std::future<GenerateOnceTaskOutcome> GenerateOnceTaskOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::GenerateOnceTaskRequest&, const GenerateOnceTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateOnceTaskAsyncHandler;
+			typedef Outcome<Error, Model::GetAgentlessTaskCountResult> GetAgentlessTaskCountOutcome;
+			typedef std::future<GetAgentlessTaskCountOutcome> GetAgentlessTaskCountOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::GetAgentlessTaskCountRequest&, const GetAgentlessTaskCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAgentlessTaskCountAsyncHandler;
 			typedef Outcome<Error, Model::GetAlarmMachineCountResult> GetAlarmMachineCountOutcome;
 			typedef std::future<GetAlarmMachineCountOutcome> GetAlarmMachineCountOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::GetAlarmMachineCountRequest&, const GetAlarmMachineCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAlarmMachineCountAsyncHandler;
@@ -1938,6 +2002,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetCheckSummaryResult> GetCheckSummaryOutcome;
 			typedef std::future<GetCheckSummaryOutcome> GetCheckSummaryOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::GetCheckSummaryRequest&, const GetCheckSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCheckSummaryAsyncHandler;
+			typedef Outcome<Error, Model::GetClientRatioStatisticResult> GetClientRatioStatisticOutcome;
+			typedef std::future<GetClientRatioStatisticOutcome> GetClientRatioStatisticOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::GetClientRatioStatisticRequest&, const GetClientRatioStatisticOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetClientRatioStatisticAsyncHandler;
 			typedef Outcome<Error, Model::GetClientUserDefineRuleResult> GetClientUserDefineRuleOutcome;
 			typedef std::future<GetClientUserDefineRuleOutcome> GetClientUserDefineRuleOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::GetClientUserDefineRuleRequest&, const GetClientUserDefineRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetClientUserDefineRuleAsyncHandler;
@@ -2001,6 +2068,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetRulesCountResult> GetRulesCountOutcome;
 			typedef std::future<GetRulesCountOutcome> GetRulesCountOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::GetRulesCountRequest&, const GetRulesCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRulesCountAsyncHandler;
+			typedef Outcome<Error, Model::GetServiceTrailResult> GetServiceTrailOutcome;
+			typedef std::future<GetServiceTrailOutcome> GetServiceTrailOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::GetServiceTrailRequest&, const GetServiceTrailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceTrailAsyncHandler;
 			typedef Outcome<Error, Model::GetSuspiciousStatisticsResult> GetSuspiciousStatisticsOutcome;
 			typedef std::future<GetSuspiciousStatisticsOutcome> GetSuspiciousStatisticsOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::GetSuspiciousStatisticsRequest&, const GetSuspiciousStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSuspiciousStatisticsAsyncHandler;
@@ -2037,6 +2107,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::JoinWebLockProcessWhiteListResult> JoinWebLockProcessWhiteListOutcome;
 			typedef std::future<JoinWebLockProcessWhiteListOutcome> JoinWebLockProcessWhiteListOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::JoinWebLockProcessWhiteListRequest&, const JoinWebLockProcessWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> JoinWebLockProcessWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::ListAgentlessRegionResult> ListAgentlessRegionOutcome;
+			typedef std::future<ListAgentlessRegionOutcome> ListAgentlessRegionOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::ListAgentlessRegionRequest&, const ListAgentlessRegionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAgentlessRegionAsyncHandler;
+			typedef Outcome<Error, Model::ListAgentlessRelateMaliciousResult> ListAgentlessRelateMaliciousOutcome;
+			typedef std::future<ListAgentlessRelateMaliciousOutcome> ListAgentlessRelateMaliciousOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::ListAgentlessRelateMaliciousRequest&, const ListAgentlessRelateMaliciousOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAgentlessRelateMaliciousAsyncHandler;
+			typedef Outcome<Error, Model::ListAgentlessRiskUuidResult> ListAgentlessRiskUuidOutcome;
+			typedef std::future<ListAgentlessRiskUuidOutcome> ListAgentlessRiskUuidOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::ListAgentlessRiskUuidRequest&, const ListAgentlessRiskUuidOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAgentlessRiskUuidAsyncHandler;
+			typedef Outcome<Error, Model::ListAgentlessTaskResult> ListAgentlessTaskOutcome;
+			typedef std::future<ListAgentlessTaskOutcome> ListAgentlessTaskOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::ListAgentlessTaskRequest&, const ListAgentlessTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAgentlessTaskAsyncHandler;
+			typedef Outcome<Error, Model::ListAssetRefreshTaskConfigResult> ListAssetRefreshTaskConfigOutcome;
+			typedef std::future<ListAssetRefreshTaskConfigOutcome> ListAssetRefreshTaskConfigOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::ListAssetRefreshTaskConfigRequest&, const ListAssetRefreshTaskConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAssetRefreshTaskConfigAsyncHandler;
 			typedef Outcome<Error, Model::ListAssetSelectionSelectedTargetResult> ListAssetSelectionSelectedTargetOutcome;
 			typedef std::future<ListAssetSelectionSelectedTargetOutcome> ListAssetSelectionSelectedTargetOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::ListAssetSelectionSelectedTargetRequest&, const ListAssetSelectionSelectedTargetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAssetSelectionSelectedTargetAsyncHandler;
@@ -2483,6 +2568,9 @@ namespace AlibabaCloud
 			AddClientUserDefineRuleOutcome addClientUserDefineRule(const Model::AddClientUserDefineRuleRequest &request)const;
 			void addClientUserDefineRuleAsync(const Model::AddClientUserDefineRuleRequest& request, const AddClientUserDefineRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddClientUserDefineRuleOutcomeCallable addClientUserDefineRuleCallable(const Model::AddClientUserDefineRuleRequest& request) const;
+			AddImageVulWhiteListOutcome addImageVulWhiteList(const Model::AddImageVulWhiteListRequest &request)const;
+			void addImageVulWhiteListAsync(const Model::AddImageVulWhiteListRequest& request, const AddImageVulWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddImageVulWhiteListOutcomeCallable addImageVulWhiteListCallable(const Model::AddImageVulWhiteListRequest& request) const;
 			AddInstallCodeOutcome addInstallCode(const Model::AddInstallCodeRequest &request)const;
 			void addInstallCodeAsync(const Model::AddInstallCodeRequest& request, const AddInstallCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddInstallCodeOutcomeCallable addInstallCodeCallable(const Model::AddInstallCodeRequest& request) const;
@@ -2510,6 +2598,9 @@ namespace AlibabaCloud
 			CancelOnceTaskOutcome cancelOnceTask(const Model::CancelOnceTaskRequest &request)const;
 			void cancelOnceTaskAsync(const Model::CancelOnceTaskRequest& request, const CancelOnceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelOnceTaskOutcomeCallable cancelOnceTaskCallable(const Model::CancelOnceTaskRequest& request) const;
+			ChangeAssetRefreshTaskConfigOutcome changeAssetRefreshTaskConfig(const Model::ChangeAssetRefreshTaskConfigRequest &request)const;
+			void changeAssetRefreshTaskConfigAsync(const Model::ChangeAssetRefreshTaskConfigRequest& request, const ChangeAssetRefreshTaskConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChangeAssetRefreshTaskConfigOutcomeCallable changeAssetRefreshTaskConfigCallable(const Model::ChangeAssetRefreshTaskConfigRequest& request) const;
 			ChangeCheckConfigOutcome changeCheckConfig(const Model::ChangeCheckConfigRequest &request)const;
 			void changeCheckConfigAsync(const Model::ChangeCheckConfigRequest& request, const ChangeCheckConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ChangeCheckConfigOutcomeCallable changeCheckConfigCallable(const Model::ChangeCheckConfigRequest& request) const;
@@ -2528,6 +2619,9 @@ namespace AlibabaCloud
 			ConfirmVirusEventsOutcome confirmVirusEvents(const Model::ConfirmVirusEventsRequest &request)const;
 			void confirmVirusEventsAsync(const Model::ConfirmVirusEventsRequest& request, const ConfirmVirusEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConfirmVirusEventsOutcomeCallable confirmVirusEventsCallable(const Model::ConfirmVirusEventsRequest& request) const;
+			CreateAgentlessScanTaskOutcome createAgentlessScanTask(const Model::CreateAgentlessScanTaskRequest &request)const;
+			void createAgentlessScanTaskAsync(const Model::CreateAgentlessScanTaskRequest& request, const CreateAgentlessScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateAgentlessScanTaskOutcomeCallable createAgentlessScanTaskCallable(const Model::CreateAgentlessScanTaskRequest& request) const;
 			CreateAntiBruteForceRuleOutcome createAntiBruteForceRule(const Model::CreateAntiBruteForceRuleRequest &request)const;
 			void createAntiBruteForceRuleAsync(const Model::CreateAntiBruteForceRuleRequest& request, const CreateAntiBruteForceRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAntiBruteForceRuleOutcomeCallable createAntiBruteForceRuleCallable(const Model::CreateAntiBruteForceRuleRequest& request) const;
@@ -2585,6 +2679,9 @@ namespace AlibabaCloud
 			CreateServiceLinkedRoleOutcome createServiceLinkedRole(const Model::CreateServiceLinkedRoleRequest &request)const;
 			void createServiceLinkedRoleAsync(const Model::CreateServiceLinkedRoleRequest& request, const CreateServiceLinkedRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateServiceLinkedRoleOutcomeCallable createServiceLinkedRoleCallable(const Model::CreateServiceLinkedRoleRequest& request) const;
+			CreateServiceTrailOutcome createServiceTrail(const Model::CreateServiceTrailRequest &request)const;
+			void createServiceTrailAsync(const Model::CreateServiceTrailRequest& request, const CreateServiceTrailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateServiceTrailOutcomeCallable createServiceTrailCallable(const Model::CreateServiceTrailRequest& request) const;
 			CreateSimilarSecurityEventsQueryTaskOutcome createSimilarSecurityEventsQueryTask(const Model::CreateSimilarSecurityEventsQueryTaskRequest &request)const;
 			void createSimilarSecurityEventsQueryTaskAsync(const Model::CreateSimilarSecurityEventsQueryTaskRequest& request, const CreateSimilarSecurityEventsQueryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSimilarSecurityEventsQueryTaskOutcomeCallable createSimilarSecurityEventsQueryTaskCallable(const Model::CreateSimilarSecurityEventsQueryTaskRequest& request) const;
@@ -2609,6 +2706,9 @@ namespace AlibabaCloud
 			DeleteBackupPolicyMachineOutcome deleteBackupPolicyMachine(const Model::DeleteBackupPolicyMachineRequest &request)const;
 			void deleteBackupPolicyMachineAsync(const Model::DeleteBackupPolicyMachineRequest& request, const DeleteBackupPolicyMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteBackupPolicyMachineOutcomeCallable deleteBackupPolicyMachineCallable(const Model::DeleteBackupPolicyMachineRequest& request) const;
+			DeleteBinarySecurityPolicyOutcome deleteBinarySecurityPolicy(const Model::DeleteBinarySecurityPolicyRequest &request)const;
+			void deleteBinarySecurityPolicyAsync(const Model::DeleteBinarySecurityPolicyRequest& request, const DeleteBinarySecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteBinarySecurityPolicyOutcomeCallable deleteBinarySecurityPolicyCallable(const Model::DeleteBinarySecurityPolicyRequest& request) const;
 			DeleteClientUserDefineRuleOutcome deleteClientUserDefineRule(const Model::DeleteClientUserDefineRuleRequest &request)const;
 			void deleteClientUserDefineRuleAsync(const Model::DeleteClientUserDefineRuleRequest& request, const DeleteClientUserDefineRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteClientUserDefineRuleOutcomeCallable deleteClientUserDefineRuleCallable(const Model::DeleteClientUserDefineRuleRequest& request) const;
@@ -2651,6 +2751,9 @@ namespace AlibabaCloud
 			DeleteSecurityEventMarkMissListOutcome deleteSecurityEventMarkMissList(const Model::DeleteSecurityEventMarkMissListRequest &request)const;
 			void deleteSecurityEventMarkMissListAsync(const Model::DeleteSecurityEventMarkMissListRequest& request, const DeleteSecurityEventMarkMissListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSecurityEventMarkMissListOutcomeCallable deleteSecurityEventMarkMissListCallable(const Model::DeleteSecurityEventMarkMissListRequest& request) const;
+			DeleteServiceTrailOutcome deleteServiceTrail(const Model::DeleteServiceTrailRequest &request)const;
+			void deleteServiceTrailAsync(const Model::DeleteServiceTrailRequest& request, const DeleteServiceTrailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteServiceTrailOutcomeCallable deleteServiceTrailCallable(const Model::DeleteServiceTrailRequest& request) const;
 			DeleteStrategyOutcome deleteStrategy(const Model::DeleteStrategyRequest &request)const;
 			void deleteStrategyAsync(const Model::DeleteStrategyRequest& request, const DeleteStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteStrategyOutcomeCallable deleteStrategyCallable(const Model::DeleteStrategyRequest& request) const;
@@ -2984,6 +3087,9 @@ namespace AlibabaCloud
 			DescribeImageVulListOutcome describeImageVulList(const Model::DescribeImageVulListRequest &request)const;
 			void describeImageVulListAsync(const Model::DescribeImageVulListRequest& request, const DescribeImageVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeImageVulListOutcomeCallable describeImageVulListCallable(const Model::DescribeImageVulListRequest& request) const;
+			DescribeImageVulWhiteListOutcome describeImageVulWhiteList(const Model::DescribeImageVulWhiteListRequest &request)const;
+			void describeImageVulWhiteListAsync(const Model::DescribeImageVulWhiteListRequest& request, const DescribeImageVulWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeImageVulWhiteListOutcomeCallable describeImageVulWhiteListCallable(const Model::DescribeImageVulWhiteListRequest& request) const;
 			DescribeInstallCaptchaOutcome describeInstallCaptcha(const Model::DescribeInstallCaptchaRequest &request)const;
 			void describeInstallCaptchaAsync(const Model::DescribeInstallCaptchaRequest& request, const DescribeInstallCaptchaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstallCaptchaOutcomeCallable describeInstallCaptchaCallable(const Model::DescribeInstallCaptchaRequest& request) const;
@@ -3029,6 +3135,9 @@ namespace AlibabaCloud
 			DescribeModuleConfigOutcome describeModuleConfig(const Model::DescribeModuleConfigRequest &request)const;
 			void describeModuleConfigAsync(const Model::DescribeModuleConfigRequest& request, const DescribeModuleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeModuleConfigOutcomeCallable describeModuleConfigCallable(const Model::DescribeModuleConfigRequest& request) const;
+			DescribeMonitorAccountsOutcome describeMonitorAccounts(const Model::DescribeMonitorAccountsRequest &request)const;
+			void describeMonitorAccountsAsync(const Model::DescribeMonitorAccountsRequest& request, const DescribeMonitorAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMonitorAccountsOutcomeCallable describeMonitorAccountsCallable(const Model::DescribeMonitorAccountsRequest& request) const;
 			DescribeNoticeConfigOutcome describeNoticeConfig(const Model::DescribeNoticeConfigRequest &request)const;
 			void describeNoticeConfigAsync(const Model::DescribeNoticeConfigRequest& request, const DescribeNoticeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNoticeConfigOutcomeCallable describeNoticeConfigCallable(const Model::DescribeNoticeConfigRequest& request) const;
@@ -3140,6 +3249,9 @@ namespace AlibabaCloud
 			DescribeSecurityCheckScheduleConfigOutcome describeSecurityCheckScheduleConfig(const Model::DescribeSecurityCheckScheduleConfigRequest &request)const;
 			void describeSecurityCheckScheduleConfigAsync(const Model::DescribeSecurityCheckScheduleConfigRequest& request, const DescribeSecurityCheckScheduleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSecurityCheckScheduleConfigOutcomeCallable describeSecurityCheckScheduleConfigCallable(const Model::DescribeSecurityCheckScheduleConfigRequest& request) const;
+			DescribeSecurityEventMarkMissListOutcome describeSecurityEventMarkMissList(const Model::DescribeSecurityEventMarkMissListRequest &request)const;
+			void describeSecurityEventMarkMissListAsync(const Model::DescribeSecurityEventMarkMissListRequest& request, const DescribeSecurityEventMarkMissListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSecurityEventMarkMissListOutcomeCallable describeSecurityEventMarkMissListCallable(const Model::DescribeSecurityEventMarkMissListRequest& request) const;
 			DescribeSecurityEventOperationStatusOutcome describeSecurityEventOperationStatus(const Model::DescribeSecurityEventOperationStatusRequest &request)const;
 			void describeSecurityEventOperationStatusAsync(const Model::DescribeSecurityEventOperationStatusRequest& request, const DescribeSecurityEventOperationStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSecurityEventOperationStatusOutcomeCallable describeSecurityEventOperationStatusCallable(const Model::DescribeSecurityEventOperationStatusRequest& request) const;
@@ -3368,6 +3480,9 @@ namespace AlibabaCloud
 			GenerateOnceTaskOutcome generateOnceTask(const Model::GenerateOnceTaskRequest &request)const;
 			void generateOnceTaskAsync(const Model::GenerateOnceTaskRequest& request, const GenerateOnceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GenerateOnceTaskOutcomeCallable generateOnceTaskCallable(const Model::GenerateOnceTaskRequest& request) const;
+			GetAgentlessTaskCountOutcome getAgentlessTaskCount(const Model::GetAgentlessTaskCountRequest &request)const;
+			void getAgentlessTaskCountAsync(const Model::GetAgentlessTaskCountRequest& request, const GetAgentlessTaskCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAgentlessTaskCountOutcomeCallable getAgentlessTaskCountCallable(const Model::GetAgentlessTaskCountRequest& request) const;
 			GetAlarmMachineCountOutcome getAlarmMachineCount(const Model::GetAlarmMachineCountRequest &request)const;
 			void getAlarmMachineCountAsync(const Model::GetAlarmMachineCountRequest& request, const GetAlarmMachineCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAlarmMachineCountOutcomeCallable getAlarmMachineCountCallable(const Model::GetAlarmMachineCountRequest& request) const;
@@ -3404,6 +3519,9 @@ namespace AlibabaCloud
 			GetCheckSummaryOutcome getCheckSummary(const Model::GetCheckSummaryRequest &request)const;
 			void getCheckSummaryAsync(const Model::GetCheckSummaryRequest& request, const GetCheckSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCheckSummaryOutcomeCallable getCheckSummaryCallable(const Model::GetCheckSummaryRequest& request) const;
+			GetClientRatioStatisticOutcome getClientRatioStatistic(const Model::GetClientRatioStatisticRequest &request)const;
+			void getClientRatioStatisticAsync(const Model::GetClientRatioStatisticRequest& request, const GetClientRatioStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetClientRatioStatisticOutcomeCallable getClientRatioStatisticCallable(const Model::GetClientRatioStatisticRequest& request) const;
 			GetClientUserDefineRuleOutcome getClientUserDefineRule(const Model::GetClientUserDefineRuleRequest &request)const;
 			void getClientUserDefineRuleAsync(const Model::GetClientUserDefineRuleRequest& request, const GetClientUserDefineRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetClientUserDefineRuleOutcomeCallable getClientUserDefineRuleCallable(const Model::GetClientUserDefineRuleRequest& request) const;
@@ -3467,6 +3585,9 @@ namespace AlibabaCloud
 			GetRulesCountOutcome getRulesCount(const Model::GetRulesCountRequest &request)const;
 			void getRulesCountAsync(const Model::GetRulesCountRequest& request, const GetRulesCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRulesCountOutcomeCallable getRulesCountCallable(const Model::GetRulesCountRequest& request) const;
+			GetServiceTrailOutcome getServiceTrail(const Model::GetServiceTrailRequest &request)const;
+			void getServiceTrailAsync(const Model::GetServiceTrailRequest& request, const GetServiceTrailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetServiceTrailOutcomeCallable getServiceTrailCallable(const Model::GetServiceTrailRequest& request) const;
 			GetSuspiciousStatisticsOutcome getSuspiciousStatistics(const Model::GetSuspiciousStatisticsRequest &request)const;
 			void getSuspiciousStatisticsAsync(const Model::GetSuspiciousStatisticsRequest& request, const GetSuspiciousStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSuspiciousStatisticsOutcomeCallable getSuspiciousStatisticsCallable(const Model::GetSuspiciousStatisticsRequest& request) const;
@@ -3503,6 +3624,21 @@ namespace AlibabaCloud
 			JoinWebLockProcessWhiteListOutcome joinWebLockProcessWhiteList(const Model::JoinWebLockProcessWhiteListRequest &request)const;
 			void joinWebLockProcessWhiteListAsync(const Model::JoinWebLockProcessWhiteListRequest& request, const JoinWebLockProcessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			JoinWebLockProcessWhiteListOutcomeCallable joinWebLockProcessWhiteListCallable(const Model::JoinWebLockProcessWhiteListRequest& request) const;
+			ListAgentlessRegionOutcome listAgentlessRegion(const Model::ListAgentlessRegionRequest &request)const;
+			void listAgentlessRegionAsync(const Model::ListAgentlessRegionRequest& request, const ListAgentlessRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAgentlessRegionOutcomeCallable listAgentlessRegionCallable(const Model::ListAgentlessRegionRequest& request) const;
+			ListAgentlessRelateMaliciousOutcome listAgentlessRelateMalicious(const Model::ListAgentlessRelateMaliciousRequest &request)const;
+			void listAgentlessRelateMaliciousAsync(const Model::ListAgentlessRelateMaliciousRequest& request, const ListAgentlessRelateMaliciousAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAgentlessRelateMaliciousOutcomeCallable listAgentlessRelateMaliciousCallable(const Model::ListAgentlessRelateMaliciousRequest& request) const;
+			ListAgentlessRiskUuidOutcome listAgentlessRiskUuid(const Model::ListAgentlessRiskUuidRequest &request)const;
+			void listAgentlessRiskUuidAsync(const Model::ListAgentlessRiskUuidRequest& request, const ListAgentlessRiskUuidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAgentlessRiskUuidOutcomeCallable listAgentlessRiskUuidCallable(const Model::ListAgentlessRiskUuidRequest& request) const;
+			ListAgentlessTaskOutcome listAgentlessTask(const Model::ListAgentlessTaskRequest &request)const;
+			void listAgentlessTaskAsync(const Model::ListAgentlessTaskRequest& request, const ListAgentlessTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAgentlessTaskOutcomeCallable listAgentlessTaskCallable(const Model::ListAgentlessTaskRequest& request) const;
+			ListAssetRefreshTaskConfigOutcome listAssetRefreshTaskConfig(const Model::ListAssetRefreshTaskConfigRequest &request)const;
+			void listAssetRefreshTaskConfigAsync(const Model::ListAssetRefreshTaskConfigRequest& request, const ListAssetRefreshTaskConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAssetRefreshTaskConfigOutcomeCallable listAssetRefreshTaskConfigCallable(const Model::ListAssetRefreshTaskConfigRequest& request) const;
 			ListAssetSelectionSelectedTargetOutcome listAssetSelectionSelectedTarget(const Model::ListAssetSelectionSelectedTargetRequest &request)const;
 			void listAssetSelectionSelectedTargetAsync(const Model::ListAssetSelectionSelectedTargetRequest& request, const ListAssetSelectionSelectedTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAssetSelectionSelectedTargetOutcomeCallable listAssetSelectionSelectedTargetCallable(const Model::ListAssetSelectionSelectedTargetRequest& request) const;

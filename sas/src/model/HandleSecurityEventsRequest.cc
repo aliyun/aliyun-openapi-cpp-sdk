@@ -51,6 +51,15 @@ void HandleSecurityEventsRequest::setSecurityEventIds(const std::vector<std::str
   securityEventIds_ = securityEventIds;
 }
 
+std::string HandleSecurityEventsRequest::getRemark() const {
+  return remark_;
+}
+
+void HandleSecurityEventsRequest::setRemark(const std::string &remark) {
+  remark_ = remark;
+  setParameter(std::string("Remark"), remark);
+}
+
 std::string HandleSecurityEventsRequest::getSourceIp() const {
   return sourceIp_;
 }

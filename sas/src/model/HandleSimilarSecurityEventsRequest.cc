@@ -43,6 +43,15 @@ void HandleSimilarSecurityEventsRequest::setResourceOwnerId(long resourceOwnerId
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string HandleSimilarSecurityEventsRequest::getRemark() const {
+  return remark_;
+}
+
+void HandleSimilarSecurityEventsRequest::setRemark(const std::string &remark) {
+  remark_ = remark;
+  setParameter(std::string("Remark"), remark);
+}
+
 std::string HandleSimilarSecurityEventsRequest::getSourceIp() const {
   return sourceIp_;
 }

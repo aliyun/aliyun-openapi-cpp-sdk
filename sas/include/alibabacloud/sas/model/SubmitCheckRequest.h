@@ -32,9 +32,12 @@ public:
 	~SubmitCheckRequest();
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getScanRange() const;
+	void setScanRange(const std::string &scanRange);
 
 private:
 	std::string sourceIp_;
+	std::string scanRange_;
 };
 } // namespace Model
 } // namespace Sas

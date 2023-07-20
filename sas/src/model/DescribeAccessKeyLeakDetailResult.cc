@@ -77,6 +77,10 @@ void DescribeAccessKeyLeakDetailResult::parse(const std::string &payload)
 		gmtCreate_ = value["GmtCreate"].asString();
 	if(!value["GithubRepoUrl"].isNull())
 		githubRepoUrl_ = value["GithubRepoUrl"].asString();
+	if(!value["TokenValid"].isNull())
+		tokenValid_ = std::stoi(value["TokenValid"].asString());
+	if(!value["WhitelistTime"].isNull())
+		whitelistTime_ = std::stol(value["WhitelistTime"].asString());
 
 }
 
@@ -125,6 +129,11 @@ std::string DescribeAccessKeyLeakDetailResult::getRemark()const
 	return remark_;
 }
 
+long DescribeAccessKeyLeakDetailResult::getWhitelistTime()const
+{
+	return whitelistTime_;
+}
+
 std::string DescribeAccessKeyLeakDetailResult::getType()const
 {
 	return type_;
@@ -143,6 +152,11 @@ std::string DescribeAccessKeyLeakDetailResult::getGithubFileUpdateTime()const
 std::string DescribeAccessKeyLeakDetailResult::getGmtCreate()const
 {
 	return gmtCreate_;
+}
+
+int DescribeAccessKeyLeakDetailResult::getTokenValid()const
+{
+	return tokenValid_;
 }
 
 std::string DescribeAccessKeyLeakDetailResult::getAccesskeyId()const

@@ -214,6 +214,15 @@ void DescribeSuspEventsRequest::setLang(const std::string &lang) {
   setParameter(std::string("Lang"), lang);
 }
 
+long DescribeSuspEventsRequest::getResourceDirectoryAccountId() const {
+  return resourceDirectoryAccountId_;
+}
+
+void DescribeSuspEventsRequest::setResourceDirectoryAccountId(long resourceDirectoryAccountId) {
+  resourceDirectoryAccountId_ = resourceDirectoryAccountId;
+  setParameter(std::string("ResourceDirectoryAccountId"), std::to_string(resourceDirectoryAccountId));
+}
+
 std::string DescribeSuspEventsRequest::getDealed() const {
   return dealed_;
 }

@@ -34,3 +34,12 @@ void SubmitCheckRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string SubmitCheckRequest::getScanRange() const {
+  return scanRange_;
+}
+
+void SubmitCheckRequest::setScanRange(const std::string &scanRange) {
+  scanRange_ = scanRange;
+  setParameter(std::string("ScanRange"), scanRange);
+}
+

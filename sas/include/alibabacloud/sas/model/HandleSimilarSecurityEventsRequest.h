@@ -34,6 +34,8 @@ public:
 	void setMarkMissParam(const std::string &markMissParam);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getRemark() const;
+	void setRemark(const std::string &remark);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getOperationCode() const;
@@ -46,6 +48,7 @@ public:
 private:
 	std::string markMissParam_;
 	long resourceOwnerId_;
+	std::string remark_;
 	std::string sourceIp_;
 	std::string operationCode_;
 	long taskId_;

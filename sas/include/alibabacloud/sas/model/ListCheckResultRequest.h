@@ -38,6 +38,8 @@ public:
 	void setRiskLevels(const std::vector<std::string> &riskLevels);
 	std::vector<std::string> getInstanceTypes() const;
 	void setInstanceTypes(const std::vector<std::string> &instanceTypes);
+	bool getCustomParam() const;
+	void setCustomParam(bool customParam);
 	std::string getCheckKey() const;
 	void setCheckKey(const std::string &checkKey);
 	std::string getSourceIp() const;
@@ -68,6 +70,7 @@ private:
 	std::vector<long> standardIds_;
 	std::vector<std::string> riskLevels_;
 	std::vector<std::string> instanceTypes_;
+	bool customParam_;
 	std::string checkKey_;
 	std::string sourceIp_;
 	std::string regionId_;

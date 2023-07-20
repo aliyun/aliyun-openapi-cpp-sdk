@@ -46,10 +46,12 @@ namespace AlibabaCloud
 				std::string getCode()const;
 				std::string getSource()const;
 				std::string getRemark()const;
+				long getWhitelistTime()const;
 				std::string getType()const;
 				std::string getGithubUserPicUrl()const;
 				std::string getGithubFileUpdateTime()const;
 				std::string getGmtCreate()const;
+				int getTokenValid()const;
 				std::string getAccesskeyId()const;
 				std::string getGithubFileUrl()const;
 				std::string getGithubFileType()const;
@@ -69,10 +71,12 @@ namespace AlibabaCloud
 				std::string code_;
 				std::string source_;
 				std::string remark_;
+				long whitelistTime_;
 				std::string type_;
 				std::string githubUserPicUrl_;
 				std::string githubFileUpdateTime_;
 				std::string gmtCreate_;
+				int tokenValid_;
 				std::string accesskeyId_;
 				std::string githubFileUrl_;
 				std::string githubFileType_;

@@ -101,6 +101,10 @@ void DescribeContainerInstancesResult::parse(const std::string &payload)
 			containerInstanceListObject.alarmCount = std::stoi(valueContainerInstanceListContainerInstance["AlarmCount"].asString());
 		if(!valueContainerInstanceListContainerInstance["CreateTimestamp"].isNull())
 			containerInstanceListObject.createTimestamp = std::stol(valueContainerInstanceListContainerInstance["CreateTimestamp"].asString());
+		if(!valueContainerInstanceListContainerInstance["Exposed"].isNull())
+			containerInstanceListObject.exposed = std::stoi(valueContainerInstanceListContainerInstance["Exposed"].asString());
+		if(!valueContainerInstanceListContainerInstance["ExposedDetail"].isNull())
+			containerInstanceListObject.exposedDetail = valueContainerInstanceListContainerInstance["ExposedDetail"].asString();
 		containerInstanceList_.push_back(containerInstanceListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

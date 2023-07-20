@@ -38,6 +38,8 @@ public:
 	void setSourceIp(const std::string &sourceIp);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	long getResourceDirectoryAccountId() const;
+	void setResourceDirectoryAccountId(long resourceDirectoryAccountId);
 	std::string getUniqueInfo() const;
 	void setUniqueInfo(const std::string &uniqueInfo);
 
@@ -46,6 +48,7 @@ private:
 	std::string eventName_;
 	std::string sourceIp_;
 	std::string lang_;
+	long resourceDirectoryAccountId_;
 	std::string uniqueInfo_;
 };
 } // namespace Model

@@ -50,6 +50,7 @@ namespace AlibabaCloud
 					int machineCount;
 					long id;
 					int span;
+					long createTimestamp;
 					std::string name;
 				};
 

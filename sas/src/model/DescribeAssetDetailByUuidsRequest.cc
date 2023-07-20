@@ -43,6 +43,15 @@ void DescribeAssetDetailByUuidsRequest::setLang(const std::string &lang) {
   setParameter(std::string("Lang"), lang);
 }
 
+long DescribeAssetDetailByUuidsRequest::getResourceDirectoryAccountId() const {
+  return resourceDirectoryAccountId_;
+}
+
+void DescribeAssetDetailByUuidsRequest::setResourceDirectoryAccountId(long resourceDirectoryAccountId) {
+  resourceDirectoryAccountId_ = resourceDirectoryAccountId;
+  setParameter(std::string("ResourceDirectoryAccountId"), std::to_string(resourceDirectoryAccountId));
+}
+
 std::string DescribeAssetDetailByUuidsRequest::getUuids() const {
   return uuids_;
 }

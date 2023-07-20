@@ -34,12 +34,15 @@ public:
 	void setSourceIp(const std::string &sourceIp);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	long getResourceDirectoryAccountId() const;
+	void setResourceDirectoryAccountId(long resourceDirectoryAccountId);
 	std::string getUuids() const;
 	void setUuids(const std::string &uuids);
 
 private:
 	std::string sourceIp_;
 	std::string lang_;
+	long resourceDirectoryAccountId_;
 	std::string uuids_;
 };
 } // namespace Model

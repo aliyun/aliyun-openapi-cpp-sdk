@@ -36,6 +36,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::vector<std::string> getSecurityEventIds() const;
 	void setSecurityEventIds(const std::vector<std::string> &securityEventIds);
+	std::string getRemark() const;
+	void setRemark(const std::string &remark);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getOperationCode() const;
@@ -49,6 +51,7 @@ private:
 	std::string markMissParam_;
 	long resourceOwnerId_;
 	std::vector<std::string> securityEventIds_;
+	std::string remark_;
 	std::string sourceIp_;
 	std::string operationCode_;
 	std::string operationParams_;

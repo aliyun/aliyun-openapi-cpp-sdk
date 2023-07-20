@@ -29,6 +29,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/AddCheckResultWhiteListResult.h
 	include/alibabacloud/sas/model/AddClientUserDefineRuleRequest.h
 	include/alibabacloud/sas/model/AddClientUserDefineRuleResult.h
+	include/alibabacloud/sas/model/AddImageVulWhiteListRequest.h
+	include/alibabacloud/sas/model/AddImageVulWhiteListResult.h
 	include/alibabacloud/sas/model/AddInstallCodeRequest.h
 	include/alibabacloud/sas/model/AddInstallCodeResult.h
 	include/alibabacloud/sas/model/AddPrivateRegistryRequest.h
@@ -47,6 +49,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/BindAuthToMachineResult.h
 	include/alibabacloud/sas/model/CancelOnceTaskRequest.h
 	include/alibabacloud/sas/model/CancelOnceTaskResult.h
+	include/alibabacloud/sas/model/ChangeAssetRefreshTaskConfigRequest.h
+	include/alibabacloud/sas/model/ChangeAssetRefreshTaskConfigResult.h
 	include/alibabacloud/sas/model/ChangeCheckConfigRequest.h
 	include/alibabacloud/sas/model/ChangeCheckConfigResult.h
 	include/alibabacloud/sas/model/ChangeCheckCustomConfigRequest.h
@@ -59,6 +63,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/CheckUserHasEcsResult.h
 	include/alibabacloud/sas/model/ConfirmVirusEventsRequest.h
 	include/alibabacloud/sas/model/ConfirmVirusEventsResult.h
+	include/alibabacloud/sas/model/CreateAgentlessScanTaskRequest.h
+	include/alibabacloud/sas/model/CreateAgentlessScanTaskResult.h
 	include/alibabacloud/sas/model/CreateAntiBruteForceRuleRequest.h
 	include/alibabacloud/sas/model/CreateAntiBruteForceRuleResult.h
 	include/alibabacloud/sas/model/CreateAssetSelectionConfigRequest.h
@@ -97,6 +103,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/CreateRestoreJobResult.h
 	include/alibabacloud/sas/model/CreateServiceLinkedRoleRequest.h
 	include/alibabacloud/sas/model/CreateServiceLinkedRoleResult.h
+	include/alibabacloud/sas/model/CreateServiceTrailRequest.h
+	include/alibabacloud/sas/model/CreateServiceTrailResult.h
 	include/alibabacloud/sas/model/CreateSimilarSecurityEventsQueryTaskRequest.h
 	include/alibabacloud/sas/model/CreateSimilarSecurityEventsQueryTaskResult.h
 	include/alibabacloud/sas/model/CreateSuspEventNoteRequest.h
@@ -113,6 +121,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DeleteBackupPolicyResult.h
 	include/alibabacloud/sas/model/DeleteBackupPolicyMachineRequest.h
 	include/alibabacloud/sas/model/DeleteBackupPolicyMachineResult.h
+	include/alibabacloud/sas/model/DeleteBinarySecurityPolicyRequest.h
+	include/alibabacloud/sas/model/DeleteBinarySecurityPolicyResult.h
 	include/alibabacloud/sas/model/DeleteClientUserDefineRuleRequest.h
 	include/alibabacloud/sas/model/DeleteClientUserDefineRuleResult.h
 	include/alibabacloud/sas/model/DeleteCustomBlockRecordRequest.h
@@ -141,6 +151,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DeletePrivateRegistryResult.h
 	include/alibabacloud/sas/model/DeleteSecurityEventMarkMissListRequest.h
 	include/alibabacloud/sas/model/DeleteSecurityEventMarkMissListResult.h
+	include/alibabacloud/sas/model/DeleteServiceTrailRequest.h
+	include/alibabacloud/sas/model/DeleteServiceTrailResult.h
 	include/alibabacloud/sas/model/DeleteStrategyRequest.h
 	include/alibabacloud/sas/model/DeleteStrategyResult.h
 	include/alibabacloud/sas/model/DeleteSuspEventNodeRequest.h
@@ -363,6 +375,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeImageStatisticsResult.h
 	include/alibabacloud/sas/model/DescribeImageVulListRequest.h
 	include/alibabacloud/sas/model/DescribeImageVulListResult.h
+	include/alibabacloud/sas/model/DescribeImageVulWhiteListRequest.h
+	include/alibabacloud/sas/model/DescribeImageVulWhiteListResult.h
 	include/alibabacloud/sas/model/DescribeInstallCaptchaRequest.h
 	include/alibabacloud/sas/model/DescribeInstallCaptchaResult.h
 	include/alibabacloud/sas/model/DescribeInstallCodeRequest.h
@@ -393,6 +407,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeMachineCanRebootResult.h
 	include/alibabacloud/sas/model/DescribeModuleConfigRequest.h
 	include/alibabacloud/sas/model/DescribeModuleConfigResult.h
+	include/alibabacloud/sas/model/DescribeMonitorAccountsRequest.h
+	include/alibabacloud/sas/model/DescribeMonitorAccountsResult.h
 	include/alibabacloud/sas/model/DescribeNoticeConfigRequest.h
 	include/alibabacloud/sas/model/DescribeNoticeConfigResult.h
 	include/alibabacloud/sas/model/DescribeNsasSuspEventTypeRequest.h
@@ -467,6 +483,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeSecureSuggestionResult.h
 	include/alibabacloud/sas/model/DescribeSecurityCheckScheduleConfigRequest.h
 	include/alibabacloud/sas/model/DescribeSecurityCheckScheduleConfigResult.h
+	include/alibabacloud/sas/model/DescribeSecurityEventMarkMissListRequest.h
+	include/alibabacloud/sas/model/DescribeSecurityEventMarkMissListResult.h
 	include/alibabacloud/sas/model/DescribeSecurityEventOperationStatusRequest.h
 	include/alibabacloud/sas/model/DescribeSecurityEventOperationStatusResult.h
 	include/alibabacloud/sas/model/DescribeSecurityEventOperationsRequest.h
@@ -619,6 +637,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/FixCheckWarningsResult.h
 	include/alibabacloud/sas/model/GenerateOnceTaskRequest.h
 	include/alibabacloud/sas/model/GenerateOnceTaskResult.h
+	include/alibabacloud/sas/model/GetAgentlessTaskCountRequest.h
+	include/alibabacloud/sas/model/GetAgentlessTaskCountResult.h
 	include/alibabacloud/sas/model/GetAlarmMachineCountRequest.h
 	include/alibabacloud/sas/model/GetAlarmMachineCountResult.h
 	include/alibabacloud/sas/model/GetAppNetworkRequest.h
@@ -643,6 +663,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/GetCheckRiskStatisticsResult.h
 	include/alibabacloud/sas/model/GetCheckSummaryRequest.h
 	include/alibabacloud/sas/model/GetCheckSummaryResult.h
+	include/alibabacloud/sas/model/GetClientRatioStatisticRequest.h
+	include/alibabacloud/sas/model/GetClientRatioStatisticResult.h
 	include/alibabacloud/sas/model/GetClientUserDefineRuleRequest.h
 	include/alibabacloud/sas/model/GetClientUserDefineRuleResult.h
 	include/alibabacloud/sas/model/GetCloudAssetCriteriaRequest.h
@@ -685,6 +707,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/GetPropertyScheduleConfigResult.h
 	include/alibabacloud/sas/model/GetRulesCountRequest.h
 	include/alibabacloud/sas/model/GetRulesCountResult.h
+	include/alibabacloud/sas/model/GetServiceTrailRequest.h
+	include/alibabacloud/sas/model/GetServiceTrailResult.h
 	include/alibabacloud/sas/model/GetSuspiciousStatisticsRequest.h
 	include/alibabacloud/sas/model/GetSuspiciousStatisticsResult.h
 	include/alibabacloud/sas/model/GetVulStatisticsRequest.h
@@ -709,6 +733,16 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/InstallUniBackupAgentResult.h
 	include/alibabacloud/sas/model/JoinWebLockProcessWhiteListRequest.h
 	include/alibabacloud/sas/model/JoinWebLockProcessWhiteListResult.h
+	include/alibabacloud/sas/model/ListAgentlessRegionRequest.h
+	include/alibabacloud/sas/model/ListAgentlessRegionResult.h
+	include/alibabacloud/sas/model/ListAgentlessRelateMaliciousRequest.h
+	include/alibabacloud/sas/model/ListAgentlessRelateMaliciousResult.h
+	include/alibabacloud/sas/model/ListAgentlessRiskUuidRequest.h
+	include/alibabacloud/sas/model/ListAgentlessRiskUuidResult.h
+	include/alibabacloud/sas/model/ListAgentlessTaskRequest.h
+	include/alibabacloud/sas/model/ListAgentlessTaskResult.h
+	include/alibabacloud/sas/model/ListAssetRefreshTaskConfigRequest.h
+	include/alibabacloud/sas/model/ListAssetRefreshTaskConfigResult.h
 	include/alibabacloud/sas/model/ListAssetSelectionSelectedTargetRequest.h
 	include/alibabacloud/sas/model/ListAssetSelectionSelectedTargetResult.h
 	include/alibabacloud/sas/model/ListAssetSelectionTargetRequest.h
@@ -1006,6 +1040,8 @@ set(sas_src
 	src/model/AddCheckResultWhiteListResult.cc
 	src/model/AddClientUserDefineRuleRequest.cc
 	src/model/AddClientUserDefineRuleResult.cc
+	src/model/AddImageVulWhiteListRequest.cc
+	src/model/AddImageVulWhiteListResult.cc
 	src/model/AddInstallCodeRequest.cc
 	src/model/AddInstallCodeResult.cc
 	src/model/AddPrivateRegistryRequest.cc
@@ -1024,6 +1060,8 @@ set(sas_src
 	src/model/BindAuthToMachineResult.cc
 	src/model/CancelOnceTaskRequest.cc
 	src/model/CancelOnceTaskResult.cc
+	src/model/ChangeAssetRefreshTaskConfigRequest.cc
+	src/model/ChangeAssetRefreshTaskConfigResult.cc
 	src/model/ChangeCheckConfigRequest.cc
 	src/model/ChangeCheckConfigResult.cc
 	src/model/ChangeCheckCustomConfigRequest.cc
@@ -1036,6 +1074,8 @@ set(sas_src
 	src/model/CheckUserHasEcsResult.cc
 	src/model/ConfirmVirusEventsRequest.cc
 	src/model/ConfirmVirusEventsResult.cc
+	src/model/CreateAgentlessScanTaskRequest.cc
+	src/model/CreateAgentlessScanTaskResult.cc
 	src/model/CreateAntiBruteForceRuleRequest.cc
 	src/model/CreateAntiBruteForceRuleResult.cc
 	src/model/CreateAssetSelectionConfigRequest.cc
@@ -1074,6 +1114,8 @@ set(sas_src
 	src/model/CreateRestoreJobResult.cc
 	src/model/CreateServiceLinkedRoleRequest.cc
 	src/model/CreateServiceLinkedRoleResult.cc
+	src/model/CreateServiceTrailRequest.cc
+	src/model/CreateServiceTrailResult.cc
 	src/model/CreateSimilarSecurityEventsQueryTaskRequest.cc
 	src/model/CreateSimilarSecurityEventsQueryTaskResult.cc
 	src/model/CreateSuspEventNoteRequest.cc
@@ -1090,6 +1132,8 @@ set(sas_src
 	src/model/DeleteBackupPolicyResult.cc
 	src/model/DeleteBackupPolicyMachineRequest.cc
 	src/model/DeleteBackupPolicyMachineResult.cc
+	src/model/DeleteBinarySecurityPolicyRequest.cc
+	src/model/DeleteBinarySecurityPolicyResult.cc
 	src/model/DeleteClientUserDefineRuleRequest.cc
 	src/model/DeleteClientUserDefineRuleResult.cc
 	src/model/DeleteCustomBlockRecordRequest.cc
@@ -1118,6 +1162,8 @@ set(sas_src
 	src/model/DeletePrivateRegistryResult.cc
 	src/model/DeleteSecurityEventMarkMissListRequest.cc
 	src/model/DeleteSecurityEventMarkMissListResult.cc
+	src/model/DeleteServiceTrailRequest.cc
+	src/model/DeleteServiceTrailResult.cc
 	src/model/DeleteStrategyRequest.cc
 	src/model/DeleteStrategyResult.cc
 	src/model/DeleteSuspEventNodeRequest.cc
@@ -1340,6 +1386,8 @@ set(sas_src
 	src/model/DescribeImageStatisticsResult.cc
 	src/model/DescribeImageVulListRequest.cc
 	src/model/DescribeImageVulListResult.cc
+	src/model/DescribeImageVulWhiteListRequest.cc
+	src/model/DescribeImageVulWhiteListResult.cc
 	src/model/DescribeInstallCaptchaRequest.cc
 	src/model/DescribeInstallCaptchaResult.cc
 	src/model/DescribeInstallCodeRequest.cc
@@ -1370,6 +1418,8 @@ set(sas_src
 	src/model/DescribeMachineCanRebootResult.cc
 	src/model/DescribeModuleConfigRequest.cc
 	src/model/DescribeModuleConfigResult.cc
+	src/model/DescribeMonitorAccountsRequest.cc
+	src/model/DescribeMonitorAccountsResult.cc
 	src/model/DescribeNoticeConfigRequest.cc
 	src/model/DescribeNoticeConfigResult.cc
 	src/model/DescribeNsasSuspEventTypeRequest.cc
@@ -1444,6 +1494,8 @@ set(sas_src
 	src/model/DescribeSecureSuggestionResult.cc
 	src/model/DescribeSecurityCheckScheduleConfigRequest.cc
 	src/model/DescribeSecurityCheckScheduleConfigResult.cc
+	src/model/DescribeSecurityEventMarkMissListRequest.cc
+	src/model/DescribeSecurityEventMarkMissListResult.cc
 	src/model/DescribeSecurityEventOperationStatusRequest.cc
 	src/model/DescribeSecurityEventOperationStatusResult.cc
 	src/model/DescribeSecurityEventOperationsRequest.cc
@@ -1596,6 +1648,8 @@ set(sas_src
 	src/model/FixCheckWarningsResult.cc
 	src/model/GenerateOnceTaskRequest.cc
 	src/model/GenerateOnceTaskResult.cc
+	src/model/GetAgentlessTaskCountRequest.cc
+	src/model/GetAgentlessTaskCountResult.cc
 	src/model/GetAlarmMachineCountRequest.cc
 	src/model/GetAlarmMachineCountResult.cc
 	src/model/GetAppNetworkRequest.cc
@@ -1620,6 +1674,8 @@ set(sas_src
 	src/model/GetCheckRiskStatisticsResult.cc
 	src/model/GetCheckSummaryRequest.cc
 	src/model/GetCheckSummaryResult.cc
+	src/model/GetClientRatioStatisticRequest.cc
+	src/model/GetClientRatioStatisticResult.cc
 	src/model/GetClientUserDefineRuleRequest.cc
 	src/model/GetClientUserDefineRuleResult.cc
 	src/model/GetCloudAssetCriteriaRequest.cc
@@ -1662,6 +1718,8 @@ set(sas_src
 	src/model/GetPropertyScheduleConfigResult.cc
 	src/model/GetRulesCountRequest.cc
 	src/model/GetRulesCountResult.cc
+	src/model/GetServiceTrailRequest.cc
+	src/model/GetServiceTrailResult.cc
 	src/model/GetSuspiciousStatisticsRequest.cc
 	src/model/GetSuspiciousStatisticsResult.cc
 	src/model/GetVulStatisticsRequest.cc
@@ -1686,6 +1744,16 @@ set(sas_src
 	src/model/InstallUniBackupAgentResult.cc
 	src/model/JoinWebLockProcessWhiteListRequest.cc
 	src/model/JoinWebLockProcessWhiteListResult.cc
+	src/model/ListAgentlessRegionRequest.cc
+	src/model/ListAgentlessRegionResult.cc
+	src/model/ListAgentlessRelateMaliciousRequest.cc
+	src/model/ListAgentlessRelateMaliciousResult.cc
+	src/model/ListAgentlessRiskUuidRequest.cc
+	src/model/ListAgentlessRiskUuidResult.cc
+	src/model/ListAgentlessTaskRequest.cc
+	src/model/ListAgentlessTaskResult.cc
+	src/model/ListAssetRefreshTaskConfigRequest.cc
+	src/model/ListAssetRefreshTaskConfigResult.cc
 	src/model/ListAssetSelectionSelectedTargetRequest.cc
 	src/model/ListAssetSelectionSelectedTargetResult.cc
 	src/model/ListAssetSelectionTargetRequest.cc
