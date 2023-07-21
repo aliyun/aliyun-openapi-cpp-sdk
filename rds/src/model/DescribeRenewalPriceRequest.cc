@@ -52,6 +52,15 @@ void DescribeRenewalPriceRequest::setAccessKeyId(const std::string &accessKeyId)
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeRenewalPriceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeRenewalPriceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeRenewalPriceRequest::getRegionId() const {
   return regionId_;
 }

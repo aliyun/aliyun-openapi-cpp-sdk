@@ -43,15 +43,6 @@ void DeleteDBNodesRequest::setDBNodeId(const std::string &dBNodeId) {
   setParameter(std::string("DBNodeId"), dBNodeId);
 }
 
-std::string DeleteDBNodesRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DeleteDBNodesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
 std::string DeleteDBNodesRequest::getClientToken() const {
   return clientToken_;
 }
@@ -59,6 +50,42 @@ std::string DeleteDBNodesRequest::getClientToken() const {
 void DeleteDBNodesRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
   setParameter(std::string("ClientToken"), clientToken);
+}
+
+std::string DeleteDBNodesRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DeleteDBNodesRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DeleteDBNodesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DeleteDBNodesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string DeleteDBNodesRequest::getDBInstanceId() const {
+  return dBInstanceId_;
+}
+
+void DeleteDBNodesRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string DeleteDBNodesRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DeleteDBNodesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
 std::string DeleteDBNodesRequest::getOwnerAccount() const {
@@ -77,23 +104,5 @@ long DeleteDBNodesRequest::getOwnerId() const {
 void DeleteDBNodesRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string DeleteDBNodesRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DeleteDBNodesRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DeleteDBNodesRequest::getDBInstanceId() const {
-  return dBInstanceId_;
-}
-
-void DeleteDBNodesRequest::setDBInstanceId(const std::string &dBInstanceId) {
-  dBInstanceId_ = dBInstanceId;
-  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 

@@ -43,6 +43,15 @@ void CopyDatabaseRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CopyDatabaseRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CopyDatabaseRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CopyDatabaseRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

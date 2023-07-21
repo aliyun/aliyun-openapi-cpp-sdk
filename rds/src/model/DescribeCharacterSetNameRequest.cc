@@ -34,6 +34,42 @@ void DescribeCharacterSetNameRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeCharacterSetNameRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DescribeCharacterSetNameRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DescribeCharacterSetNameRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeCharacterSetNameRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string DescribeCharacterSetNameRequest::getEngine() const {
+  return engine_;
+}
+
+void DescribeCharacterSetNameRequest::setEngine(const std::string &engine) {
+  engine_ = engine;
+  setParameter(std::string("Engine"), engine);
+}
+
+std::string DescribeCharacterSetNameRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeCharacterSetNameRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeCharacterSetNameRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -59,32 +95,5 @@ long DescribeCharacterSetNameRequest::getOwnerId() const {
 void DescribeCharacterSetNameRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string DescribeCharacterSetNameRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DescribeCharacterSetNameRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DescribeCharacterSetNameRequest::getEngine() const {
-  return engine_;
-}
-
-void DescribeCharacterSetNameRequest::setEngine(const std::string &engine) {
-  engine_ = engine;
-  setParameter(std::string("Engine"), engine);
-}
-
-std::string DescribeCharacterSetNameRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DescribeCharacterSetNameRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 
