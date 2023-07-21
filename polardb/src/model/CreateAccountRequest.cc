@@ -142,3 +142,12 @@ void CreateAccountRequest::setDBName(const std::string &dBName) {
   setParameter(std::string("DBName"), dBName);
 }
 
+std::string CreateAccountRequest::getPrivForAllDB() const {
+  return privForAllDB_;
+}
+
+void CreateAccountRequest::setPrivForAllDB(const std::string &privForAllDB) {
+  privForAllDB_ = privForAllDB;
+  setParameter(std::string("PrivForAllDB"), privForAllDB);
+}
+

@@ -34,6 +34,15 @@ void OpenAITaskRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string OpenAITaskRequest::getNodeType() const {
+  return nodeType_;
+}
+
+void OpenAITaskRequest::setNodeType(const std::string &nodeType) {
+  nodeType_ = nodeType;
+  setParameter(std::string("NodeType"), nodeType);
+}
+
 std::string OpenAITaskRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

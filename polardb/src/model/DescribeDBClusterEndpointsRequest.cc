@@ -43,6 +43,15 @@ void DescribeDBClusterEndpointsRequest::setDBEndpointId(const std::string &dBEnd
   setParameter(std::string("DBEndpointId"), dBEndpointId);
 }
 
+std::string DescribeDBClusterEndpointsRequest::getDescribeType() const {
+  return describeType_;
+}
+
+void DescribeDBClusterEndpointsRequest::setDescribeType(const std::string &describeType) {
+  describeType_ = describeType;
+  setParameter(std::string("DescribeType"), describeType);
+}
+
 std::string DescribeDBClusterEndpointsRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getDBEndpointId() const;
 	void setDBEndpointId(const std::string &dBEndpointId);
+	std::string getDescribeType() const;
+	void setDescribeType(const std::string &describeType);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceOwnerAccount() const;
@@ -48,6 +50,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string dBEndpointId_;
+	std::string describeType_;
 	std::string accessKeyId_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
