@@ -68,13 +68,18 @@ namespace AlibabaCloud
 					struct LoadBalancerAddress
 					{
 						std::string intranetAddress;
+						std::string intranetAddressHcStatus;
 						std::string address;
 						std::string allocationId;
+						std::string ipv6AddressHcStatus;
 						std::string eipType;
 						std::string ipv6Address;
 					};
+					std::string status;
 					std::string zoneId;
 					std::string vSwitchId;
+					std::string allocationId;
+					std::string eipType;
 					std::vector<ZoneMapping::LoadBalancerAddress> loadBalancerAddresses;
 				};
 

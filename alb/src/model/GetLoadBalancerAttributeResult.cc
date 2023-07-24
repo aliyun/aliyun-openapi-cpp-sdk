@@ -67,6 +67,12 @@ void GetLoadBalancerAttributeResult::parse(const std::string &payload)
 			zoneMappingsObject.vSwitchId = valueZoneMappingsZoneMapping["VSwitchId"].asString();
 		if(!valueZoneMappingsZoneMapping["ZoneId"].isNull())
 			zoneMappingsObject.zoneId = valueZoneMappingsZoneMapping["ZoneId"].asString();
+		if(!valueZoneMappingsZoneMapping["Status"].isNull())
+			zoneMappingsObject.status = valueZoneMappingsZoneMapping["Status"].asString();
+		if(!valueZoneMappingsZoneMapping["AllocationId"].isNull())
+			zoneMappingsObject.allocationId = valueZoneMappingsZoneMapping["AllocationId"].asString();
+		if(!valueZoneMappingsZoneMapping["EipType"].isNull())
+			zoneMappingsObject.eipType = valueZoneMappingsZoneMapping["EipType"].asString();
 		auto allLoadBalancerAddressesNode = valueZoneMappingsZoneMapping["LoadBalancerAddresses"]["LoadBalancerAddress"];
 		for (auto valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress : allLoadBalancerAddressesNode)
 		{
@@ -75,8 +81,12 @@ void GetLoadBalancerAttributeResult::parse(const std::string &payload)
 				loadBalancerAddressesObject.address = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["Address"].asString();
 			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["Ipv6Address"].isNull())
 				loadBalancerAddressesObject.ipv6Address = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["Ipv6Address"].asString();
+			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["Ipv6AddressHcStatus"].isNull())
+				loadBalancerAddressesObject.ipv6AddressHcStatus = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["Ipv6AddressHcStatus"].asString();
 			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["IntranetAddress"].isNull())
 				loadBalancerAddressesObject.intranetAddress = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["IntranetAddress"].asString();
+			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["IntranetAddressHcStatus"].isNull())
+				loadBalancerAddressesObject.intranetAddressHcStatus = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["IntranetAddressHcStatus"].asString();
 			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["AllocationId"].isNull())
 				loadBalancerAddressesObject.allocationId = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["AllocationId"].asString();
 			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["EipType"].isNull())
