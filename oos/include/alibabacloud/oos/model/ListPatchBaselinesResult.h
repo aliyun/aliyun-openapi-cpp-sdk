@@ -34,15 +34,24 @@ namespace AlibabaCloud
 			public:
 				struct PatchBaseline
 				{
+					struct TagsItem
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					bool isDefault;
-					std::string updatedBy;
 					std::string description;
 					std::string createdBy;
 					std::string updatedDate;
-					std::string createdDate;
 					std::string operationSystem;
-					std::string id;
+					std::vector<std::string> sources;
 					std::string name;
+					std::vector<std::string> approvedPatches;
+					std::string updatedBy;
+					std::string createdDate;
+					bool approvedPatchesEnableNonSecurity;
+					std::string id;
+					std::vector<PatchBaseline::TagsItem> tags;
 					std::string shareType;
 				};
 

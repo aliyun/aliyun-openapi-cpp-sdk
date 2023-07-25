@@ -28,28 +28,44 @@ namespace Oos {
 namespace Model {
 class ALIBABACLOUD_OOS_EXPORT ListPatchBaselinesRequest : public RpcServiceRequest {
 public:
+	struct Tags {
+		std::string value;
+		std::string key;
+	};
 	ListPatchBaselinesRequest();
 	~ListPatchBaselinesRequest();
-	std::string getOperationSystem() const;
-	void setOperationSystem(const std::string &operationSystem);
+	std::vector<std::string> getSources() const;
+	void setSources(const std::vector<std::string> &sources);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
+	std::string getShareType() const;
+	void setShareType(const std::string &shareType);
+	bool getApprovedPatchesEnableNonSecurity() const;
+	void setApprovedPatchesEnableNonSecurity(bool approvedPatchesEnableNonSecurity);
+	std::vector<Tags> getTags() const;
+	void setTags(const std::vector<Tags> &tags);
+	std::string getOperationSystem() const;
+	void setOperationSystem(const std::string &operationSystem);
 	std::string getName() const;
 	void setName(const std::string &name);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
-	std::string getShareType() const;
-	void setShareType(const std::string &shareType);
+	std::vector<std::string> getApprovedPatches() const;
+	void setApprovedPatches(const std::vector<std::string> &approvedPatches);
 
 private:
-	std::string operationSystem_;
+	std::vector<std::string> sources_;
 	std::string regionId_;
 	std::string nextToken_;
+	std::string shareType_;
+	bool approvedPatchesEnableNonSecurity_;
+	std::vector<Tags> tags_;
+	std::string operationSystem_;
 	std::string name_;
 	int maxResults_;
-	std::string shareType_;
+	std::vector<std::string> approvedPatches_;
 };
 } // namespace Model
 } // namespace Oos

@@ -52,6 +52,8 @@ void GetApplicationResult::parse(const std::string &payload)
 		application_.name = applicationNode["Name"].asString();
 	if(!applicationNode["CreateDate"].isNull())
 		application_.createDate = applicationNode["CreateDate"].asString();
+	if(!applicationNode["ApplicationType"].isNull())
+		application_.applicationType = applicationNode["ApplicationType"].asString();
 
 }
 

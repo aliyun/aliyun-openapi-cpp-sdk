@@ -63,6 +63,24 @@ void ListPatchBaselinesResult::parse(const std::string &payload)
 			patchBaselinesObject.id = valuePatchBaselinesPatchBaseline["Id"].asString();
 		if(!valuePatchBaselinesPatchBaseline["ShareType"].isNull())
 			patchBaselinesObject.shareType = valuePatchBaselinesPatchBaseline["ShareType"].asString();
+		if(!valuePatchBaselinesPatchBaseline["ApprovedPatchesEnableNonSecurity"].isNull())
+			patchBaselinesObject.approvedPatchesEnableNonSecurity = valuePatchBaselinesPatchBaseline["ApprovedPatchesEnableNonSecurity"].asString() == "true";
+		auto allTagsNode = valuePatchBaselinesPatchBaseline["Tags"]["TagsItem"];
+		for (auto valuePatchBaselinesPatchBaselineTagsTagsItem : allTagsNode)
+		{
+			PatchBaseline::TagsItem tagsObject;
+			if(!valuePatchBaselinesPatchBaselineTagsTagsItem["TagKey"].isNull())
+				tagsObject.tagKey = valuePatchBaselinesPatchBaselineTagsTagsItem["TagKey"].asString();
+			if(!valuePatchBaselinesPatchBaselineTagsTagsItem["TagValue"].isNull())
+				tagsObject.tagValue = valuePatchBaselinesPatchBaselineTagsTagsItem["TagValue"].asString();
+			patchBaselinesObject.tags.push_back(tagsObject);
+		}
+		auto allApprovedPatches = value["ApprovedPatches"]["ApprovedPatches"];
+		for (auto value : allApprovedPatches)
+			patchBaselinesObject.approvedPatches.push_back(value.asString());
+		auto allSources = value["Sources"]["Sources"];
+		for (auto value : allSources)
+			patchBaselinesObject.sources.push_back(value.asString());
 		patchBaselines_.push_back(patchBaselinesObject);
 	}
 	if(!value["NextToken"].isNull())

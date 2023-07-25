@@ -25,6 +25,17 @@ UpdatePatchBaselineRequest::UpdatePatchBaselineRequest()
 
 UpdatePatchBaselineRequest::~UpdatePatchBaselineRequest() {}
 
+std::vector<UpdatePatchBaselineRequest::std::string> UpdatePatchBaselineRequest::getSources() const {
+  return sources_;
+}
+
+void UpdatePatchBaselineRequest::setSources(const std::vector<UpdatePatchBaselineRequest::std::string> &sources) {
+  sources_ = sources;
+  for(int dep1 = 0; dep1 != sources.size(); dep1++) {
+    setParameter(std::string("Sources") + "." + std::to_string(dep1 + 1), sources[dep1]);
+  }
+}
+
 std::string UpdatePatchBaselineRequest::getClientToken() const {
   return clientToken_;
 }
@@ -52,17 +63,6 @@ void UpdatePatchBaselineRequest::setDescription(const std::string &description) 
   setParameter(std::string("Description"), description);
 }
 
-std::vector<UpdatePatchBaselineRequest::std::string> UpdatePatchBaselineRequest::getRejectedPatches() const {
-  return rejectedPatches_;
-}
-
-void UpdatePatchBaselineRequest::setRejectedPatches(const std::vector<UpdatePatchBaselineRequest::std::string> &rejectedPatches) {
-  rejectedPatches_ = rejectedPatches;
-  for(int dep1 = 0; dep1 != rejectedPatches.size(); dep1++) {
-    setParameter(std::string("RejectedPatches") + "." + std::to_string(dep1 + 1), rejectedPatches[dep1]);
-  }
-}
-
 std::string UpdatePatchBaselineRequest::getRegionId() const {
   return regionId_;
 }
@@ -81,6 +81,38 @@ void UpdatePatchBaselineRequest::setRejectedPatchesAction(const std::string &rej
   setParameter(std::string("RejectedPatchesAction"), rejectedPatchesAction);
 }
 
+bool UpdatePatchBaselineRequest::getApprovedPatchesEnableNonSecurity() const {
+  return approvedPatchesEnableNonSecurity_;
+}
+
+void UpdatePatchBaselineRequest::setApprovedPatchesEnableNonSecurity(bool approvedPatchesEnableNonSecurity) {
+  approvedPatchesEnableNonSecurity_ = approvedPatchesEnableNonSecurity;
+  setParameter(std::string("ApprovedPatchesEnableNonSecurity"), approvedPatchesEnableNonSecurity ? "true" : "false");
+}
+
+std::vector<UpdatePatchBaselineRequest::Tags> UpdatePatchBaselineRequest::getTags() const {
+  return tags_;
+}
+
+void UpdatePatchBaselineRequest::setTags(const std::vector<UpdatePatchBaselineRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+    setParameter(std::string("Tags") + "." + std::to_string(dep1 + 1) + ".Value", tags[dep1].value);
+    setParameter(std::string("Tags") + "." + std::to_string(dep1 + 1) + ".Key", tags[dep1].key);
+  }
+}
+
+std::vector<UpdatePatchBaselineRequest::std::string> UpdatePatchBaselineRequest::getRejectedPatches() const {
+  return rejectedPatches_;
+}
+
+void UpdatePatchBaselineRequest::setRejectedPatches(const std::vector<UpdatePatchBaselineRequest::std::string> &rejectedPatches) {
+  rejectedPatches_ = rejectedPatches;
+  for(int dep1 = 0; dep1 != rejectedPatches.size(); dep1++) {
+    setParameter(std::string("RejectedPatches") + "." + std::to_string(dep1 + 1), rejectedPatches[dep1]);
+  }
+}
+
 std::string UpdatePatchBaselineRequest::getName() const {
   return name_;
 }
@@ -88,5 +120,16 @@ std::string UpdatePatchBaselineRequest::getName() const {
 void UpdatePatchBaselineRequest::setName(const std::string &name) {
   name_ = name;
   setParameter(std::string("Name"), name);
+}
+
+std::vector<UpdatePatchBaselineRequest::std::string> UpdatePatchBaselineRequest::getApprovedPatches() const {
+  return approvedPatches_;
+}
+
+void UpdatePatchBaselineRequest::setApprovedPatches(const std::vector<UpdatePatchBaselineRequest::std::string> &approvedPatches) {
+  approvedPatches_ = approvedPatches;
+  for(int dep1 = 0; dep1 != approvedPatches.size(); dep1++) {
+    setParameter(std::string("ApprovedPatches") + "." + std::to_string(dep1 + 1), approvedPatches[dep1]);
+  }
 }
 
