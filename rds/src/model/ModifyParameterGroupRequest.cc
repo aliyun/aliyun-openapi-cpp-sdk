@@ -43,6 +43,15 @@ void ModifyParameterGroupRequest::setAccessKeyId(const std::string &accessKeyId)
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyParameterGroupRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ModifyParameterGroupRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ModifyParameterGroupRequest::getParameterGroupId() const {
   return parameterGroupId_;
 }

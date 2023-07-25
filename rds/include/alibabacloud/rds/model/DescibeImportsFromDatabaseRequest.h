@@ -40,6 +40,8 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	int getImportId() const;
 	void setImportId(int importId);
 	std::string getEngine() const;
@@ -63,6 +65,7 @@ private:
 	std::string startTime_;
 	int pageNumber_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	int importId_;
 	std::string engine_;
 	int pageSize_;

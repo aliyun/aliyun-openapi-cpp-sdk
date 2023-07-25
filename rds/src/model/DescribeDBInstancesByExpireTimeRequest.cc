@@ -52,6 +52,15 @@ void DescribeDBInstancesByExpireTimeRequest::setAccessKeyId(const std::string &a
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDBInstancesByExpireTimeRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeDBInstancesByExpireTimeRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 bool DescribeDBInstancesByExpireTimeRequest::getExpired() const {
   return expired_;
 }

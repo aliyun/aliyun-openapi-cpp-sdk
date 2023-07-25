@@ -52,6 +52,15 @@ void ImportUserBackupFileRequest::setAccessKeyId(const std::string &accessKeyId)
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ImportUserBackupFileRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ImportUserBackupFileRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ImportUserBackupFileRequest::getRegionId() const {
   return regionId_;
 }

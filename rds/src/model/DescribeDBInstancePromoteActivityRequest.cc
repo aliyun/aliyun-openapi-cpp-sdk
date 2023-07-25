@@ -43,24 +43,6 @@ void DescribeDBInstancePromoteActivityRequest::setResourceOwnerId(long resourceO
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeDBInstancePromoteActivityRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DescribeDBInstancePromoteActivityRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-long DescribeDBInstancePromoteActivityRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeDBInstancePromoteActivityRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string DescribeDBInstancePromoteActivityRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -86,5 +68,23 @@ std::string DescribeDBInstancePromoteActivityRequest::getAliUid() const {
 void DescribeDBInstancePromoteActivityRequest::setAliUid(const std::string &aliUid) {
   aliUid_ = aliUid;
   setParameter(std::string("AliUid"), aliUid);
+}
+
+std::string DescribeDBInstancePromoteActivityRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeDBInstancePromoteActivityRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long DescribeDBInstancePromoteActivityRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeDBInstancePromoteActivityRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

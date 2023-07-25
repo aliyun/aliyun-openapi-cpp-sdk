@@ -30,6 +30,8 @@ class ALIBABACLOUD_RDS_EXPORT DetachGadInstanceMemberRequest : public RpcService
 public:
 	DetachGadInstanceMemberRequest();
 	~DetachGadInstanceMemberRequest();
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getMemberInstanceName() const;
 	void setMemberInstanceName(const std::string &memberInstanceName);
 	std::string getRegionId() const;
@@ -38,6 +40,7 @@ public:
 	void setGadInstanceName(const std::string &gadInstanceName);
 
 private:
+	std::string resourceGroupId_;
 	std::string memberInstanceName_;
 	std::string regionId_;
 	std::string gadInstanceName_;

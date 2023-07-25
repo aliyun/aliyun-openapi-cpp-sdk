@@ -52,6 +52,15 @@ void CreateParameterGroupRequest::setAccessKeyId(const std::string &accessKeyId)
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CreateParameterGroupRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateParameterGroupRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateParameterGroupRequest::getRegionId() const {
   return regionId_;
 }

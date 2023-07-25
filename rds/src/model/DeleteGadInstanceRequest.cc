@@ -25,6 +25,15 @@ DeleteGadInstanceRequest::DeleteGadInstanceRequest()
 
 DeleteGadInstanceRequest::~DeleteGadInstanceRequest() {}
 
+std::string DeleteGadInstanceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DeleteGadInstanceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DeleteGadInstanceRequest::getRegionId() const {
   return regionId_;
 }

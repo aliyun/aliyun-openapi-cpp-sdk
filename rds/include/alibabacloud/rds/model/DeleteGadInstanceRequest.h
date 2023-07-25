@@ -30,12 +30,15 @@ class ALIBABACLOUD_RDS_EXPORT DeleteGadInstanceRequest : public RpcServiceReques
 public:
 	DeleteGadInstanceRequest();
 	~DeleteGadInstanceRequest();
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getGadInstanceName() const;
 	void setGadInstanceName(const std::string &gadInstanceName);
 
 private:
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string gadInstanceName_;
 };

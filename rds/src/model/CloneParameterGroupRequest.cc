@@ -43,6 +43,15 @@ void CloneParameterGroupRequest::setAccessKeyId(const std::string &accessKeyId) 
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CloneParameterGroupRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CloneParameterGroupRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CloneParameterGroupRequest::getParameterGroupId() const {
   return parameterGroupId_;
 }

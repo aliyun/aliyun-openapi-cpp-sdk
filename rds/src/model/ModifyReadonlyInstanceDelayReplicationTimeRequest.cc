@@ -34,6 +34,33 @@ void ModifyReadonlyInstanceDelayReplicationTimeRequest::setResourceOwnerId(long 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ModifyReadonlyInstanceDelayReplicationTimeRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void ModifyReadonlyInstanceDelayReplicationTimeRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string ModifyReadonlyInstanceDelayReplicationTimeRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ModifyReadonlyInstanceDelayReplicationTimeRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string ModifyReadonlyInstanceDelayReplicationTimeRequest::getDBInstanceId() const {
+  return dBInstanceId_;
+}
+
+void ModifyReadonlyInstanceDelayReplicationTimeRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
 std::string ModifyReadonlyInstanceDelayReplicationTimeRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -52,15 +79,6 @@ void ModifyReadonlyInstanceDelayReplicationTimeRequest::setOwnerId(long ownerId)
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ModifyReadonlyInstanceDelayReplicationTimeRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void ModifyReadonlyInstanceDelayReplicationTimeRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string ModifyReadonlyInstanceDelayReplicationTimeRequest::getReadSQLReplicationTime() const {
   return readSQLReplicationTime_;
 }
@@ -68,14 +86,5 @@ std::string ModifyReadonlyInstanceDelayReplicationTimeRequest::getReadSQLReplica
 void ModifyReadonlyInstanceDelayReplicationTimeRequest::setReadSQLReplicationTime(const std::string &readSQLReplicationTime) {
   readSQLReplicationTime_ = readSQLReplicationTime;
   setParameter(std::string("ReadSQLReplicationTime"), readSQLReplicationTime);
-}
-
-std::string ModifyReadonlyInstanceDelayReplicationTimeRequest::getDBInstanceId() const {
-  return dBInstanceId_;
-}
-
-void ModifyReadonlyInstanceDelayReplicationTimeRequest::setDBInstanceId(const std::string &dBInstanceId) {
-  dBInstanceId_ = dBInstanceId;
-  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 

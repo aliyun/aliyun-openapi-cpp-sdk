@@ -32,24 +32,27 @@ public:
 	~ModifyReadonlyInstanceDelayReplicationTimeRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getDBInstanceId() const;
+	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getReadSQLReplicationTime() const;
 	void setReadSQLReplicationTime(const std::string &readSQLReplicationTime);
-	std::string getDBInstanceId() const;
-	void setDBInstanceId(const std::string &dBInstanceId);
 
 private:
 	long resourceOwnerId_;
+	std::string accessKeyId_;
+	std::string resourceGroupId_;
+	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;
-	std::string accessKeyId_;
 	std::string readSQLReplicationTime_;
-	std::string dBInstanceId_;
 };
 } // namespace Model
 } // namespace Rds

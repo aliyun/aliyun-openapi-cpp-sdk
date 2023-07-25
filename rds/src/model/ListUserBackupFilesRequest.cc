@@ -79,6 +79,15 @@ void ListUserBackupFilesRequest::setTag1value(const std::string &tag1value) {
   setParameter(std::string("Tag.1.value"), tag1value);
 }
 
+std::string ListUserBackupFilesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListUserBackupFilesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListUserBackupFilesRequest::getEngine() const {
   return engine_;
 }

@@ -97,6 +97,15 @@ void CheckCreateDdrDBInstanceRequest::setAccessKeyId(const std::string &accessKe
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CheckCreateDdrDBInstanceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CheckCreateDdrDBInstanceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CheckCreateDdrDBInstanceRequest::getRegionId() const {
   return regionId_;
 }

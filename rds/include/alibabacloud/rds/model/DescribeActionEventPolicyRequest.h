@@ -32,21 +32,24 @@ public:
 	~DescribeActionEventPolicyRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 
 private:
 	long resourceOwnerId_;
+	std::string accessKeyId_;
+	std::string resourceGroupId_;
+	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;
-	std::string accessKeyId_;
-	std::string regionId_;
 };
 } // namespace Model
 } // namespace Rds

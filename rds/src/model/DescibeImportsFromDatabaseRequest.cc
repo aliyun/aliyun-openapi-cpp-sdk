@@ -70,6 +70,15 @@ void DescibeImportsFromDatabaseRequest::setAccessKeyId(const std::string &access
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescibeImportsFromDatabaseRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescibeImportsFromDatabaseRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 int DescibeImportsFromDatabaseRequest::getImportId() const {
   return importId_;
 }

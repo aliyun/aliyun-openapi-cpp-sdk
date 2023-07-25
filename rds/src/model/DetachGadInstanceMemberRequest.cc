@@ -25,6 +25,15 @@ DetachGadInstanceMemberRequest::DetachGadInstanceMemberRequest()
 
 DetachGadInstanceMemberRequest::~DetachGadInstanceMemberRequest() {}
 
+std::string DetachGadInstanceMemberRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DetachGadInstanceMemberRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DetachGadInstanceMemberRequest::getMemberInstanceName() const {
   return memberInstanceName_;
 }

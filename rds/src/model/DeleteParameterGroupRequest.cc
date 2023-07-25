@@ -34,24 +34,6 @@ void DeleteParameterGroupRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DeleteParameterGroupRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DeleteParameterGroupRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-long DeleteParameterGroupRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DeleteParameterGroupRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string DeleteParameterGroupRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -59,6 +41,15 @@ std::string DeleteParameterGroupRequest::getAccessKeyId() const {
 void DeleteParameterGroupRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DeleteParameterGroupRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DeleteParameterGroupRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string DeleteParameterGroupRequest::getParameterGroupId() const {
@@ -77,5 +68,23 @@ std::string DeleteParameterGroupRequest::getRegionId() const {
 void DeleteParameterGroupRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DeleteParameterGroupRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DeleteParameterGroupRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long DeleteParameterGroupRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DeleteParameterGroupRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

@@ -61,6 +61,15 @@ void DeleteSecretRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DeleteSecretRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DeleteSecretRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DeleteSecretRequest::getRegionId() const {
   return regionId_;
 }

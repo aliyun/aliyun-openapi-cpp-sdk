@@ -34,6 +34,33 @@ void SwitchGuardToMasterInstanceRequest::setResourceOwnerId(long resourceOwnerId
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string SwitchGuardToMasterInstanceRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void SwitchGuardToMasterInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string SwitchGuardToMasterInstanceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void SwitchGuardToMasterInstanceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string SwitchGuardToMasterInstanceRequest::getDBInstanceId() const {
+  return dBInstanceId_;
+}
+
+void SwitchGuardToMasterInstanceRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
 std::string SwitchGuardToMasterInstanceRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -59,23 +86,5 @@ long SwitchGuardToMasterInstanceRequest::getOwnerId() const {
 void SwitchGuardToMasterInstanceRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string SwitchGuardToMasterInstanceRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void SwitchGuardToMasterInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string SwitchGuardToMasterInstanceRequest::getDBInstanceId() const {
-  return dBInstanceId_;
-}
-
-void SwitchGuardToMasterInstanceRequest::setDBInstanceId(const std::string &dBInstanceId) {
-  dBInstanceId_ = dBInstanceId;
-  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 

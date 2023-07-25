@@ -34,6 +34,33 @@ void DescribeActionEventPolicyRequest::setResourceOwnerId(long resourceOwnerId) 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeActionEventPolicyRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DescribeActionEventPolicyRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DescribeActionEventPolicyRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeActionEventPolicyRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string DescribeActionEventPolicyRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeActionEventPolicyRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeActionEventPolicyRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -50,23 +77,5 @@ long DescribeActionEventPolicyRequest::getOwnerId() const {
 void DescribeActionEventPolicyRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string DescribeActionEventPolicyRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DescribeActionEventPolicyRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DescribeActionEventPolicyRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DescribeActionEventPolicyRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 

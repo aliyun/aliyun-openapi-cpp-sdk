@@ -34,6 +34,42 @@ void DeleteUserBackupFileRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DeleteUserBackupFileRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DeleteUserBackupFileRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DeleteUserBackupFileRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DeleteUserBackupFileRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string DeleteUserBackupFileRequest::getEngine() const {
+  return engine_;
+}
+
+void DeleteUserBackupFileRequest::setEngine(const std::string &engine) {
+  engine_ = engine;
+  setParameter(std::string("Engine"), engine);
+}
+
+std::string DeleteUserBackupFileRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteUserBackupFileRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteUserBackupFileRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -61,15 +97,6 @@ void DeleteUserBackupFileRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DeleteUserBackupFileRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DeleteUserBackupFileRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string DeleteUserBackupFileRequest::getOpsServiceVersion() const {
   return opsServiceVersion_;
 }
@@ -77,23 +104,5 @@ std::string DeleteUserBackupFileRequest::getOpsServiceVersion() const {
 void DeleteUserBackupFileRequest::setOpsServiceVersion(const std::string &opsServiceVersion) {
   opsServiceVersion_ = opsServiceVersion;
   setParameter(std::string("OpsServiceVersion"), opsServiceVersion);
-}
-
-std::string DeleteUserBackupFileRequest::getEngine() const {
-  return engine_;
-}
-
-void DeleteUserBackupFileRequest::setEngine(const std::string &engine) {
-  engine_ = engine;
-  setParameter(std::string("Engine"), engine);
-}
-
-std::string DeleteUserBackupFileRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DeleteUserBackupFileRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 
