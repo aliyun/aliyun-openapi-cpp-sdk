@@ -30,16 +30,16 @@ class ALIBABACLOUD_EHPC_EXPORT SubmitServerlessJobRequest : public RpcServiceReq
 public:
 	struct Container {
 		struct VolumeMountItem {
-			std::string flexVolumeOptions;
-			std::string nFSVolumeServer;
+			std::string flexVolumeDriver;
 			std::string mountPath;
 			bool readOnly;
 			std::string mountPropagation;
 			std::string subPath;
 			std::string nFSVolumePath;
 			std::string type;
+			std::string flexVolumeOptions;
 			bool nFSVolumeReadOnly;
-			std::string flexVolumeDriver;
+			std::string nFSVolumeServer;
 		};
 		VolumeMountItem volumeMountItem;
 		std::vector<VolumeMountItem> volumeMount;
@@ -51,8 +51,8 @@ public:
 		PortItem portItem;
 		std::vector<PortItem> port;
 		struct EnvironmentVarItem {
-			std::string name;
 			std::string value;
+			std::string key;
 		};
 		EnvironmentVarItem environmentVarItem;
 		std::vector<EnvironmentVarItem> environmentVar;
@@ -76,11 +76,11 @@ public:
 		std::vector<std::string> domain;
 	};
 	struct Volume {
-		std::string flexVolumeOptions;
-		std::string nFSVolumeServer;
-		std::string nFSVolumePath;
-		bool nFSVolumeReadOnly;
 		std::string flexVolumeDriver;
+		std::string nFSVolumePath;
+		std::string flexVolumeOptions;
+		bool nFSVolumeReadOnly;
+		std::string nFSVolumeServer;
 	};
 	struct RetryStrategy {
 		struct EvaluateOnExitItem {

@@ -32,16 +32,16 @@ SubmitServerlessJobRequest::Container SubmitServerlessJobRequest::getContainer()
 void SubmitServerlessJobRequest::setContainer(const SubmitServerlessJobRequest::Container &container) {
   container_ = container;
   for(int dep1 = 0; dep1 != container.volumeMount.size(); dep1++) {
-    setParameter(std::string("Container") + ".VolumeMount." + std::to_string(dep1 + 1) + ".FlexVolume.Options", container.volumeMount[dep1].flexVolumeOptions);
-    setParameter(std::string("Container") + ".VolumeMount." + std::to_string(dep1 + 1) + ".NFSVolume.Server", container.volumeMount[dep1].nFSVolumeServer);
+    setParameter(std::string("Container") + ".VolumeMount." + std::to_string(dep1 + 1) + ".FlexVolumeDriver", container.volumeMount[dep1].flexVolumeDriver);
     setParameter(std::string("Container") + ".VolumeMount." + std::to_string(dep1 + 1) + ".MountPath", container.volumeMount[dep1].mountPath);
     setParameter(std::string("Container") + ".VolumeMount." + std::to_string(dep1 + 1) + ".ReadOnly", container.volumeMount[dep1].readOnly ? "true" : "false");
     setParameter(std::string("Container") + ".VolumeMount." + std::to_string(dep1 + 1) + ".MountPropagation", container.volumeMount[dep1].mountPropagation);
     setParameter(std::string("Container") + ".VolumeMount." + std::to_string(dep1 + 1) + ".SubPath", container.volumeMount[dep1].subPath);
-    setParameter(std::string("Container") + ".VolumeMount." + std::to_string(dep1 + 1) + ".NFSVolume.Path", container.volumeMount[dep1].nFSVolumePath);
+    setParameter(std::string("Container") + ".VolumeMount." + std::to_string(dep1 + 1) + ".NFSVolumePath", container.volumeMount[dep1].nFSVolumePath);
     setParameter(std::string("Container") + ".VolumeMount." + std::to_string(dep1 + 1) + ".Type", container.volumeMount[dep1].type);
-    setParameter(std::string("Container") + ".VolumeMount." + std::to_string(dep1 + 1) + ".NFSVolume.ReadOnly", container.volumeMount[dep1].nFSVolumeReadOnly ? "true" : "false");
-    setParameter(std::string("Container") + ".VolumeMount." + std::to_string(dep1 + 1) + ".FlexVolume.Driver", container.volumeMount[dep1].flexVolumeDriver);
+    setParameter(std::string("Container") + ".VolumeMount." + std::to_string(dep1 + 1) + ".FlexVolumeOptions", container.volumeMount[dep1].flexVolumeOptions);
+    setParameter(std::string("Container") + ".VolumeMount." + std::to_string(dep1 + 1) + ".NFSVolumeReadOnly", container.volumeMount[dep1].nFSVolumeReadOnly ? "true" : "false");
+    setParameter(std::string("Container") + ".VolumeMount." + std::to_string(dep1 + 1) + ".NFSVolumeServer", container.volumeMount[dep1].nFSVolumeServer);
   }
   setParameter(std::string("Container") + ".Image", container.image);
   for(int dep1 = 0; dep1 != container.port.size(); dep1++) {
@@ -49,8 +49,8 @@ void SubmitServerlessJobRequest::setContainer(const SubmitServerlessJobRequest::
     setParameter(std::string("Container") + ".Port." + std::to_string(dep1 + 1) + ".Port", std::to_string(container.port[dep1].port));
   }
   for(int dep1 = 0; dep1 != container.environmentVar.size(); dep1++) {
-    setParameter(std::string("Container") + ".EnvironmentVar." + std::to_string(dep1 + 1) + ".Name", container.environmentVar[dep1].name);
     setParameter(std::string("Container") + ".EnvironmentVar." + std::to_string(dep1 + 1) + ".Value", container.environmentVar[dep1].value);
+    setParameter(std::string("Container") + ".EnvironmentVar." + std::to_string(dep1 + 1) + ".Key", container.environmentVar[dep1].key);
   }
   setParameter(std::string("Container") + ".WorkingDir", container.workingDir);
   for(int dep1 = 0; dep1 != container.arg.size(); dep1++) {
@@ -228,11 +228,11 @@ std::vector<SubmitServerlessJobRequest::Volume> SubmitServerlessJobRequest::getV
 void SubmitServerlessJobRequest::setVolume(const std::vector<SubmitServerlessJobRequest::Volume> &volume) {
   volume_ = volume;
   for(int dep1 = 0; dep1 != volume.size(); dep1++) {
-    setParameter(std::string("Volume") + "." + std::to_string(dep1 + 1) + ".FlexVolume.Options", volume[dep1].flexVolumeOptions);
-    setParameter(std::string("Volume") + "." + std::to_string(dep1 + 1) + ".NFSVolume.Server", volume[dep1].nFSVolumeServer);
-    setParameter(std::string("Volume") + "." + std::to_string(dep1 + 1) + ".NFSVolume.Path", volume[dep1].nFSVolumePath);
-    setParameter(std::string("Volume") + "." + std::to_string(dep1 + 1) + ".NFSVolume.ReadOnly", volume[dep1].nFSVolumeReadOnly ? "true" : "false");
-    setParameter(std::string("Volume") + "." + std::to_string(dep1 + 1) + ".FlexVolume.Driver", volume[dep1].flexVolumeDriver);
+    setParameter(std::string("Volume") + "." + std::to_string(dep1 + 1) + ".FlexVolumeDriver", volume[dep1].flexVolumeDriver);
+    setParameter(std::string("Volume") + "." + std::to_string(dep1 + 1) + ".NFSVolumePath", volume[dep1].nFSVolumePath);
+    setParameter(std::string("Volume") + "." + std::to_string(dep1 + 1) + ".FlexVolumeOptions", volume[dep1].flexVolumeOptions);
+    setParameter(std::string("Volume") + "." + std::to_string(dep1 + 1) + ".NFSVolumeReadOnly", volume[dep1].nFSVolumeReadOnly ? "true" : "false");
+    setParameter(std::string("Volume") + "." + std::to_string(dep1 + 1) + ".NFSVolumeServer", volume[dep1].nFSVolumeServer);
   }
 }
 
