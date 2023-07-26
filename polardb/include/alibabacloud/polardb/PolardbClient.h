@@ -30,6 +30,8 @@
 #include "model/CheckDBNameResult.h"
 #include "model/CheckKMSAuthorizedRequest.h"
 #include "model/CheckKMSAuthorizedResult.h"
+#include "model/CheckServiceLinkedRoleRequest.h"
+#include "model/CheckServiceLinkedRoleResult.h"
 #include "model/CloseAITaskRequest.h"
 #include "model/CloseAITaskResult.h"
 #include "model/CloseDBClusterMigrationRequest.h"
@@ -56,6 +58,8 @@
 #include "model/CreateGlobalSecurityIPGroupResult.h"
 #include "model/CreateParameterGroupRequest.h"
 #include "model/CreateParameterGroupResult.h"
+#include "model/CreateServiceLinkedRoleRequest.h"
+#include "model/CreateServiceLinkedRoleResult.h"
 #include "model/CreateStoragePlanRequest.h"
 #include "model/CreateStoragePlanResult.h"
 #include "model/DeleteAccountRequest.h"
@@ -317,6 +321,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckKMSAuthorizedResult> CheckKMSAuthorizedOutcome;
 			typedef std::future<CheckKMSAuthorizedOutcome> CheckKMSAuthorizedOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::CheckKMSAuthorizedRequest&, const CheckKMSAuthorizedOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckKMSAuthorizedAsyncHandler;
+			typedef Outcome<Error, Model::CheckServiceLinkedRoleResult> CheckServiceLinkedRoleOutcome;
+			typedef std::future<CheckServiceLinkedRoleOutcome> CheckServiceLinkedRoleOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::CheckServiceLinkedRoleRequest&, const CheckServiceLinkedRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckServiceLinkedRoleAsyncHandler;
 			typedef Outcome<Error, Model::CloseAITaskResult> CloseAITaskOutcome;
 			typedef std::future<CloseAITaskOutcome> CloseAITaskOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::CloseAITaskRequest&, const CloseAITaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseAITaskAsyncHandler;
@@ -356,6 +363,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateParameterGroupResult> CreateParameterGroupOutcome;
 			typedef std::future<CreateParameterGroupOutcome> CreateParameterGroupOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::CreateParameterGroupRequest&, const CreateParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateParameterGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateServiceLinkedRoleResult> CreateServiceLinkedRoleOutcome;
+			typedef std::future<CreateServiceLinkedRoleOutcome> CreateServiceLinkedRoleOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::CreateServiceLinkedRoleRequest&, const CreateServiceLinkedRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceLinkedRoleAsyncHandler;
 			typedef Outcome<Error, Model::CreateStoragePlanResult> CreateStoragePlanOutcome;
 			typedef std::future<CreateStoragePlanOutcome> CreateStoragePlanOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::CreateStoragePlanRequest&, const CreateStoragePlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateStoragePlanAsyncHandler;
@@ -733,6 +743,9 @@ namespace AlibabaCloud
 			CheckKMSAuthorizedOutcome checkKMSAuthorized(const Model::CheckKMSAuthorizedRequest &request)const;
 			void checkKMSAuthorizedAsync(const Model::CheckKMSAuthorizedRequest& request, const CheckKMSAuthorizedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckKMSAuthorizedOutcomeCallable checkKMSAuthorizedCallable(const Model::CheckKMSAuthorizedRequest& request) const;
+			CheckServiceLinkedRoleOutcome checkServiceLinkedRole(const Model::CheckServiceLinkedRoleRequest &request)const;
+			void checkServiceLinkedRoleAsync(const Model::CheckServiceLinkedRoleRequest& request, const CheckServiceLinkedRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckServiceLinkedRoleOutcomeCallable checkServiceLinkedRoleCallable(const Model::CheckServiceLinkedRoleRequest& request) const;
 			CloseAITaskOutcome closeAITask(const Model::CloseAITaskRequest &request)const;
 			void closeAITaskAsync(const Model::CloseAITaskRequest& request, const CloseAITaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloseAITaskOutcomeCallable closeAITaskCallable(const Model::CloseAITaskRequest& request) const;
@@ -772,6 +785,9 @@ namespace AlibabaCloud
 			CreateParameterGroupOutcome createParameterGroup(const Model::CreateParameterGroupRequest &request)const;
 			void createParameterGroupAsync(const Model::CreateParameterGroupRequest& request, const CreateParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateParameterGroupOutcomeCallable createParameterGroupCallable(const Model::CreateParameterGroupRequest& request) const;
+			CreateServiceLinkedRoleOutcome createServiceLinkedRole(const Model::CreateServiceLinkedRoleRequest &request)const;
+			void createServiceLinkedRoleAsync(const Model::CreateServiceLinkedRoleRequest& request, const CreateServiceLinkedRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateServiceLinkedRoleOutcomeCallable createServiceLinkedRoleCallable(const Model::CreateServiceLinkedRoleRequest& request) const;
 			CreateStoragePlanOutcome createStoragePlan(const Model::CreateStoragePlanRequest &request)const;
 			void createStoragePlanAsync(const Model::CreateStoragePlanRequest& request, const CreateStoragePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateStoragePlanOutcomeCallable createStoragePlanCallable(const Model::CreateStoragePlanRequest& request) const;

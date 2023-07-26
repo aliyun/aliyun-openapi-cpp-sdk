@@ -195,6 +195,42 @@ PolardbClient::CheckKMSAuthorizedOutcomeCallable PolardbClient::checkKMSAuthoriz
 	return task->get_future();
 }
 
+PolardbClient::CheckServiceLinkedRoleOutcome PolardbClient::checkServiceLinkedRole(const CheckServiceLinkedRoleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckServiceLinkedRoleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckServiceLinkedRoleOutcome(CheckServiceLinkedRoleResult(outcome.result()));
+	else
+		return CheckServiceLinkedRoleOutcome(outcome.error());
+}
+
+void PolardbClient::checkServiceLinkedRoleAsync(const CheckServiceLinkedRoleRequest& request, const CheckServiceLinkedRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkServiceLinkedRole(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::CheckServiceLinkedRoleOutcomeCallable PolardbClient::checkServiceLinkedRoleCallable(const CheckServiceLinkedRoleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckServiceLinkedRoleOutcome()>>(
+			[this, request]()
+			{
+			return this->checkServiceLinkedRole(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::CloseAITaskOutcome PolardbClient::closeAITask(const CloseAITaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +693,42 @@ PolardbClient::CreateParameterGroupOutcomeCallable PolardbClient::createParamete
 			[this, request]()
 			{
 			return this->createParameterGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::CreateServiceLinkedRoleOutcome PolardbClient::createServiceLinkedRole(const CreateServiceLinkedRoleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateServiceLinkedRoleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateServiceLinkedRoleOutcome(CreateServiceLinkedRoleResult(outcome.result()));
+	else
+		return CreateServiceLinkedRoleOutcome(outcome.error());
+}
+
+void PolardbClient::createServiceLinkedRoleAsync(const CreateServiceLinkedRoleRequest& request, const CreateServiceLinkedRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createServiceLinkedRole(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::CreateServiceLinkedRoleOutcomeCallable PolardbClient::createServiceLinkedRoleCallable(const CreateServiceLinkedRoleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateServiceLinkedRoleOutcome()>>(
+			[this, request]()
+			{
+			return this->createServiceLinkedRole(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

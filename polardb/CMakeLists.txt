@@ -29,6 +29,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/CheckDBNameResult.h
 	include/alibabacloud/polardb/model/CheckKMSAuthorizedRequest.h
 	include/alibabacloud/polardb/model/CheckKMSAuthorizedResult.h
+	include/alibabacloud/polardb/model/CheckServiceLinkedRoleRequest.h
+	include/alibabacloud/polardb/model/CheckServiceLinkedRoleResult.h
 	include/alibabacloud/polardb/model/CloseAITaskRequest.h
 	include/alibabacloud/polardb/model/CloseAITaskResult.h
 	include/alibabacloud/polardb/model/CloseDBClusterMigrationRequest.h
@@ -55,6 +57,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/CreateGlobalSecurityIPGroupResult.h
 	include/alibabacloud/polardb/model/CreateParameterGroupRequest.h
 	include/alibabacloud/polardb/model/CreateParameterGroupResult.h
+	include/alibabacloud/polardb/model/CreateServiceLinkedRoleRequest.h
+	include/alibabacloud/polardb/model/CreateServiceLinkedRoleResult.h
 	include/alibabacloud/polardb/model/CreateStoragePlanRequest.h
 	include/alibabacloud/polardb/model/CreateStoragePlanResult.h
 	include/alibabacloud/polardb/model/DeleteAccountRequest.h
@@ -306,6 +310,8 @@ set(polardb_src
 	src/model/CheckDBNameResult.cc
 	src/model/CheckKMSAuthorizedRequest.cc
 	src/model/CheckKMSAuthorizedResult.cc
+	src/model/CheckServiceLinkedRoleRequest.cc
+	src/model/CheckServiceLinkedRoleResult.cc
 	src/model/CloseAITaskRequest.cc
 	src/model/CloseAITaskResult.cc
 	src/model/CloseDBClusterMigrationRequest.cc
@@ -332,6 +338,8 @@ set(polardb_src
 	src/model/CreateGlobalSecurityIPGroupResult.cc
 	src/model/CreateParameterGroupRequest.cc
 	src/model/CreateParameterGroupResult.cc
+	src/model/CreateServiceLinkedRoleRequest.cc
+	src/model/CreateServiceLinkedRoleResult.cc
 	src/model/CreateStoragePlanRequest.cc
 	src/model/CreateStoragePlanResult.cc
 	src/model/DeleteAccountRequest.cc
