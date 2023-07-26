@@ -50,6 +50,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getPlannedStartTime() const;
 	void setPlannedStartTime(const std::string &plannedStartTime);
+	std::string getTargetDBRevisionVersionCode() const;
+	void setTargetDBRevisionVersionCode(const std::string &targetDBRevisionVersionCode);
 	std::string getUpgradePolicy() const;
 	void setUpgradePolicy(const std::string &upgradePolicy);
 	bool getFromTimeService() const;
@@ -66,6 +68,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string plannedStartTime_;
+	std::string targetDBRevisionVersionCode_;
 	std::string upgradePolicy_;
 	bool fromTimeService_;
 };

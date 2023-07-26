@@ -32,6 +32,13 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_POLARDB_EXPORT DescribeDBClusterVersionResult : public ServiceResult
 			{
 			public:
+				struct DBRevisionVersionListItem
+				{
+					std::string releaseType;
+					std::string revisionVersionName;
+					std::string releaseNote;
+					std::string revisionVersionCode;
+				};
 
 
 				DescribeDBClusterVersionResult();
@@ -47,6 +54,7 @@ namespace AlibabaCloud
 				std::string getProxyRevisionVersion()const;
 				std::string getDBLatestVersion()const;
 				std::string getDBMinorVersion()const;
+				std::vector<DBRevisionVersionListItem> getDBRevisionVersionList()const;
 				std::string getProxyLatestVersion()const;
 
 			protected:
@@ -62,6 +70,7 @@ namespace AlibabaCloud
 				std::string proxyRevisionVersion_;
 				std::string dBLatestVersion_;
 				std::string dBMinorVersion_;
+				std::vector<DBRevisionVersionListItem> dBRevisionVersionList_;
 				std::string proxyLatestVersion_;
 
 			};

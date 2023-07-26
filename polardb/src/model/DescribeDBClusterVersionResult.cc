@@ -39,6 +39,20 @@ void DescribeDBClusterVersionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allDBRevisionVersionListNode = value["DBRevisionVersionList"]["DBRevisionVersionListItem"];
+	for (auto valueDBRevisionVersionListDBRevisionVersionListItem : allDBRevisionVersionListNode)
+	{
+		DBRevisionVersionListItem dBRevisionVersionListObject;
+		if(!valueDBRevisionVersionListDBRevisionVersionListItem["ReleaseType"].isNull())
+			dBRevisionVersionListObject.releaseType = valueDBRevisionVersionListDBRevisionVersionListItem["ReleaseType"].asString();
+		if(!valueDBRevisionVersionListDBRevisionVersionListItem["RevisionVersionCode"].isNull())
+			dBRevisionVersionListObject.revisionVersionCode = valueDBRevisionVersionListDBRevisionVersionListItem["RevisionVersionCode"].asString();
+		if(!valueDBRevisionVersionListDBRevisionVersionListItem["RevisionVersionName"].isNull())
+			dBRevisionVersionListObject.revisionVersionName = valueDBRevisionVersionListDBRevisionVersionListItem["RevisionVersionName"].asString();
+		if(!valueDBRevisionVersionListDBRevisionVersionListItem["ReleaseNote"].isNull())
+			dBRevisionVersionListObject.releaseNote = valueDBRevisionVersionListDBRevisionVersionListItem["ReleaseNote"].asString();
+		dBRevisionVersionList_.push_back(dBRevisionVersionListObject);
+	}
 	if(!value["IsLatestVersion"].isNull())
 		isLatestVersion_ = value["IsLatestVersion"].asString();
 	if(!value["IsProxyLatestVersion"].isNull())
@@ -112,6 +126,11 @@ std::string DescribeDBClusterVersionResult::getDBLatestVersion()const
 std::string DescribeDBClusterVersionResult::getDBMinorVersion()const
 {
 	return dBMinorVersion_;
+}
+
+std::vector<DescribeDBClusterVersionResult::DBRevisionVersionListItem> DescribeDBClusterVersionResult::getDBRevisionVersionList()const
+{
+	return dBRevisionVersionList_;
 }
 
 std::string DescribeDBClusterVersionResult::getProxyLatestVersion()const

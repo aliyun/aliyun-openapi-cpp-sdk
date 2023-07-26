@@ -115,6 +115,15 @@ void UpgradeDBClusterVersionRequest::setPlannedStartTime(const std::string &plan
   setParameter(std::string("PlannedStartTime"), plannedStartTime);
 }
 
+std::string UpgradeDBClusterVersionRequest::getTargetDBRevisionVersionCode() const {
+  return targetDBRevisionVersionCode_;
+}
+
+void UpgradeDBClusterVersionRequest::setTargetDBRevisionVersionCode(const std::string &targetDBRevisionVersionCode) {
+  targetDBRevisionVersionCode_ = targetDBRevisionVersionCode;
+  setParameter(std::string("TargetDBRevisionVersionCode"), targetDBRevisionVersionCode);
+}
+
 std::string UpgradeDBClusterVersionRequest::getUpgradePolicy() const {
   return upgradePolicy_;
 }

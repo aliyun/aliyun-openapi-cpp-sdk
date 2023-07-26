@@ -43,6 +43,15 @@ void OpenAITaskRequest::setNodeType(const std::string &nodeType) {
   setParameter(std::string("NodeType"), nodeType);
 }
 
+std::string OpenAITaskRequest::getDescribeType() const {
+  return describeType_;
+}
+
+void OpenAITaskRequest::setDescribeType(const std::string &describeType) {
+  describeType_ = describeType;
+  setParameter(std::string("DescribeType"), describeType);
+}
+
 std::string OpenAITaskRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

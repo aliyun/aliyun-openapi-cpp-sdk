@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getNodeType() const;
 	void setNodeType(const std::string &nodeType);
+	std::string getDescribeType() const;
+	void setDescribeType(const std::string &describeType);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceGroupId() const;
@@ -56,6 +58,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string nodeType_;
+	std::string describeType_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	std::string password_;
