@@ -78,6 +78,8 @@ public:
 	void setUsedTime(long usedTime);
 	bool getBurstingEnabled() const;
 	void setBurstingEnabled(bool burstingEnabled);
+	std::string getTargetMinorVersion() const;
+	void setTargetMinorVersion(const std::string &targetMinorVersion);
 	std::string getDBInstanceClass() const;
 	void setDBInstanceClass(const std::string &dBInstanceClass);
 	std::string getZoneId() const;
@@ -109,6 +111,7 @@ private:
 	long ownerId_;
 	long usedTime_;
 	bool burstingEnabled_;
+	std::string targetMinorVersion_;
 	std::string dBInstanceClass_;
 	std::string zoneId_;
 	std::string category_;

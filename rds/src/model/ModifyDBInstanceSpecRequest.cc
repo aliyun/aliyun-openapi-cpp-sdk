@@ -217,6 +217,15 @@ void ModifyDBInstanceSpecRequest::setBurstingEnabled(bool burstingEnabled) {
   setParameter(std::string("BurstingEnabled"), burstingEnabled ? "true" : "false");
 }
 
+std::string ModifyDBInstanceSpecRequest::getTargetMinorVersion() const {
+  return targetMinorVersion_;
+}
+
+void ModifyDBInstanceSpecRequest::setTargetMinorVersion(const std::string &targetMinorVersion) {
+  targetMinorVersion_ = targetMinorVersion;
+  setParameter(std::string("TargetMinorVersion"), targetMinorVersion);
+}
+
 std::string ModifyDBInstanceSpecRequest::getDBInstanceClass() const {
   return dBInstanceClass_;
 }
