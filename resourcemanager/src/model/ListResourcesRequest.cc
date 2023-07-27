@@ -61,6 +61,18 @@ void ListResourcesRequest::setResourceId(const std::string &resourceId) {
   setParameter(std::string("ResourceId"), resourceId);
 }
 
+std::vector<ListResourcesRequest::ResourceTypes> ListResourcesRequest::getResourceTypes() const {
+  return resourceTypes_;
+}
+
+void ListResourcesRequest::setResourceTypes(const std::vector<ListResourcesRequest::ResourceTypes> &resourceTypes) {
+  resourceTypes_ = resourceTypes;
+  for(int dep1 = 0; dep1 != resourceTypes.size(); dep1++) {
+    setParameter(std::string("ResourceTypes") + "." + std::to_string(dep1 + 1) + ".Service", resourceTypes[dep1].service);
+    setParameter(std::string("ResourceTypes") + "." + std::to_string(dep1 + 1) + ".ResourceType", resourceTypes[dep1].resourceType);
+  }
+}
+
 std::string ListResourcesRequest::getResourceType() const {
   return resourceType_;
 }

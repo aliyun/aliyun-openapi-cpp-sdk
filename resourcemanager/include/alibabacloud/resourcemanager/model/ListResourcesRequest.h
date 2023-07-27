@@ -28,6 +28,10 @@ namespace ResourceManager {
 namespace Model {
 class ALIBABACLOUD_RESOURCEMANAGER_EXPORT ListResourcesRequest : public RpcServiceRequest {
 public:
+	struct ResourceTypes {
+		std::string service;
+		std::string resourceType;
+	};
 	ListResourcesRequest();
 	~ListResourcesRequest();
 	int getPageNumber() const;
@@ -38,6 +42,8 @@ public:
 	void setPageSize(int pageSize);
 	std::string getResourceId() const;
 	void setResourceId(const std::string &resourceId);
+	std::vector<ResourceTypes> getResourceTypes() const;
+	void setResourceTypes(const std::vector<ResourceTypes> &resourceTypes);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
 	std::string getService() const;
@@ -52,6 +58,7 @@ private:
 	std::string resourceGroupId_;
 	int pageSize_;
 	std::string resourceId_;
+	std::vector<ResourceTypes> resourceTypes_;
 	std::string resourceType_;
 	std::string service_;
 	std::string region_;
