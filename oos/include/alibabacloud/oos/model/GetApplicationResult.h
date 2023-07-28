@@ -34,12 +34,19 @@ namespace AlibabaCloud
 			public:
 				struct Application
 				{
+					struct AlarmConfig
+					{
+						std::vector<std::string> contactGroups;
+						std::string healthCheckUrl;
+						std::vector<std::string> templateIds;
+					};
 					std::string updateDate;
 					std::string applicationType;
 					std::string description;
 					std::string resourceGroupId;
 					std::string createDate;
 					std::string tags;
+					AlarmConfig alarmConfig;
 					std::string name;
 				};
 

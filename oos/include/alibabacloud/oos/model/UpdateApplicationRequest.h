@@ -28,21 +28,34 @@ namespace Oos {
 namespace Model {
 class ALIBABACLOUD_OOS_EXPORT UpdateApplicationRequest : public RpcServiceRequest {
 public:
+	struct AlarmConfig {
+		std::string string;
+		std::vector<std::string> templateIds;
+		std::string string;
+		std::vector<std::string> contactGroups;
+		std::string healthCheckUrl;
+	};
 	UpdateApplicationRequest();
 	~UpdateApplicationRequest();
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
-	std::map<std::string, std::string> getTags() const;
-	void setTags(const std::map<std::string, std::string> &tags);
+	AlarmConfig getAlarmConfig() const;
+	void setAlarmConfig(const AlarmConfig &alarmConfig);
+	bool getDeleteAlarmRulesBeforeUpdate() const;
+	void setDeleteAlarmRulesBeforeUpdate(bool deleteAlarmRulesBeforeUpdate);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::map<std::string, std::string> getTags() const;
+	void setTags(const std::map<std::string, std::string> &tags);
 	std::string getName() const;
 	void setName(const std::string &name);
 
 private:
 	std::string description_;
-	std::map<std::string, std::string> tags_;
+	AlarmConfig alarmConfig_;
+	bool deleteAlarmRulesBeforeUpdate_;
 	std::string regionId_;
+	std::map<std::string, std::string> tags_;
 	std::string name_;
 };
 } // namespace Model

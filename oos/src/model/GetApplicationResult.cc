@@ -54,6 +54,15 @@ void GetApplicationResult::parse(const std::string &payload)
 		application_.createDate = applicationNode["CreateDate"].asString();
 	if(!applicationNode["ApplicationType"].isNull())
 		application_.applicationType = applicationNode["ApplicationType"].asString();
+	auto alarmConfigNode = applicationNode["AlarmConfig"];
+	if(!alarmConfigNode["HealthCheckUrl"].isNull())
+		application_.alarmConfig.healthCheckUrl = alarmConfigNode["HealthCheckUrl"].asString();
+		auto allContactGroups = alarmConfigNode["ContactGroups"]["ContactGroup"];
+		for (auto value : allContactGroups)
+			application_.alarmConfig.contactGroups.push_back(value.asString());
+		auto allTemplateIds = alarmConfigNode["TemplateIds"]["TemplateId"];
+		for (auto value : allTemplateIds)
+			application_.alarmConfig.templateIds.push_back(value.asString());
 
 }
 

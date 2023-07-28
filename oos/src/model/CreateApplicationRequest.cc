@@ -43,6 +43,21 @@ void CreateApplicationRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
+CreateApplicationRequest::AlarmConfig CreateApplicationRequest::getAlarmConfig() const {
+  return alarmConfig_;
+}
+
+void CreateApplicationRequest::setAlarmConfig(const CreateApplicationRequest::AlarmConfig &alarmConfig) {
+  alarmConfig_ = alarmConfig;
+  for(int dep1 = 0; dep1 != alarmConfig.templateIds.size(); dep1++) {
+    setParameter(std::string("AlarmConfig") + ".TemplateIds." + std::to_string(dep1 + 1), alarmConfig.templateIds[dep1]);
+  }
+  for(int dep1 = 0; dep1 != alarmConfig.contactGroups.size(); dep1++) {
+    setParameter(std::string("AlarmConfig") + ".ContactGroups." + std::to_string(dep1 + 1), alarmConfig.contactGroups[dep1]);
+  }
+  setParameter(std::string("AlarmConfig") + ".HealthCheckUrl", alarmConfig.healthCheckUrl);
+}
+
 std::string CreateApplicationRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }

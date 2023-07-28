@@ -34,15 +34,28 @@ void UpdateApplicationRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
-std::map<std::string, std::string> UpdateApplicationRequest::getTags() const {
-  return tags_;
+UpdateApplicationRequest::AlarmConfig UpdateApplicationRequest::getAlarmConfig() const {
+  return alarmConfig_;
 }
 
-void UpdateApplicationRequest::setTags(const std::map<std::string, std::string> &tags) {
-  tags_ = tags;
-  for(auto const &iter1 : tags) {
-    setParameter(std::string("Tags") + "." + iter1.first, iter1.second);
+void UpdateApplicationRequest::setAlarmConfig(const UpdateApplicationRequest::AlarmConfig &alarmConfig) {
+  alarmConfig_ = alarmConfig;
+  for(int dep1 = 0; dep1 != alarmConfig.templateIds.size(); dep1++) {
+    setParameter(std::string("AlarmConfig") + ".TemplateIds." + std::to_string(dep1 + 1), alarmConfig.templateIds[dep1]);
   }
+  for(int dep1 = 0; dep1 != alarmConfig.contactGroups.size(); dep1++) {
+    setParameter(std::string("AlarmConfig") + ".ContactGroups." + std::to_string(dep1 + 1), alarmConfig.contactGroups[dep1]);
+  }
+  setParameter(std::string("AlarmConfig") + ".HealthCheckUrl", alarmConfig.healthCheckUrl);
+}
+
+bool UpdateApplicationRequest::getDeleteAlarmRulesBeforeUpdate() const {
+  return deleteAlarmRulesBeforeUpdate_;
+}
+
+void UpdateApplicationRequest::setDeleteAlarmRulesBeforeUpdate(bool deleteAlarmRulesBeforeUpdate) {
+  deleteAlarmRulesBeforeUpdate_ = deleteAlarmRulesBeforeUpdate;
+  setParameter(std::string("DeleteAlarmRulesBeforeUpdate"), deleteAlarmRulesBeforeUpdate ? "true" : "false");
 }
 
 std::string UpdateApplicationRequest::getRegionId() const {
@@ -52,6 +65,17 @@ std::string UpdateApplicationRequest::getRegionId() const {
 void UpdateApplicationRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::map<std::string, std::string> UpdateApplicationRequest::getTags() const {
+  return tags_;
+}
+
+void UpdateApplicationRequest::setTags(const std::map<std::string, std::string> &tags) {
+  tags_ = tags;
+  for(auto const &iter1 : tags) {
+    setParameter(std::string("Tags") + "." + iter1.first, iter1.second);
+  }
 }
 
 std::string UpdateApplicationRequest::getName() const {

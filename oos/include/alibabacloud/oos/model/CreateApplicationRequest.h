@@ -28,12 +28,21 @@ namespace Oos {
 namespace Model {
 class ALIBABACLOUD_OOS_EXPORT CreateApplicationRequest : public RpcServiceRequest {
 public:
+	struct AlarmConfig {
+		std::string string;
+		std::vector<std::string> templateIds;
+		std::string string;
+		std::vector<std::string> contactGroups;
+		std::string healthCheckUrl;
+	};
 	CreateApplicationRequest();
 	~CreateApplicationRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	AlarmConfig getAlarmConfig() const;
+	void setAlarmConfig(const AlarmConfig &alarmConfig);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
@@ -46,6 +55,7 @@ public:
 private:
 	std::string clientToken_;
 	std::string description_;
+	AlarmConfig alarmConfig_;
 	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string tags_;
