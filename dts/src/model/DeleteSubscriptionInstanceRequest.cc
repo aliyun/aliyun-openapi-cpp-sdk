@@ -19,7 +19,7 @@
 using AlibabaCloud::Dts::Model::DeleteSubscriptionInstanceRequest;
 
 DeleteSubscriptionInstanceRequest::DeleteSubscriptionInstanceRequest()
-    : RpcServiceRequest("dts", "2020-01-01", "DeleteSubscriptionInstance") {
+    : RpcServiceRequest("dts", "2016-08-01", "DeleteSubscriptionInstance") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -41,32 +41,5 @@ std::string DeleteSubscriptionInstanceRequest::getOwnerId() const {
 void DeleteSubscriptionInstanceRequest::setOwnerId(const std::string &ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), ownerId);
-}
-
-std::string DeleteSubscriptionInstanceRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DeleteSubscriptionInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DeleteSubscriptionInstanceRequest::getAccountId() const {
-  return accountId_;
-}
-
-void DeleteSubscriptionInstanceRequest::setAccountId(const std::string &accountId) {
-  accountId_ = accountId;
-  setParameter(std::string("AccountId"), accountId);
-}
-
-std::string DeleteSubscriptionInstanceRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DeleteSubscriptionInstanceRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 

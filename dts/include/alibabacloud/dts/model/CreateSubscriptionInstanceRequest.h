@@ -30,18 +30,10 @@ class ALIBABACLOUD_DTS_EXPORT CreateSubscriptionInstanceRequest : public RpcServ
 public:
 	CreateSubscriptionInstanceRequest();
 	~CreateSubscriptionInstanceRequest();
-	std::string getClientToken() const;
-	void setClientToken(const std::string &clientToken);
-	std::string getSourceEndpointInstanceType() const;
-	void setSourceEndpointInstanceType(const std::string &sourceEndpointInstanceType);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getAccountId() const;
-	void setAccountId(const std::string &accountId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	std::string getPeriod() const;
 	void setPeriod(const std::string &period);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
 	int getUsedTime() const;
@@ -52,12 +44,8 @@ public:
 	void setPayType(const std::string &payType);
 
 private:
-	std::string clientToken_;
-	std::string sourceEndpointInstanceType_;
-	std::string accessKeyId_;
-	std::string accountId_;
-	std::string regionId_;
 	std::string period_;
+	std::string clientToken_;
 	std::string ownerId_;
 	int usedTime_;
 	std::string region_;

@@ -34,27 +34,24 @@ namespace AlibabaCloud
 			public:
 				struct MigrationJob
 				{
-					struct DataInitialization
+					struct SourceEndpoint
 					{
-						std::string status;
-						std::string progress;
-						std::string percent;
-						std::string errorMessage;
-					};
-					struct DataSynchronization
-					{
-						std::string status;
-						std::string percent;
-						std::string errorMessage;
-						std::string delay;
+						std::string oracleSID;
+						std::string userName;
+						std::string instanceID;
+						std::string iP;
+						std::string port;
+						std::string databaseName;
+						std::string instanceType;
+						std::string engineName;
 					};
 					struct DestinationEndpoint
 					{
 						std::string oracleSID;
 						std::string userName;
 						std::string instanceID;
-						std::string port;
 						std::string iP;
+						std::string port;
 						std::string databaseName;
 						std::string instanceType;
 						std::string engineName;
@@ -70,17 +67,6 @@ namespace AlibabaCloud
 						std::string status;
 						std::string percent;
 					};
-					struct SourceEndpoint
-					{
-						std::string oracleSID;
-						std::string userName;
-						std::string instanceID;
-						std::string port;
-						std::string iP;
-						std::string databaseName;
-						std::string instanceType;
-						std::string engineName;
-					};
 					struct StructureInitialization
 					{
 						std::string status;
@@ -88,21 +74,28 @@ namespace AlibabaCloud
 						std::string percent;
 						std::string errorMessage;
 					};
+					struct DataInitialization
+					{
+						std::string status;
+						std::string progress;
+						std::string percent;
+						std::string errorMessage;
+					};
+					struct DataSynchronization
+					{
+						std::string status;
+						std::string percent;
+						std::string errorMessage;
+						std::string delay;
+					};
 					struct SynchronousObject
 					{
 						std::string databaseName;
 						std::string wholeDatabase;
 						std::vector<std::string> tableList;
 					};
-					struct Tag
-					{
-						std::string value;
-						std::string key;
-					};
-					DataSynchronization dataSynchronization;
 					Precheck precheck;
-					std::string instanceCreateTime;
-					std::string jobCreateTime;
+					DataSynchronization dataSynchronization;
 					std::string migrationJobName;
 					std::string payType;
 					MigrationMode migrationMode;
@@ -114,7 +107,6 @@ namespace AlibabaCloud
 					SourceEndpoint sourceEndpoint;
 					std::string migrationJobClass;
 					StructureInitialization structureInitialization;
-					std::vector<MigrationJob::Tag> tags;
 				};
 
 
@@ -125,9 +117,6 @@ namespace AlibabaCloud
 				int getPageRecordCount()const;
 				int getPageNumber()const;
 				std::vector<MigrationJob> getMigrationJobs()const;
-				std::string getErrMessage()const;
-				std::string getSuccess()const;
-				std::string getErrCode()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -136,9 +125,6 @@ namespace AlibabaCloud
 				int pageRecordCount_;
 				int pageNumber_;
 				std::vector<MigrationJob> migrationJobs_;
-				std::string errMessage_;
-				std::string success_;
-				std::string errCode_;
 
 			};
 		}

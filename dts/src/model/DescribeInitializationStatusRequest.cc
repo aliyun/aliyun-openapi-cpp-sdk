@@ -19,7 +19,7 @@
 using AlibabaCloud::Dts::Model::DescribeInitializationStatusRequest;
 
 DescribeInitializationStatusRequest::DescribeInitializationStatusRequest()
-    : RpcServiceRequest("dts", "2020-01-01", "DescribeInitializationStatus") {
+    : RpcServiceRequest("dts", "2016-08-01", "DescribeInitializationStatus") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -43,15 +43,6 @@ void DescribeInitializationStatusRequest::setOwnerId(const std::string &ownerId)
   setParameter(std::string("OwnerId"), ownerId);
 }
 
-std::string DescribeInitializationStatusRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DescribeInitializationStatusRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string DescribeInitializationStatusRequest::getSynchronizationJobId() const {
   return synchronizationJobId_;
 }
@@ -59,24 +50,6 @@ std::string DescribeInitializationStatusRequest::getSynchronizationJobId() const
 void DescribeInitializationStatusRequest::setSynchronizationJobId(const std::string &synchronizationJobId) {
   synchronizationJobId_ = synchronizationJobId;
   setParameter(std::string("SynchronizationJobId"), synchronizationJobId);
-}
-
-std::string DescribeInitializationStatusRequest::getAccountId() const {
-  return accountId_;
-}
-
-void DescribeInitializationStatusRequest::setAccountId(const std::string &accountId) {
-  accountId_ = accountId;
-  setParameter(std::string("AccountId"), accountId);
-}
-
-std::string DescribeInitializationStatusRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DescribeInitializationStatusRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 
 int DescribeInitializationStatusRequest::getPageSize() const {

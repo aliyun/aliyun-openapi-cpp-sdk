@@ -32,20 +32,16 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DTS_EXPORT DescribeMigrationJobStatusResult : public ServiceResult
 			{
 			public:
-				struct DataInitializationStatus
+				struct SourceEndpoint
 				{
-					std::string status;
-					std::string progress;
-					std::string percent;
-					std::string errorMessage;
-				};
-				struct DataSynchronizationStatus
-				{
-					std::string status;
-					std::string checkpoint;
-					std::string percent;
-					std::string errorMessage;
-					std::string delay;
+					std::string oracleSID;
+					std::string userName;
+					std::string instanceId;
+					std::string iP;
+					std::string port;
+					std::string databaseName;
+					std::string instanceType;
+					std::string engineName;
 				};
 				struct DestinationEndpoint
 				{
@@ -77,17 +73,6 @@ namespace AlibabaCloud
 					std::string percent;
 					std::vector<CheckItem> detail;
 				};
-				struct SourceEndpoint
-				{
-					std::string oracleSID;
-					std::string userName;
-					std::string instanceId;
-					std::string iP;
-					std::string port;
-					std::string databaseName;
-					std::string instanceType;
-					std::string engineName;
-				};
 				struct StructureInitializationStatus
 				{
 					std::string status;
@@ -95,49 +80,56 @@ namespace AlibabaCloud
 					std::string percent;
 					std::string errorMessage;
 				};
+				struct DataInitializationStatus
+				{
+					std::string status;
+					std::string progress;
+					std::string percent;
+					std::string errorMessage;
+				};
+				struct DataSynchronizationStatus
+				{
+					std::string status;
+					std::string checkpoint;
+					std::string percent;
+					std::string errorMessage;
+					std::string delay;
+				};
 
 
 				DescribeMigrationJobStatusResult();
 				explicit DescribeMigrationJobStatusResult(const std::string &payload);
 				~DescribeMigrationJobStatusResult();
 				DataInitializationStatus getDataInitializationStatus()const;
-				std::string getTaskId()const;
 				std::string getMigrationJobName()const;
 				std::string getPayType()const;
-				std::string getErrMessage()const;
 				MigrationMode getMigrationMode()const;
 				std::string getMigrationJobStatus()const;
-				std::string getSuccess()const;
-				std::string getErrCode()const;
 				std::string getMigrationJobId()const;
 				PrecheckStatus getPrecheckStatus()const;
 				std::string getMigrationObject()const;
 				DestinationEndpoint getDestinationEndpoint()const;
 				SourceEndpoint getSourceEndpoint()const;
 				std::string getMigrationJobClass()const;
-				DataSynchronizationStatus getDataSynchronizationStatus()const;
 				StructureInitializationStatus getStructureInitializationStatus()const;
+				DataSynchronizationStatus getDataSynchronizationStatus()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				DataInitializationStatus dataInitializationStatus_;
-				std::string taskId_;
 				std::string migrationJobName_;
 				std::string payType_;
-				std::string errMessage_;
 				MigrationMode migrationMode_;
 				std::string migrationJobStatus_;
-				std::string success_;
-				std::string errCode_;
 				std::string migrationJobId_;
 				PrecheckStatus precheckStatus_;
 				std::string migrationObject_;
 				DestinationEndpoint destinationEndpoint_;
 				SourceEndpoint sourceEndpoint_;
 				std::string migrationJobClass_;
-				DataSynchronizationStatus dataSynchronizationStatus_;
 				StructureInitializationStatus structureInitializationStatus_;
+				DataSynchronizationStatus dataSynchronizationStatus_;
 
 			};
 		}

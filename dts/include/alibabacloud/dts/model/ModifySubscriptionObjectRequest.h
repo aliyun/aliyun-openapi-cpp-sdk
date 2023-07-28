@@ -30,26 +30,17 @@ class ALIBABACLOUD_DTS_EXPORT ModifySubscriptionObjectRequest : public RpcServic
 public:
 	ModifySubscriptionObjectRequest();
 	~ModifySubscriptionObjectRequest();
+	std::string getSubscriptionObject() const;
+	void setSubscriptionObject(const std::string &subscriptionObject);
 	std::string getSubscriptionInstanceId() const;
 	void setSubscriptionInstanceId(const std::string &subscriptionInstanceId);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getAccountId() const;
-	void setAccountId(const std::string &accountId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
-	std::string getSubscriptionObject() const;
-	void setSubscriptionObject(const std::string &subscriptionObject);
 
 private:
+	std::string subscriptionObject_;
 	std::string subscriptionInstanceId_;
 	std::string ownerId_;
-	std::string accessKeyId_;
-	std::string accountId_;
-	std::string regionId_;
-	std::string subscriptionObject_;
 };
 } // namespace Model
 } // namespace Dts

@@ -28,43 +28,24 @@ namespace Dts {
 namespace Model {
 class ALIBABACLOUD_DTS_EXPORT DescribeSubscriptionInstancesRequest : public RpcServiceRequest {
 public:
-	struct Tag {
-		std::string value;
-		std::string key;
-	};
 	DescribeSubscriptionInstancesRequest();
 	~DescribeSubscriptionInstancesRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getAccountId() const;
-	void setAccountId(const std::string &accountId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
-	std::string getInstFilterRegion() const;
-	void setInstFilterRegion(const std::string &instFilterRegion);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	std::string getSubscriptionInstanceName() const;
 	void setSubscriptionInstanceName(const std::string &subscriptionInstanceName);
 
 private:
 	std::string clientToken_;
 	int pageNum_;
-	std::string accessKeyId_;
-	std::string accountId_;
-	std::string regionId_;
-	int pageSize_;
-	std::vector<Tag> tag_;
-	std::string instFilterRegion_;
 	std::string ownerId_;
+	int pageSize_;
 	std::string subscriptionInstanceName_;
 };
 } // namespace Model

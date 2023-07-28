@@ -19,7 +19,7 @@
 using AlibabaCloud::Dts::Model::DescribeSubscriptionInstancesRequest;
 
 DescribeSubscriptionInstancesRequest::DescribeSubscriptionInstancesRequest()
-    : RpcServiceRequest("dts", "2020-01-01", "DescribeSubscriptionInstances") {
+    : RpcServiceRequest("dts", "2016-08-01", "DescribeSubscriptionInstances") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -43,31 +43,13 @@ void DescribeSubscriptionInstancesRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
-std::string DescribeSubscriptionInstancesRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string DescribeSubscriptionInstancesRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeSubscriptionInstancesRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DescribeSubscriptionInstancesRequest::getAccountId() const {
-  return accountId_;
-}
-
-void DescribeSubscriptionInstancesRequest::setAccountId(const std::string &accountId) {
-  accountId_ = accountId;
-  setParameter(std::string("AccountId"), accountId);
-}
-
-std::string DescribeSubscriptionInstancesRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DescribeSubscriptionInstancesRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void DescribeSubscriptionInstancesRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 
 int DescribeSubscriptionInstancesRequest::getPageSize() const {
@@ -77,38 +59,6 @@ int DescribeSubscriptionInstancesRequest::getPageSize() const {
 void DescribeSubscriptionInstancesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
-std::vector<DescribeSubscriptionInstancesRequest::Tag> DescribeSubscriptionInstancesRequest::getTag() const {
-  return tag_;
-}
-
-void DescribeSubscriptionInstancesRequest::setTag(const std::vector<DescribeSubscriptionInstancesRequest::Tag> &tag) {
-  tag_ = tag;
-  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
-  auto tagObj = tag.at(dep1);
-  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
-    setParameter(tagObjStr + ".Value", tagObj.value);
-    setParameter(tagObjStr + ".Key", tagObj.key);
-  }
-}
-
-std::string DescribeSubscriptionInstancesRequest::getInstFilterRegion() const {
-  return instFilterRegion_;
-}
-
-void DescribeSubscriptionInstancesRequest::setInstFilterRegion(const std::string &instFilterRegion) {
-  instFilterRegion_ = instFilterRegion;
-  setParameter(std::string("InstFilterRegion"), instFilterRegion);
-}
-
-std::string DescribeSubscriptionInstancesRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeSubscriptionInstancesRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
 }
 
 std::string DescribeSubscriptionInstancesRequest::getSubscriptionInstanceName() const {

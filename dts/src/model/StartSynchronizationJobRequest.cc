@@ -19,29 +19,11 @@
 using AlibabaCloud::Dts::Model::StartSynchronizationJobRequest;
 
 StartSynchronizationJobRequest::StartSynchronizationJobRequest()
-    : RpcServiceRequest("dts", "2020-01-01", "StartSynchronizationJob") {
+    : RpcServiceRequest("dts", "2016-08-01", "StartSynchronizationJob") {
   setMethod(HttpRequest::Method::Post);
 }
 
 StartSynchronizationJobRequest::~StartSynchronizationJobRequest() {}
-
-std::string StartSynchronizationJobRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void StartSynchronizationJobRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
-}
-
-std::string StartSynchronizationJobRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void StartSynchronizationJobRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
 
 std::string StartSynchronizationJobRequest::getSynchronizationJobId() const {
   return synchronizationJobId_;
@@ -52,30 +34,12 @@ void StartSynchronizationJobRequest::setSynchronizationJobId(const std::string &
   setParameter(std::string("SynchronizationJobId"), synchronizationJobId);
 }
 
-std::string StartSynchronizationJobRequest::getAccountId() const {
-  return accountId_;
+std::string StartSynchronizationJobRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void StartSynchronizationJobRequest::setAccountId(const std::string &accountId) {
-  accountId_ = accountId;
-  setParameter(std::string("AccountId"), accountId);
-}
-
-std::string StartSynchronizationJobRequest::getRegionId() const {
-  return regionId_;
-}
-
-void StartSynchronizationJobRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
-std::string StartSynchronizationJobRequest::getSynchronizationDirection() const {
-  return synchronizationDirection_;
-}
-
-void StartSynchronizationJobRequest::setSynchronizationDirection(const std::string &synchronizationDirection) {
-  synchronizationDirection_ = synchronizationDirection;
-  setParameter(std::string("SynchronizationDirection"), synchronizationDirection);
+void StartSynchronizationJobRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

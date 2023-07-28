@@ -42,12 +42,6 @@ namespace AlibabaCloud
 					bool dML;
 					bool dDL;
 				};
-				struct SubscriptionHost
-				{
-					std::string publicHost;
-					std::string privateHost;
-					std::string vPCHost;
-				};
 				struct SynchronousObject
 				{
 					std::string databaseName;
@@ -60,44 +54,32 @@ namespace AlibabaCloud
 				explicit DescribeSubscriptionInstanceStatusResult(const std::string &payload);
 				~DescribeSubscriptionInstanceStatusResult();
 				std::string getStatus()const;
-				std::string getTaskId()const;
-				SubscriptionHost getSubscriptionHost()const;
-				std::string getEndTimestamp()const;
-				std::string getPayType()const;
-				std::string getErrMessage()const;
-				std::string getSubscriptionInstanceID()const;
-				std::string getSuccess()const;
-				std::string getErrCode()const;
 				SubscriptionDataType getSubscriptionDataType()const;
 				std::vector<SynchronousObject> getSubscriptionObject()const;
-				std::string getConsumptionCheckpoint()const;
 				std::string getSubscriptionInstanceName()const;
-				std::string getSubscribeTopic()const;
+				std::string getConsumptionCheckpoint()const;
 				std::string getConsumptionClient()const;
 				SourceEndpoint getSourceEndpoint()const;
+				std::string getEndTimestamp()const;
+				std::string getPayType()const;
 				std::string getErrorMessage()const;
+				std::string getSubscriptionInstanceID()const;
 				std::string getBeginTimestamp()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
-				std::string taskId_;
-				SubscriptionHost subscriptionHost_;
-				std::string endTimestamp_;
-				std::string payType_;
-				std::string errMessage_;
-				std::string subscriptionInstanceID_;
-				std::string success_;
-				std::string errCode_;
 				SubscriptionDataType subscriptionDataType_;
 				std::vector<SynchronousObject> subscriptionObject_;
-				std::string consumptionCheckpoint_;
 				std::string subscriptionInstanceName_;
-				std::string subscribeTopic_;
+				std::string consumptionCheckpoint_;
 				std::string consumptionClient_;
 				SourceEndpoint sourceEndpoint_;
+				std::string endTimestamp_;
+				std::string payType_;
 				std::string errorMessage_;
+				std::string subscriptionInstanceID_;
 				std::string beginTimestamp_;
 
 			};

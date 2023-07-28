@@ -32,35 +32,15 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DTS_EXPORT DescribeSynchronizationJobStatusResult : public ServiceResult
 			{
 			public:
-				struct DataInitializationStatus
+				struct SourceEndpoint
 				{
-					std::string status;
-					std::string progress;
-					std::string percent;
-					std::string errorMessage;
-				};
-				struct DataSynchronizationStatus
-				{
-					std::string status;
-					long delayMillis;
-					std::string checkpoint;
-					std::string percent;
-					std::string errorMessage;
-					std::string delay;
+					std::string instanceId;
+					std::string instanceType;
 				};
 				struct DestinationEndpoint
 				{
-					std::string userName;
 					std::string instanceId;
-					std::string iP;
-					std::string port;
 					std::string instanceType;
-					std::string engineName;
-				};
-				struct Performance
-				{
-					std::string rPS;
-					std::string fLOW;
 				};
 				struct PrecheckStatus
 				{
@@ -75,15 +55,6 @@ namespace AlibabaCloud
 					std::string percent;
 					std::vector<CheckItem> detail;
 				};
-				struct SourceEndpoint
-				{
-					std::string userName;
-					std::string instanceId;
-					std::string iP;
-					std::string port;
-					std::string instanceType;
-					std::string engineName;
-				};
 				struct StructureInitializationStatus
 				{
 					std::string status;
@@ -91,13 +62,33 @@ namespace AlibabaCloud
 					std::string percent;
 					std::string errorMessage;
 				};
+				struct DataInitializationStatus
+				{
+					std::string status;
+					std::string progress;
+					std::string percent;
+					std::string errorMessage;
+				};
+				struct DataSynchronizationStatus
+				{
+					std::string status;
+					std::string checkpoint;
+					std::string percent;
+					std::string errorMessage;
+					std::string delay;
+				};
+				struct Performance
+				{
+					std::string rPS;
+					std::string fLOW;
+				};
 				struct SynchronizationObject
 				{
-					struct TableExclude
+					struct TableInclude
 					{
 						std::string tableName;
 					};
-					struct TableInclude
+					struct TableExclude
 					{
 						std::string tableName;
 					};
@@ -111,60 +102,48 @@ namespace AlibabaCloud
 				DescribeSynchronizationJobStatusResult();
 				explicit DescribeSynchronizationJobStatusResult(const std::string &payload);
 				~DescribeSynchronizationJobStatusResult();
+				std::string getStatus()const;
 				DataInitializationStatus getDataInitializationStatus()const;
 				std::vector<SynchronizationObject> getSynchronizationObjects()const;
-				std::string getTaskId()const;
-				std::string getDelay()const;
-				std::string getSuccess()const;
-				long getDelayMillis()const;
-				std::string getDataInitialization()const;
-				std::string getSynchronizationJobClass()const;
-				DataSynchronizationStatus getDataSynchronizationStatus()const;
-				std::string getStatus()const;
 				std::string getSynchronizationJobName()const;
 				std::string getPayType()const;
-				std::string getErrMessage()const;
-				std::string getErrCode()const;
+				std::string getDelay()const;
 				PrecheckStatus getPrecheckStatus()const;
 				std::string getSynchronizationJobId()const;
 				std::string getCheckpoint()const;
+				std::string getDataInitialization()const;
 				DestinationEndpoint getDestinationEndpoint()const;
 				SourceEndpoint getSourceEndpoint()const;
 				std::string getStructureInitialization()const;
 				Performance getPerformance()const;
 				std::string getErrorMessage()const;
 				std::string getExpireTime()const;
-				std::string getSynchronizationDirection()const;
+				std::string getSynchronizationJobClass()const;
 				StructureInitializationStatus getStructureInitializationStatus()const;
+				DataSynchronizationStatus getDataSynchronizationStatus()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string status_;
 				DataInitializationStatus dataInitializationStatus_;
 				std::vector<SynchronizationObject> synchronizationObjects_;
-				std::string taskId_;
-				std::string delay_;
-				std::string success_;
-				long delayMillis_;
-				std::string dataInitialization_;
-				std::string synchronizationJobClass_;
-				DataSynchronizationStatus dataSynchronizationStatus_;
-				std::string status_;
 				std::string synchronizationJobName_;
 				std::string payType_;
-				std::string errMessage_;
-				std::string errCode_;
+				std::string delay_;
 				PrecheckStatus precheckStatus_;
 				std::string synchronizationJobId_;
 				std::string checkpoint_;
+				std::string dataInitialization_;
 				DestinationEndpoint destinationEndpoint_;
 				SourceEndpoint sourceEndpoint_;
 				std::string structureInitialization_;
 				Performance performance_;
 				std::string errorMessage_;
 				std::string expireTime_;
-				std::string synchronizationDirection_;
+				std::string synchronizationJobClass_;
 				StructureInitializationStatus structureInitializationStatus_;
+				DataSynchronizationStatus dataSynchronizationStatus_;
 
 			};
 		}

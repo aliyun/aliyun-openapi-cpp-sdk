@@ -19,7 +19,7 @@
 using AlibabaCloud::Dts::Model::ModifyConsumptionTimestampRequest;
 
 ModifyConsumptionTimestampRequest::ModifyConsumptionTimestampRequest()
-    : RpcServiceRequest("dts", "2020-01-01", "ModifyConsumptionTimestamp") {
+    : RpcServiceRequest("dts", "2016-08-01", "ModifyConsumptionTimestamp") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -50,32 +50,5 @@ std::string ModifyConsumptionTimestampRequest::getOwnerId() const {
 void ModifyConsumptionTimestampRequest::setOwnerId(const std::string &ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), ownerId);
-}
-
-std::string ModifyConsumptionTimestampRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void ModifyConsumptionTimestampRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string ModifyConsumptionTimestampRequest::getAccountId() const {
-  return accountId_;
-}
-
-void ModifyConsumptionTimestampRequest::setAccountId(const std::string &accountId) {
-  accountId_ = accountId;
-  setParameter(std::string("AccountId"), accountId);
-}
-
-std::string ModifyConsumptionTimestampRequest::getRegionId() const {
-  return regionId_;
-}
-
-void ModifyConsumptionTimestampRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 

@@ -19,38 +19,11 @@
 using AlibabaCloud::Dts::Model::ModifySynchronizationObjectRequest;
 
 ModifySynchronizationObjectRequest::ModifySynchronizationObjectRequest()
-    : RpcServiceRequest("dts", "2020-01-01", "ModifySynchronizationObject") {
+    : RpcServiceRequest("dts", "2016-08-01", "ModifySynchronizationObject") {
   setMethod(HttpRequest::Method::Post);
 }
 
 ModifySynchronizationObjectRequest::~ModifySynchronizationObjectRequest() {}
-
-std::string ModifySynchronizationObjectRequest::getSynchronizationObjects() const {
-  return synchronizationObjects_;
-}
-
-void ModifySynchronizationObjectRequest::setSynchronizationObjects(const std::string &synchronizationObjects) {
-  synchronizationObjects_ = synchronizationObjects;
-  setBodyParameter(std::string("SynchronizationObjects"), synchronizationObjects);
-}
-
-std::string ModifySynchronizationObjectRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void ModifySynchronizationObjectRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
-}
-
-std::string ModifySynchronizationObjectRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void ModifySynchronizationObjectRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
 
 std::string ModifySynchronizationObjectRequest::getSynchronizationJobId() const {
   return synchronizationJobId_;
@@ -61,30 +34,21 @@ void ModifySynchronizationObjectRequest::setSynchronizationJobId(const std::stri
   setParameter(std::string("SynchronizationJobId"), synchronizationJobId);
 }
 
-std::string ModifySynchronizationObjectRequest::getAccountId() const {
-  return accountId_;
+std::string ModifySynchronizationObjectRequest::getSynchronizationObjects() const {
+  return synchronizationObjects_;
 }
 
-void ModifySynchronizationObjectRequest::setAccountId(const std::string &accountId) {
-  accountId_ = accountId;
-  setParameter(std::string("AccountId"), accountId);
+void ModifySynchronizationObjectRequest::setSynchronizationObjects(const std::string &synchronizationObjects) {
+  synchronizationObjects_ = synchronizationObjects;
+  setParameter(std::string("SynchronizationObjects"), synchronizationObjects);
 }
 
-std::string ModifySynchronizationObjectRequest::getRegionId() const {
-  return regionId_;
+std::string ModifySynchronizationObjectRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifySynchronizationObjectRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
-std::string ModifySynchronizationObjectRequest::getSynchronizationDirection() const {
-  return synchronizationDirection_;
-}
-
-void ModifySynchronizationObjectRequest::setSynchronizationDirection(const std::string &synchronizationDirection) {
-  synchronizationDirection_ = synchronizationDirection;
-  setParameter(std::string("SynchronizationDirection"), synchronizationDirection);
+void ModifySynchronizationObjectRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

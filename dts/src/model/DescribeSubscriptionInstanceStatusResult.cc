@@ -62,87 +62,30 @@ void DescribeSubscriptionInstanceStatusResult::parse(const std::string &payload)
 		subscriptionDataType_.dML = subscriptionDataTypeNode["DML"].asString() == "true";
 	if(!subscriptionDataTypeNode["DDL"].isNull())
 		subscriptionDataType_.dDL = subscriptionDataTypeNode["DDL"].asString() == "true";
-	auto subscriptionHostNode = value["SubscriptionHost"];
-	if(!subscriptionHostNode["VPCHost"].isNull())
-		subscriptionHost_.vPCHost = subscriptionHostNode["VPCHost"].asString();
-	if(!subscriptionHostNode["PublicHost"].isNull())
-		subscriptionHost_.publicHost = subscriptionHostNode["PublicHost"].asString();
-	if(!subscriptionHostNode["PrivateHost"].isNull())
-		subscriptionHost_.privateHost = subscriptionHostNode["PrivateHost"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
+	if(!value["BeginTimestamp"].isNull())
+		beginTimestamp_ = value["BeginTimestamp"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["PayType"].isNull())
 		payType_ = value["PayType"].asString();
 	if(!value["ConsumptionClient"].isNull())
 		consumptionClient_ = value["ConsumptionClient"].asString();
-	if(!value["ConsumptionCheckpoint"].isNull())
-		consumptionCheckpoint_ = value["ConsumptionCheckpoint"].asString();
-	if(!value["EndTimestamp"].isNull())
-		endTimestamp_ = value["EndTimestamp"].asString();
-	if(!value["BeginTimestamp"].isNull())
-		beginTimestamp_ = value["BeginTimestamp"].asString();
-	if(!value["SubscribeTopic"].isNull())
-		subscribeTopic_ = value["SubscribeTopic"].asString();
 	if(!value["SubscriptionInstanceName"].isNull())
 		subscriptionInstanceName_ = value["SubscriptionInstanceName"].asString();
 	if(!value["SubscriptionInstanceID"].isNull())
 		subscriptionInstanceID_ = value["SubscriptionInstanceID"].asString();
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
+	if(!value["EndTimestamp"].isNull())
+		endTimestamp_ = value["EndTimestamp"].asString();
+	if(!value["ConsumptionCheckpoint"].isNull())
+		consumptionCheckpoint_ = value["ConsumptionCheckpoint"].asString();
 
 }
 
 std::string DescribeSubscriptionInstanceStatusResult::getStatus()const
 {
 	return status_;
-}
-
-std::string DescribeSubscriptionInstanceStatusResult::getTaskId()const
-{
-	return taskId_;
-}
-
-DescribeSubscriptionInstanceStatusResult::SubscriptionHost DescribeSubscriptionInstanceStatusResult::getSubscriptionHost()const
-{
-	return subscriptionHost_;
-}
-
-std::string DescribeSubscriptionInstanceStatusResult::getEndTimestamp()const
-{
-	return endTimestamp_;
-}
-
-std::string DescribeSubscriptionInstanceStatusResult::getPayType()const
-{
-	return payType_;
-}
-
-std::string DescribeSubscriptionInstanceStatusResult::getErrMessage()const
-{
-	return errMessage_;
-}
-
-std::string DescribeSubscriptionInstanceStatusResult::getSubscriptionInstanceID()const
-{
-	return subscriptionInstanceID_;
-}
-
-std::string DescribeSubscriptionInstanceStatusResult::getSuccess()const
-{
-	return success_;
-}
-
-std::string DescribeSubscriptionInstanceStatusResult::getErrCode()const
-{
-	return errCode_;
 }
 
 std::vector<DescribeSubscriptionInstanceStatusResult::SynchronousObject> DescribeSubscriptionInstanceStatusResult::getSubscriptionObject()const
@@ -155,19 +98,14 @@ DescribeSubscriptionInstanceStatusResult::SubscriptionDataType DescribeSubscript
 	return subscriptionDataType_;
 }
 
-std::string DescribeSubscriptionInstanceStatusResult::getConsumptionCheckpoint()const
-{
-	return consumptionCheckpoint_;
-}
-
 std::string DescribeSubscriptionInstanceStatusResult::getSubscriptionInstanceName()const
 {
 	return subscriptionInstanceName_;
 }
 
-std::string DescribeSubscriptionInstanceStatusResult::getSubscribeTopic()const
+std::string DescribeSubscriptionInstanceStatusResult::getConsumptionCheckpoint()const
 {
-	return subscribeTopic_;
+	return consumptionCheckpoint_;
 }
 
 std::string DescribeSubscriptionInstanceStatusResult::getConsumptionClient()const
@@ -180,9 +118,24 @@ DescribeSubscriptionInstanceStatusResult::SourceEndpoint DescribeSubscriptionIns
 	return sourceEndpoint_;
 }
 
+std::string DescribeSubscriptionInstanceStatusResult::getEndTimestamp()const
+{
+	return endTimestamp_;
+}
+
+std::string DescribeSubscriptionInstanceStatusResult::getPayType()const
+{
+	return payType_;
+}
+
 std::string DescribeSubscriptionInstanceStatusResult::getErrorMessage()const
 {
 	return errorMessage_;
+}
+
+std::string DescribeSubscriptionInstanceStatusResult::getSubscriptionInstanceID()const
+{
+	return subscriptionInstanceID_;
 }
 
 std::string DescribeSubscriptionInstanceStatusResult::getBeginTimestamp()const

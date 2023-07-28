@@ -32,25 +32,6 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DTS_EXPORT DescribeMigrationJobDetailResult : public ServiceResult
 			{
 			public:
-				struct DataInitializationDetail
-				{
-					std::string status;
-					std::string tableName;
-					std::string totalRowNum;
-					std::string migrationTime;
-					std::string sourceOwnerDBName;
-					std::string errorMessage;
-					std::string destinationOwnerDBName;
-					std::string finishRowNum;
-				};
-				struct DataSynchronizationDetail
-				{
-					std::string status;
-					std::string tableName;
-					std::string sourceOwnerDBName;
-					std::string errorMessage;
-					std::string destinationOwnerDBName;
-				};
 				struct StructureInitializationDetail
 				{
 					struct StructureInitializationDetail1
@@ -72,6 +53,25 @@ namespace AlibabaCloud
 					std::string destinationOwnerDBName;
 					std::string objectName;
 				};
+				struct DataInitializationDetail
+				{
+					std::string status;
+					std::string tableName;
+					std::string totalRowNum;
+					std::string migrationTime;
+					std::string sourceOwnerDBName;
+					std::string errorMessage;
+					std::string destinationOwnerDBName;
+					std::string finishRowNum;
+				};
+				struct DataSynchronizationDetail
+				{
+					std::string status;
+					std::string tableName;
+					std::string sourceOwnerDBName;
+					std::string errorMessage;
+					std::string destinationOwnerDBName;
+				};
 
 
 				DescribeMigrationJobDetailResult();
@@ -82,10 +82,7 @@ namespace AlibabaCloud
 				int getPageRecordCount()const;
 				int getPageNumber()const;
 				std::vector<DataInitializationDetail> getDataInitializationDetailList()const;
-				std::string getErrMessage()const;
 				std::vector<StructureInitializationDetail> getStructureInitializationDetailList()const;
-				std::string getSuccess()const;
-				std::string getErrCode()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -95,10 +92,7 @@ namespace AlibabaCloud
 				int pageRecordCount_;
 				int pageNumber_;
 				std::vector<DataInitializationDetail> dataInitializationDetailList_;
-				std::string errMessage_;
 				std::vector<StructureInitializationDetail> structureInitializationDetailList_;
-				std::string success_;
-				std::string errCode_;
 
 			};
 		}

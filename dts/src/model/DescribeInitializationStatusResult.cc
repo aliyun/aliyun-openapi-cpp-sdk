@@ -39,6 +39,46 @@ void DescribeInitializationStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allStructureInitializationDetailsNode = value["StructureInitializationDetails"]["StructureInitializationDetail"];
+	for (auto valueStructureInitializationDetailsStructureInitializationDetail : allStructureInitializationDetailsNode)
+	{
+		StructureInitializationDetail structureInitializationDetailsObject;
+		if(!valueStructureInitializationDetailsStructureInitializationDetail["SourceOwnerDBName"].isNull())
+			structureInitializationDetailsObject.sourceOwnerDBName = valueStructureInitializationDetailsStructureInitializationDetail["SourceOwnerDBName"].asString();
+		if(!valueStructureInitializationDetailsStructureInitializationDetail["Status"].isNull())
+			structureInitializationDetailsObject.status = valueStructureInitializationDetailsStructureInitializationDetail["Status"].asString();
+		if(!valueStructureInitializationDetailsStructureInitializationDetail["ObjectDefinition"].isNull())
+			structureInitializationDetailsObject.objectDefinition = valueStructureInitializationDetailsStructureInitializationDetail["ObjectDefinition"].asString();
+		if(!valueStructureInitializationDetailsStructureInitializationDetail["ObjectType"].isNull())
+			structureInitializationDetailsObject.objectType = valueStructureInitializationDetailsStructureInitializationDetail["ObjectType"].asString();
+		if(!valueStructureInitializationDetailsStructureInitializationDetail["ErrorMessage"].isNull())
+			structureInitializationDetailsObject.errorMessage = valueStructureInitializationDetailsStructureInitializationDetail["ErrorMessage"].asString();
+		if(!valueStructureInitializationDetailsStructureInitializationDetail["DestinationOwnerDBName"].isNull())
+			structureInitializationDetailsObject.destinationOwnerDBName = valueStructureInitializationDetailsStructureInitializationDetail["DestinationOwnerDBName"].asString();
+		if(!valueStructureInitializationDetailsStructureInitializationDetail["ObjectName"].isNull())
+			structureInitializationDetailsObject.objectName = valueStructureInitializationDetailsStructureInitializationDetail["ObjectName"].asString();
+		auto allConstraintsNode = valueStructureInitializationDetailsStructureInitializationDetail["Constraints"]["StructureInitializationDetail"];
+		for (auto valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail : allConstraintsNode)
+		{
+			StructureInitializationDetail::StructureInitializationDetail1 constraintsObject;
+			if(!valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["SourceOwnerDBName"].isNull())
+				constraintsObject.sourceOwnerDBName = valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["SourceOwnerDBName"].asString();
+			if(!valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["Status"].isNull())
+				constraintsObject.status = valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["Status"].asString();
+			if(!valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["ObjectDefinition"].isNull())
+				constraintsObject.objectDefinition = valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["ObjectDefinition"].asString();
+			if(!valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["ObjectType"].isNull())
+				constraintsObject.objectType = valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["ObjectType"].asString();
+			if(!valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["ErrorMessage"].isNull())
+				constraintsObject.errorMessage = valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["ErrorMessage"].asString();
+			if(!valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["DestinationOwnerDBName"].isNull())
+				constraintsObject.destinationOwnerDBName = valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["DestinationOwnerDBName"].asString();
+			if(!valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["ObjectName"].isNull())
+				constraintsObject.objectName = valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["ObjectName"].asString();
+			structureInitializationDetailsObject.constraints.push_back(constraintsObject);
+		}
+		structureInitializationDetails_.push_back(structureInitializationDetailsObject);
+	}
 	auto allDataInitializationDetailsNode = value["DataInitializationDetails"]["DataInitializationDetail"];
 	for (auto valueDataInitializationDetailsDataInitializationDetail : allDataInitializationDetailsNode)
 	{
@@ -51,10 +91,10 @@ void DescribeInitializationStatusResult::parse(const std::string &payload)
 			dataInitializationDetailsObject.usedTime = valueDataInitializationDetailsDataInitializationDetail["UsedTime"].asString();
 		if(!valueDataInitializationDetailsDataInitializationDetail["TableName"].isNull())
 			dataInitializationDetailsObject.tableName = valueDataInitializationDetailsDataInitializationDetail["TableName"].asString();
-		if(!valueDataInitializationDetailsDataInitializationDetail["ErrorMessage"].isNull())
-			dataInitializationDetailsObject.errorMessage = valueDataInitializationDetailsDataInitializationDetail["ErrorMessage"].asString();
 		if(!valueDataInitializationDetailsDataInitializationDetail["FinishRowNum"].isNull())
 			dataInitializationDetailsObject.finishRowNum = valueDataInitializationDetailsDataInitializationDetail["FinishRowNum"].asString();
+		if(!valueDataInitializationDetailsDataInitializationDetail["ErrorMessage"].isNull())
+			dataInitializationDetailsObject.errorMessage = valueDataInitializationDetailsDataInitializationDetail["ErrorMessage"].asString();
 		if(!valueDataInitializationDetailsDataInitializationDetail["DestinationOwnerDBName"].isNull())
 			dataInitializationDetailsObject.destinationOwnerDBName = valueDataInitializationDetailsDataInitializationDetail["DestinationOwnerDBName"].asString();
 		if(!valueDataInitializationDetailsDataInitializationDetail["TotalRowNum"].isNull())
@@ -77,52 +117,6 @@ void DescribeInitializationStatusResult::parse(const std::string &payload)
 			dataSynchronizationDetailsObject.destinationOwnerDBName = valueDataSynchronizationDetailsDataSynchronizationDetail["DestinationOwnerDBName"].asString();
 		dataSynchronizationDetails_.push_back(dataSynchronizationDetailsObject);
 	}
-	auto allStructureInitializationDetailsNode = value["StructureInitializationDetails"]["StructureInitializationDetail"];
-	for (auto valueStructureInitializationDetailsStructureInitializationDetail : allStructureInitializationDetailsNode)
-	{
-		StructureInitializationDetail structureInitializationDetailsObject;
-		if(!valueStructureInitializationDetailsStructureInitializationDetail["Status"].isNull())
-			structureInitializationDetailsObject.status = valueStructureInitializationDetailsStructureInitializationDetail["Status"].asString();
-		if(!valueStructureInitializationDetailsStructureInitializationDetail["SourceOwnerDBName"].isNull())
-			structureInitializationDetailsObject.sourceOwnerDBName = valueStructureInitializationDetailsStructureInitializationDetail["SourceOwnerDBName"].asString();
-		if(!valueStructureInitializationDetailsStructureInitializationDetail["ObjectDefinition"].isNull())
-			structureInitializationDetailsObject.objectDefinition = valueStructureInitializationDetailsStructureInitializationDetail["ObjectDefinition"].asString();
-		if(!valueStructureInitializationDetailsStructureInitializationDetail["ObjectType"].isNull())
-			structureInitializationDetailsObject.objectType = valueStructureInitializationDetailsStructureInitializationDetail["ObjectType"].asString();
-		if(!valueStructureInitializationDetailsStructureInitializationDetail["ErrorMessage"].isNull())
-			structureInitializationDetailsObject.errorMessage = valueStructureInitializationDetailsStructureInitializationDetail["ErrorMessage"].asString();
-		if(!valueStructureInitializationDetailsStructureInitializationDetail["DestinationOwnerDBName"].isNull())
-			structureInitializationDetailsObject.destinationOwnerDBName = valueStructureInitializationDetailsStructureInitializationDetail["DestinationOwnerDBName"].asString();
-		if(!valueStructureInitializationDetailsStructureInitializationDetail["ObjectName"].isNull())
-			structureInitializationDetailsObject.objectName = valueStructureInitializationDetailsStructureInitializationDetail["ObjectName"].asString();
-		auto allConstraintsNode = valueStructureInitializationDetailsStructureInitializationDetail["Constraints"]["StructureInitializationDetail"];
-		for (auto valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail : allConstraintsNode)
-		{
-			StructureInitializationDetail::StructureInitializationDetail1 constraintsObject;
-			if(!valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["Status"].isNull())
-				constraintsObject.status = valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["Status"].asString();
-			if(!valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["SourceOwnerDBName"].isNull())
-				constraintsObject.sourceOwnerDBName = valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["SourceOwnerDBName"].asString();
-			if(!valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["ObjectDefinition"].isNull())
-				constraintsObject.objectDefinition = valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["ObjectDefinition"].asString();
-			if(!valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["ObjectType"].isNull())
-				constraintsObject.objectType = valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["ObjectType"].asString();
-			if(!valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["ErrorMessage"].isNull())
-				constraintsObject.errorMessage = valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["ErrorMessage"].asString();
-			if(!valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["DestinationOwnerDBName"].isNull())
-				constraintsObject.destinationOwnerDBName = valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["DestinationOwnerDBName"].asString();
-			if(!valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["ObjectName"].isNull())
-				constraintsObject.objectName = valueStructureInitializationDetailsStructureInitializationDetailConstraintsStructureInitializationDetail["ObjectName"].asString();
-			structureInitializationDetailsObject.constraints.push_back(constraintsObject);
-		}
-		structureInitializationDetails_.push_back(structureInitializationDetailsObject);
-	}
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 
 }
 
@@ -136,23 +130,8 @@ std::vector<DescribeInitializationStatusResult::DataInitializationDetail> Descri
 	return dataInitializationDetails_;
 }
 
-std::string DescribeInitializationStatusResult::getErrMessage()const
-{
-	return errMessage_;
-}
-
-std::string DescribeInitializationStatusResult::getSuccess()const
-{
-	return success_;
-}
-
 std::vector<DescribeInitializationStatusResult::DataSynchronizationDetail> DescribeInitializationStatusResult::getDataSynchronizationDetails()const
 {
 	return dataSynchronizationDetails_;
-}
-
-std::string DescribeInitializationStatusResult::getErrCode()const
-{
-	return errCode_;
 }
 

@@ -39,24 +39,6 @@ void DescribeSynchronizationObjectModifyStatusResult::parse(const std::string &p
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataInitializationStatusNode = value["DataInitializationStatus"];
-	if(!dataInitializationStatusNode["Status"].isNull())
-		dataInitializationStatus_.status = dataInitializationStatusNode["Status"].asString();
-	if(!dataInitializationStatusNode["Percent"].isNull())
-		dataInitializationStatus_.percent = dataInitializationStatusNode["Percent"].asString();
-	if(!dataInitializationStatusNode["ErrorMessage"].isNull())
-		dataInitializationStatus_.errorMessage = dataInitializationStatusNode["ErrorMessage"].asString();
-	if(!dataInitializationStatusNode["Progress"].isNull())
-		dataInitializationStatus_.progress = dataInitializationStatusNode["Progress"].asString();
-	auto dataSynchronizationStatusNode = value["DataSynchronizationStatus"];
-	if(!dataSynchronizationStatusNode["Status"].isNull())
-		dataSynchronizationStatus_.status = dataSynchronizationStatusNode["Status"].asString();
-	if(!dataSynchronizationStatusNode["Delay"].isNull())
-		dataSynchronizationStatus_.delay = dataSynchronizationStatusNode["Delay"].asString();
-	if(!dataSynchronizationStatusNode["Percent"].isNull())
-		dataSynchronizationStatus_.percent = dataSynchronizationStatusNode["Percent"].asString();
-	if(!dataSynchronizationStatusNode["ErrorMessage"].isNull())
-		dataSynchronizationStatus_.errorMessage = dataSynchronizationStatusNode["ErrorMessage"].asString();
 	auto precheckStatusNode = value["PrecheckStatus"];
 	if(!precheckStatusNode["Status"].isNull())
 		precheckStatus_.status = precheckStatusNode["Status"].asString();
@@ -81,20 +63,32 @@ void DescribeSynchronizationObjectModifyStatusResult::parse(const std::string &p
 		structureInitializationStatus_.status = structureInitializationStatusNode["Status"].asString();
 	if(!structureInitializationStatusNode["Percent"].isNull())
 		structureInitializationStatus_.percent = structureInitializationStatusNode["Percent"].asString();
-	if(!structureInitializationStatusNode["ErrorMessage"].isNull())
-		structureInitializationStatus_.errorMessage = structureInitializationStatusNode["ErrorMessage"].asString();
 	if(!structureInitializationStatusNode["Progress"].isNull())
 		structureInitializationStatus_.progress = structureInitializationStatusNode["Progress"].asString();
+	if(!structureInitializationStatusNode["ErrorMessage"].isNull())
+		structureInitializationStatus_.errorMessage = structureInitializationStatusNode["ErrorMessage"].asString();
+	auto dataInitializationStatusNode = value["DataInitializationStatus"];
+	if(!dataInitializationStatusNode["Status"].isNull())
+		dataInitializationStatus_.status = dataInitializationStatusNode["Status"].asString();
+	if(!dataInitializationStatusNode["Percent"].isNull())
+		dataInitializationStatus_.percent = dataInitializationStatusNode["Percent"].asString();
+	if(!dataInitializationStatusNode["Progress"].isNull())
+		dataInitializationStatus_.progress = dataInitializationStatusNode["Progress"].asString();
+	if(!dataInitializationStatusNode["ErrorMessage"].isNull())
+		dataInitializationStatus_.errorMessage = dataInitializationStatusNode["ErrorMessage"].asString();
+	auto dataSynchronizationStatusNode = value["DataSynchronizationStatus"];
+	if(!dataSynchronizationStatusNode["Status"].isNull())
+		dataSynchronizationStatus_.status = dataSynchronizationStatusNode["Status"].asString();
+	if(!dataSynchronizationStatusNode["Delay"].isNull())
+		dataSynchronizationStatus_.delay = dataSynchronizationStatusNode["Delay"].asString();
+	if(!dataSynchronizationStatusNode["Percent"].isNull())
+		dataSynchronizationStatus_.percent = dataSynchronizationStatusNode["Percent"].asString();
+	if(!dataSynchronizationStatusNode["ErrorMessage"].isNull())
+		dataSynchronizationStatus_.errorMessage = dataSynchronizationStatusNode["ErrorMessage"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 
 }
 
@@ -118,28 +112,13 @@ std::string DescribeSynchronizationObjectModifyStatusResult::getErrorMessage()co
 	return errorMessage_;
 }
 
-std::string DescribeSynchronizationObjectModifyStatusResult::getErrMessage()const
-{
-	return errMessage_;
-}
-
-std::string DescribeSynchronizationObjectModifyStatusResult::getSuccess()const
-{
-	return success_;
-}
-
-DescribeSynchronizationObjectModifyStatusResult::DataSynchronizationStatus DescribeSynchronizationObjectModifyStatusResult::getDataSynchronizationStatus()const
-{
-	return dataSynchronizationStatus_;
-}
-
 DescribeSynchronizationObjectModifyStatusResult::StructureInitializationStatus DescribeSynchronizationObjectModifyStatusResult::getStructureInitializationStatus()const
 {
 	return structureInitializationStatus_;
 }
 
-std::string DescribeSynchronizationObjectModifyStatusResult::getErrCode()const
+DescribeSynchronizationObjectModifyStatusResult::DataSynchronizationStatus DescribeSynchronizationObjectModifyStatusResult::getDataSynchronizationStatus()const
 {
-	return errCode_;
+	return dataSynchronizationStatus_;
 }
 

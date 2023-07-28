@@ -28,41 +28,22 @@ namespace Dts {
 namespace Model {
 class ALIBABACLOUD_DTS_EXPORT DescribeMigrationJobsRequest : public RpcServiceRequest {
 public:
-	struct Tag {
-		std::string value;
-		std::string key;
-	};
 	DescribeMigrationJobsRequest();
 	~DescribeMigrationJobsRequest();
-	std::string getInstFilterRegion() const;
-	void setInstFilterRegion(const std::string &instFilterRegion);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getAccountId() const;
-	void setAccountId(const std::string &accountId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getMigrationJobName() const;
 	void setMigrationJobName(const std::string &migrationJobName);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
 
 private:
-	std::string instFilterRegion_;
 	int pageNum_;
 	std::string ownerId_;
-	std::string accessKeyId_;
-	std::string accountId_;
-	std::string regionId_;
 	int pageSize_;
 	std::string migrationJobName_;
-	std::vector<Tag> tag_;
 };
 } // namespace Model
 } // namespace Dts

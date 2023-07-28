@@ -34,33 +34,15 @@ namespace AlibabaCloud
 			public:
 				struct SynchronizationInstance
 				{
-					struct DataInitializationStatus
+					struct SourceEndpoint
 					{
-						std::string status;
-						std::string progress;
-						std::string percent;
-						std::string errorMessage;
-					};
-					struct DataSynchronizationStatus
-					{
-						std::string status;
-						std::string percent;
-						std::string errorMessage;
-						std::string delay;
+						std::string instanceId;
+						std::string instanceType;
 					};
 					struct DestinationEndpoint
 					{
-						std::string userName;
 						std::string instanceId;
-						std::string iP;
-						std::string port;
 						std::string instanceType;
-						std::string engineName;
-					};
-					struct Performance
-					{
-						std::string rPS;
-						std::string fLOW;
 					};
 					struct PrecheckStatus
 					{
@@ -75,15 +57,6 @@ namespace AlibabaCloud
 						std::string percent;
 						std::vector<CheckItem> detail;
 					};
-					struct SourceEndpoint
-					{
-						std::string userName;
-						std::string instanceId;
-						std::string iP;
-						std::string port;
-						std::string instanceType;
-						std::string engineName;
-					};
 					struct StructureInitializationStatus
 					{
 						std::string status;
@@ -91,18 +64,32 @@ namespace AlibabaCloud
 						std::string percent;
 						std::string errorMessage;
 					};
-					struct Tag
+					struct DataInitializationStatus
 					{
-						std::string value;
-						std::string key;
+						std::string status;
+						std::string progress;
+						std::string percent;
+						std::string errorMessage;
+					};
+					struct DataSynchronizationStatus
+					{
+						std::string status;
+						std::string percent;
+						std::string errorMessage;
+						std::string delay;
+					};
+					struct Performance
+					{
+						std::string rPS;
+						std::string fLOW;
 					};
 					struct SynchronizationObject
 					{
-						struct TableExclude
+						struct TableInclude
 						{
 							std::string tableName;
 						};
-						struct TableInclude
+						struct TableExclude
 						{
 							std::string tableName;
 						};
@@ -115,9 +102,6 @@ namespace AlibabaCloud
 					DataInitializationStatus dataInitializationStatus;
 					std::vector<SynchronizationInstance::SynchronizationObject> synchronizationObjects;
 					std::string synchronizationJobName;
-					std::string instanceCreateTime;
-					std::string createTime;
-					std::string jobCreateTime;
 					std::string payType;
 					std::string delay;
 					PrecheckStatus precheckStatus;
@@ -130,10 +114,8 @@ namespace AlibabaCloud
 					std::string errorMessage;
 					std::string expireTime;
 					std::string synchronizationJobClass;
-					std::vector<SynchronizationInstance::Tag> tags;
-					std::string synchronizationDirection;
-					DataSynchronizationStatus dataSynchronizationStatus;
 					StructureInitializationStatus structureInitializationStatus;
+					DataSynchronizationStatus dataSynchronizationStatus;
 				};
 
 

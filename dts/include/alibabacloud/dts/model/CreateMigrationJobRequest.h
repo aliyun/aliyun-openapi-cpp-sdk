@@ -34,12 +34,6 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getAccountId() const;
-	void setAccountId(const std::string &accountId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	std::string getRegion() const;
 	void setRegion(const std::string &region);
 	std::string getMigrationJobClass() const;
@@ -48,9 +42,6 @@ public:
 private:
 	std::string clientToken_;
 	std::string ownerId_;
-	std::string accessKeyId_;
-	std::string accountId_;
-	std::string regionId_;
 	std::string region_;
 	std::string migrationJobClass_;
 };

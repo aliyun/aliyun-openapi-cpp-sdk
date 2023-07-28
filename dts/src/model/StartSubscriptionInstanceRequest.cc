@@ -19,7 +19,7 @@
 using AlibabaCloud::Dts::Model::StartSubscriptionInstanceRequest;
 
 StartSubscriptionInstanceRequest::StartSubscriptionInstanceRequest()
-    : RpcServiceRequest("dts", "2020-01-01", "StartSubscriptionInstance") {
+    : RpcServiceRequest("dts", "2016-08-01", "StartSubscriptionInstance") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -41,32 +41,5 @@ std::string StartSubscriptionInstanceRequest::getOwnerId() const {
 void StartSubscriptionInstanceRequest::setOwnerId(const std::string &ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), ownerId);
-}
-
-std::string StartSubscriptionInstanceRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void StartSubscriptionInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string StartSubscriptionInstanceRequest::getAccountId() const {
-  return accountId_;
-}
-
-void StartSubscriptionInstanceRequest::setAccountId(const std::string &accountId) {
-  accountId_ = accountId;
-  setParameter(std::string("AccountId"), accountId);
-}
-
-std::string StartSubscriptionInstanceRequest::getRegionId() const {
-  return regionId_;
-}
-
-void StartSubscriptionInstanceRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 

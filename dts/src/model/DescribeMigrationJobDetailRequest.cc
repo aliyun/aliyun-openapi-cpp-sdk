@@ -19,7 +19,7 @@
 using AlibabaCloud::Dts::Model::DescribeMigrationJobDetailRequest;
 
 DescribeMigrationJobDetailRequest::DescribeMigrationJobDetailRequest()
-    : RpcServiceRequest("dts", "2020-01-01", "DescribeMigrationJobDetail") {
+    : RpcServiceRequest("dts", "2016-08-01", "DescribeMigrationJobDetail") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -61,51 +61,6 @@ void DescribeMigrationJobDetailRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
-std::string DescribeMigrationJobDetailRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DescribeMigrationJobDetailRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DescribeMigrationJobDetailRequest::getAccountId() const {
-  return accountId_;
-}
-
-void DescribeMigrationJobDetailRequest::setAccountId(const std::string &accountId) {
-  accountId_ = accountId;
-  setParameter(std::string("AccountId"), accountId);
-}
-
-bool DescribeMigrationJobDetailRequest::getMigrationModeDataSynchronization() const {
-  return migrationModeDataSynchronization_;
-}
-
-void DescribeMigrationJobDetailRequest::setMigrationModeDataSynchronization(bool migrationModeDataSynchronization) {
-  migrationModeDataSynchronization_ = migrationModeDataSynchronization;
-  setParameter(std::string("MigrationMode.DataSynchronization"), migrationModeDataSynchronization ? "true" : "false");
-}
-
-std::string DescribeMigrationJobDetailRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DescribeMigrationJobDetailRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
-int DescribeMigrationJobDetailRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void DescribeMigrationJobDetailRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 std::string DescribeMigrationJobDetailRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -122,5 +77,23 @@ bool DescribeMigrationJobDetailRequest::getMigrationModeStructureInitialization(
 void DescribeMigrationJobDetailRequest::setMigrationModeStructureInitialization(bool migrationModeStructureInitialization) {
   migrationModeStructureInitialization_ = migrationModeStructureInitialization;
   setParameter(std::string("MigrationMode.StructureInitialization"), migrationModeStructureInitialization ? "true" : "false");
+}
+
+bool DescribeMigrationJobDetailRequest::getMigrationModeDataSynchronization() const {
+  return migrationModeDataSynchronization_;
+}
+
+void DescribeMigrationJobDetailRequest::setMigrationModeDataSynchronization(bool migrationModeDataSynchronization) {
+  migrationModeDataSynchronization_ = migrationModeDataSynchronization;
+  setParameter(std::string("MigrationMode.DataSynchronization"), migrationModeDataSynchronization ? "true" : "false");
+}
+
+int DescribeMigrationJobDetailRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void DescribeMigrationJobDetailRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

@@ -19,56 +19,11 @@
 using AlibabaCloud::Dts::Model::CreateSubscriptionInstanceRequest;
 
 CreateSubscriptionInstanceRequest::CreateSubscriptionInstanceRequest()
-    : RpcServiceRequest("dts", "2020-01-01", "CreateSubscriptionInstance") {
+    : RpcServiceRequest("dts", "2016-08-01", "CreateSubscriptionInstance") {
   setMethod(HttpRequest::Method::Post);
 }
 
 CreateSubscriptionInstanceRequest::~CreateSubscriptionInstanceRequest() {}
-
-std::string CreateSubscriptionInstanceRequest::getClientToken() const {
-  return clientToken_;
-}
-
-void CreateSubscriptionInstanceRequest::setClientToken(const std::string &clientToken) {
-  clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), clientToken);
-}
-
-std::string CreateSubscriptionInstanceRequest::getSourceEndpointInstanceType() const {
-  return sourceEndpointInstanceType_;
-}
-
-void CreateSubscriptionInstanceRequest::setSourceEndpointInstanceType(const std::string &sourceEndpointInstanceType) {
-  sourceEndpointInstanceType_ = sourceEndpointInstanceType;
-  setParameter(std::string("SourceEndpoint.InstanceType"), sourceEndpointInstanceType);
-}
-
-std::string CreateSubscriptionInstanceRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void CreateSubscriptionInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string CreateSubscriptionInstanceRequest::getAccountId() const {
-  return accountId_;
-}
-
-void CreateSubscriptionInstanceRequest::setAccountId(const std::string &accountId) {
-  accountId_ = accountId;
-  setParameter(std::string("AccountId"), accountId);
-}
-
-std::string CreateSubscriptionInstanceRequest::getRegionId() const {
-  return regionId_;
-}
-
-void CreateSubscriptionInstanceRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
 
 std::string CreateSubscriptionInstanceRequest::getPeriod() const {
   return period_;
@@ -77,6 +32,15 @@ std::string CreateSubscriptionInstanceRequest::getPeriod() const {
 void CreateSubscriptionInstanceRequest::setPeriod(const std::string &period) {
   period_ = period;
   setParameter(std::string("Period"), period);
+}
+
+std::string CreateSubscriptionInstanceRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void CreateSubscriptionInstanceRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
 std::string CreateSubscriptionInstanceRequest::getOwnerId() const {

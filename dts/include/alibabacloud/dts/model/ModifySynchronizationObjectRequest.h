@@ -30,29 +30,17 @@ class ALIBABACLOUD_DTS_EXPORT ModifySynchronizationObjectRequest : public RpcSer
 public:
 	ModifySynchronizationObjectRequest();
 	~ModifySynchronizationObjectRequest();
+	std::string getSynchronizationJobId() const;
+	void setSynchronizationJobId(const std::string &synchronizationJobId);
 	std::string getSynchronizationObjects() const;
 	void setSynchronizationObjects(const std::string &synchronizationObjects);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSynchronizationJobId() const;
-	void setSynchronizationJobId(const std::string &synchronizationJobId);
-	std::string getAccountId() const;
-	void setAccountId(const std::string &accountId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
-	std::string getSynchronizationDirection() const;
-	void setSynchronizationDirection(const std::string &synchronizationDirection);
 
 private:
+	std::string synchronizationJobId_;
 	std::string synchronizationObjects_;
 	std::string ownerId_;
-	std::string accessKeyId_;
-	std::string synchronizationJobId_;
-	std::string accountId_;
-	std::string regionId_;
-	std::string synchronizationDirection_;
 };
 } // namespace Model
 } // namespace Dts

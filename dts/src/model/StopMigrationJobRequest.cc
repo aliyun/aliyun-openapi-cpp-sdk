@@ -19,7 +19,7 @@
 using AlibabaCloud::Dts::Model::StopMigrationJobRequest;
 
 StopMigrationJobRequest::StopMigrationJobRequest()
-    : RpcServiceRequest("dts", "2020-01-01", "StopMigrationJob") {
+    : RpcServiceRequest("dts", "2016-08-01", "StopMigrationJob") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -50,32 +50,5 @@ std::string StopMigrationJobRequest::getOwnerId() const {
 void StopMigrationJobRequest::setOwnerId(const std::string &ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), ownerId);
-}
-
-std::string StopMigrationJobRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void StopMigrationJobRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string StopMigrationJobRequest::getAccountId() const {
-  return accountId_;
-}
-
-void StopMigrationJobRequest::setAccountId(const std::string &accountId) {
-  accountId_ = accountId;
-  setParameter(std::string("AccountId"), accountId);
-}
-
-std::string StopMigrationJobRequest::getRegionId() const {
-  return regionId_;
-}
-
-void StopMigrationJobRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 

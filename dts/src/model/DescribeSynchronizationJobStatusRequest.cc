@@ -19,29 +19,11 @@
 using AlibabaCloud::Dts::Model::DescribeSynchronizationJobStatusRequest;
 
 DescribeSynchronizationJobStatusRequest::DescribeSynchronizationJobStatusRequest()
-    : RpcServiceRequest("dts", "2020-01-01", "DescribeSynchronizationJobStatus") {
+    : RpcServiceRequest("dts", "2016-08-01", "DescribeSynchronizationJobStatus") {
   setMethod(HttpRequest::Method::Post);
 }
 
 DescribeSynchronizationJobStatusRequest::~DescribeSynchronizationJobStatusRequest() {}
-
-std::string DescribeSynchronizationJobStatusRequest::getClientToken() const {
-  return clientToken_;
-}
-
-void DescribeSynchronizationJobStatusRequest::setClientToken(const std::string &clientToken) {
-  clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), clientToken);
-}
-
-std::string DescribeSynchronizationJobStatusRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DescribeSynchronizationJobStatusRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
 
 std::string DescribeSynchronizationJobStatusRequest::getSynchronizationJobId() const {
   return synchronizationJobId_;
@@ -52,22 +34,13 @@ void DescribeSynchronizationJobStatusRequest::setSynchronizationJobId(const std:
   setParameter(std::string("SynchronizationJobId"), synchronizationJobId);
 }
 
-std::string DescribeSynchronizationJobStatusRequest::getAccountId() const {
-  return accountId_;
+std::string DescribeSynchronizationJobStatusRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void DescribeSynchronizationJobStatusRequest::setAccountId(const std::string &accountId) {
-  accountId_ = accountId;
-  setParameter(std::string("AccountId"), accountId);
-}
-
-std::string DescribeSynchronizationJobStatusRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DescribeSynchronizationJobStatusRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void DescribeSynchronizationJobStatusRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
 std::string DescribeSynchronizationJobStatusRequest::getOwnerId() const {
@@ -77,14 +50,5 @@ std::string DescribeSynchronizationJobStatusRequest::getOwnerId() const {
 void DescribeSynchronizationJobStatusRequest::setOwnerId(const std::string &ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), ownerId);
-}
-
-std::string DescribeSynchronizationJobStatusRequest::getSynchronizationDirection() const {
-  return synchronizationDirection_;
-}
-
-void DescribeSynchronizationJobStatusRequest::setSynchronizationDirection(const std::string &synchronizationDirection) {
-  synchronizationDirection_ = synchronizationDirection;
-  setParameter(std::string("SynchronizationDirection"), synchronizationDirection);
 }
 

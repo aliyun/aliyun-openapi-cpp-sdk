@@ -19,11 +19,20 @@
 using AlibabaCloud::Dts::Model::ModifySubscriptionObjectRequest;
 
 ModifySubscriptionObjectRequest::ModifySubscriptionObjectRequest()
-    : RpcServiceRequest("dts", "2020-01-01", "ModifySubscriptionObject") {
+    : RpcServiceRequest("dts", "2016-08-01", "ModifySubscriptionObject") {
   setMethod(HttpRequest::Method::Post);
 }
 
 ModifySubscriptionObjectRequest::~ModifySubscriptionObjectRequest() {}
+
+std::string ModifySubscriptionObjectRequest::getSubscriptionObject() const {
+  return subscriptionObject_;
+}
+
+void ModifySubscriptionObjectRequest::setSubscriptionObject(const std::string &subscriptionObject) {
+  subscriptionObject_ = subscriptionObject;
+  setParameter(std::string("SubscriptionObject"), subscriptionObject);
+}
 
 std::string ModifySubscriptionObjectRequest::getSubscriptionInstanceId() const {
   return subscriptionInstanceId_;
@@ -41,41 +50,5 @@ std::string ModifySubscriptionObjectRequest::getOwnerId() const {
 void ModifySubscriptionObjectRequest::setOwnerId(const std::string &ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), ownerId);
-}
-
-std::string ModifySubscriptionObjectRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void ModifySubscriptionObjectRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string ModifySubscriptionObjectRequest::getAccountId() const {
-  return accountId_;
-}
-
-void ModifySubscriptionObjectRequest::setAccountId(const std::string &accountId) {
-  accountId_ = accountId;
-  setParameter(std::string("AccountId"), accountId);
-}
-
-std::string ModifySubscriptionObjectRequest::getRegionId() const {
-  return regionId_;
-}
-
-void ModifySubscriptionObjectRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
-std::string ModifySubscriptionObjectRequest::getSubscriptionObject() const {
-  return subscriptionObject_;
-}
-
-void ModifySubscriptionObjectRequest::setSubscriptionObject(const std::string &subscriptionObject) {
-  subscriptionObject_ = subscriptionObject;
-  setParameter(std::string("SubscriptionObject"), subscriptionObject);
 }
 

@@ -19,29 +19,11 @@
 using AlibabaCloud::Dts::Model::DeleteSynchronizationJobRequest;
 
 DeleteSynchronizationJobRequest::DeleteSynchronizationJobRequest()
-    : RpcServiceRequest("dts", "2020-01-01", "DeleteSynchronizationJob") {
+    : RpcServiceRequest("dts", "2016-08-01", "DeleteSynchronizationJob") {
   setMethod(HttpRequest::Method::Post);
 }
 
 DeleteSynchronizationJobRequest::~DeleteSynchronizationJobRequest() {}
-
-std::string DeleteSynchronizationJobRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DeleteSynchronizationJobRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
-}
-
-std::string DeleteSynchronizationJobRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DeleteSynchronizationJobRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
 
 std::string DeleteSynchronizationJobRequest::getSynchronizationJobId() const {
   return synchronizationJobId_;
@@ -52,21 +34,12 @@ void DeleteSynchronizationJobRequest::setSynchronizationJobId(const std::string 
   setParameter(std::string("SynchronizationJobId"), synchronizationJobId);
 }
 
-std::string DeleteSynchronizationJobRequest::getAccountId() const {
-  return accountId_;
+std::string DeleteSynchronizationJobRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DeleteSynchronizationJobRequest::setAccountId(const std::string &accountId) {
-  accountId_ = accountId;
-  setParameter(std::string("AccountId"), accountId);
-}
-
-std::string DeleteSynchronizationJobRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DeleteSynchronizationJobRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void DeleteSynchronizationJobRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

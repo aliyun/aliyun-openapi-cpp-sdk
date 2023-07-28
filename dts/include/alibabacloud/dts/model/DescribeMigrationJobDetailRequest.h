@@ -38,33 +38,24 @@ public:
 	void setMigrationJobId(const std::string &migrationJobId);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getAccountId() const;
-	void setAccountId(const std::string &accountId);
-	bool getMigrationModeDataSynchronization() const;
-	void setMigrationModeDataSynchronization(bool migrationModeDataSynchronization);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
 	bool getMigrationModeStructureInitialization() const;
 	void setMigrationModeStructureInitialization(bool migrationModeStructureInitialization);
+	bool getMigrationModeDataSynchronization() const;
+	void setMigrationModeDataSynchronization(bool migrationModeDataSynchronization);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 
 private:
 	std::string clientToken_;
 	bool migrationModeDataInitialization_;
 	std::string migrationJobId_;
 	int pageNum_;
-	std::string accessKeyId_;
-	std::string accountId_;
-	bool migrationModeDataSynchronization_;
-	std::string regionId_;
-	int pageSize_;
 	std::string ownerId_;
 	bool migrationModeStructureInitialization_;
+	bool migrationModeDataSynchronization_;
+	int pageSize_;
 };
 } // namespace Model
 } // namespace Dts

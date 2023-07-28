@@ -44,40 +44,24 @@ namespace AlibabaCloud
 						bool dML;
 						bool dDL;
 					};
-					struct SubscriptionHost
-					{
-						std::string publicHost;
-						std::string privateHost;
-						std::string vPCHost;
-					};
 					struct SynchronousObject
 					{
 						std::string databaseName;
 						std::string wholeDatabase;
 						std::vector<std::string> tableList;
 					};
-					struct Tag
-					{
-						std::string value;
-						std::string key;
-					};
 					std::string status;
-					SubscriptionHost subscriptionHost;
-					std::string instanceCreateTime;
-					std::string jobCreateTime;
-					std::string endTimestamp;
-					std::string payType;
-					std::string subscriptionInstanceID;
 					SubscriptionDataType subscriptionDataType;
 					std::vector<SubscriptionInstance::SynchronousObject> subscriptionObject;
-					std::string consumptionCheckpoint;
 					std::string subscriptionInstanceName;
-					std::string subscribeTopic;
+					std::string consumptionCheckpoint;
 					std::string consumptionClient;
 					SourceEndpoint sourceEndpoint;
+					std::string endTimestamp;
+					std::string payType;
 					std::string errorMessage;
+					std::string subscriptionInstanceID;
 					std::string beginTimestamp;
-					std::vector<SubscriptionInstance::Tag> tags;
 				};
 
 
@@ -87,10 +71,7 @@ namespace AlibabaCloud
 				long getTotalRecordCount()const;
 				int getPageRecordCount()const;
 				int getPageNumber()const;
-				std::string getErrMessage()const;
 				std::vector<SubscriptionInstance> getSubscriptionInstances()const;
-				std::string getSuccess()const;
-				std::string getErrCode()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -98,10 +79,7 @@ namespace AlibabaCloud
 				long totalRecordCount_;
 				int pageRecordCount_;
 				int pageNumber_;
-				std::string errMessage_;
 				std::vector<SubscriptionInstance> subscriptionInstances_;
-				std::string success_;
-				std::string errCode_;
 
 			};
 		}

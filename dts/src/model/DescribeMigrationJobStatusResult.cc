@@ -39,35 +39,32 @@ void DescribeMigrationJobStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataInitializationStatusNode = value["DataInitializationStatus"];
-	if(!dataInitializationStatusNode["Status"].isNull())
-		dataInitializationStatus_.status = dataInitializationStatusNode["Status"].asString();
-	if(!dataInitializationStatusNode["Percent"].isNull())
-		dataInitializationStatus_.percent = dataInitializationStatusNode["Percent"].asString();
-	if(!dataInitializationStatusNode["ErrorMessage"].isNull())
-		dataInitializationStatus_.errorMessage = dataInitializationStatusNode["ErrorMessage"].asString();
-	if(!dataInitializationStatusNode["Progress"].isNull())
-		dataInitializationStatus_.progress = dataInitializationStatusNode["Progress"].asString();
-	auto dataSynchronizationStatusNode = value["DataSynchronizationStatus"];
-	if(!dataSynchronizationStatusNode["Status"].isNull())
-		dataSynchronizationStatus_.status = dataSynchronizationStatusNode["Status"].asString();
-	if(!dataSynchronizationStatusNode["Percent"].isNull())
-		dataSynchronizationStatus_.percent = dataSynchronizationStatusNode["Percent"].asString();
-	if(!dataSynchronizationStatusNode["Delay"].isNull())
-		dataSynchronizationStatus_.delay = dataSynchronizationStatusNode["Delay"].asString();
-	if(!dataSynchronizationStatusNode["ErrorMessage"].isNull())
-		dataSynchronizationStatus_.errorMessage = dataSynchronizationStatusNode["ErrorMessage"].asString();
-	if(!dataSynchronizationStatusNode["Checkpoint"].isNull())
-		dataSynchronizationStatus_.checkpoint = dataSynchronizationStatusNode["Checkpoint"].asString();
+	auto sourceEndpointNode = value["SourceEndpoint"];
+	if(!sourceEndpointNode["DatabaseName"].isNull())
+		sourceEndpoint_.databaseName = sourceEndpointNode["DatabaseName"].asString();
+	if(!sourceEndpointNode["InstanceId"].isNull())
+		sourceEndpoint_.instanceId = sourceEndpointNode["InstanceId"].asString();
+	if(!sourceEndpointNode["InstanceType"].isNull())
+		sourceEndpoint_.instanceType = sourceEndpointNode["InstanceType"].asString();
+	if(!sourceEndpointNode["IP"].isNull())
+		sourceEndpoint_.iP = sourceEndpointNode["IP"].asString();
+	if(!sourceEndpointNode["Port"].isNull())
+		sourceEndpoint_.port = sourceEndpointNode["Port"].asString();
+	if(!sourceEndpointNode["UserName"].isNull())
+		sourceEndpoint_.userName = sourceEndpointNode["UserName"].asString();
+	if(!sourceEndpointNode["oracleSID"].isNull())
+		sourceEndpoint_.oracleSID = sourceEndpointNode["oracleSID"].asString();
+	if(!sourceEndpointNode["EngineName"].isNull())
+		sourceEndpoint_.engineName = sourceEndpointNode["EngineName"].asString();
 	auto destinationEndpointNode = value["DestinationEndpoint"];
 	if(!destinationEndpointNode["DatabaseName"].isNull())
 		destinationEndpoint_.databaseName = destinationEndpointNode["DatabaseName"].asString();
 	if(!destinationEndpointNode["InstanceId"].isNull())
 		destinationEndpoint_.instanceId = destinationEndpointNode["InstanceId"].asString();
-	if(!destinationEndpointNode["IP"].isNull())
-		destinationEndpoint_.iP = destinationEndpointNode["IP"].asString();
 	if(!destinationEndpointNode["InstanceType"].isNull())
 		destinationEndpoint_.instanceType = destinationEndpointNode["InstanceType"].asString();
+	if(!destinationEndpointNode["IP"].isNull())
+		destinationEndpoint_.iP = destinationEndpointNode["IP"].asString();
 	if(!destinationEndpointNode["Port"].isNull())
 		destinationEndpoint_.port = destinationEndpointNode["Port"].asString();
 	if(!destinationEndpointNode["UserName"].isNull())
@@ -102,50 +99,45 @@ void DescribeMigrationJobStatusResult::parse(const std::string &payload)
 			checkItemObject.repairMethod = precheckStatusNodeDetailCheckItem["RepairMethod"].asString();
 		precheckStatus_.detail.push_back(checkItemObject);
 	}
-	auto sourceEndpointNode = value["SourceEndpoint"];
-	if(!sourceEndpointNode["DatabaseName"].isNull())
-		sourceEndpoint_.databaseName = sourceEndpointNode["DatabaseName"].asString();
-	if(!sourceEndpointNode["InstanceId"].isNull())
-		sourceEndpoint_.instanceId = sourceEndpointNode["InstanceId"].asString();
-	if(!sourceEndpointNode["IP"].isNull())
-		sourceEndpoint_.iP = sourceEndpointNode["IP"].asString();
-	if(!sourceEndpointNode["InstanceType"].isNull())
-		sourceEndpoint_.instanceType = sourceEndpointNode["InstanceType"].asString();
-	if(!sourceEndpointNode["Port"].isNull())
-		sourceEndpoint_.port = sourceEndpointNode["Port"].asString();
-	if(!sourceEndpointNode["UserName"].isNull())
-		sourceEndpoint_.userName = sourceEndpointNode["UserName"].asString();
-	if(!sourceEndpointNode["oracleSID"].isNull())
-		sourceEndpoint_.oracleSID = sourceEndpointNode["oracleSID"].asString();
-	if(!sourceEndpointNode["EngineName"].isNull())
-		sourceEndpoint_.engineName = sourceEndpointNode["EngineName"].asString();
 	auto structureInitializationStatusNode = value["StructureInitializationStatus"];
 	if(!structureInitializationStatusNode["Status"].isNull())
 		structureInitializationStatus_.status = structureInitializationStatusNode["Status"].asString();
 	if(!structureInitializationStatusNode["Percent"].isNull())
 		structureInitializationStatus_.percent = structureInitializationStatusNode["Percent"].asString();
-	if(!structureInitializationStatusNode["ErrorMessage"].isNull())
-		structureInitializationStatus_.errorMessage = structureInitializationStatusNode["ErrorMessage"].asString();
 	if(!structureInitializationStatusNode["Progress"].isNull())
 		structureInitializationStatus_.progress = structureInitializationStatusNode["Progress"].asString();
+	if(!structureInitializationStatusNode["ErrorMessage"].isNull())
+		structureInitializationStatus_.errorMessage = structureInitializationStatusNode["ErrorMessage"].asString();
+	auto dataInitializationStatusNode = value["DataInitializationStatus"];
+	if(!dataInitializationStatusNode["Status"].isNull())
+		dataInitializationStatus_.status = dataInitializationStatusNode["Status"].asString();
+	if(!dataInitializationStatusNode["Percent"].isNull())
+		dataInitializationStatus_.percent = dataInitializationStatusNode["Percent"].asString();
+	if(!dataInitializationStatusNode["Progress"].isNull())
+		dataInitializationStatus_.progress = dataInitializationStatusNode["Progress"].asString();
+	if(!dataInitializationStatusNode["ErrorMessage"].isNull())
+		dataInitializationStatus_.errorMessage = dataInitializationStatusNode["ErrorMessage"].asString();
+	auto dataSynchronizationStatusNode = value["DataSynchronizationStatus"];
+	if(!dataSynchronizationStatusNode["Status"].isNull())
+		dataSynchronizationStatus_.status = dataSynchronizationStatusNode["Status"].asString();
+	if(!dataSynchronizationStatusNode["Delay"].isNull())
+		dataSynchronizationStatus_.delay = dataSynchronizationStatusNode["Delay"].asString();
+	if(!dataSynchronizationStatusNode["Percent"].isNull())
+		dataSynchronizationStatus_.percent = dataSynchronizationStatusNode["Percent"].asString();
+	if(!dataSynchronizationStatusNode["ErrorMessage"].isNull())
+		dataSynchronizationStatus_.errorMessage = dataSynchronizationStatusNode["ErrorMessage"].asString();
+	if(!dataSynchronizationStatusNode["Checkpoint"].isNull())
+		dataSynchronizationStatus_.checkpoint = dataSynchronizationStatusNode["Checkpoint"].asString();
 	if(!value["MigrationJobName"].isNull())
 		migrationJobName_ = value["MigrationJobName"].asString();
 	if(!value["MigrationJobStatus"].isNull())
 		migrationJobStatus_ = value["MigrationJobStatus"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
 	if(!value["PayType"].isNull())
 		payType_ = value["PayType"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
-	if(!value["MigrationObject"].isNull())
-		migrationObject_ = value["MigrationObject"].asString();
 	if(!value["MigrationJobId"].isNull())
 		migrationJobId_ = value["MigrationJobId"].asString();
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
+	if(!value["MigrationObject"].isNull())
+		migrationObject_ = value["MigrationObject"].asString();
 	if(!value["MigrationJobClass"].isNull())
 		migrationJobClass_ = value["MigrationJobClass"].asString();
 
@@ -154,11 +146,6 @@ void DescribeMigrationJobStatusResult::parse(const std::string &payload)
 DescribeMigrationJobStatusResult::DataInitializationStatus DescribeMigrationJobStatusResult::getDataInitializationStatus()const
 {
 	return dataInitializationStatus_;
-}
-
-std::string DescribeMigrationJobStatusResult::getTaskId()const
-{
-	return taskId_;
 }
 
 std::string DescribeMigrationJobStatusResult::getMigrationJobName()const
@@ -171,11 +158,6 @@ std::string DescribeMigrationJobStatusResult::getPayType()const
 	return payType_;
 }
 
-std::string DescribeMigrationJobStatusResult::getErrMessage()const
-{
-	return errMessage_;
-}
-
 DescribeMigrationJobStatusResult::MigrationMode DescribeMigrationJobStatusResult::getMigrationMode()const
 {
 	return migrationMode_;
@@ -184,16 +166,6 @@ DescribeMigrationJobStatusResult::MigrationMode DescribeMigrationJobStatusResult
 std::string DescribeMigrationJobStatusResult::getMigrationJobStatus()const
 {
 	return migrationJobStatus_;
-}
-
-std::string DescribeMigrationJobStatusResult::getSuccess()const
-{
-	return success_;
-}
-
-std::string DescribeMigrationJobStatusResult::getErrCode()const
-{
-	return errCode_;
 }
 
 std::string DescribeMigrationJobStatusResult::getMigrationJobId()const
@@ -226,13 +198,13 @@ std::string DescribeMigrationJobStatusResult::getMigrationJobClass()const
 	return migrationJobClass_;
 }
 
-DescribeMigrationJobStatusResult::DataSynchronizationStatus DescribeMigrationJobStatusResult::getDataSynchronizationStatus()const
-{
-	return dataSynchronizationStatus_;
-}
-
 DescribeMigrationJobStatusResult::StructureInitializationStatus DescribeMigrationJobStatusResult::getStructureInitializationStatus()const
 {
 	return structureInitializationStatus_;
+}
+
+DescribeMigrationJobStatusResult::DataSynchronizationStatus DescribeMigrationJobStatusResult::getDataSynchronizationStatus()const
+{
+	return dataSynchronizationStatus_;
 }
 
