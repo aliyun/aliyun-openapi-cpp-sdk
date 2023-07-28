@@ -30,20 +30,17 @@ class ALIBABACLOUD_DTS_EXPORT DescirbeMigrationJobsRequest : public RpcServiceRe
 public:
 	DescirbeMigrationJobsRequest();
 	~DescirbeMigrationJobsRequest();
-	int getPageNum() const;
-	void setPageNum(int pageNum);
-	std::string getOwnerId() const;
-	void setOwnerId(const std::string &ownerId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getMigrationJobName() const;
 	void setMigrationJobName(const std::string &migrationJobName);
+	int getPageNum() const;
+	void setPageNum(int pageNum);
 
 private:
-	int pageNum_;
-	std::string ownerId_;
 	int pageSize_;
 	std::string migrationJobName_;
+	int pageNum_;
 };
 } // namespace Model
 } // namespace Dts

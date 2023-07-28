@@ -19,7 +19,7 @@
 using AlibabaCloud::Dts::Model::CreateMigrationJobRequest;
 
 CreateMigrationJobRequest::CreateMigrationJobRequest()
-    : RpcServiceRequest("dts", "2016-08-01", "CreateMigrationJob") {
+    : RpcServiceRequest("dts", "2017-06-01", "CreateMigrationJob") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -32,15 +32,6 @@ std::string CreateMigrationJobRequest::getClientToken() const {
 void CreateMigrationJobRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
   setParameter(std::string("ClientToken"), clientToken);
-}
-
-std::string CreateMigrationJobRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void CreateMigrationJobRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
 }
 
 std::string CreateMigrationJobRequest::getRegion() const {
@@ -59,5 +50,14 @@ std::string CreateMigrationJobRequest::getMigrationJobClass() const {
 void CreateMigrationJobRequest::setMigrationJobClass(const std::string &migrationJobClass) {
   migrationJobClass_ = migrationJobClass;
   setParameter(std::string("MigrationJobClass"), migrationJobClass);
+}
+
+std::string CreateMigrationJobRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void CreateMigrationJobRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

@@ -21,133 +21,49 @@ set(dts_public_header
 	include/alibabacloud/dts/DtsExport.h )
 
 set(dts_public_header_model 
-	include/alibabacloud/dts/model/ConfigurationSynchronizationJobRequest.h
-	include/alibabacloud/dts/model/ConfigurationSynchronizationJobResult.h
 	include/alibabacloud/dts/model/ConfigureMigrationJobRequest.h
 	include/alibabacloud/dts/model/ConfigureMigrationJobResult.h
-	include/alibabacloud/dts/model/ConfigureSubscriptionInstanceRequest.h
-	include/alibabacloud/dts/model/ConfigureSubscriptionInstanceResult.h
-	include/alibabacloud/dts/model/ConfigureSynchronizationJobRequest.h
-	include/alibabacloud/dts/model/ConfigureSynchronizationJobResult.h
 	include/alibabacloud/dts/model/CreateMigrationJobRequest.h
 	include/alibabacloud/dts/model/CreateMigrationJobResult.h
-	include/alibabacloud/dts/model/CreateSubscriptionInstanceRequest.h
-	include/alibabacloud/dts/model/CreateSubscriptionInstanceResult.h
-	include/alibabacloud/dts/model/CreateSynchronizationJobRequest.h
-	include/alibabacloud/dts/model/CreateSynchronizationJobResult.h
 	include/alibabacloud/dts/model/DeleteMigrationJobRequest.h
 	include/alibabacloud/dts/model/DeleteMigrationJobResult.h
-	include/alibabacloud/dts/model/DeleteSubscriptionInstanceRequest.h
-	include/alibabacloud/dts/model/DeleteSubscriptionInstanceResult.h
-	include/alibabacloud/dts/model/DeleteSynchronizationJobRequest.h
-	include/alibabacloud/dts/model/DeleteSynchronizationJobResult.h
 	include/alibabacloud/dts/model/DescirbeMigrationJobsRequest.h
 	include/alibabacloud/dts/model/DescirbeMigrationJobsResult.h
-	include/alibabacloud/dts/model/DescribeInitializationStatusRequest.h
-	include/alibabacloud/dts/model/DescribeInitializationStatusResult.h
 	include/alibabacloud/dts/model/DescribeMigrationJobDetailRequest.h
 	include/alibabacloud/dts/model/DescribeMigrationJobDetailResult.h
 	include/alibabacloud/dts/model/DescribeMigrationJobStatusRequest.h
 	include/alibabacloud/dts/model/DescribeMigrationJobStatusResult.h
-	include/alibabacloud/dts/model/DescribeMigrationJobsRequest.h
-	include/alibabacloud/dts/model/DescribeMigrationJobsResult.h
-	include/alibabacloud/dts/model/DescribeSubscriptionInstanceStatusRequest.h
-	include/alibabacloud/dts/model/DescribeSubscriptionInstanceStatusResult.h
-	include/alibabacloud/dts/model/DescribeSubscriptionInstancesRequest.h
-	include/alibabacloud/dts/model/DescribeSubscriptionInstancesResult.h
-	include/alibabacloud/dts/model/DescribeSubscriptionObjectModifyStatusRequest.h
-	include/alibabacloud/dts/model/DescribeSubscriptionObjectModifyStatusResult.h
-	include/alibabacloud/dts/model/DescribeSynchronizationJobStatusRequest.h
-	include/alibabacloud/dts/model/DescribeSynchronizationJobStatusResult.h
-	include/alibabacloud/dts/model/DescribeSynchronizationJobsRequest.h
-	include/alibabacloud/dts/model/DescribeSynchronizationJobsResult.h
-	include/alibabacloud/dts/model/DescribeSynchronizationObjectModifyStatusRequest.h
-	include/alibabacloud/dts/model/DescribeSynchronizationObjectModifyStatusResult.h
-	include/alibabacloud/dts/model/ModifyConsumptionTimestampRequest.h
-	include/alibabacloud/dts/model/ModifyConsumptionTimestampResult.h
 	include/alibabacloud/dts/model/ModifyMigrationObjectRequest.h
 	include/alibabacloud/dts/model/ModifyMigrationObjectResult.h
-	include/alibabacloud/dts/model/ModifySubscriptionObjectRequest.h
-	include/alibabacloud/dts/model/ModifySubscriptionObjectResult.h
-	include/alibabacloud/dts/model/ModifySynchronizationObjectRequest.h
-	include/alibabacloud/dts/model/ModifySynchronizationObjectResult.h
 	include/alibabacloud/dts/model/StartMigrationJobRequest.h
 	include/alibabacloud/dts/model/StartMigrationJobResult.h
-	include/alibabacloud/dts/model/StartSubscriptionInstanceRequest.h
-	include/alibabacloud/dts/model/StartSubscriptionInstanceResult.h
-	include/alibabacloud/dts/model/StartSynchronizationJobRequest.h
-	include/alibabacloud/dts/model/StartSynchronizationJobResult.h
 	include/alibabacloud/dts/model/StopMigrationJobRequest.h
 	include/alibabacloud/dts/model/StopMigrationJobResult.h
 	include/alibabacloud/dts/model/SuspendMigrationJobRequest.h
-	include/alibabacloud/dts/model/SuspendMigrationJobResult.h
-	include/alibabacloud/dts/model/SuspendSynchronizationJobRequest.h
-	include/alibabacloud/dts/model/SuspendSynchronizationJobResult.h )
+	include/alibabacloud/dts/model/SuspendMigrationJobResult.h )
 
 set(dts_src 
 	src/DtsClient.cc
-	src/model/ConfigurationSynchronizationJobRequest.cc
-	src/model/ConfigurationSynchronizationJobResult.cc
 	src/model/ConfigureMigrationJobRequest.cc
 	src/model/ConfigureMigrationJobResult.cc
-	src/model/ConfigureSubscriptionInstanceRequest.cc
-	src/model/ConfigureSubscriptionInstanceResult.cc
-	src/model/ConfigureSynchronizationJobRequest.cc
-	src/model/ConfigureSynchronizationJobResult.cc
 	src/model/CreateMigrationJobRequest.cc
 	src/model/CreateMigrationJobResult.cc
-	src/model/CreateSubscriptionInstanceRequest.cc
-	src/model/CreateSubscriptionInstanceResult.cc
-	src/model/CreateSynchronizationJobRequest.cc
-	src/model/CreateSynchronizationJobResult.cc
 	src/model/DeleteMigrationJobRequest.cc
 	src/model/DeleteMigrationJobResult.cc
-	src/model/DeleteSubscriptionInstanceRequest.cc
-	src/model/DeleteSubscriptionInstanceResult.cc
-	src/model/DeleteSynchronizationJobRequest.cc
-	src/model/DeleteSynchronizationJobResult.cc
 	src/model/DescirbeMigrationJobsRequest.cc
 	src/model/DescirbeMigrationJobsResult.cc
-	src/model/DescribeInitializationStatusRequest.cc
-	src/model/DescribeInitializationStatusResult.cc
 	src/model/DescribeMigrationJobDetailRequest.cc
 	src/model/DescribeMigrationJobDetailResult.cc
 	src/model/DescribeMigrationJobStatusRequest.cc
 	src/model/DescribeMigrationJobStatusResult.cc
-	src/model/DescribeMigrationJobsRequest.cc
-	src/model/DescribeMigrationJobsResult.cc
-	src/model/DescribeSubscriptionInstanceStatusRequest.cc
-	src/model/DescribeSubscriptionInstanceStatusResult.cc
-	src/model/DescribeSubscriptionInstancesRequest.cc
-	src/model/DescribeSubscriptionInstancesResult.cc
-	src/model/DescribeSubscriptionObjectModifyStatusRequest.cc
-	src/model/DescribeSubscriptionObjectModifyStatusResult.cc
-	src/model/DescribeSynchronizationJobStatusRequest.cc
-	src/model/DescribeSynchronizationJobStatusResult.cc
-	src/model/DescribeSynchronizationJobsRequest.cc
-	src/model/DescribeSynchronizationJobsResult.cc
-	src/model/DescribeSynchronizationObjectModifyStatusRequest.cc
-	src/model/DescribeSynchronizationObjectModifyStatusResult.cc
-	src/model/ModifyConsumptionTimestampRequest.cc
-	src/model/ModifyConsumptionTimestampResult.cc
 	src/model/ModifyMigrationObjectRequest.cc
 	src/model/ModifyMigrationObjectResult.cc
-	src/model/ModifySubscriptionObjectRequest.cc
-	src/model/ModifySubscriptionObjectResult.cc
-	src/model/ModifySynchronizationObjectRequest.cc
-	src/model/ModifySynchronizationObjectResult.cc
 	src/model/StartMigrationJobRequest.cc
 	src/model/StartMigrationJobResult.cc
-	src/model/StartSubscriptionInstanceRequest.cc
-	src/model/StartSubscriptionInstanceResult.cc
-	src/model/StartSynchronizationJobRequest.cc
-	src/model/StartSynchronizationJobResult.cc
 	src/model/StopMigrationJobRequest.cc
 	src/model/StopMigrationJobResult.cc
 	src/model/SuspendMigrationJobRequest.cc
-	src/model/SuspendMigrationJobResult.cc
-	src/model/SuspendSynchronizationJobRequest.cc
-	src/model/SuspendSynchronizationJobResult.cc )
+	src/model/SuspendMigrationJobResult.cc )
 
 add_library(dts ${LIB_TYPE}
 	${dts_public_header}

@@ -19,7 +19,7 @@
 using AlibabaCloud::Dts::Model::DeleteMigrationJobRequest;
 
 DeleteMigrationJobRequest::DeleteMigrationJobRequest()
-    : RpcServiceRequest("dts", "2016-08-01", "DeleteMigrationJob") {
+    : RpcServiceRequest("dts", "2017-06-01", "DeleteMigrationJob") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -32,14 +32,5 @@ std::string DeleteMigrationJobRequest::getMigrationJobId() const {
 void DeleteMigrationJobRequest::setMigrationJobId(const std::string &migrationJobId) {
   migrationJobId_ = migrationJobId;
   setParameter(std::string("MigrationJobId"), migrationJobId);
-}
-
-std::string DeleteMigrationJobRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DeleteMigrationJobRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
 }
 

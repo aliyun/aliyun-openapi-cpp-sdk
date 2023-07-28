@@ -19,29 +19,11 @@
 using AlibabaCloud::Dts::Model::DescirbeMigrationJobsRequest;
 
 DescirbeMigrationJobsRequest::DescirbeMigrationJobsRequest()
-    : RpcServiceRequest("dts", "2016-08-01", "DescirbeMigrationJobs") {
+    : RpcServiceRequest("dts", "2017-06-01", "DescirbeMigrationJobs") {
   setMethod(HttpRequest::Method::Post);
 }
 
 DescirbeMigrationJobsRequest::~DescirbeMigrationJobsRequest() {}
-
-int DescirbeMigrationJobsRequest::getPageNum() const {
-  return pageNum_;
-}
-
-void DescirbeMigrationJobsRequest::setPageNum(int pageNum) {
-  pageNum_ = pageNum;
-  setParameter(std::string("PageNum"), std::to_string(pageNum));
-}
-
-std::string DescirbeMigrationJobsRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescirbeMigrationJobsRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
-}
 
 int DescirbeMigrationJobsRequest::getPageSize() const {
   return pageSize_;
@@ -59,5 +41,14 @@ std::string DescirbeMigrationJobsRequest::getMigrationJobName() const {
 void DescirbeMigrationJobsRequest::setMigrationJobName(const std::string &migrationJobName) {
   migrationJobName_ = migrationJobName;
   setParameter(std::string("MigrationJobName"), migrationJobName);
+}
+
+int DescirbeMigrationJobsRequest::getPageNum() const {
+  return pageNum_;
+}
+
+void DescirbeMigrationJobsRequest::setPageNum(int pageNum) {
+  pageNum_ = pageNum;
+  setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 

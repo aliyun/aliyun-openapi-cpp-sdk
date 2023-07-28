@@ -126,8 +126,6 @@ void DescribeMigrationJobStatusResult::parse(const std::string &payload)
 		dataSynchronizationStatus_.percent = dataSynchronizationStatusNode["Percent"].asString();
 	if(!dataSynchronizationStatusNode["ErrorMessage"].isNull())
 		dataSynchronizationStatus_.errorMessage = dataSynchronizationStatusNode["ErrorMessage"].asString();
-	if(!dataSynchronizationStatusNode["Checkpoint"].isNull())
-		dataSynchronizationStatus_.checkpoint = dataSynchronizationStatusNode["Checkpoint"].asString();
 	if(!value["MigrationJobName"].isNull())
 		migrationJobName_ = value["MigrationJobName"].asString();
 	if(!value["MigrationJobStatus"].isNull())

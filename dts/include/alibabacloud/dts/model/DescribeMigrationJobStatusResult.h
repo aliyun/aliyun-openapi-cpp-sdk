@@ -90,7 +90,6 @@ namespace AlibabaCloud
 				struct DataSynchronizationStatus
 				{
 					std::string status;
-					std::string checkpoint;
 					std::string percent;
 					std::string errorMessage;
 					std::string delay;

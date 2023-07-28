@@ -19,7 +19,7 @@
 using AlibabaCloud::Dts::Model::ConfigureMigrationJobRequest;
 
 ConfigureMigrationJobRequest::ConfigureMigrationJobRequest()
-    : RpcServiceRequest("dts", "2016-08-01", "ConfigureMigrationJob") {
+    : RpcServiceRequest("dts", "2017-06-01", "ConfigureMigrationJob") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -32,15 +32,6 @@ std::string ConfigureMigrationJobRequest::getSourceEndpointInstanceID() const {
 void ConfigureMigrationJobRequest::setSourceEndpointInstanceID(const std::string &sourceEndpointInstanceID) {
   sourceEndpointInstanceID_ = sourceEndpointInstanceID;
   setParameter(std::string("SourceEndpoint.InstanceID"), sourceEndpointInstanceID);
-}
-
-std::string ConfigureMigrationJobRequest::getCheckpoint() const {
-  return checkpoint_;
-}
-
-void ConfigureMigrationJobRequest::setCheckpoint(const std::string &checkpoint) {
-  checkpoint_ = checkpoint;
-  setParameter(std::string("Checkpoint"), checkpoint);
 }
 
 std::string ConfigureMigrationJobRequest::getSourceEndpointEngineName() const {
@@ -230,15 +221,6 @@ std::string ConfigureMigrationJobRequest::getSourceEndpointRole() const {
 void ConfigureMigrationJobRequest::setSourceEndpointRole(const std::string &sourceEndpointRole) {
   sourceEndpointRole_ = sourceEndpointRole;
   setParameter(std::string("SourceEndpoint.Role"), sourceEndpointRole);
-}
-
-std::string ConfigureMigrationJobRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void ConfigureMigrationJobRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
 }
 
 std::string ConfigureMigrationJobRequest::getDestinationEndpointDataBaseName() const {

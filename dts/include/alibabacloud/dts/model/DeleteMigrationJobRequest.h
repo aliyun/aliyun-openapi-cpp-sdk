@@ -32,12 +32,9 @@ public:
 	~DeleteMigrationJobRequest();
 	std::string getMigrationJobId() const;
 	void setMigrationJobId(const std::string &migrationJobId);
-	std::string getOwnerId() const;
-	void setOwnerId(const std::string &ownerId);
 
 private:
 	std::string migrationJobId_;
-	std::string ownerId_;
 };
 } // namespace Model
 } // namespace Dts

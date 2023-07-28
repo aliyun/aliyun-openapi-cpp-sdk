@@ -32,18 +32,18 @@ public:
 	~CreateMigrationJobRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getOwnerId() const;
-	void setOwnerId(const std::string &ownerId);
 	std::string getRegion() const;
 	void setRegion(const std::string &region);
 	std::string getMigrationJobClass() const;
 	void setMigrationJobClass(const std::string &migrationJobClass);
+	std::string getOwnerId() const;
+	void setOwnerId(const std::string &ownerId);
 
 private:
 	std::string clientToken_;
-	std::string ownerId_;
 	std::string region_;
 	std::string migrationJobClass_;
+	std::string ownerId_;
 };
 } // namespace Model
 } // namespace Dts

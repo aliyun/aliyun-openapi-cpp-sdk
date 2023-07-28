@@ -19,7 +19,7 @@
 using AlibabaCloud::Dts::Model::SuspendMigrationJobRequest;
 
 SuspendMigrationJobRequest::SuspendMigrationJobRequest()
-    : RpcServiceRequest("dts", "2016-08-01", "SuspendMigrationJob") {
+    : RpcServiceRequest("dts", "2017-06-01", "SuspendMigrationJob") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -41,14 +41,5 @@ std::string SuspendMigrationJobRequest::getMigrationJobId() const {
 void SuspendMigrationJobRequest::setMigrationJobId(const std::string &migrationJobId) {
   migrationJobId_ = migrationJobId;
   setParameter(std::string("MigrationJobId"), migrationJobId);
-}
-
-std::string SuspendMigrationJobRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void SuspendMigrationJobRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
 }
 

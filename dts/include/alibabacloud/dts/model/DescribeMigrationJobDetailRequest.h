@@ -38,8 +38,6 @@ public:
 	void setMigrationJobId(const std::string &migrationJobId);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
-	std::string getOwnerId() const;
-	void setOwnerId(const std::string &ownerId);
 	bool getMigrationModeStructureInitialization() const;
 	void setMigrationModeStructureInitialization(bool migrationModeStructureInitialization);
 	bool getMigrationModeDataSynchronization() const;
@@ -52,7 +50,6 @@ private:
 	bool migrationModeDataInitialization_;
 	std::string migrationJobId_;
 	int pageNum_;
-	std::string ownerId_;
 	bool migrationModeStructureInitialization_;
 	bool migrationModeDataSynchronization_;
 	int pageSize_;

@@ -32,8 +32,6 @@ public:
 	~ConfigureMigrationJobRequest();
 	std::string getSourceEndpointInstanceID() const;
 	void setSourceEndpointInstanceID(const std::string &sourceEndpointInstanceID);
-	std::string getCheckpoint() const;
-	void setCheckpoint(const std::string &checkpoint);
 	std::string getSourceEndpointEngineName() const;
 	void setSourceEndpointEngineName(const std::string &sourceEndpointEngineName);
 	std::string getSourceEndpointOracleSID() const;
@@ -76,8 +74,6 @@ public:
 	void setSourceEndpointRegion(const std::string &sourceEndpointRegion);
 	std::string getSourceEndpointRole() const;
 	void setSourceEndpointRole(const std::string &sourceEndpointRole);
-	std::string getOwnerId() const;
-	void setOwnerId(const std::string &ownerId);
 	std::string getDestinationEndpointDataBaseName() const;
 	void setDestinationEndpointDataBaseName(const std::string &destinationEndpointDataBaseName);
 	std::string getSourceEndpointPassword() const;
@@ -93,7 +89,6 @@ public:
 
 private:
 	std::string sourceEndpointInstanceID_;
-	std::string checkpoint_;
 	std::string sourceEndpointEngineName_;
 	std::string sourceEndpointOracleSID_;
 	std::string destinationEndpointInstanceID_;
@@ -115,7 +110,6 @@ private:
 	std::string destinationEndpointPort_;
 	std::string sourceEndpointRegion_;
 	std::string sourceEndpointRole_;
-	std::string ownerId_;
 	std::string destinationEndpointDataBaseName_;
 	std::string sourceEndpointPassword_;
 	std::string migrationReserved_;

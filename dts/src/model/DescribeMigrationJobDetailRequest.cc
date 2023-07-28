@@ -19,7 +19,7 @@
 using AlibabaCloud::Dts::Model::DescribeMigrationJobDetailRequest;
 
 DescribeMigrationJobDetailRequest::DescribeMigrationJobDetailRequest()
-    : RpcServiceRequest("dts", "2016-08-01", "DescribeMigrationJobDetail") {
+    : RpcServiceRequest("dts", "2017-06-01", "DescribeMigrationJobDetail") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -59,15 +59,6 @@ int DescribeMigrationJobDetailRequest::getPageNum() const {
 void DescribeMigrationJobDetailRequest::setPageNum(int pageNum) {
   pageNum_ = pageNum;
   setParameter(std::string("PageNum"), std::to_string(pageNum));
-}
-
-std::string DescribeMigrationJobDetailRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeMigrationJobDetailRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
 }
 
 bool DescribeMigrationJobDetailRequest::getMigrationModeStructureInitialization() const {
