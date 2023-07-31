@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARLISTREQUEST_H_
-#define ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARLISTREQUEST_H_
+#ifndef ALIBABACLOUD_AVATAR_MODEL_DELETEAVATARREQUEST_H_
+#define ALIBABACLOUD_AVATAR_MODEL_DELETEAVATARREQUEST_H_
 
 #include <alibabacloud/avatar/AvatarExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,26 @@
 namespace AlibabaCloud {
 namespace Avatar {
 namespace Model {
-class ALIBABACLOUD_AVATAR_EXPORT QueryAvatarListRequest : public RpcServiceRequest {
+class ALIBABACLOUD_AVATAR_EXPORT DeleteAvatarRequest : public RpcServiceRequest {
 public:
-	QueryAvatarListRequest();
-	~QueryAvatarListRequest();
-	std::string getModelType() const;
-	void setModelType(const std::string &modelType);
-	int getPageNo() const;
-	void setPageNo(int pageNo);
+	DeleteAvatarRequest();
+	~DeleteAvatarRequest();
+	std::string getCode() const;
+	void setCode(const std::string &code);
 	long getTenantId() const;
 	void setTenantId(long tenantId);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
 	std::string getExtParams_CLS() const;
 	void setExtParams_CLS(const std::string &extParams_CLS);
 	std::string getExtParams() const;
 	void setExtParams(const std::string &extParams);
 
 private:
-	std::string modelType_;
-	int pageNo_;
+	std::string code_;
 	long tenantId_;
-	int pageSize_;
 	std::string extParams_CLS_;
 	std::string extParams_;
 };
 } // namespace Model
 } // namespace Avatar
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARLISTREQUEST_H_
+#endif // !ALIBABACLOUD_AVATAR_MODEL_DELETEAVATARREQUEST_H_

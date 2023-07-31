@@ -58,9 +58,11 @@ namespace AlibabaCloud
 						std::string portrait;
 						std::string avatarType;
 						std::string modelType;
+						std::string makeStatus;
 						std::string image;
 						std::string code;
 						std::string name;
+						std::string makeFailReason;
 					};
 					int totalCount;
 					int pageSize;

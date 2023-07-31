@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARRESULT_H_
-#define ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARRESULT_H_
+#ifndef ALIBABACLOUD_AVATAR_MODEL_CREATE2DAVATARRESULT_H_
+#define ALIBABACLOUD_AVATAR_MODEL_CREATE2DAVATARRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,43 +29,18 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_AVATAR_EXPORT QueryAvatarResult : public ServiceResult
+			class ALIBABACLOUD_AVATAR_EXPORT Create2dAvatarResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct SupportedResolutions
-					{
-						struct OfflineItem
-						{
-							std::string desc;
-							int height;
-							int width;
-						};
-						struct OnlineItem
-						{
-							std::string desc;
-							int height;
-							int width;
-						};
-						std::vector<OfflineItem> offline;
-						std::vector<OnlineItem> online;
-					};
-					std::string description;
-					SupportedResolutions supportedResolutions;
-					std::string portrait;
-					std::string modelType;
-					std::string avatarType;
-					std::string makeStatus;
-					std::string image;
-					std::string name;
-					std::string makeFailReason;
+					std::string code;
 				};
 
 
-				QueryAvatarResult();
-				explicit QueryAvatarResult(const std::string &payload);
-				~QueryAvatarResult();
+				Create2dAvatarResult();
+				explicit Create2dAvatarResult(const std::string &payload);
+				~Create2dAvatarResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -83,4 +58,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARRESULT_H_
+#endif // !ALIBABACLOUD_AVATAR_MODEL_CREATE2DAVATARRESULT_H_

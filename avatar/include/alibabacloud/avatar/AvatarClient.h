@@ -26,6 +26,10 @@
 #include "model/CancelVideoTaskResult.h"
 #include "model/CloseTimedResetOperateRequest.h"
 #include "model/CloseTimedResetOperateResult.h"
+#include "model/Create2dAvatarRequest.h"
+#include "model/Create2dAvatarResult.h"
+#include "model/DeleteAvatarRequest.h"
+#include "model/DeleteAvatarResult.h"
 #include "model/DuplexDecisionRequest.h"
 #include "model/DuplexDecisionResult.h"
 #include "model/GetVideoTaskInfoRequest.h"
@@ -62,6 +66,8 @@
 #include "model/SubmitTextTo2DAvatarVideoTaskResult.h"
 #include "model/SubmitTextTo3DAvatarVideoTaskRequest.h"
 #include "model/SubmitTextTo3DAvatarVideoTaskResult.h"
+#include "model/Update2dAvatarRequest.h"
+#include "model/Update2dAvatarResult.h"
 
 
 namespace AlibabaCloud
@@ -77,6 +83,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CloseTimedResetOperateResult> CloseTimedResetOperateOutcome;
 			typedef std::future<CloseTimedResetOperateOutcome> CloseTimedResetOperateOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::CloseTimedResetOperateRequest&, const CloseTimedResetOperateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseTimedResetOperateAsyncHandler;
+			typedef Outcome<Error, Model::Create2dAvatarResult> Create2dAvatarOutcome;
+			typedef std::future<Create2dAvatarOutcome> Create2dAvatarOutcomeCallable;
+			typedef std::function<void(const AvatarClient*, const Model::Create2dAvatarRequest&, const Create2dAvatarOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> Create2dAvatarAsyncHandler;
+			typedef Outcome<Error, Model::DeleteAvatarResult> DeleteAvatarOutcome;
+			typedef std::future<DeleteAvatarOutcome> DeleteAvatarOutcomeCallable;
+			typedef std::function<void(const AvatarClient*, const Model::DeleteAvatarRequest&, const DeleteAvatarOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAvatarAsyncHandler;
 			typedef Outcome<Error, Model::DuplexDecisionResult> DuplexDecisionOutcome;
 			typedef std::future<DuplexDecisionOutcome> DuplexDecisionOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::DuplexDecisionRequest&, const DuplexDecisionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DuplexDecisionAsyncHandler;
@@ -131,6 +143,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SubmitTextTo3DAvatarVideoTaskResult> SubmitTextTo3DAvatarVideoTaskOutcome;
 			typedef std::future<SubmitTextTo3DAvatarVideoTaskOutcome> SubmitTextTo3DAvatarVideoTaskOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::SubmitTextTo3DAvatarVideoTaskRequest&, const SubmitTextTo3DAvatarVideoTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTextTo3DAvatarVideoTaskAsyncHandler;
+			typedef Outcome<Error, Model::Update2dAvatarResult> Update2dAvatarOutcome;
+			typedef std::future<Update2dAvatarOutcome> Update2dAvatarOutcomeCallable;
+			typedef std::function<void(const AvatarClient*, const Model::Update2dAvatarRequest&, const Update2dAvatarOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> Update2dAvatarAsyncHandler;
 
 			AvatarClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			AvatarClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -142,6 +157,12 @@ namespace AlibabaCloud
 			CloseTimedResetOperateOutcome closeTimedResetOperate(const Model::CloseTimedResetOperateRequest &request)const;
 			void closeTimedResetOperateAsync(const Model::CloseTimedResetOperateRequest& request, const CloseTimedResetOperateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloseTimedResetOperateOutcomeCallable closeTimedResetOperateCallable(const Model::CloseTimedResetOperateRequest& request) const;
+			Create2dAvatarOutcome create2dAvatar(const Model::Create2dAvatarRequest &request)const;
+			void create2dAvatarAsync(const Model::Create2dAvatarRequest& request, const Create2dAvatarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			Create2dAvatarOutcomeCallable create2dAvatarCallable(const Model::Create2dAvatarRequest& request) const;
+			DeleteAvatarOutcome deleteAvatar(const Model::DeleteAvatarRequest &request)const;
+			void deleteAvatarAsync(const Model::DeleteAvatarRequest& request, const DeleteAvatarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteAvatarOutcomeCallable deleteAvatarCallable(const Model::DeleteAvatarRequest& request) const;
 			DuplexDecisionOutcome duplexDecision(const Model::DuplexDecisionRequest &request)const;
 			void duplexDecisionAsync(const Model::DuplexDecisionRequest& request, const DuplexDecisionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DuplexDecisionOutcomeCallable duplexDecisionCallable(const Model::DuplexDecisionRequest& request) const;
@@ -196,6 +217,9 @@ namespace AlibabaCloud
 			SubmitTextTo3DAvatarVideoTaskOutcome submitTextTo3DAvatarVideoTask(const Model::SubmitTextTo3DAvatarVideoTaskRequest &request)const;
 			void submitTextTo3DAvatarVideoTaskAsync(const Model::SubmitTextTo3DAvatarVideoTaskRequest& request, const SubmitTextTo3DAvatarVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitTextTo3DAvatarVideoTaskOutcomeCallable submitTextTo3DAvatarVideoTaskCallable(const Model::SubmitTextTo3DAvatarVideoTaskRequest& request) const;
+			Update2dAvatarOutcome update2dAvatar(const Model::Update2dAvatarRequest &request)const;
+			void update2dAvatarAsync(const Model::Update2dAvatarRequest& request, const Update2dAvatarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			Update2dAvatarOutcomeCallable update2dAvatarCallable(const Model::Update2dAvatarRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

@@ -25,6 +25,10 @@ set(avatar_public_header_model
 	include/alibabacloud/avatar/model/CancelVideoTaskResult.h
 	include/alibabacloud/avatar/model/CloseTimedResetOperateRequest.h
 	include/alibabacloud/avatar/model/CloseTimedResetOperateResult.h
+	include/alibabacloud/avatar/model/Create2dAvatarRequest.h
+	include/alibabacloud/avatar/model/Create2dAvatarResult.h
+	include/alibabacloud/avatar/model/DeleteAvatarRequest.h
+	include/alibabacloud/avatar/model/DeleteAvatarResult.h
 	include/alibabacloud/avatar/model/DuplexDecisionRequest.h
 	include/alibabacloud/avatar/model/DuplexDecisionResult.h
 	include/alibabacloud/avatar/model/GetVideoTaskInfoRequest.h
@@ -60,7 +64,9 @@ set(avatar_public_header_model
 	include/alibabacloud/avatar/model/SubmitTextTo2DAvatarVideoTaskRequest.h
 	include/alibabacloud/avatar/model/SubmitTextTo2DAvatarVideoTaskResult.h
 	include/alibabacloud/avatar/model/SubmitTextTo3DAvatarVideoTaskRequest.h
-	include/alibabacloud/avatar/model/SubmitTextTo3DAvatarVideoTaskResult.h )
+	include/alibabacloud/avatar/model/SubmitTextTo3DAvatarVideoTaskResult.h
+	include/alibabacloud/avatar/model/Update2dAvatarRequest.h
+	include/alibabacloud/avatar/model/Update2dAvatarResult.h )
 
 set(avatar_src 
 	src/AvatarClient.cc
@@ -68,6 +74,10 @@ set(avatar_src
 	src/model/CancelVideoTaskResult.cc
 	src/model/CloseTimedResetOperateRequest.cc
 	src/model/CloseTimedResetOperateResult.cc
+	src/model/Create2dAvatarRequest.cc
+	src/model/Create2dAvatarResult.cc
+	src/model/DeleteAvatarRequest.cc
+	src/model/DeleteAvatarResult.cc
 	src/model/DuplexDecisionRequest.cc
 	src/model/DuplexDecisionResult.cc
 	src/model/GetVideoTaskInfoRequest.cc
@@ -103,7 +113,9 @@ set(avatar_src
 	src/model/SubmitTextTo2DAvatarVideoTaskRequest.cc
 	src/model/SubmitTextTo2DAvatarVideoTaskResult.cc
 	src/model/SubmitTextTo3DAvatarVideoTaskRequest.cc
-	src/model/SubmitTextTo3DAvatarVideoTaskResult.cc )
+	src/model/SubmitTextTo3DAvatarVideoTaskResult.cc
+	src/model/Update2dAvatarRequest.cc
+	src/model/Update2dAvatarResult.cc )
 
 add_library(avatar ${LIB_TYPE}
 	${avatar_public_header}

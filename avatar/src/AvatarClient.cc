@@ -123,6 +123,78 @@ AvatarClient::CloseTimedResetOperateOutcomeCallable AvatarClient::closeTimedRese
 	return task->get_future();
 }
 
+AvatarClient::Create2dAvatarOutcome AvatarClient::create2dAvatar(const Create2dAvatarRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return Create2dAvatarOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return Create2dAvatarOutcome(Create2dAvatarResult(outcome.result()));
+	else
+		return Create2dAvatarOutcome(outcome.error());
+}
+
+void AvatarClient::create2dAvatarAsync(const Create2dAvatarRequest& request, const Create2dAvatarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, create2dAvatar(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::Create2dAvatarOutcomeCallable AvatarClient::create2dAvatarCallable(const Create2dAvatarRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<Create2dAvatarOutcome()>>(
+			[this, request]()
+			{
+			return this->create2dAvatar(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::DeleteAvatarOutcome AvatarClient::deleteAvatar(const DeleteAvatarRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAvatarOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAvatarOutcome(DeleteAvatarResult(outcome.result()));
+	else
+		return DeleteAvatarOutcome(outcome.error());
+}
+
+void AvatarClient::deleteAvatarAsync(const DeleteAvatarRequest& request, const DeleteAvatarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAvatar(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::DeleteAvatarOutcomeCallable AvatarClient::deleteAvatarCallable(const DeleteAvatarRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAvatarOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAvatar(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AvatarClient::DuplexDecisionOutcome AvatarClient::duplexDecision(const DuplexDecisionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -765,6 +837,42 @@ AvatarClient::SubmitTextTo3DAvatarVideoTaskOutcomeCallable AvatarClient::submitT
 			[this, request]()
 			{
 			return this->submitTextTo3DAvatarVideoTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::Update2dAvatarOutcome AvatarClient::update2dAvatar(const Update2dAvatarRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return Update2dAvatarOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return Update2dAvatarOutcome(Update2dAvatarResult(outcome.result()));
+	else
+		return Update2dAvatarOutcome(outcome.error());
+}
+
+void AvatarClient::update2dAvatarAsync(const Update2dAvatarRequest& request, const Update2dAvatarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, update2dAvatar(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::Update2dAvatarOutcomeCallable AvatarClient::update2dAvatarCallable(const Update2dAvatarRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<Update2dAvatarOutcome()>>(
+			[this, request]()
+			{
+			return this->update2dAvatar(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

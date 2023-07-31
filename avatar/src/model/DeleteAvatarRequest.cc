@@ -14,49 +14,49 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/avatar/model/QueryAvatarRequest.h>
+#include <alibabacloud/avatar/model/DeleteAvatarRequest.h>
 
-using AlibabaCloud::Avatar::Model::QueryAvatarRequest;
+using AlibabaCloud::Avatar::Model::DeleteAvatarRequest;
 
-QueryAvatarRequest::QueryAvatarRequest()
-    : RpcServiceRequest("avatar", "2022-01-30", "QueryAvatar") {
+DeleteAvatarRequest::DeleteAvatarRequest()
+    : RpcServiceRequest("avatar", "2022-01-30", "DeleteAvatar") {
   setMethod(HttpRequest::Method::Post);
 }
 
-QueryAvatarRequest::~QueryAvatarRequest() {}
+DeleteAvatarRequest::~DeleteAvatarRequest() {}
 
-std::string QueryAvatarRequest::getCode() const {
+std::string DeleteAvatarRequest::getCode() const {
   return code_;
 }
 
-void QueryAvatarRequest::setCode(const std::string &code) {
+void DeleteAvatarRequest::setCode(const std::string &code) {
   code_ = code;
   setParameter(std::string("Code"), code);
 }
 
-long QueryAvatarRequest::getTenantId() const {
+long DeleteAvatarRequest::getTenantId() const {
   return tenantId_;
 }
 
-void QueryAvatarRequest::setTenantId(long tenantId) {
+void DeleteAvatarRequest::setTenantId(long tenantId) {
   tenantId_ = tenantId;
   setParameter(std::string("TenantId"), std::to_string(tenantId));
 }
 
-std::string QueryAvatarRequest::getExtParams_CLS() const {
+std::string DeleteAvatarRequest::getExtParams_CLS() const {
   return extParams_CLS_;
 }
 
-void QueryAvatarRequest::setExtParams_CLS(const std::string &extParams_CLS) {
+void DeleteAvatarRequest::setExtParams_CLS(const std::string &extParams_CLS) {
   extParams_CLS_ = extParams_CLS;
   setParameter(std::string("ExtParams_CLS"), extParams_CLS);
 }
 
-std::string QueryAvatarRequest::getExtParams() const {
+std::string DeleteAvatarRequest::getExtParams() const {
   return extParams_;
 }
 
-void QueryAvatarRequest::setExtParams(const std::string &extParams) {
+void DeleteAvatarRequest::setExtParams(const std::string &extParams) {
   extParams_ = extParams;
   setParameter(std::string("ExtParams"), extParams);
 }

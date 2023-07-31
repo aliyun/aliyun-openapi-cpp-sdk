@@ -34,10 +34,16 @@ public:
 	void setCode(const std::string &code);
 	long getTenantId() const;
 	void setTenantId(long tenantId);
+	std::string getExtParams_CLS() const;
+	void setExtParams_CLS(const std::string &extParams_CLS);
+	std::string getExtParams() const;
+	void setExtParams(const std::string &extParams);
 
 private:
 	std::string code_;
 	long tenantId_;
+	std::string extParams_CLS_;
+	std::string extParams_;
 };
 } // namespace Model
 } // namespace Avatar

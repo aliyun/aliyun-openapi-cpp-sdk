@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARRESULT_H_
-#define ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARRESULT_H_
+#ifndef ALIBABACLOUD_AVATAR_MODEL_DELETEAVATARRESULT_H_
+#define ALIBABACLOUD_AVATAR_MODEL_DELETEAVATARRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,45 +29,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_AVATAR_EXPORT QueryAvatarResult : public ServiceResult
+			class ALIBABACLOUD_AVATAR_EXPORT DeleteAvatarResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct SupportedResolutions
-					{
-						struct OfflineItem
-						{
-							std::string desc;
-							int height;
-							int width;
-						};
-						struct OnlineItem
-						{
-							std::string desc;
-							int height;
-							int width;
-						};
-						std::vector<OfflineItem> offline;
-						std::vector<OnlineItem> online;
-					};
-					std::string description;
-					SupportedResolutions supportedResolutions;
-					std::string portrait;
-					std::string modelType;
-					std::string avatarType;
-					std::string makeStatus;
-					std::string image;
-					std::string name;
-					std::string makeFailReason;
-				};
 
 
-				QueryAvatarResult();
-				explicit QueryAvatarResult(const std::string &payload);
-				~QueryAvatarResult();
+				DeleteAvatarResult();
+				explicit DeleteAvatarResult(const std::string &payload);
+				~DeleteAvatarResult();
 				std::string getMessage()const;
-				Data getData()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -75,7 +45,6 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				Data data_;
 				std::string code_;
 				bool success_;
 
@@ -83,4 +52,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARRESULT_H_
+#endif // !ALIBABACLOUD_AVATAR_MODEL_DELETEAVATARRESULT_H_

@@ -52,6 +52,10 @@ void QueryAvatarResult::parse(const std::string &payload)
 		data_.modelType = dataNode["ModelType"].asString();
 	if(!dataNode["AvatarType"].isNull())
 		data_.avatarType = dataNode["AvatarType"].asString();
+	if(!dataNode["MakeStatus"].isNull())
+		data_.makeStatus = dataNode["MakeStatus"].asString();
+	if(!dataNode["MakeFailReason"].isNull())
+		data_.makeFailReason = dataNode["MakeFailReason"].asString();
 	auto supportedResolutionsNode = dataNode["SupportedResolutions"];
 	auto allOfflineNode = supportedResolutionsNode["Offline"]["offlineItem"];
 	for (auto supportedResolutionsNodeOfflineofflineItem : allOfflineNode)

@@ -61,3 +61,21 @@ void QueryAvatarListRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::string QueryAvatarListRequest::getExtParams_CLS() const {
+  return extParams_CLS_;
+}
+
+void QueryAvatarListRequest::setExtParams_CLS(const std::string &extParams_CLS) {
+  extParams_CLS_ = extParams_CLS;
+  setParameter(std::string("ExtParams_CLS"), extParams_CLS);
+}
+
+std::string QueryAvatarListRequest::getExtParams() const {
+  return extParams_;
+}
+
+void QueryAvatarListRequest::setExtParams(const std::string &extParams) {
+  extParams_ = extParams;
+  setParameter(std::string("ExtParams"), extParams);
+}
+
