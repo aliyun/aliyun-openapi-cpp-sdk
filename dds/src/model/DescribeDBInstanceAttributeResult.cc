@@ -131,6 +131,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			dBInstancesObject.encrypted = valueDBInstancesDBInstance["Encrypted"].asString() == "true";
 		if(!valueDBInstancesDBInstance["EncryptionKey"].isNull())
 			dBInstancesObject.encryptionKey = valueDBInstancesDBInstance["EncryptionKey"].asString();
+		if(!valueDBInstancesDBInstance["SyncPercent"].isNull())
+			dBInstancesObject.syncPercent = valueDBInstancesDBInstance["SyncPercent"].asString();
 		auto allReplicaSetsNode = valueDBInstancesDBInstance["ReplicaSets"]["ReplicaSet"];
 		for (auto valueDBInstancesDBInstanceReplicaSetsReplicaSet : allReplicaSetsNode)
 		{

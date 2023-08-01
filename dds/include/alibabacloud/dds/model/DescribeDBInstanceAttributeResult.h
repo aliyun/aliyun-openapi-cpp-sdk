@@ -109,6 +109,7 @@ namespace AlibabaCloud
 					std::string dBInstanceType;
 					std::string replicaSetName;
 					std::vector<DBInstance::ReplicaSet> replicaSets;
+					std::string syncPercent;
 					std::string dBInstanceId;
 					std::string lastDowngradeTime;
 					int dBInstanceStorage;
