@@ -43,6 +43,15 @@ void ModifyMaintenanceActionRequest::setAccessKeyId(const std::string &accessKey
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyMaintenanceActionRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ModifyMaintenanceActionRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ModifyMaintenanceActionRequest::getRegionId() const {
   return regionId_;
 }
