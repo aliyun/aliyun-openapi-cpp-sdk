@@ -43,6 +43,15 @@ void ModifyLogBackupPolicyRequest::setAccessKeyId(const std::string &accessKeyId
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyLogBackupPolicyRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ModifyLogBackupPolicyRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ModifyLogBackupPolicyRequest::getEnableBackupLog() const {
   return enableBackupLog_;
 }
