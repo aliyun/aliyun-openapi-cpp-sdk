@@ -760,6 +760,15 @@ void RunInstancesRequest::setAmount(int amount) {
   setParameter(std::string("Amount"), std::to_string(amount));
 }
 
+bool RunInstancesRequest::getAutoPay() const {
+  return autoPay_;
+}
+
+void RunInstancesRequest::setAutoPay(bool autoPay) {
+  autoPay_ = autoPay;
+  setParameter(std::string("AutoPay"), autoPay ? "true" : "false");
+}
+
 std::string RunInstancesRequest::getOwnerAccount() const {
   return ownerAccount_;
 }

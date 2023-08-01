@@ -92,6 +92,8 @@ void DescribeInstanceHistoryEventsResult::parse(const std::string &payload)
 			instanceSystemEventSetObject.extendedAttribute.code = extendedAttributeNode["Code"].asString();
 		if(!extendedAttributeNode["CanAccept"].isNull())
 			instanceSystemEventSetObject.extendedAttribute.canAccept = extendedAttributeNode["CanAccept"].asString();
+		if(!extendedAttributeNode["ResponseResult"].isNull())
+			instanceSystemEventSetObject.extendedAttribute.responseResult = extendedAttributeNode["ResponseResult"].asString();
 		auto allInactiveDisksNode = extendedAttributeNode["InactiveDisks"]["InactiveDisk"];
 		for (auto extendedAttributeNodeInactiveDisksInactiveDisk : allInactiveDisksNode)
 		{

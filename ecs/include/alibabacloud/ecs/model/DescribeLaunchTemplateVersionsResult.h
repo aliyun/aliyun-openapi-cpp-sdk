@@ -99,6 +99,7 @@ namespace AlibabaCloud
 						std::string securityGroupId;
 						std::string vSwitchId;
 						int period;
+						bool deletionProtection;
 						std::vector<std::string> securityGroupIds;
 						std::string systemDiskCategory;
 						std::string internetChargeType;

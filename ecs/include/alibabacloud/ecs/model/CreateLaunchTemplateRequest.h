@@ -75,6 +75,8 @@ public:
 	void setSpotPriceLimit(float spotPriceLimit);
 	std::string getImageOwnerAlias() const;
 	void setImageOwnerAlias(const std::string &imageOwnerAlias);
+	bool getDeletionProtection() const;
+	void setDeletionProtection(bool deletionProtection);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getHostName() const;
@@ -180,6 +182,7 @@ private:
 	std::string keyPairName_;
 	float spotPriceLimit_;
 	std::string imageOwnerAlias_;
+	bool deletionProtection_;
 	std::string resourceGroupId_;
 	std::string hostName_;
 	int systemDiskIops_;

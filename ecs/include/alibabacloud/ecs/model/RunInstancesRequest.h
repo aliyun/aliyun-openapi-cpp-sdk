@@ -244,6 +244,8 @@ public:
 	void setNetworkInterface(const std::vector<NetworkInterface> &networkInterface);
 	int getAmount() const;
 	void setAmount(int amount);
+	bool getAutoPay() const;
+	void setAutoPay(bool autoPay);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	std::string getTenancy() const;
@@ -346,6 +348,7 @@ private:
 	std::string deploymentSetId_;
 	std::vector<NetworkInterface> networkInterface_;
 	int amount_;
+	bool autoPay_;
 	std::string ownerAccount_;
 	std::string tenancy_;
 	std::string ramRoleName_;

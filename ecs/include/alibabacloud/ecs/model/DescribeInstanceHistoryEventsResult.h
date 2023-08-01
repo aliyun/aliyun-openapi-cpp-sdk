@@ -64,6 +64,7 @@ namespace AlibabaCloud
 						std::string rack;
 						std::string punishUrl;
 						std::string hostType;
+						std::string responseResult;
 						std::string diskId;
 						std::string onlineRepairPolicy;
 						std::vector<std::string> migrationOptions;

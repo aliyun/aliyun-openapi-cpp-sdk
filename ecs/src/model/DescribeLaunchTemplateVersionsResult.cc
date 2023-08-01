@@ -144,6 +144,8 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 			launchTemplateVersionSetsObject.launchTemplateData.systemDiskBurstingEnabled = launchTemplateDataNode["SystemDisk.BurstingEnabled"].asString() == "true";
 		if(!launchTemplateDataNode["SystemDisk.Encrypted"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.systemDiskEncrypted = launchTemplateDataNode["SystemDisk.Encrypted"].asString();
+		if(!launchTemplateDataNode["DeletionProtection"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.deletionProtection = launchTemplateDataNode["DeletionProtection"].asString() == "true";
 		auto allDataDisksNode = launchTemplateDataNode["DataDisks"]["DataDisk"];
 		for (auto launchTemplateDataNodeDataDisksDataDisk : allDataDisksNode)
 		{

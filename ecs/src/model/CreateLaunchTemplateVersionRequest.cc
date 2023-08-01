@@ -88,6 +88,15 @@ void CreateLaunchTemplateVersionRequest::setImageOwnerAlias(const std::string &i
   setParameter(std::string("ImageOwnerAlias"), imageOwnerAlias);
 }
 
+bool CreateLaunchTemplateVersionRequest::getDeletionProtection() const {
+  return deletionProtection_;
+}
+
+void CreateLaunchTemplateVersionRequest::setDeletionProtection(bool deletionProtection) {
+  deletionProtection_ = deletionProtection;
+  setParameter(std::string("DeletionProtection"), deletionProtection ? "true" : "false");
+}
+
 std::string CreateLaunchTemplateVersionRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }
