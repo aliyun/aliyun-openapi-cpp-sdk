@@ -219,6 +219,15 @@ void CreateDBClusterRequest::setHotStandbyCluster(const std::string &hotStandbyC
   setParameter(std::string("HotStandbyCluster"), hotStandbyCluster);
 }
 
+std::string CreateDBClusterRequest::getStoragePayType() const {
+  return storagePayType_;
+}
+
+void CreateDBClusterRequest::setStoragePayType(const std::string &storagePayType) {
+  storagePayType_ = storagePayType;
+  setParameter(std::string("StoragePayType"), storagePayType);
+}
+
 std::string CreateDBClusterRequest::getZoneId() const {
   return zoneId_;
 }

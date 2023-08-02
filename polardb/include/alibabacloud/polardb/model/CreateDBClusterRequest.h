@@ -76,6 +76,8 @@ public:
 	void setAutoRenew(bool autoRenew);
 	std::string getHotStandbyCluster() const;
 	void setHotStandbyCluster(const std::string &hotStandbyCluster);
+	std::string getStoragePayType() const;
+	void setStoragePayType(const std::string &storagePayType);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
 	bool getTDEStatus() const;
@@ -161,6 +163,7 @@ private:
 	std::string dBMinorVersion_;
 	bool autoRenew_;
 	std::string hotStandbyCluster_;
+	std::string storagePayType_;
 	std::string zoneId_;
 	bool tDEStatus_;
 	std::string allowShutDown_;
