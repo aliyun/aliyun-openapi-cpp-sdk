@@ -43,6 +43,15 @@ void DescribeTagsRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeTagsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeTagsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeTagsRequest::getRegionId() const {
   return regionId_;
 }

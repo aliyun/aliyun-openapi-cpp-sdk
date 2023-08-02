@@ -25,6 +25,15 @@ DescribeDBClusterPerformanceRequest::DescribeDBClusterPerformanceRequest()
 
 DescribeDBClusterPerformanceRequest::~DescribeDBClusterPerformanceRequest() {}
 
+std::string DescribeDBClusterPerformanceRequest::getNodeType() const {
+  return nodeType_;
+}
+
+void DescribeDBClusterPerformanceRequest::setNodeType(const std::string &nodeType) {
+  nodeType_ = nodeType;
+  setParameter(std::string("NodeType"), nodeType);
+}
+
 std::string DescribeDBClusterPerformanceRequest::getStartTime() const {
   return startTime_;
 }
@@ -68,5 +77,14 @@ std::string DescribeDBClusterPerformanceRequest::getEndTime() const {
 void DescribeDBClusterPerformanceRequest::setEndTime(const std::string &endTime) {
   endTime_ = endTime;
   setParameter(std::string("EndTime"), endTime);
+}
+
+std::string DescribeDBClusterPerformanceRequest::getNodes() const {
+  return nodes_;
+}
+
+void DescribeDBClusterPerformanceRequest::setNodes(const std::string &nodes) {
+  nodes_ = nodes;
+  setParameter(std::string("Nodes"), nodes);
 }
 

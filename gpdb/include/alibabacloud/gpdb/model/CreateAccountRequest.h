@@ -34,6 +34,8 @@ public:
 	void setAccountDescription(const std::string &accountDescription);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getAccountName() const;
 	void setAccountName(const std::string &accountName);
 	std::string getDBInstanceId() const;
@@ -48,6 +50,7 @@ public:
 private:
 	std::string accountDescription_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	std::string accountName_;
 	std::string dBInstanceId_;
 	long ownerId_;

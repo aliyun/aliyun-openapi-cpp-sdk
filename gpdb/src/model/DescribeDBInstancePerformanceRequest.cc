@@ -43,6 +43,15 @@ void DescribeDBInstancePerformanceRequest::setAccessKeyId(const std::string &acc
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDBInstancePerformanceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeDBInstancePerformanceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeDBInstancePerformanceRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

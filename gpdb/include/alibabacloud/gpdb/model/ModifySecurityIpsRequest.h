@@ -34,8 +34,12 @@ public:
 	void setDBInstanceIPArrayName(const std::string &dBInstanceIPArrayName);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getModifyMode() const;
+	void setModifyMode(const std::string &modifyMode);
 	std::string getSecurityIPList() const;
 	void setSecurityIPList(const std::string &securityIPList);
 	std::string getDBInstanceIPArrayAttribute() const;
@@ -44,7 +48,9 @@ public:
 private:
 	std::string dBInstanceIPArrayName_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	std::string dBInstanceId_;
+	std::string modifyMode_;
 	std::string securityIPList_;
 	std::string dBInstanceIPArrayAttribute_;
 };

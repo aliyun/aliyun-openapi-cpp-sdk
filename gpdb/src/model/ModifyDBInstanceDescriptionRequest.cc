@@ -34,6 +34,15 @@ void ModifyDBInstanceDescriptionRequest::setAccessKeyId(const std::string &acces
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBInstanceDescriptionRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ModifyDBInstanceDescriptionRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ModifyDBInstanceDescriptionRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

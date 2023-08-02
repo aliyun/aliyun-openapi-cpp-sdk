@@ -30,6 +30,8 @@ class ALIBABACLOUD_GPDB_EXPORT DescribeDBClusterPerformanceRequest : public RpcS
 public:
 	DescribeDBClusterPerformanceRequest();
 	~DescribeDBClusterPerformanceRequest();
+	std::string getNodeType() const;
+	void setNodeType(const std::string &nodeType);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
 	std::string getAccessKeyId() const;
@@ -40,13 +42,17 @@ public:
 	void setKey(const std::string &key);
 	std::string getEndTime() const;
 	void setEndTime(const std::string &endTime);
+	std::string getNodes() const;
+	void setNodes(const std::string &nodes);
 
 private:
+	std::string nodeType_;
 	std::string startTime_;
 	std::string accessKeyId_;
 	std::string dBInstanceId_;
 	std::string key_;
 	std::string endTime_;
+	std::string nodes_;
 };
 } // namespace Model
 } // namespace Gpdb

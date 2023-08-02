@@ -34,6 +34,15 @@ void DescribeDBInstanceIPArrayListRequest::setAccessKeyId(const std::string &acc
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDBInstanceIPArrayListRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeDBInstanceIPArrayListRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeDBInstanceIPArrayListRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

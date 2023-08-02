@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					int masterNodeNum;
 					long dBInstanceMemory;
 					int cpuCoresPerNode;
+					std::string resourceGroupId;
 					std::string port;
 					int segNodeNum;
 					int memoryPerNode;
@@ -51,6 +52,7 @@ namespace AlibabaCloud
 					std::string dBInstanceCategory;
 					std::string dBInstanceId;
 					long dBInstanceStorage;
+					int serverlessResource;
 					std::string lockReason;
 					std::string availabilityValue;
 					std::vector<DBInstanceAttribute::Tag> tags;
@@ -59,6 +61,7 @@ namespace AlibabaCloud
 					int segmentCounts;
 					std::string encryptionType;
 					long dBInstanceDiskMBPS;
+					std::string serverlessMode;
 					std::string storageType;
 					std::string engineVersion;
 					std::string dBInstanceStatus;
@@ -66,6 +69,8 @@ namespace AlibabaCloud
 					int dBInstanceCpuCores;
 					std::string dBInstanceClass;
 					std::string vSwitchId;
+					std::string startTime;
+					std::string coreVersion;
 					std::string payType;
 					std::string lockMode;
 					std::string vpcId;
@@ -75,11 +80,14 @@ namespace AlibabaCloud
 					int cpuCores;
 					std::string connectionString;
 					std::string expireTime;
+					std::string segDiskPerformanceLevel;
 					std::string dBInstanceNetType;
+					int idleTime;
 					std::string encryptionKey;
 					bool supportRestore;
 					std::string hostType;
 					std::string maintainEndTime;
+					std::string vectorConfigurationStatus;
 					std::string securityIPList;
 					std::string maintainStartTime;
 					std::string memoryUnit;
@@ -91,6 +99,7 @@ namespace AlibabaCloud
 					int storagePerNode;
 					std::string dBInstanceMode;
 					std::string regionId;
+					std::string runningTime;
 				};
 
 

@@ -43,6 +43,15 @@ void ModifyDBInstanceMaintainTimeRequest::setAccessKeyId(const std::string &acce
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBInstanceMaintainTimeRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ModifyDBInstanceMaintainTimeRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ModifyDBInstanceMaintainTimeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -43,6 +43,15 @@ void ModifySecurityIpsRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifySecurityIpsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ModifySecurityIpsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ModifySecurityIpsRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }
@@ -50,6 +59,15 @@ std::string ModifySecurityIpsRequest::getDBInstanceId() const {
 void ModifySecurityIpsRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string ModifySecurityIpsRequest::getModifyMode() const {
+  return modifyMode_;
+}
+
+void ModifySecurityIpsRequest::setModifyMode(const std::string &modifyMode) {
+  modifyMode_ = modifyMode;
+  setParameter(std::string("ModifyMode"), modifyMode);
 }
 
 std::string ModifySecurityIpsRequest::getSecurityIPList() const {

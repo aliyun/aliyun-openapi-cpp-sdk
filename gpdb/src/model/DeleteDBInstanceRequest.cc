@@ -43,6 +43,15 @@ void DeleteDBInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DeleteDBInstanceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DeleteDBInstanceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DeleteDBInstanceRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

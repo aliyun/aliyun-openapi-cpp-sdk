@@ -25,6 +25,51 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest()
 
 UpgradeDBInstanceRequest::~UpgradeDBInstanceRequest() {}
 
+std::string UpgradeDBInstanceRequest::getInstanceSpec() const {
+  return instanceSpec_;
+}
+
+void UpgradeDBInstanceRequest::setInstanceSpec(const std::string &instanceSpec) {
+  instanceSpec_ = instanceSpec;
+  setParameter(std::string("InstanceSpec"), instanceSpec);
+}
+
+std::string UpgradeDBInstanceRequest::getStorageSize() const {
+  return storageSize_;
+}
+
+void UpgradeDBInstanceRequest::setStorageSize(const std::string &storageSize) {
+  storageSize_ = storageSize;
+  setParameter(std::string("StorageSize"), storageSize);
+}
+
+std::string UpgradeDBInstanceRequest::getSegStorageType() const {
+  return segStorageType_;
+}
+
+void UpgradeDBInstanceRequest::setSegStorageType(const std::string &segStorageType) {
+  segStorageType_ = segStorageType;
+  setParameter(std::string("SegStorageType"), segStorageType);
+}
+
+std::string UpgradeDBInstanceRequest::getMasterNodeNum() const {
+  return masterNodeNum_;
+}
+
+void UpgradeDBInstanceRequest::setMasterNodeNum(const std::string &masterNodeNum) {
+  masterNodeNum_ = masterNodeNum;
+  setParameter(std::string("MasterNodeNum"), masterNodeNum);
+}
+
+long UpgradeDBInstanceRequest::getUpgradeType() const {
+  return upgradeType_;
+}
+
+void UpgradeDBInstanceRequest::setUpgradeType(long upgradeType) {
+  upgradeType_ = upgradeType;
+  setParameter(std::string("UpgradeType"), std::to_string(upgradeType));
+}
+
 std::string UpgradeDBInstanceRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -32,6 +77,24 @@ std::string UpgradeDBInstanceRequest::getAccessKeyId() const {
 void UpgradeDBInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string UpgradeDBInstanceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void UpgradeDBInstanceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string UpgradeDBInstanceRequest::getSegNodeNum() const {
+  return segNodeNum_;
+}
+
+void UpgradeDBInstanceRequest::setSegNodeNum(const std::string &segNodeNum) {
+  segNodeNum_ = segNodeNum;
+  setParameter(std::string("SegNodeNum"), segNodeNum);
 }
 
 std::string UpgradeDBInstanceRequest::getRegionId() const {
@@ -68,6 +131,15 @@ long UpgradeDBInstanceRequest::getOwnerId() const {
 void UpgradeDBInstanceRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string UpgradeDBInstanceRequest::getSegDiskPerformanceLevel() const {
+  return segDiskPerformanceLevel_;
+}
+
+void UpgradeDBInstanceRequest::setSegDiskPerformanceLevel(const std::string &segDiskPerformanceLevel) {
+  segDiskPerformanceLevel_ = segDiskPerformanceLevel;
+  setParameter(std::string("SegDiskPerformanceLevel"), segDiskPerformanceLevel);
 }
 
 std::string UpgradeDBInstanceRequest::getDBInstanceClass() const {

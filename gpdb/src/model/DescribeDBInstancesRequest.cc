@@ -65,6 +65,15 @@ void DescribeDBInstancesRequest::setAccessKeyId(const std::string &accessKeyId) 
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDBInstancesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeDBInstancesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeDBInstancesRequest::getRegionId() const {
   return regionId_;
 }

@@ -91,6 +91,10 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			itemsObject.dBInstanceCategory = valueItemsDBInstance["DBInstanceCategory"].asString();
 		if(!valueItemsDBInstance["DBInstanceMode"].isNull())
 			itemsObject.dBInstanceMode = valueItemsDBInstance["DBInstanceMode"].asString();
+		if(!valueItemsDBInstance["ResourceGroupId"].isNull())
+			itemsObject.resourceGroupId = valueItemsDBInstance["ResourceGroupId"].asString();
+		if(!valueItemsDBInstance["ServerlessMode"].isNull())
+			itemsObject.serverlessMode = valueItemsDBInstance["ServerlessMode"].asString();
 		auto allTagsNode = valueItemsDBInstance["Tags"]["Tag"];
 		for (auto valueItemsDBInstanceTagsTag : allTagsNode)
 		{

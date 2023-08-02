@@ -32,6 +32,8 @@ public:
 	~ModifyDBInstanceDescriptionRequest();
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getDBInstanceDescription() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	std::string dBInstanceId_;
 	std::string dBInstanceDescription_;
 };

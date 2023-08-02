@@ -25,6 +25,15 @@ DescribeDBInstanceNetInfoRequest::DescribeDBInstanceNetInfoRequest()
 
 DescribeDBInstanceNetInfoRequest::~DescribeDBInstanceNetInfoRequest() {}
 
+std::string DescribeDBInstanceNetInfoRequest::getConnectionString() const {
+  return connectionString_;
+}
+
+void DescribeDBInstanceNetInfoRequest::setConnectionString(const std::string &connectionString) {
+  connectionString_ = connectionString;
+  setParameter(std::string("ConnectionString"), connectionString);
+}
+
 std::string DescribeDBInstanceNetInfoRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

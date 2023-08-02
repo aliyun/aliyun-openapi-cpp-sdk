@@ -30,12 +30,15 @@ class ALIBABACLOUD_GPDB_EXPORT DescribeDBInstanceNetInfoRequest : public RpcServ
 public:
 	DescribeDBInstanceNetInfoRequest();
 	~DescribeDBInstanceNetInfoRequest();
+	std::string getConnectionString() const;
+	void setConnectionString(const std::string &connectionString);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 
 private:
+	std::string connectionString_;
 	std::string accessKeyId_;
 	std::string dBInstanceId_;
 };

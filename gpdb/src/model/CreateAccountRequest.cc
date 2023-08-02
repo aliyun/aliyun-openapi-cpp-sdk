@@ -43,6 +43,15 @@ void CreateAccountRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CreateAccountRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateAccountRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateAccountRequest::getAccountName() const {
   return accountName_;
 }

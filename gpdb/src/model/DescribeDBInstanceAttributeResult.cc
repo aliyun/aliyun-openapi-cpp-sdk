@@ -145,6 +145,24 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.encryptionKey = valueItemsDBInstanceAttribute["EncryptionKey"].asString();
 		if(!valueItemsDBInstanceAttribute["EncryptionType"].isNull())
 			itemsObject.encryptionType = valueItemsDBInstanceAttribute["EncryptionType"].asString();
+		if(!valueItemsDBInstanceAttribute["CoreVersion"].isNull())
+			itemsObject.coreVersion = valueItemsDBInstanceAttribute["CoreVersion"].asString();
+		if(!valueItemsDBInstanceAttribute["RunningTime"].isNull())
+			itemsObject.runningTime = valueItemsDBInstanceAttribute["RunningTime"].asString();
+		if(!valueItemsDBInstanceAttribute["StartTime"].isNull())
+			itemsObject.startTime = valueItemsDBInstanceAttribute["StartTime"].asString();
+		if(!valueItemsDBInstanceAttribute["ResourceGroupId"].isNull())
+			itemsObject.resourceGroupId = valueItemsDBInstanceAttribute["ResourceGroupId"].asString();
+		if(!valueItemsDBInstanceAttribute["ServerlessResource"].isNull())
+			itemsObject.serverlessResource = std::stoi(valueItemsDBInstanceAttribute["ServerlessResource"].asString());
+		if(!valueItemsDBInstanceAttribute["IdleTime"].isNull())
+			itemsObject.idleTime = std::stoi(valueItemsDBInstanceAttribute["IdleTime"].asString());
+		if(!valueItemsDBInstanceAttribute["ServerlessMode"].isNull())
+			itemsObject.serverlessMode = valueItemsDBInstanceAttribute["ServerlessMode"].asString();
+		if(!valueItemsDBInstanceAttribute["SegDiskPerformanceLevel"].isNull())
+			itemsObject.segDiskPerformanceLevel = valueItemsDBInstanceAttribute["SegDiskPerformanceLevel"].asString();
+		if(!valueItemsDBInstanceAttribute["VectorConfigurationStatus"].isNull())
+			itemsObject.vectorConfigurationStatus = valueItemsDBInstanceAttribute["VectorConfigurationStatus"].asString();
 		auto allTagsNode = valueItemsDBInstanceAttribute["Tags"]["Tag"];
 		for (auto valueItemsDBInstanceAttributeTagsTag : allTagsNode)
 		{

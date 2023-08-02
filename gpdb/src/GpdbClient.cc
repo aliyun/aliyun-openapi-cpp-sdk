@@ -51,42 +51,6 @@ GpdbClient::GpdbClient(const std::string & accessKeyId, const std::string & acce
 GpdbClient::~GpdbClient()
 {}
 
-GpdbClient::AddBuDBInstanceRelationOutcome GpdbClient::addBuDBInstanceRelation(const AddBuDBInstanceRelationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddBuDBInstanceRelationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddBuDBInstanceRelationOutcome(AddBuDBInstanceRelationResult(outcome.result()));
-	else
-		return AddBuDBInstanceRelationOutcome(outcome.error());
-}
-
-void GpdbClient::addBuDBInstanceRelationAsync(const AddBuDBInstanceRelationRequest& request, const AddBuDBInstanceRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addBuDBInstanceRelation(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GpdbClient::AddBuDBInstanceRelationOutcomeCallable GpdbClient::addBuDBInstanceRelationCallable(const AddBuDBInstanceRelationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddBuDBInstanceRelationOutcome()>>(
-			[this, request]()
-			{
-			return this->addBuDBInstanceRelation(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 GpdbClient::AllocateInstancePublicConnectionOutcome GpdbClient::allocateInstancePublicConnection(const AllocateInstancePublicConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -195,6 +159,42 @@ GpdbClient::CreateAccountOutcomeCallable GpdbClient::createAccountCallable(const
 	return task->get_future();
 }
 
+GpdbClient::CreateCollectionOutcome GpdbClient::createCollection(const CreateCollectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCollectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCollectionOutcome(CreateCollectionResult(outcome.result()));
+	else
+		return CreateCollectionOutcome(outcome.error());
+}
+
+void GpdbClient::createCollectionAsync(const CreateCollectionRequest& request, const CreateCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCollection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::CreateCollectionOutcomeCallable GpdbClient::createCollectionCallable(const CreateCollectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCollectionOutcome()>>(
+			[this, request]()
+			{
+			return this->createCollection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GpdbClient::CreateDBInstanceOutcome GpdbClient::createDBInstance(const CreateDBInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -231,36 +231,108 @@ GpdbClient::CreateDBInstanceOutcomeCallable GpdbClient::createDBInstanceCallable
 	return task->get_future();
 }
 
-GpdbClient::CreateECSDBInstanceOutcome GpdbClient::createECSDBInstance(const CreateECSDBInstanceRequest &request) const
+GpdbClient::CreateDBInstancePlanOutcome GpdbClient::createDBInstancePlan(const CreateDBInstancePlanRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateECSDBInstanceOutcome(endpointOutcome.error());
+		return CreateDBInstancePlanOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateECSDBInstanceOutcome(CreateECSDBInstanceResult(outcome.result()));
+		return CreateDBInstancePlanOutcome(CreateDBInstancePlanResult(outcome.result()));
 	else
-		return CreateECSDBInstanceOutcome(outcome.error());
+		return CreateDBInstancePlanOutcome(outcome.error());
 }
 
-void GpdbClient::createECSDBInstanceAsync(const CreateECSDBInstanceRequest& request, const CreateECSDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void GpdbClient::createDBInstancePlanAsync(const CreateDBInstancePlanRequest& request, const CreateDBInstancePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createECSDBInstance(request), context);
+		handler(this, request, createDBInstancePlan(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-GpdbClient::CreateECSDBInstanceOutcomeCallable GpdbClient::createECSDBInstanceCallable(const CreateECSDBInstanceRequest &request) const
+GpdbClient::CreateDBInstancePlanOutcomeCallable GpdbClient::createDBInstancePlanCallable(const CreateDBInstancePlanRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateECSDBInstanceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateDBInstancePlanOutcome()>>(
 			[this, request]()
 			{
-			return this->createECSDBInstance(request);
+			return this->createDBInstancePlan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::CreateNamespaceOutcome GpdbClient::createNamespace(const CreateNamespaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateNamespaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateNamespaceOutcome(CreateNamespaceResult(outcome.result()));
+	else
+		return CreateNamespaceOutcome(outcome.error());
+}
+
+void GpdbClient::createNamespaceAsync(const CreateNamespaceRequest& request, const CreateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createNamespace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::CreateNamespaceOutcomeCallable GpdbClient::createNamespaceCallable(const CreateNamespaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateNamespaceOutcome()>>(
+			[this, request]()
+			{
+			return this->createNamespace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::CreateSampleDataOutcome GpdbClient::createSampleData(const CreateSampleDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSampleDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSampleDataOutcome(CreateSampleDataResult(outcome.result()));
+	else
+		return CreateSampleDataOutcome(outcome.error());
+}
+
+void GpdbClient::createSampleDataAsync(const CreateSampleDataRequest& request, const CreateSampleDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSampleData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::CreateSampleDataOutcomeCallable GpdbClient::createSampleDataCallable(const CreateSampleDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSampleDataOutcome()>>(
+			[this, request]()
+			{
+			return this->createSampleData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -303,6 +375,114 @@ GpdbClient::CreateServiceLinkedRoleOutcomeCallable GpdbClient::createServiceLink
 	return task->get_future();
 }
 
+GpdbClient::CreateVectorIndexOutcome GpdbClient::createVectorIndex(const CreateVectorIndexRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateVectorIndexOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateVectorIndexOutcome(CreateVectorIndexResult(outcome.result()));
+	else
+		return CreateVectorIndexOutcome(outcome.error());
+}
+
+void GpdbClient::createVectorIndexAsync(const CreateVectorIndexRequest& request, const CreateVectorIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createVectorIndex(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::CreateVectorIndexOutcomeCallable GpdbClient::createVectorIndexCallable(const CreateVectorIndexRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateVectorIndexOutcome()>>(
+			[this, request]()
+			{
+			return this->createVectorIndex(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DeleteCollectionOutcome GpdbClient::deleteCollection(const DeleteCollectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCollectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCollectionOutcome(DeleteCollectionResult(outcome.result()));
+	else
+		return DeleteCollectionOutcome(outcome.error());
+}
+
+void GpdbClient::deleteCollectionAsync(const DeleteCollectionRequest& request, const DeleteCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCollection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DeleteCollectionOutcomeCallable GpdbClient::deleteCollectionCallable(const DeleteCollectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCollectionOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCollection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DeleteCollectionDataOutcome GpdbClient::deleteCollectionData(const DeleteCollectionDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCollectionDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCollectionDataOutcome(DeleteCollectionDataResult(outcome.result()));
+	else
+		return DeleteCollectionDataOutcome(outcome.error());
+}
+
+void GpdbClient::deleteCollectionDataAsync(const DeleteCollectionDataRequest& request, const DeleteCollectionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCollectionData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DeleteCollectionDataOutcomeCallable GpdbClient::deleteCollectionDataCallable(const DeleteCollectionDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCollectionDataOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCollectionData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GpdbClient::DeleteDBInstanceOutcome GpdbClient::deleteDBInstance(const DeleteDBInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -339,36 +519,108 @@ GpdbClient::DeleteDBInstanceOutcomeCallable GpdbClient::deleteDBInstanceCallable
 	return task->get_future();
 }
 
-GpdbClient::DeleteDatabaseOutcome GpdbClient::deleteDatabase(const DeleteDatabaseRequest &request) const
+GpdbClient::DeleteDBInstancePlanOutcome GpdbClient::deleteDBInstancePlan(const DeleteDBInstancePlanRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteDatabaseOutcome(endpointOutcome.error());
+		return DeleteDBInstancePlanOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteDatabaseOutcome(DeleteDatabaseResult(outcome.result()));
+		return DeleteDBInstancePlanOutcome(DeleteDBInstancePlanResult(outcome.result()));
 	else
-		return DeleteDatabaseOutcome(outcome.error());
+		return DeleteDBInstancePlanOutcome(outcome.error());
 }
 
-void GpdbClient::deleteDatabaseAsync(const DeleteDatabaseRequest& request, const DeleteDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void GpdbClient::deleteDBInstancePlanAsync(const DeleteDBInstancePlanRequest& request, const DeleteDBInstancePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteDatabase(request), context);
+		handler(this, request, deleteDBInstancePlan(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-GpdbClient::DeleteDatabaseOutcomeCallable GpdbClient::deleteDatabaseCallable(const DeleteDatabaseRequest &request) const
+GpdbClient::DeleteDBInstancePlanOutcomeCallable GpdbClient::deleteDBInstancePlanCallable(const DeleteDBInstancePlanRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteDatabaseOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteDBInstancePlanOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteDatabase(request);
+			return this->deleteDBInstancePlan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DeleteNamespaceOutcome GpdbClient::deleteNamespace(const DeleteNamespaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteNamespaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteNamespaceOutcome(DeleteNamespaceResult(outcome.result()));
+	else
+		return DeleteNamespaceOutcome(outcome.error());
+}
+
+void GpdbClient::deleteNamespaceAsync(const DeleteNamespaceRequest& request, const DeleteNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteNamespace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DeleteNamespaceOutcomeCallable GpdbClient::deleteNamespaceCallable(const DeleteNamespaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteNamespaceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteNamespace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DeleteVectorIndexOutcome GpdbClient::deleteVectorIndex(const DeleteVectorIndexRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteVectorIndexOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteVectorIndexOutcome(DeleteVectorIndexResult(outcome.result()));
+	else
+		return DeleteVectorIndexOutcome(outcome.error());
+}
+
+void GpdbClient::deleteVectorIndexAsync(const DeleteVectorIndexRequest& request, const DeleteVectorIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteVectorIndex(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DeleteVectorIndexOutcomeCallable GpdbClient::deleteVectorIndexCallable(const DeleteVectorIndexRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteVectorIndexOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteVectorIndex(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -483,6 +735,78 @@ GpdbClient::DescribeBackupPolicyOutcomeCallable GpdbClient::describeBackupPolicy
 	return task->get_future();
 }
 
+GpdbClient::DescribeCollectionOutcome GpdbClient::describeCollection(const DescribeCollectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCollectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCollectionOutcome(DescribeCollectionResult(outcome.result()));
+	else
+		return DescribeCollectionOutcome(outcome.error());
+}
+
+void GpdbClient::describeCollectionAsync(const DescribeCollectionRequest& request, const DescribeCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCollection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeCollectionOutcomeCallable GpdbClient::describeCollectionCallable(const DescribeCollectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCollectionOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCollection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeDBClusterNodeOutcome GpdbClient::describeDBClusterNode(const DescribeDBClusterNodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBClusterNodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBClusterNodeOutcome(DescribeDBClusterNodeResult(outcome.result()));
+	else
+		return DescribeDBClusterNodeOutcome(outcome.error());
+}
+
+void GpdbClient::describeDBClusterNodeAsync(const DescribeDBClusterNodeRequest& request, const DescribeDBClusterNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBClusterNode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeDBClusterNodeOutcomeCallable GpdbClient::describeDBClusterNodeCallable(const DescribeDBClusterNodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBClusterNodeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBClusterNode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GpdbClient::DescribeDBClusterPerformanceOutcome GpdbClient::describeDBClusterPerformance(const DescribeDBClusterPerformanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -555,6 +879,150 @@ GpdbClient::DescribeDBInstanceAttributeOutcomeCallable GpdbClient::describeDBIns
 	return task->get_future();
 }
 
+GpdbClient::DescribeDBInstanceDataBloatOutcome GpdbClient::describeDBInstanceDataBloat(const DescribeDBInstanceDataBloatRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBInstanceDataBloatOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBInstanceDataBloatOutcome(DescribeDBInstanceDataBloatResult(outcome.result()));
+	else
+		return DescribeDBInstanceDataBloatOutcome(outcome.error());
+}
+
+void GpdbClient::describeDBInstanceDataBloatAsync(const DescribeDBInstanceDataBloatRequest& request, const DescribeDBInstanceDataBloatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBInstanceDataBloat(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeDBInstanceDataBloatOutcomeCallable GpdbClient::describeDBInstanceDataBloatCallable(const DescribeDBInstanceDataBloatRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceDataBloatOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBInstanceDataBloat(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeDBInstanceDataSkewOutcome GpdbClient::describeDBInstanceDataSkew(const DescribeDBInstanceDataSkewRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBInstanceDataSkewOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBInstanceDataSkewOutcome(DescribeDBInstanceDataSkewResult(outcome.result()));
+	else
+		return DescribeDBInstanceDataSkewOutcome(outcome.error());
+}
+
+void GpdbClient::describeDBInstanceDataSkewAsync(const DescribeDBInstanceDataSkewRequest& request, const DescribeDBInstanceDataSkewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBInstanceDataSkew(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeDBInstanceDataSkewOutcomeCallable GpdbClient::describeDBInstanceDataSkewCallable(const DescribeDBInstanceDataSkewRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceDataSkewOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBInstanceDataSkew(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeDBInstanceDiagnosisSummaryOutcome GpdbClient::describeDBInstanceDiagnosisSummary(const DescribeDBInstanceDiagnosisSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBInstanceDiagnosisSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBInstanceDiagnosisSummaryOutcome(DescribeDBInstanceDiagnosisSummaryResult(outcome.result()));
+	else
+		return DescribeDBInstanceDiagnosisSummaryOutcome(outcome.error());
+}
+
+void GpdbClient::describeDBInstanceDiagnosisSummaryAsync(const DescribeDBInstanceDiagnosisSummaryRequest& request, const DescribeDBInstanceDiagnosisSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBInstanceDiagnosisSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeDBInstanceDiagnosisSummaryOutcomeCallable GpdbClient::describeDBInstanceDiagnosisSummaryCallable(const DescribeDBInstanceDiagnosisSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceDiagnosisSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBInstanceDiagnosisSummary(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeDBInstanceErrorLogOutcome GpdbClient::describeDBInstanceErrorLog(const DescribeDBInstanceErrorLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBInstanceErrorLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBInstanceErrorLogOutcome(DescribeDBInstanceErrorLogResult(outcome.result()));
+	else
+		return DescribeDBInstanceErrorLogOutcome(outcome.error());
+}
+
+void GpdbClient::describeDBInstanceErrorLogAsync(const DescribeDBInstanceErrorLogRequest& request, const DescribeDBInstanceErrorLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBInstanceErrorLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeDBInstanceErrorLogOutcomeCallable GpdbClient::describeDBInstanceErrorLogCallable(const DescribeDBInstanceErrorLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceErrorLogOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBInstanceErrorLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GpdbClient::DescribeDBInstanceIPArrayListOutcome GpdbClient::describeDBInstanceIPArrayList(const DescribeDBInstanceIPArrayListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +1053,42 @@ GpdbClient::DescribeDBInstanceIPArrayListOutcomeCallable GpdbClient::describeDBI
 			[this, request]()
 			{
 			return this->describeDBInstanceIPArrayList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeDBInstanceIndexUsageOutcome GpdbClient::describeDBInstanceIndexUsage(const DescribeDBInstanceIndexUsageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBInstanceIndexUsageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBInstanceIndexUsageOutcome(DescribeDBInstanceIndexUsageResult(outcome.result()));
+	else
+		return DescribeDBInstanceIndexUsageOutcome(outcome.error());
+}
+
+void GpdbClient::describeDBInstanceIndexUsageAsync(const DescribeDBInstanceIndexUsageRequest& request, const DescribeDBInstanceIndexUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBInstanceIndexUsage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeDBInstanceIndexUsageOutcomeCallable GpdbClient::describeDBInstanceIndexUsageCallable(const DescribeDBInstanceIndexUsageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceIndexUsageOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBInstanceIndexUsage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -627,42 +1131,6 @@ GpdbClient::DescribeDBInstanceNetInfoOutcomeCallable GpdbClient::describeDBInsta
 	return task->get_future();
 }
 
-GpdbClient::DescribeDBInstanceOnECSAttributeOutcome GpdbClient::describeDBInstanceOnECSAttribute(const DescribeDBInstanceOnECSAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDBInstanceOnECSAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDBInstanceOnECSAttributeOutcome(DescribeDBInstanceOnECSAttributeResult(outcome.result()));
-	else
-		return DescribeDBInstanceOnECSAttributeOutcome(outcome.error());
-}
-
-void GpdbClient::describeDBInstanceOnECSAttributeAsync(const DescribeDBInstanceOnECSAttributeRequest& request, const DescribeDBInstanceOnECSAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDBInstanceOnECSAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GpdbClient::DescribeDBInstanceOnECSAttributeOutcomeCallable GpdbClient::describeDBInstanceOnECSAttributeCallable(const DescribeDBInstanceOnECSAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceOnECSAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDBInstanceOnECSAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 GpdbClient::DescribeDBInstancePerformanceOutcome GpdbClient::describeDBInstancePerformance(const DescribeDBInstancePerformanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -699,36 +1167,36 @@ GpdbClient::DescribeDBInstancePerformanceOutcomeCallable GpdbClient::describeDBI
 	return task->get_future();
 }
 
-GpdbClient::DescribeDBInstanceSQLPatternsOutcome GpdbClient::describeDBInstanceSQLPatterns(const DescribeDBInstanceSQLPatternsRequest &request) const
+GpdbClient::DescribeDBInstancePlansOutcome GpdbClient::describeDBInstancePlans(const DescribeDBInstancePlansRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeDBInstanceSQLPatternsOutcome(endpointOutcome.error());
+		return DescribeDBInstancePlansOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeDBInstanceSQLPatternsOutcome(DescribeDBInstanceSQLPatternsResult(outcome.result()));
+		return DescribeDBInstancePlansOutcome(DescribeDBInstancePlansResult(outcome.result()));
 	else
-		return DescribeDBInstanceSQLPatternsOutcome(outcome.error());
+		return DescribeDBInstancePlansOutcome(outcome.error());
 }
 
-void GpdbClient::describeDBInstanceSQLPatternsAsync(const DescribeDBInstanceSQLPatternsRequest& request, const DescribeDBInstanceSQLPatternsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void GpdbClient::describeDBInstancePlansAsync(const DescribeDBInstancePlansRequest& request, const DescribeDBInstancePlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeDBInstanceSQLPatterns(request), context);
+		handler(this, request, describeDBInstancePlans(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-GpdbClient::DescribeDBInstanceSQLPatternsOutcomeCallable GpdbClient::describeDBInstanceSQLPatternsCallable(const DescribeDBInstanceSQLPatternsRequest &request) const
+GpdbClient::DescribeDBInstancePlansOutcomeCallable GpdbClient::describeDBInstancePlansCallable(const DescribeDBInstancePlansRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceSQLPatternsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeDBInstancePlansOutcome()>>(
 			[this, request]()
 			{
-			return this->describeDBInstanceSQLPatterns(request);
+			return this->describeDBInstancePlans(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -843,6 +1311,366 @@ GpdbClient::DescribeDataBackupsOutcomeCallable GpdbClient::describeDataBackupsCa
 	return task->get_future();
 }
 
+GpdbClient::DescribeDataReDistributeInfoOutcome GpdbClient::describeDataReDistributeInfo(const DescribeDataReDistributeInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDataReDistributeInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDataReDistributeInfoOutcome(DescribeDataReDistributeInfoResult(outcome.result()));
+	else
+		return DescribeDataReDistributeInfoOutcome(outcome.error());
+}
+
+void GpdbClient::describeDataReDistributeInfoAsync(const DescribeDataReDistributeInfoRequest& request, const DescribeDataReDistributeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDataReDistributeInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeDataReDistributeInfoOutcomeCallable GpdbClient::describeDataReDistributeInfoCallable(const DescribeDataReDistributeInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDataReDistributeInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDataReDistributeInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeDataShareInstancesOutcome GpdbClient::describeDataShareInstances(const DescribeDataShareInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDataShareInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDataShareInstancesOutcome(DescribeDataShareInstancesResult(outcome.result()));
+	else
+		return DescribeDataShareInstancesOutcome(outcome.error());
+}
+
+void GpdbClient::describeDataShareInstancesAsync(const DescribeDataShareInstancesRequest& request, const DescribeDataShareInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDataShareInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeDataShareInstancesOutcomeCallable GpdbClient::describeDataShareInstancesCallable(const DescribeDataShareInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDataShareInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDataShareInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeDataSharePerformanceOutcome GpdbClient::describeDataSharePerformance(const DescribeDataSharePerformanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDataSharePerformanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDataSharePerformanceOutcome(DescribeDataSharePerformanceResult(outcome.result()));
+	else
+		return DescribeDataSharePerformanceOutcome(outcome.error());
+}
+
+void GpdbClient::describeDataSharePerformanceAsync(const DescribeDataSharePerformanceRequest& request, const DescribeDataSharePerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDataSharePerformance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeDataSharePerformanceOutcomeCallable GpdbClient::describeDataSharePerformanceCallable(const DescribeDataSharePerformanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDataSharePerformanceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDataSharePerformance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeDiagnosisDimensionsOutcome GpdbClient::describeDiagnosisDimensions(const DescribeDiagnosisDimensionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDiagnosisDimensionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDiagnosisDimensionsOutcome(DescribeDiagnosisDimensionsResult(outcome.result()));
+	else
+		return DescribeDiagnosisDimensionsOutcome(outcome.error());
+}
+
+void GpdbClient::describeDiagnosisDimensionsAsync(const DescribeDiagnosisDimensionsRequest& request, const DescribeDiagnosisDimensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDiagnosisDimensions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeDiagnosisDimensionsOutcomeCallable GpdbClient::describeDiagnosisDimensionsCallable(const DescribeDiagnosisDimensionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDiagnosisDimensionsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDiagnosisDimensions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeDiagnosisMonitorPerformanceOutcome GpdbClient::describeDiagnosisMonitorPerformance(const DescribeDiagnosisMonitorPerformanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDiagnosisMonitorPerformanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDiagnosisMonitorPerformanceOutcome(DescribeDiagnosisMonitorPerformanceResult(outcome.result()));
+	else
+		return DescribeDiagnosisMonitorPerformanceOutcome(outcome.error());
+}
+
+void GpdbClient::describeDiagnosisMonitorPerformanceAsync(const DescribeDiagnosisMonitorPerformanceRequest& request, const DescribeDiagnosisMonitorPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDiagnosisMonitorPerformance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeDiagnosisMonitorPerformanceOutcomeCallable GpdbClient::describeDiagnosisMonitorPerformanceCallable(const DescribeDiagnosisMonitorPerformanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDiagnosisMonitorPerformanceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDiagnosisMonitorPerformance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeDiagnosisRecordsOutcome GpdbClient::describeDiagnosisRecords(const DescribeDiagnosisRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDiagnosisRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDiagnosisRecordsOutcome(DescribeDiagnosisRecordsResult(outcome.result()));
+	else
+		return DescribeDiagnosisRecordsOutcome(outcome.error());
+}
+
+void GpdbClient::describeDiagnosisRecordsAsync(const DescribeDiagnosisRecordsRequest& request, const DescribeDiagnosisRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDiagnosisRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeDiagnosisRecordsOutcomeCallable GpdbClient::describeDiagnosisRecordsCallable(const DescribeDiagnosisRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDiagnosisRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDiagnosisRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeDiagnosisSQLInfoOutcome GpdbClient::describeDiagnosisSQLInfo(const DescribeDiagnosisSQLInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDiagnosisSQLInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDiagnosisSQLInfoOutcome(DescribeDiagnosisSQLInfoResult(outcome.result()));
+	else
+		return DescribeDiagnosisSQLInfoOutcome(outcome.error());
+}
+
+void GpdbClient::describeDiagnosisSQLInfoAsync(const DescribeDiagnosisSQLInfoRequest& request, const DescribeDiagnosisSQLInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDiagnosisSQLInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeDiagnosisSQLInfoOutcomeCallable GpdbClient::describeDiagnosisSQLInfoCallable(const DescribeDiagnosisSQLInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDiagnosisSQLInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDiagnosisSQLInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeDownloadRecordsOutcome GpdbClient::describeDownloadRecords(const DescribeDownloadRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDownloadRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDownloadRecordsOutcome(DescribeDownloadRecordsResult(outcome.result()));
+	else
+		return DescribeDownloadRecordsOutcome(outcome.error());
+}
+
+void GpdbClient::describeDownloadRecordsAsync(const DescribeDownloadRecordsRequest& request, const DescribeDownloadRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDownloadRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeDownloadRecordsOutcomeCallable GpdbClient::describeDownloadRecordsCallable(const DescribeDownloadRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDownloadRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDownloadRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeDownloadSQLLogsOutcome GpdbClient::describeDownloadSQLLogs(const DescribeDownloadSQLLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDownloadSQLLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDownloadSQLLogsOutcome(DescribeDownloadSQLLogsResult(outcome.result()));
+	else
+		return DescribeDownloadSQLLogsOutcome(outcome.error());
+}
+
+void GpdbClient::describeDownloadSQLLogsAsync(const DescribeDownloadSQLLogsRequest& request, const DescribeDownloadSQLLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDownloadSQLLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeDownloadSQLLogsOutcomeCallable GpdbClient::describeDownloadSQLLogsCallable(const DescribeDownloadSQLLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDownloadSQLLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDownloadSQLLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeHealthStatusOutcome GpdbClient::describeHealthStatus(const DescribeHealthStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeHealthStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeHealthStatusOutcome(DescribeHealthStatusResult(outcome.result()));
+	else
+		return DescribeHealthStatusOutcome(outcome.error());
+}
+
+void GpdbClient::describeHealthStatusAsync(const DescribeHealthStatusRequest& request, const DescribeHealthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeHealthStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeHealthStatusOutcomeCallable GpdbClient::describeHealthStatusCallable(const DescribeHealthStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeHealthStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeHealthStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GpdbClient::DescribeLogBackupsOutcome GpdbClient::describeLogBackups(const DescribeLogBackupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -909,6 +1737,42 @@ GpdbClient::DescribeModifyParameterLogOutcomeCallable GpdbClient::describeModify
 			[this, request]()
 			{
 			return this->describeModifyParameterLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeNamespaceOutcome GpdbClient::describeNamespace(const DescribeNamespaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNamespaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNamespaceOutcome(DescribeNamespaceResult(outcome.result()));
+	else
+		return DescribeNamespaceOutcome(outcome.error());
+}
+
+void GpdbClient::describeNamespaceAsync(const DescribeNamespaceRequest& request, const DescribeNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNamespace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeNamespaceOutcomeCallable GpdbClient::describeNamespaceCallable(const DescribeNamespaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNamespaceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNamespace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1059,114 +1923,6 @@ GpdbClient::DescribeRegionsOutcomeCallable GpdbClient::describeRegionsCallable(c
 	return task->get_future();
 }
 
-GpdbClient::DescribeResourceUsageOutcome GpdbClient::describeResourceUsage(const DescribeResourceUsageRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeResourceUsageOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeResourceUsageOutcome(DescribeResourceUsageResult(outcome.result()));
-	else
-		return DescribeResourceUsageOutcome(outcome.error());
-}
-
-void GpdbClient::describeResourceUsageAsync(const DescribeResourceUsageRequest& request, const DescribeResourceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeResourceUsage(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GpdbClient::DescribeResourceUsageOutcomeCallable GpdbClient::describeResourceUsageCallable(const DescribeResourceUsageRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeResourceUsageOutcome()>>(
-			[this, request]()
-			{
-			return this->describeResourceUsage(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-GpdbClient::DescribeSQLCollectorPolicyOutcome GpdbClient::describeSQLCollectorPolicy(const DescribeSQLCollectorPolicyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSQLCollectorPolicyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSQLCollectorPolicyOutcome(DescribeSQLCollectorPolicyResult(outcome.result()));
-	else
-		return DescribeSQLCollectorPolicyOutcome(outcome.error());
-}
-
-void GpdbClient::describeSQLCollectorPolicyAsync(const DescribeSQLCollectorPolicyRequest& request, const DescribeSQLCollectorPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSQLCollectorPolicy(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GpdbClient::DescribeSQLCollectorPolicyOutcomeCallable GpdbClient::describeSQLCollectorPolicyCallable(const DescribeSQLCollectorPolicyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSQLCollectorPolicyOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSQLCollectorPolicy(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-GpdbClient::DescribeSQLLogByQueryIdOutcome GpdbClient::describeSQLLogByQueryId(const DescribeSQLLogByQueryIdRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSQLLogByQueryIdOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSQLLogByQueryIdOutcome(DescribeSQLLogByQueryIdResult(outcome.result()));
-	else
-		return DescribeSQLLogByQueryIdOutcome(outcome.error());
-}
-
-void GpdbClient::describeSQLLogByQueryIdAsync(const DescribeSQLLogByQueryIdRequest& request, const DescribeSQLLogByQueryIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSQLLogByQueryId(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GpdbClient::DescribeSQLLogByQueryIdOutcomeCallable GpdbClient::describeSQLLogByQueryIdCallable(const DescribeSQLLogByQueryIdRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSQLLogByQueryIdOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSQLLogByQueryId(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 GpdbClient::DescribeSQLLogCountOutcome GpdbClient::describeSQLLogCount(const DescribeSQLLogCountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1203,252 +1959,108 @@ GpdbClient::DescribeSQLLogCountOutcomeCallable GpdbClient::describeSQLLogCountCa
 	return task->get_future();
 }
 
-GpdbClient::DescribeSQLLogFilesOutcome GpdbClient::describeSQLLogFiles(const DescribeSQLLogFilesRequest &request) const
+GpdbClient::DescribeSQLLogsV2Outcome GpdbClient::describeSQLLogsV2(const DescribeSQLLogsV2Request &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeSQLLogFilesOutcome(endpointOutcome.error());
+		return DescribeSQLLogsV2Outcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeSQLLogFilesOutcome(DescribeSQLLogFilesResult(outcome.result()));
+		return DescribeSQLLogsV2Outcome(DescribeSQLLogsV2Result(outcome.result()));
 	else
-		return DescribeSQLLogFilesOutcome(outcome.error());
+		return DescribeSQLLogsV2Outcome(outcome.error());
 }
 
-void GpdbClient::describeSQLLogFilesAsync(const DescribeSQLLogFilesRequest& request, const DescribeSQLLogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void GpdbClient::describeSQLLogsV2Async(const DescribeSQLLogsV2Request& request, const DescribeSQLLogsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeSQLLogFiles(request), context);
+		handler(this, request, describeSQLLogsV2(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-GpdbClient::DescribeSQLLogFilesOutcomeCallable GpdbClient::describeSQLLogFilesCallable(const DescribeSQLLogFilesRequest &request) const
+GpdbClient::DescribeSQLLogsV2OutcomeCallable GpdbClient::describeSQLLogsV2Callable(const DescribeSQLLogsV2Request &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeSQLLogFilesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeSQLLogsV2Outcome()>>(
 			[this, request]()
 			{
-			return this->describeSQLLogFiles(request);
+			return this->describeSQLLogsV2(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-GpdbClient::DescribeSQLLogRecordsOutcome GpdbClient::describeSQLLogRecords(const DescribeSQLLogRecordsRequest &request) const
+GpdbClient::DescribeSampleDataOutcome GpdbClient::describeSampleData(const DescribeSampleDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeSQLLogRecordsOutcome(endpointOutcome.error());
+		return DescribeSampleDataOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeSQLLogRecordsOutcome(DescribeSQLLogRecordsResult(outcome.result()));
+		return DescribeSampleDataOutcome(DescribeSampleDataResult(outcome.result()));
 	else
-		return DescribeSQLLogRecordsOutcome(outcome.error());
+		return DescribeSampleDataOutcome(outcome.error());
 }
 
-void GpdbClient::describeSQLLogRecordsAsync(const DescribeSQLLogRecordsRequest& request, const DescribeSQLLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void GpdbClient::describeSampleDataAsync(const DescribeSampleDataRequest& request, const DescribeSampleDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeSQLLogRecords(request), context);
+		handler(this, request, describeSampleData(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-GpdbClient::DescribeSQLLogRecordsOutcomeCallable GpdbClient::describeSQLLogRecordsCallable(const DescribeSQLLogRecordsRequest &request) const
+GpdbClient::DescribeSampleDataOutcomeCallable GpdbClient::describeSampleDataCallable(const DescribeSampleDataRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeSQLLogRecordsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeSampleDataOutcome()>>(
 			[this, request]()
 			{
-			return this->describeSQLLogRecords(request);
+			return this->describeSampleData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-GpdbClient::DescribeSQLLogsOutcome GpdbClient::describeSQLLogs(const DescribeSQLLogsRequest &request) const
+GpdbClient::DescribeSupportFeaturesOutcome GpdbClient::describeSupportFeatures(const DescribeSupportFeaturesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeSQLLogsOutcome(endpointOutcome.error());
+		return DescribeSupportFeaturesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeSQLLogsOutcome(DescribeSQLLogsResult(outcome.result()));
+		return DescribeSupportFeaturesOutcome(DescribeSupportFeaturesResult(outcome.result()));
 	else
-		return DescribeSQLLogsOutcome(outcome.error());
+		return DescribeSupportFeaturesOutcome(outcome.error());
 }
 
-void GpdbClient::describeSQLLogsAsync(const DescribeSQLLogsRequest& request, const DescribeSQLLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void GpdbClient::describeSupportFeaturesAsync(const DescribeSupportFeaturesRequest& request, const DescribeSupportFeaturesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeSQLLogs(request), context);
+		handler(this, request, describeSupportFeatures(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-GpdbClient::DescribeSQLLogsOutcomeCallable GpdbClient::describeSQLLogsCallable(const DescribeSQLLogsRequest &request) const
+GpdbClient::DescribeSupportFeaturesOutcomeCallable GpdbClient::describeSupportFeaturesCallable(const DescribeSupportFeaturesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeSQLLogsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeSupportFeaturesOutcome()>>(
 			[this, request]()
 			{
-			return this->describeSQLLogs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-GpdbClient::DescribeSQLLogsOnSliceOutcome GpdbClient::describeSQLLogsOnSlice(const DescribeSQLLogsOnSliceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSQLLogsOnSliceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSQLLogsOnSliceOutcome(DescribeSQLLogsOnSliceResult(outcome.result()));
-	else
-		return DescribeSQLLogsOnSliceOutcome(outcome.error());
-}
-
-void GpdbClient::describeSQLLogsOnSliceAsync(const DescribeSQLLogsOnSliceRequest& request, const DescribeSQLLogsOnSliceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSQLLogsOnSlice(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GpdbClient::DescribeSQLLogsOnSliceOutcomeCallable GpdbClient::describeSQLLogsOnSliceCallable(const DescribeSQLLogsOnSliceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSQLLogsOnSliceOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSQLLogsOnSlice(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-GpdbClient::DescribeSlowLogRecordsOutcome GpdbClient::describeSlowLogRecords(const DescribeSlowLogRecordsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSlowLogRecordsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSlowLogRecordsOutcome(DescribeSlowLogRecordsResult(outcome.result()));
-	else
-		return DescribeSlowLogRecordsOutcome(outcome.error());
-}
-
-void GpdbClient::describeSlowLogRecordsAsync(const DescribeSlowLogRecordsRequest& request, const DescribeSlowLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSlowLogRecords(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GpdbClient::DescribeSlowLogRecordsOutcomeCallable GpdbClient::describeSlowLogRecordsCallable(const DescribeSlowLogRecordsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSlowLogRecordsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSlowLogRecords(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-GpdbClient::DescribeSlowSQLLogsOutcome GpdbClient::describeSlowSQLLogs(const DescribeSlowSQLLogsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSlowSQLLogsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSlowSQLLogsOutcome(DescribeSlowSQLLogsResult(outcome.result()));
-	else
-		return DescribeSlowSQLLogsOutcome(outcome.error());
-}
-
-void GpdbClient::describeSlowSQLLogsAsync(const DescribeSlowSQLLogsRequest& request, const DescribeSlowSQLLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSlowSQLLogs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GpdbClient::DescribeSlowSQLLogsOutcomeCallable GpdbClient::describeSlowSQLLogsCallable(const DescribeSlowSQLLogsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSlowSQLLogsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSlowSQLLogs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-GpdbClient::DescribeSpecificationOutcome GpdbClient::describeSpecification(const DescribeSpecificationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSpecificationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSpecificationOutcome(DescribeSpecificationResult(outcome.result()));
-	else
-		return DescribeSpecificationOutcome(outcome.error());
-}
-
-void GpdbClient::describeSpecificationAsync(const DescribeSpecificationRequest& request, const DescribeSpecificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSpecification(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GpdbClient::DescribeSpecificationOutcomeCallable GpdbClient::describeSpecificationCallable(const DescribeSpecificationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSpecificationOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSpecification(request);
+			return this->describeSupportFeatures(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1521,6 +2133,294 @@ GpdbClient::DescribeUserEncryptionKeyListOutcomeCallable GpdbClient::describeUse
 			[this, request]()
 			{
 			return this->describeUserEncryptionKeyList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeWaitingSQLInfoOutcome GpdbClient::describeWaitingSQLInfo(const DescribeWaitingSQLInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeWaitingSQLInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeWaitingSQLInfoOutcome(DescribeWaitingSQLInfoResult(outcome.result()));
+	else
+		return DescribeWaitingSQLInfoOutcome(outcome.error());
+}
+
+void GpdbClient::describeWaitingSQLInfoAsync(const DescribeWaitingSQLInfoRequest& request, const DescribeWaitingSQLInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeWaitingSQLInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeWaitingSQLInfoOutcomeCallable GpdbClient::describeWaitingSQLInfoCallable(const DescribeWaitingSQLInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeWaitingSQLInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeWaitingSQLInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeWaitingSQLRecordsOutcome GpdbClient::describeWaitingSQLRecords(const DescribeWaitingSQLRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeWaitingSQLRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeWaitingSQLRecordsOutcome(DescribeWaitingSQLRecordsResult(outcome.result()));
+	else
+		return DescribeWaitingSQLRecordsOutcome(outcome.error());
+}
+
+void GpdbClient::describeWaitingSQLRecordsAsync(const DescribeWaitingSQLRecordsRequest& request, const DescribeWaitingSQLRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeWaitingSQLRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeWaitingSQLRecordsOutcomeCallable GpdbClient::describeWaitingSQLRecordsCallable(const DescribeWaitingSQLRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeWaitingSQLRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeWaitingSQLRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DownloadDiagnosisRecordsOutcome GpdbClient::downloadDiagnosisRecords(const DownloadDiagnosisRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DownloadDiagnosisRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DownloadDiagnosisRecordsOutcome(DownloadDiagnosisRecordsResult(outcome.result()));
+	else
+		return DownloadDiagnosisRecordsOutcome(outcome.error());
+}
+
+void GpdbClient::downloadDiagnosisRecordsAsync(const DownloadDiagnosisRecordsRequest& request, const DownloadDiagnosisRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, downloadDiagnosisRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DownloadDiagnosisRecordsOutcomeCallable GpdbClient::downloadDiagnosisRecordsCallable(const DownloadDiagnosisRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DownloadDiagnosisRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->downloadDiagnosisRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DownloadSQLLogsRecordsOutcome GpdbClient::downloadSQLLogsRecords(const DownloadSQLLogsRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DownloadSQLLogsRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DownloadSQLLogsRecordsOutcome(DownloadSQLLogsRecordsResult(outcome.result()));
+	else
+		return DownloadSQLLogsRecordsOutcome(outcome.error());
+}
+
+void GpdbClient::downloadSQLLogsRecordsAsync(const DownloadSQLLogsRecordsRequest& request, const DownloadSQLLogsRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, downloadSQLLogsRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DownloadSQLLogsRecordsOutcomeCallable GpdbClient::downloadSQLLogsRecordsCallable(const DownloadSQLLogsRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DownloadSQLLogsRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->downloadSQLLogsRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::GrantCollectionOutcome GpdbClient::grantCollection(const GrantCollectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GrantCollectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GrantCollectionOutcome(GrantCollectionResult(outcome.result()));
+	else
+		return GrantCollectionOutcome(outcome.error());
+}
+
+void GpdbClient::grantCollectionAsync(const GrantCollectionRequest& request, const GrantCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, grantCollection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::GrantCollectionOutcomeCallable GpdbClient::grantCollectionCallable(const GrantCollectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GrantCollectionOutcome()>>(
+			[this, request]()
+			{
+			return this->grantCollection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::InitVectorDatabaseOutcome GpdbClient::initVectorDatabase(const InitVectorDatabaseRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InitVectorDatabaseOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InitVectorDatabaseOutcome(InitVectorDatabaseResult(outcome.result()));
+	else
+		return InitVectorDatabaseOutcome(outcome.error());
+}
+
+void GpdbClient::initVectorDatabaseAsync(const InitVectorDatabaseRequest& request, const InitVectorDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, initVectorDatabase(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::InitVectorDatabaseOutcomeCallable GpdbClient::initVectorDatabaseCallable(const InitVectorDatabaseRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InitVectorDatabaseOutcome()>>(
+			[this, request]()
+			{
+			return this->initVectorDatabase(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::ListCollectionsOutcome GpdbClient::listCollections(const ListCollectionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCollectionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCollectionsOutcome(ListCollectionsResult(outcome.result()));
+	else
+		return ListCollectionsOutcome(outcome.error());
+}
+
+void GpdbClient::listCollectionsAsync(const ListCollectionsRequest& request, const ListCollectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCollections(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::ListCollectionsOutcomeCallable GpdbClient::listCollectionsCallable(const ListCollectionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCollectionsOutcome()>>(
+			[this, request]()
+			{
+			return this->listCollections(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::ListNamespacesOutcome GpdbClient::listNamespaces(const ListNamespacesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListNamespacesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListNamespacesOutcome(ListNamespacesResult(outcome.result()));
+	else
+		return ListNamespacesOutcome(outcome.error());
+}
+
+void GpdbClient::listNamespacesAsync(const ListNamespacesRequest& request, const ListNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listNamespaces(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::ListNamespacesOutcomeCallable GpdbClient::listNamespacesCallable(const ListNamespacesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListNamespacesOutcome()>>(
+			[this, request]()
+			{
+			return this->listNamespaces(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1635,36 +2535,36 @@ GpdbClient::ModifyBackupPolicyOutcomeCallable GpdbClient::modifyBackupPolicyCall
 	return task->get_future();
 }
 
-GpdbClient::ModifyDBInstanceConnectionModeOutcome GpdbClient::modifyDBInstanceConnectionMode(const ModifyDBInstanceConnectionModeRequest &request) const
+GpdbClient::ModifyDBInstanceConfigOutcome GpdbClient::modifyDBInstanceConfig(const ModifyDBInstanceConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyDBInstanceConnectionModeOutcome(endpointOutcome.error());
+		return ModifyDBInstanceConfigOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyDBInstanceConnectionModeOutcome(ModifyDBInstanceConnectionModeResult(outcome.result()));
+		return ModifyDBInstanceConfigOutcome(ModifyDBInstanceConfigResult(outcome.result()));
 	else
-		return ModifyDBInstanceConnectionModeOutcome(outcome.error());
+		return ModifyDBInstanceConfigOutcome(outcome.error());
 }
 
-void GpdbClient::modifyDBInstanceConnectionModeAsync(const ModifyDBInstanceConnectionModeRequest& request, const ModifyDBInstanceConnectionModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void GpdbClient::modifyDBInstanceConfigAsync(const ModifyDBInstanceConfigRequest& request, const ModifyDBInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyDBInstanceConnectionMode(request), context);
+		handler(this, request, modifyDBInstanceConfig(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-GpdbClient::ModifyDBInstanceConnectionModeOutcomeCallable GpdbClient::modifyDBInstanceConnectionModeCallable(const ModifyDBInstanceConnectionModeRequest &request) const
+GpdbClient::ModifyDBInstanceConfigOutcomeCallable GpdbClient::modifyDBInstanceConfigCallable(const ModifyDBInstanceConfigRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyDBInstanceConnectionModeOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ModifyDBInstanceConfigOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyDBInstanceConnectionMode(request);
+			return this->modifyDBInstanceConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1779,36 +2679,36 @@ GpdbClient::ModifyDBInstanceMaintainTimeOutcomeCallable GpdbClient::modifyDBInst
 	return task->get_future();
 }
 
-GpdbClient::ModifyDBInstanceNetworkTypeOutcome GpdbClient::modifyDBInstanceNetworkType(const ModifyDBInstanceNetworkTypeRequest &request) const
+GpdbClient::ModifyDBInstanceResourceGroupOutcome GpdbClient::modifyDBInstanceResourceGroup(const ModifyDBInstanceResourceGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyDBInstanceNetworkTypeOutcome(endpointOutcome.error());
+		return ModifyDBInstanceResourceGroupOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyDBInstanceNetworkTypeOutcome(ModifyDBInstanceNetworkTypeResult(outcome.result()));
+		return ModifyDBInstanceResourceGroupOutcome(ModifyDBInstanceResourceGroupResult(outcome.result()));
 	else
-		return ModifyDBInstanceNetworkTypeOutcome(outcome.error());
+		return ModifyDBInstanceResourceGroupOutcome(outcome.error());
 }
 
-void GpdbClient::modifyDBInstanceNetworkTypeAsync(const ModifyDBInstanceNetworkTypeRequest& request, const ModifyDBInstanceNetworkTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void GpdbClient::modifyDBInstanceResourceGroupAsync(const ModifyDBInstanceResourceGroupRequest& request, const ModifyDBInstanceResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyDBInstanceNetworkType(request), context);
+		handler(this, request, modifyDBInstanceResourceGroup(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-GpdbClient::ModifyDBInstanceNetworkTypeOutcomeCallable GpdbClient::modifyDBInstanceNetworkTypeCallable(const ModifyDBInstanceNetworkTypeRequest &request) const
+GpdbClient::ModifyDBInstanceResourceGroupOutcomeCallable GpdbClient::modifyDBInstanceResourceGroupCallable(const ModifyDBInstanceResourceGroupRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyDBInstanceNetworkTypeOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ModifyDBInstanceResourceGroupOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyDBInstanceNetworkType(request);
+			return this->modifyDBInstanceResourceGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1959,6 +2859,150 @@ GpdbClient::ModifySecurityIpsOutcomeCallable GpdbClient::modifySecurityIpsCallab
 	return task->get_future();
 }
 
+GpdbClient::ModifyVectorConfigurationOutcome GpdbClient::modifyVectorConfiguration(const ModifyVectorConfigurationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyVectorConfigurationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyVectorConfigurationOutcome(ModifyVectorConfigurationResult(outcome.result()));
+	else
+		return ModifyVectorConfigurationOutcome(outcome.error());
+}
+
+void GpdbClient::modifyVectorConfigurationAsync(const ModifyVectorConfigurationRequest& request, const ModifyVectorConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyVectorConfiguration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::ModifyVectorConfigurationOutcomeCallable GpdbClient::modifyVectorConfigurationCallable(const ModifyVectorConfigurationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyVectorConfigurationOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyVectorConfiguration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::PauseInstanceOutcome GpdbClient::pauseInstance(const PauseInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PauseInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PauseInstanceOutcome(PauseInstanceResult(outcome.result()));
+	else
+		return PauseInstanceOutcome(outcome.error());
+}
+
+void GpdbClient::pauseInstanceAsync(const PauseInstanceRequest& request, const PauseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, pauseInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::PauseInstanceOutcomeCallable GpdbClient::pauseInstanceCallable(const PauseInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PauseInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->pauseInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::QueryCollectionDataOutcome GpdbClient::queryCollectionData(const QueryCollectionDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryCollectionDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryCollectionDataOutcome(QueryCollectionDataResult(outcome.result()));
+	else
+		return QueryCollectionDataOutcome(outcome.error());
+}
+
+void GpdbClient::queryCollectionDataAsync(const QueryCollectionDataRequest& request, const QueryCollectionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryCollectionData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::QueryCollectionDataOutcomeCallable GpdbClient::queryCollectionDataCallable(const QueryCollectionDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryCollectionDataOutcome()>>(
+			[this, request]()
+			{
+			return this->queryCollectionData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::RebalanceDBInstanceOutcome GpdbClient::rebalanceDBInstance(const RebalanceDBInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RebalanceDBInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RebalanceDBInstanceOutcome(RebalanceDBInstanceResult(outcome.result()));
+	else
+		return RebalanceDBInstanceOutcome(outcome.error());
+}
+
+void GpdbClient::rebalanceDBInstanceAsync(const RebalanceDBInstanceRequest& request, const RebalanceDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rebalanceDBInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::RebalanceDBInstanceOutcomeCallable GpdbClient::rebalanceDBInstanceCallable(const RebalanceDBInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RebalanceDBInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->rebalanceDBInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GpdbClient::ReleaseInstancePublicConnectionOutcome GpdbClient::releaseInstancePublicConnection(const ReleaseInstancePublicConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2067,6 +3111,114 @@ GpdbClient::RestartDBInstanceOutcomeCallable GpdbClient::restartDBInstanceCallab
 	return task->get_future();
 }
 
+GpdbClient::ResumeInstanceOutcome GpdbClient::resumeInstance(const ResumeInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResumeInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResumeInstanceOutcome(ResumeInstanceResult(outcome.result()));
+	else
+		return ResumeInstanceOutcome(outcome.error());
+}
+
+void GpdbClient::resumeInstanceAsync(const ResumeInstanceRequest& request, const ResumeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resumeInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::ResumeInstanceOutcomeCallable GpdbClient::resumeInstanceCallable(const ResumeInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResumeInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->resumeInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::SetDBInstancePlanStatusOutcome GpdbClient::setDBInstancePlanStatus(const SetDBInstancePlanStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDBInstancePlanStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDBInstancePlanStatusOutcome(SetDBInstancePlanStatusResult(outcome.result()));
+	else
+		return SetDBInstancePlanStatusOutcome(outcome.error());
+}
+
+void GpdbClient::setDBInstancePlanStatusAsync(const SetDBInstancePlanStatusRequest& request, const SetDBInstancePlanStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDBInstancePlanStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::SetDBInstancePlanStatusOutcomeCallable GpdbClient::setDBInstancePlanStatusCallable(const SetDBInstancePlanStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDBInstancePlanStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->setDBInstancePlanStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::SetDataShareInstanceOutcome GpdbClient::setDataShareInstance(const SetDataShareInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDataShareInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDataShareInstanceOutcome(SetDataShareInstanceResult(outcome.result()));
+	else
+		return SetDataShareInstanceOutcome(outcome.error());
+}
+
+void GpdbClient::setDataShareInstanceAsync(const SetDataShareInstanceRequest& request, const SetDataShareInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDataShareInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::SetDataShareInstanceOutcomeCallable GpdbClient::setDataShareInstanceCallable(const SetDataShareInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDataShareInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->setDataShareInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GpdbClient::SwitchDBInstanceNetTypeOutcome GpdbClient::switchDBInstanceNetType(const SwitchDBInstanceNetTypeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2139,6 +3291,42 @@ GpdbClient::TagResourcesOutcomeCallable GpdbClient::tagResourcesCallable(const T
 	return task->get_future();
 }
 
+GpdbClient::UnloadSampleDataOutcome GpdbClient::unloadSampleData(const UnloadSampleDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnloadSampleDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnloadSampleDataOutcome(UnloadSampleDataResult(outcome.result()));
+	else
+		return UnloadSampleDataOutcome(outcome.error());
+}
+
+void GpdbClient::unloadSampleDataAsync(const UnloadSampleDataRequest& request, const UnloadSampleDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unloadSampleData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::UnloadSampleDataOutcomeCallable GpdbClient::unloadSampleDataCallable(const UnloadSampleDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnloadSampleDataOutcome()>>(
+			[this, request]()
+			{
+			return this->unloadSampleData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GpdbClient::UntagResourcesOutcome GpdbClient::untagResources(const UntagResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2169,6 +3357,42 @@ GpdbClient::UntagResourcesOutcomeCallable GpdbClient::untagResourcesCallable(con
 			[this, request]()
 			{
 			return this->untagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::UpdateDBInstancePlanOutcome GpdbClient::updateDBInstancePlan(const UpdateDBInstancePlanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDBInstancePlanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDBInstancePlanOutcome(UpdateDBInstancePlanResult(outcome.result()));
+	else
+		return UpdateDBInstancePlanOutcome(outcome.error());
+}
+
+void GpdbClient::updateDBInstancePlanAsync(const UpdateDBInstancePlanRequest& request, const UpdateDBInstancePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDBInstancePlan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::UpdateDBInstancePlanOutcomeCallable GpdbClient::updateDBInstancePlanCallable(const UpdateDBInstancePlanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDBInstancePlanOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDBInstancePlan(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2241,6 +3465,42 @@ GpdbClient::UpgradeDBVersionOutcomeCallable GpdbClient::upgradeDBVersionCallable
 			[this, request]()
 			{
 			return this->upgradeDBVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::UpsertCollectionDataOutcome GpdbClient::upsertCollectionData(const UpsertCollectionDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpsertCollectionDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpsertCollectionDataOutcome(UpsertCollectionDataResult(outcome.result()));
+	else
+		return UpsertCollectionDataOutcome(outcome.error());
+}
+
+void GpdbClient::upsertCollectionDataAsync(const UpsertCollectionDataRequest& request, const UpsertCollectionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, upsertCollectionData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::UpsertCollectionDataOutcomeCallable GpdbClient::upsertCollectionDataCallable(const UpsertCollectionDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpsertCollectionDataOutcome()>>(
+			[this, request]()
+			{
+			return this->upsertCollectionData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

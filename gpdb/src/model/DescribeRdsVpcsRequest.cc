@@ -43,6 +43,15 @@ void DescribeRdsVpcsRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeRdsVpcsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeRdsVpcsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeRdsVpcsRequest::getSecurityToken() const {
   return securityToken_;
 }

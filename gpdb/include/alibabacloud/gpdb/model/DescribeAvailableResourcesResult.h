@@ -53,6 +53,7 @@ namespace AlibabaCloud
 							std::string displayClass;
 							std::string description;
 							std::string storageType;
+							std::string category;
 							NodeCount nodeCount;
 							StorageSize storageSize;
 							std::string instanceClass;

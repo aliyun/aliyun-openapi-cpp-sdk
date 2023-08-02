@@ -65,6 +65,8 @@ void DescribeAvailableResourcesResult::parse(const std::string &payload)
 					supportedInstanceClassesObject.instanceClass = valueResourcesResourceSupportedEnginesSupportedEngineSupportedInstanceClassesSupportedInstanceClass["InstanceClass"].asString();
 				if(!valueResourcesResourceSupportedEnginesSupportedEngineSupportedInstanceClassesSupportedInstanceClass["StorageType"].isNull())
 					supportedInstanceClassesObject.storageType = valueResourcesResourceSupportedEnginesSupportedEngineSupportedInstanceClassesSupportedInstanceClass["StorageType"].asString();
+				if(!valueResourcesResourceSupportedEnginesSupportedEngineSupportedInstanceClassesSupportedInstanceClass["Category"].isNull())
+					supportedInstanceClassesObject.category = valueResourcesResourceSupportedEnginesSupportedEngineSupportedInstanceClassesSupportedInstanceClass["Category"].asString();
 				auto nodeCountNode = value["NodeCount"];
 				if(!nodeCountNode["Step"].isNull())
 					supportedInstanceClassesObject.nodeCount.step = nodeCountNode["Step"].asString();

@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string key;
 					};
 					int masterNodeNum;
+					std::string resourceGroupId;
 					std::string dBInstanceNetType;
 					std::string segNodeNum;
 					std::string instanceNetworkType;
@@ -49,6 +50,7 @@ namespace AlibabaCloud
 					std::vector<DBInstance::Tag> tags;
 					std::string engine;
 					std::string dBInstanceDescription;
+					std::string serverlessMode;
 					std::string storageType;
 					std::string engineVersion;
 					std::string dBInstanceStatus;
