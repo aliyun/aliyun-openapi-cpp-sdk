@@ -28,6 +28,10 @@ namespace Adb {
 namespace Model {
 class ALIBABACLOUD_ADB_EXPORT CreateDBClusterRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateDBClusterRequest();
 	~CreateDBClusterRequest();
 	long getResourceOwnerId() const;
@@ -40,6 +44,8 @@ public:
 	void setMode(const std::string &mode);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getPeriod() const;
 	void setPeriod(const std::string &period);
 	std::string getBackupSetID() const;
@@ -99,6 +105,7 @@ private:
 	std::string storageType_;
 	std::string mode_;
 	std::string resourceGroupId_;
+	std::vector<Tag> tag_;
 	std::string period_;
 	std::string backupSetID_;
 	long ownerId_;

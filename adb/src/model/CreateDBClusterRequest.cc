@@ -70,6 +70,20 @@ void CreateDBClusterRequest::setResourceGroupId(const std::string &resourceGroup
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::vector<CreateDBClusterRequest::Tag> CreateDBClusterRequest::getTag() const {
+  return tag_;
+}
+
+void CreateDBClusterRequest::setTag(const std::vector<CreateDBClusterRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 std::string CreateDBClusterRequest::getPeriod() const {
   return period_;
 }
