@@ -47,6 +47,7 @@ public:
 		bool isAlpha;
 		std::string backgroundImageUrl;
 		bool isSubtitles;
+		bool subtitleEmbedded;
 		int resolution;
 		int alphaFormat;
 	};

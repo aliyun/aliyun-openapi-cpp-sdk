@@ -42,12 +42,12 @@ void SubmitAudioTo3DAvatarVideoTaskResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["TaskUuid"].isNull())
 		data_.taskUuid = dataNode["TaskUuid"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
 
 }
 
@@ -66,7 +66,7 @@ std::string SubmitAudioTo3DAvatarVideoTaskResult::getCode()const
 	return code_;
 }
 
-std::string SubmitAudioTo3DAvatarVideoTaskResult::getSuccess()const
+bool SubmitAudioTo3DAvatarVideoTaskResult::getSuccess()const
 {
 	return success_;
 }

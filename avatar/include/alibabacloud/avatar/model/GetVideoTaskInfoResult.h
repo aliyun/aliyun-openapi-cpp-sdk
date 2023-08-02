@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct TaskResult
 					{
+						std::string alphaUrl;
 						int videoDuration;
 						std::string failCode;
 						std::string subtitlesUrl;
