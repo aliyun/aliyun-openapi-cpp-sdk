@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getTaskId() const;
 	void setTaskId(int taskId);
 	std::string getResourceOwnerAccount() const;
@@ -48,6 +50,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
+	std::string regionId_;
 	int taskId_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
