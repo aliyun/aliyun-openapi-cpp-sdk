@@ -53,16 +53,34 @@ void ListGrantVSwitchEnisResult::parse(const std::string &payload)
 			grantVSwitchEnisObject.description = valueGrantVSwitchEnisGrantVSwitchEni["Description"].asString();
 		if(!valueGrantVSwitchEnisGrantVSwitchEni["TransitRouterFlag"].isNull())
 			grantVSwitchEnisObject.transitRouterFlag = valueGrantVSwitchEnisGrantVSwitchEni["TransitRouterFlag"].asString() == "true";
+		if(!valueGrantVSwitchEnisGrantVSwitchEni["NetworkInterfaceName"].isNull())
+			grantVSwitchEnisObject.networkInterfaceName = valueGrantVSwitchEnisGrantVSwitchEni["NetworkInterfaceName"].asString();
+		if(!valueGrantVSwitchEnisGrantVSwitchEni["PrimaryIpAddress"].isNull())
+			grantVSwitchEnisObject.primaryIpAddress = valueGrantVSwitchEnisGrantVSwitchEni["PrimaryIpAddress"].asString();
 		grantVSwitchEnis_.push_back(grantVSwitchEnisObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = value["TotalCount"].asString();
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stol(value["MaxResults"].asString());
 
 }
 
 std::string ListGrantVSwitchEnisResult::getTotalCount()const
 {
 	return totalCount_;
+}
+
+std::string ListGrantVSwitchEnisResult::getNextToken()const
+{
+	return nextToken_;
+}
+
+long ListGrantVSwitchEnisResult::getMaxResults()const
+{
+	return maxResults_;
 }
 
 std::vector<ListGrantVSwitchEnisResult::GrantVSwitchEni> ListGrantVSwitchEnisResult::getGrantVSwitchEnis()const

@@ -36,8 +36,12 @@ public:
 	void setCenId(const std::string &cenId);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getNetworkInterfaceName() const;
+	void setNetworkInterfaceName(const std::string &networkInterfaceName);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -50,18 +54,29 @@ public:
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
+	long getMaxResults() const;
+	void setMaxResults(long maxResults);
+	std::string getPrimaryIpAddress() const;
+	void setPrimaryIpAddress(const std::string &primaryIpAddress);
+	std::vector<std::string> getNetworkInterfaceId() const;
+	void setNetworkInterfaceId(const std::vector<std::string> &networkInterfaceId);
 
 private:
 	long resourceOwnerId_;
 	std::string cenId_;
 	int pageNumber_;
+	std::string nextToken_;
 	int pageSize_;
+	std::string networkInterfaceName_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string version_;
 	std::string vSwitchId_;
 	std::string vpcId_;
+	long maxResults_;
+	std::string primaryIpAddress_;
+	std::vector<std::string> networkInterfaceId_;
 };
 } // namespace Model
 } // namespace Cbn

@@ -38,6 +38,8 @@ namespace AlibabaCloud
 					bool transitRouterFlag;
 					std::string vpcId;
 					std::string vSwitchId;
+					std::string networkInterfaceName;
+					std::string primaryIpAddress;
 					std::string networkInterfaceId;
 				};
 
@@ -46,12 +48,16 @@ namespace AlibabaCloud
 				explicit ListGrantVSwitchEnisResult(const std::string &payload);
 				~ListGrantVSwitchEnisResult();
 				std::string getTotalCount()const;
+				std::string getNextToken()const;
+				long getMaxResults()const;
 				std::vector<GrantVSwitchEni> getGrantVSwitchEnis()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string totalCount_;
+				std::string nextToken_;
+				long maxResults_;
 				std::vector<GrantVSwitchEni> grantVSwitchEnis_;
 
 			};

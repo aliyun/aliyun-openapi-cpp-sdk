@@ -52,6 +52,15 @@ void ListGrantVSwitchEnisRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string ListGrantVSwitchEnisRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void ListGrantVSwitchEnisRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
 int ListGrantVSwitchEnisRequest::getPageSize() const {
   return pageSize_;
 }
@@ -59,6 +68,15 @@ int ListGrantVSwitchEnisRequest::getPageSize() const {
 void ListGrantVSwitchEnisRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListGrantVSwitchEnisRequest::getNetworkInterfaceName() const {
+  return networkInterfaceName_;
+}
+
+void ListGrantVSwitchEnisRequest::setNetworkInterfaceName(const std::string &networkInterfaceName) {
+  networkInterfaceName_ = networkInterfaceName;
+  setParameter(std::string("NetworkInterfaceName"), networkInterfaceName);
 }
 
 std::string ListGrantVSwitchEnisRequest::getResourceOwnerAccount() const {
@@ -113,5 +131,34 @@ std::string ListGrantVSwitchEnisRequest::getVpcId() const {
 void ListGrantVSwitchEnisRequest::setVpcId(const std::string &vpcId) {
   vpcId_ = vpcId;
   setParameter(std::string("VpcId"), vpcId);
+}
+
+long ListGrantVSwitchEnisRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void ListGrantVSwitchEnisRequest::setMaxResults(long maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
+}
+
+std::string ListGrantVSwitchEnisRequest::getPrimaryIpAddress() const {
+  return primaryIpAddress_;
+}
+
+void ListGrantVSwitchEnisRequest::setPrimaryIpAddress(const std::string &primaryIpAddress) {
+  primaryIpAddress_ = primaryIpAddress;
+  setParameter(std::string("PrimaryIpAddress"), primaryIpAddress);
+}
+
+std::vector<ListGrantVSwitchEnisRequest::std::string> ListGrantVSwitchEnisRequest::getNetworkInterfaceId() const {
+  return networkInterfaceId_;
+}
+
+void ListGrantVSwitchEnisRequest::setNetworkInterfaceId(const std::vector<ListGrantVSwitchEnisRequest::std::string> &networkInterfaceId) {
+  networkInterfaceId_ = networkInterfaceId;
+  for(int dep1 = 0; dep1 != networkInterfaceId.size(); dep1++) {
+    setParameter(std::string("NetworkInterfaceId") + "." + std::to_string(dep1 + 1), networkInterfaceId[dep1]);
+  }
 }
 
