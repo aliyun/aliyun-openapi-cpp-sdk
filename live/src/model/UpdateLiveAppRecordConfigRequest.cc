@@ -14,153 +14,140 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/AddLiveAppRecordConfigRequest.h>
+#include <alibabacloud/live/model/UpdateLiveAppRecordConfigRequest.h>
 
-using AlibabaCloud::Live::Model::AddLiveAppRecordConfigRequest;
+using AlibabaCloud::Live::Model::UpdateLiveAppRecordConfigRequest;
 
-AddLiveAppRecordConfigRequest::AddLiveAppRecordConfigRequest()
-    : RpcServiceRequest("live", "2016-11-01", "AddLiveAppRecordConfig") {
+UpdateLiveAppRecordConfigRequest::UpdateLiveAppRecordConfigRequest()
+    : RpcServiceRequest("live", "2016-11-01", "UpdateLiveAppRecordConfig") {
   setMethod(HttpRequest::Method::Post);
 }
 
-AddLiveAppRecordConfigRequest::~AddLiveAppRecordConfigRequest() {}
+UpdateLiveAppRecordConfigRequest::~UpdateLiveAppRecordConfigRequest() {}
 
-std::string AddLiveAppRecordConfigRequest::getOssEndpoint() const {
+std::string UpdateLiveAppRecordConfigRequest::getOssEndpoint() const {
   return ossEndpoint_;
 }
 
-void AddLiveAppRecordConfigRequest::setOssEndpoint(const std::string &ossEndpoint) {
+void UpdateLiveAppRecordConfigRequest::setOssEndpoint(const std::string &ossEndpoint) {
   ossEndpoint_ = ossEndpoint;
   setParameter(std::string("OssEndpoint"), ossEndpoint);
 }
 
-int AddLiveAppRecordConfigRequest::getDelayTime() const {
+int UpdateLiveAppRecordConfigRequest::getDelayTime() const {
   return delayTime_;
 }
 
-void AddLiveAppRecordConfigRequest::setDelayTime(int delayTime) {
+void UpdateLiveAppRecordConfigRequest::setDelayTime(int delayTime) {
   delayTime_ = delayTime;
   setParameter(std::string("DelayTime"), std::to_string(delayTime));
 }
 
-std::vector<std::string> AddLiveAppRecordConfigRequest::getTranscodeTemplates() const {
+std::vector<std::string> UpdateLiveAppRecordConfigRequest::getTranscodeTemplates() const {
   return transcodeTemplates_;
 }
 
-void AddLiveAppRecordConfigRequest::setTranscodeTemplates(const std::vector<std::string> &transcodeTemplates) {
+void UpdateLiveAppRecordConfigRequest::setTranscodeTemplates(const std::vector<std::string> &transcodeTemplates) {
   transcodeTemplates_ = transcodeTemplates;
 }
 
-std::string AddLiveAppRecordConfigRequest::getStartTime() const {
+std::string UpdateLiveAppRecordConfigRequest::getStartTime() const {
   return startTime_;
 }
 
-void AddLiveAppRecordConfigRequest::setStartTime(const std::string &startTime) {
+void UpdateLiveAppRecordConfigRequest::setStartTime(const std::string &startTime) {
   startTime_ = startTime;
   setParameter(std::string("StartTime"), startTime);
 }
 
-std::string AddLiveAppRecordConfigRequest::getAppName() const {
+std::string UpdateLiveAppRecordConfigRequest::getAppName() const {
   return appName_;
 }
 
-void AddLiveAppRecordConfigRequest::setAppName(const std::string &appName) {
+void UpdateLiveAppRecordConfigRequest::setAppName(const std::string &appName) {
   appName_ = appName;
   setParameter(std::string("AppName"), appName);
 }
 
-std::string AddLiveAppRecordConfigRequest::getSecurityToken() const {
+std::string UpdateLiveAppRecordConfigRequest::getSecurityToken() const {
   return securityToken_;
 }
 
-void AddLiveAppRecordConfigRequest::setSecurityToken(const std::string &securityToken) {
+void UpdateLiveAppRecordConfigRequest::setSecurityToken(const std::string &securityToken) {
   securityToken_ = securityToken;
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::vector<AddLiveAppRecordConfigRequest::TranscodeRecordFormat> AddLiveAppRecordConfigRequest::getTranscodeRecordFormat() const {
+std::vector<UpdateLiveAppRecordConfigRequest::TranscodeRecordFormat> UpdateLiveAppRecordConfigRequest::getTranscodeRecordFormat() const {
   return transcodeRecordFormat_;
 }
 
-void AddLiveAppRecordConfigRequest::setTranscodeRecordFormat(const std::vector<AddLiveAppRecordConfigRequest::TranscodeRecordFormat> &transcodeRecordFormat) {
+void UpdateLiveAppRecordConfigRequest::setTranscodeRecordFormat(const std::vector<UpdateLiveAppRecordConfigRequest::TranscodeRecordFormat> &transcodeRecordFormat) {
   transcodeRecordFormat_ = transcodeRecordFormat;
   for(int dep1 = 0; dep1 != transcodeRecordFormat.size(); dep1++) {
   auto transcodeRecordFormatObj = transcodeRecordFormat.at(dep1);
   std::string transcodeRecordFormatObjStr = std::string("TranscodeRecordFormat") + "." + std::to_string(dep1 + 1);
-    setParameter(transcodeRecordFormatObjStr + ".SliceOssObjectPrefix", transcodeRecordFormatObj.sliceOssObjectPrefix);
     setParameter(transcodeRecordFormatObjStr + ".SliceDuration", std::to_string(transcodeRecordFormatObj.sliceDuration));
-    setParameter(transcodeRecordFormatObjStr + ".OssObjectPrefix", transcodeRecordFormatObj.ossObjectPrefix);
     setParameter(transcodeRecordFormatObjStr + ".Format", transcodeRecordFormatObj.format);
     setParameter(transcodeRecordFormatObjStr + ".CycleDuration", std::to_string(transcodeRecordFormatObj.cycleDuration));
   }
 }
 
-int AddLiveAppRecordConfigRequest::getOnDemand() const {
+int UpdateLiveAppRecordConfigRequest::getOnDemand() const {
   return onDemand_;
 }
 
-void AddLiveAppRecordConfigRequest::setOnDemand(int onDemand) {
+void UpdateLiveAppRecordConfigRequest::setOnDemand(int onDemand) {
   onDemand_ = onDemand;
   setParameter(std::string("OnDemand"), std::to_string(onDemand));
 }
 
-std::string AddLiveAppRecordConfigRequest::getStreamName() const {
+std::string UpdateLiveAppRecordConfigRequest::getStreamName() const {
   return streamName_;
 }
 
-void AddLiveAppRecordConfigRequest::setStreamName(const std::string &streamName) {
+void UpdateLiveAppRecordConfigRequest::setStreamName(const std::string &streamName) {
   streamName_ = streamName;
   setParameter(std::string("StreamName"), streamName);
 }
 
-std::string AddLiveAppRecordConfigRequest::getOssBucket() const {
-  return ossBucket_;
-}
-
-void AddLiveAppRecordConfigRequest::setOssBucket(const std::string &ossBucket) {
-  ossBucket_ = ossBucket;
-  setParameter(std::string("OssBucket"), ossBucket);
-}
-
-std::string AddLiveAppRecordConfigRequest::getDomainName() const {
+std::string UpdateLiveAppRecordConfigRequest::getDomainName() const {
   return domainName_;
 }
 
-void AddLiveAppRecordConfigRequest::setDomainName(const std::string &domainName) {
+void UpdateLiveAppRecordConfigRequest::setDomainName(const std::string &domainName) {
   domainName_ = domainName;
   setParameter(std::string("DomainName"), domainName);
 }
 
-std::string AddLiveAppRecordConfigRequest::getEndTime() const {
+std::string UpdateLiveAppRecordConfigRequest::getEndTime() const {
   return endTime_;
 }
 
-void AddLiveAppRecordConfigRequest::setEndTime(const std::string &endTime) {
+void UpdateLiveAppRecordConfigRequest::setEndTime(const std::string &endTime) {
   endTime_ = endTime;
   setParameter(std::string("EndTime"), endTime);
 }
 
-long AddLiveAppRecordConfigRequest::getOwnerId() const {
+long UpdateLiveAppRecordConfigRequest::getOwnerId() const {
   return ownerId_;
 }
 
-void AddLiveAppRecordConfigRequest::setOwnerId(long ownerId) {
+void UpdateLiveAppRecordConfigRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::vector<AddLiveAppRecordConfigRequest::RecordFormat> AddLiveAppRecordConfigRequest::getRecordFormat() const {
+std::vector<UpdateLiveAppRecordConfigRequest::RecordFormat> UpdateLiveAppRecordConfigRequest::getRecordFormat() const {
   return recordFormat_;
 }
 
-void AddLiveAppRecordConfigRequest::setRecordFormat(const std::vector<AddLiveAppRecordConfigRequest::RecordFormat> &recordFormat) {
+void UpdateLiveAppRecordConfigRequest::setRecordFormat(const std::vector<UpdateLiveAppRecordConfigRequest::RecordFormat> &recordFormat) {
   recordFormat_ = recordFormat;
   for(int dep1 = 0; dep1 != recordFormat.size(); dep1++) {
   auto recordFormatObj = recordFormat.at(dep1);
   std::string recordFormatObjStr = std::string("RecordFormat") + "." + std::to_string(dep1 + 1);
-    setParameter(recordFormatObjStr + ".SliceOssObjectPrefix", recordFormatObj.sliceOssObjectPrefix);
     setParameter(recordFormatObjStr + ".SliceDuration", std::to_string(recordFormatObj.sliceDuration));
-    setParameter(recordFormatObjStr + ".OssObjectPrefix", recordFormatObj.ossObjectPrefix);
     setParameter(recordFormatObjStr + ".Format", recordFormatObj.format);
     setParameter(recordFormatObjStr + ".CycleDuration", std::to_string(recordFormatObj.cycleDuration));
   }

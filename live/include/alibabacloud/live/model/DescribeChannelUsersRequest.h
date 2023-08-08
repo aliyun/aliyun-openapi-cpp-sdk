@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_CREATEEVENTSUBREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_CREATEEVENTSUBREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBECHANNELUSERSREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBECHANNELUSERSREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,38 +26,20 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT CreateEventSubRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT DescribeChannelUsersRequest : public RpcServiceRequest {
 public:
-	CreateEventSubRequest();
-	~CreateEventSubRequest();
-	int getRole() const;
-	void setRole(int role);
-	std::string getClientToken() const;
-	void setClientToken(const std::string &clientToken);
-	bool getNeedCallbackAuthorization() const;
-	void setNeedCallbackAuthorization(bool needCallbackAuthorization);
-	std::vector<std::string> getUsers() const;
-	void setUsers(const std::vector<std::string> &users);
+	DescribeChannelUsersRequest();
+	~DescribeChannelUsersRequest();
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
-	std::string getCallbackUrl() const;
-	void setCallbackUrl(const std::string &callbackUrl);
 	std::string getChannelId() const;
 	void setChannelId(const std::string &channelId);
-	std::vector<std::string> getEvents() const;
-	void setEvents(const std::vector<std::string> &events);
 
 private:
-	int role_;
-	std::string clientToken_;
-	bool needCallbackAuthorization_;
-	std::vector<std::string> users_;
 	std::string appId_;
-	std::string callbackUrl_;
 	std::string channelId_;
-	std::vector<std::string> events_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_CREATEEVENTSUBREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBECHANNELUSERSREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVERECORDVODCONFIGSRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVERECORDVODCONFIGSRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMPRELOADTASKSRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMPRELOADTASKSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,44 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveRecordVodConfigsResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveStreamPreloadTasksResult : public ServiceResult
 			{
 			public:
-				struct LiveRecordVodConfig
+				struct PreloadTask
 				{
-					std::string streamName;
-					std::string composeVodTranscodeGroupId;
-					std::string autoCompose;
+					std::string status;
+					std::string preloadedEndTime;
+					std::string area;
+					std::string description;
+					std::string taskId;
 					std::string domainName;
+					std::string playUrl;
 					std::string createTime;
-					int cycleDuration;
-					std::string storageLocation;
-					int onDemand;
-					std::string appName;
-					std::string vodTranscodeGroupId;
+					std::string preloadedStartTime;
+					std::string process;
 				};
 
 
-				DescribeLiveRecordVodConfigsResult();
-				explicit DescribeLiveRecordVodConfigsResult(const std::string &payload);
-				~DescribeLiveRecordVodConfigsResult();
-				std::vector<LiveRecordVodConfig> getLiveRecordVodConfigs()const;
+				DescribeLiveStreamPreloadTasksResult();
+				explicit DescribeLiveStreamPreloadTasksResult(const std::string &payload);
+				~DescribeLiveStreamPreloadTasksResult();
+				std::vector<PreloadTask> getPreloadTasks()const;
+				int getTotalNum()const;
+				int getTotalPage()const;
 				int getPageNum()const;
 				int getPageSize()const;
-				std::string getTotal()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<LiveRecordVodConfig> liveRecordVodConfigs_;
+				std::vector<PreloadTask> preloadTasks_;
+				int totalNum_;
+				int totalPage_;
 				int pageNum_;
 				int pageSize_;
-				std::string total_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVERECORDVODCONFIGSRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMPRELOADTASKSRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_ADDLIVEAPPRECORDCONFIGREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_ADDLIVEAPPRECORDCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_UPDATELIVEAPPRECORDCONFIGREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_UPDATELIVEAPPRECORDCONFIGREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,24 +26,20 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT AddLiveAppRecordConfigRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT UpdateLiveAppRecordConfigRequest : public RpcServiceRequest {
 public:
 	struct TranscodeRecordFormat {
-		std::string sliceOssObjectPrefix;
 		int sliceDuration;
-		std::string ossObjectPrefix;
 		std::string format;
 		int cycleDuration;
 	};
 	struct RecordFormat {
-		std::string sliceOssObjectPrefix;
 		int sliceDuration;
-		std::string ossObjectPrefix;
 		std::string format;
 		int cycleDuration;
 	};
-	AddLiveAppRecordConfigRequest();
-	~AddLiveAppRecordConfigRequest();
+	UpdateLiveAppRecordConfigRequest();
+	~UpdateLiveAppRecordConfigRequest();
 	std::string getOssEndpoint() const;
 	void setOssEndpoint(const std::string &ossEndpoint);
 	int getDelayTime() const;
@@ -62,8 +58,6 @@ public:
 	void setOnDemand(int onDemand);
 	std::string getStreamName() const;
 	void setStreamName(const std::string &streamName);
-	std::string getOssBucket() const;
-	void setOssBucket(const std::string &ossBucket);
 	std::string getDomainName() const;
 	void setDomainName(const std::string &domainName);
 	std::string getEndTime() const;
@@ -83,7 +77,6 @@ private:
 	std::vector<TranscodeRecordFormat> transcodeRecordFormat_;
 	int onDemand_;
 	std::string streamName_;
-	std::string ossBucket_;
 	std::string domainName_;
 	std::string endTime_;
 	long ownerId_;
@@ -92,4 +85,4 @@ private:
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_ADDLIVEAPPRECORDCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_UPDATELIVEAPPRECORDCONFIGREQUEST_H_

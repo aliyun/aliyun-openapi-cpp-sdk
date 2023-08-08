@@ -43,10 +43,14 @@ void DescribeLiveRecordVodConfigsResult::parse(const std::string &payload)
 	for (auto valueLiveRecordVodConfigsLiveRecordVodConfig : allLiveRecordVodConfigsNode)
 	{
 		LiveRecordVodConfig liveRecordVodConfigsObject;
+		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["StorageLocation"].isNull())
+			liveRecordVodConfigsObject.storageLocation = valueLiveRecordVodConfigsLiveRecordVodConfig["StorageLocation"].asString();
 		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["AppName"].isNull())
 			liveRecordVodConfigsObject.appName = valueLiveRecordVodConfigsLiveRecordVodConfig["AppName"].asString();
 		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["AutoCompose"].isNull())
 			liveRecordVodConfigsObject.autoCompose = valueLiveRecordVodConfigsLiveRecordVodConfig["AutoCompose"].asString();
+		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["OnDemand"].isNull())
+			liveRecordVodConfigsObject.onDemand = std::stoi(valueLiveRecordVodConfigsLiveRecordVodConfig["OnDemand"].asString());
 		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["StreamName"].isNull())
 			liveRecordVodConfigsObject.streamName = valueLiveRecordVodConfigsLiveRecordVodConfig["StreamName"].asString();
 		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["CreateTime"].isNull())

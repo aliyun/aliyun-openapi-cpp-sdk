@@ -50,18 +50,19 @@ namespace AlibabaCloud
 						int sliceDuration;
 						std::string ossObjectPrefix;
 					};
-					std::string streamName;
 					std::string endTime;
-					std::string ossEndpoint;
 					std::string domainName;
 					std::string createTime;
 					std::vector<std::string> transcodeTemplates;
 					std::string startTime;
 					std::string ossBucket;
+					int delayTime;
 					std::vector<LiveAppRecord::RecordFormat> recordFormatList;
-					std::vector<LiveAppRecord::RecordFormat> transcodeRecordFormatList;
 					int onDemond;
 					std::string appName;
+					std::string streamName;
+					std::string ossEndpoint;
+					std::vector<LiveAppRecord::RecordFormat> transcodeRecordFormatList;
 				};
 
 

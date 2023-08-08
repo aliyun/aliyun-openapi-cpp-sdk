@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_ADDLIVERECORDVODCONFIGREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_ADDLIVERECORDVODCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_SETLIVESTREAMBLOCKREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_SETLIVESTREAMBLOCKREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,44 +26,35 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT AddLiveRecordVodConfigRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT SetLiveStreamBlockRequest : public RpcServiceRequest {
 public:
-	AddLiveRecordVodConfigRequest();
-	~AddLiveRecordVodConfigRequest();
-	std::string getAutoCompose() const;
-	void setAutoCompose(const std::string &autoCompose);
-	std::string getComposeVodTranscodeGroupId() const;
-	void setComposeVodTranscodeGroupId(const std::string &composeVodTranscodeGroupId);
-	std::string getStorageLocation() const;
-	void setStorageLocation(const std::string &storageLocation);
+	SetLiveStreamBlockRequest();
+	~SetLiveStreamBlockRequest();
+	std::string getLocationList() const;
+	void setLocationList(const std::string &locationList);
+	std::string getBlockType() const;
+	void setBlockType(const std::string &blockType);
+	std::string getReleaseTime() const;
+	void setReleaseTime(const std::string &releaseTime);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
-	int getOnDemand() const;
-	void setOnDemand(int onDemand);
 	std::string getStreamName() const;
 	void setStreamName(const std::string &streamName);
-	std::string getVodTranscodeGroupId() const;
-	void setVodTranscodeGroupId(const std::string &vodTranscodeGroupId);
 	std::string getDomainName() const;
 	void setDomainName(const std::string &domainName);
-	int getCycleDuration() const;
-	void setCycleDuration(int cycleDuration);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 
 private:
-	std::string autoCompose_;
-	std::string composeVodTranscodeGroupId_;
-	std::string storageLocation_;
+	std::string locationList_;
+	std::string blockType_;
+	std::string releaseTime_;
 	std::string appName_;
-	int onDemand_;
 	std::string streamName_;
-	std::string vodTranscodeGroupId_;
 	std::string domainName_;
-	int cycleDuration_;
 	long ownerId_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_ADDLIVERECORDVODCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_SETLIVESTREAMBLOCKREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_ADDLIVERECORDVODCONFIGREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_ADDLIVERECORDVODCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_UPDATELIVERECORDVODCONFIGREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_UPDATELIVERECORDVODCONFIGREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,10 +26,10 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT AddLiveRecordVodConfigRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT UpdateLiveRecordVodConfigRequest : public RpcServiceRequest {
 public:
-	AddLiveRecordVodConfigRequest();
-	~AddLiveRecordVodConfigRequest();
+	UpdateLiveRecordVodConfigRequest();
+	~UpdateLiveRecordVodConfigRequest();
 	std::string getAutoCompose() const;
 	void setAutoCompose(const std::string &autoCompose);
 	std::string getComposeVodTranscodeGroupId() const;
@@ -66,4 +66,4 @@ private:
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_ADDLIVERECORDVODCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_UPDATELIVERECORDVODCONFIGREQUEST_H_

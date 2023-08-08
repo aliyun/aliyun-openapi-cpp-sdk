@@ -36,19 +36,23 @@ namespace AlibabaCloud
 				{
 					struct CustomTranscodeParameters
 					{
+						std::string extWithSource;
 						int fPS;
 						std::string gop;
 						std::string templateType;
 						int audioBitrate;
+						std::string bitrateWithSource;
 						std::string bframes;
+						std::string resWithSource;
 						std::string audioProfile;
 						std::string videoProfile;
-						std::string rtsFlag;
 						int height;
+						std::string rtsFlag;
 						int audioChannelNum;
 						int width;
 						int audioRate;
 						std::string audioCodec;
+						std::string fpsWithSource;
 						int videoBitrate;
 					};
 					struct EncryptParameters

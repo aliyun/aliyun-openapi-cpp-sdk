@@ -51,6 +51,8 @@ void DescribeLiveRecordConfigResult::parse(const std::string &payload)
 			liveAppRecordListObject.appName = valueLiveAppRecordListLiveAppRecord["AppName"].asString();
 		if(!valueLiveAppRecordListLiveAppRecord["StreamName"].isNull())
 			liveAppRecordListObject.streamName = valueLiveAppRecordListLiveAppRecord["StreamName"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["DelayTime"].isNull())
+			liveAppRecordListObject.delayTime = std::stoi(valueLiveAppRecordListLiveAppRecord["DelayTime"].asString());
 		if(!valueLiveAppRecordListLiveAppRecord["CreateTime"].isNull())
 			liveAppRecordListObject.createTime = valueLiveAppRecordListLiveAppRecord["CreateTime"].asString();
 		if(!valueLiveAppRecordListLiveAppRecord["OnDemond"].isNull())

@@ -43,6 +43,15 @@ void CreateEventSubRequest::setClientToken(const std::string &clientToken) {
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+bool CreateEventSubRequest::getNeedCallbackAuthorization() const {
+  return needCallbackAuthorization_;
+}
+
+void CreateEventSubRequest::setNeedCallbackAuthorization(bool needCallbackAuthorization) {
+  needCallbackAuthorization_ = needCallbackAuthorization;
+  setParameter(std::string("NeedCallbackAuthorization"), needCallbackAuthorization ? "true" : "false");
+}
+
 std::vector<std::string> CreateEventSubRequest::getUsers() const {
   return users_;
 }

@@ -25,6 +25,15 @@ DescribeLiveStreamTranscodeInfoRequest::DescribeLiveStreamTranscodeInfoRequest()
 
 DescribeLiveStreamTranscodeInfoRequest::~DescribeLiveStreamTranscodeInfoRequest() {}
 
+std::string DescribeLiveStreamTranscodeInfoRequest::getAppName() const {
+  return appName_;
+}
+
+void DescribeLiveStreamTranscodeInfoRequest::setAppName(const std::string &appName) {
+  appName_ = appName;
+  setParameter(std::string("AppName"), appName);
+}
+
 long DescribeLiveStreamTranscodeInfoRequest::getOwnerId() const {
   return ownerId_;
 }

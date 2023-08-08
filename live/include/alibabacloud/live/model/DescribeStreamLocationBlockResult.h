@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVERECORDVODCONFIGSRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVERECORDVODCONFIGSRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBESTREAMLOCATIONBLOCKRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBESTREAMLOCATIONBLOCKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveRecordVodConfigsResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeStreamLocationBlockResult : public ServiceResult
 			{
 			public:
-				struct LiveRecordVodConfig
+				struct StreamBlock
 				{
+					int status;
 					std::string streamName;
-					std::string composeVodTranscodeGroupId;
-					std::string autoCompose;
+					std::string blockType;
+					std::string releaseTime;
 					std::string domainName;
-					std::string createTime;
-					int cycleDuration;
-					std::string storageLocation;
-					int onDemand;
+					std::string updateTime;
+					std::string locationList;
 					std::string appName;
-					std::string vodTranscodeGroupId;
 				};
 
 
-				DescribeLiveRecordVodConfigsResult();
-				explicit DescribeLiveRecordVodConfigsResult(const std::string &payload);
-				~DescribeLiveRecordVodConfigsResult();
-				std::vector<LiveRecordVodConfig> getLiveRecordVodConfigs()const;
+				DescribeStreamLocationBlockResult();
+				explicit DescribeStreamLocationBlockResult(const std::string &payload);
+				~DescribeStreamLocationBlockResult();
+				int getTotalPage()const;
 				int getPageNum()const;
 				int getPageSize()const;
-				std::string getTotal()const;
+				std::vector<StreamBlock> getStreamBlockList()const;
+				int getCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<LiveRecordVodConfig> liveRecordVodConfigs_;
+				int totalPage_;
 				int pageNum_;
 				int pageSize_;
-				std::string total_;
+				std::vector<StreamBlock> streamBlockList_;
+				int count_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVERECORDVODCONFIGSRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBESTREAMLOCATIONBLOCKRESULT_H_

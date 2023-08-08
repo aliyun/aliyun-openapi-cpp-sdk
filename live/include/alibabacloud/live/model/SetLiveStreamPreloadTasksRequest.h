@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMTRANSCODEINFOREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMTRANSCODEINFOREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_SETLIVESTREAMPRELOADTASKSREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_SETLIVESTREAMPRELOADTASKSREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,32 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT DescribeLiveStreamTranscodeInfoRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT SetLiveStreamPreloadTasksRequest : public RpcServiceRequest {
 public:
-	DescribeLiveStreamTranscodeInfoRequest();
-	~DescribeLiveStreamTranscodeInfoRequest();
-	std::string getAppName() const;
-	void setAppName(const std::string &appName);
+	SetLiveStreamPreloadTasksRequest();
+	~SetLiveStreamPreloadTasksRequest();
+	std::string getPreloadedStartTime() const;
+	void setPreloadedStartTime(const std::string &preloadedStartTime);
+	std::string getArea() const;
+	void setArea(const std::string &area);
+	std::string getPreloadedEndTime() const;
+	void setPreloadedEndTime(const std::string &preloadedEndTime);
+	std::string getDomainName() const;
+	void setDomainName(const std::string &domainName);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getDomainTranscodeName() const;
-	void setDomainTranscodeName(const std::string &domainTranscodeName);
+	std::string getPlayUrl() const;
+	void setPlayUrl(const std::string &playUrl);
 
 private:
-	std::string appName_;
+	std::string preloadedStartTime_;
+	std::string area_;
+	std::string preloadedEndTime_;
+	std::string domainName_;
 	long ownerId_;
-	std::string domainTranscodeName_;
+	std::string playUrl_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMTRANSCODEINFOREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_SETLIVESTREAMPRELOADTASKSREQUEST_H_

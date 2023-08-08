@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMTRANSCODEINFOREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMTRANSCODEINFOREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINTRANSCODEPARAMSREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINTRANSCODEPARAMSREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,23 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT DescribeLiveStreamTranscodeInfoRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainTranscodeParamsRequest : public RpcServiceRequest {
 public:
-	DescribeLiveStreamTranscodeInfoRequest();
-	~DescribeLiveStreamTranscodeInfoRequest();
-	std::string getAppName() const;
-	void setAppName(const std::string &appName);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
-	std::string getDomainTranscodeName() const;
-	void setDomainTranscodeName(const std::string &domainTranscodeName);
+	DescribeLiveDomainTranscodeParamsRequest();
+	~DescribeLiveDomainTranscodeParamsRequest();
+	std::string getPushdomain() const;
+	void setPushdomain(const std::string &pushdomain);
+	std::string getApp() const;
+	void setApp(const std::string &app);
+	std::string getTemplate_name() const;
+	void setTemplate_name(const std::string &template_name);
 
 private:
-	std::string appName_;
-	long ownerId_;
-	std::string domainTranscodeName_;
+	std::string pushdomain_;
+	std::string app_;
+	std::string template_name_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMTRANSCODEINFOREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINTRANSCODEPARAMSREQUEST_H_
