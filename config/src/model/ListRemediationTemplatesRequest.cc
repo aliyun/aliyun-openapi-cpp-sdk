@@ -19,7 +19,7 @@
 using AlibabaCloud::Config::Model::ListRemediationTemplatesRequest;
 
 ListRemediationTemplatesRequest::ListRemediationTemplatesRequest()
-    : RpcServiceRequest("config", "2019-01-08", "ListRemediationTemplates") {
+    : RpcServiceRequest("config", "2020-09-07", "ListRemediationTemplates") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -41,5 +41,23 @@ std::string ListRemediationTemplatesRequest::getRemediationType() const {
 void ListRemediationTemplatesRequest::setRemediationType(const std::string &remediationType) {
   remediationType_ = remediationType;
   setParameter(std::string("RemediationType"), remediationType);
+}
+
+long ListRemediationTemplatesRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void ListRemediationTemplatesRequest::setPageNumber(long pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+long ListRemediationTemplatesRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListRemediationTemplatesRequest::setPageSize(long pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

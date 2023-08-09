@@ -39,16 +39,18 @@ namespace AlibabaCloud
 						long resourceCreationTime;
 						long accountId;
 						std::string resourceId;
+						long version;
 						std::string resourceName;
 						std::string region;
 						std::string resourceStatus;
+						std::string availabilityZone;
 						std::string resourceType;
 						std::string tags;
 						int resourceDeleted;
 					};
 					int totalCount;
-					int pageSize;
-					int pageNumber;
+					std::string nextToken;
+					int maxResults;
 					std::vector<DiscoveredResourceProfile> discoveredResourceProfileList;
 				};
 

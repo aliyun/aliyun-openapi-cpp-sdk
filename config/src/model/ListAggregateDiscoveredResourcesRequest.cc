@@ -19,7 +19,7 @@
 using AlibabaCloud::Config::Model::ListAggregateDiscoveredResourcesRequest;
 
 ListAggregateDiscoveredResourcesRequest::ListAggregateDiscoveredResourcesRequest()
-    : RpcServiceRequest("config", "2019-01-08", "ListAggregateDiscoveredResources") {
+    : RpcServiceRequest("config", "2020-09-07", "ListAggregateDiscoveredResources") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -61,15 +61,6 @@ void ListAggregateDiscoveredResourcesRequest::setAggregatorId(const std::string 
   setParameter(std::string("AggregatorId"), aggregatorId);
 }
 
-int ListAggregateDiscoveredResourcesRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void ListAggregateDiscoveredResourcesRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
-}
-
 std::string ListAggregateDiscoveredResourcesRequest::getFolderId() const {
   return folderId_;
 }
@@ -79,22 +70,22 @@ void ListAggregateDiscoveredResourcesRequest::setFolderId(const std::string &fol
   setParameter(std::string("FolderId"), folderId);
 }
 
-int ListAggregateDiscoveredResourcesRequest::getPageSize() const {
-  return pageSize_;
+long ListAggregateDiscoveredResourcesRequest::getResourceAccountId() const {
+  return resourceAccountId_;
 }
 
-void ListAggregateDiscoveredResourcesRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
+void ListAggregateDiscoveredResourcesRequest::setResourceAccountId(long resourceAccountId) {
+  resourceAccountId_ = resourceAccountId;
+  setParameter(std::string("ResourceAccountId"), std::to_string(resourceAccountId));
 }
 
-std::string ListAggregateDiscoveredResourcesRequest::getComplianceType() const {
-  return complianceType_;
+std::string ListAggregateDiscoveredResourcesRequest::getNextToken() const {
+  return nextToken_;
 }
 
-void ListAggregateDiscoveredResourcesRequest::setComplianceType(const std::string &complianceType) {
-  complianceType_ = complianceType;
-  setParameter(std::string("ComplianceType"), complianceType);
+void ListAggregateDiscoveredResourcesRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
 }
 
 std::string ListAggregateDiscoveredResourcesRequest::getResourceId() const {
@@ -113,5 +104,14 @@ std::string ListAggregateDiscoveredResourcesRequest::getResourceTypes() const {
 void ListAggregateDiscoveredResourcesRequest::setResourceTypes(const std::string &resourceTypes) {
   resourceTypes_ = resourceTypes;
   setParameter(std::string("ResourceTypes"), resourceTypes);
+}
+
+int ListAggregateDiscoveredResourcesRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void ListAggregateDiscoveredResourcesRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 

@@ -32,21 +32,15 @@ public:
 	~StartConfigRuleEvaluationRequest();
 	std::string getConfigRuleId() const;
 	void setConfigRuleId(const std::string &configRuleId);
-	bool getMultiAccount() const;
-	void setMultiAccount(bool multiAccount);
 	std::string getCompliancePackId() const;
 	void setCompliancePackId(const std::string &compliancePackId);
 	bool getRevertEvaluation() const;
 	void setRevertEvaluation(bool revertEvaluation);
-	long getMemberId() const;
-	void setMemberId(long memberId);
 
 private:
 	std::string configRuleId_;
-	bool multiAccount_;
 	std::string compliancePackId_;
 	bool revertEvaluation_;
-	long memberId_;
 };
 } // namespace Model
 } // namespace Config

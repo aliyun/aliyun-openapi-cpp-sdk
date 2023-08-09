@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string compulsoryParameters;
 					std::string templateName;
 					std::string templateDefinition;
+					std::string templateDescription;
 					std::string remediationType;
 				};
 
@@ -45,11 +46,17 @@ namespace AlibabaCloud
 				ListRemediationTemplatesResult();
 				explicit ListRemediationTemplatesResult(const std::string &payload);
 				~ListRemediationTemplatesResult();
+				std::string getTotalCount()const;
+				long getPageSize()const;
+				long getPageNumber()const;
 				std::vector<RemediationTemplate> getRemediationTemplates()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string totalCount_;
+				long pageSize_;
+				long pageNumber_;
 				std::vector<RemediationTemplate> remediationTemplates_;
 
 			};

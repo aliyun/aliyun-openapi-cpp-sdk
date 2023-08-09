@@ -19,7 +19,7 @@
 using AlibabaCloud::Config::Model::DeleteConfigRulesRequest;
 
 DeleteConfigRulesRequest::DeleteConfigRulesRequest()
-    : RpcServiceRequest("config", "2019-01-08", "DeleteConfigRules") {
+    : RpcServiceRequest("config", "2020-09-07", "DeleteConfigRules") {
   setMethod(HttpRequest::Method::Post);
 }
 

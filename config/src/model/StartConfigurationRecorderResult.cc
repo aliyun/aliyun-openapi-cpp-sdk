@@ -40,14 +40,8 @@ void StartConfigurationRecorderResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto configurationRecorderNode = value["ConfigurationRecorder"];
-	if(!configurationRecorderNode["OrganizationEnableStatus"].isNull())
-		configurationRecorder_.organizationEnableStatus = configurationRecorderNode["OrganizationEnableStatus"].asString();
 	if(!configurationRecorderNode["ConfigurationRecorderStatus"].isNull())
 		configurationRecorder_.configurationRecorderStatus = configurationRecorderNode["ConfigurationRecorderStatus"].asString();
-	if(!configurationRecorderNode["OrganizationMasterId"].isNull())
-		configurationRecorder_.organizationMasterId = std::stol(configurationRecorderNode["OrganizationMasterId"].asString());
-	if(!configurationRecorderNode["AccountId"].isNull())
-		configurationRecorder_.accountId = std::stol(configurationRecorderNode["AccountId"].asString());
 		auto allResourceTypes = configurationRecorderNode["ResourceTypes"]["ResourceType"];
 		for (auto value : allResourceTypes)
 			configurationRecorder_.resourceTypes.push_back(value.asString());

@@ -45,11 +45,6 @@ namespace AlibabaCloud
 						{
 							std::string compliancePackId;
 							std::string compliancePackName;
-							std::string creatorId;
-							std::string configRuleSceneName;
-							std::string configRuleSceneId;
-							std::string creatorType;
-							std::string creatorName;
 						};
 						struct Tag
 						{
@@ -63,13 +58,14 @@ namespace AlibabaCloud
 						CreateBy createBy;
 						std::string sourceIdentifier;
 						std::string configRuleState;
-						std::string compliancePackId;
 						std::string configRuleId;
 						std::string configRuleArn;
 						std::string automationType;
 						std::string configRuleName;
 						int riskLevel;
+						std::string resourceTypesScope;
 						std::vector<ConfigRule::Tag> tags;
+						std::string serviceChannel;
 					};
 					long totalCount;
 					int pageSize;

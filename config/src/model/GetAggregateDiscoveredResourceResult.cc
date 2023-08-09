@@ -62,6 +62,8 @@ void GetAggregateDiscoveredResourceResult::parse(const std::string &payload)
 		discoveredResourceDetail_.resourceName = discoveredResourceDetailNode["ResourceName"].asString();
 	if(!discoveredResourceDetailNode["ResourceStatus"].isNull())
 		discoveredResourceDetail_.resourceStatus = discoveredResourceDetailNode["ResourceStatus"].asString();
+	if(!discoveredResourceDetailNode["Version"].isNull())
+		discoveredResourceDetail_.version = std::stol(discoveredResourceDetailNode["Version"].asString());
 
 }
 

@@ -30,11 +30,8 @@ class ALIBABACLOUD_CONFIG_EXPORT StartConfigurationRecorderRequest : public RpcS
 public:
 	StartConfigurationRecorderRequest();
 	~StartConfigurationRecorderRequest();
-	bool getEnterpriseEdition() const;
-	void setEnterpriseEdition(bool enterpriseEdition);
 
 private:
-	bool enterpriseEdition_;
 };
 } // namespace Model
 } // namespace Config

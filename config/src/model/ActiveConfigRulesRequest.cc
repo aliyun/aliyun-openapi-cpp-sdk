@@ -19,7 +19,7 @@
 using AlibabaCloud::Config::Model::ActiveConfigRulesRequest;
 
 ActiveConfigRulesRequest::ActiveConfigRulesRequest()
-    : RpcServiceRequest("config", "2019-01-08", "ActiveConfigRules") {
+    : RpcServiceRequest("config", "2020-09-07", "ActiveConfigRules") {
   setMethod(HttpRequest::Method::Post);
 }
 

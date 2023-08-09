@@ -34,10 +34,16 @@ public:
 	void setManagedRuleIdentifier(const std::string &managedRuleIdentifier);
 	std::string getRemediationType() const;
 	void setRemediationType(const std::string &remediationType);
+	long getPageNumber() const;
+	void setPageNumber(long pageNumber);
+	long getPageSize() const;
+	void setPageSize(long pageSize);
 
 private:
 	std::string managedRuleIdentifier_;
 	std::string remediationType_;
+	long pageNumber_;
+	long pageSize_;
 };
 } // namespace Model
 } // namespace Config

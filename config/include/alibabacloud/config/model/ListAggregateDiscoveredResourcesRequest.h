@@ -38,30 +38,30 @@ public:
 	void setRegions(const std::string &regions);
 	std::string getAggregatorId() const;
 	void setAggregatorId(const std::string &aggregatorId);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
 	std::string getFolderId() const;
 	void setFolderId(const std::string &folderId);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::string getComplianceType() const;
-	void setComplianceType(const std::string &complianceType);
+	long getResourceAccountId() const;
+	void setResourceAccountId(long resourceAccountId);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	std::string getResourceId() const;
 	void setResourceId(const std::string &resourceId);
 	std::string getResourceTypes() const;
 	void setResourceTypes(const std::string &resourceTypes);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
 
 private:
 	int resourceDeleted_;
 	long resourceOwnerId_;
 	std::string regions_;
 	std::string aggregatorId_;
-	int pageNumber_;
 	std::string folderId_;
-	int pageSize_;
-	std::string complianceType_;
+	long resourceAccountId_;
+	std::string nextToken_;
 	std::string resourceId_;
 	std::string resourceTypes_;
+	int maxResults_;
 };
 } // namespace Model
 } // namespace Config

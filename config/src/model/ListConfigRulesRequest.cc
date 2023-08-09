@@ -19,20 +19,11 @@
 using AlibabaCloud::Config::Model::ListConfigRulesRequest;
 
 ListConfigRulesRequest::ListConfigRulesRequest()
-    : RpcServiceRequest("config", "2019-01-08", "ListConfigRules") {
+    : RpcServiceRequest("config", "2020-09-07", "ListConfigRules") {
   setMethod(HttpRequest::Method::Post);
 }
 
 ListConfigRulesRequest::~ListConfigRulesRequest() {}
-
-bool ListConfigRulesRequest::getMultiAccount() const {
-  return multiAccount_;
-}
-
-void ListConfigRulesRequest::setMultiAccount(bool multiAccount) {
-  multiAccount_ = multiAccount;
-  setParameter(std::string("MultiAccount"), multiAccount ? "true" : "false");
-}
 
 bool ListConfigRulesRequest::getFilterInCompliancePack() const {
   return filterInCompliancePack_;
@@ -41,15 +32,6 @@ bool ListConfigRulesRequest::getFilterInCompliancePack() const {
 void ListConfigRulesRequest::setFilterInCompliancePack(bool filterInCompliancePack) {
   filterInCompliancePack_ = filterInCompliancePack;
   setParameter(std::string("FilterInCompliancePack"), filterInCompliancePack ? "true" : "false");
-}
-
-std::string ListConfigRulesRequest::getMessageType() const {
-  return messageType_;
-}
-
-void ListConfigRulesRequest::setMessageType(const std::string &messageType) {
-  messageType_ = messageType;
-  setParameter(std::string("MessageType"), messageType);
 }
 
 std::string ListConfigRulesRequest::getConfigRuleState() const {
@@ -97,14 +79,13 @@ void ListConfigRulesRequest::setCompliancePackId(const std::string &compliancePa
   setParameter(std::string("CompliancePackId"), compliancePackId);
 }
 
-ListConfigRulesRequest::Tag ListConfigRulesRequest::getTag() const {
-  return tag_;
+std::string ListConfigRulesRequest::getKeyword() const {
+  return keyword_;
 }
 
-void ListConfigRulesRequest::setTag(const ListConfigRulesRequest::Tag &tag) {
-  tag_ = tag;
-  setParameter(std::string("Tag") + ".Value", tag.value);
-  setParameter(std::string("Tag") + ".Key", tag.key);
+void ListConfigRulesRequest::setKeyword(const std::string &keyword) {
+  keyword_ = keyword;
+  setParameter(std::string("Keyword"), keyword);
 }
 
 std::string ListConfigRulesRequest::getComplianceType() const {
@@ -116,13 +97,13 @@ void ListConfigRulesRequest::setComplianceType(const std::string &complianceType
   setParameter(std::string("ComplianceType"), complianceType);
 }
 
-std::string ListConfigRulesRequest::getConfigRuleSceneId() const {
-  return configRuleSceneId_;
+std::string ListConfigRulesRequest::getResourceTypes() const {
+  return resourceTypes_;
 }
 
-void ListConfigRulesRequest::setConfigRuleSceneId(const std::string &configRuleSceneId) {
-  configRuleSceneId_ = configRuleSceneId;
-  setParameter(std::string("ConfigRuleSceneId"), configRuleSceneId);
+void ListConfigRulesRequest::setResourceTypes(const std::string &resourceTypes) {
+  resourceTypes_ = resourceTypes;
+  setParameter(std::string("ResourceTypes"), resourceTypes);
 }
 
 int ListConfigRulesRequest::getRiskLevel() const {
@@ -143,12 +124,12 @@ void ListConfigRulesRequest::setConfigRuleName(const std::string &configRuleName
   setParameter(std::string("ConfigRuleName"), configRuleName);
 }
 
-long ListConfigRulesRequest::getMemberId() const {
-  return memberId_;
+std::string ListConfigRulesRequest::getServiceChannel() const {
+  return serviceChannel_;
 }
 
-void ListConfigRulesRequest::setMemberId(long memberId) {
-  memberId_ = memberId;
-  setParameter(std::string("MemberId"), std::to_string(memberId));
+void ListConfigRulesRequest::setServiceChannel(const std::string &serviceChannel) {
+  serviceChannel_ = serviceChannel;
+  setParameter(std::string("ServiceChannel"), serviceChannel);
 }
 

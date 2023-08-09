@@ -53,9 +53,32 @@ void ListRemediationTemplatesResult::parse(const std::string &payload)
 			remediationTemplatesObject.templateName = valueRemediationTemplatesRemediationTemplate["TemplateName"].asString();
 		if(!valueRemediationTemplatesRemediationTemplate["TemplateDefinition"].isNull())
 			remediationTemplatesObject.templateDefinition = valueRemediationTemplatesRemediationTemplate["TemplateDefinition"].asString();
+		if(!valueRemediationTemplatesRemediationTemplate["TemplateDescription"].isNull())
+			remediationTemplatesObject.templateDescription = valueRemediationTemplatesRemediationTemplate["TemplateDescription"].asString();
 		remediationTemplates_.push_back(remediationTemplatesObject);
 	}
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = value["TotalCount"].asString();
 
+}
+
+std::string ListRemediationTemplatesResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
+long ListRemediationTemplatesResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+long ListRemediationTemplatesResult::getPageNumber()const
+{
+	return pageNumber_;
 }
 
 std::vector<ListRemediationTemplatesResult::RemediationTemplate> ListRemediationTemplatesResult::getRemediationTemplates()const

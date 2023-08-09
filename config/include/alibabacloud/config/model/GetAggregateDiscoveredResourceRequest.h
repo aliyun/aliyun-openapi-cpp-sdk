@@ -38,6 +38,8 @@ public:
 	void setAggregatorId(const std::string &aggregatorId);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
+	long getResourceAccountId() const;
+	void setResourceAccountId(long resourceAccountId);
 	std::string getRegion() const;
 	void setRegion(const std::string &region);
 
@@ -46,6 +48,7 @@ private:
 	long resourceOwnerId_;
 	std::string aggregatorId_;
 	std::string resourceType_;
+	long resourceAccountId_;
 	std::string region_;
 };
 } // namespace Model

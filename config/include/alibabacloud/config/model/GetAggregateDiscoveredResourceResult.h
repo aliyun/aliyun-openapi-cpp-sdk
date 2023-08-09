@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					long accountId;
 					std::string configuration;
 					std::string resourceId;
+					long version;
 					std::string resourceName;
 					std::string availabilityZone;
 					std::string region;

@@ -28,18 +28,10 @@ namespace Config {
 namespace Model {
 class ALIBABACLOUD_CONFIG_EXPORT ListConfigRulesRequest : public RpcServiceRequest {
 public:
-	struct Tag {
-		std::string value;
-		std::string key;
-	};
 	ListConfigRulesRequest();
 	~ListConfigRulesRequest();
-	bool getMultiAccount() const;
-	void setMultiAccount(bool multiAccount);
 	bool getFilterInCompliancePack() const;
 	void setFilterInCompliancePack(bool filterInCompliancePack);
-	std::string getMessageType() const;
-	void setMessageType(const std::string &messageType);
 	std::string getConfigRuleState() const;
 	void setConfigRuleState(const std::string &configRuleState);
 	std::string getFilterInCompliancePackExcludeIds() const;
@@ -50,34 +42,32 @@ public:
 	void setPageSize(int pageSize);
 	std::string getCompliancePackId() const;
 	void setCompliancePackId(const std::string &compliancePackId);
-	Tag getTag() const;
-	void setTag(const Tag &tag);
+	std::string getKeyword() const;
+	void setKeyword(const std::string &keyword);
 	std::string getComplianceType() const;
 	void setComplianceType(const std::string &complianceType);
-	std::string getConfigRuleSceneId() const;
-	void setConfigRuleSceneId(const std::string &configRuleSceneId);
+	std::string getResourceTypes() const;
+	void setResourceTypes(const std::string &resourceTypes);
 	int getRiskLevel() const;
 	void setRiskLevel(int riskLevel);
 	std::string getConfigRuleName() const;
 	void setConfigRuleName(const std::string &configRuleName);
-	long getMemberId() const;
-	void setMemberId(long memberId);
+	std::string getServiceChannel() const;
+	void setServiceChannel(const std::string &serviceChannel);
 
 private:
-	bool multiAccount_;
 	bool filterInCompliancePack_;
-	std::string messageType_;
 	std::string configRuleState_;
 	std::string filterInCompliancePackExcludeIds_;
 	int pageNumber_;
 	int pageSize_;
 	std::string compliancePackId_;
-	Tag tag_;
+	std::string keyword_;
 	std::string complianceType_;
-	std::string configRuleSceneId_;
+	std::string resourceTypes_;
 	int riskLevel_;
 	std::string configRuleName_;
-	long memberId_;
+	std::string serviceChannel_;
 };
 } // namespace Model
 } // namespace Config

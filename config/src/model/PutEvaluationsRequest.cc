@@ -19,7 +19,7 @@
 using AlibabaCloud::Config::Model::PutEvaluationsRequest;
 
 PutEvaluationsRequest::PutEvaluationsRequest()
-    : RpcServiceRequest("config", "2019-01-08", "PutEvaluations") {
+    : RpcServiceRequest("config", "2020-09-07", "PutEvaluations") {
   setMethod(HttpRequest::Method::Post);
 }
 

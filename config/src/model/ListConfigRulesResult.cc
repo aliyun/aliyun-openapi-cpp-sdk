@@ -40,18 +40,16 @@ void ListConfigRulesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto configRulesNode = value["ConfigRules"];
-	if(!configRulesNode["PageNumber"].isNull())
-		configRules_.pageNumber = std::stoi(configRulesNode["PageNumber"].asString());
 	if(!configRulesNode["PageSize"].isNull())
 		configRules_.pageSize = std::stoi(configRulesNode["PageSize"].asString());
+	if(!configRulesNode["PageNumber"].isNull())
+		configRules_.pageNumber = std::stoi(configRulesNode["PageNumber"].asString());
 	if(!configRulesNode["TotalCount"].isNull())
 		configRules_.totalCount = std::stol(configRulesNode["TotalCount"].asString());
 	auto allConfigRuleListNode = configRulesNode["ConfigRuleList"]["ConfigRule"];
 	for (auto configRulesNodeConfigRuleListConfigRule : allConfigRuleListNode)
 	{
 		ConfigRules::ConfigRule configRuleObject;
-		if(!configRulesNodeConfigRuleListConfigRule["CompliancePackId"].isNull())
-			configRuleObject.compliancePackId = configRulesNodeConfigRuleListConfigRule["CompliancePackId"].asString();
 		if(!configRulesNodeConfigRuleListConfigRule["RiskLevel"].isNull())
 			configRuleObject.riskLevel = std::stoi(configRulesNodeConfigRuleListConfigRule["RiskLevel"].asString());
 		if(!configRulesNodeConfigRuleListConfigRule["SourceOwner"].isNull())
@@ -72,6 +70,10 @@ void ListConfigRulesResult::parse(const std::string &payload)
 			configRuleObject.configRuleName = configRulesNodeConfigRuleListConfigRule["ConfigRuleName"].asString();
 		if(!configRulesNodeConfigRuleListConfigRule["ConfigRuleId"].isNull())
 			configRuleObject.configRuleId = configRulesNodeConfigRuleListConfigRule["ConfigRuleId"].asString();
+		if(!configRulesNodeConfigRuleListConfigRule["ResourceTypesScope"].isNull())
+			configRuleObject.resourceTypesScope = configRulesNodeConfigRuleListConfigRule["ResourceTypesScope"].asString();
+		if(!configRulesNodeConfigRuleListConfigRule["ServiceChannel"].isNull())
+			configRuleObject.serviceChannel = configRulesNodeConfigRuleListConfigRule["ServiceChannel"].asString();
 		auto allTagsNode = configRulesNodeConfigRuleListConfigRule["Tags"]["tag"];
 		for (auto configRulesNodeConfigRuleListConfigRuleTagstag : allTagsNode)
 		{
@@ -90,18 +92,8 @@ void ListConfigRulesResult::parse(const std::string &payload)
 		auto createByNode = value["CreateBy"];
 		if(!createByNode["CompliancePackId"].isNull())
 			configRuleObject.createBy.compliancePackId = createByNode["CompliancePackId"].asString();
-		if(!createByNode["ConfigRuleSceneId"].isNull())
-			configRuleObject.createBy.configRuleSceneId = createByNode["ConfigRuleSceneId"].asString();
 		if(!createByNode["CompliancePackName"].isNull())
 			configRuleObject.createBy.compliancePackName = createByNode["CompliancePackName"].asString();
-		if(!createByNode["CreatorName"].isNull())
-			configRuleObject.createBy.creatorName = createByNode["CreatorName"].asString();
-		if(!createByNode["CreatorType"].isNull())
-			configRuleObject.createBy.creatorType = createByNode["CreatorType"].asString();
-		if(!createByNode["CreatorId"].isNull())
-			configRuleObject.createBy.creatorId = createByNode["CreatorId"].asString();
-		if(!createByNode["ConfigRuleSceneName"].isNull())
-			configRuleObject.createBy.configRuleSceneName = createByNode["ConfigRuleSceneName"].asString();
 		configRules_.configRuleList.push_back(configRuleObject);
 	}
 

@@ -19,7 +19,7 @@
 using AlibabaCloud::Config::Model::GetAggregateDiscoveredResourceRequest;
 
 GetAggregateDiscoveredResourceRequest::GetAggregateDiscoveredResourceRequest()
-    : RpcServiceRequest("config", "2019-01-08", "GetAggregateDiscoveredResource") {
+    : RpcServiceRequest("config", "2020-09-07", "GetAggregateDiscoveredResource") {
   setMethod(HttpRequest::Method::Get);
 }
 
@@ -59,6 +59,15 @@ std::string GetAggregateDiscoveredResourceRequest::getResourceType() const {
 void GetAggregateDiscoveredResourceRequest::setResourceType(const std::string &resourceType) {
   resourceType_ = resourceType;
   setParameter(std::string("ResourceType"), resourceType);
+}
+
+long GetAggregateDiscoveredResourceRequest::getResourceAccountId() const {
+  return resourceAccountId_;
+}
+
+void GetAggregateDiscoveredResourceRequest::setResourceAccountId(long resourceAccountId) {
+  resourceAccountId_ = resourceAccountId;
+  setParameter(std::string("ResourceAccountId"), std::to_string(resourceAccountId));
 }
 
 std::string GetAggregateDiscoveredResourceRequest::getRegion() const {

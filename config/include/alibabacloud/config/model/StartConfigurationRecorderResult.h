@@ -36,9 +36,6 @@ namespace AlibabaCloud
 				{
 					std::string configurationRecorderStatus;
 					std::vector<std::string> resourceTypes;
-					long accountId;
-					long organizationMasterId;
-					std::string organizationEnableStatus;
 				};
 
 

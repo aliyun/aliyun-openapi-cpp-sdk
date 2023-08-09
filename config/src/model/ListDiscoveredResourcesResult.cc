@@ -40,10 +40,10 @@ void ListDiscoveredResourcesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto discoveredResourceProfilesNode = value["DiscoveredResourceProfiles"];
-	if(!discoveredResourceProfilesNode["PageNumber"].isNull())
-		discoveredResourceProfiles_.pageNumber = std::stoi(discoveredResourceProfilesNode["PageNumber"].asString());
-	if(!discoveredResourceProfilesNode["PageSize"].isNull())
-		discoveredResourceProfiles_.pageSize = std::stoi(discoveredResourceProfilesNode["PageSize"].asString());
+	if(!discoveredResourceProfilesNode["NextToken"].isNull())
+		discoveredResourceProfiles_.nextToken = discoveredResourceProfilesNode["NextToken"].asString();
+	if(!discoveredResourceProfilesNode["MaxResults"].isNull())
+		discoveredResourceProfiles_.maxResults = std::stoi(discoveredResourceProfilesNode["MaxResults"].asString());
 	if(!discoveredResourceProfilesNode["TotalCount"].isNull())
 		discoveredResourceProfiles_.totalCount = std::stoi(discoveredResourceProfilesNode["TotalCount"].asString());
 	auto allDiscoveredResourceProfileListNode = discoveredResourceProfilesNode["DiscoveredResourceProfileList"]["DiscoveredResourceProfile"];
@@ -68,6 +68,10 @@ void ListDiscoveredResourcesResult::parse(const std::string &payload)
 			discoveredResourceProfileObject.resourceDeleted = std::stoi(discoveredResourceProfilesNodeDiscoveredResourceProfileListDiscoveredResourceProfile["ResourceDeleted"].asString());
 		if(!discoveredResourceProfilesNodeDiscoveredResourceProfileListDiscoveredResourceProfile["ResourceStatus"].isNull())
 			discoveredResourceProfileObject.resourceStatus = discoveredResourceProfilesNodeDiscoveredResourceProfileListDiscoveredResourceProfile["ResourceStatus"].asString();
+		if(!discoveredResourceProfilesNodeDiscoveredResourceProfileListDiscoveredResourceProfile["Version"].isNull())
+			discoveredResourceProfileObject.version = std::stol(discoveredResourceProfilesNodeDiscoveredResourceProfileListDiscoveredResourceProfile["Version"].asString());
+		if(!discoveredResourceProfilesNodeDiscoveredResourceProfileListDiscoveredResourceProfile["AvailabilityZone"].isNull())
+			discoveredResourceProfileObject.availabilityZone = discoveredResourceProfilesNodeDiscoveredResourceProfileListDiscoveredResourceProfile["AvailabilityZone"].asString();
 		discoveredResourceProfiles_.discoveredResourceProfileList.push_back(discoveredResourceProfileObject);
 	}
 

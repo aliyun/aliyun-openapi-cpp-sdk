@@ -42,10 +42,8 @@ void GetResourceComplianceTimelineResult::parse(const std::string &payload)
 	auto resourceComplianceTimelineNode = value["ResourceComplianceTimeline"];
 	if(!resourceComplianceTimelineNode["NextToken"].isNull())
 		resourceComplianceTimeline_.nextToken = resourceComplianceTimelineNode["NextToken"].asString();
-	if(!resourceComplianceTimelineNode["Limit"].isNull())
-		resourceComplianceTimeline_.limit = std::stoi(resourceComplianceTimelineNode["Limit"].asString());
-	if(!resourceComplianceTimelineNode["TotalCount"].isNull())
-		resourceComplianceTimeline_.totalCount = std::stol(resourceComplianceTimelineNode["TotalCount"].asString());
+	if(!resourceComplianceTimelineNode["MaxResults"].isNull())
+		resourceComplianceTimeline_.maxResults = std::stoi(resourceComplianceTimelineNode["MaxResults"].asString());
 	auto allComplianceListNode = resourceComplianceTimelineNode["ComplianceList"]["ComplianceListItem"];
 	for (auto resourceComplianceTimelineNodeComplianceListComplianceListItem : allComplianceListNode)
 	{

@@ -32,33 +32,24 @@ public:
 	~ListDiscoveredResourcesRequest();
 	int getResourceDeleted() const;
 	void setResourceDeleted(int resourceDeleted);
-	bool getMultiAccount() const;
-	void setMultiAccount(bool multiAccount);
-	std::string getRegions() const;
-	void setRegions(const std::string &regions);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::string getComplianceType() const;
-	void setComplianceType(const std::string &complianceType);
 	std::string getResourceId() const;
 	void setResourceId(const std::string &resourceId);
+	std::string getRegions() const;
+	void setRegions(const std::string &regions);
 	std::string getResourceTypes() const;
 	void setResourceTypes(const std::string &resourceTypes);
-	long getMemberId() const;
-	void setMemberId(long memberId);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
 
 private:
 	int resourceDeleted_;
-	bool multiAccount_;
-	std::string regions_;
-	int pageNumber_;
-	int pageSize_;
-	std::string complianceType_;
 	std::string resourceId_;
+	std::string regions_;
 	std::string resourceTypes_;
-	long memberId_;
+	std::string nextToken_;
+	int maxResults_;
 };
 } // namespace Model
 } // namespace Config

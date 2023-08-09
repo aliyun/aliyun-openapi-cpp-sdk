@@ -19,18 +19,9 @@
 using AlibabaCloud::Config::Model::StartConfigurationRecorderRequest;
 
 StartConfigurationRecorderRequest::StartConfigurationRecorderRequest()
-    : RpcServiceRequest("config", "2019-01-08", "StartConfigurationRecorder") {
+    : RpcServiceRequest("config", "2020-09-07", "StartConfigurationRecorder") {
   setMethod(HttpRequest::Method::Post);
 }
 
 StartConfigurationRecorderRequest::~StartConfigurationRecorderRequest() {}
-
-bool StartConfigurationRecorderRequest::getEnterpriseEdition() const {
-  return enterpriseEdition_;
-}
-
-void StartConfigurationRecorderRequest::setEnterpriseEdition(bool enterpriseEdition) {
-  enterpriseEdition_ = enterpriseEdition;
-  setBodyParameter(std::string("EnterpriseEdition"), enterpriseEdition ? "true" : "false");
-}
 
