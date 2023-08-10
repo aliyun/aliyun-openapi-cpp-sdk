@@ -38,12 +38,15 @@ public:
 	void setAsync(bool async);
 	std::string getVideoURL() const;
 	void setVideoURL(const std::string &videoURL);
+	bool getAddWatermark() const;
+	void setAddWatermark(bool addWatermark);
 
 private:
 	std::string referenceURL_;
 	std::string postURL_;
 	bool async_;
 	std::string videoURL_;
+	bool addWatermark_;
 };
 } // namespace Model
 } // namespace Videoenhan

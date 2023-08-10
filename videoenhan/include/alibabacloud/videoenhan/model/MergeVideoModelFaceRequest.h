@@ -45,6 +45,8 @@ public:
 	void setTemplateId(const std::string &templateId);
 	std::string getAsync() const;
 	void setAsync(const std::string &async);
+	bool getAddWatermark() const;
+	void setAddWatermark(bool addWatermark);
 
 private:
 	std::string faceImageURL_;
@@ -52,6 +54,7 @@ private:
 	std::string userId_;
 	std::string templateId_;
 	std::string async_;
+	bool addWatermark_;
 };
 } // namespace Model
 } // namespace Videoenhan

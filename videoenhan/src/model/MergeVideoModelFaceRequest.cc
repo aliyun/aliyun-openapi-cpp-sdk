@@ -76,3 +76,12 @@ void MergeVideoModelFaceRequest::setAsync(const std::string &async) {
   setBodyParameter(std::string("Async"), async);
 }
 
+bool MergeVideoModelFaceRequest::getAddWatermark() const {
+  return addWatermark_;
+}
+
+void MergeVideoModelFaceRequest::setAddWatermark(bool addWatermark) {
+  addWatermark_ = addWatermark;
+  setBodyParameter(std::string("AddWatermark"), addWatermark ? "true" : "false");
+}
+

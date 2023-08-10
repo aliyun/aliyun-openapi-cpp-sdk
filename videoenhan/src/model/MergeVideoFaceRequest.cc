@@ -61,3 +61,12 @@ void MergeVideoFaceRequest::setVideoURL(const std::string &videoURL) {
   setBodyParameter(std::string("VideoURL"), videoURL);
 }
 
+bool MergeVideoFaceRequest::getAddWatermark() const {
+  return addWatermark_;
+}
+
+void MergeVideoFaceRequest::setAddWatermark(bool addWatermark) {
+  addWatermark_ = addWatermark;
+  setBodyParameter(std::string("AddWatermark"), addWatermark ? "true" : "false");
+}
+
