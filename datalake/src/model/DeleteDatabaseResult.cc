@@ -45,7 +45,14 @@ void DeleteDatabaseResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
+}
+
+std::string DeleteDatabaseResult::getTaskId()const
+{
+	return taskId_;
 }
 
 std::string DeleteDatabaseResult::getMessage()const

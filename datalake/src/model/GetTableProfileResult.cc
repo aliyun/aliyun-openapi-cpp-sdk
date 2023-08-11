@@ -44,8 +44,12 @@ void GetTableProfileResult::parse(const std::string &payload)
 		tableProfile_.partitionCnt = std::stol(tableProfileNode["PartitionCnt"].asString());
 	if(!tableProfileNode["FileCnt"].isNull())
 		tableProfile_.fileCnt = std::stol(tableProfileNode["FileCnt"].asString());
+	if(!tableProfileNode["ObjectCnt"].isNull())
+		tableProfile_.objectCnt = std::stol(tableProfileNode["ObjectCnt"].asString());
 	if(!tableProfileNode["FileSize"].isNull())
 		tableProfile_.fileSize = std::stol(tableProfileNode["FileSize"].asString());
+	if(!tableProfileNode["ObjectSize"].isNull())
+		tableProfile_.objectSize = std::stol(tableProfileNode["ObjectSize"].asString());
 	if(!tableProfileNode["RecordCnt"].isNull())
 		tableProfile_.recordCnt = std::stol(tableProfileNode["RecordCnt"].asString());
 	if(!tableProfileNode["IsPartitioned"].isNull())
@@ -68,8 +72,14 @@ void GetTableProfileResult::parse(const std::string &payload)
 		tableProfile_.accessNumWeekly = std::stol(tableProfileNode["AccessNumWeekly"].asString());
 	if(!tableProfileNode["AccessNumMonthly"].isNull())
 		tableProfile_.accessNumMonthly = std::stol(tableProfileNode["AccessNumMonthly"].asString());
+	if(!tableProfileNode["LastAccessNumTime"].isNull())
+		tableProfile_.lastAccessNumTime = tableProfileNode["LastAccessNumTime"].asString();
 	if(!tableProfileNode["LatestDate"].isNull())
 		tableProfile_.latestDate = tableProfileNode["LatestDate"].asString();
+	if(!tableProfileNode["LatestAccessNumDate"].isNull())
+		tableProfile_.latestAccessNumDate = tableProfileNode["LatestAccessNumDate"].asString();
+	if(!tableProfileNode["LastDdlTime"].isNull())
+		tableProfile_.lastDdlTime = tableProfileNode["LastDdlTime"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

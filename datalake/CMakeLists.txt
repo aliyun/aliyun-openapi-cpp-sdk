@@ -97,6 +97,8 @@ set(datalake_public_header_model
 	include/alibabacloud/datalake/model/GetDatabaseResult.h
 	include/alibabacloud/datalake/model/GetFunctionRequest.h
 	include/alibabacloud/datalake/model/GetFunctionResult.h
+	include/alibabacloud/datalake/model/GetLifecycleRuleRequest.h
+	include/alibabacloud/datalake/model/GetLifecycleRuleResult.h
 	include/alibabacloud/datalake/model/GetLockRequest.h
 	include/alibabacloud/datalake/model/GetLockResult.h
 	include/alibabacloud/datalake/model/GetPartitionRequest.h
@@ -282,6 +284,8 @@ set(datalake_src
 	src/model/GetDatabaseResult.cc
 	src/model/GetFunctionRequest.cc
 	src/model/GetFunctionResult.cc
+	src/model/GetLifecycleRuleRequest.cc
+	src/model/GetLifecycleRuleResult.cc
 	src/model/GetLockRequest.cc
 	src/model/GetLockResult.cc
 	src/model/GetPartitionRequest.cc

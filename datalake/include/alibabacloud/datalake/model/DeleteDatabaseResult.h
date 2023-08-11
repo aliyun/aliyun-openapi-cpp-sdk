@@ -37,6 +37,7 @@ namespace AlibabaCloud
 				DeleteDatabaseResult();
 				explicit DeleteDatabaseResult(const std::string &payload);
 				~DeleteDatabaseResult();
+				std::string getTaskId()const;
 				std::string getMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -44,6 +45,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string taskId_;
 				std::string message_;
 				std::string code_;
 				bool success_;

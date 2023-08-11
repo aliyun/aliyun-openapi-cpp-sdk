@@ -26,6 +26,15 @@ DeleteDatabaseRequest::DeleteDatabaseRequest()
 
 DeleteDatabaseRequest::~DeleteDatabaseRequest() {}
 
+bool DeleteDatabaseRequest::getAsync() const {
+  return async_;
+}
+
+void DeleteDatabaseRequest::setAsync(bool async) {
+  async_ = async;
+  setParameter(std::string("Async"), async ? "true" : "false");
+}
+
 std::string DeleteDatabaseRequest::getCatalogId() const {
   return catalogId_;
 }

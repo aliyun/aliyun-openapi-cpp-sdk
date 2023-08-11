@@ -98,6 +98,8 @@
 #include "model/GetDatabaseResult.h"
 #include "model/GetFunctionRequest.h"
 #include "model/GetFunctionResult.h"
+#include "model/GetLifecycleRuleRequest.h"
+#include "model/GetLifecycleRuleResult.h"
 #include "model/GetLockRequest.h"
 #include "model/GetLockResult.h"
 #include "model/GetPartitionRequest.h"
@@ -327,6 +329,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetFunctionResult> GetFunctionOutcome;
 			typedef std::future<GetFunctionOutcome> GetFunctionOutcomeCallable;
 			typedef std::function<void(const DataLakeClient*, const Model::GetFunctionRequest&, const GetFunctionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionAsyncHandler;
+			typedef Outcome<Error, Model::GetLifecycleRuleResult> GetLifecycleRuleOutcome;
+			typedef std::future<GetLifecycleRuleOutcome> GetLifecycleRuleOutcomeCallable;
+			typedef std::function<void(const DataLakeClient*, const Model::GetLifecycleRuleRequest&, const GetLifecycleRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLifecycleRuleAsyncHandler;
 			typedef Outcome<Error, Model::GetLockResult> GetLockOutcome;
 			typedef std::future<GetLockOutcome> GetLockOutcomeCallable;
 			typedef std::function<void(const DataLakeClient*, const Model::GetLockRequest&, const GetLockOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLockAsyncHandler;
@@ -605,6 +610,9 @@ namespace AlibabaCloud
 			GetFunctionOutcome getFunction(const Model::GetFunctionRequest &request)const;
 			void getFunctionAsync(const Model::GetFunctionRequest& request, const GetFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetFunctionOutcomeCallable getFunctionCallable(const Model::GetFunctionRequest& request) const;
+			GetLifecycleRuleOutcome getLifecycleRule(const Model::GetLifecycleRuleRequest &request)const;
+			void getLifecycleRuleAsync(const Model::GetLifecycleRuleRequest& request, const GetLifecycleRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetLifecycleRuleOutcomeCallable getLifecycleRuleCallable(const Model::GetLifecycleRuleRequest& request) const;
 			GetLockOutcome getLock(const Model::GetLockRequest &request)const;
 			void getLockAsync(const Model::GetLockRequest& request, const GetLockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetLockOutcomeCallable getLockCallable(const Model::GetLockRequest& request) const;

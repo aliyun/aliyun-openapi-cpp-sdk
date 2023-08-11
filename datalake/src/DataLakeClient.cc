@@ -1419,6 +1419,42 @@ DataLakeClient::GetFunctionOutcomeCallable DataLakeClient::getFunctionCallable(c
 	return task->get_future();
 }
 
+DataLakeClient::GetLifecycleRuleOutcome DataLakeClient::getLifecycleRule(const GetLifecycleRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetLifecycleRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetLifecycleRuleOutcome(GetLifecycleRuleResult(outcome.result()));
+	else
+		return GetLifecycleRuleOutcome(outcome.error());
+}
+
+void DataLakeClient::getLifecycleRuleAsync(const GetLifecycleRuleRequest& request, const GetLifecycleRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getLifecycleRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DataLakeClient::GetLifecycleRuleOutcomeCallable DataLakeClient::getLifecycleRuleCallable(const GetLifecycleRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetLifecycleRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->getLifecycleRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DataLakeClient::GetLockOutcome DataLakeClient::getLock(const GetLockRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

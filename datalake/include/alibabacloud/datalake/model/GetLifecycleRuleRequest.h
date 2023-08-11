@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATALAKE_MODEL_DELETEDATABASEREQUEST_H_
-#define ALIBABACLOUD_DATALAKE_MODEL_DELETEDATABASEREQUEST_H_
+#ifndef ALIBABACLOUD_DATALAKE_MODEL_GETLIFECYCLERULEREQUEST_H_
+#define ALIBABACLOUD_DATALAKE_MODEL_GETLIFECYCLERULEREQUEST_H_
 
 #include <alibabacloud/datalake/DataLakeExport.h>
 #include <alibabacloud/core/RoaServiceRequest.h>
@@ -26,26 +26,20 @@
 namespace AlibabaCloud {
 namespace DataLake {
 namespace Model {
-class ALIBABACLOUD_DATALAKE_EXPORT DeleteDatabaseRequest : public RoaServiceRequest {
+class ALIBABACLOUD_DATALAKE_EXPORT GetLifecycleRuleRequest : public RoaServiceRequest {
 public:
-	DeleteDatabaseRequest();
-	~DeleteDatabaseRequest();
-	bool getAsync() const;
-	void setAsync(bool async);
-	std::string getCatalogId() const;
-	void setCatalogId(const std::string &catalogId);
-	bool getCascade() const;
-	void setCascade(bool cascade);
-	std::string getName() const;
-	void setName(const std::string &name);
+	GetLifecycleRuleRequest();
+	~GetLifecycleRuleRequest();
+	std::string getBizId() const;
+	void setBizId(const std::string &bizId);
+	std::string getResourceName() const;
+	void setResourceName(const std::string &resourceName);
 
 private:
-	bool async_;
-	std::string catalogId_;
-	bool cascade_;
-	std::string name_;
+	std::string bizId_;
+	std::string resourceName_;
 };
 } // namespace Model
 } // namespace DataLake
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DATALAKE_MODEL_DELETEDATABASEREQUEST_H_
+#endif // !ALIBABACLOUD_DATALAKE_MODEL_GETLIFECYCLERULEREQUEST_H_

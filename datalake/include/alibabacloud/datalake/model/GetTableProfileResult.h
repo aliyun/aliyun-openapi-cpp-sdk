@@ -34,14 +34,19 @@ namespace AlibabaCloud
 			public:
 				struct TableProfile
 				{
+					long objectCnt;
 					long accessNum;
+					std::string lastAccessNumTime;
+					std::string lastDdlTime;
 					std::string createTime;
+					long objectSize;
 					std::string databaseName;
 					long fileCnt;
 					bool isPartitioned;
 					std::string lastModifyTime;
 					std::string lastAccessTime;
 					std::string latestDate;
+					std::string latestAccessNumDate;
 					std::string tableName;
 					long recordCnt;
 					long accessNumMonthly;
