@@ -21,57 +21,33 @@ set(ft_public_header
 	include/alibabacloud/ft/FtExport.h )
 
 set(ft_public_header_model 
-	include/alibabacloud/ft/model/BatchAuditTest01Request.h
-	include/alibabacloud/ft/model/BatchAuditTest01Result.h
-	include/alibabacloud/ft/model/FTApiAliasApiRequest.h
-	include/alibabacloud/ft/model/FTApiAliasApiResult.h
-	include/alibabacloud/ft/model/FtDynamicAddressDubboRequest.h
-	include/alibabacloud/ft/model/FtDynamicAddressDubboResult.h
-	include/alibabacloud/ft/model/FtDynamicAddressHsfRequest.h
-	include/alibabacloud/ft/model/FtDynamicAddressHsfResult.h
-	include/alibabacloud/ft/model/FtDynamicAddressHttpVpcRequest.h
-	include/alibabacloud/ft/model/FtDynamicAddressHttpVpcResult.h
-	include/alibabacloud/ft/model/FtEagleEyeRequest.h
-	include/alibabacloud/ft/model/FtEagleEyeResult.h
-	include/alibabacloud/ft/model/FtFlowSpecialRequest.h
-	include/alibabacloud/ft/model/FtFlowSpecialResult.h
-	include/alibabacloud/ft/model/FtGatedLaunchPolicy4Request.h
-	include/alibabacloud/ft/model/FtGatedLaunchPolicy4Result.h
-	include/alibabacloud/ft/model/FtIpFlowControlRequest.h
-	include/alibabacloud/ft/model/FtIpFlowControlResult.h
-	include/alibabacloud/ft/model/FtParamListRequest.h
-	include/alibabacloud/ft/model/FtParamListResult.h
-	include/alibabacloud/ft/model/TestFlowStrategy01Request.h
-	include/alibabacloud/ft/model/TestFlowStrategy01Result.h
-	include/alibabacloud/ft/model/TestHttpApiRequest.h
-	include/alibabacloud/ft/model/TestHttpApiResult.h )
+	include/alibabacloud/ft/model/DataRateLimitTestRequest.h
+	include/alibabacloud/ft/model/DataRateLimitTestResult.h
+	include/alibabacloud/ft/model/NormalRpcHsfApiRequest.h
+	include/alibabacloud/ft/model/NormalRpcHsfApiResult.h
+	include/alibabacloud/ft/model/NormalRpcHttpApiRequest.h
+	include/alibabacloud/ft/model/NormalRpcHttpApiResult.h
+	include/alibabacloud/ft/model/RpcDataUploadRequest.h
+	include/alibabacloud/ft/model/RpcDataUploadResult.h
+	include/alibabacloud/ft/model/RpcDataUploadAndDownloadRequest.h
+	include/alibabacloud/ft/model/RpcDataUploadAndDownloadResult.h
+	include/alibabacloud/ft/model/RpcDataUploadTestRequest.h
+	include/alibabacloud/ft/model/RpcDataUploadTestResult.h )
 
 set(ft_src 
 	src/FtClient.cc
-	src/model/BatchAuditTest01Request.cc
-	src/model/BatchAuditTest01Result.cc
-	src/model/FTApiAliasApiRequest.cc
-	src/model/FTApiAliasApiResult.cc
-	src/model/FtDynamicAddressDubboRequest.cc
-	src/model/FtDynamicAddressDubboResult.cc
-	src/model/FtDynamicAddressHsfRequest.cc
-	src/model/FtDynamicAddressHsfResult.cc
-	src/model/FtDynamicAddressHttpVpcRequest.cc
-	src/model/FtDynamicAddressHttpVpcResult.cc
-	src/model/FtEagleEyeRequest.cc
-	src/model/FtEagleEyeResult.cc
-	src/model/FtFlowSpecialRequest.cc
-	src/model/FtFlowSpecialResult.cc
-	src/model/FtGatedLaunchPolicy4Request.cc
-	src/model/FtGatedLaunchPolicy4Result.cc
-	src/model/FtIpFlowControlRequest.cc
-	src/model/FtIpFlowControlResult.cc
-	src/model/FtParamListRequest.cc
-	src/model/FtParamListResult.cc
-	src/model/TestFlowStrategy01Request.cc
-	src/model/TestFlowStrategy01Result.cc
-	src/model/TestHttpApiRequest.cc
-	src/model/TestHttpApiResult.cc )
+	src/model/DataRateLimitTestRequest.cc
+	src/model/DataRateLimitTestResult.cc
+	src/model/NormalRpcHsfApiRequest.cc
+	src/model/NormalRpcHsfApiResult.cc
+	src/model/NormalRpcHttpApiRequest.cc
+	src/model/NormalRpcHttpApiResult.cc
+	src/model/RpcDataUploadRequest.cc
+	src/model/RpcDataUploadResult.cc
+	src/model/RpcDataUploadAndDownloadRequest.cc
+	src/model/RpcDataUploadAndDownloadResult.cc
+	src/model/RpcDataUploadTestRequest.cc
+	src/model/RpcDataUploadTestResult.cc )
 
 add_library(ft ${LIB_TYPE}
 	${ft_public_header}
