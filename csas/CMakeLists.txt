@@ -1,0 +1,230 @@
+#
+# Copyright 2009-2017 Alibaba Cloud All rights reserved.
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#      http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
+
+set(csas_public_header 
+	include/alibabacloud/csas/CsasClient.h
+	include/alibabacloud/csas/CsasExport.h )
+
+set(csas_public_header_model 
+	include/alibabacloud/csas/model/AttachApplication2ConnectorRequest.h
+	include/alibabacloud/csas/model/AttachApplication2ConnectorResult.h
+	include/alibabacloud/csas/model/CreateDynamicRouteRequest.h
+	include/alibabacloud/csas/model/CreateDynamicRouteResult.h
+	include/alibabacloud/csas/model/CreatePrivateAccessApplicationRequest.h
+	include/alibabacloud/csas/model/CreatePrivateAccessApplicationResult.h
+	include/alibabacloud/csas/model/CreatePrivateAccessPolicyRequest.h
+	include/alibabacloud/csas/model/CreatePrivateAccessPolicyResult.h
+	include/alibabacloud/csas/model/CreatePrivateAccessTagRequest.h
+	include/alibabacloud/csas/model/CreatePrivateAccessTagResult.h
+	include/alibabacloud/csas/model/CreateUserGroupRequest.h
+	include/alibabacloud/csas/model/CreateUserGroupResult.h
+	include/alibabacloud/csas/model/DeleteDynamicRouteRequest.h
+	include/alibabacloud/csas/model/DeleteDynamicRouteResult.h
+	include/alibabacloud/csas/model/DeletePrivateAccessApplicationRequest.h
+	include/alibabacloud/csas/model/DeletePrivateAccessApplicationResult.h
+	include/alibabacloud/csas/model/DeletePrivateAccessPolicyRequest.h
+	include/alibabacloud/csas/model/DeletePrivateAccessPolicyResult.h
+	include/alibabacloud/csas/model/DeletePrivateAccessTagRequest.h
+	include/alibabacloud/csas/model/DeletePrivateAccessTagResult.h
+	include/alibabacloud/csas/model/DeleteUserGroupRequest.h
+	include/alibabacloud/csas/model/DeleteUserGroupResult.h
+	include/alibabacloud/csas/model/DetachApplication2ConnectorRequest.h
+	include/alibabacloud/csas/model/DetachApplication2ConnectorResult.h
+	include/alibabacloud/csas/model/GetDynamicRouteRequest.h
+	include/alibabacloud/csas/model/GetDynamicRouteResult.h
+	include/alibabacloud/csas/model/GetPrivateAccessApplicationRequest.h
+	include/alibabacloud/csas/model/GetPrivateAccessApplicationResult.h
+	include/alibabacloud/csas/model/GetPrivateAccessPolicyRequest.h
+	include/alibabacloud/csas/model/GetPrivateAccessPolicyResult.h
+	include/alibabacloud/csas/model/GetUserGroupRequest.h
+	include/alibabacloud/csas/model/GetUserGroupResult.h
+	include/alibabacloud/csas/model/ListApplicationsForPrivateAccessPolicyRequest.h
+	include/alibabacloud/csas/model/ListApplicationsForPrivateAccessPolicyResult.h
+	include/alibabacloud/csas/model/ListApplicationsForPrivateAccessTagRequest.h
+	include/alibabacloud/csas/model/ListApplicationsForPrivateAccessTagResult.h
+	include/alibabacloud/csas/model/ListConnectorsRequest.h
+	include/alibabacloud/csas/model/ListConnectorsResult.h
+	include/alibabacloud/csas/model/ListDynamicRouteRegionsRequest.h
+	include/alibabacloud/csas/model/ListDynamicRouteRegionsResult.h
+	include/alibabacloud/csas/model/ListDynamicRoutesRequest.h
+	include/alibabacloud/csas/model/ListDynamicRoutesResult.h
+	include/alibabacloud/csas/model/ListPolicesForPrivateAccessApplicationRequest.h
+	include/alibabacloud/csas/model/ListPolicesForPrivateAccessApplicationResult.h
+	include/alibabacloud/csas/model/ListPolicesForPrivateAccessTagRequest.h
+	include/alibabacloud/csas/model/ListPolicesForPrivateAccessTagResult.h
+	include/alibabacloud/csas/model/ListPolicesForUserGroupRequest.h
+	include/alibabacloud/csas/model/ListPolicesForUserGroupResult.h
+	include/alibabacloud/csas/model/ListPrivateAccessApplicationsRequest.h
+	include/alibabacloud/csas/model/ListPrivateAccessApplicationsResult.h
+	include/alibabacloud/csas/model/ListPrivateAccessApplicationsForDynamicRouteRequest.h
+	include/alibabacloud/csas/model/ListPrivateAccessApplicationsForDynamicRouteResult.h
+	include/alibabacloud/csas/model/ListPrivateAccessPolicesRequest.h
+	include/alibabacloud/csas/model/ListPrivateAccessPolicesResult.h
+	include/alibabacloud/csas/model/ListPrivateAccessTagsRequest.h
+	include/alibabacloud/csas/model/ListPrivateAccessTagsResult.h
+	include/alibabacloud/csas/model/ListPrivateAccessTagsForDynamicRouteRequest.h
+	include/alibabacloud/csas/model/ListPrivateAccessTagsForDynamicRouteResult.h
+	include/alibabacloud/csas/model/ListTagsForPrivateAccessApplicationRequest.h
+	include/alibabacloud/csas/model/ListTagsForPrivateAccessApplicationResult.h
+	include/alibabacloud/csas/model/ListTagsForPrivateAccessPolicyRequest.h
+	include/alibabacloud/csas/model/ListTagsForPrivateAccessPolicyResult.h
+	include/alibabacloud/csas/model/ListUserGroupsRequest.h
+	include/alibabacloud/csas/model/ListUserGroupsResult.h
+	include/alibabacloud/csas/model/ListUserGroupsForPrivateAccessPolicyRequest.h
+	include/alibabacloud/csas/model/ListUserGroupsForPrivateAccessPolicyResult.h
+	include/alibabacloud/csas/model/UpdateDynamicRouteRequest.h
+	include/alibabacloud/csas/model/UpdateDynamicRouteResult.h
+	include/alibabacloud/csas/model/UpdatePrivateAccessApplicationRequest.h
+	include/alibabacloud/csas/model/UpdatePrivateAccessApplicationResult.h
+	include/alibabacloud/csas/model/UpdatePrivateAccessPolicyRequest.h
+	include/alibabacloud/csas/model/UpdatePrivateAccessPolicyResult.h
+	include/alibabacloud/csas/model/UpdateUserGroupRequest.h
+	include/alibabacloud/csas/model/UpdateUserGroupResult.h )
+
+set(csas_src 
+	src/CsasClient.cc
+	src/model/AttachApplication2ConnectorRequest.cc
+	src/model/AttachApplication2ConnectorResult.cc
+	src/model/CreateDynamicRouteRequest.cc
+	src/model/CreateDynamicRouteResult.cc
+	src/model/CreatePrivateAccessApplicationRequest.cc
+	src/model/CreatePrivateAccessApplicationResult.cc
+	src/model/CreatePrivateAccessPolicyRequest.cc
+	src/model/CreatePrivateAccessPolicyResult.cc
+	src/model/CreatePrivateAccessTagRequest.cc
+	src/model/CreatePrivateAccessTagResult.cc
+	src/model/CreateUserGroupRequest.cc
+	src/model/CreateUserGroupResult.cc
+	src/model/DeleteDynamicRouteRequest.cc
+	src/model/DeleteDynamicRouteResult.cc
+	src/model/DeletePrivateAccessApplicationRequest.cc
+	src/model/DeletePrivateAccessApplicationResult.cc
+	src/model/DeletePrivateAccessPolicyRequest.cc
+	src/model/DeletePrivateAccessPolicyResult.cc
+	src/model/DeletePrivateAccessTagRequest.cc
+	src/model/DeletePrivateAccessTagResult.cc
+	src/model/DeleteUserGroupRequest.cc
+	src/model/DeleteUserGroupResult.cc
+	src/model/DetachApplication2ConnectorRequest.cc
+	src/model/DetachApplication2ConnectorResult.cc
+	src/model/GetDynamicRouteRequest.cc
+	src/model/GetDynamicRouteResult.cc
+	src/model/GetPrivateAccessApplicationRequest.cc
+	src/model/GetPrivateAccessApplicationResult.cc
+	src/model/GetPrivateAccessPolicyRequest.cc
+	src/model/GetPrivateAccessPolicyResult.cc
+	src/model/GetUserGroupRequest.cc
+	src/model/GetUserGroupResult.cc
+	src/model/ListApplicationsForPrivateAccessPolicyRequest.cc
+	src/model/ListApplicationsForPrivateAccessPolicyResult.cc
+	src/model/ListApplicationsForPrivateAccessTagRequest.cc
+	src/model/ListApplicationsForPrivateAccessTagResult.cc
+	src/model/ListConnectorsRequest.cc
+	src/model/ListConnectorsResult.cc
+	src/model/ListDynamicRouteRegionsRequest.cc
+	src/model/ListDynamicRouteRegionsResult.cc
+	src/model/ListDynamicRoutesRequest.cc
+	src/model/ListDynamicRoutesResult.cc
+	src/model/ListPolicesForPrivateAccessApplicationRequest.cc
+	src/model/ListPolicesForPrivateAccessApplicationResult.cc
+	src/model/ListPolicesForPrivateAccessTagRequest.cc
+	src/model/ListPolicesForPrivateAccessTagResult.cc
+	src/model/ListPolicesForUserGroupRequest.cc
+	src/model/ListPolicesForUserGroupResult.cc
+	src/model/ListPrivateAccessApplicationsRequest.cc
+	src/model/ListPrivateAccessApplicationsResult.cc
+	src/model/ListPrivateAccessApplicationsForDynamicRouteRequest.cc
+	src/model/ListPrivateAccessApplicationsForDynamicRouteResult.cc
+	src/model/ListPrivateAccessPolicesRequest.cc
+	src/model/ListPrivateAccessPolicesResult.cc
+	src/model/ListPrivateAccessTagsRequest.cc
+	src/model/ListPrivateAccessTagsResult.cc
+	src/model/ListPrivateAccessTagsForDynamicRouteRequest.cc
+	src/model/ListPrivateAccessTagsForDynamicRouteResult.cc
+	src/model/ListTagsForPrivateAccessApplicationRequest.cc
+	src/model/ListTagsForPrivateAccessApplicationResult.cc
+	src/model/ListTagsForPrivateAccessPolicyRequest.cc
+	src/model/ListTagsForPrivateAccessPolicyResult.cc
+	src/model/ListUserGroupsRequest.cc
+	src/model/ListUserGroupsResult.cc
+	src/model/ListUserGroupsForPrivateAccessPolicyRequest.cc
+	src/model/ListUserGroupsForPrivateAccessPolicyResult.cc
+	src/model/UpdateDynamicRouteRequest.cc
+	src/model/UpdateDynamicRouteResult.cc
+	src/model/UpdatePrivateAccessApplicationRequest.cc
+	src/model/UpdatePrivateAccessApplicationResult.cc
+	src/model/UpdatePrivateAccessPolicyRequest.cc
+	src/model/UpdatePrivateAccessPolicyResult.cc
+	src/model/UpdateUserGroupRequest.cc
+	src/model/UpdateUserGroupResult.cc )
+
+add_library(csas ${LIB_TYPE}
+	${csas_public_header}
+	${csas_public_header_model}
+	${csas_src})
+
+set_target_properties(csas
+	PROPERTIES
+	LINKER_LANGUAGE CXX
+	ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}csas
+	)
+
+if(${LIB_TYPE} STREQUAL "SHARED")
+	set_target_properties(csas
+		PROPERTIES
+		DEFINE_SYMBOL ALIBABACLOUD_CSAS_LIBRARY)
+endif()
+
+target_include_directories(csas
+	PRIVATE include
+		${CMAKE_SOURCE_DIR}/core/include
+	)
+target_link_libraries(csas
+	core)
+
+if(CMAKE_HOST_WIN32)
+	ExternalProject_Get_Property(jsoncpp INSTALL_DIR)
+	set(jsoncpp_install_dir ${INSTALL_DIR})
+	add_dependencies(csas
+		jsoncpp)
+	target_include_directories(csas
+		PRIVATE	${jsoncpp_install_dir}/include)
+	target_link_libraries(csas
+		${jsoncpp_install_dir}/lib/jsoncpp.lib)
+	set_target_properties(csas
+    	PROPERTIES
+    		COMPILE_OPTIONS "/bigobj")
+else()
+	target_include_directories(csas
+		PRIVATE /usr/include/jsoncpp)
+	target_link_libraries(csas
+		jsoncpp)
+endif()
+
+install(FILES ${csas_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/csas)
+install(FILES ${csas_public_header_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/csas/model)
+install(TARGETS csas
+	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+	)
