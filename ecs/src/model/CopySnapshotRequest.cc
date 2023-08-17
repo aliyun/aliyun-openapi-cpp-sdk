@@ -162,3 +162,12 @@ void CopySnapshotRequest::setKMSKeyId(const std::string &kMSKeyId) {
   setParameter(std::string("KMSKeyId"), kMSKeyId);
 }
 
+std::string CopySnapshotRequest::getDestinationStorageLocationArn() const {
+  return destinationStorageLocationArn_;
+}
+
+void CopySnapshotRequest::setDestinationStorageLocationArn(const std::string &destinationStorageLocationArn) {
+  destinationStorageLocationArn_ = destinationStorageLocationArn;
+  setParameter(std::string("DestinationStorageLocationArn"), destinationStorageLocationArn);
+}
+

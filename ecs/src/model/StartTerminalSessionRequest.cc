@@ -34,6 +34,15 @@ void StartTerminalSessionRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string StartTerminalSessionRequest::getCommandLine() const {
+  return commandLine_;
+}
+
+void StartTerminalSessionRequest::setCommandLine(const std::string &commandLine) {
+  commandLine_ = commandLine;
+  setParameter(std::string("CommandLine"), commandLine);
+}
+
 std::string StartTerminalSessionRequest::getRegionId() const {
   return regionId_;
 }
@@ -41,6 +50,15 @@ std::string StartTerminalSessionRequest::getRegionId() const {
 void StartTerminalSessionRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string StartTerminalSessionRequest::getTargetServer() const {
+  return targetServer_;
+}
+
+void StartTerminalSessionRequest::setTargetServer(const std::string &targetServer) {
+  targetServer_ = targetServer;
+  setParameter(std::string("TargetServer"), targetServer);
 }
 
 std::string StartTerminalSessionRequest::getResourceOwnerAccount() const {

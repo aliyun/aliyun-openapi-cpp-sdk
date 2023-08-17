@@ -32,8 +32,12 @@ public:
 	~StartTerminalSessionRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getCommandLine() const;
+	void setCommandLine(const std::string &commandLine);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getTargetServer() const;
+	void setTargetServer(const std::string &targetServer);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -47,7 +51,9 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string commandLine_;
 	std::string regionId_;
+	std::string targetServer_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

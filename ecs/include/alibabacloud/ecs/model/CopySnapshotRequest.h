@@ -67,6 +67,8 @@ public:
 	void setRetentionDays(int retentionDays);
 	std::string getKMSKeyId() const;
 	void setKMSKeyId(const std::string &kMSKeyId);
+	std::string getDestinationStorageLocationArn() const;
+	void setDestinationStorageLocationArn(const std::string &destinationStorageLocationArn);
 
 private:
 	long resourceOwnerId_;
@@ -83,6 +85,7 @@ private:
 	bool encrypted_;
 	int retentionDays_;
 	std::string kMSKeyId_;
+	std::string destinationStorageLocationArn_;
 };
 } // namespace Model
 } // namespace Ecs
