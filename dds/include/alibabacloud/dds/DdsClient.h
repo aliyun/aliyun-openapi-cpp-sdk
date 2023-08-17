@@ -60,6 +60,8 @@
 #include "model/DescribeAuditPolicyResult.h"
 #include "model/DescribeAuditRecordsRequest.h"
 #include "model/DescribeAuditRecordsResult.h"
+#include "model/DescribeAvailabilityZonesRequest.h"
+#include "model/DescribeAvailabilityZonesResult.h"
 #include "model/DescribeAvailableEngineVersionRequest.h"
 #include "model/DescribeAvailableEngineVersionResult.h"
 #include "model/DescribeAvailableResourceRequest.h"
@@ -278,6 +280,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAuditRecordsResult> DescribeAuditRecordsOutcome;
 			typedef std::future<DescribeAuditRecordsOutcome> DescribeAuditRecordsOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeAuditRecordsRequest&, const DescribeAuditRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditRecordsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAvailabilityZonesResult> DescribeAvailabilityZonesOutcome;
+			typedef std::future<DescribeAvailabilityZonesOutcome> DescribeAvailabilityZonesOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::DescribeAvailabilityZonesRequest&, const DescribeAvailabilityZonesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailabilityZonesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAvailableEngineVersionResult> DescribeAvailableEngineVersionOutcome;
 			typedef std::future<DescribeAvailableEngineVersionOutcome> DescribeAvailableEngineVersionOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeAvailableEngineVersionRequest&, const DescribeAvailableEngineVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableEngineVersionAsyncHandler;
@@ -568,6 +573,9 @@ namespace AlibabaCloud
 			DescribeAuditRecordsOutcome describeAuditRecords(const Model::DescribeAuditRecordsRequest &request)const;
 			void describeAuditRecordsAsync(const Model::DescribeAuditRecordsRequest& request, const DescribeAuditRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAuditRecordsOutcomeCallable describeAuditRecordsCallable(const Model::DescribeAuditRecordsRequest& request) const;
+			DescribeAvailabilityZonesOutcome describeAvailabilityZones(const Model::DescribeAvailabilityZonesRequest &request)const;
+			void describeAvailabilityZonesAsync(const Model::DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAvailabilityZonesOutcomeCallable describeAvailabilityZonesCallable(const Model::DescribeAvailabilityZonesRequest& request) const;
 			DescribeAvailableEngineVersionOutcome describeAvailableEngineVersion(const Model::DescribeAvailableEngineVersionRequest &request)const;
 			void describeAvailableEngineVersionAsync(const Model::DescribeAvailableEngineVersionRequest& request, const DescribeAvailableEngineVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAvailableEngineVersionOutcomeCallable describeAvailableEngineVersionCallable(const Model::DescribeAvailableEngineVersionRequest& request) const;

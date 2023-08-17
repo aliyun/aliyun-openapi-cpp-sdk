@@ -59,6 +59,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeAuditPolicyResult.h
 	include/alibabacloud/dds/model/DescribeAuditRecordsRequest.h
 	include/alibabacloud/dds/model/DescribeAuditRecordsResult.h
+	include/alibabacloud/dds/model/DescribeAvailabilityZonesRequest.h
+	include/alibabacloud/dds/model/DescribeAvailabilityZonesResult.h
 	include/alibabacloud/dds/model/DescribeAvailableEngineVersionRequest.h
 	include/alibabacloud/dds/model/DescribeAvailableEngineVersionResult.h
 	include/alibabacloud/dds/model/DescribeAvailableResourceRequest.h
@@ -252,6 +254,8 @@ set(dds_src
 	src/model/DescribeAuditPolicyResult.cc
 	src/model/DescribeAuditRecordsRequest.cc
 	src/model/DescribeAuditRecordsResult.cc
+	src/model/DescribeAvailabilityZonesRequest.cc
+	src/model/DescribeAvailabilityZonesResult.cc
 	src/model/DescribeAvailableEngineVersionRequest.cc
 	src/model/DescribeAvailableEngineVersionResult.cc
 	src/model/DescribeAvailableResourceRequest.cc

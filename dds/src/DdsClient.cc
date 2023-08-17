@@ -735,6 +735,42 @@ DdsClient::DescribeAuditRecordsOutcomeCallable DdsClient::describeAuditRecordsCa
 	return task->get_future();
 }
 
+DdsClient::DescribeAvailabilityZonesOutcome DdsClient::describeAvailabilityZones(const DescribeAvailabilityZonesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAvailabilityZonesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAvailabilityZonesOutcome(DescribeAvailabilityZonesResult(outcome.result()));
+	else
+		return DescribeAvailabilityZonesOutcome(outcome.error());
+}
+
+void DdsClient::describeAvailabilityZonesAsync(const DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAvailabilityZones(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeAvailabilityZonesOutcomeCallable DdsClient::describeAvailabilityZonesCallable(const DescribeAvailabilityZonesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAvailabilityZonesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAvailabilityZones(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::DescribeAvailableEngineVersionOutcome DdsClient::describeAvailableEngineVersion(const DescribeAvailableEngineVersionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
