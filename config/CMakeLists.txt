@@ -79,6 +79,8 @@ set(config_public_header_model
 	include/alibabacloud/config/model/DeleteConfigRulesResult.h
 	include/alibabacloud/config/model/DeleteRemediationsRequest.h
 	include/alibabacloud/config/model/DeleteRemediationsResult.h
+	include/alibabacloud/config/model/DescribeRemediationRequest.h
+	include/alibabacloud/config/model/DescribeRemediationResult.h
 	include/alibabacloud/config/model/DetachAggregateConfigRuleToCompliancePackRequest.h
 	include/alibabacloud/config/model/DetachAggregateConfigRuleToCompliancePackResult.h
 	include/alibabacloud/config/model/DetachConfigRuleToCompliancePackRequest.h
@@ -358,6 +360,8 @@ set(config_src
 	src/model/DeleteConfigRulesResult.cc
 	src/model/DeleteRemediationsRequest.cc
 	src/model/DeleteRemediationsResult.cc
+	src/model/DescribeRemediationRequest.cc
+	src/model/DescribeRemediationResult.cc
 	src/model/DetachAggregateConfigRuleToCompliancePackRequest.cc
 	src/model/DetachAggregateConfigRuleToCompliancePackResult.cc
 	src/model/DetachConfigRuleToCompliancePackRequest.cc

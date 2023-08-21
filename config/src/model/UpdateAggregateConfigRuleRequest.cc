@@ -198,3 +198,12 @@ void UpdateAggregateConfigRuleRequest::setExcludeResourceIdsScope(const std::str
   setBodyParameter(std::string("ExcludeResourceIdsScope"), excludeResourceIdsScope);
 }
 
+std::string UpdateAggregateConfigRuleRequest::getConditions() const {
+  return conditions_;
+}
+
+void UpdateAggregateConfigRuleRequest::setConditions(const std::string &conditions) {
+  conditions_ = conditions;
+  setBodyParameter(std::string("Conditions"), conditions);
+}
+

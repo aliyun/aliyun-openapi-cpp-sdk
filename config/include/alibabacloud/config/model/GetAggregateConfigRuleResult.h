@@ -46,6 +46,7 @@ namespace AlibabaCloud
 						std::string identifier;
 						std::vector<std::string> sourceConditions;
 						std::vector<SourceDetailsItem> sourceDetails;
+						std::string conditions;
 					};
 					struct ManagedRule
 					{

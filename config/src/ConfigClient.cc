@@ -1095,6 +1095,42 @@ ConfigClient::DeleteRemediationsOutcomeCallable ConfigClient::deleteRemediations
 	return task->get_future();
 }
 
+ConfigClient::DescribeRemediationOutcome ConfigClient::describeRemediation(const DescribeRemediationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRemediationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRemediationOutcome(DescribeRemediationResult(outcome.result()));
+	else
+		return DescribeRemediationOutcome(outcome.error());
+}
+
+void ConfigClient::describeRemediationAsync(const DescribeRemediationRequest& request, const DescribeRemediationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRemediation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::DescribeRemediationOutcomeCallable ConfigClient::describeRemediationCallable(const DescribeRemediationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRemediationOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRemediation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ConfigClient::DetachAggregateConfigRuleToCompliancePackOutcome ConfigClient::detachAggregateConfigRuleToCompliancePack(const DetachAggregateConfigRuleToCompliancePackRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

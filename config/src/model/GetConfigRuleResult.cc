@@ -85,19 +85,21 @@ void GetConfigRuleResult::parse(const std::string &payload)
 		configRule_.source.owner = sourceNode["Owner"].asString();
 	if(!sourceNode["Identifier"].isNull())
 		configRule_.source.identifier = sourceNode["Identifier"].asString();
-	auto allSourceDetailsNode = sourceNode["SourceDetails"]["SourceDetailsItem"];
-	for (auto sourceNodeSourceDetailsSourceDetailsItem : allSourceDetailsNode)
+	if(!sourceNode["Conditions"].isNull())
+		configRule_.source.conditions = sourceNode["Conditions"].asString();
+	auto allSourceDetailsNode = sourceNode["SourceDetails"]["sourceDetailsItem"];
+	for (auto sourceNodeSourceDetailssourceDetailsItem : allSourceDetailsNode)
 	{
 		ConfigRule::Source::SourceDetailsItem sourceDetailsItemObject;
-		if(!sourceNodeSourceDetailsSourceDetailsItem["MessageType"].isNull())
-			sourceDetailsItemObject.messageType = sourceNodeSourceDetailsSourceDetailsItem["MessageType"].asString();
-		if(!sourceNodeSourceDetailsSourceDetailsItem["EventSource"].isNull())
-			sourceDetailsItemObject.eventSource = sourceNodeSourceDetailsSourceDetailsItem["EventSource"].asString();
-		if(!sourceNodeSourceDetailsSourceDetailsItem["MaximumExecutionFrequency"].isNull())
-			sourceDetailsItemObject.maximumExecutionFrequency = sourceNodeSourceDetailsSourceDetailsItem["MaximumExecutionFrequency"].asString();
+		if(!sourceNodeSourceDetailssourceDetailsItem["MessageType"].isNull())
+			sourceDetailsItemObject.messageType = sourceNodeSourceDetailssourceDetailsItem["MessageType"].asString();
+		if(!sourceNodeSourceDetailssourceDetailsItem["EventSource"].isNull())
+			sourceDetailsItemObject.eventSource = sourceNodeSourceDetailssourceDetailsItem["EventSource"].asString();
+		if(!sourceNodeSourceDetailssourceDetailsItem["MaximumExecutionFrequency"].isNull())
+			sourceDetailsItemObject.maximumExecutionFrequency = sourceNodeSourceDetailssourceDetailsItem["MaximumExecutionFrequency"].asString();
 		configRule_.source.sourceDetails.push_back(sourceDetailsItemObject);
 	}
-		auto allSourceConditions = sourceNode["SourceConditions"]["SourceConditions"];
+		auto allSourceConditions = sourceNode["SourceConditions"]["sourceConditions"];
 		for (auto value : allSourceConditions)
 			configRule_.source.sourceConditions.push_back(value.asString());
 	auto managedRuleNode = configRuleNode["ManagedRule"];
@@ -113,19 +115,19 @@ void GetConfigRuleResult::parse(const std::string &payload)
 		configRule_.managedRule.managedRuleName = managedRuleNode["ManagedRuleName"].asString();
 	if(!managedRuleNode["CompulsoryInputParameterDetails"].isNull())
 		configRule_.managedRule.compulsoryInputParameterDetails = managedRuleNode["CompulsoryInputParameterDetails"].asString();
-	auto allSourceDetails1Node = managedRuleNode["SourceDetails"]["SourceDetailsItem"];
-	for (auto managedRuleNodeSourceDetailsSourceDetailsItem : allSourceDetails1Node)
+	auto allSourceDetails1Node = managedRuleNode["SourceDetails"]["sourceDetailsItem"];
+	for (auto managedRuleNodeSourceDetailssourceDetailsItem : allSourceDetails1Node)
 	{
 		ConfigRule::ManagedRule::SourceDetailsItem2 sourceDetailsItem2Object;
-		if(!managedRuleNodeSourceDetailsSourceDetailsItem["MessageType"].isNull())
-			sourceDetailsItem2Object.messageType = managedRuleNodeSourceDetailsSourceDetailsItem["MessageType"].asString();
-		if(!managedRuleNodeSourceDetailsSourceDetailsItem["EventSource"].isNull())
-			sourceDetailsItem2Object.eventSource = managedRuleNodeSourceDetailsSourceDetailsItem["EventSource"].asString();
-		if(!managedRuleNodeSourceDetailsSourceDetailsItem["MaximumExecutionFrequency"].isNull())
-			sourceDetailsItem2Object.maximumExecutionFrequency = managedRuleNodeSourceDetailsSourceDetailsItem["MaximumExecutionFrequency"].asString();
+		if(!managedRuleNodeSourceDetailssourceDetailsItem["MessageType"].isNull())
+			sourceDetailsItem2Object.messageType = managedRuleNodeSourceDetailssourceDetailsItem["MessageType"].asString();
+		if(!managedRuleNodeSourceDetailssourceDetailsItem["EventSource"].isNull())
+			sourceDetailsItem2Object.eventSource = managedRuleNodeSourceDetailssourceDetailsItem["EventSource"].asString();
+		if(!managedRuleNodeSourceDetailssourceDetailsItem["MaximumExecutionFrequency"].isNull())
+			sourceDetailsItem2Object.maximumExecutionFrequency = managedRuleNodeSourceDetailssourceDetailsItem["MaximumExecutionFrequency"].asString();
 		configRule_.managedRule.sourceDetails1.push_back(sourceDetailsItem2Object);
 	}
-		auto allLabels = managedRuleNode["Labels"]["Labels"];
+		auto allLabels = managedRuleNode["Labels"]["labels"];
 		for (auto value : allLabels)
 			configRule_.managedRule.labels.push_back(value.asString());
 	auto createByNode = configRuleNode["CreateBy"];
@@ -161,7 +163,7 @@ void GetConfigRuleResult::parse(const std::string &payload)
 	if(!configRuleEvaluationStatusNode["LastFailedInvocationTimestamp"].isNull())
 		configRule_.configRuleEvaluationStatus.lastFailedInvocationTimestamp = std::stol(configRuleEvaluationStatusNode["LastFailedInvocationTimestamp"].asString());
 	auto scopeNode = configRuleNode["Scope"];
-		auto allComplianceResourceTypes = scopeNode["ComplianceResourceTypes"]["ComplianceResourceTypes"];
+		auto allComplianceResourceTypes = scopeNode["ComplianceResourceTypes"]["complianceResourceTypes"];
 		for (auto value : allComplianceResourceTypes)
 			configRule_.scope.complianceResourceTypes.push_back(value.asString());
 	auto complianceNode = configRuleNode["Compliance"];

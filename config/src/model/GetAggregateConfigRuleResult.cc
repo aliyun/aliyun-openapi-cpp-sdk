@@ -91,6 +91,8 @@ void GetAggregateConfigRuleResult::parse(const std::string &payload)
 		configRule_.source.owner = sourceNode["Owner"].asString();
 	if(!sourceNode["Identifier"].isNull())
 		configRule_.source.identifier = sourceNode["Identifier"].asString();
+	if(!sourceNode["Conditions"].isNull())
+		configRule_.source.conditions = sourceNode["Conditions"].asString();
 	auto allSourceDetailsNode = sourceNode["SourceDetails"]["SourceDetailsItem"];
 	for (auto sourceNodeSourceDetailsSourceDetailsItem : allSourceDetailsNode)
 	{

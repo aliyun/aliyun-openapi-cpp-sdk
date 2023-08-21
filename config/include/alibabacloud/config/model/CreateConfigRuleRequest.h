@@ -62,6 +62,8 @@ public:
 	void setMaximumExecutionFrequency(const std::string &maximumExecutionFrequency);
 	std::string getExcludeResourceIdsScope() const;
 	void setExcludeResourceIdsScope(const std::string &excludeResourceIdsScope);
+	std::string getConditions() const;
+	void setConditions(const std::string &conditions);
 
 private:
 	std::string tagKeyScope_;
@@ -80,6 +82,7 @@ private:
 	std::string tagKeyLogicScope_;
 	std::string maximumExecutionFrequency_;
 	std::string excludeResourceIdsScope_;
+	std::string conditions_;
 };
 } // namespace Model
 } // namespace Config

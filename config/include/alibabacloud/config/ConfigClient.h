@@ -80,6 +80,8 @@
 #include "model/DeleteConfigRulesResult.h"
 #include "model/DeleteRemediationsRequest.h"
 #include "model/DeleteRemediationsResult.h"
+#include "model/DescribeRemediationRequest.h"
+#include "model/DescribeRemediationResult.h"
 #include "model/DetachAggregateConfigRuleToCompliancePackRequest.h"
 #include "model/DetachAggregateConfigRuleToCompliancePackResult.h"
 #include "model/DetachConfigRuleToCompliancePackRequest.h"
@@ -394,6 +396,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRemediationsResult> DeleteRemediationsOutcome;
 			typedef std::future<DeleteRemediationsOutcome> DeleteRemediationsOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::DeleteRemediationsRequest&, const DeleteRemediationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRemediationsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRemediationResult> DescribeRemediationOutcome;
+			typedef std::future<DescribeRemediationOutcome> DescribeRemediationOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::DescribeRemediationRequest&, const DescribeRemediationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRemediationAsyncHandler;
 			typedef Outcome<Error, Model::DetachAggregateConfigRuleToCompliancePackResult> DetachAggregateConfigRuleToCompliancePackOutcome;
 			typedef std::future<DetachAggregateConfigRuleToCompliancePackOutcome> DetachAggregateConfigRuleToCompliancePackOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::DetachAggregateConfigRuleToCompliancePackRequest&, const DetachAggregateConfigRuleToCompliancePackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachAggregateConfigRuleToCompliancePackAsyncHandler;
@@ -813,6 +818,9 @@ namespace AlibabaCloud
 			DeleteRemediationsOutcome deleteRemediations(const Model::DeleteRemediationsRequest &request)const;
 			void deleteRemediationsAsync(const Model::DeleteRemediationsRequest& request, const DeleteRemediationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRemediationsOutcomeCallable deleteRemediationsCallable(const Model::DeleteRemediationsRequest& request) const;
+			DescribeRemediationOutcome describeRemediation(const Model::DescribeRemediationRequest &request)const;
+			void describeRemediationAsync(const Model::DescribeRemediationRequest& request, const DescribeRemediationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRemediationOutcomeCallable describeRemediationCallable(const Model::DescribeRemediationRequest& request) const;
 			DetachAggregateConfigRuleToCompliancePackOutcome detachAggregateConfigRuleToCompliancePack(const Model::DetachAggregateConfigRuleToCompliancePackRequest &request)const;
 			void detachAggregateConfigRuleToCompliancePackAsync(const Model::DetachAggregateConfigRuleToCompliancePackRequest& request, const DetachAggregateConfigRuleToCompliancePackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachAggregateConfigRuleToCompliancePackOutcomeCallable detachAggregateConfigRuleToCompliancePackCallable(const Model::DetachAggregateConfigRuleToCompliancePackRequest& request) const;

@@ -68,6 +68,8 @@ public:
 	void setFolderIdsScope(const std::string &folderIdsScope);
 	std::string getExcludeResourceIdsScope() const;
 	void setExcludeResourceIdsScope(const std::string &excludeResourceIdsScope);
+	std::string getConditions() const;
+	void setConditions(const std::string &conditions);
 
 private:
 	std::string configRuleId_;
@@ -89,6 +91,7 @@ private:
 	std::string maximumExecutionFrequency_;
 	std::string folderIdsScope_;
 	std::string excludeResourceIdsScope_;
+	std::string conditions_;
 };
 } // namespace Model
 } // namespace Config

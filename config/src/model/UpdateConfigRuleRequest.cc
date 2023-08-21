@@ -162,3 +162,12 @@ void UpdateConfigRuleRequest::setExcludeResourceIdsScope(const std::string &excl
   setBodyParameter(std::string("ExcludeResourceIdsScope"), excludeResourceIdsScope);
 }
 
+std::string UpdateConfigRuleRequest::getConditions() const {
+  return conditions_;
+}
+
+void UpdateConfigRuleRequest::setConditions(const std::string &conditions) {
+  conditions_ = conditions;
+  setBodyParameter(std::string("Conditions"), conditions);
+}
+
