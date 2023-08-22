@@ -34,6 +34,15 @@ void CreateDomainRequest::setIpFollowStatus(int ipFollowStatus) {
   setParameter(std::string("IpFollowStatus"), std::to_string(ipFollowStatus));
 }
 
+bool CreateDomainRequest::getKeepalive() const {
+  return keepalive_;
+}
+
+void CreateDomainRequest::setKeepalive(bool keepalive) {
+  keepalive_ = keepalive;
+  setParameter(std::string("Keepalive"), keepalive ? "true" : "false");
+}
+
 std::string CreateDomainRequest::getSniHost() const {
   return sniHost_;
 }
@@ -88,24 +97,6 @@ void CreateDomainRequest::setWriteTime(int writeTime) {
   setParameter(std::string("WriteTime"), std::to_string(writeTime));
 }
 
-int CreateDomainRequest::getSniStatus() const {
-  return sniStatus_;
-}
-
-void CreateDomainRequest::setSniStatus(int sniStatus) {
-  sniStatus_ = sniStatus;
-  setParameter(std::string("SniStatus"), std::to_string(sniStatus));
-}
-
-std::string CreateDomainRequest::getLang() const {
-  return lang_;
-}
-
-void CreateDomainRequest::setLang(const std::string &lang) {
-  lang_ = lang;
-  setParameter(std::string("Lang"), lang);
-}
-
 int CreateDomainRequest::getAccessHeaderMode() const {
   return accessHeaderMode_;
 }
@@ -113,24 +104,6 @@ int CreateDomainRequest::getAccessHeaderMode() const {
 void CreateDomainRequest::setAccessHeaderMode(int accessHeaderMode) {
   accessHeaderMode_ = accessHeaderMode;
   setParameter(std::string("AccessHeaderMode"), std::to_string(accessHeaderMode));
-}
-
-std::string CreateDomainRequest::getAccessType() const {
-  return accessType_;
-}
-
-void CreateDomainRequest::setAccessType(const std::string &accessType) {
-  accessType_ = accessType;
-  setParameter(std::string("AccessType"), accessType);
-}
-
-std::string CreateDomainRequest::getLogHeaders() const {
-  return logHeaders_;
-}
-
-void CreateDomainRequest::setLogHeaders(const std::string &logHeaders) {
-  logHeaders_ = logHeaders;
-  setParameter(std::string("LogHeaders"), logHeaders);
 }
 
 std::string CreateDomainRequest::getAccessHeaders() const {
@@ -142,13 +115,13 @@ void CreateDomainRequest::setAccessHeaders(const std::string &accessHeaders) {
   setParameter(std::string("AccessHeaders"), accessHeaders);
 }
 
-int CreateDomainRequest::getConnectionTime() const {
-  return connectionTime_;
+int CreateDomainRequest::getKeepaliveTimeout() const {
+  return keepaliveTimeout_;
 }
 
-void CreateDomainRequest::setConnectionTime(int connectionTime) {
-  connectionTime_ = connectionTime;
-  setParameter(std::string("ConnectionTime"), std::to_string(connectionTime));
+void CreateDomainRequest::setKeepaliveTimeout(int keepaliveTimeout) {
+  keepaliveTimeout_ = keepaliveTimeout;
+  setParameter(std::string("KeepaliveTimeout"), std::to_string(keepaliveTimeout));
 }
 
 int CreateDomainRequest::getClusterType() const {
@@ -158,15 +131,6 @@ int CreateDomainRequest::getClusterType() const {
 void CreateDomainRequest::setClusterType(int clusterType) {
   clusterType_ = clusterType;
   setParameter(std::string("ClusterType"), std::to_string(clusterType));
-}
-
-std::string CreateDomainRequest::getCloudNativeInstances() const {
-  return cloudNativeInstances_;
-}
-
-void CreateDomainRequest::setCloudNativeInstances(const std::string &cloudNativeInstances) {
-  cloudNativeInstances_ = cloudNativeInstances;
-  setParameter(std::string("CloudNativeInstances"), cloudNativeInstances);
 }
 
 int CreateDomainRequest::getHttpsRedirect() const {
@@ -187,15 +151,6 @@ void CreateDomainRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string CreateDomainRequest::getSourceIps() const {
-  return sourceIps_;
-}
-
-void CreateDomainRequest::setSourceIps(const std::string &sourceIps) {
-  sourceIps_ = sourceIps;
-  setParameter(std::string("SourceIps"), sourceIps);
-}
-
 std::string CreateDomainRequest::getDomain() const {
   return domain_;
 }
@@ -203,15 +158,6 @@ std::string CreateDomainRequest::getDomain() const {
 void CreateDomainRequest::setDomain(const std::string &domain) {
   domain_ = domain;
   setParameter(std::string("Domain"), domain);
-}
-
-int CreateDomainRequest::getIsAccessProduct() const {
-  return isAccessProduct_;
-}
-
-void CreateDomainRequest::setIsAccessProduct(int isAccessProduct) {
-  isAccessProduct_ = isAccessProduct;
-  setParameter(std::string("IsAccessProduct"), std::to_string(isAccessProduct));
 }
 
 int CreateDomainRequest::getReadTime() const {
@@ -230,6 +176,96 @@ std::string CreateDomainRequest::getHttpsPort() const {
 void CreateDomainRequest::setHttpsPort(const std::string &httpsPort) {
   httpsPort_ = httpsPort;
   setParameter(std::string("HttpsPort"), httpsPort);
+}
+
+int CreateDomainRequest::getSniStatus() const {
+  return sniStatus_;
+}
+
+void CreateDomainRequest::setSniStatus(int sniStatus) {
+  sniStatus_ = sniStatus;
+  setParameter(std::string("SniStatus"), std::to_string(sniStatus));
+}
+
+std::string CreateDomainRequest::getLang() const {
+  return lang_;
+}
+
+void CreateDomainRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
+bool CreateDomainRequest::getRetry() const {
+  return retry_;
+}
+
+void CreateDomainRequest::setRetry(bool retry) {
+  retry_ = retry;
+  setParameter(std::string("Retry"), retry ? "true" : "false");
+}
+
+int CreateDomainRequest::getKeepaliveRequests() const {
+  return keepaliveRequests_;
+}
+
+void CreateDomainRequest::setKeepaliveRequests(int keepaliveRequests) {
+  keepaliveRequests_ = keepaliveRequests;
+  setParameter(std::string("KeepaliveRequests"), std::to_string(keepaliveRequests));
+}
+
+std::string CreateDomainRequest::getAccessType() const {
+  return accessType_;
+}
+
+void CreateDomainRequest::setAccessType(const std::string &accessType) {
+  accessType_ = accessType;
+  setParameter(std::string("AccessType"), accessType);
+}
+
+std::string CreateDomainRequest::getLogHeaders() const {
+  return logHeaders_;
+}
+
+void CreateDomainRequest::setLogHeaders(const std::string &logHeaders) {
+  logHeaders_ = logHeaders;
+  setParameter(std::string("LogHeaders"), logHeaders);
+}
+
+int CreateDomainRequest::getConnectionTime() const {
+  return connectionTime_;
+}
+
+void CreateDomainRequest::setConnectionTime(int connectionTime) {
+  connectionTime_ = connectionTime;
+  setParameter(std::string("ConnectionTime"), std::to_string(connectionTime));
+}
+
+std::string CreateDomainRequest::getCloudNativeInstances() const {
+  return cloudNativeInstances_;
+}
+
+void CreateDomainRequest::setCloudNativeInstances(const std::string &cloudNativeInstances) {
+  cloudNativeInstances_ = cloudNativeInstances;
+  setParameter(std::string("CloudNativeInstances"), cloudNativeInstances);
+}
+
+std::string CreateDomainRequest::getSourceIps() const {
+  return sourceIps_;
+}
+
+void CreateDomainRequest::setSourceIps(const std::string &sourceIps) {
+  sourceIps_ = sourceIps;
+  setParameter(std::string("SourceIps"), sourceIps);
+}
+
+int CreateDomainRequest::getIsAccessProduct() const {
+  return isAccessProduct_;
+}
+
+void CreateDomainRequest::setIsAccessProduct(int isAccessProduct) {
+  isAccessProduct_ = isAccessProduct;
+  setParameter(std::string("IsAccessProduct"), std::to_string(isAccessProduct));
 }
 
 int CreateDomainRequest::getLoadBalancing() const {

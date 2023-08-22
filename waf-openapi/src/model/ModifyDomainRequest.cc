@@ -34,6 +34,15 @@ void ModifyDomainRequest::setIpFollowStatus(int ipFollowStatus) {
   setParameter(std::string("IpFollowStatus"), std::to_string(ipFollowStatus));
 }
 
+bool ModifyDomainRequest::getKeepalive() const {
+  return keepalive_;
+}
+
+void ModifyDomainRequest::setKeepalive(bool keepalive) {
+  keepalive_ = keepalive;
+  setParameter(std::string("Keepalive"), keepalive ? "true" : "false");
+}
+
 std::string ModifyDomainRequest::getSniHost() const {
   return sniHost_;
 }
@@ -88,6 +97,87 @@ void ModifyDomainRequest::setWriteTime(int writeTime) {
   setParameter(std::string("WriteTime"), std::to_string(writeTime));
 }
 
+int ModifyDomainRequest::getAccessHeaderMode() const {
+  return accessHeaderMode_;
+}
+
+void ModifyDomainRequest::setAccessHeaderMode(int accessHeaderMode) {
+  accessHeaderMode_ = accessHeaderMode;
+  setParameter(std::string("AccessHeaderMode"), std::to_string(accessHeaderMode));
+}
+
+std::string ModifyDomainRequest::getAccessHeaders() const {
+  return accessHeaders_;
+}
+
+void ModifyDomainRequest::setAccessHeaders(const std::string &accessHeaders) {
+  accessHeaders_ = accessHeaders;
+  setParameter(std::string("AccessHeaders"), accessHeaders);
+}
+
+int ModifyDomainRequest::getKeepaliveTimeout() const {
+  return keepaliveTimeout_;
+}
+
+void ModifyDomainRequest::setKeepaliveTimeout(int keepaliveTimeout) {
+  keepaliveTimeout_ = keepaliveTimeout;
+  setParameter(std::string("KeepaliveTimeout"), std::to_string(keepaliveTimeout));
+}
+
+int ModifyDomainRequest::getClusterType() const {
+  return clusterType_;
+}
+
+void ModifyDomainRequest::setClusterType(int clusterType) {
+  clusterType_ = clusterType;
+  setParameter(std::string("ClusterType"), std::to_string(clusterType));
+}
+
+int ModifyDomainRequest::getHttpsRedirect() const {
+  return httpsRedirect_;
+}
+
+void ModifyDomainRequest::setHttpsRedirect(int httpsRedirect) {
+  httpsRedirect_ = httpsRedirect;
+  setParameter(std::string("HttpsRedirect"), std::to_string(httpsRedirect));
+}
+
+std::string ModifyDomainRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ModifyDomainRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string ModifyDomainRequest::getDomain() const {
+  return domain_;
+}
+
+void ModifyDomainRequest::setDomain(const std::string &domain) {
+  domain_ = domain;
+  setParameter(std::string("Domain"), domain);
+}
+
+int ModifyDomainRequest::getReadTime() const {
+  return readTime_;
+}
+
+void ModifyDomainRequest::setReadTime(int readTime) {
+  readTime_ = readTime;
+  setParameter(std::string("ReadTime"), std::to_string(readTime));
+}
+
+std::string ModifyDomainRequest::getHttpsPort() const {
+  return httpsPort_;
+}
+
+void ModifyDomainRequest::setHttpsPort(const std::string &httpsPort) {
+  httpsPort_ = httpsPort;
+  setParameter(std::string("HttpsPort"), httpsPort);
+}
+
 int ModifyDomainRequest::getSniStatus() const {
   return sniStatus_;
 }
@@ -106,13 +196,22 @@ void ModifyDomainRequest::setLang(const std::string &lang) {
   setParameter(std::string("Lang"), lang);
 }
 
-int ModifyDomainRequest::getAccessHeaderMode() const {
-  return accessHeaderMode_;
+bool ModifyDomainRequest::getRetry() const {
+  return retry_;
 }
 
-void ModifyDomainRequest::setAccessHeaderMode(int accessHeaderMode) {
-  accessHeaderMode_ = accessHeaderMode;
-  setParameter(std::string("AccessHeaderMode"), std::to_string(accessHeaderMode));
+void ModifyDomainRequest::setRetry(bool retry) {
+  retry_ = retry;
+  setParameter(std::string("Retry"), retry ? "true" : "false");
+}
+
+int ModifyDomainRequest::getKeepaliveRequests() const {
+  return keepaliveRequests_;
+}
+
+void ModifyDomainRequest::setKeepaliveRequests(int keepaliveRequests) {
+  keepaliveRequests_ = keepaliveRequests;
+  setParameter(std::string("KeepaliveRequests"), std::to_string(keepaliveRequests));
 }
 
 std::string ModifyDomainRequest::getAccessType() const {
@@ -142,15 +241,6 @@ void ModifyDomainRequest::setLogHeaders(const std::string &logHeaders) {
   setParameter(std::string("LogHeaders"), logHeaders);
 }
 
-std::string ModifyDomainRequest::getAccessHeaders() const {
-  return accessHeaders_;
-}
-
-void ModifyDomainRequest::setAccessHeaders(const std::string &accessHeaders) {
-  accessHeaders_ = accessHeaders;
-  setParameter(std::string("AccessHeaders"), accessHeaders);
-}
-
 int ModifyDomainRequest::getConnectionTime() const {
   return connectionTime_;
 }
@@ -158,15 +248,6 @@ int ModifyDomainRequest::getConnectionTime() const {
 void ModifyDomainRequest::setConnectionTime(int connectionTime) {
   connectionTime_ = connectionTime;
   setParameter(std::string("ConnectionTime"), std::to_string(connectionTime));
-}
-
-int ModifyDomainRequest::getClusterType() const {
-  return clusterType_;
-}
-
-void ModifyDomainRequest::setClusterType(int clusterType) {
-  clusterType_ = clusterType;
-  setParameter(std::string("ClusterType"), std::to_string(clusterType));
 }
 
 std::string ModifyDomainRequest::getCloudNativeInstances() const {
@@ -178,24 +259,6 @@ void ModifyDomainRequest::setCloudNativeInstances(const std::string &cloudNative
   setParameter(std::string("CloudNativeInstances"), cloudNativeInstances);
 }
 
-int ModifyDomainRequest::getHttpsRedirect() const {
-  return httpsRedirect_;
-}
-
-void ModifyDomainRequest::setHttpsRedirect(int httpsRedirect) {
-  httpsRedirect_ = httpsRedirect;
-  setParameter(std::string("HttpsRedirect"), std::to_string(httpsRedirect));
-}
-
-std::string ModifyDomainRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ModifyDomainRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 std::string ModifyDomainRequest::getSourceIps() const {
   return sourceIps_;
 }
@@ -205,15 +268,6 @@ void ModifyDomainRequest::setSourceIps(const std::string &sourceIps) {
   setParameter(std::string("SourceIps"), sourceIps);
 }
 
-std::string ModifyDomainRequest::getDomain() const {
-  return domain_;
-}
-
-void ModifyDomainRequest::setDomain(const std::string &domain) {
-  domain_ = domain;
-  setParameter(std::string("Domain"), domain);
-}
-
 int ModifyDomainRequest::getIsAccessProduct() const {
   return isAccessProduct_;
 }
@@ -221,24 +275,6 @@ int ModifyDomainRequest::getIsAccessProduct() const {
 void ModifyDomainRequest::setIsAccessProduct(int isAccessProduct) {
   isAccessProduct_ = isAccessProduct;
   setParameter(std::string("IsAccessProduct"), std::to_string(isAccessProduct));
-}
-
-int ModifyDomainRequest::getReadTime() const {
-  return readTime_;
-}
-
-void ModifyDomainRequest::setReadTime(int readTime) {
-  readTime_ = readTime;
-  setParameter(std::string("ReadTime"), std::to_string(readTime));
-}
-
-std::string ModifyDomainRequest::getHttpsPort() const {
-  return httpsPort_;
-}
-
-void ModifyDomainRequest::setHttpsPort(const std::string &httpsPort) {
-  httpsPort_ = httpsPort;
-  setParameter(std::string("HttpsPort"), httpsPort);
 }
 
 int ModifyDomainRequest::getLoadBalancing() const {

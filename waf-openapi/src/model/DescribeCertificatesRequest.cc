@@ -25,15 +25,6 @@ DescribeCertificatesRequest::DescribeCertificatesRequest()
 
 DescribeCertificatesRequest::~DescribeCertificatesRequest() {}
 
-std::string DescribeCertificatesRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void DescribeCertificatesRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 std::string DescribeCertificatesRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -43,15 +34,6 @@ void DescribeCertificatesRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string DescribeCertificatesRequest::getDomain() const {
-  return domain_;
-}
-
-void DescribeCertificatesRequest::setDomain(const std::string &domain) {
-  domain_ = domain;
-  setParameter(std::string("Domain"), domain);
-}
-
 std::string DescribeCertificatesRequest::getLang() const {
   return lang_;
 }
@@ -59,5 +41,23 @@ std::string DescribeCertificatesRequest::getLang() const {
 void DescribeCertificatesRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string DescribeCertificatesRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void DescribeCertificatesRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string DescribeCertificatesRequest::getDomain() const {
+  return domain_;
+}
+
+void DescribeCertificatesRequest::setDomain(const std::string &domain) {
+  domain_ = domain;
+  setParameter(std::string("Domain"), domain);
 }
 

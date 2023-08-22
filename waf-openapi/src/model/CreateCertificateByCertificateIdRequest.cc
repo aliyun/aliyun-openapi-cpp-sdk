@@ -25,6 +25,24 @@ CreateCertificateByCertificateIdRequest::CreateCertificateByCertificateIdRequest
 
 CreateCertificateByCertificateIdRequest::~CreateCertificateByCertificateIdRequest() {}
 
+std::string CreateCertificateByCertificateIdRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void CreateCertificateByCertificateIdRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string CreateCertificateByCertificateIdRequest::getLang() const {
+  return lang_;
+}
+
+void CreateCertificateByCertificateIdRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
 long CreateCertificateByCertificateIdRequest::getCertificateId() const {
   return certificateId_;
 }
@@ -43,15 +61,6 @@ void CreateCertificateByCertificateIdRequest::setInstanceId(const std::string &i
   setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string CreateCertificateByCertificateIdRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void CreateCertificateByCertificateIdRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
-}
-
 std::string CreateCertificateByCertificateIdRequest::getDomain() const {
   return domain_;
 }
@@ -59,14 +68,5 @@ std::string CreateCertificateByCertificateIdRequest::getDomain() const {
 void CreateCertificateByCertificateIdRequest::setDomain(const std::string &domain) {
   domain_ = domain;
   setParameter(std::string("Domain"), domain);
-}
-
-std::string CreateCertificateByCertificateIdRequest::getLang() const {
-  return lang_;
-}
-
-void CreateCertificateByCertificateIdRequest::setLang(const std::string &lang) {
-  lang_ = lang;
-  setParameter(std::string("Lang"), lang);
 }
 

@@ -51,6 +51,8 @@ void DescribeCertificatesResult::parse(const std::string &payload)
 			certificatesObject.certificateId = std::stol(valueCertificatesCertificate["CertificateId"].asString());
 		if(!valueCertificatesCertificate["CommonName"].isNull())
 			certificatesObject.commonName = valueCertificatesCertificate["CommonName"].asString();
+		if(!valueCertificatesCertificate["EndTime"].isNull())
+			certificatesObject.endTime = std::stol(valueCertificatesCertificate["EndTime"].asString());
 		auto allSans = value["Sans"]["San"];
 		for (auto value : allSans)
 			certificatesObject.sans.push_back(value.asString());

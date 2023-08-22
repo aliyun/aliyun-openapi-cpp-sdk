@@ -30,23 +30,23 @@ class ALIBABACLOUD_WAF_OPENAPI_EXPORT CreateCertificateByCertificateIdRequest : 
 public:
 	CreateCertificateByCertificateIdRequest();
 	~CreateCertificateByCertificateIdRequest();
+	std::string getSourceIp() const;
+	void setSourceIp(const std::string &sourceIp);
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 	long getCertificateId() const;
 	void setCertificateId(long certificateId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
-	std::string getSourceIp() const;
-	void setSourceIp(const std::string &sourceIp);
 	std::string getDomain() const;
 	void setDomain(const std::string &domain);
-	std::string getLang() const;
-	void setLang(const std::string &lang);
 
 private:
+	std::string sourceIp_;
+	std::string lang_;
 	long certificateId_;
 	std::string instanceId_;
-	std::string sourceIp_;
 	std::string domain_;
-	std::string lang_;
 };
 } // namespace Model
 } // namespace Waf_openapi

@@ -43,38 +43,42 @@ namespace AlibabaCloud
 					{
 						struct ProtocolPortConfigsItem
 						{
-							std::string ports;
+							std::vector<std::string> ports;
 							std::string protocol;
 						};
 						std::vector<CloudNativeInstancesItem::ProtocolPortConfigsItem> protocolPortConfigs;
 						std::string redirectionTypeName;
 						std::string instanceId;
-						std::string iPAddressList;
+						std::vector<std::string> iPAddressList;
 						std::string cloudNativeProductName;
 					};
-					int httpToUserIp;
-					std::vector<std::string> httpPort;
 					int isAccessProduct;
-					int accessHeaderMode;
 					std::string resourceGroupId;
 					std::vector<std::string> accessHeaders;
 					int readTime;
 					std::vector<std::string> sourceIps;
-					int ipFollowStatus;
-					int clusterType;
-					int loadBalancing;
-					std::string cname;
-					std::vector<LogHeader> logHeaders;
-					int sniStatus;
 					std::string sniHost;
-					int writeTime;
-					std::vector<std::string> http2Port;
 					long version;
-					int httpsRedirect;
 					int connectionTime;
 					std::vector<CloudNativeInstancesItem> cloudNativeInstances;
 					std::string accessType;
 					std::vector<std::string> httpsPort;
+					int httpToUserIp;
+					std::vector<std::string> httpPort;
+					int accessHeaderMode;
+					bool keepalive;
+					int ipFollowStatus;
+					int clusterType;
+					int loadBalancing;
+					std::string cname;
+					int keepaliveTimeout;
+					std::vector<LogHeader> logHeaders;
+					int sniStatus;
+					int writeTime;
+					std::vector<std::string> http2Port;
+					int httpsRedirect;
+					bool retry;
+					int keepaliveRequests;
 				};
 
 

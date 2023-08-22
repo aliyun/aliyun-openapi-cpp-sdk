@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Certificate
 				{
+					long endTime;
 					std::vector<std::string> sans;
 					long certificateId;
 					std::string certificateName;
