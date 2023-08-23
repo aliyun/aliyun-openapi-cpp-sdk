@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FT_MODEL_CREATEINSREQUEST_H_
-#define ALIBABACLOUD_FT_MODEL_CREATEINSREQUEST_H_
+#ifndef ALIBABACLOUD_FT_MODEL_RPCDATAUPLOADANDDOWNLOADREQUEST_H_
+#define ALIBABACLOUD_FT_MODEL_RPCDATAUPLOADANDDOWNLOADREQUEST_H_
 
 #include <alibabacloud/ft/FtExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,17 @@
 namespace AlibabaCloud {
 namespace Ft {
 namespace Model {
-class ALIBABACLOUD_FT_EXPORT CreateInsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_FT_EXPORT RpcDataUploadAndDownloadRequest : public RpcServiceRequest {
 public:
-	CreateInsRequest();
-	~CreateInsRequest();
-	std::string getNewparam1() const;
-	void setNewparam1(const std::string &newparam1);
-	std::string getBind() const;
-	void setBind(const std::string &bind);
-	std::string getTest() const;
-	void setTest(const std::string &test);
-	std::string getSuccess() const;
-	void setSuccess(const std::string &success);
-	std::string getTime() const;
-	void setTime(const std::string &time);
-	std::string getNewPala() const;
-	void setNewPala(const std::string &newPala);
+	RpcDataUploadAndDownloadRequest();
+	~RpcDataUploadAndDownloadRequest();
+	std::string getQuery1() const;
+	void setQuery1(const std::string &query1);
 
 private:
-	std::string newparam1_;
-	std::string bind_;
-	std::string test_;
-	std::string success_;
-	std::string time_;
-	std::string newPala_;
+	std::string query1_;
 };
 } // namespace Model
 } // namespace Ft
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_FT_MODEL_CREATEINSREQUEST_H_
+#endif // !ALIBABACLOUD_FT_MODEL_RPCDATAUPLOADANDDOWNLOADREQUEST_H_

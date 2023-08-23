@@ -14,45 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ft/model/CreateInsResult.h>
+#include <alibabacloud/ft/model/RpcDataUploadAndDownloadResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ft;
 using namespace AlibabaCloud::Ft::Model;
 
-CreateInsResult::CreateInsResult() :
+RpcDataUploadAndDownloadResult::RpcDataUploadAndDownloadResult() :
 	ServiceResult()
 {}
 
-CreateInsResult::CreateInsResult(const std::string &payload) :
+RpcDataUploadAndDownloadResult::RpcDataUploadAndDownloadResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateInsResult::~CreateInsResult()
+RpcDataUploadAndDownloadResult::~RpcDataUploadAndDownloadResult()
 {}
 
-void CreateInsResult::parse(const std::string &payload)
+void RpcDataUploadAndDownloadResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
 
-}
-
-std::string CreateInsResult::getCode()const
-{
-	return code_;
-}
-
-std::string CreateInsResult::getSuccess()const
-{
-	return success_;
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FT_MODEL_UPDATEINSREQUEST_H_
-#define ALIBABACLOUD_FT_MODEL_UPDATEINSREQUEST_H_
+#ifndef ALIBABACLOUD_FT_MODEL_NORMALRPCHSFAPIREQUEST_H_
+#define ALIBABACLOUD_FT_MODEL_NORMALRPCHSFAPIREQUEST_H_
 
 #include <alibabacloud/ft/FtExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,14 @@
 namespace AlibabaCloud {
 namespace Ft {
 namespace Model {
-class ALIBABACLOUD_FT_EXPORT UpdateInsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_FT_EXPORT NormalRpcHsfApiRequest : public RpcServiceRequest {
 public:
-	UpdateInsRequest();
-	~UpdateInsRequest();
-	std::string getSucceed() const;
-	void setSucceed(const std::string &succeed);
-	std::string getHttpStatusCode1() const;
-	void setHttpStatusCode1(const std::string &httpStatusCode1);
+	NormalRpcHsfApiRequest();
+	~NormalRpcHsfApiRequest();
 
 private:
-	std::string succeed_;
-	std::string httpStatusCode1_;
 };
 } // namespace Model
 } // namespace Ft
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_FT_MODEL_UPDATEINSREQUEST_H_
+#endif // !ALIBABACLOUD_FT_MODEL_NORMALRPCHSFAPIREQUEST_H_

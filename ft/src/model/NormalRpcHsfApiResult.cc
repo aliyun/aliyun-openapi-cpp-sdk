@@ -14,45 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ft/model/UpdateInsResult.h>
+#include <alibabacloud/ft/model/NormalRpcHsfApiResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ft;
 using namespace AlibabaCloud::Ft::Model;
 
-UpdateInsResult::UpdateInsResult() :
+NormalRpcHsfApiResult::NormalRpcHsfApiResult() :
 	ServiceResult()
 {}
 
-UpdateInsResult::UpdateInsResult(const std::string &payload) :
+NormalRpcHsfApiResult::NormalRpcHsfApiResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-UpdateInsResult::~UpdateInsResult()
+NormalRpcHsfApiResult::~NormalRpcHsfApiResult()
 {}
 
-void UpdateInsResult::parse(const std::string &payload)
+void NormalRpcHsfApiResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
 
-}
-
-std::string UpdateInsResult::getCode()const
-{
-	return code_;
-}
-
-std::string UpdateInsResult::getSuccess()const
-{
-	return success_;
 }
 
