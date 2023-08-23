@@ -2895,6 +2895,42 @@ AdbClient::ListTagResourcesOutcomeCallable AdbClient::listTagResourcesCallable(c
 	return task->get_future();
 }
 
+AdbClient::MigrateDBClusterOutcome AdbClient::migrateDBCluster(const MigrateDBClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MigrateDBClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MigrateDBClusterOutcome(MigrateDBClusterResult(outcome.result()));
+	else
+		return MigrateDBClusterOutcome(outcome.error());
+}
+
+void AdbClient::migrateDBClusterAsync(const MigrateDBClusterRequest& request, const MigrateDBClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, migrateDBCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::MigrateDBClusterOutcomeCallable AdbClient::migrateDBClusterCallable(const MigrateDBClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MigrateDBClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->migrateDBCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AdbClient::ModifyAccountDescriptionOutcome AdbClient::modifyAccountDescription(const ModifyAccountDescriptionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

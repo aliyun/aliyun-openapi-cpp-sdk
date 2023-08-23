@@ -61,6 +61,15 @@ void DescribeComputeResourceRequest::setResourceOwnerAccount(const std::string &
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
+std::string DescribeComputeResourceRequest::getDBClusterId() const {
+  return dBClusterId_;
+}
+
+void DescribeComputeResourceRequest::setDBClusterId(const std::string &dBClusterId) {
+  dBClusterId_ = dBClusterId;
+  setParameter(std::string("DBClusterId"), dBClusterId);
+}
+
 std::string DescribeComputeResourceRequest::getOwnerAccount() const {
   return ownerAccount_;
 }
@@ -95,5 +104,14 @@ std::string DescribeComputeResourceRequest::getZoneId() const {
 void DescribeComputeResourceRequest::setZoneId(const std::string &zoneId) {
   zoneId_ = zoneId;
   setParameter(std::string("ZoneId"), zoneId);
+}
+
+bool DescribeComputeResourceRequest::getMigrate() const {
+  return migrate_;
+}
+
+void DescribeComputeResourceRequest::setMigrate(bool migrate) {
+  migrate_ = migrate;
+  setParameter(std::string("Migrate"), migrate ? "true" : "false");
 }
 

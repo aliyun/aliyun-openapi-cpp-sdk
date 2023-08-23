@@ -43,6 +43,15 @@ void DescribeTablesRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeTablesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeTablesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeTablesRequest::getSchemaName() const {
   return schemaName_;
 }

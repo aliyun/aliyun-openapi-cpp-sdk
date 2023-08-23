@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBECOMPUTERESOURCEREQUEST_H_
-#define ALIBABACLOUD_ADB_MODEL_DESCRIBECOMPUTERESOURCEREQUEST_H_
+#ifndef ALIBABACLOUD_ADB_MODEL_MIGRATEDBCLUSTERREQUEST_H_
+#define ALIBABACLOUD_ADB_MODEL_MIGRATEDBCLUSTERREQUEST_H_
 
 #include <alibabacloud/adb/AdbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,44 +26,32 @@
 namespace AlibabaCloud {
 namespace Adb {
 namespace Model {
-class ALIBABACLOUD_ADB_EXPORT DescribeComputeResourceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ADB_EXPORT MigrateDBClusterRequest : public RpcServiceRequest {
 public:
-	DescribeComputeResourceRequest();
-	~DescribeComputeResourceRequest();
+	MigrateDBClusterRequest();
+	~MigrateDBClusterRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getDBClusterId() const;
 	void setDBClusterId(const std::string &dBClusterId);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
-	std::string getDBClusterVersion() const;
-	void setDBClusterVersion(const std::string &dBClusterVersion);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getZoneId() const;
-	void setZoneId(const std::string &zoneId);
-	bool getMigrate() const;
-	void setMigrate(bool migrate);
 
 private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
-	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;
-	std::string dBClusterVersion_;
 	long ownerId_;
-	std::string zoneId_;
-	bool migrate_;
 };
 } // namespace Model
 } // namespace Adb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBECOMPUTERESOURCEREQUEST_H_
+#endif // !ALIBABACLOUD_ADB_MODEL_MIGRATEDBCLUSTERREQUEST_H_

@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getSchemaName() const;
 	void setSchemaName(const std::string &schemaName);
 	std::string getResourceOwnerAccount() const;
@@ -48,6 +50,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
+	std::string regionId_;
 	std::string schemaName_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;

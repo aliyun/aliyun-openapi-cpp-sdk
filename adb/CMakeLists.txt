@@ -179,6 +179,8 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/KillProcessResult.h
 	include/alibabacloud/adb/model/ListTagResourcesRequest.h
 	include/alibabacloud/adb/model/ListTagResourcesResult.h
+	include/alibabacloud/adb/model/MigrateDBClusterRequest.h
+	include/alibabacloud/adb/model/MigrateDBClusterResult.h
 	include/alibabacloud/adb/model/ModifyAccountDescriptionRequest.h
 	include/alibabacloud/adb/model/ModifyAccountDescriptionResult.h
 	include/alibabacloud/adb/model/ModifyAuditLogConfigRequest.h
@@ -386,6 +388,8 @@ set(adb_src
 	src/model/KillProcessResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
+	src/model/MigrateDBClusterRequest.cc
+	src/model/MigrateDBClusterResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
 	src/model/ModifyAccountDescriptionResult.cc
 	src/model/ModifyAuditLogConfigRequest.cc
