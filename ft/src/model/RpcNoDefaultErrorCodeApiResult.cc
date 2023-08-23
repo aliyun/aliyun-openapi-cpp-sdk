@@ -14,31 +14,45 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ft/model/NormalRpcHttpApiResult.h>
+#include <alibabacloud/ft/model/RpcNoDefaultErrorCodeApiResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ft;
 using namespace AlibabaCloud::Ft::Model;
 
-NormalRpcHttpApiResult::NormalRpcHttpApiResult() :
+RpcNoDefaultErrorCodeApiResult::RpcNoDefaultErrorCodeApiResult() :
 	ServiceResult()
 {}
 
-NormalRpcHttpApiResult::NormalRpcHttpApiResult(const std::string &payload) :
+RpcNoDefaultErrorCodeApiResult::RpcNoDefaultErrorCodeApiResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-NormalRpcHttpApiResult::~NormalRpcHttpApiResult()
+RpcNoDefaultErrorCodeApiResult::~RpcNoDefaultErrorCodeApiResult()
 {}
 
-void NormalRpcHttpApiResult::parse(const std::string &payload)
+void RpcNoDefaultErrorCodeApiResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
 
+}
+
+std::string RpcNoDefaultErrorCodeApiResult::getCode()const
+{
+	return code_;
+}
+
+std::string RpcNoDefaultErrorCodeApiResult::getSuccess()const
+{
+	return success_;
 }
 

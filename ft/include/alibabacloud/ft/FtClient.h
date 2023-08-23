@@ -22,18 +22,12 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "FtExport.h"
-#include "model/DataRateLimitTestRequest.h"
-#include "model/DataRateLimitTestResult.h"
-#include "model/NormalRpcHsfApiRequest.h"
-#include "model/NormalRpcHsfApiResult.h"
-#include "model/NormalRpcHttpApiRequest.h"
-#include "model/NormalRpcHttpApiResult.h"
-#include "model/RpcDataUploadRequest.h"
-#include "model/RpcDataUploadResult.h"
-#include "model/RpcDataUploadAndDownloadRequest.h"
-#include "model/RpcDataUploadAndDownloadResult.h"
-#include "model/RpcDataUploadTestRequest.h"
-#include "model/RpcDataUploadTestResult.h"
+#include "model/CreateInsRequest.h"
+#include "model/CreateInsResult.h"
+#include "model/RpcNoDefaultErrorCodeApiRequest.h"
+#include "model/RpcNoDefaultErrorCodeApiResult.h"
+#include "model/UpdateInsRequest.h"
+#include "model/UpdateInsResult.h"
 
 
 namespace AlibabaCloud
@@ -43,47 +37,29 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_FT_EXPORT FtClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::DataRateLimitTestResult> DataRateLimitTestOutcome;
-			typedef std::future<DataRateLimitTestOutcome> DataRateLimitTestOutcomeCallable;
-			typedef std::function<void(const FtClient*, const Model::DataRateLimitTestRequest&, const DataRateLimitTestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DataRateLimitTestAsyncHandler;
-			typedef Outcome<Error, Model::NormalRpcHsfApiResult> NormalRpcHsfApiOutcome;
-			typedef std::future<NormalRpcHsfApiOutcome> NormalRpcHsfApiOutcomeCallable;
-			typedef std::function<void(const FtClient*, const Model::NormalRpcHsfApiRequest&, const NormalRpcHsfApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> NormalRpcHsfApiAsyncHandler;
-			typedef Outcome<Error, Model::NormalRpcHttpApiResult> NormalRpcHttpApiOutcome;
-			typedef std::future<NormalRpcHttpApiOutcome> NormalRpcHttpApiOutcomeCallable;
-			typedef std::function<void(const FtClient*, const Model::NormalRpcHttpApiRequest&, const NormalRpcHttpApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> NormalRpcHttpApiAsyncHandler;
-			typedef Outcome<Error, Model::RpcDataUploadResult> RpcDataUploadOutcome;
-			typedef std::future<RpcDataUploadOutcome> RpcDataUploadOutcomeCallable;
-			typedef std::function<void(const FtClient*, const Model::RpcDataUploadRequest&, const RpcDataUploadOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RpcDataUploadAsyncHandler;
-			typedef Outcome<Error, Model::RpcDataUploadAndDownloadResult> RpcDataUploadAndDownloadOutcome;
-			typedef std::future<RpcDataUploadAndDownloadOutcome> RpcDataUploadAndDownloadOutcomeCallable;
-			typedef std::function<void(const FtClient*, const Model::RpcDataUploadAndDownloadRequest&, const RpcDataUploadAndDownloadOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RpcDataUploadAndDownloadAsyncHandler;
-			typedef Outcome<Error, Model::RpcDataUploadTestResult> RpcDataUploadTestOutcome;
-			typedef std::future<RpcDataUploadTestOutcome> RpcDataUploadTestOutcomeCallable;
-			typedef std::function<void(const FtClient*, const Model::RpcDataUploadTestRequest&, const RpcDataUploadTestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RpcDataUploadTestAsyncHandler;
+			typedef Outcome<Error, Model::CreateInsResult> CreateInsOutcome;
+			typedef std::future<CreateInsOutcome> CreateInsOutcomeCallable;
+			typedef std::function<void(const FtClient*, const Model::CreateInsRequest&, const CreateInsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInsAsyncHandler;
+			typedef Outcome<Error, Model::RpcNoDefaultErrorCodeApiResult> RpcNoDefaultErrorCodeApiOutcome;
+			typedef std::future<RpcNoDefaultErrorCodeApiOutcome> RpcNoDefaultErrorCodeApiOutcomeCallable;
+			typedef std::function<void(const FtClient*, const Model::RpcNoDefaultErrorCodeApiRequest&, const RpcNoDefaultErrorCodeApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RpcNoDefaultErrorCodeApiAsyncHandler;
+			typedef Outcome<Error, Model::UpdateInsResult> UpdateInsOutcome;
+			typedef std::future<UpdateInsOutcome> UpdateInsOutcomeCallable;
+			typedef std::function<void(const FtClient*, const Model::UpdateInsRequest&, const UpdateInsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInsAsyncHandler;
 
 			FtClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			FtClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			FtClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~FtClient();
-			DataRateLimitTestOutcome dataRateLimitTest(const Model::DataRateLimitTestRequest &request)const;
-			void dataRateLimitTestAsync(const Model::DataRateLimitTestRequest& request, const DataRateLimitTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DataRateLimitTestOutcomeCallable dataRateLimitTestCallable(const Model::DataRateLimitTestRequest& request) const;
-			NormalRpcHsfApiOutcome normalRpcHsfApi(const Model::NormalRpcHsfApiRequest &request)const;
-			void normalRpcHsfApiAsync(const Model::NormalRpcHsfApiRequest& request, const NormalRpcHsfApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			NormalRpcHsfApiOutcomeCallable normalRpcHsfApiCallable(const Model::NormalRpcHsfApiRequest& request) const;
-			NormalRpcHttpApiOutcome normalRpcHttpApi(const Model::NormalRpcHttpApiRequest &request)const;
-			void normalRpcHttpApiAsync(const Model::NormalRpcHttpApiRequest& request, const NormalRpcHttpApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			NormalRpcHttpApiOutcomeCallable normalRpcHttpApiCallable(const Model::NormalRpcHttpApiRequest& request) const;
-			RpcDataUploadOutcome rpcDataUpload(const Model::RpcDataUploadRequest &request)const;
-			void rpcDataUploadAsync(const Model::RpcDataUploadRequest& request, const RpcDataUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RpcDataUploadOutcomeCallable rpcDataUploadCallable(const Model::RpcDataUploadRequest& request) const;
-			RpcDataUploadAndDownloadOutcome rpcDataUploadAndDownload(const Model::RpcDataUploadAndDownloadRequest &request)const;
-			void rpcDataUploadAndDownloadAsync(const Model::RpcDataUploadAndDownloadRequest& request, const RpcDataUploadAndDownloadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RpcDataUploadAndDownloadOutcomeCallable rpcDataUploadAndDownloadCallable(const Model::RpcDataUploadAndDownloadRequest& request) const;
-			RpcDataUploadTestOutcome rpcDataUploadTest(const Model::RpcDataUploadTestRequest &request)const;
-			void rpcDataUploadTestAsync(const Model::RpcDataUploadTestRequest& request, const RpcDataUploadTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RpcDataUploadTestOutcomeCallable rpcDataUploadTestCallable(const Model::RpcDataUploadTestRequest& request) const;
+			CreateInsOutcome createIns(const Model::CreateInsRequest &request)const;
+			void createInsAsync(const Model::CreateInsRequest& request, const CreateInsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateInsOutcomeCallable createInsCallable(const Model::CreateInsRequest& request) const;
+			RpcNoDefaultErrorCodeApiOutcome rpcNoDefaultErrorCodeApi(const Model::RpcNoDefaultErrorCodeApiRequest &request)const;
+			void rpcNoDefaultErrorCodeApiAsync(const Model::RpcNoDefaultErrorCodeApiRequest& request, const RpcNoDefaultErrorCodeApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RpcNoDefaultErrorCodeApiOutcomeCallable rpcNoDefaultErrorCodeApiCallable(const Model::RpcNoDefaultErrorCodeApiRequest& request) const;
+			UpdateInsOutcome updateIns(const Model::UpdateInsRequest &request)const;
+			void updateInsAsync(const Model::UpdateInsRequest& request, const UpdateInsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateInsOutcomeCallable updateInsCallable(const Model::UpdateInsRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

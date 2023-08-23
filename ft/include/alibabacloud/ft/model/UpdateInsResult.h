@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FT_MODEL_RPCDATAUPLOADANDDOWNLOADRESULT_H_
-#define ALIBABACLOUD_FT_MODEL_RPCDATAUPLOADANDDOWNLOADRESULT_H_
+#ifndef ALIBABACLOUD_FT_MODEL_UPDATEINSRESULT_H_
+#define ALIBABACLOUD_FT_MODEL_UPDATEINSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_FT_EXPORT RpcDataUploadAndDownloadResult : public ServiceResult
+			class ALIBABACLOUD_FT_EXPORT UpdateInsResult : public ServiceResult
 			{
 			public:
 
 
-				RpcDataUploadAndDownloadResult();
-				explicit RpcDataUploadAndDownloadResult(const std::string &payload);
-				~RpcDataUploadAndDownloadResult();
+				UpdateInsResult();
+				explicit UpdateInsResult(const std::string &payload);
+				~UpdateInsResult();
+				std::string getCode()const;
+				std::string getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string code_;
+				std::string success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_FT_MODEL_RPCDATAUPLOADANDDOWNLOADRESULT_H_
+#endif // !ALIBABACLOUD_FT_MODEL_UPDATEINSRESULT_H_

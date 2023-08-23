@@ -21,33 +21,21 @@ set(ft_public_header
 	include/alibabacloud/ft/FtExport.h )
 
 set(ft_public_header_model 
-	include/alibabacloud/ft/model/DataRateLimitTestRequest.h
-	include/alibabacloud/ft/model/DataRateLimitTestResult.h
-	include/alibabacloud/ft/model/NormalRpcHsfApiRequest.h
-	include/alibabacloud/ft/model/NormalRpcHsfApiResult.h
-	include/alibabacloud/ft/model/NormalRpcHttpApiRequest.h
-	include/alibabacloud/ft/model/NormalRpcHttpApiResult.h
-	include/alibabacloud/ft/model/RpcDataUploadRequest.h
-	include/alibabacloud/ft/model/RpcDataUploadResult.h
-	include/alibabacloud/ft/model/RpcDataUploadAndDownloadRequest.h
-	include/alibabacloud/ft/model/RpcDataUploadAndDownloadResult.h
-	include/alibabacloud/ft/model/RpcDataUploadTestRequest.h
-	include/alibabacloud/ft/model/RpcDataUploadTestResult.h )
+	include/alibabacloud/ft/model/CreateInsRequest.h
+	include/alibabacloud/ft/model/CreateInsResult.h
+	include/alibabacloud/ft/model/RpcNoDefaultErrorCodeApiRequest.h
+	include/alibabacloud/ft/model/RpcNoDefaultErrorCodeApiResult.h
+	include/alibabacloud/ft/model/UpdateInsRequest.h
+	include/alibabacloud/ft/model/UpdateInsResult.h )
 
 set(ft_src 
 	src/FtClient.cc
-	src/model/DataRateLimitTestRequest.cc
-	src/model/DataRateLimitTestResult.cc
-	src/model/NormalRpcHsfApiRequest.cc
-	src/model/NormalRpcHsfApiResult.cc
-	src/model/NormalRpcHttpApiRequest.cc
-	src/model/NormalRpcHttpApiResult.cc
-	src/model/RpcDataUploadRequest.cc
-	src/model/RpcDataUploadResult.cc
-	src/model/RpcDataUploadAndDownloadRequest.cc
-	src/model/RpcDataUploadAndDownloadResult.cc
-	src/model/RpcDataUploadTestRequest.cc
-	src/model/RpcDataUploadTestResult.cc )
+	src/model/CreateInsRequest.cc
+	src/model/CreateInsResult.cc
+	src/model/RpcNoDefaultErrorCodeApiRequest.cc
+	src/model/RpcNoDefaultErrorCodeApiResult.cc
+	src/model/UpdateInsRequest.cc
+	src/model/UpdateInsResult.cc )
 
 add_library(ft ${LIB_TYPE}
 	${ft_public_header}

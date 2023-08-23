@@ -51,216 +51,108 @@ FtClient::FtClient(const std::string & accessKeyId, const std::string & accessKe
 FtClient::~FtClient()
 {}
 
-FtClient::DataRateLimitTestOutcome FtClient::dataRateLimitTest(const DataRateLimitTestRequest &request) const
+FtClient::CreateInsOutcome FtClient::createIns(const CreateInsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DataRateLimitTestOutcome(endpointOutcome.error());
+		return CreateInsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DataRateLimitTestOutcome(DataRateLimitTestResult(outcome.result()));
+		return CreateInsOutcome(CreateInsResult(outcome.result()));
 	else
-		return DataRateLimitTestOutcome(outcome.error());
+		return CreateInsOutcome(outcome.error());
 }
 
-void FtClient::dataRateLimitTestAsync(const DataRateLimitTestRequest& request, const DataRateLimitTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void FtClient::createInsAsync(const CreateInsRequest& request, const CreateInsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, dataRateLimitTest(request), context);
+		handler(this, request, createIns(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-FtClient::DataRateLimitTestOutcomeCallable FtClient::dataRateLimitTestCallable(const DataRateLimitTestRequest &request) const
+FtClient::CreateInsOutcomeCallable FtClient::createInsCallable(const CreateInsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DataRateLimitTestOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateInsOutcome()>>(
 			[this, request]()
 			{
-			return this->dataRateLimitTest(request);
+			return this->createIns(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-FtClient::NormalRpcHsfApiOutcome FtClient::normalRpcHsfApi(const NormalRpcHsfApiRequest &request) const
+FtClient::RpcNoDefaultErrorCodeApiOutcome FtClient::rpcNoDefaultErrorCodeApi(const RpcNoDefaultErrorCodeApiRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return NormalRpcHsfApiOutcome(endpointOutcome.error());
+		return RpcNoDefaultErrorCodeApiOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return NormalRpcHsfApiOutcome(NormalRpcHsfApiResult(outcome.result()));
+		return RpcNoDefaultErrorCodeApiOutcome(RpcNoDefaultErrorCodeApiResult(outcome.result()));
 	else
-		return NormalRpcHsfApiOutcome(outcome.error());
+		return RpcNoDefaultErrorCodeApiOutcome(outcome.error());
 }
 
-void FtClient::normalRpcHsfApiAsync(const NormalRpcHsfApiRequest& request, const NormalRpcHsfApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void FtClient::rpcNoDefaultErrorCodeApiAsync(const RpcNoDefaultErrorCodeApiRequest& request, const RpcNoDefaultErrorCodeApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, normalRpcHsfApi(request), context);
+		handler(this, request, rpcNoDefaultErrorCodeApi(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-FtClient::NormalRpcHsfApiOutcomeCallable FtClient::normalRpcHsfApiCallable(const NormalRpcHsfApiRequest &request) const
+FtClient::RpcNoDefaultErrorCodeApiOutcomeCallable FtClient::rpcNoDefaultErrorCodeApiCallable(const RpcNoDefaultErrorCodeApiRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<NormalRpcHsfApiOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<RpcNoDefaultErrorCodeApiOutcome()>>(
 			[this, request]()
 			{
-			return this->normalRpcHsfApi(request);
+			return this->rpcNoDefaultErrorCodeApi(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-FtClient::NormalRpcHttpApiOutcome FtClient::normalRpcHttpApi(const NormalRpcHttpApiRequest &request) const
+FtClient::UpdateInsOutcome FtClient::updateIns(const UpdateInsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return NormalRpcHttpApiOutcome(endpointOutcome.error());
+		return UpdateInsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return NormalRpcHttpApiOutcome(NormalRpcHttpApiResult(outcome.result()));
+		return UpdateInsOutcome(UpdateInsResult(outcome.result()));
 	else
-		return NormalRpcHttpApiOutcome(outcome.error());
+		return UpdateInsOutcome(outcome.error());
 }
 
-void FtClient::normalRpcHttpApiAsync(const NormalRpcHttpApiRequest& request, const NormalRpcHttpApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void FtClient::updateInsAsync(const UpdateInsRequest& request, const UpdateInsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, normalRpcHttpApi(request), context);
+		handler(this, request, updateIns(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-FtClient::NormalRpcHttpApiOutcomeCallable FtClient::normalRpcHttpApiCallable(const NormalRpcHttpApiRequest &request) const
+FtClient::UpdateInsOutcomeCallable FtClient::updateInsCallable(const UpdateInsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<NormalRpcHttpApiOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<UpdateInsOutcome()>>(
 			[this, request]()
 			{
-			return this->normalRpcHttpApi(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-FtClient::RpcDataUploadOutcome FtClient::rpcDataUpload(const RpcDataUploadRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RpcDataUploadOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RpcDataUploadOutcome(RpcDataUploadResult(outcome.result()));
-	else
-		return RpcDataUploadOutcome(outcome.error());
-}
-
-void FtClient::rpcDataUploadAsync(const RpcDataUploadRequest& request, const RpcDataUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, rpcDataUpload(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FtClient::RpcDataUploadOutcomeCallable FtClient::rpcDataUploadCallable(const RpcDataUploadRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RpcDataUploadOutcome()>>(
-			[this, request]()
-			{
-			return this->rpcDataUpload(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-FtClient::RpcDataUploadAndDownloadOutcome FtClient::rpcDataUploadAndDownload(const RpcDataUploadAndDownloadRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RpcDataUploadAndDownloadOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RpcDataUploadAndDownloadOutcome(RpcDataUploadAndDownloadResult(outcome.result()));
-	else
-		return RpcDataUploadAndDownloadOutcome(outcome.error());
-}
-
-void FtClient::rpcDataUploadAndDownloadAsync(const RpcDataUploadAndDownloadRequest& request, const RpcDataUploadAndDownloadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, rpcDataUploadAndDownload(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FtClient::RpcDataUploadAndDownloadOutcomeCallable FtClient::rpcDataUploadAndDownloadCallable(const RpcDataUploadAndDownloadRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RpcDataUploadAndDownloadOutcome()>>(
-			[this, request]()
-			{
-			return this->rpcDataUploadAndDownload(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-FtClient::RpcDataUploadTestOutcome FtClient::rpcDataUploadTest(const RpcDataUploadTestRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RpcDataUploadTestOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RpcDataUploadTestOutcome(RpcDataUploadTestResult(outcome.result()));
-	else
-		return RpcDataUploadTestOutcome(outcome.error());
-}
-
-void FtClient::rpcDataUploadTestAsync(const RpcDataUploadTestRequest& request, const RpcDataUploadTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, rpcDataUploadTest(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FtClient::RpcDataUploadTestOutcomeCallable FtClient::rpcDataUploadTestCallable(const RpcDataUploadTestRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RpcDataUploadTestOutcome()>>(
-			[this, request]()
-			{
-			return this->rpcDataUploadTest(request);
+			return this->updateIns(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

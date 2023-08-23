@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FT_MODEL_RPCDATAUPLOADTESTRESULT_H_
-#define ALIBABACLOUD_FT_MODEL_RPCDATAUPLOADTESTRESULT_H_
+#ifndef ALIBABACLOUD_FT_MODEL_RPCNODEFAULTERRORCODEAPIRESULT_H_
+#define ALIBABACLOUD_FT_MODEL_RPCNODEFAULTERRORCODEAPIRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_FT_EXPORT RpcDataUploadTestResult : public ServiceResult
+			class ALIBABACLOUD_FT_EXPORT RpcNoDefaultErrorCodeApiResult : public ServiceResult
 			{
 			public:
 
 
-				RpcDataUploadTestResult();
-				explicit RpcDataUploadTestResult(const std::string &payload);
-				~RpcDataUploadTestResult();
+				RpcNoDefaultErrorCodeApiResult();
+				explicit RpcNoDefaultErrorCodeApiResult(const std::string &payload);
+				~RpcNoDefaultErrorCodeApiResult();
+				std::string getCode()const;
+				std::string getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string code_;
+				std::string success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_FT_MODEL_RPCDATAUPLOADTESTRESULT_H_
+#endif // !ALIBABACLOUD_FT_MODEL_RPCNODEFAULTERRORCODEAPIRESULT_H_
