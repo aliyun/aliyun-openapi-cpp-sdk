@@ -50,6 +50,8 @@ void ListVccsResult::parse(const std::string &payload)
 			dataItemObject.tenantId = contentNodeDataDataItem["TenantId"].asString();
 		if(!contentNodeDataDataItem["RegionId"].isNull())
 			dataItemObject.regionId = contentNodeDataDataItem["RegionId"].asString();
+		if(!contentNodeDataDataItem["ZoneId"].isNull())
+			dataItemObject.zoneId = contentNodeDataDataItem["ZoneId"].asString();
 		if(!contentNodeDataDataItem["VccId"].isNull())
 			dataItemObject.vccId = contentNodeDataDataItem["VccId"].asString();
 		if(!contentNodeDataDataItem["VpdId"].isNull())
@@ -70,27 +72,81 @@ void ListVccsResult::parse(const std::string &payload)
 			dataItemObject.portType = contentNodeDataDataItem["PortType"].asString();
 		if(!contentNodeDataDataItem["Status"].isNull())
 			dataItemObject.status = contentNodeDataDataItem["Status"].asString();
+		if(!contentNodeDataDataItem["CurrentNode"].isNull())
+			dataItemObject.currentNode = contentNodeDataDataItem["CurrentNode"].asString();
 		if(!contentNodeDataDataItem["Message"].isNull())
 			dataItemObject.message = contentNodeDataDataItem["Message"].asString();
 		if(!contentNodeDataDataItem["CreateTime"].isNull())
 			dataItemObject.createTime = contentNodeDataDataItem["CreateTime"].asString();
 		if(!contentNodeDataDataItem["GmtModified"].isNull())
 			dataItemObject.gmtModified = contentNodeDataDataItem["GmtModified"].asString();
+		if(!contentNodeDataDataItem["TaskId"].isNull())
+			dataItemObject.taskId = contentNodeDataDataItem["TaskId"].asString();
 		if(!contentNodeDataDataItem["Rate"].isNull())
 			dataItemObject.rate = contentNodeDataDataItem["Rate"].asString();
 		if(!contentNodeDataDataItem["BandwidthStr"].isNull())
 			dataItemObject.bandwidthStr = contentNodeDataDataItem["BandwidthStr"].asString();
+		if(!contentNodeDataDataItem["CommodityCode"].isNull())
+			dataItemObject.commodityCode = contentNodeDataDataItem["CommodityCode"].asString();
 		if(!contentNodeDataDataItem["BgpCidr"].isNull())
 			dataItemObject.bgpCidr = contentNodeDataDataItem["BgpCidr"].asString();
+		if(!contentNodeDataDataItem["ExpirationDate"].isNull())
+			dataItemObject.expirationDate = contentNodeDataDataItem["ExpirationDate"].asString();
+		if(!contentNodeDataDataItem["ResourceGroupId"].isNull())
+			dataItemObject.resourceGroupId = contentNodeDataDataItem["ResourceGroupId"].asString();
+		if(!contentNodeDataDataItem["ConnectionType"].isNull())
+			dataItemObject.connectionType = contentNodeDataDataItem["ConnectionType"].asString();
+		if(!contentNodeDataDataItem["CenOwnerId"].isNull())
+			dataItemObject.cenOwnerId = contentNodeDataDataItem["CenOwnerId"].asString();
+		auto allErInfosNode = contentNodeDataDataItem["ErInfos"]["ErInfo"];
+		for (auto contentNodeDataDataItemErInfosErInfo : allErInfosNode)
+		{
+			Content::DataItem::ErInfo erInfosObject;
+			if(!contentNodeDataDataItemErInfosErInfo["CreateTime"].isNull())
+				erInfosObject.createTime = contentNodeDataDataItemErInfosErInfo["CreateTime"].asString();
+			if(!contentNodeDataDataItemErInfosErInfo["GmtModified"].isNull())
+				erInfosObject.gmtModified = contentNodeDataDataItemErInfosErInfo["GmtModified"].asString();
+			if(!contentNodeDataDataItemErInfosErInfo["Message"].isNull())
+				erInfosObject.message = contentNodeDataDataItemErInfosErInfo["Message"].asString();
+			if(!contentNodeDataDataItemErInfosErInfo["ErId"].isNull())
+				erInfosObject.erId = contentNodeDataDataItemErInfosErInfo["ErId"].asString();
+			if(!contentNodeDataDataItemErInfosErInfo["RegionId"].isNull())
+				erInfosObject.regionId = contentNodeDataDataItemErInfosErInfo["RegionId"].asString();
+			if(!contentNodeDataDataItemErInfosErInfo["TenantId"].isNull())
+				erInfosObject.tenantId = contentNodeDataDataItemErInfosErInfo["TenantId"].asString();
+			if(!contentNodeDataDataItemErInfosErInfo["Status"].isNull())
+				erInfosObject.status = contentNodeDataDataItemErInfosErInfo["Status"].asString();
+			if(!contentNodeDataDataItemErInfosErInfo["ErName"].isNull())
+				erInfosObject.erName = contentNodeDataDataItemErInfosErInfo["ErName"].asString();
+			if(!contentNodeDataDataItemErInfosErInfo["MasterZoneId"].isNull())
+				erInfosObject.masterZoneId = contentNodeDataDataItemErInfosErInfo["MasterZoneId"].asString();
+			if(!contentNodeDataDataItemErInfosErInfo["Description"].isNull())
+				erInfosObject.description = contentNodeDataDataItemErInfosErInfo["Description"].asString();
+			if(!contentNodeDataDataItemErInfosErInfo["Connections"].isNull())
+				erInfosObject.connections = std::stol(contentNodeDataDataItemErInfosErInfo["Connections"].asString());
+			if(!contentNodeDataDataItemErInfosErInfo["RouteMaps"].isNull())
+				erInfosObject.routeMaps = std::stol(contentNodeDataDataItemErInfosErInfo["RouteMaps"].asString());
+			dataItemObject.erInfos.push_back(erInfosObject);
+		}
+		auto allTagsNode = contentNodeDataDataItem["Tags"]["Tag"];
+		for (auto contentNodeDataDataItemTagsTag : allTagsNode)
+		{
+			Content::DataItem::Tag tagsObject;
+			if(!contentNodeDataDataItemTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = contentNodeDataDataItemTagsTag["TagKey"].asString();
+			if(!contentNodeDataDataItemTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = contentNodeDataDataItemTagsTag["TagValue"].asString();
+			dataItemObject.tags.push_back(tagsObject);
+		}
 		auto vpdBaseInfoNode = value["VpdBaseInfo"];
 		if(!vpdBaseInfoNode["VpdId"].isNull())
 			dataItemObject.vpdBaseInfo.vpdId = vpdBaseInfoNode["VpdId"].asString();
-		if(!vpdBaseInfoNode["Name"].isNull())
-			dataItemObject.vpdBaseInfo.name = vpdBaseInfoNode["Name"].asString();
+		if(!vpdBaseInfoNode["VpdName"].isNull())
+			dataItemObject.vpdBaseInfo.vpdName = vpdBaseInfoNode["VpdName"].asString();
 		if(!vpdBaseInfoNode["Cidr"].isNull())
 			dataItemObject.vpdBaseInfo.cidr = vpdBaseInfoNode["Cidr"].asString();
-		if(!vpdBaseInfoNode["GmtCreate"].isNull())
-			dataItemObject.vpdBaseInfo.gmtCreate = vpdBaseInfoNode["GmtCreate"].asString();
+		if(!vpdBaseInfoNode["CreateTime"].isNull())
+			dataItemObject.vpdBaseInfo.createTime = vpdBaseInfoNode["CreateTime"].asString();
 		content_.data.push_back(dataItemObject);
 	}
 	if(!value["Code"].isNull())

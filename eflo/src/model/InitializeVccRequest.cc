@@ -25,3 +25,12 @@ InitializeVccRequest::InitializeVccRequest()
 
 InitializeVccRequest::~InitializeVccRequest() {}
 
+std::string InitializeVccRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void InitializeVccRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+

@@ -30,13 +30,22 @@ class ALIBABACLOUD_EFLO_EXPORT GetVccRequest : public RpcServiceRequest {
 public:
 	GetVccRequest();
 	~GetVccRequest();
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	bool getEnablePage() const;
+	void setEnablePage(bool enablePage);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	std::string getVccId() const;
 	void setVccId(const std::string &vccId);
 
 private:
+	int pageNumber_;
 	std::string regionId_;
+	bool enablePage_;
+	int pageSize_;
 	std::string vccId_;
 };
 } // namespace Model

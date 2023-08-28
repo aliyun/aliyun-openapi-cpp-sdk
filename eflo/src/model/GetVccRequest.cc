@@ -25,6 +25,15 @@ GetVccRequest::GetVccRequest()
 
 GetVccRequest::~GetVccRequest() {}
 
+int GetVccRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void GetVccRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
 std::string GetVccRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,6 +41,24 @@ std::string GetVccRequest::getRegionId() const {
 void GetVccRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+bool GetVccRequest::getEnablePage() const {
+  return enablePage_;
+}
+
+void GetVccRequest::setEnablePage(bool enablePage) {
+  enablePage_ = enablePage;
+  setBodyParameter(std::string("EnablePage"), enablePage ? "true" : "false");
+}
+
+int GetVccRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void GetVccRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
 std::string GetVccRequest::getVccId() const {

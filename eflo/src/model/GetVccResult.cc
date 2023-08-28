@@ -44,6 +44,8 @@ void GetVccResult::parse(const std::string &payload)
 		content_.tenantId = contentNode["TenantId"].asString();
 	if(!contentNode["RegionId"].isNull())
 		content_.regionId = contentNode["RegionId"].asString();
+	if(!contentNode["ZoneId"].isNull())
+		content_.zoneId = contentNode["ZoneId"].asString();
 	if(!contentNode["VccId"].isNull())
 		content_.vccId = contentNode["VccId"].asString();
 	if(!contentNode["VpdId"].isNull())
@@ -88,6 +90,46 @@ void GetVccResult::parse(const std::string &payload)
 		content_.commodityCode = contentNode["CommodityCode"].asString();
 	if(!contentNode["BgpCidr"].isNull())
 		content_.bgpCidr = contentNode["BgpCidr"].asString();
+	if(!contentNode["ExpirationDate"].isNull())
+		content_.expirationDate = contentNode["ExpirationDate"].asString();
+	if(!contentNode["AttachErStatus"].isNull())
+		content_.attachErStatus = contentNode["AttachErStatus"].asString() == "true";
+	if(!contentNode["ResourceGroupId"].isNull())
+		content_.resourceGroupId = contentNode["ResourceGroupId"].asString();
+	if(!contentNode["ConnectionType"].isNull())
+		content_.connectionType = contentNode["ConnectionType"].asString();
+	if(!contentNode["CenOwnerId"].isNull())
+		content_.cenOwnerId = contentNode["CenOwnerId"].asString();
+	auto allErInfosNode = contentNode["ErInfos"]["ErInfo"];
+	for (auto contentNodeErInfosErInfo : allErInfosNode)
+	{
+		Content::ErInfo erInfoObject;
+		if(!contentNodeErInfosErInfo["CreateTime"].isNull())
+			erInfoObject.createTime = contentNodeErInfosErInfo["CreateTime"].asString();
+		if(!contentNodeErInfosErInfo["GmtModified"].isNull())
+			erInfoObject.gmtModified = contentNodeErInfosErInfo["GmtModified"].asString();
+		if(!contentNodeErInfosErInfo["Message"].isNull())
+			erInfoObject.message = contentNodeErInfosErInfo["Message"].asString();
+		if(!contentNodeErInfosErInfo["ErId"].isNull())
+			erInfoObject.erId = contentNodeErInfosErInfo["ErId"].asString();
+		if(!contentNodeErInfosErInfo["RegionId"].isNull())
+			erInfoObject.regionId = contentNodeErInfosErInfo["RegionId"].asString();
+		if(!contentNodeErInfosErInfo["TenantId"].isNull())
+			erInfoObject.tenantId = contentNodeErInfosErInfo["TenantId"].asString();
+		if(!contentNodeErInfosErInfo["Status"].isNull())
+			erInfoObject.status = contentNodeErInfosErInfo["Status"].asString();
+		if(!contentNodeErInfosErInfo["ErName"].isNull())
+			erInfoObject.erName = contentNodeErInfosErInfo["ErName"].asString();
+		if(!contentNodeErInfosErInfo["MasterZoneId"].isNull())
+			erInfoObject.masterZoneId = contentNodeErInfosErInfo["MasterZoneId"].asString();
+		if(!contentNodeErInfosErInfo["Description"].isNull())
+			erInfoObject.description = contentNodeErInfosErInfo["Description"].asString();
+		if(!contentNodeErInfosErInfo["Connections"].isNull())
+			erInfoObject.connections = std::stol(contentNodeErInfosErInfo["Connections"].asString());
+		if(!contentNodeErInfosErInfo["RouteMaps"].isNull())
+			erInfoObject.routeMaps = std::stol(contentNodeErInfosErInfo["RouteMaps"].asString());
+		content_.erInfos.push_back(erInfoObject);
+	}
 	auto allAliyunRouterInfoNode = contentNode["AliyunRouterInfo"]["AliyunRouterInfoItem"];
 	for (auto contentNodeAliyunRouterInfoAliyunRouterInfoItem : allAliyunRouterInfoNode)
 	{
@@ -132,15 +174,25 @@ void GetVccResult::parse(const std::string &payload)
 		}
 		content_.cisRouterInfo.push_back(cisRouterInfoItemObject);
 	}
+	auto allTagsNode = contentNode["Tags"]["Tag"];
+	for (auto contentNodeTagsTag : allTagsNode)
+	{
+		Content::Tag tagObject;
+		if(!contentNodeTagsTag["TagKey"].isNull())
+			tagObject.tagKey = contentNodeTagsTag["TagKey"].asString();
+		if(!contentNodeTagsTag["TagValue"].isNull())
+			tagObject.tagValue = contentNodeTagsTag["TagValue"].asString();
+		content_.tags.push_back(tagObject);
+	}
 	auto vpdBaseInfoNode = contentNode["VpdBaseInfo"];
 	if(!vpdBaseInfoNode["VpdId"].isNull())
 		content_.vpdBaseInfo.vpdId = vpdBaseInfoNode["VpdId"].asString();
-	if(!vpdBaseInfoNode["Name"].isNull())
-		content_.vpdBaseInfo.name = vpdBaseInfoNode["Name"].asString();
+	if(!vpdBaseInfoNode["VpdName"].isNull())
+		content_.vpdBaseInfo.vpdName = vpdBaseInfoNode["VpdName"].asString();
 	if(!vpdBaseInfoNode["Cidr"].isNull())
 		content_.vpdBaseInfo.cidr = vpdBaseInfoNode["Cidr"].asString();
-	if(!vpdBaseInfoNode["GmtCreate"].isNull())
-		content_.vpdBaseInfo.gmtCreate = vpdBaseInfoNode["GmtCreate"].asString();
+	if(!vpdBaseInfoNode["CreateTime"].isNull())
+		content_.vpdBaseInfo.createTime = vpdBaseInfoNode["CreateTime"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())

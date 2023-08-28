@@ -25,6 +25,15 @@ GetVpdRequest::GetVpdRequest()
 
 GetVpdRequest::~GetVpdRequest() {}
 
+std::string GetVpdRequest::getRegionId() const {
+  return regionId_;
+}
+
+void GetVpdRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setBodyParameter(std::string("RegionId"), regionId);
+}
+
 std::string GetVpdRequest::getVpdId() const {
   return vpdId_;
 }

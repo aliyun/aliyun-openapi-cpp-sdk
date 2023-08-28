@@ -38,26 +38,33 @@ namespace AlibabaCloud
 					{
 						struct VpdBaseInfo
 						{
-							std::string gmtCreate;
 							std::string cidr;
 							std::string vpdId;
-							std::string name;
+							std::string createTime;
+							std::string vpdName;
+						};
+						struct Tag
+						{
+							std::string tagKey;
+							std::string tagValue;
 						};
 						std::string status;
-						long ncCount;
+						int ncCount;
 						VpdBaseInfo vpdBaseInfo;
 						std::string zoneId;
 						std::string message;
+						int networkInterfaceCount;
+						std::string resourceGroupId;
+						std::string createTime;
 						std::string gmtModified;
 						std::string subnetId;
-						std::string name;
-						std::string gmtCreate;
+						std::string subnetName;
 						std::string tenantId;
 						std::string type;
 						std::string cidr;
 						std::string vpdId;
-						long id;
 						std::string regionId;
+						std::vector<DataItem::Tag> tags;
 					};
 					long total;
 					std::vector<DataItem> data;

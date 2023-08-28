@@ -25,13 +25,13 @@ UpdateVpdRequest::UpdateVpdRequest()
 
 UpdateVpdRequest::~UpdateVpdRequest() {}
 
-std::string UpdateVpdRequest::getDescription() const {
-  return description_;
+std::string UpdateVpdRequest::getVpdName() const {
+  return vpdName_;
 }
 
-void UpdateVpdRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setBodyParameter(std::string("Description"), description);
+void UpdateVpdRequest::setVpdName(const std::string &vpdName) {
+  vpdName_ = vpdName;
+  setBodyParameter(std::string("VpdName"), vpdName);
 }
 
 std::string UpdateVpdRequest::getRegionId() const {
@@ -50,14 +50,5 @@ std::string UpdateVpdRequest::getVpdId() const {
 void UpdateVpdRequest::setVpdId(const std::string &vpdId) {
   vpdId_ = vpdId;
   setBodyParameter(std::string("VpdId"), vpdId);
-}
-
-std::string UpdateVpdRequest::getName() const {
-  return name_;
-}
-
-void UpdateVpdRequest::setName(const std::string &name) {
-  name_ = name;
-  setBodyParameter(std::string("Name"), name);
 }
 

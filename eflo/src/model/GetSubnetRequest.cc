@@ -34,3 +34,21 @@ void GetSubnetRequest::setSubnetId(const std::string &subnetId) {
   setBodyParameter(std::string("SubnetId"), subnetId);
 }
 
+std::string GetSubnetRequest::getRegionId() const {
+  return regionId_;
+}
+
+void GetSubnetRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setBodyParameter(std::string("RegionId"), regionId);
+}
+
+std::string GetSubnetRequest::getVpdId() const {
+  return vpdId_;
+}
+
+void GetSubnetRequest::setVpdId(const std::string &vpdId) {
+  vpdId_ = vpdId;
+  setBodyParameter(std::string("VpdId"), vpdId);
+}
+

@@ -25,6 +25,24 @@ CreateVpdRequest::CreateVpdRequest()
 
 CreateVpdRequest::~CreateVpdRequest() {}
 
+std::string CreateVpdRequest::getVpdName() const {
+  return vpdName_;
+}
+
+void CreateVpdRequest::setVpdName(const std::string &vpdName) {
+  vpdName_ = vpdName;
+  setBodyParameter(std::string("VpdName"), vpdName);
+}
+
+std::string CreateVpdRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateVpdRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateVpdRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,15 +50,6 @@ std::string CreateVpdRequest::getRegionId() const {
 void CreateVpdRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
-}
-
-std::string CreateVpdRequest::getName() const {
-  return name_;
-}
-
-void CreateVpdRequest::setName(const std::string &name) {
-  name_ = name;
-  setBodyParameter(std::string("Name"), name);
 }
 
 std::string CreateVpdRequest::getCidr() const {
@@ -62,10 +71,24 @@ void CreateVpdRequest::setSubnets(const std::vector<CreateVpdRequest::Subnets> &
   auto subnetsObj = subnets.at(dep1);
   std::string subnetsObjStr = std::string("Subnets") + "." + std::to_string(dep1 + 1);
     setBodyParameter(subnetsObjStr + ".RegionId", subnetsObj.regionId);
-    setBodyParameter(subnetsObjStr + ".Name", subnetsObj.name);
     setBodyParameter(subnetsObjStr + ".ZoneId", subnetsObj.zoneId);
     setBodyParameter(subnetsObjStr + ".Cidr", subnetsObj.cidr);
+    setBodyParameter(subnetsObjStr + ".SubnetName", subnetsObj.subnetName);
     setBodyParameter(subnetsObjStr + ".Type", subnetsObj.type);
+  }
+}
+
+std::vector<CreateVpdRequest::Tag> CreateVpdRequest::getTag() const {
+  return tag_;
+}
+
+void CreateVpdRequest::setTag(const std::vector<CreateVpdRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(tagObjStr + ".Value", tagObj.value);
+    setBodyParameter(tagObjStr + ".Key", tagObj.key);
   }
 }
 

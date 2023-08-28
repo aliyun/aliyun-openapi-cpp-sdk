@@ -38,27 +38,57 @@ namespace AlibabaCloud
 					{
 						struct VpdBaseInfo
 						{
-							std::string gmtCreate;
 							std::string cidr;
 							std::string vpdId;
-							std::string name;
+							std::string createTime;
+							std::string vpdName;
 						};
+						struct ErInfo
+						{
+							std::string status;
+							long connections;
+							std::string erName;
+							std::string tenantId;
+							std::string description;
+							std::string message;
+							std::string createTime;
+							std::string gmtModified;
+							std::string erId;
+							std::string regionId;
+							long routeMaps;
+							std::string masterZoneId;
+						};
+						struct Tag
+						{
+							std::string tagKey;
+							std::string tagValue;
+						};
+						std::string taskId;
+						std::string message;
+						std::string resourceGroupId;
+						std::string lineOperator;
+						std::string currentNode;
+						std::string gmtModified;
+						std::string bgpCidr;
+						std::string commodityCode;
+						std::string vccId;
+						std::vector<DataItem::Tag> tags;
 						std::string status;
 						VpdBaseInfo vpdBaseInfo;
-						std::string message;
-						std::string lineOperator;
+						std::string zoneId;
+						std::string connectionType;
 						double rate;
 						std::string createTime;
-						std::string gmtModified;
 						std::string bandwidthStr;
 						std::string tenantId;
 						std::string vpcId;
+						std::string expirationDate;
 						std::string vpdId;
-						std::string bgpCidr;
+						std::vector<DataItem::ErInfo> erInfos;
+						std::string cenOwnerId;
 						std::string cenId;
 						std::string accessPointId;
 						std::string regionId;
-						std::string vccId;
 						std::string spec;
 						std::string vccName;
 						std::string portType;

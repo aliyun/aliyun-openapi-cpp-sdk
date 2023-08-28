@@ -28,39 +28,49 @@ namespace Eflo {
 namespace Model {
 class ALIBABACLOUD_EFLO_EXPORT ListSubnetsRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	ListSubnetsRequest();
 	~ListSubnetsRequest();
 	std::string getType() const;
 	void setType(const std::string &type);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getSubnetId() const;
 	void setSubnetId(const std::string &subnetId);
 	std::string getVpdId() const;
 	void setVpdId(const std::string &vpdId);
 	bool getEnablePage() const;
 	void setEnablePage(bool enablePage);
-	std::string getName() const;
-	void setName(const std::string &name);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
+	std::string getSubnetName() const;
+	void setSubnetName(const std::string &subnetName);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
 
 private:
 	std::string type_;
 	int pageNumber_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	int pageSize_;
+	std::vector<Tag> tag_;
 	std::string subnetId_;
 	std::string vpdId_;
 	bool enablePage_;
-	std::string name_;
 	std::string zoneId_;
+	std::string subnetName_;
 	std::string status_;
 };
 } // namespace Model

@@ -28,28 +28,35 @@ namespace Eflo {
 namespace Model {
 class ALIBABACLOUD_EFLO_EXPORT CreateSubnetRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateSubnetRequest();
 	~CreateSubnetRequest();
 	std::string getType() const;
 	void setType(const std::string &type);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getVpdId() const;
-	void setVpdId(const std::string &vpdId);
-	std::string getName() const;
-	void setName(const std::string &name);
-	std::string getZoneId() const;
-	void setZoneId(const std::string &zoneId);
 	std::string getCidr() const;
 	void setCidr(const std::string &cidr);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
+	std::string getVpdId() const;
+	void setVpdId(const std::string &vpdId);
+	std::string getZoneId() const;
+	void setZoneId(const std::string &zoneId);
+	std::string getSubnetName() const;
+	void setSubnetName(const std::string &subnetName);
 
 private:
 	std::string type_;
 	std::string regionId_;
-	std::string vpdId_;
-	std::string name_;
-	std::string zoneId_;
 	std::string cidr_;
+	std::vector<Tag> tag_;
+	std::string vpdId_;
+	std::string zoneId_;
+	std::string subnetName_;
 };
 } // namespace Model
 } // namespace Eflo

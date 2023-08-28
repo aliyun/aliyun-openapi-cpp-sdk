@@ -30,8 +30,11 @@ class ALIBABACLOUD_EFLO_EXPORT InitializeVccRequest : public RpcServiceRequest {
 public:
 	InitializeVccRequest();
 	~InitializeVccRequest();
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 
 private:
+	std::string resourceGroupId_;
 };
 } // namespace Model
 } // namespace Eflo

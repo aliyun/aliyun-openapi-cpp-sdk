@@ -43,6 +43,29 @@ void CreateSubnetRequest::setRegionId(const std::string &regionId) {
   setBodyParameter(std::string("RegionId"), regionId);
 }
 
+std::string CreateSubnetRequest::getCidr() const {
+  return cidr_;
+}
+
+void CreateSubnetRequest::setCidr(const std::string &cidr) {
+  cidr_ = cidr;
+  setBodyParameter(std::string("Cidr"), cidr);
+}
+
+std::vector<CreateSubnetRequest::Tag> CreateSubnetRequest::getTag() const {
+  return tag_;
+}
+
+void CreateSubnetRequest::setTag(const std::vector<CreateSubnetRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(tagObjStr + ".Value", tagObj.value);
+    setBodyParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 std::string CreateSubnetRequest::getVpdId() const {
   return vpdId_;
 }
@@ -50,15 +73,6 @@ std::string CreateSubnetRequest::getVpdId() const {
 void CreateSubnetRequest::setVpdId(const std::string &vpdId) {
   vpdId_ = vpdId;
   setBodyParameter(std::string("VpdId"), vpdId);
-}
-
-std::string CreateSubnetRequest::getName() const {
-  return name_;
-}
-
-void CreateSubnetRequest::setName(const std::string &name) {
-  name_ = name;
-  setBodyParameter(std::string("Name"), name);
 }
 
 std::string CreateSubnetRequest::getZoneId() const {
@@ -70,12 +84,12 @@ void CreateSubnetRequest::setZoneId(const std::string &zoneId) {
   setBodyParameter(std::string("ZoneId"), zoneId);
 }
 
-std::string CreateSubnetRequest::getCidr() const {
-  return cidr_;
+std::string CreateSubnetRequest::getSubnetName() const {
+  return subnetName_;
 }
 
-void CreateSubnetRequest::setCidr(const std::string &cidr) {
-  cidr_ = cidr;
-  setBodyParameter(std::string("Cidr"), cidr);
+void CreateSubnetRequest::setSubnetName(const std::string &subnetName) {
+  subnetName_ = subnetName;
+  setBodyParameter(std::string("SubnetName"), subnetName);
 }
 

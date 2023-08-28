@@ -25,6 +25,15 @@ ListVpdsRequest::ListVpdsRequest()
 
 ListVpdsRequest::~ListVpdsRequest() {}
 
+std::string ListVpdsRequest::getVpdName() const {
+  return vpdName_;
+}
+
+void ListVpdsRequest::setVpdName(const std::string &vpdName) {
+  vpdName_ = vpdName;
+  setBodyParameter(std::string("VpdName"), vpdName);
+}
+
 int ListVpdsRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -41,6 +50,15 @@ bool ListVpdsRequest::getWithDependence() const {
 void ListVpdsRequest::setWithDependence(bool withDependence) {
   withDependence_ = withDependence;
   setBodyParameter(std::string("WithDependence"), withDependence ? "true" : "false");
+}
+
+std::string ListVpdsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListVpdsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string ListVpdsRequest::getRegionId() const {
@@ -68,6 +86,20 @@ int ListVpdsRequest::getPageSize() const {
 void ListVpdsRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::vector<ListVpdsRequest::Tag> ListVpdsRequest::getTag() const {
+  return tag_;
+}
+
+void ListVpdsRequest::setTag(const std::vector<ListVpdsRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(tagObjStr + ".Value", tagObj.value);
+    setBodyParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
 bool ListVpdsRequest::getForSelect() const {
@@ -104,15 +136,6 @@ bool ListVpdsRequest::getEnablePage() const {
 void ListVpdsRequest::setEnablePage(bool enablePage) {
   enablePage_ = enablePage;
   setBodyParameter(std::string("EnablePage"), enablePage ? "true" : "false");
-}
-
-std::string ListVpdsRequest::getName() const {
-  return name_;
-}
-
-void ListVpdsRequest::setName(const std::string &name) {
-  name_ = name;
-  setBodyParameter(std::string("Name"), name);
 }
 
 std::string ListVpdsRequest::getStatus() const {

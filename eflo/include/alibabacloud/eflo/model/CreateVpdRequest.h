@@ -30,27 +30,37 @@ class ALIBABACLOUD_EFLO_EXPORT CreateVpdRequest : public RpcServiceRequest {
 public:
 	struct Subnets {
 		std::string regionId;
-		std::string name;
 		std::string zoneId;
 		std::string cidr;
+		std::string subnetName;
 		std::string type;
+	};
+	struct Tag {
+		std::string value;
+		std::string key;
 	};
 	CreateVpdRequest();
 	~CreateVpdRequest();
+	std::string getVpdName() const;
+	void setVpdName(const std::string &vpdName);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getName() const;
-	void setName(const std::string &name);
 	std::string getCidr() const;
 	void setCidr(const std::string &cidr);
 	std::vector<Subnets> getSubnets() const;
 	void setSubnets(const std::vector<Subnets> &subnets);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 
 private:
+	std::string vpdName_;
+	std::string resourceGroupId_;
 	std::string regionId_;
-	std::string name_;
 	std::string cidr_;
 	std::vector<Subnets> subnets_;
+	std::vector<Tag> tag_;
 };
 } // namespace Model
 } // namespace Eflo

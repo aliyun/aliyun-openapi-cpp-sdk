@@ -46,10 +46,8 @@ void ListSubnetsResult::parse(const std::string &payload)
 	for (auto contentNodeDataDataItem : allDataNode)
 	{
 		Content::DataItem dataItemObject;
-		if(!contentNodeDataDataItem["Id"].isNull())
-			dataItemObject.id = std::stol(contentNodeDataDataItem["Id"].asString());
-		if(!contentNodeDataDataItem["GmtCreate"].isNull())
-			dataItemObject.gmtCreate = contentNodeDataDataItem["GmtCreate"].asString();
+		if(!contentNodeDataDataItem["CreateTime"].isNull())
+			dataItemObject.createTime = contentNodeDataDataItem["CreateTime"].asString();
 		if(!contentNodeDataDataItem["GmtModified"].isNull())
 			dataItemObject.gmtModified = contentNodeDataDataItem["GmtModified"].asString();
 		if(!contentNodeDataDataItem["TenantId"].isNull())
@@ -62,8 +60,8 @@ void ListSubnetsResult::parse(const std::string &payload)
 			dataItemObject.type = contentNodeDataDataItem["Type"].asString();
 		if(!contentNodeDataDataItem["SubnetId"].isNull())
 			dataItemObject.subnetId = contentNodeDataDataItem["SubnetId"].asString();
-		if(!contentNodeDataDataItem["Name"].isNull())
-			dataItemObject.name = contentNodeDataDataItem["Name"].asString();
+		if(!contentNodeDataDataItem["SubnetName"].isNull())
+			dataItemObject.subnetName = contentNodeDataDataItem["SubnetName"].asString();
 		if(!contentNodeDataDataItem["Cidr"].isNull())
 			dataItemObject.cidr = contentNodeDataDataItem["Cidr"].asString();
 		if(!contentNodeDataDataItem["VpdId"].isNull())
@@ -73,16 +71,30 @@ void ListSubnetsResult::parse(const std::string &payload)
 		if(!contentNodeDataDataItem["Message"].isNull())
 			dataItemObject.message = contentNodeDataDataItem["Message"].asString();
 		if(!contentNodeDataDataItem["NcCount"].isNull())
-			dataItemObject.ncCount = std::stol(contentNodeDataDataItem["NcCount"].asString());
+			dataItemObject.ncCount = std::stoi(contentNodeDataDataItem["NcCount"].asString());
+		if(!contentNodeDataDataItem["NetworkInterfaceCount"].isNull())
+			dataItemObject.networkInterfaceCount = std::stoi(contentNodeDataDataItem["NetworkInterfaceCount"].asString());
+		if(!contentNodeDataDataItem["ResourceGroupId"].isNull())
+			dataItemObject.resourceGroupId = contentNodeDataDataItem["ResourceGroupId"].asString();
+		auto allTagsNode = contentNodeDataDataItem["Tags"]["Tag"];
+		for (auto contentNodeDataDataItemTagsTag : allTagsNode)
+		{
+			Content::DataItem::Tag tagsObject;
+			if(!contentNodeDataDataItemTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = contentNodeDataDataItemTagsTag["TagKey"].asString();
+			if(!contentNodeDataDataItemTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = contentNodeDataDataItemTagsTag["TagValue"].asString();
+			dataItemObject.tags.push_back(tagsObject);
+		}
 		auto vpdBaseInfoNode = value["VpdBaseInfo"];
 		if(!vpdBaseInfoNode["VpdId"].isNull())
 			dataItemObject.vpdBaseInfo.vpdId = vpdBaseInfoNode["VpdId"].asString();
-		if(!vpdBaseInfoNode["Name"].isNull())
-			dataItemObject.vpdBaseInfo.name = vpdBaseInfoNode["Name"].asString();
+		if(!vpdBaseInfoNode["VpdName"].isNull())
+			dataItemObject.vpdBaseInfo.vpdName = vpdBaseInfoNode["VpdName"].asString();
 		if(!vpdBaseInfoNode["Cidr"].isNull())
 			dataItemObject.vpdBaseInfo.cidr = vpdBaseInfoNode["Cidr"].asString();
-		if(!vpdBaseInfoNode["GmtCreate"].isNull())
-			dataItemObject.vpdBaseInfo.gmtCreate = vpdBaseInfoNode["GmtCreate"].asString();
+		if(!vpdBaseInfoNode["CreateTime"].isNull())
+			dataItemObject.vpdBaseInfo.createTime = vpdBaseInfoNode["CreateTime"].asString();
 		content_.data.push_back(dataItemObject);
 	}
 	if(!value["Code"].isNull())

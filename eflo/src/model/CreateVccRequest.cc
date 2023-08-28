@@ -52,6 +52,15 @@ void CreateVccRequest::setDescription(const std::string &description) {
   setBodyParameter(std::string("Description"), description);
 }
 
+std::string CreateVccRequest::getCenOwnerId() const {
+  return cenOwnerId_;
+}
+
+void CreateVccRequest::setCenOwnerId(const std::string &cenOwnerId) {
+  cenOwnerId_ = cenOwnerId;
+  setBodyParameter(std::string("CenOwnerId"), cenOwnerId);
+}
+
 bool CreateVccRequest::getAccessCouldService() const {
   return accessCouldService_;
 }
@@ -59,6 +68,24 @@ bool CreateVccRequest::getAccessCouldService() const {
 void CreateVccRequest::setAccessCouldService(bool accessCouldService) {
   accessCouldService_ = accessCouldService;
   setBodyParameter(std::string("AccessCouldService"), accessCouldService ? "true" : "false");
+}
+
+std::string CreateVccRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateVccRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string CreateVccRequest::getVccName() const {
+  return vccName_;
+}
+
+void CreateVccRequest::setVccName(const std::string &vccName) {
+  vccName_ = vccName;
+  setBodyParameter(std::string("VccName"), vccName);
 }
 
 std::string CreateVccRequest::getRegionId() const {
@@ -70,6 +97,20 @@ void CreateVccRequest::setRegionId(const std::string &regionId) {
   setBodyParameter(std::string("RegionId"), regionId);
 }
 
+std::vector<CreateVccRequest::Tag> CreateVccRequest::getTag() const {
+  return tag_;
+}
+
+void CreateVccRequest::setTag(const std::vector<CreateVccRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(tagObjStr + ".Value", tagObj.value);
+    setBodyParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 std::string CreateVccRequest::getVccId() const {
   return vccId_;
 }
@@ -77,6 +118,24 @@ std::string CreateVccRequest::getVccId() const {
 void CreateVccRequest::setVccId(const std::string &vccId) {
   vccId_ = vccId;
   setBodyParameter(std::string("VccId"), vccId);
+}
+
+std::string CreateVccRequest::getConnectionType() const {
+  return connectionType_;
+}
+
+void CreateVccRequest::setConnectionType(const std::string &connectionType) {
+  connectionType_ = connectionType;
+  setBodyParameter(std::string("ConnectionType"), connectionType);
+}
+
+int CreateVccRequest::getBandwidth() const {
+  return bandwidth_;
+}
+
+void CreateVccRequest::setBandwidth(int bandwidth) {
+  bandwidth_ = bandwidth;
+  setBodyParameter(std::string("Bandwidth"), std::to_string(bandwidth));
 }
 
 std::string CreateVccRequest::getVSwitchId() const {
@@ -104,5 +163,14 @@ std::string CreateVccRequest::getVpcId() const {
 void CreateVccRequest::setVpcId(const std::string &vpcId) {
   vpcId_ = vpcId;
   setBodyParameter(std::string("VpcId"), vpcId);
+}
+
+std::string CreateVccRequest::getZoneId() const {
+  return zoneId_;
+}
+
+void CreateVccRequest::setZoneId(const std::string &zoneId) {
+  zoneId_ = zoneId;
+  setBodyParameter(std::string("ZoneId"), zoneId);
 }
 

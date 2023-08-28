@@ -30,10 +30,13 @@ class ALIBABACLOUD_EFLO_EXPORT GetVpdRequest : public RpcServiceRequest {
 public:
 	GetVpdRequest();
 	~GetVpdRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getVpdId() const;
 	void setVpdId(const std::string &vpdId);
 
 private:
+	std::string regionId_;
 	std::string vpdId_;
 };
 } // namespace Model

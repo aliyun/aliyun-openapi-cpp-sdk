@@ -40,10 +40,8 @@ void GetSubnetResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto contentNode = value["Content"];
-	if(!contentNode["Id"].isNull())
-		content_.id = std::stol(contentNode["Id"].asString());
-	if(!contentNode["GmtCreate"].isNull())
-		content_.gmtCreate = contentNode["GmtCreate"].asString();
+	if(!contentNode["CreateTime"].isNull())
+		content_.createTime = contentNode["CreateTime"].asString();
 	if(!contentNode["GmtModified"].isNull())
 		content_.gmtModified = contentNode["GmtModified"].asString();
 	if(!contentNode["TenantId"].isNull())
@@ -54,12 +52,10 @@ void GetSubnetResult::parse(const std::string &payload)
 		content_.zoneId = contentNode["ZoneId"].asString();
 	if(!contentNode["SubnetId"].isNull())
 		content_.subnetId = contentNode["SubnetId"].asString();
-	if(!contentNode["Name"].isNull())
-		content_.name = contentNode["Name"].asString();
+	if(!contentNode["SubnetName"].isNull())
+		content_.subnetName = contentNode["SubnetName"].asString();
 	if(!contentNode["Cidr"].isNull())
 		content_.cidr = contentNode["Cidr"].asString();
-	if(!contentNode["Description"].isNull())
-		content_.description = contentNode["Description"].asString();
 	if(!contentNode["VpdId"].isNull())
 		content_.vpdId = contentNode["VpdId"].asString();
 	if(!contentNode["Type"].isNull())
@@ -69,18 +65,36 @@ void GetSubnetResult::parse(const std::string &payload)
 	if(!contentNode["Message"].isNull())
 		content_.message = contentNode["Message"].asString();
 	if(!contentNode["NcCount"].isNull())
-		content_.ncCount = std::stol(contentNode["NcCount"].asString());
+		content_.ncCount = std::stoi(contentNode["NcCount"].asString());
+	if(!contentNode["NetworkInterfaceCount"].isNull())
+		content_.networkInterfaceCount = std::stoi(contentNode["NetworkInterfaceCount"].asString());
 	if(!contentNode["LbCount"].isNull())
 		content_.lbCount = std::stol(contentNode["LbCount"].asString());
+	if(!contentNode["ResourceGroupId"].isNull())
+		content_.resourceGroupId = contentNode["ResourceGroupId"].asString();
+	if(!contentNode["PrivateIpCount"].isNull())
+		content_.privateIpCount = std::stol(contentNode["PrivateIpCount"].asString());
+	if(!contentNode["AvailableIps"].isNull())
+		content_.availableIps = std::stoi(contentNode["AvailableIps"].asString());
+	auto allTagsNode = contentNode["Tags"]["Tag"];
+	for (auto contentNodeTagsTag : allTagsNode)
+	{
+		Content::Tag tagObject;
+		if(!contentNodeTagsTag["TagKey"].isNull())
+			tagObject.tagKey = contentNodeTagsTag["TagKey"].asString();
+		if(!contentNodeTagsTag["TagValue"].isNull())
+			tagObject.tagValue = contentNodeTagsTag["TagValue"].asString();
+		content_.tags.push_back(tagObject);
+	}
 	auto vpdBaseInfoNode = contentNode["VpdBaseInfo"];
 	if(!vpdBaseInfoNode["VpdId"].isNull())
 		content_.vpdBaseInfo.vpdId = vpdBaseInfoNode["VpdId"].asString();
-	if(!vpdBaseInfoNode["Name"].isNull())
-		content_.vpdBaseInfo.name = vpdBaseInfoNode["Name"].asString();
+	if(!vpdBaseInfoNode["VpdName"].isNull())
+		content_.vpdBaseInfo.vpdName = vpdBaseInfoNode["VpdName"].asString();
 	if(!vpdBaseInfoNode["Cidr"].isNull())
 		content_.vpdBaseInfo.cidr = vpdBaseInfoNode["Cidr"].asString();
-	if(!vpdBaseInfoNode["GmtCreate"].isNull())
-		content_.vpdBaseInfo.gmtCreate = vpdBaseInfoNode["GmtCreate"].asString();
+	if(!vpdBaseInfoNode["CreateTime"].isNull())
+		content_.vpdBaseInfo.createTime = vpdBaseInfoNode["CreateTime"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())

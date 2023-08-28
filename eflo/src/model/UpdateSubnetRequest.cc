@@ -34,15 +34,6 @@ void UpdateSubnetRequest::setSubnetId(const std::string &subnetId) {
   setBodyParameter(std::string("SubnetId"), subnetId);
 }
 
-std::string UpdateSubnetRequest::getDescription() const {
-  return description_;
-}
-
-void UpdateSubnetRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setBodyParameter(std::string("Description"), description);
-}
-
 std::string UpdateSubnetRequest::getRegionId() const {
   return regionId_;
 }
@@ -61,15 +52,6 @@ void UpdateSubnetRequest::setVpdId(const std::string &vpdId) {
   setBodyParameter(std::string("VpdId"), vpdId);
 }
 
-std::string UpdateSubnetRequest::getName() const {
-  return name_;
-}
-
-void UpdateSubnetRequest::setName(const std::string &name) {
-  name_ = name;
-  setBodyParameter(std::string("Name"), name);
-}
-
 std::string UpdateSubnetRequest::getZoneId() const {
   return zoneId_;
 }
@@ -77,5 +59,14 @@ std::string UpdateSubnetRequest::getZoneId() const {
 void UpdateSubnetRequest::setZoneId(const std::string &zoneId) {
   zoneId_ = zoneId;
   setBodyParameter(std::string("ZoneId"), zoneId);
+}
+
+std::string UpdateSubnetRequest::getSubnetName() const {
+  return subnetName_;
+}
+
+void UpdateSubnetRequest::setSubnetName(const std::string &subnetName) {
+  subnetName_ = subnetName;
+  setBodyParameter(std::string("SubnetName"), subnetName);
 }
 

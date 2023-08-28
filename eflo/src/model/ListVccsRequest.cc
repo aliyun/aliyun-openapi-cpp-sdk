@@ -43,6 +43,15 @@ void ListVccsRequest::setPageNumber(int pageNumber) {
   setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string ListVccsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListVccsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListVccsRequest::getRegionId() const {
   return regionId_;
 }
@@ -59,6 +68,20 @@ int ListVccsRequest::getPageSize() const {
 void ListVccsRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::vector<ListVccsRequest::Tag> ListVccsRequest::getTag() const {
+  return tag_;
+}
+
+void ListVccsRequest::setTag(const std::vector<ListVccsRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(tagObjStr + ".Value", tagObj.value);
+    setBodyParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
 std::string ListVccsRequest::getVccId() const {
@@ -86,6 +109,15 @@ std::string ListVccsRequest::getExStatus() const {
 void ListVccsRequest::setExStatus(const std::string &exStatus) {
   exStatus_ = exStatus;
   setBodyParameter(std::string("ExStatus"), exStatus);
+}
+
+std::string ListVccsRequest::getFilterErId() const {
+  return filterErId_;
+}
+
+void ListVccsRequest::setFilterErId(const std::string &filterErId) {
+  filterErId_ = filterErId;
+  setBodyParameter(std::string("FilterErId"), filterErId);
 }
 
 std::string ListVccsRequest::getVpdId() const {

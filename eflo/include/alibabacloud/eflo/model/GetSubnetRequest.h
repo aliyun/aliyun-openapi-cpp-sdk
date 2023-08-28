@@ -32,9 +32,15 @@ public:
 	~GetSubnetRequest();
 	std::string getSubnetId() const;
 	void setSubnetId(const std::string &subnetId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getVpdId() const;
+	void setVpdId(const std::string &vpdId);
 
 private:
 	std::string subnetId_;
+	std::string regionId_;
+	std::string vpdId_;
 };
 } // namespace Model
 } // namespace Eflo

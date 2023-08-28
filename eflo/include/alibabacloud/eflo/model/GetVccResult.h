@@ -36,10 +36,25 @@ namespace AlibabaCloud
 				{
 					struct VpdBaseInfo
 					{
-						std::string gmtCreate;
 						std::string cidr;
 						std::string vpdId;
-						std::string name;
+						std::string createTime;
+						std::string vpdName;
+					};
+					struct ErInfo
+					{
+						std::string status;
+						long connections;
+						std::string erName;
+						std::string tenantId;
+						std::string description;
+						std::string message;
+						std::string createTime;
+						std::string gmtModified;
+						std::string erId;
+						std::string regionId;
+						long routeMaps;
+						std::string masterZoneId;
 					};
 					struct AliyunRouterInfoItem
 					{
@@ -64,7 +79,13 @@ namespace AlibabaCloud
 						std::string ccrId;
 						std::vector<CisRouterInfoItem::CcInfo> ccInfos;
 					};
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string message;
+					std::string resourceGroupId;
 					std::string lineOperator;
 					std::string pricingCycle;
 					std::string currentNode;
@@ -72,8 +93,11 @@ namespace AlibabaCloud
 					std::string bgpCidr;
 					std::string commodityCode;
 					std::string vccId;
+					std::vector<Tag> tags;
 					std::string status;
 					VpdBaseInfo vpdBaseInfo;
+					std::string zoneId;
+					std::string connectionType;
 					std::string vSwitchId;
 					std::string createTime;
 					std::string duration;
@@ -84,7 +108,11 @@ namespace AlibabaCloud
 					std::vector<CisRouterInfoItem> cisRouterInfo;
 					std::string tenantId;
 					std::string vpcId;
+					std::string expirationDate;
 					std::string vpdId;
+					std::vector<ErInfo> erInfos;
+					std::string cenOwnerId;
+					bool attachErStatus;
 					std::string cenId;
 					std::string accessPointId;
 					std::string regionId;

@@ -30,20 +30,17 @@ class ALIBABACLOUD_EFLO_EXPORT UpdateVpdRequest : public RpcServiceRequest {
 public:
 	UpdateVpdRequest();
 	~UpdateVpdRequest();
-	std::string getDescription() const;
-	void setDescription(const std::string &description);
+	std::string getVpdName() const;
+	void setVpdName(const std::string &vpdName);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getVpdId() const;
 	void setVpdId(const std::string &vpdId);
-	std::string getName() const;
-	void setName(const std::string &name);
 
 private:
-	std::string description_;
+	std::string vpdName_;
 	std::string regionId_;
 	std::string vpdId_;
-	std::string name_;
 };
 } // namespace Model
 } // namespace Eflo

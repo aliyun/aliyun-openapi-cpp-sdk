@@ -34,21 +34,46 @@ namespace AlibabaCloud
 			public:
 				struct Content
 				{
+					struct ErInfo
+					{
+						std::string status;
+						long connections;
+						std::string erName;
+						std::string tenantId;
+						std::string description;
+						std::string message;
+						std::string createTime;
+						std::string gmtModified;
+						std::string erId;
+						std::string regionId;
+						long routeMaps;
+						std::string masterZoneId;
+					};
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string status;
-					long ncCount;
-					long lbCount;
-					std::string description;
+					int ncCount;
+					long privateIpCount;
 					std::string message;
+					int networkInterfaceCount;
 					long subnetCount;
+					std::string resourceGroupId;
+					std::vector<std::string> secondaryCidrBlocks;
+					std::string createTime;
 					std::string gmtModified;
-					std::string name;
-					std::string gmtCreate;
+					std::string vpdName;
+					std::string tenantId;
 					std::string cidr;
+					int quota;
 					std::string vpdId;
+					std::vector<ErInfo> erInfos;
+					bool attachErStatus;
 					std::string serviceCidr;
 					std::string regionId;
-					long vccCount;
-					int route;
+					std::vector<Tag> tags;
 				};
 
 

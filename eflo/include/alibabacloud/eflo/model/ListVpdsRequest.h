@@ -28,18 +28,28 @@ namespace Eflo {
 namespace Model {
 class ALIBABACLOUD_EFLO_EXPORT ListVpdsRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	ListVpdsRequest();
 	~ListVpdsRequest();
+	std::string getVpdName() const;
+	void setVpdName(const std::string &vpdName);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	bool getWithDependence() const;
 	void setWithDependence(bool withDependence);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	bool getWithoutVcc() const;
 	void setWithoutVcc(bool withoutVcc);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	bool getForSelect() const;
 	void setForSelect(bool forSelect);
 	std::string getFilterErId() const;
@@ -48,22 +58,22 @@ public:
 	void setVpdId(const std::string &vpdId);
 	bool getEnablePage() const;
 	void setEnablePage(bool enablePage);
-	std::string getName() const;
-	void setName(const std::string &name);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
 
 private:
+	std::string vpdName_;
 	int pageNumber_;
 	bool withDependence_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	bool withoutVcc_;
 	int pageSize_;
+	std::vector<Tag> tag_;
 	bool forSelect_;
 	std::string filterErId_;
 	std::string vpdId_;
 	bool enablePage_;
-	std::string name_;
 	std::string status_;
 };
 } // namespace Model

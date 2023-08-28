@@ -43,6 +43,15 @@ void ListSubnetsRequest::setPageNumber(int pageNumber) {
   setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string ListSubnetsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListSubnetsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListSubnetsRequest::getRegionId() const {
   return regionId_;
 }
@@ -59,6 +68,20 @@ int ListSubnetsRequest::getPageSize() const {
 void ListSubnetsRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::vector<ListSubnetsRequest::Tag> ListSubnetsRequest::getTag() const {
+  return tag_;
+}
+
+void ListSubnetsRequest::setTag(const std::vector<ListSubnetsRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(tagObjStr + ".Value", tagObj.value);
+    setBodyParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
 std::string ListSubnetsRequest::getSubnetId() const {
@@ -88,15 +111,6 @@ void ListSubnetsRequest::setEnablePage(bool enablePage) {
   setBodyParameter(std::string("EnablePage"), enablePage ? "true" : "false");
 }
 
-std::string ListSubnetsRequest::getName() const {
-  return name_;
-}
-
-void ListSubnetsRequest::setName(const std::string &name) {
-  name_ = name;
-  setBodyParameter(std::string("Name"), name);
-}
-
 std::string ListSubnetsRequest::getZoneId() const {
   return zoneId_;
 }
@@ -104,6 +118,15 @@ std::string ListSubnetsRequest::getZoneId() const {
 void ListSubnetsRequest::setZoneId(const std::string &zoneId) {
   zoneId_ = zoneId;
   setBodyParameter(std::string("ZoneId"), zoneId);
+}
+
+std::string ListSubnetsRequest::getSubnetName() const {
+  return subnetName_;
+}
+
+void ListSubnetsRequest::setSubnetName(const std::string &subnetName) {
+  subnetName_ = subnetName;
+  setBodyParameter(std::string("SubnetName"), subnetName);
 }
 
 std::string ListSubnetsRequest::getStatus() const {

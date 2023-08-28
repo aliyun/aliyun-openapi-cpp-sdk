@@ -28,22 +28,32 @@ namespace Eflo {
 namespace Model {
 class ALIBABACLOUD_EFLO_EXPORT ListVccsRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	ListVccsRequest();
 	~ListVccsRequest();
 	std::string getCenId() const;
 	void setCenId(const std::string &cenId);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getVccId() const;
 	void setVccId(const std::string &vccId);
 	int getBandwidth() const;
 	void setBandwidth(int bandwidth);
 	std::string getExStatus() const;
 	void setExStatus(const std::string &exStatus);
+	std::string getFilterErId() const;
+	void setFilterErId(const std::string &filterErId);
 	std::string getVpdId() const;
 	void setVpdId(const std::string &vpdId);
 	std::string getVpcId() const;
@@ -56,11 +66,14 @@ public:
 private:
 	std::string cenId_;
 	int pageNumber_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	int pageSize_;
+	std::vector<Tag> tag_;
 	std::string vccId_;
 	int bandwidth_;
 	std::string exStatus_;
+	std::string filterErId_;
 	std::string vpdId_;
 	std::string vpcId_;
 	bool enablePage_;
