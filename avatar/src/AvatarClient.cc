@@ -447,6 +447,42 @@ AvatarClient::QueryTimedResetOperateStatusOutcomeCallable AvatarClient::queryTim
 	return task->get_future();
 }
 
+AvatarClient::QueryVideoTaskInfoOutcome AvatarClient::queryVideoTaskInfo(const QueryVideoTaskInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryVideoTaskInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryVideoTaskInfoOutcome(QueryVideoTaskInfoResult(outcome.result()));
+	else
+		return QueryVideoTaskInfoOutcome(outcome.error());
+}
+
+void AvatarClient::queryVideoTaskInfoAsync(const QueryVideoTaskInfoRequest& request, const QueryVideoTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryVideoTaskInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::QueryVideoTaskInfoOutcomeCallable AvatarClient::queryVideoTaskInfoCallable(const QueryVideoTaskInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryVideoTaskInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->queryVideoTaskInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AvatarClient::SendCommandOutcome AvatarClient::sendCommand(const SendCommandRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

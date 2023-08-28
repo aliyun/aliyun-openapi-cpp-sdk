@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					{
 						std::string alphaUrl;
 						int videoDuration;
+						std::string previewPic;
 						std::string failCode;
 						std::string subtitlesUrl;
 						std::string wordSubtitlesUrl;

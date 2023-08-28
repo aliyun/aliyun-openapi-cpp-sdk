@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARRESULT_H_
-#define ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARRESULT_H_
+#ifndef ALIBABACLOUD_AVATAR_MODEL_QUERYVIDEOTASKINFORESULT_H_
+#define ALIBABACLOUD_AVATAR_MODEL_QUERYVIDEOTASKINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,45 +29,40 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_AVATAR_EXPORT QueryAvatarResult : public ServiceResult
+			class ALIBABACLOUD_AVATAR_EXPORT QueryVideoTaskInfoResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct SupportedResolutions
+					struct ListItem
 					{
-						struct OfflineItem
+						struct TaskResult
 						{
-							std::string desc;
-							int height;
-							int width;
+							std::string alphaUrl;
+							int videoDuration;
+							std::string previewPic;
+							std::string failCode;
+							std::string subtitlesUrl;
+							std::string wordSubtitlesUrl;
+							std::string failReason;
+							std::string videoUrl;
 						};
-						struct OnlineItem
-						{
-							std::string desc;
-							int height;
-							int width;
-						};
-						std::vector<OfflineItem> offline;
-						std::vector<OnlineItem> online;
+						int status;
+						int type;
+						std::string taskUuid;
+						TaskResult taskResult;
+						std::string title;
 					};
-					std::string description;
-					std::string makeStage;
-					SupportedResolutions supportedResolutions;
-					std::string portrait;
-					std::string modelType;
-					std::string avatarType;
-					std::string makeStatus;
-					std::string image;
-					std::string allLocateImages;
-					std::string name;
-					std::string makeFailReason;
+					long totalCount;
+					int pageSize;
+					std::vector<ListItem> list;
+					int pageNo;
 				};
 
 
-				QueryAvatarResult();
-				explicit QueryAvatarResult(const std::string &payload);
-				~QueryAvatarResult();
+				QueryVideoTaskInfoResult();
+				explicit QueryVideoTaskInfoResult(const std::string &payload);
+				~QueryVideoTaskInfoResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -85,4 +80,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARRESULT_H_
+#endif // !ALIBABACLOUD_AVATAR_MODEL_QUERYVIDEOTASKINFORESULT_H_

@@ -54,6 +54,7 @@ namespace AlibabaCloud
 							std::vector<OnlineItem> online;
 						};
 						std::string description;
+						std::string makeStage;
 						SupportedResolutions supportedResolutions;
 						std::string portrait;
 						std::string avatarType;

@@ -70,6 +70,8 @@ void QueryAvatarListResult::parse(const std::string &payload)
 			listItemObject.makeStatus = dataNodeListlistItem["MakeStatus"].asString();
 		if(!dataNodeListlistItem["MakeFailReason"].isNull())
 			listItemObject.makeFailReason = dataNodeListlistItem["MakeFailReason"].asString();
+		if(!dataNodeListlistItem["MakeStage"].isNull())
+			listItemObject.makeStage = dataNodeListlistItem["MakeStage"].asString();
 		auto supportedResolutionsNode = value["SupportedResolutions"];
 		auto allOfflineNode = supportedResolutionsNode["Offline"]["offlineItem"];
 		for (auto supportedResolutionsNodeOfflineofflineItem : allOfflineNode)

@@ -44,6 +44,8 @@
 #include "model/QueryRunningInstanceResult.h"
 #include "model/QueryTimedResetOperateStatusRequest.h"
 #include "model/QueryTimedResetOperateStatusResult.h"
+#include "model/QueryVideoTaskInfoRequest.h"
+#include "model/QueryVideoTaskInfoResult.h"
 #include "model/SendCommandRequest.h"
 #include "model/SendCommandResult.h"
 #include "model/SendMessageRequest.h"
@@ -110,6 +112,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryTimedResetOperateStatusResult> QueryTimedResetOperateStatusOutcome;
 			typedef std::future<QueryTimedResetOperateStatusOutcome> QueryTimedResetOperateStatusOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::QueryTimedResetOperateStatusRequest&, const QueryTimedResetOperateStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryTimedResetOperateStatusAsyncHandler;
+			typedef Outcome<Error, Model::QueryVideoTaskInfoResult> QueryVideoTaskInfoOutcome;
+			typedef std::future<QueryVideoTaskInfoOutcome> QueryVideoTaskInfoOutcomeCallable;
+			typedef std::function<void(const AvatarClient*, const Model::QueryVideoTaskInfoRequest&, const QueryVideoTaskInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryVideoTaskInfoAsyncHandler;
 			typedef Outcome<Error, Model::SendCommandResult> SendCommandOutcome;
 			typedef std::future<SendCommandOutcome> SendCommandOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::SendCommandRequest&, const SendCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendCommandAsyncHandler;
@@ -184,6 +189,9 @@ namespace AlibabaCloud
 			QueryTimedResetOperateStatusOutcome queryTimedResetOperateStatus(const Model::QueryTimedResetOperateStatusRequest &request)const;
 			void queryTimedResetOperateStatusAsync(const Model::QueryTimedResetOperateStatusRequest& request, const QueryTimedResetOperateStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryTimedResetOperateStatusOutcomeCallable queryTimedResetOperateStatusCallable(const Model::QueryTimedResetOperateStatusRequest& request) const;
+			QueryVideoTaskInfoOutcome queryVideoTaskInfo(const Model::QueryVideoTaskInfoRequest &request)const;
+			void queryVideoTaskInfoAsync(const Model::QueryVideoTaskInfoRequest& request, const QueryVideoTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryVideoTaskInfoOutcomeCallable queryVideoTaskInfoCallable(const Model::QueryVideoTaskInfoRequest& request) const;
 			SendCommandOutcome sendCommand(const Model::SendCommandRequest &request)const;
 			void sendCommandAsync(const Model::SendCommandRequest& request, const SendCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SendCommandOutcomeCallable sendCommandCallable(const Model::SendCommandRequest& request) const;
