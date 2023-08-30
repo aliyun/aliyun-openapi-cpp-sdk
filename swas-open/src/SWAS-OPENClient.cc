@@ -87,6 +87,42 @@ SWAS_OPENClient::AllocatePublicConnectionOutcomeCallable SWAS_OPENClient::alloca
 	return task->get_future();
 }
 
+SWAS_OPENClient::CreateCommandOutcome SWAS_OPENClient::createCommand(const CreateCommandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCommandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCommandOutcome(CreateCommandResult(outcome.result()));
+	else
+		return CreateCommandOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::createCommandAsync(const CreateCommandRequest& request, const CreateCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCommand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::CreateCommandOutcomeCallable SWAS_OPENClient::createCommandCallable(const CreateCommandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCommandOutcome()>>(
+			[this, request]()
+			{
+			return this->createCommand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::CreateCustomImageOutcome SWAS_OPENClient::createCustomImage(const CreateCustomImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +333,42 @@ SWAS_OPENClient::CreateSnapshotOutcomeCallable SWAS_OPENClient::createSnapshotCa
 			[this, request]()
 			{
 			return this->createSnapshot(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::DeleteCommandOutcome SWAS_OPENClient::deleteCommand(const DeleteCommandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCommandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCommandOutcome(DeleteCommandResult(outcome.result()));
+	else
+		return DeleteCommandOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::deleteCommandAsync(const DeleteCommandRequest& request, const DeleteCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCommand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DeleteCommandOutcomeCallable SWAS_OPENClient::deleteCommandCallable(const DeleteCommandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCommandOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCommand(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -549,6 +621,78 @@ SWAS_OPENClient::DescribeCloudMonitorAgentStatusesOutcomeCallable SWAS_OPENClien
 			[this, request]()
 			{
 			return this->describeCloudMonitorAgentStatuses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::DescribeCommandInvocationsOutcome SWAS_OPENClient::describeCommandInvocations(const DescribeCommandInvocationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCommandInvocationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCommandInvocationsOutcome(DescribeCommandInvocationsResult(outcome.result()));
+	else
+		return DescribeCommandInvocationsOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::describeCommandInvocationsAsync(const DescribeCommandInvocationsRequest& request, const DescribeCommandInvocationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCommandInvocations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DescribeCommandInvocationsOutcomeCallable SWAS_OPENClient::describeCommandInvocationsCallable(const DescribeCommandInvocationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCommandInvocationsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCommandInvocations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::DescribeCommandsOutcome SWAS_OPENClient::describeCommands(const DescribeCommandsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCommandsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCommandsOutcome(DescribeCommandsResult(outcome.result()));
+	else
+		return DescribeCommandsOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::describeCommandsAsync(const DescribeCommandsRequest& request, const DescribeCommandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCommands(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DescribeCommandsOutcomeCallable SWAS_OPENClient::describeCommandsCallable(const DescribeCommandsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCommandsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCommands(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1125,6 +1269,42 @@ SWAS_OPENClient::InstallCloudMonitorAgentOutcomeCallable SWAS_OPENClient::instal
 			[this, request]()
 			{
 			return this->installCloudMonitorAgent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::InvokeCommandOutcome SWAS_OPENClient::invokeCommand(const InvokeCommandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InvokeCommandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InvokeCommandOutcome(InvokeCommandResult(outcome.result()));
+	else
+		return InvokeCommandOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::invokeCommandAsync(const InvokeCommandRequest& request, const InvokeCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, invokeCommand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::InvokeCommandOutcomeCallable SWAS_OPENClient::invokeCommandCallable(const InvokeCommandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InvokeCommandOutcome()>>(
+			[this, request]()
+			{
+			return this->invokeCommand(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2313,6 +2493,42 @@ SWAS_OPENClient::StopInstancesOutcomeCallable SWAS_OPENClient::stopInstancesCall
 			[this, request]()
 			{
 			return this->stopInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::UpdateCommandAttributeOutcome SWAS_OPENClient::updateCommandAttribute(const UpdateCommandAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateCommandAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateCommandAttributeOutcome(UpdateCommandAttributeResult(outcome.result()));
+	else
+		return UpdateCommandAttributeOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::updateCommandAttributeAsync(const UpdateCommandAttributeRequest& request, const UpdateCommandAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateCommandAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::UpdateCommandAttributeOutcomeCallable SWAS_OPENClient::updateCommandAttributeCallable(const UpdateCommandAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateCommandAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateCommandAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

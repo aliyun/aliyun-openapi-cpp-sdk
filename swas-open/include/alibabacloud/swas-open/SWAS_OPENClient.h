@@ -24,6 +24,8 @@
 #include "SWAS_OPENExport.h"
 #include "model/AllocatePublicConnectionRequest.h"
 #include "model/AllocatePublicConnectionResult.h"
+#include "model/CreateCommandRequest.h"
+#include "model/CreateCommandResult.h"
 #include "model/CreateCustomImageRequest.h"
 #include "model/CreateCustomImageResult.h"
 #include "model/CreateFirewallRuleRequest.h"
@@ -36,6 +38,8 @@
 #include "model/CreateInstancesResult.h"
 #include "model/CreateSnapshotRequest.h"
 #include "model/CreateSnapshotResult.h"
+#include "model/DeleteCommandRequest.h"
+#include "model/DeleteCommandResult.h"
 #include "model/DeleteCustomImageRequest.h"
 #include "model/DeleteCustomImageResult.h"
 #include "model/DeleteFirewallRuleRequest.h"
@@ -50,6 +54,10 @@
 #include "model/DescribeCloudAssistantStatusResult.h"
 #include "model/DescribeCloudMonitorAgentStatusesRequest.h"
 #include "model/DescribeCloudMonitorAgentStatusesResult.h"
+#include "model/DescribeCommandInvocationsRequest.h"
+#include "model/DescribeCommandInvocationsResult.h"
+#include "model/DescribeCommandsRequest.h"
+#include "model/DescribeCommandsResult.h"
 #include "model/DescribeDatabaseErrorLogsRequest.h"
 #include "model/DescribeDatabaseErrorLogsResult.h"
 #include "model/DescribeDatabaseInstanceMetricDataRequest.h"
@@ -82,6 +90,8 @@
 #include "model/InstallCloudAssistantResult.h"
 #include "model/InstallCloudMonitorAgentRequest.h"
 #include "model/InstallCloudMonitorAgentResult.h"
+#include "model/InvokeCommandRequest.h"
+#include "model/InvokeCommandResult.h"
 #include "model/ListCustomImagesRequest.h"
 #include "model/ListCustomImagesResult.h"
 #include "model/ListDisksRequest.h"
@@ -148,6 +158,8 @@
 #include "model/StopInstanceResult.h"
 #include "model/StopInstancesRequest.h"
 #include "model/StopInstancesResult.h"
+#include "model/UpdateCommandAttributeRequest.h"
+#include "model/UpdateCommandAttributeResult.h"
 #include "model/UpdateDiskAttributeRequest.h"
 #include "model/UpdateDiskAttributeResult.h"
 #include "model/UpdateInstanceAttributeRequest.h"
@@ -170,6 +182,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AllocatePublicConnectionResult> AllocatePublicConnectionOutcome;
 			typedef std::future<AllocatePublicConnectionOutcome> AllocatePublicConnectionOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::AllocatePublicConnectionRequest&, const AllocatePublicConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocatePublicConnectionAsyncHandler;
+			typedef Outcome<Error, Model::CreateCommandResult> CreateCommandOutcome;
+			typedef std::future<CreateCommandOutcome> CreateCommandOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::CreateCommandRequest&, const CreateCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCommandAsyncHandler;
 			typedef Outcome<Error, Model::CreateCustomImageResult> CreateCustomImageOutcome;
 			typedef std::future<CreateCustomImageOutcome> CreateCustomImageOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::CreateCustomImageRequest&, const CreateCustomImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomImageAsyncHandler;
@@ -188,6 +203,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateSnapshotResult> CreateSnapshotOutcome;
 			typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::CreateSnapshotRequest&, const CreateSnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCommandResult> DeleteCommandOutcome;
+			typedef std::future<DeleteCommandOutcome> DeleteCommandOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteCommandRequest&, const DeleteCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCommandAsyncHandler;
 			typedef Outcome<Error, Model::DeleteCustomImageResult> DeleteCustomImageOutcome;
 			typedef std::future<DeleteCustomImageOutcome> DeleteCustomImageOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteCustomImageRequest&, const DeleteCustomImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomImageAsyncHandler;
@@ -209,6 +227,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCloudMonitorAgentStatusesResult> DescribeCloudMonitorAgentStatusesOutcome;
 			typedef std::future<DescribeCloudMonitorAgentStatusesOutcome> DescribeCloudMonitorAgentStatusesOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeCloudMonitorAgentStatusesRequest&, const DescribeCloudMonitorAgentStatusesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudMonitorAgentStatusesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCommandInvocationsResult> DescribeCommandInvocationsOutcome;
+			typedef std::future<DescribeCommandInvocationsOutcome> DescribeCommandInvocationsOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeCommandInvocationsRequest&, const DescribeCommandInvocationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCommandInvocationsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCommandsResult> DescribeCommandsOutcome;
+			typedef std::future<DescribeCommandsOutcome> DescribeCommandsOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeCommandsRequest&, const DescribeCommandsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCommandsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDatabaseErrorLogsResult> DescribeDatabaseErrorLogsOutcome;
 			typedef std::future<DescribeDatabaseErrorLogsOutcome> DescribeDatabaseErrorLogsOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeDatabaseErrorLogsRequest&, const DescribeDatabaseErrorLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseErrorLogsAsyncHandler;
@@ -257,6 +281,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InstallCloudMonitorAgentResult> InstallCloudMonitorAgentOutcome;
 			typedef std::future<InstallCloudMonitorAgentOutcome> InstallCloudMonitorAgentOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::InstallCloudMonitorAgentRequest&, const InstallCloudMonitorAgentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InstallCloudMonitorAgentAsyncHandler;
+			typedef Outcome<Error, Model::InvokeCommandResult> InvokeCommandOutcome;
+			typedef std::future<InvokeCommandOutcome> InvokeCommandOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::InvokeCommandRequest&, const InvokeCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InvokeCommandAsyncHandler;
 			typedef Outcome<Error, Model::ListCustomImagesResult> ListCustomImagesOutcome;
 			typedef std::future<ListCustomImagesOutcome> ListCustomImagesOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::ListCustomImagesRequest&, const ListCustomImagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCustomImagesAsyncHandler;
@@ -356,6 +383,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopInstancesResult> StopInstancesOutcome;
 			typedef std::future<StopInstancesOutcome> StopInstancesOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::StopInstancesRequest&, const StopInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopInstancesAsyncHandler;
+			typedef Outcome<Error, Model::UpdateCommandAttributeResult> UpdateCommandAttributeOutcome;
+			typedef std::future<UpdateCommandAttributeOutcome> UpdateCommandAttributeOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::UpdateCommandAttributeRequest&, const UpdateCommandAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCommandAttributeAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDiskAttributeResult> UpdateDiskAttributeOutcome;
 			typedef std::future<UpdateDiskAttributeOutcome> UpdateDiskAttributeOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::UpdateDiskAttributeRequest&, const UpdateDiskAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDiskAttributeAsyncHandler;
@@ -379,6 +409,9 @@ namespace AlibabaCloud
 			AllocatePublicConnectionOutcome allocatePublicConnection(const Model::AllocatePublicConnectionRequest &request)const;
 			void allocatePublicConnectionAsync(const Model::AllocatePublicConnectionRequest& request, const AllocatePublicConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AllocatePublicConnectionOutcomeCallable allocatePublicConnectionCallable(const Model::AllocatePublicConnectionRequest& request) const;
+			CreateCommandOutcome createCommand(const Model::CreateCommandRequest &request)const;
+			void createCommandAsync(const Model::CreateCommandRequest& request, const CreateCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCommandOutcomeCallable createCommandCallable(const Model::CreateCommandRequest& request) const;
 			CreateCustomImageOutcome createCustomImage(const Model::CreateCustomImageRequest &request)const;
 			void createCustomImageAsync(const Model::CreateCustomImageRequest& request, const CreateCustomImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCustomImageOutcomeCallable createCustomImageCallable(const Model::CreateCustomImageRequest& request) const;
@@ -397,6 +430,9 @@ namespace AlibabaCloud
 			CreateSnapshotOutcome createSnapshot(const Model::CreateSnapshotRequest &request)const;
 			void createSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSnapshotOutcomeCallable createSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
+			DeleteCommandOutcome deleteCommand(const Model::DeleteCommandRequest &request)const;
+			void deleteCommandAsync(const Model::DeleteCommandRequest& request, const DeleteCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCommandOutcomeCallable deleteCommandCallable(const Model::DeleteCommandRequest& request) const;
 			DeleteCustomImageOutcome deleteCustomImage(const Model::DeleteCustomImageRequest &request)const;
 			void deleteCustomImageAsync(const Model::DeleteCustomImageRequest& request, const DeleteCustomImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCustomImageOutcomeCallable deleteCustomImageCallable(const Model::DeleteCustomImageRequest& request) const;
@@ -418,6 +454,12 @@ namespace AlibabaCloud
 			DescribeCloudMonitorAgentStatusesOutcome describeCloudMonitorAgentStatuses(const Model::DescribeCloudMonitorAgentStatusesRequest &request)const;
 			void describeCloudMonitorAgentStatusesAsync(const Model::DescribeCloudMonitorAgentStatusesRequest& request, const DescribeCloudMonitorAgentStatusesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCloudMonitorAgentStatusesOutcomeCallable describeCloudMonitorAgentStatusesCallable(const Model::DescribeCloudMonitorAgentStatusesRequest& request) const;
+			DescribeCommandInvocationsOutcome describeCommandInvocations(const Model::DescribeCommandInvocationsRequest &request)const;
+			void describeCommandInvocationsAsync(const Model::DescribeCommandInvocationsRequest& request, const DescribeCommandInvocationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCommandInvocationsOutcomeCallable describeCommandInvocationsCallable(const Model::DescribeCommandInvocationsRequest& request) const;
+			DescribeCommandsOutcome describeCommands(const Model::DescribeCommandsRequest &request)const;
+			void describeCommandsAsync(const Model::DescribeCommandsRequest& request, const DescribeCommandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCommandsOutcomeCallable describeCommandsCallable(const Model::DescribeCommandsRequest& request) const;
 			DescribeDatabaseErrorLogsOutcome describeDatabaseErrorLogs(const Model::DescribeDatabaseErrorLogsRequest &request)const;
 			void describeDatabaseErrorLogsAsync(const Model::DescribeDatabaseErrorLogsRequest& request, const DescribeDatabaseErrorLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDatabaseErrorLogsOutcomeCallable describeDatabaseErrorLogsCallable(const Model::DescribeDatabaseErrorLogsRequest& request) const;
@@ -466,6 +508,9 @@ namespace AlibabaCloud
 			InstallCloudMonitorAgentOutcome installCloudMonitorAgent(const Model::InstallCloudMonitorAgentRequest &request)const;
 			void installCloudMonitorAgentAsync(const Model::InstallCloudMonitorAgentRequest& request, const InstallCloudMonitorAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InstallCloudMonitorAgentOutcomeCallable installCloudMonitorAgentCallable(const Model::InstallCloudMonitorAgentRequest& request) const;
+			InvokeCommandOutcome invokeCommand(const Model::InvokeCommandRequest &request)const;
+			void invokeCommandAsync(const Model::InvokeCommandRequest& request, const InvokeCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InvokeCommandOutcomeCallable invokeCommandCallable(const Model::InvokeCommandRequest& request) const;
 			ListCustomImagesOutcome listCustomImages(const Model::ListCustomImagesRequest &request)const;
 			void listCustomImagesAsync(const Model::ListCustomImagesRequest& request, const ListCustomImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCustomImagesOutcomeCallable listCustomImagesCallable(const Model::ListCustomImagesRequest& request) const;
@@ -565,6 +610,9 @@ namespace AlibabaCloud
 			StopInstancesOutcome stopInstances(const Model::StopInstancesRequest &request)const;
 			void stopInstancesAsync(const Model::StopInstancesRequest& request, const StopInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopInstancesOutcomeCallable stopInstancesCallable(const Model::StopInstancesRequest& request) const;
+			UpdateCommandAttributeOutcome updateCommandAttribute(const Model::UpdateCommandAttributeRequest &request)const;
+			void updateCommandAttributeAsync(const Model::UpdateCommandAttributeRequest& request, const UpdateCommandAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateCommandAttributeOutcomeCallable updateCommandAttributeCallable(const Model::UpdateCommandAttributeRequest& request) const;
 			UpdateDiskAttributeOutcome updateDiskAttribute(const Model::UpdateDiskAttributeRequest &request)const;
 			void updateDiskAttributeAsync(const Model::UpdateDiskAttributeRequest& request, const UpdateDiskAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDiskAttributeOutcomeCallable updateDiskAttributeCallable(const Model::UpdateDiskAttributeRequest& request) const;

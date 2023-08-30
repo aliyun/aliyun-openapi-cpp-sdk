@@ -23,6 +23,8 @@ set(swas-open_public_header
 set(swas-open_public_header_model 
 	include/alibabacloud/swas-open/model/AllocatePublicConnectionRequest.h
 	include/alibabacloud/swas-open/model/AllocatePublicConnectionResult.h
+	include/alibabacloud/swas-open/model/CreateCommandRequest.h
+	include/alibabacloud/swas-open/model/CreateCommandResult.h
 	include/alibabacloud/swas-open/model/CreateCustomImageRequest.h
 	include/alibabacloud/swas-open/model/CreateCustomImageResult.h
 	include/alibabacloud/swas-open/model/CreateFirewallRuleRequest.h
@@ -35,6 +37,8 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/CreateInstancesResult.h
 	include/alibabacloud/swas-open/model/CreateSnapshotRequest.h
 	include/alibabacloud/swas-open/model/CreateSnapshotResult.h
+	include/alibabacloud/swas-open/model/DeleteCommandRequest.h
+	include/alibabacloud/swas-open/model/DeleteCommandResult.h
 	include/alibabacloud/swas-open/model/DeleteCustomImageRequest.h
 	include/alibabacloud/swas-open/model/DeleteCustomImageResult.h
 	include/alibabacloud/swas-open/model/DeleteFirewallRuleRequest.h
@@ -49,6 +53,10 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/DescribeCloudAssistantStatusResult.h
 	include/alibabacloud/swas-open/model/DescribeCloudMonitorAgentStatusesRequest.h
 	include/alibabacloud/swas-open/model/DescribeCloudMonitorAgentStatusesResult.h
+	include/alibabacloud/swas-open/model/DescribeCommandInvocationsRequest.h
+	include/alibabacloud/swas-open/model/DescribeCommandInvocationsResult.h
+	include/alibabacloud/swas-open/model/DescribeCommandsRequest.h
+	include/alibabacloud/swas-open/model/DescribeCommandsResult.h
 	include/alibabacloud/swas-open/model/DescribeDatabaseErrorLogsRequest.h
 	include/alibabacloud/swas-open/model/DescribeDatabaseErrorLogsResult.h
 	include/alibabacloud/swas-open/model/DescribeDatabaseInstanceMetricDataRequest.h
@@ -81,6 +89,8 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/InstallCloudAssistantResult.h
 	include/alibabacloud/swas-open/model/InstallCloudMonitorAgentRequest.h
 	include/alibabacloud/swas-open/model/InstallCloudMonitorAgentResult.h
+	include/alibabacloud/swas-open/model/InvokeCommandRequest.h
+	include/alibabacloud/swas-open/model/InvokeCommandResult.h
 	include/alibabacloud/swas-open/model/ListCustomImagesRequest.h
 	include/alibabacloud/swas-open/model/ListCustomImagesResult.h
 	include/alibabacloud/swas-open/model/ListDisksRequest.h
@@ -147,6 +157,8 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/StopInstanceResult.h
 	include/alibabacloud/swas-open/model/StopInstancesRequest.h
 	include/alibabacloud/swas-open/model/StopInstancesResult.h
+	include/alibabacloud/swas-open/model/UpdateCommandAttributeRequest.h
+	include/alibabacloud/swas-open/model/UpdateCommandAttributeResult.h
 	include/alibabacloud/swas-open/model/UpdateDiskAttributeRequest.h
 	include/alibabacloud/swas-open/model/UpdateDiskAttributeResult.h
 	include/alibabacloud/swas-open/model/UpdateInstanceAttributeRequest.h
@@ -162,6 +174,8 @@ set(swas-open_src
 	src/SWAS-OPENClient.cc
 	src/model/AllocatePublicConnectionRequest.cc
 	src/model/AllocatePublicConnectionResult.cc
+	src/model/CreateCommandRequest.cc
+	src/model/CreateCommandResult.cc
 	src/model/CreateCustomImageRequest.cc
 	src/model/CreateCustomImageResult.cc
 	src/model/CreateFirewallRuleRequest.cc
@@ -174,6 +188,8 @@ set(swas-open_src
 	src/model/CreateInstancesResult.cc
 	src/model/CreateSnapshotRequest.cc
 	src/model/CreateSnapshotResult.cc
+	src/model/DeleteCommandRequest.cc
+	src/model/DeleteCommandResult.cc
 	src/model/DeleteCustomImageRequest.cc
 	src/model/DeleteCustomImageResult.cc
 	src/model/DeleteFirewallRuleRequest.cc
@@ -188,6 +204,10 @@ set(swas-open_src
 	src/model/DescribeCloudAssistantStatusResult.cc
 	src/model/DescribeCloudMonitorAgentStatusesRequest.cc
 	src/model/DescribeCloudMonitorAgentStatusesResult.cc
+	src/model/DescribeCommandInvocationsRequest.cc
+	src/model/DescribeCommandInvocationsResult.cc
+	src/model/DescribeCommandsRequest.cc
+	src/model/DescribeCommandsResult.cc
 	src/model/DescribeDatabaseErrorLogsRequest.cc
 	src/model/DescribeDatabaseErrorLogsResult.cc
 	src/model/DescribeDatabaseInstanceMetricDataRequest.cc
@@ -220,6 +240,8 @@ set(swas-open_src
 	src/model/InstallCloudAssistantResult.cc
 	src/model/InstallCloudMonitorAgentRequest.cc
 	src/model/InstallCloudMonitorAgentResult.cc
+	src/model/InvokeCommandRequest.cc
+	src/model/InvokeCommandResult.cc
 	src/model/ListCustomImagesRequest.cc
 	src/model/ListCustomImagesResult.cc
 	src/model/ListDisksRequest.cc
@@ -286,6 +308,8 @@ set(swas-open_src
 	src/model/StopInstanceResult.cc
 	src/model/StopInstancesRequest.cc
 	src/model/StopInstancesResult.cc
+	src/model/UpdateCommandAttributeRequest.cc
+	src/model/UpdateCommandAttributeResult.cc
 	src/model/UpdateDiskAttributeRequest.cc
 	src/model/UpdateDiskAttributeResult.cc
 	src/model/UpdateInstanceAttributeRequest.cc
