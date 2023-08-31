@@ -32,6 +32,8 @@ public:
 	~MergeVideoFaceRequest();
 	std::string getReferenceURL() const;
 	void setReferenceURL(const std::string &referenceURL);
+	bool getEnhance() const;
+	void setEnhance(bool enhance);
 	std::string getPostURL() const;
 	void setPostURL(const std::string &postURL);
 	bool getAsync() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	std::string referenceURL_;
+	bool enhance_;
 	std::string postURL_;
 	bool async_;
 	std::string videoURL_;

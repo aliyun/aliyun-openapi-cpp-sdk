@@ -34,6 +34,15 @@ void MergeVideoFaceRequest::setReferenceURL(const std::string &referenceURL) {
   setBodyParameter(std::string("ReferenceURL"), referenceURL);
 }
 
+bool MergeVideoFaceRequest::getEnhance() const {
+  return enhance_;
+}
+
+void MergeVideoFaceRequest::setEnhance(bool enhance) {
+  enhance_ = enhance;
+  setBodyParameter(std::string("Enhance"), enhance ? "true" : "false");
+}
+
 std::string MergeVideoFaceRequest::getPostURL() const {
   return postURL_;
 }
