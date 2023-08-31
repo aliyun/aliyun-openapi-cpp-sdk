@@ -71,6 +71,9 @@ void GetPrivateAccessApplicationResult::parse(const std::string &payload)
 		auto allPolicyIds = applicationNode["PolicyIds"]["policyId"];
 		for (auto value : allPolicyIds)
 			application_.policyIds.push_back(value.asString());
+		auto allConnectorIds = applicationNode["ConnectorIds"]["connectorId"];
+		for (auto value : allConnectorIds)
+			application_.connectorIds.push_back(value.asString());
 
 }
 

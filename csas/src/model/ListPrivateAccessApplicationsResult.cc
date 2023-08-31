@@ -74,6 +74,9 @@ void ListPrivateAccessApplicationsResult::parse(const std::string &payload)
 		auto allPolicyIds = value["PolicyIds"]["policyId"];
 		for (auto value : allPolicyIds)
 			applicationsObject.policyIds.push_back(value.asString());
+		auto allConnectorIds = value["ConnectorIds"]["connectorId"];
+		for (auto value : allConnectorIds)
+			applicationsObject.connectorIds.push_back(value.asString());
 		applications_.push_back(applicationsObject);
 	}
 	if(!value["TotalNum"].isNull())

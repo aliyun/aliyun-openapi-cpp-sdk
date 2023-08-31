@@ -40,6 +40,8 @@ public:
 	void setAddress(const std::string &address);
 	std::string getTagId() const;
 	void setTagId(const std::string &tagId);
+	std::string getConnectorId() const;
+	void setConnectorId(const std::string &connectorId);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
 	std::vector<std::string> getApplicationIds() const;
@@ -55,6 +57,7 @@ private:
 	int pageSize_;
 	std::string address_;
 	std::string tagId_;
+	std::string connectorId_;
 	int currentPage_;
 	std::vector<std::string> applicationIds_;
 	std::string name_;

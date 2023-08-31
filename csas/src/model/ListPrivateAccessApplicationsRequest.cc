@@ -70,6 +70,15 @@ void ListPrivateAccessApplicationsRequest::setTagId(const std::string &tagId) {
   setParameter(std::string("TagId"), tagId);
 }
 
+std::string ListPrivateAccessApplicationsRequest::getConnectorId() const {
+  return connectorId_;
+}
+
+void ListPrivateAccessApplicationsRequest::setConnectorId(const std::string &connectorId) {
+  connectorId_ = connectorId;
+  setParameter(std::string("ConnectorId"), connectorId);
+}
+
 int ListPrivateAccessApplicationsRequest::getCurrentPage() const {
   return currentPage_;
 }

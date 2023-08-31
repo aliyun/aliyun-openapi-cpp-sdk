@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					std::vector<Application::PortRange> portRanges;
 					std::string createTime;
 					std::vector<std::string> policyIds;
+					std::vector<std::string> connectorIds;
 					std::string applicationId;
 					std::string protocol;
 					std::string name;

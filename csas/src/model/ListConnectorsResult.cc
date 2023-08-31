@@ -65,6 +65,20 @@ void ListConnectorsResult::parse(const std::string &payload)
 				applicationsObject.applicationName = valueConnectorsconnectorApplicationsapplication["ApplicationName"].asString();
 			connectorsObject.applications.push_back(applicationsObject);
 		}
+		auto allConnectorClientsNode = valueConnectorsconnector["ConnectorClients"]["connectorClient"];
+		for (auto valueConnectorsconnectorConnectorClientsconnectorClient : allConnectorClientsNode)
+		{
+			Connector::ConnectorClient connectorClientsObject;
+			if(!valueConnectorsconnectorConnectorClientsconnectorClient["DevTag"].isNull())
+				connectorClientsObject.devTag = valueConnectorsconnectorConnectorClientsconnectorClient["DevTag"].asString();
+			if(!valueConnectorsconnectorConnectorClientsconnectorClient["Hostname"].isNull())
+				connectorClientsObject.hostname = valueConnectorsconnectorConnectorClientsconnectorClient["Hostname"].asString();
+			if(!valueConnectorsconnectorConnectorClientsconnectorClient["ConnectionStatus"].isNull())
+				connectorClientsObject.connectionStatus = valueConnectorsconnectorConnectorClientsconnectorClient["ConnectionStatus"].asString();
+			if(!valueConnectorsconnectorConnectorClientsconnectorClient["PublicIp"].isNull())
+				connectorClientsObject.publicIp = valueConnectorsconnectorConnectorClientsconnectorClient["PublicIp"].asString();
+			connectorsObject.connectorClients.push_back(connectorClientsObject);
+		}
 		auto upgradeTimeNode = value["UpgradeTime"];
 		if(!upgradeTimeNode["Start"].isNull())
 			connectorsObject.upgradeTime.start = upgradeTimeNode["Start"].asString();

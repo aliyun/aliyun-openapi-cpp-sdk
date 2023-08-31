@@ -44,8 +44,16 @@ namespace AlibabaCloud
 						std::string applicationName;
 						std::string applicationId;
 					};
+					struct ConnectorClient
+					{
+						std::string publicIp;
+						std::string hostname;
+						std::string devTag;
+						std::string connectionStatus;
+					};
 					std::string status;
 					std::vector<Connector::Application> applications;
+					std::vector<Connector::ConnectorClient> connectorClients;
 					std::string createTime;
 					std::string regionId;
 					UpgradeTime upgradeTime;
