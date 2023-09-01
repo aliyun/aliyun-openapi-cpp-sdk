@@ -37,7 +37,7 @@ namespace AlibabaCloud
 					struct ResourceRelationListItem
 					{
 						std::string targetResourceType;
-						int accountId;
+						long accountId;
 						std::string targetResourceId;
 						std::string relationType;
 						std::string sourceResourceRegionId;

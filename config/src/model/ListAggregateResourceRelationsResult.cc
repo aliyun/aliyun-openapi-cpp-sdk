@@ -51,7 +51,7 @@ void ListAggregateResourceRelationsResult::parse(const std::string &payload)
 	{
 		ResourceRelations::ResourceRelationListItem resourceRelationListItemObject;
 		if(!resourceRelationsNodeResourceRelationListResourceRelationListItem["AccountId"].isNull())
-			resourceRelationListItemObject.accountId = std::stoi(resourceRelationsNodeResourceRelationListResourceRelationListItem["AccountId"].asString());
+			resourceRelationListItemObject.accountId = std::stol(resourceRelationsNodeResourceRelationListResourceRelationListItem["AccountId"].asString());
 		if(!resourceRelationsNodeResourceRelationListResourceRelationListItem["SourceResourceType"].isNull())
 			resourceRelationListItemObject.sourceResourceType = resourceRelationsNodeResourceRelationListResourceRelationListItem["SourceResourceType"].asString();
 		if(!resourceRelationsNodeResourceRelationListResourceRelationListItem["SourceResourceRegionId"].isNull())
