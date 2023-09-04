@@ -82,6 +82,8 @@
 #include "model/GetLniPrivateIpAddressResult.h"
 #include "model/GetNetworkInterfaceRequest.h"
 #include "model/GetNetworkInterfaceResult.h"
+#include "model/GetNodeInfoForPodRequest.h"
+#include "model/GetNodeInfoForPodResult.h"
 #include "model/GetSubnetRequest.h"
 #include "model/GetSubnetResult.h"
 #include "model/GetVccRequest.h"
@@ -114,6 +116,8 @@
 #include "model/ListLniPrivateIpAddressResult.h"
 #include "model/ListNetworkInterfacesRequest.h"
 #include "model/ListNetworkInterfacesResult.h"
+#include "model/ListNodeInfosForPodRequest.h"
+#include "model/ListNodeInfosForPodResult.h"
 #include "model/ListSubnetsRequest.h"
 #include "model/ListSubnetsResult.h"
 #include "model/ListVccGrantRulesRequest.h"
@@ -247,6 +251,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetNetworkInterfaceResult> GetNetworkInterfaceOutcome;
 			typedef std::future<GetNetworkInterfaceOutcome> GetNetworkInterfaceOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::GetNetworkInterfaceRequest&, const GetNetworkInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNetworkInterfaceAsyncHandler;
+			typedef Outcome<Error, Model::GetNodeInfoForPodResult> GetNodeInfoForPodOutcome;
+			typedef std::future<GetNodeInfoForPodOutcome> GetNodeInfoForPodOutcomeCallable;
+			typedef std::function<void(const EfloClient*, const Model::GetNodeInfoForPodRequest&, const GetNodeInfoForPodOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNodeInfoForPodAsyncHandler;
 			typedef Outcome<Error, Model::GetSubnetResult> GetSubnetOutcome;
 			typedef std::future<GetSubnetOutcome> GetSubnetOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::GetSubnetRequest&, const GetSubnetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSubnetAsyncHandler;
@@ -295,6 +302,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListNetworkInterfacesResult> ListNetworkInterfacesOutcome;
 			typedef std::future<ListNetworkInterfacesOutcome> ListNetworkInterfacesOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::ListNetworkInterfacesRequest&, const ListNetworkInterfacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListNetworkInterfacesAsyncHandler;
+			typedef Outcome<Error, Model::ListNodeInfosForPodResult> ListNodeInfosForPodOutcome;
+			typedef std::future<ListNodeInfosForPodOutcome> ListNodeInfosForPodOutcomeCallable;
+			typedef std::function<void(const EfloClient*, const Model::ListNodeInfosForPodRequest&, const ListNodeInfosForPodOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListNodeInfosForPodAsyncHandler;
 			typedef Outcome<Error, Model::ListSubnetsResult> ListSubnetsOutcome;
 			typedef std::future<ListSubnetsOutcome> ListSubnetsOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::ListSubnetsRequest&, const ListSubnetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSubnetsAsyncHandler;
@@ -441,6 +451,9 @@ namespace AlibabaCloud
 			GetNetworkInterfaceOutcome getNetworkInterface(const Model::GetNetworkInterfaceRequest &request)const;
 			void getNetworkInterfaceAsync(const Model::GetNetworkInterfaceRequest& request, const GetNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetNetworkInterfaceOutcomeCallable getNetworkInterfaceCallable(const Model::GetNetworkInterfaceRequest& request) const;
+			GetNodeInfoForPodOutcome getNodeInfoForPod(const Model::GetNodeInfoForPodRequest &request)const;
+			void getNodeInfoForPodAsync(const Model::GetNodeInfoForPodRequest& request, const GetNodeInfoForPodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetNodeInfoForPodOutcomeCallable getNodeInfoForPodCallable(const Model::GetNodeInfoForPodRequest& request) const;
 			GetSubnetOutcome getSubnet(const Model::GetSubnetRequest &request)const;
 			void getSubnetAsync(const Model::GetSubnetRequest& request, const GetSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSubnetOutcomeCallable getSubnetCallable(const Model::GetSubnetRequest& request) const;
@@ -489,6 +502,9 @@ namespace AlibabaCloud
 			ListNetworkInterfacesOutcome listNetworkInterfaces(const Model::ListNetworkInterfacesRequest &request)const;
 			void listNetworkInterfacesAsync(const Model::ListNetworkInterfacesRequest& request, const ListNetworkInterfacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListNetworkInterfacesOutcomeCallable listNetworkInterfacesCallable(const Model::ListNetworkInterfacesRequest& request) const;
+			ListNodeInfosForPodOutcome listNodeInfosForPod(const Model::ListNodeInfosForPodRequest &request)const;
+			void listNodeInfosForPodAsync(const Model::ListNodeInfosForPodRequest& request, const ListNodeInfosForPodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListNodeInfosForPodOutcomeCallable listNodeInfosForPodCallable(const Model::ListNodeInfosForPodRequest& request) const;
 			ListSubnetsOutcome listSubnets(const Model::ListSubnetsRequest &request)const;
 			void listSubnetsAsync(const Model::ListSubnetsRequest& request, const ListSubnetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSubnetsOutcomeCallable listSubnetsCallable(const Model::ListSubnetsRequest& request) const;

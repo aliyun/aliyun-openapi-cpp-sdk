@@ -81,6 +81,8 @@ set(eflo_public_header_model
 	include/alibabacloud/eflo/model/GetLniPrivateIpAddressResult.h
 	include/alibabacloud/eflo/model/GetNetworkInterfaceRequest.h
 	include/alibabacloud/eflo/model/GetNetworkInterfaceResult.h
+	include/alibabacloud/eflo/model/GetNodeInfoForPodRequest.h
+	include/alibabacloud/eflo/model/GetNodeInfoForPodResult.h
 	include/alibabacloud/eflo/model/GetSubnetRequest.h
 	include/alibabacloud/eflo/model/GetSubnetResult.h
 	include/alibabacloud/eflo/model/GetVccRequest.h
@@ -113,6 +115,8 @@ set(eflo_public_header_model
 	include/alibabacloud/eflo/model/ListLniPrivateIpAddressResult.h
 	include/alibabacloud/eflo/model/ListNetworkInterfacesRequest.h
 	include/alibabacloud/eflo/model/ListNetworkInterfacesResult.h
+	include/alibabacloud/eflo/model/ListNodeInfosForPodRequest.h
+	include/alibabacloud/eflo/model/ListNodeInfosForPodResult.h
 	include/alibabacloud/eflo/model/ListSubnetsRequest.h
 	include/alibabacloud/eflo/model/ListSubnetsResult.h
 	include/alibabacloud/eflo/model/ListVccGrantRulesRequest.h
@@ -210,6 +214,8 @@ set(eflo_src
 	src/model/GetLniPrivateIpAddressResult.cc
 	src/model/GetNetworkInterfaceRequest.cc
 	src/model/GetNetworkInterfaceResult.cc
+	src/model/GetNodeInfoForPodRequest.cc
+	src/model/GetNodeInfoForPodResult.cc
 	src/model/GetSubnetRequest.cc
 	src/model/GetSubnetResult.cc
 	src/model/GetVccRequest.cc
@@ -242,6 +248,8 @@ set(eflo_src
 	src/model/ListLniPrivateIpAddressResult.cc
 	src/model/ListNetworkInterfacesRequest.cc
 	src/model/ListNetworkInterfacesResult.cc
+	src/model/ListNodeInfosForPodRequest.cc
+	src/model/ListNodeInfosForPodResult.cc
 	src/model/ListSubnetsRequest.cc
 	src/model/ListSubnetsResult.cc
 	src/model/ListVccGrantRulesRequest.cc

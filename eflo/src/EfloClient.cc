@@ -1131,6 +1131,42 @@ EfloClient::GetNetworkInterfaceOutcomeCallable EfloClient::getNetworkInterfaceCa
 	return task->get_future();
 }
 
+EfloClient::GetNodeInfoForPodOutcome EfloClient::getNodeInfoForPod(const GetNodeInfoForPodRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetNodeInfoForPodOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetNodeInfoForPodOutcome(GetNodeInfoForPodResult(outcome.result()));
+	else
+		return GetNodeInfoForPodOutcome(outcome.error());
+}
+
+void EfloClient::getNodeInfoForPodAsync(const GetNodeInfoForPodRequest& request, const GetNodeInfoForPodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getNodeInfoForPod(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EfloClient::GetNodeInfoForPodOutcomeCallable EfloClient::getNodeInfoForPodCallable(const GetNodeInfoForPodRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetNodeInfoForPodOutcome()>>(
+			[this, request]()
+			{
+			return this->getNodeInfoForPod(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EfloClient::GetSubnetOutcome EfloClient::getSubnet(const GetSubnetRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1701,6 +1737,42 @@ EfloClient::ListNetworkInterfacesOutcomeCallable EfloClient::listNetworkInterfac
 			[this, request]()
 			{
 			return this->listNetworkInterfaces(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EfloClient::ListNodeInfosForPodOutcome EfloClient::listNodeInfosForPod(const ListNodeInfosForPodRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListNodeInfosForPodOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListNodeInfosForPodOutcome(ListNodeInfosForPodResult(outcome.result()));
+	else
+		return ListNodeInfosForPodOutcome(outcome.error());
+}
+
+void EfloClient::listNodeInfosForPodAsync(const ListNodeInfosForPodRequest& request, const ListNodeInfosForPodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listNodeInfosForPod(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EfloClient::ListNodeInfosForPodOutcomeCallable EfloClient::listNodeInfosForPodCallable(const ListNodeInfosForPodRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListNodeInfosForPodOutcome()>>(
+			[this, request]()
+			{
+			return this->listNodeInfosForPod(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
