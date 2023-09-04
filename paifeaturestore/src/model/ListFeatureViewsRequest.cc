@@ -107,6 +107,15 @@ void ListFeatureViewsRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
+std::string ListFeatureViewsRequest::getName() const {
+  return name_;
+}
+
+void ListFeatureViewsRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
+}
+
 std::string ListFeatureViewsRequest::getSortBy() const {
   return sortBy_;
 }

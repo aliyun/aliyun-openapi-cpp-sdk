@@ -48,6 +48,8 @@ public:
 	void setOwner(const std::string &owner);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::string getName() const;
+	void setName(const std::string &name);
 	std::string getSortBy() const;
 	void setSortBy(const std::string &sortBy);
 
@@ -61,6 +63,7 @@ private:
 	std::string order_;
 	std::string owner_;
 	std::string instanceId_;
+	std::string name_;
 	std::string sortBy_;
 };
 } // namespace Model
