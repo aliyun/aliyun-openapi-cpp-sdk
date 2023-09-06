@@ -70,3 +70,12 @@ void AddQueueRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+bool AddQueueRequest::getUseESS() const {
+  return useESS_;
+}
+
+void AddQueueRequest::setUseESS(bool useESS) {
+  useESS_ = useESS;
+  setParameter(std::string("UseESS"), useESS ? "true" : "false");
+}
+

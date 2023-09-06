@@ -68,6 +68,7 @@ namespace AlibabaCloud
 					long maxNodesPerCycle;
 					bool enableAutoShrink;
 					std::string systemDiskCategory;
+					bool autoMinNodesPerCycle;
 					std::string hostNamePrefix;
 					float spotPriceLimit;
 					std::vector<QueueInfo::InstanceTypeInfo> instanceTypes;

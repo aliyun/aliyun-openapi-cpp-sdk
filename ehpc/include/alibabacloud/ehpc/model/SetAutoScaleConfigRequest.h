@@ -47,6 +47,7 @@ public:
 		float spotPriceLimit;
 		bool enableAutoShrink;
 		std::string spotStrategy;
+		bool autoMinNodesPerCycle;
 		struct DataDisks {
 			bool dataDiskDeleteWithInstance;
 			bool dataDiskEncrypted;

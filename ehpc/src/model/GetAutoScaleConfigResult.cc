@@ -77,6 +77,8 @@ void GetAutoScaleConfigResult::parse(const std::string &payload)
 			queuesObject.maxNodesPerCycle = std::stol(valueQueuesQueueInfo["MaxNodesPerCycle"].asString());
 		if(!valueQueuesQueueInfo["MinNodesPerCycle"].isNull())
 			queuesObject.minNodesPerCycle = std::stol(valueQueuesQueueInfo["MinNodesPerCycle"].asString());
+		if(!valueQueuesQueueInfo["AutoMinNodesPerCycle"].isNull())
+			queuesObject.autoMinNodesPerCycle = valueQueuesQueueInfo["AutoMinNodesPerCycle"].asString() == "true";
 		if(!valueQueuesQueueInfo["SortedByInventory"].isNull())
 			queuesObject.sortedByInventory = valueQueuesQueueInfo["SortedByInventory"].asString() == "true";
 		auto allInstanceTypesNode = valueQueuesQueueInfo["InstanceTypes"]["InstanceTypeInfo"];

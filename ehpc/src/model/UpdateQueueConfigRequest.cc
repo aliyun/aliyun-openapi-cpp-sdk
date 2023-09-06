@@ -52,6 +52,15 @@ void UpdateQueueConfigRequest::setClusterId(const std::string &clusterId) {
   setParameter(std::string("ClusterId"), clusterId);
 }
 
+std::string UpdateQueueConfigRequest::getNetworkInterfaceTrafficMode() const {
+  return networkInterfaceTrafficMode_;
+}
+
+void UpdateQueueConfigRequest::setNetworkInterfaceTrafficMode(const std::string &networkInterfaceTrafficMode) {
+  networkInterfaceTrafficMode_ = networkInterfaceTrafficMode;
+  setParameter(std::string("NetworkInterfaceTrafficMode"), networkInterfaceTrafficMode);
+}
+
 std::string UpdateQueueConfigRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

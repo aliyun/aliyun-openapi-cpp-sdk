@@ -39,17 +39,19 @@ namespace AlibabaCloud
 						float spotPriceLimit;
 						std::string instanceType;
 					};
-					std::string deploymentSetId;
 					std::string hostNameSuffix;
-					std::string type;
+					std::string networkInterfaceTrafficMode;
 					std::vector<QueueInfo::Instance> spotInstanceTypes;
 					bool enableAutoGrow;
 					std::string resourceGroupId;
+					std::vector<std::string> computeInstanceType;
+					std::string deploymentSetId;
+					bool useESS;
+					std::string type;
 					std::string imageId;
 					std::string hostNamePrefix;
 					std::string queueName;
 					std::string spotStrategy;
-					std::vector<std::string> computeInstanceType;
 				};
 
 

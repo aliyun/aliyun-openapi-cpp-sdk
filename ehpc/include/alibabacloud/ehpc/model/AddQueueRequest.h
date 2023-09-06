@@ -40,6 +40,8 @@ public:
 	void setNetworkInterfaceTrafficMode(const std::string &networkInterfaceTrafficMode);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	bool getUseESS() const;
+	void setUseESS(bool useESS);
 
 private:
 	std::string deploymentSetId_;
@@ -47,6 +49,7 @@ private:
 	std::string clusterId_;
 	std::string networkInterfaceTrafficMode_;
 	std::string accessKeyId_;
+	bool useESS_;
 };
 } // namespace Model
 } // namespace EHPC

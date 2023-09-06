@@ -61,6 +61,10 @@ void ListQueuesResult::parse(const std::string &payload)
 			queuesObject.spotStrategy = valueQueuesQueueInfo["SpotStrategy"].asString();
 		if(!valueQueuesQueueInfo["DeploymentSetId"].isNull())
 			queuesObject.deploymentSetId = valueQueuesQueueInfo["DeploymentSetId"].asString();
+		if(!valueQueuesQueueInfo["UseESS"].isNull())
+			queuesObject.useESS = valueQueuesQueueInfo["UseESS"].asString() == "true";
+		if(!valueQueuesQueueInfo["NetworkInterfaceTrafficMode"].isNull())
+			queuesObject.networkInterfaceTrafficMode = valueQueuesQueueInfo["NetworkInterfaceTrafficMode"].asString();
 		auto allSpotInstanceTypesNode = valueQueuesQueueInfo["SpotInstanceTypes"]["Instance"];
 		for (auto valueQueuesQueueInfoSpotInstanceTypesInstance : allSpotInstanceTypesNode)
 		{

@@ -188,6 +188,7 @@ void SetAutoScaleConfigRequest::setQueues(const std::vector<SetAutoScaleConfigRe
     setParameter(queuesObjStr + ".SpotPriceLimit", std::to_string(queuesObj.spotPriceLimit));
     setParameter(queuesObjStr + ".EnableAutoShrink", queuesObj.enableAutoShrink ? "true" : "false");
     setParameter(queuesObjStr + ".SpotStrategy", queuesObj.spotStrategy);
+    setParameter(queuesObjStr + ".AutoMinNodesPerCycle", queuesObj.autoMinNodesPerCycle ? "true" : "false");
     for(int dep2 = 0; dep2 != queuesObj.dataDisks.size(); dep2++) {
     auto dataDisksObj = queuesObj.dataDisks.at(dep2);
     std::string dataDisksObjStr = queuesObjStr + ".DataDisks" + "." + std::to_string(dep2 + 1);
