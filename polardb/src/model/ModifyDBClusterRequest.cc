@@ -97,6 +97,33 @@ void ModifyDBClusterRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string ModifyDBClusterRequest::getCompressStorage() const {
+  return compressStorage_;
+}
+
+void ModifyDBClusterRequest::setCompressStorage(const std::string &compressStorage) {
+  compressStorage_ = compressStorage;
+  setParameter(std::string("CompressStorage"), compressStorage);
+}
+
+long ModifyDBClusterRequest::getStorageUpperBound() const {
+  return storageUpperBound_;
+}
+
+void ModifyDBClusterRequest::setStorageUpperBound(long storageUpperBound) {
+  storageUpperBound_ = storageUpperBound;
+  setParameter(std::string("StorageUpperBound"), std::to_string(storageUpperBound));
+}
+
+std::string ModifyDBClusterRequest::getStorageAutoScale() const {
+  return storageAutoScale_;
+}
+
+void ModifyDBClusterRequest::setStorageAutoScale(const std::string &storageAutoScale) {
+  storageAutoScale_ = storageAutoScale;
+  setParameter(std::string("StorageAutoScale"), storageAutoScale);
+}
+
 std::string ModifyDBClusterRequest::getDataSyncMode() const {
   return dataSyncMode_;
 }

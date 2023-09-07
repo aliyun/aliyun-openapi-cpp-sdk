@@ -80,6 +80,8 @@ public:
 	void setStoragePayType(const std::string &storagePayType);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
+	std::string getStorageAutoScale() const;
+	void setStorageAutoScale(const std::string &storageAutoScale);
 	bool getTDEStatus() const;
 	void setTDEStatus(bool tDEStatus);
 	std::string getAllowShutDown() const;
@@ -122,6 +124,8 @@ public:
 	void setUsedTime(const std::string &usedTime);
 	int getDBNodeNum() const;
 	void setDBNodeNum(int dBNodeNum);
+	long getStorageUpperBound() const;
+	void setStorageUpperBound(long storageUpperBound);
 	std::string getVPCId() const;
 	void setVPCId(const std::string &vPCId);
 	std::string getScaleRoNumMin() const;
@@ -165,6 +169,7 @@ private:
 	std::string hotStandbyCluster_;
 	std::string storagePayType_;
 	std::string zoneId_;
+	std::string storageAutoScale_;
 	bool tDEStatus_;
 	std::string allowShutDown_;
 	std::string lowerCaseTableNames_;
@@ -186,6 +191,7 @@ private:
 	std::string looseXEngineUseMemoryPct_;
 	std::string usedTime_;
 	int dBNodeNum_;
+	long storageUpperBound_;
 	std::string vPCId_;
 	std::string scaleRoNumMin_;
 	std::string dBType_;

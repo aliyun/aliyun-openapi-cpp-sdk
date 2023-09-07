@@ -46,6 +46,12 @@ public:
 	void setFaultSimulateMode(const std::string &faultSimulateMode);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getCompressStorage() const;
+	void setCompressStorage(const std::string &compressStorage);
+	long getStorageUpperBound() const;
+	void setStorageUpperBound(long storageUpperBound);
+	std::string getStorageAutoScale() const;
+	void setStorageAutoScale(const std::string &storageAutoScale);
 	std::string getDataSyncMode() const;
 	void setDataSyncMode(const std::string &dataSyncMode);
 
@@ -58,6 +64,9 @@ private:
 	std::string ownerAccount_;
 	std::string faultSimulateMode_;
 	long ownerId_;
+	std::string compressStorage_;
+	long storageUpperBound_;
+	std::string storageAutoScale_;
 	std::string dataSyncMode_;
 };
 } // namespace Model

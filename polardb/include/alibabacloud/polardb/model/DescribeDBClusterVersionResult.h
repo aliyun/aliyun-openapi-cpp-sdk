@@ -44,34 +44,36 @@ namespace AlibabaCloud
 				DescribeDBClusterVersionResult();
 				explicit DescribeDBClusterVersionResult(const std::string &payload);
 				~DescribeDBClusterVersionResult();
+				std::string getDBRevisionVersion()const;
+				std::string getProxyLatestVersionAfterDBEngineUpgraded()const;
+				std::string getDBClusterId()const;
+				std::string getProxyRevisionVersion()const;
+				std::string getDBLatestVersion()const;
+				std::string getProxyLatestVersion()const;
 				std::string getProxyVersionStatus()const;
 				std::string getIsLatestVersion()const;
 				std::string getIsProxyLatestVersion()const;
 				std::string getDBVersion()const;
-				std::string getDBRevisionVersion()const;
 				std::string getDBVersionStatus()const;
-				std::string getDBClusterId()const;
-				std::string getProxyRevisionVersion()const;
-				std::string getDBLatestVersion()const;
 				std::string getDBMinorVersion()const;
 				std::vector<DBRevisionVersionListItem> getDBRevisionVersionList()const;
-				std::string getProxyLatestVersion()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string dBRevisionVersion_;
+				std::string proxyLatestVersionAfterDBEngineUpgraded_;
+				std::string dBClusterId_;
+				std::string proxyRevisionVersion_;
+				std::string dBLatestVersion_;
+				std::string proxyLatestVersion_;
 				std::string proxyVersionStatus_;
 				std::string isLatestVersion_;
 				std::string isProxyLatestVersion_;
 				std::string dBVersion_;
-				std::string dBRevisionVersion_;
 				std::string dBVersionStatus_;
-				std::string dBClusterId_;
-				std::string proxyRevisionVersion_;
-				std::string dBLatestVersion_;
 				std::string dBMinorVersion_;
 				std::vector<DBRevisionVersionListItem> dBRevisionVersionList_;
-				std::string proxyLatestVersion_;
 
 			};
 		}

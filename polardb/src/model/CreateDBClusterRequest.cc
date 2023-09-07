@@ -237,6 +237,15 @@ void CreateDBClusterRequest::setZoneId(const std::string &zoneId) {
   setParameter(std::string("ZoneId"), zoneId);
 }
 
+std::string CreateDBClusterRequest::getStorageAutoScale() const {
+  return storageAutoScale_;
+}
+
+void CreateDBClusterRequest::setStorageAutoScale(const std::string &storageAutoScale) {
+  storageAutoScale_ = storageAutoScale;
+  setParameter(std::string("StorageAutoScale"), storageAutoScale);
+}
+
 bool CreateDBClusterRequest::getTDEStatus() const {
   return tDEStatus_;
 }
@@ -424,6 +433,15 @@ int CreateDBClusterRequest::getDBNodeNum() const {
 void CreateDBClusterRequest::setDBNodeNum(int dBNodeNum) {
   dBNodeNum_ = dBNodeNum;
   setParameter(std::string("DBNodeNum"), std::to_string(dBNodeNum));
+}
+
+long CreateDBClusterRequest::getStorageUpperBound() const {
+  return storageUpperBound_;
+}
+
+void CreateDBClusterRequest::setStorageUpperBound(long storageUpperBound) {
+  storageUpperBound_ = storageUpperBound;
+  setParameter(std::string("StorageUpperBound"), std::to_string(storageUpperBound));
 }
 
 std::string CreateDBClusterRequest::getVPCId() const {

@@ -83,6 +83,8 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 			itemsObject.resourceGroupId = valueItemsDBCluster["ResourceGroupId"].asString();
 		if(!valueItemsDBCluster["StorageUsed"].isNull())
 			itemsObject.storageUsed = std::stol(valueItemsDBCluster["StorageUsed"].asString());
+		if(!valueItemsDBCluster["CompressStorageUsed"].isNull())
+			itemsObject.compressStorageUsed = std::stol(valueItemsDBCluster["CompressStorageUsed"].asString());
 		if(!valueItemsDBCluster["StorageSpace"].isNull())
 			itemsObject.storageSpace = std::stol(valueItemsDBCluster["StorageSpace"].asString());
 		if(!valueItemsDBCluster["DBClusterNetworkType"].isNull())

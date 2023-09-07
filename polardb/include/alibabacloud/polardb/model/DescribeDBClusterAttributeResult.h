@@ -37,6 +37,8 @@ namespace AlibabaCloud
 					std::string totalAPNodes;
 					std::string classCode;
 					std::string ossStorageUsed;
+					float storageUsedMB;
+					std::string aPNodeStatus;
 					std::string name;
 				};
 				struct DBNode
@@ -69,6 +71,7 @@ namespace AlibabaCloud
 				explicit DescribeDBClusterAttributeResult(const std::string &payload);
 				~DescribeDBClusterAttributeResult();
 				std::string getResourceGroupId()const;
+				long getCompressStorageUsed()const;
 				std::string getStoragePayType()const;
 				long getDataLevel1BackupChainSize()const;
 				std::string getProxyStatus()const;
@@ -90,6 +93,7 @@ namespace AlibabaCloud
 				std::string getLockMode()const;
 				long getStorageUsed()const;
 				long getInodeTotal()const;
+				std::string getCompressStorageMode()const;
 				std::string getDBVersionStatus()const;
 				std::string getProxyServerlessType()const;
 				std::string getCreationTime()const;
@@ -124,6 +128,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string resourceGroupId_;
+				long compressStorageUsed_;
 				std::string storagePayType_;
 				long dataLevel1BackupChainSize_;
 				std::string proxyStatus_;
@@ -145,6 +150,7 @@ namespace AlibabaCloud
 				std::string lockMode_;
 				long storageUsed_;
 				long inodeTotal_;
+				std::string compressStorageMode_;
 				std::string dBVersionStatus_;
 				std::string proxyServerlessType_;
 				std::string creationTime_;

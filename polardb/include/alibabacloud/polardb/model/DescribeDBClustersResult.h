@@ -53,6 +53,7 @@ namespace AlibabaCloud
 					int deletionLock;
 					std::string category;
 					std::string resourceGroupId;
+					long compressStorageUsed;
 					std::string storagePayType;
 					std::string dBClusterId;
 					std::string dBType;

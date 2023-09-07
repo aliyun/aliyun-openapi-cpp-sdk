@@ -96,6 +96,10 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		relatedAPInstance_.ossStorageUsed = relatedAPInstanceNode["OssStorageUsed"].asString();
 	if(!relatedAPInstanceNode["TotalAPNodes"].isNull())
 		relatedAPInstance_.totalAPNodes = relatedAPInstanceNode["TotalAPNodes"].asString();
+	if(!relatedAPInstanceNode["StorageUsedMB"].isNull())
+		relatedAPInstance_.storageUsedMB = std::stof(relatedAPInstanceNode["StorageUsedMB"].asString());
+	if(!relatedAPInstanceNode["APNodeStatus"].isNull())
+		relatedAPInstance_.aPNodeStatus = relatedAPInstanceNode["APNodeStatus"].asString();
 	if(!value["DeletionLock"].isNull())
 		deletionLock_ = std::stoi(value["DeletionLock"].asString());
 	if(!value["Category"].isNull())
@@ -118,6 +122,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		dataSyncMode_ = value["DataSyncMode"].asString();
 	if(!value["StandbyHAMode"].isNull())
 		standbyHAMode_ = value["StandbyHAMode"].asString();
+	if(!value["CompressStorageMode"].isNull())
+		compressStorageMode_ = value["CompressStorageMode"].asString();
 	if(!value["StorageMax"].isNull())
 		storageMax_ = std::stol(value["StorageMax"].asString());
 	if(!value["DBVersion"].isNull())
@@ -146,6 +152,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		lockMode_ = value["LockMode"].asString();
 	if(!value["StorageUsed"].isNull())
 		storageUsed_ = std::stol(value["StorageUsed"].asString());
+	if(!value["CompressStorageUsed"].isNull())
+		compressStorageUsed_ = std::stol(value["CompressStorageUsed"].asString());
 	if(!value["StorageSpace"].isNull())
 		storageSpace_ = std::stol(value["StorageSpace"].asString());
 	if(!value["DBVersionStatus"].isNull())
@@ -198,6 +206,11 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 std::string DescribeDBClusterAttributeResult::getResourceGroupId()const
 {
 	return resourceGroupId_;
+}
+
+long DescribeDBClusterAttributeResult::getCompressStorageUsed()const
+{
+	return compressStorageUsed_;
 }
 
 std::string DescribeDBClusterAttributeResult::getStoragePayType()const
@@ -303,6 +316,11 @@ long DescribeDBClusterAttributeResult::getStorageUsed()const
 long DescribeDBClusterAttributeResult::getInodeTotal()const
 {
 	return inodeTotal_;
+}
+
+std::string DescribeDBClusterAttributeResult::getCompressStorageMode()const
+{
+	return compressStorageMode_;
 }
 
 std::string DescribeDBClusterAttributeResult::getDBVersionStatus()const
