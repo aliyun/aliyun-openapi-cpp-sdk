@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				ListDeviceDistributeJobRequest();
 				~ListDeviceDistributeJobRequest();
 
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getJobId()const;
 				void setJobId(const std::string& jobId);
 				std::string getNextToken()const;
@@ -59,6 +63,8 @@ namespace AlibabaCloud
 				void setStatus(int status);
 
             private:
+				std::string realTenantId_;
+				std::string realTripartiteKey_;
 				std::string jobId_;
 				std::string nextToken_;
 				int pageSize_;

@@ -27,6 +27,17 @@ QuerySuperDeviceGroupRequest::QuerySuperDeviceGroupRequest() :
 QuerySuperDeviceGroupRequest::~QuerySuperDeviceGroupRequest()
 {}
 
+std::string QuerySuperDeviceGroupRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void QuerySuperDeviceGroupRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string QuerySuperDeviceGroupRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void QuerySuperDeviceGroupRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QuerySuperDeviceGroupRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void QuerySuperDeviceGroupRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string QuerySuperDeviceGroupRequest::getIotInstanceId()const

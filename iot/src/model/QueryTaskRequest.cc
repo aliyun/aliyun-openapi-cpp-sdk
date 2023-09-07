@@ -27,6 +27,28 @@ QueryTaskRequest::QueryTaskRequest() :
 QueryTaskRequest::~QueryTaskRequest()
 {}
 
+std::string QueryTaskRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void QueryTaskRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
+std::string QueryTaskRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void QueryTaskRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
+}
+
 std::string QueryTaskRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

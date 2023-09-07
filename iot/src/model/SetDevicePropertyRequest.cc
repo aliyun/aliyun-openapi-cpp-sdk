@@ -71,6 +71,17 @@ void SetDevicePropertyRequest::setIotId(const std::string& iotId)
 	setParameter("IotId", iotId);
 }
 
+int SetDevicePropertyRequest::getQos()const
+{
+	return qos_;
+}
+
+void SetDevicePropertyRequest::setQos(int qos)
+{
+	qos_ = qos;
+	setParameter("Qos", std::to_string(qos));
+}
+
 std::string SetDevicePropertyRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

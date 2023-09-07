@@ -38,6 +38,17 @@ void ListRuleRequest::setSearchName(const std::string& searchName)
 	setParameter("SearchName", searchName);
 }
 
+std::string ListRuleRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void ListRuleRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string ListRuleRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -47,6 +58,17 @@ void ListRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListRuleRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void ListRuleRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string ListRuleRequest::getResourceGroupId()const

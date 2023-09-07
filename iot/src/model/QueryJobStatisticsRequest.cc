@@ -27,6 +27,28 @@ QueryJobStatisticsRequest::QueryJobStatisticsRequest() :
 QueryJobStatisticsRequest::~QueryJobStatisticsRequest()
 {}
 
+std::string QueryJobStatisticsRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void QueryJobStatisticsRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
+std::string QueryJobStatisticsRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void QueryJobStatisticsRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
+}
+
 std::string QueryJobStatisticsRequest::getJobId()const
 {
 	return jobId_;

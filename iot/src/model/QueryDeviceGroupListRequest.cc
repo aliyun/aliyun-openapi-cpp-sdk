@@ -40,6 +40,17 @@ void QueryDeviceGroupListRequest::setGroupTypes(const std::vector<std::string>& 
 	}
 }
 
+std::string QueryDeviceGroupListRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void QueryDeviceGroupListRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string QueryDeviceGroupListRequest::getSuperGroupId()const
 {
 	return superGroupId_;
@@ -60,6 +71,17 @@ void QueryDeviceGroupListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryDeviceGroupListRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void QueryDeviceGroupListRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string QueryDeviceGroupListRequest::getIotInstanceId()const

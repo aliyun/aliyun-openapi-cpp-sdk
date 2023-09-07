@@ -120,6 +120,17 @@ void PubRequest::setResponseTopic(const std::string& responseTopic)
 	setParameter("ResponseTopic", responseTopic);
 }
 
+int PubRequest::getTopicAlias()const
+{
+	return topicAlias_;
+}
+
+void PubRequest::setTopicAlias(int topicAlias)
+{
+	topicAlias_ = topicAlias;
+	setParameter("TopicAlias", std::to_string(topicAlias));
+}
+
 std::string PubRequest::getTopicFullName()const
 {
 	return topicFullName_;

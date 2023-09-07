@@ -37,7 +37,6 @@ namespace AlibabaCloud
 				BatchAddDataForApiSourceResult();
 				explicit BatchAddDataForApiSourceResult(const std::string &payload);
 				~BatchAddDataForApiSourceResult();
-				std::string getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -45,7 +44,6 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;

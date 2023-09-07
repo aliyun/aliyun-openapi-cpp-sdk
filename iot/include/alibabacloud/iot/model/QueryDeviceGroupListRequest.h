@@ -37,10 +37,14 @@ namespace AlibabaCloud
 
 				std::vector<std::string> getGroupTypes()const;
 				void setGroupTypes(const std::vector<std::string>& groupTypes);
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
 				std::string getSuperGroupId()const;
 				void setSuperGroupId(const std::string& superGroupId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
@@ -56,8 +60,10 @@ namespace AlibabaCloud
 
             private:
 				std::vector<std::string> groupTypes_;
+				std::string realTenantId_;
 				std::string superGroupId_;
 				std::string accessKeyId_;
+				std::string realTripartiteKey_;
 				std::string iotInstanceId_;
 				int pageSize_;
 				int currentPage_;

@@ -38,6 +38,17 @@ void ReleaseProductRequest::set_Template(int _template)
 	setParameter("_Template", std::to_string(_template));
 }
 
+std::string ReleaseProductRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void ReleaseProductRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string ReleaseProductRequest::getCategoryKey()const
 {
 	return categoryKey_;
@@ -58,6 +69,17 @@ void ReleaseProductRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ReleaseProductRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void ReleaseProductRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string ReleaseProductRequest::getTemplateIdentifier()const

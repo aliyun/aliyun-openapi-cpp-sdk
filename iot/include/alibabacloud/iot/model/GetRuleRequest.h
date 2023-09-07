@@ -35,8 +35,12 @@ namespace AlibabaCloud
 				GetRuleRequest();
 				~GetRuleRequest();
 
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getApiProduct()const;
@@ -47,7 +51,9 @@ namespace AlibabaCloud
 				void setRuleId(long ruleId);
 
             private:
+				std::string realTenantId_;
 				std::string accessKeyId_;
+				std::string realTripartiteKey_;
 				std::string iotInstanceId_;
 				std::string apiProduct_;
 				std::string apiRevision_;

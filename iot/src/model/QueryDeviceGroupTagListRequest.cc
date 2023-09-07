@@ -27,6 +27,17 @@ QueryDeviceGroupTagListRequest::QueryDeviceGroupTagListRequest() :
 QueryDeviceGroupTagListRequest::~QueryDeviceGroupTagListRequest()
 {}
 
+std::string QueryDeviceGroupTagListRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void QueryDeviceGroupTagListRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string QueryDeviceGroupTagListRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void QueryDeviceGroupTagListRequest::setAccessKeyId(const std::string& accessKey
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryDeviceGroupTagListRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void QueryDeviceGroupTagListRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string QueryDeviceGroupTagListRequest::getGroupType()const

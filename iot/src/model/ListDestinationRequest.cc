@@ -38,6 +38,28 @@ void ListDestinationRequest::setSearchName(const std::string& searchName)
 	setParameter("SearchName", searchName);
 }
 
+std::string ListDestinationRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void ListDestinationRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
+std::string ListDestinationRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void ListDestinationRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
+}
+
 std::string ListDestinationRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

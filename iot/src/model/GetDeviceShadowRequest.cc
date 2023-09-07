@@ -27,6 +27,17 @@ GetDeviceShadowRequest::GetDeviceShadowRequest() :
 GetDeviceShadowRequest::~GetDeviceShadowRequest()
 {}
 
+std::string GetDeviceShadowRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void GetDeviceShadowRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string GetDeviceShadowRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void GetDeviceShadowRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetDeviceShadowRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void GetDeviceShadowRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string GetDeviceShadowRequest::getIotInstanceId()const

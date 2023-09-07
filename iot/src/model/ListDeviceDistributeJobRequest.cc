@@ -27,6 +27,28 @@ ListDeviceDistributeJobRequest::ListDeviceDistributeJobRequest() :
 ListDeviceDistributeJobRequest::~ListDeviceDistributeJobRequest()
 {}
 
+std::string ListDeviceDistributeJobRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void ListDeviceDistributeJobRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setBodyParameter("RealTenantId", realTenantId);
+}
+
+std::string ListDeviceDistributeJobRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void ListDeviceDistributeJobRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setBodyParameter("RealTripartiteKey", realTripartiteKey);
+}
+
 std::string ListDeviceDistributeJobRequest::getJobId()const
 {
 	return jobId_;

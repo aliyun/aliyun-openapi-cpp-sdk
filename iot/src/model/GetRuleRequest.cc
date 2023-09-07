@@ -27,6 +27,17 @@ GetRuleRequest::GetRuleRequest() :
 GetRuleRequest::~GetRuleRequest()
 {}
 
+std::string GetRuleRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void GetRuleRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string GetRuleRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void GetRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetRuleRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void GetRuleRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string GetRuleRequest::getIotInstanceId()const

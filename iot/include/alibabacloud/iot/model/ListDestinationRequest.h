@@ -37,6 +37,10 @@ namespace AlibabaCloud
 
 				std::string getSearchName()const;
 				void setSearchName(const std::string& searchName);
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
@@ -52,6 +56,8 @@ namespace AlibabaCloud
 
             private:
 				std::string searchName_;
+				std::string realTenantId_;
+				std::string realTripartiteKey_;
 				std::string iotInstanceId_;
 				int pageSize_;
 				std::vector<std::string> types_;

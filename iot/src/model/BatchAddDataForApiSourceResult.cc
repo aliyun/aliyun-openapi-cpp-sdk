@@ -45,14 +45,7 @@ void BatchAddDataForApiSourceResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
 
-}
-
-std::string BatchAddDataForApiSourceResult::getData()const
-{
-	return data_;
 }
 
 std::string BatchAddDataForApiSourceResult::getErrorMessage()const

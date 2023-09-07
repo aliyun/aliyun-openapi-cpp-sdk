@@ -37,10 +37,14 @@ namespace AlibabaCloud
 
 				int get_Template()const;
 				void set_Template(int _template);
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
 				std::string getCategoryKey()const;
 				void setCategoryKey(const std::string& categoryKey);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getTemplateIdentifier()const;
 				void setTemplateIdentifier(const std::string& templateIdentifier);
 				std::string getIotInstanceId()const;
@@ -60,8 +64,10 @@ namespace AlibabaCloud
 
             private:
 				int _template_;
+				std::string realTenantId_;
 				std::string categoryKey_;
 				std::string accessKeyId_;
+				std::string realTripartiteKey_;
 				std::string templateIdentifier_;
 				std::string iotInstanceId_;
 				std::string templateName_;

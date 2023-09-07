@@ -27,6 +27,28 @@ QueryDeviceSubTopicRequest::QueryDeviceSubTopicRequest() :
 QueryDeviceSubTopicRequest::~QueryDeviceSubTopicRequest()
 {}
 
+std::string QueryDeviceSubTopicRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void QueryDeviceSubTopicRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
+std::string QueryDeviceSubTopicRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void QueryDeviceSubTopicRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
+}
+
 std::string QueryDeviceSubTopicRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

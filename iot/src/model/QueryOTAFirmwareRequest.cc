@@ -27,6 +27,17 @@ QueryOTAFirmwareRequest::QueryOTAFirmwareRequest() :
 QueryOTAFirmwareRequest::~QueryOTAFirmwareRequest()
 {}
 
+std::string QueryOTAFirmwareRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void QueryOTAFirmwareRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string QueryOTAFirmwareRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void QueryOTAFirmwareRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryOTAFirmwareRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void QueryOTAFirmwareRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string QueryOTAFirmwareRequest::getIotInstanceId()const

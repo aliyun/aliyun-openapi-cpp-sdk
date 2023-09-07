@@ -71,6 +71,17 @@ void InvokeThingServiceRequest::setIotId(const std::string& iotId)
 	setParameter("IotId", iotId);
 }
 
+int InvokeThingServiceRequest::getQos()const
+{
+	return qos_;
+}
+
+void InvokeThingServiceRequest::setQos(int qos)
+{
+	qos_ = qos;
+	setParameter("Qos", std::to_string(qos));
+}
+
 std::string InvokeThingServiceRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

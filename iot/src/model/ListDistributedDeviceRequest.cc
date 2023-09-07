@@ -27,6 +27,28 @@ ListDistributedDeviceRequest::ListDistributedDeviceRequest() :
 ListDistributedDeviceRequest::~ListDistributedDeviceRequest()
 {}
 
+std::string ListDistributedDeviceRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void ListDistributedDeviceRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setBodyParameter("RealTenantId", realTenantId);
+}
+
+std::string ListDistributedDeviceRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void ListDistributedDeviceRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setBodyParameter("RealTripartiteKey", realTripartiteKey);
+}
+
 int ListDistributedDeviceRequest::getPageSize()const
 {
 	return pageSize_;

@@ -38,6 +38,17 @@ void UpdateDeviceShadowRequest::setShadowMessage(const std::string& shadowMessag
 	setParameter("ShadowMessage", shadowMessage);
 }
 
+std::string UpdateDeviceShadowRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void UpdateDeviceShadowRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string UpdateDeviceShadowRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -47,6 +58,17 @@ void UpdateDeviceShadowRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UpdateDeviceShadowRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void UpdateDeviceShadowRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string UpdateDeviceShadowRequest::getIotInstanceId()const

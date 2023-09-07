@@ -68,7 +68,7 @@ std::string RRpcRequest::getRequestBase64Byte()const
 void RRpcRequest::setRequestBase64Byte(const std::string& requestBase64Byte)
 {
 	requestBase64Byte_ = requestBase64Byte;
-	setParameter("RequestBase64Byte", requestBase64Byte);
+	setBodyParameter("RequestBase64Byte", requestBase64Byte);
 }
 
 std::string RRpcRequest::getProductKey()const

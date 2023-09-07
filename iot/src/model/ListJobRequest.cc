@@ -27,6 +27,28 @@ ListJobRequest::ListJobRequest() :
 ListJobRequest::~ListJobRequest()
 {}
 
+std::string ListJobRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void ListJobRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
+std::string ListJobRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void ListJobRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
+}
+
 std::string ListJobRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

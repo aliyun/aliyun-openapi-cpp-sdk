@@ -27,6 +27,17 @@ GetDeviceStatusRequest::GetDeviceStatusRequest() :
 GetDeviceStatusRequest::~GetDeviceStatusRequest()
 {}
 
+std::string GetDeviceStatusRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void GetDeviceStatusRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string GetDeviceStatusRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void GetDeviceStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetDeviceStatusRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void GetDeviceStatusRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string GetDeviceStatusRequest::getIotId()const

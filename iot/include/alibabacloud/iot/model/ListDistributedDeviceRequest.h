@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				ListDistributedDeviceRequest();
 				~ListDistributedDeviceRequest();
 
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getSourceInstanceId()const;
@@ -55,6 +59,8 @@ namespace AlibabaCloud
 				void setTargetUid(const std::string& targetUid);
 
             private:
+				std::string realTenantId_;
+				std::string realTripartiteKey_;
 				int pageSize_;
 				std::string sourceInstanceId_;
 				int currentPage_;

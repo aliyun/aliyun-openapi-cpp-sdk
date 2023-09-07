@@ -38,6 +38,28 @@ void ListOTAModuleByProductRequest::setAuthConfig(const std::string& authConfig)
 	setParameter("AuthConfig", authConfig);
 }
 
+std::string ListOTAModuleByProductRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void ListOTAModuleByProductRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
+std::string ListOTAModuleByProductRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void ListOTAModuleByProductRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
+}
+
 std::string ListOTAModuleByProductRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

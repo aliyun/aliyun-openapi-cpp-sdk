@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setMessageExpiryInterval(long messageExpiryInterval);
 				std::string getResponseTopic()const;
 				void setResponseTopic(const std::string& responseTopic);
+				int getTopicAlias()const;
+				void setTopicAlias(int topicAlias);
 				std::string getTopicFullName()const;
 				void setTopicFullName(const std::string& topicFullName);
 				int getPayloadFormatIndicator()const;
@@ -83,6 +85,7 @@ namespace AlibabaCloud
 				std::string iotInstanceId_;
 				long messageExpiryInterval_;
 				std::string responseTopic_;
+				int topicAlias_;
 				std::string topicFullName_;
 				int payloadFormatIndicator_;
 				std::string productKey_;
