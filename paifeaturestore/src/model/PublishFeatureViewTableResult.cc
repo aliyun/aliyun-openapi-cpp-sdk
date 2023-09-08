@@ -39,6 +39,13 @@ void PublishFeatureViewTableResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
+}
+
+std::string PublishFeatureViewTableResult::getTaskId()const
+{
+	return taskId_;
 }
 

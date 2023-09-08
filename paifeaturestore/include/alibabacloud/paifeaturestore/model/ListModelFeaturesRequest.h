@@ -32,12 +32,12 @@ public:
 	~ListModelFeaturesRequest();
 	std::string getOwner() const;
 	void setOwner(const std::string &owner);
-	std::string getPageNumber() const;
-	void setPageNumber(const std::string &pageNumber);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
-	std::string getPageSize() const;
-	void setPageSize(const std::string &pageSize);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	std::string getName() const;
 	void setName(const std::string &name);
 	std::string getSortBy() const;
@@ -49,9 +49,9 @@ public:
 
 private:
 	std::string owner_;
-	std::string pageNumber_;
+	int pageNumber_;
 	std::string instanceId_;
-	std::string pageSize_;
+	int pageSize_;
 	std::string name_;
 	std::string sortBy_;
 	std::string projectId_;

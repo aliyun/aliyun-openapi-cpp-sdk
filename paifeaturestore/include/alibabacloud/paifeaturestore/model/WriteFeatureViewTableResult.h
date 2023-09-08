@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				WriteFeatureViewTableResult();
 				explicit WriteFeatureViewTableResult(const std::string &payload);
 				~WriteFeatureViewTableResult();
+				std::string getTaskId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string taskId_;
 
 			};
 		}

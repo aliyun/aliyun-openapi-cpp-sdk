@@ -35,13 +35,13 @@ void ListModelFeaturesRequest::setOwner(const std::string &owner) {
   setParameter(std::string("Owner"), owner);
 }
 
-std::string ListModelFeaturesRequest::getPageNumber() const {
+int ListModelFeaturesRequest::getPageNumber() const {
   return pageNumber_;
 }
 
-void ListModelFeaturesRequest::setPageNumber(const std::string &pageNumber) {
+void ListModelFeaturesRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
-  setParameter(std::string("PageNumber"), pageNumber);
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
 std::string ListModelFeaturesRequest::getInstanceId() const {
@@ -53,13 +53,13 @@ void ListModelFeaturesRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string ListModelFeaturesRequest::getPageSize() const {
+int ListModelFeaturesRequest::getPageSize() const {
   return pageSize_;
 }
 
-void ListModelFeaturesRequest::setPageSize(const std::string &pageSize) {
+void ListModelFeaturesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), pageSize);
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
 std::string ListModelFeaturesRequest::getName() const {
