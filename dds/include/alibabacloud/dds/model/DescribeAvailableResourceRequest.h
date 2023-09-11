@@ -32,6 +32,8 @@ public:
 	~DescribeAvailableResourceRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getStorageType() const;
+	void setStorageType(const std::string &storageType);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceGroupId() const;
@@ -61,6 +63,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string storageType_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	std::string securityToken_;

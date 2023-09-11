@@ -82,6 +82,8 @@ public:
 	void setVSwitchId(const std::string &vSwitchId);
 	std::vector<Mongos> getMongos() const;
 	void setMongos(const std::vector<Mongos> &mongos);
+	long getProvisionedIops() const;
+	void setProvisionedIops(long provisionedIops);
 	std::string getAutoRenew() const;
 	void setAutoRenew(const std::string &autoRenew);
 	std::string getZoneId() const;
@@ -136,6 +138,7 @@ private:
 	std::string securityIPList_;
 	std::string vSwitchId_;
 	std::vector<Mongos> mongos_;
+	long provisionedIops_;
 	std::string autoRenew_;
 	std::string zoneId_;
 	std::string clientToken_;

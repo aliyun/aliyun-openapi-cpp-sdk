@@ -151,3 +151,12 @@ void TransformInstanceChargeTypeRequest::setChargeType(const std::string &charge
   setParameter(std::string("ChargeType"), chargeType);
 }
 
+std::string TransformInstanceChargeTypeRequest::getPricingCycle() const {
+  return pricingCycle_;
+}
+
+void TransformInstanceChargeTypeRequest::setPricingCycle(const std::string &pricingCycle) {
+  pricingCycle_ = pricingCycle;
+  setParameter(std::string("PricingCycle"), pricingCycle);
+}
+

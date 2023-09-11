@@ -58,6 +58,8 @@ public:
 	void setAutoRenew(const std::string &autoRenew);
 	std::string getChargeType() const;
 	void setChargeType(const std::string &chargeType);
+	std::string getPricingCycle() const;
+	void setPricingCycle(const std::string &pricingCycle);
 
 private:
 	long resourceOwnerId_;
@@ -74,6 +76,7 @@ private:
 	std::string instanceId_;
 	std::string autoRenew_;
 	std::string chargeType_;
+	std::string pricingCycle_;
 };
 } // namespace Model
 } // namespace Dds

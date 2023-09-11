@@ -126,6 +126,7 @@ namespace AlibabaCloud
 					std::string dBInstanceClass;
 					std::string vSwitchId;
 					std::string lockMode;
+					long provisionedIops;
 					std::string currentKernelVersion;
 					std::string creationTime;
 					std::vector<DBInstance::NetworkAddress> networkAddresses;
@@ -139,6 +140,7 @@ namespace AlibabaCloud
 					std::string networkType;
 					std::string paymentType;
 					std::string maintainStartTime;
+					bool burstingEnabled;
 					std::string zoneId;
 					std::string readonlyReplicas;
 					std::string replicationFactor;

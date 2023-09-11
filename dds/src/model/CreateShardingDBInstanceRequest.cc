@@ -207,6 +207,15 @@ void CreateShardingDBInstanceRequest::setMongos(const std::vector<CreateSharding
   }
 }
 
+long CreateShardingDBInstanceRequest::getProvisionedIops() const {
+  return provisionedIops_;
+}
+
+void CreateShardingDBInstanceRequest::setProvisionedIops(long provisionedIops) {
+  provisionedIops_ = provisionedIops;
+  setParameter(std::string("ProvisionedIops"), std::to_string(provisionedIops));
+}
+
 std::string CreateShardingDBInstanceRequest::getAutoRenew() const {
   return autoRenew_;
 }

@@ -133,6 +133,10 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			dBInstancesObject.encryptionKey = valueDBInstancesDBInstance["EncryptionKey"].asString();
 		if(!valueDBInstancesDBInstance["SyncPercent"].isNull())
 			dBInstancesObject.syncPercent = valueDBInstancesDBInstance["SyncPercent"].asString();
+		if(!valueDBInstancesDBInstance["BurstingEnabled"].isNull())
+			dBInstancesObject.burstingEnabled = valueDBInstancesDBInstance["BurstingEnabled"].asString() == "true";
+		if(!valueDBInstancesDBInstance["ProvisionedIops"].isNull())
+			dBInstancesObject.provisionedIops = std::stol(valueDBInstancesDBInstance["ProvisionedIops"].asString());
 		auto allReplicaSetsNode = valueDBInstancesDBInstance["ReplicaSets"]["ReplicaSet"];
 		for (auto valueDBInstancesDBInstanceReplicaSetsReplicaSet : allReplicaSetsNode)
 		{

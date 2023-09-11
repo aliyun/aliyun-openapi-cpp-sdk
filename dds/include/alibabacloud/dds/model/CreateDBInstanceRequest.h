@@ -74,6 +74,8 @@ public:
 	void setSecurityIPList(const std::string &securityIPList);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
+	long getProvisionedIops() const;
+	void setProvisionedIops(long provisionedIops);
 	std::string getAutoRenew() const;
 	void setAutoRenew(const std::string &autoRenew);
 	std::string getZoneId() const;
@@ -136,6 +138,7 @@ private:
 	std::string dBInstanceClass_;
 	std::string securityIPList_;
 	std::string vSwitchId_;
+	long provisionedIops_;
 	std::string autoRenew_;
 	std::string zoneId_;
 	std::string clientToken_;

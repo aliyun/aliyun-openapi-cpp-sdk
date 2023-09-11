@@ -210,6 +210,15 @@ void CreateDBInstanceRequest::setVSwitchId(const std::string &vSwitchId) {
   setParameter(std::string("VSwitchId"), vSwitchId);
 }
 
+long CreateDBInstanceRequest::getProvisionedIops() const {
+  return provisionedIops_;
+}
+
+void CreateDBInstanceRequest::setProvisionedIops(long provisionedIops) {
+  provisionedIops_ = provisionedIops;
+  setParameter(std::string("ProvisionedIops"), std::to_string(provisionedIops));
+}
+
 std::string CreateDBInstanceRequest::getAutoRenew() const {
   return autoRenew_;
 }

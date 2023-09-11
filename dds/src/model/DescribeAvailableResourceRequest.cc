@@ -34,6 +34,15 @@ void DescribeAvailableResourceRequest::setResourceOwnerId(long resourceOwnerId) 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeAvailableResourceRequest::getStorageType() const {
+  return storageType_;
+}
+
+void DescribeAvailableResourceRequest::setStorageType(const std::string &storageType) {
+  storageType_ = storageType;
+  setParameter(std::string("StorageType"), storageType);
+}
+
 std::string DescribeAvailableResourceRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
