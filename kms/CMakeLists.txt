@@ -39,34 +39,58 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/CertificatePublicKeyEncryptResult.h
 	include/alibabacloud/kms/model/CertificatePublicKeyVerifyRequest.h
 	include/alibabacloud/kms/model/CertificatePublicKeyVerifyResult.h
+	include/alibabacloud/kms/model/ConnectKmsInstanceRequest.h
+	include/alibabacloud/kms/model/ConnectKmsInstanceResult.h
 	include/alibabacloud/kms/model/CreateAliasRequest.h
 	include/alibabacloud/kms/model/CreateAliasResult.h
+	include/alibabacloud/kms/model/CreateApplicationAccessPointRequest.h
+	include/alibabacloud/kms/model/CreateApplicationAccessPointResult.h
 	include/alibabacloud/kms/model/CreateCertificateRequest.h
 	include/alibabacloud/kms/model/CreateCertificateResult.h
+	include/alibabacloud/kms/model/CreateClientKeyRequest.h
+	include/alibabacloud/kms/model/CreateClientKeyResult.h
 	include/alibabacloud/kms/model/CreateKeyRequest.h
 	include/alibabacloud/kms/model/CreateKeyResult.h
 	include/alibabacloud/kms/model/CreateKeyVersionRequest.h
 	include/alibabacloud/kms/model/CreateKeyVersionResult.h
+	include/alibabacloud/kms/model/CreateNetworkRuleRequest.h
+	include/alibabacloud/kms/model/CreateNetworkRuleResult.h
+	include/alibabacloud/kms/model/CreatePolicyRequest.h
+	include/alibabacloud/kms/model/CreatePolicyResult.h
 	include/alibabacloud/kms/model/CreateSecretRequest.h
 	include/alibabacloud/kms/model/CreateSecretResult.h
 	include/alibabacloud/kms/model/DecryptRequest.h
 	include/alibabacloud/kms/model/DecryptResult.h
 	include/alibabacloud/kms/model/DeleteAliasRequest.h
 	include/alibabacloud/kms/model/DeleteAliasResult.h
+	include/alibabacloud/kms/model/DeleteApplicationAccessPointRequest.h
+	include/alibabacloud/kms/model/DeleteApplicationAccessPointResult.h
 	include/alibabacloud/kms/model/DeleteCertificateRequest.h
 	include/alibabacloud/kms/model/DeleteCertificateResult.h
+	include/alibabacloud/kms/model/DeleteClientKeyRequest.h
+	include/alibabacloud/kms/model/DeleteClientKeyResult.h
 	include/alibabacloud/kms/model/DeleteKeyMaterialRequest.h
 	include/alibabacloud/kms/model/DeleteKeyMaterialResult.h
+	include/alibabacloud/kms/model/DeleteNetworkRuleRequest.h
+	include/alibabacloud/kms/model/DeleteNetworkRuleResult.h
+	include/alibabacloud/kms/model/DeletePolicyRequest.h
+	include/alibabacloud/kms/model/DeletePolicyResult.h
 	include/alibabacloud/kms/model/DeleteSecretRequest.h
 	include/alibabacloud/kms/model/DeleteSecretResult.h
 	include/alibabacloud/kms/model/DescribeAccountKmsStatusRequest.h
 	include/alibabacloud/kms/model/DescribeAccountKmsStatusResult.h
+	include/alibabacloud/kms/model/DescribeApplicationAccessPointRequest.h
+	include/alibabacloud/kms/model/DescribeApplicationAccessPointResult.h
 	include/alibabacloud/kms/model/DescribeCertificateRequest.h
 	include/alibabacloud/kms/model/DescribeCertificateResult.h
 	include/alibabacloud/kms/model/DescribeKeyRequest.h
 	include/alibabacloud/kms/model/DescribeKeyResult.h
 	include/alibabacloud/kms/model/DescribeKeyVersionRequest.h
 	include/alibabacloud/kms/model/DescribeKeyVersionResult.h
+	include/alibabacloud/kms/model/DescribeNetworkRuleRequest.h
+	include/alibabacloud/kms/model/DescribeNetworkRuleResult.h
+	include/alibabacloud/kms/model/DescribePolicyRequest.h
+	include/alibabacloud/kms/model/DescribePolicyResult.h
 	include/alibabacloud/kms/model/DescribeRegionsRequest.h
 	include/alibabacloud/kms/model/DescribeRegionsResult.h
 	include/alibabacloud/kms/model/DescribeSecretRequest.h
@@ -87,6 +111,10 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/GenerateDataKeyWithoutPlaintextResult.h
 	include/alibabacloud/kms/model/GetCertificateRequest.h
 	include/alibabacloud/kms/model/GetCertificateResult.h
+	include/alibabacloud/kms/model/GetClientKeyRequest.h
+	include/alibabacloud/kms/model/GetClientKeyResult.h
+	include/alibabacloud/kms/model/GetKmsInstanceRequest.h
+	include/alibabacloud/kms/model/GetKmsInstanceResult.h
 	include/alibabacloud/kms/model/GetParametersForImportRequest.h
 	include/alibabacloud/kms/model/GetParametersForImportResult.h
 	include/alibabacloud/kms/model/GetPublicKeyRequest.h
@@ -101,10 +129,20 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/ListAliasesResult.h
 	include/alibabacloud/kms/model/ListAliasesByKeyIdRequest.h
 	include/alibabacloud/kms/model/ListAliasesByKeyIdResult.h
+	include/alibabacloud/kms/model/ListApplicationAccessPointsRequest.h
+	include/alibabacloud/kms/model/ListApplicationAccessPointsResult.h
+	include/alibabacloud/kms/model/ListClientKeysRequest.h
+	include/alibabacloud/kms/model/ListClientKeysResult.h
 	include/alibabacloud/kms/model/ListKeyVersionsRequest.h
 	include/alibabacloud/kms/model/ListKeyVersionsResult.h
 	include/alibabacloud/kms/model/ListKeysRequest.h
 	include/alibabacloud/kms/model/ListKeysResult.h
+	include/alibabacloud/kms/model/ListKmsInstancesRequest.h
+	include/alibabacloud/kms/model/ListKmsInstancesResult.h
+	include/alibabacloud/kms/model/ListNetworkRulesRequest.h
+	include/alibabacloud/kms/model/ListNetworkRulesResult.h
+	include/alibabacloud/kms/model/ListPoliciesRequest.h
+	include/alibabacloud/kms/model/ListPoliciesResult.h
 	include/alibabacloud/kms/model/ListResourceTagsRequest.h
 	include/alibabacloud/kms/model/ListResourceTagsResult.h
 	include/alibabacloud/kms/model/ListSecretVersionIdsRequest.h
@@ -137,10 +175,18 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/UntagResourcesResult.h
 	include/alibabacloud/kms/model/UpdateAliasRequest.h
 	include/alibabacloud/kms/model/UpdateAliasResult.h
+	include/alibabacloud/kms/model/UpdateApplicationAccessPointRequest.h
+	include/alibabacloud/kms/model/UpdateApplicationAccessPointResult.h
 	include/alibabacloud/kms/model/UpdateCertificateStatusRequest.h
 	include/alibabacloud/kms/model/UpdateCertificateStatusResult.h
 	include/alibabacloud/kms/model/UpdateKeyDescriptionRequest.h
 	include/alibabacloud/kms/model/UpdateKeyDescriptionResult.h
+	include/alibabacloud/kms/model/UpdateKmsInstanceBindVpcRequest.h
+	include/alibabacloud/kms/model/UpdateKmsInstanceBindVpcResult.h
+	include/alibabacloud/kms/model/UpdateNetworkRuleRequest.h
+	include/alibabacloud/kms/model/UpdateNetworkRuleResult.h
+	include/alibabacloud/kms/model/UpdatePolicyRequest.h
+	include/alibabacloud/kms/model/UpdatePolicyResult.h
 	include/alibabacloud/kms/model/UpdateRotationPolicyRequest.h
 	include/alibabacloud/kms/model/UpdateRotationPolicyResult.h
 	include/alibabacloud/kms/model/UpdateSecretRequest.h
@@ -172,34 +218,58 @@ set(kms_src
 	src/model/CertificatePublicKeyEncryptResult.cc
 	src/model/CertificatePublicKeyVerifyRequest.cc
 	src/model/CertificatePublicKeyVerifyResult.cc
+	src/model/ConnectKmsInstanceRequest.cc
+	src/model/ConnectKmsInstanceResult.cc
 	src/model/CreateAliasRequest.cc
 	src/model/CreateAliasResult.cc
+	src/model/CreateApplicationAccessPointRequest.cc
+	src/model/CreateApplicationAccessPointResult.cc
 	src/model/CreateCertificateRequest.cc
 	src/model/CreateCertificateResult.cc
+	src/model/CreateClientKeyRequest.cc
+	src/model/CreateClientKeyResult.cc
 	src/model/CreateKeyRequest.cc
 	src/model/CreateKeyResult.cc
 	src/model/CreateKeyVersionRequest.cc
 	src/model/CreateKeyVersionResult.cc
+	src/model/CreateNetworkRuleRequest.cc
+	src/model/CreateNetworkRuleResult.cc
+	src/model/CreatePolicyRequest.cc
+	src/model/CreatePolicyResult.cc
 	src/model/CreateSecretRequest.cc
 	src/model/CreateSecretResult.cc
 	src/model/DecryptRequest.cc
 	src/model/DecryptResult.cc
 	src/model/DeleteAliasRequest.cc
 	src/model/DeleteAliasResult.cc
+	src/model/DeleteApplicationAccessPointRequest.cc
+	src/model/DeleteApplicationAccessPointResult.cc
 	src/model/DeleteCertificateRequest.cc
 	src/model/DeleteCertificateResult.cc
+	src/model/DeleteClientKeyRequest.cc
+	src/model/DeleteClientKeyResult.cc
 	src/model/DeleteKeyMaterialRequest.cc
 	src/model/DeleteKeyMaterialResult.cc
+	src/model/DeleteNetworkRuleRequest.cc
+	src/model/DeleteNetworkRuleResult.cc
+	src/model/DeletePolicyRequest.cc
+	src/model/DeletePolicyResult.cc
 	src/model/DeleteSecretRequest.cc
 	src/model/DeleteSecretResult.cc
 	src/model/DescribeAccountKmsStatusRequest.cc
 	src/model/DescribeAccountKmsStatusResult.cc
+	src/model/DescribeApplicationAccessPointRequest.cc
+	src/model/DescribeApplicationAccessPointResult.cc
 	src/model/DescribeCertificateRequest.cc
 	src/model/DescribeCertificateResult.cc
 	src/model/DescribeKeyRequest.cc
 	src/model/DescribeKeyResult.cc
 	src/model/DescribeKeyVersionRequest.cc
 	src/model/DescribeKeyVersionResult.cc
+	src/model/DescribeNetworkRuleRequest.cc
+	src/model/DescribeNetworkRuleResult.cc
+	src/model/DescribePolicyRequest.cc
+	src/model/DescribePolicyResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeSecretRequest.cc
@@ -220,6 +290,10 @@ set(kms_src
 	src/model/GenerateDataKeyWithoutPlaintextResult.cc
 	src/model/GetCertificateRequest.cc
 	src/model/GetCertificateResult.cc
+	src/model/GetClientKeyRequest.cc
+	src/model/GetClientKeyResult.cc
+	src/model/GetKmsInstanceRequest.cc
+	src/model/GetKmsInstanceResult.cc
 	src/model/GetParametersForImportRequest.cc
 	src/model/GetParametersForImportResult.cc
 	src/model/GetPublicKeyRequest.cc
@@ -234,10 +308,20 @@ set(kms_src
 	src/model/ListAliasesResult.cc
 	src/model/ListAliasesByKeyIdRequest.cc
 	src/model/ListAliasesByKeyIdResult.cc
+	src/model/ListApplicationAccessPointsRequest.cc
+	src/model/ListApplicationAccessPointsResult.cc
+	src/model/ListClientKeysRequest.cc
+	src/model/ListClientKeysResult.cc
 	src/model/ListKeyVersionsRequest.cc
 	src/model/ListKeyVersionsResult.cc
 	src/model/ListKeysRequest.cc
 	src/model/ListKeysResult.cc
+	src/model/ListKmsInstancesRequest.cc
+	src/model/ListKmsInstancesResult.cc
+	src/model/ListNetworkRulesRequest.cc
+	src/model/ListNetworkRulesResult.cc
+	src/model/ListPoliciesRequest.cc
+	src/model/ListPoliciesResult.cc
 	src/model/ListResourceTagsRequest.cc
 	src/model/ListResourceTagsResult.cc
 	src/model/ListSecretVersionIdsRequest.cc
@@ -270,10 +354,18 @@ set(kms_src
 	src/model/UntagResourcesResult.cc
 	src/model/UpdateAliasRequest.cc
 	src/model/UpdateAliasResult.cc
+	src/model/UpdateApplicationAccessPointRequest.cc
+	src/model/UpdateApplicationAccessPointResult.cc
 	src/model/UpdateCertificateStatusRequest.cc
 	src/model/UpdateCertificateStatusResult.cc
 	src/model/UpdateKeyDescriptionRequest.cc
 	src/model/UpdateKeyDescriptionResult.cc
+	src/model/UpdateKmsInstanceBindVpcRequest.cc
+	src/model/UpdateKmsInstanceBindVpcResult.cc
+	src/model/UpdateNetworkRuleRequest.cc
+	src/model/UpdateNetworkRuleResult.cc
+	src/model/UpdatePolicyRequest.cc
+	src/model/UpdatePolicyResult.cc
 	src/model/UpdateRotationPolicyRequest.cc
 	src/model/UpdateRotationPolicyResult.cc
 	src/model/UpdateSecretRequest.cc

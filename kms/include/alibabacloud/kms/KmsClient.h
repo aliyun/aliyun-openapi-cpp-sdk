@@ -40,34 +40,58 @@
 #include "model/CertificatePublicKeyEncryptResult.h"
 #include "model/CertificatePublicKeyVerifyRequest.h"
 #include "model/CertificatePublicKeyVerifyResult.h"
+#include "model/ConnectKmsInstanceRequest.h"
+#include "model/ConnectKmsInstanceResult.h"
 #include "model/CreateAliasRequest.h"
 #include "model/CreateAliasResult.h"
+#include "model/CreateApplicationAccessPointRequest.h"
+#include "model/CreateApplicationAccessPointResult.h"
 #include "model/CreateCertificateRequest.h"
 #include "model/CreateCertificateResult.h"
+#include "model/CreateClientKeyRequest.h"
+#include "model/CreateClientKeyResult.h"
 #include "model/CreateKeyRequest.h"
 #include "model/CreateKeyResult.h"
 #include "model/CreateKeyVersionRequest.h"
 #include "model/CreateKeyVersionResult.h"
+#include "model/CreateNetworkRuleRequest.h"
+#include "model/CreateNetworkRuleResult.h"
+#include "model/CreatePolicyRequest.h"
+#include "model/CreatePolicyResult.h"
 #include "model/CreateSecretRequest.h"
 #include "model/CreateSecretResult.h"
 #include "model/DecryptRequest.h"
 #include "model/DecryptResult.h"
 #include "model/DeleteAliasRequest.h"
 #include "model/DeleteAliasResult.h"
+#include "model/DeleteApplicationAccessPointRequest.h"
+#include "model/DeleteApplicationAccessPointResult.h"
 #include "model/DeleteCertificateRequest.h"
 #include "model/DeleteCertificateResult.h"
+#include "model/DeleteClientKeyRequest.h"
+#include "model/DeleteClientKeyResult.h"
 #include "model/DeleteKeyMaterialRequest.h"
 #include "model/DeleteKeyMaterialResult.h"
+#include "model/DeleteNetworkRuleRequest.h"
+#include "model/DeleteNetworkRuleResult.h"
+#include "model/DeletePolicyRequest.h"
+#include "model/DeletePolicyResult.h"
 #include "model/DeleteSecretRequest.h"
 #include "model/DeleteSecretResult.h"
 #include "model/DescribeAccountKmsStatusRequest.h"
 #include "model/DescribeAccountKmsStatusResult.h"
+#include "model/DescribeApplicationAccessPointRequest.h"
+#include "model/DescribeApplicationAccessPointResult.h"
 #include "model/DescribeCertificateRequest.h"
 #include "model/DescribeCertificateResult.h"
 #include "model/DescribeKeyRequest.h"
 #include "model/DescribeKeyResult.h"
 #include "model/DescribeKeyVersionRequest.h"
 #include "model/DescribeKeyVersionResult.h"
+#include "model/DescribeNetworkRuleRequest.h"
+#include "model/DescribeNetworkRuleResult.h"
+#include "model/DescribePolicyRequest.h"
+#include "model/DescribePolicyResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeSecretRequest.h"
@@ -88,6 +112,10 @@
 #include "model/GenerateDataKeyWithoutPlaintextResult.h"
 #include "model/GetCertificateRequest.h"
 #include "model/GetCertificateResult.h"
+#include "model/GetClientKeyRequest.h"
+#include "model/GetClientKeyResult.h"
+#include "model/GetKmsInstanceRequest.h"
+#include "model/GetKmsInstanceResult.h"
 #include "model/GetParametersForImportRequest.h"
 #include "model/GetParametersForImportResult.h"
 #include "model/GetPublicKeyRequest.h"
@@ -102,10 +130,20 @@
 #include "model/ListAliasesResult.h"
 #include "model/ListAliasesByKeyIdRequest.h"
 #include "model/ListAliasesByKeyIdResult.h"
+#include "model/ListApplicationAccessPointsRequest.h"
+#include "model/ListApplicationAccessPointsResult.h"
+#include "model/ListClientKeysRequest.h"
+#include "model/ListClientKeysResult.h"
 #include "model/ListKeyVersionsRequest.h"
 #include "model/ListKeyVersionsResult.h"
 #include "model/ListKeysRequest.h"
 #include "model/ListKeysResult.h"
+#include "model/ListKmsInstancesRequest.h"
+#include "model/ListKmsInstancesResult.h"
+#include "model/ListNetworkRulesRequest.h"
+#include "model/ListNetworkRulesResult.h"
+#include "model/ListPoliciesRequest.h"
+#include "model/ListPoliciesResult.h"
 #include "model/ListResourceTagsRequest.h"
 #include "model/ListResourceTagsResult.h"
 #include "model/ListSecretVersionIdsRequest.h"
@@ -138,10 +176,18 @@
 #include "model/UntagResourcesResult.h"
 #include "model/UpdateAliasRequest.h"
 #include "model/UpdateAliasResult.h"
+#include "model/UpdateApplicationAccessPointRequest.h"
+#include "model/UpdateApplicationAccessPointResult.h"
 #include "model/UpdateCertificateStatusRequest.h"
 #include "model/UpdateCertificateStatusResult.h"
 #include "model/UpdateKeyDescriptionRequest.h"
 #include "model/UpdateKeyDescriptionResult.h"
+#include "model/UpdateKmsInstanceBindVpcRequest.h"
+#include "model/UpdateKmsInstanceBindVpcResult.h"
+#include "model/UpdateNetworkRuleRequest.h"
+#include "model/UpdateNetworkRuleResult.h"
+#include "model/UpdatePolicyRequest.h"
+#include "model/UpdatePolicyResult.h"
 #include "model/UpdateRotationPolicyRequest.h"
 #include "model/UpdateRotationPolicyResult.h"
 #include "model/UpdateSecretRequest.h"
@@ -188,18 +234,33 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CertificatePublicKeyVerifyResult> CertificatePublicKeyVerifyOutcome;
 			typedef std::future<CertificatePublicKeyVerifyOutcome> CertificatePublicKeyVerifyOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::CertificatePublicKeyVerifyRequest&, const CertificatePublicKeyVerifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CertificatePublicKeyVerifyAsyncHandler;
+			typedef Outcome<Error, Model::ConnectKmsInstanceResult> ConnectKmsInstanceOutcome;
+			typedef std::future<ConnectKmsInstanceOutcome> ConnectKmsInstanceOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::ConnectKmsInstanceRequest&, const ConnectKmsInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConnectKmsInstanceAsyncHandler;
 			typedef Outcome<Error, Model::CreateAliasResult> CreateAliasOutcome;
 			typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::CreateAliasRequest&, const CreateAliasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAliasAsyncHandler;
+			typedef Outcome<Error, Model::CreateApplicationAccessPointResult> CreateApplicationAccessPointOutcome;
+			typedef std::future<CreateApplicationAccessPointOutcome> CreateApplicationAccessPointOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::CreateApplicationAccessPointRequest&, const CreateApplicationAccessPointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationAccessPointAsyncHandler;
 			typedef Outcome<Error, Model::CreateCertificateResult> CreateCertificateOutcome;
 			typedef std::future<CreateCertificateOutcome> CreateCertificateOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::CreateCertificateRequest&, const CreateCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCertificateAsyncHandler;
+			typedef Outcome<Error, Model::CreateClientKeyResult> CreateClientKeyOutcome;
+			typedef std::future<CreateClientKeyOutcome> CreateClientKeyOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::CreateClientKeyRequest&, const CreateClientKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateClientKeyAsyncHandler;
 			typedef Outcome<Error, Model::CreateKeyResult> CreateKeyOutcome;
 			typedef std::future<CreateKeyOutcome> CreateKeyOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::CreateKeyRequest&, const CreateKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateKeyAsyncHandler;
 			typedef Outcome<Error, Model::CreateKeyVersionResult> CreateKeyVersionOutcome;
 			typedef std::future<CreateKeyVersionOutcome> CreateKeyVersionOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::CreateKeyVersionRequest&, const CreateKeyVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateKeyVersionAsyncHandler;
+			typedef Outcome<Error, Model::CreateNetworkRuleResult> CreateNetworkRuleOutcome;
+			typedef std::future<CreateNetworkRuleOutcome> CreateNetworkRuleOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::CreateNetworkRuleRequest&, const CreateNetworkRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkRuleAsyncHandler;
+			typedef Outcome<Error, Model::CreatePolicyResult> CreatePolicyOutcome;
+			typedef std::future<CreatePolicyOutcome> CreatePolicyOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::CreatePolicyRequest&, const CreatePolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePolicyAsyncHandler;
 			typedef Outcome<Error, Model::CreateSecretResult> CreateSecretOutcome;
 			typedef std::future<CreateSecretOutcome> CreateSecretOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::CreateSecretRequest&, const CreateSecretOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecretAsyncHandler;
@@ -209,18 +270,33 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteAliasResult> DeleteAliasOutcome;
 			typedef std::future<DeleteAliasOutcome> DeleteAliasOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::DeleteAliasRequest&, const DeleteAliasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAliasAsyncHandler;
+			typedef Outcome<Error, Model::DeleteApplicationAccessPointResult> DeleteApplicationAccessPointOutcome;
+			typedef std::future<DeleteApplicationAccessPointOutcome> DeleteApplicationAccessPointOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::DeleteApplicationAccessPointRequest&, const DeleteApplicationAccessPointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationAccessPointAsyncHandler;
 			typedef Outcome<Error, Model::DeleteCertificateResult> DeleteCertificateOutcome;
 			typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::DeleteCertificateRequest&, const DeleteCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCertificateAsyncHandler;
+			typedef Outcome<Error, Model::DeleteClientKeyResult> DeleteClientKeyOutcome;
+			typedef std::future<DeleteClientKeyOutcome> DeleteClientKeyOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::DeleteClientKeyRequest&, const DeleteClientKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClientKeyAsyncHandler;
 			typedef Outcome<Error, Model::DeleteKeyMaterialResult> DeleteKeyMaterialOutcome;
 			typedef std::future<DeleteKeyMaterialOutcome> DeleteKeyMaterialOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::DeleteKeyMaterialRequest&, const DeleteKeyMaterialOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKeyMaterialAsyncHandler;
+			typedef Outcome<Error, Model::DeleteNetworkRuleResult> DeleteNetworkRuleOutcome;
+			typedef std::future<DeleteNetworkRuleOutcome> DeleteNetworkRuleOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::DeleteNetworkRuleRequest&, const DeleteNetworkRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetworkRuleAsyncHandler;
+			typedef Outcome<Error, Model::DeletePolicyResult> DeletePolicyOutcome;
+			typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::DeletePolicyRequest&, const DeletePolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePolicyAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSecretResult> DeleteSecretOutcome;
 			typedef std::future<DeleteSecretOutcome> DeleteSecretOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::DeleteSecretRequest&, const DeleteSecretOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecretAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAccountKmsStatusResult> DescribeAccountKmsStatusOutcome;
 			typedef std::future<DescribeAccountKmsStatusOutcome> DescribeAccountKmsStatusOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::DescribeAccountKmsStatusRequest&, const DescribeAccountKmsStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountKmsStatusAsyncHandler;
+			typedef Outcome<Error, Model::DescribeApplicationAccessPointResult> DescribeApplicationAccessPointOutcome;
+			typedef std::future<DescribeApplicationAccessPointOutcome> DescribeApplicationAccessPointOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::DescribeApplicationAccessPointRequest&, const DescribeApplicationAccessPointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationAccessPointAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCertificateResult> DescribeCertificateOutcome;
 			typedef std::future<DescribeCertificateOutcome> DescribeCertificateOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::DescribeCertificateRequest&, const DescribeCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertificateAsyncHandler;
@@ -230,6 +306,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeKeyVersionResult> DescribeKeyVersionOutcome;
 			typedef std::future<DescribeKeyVersionOutcome> DescribeKeyVersionOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::DescribeKeyVersionRequest&, const DescribeKeyVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeyVersionAsyncHandler;
+			typedef Outcome<Error, Model::DescribeNetworkRuleResult> DescribeNetworkRuleOutcome;
+			typedef std::future<DescribeNetworkRuleOutcome> DescribeNetworkRuleOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::DescribeNetworkRuleRequest&, const DescribeNetworkRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetworkRuleAsyncHandler;
+			typedef Outcome<Error, Model::DescribePolicyResult> DescribePolicyOutcome;
+			typedef std::future<DescribePolicyOutcome> DescribePolicyOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::DescribePolicyRequest&, const DescribePolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolicyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -260,6 +342,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetCertificateResult> GetCertificateOutcome;
 			typedef std::future<GetCertificateOutcome> GetCertificateOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::GetCertificateRequest&, const GetCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCertificateAsyncHandler;
+			typedef Outcome<Error, Model::GetClientKeyResult> GetClientKeyOutcome;
+			typedef std::future<GetClientKeyOutcome> GetClientKeyOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::GetClientKeyRequest&, const GetClientKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetClientKeyAsyncHandler;
+			typedef Outcome<Error, Model::GetKmsInstanceResult> GetKmsInstanceOutcome;
+			typedef std::future<GetKmsInstanceOutcome> GetKmsInstanceOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::GetKmsInstanceRequest&, const GetKmsInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetKmsInstanceAsyncHandler;
 			typedef Outcome<Error, Model::GetParametersForImportResult> GetParametersForImportOutcome;
 			typedef std::future<GetParametersForImportOutcome> GetParametersForImportOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::GetParametersForImportRequest&, const GetParametersForImportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetParametersForImportAsyncHandler;
@@ -281,12 +369,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListAliasesByKeyIdResult> ListAliasesByKeyIdOutcome;
 			typedef std::future<ListAliasesByKeyIdOutcome> ListAliasesByKeyIdOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::ListAliasesByKeyIdRequest&, const ListAliasesByKeyIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAliasesByKeyIdAsyncHandler;
+			typedef Outcome<Error, Model::ListApplicationAccessPointsResult> ListApplicationAccessPointsOutcome;
+			typedef std::future<ListApplicationAccessPointsOutcome> ListApplicationAccessPointsOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::ListApplicationAccessPointsRequest&, const ListApplicationAccessPointsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApplicationAccessPointsAsyncHandler;
+			typedef Outcome<Error, Model::ListClientKeysResult> ListClientKeysOutcome;
+			typedef std::future<ListClientKeysOutcome> ListClientKeysOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::ListClientKeysRequest&, const ListClientKeysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClientKeysAsyncHandler;
 			typedef Outcome<Error, Model::ListKeyVersionsResult> ListKeyVersionsOutcome;
 			typedef std::future<ListKeyVersionsOutcome> ListKeyVersionsOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::ListKeyVersionsRequest&, const ListKeyVersionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListKeyVersionsAsyncHandler;
 			typedef Outcome<Error, Model::ListKeysResult> ListKeysOutcome;
 			typedef std::future<ListKeysOutcome> ListKeysOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::ListKeysRequest&, const ListKeysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListKeysAsyncHandler;
+			typedef Outcome<Error, Model::ListKmsInstancesResult> ListKmsInstancesOutcome;
+			typedef std::future<ListKmsInstancesOutcome> ListKmsInstancesOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::ListKmsInstancesRequest&, const ListKmsInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListKmsInstancesAsyncHandler;
+			typedef Outcome<Error, Model::ListNetworkRulesResult> ListNetworkRulesOutcome;
+			typedef std::future<ListNetworkRulesOutcome> ListNetworkRulesOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::ListNetworkRulesRequest&, const ListNetworkRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListNetworkRulesAsyncHandler;
+			typedef Outcome<Error, Model::ListPoliciesResult> ListPoliciesOutcome;
+			typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::ListPoliciesRequest&, const ListPoliciesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPoliciesAsyncHandler;
 			typedef Outcome<Error, Model::ListResourceTagsResult> ListResourceTagsOutcome;
 			typedef std::future<ListResourceTagsOutcome> ListResourceTagsOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::ListResourceTagsRequest&, const ListResourceTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListResourceTagsAsyncHandler;
@@ -335,12 +438,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateAliasResult> UpdateAliasOutcome;
 			typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::UpdateAliasRequest&, const UpdateAliasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAliasAsyncHandler;
+			typedef Outcome<Error, Model::UpdateApplicationAccessPointResult> UpdateApplicationAccessPointOutcome;
+			typedef std::future<UpdateApplicationAccessPointOutcome> UpdateApplicationAccessPointOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::UpdateApplicationAccessPointRequest&, const UpdateApplicationAccessPointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateApplicationAccessPointAsyncHandler;
 			typedef Outcome<Error, Model::UpdateCertificateStatusResult> UpdateCertificateStatusOutcome;
 			typedef std::future<UpdateCertificateStatusOutcome> UpdateCertificateStatusOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::UpdateCertificateStatusRequest&, const UpdateCertificateStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCertificateStatusAsyncHandler;
 			typedef Outcome<Error, Model::UpdateKeyDescriptionResult> UpdateKeyDescriptionOutcome;
 			typedef std::future<UpdateKeyDescriptionOutcome> UpdateKeyDescriptionOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::UpdateKeyDescriptionRequest&, const UpdateKeyDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateKeyDescriptionAsyncHandler;
+			typedef Outcome<Error, Model::UpdateKmsInstanceBindVpcResult> UpdateKmsInstanceBindVpcOutcome;
+			typedef std::future<UpdateKmsInstanceBindVpcOutcome> UpdateKmsInstanceBindVpcOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::UpdateKmsInstanceBindVpcRequest&, const UpdateKmsInstanceBindVpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateKmsInstanceBindVpcAsyncHandler;
+			typedef Outcome<Error, Model::UpdateNetworkRuleResult> UpdateNetworkRuleOutcome;
+			typedef std::future<UpdateNetworkRuleOutcome> UpdateNetworkRuleOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::UpdateNetworkRuleRequest&, const UpdateNetworkRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNetworkRuleAsyncHandler;
+			typedef Outcome<Error, Model::UpdatePolicyResult> UpdatePolicyOutcome;
+			typedef std::future<UpdatePolicyOutcome> UpdatePolicyOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::UpdatePolicyRequest&, const UpdatePolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePolicyAsyncHandler;
 			typedef Outcome<Error, Model::UpdateRotationPolicyResult> UpdateRotationPolicyOutcome;
 			typedef std::future<UpdateRotationPolicyOutcome> UpdateRotationPolicyOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::UpdateRotationPolicyRequest&, const UpdateRotationPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRotationPolicyAsyncHandler;
@@ -388,18 +503,33 @@ namespace AlibabaCloud
 			CertificatePublicKeyVerifyOutcome certificatePublicKeyVerify(const Model::CertificatePublicKeyVerifyRequest &request)const;
 			void certificatePublicKeyVerifyAsync(const Model::CertificatePublicKeyVerifyRequest& request, const CertificatePublicKeyVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CertificatePublicKeyVerifyOutcomeCallable certificatePublicKeyVerifyCallable(const Model::CertificatePublicKeyVerifyRequest& request) const;
+			ConnectKmsInstanceOutcome connectKmsInstance(const Model::ConnectKmsInstanceRequest &request)const;
+			void connectKmsInstanceAsync(const Model::ConnectKmsInstanceRequest& request, const ConnectKmsInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ConnectKmsInstanceOutcomeCallable connectKmsInstanceCallable(const Model::ConnectKmsInstanceRequest& request) const;
 			CreateAliasOutcome createAlias(const Model::CreateAliasRequest &request)const;
 			void createAliasAsync(const Model::CreateAliasRequest& request, const CreateAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAliasOutcomeCallable createAliasCallable(const Model::CreateAliasRequest& request) const;
+			CreateApplicationAccessPointOutcome createApplicationAccessPoint(const Model::CreateApplicationAccessPointRequest &request)const;
+			void createApplicationAccessPointAsync(const Model::CreateApplicationAccessPointRequest& request, const CreateApplicationAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateApplicationAccessPointOutcomeCallable createApplicationAccessPointCallable(const Model::CreateApplicationAccessPointRequest& request) const;
 			CreateCertificateOutcome createCertificate(const Model::CreateCertificateRequest &request)const;
 			void createCertificateAsync(const Model::CreateCertificateRequest& request, const CreateCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCertificateOutcomeCallable createCertificateCallable(const Model::CreateCertificateRequest& request) const;
+			CreateClientKeyOutcome createClientKey(const Model::CreateClientKeyRequest &request)const;
+			void createClientKeyAsync(const Model::CreateClientKeyRequest& request, const CreateClientKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateClientKeyOutcomeCallable createClientKeyCallable(const Model::CreateClientKeyRequest& request) const;
 			CreateKeyOutcome createKey(const Model::CreateKeyRequest &request)const;
 			void createKeyAsync(const Model::CreateKeyRequest& request, const CreateKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateKeyOutcomeCallable createKeyCallable(const Model::CreateKeyRequest& request) const;
 			CreateKeyVersionOutcome createKeyVersion(const Model::CreateKeyVersionRequest &request)const;
 			void createKeyVersionAsync(const Model::CreateKeyVersionRequest& request, const CreateKeyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateKeyVersionOutcomeCallable createKeyVersionCallable(const Model::CreateKeyVersionRequest& request) const;
+			CreateNetworkRuleOutcome createNetworkRule(const Model::CreateNetworkRuleRequest &request)const;
+			void createNetworkRuleAsync(const Model::CreateNetworkRuleRequest& request, const CreateNetworkRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateNetworkRuleOutcomeCallable createNetworkRuleCallable(const Model::CreateNetworkRuleRequest& request) const;
+			CreatePolicyOutcome createPolicy(const Model::CreatePolicyRequest &request)const;
+			void createPolicyAsync(const Model::CreatePolicyRequest& request, const CreatePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreatePolicyOutcomeCallable createPolicyCallable(const Model::CreatePolicyRequest& request) const;
 			CreateSecretOutcome createSecret(const Model::CreateSecretRequest &request)const;
 			void createSecretAsync(const Model::CreateSecretRequest& request, const CreateSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSecretOutcomeCallable createSecretCallable(const Model::CreateSecretRequest& request) const;
@@ -409,18 +539,33 @@ namespace AlibabaCloud
 			DeleteAliasOutcome deleteAlias(const Model::DeleteAliasRequest &request)const;
 			void deleteAliasAsync(const Model::DeleteAliasRequest& request, const DeleteAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAliasOutcomeCallable deleteAliasCallable(const Model::DeleteAliasRequest& request) const;
+			DeleteApplicationAccessPointOutcome deleteApplicationAccessPoint(const Model::DeleteApplicationAccessPointRequest &request)const;
+			void deleteApplicationAccessPointAsync(const Model::DeleteApplicationAccessPointRequest& request, const DeleteApplicationAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteApplicationAccessPointOutcomeCallable deleteApplicationAccessPointCallable(const Model::DeleteApplicationAccessPointRequest& request) const;
 			DeleteCertificateOutcome deleteCertificate(const Model::DeleteCertificateRequest &request)const;
 			void deleteCertificateAsync(const Model::DeleteCertificateRequest& request, const DeleteCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCertificateOutcomeCallable deleteCertificateCallable(const Model::DeleteCertificateRequest& request) const;
+			DeleteClientKeyOutcome deleteClientKey(const Model::DeleteClientKeyRequest &request)const;
+			void deleteClientKeyAsync(const Model::DeleteClientKeyRequest& request, const DeleteClientKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteClientKeyOutcomeCallable deleteClientKeyCallable(const Model::DeleteClientKeyRequest& request) const;
 			DeleteKeyMaterialOutcome deleteKeyMaterial(const Model::DeleteKeyMaterialRequest &request)const;
 			void deleteKeyMaterialAsync(const Model::DeleteKeyMaterialRequest& request, const DeleteKeyMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteKeyMaterialOutcomeCallable deleteKeyMaterialCallable(const Model::DeleteKeyMaterialRequest& request) const;
+			DeleteNetworkRuleOutcome deleteNetworkRule(const Model::DeleteNetworkRuleRequest &request)const;
+			void deleteNetworkRuleAsync(const Model::DeleteNetworkRuleRequest& request, const DeleteNetworkRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteNetworkRuleOutcomeCallable deleteNetworkRuleCallable(const Model::DeleteNetworkRuleRequest& request) const;
+			DeletePolicyOutcome deletePolicy(const Model::DeletePolicyRequest &request)const;
+			void deletePolicyAsync(const Model::DeletePolicyRequest& request, const DeletePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeletePolicyOutcomeCallable deletePolicyCallable(const Model::DeletePolicyRequest& request) const;
 			DeleteSecretOutcome deleteSecret(const Model::DeleteSecretRequest &request)const;
 			void deleteSecretAsync(const Model::DeleteSecretRequest& request, const DeleteSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSecretOutcomeCallable deleteSecretCallable(const Model::DeleteSecretRequest& request) const;
 			DescribeAccountKmsStatusOutcome describeAccountKmsStatus(const Model::DescribeAccountKmsStatusRequest &request)const;
 			void describeAccountKmsStatusAsync(const Model::DescribeAccountKmsStatusRequest& request, const DescribeAccountKmsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccountKmsStatusOutcomeCallable describeAccountKmsStatusCallable(const Model::DescribeAccountKmsStatusRequest& request) const;
+			DescribeApplicationAccessPointOutcome describeApplicationAccessPoint(const Model::DescribeApplicationAccessPointRequest &request)const;
+			void describeApplicationAccessPointAsync(const Model::DescribeApplicationAccessPointRequest& request, const DescribeApplicationAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeApplicationAccessPointOutcomeCallable describeApplicationAccessPointCallable(const Model::DescribeApplicationAccessPointRequest& request) const;
 			DescribeCertificateOutcome describeCertificate(const Model::DescribeCertificateRequest &request)const;
 			void describeCertificateAsync(const Model::DescribeCertificateRequest& request, const DescribeCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCertificateOutcomeCallable describeCertificateCallable(const Model::DescribeCertificateRequest& request) const;
@@ -430,6 +575,12 @@ namespace AlibabaCloud
 			DescribeKeyVersionOutcome describeKeyVersion(const Model::DescribeKeyVersionRequest &request)const;
 			void describeKeyVersionAsync(const Model::DescribeKeyVersionRequest& request, const DescribeKeyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeKeyVersionOutcomeCallable describeKeyVersionCallable(const Model::DescribeKeyVersionRequest& request) const;
+			DescribeNetworkRuleOutcome describeNetworkRule(const Model::DescribeNetworkRuleRequest &request)const;
+			void describeNetworkRuleAsync(const Model::DescribeNetworkRuleRequest& request, const DescribeNetworkRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeNetworkRuleOutcomeCallable describeNetworkRuleCallable(const Model::DescribeNetworkRuleRequest& request) const;
+			DescribePolicyOutcome describePolicy(const Model::DescribePolicyRequest &request)const;
+			void describePolicyAsync(const Model::DescribePolicyRequest& request, const DescribePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePolicyOutcomeCallable describePolicyCallable(const Model::DescribePolicyRequest& request) const;
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
@@ -460,6 +611,12 @@ namespace AlibabaCloud
 			GetCertificateOutcome getCertificate(const Model::GetCertificateRequest &request)const;
 			void getCertificateAsync(const Model::GetCertificateRequest& request, const GetCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCertificateOutcomeCallable getCertificateCallable(const Model::GetCertificateRequest& request) const;
+			GetClientKeyOutcome getClientKey(const Model::GetClientKeyRequest &request)const;
+			void getClientKeyAsync(const Model::GetClientKeyRequest& request, const GetClientKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetClientKeyOutcomeCallable getClientKeyCallable(const Model::GetClientKeyRequest& request) const;
+			GetKmsInstanceOutcome getKmsInstance(const Model::GetKmsInstanceRequest &request)const;
+			void getKmsInstanceAsync(const Model::GetKmsInstanceRequest& request, const GetKmsInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetKmsInstanceOutcomeCallable getKmsInstanceCallable(const Model::GetKmsInstanceRequest& request) const;
 			GetParametersForImportOutcome getParametersForImport(const Model::GetParametersForImportRequest &request)const;
 			void getParametersForImportAsync(const Model::GetParametersForImportRequest& request, const GetParametersForImportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetParametersForImportOutcomeCallable getParametersForImportCallable(const Model::GetParametersForImportRequest& request) const;
@@ -481,12 +638,27 @@ namespace AlibabaCloud
 			ListAliasesByKeyIdOutcome listAliasesByKeyId(const Model::ListAliasesByKeyIdRequest &request)const;
 			void listAliasesByKeyIdAsync(const Model::ListAliasesByKeyIdRequest& request, const ListAliasesByKeyIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAliasesByKeyIdOutcomeCallable listAliasesByKeyIdCallable(const Model::ListAliasesByKeyIdRequest& request) const;
+			ListApplicationAccessPointsOutcome listApplicationAccessPoints(const Model::ListApplicationAccessPointsRequest &request)const;
+			void listApplicationAccessPointsAsync(const Model::ListApplicationAccessPointsRequest& request, const ListApplicationAccessPointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListApplicationAccessPointsOutcomeCallable listApplicationAccessPointsCallable(const Model::ListApplicationAccessPointsRequest& request) const;
+			ListClientKeysOutcome listClientKeys(const Model::ListClientKeysRequest &request)const;
+			void listClientKeysAsync(const Model::ListClientKeysRequest& request, const ListClientKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClientKeysOutcomeCallable listClientKeysCallable(const Model::ListClientKeysRequest& request) const;
 			ListKeyVersionsOutcome listKeyVersions(const Model::ListKeyVersionsRequest &request)const;
 			void listKeyVersionsAsync(const Model::ListKeyVersionsRequest& request, const ListKeyVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListKeyVersionsOutcomeCallable listKeyVersionsCallable(const Model::ListKeyVersionsRequest& request) const;
 			ListKeysOutcome listKeys(const Model::ListKeysRequest &request)const;
 			void listKeysAsync(const Model::ListKeysRequest& request, const ListKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListKeysOutcomeCallable listKeysCallable(const Model::ListKeysRequest& request) const;
+			ListKmsInstancesOutcome listKmsInstances(const Model::ListKmsInstancesRequest &request)const;
+			void listKmsInstancesAsync(const Model::ListKmsInstancesRequest& request, const ListKmsInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListKmsInstancesOutcomeCallable listKmsInstancesCallable(const Model::ListKmsInstancesRequest& request) const;
+			ListNetworkRulesOutcome listNetworkRules(const Model::ListNetworkRulesRequest &request)const;
+			void listNetworkRulesAsync(const Model::ListNetworkRulesRequest& request, const ListNetworkRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListNetworkRulesOutcomeCallable listNetworkRulesCallable(const Model::ListNetworkRulesRequest& request) const;
+			ListPoliciesOutcome listPolicies(const Model::ListPoliciesRequest &request)const;
+			void listPoliciesAsync(const Model::ListPoliciesRequest& request, const ListPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListPoliciesOutcomeCallable listPoliciesCallable(const Model::ListPoliciesRequest& request) const;
 			ListResourceTagsOutcome listResourceTags(const Model::ListResourceTagsRequest &request)const;
 			void listResourceTagsAsync(const Model::ListResourceTagsRequest& request, const ListResourceTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListResourceTagsOutcomeCallable listResourceTagsCallable(const Model::ListResourceTagsRequest& request) const;
@@ -535,12 +707,24 @@ namespace AlibabaCloud
 			UpdateAliasOutcome updateAlias(const Model::UpdateAliasRequest &request)const;
 			void updateAliasAsync(const Model::UpdateAliasRequest& request, const UpdateAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAliasOutcomeCallable updateAliasCallable(const Model::UpdateAliasRequest& request) const;
+			UpdateApplicationAccessPointOutcome updateApplicationAccessPoint(const Model::UpdateApplicationAccessPointRequest &request)const;
+			void updateApplicationAccessPointAsync(const Model::UpdateApplicationAccessPointRequest& request, const UpdateApplicationAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateApplicationAccessPointOutcomeCallable updateApplicationAccessPointCallable(const Model::UpdateApplicationAccessPointRequest& request) const;
 			UpdateCertificateStatusOutcome updateCertificateStatus(const Model::UpdateCertificateStatusRequest &request)const;
 			void updateCertificateStatusAsync(const Model::UpdateCertificateStatusRequest& request, const UpdateCertificateStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateCertificateStatusOutcomeCallable updateCertificateStatusCallable(const Model::UpdateCertificateStatusRequest& request) const;
 			UpdateKeyDescriptionOutcome updateKeyDescription(const Model::UpdateKeyDescriptionRequest &request)const;
 			void updateKeyDescriptionAsync(const Model::UpdateKeyDescriptionRequest& request, const UpdateKeyDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateKeyDescriptionOutcomeCallable updateKeyDescriptionCallable(const Model::UpdateKeyDescriptionRequest& request) const;
+			UpdateKmsInstanceBindVpcOutcome updateKmsInstanceBindVpc(const Model::UpdateKmsInstanceBindVpcRequest &request)const;
+			void updateKmsInstanceBindVpcAsync(const Model::UpdateKmsInstanceBindVpcRequest& request, const UpdateKmsInstanceBindVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateKmsInstanceBindVpcOutcomeCallable updateKmsInstanceBindVpcCallable(const Model::UpdateKmsInstanceBindVpcRequest& request) const;
+			UpdateNetworkRuleOutcome updateNetworkRule(const Model::UpdateNetworkRuleRequest &request)const;
+			void updateNetworkRuleAsync(const Model::UpdateNetworkRuleRequest& request, const UpdateNetworkRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateNetworkRuleOutcomeCallable updateNetworkRuleCallable(const Model::UpdateNetworkRuleRequest& request) const;
+			UpdatePolicyOutcome updatePolicy(const Model::UpdatePolicyRequest &request)const;
+			void updatePolicyAsync(const Model::UpdatePolicyRequest& request, const UpdatePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdatePolicyOutcomeCallable updatePolicyCallable(const Model::UpdatePolicyRequest& request) const;
 			UpdateRotationPolicyOutcome updateRotationPolicy(const Model::UpdateRotationPolicyRequest &request)const;
 			void updateRotationPolicyAsync(const Model::UpdateRotationPolicyRequest& request, const UpdateRotationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateRotationPolicyOutcomeCallable updateRotationPolicyCallable(const Model::UpdateRotationPolicyRequest& request) const;

@@ -375,6 +375,42 @@ KmsClient::CertificatePublicKeyVerifyOutcomeCallable KmsClient::certificatePubli
 	return task->get_future();
 }
 
+KmsClient::ConnectKmsInstanceOutcome KmsClient::connectKmsInstance(const ConnectKmsInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ConnectKmsInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ConnectKmsInstanceOutcome(ConnectKmsInstanceResult(outcome.result()));
+	else
+		return ConnectKmsInstanceOutcome(outcome.error());
+}
+
+void KmsClient::connectKmsInstanceAsync(const ConnectKmsInstanceRequest& request, const ConnectKmsInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, connectKmsInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ConnectKmsInstanceOutcomeCallable KmsClient::connectKmsInstanceCallable(const ConnectKmsInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ConnectKmsInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->connectKmsInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::CreateAliasOutcome KmsClient::createAlias(const CreateAliasRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -411,6 +447,42 @@ KmsClient::CreateAliasOutcomeCallable KmsClient::createAliasCallable(const Creat
 	return task->get_future();
 }
 
+KmsClient::CreateApplicationAccessPointOutcome KmsClient::createApplicationAccessPoint(const CreateApplicationAccessPointRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateApplicationAccessPointOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateApplicationAccessPointOutcome(CreateApplicationAccessPointResult(outcome.result()));
+	else
+		return CreateApplicationAccessPointOutcome(outcome.error());
+}
+
+void KmsClient::createApplicationAccessPointAsync(const CreateApplicationAccessPointRequest& request, const CreateApplicationAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createApplicationAccessPoint(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::CreateApplicationAccessPointOutcomeCallable KmsClient::createApplicationAccessPointCallable(const CreateApplicationAccessPointRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateApplicationAccessPointOutcome()>>(
+			[this, request]()
+			{
+			return this->createApplicationAccessPoint(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::CreateCertificateOutcome KmsClient::createCertificate(const CreateCertificateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +513,42 @@ KmsClient::CreateCertificateOutcomeCallable KmsClient::createCertificateCallable
 			[this, request]()
 			{
 			return this->createCertificate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::CreateClientKeyOutcome KmsClient::createClientKey(const CreateClientKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateClientKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateClientKeyOutcome(CreateClientKeyResult(outcome.result()));
+	else
+		return CreateClientKeyOutcome(outcome.error());
+}
+
+void KmsClient::createClientKeyAsync(const CreateClientKeyRequest& request, const CreateClientKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createClientKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::CreateClientKeyOutcomeCallable KmsClient::createClientKeyCallable(const CreateClientKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateClientKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->createClientKey(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -513,6 +621,78 @@ KmsClient::CreateKeyVersionOutcomeCallable KmsClient::createKeyVersionCallable(c
 			[this, request]()
 			{
 			return this->createKeyVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::CreateNetworkRuleOutcome KmsClient::createNetworkRule(const CreateNetworkRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateNetworkRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateNetworkRuleOutcome(CreateNetworkRuleResult(outcome.result()));
+	else
+		return CreateNetworkRuleOutcome(outcome.error());
+}
+
+void KmsClient::createNetworkRuleAsync(const CreateNetworkRuleRequest& request, const CreateNetworkRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createNetworkRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::CreateNetworkRuleOutcomeCallable KmsClient::createNetworkRuleCallable(const CreateNetworkRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateNetworkRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->createNetworkRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::CreatePolicyOutcome KmsClient::createPolicy(const CreatePolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreatePolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreatePolicyOutcome(CreatePolicyResult(outcome.result()));
+	else
+		return CreatePolicyOutcome(outcome.error());
+}
+
+void KmsClient::createPolicyAsync(const CreatePolicyRequest& request, const CreatePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::CreatePolicyOutcomeCallable KmsClient::createPolicyCallable(const CreatePolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreatePolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->createPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -627,6 +807,42 @@ KmsClient::DeleteAliasOutcomeCallable KmsClient::deleteAliasCallable(const Delet
 	return task->get_future();
 }
 
+KmsClient::DeleteApplicationAccessPointOutcome KmsClient::deleteApplicationAccessPoint(const DeleteApplicationAccessPointRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteApplicationAccessPointOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteApplicationAccessPointOutcome(DeleteApplicationAccessPointResult(outcome.result()));
+	else
+		return DeleteApplicationAccessPointOutcome(outcome.error());
+}
+
+void KmsClient::deleteApplicationAccessPointAsync(const DeleteApplicationAccessPointRequest& request, const DeleteApplicationAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteApplicationAccessPoint(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::DeleteApplicationAccessPointOutcomeCallable KmsClient::deleteApplicationAccessPointCallable(const DeleteApplicationAccessPointRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteApplicationAccessPointOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteApplicationAccessPoint(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::DeleteCertificateOutcome KmsClient::deleteCertificate(const DeleteCertificateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -663,6 +879,42 @@ KmsClient::DeleteCertificateOutcomeCallable KmsClient::deleteCertificateCallable
 	return task->get_future();
 }
 
+KmsClient::DeleteClientKeyOutcome KmsClient::deleteClientKey(const DeleteClientKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteClientKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteClientKeyOutcome(DeleteClientKeyResult(outcome.result()));
+	else
+		return DeleteClientKeyOutcome(outcome.error());
+}
+
+void KmsClient::deleteClientKeyAsync(const DeleteClientKeyRequest& request, const DeleteClientKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteClientKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::DeleteClientKeyOutcomeCallable KmsClient::deleteClientKeyCallable(const DeleteClientKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteClientKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteClientKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::DeleteKeyMaterialOutcome KmsClient::deleteKeyMaterial(const DeleteKeyMaterialRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +945,78 @@ KmsClient::DeleteKeyMaterialOutcomeCallable KmsClient::deleteKeyMaterialCallable
 			[this, request]()
 			{
 			return this->deleteKeyMaterial(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::DeleteNetworkRuleOutcome KmsClient::deleteNetworkRule(const DeleteNetworkRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteNetworkRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteNetworkRuleOutcome(DeleteNetworkRuleResult(outcome.result()));
+	else
+		return DeleteNetworkRuleOutcome(outcome.error());
+}
+
+void KmsClient::deleteNetworkRuleAsync(const DeleteNetworkRuleRequest& request, const DeleteNetworkRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteNetworkRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::DeleteNetworkRuleOutcomeCallable KmsClient::deleteNetworkRuleCallable(const DeleteNetworkRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteNetworkRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteNetworkRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::DeletePolicyOutcome KmsClient::deletePolicy(const DeletePolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePolicyOutcome(DeletePolicyResult(outcome.result()));
+	else
+		return DeletePolicyOutcome(outcome.error());
+}
+
+void KmsClient::deletePolicyAsync(const DeletePolicyRequest& request, const DeletePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::DeletePolicyOutcomeCallable KmsClient::deletePolicyCallable(const DeletePolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -765,6 +1089,42 @@ KmsClient::DescribeAccountKmsStatusOutcomeCallable KmsClient::describeAccountKms
 			[this, request]()
 			{
 			return this->describeAccountKmsStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::DescribeApplicationAccessPointOutcome KmsClient::describeApplicationAccessPoint(const DescribeApplicationAccessPointRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeApplicationAccessPointOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeApplicationAccessPointOutcome(DescribeApplicationAccessPointResult(outcome.result()));
+	else
+		return DescribeApplicationAccessPointOutcome(outcome.error());
+}
+
+void KmsClient::describeApplicationAccessPointAsync(const DescribeApplicationAccessPointRequest& request, const DescribeApplicationAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeApplicationAccessPoint(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::DescribeApplicationAccessPointOutcomeCallable KmsClient::describeApplicationAccessPointCallable(const DescribeApplicationAccessPointRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeApplicationAccessPointOutcome()>>(
+			[this, request]()
+			{
+			return this->describeApplicationAccessPoint(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -873,6 +1233,78 @@ KmsClient::DescribeKeyVersionOutcomeCallable KmsClient::describeKeyVersionCallab
 			[this, request]()
 			{
 			return this->describeKeyVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::DescribeNetworkRuleOutcome KmsClient::describeNetworkRule(const DescribeNetworkRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNetworkRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNetworkRuleOutcome(DescribeNetworkRuleResult(outcome.result()));
+	else
+		return DescribeNetworkRuleOutcome(outcome.error());
+}
+
+void KmsClient::describeNetworkRuleAsync(const DescribeNetworkRuleRequest& request, const DescribeNetworkRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNetworkRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::DescribeNetworkRuleOutcomeCallable KmsClient::describeNetworkRuleCallable(const DescribeNetworkRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNetworkRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNetworkRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::DescribePolicyOutcome KmsClient::describePolicy(const DescribePolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePolicyOutcome(DescribePolicyResult(outcome.result()));
+	else
+		return DescribePolicyOutcome(outcome.error());
+}
+
+void KmsClient::describePolicyAsync(const DescribePolicyRequest& request, const DescribePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::DescribePolicyOutcomeCallable KmsClient::describePolicyCallable(const DescribePolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->describePolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1239,6 +1671,78 @@ KmsClient::GetCertificateOutcomeCallable KmsClient::getCertificateCallable(const
 	return task->get_future();
 }
 
+KmsClient::GetClientKeyOutcome KmsClient::getClientKey(const GetClientKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetClientKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetClientKeyOutcome(GetClientKeyResult(outcome.result()));
+	else
+		return GetClientKeyOutcome(outcome.error());
+}
+
+void KmsClient::getClientKeyAsync(const GetClientKeyRequest& request, const GetClientKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getClientKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::GetClientKeyOutcomeCallable KmsClient::getClientKeyCallable(const GetClientKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetClientKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->getClientKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::GetKmsInstanceOutcome KmsClient::getKmsInstance(const GetKmsInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetKmsInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetKmsInstanceOutcome(GetKmsInstanceResult(outcome.result()));
+	else
+		return GetKmsInstanceOutcome(outcome.error());
+}
+
+void KmsClient::getKmsInstanceAsync(const GetKmsInstanceRequest& request, const GetKmsInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getKmsInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::GetKmsInstanceOutcomeCallable KmsClient::getKmsInstanceCallable(const GetKmsInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetKmsInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->getKmsInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::GetParametersForImportOutcome KmsClient::getParametersForImport(const GetParametersForImportRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1491,6 +1995,78 @@ KmsClient::ListAliasesByKeyIdOutcomeCallable KmsClient::listAliasesByKeyIdCallab
 	return task->get_future();
 }
 
+KmsClient::ListApplicationAccessPointsOutcome KmsClient::listApplicationAccessPoints(const ListApplicationAccessPointsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApplicationAccessPointsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApplicationAccessPointsOutcome(ListApplicationAccessPointsResult(outcome.result()));
+	else
+		return ListApplicationAccessPointsOutcome(outcome.error());
+}
+
+void KmsClient::listApplicationAccessPointsAsync(const ListApplicationAccessPointsRequest& request, const ListApplicationAccessPointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApplicationAccessPoints(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ListApplicationAccessPointsOutcomeCallable KmsClient::listApplicationAccessPointsCallable(const ListApplicationAccessPointsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApplicationAccessPointsOutcome()>>(
+			[this, request]()
+			{
+			return this->listApplicationAccessPoints(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::ListClientKeysOutcome KmsClient::listClientKeys(const ListClientKeysRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListClientKeysOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListClientKeysOutcome(ListClientKeysResult(outcome.result()));
+	else
+		return ListClientKeysOutcome(outcome.error());
+}
+
+void KmsClient::listClientKeysAsync(const ListClientKeysRequest& request, const ListClientKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listClientKeys(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ListClientKeysOutcomeCallable KmsClient::listClientKeysCallable(const ListClientKeysRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListClientKeysOutcome()>>(
+			[this, request]()
+			{
+			return this->listClientKeys(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::ListKeyVersionsOutcome KmsClient::listKeyVersions(const ListKeyVersionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1557,6 +2133,114 @@ KmsClient::ListKeysOutcomeCallable KmsClient::listKeysCallable(const ListKeysReq
 			[this, request]()
 			{
 			return this->listKeys(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::ListKmsInstancesOutcome KmsClient::listKmsInstances(const ListKmsInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListKmsInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListKmsInstancesOutcome(ListKmsInstancesResult(outcome.result()));
+	else
+		return ListKmsInstancesOutcome(outcome.error());
+}
+
+void KmsClient::listKmsInstancesAsync(const ListKmsInstancesRequest& request, const ListKmsInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listKmsInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ListKmsInstancesOutcomeCallable KmsClient::listKmsInstancesCallable(const ListKmsInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListKmsInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->listKmsInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::ListNetworkRulesOutcome KmsClient::listNetworkRules(const ListNetworkRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListNetworkRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListNetworkRulesOutcome(ListNetworkRulesResult(outcome.result()));
+	else
+		return ListNetworkRulesOutcome(outcome.error());
+}
+
+void KmsClient::listNetworkRulesAsync(const ListNetworkRulesRequest& request, const ListNetworkRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listNetworkRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ListNetworkRulesOutcomeCallable KmsClient::listNetworkRulesCallable(const ListNetworkRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListNetworkRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->listNetworkRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::ListPoliciesOutcome KmsClient::listPolicies(const ListPoliciesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPoliciesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPoliciesOutcome(ListPoliciesResult(outcome.result()));
+	else
+		return ListPoliciesOutcome(outcome.error());
+}
+
+void KmsClient::listPoliciesAsync(const ListPoliciesRequest& request, const ListPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPolicies(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ListPoliciesOutcomeCallable KmsClient::listPoliciesCallable(const ListPoliciesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPoliciesOutcome()>>(
+			[this, request]()
+			{
+			return this->listPolicies(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2139,6 +2823,42 @@ KmsClient::UpdateAliasOutcomeCallable KmsClient::updateAliasCallable(const Updat
 	return task->get_future();
 }
 
+KmsClient::UpdateApplicationAccessPointOutcome KmsClient::updateApplicationAccessPoint(const UpdateApplicationAccessPointRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateApplicationAccessPointOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateApplicationAccessPointOutcome(UpdateApplicationAccessPointResult(outcome.result()));
+	else
+		return UpdateApplicationAccessPointOutcome(outcome.error());
+}
+
+void KmsClient::updateApplicationAccessPointAsync(const UpdateApplicationAccessPointRequest& request, const UpdateApplicationAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateApplicationAccessPoint(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::UpdateApplicationAccessPointOutcomeCallable KmsClient::updateApplicationAccessPointCallable(const UpdateApplicationAccessPointRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateApplicationAccessPointOutcome()>>(
+			[this, request]()
+			{
+			return this->updateApplicationAccessPoint(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::UpdateCertificateStatusOutcome KmsClient::updateCertificateStatus(const UpdateCertificateStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2205,6 +2925,114 @@ KmsClient::UpdateKeyDescriptionOutcomeCallable KmsClient::updateKeyDescriptionCa
 			[this, request]()
 			{
 			return this->updateKeyDescription(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::UpdateKmsInstanceBindVpcOutcome KmsClient::updateKmsInstanceBindVpc(const UpdateKmsInstanceBindVpcRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateKmsInstanceBindVpcOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateKmsInstanceBindVpcOutcome(UpdateKmsInstanceBindVpcResult(outcome.result()));
+	else
+		return UpdateKmsInstanceBindVpcOutcome(outcome.error());
+}
+
+void KmsClient::updateKmsInstanceBindVpcAsync(const UpdateKmsInstanceBindVpcRequest& request, const UpdateKmsInstanceBindVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateKmsInstanceBindVpc(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::UpdateKmsInstanceBindVpcOutcomeCallable KmsClient::updateKmsInstanceBindVpcCallable(const UpdateKmsInstanceBindVpcRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateKmsInstanceBindVpcOutcome()>>(
+			[this, request]()
+			{
+			return this->updateKmsInstanceBindVpc(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::UpdateNetworkRuleOutcome KmsClient::updateNetworkRule(const UpdateNetworkRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateNetworkRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateNetworkRuleOutcome(UpdateNetworkRuleResult(outcome.result()));
+	else
+		return UpdateNetworkRuleOutcome(outcome.error());
+}
+
+void KmsClient::updateNetworkRuleAsync(const UpdateNetworkRuleRequest& request, const UpdateNetworkRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateNetworkRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::UpdateNetworkRuleOutcomeCallable KmsClient::updateNetworkRuleCallable(const UpdateNetworkRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateNetworkRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->updateNetworkRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::UpdatePolicyOutcome KmsClient::updatePolicy(const UpdatePolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePolicyOutcome(UpdatePolicyResult(outcome.result()));
+	else
+		return UpdatePolicyOutcome(outcome.error());
+}
+
+void KmsClient::updatePolicyAsync(const UpdatePolicyRequest& request, const UpdatePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::UpdatePolicyOutcomeCallable KmsClient::updatePolicyCallable(const UpdatePolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
