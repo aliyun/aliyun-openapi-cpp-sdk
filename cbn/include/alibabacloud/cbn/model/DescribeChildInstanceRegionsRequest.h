@@ -44,6 +44,8 @@ public:
 	void setVersion(const std::string &version);
 	long getChildInstanceOwnerId() const;
 	void setChildInstanceOwnerId(long childInstanceOwnerId);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	long resourceOwnerId_;
@@ -53,6 +55,7 @@ private:
 	long ownerId_;
 	std::string version_;
 	long childInstanceOwnerId_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Cbn

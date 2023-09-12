@@ -88,3 +88,12 @@ void DescribeChildInstanceRegionsRequest::setChildInstanceOwnerId(long childInst
   setParameter(std::string("ChildInstanceOwnerId"), std::to_string(childInstanceOwnerId));
 }
 
+std::string DescribeChildInstanceRegionsRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void DescribeChildInstanceRegionsRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
+}
+
