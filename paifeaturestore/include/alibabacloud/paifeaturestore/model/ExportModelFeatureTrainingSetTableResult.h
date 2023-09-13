@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				ExportModelFeatureTrainingSetTableResult();
 				explicit ExportModelFeatureTrainingSetTableResult(const std::string &payload);
 				~ExportModelFeatureTrainingSetTableResult();
+				std::string getTaskId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string taskId_;
 
 			};
 		}
