@@ -118,6 +118,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		isLatestVersion_ = value["IsLatestVersion"].asString() == "true";
 	if(!value["HasCompleteStandbyRes"].isNull())
 		hasCompleteStandbyRes_ = value["HasCompleteStandbyRes"].asString() == "true";
+	if(!value["HotStandbyCluster"].isNull())
+		hotStandbyCluster_ = value["HotStandbyCluster"].asString();
 	if(!value["DataSyncMode"].isNull())
 		dataSyncMode_ = value["DataSyncMode"].asString();
 	if(!value["StandbyHAMode"].isNull())
@@ -198,6 +200,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		featureHTAPSupported_ = value["FeatureHTAPSupported"].asString();
 	if(!value["ProxyServerlessType"].isNull())
 		proxyServerlessType_ = value["ProxyServerlessType"].asString();
+	if(!value["Architecture"].isNull())
+		architecture_ = value["Architecture"].asString();
 	if(!value["AiType"].isNull())
 		aiType_ = value["AiType"].asString();
 
@@ -276,6 +280,11 @@ std::string DescribeDBClusterAttributeResult::getEngine()const
 std::string DescribeDBClusterAttributeResult::getStorageType()const
 {
 	return storageType_;
+}
+
+std::string DescribeDBClusterAttributeResult::getArchitecture()const
+{
+	return architecture_;
 }
 
 std::string DescribeDBClusterAttributeResult::getVPCId()const
@@ -361,6 +370,11 @@ std::string DescribeDBClusterAttributeResult::getCategory()const
 std::string DescribeDBClusterAttributeResult::getDBClusterId()const
 {
 	return dBClusterId_;
+}
+
+std::string DescribeDBClusterAttributeResult::getHotStandbyCluster()const
+{
+	return hotStandbyCluster_;
 }
 
 std::string DescribeDBClusterAttributeResult::getDeployUnit()const

@@ -85,6 +85,7 @@ namespace AlibabaCloud
 				std::vector<Tag> getTags()const;
 				std::string getEngine()const;
 				std::string getStorageType()const;
+				std::string getArchitecture()const;
 				std::string getVPCId()const;
 				std::string getVSwitchId()const;
 				std::string getDBClusterDescription()const;
@@ -102,6 +103,7 @@ namespace AlibabaCloud
 				int getDeletionLock()const;
 				std::string getCategory()const;
 				std::string getDBClusterId()const;
+				std::string getHotStandbyCluster()const;
 				std::string getDeployUnit()const;
 				std::string getDBClusterNetworkType()const;
 				bool getIsLatestVersion()const;
@@ -142,6 +144,7 @@ namespace AlibabaCloud
 				std::vector<Tag> tags_;
 				std::string engine_;
 				std::string storageType_;
+				std::string architecture_;
 				std::string vPCId_;
 				std::string vSwitchId_;
 				std::string dBClusterDescription_;
@@ -159,6 +162,7 @@ namespace AlibabaCloud
 				int deletionLock_;
 				std::string category_;
 				std::string dBClusterId_;
+				std::string hotStandbyCluster_;
 				std::string deployUnit_;
 				std::string dBClusterNetworkType_;
 				bool isLatestVersion_;

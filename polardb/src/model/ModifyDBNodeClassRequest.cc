@@ -61,6 +61,15 @@ void ModifyDBNodeClassRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBNodeClassRequest::getDBNodeType() const {
+  return dBNodeType_;
+}
+
+void ModifyDBNodeClassRequest::setDBNodeType(const std::string &dBNodeType) {
+  dBNodeType_ = dBNodeType;
+  setParameter(std::string("DBNodeType"), dBNodeType);
+}
+
 std::string ModifyDBNodeClassRequest::getDBNodeTargetClass() const {
   return dBNodeTargetClass_;
 }
