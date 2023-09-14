@@ -58,6 +58,15 @@ void MergeVideoModelFaceRequest::setUserId(const std::string &userId) {
   setBodyParameter(std::string("UserId"), userId);
 }
 
+bool MergeVideoModelFaceRequest::getEnhance() const {
+  return enhance_;
+}
+
+void MergeVideoModelFaceRequest::setEnhance(bool enhance) {
+  enhance_ = enhance;
+  setBodyParameter(std::string("Enhance"), enhance ? "true" : "false");
+}
+
 std::string MergeVideoModelFaceRequest::getTemplateId() const {
   return templateId_;
 }

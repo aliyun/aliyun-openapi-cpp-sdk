@@ -41,6 +41,8 @@ public:
 	void setMergeInfos(const std::vector<MergeInfos> &mergeInfos);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
+	bool getEnhance() const;
+	void setEnhance(bool enhance);
 	std::string getTemplateId() const;
 	void setTemplateId(const std::string &templateId);
 	std::string getAsync() const;
@@ -52,6 +54,7 @@ private:
 	std::string faceImageURL_;
 	std::vector<MergeInfos> mergeInfos_;
 	std::string userId_;
+	bool enhance_;
 	std::string templateId_;
 	std::string async_;
 	bool addWatermark_;
