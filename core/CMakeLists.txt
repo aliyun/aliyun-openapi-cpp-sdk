@@ -183,6 +183,15 @@ if(CMAKE_HOST_WIN32)
 	target_compile_definitions(core
 		PRIVATE CURL_STATICLIB
 			_CRT_SECURE_NO_WARNINGS)
+elseif(CMAKE_HOST_APPLE)
+	MESSAGE(STATUS "core: include & link for MACOS")
+	target_include_directories(core
+		PRIVATE /usr/local/include)
+	target_link_libraries(core
+		/usr/local/lib/libcrypto.dylib
+		curl
+		/usr/local/lib/libjsoncpp.dylib
+		/usr/local/lib/libuuid.dylib )
 else()
 	target_include_directories(core
 		PRIVATE /usr/include/jsoncpp)
