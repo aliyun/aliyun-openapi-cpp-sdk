@@ -80,6 +80,12 @@ if(CMAKE_HOST_WIN32)
 	set_target_properties(sts
     	PROPERTIES
     		COMPILE_OPTIONS "/bigobj")
+elseif(CMAKE_HOST_APPLE)
+	MESSAGE(STATUS "sts: include & link for MACOS")
+	target_include_directories(sts
+		PRIVATE /usr/local/include)
+	target_link_libraries(sts
+		/usr/local/lib/libjsoncpp.dylib)
 else()
 	target_include_directories(sts
 		PRIVATE /usr/include/jsoncpp)
