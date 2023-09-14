@@ -1,31 +1,31 @@
 #!/bin/bash
 
-cd `dirname $0`
+cd $(dirname "$0") || exit
 echo '-------build unit test----------'
 
 echo 'start a test http server'
-NODE=`which nodejs`
+NODE=$(which nodejs)
 
 if [ "$NODE" ]
 then
   echo ''
 else
-NODE=`which node`
+NODE=$(which node)
 fi
 
-echo 'node binary path: ' $NODE
+echo 'node binary path: ' "$NODE"
 
-server=`ps -ef | grep http_test_server | grep -v grep`
-echo "check server: " $server
+server=$(ps -ef | grep http_test_server | grep -v grep)
+echo "check server: " "$server"
 if [ "$server" ]
 then
   echo "server is on"
 else
   echo "server is off, start it"
-  cd test/httpserver
+  cd test/httpserver || exit
   npm i
-  nohup $NODE http_test_server.js &
-  cd -
+  nohup "$NODE" http_test_server.js &
+  cd - || exit
 fi
 
 MAKE=make
@@ -33,12 +33,12 @@ if command -v python > /dev/null ; then
   MAKE="make -j $(python -c 'import multiprocessing as mp; print(int(mp.cpu_count()))')"
 fi
 
-echo $MAKE
+echo "$MAKE"
 
 UT_BUILD_DIR=ut_build
 rm -rf $UT_BUILD_DIR
 mkdir $UT_BUILD_DIR
-cd $UT_BUILD_DIR
+cd $UT_BUILD_DIR || exit
 cmake -DBUILD_FUNCTION_TESTS=OFF -DBUILD_UNIT_TESTS=ON -DENABLE_COVERAGE=ON ..
 $MAKE core_ut
 
