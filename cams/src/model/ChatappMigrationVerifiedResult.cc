@@ -48,7 +48,14 @@ void ChatappMigrationVerifiedResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string ChatappMigrationVerifiedResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string ChatappMigrationVerifiedResult::getMessage()const

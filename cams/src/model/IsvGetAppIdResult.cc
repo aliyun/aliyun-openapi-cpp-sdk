@@ -45,7 +45,14 @@ void IsvGetAppIdResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["AppId"].isNull())
 		appId_ = value["AppId"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string IsvGetAppIdResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string IsvGetAppIdResult::getMessage()const

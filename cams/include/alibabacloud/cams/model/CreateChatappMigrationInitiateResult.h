@@ -43,6 +43,7 @@ namespace AlibabaCloud
 				CreateChatappMigrationInitiateResult();
 				explicit CreateChatappMigrationInitiateResult(const std::string &payload);
 				~CreateChatappMigrationInitiateResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -50,6 +51,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string message_;
 				Data data_;
 				std::string code_;

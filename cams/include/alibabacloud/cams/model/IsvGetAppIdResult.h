@@ -37,6 +37,7 @@ namespace AlibabaCloud
 				IsvGetAppIdResult();
 				explicit IsvGetAppIdResult(const std::string &payload);
 				~IsvGetAppIdResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				std::string getAppId()const;
 				std::string getCode()const;
@@ -44,6 +45,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string message_;
 				std::string appId_;
 				std::string code_;

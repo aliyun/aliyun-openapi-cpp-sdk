@@ -42,6 +42,7 @@ namespace AlibabaCloud
 				ModifyChatappTemplateResult();
 				explicit ModifyChatappTemplateResult(const std::string &payload);
 				~ModifyChatappTemplateResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -49,6 +50,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string message_;
 				Data data_;
 				std::string code_;

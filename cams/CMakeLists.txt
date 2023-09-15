@@ -21,6 +21,8 @@ set(cams_public_header
 	include/alibabacloud/cams/CamsExport.h )
 
 set(cams_public_header_model 
+	include/alibabacloud/cams/model/AddChatappPhoneNumberRequest.h
+	include/alibabacloud/cams/model/AddChatappPhoneNumberResult.h
 	include/alibabacloud/cams/model/BeeBotAssociateRequest.h
 	include/alibabacloud/cams/model/BeeBotAssociateResult.h
 	include/alibabacloud/cams/model/BeeBotChatRequest.h
@@ -33,6 +35,8 @@ set(cams_public_header_model
 	include/alibabacloud/cams/model/ChatappMigrationRegisterResult.h
 	include/alibabacloud/cams/model/ChatappMigrationVerifiedRequest.h
 	include/alibabacloud/cams/model/ChatappMigrationVerifiedResult.h
+	include/alibabacloud/cams/model/ChatappPhoneNumberDeregisterRequest.h
+	include/alibabacloud/cams/model/ChatappPhoneNumberDeregisterResult.h
 	include/alibabacloud/cams/model/ChatappPhoneNumberRegisterRequest.h
 	include/alibabacloud/cams/model/ChatappPhoneNumberRegisterResult.h
 	include/alibabacloud/cams/model/ChatappSyncPhoneNumberRequest.h
@@ -45,8 +49,14 @@ set(cams_public_header_model
 	include/alibabacloud/cams/model/CreateChatappTemplateResult.h
 	include/alibabacloud/cams/model/DeleteChatappTemplateRequest.h
 	include/alibabacloud/cams/model/DeleteChatappTemplateResult.h
+	include/alibabacloud/cams/model/EnableWhatsappROIMetricRequest.h
+	include/alibabacloud/cams/model/EnableWhatsappROIMetricResult.h
+	include/alibabacloud/cams/model/GetChatappPhoneNumberMetricRequest.h
+	include/alibabacloud/cams/model/GetChatappPhoneNumberMetricResult.h
 	include/alibabacloud/cams/model/GetChatappTemplateDetailRequest.h
 	include/alibabacloud/cams/model/GetChatappTemplateDetailResult.h
+	include/alibabacloud/cams/model/GetChatappTemplateMetricRequest.h
+	include/alibabacloud/cams/model/GetChatappTemplateMetricResult.h
 	include/alibabacloud/cams/model/GetChatappUploadAuthorizationRequest.h
 	include/alibabacloud/cams/model/GetChatappUploadAuthorizationResult.h
 	include/alibabacloud/cams/model/GetChatappVerifyCodeRequest.h
@@ -55,10 +65,18 @@ set(cams_public_header_model
 	include/alibabacloud/cams/model/GetMigrationVerifyCodeResult.h
 	include/alibabacloud/cams/model/GetPhoneNumberVerificationStatusRequest.h
 	include/alibabacloud/cams/model/GetPhoneNumberVerificationStatusResult.h
+	include/alibabacloud/cams/model/GetPreValidatePhoneIdRequest.h
+	include/alibabacloud/cams/model/GetPreValidatePhoneIdResult.h
+	include/alibabacloud/cams/model/GetWhatsappConnectionCatalogRequest.h
+	include/alibabacloud/cams/model/GetWhatsappConnectionCatalogResult.h
 	include/alibabacloud/cams/model/IsvGetAppIdRequest.h
 	include/alibabacloud/cams/model/IsvGetAppIdResult.h
 	include/alibabacloud/cams/model/ListChatappTemplateRequest.h
 	include/alibabacloud/cams/model/ListChatappTemplateResult.h
+	include/alibabacloud/cams/model/ListProductRequest.h
+	include/alibabacloud/cams/model/ListProductResult.h
+	include/alibabacloud/cams/model/ListProductCatalogRequest.h
+	include/alibabacloud/cams/model/ListProductCatalogResult.h
 	include/alibabacloud/cams/model/ModifyChatappTemplateRequest.h
 	include/alibabacloud/cams/model/ModifyChatappTemplateResult.h
 	include/alibabacloud/cams/model/ModifyPhoneBusinessProfileRequest.h
@@ -84,6 +102,8 @@ set(cams_public_header_model
 
 set(cams_src 
 	src/CamsClient.cc
+	src/model/AddChatappPhoneNumberRequest.cc
+	src/model/AddChatappPhoneNumberResult.cc
 	src/model/BeeBotAssociateRequest.cc
 	src/model/BeeBotAssociateResult.cc
 	src/model/BeeBotChatRequest.cc
@@ -96,6 +116,8 @@ set(cams_src
 	src/model/ChatappMigrationRegisterResult.cc
 	src/model/ChatappMigrationVerifiedRequest.cc
 	src/model/ChatappMigrationVerifiedResult.cc
+	src/model/ChatappPhoneNumberDeregisterRequest.cc
+	src/model/ChatappPhoneNumberDeregisterResult.cc
 	src/model/ChatappPhoneNumberRegisterRequest.cc
 	src/model/ChatappPhoneNumberRegisterResult.cc
 	src/model/ChatappSyncPhoneNumberRequest.cc
@@ -108,8 +130,14 @@ set(cams_src
 	src/model/CreateChatappTemplateResult.cc
 	src/model/DeleteChatappTemplateRequest.cc
 	src/model/DeleteChatappTemplateResult.cc
+	src/model/EnableWhatsappROIMetricRequest.cc
+	src/model/EnableWhatsappROIMetricResult.cc
+	src/model/GetChatappPhoneNumberMetricRequest.cc
+	src/model/GetChatappPhoneNumberMetricResult.cc
 	src/model/GetChatappTemplateDetailRequest.cc
 	src/model/GetChatappTemplateDetailResult.cc
+	src/model/GetChatappTemplateMetricRequest.cc
+	src/model/GetChatappTemplateMetricResult.cc
 	src/model/GetChatappUploadAuthorizationRequest.cc
 	src/model/GetChatappUploadAuthorizationResult.cc
 	src/model/GetChatappVerifyCodeRequest.cc
@@ -118,10 +146,18 @@ set(cams_src
 	src/model/GetMigrationVerifyCodeResult.cc
 	src/model/GetPhoneNumberVerificationStatusRequest.cc
 	src/model/GetPhoneNumberVerificationStatusResult.cc
+	src/model/GetPreValidatePhoneIdRequest.cc
+	src/model/GetPreValidatePhoneIdResult.cc
+	src/model/GetWhatsappConnectionCatalogRequest.cc
+	src/model/GetWhatsappConnectionCatalogResult.cc
 	src/model/IsvGetAppIdRequest.cc
 	src/model/IsvGetAppIdResult.cc
 	src/model/ListChatappTemplateRequest.cc
 	src/model/ListChatappTemplateResult.cc
+	src/model/ListProductRequest.cc
+	src/model/ListProductResult.cc
+	src/model/ListProductCatalogRequest.cc
+	src/model/ListProductCatalogResult.cc
 	src/model/ModifyChatappTemplateRequest.cc
 	src/model/ModifyChatappTemplateResult.cc
 	src/model/ModifyPhoneBusinessProfileRequest.cc

@@ -158,3 +158,12 @@ void CreateChatappTemplateRequest::setCategory(const std::string &category) {
   setBodyParameter(std::string("Category"), category);
 }
 
+int CreateChatappTemplateRequest::getMessageSendTtlSeconds() const {
+  return messageSendTtlSeconds_;
+}
+
+void CreateChatappTemplateRequest::setMessageSendTtlSeconds(int messageSendTtlSeconds) {
+  messageSendTtlSeconds_ = messageSendTtlSeconds;
+  setBodyParameter(std::string("MessageSendTtlSeconds"), std::to_string(messageSendTtlSeconds));
+}
+

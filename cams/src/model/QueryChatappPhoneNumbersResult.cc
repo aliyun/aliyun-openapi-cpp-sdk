@@ -73,12 +73,19 @@ void QueryChatappPhoneNumbersResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
 }
 
 std::vector<QueryChatappPhoneNumbersResult::PhoneNumbersItem> QueryChatappPhoneNumbersResult::getPhoneNumbers()const
 {
 	return phoneNumbers_;
+}
+
+std::string QueryChatappPhoneNumbersResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string QueryChatappPhoneNumbersResult::getMessage()const

@@ -76,6 +76,8 @@ public:
 	void setCustSpaceId(const std::string &custSpaceId);
 	std::string getCategory() const;
 	void setCategory(const std::string &category);
+	int getMessageSendTtlSeconds() const;
+	void setMessageSendTtlSeconds(int messageSendTtlSeconds);
 	std::string getTemplateCode() const;
 	void setTemplateCode(const std::string &templateCode);
 
@@ -90,6 +92,7 @@ private:
 	std::string prodCode_;
 	std::string custSpaceId_;
 	std::string category_;
+	int messageSendTtlSeconds_;
 	std::string templateCode_;
 };
 } // namespace Model

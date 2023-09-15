@@ -40,12 +40,14 @@ namespace AlibabaCloud
 					std::string language;
 					std::string templateName;
 					std::string templateType;
+					std::string reason;
 				};
 
 
 				ListChatappTemplateResult();
 				explicit ListChatappTemplateResult(const std::string &payload);
 				~ListChatappTemplateResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				std::vector<_Template> getListTemplate()const;
 				int getTotal()const;
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string message_;
 				std::vector<_Template> listTemplate_;
 				int total_;

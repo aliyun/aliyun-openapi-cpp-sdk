@@ -45,7 +45,14 @@ void SendChatappMassMessageResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["GroupMessageId"].isNull())
 		groupMessageId_ = value["GroupMessageId"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string SendChatappMassMessageResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string SendChatappMassMessageResult::getMessage()const

@@ -54,6 +54,12 @@ void GetChatappTemplateDetailResult::parse(const std::string &payload)
 		data_.auditStatus = dataNode["AuditStatus"].asString();
 	if(!dataNode["TemplateType"].isNull())
 		data_.templateType = dataNode["TemplateType"].asString();
+	if(!dataNode["QualityScore"].isNull())
+		data_.qualityScore = dataNode["QualityScore"].asString();
+	if(!dataNode["MessageSendTtlSeconds"].isNull())
+		data_.messageSendTtlSeconds = std::stoi(dataNode["MessageSendTtlSeconds"].asString());
+	if(!dataNode["Reason"].isNull())
+		data_.reason = dataNode["Reason"].asString();
 	auto allComponentsNode = dataNode["Components"]["component"];
 	for (auto dataNodeComponentscomponent : allComponentsNode)
 	{
@@ -129,7 +135,14 @@ void GetChatappTemplateDetailResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string GetChatappTemplateDetailResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string GetChatappTemplateDetailResult::getMessage()const

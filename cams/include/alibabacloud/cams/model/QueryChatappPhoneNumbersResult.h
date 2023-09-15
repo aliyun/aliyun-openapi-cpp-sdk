@@ -53,6 +53,7 @@ namespace AlibabaCloud
 				explicit QueryChatappPhoneNumbersResult(const std::string &payload);
 				~QueryChatappPhoneNumbersResult();
 				std::vector<PhoneNumbersItem> getPhoneNumbers()const;
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				std::string getCode()const;
 
@@ -60,6 +61,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::vector<PhoneNumbersItem> phoneNumbers_;
+				std::string accessDeniedDetail_;
 				std::string message_;
 				std::string code_;
 

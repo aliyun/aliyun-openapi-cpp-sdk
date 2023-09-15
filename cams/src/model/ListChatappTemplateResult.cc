@@ -55,6 +55,8 @@ void ListChatappTemplateResult::parse(const std::string &payload)
 			listTemplateObject.category = valueListTemplatetemplate["Category"].asString();
 		if(!valueListTemplatetemplate["TemplateType"].isNull())
 			listTemplateObject.templateType = valueListTemplatetemplate["TemplateType"].asString();
+		if(!valueListTemplatetemplate["Reason"].isNull())
+			listTemplateObject.reason = valueListTemplatetemplate["Reason"].asString();
 		listTemplate_.push_back(listTemplateObject);
 	}
 	if(!value["Code"].isNull())
@@ -63,7 +65,14 @@ void ListChatappTemplateResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Total"].isNull())
 		total_ = std::stoi(value["Total"].asString());
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string ListChatappTemplateResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string ListChatappTemplateResult::getMessage()const

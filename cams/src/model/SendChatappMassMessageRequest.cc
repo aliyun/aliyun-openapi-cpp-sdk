@@ -66,6 +66,13 @@ void SendChatappMassMessageRequest::setSenderList(const std::vector<SendChatappM
     for(int dep2 = 0; dep2 != senderList[dep1].payload.size(); dep2++) {
       setBodyParameter(std::string("SenderList") + "." + std::to_string(dep1 + 1) + ".Payload." + std::to_string(dep2 + 1), senderList[dep1].payload[dep2]);
     }
+    setBodyParameter(std::string("SenderList") + "." + std::to_string(dep1 + 1) + ".ProductAction.ThumbnailProductRetailerId", senderList[dep1].productAction.thumbnailProductRetailerId);
+    for(int dep2 = 0; dep2 != senderList[dep1].productAction.sections.size(); dep2++) {
+      setBodyParameter(std::string("SenderList") + "." + std::to_string(dep1 + 1) + ".ProductAction.Sections." + std::to_string(dep2 + 1) + ".Title", senderList[dep1].productAction.sections[dep2].title);
+      for(int dep3 = 0; dep3 != senderList[dep1].productAction.sections[dep2].productItems.size(); dep3++) {
+        setBodyParameter(std::string("SenderList") + "." + std::to_string(dep1 + 1) + ".ProductAction.Sections." + std::to_string(dep2 + 1) + ".ProductItems." + std::to_string(dep3 + 1) + ".ProductRetailerId", senderList[dep1].productAction.sections[dep2].productItems[dep3].productRetailerId);
+      }
+    }
   }
 }
 

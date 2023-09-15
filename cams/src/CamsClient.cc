@@ -51,6 +51,42 @@ CamsClient::CamsClient(const std::string & accessKeyId, const std::string & acce
 CamsClient::~CamsClient()
 {}
 
+CamsClient::AddChatappPhoneNumberOutcome CamsClient::addChatappPhoneNumber(const AddChatappPhoneNumberRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddChatappPhoneNumberOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddChatappPhoneNumberOutcome(AddChatappPhoneNumberResult(outcome.result()));
+	else
+		return AddChatappPhoneNumberOutcome(outcome.error());
+}
+
+void CamsClient::addChatappPhoneNumberAsync(const AddChatappPhoneNumberRequest& request, const AddChatappPhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addChatappPhoneNumber(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::AddChatappPhoneNumberOutcomeCallable CamsClient::addChatappPhoneNumberCallable(const AddChatappPhoneNumberRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddChatappPhoneNumberOutcome()>>(
+			[this, request]()
+			{
+			return this->addChatappPhoneNumber(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CamsClient::BeeBotAssociateOutcome CamsClient::beeBotAssociate(const BeeBotAssociateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +297,42 @@ CamsClient::ChatappMigrationVerifiedOutcomeCallable CamsClient::chatappMigration
 			[this, request]()
 			{
 			return this->chatappMigrationVerified(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::ChatappPhoneNumberDeregisterOutcome CamsClient::chatappPhoneNumberDeregister(const ChatappPhoneNumberDeregisterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChatappPhoneNumberDeregisterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChatappPhoneNumberDeregisterOutcome(ChatappPhoneNumberDeregisterResult(outcome.result()));
+	else
+		return ChatappPhoneNumberDeregisterOutcome(outcome.error());
+}
+
+void CamsClient::chatappPhoneNumberDeregisterAsync(const ChatappPhoneNumberDeregisterRequest& request, const ChatappPhoneNumberDeregisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, chatappPhoneNumberDeregister(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::ChatappPhoneNumberDeregisterOutcomeCallable CamsClient::chatappPhoneNumberDeregisterCallable(const ChatappPhoneNumberDeregisterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChatappPhoneNumberDeregisterOutcome()>>(
+			[this, request]()
+			{
+			return this->chatappPhoneNumberDeregister(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -483,6 +555,78 @@ CamsClient::DeleteChatappTemplateOutcomeCallable CamsClient::deleteChatappTempla
 	return task->get_future();
 }
 
+CamsClient::EnableWhatsappROIMetricOutcome CamsClient::enableWhatsappROIMetric(const EnableWhatsappROIMetricRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableWhatsappROIMetricOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableWhatsappROIMetricOutcome(EnableWhatsappROIMetricResult(outcome.result()));
+	else
+		return EnableWhatsappROIMetricOutcome(outcome.error());
+}
+
+void CamsClient::enableWhatsappROIMetricAsync(const EnableWhatsappROIMetricRequest& request, const EnableWhatsappROIMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableWhatsappROIMetric(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::EnableWhatsappROIMetricOutcomeCallable CamsClient::enableWhatsappROIMetricCallable(const EnableWhatsappROIMetricRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableWhatsappROIMetricOutcome()>>(
+			[this, request]()
+			{
+			return this->enableWhatsappROIMetric(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::GetChatappPhoneNumberMetricOutcome CamsClient::getChatappPhoneNumberMetric(const GetChatappPhoneNumberMetricRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetChatappPhoneNumberMetricOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetChatappPhoneNumberMetricOutcome(GetChatappPhoneNumberMetricResult(outcome.result()));
+	else
+		return GetChatappPhoneNumberMetricOutcome(outcome.error());
+}
+
+void CamsClient::getChatappPhoneNumberMetricAsync(const GetChatappPhoneNumberMetricRequest& request, const GetChatappPhoneNumberMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getChatappPhoneNumberMetric(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::GetChatappPhoneNumberMetricOutcomeCallable CamsClient::getChatappPhoneNumberMetricCallable(const GetChatappPhoneNumberMetricRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetChatappPhoneNumberMetricOutcome()>>(
+			[this, request]()
+			{
+			return this->getChatappPhoneNumberMetric(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CamsClient::GetChatappTemplateDetailOutcome CamsClient::getChatappTemplateDetail(const GetChatappTemplateDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,6 +657,42 @@ CamsClient::GetChatappTemplateDetailOutcomeCallable CamsClient::getChatappTempla
 			[this, request]()
 			{
 			return this->getChatappTemplateDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::GetChatappTemplateMetricOutcome CamsClient::getChatappTemplateMetric(const GetChatappTemplateMetricRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetChatappTemplateMetricOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetChatappTemplateMetricOutcome(GetChatappTemplateMetricResult(outcome.result()));
+	else
+		return GetChatappTemplateMetricOutcome(outcome.error());
+}
+
+void CamsClient::getChatappTemplateMetricAsync(const GetChatappTemplateMetricRequest& request, const GetChatappTemplateMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getChatappTemplateMetric(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::GetChatappTemplateMetricOutcomeCallable CamsClient::getChatappTemplateMetricCallable(const GetChatappTemplateMetricRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetChatappTemplateMetricOutcome()>>(
+			[this, request]()
+			{
+			return this->getChatappTemplateMetric(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -663,6 +843,78 @@ CamsClient::GetPhoneNumberVerificationStatusOutcomeCallable CamsClient::getPhone
 	return task->get_future();
 }
 
+CamsClient::GetPreValidatePhoneIdOutcome CamsClient::getPreValidatePhoneId(const GetPreValidatePhoneIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPreValidatePhoneIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPreValidatePhoneIdOutcome(GetPreValidatePhoneIdResult(outcome.result()));
+	else
+		return GetPreValidatePhoneIdOutcome(outcome.error());
+}
+
+void CamsClient::getPreValidatePhoneIdAsync(const GetPreValidatePhoneIdRequest& request, const GetPreValidatePhoneIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPreValidatePhoneId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::GetPreValidatePhoneIdOutcomeCallable CamsClient::getPreValidatePhoneIdCallable(const GetPreValidatePhoneIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPreValidatePhoneIdOutcome()>>(
+			[this, request]()
+			{
+			return this->getPreValidatePhoneId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::GetWhatsappConnectionCatalogOutcome CamsClient::getWhatsappConnectionCatalog(const GetWhatsappConnectionCatalogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetWhatsappConnectionCatalogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetWhatsappConnectionCatalogOutcome(GetWhatsappConnectionCatalogResult(outcome.result()));
+	else
+		return GetWhatsappConnectionCatalogOutcome(outcome.error());
+}
+
+void CamsClient::getWhatsappConnectionCatalogAsync(const GetWhatsappConnectionCatalogRequest& request, const GetWhatsappConnectionCatalogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getWhatsappConnectionCatalog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::GetWhatsappConnectionCatalogOutcomeCallable CamsClient::getWhatsappConnectionCatalogCallable(const GetWhatsappConnectionCatalogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetWhatsappConnectionCatalogOutcome()>>(
+			[this, request]()
+			{
+			return this->getWhatsappConnectionCatalog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CamsClient::IsvGetAppIdOutcome CamsClient::isvGetAppId(const IsvGetAppIdRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,6 +981,78 @@ CamsClient::ListChatappTemplateOutcomeCallable CamsClient::listChatappTemplateCa
 			[this, request]()
 			{
 			return this->listChatappTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::ListProductOutcome CamsClient::listProduct(const ListProductRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListProductOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListProductOutcome(ListProductResult(outcome.result()));
+	else
+		return ListProductOutcome(outcome.error());
+}
+
+void CamsClient::listProductAsync(const ListProductRequest& request, const ListProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listProduct(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::ListProductOutcomeCallable CamsClient::listProductCallable(const ListProductRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListProductOutcome()>>(
+			[this, request]()
+			{
+			return this->listProduct(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::ListProductCatalogOutcome CamsClient::listProductCatalog(const ListProductCatalogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListProductCatalogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListProductCatalogOutcome(ListProductCatalogResult(outcome.result()));
+	else
+		return ListProductCatalogOutcome(outcome.error());
+}
+
+void CamsClient::listProductCatalogAsync(const ListProductCatalogRequest& request, const ListProductCatalogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listProductCatalog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::ListProductCatalogOutcomeCallable CamsClient::listProductCatalogCallable(const ListProductCatalogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListProductCatalogOutcome()>>(
+			[this, request]()
+			{
+			return this->listProductCatalog(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

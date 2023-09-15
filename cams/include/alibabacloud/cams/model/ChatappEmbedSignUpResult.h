@@ -45,6 +45,7 @@ namespace AlibabaCloud
 				ChatappEmbedSignUpResult();
 				explicit ChatappEmbedSignUpResult(const std::string &payload);
 				~ChatappEmbedSignUpResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				std::vector<Waba列表> getWabas()const;
 				std::string getCode()const;
@@ -52,6 +53,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string message_;
 				std::vector<Waba列表> wabas_;
 				std::string code_;

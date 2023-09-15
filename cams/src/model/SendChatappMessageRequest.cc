@@ -25,6 +25,21 @@ SendChatappMessageRequest::SendChatappMessageRequest()
 
 SendChatappMessageRequest::~SendChatappMessageRequest() {}
 
+SendChatappMessageRequest::ProductAction SendChatappMessageRequest::getProductAction() const {
+  return productAction_;
+}
+
+void SendChatappMessageRequest::setProductAction(const SendChatappMessageRequest::ProductAction &productAction) {
+  productAction_ = productAction;
+  setBodyParameter(std::string("ProductAction") + ".ThumbnailProductRetailerId", productAction.thumbnailProductRetailerId);
+  for(int dep1 = 0; dep1 != productAction.sections.size(); dep1++) {
+    setBodyParameter(std::string("ProductAction") + ".Sections." + std::to_string(dep1 + 1) + ".Title", productAction.sections[dep1].title);
+    for(int dep2 = 0; dep2 != productAction.sections[dep1].productItems.size(); dep2++) {
+      setBodyParameter(std::string("ProductAction") + ".Sections." + std::to_string(dep1 + 1) + ".ProductItems." + std::to_string(dep2 + 1) + ".ProductRetailerId", productAction.sections[dep1].productItems[dep2].productRetailerId);
+    }
+  }
+}
+
 std::string SendChatappMessageRequest::getMessageType() const {
   return messageType_;
 }

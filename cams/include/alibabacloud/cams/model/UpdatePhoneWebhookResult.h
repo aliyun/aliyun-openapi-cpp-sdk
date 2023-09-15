@@ -37,12 +37,14 @@ namespace AlibabaCloud
 				UpdatePhoneWebhookResult();
 				explicit UpdatePhoneWebhookResult(const std::string &payload);
 				~UpdatePhoneWebhookResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string message_;
 				std::string code_;
 

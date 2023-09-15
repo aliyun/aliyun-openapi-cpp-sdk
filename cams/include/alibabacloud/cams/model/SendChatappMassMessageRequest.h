@@ -33,6 +33,20 @@ public:
 		std::map<std::string, std::string> templateParams;
 		std::string string;
 		std::vector<std::string> payload;
+		struct ProductAction {
+			std::string thumbnailProductRetailerId;
+			struct SectionsItem {
+				std::string title;
+				struct ProductItemsItem {
+					std::string productRetailerId;
+				};
+				ProductItemsItem productItemsItem;
+				std::vector<ProductItemsItem> productItems;
+			};
+			SectionsItem sectionsItem;
+			std::vector<SectionsItem> sections;
+		};
+		ProductAction productAction;
 	};
 	SendChatappMassMessageRequest();
 	~SendChatappMassMessageRequest();

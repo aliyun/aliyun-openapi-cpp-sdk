@@ -80,6 +80,8 @@ public:
 	void setAllowCategoryChange(bool allowCategoryChange);
 	std::string getCategory() const;
 	void setCategory(const std::string &category);
+	int getMessageSendTtlSeconds() const;
+	void setMessageSendTtlSeconds(int messageSendTtlSeconds);
 
 private:
 	std::vector<Components> components_;
@@ -94,6 +96,7 @@ private:
 	std::string name_;
 	bool allowCategoryChange_;
 	std::string category_;
+	int messageSendTtlSeconds_;
 };
 } // namespace Model
 } // namespace Cams

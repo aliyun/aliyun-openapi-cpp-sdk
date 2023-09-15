@@ -28,8 +28,23 @@ namespace Cams {
 namespace Model {
 class ALIBABACLOUD_CAMS_EXPORT SendChatappMessageRequest : public RpcServiceRequest {
 public:
+	struct ProductAction {
+		std::string thumbnailProductRetailerId;
+		struct SectionsItem {
+			std::string title;
+			struct ProductItemsItem {
+				std::string productRetailerId;
+			};
+			ProductItemsItem productItemsItem;
+			std::vector<ProductItemsItem> productItems;
+		};
+		SectionsItem sectionsItem;
+		std::vector<SectionsItem> sections;
+	};
 	SendChatappMessageRequest();
 	~SendChatappMessageRequest();
+	ProductAction getProductAction() const;
+	void setProductAction(const ProductAction &productAction);
 	std::string getMessageType() const;
 	void setMessageType(const std::string &messageType);
 	std::string getLanguage() const;
@@ -80,6 +95,7 @@ public:
 	void setTemplateCode(const std::string &templateCode);
 
 private:
+	ProductAction productAction_;
 	std::string messageType_;
 	std::string language_;
 	std::string custWabaId_;
