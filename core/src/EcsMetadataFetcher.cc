@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include "EcsMetadataFetcher.h"
+#include "alibabacloud/core/EcsMetadataFetcher.h"
 #include "CurlHttpClient.h"
 #include <alibabacloud/core/Url.h>
 #include <memory>

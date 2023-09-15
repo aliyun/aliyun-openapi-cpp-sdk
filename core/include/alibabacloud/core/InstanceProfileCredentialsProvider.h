@@ -17,7 +17,7 @@
 #ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALSPROVIDER_H_
 #define CORE_INCLUDE_ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALSPROVIDER_H_
 
-#include "../src/EcsMetadataFetcher.h"
+#include "EcsMetadataFetcher.h"
 #include "Credentials.h"
 #include "CredentialsProvider.h"
 #include <chrono>
