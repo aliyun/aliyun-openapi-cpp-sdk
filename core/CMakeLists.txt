@@ -37,6 +37,7 @@ set(core_public_header
 	include/alibabacloud/core/CoreExport.h
 	include/alibabacloud/core/Credentials.h
 	include/alibabacloud/core/CredentialsProvider.h
+	include/alibabacloud/core/EcsMetadataFetcher.h
 	include/alibabacloud/core/EndpointProvider.h
 	include/alibabacloud/core/Error.h
 	include/alibabacloud/core/Global.h
@@ -97,7 +98,6 @@ set(core_src
 	src/CurlHttpClient.h
 	src/CurlHttpClient.cc
 	src/EcsMetadataFetcher.cc
-	src/EcsMetadataFetcher.h
 	src/EndpointProvider.cc
 	src/Error.cc
 	src/Executor.cc

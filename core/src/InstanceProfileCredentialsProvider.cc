@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-#include "EcsMetadataFetcher.h"
 #include <alibabacloud/core/InstanceProfileCredentialsProvider.h>
 #include <alibabacloud/core/Utils.h>
 #include <chrono>
