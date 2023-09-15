@@ -52,15 +52,6 @@ void DescribeEaisRequest::setResourceGroupId(const std::string &resourceGroupId)
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string DescribeEaisRequest::getInstanceName() const {
-  return instanceName_;
-}
-
-void DescribeEaisRequest::setInstanceName(const std::string &instanceName) {
-  instanceName_ = instanceName;
-  setParameter(std::string("InstanceName"), instanceName);
-}
-
 std::string DescribeEaisRequest::getRegionId() const {
   return regionId_;
 }
@@ -86,6 +77,38 @@ std::string DescribeEaisRequest::getInstanceType() const {
 void DescribeEaisRequest::setInstanceType(const std::string &instanceType) {
   instanceType_ = instanceType;
   setParameter(std::string("InstanceType"), instanceType);
+}
+
+std::vector<DescribeEaisRequest::Tag> DescribeEaisRequest::getTag() const {
+  return tag_;
+}
+
+void DescribeEaisRequest::setTag(const std::vector<DescribeEaisRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
+std::string DescribeEaisRequest::getClientInstanceId() const {
+  return clientInstanceId_;
+}
+
+void DescribeEaisRequest::setClientInstanceId(const std::string &clientInstanceId) {
+  clientInstanceId_ = clientInstanceId;
+  setParameter(std::string("ClientInstanceId"), clientInstanceId);
+}
+
+std::string DescribeEaisRequest::getInstanceName() const {
+  return instanceName_;
+}
+
+void DescribeEaisRequest::setInstanceName(const std::string &instanceName) {
+  instanceName_ = instanceName;
+  setParameter(std::string("InstanceName"), instanceName);
 }
 
 std::string DescribeEaisRequest::getStatus() const {

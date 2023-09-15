@@ -28,6 +28,10 @@ namespace Eais {
 namespace Model {
 class ALIBABACLOUD_EAIS_EXPORT DescribeEaisRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	DescribeEaisRequest();
 	~DescribeEaisRequest();
 	std::string getElasticAcceleratedInstanceIds() const;
@@ -36,14 +40,18 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
-	std::string getInstanceName() const;
-	void setInstanceName(const std::string &instanceName);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getInstanceType() const;
 	void setInstanceType(const std::string &instanceType);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
+	std::string getClientInstanceId() const;
+	void setClientInstanceId(const std::string &clientInstanceId);
+	std::string getInstanceName() const;
+	void setInstanceName(const std::string &instanceName);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
 
@@ -51,10 +59,12 @@ private:
 	std::string elasticAcceleratedInstanceIds_;
 	int pageNumber_;
 	std::string resourceGroupId_;
-	std::string instanceName_;
 	std::string regionId_;
 	int pageSize_;
 	std::string instanceType_;
+	std::vector<Tag> tag_;
+	std::string clientInstanceId_;
+	std::string instanceName_;
 	std::string status_;
 };
 } // namespace Model
