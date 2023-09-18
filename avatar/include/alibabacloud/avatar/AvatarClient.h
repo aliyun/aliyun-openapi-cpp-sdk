@@ -24,6 +24,10 @@
 #include "AvatarExport.h"
 #include "model/CancelVideoTaskRequest.h"
 #include "model/CancelVideoTaskResult.h"
+#include "model/ClientAuthRequest.h"
+#include "model/ClientAuthResult.h"
+#include "model/ClientStartRequest.h"
+#include "model/ClientStartResult.h"
 #include "model/CloseTimedResetOperateRequest.h"
 #include "model/CloseTimedResetOperateResult.h"
 #include "model/Create2dAvatarRequest.h"
@@ -46,6 +50,8 @@
 #include "model/QueryTimedResetOperateStatusResult.h"
 #include "model/QueryVideoTaskInfoRequest.h"
 #include "model/QueryVideoTaskInfoResult.h"
+#include "model/Render3dAvatarRequest.h"
+#include "model/Render3dAvatarResult.h"
 #include "model/SendCommandRequest.h"
 #include "model/SendCommandResult.h"
 #include "model/SendMessageRequest.h"
@@ -82,6 +88,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CancelVideoTaskResult> CancelVideoTaskOutcome;
 			typedef std::future<CancelVideoTaskOutcome> CancelVideoTaskOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::CancelVideoTaskRequest&, const CancelVideoTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelVideoTaskAsyncHandler;
+			typedef Outcome<Error, Model::ClientAuthResult> ClientAuthOutcome;
+			typedef std::future<ClientAuthOutcome> ClientAuthOutcomeCallable;
+			typedef std::function<void(const AvatarClient*, const Model::ClientAuthRequest&, const ClientAuthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ClientAuthAsyncHandler;
+			typedef Outcome<Error, Model::ClientStartResult> ClientStartOutcome;
+			typedef std::future<ClientStartOutcome> ClientStartOutcomeCallable;
+			typedef std::function<void(const AvatarClient*, const Model::ClientStartRequest&, const ClientStartOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ClientStartAsyncHandler;
 			typedef Outcome<Error, Model::CloseTimedResetOperateResult> CloseTimedResetOperateOutcome;
 			typedef std::future<CloseTimedResetOperateOutcome> CloseTimedResetOperateOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::CloseTimedResetOperateRequest&, const CloseTimedResetOperateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseTimedResetOperateAsyncHandler;
@@ -115,6 +127,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryVideoTaskInfoResult> QueryVideoTaskInfoOutcome;
 			typedef std::future<QueryVideoTaskInfoOutcome> QueryVideoTaskInfoOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::QueryVideoTaskInfoRequest&, const QueryVideoTaskInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryVideoTaskInfoAsyncHandler;
+			typedef Outcome<Error, Model::Render3dAvatarResult> Render3dAvatarOutcome;
+			typedef std::future<Render3dAvatarOutcome> Render3dAvatarOutcomeCallable;
+			typedef std::function<void(const AvatarClient*, const Model::Render3dAvatarRequest&, const Render3dAvatarOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> Render3dAvatarAsyncHandler;
 			typedef Outcome<Error, Model::SendCommandResult> SendCommandOutcome;
 			typedef std::future<SendCommandOutcome> SendCommandOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::SendCommandRequest&, const SendCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendCommandAsyncHandler;
@@ -159,6 +174,12 @@ namespace AlibabaCloud
 			CancelVideoTaskOutcome cancelVideoTask(const Model::CancelVideoTaskRequest &request)const;
 			void cancelVideoTaskAsync(const Model::CancelVideoTaskRequest& request, const CancelVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelVideoTaskOutcomeCallable cancelVideoTaskCallable(const Model::CancelVideoTaskRequest& request) const;
+			ClientAuthOutcome clientAuth(const Model::ClientAuthRequest &request)const;
+			void clientAuthAsync(const Model::ClientAuthRequest& request, const ClientAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ClientAuthOutcomeCallable clientAuthCallable(const Model::ClientAuthRequest& request) const;
+			ClientStartOutcome clientStart(const Model::ClientStartRequest &request)const;
+			void clientStartAsync(const Model::ClientStartRequest& request, const ClientStartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ClientStartOutcomeCallable clientStartCallable(const Model::ClientStartRequest& request) const;
 			CloseTimedResetOperateOutcome closeTimedResetOperate(const Model::CloseTimedResetOperateRequest &request)const;
 			void closeTimedResetOperateAsync(const Model::CloseTimedResetOperateRequest& request, const CloseTimedResetOperateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloseTimedResetOperateOutcomeCallable closeTimedResetOperateCallable(const Model::CloseTimedResetOperateRequest& request) const;
@@ -192,6 +213,9 @@ namespace AlibabaCloud
 			QueryVideoTaskInfoOutcome queryVideoTaskInfo(const Model::QueryVideoTaskInfoRequest &request)const;
 			void queryVideoTaskInfoAsync(const Model::QueryVideoTaskInfoRequest& request, const QueryVideoTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryVideoTaskInfoOutcomeCallable queryVideoTaskInfoCallable(const Model::QueryVideoTaskInfoRequest& request) const;
+			Render3dAvatarOutcome render3dAvatar(const Model::Render3dAvatarRequest &request)const;
+			void render3dAvatarAsync(const Model::Render3dAvatarRequest& request, const Render3dAvatarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			Render3dAvatarOutcomeCallable render3dAvatarCallable(const Model::Render3dAvatarRequest& request) const;
 			SendCommandOutcome sendCommand(const Model::SendCommandRequest &request)const;
 			void sendCommandAsync(const Model::SendCommandRequest& request, const SendCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SendCommandOutcomeCallable sendCommandCallable(const Model::SendCommandRequest& request) const;

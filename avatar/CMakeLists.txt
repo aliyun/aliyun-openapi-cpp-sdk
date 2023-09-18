@@ -23,6 +23,10 @@ set(avatar_public_header
 set(avatar_public_header_model 
 	include/alibabacloud/avatar/model/CancelVideoTaskRequest.h
 	include/alibabacloud/avatar/model/CancelVideoTaskResult.h
+	include/alibabacloud/avatar/model/ClientAuthRequest.h
+	include/alibabacloud/avatar/model/ClientAuthResult.h
+	include/alibabacloud/avatar/model/ClientStartRequest.h
+	include/alibabacloud/avatar/model/ClientStartResult.h
 	include/alibabacloud/avatar/model/CloseTimedResetOperateRequest.h
 	include/alibabacloud/avatar/model/CloseTimedResetOperateResult.h
 	include/alibabacloud/avatar/model/Create2dAvatarRequest.h
@@ -45,6 +49,8 @@ set(avatar_public_header_model
 	include/alibabacloud/avatar/model/QueryTimedResetOperateStatusResult.h
 	include/alibabacloud/avatar/model/QueryVideoTaskInfoRequest.h
 	include/alibabacloud/avatar/model/QueryVideoTaskInfoResult.h
+	include/alibabacloud/avatar/model/Render3dAvatarRequest.h
+	include/alibabacloud/avatar/model/Render3dAvatarResult.h
 	include/alibabacloud/avatar/model/SendCommandRequest.h
 	include/alibabacloud/avatar/model/SendCommandResult.h
 	include/alibabacloud/avatar/model/SendMessageRequest.h
@@ -74,6 +80,10 @@ set(avatar_src
 	src/AvatarClient.cc
 	src/model/CancelVideoTaskRequest.cc
 	src/model/CancelVideoTaskResult.cc
+	src/model/ClientAuthRequest.cc
+	src/model/ClientAuthResult.cc
+	src/model/ClientStartRequest.cc
+	src/model/ClientStartResult.cc
 	src/model/CloseTimedResetOperateRequest.cc
 	src/model/CloseTimedResetOperateResult.cc
 	src/model/Create2dAvatarRequest.cc
@@ -96,6 +106,8 @@ set(avatar_src
 	src/model/QueryTimedResetOperateStatusResult.cc
 	src/model/QueryVideoTaskInfoRequest.cc
 	src/model/QueryVideoTaskInfoResult.cc
+	src/model/Render3dAvatarRequest.cc
+	src/model/Render3dAvatarResult.cc
 	src/model/SendCommandRequest.cc
 	src/model/SendCommandResult.cc
 	src/model/SendMessageRequest.cc

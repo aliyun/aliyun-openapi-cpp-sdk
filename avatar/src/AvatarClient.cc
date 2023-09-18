@@ -87,6 +87,78 @@ AvatarClient::CancelVideoTaskOutcomeCallable AvatarClient::cancelVideoTaskCallab
 	return task->get_future();
 }
 
+AvatarClient::ClientAuthOutcome AvatarClient::clientAuth(const ClientAuthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ClientAuthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ClientAuthOutcome(ClientAuthResult(outcome.result()));
+	else
+		return ClientAuthOutcome(outcome.error());
+}
+
+void AvatarClient::clientAuthAsync(const ClientAuthRequest& request, const ClientAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, clientAuth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::ClientAuthOutcomeCallable AvatarClient::clientAuthCallable(const ClientAuthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ClientAuthOutcome()>>(
+			[this, request]()
+			{
+			return this->clientAuth(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::ClientStartOutcome AvatarClient::clientStart(const ClientStartRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ClientStartOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ClientStartOutcome(ClientStartResult(outcome.result()));
+	else
+		return ClientStartOutcome(outcome.error());
+}
+
+void AvatarClient::clientStartAsync(const ClientStartRequest& request, const ClientStartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, clientStart(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::ClientStartOutcomeCallable AvatarClient::clientStartCallable(const ClientStartRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ClientStartOutcome()>>(
+			[this, request]()
+			{
+			return this->clientStart(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AvatarClient::CloseTimedResetOperateOutcome AvatarClient::closeTimedResetOperate(const CloseTimedResetOperateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,6 +549,42 @@ AvatarClient::QueryVideoTaskInfoOutcomeCallable AvatarClient::queryVideoTaskInfo
 			[this, request]()
 			{
 			return this->queryVideoTaskInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::Render3dAvatarOutcome AvatarClient::render3dAvatar(const Render3dAvatarRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return Render3dAvatarOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return Render3dAvatarOutcome(Render3dAvatarResult(outcome.result()));
+	else
+		return Render3dAvatarOutcome(outcome.error());
+}
+
+void AvatarClient::render3dAvatarAsync(const Render3dAvatarRequest& request, const Render3dAvatarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, render3dAvatar(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::Render3dAvatarOutcomeCallable AvatarClient::render3dAvatarCallable(const Render3dAvatarRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<Render3dAvatarOutcome()>>(
+			[this, request]()
+			{
+			return this->render3dAvatar(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
