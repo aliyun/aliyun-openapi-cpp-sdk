@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADB_MODEL_DRYRUNCLUSTERRESULT_H_
-#define ALIBABACLOUD_ADB_MODEL_DRYRUNCLUSTERRESULT_H_
+#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBEVSWITCHESRESULT_H_
+#define ALIBABACLOUD_ADB_MODEL_DESCRIBEVSWITCHESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,41 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADB_EXPORT DryRunClusterResult : public ServiceResult
+			class ALIBABACLOUD_ADB_EXPORT DescribeVSwitchesResult : public ServiceResult
 			{
 			public:
+				struct VSwitches
+				{
+					struct VSwitchItem
+					{
+						std::string status;
+						bool isDefault;
+						std::string regionNo;
+						std::string izNo;
+						std::string gmtCreate;
+						std::string vSwitchId;
+						std::string gmtModified;
+						std::string cidrBlock;
+						std::string vSwitchName;
+						std::string bid;
+						std::string aliUid;
+					};
+					std::vector<VSwitchItem> vSwitch;
+				};
 
 
-				DryRunClusterResult();
-				explicit DryRunClusterResult(const std::string &payload);
-				~DryRunClusterResult();
-				bool getSuccess()const;
+				DescribeVSwitchesResult();
+				explicit DescribeVSwitchesResult(const std::string &payload);
+				~DescribeVSwitchesResult();
+				VSwitches getVSwitches()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				bool success_;
+				VSwitches vSwitches_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADB_MODEL_DRYRUNCLUSTERRESULT_H_
+#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBEVSWITCHESRESULT_H_

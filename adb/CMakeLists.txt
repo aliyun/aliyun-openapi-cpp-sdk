@@ -163,14 +163,14 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/DescribeTablesResult.h
 	include/alibabacloud/adb/model/DescribeTaskInfoRequest.h
 	include/alibabacloud/adb/model/DescribeTaskInfoResult.h
+	include/alibabacloud/adb/model/DescribeVSwitchesRequest.h
+	include/alibabacloud/adb/model/DescribeVSwitchesResult.h
 	include/alibabacloud/adb/model/DetachUserENIRequest.h
 	include/alibabacloud/adb/model/DetachUserENIResult.h
 	include/alibabacloud/adb/model/DisableAdviceServiceRequest.h
 	include/alibabacloud/adb/model/DisableAdviceServiceResult.h
 	include/alibabacloud/adb/model/DownloadDiagnosisRecordsRequest.h
 	include/alibabacloud/adb/model/DownloadDiagnosisRecordsResult.h
-	include/alibabacloud/adb/model/DryRunClusterRequest.h
-	include/alibabacloud/adb/model/DryRunClusterResult.h
 	include/alibabacloud/adb/model/EnableAdviceServiceRequest.h
 	include/alibabacloud/adb/model/EnableAdviceServiceResult.h
 	include/alibabacloud/adb/model/GrantOperatorPermissionRequest.h
@@ -372,14 +372,14 @@ set(adb_src
 	src/model/DescribeTablesResult.cc
 	src/model/DescribeTaskInfoRequest.cc
 	src/model/DescribeTaskInfoResult.cc
+	src/model/DescribeVSwitchesRequest.cc
+	src/model/DescribeVSwitchesResult.cc
 	src/model/DetachUserENIRequest.cc
 	src/model/DetachUserENIResult.cc
 	src/model/DisableAdviceServiceRequest.cc
 	src/model/DisableAdviceServiceResult.cc
 	src/model/DownloadDiagnosisRecordsRequest.cc
 	src/model/DownloadDiagnosisRecordsResult.cc
-	src/model/DryRunClusterRequest.cc
-	src/model/DryRunClusterResult.cc
 	src/model/EnableAdviceServiceRequest.cc
 	src/model/EnableAdviceServiceResult.cc
 	src/model/GrantOperatorPermissionRequest.cc

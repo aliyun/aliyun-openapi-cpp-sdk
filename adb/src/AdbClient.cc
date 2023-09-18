@@ -2607,6 +2607,42 @@ AdbClient::DescribeTaskInfoOutcomeCallable AdbClient::describeTaskInfoCallable(c
 	return task->get_future();
 }
 
+AdbClient::DescribeVSwitchesOutcome AdbClient::describeVSwitches(const DescribeVSwitchesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVSwitchesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVSwitchesOutcome(DescribeVSwitchesResult(outcome.result()));
+	else
+		return DescribeVSwitchesOutcome(outcome.error());
+}
+
+void AdbClient::describeVSwitchesAsync(const DescribeVSwitchesRequest& request, const DescribeVSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVSwitches(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::DescribeVSwitchesOutcomeCallable AdbClient::describeVSwitchesCallable(const DescribeVSwitchesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVSwitchesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVSwitches(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AdbClient::DetachUserENIOutcome AdbClient::detachUserENI(const DetachUserENIRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2709,42 +2745,6 @@ AdbClient::DownloadDiagnosisRecordsOutcomeCallable AdbClient::downloadDiagnosisR
 			[this, request]()
 			{
 			return this->downloadDiagnosisRecords(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DryRunClusterOutcome AdbClient::dryRunCluster(const DryRunClusterRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DryRunClusterOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DryRunClusterOutcome(DryRunClusterResult(outcome.result()));
-	else
-		return DryRunClusterOutcome(outcome.error());
-}
-
-void AdbClient::dryRunClusterAsync(const DryRunClusterRequest& request, const DryRunClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, dryRunCluster(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DryRunClusterOutcomeCallable AdbClient::dryRunClusterCallable(const DryRunClusterRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DryRunClusterOutcome()>>(
-			[this, request]()
-			{
-			return this->dryRunCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

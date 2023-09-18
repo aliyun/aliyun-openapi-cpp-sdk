@@ -164,14 +164,14 @@
 #include "model/DescribeTablesResult.h"
 #include "model/DescribeTaskInfoRequest.h"
 #include "model/DescribeTaskInfoResult.h"
+#include "model/DescribeVSwitchesRequest.h"
+#include "model/DescribeVSwitchesResult.h"
 #include "model/DetachUserENIRequest.h"
 #include "model/DetachUserENIResult.h"
 #include "model/DisableAdviceServiceRequest.h"
 #include "model/DisableAdviceServiceResult.h"
 #include "model/DownloadDiagnosisRecordsRequest.h"
 #include "model/DownloadDiagnosisRecordsResult.h"
-#include "model/DryRunClusterRequest.h"
-#include "model/DryRunClusterResult.h"
 #include "model/EnableAdviceServiceRequest.h"
 #include "model/EnableAdviceServiceResult.h"
 #include "model/GrantOperatorPermissionRequest.h"
@@ -450,6 +450,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTaskInfoResult> DescribeTaskInfoOutcome;
 			typedef std::future<DescribeTaskInfoOutcome> DescribeTaskInfoOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeTaskInfoRequest&, const DescribeTaskInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVSwitchesResult> DescribeVSwitchesOutcome;
+			typedef std::future<DescribeVSwitchesOutcome> DescribeVSwitchesOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeVSwitchesRequest&, const DescribeVSwitchesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVSwitchesAsyncHandler;
 			typedef Outcome<Error, Model::DetachUserENIResult> DetachUserENIOutcome;
 			typedef std::future<DetachUserENIOutcome> DetachUserENIOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DetachUserENIRequest&, const DetachUserENIOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachUserENIAsyncHandler;
@@ -459,9 +462,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DownloadDiagnosisRecordsResult> DownloadDiagnosisRecordsOutcome;
 			typedef std::future<DownloadDiagnosisRecordsOutcome> DownloadDiagnosisRecordsOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DownloadDiagnosisRecordsRequest&, const DownloadDiagnosisRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DownloadDiagnosisRecordsAsyncHandler;
-			typedef Outcome<Error, Model::DryRunClusterResult> DryRunClusterOutcome;
-			typedef std::future<DryRunClusterOutcome> DryRunClusterOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DryRunClusterRequest&, const DryRunClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DryRunClusterAsyncHandler;
 			typedef Outcome<Error, Model::EnableAdviceServiceResult> EnableAdviceServiceOutcome;
 			typedef std::future<EnableAdviceServiceOutcome> EnableAdviceServiceOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::EnableAdviceServiceRequest&, const EnableAdviceServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableAdviceServiceAsyncHandler;
@@ -764,6 +764,9 @@ namespace AlibabaCloud
 			DescribeTaskInfoOutcome describeTaskInfo(const Model::DescribeTaskInfoRequest &request)const;
 			void describeTaskInfoAsync(const Model::DescribeTaskInfoRequest& request, const DescribeTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTaskInfoOutcomeCallable describeTaskInfoCallable(const Model::DescribeTaskInfoRequest& request) const;
+			DescribeVSwitchesOutcome describeVSwitches(const Model::DescribeVSwitchesRequest &request)const;
+			void describeVSwitchesAsync(const Model::DescribeVSwitchesRequest& request, const DescribeVSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVSwitchesOutcomeCallable describeVSwitchesCallable(const Model::DescribeVSwitchesRequest& request) const;
 			DetachUserENIOutcome detachUserENI(const Model::DetachUserENIRequest &request)const;
 			void detachUserENIAsync(const Model::DetachUserENIRequest& request, const DetachUserENIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachUserENIOutcomeCallable detachUserENICallable(const Model::DetachUserENIRequest& request) const;
@@ -773,9 +776,6 @@ namespace AlibabaCloud
 			DownloadDiagnosisRecordsOutcome downloadDiagnosisRecords(const Model::DownloadDiagnosisRecordsRequest &request)const;
 			void downloadDiagnosisRecordsAsync(const Model::DownloadDiagnosisRecordsRequest& request, const DownloadDiagnosisRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DownloadDiagnosisRecordsOutcomeCallable downloadDiagnosisRecordsCallable(const Model::DownloadDiagnosisRecordsRequest& request) const;
-			DryRunClusterOutcome dryRunCluster(const Model::DryRunClusterRequest &request)const;
-			void dryRunClusterAsync(const Model::DryRunClusterRequest& request, const DryRunClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DryRunClusterOutcomeCallable dryRunClusterCallable(const Model::DryRunClusterRequest& request) const;
 			EnableAdviceServiceOutcome enableAdviceService(const Model::EnableAdviceServiceRequest &request)const;
 			void enableAdviceServiceAsync(const Model::EnableAdviceServiceRequest& request, const EnableAdviceServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableAdviceServiceOutcomeCallable enableAdviceServiceCallable(const Model::EnableAdviceServiceRequest& request) const;
