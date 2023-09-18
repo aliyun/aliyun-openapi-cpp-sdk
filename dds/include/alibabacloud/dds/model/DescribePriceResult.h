@@ -51,6 +51,7 @@ namespace AlibabaCloud
 						double lackForPriceBreak;
 					};
 					std::vector<std::string> ruleIds1;
+					bool showDiscountInfo;
 					std::string currency;
 					std::string tradeAmount;
 					std::vector<Coupon> coupons;
