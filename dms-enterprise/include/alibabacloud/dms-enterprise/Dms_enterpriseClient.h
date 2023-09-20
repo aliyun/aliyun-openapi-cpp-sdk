@@ -40,6 +40,8 @@
 #include "model/BuyPayAsYouGoOrderResult.h"
 #include "model/ChangeColumnSecLevelRequest.h"
 #include "model/ChangeColumnSecLevelResult.h"
+#include "model/ChangeColumnSecurityLevelRequest.h"
+#include "model/ChangeColumnSecurityLevelResult.h"
 #include "model/ChangeLhDagOwnerRequest.h"
 #include "model/ChangeLhDagOwnerResult.h"
 #include "model/CloseOrderRequest.h"
@@ -68,6 +70,8 @@
 #include "model/CreateLogicDatabaseResult.h"
 #include "model/CreateOrderRequest.h"
 #include "model/CreateOrderResult.h"
+#include "model/CreateProcCorrectOrderRequest.h"
+#include "model/CreateProcCorrectOrderResult.h"
 #include "model/CreateProxyRequest.h"
 #include "model/CreateProxyResult.h"
 #include "model/CreateProxyAccessRequest.h"
@@ -136,6 +140,8 @@
 #include "model/GetAuthorityTemplateResult.h"
 #include "model/GetAuthorityTemplateItemRequest.h"
 #include "model/GetAuthorityTemplateItemResult.h"
+#include "model/GetClassificationTemplateRequest.h"
+#include "model/GetClassificationTemplateResult.h"
 #include "model/GetDBTaskSQLJobLogRequest.h"
 #include "model/GetDBTaskSQLJobLogResult.h"
 #include "model/GetDBTopologyRequest.h"
@@ -312,6 +318,8 @@
 #include "model/ListSensitiveColumnsDetailResult.h"
 #include "model/ListSensitiveDataAuditLogRequest.h"
 #include "model/ListSensitiveDataAuditLogResult.h"
+#include "model/ListSensitivityLevelRequest.h"
+#include "model/ListSensitivityLevelResult.h"
 #include "model/ListStandardGroupsRequest.h"
 #include "model/ListStandardGroupsResult.h"
 #include "model/ListTablesRequest.h"
@@ -474,6 +482,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ChangeColumnSecLevelResult> ChangeColumnSecLevelOutcome;
 			typedef std::future<ChangeColumnSecLevelOutcome> ChangeColumnSecLevelOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ChangeColumnSecLevelRequest&, const ChangeColumnSecLevelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeColumnSecLevelAsyncHandler;
+			typedef Outcome<Error, Model::ChangeColumnSecurityLevelResult> ChangeColumnSecurityLevelOutcome;
+			typedef std::future<ChangeColumnSecurityLevelOutcome> ChangeColumnSecurityLevelOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::ChangeColumnSecurityLevelRequest&, const ChangeColumnSecurityLevelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeColumnSecurityLevelAsyncHandler;
 			typedef Outcome<Error, Model::ChangeLhDagOwnerResult> ChangeLhDagOwnerOutcome;
 			typedef std::future<ChangeLhDagOwnerOutcome> ChangeLhDagOwnerOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ChangeLhDagOwnerRequest&, const ChangeLhDagOwnerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeLhDagOwnerAsyncHandler;
@@ -516,6 +527,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateOrderResult> CreateOrderOutcome;
 			typedef std::future<CreateOrderOutcome> CreateOrderOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateOrderRequest&, const CreateOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrderAsyncHandler;
+			typedef Outcome<Error, Model::CreateProcCorrectOrderResult> CreateProcCorrectOrderOutcome;
+			typedef std::future<CreateProcCorrectOrderOutcome> CreateProcCorrectOrderOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateProcCorrectOrderRequest&, const CreateProcCorrectOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProcCorrectOrderAsyncHandler;
 			typedef Outcome<Error, Model::CreateProxyResult> CreateProxyOutcome;
 			typedef std::future<CreateProxyOutcome> CreateProxyOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateProxyRequest&, const CreateProxyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProxyAsyncHandler;
@@ -618,6 +632,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAuthorityTemplateItemResult> GetAuthorityTemplateItemOutcome;
 			typedef std::future<GetAuthorityTemplateItemOutcome> GetAuthorityTemplateItemOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetAuthorityTemplateItemRequest&, const GetAuthorityTemplateItemOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAuthorityTemplateItemAsyncHandler;
+			typedef Outcome<Error, Model::GetClassificationTemplateResult> GetClassificationTemplateOutcome;
+			typedef std::future<GetClassificationTemplateOutcome> GetClassificationTemplateOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetClassificationTemplateRequest&, const GetClassificationTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetClassificationTemplateAsyncHandler;
 			typedef Outcome<Error, Model::GetDBTaskSQLJobLogResult> GetDBTaskSQLJobLogOutcome;
 			typedef std::future<GetDBTaskSQLJobLogOutcome> GetDBTaskSQLJobLogOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDBTaskSQLJobLogRequest&, const GetDBTaskSQLJobLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDBTaskSQLJobLogAsyncHandler;
@@ -882,6 +899,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListSensitiveDataAuditLogResult> ListSensitiveDataAuditLogOutcome;
 			typedef std::future<ListSensitiveDataAuditLogOutcome> ListSensitiveDataAuditLogOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListSensitiveDataAuditLogRequest&, const ListSensitiveDataAuditLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSensitiveDataAuditLogAsyncHandler;
+			typedef Outcome<Error, Model::ListSensitivityLevelResult> ListSensitivityLevelOutcome;
+			typedef std::future<ListSensitivityLevelOutcome> ListSensitivityLevelOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListSensitivityLevelRequest&, const ListSensitivityLevelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSensitivityLevelAsyncHandler;
 			typedef Outcome<Error, Model::ListStandardGroupsResult> ListStandardGroupsOutcome;
 			typedef std::future<ListStandardGroupsOutcome> ListStandardGroupsOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListStandardGroupsRequest&, const ListStandardGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListStandardGroupsAsyncHandler;
@@ -1103,6 +1123,9 @@ namespace AlibabaCloud
 			ChangeColumnSecLevelOutcome changeColumnSecLevel(const Model::ChangeColumnSecLevelRequest &request)const;
 			void changeColumnSecLevelAsync(const Model::ChangeColumnSecLevelRequest& request, const ChangeColumnSecLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ChangeColumnSecLevelOutcomeCallable changeColumnSecLevelCallable(const Model::ChangeColumnSecLevelRequest& request) const;
+			ChangeColumnSecurityLevelOutcome changeColumnSecurityLevel(const Model::ChangeColumnSecurityLevelRequest &request)const;
+			void changeColumnSecurityLevelAsync(const Model::ChangeColumnSecurityLevelRequest& request, const ChangeColumnSecurityLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChangeColumnSecurityLevelOutcomeCallable changeColumnSecurityLevelCallable(const Model::ChangeColumnSecurityLevelRequest& request) const;
 			ChangeLhDagOwnerOutcome changeLhDagOwner(const Model::ChangeLhDagOwnerRequest &request)const;
 			void changeLhDagOwnerAsync(const Model::ChangeLhDagOwnerRequest& request, const ChangeLhDagOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ChangeLhDagOwnerOutcomeCallable changeLhDagOwnerCallable(const Model::ChangeLhDagOwnerRequest& request) const;
@@ -1145,6 +1168,9 @@ namespace AlibabaCloud
 			CreateOrderOutcome createOrder(const Model::CreateOrderRequest &request)const;
 			void createOrderAsync(const Model::CreateOrderRequest& request, const CreateOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateOrderOutcomeCallable createOrderCallable(const Model::CreateOrderRequest& request) const;
+			CreateProcCorrectOrderOutcome createProcCorrectOrder(const Model::CreateProcCorrectOrderRequest &request)const;
+			void createProcCorrectOrderAsync(const Model::CreateProcCorrectOrderRequest& request, const CreateProcCorrectOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateProcCorrectOrderOutcomeCallable createProcCorrectOrderCallable(const Model::CreateProcCorrectOrderRequest& request) const;
 			CreateProxyOutcome createProxy(const Model::CreateProxyRequest &request)const;
 			void createProxyAsync(const Model::CreateProxyRequest& request, const CreateProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateProxyOutcomeCallable createProxyCallable(const Model::CreateProxyRequest& request) const;
@@ -1247,6 +1273,9 @@ namespace AlibabaCloud
 			GetAuthorityTemplateItemOutcome getAuthorityTemplateItem(const Model::GetAuthorityTemplateItemRequest &request)const;
 			void getAuthorityTemplateItemAsync(const Model::GetAuthorityTemplateItemRequest& request, const GetAuthorityTemplateItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAuthorityTemplateItemOutcomeCallable getAuthorityTemplateItemCallable(const Model::GetAuthorityTemplateItemRequest& request) const;
+			GetClassificationTemplateOutcome getClassificationTemplate(const Model::GetClassificationTemplateRequest &request)const;
+			void getClassificationTemplateAsync(const Model::GetClassificationTemplateRequest& request, const GetClassificationTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetClassificationTemplateOutcomeCallable getClassificationTemplateCallable(const Model::GetClassificationTemplateRequest& request) const;
 			GetDBTaskSQLJobLogOutcome getDBTaskSQLJobLog(const Model::GetDBTaskSQLJobLogRequest &request)const;
 			void getDBTaskSQLJobLogAsync(const Model::GetDBTaskSQLJobLogRequest& request, const GetDBTaskSQLJobLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDBTaskSQLJobLogOutcomeCallable getDBTaskSQLJobLogCallable(const Model::GetDBTaskSQLJobLogRequest& request) const;
@@ -1511,6 +1540,9 @@ namespace AlibabaCloud
 			ListSensitiveDataAuditLogOutcome listSensitiveDataAuditLog(const Model::ListSensitiveDataAuditLogRequest &request)const;
 			void listSensitiveDataAuditLogAsync(const Model::ListSensitiveDataAuditLogRequest& request, const ListSensitiveDataAuditLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSensitiveDataAuditLogOutcomeCallable listSensitiveDataAuditLogCallable(const Model::ListSensitiveDataAuditLogRequest& request) const;
+			ListSensitivityLevelOutcome listSensitivityLevel(const Model::ListSensitivityLevelRequest &request)const;
+			void listSensitivityLevelAsync(const Model::ListSensitivityLevelRequest& request, const ListSensitivityLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSensitivityLevelOutcomeCallable listSensitivityLevelCallable(const Model::ListSensitivityLevelRequest& request) const;
 			ListStandardGroupsOutcome listStandardGroups(const Model::ListStandardGroupsRequest &request)const;
 			void listStandardGroupsAsync(const Model::ListStandardGroupsRequest& request, const ListStandardGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListStandardGroupsOutcomeCallable listStandardGroupsCallable(const Model::ListStandardGroupsRequest& request) const;

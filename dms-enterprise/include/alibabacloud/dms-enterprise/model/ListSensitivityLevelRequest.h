@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_REFUNDPAYASYOUGOORDERREQUEST_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_REFUNDPAYASYOUGOORDERREQUEST_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSENSITIVITYLEVELREQUEST_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSENSITIVITYLEVELREQUEST_H_
 
 #include <alibabacloud/dms-enterprise/Dms_enterpriseExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,23 @@
 namespace AlibabaCloud {
 namespace Dms_enterprise {
 namespace Model {
-class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT RefundPayAsYouGoOrderRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListSensitivityLevelRequest : public RpcServiceRequest {
 public:
-	RefundPayAsYouGoOrderRequest();
-	~RefundPayAsYouGoOrderRequest();
+	ListSensitivityLevelRequest();
+	~ListSensitivityLevelRequest();
 	long getTid() const;
 	void setTid(long tid);
-	std::string getOrderId() const;
-	void setOrderId(const std::string &orderId);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
+	std::string getTemplateType() const;
+	void setTemplateType(const std::string &templateType);
+	long getTemplateId() const;
+	void setTemplateId(long templateId);
 
 private:
 	long tid_;
-	std::string orderId_;
-	std::string instanceId_;
+	std::string templateType_;
+	long templateId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_REFUNDPAYASYOUGOORDERREQUEST_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSENSITIVITYLEVELREQUEST_H_

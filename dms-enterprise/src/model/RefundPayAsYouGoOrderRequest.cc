@@ -43,3 +43,12 @@ void RefundPayAsYouGoOrderRequest::setOrderId(const std::string &orderId) {
   setParameter(std::string("OrderId"), orderId);
 }
 
+std::string RefundPayAsYouGoOrderRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void RefundPayAsYouGoOrderRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+

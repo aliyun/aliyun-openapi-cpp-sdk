@@ -39,6 +39,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/BuyPayAsYouGoOrderResult.h
 	include/alibabacloud/dms-enterprise/model/ChangeColumnSecLevelRequest.h
 	include/alibabacloud/dms-enterprise/model/ChangeColumnSecLevelResult.h
+	include/alibabacloud/dms-enterprise/model/ChangeColumnSecurityLevelRequest.h
+	include/alibabacloud/dms-enterprise/model/ChangeColumnSecurityLevelResult.h
 	include/alibabacloud/dms-enterprise/model/ChangeLhDagOwnerRequest.h
 	include/alibabacloud/dms-enterprise/model/ChangeLhDagOwnerResult.h
 	include/alibabacloud/dms-enterprise/model/CloseOrderRequest.h
@@ -67,6 +69,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/CreateLogicDatabaseResult.h
 	include/alibabacloud/dms-enterprise/model/CreateOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateOrderResult.h
+	include/alibabacloud/dms-enterprise/model/CreateProcCorrectOrderRequest.h
+	include/alibabacloud/dms-enterprise/model/CreateProcCorrectOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateProxyRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateProxyResult.h
 	include/alibabacloud/dms-enterprise/model/CreateProxyAccessRequest.h
@@ -135,6 +139,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetAuthorityTemplateResult.h
 	include/alibabacloud/dms-enterprise/model/GetAuthorityTemplateItemRequest.h
 	include/alibabacloud/dms-enterprise/model/GetAuthorityTemplateItemResult.h
+	include/alibabacloud/dms-enterprise/model/GetClassificationTemplateRequest.h
+	include/alibabacloud/dms-enterprise/model/GetClassificationTemplateResult.h
 	include/alibabacloud/dms-enterprise/model/GetDBTaskSQLJobLogRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDBTaskSQLJobLogResult.h
 	include/alibabacloud/dms-enterprise/model/GetDBTopologyRequest.h
@@ -311,6 +317,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ListSensitiveColumnsDetailResult.h
 	include/alibabacloud/dms-enterprise/model/ListSensitiveDataAuditLogRequest.h
 	include/alibabacloud/dms-enterprise/model/ListSensitiveDataAuditLogResult.h
+	include/alibabacloud/dms-enterprise/model/ListSensitivityLevelRequest.h
+	include/alibabacloud/dms-enterprise/model/ListSensitivityLevelResult.h
 	include/alibabacloud/dms-enterprise/model/ListStandardGroupsRequest.h
 	include/alibabacloud/dms-enterprise/model/ListStandardGroupsResult.h
 	include/alibabacloud/dms-enterprise/model/ListTablesRequest.h
@@ -458,6 +466,8 @@ set(dms-enterprise_src
 	src/model/BuyPayAsYouGoOrderResult.cc
 	src/model/ChangeColumnSecLevelRequest.cc
 	src/model/ChangeColumnSecLevelResult.cc
+	src/model/ChangeColumnSecurityLevelRequest.cc
+	src/model/ChangeColumnSecurityLevelResult.cc
 	src/model/ChangeLhDagOwnerRequest.cc
 	src/model/ChangeLhDagOwnerResult.cc
 	src/model/CloseOrderRequest.cc
@@ -486,6 +496,8 @@ set(dms-enterprise_src
 	src/model/CreateLogicDatabaseResult.cc
 	src/model/CreateOrderRequest.cc
 	src/model/CreateOrderResult.cc
+	src/model/CreateProcCorrectOrderRequest.cc
+	src/model/CreateProcCorrectOrderResult.cc
 	src/model/CreateProxyRequest.cc
 	src/model/CreateProxyResult.cc
 	src/model/CreateProxyAccessRequest.cc
@@ -554,6 +566,8 @@ set(dms-enterprise_src
 	src/model/GetAuthorityTemplateResult.cc
 	src/model/GetAuthorityTemplateItemRequest.cc
 	src/model/GetAuthorityTemplateItemResult.cc
+	src/model/GetClassificationTemplateRequest.cc
+	src/model/GetClassificationTemplateResult.cc
 	src/model/GetDBTaskSQLJobLogRequest.cc
 	src/model/GetDBTaskSQLJobLogResult.cc
 	src/model/GetDBTopologyRequest.cc
@@ -730,6 +744,8 @@ set(dms-enterprise_src
 	src/model/ListSensitiveColumnsDetailResult.cc
 	src/model/ListSensitiveDataAuditLogRequest.cc
 	src/model/ListSensitiveDataAuditLogResult.cc
+	src/model/ListSensitivityLevelRequest.cc
+	src/model/ListSensitivityLevelResult.cc
 	src/model/ListStandardGroupsRequest.cc
 	src/model/ListStandardGroupsResult.cc
 	src/model/ListTablesRequest.cc

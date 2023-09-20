@@ -375,6 +375,42 @@ Dms_enterpriseClient::ChangeColumnSecLevelOutcomeCallable Dms_enterpriseClient::
 	return task->get_future();
 }
 
+Dms_enterpriseClient::ChangeColumnSecurityLevelOutcome Dms_enterpriseClient::changeColumnSecurityLevel(const ChangeColumnSecurityLevelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeColumnSecurityLevelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeColumnSecurityLevelOutcome(ChangeColumnSecurityLevelResult(outcome.result()));
+	else
+		return ChangeColumnSecurityLevelOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::changeColumnSecurityLevelAsync(const ChangeColumnSecurityLevelRequest& request, const ChangeColumnSecurityLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeColumnSecurityLevel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ChangeColumnSecurityLevelOutcomeCallable Dms_enterpriseClient::changeColumnSecurityLevelCallable(const ChangeColumnSecurityLevelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeColumnSecurityLevelOutcome()>>(
+			[this, request]()
+			{
+			return this->changeColumnSecurityLevel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::ChangeLhDagOwnerOutcome Dms_enterpriseClient::changeLhDagOwner(const ChangeLhDagOwnerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -873,6 +909,42 @@ Dms_enterpriseClient::CreateOrderOutcomeCallable Dms_enterpriseClient::createOrd
 			[this, request]()
 			{
 			return this->createOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::CreateProcCorrectOrderOutcome Dms_enterpriseClient::createProcCorrectOrder(const CreateProcCorrectOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateProcCorrectOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateProcCorrectOrderOutcome(CreateProcCorrectOrderResult(outcome.result()));
+	else
+		return CreateProcCorrectOrderOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createProcCorrectOrderAsync(const CreateProcCorrectOrderRequest& request, const CreateProcCorrectOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createProcCorrectOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateProcCorrectOrderOutcomeCallable Dms_enterpriseClient::createProcCorrectOrderCallable(const CreateProcCorrectOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateProcCorrectOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->createProcCorrectOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2097,6 +2169,42 @@ Dms_enterpriseClient::GetAuthorityTemplateItemOutcomeCallable Dms_enterpriseClie
 			[this, request]()
 			{
 			return this->getAuthorityTemplateItem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetClassificationTemplateOutcome Dms_enterpriseClient::getClassificationTemplate(const GetClassificationTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetClassificationTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetClassificationTemplateOutcome(GetClassificationTemplateResult(outcome.result()));
+	else
+		return GetClassificationTemplateOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getClassificationTemplateAsync(const GetClassificationTemplateRequest& request, const GetClassificationTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getClassificationTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetClassificationTemplateOutcomeCallable Dms_enterpriseClient::getClassificationTemplateCallable(const GetClassificationTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetClassificationTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->getClassificationTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5265,6 +5373,42 @@ Dms_enterpriseClient::ListSensitiveDataAuditLogOutcomeCallable Dms_enterpriseCli
 			[this, request]()
 			{
 			return this->listSensitiveDataAuditLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListSensitivityLevelOutcome Dms_enterpriseClient::listSensitivityLevel(const ListSensitivityLevelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSensitivityLevelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSensitivityLevelOutcome(ListSensitivityLevelResult(outcome.result()));
+	else
+		return ListSensitivityLevelOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listSensitivityLevelAsync(const ListSensitivityLevelRequest& request, const ListSensitivityLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSensitivityLevel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListSensitivityLevelOutcomeCallable Dms_enterpriseClient::listSensitivityLevelCallable(const ListSensitivityLevelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSensitivityLevelOutcome()>>(
+			[this, request]()
+			{
+			return this->listSensitivityLevel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

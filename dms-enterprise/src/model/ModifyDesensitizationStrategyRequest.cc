@@ -43,6 +43,15 @@ void ModifyDesensitizationStrategyRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
+bool ModifyDesensitizationStrategyRequest::getIsDefault() const {
+  return isDefault_;
+}
+
+void ModifyDesensitizationStrategyRequest::setIsDefault(bool isDefault) {
+  isDefault_ = isDefault;
+  setParameter(std::string("IsDefault"), isDefault ? "true" : "false");
+}
+
 std::string ModifyDesensitizationStrategyRequest::getTableName() const {
   return tableName_;
 }
