@@ -47,7 +47,7 @@ If you have any problem while using Alibaba Cloud SDK for C++, please submit an 
 
 ```bash
 # use yum
-yum install jsoncpp-devel openssl-devel uuid-devel libcurl-devel
+yum install jsoncpp-devel openssl-devel libuuid-devel libcurl-devel
 
 # use dnf
 sudo dnf install libcurl-devel openssl-devel libuuid-devel libjsoncpp-devel
