@@ -69,6 +69,8 @@ public:
 	void setFrom(const std::string &from);
 	std::string getTag() const;
 	void setTag(const std::string &tag);
+	std::string getFallBackRule() const;
+	void setFallBackRule(const std::string &fallBackRule);
 	std::string getTrackingData() const;
 	void setTrackingData(const std::string &trackingData);
 	std::string getTaskId() const;
@@ -108,6 +110,7 @@ private:
 	std::string channelType_;
 	std::string from_;
 	std::string tag_;
+	std::string fallBackRule_;
 	std::string trackingData_;
 	std::string taskId_;
 	std::string isvCode_;

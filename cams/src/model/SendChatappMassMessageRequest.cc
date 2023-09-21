@@ -112,6 +112,15 @@ void SendChatappMassMessageRequest::setTag(const std::string &tag) {
   setBodyParameter(std::string("Tag"), tag);
 }
 
+std::string SendChatappMassMessageRequest::getFallBackRule() const {
+  return fallBackRule_;
+}
+
+void SendChatappMassMessageRequest::setFallBackRule(const std::string &fallBackRule) {
+  fallBackRule_ = fallBackRule;
+  setBodyParameter(std::string("FallBackRule"), fallBackRule);
+}
+
 std::string SendChatappMassMessageRequest::getTaskId() const {
   return taskId_;
 }

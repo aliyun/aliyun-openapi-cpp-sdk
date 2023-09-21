@@ -66,6 +66,8 @@ public:
 	void setFrom(const std::string &from);
 	std::string getTag() const;
 	void setTag(const std::string &tag);
+	std::string getFallBackRule() const;
+	void setFallBackRule(const std::string &fallBackRule);
 	std::string getTaskId() const;
 	void setTaskId(const std::string &taskId);
 	std::string getIsvCode() const;
@@ -94,6 +96,7 @@ private:
 	std::string channelType_;
 	std::string from_;
 	std::string tag_;
+	std::string fallBackRule_;
 	std::string taskId_;
 	std::string isvCode_;
 	std::string prodCode_;
