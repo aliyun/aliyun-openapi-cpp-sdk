@@ -25,6 +25,15 @@ GetProjectRequest::GetProjectRequest()
 
 GetProjectRequest::~GetProjectRequest() {}
 
+std::string GetProjectRequest::getProjectIdentifier() const {
+  return projectIdentifier_;
+}
+
+void GetProjectRequest::setProjectIdentifier(const std::string &projectIdentifier) {
+  projectIdentifier_ = projectIdentifier;
+  setParameter(std::string("ProjectIdentifier"), projectIdentifier);
+}
+
 long GetProjectRequest::getProjectId() const {
   return projectId_;
 }

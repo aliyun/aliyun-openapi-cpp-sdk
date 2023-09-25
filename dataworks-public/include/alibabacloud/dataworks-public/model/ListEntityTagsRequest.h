@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETPROJECTREQUEST_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETPROJECTREQUEST_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTENTITYTAGSREQUEST_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTENTITYTAGSREQUEST_H_
 
 #include <alibabacloud/dataworks-public/Dataworks_publicExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,17 @@
 namespace AlibabaCloud {
 namespace Dataworks_public {
 namespace Model {
-class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetProjectRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListEntityTagsRequest : public RpcServiceRequest {
 public:
-	GetProjectRequest();
-	~GetProjectRequest();
-	std::string getProjectIdentifier() const;
-	void setProjectIdentifier(const std::string &projectIdentifier);
-	long getProjectId() const;
-	void setProjectId(long projectId);
+	ListEntityTagsRequest();
+	~ListEntityTagsRequest();
+	std::string getQualifiedName() const;
+	void setQualifiedName(const std::string &qualifiedName);
 
 private:
-	std::string projectIdentifier_;
-	long projectId_;
+	std::string qualifiedName_;
 };
 } // namespace Model
 } // namespace Dataworks_public
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETPROJECTREQUEST_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTENTITYTAGSREQUEST_H_

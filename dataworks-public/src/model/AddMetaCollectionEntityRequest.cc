@@ -34,6 +34,15 @@ void AddMetaCollectionEntityRequest::setEntityQualifiedName(const std::string &e
   setParameter(std::string("EntityQualifiedName"), entityQualifiedName);
 }
 
+std::string AddMetaCollectionEntityRequest::getRemark() const {
+  return remark_;
+}
+
+void AddMetaCollectionEntityRequest::setRemark(const std::string &remark) {
+  remark_ = remark;
+  setParameter(std::string("Remark"), remark);
+}
+
 std::string AddMetaCollectionEntityRequest::getCollectionQualifiedName() const {
   return collectionQualifiedName_;
 }

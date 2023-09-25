@@ -32,11 +32,14 @@ public:
 	~AddMetaCollectionEntityRequest();
 	std::string getEntityQualifiedName() const;
 	void setEntityQualifiedName(const std::string &entityQualifiedName);
+	std::string getRemark() const;
+	void setRemark(const std::string &remark);
 	std::string getCollectionQualifiedName() const;
 	void setCollectionQualifiedName(const std::string &collectionQualifiedName);
 
 private:
 	std::string entityQualifiedName_;
+	std::string remark_;
 	std::string collectionQualifiedName_;
 };
 } // namespace Model

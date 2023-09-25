@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETPROJECTREQUEST_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETPROJECTREQUEST_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTDIJOBSREQUEST_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTDIJOBSREQUEST_H_
 
 #include <alibabacloud/dataworks-public/Dataworks_publicExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,32 @@
 namespace AlibabaCloud {
 namespace Dataworks_public {
 namespace Model {
-class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetProjectRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListDIJobsRequest : public RpcServiceRequest {
 public:
-	GetProjectRequest();
-	~GetProjectRequest();
-	std::string getProjectIdentifier() const;
-	void setProjectIdentifier(const std::string &projectIdentifier);
+	ListDIJobsRequest();
+	~ListDIJobsRequest();
+	std::string getSourceDataSourceType() const;
+	void setSourceDataSourceType(const std::string &sourceDataSourceType);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
+	std::string getDestinationDataSourceType() const;
+	void setDestinationDataSourceType(const std::string &destinationDataSourceType);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	long getProjectId() const;
 	void setProjectId(long projectId);
+	std::string getJobName() const;
+	void setJobName(const std::string &jobName);
 
 private:
-	std::string projectIdentifier_;
+	std::string sourceDataSourceType_;
+	int pageNumber_;
+	std::string destinationDataSourceType_;
+	int pageSize_;
 	long projectId_;
+	std::string jobName_;
 };
 } // namespace Model
 } // namespace Dataworks_public
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETPROJECTREQUEST_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTDIJOBSREQUEST_H_

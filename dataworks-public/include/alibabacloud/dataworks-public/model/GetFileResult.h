@@ -55,6 +55,7 @@ namespace AlibabaCloud
 						std::string deletedStatus;
 						long nodeId;
 						bool autoParsing;
+						long fileId;
 						std::string fileFolderId;
 						long bizId;
 						long businessId;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETPROJECTREQUEST_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETPROJECTREQUEST_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTENTITIESBYTAGSREQUEST_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTENTITIESBYTAGSREQUEST_H_
 
 #include <alibabacloud/dataworks-public/Dataworks_publicExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,30 @@
 namespace AlibabaCloud {
 namespace Dataworks_public {
 namespace Model {
-class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetProjectRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListEntitiesByTagsRequest : public RpcServiceRequest {
 public:
-	GetProjectRequest();
-	~GetProjectRequest();
-	std::string getProjectIdentifier() const;
-	void setProjectIdentifier(const std::string &projectIdentifier);
-	long getProjectId() const;
-	void setProjectId(long projectId);
+	struct Tags {
+		std::string tagValue;
+		std::string tagKey;
+	};
+	ListEntitiesByTagsRequest();
+	~ListEntitiesByTagsRequest();
+	std::string getEntityType() const;
+	void setEntityType(const std::string &entityType);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::vector<Tags> getTags() const;
+	void setTags(const std::vector<Tags> &tags);
 
 private:
-	std::string projectIdentifier_;
-	long projectId_;
+	std::string entityType_;
+	std::string nextToken_;
+	int pageSize_;
+	std::vector<Tags> tags_;
 };
 } // namespace Model
 } // namespace Dataworks_public
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETPROJECTREQUEST_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTENTITIESBYTAGSREQUEST_H_

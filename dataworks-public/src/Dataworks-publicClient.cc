@@ -231,6 +231,42 @@ Dataworks_publicClient::ApprovePermissionApplyOrderOutcomeCallable Dataworks_pub
 	return task->get_future();
 }
 
+Dataworks_publicClient::CallbackExtensionOutcome Dataworks_publicClient::callbackExtension(const CallbackExtensionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CallbackExtensionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CallbackExtensionOutcome(CallbackExtensionResult(outcome.result()));
+	else
+		return CallbackExtensionOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::callbackExtensionAsync(const CallbackExtensionRequest& request, const CallbackExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, callbackExtension(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::CallbackExtensionOutcomeCallable Dataworks_publicClient::callbackExtensionCallable(const CallbackExtensionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CallbackExtensionOutcome()>>(
+			[this, request]()
+			{
+			return this->callbackExtension(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::ChangeResourceManagerResourceGroupOutcome Dataworks_publicClient::changeResourceManagerResourceGroup(const ChangeResourceManagerResourceGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,6 +513,78 @@ Dataworks_publicClient::CreateConnectionOutcomeCallable Dataworks_publicClient::
 			[this, request]()
 			{
 			return this->createConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::CreateDIAlarmRuleOutcome Dataworks_publicClient::createDIAlarmRule(const CreateDIAlarmRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDIAlarmRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDIAlarmRuleOutcome(CreateDIAlarmRuleResult(outcome.result()));
+	else
+		return CreateDIAlarmRuleOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::createDIAlarmRuleAsync(const CreateDIAlarmRuleRequest& request, const CreateDIAlarmRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDIAlarmRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::CreateDIAlarmRuleOutcomeCallable Dataworks_publicClient::createDIAlarmRuleCallable(const CreateDIAlarmRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDIAlarmRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->createDIAlarmRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::CreateDIJobOutcome Dataworks_publicClient::createDIJob(const CreateDIJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDIJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDIJobOutcome(CreateDIJobResult(outcome.result()));
+	else
+		return CreateDIJobOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::createDIJobAsync(const CreateDIJobRequest& request, const CreateDIJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDIJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::CreateDIJobOutcomeCallable Dataworks_publicClient::createDIJobCallable(const CreateDIJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDIJobOutcome()>>(
+			[this, request]()
+			{
+			return this->createDIJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1557,6 +1665,78 @@ Dataworks_publicClient::DeleteConnectionOutcomeCallable Dataworks_publicClient::
 			[this, request]()
 			{
 			return this->deleteConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::DeleteDIAlarmRuleOutcome Dataworks_publicClient::deleteDIAlarmRule(const DeleteDIAlarmRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDIAlarmRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDIAlarmRuleOutcome(DeleteDIAlarmRuleResult(outcome.result()));
+	else
+		return DeleteDIAlarmRuleOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::deleteDIAlarmRuleAsync(const DeleteDIAlarmRuleRequest& request, const DeleteDIAlarmRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDIAlarmRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::DeleteDIAlarmRuleOutcomeCallable Dataworks_publicClient::deleteDIAlarmRuleCallable(const DeleteDIAlarmRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDIAlarmRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDIAlarmRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::DeleteDIJobOutcome Dataworks_publicClient::deleteDIJob(const DeleteDIJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDIJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDIJobOutcome(DeleteDIJobResult(outcome.result()));
+	else
+		return DeleteDIJobOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::deleteDIJobAsync(const DeleteDIJobRequest& request, const DeleteDIJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDIJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::DeleteDIJobOutcomeCallable Dataworks_publicClient::deleteDIJobCallable(const DeleteDIJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDIJobOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDIJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2745,6 +2925,78 @@ Dataworks_publicClient::GetDDLJobStatusOutcomeCallable Dataworks_publicClient::g
 			[this, request]()
 			{
 			return this->getDDLJobStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::GetDIAlarmRuleOutcome Dataworks_publicClient::getDIAlarmRule(const GetDIAlarmRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDIAlarmRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDIAlarmRuleOutcome(GetDIAlarmRuleResult(outcome.result()));
+	else
+		return GetDIAlarmRuleOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::getDIAlarmRuleAsync(const GetDIAlarmRuleRequest& request, const GetDIAlarmRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDIAlarmRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GetDIAlarmRuleOutcomeCallable Dataworks_publicClient::getDIAlarmRuleCallable(const GetDIAlarmRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDIAlarmRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->getDIAlarmRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::GetDIJobOutcome Dataworks_publicClient::getDIJob(const GetDIJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDIJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDIJobOutcome(GetDIJobResult(outcome.result()));
+	else
+		return GetDIJobOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::getDIJobAsync(const GetDIJobRequest& request, const GetDIJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDIJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GetDIJobOutcomeCallable Dataworks_publicClient::getDIJobCallable(const GetDIJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDIJobOutcome()>>(
+			[this, request]()
+			{
+			return this->getDIJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5307,6 +5559,78 @@ Dataworks_publicClient::ListConnectionsOutcomeCallable Dataworks_publicClient::l
 	return task->get_future();
 }
 
+Dataworks_publicClient::ListDIAlarmRulesOutcome Dataworks_publicClient::listDIAlarmRules(const ListDIAlarmRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDIAlarmRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDIAlarmRulesOutcome(ListDIAlarmRulesResult(outcome.result()));
+	else
+		return ListDIAlarmRulesOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listDIAlarmRulesAsync(const ListDIAlarmRulesRequest& request, const ListDIAlarmRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDIAlarmRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListDIAlarmRulesOutcomeCallable Dataworks_publicClient::listDIAlarmRulesCallable(const ListDIAlarmRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDIAlarmRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->listDIAlarmRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ListDIJobsOutcome Dataworks_publicClient::listDIJobs(const ListDIJobsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDIJobsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDIJobsOutcome(ListDIJobsResult(outcome.result()));
+	else
+		return ListDIJobsOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listDIJobsAsync(const ListDIJobsRequest& request, const ListDIJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDIJobs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListDIJobsOutcomeCallable Dataworks_publicClient::listDIJobsCallable(const ListDIJobsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDIJobsOutcome()>>(
+			[this, request]()
+			{
+			return this->listDIJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::ListDIProjectConfigOutcome Dataworks_publicClient::listDIProjectConfig(const ListDIProjectConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5769,6 +6093,78 @@ Dataworks_publicClient::ListEnabledExtensionsForProjectOutcomeCallable Dataworks
 			[this, request]()
 			{
 			return this->listEnabledExtensionsForProject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ListEntitiesByTagsOutcome Dataworks_publicClient::listEntitiesByTags(const ListEntitiesByTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListEntitiesByTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListEntitiesByTagsOutcome(ListEntitiesByTagsResult(outcome.result()));
+	else
+		return ListEntitiesByTagsOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listEntitiesByTagsAsync(const ListEntitiesByTagsRequest& request, const ListEntitiesByTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listEntitiesByTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListEntitiesByTagsOutcomeCallable Dataworks_publicClient::listEntitiesByTagsCallable(const ListEntitiesByTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListEntitiesByTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->listEntitiesByTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ListEntityTagsOutcome Dataworks_publicClient::listEntityTags(const ListEntityTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListEntityTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListEntityTagsOutcome(ListEntityTagsResult(outcome.result()));
+	else
+		return ListEntityTagsOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listEntityTagsAsync(const ListEntityTagsRequest& request, const ListEntityTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listEntityTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListEntityTagsOutcomeCallable Dataworks_publicClient::listEntityTagsCallable(const ListEntityTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListEntityTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->listEntityTags(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7359,6 +7755,42 @@ Dataworks_publicClient::RegisterLineageRelationOutcomeCallable Dataworks_publicC
 	return task->get_future();
 }
 
+Dataworks_publicClient::RemoveEntityTagsOutcome Dataworks_publicClient::removeEntityTags(const RemoveEntityTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveEntityTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveEntityTagsOutcome(RemoveEntityTagsResult(outcome.result()));
+	else
+		return RemoveEntityTagsOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::removeEntityTagsAsync(const RemoveEntityTagsRequest& request, const RemoveEntityTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeEntityTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::RemoveEntityTagsOutcomeCallable Dataworks_publicClient::removeEntityTagsCallable(const RemoveEntityTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveEntityTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->removeEntityTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::RemoveProjectMemberFromRoleOutcome Dataworks_publicClient::removeProjectMemberFromRole(const RemoveProjectMemberFromRoleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7863,6 +8295,42 @@ Dataworks_publicClient::SetDataSourceShareOutcomeCallable Dataworks_publicClient
 	return task->get_future();
 }
 
+Dataworks_publicClient::SetEntityTagsOutcome Dataworks_publicClient::setEntityTags(const SetEntityTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetEntityTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetEntityTagsOutcome(SetEntityTagsResult(outcome.result()));
+	else
+		return SetEntityTagsOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::setEntityTagsAsync(const SetEntityTagsRequest& request, const SetEntityTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setEntityTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::SetEntityTagsOutcomeCallable Dataworks_publicClient::setEntityTagsCallable(const SetEntityTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetEntityTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->setEntityTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::SetSuccessInstanceOutcome Dataworks_publicClient::setSuccessInstance(const SetSuccessInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7893,6 +8361,42 @@ Dataworks_publicClient::SetSuccessInstanceOutcomeCallable Dataworks_publicClient
 			[this, request]()
 			{
 			return this->setSuccessInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::StartDIJobOutcome Dataworks_publicClient::startDIJob(const StartDIJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartDIJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartDIJobOutcome(StartDIJobResult(outcome.result()));
+	else
+		return StartDIJobOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::startDIJobAsync(const StartDIJobRequest& request, const StartDIJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startDIJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::StartDIJobOutcomeCallable Dataworks_publicClient::startDIJobCallable(const StartDIJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartDIJobOutcome()>>(
+			[this, request]()
+			{
+			return this->startDIJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7965,6 +8469,42 @@ Dataworks_publicClient::StartMigrationOutcomeCallable Dataworks_publicClient::st
 			[this, request]()
 			{
 			return this->startMigration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::StopDIJobOutcome Dataworks_publicClient::stopDIJob(const StopDIJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopDIJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopDIJobOutcome(StopDIJobResult(outcome.result()));
+	else
+		return StopDIJobOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::stopDIJobAsync(const StopDIJobRequest& request, const StopDIJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopDIJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::StopDIJobOutcomeCallable Dataworks_publicClient::stopDIJobCallable(const StopDIJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopDIJobOutcome()>>(
+			[this, request]()
+			{
+			return this->stopDIJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8469,6 +9009,78 @@ Dataworks_publicClient::UpdateConnectionOutcomeCallable Dataworks_publicClient::
 			[this, request]()
 			{
 			return this->updateConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::UpdateDIAlarmRuleOutcome Dataworks_publicClient::updateDIAlarmRule(const UpdateDIAlarmRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDIAlarmRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDIAlarmRuleOutcome(UpdateDIAlarmRuleResult(outcome.result()));
+	else
+		return UpdateDIAlarmRuleOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::updateDIAlarmRuleAsync(const UpdateDIAlarmRuleRequest& request, const UpdateDIAlarmRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDIAlarmRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::UpdateDIAlarmRuleOutcomeCallable Dataworks_publicClient::updateDIAlarmRuleCallable(const UpdateDIAlarmRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDIAlarmRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDIAlarmRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::UpdateDIJobOutcome Dataworks_publicClient::updateDIJob(const UpdateDIJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDIJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDIJobOutcome(UpdateDIJobResult(outcome.result()));
+	else
+		return UpdateDIJobOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::updateDIJobAsync(const UpdateDIJobRequest& request, const UpdateDIJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDIJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::UpdateDIJobOutcomeCallable Dataworks_publicClient::updateDIJobCallable(const UpdateDIJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDIJobOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDIJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -85,6 +85,8 @@ void GetFileResult::parse(const std::string &payload)
 		data_.file.nodeId = std::stol(fileNode["NodeId"].asString());
 	if(!fileNode["AdvancedSettings"].isNull())
 		data_.file.advancedSettings = fileNode["AdvancedSettings"].asString();
+	if(!fileNode["FileId"].isNull())
+		data_.file.fileId = std::stol(fileNode["FileId"].asString());
 	auto nodeConfigurationNode = dataNode["NodeConfiguration"];
 	if(!nodeConfigurationNode["RerunMode"].isNull())
 		data_.nodeConfiguration.rerunMode = nodeConfigurationNode["RerunMode"].asString();
