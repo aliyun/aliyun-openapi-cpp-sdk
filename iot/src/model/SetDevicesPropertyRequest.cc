@@ -38,6 +38,17 @@ void SetDevicesPropertyRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+int SetDevicesPropertyRequest::getQos()const
+{
+	return qos_;
+}
+
+void SetDevicesPropertyRequest::setQos(int qos)
+{
+	qos_ = qos;
+	setParameter("Qos", std::to_string(qos));
+}
+
 std::string SetDevicesPropertyRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

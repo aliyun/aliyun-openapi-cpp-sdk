@@ -631,6 +631,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QuerySceneRuleResult.h
 	include/alibabacloud/iot/model/QuerySchedulePeriodListRequest.h
 	include/alibabacloud/iot/model/QuerySchedulePeriodListResult.h
+	include/alibabacloud/iot/model/QueryShareProductNameByProductKeyRequest.h
+	include/alibabacloud/iot/model/QueryShareProductNameByProductKeyResult.h
 	include/alibabacloud/iot/model/QuerySharePromotionActivityAuditResultRequest.h
 	include/alibabacloud/iot/model/QuerySharePromotionActivityAuditResultResult.h
 	include/alibabacloud/iot/model/QueryShareTaskDeviceListRequest.h
@@ -721,6 +723,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/RerunJobResult.h
 	include/alibabacloud/iot/model/ResetConsumerGroupPositionRequest.h
 	include/alibabacloud/iot/model/ResetConsumerGroupPositionResult.h
+	include/alibabacloud/iot/model/ResetDeviceTimelineRequest.h
+	include/alibabacloud/iot/model/ResetDeviceTimelineResult.h
 	include/alibabacloud/iot/model/ResetThingRequest.h
 	include/alibabacloud/iot/model/ResetThingResult.h
 	include/alibabacloud/iot/model/RetrySoundCodeLabelBatchRequest.h
@@ -1454,6 +1458,8 @@ set(iot_src
 	src/model/QuerySceneRuleResult.cc
 	src/model/QuerySchedulePeriodListRequest.cc
 	src/model/QuerySchedulePeriodListResult.cc
+	src/model/QueryShareProductNameByProductKeyRequest.cc
+	src/model/QueryShareProductNameByProductKeyResult.cc
 	src/model/QuerySharePromotionActivityAuditResultRequest.cc
 	src/model/QuerySharePromotionActivityAuditResultResult.cc
 	src/model/QueryShareTaskDeviceListRequest.cc
@@ -1544,6 +1550,8 @@ set(iot_src
 	src/model/RerunJobResult.cc
 	src/model/ResetConsumerGroupPositionRequest.cc
 	src/model/ResetConsumerGroupPositionResult.cc
+	src/model/ResetDeviceTimelineRequest.cc
+	src/model/ResetDeviceTimelineResult.cc
 	src/model/ResetThingRequest.cc
 	src/model/ResetThingResult.cc
 	src/model/RetrySoundCodeLabelBatchRequest.cc

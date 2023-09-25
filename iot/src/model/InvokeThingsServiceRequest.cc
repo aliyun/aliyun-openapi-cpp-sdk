@@ -38,6 +38,17 @@ void InvokeThingsServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+int InvokeThingsServiceRequest::getQos()const
+{
+	return qos_;
+}
+
+void InvokeThingsServiceRequest::setQos(int qos)
+{
+	qos_ = qos;
+	setParameter("Qos", std::to_string(qos));
+}
+
 std::string InvokeThingsServiceRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

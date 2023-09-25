@@ -632,6 +632,8 @@
 #include "model/QuerySceneRuleResult.h"
 #include "model/QuerySchedulePeriodListRequest.h"
 #include "model/QuerySchedulePeriodListResult.h"
+#include "model/QueryShareProductNameByProductKeyRequest.h"
+#include "model/QueryShareProductNameByProductKeyResult.h"
 #include "model/QuerySharePromotionActivityAuditResultRequest.h"
 #include "model/QuerySharePromotionActivityAuditResultResult.h"
 #include "model/QueryShareTaskDeviceListRequest.h"
@@ -722,6 +724,8 @@
 #include "model/RerunJobResult.h"
 #include "model/ResetConsumerGroupPositionRequest.h"
 #include "model/ResetConsumerGroupPositionResult.h"
+#include "model/ResetDeviceTimelineRequest.h"
+#include "model/ResetDeviceTimelineResult.h"
 #include "model/ResetThingRequest.h"
 #include "model/ResetThingResult.h"
 #include "model/RetrySoundCodeLabelBatchRequest.h"
@@ -1766,6 +1770,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QuerySchedulePeriodListResult> QuerySchedulePeriodListOutcome;
 			typedef std::future<QuerySchedulePeriodListOutcome> QuerySchedulePeriodListOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QuerySchedulePeriodListRequest&, const QuerySchedulePeriodListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySchedulePeriodListAsyncHandler;
+			typedef Outcome<Error, Model::QueryShareProductNameByProductKeyResult> QueryShareProductNameByProductKeyOutcome;
+			typedef std::future<QueryShareProductNameByProductKeyOutcome> QueryShareProductNameByProductKeyOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryShareProductNameByProductKeyRequest&, const QueryShareProductNameByProductKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryShareProductNameByProductKeyAsyncHandler;
 			typedef Outcome<Error, Model::QuerySharePromotionActivityAuditResultResult> QuerySharePromotionActivityAuditResultOutcome;
 			typedef std::future<QuerySharePromotionActivityAuditResultOutcome> QuerySharePromotionActivityAuditResultOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QuerySharePromotionActivityAuditResultRequest&, const QuerySharePromotionActivityAuditResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySharePromotionActivityAuditResultAsyncHandler;
@@ -1901,6 +1908,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ResetConsumerGroupPositionResult> ResetConsumerGroupPositionOutcome;
 			typedef std::future<ResetConsumerGroupPositionOutcome> ResetConsumerGroupPositionOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ResetConsumerGroupPositionRequest&, const ResetConsumerGroupPositionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetConsumerGroupPositionAsyncHandler;
+			typedef Outcome<Error, Model::ResetDeviceTimelineResult> ResetDeviceTimelineOutcome;
+			typedef std::future<ResetDeviceTimelineOutcome> ResetDeviceTimelineOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ResetDeviceTimelineRequest&, const ResetDeviceTimelineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetDeviceTimelineAsyncHandler;
 			typedef Outcome<Error, Model::ResetThingResult> ResetThingOutcome;
 			typedef std::future<ResetThingOutcome> ResetThingOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ResetThingRequest&, const ResetThingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetThingAsyncHandler;
@@ -3001,6 +3011,9 @@ namespace AlibabaCloud
 			QuerySchedulePeriodListOutcome querySchedulePeriodList(const Model::QuerySchedulePeriodListRequest &request)const;
 			void querySchedulePeriodListAsync(const Model::QuerySchedulePeriodListRequest& request, const QuerySchedulePeriodListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySchedulePeriodListOutcomeCallable querySchedulePeriodListCallable(const Model::QuerySchedulePeriodListRequest& request) const;
+			QueryShareProductNameByProductKeyOutcome queryShareProductNameByProductKey(const Model::QueryShareProductNameByProductKeyRequest &request)const;
+			void queryShareProductNameByProductKeyAsync(const Model::QueryShareProductNameByProductKeyRequest& request, const QueryShareProductNameByProductKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryShareProductNameByProductKeyOutcomeCallable queryShareProductNameByProductKeyCallable(const Model::QueryShareProductNameByProductKeyRequest& request) const;
 			QuerySharePromotionActivityAuditResultOutcome querySharePromotionActivityAuditResult(const Model::QuerySharePromotionActivityAuditResultRequest &request)const;
 			void querySharePromotionActivityAuditResultAsync(const Model::QuerySharePromotionActivityAuditResultRequest& request, const QuerySharePromotionActivityAuditResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySharePromotionActivityAuditResultOutcomeCallable querySharePromotionActivityAuditResultCallable(const Model::QuerySharePromotionActivityAuditResultRequest& request) const;
@@ -3136,6 +3149,9 @@ namespace AlibabaCloud
 			ResetConsumerGroupPositionOutcome resetConsumerGroupPosition(const Model::ResetConsumerGroupPositionRequest &request)const;
 			void resetConsumerGroupPositionAsync(const Model::ResetConsumerGroupPositionRequest& request, const ResetConsumerGroupPositionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetConsumerGroupPositionOutcomeCallable resetConsumerGroupPositionCallable(const Model::ResetConsumerGroupPositionRequest& request) const;
+			ResetDeviceTimelineOutcome resetDeviceTimeline(const Model::ResetDeviceTimelineRequest &request)const;
+			void resetDeviceTimelineAsync(const Model::ResetDeviceTimelineRequest& request, const ResetDeviceTimelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResetDeviceTimelineOutcomeCallable resetDeviceTimelineCallable(const Model::ResetDeviceTimelineRequest& request) const;
 			ResetThingOutcome resetThing(const Model::ResetThingRequest &request)const;
 			void resetThingAsync(const Model::ResetThingRequest& request, const ResetThingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetThingOutcomeCallable resetThingCallable(const Model::ResetThingRequest& request) const;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_SETDEVICESPROPERTYREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_SETDEVICESPROPERTYREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_QUERYSHAREPRODUCTNAMEBYPRODUCTKEYREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_QUERYSHAREPRODUCTNAMEBYPRODUCTKEYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT SetDevicesPropertyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT QueryShareProductNameByProductKeyRequest : public RpcServiceRequest
 			{
 
 			public:
-				SetDevicesPropertyRequest();
-				~SetDevicesPropertyRequest();
+				QueryShareProductNameByProductKeyRequest();
+				~QueryShareProductNameByProductKeyRequest();
 
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				int getQos()const;
-				void setQos(int qos);
-				std::string getIotInstanceId()const;
-				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getShareTaskCode()const;
+				void setShareTaskCode(const std::string& shareTaskCode);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
-				std::vector<std::string> getDeviceName()const;
-				void setDeviceName(const std::vector<std::string>& deviceName);
-				std::string getItems()const;
-				void setItems(const std::string& items);
 
             private:
-				std::string accessKeyId_;
-				int qos_;
-				std::string iotInstanceId_;
+				std::string shareTaskCode_;
 				std::string productKey_;
 				std::string apiProduct_;
 				std::string apiRevision_;
-				std::vector<std::string> deviceName_;
-				std::string items_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_SETDEVICESPROPERTYREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_QUERYSHAREPRODUCTNAMEBYPRODUCTKEYREQUEST_H_

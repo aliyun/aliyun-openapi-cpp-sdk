@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_SETDEVICESPROPERTYREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_SETDEVICESPROPERTYREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_RESETDEVICETIMELINEREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_RESETDEVICETIMELINEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,17 +28,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT SetDevicesPropertyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT ResetDeviceTimelineRequest : public RpcServiceRequest
 			{
 
 			public:
-				SetDevicesPropertyRequest();
-				~SetDevicesPropertyRequest();
+				ResetDeviceTimelineRequest();
+				~ResetDeviceTimelineRequest();
 
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				int getQos()const;
-				void setQos(int qos);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getProductKey()const;
@@ -47,23 +49,21 @@ namespace AlibabaCloud
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
-				std::vector<std::string> getDeviceName()const;
-				void setDeviceName(const std::vector<std::string>& deviceName);
-				std::string getItems()const;
-				void setItems(const std::string& items);
+				std::string getDeviceName()const;
+				void setDeviceName(const std::string& deviceName);
 
             private:
+				std::string realTenantId_;
 				std::string accessKeyId_;
-				int qos_;
+				std::string realTripartiteKey_;
 				std::string iotInstanceId_;
 				std::string productKey_;
 				std::string apiProduct_;
 				std::string apiRevision_;
-				std::vector<std::string> deviceName_;
-				std::string items_;
+				std::string deviceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_SETDEVICESPROPERTYREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_RESETDEVICETIMELINEREQUEST_H_

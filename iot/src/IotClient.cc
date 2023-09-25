@@ -11031,6 +11031,42 @@ IotClient::QuerySchedulePeriodListOutcomeCallable IotClient::querySchedulePeriod
 	return task->get_future();
 }
 
+IotClient::QueryShareProductNameByProductKeyOutcome IotClient::queryShareProductNameByProductKey(const QueryShareProductNameByProductKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryShareProductNameByProductKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryShareProductNameByProductKeyOutcome(QueryShareProductNameByProductKeyResult(outcome.result()));
+	else
+		return QueryShareProductNameByProductKeyOutcome(outcome.error());
+}
+
+void IotClient::queryShareProductNameByProductKeyAsync(const QueryShareProductNameByProductKeyRequest& request, const QueryShareProductNameByProductKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryShareProductNameByProductKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryShareProductNameByProductKeyOutcomeCallable IotClient::queryShareProductNameByProductKeyCallable(const QueryShareProductNameByProductKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryShareProductNameByProductKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->queryShareProductNameByProductKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::QuerySharePromotionActivityAuditResultOutcome IotClient::querySharePromotionActivityAuditResult(const QuerySharePromotionActivityAuditResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -12645,6 +12681,42 @@ IotClient::ResetConsumerGroupPositionOutcomeCallable IotClient::resetConsumerGro
 			[this, request]()
 			{
 			return this->resetConsumerGroupPosition(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::ResetDeviceTimelineOutcome IotClient::resetDeviceTimeline(const ResetDeviceTimelineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResetDeviceTimelineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResetDeviceTimelineOutcome(ResetDeviceTimelineResult(outcome.result()));
+	else
+		return ResetDeviceTimelineOutcome(outcome.error());
+}
+
+void IotClient::resetDeviceTimelineAsync(const ResetDeviceTimelineRequest& request, const ResetDeviceTimelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resetDeviceTimeline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ResetDeviceTimelineOutcomeCallable IotClient::resetDeviceTimelineCallable(const ResetDeviceTimelineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResetDeviceTimelineOutcome()>>(
+			[this, request]()
+			{
+			return this->resetDeviceTimeline(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
