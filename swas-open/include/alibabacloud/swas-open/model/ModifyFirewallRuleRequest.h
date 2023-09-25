@@ -32,16 +32,16 @@ public:
 	~ModifyFirewallRuleRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getSourceCidrIp() const;
-	void setSourceCidrIp(const std::string &sourceCidrIp);
 	std::string getRemark() const;
 	void setRemark(const std::string &remark);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getSourceCidrIp() const;
+	void setSourceCidrIp(const std::string &sourceCidrIp);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getRuleProtocol() const;
 	void setRuleProtocol(const std::string &ruleProtocol);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	std::string getPort() const;
 	void setPort(const std::string &port);
 	std::string getRuleId() const;
@@ -49,11 +49,11 @@ public:
 
 private:
 	std::string clientToken_;
-	std::string sourceCidrIp_;
 	std::string remark_;
+	std::string regionId_;
+	std::string sourceCidrIp_;
 	std::string instanceId_;
 	std::string ruleProtocol_;
-	std::string regionId_;
 	std::string port_;
 	std::string ruleId_;
 };

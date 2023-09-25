@@ -61,13 +61,13 @@ void CreateCustomImageRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
-std::string CreateCustomImageRequest::getInstanceId() const {
-  return instanceId_;
+std::string CreateCustomImageRequest::getPlatform() const {
+  return platform_;
 }
 
-void CreateCustomImageRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
+void CreateCustomImageRequest::setPlatform(const std::string &platform) {
+  platform_ = platform;
+  setParameter(std::string("Platform"), platform);
 }
 
 std::string CreateCustomImageRequest::getRegionId() const {
@@ -86,5 +86,14 @@ std::string CreateCustomImageRequest::getImageName() const {
 void CreateCustomImageRequest::setImageName(const std::string &imageName) {
   imageName_ = imageName;
   setParameter(std::string("ImageName"), imageName);
+}
+
+std::string CreateCustomImageRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void CreateCustomImageRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

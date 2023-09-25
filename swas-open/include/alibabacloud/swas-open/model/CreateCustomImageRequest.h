@@ -38,21 +38,24 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
+	std::string getPlatform() const;
+	void setPlatform(const std::string &platform);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getImageName() const;
 	void setImageName(const std::string &imageName);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 
 private:
 	std::string systemSnapshotId_;
 	std::string dataSnapshotId_;
 	std::string clientToken_;
 	std::string description_;
-	std::string instanceId_;
+	std::string platform_;
 	std::string regionId_;
 	std::string imageName_;
+	std::string instanceId_;
 };
 } // namespace Model
 } // namespace SWAS_OPEN

@@ -34,15 +34,6 @@ void ModifyFirewallRuleRequest::setClientToken(const std::string &clientToken) {
   setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string ModifyFirewallRuleRequest::getSourceCidrIp() const {
-  return sourceCidrIp_;
-}
-
-void ModifyFirewallRuleRequest::setSourceCidrIp(const std::string &sourceCidrIp) {
-  sourceCidrIp_ = sourceCidrIp;
-  setParameter(std::string("SourceCidrIp"), sourceCidrIp);
-}
-
 std::string ModifyFirewallRuleRequest::getRemark() const {
   return remark_;
 }
@@ -50,6 +41,24 @@ std::string ModifyFirewallRuleRequest::getRemark() const {
 void ModifyFirewallRuleRequest::setRemark(const std::string &remark) {
   remark_ = remark;
   setParameter(std::string("Remark"), remark);
+}
+
+std::string ModifyFirewallRuleRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyFirewallRuleRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string ModifyFirewallRuleRequest::getSourceCidrIp() const {
+  return sourceCidrIp_;
+}
+
+void ModifyFirewallRuleRequest::setSourceCidrIp(const std::string &sourceCidrIp) {
+  sourceCidrIp_ = sourceCidrIp;
+  setParameter(std::string("SourceCidrIp"), sourceCidrIp);
 }
 
 std::string ModifyFirewallRuleRequest::getInstanceId() const {
@@ -68,15 +77,6 @@ std::string ModifyFirewallRuleRequest::getRuleProtocol() const {
 void ModifyFirewallRuleRequest::setRuleProtocol(const std::string &ruleProtocol) {
   ruleProtocol_ = ruleProtocol;
   setParameter(std::string("RuleProtocol"), ruleProtocol);
-}
-
-std::string ModifyFirewallRuleRequest::getRegionId() const {
-  return regionId_;
-}
-
-void ModifyFirewallRuleRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string ModifyFirewallRuleRequest::getPort() const {
