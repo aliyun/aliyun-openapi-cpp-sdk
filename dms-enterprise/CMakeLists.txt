@@ -203,6 +203,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetOrderBaseInfoResult.h
 	include/alibabacloud/dms-enterprise/model/GetOwnerApplyOrderDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetOwnerApplyOrderDetailResult.h
+	include/alibabacloud/dms-enterprise/model/GetPagedInstanceRequest.h
+	include/alibabacloud/dms-enterprise/model/GetPagedInstanceResult.h
 	include/alibabacloud/dms-enterprise/model/GetPermApplyOrderDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetPermApplyOrderDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetPhysicalDatabaseRequest.h
@@ -361,6 +363,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/OfflineTaskFlowResult.h
 	include/alibabacloud/dms-enterprise/model/PauseDataCorrectSQLJobRequest.h
 	include/alibabacloud/dms-enterprise/model/PauseDataCorrectSQLJobResult.h
+	include/alibabacloud/dms-enterprise/model/PreviewWorkflowRequest.h
+	include/alibabacloud/dms-enterprise/model/PreviewWorkflowResult.h
 	include/alibabacloud/dms-enterprise/model/PublishAndDeployTaskFlowRequest.h
 	include/alibabacloud/dms-enterprise/model/PublishAndDeployTaskFlowResult.h
 	include/alibabacloud/dms-enterprise/model/QueryDataTrackResultDownloadStatusRequest.h
@@ -630,6 +634,8 @@ set(dms-enterprise_src
 	src/model/GetOrderBaseInfoResult.cc
 	src/model/GetOwnerApplyOrderDetailRequest.cc
 	src/model/GetOwnerApplyOrderDetailResult.cc
+	src/model/GetPagedInstanceRequest.cc
+	src/model/GetPagedInstanceResult.cc
 	src/model/GetPermApplyOrderDetailRequest.cc
 	src/model/GetPermApplyOrderDetailResult.cc
 	src/model/GetPhysicalDatabaseRequest.cc
@@ -788,6 +794,8 @@ set(dms-enterprise_src
 	src/model/OfflineTaskFlowResult.cc
 	src/model/PauseDataCorrectSQLJobRequest.cc
 	src/model/PauseDataCorrectSQLJobResult.cc
+	src/model/PreviewWorkflowRequest.cc
+	src/model/PreviewWorkflowResult.cc
 	src/model/PublishAndDeployTaskFlowRequest.cc
 	src/model/PublishAndDeployTaskFlowResult.cc
 	src/model/QueryDataTrackResultDownloadStatusRequest.cc

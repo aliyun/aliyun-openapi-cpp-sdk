@@ -204,6 +204,8 @@
 #include "model/GetOrderBaseInfoResult.h"
 #include "model/GetOwnerApplyOrderDetailRequest.h"
 #include "model/GetOwnerApplyOrderDetailResult.h"
+#include "model/GetPagedInstanceRequest.h"
+#include "model/GetPagedInstanceResult.h"
 #include "model/GetPermApplyOrderDetailRequest.h"
 #include "model/GetPermApplyOrderDetailResult.h"
 #include "model/GetPhysicalDatabaseRequest.h"
@@ -362,6 +364,8 @@
 #include "model/OfflineTaskFlowResult.h"
 #include "model/PauseDataCorrectSQLJobRequest.h"
 #include "model/PauseDataCorrectSQLJobResult.h"
+#include "model/PreviewWorkflowRequest.h"
+#include "model/PreviewWorkflowResult.h"
 #include "model/PublishAndDeployTaskFlowRequest.h"
 #include "model/PublishAndDeployTaskFlowResult.h"
 #include "model/QueryDataTrackResultDownloadStatusRequest.h"
@@ -728,6 +732,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetOwnerApplyOrderDetailResult> GetOwnerApplyOrderDetailOutcome;
 			typedef std::future<GetOwnerApplyOrderDetailOutcome> GetOwnerApplyOrderDetailOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetOwnerApplyOrderDetailRequest&, const GetOwnerApplyOrderDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOwnerApplyOrderDetailAsyncHandler;
+			typedef Outcome<Error, Model::GetPagedInstanceResult> GetPagedInstanceOutcome;
+			typedef std::future<GetPagedInstanceOutcome> GetPagedInstanceOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetPagedInstanceRequest&, const GetPagedInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPagedInstanceAsyncHandler;
 			typedef Outcome<Error, Model::GetPermApplyOrderDetailResult> GetPermApplyOrderDetailOutcome;
 			typedef std::future<GetPermApplyOrderDetailOutcome> GetPermApplyOrderDetailOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetPermApplyOrderDetailRequest&, const GetPermApplyOrderDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPermApplyOrderDetailAsyncHandler;
@@ -965,6 +972,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PauseDataCorrectSQLJobResult> PauseDataCorrectSQLJobOutcome;
 			typedef std::future<PauseDataCorrectSQLJobOutcome> PauseDataCorrectSQLJobOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::PauseDataCorrectSQLJobRequest&, const PauseDataCorrectSQLJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PauseDataCorrectSQLJobAsyncHandler;
+			typedef Outcome<Error, Model::PreviewWorkflowResult> PreviewWorkflowOutcome;
+			typedef std::future<PreviewWorkflowOutcome> PreviewWorkflowOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::PreviewWorkflowRequest&, const PreviewWorkflowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PreviewWorkflowAsyncHandler;
 			typedef Outcome<Error, Model::PublishAndDeployTaskFlowResult> PublishAndDeployTaskFlowOutcome;
 			typedef std::future<PublishAndDeployTaskFlowOutcome> PublishAndDeployTaskFlowOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::PublishAndDeployTaskFlowRequest&, const PublishAndDeployTaskFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PublishAndDeployTaskFlowAsyncHandler;
@@ -1369,6 +1379,9 @@ namespace AlibabaCloud
 			GetOwnerApplyOrderDetailOutcome getOwnerApplyOrderDetail(const Model::GetOwnerApplyOrderDetailRequest &request)const;
 			void getOwnerApplyOrderDetailAsync(const Model::GetOwnerApplyOrderDetailRequest& request, const GetOwnerApplyOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetOwnerApplyOrderDetailOutcomeCallable getOwnerApplyOrderDetailCallable(const Model::GetOwnerApplyOrderDetailRequest& request) const;
+			GetPagedInstanceOutcome getPagedInstance(const Model::GetPagedInstanceRequest &request)const;
+			void getPagedInstanceAsync(const Model::GetPagedInstanceRequest& request, const GetPagedInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPagedInstanceOutcomeCallable getPagedInstanceCallable(const Model::GetPagedInstanceRequest& request) const;
 			GetPermApplyOrderDetailOutcome getPermApplyOrderDetail(const Model::GetPermApplyOrderDetailRequest &request)const;
 			void getPermApplyOrderDetailAsync(const Model::GetPermApplyOrderDetailRequest& request, const GetPermApplyOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPermApplyOrderDetailOutcomeCallable getPermApplyOrderDetailCallable(const Model::GetPermApplyOrderDetailRequest& request) const;
@@ -1606,6 +1619,9 @@ namespace AlibabaCloud
 			PauseDataCorrectSQLJobOutcome pauseDataCorrectSQLJob(const Model::PauseDataCorrectSQLJobRequest &request)const;
 			void pauseDataCorrectSQLJobAsync(const Model::PauseDataCorrectSQLJobRequest& request, const PauseDataCorrectSQLJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PauseDataCorrectSQLJobOutcomeCallable pauseDataCorrectSQLJobCallable(const Model::PauseDataCorrectSQLJobRequest& request) const;
+			PreviewWorkflowOutcome previewWorkflow(const Model::PreviewWorkflowRequest &request)const;
+			void previewWorkflowAsync(const Model::PreviewWorkflowRequest& request, const PreviewWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PreviewWorkflowOutcomeCallable previewWorkflowCallable(const Model::PreviewWorkflowRequest& request) const;
 			PublishAndDeployTaskFlowOutcome publishAndDeployTaskFlow(const Model::PublishAndDeployTaskFlowRequest &request)const;
 			void publishAndDeployTaskFlowAsync(const Model::PublishAndDeployTaskFlowRequest& request, const PublishAndDeployTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PublishAndDeployTaskFlowOutcomeCallable publishAndDeployTaskFlowCallable(const Model::PublishAndDeployTaskFlowRequest& request) const;

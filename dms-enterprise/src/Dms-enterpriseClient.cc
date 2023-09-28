@@ -3327,6 +3327,42 @@ Dms_enterpriseClient::GetOwnerApplyOrderDetailOutcomeCallable Dms_enterpriseClie
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GetPagedInstanceOutcome Dms_enterpriseClient::getPagedInstance(const GetPagedInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPagedInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPagedInstanceOutcome(GetPagedInstanceResult(outcome.result()));
+	else
+		return GetPagedInstanceOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getPagedInstanceAsync(const GetPagedInstanceRequest& request, const GetPagedInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPagedInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetPagedInstanceOutcomeCallable Dms_enterpriseClient::getPagedInstanceCallable(const GetPagedInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPagedInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->getPagedInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GetPermApplyOrderDetailOutcome Dms_enterpriseClient::getPermApplyOrderDetail(const GetPermApplyOrderDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6165,6 +6201,42 @@ Dms_enterpriseClient::PauseDataCorrectSQLJobOutcomeCallable Dms_enterpriseClient
 			[this, request]()
 			{
 			return this->pauseDataCorrectSQLJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::PreviewWorkflowOutcome Dms_enterpriseClient::previewWorkflow(const PreviewWorkflowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PreviewWorkflowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PreviewWorkflowOutcome(PreviewWorkflowResult(outcome.result()));
+	else
+		return PreviewWorkflowOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::previewWorkflowAsync(const PreviewWorkflowRequest& request, const PreviewWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, previewWorkflow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::PreviewWorkflowOutcomeCallable Dms_enterpriseClient::previewWorkflowCallable(const PreviewWorkflowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PreviewWorkflowOutcome()>>(
+			[this, request]()
+			{
+			return this->previewWorkflow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
