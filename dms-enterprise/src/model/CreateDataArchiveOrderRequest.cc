@@ -59,19 +59,22 @@ CreateDataArchiveOrderRequest::Param CreateDataArchiveOrderRequest::getParam() c
 void CreateDataArchiveOrderRequest::setParam(const CreateDataArchiveOrderRequest::Param &param) {
   param_ = param;
   for(int dep1 = 0; dep1 != param.variables.size(); dep1++) {
-    setParameter(std::string("Param") + ".Variables." + std::to_string(dep1 + 1), param.variables[dep1]);
+    setParameter(std::string("Param") + ".Variables." + std::to_string(dep1 + 1) + ".Name", param.variables[dep1].name);
+    setParameter(std::string("Param") + ".Variables." + std::to_string(dep1 + 1) + ".Pattern", param.variables[dep1].pattern);
   }
-  setParameter(std::string("Param") + ".TargetInstanceId", param.targetInstanceId);
+  setParameter(std::string("Param") + ".SourceInstanceName", param.sourceInstanceName);
+  setParameter(std::string("Param") + ".CronStr", param.cronStr);
   for(int dep1 = 0; dep1 != param.tableMapping.size(); dep1++) {
     setParameter(std::string("Param") + ".TableMapping." + std::to_string(dep1 + 1), param.tableMapping[dep1]);
   }
   for(int dep1 = 0; dep1 != param.orderAfter.size(); dep1++) {
     setParameter(std::string("Param") + ".OrderAfter." + std::to_string(dep1 + 1), param.orderAfter[dep1]);
   }
-  setParameter(std::string("Param") + ".SourceDatabaseId", std::to_string(param.sourceDatabaseId));
-  setParameter(std::string("Param") + ".DbSchema", param.dbSchema);
+  setParameter(std::string("Param") + ".SourceCatalogName", param.sourceCatalogName);
   setParameter(std::string("Param") + ".RunMethod", param.runMethod);
+  setParameter(std::string("Param") + ".TargetInstanceHost", param.targetInstanceHost);
   setParameter(std::string("Param") + ".Logic", param.logic ? "true" : "false");
+  setParameter(std::string("Param") + ".SourceSchemaName", param.sourceSchemaName);
   setParameter(std::string("Param") + ".ArchiveMethod", param.archiveMethod);
   for(int dep1 = 0; dep1 != param.tableIncludes.size(); dep1++) {
     setParameter(std::string("Param") + ".TableIncludes." + std::to_string(dep1 + 1) + ".TableWhere", param.tableIncludes[dep1].tableWhere);

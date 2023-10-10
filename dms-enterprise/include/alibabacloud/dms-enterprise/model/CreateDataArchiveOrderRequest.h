@@ -29,17 +29,23 @@ namespace Model {
 class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT CreateDataArchiveOrderRequest : public RpcServiceRequest {
 public:
 	struct Param {
-		std::string string;
-		std::vector<std::string> variables;
-		std::string targetInstanceId;
+		struct VariablesItem {
+			std::string name;
+			std::string pattern;
+		};
+		VariablesItem variablesItem;
+		std::vector<VariablesItem> variables;
+		std::string sourceInstanceName;
+		std::string cronStr;
 		std::string string;
 		std::vector<std::string> tableMapping;
 		std::string string;
 		std::vector<std::string> orderAfter;
-		long sourceDatabaseId;
-		std::string dbSchema;
+		std::string sourceCatalogName;
 		std::string runMethod;
+		std::string targetInstanceHost;
 		bool logic;
+		std::string sourceSchemaName;
 		std::string archiveMethod;
 		struct TableIncludesItem {
 			std::string tableWhere;
