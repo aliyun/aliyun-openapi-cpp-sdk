@@ -375,42 +375,6 @@ FacebodyClient::CompareFaceWithMaskOutcomeCallable FacebodyClient::compareFaceWi
 	return task->get_future();
 }
 
-FacebodyClient::CountCrowdOutcome FacebodyClient::countCrowd(const CountCrowdRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CountCrowdOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CountCrowdOutcome(CountCrowdResult(outcome.result()));
-	else
-		return CountCrowdOutcome(outcome.error());
-}
-
-void FacebodyClient::countCrowdAsync(const CountCrowdRequest& request, const CountCrowdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, countCrowd(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FacebodyClient::CountCrowdOutcomeCallable FacebodyClient::countCrowdCallable(const CountCrowdRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CountCrowdOutcome()>>(
-			[this, request]()
-			{
-			return this->countCrowd(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 FacebodyClient::CreateFaceDbOutcome FacebodyClient::createFaceDb(const CreateFaceDbRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,42 +693,6 @@ FacebodyClient::DetectFaceOutcomeCallable FacebodyClient::detectFaceCallable(con
 			[this, request]()
 			{
 			return this->detectFace(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-FacebodyClient::DetectIPCPedestrianOutcome FacebodyClient::detectIPCPedestrian(const DetectIPCPedestrianRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DetectIPCPedestrianOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DetectIPCPedestrianOutcome(DetectIPCPedestrianResult(outcome.result()));
-	else
-		return DetectIPCPedestrianOutcome(outcome.error());
-}
-
-void FacebodyClient::detectIPCPedestrianAsync(const DetectIPCPedestrianRequest& request, const DetectIPCPedestrianAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, detectIPCPedestrian(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FacebodyClient::DetectIPCPedestrianOutcomeCallable FacebodyClient::detectIPCPedestrianCallable(const DetectIPCPedestrianRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DetectIPCPedestrianOutcome()>>(
-			[this, request]()
-			{
-			return this->detectIPCPedestrian(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1953,42 +1881,6 @@ FacebodyClient::SearchFaceOutcomeCallable FacebodyClient::searchFaceCallable(con
 			[this, request]()
 			{
 			return this->searchFace(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-FacebodyClient::SwapFacialFeaturesOutcome FacebodyClient::swapFacialFeatures(const SwapFacialFeaturesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SwapFacialFeaturesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SwapFacialFeaturesOutcome(SwapFacialFeaturesResult(outcome.result()));
-	else
-		return SwapFacialFeaturesOutcome(outcome.error());
-}
-
-void FacebodyClient::swapFacialFeaturesAsync(const SwapFacialFeaturesRequest& request, const SwapFacialFeaturesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, swapFacialFeatures(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FacebodyClient::SwapFacialFeaturesOutcomeCallable FacebodyClient::swapFacialFeaturesCallable(const SwapFacialFeaturesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SwapFacialFeaturesOutcome()>>(
-			[this, request]()
-			{
-			return this->swapFacialFeatures(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

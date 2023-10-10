@@ -40,6 +40,8 @@ public:
 	void setMergeInfos(const std::vector<MergeInfos> &mergeInfos);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
+	std::string getWatermarkType() const;
+	void setWatermarkType(const std::string &watermarkType);
 	std::string getOssFile() const;
 	void setOssFile(const std::string &ossFile);
 	std::string getTemplateId() const;
@@ -57,6 +59,7 @@ private:
 	bool formatResultToJson_;
 	std::vector<MergeInfos> mergeInfos_;
 	std::string userId_;
+	std::string watermarkType_;
 	std::string ossFile_;
 	std::string templateId_;
 	std::string requestProxyBy_;

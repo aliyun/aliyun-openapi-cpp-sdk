@@ -42,6 +42,8 @@ void BlurFaceResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["ImageURL"].isNull())
 		data_.imageURL = dataNode["ImageURL"].asString();
+	if(!dataNode["MaskURL"].isNull())
+		data_.maskURL = dataNode["MaskURL"].asString();
 
 }
 

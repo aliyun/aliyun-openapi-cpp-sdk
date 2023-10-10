@@ -40,8 +40,6 @@
 #include "model/CompareFaceResult.h"
 #include "model/CompareFaceWithMaskRequest.h"
 #include "model/CompareFaceWithMaskResult.h"
-#include "model/CountCrowdRequest.h"
-#include "model/CountCrowdResult.h"
 #include "model/CreateFaceDbRequest.h"
 #include "model/CreateFaceDbResult.h"
 #include "model/DeleteFaceRequest.h"
@@ -60,8 +58,6 @@
 #include "model/DetectChefCapResult.h"
 #include "model/DetectFaceRequest.h"
 #include "model/DetectFaceResult.h"
-#include "model/DetectIPCPedestrianRequest.h"
-#include "model/DetectIPCPedestrianResult.h"
 #include "model/DetectInfraredLivingFaceRequest.h"
 #include "model/DetectInfraredLivingFaceResult.h"
 #include "model/DetectLivingFaceRequest.h"
@@ -128,8 +124,6 @@
 #include "model/RetouchSkinResult.h"
 #include "model/SearchFaceRequest.h"
 #include "model/SearchFaceResult.h"
-#include "model/SwapFacialFeaturesRequest.h"
-#include "model/SwapFacialFeaturesResult.h"
 #include "model/UpdateFaceEntityRequest.h"
 #include "model/UpdateFaceEntityResult.h"
 #include "model/VerifyFaceMaskRequest.h"
@@ -170,9 +164,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CompareFaceWithMaskResult> CompareFaceWithMaskOutcome;
 			typedef std::future<CompareFaceWithMaskOutcome> CompareFaceWithMaskOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::CompareFaceWithMaskRequest&, const CompareFaceWithMaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompareFaceWithMaskAsyncHandler;
-			typedef Outcome<Error, Model::CountCrowdResult> CountCrowdOutcome;
-			typedef std::future<CountCrowdOutcome> CountCrowdOutcomeCallable;
-			typedef std::function<void(const FacebodyClient*, const Model::CountCrowdRequest&, const CountCrowdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CountCrowdAsyncHandler;
 			typedef Outcome<Error, Model::CreateFaceDbResult> CreateFaceDbOutcome;
 			typedef std::future<CreateFaceDbOutcome> CreateFaceDbOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::CreateFaceDbRequest&, const CreateFaceDbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFaceDbAsyncHandler;
@@ -200,9 +191,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectFaceResult> DetectFaceOutcome;
 			typedef std::future<DetectFaceOutcome> DetectFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DetectFaceRequest&, const DetectFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectFaceAsyncHandler;
-			typedef Outcome<Error, Model::DetectIPCPedestrianResult> DetectIPCPedestrianOutcome;
-			typedef std::future<DetectIPCPedestrianOutcome> DetectIPCPedestrianOutcomeCallable;
-			typedef std::function<void(const FacebodyClient*, const Model::DetectIPCPedestrianRequest&, const DetectIPCPedestrianOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectIPCPedestrianAsyncHandler;
 			typedef Outcome<Error, Model::DetectInfraredLivingFaceResult> DetectInfraredLivingFaceOutcome;
 			typedef std::future<DetectInfraredLivingFaceOutcome> DetectInfraredLivingFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DetectInfraredLivingFaceRequest&, const DetectInfraredLivingFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectInfraredLivingFaceAsyncHandler;
@@ -302,9 +290,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SearchFaceResult> SearchFaceOutcome;
 			typedef std::future<SearchFaceOutcome> SearchFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::SearchFaceRequest&, const SearchFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchFaceAsyncHandler;
-			typedef Outcome<Error, Model::SwapFacialFeaturesResult> SwapFacialFeaturesOutcome;
-			typedef std::future<SwapFacialFeaturesOutcome> SwapFacialFeaturesOutcomeCallable;
-			typedef std::function<void(const FacebodyClient*, const Model::SwapFacialFeaturesRequest&, const SwapFacialFeaturesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwapFacialFeaturesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateFaceEntityResult> UpdateFaceEntityOutcome;
 			typedef std::future<UpdateFaceEntityOutcome> UpdateFaceEntityOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::UpdateFaceEntityRequest&, const UpdateFaceEntityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFaceEntityAsyncHandler;
@@ -343,9 +328,6 @@ namespace AlibabaCloud
 			CompareFaceWithMaskOutcome compareFaceWithMask(const Model::CompareFaceWithMaskRequest &request)const;
 			void compareFaceWithMaskAsync(const Model::CompareFaceWithMaskRequest& request, const CompareFaceWithMaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CompareFaceWithMaskOutcomeCallable compareFaceWithMaskCallable(const Model::CompareFaceWithMaskRequest& request) const;
-			CountCrowdOutcome countCrowd(const Model::CountCrowdRequest &request)const;
-			void countCrowdAsync(const Model::CountCrowdRequest& request, const CountCrowdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CountCrowdOutcomeCallable countCrowdCallable(const Model::CountCrowdRequest& request) const;
 			CreateFaceDbOutcome createFaceDb(const Model::CreateFaceDbRequest &request)const;
 			void createFaceDbAsync(const Model::CreateFaceDbRequest& request, const CreateFaceDbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateFaceDbOutcomeCallable createFaceDbCallable(const Model::CreateFaceDbRequest& request) const;
@@ -373,9 +355,6 @@ namespace AlibabaCloud
 			DetectFaceOutcome detectFace(const Model::DetectFaceRequest &request)const;
 			void detectFaceAsync(const Model::DetectFaceRequest& request, const DetectFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectFaceOutcomeCallable detectFaceCallable(const Model::DetectFaceRequest& request) const;
-			DetectIPCPedestrianOutcome detectIPCPedestrian(const Model::DetectIPCPedestrianRequest &request)const;
-			void detectIPCPedestrianAsync(const Model::DetectIPCPedestrianRequest& request, const DetectIPCPedestrianAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DetectIPCPedestrianOutcomeCallable detectIPCPedestrianCallable(const Model::DetectIPCPedestrianRequest& request) const;
 			DetectInfraredLivingFaceOutcome detectInfraredLivingFace(const Model::DetectInfraredLivingFaceRequest &request)const;
 			void detectInfraredLivingFaceAsync(const Model::DetectInfraredLivingFaceRequest& request, const DetectInfraredLivingFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectInfraredLivingFaceOutcomeCallable detectInfraredLivingFaceCallable(const Model::DetectInfraredLivingFaceRequest& request) const;
@@ -475,9 +454,6 @@ namespace AlibabaCloud
 			SearchFaceOutcome searchFace(const Model::SearchFaceRequest &request)const;
 			void searchFaceAsync(const Model::SearchFaceRequest& request, const SearchFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchFaceOutcomeCallable searchFaceCallable(const Model::SearchFaceRequest& request) const;
-			SwapFacialFeaturesOutcome swapFacialFeatures(const Model::SwapFacialFeaturesRequest &request)const;
-			void swapFacialFeaturesAsync(const Model::SwapFacialFeaturesRequest& request, const SwapFacialFeaturesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SwapFacialFeaturesOutcomeCallable swapFacialFeaturesCallable(const Model::SwapFacialFeaturesRequest& request) const;
 			UpdateFaceEntityOutcome updateFaceEntity(const Model::UpdateFaceEntityRequest &request)const;
 			void updateFaceEntityAsync(const Model::UpdateFaceEntityRequest& request, const UpdateFaceEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateFaceEntityOutcomeCallable updateFaceEntityCallable(const Model::UpdateFaceEntityRequest& request) const;

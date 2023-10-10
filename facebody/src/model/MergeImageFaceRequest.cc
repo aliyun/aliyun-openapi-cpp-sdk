@@ -57,6 +57,15 @@ void MergeImageFaceRequest::setUserId(const std::string &userId) {
   setBodyParameter(std::string("UserId"), userId);
 }
 
+std::string MergeImageFaceRequest::getWatermarkType() const {
+  return watermarkType_;
+}
+
+void MergeImageFaceRequest::setWatermarkType(const std::string &watermarkType) {
+  watermarkType_ = watermarkType;
+  setBodyParameter(std::string("WatermarkType"), watermarkType);
+}
+
 std::string MergeImageFaceRequest::getOssFile() const {
   return ossFile_;
 }

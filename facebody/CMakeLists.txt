@@ -39,8 +39,6 @@ set(facebody_public_header_model
 	include/alibabacloud/facebody/model/CompareFaceResult.h
 	include/alibabacloud/facebody/model/CompareFaceWithMaskRequest.h
 	include/alibabacloud/facebody/model/CompareFaceWithMaskResult.h
-	include/alibabacloud/facebody/model/CountCrowdRequest.h
-	include/alibabacloud/facebody/model/CountCrowdResult.h
 	include/alibabacloud/facebody/model/CreateFaceDbRequest.h
 	include/alibabacloud/facebody/model/CreateFaceDbResult.h
 	include/alibabacloud/facebody/model/DeleteFaceRequest.h
@@ -59,8 +57,6 @@ set(facebody_public_header_model
 	include/alibabacloud/facebody/model/DetectChefCapResult.h
 	include/alibabacloud/facebody/model/DetectFaceRequest.h
 	include/alibabacloud/facebody/model/DetectFaceResult.h
-	include/alibabacloud/facebody/model/DetectIPCPedestrianRequest.h
-	include/alibabacloud/facebody/model/DetectIPCPedestrianResult.h
 	include/alibabacloud/facebody/model/DetectInfraredLivingFaceRequest.h
 	include/alibabacloud/facebody/model/DetectInfraredLivingFaceResult.h
 	include/alibabacloud/facebody/model/DetectLivingFaceRequest.h
@@ -127,8 +123,6 @@ set(facebody_public_header_model
 	include/alibabacloud/facebody/model/RetouchSkinResult.h
 	include/alibabacloud/facebody/model/SearchFaceRequest.h
 	include/alibabacloud/facebody/model/SearchFaceResult.h
-	include/alibabacloud/facebody/model/SwapFacialFeaturesRequest.h
-	include/alibabacloud/facebody/model/SwapFacialFeaturesResult.h
 	include/alibabacloud/facebody/model/UpdateFaceEntityRequest.h
 	include/alibabacloud/facebody/model/UpdateFaceEntityResult.h
 	include/alibabacloud/facebody/model/VerifyFaceMaskRequest.h
@@ -154,8 +148,6 @@ set(facebody_src
 	src/model/CompareFaceResult.cc
 	src/model/CompareFaceWithMaskRequest.cc
 	src/model/CompareFaceWithMaskResult.cc
-	src/model/CountCrowdRequest.cc
-	src/model/CountCrowdResult.cc
 	src/model/CreateFaceDbRequest.cc
 	src/model/CreateFaceDbResult.cc
 	src/model/DeleteFaceRequest.cc
@@ -174,8 +166,6 @@ set(facebody_src
 	src/model/DetectChefCapResult.cc
 	src/model/DetectFaceRequest.cc
 	src/model/DetectFaceResult.cc
-	src/model/DetectIPCPedestrianRequest.cc
-	src/model/DetectIPCPedestrianResult.cc
 	src/model/DetectInfraredLivingFaceRequest.cc
 	src/model/DetectInfraredLivingFaceResult.cc
 	src/model/DetectLivingFaceRequest.cc
@@ -242,8 +232,6 @@ set(facebody_src
 	src/model/RetouchSkinResult.cc
 	src/model/SearchFaceRequest.cc
 	src/model/SearchFaceResult.cc
-	src/model/SwapFacialFeaturesRequest.cc
-	src/model/SwapFacialFeaturesResult.cc
 	src/model/UpdateFaceEntityRequest.cc
 	src/model/UpdateFaceEntityResult.cc
 	src/model/VerifyFaceMaskRequest.cc
