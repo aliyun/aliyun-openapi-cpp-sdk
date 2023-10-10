@@ -34,6 +34,15 @@ void MergeVideoFaceRequest::setReferenceURL(const std::string &referenceURL) {
   setBodyParameter(std::string("ReferenceURL"), referenceURL);
 }
 
+std::string MergeVideoFaceRequest::getWatermarkType() const {
+  return watermarkType_;
+}
+
+void MergeVideoFaceRequest::setWatermarkType(const std::string &watermarkType) {
+  watermarkType_ = watermarkType;
+  setBodyParameter(std::string("WatermarkType"), watermarkType);
+}
+
 bool MergeVideoFaceRequest::getEnhance() const {
   return enhance_;
 }

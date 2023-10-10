@@ -32,6 +32,8 @@ public:
 	~MergeVideoFaceRequest();
 	std::string getReferenceURL() const;
 	void setReferenceURL(const std::string &referenceURL);
+	std::string getWatermarkType() const;
+	void setWatermarkType(const std::string &watermarkType);
 	bool getEnhance() const;
 	void setEnhance(bool enhance);
 	std::string getPostURL() const;
@@ -45,6 +47,7 @@ public:
 
 private:
 	std::string referenceURL_;
+	std::string watermarkType_;
 	bool enhance_;
 	std::string postURL_;
 	bool async_;

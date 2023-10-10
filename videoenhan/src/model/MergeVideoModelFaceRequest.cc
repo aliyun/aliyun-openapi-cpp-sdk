@@ -58,6 +58,15 @@ void MergeVideoModelFaceRequest::setUserId(const std::string &userId) {
   setBodyParameter(std::string("UserId"), userId);
 }
 
+std::string MergeVideoModelFaceRequest::getWatermarkType() const {
+  return watermarkType_;
+}
+
+void MergeVideoModelFaceRequest::setWatermarkType(const std::string &watermarkType) {
+  watermarkType_ = watermarkType;
+  setBodyParameter(std::string("WatermarkType"), watermarkType);
+}
+
 bool MergeVideoModelFaceRequest::getEnhance() const {
   return enhance_;
 }
