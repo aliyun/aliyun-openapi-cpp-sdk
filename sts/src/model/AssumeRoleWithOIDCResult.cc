@@ -46,6 +46,12 @@ void AssumeRoleWithOIDCResult::parse(const std::string &payload)
 		oIDCTokenInfo_.issuer = oIDCTokenInfoNode["Issuer"].asString();
 	if(!oIDCTokenInfoNode["ClientIds"].isNull())
 		oIDCTokenInfo_.clientIds = oIDCTokenInfoNode["ClientIds"].asString();
+	if(!oIDCTokenInfoNode["ExpirationTime"].isNull())
+		oIDCTokenInfo_.expirationTime = oIDCTokenInfoNode["ExpirationTime"].asString();
+	if(!oIDCTokenInfoNode["IssuanceTime"].isNull())
+		oIDCTokenInfo_.issuanceTime = oIDCTokenInfoNode["IssuanceTime"].asString();
+	if(!oIDCTokenInfoNode["VerificationInfo"].isNull())
+		oIDCTokenInfo_.verificationInfo = oIDCTokenInfoNode["VerificationInfo"].asString();
 	auto assumedRoleUserNode = value["AssumedRoleUser"];
 	if(!assumedRoleUserNode["AssumedRoleId"].isNull())
 		assumedRoleUser_.assumedRoleId = assumedRoleUserNode["AssumedRoleId"].asString();

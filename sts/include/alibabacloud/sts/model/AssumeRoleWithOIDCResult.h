@@ -35,6 +35,9 @@ namespace AlibabaCloud
 				struct OIDCTokenInfo
 				{
 					std::string issuer;
+					std::string issuanceTime;
+					std::string verificationInfo;
+					std::string expirationTime;
 					std::string subject;
 					std::string clientIds;
 				};
