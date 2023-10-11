@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_GETCERTIFYRESULTRESULT_H_
-#define ALIBABACLOUD_DYPNSAPI_MODEL_GETCERTIFYRESULTRESULT_H_
+#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_SENDSMSVERIFYCODERESULT_H_
+#define ALIBABACLOUD_DYPNSAPI_MODEL_SENDSMSVERIFYCODERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DYPNSAPI_EXPORT GetCertifyResultResult : public ServiceResult
+			class ALIBABACLOUD_DYPNSAPI_EXPORT SendSmsVerifyCodeResult : public ServiceResult
 			{
 			public:
-				struct DataItem
+				struct Model
 				{
-					std::string deviceToken;
-					std::string identityInfo;
-					std::string materialInfo;
-					std::string verifyResult;
-					std::string verifyDesc;
+					std::string verifyCode;
+					std::string requestId;
+					std::string outId;
+					std::string bizId;
 				};
 
 
-				GetCertifyResultResult();
-				explicit GetCertifyResultResult(const std::string &payload);
-				~GetCertifyResultResult();
+				SendSmsVerifyCodeResult();
+				explicit SendSmsVerifyCodeResult(const std::string &payload);
+				~SendSmsVerifyCodeResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
-				std::vector<DataItem> getData()const;
+				Model getModel()const;
 				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string message_;
-				std::vector<DataItem> data_;
+				Model model_;
 				std::string code_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_GETCERTIFYRESULTRESULT_H_
+#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_SENDSMSVERIFYCODERESULT_H_

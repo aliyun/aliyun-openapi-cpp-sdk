@@ -51,6 +51,78 @@ DypnsapiClient::DypnsapiClient(const std::string & accessKeyId, const std::strin
 DypnsapiClient::~DypnsapiClient()
 {}
 
+DypnsapiClient::CheckSmsVerifyCodeOutcome DypnsapiClient::checkSmsVerifyCode(const CheckSmsVerifyCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckSmsVerifyCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckSmsVerifyCodeOutcome(CheckSmsVerifyCodeResult(outcome.result()));
+	else
+		return CheckSmsVerifyCodeOutcome(outcome.error());
+}
+
+void DypnsapiClient::checkSmsVerifyCodeAsync(const CheckSmsVerifyCodeRequest& request, const CheckSmsVerifyCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkSmsVerifyCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DypnsapiClient::CheckSmsVerifyCodeOutcomeCallable DypnsapiClient::checkSmsVerifyCodeCallable(const CheckSmsVerifyCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckSmsVerifyCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->checkSmsVerifyCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DypnsapiClient::CreateSchemeConfigOutcome DypnsapiClient::createSchemeConfig(const CreateSchemeConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSchemeConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSchemeConfigOutcome(CreateSchemeConfigResult(outcome.result()));
+	else
+		return CreateSchemeConfigOutcome(outcome.error());
+}
+
+void DypnsapiClient::createSchemeConfigAsync(const CreateSchemeConfigRequest& request, const CreateSchemeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSchemeConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DypnsapiClient::CreateSchemeConfigOutcomeCallable DypnsapiClient::createSchemeConfigCallable(const CreateSchemeConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSchemeConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->createSchemeConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DypnsapiClient::CreateVerifySchemeOutcome DypnsapiClient::createVerifyScheme(const CreateVerifySchemeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -231,36 +303,36 @@ DypnsapiClient::GetAuthorizationUrlOutcomeCallable DypnsapiClient::getAuthorizat
 	return task->get_future();
 }
 
-DypnsapiClient::GetCertifyResultOutcome DypnsapiClient::getCertifyResult(const GetCertifyResultRequest &request) const
+DypnsapiClient::GetFusionAuthTokenOutcome DypnsapiClient::getFusionAuthToken(const GetFusionAuthTokenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetCertifyResultOutcome(endpointOutcome.error());
+		return GetFusionAuthTokenOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetCertifyResultOutcome(GetCertifyResultResult(outcome.result()));
+		return GetFusionAuthTokenOutcome(GetFusionAuthTokenResult(outcome.result()));
 	else
-		return GetCertifyResultOutcome(outcome.error());
+		return GetFusionAuthTokenOutcome(outcome.error());
 }
 
-void DypnsapiClient::getCertifyResultAsync(const GetCertifyResultRequest& request, const GetCertifyResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DypnsapiClient::getFusionAuthTokenAsync(const GetFusionAuthTokenRequest& request, const GetFusionAuthTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getCertifyResult(request), context);
+		handler(this, request, getFusionAuthToken(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DypnsapiClient::GetCertifyResultOutcomeCallable DypnsapiClient::getCertifyResultCallable(const GetCertifyResultRequest &request) const
+DypnsapiClient::GetFusionAuthTokenOutcomeCallable DypnsapiClient::getFusionAuthTokenCallable(const GetFusionAuthTokenRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetCertifyResultOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetFusionAuthTokenOutcome()>>(
 			[this, request]()
 			{
-			return this->getCertifyResult(request);
+			return this->getFusionAuthToken(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -297,6 +369,42 @@ DypnsapiClient::GetMobileOutcomeCallable DypnsapiClient::getMobileCallable(const
 			[this, request]()
 			{
 			return this->getMobile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DypnsapiClient::GetPhoneWithTokenOutcome DypnsapiClient::getPhoneWithToken(const GetPhoneWithTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPhoneWithTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPhoneWithTokenOutcome(GetPhoneWithTokenResult(outcome.result()));
+	else
+		return GetPhoneWithTokenOutcome(outcome.error());
+}
+
+void DypnsapiClient::getPhoneWithTokenAsync(const GetPhoneWithTokenRequest& request, const GetPhoneWithTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPhoneWithToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DypnsapiClient::GetPhoneWithTokenOutcomeCallable DypnsapiClient::getPhoneWithTokenCallable(const GetPhoneWithTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPhoneWithTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->getPhoneWithToken(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -411,6 +519,78 @@ DypnsapiClient::QueryGateVerifyStatisticPublicOutcomeCallable DypnsapiClient::qu
 	return task->get_future();
 }
 
+DypnsapiClient::QuerySendDetailsOutcome DypnsapiClient::querySendDetails(const QuerySendDetailsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySendDetailsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySendDetailsOutcome(QuerySendDetailsResult(outcome.result()));
+	else
+		return QuerySendDetailsOutcome(outcome.error());
+}
+
+void DypnsapiClient::querySendDetailsAsync(const QuerySendDetailsRequest& request, const QuerySendDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySendDetails(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DypnsapiClient::QuerySendDetailsOutcomeCallable DypnsapiClient::querySendDetailsCallable(const QuerySendDetailsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySendDetailsOutcome()>>(
+			[this, request]()
+			{
+			return this->querySendDetails(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DypnsapiClient::SendSmsVerifyCodeOutcome DypnsapiClient::sendSmsVerifyCode(const SendSmsVerifyCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SendSmsVerifyCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SendSmsVerifyCodeOutcome(SendSmsVerifyCodeResult(outcome.result()));
+	else
+		return SendSmsVerifyCodeOutcome(outcome.error());
+}
+
+void DypnsapiClient::sendSmsVerifyCodeAsync(const SendSmsVerifyCodeRequest& request, const SendSmsVerifyCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sendSmsVerifyCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DypnsapiClient::SendSmsVerifyCodeOutcomeCallable DypnsapiClient::sendSmsVerifyCodeCallable(const SendSmsVerifyCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SendSmsVerifyCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->sendSmsVerifyCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DypnsapiClient::VerifyMobileOutcome DypnsapiClient::verifyMobile(const VerifyMobileRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,6 +693,42 @@ DypnsapiClient::VerifySmsCodeOutcomeCallable DypnsapiClient::verifySmsCodeCallab
 			[this, request]()
 			{
 			return this->verifySmsCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DypnsapiClient::VerifyWithFusionAuthTokenOutcome DypnsapiClient::verifyWithFusionAuthToken(const VerifyWithFusionAuthTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VerifyWithFusionAuthTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VerifyWithFusionAuthTokenOutcome(VerifyWithFusionAuthTokenResult(outcome.result()));
+	else
+		return VerifyWithFusionAuthTokenOutcome(outcome.error());
+}
+
+void DypnsapiClient::verifyWithFusionAuthTokenAsync(const VerifyWithFusionAuthTokenRequest& request, const VerifyWithFusionAuthTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, verifyWithFusionAuthToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DypnsapiClient::VerifyWithFusionAuthTokenOutcomeCallable DypnsapiClient::verifyWithFusionAuthTokenCallable(const VerifyWithFusionAuthTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VerifyWithFusionAuthTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->verifyWithFusionAuthToken(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

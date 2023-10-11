@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Dypnsapi::Model::DescribeVerifySchemeRequest;
 
-DescribeVerifySchemeRequest::DescribeVerifySchemeRequest() :
-	RpcServiceRequest("dypnsapi", "2017-05-25", "DescribeVerifyScheme")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeVerifySchemeRequest::DescribeVerifySchemeRequest()
+    : RpcServiceRequest("dypnsapi", "2017-05-25", "DescribeVerifyScheme") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeVerifySchemeRequest::~DescribeVerifySchemeRequest()
-{}
+DescribeVerifySchemeRequest::~DescribeVerifySchemeRequest() {}
 
-long DescribeVerifySchemeRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeVerifySchemeRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeVerifySchemeRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeVerifySchemeRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeVerifySchemeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeVerifySchemeRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeVerifySchemeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeVerifySchemeRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-long DescribeVerifySchemeRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeVerifySchemeRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeVerifySchemeRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeVerifySchemeRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DescribeVerifySchemeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeVerifySchemeRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeVerifySchemeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeVerifySchemeRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeVerifySchemeRequest::getSchemeCode()const
-{
-	return schemeCode_;
+std::string DescribeVerifySchemeRequest::getSchemeCode() const {
+  return schemeCode_;
 }
 
-void DescribeVerifySchemeRequest::setSchemeCode(const std::string& schemeCode)
-{
-	schemeCode_ = schemeCode;
-	setParameter("SchemeCode", schemeCode);
+void DescribeVerifySchemeRequest::setSchemeCode(const std::string &schemeCode) {
+  schemeCode_ = schemeCode;
+  setParameter(std::string("SchemeCode"), schemeCode);
 }
 
-long DescribeVerifySchemeRequest::getCustomerId()const
-{
-	return customerId_;
+long DescribeVerifySchemeRequest::getCustomerId() const {
+  return customerId_;
 }
 
-void DescribeVerifySchemeRequest::setCustomerId(long customerId)
-{
-	customerId_ = customerId;
-	setParameter("CustomerId", std::to_string(customerId));
+void DescribeVerifySchemeRequest::setCustomerId(long customerId) {
+  customerId_ = customerId;
+  setParameter(std::string("CustomerId"), std::to_string(customerId));
 }
 

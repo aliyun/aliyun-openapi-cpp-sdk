@@ -14,38 +14,35 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dypnsapi/model/CreateVerifySchemeResult.h>
+#include <alibabacloud/dypnsapi/model/GetFusionAuthTokenResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dypnsapi;
 using namespace AlibabaCloud::Dypnsapi::Model;
 
-CreateVerifySchemeResult::CreateVerifySchemeResult() :
+GetFusionAuthTokenResult::GetFusionAuthTokenResult() :
 	ServiceResult()
 {}
 
-CreateVerifySchemeResult::CreateVerifySchemeResult(const std::string &payload) :
+GetFusionAuthTokenResult::GetFusionAuthTokenResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateVerifySchemeResult::~CreateVerifySchemeResult()
+GetFusionAuthTokenResult::~GetFusionAuthTokenResult()
 {}
 
-void CreateVerifySchemeResult::parse(const std::string &payload)
+void GetFusionAuthTokenResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto gateVerifySchemeDTONode = value["GateVerifySchemeDTO"];
-	if(!gateVerifySchemeDTONode["SchemeCode"].isNull())
-		gateVerifySchemeDTO_.schemeCode = gateVerifySchemeDTONode["SchemeCode"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stol(value["HttpStatusCode"].asString());
+	if(!value["Model"].isNull())
+		model_ = value["Model"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Success"].isNull())
@@ -53,27 +50,22 @@ void CreateVerifySchemeResult::parse(const std::string &payload)
 
 }
 
-std::string CreateVerifySchemeResult::getMessage()const
+std::string GetFusionAuthTokenResult::getMessage()const
 {
 	return message_;
 }
 
-CreateVerifySchemeResult::GateVerifySchemeDTO CreateVerifySchemeResult::getGateVerifySchemeDTO()const
+std::string GetFusionAuthTokenResult::getModel()const
 {
-	return gateVerifySchemeDTO_;
+	return model_;
 }
 
-long CreateVerifySchemeResult::getHttpStatusCode()const
-{
-	return httpStatusCode_;
-}
-
-std::string CreateVerifySchemeResult::getCode()const
+std::string GetFusionAuthTokenResult::getCode()const
 {
 	return code_;
 }
 
-bool CreateVerifySchemeResult::getSuccess()const
+bool GetFusionAuthTokenResult::getSuccess()const
 {
 	return success_;
 }

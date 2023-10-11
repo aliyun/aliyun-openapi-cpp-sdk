@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_QUERYGATEVERIFYBILLINGPUBLICREQUEST_H_
-#define ALIBABACLOUD_DYPNSAPI_MODEL_QUERYGATEVERIFYBILLINGPUBLICREQUEST_H_
+#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_CHECKSMSVERIFYCODEREQUEST_H_
+#define ALIBABACLOUD_DYPNSAPI_MODEL_CHECKSMSVERIFYCODEREQUEST_H_
 
 #include <alibabacloud/dypnsapi/DypnsapiExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,50 @@
 namespace AlibabaCloud {
 namespace Dypnsapi {
 namespace Model {
-class ALIBABACLOUD_DYPNSAPI_EXPORT QueryGateVerifyBillingPublicRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DYPNSAPI_EXPORT CheckSmsVerifyCodeRequest : public RpcServiceRequest {
 public:
-	QueryGateVerifyBillingPublicRequest();
-	~QueryGateVerifyBillingPublicRequest();
+	CheckSmsVerifyCodeRequest();
+	~CheckSmsVerifyCodeRequest();
+	long getCaseAuthPolicy() const;
+	void setCaseAuthPolicy(long caseAuthPolicy);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	int getAuthenticationType() const;
-	void setAuthenticationType(int authenticationType);
+	std::string getCountryCode() const;
+	void setCountryCode(const std::string &countryCode);
+	std::string getPhoneNumber() const;
+	void setPhoneNumber(const std::string &phoneNumber);
+	std::string getExtendFunction() const;
+	void setExtendFunction(const std::string &extendFunction);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getVerifyCode() const;
+	void setVerifyCode(const std::string &verifyCode);
+	std::string getRouteName() const;
+	void setRouteName(const std::string &routeName);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	std::string getProdCode() const;
-	void setProdCode(const std::string &prodCode);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getMonth() const;
-	void setMonth(const std::string &month);
+	std::string getSchemeName() const;
+	void setSchemeName(const std::string &schemeName);
+	std::string getOutId() const;
+	void setOutId(const std::string &outId);
 
 private:
+	long caseAuthPolicy_;
 	long resourceOwnerId_;
-	int authenticationType_;
+	std::string countryCode_;
+	std::string phoneNumber_;
+	std::string extendFunction_;
 	std::string accessKeyId_;
+	std::string verifyCode_;
+	std::string routeName_;
 	std::string resourceOwnerAccount_;
-	std::string prodCode_;
 	long ownerId_;
-	std::string month_;
+	std::string schemeName_;
+	std::string outId_;
 };
 } // namespace Model
 } // namespace Dypnsapi
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_QUERYGATEVERIFYBILLINGPUBLICREQUEST_H_
+#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_CHECKSMSVERIFYCODEREQUEST_H_

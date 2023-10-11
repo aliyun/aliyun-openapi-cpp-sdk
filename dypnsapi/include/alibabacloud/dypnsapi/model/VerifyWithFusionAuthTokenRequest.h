@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_QUERYGATEVERIFYBILLINGPUBLICREQUEST_H_
-#define ALIBABACLOUD_DYPNSAPI_MODEL_QUERYGATEVERIFYBILLINGPUBLICREQUEST_H_
+#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_VERIFYWITHFUSIONAUTHTOKENREQUEST_H_
+#define ALIBABACLOUD_DYPNSAPI_MODEL_VERIFYWITHFUSIONAUTHTOKENREQUEST_H_
 
 #include <alibabacloud/dypnsapi/DypnsapiExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,35 @@
 namespace AlibabaCloud {
 namespace Dypnsapi {
 namespace Model {
-class ALIBABACLOUD_DYPNSAPI_EXPORT QueryGateVerifyBillingPublicRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DYPNSAPI_EXPORT VerifyWithFusionAuthTokenRequest : public RpcServiceRequest {
 public:
-	QueryGateVerifyBillingPublicRequest();
-	~QueryGateVerifyBillingPublicRequest();
+	VerifyWithFusionAuthTokenRequest();
+	~VerifyWithFusionAuthTokenRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	int getAuthenticationType() const;
-	void setAuthenticationType(int authenticationType);
+	std::string getExtendFunction() const;
+	void setExtendFunction(const std::string &extendFunction);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRouteName() const;
+	void setRouteName(const std::string &routeName);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	std::string getProdCode() const;
-	void setProdCode(const std::string &prodCode);
+	std::string getVerifyToken() const;
+	void setVerifyToken(const std::string &verifyToken);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getMonth() const;
-	void setMonth(const std::string &month);
 
 private:
 	long resourceOwnerId_;
-	int authenticationType_;
+	std::string extendFunction_;
 	std::string accessKeyId_;
+	std::string routeName_;
 	std::string resourceOwnerAccount_;
-	std::string prodCode_;
+	std::string verifyToken_;
 	long ownerId_;
-	std::string month_;
 };
 } // namespace Model
 } // namespace Dypnsapi
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_QUERYGATEVERIFYBILLINGPUBLICREQUEST_H_
+#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_VERIFYWITHFUSIONAUTHTOKENREQUEST_H_

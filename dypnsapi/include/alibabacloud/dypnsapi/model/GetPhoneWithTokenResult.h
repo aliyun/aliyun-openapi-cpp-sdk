@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_CREATEVERIFYSCHEMERESULT_H_
-#define ALIBABACLOUD_DYPNSAPI_MODEL_CREATEVERIFYSCHEMERESULT_H_
+#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_GETPHONEWITHTOKENRESULT_H_
+#define ALIBABACLOUD_DYPNSAPI_MODEL_GETPHONEWITHTOKENRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DYPNSAPI_EXPORT CreateVerifySchemeResult : public ServiceResult
+			class ALIBABACLOUD_DYPNSAPI_EXPORT GetPhoneWithTokenResult : public ServiceResult
 			{
 			public:
-				struct GateVerifySchemeDTO
+				struct Data
 				{
-					std::string schemeCode;
+					std::string mobile;
 				};
 
 
-				CreateVerifySchemeResult();
-				explicit CreateVerifySchemeResult(const std::string &payload);
-				~CreateVerifySchemeResult();
+				GetPhoneWithTokenResult();
+				explicit GetPhoneWithTokenResult(const std::string &payload);
+				~GetPhoneWithTokenResult();
 				std::string getMessage()const;
-				GateVerifySchemeDTO getGateVerifySchemeDTO()const;
-				long getHttpStatusCode()const;
+				Data getData()const;
 				std::string getCode()const;
-				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				GateVerifySchemeDTO gateVerifySchemeDTO_;
-				long httpStatusCode_;
+				Data data_;
 				std::string code_;
-				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_CREATEVERIFYSCHEMERESULT_H_
+#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_GETPHONEWITHTOKENRESULT_H_

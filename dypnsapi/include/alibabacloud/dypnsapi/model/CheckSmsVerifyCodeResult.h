@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_CREATEVERIFYSCHEMERESULT_H_
-#define ALIBABACLOUD_DYPNSAPI_MODEL_CREATEVERIFYSCHEMERESULT_H_
+#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_CHECKSMSVERIFYCODERESULT_H_
+#define ALIBABACLOUD_DYPNSAPI_MODEL_CHECKSMSVERIFYCODERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,30 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DYPNSAPI_EXPORT CreateVerifySchemeResult : public ServiceResult
+			class ALIBABACLOUD_DYPNSAPI_EXPORT CheckSmsVerifyCodeResult : public ServiceResult
 			{
 			public:
-				struct GateVerifySchemeDTO
+				struct Model
 				{
-					std::string schemeCode;
+					std::string outId;
+					std::string verifyResult;
 				};
 
 
-				CreateVerifySchemeResult();
-				explicit CreateVerifySchemeResult(const std::string &payload);
-				~CreateVerifySchemeResult();
+				CheckSmsVerifyCodeResult();
+				explicit CheckSmsVerifyCodeResult(const std::string &payload);
+				~CheckSmsVerifyCodeResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
-				GateVerifySchemeDTO getGateVerifySchemeDTO()const;
-				long getHttpStatusCode()const;
+				Model getModel()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string message_;
-				GateVerifySchemeDTO gateVerifySchemeDTO_;
-				long httpStatusCode_;
+				Model model_;
 				std::string code_;
 				bool success_;
 
@@ -60,4 +61,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_CREATEVERIFYSCHEMERESULT_H_
+#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_CHECKSMSVERIFYCODERESULT_H_

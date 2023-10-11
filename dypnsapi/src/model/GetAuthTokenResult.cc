@@ -40,10 +40,10 @@ void GetAuthTokenResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto tokenInfoNode = value["TokenInfo"];
-	if(!tokenInfoNode["JwtToken"].isNull())
-		tokenInfo_.jwtToken = tokenInfoNode["JwtToken"].asString();
 	if(!tokenInfoNode["AccessToken"].isNull())
 		tokenInfo_.accessToken = tokenInfoNode["AccessToken"].asString();
+	if(!tokenInfoNode["JwtToken"].isNull())
+		tokenInfo_.jwtToken = tokenInfoNode["JwtToken"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

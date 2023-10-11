@@ -14,36 +14,34 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dypnsapi/model/VerifyMobileResult.h>
+#include <alibabacloud/dypnsapi/model/GetPhoneWithTokenResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dypnsapi;
 using namespace AlibabaCloud::Dypnsapi::Model;
 
-VerifyMobileResult::VerifyMobileResult() :
+GetPhoneWithTokenResult::GetPhoneWithTokenResult() :
 	ServiceResult()
 {}
 
-VerifyMobileResult::VerifyMobileResult(const std::string &payload) :
+GetPhoneWithTokenResult::GetPhoneWithTokenResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-VerifyMobileResult::~VerifyMobileResult()
+GetPhoneWithTokenResult::~GetPhoneWithTokenResult()
 {}
 
-void VerifyMobileResult::parse(const std::string &payload)
+void GetPhoneWithTokenResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto gateVerifyResultDTONode = value["GateVerifyResultDTO"];
-	if(!gateVerifyResultDTONode["VerifyResult"].isNull())
-		gateVerifyResultDTO_.verifyResult = gateVerifyResultDTONode["VerifyResult"].asString();
-	if(!gateVerifyResultDTONode["VerifyId"].isNull())
-		gateVerifyResultDTO_.verifyId = gateVerifyResultDTONode["VerifyId"].asString();
+	auto dataNode = value["Data"];
+	if(!dataNode["Mobile"].isNull())
+		data_.mobile = dataNode["Mobile"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
@@ -51,17 +49,17 @@ void VerifyMobileResult::parse(const std::string &payload)
 
 }
 
-VerifyMobileResult::GateVerifyResultDTO VerifyMobileResult::getGateVerifyResultDTO()const
-{
-	return gateVerifyResultDTO_;
-}
-
-std::string VerifyMobileResult::getMessage()const
+std::string GetPhoneWithTokenResult::getMessage()const
 {
 	return message_;
 }
 
-std::string VerifyMobileResult::getCode()const
+GetPhoneWithTokenResult::Data GetPhoneWithTokenResult::getData()const
+{
+	return data_;
+}
+
+std::string GetPhoneWithTokenResult::getCode()const
 {
 	return code_;
 }

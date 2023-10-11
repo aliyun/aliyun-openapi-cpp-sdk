@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_QUERYGATEVERIFYBILLINGPUBLICREQUEST_H_
-#define ALIBABACLOUD_DYPNSAPI_MODEL_QUERYGATEVERIFYBILLINGPUBLICREQUEST_H_
+#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_GETFUSIONAUTHTOKENREQUEST_H_
+#define ALIBABACLOUD_DYPNSAPI_MODEL_GETFUSIONAUTHTOKENREQUEST_H_
 
 #include <alibabacloud/dypnsapi/DypnsapiExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,47 @@
 namespace AlibabaCloud {
 namespace Dypnsapi {
 namespace Model {
-class ALIBABACLOUD_DYPNSAPI_EXPORT QueryGateVerifyBillingPublicRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DYPNSAPI_EXPORT GetFusionAuthTokenRequest : public RpcServiceRequest {
 public:
-	QueryGateVerifyBillingPublicRequest();
-	~QueryGateVerifyBillingPublicRequest();
+	GetFusionAuthTokenRequest();
+	~GetFusionAuthTokenRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	int getAuthenticationType() const;
-	void setAuthenticationType(int authenticationType);
+	std::string getBundleId() const;
+	void setBundleId(const std::string &bundleId);
+	std::string getPlatform() const;
+	void setPlatform(const std::string &platform);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getSchemeCode() const;
+	void setSchemeCode(const std::string &schemeCode);
+	std::string getRouteName() const;
+	void setRouteName(const std::string &routeName);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	std::string getProdCode() const;
-	void setProdCode(const std::string &prodCode);
+	std::string getPackageName() const;
+	void setPackageName(const std::string &packageName);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getMonth() const;
-	void setMonth(const std::string &month);
+	std::string getPackageSign() const;
+	void setPackageSign(const std::string &packageSign);
+	long getDurationSeconds() const;
+	void setDurationSeconds(long durationSeconds);
 
 private:
 	long resourceOwnerId_;
-	int authenticationType_;
+	std::string bundleId_;
+	std::string platform_;
 	std::string accessKeyId_;
+	std::string schemeCode_;
+	std::string routeName_;
 	std::string resourceOwnerAccount_;
-	std::string prodCode_;
+	std::string packageName_;
 	long ownerId_;
-	std::string month_;
+	std::string packageSign_;
+	long durationSeconds_;
 };
 } // namespace Model
 } // namespace Dypnsapi
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_QUERYGATEVERIFYBILLINGPUBLICREQUEST_H_
+#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_GETFUSIONAUTHTOKENREQUEST_H_

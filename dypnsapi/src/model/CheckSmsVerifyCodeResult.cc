@@ -14,38 +14,40 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dypnsapi/model/CreateVerifySchemeResult.h>
+#include <alibabacloud/dypnsapi/model/CheckSmsVerifyCodeResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dypnsapi;
 using namespace AlibabaCloud::Dypnsapi::Model;
 
-CreateVerifySchemeResult::CreateVerifySchemeResult() :
+CheckSmsVerifyCodeResult::CheckSmsVerifyCodeResult() :
 	ServiceResult()
 {}
 
-CreateVerifySchemeResult::CreateVerifySchemeResult(const std::string &payload) :
+CheckSmsVerifyCodeResult::CheckSmsVerifyCodeResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateVerifySchemeResult::~CreateVerifySchemeResult()
+CheckSmsVerifyCodeResult::~CheckSmsVerifyCodeResult()
 {}
 
-void CreateVerifySchemeResult::parse(const std::string &payload)
+void CheckSmsVerifyCodeResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto gateVerifySchemeDTONode = value["GateVerifySchemeDTO"];
-	if(!gateVerifySchemeDTONode["SchemeCode"].isNull())
-		gateVerifySchemeDTO_.schemeCode = gateVerifySchemeDTONode["SchemeCode"].asString();
+	auto modelNode = value["Model"];
+	if(!modelNode["OutId"].isNull())
+		model_.outId = modelNode["OutId"].asString();
+	if(!modelNode["VerifyResult"].isNull())
+		model_.verifyResult = modelNode["VerifyResult"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stol(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Success"].isNull())
@@ -53,27 +55,27 @@ void CreateVerifySchemeResult::parse(const std::string &payload)
 
 }
 
-std::string CreateVerifySchemeResult::getMessage()const
+std::string CheckSmsVerifyCodeResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
+}
+
+std::string CheckSmsVerifyCodeResult::getMessage()const
 {
 	return message_;
 }
 
-CreateVerifySchemeResult::GateVerifySchemeDTO CreateVerifySchemeResult::getGateVerifySchemeDTO()const
+CheckSmsVerifyCodeResult::Model CheckSmsVerifyCodeResult::getModel()const
 {
-	return gateVerifySchemeDTO_;
+	return model_;
 }
 
-long CreateVerifySchemeResult::getHttpStatusCode()const
-{
-	return httpStatusCode_;
-}
-
-std::string CreateVerifySchemeResult::getCode()const
+std::string CheckSmsVerifyCodeResult::getCode()const
 {
 	return code_;
 }
 
-bool CreateVerifySchemeResult::getSuccess()const
+bool CheckSmsVerifyCodeResult::getSuccess()const
 {
 	return success_;
 }

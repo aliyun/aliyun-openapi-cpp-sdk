@@ -14,38 +14,36 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dypnsapi/model/CreateVerifySchemeResult.h>
+#include <alibabacloud/dypnsapi/model/CreateSchemeConfigResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dypnsapi;
 using namespace AlibabaCloud::Dypnsapi::Model;
 
-CreateVerifySchemeResult::CreateVerifySchemeResult() :
+CreateSchemeConfigResult::CreateSchemeConfigResult() :
 	ServiceResult()
 {}
 
-CreateVerifySchemeResult::CreateVerifySchemeResult(const std::string &payload) :
+CreateSchemeConfigResult::CreateSchemeConfigResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateVerifySchemeResult::~CreateVerifySchemeResult()
+CreateSchemeConfigResult::~CreateSchemeConfigResult()
 {}
 
-void CreateVerifySchemeResult::parse(const std::string &payload)
+void CreateSchemeConfigResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto gateVerifySchemeDTONode = value["GateVerifySchemeDTO"];
-	if(!gateVerifySchemeDTONode["SchemeCode"].isNull())
-		gateVerifySchemeDTO_.schemeCode = gateVerifySchemeDTONode["SchemeCode"].asString();
+	auto modelNode = value["Model"];
+	if(!modelNode["SchemeCode"].isNull())
+		model_.schemeCode = modelNode["SchemeCode"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stol(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Success"].isNull())
@@ -53,27 +51,22 @@ void CreateVerifySchemeResult::parse(const std::string &payload)
 
 }
 
-std::string CreateVerifySchemeResult::getMessage()const
+std::string CreateSchemeConfigResult::getMessage()const
 {
 	return message_;
 }
 
-CreateVerifySchemeResult::GateVerifySchemeDTO CreateVerifySchemeResult::getGateVerifySchemeDTO()const
+CreateSchemeConfigResult::Model CreateSchemeConfigResult::getModel()const
 {
-	return gateVerifySchemeDTO_;
+	return model_;
 }
 
-long CreateVerifySchemeResult::getHttpStatusCode()const
-{
-	return httpStatusCode_;
-}
-
-std::string CreateVerifySchemeResult::getCode()const
+std::string CreateSchemeConfigResult::getCode()const
 {
 	return code_;
 }
 
-bool CreateVerifySchemeResult::getSuccess()const
+bool CreateSchemeConfigResult::getSuccess()const
 {
 	return success_;
 }
