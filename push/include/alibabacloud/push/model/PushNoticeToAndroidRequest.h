@@ -32,6 +32,8 @@ public:
 	~PushNoticeToAndroidRequest();
 	std::string getExtParameters() const;
 	void setExtParameters(const std::string &extParameters);
+	bool getStoreOffline() const;
+	void setStoreOffline(bool storeOffline);
 	std::string getTitle() const;
 	void setTitle(const std::string &title);
 	std::string getBody() const;
@@ -49,6 +51,7 @@ public:
 
 private:
 	std::string extParameters_;
+	bool storeOffline_;
 	std::string title_;
 	std::string body_;
 	std::string jobKey_;

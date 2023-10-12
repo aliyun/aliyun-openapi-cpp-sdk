@@ -30,6 +30,8 @@ class ALIBABACLOUD_PUSH_EXPORT PushMessageToAndroidRequest : public RpcServiceRe
 public:
 	PushMessageToAndroidRequest();
 	~PushMessageToAndroidRequest();
+	bool getStoreOffline() const;
+	void setStoreOffline(bool storeOffline);
 	std::string getTitle() const;
 	void setTitle(const std::string &title);
 	std::string getBody() const;
@@ -46,6 +48,7 @@ public:
 	void setTargetValue(const std::string &targetValue);
 
 private:
+	bool storeOffline_;
 	std::string title_;
 	std::string body_;
 	std::string jobKey_;

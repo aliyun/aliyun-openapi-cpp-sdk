@@ -70,6 +70,8 @@ public:
 	void setExpireTime(const std::string &expireTime);
 	std::string getAndroidImageUrl() const;
 	void setAndroidImageUrl(const std::string &androidImageUrl);
+	int getAndroidHonorTargetUserType() const;
+	void setAndroidHonorTargetUserType(int androidHonorTargetUserType);
 	std::string getAndroidNotificationVivoChannel() const;
 	void setAndroidNotificationVivoChannel(const std::string &androidNotificationVivoChannel);
 	std::string getIOSNotificationCategory() const;
@@ -138,6 +140,8 @@ public:
 	void setAndroidNotificationHonorChannel(const std::string &androidNotificationHonorChannel);
 	std::string getAndroidXiaomiImageUrl() const;
 	void setAndroidXiaomiImageUrl(const std::string &androidXiaomiImageUrl);
+	int getAndroidTargetUserType() const;
+	void setAndroidTargetUserType(int androidTargetUserType);
 	std::string getSmsTemplateName() const;
 	void setSmsTemplateName(const std::string &smsTemplateName);
 	std::string getAndroidPopupBody() const;
@@ -194,6 +198,7 @@ private:
 	int androidNotificationBarPriority_;
 	std::string expireTime_;
 	std::string androidImageUrl_;
+	int androidHonorTargetUserType_;
 	std::string androidNotificationVivoChannel_;
 	std::string iOSNotificationCategory_;
 	std::string androidNotificationXiaomiChannel_;
@@ -228,6 +233,7 @@ private:
 	std::string androidHuaweiReceiptId_;
 	std::string androidNotificationHonorChannel_;
 	std::string androidXiaomiImageUrl_;
+	int androidTargetUserType_;
 	std::string smsTemplateName_;
 	std::string androidPopupBody_;
 	std::string androidBigPictureUrl_;

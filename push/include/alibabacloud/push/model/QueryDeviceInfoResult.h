@@ -35,11 +35,13 @@ namespace AlibabaCloud
 				struct DeviceInfo
 				{
 					std::string lastOnlineTime;
+					std::string brand;
 					std::string account;
 					std::string deviceType;
 					std::string deviceId;
 					std::string deviceToken;
 					std::string alias;
+					std::string model;
 					std::string phoneNumber;
 					bool online;
 					std::string tags;

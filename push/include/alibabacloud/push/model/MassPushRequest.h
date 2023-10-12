@@ -48,6 +48,7 @@ public:
 		int androidNotificationBarPriority;
 		std::string expireTime;
 		std::string androidImageUrl;
+		int androidHonorTargetUserType;
 		std::string androidNotificationVivoChannel;
 		std::string iOSNotificationCategory;
 		std::string androidNotificationXiaomiChannel;
@@ -79,6 +80,7 @@ public:
 		std::string androidHuaweiReceiptId;
 		std::string androidNotificationHonorChannel;
 		std::string androidXiaomiImageUrl;
+		int androidTargetUserType;
 		std::string androidPopupBody;
 		std::string androidBigPictureUrl;
 		bool iOSSilentNotification;

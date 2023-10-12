@@ -25,6 +25,15 @@ PushMessageToiOSRequest::PushMessageToiOSRequest()
 
 PushMessageToiOSRequest::~PushMessageToiOSRequest() {}
 
+bool PushMessageToiOSRequest::getStoreOffline() const {
+  return storeOffline_;
+}
+
+void PushMessageToiOSRequest::setStoreOffline(bool storeOffline) {
+  storeOffline_ = storeOffline;
+  setParameter(std::string("StoreOffline"), storeOffline ? "true" : "false");
+}
+
 std::string PushMessageToiOSRequest::getTitle() const {
   return title_;
 }

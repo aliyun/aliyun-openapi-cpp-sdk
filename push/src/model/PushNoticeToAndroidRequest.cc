@@ -34,6 +34,15 @@ void PushNoticeToAndroidRequest::setExtParameters(const std::string &extParamete
   setParameter(std::string("ExtParameters"), extParameters);
 }
 
+bool PushNoticeToAndroidRequest::getStoreOffline() const {
+  return storeOffline_;
+}
+
+void PushNoticeToAndroidRequest::setStoreOffline(bool storeOffline) {
+  storeOffline_ = storeOffline;
+  setParameter(std::string("StoreOffline"), storeOffline ? "true" : "false");
+}
+
 std::string PushNoticeToAndroidRequest::getTitle() const {
   return title_;
 }

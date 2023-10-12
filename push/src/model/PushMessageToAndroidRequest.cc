@@ -25,6 +25,15 @@ PushMessageToAndroidRequest::PushMessageToAndroidRequest()
 
 PushMessageToAndroidRequest::~PushMessageToAndroidRequest() {}
 
+bool PushMessageToAndroidRequest::getStoreOffline() const {
+  return storeOffline_;
+}
+
+void PushMessageToAndroidRequest::setStoreOffline(bool storeOffline) {
+  storeOffline_ = storeOffline;
+  setParameter(std::string("StoreOffline"), storeOffline ? "true" : "false");
+}
+
 std::string PushMessageToAndroidRequest::getTitle() const {
   return title_;
 }

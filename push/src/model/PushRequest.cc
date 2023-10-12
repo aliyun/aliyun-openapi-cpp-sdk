@@ -205,6 +205,15 @@ void PushRequest::setAndroidImageUrl(const std::string &androidImageUrl) {
   setParameter(std::string("AndroidImageUrl"), androidImageUrl);
 }
 
+int PushRequest::getAndroidHonorTargetUserType() const {
+  return androidHonorTargetUserType_;
+}
+
+void PushRequest::setAndroidHonorTargetUserType(int androidHonorTargetUserType) {
+  androidHonorTargetUserType_ = androidHonorTargetUserType;
+  setParameter(std::string("AndroidHonorTargetUserType"), std::to_string(androidHonorTargetUserType));
+}
+
 std::string PushRequest::getAndroidNotificationVivoChannel() const {
   return androidNotificationVivoChannel_;
 }
@@ -509,6 +518,15 @@ std::string PushRequest::getAndroidXiaomiImageUrl() const {
 void PushRequest::setAndroidXiaomiImageUrl(const std::string &androidXiaomiImageUrl) {
   androidXiaomiImageUrl_ = androidXiaomiImageUrl;
   setParameter(std::string("AndroidXiaomiImageUrl"), androidXiaomiImageUrl);
+}
+
+int PushRequest::getAndroidTargetUserType() const {
+  return androidTargetUserType_;
+}
+
+void PushRequest::setAndroidTargetUserType(int androidTargetUserType) {
+  androidTargetUserType_ = androidTargetUserType;
+  setParameter(std::string("AndroidTargetUserType"), std::to_string(androidTargetUserType));
 }
 
 std::string PushRequest::getSmsTemplateName() const {

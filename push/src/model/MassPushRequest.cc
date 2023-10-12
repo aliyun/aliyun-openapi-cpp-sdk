@@ -62,6 +62,7 @@ void MassPushRequest::setPushTask(const std::vector<MassPushRequest::PushTask> &
     setBodyParameter(pushTaskObjStr + ".AndroidNotificationBarPriority", std::to_string(pushTaskObj.androidNotificationBarPriority));
     setBodyParameter(pushTaskObjStr + ".ExpireTime", pushTaskObj.expireTime);
     setBodyParameter(pushTaskObjStr + ".AndroidImageUrl", pushTaskObj.androidImageUrl);
+    setBodyParameter(pushTaskObjStr + ".AndroidHonorTargetUserType", std::to_string(pushTaskObj.androidHonorTargetUserType));
     setBodyParameter(pushTaskObjStr + ".AndroidNotificationVivoChannel", pushTaskObj.androidNotificationVivoChannel);
     setBodyParameter(pushTaskObjStr + ".iOSNotificationCategory", pushTaskObj.iOSNotificationCategory);
     setBodyParameter(pushTaskObjStr + ".AndroidNotificationXiaomiChannel", pushTaskObj.androidNotificationXiaomiChannel);
@@ -93,6 +94,7 @@ void MassPushRequest::setPushTask(const std::vector<MassPushRequest::PushTask> &
     setBodyParameter(pushTaskObjStr + ".AndroidHuaweiReceiptId", pushTaskObj.androidHuaweiReceiptId);
     setBodyParameter(pushTaskObjStr + ".AndroidNotificationHonorChannel", pushTaskObj.androidNotificationHonorChannel);
     setBodyParameter(pushTaskObjStr + ".AndroidXiaomiImageUrl", pushTaskObj.androidXiaomiImageUrl);
+    setBodyParameter(pushTaskObjStr + ".AndroidTargetUserType", std::to_string(pushTaskObj.androidTargetUserType));
     setBodyParameter(pushTaskObjStr + ".AndroidPopupBody", pushTaskObj.androidPopupBody);
     setBodyParameter(pushTaskObjStr + ".AndroidBigPictureUrl", pushTaskObj.androidBigPictureUrl);
     setBodyParameter(pushTaskObjStr + ".iOSSilentNotification", pushTaskObj.iOSSilentNotification ? "true" : "false");

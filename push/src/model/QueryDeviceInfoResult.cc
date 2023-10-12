@@ -60,6 +60,10 @@ void QueryDeviceInfoResult::parse(const std::string &payload)
 		deviceInfo_.deviceToken = deviceInfoNode["DeviceToken"].asString();
 	if(!deviceInfoNode["Alias"].isNull())
 		deviceInfo_.alias = deviceInfoNode["Alias"].asString();
+	if(!deviceInfoNode["Brand"].isNull())
+		deviceInfo_.brand = deviceInfoNode["Brand"].asString();
+	if(!deviceInfoNode["Model"].isNull())
+		deviceInfo_.model = deviceInfoNode["Model"].asString();
 
 }
 
