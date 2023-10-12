@@ -1,0 +1,109 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBEOASSQLPLANSRESULT_H_
+#define ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBEOASSQLPLANSRESULT_H_
+
+#include <string>
+#include <vector>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/oceanbasepro/OceanBaseProExport.h>
+
+namespace AlibabaCloud
+{
+	namespace OceanBasePro
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_OCEANBASEPRO_EXPORT DescribeOasSQLPlansResult : public ServiceResult
+			{
+			public:
+				struct DataItem
+				{
+					struct PlanExplain
+					{
+						std::string planJsonString;
+					};
+					struct PlansItem
+					{
+						long executions;
+						double avgCpuTime;
+						std::string planHash;
+						std::string server;
+						double timeoutPercentage;
+						double avgConcurrencyWaitTime;
+						long firstLoadTimeUs;
+						double avgDiskWrites;
+						double avgUserIoWaitTime;
+						long planSize;
+						long serverId;
+						std::string outlineData;
+						std::string planType;
+						long obDbId;
+						double hitPercentage;
+						double avgBufferGets;
+						double execPs;
+						double delayedLargeQueryPercentage;
+						bool tableScan;
+						double largeQueryPercentage;
+						long schemaVersion;
+						long planId;
+						std::string firstLoadTime;
+						double avgRowProcessed;
+						std::string planUnionHash;
+						long mergedVersion;
+						bool hitDiagnosis;
+						std::string sqlId;
+						std::string uid;
+						double avgApplicationWaitTime;
+						long collectTimeUs;
+						double avgElapsedTime;
+						long obServerId;
+						long outlineId;
+						double avgDiskReads;
+					};
+					double avgCpuTime;
+					long executions;
+					std::string planHash;
+					std::string firstLoadTime;
+					std::string planUnionHash;
+					long mergedVersion;
+					bool hitDiagnosis;
+					std::vector<DataItem::PlansItem> plans;
+					bool bounded;
+					std::string querySql;
+					std::string planType;
+					double hitPercentage;
+					PlanExplain planExplain;
+				};
+
+
+				DescribeOasSQLPlansResult();
+				explicit DescribeOasSQLPlansResult(const std::string &payload);
+				~DescribeOasSQLPlansResult();
+				std::vector<DataItem> getData()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::vector<DataItem> data_;
+
+			};
+		}
+	}
+}
+#endif // !ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBEOASSQLPLANSRESULT_H_

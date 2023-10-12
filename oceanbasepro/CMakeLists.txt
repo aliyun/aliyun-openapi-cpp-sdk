@@ -1,0 +1,522 @@
+#
+# Copyright 2009-2017 Alibaba Cloud All rights reserved.
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#      http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
+
+set(oceanbasepro_public_header 
+	include/alibabacloud/oceanbasepro/OceanBaseProClient.h
+	include/alibabacloud/oceanbasepro/OceanBaseProExport.h )
+
+set(oceanbasepro_public_header_model 
+	include/alibabacloud/oceanbasepro/model/CreateDatabaseRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateDatabaseResult.h
+	include/alibabacloud/oceanbasepro/model/CreateInstanceRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateInstanceResult.h
+	include/alibabacloud/oceanbasepro/model/CreateLabelRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateLabelResult.h
+	include/alibabacloud/oceanbasepro/model/CreateMySqlDataSourceRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateMySqlDataSourceResult.h
+	include/alibabacloud/oceanbasepro/model/CreateOceanBaseDataSourceRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateOceanBaseDataSourceResult.h
+	include/alibabacloud/oceanbasepro/model/CreateOmsMysqlDataSourceRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateOmsMysqlDataSourceResult.h
+	include/alibabacloud/oceanbasepro/model/CreateOmsOpenAPIProjectRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateOmsOpenAPIProjectResult.h
+	include/alibabacloud/oceanbasepro/model/CreateProjectRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateProjectResult.h
+	include/alibabacloud/oceanbasepro/model/CreateSecurityIpGroupRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateSecurityIpGroupResult.h
+	include/alibabacloud/oceanbasepro/model/CreateTenantRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateTenantResult.h
+	include/alibabacloud/oceanbasepro/model/CreateTenantReadOnlyConnectionRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateTenantReadOnlyConnectionResult.h
+	include/alibabacloud/oceanbasepro/model/CreateTenantSecurityIpGroupRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateTenantSecurityIpGroupResult.h
+	include/alibabacloud/oceanbasepro/model/CreateTenantUserRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateTenantUserResult.h
+	include/alibabacloud/oceanbasepro/model/DeleteDatabasesRequest.h
+	include/alibabacloud/oceanbasepro/model/DeleteDatabasesResult.h
+	include/alibabacloud/oceanbasepro/model/DeleteInstancesRequest.h
+	include/alibabacloud/oceanbasepro/model/DeleteInstancesResult.h
+	include/alibabacloud/oceanbasepro/model/DeleteOmsOpenAPIProjectRequest.h
+	include/alibabacloud/oceanbasepro/model/DeleteOmsOpenAPIProjectResult.h
+	include/alibabacloud/oceanbasepro/model/DeleteProjectRequest.h
+	include/alibabacloud/oceanbasepro/model/DeleteProjectResult.h
+	include/alibabacloud/oceanbasepro/model/DeleteSecurityIpGroupRequest.h
+	include/alibabacloud/oceanbasepro/model/DeleteSecurityIpGroupResult.h
+	include/alibabacloud/oceanbasepro/model/DeleteTenantSecurityIpGroupRequest.h
+	include/alibabacloud/oceanbasepro/model/DeleteTenantSecurityIpGroupResult.h
+	include/alibabacloud/oceanbasepro/model/DeleteTenantUsersRequest.h
+	include/alibabacloud/oceanbasepro/model/DeleteTenantUsersResult.h
+	include/alibabacloud/oceanbasepro/model/DeleteTenantsRequest.h
+	include/alibabacloud/oceanbasepro/model/DeleteTenantsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeAnomalySQLListRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeAnomalySQLListResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeAvailableCpuResourceRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeAvailableCpuResourceResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeAvailableMemResourceRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeAvailableMemResourceResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeCharsetRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeCharsetResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeDatabasesRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeDatabasesResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceCreatableZoneRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceCreatableZoneResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceSSLRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceSSLResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceSecurityConfigsRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceSecurityConfigsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceTagsRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceTagsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceTenantModesRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceTenantModesResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceTopologyRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceTopologyResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstancesRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstancesResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeMetricsDataRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeMetricsDataResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeNodeMetricsRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeNodeMetricsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeOasAnomalySQLListRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeOasAnomalySQLListResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeOasSQLDetailsRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeOasSQLDetailsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeOasSQLHistoryListRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeOasSQLHistoryListResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeOasSQLPlansRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeOasSQLPlansResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeOasSlowSQLListRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeOasSlowSQLListResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeOasTopSQLListRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeOasTopSQLListResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeOmsOpenAPIProjectRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeOmsOpenAPIProjectResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeOmsOpenAPIProjectStepsRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeOmsOpenAPIProjectStepsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeOutlineBindingRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeOutlineBindingResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeParametersRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeParametersResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeParametersHistoryRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeParametersHistoryResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeProjectRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeProjectResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeProjectComponentsRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeProjectComponentsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeProjectProgressRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeProjectProgressResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeProjectStepMetricRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeProjectStepMetricResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeProjectStepsRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeProjectStepsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeRecommendIndexRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeRecommendIndexResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeSQLDetailsRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeSQLDetailsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeSQLHistoryListRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeSQLHistoryListResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeSQLPlansRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeSQLPlansResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeSQLSamplesRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeSQLSamplesResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeSecurityIpGroupsRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeSecurityIpGroupsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLHistoryListRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLHistoryListResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLListRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLListResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantMetricsRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantMetricsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantSecurityConfigsRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantSecurityConfigsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantSecurityIpGroupsRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantSecurityIpGroupsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantTagsRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantTagsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantUserRolesRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantUserRolesResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantUsersRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantUsersResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantZonesReadRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantZonesReadResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantsRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeTimeZonesRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeTimeZonesResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeTopSQLListRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeTopSQLListResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeZonesRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeZonesResult.h
+	include/alibabacloud/oceanbasepro/model/GetUploadOssUrlRequest.h
+	include/alibabacloud/oceanbasepro/model/GetUploadOssUrlResult.h
+	include/alibabacloud/oceanbasepro/model/KillProcessListRequest.h
+	include/alibabacloud/oceanbasepro/model/KillProcessListResult.h
+	include/alibabacloud/oceanbasepro/model/ListAllLabelsRequest.h
+	include/alibabacloud/oceanbasepro/model/ListAllLabelsResult.h
+	include/alibabacloud/oceanbasepro/model/ListDataSourceRequest.h
+	include/alibabacloud/oceanbasepro/model/ListDataSourceResult.h
+	include/alibabacloud/oceanbasepro/model/ListProjectFullVerifyResultRequest.h
+	include/alibabacloud/oceanbasepro/model/ListProjectFullVerifyResultResult.h
+	include/alibabacloud/oceanbasepro/model/ListProjectsRequest.h
+	include/alibabacloud/oceanbasepro/model/ListProjectsResult.h
+	include/alibabacloud/oceanbasepro/model/ListWorkerInstancesRequest.h
+	include/alibabacloud/oceanbasepro/model/ListWorkerInstancesResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyDatabaseDescriptionRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyDatabaseDescriptionResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyDatabaseUserRolesRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyDatabaseUserRolesResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyInstanceNameRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyInstanceNameResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyInstanceNodeNumRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyInstanceNodeNumResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyInstanceSpecRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyInstanceSpecResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyInstanceTagsRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyInstanceTagsResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyParametersRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyParametersResult.h
+	include/alibabacloud/oceanbasepro/model/ModifySecurityIpsRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifySecurityIpsResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantEncryptionRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantEncryptionResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantPrimaryZoneRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantPrimaryZoneResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantResourceRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantResourceResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantSecurityIpGroupRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantSecurityIpGroupResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantTagsRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantTagsResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantUserDescriptionRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantUserDescriptionResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantUserPasswordRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantUserPasswordResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantUserRolesRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantUserRolesResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantUserStatusRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyTenantUserStatusResult.h
+	include/alibabacloud/oceanbasepro/model/ReleaseOmsOpenAPIProjectRequest.h
+	include/alibabacloud/oceanbasepro/model/ReleaseOmsOpenAPIProjectResult.h
+	include/alibabacloud/oceanbasepro/model/ReleaseProjectRequest.h
+	include/alibabacloud/oceanbasepro/model/ReleaseProjectResult.h
+	include/alibabacloud/oceanbasepro/model/ResetOmsOpenAPIProjectRequest.h
+	include/alibabacloud/oceanbasepro/model/ResetOmsOpenAPIProjectResult.h
+	include/alibabacloud/oceanbasepro/model/ResumeOmsOpenAPIProjectRequest.h
+	include/alibabacloud/oceanbasepro/model/ResumeOmsOpenAPIProjectResult.h
+	include/alibabacloud/oceanbasepro/model/ResumeProjectRequest.h
+	include/alibabacloud/oceanbasepro/model/ResumeProjectResult.h
+	include/alibabacloud/oceanbasepro/model/SearchOmsOpenAPIMonitorMetricRequest.h
+	include/alibabacloud/oceanbasepro/model/SearchOmsOpenAPIMonitorMetricResult.h
+	include/alibabacloud/oceanbasepro/model/SearchOmsOpenAPIProjectsRequest.h
+	include/alibabacloud/oceanbasepro/model/SearchOmsOpenAPIProjectsResult.h
+	include/alibabacloud/oceanbasepro/model/StartOmsOpenAPIProjectRequest.h
+	include/alibabacloud/oceanbasepro/model/StartOmsOpenAPIProjectResult.h
+	include/alibabacloud/oceanbasepro/model/StartProjectRequest.h
+	include/alibabacloud/oceanbasepro/model/StartProjectResult.h
+	include/alibabacloud/oceanbasepro/model/StartProjectsByLabelRequest.h
+	include/alibabacloud/oceanbasepro/model/StartProjectsByLabelResult.h
+	include/alibabacloud/oceanbasepro/model/StopOmsOpenAPIProjectRequest.h
+	include/alibabacloud/oceanbasepro/model/StopOmsOpenAPIProjectResult.h
+	include/alibabacloud/oceanbasepro/model/StopProjectRequest.h
+	include/alibabacloud/oceanbasepro/model/StopProjectResult.h
+	include/alibabacloud/oceanbasepro/model/StopProjectsByLabelRequest.h
+	include/alibabacloud/oceanbasepro/model/StopProjectsByLabelResult.h
+	include/alibabacloud/oceanbasepro/model/SwitchoverInstanceRequest.h
+	include/alibabacloud/oceanbasepro/model/SwitchoverInstanceResult.h )
+
+set(oceanbasepro_src 
+	src/OceanBaseProClient.cc
+	src/model/CreateDatabaseRequest.cc
+	src/model/CreateDatabaseResult.cc
+	src/model/CreateInstanceRequest.cc
+	src/model/CreateInstanceResult.cc
+	src/model/CreateLabelRequest.cc
+	src/model/CreateLabelResult.cc
+	src/model/CreateMySqlDataSourceRequest.cc
+	src/model/CreateMySqlDataSourceResult.cc
+	src/model/CreateOceanBaseDataSourceRequest.cc
+	src/model/CreateOceanBaseDataSourceResult.cc
+	src/model/CreateOmsMysqlDataSourceRequest.cc
+	src/model/CreateOmsMysqlDataSourceResult.cc
+	src/model/CreateOmsOpenAPIProjectRequest.cc
+	src/model/CreateOmsOpenAPIProjectResult.cc
+	src/model/CreateProjectRequest.cc
+	src/model/CreateProjectResult.cc
+	src/model/CreateSecurityIpGroupRequest.cc
+	src/model/CreateSecurityIpGroupResult.cc
+	src/model/CreateTenantRequest.cc
+	src/model/CreateTenantResult.cc
+	src/model/CreateTenantReadOnlyConnectionRequest.cc
+	src/model/CreateTenantReadOnlyConnectionResult.cc
+	src/model/CreateTenantSecurityIpGroupRequest.cc
+	src/model/CreateTenantSecurityIpGroupResult.cc
+	src/model/CreateTenantUserRequest.cc
+	src/model/CreateTenantUserResult.cc
+	src/model/DeleteDatabasesRequest.cc
+	src/model/DeleteDatabasesResult.cc
+	src/model/DeleteInstancesRequest.cc
+	src/model/DeleteInstancesResult.cc
+	src/model/DeleteOmsOpenAPIProjectRequest.cc
+	src/model/DeleteOmsOpenAPIProjectResult.cc
+	src/model/DeleteProjectRequest.cc
+	src/model/DeleteProjectResult.cc
+	src/model/DeleteSecurityIpGroupRequest.cc
+	src/model/DeleteSecurityIpGroupResult.cc
+	src/model/DeleteTenantSecurityIpGroupRequest.cc
+	src/model/DeleteTenantSecurityIpGroupResult.cc
+	src/model/DeleteTenantUsersRequest.cc
+	src/model/DeleteTenantUsersResult.cc
+	src/model/DeleteTenantsRequest.cc
+	src/model/DeleteTenantsResult.cc
+	src/model/DescribeAnomalySQLListRequest.cc
+	src/model/DescribeAnomalySQLListResult.cc
+	src/model/DescribeAvailableCpuResourceRequest.cc
+	src/model/DescribeAvailableCpuResourceResult.cc
+	src/model/DescribeAvailableMemResourceRequest.cc
+	src/model/DescribeAvailableMemResourceResult.cc
+	src/model/DescribeCharsetRequest.cc
+	src/model/DescribeCharsetResult.cc
+	src/model/DescribeDatabasesRequest.cc
+	src/model/DescribeDatabasesResult.cc
+	src/model/DescribeInstanceRequest.cc
+	src/model/DescribeInstanceResult.cc
+	src/model/DescribeInstanceCreatableZoneRequest.cc
+	src/model/DescribeInstanceCreatableZoneResult.cc
+	src/model/DescribeInstanceSSLRequest.cc
+	src/model/DescribeInstanceSSLResult.cc
+	src/model/DescribeInstanceSecurityConfigsRequest.cc
+	src/model/DescribeInstanceSecurityConfigsResult.cc
+	src/model/DescribeInstanceTagsRequest.cc
+	src/model/DescribeInstanceTagsResult.cc
+	src/model/DescribeInstanceTenantModesRequest.cc
+	src/model/DescribeInstanceTenantModesResult.cc
+	src/model/DescribeInstanceTopologyRequest.cc
+	src/model/DescribeInstanceTopologyResult.cc
+	src/model/DescribeInstancesRequest.cc
+	src/model/DescribeInstancesResult.cc
+	src/model/DescribeMetricsDataRequest.cc
+	src/model/DescribeMetricsDataResult.cc
+	src/model/DescribeNodeMetricsRequest.cc
+	src/model/DescribeNodeMetricsResult.cc
+	src/model/DescribeOasAnomalySQLListRequest.cc
+	src/model/DescribeOasAnomalySQLListResult.cc
+	src/model/DescribeOasSQLDetailsRequest.cc
+	src/model/DescribeOasSQLDetailsResult.cc
+	src/model/DescribeOasSQLHistoryListRequest.cc
+	src/model/DescribeOasSQLHistoryListResult.cc
+	src/model/DescribeOasSQLPlansRequest.cc
+	src/model/DescribeOasSQLPlansResult.cc
+	src/model/DescribeOasSlowSQLListRequest.cc
+	src/model/DescribeOasSlowSQLListResult.cc
+	src/model/DescribeOasTopSQLListRequest.cc
+	src/model/DescribeOasTopSQLListResult.cc
+	src/model/DescribeOmsOpenAPIProjectRequest.cc
+	src/model/DescribeOmsOpenAPIProjectResult.cc
+	src/model/DescribeOmsOpenAPIProjectStepsRequest.cc
+	src/model/DescribeOmsOpenAPIProjectStepsResult.cc
+	src/model/DescribeOutlineBindingRequest.cc
+	src/model/DescribeOutlineBindingResult.cc
+	src/model/DescribeParametersRequest.cc
+	src/model/DescribeParametersResult.cc
+	src/model/DescribeParametersHistoryRequest.cc
+	src/model/DescribeParametersHistoryResult.cc
+	src/model/DescribeProjectRequest.cc
+	src/model/DescribeProjectResult.cc
+	src/model/DescribeProjectComponentsRequest.cc
+	src/model/DescribeProjectComponentsResult.cc
+	src/model/DescribeProjectProgressRequest.cc
+	src/model/DescribeProjectProgressResult.cc
+	src/model/DescribeProjectStepMetricRequest.cc
+	src/model/DescribeProjectStepMetricResult.cc
+	src/model/DescribeProjectStepsRequest.cc
+	src/model/DescribeProjectStepsResult.cc
+	src/model/DescribeRecommendIndexRequest.cc
+	src/model/DescribeRecommendIndexResult.cc
+	src/model/DescribeSQLDetailsRequest.cc
+	src/model/DescribeSQLDetailsResult.cc
+	src/model/DescribeSQLHistoryListRequest.cc
+	src/model/DescribeSQLHistoryListResult.cc
+	src/model/DescribeSQLPlansRequest.cc
+	src/model/DescribeSQLPlansResult.cc
+	src/model/DescribeSQLSamplesRequest.cc
+	src/model/DescribeSQLSamplesResult.cc
+	src/model/DescribeSecurityIpGroupsRequest.cc
+	src/model/DescribeSecurityIpGroupsResult.cc
+	src/model/DescribeSlowSQLHistoryListRequest.cc
+	src/model/DescribeSlowSQLHistoryListResult.cc
+	src/model/DescribeSlowSQLListRequest.cc
+	src/model/DescribeSlowSQLListResult.cc
+	src/model/DescribeTenantRequest.cc
+	src/model/DescribeTenantResult.cc
+	src/model/DescribeTenantMetricsRequest.cc
+	src/model/DescribeTenantMetricsResult.cc
+	src/model/DescribeTenantSecurityConfigsRequest.cc
+	src/model/DescribeTenantSecurityConfigsResult.cc
+	src/model/DescribeTenantSecurityIpGroupsRequest.cc
+	src/model/DescribeTenantSecurityIpGroupsResult.cc
+	src/model/DescribeTenantTagsRequest.cc
+	src/model/DescribeTenantTagsResult.cc
+	src/model/DescribeTenantUserRolesRequest.cc
+	src/model/DescribeTenantUserRolesResult.cc
+	src/model/DescribeTenantUsersRequest.cc
+	src/model/DescribeTenantUsersResult.cc
+	src/model/DescribeTenantZonesReadRequest.cc
+	src/model/DescribeTenantZonesReadResult.cc
+	src/model/DescribeTenantsRequest.cc
+	src/model/DescribeTenantsResult.cc
+	src/model/DescribeTimeZonesRequest.cc
+	src/model/DescribeTimeZonesResult.cc
+	src/model/DescribeTopSQLListRequest.cc
+	src/model/DescribeTopSQLListResult.cc
+	src/model/DescribeZonesRequest.cc
+	src/model/DescribeZonesResult.cc
+	src/model/GetUploadOssUrlRequest.cc
+	src/model/GetUploadOssUrlResult.cc
+	src/model/KillProcessListRequest.cc
+	src/model/KillProcessListResult.cc
+	src/model/ListAllLabelsRequest.cc
+	src/model/ListAllLabelsResult.cc
+	src/model/ListDataSourceRequest.cc
+	src/model/ListDataSourceResult.cc
+	src/model/ListProjectFullVerifyResultRequest.cc
+	src/model/ListProjectFullVerifyResultResult.cc
+	src/model/ListProjectsRequest.cc
+	src/model/ListProjectsResult.cc
+	src/model/ListWorkerInstancesRequest.cc
+	src/model/ListWorkerInstancesResult.cc
+	src/model/ModifyDatabaseDescriptionRequest.cc
+	src/model/ModifyDatabaseDescriptionResult.cc
+	src/model/ModifyDatabaseUserRolesRequest.cc
+	src/model/ModifyDatabaseUserRolesResult.cc
+	src/model/ModifyInstanceNameRequest.cc
+	src/model/ModifyInstanceNameResult.cc
+	src/model/ModifyInstanceNodeNumRequest.cc
+	src/model/ModifyInstanceNodeNumResult.cc
+	src/model/ModifyInstanceSpecRequest.cc
+	src/model/ModifyInstanceSpecResult.cc
+	src/model/ModifyInstanceTagsRequest.cc
+	src/model/ModifyInstanceTagsResult.cc
+	src/model/ModifyParametersRequest.cc
+	src/model/ModifyParametersResult.cc
+	src/model/ModifySecurityIpsRequest.cc
+	src/model/ModifySecurityIpsResult.cc
+	src/model/ModifyTenantEncryptionRequest.cc
+	src/model/ModifyTenantEncryptionResult.cc
+	src/model/ModifyTenantPrimaryZoneRequest.cc
+	src/model/ModifyTenantPrimaryZoneResult.cc
+	src/model/ModifyTenantResourceRequest.cc
+	src/model/ModifyTenantResourceResult.cc
+	src/model/ModifyTenantSecurityIpGroupRequest.cc
+	src/model/ModifyTenantSecurityIpGroupResult.cc
+	src/model/ModifyTenantTagsRequest.cc
+	src/model/ModifyTenantTagsResult.cc
+	src/model/ModifyTenantUserDescriptionRequest.cc
+	src/model/ModifyTenantUserDescriptionResult.cc
+	src/model/ModifyTenantUserPasswordRequest.cc
+	src/model/ModifyTenantUserPasswordResult.cc
+	src/model/ModifyTenantUserRolesRequest.cc
+	src/model/ModifyTenantUserRolesResult.cc
+	src/model/ModifyTenantUserStatusRequest.cc
+	src/model/ModifyTenantUserStatusResult.cc
+	src/model/ReleaseOmsOpenAPIProjectRequest.cc
+	src/model/ReleaseOmsOpenAPIProjectResult.cc
+	src/model/ReleaseProjectRequest.cc
+	src/model/ReleaseProjectResult.cc
+	src/model/ResetOmsOpenAPIProjectRequest.cc
+	src/model/ResetOmsOpenAPIProjectResult.cc
+	src/model/ResumeOmsOpenAPIProjectRequest.cc
+	src/model/ResumeOmsOpenAPIProjectResult.cc
+	src/model/ResumeProjectRequest.cc
+	src/model/ResumeProjectResult.cc
+	src/model/SearchOmsOpenAPIMonitorMetricRequest.cc
+	src/model/SearchOmsOpenAPIMonitorMetricResult.cc
+	src/model/SearchOmsOpenAPIProjectsRequest.cc
+	src/model/SearchOmsOpenAPIProjectsResult.cc
+	src/model/StartOmsOpenAPIProjectRequest.cc
+	src/model/StartOmsOpenAPIProjectResult.cc
+	src/model/StartProjectRequest.cc
+	src/model/StartProjectResult.cc
+	src/model/StartProjectsByLabelRequest.cc
+	src/model/StartProjectsByLabelResult.cc
+	src/model/StopOmsOpenAPIProjectRequest.cc
+	src/model/StopOmsOpenAPIProjectResult.cc
+	src/model/StopProjectRequest.cc
+	src/model/StopProjectResult.cc
+	src/model/StopProjectsByLabelRequest.cc
+	src/model/StopProjectsByLabelResult.cc
+	src/model/SwitchoverInstanceRequest.cc
+	src/model/SwitchoverInstanceResult.cc )
+
+add_library(oceanbasepro ${LIB_TYPE}
+	${oceanbasepro_public_header}
+	${oceanbasepro_public_header_model}
+	${oceanbasepro_src})
+
+set_target_properties(oceanbasepro
+	PROPERTIES
+	LINKER_LANGUAGE CXX
+	ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}oceanbasepro
+	)
+
+if(${LIB_TYPE} STREQUAL "SHARED")
+	set_target_properties(oceanbasepro
+		PROPERTIES
+		DEFINE_SYMBOL ALIBABACLOUD_OCEANBASEPRO_LIBRARY)
+endif()
+
+target_include_directories(oceanbasepro
+	PRIVATE include
+		${CMAKE_SOURCE_DIR}/core/include
+	)
+target_link_libraries(oceanbasepro
+	core)
+
+if(CMAKE_HOST_WIN32)
+	ExternalProject_Get_Property(jsoncpp INSTALL_DIR)
+	set(jsoncpp_install_dir ${INSTALL_DIR})
+	add_dependencies(oceanbasepro
+		jsoncpp)
+	target_include_directories(oceanbasepro
+		PRIVATE	${jsoncpp_install_dir}/include)
+	target_link_libraries(oceanbasepro
+		${jsoncpp_install_dir}/lib/jsoncpp.lib)
+	set_target_properties(oceanbasepro
+    	PROPERTIES
+    		COMPILE_OPTIONS "/bigobj")
+else()
+	target_include_directories(oceanbasepro
+		PRIVATE /usr/include/jsoncpp)
+	target_link_libraries(oceanbasepro
+		jsoncpp)
+endif()
+
+install(FILES ${oceanbasepro_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/oceanbasepro)
+install(FILES ${oceanbasepro_public_header_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/oceanbasepro/model)
+install(TARGETS oceanbasepro
+	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+	)

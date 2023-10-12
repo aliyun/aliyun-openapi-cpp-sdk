@@ -1,0 +1,75 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef ALIBABACLOUD_OCEANBASEPRO_MODEL_CREATEOMSMYSQLDATASOURCEREQUEST_H_
+#define ALIBABACLOUD_OCEANBASEPRO_MODEL_CREATEOMSMYSQLDATASOURCEREQUEST_H_
+
+#include <alibabacloud/oceanbasepro/OceanBaseProExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <string>
+#include <vector>
+#include <map>
+
+namespace AlibabaCloud {
+namespace OceanBasePro {
+namespace Model {
+class ALIBABACLOUD_OCEANBASEPRO_EXPORT CreateOmsMysqlDataSourceRequest : public RpcServiceRequest {
+public:
+	CreateOmsMysqlDataSourceRequest();
+	~CreateOmsMysqlDataSourceRequest();
+	std::string getSchema() const;
+	void setSchema(const std::string &schema);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
+	std::string getDgDatabaseId() const;
+	void setDgDatabaseId(const std::string &dgDatabaseId);
+	std::string getType() const;
+	void setType(const std::string &type);
+	std::string getPassword() const;
+	void setPassword(const std::string &password);
+	std::string getIp() const;
+	void setIp(const std::string &ip);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getPort() const;
+	void setPort(const std::string &port);
+	std::string getVpcId() const;
+	void setVpcId(const std::string &vpcId);
+	std::string getName() const;
+	void setName(const std::string &name);
+	std::string getBid() const;
+	void setBid(const std::string &bid);
+	std::string getUsername() const;
+	void setUsername(const std::string &username);
+
+private:
+	std::string schema_;
+	std::string description_;
+	std::string dgDatabaseId_;
+	std::string type_;
+	std::string password_;
+	std::string ip_;
+	std::string instanceId_;
+	std::string port_;
+	std::string vpcId_;
+	std::string name_;
+	std::string bid_;
+	std::string username_;
+};
+} // namespace Model
+} // namespace OceanBasePro
+} // namespace AlibabaCloud
+#endif // !ALIBABACLOUD_OCEANBASEPRO_MODEL_CREATEOMSMYSQLDATASOURCEREQUEST_H_
