@@ -181,6 +181,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetDatabaseResult.h
 	include/alibabacloud/dms-enterprise/model/GetDatabaseExportOrderDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDatabaseExportOrderDetailResult.h
+	include/alibabacloud/dms-enterprise/model/GetDbExportDownloadURLRequest.h
+	include/alibabacloud/dms-enterprise/model/GetDbExportDownloadURLResult.h
 	include/alibabacloud/dms-enterprise/model/GetInstanceRequest.h
 	include/alibabacloud/dms-enterprise/model/GetInstanceResult.h
 	include/alibabacloud/dms-enterprise/model/GetIntervalLimitOfSLARequest.h
@@ -612,6 +614,8 @@ set(dms-enterprise_src
 	src/model/GetDatabaseResult.cc
 	src/model/GetDatabaseExportOrderDetailRequest.cc
 	src/model/GetDatabaseExportOrderDetailResult.cc
+	src/model/GetDbExportDownloadURLRequest.cc
+	src/model/GetDbExportDownloadURLResult.cc
 	src/model/GetInstanceRequest.cc
 	src/model/GetInstanceResult.cc
 	src/model/GetIntervalLimitOfSLARequest.cc

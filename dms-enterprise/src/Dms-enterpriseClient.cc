@@ -2931,6 +2931,42 @@ Dms_enterpriseClient::GetDatabaseExportOrderDetailOutcomeCallable Dms_enterprise
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GetDbExportDownloadURLOutcome Dms_enterpriseClient::getDbExportDownloadURL(const GetDbExportDownloadURLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDbExportDownloadURLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDbExportDownloadURLOutcome(GetDbExportDownloadURLResult(outcome.result()));
+	else
+		return GetDbExportDownloadURLOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDbExportDownloadURLAsync(const GetDbExportDownloadURLRequest& request, const GetDbExportDownloadURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDbExportDownloadURL(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDbExportDownloadURLOutcomeCallable Dms_enterpriseClient::getDbExportDownloadURLCallable(const GetDbExportDownloadURLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDbExportDownloadURLOutcome()>>(
+			[this, request]()
+			{
+			return this->getDbExportDownloadURL(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GetInstanceOutcome Dms_enterpriseClient::getInstance(const GetInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

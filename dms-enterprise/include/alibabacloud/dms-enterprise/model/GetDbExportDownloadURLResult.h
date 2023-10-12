@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETORDERBASEINFORESULT_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETORDERBASEINFORESULT_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETDBEXPORTDOWNLOADURLRESULT_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETDBEXPORTDOWNLOADURLRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetOrderBaseInfoResult : public ServiceResult
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetDbExportDownloadURLResult : public ServiceResult
 			{
 			public:
-				struct OrderBaseInfo
+				struct DownloadURLResult
 				{
-					std::string comment;
-					std::string originAttachmentName;
-					std::string createTime;
-					std::string lastModifyTime;
-					long orderId;
-					long committerId;
-					std::string statusCode;
-					std::string pluginType;
-					std::vector<std::string> relatedUserNickList;
-					std::string workflowStatusDesc;
-					std::string statusDesc;
-					std::string attachmentKey;
-					long workflowInstanceId;
-					std::string committer;
-					std::vector<std::string> relatedUserList;
+					bool hasResult;
+					std::string tipMessage;
+					std::string uRL;
 				};
 
 
-				GetOrderBaseInfoResult();
-				explicit GetOrderBaseInfoResult(const std::string &payload);
-				~GetOrderBaseInfoResult();
-				OrderBaseInfo getOrderBaseInfo()const;
+				GetDbExportDownloadURLResult();
+				explicit GetDbExportDownloadURLResult(const std::string &payload);
+				~GetDbExportDownloadURLResult();
+				DownloadURLResult getDownloadURLResult()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -63,7 +51,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				OrderBaseInfo orderBaseInfo_;
+				DownloadURLResult downloadURLResult_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -72,4 +60,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETORDERBASEINFORESULT_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETDBEXPORTDOWNLOADURLRESULT_H_

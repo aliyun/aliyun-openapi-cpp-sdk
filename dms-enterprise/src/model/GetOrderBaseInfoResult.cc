@@ -62,6 +62,10 @@ void GetOrderBaseInfoResult::parse(const std::string &payload)
 		orderBaseInfo_.pluginType = orderBaseInfoNode["PluginType"].asString();
 	if(!orderBaseInfoNode["OrderId"].isNull())
 		orderBaseInfo_.orderId = std::stol(orderBaseInfoNode["OrderId"].asString());
+	if(!orderBaseInfoNode["AttachmentKey"].isNull())
+		orderBaseInfo_.attachmentKey = orderBaseInfoNode["AttachmentKey"].asString();
+	if(!orderBaseInfoNode["OriginAttachmentName"].isNull())
+		orderBaseInfo_.originAttachmentName = orderBaseInfoNode["OriginAttachmentName"].asString();
 		auto allRelatedUserNickList = orderBaseInfoNode["RelatedUserNickList"]["UserNicks"];
 		for (auto value : allRelatedUserNickList)
 			orderBaseInfo_.relatedUserNickList.push_back(value.asString());

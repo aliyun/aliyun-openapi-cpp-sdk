@@ -182,6 +182,8 @@
 #include "model/GetDatabaseResult.h"
 #include "model/GetDatabaseExportOrderDetailRequest.h"
 #include "model/GetDatabaseExportOrderDetailResult.h"
+#include "model/GetDbExportDownloadURLRequest.h"
+#include "model/GetDbExportDownloadURLResult.h"
 #include "model/GetInstanceRequest.h"
 #include "model/GetInstanceResult.h"
 #include "model/GetIntervalLimitOfSLARequest.h"
@@ -699,6 +701,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDatabaseExportOrderDetailResult> GetDatabaseExportOrderDetailOutcome;
 			typedef std::future<GetDatabaseExportOrderDetailOutcome> GetDatabaseExportOrderDetailOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDatabaseExportOrderDetailRequest&, const GetDatabaseExportOrderDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDatabaseExportOrderDetailAsyncHandler;
+			typedef Outcome<Error, Model::GetDbExportDownloadURLResult> GetDbExportDownloadURLOutcome;
+			typedef std::future<GetDbExportDownloadURLOutcome> GetDbExportDownloadURLOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDbExportDownloadURLRequest&, const GetDbExportDownloadURLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDbExportDownloadURLAsyncHandler;
 			typedef Outcome<Error, Model::GetInstanceResult> GetInstanceOutcome;
 			typedef std::future<GetInstanceOutcome> GetInstanceOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetInstanceRequest&, const GetInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceAsyncHandler;
@@ -1346,6 +1351,9 @@ namespace AlibabaCloud
 			GetDatabaseExportOrderDetailOutcome getDatabaseExportOrderDetail(const Model::GetDatabaseExportOrderDetailRequest &request)const;
 			void getDatabaseExportOrderDetailAsync(const Model::GetDatabaseExportOrderDetailRequest& request, const GetDatabaseExportOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDatabaseExportOrderDetailOutcomeCallable getDatabaseExportOrderDetailCallable(const Model::GetDatabaseExportOrderDetailRequest& request) const;
+			GetDbExportDownloadURLOutcome getDbExportDownloadURL(const Model::GetDbExportDownloadURLRequest &request)const;
+			void getDbExportDownloadURLAsync(const Model::GetDbExportDownloadURLRequest& request, const GetDbExportDownloadURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDbExportDownloadURLOutcomeCallable getDbExportDownloadURLCallable(const Model::GetDbExportDownloadURLRequest& request) const;
 			GetInstanceOutcome getInstance(const Model::GetInstanceRequest &request)const;
 			void getInstanceAsync(const Model::GetInstanceRequest& request, const GetInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceOutcomeCallable getInstanceCallable(const Model::GetInstanceRequest& request) const;
