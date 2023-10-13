@@ -2103,42 +2103,6 @@ AdbClient::DescribeRegionsOutcomeCallable AdbClient::describeRegionsCallable(con
 	return task->get_future();
 }
 
-AdbClient::DescribeSQLPatternAttributeOutcome AdbClient::describeSQLPatternAttribute(const DescribeSQLPatternAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSQLPatternAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSQLPatternAttributeOutcome(DescribeSQLPatternAttributeResult(outcome.result()));
-	else
-		return DescribeSQLPatternAttributeOutcome(outcome.error());
-}
-
-void AdbClient::describeSQLPatternAttributeAsync(const DescribeSQLPatternAttributeRequest& request, const DescribeSQLPatternAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSQLPatternAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeSQLPatternAttributeOutcomeCallable AdbClient::describeSQLPatternAttributeCallable(const DescribeSQLPatternAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSQLPatternAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSQLPatternAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AdbClient::DescribeSQLPatternsOutcome AdbClient::describeSQLPatterns(const DescribeSQLPatternsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -34,33 +34,6 @@ void DescribeDBClusterPerformanceRequest::setResourceOwnerId(long resourceOwnerI
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeDBClusterPerformanceRequest::getStartTime() const {
-  return startTime_;
-}
-
-void DescribeDBClusterPerformanceRequest::setStartTime(const std::string &startTime) {
-  startTime_ = startTime;
-  setParameter(std::string("StartTime"), startTime);
-}
-
-std::string DescribeDBClusterPerformanceRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DescribeDBClusterPerformanceRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DescribeDBClusterPerformanceRequest::getKey() const {
-  return key_;
-}
-
-void DescribeDBClusterPerformanceRequest::setKey(const std::string &key) {
-  key_ = key;
-  setParameter(std::string("Key"), key);
-}
-
 std::string DescribeDBClusterPerformanceRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -97,6 +70,15 @@ void DescribeDBClusterPerformanceRequest::setEndTime(const std::string &endTime)
   setParameter(std::string("EndTime"), endTime);
 }
 
+std::string DescribeDBClusterPerformanceRequest::getStartTime() const {
+  return startTime_;
+}
+
+void DescribeDBClusterPerformanceRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
+}
+
 long DescribeDBClusterPerformanceRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -104,5 +86,41 @@ long DescribeDBClusterPerformanceRequest::getOwnerId() const {
 void DescribeDBClusterPerformanceRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DescribeDBClusterPerformanceRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DescribeDBClusterPerformanceRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DescribeDBClusterPerformanceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDBClusterPerformanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeDBClusterPerformanceRequest::getResourcePools() const {
+  return resourcePools_;
+}
+
+void DescribeDBClusterPerformanceRequest::setResourcePools(const std::string &resourcePools) {
+  resourcePools_ = resourcePools;
+  setParameter(std::string("ResourcePools"), resourcePools);
+}
+
+std::string DescribeDBClusterPerformanceRequest::getKey() const {
+  return key_;
+}
+
+void DescribeDBClusterPerformanceRequest::setKey(const std::string &key) {
+  key_ = key;
+  setParameter(std::string("Key"), key);
 }
 

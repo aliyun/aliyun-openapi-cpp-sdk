@@ -135,8 +135,6 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/DescribeProcessListResult.h
 	include/alibabacloud/adb/model/DescribeRegionsRequest.h
 	include/alibabacloud/adb/model/DescribeRegionsResult.h
-	include/alibabacloud/adb/model/DescribeSQLPatternAttributeRequest.h
-	include/alibabacloud/adb/model/DescribeSQLPatternAttributeResult.h
 	include/alibabacloud/adb/model/DescribeSQLPatternsRequest.h
 	include/alibabacloud/adb/model/DescribeSQLPatternsResult.h
 	include/alibabacloud/adb/model/DescribeSQLPlanRequest.h
@@ -344,8 +342,6 @@ set(adb_src
 	src/model/DescribeProcessListResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
-	src/model/DescribeSQLPatternAttributeRequest.cc
-	src/model/DescribeSQLPatternAttributeResult.cc
 	src/model/DescribeSQLPatternsRequest.cc
 	src/model/DescribeSQLPatternsResult.cc
 	src/model/DescribeSQLPlanRequest.cc

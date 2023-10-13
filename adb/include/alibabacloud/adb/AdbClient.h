@@ -136,8 +136,6 @@
 #include "model/DescribeProcessListResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
-#include "model/DescribeSQLPatternAttributeRequest.h"
-#include "model/DescribeSQLPatternAttributeResult.h"
 #include "model/DescribeSQLPatternsRequest.h"
 #include "model/DescribeSQLPatternsResult.h"
 #include "model/DescribeSQLPlanRequest.h"
@@ -408,9 +406,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeSQLPatternAttributeResult> DescribeSQLPatternAttributeOutcome;
-			typedef std::future<DescribeSQLPatternAttributeOutcome> DescribeSQLPatternAttributeOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeSQLPatternAttributeRequest&, const DescribeSQLPatternAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLPatternAttributeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSQLPatternsResult> DescribeSQLPatternsOutcome;
 			typedef std::future<DescribeSQLPatternsOutcome> DescribeSQLPatternsOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeSQLPatternsRequest&, const DescribeSQLPatternsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLPatternsAsyncHandler;
@@ -722,9 +717,6 @@ namespace AlibabaCloud
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
-			DescribeSQLPatternAttributeOutcome describeSQLPatternAttribute(const Model::DescribeSQLPatternAttributeRequest &request)const;
-			void describeSQLPatternAttributeAsync(const Model::DescribeSQLPatternAttributeRequest& request, const DescribeSQLPatternAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeSQLPatternAttributeOutcomeCallable describeSQLPatternAttributeCallable(const Model::DescribeSQLPatternAttributeRequest& request) const;
 			DescribeSQLPatternsOutcome describeSQLPatterns(const Model::DescribeSQLPatternsRequest &request)const;
 			void describeSQLPatternsAsync(const Model::DescribeSQLPatternsRequest& request, const DescribeSQLPatternsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSQLPatternsOutcomeCallable describeSQLPatternsCallable(const Model::DescribeSQLPatternsRequest& request) const;
