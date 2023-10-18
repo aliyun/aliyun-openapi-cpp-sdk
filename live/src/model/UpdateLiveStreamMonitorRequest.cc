@@ -88,6 +88,15 @@ void UpdateLiveStreamMonitorRequest::setInputList(const std::string &inputList) 
   setParameter(std::string("InputList"), inputList);
 }
 
+std::string UpdateLiveStreamMonitorRequest::getDingTalkWebHookUrl() const {
+  return dingTalkWebHookUrl_;
+}
+
+void UpdateLiveStreamMonitorRequest::setDingTalkWebHookUrl(const std::string &dingTalkWebHookUrl) {
+  dingTalkWebHookUrl_ = dingTalkWebHookUrl;
+  setParameter(std::string("DingTalkWebHookUrl"), dingTalkWebHookUrl);
+}
+
 long UpdateLiveStreamMonitorRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -104,5 +113,14 @@ std::string UpdateLiveStreamMonitorRequest::getDomain() const {
 void UpdateLiveStreamMonitorRequest::setDomain(const std::string &domain) {
   domain_ = domain;
   setParameter(std::string("Domain"), domain);
+}
+
+std::string UpdateLiveStreamMonitorRequest::getCallbackUrl() const {
+  return callbackUrl_;
+}
+
+void UpdateLiveStreamMonitorRequest::setCallbackUrl(const std::string &callbackUrl) {
+  callbackUrl_ = callbackUrl;
+  setParameter(std::string("CallbackUrl"), callbackUrl);
 }
 

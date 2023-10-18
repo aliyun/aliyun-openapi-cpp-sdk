@@ -43,26 +43,30 @@ void DescribeLiveStreamMonitorListResult::parse(const std::string &payload)
 	for (auto valueLiveStreamMonitorListLiveStreamMonitorInfo : allLiveStreamMonitorListNode)
 	{
 		LiveStreamMonitorInfo liveStreamMonitorListObject;
-		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["Status"].isNull())
-			liveStreamMonitorListObject.status = std::stoi(valueLiveStreamMonitorListLiveStreamMonitorInfo["Status"].asString());
 		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["MonitorConfig"].isNull())
 			liveStreamMonitorListObject.monitorConfig = valueLiveStreamMonitorListLiveStreamMonitorInfo["MonitorConfig"].asString();
-		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["StartTime"].isNull())
-			liveStreamMonitorListObject.startTime = valueLiveStreamMonitorListLiveStreamMonitorInfo["StartTime"].asString();
+		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["Status"].isNull())
+			liveStreamMonitorListObject.status = std::stoi(valueLiveStreamMonitorListLiveStreamMonitorInfo["Status"].asString());
 		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["MonitorId"].isNull())
 			liveStreamMonitorListObject.monitorId = valueLiveStreamMonitorListLiveStreamMonitorInfo["MonitorId"].asString();
 		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["Domain"].isNull())
 			liveStreamMonitorListObject.domain = valueLiveStreamMonitorListLiveStreamMonitorInfo["Domain"].asString();
-		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["OutputTemplate"].isNull())
-			liveStreamMonitorListObject.outputTemplate = valueLiveStreamMonitorListLiveStreamMonitorInfo["OutputTemplate"].asString();
-		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["Region"].isNull())
-			liveStreamMonitorListObject.region = valueLiveStreamMonitorListLiveStreamMonitorInfo["Region"].asString();
+		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["CallbackUrl"].isNull())
+			liveStreamMonitorListObject.callbackUrl = valueLiveStreamMonitorListLiveStreamMonitorInfo["CallbackUrl"].asString();
 		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["AudioFrom"].isNull())
 			liveStreamMonitorListObject.audioFrom = std::stoi(valueLiveStreamMonitorListLiveStreamMonitorInfo["AudioFrom"].asString());
+		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["DingTalkWebHookUrl"].isNull())
+			liveStreamMonitorListObject.dingTalkWebHookUrl = valueLiveStreamMonitorListLiveStreamMonitorInfo["DingTalkWebHookUrl"].asString();
 		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["MonitorName"].isNull())
 			liveStreamMonitorListObject.monitorName = valueLiveStreamMonitorListLiveStreamMonitorInfo["MonitorName"].asString();
 		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["StopTime"].isNull())
 			liveStreamMonitorListObject.stopTime = valueLiveStreamMonitorListLiveStreamMonitorInfo["StopTime"].asString();
+		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["StartTime"].isNull())
+			liveStreamMonitorListObject.startTime = valueLiveStreamMonitorListLiveStreamMonitorInfo["StartTime"].asString();
+		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["OutputTemplate"].isNull())
+			liveStreamMonitorListObject.outputTemplate = valueLiveStreamMonitorListLiveStreamMonitorInfo["OutputTemplate"].asString();
+		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["Region"].isNull())
+			liveStreamMonitorListObject.region = valueLiveStreamMonitorListLiveStreamMonitorInfo["Region"].asString();
 		auto allInputListNode = valueLiveStreamMonitorListLiveStreamMonitorInfo["InputList"]["InputConfig"];
 		for (auto valueLiveStreamMonitorListLiveStreamMonitorInfoInputListInputConfig : allInputListNode)
 		{

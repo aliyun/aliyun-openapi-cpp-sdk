@@ -48,6 +48,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getPullAppName() const;
 	void setPullAppName(const std::string &pullAppName);
+	std::string getTranscodeLazy() const;
+	void setTranscodeLazy(const std::string &transcodeLazy);
 	std::string getPullProtocol() const;
 	void setPullProtocol(const std::string &pullProtocol);
 
@@ -61,6 +63,7 @@ private:
 	std::string pullDomainName_;
 	long ownerId_;
 	std::string pullAppName_;
+	std::string transcodeLazy_;
 	std::string pullProtocol_;
 };
 } // namespace Model

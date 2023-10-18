@@ -59,6 +59,8 @@ void DescribeLiveLazyPullStreamConfigResult::parse(const std::string &payload)
 			liveLazyPullConfigListObject.domainName = valueLiveLazyPullConfigListLiveLazyPullConfig["DomainName"].asString();
 		if(!valueLiveLazyPullConfigListLiveLazyPullConfig["PullAuthType"].isNull())
 			liveLazyPullConfigListObject.pullAuthType = valueLiveLazyPullConfigListLiveLazyPullConfig["PullAuthType"].asString();
+		if(!valueLiveLazyPullConfigListLiveLazyPullConfig["TranscodeLazy"].isNull())
+			liveLazyPullConfigListObject.transcodeLazy = valueLiveLazyPullConfigListLiveLazyPullConfig["TranscodeLazy"].asString();
 		liveLazyPullConfigList_.push_back(liveLazyPullConfigListObject);
 	}
 

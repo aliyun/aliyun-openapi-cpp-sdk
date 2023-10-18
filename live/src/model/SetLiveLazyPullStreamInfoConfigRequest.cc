@@ -106,6 +106,15 @@ void SetLiveLazyPullStreamInfoConfigRequest::setPullAppName(const std::string &p
   setParameter(std::string("PullAppName"), pullAppName);
 }
 
+std::string SetLiveLazyPullStreamInfoConfigRequest::getTranscodeLazy() const {
+  return transcodeLazy_;
+}
+
+void SetLiveLazyPullStreamInfoConfigRequest::setTranscodeLazy(const std::string &transcodeLazy) {
+  transcodeLazy_ = transcodeLazy;
+  setParameter(std::string("TranscodeLazy"), transcodeLazy);
+}
+
 std::string SetLiveLazyPullStreamInfoConfigRequest::getPullProtocol() const {
   return pullProtocol_;
 }

@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainStreamTranscodeDataRequest : pu
 public:
 	DescribeLiveDomainStreamTranscodeDataRequest();
 	~DescribeLiveDomainStreamTranscodeDataRequest();
+	std::string getPrecision() const;
+	void setPrecision(const std::string &precision);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
 	std::string getSplit() const;
@@ -44,6 +46,7 @@ public:
 	void setInterval(const std::string &interval);
 
 private:
+	std::string precision_;
 	std::string startTime_;
 	std::string split_;
 	std::string domainName_;

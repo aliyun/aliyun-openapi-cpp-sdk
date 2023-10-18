@@ -42,10 +42,14 @@ public:
 	void setApp(const std::string &app);
 	std::string getInputList() const;
 	void setInputList(const std::string &inputList);
+	std::string getDingTalkWebHookUrl() const;
+	void setDingTalkWebHookUrl(const std::string &dingTalkWebHookUrl);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getDomain() const;
 	void setDomain(const std::string &domain);
+	std::string getCallbackUrl() const;
+	void setCallbackUrl(const std::string &callbackUrl);
 
 private:
 	std::string monitorConfig_;
@@ -54,8 +58,10 @@ private:
 	std::string outputTemplate_;
 	std::string app_;
 	std::string inputList_;
+	std::string dingTalkWebHookUrl_;
 	long ownerId_;
 	std::string domain_;
+	std::string callbackUrl_;
 };
 } // namespace Model
 } // namespace Live

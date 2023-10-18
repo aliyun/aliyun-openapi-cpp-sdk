@@ -61,11 +61,13 @@ namespace AlibabaCloud
 					};
 					int status;
 					OutputUrls outputUrls;
-					std::string outputTemplate;
 					int audioFrom;
 					std::vector<LiveStreamMonitorInfo::InputConfig> inputList;
-					std::string startTime;
 					std::string monitorName;
+					std::string startTime;
+					std::string callbackUrl;
+					std::string outputTemplate;
+					std::string dingTalkWebHookUrl;
 					std::string region;
 					std::string domain;
 					std::string monitorId;

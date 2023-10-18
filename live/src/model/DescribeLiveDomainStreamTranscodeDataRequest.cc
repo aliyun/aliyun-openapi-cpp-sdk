@@ -25,6 +25,15 @@ DescribeLiveDomainStreamTranscodeDataRequest::DescribeLiveDomainStreamTranscodeD
 
 DescribeLiveDomainStreamTranscodeDataRequest::~DescribeLiveDomainStreamTranscodeDataRequest() {}
 
+std::string DescribeLiveDomainStreamTranscodeDataRequest::getPrecision() const {
+  return precision_;
+}
+
+void DescribeLiveDomainStreamTranscodeDataRequest::setPrecision(const std::string &precision) {
+  precision_ = precision;
+  setParameter(std::string("Precision"), precision);
+}
+
 std::string DescribeLiveDomainStreamTranscodeDataRequest::getStartTime() const {
   return startTime_;
 }
