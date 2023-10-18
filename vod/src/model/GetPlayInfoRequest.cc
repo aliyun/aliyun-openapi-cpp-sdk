@@ -43,6 +43,15 @@ void GetPlayInfoRequest::setChannel(const std::string &channel) {
   setParameter(std::string("Channel"), channel);
 }
 
+std::string GetPlayInfoRequest::getDigitalWatermarkType() const {
+  return digitalWatermarkType_;
+}
+
+void GetPlayInfoRequest::setDigitalWatermarkType(const std::string &digitalWatermarkType) {
+  digitalWatermarkType_ = digitalWatermarkType;
+  setParameter(std::string("DigitalWatermarkType"), digitalWatermarkType);
+}
+
 std::string GetPlayInfoRequest::getPlayerVersion() const {
   return playerVersion_;
 }
@@ -59,6 +68,15 @@ std::string GetPlayInfoRequest::getRand() const {
 void GetPlayInfoRequest::setRand(const std::string &rand) {
   rand_ = rand;
   setParameter(std::string("Rand"), rand);
+}
+
+std::string GetPlayInfoRequest::getTrace() const {
+  return trace_;
+}
+
+void GetPlayInfoRequest::setTrace(const std::string &trace) {
+  trace_ = trace;
+  setParameter(std::string("Trace"), trace);
 }
 
 std::string GetPlayInfoRequest::getReAuthInfo() const {

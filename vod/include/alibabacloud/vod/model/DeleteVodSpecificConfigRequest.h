@@ -34,6 +34,8 @@ public:
 	void setDomainName(const std::string &domainName);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getEnv() const;
+	void setEnv(const std::string &env);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
 	std::string getConfigId() const;
@@ -42,6 +44,7 @@ public:
 private:
 	std::string domainName_;
 	long ownerId_;
+	std::string env_;
 	std::string securityToken_;
 	std::string configId_;
 };

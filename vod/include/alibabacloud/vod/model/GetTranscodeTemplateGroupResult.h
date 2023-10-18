@@ -41,6 +41,7 @@ namespace AlibabaCloud
 						std::string rotate;
 						std::string userData;
 						std::string definition;
+						std::string traceMark;
 						std::string transcodeFileRegular;
 						std::vector<std::string> watermarkIds;
 						std::string encryptSetting;
@@ -55,6 +56,7 @@ namespace AlibabaCloud
 						std::string subtitleList;
 						std::string muxConfig;
 						std::string openingList;
+						std::string copyrightMark;
 					};
 					std::string isDefault;
 					std::string modifyTime;

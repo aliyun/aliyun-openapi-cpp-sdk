@@ -27,6 +27,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/AddCategoryResult.h
 	include/alibabacloud/vod/model/AddEditingProjectRequest.h
 	include/alibabacloud/vod/model/AddEditingProjectResult.h
+	include/alibabacloud/vod/model/AddEditingProjectMaterialsRequest.h
+	include/alibabacloud/vod/model/AddEditingProjectMaterialsResult.h
 	include/alibabacloud/vod/model/AddTranscodeTemplateGroupRequest.h
 	include/alibabacloud/vod/model/AddTranscodeTemplateGroupResult.h
 	include/alibabacloud/vod/model/AddVodDomainRequest.h
@@ -71,6 +73,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DeleteDynamicImageResult.h
 	include/alibabacloud/vod/model/DeleteEditingProjectRequest.h
 	include/alibabacloud/vod/model/DeleteEditingProjectResult.h
+	include/alibabacloud/vod/model/DeleteEditingProjectMaterialsRequest.h
+	include/alibabacloud/vod/model/DeleteEditingProjectMaterialsResult.h
 	include/alibabacloud/vod/model/DeleteImageRequest.h
 	include/alibabacloud/vod/model/DeleteImageResult.h
 	include/alibabacloud/vod/model/DeleteMessageCallbackRequest.h
@@ -157,6 +161,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/GetCategoriesResult.h
 	include/alibabacloud/vod/model/GetDefaultAITemplateRequest.h
 	include/alibabacloud/vod/model/GetDefaultAITemplateResult.h
+	include/alibabacloud/vod/model/GetDigitalWatermarkExtractResultRequest.h
+	include/alibabacloud/vod/model/GetDigitalWatermarkExtractResultResult.h
 	include/alibabacloud/vod/model/GetEditingProjectRequest.h
 	include/alibabacloud/vod/model/GetEditingProjectResult.h
 	include/alibabacloud/vod/model/GetEditingProjectMaterialsRequest.h
@@ -275,6 +281,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/SubmitAIJobResult.h
 	include/alibabacloud/vod/model/SubmitAIMediaAuditJobRequest.h
 	include/alibabacloud/vod/model/SubmitAIMediaAuditJobResult.h
+	include/alibabacloud/vod/model/SubmitDigitalWatermarkExtractJobRequest.h
+	include/alibabacloud/vod/model/SubmitDigitalWatermarkExtractJobResult.h
 	include/alibabacloud/vod/model/SubmitDynamicImageJobRequest.h
 	include/alibabacloud/vod/model/SubmitDynamicImageJobResult.h
 	include/alibabacloud/vod/model/SubmitMediaDNADeleteJobRequest.h
@@ -328,6 +336,8 @@ set(vod_src
 	src/model/AddCategoryResult.cc
 	src/model/AddEditingProjectRequest.cc
 	src/model/AddEditingProjectResult.cc
+	src/model/AddEditingProjectMaterialsRequest.cc
+	src/model/AddEditingProjectMaterialsResult.cc
 	src/model/AddTranscodeTemplateGroupRequest.cc
 	src/model/AddTranscodeTemplateGroupResult.cc
 	src/model/AddVodDomainRequest.cc
@@ -372,6 +382,8 @@ set(vod_src
 	src/model/DeleteDynamicImageResult.cc
 	src/model/DeleteEditingProjectRequest.cc
 	src/model/DeleteEditingProjectResult.cc
+	src/model/DeleteEditingProjectMaterialsRequest.cc
+	src/model/DeleteEditingProjectMaterialsResult.cc
 	src/model/DeleteImageRequest.cc
 	src/model/DeleteImageResult.cc
 	src/model/DeleteMessageCallbackRequest.cc
@@ -458,6 +470,8 @@ set(vod_src
 	src/model/GetCategoriesResult.cc
 	src/model/GetDefaultAITemplateRequest.cc
 	src/model/GetDefaultAITemplateResult.cc
+	src/model/GetDigitalWatermarkExtractResultRequest.cc
+	src/model/GetDigitalWatermarkExtractResultResult.cc
 	src/model/GetEditingProjectRequest.cc
 	src/model/GetEditingProjectResult.cc
 	src/model/GetEditingProjectMaterialsRequest.cc
@@ -576,6 +590,8 @@ set(vod_src
 	src/model/SubmitAIJobResult.cc
 	src/model/SubmitAIMediaAuditJobRequest.cc
 	src/model/SubmitAIMediaAuditJobResult.cc
+	src/model/SubmitDigitalWatermarkExtractJobRequest.cc
+	src/model/SubmitDigitalWatermarkExtractJobResult.cc
 	src/model/SubmitDynamicImageJobRequest.cc
 	src/model/SubmitDynamicImageJobResult.cc
 	src/model/SubmitMediaDNADeleteJobRequest.cc

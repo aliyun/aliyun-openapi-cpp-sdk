@@ -28,6 +28,8 @@
 #include "model/AddCategoryResult.h"
 #include "model/AddEditingProjectRequest.h"
 #include "model/AddEditingProjectResult.h"
+#include "model/AddEditingProjectMaterialsRequest.h"
+#include "model/AddEditingProjectMaterialsResult.h"
 #include "model/AddTranscodeTemplateGroupRequest.h"
 #include "model/AddTranscodeTemplateGroupResult.h"
 #include "model/AddVodDomainRequest.h"
@@ -72,6 +74,8 @@
 #include "model/DeleteDynamicImageResult.h"
 #include "model/DeleteEditingProjectRequest.h"
 #include "model/DeleteEditingProjectResult.h"
+#include "model/DeleteEditingProjectMaterialsRequest.h"
+#include "model/DeleteEditingProjectMaterialsResult.h"
 #include "model/DeleteImageRequest.h"
 #include "model/DeleteImageResult.h"
 #include "model/DeleteMessageCallbackRequest.h"
@@ -158,6 +162,8 @@
 #include "model/GetCategoriesResult.h"
 #include "model/GetDefaultAITemplateRequest.h"
 #include "model/GetDefaultAITemplateResult.h"
+#include "model/GetDigitalWatermarkExtractResultRequest.h"
+#include "model/GetDigitalWatermarkExtractResultResult.h"
 #include "model/GetEditingProjectRequest.h"
 #include "model/GetEditingProjectResult.h"
 #include "model/GetEditingProjectMaterialsRequest.h"
@@ -276,6 +282,8 @@
 #include "model/SubmitAIJobResult.h"
 #include "model/SubmitAIMediaAuditJobRequest.h"
 #include "model/SubmitAIMediaAuditJobResult.h"
+#include "model/SubmitDigitalWatermarkExtractJobRequest.h"
+#include "model/SubmitDigitalWatermarkExtractJobResult.h"
 #include "model/SubmitDynamicImageJobRequest.h"
 #include "model/SubmitDynamicImageJobResult.h"
 #include "model/SubmitMediaDNADeleteJobRequest.h"
@@ -338,6 +346,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddEditingProjectResult> AddEditingProjectOutcome;
 			typedef std::future<AddEditingProjectOutcome> AddEditingProjectOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::AddEditingProjectRequest&, const AddEditingProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddEditingProjectAsyncHandler;
+			typedef Outcome<Error, Model::AddEditingProjectMaterialsResult> AddEditingProjectMaterialsOutcome;
+			typedef std::future<AddEditingProjectMaterialsOutcome> AddEditingProjectMaterialsOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::AddEditingProjectMaterialsRequest&, const AddEditingProjectMaterialsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddEditingProjectMaterialsAsyncHandler;
 			typedef Outcome<Error, Model::AddTranscodeTemplateGroupResult> AddTranscodeTemplateGroupOutcome;
 			typedef std::future<AddTranscodeTemplateGroupOutcome> AddTranscodeTemplateGroupOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::AddTranscodeTemplateGroupRequest&, const AddTranscodeTemplateGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddTranscodeTemplateGroupAsyncHandler;
@@ -404,6 +415,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteEditingProjectResult> DeleteEditingProjectOutcome;
 			typedef std::future<DeleteEditingProjectOutcome> DeleteEditingProjectOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DeleteEditingProjectRequest&, const DeleteEditingProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEditingProjectAsyncHandler;
+			typedef Outcome<Error, Model::DeleteEditingProjectMaterialsResult> DeleteEditingProjectMaterialsOutcome;
+			typedef std::future<DeleteEditingProjectMaterialsOutcome> DeleteEditingProjectMaterialsOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DeleteEditingProjectMaterialsRequest&, const DeleteEditingProjectMaterialsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEditingProjectMaterialsAsyncHandler;
 			typedef Outcome<Error, Model::DeleteImageResult> DeleteImageOutcome;
 			typedef std::future<DeleteImageOutcome> DeleteImageOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DeleteImageRequest&, const DeleteImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageAsyncHandler;
@@ -533,6 +547,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDefaultAITemplateResult> GetDefaultAITemplateOutcome;
 			typedef std::future<GetDefaultAITemplateOutcome> GetDefaultAITemplateOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetDefaultAITemplateRequest&, const GetDefaultAITemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDefaultAITemplateAsyncHandler;
+			typedef Outcome<Error, Model::GetDigitalWatermarkExtractResultResult> GetDigitalWatermarkExtractResultOutcome;
+			typedef std::future<GetDigitalWatermarkExtractResultOutcome> GetDigitalWatermarkExtractResultOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::GetDigitalWatermarkExtractResultRequest&, const GetDigitalWatermarkExtractResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDigitalWatermarkExtractResultAsyncHandler;
 			typedef Outcome<Error, Model::GetEditingProjectResult> GetEditingProjectOutcome;
 			typedef std::future<GetEditingProjectOutcome> GetEditingProjectOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetEditingProjectRequest&, const GetEditingProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEditingProjectAsyncHandler;
@@ -710,6 +727,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SubmitAIMediaAuditJobResult> SubmitAIMediaAuditJobOutcome;
 			typedef std::future<SubmitAIMediaAuditJobOutcome> SubmitAIMediaAuditJobOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::SubmitAIMediaAuditJobRequest&, const SubmitAIMediaAuditJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitAIMediaAuditJobAsyncHandler;
+			typedef Outcome<Error, Model::SubmitDigitalWatermarkExtractJobResult> SubmitDigitalWatermarkExtractJobOutcome;
+			typedef std::future<SubmitDigitalWatermarkExtractJobOutcome> SubmitDigitalWatermarkExtractJobOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::SubmitDigitalWatermarkExtractJobRequest&, const SubmitDigitalWatermarkExtractJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitDigitalWatermarkExtractJobAsyncHandler;
 			typedef Outcome<Error, Model::SubmitDynamicImageJobResult> SubmitDynamicImageJobOutcome;
 			typedef std::future<SubmitDynamicImageJobOutcome> SubmitDynamicImageJobOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::SubmitDynamicImageJobRequest&, const SubmitDynamicImageJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitDynamicImageJobAsyncHandler;
@@ -790,6 +810,9 @@ namespace AlibabaCloud
 			AddEditingProjectOutcome addEditingProject(const Model::AddEditingProjectRequest &request)const;
 			void addEditingProjectAsync(const Model::AddEditingProjectRequest& request, const AddEditingProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddEditingProjectOutcomeCallable addEditingProjectCallable(const Model::AddEditingProjectRequest& request) const;
+			AddEditingProjectMaterialsOutcome addEditingProjectMaterials(const Model::AddEditingProjectMaterialsRequest &request)const;
+			void addEditingProjectMaterialsAsync(const Model::AddEditingProjectMaterialsRequest& request, const AddEditingProjectMaterialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddEditingProjectMaterialsOutcomeCallable addEditingProjectMaterialsCallable(const Model::AddEditingProjectMaterialsRequest& request) const;
 			AddTranscodeTemplateGroupOutcome addTranscodeTemplateGroup(const Model::AddTranscodeTemplateGroupRequest &request)const;
 			void addTranscodeTemplateGroupAsync(const Model::AddTranscodeTemplateGroupRequest& request, const AddTranscodeTemplateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddTranscodeTemplateGroupOutcomeCallable addTranscodeTemplateGroupCallable(const Model::AddTranscodeTemplateGroupRequest& request) const;
@@ -856,6 +879,9 @@ namespace AlibabaCloud
 			DeleteEditingProjectOutcome deleteEditingProject(const Model::DeleteEditingProjectRequest &request)const;
 			void deleteEditingProjectAsync(const Model::DeleteEditingProjectRequest& request, const DeleteEditingProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteEditingProjectOutcomeCallable deleteEditingProjectCallable(const Model::DeleteEditingProjectRequest& request) const;
+			DeleteEditingProjectMaterialsOutcome deleteEditingProjectMaterials(const Model::DeleteEditingProjectMaterialsRequest &request)const;
+			void deleteEditingProjectMaterialsAsync(const Model::DeleteEditingProjectMaterialsRequest& request, const DeleteEditingProjectMaterialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteEditingProjectMaterialsOutcomeCallable deleteEditingProjectMaterialsCallable(const Model::DeleteEditingProjectMaterialsRequest& request) const;
 			DeleteImageOutcome deleteImage(const Model::DeleteImageRequest &request)const;
 			void deleteImageAsync(const Model::DeleteImageRequest& request, const DeleteImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteImageOutcomeCallable deleteImageCallable(const Model::DeleteImageRequest& request) const;
@@ -985,6 +1011,9 @@ namespace AlibabaCloud
 			GetDefaultAITemplateOutcome getDefaultAITemplate(const Model::GetDefaultAITemplateRequest &request)const;
 			void getDefaultAITemplateAsync(const Model::GetDefaultAITemplateRequest& request, const GetDefaultAITemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDefaultAITemplateOutcomeCallable getDefaultAITemplateCallable(const Model::GetDefaultAITemplateRequest& request) const;
+			GetDigitalWatermarkExtractResultOutcome getDigitalWatermarkExtractResult(const Model::GetDigitalWatermarkExtractResultRequest &request)const;
+			void getDigitalWatermarkExtractResultAsync(const Model::GetDigitalWatermarkExtractResultRequest& request, const GetDigitalWatermarkExtractResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDigitalWatermarkExtractResultOutcomeCallable getDigitalWatermarkExtractResultCallable(const Model::GetDigitalWatermarkExtractResultRequest& request) const;
 			GetEditingProjectOutcome getEditingProject(const Model::GetEditingProjectRequest &request)const;
 			void getEditingProjectAsync(const Model::GetEditingProjectRequest& request, const GetEditingProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetEditingProjectOutcomeCallable getEditingProjectCallable(const Model::GetEditingProjectRequest& request) const;
@@ -1162,6 +1191,9 @@ namespace AlibabaCloud
 			SubmitAIMediaAuditJobOutcome submitAIMediaAuditJob(const Model::SubmitAIMediaAuditJobRequest &request)const;
 			void submitAIMediaAuditJobAsync(const Model::SubmitAIMediaAuditJobRequest& request, const SubmitAIMediaAuditJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitAIMediaAuditJobOutcomeCallable submitAIMediaAuditJobCallable(const Model::SubmitAIMediaAuditJobRequest& request) const;
+			SubmitDigitalWatermarkExtractJobOutcome submitDigitalWatermarkExtractJob(const Model::SubmitDigitalWatermarkExtractJobRequest &request)const;
+			void submitDigitalWatermarkExtractJobAsync(const Model::SubmitDigitalWatermarkExtractJobRequest& request, const SubmitDigitalWatermarkExtractJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitDigitalWatermarkExtractJobOutcomeCallable submitDigitalWatermarkExtractJobCallable(const Model::SubmitDigitalWatermarkExtractJobRequest& request) const;
 			SubmitDynamicImageJobOutcome submitDynamicImageJob(const Model::SubmitDynamicImageJobRequest &request)const;
 			void submitDynamicImageJobAsync(const Model::SubmitDynamicImageJobRequest& request, const SubmitDynamicImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitDynamicImageJobOutcomeCallable submitDynamicImageJobCallable(const Model::SubmitDynamicImageJobRequest& request) const;

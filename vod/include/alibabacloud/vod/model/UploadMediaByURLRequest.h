@@ -32,6 +32,8 @@ public:
 	~UploadMediaByURLRequest();
 	std::string getMessageCallback() const;
 	void setMessageCallback(const std::string &messageCallback);
+	std::string getSessionId() const;
+	void setSessionId(const std::string &sessionId);
 	std::string getStorageLocation() const;
 	void setStorageLocation(const std::string &storageLocation);
 	std::string getUserData() const;
@@ -53,6 +55,7 @@ public:
 
 private:
 	std::string messageCallback_;
+	std::string sessionId_;
 	std::string storageLocation_;
 	std::string userData_;
 	std::string workflowId_;

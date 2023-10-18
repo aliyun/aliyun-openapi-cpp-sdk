@@ -34,6 +34,15 @@ void UploadMediaByURLRequest::setMessageCallback(const std::string &messageCallb
   setParameter(std::string("MessageCallback"), messageCallback);
 }
 
+std::string UploadMediaByURLRequest::getSessionId() const {
+  return sessionId_;
+}
+
+void UploadMediaByURLRequest::setSessionId(const std::string &sessionId) {
+  sessionId_ = sessionId;
+  setParameter(std::string("SessionId"), sessionId);
+}
+
 std::string UploadMediaByURLRequest::getStorageLocation() const {
   return storageLocation_;
 }

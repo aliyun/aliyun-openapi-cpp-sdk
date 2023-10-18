@@ -93,6 +93,10 @@ void GetPlayInfoResult::parse(const std::string &payload)
 			playInfoListObject.hDRType = valuePlayInfoListPlayInfo["HDRType"].asString();
 		if(!valuePlayInfoListPlayInfo["BitDepth"].isNull())
 			playInfoListObject.bitDepth = std::stoi(valuePlayInfoListPlayInfo["BitDepth"].asString());
+		if(!valuePlayInfoListPlayInfo["JobType"].isNull())
+			playInfoListObject.jobType = std::stoi(valuePlayInfoListPlayInfo["JobType"].asString());
+		if(!valuePlayInfoListPlayInfo["JobExt"].isNull())
+			playInfoListObject.jobExt = valuePlayInfoListPlayInfo["JobExt"].asString();
 		playInfoList_.push_back(playInfoListObject);
 	}
 	auto videoBaseNode = value["VideoBase"];

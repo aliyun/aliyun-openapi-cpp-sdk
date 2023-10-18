@@ -96,6 +96,10 @@ void GetTranscodeTemplateGroupResult::parse(const std::string &payload)
 			transcodeTemplateObject.muxConfig = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["MuxConfig"].asString();
 		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["TailSlateList"].isNull())
 			transcodeTemplateObject.tailSlateList = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["TailSlateList"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["TraceMark"].isNull())
+			transcodeTemplateObject.traceMark = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["TraceMark"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["CopyrightMark"].isNull())
+			transcodeTemplateObject.copyrightMark = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["CopyrightMark"].asString();
 		auto allWatermarkIds = value["WatermarkIds"]["WatermarkId"];
 		for (auto value : allWatermarkIds)
 			transcodeTemplateObject.watermarkIds.push_back(value.asString());

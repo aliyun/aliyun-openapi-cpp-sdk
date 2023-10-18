@@ -61,6 +61,7 @@ namespace AlibabaCloud
 					std::string preprocessStatus;
 					std::string complexity;
 					std::string format;
+					std::string jobExt;
 					std::string narrowBandType;
 					std::string plaintext;
 					long height;
@@ -74,6 +75,7 @@ namespace AlibabaCloud
 					std::string duration;
 					std::string bitrate;
 					long encrypt;
+					int jobType;
 					std::string encryptType;
 					std::string playURL;
 					std::string creationTime;

@@ -34,10 +34,14 @@ public:
 	void setFormats(const std::string &formats);
 	std::string getChannel() const;
 	void setChannel(const std::string &channel);
+	std::string getDigitalWatermarkType() const;
+	void setDigitalWatermarkType(const std::string &digitalWatermarkType);
 	std::string getPlayerVersion() const;
 	void setPlayerVersion(const std::string &playerVersion);
 	std::string getRand() const;
 	void setRand(const std::string &rand);
+	std::string getTrace() const;
+	void setTrace(const std::string &trace);
 	std::string getReAuthInfo() const;
 	void setReAuthInfo(const std::string &reAuthInfo);
 	std::string getPlayConfig() const;
@@ -62,8 +66,10 @@ public:
 private:
 	std::string formats_;
 	std::string channel_;
+	std::string digitalWatermarkType_;
 	std::string playerVersion_;
 	std::string rand_;
+	std::string trace_;
 	std::string reAuthInfo_;
 	std::string playConfig_;
 	std::string outputType_;

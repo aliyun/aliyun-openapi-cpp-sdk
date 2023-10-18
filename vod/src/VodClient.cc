@@ -159,6 +159,42 @@ VodClient::AddEditingProjectOutcomeCallable VodClient::addEditingProjectCallable
 	return task->get_future();
 }
 
+VodClient::AddEditingProjectMaterialsOutcome VodClient::addEditingProjectMaterials(const AddEditingProjectMaterialsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddEditingProjectMaterialsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddEditingProjectMaterialsOutcome(AddEditingProjectMaterialsResult(outcome.result()));
+	else
+		return AddEditingProjectMaterialsOutcome(outcome.error());
+}
+
+void VodClient::addEditingProjectMaterialsAsync(const AddEditingProjectMaterialsRequest& request, const AddEditingProjectMaterialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addEditingProjectMaterials(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::AddEditingProjectMaterialsOutcomeCallable VodClient::addEditingProjectMaterialsCallable(const AddEditingProjectMaterialsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddEditingProjectMaterialsOutcome()>>(
+			[this, request]()
+			{
+			return this->addEditingProjectMaterials(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::AddTranscodeTemplateGroupOutcome VodClient::addTranscodeTemplateGroup(const AddTranscodeTemplateGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -945,6 +981,42 @@ VodClient::DeleteEditingProjectOutcomeCallable VodClient::deleteEditingProjectCa
 			[this, request]()
 			{
 			return this->deleteEditingProject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DeleteEditingProjectMaterialsOutcome VodClient::deleteEditingProjectMaterials(const DeleteEditingProjectMaterialsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteEditingProjectMaterialsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteEditingProjectMaterialsOutcome(DeleteEditingProjectMaterialsResult(outcome.result()));
+	else
+		return DeleteEditingProjectMaterialsOutcome(outcome.error());
+}
+
+void VodClient::deleteEditingProjectMaterialsAsync(const DeleteEditingProjectMaterialsRequest& request, const DeleteEditingProjectMaterialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteEditingProjectMaterials(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DeleteEditingProjectMaterialsOutcomeCallable VodClient::deleteEditingProjectMaterialsCallable(const DeleteEditingProjectMaterialsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteEditingProjectMaterialsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteEditingProjectMaterials(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2493,6 +2565,42 @@ VodClient::GetDefaultAITemplateOutcomeCallable VodClient::getDefaultAITemplateCa
 			[this, request]()
 			{
 			return this->getDefaultAITemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::GetDigitalWatermarkExtractResultOutcome VodClient::getDigitalWatermarkExtractResult(const GetDigitalWatermarkExtractResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDigitalWatermarkExtractResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDigitalWatermarkExtractResultOutcome(GetDigitalWatermarkExtractResultResult(outcome.result()));
+	else
+		return GetDigitalWatermarkExtractResultOutcome(outcome.error());
+}
+
+void VodClient::getDigitalWatermarkExtractResultAsync(const GetDigitalWatermarkExtractResultRequest& request, const GetDigitalWatermarkExtractResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDigitalWatermarkExtractResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::GetDigitalWatermarkExtractResultOutcomeCallable VodClient::getDigitalWatermarkExtractResultCallable(const GetDigitalWatermarkExtractResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDigitalWatermarkExtractResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getDigitalWatermarkExtractResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4617,6 +4725,42 @@ VodClient::SubmitAIMediaAuditJobOutcomeCallable VodClient::submitAIMediaAuditJob
 			[this, request]()
 			{
 			return this->submitAIMediaAuditJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::SubmitDigitalWatermarkExtractJobOutcome VodClient::submitDigitalWatermarkExtractJob(const SubmitDigitalWatermarkExtractJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitDigitalWatermarkExtractJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitDigitalWatermarkExtractJobOutcome(SubmitDigitalWatermarkExtractJobResult(outcome.result()));
+	else
+		return SubmitDigitalWatermarkExtractJobOutcome(outcome.error());
+}
+
+void VodClient::submitDigitalWatermarkExtractJobAsync(const SubmitDigitalWatermarkExtractJobRequest& request, const SubmitDigitalWatermarkExtractJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitDigitalWatermarkExtractJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::SubmitDigitalWatermarkExtractJobOutcomeCallable VodClient::submitDigitalWatermarkExtractJobCallable(const SubmitDigitalWatermarkExtractJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitDigitalWatermarkExtractJobOutcome()>>(
+			[this, request]()
+			{
+			return this->submitDigitalWatermarkExtractJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -43,6 +43,15 @@ void DeleteVodSpecificConfigRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DeleteVodSpecificConfigRequest::getEnv() const {
+  return env_;
+}
+
+void DeleteVodSpecificConfigRequest::setEnv(const std::string &env) {
+  env_ = env;
+  setParameter(std::string("Env"), env);
+}
+
 std::string DeleteVodSpecificConfigRequest::getSecurityToken() const {
   return securityToken_;
 }
