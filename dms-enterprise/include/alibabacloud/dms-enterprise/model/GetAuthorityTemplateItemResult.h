@@ -52,6 +52,7 @@ namespace AlibabaCloud
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
+				long getTid()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -60,6 +61,7 @@ namespace AlibabaCloud
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
+				long tid_;
 
 			};
 		}

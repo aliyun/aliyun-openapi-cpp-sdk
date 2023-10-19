@@ -47,6 +47,7 @@ namespace AlibabaCloud
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
+				long getTid()const;
 				AuthorityTemplateView getAuthorityTemplateView()const;
 
 			protected:
@@ -55,6 +56,7 @@ namespace AlibabaCloud
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
+				long tid_;
 				AuthorityTemplateView authorityTemplateView_;
 
 			};

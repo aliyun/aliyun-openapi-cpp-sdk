@@ -54,6 +54,8 @@ void UpdateAuthorityTemplateResult::parse(const std::string &payload)
 		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["Tid"].isNull())
+		tid_ = std::stol(value["Tid"].asString());
 
 }
 
@@ -70,6 +72,11 @@ std::string UpdateAuthorityTemplateResult::getErrorMessage()const
 bool UpdateAuthorityTemplateResult::getSuccess()const
 {
 	return success_;
+}
+
+long UpdateAuthorityTemplateResult::getTid()const
+{
+	return tid_;
 }
 
 UpdateAuthorityTemplateResult::AuthorityTemplateView UpdateAuthorityTemplateResult::getAuthorityTemplateView()const
