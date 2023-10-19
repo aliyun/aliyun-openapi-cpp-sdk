@@ -45,6 +45,7 @@ public:
 			std::string packageName;
 			std::string autofillText;
 			bool isOptOut;
+			std::string couponCode;
 		};
 		ButtonsItem buttonsItem;
 		std::vector<ButtonsItem> buttons;
@@ -53,6 +54,28 @@ public:
 		std::string fileType;
 		int codeExpirationMinutes;
 		bool addSecretRecommendation;
+		bool hasExpiration;
+		struct CardsItem {
+			struct CardComponentsItem {
+				std::string type;
+				std::string format;
+				std::string text;
+				std::string url;
+				struct ButtonsItem {
+					std::string text;
+					std::string type;
+					std::string url;
+					std::string urlType;
+					std::string phoneNumber;
+				};
+				ButtonsItem buttonsItem;
+				std::vector<ButtonsItem> buttons;
+			};
+			CardComponentsItem cardComponentsItem;
+			std::vector<CardComponentsItem> cardComponents;
+		};
+		CardsItem cardsItem;
+		std::vector<CardsItem> cards;
 	};
 	ModifyChatappTemplateRequest();
 	~ModifyChatappTemplateRequest();

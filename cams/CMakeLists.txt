@@ -61,6 +61,8 @@ set(cams_public_header_model
 	include/alibabacloud/cams/model/GetChatappUploadAuthorizationResult.h
 	include/alibabacloud/cams/model/GetChatappVerifyCodeRequest.h
 	include/alibabacloud/cams/model/GetChatappVerifyCodeResult.h
+	include/alibabacloud/cams/model/GetCommerceSettingRequest.h
+	include/alibabacloud/cams/model/GetCommerceSettingResult.h
 	include/alibabacloud/cams/model/GetMigrationVerifyCodeRequest.h
 	include/alibabacloud/cams/model/GetMigrationVerifyCodeResult.h
 	include/alibabacloud/cams/model/GetPhoneNumberVerificationStatusRequest.h
@@ -97,6 +99,8 @@ set(cams_public_header_model
 	include/alibabacloud/cams/model/SubmitIsvCustomerTermsResult.h
 	include/alibabacloud/cams/model/UpdateAccountWebhookRequest.h
 	include/alibabacloud/cams/model/UpdateAccountWebhookResult.h
+	include/alibabacloud/cams/model/UpdateCommerceSettingRequest.h
+	include/alibabacloud/cams/model/UpdateCommerceSettingResult.h
 	include/alibabacloud/cams/model/UpdatePhoneWebhookRequest.h
 	include/alibabacloud/cams/model/UpdatePhoneWebhookResult.h )
 
@@ -142,6 +146,8 @@ set(cams_src
 	src/model/GetChatappUploadAuthorizationResult.cc
 	src/model/GetChatappVerifyCodeRequest.cc
 	src/model/GetChatappVerifyCodeResult.cc
+	src/model/GetCommerceSettingRequest.cc
+	src/model/GetCommerceSettingResult.cc
 	src/model/GetMigrationVerifyCodeRequest.cc
 	src/model/GetMigrationVerifyCodeResult.cc
 	src/model/GetPhoneNumberVerificationStatusRequest.cc
@@ -178,6 +184,8 @@ set(cams_src
 	src/model/SubmitIsvCustomerTermsResult.cc
 	src/model/UpdateAccountWebhookRequest.cc
 	src/model/UpdateAccountWebhookResult.cc
+	src/model/UpdateCommerceSettingRequest.cc
+	src/model/UpdateCommerceSettingResult.cc
 	src/model/UpdatePhoneWebhookRequest.cc
 	src/model/UpdatePhoneWebhookResult.cc )
 

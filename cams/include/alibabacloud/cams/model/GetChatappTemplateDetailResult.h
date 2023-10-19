@@ -48,6 +48,7 @@ namespace AlibabaCloud
 							};
 							std::string autofillText;
 							std::string type;
+							std::string couponCode;
 							bool isOptOut;
 							std::string signatureHash;
 							std::string packageName;
@@ -57,12 +58,34 @@ namespace AlibabaCloud
 							ExtendAttrs extendAttrs;
 							std::string url;
 						};
+						struct 轮播卡片列表
+						{
+							struct 卡片控件列表
+							{
+								struct 卡片按钮列表
+								{
+									std::string type;
+									std::string phoneNumber;
+									std::string text;
+									std::string urlType;
+									std::string url;
+								};
+								std::string type;
+								std::string format;
+								std::string text;
+								std::string url;
+								std::vector<卡片控件列表::卡片按钮列表> buttons1;
+							};
+							std::vector<轮播卡片列表::卡片控件列表> cardComponents;
+						};
+						bool hasExpiration;
 						std::string thumbUrl;
 						std::string fileName;
 						std::string text;
 						int duration;
 						std::string latitude;
 						std::string longitude;
+						std::string offerExpirationTimeMs;
 						std::string url;
 						std::string caption;
 						bool addSecretRecommendation;
@@ -73,6 +96,7 @@ namespace AlibabaCloud
 						std::string fileType;
 						std::string locationAddress;
 						std::vector<Component::Button> buttons;
+						std::vector<Component::轮播卡片列表> cards;
 					};
 					std::vector<Component> components;
 					std::string templateCode;

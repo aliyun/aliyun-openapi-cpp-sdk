@@ -94,6 +94,10 @@ void GetChatappTemplateDetailResult::parse(const std::string &payload)
 			componentObject.addSecretRecommendation = dataNodeComponentscomponent["AddSecretRecommendation"].asString() == "true";
 		if(!dataNodeComponentscomponent["CodeExpirationMinutes"].isNull())
 			componentObject.codeExpirationMinutes = std::stoi(dataNodeComponentscomponent["CodeExpirationMinutes"].asString());
+		if(!dataNodeComponentscomponent["hasExpiration"].isNull())
+			componentObject.hasExpiration = dataNodeComponentscomponent["hasExpiration"].asString() == "true";
+		if(!dataNodeComponentscomponent["OfferExpirationTimeMs"].isNull())
+			componentObject.offerExpirationTimeMs = dataNodeComponentscomponent["OfferExpirationTimeMs"].asString();
 		auto allButtonsNode = dataNodeComponentscomponent["Buttons"]["button"];
 		for (auto dataNodeComponentscomponentButtonsbutton : allButtonsNode)
 		{
@@ -116,6 +120,8 @@ void GetChatappTemplateDetailResult::parse(const std::string &payload)
 				buttonsObject.autofillText = dataNodeComponentscomponentButtonsbutton["AutofillText"].asString();
 			if(!dataNodeComponentscomponentButtonsbutton["IsOptOut"].isNull())
 				buttonsObject.isOptOut = dataNodeComponentscomponentButtonsbutton["IsOptOut"].asString() == "true";
+			if(!dataNodeComponentscomponentButtonsbutton["CouponCode"].isNull())
+				buttonsObject.couponCode = dataNodeComponentscomponentButtonsbutton["CouponCode"].asString();
 			auto extendAttrsNode = value["ExtendAttrs"];
 			if(!extendAttrsNode["NextTemplateCode"].isNull())
 				buttonsObject.extendAttrs.nextTemplateCode = extendAttrsNode["NextTemplateCode"].asString();
@@ -128,6 +134,42 @@ void GetChatappTemplateDetailResult::parse(const std::string &payload)
 			if(!extendAttrsNode["IntentCode"].isNull())
 				buttonsObject.extendAttrs.intentCode = extendAttrsNode["IntentCode"].asString();
 			componentObject.buttons.push_back(buttonsObject);
+		}
+		auto allCardsNode = dataNodeComponentscomponent["Cards"]["轮播卡片列表"];
+		for (auto dataNodeComponentscomponentCards轮播卡片列表 : allCardsNode)
+		{
+			Data::Component::轮播卡片列表 cardsObject;
+			auto allCardComponentsNode = dataNodeComponentscomponentCards轮播卡片列表["CardComponents"]["卡片控件列表"];
+			for (auto dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表 : allCardComponentsNode)
+			{
+				Data::Component::轮播卡片列表::卡片控件列表 cardComponentsObject;
+				if(!dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表["Type"].isNull())
+					cardComponentsObject.type = dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表["Type"].asString();
+				if(!dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表["Text"].isNull())
+					cardComponentsObject.text = dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表["Text"].asString();
+				if(!dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表["Url"].isNull())
+					cardComponentsObject.url = dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表["Url"].asString();
+				if(!dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表["Format"].isNull())
+					cardComponentsObject.format = dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表["Format"].asString();
+				auto allButtons1Node = dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表["Buttons"]["卡片按钮列表"];
+				for (auto dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表Buttons卡片按钮列表 : allButtons1Node)
+				{
+					Data::Component::轮播卡片列表::卡片控件列表::卡片按钮列表 buttons1Object;
+					if(!dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表Buttons卡片按钮列表["Type"].isNull())
+						buttons1Object.type = dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表Buttons卡片按钮列表["Type"].asString();
+					if(!dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表Buttons卡片按钮列表["Text"].isNull())
+						buttons1Object.text = dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表Buttons卡片按钮列表["Text"].asString();
+					if(!dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表Buttons卡片按钮列表["Url"].isNull())
+						buttons1Object.url = dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表Buttons卡片按钮列表["Url"].asString();
+					if(!dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表Buttons卡片按钮列表["UrlType"].isNull())
+						buttons1Object.urlType = dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表Buttons卡片按钮列表["UrlType"].asString();
+					if(!dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表Buttons卡片按钮列表["PhoneNumber"].isNull())
+						buttons1Object.phoneNumber = dataNodeComponentscomponentCards轮播卡片列表CardComponents卡片控件列表Buttons卡片按钮列表["PhoneNumber"].asString();
+					cardComponentsObject.buttons1.push_back(buttons1Object);
+				}
+				cardsObject.cardComponents.push_back(cardComponentsObject);
+			}
+			componentObject.cards.push_back(cardsObject);
 		}
 		data_.components.push_back(componentObject);
 	}

@@ -31,21 +31,21 @@ CamsClient::CamsClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cams");
 }
 
 CamsClient::CamsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cams");
 }
 
 CamsClient::CamsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cams");
 }
 
 CamsClient::~CamsClient()
@@ -771,6 +771,42 @@ CamsClient::GetChatappVerifyCodeOutcomeCallable CamsClient::getChatappVerifyCode
 	return task->get_future();
 }
 
+CamsClient::GetCommerceSettingOutcome CamsClient::getCommerceSetting(const GetCommerceSettingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCommerceSettingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCommerceSettingOutcome(GetCommerceSettingResult(outcome.result()));
+	else
+		return GetCommerceSettingOutcome(outcome.error());
+}
+
+void CamsClient::getCommerceSettingAsync(const GetCommerceSettingRequest& request, const GetCommerceSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCommerceSetting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::GetCommerceSettingOutcomeCallable CamsClient::getCommerceSettingCallable(const GetCommerceSettingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCommerceSettingOutcome()>>(
+			[this, request]()
+			{
+			return this->getCommerceSetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CamsClient::GetMigrationVerifyCodeOutcome CamsClient::getMigrationVerifyCode(const GetMigrationVerifyCodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1413,6 +1449,42 @@ CamsClient::UpdateAccountWebhookOutcomeCallable CamsClient::updateAccountWebhook
 			[this, request]()
 			{
 			return this->updateAccountWebhook(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::UpdateCommerceSettingOutcome CamsClient::updateCommerceSetting(const UpdateCommerceSettingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateCommerceSettingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateCommerceSettingOutcome(UpdateCommerceSettingResult(outcome.result()));
+	else
+		return UpdateCommerceSettingOutcome(outcome.error());
+}
+
+void CamsClient::updateCommerceSettingAsync(const UpdateCommerceSettingRequest& request, const UpdateCommerceSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateCommerceSetting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::UpdateCommerceSettingOutcomeCallable CamsClient::updateCommerceSettingCallable(const UpdateCommerceSettingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateCommerceSettingOutcome()>>(
+			[this, request]()
+			{
+			return this->updateCommerceSetting(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -48,12 +48,29 @@ void CreateChatappTemplateRequest::setComponents(const std::vector<CreateChatapp
       setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".PackageName", components[dep1].buttons[dep2].packageName);
       setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".AutofillText", components[dep1].buttons[dep2].autofillText);
       setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".IsOptOut", components[dep1].buttons[dep2].isOptOut ? "true" : "false");
+      setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".CouponCode", components[dep1].buttons[dep2].couponCode);
     }
     setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".ThumbUrl", components[dep1].thumbUrl);
     setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Duration", std::to_string(components[dep1].duration));
     setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".FileType", components[dep1].fileType);
     setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".CodeExpirationMinutes", std::to_string(components[dep1].codeExpirationMinutes));
     setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".AddSecretRecommendation", components[dep1].addSecretRecommendation ? "true" : "false");
+    setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".HasExpiration", components[dep1].hasExpiration ? "true" : "false");
+    for(int dep2 = 0; dep2 != components[dep1].cards.size(); dep2++) {
+      for(int dep3 = 0; dep3 != components[dep1].cards[dep2].cardComponents.size(); dep3++) {
+        setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Cards." + std::to_string(dep2 + 1) + ".CardComponents." + std::to_string(dep3 + 1) + ".Type", components[dep1].cards[dep2].cardComponents[dep3].type);
+        setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Cards." + std::to_string(dep2 + 1) + ".CardComponents." + std::to_string(dep3 + 1) + ".Format", components[dep1].cards[dep2].cardComponents[dep3].format);
+        setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Cards." + std::to_string(dep2 + 1) + ".CardComponents." + std::to_string(dep3 + 1) + ".Text", components[dep1].cards[dep2].cardComponents[dep3].text);
+        setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Cards." + std::to_string(dep2 + 1) + ".CardComponents." + std::to_string(dep3 + 1) + ".Url", components[dep1].cards[dep2].cardComponents[dep3].url);
+        for(int dep4 = 0; dep4 != components[dep1].cards[dep2].cardComponents[dep3].buttons.size(); dep4++) {
+          setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Cards." + std::to_string(dep2 + 1) + ".CardComponents." + std::to_string(dep3 + 1) + ".Buttons." + std::to_string(dep4 + 1) + ".Text", components[dep1].cards[dep2].cardComponents[dep3].buttons[dep4].text);
+          setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Cards." + std::to_string(dep2 + 1) + ".CardComponents." + std::to_string(dep3 + 1) + ".Buttons." + std::to_string(dep4 + 1) + ".Type", components[dep1].cards[dep2].cardComponents[dep3].buttons[dep4].type);
+          setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Cards." + std::to_string(dep2 + 1) + ".CardComponents." + std::to_string(dep3 + 1) + ".Buttons." + std::to_string(dep4 + 1) + ".Url", components[dep1].cards[dep2].cardComponents[dep3].buttons[dep4].url);
+          setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Cards." + std::to_string(dep2 + 1) + ".CardComponents." + std::to_string(dep3 + 1) + ".Buttons." + std::to_string(dep4 + 1) + ".UrlType", components[dep1].cards[dep2].cardComponents[dep3].buttons[dep4].urlType);
+          setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Cards." + std::to_string(dep2 + 1) + ".CardComponents." + std::to_string(dep3 + 1) + ".Buttons." + std::to_string(dep4 + 1) + ".PhoneNumber", components[dep1].cards[dep2].cardComponents[dep3].buttons[dep4].phoneNumber);
+        }
+      }
+    }
   }
 }
 

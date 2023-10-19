@@ -62,6 +62,8 @@
 #include "model/GetChatappUploadAuthorizationResult.h"
 #include "model/GetChatappVerifyCodeRequest.h"
 #include "model/GetChatappVerifyCodeResult.h"
+#include "model/GetCommerceSettingRequest.h"
+#include "model/GetCommerceSettingResult.h"
 #include "model/GetMigrationVerifyCodeRequest.h"
 #include "model/GetMigrationVerifyCodeResult.h"
 #include "model/GetPhoneNumberVerificationStatusRequest.h"
@@ -98,6 +100,8 @@
 #include "model/SubmitIsvCustomerTermsResult.h"
 #include "model/UpdateAccountWebhookRequest.h"
 #include "model/UpdateAccountWebhookResult.h"
+#include "model/UpdateCommerceSettingRequest.h"
+#include "model/UpdateCommerceSettingResult.h"
 #include "model/UpdatePhoneWebhookRequest.h"
 #include "model/UpdatePhoneWebhookResult.h"
 
@@ -169,6 +173,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetChatappVerifyCodeResult> GetChatappVerifyCodeOutcome;
 			typedef std::future<GetChatappVerifyCodeOutcome> GetChatappVerifyCodeOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::GetChatappVerifyCodeRequest&, const GetChatappVerifyCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetChatappVerifyCodeAsyncHandler;
+			typedef Outcome<Error, Model::GetCommerceSettingResult> GetCommerceSettingOutcome;
+			typedef std::future<GetCommerceSettingOutcome> GetCommerceSettingOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::GetCommerceSettingRequest&, const GetCommerceSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCommerceSettingAsyncHandler;
 			typedef Outcome<Error, Model::GetMigrationVerifyCodeResult> GetMigrationVerifyCodeOutcome;
 			typedef std::future<GetMigrationVerifyCodeOutcome> GetMigrationVerifyCodeOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::GetMigrationVerifyCodeRequest&, const GetMigrationVerifyCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMigrationVerifyCodeAsyncHandler;
@@ -223,6 +230,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateAccountWebhookResult> UpdateAccountWebhookOutcome;
 			typedef std::future<UpdateAccountWebhookOutcome> UpdateAccountWebhookOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::UpdateAccountWebhookRequest&, const UpdateAccountWebhookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAccountWebhookAsyncHandler;
+			typedef Outcome<Error, Model::UpdateCommerceSettingResult> UpdateCommerceSettingOutcome;
+			typedef std::future<UpdateCommerceSettingOutcome> UpdateCommerceSettingOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::UpdateCommerceSettingRequest&, const UpdateCommerceSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCommerceSettingAsyncHandler;
 			typedef Outcome<Error, Model::UpdatePhoneWebhookResult> UpdatePhoneWebhookOutcome;
 			typedef std::future<UpdatePhoneWebhookOutcome> UpdatePhoneWebhookOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::UpdatePhoneWebhookRequest&, const UpdatePhoneWebhookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePhoneWebhookAsyncHandler;
@@ -291,6 +301,9 @@ namespace AlibabaCloud
 			GetChatappVerifyCodeOutcome getChatappVerifyCode(const Model::GetChatappVerifyCodeRequest &request)const;
 			void getChatappVerifyCodeAsync(const Model::GetChatappVerifyCodeRequest& request, const GetChatappVerifyCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetChatappVerifyCodeOutcomeCallable getChatappVerifyCodeCallable(const Model::GetChatappVerifyCodeRequest& request) const;
+			GetCommerceSettingOutcome getCommerceSetting(const Model::GetCommerceSettingRequest &request)const;
+			void getCommerceSettingAsync(const Model::GetCommerceSettingRequest& request, const GetCommerceSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetCommerceSettingOutcomeCallable getCommerceSettingCallable(const Model::GetCommerceSettingRequest& request) const;
 			GetMigrationVerifyCodeOutcome getMigrationVerifyCode(const Model::GetMigrationVerifyCodeRequest &request)const;
 			void getMigrationVerifyCodeAsync(const Model::GetMigrationVerifyCodeRequest& request, const GetMigrationVerifyCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMigrationVerifyCodeOutcomeCallable getMigrationVerifyCodeCallable(const Model::GetMigrationVerifyCodeRequest& request) const;
@@ -345,6 +358,9 @@ namespace AlibabaCloud
 			UpdateAccountWebhookOutcome updateAccountWebhook(const Model::UpdateAccountWebhookRequest &request)const;
 			void updateAccountWebhookAsync(const Model::UpdateAccountWebhookRequest& request, const UpdateAccountWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAccountWebhookOutcomeCallable updateAccountWebhookCallable(const Model::UpdateAccountWebhookRequest& request) const;
+			UpdateCommerceSettingOutcome updateCommerceSetting(const Model::UpdateCommerceSettingRequest &request)const;
+			void updateCommerceSettingAsync(const Model::UpdateCommerceSettingRequest& request, const UpdateCommerceSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateCommerceSettingOutcomeCallable updateCommerceSettingCallable(const Model::UpdateCommerceSettingRequest& request) const;
 			UpdatePhoneWebhookOutcome updatePhoneWebhook(const Model::UpdatePhoneWebhookRequest &request)const;
 			void updatePhoneWebhookAsync(const Model::UpdatePhoneWebhookRequest& request, const UpdatePhoneWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdatePhoneWebhookOutcomeCallable updatePhoneWebhookCallable(const Model::UpdatePhoneWebhookRequest& request) const;
