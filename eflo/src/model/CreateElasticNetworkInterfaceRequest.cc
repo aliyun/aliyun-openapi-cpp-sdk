@@ -25,6 +25,24 @@ CreateElasticNetworkInterfaceRequest::CreateElasticNetworkInterfaceRequest()
 
 CreateElasticNetworkInterfaceRequest::~CreateElasticNetworkInterfaceRequest() {}
 
+std::string CreateElasticNetworkInterfaceRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void CreateElasticNetworkInterfaceRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setBodyParameter(std::string("ClientToken"), clientToken);
+}
+
+std::string CreateElasticNetworkInterfaceRequest::getSecurityGroupId() const {
+  return securityGroupId_;
+}
+
+void CreateElasticNetworkInterfaceRequest::setSecurityGroupId(const std::string &securityGroupId) {
+  securityGroupId_ = securityGroupId;
+  setBodyParameter(std::string("SecurityGroupId"), securityGroupId);
+}
+
 std::string CreateElasticNetworkInterfaceRequest::getDescription() const {
   return description_;
 }
@@ -34,15 +52,6 @@ void CreateElasticNetworkInterfaceRequest::setDescription(const std::string &des
   setBodyParameter(std::string("Description"), description);
 }
 
-std::string CreateElasticNetworkInterfaceRequest::getVSwitchId() const {
-  return vSwitchId_;
-}
-
-void CreateElasticNetworkInterfaceRequest::setVSwitchId(const std::string &vSwitchId) {
-  vSwitchId_ = vSwitchId;
-  setBodyParameter(std::string("VSwitchId"), vSwitchId);
-}
-
 std::string CreateElasticNetworkInterfaceRequest::getRegionId() const {
   return regionId_;
 }
@@ -50,6 +59,24 @@ std::string CreateElasticNetworkInterfaceRequest::getRegionId() const {
 void CreateElasticNetworkInterfaceRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+std::string CreateElasticNetworkInterfaceRequest::getNodeId() const {
+  return nodeId_;
+}
+
+void CreateElasticNetworkInterfaceRequest::setNodeId(const std::string &nodeId) {
+  nodeId_ = nodeId;
+  setBodyParameter(std::string("NodeId"), nodeId);
+}
+
+std::string CreateElasticNetworkInterfaceRequest::getVSwitchId() const {
+  return vSwitchId_;
+}
+
+void CreateElasticNetworkInterfaceRequest::setVSwitchId(const std::string &vSwitchId) {
+  vSwitchId_ = vSwitchId;
+  setBodyParameter(std::string("VSwitchId"), vSwitchId);
 }
 
 std::string CreateElasticNetworkInterfaceRequest::getVpcId() const {
@@ -68,14 +95,5 @@ std::string CreateElasticNetworkInterfaceRequest::getZoneId() const {
 void CreateElasticNetworkInterfaceRequest::setZoneId(const std::string &zoneId) {
   zoneId_ = zoneId;
   setBodyParameter(std::string("ZoneId"), zoneId);
-}
-
-std::string CreateElasticNetworkInterfaceRequest::getNodeId() const {
-  return nodeId_;
-}
-
-void CreateElasticNetworkInterfaceRequest::setNodeId(const std::string &nodeId) {
-  nodeId_ = nodeId;
-  setBodyParameter(std::string("NodeId"), nodeId);
 }
 

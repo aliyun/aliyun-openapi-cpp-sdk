@@ -25,6 +25,15 @@ UpdateElasticNetworkInterfaceRequest::UpdateElasticNetworkInterfaceRequest()
 
 UpdateElasticNetworkInterfaceRequest::~UpdateElasticNetworkInterfaceRequest() {}
 
+std::string UpdateElasticNetworkInterfaceRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void UpdateElasticNetworkInterfaceRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setBodyParameter(std::string("ClientToken"), clientToken);
+}
+
 std::string UpdateElasticNetworkInterfaceRequest::getDescription() const {
   return description_;
 }

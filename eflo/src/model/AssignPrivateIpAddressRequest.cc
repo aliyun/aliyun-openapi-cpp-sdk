@@ -25,6 +25,15 @@ AssignPrivateIpAddressRequest::AssignPrivateIpAddressRequest()
 
 AssignPrivateIpAddressRequest::~AssignPrivateIpAddressRequest() {}
 
+std::string AssignPrivateIpAddressRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void AssignPrivateIpAddressRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setBodyParameter(std::string("ClientToken"), clientToken);
+}
+
 std::string AssignPrivateIpAddressRequest::getDescription() const {
   return description_;
 }

@@ -34,12 +34,15 @@ public:
 	void setClusterId(const std::string &clusterId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getZoneId() const;
+	void setZoneId(const std::string &zoneId);
 	std::string getNodeId() const;
 	void setNodeId(const std::string &nodeId);
 
 private:
 	std::string clusterId_;
 	std::string regionId_;
+	std::string zoneId_;
 	std::string nodeId_;
 };
 } // namespace Model

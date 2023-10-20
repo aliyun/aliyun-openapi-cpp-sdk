@@ -30,26 +30,32 @@ class ALIBABACLOUD_EFLO_EXPORT CreateElasticNetworkInterfaceRequest : public Rpc
 public:
 	CreateElasticNetworkInterfaceRequest();
 	~CreateElasticNetworkInterfaceRequest();
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getSecurityGroupId() const;
+	void setSecurityGroupId(const std::string &securityGroupId);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
-	std::string getVSwitchId() const;
-	void setVSwitchId(const std::string &vSwitchId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getNodeId() const;
+	void setNodeId(const std::string &nodeId);
+	std::string getVSwitchId() const;
+	void setVSwitchId(const std::string &vSwitchId);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
-	std::string getNodeId() const;
-	void setNodeId(const std::string &nodeId);
 
 private:
+	std::string clientToken_;
+	std::string securityGroupId_;
 	std::string description_;
-	std::string vSwitchId_;
 	std::string regionId_;
+	std::string nodeId_;
+	std::string vSwitchId_;
 	std::string vpcId_;
 	std::string zoneId_;
-	std::string nodeId_;
 };
 } // namespace Model
 } // namespace Eflo

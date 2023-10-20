@@ -32,6 +32,8 @@ public:
 	~UnAssignPrivateIpAddressRequest();
 	std::string getSubnetId() const;
 	void setSubnetId(const std::string &subnetId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getPrivateIpAddress() const;
 	void setPrivateIpAddress(const std::string &privateIpAddress);
 	std::string getRegionId() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	std::string subnetId_;
+	std::string clientToken_;
 	std::string privateIpAddress_;
 	std::string regionId_;
 	std::string ipName_;

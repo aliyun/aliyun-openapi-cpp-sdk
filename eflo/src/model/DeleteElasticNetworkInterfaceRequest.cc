@@ -25,6 +25,15 @@ DeleteElasticNetworkInterfaceRequest::DeleteElasticNetworkInterfaceRequest()
 
 DeleteElasticNetworkInterfaceRequest::~DeleteElasticNetworkInterfaceRequest() {}
 
+std::string DeleteElasticNetworkInterfaceRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void DeleteElasticNetworkInterfaceRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setBodyParameter(std::string("ClientToken"), clientToken);
+}
+
 std::string DeleteElasticNetworkInterfaceRequest::getRegionId() const {
   return regionId_;
 }

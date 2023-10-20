@@ -43,6 +43,15 @@ void ListNodeInfosForPodRequest::setRegionId(const std::string &regionId) {
   setBodyParameter(std::string("RegionId"), regionId);
 }
 
+std::string ListNodeInfosForPodRequest::getZoneId() const {
+  return zoneId_;
+}
+
+void ListNodeInfosForPodRequest::setZoneId(const std::string &zoneId) {
+  zoneId_ = zoneId;
+  setBodyParameter(std::string("ZoneId"), zoneId);
+}
+
 std::string ListNodeInfosForPodRequest::getNodeId() const {
   return nodeId_;
 }

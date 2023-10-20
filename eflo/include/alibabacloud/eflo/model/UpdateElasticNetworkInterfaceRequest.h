@@ -30,6 +30,8 @@ class ALIBABACLOUD_EFLO_EXPORT UpdateElasticNetworkInterfaceRequest : public Rpc
 public:
 	UpdateElasticNetworkInterfaceRequest();
 	~UpdateElasticNetworkInterfaceRequest();
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	std::string getRegionId() const;
@@ -38,6 +40,7 @@ public:
 	void setElasticNetworkInterfaceId(const std::string &elasticNetworkInterfaceId);
 
 private:
+	std::string clientToken_;
 	std::string description_;
 	std::string regionId_;
 	std::string elasticNetworkInterfaceId_;

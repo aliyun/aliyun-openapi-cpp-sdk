@@ -30,6 +30,8 @@ class ALIBABACLOUD_EFLO_EXPORT AssignPrivateIpAddressRequest : public RpcService
 public:
 	AssignPrivateIpAddressRequest();
 	~AssignPrivateIpAddressRequest();
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	bool getAssignMac() const;
@@ -46,6 +48,7 @@ public:
 	void setNetworkInterfaceId(const std::string &networkInterfaceId);
 
 private:
+	std::string clientToken_;
 	std::string description_;
 	bool assignMac_;
 	std::string regionId_;

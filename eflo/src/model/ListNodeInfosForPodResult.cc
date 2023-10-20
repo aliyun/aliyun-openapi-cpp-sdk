@@ -45,6 +45,8 @@ void ListNodeInfosForPodResult::parse(const std::string &payload)
 		ContentItem contentObject;
 		if(!valueContentContentItem["RegionId"].isNull())
 			contentObject.regionId = valueContentContentItem["RegionId"].asString();
+		if(!valueContentContentItem["ZoneId"].isNull())
+			contentObject.zoneId = valueContentContentItem["ZoneId"].asString();
 		if(!valueContentContentItem["ClusterId"].isNull())
 			contentObject.clusterId = valueContentContentItem["ClusterId"].asString();
 		if(!valueContentContentItem["VpcId"].isNull())

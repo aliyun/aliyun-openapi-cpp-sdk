@@ -34,6 +34,15 @@ void UnAssignPrivateIpAddressRequest::setSubnetId(const std::string &subnetId) {
   setBodyParameter(std::string("SubnetId"), subnetId);
 }
 
+std::string UnAssignPrivateIpAddressRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void UnAssignPrivateIpAddressRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setBodyParameter(std::string("ClientToken"), clientToken);
+}
+
 std::string UnAssignPrivateIpAddressRequest::getPrivateIpAddress() const {
   return privateIpAddress_;
 }
