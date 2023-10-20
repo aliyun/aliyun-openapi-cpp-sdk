@@ -72,6 +72,10 @@
 #include "model/DescribeBackupPolicyResult.h"
 #include "model/DescribeBackupsRequest.h"
 #include "model/DescribeBackupsResult.h"
+#include "model/DescribeClusterBackupsRequest.h"
+#include "model/DescribeClusterBackupsResult.h"
+#include "model/DescribeClusterRecoverTimeRequest.h"
+#include "model/DescribeClusterRecoverTimeResult.h"
 #include "model/DescribeDBInstanceAttributeRequest.h"
 #include "model/DescribeDBInstanceAttributeResult.h"
 #include "model/DescribeDBInstanceEncryptionKeyRequest.h"
@@ -204,6 +208,8 @@
 #include "model/SwitchDBInstanceHAResult.h"
 #include "model/TagResourcesRequest.h"
 #include "model/TagResourcesResult.h"
+#include "model/TransferClusterBackupRequest.h"
+#include "model/TransferClusterBackupResult.h"
 #include "model/TransformInstanceChargeTypeRequest.h"
 #include "model/TransformInstanceChargeTypeResult.h"
 #include "model/TransformToPrePaidRequest.h"
@@ -298,6 +304,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeBackupsResult> DescribeBackupsOutcome;
 			typedef std::future<DescribeBackupsOutcome> DescribeBackupsOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeBackupsRequest&, const DescribeBackupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterBackupsResult> DescribeClusterBackupsOutcome;
+			typedef std::future<DescribeClusterBackupsOutcome> DescribeClusterBackupsOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::DescribeClusterBackupsRequest&, const DescribeClusterBackupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterBackupsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterRecoverTimeResult> DescribeClusterRecoverTimeOutcome;
+			typedef std::future<DescribeClusterRecoverTimeOutcome> DescribeClusterRecoverTimeOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::DescribeClusterRecoverTimeRequest&, const DescribeClusterRecoverTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterRecoverTimeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBInstanceAttributeResult> DescribeDBInstanceAttributeOutcome;
 			typedef std::future<DescribeDBInstanceAttributeOutcome> DescribeDBInstanceAttributeOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeDBInstanceAttributeRequest&, const DescribeDBInstanceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceAttributeAsyncHandler;
@@ -496,6 +508,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
 			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::TransferClusterBackupResult> TransferClusterBackupOutcome;
+			typedef std::future<TransferClusterBackupOutcome> TransferClusterBackupOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::TransferClusterBackupRequest&, const TransferClusterBackupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransferClusterBackupAsyncHandler;
 			typedef Outcome<Error, Model::TransformInstanceChargeTypeResult> TransformInstanceChargeTypeOutcome;
 			typedef std::future<TransformInstanceChargeTypeOutcome> TransformInstanceChargeTypeOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::TransformInstanceChargeTypeRequest&, const TransformInstanceChargeTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransformInstanceChargeTypeAsyncHandler;
@@ -591,6 +606,12 @@ namespace AlibabaCloud
 			DescribeBackupsOutcome describeBackups(const Model::DescribeBackupsRequest &request)const;
 			void describeBackupsAsync(const Model::DescribeBackupsRequest& request, const DescribeBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBackupsOutcomeCallable describeBackupsCallable(const Model::DescribeBackupsRequest& request) const;
+			DescribeClusterBackupsOutcome describeClusterBackups(const Model::DescribeClusterBackupsRequest &request)const;
+			void describeClusterBackupsAsync(const Model::DescribeClusterBackupsRequest& request, const DescribeClusterBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterBackupsOutcomeCallable describeClusterBackupsCallable(const Model::DescribeClusterBackupsRequest& request) const;
+			DescribeClusterRecoverTimeOutcome describeClusterRecoverTime(const Model::DescribeClusterRecoverTimeRequest &request)const;
+			void describeClusterRecoverTimeAsync(const Model::DescribeClusterRecoverTimeRequest& request, const DescribeClusterRecoverTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterRecoverTimeOutcomeCallable describeClusterRecoverTimeCallable(const Model::DescribeClusterRecoverTimeRequest& request) const;
 			DescribeDBInstanceAttributeOutcome describeDBInstanceAttribute(const Model::DescribeDBInstanceAttributeRequest &request)const;
 			void describeDBInstanceAttributeAsync(const Model::DescribeDBInstanceAttributeRequest& request, const DescribeDBInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBInstanceAttributeOutcomeCallable describeDBInstanceAttributeCallable(const Model::DescribeDBInstanceAttributeRequest& request) const;
@@ -789,6 +810,9 @@ namespace AlibabaCloud
 			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
 			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
+			TransferClusterBackupOutcome transferClusterBackup(const Model::TransferClusterBackupRequest &request)const;
+			void transferClusterBackupAsync(const Model::TransferClusterBackupRequest& request, const TransferClusterBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TransferClusterBackupOutcomeCallable transferClusterBackupCallable(const Model::TransferClusterBackupRequest& request) const;
 			TransformInstanceChargeTypeOutcome transformInstanceChargeType(const Model::TransformInstanceChargeTypeRequest &request)const;
 			void transformInstanceChargeTypeAsync(const Model::TransformInstanceChargeTypeRequest& request, const TransformInstanceChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TransformInstanceChargeTypeOutcomeCallable transformInstanceChargeTypeCallable(const Model::TransformInstanceChargeTypeRequest& request) const;

@@ -71,6 +71,10 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeBackupPolicyResult.h
 	include/alibabacloud/dds/model/DescribeBackupsRequest.h
 	include/alibabacloud/dds/model/DescribeBackupsResult.h
+	include/alibabacloud/dds/model/DescribeClusterBackupsRequest.h
+	include/alibabacloud/dds/model/DescribeClusterBackupsResult.h
+	include/alibabacloud/dds/model/DescribeClusterRecoverTimeRequest.h
+	include/alibabacloud/dds/model/DescribeClusterRecoverTimeResult.h
 	include/alibabacloud/dds/model/DescribeDBInstanceAttributeRequest.h
 	include/alibabacloud/dds/model/DescribeDBInstanceAttributeResult.h
 	include/alibabacloud/dds/model/DescribeDBInstanceEncryptionKeyRequest.h
@@ -203,6 +207,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/SwitchDBInstanceHAResult.h
 	include/alibabacloud/dds/model/TagResourcesRequest.h
 	include/alibabacloud/dds/model/TagResourcesResult.h
+	include/alibabacloud/dds/model/TransferClusterBackupRequest.h
+	include/alibabacloud/dds/model/TransferClusterBackupResult.h
 	include/alibabacloud/dds/model/TransformInstanceChargeTypeRequest.h
 	include/alibabacloud/dds/model/TransformInstanceChargeTypeResult.h
 	include/alibabacloud/dds/model/TransformToPrePaidRequest.h
@@ -266,6 +272,10 @@ set(dds_src
 	src/model/DescribeBackupPolicyResult.cc
 	src/model/DescribeBackupsRequest.cc
 	src/model/DescribeBackupsResult.cc
+	src/model/DescribeClusterBackupsRequest.cc
+	src/model/DescribeClusterBackupsResult.cc
+	src/model/DescribeClusterRecoverTimeRequest.cc
+	src/model/DescribeClusterRecoverTimeResult.cc
 	src/model/DescribeDBInstanceAttributeRequest.cc
 	src/model/DescribeDBInstanceAttributeResult.cc
 	src/model/DescribeDBInstanceEncryptionKeyRequest.cc
@@ -398,6 +408,8 @@ set(dds_src
 	src/model/SwitchDBInstanceHAResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
+	src/model/TransferClusterBackupRequest.cc
+	src/model/TransferClusterBackupResult.cc
 	src/model/TransformInstanceChargeTypeRequest.cc
 	src/model/TransformInstanceChargeTypeResult.cc
 	src/model/TransformToPrePaidRequest.cc

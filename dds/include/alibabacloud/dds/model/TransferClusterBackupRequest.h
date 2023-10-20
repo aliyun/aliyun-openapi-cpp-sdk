@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCENETEXPIRETIMEREQUEST_H_
-#define ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCENETEXPIRETIMEREQUEST_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_TRANSFERCLUSTERBACKUPREQUEST_H_
+#define ALIBABACLOUD_DDS_MODEL_TRANSFERCLUSTERBACKUPREQUEST_H_
 
 #include <alibabacloud/dds/DdsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,16 +26,12 @@
 namespace AlibabaCloud {
 namespace Dds {
 namespace Model {
-class ALIBABACLOUD_DDS_EXPORT ModifyDBInstanceNetExpireTimeRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DDS_EXPORT TransferClusterBackupRequest : public RpcServiceRequest {
 public:
-	ModifyDBInstanceNetExpireTimeRequest();
-	~ModifyDBInstanceNetExpireTimeRequest();
+	TransferClusterBackupRequest();
+	~TransferClusterBackupRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getConnectionString() const;
-	void setConnectionString(const std::string &connectionString);
-	int getClassicExpendExpiredDays() const;
-	void setClassicExpendExpiredDays(int classicExpendExpiredDays);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
@@ -48,22 +44,17 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getCategory() const;
-	void setCategory(const std::string &category);
 
 private:
 	long resourceOwnerId_;
-	std::string connectionString_;
-	int classicExpendExpiredDays_;
 	std::string accessKeyId_;
 	std::string securityToken_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string category_;
 };
 } // namespace Model
 } // namespace Dds
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCENETEXPIRETIMEREQUEST_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_TRANSFERCLUSTERBACKUPREQUEST_H_

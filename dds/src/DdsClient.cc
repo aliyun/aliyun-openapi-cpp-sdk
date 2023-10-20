@@ -951,6 +951,78 @@ DdsClient::DescribeBackupsOutcomeCallable DdsClient::describeBackupsCallable(con
 	return task->get_future();
 }
 
+DdsClient::DescribeClusterBackupsOutcome DdsClient::describeClusterBackups(const DescribeClusterBackupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClusterBackupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClusterBackupsOutcome(DescribeClusterBackupsResult(outcome.result()));
+	else
+		return DescribeClusterBackupsOutcome(outcome.error());
+}
+
+void DdsClient::describeClusterBackupsAsync(const DescribeClusterBackupsRequest& request, const DescribeClusterBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeClusterBackups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeClusterBackupsOutcomeCallable DdsClient::describeClusterBackupsCallable(const DescribeClusterBackupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClusterBackupsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeClusterBackups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::DescribeClusterRecoverTimeOutcome DdsClient::describeClusterRecoverTime(const DescribeClusterRecoverTimeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClusterRecoverTimeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClusterRecoverTimeOutcome(DescribeClusterRecoverTimeResult(outcome.result()));
+	else
+		return DescribeClusterRecoverTimeOutcome(outcome.error());
+}
+
+void DdsClient::describeClusterRecoverTimeAsync(const DescribeClusterRecoverTimeRequest& request, const DescribeClusterRecoverTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeClusterRecoverTime(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeClusterRecoverTimeOutcomeCallable DdsClient::describeClusterRecoverTimeCallable(const DescribeClusterRecoverTimeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClusterRecoverTimeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeClusterRecoverTime(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::DescribeDBInstanceAttributeOutcome DdsClient::describeDBInstanceAttribute(const DescribeDBInstanceAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3321,6 +3393,42 @@ DdsClient::TagResourcesOutcomeCallable DdsClient::tagResourcesCallable(const Tag
 			[this, request]()
 			{
 			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::TransferClusterBackupOutcome DdsClient::transferClusterBackup(const TransferClusterBackupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TransferClusterBackupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TransferClusterBackupOutcome(TransferClusterBackupResult(outcome.result()));
+	else
+		return TransferClusterBackupOutcome(outcome.error());
+}
+
+void DdsClient::transferClusterBackupAsync(const TransferClusterBackupRequest& request, const TransferClusterBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, transferClusterBackup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::TransferClusterBackupOutcomeCallable DdsClient::transferClusterBackupCallable(const TransferClusterBackupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TransferClusterBackupOutcome()>>(
+			[this, request]()
+			{
+			return this->transferClusterBackup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

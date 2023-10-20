@@ -149,6 +149,7 @@ namespace AlibabaCloud
 					std::vector<DBInstance::ShardAttribute> shardList;
 					int maxIOPS;
 					std::string secondaryZoneId;
+					bool useClusterBackup;
 					std::string vpcAuthMode;
 					std::string protocolType;
 					std::string chargeType;

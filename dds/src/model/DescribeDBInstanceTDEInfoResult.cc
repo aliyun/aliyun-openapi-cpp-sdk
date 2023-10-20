@@ -41,11 +41,32 @@ void DescribeDBInstanceTDEInfoResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["TDEStatus"].isNull())
 		tDEStatus_ = value["TDEStatus"].asString();
+	if(!value["RoleARN"].isNull())
+		roleARN_ = value["RoleARN"].asString();
+	if(!value["EncryptionKey"].isNull())
+		encryptionKey_ = value["EncryptionKey"].asString();
+	if(!value["EncryptorName"].isNull())
+		encryptorName_ = value["EncryptorName"].asString();
 
 }
 
 std::string DescribeDBInstanceTDEInfoResult::getTDEStatus()const
 {
 	return tDEStatus_;
+}
+
+std::string DescribeDBInstanceTDEInfoResult::getEncryptionKey()const
+{
+	return encryptionKey_;
+}
+
+std::string DescribeDBInstanceTDEInfoResult::getEncryptorName()const
+{
+	return encryptorName_;
+}
+
+std::string DescribeDBInstanceTDEInfoResult::getRoleARN()const
+{
+	return roleARN_;
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCENETEXPIRETIMEREQUEST_H_
-#define ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCENETEXPIRETIMEREQUEST_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBECLUSTERBACKUPSREQUEST_H_
+#define ALIBABACLOUD_DDS_MODEL_DESCRIBECLUSTERBACKUPSREQUEST_H_
 
 #include <alibabacloud/dds/DdsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,44 +26,53 @@
 namespace AlibabaCloud {
 namespace Dds {
 namespace Model {
-class ALIBABACLOUD_DDS_EXPORT ModifyDBInstanceNetExpireTimeRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DDS_EXPORT DescribeClusterBackupsRequest : public RpcServiceRequest {
 public:
-	ModifyDBInstanceNetExpireTimeRequest();
-	~ModifyDBInstanceNetExpireTimeRequest();
+	DescribeClusterBackupsRequest();
+	~DescribeClusterBackupsRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getConnectionString() const;
-	void setConnectionString(const std::string &connectionString);
-	int getClassicExpendExpiredDays() const;
-	void setClassicExpendExpiredDays(int classicExpendExpiredDays);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getBackupId() const;
+	void setBackupId(const std::string &backupId);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getCategory() const;
-	void setCategory(const std::string &category);
+	bool getIsOnlyGetClusterBackUp() const;
+	void setIsOnlyGetClusterBackUp(bool isOnlyGetClusterBackUp);
+	int getPageNo() const;
+	void setPageNo(int pageNo);
 
 private:
 	long resourceOwnerId_;
-	std::string connectionString_;
-	int classicExpendExpiredDays_;
+	std::string startTime_;
 	std::string accessKeyId_;
 	std::string securityToken_;
+	int pageSize_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
+	std::string backupId_;
+	std::string endTime_;
 	long ownerId_;
-	std::string category_;
+	bool isOnlyGetClusterBackUp_;
+	int pageNo_;
 };
 } // namespace Model
 } // namespace Dds
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCENETEXPIRETIMEREQUEST_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBECLUSTERBACKUPSREQUEST_H_

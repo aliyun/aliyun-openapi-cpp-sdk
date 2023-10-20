@@ -106,3 +106,12 @@ void ModifyDBInstanceNetExpireTimeRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string ModifyDBInstanceNetExpireTimeRequest::getCategory() const {
+  return category_;
+}
+
+void ModifyDBInstanceNetExpireTimeRequest::setCategory(const std::string &category) {
+  category_ = category;
+  setParameter(std::string("Category"), category);
+}
+

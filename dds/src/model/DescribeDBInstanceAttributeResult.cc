@@ -133,6 +133,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			dBInstancesObject.encryptionKey = valueDBInstancesDBInstance["EncryptionKey"].asString();
 		if(!valueDBInstancesDBInstance["SyncPercent"].isNull())
 			dBInstancesObject.syncPercent = valueDBInstancesDBInstance["SyncPercent"].asString();
+		if(!valueDBInstancesDBInstance["UseClusterBackup"].isNull())
+			dBInstancesObject.useClusterBackup = valueDBInstancesDBInstance["UseClusterBackup"].asString() == "true";
 		if(!valueDBInstancesDBInstance["BurstingEnabled"].isNull())
 			dBInstancesObject.burstingEnabled = valueDBInstancesDBInstance["BurstingEnabled"].asString() == "true";
 		if(!valueDBInstancesDBInstance["ProvisionedIops"].isNull())

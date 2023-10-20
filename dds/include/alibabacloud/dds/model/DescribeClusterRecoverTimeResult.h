@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBEDBINSTANCETDEINFORESULT_H_
-#define ALIBABACLOUD_DDS_MODEL_DESCRIBEDBINSTANCETDEINFORESULT_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBECLUSTERRECOVERTIMERESULT_H_
+#define ALIBABACLOUD_DDS_MODEL_DESCRIBECLUSTERRECOVERTIMERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT DescribeDBInstanceTDEInfoResult : public ServiceResult
+			class ALIBABACLOUD_DDS_EXPORT DescribeClusterRecoverTimeResult : public ServiceResult
 			{
 			public:
+				struct AvailableRestoreTime
+				{
+					std::string restoreEndTime;
+					std::string restoreBeginTime;
+					std::string restoreType;
+				};
 
 
-				DescribeDBInstanceTDEInfoResult();
-				explicit DescribeDBInstanceTDEInfoResult(const std::string &payload);
-				~DescribeDBInstanceTDEInfoResult();
-				std::string getTDEStatus()const;
-				std::string getEncryptionKey()const;
-				std::string getEncryptorName()const;
-				std::string getRoleARN()const;
+				DescribeClusterRecoverTimeResult();
+				explicit DescribeClusterRecoverTimeResult(const std::string &payload);
+				~DescribeClusterRecoverTimeResult();
+				std::vector<AvailableRestoreTime> getRestoreRanges()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string tDEStatus_;
-				std::string encryptionKey_;
-				std::string encryptorName_;
-				std::string roleARN_;
+				std::vector<AvailableRestoreTime> restoreRanges_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBEDBINSTANCETDEINFORESULT_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBECLUSTERRECOVERTIMERESULT_H_

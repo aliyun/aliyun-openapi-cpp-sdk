@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBEDBINSTANCETDEINFORESULT_H_
-#define ALIBABACLOUD_DDS_MODEL_DESCRIBEDBINSTANCETDEINFORESULT_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_TRANSFERCLUSTERBACKUPRESULT_H_
+#define ALIBABACLOUD_DDS_MODEL_TRANSFERCLUSTERBACKUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT DescribeDBInstanceTDEInfoResult : public ServiceResult
+			class ALIBABACLOUD_DDS_EXPORT TransferClusterBackupResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeDBInstanceTDEInfoResult();
-				explicit DescribeDBInstanceTDEInfoResult(const std::string &payload);
-				~DescribeDBInstanceTDEInfoResult();
-				std::string getTDEStatus()const;
-				std::string getEncryptionKey()const;
-				std::string getEncryptorName()const;
-				std::string getRoleARN()const;
+				TransferClusterBackupResult();
+				explicit TransferClusterBackupResult(const std::string &payload);
+				~TransferClusterBackupResult();
+				std::string getAlreadyDone()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string tDEStatus_;
-				std::string encryptionKey_;
-				std::string encryptorName_;
-				std::string roleARN_;
+				std::string alreadyDone_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBEDBINSTANCETDEINFORESULT_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_TRANSFERCLUSTERBACKUPRESULT_H_
