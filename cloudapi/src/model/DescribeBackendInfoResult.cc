@@ -71,8 +71,12 @@ void DescribeBackendInfoResult::parse(const std::string &payload)
 		auto backendConfigNode = value["BackendConfig"];
 		if(!backendConfigNode["ServiceAddress"].isNull())
 			backendModelObject.backendConfig.serviceAddress = backendConfigNode["ServiceAddress"].asString();
+		if(!backendConfigNode["HttpTargetHostName"].isNull())
+			backendModelObject.backendConfig.httpTargetHostName = backendConfigNode["HttpTargetHostName"].asString();
 		if(!backendConfigNode["Type"].isNull())
 			backendModelObject.backendConfig.type = backendConfigNode["Type"].asString();
+		if(!backendConfigNode["ServiceTimeout"].isNull())
+			backendModelObject.backendConfig.serviceTimeout = std::stoi(backendConfigNode["ServiceTimeout"].asString());
 		auto vpcConfigNode = backendConfigNode["VpcConfig"];
 		if(!vpcConfigNode["VpcId"].isNull())
 			backendModelObject.backendConfig.vpcConfig.vpcId = vpcConfigNode["VpcId"].asString();
@@ -134,6 +138,30 @@ void DescribeBackendInfoResult::parse(const std::string &payload)
 				mockHeaderObject.headerValue = mockConfigNodeMockHeadersMockHeader["HeaderValue"].asString();
 			backendModelObject.backendConfig.mockConfig.mockHeaders.push_back(mockHeaderObject);
 		}
+		auto discoveryConfigNode = backendConfigNode["DiscoveryConfig"];
+		if(!discoveryConfigNode["RcType"].isNull())
+			backendModelObject.backendConfig.discoveryConfig.rcType = discoveryConfigNode["RcType"].asString();
+		auto nacosConfigNode = discoveryConfigNode["NacosConfig"];
+		if(!nacosConfigNode["ServerAddress"].isNull())
+			backendModelObject.backendConfig.discoveryConfig.nacosConfig.serverAddress = nacosConfigNode["ServerAddress"].asString();
+		if(!nacosConfigNode["Namespace"].isNull())
+			backendModelObject.backendConfig.discoveryConfig.nacosConfig._namespace = nacosConfigNode["Namespace"].asString();
+		if(!nacosConfigNode["GroupName"].isNull())
+			backendModelObject.backendConfig.discoveryConfig.nacosConfig.groupName = nacosConfigNode["GroupName"].asString();
+		if(!nacosConfigNode["ServiceName"].isNull())
+			backendModelObject.backendConfig.discoveryConfig.nacosConfig.serviceName = nacosConfigNode["ServiceName"].asString();
+		if(!nacosConfigNode["Clusters"].isNull())
+			backendModelObject.backendConfig.discoveryConfig.nacosConfig.clusters = nacosConfigNode["Clusters"].asString();
+		if(!nacosConfigNode["AuthType"].isNull())
+			backendModelObject.backendConfig.discoveryConfig.nacosConfig.authType = nacosConfigNode["AuthType"].asString();
+		if(!nacosConfigNode["UserName"].isNull())
+			backendModelObject.backendConfig.discoveryConfig.nacosConfig.userName = nacosConfigNode["UserName"].asString();
+		if(!nacosConfigNode["Password"].isNull())
+			backendModelObject.backendConfig.discoveryConfig.nacosConfig.password = nacosConfigNode["Password"].asString();
+		if(!nacosConfigNode["AccessKey"].isNull())
+			backendModelObject.backendConfig.discoveryConfig.nacosConfig.accessKey = nacosConfigNode["AccessKey"].asString();
+		if(!nacosConfigNode["SecretKey"].isNull())
+			backendModelObject.backendConfig.discoveryConfig.nacosConfig.secretKey = nacosConfigNode["SecretKey"].asString();
 		backendInfo_.backendModels.push_back(backendModelObject);
 	}
 

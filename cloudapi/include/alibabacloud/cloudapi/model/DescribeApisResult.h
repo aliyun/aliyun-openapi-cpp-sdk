@@ -40,18 +40,24 @@ namespace AlibabaCloud
 						std::string effectiveVersion;
 						std::string deployedStatus;
 					};
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string groupName;
 					std::string description;
 					std::string createdTime;
-					std::string modifiedTime;
 					std::vector<ApiSummary::DeployedInfo> deployedInfos;
 					std::string apiName;
 					std::string apiMethod;
+					std::string groupId;
+					std::string modifiedTime;
+					std::vector<ApiSummary::Tag> tagList;
 					std::string visibility;
 					std::string regionId;
 					std::string apiId;
 					std::string apiPath;
-					std::string groupId;
 				};
 
 

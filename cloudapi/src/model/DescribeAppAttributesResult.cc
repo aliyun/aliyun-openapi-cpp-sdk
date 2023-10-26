@@ -53,6 +53,8 @@ void DescribeAppAttributesResult::parse(const std::string &payload)
 			appsObject.createdTime = valueAppsAppAttribute["CreatedTime"].asString();
 		if(!valueAppsAppAttribute["AppId"].isNull())
 			appsObject.appId = std::stol(valueAppsAppAttribute["AppId"].asString());
+		if(!valueAppsAppAttribute["Extend"].isNull())
+			appsObject.extend = valueAppsAppAttribute["Extend"].asString();
 		auto allTagsNode = valueAppsAppAttribute["Tags"]["TagInfo"];
 		for (auto valueAppsAppAttributeTagsTagInfo : allTagsNode)
 		{

@@ -156,3 +156,12 @@ void ModifyApiGroupRequest::setCustomTraceConfig(const std::string &customTraceC
   setParameter(std::string("CustomTraceConfig"), customTraceConfig);
 }
 
+std::string ModifyApiGroupRequest::getSupportSSE() const {
+  return supportSSE_;
+}
+
+void ModifyApiGroupRequest::setSupportSSE(const std::string &supportSSE) {
+  supportSSE_ = supportSSE;
+  setParameter(std::string("SupportSSE"), supportSSE);
+}
+

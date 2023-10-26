@@ -69,6 +69,10 @@ void DescribeApiGroupResult::parse(const std::string &payload)
 			customDomainsObject.isHttpRedirectToHttps = valueCustomDomainsDomainItem["IsHttpRedirectToHttps"].asString() == "true";
 		if(!valueCustomDomainsDomainItem["WssEnable"].isNull())
 			customDomainsObject.wssEnable = valueCustomDomainsDomainItem["WssEnable"].asString();
+		if(!valueCustomDomainsDomainItem["CertificateValidStart"].isNull())
+			customDomainsObject.certificateValidStart = std::stol(valueCustomDomainsDomainItem["CertificateValidStart"].asString());
+		if(!valueCustomDomainsDomainItem["CertificateValidEnd"].isNull())
+			customDomainsObject.certificateValidEnd = std::stol(valueCustomDomainsDomainItem["CertificateValidEnd"].asString());
 		customDomains_.push_back(customDomainsObject);
 	}
 	auto allStageItemsNode = value["StageItems"]["StageInfo"];
@@ -141,6 +145,14 @@ void DescribeApiGroupResult::parse(const std::string &payload)
 		vpcSlbIntranetDomain_ = value["VpcSlbIntranetDomain"].asString();
 	if(!value["CloudMarketCommodity"].isNull())
 		cloudMarketCommodity_ = value["CloudMarketCommodity"].asString() == "true";
+	if(!value["DedicatedInstanceType"].isNull())
+		dedicatedInstanceType_ = value["DedicatedInstanceType"].asString();
+	if(!value["MigrationStatus"].isNull())
+		migrationStatus_ = value["MigrationStatus"].asString();
+	if(!value["MigrationError"].isNull())
+		migrationError_ = value["MigrationError"].asString();
+	if(!value["DisableInnerDomain"].isNull())
+		disableInnerDomain_ = value["DisableInnerDomain"].asString() == "true";
 
 }
 
@@ -182,6 +194,11 @@ std::string DescribeApiGroupResult::getUserLogConfig()const
 std::string DescribeApiGroupResult::getDefaultDomain()const
 {
 	return defaultDomain_;
+}
+
+std::string DescribeApiGroupResult::getMigrationStatus()const
+{
+	return migrationStatus_;
 }
 
 std::string DescribeApiGroupResult::getPassthroughHeaders()const
@@ -234,6 +251,11 @@ std::string DescribeApiGroupResult::getInstanceType()const
 	return instanceType_;
 }
 
+std::string DescribeApiGroupResult::getDedicatedInstanceType()const
+{
+	return dedicatedInstanceType_;
+}
+
 std::string DescribeApiGroupResult::getStatus()const
 {
 	return status_;
@@ -279,9 +301,19 @@ std::string DescribeApiGroupResult::getGroupId()const
 	return groupId_;
 }
 
+bool DescribeApiGroupResult::getDisableInnerDomain()const
+{
+	return disableInnerDomain_;
+}
+
 std::string DescribeApiGroupResult::getIpv6Status()const
 {
 	return ipv6Status_;
+}
+
+std::string DescribeApiGroupResult::getMigrationError()const
+{
+	return migrationError_;
 }
 
 std::string DescribeApiGroupResult::getRegionId()const

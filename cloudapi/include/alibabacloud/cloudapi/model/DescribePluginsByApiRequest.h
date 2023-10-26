@@ -34,18 +34,24 @@ public:
 	void setStageName(const std::string &stageName);
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	std::string getApiId() const;
 	void setApiId(const std::string &apiId);
 
 private:
 	std::string stageName_;
 	std::string groupId_;
+	int pageNumber_;
 	std::string accessKeyId_;
 	std::string securityToken_;
+	int pageSize_;
 	std::string apiId_;
 };
 } // namespace Model

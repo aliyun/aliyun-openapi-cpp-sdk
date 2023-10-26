@@ -52,6 +52,15 @@ void ResetAppSecretRequest::setSecurityToken(const std::string &securityToken) {
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+std::string ResetAppSecretRequest::getNewAppKey() const {
+  return newAppKey_;
+}
+
+void ResetAppSecretRequest::setNewAppKey(const std::string &newAppKey) {
+  newAppKey_ = newAppKey;
+  setParameter(std::string("NewAppKey"), newAppKey);
+}
+
 std::string ResetAppSecretRequest::getAppKey() const {
   return appKey_;
 }

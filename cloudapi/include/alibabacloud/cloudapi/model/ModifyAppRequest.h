@@ -38,6 +38,8 @@ public:
 	void setDescription(const std::string &description);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getExtend() const;
+	void setExtend(const std::string &extend);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
 	std::string getSecurityToken() const;
@@ -50,6 +52,7 @@ public:
 private:
 	std::string description_;
 	std::string accessKeyId_;
+	std::string extend_;
 	std::string appName_;
 	std::string securityToken_;
 	long appId_;

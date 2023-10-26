@@ -38,33 +38,37 @@ namespace AlibabaCloud
 				explicit DescribeDomainResult(const std::string &payload);
 				~DescribeDomainResult();
 				std::string getCertificateBody()const;
-				std::string getSubDomain()const;
 				std::string getDomainRemark()const;
 				std::string getDomainCNAMEStatus()const;
-				std::string getDomainBindingStatus()const;
-				std::string getDomainLegalStatus()const;
+				long getCertificateValidStart()const;
 				std::string getDomainName()const;
 				std::string getCertificateId()const;
 				std::string getDomainWebSocketStatus()const;
+				std::string getGroupId()const;
+				std::string getSubDomain()const;
+				std::string getDomainBindingStatus()const;
+				std::string getDomainLegalStatus()const;
+				long getCertificateValidEnd()const;
 				std::string getCertificatePrivateKey()const;
 				std::string getCertificateName()const;
-				std::string getGroupId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string certificateBody_;
-				std::string subDomain_;
 				std::string domainRemark_;
 				std::string domainCNAMEStatus_;
-				std::string domainBindingStatus_;
-				std::string domainLegalStatus_;
+				long certificateValidStart_;
 				std::string domainName_;
 				std::string certificateId_;
 				std::string domainWebSocketStatus_;
+				std::string groupId_;
+				std::string subDomain_;
+				std::string domainBindingStatus_;
+				std::string domainLegalStatus_;
+				long certificateValidEnd_;
 				std::string certificatePrivateKey_;
 				std::string certificateName_;
-				std::string groupId_;
 
 			};
 		}

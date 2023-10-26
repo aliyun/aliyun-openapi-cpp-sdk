@@ -109,6 +109,20 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.iPV6AclType = valueInstancesInstanceAttribute["IPV6AclType"].asString();
 		if(!valueInstancesInstanceAttribute["IPV6AclStatus"].isNull())
 			instancesObject.iPV6AclStatus = valueInstancesInstanceAttribute["IPV6AclStatus"].asString();
+		if(!valueInstancesInstanceAttribute["DedicatedInstanceType"].isNull())
+			instancesObject.dedicatedInstanceType = valueInstancesInstanceAttribute["DedicatedInstanceType"].asString();
+		if(!valueInstancesInstanceAttribute["InstanceCidrBlock"].isNull())
+			instancesObject.instanceCidrBlock = valueInstancesInstanceAttribute["InstanceCidrBlock"].asString();
+		if(!valueInstancesInstanceAttribute["ConnectVpcId"].isNull())
+			instancesObject.connectVpcId = valueInstancesInstanceAttribute["ConnectVpcId"].asString();
+		if(!valueInstancesInstanceAttribute["InstanceClusterId"].isNull())
+			instancesObject.instanceClusterId = valueInstancesInstanceAttribute["InstanceClusterId"].asString();
+		if(!valueInstancesInstanceAttribute["MaintainStartTime"].isNull())
+			instancesObject.maintainStartTime = valueInstancesInstanceAttribute["MaintainStartTime"].asString();
+		if(!valueInstancesInstanceAttribute["MaintainEndTime"].isNull())
+			instancesObject.maintainEndTime = valueInstancesInstanceAttribute["MaintainEndTime"].asString();
+		if(!valueInstancesInstanceAttribute["ConnectCidrBlocks"].isNull())
+			instancesObject.connectCidrBlocks = valueInstancesInstanceAttribute["ConnectCidrBlocks"].asString();
 		auto allInstanceSpecAttributesNode = valueInstancesInstanceAttribute["InstanceSpecAttributes"]["SpecAttribute"];
 		for (auto valueInstancesInstanceAttributeInstanceSpecAttributesSpecAttribute : allInstanceSpecAttributesNode)
 		{
@@ -118,6 +132,22 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			if(!valueInstancesInstanceAttributeInstanceSpecAttributesSpecAttribute["LocalName"].isNull())
 				instanceSpecAttributesObject.localName = valueInstancesInstanceAttributeInstanceSpecAttributesSpecAttribute["LocalName"].asString();
 			instancesObject.instanceSpecAttributes.push_back(instanceSpecAttributesObject);
+		}
+		auto allNetworkInterfaceAttributesNode = valueInstancesInstanceAttribute["NetworkInterfaceAttributes"]["NetworkInterfaceAttribute"];
+		for (auto valueInstancesInstanceAttributeNetworkInterfaceAttributesNetworkInterfaceAttribute : allNetworkInterfaceAttributesNode)
+		{
+			InstanceAttribute::NetworkInterfaceAttribute networkInterfaceAttributesObject;
+			if(!valueInstancesInstanceAttributeNetworkInterfaceAttributesNetworkInterfaceAttribute["VswitchId"].isNull())
+				networkInterfaceAttributesObject.vswitchId = valueInstancesInstanceAttributeNetworkInterfaceAttributesNetworkInterfaceAttribute["VswitchId"].asString();
+			if(!valueInstancesInstanceAttributeNetworkInterfaceAttributesNetworkInterfaceAttribute["SecurityGroupId"].isNull())
+				networkInterfaceAttributesObject.securityGroupId = valueInstancesInstanceAttributeNetworkInterfaceAttributesNetworkInterfaceAttribute["SecurityGroupId"].asString();
+			if(!valueInstancesInstanceAttributeNetworkInterfaceAttributesNetworkInterfaceAttribute["NetworkInterfaceId"].isNull())
+				networkInterfaceAttributesObject.networkInterfaceId = valueInstancesInstanceAttributeNetworkInterfaceAttributesNetworkInterfaceAttribute["NetworkInterfaceId"].asString();
+			if(!valueInstancesInstanceAttributeNetworkInterfaceAttributesNetworkInterfaceAttribute["CidrBlock"].isNull())
+				networkInterfaceAttributesObject.cidrBlock = valueInstancesInstanceAttributeNetworkInterfaceAttributesNetworkInterfaceAttribute["CidrBlock"].asString();
+			if(!valueInstancesInstanceAttributeNetworkInterfaceAttributesNetworkInterfaceAttribute["ZoneId"].isNull())
+				networkInterfaceAttributesObject.zoneId = valueInstancesInstanceAttributeNetworkInterfaceAttributesNetworkInterfaceAttribute["ZoneId"].asString();
+			instancesObject.networkInterfaceAttributes.push_back(networkInterfaceAttributesObject);
 		}
 		instances_.push_back(instancesObject);
 	}

@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					std::string createdTime;
 					std::string modifiedTime;
 					long appId;
+					std::string extend;
 					std::vector<AppAttribute::TagInfo> tags;
 					std::string appName;
 				};

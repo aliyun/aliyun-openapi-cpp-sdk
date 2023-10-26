@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string domainCNAMEStatus;
 					std::string wildcardDomainPatterns;
 					std::string domainRemark;
+					long certificateValidStart;
 					std::string domainName;
 					bool isHttpRedirectToHttps;
 					std::string customDomainType;
@@ -45,6 +46,7 @@ namespace AlibabaCloud
 					std::string bindStageName;
 					std::string domainLegalStatus;
 					std::string domainBindingStatus;
+					long certificateValidEnd;
 					std::string wssEnable;
 					std::string certificateName;
 				};
@@ -67,6 +69,7 @@ namespace AlibabaCloud
 				std::string getBasePath()const;
 				std::string getUserLogConfig()const;
 				std::string getDefaultDomain()const;
+				std::string getMigrationStatus()const;
 				std::string getPassthroughHeaders()const;
 				std::string getVpcDomain()const;
 				std::string getSubDomain()const;
@@ -77,6 +80,7 @@ namespace AlibabaCloud
 				std::vector<StageInfo> getStageItems()const;
 				std::string getIllegalStatus()const;
 				std::string getInstanceType()const;
+				std::string getDedicatedInstanceType()const;
 				std::string getStatus()const;
 				std::string getInstanceId()const;
 				std::string getCompatibleFlags()const;
@@ -86,7 +90,9 @@ namespace AlibabaCloud
 				std::string getBillingStatus()const;
 				int getTrafficLimit()const;
 				std::string getGroupId()const;
+				bool getDisableInnerDomain()const;
 				std::string getIpv6Status()const;
+				std::string getMigrationError()const;
 				std::string getRegionId()const;
 				std::string getCmsMonitorGroup()const;
 				std::string getClassicVpcSubDomain()const;
@@ -102,6 +108,7 @@ namespace AlibabaCloud
 				std::string basePath_;
 				std::string userLogConfig_;
 				std::string defaultDomain_;
+				std::string migrationStatus_;
 				std::string passthroughHeaders_;
 				std::string vpcDomain_;
 				std::string subDomain_;
@@ -112,6 +119,7 @@ namespace AlibabaCloud
 				std::vector<StageInfo> stageItems_;
 				std::string illegalStatus_;
 				std::string instanceType_;
+				std::string dedicatedInstanceType_;
 				std::string status_;
 				std::string instanceId_;
 				std::string compatibleFlags_;
@@ -121,7 +129,9 @@ namespace AlibabaCloud
 				std::string billingStatus_;
 				int trafficLimit_;
 				std::string groupId_;
+				bool disableInnerDomain_;
 				std::string ipv6Status_;
+				std::string migrationError_;
 				std::string regionId_;
 				std::string cmsMonitorGroup_;
 				std::string classicVpcSubDomain_;

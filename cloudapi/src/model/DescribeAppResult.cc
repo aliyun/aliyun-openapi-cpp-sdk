@@ -49,6 +49,8 @@ void DescribeAppResult::parse(const std::string &payload)
 		appId_ = std::stol(value["AppId"].asString());
 	if(!value["CreatedTime"].isNull())
 		createdTime_ = value["CreatedTime"].asString();
+	if(!value["Extend"].isNull())
+		extend_ = value["Extend"].asString();
 
 }
 
@@ -70,6 +72,11 @@ std::string DescribeAppResult::getModifiedTime()const
 long DescribeAppResult::getAppId()const
 {
 	return appId_;
+}
+
+std::string DescribeAppResult::getExtend()const
+{
+	return extend_;
 }
 
 std::string DescribeAppResult::getAppName()const

@@ -39,10 +39,19 @@ namespace AlibabaCloud
 						std::string value;
 						std::string localName;
 					};
+					struct NetworkInterfaceAttribute
+					{
+						std::string zoneId;
+						std::string securityGroupId;
+						std::string cidrBlock;
+						std::string networkInterfaceId;
+						std::string vswitchId;
+					};
 					std::string classicEgressAddress;
 					std::string instanceSpec;
 					std::string internetEgressAddress;
 					std::string createdTime;
+					std::string instanceClusterId;
 					std::vector<InstanceAttribute::SpecAttribute> instanceSpecAttributes;
 					std::string zoneLocalName;
 					std::string instanceChargeType;
@@ -50,9 +59,14 @@ namespace AlibabaCloud
 					std::string iPV6AclName;
 					bool vpcSlbIntranetEnable;
 					std::string intranetSegments;
+					std::string maintainEndTime;
 					std::string userVpcId;
 					std::string expiredTime;
+					std::string connectVpcId;
 					std::string instanceType;
+					std::string dedicatedInstanceType;
+					std::string connectCidrBlocks;
+					std::string maintainStartTime;
 					std::string userVswitchId;
 					std::string iPV6AclId;
 					std::string status;
@@ -60,11 +74,13 @@ namespace AlibabaCloud
 					std::string zoneId;
 					std::string instanceId;
 					std::string aclId;
+					std::string instanceCidrBlock;
 					long vpcOwnerId;
 					std::string aclName;
 					std::string iPV6AclStatus;
 					std::string instanceName;
 					bool egressIpv6Enable;
+					std::vector<InstanceAttribute::NetworkInterfaceAttribute> networkInterfaceAttributes;
 					std::string aclStatus;
 					bool vpcIntranetEnable;
 					std::string httpsPolicies;

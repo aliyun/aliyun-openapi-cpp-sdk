@@ -54,6 +54,10 @@ public:
 	void setSort(const std::string &sort);
 	bool getEnableTagAuth() const;
 	void setEnableTagAuth(bool enableTagAuth);
+	std::string getExtend() const;
+	void setExtend(const std::string &extend);
+	std::string getExcludeApiProductId() const;
+	void setExcludeApiProductId(const std::string &excludeApiProductId);
 	long getAppId() const;
 	void setAppId(long appId);
 	std::string getAppCode() const;
@@ -72,6 +76,8 @@ private:
 	std::vector<Tag> tag_;
 	std::string sort_;
 	bool enableTagAuth_;
+	std::string extend_;
+	std::string excludeApiProductId_;
 	long appId_;
 	std::string appCode_;
 	std::string appKey_;

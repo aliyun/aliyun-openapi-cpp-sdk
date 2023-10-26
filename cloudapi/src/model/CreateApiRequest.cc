@@ -40,7 +40,7 @@ std::string CreateApiRequest::getErrorCodeSamples() const {
 
 void CreateApiRequest::setErrorCodeSamples(const std::string &errorCodeSamples) {
   errorCodeSamples_ = errorCodeSamples;
-  setParameter(std::string("ErrorCodeSamples"), errorCodeSamples);
+  setBodyParameter(std::string("ErrorCodeSamples"), errorCodeSamples);
 }
 
 std::string CreateApiRequest::getAppCodeAuthType() const {
@@ -85,7 +85,7 @@ std::string CreateApiRequest::getConstantParameters() const {
 
 void CreateApiRequest::setConstantParameters(const std::string &constantParameters) {
   constantParameters_ = constantParameters;
-  setParameter(std::string("ConstantParameters"), constantParameters);
+  setBodyParameter(std::string("ConstantParameters"), constantParameters);
 }
 
 std::string CreateApiRequest::getAccessKeyId() const {
@@ -121,7 +121,7 @@ std::string CreateApiRequest::getServiceParameters() const {
 
 void CreateApiRequest::setServiceParameters(const std::string &serviceParameters) {
   serviceParameters_ = serviceParameters;
-  setParameter(std::string("ServiceParameters"), serviceParameters);
+  setBodyParameter(std::string("ServiceParameters"), serviceParameters);
 }
 
 std::string CreateApiRequest::getFailResultSample() const {
@@ -130,7 +130,7 @@ std::string CreateApiRequest::getFailResultSample() const {
 
 void CreateApiRequest::setFailResultSample(const std::string &failResultSample) {
   failResultSample_ = failResultSample;
-  setParameter(std::string("FailResultSample"), failResultSample);
+  setBodyParameter(std::string("FailResultSample"), failResultSample);
 }
 
 std::string CreateApiRequest::getResourceOwnerToken() const {
@@ -148,7 +148,7 @@ std::string CreateApiRequest::getSystemParameters() const {
 
 void CreateApiRequest::setSystemParameters(const std::string &systemParameters) {
   systemParameters_ = systemParameters;
-  setParameter(std::string("SystemParameters"), systemParameters);
+  setBodyParameter(std::string("SystemParameters"), systemParameters);
 }
 
 std::string CreateApiRequest::getServiceParametersMap() const {
@@ -157,7 +157,7 @@ std::string CreateApiRequest::getServiceParametersMap() const {
 
 void CreateApiRequest::setServiceParametersMap(const std::string &serviceParametersMap) {
   serviceParametersMap_ = serviceParametersMap;
-  setParameter(std::string("ServiceParametersMap"), serviceParametersMap);
+  setBodyParameter(std::string("ServiceParametersMap"), serviceParametersMap);
 }
 
 std::string CreateApiRequest::getSecurityToken() const {
@@ -184,7 +184,7 @@ std::string CreateApiRequest::getRequestParameters() const {
 
 void CreateApiRequest::setRequestParameters(const std::string &requestParameters) {
   requestParameters_ = requestParameters;
-  setParameter(std::string("RequestParameters"), requestParameters);
+  setBodyParameter(std::string("RequestParameters"), requestParameters);
 }
 
 std::string CreateApiRequest::getResultDescriptions() const {
@@ -193,7 +193,7 @@ std::string CreateApiRequest::getResultDescriptions() const {
 
 void CreateApiRequest::setResultDescriptions(const std::string &resultDescriptions) {
   resultDescriptions_ = resultDescriptions;
-  setParameter(std::string("ResultDescriptions"), resultDescriptions);
+  setBodyParameter(std::string("ResultDescriptions"), resultDescriptions);
 }
 
 std::string CreateApiRequest::getVisibility() const {
@@ -247,7 +247,7 @@ std::string CreateApiRequest::getResultSample() const {
 
 void CreateApiRequest::setResultSample(const std::string &resultSample) {
   resultSample_ = resultSample;
-  setParameter(std::string("ResultSample"), resultSample);
+  setBodyParameter(std::string("ResultSample"), resultSample);
 }
 
 bool CreateApiRequest::getBackendEnable() const {

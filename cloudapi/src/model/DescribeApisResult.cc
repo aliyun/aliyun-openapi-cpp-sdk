@@ -77,6 +77,16 @@ void DescribeApisResult::parse(const std::string &payload)
 				deployedInfosObject.deployedStatus = valueApiSummarysApiSummaryDeployedInfosDeployedInfo["DeployedStatus"].asString();
 			apiSummarysObject.deployedInfos.push_back(deployedInfosObject);
 		}
+		auto allTagListNode = valueApiSummarysApiSummary["TagList"]["Tag"];
+		for (auto valueApiSummarysApiSummaryTagListTag : allTagListNode)
+		{
+			ApiSummary::Tag tagListObject;
+			if(!valueApiSummarysApiSummaryTagListTag["TagKey"].isNull())
+				tagListObject.tagKey = valueApiSummarysApiSummaryTagListTag["TagKey"].asString();
+			if(!valueApiSummarysApiSummaryTagListTag["TagValue"].isNull())
+				tagListObject.tagValue = valueApiSummarysApiSummaryTagListTag["TagValue"].asString();
+			apiSummarysObject.tagList.push_back(tagListObject);
+		}
 		apiSummarys_.push_back(apiSummarysObject);
 	}
 	if(!value["PageNumber"].isNull())

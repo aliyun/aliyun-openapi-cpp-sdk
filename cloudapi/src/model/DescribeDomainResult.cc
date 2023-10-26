@@ -63,17 +63,16 @@ void DescribeDomainResult::parse(const std::string &payload)
 		subDomain_ = value["SubDomain"].asString();
 	if(!value["DomainCNAMEStatus"].isNull())
 		domainCNAMEStatus_ = value["DomainCNAMEStatus"].asString();
+	if(!value["CertificateValidStart"].isNull())
+		certificateValidStart_ = std::stol(value["CertificateValidStart"].asString());
+	if(!value["CertificateValidEnd"].isNull())
+		certificateValidEnd_ = std::stol(value["CertificateValidEnd"].asString());
 
 }
 
 std::string DescribeDomainResult::getCertificateBody()const
 {
 	return certificateBody_;
-}
-
-std::string DescribeDomainResult::getSubDomain()const
-{
-	return subDomain_;
 }
 
 std::string DescribeDomainResult::getDomainRemark()const
@@ -86,14 +85,9 @@ std::string DescribeDomainResult::getDomainCNAMEStatus()const
 	return domainCNAMEStatus_;
 }
 
-std::string DescribeDomainResult::getDomainBindingStatus()const
+long DescribeDomainResult::getCertificateValidStart()const
 {
-	return domainBindingStatus_;
-}
-
-std::string DescribeDomainResult::getDomainLegalStatus()const
-{
-	return domainLegalStatus_;
+	return certificateValidStart_;
 }
 
 std::string DescribeDomainResult::getDomainName()const
@@ -111,6 +105,31 @@ std::string DescribeDomainResult::getDomainWebSocketStatus()const
 	return domainWebSocketStatus_;
 }
 
+std::string DescribeDomainResult::getGroupId()const
+{
+	return groupId_;
+}
+
+std::string DescribeDomainResult::getSubDomain()const
+{
+	return subDomain_;
+}
+
+std::string DescribeDomainResult::getDomainBindingStatus()const
+{
+	return domainBindingStatus_;
+}
+
+std::string DescribeDomainResult::getDomainLegalStatus()const
+{
+	return domainLegalStatus_;
+}
+
+long DescribeDomainResult::getCertificateValidEnd()const
+{
+	return certificateValidEnd_;
+}
+
 std::string DescribeDomainResult::getCertificatePrivateKey()const
 {
 	return certificatePrivateKey_;
@@ -119,10 +138,5 @@ std::string DescribeDomainResult::getCertificatePrivateKey()const
 std::string DescribeDomainResult::getCertificateName()const
 {
 	return certificateName_;
-}
-
-std::string DescribeDomainResult::getGroupId()const
-{
-	return groupId_;
 }
 

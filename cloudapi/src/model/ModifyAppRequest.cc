@@ -43,6 +43,15 @@ void ModifyAppRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyAppRequest::getExtend() const {
+  return extend_;
+}
+
+void ModifyAppRequest::setExtend(const std::string &extend) {
+  extend_ = extend;
+  setParameter(std::string("Extend"), extend);
+}
+
 std::string ModifyAppRequest::getAppName() const {
   return appName_;
 }

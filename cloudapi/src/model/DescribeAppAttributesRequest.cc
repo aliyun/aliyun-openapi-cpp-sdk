@@ -120,6 +120,24 @@ void DescribeAppAttributesRequest::setEnableTagAuth(bool enableTagAuth) {
   setParameter(std::string("EnableTagAuth"), enableTagAuth ? "true" : "false");
 }
 
+std::string DescribeAppAttributesRequest::getExtend() const {
+  return extend_;
+}
+
+void DescribeAppAttributesRequest::setExtend(const std::string &extend) {
+  extend_ = extend;
+  setParameter(std::string("Extend"), extend);
+}
+
+std::string DescribeAppAttributesRequest::getExcludeApiProductId() const {
+  return excludeApiProductId_;
+}
+
+void DescribeAppAttributesRequest::setExcludeApiProductId(const std::string &excludeApiProductId) {
+  excludeApiProductId_ = excludeApiProductId;
+  setParameter(std::string("ExcludeApiProductId"), excludeApiProductId);
+}
+
 long DescribeAppAttributesRequest::getAppId() const {
   return appId_;
 }

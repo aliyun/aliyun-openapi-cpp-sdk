@@ -34,6 +34,15 @@ void CreateInstanceRequest::setInstanceSpec(const std::string &instanceSpec) {
   setParameter(std::string("InstanceSpec"), instanceSpec);
 }
 
+std::string CreateInstanceRequest::getInstanceCidr() const {
+  return instanceCidr_;
+}
+
+void CreateInstanceRequest::setInstanceCidr(const std::string &instanceCidr) {
+  instanceCidr_ = instanceCidr;
+  setParameter(std::string("InstanceCidr"), instanceCidr);
+}
+
 std::string CreateInstanceRequest::getHttpsPolicy() const {
   return httpsPolicy_;
 }
@@ -50,6 +59,15 @@ int CreateInstanceRequest::getDuration() const {
 void CreateInstanceRequest::setDuration(int duration) {
   duration_ = duration;
   setParameter(std::string("Duration"), std::to_string(duration));
+}
+
+std::string CreateInstanceRequest::getInstanceType() const {
+  return instanceType_;
+}
+
+void CreateInstanceRequest::setInstanceType(const std::string &instanceType) {
+  instanceType_ = instanceType;
+  setParameter(std::string("InstanceType"), instanceType);
 }
 
 std::vector<CreateInstanceRequest::Tag> CreateInstanceRequest::getTag() const {
@@ -75,6 +93,15 @@ void CreateInstanceRequest::setAutoPay(bool autoPay) {
   setParameter(std::string("AutoPay"), autoPay ? "true" : "false");
 }
 
+std::string CreateInstanceRequest::getUserVpcId() const {
+  return userVpcId_;
+}
+
+void CreateInstanceRequest::setUserVpcId(const std::string &userVpcId) {
+  userVpcId_ = userVpcId;
+  setParameter(std::string("UserVpcId"), userVpcId);
+}
+
 std::string CreateInstanceRequest::getToken() const {
   return token_;
 }
@@ -82,6 +109,22 @@ std::string CreateInstanceRequest::getToken() const {
 void CreateInstanceRequest::setToken(const std::string &token) {
   token_ = token;
   setParameter(std::string("Token"), token);
+}
+
+std::vector<CreateInstanceRequest::ZoneVSwitchSecurityGroup> CreateInstanceRequest::getZoneVSwitchSecurityGroup() const {
+  return zoneVSwitchSecurityGroup_;
+}
+
+void CreateInstanceRequest::setZoneVSwitchSecurityGroup(const std::vector<CreateInstanceRequest::ZoneVSwitchSecurityGroup> &zoneVSwitchSecurityGroup) {
+  zoneVSwitchSecurityGroup_ = zoneVSwitchSecurityGroup;
+  for(int dep1 = 0; dep1 != zoneVSwitchSecurityGroup.size(); dep1++) {
+  auto zoneVSwitchSecurityGroupObj = zoneVSwitchSecurityGroup.at(dep1);
+  std::string zoneVSwitchSecurityGroupObjStr = std::string("ZoneVSwitchSecurityGroup") + "." + std::to_string(dep1 + 1);
+    setParameter(zoneVSwitchSecurityGroupObjStr + ".VSwitchId", zoneVSwitchSecurityGroupObj.vSwitchId);
+    setParameter(zoneVSwitchSecurityGroupObjStr + ".CidrBlock", zoneVSwitchSecurityGroupObj.cidrBlock);
+    setParameter(zoneVSwitchSecurityGroupObjStr + ".SecurityGroupId", zoneVSwitchSecurityGroupObj.securityGroupId);
+    setParameter(zoneVSwitchSecurityGroupObjStr + ".ZoneId", zoneVSwitchSecurityGroupObj.zoneId);
+  }
 }
 
 std::string CreateInstanceRequest::getInstanceName() const {

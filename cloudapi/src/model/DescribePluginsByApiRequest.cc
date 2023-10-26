@@ -43,6 +43,15 @@ void DescribePluginsByApiRequest::setGroupId(const std::string &groupId) {
   setParameter(std::string("GroupId"), groupId);
 }
 
+int DescribePluginsByApiRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void DescribePluginsByApiRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
 std::string DescribePluginsByApiRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -59,6 +68,15 @@ std::string DescribePluginsByApiRequest::getSecurityToken() const {
 void DescribePluginsByApiRequest::setSecurityToken(const std::string &securityToken) {
   securityToken_ = securityToken;
   setParameter(std::string("SecurityToken"), securityToken);
+}
+
+int DescribePluginsByApiRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void DescribePluginsByApiRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
 std::string DescribePluginsByApiRequest::getApiId() const {

@@ -36,6 +36,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
+	std::string getNewAppKey() const;
+	void setNewAppKey(const std::string &newAppKey);
 	std::string getAppKey() const;
 	void setAppKey(const std::string &appKey);
 
@@ -43,6 +45,7 @@ private:
 	std::string newAppSecret_;
 	std::string accessKeyId_;
 	std::string securityToken_;
+	std::string newAppKey_;
 	std::string appKey_;
 };
 } // namespace Model

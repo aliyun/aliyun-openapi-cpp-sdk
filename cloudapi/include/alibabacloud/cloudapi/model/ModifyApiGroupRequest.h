@@ -62,6 +62,8 @@ public:
 	void setCompatibleFlags(const std::string &compatibleFlags);
 	std::string getCustomTraceConfig() const;
 	void setCustomTraceConfig(const std::string &customTraceConfig);
+	std::string getSupportSSE() const;
+	void setSupportSSE(const std::string &supportSSE);
 
 private:
 	std::string defaultDomain_;
@@ -78,6 +80,7 @@ private:
 	std::string passthroughHeaders_;
 	std::string compatibleFlags_;
 	std::string customTraceConfig_;
+	std::string supportSSE_;
 };
 } // namespace Model
 } // namespace CloudAPI

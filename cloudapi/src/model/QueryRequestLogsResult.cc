@@ -113,6 +113,24 @@ void QueryRequestLogsResult::parse(const std::string &payload)
 			requestLogsObject.plugin = valueRequestLogsRequestLog["plugin"].asString();
 		if(!valueRequestLogsRequestLog["InitialRequestId"].isNull())
 			requestLogsObject.initialRequestId = valueRequestLogsRequestLog["InitialRequestId"].asString();
+		if(!valueRequestLogsRequestLog["AppName"].isNull())
+			requestLogsObject.appName = valueRequestLogsRequestLog["AppName"].asString();
+		if(!valueRequestLogsRequestLog["FrontRequestStart"].isNull())
+			requestLogsObject.frontRequestStart = std::stol(valueRequestLogsRequestLog["FrontRequestStart"].asString());
+		if(!valueRequestLogsRequestLog["FrontRequestEnd"].isNull())
+			requestLogsObject.frontRequestEnd = std::stol(valueRequestLogsRequestLog["FrontRequestEnd"].asString());
+		if(!valueRequestLogsRequestLog["BackendRequestStart"].isNull())
+			requestLogsObject.backendRequestStart = std::stol(valueRequestLogsRequestLog["BackendRequestStart"].asString());
+		if(!valueRequestLogsRequestLog["BackendRequestEnd"].isNull())
+			requestLogsObject.backendRequestEnd = std::stol(valueRequestLogsRequestLog["BackendRequestEnd"].asString());
+		if(!valueRequestLogsRequestLog["BackendResponseStart"].isNull())
+			requestLogsObject.backendResponseStart = std::stol(valueRequestLogsRequestLog["BackendResponseStart"].asString());
+		if(!valueRequestLogsRequestLog["BackendResponseEnd"].isNull())
+			requestLogsObject.backendResponseEnd = std::stol(valueRequestLogsRequestLog["BackendResponseEnd"].asString());
+		if(!valueRequestLogsRequestLog["FrontResponseStart"].isNull())
+			requestLogsObject.frontResponseStart = std::stol(valueRequestLogsRequestLog["FrontResponseStart"].asString());
+		if(!valueRequestLogsRequestLog["FrontResponseEnd"].isNull())
+			requestLogsObject.frontResponseEnd = std::stol(valueRequestLogsRequestLog["FrontResponseEnd"].asString());
 		requestLogs_.push_back(requestLogsObject);
 	}
 

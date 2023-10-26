@@ -61,6 +61,15 @@ void CreateAppRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CreateAppRequest::getExtend() const {
+  return extend_;
+}
+
+void CreateAppRequest::setExtend(const std::string &extend) {
+  extend_ = extend;
+  setParameter(std::string("Extend"), extend);
+}
+
 std::string CreateAppRequest::getAppName() const {
   return appName_;
 }

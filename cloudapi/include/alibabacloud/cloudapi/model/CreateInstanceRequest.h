@@ -32,20 +32,34 @@ public:
 		std::string value;
 		std::string key;
 	};
+	struct ZoneVSwitchSecurityGroup {
+		std::string vSwitchId;
+		std::string cidrBlock;
+		std::string securityGroupId;
+		std::string zoneId;
+	};
 	CreateInstanceRequest();
 	~CreateInstanceRequest();
 	std::string getInstanceSpec() const;
 	void setInstanceSpec(const std::string &instanceSpec);
+	std::string getInstanceCidr() const;
+	void setInstanceCidr(const std::string &instanceCidr);
 	std::string getHttpsPolicy() const;
 	void setHttpsPolicy(const std::string &httpsPolicy);
 	int getDuration() const;
 	void setDuration(int duration);
+	std::string getInstanceType() const;
+	void setInstanceType(const std::string &instanceType);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
 	bool getAutoPay() const;
 	void setAutoPay(bool autoPay);
+	std::string getUserVpcId() const;
+	void setUserVpcId(const std::string &userVpcId);
 	std::string getToken() const;
 	void setToken(const std::string &token);
+	std::vector<ZoneVSwitchSecurityGroup> getZoneVSwitchSecurityGroup() const;
+	void setZoneVSwitchSecurityGroup(const std::vector<ZoneVSwitchSecurityGroup> &zoneVSwitchSecurityGroup);
 	std::string getInstanceName() const;
 	void setInstanceName(const std::string &instanceName);
 	std::string getZoneId() const;
@@ -57,11 +71,15 @@ public:
 
 private:
 	std::string instanceSpec_;
+	std::string instanceCidr_;
 	std::string httpsPolicy_;
 	int duration_;
+	std::string instanceType_;
 	std::vector<Tag> tag_;
 	bool autoPay_;
+	std::string userVpcId_;
 	std::string token_;
+	std::vector<ZoneVSwitchSecurityGroup> zoneVSwitchSecurityGroup_;
 	std::string instanceName_;
 	std::string zoneId_;
 	std::string chargeType_;

@@ -82,13 +82,34 @@ namespace AlibabaCloud
 								std::string mockStatusCode;
 								std::vector<MockHeader> mockHeaders;
 							};
+							struct DiscoveryConfig
+							{
+								struct NacosConfig
+								{
+									std::string groupName;
+									std::string secretKey;
+									std::string userName;
+									std::string serviceName;
+									std::string serverAddress;
+									std::string clusters;
+									std::string _namespace;
+									std::string authType;
+									std::string accessKey;
+									std::string password;
+								};
+								std::string rcType;
+								NacosConfig nacosConfig;
+							};
 							std::string serviceAddress;
 							std::string type;
 							FunctionComputeConfig functionComputeConfig;
 							VpcConfig vpcConfig;
 							EventBridgeConfig eventBridgeConfig;
 							OssConfig ossConfig;
+							std::string httpTargetHostName;
+							int serviceTimeout;
 							MockConfig mockConfig;
+							DiscoveryConfig discoveryConfig;
 						};
 						std::string gmtCreate;
 						std::string description;
