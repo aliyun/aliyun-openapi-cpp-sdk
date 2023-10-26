@@ -50,6 +50,8 @@
 #include "model/ReportTaskSucceededResult.h"
 #include "model/StartExecutionRequest.h"
 #include "model/StartExecutionResult.h"
+#include "model/StartSyncExecutionRequest.h"
+#include "model/StartSyncExecutionResult.h"
 #include "model/StopExecutionRequest.h"
 #include "model/StopExecutionResult.h"
 #include "model/UpdateFlowRequest.h"
@@ -107,6 +109,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StartExecutionResult> StartExecutionOutcome;
 			typedef std::future<StartExecutionOutcome> StartExecutionOutcomeCallable;
 			typedef std::function<void(const FnfClient*, const Model::StartExecutionRequest&, const StartExecutionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartExecutionAsyncHandler;
+			typedef Outcome<Error, Model::StartSyncExecutionResult> StartSyncExecutionOutcome;
+			typedef std::future<StartSyncExecutionOutcome> StartSyncExecutionOutcomeCallable;
+			typedef std::function<void(const FnfClient*, const Model::StartSyncExecutionRequest&, const StartSyncExecutionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartSyncExecutionAsyncHandler;
 			typedef Outcome<Error, Model::StopExecutionResult> StopExecutionOutcome;
 			typedef std::future<StopExecutionOutcome> StopExecutionOutcomeCallable;
 			typedef std::function<void(const FnfClient*, const Model::StopExecutionRequest&, const StopExecutionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopExecutionAsyncHandler;
@@ -163,6 +168,9 @@ namespace AlibabaCloud
 			StartExecutionOutcome startExecution(const Model::StartExecutionRequest &request)const;
 			void startExecutionAsync(const Model::StartExecutionRequest& request, const StartExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartExecutionOutcomeCallable startExecutionCallable(const Model::StartExecutionRequest& request) const;
+			StartSyncExecutionOutcome startSyncExecution(const Model::StartSyncExecutionRequest &request)const;
+			void startSyncExecutionAsync(const Model::StartSyncExecutionRequest& request, const StartSyncExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartSyncExecutionOutcomeCallable startSyncExecutionCallable(const Model::StartSyncExecutionRequest& request) const;
 			StopExecutionOutcome stopExecution(const Model::StopExecutionRequest &request)const;
 			void stopExecutionAsync(const Model::StopExecutionRequest& request, const StopExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopExecutionOutcomeCallable stopExecutionCallable(const Model::StopExecutionRequest& request) const;

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Fnf::Model::ListFlowsRequest;
 
-ListFlowsRequest::ListFlowsRequest() :
-	RpcServiceRequest("fnf", "2019-03-15", "ListFlows")
-{
-	setMethod(HttpRequest::Method::Get);
+ListFlowsRequest::ListFlowsRequest()
+    : RpcServiceRequest("fnf", "2019-03-15", "ListFlows") {
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListFlowsRequest::~ListFlowsRequest()
-{}
+ListFlowsRequest::~ListFlowsRequest() {}
 
-std::string ListFlowsRequest::getNextToken()const
-{
-	return nextToken_;
+std::string ListFlowsRequest::getNextToken() const {
+  return nextToken_;
 }
 
-void ListFlowsRequest::setNextToken(const std::string& nextToken)
-{
-	nextToken_ = nextToken;
-	setParameter("NextToken", nextToken);
+void ListFlowsRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
 }
 
-std::string ListFlowsRequest::getRequestId()const
-{
-	return requestId_;
+std::string ListFlowsRequest::getRequestId() const {
+  return requestId_;
 }
 
-void ListFlowsRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+void ListFlowsRequest::setRequestId(const std::string &requestId) {
+  requestId_ = requestId;
+  setParameter(std::string("RequestId"), requestId);
 }
 
-int ListFlowsRequest::getLimit()const
-{
-	return limit_;
+int ListFlowsRequest::getLimit() const {
+  return limit_;
 }
 
-void ListFlowsRequest::setLimit(int limit)
-{
-	limit_ = limit;
-	setParameter("Limit", std::to_string(limit));
+void ListFlowsRequest::setLimit(int limit) {
+  limit_ = limit;
+  setParameter(std::string("Limit"), std::to_string(limit));
 }
 

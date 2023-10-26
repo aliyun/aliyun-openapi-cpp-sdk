@@ -43,18 +43,18 @@ void GetExecutionHistoryResult::parse(const std::string &payload)
 	for (auto valueEventsEventsItem : allEventsNode)
 	{
 		EventsItem eventsObject;
-		if(!valueEventsEventsItem["StepName"].isNull())
-			eventsObject.stepName = valueEventsEventsItem["StepName"].asString();
 		if(!valueEventsEventsItem["Type"].isNull())
 			eventsObject.type = valueEventsEventsItem["Type"].asString();
 		if(!valueEventsEventsItem["EventId"].isNull())
 			eventsObject.eventId = std::stol(valueEventsEventsItem["EventId"].asString());
+		if(!valueEventsEventsItem["Time"].isNull())
+			eventsObject.time = valueEventsEventsItem["Time"].asString();
 		if(!valueEventsEventsItem["ScheduleEventId"].isNull())
 			eventsObject.scheduleEventId = std::stol(valueEventsEventsItem["ScheduleEventId"].asString());
 		if(!valueEventsEventsItem["EventDetail"].isNull())
 			eventsObject.eventDetail = valueEventsEventsItem["EventDetail"].asString();
-		if(!valueEventsEventsItem["Time"].isNull())
-			eventsObject.time = valueEventsEventsItem["Time"].asString();
+		if(!valueEventsEventsItem["StepName"].isNull())
+			eventsObject.stepName = valueEventsEventsItem["StepName"].asString();
 		events_.push_back(eventsObject);
 	}
 	if(!value["NextToken"].isNull())

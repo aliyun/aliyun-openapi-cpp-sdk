@@ -555,6 +555,42 @@ FnfClient::StartExecutionOutcomeCallable FnfClient::startExecutionCallable(const
 	return task->get_future();
 }
 
+FnfClient::StartSyncExecutionOutcome FnfClient::startSyncExecution(const StartSyncExecutionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartSyncExecutionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartSyncExecutionOutcome(StartSyncExecutionResult(outcome.result()));
+	else
+		return StartSyncExecutionOutcome(outcome.error());
+}
+
+void FnfClient::startSyncExecutionAsync(const StartSyncExecutionRequest& request, const StartSyncExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startSyncExecution(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FnfClient::StartSyncExecutionOutcomeCallable FnfClient::startSyncExecutionCallable(const StartSyncExecutionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartSyncExecutionOutcome()>>(
+			[this, request]()
+			{
+			return this->startSyncExecution(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FnfClient::StopExecutionOutcome FnfClient::stopExecution(const StopExecutionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FNF_MODEL_UPDATESCHEDULEREQUEST_H_
-#define ALIBABACLOUD_FNF_MODEL_UPDATESCHEDULEREQUEST_H_
+#ifndef ALIBABACLOUD_FNF_MODEL_STARTSYNCEXECUTIONREQUEST_H_
+#define ALIBABACLOUD_FNF_MODEL_STARTSYNCEXECUTIONREQUEST_H_
 
 #include <alibabacloud/fnf/FnfExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,26 @@
 namespace AlibabaCloud {
 namespace Fnf {
 namespace Model {
-class ALIBABACLOUD_FNF_EXPORT UpdateScheduleRequest : public RpcServiceRequest {
+class ALIBABACLOUD_FNF_EXPORT StartSyncExecutionRequest : public RpcServiceRequest {
 public:
-	UpdateScheduleRequest();
-	~UpdateScheduleRequest();
-	std::string getScheduleName() const;
-	void setScheduleName(const std::string &scheduleName);
-	std::string getCronExpression() const;
-	void setCronExpression(const std::string &cronExpression);
-	std::string getPayload() const;
-	void setPayload(const std::string &payload);
+	StartSyncExecutionRequest();
+	~StartSyncExecutionRequest();
+	std::string getExecutionName() const;
+	void setExecutionName(const std::string &executionName);
+	std::string getInput() const;
+	void setInput(const std::string &input);
 	std::string getRequestId() const;
 	void setRequestId(const std::string &requestId);
-	bool getEnable() const;
-	void setEnable(bool enable);
-	std::string getDescription() const;
-	void setDescription(const std::string &description);
 	std::string getFlowName() const;
 	void setFlowName(const std::string &flowName);
 
 private:
-	std::string scheduleName_;
-	std::string cronExpression_;
-	std::string payload_;
+	std::string executionName_;
+	std::string input_;
 	std::string requestId_;
-	bool enable_;
-	std::string description_;
 	std::string flowName_;
 };
 } // namespace Model
 } // namespace Fnf
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_FNF_MODEL_UPDATESCHEDULEREQUEST_H_
+#endif // !ALIBABACLOUD_FNF_MODEL_STARTSYNCEXECUTIONREQUEST_H_

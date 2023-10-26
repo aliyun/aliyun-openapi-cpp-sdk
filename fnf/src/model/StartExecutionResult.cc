@@ -39,26 +39,26 @@ void StartExecutionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
-	if(!value["FlowName"].isNull())
-		flowName_ = value["FlowName"].asString();
-	if(!value["FlowDefinition"].isNull())
-		flowDefinition_ = value["FlowDefinition"].asString();
-	if(!value["Input"].isNull())
-		input_ = value["Input"].asString();
-	if(!value["Output"].isNull())
-		output_ = value["Output"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
-	if(!value["StartedTime"].isNull())
-		startedTime_ = value["StartedTime"].asString();
 	if(!value["StoppedTime"].isNull())
 		stoppedTime_ = value["StoppedTime"].asString();
+	if(!value["StartedTime"].isNull())
+		startedTime_ = value["StartedTime"].asString();
+	if(!value["FlowDefinition"].isNull())
+		flowDefinition_ = value["FlowDefinition"].asString();
 	if(!value["ExternalInputUri"].isNull())
 		externalInputUri_ = value["ExternalInputUri"].asString();
+	if(!value["Output"].isNull())
+		output_ = value["Output"].asString();
+	if(!value["FlowName"].isNull())
+		flowName_ = value["FlowName"].asString();
 	if(!value["ExternalOutputUri"].isNull())
 		externalOutputUri_ = value["ExternalOutputUri"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["Input"].isNull())
+		input_ = value["Input"].asString();
 
 }
 

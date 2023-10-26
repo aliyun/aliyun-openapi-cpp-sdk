@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FNF_MODEL_GETEXECUTIONHISTORYRESULT_H_
-#define ALIBABACLOUD_FNF_MODEL_GETEXECUTIONHISTORYRESULT_H_
+#ifndef ALIBABACLOUD_FNF_MODEL_STARTSYNCEXECUTIONRESULT_H_
+#define ALIBABACLOUD_FNF_MODEL_STARTSYNCEXECUTIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_FNF_EXPORT GetExecutionHistoryResult : public ServiceResult
+			class ALIBABACLOUD_FNF_EXPORT StartSyncExecutionResult : public ServiceResult
 			{
 			public:
-				struct EventsItem
-				{
-					std::string type;
-					long eventId;
-					std::string time;
-					std::string eventDetail;
-					std::string stepName;
-					long scheduleEventId;
-				};
 
 
-				GetExecutionHistoryResult();
-				explicit GetExecutionHistoryResult(const std::string &payload);
-				~GetExecutionHistoryResult();
-				std::string getNextToken()const;
-				std::vector<EventsItem> getEvents()const;
+				StartSyncExecutionResult();
+				explicit StartSyncExecutionResult(const std::string &payload);
+				~StartSyncExecutionResult();
+				std::string getStatus()const;
+				std::string getStoppedTime()const;
+				std::string getFlowName()const;
+				std::string getOutput()const;
+				std::string getStartedTime()const;
+				std::string getErrorCode()const;
+				std::string getErrorMessage()const;
+				std::string getName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string nextToken_;
-				std::vector<EventsItem> events_;
+				std::string status_;
+				std::string stoppedTime_;
+				std::string flowName_;
+				std::string output_;
+				std::string startedTime_;
+				std::string errorCode_;
+				std::string errorMessage_;
+				std::string name_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_FNF_MODEL_GETEXECUTIONHISTORYRESULT_H_
+#endif // !ALIBABACLOUD_FNF_MODEL_STARTSYNCEXECUTIONRESULT_H_

@@ -39,22 +39,22 @@ void DescribeScheduleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ScheduleName"].isNull())
-		scheduleName_ = value["ScheduleName"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
 	if(!value["ScheduleId"].isNull())
 		scheduleId_ = value["ScheduleId"].asString();
 	if(!value["Payload"].isNull())
 		payload_ = value["Payload"].asString();
-	if(!value["CronExpression"].isNull())
-		cronExpression_ = value["CronExpression"].asString();
-	if(!value["Enable"].isNull())
-		enable_ = value["Enable"].asString() == "true";
+	if(!value["ScheduleName"].isNull())
+		scheduleName_ = value["ScheduleName"].asString();
 	if(!value["CreatedTime"].isNull())
 		createdTime_ = value["CreatedTime"].asString();
 	if(!value["LastModifiedTime"].isNull())
 		lastModifiedTime_ = value["LastModifiedTime"].asString();
+	if(!value["CronExpression"].isNull())
+		cronExpression_ = value["CronExpression"].asString();
+	if(!value["Enable"].isNull())
+		enable_ = value["Enable"].asString() == "true";
 
 }
 

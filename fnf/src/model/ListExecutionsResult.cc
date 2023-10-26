@@ -43,26 +43,26 @@ void ListExecutionsResult::parse(const std::string &payload)
 	for (auto valueExecutionsExecutionsItem : allExecutionsNode)
 	{
 		ExecutionsItem executionsObject;
-		if(!valueExecutionsExecutionsItem["Name"].isNull())
-			executionsObject.name = valueExecutionsExecutionsItem["Name"].asString();
-		if(!valueExecutionsExecutionsItem["FlowName"].isNull())
-			executionsObject.flowName = valueExecutionsExecutionsItem["FlowName"].asString();
-		if(!valueExecutionsExecutionsItem["FlowDefinition"].isNull())
-			executionsObject.flowDefinition = valueExecutionsExecutionsItem["FlowDefinition"].asString();
-		if(!valueExecutionsExecutionsItem["Input"].isNull())
-			executionsObject.input = valueExecutionsExecutionsItem["Input"].asString();
-		if(!valueExecutionsExecutionsItem["Output"].isNull())
-			executionsObject.output = valueExecutionsExecutionsItem["Output"].asString();
 		if(!valueExecutionsExecutionsItem["Status"].isNull())
 			executionsObject.status = valueExecutionsExecutionsItem["Status"].asString();
-		if(!valueExecutionsExecutionsItem["StartedTime"].isNull())
-			executionsObject.startedTime = valueExecutionsExecutionsItem["StartedTime"].asString();
 		if(!valueExecutionsExecutionsItem["StoppedTime"].isNull())
 			executionsObject.stoppedTime = valueExecutionsExecutionsItem["StoppedTime"].asString();
+		if(!valueExecutionsExecutionsItem["StartedTime"].isNull())
+			executionsObject.startedTime = valueExecutionsExecutionsItem["StartedTime"].asString();
+		if(!valueExecutionsExecutionsItem["FlowDefinition"].isNull())
+			executionsObject.flowDefinition = valueExecutionsExecutionsItem["FlowDefinition"].asString();
 		if(!valueExecutionsExecutionsItem["ExternalInputUri"].isNull())
 			executionsObject.externalInputUri = valueExecutionsExecutionsItem["ExternalInputUri"].asString();
+		if(!valueExecutionsExecutionsItem["Output"].isNull())
+			executionsObject.output = valueExecutionsExecutionsItem["Output"].asString();
+		if(!valueExecutionsExecutionsItem["FlowName"].isNull())
+			executionsObject.flowName = valueExecutionsExecutionsItem["FlowName"].asString();
 		if(!valueExecutionsExecutionsItem["ExternalOutputUri"].isNull())
 			executionsObject.externalOutputUri = valueExecutionsExecutionsItem["ExternalOutputUri"].asString();
+		if(!valueExecutionsExecutionsItem["Name"].isNull())
+			executionsObject.name = valueExecutionsExecutionsItem["Name"].asString();
+		if(!valueExecutionsExecutionsItem["Input"].isNull())
+			executionsObject.input = valueExecutionsExecutionsItem["Input"].asString();
 		executions_.push_back(executionsObject);
 	}
 	if(!value["NextToken"].isNull())

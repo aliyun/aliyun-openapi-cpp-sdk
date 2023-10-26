@@ -43,22 +43,22 @@ void ListSchedulesResult::parse(const std::string &payload)
 	for (auto valueSchedulesSchedulesItem : allSchedulesNode)
 	{
 		SchedulesItem schedulesObject;
-		if(!valueSchedulesSchedulesItem["ScheduleName"].isNull())
-			schedulesObject.scheduleName = valueSchedulesSchedulesItem["ScheduleName"].asString();
 		if(!valueSchedulesSchedulesItem["Description"].isNull())
 			schedulesObject.description = valueSchedulesSchedulesItem["Description"].asString();
 		if(!valueSchedulesSchedulesItem["ScheduleId"].isNull())
 			schedulesObject.scheduleId = valueSchedulesSchedulesItem["ScheduleId"].asString();
 		if(!valueSchedulesSchedulesItem["Payload"].isNull())
 			schedulesObject.payload = valueSchedulesSchedulesItem["Payload"].asString();
-		if(!valueSchedulesSchedulesItem["CronExpression"].isNull())
-			schedulesObject.cronExpression = valueSchedulesSchedulesItem["CronExpression"].asString();
-		if(!valueSchedulesSchedulesItem["Enable"].isNull())
-			schedulesObject.enable = valueSchedulesSchedulesItem["Enable"].asString() == "true";
+		if(!valueSchedulesSchedulesItem["ScheduleName"].isNull())
+			schedulesObject.scheduleName = valueSchedulesSchedulesItem["ScheduleName"].asString();
 		if(!valueSchedulesSchedulesItem["CreatedTime"].isNull())
 			schedulesObject.createdTime = valueSchedulesSchedulesItem["CreatedTime"].asString();
 		if(!valueSchedulesSchedulesItem["LastModifiedTime"].isNull())
 			schedulesObject.lastModifiedTime = valueSchedulesSchedulesItem["LastModifiedTime"].asString();
+		if(!valueSchedulesSchedulesItem["CronExpression"].isNull())
+			schedulesObject.cronExpression = valueSchedulesSchedulesItem["CronExpression"].asString();
+		if(!valueSchedulesSchedulesItem["Enable"].isNull())
+			schedulesObject.enable = valueSchedulesSchedulesItem["Enable"].asString() == "true";
 		schedules_.push_back(schedulesObject);
 	}
 	if(!value["NextToken"].isNull())

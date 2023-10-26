@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string createdTime;
 					std::string definition;
 					std::string lastModifiedTime;
+					std::string executionMode;
 					std::string id;
 					std::string externalStorageLocation;
 					std::string roleArn;

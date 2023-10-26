@@ -42,6 +42,7 @@ namespace AlibabaCloud
 				std::string getCreatedTime()const;
 				std::string getDefinition()const;
 				std::string getLastModifiedTime()const;
+				std::string getExecutionMode()const;
 				std::string getId()const;
 				std::string getExternalStorageLocation()const;
 				std::string getRoleArn()const;
@@ -55,6 +56,7 @@ namespace AlibabaCloud
 				std::string createdTime_;
 				std::string definition_;
 				std::string lastModifiedTime_;
+				std::string executionMode_;
 				std::string id_;
 				std::string externalStorageLocation_;
 				std::string roleArn_;

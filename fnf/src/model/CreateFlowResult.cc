@@ -39,24 +39,26 @@ void CreateFlowResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["Definition"].isNull())
-		definition_ = value["Definition"].asString();
-	if(!value["Id"].isNull())
-		id_ = value["Id"].asString();
 	if(!value["Type"].isNull())
 		type_ = value["Type"].asString();
+	if(!value["Definition"].isNull())
+		definition_ = value["Definition"].asString();
 	if(!value["RoleArn"].isNull())
 		roleArn_ = value["RoleArn"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["ExternalStorageLocation"].isNull())
+		externalStorageLocation_ = value["ExternalStorageLocation"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
 	if(!value["CreatedTime"].isNull())
 		createdTime_ = value["CreatedTime"].asString();
 	if(!value["LastModifiedTime"].isNull())
 		lastModifiedTime_ = value["LastModifiedTime"].asString();
-	if(!value["ExternalStorageLocation"].isNull())
-		externalStorageLocation_ = value["ExternalStorageLocation"].asString();
+	if(!value["Id"].isNull())
+		id_ = value["Id"].asString();
+	if(!value["ExecutionMode"].isNull())
+		executionMode_ = value["ExecutionMode"].asString();
 
 }
 
@@ -83,6 +85,11 @@ std::string CreateFlowResult::getDefinition()const
 std::string CreateFlowResult::getLastModifiedTime()const
 {
 	return lastModifiedTime_;
+}
+
+std::string CreateFlowResult::getExecutionMode()const
+{
+	return executionMode_;
 }
 
 std::string CreateFlowResult::getId()const

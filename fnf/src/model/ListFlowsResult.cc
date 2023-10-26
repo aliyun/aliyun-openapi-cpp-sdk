@@ -43,24 +43,26 @@ void ListFlowsResult::parse(const std::string &payload)
 	for (auto valueFlowsFlowsItem : allFlowsNode)
 	{
 		FlowsItem flowsObject;
-		if(!valueFlowsFlowsItem["Name"].isNull())
-			flowsObject.name = valueFlowsFlowsItem["Name"].asString();
-		if(!valueFlowsFlowsItem["Description"].isNull())
-			flowsObject.description = valueFlowsFlowsItem["Description"].asString();
-		if(!valueFlowsFlowsItem["Definition"].isNull())
-			flowsObject.definition = valueFlowsFlowsItem["Definition"].asString();
-		if(!valueFlowsFlowsItem["Id"].isNull())
-			flowsObject.id = valueFlowsFlowsItem["Id"].asString();
 		if(!valueFlowsFlowsItem["Type"].isNull())
 			flowsObject.type = valueFlowsFlowsItem["Type"].asString();
+		if(!valueFlowsFlowsItem["Definition"].isNull())
+			flowsObject.definition = valueFlowsFlowsItem["Definition"].asString();
 		if(!valueFlowsFlowsItem["RoleArn"].isNull())
 			flowsObject.roleArn = valueFlowsFlowsItem["RoleArn"].asString();
+		if(!valueFlowsFlowsItem["Description"].isNull())
+			flowsObject.description = valueFlowsFlowsItem["Description"].asString();
+		if(!valueFlowsFlowsItem["ExternalStorageLocation"].isNull())
+			flowsObject.externalStorageLocation = valueFlowsFlowsItem["ExternalStorageLocation"].asString();
+		if(!valueFlowsFlowsItem["Name"].isNull())
+			flowsObject.name = valueFlowsFlowsItem["Name"].asString();
 		if(!valueFlowsFlowsItem["CreatedTime"].isNull())
 			flowsObject.createdTime = valueFlowsFlowsItem["CreatedTime"].asString();
 		if(!valueFlowsFlowsItem["LastModifiedTime"].isNull())
 			flowsObject.lastModifiedTime = valueFlowsFlowsItem["LastModifiedTime"].asString();
-		if(!valueFlowsFlowsItem["ExternalStorageLocation"].isNull())
-			flowsObject.externalStorageLocation = valueFlowsFlowsItem["ExternalStorageLocation"].asString();
+		if(!valueFlowsFlowsItem["Id"].isNull())
+			flowsObject.id = valueFlowsFlowsItem["Id"].asString();
+		if(!valueFlowsFlowsItem["ExecutionMode"].isNull())
+			flowsObject.executionMode = valueFlowsFlowsItem["ExecutionMode"].asString();
 		flows_.push_back(flowsObject);
 	}
 	if(!value["NextToken"].isNull())

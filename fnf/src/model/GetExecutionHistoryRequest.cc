@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Fnf::Model::GetExecutionHistoryRequest;
 
-GetExecutionHistoryRequest::GetExecutionHistoryRequest() :
-	RpcServiceRequest("fnf", "2019-03-15", "GetExecutionHistory")
-{
-	setMethod(HttpRequest::Method::Get);
+GetExecutionHistoryRequest::GetExecutionHistoryRequest()
+    : RpcServiceRequest("fnf", "2019-03-15", "GetExecutionHistory") {
+  setMethod(HttpRequest::Method::Get);
 }
 
-GetExecutionHistoryRequest::~GetExecutionHistoryRequest()
-{}
+GetExecutionHistoryRequest::~GetExecutionHistoryRequest() {}
 
-std::string GetExecutionHistoryRequest::getExecutionName()const
-{
-	return executionName_;
+std::string GetExecutionHistoryRequest::getExecutionName() const {
+  return executionName_;
 }
 
-void GetExecutionHistoryRequest::setExecutionName(const std::string& executionName)
-{
-	executionName_ = executionName;
-	setParameter("ExecutionName", executionName);
+void GetExecutionHistoryRequest::setExecutionName(const std::string &executionName) {
+  executionName_ = executionName;
+  setParameter(std::string("ExecutionName"), executionName);
 }
 
-std::string GetExecutionHistoryRequest::getNextToken()const
-{
-	return nextToken_;
+std::string GetExecutionHistoryRequest::getNextToken() const {
+  return nextToken_;
 }
 
-void GetExecutionHistoryRequest::setNextToken(const std::string& nextToken)
-{
-	nextToken_ = nextToken;
-	setParameter("NextToken", nextToken);
+void GetExecutionHistoryRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
 }
 
-std::string GetExecutionHistoryRequest::getRequestId()const
-{
-	return requestId_;
+std::string GetExecutionHistoryRequest::getRequestId() const {
+  return requestId_;
 }
 
-void GetExecutionHistoryRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+void GetExecutionHistoryRequest::setRequestId(const std::string &requestId) {
+  requestId_ = requestId;
+  setParameter(std::string("RequestId"), requestId);
 }
 
-int GetExecutionHistoryRequest::getLimit()const
-{
-	return limit_;
+int GetExecutionHistoryRequest::getLimit() const {
+  return limit_;
 }
 
-void GetExecutionHistoryRequest::setLimit(int limit)
-{
-	limit_ = limit;
-	setParameter("Limit", std::to_string(limit));
+void GetExecutionHistoryRequest::setLimit(int limit) {
+  limit_ = limit;
+  setParameter(std::string("Limit"), std::to_string(limit));
 }
 
-std::string GetExecutionHistoryRequest::getFlowName()const
-{
-	return flowName_;
+std::string GetExecutionHistoryRequest::getFlowName() const {
+  return flowName_;
 }
 
-void GetExecutionHistoryRequest::setFlowName(const std::string& flowName)
-{
-	flowName_ = flowName;
-	setParameter("FlowName", flowName);
+void GetExecutionHistoryRequest::setFlowName(const std::string &flowName) {
+  flowName_ = flowName;
+  setParameter(std::string("FlowName"), flowName);
 }
 

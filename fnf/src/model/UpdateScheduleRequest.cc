@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::Fnf::Model::UpdateScheduleRequest;
 
-UpdateScheduleRequest::UpdateScheduleRequest() :
-	RpcServiceRequest("fnf", "2019-03-15", "UpdateSchedule")
-{
-	setMethod(HttpRequest::Method::Post);
+UpdateScheduleRequest::UpdateScheduleRequest()
+    : RpcServiceRequest("fnf", "2019-03-15", "UpdateSchedule") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpdateScheduleRequest::~UpdateScheduleRequest()
-{}
+UpdateScheduleRequest::~UpdateScheduleRequest() {}
 
-std::string UpdateScheduleRequest::getScheduleName()const
-{
-	return scheduleName_;
+std::string UpdateScheduleRequest::getScheduleName() const {
+  return scheduleName_;
 }
 
-void UpdateScheduleRequest::setScheduleName(const std::string& scheduleName)
-{
-	scheduleName_ = scheduleName;
-	setBodyParameter("ScheduleName", scheduleName);
+void UpdateScheduleRequest::setScheduleName(const std::string &scheduleName) {
+  scheduleName_ = scheduleName;
+  setBodyParameter(std::string("ScheduleName"), scheduleName);
 }
 
-std::string UpdateScheduleRequest::getCronExpression()const
-{
-	return cronExpression_;
+std::string UpdateScheduleRequest::getCronExpression() const {
+  return cronExpression_;
 }
 
-void UpdateScheduleRequest::setCronExpression(const std::string& cronExpression)
-{
-	cronExpression_ = cronExpression;
-	setBodyParameter("CronExpression", cronExpression);
+void UpdateScheduleRequest::setCronExpression(const std::string &cronExpression) {
+  cronExpression_ = cronExpression;
+  setBodyParameter(std::string("CronExpression"), cronExpression);
 }
 
-std::string UpdateScheduleRequest::getPayload()const
-{
-	return payload_;
+std::string UpdateScheduleRequest::getPayload() const {
+  return payload_;
 }
 
-void UpdateScheduleRequest::setPayload(const std::string& payload)
-{
-	payload_ = payload;
-	setBodyParameter("Payload", payload);
+void UpdateScheduleRequest::setPayload(const std::string &payload) {
+  payload_ = payload;
+  setBodyParameter(std::string("Payload"), payload);
 }
 
-std::string UpdateScheduleRequest::getRequestId()const
-{
-	return requestId_;
+std::string UpdateScheduleRequest::getRequestId() const {
+  return requestId_;
 }
 
-void UpdateScheduleRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+void UpdateScheduleRequest::setRequestId(const std::string &requestId) {
+  requestId_ = requestId;
+  setParameter(std::string("RequestId"), requestId);
 }
 
-bool UpdateScheduleRequest::getEnable()const
-{
-	return enable_;
+bool UpdateScheduleRequest::getEnable() const {
+  return enable_;
 }
 
-void UpdateScheduleRequest::setEnable(bool enable)
-{
-	enable_ = enable;
-	setBodyParameter("Enable", enable ? "true" : "false");
+void UpdateScheduleRequest::setEnable(bool enable) {
+  enable_ = enable;
+  setBodyParameter(std::string("Enable"), enable ? "true" : "false");
 }
 
-std::string UpdateScheduleRequest::getDescription()const
-{
-	return description_;
+std::string UpdateScheduleRequest::getDescription() const {
+  return description_;
 }
 
-void UpdateScheduleRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setBodyParameter("Description", description);
+void UpdateScheduleRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setBodyParameter(std::string("Description"), description);
 }
 
-std::string UpdateScheduleRequest::getFlowName()const
-{
-	return flowName_;
+std::string UpdateScheduleRequest::getFlowName() const {
+  return flowName_;
 }
 
-void UpdateScheduleRequest::setFlowName(const std::string& flowName)
-{
-	flowName_ = flowName;
-	setBodyParameter("FlowName", flowName);
+void UpdateScheduleRequest::setFlowName(const std::string &flowName) {
+  flowName_ = flowName;
+  setBodyParameter(std::string("FlowName"), flowName);
 }
 

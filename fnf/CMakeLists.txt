@@ -49,6 +49,8 @@ set(fnf_public_header_model
 	include/alibabacloud/fnf/model/ReportTaskSucceededResult.h
 	include/alibabacloud/fnf/model/StartExecutionRequest.h
 	include/alibabacloud/fnf/model/StartExecutionResult.h
+	include/alibabacloud/fnf/model/StartSyncExecutionRequest.h
+	include/alibabacloud/fnf/model/StartSyncExecutionResult.h
 	include/alibabacloud/fnf/model/StopExecutionRequest.h
 	include/alibabacloud/fnf/model/StopExecutionResult.h
 	include/alibabacloud/fnf/model/UpdateFlowRequest.h
@@ -86,6 +88,8 @@ set(fnf_src
 	src/model/ReportTaskSucceededResult.cc
 	src/model/StartExecutionRequest.cc
 	src/model/StartExecutionResult.cc
+	src/model/StartSyncExecutionRequest.cc
+	src/model/StartSyncExecutionResult.cc
 	src/model/StopExecutionRequest.cc
 	src/model/StopExecutionResult.cc
 	src/model/UpdateFlowRequest.cc
