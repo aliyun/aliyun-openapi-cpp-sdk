@@ -1455,6 +1455,78 @@ LiveClient::CancelMuteGroupUserOutcomeCallable LiveClient::cancelMuteGroupUserCa
 	return task->get_future();
 }
 
+LiveClient::CheckLiveMessageUsersInGroupOutcome LiveClient::checkLiveMessageUsersInGroup(const CheckLiveMessageUsersInGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckLiveMessageUsersInGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckLiveMessageUsersInGroupOutcome(CheckLiveMessageUsersInGroupResult(outcome.result()));
+	else
+		return CheckLiveMessageUsersInGroupOutcome(outcome.error());
+}
+
+void LiveClient::checkLiveMessageUsersInGroupAsync(const CheckLiveMessageUsersInGroupRequest& request, const CheckLiveMessageUsersInGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkLiveMessageUsersInGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::CheckLiveMessageUsersInGroupOutcomeCallable LiveClient::checkLiveMessageUsersInGroupCallable(const CheckLiveMessageUsersInGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckLiveMessageUsersInGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->checkLiveMessageUsersInGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::CheckLiveMessageUsersOnlineOutcome LiveClient::checkLiveMessageUsersOnline(const CheckLiveMessageUsersOnlineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckLiveMessageUsersOnlineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckLiveMessageUsersOnlineOutcome(CheckLiveMessageUsersOnlineResult(outcome.result()));
+	else
+		return CheckLiveMessageUsersOnlineOutcome(outcome.error());
+}
+
+void LiveClient::checkLiveMessageUsersOnlineAsync(const CheckLiveMessageUsersOnlineRequest& request, const CheckLiveMessageUsersOnlineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkLiveMessageUsersOnline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::CheckLiveMessageUsersOnlineOutcomeCallable LiveClient::checkLiveMessageUsersOnlineCallable(const CheckLiveMessageUsersOnlineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckLiveMessageUsersOnlineOutcome()>>(
+			[this, request]()
+			{
+			return this->checkLiveMessageUsersOnline(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::CloseLiveShiftOutcome LiveClient::closeLiveShift(const CloseLiveShiftRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1737,6 +1809,78 @@ LiveClient::CreateLiveDelayConfigOutcomeCallable LiveClient::createLiveDelayConf
 			[this, request]()
 			{
 			return this->createLiveDelayConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::CreateLiveMessageAppOutcome LiveClient::createLiveMessageApp(const CreateLiveMessageAppRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateLiveMessageAppOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateLiveMessageAppOutcome(CreateLiveMessageAppResult(outcome.result()));
+	else
+		return CreateLiveMessageAppOutcome(outcome.error());
+}
+
+void LiveClient::createLiveMessageAppAsync(const CreateLiveMessageAppRequest& request, const CreateLiveMessageAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createLiveMessageApp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::CreateLiveMessageAppOutcomeCallable LiveClient::createLiveMessageAppCallable(const CreateLiveMessageAppRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateLiveMessageAppOutcome()>>(
+			[this, request]()
+			{
+			return this->createLiveMessageApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::CreateLiveMessageGroupOutcome LiveClient::createLiveMessageGroup(const CreateLiveMessageGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateLiveMessageGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateLiveMessageGroupOutcome(CreateLiveMessageGroupResult(outcome.result()));
+	else
+		return CreateLiveMessageGroupOutcome(outcome.error());
+}
+
+void LiveClient::createLiveMessageGroupAsync(const CreateLiveMessageGroupRequest& request, const CreateLiveMessageGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createLiveMessageGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::CreateLiveMessageGroupOutcomeCallable LiveClient::createLiveMessageGroupCallable(const CreateLiveMessageGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateLiveMessageGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createLiveMessageGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2853,6 +2997,42 @@ LiveClient::DeleteLiveLazyPullStreamInfoConfigOutcomeCallable LiveClient::delete
 			[this, request]()
 			{
 			return this->deleteLiveLazyPullStreamInfoConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DeleteLiveMessageGroupOutcome LiveClient::deleteLiveMessageGroup(const DeleteLiveMessageGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveMessageGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveMessageGroupOutcome(DeleteLiveMessageGroupResult(outcome.result()));
+	else
+		return DeleteLiveMessageGroupOutcome(outcome.error());
+}
+
+void LiveClient::deleteLiveMessageGroupAsync(const DeleteLiveMessageGroupRequest& request, const DeleteLiveMessageGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLiveMessageGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveMessageGroupOutcomeCallable LiveClient::deleteLiveMessageGroupCallable(const DeleteLiveMessageGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveMessageGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLiveMessageGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6063,6 +6243,114 @@ LiveClient::DescribeLiveLazyPullStreamConfigOutcomeCallable LiveClient::describe
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveMessageAppOutcome LiveClient::describeLiveMessageApp(const DescribeLiveMessageAppRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveMessageAppOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveMessageAppOutcome(DescribeLiveMessageAppResult(outcome.result()));
+	else
+		return DescribeLiveMessageAppOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveMessageAppAsync(const DescribeLiveMessageAppRequest& request, const DescribeLiveMessageAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveMessageApp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveMessageAppOutcomeCallable LiveClient::describeLiveMessageAppCallable(const DescribeLiveMessageAppRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveMessageAppOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveMessageApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveMessageGroupOutcome LiveClient::describeLiveMessageGroup(const DescribeLiveMessageGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveMessageGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveMessageGroupOutcome(DescribeLiveMessageGroupResult(outcome.result()));
+	else
+		return DescribeLiveMessageGroupOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveMessageGroupAsync(const DescribeLiveMessageGroupRequest& request, const DescribeLiveMessageGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveMessageGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveMessageGroupOutcomeCallable LiveClient::describeLiveMessageGroupCallable(const DescribeLiveMessageGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveMessageGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveMessageGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveMessageGroupBandOutcome LiveClient::describeLiveMessageGroupBand(const DescribeLiveMessageGroupBandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveMessageGroupBandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveMessageGroupBandOutcome(DescribeLiveMessageGroupBandResult(outcome.result()));
+	else
+		return DescribeLiveMessageGroupBandOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveMessageGroupBandAsync(const DescribeLiveMessageGroupBandRequest& request, const DescribeLiveMessageGroupBandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveMessageGroupBand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveMessageGroupBandOutcomeCallable LiveClient::describeLiveMessageGroupBandCallable(const DescribeLiveMessageGroupBandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveMessageGroupBandOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveMessageGroupBand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLivePackageConfigOutcome LiveClient::describeLivePackageConfig(const DescribeLivePackageConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -9195,6 +9483,42 @@ LiveClient::JoinMessageGroupOutcomeCallable LiveClient::joinMessageGroupCallable
 	return task->get_future();
 }
 
+LiveClient::KickLiveMessageGroupUserOutcome LiveClient::kickLiveMessageGroupUser(const KickLiveMessageGroupUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return KickLiveMessageGroupUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return KickLiveMessageGroupUserOutcome(KickLiveMessageGroupUserResult(outcome.result()));
+	else
+		return KickLiveMessageGroupUserOutcome(outcome.error());
+}
+
+void LiveClient::kickLiveMessageGroupUserAsync(const KickLiveMessageGroupUserRequest& request, const KickLiveMessageGroupUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, kickLiveMessageGroupUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::KickLiveMessageGroupUserOutcomeCallable LiveClient::kickLiveMessageGroupUserCallable(const KickLiveMessageGroupUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<KickLiveMessageGroupUserOutcome()>>(
+			[this, request]()
+			{
+			return this->kickLiveMessageGroupUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::LeaveMessageGroupOutcome LiveClient::leaveMessageGroup(const LeaveMessageGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -9333,6 +9657,150 @@ LiveClient::ListLiveDelayConfigOutcomeCallable LiveClient::listLiveDelayConfigCa
 			[this, request]()
 			{
 			return this->listLiveDelayConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::ListLiveMessageAppsOutcome LiveClient::listLiveMessageApps(const ListLiveMessageAppsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListLiveMessageAppsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListLiveMessageAppsOutcome(ListLiveMessageAppsResult(outcome.result()));
+	else
+		return ListLiveMessageAppsOutcome(outcome.error());
+}
+
+void LiveClient::listLiveMessageAppsAsync(const ListLiveMessageAppsRequest& request, const ListLiveMessageAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listLiveMessageApps(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ListLiveMessageAppsOutcomeCallable LiveClient::listLiveMessageAppsCallable(const ListLiveMessageAppsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListLiveMessageAppsOutcome()>>(
+			[this, request]()
+			{
+			return this->listLiveMessageApps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::ListLiveMessageGroupMessagesOutcome LiveClient::listLiveMessageGroupMessages(const ListLiveMessageGroupMessagesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListLiveMessageGroupMessagesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListLiveMessageGroupMessagesOutcome(ListLiveMessageGroupMessagesResult(outcome.result()));
+	else
+		return ListLiveMessageGroupMessagesOutcome(outcome.error());
+}
+
+void LiveClient::listLiveMessageGroupMessagesAsync(const ListLiveMessageGroupMessagesRequest& request, const ListLiveMessageGroupMessagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listLiveMessageGroupMessages(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ListLiveMessageGroupMessagesOutcomeCallable LiveClient::listLiveMessageGroupMessagesCallable(const ListLiveMessageGroupMessagesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListLiveMessageGroupMessagesOutcome()>>(
+			[this, request]()
+			{
+			return this->listLiveMessageGroupMessages(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::ListLiveMessageGroupUsersOutcome LiveClient::listLiveMessageGroupUsers(const ListLiveMessageGroupUsersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListLiveMessageGroupUsersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListLiveMessageGroupUsersOutcome(ListLiveMessageGroupUsersResult(outcome.result()));
+	else
+		return ListLiveMessageGroupUsersOutcome(outcome.error());
+}
+
+void LiveClient::listLiveMessageGroupUsersAsync(const ListLiveMessageGroupUsersRequest& request, const ListLiveMessageGroupUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listLiveMessageGroupUsers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ListLiveMessageGroupUsersOutcomeCallable LiveClient::listLiveMessageGroupUsersCallable(const ListLiveMessageGroupUsersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListLiveMessageGroupUsersOutcome()>>(
+			[this, request]()
+			{
+			return this->listLiveMessageGroupUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::ListLiveMessageGroupsOutcome LiveClient::listLiveMessageGroups(const ListLiveMessageGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListLiveMessageGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListLiveMessageGroupsOutcome(ListLiveMessageGroupsResult(outcome.result()));
+	else
+		return ListLiveMessageGroupsOutcome(outcome.error());
+}
+
+void LiveClient::listLiveMessageGroupsAsync(const ListLiveMessageGroupsRequest& request, const ListLiveMessageGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listLiveMessageGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ListLiveMessageGroupsOutcomeCallable LiveClient::listLiveMessageGroupsCallable(const ListLiveMessageGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListLiveMessageGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->listLiveMessageGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9909,6 +10377,222 @@ LiveClient::ModifyLiveDomainSchdmByPropertyOutcomeCallable LiveClient::modifyLiv
 			[this, request]()
 			{
 			return this->modifyLiveDomainSchdmByProperty(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::ModifyLiveMessageAppAuditOutcome LiveClient::modifyLiveMessageAppAudit(const ModifyLiveMessageAppAuditRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyLiveMessageAppAuditOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyLiveMessageAppAuditOutcome(ModifyLiveMessageAppAuditResult(outcome.result()));
+	else
+		return ModifyLiveMessageAppAuditOutcome(outcome.error());
+}
+
+void LiveClient::modifyLiveMessageAppAuditAsync(const ModifyLiveMessageAppAuditRequest& request, const ModifyLiveMessageAppAuditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyLiveMessageAppAudit(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ModifyLiveMessageAppAuditOutcomeCallable LiveClient::modifyLiveMessageAppAuditCallable(const ModifyLiveMessageAppAuditRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyLiveMessageAppAuditOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyLiveMessageAppAudit(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::ModifyLiveMessageAppCallbackOutcome LiveClient::modifyLiveMessageAppCallback(const ModifyLiveMessageAppCallbackRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyLiveMessageAppCallbackOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyLiveMessageAppCallbackOutcome(ModifyLiveMessageAppCallbackResult(outcome.result()));
+	else
+		return ModifyLiveMessageAppCallbackOutcome(outcome.error());
+}
+
+void LiveClient::modifyLiveMessageAppCallbackAsync(const ModifyLiveMessageAppCallbackRequest& request, const ModifyLiveMessageAppCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyLiveMessageAppCallback(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ModifyLiveMessageAppCallbackOutcomeCallable LiveClient::modifyLiveMessageAppCallbackCallable(const ModifyLiveMessageAppCallbackRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyLiveMessageAppCallbackOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyLiveMessageAppCallback(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::ModifyLiveMessageAppDisableOutcome LiveClient::modifyLiveMessageAppDisable(const ModifyLiveMessageAppDisableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyLiveMessageAppDisableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyLiveMessageAppDisableOutcome(ModifyLiveMessageAppDisableResult(outcome.result()));
+	else
+		return ModifyLiveMessageAppDisableOutcome(outcome.error());
+}
+
+void LiveClient::modifyLiveMessageAppDisableAsync(const ModifyLiveMessageAppDisableRequest& request, const ModifyLiveMessageAppDisableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyLiveMessageAppDisable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ModifyLiveMessageAppDisableOutcomeCallable LiveClient::modifyLiveMessageAppDisableCallable(const ModifyLiveMessageAppDisableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyLiveMessageAppDisableOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyLiveMessageAppDisable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::ModifyLiveMessageGroupOutcome LiveClient::modifyLiveMessageGroup(const ModifyLiveMessageGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyLiveMessageGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyLiveMessageGroupOutcome(ModifyLiveMessageGroupResult(outcome.result()));
+	else
+		return ModifyLiveMessageGroupOutcome(outcome.error());
+}
+
+void LiveClient::modifyLiveMessageGroupAsync(const ModifyLiveMessageGroupRequest& request, const ModifyLiveMessageGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyLiveMessageGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ModifyLiveMessageGroupOutcomeCallable LiveClient::modifyLiveMessageGroupCallable(const ModifyLiveMessageGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyLiveMessageGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyLiveMessageGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::ModifyLiveMessageGroupBandOutcome LiveClient::modifyLiveMessageGroupBand(const ModifyLiveMessageGroupBandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyLiveMessageGroupBandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyLiveMessageGroupBandOutcome(ModifyLiveMessageGroupBandResult(outcome.result()));
+	else
+		return ModifyLiveMessageGroupBandOutcome(outcome.error());
+}
+
+void LiveClient::modifyLiveMessageGroupBandAsync(const ModifyLiveMessageGroupBandRequest& request, const ModifyLiveMessageGroupBandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyLiveMessageGroupBand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ModifyLiveMessageGroupBandOutcomeCallable LiveClient::modifyLiveMessageGroupBandCallable(const ModifyLiveMessageGroupBandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyLiveMessageGroupBandOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyLiveMessageGroupBand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::ModifyLiveMessageUserInfoOutcome LiveClient::modifyLiveMessageUserInfo(const ModifyLiveMessageUserInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyLiveMessageUserInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyLiveMessageUserInfoOutcome(ModifyLiveMessageUserInfoResult(outcome.result()));
+	else
+		return ModifyLiveMessageUserInfoOutcome(outcome.error());
+}
+
+void LiveClient::modifyLiveMessageUserInfoAsync(const ModifyLiveMessageUserInfoRequest& request, const ModifyLiveMessageUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyLiveMessageUserInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ModifyLiveMessageUserInfoOutcomeCallable LiveClient::modifyLiveMessageUserInfoCallable(const ModifyLiveMessageUserInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyLiveMessageUserInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyLiveMessageUserInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -10557,6 +11241,78 @@ LiveClient::SendLikeOutcomeCallable LiveClient::sendLikeCallable(const SendLikeR
 			[this, request]()
 			{
 			return this->sendLike(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::SendLiveMessageGroupOutcome LiveClient::sendLiveMessageGroup(const SendLiveMessageGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SendLiveMessageGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SendLiveMessageGroupOutcome(SendLiveMessageGroupResult(outcome.result()));
+	else
+		return SendLiveMessageGroupOutcome(outcome.error());
+}
+
+void LiveClient::sendLiveMessageGroupAsync(const SendLiveMessageGroupRequest& request, const SendLiveMessageGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sendLiveMessageGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::SendLiveMessageGroupOutcomeCallable LiveClient::sendLiveMessageGroupCallable(const SendLiveMessageGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SendLiveMessageGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->sendLiveMessageGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::SendLiveMessageUserOutcome LiveClient::sendLiveMessageUser(const SendLiveMessageUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SendLiveMessageUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SendLiveMessageUserOutcome(SendLiveMessageUserResult(outcome.result()));
+	else
+		return SendLiveMessageUserOutcome(outcome.error());
+}
+
+void LiveClient::sendLiveMessageUserAsync(const SendLiveMessageUserRequest& request, const SendLiveMessageUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sendLiveMessageUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::SendLiveMessageUserOutcomeCallable LiveClient::sendLiveMessageUserCallable(const SendLiveMessageUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SendLiveMessageUserOutcome()>>(
+			[this, request]()
+			{
+			return this->sendLiveMessageUser(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
