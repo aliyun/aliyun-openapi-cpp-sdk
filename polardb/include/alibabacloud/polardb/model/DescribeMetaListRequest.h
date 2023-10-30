@@ -32,6 +32,8 @@ public:
 	~DescribeMetaListRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getRegionCode() const;
+	void setRegionCode(const std::string &regionCode);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
@@ -57,6 +59,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string regionCode_;
 	int pageNumber_;
 	std::string accessKeyId_;
 	std::string securityToken_;

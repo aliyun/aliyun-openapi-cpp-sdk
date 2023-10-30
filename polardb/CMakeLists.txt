@@ -39,6 +39,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/CreateAccountResult.h
 	include/alibabacloud/polardb/model/CreateBackupRequest.h
 	include/alibabacloud/polardb/model/CreateBackupResult.h
+	include/alibabacloud/polardb/model/CreateColdStorageInstanceRequest.h
+	include/alibabacloud/polardb/model/CreateColdStorageInstanceResult.h
 	include/alibabacloud/polardb/model/CreateDBClusterRequest.h
 	include/alibabacloud/polardb/model/CreateDBClusterResult.h
 	include/alibabacloud/polardb/model/CreateDBClusterEndpointRequest.h
@@ -189,6 +191,10 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeUserEncryptionKeyListResult.h
 	include/alibabacloud/polardb/model/DescribeVSwitchesRequest.h
 	include/alibabacloud/polardb/model/DescribeVSwitchesResult.h
+	include/alibabacloud/polardb/model/DisableDBClusterServerlessRequest.h
+	include/alibabacloud/polardb/model/DisableDBClusterServerlessResult.h
+	include/alibabacloud/polardb/model/EnableDBClusterServerlessRequest.h
+	include/alibabacloud/polardb/model/EnableDBClusterServerlessResult.h
 	include/alibabacloud/polardb/model/EnableFirewallRulesRequest.h
 	include/alibabacloud/polardb/model/EnableFirewallRulesResult.h
 	include/alibabacloud/polardb/model/EvaluateRegionResourceRequest.h
@@ -320,6 +326,8 @@ set(polardb_src
 	src/model/CreateAccountResult.cc
 	src/model/CreateBackupRequest.cc
 	src/model/CreateBackupResult.cc
+	src/model/CreateColdStorageInstanceRequest.cc
+	src/model/CreateColdStorageInstanceResult.cc
 	src/model/CreateDBClusterRequest.cc
 	src/model/CreateDBClusterResult.cc
 	src/model/CreateDBClusterEndpointRequest.cc
@@ -470,6 +478,10 @@ set(polardb_src
 	src/model/DescribeUserEncryptionKeyListResult.cc
 	src/model/DescribeVSwitchesRequest.cc
 	src/model/DescribeVSwitchesResult.cc
+	src/model/DisableDBClusterServerlessRequest.cc
+	src/model/DisableDBClusterServerlessResult.cc
+	src/model/EnableDBClusterServerlessRequest.cc
+	src/model/EnableDBClusterServerlessResult.cc
 	src/model/EnableFirewallRulesRequest.cc
 	src/model/EnableFirewallRulesResult.cc
 	src/model/EvaluateRegionResourceRequest.cc

@@ -133,6 +133,15 @@ void CreateDBClusterEndpointRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string CreateDBClusterEndpointRequest::getVSwitchId() const {
+  return vSwitchId_;
+}
+
+void CreateDBClusterEndpointRequest::setVSwitchId(const std::string &vSwitchId) {
+  vSwitchId_ = vSwitchId;
+  setParameter(std::string("VSwitchId"), vSwitchId);
+}
+
 std::string CreateDBClusterEndpointRequest::getNodes() const {
   return nodes_;
 }
@@ -140,5 +149,14 @@ std::string CreateDBClusterEndpointRequest::getNodes() const {
 void CreateDBClusterEndpointRequest::setNodes(const std::string &nodes) {
   nodes_ = nodes;
   setParameter(std::string("Nodes"), nodes);
+}
+
+std::string CreateDBClusterEndpointRequest::getVPCId() const {
+  return vPCId_;
+}
+
+void CreateDBClusterEndpointRequest::setVPCId(const std::string &vPCId) {
+  vPCId_ = vPCId;
+  setParameter(std::string("VPCId"), vPCId);
 }
 

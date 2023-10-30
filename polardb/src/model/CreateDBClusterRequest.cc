@@ -201,6 +201,15 @@ void CreateDBClusterRequest::setDBMinorVersion(const std::string &dBMinorVersion
   setParameter(std::string("DBMinorVersion"), dBMinorVersion);
 }
 
+int CreateDBClusterRequest::getProvisionedIops() const {
+  return provisionedIops_;
+}
+
+void CreateDBClusterRequest::setProvisionedIops(int provisionedIops) {
+  provisionedIops_ = provisionedIops;
+  setParameter(std::string("ProvisionedIops"), std::to_string(provisionedIops));
+}
+
 bool CreateDBClusterRequest::getAutoRenew() const {
   return autoRenew_;
 }

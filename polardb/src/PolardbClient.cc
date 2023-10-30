@@ -375,6 +375,42 @@ PolardbClient::CreateBackupOutcomeCallable PolardbClient::createBackupCallable(c
 	return task->get_future();
 }
 
+PolardbClient::CreateColdStorageInstanceOutcome PolardbClient::createColdStorageInstance(const CreateColdStorageInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateColdStorageInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateColdStorageInstanceOutcome(CreateColdStorageInstanceResult(outcome.result()));
+	else
+		return CreateColdStorageInstanceOutcome(outcome.error());
+}
+
+void PolardbClient::createColdStorageInstanceAsync(const CreateColdStorageInstanceRequest& request, const CreateColdStorageInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createColdStorageInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::CreateColdStorageInstanceOutcomeCallable PolardbClient::createColdStorageInstanceCallable(const CreateColdStorageInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateColdStorageInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->createColdStorageInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::CreateDBClusterOutcome PolardbClient::createDBCluster(const CreateDBClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3069,6 +3105,78 @@ PolardbClient::DescribeVSwitchesOutcomeCallable PolardbClient::describeVSwitches
 			[this, request]()
 			{
 			return this->describeVSwitches(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DisableDBClusterServerlessOutcome PolardbClient::disableDBClusterServerless(const DisableDBClusterServerlessRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableDBClusterServerlessOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableDBClusterServerlessOutcome(DisableDBClusterServerlessResult(outcome.result()));
+	else
+		return DisableDBClusterServerlessOutcome(outcome.error());
+}
+
+void PolardbClient::disableDBClusterServerlessAsync(const DisableDBClusterServerlessRequest& request, const DisableDBClusterServerlessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableDBClusterServerless(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DisableDBClusterServerlessOutcomeCallable PolardbClient::disableDBClusterServerlessCallable(const DisableDBClusterServerlessRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableDBClusterServerlessOutcome()>>(
+			[this, request]()
+			{
+			return this->disableDBClusterServerless(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::EnableDBClusterServerlessOutcome PolardbClient::enableDBClusterServerless(const EnableDBClusterServerlessRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableDBClusterServerlessOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableDBClusterServerlessOutcome(EnableDBClusterServerlessResult(outcome.result()));
+	else
+		return EnableDBClusterServerlessOutcome(outcome.error());
+}
+
+void PolardbClient::enableDBClusterServerlessAsync(const EnableDBClusterServerlessRequest& request, const EnableDBClusterServerlessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableDBClusterServerless(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::EnableDBClusterServerlessOutcomeCallable PolardbClient::enableDBClusterServerlessCallable(const EnableDBClusterServerlessRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableDBClusterServerlessOutcome()>>(
+			[this, request]()
+			{
+			return this->enableDBClusterServerless(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

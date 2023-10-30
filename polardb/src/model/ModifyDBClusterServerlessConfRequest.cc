@@ -61,6 +61,15 @@ void ModifyDBClusterServerlessConfRequest::setScaleMax(const std::string &scaleM
   setParameter(std::string("ScaleMax"), scaleMax);
 }
 
+std::string ModifyDBClusterServerlessConfRequest::getPlannedEndTime() const {
+  return plannedEndTime_;
+}
+
+void ModifyDBClusterServerlessConfRequest::setPlannedEndTime(const std::string &plannedEndTime) {
+  plannedEndTime_ = plannedEndTime;
+  setParameter(std::string("PlannedEndTime"), plannedEndTime);
+}
+
 std::string ModifyDBClusterServerlessConfRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -133,6 +142,15 @@ void ModifyDBClusterServerlessConfRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string ModifyDBClusterServerlessConfRequest::getPlannedStartTime() const {
+  return plannedStartTime_;
+}
+
+void ModifyDBClusterServerlessConfRequest::setPlannedStartTime(const std::string &plannedStartTime) {
+  plannedStartTime_ = plannedStartTime;
+  setParameter(std::string("PlannedStartTime"), plannedStartTime);
+}
+
 std::string ModifyDBClusterServerlessConfRequest::getScaleRoNumMin() const {
   return scaleRoNumMin_;
 }
@@ -149,5 +167,14 @@ std::string ModifyDBClusterServerlessConfRequest::getAllowShutDown() const {
 void ModifyDBClusterServerlessConfRequest::setAllowShutDown(const std::string &allowShutDown) {
   allowShutDown_ = allowShutDown;
   setParameter(std::string("AllowShutDown"), allowShutDown);
+}
+
+bool ModifyDBClusterServerlessConfRequest::getFromTimeService() const {
+  return fromTimeService_;
+}
+
+void ModifyDBClusterServerlessConfRequest::setFromTimeService(bool fromTimeService) {
+  fromTimeService_ = fromTimeService;
+  setParameter(std::string("FromTimeService"), fromTimeService ? "true" : "false");
 }
 

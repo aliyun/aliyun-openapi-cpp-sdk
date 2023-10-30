@@ -40,6 +40,8 @@
 #include "model/CreateAccountResult.h"
 #include "model/CreateBackupRequest.h"
 #include "model/CreateBackupResult.h"
+#include "model/CreateColdStorageInstanceRequest.h"
+#include "model/CreateColdStorageInstanceResult.h"
 #include "model/CreateDBClusterRequest.h"
 #include "model/CreateDBClusterResult.h"
 #include "model/CreateDBClusterEndpointRequest.h"
@@ -190,6 +192,10 @@
 #include "model/DescribeUserEncryptionKeyListResult.h"
 #include "model/DescribeVSwitchesRequest.h"
 #include "model/DescribeVSwitchesResult.h"
+#include "model/DisableDBClusterServerlessRequest.h"
+#include "model/DisableDBClusterServerlessResult.h"
+#include "model/EnableDBClusterServerlessRequest.h"
+#include "model/EnableDBClusterServerlessResult.h"
 #include "model/EnableFirewallRulesRequest.h"
 #include "model/EnableFirewallRulesResult.h"
 #include "model/EvaluateRegionResourceRequest.h"
@@ -336,6 +342,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateBackupResult> CreateBackupOutcome;
 			typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::CreateBackupRequest&, const CreateBackupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupAsyncHandler;
+			typedef Outcome<Error, Model::CreateColdStorageInstanceResult> CreateColdStorageInstanceOutcome;
+			typedef std::future<CreateColdStorageInstanceOutcome> CreateColdStorageInstanceOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::CreateColdStorageInstanceRequest&, const CreateColdStorageInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateColdStorageInstanceAsyncHandler;
 			typedef Outcome<Error, Model::CreateDBClusterResult> CreateDBClusterOutcome;
 			typedef std::future<CreateDBClusterOutcome> CreateDBClusterOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::CreateDBClusterRequest&, const CreateDBClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBClusterAsyncHandler;
@@ -561,6 +570,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVSwitchesResult> DescribeVSwitchesOutcome;
 			typedef std::future<DescribeVSwitchesOutcome> DescribeVSwitchesOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeVSwitchesRequest&, const DescribeVSwitchesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVSwitchesAsyncHandler;
+			typedef Outcome<Error, Model::DisableDBClusterServerlessResult> DisableDBClusterServerlessOutcome;
+			typedef std::future<DisableDBClusterServerlessOutcome> DisableDBClusterServerlessOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DisableDBClusterServerlessRequest&, const DisableDBClusterServerlessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableDBClusterServerlessAsyncHandler;
+			typedef Outcome<Error, Model::EnableDBClusterServerlessResult> EnableDBClusterServerlessOutcome;
+			typedef std::future<EnableDBClusterServerlessOutcome> EnableDBClusterServerlessOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::EnableDBClusterServerlessRequest&, const EnableDBClusterServerlessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableDBClusterServerlessAsyncHandler;
 			typedef Outcome<Error, Model::EnableFirewallRulesResult> EnableFirewallRulesOutcome;
 			typedef std::future<EnableFirewallRulesOutcome> EnableFirewallRulesOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::EnableFirewallRulesRequest&, const EnableFirewallRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableFirewallRulesAsyncHandler;
@@ -758,6 +773,9 @@ namespace AlibabaCloud
 			CreateBackupOutcome createBackup(const Model::CreateBackupRequest &request)const;
 			void createBackupAsync(const Model::CreateBackupRequest& request, const CreateBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateBackupOutcomeCallable createBackupCallable(const Model::CreateBackupRequest& request) const;
+			CreateColdStorageInstanceOutcome createColdStorageInstance(const Model::CreateColdStorageInstanceRequest &request)const;
+			void createColdStorageInstanceAsync(const Model::CreateColdStorageInstanceRequest& request, const CreateColdStorageInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateColdStorageInstanceOutcomeCallable createColdStorageInstanceCallable(const Model::CreateColdStorageInstanceRequest& request) const;
 			CreateDBClusterOutcome createDBCluster(const Model::CreateDBClusterRequest &request)const;
 			void createDBClusterAsync(const Model::CreateDBClusterRequest& request, const CreateDBClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDBClusterOutcomeCallable createDBClusterCallable(const Model::CreateDBClusterRequest& request) const;
@@ -983,6 +1001,12 @@ namespace AlibabaCloud
 			DescribeVSwitchesOutcome describeVSwitches(const Model::DescribeVSwitchesRequest &request)const;
 			void describeVSwitchesAsync(const Model::DescribeVSwitchesRequest& request, const DescribeVSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVSwitchesOutcomeCallable describeVSwitchesCallable(const Model::DescribeVSwitchesRequest& request) const;
+			DisableDBClusterServerlessOutcome disableDBClusterServerless(const Model::DisableDBClusterServerlessRequest &request)const;
+			void disableDBClusterServerlessAsync(const Model::DisableDBClusterServerlessRequest& request, const DisableDBClusterServerlessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DisableDBClusterServerlessOutcomeCallable disableDBClusterServerlessCallable(const Model::DisableDBClusterServerlessRequest& request) const;
+			EnableDBClusterServerlessOutcome enableDBClusterServerless(const Model::EnableDBClusterServerlessRequest &request)const;
+			void enableDBClusterServerlessAsync(const Model::EnableDBClusterServerlessRequest& request, const EnableDBClusterServerlessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableDBClusterServerlessOutcomeCallable enableDBClusterServerlessCallable(const Model::EnableDBClusterServerlessRequest& request) const;
 			EnableFirewallRulesOutcome enableFirewallRules(const Model::EnableFirewallRulesRequest &request)const;
 			void enableFirewallRulesAsync(const Model::EnableFirewallRulesRequest& request, const EnableFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableFirewallRulesOutcomeCallable enableFirewallRulesCallable(const Model::EnableFirewallRulesRequest& request) const;

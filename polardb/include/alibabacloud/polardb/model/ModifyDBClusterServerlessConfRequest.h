@@ -38,6 +38,8 @@ public:
 	void setScaleApRoNumMax(const std::string &scaleApRoNumMax);
 	std::string getScaleMax() const;
 	void setScaleMax(const std::string &scaleMax);
+	std::string getPlannedEndTime() const;
+	void setPlannedEndTime(const std::string &plannedEndTime);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecondsUntilAutoPause() const;
@@ -54,16 +56,21 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getPlannedStartTime() const;
+	void setPlannedStartTime(const std::string &plannedStartTime);
 	std::string getScaleRoNumMin() const;
 	void setScaleRoNumMin(const std::string &scaleRoNumMin);
 	std::string getAllowShutDown() const;
 	void setAllowShutDown(const std::string &allowShutDown);
+	bool getFromTimeService() const;
+	void setFromTimeService(bool fromTimeService);
 
 private:
 	std::string scaleRoNumMax_;
 	long resourceOwnerId_;
 	std::string scaleApRoNumMax_;
 	std::string scaleMax_;
+	std::string plannedEndTime_;
 	std::string accessKeyId_;
 	std::string secondsUntilAutoPause_;
 	std::string scaleApRoNumMin_;
@@ -72,8 +79,10 @@ private:
 	std::string dBClusterId_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string plannedStartTime_;
 	std::string scaleRoNumMin_;
 	std::string allowShutDown_;
+	bool fromTimeService_;
 };
 } // namespace Model
 } // namespace Polardb

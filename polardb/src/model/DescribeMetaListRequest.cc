@@ -34,6 +34,15 @@ void DescribeMetaListRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeMetaListRequest::getRegionCode() const {
+  return regionCode_;
+}
+
+void DescribeMetaListRequest::setRegionCode(const std::string &regionCode) {
+  regionCode_ = regionCode;
+  setParameter(std::string("RegionCode"), regionCode);
+}
+
 int DescribeMetaListRequest::getPageNumber() const {
   return pageNumber_;
 }

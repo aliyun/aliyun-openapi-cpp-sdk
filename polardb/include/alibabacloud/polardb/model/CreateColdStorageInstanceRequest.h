@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_MODIFYDBENDPOINTADDRESSREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_MODIFYDBENDPOINTADDRESSREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_CREATECOLDSTORAGEINSTANCEREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_CREATECOLDSTORAGEINSTANCEREQUEST_H_
 
 #include <alibabacloud/polardb/PolardbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,56 +26,41 @@
 namespace AlibabaCloud {
 namespace Polardb {
 namespace Model {
-class ALIBABACLOUD_POLARDB_EXPORT ModifyDBEndpointAddressRequest : public RpcServiceRequest {
+class ALIBABACLOUD_POLARDB_EXPORT CreateColdStorageInstanceRequest : public RpcServiceRequest {
 public:
-	ModifyDBEndpointAddressRequest();
-	~ModifyDBEndpointAddressRequest();
+	CreateColdStorageInstanceRequest();
+	~CreateColdStorageInstanceRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getConnectionStringPrefix() const;
-	void setConnectionStringPrefix(const std::string &connectionStringPrefix);
-	std::string getDBEndpointId() const;
-	void setDBEndpointId(const std::string &dBEndpointId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getPrivateZoneName() const;
-	void setPrivateZoneName(const std::string &privateZoneName);
-	std::string getPrivateZoneAddressPrefix() const;
-	void setPrivateZoneAddressPrefix(const std::string &privateZoneAddressPrefix);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getDBClusterId() const;
 	void setDBClusterId(const std::string &dBClusterId);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getColdStorageInstanceDescription() const;
+	void setColdStorageInstanceDescription(const std::string &coldStorageInstanceDescription);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getVSwitchId() const;
-	void setVSwitchId(const std::string &vSwitchId);
-	std::string getPort() const;
-	void setPort(const std::string &port);
-	std::string getNetType() const;
-	void setNetType(const std::string &netType);
-	std::string getVPCId() const;
-	void setVPCId(const std::string &vPCId);
 
 private:
 	long resourceOwnerId_;
-	std::string connectionStringPrefix_;
-	std::string dBEndpointId_;
+	std::string clientToken_;
 	std::string accessKeyId_;
-	std::string privateZoneName_;
-	std::string privateZoneAddressPrefix_;
+	std::string resourceGroupId_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;
+	std::string coldStorageInstanceDescription_;
 	long ownerId_;
-	std::string vSwitchId_;
-	std::string port_;
-	std::string netType_;
-	std::string vPCId_;
 };
 } // namespace Model
 } // namespace Polardb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_POLARDB_MODEL_MODIFYDBENDPOINTADDRESSREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_CREATECOLDSTORAGEINSTANCEREQUEST_H_

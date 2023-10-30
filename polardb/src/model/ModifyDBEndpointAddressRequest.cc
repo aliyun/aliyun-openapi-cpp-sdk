@@ -115,6 +115,15 @@ void ModifyDBEndpointAddressRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string ModifyDBEndpointAddressRequest::getVSwitchId() const {
+  return vSwitchId_;
+}
+
+void ModifyDBEndpointAddressRequest::setVSwitchId(const std::string &vSwitchId) {
+  vSwitchId_ = vSwitchId;
+  setParameter(std::string("VSwitchId"), vSwitchId);
+}
+
 std::string ModifyDBEndpointAddressRequest::getPort() const {
   return port_;
 }
@@ -131,5 +140,14 @@ std::string ModifyDBEndpointAddressRequest::getNetType() const {
 void ModifyDBEndpointAddressRequest::setNetType(const std::string &netType) {
   netType_ = netType;
   setParameter(std::string("NetType"), netType);
+}
+
+std::string ModifyDBEndpointAddressRequest::getVPCId() const {
+  return vPCId_;
+}
+
+void ModifyDBEndpointAddressRequest::setVPCId(const std::string &vPCId) {
+  vPCId_ = vPCId;
+  setParameter(std::string("VPCId"), vPCId);
 }
 

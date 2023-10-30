@@ -54,6 +54,8 @@ public:
 	void setVPCId(const std::string &vPCId);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
+	std::string getZoneType() const;
+	void setZoneType(const std::string &zoneType);
 	bool getFromTimeService() const;
 	void setFromTimeService(bool fromTimeService);
 
@@ -70,6 +72,7 @@ private:
 	std::string plannedStartTime_;
 	std::string vPCId_;
 	std::string zoneId_;
+	std::string zoneType_;
 	bool fromTimeService_;
 };
 } // namespace Model

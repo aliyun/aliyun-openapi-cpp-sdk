@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_MODIFYDBENDPOINTADDRESSREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_MODIFYDBENDPOINTADDRESSREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_ENABLEDBCLUSTERSERVERLESSREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_ENABLEDBCLUSTERSERVERLESSREQUEST_H_
 
 #include <alibabacloud/polardb/PolardbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,22 +26,24 @@
 namespace AlibabaCloud {
 namespace Polardb {
 namespace Model {
-class ALIBABACLOUD_POLARDB_EXPORT ModifyDBEndpointAddressRequest : public RpcServiceRequest {
+class ALIBABACLOUD_POLARDB_EXPORT EnableDBClusterServerlessRequest : public RpcServiceRequest {
 public:
-	ModifyDBEndpointAddressRequest();
-	~ModifyDBEndpointAddressRequest();
+	EnableDBClusterServerlessRequest();
+	~EnableDBClusterServerlessRequest();
+	std::string getScaleRoNumMax() const;
+	void setScaleRoNumMax(const std::string &scaleRoNumMax);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getConnectionStringPrefix() const;
-	void setConnectionStringPrefix(const std::string &connectionStringPrefix);
-	std::string getDBEndpointId() const;
-	void setDBEndpointId(const std::string &dBEndpointId);
+	std::string getScaleApRoNumMax() const;
+	void setScaleApRoNumMax(const std::string &scaleApRoNumMax);
+	std::string getScaleMax() const;
+	void setScaleMax(const std::string &scaleMax);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getPrivateZoneName() const;
-	void setPrivateZoneName(const std::string &privateZoneName);
-	std::string getPrivateZoneAddressPrefix() const;
-	void setPrivateZoneAddressPrefix(const std::string &privateZoneAddressPrefix);
+	std::string getScaleApRoNumMin() const;
+	void setScaleApRoNumMin(const std::string &scaleApRoNumMin);
+	std::string getScaleMin() const;
+	void setScaleMin(const std::string &scaleMin);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getDBClusterId() const;
@@ -50,32 +52,24 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getVSwitchId() const;
-	void setVSwitchId(const std::string &vSwitchId);
-	std::string getPort() const;
-	void setPort(const std::string &port);
-	std::string getNetType() const;
-	void setNetType(const std::string &netType);
-	std::string getVPCId() const;
-	void setVPCId(const std::string &vPCId);
+	std::string getScaleRoNumMin() const;
+	void setScaleRoNumMin(const std::string &scaleRoNumMin);
 
 private:
+	std::string scaleRoNumMax_;
 	long resourceOwnerId_;
-	std::string connectionStringPrefix_;
-	std::string dBEndpointId_;
+	std::string scaleApRoNumMax_;
+	std::string scaleMax_;
 	std::string accessKeyId_;
-	std::string privateZoneName_;
-	std::string privateZoneAddressPrefix_;
+	std::string scaleApRoNumMin_;
+	std::string scaleMin_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string vSwitchId_;
-	std::string port_;
-	std::string netType_;
-	std::string vPCId_;
+	std::string scaleRoNumMin_;
 };
 } // namespace Model
 } // namespace Polardb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_POLARDB_MODEL_MODIFYDBENDPOINTADDRESSREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_ENABLEDBCLUSTERSERVERLESSREQUEST_H_

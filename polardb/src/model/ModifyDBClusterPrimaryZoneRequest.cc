@@ -133,6 +133,15 @@ void ModifyDBClusterPrimaryZoneRequest::setZoneId(const std::string &zoneId) {
   setParameter(std::string("ZoneId"), zoneId);
 }
 
+std::string ModifyDBClusterPrimaryZoneRequest::getZoneType() const {
+  return zoneType_;
+}
+
+void ModifyDBClusterPrimaryZoneRequest::setZoneType(const std::string &zoneType) {
+  zoneType_ = zoneType;
+  setParameter(std::string("ZoneType"), zoneType);
+}
+
 bool ModifyDBClusterPrimaryZoneRequest::getFromTimeService() const {
   return fromTimeService_;
 }

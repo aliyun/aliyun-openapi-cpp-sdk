@@ -51,6 +51,10 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 			dBNodesObject.maxIOPS = std::stoi(valueDBNodesDBNode["MaxIOPS"].asString());
 		if(!valueDBNodesDBNode["DBNodeClass"].isNull())
 			dBNodesObject.dBNodeClass = valueDBNodesDBNode["DBNodeClass"].asString();
+		if(!valueDBNodesDBNode["CpuCores"].isNull())
+			dBNodesObject.cpuCores = valueDBNodesDBNode["CpuCores"].asString();
+		if(!valueDBNodesDBNode["MemorySize"].isNull())
+			dBNodesObject.memorySize = valueDBNodesDBNode["MemorySize"].asString();
 		if(!valueDBNodesDBNode["DBNodeRole"].isNull())
 			dBNodesObject.dBNodeRole = valueDBNodesDBNode["DBNodeRole"].asString();
 		if(!valueDBNodesDBNode["ZoneId"].isNull())
@@ -118,6 +122,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		isLatestVersion_ = value["IsLatestVersion"].asString() == "true";
 	if(!value["HasCompleteStandbyRes"].isNull())
 		hasCompleteStandbyRes_ = value["HasCompleteStandbyRes"].asString() == "true";
+	if(!value["HotStandbyClusterStatus"].isNull())
+		hotStandbyClusterStatus_ = value["HotStandbyClusterStatus"].asString();
 	if(!value["HotStandbyCluster"].isNull())
 		hotStandbyCluster_ = value["HotStandbyCluster"].asString();
 	if(!value["DataSyncMode"].isNull())
@@ -204,6 +210,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		architecture_ = value["Architecture"].asString();
 	if(!value["AiType"].isNull())
 		aiType_ = value["AiType"].asString();
+	if(!value["ProvisionedIops"].isNull())
+		provisionedIops_ = value["ProvisionedIops"].asString();
 
 }
 
@@ -317,6 +325,11 @@ std::string DescribeDBClusterAttributeResult::getLockMode()const
 	return lockMode_;
 }
 
+std::string DescribeDBClusterAttributeResult::getProvisionedIops()const
+{
+	return provisionedIops_;
+}
+
 long DescribeDBClusterAttributeResult::getStorageUsed()const
 {
 	return storageUsed_;
@@ -410,6 +423,11 @@ long DescribeDBClusterAttributeResult::getInodeUsed()const
 std::string DescribeDBClusterAttributeResult::getMaintainTime()const
 {
 	return maintainTime_;
+}
+
+std::string DescribeDBClusterAttributeResult::getHotStandbyClusterStatus()const
+{
+	return hotStandbyClusterStatus_;
 }
 
 long DescribeDBClusterAttributeResult::getBlktagTotal()const

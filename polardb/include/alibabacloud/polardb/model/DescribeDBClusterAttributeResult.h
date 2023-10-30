@@ -43,6 +43,7 @@ namespace AlibabaCloud
 				};
 				struct DBNode
 				{
+					std::string memorySize;
 					std::string dBNodeStatus;
 					std::string zoneId;
 					int maxConnections;
@@ -54,6 +55,7 @@ namespace AlibabaCloud
 					std::string dBNodeClass;
 					std::string serverlessType;
 					std::string creationTime;
+					std::string cpuCores;
 					std::string sccMode;
 					std::string masterId;
 					int failoverPriority;
@@ -92,6 +94,7 @@ namespace AlibabaCloud
 				std::string getExpired()const;
 				std::string getPayType()const;
 				std::string getLockMode()const;
+				std::string getProvisionedIops()const;
 				long getStorageUsed()const;
 				long getInodeTotal()const;
 				std::string getCompressStorageMode()const;
@@ -111,6 +114,7 @@ namespace AlibabaCloud
 				std::string getZoneIds()const;
 				long getInodeUsed()const;
 				std::string getMaintainTime()const;
+				std::string getHotStandbyClusterStatus()const;
 				long getBlktagTotal()const;
 				std::string getDataSyncMode()const;
 				std::string getDBClusterStatus()const;
@@ -151,6 +155,7 @@ namespace AlibabaCloud
 				std::string expired_;
 				std::string payType_;
 				std::string lockMode_;
+				std::string provisionedIops_;
 				long storageUsed_;
 				long inodeTotal_;
 				std::string compressStorageMode_;
@@ -170,6 +175,7 @@ namespace AlibabaCloud
 				std::string zoneIds_;
 				long inodeUsed_;
 				std::string maintainTime_;
+				std::string hotStandbyClusterStatus_;
 				long blktagTotal_;
 				std::string dataSyncMode_;
 				std::string dBClusterStatus_;

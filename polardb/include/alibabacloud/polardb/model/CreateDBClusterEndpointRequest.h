@@ -54,8 +54,12 @@ public:
 	void setDBEndpointDescription(const std::string &dBEndpointDescription);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVSwitchId() const;
+	void setVSwitchId(const std::string &vSwitchId);
 	std::string getNodes() const;
 	void setNodes(const std::string &nodes);
+	std::string getVPCId() const;
+	void setVPCId(const std::string &vPCId);
 
 private:
 	std::string autoAddNewNodes_;
@@ -70,7 +74,9 @@ private:
 	std::string endpointConfig_;
 	std::string dBEndpointDescription_;
 	long ownerId_;
+	std::string vSwitchId_;
 	std::string nodes_;
+	std::string vPCId_;
 };
 } // namespace Model
 } // namespace Polardb
