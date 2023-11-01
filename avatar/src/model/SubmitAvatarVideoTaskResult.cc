@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/avatar/model/SubmitAudioTo2DAvatarVideoTaskResult.h>
+#include <alibabacloud/avatar/model/SubmitAvatarVideoTaskResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Avatar;
 using namespace AlibabaCloud::Avatar::Model;
 
-SubmitAudioTo2DAvatarVideoTaskResult::SubmitAudioTo2DAvatarVideoTaskResult() :
+SubmitAvatarVideoTaskResult::SubmitAvatarVideoTaskResult() :
 	ServiceResult()
 {}
 
-SubmitAudioTo2DAvatarVideoTaskResult::SubmitAudioTo2DAvatarVideoTaskResult(const std::string &payload) :
+SubmitAvatarVideoTaskResult::SubmitAvatarVideoTaskResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SubmitAudioTo2DAvatarVideoTaskResult::~SubmitAudioTo2DAvatarVideoTaskResult()
+SubmitAvatarVideoTaskResult::~SubmitAvatarVideoTaskResult()
 {}
 
-void SubmitAudioTo2DAvatarVideoTaskResult::parse(const std::string &payload)
+void SubmitAvatarVideoTaskResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -42,31 +42,31 @@ void SubmitAudioTo2DAvatarVideoTaskResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["TaskUuid"].isNull())
 		data_.taskUuid = dataNode["TaskUuid"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 
 }
 
-std::string SubmitAudioTo2DAvatarVideoTaskResult::getMessage()const
+std::string SubmitAvatarVideoTaskResult::getMessage()const
 {
 	return message_;
 }
 
-SubmitAudioTo2DAvatarVideoTaskResult::Data SubmitAudioTo2DAvatarVideoTaskResult::getData()const
+SubmitAvatarVideoTaskResult::Data SubmitAvatarVideoTaskResult::getData()const
 {
 	return data_;
 }
 
-std::string SubmitAudioTo2DAvatarVideoTaskResult::getCode()const
+std::string SubmitAvatarVideoTaskResult::getCode()const
 {
 	return code_;
 }
 
-bool SubmitAudioTo2DAvatarVideoTaskResult::getSuccess()const
+bool SubmitAvatarVideoTaskResult::getSuccess()const
 {
 	return success_;
 }

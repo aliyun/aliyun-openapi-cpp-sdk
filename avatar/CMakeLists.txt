@@ -69,6 +69,8 @@ set(avatar_public_header_model
 	include/alibabacloud/avatar/model/SubmitAudioTo2DAvatarVideoTaskResult.h
 	include/alibabacloud/avatar/model/SubmitAudioTo3DAvatarVideoTaskRequest.h
 	include/alibabacloud/avatar/model/SubmitAudioTo3DAvatarVideoTaskResult.h
+	include/alibabacloud/avatar/model/SubmitAvatarVideoTaskRequest.h
+	include/alibabacloud/avatar/model/SubmitAvatarVideoTaskResult.h
 	include/alibabacloud/avatar/model/SubmitTextTo2DAvatarVideoTaskRequest.h
 	include/alibabacloud/avatar/model/SubmitTextTo2DAvatarVideoTaskResult.h
 	include/alibabacloud/avatar/model/SubmitTextTo3DAvatarVideoTaskRequest.h
@@ -126,6 +128,8 @@ set(avatar_src
 	src/model/SubmitAudioTo2DAvatarVideoTaskResult.cc
 	src/model/SubmitAudioTo3DAvatarVideoTaskRequest.cc
 	src/model/SubmitAudioTo3DAvatarVideoTaskResult.cc
+	src/model/SubmitAvatarVideoTaskRequest.cc
+	src/model/SubmitAvatarVideoTaskResult.cc
 	src/model/SubmitTextTo2DAvatarVideoTaskRequest.cc
 	src/model/SubmitTextTo2DAvatarVideoTaskResult.cc
 	src/model/SubmitTextTo3DAvatarVideoTaskRequest.cc

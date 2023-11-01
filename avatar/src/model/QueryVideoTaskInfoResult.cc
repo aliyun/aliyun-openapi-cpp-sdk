@@ -75,6 +75,8 @@ void QueryVideoTaskInfoResult::parse(const std::string &payload)
 			listItemObject.taskResult.alphaUrl = taskResultNode["AlphaUrl"].asString();
 		if(!taskResultNode["PreviewPic"].isNull())
 			listItemObject.taskResult.previewPic = taskResultNode["PreviewPic"].asString();
+		if(!taskResultNode["AttachmentUrl"].isNull())
+			listItemObject.taskResult.attachmentUrl = taskResultNode["AttachmentUrl"].asString();
 		data_.list.push_back(listItemObject);
 	}
 	if(!value["Success"].isNull())

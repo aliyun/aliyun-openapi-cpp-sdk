@@ -45,6 +45,8 @@ void QueryRunningInstanceResult::parse(const std::string &payload)
 		DataItem dataObject;
 		if(!valueDatadataItem["SessionId"].isNull())
 			dataObject.sessionId = valueDatadataItem["SessionId"].asString();
+		if(!valueDatadataItem["Token"].isNull())
+			dataObject.token = valueDatadataItem["Token"].asString();
 		auto channelNode = value["Channel"];
 		if(!channelNode["ChannelId"].isNull())
 			dataObject.channel.channelId = channelNode["ChannelId"].asString();

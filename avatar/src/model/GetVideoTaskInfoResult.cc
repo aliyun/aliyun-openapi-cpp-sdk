@@ -65,6 +65,8 @@ void GetVideoTaskInfoResult::parse(const std::string &payload)
 		data_.taskResult.alphaUrl = taskResultNode["AlphaUrl"].asString();
 	if(!taskResultNode["PreviewPic"].isNull())
 		data_.taskResult.previewPic = taskResultNode["PreviewPic"].asString();
+	if(!taskResultNode["AttachmentUrl"].isNull())
+		data_.taskResult.attachmentUrl = taskResultNode["AttachmentUrl"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

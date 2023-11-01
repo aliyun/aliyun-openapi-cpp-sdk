@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_AVATAR_MODEL_QUERYRUNNINGINSTANCERESULT_H_
-#define ALIBABACLOUD_AVATAR_MODEL_QUERYRUNNINGINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_AVATAR_MODEL_SUBMITAVATARVIDEOTASKRESULT_H_
+#define ALIBABACLOUD_AVATAR_MODEL_SUBMITAVATARVIDEOTASKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,20 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_AVATAR_EXPORT QueryRunningInstanceResult : public ServiceResult
+			class ALIBABACLOUD_AVATAR_EXPORT SubmitAvatarVideoTaskResult : public ServiceResult
 			{
 			public:
-				struct DataItem
+				struct Data
 				{
-					struct Channel
-					{
-						std::string nonce;
-						std::vector<std::string> gslb;
-						std::string userInfoInChannel;
-						std::string type;
-						std::string appId;
-						std::string userId;
-						std::string expiredTime;
-						std::string token;
-						std::string channelId;
-					};
-					struct User
-					{
-						std::string userName;
-						std::string userId;
-					};
-					User user;
-					Channel channel;
-					std::string token;
-					std::string sessionId;
+					std::string taskUuid;
 				};
 
 
-				QueryRunningInstanceResult();
-				explicit QueryRunningInstanceResult(const std::string &payload);
-				~QueryRunningInstanceResult();
+				SubmitAvatarVideoTaskResult();
+				explicit SubmitAvatarVideoTaskResult(const std::string &payload);
+				~SubmitAvatarVideoTaskResult();
 				std::string getMessage()const;
-				std::vector<DataItem> getData()const;
+				Data getData()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -70,7 +50,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::vector<DataItem> data_;
+				Data data_;
 				std::string code_;
 				bool success_;
 
@@ -78,4 +58,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_AVATAR_MODEL_QUERYRUNNINGINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_AVATAR_MODEL_SUBMITAVATARVIDEOTASKRESULT_H_
