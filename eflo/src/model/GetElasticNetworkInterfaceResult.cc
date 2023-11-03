@@ -72,29 +72,29 @@ void GetElasticNetworkInterfaceResult::parse(const std::string &payload)
 		content_.gmtModified = contentNode["GmtModified"].asString();
 	if(!contentNode["Description"].isNull())
 		content_.description = contentNode["Description"].asString();
-	auto allPrivateIpAddressesNode = contentNode["PrivateIpAddresses"]["PrivateIpAddresse"];
-	for (auto contentNodePrivateIpAddressesPrivateIpAddresse : allPrivateIpAddressesNode)
+	auto allPrivateIpAddressesNode = contentNode["PrivateIpAddresses"]["PrivateIpAddress"];
+	for (auto contentNodePrivateIpAddressesPrivateIpAddress : allPrivateIpAddressesNode)
 	{
-		Content::PrivateIpAddresse privateIpAddresseObject;
-		if(!contentNodePrivateIpAddressesPrivateIpAddresse["ElasticNetworkInterfaceId"].isNull())
-			privateIpAddresseObject.elasticNetworkInterfaceId = contentNodePrivateIpAddressesPrivateIpAddresse["ElasticNetworkInterfaceId"].asString();
-		if(!contentNodePrivateIpAddressesPrivateIpAddresse["RegionId"].isNull())
-			privateIpAddresseObject.regionId = contentNodePrivateIpAddressesPrivateIpAddresse["RegionId"].asString();
-		if(!contentNodePrivateIpAddressesPrivateIpAddresse["GmtCreate"].isNull())
-			privateIpAddresseObject.gmtCreate = contentNodePrivateIpAddressesPrivateIpAddresse["GmtCreate"].asString();
-		if(!contentNodePrivateIpAddressesPrivateIpAddresse["GmtModified"].isNull())
-			privateIpAddresseObject.gmtModified = contentNodePrivateIpAddressesPrivateIpAddresse["GmtModified"].asString();
-		if(!contentNodePrivateIpAddressesPrivateIpAddresse["IpName"].isNull())
-			privateIpAddresseObject.ipName = contentNodePrivateIpAddressesPrivateIpAddresse["IpName"].asString();
-		if(!contentNodePrivateIpAddressesPrivateIpAddresse["PrivateIpAddress"].isNull())
-			privateIpAddresseObject.privateIpAddress = contentNodePrivateIpAddressesPrivateIpAddresse["PrivateIpAddress"].asString();
-		if(!contentNodePrivateIpAddressesPrivateIpAddresse["Status"].isNull())
-			privateIpAddresseObject.status = contentNodePrivateIpAddressesPrivateIpAddresse["Status"].asString();
-		if(!contentNodePrivateIpAddressesPrivateIpAddresse["Description"].isNull())
-			privateIpAddresseObject.description = contentNodePrivateIpAddressesPrivateIpAddresse["Description"].asString();
-		if(!contentNodePrivateIpAddressesPrivateIpAddresse["Message"].isNull())
-			privateIpAddresseObject.message = contentNodePrivateIpAddressesPrivateIpAddresse["Message"].asString();
-		content_.privateIpAddresses.push_back(privateIpAddresseObject);
+		Content::PrivateIpAddress privateIpAddressObject;
+		if(!contentNodePrivateIpAddressesPrivateIpAddress["ElasticNetworkInterfaceId"].isNull())
+			privateIpAddressObject.elasticNetworkInterfaceId = contentNodePrivateIpAddressesPrivateIpAddress["ElasticNetworkInterfaceId"].asString();
+		if(!contentNodePrivateIpAddressesPrivateIpAddress["RegionId"].isNull())
+			privateIpAddressObject.regionId = contentNodePrivateIpAddressesPrivateIpAddress["RegionId"].asString();
+		if(!contentNodePrivateIpAddressesPrivateIpAddress["GmtCreate"].isNull())
+			privateIpAddressObject.gmtCreate = contentNodePrivateIpAddressesPrivateIpAddress["GmtCreate"].asString();
+		if(!contentNodePrivateIpAddressesPrivateIpAddress["GmtModified"].isNull())
+			privateIpAddressObject.gmtModified = contentNodePrivateIpAddressesPrivateIpAddress["GmtModified"].asString();
+		if(!contentNodePrivateIpAddressesPrivateIpAddress["IpName"].isNull())
+			privateIpAddressObject.ipName = contentNodePrivateIpAddressesPrivateIpAddress["IpName"].asString();
+		if(!contentNodePrivateIpAddressesPrivateIpAddress["PrivateIpAddress"].isNull())
+			privateIpAddressObject.privateIpAddress = contentNodePrivateIpAddressesPrivateIpAddress["PrivateIpAddress"].asString();
+		if(!contentNodePrivateIpAddressesPrivateIpAddress["Status"].isNull())
+			privateIpAddressObject.status = contentNodePrivateIpAddressesPrivateIpAddress["Status"].asString();
+		if(!contentNodePrivateIpAddressesPrivateIpAddress["Description"].isNull())
+			privateIpAddressObject.description = contentNodePrivateIpAddressesPrivateIpAddress["Description"].asString();
+		if(!contentNodePrivateIpAddressesPrivateIpAddress["Message"].isNull())
+			privateIpAddressObject.message = contentNodePrivateIpAddressesPrivateIpAddress["Message"].asString();
+		content_.privateIpAddresses.push_back(privateIpAddressObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());

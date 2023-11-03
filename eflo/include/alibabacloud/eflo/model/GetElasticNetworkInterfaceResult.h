@@ -34,7 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Content
 				{
-					struct PrivateIpAddresse
+					struct PrivateIpAddress
 					{
 						std::string status;
 						std::string elasticNetworkInterfaceId;
@@ -48,7 +48,7 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::string description;
-					std::vector<PrivateIpAddresse> privateIpAddresses;
+					std::vector<PrivateIpAddress> privateIpAddresses;
 					std::string zoneId;
 					std::string message;
 					std::string ip;
