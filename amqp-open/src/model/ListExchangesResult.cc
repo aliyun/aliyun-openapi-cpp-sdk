@@ -40,26 +40,26 @@ void ListExchangesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["NextToken"].isNull())
-		data_.nextToken = dataNode["NextToken"].asString();
 	if(!dataNode["MaxResults"].isNull())
 		data_.maxResults = std::stoi(dataNode["MaxResults"].asString());
+	if(!dataNode["NextToken"].isNull())
+		data_.nextToken = dataNode["NextToken"].asString();
 	auto allExchangesNode = dataNode["Exchanges"]["ExchangeVO"];
 	for (auto dataNodeExchangesExchangeVO : allExchangesNode)
 	{
 		Data::ExchangeVO exchangeVOObject;
-		if(!dataNodeExchangesExchangeVO["Name"].isNull())
-			exchangeVOObject.name = dataNodeExchangesExchangeVO["Name"].asString();
-		if(!dataNodeExchangesExchangeVO["VHostName"].isNull())
-			exchangeVOObject.vHostName = dataNodeExchangesExchangeVO["VHostName"].asString();
-		if(!dataNodeExchangesExchangeVO["ExchangeType"].isNull())
-			exchangeVOObject.exchangeType = dataNodeExchangesExchangeVO["ExchangeType"].asString();
 		if(!dataNodeExchangesExchangeVO["AutoDeleteState"].isNull())
 			exchangeVOObject.autoDeleteState = dataNodeExchangesExchangeVO["AutoDeleteState"].asString() == "true";
-		if(!dataNodeExchangesExchangeVO["Attributes"].isNull())
-			exchangeVOObject.attributes = dataNodeExchangesExchangeVO["Attributes"].asString();
 		if(!dataNodeExchangesExchangeVO["CreateTime"].isNull())
 			exchangeVOObject.createTime = std::stol(dataNodeExchangesExchangeVO["CreateTime"].asString());
+		if(!dataNodeExchangesExchangeVO["Attributes"].isNull())
+			exchangeVOObject.attributes = dataNodeExchangesExchangeVO["Attributes"].asString();
+		if(!dataNodeExchangesExchangeVO["VHostName"].isNull())
+			exchangeVOObject.vHostName = dataNodeExchangesExchangeVO["VHostName"].asString();
+		if(!dataNodeExchangesExchangeVO["Name"].isNull())
+			exchangeVOObject.name = dataNodeExchangesExchangeVO["Name"].asString();
+		if(!dataNodeExchangesExchangeVO["ExchangeType"].isNull())
+			exchangeVOObject.exchangeType = dataNodeExchangesExchangeVO["ExchangeType"].asString();
 		data_.exchanges.push_back(exchangeVOObject);
 	}
 

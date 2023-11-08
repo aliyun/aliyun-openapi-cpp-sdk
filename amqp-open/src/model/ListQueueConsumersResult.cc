@@ -40,10 +40,10 @@ void ListQueueConsumersResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["NextToken"].isNull())
-		data_.nextToken = dataNode["NextToken"].asString();
 	if(!dataNode["MaxResults"].isNull())
 		data_.maxResults = std::stoi(dataNode["MaxResults"].asString());
+	if(!dataNode["NextToken"].isNull())
+		data_.nextToken = dataNode["NextToken"].asString();
 	auto allConsumersNode = dataNode["Consumers"]["QueueConsumerVO"];
 	for (auto dataNodeConsumersQueueConsumerVO : allConsumersNode)
 	{

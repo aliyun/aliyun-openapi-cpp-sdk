@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					{
 						std::string sourceExchange;
 						std::string argument;
-						std::string bindingType;
 						std::string bindingKey;
+						std::string bindingType;
 						std::string destinationName;
 					};
 					std::string nextToken;

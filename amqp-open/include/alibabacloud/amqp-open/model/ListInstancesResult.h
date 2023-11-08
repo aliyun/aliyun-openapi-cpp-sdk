@@ -36,17 +36,29 @@ namespace AlibabaCloud
 				{
 					struct InstanceVO
 					{
-						std::string instanceName;
+						struct TagsItem
+						{
+							std::string value;
+							std::string key;
+						};
 						std::string status;
-						std::string orderType;
-						long orderCreateTime;
+						int maxTps;
+						int maxEipTps;
+						std::string classicEndpoint;
 						std::string instanceId;
+						int maxQueue;
 						bool supportEIP;
+						int storageSize;
+						std::string instanceName;
+						long orderCreateTime;
+						int maxVhost;
+						std::string orderType;
 						std::string publicEndpoint;
-						std::string instanceType;
 						long expireTime;
+						std::string instanceType;
 						bool autoRenewInstance;
 						std::string privateEndpoint;
+						std::vector<InstanceVO::TagsItem> tags;
 					};
 					std::vector<InstanceVO> instances;
 					std::string nextToken;

@@ -40,18 +40,18 @@ void GetMetadataAmountResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["CurrentVirtualHosts"].isNull())
-		data_.currentVirtualHosts = std::stoi(dataNode["CurrentVirtualHosts"].asString());
 	if(!dataNode["MaxVirtualHosts"].isNull())
 		data_.maxVirtualHosts = std::stoi(dataNode["MaxVirtualHosts"].asString());
+	if(!dataNode["CurrentVirtualHosts"].isNull())
+		data_.currentVirtualHosts = std::stoi(dataNode["CurrentVirtualHosts"].asString());
+	if(!dataNode["MaxQueues"].isNull())
+		data_.maxQueues = std::stoi(dataNode["MaxQueues"].asString());
 	if(!dataNode["CurrentExchanges"].isNull())
 		data_.currentExchanges = std::stoi(dataNode["CurrentExchanges"].asString());
 	if(!dataNode["MaxExchanges"].isNull())
 		data_.maxExchanges = std::stoi(dataNode["MaxExchanges"].asString());
 	if(!dataNode["CurrentQueues"].isNull())
 		data_.currentQueues = std::stoi(dataNode["CurrentQueues"].asString());
-	if(!dataNode["MaxQueues"].isNull())
-		data_.maxQueues = std::stoi(dataNode["MaxQueues"].asString());
 
 }
 

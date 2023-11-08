@@ -51,6 +51,42 @@ Amqp_openClient::Amqp_openClient(const std::string & accessKeyId, const std::str
 Amqp_openClient::~Amqp_openClient()
 {}
 
+Amqp_openClient::CreateAccountOutcome Amqp_openClient::createAccount(const CreateAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAccountOutcome(CreateAccountResult(outcome.result()));
+	else
+		return CreateAccountOutcome(outcome.error());
+}
+
+void Amqp_openClient::createAccountAsync(const CreateAccountRequest& request, const CreateAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Amqp_openClient::CreateAccountOutcomeCallable Amqp_openClient::createAccountCallable(const CreateAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->createAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Amqp_openClient::CreateBindingOutcome Amqp_openClient::createBinding(const CreateBindingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -123,6 +159,42 @@ Amqp_openClient::CreateExchangeOutcomeCallable Amqp_openClient::createExchangeCa
 	return task->get_future();
 }
 
+Amqp_openClient::CreateInstanceOutcome Amqp_openClient::createInstance(const CreateInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateInstanceOutcome(CreateInstanceResult(outcome.result()));
+	else
+		return CreateInstanceOutcome(outcome.error());
+}
+
+void Amqp_openClient::createInstanceAsync(const CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Amqp_openClient::CreateInstanceOutcomeCallable Amqp_openClient::createInstanceCallable(const CreateInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->createInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Amqp_openClient::CreateQueueOutcome Amqp_openClient::createQueue(const CreateQueueRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +261,42 @@ Amqp_openClient::CreateVirtualHostOutcomeCallable Amqp_openClient::createVirtual
 			[this, request]()
 			{
 			return this->createVirtualHost(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Amqp_openClient::DeleteAccountOutcome Amqp_openClient::deleteAccount(const DeleteAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAccountOutcome(DeleteAccountResult(outcome.result()));
+	else
+		return DeleteAccountOutcome(outcome.error());
+}
+
+void Amqp_openClient::deleteAccountAsync(const DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Amqp_openClient::DeleteAccountOutcomeCallable Amqp_openClient::deleteAccountCallable(const DeleteAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAccount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -369,6 +477,42 @@ Amqp_openClient::GetMetadataAmountOutcomeCallable Amqp_openClient::getMetadataAm
 			[this, request]()
 			{
 			return this->getMetadataAmount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Amqp_openClient::ListAccountsOutcome Amqp_openClient::listAccounts(const ListAccountsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAccountsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAccountsOutcome(ListAccountsResult(outcome.result()));
+	else
+		return ListAccountsOutcome(outcome.error());
+}
+
+void Amqp_openClient::listAccountsAsync(const ListAccountsRequest& request, const ListAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAccounts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Amqp_openClient::ListAccountsOutcomeCallable Amqp_openClient::listAccountsCallable(const ListAccountsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAccountsOutcome()>>(
+			[this, request]()
+			{
+			return this->listAccounts(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -693,6 +837,42 @@ Amqp_openClient::ListVirtualHostsOutcomeCallable Amqp_openClient::listVirtualHos
 			[this, request]()
 			{
 			return this->listVirtualHosts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Amqp_openClient::UpdateInstanceNameOutcome Amqp_openClient::updateInstanceName(const UpdateInstanceNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateInstanceNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateInstanceNameOutcome(UpdateInstanceNameResult(outcome.result()));
+	else
+		return UpdateInstanceNameOutcome(outcome.error());
+}
+
+void Amqp_openClient::updateInstanceNameAsync(const UpdateInstanceNameRequest& request, const UpdateInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateInstanceName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Amqp_openClient::UpdateInstanceNameOutcomeCallable Amqp_openClient::updateInstanceNameCallable(const UpdateInstanceNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateInstanceNameOutcome()>>(
+			[this, request]()
+			{
+			return this->updateInstanceName(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

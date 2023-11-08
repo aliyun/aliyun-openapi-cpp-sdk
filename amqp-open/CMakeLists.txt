@@ -21,14 +21,20 @@ set(amqp-open_public_header
 	include/alibabacloud/amqp-open/Amqp_openExport.h )
 
 set(amqp-open_public_header_model 
+	include/alibabacloud/amqp-open/model/CreateAccountRequest.h
+	include/alibabacloud/amqp-open/model/CreateAccountResult.h
 	include/alibabacloud/amqp-open/model/CreateBindingRequest.h
 	include/alibabacloud/amqp-open/model/CreateBindingResult.h
 	include/alibabacloud/amqp-open/model/CreateExchangeRequest.h
 	include/alibabacloud/amqp-open/model/CreateExchangeResult.h
+	include/alibabacloud/amqp-open/model/CreateInstanceRequest.h
+	include/alibabacloud/amqp-open/model/CreateInstanceResult.h
 	include/alibabacloud/amqp-open/model/CreateQueueRequest.h
 	include/alibabacloud/amqp-open/model/CreateQueueResult.h
 	include/alibabacloud/amqp-open/model/CreateVirtualHostRequest.h
 	include/alibabacloud/amqp-open/model/CreateVirtualHostResult.h
+	include/alibabacloud/amqp-open/model/DeleteAccountRequest.h
+	include/alibabacloud/amqp-open/model/DeleteAccountResult.h
 	include/alibabacloud/amqp-open/model/DeleteBindingRequest.h
 	include/alibabacloud/amqp-open/model/DeleteBindingResult.h
 	include/alibabacloud/amqp-open/model/DeleteExchangeRequest.h
@@ -39,6 +45,8 @@ set(amqp-open_public_header_model
 	include/alibabacloud/amqp-open/model/DeleteVirtualHostResult.h
 	include/alibabacloud/amqp-open/model/GetMetadataAmountRequest.h
 	include/alibabacloud/amqp-open/model/GetMetadataAmountResult.h
+	include/alibabacloud/amqp-open/model/ListAccountsRequest.h
+	include/alibabacloud/amqp-open/model/ListAccountsResult.h
 	include/alibabacloud/amqp-open/model/ListBindingsRequest.h
 	include/alibabacloud/amqp-open/model/ListBindingsResult.h
 	include/alibabacloud/amqp-open/model/ListDownStreamBindingsRequest.h
@@ -56,18 +64,26 @@ set(amqp-open_public_header_model
 	include/alibabacloud/amqp-open/model/ListQueuesRequest.h
 	include/alibabacloud/amqp-open/model/ListQueuesResult.h
 	include/alibabacloud/amqp-open/model/ListVirtualHostsRequest.h
-	include/alibabacloud/amqp-open/model/ListVirtualHostsResult.h )
+	include/alibabacloud/amqp-open/model/ListVirtualHostsResult.h
+	include/alibabacloud/amqp-open/model/UpdateInstanceNameRequest.h
+	include/alibabacloud/amqp-open/model/UpdateInstanceNameResult.h )
 
 set(amqp-open_src 
 	src/Amqp-openClient.cc
+	src/model/CreateAccountRequest.cc
+	src/model/CreateAccountResult.cc
 	src/model/CreateBindingRequest.cc
 	src/model/CreateBindingResult.cc
 	src/model/CreateExchangeRequest.cc
 	src/model/CreateExchangeResult.cc
+	src/model/CreateInstanceRequest.cc
+	src/model/CreateInstanceResult.cc
 	src/model/CreateQueueRequest.cc
 	src/model/CreateQueueResult.cc
 	src/model/CreateVirtualHostRequest.cc
 	src/model/CreateVirtualHostResult.cc
+	src/model/DeleteAccountRequest.cc
+	src/model/DeleteAccountResult.cc
 	src/model/DeleteBindingRequest.cc
 	src/model/DeleteBindingResult.cc
 	src/model/DeleteExchangeRequest.cc
@@ -78,6 +94,8 @@ set(amqp-open_src
 	src/model/DeleteVirtualHostResult.cc
 	src/model/GetMetadataAmountRequest.cc
 	src/model/GetMetadataAmountResult.cc
+	src/model/ListAccountsRequest.cc
+	src/model/ListAccountsResult.cc
 	src/model/ListBindingsRequest.cc
 	src/model/ListBindingsResult.cc
 	src/model/ListDownStreamBindingsRequest.cc
@@ -95,7 +113,9 @@ set(amqp-open_src
 	src/model/ListQueuesRequest.cc
 	src/model/ListQueuesResult.cc
 	src/model/ListVirtualHostsRequest.cc
-	src/model/ListVirtualHostsResult.cc )
+	src/model/ListVirtualHostsResult.cc
+	src/model/UpdateInstanceNameRequest.cc
+	src/model/UpdateInstanceNameResult.cc )
 
 add_library(amqp-open ${LIB_TYPE}
 	${amqp-open_public_header}

@@ -40,24 +40,24 @@ void ListBindingsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["NextToken"].isNull())
-		data_.nextToken = dataNode["NextToken"].asString();
 	if(!dataNode["MaxResults"].isNull())
 		data_.maxResults = std::stoi(dataNode["MaxResults"].asString());
+	if(!dataNode["NextToken"].isNull())
+		data_.nextToken = dataNode["NextToken"].asString();
 	auto allBindingsNode = dataNode["Bindings"]["BindingDO"];
 	for (auto dataNodeBindingsBindingDO : allBindingsNode)
 	{
 		Data::BindingDO bindingDOObject;
 		if(!dataNodeBindingsBindingDO["SourceExchange"].isNull())
 			bindingDOObject.sourceExchange = dataNodeBindingsBindingDO["SourceExchange"].asString();
-		if(!dataNodeBindingsBindingDO["DestinationName"].isNull())
-			bindingDOObject.destinationName = dataNodeBindingsBindingDO["DestinationName"].asString();
-		if(!dataNodeBindingsBindingDO["BindingType"].isNull())
-			bindingDOObject.bindingType = dataNodeBindingsBindingDO["BindingType"].asString();
-		if(!dataNodeBindingsBindingDO["BindingKey"].isNull())
-			bindingDOObject.bindingKey = dataNodeBindingsBindingDO["BindingKey"].asString();
 		if(!dataNodeBindingsBindingDO["Argument"].isNull())
 			bindingDOObject.argument = dataNodeBindingsBindingDO["Argument"].asString();
+		if(!dataNodeBindingsBindingDO["BindingKey"].isNull())
+			bindingDOObject.bindingKey = dataNodeBindingsBindingDO["BindingKey"].asString();
+		if(!dataNodeBindingsBindingDO["BindingType"].isNull())
+			bindingDOObject.bindingType = dataNodeBindingsBindingDO["BindingType"].asString();
+		if(!dataNodeBindingsBindingDO["DestinationName"].isNull())
+			bindingDOObject.destinationName = dataNodeBindingsBindingDO["DestinationName"].asString();
 		data_.bindings.push_back(bindingDOObject);
 	}
 

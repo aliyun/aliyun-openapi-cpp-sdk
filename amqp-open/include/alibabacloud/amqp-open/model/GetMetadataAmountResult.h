@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					int maxExchanges;
 					int maxVirtualHosts;
-					int currentExchanges;
 					int maxQueues;
+					int currentExchanges;
 					int currentVirtualHosts;
 					int currentQueues;
 				};
