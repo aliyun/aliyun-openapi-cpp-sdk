@@ -43,6 +43,15 @@ void StartInstanceRequest::setTenantId(long tenantId) {
   setParameter(std::string("TenantId"), std::to_string(tenantId));
 }
 
+std::string StartInstanceRequest::getBizId() const {
+  return bizId_;
+}
+
+void StartInstanceRequest::setBizId(const std::string &bizId) {
+  bizId_ = bizId;
+  setParameter(std::string("BizId"), bizId);
+}
+
 StartInstanceRequest::Channel StartInstanceRequest::getChannel() const {
   return channel_;
 }

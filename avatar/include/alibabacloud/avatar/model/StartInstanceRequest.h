@@ -41,6 +41,8 @@ public:
 	void setApp(const std::string &app);
 	long getTenantId() const;
 	void setTenantId(long tenantId);
+	std::string getBizId() const;
+	void setBizId(const std::string &bizId);
 	Channel getChannel() const;
 	void setChannel(const Channel &channel);
 	CommandRequest getCommandRequest() const;
@@ -51,6 +53,7 @@ public:
 private:
 	std::string app_;
 	long tenantId_;
+	std::string bizId_;
 	Channel channel_;
 	CommandRequest commandRequest_;
 	std::string user_;
