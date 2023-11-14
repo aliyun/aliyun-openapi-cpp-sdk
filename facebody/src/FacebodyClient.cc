@@ -411,6 +411,42 @@ FacebodyClient::CreateFaceDbOutcomeCallable FacebodyClient::createFaceDbCallable
 	return task->get_future();
 }
 
+FacebodyClient::DeepfakeFaceOutcome FacebodyClient::deepfakeFace(const DeepfakeFaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeepfakeFaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeepfakeFaceOutcome(DeepfakeFaceResult(outcome.result()));
+	else
+		return DeepfakeFaceOutcome(outcome.error());
+}
+
+void FacebodyClient::deepfakeFaceAsync(const DeepfakeFaceRequest& request, const DeepfakeFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deepfakeFace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::DeepfakeFaceOutcomeCallable FacebodyClient::deepfakeFaceCallable(const DeepfakeFaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeepfakeFaceOutcome()>>(
+			[this, request]()
+			{
+			return this->deepfakeFace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FacebodyClient::DeleteFaceOutcome FacebodyClient::deleteFace(const DeleteFaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

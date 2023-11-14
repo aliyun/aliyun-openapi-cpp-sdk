@@ -42,6 +42,8 @@
 #include "model/CompareFaceWithMaskResult.h"
 #include "model/CreateFaceDbRequest.h"
 #include "model/CreateFaceDbResult.h"
+#include "model/DeepfakeFaceRequest.h"
+#include "model/DeepfakeFaceResult.h"
 #include "model/DeleteFaceRequest.h"
 #include "model/DeleteFaceResult.h"
 #include "model/DeleteFaceDbRequest.h"
@@ -167,6 +169,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateFaceDbResult> CreateFaceDbOutcome;
 			typedef std::future<CreateFaceDbOutcome> CreateFaceDbOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::CreateFaceDbRequest&, const CreateFaceDbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFaceDbAsyncHandler;
+			typedef Outcome<Error, Model::DeepfakeFaceResult> DeepfakeFaceOutcome;
+			typedef std::future<DeepfakeFaceOutcome> DeepfakeFaceOutcomeCallable;
+			typedef std::function<void(const FacebodyClient*, const Model::DeepfakeFaceRequest&, const DeepfakeFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeepfakeFaceAsyncHandler;
 			typedef Outcome<Error, Model::DeleteFaceResult> DeleteFaceOutcome;
 			typedef std::future<DeleteFaceOutcome> DeleteFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DeleteFaceRequest&, const DeleteFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFaceAsyncHandler;
@@ -331,6 +336,9 @@ namespace AlibabaCloud
 			CreateFaceDbOutcome createFaceDb(const Model::CreateFaceDbRequest &request)const;
 			void createFaceDbAsync(const Model::CreateFaceDbRequest& request, const CreateFaceDbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateFaceDbOutcomeCallable createFaceDbCallable(const Model::CreateFaceDbRequest& request) const;
+			DeepfakeFaceOutcome deepfakeFace(const Model::DeepfakeFaceRequest &request)const;
+			void deepfakeFaceAsync(const Model::DeepfakeFaceRequest& request, const DeepfakeFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeepfakeFaceOutcomeCallable deepfakeFaceCallable(const Model::DeepfakeFaceRequest& request) const;
 			DeleteFaceOutcome deleteFace(const Model::DeleteFaceRequest &request)const;
 			void deleteFaceAsync(const Model::DeleteFaceRequest& request, const DeleteFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteFaceOutcomeCallable deleteFaceCallable(const Model::DeleteFaceRequest& request) const;

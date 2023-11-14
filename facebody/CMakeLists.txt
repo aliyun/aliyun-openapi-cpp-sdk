@@ -41,6 +41,8 @@ set(facebody_public_header_model
 	include/alibabacloud/facebody/model/CompareFaceWithMaskResult.h
 	include/alibabacloud/facebody/model/CreateFaceDbRequest.h
 	include/alibabacloud/facebody/model/CreateFaceDbResult.h
+	include/alibabacloud/facebody/model/DeepfakeFaceRequest.h
+	include/alibabacloud/facebody/model/DeepfakeFaceResult.h
 	include/alibabacloud/facebody/model/DeleteFaceRequest.h
 	include/alibabacloud/facebody/model/DeleteFaceResult.h
 	include/alibabacloud/facebody/model/DeleteFaceDbRequest.h
@@ -150,6 +152,8 @@ set(facebody_src
 	src/model/CompareFaceWithMaskResult.cc
 	src/model/CreateFaceDbRequest.cc
 	src/model/CreateFaceDbResult.cc
+	src/model/DeepfakeFaceRequest.cc
+	src/model/DeepfakeFaceResult.cc
 	src/model/DeleteFaceRequest.cc
 	src/model/DeleteFaceResult.cc
 	src/model/DeleteFaceDbRequest.cc
