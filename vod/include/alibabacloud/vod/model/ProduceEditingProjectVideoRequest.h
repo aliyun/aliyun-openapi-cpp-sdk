@@ -52,6 +52,8 @@ public:
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getAppId() const;
+	void setAppId(const std::string &appId);
 	std::string getTimeline() const;
 	void setTimeline(const std::string &timeline);
 
@@ -67,6 +69,7 @@ private:
 	std::string mediaMetadata_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;
+	std::string appId_;
 	std::string timeline_;
 };
 } // namespace Model

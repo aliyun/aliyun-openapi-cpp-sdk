@@ -124,6 +124,15 @@ void ProduceEditingProjectVideoRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string ProduceEditingProjectVideoRequest::getAppId() const {
+  return appId_;
+}
+
+void ProduceEditingProjectVideoRequest::setAppId(const std::string &appId) {
+  appId_ = appId;
+  setParameter(std::string("AppId"), appId);
+}
+
 std::string ProduceEditingProjectVideoRequest::getTimeline() const {
   return timeline_;
 }

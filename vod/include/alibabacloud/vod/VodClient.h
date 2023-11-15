@@ -34,6 +34,8 @@
 #include "model/AddTranscodeTemplateGroupResult.h"
 #include "model/AddVodDomainRequest.h"
 #include "model/AddVodDomainResult.h"
+#include "model/AddVodStorageForAppRequest.h"
+#include "model/AddVodStorageForAppResult.h"
 #include "model/AddVodTemplateRequest.h"
 #include "model/AddVodTemplateResult.h"
 #include "model/AddWatermarkRequest.h"
@@ -355,6 +357,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddVodDomainResult> AddVodDomainOutcome;
 			typedef std::future<AddVodDomainOutcome> AddVodDomainOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::AddVodDomainRequest&, const AddVodDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddVodDomainAsyncHandler;
+			typedef Outcome<Error, Model::AddVodStorageForAppResult> AddVodStorageForAppOutcome;
+			typedef std::future<AddVodStorageForAppOutcome> AddVodStorageForAppOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::AddVodStorageForAppRequest&, const AddVodStorageForAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddVodStorageForAppAsyncHandler;
 			typedef Outcome<Error, Model::AddVodTemplateResult> AddVodTemplateOutcome;
 			typedef std::future<AddVodTemplateOutcome> AddVodTemplateOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::AddVodTemplateRequest&, const AddVodTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddVodTemplateAsyncHandler;
@@ -819,6 +824,9 @@ namespace AlibabaCloud
 			AddVodDomainOutcome addVodDomain(const Model::AddVodDomainRequest &request)const;
 			void addVodDomainAsync(const Model::AddVodDomainRequest& request, const AddVodDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddVodDomainOutcomeCallable addVodDomainCallable(const Model::AddVodDomainRequest& request) const;
+			AddVodStorageForAppOutcome addVodStorageForApp(const Model::AddVodStorageForAppRequest &request)const;
+			void addVodStorageForAppAsync(const Model::AddVodStorageForAppRequest& request, const AddVodStorageForAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddVodStorageForAppOutcomeCallable addVodStorageForAppCallable(const Model::AddVodStorageForAppRequest& request) const;
 			AddVodTemplateOutcome addVodTemplate(const Model::AddVodTemplateRequest &request)const;
 			void addVodTemplateAsync(const Model::AddVodTemplateRequest& request, const AddVodTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddVodTemplateOutcomeCallable addVodTemplateCallable(const Model::AddVodTemplateRequest& request) const;

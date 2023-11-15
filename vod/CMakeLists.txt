@@ -33,6 +33,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/AddTranscodeTemplateGroupResult.h
 	include/alibabacloud/vod/model/AddVodDomainRequest.h
 	include/alibabacloud/vod/model/AddVodDomainResult.h
+	include/alibabacloud/vod/model/AddVodStorageForAppRequest.h
+	include/alibabacloud/vod/model/AddVodStorageForAppResult.h
 	include/alibabacloud/vod/model/AddVodTemplateRequest.h
 	include/alibabacloud/vod/model/AddVodTemplateResult.h
 	include/alibabacloud/vod/model/AddWatermarkRequest.h
@@ -342,6 +344,8 @@ set(vod_src
 	src/model/AddTranscodeTemplateGroupResult.cc
 	src/model/AddVodDomainRequest.cc
 	src/model/AddVodDomainResult.cc
+	src/model/AddVodStorageForAppRequest.cc
+	src/model/AddVodStorageForAppResult.cc
 	src/model/AddVodTemplateRequest.cc
 	src/model/AddVodTemplateResult.cc
 	src/model/AddWatermarkRequest.cc

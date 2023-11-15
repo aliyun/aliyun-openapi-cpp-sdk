@@ -267,6 +267,42 @@ VodClient::AddVodDomainOutcomeCallable VodClient::addVodDomainCallable(const Add
 	return task->get_future();
 }
 
+VodClient::AddVodStorageForAppOutcome VodClient::addVodStorageForApp(const AddVodStorageForAppRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddVodStorageForAppOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddVodStorageForAppOutcome(AddVodStorageForAppResult(outcome.result()));
+	else
+		return AddVodStorageForAppOutcome(outcome.error());
+}
+
+void VodClient::addVodStorageForAppAsync(const AddVodStorageForAppRequest& request, const AddVodStorageForAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addVodStorageForApp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::AddVodStorageForAppOutcomeCallable VodClient::addVodStorageForAppCallable(const AddVodStorageForAppRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddVodStorageForAppOutcome()>>(
+			[this, request]()
+			{
+			return this->addVodStorageForApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::AddVodTemplateOutcome VodClient::addVodTemplate(const AddVodTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
