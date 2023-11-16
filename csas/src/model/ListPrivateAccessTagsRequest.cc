@@ -61,6 +61,15 @@ void ListPrivateAccessTagsRequest::setApplicationId(const std::string &applicati
   setParameter(std::string("ApplicationId"), applicationId);
 }
 
+bool ListPrivateAccessTagsRequest::getSimpleMode() const {
+  return simpleMode_;
+}
+
+void ListPrivateAccessTagsRequest::setSimpleMode(bool simpleMode) {
+  simpleMode_ = simpleMode;
+  setParameter(std::string("SimpleMode"), simpleMode ? "true" : "false");
+}
+
 std::vector<ListPrivateAccessTagsRequest::std::string> ListPrivateAccessTagsRequest::getTagIds() const {
   return tagIds_;
 }

@@ -31,6 +31,8 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/CreatePrivateAccessPolicyResult.h
 	include/alibabacloud/csas/model/CreatePrivateAccessTagRequest.h
 	include/alibabacloud/csas/model/CreatePrivateAccessTagResult.h
+	include/alibabacloud/csas/model/CreateRegistrationPolicyRequest.h
+	include/alibabacloud/csas/model/CreateRegistrationPolicyResult.h
 	include/alibabacloud/csas/model/CreateUserGroupRequest.h
 	include/alibabacloud/csas/model/CreateUserGroupResult.h
 	include/alibabacloud/csas/model/DeleteDynamicRouteRequest.h
@@ -41,6 +43,8 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/DeletePrivateAccessPolicyResult.h
 	include/alibabacloud/csas/model/DeletePrivateAccessTagRequest.h
 	include/alibabacloud/csas/model/DeletePrivateAccessTagResult.h
+	include/alibabacloud/csas/model/DeleteRegistrationPoliciesRequest.h
+	include/alibabacloud/csas/model/DeleteRegistrationPoliciesResult.h
 	include/alibabacloud/csas/model/DeleteUserGroupRequest.h
 	include/alibabacloud/csas/model/DeleteUserGroupResult.h
 	include/alibabacloud/csas/model/DetachApplication2ConnectorRequest.h
@@ -51,6 +55,10 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/GetPrivateAccessApplicationResult.h
 	include/alibabacloud/csas/model/GetPrivateAccessPolicyRequest.h
 	include/alibabacloud/csas/model/GetPrivateAccessPolicyResult.h
+	include/alibabacloud/csas/model/GetRegistrationPolicyRequest.h
+	include/alibabacloud/csas/model/GetRegistrationPolicyResult.h
+	include/alibabacloud/csas/model/GetUserDeviceRequest.h
+	include/alibabacloud/csas/model/GetUserDeviceResult.h
 	include/alibabacloud/csas/model/GetUserGroupRequest.h
 	include/alibabacloud/csas/model/GetUserGroupResult.h
 	include/alibabacloud/csas/model/ListApplicationsForPrivateAccessPolicyRequest.h
@@ -63,6 +71,8 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/ListDynamicRouteRegionsResult.h
 	include/alibabacloud/csas/model/ListDynamicRoutesRequest.h
 	include/alibabacloud/csas/model/ListDynamicRoutesResult.h
+	include/alibabacloud/csas/model/ListExcessiveDeviceRegistrationApplicationsRequest.h
+	include/alibabacloud/csas/model/ListExcessiveDeviceRegistrationApplicationsResult.h
 	include/alibabacloud/csas/model/ListPolicesForPrivateAccessApplicationRequest.h
 	include/alibabacloud/csas/model/ListPolicesForPrivateAccessApplicationResult.h
 	include/alibabacloud/csas/model/ListPolicesForPrivateAccessTagRequest.h
@@ -79,20 +89,38 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/ListPrivateAccessTagsResult.h
 	include/alibabacloud/csas/model/ListPrivateAccessTagsForDynamicRouteRequest.h
 	include/alibabacloud/csas/model/ListPrivateAccessTagsForDynamicRouteResult.h
+	include/alibabacloud/csas/model/ListRegistrationPoliciesRequest.h
+	include/alibabacloud/csas/model/ListRegistrationPoliciesResult.h
+	include/alibabacloud/csas/model/ListRegistrationPoliciesForUserGroupRequest.h
+	include/alibabacloud/csas/model/ListRegistrationPoliciesForUserGroupResult.h
+	include/alibabacloud/csas/model/ListSoftwareForUserDeviceRequest.h
+	include/alibabacloud/csas/model/ListSoftwareForUserDeviceResult.h
 	include/alibabacloud/csas/model/ListTagsForPrivateAccessApplicationRequest.h
 	include/alibabacloud/csas/model/ListTagsForPrivateAccessApplicationResult.h
 	include/alibabacloud/csas/model/ListTagsForPrivateAccessPolicyRequest.h
 	include/alibabacloud/csas/model/ListTagsForPrivateAccessPolicyResult.h
+	include/alibabacloud/csas/model/ListUserDevicesRequest.h
+	include/alibabacloud/csas/model/ListUserDevicesResult.h
 	include/alibabacloud/csas/model/ListUserGroupsRequest.h
 	include/alibabacloud/csas/model/ListUserGroupsResult.h
 	include/alibabacloud/csas/model/ListUserGroupsForPrivateAccessPolicyRequest.h
 	include/alibabacloud/csas/model/ListUserGroupsForPrivateAccessPolicyResult.h
+	include/alibabacloud/csas/model/ListUserGroupsForRegistrationPolicyRequest.h
+	include/alibabacloud/csas/model/ListUserGroupsForRegistrationPolicyResult.h
 	include/alibabacloud/csas/model/UpdateDynamicRouteRequest.h
 	include/alibabacloud/csas/model/UpdateDynamicRouteResult.h
+	include/alibabacloud/csas/model/UpdateExcessiveDeviceRegistrationApplicationsStatusRequest.h
+	include/alibabacloud/csas/model/UpdateExcessiveDeviceRegistrationApplicationsStatusResult.h
 	include/alibabacloud/csas/model/UpdatePrivateAccessApplicationRequest.h
 	include/alibabacloud/csas/model/UpdatePrivateAccessApplicationResult.h
 	include/alibabacloud/csas/model/UpdatePrivateAccessPolicyRequest.h
 	include/alibabacloud/csas/model/UpdatePrivateAccessPolicyResult.h
+	include/alibabacloud/csas/model/UpdateRegistrationPolicyRequest.h
+	include/alibabacloud/csas/model/UpdateRegistrationPolicyResult.h
+	include/alibabacloud/csas/model/UpdateUserDevicesSharingStatusRequest.h
+	include/alibabacloud/csas/model/UpdateUserDevicesSharingStatusResult.h
+	include/alibabacloud/csas/model/UpdateUserDevicesStatusRequest.h
+	include/alibabacloud/csas/model/UpdateUserDevicesStatusResult.h
 	include/alibabacloud/csas/model/UpdateUserGroupRequest.h
 	include/alibabacloud/csas/model/UpdateUserGroupResult.h )
 
@@ -108,6 +136,8 @@ set(csas_src
 	src/model/CreatePrivateAccessPolicyResult.cc
 	src/model/CreatePrivateAccessTagRequest.cc
 	src/model/CreatePrivateAccessTagResult.cc
+	src/model/CreateRegistrationPolicyRequest.cc
+	src/model/CreateRegistrationPolicyResult.cc
 	src/model/CreateUserGroupRequest.cc
 	src/model/CreateUserGroupResult.cc
 	src/model/DeleteDynamicRouteRequest.cc
@@ -118,6 +148,8 @@ set(csas_src
 	src/model/DeletePrivateAccessPolicyResult.cc
 	src/model/DeletePrivateAccessTagRequest.cc
 	src/model/DeletePrivateAccessTagResult.cc
+	src/model/DeleteRegistrationPoliciesRequest.cc
+	src/model/DeleteRegistrationPoliciesResult.cc
 	src/model/DeleteUserGroupRequest.cc
 	src/model/DeleteUserGroupResult.cc
 	src/model/DetachApplication2ConnectorRequest.cc
@@ -128,6 +160,10 @@ set(csas_src
 	src/model/GetPrivateAccessApplicationResult.cc
 	src/model/GetPrivateAccessPolicyRequest.cc
 	src/model/GetPrivateAccessPolicyResult.cc
+	src/model/GetRegistrationPolicyRequest.cc
+	src/model/GetRegistrationPolicyResult.cc
+	src/model/GetUserDeviceRequest.cc
+	src/model/GetUserDeviceResult.cc
 	src/model/GetUserGroupRequest.cc
 	src/model/GetUserGroupResult.cc
 	src/model/ListApplicationsForPrivateAccessPolicyRequest.cc
@@ -140,6 +176,8 @@ set(csas_src
 	src/model/ListDynamicRouteRegionsResult.cc
 	src/model/ListDynamicRoutesRequest.cc
 	src/model/ListDynamicRoutesResult.cc
+	src/model/ListExcessiveDeviceRegistrationApplicationsRequest.cc
+	src/model/ListExcessiveDeviceRegistrationApplicationsResult.cc
 	src/model/ListPolicesForPrivateAccessApplicationRequest.cc
 	src/model/ListPolicesForPrivateAccessApplicationResult.cc
 	src/model/ListPolicesForPrivateAccessTagRequest.cc
@@ -156,20 +194,38 @@ set(csas_src
 	src/model/ListPrivateAccessTagsResult.cc
 	src/model/ListPrivateAccessTagsForDynamicRouteRequest.cc
 	src/model/ListPrivateAccessTagsForDynamicRouteResult.cc
+	src/model/ListRegistrationPoliciesRequest.cc
+	src/model/ListRegistrationPoliciesResult.cc
+	src/model/ListRegistrationPoliciesForUserGroupRequest.cc
+	src/model/ListRegistrationPoliciesForUserGroupResult.cc
+	src/model/ListSoftwareForUserDeviceRequest.cc
+	src/model/ListSoftwareForUserDeviceResult.cc
 	src/model/ListTagsForPrivateAccessApplicationRequest.cc
 	src/model/ListTagsForPrivateAccessApplicationResult.cc
 	src/model/ListTagsForPrivateAccessPolicyRequest.cc
 	src/model/ListTagsForPrivateAccessPolicyResult.cc
+	src/model/ListUserDevicesRequest.cc
+	src/model/ListUserDevicesResult.cc
 	src/model/ListUserGroupsRequest.cc
 	src/model/ListUserGroupsResult.cc
 	src/model/ListUserGroupsForPrivateAccessPolicyRequest.cc
 	src/model/ListUserGroupsForPrivateAccessPolicyResult.cc
+	src/model/ListUserGroupsForRegistrationPolicyRequest.cc
+	src/model/ListUserGroupsForRegistrationPolicyResult.cc
 	src/model/UpdateDynamicRouteRequest.cc
 	src/model/UpdateDynamicRouteResult.cc
+	src/model/UpdateExcessiveDeviceRegistrationApplicationsStatusRequest.cc
+	src/model/UpdateExcessiveDeviceRegistrationApplicationsStatusResult.cc
 	src/model/UpdatePrivateAccessApplicationRequest.cc
 	src/model/UpdatePrivateAccessApplicationResult.cc
 	src/model/UpdatePrivateAccessPolicyRequest.cc
 	src/model/UpdatePrivateAccessPolicyResult.cc
+	src/model/UpdateRegistrationPolicyRequest.cc
+	src/model/UpdateRegistrationPolicyResult.cc
+	src/model/UpdateUserDevicesSharingStatusRequest.cc
+	src/model/UpdateUserDevicesSharingStatusResult.cc
+	src/model/UpdateUserDevicesStatusRequest.cc
+	src/model/UpdateUserDevicesStatusResult.cc
 	src/model/UpdateUserGroupRequest.cc
 	src/model/UpdateUserGroupResult.cc )
 

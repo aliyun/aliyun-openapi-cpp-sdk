@@ -231,6 +231,42 @@ CsasClient::CreatePrivateAccessTagOutcomeCallable CsasClient::createPrivateAcces
 	return task->get_future();
 }
 
+CsasClient::CreateRegistrationPolicyOutcome CsasClient::createRegistrationPolicy(const CreateRegistrationPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateRegistrationPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateRegistrationPolicyOutcome(CreateRegistrationPolicyResult(outcome.result()));
+	else
+		return CreateRegistrationPolicyOutcome(outcome.error());
+}
+
+void CsasClient::createRegistrationPolicyAsync(const CreateRegistrationPolicyRequest& request, const CreateRegistrationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createRegistrationPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::CreateRegistrationPolicyOutcomeCallable CsasClient::createRegistrationPolicyCallable(const CreateRegistrationPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateRegistrationPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->createRegistrationPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::CreateUserGroupOutcome CsasClient::createUserGroup(const CreateUserGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -411,6 +447,42 @@ CsasClient::DeletePrivateAccessTagOutcomeCallable CsasClient::deletePrivateAcces
 	return task->get_future();
 }
 
+CsasClient::DeleteRegistrationPoliciesOutcome CsasClient::deleteRegistrationPolicies(const DeleteRegistrationPoliciesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRegistrationPoliciesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRegistrationPoliciesOutcome(DeleteRegistrationPoliciesResult(outcome.result()));
+	else
+		return DeleteRegistrationPoliciesOutcome(outcome.error());
+}
+
+void CsasClient::deleteRegistrationPoliciesAsync(const DeleteRegistrationPoliciesRequest& request, const DeleteRegistrationPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRegistrationPolicies(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::DeleteRegistrationPoliciesOutcomeCallable CsasClient::deleteRegistrationPoliciesCallable(const DeleteRegistrationPoliciesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRegistrationPoliciesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRegistrationPolicies(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::DeleteUserGroupOutcome CsasClient::deleteUserGroup(const DeleteUserGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +657,78 @@ CsasClient::GetPrivateAccessPolicyOutcomeCallable CsasClient::getPrivateAccessPo
 			[this, request]()
 			{
 			return this->getPrivateAccessPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::GetRegistrationPolicyOutcome CsasClient::getRegistrationPolicy(const GetRegistrationPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRegistrationPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRegistrationPolicyOutcome(GetRegistrationPolicyResult(outcome.result()));
+	else
+		return GetRegistrationPolicyOutcome(outcome.error());
+}
+
+void CsasClient::getRegistrationPolicyAsync(const GetRegistrationPolicyRequest& request, const GetRegistrationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRegistrationPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::GetRegistrationPolicyOutcomeCallable CsasClient::getRegistrationPolicyCallable(const GetRegistrationPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRegistrationPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->getRegistrationPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::GetUserDeviceOutcome CsasClient::getUserDevice(const GetUserDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetUserDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetUserDeviceOutcome(GetUserDeviceResult(outcome.result()));
+	else
+		return GetUserDeviceOutcome(outcome.error());
+}
+
+void CsasClient::getUserDeviceAsync(const GetUserDeviceRequest& request, const GetUserDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getUserDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::GetUserDeviceOutcomeCallable CsasClient::getUserDeviceCallable(const GetUserDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetUserDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->getUserDevice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -801,6 +945,42 @@ CsasClient::ListDynamicRoutesOutcomeCallable CsasClient::listDynamicRoutesCallab
 			[this, request]()
 			{
 			return this->listDynamicRoutes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::ListExcessiveDeviceRegistrationApplicationsOutcome CsasClient::listExcessiveDeviceRegistrationApplications(const ListExcessiveDeviceRegistrationApplicationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListExcessiveDeviceRegistrationApplicationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListExcessiveDeviceRegistrationApplicationsOutcome(ListExcessiveDeviceRegistrationApplicationsResult(outcome.result()));
+	else
+		return ListExcessiveDeviceRegistrationApplicationsOutcome(outcome.error());
+}
+
+void CsasClient::listExcessiveDeviceRegistrationApplicationsAsync(const ListExcessiveDeviceRegistrationApplicationsRequest& request, const ListExcessiveDeviceRegistrationApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listExcessiveDeviceRegistrationApplications(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListExcessiveDeviceRegistrationApplicationsOutcomeCallable CsasClient::listExcessiveDeviceRegistrationApplicationsCallable(const ListExcessiveDeviceRegistrationApplicationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListExcessiveDeviceRegistrationApplicationsOutcome()>>(
+			[this, request]()
+			{
+			return this->listExcessiveDeviceRegistrationApplications(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1095,6 +1275,114 @@ CsasClient::ListPrivateAccessTagsForDynamicRouteOutcomeCallable CsasClient::list
 	return task->get_future();
 }
 
+CsasClient::ListRegistrationPoliciesOutcome CsasClient::listRegistrationPolicies(const ListRegistrationPoliciesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRegistrationPoliciesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRegistrationPoliciesOutcome(ListRegistrationPoliciesResult(outcome.result()));
+	else
+		return ListRegistrationPoliciesOutcome(outcome.error());
+}
+
+void CsasClient::listRegistrationPoliciesAsync(const ListRegistrationPoliciesRequest& request, const ListRegistrationPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRegistrationPolicies(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListRegistrationPoliciesOutcomeCallable CsasClient::listRegistrationPoliciesCallable(const ListRegistrationPoliciesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRegistrationPoliciesOutcome()>>(
+			[this, request]()
+			{
+			return this->listRegistrationPolicies(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::ListRegistrationPoliciesForUserGroupOutcome CsasClient::listRegistrationPoliciesForUserGroup(const ListRegistrationPoliciesForUserGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRegistrationPoliciesForUserGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRegistrationPoliciesForUserGroupOutcome(ListRegistrationPoliciesForUserGroupResult(outcome.result()));
+	else
+		return ListRegistrationPoliciesForUserGroupOutcome(outcome.error());
+}
+
+void CsasClient::listRegistrationPoliciesForUserGroupAsync(const ListRegistrationPoliciesForUserGroupRequest& request, const ListRegistrationPoliciesForUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRegistrationPoliciesForUserGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListRegistrationPoliciesForUserGroupOutcomeCallable CsasClient::listRegistrationPoliciesForUserGroupCallable(const ListRegistrationPoliciesForUserGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRegistrationPoliciesForUserGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->listRegistrationPoliciesForUserGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::ListSoftwareForUserDeviceOutcome CsasClient::listSoftwareForUserDevice(const ListSoftwareForUserDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSoftwareForUserDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSoftwareForUserDeviceOutcome(ListSoftwareForUserDeviceResult(outcome.result()));
+	else
+		return ListSoftwareForUserDeviceOutcome(outcome.error());
+}
+
+void CsasClient::listSoftwareForUserDeviceAsync(const ListSoftwareForUserDeviceRequest& request, const ListSoftwareForUserDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSoftwareForUserDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListSoftwareForUserDeviceOutcomeCallable CsasClient::listSoftwareForUserDeviceCallable(const ListSoftwareForUserDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSoftwareForUserDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->listSoftwareForUserDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::ListTagsForPrivateAccessApplicationOutcome CsasClient::listTagsForPrivateAccessApplication(const ListTagsForPrivateAccessApplicationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1161,6 +1449,42 @@ CsasClient::ListTagsForPrivateAccessPolicyOutcomeCallable CsasClient::listTagsFo
 			[this, request]()
 			{
 			return this->listTagsForPrivateAccessPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::ListUserDevicesOutcome CsasClient::listUserDevices(const ListUserDevicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListUserDevicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListUserDevicesOutcome(ListUserDevicesResult(outcome.result()));
+	else
+		return ListUserDevicesOutcome(outcome.error());
+}
+
+void CsasClient::listUserDevicesAsync(const ListUserDevicesRequest& request, const ListUserDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listUserDevices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListUserDevicesOutcomeCallable CsasClient::listUserDevicesCallable(const ListUserDevicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListUserDevicesOutcome()>>(
+			[this, request]()
+			{
+			return this->listUserDevices(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1239,6 +1563,42 @@ CsasClient::ListUserGroupsForPrivateAccessPolicyOutcomeCallable CsasClient::list
 	return task->get_future();
 }
 
+CsasClient::ListUserGroupsForRegistrationPolicyOutcome CsasClient::listUserGroupsForRegistrationPolicy(const ListUserGroupsForRegistrationPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListUserGroupsForRegistrationPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListUserGroupsForRegistrationPolicyOutcome(ListUserGroupsForRegistrationPolicyResult(outcome.result()));
+	else
+		return ListUserGroupsForRegistrationPolicyOutcome(outcome.error());
+}
+
+void CsasClient::listUserGroupsForRegistrationPolicyAsync(const ListUserGroupsForRegistrationPolicyRequest& request, const ListUserGroupsForRegistrationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listUserGroupsForRegistrationPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListUserGroupsForRegistrationPolicyOutcomeCallable CsasClient::listUserGroupsForRegistrationPolicyCallable(const ListUserGroupsForRegistrationPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListUserGroupsForRegistrationPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->listUserGroupsForRegistrationPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::UpdateDynamicRouteOutcome CsasClient::updateDynamicRoute(const UpdateDynamicRouteRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1269,6 +1629,42 @@ CsasClient::UpdateDynamicRouteOutcomeCallable CsasClient::updateDynamicRouteCall
 			[this, request]()
 			{
 			return this->updateDynamicRoute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::UpdateExcessiveDeviceRegistrationApplicationsStatusOutcome CsasClient::updateExcessiveDeviceRegistrationApplicationsStatus(const UpdateExcessiveDeviceRegistrationApplicationsStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateExcessiveDeviceRegistrationApplicationsStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateExcessiveDeviceRegistrationApplicationsStatusOutcome(UpdateExcessiveDeviceRegistrationApplicationsStatusResult(outcome.result()));
+	else
+		return UpdateExcessiveDeviceRegistrationApplicationsStatusOutcome(outcome.error());
+}
+
+void CsasClient::updateExcessiveDeviceRegistrationApplicationsStatusAsync(const UpdateExcessiveDeviceRegistrationApplicationsStatusRequest& request, const UpdateExcessiveDeviceRegistrationApplicationsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateExcessiveDeviceRegistrationApplicationsStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::UpdateExcessiveDeviceRegistrationApplicationsStatusOutcomeCallable CsasClient::updateExcessiveDeviceRegistrationApplicationsStatusCallable(const UpdateExcessiveDeviceRegistrationApplicationsStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateExcessiveDeviceRegistrationApplicationsStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->updateExcessiveDeviceRegistrationApplicationsStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1341,6 +1737,114 @@ CsasClient::UpdatePrivateAccessPolicyOutcomeCallable CsasClient::updatePrivateAc
 			[this, request]()
 			{
 			return this->updatePrivateAccessPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::UpdateRegistrationPolicyOutcome CsasClient::updateRegistrationPolicy(const UpdateRegistrationPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateRegistrationPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateRegistrationPolicyOutcome(UpdateRegistrationPolicyResult(outcome.result()));
+	else
+		return UpdateRegistrationPolicyOutcome(outcome.error());
+}
+
+void CsasClient::updateRegistrationPolicyAsync(const UpdateRegistrationPolicyRequest& request, const UpdateRegistrationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateRegistrationPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::UpdateRegistrationPolicyOutcomeCallable CsasClient::updateRegistrationPolicyCallable(const UpdateRegistrationPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateRegistrationPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->updateRegistrationPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::UpdateUserDevicesSharingStatusOutcome CsasClient::updateUserDevicesSharingStatus(const UpdateUserDevicesSharingStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateUserDevicesSharingStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateUserDevicesSharingStatusOutcome(UpdateUserDevicesSharingStatusResult(outcome.result()));
+	else
+		return UpdateUserDevicesSharingStatusOutcome(outcome.error());
+}
+
+void CsasClient::updateUserDevicesSharingStatusAsync(const UpdateUserDevicesSharingStatusRequest& request, const UpdateUserDevicesSharingStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateUserDevicesSharingStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::UpdateUserDevicesSharingStatusOutcomeCallable CsasClient::updateUserDevicesSharingStatusCallable(const UpdateUserDevicesSharingStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateUserDevicesSharingStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->updateUserDevicesSharingStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::UpdateUserDevicesStatusOutcome CsasClient::updateUserDevicesStatus(const UpdateUserDevicesStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateUserDevicesStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateUserDevicesStatusOutcome(UpdateUserDevicesStatusResult(outcome.result()));
+	else
+		return UpdateUserDevicesStatusOutcome(outcome.error());
+}
+
+void CsasClient::updateUserDevicesStatusAsync(const UpdateUserDevicesStatusRequest& request, const UpdateUserDevicesStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateUserDevicesStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::UpdateUserDevicesStatusOutcomeCallable CsasClient::updateUserDevicesStatusCallable(const UpdateUserDevicesStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateUserDevicesStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->updateUserDevicesStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

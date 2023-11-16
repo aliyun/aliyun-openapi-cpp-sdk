@@ -32,6 +32,8 @@
 #include "model/CreatePrivateAccessPolicyResult.h"
 #include "model/CreatePrivateAccessTagRequest.h"
 #include "model/CreatePrivateAccessTagResult.h"
+#include "model/CreateRegistrationPolicyRequest.h"
+#include "model/CreateRegistrationPolicyResult.h"
 #include "model/CreateUserGroupRequest.h"
 #include "model/CreateUserGroupResult.h"
 #include "model/DeleteDynamicRouteRequest.h"
@@ -42,6 +44,8 @@
 #include "model/DeletePrivateAccessPolicyResult.h"
 #include "model/DeletePrivateAccessTagRequest.h"
 #include "model/DeletePrivateAccessTagResult.h"
+#include "model/DeleteRegistrationPoliciesRequest.h"
+#include "model/DeleteRegistrationPoliciesResult.h"
 #include "model/DeleteUserGroupRequest.h"
 #include "model/DeleteUserGroupResult.h"
 #include "model/DetachApplication2ConnectorRequest.h"
@@ -52,6 +56,10 @@
 #include "model/GetPrivateAccessApplicationResult.h"
 #include "model/GetPrivateAccessPolicyRequest.h"
 #include "model/GetPrivateAccessPolicyResult.h"
+#include "model/GetRegistrationPolicyRequest.h"
+#include "model/GetRegistrationPolicyResult.h"
+#include "model/GetUserDeviceRequest.h"
+#include "model/GetUserDeviceResult.h"
 #include "model/GetUserGroupRequest.h"
 #include "model/GetUserGroupResult.h"
 #include "model/ListApplicationsForPrivateAccessPolicyRequest.h"
@@ -64,6 +72,8 @@
 #include "model/ListDynamicRouteRegionsResult.h"
 #include "model/ListDynamicRoutesRequest.h"
 #include "model/ListDynamicRoutesResult.h"
+#include "model/ListExcessiveDeviceRegistrationApplicationsRequest.h"
+#include "model/ListExcessiveDeviceRegistrationApplicationsResult.h"
 #include "model/ListPolicesForPrivateAccessApplicationRequest.h"
 #include "model/ListPolicesForPrivateAccessApplicationResult.h"
 #include "model/ListPolicesForPrivateAccessTagRequest.h"
@@ -80,20 +90,38 @@
 #include "model/ListPrivateAccessTagsResult.h"
 #include "model/ListPrivateAccessTagsForDynamicRouteRequest.h"
 #include "model/ListPrivateAccessTagsForDynamicRouteResult.h"
+#include "model/ListRegistrationPoliciesRequest.h"
+#include "model/ListRegistrationPoliciesResult.h"
+#include "model/ListRegistrationPoliciesForUserGroupRequest.h"
+#include "model/ListRegistrationPoliciesForUserGroupResult.h"
+#include "model/ListSoftwareForUserDeviceRequest.h"
+#include "model/ListSoftwareForUserDeviceResult.h"
 #include "model/ListTagsForPrivateAccessApplicationRequest.h"
 #include "model/ListTagsForPrivateAccessApplicationResult.h"
 #include "model/ListTagsForPrivateAccessPolicyRequest.h"
 #include "model/ListTagsForPrivateAccessPolicyResult.h"
+#include "model/ListUserDevicesRequest.h"
+#include "model/ListUserDevicesResult.h"
 #include "model/ListUserGroupsRequest.h"
 #include "model/ListUserGroupsResult.h"
 #include "model/ListUserGroupsForPrivateAccessPolicyRequest.h"
 #include "model/ListUserGroupsForPrivateAccessPolicyResult.h"
+#include "model/ListUserGroupsForRegistrationPolicyRequest.h"
+#include "model/ListUserGroupsForRegistrationPolicyResult.h"
 #include "model/UpdateDynamicRouteRequest.h"
 #include "model/UpdateDynamicRouteResult.h"
+#include "model/UpdateExcessiveDeviceRegistrationApplicationsStatusRequest.h"
+#include "model/UpdateExcessiveDeviceRegistrationApplicationsStatusResult.h"
 #include "model/UpdatePrivateAccessApplicationRequest.h"
 #include "model/UpdatePrivateAccessApplicationResult.h"
 #include "model/UpdatePrivateAccessPolicyRequest.h"
 #include "model/UpdatePrivateAccessPolicyResult.h"
+#include "model/UpdateRegistrationPolicyRequest.h"
+#include "model/UpdateRegistrationPolicyResult.h"
+#include "model/UpdateUserDevicesSharingStatusRequest.h"
+#include "model/UpdateUserDevicesSharingStatusResult.h"
+#include "model/UpdateUserDevicesStatusRequest.h"
+#include "model/UpdateUserDevicesStatusResult.h"
 #include "model/UpdateUserGroupRequest.h"
 #include "model/UpdateUserGroupResult.h"
 
@@ -120,6 +148,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreatePrivateAccessTagResult> CreatePrivateAccessTagOutcome;
 			typedef std::future<CreatePrivateAccessTagOutcome> CreatePrivateAccessTagOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::CreatePrivateAccessTagRequest&, const CreatePrivateAccessTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrivateAccessTagAsyncHandler;
+			typedef Outcome<Error, Model::CreateRegistrationPolicyResult> CreateRegistrationPolicyOutcome;
+			typedef std::future<CreateRegistrationPolicyOutcome> CreateRegistrationPolicyOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::CreateRegistrationPolicyRequest&, const CreateRegistrationPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRegistrationPolicyAsyncHandler;
 			typedef Outcome<Error, Model::CreateUserGroupResult> CreateUserGroupOutcome;
 			typedef std::future<CreateUserGroupOutcome> CreateUserGroupOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::CreateUserGroupRequest&, const CreateUserGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserGroupAsyncHandler;
@@ -135,6 +166,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeletePrivateAccessTagResult> DeletePrivateAccessTagOutcome;
 			typedef std::future<DeletePrivateAccessTagOutcome> DeletePrivateAccessTagOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::DeletePrivateAccessTagRequest&, const DeletePrivateAccessTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrivateAccessTagAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRegistrationPoliciesResult> DeleteRegistrationPoliciesOutcome;
+			typedef std::future<DeleteRegistrationPoliciesOutcome> DeleteRegistrationPoliciesOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::DeleteRegistrationPoliciesRequest&, const DeleteRegistrationPoliciesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRegistrationPoliciesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteUserGroupResult> DeleteUserGroupOutcome;
 			typedef std::future<DeleteUserGroupOutcome> DeleteUserGroupOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::DeleteUserGroupRequest&, const DeleteUserGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserGroupAsyncHandler;
@@ -150,6 +184,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetPrivateAccessPolicyResult> GetPrivateAccessPolicyOutcome;
 			typedef std::future<GetPrivateAccessPolicyOutcome> GetPrivateAccessPolicyOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::GetPrivateAccessPolicyRequest&, const GetPrivateAccessPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPrivateAccessPolicyAsyncHandler;
+			typedef Outcome<Error, Model::GetRegistrationPolicyResult> GetRegistrationPolicyOutcome;
+			typedef std::future<GetRegistrationPolicyOutcome> GetRegistrationPolicyOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::GetRegistrationPolicyRequest&, const GetRegistrationPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRegistrationPolicyAsyncHandler;
+			typedef Outcome<Error, Model::GetUserDeviceResult> GetUserDeviceOutcome;
+			typedef std::future<GetUserDeviceOutcome> GetUserDeviceOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::GetUserDeviceRequest&, const GetUserDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserDeviceAsyncHandler;
 			typedef Outcome<Error, Model::GetUserGroupResult> GetUserGroupOutcome;
 			typedef std::future<GetUserGroupOutcome> GetUserGroupOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::GetUserGroupRequest&, const GetUserGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserGroupAsyncHandler;
@@ -168,6 +208,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDynamicRoutesResult> ListDynamicRoutesOutcome;
 			typedef std::future<ListDynamicRoutesOutcome> ListDynamicRoutesOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListDynamicRoutesRequest&, const ListDynamicRoutesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDynamicRoutesAsyncHandler;
+			typedef Outcome<Error, Model::ListExcessiveDeviceRegistrationApplicationsResult> ListExcessiveDeviceRegistrationApplicationsOutcome;
+			typedef std::future<ListExcessiveDeviceRegistrationApplicationsOutcome> ListExcessiveDeviceRegistrationApplicationsOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListExcessiveDeviceRegistrationApplicationsRequest&, const ListExcessiveDeviceRegistrationApplicationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListExcessiveDeviceRegistrationApplicationsAsyncHandler;
 			typedef Outcome<Error, Model::ListPolicesForPrivateAccessApplicationResult> ListPolicesForPrivateAccessApplicationOutcome;
 			typedef std::future<ListPolicesForPrivateAccessApplicationOutcome> ListPolicesForPrivateAccessApplicationOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListPolicesForPrivateAccessApplicationRequest&, const ListPolicesForPrivateAccessApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPolicesForPrivateAccessApplicationAsyncHandler;
@@ -192,27 +235,54 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListPrivateAccessTagsForDynamicRouteResult> ListPrivateAccessTagsForDynamicRouteOutcome;
 			typedef std::future<ListPrivateAccessTagsForDynamicRouteOutcome> ListPrivateAccessTagsForDynamicRouteOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListPrivateAccessTagsForDynamicRouteRequest&, const ListPrivateAccessTagsForDynamicRouteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPrivateAccessTagsForDynamicRouteAsyncHandler;
+			typedef Outcome<Error, Model::ListRegistrationPoliciesResult> ListRegistrationPoliciesOutcome;
+			typedef std::future<ListRegistrationPoliciesOutcome> ListRegistrationPoliciesOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListRegistrationPoliciesRequest&, const ListRegistrationPoliciesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRegistrationPoliciesAsyncHandler;
+			typedef Outcome<Error, Model::ListRegistrationPoliciesForUserGroupResult> ListRegistrationPoliciesForUserGroupOutcome;
+			typedef std::future<ListRegistrationPoliciesForUserGroupOutcome> ListRegistrationPoliciesForUserGroupOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListRegistrationPoliciesForUserGroupRequest&, const ListRegistrationPoliciesForUserGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRegistrationPoliciesForUserGroupAsyncHandler;
+			typedef Outcome<Error, Model::ListSoftwareForUserDeviceResult> ListSoftwareForUserDeviceOutcome;
+			typedef std::future<ListSoftwareForUserDeviceOutcome> ListSoftwareForUserDeviceOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListSoftwareForUserDeviceRequest&, const ListSoftwareForUserDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSoftwareForUserDeviceAsyncHandler;
 			typedef Outcome<Error, Model::ListTagsForPrivateAccessApplicationResult> ListTagsForPrivateAccessApplicationOutcome;
 			typedef std::future<ListTagsForPrivateAccessApplicationOutcome> ListTagsForPrivateAccessApplicationOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListTagsForPrivateAccessApplicationRequest&, const ListTagsForPrivateAccessApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagsForPrivateAccessApplicationAsyncHandler;
 			typedef Outcome<Error, Model::ListTagsForPrivateAccessPolicyResult> ListTagsForPrivateAccessPolicyOutcome;
 			typedef std::future<ListTagsForPrivateAccessPolicyOutcome> ListTagsForPrivateAccessPolicyOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListTagsForPrivateAccessPolicyRequest&, const ListTagsForPrivateAccessPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagsForPrivateAccessPolicyAsyncHandler;
+			typedef Outcome<Error, Model::ListUserDevicesResult> ListUserDevicesOutcome;
+			typedef std::future<ListUserDevicesOutcome> ListUserDevicesOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListUserDevicesRequest&, const ListUserDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserDevicesAsyncHandler;
 			typedef Outcome<Error, Model::ListUserGroupsResult> ListUserGroupsOutcome;
 			typedef std::future<ListUserGroupsOutcome> ListUserGroupsOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListUserGroupsRequest&, const ListUserGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserGroupsAsyncHandler;
 			typedef Outcome<Error, Model::ListUserGroupsForPrivateAccessPolicyResult> ListUserGroupsForPrivateAccessPolicyOutcome;
 			typedef std::future<ListUserGroupsForPrivateAccessPolicyOutcome> ListUserGroupsForPrivateAccessPolicyOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListUserGroupsForPrivateAccessPolicyRequest&, const ListUserGroupsForPrivateAccessPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserGroupsForPrivateAccessPolicyAsyncHandler;
+			typedef Outcome<Error, Model::ListUserGroupsForRegistrationPolicyResult> ListUserGroupsForRegistrationPolicyOutcome;
+			typedef std::future<ListUserGroupsForRegistrationPolicyOutcome> ListUserGroupsForRegistrationPolicyOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListUserGroupsForRegistrationPolicyRequest&, const ListUserGroupsForRegistrationPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserGroupsForRegistrationPolicyAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDynamicRouteResult> UpdateDynamicRouteOutcome;
 			typedef std::future<UpdateDynamicRouteOutcome> UpdateDynamicRouteOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::UpdateDynamicRouteRequest&, const UpdateDynamicRouteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDynamicRouteAsyncHandler;
+			typedef Outcome<Error, Model::UpdateExcessiveDeviceRegistrationApplicationsStatusResult> UpdateExcessiveDeviceRegistrationApplicationsStatusOutcome;
+			typedef std::future<UpdateExcessiveDeviceRegistrationApplicationsStatusOutcome> UpdateExcessiveDeviceRegistrationApplicationsStatusOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::UpdateExcessiveDeviceRegistrationApplicationsStatusRequest&, const UpdateExcessiveDeviceRegistrationApplicationsStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateExcessiveDeviceRegistrationApplicationsStatusAsyncHandler;
 			typedef Outcome<Error, Model::UpdatePrivateAccessApplicationResult> UpdatePrivateAccessApplicationOutcome;
 			typedef std::future<UpdatePrivateAccessApplicationOutcome> UpdatePrivateAccessApplicationOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::UpdatePrivateAccessApplicationRequest&, const UpdatePrivateAccessApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePrivateAccessApplicationAsyncHandler;
 			typedef Outcome<Error, Model::UpdatePrivateAccessPolicyResult> UpdatePrivateAccessPolicyOutcome;
 			typedef std::future<UpdatePrivateAccessPolicyOutcome> UpdatePrivateAccessPolicyOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::UpdatePrivateAccessPolicyRequest&, const UpdatePrivateAccessPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePrivateAccessPolicyAsyncHandler;
+			typedef Outcome<Error, Model::UpdateRegistrationPolicyResult> UpdateRegistrationPolicyOutcome;
+			typedef std::future<UpdateRegistrationPolicyOutcome> UpdateRegistrationPolicyOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::UpdateRegistrationPolicyRequest&, const UpdateRegistrationPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRegistrationPolicyAsyncHandler;
+			typedef Outcome<Error, Model::UpdateUserDevicesSharingStatusResult> UpdateUserDevicesSharingStatusOutcome;
+			typedef std::future<UpdateUserDevicesSharingStatusOutcome> UpdateUserDevicesSharingStatusOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::UpdateUserDevicesSharingStatusRequest&, const UpdateUserDevicesSharingStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserDevicesSharingStatusAsyncHandler;
+			typedef Outcome<Error, Model::UpdateUserDevicesStatusResult> UpdateUserDevicesStatusOutcome;
+			typedef std::future<UpdateUserDevicesStatusOutcome> UpdateUserDevicesStatusOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::UpdateUserDevicesStatusRequest&, const UpdateUserDevicesStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserDevicesStatusAsyncHandler;
 			typedef Outcome<Error, Model::UpdateUserGroupResult> UpdateUserGroupOutcome;
 			typedef std::future<UpdateUserGroupOutcome> UpdateUserGroupOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::UpdateUserGroupRequest&, const UpdateUserGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserGroupAsyncHandler;
@@ -236,6 +306,9 @@ namespace AlibabaCloud
 			CreatePrivateAccessTagOutcome createPrivateAccessTag(const Model::CreatePrivateAccessTagRequest &request)const;
 			void createPrivateAccessTagAsync(const Model::CreatePrivateAccessTagRequest& request, const CreatePrivateAccessTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatePrivateAccessTagOutcomeCallable createPrivateAccessTagCallable(const Model::CreatePrivateAccessTagRequest& request) const;
+			CreateRegistrationPolicyOutcome createRegistrationPolicy(const Model::CreateRegistrationPolicyRequest &request)const;
+			void createRegistrationPolicyAsync(const Model::CreateRegistrationPolicyRequest& request, const CreateRegistrationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRegistrationPolicyOutcomeCallable createRegistrationPolicyCallable(const Model::CreateRegistrationPolicyRequest& request) const;
 			CreateUserGroupOutcome createUserGroup(const Model::CreateUserGroupRequest &request)const;
 			void createUserGroupAsync(const Model::CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateUserGroupOutcomeCallable createUserGroupCallable(const Model::CreateUserGroupRequest& request) const;
@@ -251,6 +324,9 @@ namespace AlibabaCloud
 			DeletePrivateAccessTagOutcome deletePrivateAccessTag(const Model::DeletePrivateAccessTagRequest &request)const;
 			void deletePrivateAccessTagAsync(const Model::DeletePrivateAccessTagRequest& request, const DeletePrivateAccessTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeletePrivateAccessTagOutcomeCallable deletePrivateAccessTagCallable(const Model::DeletePrivateAccessTagRequest& request) const;
+			DeleteRegistrationPoliciesOutcome deleteRegistrationPolicies(const Model::DeleteRegistrationPoliciesRequest &request)const;
+			void deleteRegistrationPoliciesAsync(const Model::DeleteRegistrationPoliciesRequest& request, const DeleteRegistrationPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRegistrationPoliciesOutcomeCallable deleteRegistrationPoliciesCallable(const Model::DeleteRegistrationPoliciesRequest& request) const;
 			DeleteUserGroupOutcome deleteUserGroup(const Model::DeleteUserGroupRequest &request)const;
 			void deleteUserGroupAsync(const Model::DeleteUserGroupRequest& request, const DeleteUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUserGroupOutcomeCallable deleteUserGroupCallable(const Model::DeleteUserGroupRequest& request) const;
@@ -266,6 +342,12 @@ namespace AlibabaCloud
 			GetPrivateAccessPolicyOutcome getPrivateAccessPolicy(const Model::GetPrivateAccessPolicyRequest &request)const;
 			void getPrivateAccessPolicyAsync(const Model::GetPrivateAccessPolicyRequest& request, const GetPrivateAccessPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPrivateAccessPolicyOutcomeCallable getPrivateAccessPolicyCallable(const Model::GetPrivateAccessPolicyRequest& request) const;
+			GetRegistrationPolicyOutcome getRegistrationPolicy(const Model::GetRegistrationPolicyRequest &request)const;
+			void getRegistrationPolicyAsync(const Model::GetRegistrationPolicyRequest& request, const GetRegistrationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetRegistrationPolicyOutcomeCallable getRegistrationPolicyCallable(const Model::GetRegistrationPolicyRequest& request) const;
+			GetUserDeviceOutcome getUserDevice(const Model::GetUserDeviceRequest &request)const;
+			void getUserDeviceAsync(const Model::GetUserDeviceRequest& request, const GetUserDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetUserDeviceOutcomeCallable getUserDeviceCallable(const Model::GetUserDeviceRequest& request) const;
 			GetUserGroupOutcome getUserGroup(const Model::GetUserGroupRequest &request)const;
 			void getUserGroupAsync(const Model::GetUserGroupRequest& request, const GetUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUserGroupOutcomeCallable getUserGroupCallable(const Model::GetUserGroupRequest& request) const;
@@ -284,6 +366,9 @@ namespace AlibabaCloud
 			ListDynamicRoutesOutcome listDynamicRoutes(const Model::ListDynamicRoutesRequest &request)const;
 			void listDynamicRoutesAsync(const Model::ListDynamicRoutesRequest& request, const ListDynamicRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDynamicRoutesOutcomeCallable listDynamicRoutesCallable(const Model::ListDynamicRoutesRequest& request) const;
+			ListExcessiveDeviceRegistrationApplicationsOutcome listExcessiveDeviceRegistrationApplications(const Model::ListExcessiveDeviceRegistrationApplicationsRequest &request)const;
+			void listExcessiveDeviceRegistrationApplicationsAsync(const Model::ListExcessiveDeviceRegistrationApplicationsRequest& request, const ListExcessiveDeviceRegistrationApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListExcessiveDeviceRegistrationApplicationsOutcomeCallable listExcessiveDeviceRegistrationApplicationsCallable(const Model::ListExcessiveDeviceRegistrationApplicationsRequest& request) const;
 			ListPolicesForPrivateAccessApplicationOutcome listPolicesForPrivateAccessApplication(const Model::ListPolicesForPrivateAccessApplicationRequest &request)const;
 			void listPolicesForPrivateAccessApplicationAsync(const Model::ListPolicesForPrivateAccessApplicationRequest& request, const ListPolicesForPrivateAccessApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPolicesForPrivateAccessApplicationOutcomeCallable listPolicesForPrivateAccessApplicationCallable(const Model::ListPolicesForPrivateAccessApplicationRequest& request) const;
@@ -308,27 +393,54 @@ namespace AlibabaCloud
 			ListPrivateAccessTagsForDynamicRouteOutcome listPrivateAccessTagsForDynamicRoute(const Model::ListPrivateAccessTagsForDynamicRouteRequest &request)const;
 			void listPrivateAccessTagsForDynamicRouteAsync(const Model::ListPrivateAccessTagsForDynamicRouteRequest& request, const ListPrivateAccessTagsForDynamicRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPrivateAccessTagsForDynamicRouteOutcomeCallable listPrivateAccessTagsForDynamicRouteCallable(const Model::ListPrivateAccessTagsForDynamicRouteRequest& request) const;
+			ListRegistrationPoliciesOutcome listRegistrationPolicies(const Model::ListRegistrationPoliciesRequest &request)const;
+			void listRegistrationPoliciesAsync(const Model::ListRegistrationPoliciesRequest& request, const ListRegistrationPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListRegistrationPoliciesOutcomeCallable listRegistrationPoliciesCallable(const Model::ListRegistrationPoliciesRequest& request) const;
+			ListRegistrationPoliciesForUserGroupOutcome listRegistrationPoliciesForUserGroup(const Model::ListRegistrationPoliciesForUserGroupRequest &request)const;
+			void listRegistrationPoliciesForUserGroupAsync(const Model::ListRegistrationPoliciesForUserGroupRequest& request, const ListRegistrationPoliciesForUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListRegistrationPoliciesForUserGroupOutcomeCallable listRegistrationPoliciesForUserGroupCallable(const Model::ListRegistrationPoliciesForUserGroupRequest& request) const;
+			ListSoftwareForUserDeviceOutcome listSoftwareForUserDevice(const Model::ListSoftwareForUserDeviceRequest &request)const;
+			void listSoftwareForUserDeviceAsync(const Model::ListSoftwareForUserDeviceRequest& request, const ListSoftwareForUserDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSoftwareForUserDeviceOutcomeCallable listSoftwareForUserDeviceCallable(const Model::ListSoftwareForUserDeviceRequest& request) const;
 			ListTagsForPrivateAccessApplicationOutcome listTagsForPrivateAccessApplication(const Model::ListTagsForPrivateAccessApplicationRequest &request)const;
 			void listTagsForPrivateAccessApplicationAsync(const Model::ListTagsForPrivateAccessApplicationRequest& request, const ListTagsForPrivateAccessApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagsForPrivateAccessApplicationOutcomeCallable listTagsForPrivateAccessApplicationCallable(const Model::ListTagsForPrivateAccessApplicationRequest& request) const;
 			ListTagsForPrivateAccessPolicyOutcome listTagsForPrivateAccessPolicy(const Model::ListTagsForPrivateAccessPolicyRequest &request)const;
 			void listTagsForPrivateAccessPolicyAsync(const Model::ListTagsForPrivateAccessPolicyRequest& request, const ListTagsForPrivateAccessPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagsForPrivateAccessPolicyOutcomeCallable listTagsForPrivateAccessPolicyCallable(const Model::ListTagsForPrivateAccessPolicyRequest& request) const;
+			ListUserDevicesOutcome listUserDevices(const Model::ListUserDevicesRequest &request)const;
+			void listUserDevicesAsync(const Model::ListUserDevicesRequest& request, const ListUserDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUserDevicesOutcomeCallable listUserDevicesCallable(const Model::ListUserDevicesRequest& request) const;
 			ListUserGroupsOutcome listUserGroups(const Model::ListUserGroupsRequest &request)const;
 			void listUserGroupsAsync(const Model::ListUserGroupsRequest& request, const ListUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUserGroupsOutcomeCallable listUserGroupsCallable(const Model::ListUserGroupsRequest& request) const;
 			ListUserGroupsForPrivateAccessPolicyOutcome listUserGroupsForPrivateAccessPolicy(const Model::ListUserGroupsForPrivateAccessPolicyRequest &request)const;
 			void listUserGroupsForPrivateAccessPolicyAsync(const Model::ListUserGroupsForPrivateAccessPolicyRequest& request, const ListUserGroupsForPrivateAccessPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUserGroupsForPrivateAccessPolicyOutcomeCallable listUserGroupsForPrivateAccessPolicyCallable(const Model::ListUserGroupsForPrivateAccessPolicyRequest& request) const;
+			ListUserGroupsForRegistrationPolicyOutcome listUserGroupsForRegistrationPolicy(const Model::ListUserGroupsForRegistrationPolicyRequest &request)const;
+			void listUserGroupsForRegistrationPolicyAsync(const Model::ListUserGroupsForRegistrationPolicyRequest& request, const ListUserGroupsForRegistrationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUserGroupsForRegistrationPolicyOutcomeCallable listUserGroupsForRegistrationPolicyCallable(const Model::ListUserGroupsForRegistrationPolicyRequest& request) const;
 			UpdateDynamicRouteOutcome updateDynamicRoute(const Model::UpdateDynamicRouteRequest &request)const;
 			void updateDynamicRouteAsync(const Model::UpdateDynamicRouteRequest& request, const UpdateDynamicRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDynamicRouteOutcomeCallable updateDynamicRouteCallable(const Model::UpdateDynamicRouteRequest& request) const;
+			UpdateExcessiveDeviceRegistrationApplicationsStatusOutcome updateExcessiveDeviceRegistrationApplicationsStatus(const Model::UpdateExcessiveDeviceRegistrationApplicationsStatusRequest &request)const;
+			void updateExcessiveDeviceRegistrationApplicationsStatusAsync(const Model::UpdateExcessiveDeviceRegistrationApplicationsStatusRequest& request, const UpdateExcessiveDeviceRegistrationApplicationsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateExcessiveDeviceRegistrationApplicationsStatusOutcomeCallable updateExcessiveDeviceRegistrationApplicationsStatusCallable(const Model::UpdateExcessiveDeviceRegistrationApplicationsStatusRequest& request) const;
 			UpdatePrivateAccessApplicationOutcome updatePrivateAccessApplication(const Model::UpdatePrivateAccessApplicationRequest &request)const;
 			void updatePrivateAccessApplicationAsync(const Model::UpdatePrivateAccessApplicationRequest& request, const UpdatePrivateAccessApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdatePrivateAccessApplicationOutcomeCallable updatePrivateAccessApplicationCallable(const Model::UpdatePrivateAccessApplicationRequest& request) const;
 			UpdatePrivateAccessPolicyOutcome updatePrivateAccessPolicy(const Model::UpdatePrivateAccessPolicyRequest &request)const;
 			void updatePrivateAccessPolicyAsync(const Model::UpdatePrivateAccessPolicyRequest& request, const UpdatePrivateAccessPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdatePrivateAccessPolicyOutcomeCallable updatePrivateAccessPolicyCallable(const Model::UpdatePrivateAccessPolicyRequest& request) const;
+			UpdateRegistrationPolicyOutcome updateRegistrationPolicy(const Model::UpdateRegistrationPolicyRequest &request)const;
+			void updateRegistrationPolicyAsync(const Model::UpdateRegistrationPolicyRequest& request, const UpdateRegistrationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateRegistrationPolicyOutcomeCallable updateRegistrationPolicyCallable(const Model::UpdateRegistrationPolicyRequest& request) const;
+			UpdateUserDevicesSharingStatusOutcome updateUserDevicesSharingStatus(const Model::UpdateUserDevicesSharingStatusRequest &request)const;
+			void updateUserDevicesSharingStatusAsync(const Model::UpdateUserDevicesSharingStatusRequest& request, const UpdateUserDevicesSharingStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateUserDevicesSharingStatusOutcomeCallable updateUserDevicesSharingStatusCallable(const Model::UpdateUserDevicesSharingStatusRequest& request) const;
+			UpdateUserDevicesStatusOutcome updateUserDevicesStatus(const Model::UpdateUserDevicesStatusRequest &request)const;
+			void updateUserDevicesStatusAsync(const Model::UpdateUserDevicesStatusRequest& request, const UpdateUserDevicesStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateUserDevicesStatusOutcomeCallable updateUserDevicesStatusCallable(const Model::UpdateUserDevicesStatusRequest& request) const;
 			UpdateUserGroupOutcome updateUserGroup(const Model::UpdateUserGroupRequest &request)const;
 			void updateUserGroupAsync(const Model::UpdateUserGroupRequest& request, const UpdateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateUserGroupOutcomeCallable updateUserGroupCallable(const Model::UpdateUserGroupRequest& request) const;
