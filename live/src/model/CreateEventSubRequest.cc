@@ -25,33 +25,6 @@ CreateEventSubRequest::CreateEventSubRequest()
 
 CreateEventSubRequest::~CreateEventSubRequest() {}
 
-int CreateEventSubRequest::getRole() const {
-  return role_;
-}
-
-void CreateEventSubRequest::setRole(int role) {
-  role_ = role;
-  setParameter(std::string("Role"), std::to_string(role));
-}
-
-std::string CreateEventSubRequest::getClientToken() const {
-  return clientToken_;
-}
-
-void CreateEventSubRequest::setClientToken(const std::string &clientToken) {
-  clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), clientToken);
-}
-
-bool CreateEventSubRequest::getNeedCallbackAuthorization() const {
-  return needCallbackAuthorization_;
-}
-
-void CreateEventSubRequest::setNeedCallbackAuthorization(bool needCallbackAuthorization) {
-  needCallbackAuthorization_ = needCallbackAuthorization;
-  setParameter(std::string("NeedCallbackAuthorization"), needCallbackAuthorization ? "true" : "false");
-}
-
 std::vector<std::string> CreateEventSubRequest::getUsers() const {
   return users_;
 }

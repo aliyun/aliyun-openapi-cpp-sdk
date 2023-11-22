@@ -137,6 +137,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/CreateMessageGroupResult.h
 	include/alibabacloud/live/model/CreateMixStreamRequest.h
 	include/alibabacloud/live/model/CreateMixStreamResult.h
+	include/alibabacloud/live/model/CreateRoomRealTimeStreamAddressRequest.h
+	include/alibabacloud/live/model/CreateRoomRealTimeStreamAddressResult.h
 	include/alibabacloud/live/model/DeleteCasterRequest.h
 	include/alibabacloud/live/model/DeleteCasterResult.h
 	include/alibabacloud/live/model/DeleteCasterComponentRequest.h
@@ -315,6 +317,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveDomainLimitResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainLogRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainLogResult.h
+	include/alibabacloud/live/model/DescribeLiveDomainLogExTtlRequest.h
+	include/alibabacloud/live/model/DescribeLiveDomainLogExTtlResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainMappingRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainMappingResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainMonitoringUsageDataRequest.h
@@ -359,6 +363,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveEdgeTransferResult.h
 	include/alibabacloud/live/model/DescribeLiveGrtnDurationRequest.h
 	include/alibabacloud/live/model/DescribeLiveGrtnDurationResult.h
+	include/alibabacloud/live/model/DescribeLiveGrtnTrafficUsageRequest.h
+	include/alibabacloud/live/model/DescribeLiveGrtnTrafficUsageResult.h
 	include/alibabacloud/live/model/DescribeLiveHttpsDomainListRequest.h
 	include/alibabacloud/live/model/DescribeLiveHttpsDomainListResult.h
 	include/alibabacloud/live/model/DescribeLiveIpInfoRequest.h
@@ -433,6 +439,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveStreamStateResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamTranscodeInfoRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamTranscodeInfoResult.h
+	include/alibabacloud/live/model/DescribeLiveStreamTranscodeMetricDataRequest.h
+	include/alibabacloud/live/model/DescribeLiveStreamTranscodeMetricDataResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamTranscodeStreamNumRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamTranscodeStreamNumResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamWatermarkRulesRequest.h
@@ -888,6 +896,8 @@ set(live_src
 	src/model/CreateMessageGroupResult.cc
 	src/model/CreateMixStreamRequest.cc
 	src/model/CreateMixStreamResult.cc
+	src/model/CreateRoomRealTimeStreamAddressRequest.cc
+	src/model/CreateRoomRealTimeStreamAddressResult.cc
 	src/model/DeleteCasterRequest.cc
 	src/model/DeleteCasterResult.cc
 	src/model/DeleteCasterComponentRequest.cc
@@ -1066,6 +1076,8 @@ set(live_src
 	src/model/DescribeLiveDomainLimitResult.cc
 	src/model/DescribeLiveDomainLogRequest.cc
 	src/model/DescribeLiveDomainLogResult.cc
+	src/model/DescribeLiveDomainLogExTtlRequest.cc
+	src/model/DescribeLiveDomainLogExTtlResult.cc
 	src/model/DescribeLiveDomainMappingRequest.cc
 	src/model/DescribeLiveDomainMappingResult.cc
 	src/model/DescribeLiveDomainMonitoringUsageDataRequest.cc
@@ -1110,6 +1122,8 @@ set(live_src
 	src/model/DescribeLiveEdgeTransferResult.cc
 	src/model/DescribeLiveGrtnDurationRequest.cc
 	src/model/DescribeLiveGrtnDurationResult.cc
+	src/model/DescribeLiveGrtnTrafficUsageRequest.cc
+	src/model/DescribeLiveGrtnTrafficUsageResult.cc
 	src/model/DescribeLiveHttpsDomainListRequest.cc
 	src/model/DescribeLiveHttpsDomainListResult.cc
 	src/model/DescribeLiveIpInfoRequest.cc
@@ -1184,6 +1198,8 @@ set(live_src
 	src/model/DescribeLiveStreamStateResult.cc
 	src/model/DescribeLiveStreamTranscodeInfoRequest.cc
 	src/model/DescribeLiveStreamTranscodeInfoResult.cc
+	src/model/DescribeLiveStreamTranscodeMetricDataRequest.cc
+	src/model/DescribeLiveStreamTranscodeMetricDataResult.cc
 	src/model/DescribeLiveStreamTranscodeStreamNumRequest.cc
 	src/model/DescribeLiveStreamTranscodeStreamNumResult.cc
 	src/model/DescribeLiveStreamWatermarkRulesRequest.cc

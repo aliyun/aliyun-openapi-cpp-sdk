@@ -97,6 +97,24 @@ void SetCasterConfigRequest::setCasterName(const std::string &casterName) {
   setParameter(std::string("CasterName"), casterName);
 }
 
+bool SetCasterConfigRequest::getAutoSwitchUrgentOn() const {
+  return autoSwitchUrgentOn_;
+}
+
+void SetCasterConfigRequest::setAutoSwitchUrgentOn(bool autoSwitchUrgentOn) {
+  autoSwitchUrgentOn_ = autoSwitchUrgentOn;
+  setParameter(std::string("AutoSwitchUrgentOn"), autoSwitchUrgentOn ? "true" : "false");
+}
+
+std::string SetCasterConfigRequest::getAutoSwitchUrgentConfig() const {
+  return autoSwitchUrgentConfig_;
+}
+
+void SetCasterConfigRequest::setAutoSwitchUrgentConfig(const std::string &autoSwitchUrgentConfig) {
+  autoSwitchUrgentConfig_ = autoSwitchUrgentConfig;
+  setParameter(std::string("AutoSwitchUrgentConfig"), autoSwitchUrgentConfig);
+}
+
 std::string SetCasterConfigRequest::getUrgentLiveStreamUrl() const {
   return urgentLiveStreamUrl_;
 }

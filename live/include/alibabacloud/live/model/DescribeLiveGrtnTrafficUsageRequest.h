@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_CREATEEVENTSUBREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_CREATEEVENTSUBREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEGRTNTRAFFICUSAGEREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEGRTNTRAFFICUSAGEREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,35 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT CreateEventSubRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT DescribeLiveGrtnTrafficUsageRequest : public RpcServiceRequest {
 public:
-	CreateEventSubRequest();
-	~CreateEventSubRequest();
-	std::vector<std::string> getUsers() const;
-	void setUsers(const std::vector<std::string> &users);
+	DescribeLiveGrtnTrafficUsageRequest();
+	~DescribeLiveGrtnTrafficUsageRequest();
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
+	std::string getArea() const;
+	void setArea(const std::string &area);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
+	std::string getField() const;
+	void setField(const std::string &field);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
-	std::string getCallbackUrl() const;
-	void setCallbackUrl(const std::string &callbackUrl);
-	std::string getChannelId() const;
-	void setChannelId(const std::string &channelId);
-	std::vector<std::string> getEvents() const;
-	void setEvents(const std::vector<std::string> &events);
+	std::string getInterval() const;
+	void setInterval(const std::string &interval);
 
 private:
-	std::vector<std::string> users_;
+	std::string startTime_;
+	std::string area_;
+	std::string endTime_;
+	long ownerId_;
+	std::string field_;
 	std::string appId_;
-	std::string callbackUrl_;
-	std::string channelId_;
-	std::vector<std::string> events_;
+	std::string interval_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_CREATEEVENTSUBREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEGRTNTRAFFICUSAGEREQUEST_H_

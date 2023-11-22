@@ -46,6 +46,10 @@ public:
 	void setTranscodeConfig(const std::string &transcodeConfig);
 	std::string getCasterName() const;
 	void setCasterName(const std::string &casterName);
+	bool getAutoSwitchUrgentOn() const;
+	void setAutoSwitchUrgentOn(bool autoSwitchUrgentOn);
+	std::string getAutoSwitchUrgentConfig() const;
+	void setAutoSwitchUrgentConfig(const std::string &autoSwitchUrgentConfig);
 	std::string getUrgentLiveStreamUrl() const;
 	void setUrgentLiveStreamUrl(const std::string &urgentLiveStreamUrl);
 	std::string getSideOutputUrl() const;
@@ -76,6 +80,8 @@ private:
 	std::string urgentMaterialId_;
 	std::string transcodeConfig_;
 	std::string casterName_;
+	bool autoSwitchUrgentOn_;
+	std::string autoSwitchUrgentConfig_;
 	std::string urgentLiveStreamUrl_;
 	std::string sideOutputUrl_;
 	std::string syncGroupsConfig_;

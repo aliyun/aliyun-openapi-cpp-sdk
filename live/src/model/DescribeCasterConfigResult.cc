@@ -107,6 +107,10 @@ void DescribeCasterConfigResult::parse(const std::string &payload)
 		sideOutputUrlList_ = value["SideOutputUrlList"].asString();
 	if(!value["SideOutputUrl"].isNull())
 		sideOutputUrl_ = value["SideOutputUrl"].asString();
+	if(!value["AutoSwitchUrgentOn"].isNull())
+		autoSwitchUrgentOn_ = value["AutoSwitchUrgentOn"].asString();
+	if(!value["AutoSwitchUrgentConfig"].isNull())
+		autoSwitchUrgentConfig_ = value["AutoSwitchUrgentConfig"].asString();
 
 }
 
@@ -123,6 +127,11 @@ std::string DescribeCasterConfigResult::getDomainName()const
 std::string DescribeCasterConfigResult::getUrgentImageUrl()const
 {
 	return urgentImageUrl_;
+}
+
+std::string DescribeCasterConfigResult::getAutoSwitchUrgentConfig()const
+{
+	return autoSwitchUrgentConfig_;
 }
 
 std::string DescribeCasterConfigResult::getUrgentMaterialId()const
@@ -173,6 +182,11 @@ std::string DescribeCasterConfigResult::getCasterName()const
 int DescribeCasterConfigResult::getProgramEffect()const
 {
 	return programEffect_;
+}
+
+std::string DescribeCasterConfigResult::getAutoSwitchUrgentOn()const
+{
+	return autoSwitchUrgentOn_;
 }
 
 std::vector<DescribeCasterConfigResult::SyncGroup> DescribeCasterConfigResult::getSyncGroupsConfig()const
