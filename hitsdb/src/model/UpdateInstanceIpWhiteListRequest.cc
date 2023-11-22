@@ -34,6 +34,15 @@ void UpdateInstanceIpWhiteListRequest::setResourceOwnerId(long resourceOwnerId) 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+bool UpdateInstanceIpWhiteListRequest::get_Delete() const {
+  return _delete_;
+}
+
+void UpdateInstanceIpWhiteListRequest::set_Delete(bool _delete) {
+  _delete_ = _delete;
+  setParameter(std::string("Delete"), _delete ? "true" : "false");
+}
+
 std::string UpdateInstanceIpWhiteListRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

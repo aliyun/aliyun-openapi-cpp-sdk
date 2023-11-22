@@ -22,12 +22,18 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "HitsdbExport.h"
+#include "model/CreateLdpsNamespaceRequest.h"
+#include "model/CreateLdpsNamespaceResult.h"
 #include "model/CreateLindormInstanceRequest.h"
 #include "model/CreateLindormInstanceResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
 #include "model/GetInstanceIpWhiteListRequest.h"
 #include "model/GetInstanceIpWhiteListResult.h"
+#include "model/GetLdpsNamespacedQuotaRequest.h"
+#include "model/GetLdpsNamespacedQuotaResult.h"
+#include "model/GetLdpsResourceCostRequest.h"
+#include "model/GetLdpsResourceCostResult.h"
 #include "model/GetLindormInstanceRequest.h"
 #include "model/GetLindormInstanceResult.h"
 #include "model/GetLindormInstanceEngineListRequest.h"
@@ -59,6 +65,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_HITSDB_EXPORT HitsdbClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::CreateLdpsNamespaceResult> CreateLdpsNamespaceOutcome;
+			typedef std::future<CreateLdpsNamespaceOutcome> CreateLdpsNamespaceOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::CreateLdpsNamespaceRequest&, const CreateLdpsNamespaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLdpsNamespaceAsyncHandler;
 			typedef Outcome<Error, Model::CreateLindormInstanceResult> CreateLindormInstanceOutcome;
 			typedef std::future<CreateLindormInstanceOutcome> CreateLindormInstanceOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::CreateLindormInstanceRequest&, const CreateLindormInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLindormInstanceAsyncHandler;
@@ -68,6 +77,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetInstanceIpWhiteListResult> GetInstanceIpWhiteListOutcome;
 			typedef std::future<GetInstanceIpWhiteListOutcome> GetInstanceIpWhiteListOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::GetInstanceIpWhiteListRequest&, const GetInstanceIpWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceIpWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::GetLdpsNamespacedQuotaResult> GetLdpsNamespacedQuotaOutcome;
+			typedef std::future<GetLdpsNamespacedQuotaOutcome> GetLdpsNamespacedQuotaOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::GetLdpsNamespacedQuotaRequest&, const GetLdpsNamespacedQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLdpsNamespacedQuotaAsyncHandler;
+			typedef Outcome<Error, Model::GetLdpsResourceCostResult> GetLdpsResourceCostOutcome;
+			typedef std::future<GetLdpsResourceCostOutcome> GetLdpsResourceCostOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::GetLdpsResourceCostRequest&, const GetLdpsResourceCostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLdpsResourceCostAsyncHandler;
 			typedef Outcome<Error, Model::GetLindormInstanceResult> GetLindormInstanceOutcome;
 			typedef std::future<GetLindormInstanceOutcome> GetLindormInstanceOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::GetLindormInstanceRequest&, const GetLindormInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLindormInstanceAsyncHandler;
@@ -106,6 +121,9 @@ namespace AlibabaCloud
 			HitsdbClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			HitsdbClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~HitsdbClient();
+			CreateLdpsNamespaceOutcome createLdpsNamespace(const Model::CreateLdpsNamespaceRequest &request)const;
+			void createLdpsNamespaceAsync(const Model::CreateLdpsNamespaceRequest& request, const CreateLdpsNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateLdpsNamespaceOutcomeCallable createLdpsNamespaceCallable(const Model::CreateLdpsNamespaceRequest& request) const;
 			CreateLindormInstanceOutcome createLindormInstance(const Model::CreateLindormInstanceRequest &request)const;
 			void createLindormInstanceAsync(const Model::CreateLindormInstanceRequest& request, const CreateLindormInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLindormInstanceOutcomeCallable createLindormInstanceCallable(const Model::CreateLindormInstanceRequest& request) const;
@@ -115,6 +133,12 @@ namespace AlibabaCloud
 			GetInstanceIpWhiteListOutcome getInstanceIpWhiteList(const Model::GetInstanceIpWhiteListRequest &request)const;
 			void getInstanceIpWhiteListAsync(const Model::GetInstanceIpWhiteListRequest& request, const GetInstanceIpWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceIpWhiteListOutcomeCallable getInstanceIpWhiteListCallable(const Model::GetInstanceIpWhiteListRequest& request) const;
+			GetLdpsNamespacedQuotaOutcome getLdpsNamespacedQuota(const Model::GetLdpsNamespacedQuotaRequest &request)const;
+			void getLdpsNamespacedQuotaAsync(const Model::GetLdpsNamespacedQuotaRequest& request, const GetLdpsNamespacedQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetLdpsNamespacedQuotaOutcomeCallable getLdpsNamespacedQuotaCallable(const Model::GetLdpsNamespacedQuotaRequest& request) const;
+			GetLdpsResourceCostOutcome getLdpsResourceCost(const Model::GetLdpsResourceCostRequest &request)const;
+			void getLdpsResourceCostAsync(const Model::GetLdpsResourceCostRequest& request, const GetLdpsResourceCostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetLdpsResourceCostOutcomeCallable getLdpsResourceCostCallable(const Model::GetLdpsResourceCostRequest& request) const;
 			GetLindormInstanceOutcome getLindormInstance(const Model::GetLindormInstanceRequest &request)const;
 			void getLindormInstanceAsync(const Model::GetLindormInstanceRequest& request, const GetLindormInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetLindormInstanceOutcomeCallable getLindormInstanceCallable(const Model::GetLindormInstanceRequest& request) const;

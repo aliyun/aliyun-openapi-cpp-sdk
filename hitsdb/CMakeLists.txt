@@ -21,12 +21,18 @@ set(hitsdb_public_header
 	include/alibabacloud/hitsdb/HitsdbExport.h )
 
 set(hitsdb_public_header_model 
+	include/alibabacloud/hitsdb/model/CreateLdpsNamespaceRequest.h
+	include/alibabacloud/hitsdb/model/CreateLdpsNamespaceResult.h
 	include/alibabacloud/hitsdb/model/CreateLindormInstanceRequest.h
 	include/alibabacloud/hitsdb/model/CreateLindormInstanceResult.h
 	include/alibabacloud/hitsdb/model/DescribeRegionsRequest.h
 	include/alibabacloud/hitsdb/model/DescribeRegionsResult.h
 	include/alibabacloud/hitsdb/model/GetInstanceIpWhiteListRequest.h
 	include/alibabacloud/hitsdb/model/GetInstanceIpWhiteListResult.h
+	include/alibabacloud/hitsdb/model/GetLdpsNamespacedQuotaRequest.h
+	include/alibabacloud/hitsdb/model/GetLdpsNamespacedQuotaResult.h
+	include/alibabacloud/hitsdb/model/GetLdpsResourceCostRequest.h
+	include/alibabacloud/hitsdb/model/GetLdpsResourceCostResult.h
 	include/alibabacloud/hitsdb/model/GetLindormInstanceRequest.h
 	include/alibabacloud/hitsdb/model/GetLindormInstanceResult.h
 	include/alibabacloud/hitsdb/model/GetLindormInstanceEngineListRequest.h
@@ -52,12 +58,18 @@ set(hitsdb_public_header_model
 
 set(hitsdb_src 
 	src/HitsdbClient.cc
+	src/model/CreateLdpsNamespaceRequest.cc
+	src/model/CreateLdpsNamespaceResult.cc
 	src/model/CreateLindormInstanceRequest.cc
 	src/model/CreateLindormInstanceResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/GetInstanceIpWhiteListRequest.cc
 	src/model/GetInstanceIpWhiteListResult.cc
+	src/model/GetLdpsNamespacedQuotaRequest.cc
+	src/model/GetLdpsNamespacedQuotaResult.cc
+	src/model/GetLdpsResourceCostRequest.cc
+	src/model/GetLdpsResourceCostResult.cc
 	src/model/GetLindormInstanceRequest.cc
 	src/model/GetLindormInstanceResult.cc
 	src/model/GetLindormInstanceEngineListRequest.cc

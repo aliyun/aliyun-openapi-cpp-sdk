@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_RELEASELINDORMINSTANCEREQUEST_H_
-#define ALIBABACLOUD_HITSDB_MODEL_RELEASELINDORMINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_CREATELDPSNAMESPACEREQUEST_H_
+#define ALIBABACLOUD_HITSDB_MODEL_CREATELDPSNAMESPACEREQUEST_H_
 
 #include <alibabacloud/hitsdb/HitsdbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,18 +26,18 @@
 namespace AlibabaCloud {
 namespace Hitsdb {
 namespace Model {
-class ALIBABACLOUD_HITSDB_EXPORT ReleaseLindormInstanceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_HITSDB_EXPORT CreateLdpsNamespaceRequest : public RpcServiceRequest {
 public:
-	ReleaseLindormInstanceRequest();
-	~ReleaseLindormInstanceRequest();
+	CreateLdpsNamespaceRequest();
+	~CreateLdpsNamespaceRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	bool getImmediately() const;
-	void setImmediately(bool immediately);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -46,18 +46,21 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::string get_Namespace() const;
+	void set_Namespace(const std::string &_namespace);
 
 private:
 	long resourceOwnerId_;
-	bool immediately_;
 	std::string accessKeyId_;
 	std::string securityToken_;
+	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string instanceId_;
+	std::string _namespace_;
 };
 } // namespace Model
 } // namespace Hitsdb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_HITSDB_MODEL_RELEASELINDORMINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_CREATELDPSNAMESPACEREQUEST_H_

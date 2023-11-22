@@ -34,6 +34,15 @@ void ReleaseLindormInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+bool ReleaseLindormInstanceRequest::getImmediately() const {
+  return immediately_;
+}
+
+void ReleaseLindormInstanceRequest::setImmediately(bool immediately) {
+  immediately_ = immediately;
+  setParameter(std::string("Immediately"), immediately ? "true" : "false");
+}
+
 std::string ReleaseLindormInstanceRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

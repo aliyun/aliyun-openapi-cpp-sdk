@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_RELEASELINDORMINSTANCEREQUEST_H_
-#define ALIBABACLOUD_HITSDB_MODEL_RELEASELINDORMINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_GETLDPSRESOURCECOSTREQUEST_H_
+#define ALIBABACLOUD_HITSDB_MODEL_GETLDPSRESOURCECOSTREQUEST_H_
 
 #include <alibabacloud/hitsdb/HitsdbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,22 +26,28 @@
 namespace AlibabaCloud {
 namespace Hitsdb {
 namespace Model {
-class ALIBABACLOUD_HITSDB_EXPORT ReleaseLindormInstanceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_HITSDB_EXPORT GetLdpsResourceCostRequest : public RpcServiceRequest {
 public:
-	ReleaseLindormInstanceRequest();
-	~ReleaseLindormInstanceRequest();
+	GetLdpsResourceCostRequest();
+	~GetLdpsResourceCostRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	bool getImmediately() const;
-	void setImmediately(bool immediately);
+	long getStartTime() const;
+	void setStartTime(long startTime);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getJobId() const;
+	void setJobId(const std::string &jobId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	long getEndTime() const;
+	void setEndTime(long endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getInstanceId() const;
@@ -49,15 +55,18 @@ public:
 
 private:
 	long resourceOwnerId_;
-	bool immediately_;
+	long startTime_;
 	std::string accessKeyId_;
+	std::string jobId_;
 	std::string securityToken_;
+	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
+	long endTime_;
 	long ownerId_;
 	std::string instanceId_;
 };
 } // namespace Model
 } // namespace Hitsdb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_HITSDB_MODEL_RELEASELINDORMINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_GETLDPSRESOURCECOSTREQUEST_H_

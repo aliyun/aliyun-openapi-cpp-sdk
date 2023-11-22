@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTRESULT_H_
-#define ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTRESULT_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_CREATELDPSNAMESPACERESULT_H_
+#define ALIBABACLOUD_HITSDB_MODEL_CREATELDPSNAMESPACERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HITSDB_EXPORT GetInstanceIpWhiteListResult : public ServiceResult
+			class ALIBABACLOUD_HITSDB_EXPORT CreateLdpsNamespaceResult : public ServiceResult
 			{
 			public:
-				struct GroupListItem
-				{
-					std::string groupName;
-					std::string securityIpList;
-				};
 
 
-				GetInstanceIpWhiteListResult();
-				explicit GetInstanceIpWhiteListResult(const std::string &payload);
-				~GetInstanceIpWhiteListResult();
-				std::vector<GroupListItem> getGroupList()const;
-				std::vector<std::string> getIpList()const;
-				std::string getInstanceId()const;
+				CreateLdpsNamespaceResult();
+				explicit CreateLdpsNamespaceResult(const std::string &payload);
+				~CreateLdpsNamespaceResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<GroupListItem> groupList_;
-				std::vector<std::string> ipList_;
-				std::string instanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTRESULT_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_CREATELDPSNAMESPACERESULT_H_

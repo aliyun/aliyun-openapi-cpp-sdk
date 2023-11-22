@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTRESULT_H_
-#define ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTRESULT_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_GETLDPSRESOURCECOSTRESULT_H_
+#define ALIBABACLOUD_HITSDB_MODEL_GETLDPSRESOURCECOSTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HITSDB_EXPORT GetInstanceIpWhiteListResult : public ServiceResult
+			class ALIBABACLOUD_HITSDB_EXPORT GetLdpsResourceCostResult : public ServiceResult
 			{
 			public:
-				struct GroupListItem
-				{
-					std::string groupName;
-					std::string securityIpList;
-				};
 
 
-				GetInstanceIpWhiteListResult();
-				explicit GetInstanceIpWhiteListResult(const std::string &payload);
-				~GetInstanceIpWhiteListResult();
-				std::vector<GroupListItem> getGroupList()const;
-				std::vector<std::string> getIpList()const;
+				GetLdpsResourceCostResult();
+				explicit GetLdpsResourceCostResult(const std::string &payload);
+				~GetLdpsResourceCostResult();
+				long getEndTime()const;
 				std::string getInstanceId()const;
+				long getStartTime()const;
+				long getTotalResource()const;
+				std::string getJobId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<GroupListItem> groupList_;
-				std::vector<std::string> ipList_;
+				long endTime_;
 				std::string instanceId_;
+				long startTime_;
+				long totalResource_;
+				std::string jobId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTRESULT_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_GETLDPSRESOURCECOSTRESULT_H_

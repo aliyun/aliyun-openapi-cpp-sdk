@@ -51,6 +51,42 @@ HitsdbClient::HitsdbClient(const std::string & accessKeyId, const std::string & 
 HitsdbClient::~HitsdbClient()
 {}
 
+HitsdbClient::CreateLdpsNamespaceOutcome HitsdbClient::createLdpsNamespace(const CreateLdpsNamespaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateLdpsNamespaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateLdpsNamespaceOutcome(CreateLdpsNamespaceResult(outcome.result()));
+	else
+		return CreateLdpsNamespaceOutcome(outcome.error());
+}
+
+void HitsdbClient::createLdpsNamespaceAsync(const CreateLdpsNamespaceRequest& request, const CreateLdpsNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createLdpsNamespace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HitsdbClient::CreateLdpsNamespaceOutcomeCallable HitsdbClient::createLdpsNamespaceCallable(const CreateLdpsNamespaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateLdpsNamespaceOutcome()>>(
+			[this, request]()
+			{
+			return this->createLdpsNamespace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HitsdbClient::CreateLindormInstanceOutcome HitsdbClient::createLindormInstance(const CreateLindormInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +189,78 @@ HitsdbClient::GetInstanceIpWhiteListOutcomeCallable HitsdbClient::getInstanceIpW
 			[this, request]()
 			{
 			return this->getInstanceIpWhiteList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HitsdbClient::GetLdpsNamespacedQuotaOutcome HitsdbClient::getLdpsNamespacedQuota(const GetLdpsNamespacedQuotaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetLdpsNamespacedQuotaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetLdpsNamespacedQuotaOutcome(GetLdpsNamespacedQuotaResult(outcome.result()));
+	else
+		return GetLdpsNamespacedQuotaOutcome(outcome.error());
+}
+
+void HitsdbClient::getLdpsNamespacedQuotaAsync(const GetLdpsNamespacedQuotaRequest& request, const GetLdpsNamespacedQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getLdpsNamespacedQuota(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HitsdbClient::GetLdpsNamespacedQuotaOutcomeCallable HitsdbClient::getLdpsNamespacedQuotaCallable(const GetLdpsNamespacedQuotaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetLdpsNamespacedQuotaOutcome()>>(
+			[this, request]()
+			{
+			return this->getLdpsNamespacedQuota(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HitsdbClient::GetLdpsResourceCostOutcome HitsdbClient::getLdpsResourceCost(const GetLdpsResourceCostRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetLdpsResourceCostOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetLdpsResourceCostOutcome(GetLdpsResourceCostResult(outcome.result()));
+	else
+		return GetLdpsResourceCostOutcome(outcome.error());
+}
+
+void HitsdbClient::getLdpsResourceCostAsync(const GetLdpsResourceCostRequest& request, const GetLdpsResourceCostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getLdpsResourceCost(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HitsdbClient::GetLdpsResourceCostOutcomeCallable HitsdbClient::getLdpsResourceCostCallable(const GetLdpsResourceCostRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetLdpsResourceCostOutcome()>>(
+			[this, request]()
+			{
+			return this->getLdpsResourceCost(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

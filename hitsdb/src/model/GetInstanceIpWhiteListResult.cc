@@ -39,12 +39,27 @@ void GetInstanceIpWhiteListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allGroupListNode = value["GroupList"]["GroupListItem"];
+	for (auto valueGroupListGroupListItem : allGroupListNode)
+	{
+		GroupListItem groupListObject;
+		if(!valueGroupListGroupListItem["GroupName"].isNull())
+			groupListObject.groupName = valueGroupListGroupListItem["GroupName"].asString();
+		if(!valueGroupListGroupListItem["SecurityIpList"].isNull())
+			groupListObject.securityIpList = valueGroupListGroupListItem["SecurityIpList"].asString();
+		groupList_.push_back(groupListObject);
+	}
 	auto allIpList = value["IpList"]["IpList"];
 	for (const auto &item : allIpList)
 		ipList_.push_back(item.asString());
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
 
+}
+
+std::vector<GetInstanceIpWhiteListResult::GroupListItem> GetInstanceIpWhiteListResult::getGroupList()const
+{
+	return groupList_;
 }
 
 std::vector<std::string> GetInstanceIpWhiteListResult::getIpList()const

@@ -32,6 +32,8 @@ public:
 	~UpdateInstanceIpWhiteListRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	bool get_Delete() const;
+	void set_Delete(bool _delete);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
@@ -51,6 +53,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	bool _delete_;
 	std::string accessKeyId_;
 	std::string securityToken_;
 	std::string resourceOwnerAccount_;

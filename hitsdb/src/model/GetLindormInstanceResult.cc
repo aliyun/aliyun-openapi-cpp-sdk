@@ -73,6 +73,8 @@ void GetLindormInstanceResult::parse(const std::string &payload)
 		serviceType_ = value["ServiceType"].asString();
 	if(!value["EnableKms"].isNull())
 		enableKms_ = value["EnableKms"].asString() == "true";
+	if(!value["EnableML"].isNull())
+		enableML_ = value["EnableML"].asString() == "true";
 	if(!value["DiskUsage"].isNull())
 		diskUsage_ = value["DiskUsage"].asString();
 	if(!value["DiskCategory"].isNull())
@@ -117,12 +119,18 @@ void GetLindormInstanceResult::parse(const std::string &payload)
 		enableCompute_ = value["EnableCompute"].asString() == "true";
 	if(!value["EnableSSL"].isNull())
 		enableSSL_ = value["EnableSSL"].asString() == "true";
+	if(!value["EnableMLCtrl"].isNull())
+		enableMLCtrl_ = value["EnableMLCtrl"].asString() == "true";
 	if(!value["EnableCdc"].isNull())
 		enableCdc_ = value["EnableCdc"].asString() == "true";
 	if(!value["EnableStream"].isNull())
 		enableStream_ = value["EnableStream"].asString() == "true";
+	if(!value["EnableLTS"].isNull())
+		enableLTS_ = value["EnableLTS"].asString() == "true";
 	if(!value["EnableShs"].isNull())
 		enableShs_ = value["EnableShs"].asString() == "true";
+	if(!value["EnableBlob"].isNull())
+		enableBlob_ = value["EnableBlob"].asString() == "true";
 	if(!value["MaintainStartTime"].isNull())
 		maintainStartTime_ = value["MaintainStartTime"].asString();
 	if(!value["MaintainEndTime"].isNull())
@@ -163,6 +171,10 @@ void GetLindormInstanceResult::parse(const std::string &payload)
 		logNum_ = std::stoi(value["LogNum"].asString());
 	if(!value["LogSingleStorage"].isNull())
 		logSingleStorage_ = std::stoi(value["LogSingleStorage"].asString());
+	if(!value["ArchVersion"].isNull())
+		archVersion_ = value["ArchVersion"].asString();
+	if(!value["EnableLsqlVersionV3"].isNull())
+		enableLsqlVersionV3_ = value["EnableLsqlVersionV3"].asString() == "true";
 
 }
 
@@ -179,6 +191,11 @@ std::string GetLindormInstanceResult::getStandbyZoneId()const
 std::vector<GetLindormInstanceResult::Engine> GetLindormInstanceResult::getEngineList()const
 {
 	return engineList_;
+}
+
+bool GetLindormInstanceResult::getEnableLTS()const
+{
+	return enableLTS_;
 }
 
 std::string GetLindormInstanceResult::getResourceGroupId()const
@@ -301,6 +318,11 @@ bool GetLindormInstanceResult::getEnableCdc()const
 	return enableCdc_;
 }
 
+bool GetLindormInstanceResult::getEnableMLCtrl()const
+{
+	return enableMLCtrl_;
+}
+
 bool GetLindormInstanceResult::getEnableStream()const
 {
 	return enableStream_;
@@ -321,6 +343,11 @@ std::string GetLindormInstanceResult::getExpireTime()const
 	return expireTime_;
 }
 
+bool GetLindormInstanceResult::getEnableML()const
+{
+	return enableML_;
+}
+
 int GetLindormInstanceResult::getLogNum()const
 {
 	return logNum_;
@@ -331,9 +358,19 @@ int GetLindormInstanceResult::getLocalCloudStorage()const
 	return localCloudStorage_;
 }
 
+bool GetLindormInstanceResult::getEnableBlob()const
+{
+	return enableBlob_;
+}
+
 std::string GetLindormInstanceResult::getDiskThreshold()const
 {
 	return diskThreshold_;
+}
+
+bool GetLindormInstanceResult::getEnableLsqlVersionV3()const
+{
+	return enableLsqlVersionV3_;
 }
 
 bool GetLindormInstanceResult::getAutoRenew()const
@@ -399,6 +436,11 @@ bool GetLindormInstanceResult::getEnableKms()const
 int GetLindormInstanceResult::getCoreNum()const
 {
 	return coreNum_;
+}
+
+std::string GetLindormInstanceResult::getArchVersion()const
+{
+	return archVersion_;
 }
 
 std::string GetLindormInstanceResult::getCreateTime()const

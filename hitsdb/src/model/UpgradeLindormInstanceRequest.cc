@@ -34,22 +34,112 @@ void UpgradeLindormInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-int UpgradeLindormInstanceRequest::getPhoenixCoreNum() const {
-  return phoenixCoreNum_;
+std::string UpgradeLindormInstanceRequest::getLogSpec() const {
+  return logSpec_;
 }
 
-void UpgradeLindormInstanceRequest::setPhoenixCoreNum(int phoenixCoreNum) {
-  phoenixCoreNum_ = phoenixCoreNum;
-  setParameter(std::string("PhoenixCoreNum"), std::to_string(phoenixCoreNum));
+void UpgradeLindormInstanceRequest::setLogSpec(const std::string &logSpec) {
+  logSpec_ = logSpec;
+  setParameter(std::string("LogSpec"), logSpec);
 }
 
-std::string UpgradeLindormInstanceRequest::getPhoenixCoreSpec() const {
-  return phoenixCoreSpec_;
+std::string UpgradeLindormInstanceRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void UpgradeLindormInstanceRequest::setPhoenixCoreSpec(const std::string &phoenixCoreSpec) {
-  phoenixCoreSpec_ = phoenixCoreSpec;
-  setParameter(std::string("PhoenixCoreSpec"), phoenixCoreSpec);
+void UpgradeLindormInstanceRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
+}
+
+int UpgradeLindormInstanceRequest::getTsdbNum() const {
+  return tsdbNum_;
+}
+
+void UpgradeLindormInstanceRequest::setTsdbNum(int tsdbNum) {
+  tsdbNum_ = tsdbNum;
+  setParameter(std::string("TsdbNum"), std::to_string(tsdbNum));
+}
+
+int UpgradeLindormInstanceRequest::getSolrNum() const {
+  return solrNum_;
+}
+
+void UpgradeLindormInstanceRequest::setSolrNum(int solrNum) {
+  solrNum_ = solrNum;
+  setParameter(std::string("SolrNum"), std::to_string(solrNum));
+}
+
+long UpgradeLindormInstanceRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void UpgradeLindormInstanceRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+int UpgradeLindormInstanceRequest::getLindormNum() const {
+  return lindormNum_;
+}
+
+void UpgradeLindormInstanceRequest::setLindormNum(int lindormNum) {
+  lindormNum_ = lindormNum;
+  setParameter(std::string("LindormNum"), std::to_string(lindormNum));
+}
+
+int UpgradeLindormInstanceRequest::getLtsCoreNum() const {
+  return ltsCoreNum_;
+}
+
+void UpgradeLindormInstanceRequest::setLtsCoreNum(int ltsCoreNum) {
+  ltsCoreNum_ = ltsCoreNum;
+  setParameter(std::string("LtsCoreNum"), std::to_string(ltsCoreNum));
+}
+
+std::string UpgradeLindormInstanceRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void UpgradeLindormInstanceRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+int UpgradeLindormInstanceRequest::getMlNum() const {
+  return mlNum_;
+}
+
+void UpgradeLindormInstanceRequest::setMlNum(int mlNum) {
+  mlNum_ = mlNum;
+  setParameter(std::string("MlNum"), std::to_string(mlNum));
+}
+
+int UpgradeLindormInstanceRequest::getStreamNum() const {
+  return streamNum_;
+}
+
+void UpgradeLindormInstanceRequest::setStreamNum(int streamNum) {
+  streamNum_ = streamNum;
+  setParameter(std::string("StreamNum"), std::to_string(streamNum));
+}
+
+int UpgradeLindormInstanceRequest::getLogSingleStorage() const {
+  return logSingleStorage_;
+}
+
+void UpgradeLindormInstanceRequest::setLogSingleStorage(int logSingleStorage) {
+  logSingleStorage_ = logSingleStorage;
+  setParameter(std::string("LogSingleStorage"), std::to_string(logSingleStorage));
+}
+
+std::string UpgradeLindormInstanceRequest::getZoneId() const {
+  return zoneId_;
+}
+
+void UpgradeLindormInstanceRequest::setZoneId(const std::string &zoneId) {
+  zoneId_ = zoneId;
+  setParameter(std::string("ZoneId"), zoneId);
 }
 
 std::string UpgradeLindormInstanceRequest::getClientToken() const {
@@ -97,24 +187,6 @@ void UpgradeLindormInstanceRequest::setAccessKeyId(const std::string &accessKeyI
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string UpgradeLindormInstanceRequest::getLogSpec() const {
-  return logSpec_;
-}
-
-void UpgradeLindormInstanceRequest::setLogSpec(const std::string &logSpec) {
-  logSpec_ = logSpec;
-  setParameter(std::string("LogSpec"), logSpec);
-}
-
-std::string UpgradeLindormInstanceRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void UpgradeLindormInstanceRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string UpgradeLindormInstanceRequest::getRegionId() const {
   return regionId_;
 }
@@ -124,15 +196,6 @@ void UpgradeLindormInstanceRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
-int UpgradeLindormInstanceRequest::getTsdbNum() const {
-  return tsdbNum_;
-}
-
-void UpgradeLindormInstanceRequest::setTsdbNum(int tsdbNum) {
-  tsdbNum_ = tsdbNum;
-  setParameter(std::string("TsdbNum"), std::to_string(tsdbNum));
-}
-
 std::string UpgradeLindormInstanceRequest::getLindormSpec() const {
   return lindormSpec_;
 }
@@ -140,15 +203,6 @@ std::string UpgradeLindormInstanceRequest::getLindormSpec() const {
 void UpgradeLindormInstanceRequest::setLindormSpec(const std::string &lindormSpec) {
   lindormSpec_ = lindormSpec;
   setParameter(std::string("LindormSpec"), lindormSpec);
-}
-
-int UpgradeLindormInstanceRequest::getSolrNum() const {
-  return solrNum_;
-}
-
-void UpgradeLindormInstanceRequest::setSolrNum(int solrNum) {
-  solrNum_ = solrNum;
-  setParameter(std::string("SolrNum"), std::to_string(solrNum));
 }
 
 int UpgradeLindormInstanceRequest::getColdStorage() const {
@@ -214,40 +268,22 @@ void UpgradeLindormInstanceRequest::setFilestoreNum(int filestoreNum) {
   setParameter(std::string("FilestoreNum"), std::to_string(filestoreNum));
 }
 
-long UpgradeLindormInstanceRequest::getOwnerId() const {
-  return ownerId_;
+std::string UpgradeLindormInstanceRequest::getStreamSpec() const {
+  return streamSpec_;
 }
 
-void UpgradeLindormInstanceRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void UpgradeLindormInstanceRequest::setStreamSpec(const std::string &streamSpec) {
+  streamSpec_ = streamSpec;
+  setParameter(std::string("StreamSpec"), streamSpec);
 }
 
-int UpgradeLindormInstanceRequest::getLindormNum() const {
-  return lindormNum_;
+std::string UpgradeLindormInstanceRequest::getMlSpec() const {
+  return mlSpec_;
 }
 
-void UpgradeLindormInstanceRequest::setLindormNum(int lindormNum) {
-  lindormNum_ = lindormNum;
-  setParameter(std::string("LindormNum"), std::to_string(lindormNum));
-}
-
-int UpgradeLindormInstanceRequest::getLtsCoreNum() const {
-  return ltsCoreNum_;
-}
-
-void UpgradeLindormInstanceRequest::setLtsCoreNum(int ltsCoreNum) {
-  ltsCoreNum_ = ltsCoreNum;
-  setParameter(std::string("LtsCoreNum"), std::to_string(ltsCoreNum));
-}
-
-std::string UpgradeLindormInstanceRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void UpgradeLindormInstanceRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
+void UpgradeLindormInstanceRequest::setMlSpec(const std::string &mlSpec) {
+  mlSpec_ = mlSpec;
+  setParameter(std::string("MlSpec"), mlSpec);
 }
 
 std::string UpgradeLindormInstanceRequest::getLtsCoreSpec() const {
@@ -266,23 +302,5 @@ int UpgradeLindormInstanceRequest::getClusterStorage() const {
 void UpgradeLindormInstanceRequest::setClusterStorage(int clusterStorage) {
   clusterStorage_ = clusterStorage;
   setParameter(std::string("ClusterStorage"), std::to_string(clusterStorage));
-}
-
-int UpgradeLindormInstanceRequest::getLogSingleStorage() const {
-  return logSingleStorage_;
-}
-
-void UpgradeLindormInstanceRequest::setLogSingleStorage(int logSingleStorage) {
-  logSingleStorage_ = logSingleStorage;
-  setParameter(std::string("LogSingleStorage"), std::to_string(logSingleStorage));
-}
-
-std::string UpgradeLindormInstanceRequest::getZoneId() const {
-  return zoneId_;
-}
-
-void UpgradeLindormInstanceRequest::setZoneId(const std::string &zoneId) {
-  zoneId_ = zoneId;
-  setParameter(std::string("ZoneId"), zoneId);
 }
 

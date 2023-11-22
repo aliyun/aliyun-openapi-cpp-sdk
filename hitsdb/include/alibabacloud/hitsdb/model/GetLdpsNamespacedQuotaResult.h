@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTRESULT_H_
-#define ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTRESULT_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_GETLDPSNAMESPACEDQUOTARESULT_H_
+#define ALIBABACLOUD_HITSDB_MODEL_GETLDPSNAMESPACEDQUOTARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HITSDB_EXPORT GetInstanceIpWhiteListResult : public ServiceResult
+			class ALIBABACLOUD_HITSDB_EXPORT GetLdpsNamespacedQuotaResult : public ServiceResult
 			{
 			public:
-				struct GroupListItem
+				struct NamespacedQuota
 				{
-					std::string groupName;
-					std::string securityIpList;
+					std::string usedMemory;
+					std::string cpuAmount;
+					std::string usedCpu;
+					std::string memoryAmount;
+					std::string name;
 				};
 
 
-				GetInstanceIpWhiteListResult();
-				explicit GetInstanceIpWhiteListResult(const std::string &payload);
-				~GetInstanceIpWhiteListResult();
-				std::vector<GroupListItem> getGroupList()const;
-				std::vector<std::string> getIpList()const;
-				std::string getInstanceId()const;
+				GetLdpsNamespacedQuotaResult();
+				explicit GetLdpsNamespacedQuotaResult(const std::string &payload);
+				~GetLdpsNamespacedQuotaResult();
+				std::vector<NamespacedQuota> getNamespacedQuotas()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<GroupListItem> groupList_;
-				std::vector<std::string> ipList_;
-				std::string instanceId_;
+				std::vector<NamespacedQuota> namespacedQuotas_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTRESULT_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_GETLDPSNAMESPACEDQUOTARESULT_H_

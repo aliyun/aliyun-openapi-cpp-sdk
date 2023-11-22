@@ -54,6 +54,8 @@ public:
 	void setLindormNum(int lindormNum);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
+	int getStreamNum() const;
+	void setStreamNum(int streamNum);
 	int getLogSingleStorage() const;
 	void setLogSingleStorage(int logSingleStorage);
 	std::string getZoneId() const;
@@ -104,6 +106,8 @@ public:
 	void setInstanceAlias(const std::string &instanceAlias);
 	int getFilestoreNum() const;
 	void setFilestoreNum(int filestoreNum);
+	std::string getStreamSpec() const;
+	void setStreamSpec(const std::string &streamSpec);
 	std::string getCoreSpec() const;
 	void setCoreSpec(const std::string &coreSpec);
 	std::string getVPCId() const;
@@ -126,6 +130,7 @@ private:
 	long ownerId_;
 	int lindormNum_;
 	std::string vSwitchId_;
+	int streamNum_;
 	int logSingleStorage_;
 	std::string zoneId_;
 	std::string arbiterZoneId_;
@@ -151,6 +156,7 @@ private:
 	std::string ownerAccount_;
 	std::string instanceAlias_;
 	int filestoreNum_;
+	std::string streamSpec_;
 	std::string coreSpec_;
 	std::string vPCId_;
 	std::string payType_;

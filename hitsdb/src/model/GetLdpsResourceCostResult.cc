@@ -1,0 +1,79 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/hitsdb/model/GetLdpsResourceCostResult.h>
+#include <json/json.h>
+
+using namespace AlibabaCloud::Hitsdb;
+using namespace AlibabaCloud::Hitsdb::Model;
+
+GetLdpsResourceCostResult::GetLdpsResourceCostResult() :
+	ServiceResult()
+{}
+
+GetLdpsResourceCostResult::GetLdpsResourceCostResult(const std::string &payload) :
+	ServiceResult()
+{
+	parse(payload);
+}
+
+GetLdpsResourceCostResult::~GetLdpsResourceCostResult()
+{}
+
+void GetLdpsResourceCostResult::parse(const std::string &payload)
+{
+	Json::Reader reader;
+	Json::Value value;
+	reader.parse(payload, value);
+	setRequestId(value["RequestId"].asString());
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["JobId"].isNull())
+		jobId_ = value["JobId"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = std::stol(value["StartTime"].asString());
+	if(!value["EndTime"].isNull())
+		endTime_ = std::stol(value["EndTime"].asString());
+	if(!value["TotalResource"].isNull())
+		totalResource_ = std::stol(value["TotalResource"].asString());
+
+}
+
+long GetLdpsResourceCostResult::getEndTime()const
+{
+	return endTime_;
+}
+
+std::string GetLdpsResourceCostResult::getInstanceId()const
+{
+	return instanceId_;
+}
+
+long GetLdpsResourceCostResult::getStartTime()const
+{
+	return startTime_;
+}
+
+long GetLdpsResourceCostResult::getTotalResource()const
+{
+	return totalResource_;
+}
+
+std::string GetLdpsResourceCostResult::getJobId()const
+{
+	return jobId_;
+}
+

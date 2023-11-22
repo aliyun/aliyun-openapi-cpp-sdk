@@ -133,6 +133,15 @@ void CreateLindormInstanceRequest::setVSwitchId(const std::string &vSwitchId) {
   setParameter(std::string("VSwitchId"), vSwitchId);
 }
 
+int CreateLindormInstanceRequest::getStreamNum() const {
+  return streamNum_;
+}
+
+void CreateLindormInstanceRequest::setStreamNum(int streamNum) {
+  streamNum_ = streamNum;
+  setParameter(std::string("StreamNum"), std::to_string(streamNum));
+}
+
 int CreateLindormInstanceRequest::getLogSingleStorage() const {
   return logSingleStorage_;
 }
@@ -356,6 +365,15 @@ int CreateLindormInstanceRequest::getFilestoreNum() const {
 void CreateLindormInstanceRequest::setFilestoreNum(int filestoreNum) {
   filestoreNum_ = filestoreNum;
   setParameter(std::string("FilestoreNum"), std::to_string(filestoreNum));
+}
+
+std::string CreateLindormInstanceRequest::getStreamSpec() const {
+  return streamSpec_;
+}
+
+void CreateLindormInstanceRequest::setStreamSpec(const std::string &streamSpec) {
+  streamSpec_ = streamSpec;
+  setParameter(std::string("StreamSpec"), streamSpec);
 }
 
 std::string CreateLindormInstanceRequest::getCoreSpec() const {

@@ -50,6 +50,7 @@ namespace AlibabaCloud
 				long getExpiredMilliseconds()const;
 				std::string getStandbyZoneId()const;
 				std::vector<Engine> getEngineList()const;
+				bool getEnableLTS()const;
 				std::string getResourceGroupId()const;
 				bool getEnableBDS()const;
 				std::string getLogDiskCategory()const;
@@ -74,13 +75,17 @@ namespace AlibabaCloud
 				std::string getArbiterVSwitchId()const;
 				std::string getVpcId()const;
 				bool getEnableCdc()const;
+				bool getEnableMLCtrl()const;
 				bool getEnableStream()const;
 				bool getEnablePhoenix()const;
 				int getLogSingleStorage()const;
 				std::string getExpireTime()const;
+				bool getEnableML()const;
 				int getLogNum()const;
 				int getLocalCloudStorage()const;
+				bool getEnableBlob()const;
 				std::string getDiskThreshold()const;
+				bool getEnableLsqlVersionV3()const;
 				bool getAutoRenew()const;
 				bool getEnableShs()const;
 				std::string getMaintainEndTime()const;
@@ -94,6 +99,7 @@ namespace AlibabaCloud
 				std::string getMultiZoneCombination()const;
 				bool getEnableKms()const;
 				int getCoreNum()const;
+				std::string getArchVersion()const;
 				std::string getCreateTime()const;
 				std::string getLogSpec()const;
 				std::string getLocalCloudCategory()const;
@@ -107,6 +113,7 @@ namespace AlibabaCloud
 				long expiredMilliseconds_;
 				std::string standbyZoneId_;
 				std::vector<Engine> engineList_;
+				bool enableLTS_;
 				std::string resourceGroupId_;
 				bool enableBDS_;
 				std::string logDiskCategory_;
@@ -131,13 +138,17 @@ namespace AlibabaCloud
 				std::string arbiterVSwitchId_;
 				std::string vpcId_;
 				bool enableCdc_;
+				bool enableMLCtrl_;
 				bool enableStream_;
 				bool enablePhoenix_;
 				int logSingleStorage_;
 				std::string expireTime_;
+				bool enableML_;
 				int logNum_;
 				int localCloudStorage_;
+				bool enableBlob_;
 				std::string diskThreshold_;
+				bool enableLsqlVersionV3_;
 				bool autoRenew_;
 				bool enableShs_;
 				std::string maintainEndTime_;
@@ -151,6 +162,7 @@ namespace AlibabaCloud
 				std::string multiZoneCombination_;
 				bool enableKms_;
 				int coreNum_;
+				std::string archVersion_;
 				std::string createTime_;
 				std::string logSpec_;
 				std::string localCloudCategory_;
