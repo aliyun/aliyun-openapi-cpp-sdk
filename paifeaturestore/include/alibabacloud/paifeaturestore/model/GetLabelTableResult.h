@@ -43,6 +43,7 @@ namespace AlibabaCloud
 				GetLabelTableResult();
 				explicit GetLabelTableResult(const std::string &payload);
 				~GetLabelTableResult();
+				std::vector<std::string> getRelatedModelFeatures()const;
 				std::string getOwner()const;
 				std::vector<Field> getFields()const;
 				std::string getDatasourceId()const;
@@ -56,6 +57,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<std::string> relatedModelFeatures_;
 				std::string owner_;
 				std::vector<Field> fields_;
 				std::string datasourceId_;

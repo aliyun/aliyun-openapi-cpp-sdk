@@ -52,6 +52,9 @@ void GetLabelTableResult::parse(const std::string &payload)
 			fieldsObject.attributes.push_back(value.asString());
 		fields_.push_back(fieldsObject);
 	}
+	auto allRelatedModelFeatures = value["RelatedModelFeatures"]["RelatedModelFeatures"];
+	for (const auto &item : allRelatedModelFeatures)
+		relatedModelFeatures_.push_back(item.asString());
 	if(!value["ProjectId"].isNull())
 		projectId_ = value["ProjectId"].asString();
 	if(!value["ProjectName"].isNull())
@@ -69,6 +72,11 @@ void GetLabelTableResult::parse(const std::string &payload)
 	if(!value["GmtModifiedTime"].isNull())
 		gmtModifiedTime_ = value["GmtModifiedTime"].asString();
 
+}
+
+std::vector<std::string> GetLabelTableResult::getRelatedModelFeatures()const
+{
+	return relatedModelFeatures_;
 }
 
 std::string GetLabelTableResult::getOwner()const
