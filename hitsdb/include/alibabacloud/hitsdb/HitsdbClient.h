@@ -48,6 +48,8 @@
 #include "model/ReleaseLindormInstanceResult.h"
 #include "model/RenewLindormInstanceRequest.h"
 #include "model/RenewLindormInstanceResult.h"
+#include "model/SwitchLSQLV3MySQLServiceRequest.h"
+#include "model/SwitchLSQLV3MySQLServiceResult.h"
 #include "model/TagResourcesRequest.h"
 #include "model/TagResourcesResult.h"
 #include "model/UntagResourcesRequest.h"
@@ -104,6 +106,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RenewLindormInstanceResult> RenewLindormInstanceOutcome;
 			typedef std::future<RenewLindormInstanceOutcome> RenewLindormInstanceOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::RenewLindormInstanceRequest&, const RenewLindormInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewLindormInstanceAsyncHandler;
+			typedef Outcome<Error, Model::SwitchLSQLV3MySQLServiceResult> SwitchLSQLV3MySQLServiceOutcome;
+			typedef std::future<SwitchLSQLV3MySQLServiceOutcome> SwitchLSQLV3MySQLServiceOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::SwitchLSQLV3MySQLServiceRequest&, const SwitchLSQLV3MySQLServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchLSQLV3MySQLServiceAsyncHandler;
 			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
 			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
@@ -160,6 +165,9 @@ namespace AlibabaCloud
 			RenewLindormInstanceOutcome renewLindormInstance(const Model::RenewLindormInstanceRequest &request)const;
 			void renewLindormInstanceAsync(const Model::RenewLindormInstanceRequest& request, const RenewLindormInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenewLindormInstanceOutcomeCallable renewLindormInstanceCallable(const Model::RenewLindormInstanceRequest& request) const;
+			SwitchLSQLV3MySQLServiceOutcome switchLSQLV3MySQLService(const Model::SwitchLSQLV3MySQLServiceRequest &request)const;
+			void switchLSQLV3MySQLServiceAsync(const Model::SwitchLSQLV3MySQLServiceRequest& request, const SwitchLSQLV3MySQLServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SwitchLSQLV3MySQLServiceOutcomeCallable switchLSQLV3MySQLServiceCallable(const Model::SwitchLSQLV3MySQLServiceRequest& request) const;
 			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
 			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;

@@ -519,6 +519,42 @@ HitsdbClient::RenewLindormInstanceOutcomeCallable HitsdbClient::renewLindormInst
 	return task->get_future();
 }
 
+HitsdbClient::SwitchLSQLV3MySQLServiceOutcome HitsdbClient::switchLSQLV3MySQLService(const SwitchLSQLV3MySQLServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SwitchLSQLV3MySQLServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SwitchLSQLV3MySQLServiceOutcome(SwitchLSQLV3MySQLServiceResult(outcome.result()));
+	else
+		return SwitchLSQLV3MySQLServiceOutcome(outcome.error());
+}
+
+void HitsdbClient::switchLSQLV3MySQLServiceAsync(const SwitchLSQLV3MySQLServiceRequest& request, const SwitchLSQLV3MySQLServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, switchLSQLV3MySQLService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HitsdbClient::SwitchLSQLV3MySQLServiceOutcomeCallable HitsdbClient::switchLSQLV3MySQLServiceCallable(const SwitchLSQLV3MySQLServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SwitchLSQLV3MySQLServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->switchLSQLV3MySQLService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HitsdbClient::TagResourcesOutcome HitsdbClient::tagResources(const TagResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

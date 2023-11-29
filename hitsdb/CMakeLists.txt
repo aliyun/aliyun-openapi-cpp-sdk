@@ -47,6 +47,8 @@ set(hitsdb_public_header_model
 	include/alibabacloud/hitsdb/model/ReleaseLindormInstanceResult.h
 	include/alibabacloud/hitsdb/model/RenewLindormInstanceRequest.h
 	include/alibabacloud/hitsdb/model/RenewLindormInstanceResult.h
+	include/alibabacloud/hitsdb/model/SwitchLSQLV3MySQLServiceRequest.h
+	include/alibabacloud/hitsdb/model/SwitchLSQLV3MySQLServiceResult.h
 	include/alibabacloud/hitsdb/model/TagResourcesRequest.h
 	include/alibabacloud/hitsdb/model/TagResourcesResult.h
 	include/alibabacloud/hitsdb/model/UntagResourcesRequest.h
@@ -84,6 +86,8 @@ set(hitsdb_src
 	src/model/ReleaseLindormInstanceResult.cc
 	src/model/RenewLindormInstanceRequest.cc
 	src/model/RenewLindormInstanceResult.cc
+	src/model/SwitchLSQLV3MySQLServiceRequest.cc
+	src/model/SwitchLSQLV3MySQLServiceResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
 	src/model/UntagResourcesRequest.cc
