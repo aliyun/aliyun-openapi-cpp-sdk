@@ -1347,6 +1347,42 @@ Dms_enterpriseClient::CreateUploadOSSFileJobOutcomeCallable Dms_enterpriseClient
 	return task->get_future();
 }
 
+Dms_enterpriseClient::DeleteAuthorityTemplateOutcome Dms_enterpriseClient::deleteAuthorityTemplate(const DeleteAuthorityTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAuthorityTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAuthorityTemplateOutcome(DeleteAuthorityTemplateResult(outcome.result()));
+	else
+		return DeleteAuthorityTemplateOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::deleteAuthorityTemplateAsync(const DeleteAuthorityTemplateRequest& request, const DeleteAuthorityTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAuthorityTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::DeleteAuthorityTemplateOutcomeCallable Dms_enterpriseClient::deleteAuthorityTemplateCallable(const DeleteAuthorityTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAuthorityTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAuthorityTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::DeleteInstanceOutcome Dms_enterpriseClient::deleteInstance(const DeleteInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4221,6 +4257,42 @@ Dms_enterpriseClient::InspectProxyAccessSecretOutcomeCallable Dms_enterpriseClie
 			[this, request]()
 			{
 			return this->inspectProxyAccessSecret(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListAuthorityTemplateOutcome Dms_enterpriseClient::listAuthorityTemplate(const ListAuthorityTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAuthorityTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAuthorityTemplateOutcome(ListAuthorityTemplateResult(outcome.result()));
+	else
+		return ListAuthorityTemplateOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listAuthorityTemplateAsync(const ListAuthorityTemplateRequest& request, const ListAuthorityTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAuthorityTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListAuthorityTemplateOutcomeCallable Dms_enterpriseClient::listAuthorityTemplateCallable(const ListAuthorityTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAuthorityTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->listAuthorityTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -39,6 +39,7 @@ public:
 		DbItemListItem dbItemListItem;
 		std::vector<DbItemListItem> dbItemList;
 		std::string execSQL;
+		std::string execMode;
 		std::string rollbackAttachmentName;
 	};
 	CreateProcCorrectOrderRequest();

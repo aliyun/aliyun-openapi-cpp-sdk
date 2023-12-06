@@ -93,6 +93,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/CreateUploadFileJobResult.h
 	include/alibabacloud/dms-enterprise/model/CreateUploadOSSFileJobRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateUploadOSSFileJobResult.h
+	include/alibabacloud/dms-enterprise/model/DeleteAuthorityTemplateRequest.h
+	include/alibabacloud/dms-enterprise/model/DeleteAuthorityTemplateResult.h
 	include/alibabacloud/dms-enterprise/model/DeleteInstanceRequest.h
 	include/alibabacloud/dms-enterprise/model/DeleteInstanceResult.h
 	include/alibabacloud/dms-enterprise/model/DeleteLakeHouseSpaceRequest.h
@@ -253,6 +255,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GrantUserPermissionResult.h
 	include/alibabacloud/dms-enterprise/model/InspectProxyAccessSecretRequest.h
 	include/alibabacloud/dms-enterprise/model/InspectProxyAccessSecretResult.h
+	include/alibabacloud/dms-enterprise/model/ListAuthorityTemplateRequest.h
+	include/alibabacloud/dms-enterprise/model/ListAuthorityTemplateResult.h
 	include/alibabacloud/dms-enterprise/model/ListClassificationTemplatesRequest.h
 	include/alibabacloud/dms-enterprise/model/ListClassificationTemplatesResult.h
 	include/alibabacloud/dms-enterprise/model/ListColumnsRequest.h
@@ -526,6 +530,8 @@ set(dms-enterprise_src
 	src/model/CreateUploadFileJobResult.cc
 	src/model/CreateUploadOSSFileJobRequest.cc
 	src/model/CreateUploadOSSFileJobResult.cc
+	src/model/DeleteAuthorityTemplateRequest.cc
+	src/model/DeleteAuthorityTemplateResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
 	src/model/DeleteLakeHouseSpaceRequest.cc
@@ -686,6 +692,8 @@ set(dms-enterprise_src
 	src/model/GrantUserPermissionResult.cc
 	src/model/InspectProxyAccessSecretRequest.cc
 	src/model/InspectProxyAccessSecretResult.cc
+	src/model/ListAuthorityTemplateRequest.cc
+	src/model/ListAuthorityTemplateResult.cc
 	src/model/ListClassificationTemplatesRequest.cc
 	src/model/ListClassificationTemplatesResult.cc
 	src/model/ListColumnsRequest.cc

@@ -34,24 +34,6 @@ void RegisterInstanceRequest::setEcsRegion(const std::string &ecsRegion) {
   setParameter(std::string("EcsRegion"), ecsRegion);
 }
 
-int RegisterInstanceRequest::getDdlOnline() const {
-  return ddlOnline_;
-}
-
-void RegisterInstanceRequest::setDdlOnline(int ddlOnline) {
-  ddlOnline_ = ddlOnline;
-  setParameter(std::string("DdlOnline"), std::to_string(ddlOnline));
-}
-
-int RegisterInstanceRequest::getUseDsql() const {
-  return useDsql_;
-}
-
-void RegisterInstanceRequest::setUseDsql(int useDsql) {
-  useDsql_ = useDsql;
-  setParameter(std::string("UseDsql"), std::to_string(useDsql));
-}
-
 std::string RegisterInstanceRequest::getNetworkType() const {
   return networkType_;
 }
@@ -70,15 +52,6 @@ void RegisterInstanceRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-std::string RegisterInstanceRequest::getSid() const {
-  return sid_;
-}
-
-void RegisterInstanceRequest::setSid(const std::string &sid) {
-  sid_ = sid;
-  setParameter(std::string("Sid"), sid);
-}
-
 std::string RegisterInstanceRequest::getEnableSellSitd() const {
   return enableSellSitd_;
 }
@@ -86,24 +59,6 @@ std::string RegisterInstanceRequest::getEnableSellSitd() const {
 void RegisterInstanceRequest::setEnableSellSitd(const std::string &enableSellSitd) {
   enableSellSitd_ = enableSellSitd;
   setParameter(std::string("EnableSellSitd"), enableSellSitd);
-}
-
-std::string RegisterInstanceRequest::getDataLinkName() const {
-  return dataLinkName_;
-}
-
-void RegisterInstanceRequest::setDataLinkName(const std::string &dataLinkName) {
-  dataLinkName_ = dataLinkName;
-  setParameter(std::string("DataLinkName"), dataLinkName);
-}
-
-std::string RegisterInstanceRequest::getTemplateType() const {
-  return templateType_;
-}
-
-void RegisterInstanceRequest::setTemplateType(const std::string &templateType) {
-  templateType_ = templateType;
-  setParameter(std::string("TemplateType"), templateType);
 }
 
 std::string RegisterInstanceRequest::getInstanceSource() const {
@@ -133,15 +88,6 @@ void RegisterInstanceRequest::setHost(const std::string &host) {
   setParameter(std::string("Host"), host);
 }
 
-std::string RegisterInstanceRequest::getInstanceType() const {
-  return instanceType_;
-}
-
-void RegisterInstanceRequest::setInstanceType(const std::string &instanceType) {
-  instanceType_ = instanceType;
-  setParameter(std::string("InstanceType"), instanceType);
-}
-
 int RegisterInstanceRequest::getQueryTimeout() const {
   return queryTimeout_;
 }
@@ -149,6 +95,15 @@ int RegisterInstanceRequest::getQueryTimeout() const {
 void RegisterInstanceRequest::setQueryTimeout(int queryTimeout) {
   queryTimeout_ = queryTimeout;
   setParameter(std::string("QueryTimeout"), std::to_string(queryTimeout));
+}
+
+std::string RegisterInstanceRequest::getDbaUidByString() const {
+  return dbaUidByString_;
+}
+
+void RegisterInstanceRequest::setDbaUidByString(const std::string &dbaUidByString) {
+  dbaUidByString_ = dbaUidByString;
+  setParameter(std::string("DbaUidByString"), dbaUidByString);
 }
 
 std::string RegisterInstanceRequest::getEcsInstanceId() const {
@@ -169,6 +124,87 @@ void RegisterInstanceRequest::setExportTimeout(int exportTimeout) {
   setParameter(std::string("ExportTimeout"), std::to_string(exportTimeout));
 }
 
+long RegisterInstanceRequest::getTemplateId() const {
+  return templateId_;
+}
+
+void RegisterInstanceRequest::setTemplateId(long templateId) {
+  templateId_ = templateId;
+  setParameter(std::string("TemplateId"), std::to_string(templateId));
+}
+
+int RegisterInstanceRequest::getPort() const {
+  return port_;
+}
+
+void RegisterInstanceRequest::setPort(int port) {
+  port_ = port;
+  setParameter(std::string("Port"), std::to_string(port));
+}
+
+std::string RegisterInstanceRequest::getSafeRule() const {
+  return safeRule_;
+}
+
+void RegisterInstanceRequest::setSafeRule(const std::string &safeRule) {
+  safeRule_ = safeRule;
+  setParameter(std::string("SafeRule"), safeRule);
+}
+
+int RegisterInstanceRequest::getDdlOnline() const {
+  return ddlOnline_;
+}
+
+void RegisterInstanceRequest::setDdlOnline(int ddlOnline) {
+  ddlOnline_ = ddlOnline;
+  setParameter(std::string("DdlOnline"), std::to_string(ddlOnline));
+}
+
+int RegisterInstanceRequest::getUseDsql() const {
+  return useDsql_;
+}
+
+void RegisterInstanceRequest::setUseDsql(int useDsql) {
+  useDsql_ = useDsql;
+  setParameter(std::string("UseDsql"), std::to_string(useDsql));
+}
+
+std::string RegisterInstanceRequest::getSid() const {
+  return sid_;
+}
+
+void RegisterInstanceRequest::setSid(const std::string &sid) {
+  sid_ = sid;
+  setParameter(std::string("Sid"), sid);
+}
+
+std::string RegisterInstanceRequest::getDataLinkName() const {
+  return dataLinkName_;
+}
+
+void RegisterInstanceRequest::setDataLinkName(const std::string &dataLinkName) {
+  dataLinkName_ = dataLinkName;
+  setParameter(std::string("DataLinkName"), dataLinkName);
+}
+
+std::string RegisterInstanceRequest::getTemplateType() const {
+  return templateType_;
+}
+
+void RegisterInstanceRequest::setTemplateType(const std::string &templateType) {
+  templateType_ = templateType;
+  setParameter(std::string("TemplateType"), templateType);
+}
+
+std::string RegisterInstanceRequest::getInstanceType() const {
+  return instanceType_;
+}
+
+void RegisterInstanceRequest::setInstanceType(const std::string &instanceType) {
+  instanceType_ = instanceType;
+  setParameter(std::string("InstanceType"), instanceType);
+}
+
 std::string RegisterInstanceRequest::getDatabasePassword() const {
   return databasePassword_;
 }
@@ -187,15 +223,6 @@ void RegisterInstanceRequest::setInstanceAlias(const std::string &instanceAlias)
   setParameter(std::string("InstanceAlias"), instanceAlias);
 }
 
-long RegisterInstanceRequest::getTemplateId() const {
-  return templateId_;
-}
-
-void RegisterInstanceRequest::setTemplateId(long templateId) {
-  templateId_ = templateId;
-  setParameter(std::string("TemplateId"), std::to_string(templateId));
-}
-
 std::string RegisterInstanceRequest::getDatabaseUser() const {
   return databaseUser_;
 }
@@ -203,15 +230,6 @@ std::string RegisterInstanceRequest::getDatabaseUser() const {
 void RegisterInstanceRequest::setDatabaseUser(const std::string &databaseUser) {
   databaseUser_ = databaseUser;
   setParameter(std::string("DatabaseUser"), databaseUser);
-}
-
-int RegisterInstanceRequest::getPort() const {
-  return port_;
-}
-
-void RegisterInstanceRequest::setPort(int port) {
-  port_ = port;
-  setParameter(std::string("Port"), std::to_string(port));
 }
 
 std::string RegisterInstanceRequest::getVpcId() const {
@@ -239,14 +257,5 @@ bool RegisterInstanceRequest::getSkipTest() const {
 void RegisterInstanceRequest::setSkipTest(bool skipTest) {
   skipTest_ = skipTest;
   setParameter(std::string("SkipTest"), skipTest ? "true" : "false");
-}
-
-std::string RegisterInstanceRequest::getSafeRule() const {
-  return safeRule_;
-}
-
-void RegisterInstanceRequest::setSafeRule(const std::string &safeRule) {
-  safeRule_ = safeRule;
-  setParameter(std::string("SafeRule"), safeRule);
 }
 

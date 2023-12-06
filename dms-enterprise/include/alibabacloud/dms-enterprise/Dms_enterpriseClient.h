@@ -94,6 +94,8 @@
 #include "model/CreateUploadFileJobResult.h"
 #include "model/CreateUploadOSSFileJobRequest.h"
 #include "model/CreateUploadOSSFileJobResult.h"
+#include "model/DeleteAuthorityTemplateRequest.h"
+#include "model/DeleteAuthorityTemplateResult.h"
 #include "model/DeleteInstanceRequest.h"
 #include "model/DeleteInstanceResult.h"
 #include "model/DeleteLakeHouseSpaceRequest.h"
@@ -254,6 +256,8 @@
 #include "model/GrantUserPermissionResult.h"
 #include "model/InspectProxyAccessSecretRequest.h"
 #include "model/InspectProxyAccessSecretResult.h"
+#include "model/ListAuthorityTemplateRequest.h"
+#include "model/ListAuthorityTemplateResult.h"
 #include "model/ListClassificationTemplatesRequest.h"
 #include "model/ListClassificationTemplatesResult.h"
 #include "model/ListColumnsRequest.h"
@@ -569,6 +573,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateUploadOSSFileJobResult> CreateUploadOSSFileJobOutcome;
 			typedef std::future<CreateUploadOSSFileJobOutcome> CreateUploadOSSFileJobOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateUploadOSSFileJobRequest&, const CreateUploadOSSFileJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUploadOSSFileJobAsyncHandler;
+			typedef Outcome<Error, Model::DeleteAuthorityTemplateResult> DeleteAuthorityTemplateOutcome;
+			typedef std::future<DeleteAuthorityTemplateOutcome> DeleteAuthorityTemplateOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::DeleteAuthorityTemplateRequest&, const DeleteAuthorityTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuthorityTemplateAsyncHandler;
 			typedef Outcome<Error, Model::DeleteInstanceResult> DeleteInstanceOutcome;
 			typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::DeleteInstanceRequest&, const DeleteInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
@@ -809,6 +816,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InspectProxyAccessSecretResult> InspectProxyAccessSecretOutcome;
 			typedef std::future<InspectProxyAccessSecretOutcome> InspectProxyAccessSecretOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::InspectProxyAccessSecretRequest&, const InspectProxyAccessSecretOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InspectProxyAccessSecretAsyncHandler;
+			typedef Outcome<Error, Model::ListAuthorityTemplateResult> ListAuthorityTemplateOutcome;
+			typedef std::future<ListAuthorityTemplateOutcome> ListAuthorityTemplateOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListAuthorityTemplateRequest&, const ListAuthorityTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAuthorityTemplateAsyncHandler;
 			typedef Outcome<Error, Model::ListClassificationTemplatesResult> ListClassificationTemplatesOutcome;
 			typedef std::future<ListClassificationTemplatesOutcome> ListClassificationTemplatesOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListClassificationTemplatesRequest&, const ListClassificationTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClassificationTemplatesAsyncHandler;
@@ -1219,6 +1229,9 @@ namespace AlibabaCloud
 			CreateUploadOSSFileJobOutcome createUploadOSSFileJob(const Model::CreateUploadOSSFileJobRequest &request)const;
 			void createUploadOSSFileJobAsync(const Model::CreateUploadOSSFileJobRequest& request, const CreateUploadOSSFileJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateUploadOSSFileJobOutcomeCallable createUploadOSSFileJobCallable(const Model::CreateUploadOSSFileJobRequest& request) const;
+			DeleteAuthorityTemplateOutcome deleteAuthorityTemplate(const Model::DeleteAuthorityTemplateRequest &request)const;
+			void deleteAuthorityTemplateAsync(const Model::DeleteAuthorityTemplateRequest& request, const DeleteAuthorityTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteAuthorityTemplateOutcomeCallable deleteAuthorityTemplateCallable(const Model::DeleteAuthorityTemplateRequest& request) const;
 			DeleteInstanceOutcome deleteInstance(const Model::DeleteInstanceRequest &request)const;
 			void deleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteInstanceOutcomeCallable deleteInstanceCallable(const Model::DeleteInstanceRequest& request) const;
@@ -1459,6 +1472,9 @@ namespace AlibabaCloud
 			InspectProxyAccessSecretOutcome inspectProxyAccessSecret(const Model::InspectProxyAccessSecretRequest &request)const;
 			void inspectProxyAccessSecretAsync(const Model::InspectProxyAccessSecretRequest& request, const InspectProxyAccessSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InspectProxyAccessSecretOutcomeCallable inspectProxyAccessSecretCallable(const Model::InspectProxyAccessSecretRequest& request) const;
+			ListAuthorityTemplateOutcome listAuthorityTemplate(const Model::ListAuthorityTemplateRequest &request)const;
+			void listAuthorityTemplateAsync(const Model::ListAuthorityTemplateRequest& request, const ListAuthorityTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAuthorityTemplateOutcomeCallable listAuthorityTemplateCallable(const Model::ListAuthorityTemplateRequest& request) const;
 			ListClassificationTemplatesOutcome listClassificationTemplates(const Model::ListClassificationTemplatesRequest &request)const;
 			void listClassificationTemplatesAsync(const Model::ListClassificationTemplatesRequest& request, const ListClassificationTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListClassificationTemplatesOutcomeCallable listClassificationTemplatesCallable(const Model::ListClassificationTemplatesRequest& request) const;
