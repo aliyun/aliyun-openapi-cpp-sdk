@@ -30,6 +30,10 @@ class ALIBABACLOUD_IMAGESEG_EXPORT SegmentClothRequest : public RpcServiceReques
 public:
 	SegmentClothRequest();
 	~SegmentClothRequest();
+	std::vector<std::string> getClothClass() const;
+	void setClothClass(const std::vector<std::string> &clothClass);
+	std::string getReturnForm() const;
+	void setReturnForm(const std::string &returnForm);
 	std::string getOssFile() const;
 	void setOssFile(const std::string &ossFile);
 	std::string getRequestProxyBy() const;
@@ -38,6 +42,8 @@ public:
 	void setImageURL(const std::string &imageURL);
 
 private:
+	std::vector<std::string> clothClass_;
+	std::string returnForm_;
 	std::string ossFile_;
 	std::string requestProxyBy_;
 	std::string imageURL_;

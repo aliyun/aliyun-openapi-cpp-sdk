@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct Element
 					{
+						std::string classUrl;
 						std::string imageURL;
 					};
 					std::vector<Element> elements;

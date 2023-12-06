@@ -30,8 +30,6 @@
 #include "model/ParseFaceResult.h"
 #include "model/RefineMaskRequest.h"
 #include "model/RefineMaskResult.h"
-#include "model/SegmentAnimalRequest.h"
-#include "model/SegmentAnimalResult.h"
 #include "model/SegmentBodyRequest.h"
 #include "model/SegmentBodyResult.h"
 #include "model/SegmentClothRequest.h"
@@ -40,12 +38,8 @@
 #include "model/SegmentCommodityResult.h"
 #include "model/SegmentCommonImageRequest.h"
 #include "model/SegmentCommonImageResult.h"
-#include "model/SegmentFaceRequest.h"
-#include "model/SegmentFaceResult.h"
 #include "model/SegmentFoodRequest.h"
 #include "model/SegmentFoodResult.h"
-#include "model/SegmentFurnitureRequest.h"
-#include "model/SegmentFurnitureResult.h"
 #include "model/SegmentHDBodyRequest.h"
 #include "model/SegmentHDBodyResult.h"
 #include "model/SegmentHDCommonImageRequest.h"
@@ -56,16 +50,12 @@
 #include "model/SegmentHairResult.h"
 #include "model/SegmentHeadRequest.h"
 #include "model/SegmentHeadResult.h"
-#include "model/SegmentLogoRequest.h"
-#include "model/SegmentLogoResult.h"
 #include "model/SegmentSceneRequest.h"
 #include "model/SegmentSceneResult.h"
 #include "model/SegmentSkinRequest.h"
 #include "model/SegmentSkinResult.h"
 #include "model/SegmentSkyRequest.h"
 #include "model/SegmentSkyResult.h"
-#include "model/SegmentVehicleRequest.h"
-#include "model/SegmentVehicleResult.h"
 
 
 namespace AlibabaCloud
@@ -87,9 +77,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RefineMaskResult> RefineMaskOutcome;
 			typedef std::future<RefineMaskOutcome> RefineMaskOutcomeCallable;
 			typedef std::function<void(const ImagesegClient*, const Model::RefineMaskRequest&, const RefineMaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefineMaskAsyncHandler;
-			typedef Outcome<Error, Model::SegmentAnimalResult> SegmentAnimalOutcome;
-			typedef std::future<SegmentAnimalOutcome> SegmentAnimalOutcomeCallable;
-			typedef std::function<void(const ImagesegClient*, const Model::SegmentAnimalRequest&, const SegmentAnimalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentAnimalAsyncHandler;
 			typedef Outcome<Error, Model::SegmentBodyResult> SegmentBodyOutcome;
 			typedef std::future<SegmentBodyOutcome> SegmentBodyOutcomeCallable;
 			typedef std::function<void(const ImagesegClient*, const Model::SegmentBodyRequest&, const SegmentBodyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentBodyAsyncHandler;
@@ -102,15 +89,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SegmentCommonImageResult> SegmentCommonImageOutcome;
 			typedef std::future<SegmentCommonImageOutcome> SegmentCommonImageOutcomeCallable;
 			typedef std::function<void(const ImagesegClient*, const Model::SegmentCommonImageRequest&, const SegmentCommonImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentCommonImageAsyncHandler;
-			typedef Outcome<Error, Model::SegmentFaceResult> SegmentFaceOutcome;
-			typedef std::future<SegmentFaceOutcome> SegmentFaceOutcomeCallable;
-			typedef std::function<void(const ImagesegClient*, const Model::SegmentFaceRequest&, const SegmentFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentFaceAsyncHandler;
 			typedef Outcome<Error, Model::SegmentFoodResult> SegmentFoodOutcome;
 			typedef std::future<SegmentFoodOutcome> SegmentFoodOutcomeCallable;
 			typedef std::function<void(const ImagesegClient*, const Model::SegmentFoodRequest&, const SegmentFoodOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentFoodAsyncHandler;
-			typedef Outcome<Error, Model::SegmentFurnitureResult> SegmentFurnitureOutcome;
-			typedef std::future<SegmentFurnitureOutcome> SegmentFurnitureOutcomeCallable;
-			typedef std::function<void(const ImagesegClient*, const Model::SegmentFurnitureRequest&, const SegmentFurnitureOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentFurnitureAsyncHandler;
 			typedef Outcome<Error, Model::SegmentHDBodyResult> SegmentHDBodyOutcome;
 			typedef std::future<SegmentHDBodyOutcome> SegmentHDBodyOutcomeCallable;
 			typedef std::function<void(const ImagesegClient*, const Model::SegmentHDBodyRequest&, const SegmentHDBodyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentHDBodyAsyncHandler;
@@ -126,9 +107,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SegmentHeadResult> SegmentHeadOutcome;
 			typedef std::future<SegmentHeadOutcome> SegmentHeadOutcomeCallable;
 			typedef std::function<void(const ImagesegClient*, const Model::SegmentHeadRequest&, const SegmentHeadOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentHeadAsyncHandler;
-			typedef Outcome<Error, Model::SegmentLogoResult> SegmentLogoOutcome;
-			typedef std::future<SegmentLogoOutcome> SegmentLogoOutcomeCallable;
-			typedef std::function<void(const ImagesegClient*, const Model::SegmentLogoRequest&, const SegmentLogoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentLogoAsyncHandler;
 			typedef Outcome<Error, Model::SegmentSceneResult> SegmentSceneOutcome;
 			typedef std::future<SegmentSceneOutcome> SegmentSceneOutcomeCallable;
 			typedef std::function<void(const ImagesegClient*, const Model::SegmentSceneRequest&, const SegmentSceneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentSceneAsyncHandler;
@@ -138,9 +116,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SegmentSkyResult> SegmentSkyOutcome;
 			typedef std::future<SegmentSkyOutcome> SegmentSkyOutcomeCallable;
 			typedef std::function<void(const ImagesegClient*, const Model::SegmentSkyRequest&, const SegmentSkyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentSkyAsyncHandler;
-			typedef Outcome<Error, Model::SegmentVehicleResult> SegmentVehicleOutcome;
-			typedef std::future<SegmentVehicleOutcome> SegmentVehicleOutcomeCallable;
-			typedef std::function<void(const ImagesegClient*, const Model::SegmentVehicleRequest&, const SegmentVehicleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentVehicleAsyncHandler;
 
 			ImagesegClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			ImagesegClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -158,9 +133,6 @@ namespace AlibabaCloud
 			RefineMaskOutcome refineMask(const Model::RefineMaskRequest &request)const;
 			void refineMaskAsync(const Model::RefineMaskRequest& request, const RefineMaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RefineMaskOutcomeCallable refineMaskCallable(const Model::RefineMaskRequest& request) const;
-			SegmentAnimalOutcome segmentAnimal(const Model::SegmentAnimalRequest &request)const;
-			void segmentAnimalAsync(const Model::SegmentAnimalRequest& request, const SegmentAnimalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SegmentAnimalOutcomeCallable segmentAnimalCallable(const Model::SegmentAnimalRequest& request) const;
 			SegmentBodyOutcome segmentBody(const Model::SegmentBodyRequest &request)const;
 			void segmentBodyAsync(const Model::SegmentBodyRequest& request, const SegmentBodyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentBodyOutcomeCallable segmentBodyCallable(const Model::SegmentBodyRequest& request) const;
@@ -173,15 +145,9 @@ namespace AlibabaCloud
 			SegmentCommonImageOutcome segmentCommonImage(const Model::SegmentCommonImageRequest &request)const;
 			void segmentCommonImageAsync(const Model::SegmentCommonImageRequest& request, const SegmentCommonImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentCommonImageOutcomeCallable segmentCommonImageCallable(const Model::SegmentCommonImageRequest& request) const;
-			SegmentFaceOutcome segmentFace(const Model::SegmentFaceRequest &request)const;
-			void segmentFaceAsync(const Model::SegmentFaceRequest& request, const SegmentFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SegmentFaceOutcomeCallable segmentFaceCallable(const Model::SegmentFaceRequest& request) const;
 			SegmentFoodOutcome segmentFood(const Model::SegmentFoodRequest &request)const;
 			void segmentFoodAsync(const Model::SegmentFoodRequest& request, const SegmentFoodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentFoodOutcomeCallable segmentFoodCallable(const Model::SegmentFoodRequest& request) const;
-			SegmentFurnitureOutcome segmentFurniture(const Model::SegmentFurnitureRequest &request)const;
-			void segmentFurnitureAsync(const Model::SegmentFurnitureRequest& request, const SegmentFurnitureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SegmentFurnitureOutcomeCallable segmentFurnitureCallable(const Model::SegmentFurnitureRequest& request) const;
 			SegmentHDBodyOutcome segmentHDBody(const Model::SegmentHDBodyRequest &request)const;
 			void segmentHDBodyAsync(const Model::SegmentHDBodyRequest& request, const SegmentHDBodyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentHDBodyOutcomeCallable segmentHDBodyCallable(const Model::SegmentHDBodyRequest& request) const;
@@ -197,9 +163,6 @@ namespace AlibabaCloud
 			SegmentHeadOutcome segmentHead(const Model::SegmentHeadRequest &request)const;
 			void segmentHeadAsync(const Model::SegmentHeadRequest& request, const SegmentHeadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentHeadOutcomeCallable segmentHeadCallable(const Model::SegmentHeadRequest& request) const;
-			SegmentLogoOutcome segmentLogo(const Model::SegmentLogoRequest &request)const;
-			void segmentLogoAsync(const Model::SegmentLogoRequest& request, const SegmentLogoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SegmentLogoOutcomeCallable segmentLogoCallable(const Model::SegmentLogoRequest& request) const;
 			SegmentSceneOutcome segmentScene(const Model::SegmentSceneRequest &request)const;
 			void segmentSceneAsync(const Model::SegmentSceneRequest& request, const SegmentSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentSceneOutcomeCallable segmentSceneCallable(const Model::SegmentSceneRequest& request) const;
@@ -209,9 +172,6 @@ namespace AlibabaCloud
 			SegmentSkyOutcome segmentSky(const Model::SegmentSkyRequest &request)const;
 			void segmentSkyAsync(const Model::SegmentSkyRequest& request, const SegmentSkyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentSkyOutcomeCallable segmentSkyCallable(const Model::SegmentSkyRequest& request) const;
-			SegmentVehicleOutcome segmentVehicle(const Model::SegmentVehicleRequest &request)const;
-			void segmentVehicleAsync(const Model::SegmentVehicleRequest& request, const SegmentVehicleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SegmentVehicleOutcomeCallable segmentVehicleCallable(const Model::SegmentVehicleRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

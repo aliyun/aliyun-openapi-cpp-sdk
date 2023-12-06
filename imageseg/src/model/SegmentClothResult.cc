@@ -46,6 +46,8 @@ void SegmentClothResult::parse(const std::string &payload)
 		Data::Element elementObject;
 		if(!dataNodeElementsElement["ImageURL"].isNull())
 			elementObject.imageURL = dataNodeElementsElement["ImageURL"].asString();
+		if(!dataNodeElementsElement["ClassUrl"].isNull())
+			elementObject.classUrl = dataNodeElementsElement["ClassUrl"].asString();
 		data_.elements.push_back(elementObject);
 	}
 

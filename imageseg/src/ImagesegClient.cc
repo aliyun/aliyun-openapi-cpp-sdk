@@ -31,21 +31,21 @@ ImagesegClient::ImagesegClient(const Credentials &credentials, const ClientConfi
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "imageseg");
 }
 
 ImagesegClient::ImagesegClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "imageseg");
 }
 
 ImagesegClient::ImagesegClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "imageseg");
 }
 
 ImagesegClient::~ImagesegClient()
@@ -189,42 +189,6 @@ ImagesegClient::RefineMaskOutcomeCallable ImagesegClient::refineMaskCallable(con
 			[this, request]()
 			{
 			return this->refineMask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ImagesegClient::SegmentAnimalOutcome ImagesegClient::segmentAnimal(const SegmentAnimalRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SegmentAnimalOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SegmentAnimalOutcome(SegmentAnimalResult(outcome.result()));
-	else
-		return SegmentAnimalOutcome(outcome.error());
-}
-
-void ImagesegClient::segmentAnimalAsync(const SegmentAnimalRequest& request, const SegmentAnimalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, segmentAnimal(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImagesegClient::SegmentAnimalOutcomeCallable ImagesegClient::segmentAnimalCallable(const SegmentAnimalRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SegmentAnimalOutcome()>>(
-			[this, request]()
-			{
-			return this->segmentAnimal(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,42 +339,6 @@ ImagesegClient::SegmentCommonImageOutcomeCallable ImagesegClient::segmentCommonI
 	return task->get_future();
 }
 
-ImagesegClient::SegmentFaceOutcome ImagesegClient::segmentFace(const SegmentFaceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SegmentFaceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SegmentFaceOutcome(SegmentFaceResult(outcome.result()));
-	else
-		return SegmentFaceOutcome(outcome.error());
-}
-
-void ImagesegClient::segmentFaceAsync(const SegmentFaceRequest& request, const SegmentFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, segmentFace(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImagesegClient::SegmentFaceOutcomeCallable ImagesegClient::segmentFaceCallable(const SegmentFaceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SegmentFaceOutcome()>>(
-			[this, request]()
-			{
-			return this->segmentFace(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImagesegClient::SegmentFoodOutcome ImagesegClient::segmentFood(const SegmentFoodRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,42 +369,6 @@ ImagesegClient::SegmentFoodOutcomeCallable ImagesegClient::segmentFoodCallable(c
 			[this, request]()
 			{
 			return this->segmentFood(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ImagesegClient::SegmentFurnitureOutcome ImagesegClient::segmentFurniture(const SegmentFurnitureRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SegmentFurnitureOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SegmentFurnitureOutcome(SegmentFurnitureResult(outcome.result()));
-	else
-		return SegmentFurnitureOutcome(outcome.error());
-}
-
-void ImagesegClient::segmentFurnitureAsync(const SegmentFurnitureRequest& request, const SegmentFurnitureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, segmentFurniture(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImagesegClient::SegmentFurnitureOutcomeCallable ImagesegClient::segmentFurnitureCallable(const SegmentFurnitureRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SegmentFurnitureOutcome()>>(
-			[this, request]()
-			{
-			return this->segmentFurniture(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -663,42 +555,6 @@ ImagesegClient::SegmentHeadOutcomeCallable ImagesegClient::segmentHeadCallable(c
 	return task->get_future();
 }
 
-ImagesegClient::SegmentLogoOutcome ImagesegClient::segmentLogo(const SegmentLogoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SegmentLogoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SegmentLogoOutcome(SegmentLogoResult(outcome.result()));
-	else
-		return SegmentLogoOutcome(outcome.error());
-}
-
-void ImagesegClient::segmentLogoAsync(const SegmentLogoRequest& request, const SegmentLogoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, segmentLogo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImagesegClient::SegmentLogoOutcomeCallable ImagesegClient::segmentLogoCallable(const SegmentLogoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SegmentLogoOutcome()>>(
-			[this, request]()
-			{
-			return this->segmentLogo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImagesegClient::SegmentSceneOutcome ImagesegClient::segmentScene(const SegmentSceneRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -801,42 +657,6 @@ ImagesegClient::SegmentSkyOutcomeCallable ImagesegClient::segmentSkyCallable(con
 			[this, request]()
 			{
 			return this->segmentSky(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ImagesegClient::SegmentVehicleOutcome ImagesegClient::segmentVehicle(const SegmentVehicleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SegmentVehicleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SegmentVehicleOutcome(SegmentVehicleResult(outcome.result()));
-	else
-		return SegmentVehicleOutcome(outcome.error());
-}
-
-void ImagesegClient::segmentVehicleAsync(const SegmentVehicleRequest& request, const SegmentVehicleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, segmentVehicle(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImagesegClient::SegmentVehicleOutcomeCallable ImagesegClient::segmentVehicleCallable(const SegmentVehicleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SegmentVehicleOutcome()>>(
-			[this, request]()
-			{
-			return this->segmentVehicle(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -29,8 +29,6 @@ set(imageseg_public_header_model
 	include/alibabacloud/imageseg/model/ParseFaceResult.h
 	include/alibabacloud/imageseg/model/RefineMaskRequest.h
 	include/alibabacloud/imageseg/model/RefineMaskResult.h
-	include/alibabacloud/imageseg/model/SegmentAnimalRequest.h
-	include/alibabacloud/imageseg/model/SegmentAnimalResult.h
 	include/alibabacloud/imageseg/model/SegmentBodyRequest.h
 	include/alibabacloud/imageseg/model/SegmentBodyResult.h
 	include/alibabacloud/imageseg/model/SegmentClothRequest.h
@@ -39,12 +37,8 @@ set(imageseg_public_header_model
 	include/alibabacloud/imageseg/model/SegmentCommodityResult.h
 	include/alibabacloud/imageseg/model/SegmentCommonImageRequest.h
 	include/alibabacloud/imageseg/model/SegmentCommonImageResult.h
-	include/alibabacloud/imageseg/model/SegmentFaceRequest.h
-	include/alibabacloud/imageseg/model/SegmentFaceResult.h
 	include/alibabacloud/imageseg/model/SegmentFoodRequest.h
 	include/alibabacloud/imageseg/model/SegmentFoodResult.h
-	include/alibabacloud/imageseg/model/SegmentFurnitureRequest.h
-	include/alibabacloud/imageseg/model/SegmentFurnitureResult.h
 	include/alibabacloud/imageseg/model/SegmentHDBodyRequest.h
 	include/alibabacloud/imageseg/model/SegmentHDBodyResult.h
 	include/alibabacloud/imageseg/model/SegmentHDCommonImageRequest.h
@@ -55,16 +49,12 @@ set(imageseg_public_header_model
 	include/alibabacloud/imageseg/model/SegmentHairResult.h
 	include/alibabacloud/imageseg/model/SegmentHeadRequest.h
 	include/alibabacloud/imageseg/model/SegmentHeadResult.h
-	include/alibabacloud/imageseg/model/SegmentLogoRequest.h
-	include/alibabacloud/imageseg/model/SegmentLogoResult.h
 	include/alibabacloud/imageseg/model/SegmentSceneRequest.h
 	include/alibabacloud/imageseg/model/SegmentSceneResult.h
 	include/alibabacloud/imageseg/model/SegmentSkinRequest.h
 	include/alibabacloud/imageseg/model/SegmentSkinResult.h
 	include/alibabacloud/imageseg/model/SegmentSkyRequest.h
-	include/alibabacloud/imageseg/model/SegmentSkyResult.h
-	include/alibabacloud/imageseg/model/SegmentVehicleRequest.h
-	include/alibabacloud/imageseg/model/SegmentVehicleResult.h )
+	include/alibabacloud/imageseg/model/SegmentSkyResult.h )
 
 set(imageseg_src 
 	src/ImagesegClient.cc
@@ -76,8 +66,6 @@ set(imageseg_src
 	src/model/ParseFaceResult.cc
 	src/model/RefineMaskRequest.cc
 	src/model/RefineMaskResult.cc
-	src/model/SegmentAnimalRequest.cc
-	src/model/SegmentAnimalResult.cc
 	src/model/SegmentBodyRequest.cc
 	src/model/SegmentBodyResult.cc
 	src/model/SegmentClothRequest.cc
@@ -86,12 +74,8 @@ set(imageseg_src
 	src/model/SegmentCommodityResult.cc
 	src/model/SegmentCommonImageRequest.cc
 	src/model/SegmentCommonImageResult.cc
-	src/model/SegmentFaceRequest.cc
-	src/model/SegmentFaceResult.cc
 	src/model/SegmentFoodRequest.cc
 	src/model/SegmentFoodResult.cc
-	src/model/SegmentFurnitureRequest.cc
-	src/model/SegmentFurnitureResult.cc
 	src/model/SegmentHDBodyRequest.cc
 	src/model/SegmentHDBodyResult.cc
 	src/model/SegmentHDCommonImageRequest.cc
@@ -102,16 +86,12 @@ set(imageseg_src
 	src/model/SegmentHairResult.cc
 	src/model/SegmentHeadRequest.cc
 	src/model/SegmentHeadResult.cc
-	src/model/SegmentLogoRequest.cc
-	src/model/SegmentLogoResult.cc
 	src/model/SegmentSceneRequest.cc
 	src/model/SegmentSceneResult.cc
 	src/model/SegmentSkinRequest.cc
 	src/model/SegmentSkinResult.cc
 	src/model/SegmentSkyRequest.cc
-	src/model/SegmentSkyResult.cc
-	src/model/SegmentVehicleRequest.cc
-	src/model/SegmentVehicleResult.cc )
+	src/model/SegmentSkyResult.cc )
 
 add_library(imageseg ${LIB_TYPE}
 	${imageseg_public_header}

@@ -25,6 +25,23 @@ SegmentClothRequest::SegmentClothRequest()
 
 SegmentClothRequest::~SegmentClothRequest() {}
 
+std::vector<std::string> SegmentClothRequest::getClothClass() const {
+  return clothClass_;
+}
+
+void SegmentClothRequest::setClothClass(const std::vector<std::string> &clothClass) {
+  clothClass_ = clothClass;
+}
+
+std::string SegmentClothRequest::getReturnForm() const {
+  return returnForm_;
+}
+
+void SegmentClothRequest::setReturnForm(const std::string &returnForm) {
+  returnForm_ = returnForm;
+  setParameter(std::string("ReturnForm"), returnForm);
+}
+
 std::string SegmentClothRequest::getOssFile() const {
   return ossFile_;
 }
