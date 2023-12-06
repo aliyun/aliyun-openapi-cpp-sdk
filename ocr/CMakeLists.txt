@@ -25,8 +25,6 @@ set(ocr_public_header_model
 	include/alibabacloud/ocr/model/GetAsyncJobResultResult.h
 	include/alibabacloud/ocr/model/RecognizeBankCardRequest.h
 	include/alibabacloud/ocr/model/RecognizeBankCardResult.h
-	include/alibabacloud/ocr/model/RecognizeBusinessCardRequest.h
-	include/alibabacloud/ocr/model/RecognizeBusinessCardResult.h
 	include/alibabacloud/ocr/model/RecognizeBusinessLicenseRequest.h
 	include/alibabacloud/ocr/model/RecognizeBusinessLicenseResult.h
 	include/alibabacloud/ocr/model/RecognizeCharacterRequest.h
@@ -45,8 +43,6 @@ set(ocr_public_header_model
 	include/alibabacloud/ocr/model/RecognizeQrCodeResult.h
 	include/alibabacloud/ocr/model/RecognizeQuotaInvoiceRequest.h
 	include/alibabacloud/ocr/model/RecognizeQuotaInvoiceResult.h
-	include/alibabacloud/ocr/model/RecognizeStampRequest.h
-	include/alibabacloud/ocr/model/RecognizeStampResult.h
 	include/alibabacloud/ocr/model/RecognizeTableRequest.h
 	include/alibabacloud/ocr/model/RecognizeTableResult.h
 	include/alibabacloud/ocr/model/RecognizeTaxiInvoiceRequest.h
@@ -68,8 +64,6 @@ set(ocr_src
 	src/model/GetAsyncJobResultResult.cc
 	src/model/RecognizeBankCardRequest.cc
 	src/model/RecognizeBankCardResult.cc
-	src/model/RecognizeBusinessCardRequest.cc
-	src/model/RecognizeBusinessCardResult.cc
 	src/model/RecognizeBusinessLicenseRequest.cc
 	src/model/RecognizeBusinessLicenseResult.cc
 	src/model/RecognizeCharacterRequest.cc
@@ -88,8 +82,6 @@ set(ocr_src
 	src/model/RecognizeQrCodeResult.cc
 	src/model/RecognizeQuotaInvoiceRequest.cc
 	src/model/RecognizeQuotaInvoiceResult.cc
-	src/model/RecognizeStampRequest.cc
-	src/model/RecognizeStampResult.cc
 	src/model/RecognizeTableRequest.cc
 	src/model/RecognizeTableResult.cc
 	src/model/RecognizeTaxiInvoiceRequest.cc

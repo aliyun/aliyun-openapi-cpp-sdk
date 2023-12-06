@@ -123,42 +123,6 @@ OcrClient::RecognizeBankCardOutcomeCallable OcrClient::recognizeBankCardCallable
 	return task->get_future();
 }
 
-OcrClient::RecognizeBusinessCardOutcome OcrClient::recognizeBusinessCard(const RecognizeBusinessCardRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecognizeBusinessCardOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecognizeBusinessCardOutcome(RecognizeBusinessCardResult(outcome.result()));
-	else
-		return RecognizeBusinessCardOutcome(outcome.error());
-}
-
-void OcrClient::recognizeBusinessCardAsync(const RecognizeBusinessCardRequest& request, const RecognizeBusinessCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recognizeBusinessCard(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OcrClient::RecognizeBusinessCardOutcomeCallable OcrClient::recognizeBusinessCardCallable(const RecognizeBusinessCardRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecognizeBusinessCardOutcome()>>(
-			[this, request]()
-			{
-			return this->recognizeBusinessCard(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OcrClient::RecognizeBusinessLicenseOutcome OcrClient::recognizeBusinessLicense(const RecognizeBusinessLicenseRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,42 +441,6 @@ OcrClient::RecognizeQuotaInvoiceOutcomeCallable OcrClient::recognizeQuotaInvoice
 			[this, request]()
 			{
 			return this->recognizeQuotaInvoice(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OcrClient::RecognizeStampOutcome OcrClient::recognizeStamp(const RecognizeStampRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecognizeStampOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecognizeStampOutcome(RecognizeStampResult(outcome.result()));
-	else
-		return RecognizeStampOutcome(outcome.error());
-}
-
-void OcrClient::recognizeStampAsync(const RecognizeStampRequest& request, const RecognizeStampAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recognizeStamp(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OcrClient::RecognizeStampOutcomeCallable OcrClient::recognizeStampCallable(const RecognizeStampRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecognizeStampOutcome()>>(
-			[this, request]()
-			{
-			return this->recognizeStamp(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
