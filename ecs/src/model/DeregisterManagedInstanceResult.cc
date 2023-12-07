@@ -66,6 +66,8 @@ void DeregisterManagedInstanceResult::parse(const std::string &payload)
 		instance_.invocationCount = std::stol(instanceNode["InvocationCount"].asString());
 	if(!instanceNode["MachineId"].isNull())
 		instance_.machineId = instanceNode["MachineId"].asString();
+	if(!instanceNode["ResourceGroupId"].isNull())
+		instance_.resourceGroupId = instanceNode["ResourceGroupId"].asString();
 
 }
 

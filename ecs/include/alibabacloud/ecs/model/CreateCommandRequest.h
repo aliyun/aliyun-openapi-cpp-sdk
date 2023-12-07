@@ -53,6 +53,8 @@ public:
 	void setCommandContent(const std::string &commandContent);
 	long getTimeout() const;
 	void setTimeout(long timeout);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getContentEncoding() const;
@@ -78,6 +80,7 @@ private:
 	std::string type_;
 	std::string commandContent_;
 	long timeout_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string contentEncoding_;
 	std::vector<Tag> tag_;

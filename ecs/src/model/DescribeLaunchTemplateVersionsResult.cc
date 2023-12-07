@@ -146,6 +146,8 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 			launchTemplateVersionSetsObject.launchTemplateData.systemDiskEncrypted = launchTemplateDataNode["SystemDisk.Encrypted"].asString();
 		if(!launchTemplateDataNode["DeletionProtection"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.deletionProtection = launchTemplateDataNode["DeletionProtection"].asString() == "true";
+		if(!launchTemplateDataNode["CreditSpecification"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.creditSpecification = launchTemplateDataNode["CreditSpecification"].asString();
 		auto allDataDisksNode = launchTemplateDataNode["DataDisks"]["DataDisk"];
 		for (auto launchTemplateDataNodeDataDisksDataDisk : allDataDisksNode)
 		{

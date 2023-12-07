@@ -748,6 +748,8 @@ void RunInstancesRequest::setNetworkInterface(const std::vector<RunInstancesRequ
     setParameter(networkInterfaceObjStr + ".InstanceType", networkInterfaceObj.instanceType);
     setParameter(networkInterfaceObjStr + ".Ipv6AddressCount", std::to_string(networkInterfaceObj.ipv6AddressCount));
     setParameter(networkInterfaceObjStr + ".NetworkCardIndex", std::to_string(networkInterfaceObj.networkCardIndex));
+    setParameter(networkInterfaceObjStr + ".DeleteOnRelease", networkInterfaceObj.deleteOnRelease ? "true" : "false");
+    setParameter(networkInterfaceObjStr + ".NetworkInterfaceId", networkInterfaceObj.networkInterfaceId);
   }
 }
 

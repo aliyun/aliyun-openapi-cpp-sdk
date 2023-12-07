@@ -113,6 +113,7 @@ namespace AlibabaCloud
 						int internetMaxBandwidthIn;
 						int systemDiskIops;
 						std::string securityEnhancementStrategy;
+						std::string creditSpecification;
 						std::string autoReleaseTime;
 					};
 					LaunchTemplateData launchTemplateData;

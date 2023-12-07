@@ -78,6 +78,7 @@ namespace AlibabaCloud
 					std::string privateIpAddress;
 					bool serviceManaged;
 					std::string resourceGroupId;
+					bool deleteOnRelease;
 					Attachment attachment;
 					std::string networkInterfaceId;
 					std::vector<NetworkInterfaceSet::Ipv6Set> ipv6Sets;

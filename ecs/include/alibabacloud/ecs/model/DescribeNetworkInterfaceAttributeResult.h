@@ -99,6 +99,7 @@ namespace AlibabaCloud
 				std::string getPrivateIpAddress()const;
 				bool getServiceManaged()const;
 				std::string getResourceGroupId()const;
+				bool getDeleteOnRelease()const;
 				Attachment getAttachment()const;
 				std::string getNetworkInterfaceId()const;
 				std::vector<Ipv6Set> getIpv6Sets()const;
@@ -132,6 +133,7 @@ namespace AlibabaCloud
 				std::string privateIpAddress_;
 				bool serviceManaged_;
 				std::string resourceGroupId_;
+				bool deleteOnRelease_;
 				Attachment attachment_;
 				std::string networkInterfaceId_;
 				std::vector<Ipv6Set> ipv6Sets_;

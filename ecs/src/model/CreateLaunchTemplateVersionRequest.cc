@@ -463,6 +463,15 @@ void CreateLaunchTemplateVersionRequest::setAutoReleaseTime(const std::string &a
   setParameter(std::string("AutoReleaseTime"), autoReleaseTime);
 }
 
+std::string CreateLaunchTemplateVersionRequest::getCreditSpecification() const {
+  return creditSpecification_;
+}
+
+void CreateLaunchTemplateVersionRequest::setCreditSpecification(const std::string &creditSpecification) {
+  creditSpecification_ = creditSpecification;
+  setParameter(std::string("CreditSpecification"), creditSpecification);
+}
+
 int CreateLaunchTemplateVersionRequest::getSpotDuration() const {
   return spotDuration_;
 }

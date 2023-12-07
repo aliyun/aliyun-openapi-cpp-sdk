@@ -43,6 +43,15 @@ void DescribeManagedInstancesRequest::setPageNumber(long pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeManagedInstancesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeManagedInstancesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeManagedInstancesRequest::getRegionId() const {
   return regionId_;
 }

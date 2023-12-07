@@ -43,6 +43,15 @@ void CreateActivationRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
+std::string CreateActivationRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateActivationRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateActivationRequest::getRegionId() const {
   return regionId_;
 }

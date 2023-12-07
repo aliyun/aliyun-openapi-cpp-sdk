@@ -151,6 +151,8 @@ public:
 	void setRamRoleName(const std::string &ramRoleName);
 	std::string getAutoReleaseTime() const;
 	void setAutoReleaseTime(const std::string &autoReleaseTime);
+	std::string getCreditSpecification() const;
+	void setCreditSpecification(const std::string &creditSpecification);
 	int getSpotDuration() const;
 	void setSpotDuration(int spotDuration);
 	std::vector<std::string> getSecurityGroupIds() const;
@@ -216,6 +218,7 @@ private:
 	std::string systemDiskDiskName_;
 	std::string ramRoleName_;
 	std::string autoReleaseTime_;
+	std::string creditSpecification_;
 	int spotDuration_;
 	std::vector<std::string> securityGroupIds_;
 	std::vector<DataDisk> dataDisk_;

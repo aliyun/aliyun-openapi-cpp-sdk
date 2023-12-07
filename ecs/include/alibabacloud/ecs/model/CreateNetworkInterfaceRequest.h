@@ -76,6 +76,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getInstanceType() const;
 	void setInstanceType(const std::string &instanceType);
+	bool getDeleteOnRelease() const;
+	void setDeleteOnRelease(bool deleteOnRelease);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -113,6 +115,7 @@ private:
 	int ipv6PrefixCount_;
 	std::string regionId_;
 	std::string instanceType_;
+	bool deleteOnRelease_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	int queuePairNumber_;

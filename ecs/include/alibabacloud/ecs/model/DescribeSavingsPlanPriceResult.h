@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEVNCPASSWDRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEVNCPASSWDRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBESAVINGSPLANPRICERESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBESAVINGSPLANPRICERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,40 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeInstanceVncPasswdResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT DescribeSavingsPlanPriceResult : public ServiceResult
 			{
 			public:
+				struct PriceInfo
+				{
+					struct Price
+					{
+						float originalPrice;
+						float discountPrice;
+						std::string currency;
+						float tradePrice;
+					};
+					struct RulesItem
+					{
+						std::string description;
+						std::string ruleId;
+					};
+					Price price;
+					std::vector<RulesItem> rules;
+				};
 
 
-				DescribeInstanceVncPasswdResult();
-				explicit DescribeInstanceVncPasswdResult(const std::string &payload);
-				~DescribeInstanceVncPasswdResult();
-				std::string getVncPasswd()const;
+				DescribeSavingsPlanPriceResult();
+				explicit DescribeSavingsPlanPriceResult(const std::string &payload);
+				~DescribeSavingsPlanPriceResult();
+				PriceInfo getPriceInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string vncPasswd_;
+				PriceInfo priceInfo_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEVNCPASSWDRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBESAVINGSPLANPRICERESULT_H_

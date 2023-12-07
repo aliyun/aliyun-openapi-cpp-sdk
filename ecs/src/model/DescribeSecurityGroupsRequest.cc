@@ -43,6 +43,15 @@ void DescribeSecurityGroupsRequest::setFuzzyQuery(bool fuzzyQuery) {
   setParameter(std::string("FuzzyQuery"), fuzzyQuery ? "true" : "false");
 }
 
+bool DescribeSecurityGroupsRequest::getServiceManaged() const {
+  return serviceManaged_;
+}
+
+void DescribeSecurityGroupsRequest::setServiceManaged(bool serviceManaged) {
+  serviceManaged_ = serviceManaged;
+  setParameter(std::string("ServiceManaged"), serviceManaged ? "true" : "false");
+}
+
 std::string DescribeSecurityGroupsRequest::getSecurityGroupId() const {
   return securityGroupId_;
 }

@@ -51,6 +51,8 @@ void DescribeSnapshotsResult::parse(const std::string &payload)
 			snapshotsObject.progress = valueSnapshotsSnapshot["Progress"].asString();
 		if(!valueSnapshotsSnapshot["InstantAccess"].isNull())
 			snapshotsObject.instantAccess = valueSnapshotsSnapshot["InstantAccess"].asString() == "true";
+		if(!valueSnapshotsSnapshot["Available"].isNull())
+			snapshotsObject.available = valueSnapshotsSnapshot["Available"].asString() == "true";
 		if(!valueSnapshotsSnapshot["RemainTime"].isNull())
 			snapshotsObject.remainTime = std::stoi(valueSnapshotsSnapshot["RemainTime"].asString());
 		if(!valueSnapshotsSnapshot["SourceDiskSize"].isNull())

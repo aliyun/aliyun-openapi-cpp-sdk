@@ -2139,6 +2139,42 @@ EcsClient::CreateRouterInterfaceOutcomeCallable EcsClient::createRouterInterface
 	return task->get_future();
 }
 
+EcsClient::CreateSavingsPlanOutcome EcsClient::createSavingsPlan(const CreateSavingsPlanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSavingsPlanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSavingsPlanOutcome(CreateSavingsPlanResult(outcome.result()));
+	else
+		return CreateSavingsPlanOutcome(outcome.error());
+}
+
+void EcsClient::createSavingsPlanAsync(const CreateSavingsPlanRequest& request, const CreateSavingsPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSavingsPlan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CreateSavingsPlanOutcomeCallable EcsClient::createSavingsPlanCallable(const CreateSavingsPlanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSavingsPlanOutcome()>>(
+			[this, request]()
+			{
+			return this->createSavingsPlan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::CreateSecurityGroupOutcome EcsClient::createSecurityGroup(const CreateSecurityGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5847,42 +5883,6 @@ EcsClient::DescribeInstanceTypesOutcomeCallable EcsClient::describeInstanceTypes
 	return task->get_future();
 }
 
-EcsClient::DescribeInstanceVncPasswdOutcome EcsClient::describeInstanceVncPasswd(const DescribeInstanceVncPasswdRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeInstanceVncPasswdOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeInstanceVncPasswdOutcome(DescribeInstanceVncPasswdResult(outcome.result()));
-	else
-		return DescribeInstanceVncPasswdOutcome(outcome.error());
-}
-
-void EcsClient::describeInstanceVncPasswdAsync(const DescribeInstanceVncPasswdRequest& request, const DescribeInstanceVncPasswdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeInstanceVncPasswd(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::DescribeInstanceVncPasswdOutcomeCallable EcsClient::describeInstanceVncPasswdCallable(const DescribeInstanceVncPasswdRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeInstanceVncPasswdOutcome()>>(
-			[this, request]()
-			{
-			return this->describeInstanceVncPasswd(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EcsClient::DescribeInstanceVncUrlOutcome EcsClient::describeInstanceVncUrl(const DescribeInstanceVncUrlRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6921,6 +6921,78 @@ EcsClient::DescribeRouterInterfacesOutcomeCallable EcsClient::describeRouterInte
 			[this, request]()
 			{
 			return this->describeRouterInterfaces(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeSavingsPlanEstimationOutcome EcsClient::describeSavingsPlanEstimation(const DescribeSavingsPlanEstimationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSavingsPlanEstimationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSavingsPlanEstimationOutcome(DescribeSavingsPlanEstimationResult(outcome.result()));
+	else
+		return DescribeSavingsPlanEstimationOutcome(outcome.error());
+}
+
+void EcsClient::describeSavingsPlanEstimationAsync(const DescribeSavingsPlanEstimationRequest& request, const DescribeSavingsPlanEstimationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSavingsPlanEstimation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeSavingsPlanEstimationOutcomeCallable EcsClient::describeSavingsPlanEstimationCallable(const DescribeSavingsPlanEstimationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSavingsPlanEstimationOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSavingsPlanEstimation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeSavingsPlanPriceOutcome EcsClient::describeSavingsPlanPrice(const DescribeSavingsPlanPriceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSavingsPlanPriceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSavingsPlanPriceOutcome(DescribeSavingsPlanPriceResult(outcome.result()));
+	else
+		return DescribeSavingsPlanPriceOutcome(outcome.error());
+}
+
+void EcsClient::describeSavingsPlanPriceAsync(const DescribeSavingsPlanPriceRequest& request, const DescribeSavingsPlanPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSavingsPlanPrice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeSavingsPlanPriceOutcomeCallable EcsClient::describeSavingsPlanPriceCallable(const DescribeSavingsPlanPriceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSavingsPlanPriceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSavingsPlanPrice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8433,42 +8505,6 @@ EcsClient::ImportKeyPairOutcomeCallable EcsClient::importKeyPairCallable(const I
 			[this, request]()
 			{
 			return this->importKeyPair(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EcsClient::ImportSnapshotOutcome EcsClient::importSnapshot(const ImportSnapshotRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ImportSnapshotOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ImportSnapshotOutcome(ImportSnapshotResult(outcome.result()));
-	else
-		return ImportSnapshotOutcome(outcome.error());
-}
-
-void EcsClient::importSnapshotAsync(const ImportSnapshotRequest& request, const ImportSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, importSnapshot(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::ImportSnapshotOutcomeCallable EcsClient::importSnapshotCallable(const ImportSnapshotRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ImportSnapshotOutcome()>>(
-			[this, request]()
-			{
-			return this->importSnapshot(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

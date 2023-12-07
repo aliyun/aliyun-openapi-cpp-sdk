@@ -75,6 +75,8 @@ void DescribeCapacityReservationsResult::parse(const std::string &payload)
 			capacityReservationSetObject.savingPlanId = valueCapacityReservationSetCapacityReservationItem["SavingPlanId"].asString();
 		if(!valueCapacityReservationSetCapacityReservationItem["ReservedInstanceId"].isNull())
 			capacityReservationSetObject.reservedInstanceId = valueCapacityReservationSetCapacityReservationItem["ReservedInstanceId"].asString();
+		if(!valueCapacityReservationSetCapacityReservationItem["CapacityReservationOwnerId"].isNull())
+			capacityReservationSetObject.capacityReservationOwnerId = valueCapacityReservationSetCapacityReservationItem["CapacityReservationOwnerId"].asString();
 		auto allAllocatedResourcesNode = valueCapacityReservationSetCapacityReservationItem["AllocatedResources"]["AllocatedResource"];
 		for (auto valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource : allAllocatedResourcesNode)
 		{
@@ -83,10 +85,24 @@ void DescribeCapacityReservationsResult::parse(const std::string &payload)
 				allocatedResourcesObject.usedAmount = std::stoi(valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["UsedAmount"].asString());
 			if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["TotalAmount"].isNull())
 				allocatedResourcesObject.totalAmount = std::stoi(valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["TotalAmount"].asString());
+			if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["AvailableAmount"].isNull())
+				allocatedResourcesObject.availableAmount = std::stoi(valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["AvailableAmount"].asString());
 			if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["zoneId"].isNull())
 				allocatedResourcesObject.zoneId = valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["zoneId"].asString();
 			if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["InstanceType"].isNull())
 				allocatedResourcesObject.instanceType = valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["InstanceType"].asString();
+			auto allCapacityReservationUsagesNode = valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["CapacityReservationUsages"]["CapacityReservationUsage"];
+			for (auto valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResourceCapacityReservationUsagesCapacityReservationUsage : allCapacityReservationUsagesNode)
+			{
+				CapacityReservationItem::AllocatedResource::CapacityReservationUsage capacityReservationUsagesObject;
+				if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResourceCapacityReservationUsagesCapacityReservationUsage["AccountId"].isNull())
+					capacityReservationUsagesObject.accountId = valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResourceCapacityReservationUsagesCapacityReservationUsage["AccountId"].asString();
+				if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResourceCapacityReservationUsagesCapacityReservationUsage["ServiceName"].isNull())
+					capacityReservationUsagesObject.serviceName = valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResourceCapacityReservationUsagesCapacityReservationUsage["ServiceName"].asString();
+				if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResourceCapacityReservationUsagesCapacityReservationUsage["UsedAmount"].isNull())
+					capacityReservationUsagesObject.usedAmount = std::stoi(valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResourceCapacityReservationUsagesCapacityReservationUsage["UsedAmount"].asString());
+				allocatedResourcesObject.capacityReservationUsages.push_back(capacityReservationUsagesObject);
+			}
 			capacityReservationSetObject.allocatedResources.push_back(allocatedResourcesObject);
 		}
 		auto allTagsNode = valueCapacityReservationSetCapacityReservationItem["Tags"]["Tag"];

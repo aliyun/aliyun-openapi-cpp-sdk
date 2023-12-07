@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string tagValue;
 					};
 					std::string machineId;
+					std::string resourceGroupId;
 					bool connected;
 					std::string instanceId;
 					std::string agentVersion;

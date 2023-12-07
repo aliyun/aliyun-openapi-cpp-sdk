@@ -14,45 +14,45 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ecs/model/ImportSnapshotResult.h>
+#include <alibabacloud/ecs/model/CreateSavingsPlanResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ecs;
 using namespace AlibabaCloud::Ecs::Model;
 
-ImportSnapshotResult::ImportSnapshotResult() :
+CreateSavingsPlanResult::CreateSavingsPlanResult() :
 	ServiceResult()
 {}
 
-ImportSnapshotResult::ImportSnapshotResult(const std::string &payload) :
+CreateSavingsPlanResult::CreateSavingsPlanResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ImportSnapshotResult::~ImportSnapshotResult()
+CreateSavingsPlanResult::~CreateSavingsPlanResult()
 {}
 
-void ImportSnapshotResult::parse(const std::string &payload)
+void CreateSavingsPlanResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
-	if(!value["SnapshotId"].isNull())
-		snapshotId_ = value["SnapshotId"].asString();
+	if(!value["SavingsPlanId"].isNull())
+		savingsPlanId_ = value["SavingsPlanId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = value["OrderId"].asString();
 
 }
 
-std::string ImportSnapshotResult::getSnapshotId()const
+std::string CreateSavingsPlanResult::getSavingsPlanId()const
 {
-	return snapshotId_;
+	return savingsPlanId_;
 }
 
-std::string ImportSnapshotResult::getTaskId()const
+std::string CreateSavingsPlanResult::getOrderId()const
 {
-	return taskId_;
+	return orderId_;
 }
 

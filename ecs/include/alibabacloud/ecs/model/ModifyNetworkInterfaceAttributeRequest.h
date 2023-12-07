@@ -42,6 +42,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getNetworkInterfaceName() const;
 	void setNetworkInterfaceName(const std::string &networkInterfaceName);
+	bool getDeleteOnRelease() const;
+	void setDeleteOnRelease(bool deleteOnRelease);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -58,6 +60,7 @@ private:
 	std::string description_;
 	std::string regionId_;
 	std::string networkInterfaceName_;
+	bool deleteOnRelease_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

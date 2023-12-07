@@ -68,6 +68,8 @@ public:
 		std::string instanceType;
 		long ipv6AddressCount;
 		int networkCardIndex;
+		bool deleteOnRelease;
+		std::string networkInterfaceId;
 	};
 	struct DataDisk {
 		std::string performanceLevel;

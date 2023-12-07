@@ -233,6 +233,15 @@ void CreateAutoProvisioningGroupRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationImageFamily() const {
+  return launchConfigurationImageFamily_;
+}
+
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationImageFamily(const std::string &launchConfigurationImageFamily) {
+  launchConfigurationImageFamily_ = launchConfigurationImageFamily;
+  setParameter(std::string("LaunchConfiguration.ImageFamily"), launchConfigurationImageFamily);
+}
+
 int CreateAutoProvisioningGroupRequest::getLaunchConfigurationSystemDiskSize() const {
   return launchConfigurationSystemDiskSize_;
 }

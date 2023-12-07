@@ -56,6 +56,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::string getInvocationStatus() const;
+	void setInvocationStatus(const std::string &invocationStatus);
 	std::string getName() const;
 	void setName(const std::string &name);
 
@@ -71,6 +73,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string instanceId_;
+	std::string invocationStatus_;
 	std::string name_;
 };
 } // namespace Model

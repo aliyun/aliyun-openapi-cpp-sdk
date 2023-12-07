@@ -97,3 +97,12 @@ void ModifySnapshotAttributeRequest::setDisableInstantAccess(bool disableInstant
   setParameter(std::string("DisableInstantAccess"), disableInstantAccess ? "true" : "false");
 }
 
+int ModifySnapshotAttributeRequest::getRetentionDays() const {
+  return retentionDays_;
+}
+
+void ModifySnapshotAttributeRequest::setRetentionDays(int retentionDays) {
+  retentionDays_ = retentionDays;
+  setParameter(std::string("RetentionDays"), std::to_string(retentionDays));
+}
+

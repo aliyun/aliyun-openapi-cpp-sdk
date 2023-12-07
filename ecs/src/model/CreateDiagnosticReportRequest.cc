@@ -25,15 +25,6 @@ CreateDiagnosticReportRequest::CreateDiagnosticReportRequest()
 
 CreateDiagnosticReportRequest::~CreateDiagnosticReportRequest() {}
 
-std::string CreateDiagnosticReportRequest::getResourceId() const {
-  return resourceId_;
-}
-
-void CreateDiagnosticReportRequest::setResourceId(const std::string &resourceId) {
-  resourceId_ = resourceId;
-  setParameter(std::string("ResourceId"), resourceId);
-}
-
 std::string CreateDiagnosticReportRequest::getMetricSetId() const {
   return metricSetId_;
 }
@@ -41,15 +32,6 @@ std::string CreateDiagnosticReportRequest::getMetricSetId() const {
 void CreateDiagnosticReportRequest::setMetricSetId(const std::string &metricSetId) {
   metricSetId_ = metricSetId;
   setParameter(std::string("MetricSetId"), metricSetId);
-}
-
-std::string CreateDiagnosticReportRequest::getEndTime() const {
-  return endTime_;
-}
-
-void CreateDiagnosticReportRequest::setEndTime(const std::string &endTime) {
-  endTime_ = endTime;
-  setParameter(std::string("EndTime"), endTime);
 }
 
 std::string CreateDiagnosticReportRequest::getStartTime() const {
@@ -68,5 +50,34 @@ std::string CreateDiagnosticReportRequest::getRegionId() const {
 void CreateDiagnosticReportRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string CreateDiagnosticReportRequest::getResourceId() const {
+  return resourceId_;
+}
+
+void CreateDiagnosticReportRequest::setResourceId(const std::string &resourceId) {
+  resourceId_ = resourceId;
+  setParameter(std::string("ResourceId"), resourceId);
+}
+
+std::string CreateDiagnosticReportRequest::getEndTime() const {
+  return endTime_;
+}
+
+void CreateDiagnosticReportRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
+}
+
+std::map<std::string, std::string> CreateDiagnosticReportRequest::getAdditionalOptions() const {
+  return additionalOptions_;
+}
+
+void CreateDiagnosticReportRequest::setAdditionalOptions(const std::map<std::string, std::string> &additionalOptions) {
+  additionalOptions_ = additionalOptions;
+  for(auto const &iter1 : additionalOptions) {
+    setParameter(std::string("AdditionalOptions") + "." + iter1.first, iter1.second);
+  }
 }
 

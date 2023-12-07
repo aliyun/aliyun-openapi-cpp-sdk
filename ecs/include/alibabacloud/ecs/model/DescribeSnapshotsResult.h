@@ -50,6 +50,7 @@ namespace AlibabaCloud
 					std::string sourceDiskId;
 					std::string snapshotSN;
 					std::string sourceRegionId;
+					bool available;
 					std::vector<Snapshot::Tag> tags;
 					std::string status;
 					std::string progress;

@@ -77,6 +77,8 @@ void DescribeSnapshotGroupsResult::parse(const std::string &payload)
 				snapshotsObject.sourceDiskId = valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["SourceDiskId"].asString();
 			if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["Progress"].isNull())
 				snapshotsObject.progress = valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["Progress"].asString();
+			if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["Available"].isNull())
+				snapshotsObject.available = valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["Available"].asString() == "true";
 			if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["InstantAccessRetentionDays"].isNull())
 				snapshotsObject.instantAccessRetentionDays = std::stoi(valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["InstantAccessRetentionDays"].asString());
 			if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["SnapshotId"].isNull())

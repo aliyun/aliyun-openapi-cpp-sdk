@@ -36,10 +36,18 @@ namespace AlibabaCloud
 				{
 					struct AllocatedResource
 					{
+						struct CapacityReservationUsage
+						{
+							int usedAmount;
+							std::string accountId;
+							std::string serviceName;
+						};
 						int usedAmount;
 						std::string zoneId;
+						int availableAmount;
 						int totalAmount;
 						std::string instanceType;
+						std::vector<AllocatedResource::CapacityReservationUsage> capacityReservationUsages;
 					};
 					struct Tag
 					{
@@ -58,6 +66,7 @@ namespace AlibabaCloud
 					std::string privatePoolOptionsMatchCriteria;
 					std::string timeSlot;
 					std::string savingPlanId;
+					std::string capacityReservationOwnerId;
 					std::vector<CapacityReservationItem::AllocatedResource> allocatedResources;
 					std::string privatePoolOptionsId;
 					std::string endTimeType;

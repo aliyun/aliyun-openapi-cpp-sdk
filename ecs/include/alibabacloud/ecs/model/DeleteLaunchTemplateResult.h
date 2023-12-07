@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				DeleteLaunchTemplateResult();
 				explicit DeleteLaunchTemplateResult(const std::string &payload);
 				~DeleteLaunchTemplateResult();
+				std::vector<std::string> getLaunchTemplateVersionNumbers()const;
 				std::string getLaunchTemplateId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<std::string> launchTemplateVersionNumbers_;
 				std::string launchTemplateId_;
 
 			};

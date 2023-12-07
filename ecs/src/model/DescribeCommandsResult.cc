@@ -71,6 +71,8 @@ void DescribeCommandsResult::parse(const std::string &payload)
 			commandsObject.name = valueCommandsCommand["Name"].asString();
 		if(!valueCommandsCommand["EnableParameter"].isNull())
 			commandsObject.enableParameter = valueCommandsCommand["EnableParameter"].asString() == "true";
+		if(!valueCommandsCommand["ResourceGroupId"].isNull())
+			commandsObject.resourceGroupId = valueCommandsCommand["ResourceGroupId"].asString();
 		auto allParameterDefinitionsNode = valueCommandsCommand["ParameterDefinitions"]["ParameterDefinition"];
 		for (auto valueCommandsCommandParameterDefinitionsParameterDefinition : allParameterDefinitionsNode)
 		{

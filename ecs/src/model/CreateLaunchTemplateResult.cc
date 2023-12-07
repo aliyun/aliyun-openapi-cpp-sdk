@@ -41,7 +41,14 @@ void CreateLaunchTemplateResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["LaunchTemplateId"].isNull())
 		launchTemplateId_ = value["LaunchTemplateId"].asString();
+	if(!value["LaunchTemplateVersionNumber"].isNull())
+		launchTemplateVersionNumber_ = std::stol(value["LaunchTemplateVersionNumber"].asString());
 
+}
+
+long CreateLaunchTemplateResult::getLaunchTemplateVersionNumber()const
+{
+	return launchTemplateVersionNumber_;
 }
 
 std::string CreateLaunchTemplateResult::getLaunchTemplateId()const

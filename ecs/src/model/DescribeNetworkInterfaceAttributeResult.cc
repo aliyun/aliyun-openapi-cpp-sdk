@@ -168,6 +168,8 @@ void DescribeNetworkInterfaceAttributeResult::parse(const std::string &payload)
 		privateIpAddress_ = value["PrivateIpAddress"].asString();
 	if(!value["QueueNumber"].isNull())
 		queueNumber_ = std::stoi(value["QueueNumber"].asString());
+	if(!value["DeleteOnRelease"].isNull())
+		deleteOnRelease_ = value["DeleteOnRelease"].asString() == "true";
 
 }
 
@@ -189,6 +191,11 @@ bool DescribeNetworkInterfaceAttributeResult::getServiceManaged()const
 std::string DescribeNetworkInterfaceAttributeResult::getResourceGroupId()const
 {
 	return resourceGroupId_;
+}
+
+bool DescribeNetworkInterfaceAttributeResult::getDeleteOnRelease()const
+{
+	return deleteOnRelease_;
 }
 
 DescribeNetworkInterfaceAttributeResult::Attachment DescribeNetworkInterfaceAttributeResult::getAttachment()const

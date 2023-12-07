@@ -127,6 +127,10 @@ void DescribeDisksResult::parse(const std::string &payload)
 			disksObject.burstingEnabled = valueDisksDisk["BurstingEnabled"].asString() == "true";
 		if(!valueDisksDisk["Throughput"].isNull())
 			disksObject.throughput = std::stoi(valueDisksDisk["Throughput"].asString());
+		if(!valueDisksDisk["ThroughputRead"].isNull())
+			disksObject.throughputRead = std::stoi(valueDisksDisk["ThroughputRead"].asString());
+		if(!valueDisksDisk["ThroughputWrite"].isNull())
+			disksObject.throughputWrite = std::stoi(valueDisksDisk["ThroughputWrite"].asString());
 		auto allOperationLocksNode = valueDisksDisk["OperationLocks"]["OperationLock"];
 		for (auto valueDisksDiskOperationLocksOperationLock : allOperationLocksNode)
 		{

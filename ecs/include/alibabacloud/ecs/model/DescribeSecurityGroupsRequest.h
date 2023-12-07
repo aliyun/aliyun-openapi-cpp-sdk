@@ -38,6 +38,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	bool getFuzzyQuery() const;
 	void setFuzzyQuery(bool fuzzyQuery);
+	bool getServiceManaged() const;
+	void setServiceManaged(bool serviceManaged);
 	std::string getSecurityGroupId() const;
 	void setSecurityGroupId(const std::string &securityGroupId);
 	bool getIsQueryEcsCount() const;
@@ -78,6 +80,7 @@ public:
 private:
 	long resourceOwnerId_;
 	bool fuzzyQuery_;
+	bool serviceManaged_;
 	std::string securityGroupId_;
 	bool isQueryEcsCount_;
 	std::string networkType_;

@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Instance
 				{
 					std::string machineId;
+					std::string resourceGroupId;
 					std::string instanceId;
 					std::string agentVersion;
 					long invocationCount;

@@ -59,6 +59,7 @@ namespace AlibabaCloud
 					std::string description;
 					std::string kMSKeyId;
 					std::string category;
+					int throughputRead;
 					std::string resourceGroupId;
 					bool encrypted;
 					int size;
@@ -93,6 +94,7 @@ namespace AlibabaCloud
 					long provisionedIops;
 					std::vector<Disk::OperationLock> operationLocks;
 					std::string bdfId;
+					int throughputWrite;
 					bool portable;
 					std::string type;
 					int mountInstanceNum;

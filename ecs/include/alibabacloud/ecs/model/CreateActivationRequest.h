@@ -38,6 +38,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getInstanceCount() const;
@@ -60,6 +62,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string description_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	int instanceCount_;
 	std::vector<Tag> tag_;

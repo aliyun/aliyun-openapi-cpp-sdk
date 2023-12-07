@@ -44,6 +44,8 @@ public:
 	void setCommandId(const std::string &commandId);
 	long getPageNumber() const;
 	void setPageNumber(long pageNumber);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getProvider() const;
@@ -71,6 +73,7 @@ private:
 	std::string type_;
 	std::string commandId_;
 	long pageNumber_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string provider_;
 	std::string contentEncoding_;

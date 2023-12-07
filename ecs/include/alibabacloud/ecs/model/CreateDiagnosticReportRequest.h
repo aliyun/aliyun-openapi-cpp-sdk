@@ -30,23 +30,26 @@ class ALIBABACLOUD_ECS_EXPORT CreateDiagnosticReportRequest : public RpcServiceR
 public:
 	CreateDiagnosticReportRequest();
 	~CreateDiagnosticReportRequest();
-	std::string getResourceId() const;
-	void setResourceId(const std::string &resourceId);
 	std::string getMetricSetId() const;
 	void setMetricSetId(const std::string &metricSetId);
-	std::string getEndTime() const;
-	void setEndTime(const std::string &endTime);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getResourceId() const;
+	void setResourceId(const std::string &resourceId);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
+	std::map<std::string, std::string> getAdditionalOptions() const;
+	void setAdditionalOptions(const std::map<std::string, std::string> &additionalOptions);
 
 private:
-	std::string resourceId_;
 	std::string metricSetId_;
-	std::string endTime_;
 	std::string startTime_;
 	std::string regionId_;
+	std::string resourceId_;
+	std::string endTime_;
+	std::map<std::string, std::string> additionalOptions_;
 };
 } // namespace Model
 } // namespace Ecs

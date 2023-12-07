@@ -138,6 +138,8 @@
 #include "model/CreateRouteEntryResult.h"
 #include "model/CreateRouterInterfaceRequest.h"
 #include "model/CreateRouterInterfaceResult.h"
+#include "model/CreateSavingsPlanRequest.h"
+#include "model/CreateSavingsPlanResult.h"
 #include "model/CreateSecurityGroupRequest.h"
 #include "model/CreateSecurityGroupResult.h"
 #include "model/CreateSimulatedSystemEventsRequest.h"
@@ -344,8 +346,6 @@
 #include "model/DescribeInstanceTypeFamiliesResult.h"
 #include "model/DescribeInstanceTypesRequest.h"
 #include "model/DescribeInstanceTypesResult.h"
-#include "model/DescribeInstanceVncPasswdRequest.h"
-#include "model/DescribeInstanceVncPasswdResult.h"
 #include "model/DescribeInstanceVncUrlRequest.h"
 #include "model/DescribeInstanceVncUrlResult.h"
 #include "model/DescribeInstancesRequest.h"
@@ -404,6 +404,10 @@
 #include "model/DescribeRouteTablesResult.h"
 #include "model/DescribeRouterInterfacesRequest.h"
 #include "model/DescribeRouterInterfacesResult.h"
+#include "model/DescribeSavingsPlanEstimationRequest.h"
+#include "model/DescribeSavingsPlanEstimationResult.h"
+#include "model/DescribeSavingsPlanPriceRequest.h"
+#include "model/DescribeSavingsPlanPriceResult.h"
 #include "model/DescribeSecurityGroupAttributeRequest.h"
 #include "model/DescribeSecurityGroupAttributeResult.h"
 #include "model/DescribeSecurityGroupReferencesRequest.h"
@@ -488,8 +492,6 @@
 #include "model/ImportImageResult.h"
 #include "model/ImportKeyPairRequest.h"
 #include "model/ImportKeyPairResult.h"
-#include "model/ImportSnapshotRequest.h"
-#include "model/ImportSnapshotResult.h"
 #include "model/InstallCloudAssistantRequest.h"
 #include "model/InstallCloudAssistantResult.h"
 #include "model/InvokeCommandRequest.h"
@@ -899,6 +901,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateRouterInterfaceResult> CreateRouterInterfaceOutcome;
 			typedef std::future<CreateRouterInterfaceOutcome> CreateRouterInterfaceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateRouterInterfaceRequest&, const CreateRouterInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouterInterfaceAsyncHandler;
+			typedef Outcome<Error, Model::CreateSavingsPlanResult> CreateSavingsPlanOutcome;
+			typedef std::future<CreateSavingsPlanOutcome> CreateSavingsPlanOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CreateSavingsPlanRequest&, const CreateSavingsPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSavingsPlanAsyncHandler;
 			typedef Outcome<Error, Model::CreateSecurityGroupResult> CreateSecurityGroupOutcome;
 			typedef std::future<CreateSecurityGroupOutcome> CreateSecurityGroupOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateSecurityGroupRequest&, const CreateSecurityGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityGroupAsyncHandler;
@@ -1208,9 +1213,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceTypesResult> DescribeInstanceTypesOutcome;
 			typedef std::future<DescribeInstanceTypesOutcome> DescribeInstanceTypesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeInstanceTypesRequest&, const DescribeInstanceTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceTypesAsyncHandler;
-			typedef Outcome<Error, Model::DescribeInstanceVncPasswdResult> DescribeInstanceVncPasswdOutcome;
-			typedef std::future<DescribeInstanceVncPasswdOutcome> DescribeInstanceVncPasswdOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::DescribeInstanceVncPasswdRequest&, const DescribeInstanceVncPasswdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceVncPasswdAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceVncUrlResult> DescribeInstanceVncUrlOutcome;
 			typedef std::future<DescribeInstanceVncUrlOutcome> DescribeInstanceVncUrlOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeInstanceVncUrlRequest&, const DescribeInstanceVncUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceVncUrlAsyncHandler;
@@ -1298,6 +1300,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRouterInterfacesResult> DescribeRouterInterfacesOutcome;
 			typedef std::future<DescribeRouterInterfacesOutcome> DescribeRouterInterfacesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeRouterInterfacesRequest&, const DescribeRouterInterfacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouterInterfacesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSavingsPlanEstimationResult> DescribeSavingsPlanEstimationOutcome;
+			typedef std::future<DescribeSavingsPlanEstimationOutcome> DescribeSavingsPlanEstimationOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeSavingsPlanEstimationRequest&, const DescribeSavingsPlanEstimationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingsPlanEstimationAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSavingsPlanPriceResult> DescribeSavingsPlanPriceOutcome;
+			typedef std::future<DescribeSavingsPlanPriceOutcome> DescribeSavingsPlanPriceOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeSavingsPlanPriceRequest&, const DescribeSavingsPlanPriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingsPlanPriceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSecurityGroupAttributeResult> DescribeSecurityGroupAttributeOutcome;
 			typedef std::future<DescribeSecurityGroupAttributeOutcome> DescribeSecurityGroupAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeSecurityGroupAttributeRequest&, const DescribeSecurityGroupAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupAttributeAsyncHandler;
@@ -1424,9 +1432,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ImportKeyPairResult> ImportKeyPairOutcome;
 			typedef std::future<ImportKeyPairOutcome> ImportKeyPairOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ImportKeyPairRequest&, const ImportKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImportKeyPairAsyncHandler;
-			typedef Outcome<Error, Model::ImportSnapshotResult> ImportSnapshotOutcome;
-			typedef std::future<ImportSnapshotOutcome> ImportSnapshotOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::ImportSnapshotRequest&, const ImportSnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImportSnapshotAsyncHandler;
 			typedef Outcome<Error, Model::InstallCloudAssistantResult> InstallCloudAssistantOutcome;
 			typedef std::future<InstallCloudAssistantOutcome> InstallCloudAssistantOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::InstallCloudAssistantRequest&, const InstallCloudAssistantOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InstallCloudAssistantAsyncHandler;
@@ -1945,6 +1950,9 @@ namespace AlibabaCloud
 			CreateRouterInterfaceOutcome createRouterInterface(const Model::CreateRouterInterfaceRequest &request)const;
 			void createRouterInterfaceAsync(const Model::CreateRouterInterfaceRequest& request, const CreateRouterInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRouterInterfaceOutcomeCallable createRouterInterfaceCallable(const Model::CreateRouterInterfaceRequest& request) const;
+			CreateSavingsPlanOutcome createSavingsPlan(const Model::CreateSavingsPlanRequest &request)const;
+			void createSavingsPlanAsync(const Model::CreateSavingsPlanRequest& request, const CreateSavingsPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateSavingsPlanOutcomeCallable createSavingsPlanCallable(const Model::CreateSavingsPlanRequest& request) const;
 			CreateSecurityGroupOutcome createSecurityGroup(const Model::CreateSecurityGroupRequest &request)const;
 			void createSecurityGroupAsync(const Model::CreateSecurityGroupRequest& request, const CreateSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSecurityGroupOutcomeCallable createSecurityGroupCallable(const Model::CreateSecurityGroupRequest& request) const;
@@ -2254,9 +2262,6 @@ namespace AlibabaCloud
 			DescribeInstanceTypesOutcome describeInstanceTypes(const Model::DescribeInstanceTypesRequest &request)const;
 			void describeInstanceTypesAsync(const Model::DescribeInstanceTypesRequest& request, const DescribeInstanceTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceTypesOutcomeCallable describeInstanceTypesCallable(const Model::DescribeInstanceTypesRequest& request) const;
-			DescribeInstanceVncPasswdOutcome describeInstanceVncPasswd(const Model::DescribeInstanceVncPasswdRequest &request)const;
-			void describeInstanceVncPasswdAsync(const Model::DescribeInstanceVncPasswdRequest& request, const DescribeInstanceVncPasswdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeInstanceVncPasswdOutcomeCallable describeInstanceVncPasswdCallable(const Model::DescribeInstanceVncPasswdRequest& request) const;
 			DescribeInstanceVncUrlOutcome describeInstanceVncUrl(const Model::DescribeInstanceVncUrlRequest &request)const;
 			void describeInstanceVncUrlAsync(const Model::DescribeInstanceVncUrlRequest& request, const DescribeInstanceVncUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceVncUrlOutcomeCallable describeInstanceVncUrlCallable(const Model::DescribeInstanceVncUrlRequest& request) const;
@@ -2344,6 +2349,12 @@ namespace AlibabaCloud
 			DescribeRouterInterfacesOutcome describeRouterInterfaces(const Model::DescribeRouterInterfacesRequest &request)const;
 			void describeRouterInterfacesAsync(const Model::DescribeRouterInterfacesRequest& request, const DescribeRouterInterfacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRouterInterfacesOutcomeCallable describeRouterInterfacesCallable(const Model::DescribeRouterInterfacesRequest& request) const;
+			DescribeSavingsPlanEstimationOutcome describeSavingsPlanEstimation(const Model::DescribeSavingsPlanEstimationRequest &request)const;
+			void describeSavingsPlanEstimationAsync(const Model::DescribeSavingsPlanEstimationRequest& request, const DescribeSavingsPlanEstimationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSavingsPlanEstimationOutcomeCallable describeSavingsPlanEstimationCallable(const Model::DescribeSavingsPlanEstimationRequest& request) const;
+			DescribeSavingsPlanPriceOutcome describeSavingsPlanPrice(const Model::DescribeSavingsPlanPriceRequest &request)const;
+			void describeSavingsPlanPriceAsync(const Model::DescribeSavingsPlanPriceRequest& request, const DescribeSavingsPlanPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSavingsPlanPriceOutcomeCallable describeSavingsPlanPriceCallable(const Model::DescribeSavingsPlanPriceRequest& request) const;
 			DescribeSecurityGroupAttributeOutcome describeSecurityGroupAttribute(const Model::DescribeSecurityGroupAttributeRequest &request)const;
 			void describeSecurityGroupAttributeAsync(const Model::DescribeSecurityGroupAttributeRequest& request, const DescribeSecurityGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSecurityGroupAttributeOutcomeCallable describeSecurityGroupAttributeCallable(const Model::DescribeSecurityGroupAttributeRequest& request) const;
@@ -2470,9 +2481,6 @@ namespace AlibabaCloud
 			ImportKeyPairOutcome importKeyPair(const Model::ImportKeyPairRequest &request)const;
 			void importKeyPairAsync(const Model::ImportKeyPairRequest& request, const ImportKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImportKeyPairOutcomeCallable importKeyPairCallable(const Model::ImportKeyPairRequest& request) const;
-			ImportSnapshotOutcome importSnapshot(const Model::ImportSnapshotRequest &request)const;
-			void importSnapshotAsync(const Model::ImportSnapshotRequest& request, const ImportSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ImportSnapshotOutcomeCallable importSnapshotCallable(const Model::ImportSnapshotRequest& request) const;
 			InstallCloudAssistantOutcome installCloudAssistant(const Model::InstallCloudAssistantRequest &request)const;
 			void installCloudAssistantAsync(const Model::InstallCloudAssistantRequest& request, const InstallCloudAssistantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InstallCloudAssistantOutcomeCallable installCloudAssistantCallable(const Model::InstallCloudAssistantRequest& request) const;

@@ -71,6 +71,8 @@ void DescribeManagedInstancesResult::parse(const std::string &payload)
 			instancesObject.invocationCount = std::stol(valueInstancesInstance["InvocationCount"].asString());
 		if(!valueInstancesInstance["MachineId"].isNull())
 			instancesObject.machineId = valueInstancesInstance["MachineId"].asString();
+		if(!valueInstancesInstance["ResourceGroupId"].isNull())
+			instancesObject.resourceGroupId = valueInstancesInstance["ResourceGroupId"].asString();
 		auto allTagsNode = valueInstancesInstance["Tags"]["Tag"];
 		for (auto valueInstancesInstanceTagsTag : allTagsNode)
 		{

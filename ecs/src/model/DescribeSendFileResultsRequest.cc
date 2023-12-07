@@ -129,6 +129,15 @@ void DescribeSendFileResultsRequest::setInstanceId(const std::string &instanceId
   setParameter(std::string("InstanceId"), instanceId);
 }
 
+std::string DescribeSendFileResultsRequest::getInvocationStatus() const {
+  return invocationStatus_;
+}
+
+void DescribeSendFileResultsRequest::setInvocationStatus(const std::string &invocationStatus) {
+  invocationStatus_ = invocationStatus;
+  setParameter(std::string("InvocationStatus"), invocationStatus);
+}
+
 std::string DescribeSendFileResultsRequest::getName() const {
   return name_;
 }

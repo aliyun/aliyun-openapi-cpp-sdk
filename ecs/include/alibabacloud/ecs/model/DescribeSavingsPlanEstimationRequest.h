@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEVNCPASSWDREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEVNCPASSWDREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBESAVINGSPLANESTIMATIONREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBESAVINGSPLANESTIMATIONREQUEST_H_
 
 #include <alibabacloud/ecs/EcsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,32 @@
 namespace AlibabaCloud {
 namespace Ecs {
 namespace Model {
-class ALIBABACLOUD_ECS_EXPORT DescribeInstanceVncPasswdRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ECS_EXPORT DescribeSavingsPlanEstimationRequest : public RpcServiceRequest {
 public:
-	DescribeInstanceVncPasswdRequest();
-	~DescribeInstanceVncPasswdRequest();
-	long getResourceOwnerId() const;
-	void setResourceOwnerId(long resourceOwnerId);
+	DescribeSavingsPlanEstimationRequest();
+	~DescribeSavingsPlanEstimationRequest();
+	std::string getResourceId() const;
+	void setResourceId(const std::string &resourceId);
+	std::string getPeriod() const;
+	void setPeriod(const std::string &period);
+	std::string getPlanType() const;
+	void setPlanType(const std::string &planType);
+	std::string getPeriodUnit() const;
+	void setPeriodUnit(const std::string &periodUnit);
+	std::string getOfferingType() const;
+	void setOfferingType(const std::string &offeringType);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getResourceOwnerAccount() const;
-	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	std::string getOwnerAccount() const;
-	void setOwnerAccount(const std::string &ownerAccount);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
 
 private:
-	long resourceOwnerId_;
+	std::string resourceId_;
+	std::string period_;
+	std::string planType_;
+	std::string periodUnit_;
+	std::string offeringType_;
 	std::string regionId_;
-	std::string resourceOwnerAccount_;
-	std::string ownerAccount_;
-	long ownerId_;
-	std::string instanceId_;
 };
 } // namespace Model
 } // namespace Ecs
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEVNCPASSWDREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBESAVINGSPLANESTIMATIONREQUEST_H_

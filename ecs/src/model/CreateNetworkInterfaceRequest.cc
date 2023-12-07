@@ -215,6 +215,15 @@ void CreateNetworkInterfaceRequest::setInstanceType(const std::string &instanceT
   setParameter(std::string("InstanceType"), instanceType);
 }
 
+bool CreateNetworkInterfaceRequest::getDeleteOnRelease() const {
+  return deleteOnRelease_;
+}
+
+void CreateNetworkInterfaceRequest::setDeleteOnRelease(bool deleteOnRelease) {
+  deleteOnRelease_ = deleteOnRelease;
+  setParameter(std::string("DeleteOnRelease"), deleteOnRelease ? "true" : "false");
+}
+
 std::string CreateNetworkInterfaceRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

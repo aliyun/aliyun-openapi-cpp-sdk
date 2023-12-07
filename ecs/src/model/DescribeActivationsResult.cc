@@ -63,6 +63,8 @@ void DescribeActivationsResult::parse(const std::string &payload)
 			activationListObject.timeToLiveInHours = std::stol(valueActivationListActivation["TimeToLiveInHours"].asString());
 		if(!valueActivationListActivation["ActivationId"].isNull())
 			activationListObject.activationId = valueActivationListActivation["ActivationId"].asString();
+		if(!valueActivationListActivation["ResourceGroupId"].isNull())
+			activationListObject.resourceGroupId = valueActivationListActivation["ResourceGroupId"].asString();
 		auto allTagsNode = valueActivationListActivation["Tags"]["Tag"];
 		for (auto valueActivationListActivationTagsTag : allTagsNode)
 		{

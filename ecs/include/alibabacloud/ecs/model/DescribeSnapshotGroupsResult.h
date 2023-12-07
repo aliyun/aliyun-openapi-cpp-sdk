@@ -50,6 +50,7 @@ namespace AlibabaCloud
 						bool instantAccess;
 						std::string progress;
 						std::vector<Snapshot::Tag2> tags1;
+						bool available;
 						std::string sourceDiskType;
 						int instantAccessRetentionDays;
 						std::string sourceDiskId;

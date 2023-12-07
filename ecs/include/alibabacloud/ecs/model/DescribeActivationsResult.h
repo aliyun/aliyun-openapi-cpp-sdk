@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					int deregisteredCount;
 					int instanceCount;
 					std::string description;
+					std::string resourceGroupId;
 					std::string creationTime;
 					std::string activationId;
 					int registeredCount;

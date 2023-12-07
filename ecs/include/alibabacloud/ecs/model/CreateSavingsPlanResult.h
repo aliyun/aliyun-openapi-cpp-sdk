@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_IMPORTSNAPSHOTRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_IMPORTSNAPSHOTRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_CREATESAVINGSPLANRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_CREATESAVINGSPLANRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT ImportSnapshotResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT CreateSavingsPlanResult : public ServiceResult
 			{
 			public:
 
 
-				ImportSnapshotResult();
-				explicit ImportSnapshotResult(const std::string &payload);
-				~ImportSnapshotResult();
-				std::string getSnapshotId()const;
-				std::string getTaskId()const;
+				CreateSavingsPlanResult();
+				explicit CreateSavingsPlanResult(const std::string &payload);
+				~CreateSavingsPlanResult();
+				std::string getSavingsPlanId()const;
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string snapshotId_;
-				std::string taskId_;
+				std::string savingsPlanId_;
+				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_IMPORTSNAPSHOTRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_CREATESAVINGSPLANRESULT_H_

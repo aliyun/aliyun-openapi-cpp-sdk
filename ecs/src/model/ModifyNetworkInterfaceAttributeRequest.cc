@@ -78,6 +78,15 @@ void ModifyNetworkInterfaceAttributeRequest::setNetworkInterfaceName(const std::
   setParameter(std::string("NetworkInterfaceName"), networkInterfaceName);
 }
 
+bool ModifyNetworkInterfaceAttributeRequest::getDeleteOnRelease() const {
+  return deleteOnRelease_;
+}
+
+void ModifyNetworkInterfaceAttributeRequest::setDeleteOnRelease(bool deleteOnRelease) {
+  deleteOnRelease_ = deleteOnRelease;
+  setParameter(std::string("DeleteOnRelease"), deleteOnRelease ? "true" : "false");
+}
+
 std::string ModifyNetworkInterfaceAttributeRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

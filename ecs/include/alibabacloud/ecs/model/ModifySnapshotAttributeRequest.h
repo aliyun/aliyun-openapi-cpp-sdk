@@ -46,6 +46,8 @@ public:
 	void setOwnerId(long ownerId);
 	bool getDisableInstantAccess() const;
 	void setDisableInstantAccess(bool disableInstantAccess);
+	int getRetentionDays() const;
+	void setRetentionDays(int retentionDays);
 
 private:
 	long resourceOwnerId_;
@@ -56,6 +58,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	bool disableInstantAccess_;
+	int retentionDays_;
 };
 } // namespace Model
 } // namespace Ecs

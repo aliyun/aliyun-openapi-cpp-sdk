@@ -50,6 +50,7 @@ namespace AlibabaCloud
 					std::vector<Command::ParameterDefinition> parameterDefinitions;
 					std::string description;
 					std::string category;
+					std::string resourceGroupId;
 					std::vector<std::string> parameterNames;
 					long timeout;
 					std::string provider;

@@ -43,6 +43,15 @@ void DescribeActivationsRequest::setPageNumber(long pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeActivationsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeActivationsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeActivationsRequest::getRegionId() const {
   return regionId_;
 }

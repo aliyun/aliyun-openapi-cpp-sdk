@@ -137,6 +137,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateRouteEntryResult.h
 	include/alibabacloud/ecs/model/CreateRouterInterfaceRequest.h
 	include/alibabacloud/ecs/model/CreateRouterInterfaceResult.h
+	include/alibabacloud/ecs/model/CreateSavingsPlanRequest.h
+	include/alibabacloud/ecs/model/CreateSavingsPlanResult.h
 	include/alibabacloud/ecs/model/CreateSecurityGroupRequest.h
 	include/alibabacloud/ecs/model/CreateSecurityGroupResult.h
 	include/alibabacloud/ecs/model/CreateSimulatedSystemEventsRequest.h
@@ -343,8 +345,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeInstanceTypeFamiliesResult.h
 	include/alibabacloud/ecs/model/DescribeInstanceTypesRequest.h
 	include/alibabacloud/ecs/model/DescribeInstanceTypesResult.h
-	include/alibabacloud/ecs/model/DescribeInstanceVncPasswdRequest.h
-	include/alibabacloud/ecs/model/DescribeInstanceVncPasswdResult.h
 	include/alibabacloud/ecs/model/DescribeInstanceVncUrlRequest.h
 	include/alibabacloud/ecs/model/DescribeInstanceVncUrlResult.h
 	include/alibabacloud/ecs/model/DescribeInstancesRequest.h
@@ -403,6 +403,10 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeRouteTablesResult.h
 	include/alibabacloud/ecs/model/DescribeRouterInterfacesRequest.h
 	include/alibabacloud/ecs/model/DescribeRouterInterfacesResult.h
+	include/alibabacloud/ecs/model/DescribeSavingsPlanEstimationRequest.h
+	include/alibabacloud/ecs/model/DescribeSavingsPlanEstimationResult.h
+	include/alibabacloud/ecs/model/DescribeSavingsPlanPriceRequest.h
+	include/alibabacloud/ecs/model/DescribeSavingsPlanPriceResult.h
 	include/alibabacloud/ecs/model/DescribeSecurityGroupAttributeRequest.h
 	include/alibabacloud/ecs/model/DescribeSecurityGroupAttributeResult.h
 	include/alibabacloud/ecs/model/DescribeSecurityGroupReferencesRequest.h
@@ -487,8 +491,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ImportImageResult.h
 	include/alibabacloud/ecs/model/ImportKeyPairRequest.h
 	include/alibabacloud/ecs/model/ImportKeyPairResult.h
-	include/alibabacloud/ecs/model/ImportSnapshotRequest.h
-	include/alibabacloud/ecs/model/ImportSnapshotResult.h
 	include/alibabacloud/ecs/model/InstallCloudAssistantRequest.h
 	include/alibabacloud/ecs/model/InstallCloudAssistantResult.h
 	include/alibabacloud/ecs/model/InvokeCommandRequest.h
@@ -834,6 +836,8 @@ set(ecs_src
 	src/model/CreateRouteEntryResult.cc
 	src/model/CreateRouterInterfaceRequest.cc
 	src/model/CreateRouterInterfaceResult.cc
+	src/model/CreateSavingsPlanRequest.cc
+	src/model/CreateSavingsPlanResult.cc
 	src/model/CreateSecurityGroupRequest.cc
 	src/model/CreateSecurityGroupResult.cc
 	src/model/CreateSimulatedSystemEventsRequest.cc
@@ -1040,8 +1044,6 @@ set(ecs_src
 	src/model/DescribeInstanceTypeFamiliesResult.cc
 	src/model/DescribeInstanceTypesRequest.cc
 	src/model/DescribeInstanceTypesResult.cc
-	src/model/DescribeInstanceVncPasswdRequest.cc
-	src/model/DescribeInstanceVncPasswdResult.cc
 	src/model/DescribeInstanceVncUrlRequest.cc
 	src/model/DescribeInstanceVncUrlResult.cc
 	src/model/DescribeInstancesRequest.cc
@@ -1100,6 +1102,10 @@ set(ecs_src
 	src/model/DescribeRouteTablesResult.cc
 	src/model/DescribeRouterInterfacesRequest.cc
 	src/model/DescribeRouterInterfacesResult.cc
+	src/model/DescribeSavingsPlanEstimationRequest.cc
+	src/model/DescribeSavingsPlanEstimationResult.cc
+	src/model/DescribeSavingsPlanPriceRequest.cc
+	src/model/DescribeSavingsPlanPriceResult.cc
 	src/model/DescribeSecurityGroupAttributeRequest.cc
 	src/model/DescribeSecurityGroupAttributeResult.cc
 	src/model/DescribeSecurityGroupReferencesRequest.cc
@@ -1184,8 +1190,6 @@ set(ecs_src
 	src/model/ImportImageResult.cc
 	src/model/ImportKeyPairRequest.cc
 	src/model/ImportKeyPairResult.cc
-	src/model/ImportSnapshotRequest.cc
-	src/model/ImportSnapshotResult.cc
 	src/model/InstallCloudAssistantRequest.cc
 	src/model/InstallCloudAssistantResult.cc
 	src/model/InvokeCommandRequest.cc

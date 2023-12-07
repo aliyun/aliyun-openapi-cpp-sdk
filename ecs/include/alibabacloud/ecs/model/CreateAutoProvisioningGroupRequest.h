@@ -122,6 +122,8 @@ public:
 	void setLaunchTemplateId(const std::string &launchTemplateId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getLaunchConfigurationImageFamily() const;
+	void setLaunchConfigurationImageFamily(const std::string &launchConfigurationImageFamily);
 	int getLaunchConfigurationSystemDiskSize() const;
 	void setLaunchConfigurationSystemDiskSize(int launchConfigurationSystemDiskSize);
 	int getLaunchConfigurationInternetMaxBandwidthOut() const;
@@ -229,6 +231,7 @@ private:
 	std::string validUntil_;
 	std::string launchTemplateId_;
 	long ownerId_;
+	std::string launchConfigurationImageFamily_;
 	int launchConfigurationSystemDiskSize_;
 	int launchConfigurationInternetMaxBandwidthOut_;
 	std::string launchConfigurationHostName_;
