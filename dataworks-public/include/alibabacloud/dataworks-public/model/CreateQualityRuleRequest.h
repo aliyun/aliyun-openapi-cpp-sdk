@@ -30,6 +30,8 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateQualityRuleRequest : public Rpc
 public:
 	CreateQualityRuleRequest();
 	~CreateQualityRuleRequest();
+	std::string getTaskSetting() const;
+	void setTaskSetting(const std::string &taskSetting);
 	std::string getTrend() const;
 	void setTrend(const std::string &trend);
 	int getBlockType() const;
@@ -70,6 +72,7 @@ public:
 	void setPredictType(int predictType);
 
 private:
+	std::string taskSetting_;
 	std::string trend_;
 	int blockType_;
 	std::string propertyType_;

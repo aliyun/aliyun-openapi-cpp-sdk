@@ -28,20 +28,16 @@ namespace Dataworks_public {
 namespace Model {
 class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT SetEntityTagsRequest : public RpcServiceRequest {
 public:
-	struct Tags {
-		std::string tagValue;
-		std::string tagKey;
-	};
 	SetEntityTagsRequest();
 	~SetEntityTagsRequest();
 	std::string getQualifiedName() const;
 	void setQualifiedName(const std::string &qualifiedName);
-	std::vector<Tags> getTags() const;
-	void setTags(const std::vector<Tags> &tags);
+	std::vector<ObjectOfAny> getTags() const;
+	void setTags(const std::vector<ObjectOfAny> &tags);
 
 private:
 	std::string qualifiedName_;
-	std::vector<Tags> tags_;
+	std::vector<ObjectOfAny> tags_;
 };
 } // namespace Model
 } // namespace Dataworks_public

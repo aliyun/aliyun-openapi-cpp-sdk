@@ -42,18 +42,9 @@ void ListMetaCollectionEntitiesResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["NextToken"].isNull())
 		data_.nextToken = dataNode["NextToken"].asString();
-	auto allEntityListNode = dataNode["EntityList"]["EntityListItem"];
-	for (auto dataNodeEntityListEntityListItem : allEntityListNode)
-	{
-		Data::EntityListItem entityListItemObject;
-		if(!dataNodeEntityListEntityListItem["QualifiedName"].isNull())
-			entityListItemObject.qualifiedName = dataNodeEntityListEntityListItem["QualifiedName"].asString();
-		if(!dataNodeEntityListEntityListItem["TenantId"].isNull())
-			entityListItemObject.tenantId = std::stol(dataNodeEntityListEntityListItem["TenantId"].asString());
-		if(!dataNodeEntityListEntityListItem["EntityContent"].isNull())
-			entityListItemObject.entityContent = dataNodeEntityListEntityListItem["EntityContent"].asString();
-		data_.entityList.push_back(entityListItemObject);
-	}
+		auto allEntityList = dataNode["EntityList"]["EntityList"];
+		for (auto value : allEntityList)
+			data_.entityList.push_back(value.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())

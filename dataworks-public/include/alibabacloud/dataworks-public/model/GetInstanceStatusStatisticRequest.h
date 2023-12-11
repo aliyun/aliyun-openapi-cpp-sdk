@@ -32,6 +32,8 @@ public:
 	~GetInstanceStatusStatisticRequest();
 	std::string getProjectEnv() const;
 	void setProjectEnv(const std::string &projectEnv);
+	std::string getSchedulerPeriod() const;
+	void setSchedulerPeriod(const std::string &schedulerPeriod);
 	std::string getDagType() const;
 	void setDagType(const std::string &dagType);
 	std::string getBizDate() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	std::string projectEnv_;
+	std::string schedulerPeriod_;
 	std::string dagType_;
 	std::string bizDate_;
 	std::string schedulerType_;

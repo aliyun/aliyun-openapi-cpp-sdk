@@ -38,6 +38,8 @@ public:
 	void setBizName(const std::string &bizName);
 	std::string getBeginBizdate() const;
 	void setBeginBizdate(const std::string &beginBizdate);
+	std::string getOrderBy() const;
+	void setOrderBy(const std::string &orderBy);
 	std::string getEndBizdate() const;
 	void setEndBizdate(const std::string &endBizdate);
 	long getDagId() const;
@@ -64,6 +66,7 @@ private:
 	std::string owner_;
 	std::string bizName_;
 	std::string beginBizdate_;
+	std::string orderBy_;
 	std::string endBizdate_;
 	long dagId_;
 	int pageNumber_;

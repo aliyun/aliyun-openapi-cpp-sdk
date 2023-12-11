@@ -37,11 +37,9 @@ namespace AlibabaCloud
 					std::string extensionName;
 					long tenantId;
 					std::string owner;
-					long gmtCreate;
 					std::string modifyUser;
 					std::string parameterSetting;
 					std::string extensionDesc;
-					long gmtModified;
 					std::string createUser;
 					std::string extensionCode;
 				};

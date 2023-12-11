@@ -28,34 +28,13 @@ namespace Dataworks_public {
 namespace Model {
 class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT RegisterLineageRelationRequest : public RpcServiceRequest {
 public:
-	struct LineageRelationRegisterVO {
-		struct DestEntity {
-			std::string parentName;
-			std::string qualifiedName;
-			std::string name;
-			std::string detailUrl;
-		};
-		DestEntity destEntity;
-		long createTimestamp;
-		struct Relationship {
-			std::string type;
-		};
-		Relationship relationship;
-		struct SrcEntity {
-			std::string parentName;
-			std::string qualifiedName;
-			std::string name;
-			std::string detailUrl;
-		};
-		SrcEntity srcEntity;
-	};
 	RegisterLineageRelationRequest();
 	~RegisterLineageRelationRequest();
-	LineageRelationRegisterVO getLineageRelationRegisterVO() const;
-	void setLineageRelationRegisterVO(const LineageRelationRegisterVO &lineageRelationRegisterVO);
+	ObjectOfAny getLineageRelationRegisterVO() const;
+	void setLineageRelationRegisterVO(ObjectOfAny lineageRelationRegisterVO);
 
 private:
-	LineageRelationRegisterVO lineageRelationRegisterVO_;
+	ObjectOfAny lineageRelationRegisterVO_;
 };
 } // namespace Model
 } // namespace Dataworks_public

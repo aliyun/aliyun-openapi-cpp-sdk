@@ -34,15 +34,14 @@ void SetEntityTagsRequest::setQualifiedName(const std::string &qualifiedName) {
   setParameter(std::string("QualifiedName"), qualifiedName);
 }
 
-std::vector<SetEntityTagsRequest::Tags> SetEntityTagsRequest::getTags() const {
+std::vector<SetEntityTagsRequest::ObjectOfAny> SetEntityTagsRequest::getTags() const {
   return tags_;
 }
 
-void SetEntityTagsRequest::setTags(const std::vector<SetEntityTagsRequest::Tags> &tags) {
+void SetEntityTagsRequest::setTags(const std::vector<SetEntityTagsRequest::ObjectOfAny> &tags) {
   tags_ = tags;
   for(int dep1 = 0; dep1 != tags.size(); dep1++) {
-    setBodyParameter(std::string("Tags") + "." + std::to_string(dep1 + 1) + ".TagValue", tags[dep1].tagValue);
-    setBodyParameter(std::string("Tags") + "." + std::to_string(dep1 + 1) + ".TagKey", tags[dep1].tagKey);
+    setBodyParameter(std::string("Tags") + "." + std::to_string(dep1 + 1), std::to_string(tags[dep1]));
   }
 }
 

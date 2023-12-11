@@ -25,6 +25,15 @@ CreateQualityRuleRequest::CreateQualityRuleRequest()
 
 CreateQualityRuleRequest::~CreateQualityRuleRequest() {}
 
+std::string CreateQualityRuleRequest::getTaskSetting() const {
+  return taskSetting_;
+}
+
+void CreateQualityRuleRequest::setTaskSetting(const std::string &taskSetting) {
+  taskSetting_ = taskSetting;
+  setBodyParameter(std::string("TaskSetting"), taskSetting);
+}
+
 std::string CreateQualityRuleRequest::getTrend() const {
   return trend_;
 }

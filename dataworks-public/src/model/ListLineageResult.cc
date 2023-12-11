@@ -46,6 +46,8 @@ void ListLineageResult::parse(const std::string &payload)
 	for (auto dataNodeDataEntityListDataEntityListItem : allDataEntityListNode)
 	{
 		Data::DataEntityListItem dataEntityListItemObject;
+		if(!dataNodeDataEntityListDataEntityListItem["Entity"].isNull())
+			dataEntityListItemObject.entity = dataNodeDataEntityListDataEntityListItem["Entity"].asString();
 		if(!dataNodeDataEntityListDataEntityListItem["CreateTimestamp"].isNull())
 			dataEntityListItemObject.createTimestamp = std::stol(dataNodeDataEntityListDataEntityListItem["CreateTimestamp"].asString());
 		auto allRelationListNode = dataNodeDataEntityListDataEntityListItem["RelationList"]["RelationListItem"];
@@ -62,13 +64,6 @@ void ListLineageResult::parse(const std::string &payload)
 				relationListObject.channel = dataNodeDataEntityListDataEntityListItemRelationListRelationListItem["Channel"].asString();
 			dataEntityListItemObject.relationList.push_back(relationListObject);
 		}
-		auto entityNode = value["Entity"];
-		if(!entityNode["QualifiedName"].isNull())
-			dataEntityListItemObject.entity.qualifiedName = entityNode["QualifiedName"].asString();
-		if(!entityNode["TenantId"].isNull())
-			dataEntityListItemObject.entity.tenantId = std::stol(entityNode["TenantId"].asString());
-		if(!entityNode["EntityContent"].isNull())
-			dataEntityListItemObject.entity.entityContent = entityNode["EntityContent"].asString();
 		data_.dataEntityList.push_back(dataEntityListItemObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

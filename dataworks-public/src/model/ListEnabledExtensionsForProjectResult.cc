@@ -59,10 +59,6 @@ void ListEnabledExtensionsForProjectResult::parse(const std::string &payload)
 			extensionsObject.owner = valueExtensionsExtensionsItem["Owner"].asString();
 		if(!valueExtensionsExtensionsItem["ParameterSetting"].isNull())
 			extensionsObject.parameterSetting = valueExtensionsExtensionsItem["ParameterSetting"].asString();
-		if(!valueExtensionsExtensionsItem["GmtCreate"].isNull())
-			extensionsObject.gmtCreate = std::stol(valueExtensionsExtensionsItem["GmtCreate"].asString());
-		if(!valueExtensionsExtensionsItem["GmtModified"].isNull())
-			extensionsObject.gmtModified = std::stol(valueExtensionsExtensionsItem["GmtModified"].asString());
 		extensions_.push_back(extensionsObject);
 	}
 

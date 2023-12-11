@@ -61,6 +61,15 @@ void ListInstancesRequest::setBeginBizdate(const std::string &beginBizdate) {
   setBodyParameter(std::string("BeginBizdate"), beginBizdate);
 }
 
+std::string ListInstancesRequest::getOrderBy() const {
+  return orderBy_;
+}
+
+void ListInstancesRequest::setOrderBy(const std::string &orderBy) {
+  orderBy_ = orderBy;
+  setBodyParameter(std::string("OrderBy"), orderBy);
+}
+
 std::string ListInstancesRequest::getEndBizdate() const {
   return endBizdate_;
 }

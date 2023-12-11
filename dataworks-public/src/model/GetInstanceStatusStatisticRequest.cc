@@ -34,6 +34,15 @@ void GetInstanceStatusStatisticRequest::setProjectEnv(const std::string &project
   setBodyParameter(std::string("ProjectEnv"), projectEnv);
 }
 
+std::string GetInstanceStatusStatisticRequest::getSchedulerPeriod() const {
+  return schedulerPeriod_;
+}
+
+void GetInstanceStatusStatisticRequest::setSchedulerPeriod(const std::string &schedulerPeriod) {
+  schedulerPeriod_ = schedulerPeriod;
+  setBodyParameter(std::string("SchedulerPeriod"), schedulerPeriod);
+}
+
 std::string GetInstanceStatusStatisticRequest::getDagType() const {
   return dagType_;
 }
