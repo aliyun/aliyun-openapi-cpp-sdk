@@ -21,14 +21,22 @@ set(hitsdb_public_header
 	include/alibabacloud/hitsdb/HitsdbExport.h )
 
 set(hitsdb_public_header_model 
+	include/alibabacloud/hitsdb/model/CreateLdpsComputeGroupRequest.h
+	include/alibabacloud/hitsdb/model/CreateLdpsComputeGroupResult.h
 	include/alibabacloud/hitsdb/model/CreateLdpsNamespaceRequest.h
 	include/alibabacloud/hitsdb/model/CreateLdpsNamespaceResult.h
 	include/alibabacloud/hitsdb/model/CreateLindormInstanceRequest.h
 	include/alibabacloud/hitsdb/model/CreateLindormInstanceResult.h
+	include/alibabacloud/hitsdb/model/DeleteLdpsComputeGroupRequest.h
+	include/alibabacloud/hitsdb/model/DeleteLdpsComputeGroupResult.h
 	include/alibabacloud/hitsdb/model/DescribeRegionsRequest.h
 	include/alibabacloud/hitsdb/model/DescribeRegionsResult.h
+	include/alibabacloud/hitsdb/model/GetEngineDefaultAuthRequest.h
+	include/alibabacloud/hitsdb/model/GetEngineDefaultAuthResult.h
 	include/alibabacloud/hitsdb/model/GetInstanceIpWhiteListRequest.h
 	include/alibabacloud/hitsdb/model/GetInstanceIpWhiteListResult.h
+	include/alibabacloud/hitsdb/model/GetLdpsComputeGroupRequest.h
+	include/alibabacloud/hitsdb/model/GetLdpsComputeGroupResult.h
 	include/alibabacloud/hitsdb/model/GetLdpsNamespacedQuotaRequest.h
 	include/alibabacloud/hitsdb/model/GetLdpsNamespacedQuotaResult.h
 	include/alibabacloud/hitsdb/model/GetLdpsResourceCostRequest.h
@@ -39,6 +47,8 @@ set(hitsdb_public_header_model
 	include/alibabacloud/hitsdb/model/GetLindormInstanceEngineListResult.h
 	include/alibabacloud/hitsdb/model/GetLindormInstanceListRequest.h
 	include/alibabacloud/hitsdb/model/GetLindormInstanceListResult.h
+	include/alibabacloud/hitsdb/model/ListLdpsComputeGroupsRequest.h
+	include/alibabacloud/hitsdb/model/ListLdpsComputeGroupsResult.h
 	include/alibabacloud/hitsdb/model/ListTagResourcesRequest.h
 	include/alibabacloud/hitsdb/model/ListTagResourcesResult.h
 	include/alibabacloud/hitsdb/model/ModifyInstancePayTypeRequest.h
@@ -47,6 +57,8 @@ set(hitsdb_public_header_model
 	include/alibabacloud/hitsdb/model/ReleaseLindormInstanceResult.h
 	include/alibabacloud/hitsdb/model/RenewLindormInstanceRequest.h
 	include/alibabacloud/hitsdb/model/RenewLindormInstanceResult.h
+	include/alibabacloud/hitsdb/model/RestartLdpsComputeGroupRequest.h
+	include/alibabacloud/hitsdb/model/RestartLdpsComputeGroupResult.h
 	include/alibabacloud/hitsdb/model/SwitchLSQLV3MySQLServiceRequest.h
 	include/alibabacloud/hitsdb/model/SwitchLSQLV3MySQLServiceResult.h
 	include/alibabacloud/hitsdb/model/TagResourcesRequest.h
@@ -55,19 +67,29 @@ set(hitsdb_public_header_model
 	include/alibabacloud/hitsdb/model/UntagResourcesResult.h
 	include/alibabacloud/hitsdb/model/UpdateInstanceIpWhiteListRequest.h
 	include/alibabacloud/hitsdb/model/UpdateInstanceIpWhiteListResult.h
+	include/alibabacloud/hitsdb/model/UpdateLdpsComputeGroupRequest.h
+	include/alibabacloud/hitsdb/model/UpdateLdpsComputeGroupResult.h
 	include/alibabacloud/hitsdb/model/UpgradeLindormInstanceRequest.h
 	include/alibabacloud/hitsdb/model/UpgradeLindormInstanceResult.h )
 
 set(hitsdb_src 
 	src/HitsdbClient.cc
+	src/model/CreateLdpsComputeGroupRequest.cc
+	src/model/CreateLdpsComputeGroupResult.cc
 	src/model/CreateLdpsNamespaceRequest.cc
 	src/model/CreateLdpsNamespaceResult.cc
 	src/model/CreateLindormInstanceRequest.cc
 	src/model/CreateLindormInstanceResult.cc
+	src/model/DeleteLdpsComputeGroupRequest.cc
+	src/model/DeleteLdpsComputeGroupResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/GetEngineDefaultAuthRequest.cc
+	src/model/GetEngineDefaultAuthResult.cc
 	src/model/GetInstanceIpWhiteListRequest.cc
 	src/model/GetInstanceIpWhiteListResult.cc
+	src/model/GetLdpsComputeGroupRequest.cc
+	src/model/GetLdpsComputeGroupResult.cc
 	src/model/GetLdpsNamespacedQuotaRequest.cc
 	src/model/GetLdpsNamespacedQuotaResult.cc
 	src/model/GetLdpsResourceCostRequest.cc
@@ -78,6 +100,8 @@ set(hitsdb_src
 	src/model/GetLindormInstanceEngineListResult.cc
 	src/model/GetLindormInstanceListRequest.cc
 	src/model/GetLindormInstanceListResult.cc
+	src/model/ListLdpsComputeGroupsRequest.cc
+	src/model/ListLdpsComputeGroupsResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ModifyInstancePayTypeRequest.cc
@@ -86,6 +110,8 @@ set(hitsdb_src
 	src/model/ReleaseLindormInstanceResult.cc
 	src/model/RenewLindormInstanceRequest.cc
 	src/model/RenewLindormInstanceResult.cc
+	src/model/RestartLdpsComputeGroupRequest.cc
+	src/model/RestartLdpsComputeGroupResult.cc
 	src/model/SwitchLSQLV3MySQLServiceRequest.cc
 	src/model/SwitchLSQLV3MySQLServiceResult.cc
 	src/model/TagResourcesRequest.cc
@@ -94,6 +120,8 @@ set(hitsdb_src
 	src/model/UntagResourcesResult.cc
 	src/model/UpdateInstanceIpWhiteListRequest.cc
 	src/model/UpdateInstanceIpWhiteListResult.cc
+	src/model/UpdateLdpsComputeGroupRequest.cc
+	src/model/UpdateLdpsComputeGroupResult.cc
 	src/model/UpgradeLindormInstanceRequest.cc
 	src/model/UpgradeLindormInstanceResult.cc )
 

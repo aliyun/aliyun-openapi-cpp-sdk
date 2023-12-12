@@ -43,6 +43,15 @@ void CreateLindormInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string CreateLindormInstanceRequest::getAutoRenewDuration() const {
+  return autoRenewDuration_;
+}
+
+void CreateLindormInstanceRequest::setAutoRenewDuration(const std::string &autoRenewDuration) {
+  autoRenewDuration_ = autoRenewDuration;
+  setParameter(std::string("AutoRenewDuration"), autoRenewDuration);
+}
+
 std::string CreateLindormInstanceRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }
@@ -59,6 +68,15 @@ std::string CreateLindormInstanceRequest::getLogSpec() const {
 void CreateLindormInstanceRequest::setLogSpec(const std::string &logSpec) {
   logSpec_ = logSpec;
   setParameter(std::string("LogSpec"), logSpec);
+}
+
+bool CreateLindormInstanceRequest::getAutoRenewal() const {
+  return autoRenewal_;
+}
+
+void CreateLindormInstanceRequest::setAutoRenewal(bool autoRenewal) {
+  autoRenewal_ = autoRenewal;
+  setParameter(std::string("AutoRenewal"), autoRenewal ? "true" : "false");
 }
 
 std::string CreateLindormInstanceRequest::getSecurityToken() const {

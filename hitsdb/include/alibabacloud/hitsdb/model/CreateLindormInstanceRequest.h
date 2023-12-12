@@ -34,10 +34,14 @@ public:
 	void setArchVersion(const std::string &archVersion);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getAutoRenewDuration() const;
+	void setAutoRenewDuration(const std::string &autoRenewDuration);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getLogSpec() const;
 	void setLogSpec(const std::string &logSpec);
+	bool getAutoRenewal() const;
+	void setAutoRenewal(bool autoRenewal);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
 	int getTsdbNum() const;
@@ -120,8 +124,10 @@ public:
 private:
 	std::string archVersion_;
 	long resourceOwnerId_;
+	std::string autoRenewDuration_;
 	std::string resourceGroupId_;
 	std::string logSpec_;
+	bool autoRenewal_;
 	std::string securityToken_;
 	int tsdbNum_;
 	std::string primaryVSwitchId_;

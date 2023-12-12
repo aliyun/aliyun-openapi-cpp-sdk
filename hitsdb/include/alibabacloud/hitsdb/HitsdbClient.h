@@ -22,14 +22,22 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "HitsdbExport.h"
+#include "model/CreateLdpsComputeGroupRequest.h"
+#include "model/CreateLdpsComputeGroupResult.h"
 #include "model/CreateLdpsNamespaceRequest.h"
 #include "model/CreateLdpsNamespaceResult.h"
 #include "model/CreateLindormInstanceRequest.h"
 #include "model/CreateLindormInstanceResult.h"
+#include "model/DeleteLdpsComputeGroupRequest.h"
+#include "model/DeleteLdpsComputeGroupResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
+#include "model/GetEngineDefaultAuthRequest.h"
+#include "model/GetEngineDefaultAuthResult.h"
 #include "model/GetInstanceIpWhiteListRequest.h"
 #include "model/GetInstanceIpWhiteListResult.h"
+#include "model/GetLdpsComputeGroupRequest.h"
+#include "model/GetLdpsComputeGroupResult.h"
 #include "model/GetLdpsNamespacedQuotaRequest.h"
 #include "model/GetLdpsNamespacedQuotaResult.h"
 #include "model/GetLdpsResourceCostRequest.h"
@@ -40,6 +48,8 @@
 #include "model/GetLindormInstanceEngineListResult.h"
 #include "model/GetLindormInstanceListRequest.h"
 #include "model/GetLindormInstanceListResult.h"
+#include "model/ListLdpsComputeGroupsRequest.h"
+#include "model/ListLdpsComputeGroupsResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
 #include "model/ModifyInstancePayTypeRequest.h"
@@ -48,6 +58,8 @@
 #include "model/ReleaseLindormInstanceResult.h"
 #include "model/RenewLindormInstanceRequest.h"
 #include "model/RenewLindormInstanceResult.h"
+#include "model/RestartLdpsComputeGroupRequest.h"
+#include "model/RestartLdpsComputeGroupResult.h"
 #include "model/SwitchLSQLV3MySQLServiceRequest.h"
 #include "model/SwitchLSQLV3MySQLServiceResult.h"
 #include "model/TagResourcesRequest.h"
@@ -56,6 +68,8 @@
 #include "model/UntagResourcesResult.h"
 #include "model/UpdateInstanceIpWhiteListRequest.h"
 #include "model/UpdateInstanceIpWhiteListResult.h"
+#include "model/UpdateLdpsComputeGroupRequest.h"
+#include "model/UpdateLdpsComputeGroupResult.h"
 #include "model/UpgradeLindormInstanceRequest.h"
 #include "model/UpgradeLindormInstanceResult.h"
 
@@ -67,18 +81,30 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_HITSDB_EXPORT HitsdbClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::CreateLdpsComputeGroupResult> CreateLdpsComputeGroupOutcome;
+			typedef std::future<CreateLdpsComputeGroupOutcome> CreateLdpsComputeGroupOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::CreateLdpsComputeGroupRequest&, const CreateLdpsComputeGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLdpsComputeGroupAsyncHandler;
 			typedef Outcome<Error, Model::CreateLdpsNamespaceResult> CreateLdpsNamespaceOutcome;
 			typedef std::future<CreateLdpsNamespaceOutcome> CreateLdpsNamespaceOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::CreateLdpsNamespaceRequest&, const CreateLdpsNamespaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLdpsNamespaceAsyncHandler;
 			typedef Outcome<Error, Model::CreateLindormInstanceResult> CreateLindormInstanceOutcome;
 			typedef std::future<CreateLindormInstanceOutcome> CreateLindormInstanceOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::CreateLindormInstanceRequest&, const CreateLindormInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLindormInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLdpsComputeGroupResult> DeleteLdpsComputeGroupOutcome;
+			typedef std::future<DeleteLdpsComputeGroupOutcome> DeleteLdpsComputeGroupOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::DeleteLdpsComputeGroupRequest&, const DeleteLdpsComputeGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLdpsComputeGroupAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+			typedef Outcome<Error, Model::GetEngineDefaultAuthResult> GetEngineDefaultAuthOutcome;
+			typedef std::future<GetEngineDefaultAuthOutcome> GetEngineDefaultAuthOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::GetEngineDefaultAuthRequest&, const GetEngineDefaultAuthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEngineDefaultAuthAsyncHandler;
 			typedef Outcome<Error, Model::GetInstanceIpWhiteListResult> GetInstanceIpWhiteListOutcome;
 			typedef std::future<GetInstanceIpWhiteListOutcome> GetInstanceIpWhiteListOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::GetInstanceIpWhiteListRequest&, const GetInstanceIpWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceIpWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::GetLdpsComputeGroupResult> GetLdpsComputeGroupOutcome;
+			typedef std::future<GetLdpsComputeGroupOutcome> GetLdpsComputeGroupOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::GetLdpsComputeGroupRequest&, const GetLdpsComputeGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLdpsComputeGroupAsyncHandler;
 			typedef Outcome<Error, Model::GetLdpsNamespacedQuotaResult> GetLdpsNamespacedQuotaOutcome;
 			typedef std::future<GetLdpsNamespacedQuotaOutcome> GetLdpsNamespacedQuotaOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::GetLdpsNamespacedQuotaRequest&, const GetLdpsNamespacedQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLdpsNamespacedQuotaAsyncHandler;
@@ -94,6 +120,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetLindormInstanceListResult> GetLindormInstanceListOutcome;
 			typedef std::future<GetLindormInstanceListOutcome> GetLindormInstanceListOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::GetLindormInstanceListRequest&, const GetLindormInstanceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLindormInstanceListAsyncHandler;
+			typedef Outcome<Error, Model::ListLdpsComputeGroupsResult> ListLdpsComputeGroupsOutcome;
+			typedef std::future<ListLdpsComputeGroupsOutcome> ListLdpsComputeGroupsOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::ListLdpsComputeGroupsRequest&, const ListLdpsComputeGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListLdpsComputeGroupsAsyncHandler;
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
@@ -106,6 +135,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RenewLindormInstanceResult> RenewLindormInstanceOutcome;
 			typedef std::future<RenewLindormInstanceOutcome> RenewLindormInstanceOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::RenewLindormInstanceRequest&, const RenewLindormInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewLindormInstanceAsyncHandler;
+			typedef Outcome<Error, Model::RestartLdpsComputeGroupResult> RestartLdpsComputeGroupOutcome;
+			typedef std::future<RestartLdpsComputeGroupOutcome> RestartLdpsComputeGroupOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::RestartLdpsComputeGroupRequest&, const RestartLdpsComputeGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartLdpsComputeGroupAsyncHandler;
 			typedef Outcome<Error, Model::SwitchLSQLV3MySQLServiceResult> SwitchLSQLV3MySQLServiceOutcome;
 			typedef std::future<SwitchLSQLV3MySQLServiceOutcome> SwitchLSQLV3MySQLServiceOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::SwitchLSQLV3MySQLServiceRequest&, const SwitchLSQLV3MySQLServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchLSQLV3MySQLServiceAsyncHandler;
@@ -118,6 +150,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateInstanceIpWhiteListResult> UpdateInstanceIpWhiteListOutcome;
 			typedef std::future<UpdateInstanceIpWhiteListOutcome> UpdateInstanceIpWhiteListOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::UpdateInstanceIpWhiteListRequest&, const UpdateInstanceIpWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceIpWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLdpsComputeGroupResult> UpdateLdpsComputeGroupOutcome;
+			typedef std::future<UpdateLdpsComputeGroupOutcome> UpdateLdpsComputeGroupOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::UpdateLdpsComputeGroupRequest&, const UpdateLdpsComputeGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLdpsComputeGroupAsyncHandler;
 			typedef Outcome<Error, Model::UpgradeLindormInstanceResult> UpgradeLindormInstanceOutcome;
 			typedef std::future<UpgradeLindormInstanceOutcome> UpgradeLindormInstanceOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::UpgradeLindormInstanceRequest&, const UpgradeLindormInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeLindormInstanceAsyncHandler;
@@ -126,18 +161,30 @@ namespace AlibabaCloud
 			HitsdbClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			HitsdbClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~HitsdbClient();
+			CreateLdpsComputeGroupOutcome createLdpsComputeGroup(const Model::CreateLdpsComputeGroupRequest &request)const;
+			void createLdpsComputeGroupAsync(const Model::CreateLdpsComputeGroupRequest& request, const CreateLdpsComputeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateLdpsComputeGroupOutcomeCallable createLdpsComputeGroupCallable(const Model::CreateLdpsComputeGroupRequest& request) const;
 			CreateLdpsNamespaceOutcome createLdpsNamespace(const Model::CreateLdpsNamespaceRequest &request)const;
 			void createLdpsNamespaceAsync(const Model::CreateLdpsNamespaceRequest& request, const CreateLdpsNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLdpsNamespaceOutcomeCallable createLdpsNamespaceCallable(const Model::CreateLdpsNamespaceRequest& request) const;
 			CreateLindormInstanceOutcome createLindormInstance(const Model::CreateLindormInstanceRequest &request)const;
 			void createLindormInstanceAsync(const Model::CreateLindormInstanceRequest& request, const CreateLindormInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLindormInstanceOutcomeCallable createLindormInstanceCallable(const Model::CreateLindormInstanceRequest& request) const;
+			DeleteLdpsComputeGroupOutcome deleteLdpsComputeGroup(const Model::DeleteLdpsComputeGroupRequest &request)const;
+			void deleteLdpsComputeGroupAsync(const Model::DeleteLdpsComputeGroupRequest& request, const DeleteLdpsComputeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLdpsComputeGroupOutcomeCallable deleteLdpsComputeGroupCallable(const Model::DeleteLdpsComputeGroupRequest& request) const;
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
+			GetEngineDefaultAuthOutcome getEngineDefaultAuth(const Model::GetEngineDefaultAuthRequest &request)const;
+			void getEngineDefaultAuthAsync(const Model::GetEngineDefaultAuthRequest& request, const GetEngineDefaultAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetEngineDefaultAuthOutcomeCallable getEngineDefaultAuthCallable(const Model::GetEngineDefaultAuthRequest& request) const;
 			GetInstanceIpWhiteListOutcome getInstanceIpWhiteList(const Model::GetInstanceIpWhiteListRequest &request)const;
 			void getInstanceIpWhiteListAsync(const Model::GetInstanceIpWhiteListRequest& request, const GetInstanceIpWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceIpWhiteListOutcomeCallable getInstanceIpWhiteListCallable(const Model::GetInstanceIpWhiteListRequest& request) const;
+			GetLdpsComputeGroupOutcome getLdpsComputeGroup(const Model::GetLdpsComputeGroupRequest &request)const;
+			void getLdpsComputeGroupAsync(const Model::GetLdpsComputeGroupRequest& request, const GetLdpsComputeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetLdpsComputeGroupOutcomeCallable getLdpsComputeGroupCallable(const Model::GetLdpsComputeGroupRequest& request) const;
 			GetLdpsNamespacedQuotaOutcome getLdpsNamespacedQuota(const Model::GetLdpsNamespacedQuotaRequest &request)const;
 			void getLdpsNamespacedQuotaAsync(const Model::GetLdpsNamespacedQuotaRequest& request, const GetLdpsNamespacedQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetLdpsNamespacedQuotaOutcomeCallable getLdpsNamespacedQuotaCallable(const Model::GetLdpsNamespacedQuotaRequest& request) const;
@@ -153,6 +200,9 @@ namespace AlibabaCloud
 			GetLindormInstanceListOutcome getLindormInstanceList(const Model::GetLindormInstanceListRequest &request)const;
 			void getLindormInstanceListAsync(const Model::GetLindormInstanceListRequest& request, const GetLindormInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetLindormInstanceListOutcomeCallable getLindormInstanceListCallable(const Model::GetLindormInstanceListRequest& request) const;
+			ListLdpsComputeGroupsOutcome listLdpsComputeGroups(const Model::ListLdpsComputeGroupsRequest &request)const;
+			void listLdpsComputeGroupsAsync(const Model::ListLdpsComputeGroupsRequest& request, const ListLdpsComputeGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListLdpsComputeGroupsOutcomeCallable listLdpsComputeGroupsCallable(const Model::ListLdpsComputeGroupsRequest& request) const;
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
@@ -165,6 +215,9 @@ namespace AlibabaCloud
 			RenewLindormInstanceOutcome renewLindormInstance(const Model::RenewLindormInstanceRequest &request)const;
 			void renewLindormInstanceAsync(const Model::RenewLindormInstanceRequest& request, const RenewLindormInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenewLindormInstanceOutcomeCallable renewLindormInstanceCallable(const Model::RenewLindormInstanceRequest& request) const;
+			RestartLdpsComputeGroupOutcome restartLdpsComputeGroup(const Model::RestartLdpsComputeGroupRequest &request)const;
+			void restartLdpsComputeGroupAsync(const Model::RestartLdpsComputeGroupRequest& request, const RestartLdpsComputeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RestartLdpsComputeGroupOutcomeCallable restartLdpsComputeGroupCallable(const Model::RestartLdpsComputeGroupRequest& request) const;
 			SwitchLSQLV3MySQLServiceOutcome switchLSQLV3MySQLService(const Model::SwitchLSQLV3MySQLServiceRequest &request)const;
 			void switchLSQLV3MySQLServiceAsync(const Model::SwitchLSQLV3MySQLServiceRequest& request, const SwitchLSQLV3MySQLServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SwitchLSQLV3MySQLServiceOutcomeCallable switchLSQLV3MySQLServiceCallable(const Model::SwitchLSQLV3MySQLServiceRequest& request) const;
@@ -177,6 +230,9 @@ namespace AlibabaCloud
 			UpdateInstanceIpWhiteListOutcome updateInstanceIpWhiteList(const Model::UpdateInstanceIpWhiteListRequest &request)const;
 			void updateInstanceIpWhiteListAsync(const Model::UpdateInstanceIpWhiteListRequest& request, const UpdateInstanceIpWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateInstanceIpWhiteListOutcomeCallable updateInstanceIpWhiteListCallable(const Model::UpdateInstanceIpWhiteListRequest& request) const;
+			UpdateLdpsComputeGroupOutcome updateLdpsComputeGroup(const Model::UpdateLdpsComputeGroupRequest &request)const;
+			void updateLdpsComputeGroupAsync(const Model::UpdateLdpsComputeGroupRequest& request, const UpdateLdpsComputeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLdpsComputeGroupOutcomeCallable updateLdpsComputeGroupCallable(const Model::UpdateLdpsComputeGroupRequest& request) const;
 			UpgradeLindormInstanceOutcome upgradeLindormInstance(const Model::UpgradeLindormInstanceRequest &request)const;
 			void upgradeLindormInstanceAsync(const Model::UpgradeLindormInstanceRequest& request, const UpgradeLindormInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeLindormInstanceOutcomeCallable upgradeLindormInstanceCallable(const Model::UpgradeLindormInstanceRequest& request) const;

@@ -51,6 +51,42 @@ HitsdbClient::HitsdbClient(const std::string & accessKeyId, const std::string & 
 HitsdbClient::~HitsdbClient()
 {}
 
+HitsdbClient::CreateLdpsComputeGroupOutcome HitsdbClient::createLdpsComputeGroup(const CreateLdpsComputeGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateLdpsComputeGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateLdpsComputeGroupOutcome(CreateLdpsComputeGroupResult(outcome.result()));
+	else
+		return CreateLdpsComputeGroupOutcome(outcome.error());
+}
+
+void HitsdbClient::createLdpsComputeGroupAsync(const CreateLdpsComputeGroupRequest& request, const CreateLdpsComputeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createLdpsComputeGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HitsdbClient::CreateLdpsComputeGroupOutcomeCallable HitsdbClient::createLdpsComputeGroupCallable(const CreateLdpsComputeGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateLdpsComputeGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createLdpsComputeGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HitsdbClient::CreateLdpsNamespaceOutcome HitsdbClient::createLdpsNamespace(const CreateLdpsNamespaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -123,6 +159,42 @@ HitsdbClient::CreateLindormInstanceOutcomeCallable HitsdbClient::createLindormIn
 	return task->get_future();
 }
 
+HitsdbClient::DeleteLdpsComputeGroupOutcome HitsdbClient::deleteLdpsComputeGroup(const DeleteLdpsComputeGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLdpsComputeGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLdpsComputeGroupOutcome(DeleteLdpsComputeGroupResult(outcome.result()));
+	else
+		return DeleteLdpsComputeGroupOutcome(outcome.error());
+}
+
+void HitsdbClient::deleteLdpsComputeGroupAsync(const DeleteLdpsComputeGroupRequest& request, const DeleteLdpsComputeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLdpsComputeGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HitsdbClient::DeleteLdpsComputeGroupOutcomeCallable HitsdbClient::deleteLdpsComputeGroupCallable(const DeleteLdpsComputeGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLdpsComputeGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLdpsComputeGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HitsdbClient::DescribeRegionsOutcome HitsdbClient::describeRegions(const DescribeRegionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -159,6 +231,42 @@ HitsdbClient::DescribeRegionsOutcomeCallable HitsdbClient::describeRegionsCallab
 	return task->get_future();
 }
 
+HitsdbClient::GetEngineDefaultAuthOutcome HitsdbClient::getEngineDefaultAuth(const GetEngineDefaultAuthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetEngineDefaultAuthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetEngineDefaultAuthOutcome(GetEngineDefaultAuthResult(outcome.result()));
+	else
+		return GetEngineDefaultAuthOutcome(outcome.error());
+}
+
+void HitsdbClient::getEngineDefaultAuthAsync(const GetEngineDefaultAuthRequest& request, const GetEngineDefaultAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getEngineDefaultAuth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HitsdbClient::GetEngineDefaultAuthOutcomeCallable HitsdbClient::getEngineDefaultAuthCallable(const GetEngineDefaultAuthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetEngineDefaultAuthOutcome()>>(
+			[this, request]()
+			{
+			return this->getEngineDefaultAuth(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HitsdbClient::GetInstanceIpWhiteListOutcome HitsdbClient::getInstanceIpWhiteList(const GetInstanceIpWhiteListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +297,42 @@ HitsdbClient::GetInstanceIpWhiteListOutcomeCallable HitsdbClient::getInstanceIpW
 			[this, request]()
 			{
 			return this->getInstanceIpWhiteList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HitsdbClient::GetLdpsComputeGroupOutcome HitsdbClient::getLdpsComputeGroup(const GetLdpsComputeGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetLdpsComputeGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetLdpsComputeGroupOutcome(GetLdpsComputeGroupResult(outcome.result()));
+	else
+		return GetLdpsComputeGroupOutcome(outcome.error());
+}
+
+void HitsdbClient::getLdpsComputeGroupAsync(const GetLdpsComputeGroupRequest& request, const GetLdpsComputeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getLdpsComputeGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HitsdbClient::GetLdpsComputeGroupOutcomeCallable HitsdbClient::getLdpsComputeGroupCallable(const GetLdpsComputeGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetLdpsComputeGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->getLdpsComputeGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,6 +519,42 @@ HitsdbClient::GetLindormInstanceListOutcomeCallable HitsdbClient::getLindormInst
 	return task->get_future();
 }
 
+HitsdbClient::ListLdpsComputeGroupsOutcome HitsdbClient::listLdpsComputeGroups(const ListLdpsComputeGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListLdpsComputeGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListLdpsComputeGroupsOutcome(ListLdpsComputeGroupsResult(outcome.result()));
+	else
+		return ListLdpsComputeGroupsOutcome(outcome.error());
+}
+
+void HitsdbClient::listLdpsComputeGroupsAsync(const ListLdpsComputeGroupsRequest& request, const ListLdpsComputeGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listLdpsComputeGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HitsdbClient::ListLdpsComputeGroupsOutcomeCallable HitsdbClient::listLdpsComputeGroupsCallable(const ListLdpsComputeGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListLdpsComputeGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->listLdpsComputeGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HitsdbClient::ListTagResourcesOutcome HitsdbClient::listTagResources(const ListTagResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,6 +699,42 @@ HitsdbClient::RenewLindormInstanceOutcomeCallable HitsdbClient::renewLindormInst
 	return task->get_future();
 }
 
+HitsdbClient::RestartLdpsComputeGroupOutcome HitsdbClient::restartLdpsComputeGroup(const RestartLdpsComputeGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RestartLdpsComputeGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RestartLdpsComputeGroupOutcome(RestartLdpsComputeGroupResult(outcome.result()));
+	else
+		return RestartLdpsComputeGroupOutcome(outcome.error());
+}
+
+void HitsdbClient::restartLdpsComputeGroupAsync(const RestartLdpsComputeGroupRequest& request, const RestartLdpsComputeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, restartLdpsComputeGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HitsdbClient::RestartLdpsComputeGroupOutcomeCallable HitsdbClient::restartLdpsComputeGroupCallable(const RestartLdpsComputeGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RestartLdpsComputeGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->restartLdpsComputeGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HitsdbClient::SwitchLSQLV3MySQLServiceOutcome HitsdbClient::switchLSQLV3MySQLService(const SwitchLSQLV3MySQLServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +873,42 @@ HitsdbClient::UpdateInstanceIpWhiteListOutcomeCallable HitsdbClient::updateInsta
 			[this, request]()
 			{
 			return this->updateInstanceIpWhiteList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HitsdbClient::UpdateLdpsComputeGroupOutcome HitsdbClient::updateLdpsComputeGroup(const UpdateLdpsComputeGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLdpsComputeGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLdpsComputeGroupOutcome(UpdateLdpsComputeGroupResult(outcome.result()));
+	else
+		return UpdateLdpsComputeGroupOutcome(outcome.error());
+}
+
+void HitsdbClient::updateLdpsComputeGroupAsync(const UpdateLdpsComputeGroupRequest& request, const UpdateLdpsComputeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLdpsComputeGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HitsdbClient::UpdateLdpsComputeGroupOutcomeCallable HitsdbClient::updateLdpsComputeGroupCallable(const UpdateLdpsComputeGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLdpsComputeGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLdpsComputeGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
