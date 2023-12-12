@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/tingwu/model/GetMeetingTransRequest.h>
+#include <alibabacloud/tingwu/model/GetTaskInfoRequest.h>
 
-using AlibabaCloud::Tingwu::Model::GetMeetingTransRequest;
+using AlibabaCloud::Tingwu::Model::GetTaskInfoRequest;
 
-GetMeetingTransRequest::GetMeetingTransRequest()
-    : RoaServiceRequest("tingwu", "2022-09-30") {
-  setResourcePath("/openapi/meeting-trans/[MeetingId]"};
+GetTaskInfoRequest::GetTaskInfoRequest()
+    : RoaServiceRequest("tingwu", "2023-09-30") {
+  setResourcePath("/openapi/tingwu/v2/tasks/[TaskId]"};
   setMethod(HttpRequest::Method::Get);
 }
 
-GetMeetingTransRequest::~GetMeetingTransRequest() {}
+GetTaskInfoRequest::~GetTaskInfoRequest() {}
 
-string GetMeetingTransRequest::getMeetingId() const {
-  return meetingId_;
+std::string GetTaskInfoRequest::getTaskId() const {
+  return taskId_;
 }
 
-void GetMeetingTransRequest::setMeetingId(string meetingId) {
-  meetingId_ = meetingId;
-  setParameter(std::string("MeetingId"), std::to_string(meetingId));
+void GetTaskInfoRequest::setTaskId(const std::string &taskId) {
+  taskId_ = taskId;
+  setParameter(std::string("TaskId"), taskId);
 }
 

@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/tingwu/model/GetFileTransRequest.h>
+#include <alibabacloud/tingwu/model/GetTranscriptionPhrasesRequest.h>
 
-using AlibabaCloud::Tingwu::Model::GetFileTransRequest;
+using AlibabaCloud::Tingwu::Model::GetTranscriptionPhrasesRequest;
 
-GetFileTransRequest::GetFileTransRequest()
-    : RoaServiceRequest("tingwu", "2022-09-30") {
-  setResourcePath("/openapi/file-trans/[TransId]"};
+GetTranscriptionPhrasesRequest::GetTranscriptionPhrasesRequest()
+    : RoaServiceRequest("tingwu", "2023-09-30") {
+  setResourcePath("/openapi/tingwu/v2/resources/phrases/[PhraseId]"};
   setMethod(HttpRequest::Method::Get);
 }
 
-GetFileTransRequest::~GetFileTransRequest() {}
+GetTranscriptionPhrasesRequest::~GetTranscriptionPhrasesRequest() {}
 
-string GetFileTransRequest::getTransId() const {
-  return transId_;
+std::string GetTranscriptionPhrasesRequest::getPhraseId() const {
+  return phraseId_;
 }
 
-void GetFileTransRequest::setTransId(string transId) {
-  transId_ = transId;
-  setParameter(std::string("TransId"), std::to_string(transId));
+void GetTranscriptionPhrasesRequest::setPhraseId(const std::string &phraseId) {
+  phraseId_ = phraseId;
+  setParameter(std::string("PhraseId"), phraseId);
 }
 

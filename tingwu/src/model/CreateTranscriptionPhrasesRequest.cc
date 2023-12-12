@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/tingwu/model/CreateFileTransRequest.h>
+#include <alibabacloud/tingwu/model/CreateTranscriptionPhrasesRequest.h>
 
-using AlibabaCloud::Tingwu::Model::CreateFileTransRequest;
+using AlibabaCloud::Tingwu::Model::CreateTranscriptionPhrasesRequest;
 
-CreateFileTransRequest::CreateFileTransRequest()
-    : RoaServiceRequest("tingwu", "2022-09-30") {
-  setResourcePath("/openapi/file-trans"};
-  setMethod(HttpRequest::Method::Put);
+CreateTranscriptionPhrasesRequest::CreateTranscriptionPhrasesRequest()
+    : RoaServiceRequest("tingwu", "2023-09-30") {
+  setResourcePath("/openapi/tingwu/v2/resources/phrases"};
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateFileTransRequest::~CreateFileTransRequest() {}
+CreateTranscriptionPhrasesRequest::~CreateTranscriptionPhrasesRequest() {}
 
-std::string CreateFileTransRequest::getBody() const {
+std::string CreateTranscriptionPhrasesRequest::getBody() const {
   return body_;
 }
 
-void CreateFileTransRequest::setBody(const std::string &body) {
+void CreateTranscriptionPhrasesRequest::setBody(const std::string &body) {
   body_ = body;
   setBodyParameter(std::string("body"), body);
 }

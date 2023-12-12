@@ -22,16 +22,20 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RoaServiceClient.h>
 #include "TingwuExport.h"
-#include "model/CreateFileTransRequest.h"
-#include "model/CreateFileTransResult.h"
-#include "model/CreateMeetingTransRequest.h"
-#include "model/CreateMeetingTransResult.h"
-#include "model/GetFileTransRequest.h"
-#include "model/GetFileTransResult.h"
-#include "model/GetMeetingTransRequest.h"
-#include "model/GetMeetingTransResult.h"
-#include "model/StopMeetingTransRequest.h"
-#include "model/StopMeetingTransResult.h"
+#include "model/CreateTaskRequest.h"
+#include "model/CreateTaskResult.h"
+#include "model/CreateTranscriptionPhrasesRequest.h"
+#include "model/CreateTranscriptionPhrasesResult.h"
+#include "model/DeleteTranscriptionPhrasesRequest.h"
+#include "model/DeleteTranscriptionPhrasesResult.h"
+#include "model/GetTaskInfoRequest.h"
+#include "model/GetTaskInfoResult.h"
+#include "model/GetTranscriptionPhrasesRequest.h"
+#include "model/GetTranscriptionPhrasesResult.h"
+#include "model/ListTranscriptionPhrasesRequest.h"
+#include "model/ListTranscriptionPhrasesResult.h"
+#include "model/UpdateTranscriptionPhrasesRequest.h"
+#include "model/UpdateTranscriptionPhrasesResult.h"
 
 
 namespace AlibabaCloud
@@ -41,41 +45,53 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_TINGWU_EXPORT TingwuClient : public RoaServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::CreateFileTransResult> CreateFileTransOutcome;
-			typedef std::future<CreateFileTransOutcome> CreateFileTransOutcomeCallable;
-			typedef std::function<void(const TingwuClient*, const Model::CreateFileTransRequest&, const CreateFileTransOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileTransAsyncHandler;
-			typedef Outcome<Error, Model::CreateMeetingTransResult> CreateMeetingTransOutcome;
-			typedef std::future<CreateMeetingTransOutcome> CreateMeetingTransOutcomeCallable;
-			typedef std::function<void(const TingwuClient*, const Model::CreateMeetingTransRequest&, const CreateMeetingTransOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMeetingTransAsyncHandler;
-			typedef Outcome<Error, Model::GetFileTransResult> GetFileTransOutcome;
-			typedef std::future<GetFileTransOutcome> GetFileTransOutcomeCallable;
-			typedef std::function<void(const TingwuClient*, const Model::GetFileTransRequest&, const GetFileTransOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFileTransAsyncHandler;
-			typedef Outcome<Error, Model::GetMeetingTransResult> GetMeetingTransOutcome;
-			typedef std::future<GetMeetingTransOutcome> GetMeetingTransOutcomeCallable;
-			typedef std::function<void(const TingwuClient*, const Model::GetMeetingTransRequest&, const GetMeetingTransOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMeetingTransAsyncHandler;
-			typedef Outcome<Error, Model::StopMeetingTransResult> StopMeetingTransOutcome;
-			typedef std::future<StopMeetingTransOutcome> StopMeetingTransOutcomeCallable;
-			typedef std::function<void(const TingwuClient*, const Model::StopMeetingTransRequest&, const StopMeetingTransOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopMeetingTransAsyncHandler;
+			typedef Outcome<Error, Model::CreateTaskResult> CreateTaskOutcome;
+			typedef std::future<CreateTaskOutcome> CreateTaskOutcomeCallable;
+			typedef std::function<void(const TingwuClient*, const Model::CreateTaskRequest&, const CreateTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskAsyncHandler;
+			typedef Outcome<Error, Model::CreateTranscriptionPhrasesResult> CreateTranscriptionPhrasesOutcome;
+			typedef std::future<CreateTranscriptionPhrasesOutcome> CreateTranscriptionPhrasesOutcomeCallable;
+			typedef std::function<void(const TingwuClient*, const Model::CreateTranscriptionPhrasesRequest&, const CreateTranscriptionPhrasesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTranscriptionPhrasesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteTranscriptionPhrasesResult> DeleteTranscriptionPhrasesOutcome;
+			typedef std::future<DeleteTranscriptionPhrasesOutcome> DeleteTranscriptionPhrasesOutcomeCallable;
+			typedef std::function<void(const TingwuClient*, const Model::DeleteTranscriptionPhrasesRequest&, const DeleteTranscriptionPhrasesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTranscriptionPhrasesAsyncHandler;
+			typedef Outcome<Error, Model::GetTaskInfoResult> GetTaskInfoOutcome;
+			typedef std::future<GetTaskInfoOutcome> GetTaskInfoOutcomeCallable;
+			typedef std::function<void(const TingwuClient*, const Model::GetTaskInfoRequest&, const GetTaskInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetTranscriptionPhrasesResult> GetTranscriptionPhrasesOutcome;
+			typedef std::future<GetTranscriptionPhrasesOutcome> GetTranscriptionPhrasesOutcomeCallable;
+			typedef std::function<void(const TingwuClient*, const Model::GetTranscriptionPhrasesRequest&, const GetTranscriptionPhrasesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTranscriptionPhrasesAsyncHandler;
+			typedef Outcome<Error, Model::ListTranscriptionPhrasesResult> ListTranscriptionPhrasesOutcome;
+			typedef std::future<ListTranscriptionPhrasesOutcome> ListTranscriptionPhrasesOutcomeCallable;
+			typedef std::function<void(const TingwuClient*, const Model::ListTranscriptionPhrasesRequest&, const ListTranscriptionPhrasesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTranscriptionPhrasesAsyncHandler;
+			typedef Outcome<Error, Model::UpdateTranscriptionPhrasesResult> UpdateTranscriptionPhrasesOutcome;
+			typedef std::future<UpdateTranscriptionPhrasesOutcome> UpdateTranscriptionPhrasesOutcomeCallable;
+			typedef std::function<void(const TingwuClient*, const Model::UpdateTranscriptionPhrasesRequest&, const UpdateTranscriptionPhrasesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTranscriptionPhrasesAsyncHandler;
 
 			TingwuClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			TingwuClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			TingwuClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~TingwuClient();
-			CreateFileTransOutcome createFileTrans(const Model::CreateFileTransRequest &request)const;
-			void createFileTransAsync(const Model::CreateFileTransRequest& request, const CreateFileTransAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateFileTransOutcomeCallable createFileTransCallable(const Model::CreateFileTransRequest& request) const;
-			CreateMeetingTransOutcome createMeetingTrans(const Model::CreateMeetingTransRequest &request)const;
-			void createMeetingTransAsync(const Model::CreateMeetingTransRequest& request, const CreateMeetingTransAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateMeetingTransOutcomeCallable createMeetingTransCallable(const Model::CreateMeetingTransRequest& request) const;
-			GetFileTransOutcome getFileTrans(const Model::GetFileTransRequest &request)const;
-			void getFileTransAsync(const Model::GetFileTransRequest& request, const GetFileTransAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetFileTransOutcomeCallable getFileTransCallable(const Model::GetFileTransRequest& request) const;
-			GetMeetingTransOutcome getMeetingTrans(const Model::GetMeetingTransRequest &request)const;
-			void getMeetingTransAsync(const Model::GetMeetingTransRequest& request, const GetMeetingTransAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetMeetingTransOutcomeCallable getMeetingTransCallable(const Model::GetMeetingTransRequest& request) const;
-			StopMeetingTransOutcome stopMeetingTrans(const Model::StopMeetingTransRequest &request)const;
-			void stopMeetingTransAsync(const Model::StopMeetingTransRequest& request, const StopMeetingTransAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			StopMeetingTransOutcomeCallable stopMeetingTransCallable(const Model::StopMeetingTransRequest& request) const;
+			CreateTaskOutcome createTask(const Model::CreateTaskRequest &request)const;
+			void createTaskAsync(const Model::CreateTaskRequest& request, const CreateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTaskOutcomeCallable createTaskCallable(const Model::CreateTaskRequest& request) const;
+			CreateTranscriptionPhrasesOutcome createTranscriptionPhrases(const Model::CreateTranscriptionPhrasesRequest &request)const;
+			void createTranscriptionPhrasesAsync(const Model::CreateTranscriptionPhrasesRequest& request, const CreateTranscriptionPhrasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTranscriptionPhrasesOutcomeCallable createTranscriptionPhrasesCallable(const Model::CreateTranscriptionPhrasesRequest& request) const;
+			DeleteTranscriptionPhrasesOutcome deleteTranscriptionPhrases(const Model::DeleteTranscriptionPhrasesRequest &request)const;
+			void deleteTranscriptionPhrasesAsync(const Model::DeleteTranscriptionPhrasesRequest& request, const DeleteTranscriptionPhrasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteTranscriptionPhrasesOutcomeCallable deleteTranscriptionPhrasesCallable(const Model::DeleteTranscriptionPhrasesRequest& request) const;
+			GetTaskInfoOutcome getTaskInfo(const Model::GetTaskInfoRequest &request)const;
+			void getTaskInfoAsync(const Model::GetTaskInfoRequest& request, const GetTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTaskInfoOutcomeCallable getTaskInfoCallable(const Model::GetTaskInfoRequest& request) const;
+			GetTranscriptionPhrasesOutcome getTranscriptionPhrases(const Model::GetTranscriptionPhrasesRequest &request)const;
+			void getTranscriptionPhrasesAsync(const Model::GetTranscriptionPhrasesRequest& request, const GetTranscriptionPhrasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTranscriptionPhrasesOutcomeCallable getTranscriptionPhrasesCallable(const Model::GetTranscriptionPhrasesRequest& request) const;
+			ListTranscriptionPhrasesOutcome listTranscriptionPhrases(const Model::ListTranscriptionPhrasesRequest &request)const;
+			void listTranscriptionPhrasesAsync(const Model::ListTranscriptionPhrasesRequest& request, const ListTranscriptionPhrasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTranscriptionPhrasesOutcomeCallable listTranscriptionPhrasesCallable(const Model::ListTranscriptionPhrasesRequest& request) const;
+			UpdateTranscriptionPhrasesOutcome updateTranscriptionPhrases(const Model::UpdateTranscriptionPhrasesRequest &request)const;
+			void updateTranscriptionPhrasesAsync(const Model::UpdateTranscriptionPhrasesRequest& request, const UpdateTranscriptionPhrasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateTranscriptionPhrasesOutcomeCallable updateTranscriptionPhrasesCallable(const Model::UpdateTranscriptionPhrasesRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_TINGWU_MODEL_CREATEMEETINGTRANSRESULT_H_
-#define ALIBABACLOUD_TINGWU_MODEL_CREATEMEETINGTRANSRESULT_H_
+#ifndef ALIBABACLOUD_TINGWU_MODEL_CREATETASKRESULT_H_
+#define ALIBABACLOUD_TINGWU_MODEL_CREATETASKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,20 +29,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_TINGWU_EXPORT CreateMeetingTransResult : public ServiceResult
+			class ALIBABACLOUD_TINGWU_EXPORT CreateTaskResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					std::string meetingId;
-					std::string meetingJoinUrl;
-					std::string meetingKey;
+					std::string taskId;
+					std::string taskKey;
 				};
 
 
-				CreateMeetingTransResult();
-				explicit CreateMeetingTransResult(const std::string &payload);
-				~CreateMeetingTransResult();
+				CreateTaskResult();
+				explicit CreateTaskResult(const std::string &payload);
+				~CreateTaskResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -58,4 +57,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_TINGWU_MODEL_CREATEMEETINGTRANSRESULT_H_
+#endif // !ALIBABACLOUD_TINGWU_MODEL_CREATETASKRESULT_H_

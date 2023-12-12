@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_TINGWU_MODEL_GETMEETINGTRANSREQUEST_H_
-#define ALIBABACLOUD_TINGWU_MODEL_GETMEETINGTRANSREQUEST_H_
+#ifndef ALIBABACLOUD_TINGWU_MODEL_GETTRANSCRIPTIONPHRASESREQUEST_H_
+#define ALIBABACLOUD_TINGWU_MODEL_GETTRANSCRIPTIONPHRASESREQUEST_H_
 
 #include <alibabacloud/tingwu/TingwuExport.h>
 #include <alibabacloud/core/RoaServiceRequest.h>
@@ -26,17 +26,17 @@
 namespace AlibabaCloud {
 namespace Tingwu {
 namespace Model {
-class ALIBABACLOUD_TINGWU_EXPORT GetMeetingTransRequest : public RoaServiceRequest {
+class ALIBABACLOUD_TINGWU_EXPORT GetTranscriptionPhrasesRequest : public RoaServiceRequest {
 public:
-	GetMeetingTransRequest();
-	~GetMeetingTransRequest();
-	string getMeetingId() const;
-	void setMeetingId(string meetingId);
+	GetTranscriptionPhrasesRequest();
+	~GetTranscriptionPhrasesRequest();
+	std::string getPhraseId() const;
+	void setPhraseId(const std::string &phraseId);
 
 private:
-	string meetingId_;
+	std::string phraseId_;
 };
 } // namespace Model
 } // namespace Tingwu
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_TINGWU_MODEL_GETMEETINGTRANSREQUEST_H_
+#endif // !ALIBABACLOUD_TINGWU_MODEL_GETTRANSCRIPTIONPHRASESREQUEST_H_

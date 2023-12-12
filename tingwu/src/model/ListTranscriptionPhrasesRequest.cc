@@ -14,24 +14,15 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/tingwu/model/StopMeetingTransRequest.h>
+#include <alibabacloud/tingwu/model/ListTranscriptionPhrasesRequest.h>
 
-using AlibabaCloud::Tingwu::Model::StopMeetingTransRequest;
+using AlibabaCloud::Tingwu::Model::ListTranscriptionPhrasesRequest;
 
-StopMeetingTransRequest::StopMeetingTransRequest()
-    : RoaServiceRequest("tingwu", "2022-09-30") {
-  setResourcePath("/openapi/meeting-trans/[MeetingId]/stop"};
-  setMethod(HttpRequest::Method::Post);
+ListTranscriptionPhrasesRequest::ListTranscriptionPhrasesRequest()
+    : RoaServiceRequest("tingwu", "2023-09-30") {
+  setResourcePath("/openapi/tingwu/v2/resources/phrases"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-StopMeetingTransRequest::~StopMeetingTransRequest() {}
-
-string StopMeetingTransRequest::getMeetingId() const {
-  return meetingId_;
-}
-
-void StopMeetingTransRequest::setMeetingId(string meetingId) {
-  meetingId_ = meetingId;
-  setParameter(std::string("MeetingId"), std::to_string(meetingId));
-}
+ListTranscriptionPhrasesRequest::~ListTranscriptionPhrasesRequest() {}
 

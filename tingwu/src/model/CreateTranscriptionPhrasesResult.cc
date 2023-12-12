@@ -14,38 +14,40 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/tingwu/model/CreateMeetingTransResult.h>
+#include <alibabacloud/tingwu/model/CreateTranscriptionPhrasesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Tingwu;
 using namespace AlibabaCloud::Tingwu::Model;
 
-CreateMeetingTransResult::CreateMeetingTransResult() :
+CreateTranscriptionPhrasesResult::CreateTranscriptionPhrasesResult() :
 	ServiceResult()
 {}
 
-CreateMeetingTransResult::CreateMeetingTransResult(const std::string &payload) :
+CreateTranscriptionPhrasesResult::CreateTranscriptionPhrasesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateMeetingTransResult::~CreateMeetingTransResult()
+CreateTranscriptionPhrasesResult::~CreateTranscriptionPhrasesResult()
 {}
 
-void CreateMeetingTransResult::parse(const std::string &payload)
+void CreateTranscriptionPhrasesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["MeetingId"].isNull())
-		data_.meetingId = dataNode["MeetingId"].asString();
-	if(!dataNode["MeetingJoinUrl"].isNull())
-		data_.meetingJoinUrl = dataNode["MeetingJoinUrl"].asString();
-	if(!dataNode["MeetingKey"].isNull())
-		data_.meetingKey = dataNode["MeetingKey"].asString();
+	if(!dataNode["Status"].isNull())
+		data_.status = dataNode["Status"].asString();
+	if(!dataNode["PhraseId"].isNull())
+		data_.phraseId = dataNode["PhraseId"].asString();
+	if(!dataNode["ErrorCode"].isNull())
+		data_.errorCode = dataNode["ErrorCode"].asString();
+	if(!dataNode["ErrorMessage"].isNull())
+		data_.errorMessage = dataNode["ErrorMessage"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
@@ -53,17 +55,17 @@ void CreateMeetingTransResult::parse(const std::string &payload)
 
 }
 
-std::string CreateMeetingTransResult::getMessage()const
+std::string CreateTranscriptionPhrasesResult::getMessage()const
 {
 	return message_;
 }
 
-CreateMeetingTransResult::Data CreateMeetingTransResult::getData()const
+CreateTranscriptionPhrasesResult::Data CreateTranscriptionPhrasesResult::getData()const
 {
 	return data_;
 }
 
-std::string CreateMeetingTransResult::getCode()const
+std::string CreateTranscriptionPhrasesResult::getCode()const
 {
 	return code_;
 }

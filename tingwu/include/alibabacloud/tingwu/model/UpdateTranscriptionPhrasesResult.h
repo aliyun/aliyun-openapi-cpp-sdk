@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_TINGWU_MODEL_CREATEFILETRANSRESULT_H_
-#define ALIBABACLOUD_TINGWU_MODEL_CREATEFILETRANSRESULT_H_
+#ifndef ALIBABACLOUD_TINGWU_MODEL_UPDATETRANSCRIPTIONPHRASESRESULT_H_
+#define ALIBABACLOUD_TINGWU_MODEL_UPDATETRANSCRIPTIONPHRASESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,19 +29,20 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_TINGWU_EXPORT CreateFileTransResult : public ServiceResult
+			class ALIBABACLOUD_TINGWU_EXPORT UpdateTranscriptionPhrasesResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					std::string transKey;
-					std::string transId;
+					std::string status;
+					std::string errorCode;
+					std::string errorMessage;
 				};
 
 
-				CreateFileTransResult();
-				explicit CreateFileTransResult(const std::string &payload);
-				~CreateFileTransResult();
+				UpdateTranscriptionPhrasesResult();
+				explicit UpdateTranscriptionPhrasesResult(const std::string &payload);
+				~UpdateTranscriptionPhrasesResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -57,4 +58,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_TINGWU_MODEL_CREATEFILETRANSRESULT_H_
+#endif // !ALIBABACLOUD_TINGWU_MODEL_UPDATETRANSCRIPTIONPHRASESRESULT_H_

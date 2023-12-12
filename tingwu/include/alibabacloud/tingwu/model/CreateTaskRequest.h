@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_TINGWU_MODEL_CREATEFILETRANSREQUEST_H_
-#define ALIBABACLOUD_TINGWU_MODEL_CREATEFILETRANSREQUEST_H_
+#ifndef ALIBABACLOUD_TINGWU_MODEL_CREATETASKREQUEST_H_
+#define ALIBABACLOUD_TINGWU_MODEL_CREATETASKREQUEST_H_
 
 #include <alibabacloud/tingwu/TingwuExport.h>
 #include <alibabacloud/core/RoaServiceRequest.h>
@@ -26,17 +26,23 @@
 namespace AlibabaCloud {
 namespace Tingwu {
 namespace Model {
-class ALIBABACLOUD_TINGWU_EXPORT CreateFileTransRequest : public RoaServiceRequest {
+class ALIBABACLOUD_TINGWU_EXPORT CreateTaskRequest : public RoaServiceRequest {
 public:
-	CreateFileTransRequest();
-	~CreateFileTransRequest();
+	CreateTaskRequest();
+	~CreateTaskRequest();
+	std::string getType() const;
+	void setType(const std::string &type);
 	std::string getBody() const;
 	void setBody(const std::string &body);
+	std::string getOperation() const;
+	void setOperation(const std::string &operation);
 
 private:
+	std::string type_;
 	std::string body_;
+	std::string operation_;
 };
 } // namespace Model
 } // namespace Tingwu
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_TINGWU_MODEL_CREATEFILETRANSREQUEST_H_
+#endif // !ALIBABACLOUD_TINGWU_MODEL_CREATETASKREQUEST_H_

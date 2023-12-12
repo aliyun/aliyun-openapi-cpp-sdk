@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_TINGWU_MODEL_STOPMEETINGTRANSRESULT_H_
-#define ALIBABACLOUD_TINGWU_MODEL_STOPMEETINGTRANSRESULT_H_
+#ifndef ALIBABACLOUD_TINGWU_MODEL_CREATETRANSCRIPTIONPHRASESRESULT_H_
+#define ALIBABACLOUD_TINGWU_MODEL_CREATETRANSCRIPTIONPHRASESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,20 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_TINGWU_EXPORT StopMeetingTransResult : public ServiceResult
+			class ALIBABACLOUD_TINGWU_EXPORT CreateTranscriptionPhrasesResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					std::string meetingStatus;
-					std::string meetingId;
-					std::string meetingKey;
+					std::string status;
+					std::string errorCode;
+					std::string errorMessage;
+					std::string phraseId;
 				};
 
 
-				StopMeetingTransResult();
-				explicit StopMeetingTransResult(const std::string &payload);
-				~StopMeetingTransResult();
+				CreateTranscriptionPhrasesResult();
+				explicit CreateTranscriptionPhrasesResult(const std::string &payload);
+				~CreateTranscriptionPhrasesResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -58,4 +59,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_TINGWU_MODEL_STOPMEETINGTRANSRESULT_H_
+#endif // !ALIBABACLOUD_TINGWU_MODEL_CREATETRANSCRIPTIONPHRASESRESULT_H_

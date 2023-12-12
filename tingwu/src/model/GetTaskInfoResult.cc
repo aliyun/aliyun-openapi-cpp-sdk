@@ -14,36 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/tingwu/model/CreateFileTransResult.h>
+#include <alibabacloud/tingwu/model/GetTaskInfoResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Tingwu;
 using namespace AlibabaCloud::Tingwu::Model;
 
-CreateFileTransResult::CreateFileTransResult() :
+GetTaskInfoResult::GetTaskInfoResult() :
 	ServiceResult()
 {}
 
-CreateFileTransResult::CreateFileTransResult(const std::string &payload) :
+GetTaskInfoResult::GetTaskInfoResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateFileTransResult::~CreateFileTransResult()
+GetTaskInfoResult::~GetTaskInfoResult()
 {}
 
-void CreateFileTransResult::parse(const std::string &payload)
+void GetTaskInfoResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["TransId"].isNull())
-		data_.transId = dataNode["TransId"].asString();
-	if(!dataNode["TransKey"].isNull())
-		data_.transKey = dataNode["TransKey"].asString();
+	if(!dataNode["TaskId"].isNull())
+		data_.taskId = dataNode["TaskId"].asString();
+	if(!dataNode["TaskKey"].isNull())
+		data_.taskKey = dataNode["TaskKey"].asString();
+	if(!dataNode["TaskStatus"].isNull())
+		data_.taskStatus = dataNode["TaskStatus"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
@@ -51,17 +53,17 @@ void CreateFileTransResult::parse(const std::string &payload)
 
 }
 
-std::string CreateFileTransResult::getMessage()const
+std::string GetTaskInfoResult::getMessage()const
 {
 	return message_;
 }
 
-CreateFileTransResult::Data CreateFileTransResult::getData()const
+GetTaskInfoResult::Data GetTaskInfoResult::getData()const
 {
 	return data_;
 }
 
-std::string CreateFileTransResult::getCode()const
+std::string GetTaskInfoResult::getCode()const
 {
 	return code_;
 }

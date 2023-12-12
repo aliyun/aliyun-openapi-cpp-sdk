@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_TINGWU_MODEL_GETMEETINGTRANSRESULT_H_
-#define ALIBABACLOUD_TINGWU_MODEL_GETMEETINGTRANSRESULT_H_
+#ifndef ALIBABACLOUD_TINGWU_MODEL_DELETETRANSCRIPTIONPHRASESRESULT_H_
+#define ALIBABACLOUD_TINGWU_MODEL_DELETETRANSCRIPTIONPHRASESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_TINGWU_EXPORT GetMeetingTransResult : public ServiceResult
+			class ALIBABACLOUD_TINGWU_EXPORT DeleteTranscriptionPhrasesResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					std::string meetingStatus;
-					std::string meetingId;
-					std::string meetingKey;
-				};
 
 
-				GetMeetingTransResult();
-				explicit GetMeetingTransResult(const std::string &payload);
-				~GetMeetingTransResult();
-				std::string getMessage()const;
-				Data getData()const;
-				std::string getCode()const;
+				DeleteTranscriptionPhrasesResult();
+				explicit DeleteTranscriptionPhrasesResult(const std::string &payload);
+				~DeleteTranscriptionPhrasesResult();
+				std::string getStatus()const;
+				std::string getErrorCode()const;
+				std::string getErrorMessage()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				Data data_;
-				std::string code_;
+				std::string status_;
+				std::string errorCode_;
+				std::string errorMessage_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_TINGWU_MODEL_GETMEETINGTRANSRESULT_H_
+#endif // !ALIBABACLOUD_TINGWU_MODEL_DELETETRANSCRIPTIONPHRASESRESULT_H_
