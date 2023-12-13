@@ -22,22 +22,42 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "Cloud_siemExport.h"
+#include "model/AddDataSourceRequest.h"
+#include "model/AddDataSourceResult.h"
+#include "model/AddDataSourceLogRequest.h"
+#include "model/AddDataSourceLogResult.h"
+#include "model/AddUserRequest.h"
+#include "model/AddUserResult.h"
+#include "model/AddUserSourceLogConfigRequest.h"
+#include "model/AddUserSourceLogConfigResult.h"
 #include "model/BatchJobCheckRequest.h"
 #include "model/BatchJobCheckResult.h"
 #include "model/BatchJobSubmitRequest.h"
 #include "model/BatchJobSubmitResult.h"
+#include "model/BindAccountRequest.h"
+#include "model/BindAccountResult.h"
 #include "model/CloseDeliveryRequest.h"
 #include "model/CloseDeliveryResult.h"
 #include "model/DeleteAutomateResponseConfigRequest.h"
 #include "model/DeleteAutomateResponseConfigResult.h"
+#include "model/DeleteBindAccountRequest.h"
+#include "model/DeleteBindAccountResult.h"
 #include "model/DeleteCustomizeRuleRequest.h"
 #include "model/DeleteCustomizeRuleResult.h"
+#include "model/DeleteDataSourceRequest.h"
+#include "model/DeleteDataSourceResult.h"
+#include "model/DeleteDataSourceLogRequest.h"
+#include "model/DeleteDataSourceLogResult.h"
 #include "model/DeleteQuickQueryRequest.h"
 #include "model/DeleteQuickQueryResult.h"
+#include "model/DeleteUserRequest.h"
+#include "model/DeleteUserResult.h"
 #include "model/DeleteWhiteRuleListRequest.h"
 #include "model/DeleteWhiteRuleListResult.h"
 #include "model/DescribeAggregateFunctionRequest.h"
 #include "model/DescribeAggregateFunctionResult.h"
+#include "model/DescribeAlertSceneRequest.h"
+#include "model/DescribeAlertSceneResult.h"
 #include "model/DescribeAlertSceneByEventRequest.h"
 #include "model/DescribeAlertSceneByEventResult.h"
 #include "model/DescribeAlertSourceRequest.h"
@@ -46,10 +66,18 @@
 #include "model/DescribeAlertSourceWithEventResult.h"
 #include "model/DescribeAlertTypeRequest.h"
 #include "model/DescribeAlertTypeResult.h"
+#include "model/DescribeAlertsRequest.h"
+#include "model/DescribeAlertsResult.h"
 #include "model/DescribeAlertsCountRequest.h"
 #include "model/DescribeAlertsCountResult.h"
+#include "model/DescribeAlertsWithEntityRequest.h"
+#include "model/DescribeAlertsWithEntityResult.h"
+#include "model/DescribeAlertsWithEventRequest.h"
+#include "model/DescribeAlertsWithEventResult.h"
 #include "model/DescribeAttackTimeLineRequest.h"
 #include "model/DescribeAttackTimeLineResult.h"
+#include "model/DescribeAuthRequest.h"
+#include "model/DescribeAuthResult.h"
 #include "model/DescribeAutomateResponseConfigCounterRequest.h"
 #include "model/DescribeAutomateResponseConfigCounterResult.h"
 #include "model/DescribeAutomateResponseConfigFeatureRequest.h"
@@ -64,6 +92,8 @@
 #include "model/DescribeCloudSiemEventDetailResult.h"
 #include "model/DescribeCloudSiemEventsRequest.h"
 #include "model/DescribeCloudSiemEventsResult.h"
+#include "model/DescribeCsImportedProdStatusByUserRequest.h"
+#include "model/DescribeCsImportedProdStatusByUserResult.h"
 #include "model/DescribeCustomizeRuleRequest.h"
 #include "model/DescribeCustomizeRuleResult.h"
 #include "model/DescribeCustomizeRuleCountRequest.h"
@@ -72,6 +102,10 @@
 #include "model/DescribeCustomizeRuleTestResult.h"
 #include "model/DescribeCustomizeRuleTestHistogramRequest.h"
 #include "model/DescribeCustomizeRuleTestHistogramResult.h"
+#include "model/DescribeDataSourceInstanceRequest.h"
+#include "model/DescribeDataSourceInstanceResult.h"
+#include "model/DescribeDataSourceParametersRequest.h"
+#include "model/DescribeDataSourceParametersResult.h"
 #include "model/DescribeDisposeAndPlaybookRequest.h"
 #include "model/DescribeDisposeAndPlaybookResult.h"
 #include "model/DescribeDisposeStrategyPlaybookRequest.h"
@@ -82,6 +116,8 @@
 #include "model/DescribeEventCountByThreatLevelResult.h"
 #include "model/DescribeEventDisposeRequest.h"
 #include "model/DescribeEventDisposeResult.h"
+#include "model/DescribeImportedLogCountRequest.h"
+#include "model/DescribeImportedLogCountResult.h"
 #include "model/DescribeJobStatusRequest.h"
 #include "model/DescribeJobStatusResult.h"
 #include "model/DescribeLogFieldsRequest.h"
@@ -94,16 +130,28 @@
 #include "model/DescribeLogTypeResult.h"
 #include "model/DescribeOperatorsRequest.h"
 #include "model/DescribeOperatorsResult.h"
+#include "model/DescribeProdCountRequest.h"
+#include "model/DescribeProdCountResult.h"
 #include "model/DescribeScopeUsersRequest.h"
 #include "model/DescribeScopeUsersResult.h"
+#include "model/DescribeServiceStatusRequest.h"
+#include "model/DescribeServiceStatusResult.h"
 #include "model/DescribeStorageRequest.h"
 #include "model/DescribeStorageResult.h"
+#include "model/DescribeUserBuyStatusRequest.h"
+#include "model/DescribeUserBuyStatusResult.h"
 #include "model/DescribeWafScopeRequest.h"
 #include "model/DescribeWafScopeResult.h"
+#include "model/DescribeWhiteRuleListRequest.h"
+#include "model/DescribeWhiteRuleListResult.h"
 #include "model/DoQuickFieldRequest.h"
 #include "model/DoQuickFieldResult.h"
 #include "model/DoSelfDelegateRequest.h"
 #include "model/DoSelfDelegateResult.h"
+#include "model/EnableAccessForCloudSiemRequest.h"
+#include "model/EnableAccessForCloudSiemResult.h"
+#include "model/EnableServiceForCloudSiemRequest.h"
+#include "model/EnableServiceForCloudSiemResult.h"
 #include "model/GetCapacityRequest.h"
 #include "model/GetCapacityResult.h"
 #include "model/GetHistogramsRequest.h"
@@ -114,22 +162,52 @@
 #include "model/GetQuickQueryResult.h"
 #include "model/GetStorageRequest.h"
 #include "model/GetStorageResult.h"
+#include "model/ListAccountAccessIdRequest.h"
+#include "model/ListAccountAccessIdResult.h"
+#include "model/ListAccountsByLogRequest.h"
+#include "model/ListAccountsByLogResult.h"
+#include "model/ListAllProdsRequest.h"
+#include "model/ListAllProdsResult.h"
 #include "model/ListAutomateResponseConfigsRequest.h"
 #include "model/ListAutomateResponseConfigsResult.h"
+#include "model/ListBindAccountRequest.h"
+#include "model/ListBindAccountResult.h"
+#include "model/ListBindDataSourcesRequest.h"
+#include "model/ListBindDataSourcesResult.h"
 #include "model/ListCloudSiemCustomizeRulesRequest.h"
 #include "model/ListCloudSiemCustomizeRulesResult.h"
 #include "model/ListCloudSiemPredefinedRulesRequest.h"
 #include "model/ListCloudSiemPredefinedRulesResult.h"
 #include "model/ListCustomizeRuleTestResultRequest.h"
 #include "model/ListCustomizeRuleTestResultResult.h"
+#include "model/ListDataSourceLogsRequest.h"
+#include "model/ListDataSourceLogsResult.h"
+#include "model/ListDataSourceTypesRequest.h"
+#include "model/ListDataSourceTypesResult.h"
 #include "model/ListDeliveryRequest.h"
 #include "model/ListDeliveryResult.h"
 #include "model/ListDisposeStrategyRequest.h"
 #include "model/ListDisposeStrategyResult.h"
+#include "model/ListImportedLogsByProdRequest.h"
+#include "model/ListImportedLogsByProdResult.h"
 #include "model/ListOperationRequest.h"
 #include "model/ListOperationResult.h"
+#include "model/ListProjectLogStoresRequest.h"
+#include "model/ListProjectLogStoresResult.h"
 #include "model/ListQuickQueryRequest.h"
 #include "model/ListQuickQueryResult.h"
+#include "model/ListRdUsersRequest.h"
+#include "model/ListRdUsersResult.h"
+#include "model/ListUserProdLogsRequest.h"
+#include "model/ListUserProdLogsResult.h"
+#include "model/ListUsersByProdRequest.h"
+#include "model/ListUsersByProdResult.h"
+#include "model/ModifyBindAccountRequest.h"
+#include "model/ModifyBindAccountResult.h"
+#include "model/ModifyDataSourceRequest.h"
+#include "model/ModifyDataSourceResult.h"
+#include "model/ModifyDataSourceLogRequest.h"
+#include "model/ModifyDataSourceLogResult.h"
 #include "model/OpenDeliveryRequest.h"
 #include "model/OpenDeliveryResult.h"
 #include "model/PostAutomateResponseConfigRequest.h"
@@ -154,6 +232,10 @@
 #include "model/SetStorageResult.h"
 #include "model/ShowQuickAnalysisRequest.h"
 #include "model/ShowQuickAnalysisResult.h"
+#include "model/SubmitImportLogTasksRequest.h"
+#include "model/SubmitImportLogTasksResult.h"
+#include "model/SubmitJobsRequest.h"
+#include "model/SubmitJobsResult.h"
 #include "model/UpdateAutomateResponseConfigStatusRequest.h"
 #include "model/UpdateAutomateResponseConfigStatusResult.h"
 #include "model/UpdateWhiteRuleListRequest.h"
@@ -167,30 +249,60 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_CLOUD_SIEM_EXPORT Cloud_siemClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AddDataSourceResult> AddDataSourceOutcome;
+			typedef std::future<AddDataSourceOutcome> AddDataSourceOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::AddDataSourceRequest&, const AddDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDataSourceAsyncHandler;
+			typedef Outcome<Error, Model::AddDataSourceLogResult> AddDataSourceLogOutcome;
+			typedef std::future<AddDataSourceLogOutcome> AddDataSourceLogOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::AddDataSourceLogRequest&, const AddDataSourceLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDataSourceLogAsyncHandler;
+			typedef Outcome<Error, Model::AddUserResult> AddUserOutcome;
+			typedef std::future<AddUserOutcome> AddUserOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::AddUserRequest&, const AddUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddUserAsyncHandler;
+			typedef Outcome<Error, Model::AddUserSourceLogConfigResult> AddUserSourceLogConfigOutcome;
+			typedef std::future<AddUserSourceLogConfigOutcome> AddUserSourceLogConfigOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::AddUserSourceLogConfigRequest&, const AddUserSourceLogConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddUserSourceLogConfigAsyncHandler;
 			typedef Outcome<Error, Model::BatchJobCheckResult> BatchJobCheckOutcome;
 			typedef std::future<BatchJobCheckOutcome> BatchJobCheckOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::BatchJobCheckRequest&, const BatchJobCheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchJobCheckAsyncHandler;
 			typedef Outcome<Error, Model::BatchJobSubmitResult> BatchJobSubmitOutcome;
 			typedef std::future<BatchJobSubmitOutcome> BatchJobSubmitOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::BatchJobSubmitRequest&, const BatchJobSubmitOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchJobSubmitAsyncHandler;
+			typedef Outcome<Error, Model::BindAccountResult> BindAccountOutcome;
+			typedef std::future<BindAccountOutcome> BindAccountOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::BindAccountRequest&, const BindAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindAccountAsyncHandler;
 			typedef Outcome<Error, Model::CloseDeliveryResult> CloseDeliveryOutcome;
 			typedef std::future<CloseDeliveryOutcome> CloseDeliveryOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::CloseDeliveryRequest&, const CloseDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseDeliveryAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAutomateResponseConfigResult> DeleteAutomateResponseConfigOutcome;
 			typedef std::future<DeleteAutomateResponseConfigOutcome> DeleteAutomateResponseConfigOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DeleteAutomateResponseConfigRequest&, const DeleteAutomateResponseConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAutomateResponseConfigAsyncHandler;
+			typedef Outcome<Error, Model::DeleteBindAccountResult> DeleteBindAccountOutcome;
+			typedef std::future<DeleteBindAccountOutcome> DeleteBindAccountOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::DeleteBindAccountRequest&, const DeleteBindAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBindAccountAsyncHandler;
 			typedef Outcome<Error, Model::DeleteCustomizeRuleResult> DeleteCustomizeRuleOutcome;
 			typedef std::future<DeleteCustomizeRuleOutcome> DeleteCustomizeRuleOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DeleteCustomizeRuleRequest&, const DeleteCustomizeRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomizeRuleAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDataSourceResult> DeleteDataSourceOutcome;
+			typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::DeleteDataSourceRequest&, const DeleteDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataSourceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDataSourceLogResult> DeleteDataSourceLogOutcome;
+			typedef std::future<DeleteDataSourceLogOutcome> DeleteDataSourceLogOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::DeleteDataSourceLogRequest&, const DeleteDataSourceLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataSourceLogAsyncHandler;
 			typedef Outcome<Error, Model::DeleteQuickQueryResult> DeleteQuickQueryOutcome;
 			typedef std::future<DeleteQuickQueryOutcome> DeleteQuickQueryOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DeleteQuickQueryRequest&, const DeleteQuickQueryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQuickQueryAsyncHandler;
+			typedef Outcome<Error, Model::DeleteUserResult> DeleteUserOutcome;
+			typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::DeleteUserRequest&, const DeleteUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
 			typedef Outcome<Error, Model::DeleteWhiteRuleListResult> DeleteWhiteRuleListOutcome;
 			typedef std::future<DeleteWhiteRuleListOutcome> DeleteWhiteRuleListOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DeleteWhiteRuleListRequest&, const DeleteWhiteRuleListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWhiteRuleListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAggregateFunctionResult> DescribeAggregateFunctionOutcome;
 			typedef std::future<DescribeAggregateFunctionOutcome> DescribeAggregateFunctionOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeAggregateFunctionRequest&, const DescribeAggregateFunctionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAggregateFunctionAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAlertSceneResult> DescribeAlertSceneOutcome;
+			typedef std::future<DescribeAlertSceneOutcome> DescribeAlertSceneOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeAlertSceneRequest&, const DescribeAlertSceneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertSceneAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAlertSceneByEventResult> DescribeAlertSceneByEventOutcome;
 			typedef std::future<DescribeAlertSceneByEventOutcome> DescribeAlertSceneByEventOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeAlertSceneByEventRequest&, const DescribeAlertSceneByEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertSceneByEventAsyncHandler;
@@ -203,12 +315,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAlertTypeResult> DescribeAlertTypeOutcome;
 			typedef std::future<DescribeAlertTypeOutcome> DescribeAlertTypeOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeAlertTypeRequest&, const DescribeAlertTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertTypeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAlertsResult> DescribeAlertsOutcome;
+			typedef std::future<DescribeAlertsOutcome> DescribeAlertsOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeAlertsRequest&, const DescribeAlertsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAlertsCountResult> DescribeAlertsCountOutcome;
 			typedef std::future<DescribeAlertsCountOutcome> DescribeAlertsCountOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeAlertsCountRequest&, const DescribeAlertsCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertsCountAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAlertsWithEntityResult> DescribeAlertsWithEntityOutcome;
+			typedef std::future<DescribeAlertsWithEntityOutcome> DescribeAlertsWithEntityOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeAlertsWithEntityRequest&, const DescribeAlertsWithEntityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertsWithEntityAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAlertsWithEventResult> DescribeAlertsWithEventOutcome;
+			typedef std::future<DescribeAlertsWithEventOutcome> DescribeAlertsWithEventOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeAlertsWithEventRequest&, const DescribeAlertsWithEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertsWithEventAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAttackTimeLineResult> DescribeAttackTimeLineOutcome;
 			typedef std::future<DescribeAttackTimeLineOutcome> DescribeAttackTimeLineOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeAttackTimeLineRequest&, const DescribeAttackTimeLineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackTimeLineAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAuthResult> DescribeAuthOutcome;
+			typedef std::future<DescribeAuthOutcome> DescribeAuthOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeAuthRequest&, const DescribeAuthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAutomateResponseConfigCounterResult> DescribeAutomateResponseConfigCounterOutcome;
 			typedef std::future<DescribeAutomateResponseConfigCounterOutcome> DescribeAutomateResponseConfigCounterOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeAutomateResponseConfigCounterRequest&, const DescribeAutomateResponseConfigCounterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutomateResponseConfigCounterAsyncHandler;
@@ -230,6 +354,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCloudSiemEventsResult> DescribeCloudSiemEventsOutcome;
 			typedef std::future<DescribeCloudSiemEventsOutcome> DescribeCloudSiemEventsOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeCloudSiemEventsRequest&, const DescribeCloudSiemEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudSiemEventsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCsImportedProdStatusByUserResult> DescribeCsImportedProdStatusByUserOutcome;
+			typedef std::future<DescribeCsImportedProdStatusByUserOutcome> DescribeCsImportedProdStatusByUserOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeCsImportedProdStatusByUserRequest&, const DescribeCsImportedProdStatusByUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCsImportedProdStatusByUserAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCustomizeRuleResult> DescribeCustomizeRuleOutcome;
 			typedef std::future<DescribeCustomizeRuleOutcome> DescribeCustomizeRuleOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeCustomizeRuleRequest&, const DescribeCustomizeRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomizeRuleAsyncHandler;
@@ -242,6 +369,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCustomizeRuleTestHistogramResult> DescribeCustomizeRuleTestHistogramOutcome;
 			typedef std::future<DescribeCustomizeRuleTestHistogramOutcome> DescribeCustomizeRuleTestHistogramOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeCustomizeRuleTestHistogramRequest&, const DescribeCustomizeRuleTestHistogramOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomizeRuleTestHistogramAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDataSourceInstanceResult> DescribeDataSourceInstanceOutcome;
+			typedef std::future<DescribeDataSourceInstanceOutcome> DescribeDataSourceInstanceOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeDataSourceInstanceRequest&, const DescribeDataSourceInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataSourceInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDataSourceParametersResult> DescribeDataSourceParametersOutcome;
+			typedef std::future<DescribeDataSourceParametersOutcome> DescribeDataSourceParametersOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeDataSourceParametersRequest&, const DescribeDataSourceParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataSourceParametersAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDisposeAndPlaybookResult> DescribeDisposeAndPlaybookOutcome;
 			typedef std::future<DescribeDisposeAndPlaybookOutcome> DescribeDisposeAndPlaybookOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeDisposeAndPlaybookRequest&, const DescribeDisposeAndPlaybookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDisposeAndPlaybookAsyncHandler;
@@ -257,6 +390,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeEventDisposeResult> DescribeEventDisposeOutcome;
 			typedef std::future<DescribeEventDisposeOutcome> DescribeEventDisposeOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeEventDisposeRequest&, const DescribeEventDisposeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventDisposeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeImportedLogCountResult> DescribeImportedLogCountOutcome;
+			typedef std::future<DescribeImportedLogCountOutcome> DescribeImportedLogCountOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeImportedLogCountRequest&, const DescribeImportedLogCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImportedLogCountAsyncHandler;
 			typedef Outcome<Error, Model::DescribeJobStatusResult> DescribeJobStatusOutcome;
 			typedef std::future<DescribeJobStatusOutcome> DescribeJobStatusOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeJobStatusRequest&, const DescribeJobStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobStatusAsyncHandler;
@@ -275,21 +411,39 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeOperatorsResult> DescribeOperatorsOutcome;
 			typedef std::future<DescribeOperatorsOutcome> DescribeOperatorsOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeOperatorsRequest&, const DescribeOperatorsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOperatorsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeProdCountResult> DescribeProdCountOutcome;
+			typedef std::future<DescribeProdCountOutcome> DescribeProdCountOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeProdCountRequest&, const DescribeProdCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProdCountAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScopeUsersResult> DescribeScopeUsersOutcome;
 			typedef std::future<DescribeScopeUsersOutcome> DescribeScopeUsersOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeScopeUsersRequest&, const DescribeScopeUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScopeUsersAsyncHandler;
+			typedef Outcome<Error, Model::DescribeServiceStatusResult> DescribeServiceStatusOutcome;
+			typedef std::future<DescribeServiceStatusOutcome> DescribeServiceStatusOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeServiceStatusRequest&, const DescribeServiceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeStorageResult> DescribeStorageOutcome;
 			typedef std::future<DescribeStorageOutcome> DescribeStorageOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeStorageRequest&, const DescribeStorageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStorageAsyncHandler;
+			typedef Outcome<Error, Model::DescribeUserBuyStatusResult> DescribeUserBuyStatusOutcome;
+			typedef std::future<DescribeUserBuyStatusOutcome> DescribeUserBuyStatusOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeUserBuyStatusRequest&, const DescribeUserBuyStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserBuyStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeWafScopeResult> DescribeWafScopeOutcome;
 			typedef std::future<DescribeWafScopeOutcome> DescribeWafScopeOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeWafScopeRequest&, const DescribeWafScopeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWafScopeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeWhiteRuleListResult> DescribeWhiteRuleListOutcome;
+			typedef std::future<DescribeWhiteRuleListOutcome> DescribeWhiteRuleListOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeWhiteRuleListRequest&, const DescribeWhiteRuleListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteRuleListAsyncHandler;
 			typedef Outcome<Error, Model::DoQuickFieldResult> DoQuickFieldOutcome;
 			typedef std::future<DoQuickFieldOutcome> DoQuickFieldOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DoQuickFieldRequest&, const DoQuickFieldOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DoQuickFieldAsyncHandler;
 			typedef Outcome<Error, Model::DoSelfDelegateResult> DoSelfDelegateOutcome;
 			typedef std::future<DoSelfDelegateOutcome> DoSelfDelegateOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DoSelfDelegateRequest&, const DoSelfDelegateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DoSelfDelegateAsyncHandler;
+			typedef Outcome<Error, Model::EnableAccessForCloudSiemResult> EnableAccessForCloudSiemOutcome;
+			typedef std::future<EnableAccessForCloudSiemOutcome> EnableAccessForCloudSiemOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::EnableAccessForCloudSiemRequest&, const EnableAccessForCloudSiemOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableAccessForCloudSiemAsyncHandler;
+			typedef Outcome<Error, Model::EnableServiceForCloudSiemResult> EnableServiceForCloudSiemOutcome;
+			typedef std::future<EnableServiceForCloudSiemOutcome> EnableServiceForCloudSiemOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::EnableServiceForCloudSiemRequest&, const EnableServiceForCloudSiemOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableServiceForCloudSiemAsyncHandler;
 			typedef Outcome<Error, Model::GetCapacityResult> GetCapacityOutcome;
 			typedef std::future<GetCapacityOutcome> GetCapacityOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::GetCapacityRequest&, const GetCapacityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCapacityAsyncHandler;
@@ -305,9 +459,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetStorageResult> GetStorageOutcome;
 			typedef std::future<GetStorageOutcome> GetStorageOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::GetStorageRequest&, const GetStorageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetStorageAsyncHandler;
+			typedef Outcome<Error, Model::ListAccountAccessIdResult> ListAccountAccessIdOutcome;
+			typedef std::future<ListAccountAccessIdOutcome> ListAccountAccessIdOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::ListAccountAccessIdRequest&, const ListAccountAccessIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAccountAccessIdAsyncHandler;
+			typedef Outcome<Error, Model::ListAccountsByLogResult> ListAccountsByLogOutcome;
+			typedef std::future<ListAccountsByLogOutcome> ListAccountsByLogOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::ListAccountsByLogRequest&, const ListAccountsByLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAccountsByLogAsyncHandler;
+			typedef Outcome<Error, Model::ListAllProdsResult> ListAllProdsOutcome;
+			typedef std::future<ListAllProdsOutcome> ListAllProdsOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::ListAllProdsRequest&, const ListAllProdsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAllProdsAsyncHandler;
 			typedef Outcome<Error, Model::ListAutomateResponseConfigsResult> ListAutomateResponseConfigsOutcome;
 			typedef std::future<ListAutomateResponseConfigsOutcome> ListAutomateResponseConfigsOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::ListAutomateResponseConfigsRequest&, const ListAutomateResponseConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAutomateResponseConfigsAsyncHandler;
+			typedef Outcome<Error, Model::ListBindAccountResult> ListBindAccountOutcome;
+			typedef std::future<ListBindAccountOutcome> ListBindAccountOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::ListBindAccountRequest&, const ListBindAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListBindAccountAsyncHandler;
+			typedef Outcome<Error, Model::ListBindDataSourcesResult> ListBindDataSourcesOutcome;
+			typedef std::future<ListBindDataSourcesOutcome> ListBindDataSourcesOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::ListBindDataSourcesRequest&, const ListBindDataSourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListBindDataSourcesAsyncHandler;
 			typedef Outcome<Error, Model::ListCloudSiemCustomizeRulesResult> ListCloudSiemCustomizeRulesOutcome;
 			typedef std::future<ListCloudSiemCustomizeRulesOutcome> ListCloudSiemCustomizeRulesOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::ListCloudSiemCustomizeRulesRequest&, const ListCloudSiemCustomizeRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCloudSiemCustomizeRulesAsyncHandler;
@@ -317,18 +486,48 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListCustomizeRuleTestResultResult> ListCustomizeRuleTestResultOutcome;
 			typedef std::future<ListCustomizeRuleTestResultOutcome> ListCustomizeRuleTestResultOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::ListCustomizeRuleTestResultRequest&, const ListCustomizeRuleTestResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCustomizeRuleTestResultAsyncHandler;
+			typedef Outcome<Error, Model::ListDataSourceLogsResult> ListDataSourceLogsOutcome;
+			typedef std::future<ListDataSourceLogsOutcome> ListDataSourceLogsOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::ListDataSourceLogsRequest&, const ListDataSourceLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDataSourceLogsAsyncHandler;
+			typedef Outcome<Error, Model::ListDataSourceTypesResult> ListDataSourceTypesOutcome;
+			typedef std::future<ListDataSourceTypesOutcome> ListDataSourceTypesOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::ListDataSourceTypesRequest&, const ListDataSourceTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDataSourceTypesAsyncHandler;
 			typedef Outcome<Error, Model::ListDeliveryResult> ListDeliveryOutcome;
 			typedef std::future<ListDeliveryOutcome> ListDeliveryOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::ListDeliveryRequest&, const ListDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDeliveryAsyncHandler;
 			typedef Outcome<Error, Model::ListDisposeStrategyResult> ListDisposeStrategyOutcome;
 			typedef std::future<ListDisposeStrategyOutcome> ListDisposeStrategyOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::ListDisposeStrategyRequest&, const ListDisposeStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDisposeStrategyAsyncHandler;
+			typedef Outcome<Error, Model::ListImportedLogsByProdResult> ListImportedLogsByProdOutcome;
+			typedef std::future<ListImportedLogsByProdOutcome> ListImportedLogsByProdOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::ListImportedLogsByProdRequest&, const ListImportedLogsByProdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListImportedLogsByProdAsyncHandler;
 			typedef Outcome<Error, Model::ListOperationResult> ListOperationOutcome;
 			typedef std::future<ListOperationOutcome> ListOperationOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::ListOperationRequest&, const ListOperationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOperationAsyncHandler;
+			typedef Outcome<Error, Model::ListProjectLogStoresResult> ListProjectLogStoresOutcome;
+			typedef std::future<ListProjectLogStoresOutcome> ListProjectLogStoresOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::ListProjectLogStoresRequest&, const ListProjectLogStoresOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProjectLogStoresAsyncHandler;
 			typedef Outcome<Error, Model::ListQuickQueryResult> ListQuickQueryOutcome;
 			typedef std::future<ListQuickQueryOutcome> ListQuickQueryOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::ListQuickQueryRequest&, const ListQuickQueryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListQuickQueryAsyncHandler;
+			typedef Outcome<Error, Model::ListRdUsersResult> ListRdUsersOutcome;
+			typedef std::future<ListRdUsersOutcome> ListRdUsersOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::ListRdUsersRequest&, const ListRdUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRdUsersAsyncHandler;
+			typedef Outcome<Error, Model::ListUserProdLogsResult> ListUserProdLogsOutcome;
+			typedef std::future<ListUserProdLogsOutcome> ListUserProdLogsOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::ListUserProdLogsRequest&, const ListUserProdLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserProdLogsAsyncHandler;
+			typedef Outcome<Error, Model::ListUsersByProdResult> ListUsersByProdOutcome;
+			typedef std::future<ListUsersByProdOutcome> ListUsersByProdOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::ListUsersByProdRequest&, const ListUsersByProdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersByProdAsyncHandler;
+			typedef Outcome<Error, Model::ModifyBindAccountResult> ModifyBindAccountOutcome;
+			typedef std::future<ModifyBindAccountOutcome> ModifyBindAccountOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::ModifyBindAccountRequest&, const ModifyBindAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBindAccountAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDataSourceResult> ModifyDataSourceOutcome;
+			typedef std::future<ModifyDataSourceOutcome> ModifyDataSourceOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::ModifyDataSourceRequest&, const ModifyDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataSourceAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDataSourceLogResult> ModifyDataSourceLogOutcome;
+			typedef std::future<ModifyDataSourceLogOutcome> ModifyDataSourceLogOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::ModifyDataSourceLogRequest&, const ModifyDataSourceLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataSourceLogAsyncHandler;
 			typedef Outcome<Error, Model::OpenDeliveryResult> OpenDeliveryOutcome;
 			typedef std::future<OpenDeliveryOutcome> OpenDeliveryOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::OpenDeliveryRequest&, const OpenDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenDeliveryAsyncHandler;
@@ -365,6 +564,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ShowQuickAnalysisResult> ShowQuickAnalysisOutcome;
 			typedef std::future<ShowQuickAnalysisOutcome> ShowQuickAnalysisOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::ShowQuickAnalysisRequest&, const ShowQuickAnalysisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ShowQuickAnalysisAsyncHandler;
+			typedef Outcome<Error, Model::SubmitImportLogTasksResult> SubmitImportLogTasksOutcome;
+			typedef std::future<SubmitImportLogTasksOutcome> SubmitImportLogTasksOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::SubmitImportLogTasksRequest&, const SubmitImportLogTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitImportLogTasksAsyncHandler;
+			typedef Outcome<Error, Model::SubmitJobsResult> SubmitJobsOutcome;
+			typedef std::future<SubmitJobsOutcome> SubmitJobsOutcomeCallable;
+			typedef std::function<void(const Cloud_siemClient*, const Model::SubmitJobsRequest&, const SubmitJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitJobsAsyncHandler;
 			typedef Outcome<Error, Model::UpdateAutomateResponseConfigStatusResult> UpdateAutomateResponseConfigStatusOutcome;
 			typedef std::future<UpdateAutomateResponseConfigStatusOutcome> UpdateAutomateResponseConfigStatusOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::UpdateAutomateResponseConfigStatusRequest&, const UpdateAutomateResponseConfigStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAutomateResponseConfigStatusAsyncHandler;
@@ -376,30 +581,60 @@ namespace AlibabaCloud
 			Cloud_siemClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			Cloud_siemClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~Cloud_siemClient();
+			AddDataSourceOutcome addDataSource(const Model::AddDataSourceRequest &request)const;
+			void addDataSourceAsync(const Model::AddDataSourceRequest& request, const AddDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddDataSourceOutcomeCallable addDataSourceCallable(const Model::AddDataSourceRequest& request) const;
+			AddDataSourceLogOutcome addDataSourceLog(const Model::AddDataSourceLogRequest &request)const;
+			void addDataSourceLogAsync(const Model::AddDataSourceLogRequest& request, const AddDataSourceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddDataSourceLogOutcomeCallable addDataSourceLogCallable(const Model::AddDataSourceLogRequest& request) const;
+			AddUserOutcome addUser(const Model::AddUserRequest &request)const;
+			void addUserAsync(const Model::AddUserRequest& request, const AddUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddUserOutcomeCallable addUserCallable(const Model::AddUserRequest& request) const;
+			AddUserSourceLogConfigOutcome addUserSourceLogConfig(const Model::AddUserSourceLogConfigRequest &request)const;
+			void addUserSourceLogConfigAsync(const Model::AddUserSourceLogConfigRequest& request, const AddUserSourceLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddUserSourceLogConfigOutcomeCallable addUserSourceLogConfigCallable(const Model::AddUserSourceLogConfigRequest& request) const;
 			BatchJobCheckOutcome batchJobCheck(const Model::BatchJobCheckRequest &request)const;
 			void batchJobCheckAsync(const Model::BatchJobCheckRequest& request, const BatchJobCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchJobCheckOutcomeCallable batchJobCheckCallable(const Model::BatchJobCheckRequest& request) const;
 			BatchJobSubmitOutcome batchJobSubmit(const Model::BatchJobSubmitRequest &request)const;
 			void batchJobSubmitAsync(const Model::BatchJobSubmitRequest& request, const BatchJobSubmitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchJobSubmitOutcomeCallable batchJobSubmitCallable(const Model::BatchJobSubmitRequest& request) const;
+			BindAccountOutcome bindAccount(const Model::BindAccountRequest &request)const;
+			void bindAccountAsync(const Model::BindAccountRequest& request, const BindAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindAccountOutcomeCallable bindAccountCallable(const Model::BindAccountRequest& request) const;
 			CloseDeliveryOutcome closeDelivery(const Model::CloseDeliveryRequest &request)const;
 			void closeDeliveryAsync(const Model::CloseDeliveryRequest& request, const CloseDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloseDeliveryOutcomeCallable closeDeliveryCallable(const Model::CloseDeliveryRequest& request) const;
 			DeleteAutomateResponseConfigOutcome deleteAutomateResponseConfig(const Model::DeleteAutomateResponseConfigRequest &request)const;
 			void deleteAutomateResponseConfigAsync(const Model::DeleteAutomateResponseConfigRequest& request, const DeleteAutomateResponseConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAutomateResponseConfigOutcomeCallable deleteAutomateResponseConfigCallable(const Model::DeleteAutomateResponseConfigRequest& request) const;
+			DeleteBindAccountOutcome deleteBindAccount(const Model::DeleteBindAccountRequest &request)const;
+			void deleteBindAccountAsync(const Model::DeleteBindAccountRequest& request, const DeleteBindAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteBindAccountOutcomeCallable deleteBindAccountCallable(const Model::DeleteBindAccountRequest& request) const;
 			DeleteCustomizeRuleOutcome deleteCustomizeRule(const Model::DeleteCustomizeRuleRequest &request)const;
 			void deleteCustomizeRuleAsync(const Model::DeleteCustomizeRuleRequest& request, const DeleteCustomizeRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCustomizeRuleOutcomeCallable deleteCustomizeRuleCallable(const Model::DeleteCustomizeRuleRequest& request) const;
+			DeleteDataSourceOutcome deleteDataSource(const Model::DeleteDataSourceRequest &request)const;
+			void deleteDataSourceAsync(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDataSourceOutcomeCallable deleteDataSourceCallable(const Model::DeleteDataSourceRequest& request) const;
+			DeleteDataSourceLogOutcome deleteDataSourceLog(const Model::DeleteDataSourceLogRequest &request)const;
+			void deleteDataSourceLogAsync(const Model::DeleteDataSourceLogRequest& request, const DeleteDataSourceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDataSourceLogOutcomeCallable deleteDataSourceLogCallable(const Model::DeleteDataSourceLogRequest& request) const;
 			DeleteQuickQueryOutcome deleteQuickQuery(const Model::DeleteQuickQueryRequest &request)const;
 			void deleteQuickQueryAsync(const Model::DeleteQuickQueryRequest& request, const DeleteQuickQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteQuickQueryOutcomeCallable deleteQuickQueryCallable(const Model::DeleteQuickQueryRequest& request) const;
+			DeleteUserOutcome deleteUser(const Model::DeleteUserRequest &request)const;
+			void deleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteUserOutcomeCallable deleteUserCallable(const Model::DeleteUserRequest& request) const;
 			DeleteWhiteRuleListOutcome deleteWhiteRuleList(const Model::DeleteWhiteRuleListRequest &request)const;
 			void deleteWhiteRuleListAsync(const Model::DeleteWhiteRuleListRequest& request, const DeleteWhiteRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteWhiteRuleListOutcomeCallable deleteWhiteRuleListCallable(const Model::DeleteWhiteRuleListRequest& request) const;
 			DescribeAggregateFunctionOutcome describeAggregateFunction(const Model::DescribeAggregateFunctionRequest &request)const;
 			void describeAggregateFunctionAsync(const Model::DescribeAggregateFunctionRequest& request, const DescribeAggregateFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAggregateFunctionOutcomeCallable describeAggregateFunctionCallable(const Model::DescribeAggregateFunctionRequest& request) const;
+			DescribeAlertSceneOutcome describeAlertScene(const Model::DescribeAlertSceneRequest &request)const;
+			void describeAlertSceneAsync(const Model::DescribeAlertSceneRequest& request, const DescribeAlertSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAlertSceneOutcomeCallable describeAlertSceneCallable(const Model::DescribeAlertSceneRequest& request) const;
 			DescribeAlertSceneByEventOutcome describeAlertSceneByEvent(const Model::DescribeAlertSceneByEventRequest &request)const;
 			void describeAlertSceneByEventAsync(const Model::DescribeAlertSceneByEventRequest& request, const DescribeAlertSceneByEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAlertSceneByEventOutcomeCallable describeAlertSceneByEventCallable(const Model::DescribeAlertSceneByEventRequest& request) const;
@@ -412,12 +647,24 @@ namespace AlibabaCloud
 			DescribeAlertTypeOutcome describeAlertType(const Model::DescribeAlertTypeRequest &request)const;
 			void describeAlertTypeAsync(const Model::DescribeAlertTypeRequest& request, const DescribeAlertTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAlertTypeOutcomeCallable describeAlertTypeCallable(const Model::DescribeAlertTypeRequest& request) const;
+			DescribeAlertsOutcome describeAlerts(const Model::DescribeAlertsRequest &request)const;
+			void describeAlertsAsync(const Model::DescribeAlertsRequest& request, const DescribeAlertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAlertsOutcomeCallable describeAlertsCallable(const Model::DescribeAlertsRequest& request) const;
 			DescribeAlertsCountOutcome describeAlertsCount(const Model::DescribeAlertsCountRequest &request)const;
 			void describeAlertsCountAsync(const Model::DescribeAlertsCountRequest& request, const DescribeAlertsCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAlertsCountOutcomeCallable describeAlertsCountCallable(const Model::DescribeAlertsCountRequest& request) const;
+			DescribeAlertsWithEntityOutcome describeAlertsWithEntity(const Model::DescribeAlertsWithEntityRequest &request)const;
+			void describeAlertsWithEntityAsync(const Model::DescribeAlertsWithEntityRequest& request, const DescribeAlertsWithEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAlertsWithEntityOutcomeCallable describeAlertsWithEntityCallable(const Model::DescribeAlertsWithEntityRequest& request) const;
+			DescribeAlertsWithEventOutcome describeAlertsWithEvent(const Model::DescribeAlertsWithEventRequest &request)const;
+			void describeAlertsWithEventAsync(const Model::DescribeAlertsWithEventRequest& request, const DescribeAlertsWithEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAlertsWithEventOutcomeCallable describeAlertsWithEventCallable(const Model::DescribeAlertsWithEventRequest& request) const;
 			DescribeAttackTimeLineOutcome describeAttackTimeLine(const Model::DescribeAttackTimeLineRequest &request)const;
 			void describeAttackTimeLineAsync(const Model::DescribeAttackTimeLineRequest& request, const DescribeAttackTimeLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAttackTimeLineOutcomeCallable describeAttackTimeLineCallable(const Model::DescribeAttackTimeLineRequest& request) const;
+			DescribeAuthOutcome describeAuth(const Model::DescribeAuthRequest &request)const;
+			void describeAuthAsync(const Model::DescribeAuthRequest& request, const DescribeAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAuthOutcomeCallable describeAuthCallable(const Model::DescribeAuthRequest& request) const;
 			DescribeAutomateResponseConfigCounterOutcome describeAutomateResponseConfigCounter(const Model::DescribeAutomateResponseConfigCounterRequest &request)const;
 			void describeAutomateResponseConfigCounterAsync(const Model::DescribeAutomateResponseConfigCounterRequest& request, const DescribeAutomateResponseConfigCounterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAutomateResponseConfigCounterOutcomeCallable describeAutomateResponseConfigCounterCallable(const Model::DescribeAutomateResponseConfigCounterRequest& request) const;
@@ -439,6 +686,9 @@ namespace AlibabaCloud
 			DescribeCloudSiemEventsOutcome describeCloudSiemEvents(const Model::DescribeCloudSiemEventsRequest &request)const;
 			void describeCloudSiemEventsAsync(const Model::DescribeCloudSiemEventsRequest& request, const DescribeCloudSiemEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCloudSiemEventsOutcomeCallable describeCloudSiemEventsCallable(const Model::DescribeCloudSiemEventsRequest& request) const;
+			DescribeCsImportedProdStatusByUserOutcome describeCsImportedProdStatusByUser(const Model::DescribeCsImportedProdStatusByUserRequest &request)const;
+			void describeCsImportedProdStatusByUserAsync(const Model::DescribeCsImportedProdStatusByUserRequest& request, const DescribeCsImportedProdStatusByUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCsImportedProdStatusByUserOutcomeCallable describeCsImportedProdStatusByUserCallable(const Model::DescribeCsImportedProdStatusByUserRequest& request) const;
 			DescribeCustomizeRuleOutcome describeCustomizeRule(const Model::DescribeCustomizeRuleRequest &request)const;
 			void describeCustomizeRuleAsync(const Model::DescribeCustomizeRuleRequest& request, const DescribeCustomizeRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCustomizeRuleOutcomeCallable describeCustomizeRuleCallable(const Model::DescribeCustomizeRuleRequest& request) const;
@@ -451,6 +701,12 @@ namespace AlibabaCloud
 			DescribeCustomizeRuleTestHistogramOutcome describeCustomizeRuleTestHistogram(const Model::DescribeCustomizeRuleTestHistogramRequest &request)const;
 			void describeCustomizeRuleTestHistogramAsync(const Model::DescribeCustomizeRuleTestHistogramRequest& request, const DescribeCustomizeRuleTestHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCustomizeRuleTestHistogramOutcomeCallable describeCustomizeRuleTestHistogramCallable(const Model::DescribeCustomizeRuleTestHistogramRequest& request) const;
+			DescribeDataSourceInstanceOutcome describeDataSourceInstance(const Model::DescribeDataSourceInstanceRequest &request)const;
+			void describeDataSourceInstanceAsync(const Model::DescribeDataSourceInstanceRequest& request, const DescribeDataSourceInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDataSourceInstanceOutcomeCallable describeDataSourceInstanceCallable(const Model::DescribeDataSourceInstanceRequest& request) const;
+			DescribeDataSourceParametersOutcome describeDataSourceParameters(const Model::DescribeDataSourceParametersRequest &request)const;
+			void describeDataSourceParametersAsync(const Model::DescribeDataSourceParametersRequest& request, const DescribeDataSourceParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDataSourceParametersOutcomeCallable describeDataSourceParametersCallable(const Model::DescribeDataSourceParametersRequest& request) const;
 			DescribeDisposeAndPlaybookOutcome describeDisposeAndPlaybook(const Model::DescribeDisposeAndPlaybookRequest &request)const;
 			void describeDisposeAndPlaybookAsync(const Model::DescribeDisposeAndPlaybookRequest& request, const DescribeDisposeAndPlaybookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDisposeAndPlaybookOutcomeCallable describeDisposeAndPlaybookCallable(const Model::DescribeDisposeAndPlaybookRequest& request) const;
@@ -466,6 +722,9 @@ namespace AlibabaCloud
 			DescribeEventDisposeOutcome describeEventDispose(const Model::DescribeEventDisposeRequest &request)const;
 			void describeEventDisposeAsync(const Model::DescribeEventDisposeRequest& request, const DescribeEventDisposeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEventDisposeOutcomeCallable describeEventDisposeCallable(const Model::DescribeEventDisposeRequest& request) const;
+			DescribeImportedLogCountOutcome describeImportedLogCount(const Model::DescribeImportedLogCountRequest &request)const;
+			void describeImportedLogCountAsync(const Model::DescribeImportedLogCountRequest& request, const DescribeImportedLogCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeImportedLogCountOutcomeCallable describeImportedLogCountCallable(const Model::DescribeImportedLogCountRequest& request) const;
 			DescribeJobStatusOutcome describeJobStatus(const Model::DescribeJobStatusRequest &request)const;
 			void describeJobStatusAsync(const Model::DescribeJobStatusRequest& request, const DescribeJobStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeJobStatusOutcomeCallable describeJobStatusCallable(const Model::DescribeJobStatusRequest& request) const;
@@ -484,21 +743,39 @@ namespace AlibabaCloud
 			DescribeOperatorsOutcome describeOperators(const Model::DescribeOperatorsRequest &request)const;
 			void describeOperatorsAsync(const Model::DescribeOperatorsRequest& request, const DescribeOperatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeOperatorsOutcomeCallable describeOperatorsCallable(const Model::DescribeOperatorsRequest& request) const;
+			DescribeProdCountOutcome describeProdCount(const Model::DescribeProdCountRequest &request)const;
+			void describeProdCountAsync(const Model::DescribeProdCountRequest& request, const DescribeProdCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeProdCountOutcomeCallable describeProdCountCallable(const Model::DescribeProdCountRequest& request) const;
 			DescribeScopeUsersOutcome describeScopeUsers(const Model::DescribeScopeUsersRequest &request)const;
 			void describeScopeUsersAsync(const Model::DescribeScopeUsersRequest& request, const DescribeScopeUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScopeUsersOutcomeCallable describeScopeUsersCallable(const Model::DescribeScopeUsersRequest& request) const;
+			DescribeServiceStatusOutcome describeServiceStatus(const Model::DescribeServiceStatusRequest &request)const;
+			void describeServiceStatusAsync(const Model::DescribeServiceStatusRequest& request, const DescribeServiceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeServiceStatusOutcomeCallable describeServiceStatusCallable(const Model::DescribeServiceStatusRequest& request) const;
 			DescribeStorageOutcome describeStorage(const Model::DescribeStorageRequest &request)const;
 			void describeStorageAsync(const Model::DescribeStorageRequest& request, const DescribeStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeStorageOutcomeCallable describeStorageCallable(const Model::DescribeStorageRequest& request) const;
+			DescribeUserBuyStatusOutcome describeUserBuyStatus(const Model::DescribeUserBuyStatusRequest &request)const;
+			void describeUserBuyStatusAsync(const Model::DescribeUserBuyStatusRequest& request, const DescribeUserBuyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeUserBuyStatusOutcomeCallable describeUserBuyStatusCallable(const Model::DescribeUserBuyStatusRequest& request) const;
 			DescribeWafScopeOutcome describeWafScope(const Model::DescribeWafScopeRequest &request)const;
 			void describeWafScopeAsync(const Model::DescribeWafScopeRequest& request, const DescribeWafScopeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeWafScopeOutcomeCallable describeWafScopeCallable(const Model::DescribeWafScopeRequest& request) const;
+			DescribeWhiteRuleListOutcome describeWhiteRuleList(const Model::DescribeWhiteRuleListRequest &request)const;
+			void describeWhiteRuleListAsync(const Model::DescribeWhiteRuleListRequest& request, const DescribeWhiteRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeWhiteRuleListOutcomeCallable describeWhiteRuleListCallable(const Model::DescribeWhiteRuleListRequest& request) const;
 			DoQuickFieldOutcome doQuickField(const Model::DoQuickFieldRequest &request)const;
 			void doQuickFieldAsync(const Model::DoQuickFieldRequest& request, const DoQuickFieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DoQuickFieldOutcomeCallable doQuickFieldCallable(const Model::DoQuickFieldRequest& request) const;
 			DoSelfDelegateOutcome doSelfDelegate(const Model::DoSelfDelegateRequest &request)const;
 			void doSelfDelegateAsync(const Model::DoSelfDelegateRequest& request, const DoSelfDelegateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DoSelfDelegateOutcomeCallable doSelfDelegateCallable(const Model::DoSelfDelegateRequest& request) const;
+			EnableAccessForCloudSiemOutcome enableAccessForCloudSiem(const Model::EnableAccessForCloudSiemRequest &request)const;
+			void enableAccessForCloudSiemAsync(const Model::EnableAccessForCloudSiemRequest& request, const EnableAccessForCloudSiemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableAccessForCloudSiemOutcomeCallable enableAccessForCloudSiemCallable(const Model::EnableAccessForCloudSiemRequest& request) const;
+			EnableServiceForCloudSiemOutcome enableServiceForCloudSiem(const Model::EnableServiceForCloudSiemRequest &request)const;
+			void enableServiceForCloudSiemAsync(const Model::EnableServiceForCloudSiemRequest& request, const EnableServiceForCloudSiemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableServiceForCloudSiemOutcomeCallable enableServiceForCloudSiemCallable(const Model::EnableServiceForCloudSiemRequest& request) const;
 			GetCapacityOutcome getCapacity(const Model::GetCapacityRequest &request)const;
 			void getCapacityAsync(const Model::GetCapacityRequest& request, const GetCapacityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCapacityOutcomeCallable getCapacityCallable(const Model::GetCapacityRequest& request) const;
@@ -514,9 +791,24 @@ namespace AlibabaCloud
 			GetStorageOutcome getStorage(const Model::GetStorageRequest &request)const;
 			void getStorageAsync(const Model::GetStorageRequest& request, const GetStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetStorageOutcomeCallable getStorageCallable(const Model::GetStorageRequest& request) const;
+			ListAccountAccessIdOutcome listAccountAccessId(const Model::ListAccountAccessIdRequest &request)const;
+			void listAccountAccessIdAsync(const Model::ListAccountAccessIdRequest& request, const ListAccountAccessIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAccountAccessIdOutcomeCallable listAccountAccessIdCallable(const Model::ListAccountAccessIdRequest& request) const;
+			ListAccountsByLogOutcome listAccountsByLog(const Model::ListAccountsByLogRequest &request)const;
+			void listAccountsByLogAsync(const Model::ListAccountsByLogRequest& request, const ListAccountsByLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAccountsByLogOutcomeCallable listAccountsByLogCallable(const Model::ListAccountsByLogRequest& request) const;
+			ListAllProdsOutcome listAllProds(const Model::ListAllProdsRequest &request)const;
+			void listAllProdsAsync(const Model::ListAllProdsRequest& request, const ListAllProdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAllProdsOutcomeCallable listAllProdsCallable(const Model::ListAllProdsRequest& request) const;
 			ListAutomateResponseConfigsOutcome listAutomateResponseConfigs(const Model::ListAutomateResponseConfigsRequest &request)const;
 			void listAutomateResponseConfigsAsync(const Model::ListAutomateResponseConfigsRequest& request, const ListAutomateResponseConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAutomateResponseConfigsOutcomeCallable listAutomateResponseConfigsCallable(const Model::ListAutomateResponseConfigsRequest& request) const;
+			ListBindAccountOutcome listBindAccount(const Model::ListBindAccountRequest &request)const;
+			void listBindAccountAsync(const Model::ListBindAccountRequest& request, const ListBindAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListBindAccountOutcomeCallable listBindAccountCallable(const Model::ListBindAccountRequest& request) const;
+			ListBindDataSourcesOutcome listBindDataSources(const Model::ListBindDataSourcesRequest &request)const;
+			void listBindDataSourcesAsync(const Model::ListBindDataSourcesRequest& request, const ListBindDataSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListBindDataSourcesOutcomeCallable listBindDataSourcesCallable(const Model::ListBindDataSourcesRequest& request) const;
 			ListCloudSiemCustomizeRulesOutcome listCloudSiemCustomizeRules(const Model::ListCloudSiemCustomizeRulesRequest &request)const;
 			void listCloudSiemCustomizeRulesAsync(const Model::ListCloudSiemCustomizeRulesRequest& request, const ListCloudSiemCustomizeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCloudSiemCustomizeRulesOutcomeCallable listCloudSiemCustomizeRulesCallable(const Model::ListCloudSiemCustomizeRulesRequest& request) const;
@@ -526,18 +818,48 @@ namespace AlibabaCloud
 			ListCustomizeRuleTestResultOutcome listCustomizeRuleTestResult(const Model::ListCustomizeRuleTestResultRequest &request)const;
 			void listCustomizeRuleTestResultAsync(const Model::ListCustomizeRuleTestResultRequest& request, const ListCustomizeRuleTestResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCustomizeRuleTestResultOutcomeCallable listCustomizeRuleTestResultCallable(const Model::ListCustomizeRuleTestResultRequest& request) const;
+			ListDataSourceLogsOutcome listDataSourceLogs(const Model::ListDataSourceLogsRequest &request)const;
+			void listDataSourceLogsAsync(const Model::ListDataSourceLogsRequest& request, const ListDataSourceLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDataSourceLogsOutcomeCallable listDataSourceLogsCallable(const Model::ListDataSourceLogsRequest& request) const;
+			ListDataSourceTypesOutcome listDataSourceTypes(const Model::ListDataSourceTypesRequest &request)const;
+			void listDataSourceTypesAsync(const Model::ListDataSourceTypesRequest& request, const ListDataSourceTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDataSourceTypesOutcomeCallable listDataSourceTypesCallable(const Model::ListDataSourceTypesRequest& request) const;
 			ListDeliveryOutcome listDelivery(const Model::ListDeliveryRequest &request)const;
 			void listDeliveryAsync(const Model::ListDeliveryRequest& request, const ListDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDeliveryOutcomeCallable listDeliveryCallable(const Model::ListDeliveryRequest& request) const;
 			ListDisposeStrategyOutcome listDisposeStrategy(const Model::ListDisposeStrategyRequest &request)const;
 			void listDisposeStrategyAsync(const Model::ListDisposeStrategyRequest& request, const ListDisposeStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDisposeStrategyOutcomeCallable listDisposeStrategyCallable(const Model::ListDisposeStrategyRequest& request) const;
+			ListImportedLogsByProdOutcome listImportedLogsByProd(const Model::ListImportedLogsByProdRequest &request)const;
+			void listImportedLogsByProdAsync(const Model::ListImportedLogsByProdRequest& request, const ListImportedLogsByProdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListImportedLogsByProdOutcomeCallable listImportedLogsByProdCallable(const Model::ListImportedLogsByProdRequest& request) const;
 			ListOperationOutcome listOperation(const Model::ListOperationRequest &request)const;
 			void listOperationAsync(const Model::ListOperationRequest& request, const ListOperationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListOperationOutcomeCallable listOperationCallable(const Model::ListOperationRequest& request) const;
+			ListProjectLogStoresOutcome listProjectLogStores(const Model::ListProjectLogStoresRequest &request)const;
+			void listProjectLogStoresAsync(const Model::ListProjectLogStoresRequest& request, const ListProjectLogStoresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListProjectLogStoresOutcomeCallable listProjectLogStoresCallable(const Model::ListProjectLogStoresRequest& request) const;
 			ListQuickQueryOutcome listQuickQuery(const Model::ListQuickQueryRequest &request)const;
 			void listQuickQueryAsync(const Model::ListQuickQueryRequest& request, const ListQuickQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListQuickQueryOutcomeCallable listQuickQueryCallable(const Model::ListQuickQueryRequest& request) const;
+			ListRdUsersOutcome listRdUsers(const Model::ListRdUsersRequest &request)const;
+			void listRdUsersAsync(const Model::ListRdUsersRequest& request, const ListRdUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListRdUsersOutcomeCallable listRdUsersCallable(const Model::ListRdUsersRequest& request) const;
+			ListUserProdLogsOutcome listUserProdLogs(const Model::ListUserProdLogsRequest &request)const;
+			void listUserProdLogsAsync(const Model::ListUserProdLogsRequest& request, const ListUserProdLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUserProdLogsOutcomeCallable listUserProdLogsCallable(const Model::ListUserProdLogsRequest& request) const;
+			ListUsersByProdOutcome listUsersByProd(const Model::ListUsersByProdRequest &request)const;
+			void listUsersByProdAsync(const Model::ListUsersByProdRequest& request, const ListUsersByProdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUsersByProdOutcomeCallable listUsersByProdCallable(const Model::ListUsersByProdRequest& request) const;
+			ModifyBindAccountOutcome modifyBindAccount(const Model::ModifyBindAccountRequest &request)const;
+			void modifyBindAccountAsync(const Model::ModifyBindAccountRequest& request, const ModifyBindAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyBindAccountOutcomeCallable modifyBindAccountCallable(const Model::ModifyBindAccountRequest& request) const;
+			ModifyDataSourceOutcome modifyDataSource(const Model::ModifyDataSourceRequest &request)const;
+			void modifyDataSourceAsync(const Model::ModifyDataSourceRequest& request, const ModifyDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDataSourceOutcomeCallable modifyDataSourceCallable(const Model::ModifyDataSourceRequest& request) const;
+			ModifyDataSourceLogOutcome modifyDataSourceLog(const Model::ModifyDataSourceLogRequest &request)const;
+			void modifyDataSourceLogAsync(const Model::ModifyDataSourceLogRequest& request, const ModifyDataSourceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDataSourceLogOutcomeCallable modifyDataSourceLogCallable(const Model::ModifyDataSourceLogRequest& request) const;
 			OpenDeliveryOutcome openDelivery(const Model::OpenDeliveryRequest &request)const;
 			void openDeliveryAsync(const Model::OpenDeliveryRequest& request, const OpenDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OpenDeliveryOutcomeCallable openDeliveryCallable(const Model::OpenDeliveryRequest& request) const;
@@ -574,6 +896,12 @@ namespace AlibabaCloud
 			ShowQuickAnalysisOutcome showQuickAnalysis(const Model::ShowQuickAnalysisRequest &request)const;
 			void showQuickAnalysisAsync(const Model::ShowQuickAnalysisRequest& request, const ShowQuickAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ShowQuickAnalysisOutcomeCallable showQuickAnalysisCallable(const Model::ShowQuickAnalysisRequest& request) const;
+			SubmitImportLogTasksOutcome submitImportLogTasks(const Model::SubmitImportLogTasksRequest &request)const;
+			void submitImportLogTasksAsync(const Model::SubmitImportLogTasksRequest& request, const SubmitImportLogTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitImportLogTasksOutcomeCallable submitImportLogTasksCallable(const Model::SubmitImportLogTasksRequest& request) const;
+			SubmitJobsOutcome submitJobs(const Model::SubmitJobsRequest &request)const;
+			void submitJobsAsync(const Model::SubmitJobsRequest& request, const SubmitJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitJobsOutcomeCallable submitJobsCallable(const Model::SubmitJobsRequest& request) const;
 			UpdateAutomateResponseConfigStatusOutcome updateAutomateResponseConfigStatus(const Model::UpdateAutomateResponseConfigStatusRequest &request)const;
 			void updateAutomateResponseConfigStatusAsync(const Model::UpdateAutomateResponseConfigStatusRequest& request, const UpdateAutomateResponseConfigStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAutomateResponseConfigStatusOutcomeCallable updateAutomateResponseConfigStatusCallable(const Model::UpdateAutomateResponseConfigStatusRequest& request) const;

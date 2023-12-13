@@ -46,53 +46,11 @@ void GetCapacityResult::parse(const std::string &payload)
 		data_.preservedCapacity = std::stol(dataNode["PreservedCapacity"].asString());
 	if(!dataNode["ExistLogStore"].isNull())
 		data_.existLogStore = dataNode["ExistLogStore"].asString() == "true";
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["DyCode"].isNull())
-		dyCode_ = value["DyCode"].asString();
-	if(!value["DyMessage"].isNull())
-		dyMessage_ = value["DyMessage"].asString();
 
-}
-
-std::string GetCapacityResult::getDyCode()const
-{
-	return dyCode_;
-}
-
-std::string GetCapacityResult::getMessage()const
-{
-	return message_;
 }
 
 GetCapacityResult::Data GetCapacityResult::getData()const
 {
 	return data_;
-}
-
-int GetCapacityResult::getCode()const
-{
-	return code_;
-}
-
-std::string GetCapacityResult::getDyMessage()const
-{
-	return dyMessage_;
-}
-
-bool GetCapacityResult::getSuccess()const
-{
-	return success_;
-}
-
-std::string GetCapacityResult::getErrCode()const
-{
-	return errCode_;
 }
 

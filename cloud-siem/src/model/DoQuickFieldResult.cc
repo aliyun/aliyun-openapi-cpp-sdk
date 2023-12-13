@@ -64,53 +64,11 @@ void DoQuickFieldResult::parse(const std::string &payload)
 		auto allLogs = dataNode["Logs"]["Log"];
 		for (auto value : allLogs)
 			data_.logs.push_back(value.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["DyCode"].isNull())
-		dyCode_ = value["DyCode"].asString();
-	if(!value["DyMessage"].isNull())
-		dyMessage_ = value["DyMessage"].asString();
 
-}
-
-std::string DoQuickFieldResult::getDyCode()const
-{
-	return dyCode_;
-}
-
-std::string DoQuickFieldResult::getMessage()const
-{
-	return message_;
 }
 
 DoQuickFieldResult::Data DoQuickFieldResult::getData()const
 {
 	return data_;
-}
-
-int DoQuickFieldResult::getCode()const
-{
-	return code_;
-}
-
-std::string DoQuickFieldResult::getDyMessage()const
-{
-	return dyMessage_;
-}
-
-bool DoQuickFieldResult::getSuccess()const
-{
-	return success_;
-}
-
-std::string DoQuickFieldResult::getErrCode()const
-{
-	return errCode_;
 }
 

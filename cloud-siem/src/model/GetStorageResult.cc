@@ -48,53 +48,11 @@ void GetStorageResult::parse(const std::string &payload)
 		data_.displayRegion = dataNode["DisplayRegion"].asString() == "true";
 	if(!dataNode["CanOperate"].isNull())
 		data_.canOperate = dataNode["CanOperate"].asString() == "true";
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["DyCode"].isNull())
-		dyCode_ = value["DyCode"].asString();
-	if(!value["DyMessage"].isNull())
-		dyMessage_ = value["DyMessage"].asString();
 
-}
-
-std::string GetStorageResult::getDyCode()const
-{
-	return dyCode_;
-}
-
-std::string GetStorageResult::getMessage()const
-{
-	return message_;
 }
 
 GetStorageResult::Data GetStorageResult::getData()const
 {
 	return data_;
-}
-
-int GetStorageResult::getCode()const
-{
-	return code_;
-}
-
-std::string GetStorageResult::getDyMessage()const
-{
-	return dyMessage_;
-}
-
-bool GetStorageResult::getSuccess()const
-{
-	return success_;
-}
-
-std::string GetStorageResult::getErrCode()const
-{
-	return errCode_;
 }
 

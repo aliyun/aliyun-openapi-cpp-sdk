@@ -58,53 +58,11 @@ void GetHistogramsResult::parse(const std::string &payload)
 			histogramObject.completedOrNot = dataNodeHistogramsHistogram["CompletedOrNot"].asString() == "true";
 		data_.histograms.push_back(histogramObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["DyCode"].isNull())
-		dyCode_ = value["DyCode"].asString();
-	if(!value["DyMessage"].isNull())
-		dyMessage_ = value["DyMessage"].asString();
 
-}
-
-std::string GetHistogramsResult::getDyCode()const
-{
-	return dyCode_;
-}
-
-std::string GetHistogramsResult::getMessage()const
-{
-	return message_;
 }
 
 GetHistogramsResult::Data GetHistogramsResult::getData()const
 {
 	return data_;
-}
-
-int GetHistogramsResult::getCode()const
-{
-	return code_;
-}
-
-std::string GetHistogramsResult::getDyMessage()const
-{
-	return dyMessage_;
-}
-
-bool GetHistogramsResult::getSuccess()const
-{
-	return success_;
-}
-
-std::string GetHistogramsResult::getErrCode()const
-{
-	return errCode_;
 }
 

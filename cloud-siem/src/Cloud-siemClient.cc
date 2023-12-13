@@ -51,6 +51,150 @@ Cloud_siemClient::Cloud_siemClient(const std::string & accessKeyId, const std::s
 Cloud_siemClient::~Cloud_siemClient()
 {}
 
+Cloud_siemClient::AddDataSourceOutcome Cloud_siemClient::addDataSource(const AddDataSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddDataSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddDataSourceOutcome(AddDataSourceResult(outcome.result()));
+	else
+		return AddDataSourceOutcome(outcome.error());
+}
+
+void Cloud_siemClient::addDataSourceAsync(const AddDataSourceRequest& request, const AddDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addDataSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::AddDataSourceOutcomeCallable Cloud_siemClient::addDataSourceCallable(const AddDataSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddDataSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->addDataSource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::AddDataSourceLogOutcome Cloud_siemClient::addDataSourceLog(const AddDataSourceLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddDataSourceLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddDataSourceLogOutcome(AddDataSourceLogResult(outcome.result()));
+	else
+		return AddDataSourceLogOutcome(outcome.error());
+}
+
+void Cloud_siemClient::addDataSourceLogAsync(const AddDataSourceLogRequest& request, const AddDataSourceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addDataSourceLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::AddDataSourceLogOutcomeCallable Cloud_siemClient::addDataSourceLogCallable(const AddDataSourceLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddDataSourceLogOutcome()>>(
+			[this, request]()
+			{
+			return this->addDataSourceLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::AddUserOutcome Cloud_siemClient::addUser(const AddUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddUserOutcome(AddUserResult(outcome.result()));
+	else
+		return AddUserOutcome(outcome.error());
+}
+
+void Cloud_siemClient::addUserAsync(const AddUserRequest& request, const AddUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::AddUserOutcomeCallable Cloud_siemClient::addUserCallable(const AddUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddUserOutcome()>>(
+			[this, request]()
+			{
+			return this->addUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::AddUserSourceLogConfigOutcome Cloud_siemClient::addUserSourceLogConfig(const AddUserSourceLogConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddUserSourceLogConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddUserSourceLogConfigOutcome(AddUserSourceLogConfigResult(outcome.result()));
+	else
+		return AddUserSourceLogConfigOutcome(outcome.error());
+}
+
+void Cloud_siemClient::addUserSourceLogConfigAsync(const AddUserSourceLogConfigRequest& request, const AddUserSourceLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addUserSourceLogConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::AddUserSourceLogConfigOutcomeCallable Cloud_siemClient::addUserSourceLogConfigCallable(const AddUserSourceLogConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddUserSourceLogConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->addUserSourceLogConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cloud_siemClient::BatchJobCheckOutcome Cloud_siemClient::batchJobCheck(const BatchJobCheckRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -117,6 +261,42 @@ Cloud_siemClient::BatchJobSubmitOutcomeCallable Cloud_siemClient::batchJobSubmit
 			[this, request]()
 			{
 			return this->batchJobSubmit(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::BindAccountOutcome Cloud_siemClient::bindAccount(const BindAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindAccountOutcome(BindAccountResult(outcome.result()));
+	else
+		return BindAccountOutcome(outcome.error());
+}
+
+void Cloud_siemClient::bindAccountAsync(const BindAccountRequest& request, const BindAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::BindAccountOutcomeCallable Cloud_siemClient::bindAccountCallable(const BindAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->bindAccount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -195,6 +375,42 @@ Cloud_siemClient::DeleteAutomateResponseConfigOutcomeCallable Cloud_siemClient::
 	return task->get_future();
 }
 
+Cloud_siemClient::DeleteBindAccountOutcome Cloud_siemClient::deleteBindAccount(const DeleteBindAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteBindAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteBindAccountOutcome(DeleteBindAccountResult(outcome.result()));
+	else
+		return DeleteBindAccountOutcome(outcome.error());
+}
+
+void Cloud_siemClient::deleteBindAccountAsync(const DeleteBindAccountRequest& request, const DeleteBindAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteBindAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::DeleteBindAccountOutcomeCallable Cloud_siemClient::deleteBindAccountCallable(const DeleteBindAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteBindAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteBindAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cloud_siemClient::DeleteCustomizeRuleOutcome Cloud_siemClient::deleteCustomizeRule(const DeleteCustomizeRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -231,6 +447,78 @@ Cloud_siemClient::DeleteCustomizeRuleOutcomeCallable Cloud_siemClient::deleteCus
 	return task->get_future();
 }
 
+Cloud_siemClient::DeleteDataSourceOutcome Cloud_siemClient::deleteDataSource(const DeleteDataSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDataSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDataSourceOutcome(DeleteDataSourceResult(outcome.result()));
+	else
+		return DeleteDataSourceOutcome(outcome.error());
+}
+
+void Cloud_siemClient::deleteDataSourceAsync(const DeleteDataSourceRequest& request, const DeleteDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDataSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::DeleteDataSourceOutcomeCallable Cloud_siemClient::deleteDataSourceCallable(const DeleteDataSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDataSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDataSource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::DeleteDataSourceLogOutcome Cloud_siemClient::deleteDataSourceLog(const DeleteDataSourceLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDataSourceLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDataSourceLogOutcome(DeleteDataSourceLogResult(outcome.result()));
+	else
+		return DeleteDataSourceLogOutcome(outcome.error());
+}
+
+void Cloud_siemClient::deleteDataSourceLogAsync(const DeleteDataSourceLogRequest& request, const DeleteDataSourceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDataSourceLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::DeleteDataSourceLogOutcomeCallable Cloud_siemClient::deleteDataSourceLogCallable(const DeleteDataSourceLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDataSourceLogOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDataSourceLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cloud_siemClient::DeleteQuickQueryOutcome Cloud_siemClient::deleteQuickQuery(const DeleteQuickQueryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +549,42 @@ Cloud_siemClient::DeleteQuickQueryOutcomeCallable Cloud_siemClient::deleteQuickQ
 			[this, request]()
 			{
 			return this->deleteQuickQuery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::DeleteUserOutcome Cloud_siemClient::deleteUser(const DeleteUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteUserOutcome(DeleteUserResult(outcome.result()));
+	else
+		return DeleteUserOutcome(outcome.error());
+}
+
+void Cloud_siemClient::deleteUserAsync(const DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::DeleteUserOutcomeCallable Cloud_siemClient::deleteUserCallable(const DeleteUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteUserOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteUser(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -333,6 +657,42 @@ Cloud_siemClient::DescribeAggregateFunctionOutcomeCallable Cloud_siemClient::des
 			[this, request]()
 			{
 			return this->describeAggregateFunction(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::DescribeAlertSceneOutcome Cloud_siemClient::describeAlertScene(const DescribeAlertSceneRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAlertSceneOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAlertSceneOutcome(DescribeAlertSceneResult(outcome.result()));
+	else
+		return DescribeAlertSceneOutcome(outcome.error());
+}
+
+void Cloud_siemClient::describeAlertSceneAsync(const DescribeAlertSceneRequest& request, const DescribeAlertSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAlertScene(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::DescribeAlertSceneOutcomeCallable Cloud_siemClient::describeAlertSceneCallable(const DescribeAlertSceneRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAlertSceneOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAlertScene(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -483,6 +843,42 @@ Cloud_siemClient::DescribeAlertTypeOutcomeCallable Cloud_siemClient::describeAle
 	return task->get_future();
 }
 
+Cloud_siemClient::DescribeAlertsOutcome Cloud_siemClient::describeAlerts(const DescribeAlertsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAlertsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAlertsOutcome(DescribeAlertsResult(outcome.result()));
+	else
+		return DescribeAlertsOutcome(outcome.error());
+}
+
+void Cloud_siemClient::describeAlertsAsync(const DescribeAlertsRequest& request, const DescribeAlertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAlerts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::DescribeAlertsOutcomeCallable Cloud_siemClient::describeAlertsCallable(const DescribeAlertsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAlertsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAlerts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cloud_siemClient::DescribeAlertsCountOutcome Cloud_siemClient::describeAlertsCount(const DescribeAlertsCountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,6 +915,78 @@ Cloud_siemClient::DescribeAlertsCountOutcomeCallable Cloud_siemClient::describeA
 	return task->get_future();
 }
 
+Cloud_siemClient::DescribeAlertsWithEntityOutcome Cloud_siemClient::describeAlertsWithEntity(const DescribeAlertsWithEntityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAlertsWithEntityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAlertsWithEntityOutcome(DescribeAlertsWithEntityResult(outcome.result()));
+	else
+		return DescribeAlertsWithEntityOutcome(outcome.error());
+}
+
+void Cloud_siemClient::describeAlertsWithEntityAsync(const DescribeAlertsWithEntityRequest& request, const DescribeAlertsWithEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAlertsWithEntity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::DescribeAlertsWithEntityOutcomeCallable Cloud_siemClient::describeAlertsWithEntityCallable(const DescribeAlertsWithEntityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAlertsWithEntityOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAlertsWithEntity(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::DescribeAlertsWithEventOutcome Cloud_siemClient::describeAlertsWithEvent(const DescribeAlertsWithEventRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAlertsWithEventOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAlertsWithEventOutcome(DescribeAlertsWithEventResult(outcome.result()));
+	else
+		return DescribeAlertsWithEventOutcome(outcome.error());
+}
+
+void Cloud_siemClient::describeAlertsWithEventAsync(const DescribeAlertsWithEventRequest& request, const DescribeAlertsWithEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAlertsWithEvent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::DescribeAlertsWithEventOutcomeCallable Cloud_siemClient::describeAlertsWithEventCallable(const DescribeAlertsWithEventRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAlertsWithEventOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAlertsWithEvent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cloud_siemClient::DescribeAttackTimeLineOutcome Cloud_siemClient::describeAttackTimeLine(const DescribeAttackTimeLineRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +1017,42 @@ Cloud_siemClient::DescribeAttackTimeLineOutcomeCallable Cloud_siemClient::descri
 			[this, request]()
 			{
 			return this->describeAttackTimeLine(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::DescribeAuthOutcome Cloud_siemClient::describeAuth(const DescribeAuthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAuthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAuthOutcome(DescribeAuthResult(outcome.result()));
+	else
+		return DescribeAuthOutcome(outcome.error());
+}
+
+void Cloud_siemClient::describeAuthAsync(const DescribeAuthRequest& request, const DescribeAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAuth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::DescribeAuthOutcomeCallable Cloud_siemClient::describeAuthCallable(const DescribeAuthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAuthOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAuth(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -807,6 +1311,42 @@ Cloud_siemClient::DescribeCloudSiemEventsOutcomeCallable Cloud_siemClient::descr
 	return task->get_future();
 }
 
+Cloud_siemClient::DescribeCsImportedProdStatusByUserOutcome Cloud_siemClient::describeCsImportedProdStatusByUser(const DescribeCsImportedProdStatusByUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCsImportedProdStatusByUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCsImportedProdStatusByUserOutcome(DescribeCsImportedProdStatusByUserResult(outcome.result()));
+	else
+		return DescribeCsImportedProdStatusByUserOutcome(outcome.error());
+}
+
+void Cloud_siemClient::describeCsImportedProdStatusByUserAsync(const DescribeCsImportedProdStatusByUserRequest& request, const DescribeCsImportedProdStatusByUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCsImportedProdStatusByUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::DescribeCsImportedProdStatusByUserOutcomeCallable Cloud_siemClient::describeCsImportedProdStatusByUserCallable(const DescribeCsImportedProdStatusByUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCsImportedProdStatusByUserOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCsImportedProdStatusByUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cloud_siemClient::DescribeCustomizeRuleOutcome Cloud_siemClient::describeCustomizeRule(const DescribeCustomizeRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -945,6 +1485,78 @@ Cloud_siemClient::DescribeCustomizeRuleTestHistogramOutcomeCallable Cloud_siemCl
 			[this, request]()
 			{
 			return this->describeCustomizeRuleTestHistogram(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::DescribeDataSourceInstanceOutcome Cloud_siemClient::describeDataSourceInstance(const DescribeDataSourceInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDataSourceInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDataSourceInstanceOutcome(DescribeDataSourceInstanceResult(outcome.result()));
+	else
+		return DescribeDataSourceInstanceOutcome(outcome.error());
+}
+
+void Cloud_siemClient::describeDataSourceInstanceAsync(const DescribeDataSourceInstanceRequest& request, const DescribeDataSourceInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDataSourceInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::DescribeDataSourceInstanceOutcomeCallable Cloud_siemClient::describeDataSourceInstanceCallable(const DescribeDataSourceInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDataSourceInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDataSourceInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::DescribeDataSourceParametersOutcome Cloud_siemClient::describeDataSourceParameters(const DescribeDataSourceParametersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDataSourceParametersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDataSourceParametersOutcome(DescribeDataSourceParametersResult(outcome.result()));
+	else
+		return DescribeDataSourceParametersOutcome(outcome.error());
+}
+
+void Cloud_siemClient::describeDataSourceParametersAsync(const DescribeDataSourceParametersRequest& request, const DescribeDataSourceParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDataSourceParameters(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::DescribeDataSourceParametersOutcomeCallable Cloud_siemClient::describeDataSourceParametersCallable(const DescribeDataSourceParametersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDataSourceParametersOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDataSourceParameters(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1125,6 +1737,42 @@ Cloud_siemClient::DescribeEventDisposeOutcomeCallable Cloud_siemClient::describe
 			[this, request]()
 			{
 			return this->describeEventDispose(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::DescribeImportedLogCountOutcome Cloud_siemClient::describeImportedLogCount(const DescribeImportedLogCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeImportedLogCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeImportedLogCountOutcome(DescribeImportedLogCountResult(outcome.result()));
+	else
+		return DescribeImportedLogCountOutcome(outcome.error());
+}
+
+void Cloud_siemClient::describeImportedLogCountAsync(const DescribeImportedLogCountRequest& request, const DescribeImportedLogCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeImportedLogCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::DescribeImportedLogCountOutcomeCallable Cloud_siemClient::describeImportedLogCountCallable(const DescribeImportedLogCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeImportedLogCountOutcome()>>(
+			[this, request]()
+			{
+			return this->describeImportedLogCount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1347,6 +1995,42 @@ Cloud_siemClient::DescribeOperatorsOutcomeCallable Cloud_siemClient::describeOpe
 	return task->get_future();
 }
 
+Cloud_siemClient::DescribeProdCountOutcome Cloud_siemClient::describeProdCount(const DescribeProdCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeProdCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeProdCountOutcome(DescribeProdCountResult(outcome.result()));
+	else
+		return DescribeProdCountOutcome(outcome.error());
+}
+
+void Cloud_siemClient::describeProdCountAsync(const DescribeProdCountRequest& request, const DescribeProdCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeProdCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::DescribeProdCountOutcomeCallable Cloud_siemClient::describeProdCountCallable(const DescribeProdCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeProdCountOutcome()>>(
+			[this, request]()
+			{
+			return this->describeProdCount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cloud_siemClient::DescribeScopeUsersOutcome Cloud_siemClient::describeScopeUsers(const DescribeScopeUsersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1377,6 +2061,42 @@ Cloud_siemClient::DescribeScopeUsersOutcomeCallable Cloud_siemClient::describeSc
 			[this, request]()
 			{
 			return this->describeScopeUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::DescribeServiceStatusOutcome Cloud_siemClient::describeServiceStatus(const DescribeServiceStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeServiceStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeServiceStatusOutcome(DescribeServiceStatusResult(outcome.result()));
+	else
+		return DescribeServiceStatusOutcome(outcome.error());
+}
+
+void Cloud_siemClient::describeServiceStatusAsync(const DescribeServiceStatusRequest& request, const DescribeServiceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeServiceStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::DescribeServiceStatusOutcomeCallable Cloud_siemClient::describeServiceStatusCallable(const DescribeServiceStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeServiceStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeServiceStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1419,6 +2139,42 @@ Cloud_siemClient::DescribeStorageOutcomeCallable Cloud_siemClient::describeStora
 	return task->get_future();
 }
 
+Cloud_siemClient::DescribeUserBuyStatusOutcome Cloud_siemClient::describeUserBuyStatus(const DescribeUserBuyStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUserBuyStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUserBuyStatusOutcome(DescribeUserBuyStatusResult(outcome.result()));
+	else
+		return DescribeUserBuyStatusOutcome(outcome.error());
+}
+
+void Cloud_siemClient::describeUserBuyStatusAsync(const DescribeUserBuyStatusRequest& request, const DescribeUserBuyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUserBuyStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::DescribeUserBuyStatusOutcomeCallable Cloud_siemClient::describeUserBuyStatusCallable(const DescribeUserBuyStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUserBuyStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUserBuyStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cloud_siemClient::DescribeWafScopeOutcome Cloud_siemClient::describeWafScope(const DescribeWafScopeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1449,6 +2205,42 @@ Cloud_siemClient::DescribeWafScopeOutcomeCallable Cloud_siemClient::describeWafS
 			[this, request]()
 			{
 			return this->describeWafScope(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::DescribeWhiteRuleListOutcome Cloud_siemClient::describeWhiteRuleList(const DescribeWhiteRuleListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeWhiteRuleListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeWhiteRuleListOutcome(DescribeWhiteRuleListResult(outcome.result()));
+	else
+		return DescribeWhiteRuleListOutcome(outcome.error());
+}
+
+void Cloud_siemClient::describeWhiteRuleListAsync(const DescribeWhiteRuleListRequest& request, const DescribeWhiteRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeWhiteRuleList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::DescribeWhiteRuleListOutcomeCallable Cloud_siemClient::describeWhiteRuleListCallable(const DescribeWhiteRuleListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeWhiteRuleListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeWhiteRuleList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1521,6 +2313,78 @@ Cloud_siemClient::DoSelfDelegateOutcomeCallable Cloud_siemClient::doSelfDelegate
 			[this, request]()
 			{
 			return this->doSelfDelegate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::EnableAccessForCloudSiemOutcome Cloud_siemClient::enableAccessForCloudSiem(const EnableAccessForCloudSiemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableAccessForCloudSiemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableAccessForCloudSiemOutcome(EnableAccessForCloudSiemResult(outcome.result()));
+	else
+		return EnableAccessForCloudSiemOutcome(outcome.error());
+}
+
+void Cloud_siemClient::enableAccessForCloudSiemAsync(const EnableAccessForCloudSiemRequest& request, const EnableAccessForCloudSiemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableAccessForCloudSiem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::EnableAccessForCloudSiemOutcomeCallable Cloud_siemClient::enableAccessForCloudSiemCallable(const EnableAccessForCloudSiemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableAccessForCloudSiemOutcome()>>(
+			[this, request]()
+			{
+			return this->enableAccessForCloudSiem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::EnableServiceForCloudSiemOutcome Cloud_siemClient::enableServiceForCloudSiem(const EnableServiceForCloudSiemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableServiceForCloudSiemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableServiceForCloudSiemOutcome(EnableServiceForCloudSiemResult(outcome.result()));
+	else
+		return EnableServiceForCloudSiemOutcome(outcome.error());
+}
+
+void Cloud_siemClient::enableServiceForCloudSiemAsync(const EnableServiceForCloudSiemRequest& request, const EnableServiceForCloudSiemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableServiceForCloudSiem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::EnableServiceForCloudSiemOutcomeCallable Cloud_siemClient::enableServiceForCloudSiemCallable(const EnableServiceForCloudSiemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableServiceForCloudSiemOutcome()>>(
+			[this, request]()
+			{
+			return this->enableServiceForCloudSiem(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1707,6 +2571,114 @@ Cloud_siemClient::GetStorageOutcomeCallable Cloud_siemClient::getStorageCallable
 	return task->get_future();
 }
 
+Cloud_siemClient::ListAccountAccessIdOutcome Cloud_siemClient::listAccountAccessId(const ListAccountAccessIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAccountAccessIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAccountAccessIdOutcome(ListAccountAccessIdResult(outcome.result()));
+	else
+		return ListAccountAccessIdOutcome(outcome.error());
+}
+
+void Cloud_siemClient::listAccountAccessIdAsync(const ListAccountAccessIdRequest& request, const ListAccountAccessIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAccountAccessId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::ListAccountAccessIdOutcomeCallable Cloud_siemClient::listAccountAccessIdCallable(const ListAccountAccessIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAccountAccessIdOutcome()>>(
+			[this, request]()
+			{
+			return this->listAccountAccessId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::ListAccountsByLogOutcome Cloud_siemClient::listAccountsByLog(const ListAccountsByLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAccountsByLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAccountsByLogOutcome(ListAccountsByLogResult(outcome.result()));
+	else
+		return ListAccountsByLogOutcome(outcome.error());
+}
+
+void Cloud_siemClient::listAccountsByLogAsync(const ListAccountsByLogRequest& request, const ListAccountsByLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAccountsByLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::ListAccountsByLogOutcomeCallable Cloud_siemClient::listAccountsByLogCallable(const ListAccountsByLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAccountsByLogOutcome()>>(
+			[this, request]()
+			{
+			return this->listAccountsByLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::ListAllProdsOutcome Cloud_siemClient::listAllProds(const ListAllProdsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAllProdsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAllProdsOutcome(ListAllProdsResult(outcome.result()));
+	else
+		return ListAllProdsOutcome(outcome.error());
+}
+
+void Cloud_siemClient::listAllProdsAsync(const ListAllProdsRequest& request, const ListAllProdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAllProds(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::ListAllProdsOutcomeCallable Cloud_siemClient::listAllProdsCallable(const ListAllProdsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAllProdsOutcome()>>(
+			[this, request]()
+			{
+			return this->listAllProds(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cloud_siemClient::ListAutomateResponseConfigsOutcome Cloud_siemClient::listAutomateResponseConfigs(const ListAutomateResponseConfigsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1737,6 +2709,78 @@ Cloud_siemClient::ListAutomateResponseConfigsOutcomeCallable Cloud_siemClient::l
 			[this, request]()
 			{
 			return this->listAutomateResponseConfigs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::ListBindAccountOutcome Cloud_siemClient::listBindAccount(const ListBindAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListBindAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListBindAccountOutcome(ListBindAccountResult(outcome.result()));
+	else
+		return ListBindAccountOutcome(outcome.error());
+}
+
+void Cloud_siemClient::listBindAccountAsync(const ListBindAccountRequest& request, const ListBindAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listBindAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::ListBindAccountOutcomeCallable Cloud_siemClient::listBindAccountCallable(const ListBindAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListBindAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->listBindAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::ListBindDataSourcesOutcome Cloud_siemClient::listBindDataSources(const ListBindDataSourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListBindDataSourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListBindDataSourcesOutcome(ListBindDataSourcesResult(outcome.result()));
+	else
+		return ListBindDataSourcesOutcome(outcome.error());
+}
+
+void Cloud_siemClient::listBindDataSourcesAsync(const ListBindDataSourcesRequest& request, const ListBindDataSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listBindDataSources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::ListBindDataSourcesOutcomeCallable Cloud_siemClient::listBindDataSourcesCallable(const ListBindDataSourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListBindDataSourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listBindDataSources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1851,6 +2895,78 @@ Cloud_siemClient::ListCustomizeRuleTestResultOutcomeCallable Cloud_siemClient::l
 	return task->get_future();
 }
 
+Cloud_siemClient::ListDataSourceLogsOutcome Cloud_siemClient::listDataSourceLogs(const ListDataSourceLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDataSourceLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDataSourceLogsOutcome(ListDataSourceLogsResult(outcome.result()));
+	else
+		return ListDataSourceLogsOutcome(outcome.error());
+}
+
+void Cloud_siemClient::listDataSourceLogsAsync(const ListDataSourceLogsRequest& request, const ListDataSourceLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDataSourceLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::ListDataSourceLogsOutcomeCallable Cloud_siemClient::listDataSourceLogsCallable(const ListDataSourceLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDataSourceLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->listDataSourceLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::ListDataSourceTypesOutcome Cloud_siemClient::listDataSourceTypes(const ListDataSourceTypesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDataSourceTypesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDataSourceTypesOutcome(ListDataSourceTypesResult(outcome.result()));
+	else
+		return ListDataSourceTypesOutcome(outcome.error());
+}
+
+void Cloud_siemClient::listDataSourceTypesAsync(const ListDataSourceTypesRequest& request, const ListDataSourceTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDataSourceTypes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::ListDataSourceTypesOutcomeCallable Cloud_siemClient::listDataSourceTypesCallable(const ListDataSourceTypesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDataSourceTypesOutcome()>>(
+			[this, request]()
+			{
+			return this->listDataSourceTypes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cloud_siemClient::ListDeliveryOutcome Cloud_siemClient::listDelivery(const ListDeliveryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1923,6 +3039,42 @@ Cloud_siemClient::ListDisposeStrategyOutcomeCallable Cloud_siemClient::listDispo
 	return task->get_future();
 }
 
+Cloud_siemClient::ListImportedLogsByProdOutcome Cloud_siemClient::listImportedLogsByProd(const ListImportedLogsByProdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListImportedLogsByProdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListImportedLogsByProdOutcome(ListImportedLogsByProdResult(outcome.result()));
+	else
+		return ListImportedLogsByProdOutcome(outcome.error());
+}
+
+void Cloud_siemClient::listImportedLogsByProdAsync(const ListImportedLogsByProdRequest& request, const ListImportedLogsByProdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listImportedLogsByProd(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::ListImportedLogsByProdOutcomeCallable Cloud_siemClient::listImportedLogsByProdCallable(const ListImportedLogsByProdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListImportedLogsByProdOutcome()>>(
+			[this, request]()
+			{
+			return this->listImportedLogsByProd(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cloud_siemClient::ListOperationOutcome Cloud_siemClient::listOperation(const ListOperationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1959,6 +3111,42 @@ Cloud_siemClient::ListOperationOutcomeCallable Cloud_siemClient::listOperationCa
 	return task->get_future();
 }
 
+Cloud_siemClient::ListProjectLogStoresOutcome Cloud_siemClient::listProjectLogStores(const ListProjectLogStoresRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListProjectLogStoresOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListProjectLogStoresOutcome(ListProjectLogStoresResult(outcome.result()));
+	else
+		return ListProjectLogStoresOutcome(outcome.error());
+}
+
+void Cloud_siemClient::listProjectLogStoresAsync(const ListProjectLogStoresRequest& request, const ListProjectLogStoresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listProjectLogStores(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::ListProjectLogStoresOutcomeCallable Cloud_siemClient::listProjectLogStoresCallable(const ListProjectLogStoresRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListProjectLogStoresOutcome()>>(
+			[this, request]()
+			{
+			return this->listProjectLogStores(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cloud_siemClient::ListQuickQueryOutcome Cloud_siemClient::listQuickQuery(const ListQuickQueryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1989,6 +3177,222 @@ Cloud_siemClient::ListQuickQueryOutcomeCallable Cloud_siemClient::listQuickQuery
 			[this, request]()
 			{
 			return this->listQuickQuery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::ListRdUsersOutcome Cloud_siemClient::listRdUsers(const ListRdUsersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRdUsersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRdUsersOutcome(ListRdUsersResult(outcome.result()));
+	else
+		return ListRdUsersOutcome(outcome.error());
+}
+
+void Cloud_siemClient::listRdUsersAsync(const ListRdUsersRequest& request, const ListRdUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRdUsers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::ListRdUsersOutcomeCallable Cloud_siemClient::listRdUsersCallable(const ListRdUsersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRdUsersOutcome()>>(
+			[this, request]()
+			{
+			return this->listRdUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::ListUserProdLogsOutcome Cloud_siemClient::listUserProdLogs(const ListUserProdLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListUserProdLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListUserProdLogsOutcome(ListUserProdLogsResult(outcome.result()));
+	else
+		return ListUserProdLogsOutcome(outcome.error());
+}
+
+void Cloud_siemClient::listUserProdLogsAsync(const ListUserProdLogsRequest& request, const ListUserProdLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listUserProdLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::ListUserProdLogsOutcomeCallable Cloud_siemClient::listUserProdLogsCallable(const ListUserProdLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListUserProdLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->listUserProdLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::ListUsersByProdOutcome Cloud_siemClient::listUsersByProd(const ListUsersByProdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListUsersByProdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListUsersByProdOutcome(ListUsersByProdResult(outcome.result()));
+	else
+		return ListUsersByProdOutcome(outcome.error());
+}
+
+void Cloud_siemClient::listUsersByProdAsync(const ListUsersByProdRequest& request, const ListUsersByProdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listUsersByProd(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::ListUsersByProdOutcomeCallable Cloud_siemClient::listUsersByProdCallable(const ListUsersByProdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListUsersByProdOutcome()>>(
+			[this, request]()
+			{
+			return this->listUsersByProd(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::ModifyBindAccountOutcome Cloud_siemClient::modifyBindAccount(const ModifyBindAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyBindAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyBindAccountOutcome(ModifyBindAccountResult(outcome.result()));
+	else
+		return ModifyBindAccountOutcome(outcome.error());
+}
+
+void Cloud_siemClient::modifyBindAccountAsync(const ModifyBindAccountRequest& request, const ModifyBindAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyBindAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::ModifyBindAccountOutcomeCallable Cloud_siemClient::modifyBindAccountCallable(const ModifyBindAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyBindAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyBindAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::ModifyDataSourceOutcome Cloud_siemClient::modifyDataSource(const ModifyDataSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDataSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDataSourceOutcome(ModifyDataSourceResult(outcome.result()));
+	else
+		return ModifyDataSourceOutcome(outcome.error());
+}
+
+void Cloud_siemClient::modifyDataSourceAsync(const ModifyDataSourceRequest& request, const ModifyDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDataSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::ModifyDataSourceOutcomeCallable Cloud_siemClient::modifyDataSourceCallable(const ModifyDataSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDataSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDataSource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::ModifyDataSourceLogOutcome Cloud_siemClient::modifyDataSourceLog(const ModifyDataSourceLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDataSourceLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDataSourceLogOutcome(ModifyDataSourceLogResult(outcome.result()));
+	else
+		return ModifyDataSourceLogOutcome(outcome.error());
+}
+
+void Cloud_siemClient::modifyDataSourceLogAsync(const ModifyDataSourceLogRequest& request, const ModifyDataSourceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDataSourceLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::ModifyDataSourceLogOutcomeCallable Cloud_siemClient::modifyDataSourceLogCallable(const ModifyDataSourceLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDataSourceLogOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDataSourceLog(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2421,6 +3825,78 @@ Cloud_siemClient::ShowQuickAnalysisOutcomeCallable Cloud_siemClient::showQuickAn
 			[this, request]()
 			{
 			return this->showQuickAnalysis(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::SubmitImportLogTasksOutcome Cloud_siemClient::submitImportLogTasks(const SubmitImportLogTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitImportLogTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitImportLogTasksOutcome(SubmitImportLogTasksResult(outcome.result()));
+	else
+		return SubmitImportLogTasksOutcome(outcome.error());
+}
+
+void Cloud_siemClient::submitImportLogTasksAsync(const SubmitImportLogTasksRequest& request, const SubmitImportLogTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitImportLogTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::SubmitImportLogTasksOutcomeCallable Cloud_siemClient::submitImportLogTasksCallable(const SubmitImportLogTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitImportLogTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->submitImportLogTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cloud_siemClient::SubmitJobsOutcome Cloud_siemClient::submitJobs(const SubmitJobsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitJobsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitJobsOutcome(SubmitJobsResult(outcome.result()));
+	else
+		return SubmitJobsOutcome(outcome.error());
+}
+
+void Cloud_siemClient::submitJobsAsync(const SubmitJobsRequest& request, const SubmitJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitJobs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::SubmitJobsOutcomeCallable Cloud_siemClient::submitJobsCallable(const SubmitJobsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitJobsOutcome()>>(
+			[this, request]()
+			{
+			return this->submitJobs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

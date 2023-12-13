@@ -41,53 +41,11 @@ void SetStorageResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString() == "true";
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["DyCode"].isNull())
-		dyCode_ = value["DyCode"].asString();
-	if(!value["DyMessage"].isNull())
-		dyMessage_ = value["DyMessage"].asString();
 
-}
-
-std::string SetStorageResult::getDyCode()const
-{
-	return dyCode_;
-}
-
-std::string SetStorageResult::getMessage()const
-{
-	return message_;
 }
 
 bool SetStorageResult::getData()const
 {
 	return data_;
-}
-
-int SetStorageResult::getCode()const
-{
-	return code_;
-}
-
-std::string SetStorageResult::getDyMessage()const
-{
-	return dyMessage_;
-}
-
-bool SetStorageResult::getSuccess()const
-{
-	return success_;
-}
-
-std::string SetStorageResult::getErrCode()const
-{
-	return errCode_;
 }
 

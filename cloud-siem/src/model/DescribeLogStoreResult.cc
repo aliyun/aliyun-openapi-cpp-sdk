@@ -54,53 +54,11 @@ void DescribeLogStoreResult::parse(const std::string &payload)
 		data_.maxSplitShard = std::stoi(dataNode["MaxSplitShard"].asString());
 	if(!dataNode["AppendMeta"].isNull())
 		data_.appendMeta = dataNode["AppendMeta"].asString() == "true";
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["DyCode"].isNull())
-		dyCode_ = value["DyCode"].asString();
-	if(!value["DyMessage"].isNull())
-		dyMessage_ = value["DyMessage"].asString();
 
-}
-
-std::string DescribeLogStoreResult::getDyCode()const
-{
-	return dyCode_;
-}
-
-std::string DescribeLogStoreResult::getMessage()const
-{
-	return message_;
 }
 
 DescribeLogStoreResult::Data DescribeLogStoreResult::getData()const
 {
 	return data_;
-}
-
-int DescribeLogStoreResult::getCode()const
-{
-	return code_;
-}
-
-std::string DescribeLogStoreResult::getDyMessage()const
-{
-	return dyMessage_;
-}
-
-bool DescribeLogStoreResult::getSuccess()const
-{
-	return success_;
-}
-
-std::string DescribeLogStoreResult::getErrCode()const
-{
-	return errCode_;
 }
 

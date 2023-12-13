@@ -41,24 +41,12 @@ namespace AlibabaCloud
 				ShowQuickAnalysisResult();
 				explicit ShowQuickAnalysisResult(const std::string &payload);
 				~ShowQuickAnalysisResult();
-				std::string getDyCode()const;
-				std::string getMessage()const;
 				Data getData()const;
-				int getCode()const;
-				std::string getDyMessage()const;
-				bool getSuccess()const;
-				std::string getErrCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string dyCode_;
-				std::string message_;
 				Data data_;
-				int code_;
-				std::string dyMessage_;
-				bool success_;
-				std::string errCode_;
 
 			};
 		}

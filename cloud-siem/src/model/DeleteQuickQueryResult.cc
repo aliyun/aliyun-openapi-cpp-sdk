@@ -41,53 +41,11 @@ void DeleteQuickQueryResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString() == "true";
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["DyCode"].isNull())
-		dyCode_ = value["DyCode"].asString();
-	if(!value["DyMessage"].isNull())
-		dyMessage_ = value["DyMessage"].asString();
 
-}
-
-std::string DeleteQuickQueryResult::getDyCode()const
-{
-	return dyCode_;
-}
-
-std::string DeleteQuickQueryResult::getMessage()const
-{
-	return message_;
 }
 
 bool DeleteQuickQueryResult::getData()const
 {
 	return data_;
-}
-
-int DeleteQuickQueryResult::getCode()const
-{
-	return code_;
-}
-
-std::string DeleteQuickQueryResult::getDyMessage()const
-{
-	return dyMessage_;
-}
-
-bool DeleteQuickQueryResult::getSuccess()const
-{
-	return success_;
-}
-
-std::string DeleteQuickQueryResult::getErrCode()const
-{
-	return errCode_;
 }
 

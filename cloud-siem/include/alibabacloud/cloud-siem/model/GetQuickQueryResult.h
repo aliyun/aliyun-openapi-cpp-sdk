@@ -37,24 +37,12 @@ namespace AlibabaCloud
 				GetQuickQueryResult();
 				explicit GetQuickQueryResult(const std::string &payload);
 				~GetQuickQueryResult();
-				std::string getDyCode()const;
-				std::string getMessage()const;
 				std::string getData()const;
-				int getCode()const;
-				std::string getDyMessage()const;
-				bool getSuccess()const;
-				std::string getErrCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string dyCode_;
-				std::string message_;
 				std::string data_;
-				int code_;
-				std::string dyMessage_;
-				bool success_;
-				std::string errCode_;
 
 			};
 		}

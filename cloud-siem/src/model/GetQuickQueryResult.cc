@@ -41,53 +41,11 @@ void GetQuickQueryResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["DyCode"].isNull())
-		dyCode_ = value["DyCode"].asString();
-	if(!value["DyMessage"].isNull())
-		dyMessage_ = value["DyMessage"].asString();
 
-}
-
-std::string GetQuickQueryResult::getDyCode()const
-{
-	return dyCode_;
-}
-
-std::string GetQuickQueryResult::getMessage()const
-{
-	return message_;
 }
 
 std::string GetQuickQueryResult::getData()const
 {
 	return data_;
-}
-
-int GetQuickQueryResult::getCode()const
-{
-	return code_;
-}
-
-std::string GetQuickQueryResult::getDyMessage()const
-{
-	return dyMessage_;
-}
-
-bool GetQuickQueryResult::getSuccess()const
-{
-	return success_;
-}
-
-std::string GetQuickQueryResult::getErrCode()const
-{
-	return errCode_;
 }
 

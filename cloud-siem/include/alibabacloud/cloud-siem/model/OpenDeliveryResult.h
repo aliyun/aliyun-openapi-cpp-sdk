@@ -37,24 +37,12 @@ namespace AlibabaCloud
 				OpenDeliveryResult();
 				explicit OpenDeliveryResult(const std::string &payload);
 				~OpenDeliveryResult();
-				std::string getDyCode()const;
-				std::string getMessage()const;
 				bool getData()const;
-				int getCode()const;
-				std::string getDyMessage()const;
-				bool getSuccess()const;
-				std::string getErrCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string dyCode_;
-				std::string message_;
 				bool data_;
-				int code_;
-				std::string dyMessage_;
-				bool success_;
-				std::string errCode_;
 
 			};
 		}

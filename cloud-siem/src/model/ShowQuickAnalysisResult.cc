@@ -43,53 +43,11 @@ void ShowQuickAnalysisResult::parse(const std::string &payload)
 		auto allIndexList = dataNode["IndexList"]["IndexList"];
 		for (auto value : allIndexList)
 			data_.indexList.push_back(value.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["DyCode"].isNull())
-		dyCode_ = value["DyCode"].asString();
-	if(!value["DyMessage"].isNull())
-		dyMessage_ = value["DyMessage"].asString();
 
-}
-
-std::string ShowQuickAnalysisResult::getDyCode()const
-{
-	return dyCode_;
-}
-
-std::string ShowQuickAnalysisResult::getMessage()const
-{
-	return message_;
 }
 
 ShowQuickAnalysisResult::Data ShowQuickAnalysisResult::getData()const
 {
 	return data_;
-}
-
-int ShowQuickAnalysisResult::getCode()const
-{
-	return code_;
-}
-
-std::string ShowQuickAnalysisResult::getDyMessage()const
-{
-	return dyMessage_;
-}
-
-bool ShowQuickAnalysisResult::getSuccess()const
-{
-	return success_;
-}
-
-std::string ShowQuickAnalysisResult::getErrCode()const
-{
-	return errCode_;
 }
 
