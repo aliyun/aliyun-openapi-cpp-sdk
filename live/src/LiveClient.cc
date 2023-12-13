@@ -5271,6 +5271,42 @@ LiveClient::DescribeLiveDomainDetailOutcomeCallable LiveClient::describeLiveDoma
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveDomainEdgeLogOutcome LiveClient::describeLiveDomainEdgeLog(const DescribeLiveDomainEdgeLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveDomainEdgeLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveDomainEdgeLogOutcome(DescribeLiveDomainEdgeLogResult(outcome.result()));
+	else
+		return DescribeLiveDomainEdgeLogOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveDomainEdgeLogAsync(const DescribeLiveDomainEdgeLogRequest& request, const DescribeLiveDomainEdgeLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveDomainEdgeLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDomainEdgeLogOutcomeCallable LiveClient::describeLiveDomainEdgeLogCallable(const DescribeLiveDomainEdgeLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveDomainEdgeLogOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveDomainEdgeLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveDomainFrameRateAndBitRateDataOutcome LiveClient::describeLiveDomainFrameRateAndBitRateData(const DescribeLiveDomainFrameRateAndBitRateDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -9771,6 +9807,78 @@ LiveClient::ListEdgeTranscodeTemplateOutcomeCallable LiveClient::listEdgeTransco
 	return task->get_future();
 }
 
+LiveClient::ListEventSubOutcome LiveClient::listEventSub(const ListEventSubRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListEventSubOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListEventSubOutcome(ListEventSubResult(outcome.result()));
+	else
+		return ListEventSubOutcome(outcome.error());
+}
+
+void LiveClient::listEventSubAsync(const ListEventSubRequest& request, const ListEventSubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listEventSub(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ListEventSubOutcomeCallable LiveClient::listEventSubCallable(const ListEventSubRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListEventSubOutcome()>>(
+			[this, request]()
+			{
+			return this->listEventSub(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::ListEventSubEventOutcome LiveClient::listEventSubEvent(const ListEventSubEventRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListEventSubEventOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListEventSubEventOutcome(ListEventSubEventResult(outcome.result()));
+	else
+		return ListEventSubEventOutcome(outcome.error());
+}
+
+void LiveClient::listEventSubEventAsync(const ListEventSubEventRequest& request, const ListEventSubEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listEventSubEvent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ListEventSubEventOutcomeCallable LiveClient::listEventSubEventCallable(const ListEventSubEventRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListEventSubEventOutcome()>>(
+			[this, request]()
+			{
+			return this->listEventSubEvent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::ListLiveDelayConfigOutcome LiveClient::listLiveDelayConfig(const ListLiveDelayConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -12861,6 +12969,42 @@ LiveClient::UpdateEdgeTranscodeJobOutcomeCallable LiveClient::updateEdgeTranscod
 			[this, request]()
 			{
 			return this->updateEdgeTranscodeJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::UpdateEventSubOutcome LiveClient::updateEventSub(const UpdateEventSubRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateEventSubOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateEventSubOutcome(UpdateEventSubResult(outcome.result()));
+	else
+		return UpdateEventSubOutcome(outcome.error());
+}
+
+void LiveClient::updateEventSubAsync(const UpdateEventSubRequest& request, const UpdateEventSubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateEventSub(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateEventSubOutcomeCallable LiveClient::updateEventSubCallable(const UpdateEventSubRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateEventSubOutcome()>>(
+			[this, request]()
+			{
+			return this->updateEventSub(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

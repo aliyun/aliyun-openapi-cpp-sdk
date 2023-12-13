@@ -311,6 +311,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveDomainConfigsResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainDetailRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainDetailResult.h
+	include/alibabacloud/live/model/DescribeLiveDomainEdgeLogRequest.h
+	include/alibabacloud/live/model/DescribeLiveDomainEdgeLogResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainFrameRateAndBitRateDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainFrameRateAndBitRateDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainLimitRequest.h
@@ -561,6 +563,10 @@ set(live_public_header_model
 	include/alibabacloud/live/model/ListEdgeTranscodeJobResult.h
 	include/alibabacloud/live/model/ListEdgeTranscodeTemplateRequest.h
 	include/alibabacloud/live/model/ListEdgeTranscodeTemplateResult.h
+	include/alibabacloud/live/model/ListEventSubRequest.h
+	include/alibabacloud/live/model/ListEventSubResult.h
+	include/alibabacloud/live/model/ListEventSubEventRequest.h
+	include/alibabacloud/live/model/ListEventSubEventResult.h
 	include/alibabacloud/live/model/ListLiveDelayConfigRequest.h
 	include/alibabacloud/live/model/ListLiveDelayConfigResult.h
 	include/alibabacloud/live/model/ListLiveMessageAppsRequest.h
@@ -733,6 +739,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/UpdateCasterSceneConfigResult.h
 	include/alibabacloud/live/model/UpdateEdgeTranscodeJobRequest.h
 	include/alibabacloud/live/model/UpdateEdgeTranscodeJobResult.h
+	include/alibabacloud/live/model/UpdateEventSubRequest.h
+	include/alibabacloud/live/model/UpdateEventSubResult.h
 	include/alibabacloud/live/model/UpdateLiveAppRecordConfigRequest.h
 	include/alibabacloud/live/model/UpdateLiveAppRecordConfigResult.h
 	include/alibabacloud/live/model/UpdateLiveAppSnapshotConfigRequest.h
@@ -1070,6 +1078,8 @@ set(live_src
 	src/model/DescribeLiveDomainConfigsResult.cc
 	src/model/DescribeLiveDomainDetailRequest.cc
 	src/model/DescribeLiveDomainDetailResult.cc
+	src/model/DescribeLiveDomainEdgeLogRequest.cc
+	src/model/DescribeLiveDomainEdgeLogResult.cc
 	src/model/DescribeLiveDomainFrameRateAndBitRateDataRequest.cc
 	src/model/DescribeLiveDomainFrameRateAndBitRateDataResult.cc
 	src/model/DescribeLiveDomainLimitRequest.cc
@@ -1320,6 +1330,10 @@ set(live_src
 	src/model/ListEdgeTranscodeJobResult.cc
 	src/model/ListEdgeTranscodeTemplateRequest.cc
 	src/model/ListEdgeTranscodeTemplateResult.cc
+	src/model/ListEventSubRequest.cc
+	src/model/ListEventSubResult.cc
+	src/model/ListEventSubEventRequest.cc
+	src/model/ListEventSubEventResult.cc
 	src/model/ListLiveDelayConfigRequest.cc
 	src/model/ListLiveDelayConfigResult.cc
 	src/model/ListLiveMessageAppsRequest.cc
@@ -1492,6 +1506,8 @@ set(live_src
 	src/model/UpdateCasterSceneConfigResult.cc
 	src/model/UpdateEdgeTranscodeJobRequest.cc
 	src/model/UpdateEdgeTranscodeJobResult.cc
+	src/model/UpdateEventSubRequest.cc
+	src/model/UpdateEventSubResult.cc
 	src/model/UpdateLiveAppRecordConfigRequest.cc
 	src/model/UpdateLiveAppRecordConfigResult.cc
 	src/model/UpdateLiveAppSnapshotConfigRequest.cc

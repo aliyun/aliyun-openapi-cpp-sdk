@@ -312,6 +312,8 @@
 #include "model/DescribeLiveDomainConfigsResult.h"
 #include "model/DescribeLiveDomainDetailRequest.h"
 #include "model/DescribeLiveDomainDetailResult.h"
+#include "model/DescribeLiveDomainEdgeLogRequest.h"
+#include "model/DescribeLiveDomainEdgeLogResult.h"
 #include "model/DescribeLiveDomainFrameRateAndBitRateDataRequest.h"
 #include "model/DescribeLiveDomainFrameRateAndBitRateDataResult.h"
 #include "model/DescribeLiveDomainLimitRequest.h"
@@ -562,6 +564,10 @@
 #include "model/ListEdgeTranscodeJobResult.h"
 #include "model/ListEdgeTranscodeTemplateRequest.h"
 #include "model/ListEdgeTranscodeTemplateResult.h"
+#include "model/ListEventSubRequest.h"
+#include "model/ListEventSubResult.h"
+#include "model/ListEventSubEventRequest.h"
+#include "model/ListEventSubEventResult.h"
 #include "model/ListLiveDelayConfigRequest.h"
 #include "model/ListLiveDelayConfigResult.h"
 #include "model/ListLiveMessageAppsRequest.h"
@@ -734,6 +740,8 @@
 #include "model/UpdateCasterSceneConfigResult.h"
 #include "model/UpdateEdgeTranscodeJobRequest.h"
 #include "model/UpdateEdgeTranscodeJobResult.h"
+#include "model/UpdateEventSubRequest.h"
+#include "model/UpdateEventSubResult.h"
 #include "model/UpdateLiveAppRecordConfigRequest.h"
 #include "model/UpdateLiveAppRecordConfigResult.h"
 #include "model/UpdateLiveAppSnapshotConfigRequest.h"
@@ -1222,6 +1230,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveDomainDetailResult> DescribeLiveDomainDetailOutcome;
 			typedef std::future<DescribeLiveDomainDetailOutcome> DescribeLiveDomainDetailOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainDetailRequest&, const DescribeLiveDomainDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveDomainEdgeLogResult> DescribeLiveDomainEdgeLogOutcome;
+			typedef std::future<DescribeLiveDomainEdgeLogOutcome> DescribeLiveDomainEdgeLogOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainEdgeLogRequest&, const DescribeLiveDomainEdgeLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainEdgeLogAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveDomainFrameRateAndBitRateDataResult> DescribeLiveDomainFrameRateAndBitRateDataOutcome;
 			typedef std::future<DescribeLiveDomainFrameRateAndBitRateDataOutcome> DescribeLiveDomainFrameRateAndBitRateDataOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainFrameRateAndBitRateDataRequest&, const DescribeLiveDomainFrameRateAndBitRateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainFrameRateAndBitRateDataAsyncHandler;
@@ -1597,6 +1608,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListEdgeTranscodeTemplateResult> ListEdgeTranscodeTemplateOutcome;
 			typedef std::future<ListEdgeTranscodeTemplateOutcome> ListEdgeTranscodeTemplateOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ListEdgeTranscodeTemplateRequest&, const ListEdgeTranscodeTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEdgeTranscodeTemplateAsyncHandler;
+			typedef Outcome<Error, Model::ListEventSubResult> ListEventSubOutcome;
+			typedef std::future<ListEventSubOutcome> ListEventSubOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ListEventSubRequest&, const ListEventSubOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEventSubAsyncHandler;
+			typedef Outcome<Error, Model::ListEventSubEventResult> ListEventSubEventOutcome;
+			typedef std::future<ListEventSubEventOutcome> ListEventSubEventOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ListEventSubEventRequest&, const ListEventSubEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEventSubEventAsyncHandler;
 			typedef Outcome<Error, Model::ListLiveDelayConfigResult> ListLiveDelayConfigOutcome;
 			typedef std::future<ListLiveDelayConfigOutcome> ListLiveDelayConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ListLiveDelayConfigRequest&, const ListLiveDelayConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListLiveDelayConfigAsyncHandler;
@@ -1855,6 +1872,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateEdgeTranscodeJobResult> UpdateEdgeTranscodeJobOutcome;
 			typedef std::future<UpdateEdgeTranscodeJobOutcome> UpdateEdgeTranscodeJobOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UpdateEdgeTranscodeJobRequest&, const UpdateEdgeTranscodeJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEdgeTranscodeJobAsyncHandler;
+			typedef Outcome<Error, Model::UpdateEventSubResult> UpdateEventSubOutcome;
+			typedef std::future<UpdateEventSubOutcome> UpdateEventSubOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateEventSubRequest&, const UpdateEventSubOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEventSubAsyncHandler;
 			typedef Outcome<Error, Model::UpdateLiveAppRecordConfigResult> UpdateLiveAppRecordConfigOutcome;
 			typedef std::future<UpdateLiveAppRecordConfigOutcome> UpdateLiveAppRecordConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UpdateLiveAppRecordConfigRequest&, const UpdateLiveAppRecordConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveAppRecordConfigAsyncHandler;
@@ -2361,6 +2381,9 @@ namespace AlibabaCloud
 			DescribeLiveDomainDetailOutcome describeLiveDomainDetail(const Model::DescribeLiveDomainDetailRequest &request)const;
 			void describeLiveDomainDetailAsync(const Model::DescribeLiveDomainDetailRequest& request, const DescribeLiveDomainDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveDomainDetailOutcomeCallable describeLiveDomainDetailCallable(const Model::DescribeLiveDomainDetailRequest& request) const;
+			DescribeLiveDomainEdgeLogOutcome describeLiveDomainEdgeLog(const Model::DescribeLiveDomainEdgeLogRequest &request)const;
+			void describeLiveDomainEdgeLogAsync(const Model::DescribeLiveDomainEdgeLogRequest& request, const DescribeLiveDomainEdgeLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveDomainEdgeLogOutcomeCallable describeLiveDomainEdgeLogCallable(const Model::DescribeLiveDomainEdgeLogRequest& request) const;
 			DescribeLiveDomainFrameRateAndBitRateDataOutcome describeLiveDomainFrameRateAndBitRateData(const Model::DescribeLiveDomainFrameRateAndBitRateDataRequest &request)const;
 			void describeLiveDomainFrameRateAndBitRateDataAsync(const Model::DescribeLiveDomainFrameRateAndBitRateDataRequest& request, const DescribeLiveDomainFrameRateAndBitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveDomainFrameRateAndBitRateDataOutcomeCallable describeLiveDomainFrameRateAndBitRateDataCallable(const Model::DescribeLiveDomainFrameRateAndBitRateDataRequest& request) const;
@@ -2736,6 +2759,12 @@ namespace AlibabaCloud
 			ListEdgeTranscodeTemplateOutcome listEdgeTranscodeTemplate(const Model::ListEdgeTranscodeTemplateRequest &request)const;
 			void listEdgeTranscodeTemplateAsync(const Model::ListEdgeTranscodeTemplateRequest& request, const ListEdgeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListEdgeTranscodeTemplateOutcomeCallable listEdgeTranscodeTemplateCallable(const Model::ListEdgeTranscodeTemplateRequest& request) const;
+			ListEventSubOutcome listEventSub(const Model::ListEventSubRequest &request)const;
+			void listEventSubAsync(const Model::ListEventSubRequest& request, const ListEventSubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListEventSubOutcomeCallable listEventSubCallable(const Model::ListEventSubRequest& request) const;
+			ListEventSubEventOutcome listEventSubEvent(const Model::ListEventSubEventRequest &request)const;
+			void listEventSubEventAsync(const Model::ListEventSubEventRequest& request, const ListEventSubEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListEventSubEventOutcomeCallable listEventSubEventCallable(const Model::ListEventSubEventRequest& request) const;
 			ListLiveDelayConfigOutcome listLiveDelayConfig(const Model::ListLiveDelayConfigRequest &request)const;
 			void listLiveDelayConfigAsync(const Model::ListLiveDelayConfigRequest& request, const ListLiveDelayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListLiveDelayConfigOutcomeCallable listLiveDelayConfigCallable(const Model::ListLiveDelayConfigRequest& request) const;
@@ -2994,6 +3023,9 @@ namespace AlibabaCloud
 			UpdateEdgeTranscodeJobOutcome updateEdgeTranscodeJob(const Model::UpdateEdgeTranscodeJobRequest &request)const;
 			void updateEdgeTranscodeJobAsync(const Model::UpdateEdgeTranscodeJobRequest& request, const UpdateEdgeTranscodeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateEdgeTranscodeJobOutcomeCallable updateEdgeTranscodeJobCallable(const Model::UpdateEdgeTranscodeJobRequest& request) const;
+			UpdateEventSubOutcome updateEventSub(const Model::UpdateEventSubRequest &request)const;
+			void updateEventSubAsync(const Model::UpdateEventSubRequest& request, const UpdateEventSubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateEventSubOutcomeCallable updateEventSubCallable(const Model::UpdateEventSubRequest& request) const;
 			UpdateLiveAppRecordConfigOutcome updateLiveAppRecordConfig(const Model::UpdateLiveAppRecordConfigRequest &request)const;
 			void updateLiveAppRecordConfigAsync(const Model::UpdateLiveAppRecordConfigRequest& request, const UpdateLiveAppRecordConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLiveAppRecordConfigOutcomeCallable updateLiveAppRecordConfigCallable(const Model::UpdateLiveAppRecordConfigRequest& request) const;

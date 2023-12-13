@@ -30,32 +30,41 @@ class ALIBABACLOUD_LIVE_EXPORT SendLiveMessageGroupRequest : public RpcServiceRe
 public:
 	SendLiveMessageGroupRequest();
 	~SendLiveMessageGroupRequest();
-	std::string getGroupId() const;
-	void setGroupId(const std::string &groupId);
 	std::string getSenderMetaInfo() const;
 	void setSenderMetaInfo(const std::string &senderMetaInfo);
+	std::string getBody() const;
+	void setBody(const std::string &body);
+	long getStaticsIncrease() const;
+	void setStaticsIncrease(long staticsIncrease);
+	long getMsgType() const;
+	void setMsgType(long msgType);
+	bool getNoStorage() const;
+	void setNoStorage(bool noStorage);
+	std::string getGroupId() const;
+	void setGroupId(const std::string &groupId);
+	long getWeight() const;
+	void setWeight(long weight);
 	std::string getDataCenter() const;
 	void setDataCenter(const std::string &dataCenter);
 	std::string getMsgTid() const;
 	void setMsgTid(const std::string &msgTid);
-	std::string getBody() const;
-	void setBody(const std::string &body);
 	std::string getSenderId() const;
 	void setSenderId(const std::string &senderId);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
-	long getMsgType() const;
-	void setMsgType(long msgType);
 
 private:
-	std::string groupId_;
 	std::string senderMetaInfo_;
+	std::string body_;
+	long staticsIncrease_;
+	long msgType_;
+	bool noStorage_;
+	std::string groupId_;
+	long weight_;
 	std::string dataCenter_;
 	std::string msgTid_;
-	std::string body_;
 	std::string senderId_;
 	std::string appId_;
-	long msgType_;
 };
 } // namespace Model
 } // namespace Live

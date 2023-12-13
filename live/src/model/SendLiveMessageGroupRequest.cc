@@ -25,6 +25,51 @@ SendLiveMessageGroupRequest::SendLiveMessageGroupRequest()
 
 SendLiveMessageGroupRequest::~SendLiveMessageGroupRequest() {}
 
+std::string SendLiveMessageGroupRequest::getSenderMetaInfo() const {
+  return senderMetaInfo_;
+}
+
+void SendLiveMessageGroupRequest::setSenderMetaInfo(const std::string &senderMetaInfo) {
+  senderMetaInfo_ = senderMetaInfo;
+  setParameter(std::string("SenderMetaInfo"), senderMetaInfo);
+}
+
+std::string SendLiveMessageGroupRequest::getBody() const {
+  return body_;
+}
+
+void SendLiveMessageGroupRequest::setBody(const std::string &body) {
+  body_ = body;
+  setParameter(std::string("Body"), body);
+}
+
+long SendLiveMessageGroupRequest::getStaticsIncrease() const {
+  return staticsIncrease_;
+}
+
+void SendLiveMessageGroupRequest::setStaticsIncrease(long staticsIncrease) {
+  staticsIncrease_ = staticsIncrease;
+  setParameter(std::string("StaticsIncrease"), std::to_string(staticsIncrease));
+}
+
+long SendLiveMessageGroupRequest::getMsgType() const {
+  return msgType_;
+}
+
+void SendLiveMessageGroupRequest::setMsgType(long msgType) {
+  msgType_ = msgType;
+  setParameter(std::string("MsgType"), std::to_string(msgType));
+}
+
+bool SendLiveMessageGroupRequest::getNoStorage() const {
+  return noStorage_;
+}
+
+void SendLiveMessageGroupRequest::setNoStorage(bool noStorage) {
+  noStorage_ = noStorage;
+  setParameter(std::string("NoStorage"), noStorage ? "true" : "false");
+}
+
 std::string SendLiveMessageGroupRequest::getGroupId() const {
   return groupId_;
 }
@@ -34,13 +79,13 @@ void SendLiveMessageGroupRequest::setGroupId(const std::string &groupId) {
   setParameter(std::string("GroupId"), groupId);
 }
 
-std::string SendLiveMessageGroupRequest::getSenderMetaInfo() const {
-  return senderMetaInfo_;
+long SendLiveMessageGroupRequest::getWeight() const {
+  return weight_;
 }
 
-void SendLiveMessageGroupRequest::setSenderMetaInfo(const std::string &senderMetaInfo) {
-  senderMetaInfo_ = senderMetaInfo;
-  setParameter(std::string("SenderMetaInfo"), senderMetaInfo);
+void SendLiveMessageGroupRequest::setWeight(long weight) {
+  weight_ = weight;
+  setParameter(std::string("Weight"), std::to_string(weight));
 }
 
 std::string SendLiveMessageGroupRequest::getDataCenter() const {
@@ -61,15 +106,6 @@ void SendLiveMessageGroupRequest::setMsgTid(const std::string &msgTid) {
   setParameter(std::string("MsgTid"), msgTid);
 }
 
-std::string SendLiveMessageGroupRequest::getBody() const {
-  return body_;
-}
-
-void SendLiveMessageGroupRequest::setBody(const std::string &body) {
-  body_ = body;
-  setParameter(std::string("Body"), body);
-}
-
 std::string SendLiveMessageGroupRequest::getSenderId() const {
   return senderId_;
 }
@@ -86,14 +122,5 @@ std::string SendLiveMessageGroupRequest::getAppId() const {
 void SendLiveMessageGroupRequest::setAppId(const std::string &appId) {
   appId_ = appId;
   setParameter(std::string("AppId"), appId);
-}
-
-long SendLiveMessageGroupRequest::getMsgType() const {
-  return msgType_;
-}
-
-void SendLiveMessageGroupRequest::setMsgType(long msgType) {
-  msgType_ = msgType;
-  setParameter(std::string("MsgType"), std::to_string(msgType));
 }
 
