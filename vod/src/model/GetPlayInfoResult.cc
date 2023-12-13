@@ -120,6 +120,8 @@ void GetPlayInfoResult::parse(const std::string &payload)
 		videoBase_.mediaType = videoBaseNode["MediaType"].asString();
 	if(!videoBaseNode["DanMuURL"].isNull())
 		videoBase_.danMuURL = videoBaseNode["DanMuURL"].asString();
+	if(!videoBaseNode["StorageClass"].isNull())
+		videoBase_.storageClass = videoBaseNode["StorageClass"].asString();
 	auto allThumbnailListNode = videoBaseNode["ThumbnailList"]["Thumbnail"];
 	for (auto videoBaseNodeThumbnailListThumbnail : allThumbnailListNode)
 	{

@@ -61,3 +61,12 @@ void UpdateMediaStorageClassRequest::setStorageClass(const std::string &storageC
   setParameter(std::string("StorageClass"), storageClass);
 }
 
+bool UpdateMediaStorageClassRequest::getAllowUpdateWithoutTimeLimit() const {
+  return allowUpdateWithoutTimeLimit_;
+}
+
+void UpdateMediaStorageClassRequest::setAllowUpdateWithoutTimeLimit(bool allowUpdateWithoutTimeLimit) {
+  allowUpdateWithoutTimeLimit_ = allowUpdateWithoutTimeLimit;
+  setParameter(std::string("AllowUpdateWithoutTimeLimit"), allowUpdateWithoutTimeLimit ? "true" : "false");
+}
+

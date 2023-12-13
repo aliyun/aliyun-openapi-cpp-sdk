@@ -38,12 +38,15 @@ public:
 	void setMediaIds(const std::string &mediaIds);
 	std::string getStorageClass() const;
 	void setStorageClass(const std::string &storageClass);
+	bool getAllowUpdateWithoutTimeLimit() const;
+	void setAllowUpdateWithoutTimeLimit(bool allowUpdateWithoutTimeLimit);
 
 private:
 	std::string restoreTier_;
 	std::string scope_;
 	std::string mediaIds_;
 	std::string storageClass_;
+	bool allowUpdateWithoutTimeLimit_;
 };
 } // namespace Model
 } // namespace Vod
