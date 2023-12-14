@@ -94,6 +94,14 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		instance_.inTempCapacityStatus = instanceNode["InTempCapacityStatus"].asString() == "true";
 	if(!instanceNode["DataDiskAutoScale"].isNull())
 		instance_.dataDiskAutoScale = instanceNode["DataDiskAutoScale"].asString() == "true";
+	if(!instanceNode["EnableProxyService"].isNull())
+		instance_.enableProxyService = instanceNode["EnableProxyService"].asString() == "true";
+	if(!instanceNode["ProxyServiceStatus"].isNull())
+		instance_.proxyServiceStatus = instanceNode["ProxyServiceStatus"].asString();
+	if(!instanceNode["ProxyClusterId"].isNull())
+		instance_.proxyClusterId = instanceNode["ProxyClusterId"].asString();
+	if(!instanceNode["CpuArchitecture"].isNull())
+		instance_.cpuArchitecture = instanceNode["CpuArchitecture"].asString();
 	auto resourceNode = instanceNode["Resource"];
 	if(!resourceNode["UnitCount"].isNull())
 		instance_.resource.unitCount = std::stol(resourceNode["UnitCount"].asString());
@@ -138,6 +146,13 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		instance_.resource.logDiskSize.totalDiskSize = std::stol(logDiskSizeNode["TotalDiskSize"].asString());
 	if(!logDiskSizeNode["UnitDiskSize"].isNull())
 		instance_.resource.logDiskSize.unitDiskSize = std::stol(logDiskSizeNode["UnitDiskSize"].asString());
+	if(!logDiskSizeNode["LogAssignedSize"].isNull())
+		instance_.resource.logDiskSize.logAssignedSize = logDiskSizeNode["LogAssignedSize"].asString();
+	if(!logDiskSizeNode["MaxLogAssignedPercent"].isNull())
+		instance_.resource.logDiskSize.maxLogAssignedPercent = logDiskSizeNode["MaxLogAssignedPercent"].asString();
+		auto allMaxLogAssignedObServer = logDiskSizeNode["MaxLogAssignedObServer"]["MaxLogAssignedObServer"];
+		for (auto value : allMaxLogAssignedObServer)
+			instance_.resource.logDiskSize.maxLogAssignedObServer.push_back(value.asString());
 	auto capacityUnitNode = resourceNode["CapacityUnit"];
 	if(!capacityUnitNode["MaxCapacityUnit"].isNull())
 		instance_.resource.capacityUnit.maxCapacityUnit = std::stoi(capacityUnitNode["MaxCapacityUnit"].asString());

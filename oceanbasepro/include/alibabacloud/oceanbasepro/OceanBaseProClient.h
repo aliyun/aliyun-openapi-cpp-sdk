@@ -70,6 +70,10 @@
 #include "model/DescribeAvailableCpuResourceResult.h"
 #include "model/DescribeAvailableMemResourceRequest.h"
 #include "model/DescribeAvailableMemResourceResult.h"
+#include "model/DescribeAvailableSpecRequest.h"
+#include "model/DescribeAvailableSpecResult.h"
+#include "model/DescribeAvailableZoneRequest.h"
+#include "model/DescribeAvailableZoneResult.h"
 #include "model/DescribeCharsetRequest.h"
 #include "model/DescribeCharsetResult.h"
 #include "model/DescribeDatabasesRequest.h"
@@ -144,6 +148,8 @@
 #include "model/DescribeSlowSQLListResult.h"
 #include "model/DescribeTenantRequest.h"
 #include "model/DescribeTenantResult.h"
+#include "model/DescribeTenantEncryptionRequest.h"
+#include "model/DescribeTenantEncryptionResult.h"
 #include "model/DescribeTenantMetricsRequest.h"
 #include "model/DescribeTenantMetricsResult.h"
 #include "model/DescribeTenantSecurityConfigsRequest.h"
@@ -192,6 +198,8 @@
 #include "model/ModifyInstanceSpecResult.h"
 #include "model/ModifyInstanceTagsRequest.h"
 #include "model/ModifyInstanceTagsResult.h"
+#include "model/ModifyInstanceTemporaryCapacityRequest.h"
+#include "model/ModifyInstanceTemporaryCapacityResult.h"
 #include "model/ModifyParametersRequest.h"
 #include "model/ModifyParametersResult.h"
 #include "model/ModifySecurityIpsRequest.h"
@@ -323,6 +331,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAvailableMemResourceResult> DescribeAvailableMemResourceOutcome;
 			typedef std::future<DescribeAvailableMemResourceOutcome> DescribeAvailableMemResourceOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeAvailableMemResourceRequest&, const DescribeAvailableMemResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableMemResourceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAvailableSpecResult> DescribeAvailableSpecOutcome;
+			typedef std::future<DescribeAvailableSpecOutcome> DescribeAvailableSpecOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeAvailableSpecRequest&, const DescribeAvailableSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableSpecAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAvailableZoneResult> DescribeAvailableZoneOutcome;
+			typedef std::future<DescribeAvailableZoneOutcome> DescribeAvailableZoneOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeAvailableZoneRequest&, const DescribeAvailableZoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableZoneAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCharsetResult> DescribeCharsetOutcome;
 			typedef std::future<DescribeCharsetOutcome> DescribeCharsetOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeCharsetRequest&, const DescribeCharsetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCharsetAsyncHandler;
@@ -434,6 +448,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTenantResult> DescribeTenantOutcome;
 			typedef std::future<DescribeTenantOutcome> DescribeTenantOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeTenantRequest&, const DescribeTenantOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTenantAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTenantEncryptionResult> DescribeTenantEncryptionOutcome;
+			typedef std::future<DescribeTenantEncryptionOutcome> DescribeTenantEncryptionOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeTenantEncryptionRequest&, const DescribeTenantEncryptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTenantEncryptionAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTenantMetricsResult> DescribeTenantMetricsOutcome;
 			typedef std::future<DescribeTenantMetricsOutcome> DescribeTenantMetricsOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeTenantMetricsRequest&, const DescribeTenantMetricsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTenantMetricsAsyncHandler;
@@ -506,6 +523,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyInstanceTagsResult> ModifyInstanceTagsOutcome;
 			typedef std::future<ModifyInstanceTagsOutcome> ModifyInstanceTagsOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::ModifyInstanceTagsRequest&, const ModifyInstanceTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceTagsAsyncHandler;
+			typedef Outcome<Error, Model::ModifyInstanceTemporaryCapacityResult> ModifyInstanceTemporaryCapacityOutcome;
+			typedef std::future<ModifyInstanceTemporaryCapacityOutcome> ModifyInstanceTemporaryCapacityOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::ModifyInstanceTemporaryCapacityRequest&, const ModifyInstanceTemporaryCapacityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceTemporaryCapacityAsyncHandler;
 			typedef Outcome<Error, Model::ModifyParametersResult> ModifyParametersOutcome;
 			typedef std::future<ModifyParametersOutcome> ModifyParametersOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::ModifyParametersRequest&, const ModifyParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParametersAsyncHandler;
@@ -658,6 +678,12 @@ namespace AlibabaCloud
 			DescribeAvailableMemResourceOutcome describeAvailableMemResource(const Model::DescribeAvailableMemResourceRequest &request)const;
 			void describeAvailableMemResourceAsync(const Model::DescribeAvailableMemResourceRequest& request, const DescribeAvailableMemResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAvailableMemResourceOutcomeCallable describeAvailableMemResourceCallable(const Model::DescribeAvailableMemResourceRequest& request) const;
+			DescribeAvailableSpecOutcome describeAvailableSpec(const Model::DescribeAvailableSpecRequest &request)const;
+			void describeAvailableSpecAsync(const Model::DescribeAvailableSpecRequest& request, const DescribeAvailableSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAvailableSpecOutcomeCallable describeAvailableSpecCallable(const Model::DescribeAvailableSpecRequest& request) const;
+			DescribeAvailableZoneOutcome describeAvailableZone(const Model::DescribeAvailableZoneRequest &request)const;
+			void describeAvailableZoneAsync(const Model::DescribeAvailableZoneRequest& request, const DescribeAvailableZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAvailableZoneOutcomeCallable describeAvailableZoneCallable(const Model::DescribeAvailableZoneRequest& request) const;
 			DescribeCharsetOutcome describeCharset(const Model::DescribeCharsetRequest &request)const;
 			void describeCharsetAsync(const Model::DescribeCharsetRequest& request, const DescribeCharsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCharsetOutcomeCallable describeCharsetCallable(const Model::DescribeCharsetRequest& request) const;
@@ -769,6 +795,9 @@ namespace AlibabaCloud
 			DescribeTenantOutcome describeTenant(const Model::DescribeTenantRequest &request)const;
 			void describeTenantAsync(const Model::DescribeTenantRequest& request, const DescribeTenantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTenantOutcomeCallable describeTenantCallable(const Model::DescribeTenantRequest& request) const;
+			DescribeTenantEncryptionOutcome describeTenantEncryption(const Model::DescribeTenantEncryptionRequest &request)const;
+			void describeTenantEncryptionAsync(const Model::DescribeTenantEncryptionRequest& request, const DescribeTenantEncryptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTenantEncryptionOutcomeCallable describeTenantEncryptionCallable(const Model::DescribeTenantEncryptionRequest& request) const;
 			DescribeTenantMetricsOutcome describeTenantMetrics(const Model::DescribeTenantMetricsRequest &request)const;
 			void describeTenantMetricsAsync(const Model::DescribeTenantMetricsRequest& request, const DescribeTenantMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTenantMetricsOutcomeCallable describeTenantMetricsCallable(const Model::DescribeTenantMetricsRequest& request) const;
@@ -841,6 +870,9 @@ namespace AlibabaCloud
 			ModifyInstanceTagsOutcome modifyInstanceTags(const Model::ModifyInstanceTagsRequest &request)const;
 			void modifyInstanceTagsAsync(const Model::ModifyInstanceTagsRequest& request, const ModifyInstanceTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceTagsOutcomeCallable modifyInstanceTagsCallable(const Model::ModifyInstanceTagsRequest& request) const;
+			ModifyInstanceTemporaryCapacityOutcome modifyInstanceTemporaryCapacity(const Model::ModifyInstanceTemporaryCapacityRequest &request)const;
+			void modifyInstanceTemporaryCapacityAsync(const Model::ModifyInstanceTemporaryCapacityRequest& request, const ModifyInstanceTemporaryCapacityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyInstanceTemporaryCapacityOutcomeCallable modifyInstanceTemporaryCapacityCallable(const Model::ModifyInstanceTemporaryCapacityRequest& request) const;
 			ModifyParametersOutcome modifyParameters(const Model::ModifyParametersRequest &request)const;
 			void modifyParametersAsync(const Model::ModifyParametersRequest& request, const ModifyParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyParametersOutcomeCallable modifyParametersCallable(const Model::ModifyParametersRequest& request) const;

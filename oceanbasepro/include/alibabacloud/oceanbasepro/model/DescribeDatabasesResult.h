@@ -48,6 +48,7 @@ namespace AlibabaCloud
 					std::string status;
 					std::string description;
 					std::string instanceId;
+					std::string tenantName;
 					std::string createTime;
 					std::string databaseName;
 					std::string encoding;

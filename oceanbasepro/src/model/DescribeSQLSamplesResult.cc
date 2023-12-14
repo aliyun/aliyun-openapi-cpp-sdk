@@ -84,9 +84,9 @@ void DescribeSQLSamplesResult::parse(const std::string &payload)
 		if(!valueDataDataItem["Inner"].isNull())
 			dataObject.inner = valueDataDataItem["Inner"].asString() == "true";
 		if(!valueDataDataItem["ExecutorRpc"].isNull())
-			dataObject.executorRpc = valueDataDataItem["ExecutorRpc"].asString();
+			dataObject.executorRpc = valueDataDataItem["ExecutorRpc"].asString() == "true";
 		if(!valueDataDataItem["HitPlan"].isNull())
-			dataObject.hitPlan = valueDataDataItem["HitPlan"].asString();
+			dataObject.hitPlan = valueDataDataItem["HitPlan"].asString() == "true";
 		if(!valueDataDataItem["ElapsedTime"].isNull())
 			dataObject.elapsedTime = valueDataDataItem["ElapsedTime"].asString();
 		if(!valueDataDataItem["CpuTime"].isNull())
@@ -124,7 +124,7 @@ void DescribeSQLSamplesResult::parse(const std::string &payload)
 		if(!valueDataDataItem["RetryCount"].isNull())
 			dataObject.retryCount = valueDataDataItem["RetryCount"].asString();
 		if(!valueDataDataItem["TableScan"].isNull())
-			dataObject.tableScan = valueDataDataItem["TableScan"].asString();
+			dataObject.tableScan = valueDataDataItem["TableScan"].asString() == "true";
 		if(!valueDataDataItem["ConsistencyLevel"].isNull())
 			dataObject.consistencyLevel = valueDataDataItem["ConsistencyLevel"].asString();
 		if(!valueDataDataItem["MemstoreReadRows"].isNull())
@@ -145,6 +145,8 @@ void DescribeSQLSamplesResult::parse(const std::string &payload)
 			dataObject.statement = valueDataDataItem["Statement"].asString();
 		if(!valueDataDataItem["TransHash"].isNull())
 			dataObject.transHash = valueDataDataItem["TransHash"].asString();
+		if(!valueDataDataItem["FullSqlText"].isNull())
+			dataObject.fullSqlText = valueDataDataItem["FullSqlText"].asString();
 		data_.push_back(dataObject);
 	}
 

@@ -915,6 +915,78 @@ OceanBaseProClient::DescribeAvailableMemResourceOutcomeCallable OceanBaseProClie
 	return task->get_future();
 }
 
+OceanBaseProClient::DescribeAvailableSpecOutcome OceanBaseProClient::describeAvailableSpec(const DescribeAvailableSpecRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAvailableSpecOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAvailableSpecOutcome(DescribeAvailableSpecResult(outcome.result()));
+	else
+		return DescribeAvailableSpecOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeAvailableSpecAsync(const DescribeAvailableSpecRequest& request, const DescribeAvailableSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAvailableSpec(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeAvailableSpecOutcomeCallable OceanBaseProClient::describeAvailableSpecCallable(const DescribeAvailableSpecRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAvailableSpecOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAvailableSpec(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::DescribeAvailableZoneOutcome OceanBaseProClient::describeAvailableZone(const DescribeAvailableZoneRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAvailableZoneOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAvailableZoneOutcome(DescribeAvailableZoneResult(outcome.result()));
+	else
+		return DescribeAvailableZoneOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeAvailableZoneAsync(const DescribeAvailableZoneRequest& request, const DescribeAvailableZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAvailableZone(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeAvailableZoneOutcomeCallable OceanBaseProClient::describeAvailableZoneCallable(const DescribeAvailableZoneRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAvailableZoneOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAvailableZone(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::DescribeCharsetOutcome OceanBaseProClient::describeCharset(const DescribeCharsetRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2247,6 +2319,42 @@ OceanBaseProClient::DescribeTenantOutcomeCallable OceanBaseProClient::describeTe
 	return task->get_future();
 }
 
+OceanBaseProClient::DescribeTenantEncryptionOutcome OceanBaseProClient::describeTenantEncryption(const DescribeTenantEncryptionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTenantEncryptionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTenantEncryptionOutcome(DescribeTenantEncryptionResult(outcome.result()));
+	else
+		return DescribeTenantEncryptionOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeTenantEncryptionAsync(const DescribeTenantEncryptionRequest& request, const DescribeTenantEncryptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTenantEncryption(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeTenantEncryptionOutcomeCallable OceanBaseProClient::describeTenantEncryptionCallable(const DescribeTenantEncryptionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTenantEncryptionOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTenantEncryption(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::DescribeTenantMetricsOutcome OceanBaseProClient::describeTenantMetrics(const DescribeTenantMetricsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3105,6 +3213,42 @@ OceanBaseProClient::ModifyInstanceTagsOutcomeCallable OceanBaseProClient::modify
 			[this, request]()
 			{
 			return this->modifyInstanceTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::ModifyInstanceTemporaryCapacityOutcome OceanBaseProClient::modifyInstanceTemporaryCapacity(const ModifyInstanceTemporaryCapacityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInstanceTemporaryCapacityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInstanceTemporaryCapacityOutcome(ModifyInstanceTemporaryCapacityResult(outcome.result()));
+	else
+		return ModifyInstanceTemporaryCapacityOutcome(outcome.error());
+}
+
+void OceanBaseProClient::modifyInstanceTemporaryCapacityAsync(const ModifyInstanceTemporaryCapacityRequest& request, const ModifyInstanceTemporaryCapacityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInstanceTemporaryCapacity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::ModifyInstanceTemporaryCapacityOutcomeCallable OceanBaseProClient::modifyInstanceTemporaryCapacityCallable(const ModifyInstanceTemporaryCapacityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInstanceTemporaryCapacityOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInstanceTemporaryCapacity(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

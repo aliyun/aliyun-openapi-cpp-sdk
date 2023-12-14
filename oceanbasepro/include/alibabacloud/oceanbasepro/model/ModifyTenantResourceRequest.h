@@ -32,18 +32,24 @@ public:
 	~ModifyTenantResourceRequest();
 	int getMemory() const;
 	void setMemory(int memory);
+	long getLogDisk() const;
+	void setLogDisk(long logDisk);
 	int getCpu() const;
 	void setCpu(int cpu);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getTenantId() const;
 	void setTenantId(const std::string &tenantId);
+	std::string getReadOnlyZoneList() const;
+	void setReadOnlyZoneList(const std::string &readOnlyZoneList);
 
 private:
 	int memory_;
+	long logDisk_;
 	int cpu_;
 	std::string instanceId_;
 	std::string tenantId_;
+	std::string readOnlyZoneList_;
 };
 } // namespace Model
 } // namespace OceanBasePro

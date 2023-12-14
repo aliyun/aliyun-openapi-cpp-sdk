@@ -44,6 +44,12 @@ void DescribeInstanceSecurityConfigsResult::parse(const std::string &payload)
 		instanceSecurityConfigs_.totalCheckCount = std::stoi(instanceSecurityConfigsNode["TotalCheckCount"].asString());
 	if(!instanceSecurityConfigsNode["TotalRiskCount"].isNull())
 		instanceSecurityConfigs_.totalRiskCount = std::stoi(instanceSecurityConfigsNode["TotalRiskCount"].asString());
+	if(!instanceSecurityConfigsNode["CheckTime"].isNull())
+		instanceSecurityConfigs_.checkTime = instanceSecurityConfigsNode["CheckTime"].asString();
+	if(!instanceSecurityConfigsNode["InstanceId"].isNull())
+		instanceSecurityConfigs_.instanceId = instanceSecurityConfigsNode["InstanceId"].asString();
+	if(!instanceSecurityConfigsNode["CheckId"].isNull())
+		instanceSecurityConfigs_.checkId = instanceSecurityConfigsNode["CheckId"].asString();
 	auto allSecurityConfigsNode = instanceSecurityConfigsNode["SecurityConfigs"]["SecurityConfigsItem"];
 	for (auto instanceSecurityConfigsNodeSecurityConfigsSecurityConfigsItem : allSecurityConfigsNode)
 	{

@@ -34,6 +34,8 @@ public:
 	void setAutoUseCoupon(bool autoUseCoupon);
 	std::string getInstanceClass() const;
 	void setInstanceClass(const std::string &instanceClass);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	long getDiskSize() const;
 	void setDiskSize(long diskSize);
 	std::string getInstanceId() const;
@@ -44,6 +46,7 @@ public:
 private:
 	bool autoUseCoupon_;
 	std::string instanceClass_;
+	bool dryRun_;
 	long diskSize_;
 	std::string instanceId_;
 	long logDiskSize_;

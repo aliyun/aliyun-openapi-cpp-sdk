@@ -36,6 +36,8 @@ public:
 	void setTenantMode(const std::string &tenantMode);
 	int getMemory() const;
 	void setMemory(int memory);
+	long getLogDisk() const;
+	void setLogDisk(long logDisk);
 	std::string getTimeZone() const;
 	void setTimeZone(const std::string &timeZone);
 	std::string getDescription() const;
@@ -54,11 +56,14 @@ public:
 	void setPrimaryZone(const std::string &primaryZone);
 	std::string getTenantName() const;
 	void setTenantName(const std::string &tenantName);
+	std::string getReadOnlyZoneList() const;
+	void setReadOnlyZoneList(const std::string &readOnlyZoneList);
 
 private:
 	std::string charset_;
 	std::string tenantMode_;
 	int memory_;
+	long logDisk_;
 	std::string timeZone_;
 	std::string description_;
 	std::string userVSwitchId_;
@@ -68,6 +73,7 @@ private:
 	std::string instanceId_;
 	std::string primaryZone_;
 	std::string tenantName_;
+	std::string readOnlyZoneList_;
 };
 } // namespace Model
 } // namespace OceanBasePro

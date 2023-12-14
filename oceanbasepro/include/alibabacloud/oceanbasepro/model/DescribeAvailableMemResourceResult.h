@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					long maxMem;
 					long usedMem;
 					long minMem;
+					std::string safeMem;
 				};
 
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OCEANBASEPRO_MODEL_DELETEINSTANCESRESULT_H_
-#define ALIBABACLOUD_OCEANBASEPRO_MODEL_DELETEINSTANCESRESULT_H_
+#ifndef ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBEAVAILABLESPECRESULT_H_
+#define ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBEAVAILABLESPECRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,18 +29,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OCEANBASEPRO_EXPORT DeleteInstancesResult : public ServiceResult
+			class ALIBABACLOUD_OCEANBASEPRO_EXPORT DescribeAvailableSpecResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					bool dryRunResult;
+					struct AvailableSpecificationsItem
+					{
+						struct DiskSizeRange
+						{
+							long min;
+							long max;
+							long step;
+						};
+						struct LogDiskSizeRange
+						{
+							long min;
+							long max;
+							long step;
+						};
+						std::vector<std::string> nodeNum;
+						DiskSizeRange diskSizeRange;
+						std::string instanceClass;
+						std::string spec;
+						LogDiskSizeRange logDiskSizeRange;
+					};
+					std::vector<AvailableSpecificationsItem> availableSpecifications;
 				};
 
 
-				DeleteInstancesResult();
-				explicit DeleteInstancesResult(const std::string &payload);
-				~DeleteInstancesResult();
+				DescribeAvailableSpecResult();
+				explicit DescribeAvailableSpecResult(const std::string &payload);
+				~DescribeAvailableSpecResult();
 				Data getData()const;
 
 			protected:
@@ -52,4 +72,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OCEANBASEPRO_MODEL_DELETEINSTANCESRESULT_H_
+#endif // !ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBEAVAILABLESPECRESULT_H_

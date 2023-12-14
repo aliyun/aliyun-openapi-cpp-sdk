@@ -48,7 +48,7 @@ namespace AlibabaCloud
 					std::string sqlType;
 					double queueTime;
 					double blockIndexCacheHit;
-					double tableScan;
+					bool tableScan;
 					double waitCount;
 					std::string requestId;
 					std::string requestTime;
@@ -65,9 +65,9 @@ namespace AlibabaCloud
 					double memstoreReadRows;
 					double getPlanTime;
 					double elapsedTime;
-					double hitPlan;
+					bool hitPlan;
 					double returnRows;
-					double executorRpc;
+					bool executorRpc;
 					double blockCacheHit;
 					std::string dbName;
 					double netWaitTime;
@@ -75,6 +75,7 @@ namespace AlibabaCloud
 					std::string userName;
 					double netTime;
 					double rpcCount;
+					std::string fullSqlText;
 					std::string statement;
 					double planId;
 					double rowCacheHit;

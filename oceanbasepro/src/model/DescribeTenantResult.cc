@@ -126,6 +126,8 @@ void DescribeTenantResult::parse(const std::string &payload)
 			tenantConnectionsItemObject.parallelQueryDegree = std::stol(tenantNodeTenantConnectionsTenantConnectionsItem["ParallelQueryDegree"].asString());
 		if(!tenantNodeTenantConnectionsTenantConnectionsItem["TenantEndpointId"].isNull())
 			tenantConnectionsItemObject.tenantEndpointId = tenantNodeTenantConnectionsTenantConnectionsItem["TenantEndpointId"].asString();
+		if(!tenantNodeTenantConnectionsTenantConnectionsItem["MaxConnectionNum"].isNull())
+			tenantConnectionsItemObject.maxConnectionNum = std::stol(tenantNodeTenantConnectionsTenantConnectionsItem["MaxConnectionNum"].asString());
 		auto allConnectionZones = value["ConnectionZones"]["ConnectionZones"];
 		for (auto value : allConnectionZones)
 			tenantConnectionsItemObject.connectionZones.push_back(value.asString());
@@ -170,6 +172,11 @@ void DescribeTenantResult::parse(const std::string &payload)
 		tenant_.tenantResource.capacityUnit.minCapacityUnit = std::stoi(capacityUnitNode["MinCapacityUnit"].asString());
 	if(!capacityUnitNode["UsedCapacit"].isNull())
 		tenant_.tenantResource.capacityUnit.usedCapacit = std::stoi(capacityUnitNode["UsedCapacit"].asString());
+	auto logDiskSizeNode = tenantResourceNode["LogDiskSize"];
+	if(!logDiskSizeNode["TotalLogDisk"].isNull())
+		tenant_.tenantResource.logDiskSize.totalLogDisk = std::stoi(logDiskSizeNode["TotalLogDisk"].asString());
+	if(!logDiskSizeNode["UnitLogDisk"].isNull())
+		tenant_.tenantResource.logDiskSize.unitLogDisk = std::stoi(logDiskSizeNode["UnitLogDisk"].asString());
 		auto allAvailableZones = tenantNode["AvailableZones"]["AvailableZones"];
 		for (auto value : allAvailableZones)
 			tenant_.availableZones.push_back(value.asString());

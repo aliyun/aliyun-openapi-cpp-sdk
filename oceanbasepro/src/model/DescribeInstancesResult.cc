@@ -57,6 +57,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.createTime = valueInstancesData["CreateTime"].asString();
 		if(!valueInstancesData["DeployMode"].isNull())
 			instancesObject.deployMode = valueInstancesData["DeployMode"].asString();
+		if(!valueInstancesData["CpuArchitecture"].isNull())
+			instancesObject.cpuArchitecture = valueInstancesData["CpuArchitecture"].asString();
 		if(!valueInstancesData["MaintainTime"].isNull())
 			instancesObject.maintainTime = valueInstancesData["MaintainTime"].asString();
 		if(!valueInstancesData["DeployType"].isNull())

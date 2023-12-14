@@ -44,6 +44,12 @@ void DescribeTenantSecurityConfigsResult::parse(const std::string &payload)
 		configs_.totalCheckCount = std::stoi(configsNode["TotalCheckCount"].asString());
 	if(!configsNode["TotalRiskCount"].isNull())
 		configs_.totalRiskCount = std::stoi(configsNode["TotalRiskCount"].asString());
+	if(!configsNode["CheckId"].isNull())
+		configs_.checkId = configsNode["CheckId"].asString();
+	if(!configsNode["InstanceId"].isNull())
+		configs_.instanceId = configsNode["InstanceId"].asString();
+	if(!configsNode["CheckTime"].isNull())
+		configs_.checkTime = configsNode["CheckTime"].asString();
 	auto allTenantSecurityConfigsNode = configsNode["TenantSecurityConfigs"]["TenantSecurityConfigsItem"];
 	for (auto configsNodeTenantSecurityConfigsTenantSecurityConfigsItem : allTenantSecurityConfigsNode)
 	{

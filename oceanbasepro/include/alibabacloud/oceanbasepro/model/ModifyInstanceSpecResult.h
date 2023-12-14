@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::string orderId;
+					bool dryRunResult;
 				};
 
 

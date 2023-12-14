@@ -32,11 +32,14 @@ public:
 	~DeleteInstancesRequest();
 	std::string getBackupRetainMode() const;
 	void setBackupRetainMode(const std::string &backupRetainMode);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getInstanceIds() const;
 	void setInstanceIds(const std::string &instanceIds);
 
 private:
 	std::string backupRetainMode_;
+	bool dryRun_;
 	std::string instanceIds_;
 };
 } // namespace Model

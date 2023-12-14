@@ -69,6 +69,10 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeAvailableCpuResourceResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeAvailableMemResourceRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeAvailableMemResourceResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeAvailableSpecRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeAvailableSpecResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeAvailableZoneRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeAvailableZoneResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeCharsetRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeCharsetResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeDatabasesRequest.h
@@ -143,6 +147,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLListResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeTenantRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeTenantResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantEncryptionRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantEncryptionResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeTenantMetricsRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeTenantMetricsResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeTenantSecurityConfigsRequest.h
@@ -191,6 +197,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/ModifyInstanceSpecResult.h
 	include/alibabacloud/oceanbasepro/model/ModifyInstanceTagsRequest.h
 	include/alibabacloud/oceanbasepro/model/ModifyInstanceTagsResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyInstanceTemporaryCapacityRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyInstanceTemporaryCapacityResult.h
 	include/alibabacloud/oceanbasepro/model/ModifyParametersRequest.h
 	include/alibabacloud/oceanbasepro/model/ModifyParametersResult.h
 	include/alibabacloud/oceanbasepro/model/ModifySecurityIpsRequest.h
@@ -292,6 +300,10 @@ set(oceanbasepro_src
 	src/model/DescribeAvailableCpuResourceResult.cc
 	src/model/DescribeAvailableMemResourceRequest.cc
 	src/model/DescribeAvailableMemResourceResult.cc
+	src/model/DescribeAvailableSpecRequest.cc
+	src/model/DescribeAvailableSpecResult.cc
+	src/model/DescribeAvailableZoneRequest.cc
+	src/model/DescribeAvailableZoneResult.cc
 	src/model/DescribeCharsetRequest.cc
 	src/model/DescribeCharsetResult.cc
 	src/model/DescribeDatabasesRequest.cc
@@ -366,6 +378,8 @@ set(oceanbasepro_src
 	src/model/DescribeSlowSQLListResult.cc
 	src/model/DescribeTenantRequest.cc
 	src/model/DescribeTenantResult.cc
+	src/model/DescribeTenantEncryptionRequest.cc
+	src/model/DescribeTenantEncryptionResult.cc
 	src/model/DescribeTenantMetricsRequest.cc
 	src/model/DescribeTenantMetricsResult.cc
 	src/model/DescribeTenantSecurityConfigsRequest.cc
@@ -414,6 +428,8 @@ set(oceanbasepro_src
 	src/model/ModifyInstanceSpecResult.cc
 	src/model/ModifyInstanceTagsRequest.cc
 	src/model/ModifyInstanceTagsResult.cc
+	src/model/ModifyInstanceTemporaryCapacityRequest.cc
+	src/model/ModifyInstanceTemporaryCapacityResult.cc
 	src/model/ModifyParametersRequest.cc
 	src/model/ModifyParametersResult.cc
 	src/model/ModifySecurityIpsRequest.cc

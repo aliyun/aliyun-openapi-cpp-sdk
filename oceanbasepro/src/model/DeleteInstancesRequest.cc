@@ -34,6 +34,15 @@ void DeleteInstancesRequest::setBackupRetainMode(const std::string &backupRetain
   setBodyParameter(std::string("BackupRetainMode"), backupRetainMode);
 }
 
+bool DeleteInstancesRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void DeleteInstancesRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setBodyParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string DeleteInstancesRequest::getInstanceIds() const {
   return instanceIds_;
 }

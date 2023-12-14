@@ -32,9 +32,12 @@ public:
 	~DescribeInstanceSecurityConfigsRequest();
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::string getCheckId() const;
+	void setCheckId(const std::string &checkId);
 
 private:
 	std::string instanceId_;
+	std::string checkId_;
 };
 } // namespace Model
 } // namespace OceanBasePro

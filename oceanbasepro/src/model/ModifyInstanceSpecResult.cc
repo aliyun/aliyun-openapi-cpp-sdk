@@ -42,6 +42,8 @@ void ModifyInstanceSpecResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["OrderId"].isNull())
 		data_.orderId = dataNode["OrderId"].asString();
+	if(!dataNode["DryRunResult"].isNull())
+		data_.dryRunResult = dataNode["DryRunResult"].asString() == "true";
 
 }
 

@@ -34,3 +34,12 @@ void DescribeInstanceSecurityConfigsRequest::setInstanceId(const std::string &in
   setBodyParameter(std::string("InstanceId"), instanceId);
 }
 
+std::string DescribeInstanceSecurityConfigsRequest::getCheckId() const {
+  return checkId_;
+}
+
+void DescribeInstanceSecurityConfigsRequest::setCheckId(const std::string &checkId) {
+  checkId_ = checkId;
+  setBodyParameter(std::string("CheckId"), checkId);
+}
+

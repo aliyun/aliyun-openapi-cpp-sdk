@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string resourceGroupId;
 					std::string instanceId;
 					std::string orderId;
+					bool dryRunResult;
 				};
 
 

@@ -43,3 +43,12 @@ void DescribeTenantSecurityConfigsRequest::setTenantId(const std::string &tenant
   setBodyParameter(std::string("TenantId"), tenantId);
 }
 
+std::string DescribeTenantSecurityConfigsRequest::getCheckId() const {
+  return checkId_;
+}
+
+void DescribeTenantSecurityConfigsRequest::setCheckId(const std::string &checkId) {
+  checkId_ = checkId;
+  setBodyParameter(std::string("CheckId"), checkId);
+}
+

@@ -88,6 +88,7 @@ namespace AlibabaCloud
 					std::vector<std::string> availableZones;
 					std::string diskType;
 					std::string deployMode;
+					std::string cpuArchitecture;
 					std::string version;
 					std::string commodityCode;
 					std::string diskSize;

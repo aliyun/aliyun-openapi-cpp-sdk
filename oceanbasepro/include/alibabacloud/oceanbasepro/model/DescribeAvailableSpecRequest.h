@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBETENANTSECURITYCONFIGSREQUEST_H_
-#define ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBETENANTSECURITYCONFIGSREQUEST_H_
+#ifndef ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBEAVAILABLESPECREQUEST_H_
+#define ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBEAVAILABLESPECREQUEST_H_
 
 #include <alibabacloud/oceanbasepro/OceanBaseProExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,23 @@
 namespace AlibabaCloud {
 namespace OceanBasePro {
 namespace Model {
-class ALIBABACLOUD_OCEANBASEPRO_EXPORT DescribeTenantSecurityConfigsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_OCEANBASEPRO_EXPORT DescribeAvailableSpecRequest : public RpcServiceRequest {
 public:
-	DescribeTenantSecurityConfigsRequest();
-	~DescribeTenantSecurityConfigsRequest();
+	DescribeAvailableSpecRequest();
+	~DescribeAvailableSpecRequest();
+	std::string getUpgradeType() const;
+	void setUpgradeType(const std::string &upgradeType);
+	std::string getSpec() const;
+	void setSpec(const std::string &spec);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
-	std::string getTenantId() const;
-	void setTenantId(const std::string &tenantId);
-	std::string getCheckId() const;
-	void setCheckId(const std::string &checkId);
 
 private:
+	std::string upgradeType_;
+	std::string spec_;
 	std::string instanceId_;
-	std::string tenantId_;
-	std::string checkId_;
 };
 } // namespace Model
 } // namespace OceanBasePro
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBETENANTSECURITYCONFIGSREQUEST_H_
+#endif // !ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBEAVAILABLESPECREQUEST_H_

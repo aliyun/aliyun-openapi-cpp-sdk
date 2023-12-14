@@ -34,6 +34,8 @@ public:
 	void setSearchKey(const std::string &searchKey);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	std::string getDatabaseName() const;
 	void setDatabaseName(const std::string &databaseName);
 	bool getWithTables() const;
@@ -46,6 +48,7 @@ public:
 private:
 	std::string searchKey_;
 	int pageNumber_;
+	std::string instanceId_;
 	std::string databaseName_;
 	bool withTables_;
 	std::string tenantId_;

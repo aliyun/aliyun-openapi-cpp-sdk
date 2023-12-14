@@ -46,6 +46,8 @@ void CreateInstanceResult::parse(const std::string &payload)
 		data_.orderId = dataNode["OrderId"].asString();
 	if(!dataNode["ResourceGroupId"].isNull())
 		data_.resourceGroupId = dataNode["ResourceGroupId"].asString();
+	if(!dataNode["DryRunResult"].isNull())
+		data_.dryRunResult = dataNode["DryRunResult"].asString() == "true";
 
 }
 

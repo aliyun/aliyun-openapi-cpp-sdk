@@ -63,6 +63,9 @@ namespace AlibabaCloud
 						};
 						struct LogDiskSize
 						{
+							std::string maxLogAssignedPercent;
+							std::string logAssignedSize;
+							std::vector<std::string> maxLogAssignedObServer;
 							long unitDiskSize;
 							long totalDiskSize;
 						};
@@ -95,17 +98,20 @@ namespace AlibabaCloud
 						bool autoScale;
 					};
 					std::string deployType;
+					std::string proxyServiceStatus;
 					std::string nodeNum;
 					bool enableIsolationOptimization;
 					std::string dataMergeTime;
 					bool inTempCapacityStatus;
 					bool isTrustEcs;
+					std::string proxyClusterId;
 					bool isLatestObVersion;
 					std::vector<std::string> availableZones;
 					std::vector<std::string> zones;
 					std::string diskType;
 					std::string deployMode;
 					std::string version;
+					std::string cpuArchitecture;
 					bool isolationOptimization;
 					std::string instanceRole;
 					std::string maintainTime;
@@ -119,6 +125,7 @@ namespace AlibabaCloud
 					std::string instanceClass;
 					std::string payType;
 					bool dataDiskAutoScale;
+					bool enableProxyService;
 					std::string instanceName;
 					std::string series;
 					DataDiskAutoScaleConfig dataDiskAutoScaleConfig;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OCEANBASEPRO_MODEL_DELETEINSTANCESRESULT_H_
-#define ALIBABACLOUD_OCEANBASEPRO_MODEL_DELETEINSTANCESRESULT_H_
+#ifndef ALIBABACLOUD_OCEANBASEPRO_MODEL_MODIFYINSTANCETEMPORARYCAPACITYRESULT_H_
+#define ALIBABACLOUD_OCEANBASEPRO_MODEL_MODIFYINSTANCETEMPORARYCAPACITYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OCEANBASEPRO_EXPORT DeleteInstancesResult : public ServiceResult
+			class ALIBABACLOUD_OCEANBASEPRO_EXPORT ModifyInstanceTemporaryCapacityResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					bool dryRunResult;
-				};
 
 
-				DeleteInstancesResult();
-				explicit DeleteInstancesResult(const std::string &payload);
-				~DeleteInstancesResult();
-				Data getData()const;
+				ModifyInstanceTemporaryCapacityResult();
+				explicit ModifyInstanceTemporaryCapacityResult(const std::string &payload);
+				~ModifyInstanceTemporaryCapacityResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Data data_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OCEANBASEPRO_MODEL_DELETEINSTANCESRESULT_H_
+#endif // !ALIBABACLOUD_OCEANBASEPRO_MODEL_MODIFYINSTANCETEMPORARYCAPACITYRESULT_H_

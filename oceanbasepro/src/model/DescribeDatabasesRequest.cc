@@ -43,6 +43,15 @@ void DescribeDatabasesRequest::setPageNumber(int pageNumber) {
   setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeDatabasesRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void DescribeDatabasesRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setBodyParameter(std::string("InstanceId"), instanceId);
+}
+
 std::string DescribeDatabasesRequest::getDatabaseName() const {
   return databaseName_;
 }

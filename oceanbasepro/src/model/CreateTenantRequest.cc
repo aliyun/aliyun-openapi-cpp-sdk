@@ -52,6 +52,15 @@ void CreateTenantRequest::setMemory(int memory) {
   setBodyParameter(std::string("Memory"), std::to_string(memory));
 }
 
+long CreateTenantRequest::getLogDisk() const {
+  return logDisk_;
+}
+
+void CreateTenantRequest::setLogDisk(long logDisk) {
+  logDisk_ = logDisk;
+  setBodyParameter(std::string("LogDisk"), std::to_string(logDisk));
+}
+
 std::string CreateTenantRequest::getTimeZone() const {
   return timeZone_;
 }
@@ -131,5 +140,14 @@ std::string CreateTenantRequest::getTenantName() const {
 void CreateTenantRequest::setTenantName(const std::string &tenantName) {
   tenantName_ = tenantName;
   setBodyParameter(std::string("TenantName"), tenantName);
+}
+
+std::string CreateTenantRequest::getReadOnlyZoneList() const {
+  return readOnlyZoneList_;
+}
+
+void CreateTenantRequest::setReadOnlyZoneList(const std::string &readOnlyZoneList) {
+  readOnlyZoneList_ = readOnlyZoneList;
+  setBodyParameter(std::string("ReadOnlyZoneList"), readOnlyZoneList);
 }
 

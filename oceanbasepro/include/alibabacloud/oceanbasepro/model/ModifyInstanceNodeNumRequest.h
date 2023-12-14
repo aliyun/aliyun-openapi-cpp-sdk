@@ -30,12 +30,15 @@ class ALIBABACLOUD_OCEANBASEPRO_EXPORT ModifyInstanceNodeNumRequest : public Rpc
 public:
 	ModifyInstanceNodeNumRequest();
 	~ModifyInstanceNodeNumRequest();
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getNodeNum() const;
 	void setNodeNum(const std::string &nodeNum);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 
 private:
+	bool dryRun_;
 	std::string nodeNum_;
 	std::string instanceId_;
 };

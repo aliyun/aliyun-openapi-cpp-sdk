@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OCEANBASEPRO_MODEL_DELETEINSTANCESRESULT_H_
-#define ALIBABACLOUD_OCEANBASEPRO_MODEL_DELETEINSTANCESRESULT_H_
+#ifndef ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBETENANTENCRYPTIONRESULT_H_
+#define ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBETENANTENCRYPTIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OCEANBASEPRO_EXPORT DeleteInstancesResult : public ServiceResult
+			class ALIBABACLOUD_OCEANBASEPRO_EXPORT DescribeTenantEncryptionResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct TenantEncryptionsItem
 				{
-					bool dryRunResult;
+					std::string status;
+					std::string encryptionType;
+					std::string tenantId;
+					std::string tenantStatus;
+					std::string tenantName;
+					bool enableEncryption;
+					std::string tenantMode;
+					std::string encryptionKeyId;
 				};
 
 
-				DeleteInstancesResult();
-				explicit DeleteInstancesResult(const std::string &payload);
-				~DeleteInstancesResult();
-				Data getData()const;
+				DescribeTenantEncryptionResult();
+				explicit DescribeTenantEncryptionResult(const std::string &payload);
+				~DescribeTenantEncryptionResult();
+				int getTotalCount()const;
+				std::vector<TenantEncryptionsItem> getTenantEncryptions()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Data data_;
+				int totalCount_;
+				std::vector<TenantEncryptionsItem> tenantEncryptions_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OCEANBASEPRO_MODEL_DELETEINSTANCESRESULT_H_
+#endif // !ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBETENANTENCRYPTIONRESULT_H_

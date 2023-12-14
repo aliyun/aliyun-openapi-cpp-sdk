@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBETENANTSECURITYCONFIGSREQUEST_H_
-#define ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBETENANTSECURITYCONFIGSREQUEST_H_
+#ifndef ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBETENANTENCRYPTIONREQUEST_H_
+#define ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBETENANTENCRYPTIONREQUEST_H_
 
 #include <alibabacloud/oceanbasepro/OceanBaseProExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,29 @@
 namespace AlibabaCloud {
 namespace OceanBasePro {
 namespace Model {
-class ALIBABACLOUD_OCEANBASEPRO_EXPORT DescribeTenantSecurityConfigsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_OCEANBASEPRO_EXPORT DescribeTenantEncryptionRequest : public RpcServiceRequest {
 public:
-	DescribeTenantSecurityConfigsRequest();
-	~DescribeTenantSecurityConfigsRequest();
+	DescribeTenantEncryptionRequest();
+	~DescribeTenantEncryptionRequest();
+	long getPageNumber() const;
+	void setPageNumber(long pageNumber);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getTenantId() const;
 	void setTenantId(const std::string &tenantId);
-	std::string getCheckId() const;
-	void setCheckId(const std::string &checkId);
+	long getPageSize() const;
+	void setPageSize(long pageSize);
+	std::string getTenantName() const;
+	void setTenantName(const std::string &tenantName);
 
 private:
+	long pageNumber_;
 	std::string instanceId_;
 	std::string tenantId_;
-	std::string checkId_;
+	long pageSize_;
+	std::string tenantName_;
 };
 } // namespace Model
 } // namespace OceanBasePro
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBETENANTSECURITYCONFIGSREQUEST_H_
+#endif // !ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBETENANTENCRYPTIONREQUEST_H_

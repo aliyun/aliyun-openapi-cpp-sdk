@@ -46,6 +46,8 @@ void DescribeAvailableMemResourceResult::parse(const std::string &payload)
 		data_.maxMem = std::stol(dataNode["MaxMem"].asString());
 	if(!dataNode["UsedMem"].isNull())
 		data_.usedMem = std::stol(dataNode["UsedMem"].asString());
+	if(!dataNode["SafeMem"].isNull())
+		data_.safeMem = dataNode["SafeMem"].asString();
 
 }
 

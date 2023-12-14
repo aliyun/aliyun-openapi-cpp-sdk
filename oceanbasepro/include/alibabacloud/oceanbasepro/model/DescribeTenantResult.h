@@ -58,11 +58,17 @@ namespace AlibabaCloud
 							int maxCapacityUnit;
 							int minCapacityUnit;
 						};
+						struct LogDiskSize
+						{
+							int totalLogDisk;
+							int unitLogDisk;
+						};
 						CapacityUnit capacityUnit;
 						Memory memory;
 						int unitNum;
 						DiskSize diskSize;
 						Cpu cpu;
+						LogDiskSize logDiskSize;
 					};
 					struct TenantConnectionsItem
 					{
@@ -71,6 +77,7 @@ namespace AlibabaCloud
 						std::string internetAddress;
 						std::string intranetAddressSlaveZoneId;
 						std::string internetAddressStatus;
+						long maxConnectionNum;
 						std::string vSwitchId;
 						std::string tenantEndpointId;
 						std::string intranetAddressMasterZoneId;

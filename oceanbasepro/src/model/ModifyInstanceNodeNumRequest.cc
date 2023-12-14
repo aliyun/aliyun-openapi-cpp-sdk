@@ -25,6 +25,15 @@ ModifyInstanceNodeNumRequest::ModifyInstanceNodeNumRequest()
 
 ModifyInstanceNodeNumRequest::~ModifyInstanceNodeNumRequest() {}
 
+bool ModifyInstanceNodeNumRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void ModifyInstanceNodeNumRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setBodyParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string ModifyInstanceNodeNumRequest::getNodeNum() const {
   return nodeNum_;
 }

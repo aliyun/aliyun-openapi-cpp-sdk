@@ -34,6 +34,15 @@ void ModifyTenantResourceRequest::setMemory(int memory) {
   setBodyParameter(std::string("Memory"), std::to_string(memory));
 }
 
+long ModifyTenantResourceRequest::getLogDisk() const {
+  return logDisk_;
+}
+
+void ModifyTenantResourceRequest::setLogDisk(long logDisk) {
+  logDisk_ = logDisk;
+  setBodyParameter(std::string("LogDisk"), std::to_string(logDisk));
+}
+
 int ModifyTenantResourceRequest::getCpu() const {
   return cpu_;
 }
@@ -59,5 +68,14 @@ std::string ModifyTenantResourceRequest::getTenantId() const {
 void ModifyTenantResourceRequest::setTenantId(const std::string &tenantId) {
   tenantId_ = tenantId;
   setBodyParameter(std::string("TenantId"), tenantId);
+}
+
+std::string ModifyTenantResourceRequest::getReadOnlyZoneList() const {
+  return readOnlyZoneList_;
+}
+
+void ModifyTenantResourceRequest::setReadOnlyZoneList(const std::string &readOnlyZoneList) {
+  readOnlyZoneList_ = readOnlyZoneList;
+  setBodyParameter(std::string("ReadOnlyZoneList"), readOnlyZoneList);
 }
 

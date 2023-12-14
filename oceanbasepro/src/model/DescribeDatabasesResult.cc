@@ -65,6 +65,8 @@ void DescribeDatabasesResult::parse(const std::string &payload)
 			databasesObject.collation = valueDatabasesData["Collation"].asString();
 		if(!valueDatabasesData["InstanceId"].isNull())
 			databasesObject.instanceId = valueDatabasesData["InstanceId"].asString();
+		if(!valueDatabasesData["TenantName"].isNull())
+			databasesObject.tenantName = valueDatabasesData["TenantName"].asString();
 		auto allUsersNode = valueDatabasesData["Users"]["UsersItem"];
 		for (auto valueDatabasesDataUsersUsersItem : allUsersNode)
 		{

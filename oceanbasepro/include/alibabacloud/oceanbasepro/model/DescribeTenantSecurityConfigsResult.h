@@ -49,6 +49,9 @@ namespace AlibabaCloud
 						std::string tenantName;
 						int riskCount;
 					};
+					std::string checkTime;
+					std::string checkId;
+					std::string instanceId;
 					int totalCheckCount;
 					std::vector<TenantSecurityConfigsItem> tenantSecurityConfigs;
 					int totalRiskCount;

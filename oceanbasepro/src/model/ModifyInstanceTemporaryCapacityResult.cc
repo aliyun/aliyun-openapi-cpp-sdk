@@ -14,39 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/oceanbasepro/model/DeleteInstancesResult.h>
+#include <alibabacloud/oceanbasepro/model/ModifyInstanceTemporaryCapacityResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::OceanBasePro;
 using namespace AlibabaCloud::OceanBasePro::Model;
 
-DeleteInstancesResult::DeleteInstancesResult() :
+ModifyInstanceTemporaryCapacityResult::ModifyInstanceTemporaryCapacityResult() :
 	ServiceResult()
 {}
 
-DeleteInstancesResult::DeleteInstancesResult(const std::string &payload) :
+ModifyInstanceTemporaryCapacityResult::ModifyInstanceTemporaryCapacityResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteInstancesResult::~DeleteInstancesResult()
+ModifyInstanceTemporaryCapacityResult::~ModifyInstanceTemporaryCapacityResult()
 {}
 
-void DeleteInstancesResult::parse(const std::string &payload)
+void ModifyInstanceTemporaryCapacityResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["DryRunResult"].isNull())
-		data_.dryRunResult = dataNode["DryRunResult"].asString() == "true";
 
-}
-
-DeleteInstancesResult::Data DeleteInstancesResult::getData()const
-{
-	return data_;
 }
 

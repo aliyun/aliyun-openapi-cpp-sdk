@@ -30,6 +30,8 @@ class ALIBABACLOUD_OCEANBASEPRO_EXPORT CreateInstanceRequest : public RpcService
 public:
 	CreateInstanceRequest();
 	~CreateInstanceRequest();
+	std::string getIsolationOptimization() const;
+	void setIsolationOptimization(const std::string &isolationOptimization);
 	std::string getInstanceClass() const;
 	void setInstanceClass(const std::string &instanceClass);
 	std::string getResourceGroupId() const;
@@ -38,6 +40,8 @@ public:
 	void setAutoRenewPeriod(long autoRenewPeriod);
 	long getPeriod() const;
 	void setPeriod(long period);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	long getDiskSize() const;
 	void setDiskSize(long diskSize);
 	std::string getZones() const;
@@ -50,6 +54,8 @@ public:
 	void setPeriodUnit(const std::string &periodUnit);
 	std::string getInstanceName() const;
 	void setInstanceName(const std::string &instanceName);
+	std::string getReplicaMode() const;
+	void setReplicaMode(const std::string &replicaMode);
 	bool getAutoRenew() const;
 	void setAutoRenew(bool autoRenew);
 	std::string getSeries() const;
@@ -60,16 +66,19 @@ public:
 	void setBid(const std::string &bid);
 
 private:
+	std::string isolationOptimization_;
 	std::string instanceClass_;
 	std::string resourceGroupId_;
 	long autoRenewPeriod_;
 	long period_;
+	bool dryRun_;
 	long diskSize_;
 	std::string zones_;
 	std::string diskType_;
 	std::string obVersion_;
 	std::string periodUnit_;
 	std::string instanceName_;
+	std::string replicaMode_;
 	bool autoRenew_;
 	std::string series_;
 	std::string chargeType_;

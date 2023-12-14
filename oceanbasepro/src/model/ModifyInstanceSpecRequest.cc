@@ -43,6 +43,15 @@ void ModifyInstanceSpecRequest::setInstanceClass(const std::string &instanceClas
   setBodyParameter(std::string("InstanceClass"), instanceClass);
 }
 
+bool ModifyInstanceSpecRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void ModifyInstanceSpecRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setBodyParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 long ModifyInstanceSpecRequest::getDiskSize() const {
   return diskSize_;
 }

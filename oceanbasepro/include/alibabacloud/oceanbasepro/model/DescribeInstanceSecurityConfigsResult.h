@@ -43,6 +43,9 @@ namespace AlibabaCloud
 						std::string configGroup;
 					};
 					std::vector<SecurityConfigsItem> securityConfigs;
+					std::string checkTime;
+					std::string checkId;
+					std::string instanceId;
 					int totalCheckCount;
 					int totalRiskCount;
 				};

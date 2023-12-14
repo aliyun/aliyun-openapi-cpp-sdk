@@ -25,6 +25,15 @@ CreateInstanceRequest::CreateInstanceRequest()
 
 CreateInstanceRequest::~CreateInstanceRequest() {}
 
+std::string CreateInstanceRequest::getIsolationOptimization() const {
+  return isolationOptimization_;
+}
+
+void CreateInstanceRequest::setIsolationOptimization(const std::string &isolationOptimization) {
+  isolationOptimization_ = isolationOptimization;
+  setBodyParameter(std::string("IsolationOptimization"), isolationOptimization);
+}
+
 std::string CreateInstanceRequest::getInstanceClass() const {
   return instanceClass_;
 }
@@ -59,6 +68,15 @@ long CreateInstanceRequest::getPeriod() const {
 void CreateInstanceRequest::setPeriod(long period) {
   period_ = period;
   setBodyParameter(std::string("Period"), std::to_string(period));
+}
+
+bool CreateInstanceRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void CreateInstanceRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setBodyParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
 long CreateInstanceRequest::getDiskSize() const {
@@ -113,6 +131,15 @@ std::string CreateInstanceRequest::getInstanceName() const {
 void CreateInstanceRequest::setInstanceName(const std::string &instanceName) {
   instanceName_ = instanceName;
   setBodyParameter(std::string("InstanceName"), instanceName);
+}
+
+std::string CreateInstanceRequest::getReplicaMode() const {
+  return replicaMode_;
+}
+
+void CreateInstanceRequest::setReplicaMode(const std::string &replicaMode) {
+  replicaMode_ = replicaMode;
+  setBodyParameter(std::string("ReplicaMode"), replicaMode);
 }
 
 bool CreateInstanceRequest::getAutoRenew() const {
