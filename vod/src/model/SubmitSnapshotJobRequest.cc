@@ -61,6 +61,17 @@ void SubmitSnapshotJobRequest::setSpriteSnapshotConfig(const std::string &sprite
   setParameter(std::string("SpriteSnapshotConfig"), spriteSnapshotConfig);
 }
 
+std::vector<SubmitSnapshotJobRequest::long> SubmitSnapshotJobRequest::getSpecifiedOffsetTimes() const {
+  return specifiedOffsetTimes_;
+}
+
+void SubmitSnapshotJobRequest::setSpecifiedOffsetTimes(const std::vector<SubmitSnapshotJobRequest::long> &specifiedOffsetTimes) {
+  specifiedOffsetTimes_ = specifiedOffsetTimes;
+  for(int dep1 = 0; dep1 != specifiedOffsetTimes.size(); dep1++) {
+    setParameter(std::string("SpecifiedOffsetTimes") + "." + std::to_string(dep1 + 1), std::to_string(specifiedOffsetTimes[dep1]));
+  }
+}
+
 std::string SubmitSnapshotJobRequest::getSnapshotTemplateId() const {
   return snapshotTemplateId_;
 }

@@ -38,6 +38,8 @@ public:
 	void setSpecifiedOffsetTime(long specifiedOffsetTime);
 	std::string getSpriteSnapshotConfig() const;
 	void setSpriteSnapshotConfig(const std::string &spriteSnapshotConfig);
+	std::vector<long> getSpecifiedOffsetTimes() const;
+	void setSpecifiedOffsetTimes(const std::vector<long> &specifiedOffsetTimes);
 	std::string getSnapshotTemplateId() const;
 	void setSnapshotTemplateId(const std::string &snapshotTemplateId);
 	std::string getHeight() const;
@@ -58,6 +60,7 @@ private:
 	std::string userData_;
 	long specifiedOffsetTime_;
 	std::string spriteSnapshotConfig_;
+	std::vector<long> specifiedOffsetTimes_;
 	std::string snapshotTemplateId_;
 	std::string height_;
 	long count_;
