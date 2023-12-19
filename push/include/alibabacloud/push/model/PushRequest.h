@@ -74,6 +74,8 @@ public:
 	void setAndroidHonorTargetUserType(int androidHonorTargetUserType);
 	std::string getAndroidNotificationVivoChannel() const;
 	void setAndroidNotificationVivoChannel(const std::string &androidNotificationVivoChannel);
+	std::string getAndroidVivoReceiptId() const;
+	void setAndroidVivoReceiptId(const std::string &androidVivoReceiptId);
 	std::string getIOSNotificationCategory() const;
 	void setIOSNotificationCategory(const std::string &iOSNotificationCategory);
 	std::string getAndroidNotificationXiaomiChannel() const;
@@ -200,6 +202,7 @@ private:
 	std::string androidImageUrl_;
 	int androidHonorTargetUserType_;
 	std::string androidNotificationVivoChannel_;
+	std::string androidVivoReceiptId_;
 	std::string iOSNotificationCategory_;
 	std::string androidNotificationXiaomiChannel_;
 	bool storeOffline_;

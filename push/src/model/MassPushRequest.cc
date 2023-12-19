@@ -64,6 +64,7 @@ void MassPushRequest::setPushTask(const std::vector<MassPushRequest::PushTask> &
     setBodyParameter(pushTaskObjStr + ".AndroidImageUrl", pushTaskObj.androidImageUrl);
     setBodyParameter(pushTaskObjStr + ".AndroidHonorTargetUserType", std::to_string(pushTaskObj.androidHonorTargetUserType));
     setBodyParameter(pushTaskObjStr + ".AndroidNotificationVivoChannel", pushTaskObj.androidNotificationVivoChannel);
+    setBodyParameter(pushTaskObjStr + ".AndroidVivoReceiptId", pushTaskObj.androidVivoReceiptId);
     setBodyParameter(pushTaskObjStr + ".iOSNotificationCategory", pushTaskObj.iOSNotificationCategory);
     setBodyParameter(pushTaskObjStr + ".AndroidNotificationXiaomiChannel", pushTaskObj.androidNotificationXiaomiChannel);
     setBodyParameter(pushTaskObjStr + ".StoreOffline", pushTaskObj.storeOffline ? "true" : "false");

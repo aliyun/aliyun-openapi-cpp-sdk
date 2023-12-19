@@ -50,6 +50,7 @@ public:
 		std::string androidImageUrl;
 		int androidHonorTargetUserType;
 		std::string androidNotificationVivoChannel;
+		std::string androidVivoReceiptId;
 		std::string iOSNotificationCategory;
 		std::string androidNotificationXiaomiChannel;
 		bool storeOffline;

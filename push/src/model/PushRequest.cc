@@ -223,6 +223,15 @@ void PushRequest::setAndroidNotificationVivoChannel(const std::string &androidNo
   setParameter(std::string("AndroidNotificationVivoChannel"), androidNotificationVivoChannel);
 }
 
+std::string PushRequest::getAndroidVivoReceiptId() const {
+  return androidVivoReceiptId_;
+}
+
+void PushRequest::setAndroidVivoReceiptId(const std::string &androidVivoReceiptId) {
+  androidVivoReceiptId_ = androidVivoReceiptId;
+  setParameter(std::string("AndroidVivoReceiptId"), androidVivoReceiptId);
+}
+
 std::string PushRequest::getIOSNotificationCategory() const {
   return iOSNotificationCategory_;
 }
