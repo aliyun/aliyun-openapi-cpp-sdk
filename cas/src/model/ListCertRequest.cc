@@ -43,6 +43,15 @@ void ListCertRequest::setWarehouseId(long warehouseId) {
   setParameter(std::string("WarehouseId"), std::to_string(warehouseId));
 }
 
+std::string ListCertRequest::getCertType() const {
+  return certType_;
+}
+
+void ListCertRequest::setCertType(const std::string &certType) {
+  certType_ = certType;
+  setParameter(std::string("CertType"), certType);
+}
+
 std::string ListCertRequest::getSourceType() const {
   return sourceType_;
 }

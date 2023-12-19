@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					std::string issuer;
 					bool existPrivateKey;
 					std::string sourceType;
+					std::string certType;
 					std::string whInstanceId;
 					std::string commonName;
 					long beforeDate;

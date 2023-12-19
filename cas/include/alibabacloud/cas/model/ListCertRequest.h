@@ -34,6 +34,8 @@ public:
 	void setSourceIp(const std::string &sourceIp);
 	long getWarehouseId() const;
 	void setWarehouseId(long warehouseId);
+	std::string getCertType() const;
+	void setCertType(const std::string &certType);
 	std::string getSourceType() const;
 	void setSourceType(const std::string &sourceType);
 	std::string getKeyWord() const;
@@ -48,6 +50,7 @@ public:
 private:
 	std::string sourceIp_;
 	long warehouseId_;
+	std::string certType_;
 	std::string sourceType_;
 	std::string keyWord_;
 	long showSize_;

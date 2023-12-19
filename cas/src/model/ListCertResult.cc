@@ -53,6 +53,8 @@ void ListCertResult::parse(const std::string &payload)
 			certListObject.status = valueCertListCert["Status"].asString();
 		if(!valueCertListCert["SourceType"].isNull())
 			certListObject.sourceType = valueCertListCert["SourceType"].asString();
+		if(!valueCertListCert["CertType"].isNull())
+			certListObject.certType = valueCertListCert["CertType"].asString();
 		if(!valueCertListCert["CommonName"].isNull())
 			certListObject.commonName = valueCertListCert["CommonName"].asString();
 		if(!valueCertListCert["BeforeDate"].isNull())
