@@ -68,6 +68,10 @@ void RecognizeDriverLicenseResult::parse(const std::string &payload)
 		data_.faceResult.name = faceResultNode["Name"].asString();
 	if(!faceResultNode["IssueUnit"].isNull())
 		data_.faceResult.issueUnit = faceResultNode["IssueUnit"].asString();
+	if(!faceResultNode["Nationality"].isNull())
+		data_.faceResult.nationality = faceResultNode["Nationality"].asString();
+	if(!faceResultNode["BirthDate"].isNull())
+		data_.faceResult.birthDate = faceResultNode["BirthDate"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

@@ -51,7 +51,9 @@ namespace AlibabaCloud
 						std::string gender;
 						std::string issueUnit;
 						std::string endDate;
+						std::string nationality;
 						std::string name;
+						std::string birthDate;
 					};
 					FaceResult faceResult;
 					BackResult backResult;

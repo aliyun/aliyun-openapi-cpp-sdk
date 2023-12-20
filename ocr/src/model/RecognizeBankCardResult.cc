@@ -46,6 +46,8 @@ void RecognizeBankCardResult::parse(const std::string &payload)
 		data_.validDate = dataNode["ValidDate"].asString();
 	if(!dataNode["BankName"].isNull())
 		data_.bankName = dataNode["BankName"].asString();
+	if(!dataNode["CardType"].isNull())
+		data_.cardType = dataNode["CardType"].asString();
 
 }
 

@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string cardNumber;
 					std::string bankName;
 					std::string validDate;
+					std::string cardType;
 				};
 
 
