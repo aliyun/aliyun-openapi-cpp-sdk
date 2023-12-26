@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct StreamData
 				{
 					long p2pTraffic;
+					std::string newConns;
 					float bps;
 					float rtmpBps;
 					long hlsTraffic;

@@ -72,6 +72,8 @@ void StartLiveMPUTaskRequest::setTranscodeParams(const StartLiveMPUTaskRequest::
   setParameter(std::string("TranscodeParams") + ".Layout.MaxVideoUser.StreamType", transcodeParams.layout.maxVideoUser.streamType);
   setParameter(std::string("TranscodeParams") + ".Layout.MaxVideoUser.SourceType", transcodeParams.layout.maxVideoUser.sourceType);
   setParameter(std::string("TranscodeParams") + ".Layout.MaxVideoUser.UserId", transcodeParams.layout.maxVideoUser.userId);
+  setParameter(std::string("TranscodeParams") + ".Background.URL", transcodeParams.background.uRL);
+  setParameter(std::string("TranscodeParams") + ".Background.RenderMode", transcodeParams.background.renderMode);
   for(int dep1 = 0; dep1 != transcodeParams.userInfos.size(); dep1++) {
     setParameter(std::string("TranscodeParams") + ".UserInfos." + std::to_string(dep1 + 1) + ".StreamType", transcodeParams.userInfos[dep1].streamType);
     setParameter(std::string("TranscodeParams") + ".UserInfos." + std::to_string(dep1 + 1) + ".SourceType", transcodeParams.userInfos[dep1].sourceType);

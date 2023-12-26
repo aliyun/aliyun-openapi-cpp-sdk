@@ -85,6 +85,8 @@ void DescribeLiveStreamMetricDetailDataResult::parse(const std::string &payload)
 			streamDetailDataObject.flvTraffic = std::stol(valueStreamDetailDataStreamData["FlvTraffic"].asString());
 		if(!valueStreamDetailDataStreamData["TimeStamp"].isNull())
 			streamDetailDataObject.timeStamp = valueStreamDetailDataStreamData["TimeStamp"].asString();
+		if(!valueStreamDetailDataStreamData["NewConns"].isNull())
+			streamDetailDataObject.newConns = valueStreamDetailDataStreamData["NewConns"].asString();
 		streamDetailData_.push_back(streamDetailDataObject);
 	}
 	if(!value["EndTime"].isNull())

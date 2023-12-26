@@ -75,6 +75,11 @@ public:
 			MaxVideoUser maxVideoUser;
 		};
 		Layout layout;
+		struct Background {
+			std::string uRL;
+			std::string renderMode;
+		};
+		Background background;
 		struct UserInfosItem {
 			std::string streamType;
 			std::string sourceType;
