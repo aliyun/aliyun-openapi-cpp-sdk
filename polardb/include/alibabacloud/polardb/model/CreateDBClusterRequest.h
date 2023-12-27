@@ -72,8 +72,8 @@ public:
 	void setSecurityIPList(const std::string &securityIPList);
 	std::string getDBMinorVersion() const;
 	void setDBMinorVersion(const std::string &dBMinorVersion);
-	int getProvisionedIops() const;
-	void setProvisionedIops(int provisionedIops);
+	long getProvisionedIops() const;
+	void setProvisionedIops(long provisionedIops);
 	bool getAutoRenew() const;
 	void setAutoRenew(bool autoRenew);
 	std::string getHotStandbyCluster() const;
@@ -167,7 +167,7 @@ private:
 	std::string vSwitchId_;
 	std::string securityIPList_;
 	std::string dBMinorVersion_;
-	int provisionedIops_;
+	long provisionedIops_;
 	bool autoRenew_;
 	std::string hotStandbyCluster_;
 	std::string storagePayType_;

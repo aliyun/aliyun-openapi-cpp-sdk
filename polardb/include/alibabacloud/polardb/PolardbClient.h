@@ -148,6 +148,8 @@
 #include "model/DescribeDBNodesParametersResult.h"
 #include "model/DescribeDBProxyPerformanceRequest.h"
 #include "model/DescribeDBProxyPerformanceResult.h"
+#include "model/DescribeDasConfigRequest.h"
+#include "model/DescribeDasConfigResult.h"
 #include "model/DescribeDatabasesRequest.h"
 #include "model/DescribeDatabasesResult.h"
 #include "model/DescribeDetachedBackupsRequest.h"
@@ -504,6 +506,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDBProxyPerformanceResult> DescribeDBProxyPerformanceOutcome;
 			typedef std::future<DescribeDBProxyPerformanceOutcome> DescribeDBProxyPerformanceOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDBProxyPerformanceRequest&, const DescribeDBProxyPerformanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBProxyPerformanceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDasConfigResult> DescribeDasConfigOutcome;
+			typedef std::future<DescribeDasConfigOutcome> DescribeDasConfigOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeDasConfigRequest&, const DescribeDasConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDasConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDatabasesResult> DescribeDatabasesOutcome;
 			typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDatabasesRequest&, const DescribeDatabasesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
@@ -935,6 +940,9 @@ namespace AlibabaCloud
 			DescribeDBProxyPerformanceOutcome describeDBProxyPerformance(const Model::DescribeDBProxyPerformanceRequest &request)const;
 			void describeDBProxyPerformanceAsync(const Model::DescribeDBProxyPerformanceRequest& request, const DescribeDBProxyPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBProxyPerformanceOutcomeCallable describeDBProxyPerformanceCallable(const Model::DescribeDBProxyPerformanceRequest& request) const;
+			DescribeDasConfigOutcome describeDasConfig(const Model::DescribeDasConfigRequest &request)const;
+			void describeDasConfigAsync(const Model::DescribeDasConfigRequest& request, const DescribeDasConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDasConfigOutcomeCallable describeDasConfigCallable(const Model::DescribeDasConfigRequest& request) const;
 			DescribeDatabasesOutcome describeDatabases(const Model::DescribeDatabasesRequest &request)const;
 			void describeDatabasesAsync(const Model::DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDatabasesOutcomeCallable describeDatabasesCallable(const Model::DescribeDatabasesRequest& request) const;

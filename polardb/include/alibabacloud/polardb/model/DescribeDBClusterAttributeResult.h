@@ -49,10 +49,12 @@ namespace AlibabaCloud
 					int maxConnections;
 					std::string addedCpuCores;
 					std::string dBNodeRole;
+					std::string subCluster;
 					std::string imciSwitch;
 					std::string dBNodeId;
 					int maxIOPS;
 					std::string dBNodeClass;
+					std::string tair;
 					std::string serverlessType;
 					std::string creationTime;
 					std::string cpuCores;
@@ -129,6 +131,7 @@ namespace AlibabaCloud
 				RelatedAPInstance getRelatedAPInstance()const;
 				long getSQLSize()const;
 				std::string getRegionId()const;
+				bool getHotStandbyHealthy()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -190,6 +193,7 @@ namespace AlibabaCloud
 				RelatedAPInstance relatedAPInstance_;
 				long sQLSize_;
 				std::string regionId_;
+				bool hotStandbyHealthy_;
 
 			};
 		}

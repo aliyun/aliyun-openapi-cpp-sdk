@@ -70,6 +70,15 @@ void DescribeDBClustersRequest::setRecentExpirationInterval(int recentExpiration
   setParameter(std::string("RecentExpirationInterval"), std::to_string(recentExpirationInterval));
 }
 
+std::string DescribeDBClustersRequest::getDescribeType() const {
+  return describeType_;
+}
+
+void DescribeDBClustersRequest::setDescribeType(const std::string &describeType) {
+  describeType_ = describeType;
+  setParameter(std::string("DescribeType"), describeType);
+}
+
 int DescribeDBClustersRequest::getPageNumber() const {
   return pageNumber_;
 }

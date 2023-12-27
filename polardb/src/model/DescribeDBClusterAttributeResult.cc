@@ -79,6 +79,10 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 			dBNodesObject.serverWeight = valueDBNodesDBNode["ServerWeight"].asString();
 		if(!valueDBNodesDBNode["ServerlessType"].isNull())
 			dBNodesObject.serverlessType = valueDBNodesDBNode["ServerlessType"].asString();
+		if(!valueDBNodesDBNode["SubCluster"].isNull())
+			dBNodesObject.subCluster = valueDBNodesDBNode["SubCluster"].asString();
+		if(!valueDBNodesDBNode["Tair"].isNull())
+			dBNodesObject.tair = valueDBNodesDBNode["Tair"].asString();
 		dBNodes_.push_back(dBNodesObject);
 	}
 	auto allTagsNode = value["Tags"]["Tag"];
@@ -212,6 +216,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		aiType_ = value["AiType"].asString();
 	if(!value["ProvisionedIops"].isNull())
 		provisionedIops_ = value["ProvisionedIops"].asString();
+	if(!value["HotStandbyHealthy"].isNull())
+		hotStandbyHealthy_ = value["HotStandbyHealthy"].asString() == "true";
 
 }
 
@@ -498,5 +504,10 @@ long DescribeDBClusterAttributeResult::getSQLSize()const
 std::string DescribeDBClusterAttributeResult::getRegionId()const
 {
 	return regionId_;
+}
+
+bool DescribeDBClusterAttributeResult::getHotStandbyHealthy()const
+{
+	return hotStandbyHealthy_;
 }
 

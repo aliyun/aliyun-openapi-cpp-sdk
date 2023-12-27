@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_FAILOVERDBCLUSTERREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_FAILOVERDBCLUSTERREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDASCONFIGREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDASCONFIGREQUEST_H_
 
 #include <alibabacloud/polardb/PolardbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,18 +26,14 @@
 namespace AlibabaCloud {
 namespace Polardb {
 namespace Model {
-class ALIBABACLOUD_POLARDB_EXPORT FailoverDBClusterRequest : public RpcServiceRequest {
+class ALIBABACLOUD_POLARDB_EXPORT DescribeDasConfigRequest : public RpcServiceRequest {
 public:
-	FailoverDBClusterRequest();
-	~FailoverDBClusterRequest();
+	DescribeDasConfigRequest();
+	~DescribeDasConfigRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getClientToken() const;
-	void setClientToken(const std::string &clientToken);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	bool getRollBackForDisaster() const;
-	void setRollBackForDisaster(bool rollBackForDisaster);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getDBClusterId() const;
@@ -46,21 +42,16 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getTargetDBNodeId() const;
-	void setTargetDBNodeId(const std::string &targetDBNodeId);
 
 private:
 	long resourceOwnerId_;
-	std::string clientToken_;
 	std::string accessKeyId_;
-	bool rollBackForDisaster_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string targetDBNodeId_;
 };
 } // namespace Model
 } // namespace Polardb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_POLARDB_MODEL_FAILOVERDBCLUSTERREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDASCONFIGREQUEST_H_

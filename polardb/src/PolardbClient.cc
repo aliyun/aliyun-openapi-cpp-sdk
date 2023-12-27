@@ -2319,6 +2319,42 @@ PolardbClient::DescribeDBProxyPerformanceOutcomeCallable PolardbClient::describe
 	return task->get_future();
 }
 
+PolardbClient::DescribeDasConfigOutcome PolardbClient::describeDasConfig(const DescribeDasConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDasConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDasConfigOutcome(DescribeDasConfigResult(outcome.result()));
+	else
+		return DescribeDasConfigOutcome(outcome.error());
+}
+
+void PolardbClient::describeDasConfigAsync(const DescribeDasConfigRequest& request, const DescribeDasConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDasConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeDasConfigOutcomeCallable PolardbClient::describeDasConfigCallable(const DescribeDasConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDasConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDasConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DescribeDatabasesOutcome PolardbClient::describeDatabases(const DescribeDatabasesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

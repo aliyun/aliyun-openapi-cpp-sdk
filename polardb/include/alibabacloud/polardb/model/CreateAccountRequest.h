@@ -44,6 +44,8 @@ public:
 	void setAccountPrivilege(const std::string &accountPrivilege);
 	std::string getAccountName() const;
 	void setAccountName(const std::string &accountName);
+	std::string getTairAccountPassword() const;
+	void setTairAccountPassword(const std::string &tairAccountPassword);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getDBClusterId() const;
@@ -67,6 +69,7 @@ private:
 	std::string accessKeyId_;
 	std::string accountPrivilege_;
 	std::string accountName_;
+	std::string tairAccountPassword_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;

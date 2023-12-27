@@ -88,6 +88,15 @@ void CreateAccountRequest::setAccountName(const std::string &accountName) {
   setParameter(std::string("AccountName"), accountName);
 }
 
+std::string CreateAccountRequest::getTairAccountPassword() const {
+  return tairAccountPassword_;
+}
+
+void CreateAccountRequest::setTairAccountPassword(const std::string &tairAccountPassword) {
+  tairAccountPassword_ = tairAccountPassword;
+  setParameter(std::string("TairAccountPassword"), tairAccountPassword);
+}
+
 std::string CreateAccountRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

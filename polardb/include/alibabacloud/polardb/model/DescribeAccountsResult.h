@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					std::string accountLockState;
 					std::string accountPasswordValidTime;
 					std::string accountType;
+					std::string tairPasswordSetted;
 					std::vector<DBAccount::DatabasePrivilege> databasePrivileges;
 					std::string accountName;
 					std::string accountPassword;

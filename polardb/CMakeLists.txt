@@ -147,6 +147,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeDBNodesParametersResult.h
 	include/alibabacloud/polardb/model/DescribeDBProxyPerformanceRequest.h
 	include/alibabacloud/polardb/model/DescribeDBProxyPerformanceResult.h
+	include/alibabacloud/polardb/model/DescribeDasConfigRequest.h
+	include/alibabacloud/polardb/model/DescribeDasConfigResult.h
 	include/alibabacloud/polardb/model/DescribeDatabasesRequest.h
 	include/alibabacloud/polardb/model/DescribeDatabasesResult.h
 	include/alibabacloud/polardb/model/DescribeDetachedBackupsRequest.h
@@ -434,6 +436,8 @@ set(polardb_src
 	src/model/DescribeDBNodesParametersResult.cc
 	src/model/DescribeDBProxyPerformanceRequest.cc
 	src/model/DescribeDBProxyPerformanceResult.cc
+	src/model/DescribeDasConfigRequest.cc
+	src/model/DescribeDasConfigResult.cc
 	src/model/DescribeDatabasesRequest.cc
 	src/model/DescribeDatabasesResult.cc
 	src/model/DescribeDetachedBackupsRequest.cc

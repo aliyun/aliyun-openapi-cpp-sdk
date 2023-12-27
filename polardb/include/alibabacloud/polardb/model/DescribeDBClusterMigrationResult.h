@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					std::string dBEndpointId;
 					std::string endpointType;
 					std::vector<DBClusterEndpoint::Address> addressItems;
+					std::string readWriteMode;
 				};
 				struct RdsEndpoint
 				{
@@ -61,6 +62,7 @@ namespace AlibabaCloud
 						std::string netType;
 					};
 					std::string dBEndpointId;
+					std::string custinsType;
 					std::string endpointType;
 					std::vector<RdsEndpoint::Address2> addressItems1;
 				};

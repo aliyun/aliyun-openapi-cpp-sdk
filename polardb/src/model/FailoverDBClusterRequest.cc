@@ -52,6 +52,15 @@ void FailoverDBClusterRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+bool FailoverDBClusterRequest::getRollBackForDisaster() const {
+  return rollBackForDisaster_;
+}
+
+void FailoverDBClusterRequest::setRollBackForDisaster(bool rollBackForDisaster) {
+  rollBackForDisaster_ = rollBackForDisaster;
+  setParameter(std::string("RollBackForDisaster"), rollBackForDisaster ? "true" : "false");
+}
+
 std::string FailoverDBClusterRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

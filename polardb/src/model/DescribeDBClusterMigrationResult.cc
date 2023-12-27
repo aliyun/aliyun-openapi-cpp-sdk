@@ -47,6 +47,8 @@ void DescribeDBClusterMigrationResult::parse(const std::string &payload)
 			dBClusterEndpointListObject.dBEndpointId = valueDBClusterEndpointListDBClusterEndpoint["DBEndpointId"].asString();
 		if(!valueDBClusterEndpointListDBClusterEndpoint["EndpointType"].isNull())
 			dBClusterEndpointListObject.endpointType = valueDBClusterEndpointListDBClusterEndpoint["EndpointType"].asString();
+		if(!valueDBClusterEndpointListDBClusterEndpoint["ReadWriteMode"].isNull())
+			dBClusterEndpointListObject.readWriteMode = valueDBClusterEndpointListDBClusterEndpoint["ReadWriteMode"].asString();
 		auto allAddressItemsNode = valueDBClusterEndpointListDBClusterEndpoint["AddressItems"]["Address"];
 		for (auto valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress : allAddressItemsNode)
 		{
@@ -77,6 +79,8 @@ void DescribeDBClusterMigrationResult::parse(const std::string &payload)
 			rdsEndpointListObject.dBEndpointId = valueRdsEndpointListRdsEndpoint["DBEndpointId"].asString();
 		if(!valueRdsEndpointListRdsEndpoint["EndpointType"].isNull())
 			rdsEndpointListObject.endpointType = valueRdsEndpointListRdsEndpoint["EndpointType"].asString();
+		if(!valueRdsEndpointListRdsEndpoint["CustinsType"].isNull())
+			rdsEndpointListObject.custinsType = valueRdsEndpointListRdsEndpoint["CustinsType"].asString();
 		auto allAddressItems1Node = valueRdsEndpointListRdsEndpoint["AddressItems"]["Address"];
 		for (auto valueRdsEndpointListRdsEndpointAddressItemsAddress : allAddressItems1Node)
 		{

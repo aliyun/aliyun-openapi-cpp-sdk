@@ -59,6 +59,8 @@ void DescribeAccountsResult::parse(const std::string &payload)
 			accountsObject.accountName = valueAccountsDBAccount["AccountName"].asString();
 		if(!valueAccountsDBAccount["AccountPassword"].isNull())
 			accountsObject.accountPassword = valueAccountsDBAccount["AccountPassword"].asString();
+		if(!valueAccountsDBAccount["TairPasswordSetted"].isNull())
+			accountsObject.tairPasswordSetted = valueAccountsDBAccount["TairPasswordSetted"].asString();
 		auto allDatabasePrivilegesNode = valueAccountsDBAccount["DatabasePrivileges"]["DatabasePrivilege"];
 		for (auto valueAccountsDBAccountDatabasePrivilegesDatabasePrivilege : allDatabasePrivilegesNode)
 		{

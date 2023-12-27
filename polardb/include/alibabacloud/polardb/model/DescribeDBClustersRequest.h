@@ -44,6 +44,8 @@ public:
 	void setConnectionString(const std::string &connectionString);
 	int getRecentExpirationInterval() const;
 	void setRecentExpirationInterval(int recentExpirationInterval);
+	std::string getDescribeType() const;
+	void setDescribeType(const std::string &describeType);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getDBNodeIds() const;
@@ -83,6 +85,7 @@ private:
 	std::string dBClusterStatus_;
 	std::string connectionString_;
 	int recentExpirationInterval_;
+	std::string describeType_;
 	int pageNumber_;
 	std::string dBNodeIds_;
 	std::string accessKeyId_;
