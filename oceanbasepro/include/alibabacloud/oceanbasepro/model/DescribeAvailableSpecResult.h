@@ -50,6 +50,7 @@ namespace AlibabaCloud
 						};
 						std::vector<std::string> nodeNum;
 						DiskSizeRange diskSizeRange;
+						std::vector<std::string> diskTypes;
 						std::string instanceClass;
 						std::string spec;
 						LogDiskSizeRange logDiskSizeRange;

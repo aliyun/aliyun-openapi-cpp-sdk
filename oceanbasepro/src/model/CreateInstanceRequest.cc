@@ -160,6 +160,24 @@ void CreateInstanceRequest::setSeries(const std::string &series) {
   setBodyParameter(std::string("Series"), series);
 }
 
+std::string CreateInstanceRequest::getPrimaryInstance() const {
+  return primaryInstance_;
+}
+
+void CreateInstanceRequest::setPrimaryInstance(const std::string &primaryInstance) {
+  primaryInstance_ = primaryInstance;
+  setBodyParameter(std::string("PrimaryInstance"), primaryInstance);
+}
+
+std::string CreateInstanceRequest::getPrimaryRegion() const {
+  return primaryRegion_;
+}
+
+void CreateInstanceRequest::setPrimaryRegion(const std::string &primaryRegion) {
+  primaryRegion_ = primaryRegion;
+  setBodyParameter(std::string("PrimaryRegion"), primaryRegion);
+}
+
 std::string CreateInstanceRequest::getChargeType() const {
   return chargeType_;
 }

@@ -25,6 +25,15 @@ ModifyTenantPrimaryZoneRequest::ModifyTenantPrimaryZoneRequest()
 
 ModifyTenantPrimaryZoneRequest::~ModifyTenantPrimaryZoneRequest() {}
 
+std::string ModifyTenantPrimaryZoneRequest::getTenantEndpointDirectId() const {
+  return tenantEndpointDirectId_;
+}
+
+void ModifyTenantPrimaryZoneRequest::setTenantEndpointDirectId(const std::string &tenantEndpointDirectId) {
+  tenantEndpointDirectId_ = tenantEndpointDirectId;
+  setBodyParameter(std::string("TenantEndpointDirectId"), tenantEndpointDirectId);
+}
+
 std::string ModifyTenantPrimaryZoneRequest::getUserVSwitchId() const {
   return userVSwitchId_;
 }
@@ -77,5 +86,14 @@ std::string ModifyTenantPrimaryZoneRequest::getPrimaryZone() const {
 void ModifyTenantPrimaryZoneRequest::setPrimaryZone(const std::string &primaryZone) {
   primaryZone_ = primaryZone;
   setBodyParameter(std::string("PrimaryZone"), primaryZone);
+}
+
+std::string ModifyTenantPrimaryZoneRequest::getUserDirectVSwitchId() const {
+  return userDirectVSwitchId_;
+}
+
+void ModifyTenantPrimaryZoneRequest::setUserDirectVSwitchId(const std::string &userDirectVSwitchId) {
+  userDirectVSwitchId_ = userDirectVSwitchId;
+  setBodyParameter(std::string("UserDirectVSwitchId"), userDirectVSwitchId);
 }
 

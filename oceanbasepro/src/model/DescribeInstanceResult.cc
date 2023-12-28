@@ -150,6 +150,8 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		instance_.resource.logDiskSize.logAssignedSize = logDiskSizeNode["LogAssignedSize"].asString();
 	if(!logDiskSizeNode["MaxLogAssignedPercent"].isNull())
 		instance_.resource.logDiskSize.maxLogAssignedPercent = logDiskSizeNode["MaxLogAssignedPercent"].asString();
+	if(!logDiskSizeNode["OriginalTotalDiskSize"].isNull())
+		instance_.resource.logDiskSize.originalTotalDiskSize = std::stoi(logDiskSizeNode["OriginalTotalDiskSize"].asString());
 		auto allMaxLogAssignedObServer = logDiskSizeNode["MaxLogAssignedObServer"]["MaxLogAssignedObServer"];
 		for (auto value : allMaxLogAssignedObServer)
 			instance_.resource.logDiskSize.maxLogAssignedObServer.push_back(value.asString());
@@ -180,6 +182,64 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		instance_.dataDiskAutoScaleConfig.scaleStepInNormal = std::stol(dataDiskAutoScaleConfigNode["ScaleStepInNormal"].asString());
 	if(!dataDiskAutoScaleConfigNode["ScaleStepInMerge"].isNull())
 		instance_.dataDiskAutoScaleConfig.scaleStepInMerge = std::stol(dataDiskAutoScaleConfigNode["ScaleStepInMerge"].asString());
+	auto readOnlyResourceNode = instanceNode["ReadOnlyResource"];
+	if(!readOnlyResourceNode["UnitCount"].isNull())
+		instance_.readOnlyResource.unitCount = std::stol(readOnlyResourceNode["UnitCount"].asString());
+	auto cpu1Node = readOnlyResourceNode["Cpu"];
+	if(!cpu1Node["TotalCpu"].isNull())
+		instance_.readOnlyResource.cpu1.totalCpu = std::stol(cpu1Node["TotalCpu"].asString());
+	if(!cpu1Node["UsedCpu"].isNull())
+		instance_.readOnlyResource.cpu1.usedCpu = std::stol(cpu1Node["UsedCpu"].asString());
+	if(!cpu1Node["UnitCpu"].isNull())
+		instance_.readOnlyResource.cpu1.unitCpu = std::stol(cpu1Node["UnitCpu"].asString());
+	if(!cpu1Node["OriginalTotalCpu"].isNull())
+		instance_.readOnlyResource.cpu1.originalTotalCpu = std::stol(cpu1Node["OriginalTotalCpu"].asString());
+	auto memory2Node = readOnlyResourceNode["Memory"];
+	if(!memory2Node["TotalMemory"].isNull())
+		instance_.readOnlyResource.memory2.totalMemory = std::stol(memory2Node["TotalMemory"].asString());
+	if(!memory2Node["UsedMemory"].isNull())
+		instance_.readOnlyResource.memory2.usedMemory = std::stol(memory2Node["UsedMemory"].asString());
+	if(!memory2Node["UnitMemory"].isNull())
+		instance_.readOnlyResource.memory2.unitMemory = std::stol(memory2Node["UnitMemory"].asString());
+	if(!memory2Node["OriginalTotalMemory"].isNull())
+		instance_.readOnlyResource.memory2.originalTotalMemory = std::stol(memory2Node["OriginalTotalMemory"].asString());
+	auto diskSize3Node = readOnlyResourceNode["DiskSize"];
+	if(!diskSize3Node["TotalDiskSize"].isNull())
+		instance_.readOnlyResource.diskSize3.totalDiskSize = std::stol(diskSize3Node["TotalDiskSize"].asString());
+	if(!diskSize3Node["UsedDiskSize"].isNull())
+		instance_.readOnlyResource.diskSize3.usedDiskSize = std::stol(diskSize3Node["UsedDiskSize"].asString());
+	if(!diskSize3Node["UnitDiskSize"].isNull())
+		instance_.readOnlyResource.diskSize3.unitDiskSize = std::stol(diskSize3Node["UnitDiskSize"].asString());
+	if(!diskSize3Node["DataUsedSize"].isNull())
+		instance_.readOnlyResource.diskSize3.dataUsedSize = diskSize3Node["DataUsedSize"].asString();
+	if(!diskSize3Node["MaxDiskUsedPercent"].isNull())
+		instance_.readOnlyResource.diskSize3.maxDiskUsedPercent = diskSize3Node["MaxDiskUsedPercent"].asString();
+	if(!diskSize3Node["OriginalTotalDiskSize"].isNull())
+		instance_.readOnlyResource.diskSize3.originalTotalDiskSize = std::stol(diskSize3Node["OriginalTotalDiskSize"].asString());
+	if(!diskSize3Node["MaxDiskSize"].isNull())
+		instance_.readOnlyResource.diskSize3.maxDiskSize = diskSize3Node["MaxDiskSize"].asString();
+		auto allMaxDiskUsedObServer6 = diskSize3Node["MaxDiskUsedObServer"]["MaxDiskUsedObServer"];
+		for (auto value : allMaxDiskUsedObServer6)
+			instance_.readOnlyResource.diskSize3.maxDiskUsedObServer6.push_back(value.asString());
+	auto logDiskSize4Node = readOnlyResourceNode["LogDiskSize"];
+	if(!logDiskSize4Node["TotalDiskSize"].isNull())
+		instance_.readOnlyResource.logDiskSize4.totalDiskSize = std::stol(logDiskSize4Node["TotalDiskSize"].asString());
+	if(!logDiskSize4Node["UnitDiskSize"].isNull())
+		instance_.readOnlyResource.logDiskSize4.unitDiskSize = std::stol(logDiskSize4Node["UnitDiskSize"].asString());
+	if(!logDiskSize4Node["LogAssignedSize"].isNull())
+		instance_.readOnlyResource.logDiskSize4.logAssignedSize = logDiskSize4Node["LogAssignedSize"].asString();
+	if(!logDiskSize4Node["MaxLogAssignedPercent"].isNull())
+		instance_.readOnlyResource.logDiskSize4.maxLogAssignedPercent = logDiskSize4Node["MaxLogAssignedPercent"].asString();
+		auto allMaxLogAssignedObServer7 = logDiskSize4Node["MaxLogAssignedObServer"]["MaxLogAssignedObServer"];
+		for (auto value : allMaxLogAssignedObServer7)
+			instance_.readOnlyResource.logDiskSize4.maxLogAssignedObServer7.push_back(value.asString());
+	auto capacityUnit5Node = readOnlyResourceNode["CapacityUnit"];
+	if(!capacityUnit5Node["MaxCapacityUnit"].isNull())
+		instance_.readOnlyResource.capacityUnit5.maxCapacityUnit = std::stoi(capacityUnit5Node["MaxCapacityUnit"].asString());
+	if(!capacityUnit5Node["MinCapacityUnit"].isNull())
+		instance_.readOnlyResource.capacityUnit5.minCapacityUnit = std::stoi(capacityUnit5Node["MinCapacityUnit"].asString());
+	if(!capacityUnit5Node["UsedCapacityUnit"].isNull())
+		instance_.readOnlyResource.capacityUnit5.usedCapacityUnit = capacityUnit5Node["UsedCapacityUnit"].asString();
 		auto allAvailableZones = instanceNode["AvailableZones"]["AvailableZones"];
 		for (auto value : allAvailableZones)
 			instance_.availableZones.push_back(value.asString());

@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_OCEANBASEPRO_EXPORT CreateTenantUserResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct TenantUser
 				{
 					struct RolesItem
 					{
@@ -40,7 +40,7 @@ namespace AlibabaCloud
 						std::string database;
 					};
 					std::string userName;
-					std::vector<Data::RolesItem> roles;
+					std::vector<RolesItem> roles;
 					std::string userType;
 					std::string userStatus;
 				};
@@ -49,12 +49,12 @@ namespace AlibabaCloud
 				CreateTenantUserResult();
 				explicit CreateTenantUserResult(const std::string &payload);
 				~CreateTenantUserResult();
-				std::vector<Data> getTenantUser()const;
+				TenantUser getTenantUser()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Data> tenantUser_;
+				TenantUser tenantUser_;
 
 			};
 		}

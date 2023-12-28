@@ -60,6 +60,10 @@ public:
 	void setAutoRenew(bool autoRenew);
 	std::string getSeries() const;
 	void setSeries(const std::string &series);
+	std::string getPrimaryInstance() const;
+	void setPrimaryInstance(const std::string &primaryInstance);
+	std::string getPrimaryRegion() const;
+	void setPrimaryRegion(const std::string &primaryRegion);
 	std::string getChargeType() const;
 	void setChargeType(const std::string &chargeType);
 	std::string getBid() const;
@@ -81,6 +85,8 @@ private:
 	std::string replicaMode_;
 	bool autoRenew_;
 	std::string series_;
+	std::string primaryInstance_;
+	std::string primaryRegion_;
 	std::string chargeType_;
 	std::string bid_;
 };

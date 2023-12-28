@@ -94,6 +94,8 @@ void DescribeInstanceTopologyResult::parse(const std::string &payload)
 					unitsObject.enableCancelMigrateUnit = instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItemUnitsUnitsItem["EnableCancelMigrateUnit"].asString() == "true";
 				if(!instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItemUnitsUnitsItem["UnitDataSize"].isNull())
 					unitsObject.unitDataSize = std::stol(instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItemUnitsUnitsItem["UnitDataSize"].asString());
+				if(!instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItemUnitsUnitsItem["ReplicaType"].isNull())
+					unitsObject.replicaType = instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItemUnitsUnitsItem["ReplicaType"].asString();
 				tenantZonesObject.units.push_back(unitsObject);
 			}
 			tenantsItemObject.tenantZones.push_back(tenantZonesObject);
@@ -120,6 +122,12 @@ void DescribeInstanceTopologyResult::parse(const std::string &payload)
 				nodesObject.nodeCopyId = std::stol(instanceTopologyNodeZonesZonesItemNodesNodesItem["NodeCopyId"].asString());
 			if(!instanceTopologyNodeZonesZonesItemNodesNodesItem["NodeStatus"].isNull())
 				nodesObject.nodeStatus = instanceTopologyNodeZonesZonesItemNodesNodesItem["NodeStatus"].asString();
+			if(!instanceTopologyNodeZonesZonesItemNodesNodesItem["ReplicaType"].isNull())
+				nodesObject.replicaType = instanceTopologyNodeZonesZonesItemNodesNodesItem["ReplicaType"].asString();
+			if(!instanceTopologyNodeZonesZonesItemNodesNodesItem["FullCopyId"].isNull())
+				nodesObject.fullCopyId = std::stol(instanceTopologyNodeZonesZonesItemNodesNodesItem["FullCopyId"].asString());
+			if(!instanceTopologyNodeZonesZonesItemNodesNodesItem["ReadOnlyCopyId"].isNull())
+				nodesObject.readOnlyCopyId = std::stol(instanceTopologyNodeZonesZonesItemNodesNodesItem["ReadOnlyCopyId"].asString());
 			auto allNodeResourceNode = instanceTopologyNodeZonesZonesItemNodesNodesItem["NodeResource"]["NodeResourceItem"];
 			for (auto instanceTopologyNodeZonesZonesItemNodesNodesItemNodeResourceNodeResourceItem : allNodeResourceNode)
 			{

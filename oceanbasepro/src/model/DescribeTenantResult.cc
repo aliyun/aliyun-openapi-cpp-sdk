@@ -92,6 +92,8 @@ void DescribeTenantResult::parse(const std::string &payload)
 		tenant_.enableBinlogService = tenantNode["EnableBinlogService"].asString() == "true";
 	if(!tenantNode["TimeZone"].isNull())
 		tenant_.timeZone = tenantNode["TimeZone"].asString();
+	if(!tenantNode["DataMergeTime"].isNull())
+		tenant_.dataMergeTime = tenantNode["DataMergeTime"].asString();
 	auto allTenantConnectionsNode = tenantNode["TenantConnections"]["TenantConnectionsItem"];
 	for (auto tenantNodeTenantConnectionsTenantConnectionsItem : allTenantConnectionsNode)
 	{
@@ -128,6 +130,8 @@ void DescribeTenantResult::parse(const std::string &payload)
 			tenantConnectionsItemObject.tenantEndpointId = tenantNodeTenantConnectionsTenantConnectionsItem["TenantEndpointId"].asString();
 		if(!tenantNodeTenantConnectionsTenantConnectionsItem["MaxConnectionNum"].isNull())
 			tenantConnectionsItemObject.maxConnectionNum = std::stol(tenantNodeTenantConnectionsTenantConnectionsItem["MaxConnectionNum"].asString());
+		if(!tenantNodeTenantConnectionsTenantConnectionsItem["ConnectionReplicaType"].isNull())
+			tenantConnectionsItemObject.connectionReplicaType = tenantNodeTenantConnectionsTenantConnectionsItem["ConnectionReplicaType"].asString();
 		auto allConnectionZones = value["ConnectionZones"]["ConnectionZones"];
 		for (auto value : allConnectionZones)
 			tenantConnectionsItemObject.connectionZones.push_back(value.asString());
@@ -143,6 +147,24 @@ void DescribeTenantResult::parse(const std::string &payload)
 			tenantZonesItemObject.region = tenantNodeTenantZonesTenantZonesItem["Region"].asString();
 		if(!tenantNodeTenantZonesTenantZonesItem["TenantZoneRole"].isNull())
 			tenantZonesItemObject.tenantZoneRole = tenantNodeTenantZonesTenantZonesItem["TenantZoneRole"].asString();
+		auto allTenantZoneReplicasNode = tenantNodeTenantZonesTenantZonesItem["TenantZoneReplicas"]["TenantZoneReplicasItem"];
+		for (auto tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem : allTenantZoneReplicasNode)
+		{
+			Tenant::TenantZonesItem::TenantZoneReplicasItem tenantZoneReplicasObject;
+			if(!tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ZoneReplicaType"].isNull())
+				tenantZoneReplicasObject.zoneReplicaType = tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ZoneReplicaType"].asString();
+			if(!tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ZoneNodes"].isNull())
+				tenantZoneReplicasObject.zoneNodes = tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ZoneNodes"].asString();
+			if(!tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["LogicZoneName"].isNull())
+				tenantZoneReplicasObject.logicZoneName = tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["LogicZoneName"].asString();
+			if(!tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ZoneCopyId"].isNull())
+				tenantZoneReplicasObject.zoneCopyId = std::stoi(tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ZoneCopyId"].asString());
+			if(!tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["FullCopyId"].isNull())
+				tenantZoneReplicasObject.fullCopyId = std::stoi(tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["FullCopyId"].asString());
+			if(!tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ReadOnlyCopyId"].isNull())
+				tenantZoneReplicasObject.readOnlyCopyId = tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ReadOnlyCopyId"].asString();
+			tenantZonesItemObject.tenantZoneReplicas.push_back(tenantZoneReplicasObject);
+		}
 		tenant_.tenantZones.push_back(tenantZonesItemObject);
 	}
 	auto tenantResourceNode = tenantNode["TenantResource"];
@@ -177,6 +199,38 @@ void DescribeTenantResult::parse(const std::string &payload)
 		tenant_.tenantResource.logDiskSize.totalLogDisk = std::stoi(logDiskSizeNode["TotalLogDisk"].asString());
 	if(!logDiskSizeNode["UnitLogDisk"].isNull())
 		tenant_.tenantResource.logDiskSize.unitLogDisk = std::stoi(logDiskSizeNode["UnitLogDisk"].asString());
+	auto readOnlyResourceNode = tenantNode["ReadOnlyResource"];
+	if(!readOnlyResourceNode["UnitNum"].isNull())
+		tenant_.readOnlyResource.unitNum = std::stoi(readOnlyResourceNode["UnitNum"].asString());
+	auto cpu1Node = readOnlyResourceNode["Cpu"];
+	if(!cpu1Node["UsedCpu"].isNull())
+		tenant_.readOnlyResource.cpu1.usedCpu = std::stof(cpu1Node["UsedCpu"].asString());
+	if(!cpu1Node["TotalCpu"].isNull())
+		tenant_.readOnlyResource.cpu1.totalCpu = std::stof(cpu1Node["TotalCpu"].asString());
+	if(!cpu1Node["UnitCpu"].isNull())
+		tenant_.readOnlyResource.cpu1.unitCpu = std::stof(cpu1Node["UnitCpu"].asString());
+	auto memory2Node = readOnlyResourceNode["Memory"];
+	if(!memory2Node["UsedMemory"].isNull())
+		tenant_.readOnlyResource.memory2.usedMemory = std::stof(memory2Node["UsedMemory"].asString());
+	if(!memory2Node["TotalMemory"].isNull())
+		tenant_.readOnlyResource.memory2.totalMemory = std::stof(memory2Node["TotalMemory"].asString());
+	if(!memory2Node["UnitMemory"].isNull())
+		tenant_.readOnlyResource.memory2.unitMemory = std::stof(memory2Node["UnitMemory"].asString());
+	auto diskSize3Node = readOnlyResourceNode["DiskSize"];
+	if(!diskSize3Node["UsedDiskSize"].isNull())
+		tenant_.readOnlyResource.diskSize3.usedDiskSize = std::stof(diskSize3Node["UsedDiskSize"].asString());
+	auto capacityUnit4Node = readOnlyResourceNode["CapacityUnit"];
+	if(!capacityUnit4Node["MaxCapacityUnit"].isNull())
+		tenant_.readOnlyResource.capacityUnit4.maxCapacityUnit = std::stoi(capacityUnit4Node["MaxCapacityUnit"].asString());
+	if(!capacityUnit4Node["MinCapacityUnit"].isNull())
+		tenant_.readOnlyResource.capacityUnit4.minCapacityUnit = std::stoi(capacityUnit4Node["MinCapacityUnit"].asString());
+	if(!capacityUnit4Node["UsedCapacit"].isNull())
+		tenant_.readOnlyResource.capacityUnit4.usedCapacit = std::stoi(capacityUnit4Node["UsedCapacit"].asString());
+	auto logDiskSize5Node = readOnlyResourceNode["LogDiskSize"];
+	if(!logDiskSize5Node["TotalLogDisk"].isNull())
+		tenant_.readOnlyResource.logDiskSize5.totalLogDisk = std::stoi(logDiskSize5Node["TotalLogDisk"].asString());
+	if(!logDiskSize5Node["UnitLogDisk"].isNull())
+		tenant_.readOnlyResource.logDiskSize5.unitLogDisk = std::stoi(logDiskSize5Node["UnitLogDisk"].asString());
 		auto allAvailableZones = tenantNode["AvailableZones"]["AvailableZones"];
 		for (auto value : allAvailableZones)
 			tenant_.availableZones.push_back(value.asString());

@@ -30,6 +30,8 @@ class ALIBABACLOUD_OCEANBASEPRO_EXPORT ModifyTenantPrimaryZoneRequest : public R
 public:
 	ModifyTenantPrimaryZoneRequest();
 	~ModifyTenantPrimaryZoneRequest();
+	std::string getTenantEndpointDirectId() const;
+	void setTenantEndpointDirectId(const std::string &tenantEndpointDirectId);
 	std::string getUserVSwitchId() const;
 	void setUserVSwitchId(const std::string &userVSwitchId);
 	std::string getMasterIntranetAddressZone() const;
@@ -42,14 +44,18 @@ public:
 	void setInstanceId(const std::string &instanceId);
 	std::string getPrimaryZone() const;
 	void setPrimaryZone(const std::string &primaryZone);
+	std::string getUserDirectVSwitchId() const;
+	void setUserDirectVSwitchId(const std::string &userDirectVSwitchId);
 
 private:
+	std::string tenantEndpointDirectId_;
 	std::string userVSwitchId_;
 	std::string masterIntranetAddressZone_;
 	std::string tenantId_;
 	std::string tenantEndpointId_;
 	std::string instanceId_;
 	std::string primaryZone_;
+	std::string userDirectVSwitchId_;
 };
 } // namespace Model
 } // namespace OceanBasePro

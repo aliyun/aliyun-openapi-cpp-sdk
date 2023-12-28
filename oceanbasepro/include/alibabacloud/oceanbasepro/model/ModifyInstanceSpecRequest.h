@@ -38,6 +38,8 @@ public:
 	void setDryRun(bool dryRun);
 	long getDiskSize() const;
 	void setDiskSize(long diskSize);
+	std::string getDiskType() const;
+	void setDiskType(const std::string &diskType);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	long getLogDiskSize() const;
@@ -48,6 +50,7 @@ private:
 	std::string instanceClass_;
 	bool dryRun_;
 	long diskSize_;
+	std::string diskType_;
 	std::string instanceId_;
 	long logDiskSize_;
 };

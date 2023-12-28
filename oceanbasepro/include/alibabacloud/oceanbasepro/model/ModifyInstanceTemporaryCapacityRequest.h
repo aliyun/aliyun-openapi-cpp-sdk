@@ -36,11 +36,14 @@ public:
 	void setSpec(const std::string &spec);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string diskSize_;
 	std::string spec_;
 	std::string instanceId_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace OceanBasePro

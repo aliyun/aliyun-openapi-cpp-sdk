@@ -40,6 +40,8 @@ public:
 	void setSortOrder(const std::string &sortOrder);
 	std::string getSortMetricKey() const;
 	void setSortMetricKey(const std::string &sortMetricKey);
+	std::string getReplicaType() const;
+	void setReplicaType(const std::string &replicaType);
 	std::string getEndTime() const;
 	void setEndTime(const std::string &endTime);
 	std::string getLabels() const;
@@ -55,6 +57,7 @@ private:
 	std::string limit_;
 	std::string sortOrder_;
 	std::string sortMetricKey_;
+	std::string replicaType_;
 	std::string endTime_;
 	std::string labels_;
 	std::string instanceId_;

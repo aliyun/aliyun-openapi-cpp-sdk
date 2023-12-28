@@ -70,11 +70,48 @@ namespace AlibabaCloud
 						Cpu cpu;
 						LogDiskSize logDiskSize;
 					};
+					struct ReadOnlyResource
+					{
+						struct Cpu1
+						{
+							float unitCpu;
+							float totalCpu;
+							float usedCpu;
+						};
+						struct Memory2
+						{
+							float usedMemory;
+							float unitMemory;
+							float totalMemory;
+						};
+						struct DiskSize3
+						{
+							float usedDiskSize;
+						};
+						struct CapacityUnit4
+						{
+							int usedCapacit;
+							int maxCapacityUnit;
+							int minCapacityUnit;
+						};
+						struct LogDiskSize5
+						{
+							int totalLogDisk;
+							int unitLogDisk;
+						};
+						LogDiskSize5 logDiskSize5;
+						int unitNum;
+						Cpu1 cpu1;
+						DiskSize3 diskSize3;
+						CapacityUnit4 capacityUnit4;
+						Memory2 memory2;
+					};
 					struct TenantConnectionsItem
 					{
 						std::string intranetAddressStatus;
 						std::vector<std::string> connectionZones;
 						std::string internetAddress;
+						std::string connectionReplicaType;
 						std::string intranetAddressSlaveZoneId;
 						std::string internetAddressStatus;
 						long maxConnectionNum;
@@ -92,13 +129,25 @@ namespace AlibabaCloud
 					};
 					struct TenantZonesItem
 					{
+						struct TenantZoneReplicasItem
+						{
+							std::string zoneNodes;
+							int zoneCopyId;
+							std::string logicZoneName;
+							std::string readOnlyCopyId;
+							std::string zoneReplicaType;
+							int fullCopyId;
+						};
 						std::string tenantZoneRole;
+						std::vector<TenantZonesItem::TenantZoneReplicasItem> tenantZoneReplicas;
 						std::string tenantZoneId;
 						std::string region;
 					};
 					std::string deployType;
+					ReadOnlyResource readOnlyResource;
 					std::string description;
 					long maxParallelQueryDegree;
+					std::string dataMergeTime;
 					std::string masterIntranetAddressZone;
 					std::vector<std::string> availableZones;
 					std::string diskType;

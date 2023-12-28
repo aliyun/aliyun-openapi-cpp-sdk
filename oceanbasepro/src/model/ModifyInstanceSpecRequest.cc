@@ -61,6 +61,15 @@ void ModifyInstanceSpecRequest::setDiskSize(long diskSize) {
   setBodyParameter(std::string("DiskSize"), std::to_string(diskSize));
 }
 
+std::string ModifyInstanceSpecRequest::getDiskType() const {
+  return diskType_;
+}
+
+void ModifyInstanceSpecRequest::setDiskType(const std::string &diskType) {
+  diskType_ = diskType;
+  setBodyParameter(std::string("DiskType"), diskType);
+}
+
 std::string ModifyInstanceSpecRequest::getInstanceId() const {
   return instanceId_;
 }

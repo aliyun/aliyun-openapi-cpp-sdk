@@ -44,6 +44,7 @@ namespace AlibabaCloud
 								long unitDataSize;
 								std::string unitId;
 								float unitMemory;
+								std::string replicaType;
 								bool enableMigrateUnit;
 								bool enableCancelMigrateUnit;
 								std::string nodeId;
@@ -101,8 +102,11 @@ namespace AlibabaCloud
 								Cpu cpu;
 							};
 							std::vector<NodesItem::NodeResourceItem> nodeResource;
+							std::string replicaType;
 							std::string nodeId;
+							long readOnlyCopyId;
 							std::string nodeStatus;
+							long fullCopyId;
 							long nodeCopyId;
 						};
 						std::string zoneId;

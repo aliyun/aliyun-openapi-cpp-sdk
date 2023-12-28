@@ -39,32 +39,27 @@ void CreateTenantUserResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTenantUserNode = value["TenantUser"]["Data"];
-	for (auto valueTenantUserData : allTenantUserNode)
+	auto tenantUserNode = value["TenantUser"];
+	if(!tenantUserNode["UserType"].isNull())
+		tenantUser_.userType = tenantUserNode["UserType"].asString();
+	if(!tenantUserNode["UserStatus"].isNull())
+		tenantUser_.userStatus = tenantUserNode["UserStatus"].asString();
+	if(!tenantUserNode["UserName"].isNull())
+		tenantUser_.userName = tenantUserNode["UserName"].asString();
+	auto allRolesNode = tenantUserNode["Roles"]["RolesItem"];
+	for (auto tenantUserNodeRolesRolesItem : allRolesNode)
 	{
-		Data tenantUserObject;
-		if(!valueTenantUserData["UserType"].isNull())
-			tenantUserObject.userType = valueTenantUserData["UserType"].asString();
-		if(!valueTenantUserData["UserStatus"].isNull())
-			tenantUserObject.userStatus = valueTenantUserData["UserStatus"].asString();
-		if(!valueTenantUserData["UserName"].isNull())
-			tenantUserObject.userName = valueTenantUserData["UserName"].asString();
-		auto allRolesNode = valueTenantUserData["Roles"]["RolesItem"];
-		for (auto valueTenantUserDataRolesRolesItem : allRolesNode)
-		{
-			Data::RolesItem rolesObject;
-			if(!valueTenantUserDataRolesRolesItem["Database"].isNull())
-				rolesObject.database = valueTenantUserDataRolesRolesItem["Database"].asString();
-			if(!valueTenantUserDataRolesRolesItem["Role"].isNull())
-				rolesObject.role = valueTenantUserDataRolesRolesItem["Role"].asString();
-			tenantUserObject.roles.push_back(rolesObject);
-		}
-		tenantUser_.push_back(tenantUserObject);
+		TenantUser::RolesItem rolesItemObject;
+		if(!tenantUserNodeRolesRolesItem["Database"].isNull())
+			rolesItemObject.database = tenantUserNodeRolesRolesItem["Database"].asString();
+		if(!tenantUserNodeRolesRolesItem["Role"].isNull())
+			rolesItemObject.role = tenantUserNodeRolesRolesItem["Role"].asString();
+		tenantUser_.roles.push_back(rolesItemObject);
 	}
 
 }
 
-std::vector<CreateTenantUserResult::Data> CreateTenantUserResult::getTenantUser()const
+CreateTenantUserResult::TenantUser CreateTenantUserResult::getTenantUser()const
 {
 	return tenantUser_;
 }

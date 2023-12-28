@@ -65,6 +65,7 @@ namespace AlibabaCloud
 						{
 							std::string maxLogAssignedPercent;
 							std::string logAssignedSize;
+							int originalTotalDiskSize;
 							std::vector<std::string> maxLogAssignedObServer;
 							long unitDiskSize;
 							long totalDiskSize;
@@ -97,8 +98,57 @@ namespace AlibabaCloud
 						long upperThreshold;
 						bool autoScale;
 					};
+					struct ReadOnlyResource
+					{
+						struct Cpu1
+						{
+							long unitCpu;
+							long totalCpu;
+							long usedCpu;
+							long originalTotalCpu;
+						};
+						struct Memory2
+						{
+							long usedMemory;
+							long unitMemory;
+							long totalMemory;
+							long originalTotalMemory;
+						};
+						struct DiskSize3
+						{
+							double dataUsedSize;
+							long originalTotalDiskSize;
+							long usedDiskSize;
+							double maxDiskUsedPercent;
+							double maxDiskSize;
+							long unitDiskSize;
+							long totalDiskSize;
+							std::vector<std::string> maxDiskUsedObServer6;
+						};
+						struct LogDiskSize4
+						{
+							std::string maxLogAssignedPercent;
+							std::string logAssignedSize;
+							long unitDiskSize;
+							long totalDiskSize;
+							std::vector<std::string> maxLogAssignedObServer7;
+						};
+						struct CapacityUnit5
+						{
+							std::string usedCapacityUnit;
+							int maxCapacityUnit;
+							int minCapacityUnit;
+						};
+						LogDiskSize4 logDiskSize4;
+						long unitCount;
+						Cpu1 cpu1;
+						DiskSize3 diskSize3;
+						CapacityUnit5 capacityUnit5;
+						Memory2 memory2;
+					};
 					std::string deployType;
 					std::string proxyServiceStatus;
+					ReadOnlyResource readOnlyResource;
 					std::string nodeNum;
 					bool enableIsolationOptimization;
 					std::string dataMergeTime;

@@ -52,3 +52,12 @@ void ModifyInstanceTemporaryCapacityRequest::setInstanceId(const std::string &in
   setBodyParameter(std::string("InstanceId"), instanceId);
 }
 
+std::string ModifyInstanceTemporaryCapacityRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void ModifyInstanceTemporaryCapacityRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setBodyParameter(std::string("AcceptLanguage"), acceptLanguage);
+}
+

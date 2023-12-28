@@ -65,6 +65,9 @@ void DescribeAvailableSpecResult::parse(const std::string &payload)
 		auto allNodeNum = value["NodeNum"]["NodeNum"];
 		for (auto value : allNodeNum)
 			availableSpecificationsItemObject.nodeNum.push_back(value.asString());
+		auto allDiskTypes = value["DiskTypes"]["DiskTypes"];
+		for (auto value : allDiskTypes)
+			availableSpecificationsItemObject.diskTypes.push_back(value.asString());
 		data_.availableSpecifications.push_back(availableSpecificationsItemObject);
 	}
 

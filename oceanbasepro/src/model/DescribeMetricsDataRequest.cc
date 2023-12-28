@@ -70,6 +70,15 @@ void DescribeMetricsDataRequest::setSortMetricKey(const std::string &sortMetricK
   setParameter(std::string("SortMetricKey"), sortMetricKey);
 }
 
+std::string DescribeMetricsDataRequest::getReplicaType() const {
+  return replicaType_;
+}
+
+void DescribeMetricsDataRequest::setReplicaType(const std::string &replicaType) {
+  replicaType_ = replicaType;
+  setBodyParameter(std::string("ReplicaType"), replicaType);
+}
+
 std::string DescribeMetricsDataRequest::getEndTime() const {
   return endTime_;
 }
