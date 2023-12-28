@@ -30,6 +30,8 @@
 #include "model/ClientStartResult.h"
 #include "model/CloseTimedResetOperateRequest.h"
 #include "model/CloseTimedResetOperateResult.h"
+#include "model/ConfirmAvatar2dTrainRequest.h"
+#include "model/ConfirmAvatar2dTrainResult.h"
 #include "model/Create2dAvatarRequest.h"
 #include "model/Create2dAvatarResult.h"
 #include "model/DeleteAvatarRequest.h"
@@ -99,6 +101,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CloseTimedResetOperateResult> CloseTimedResetOperateOutcome;
 			typedef std::future<CloseTimedResetOperateOutcome> CloseTimedResetOperateOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::CloseTimedResetOperateRequest&, const CloseTimedResetOperateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseTimedResetOperateAsyncHandler;
+			typedef Outcome<Error, Model::ConfirmAvatar2dTrainResult> ConfirmAvatar2dTrainOutcome;
+			typedef std::future<ConfirmAvatar2dTrainOutcome> ConfirmAvatar2dTrainOutcomeCallable;
+			typedef std::function<void(const AvatarClient*, const Model::ConfirmAvatar2dTrainRequest&, const ConfirmAvatar2dTrainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmAvatar2dTrainAsyncHandler;
 			typedef Outcome<Error, Model::Create2dAvatarResult> Create2dAvatarOutcome;
 			typedef std::future<Create2dAvatarOutcome> Create2dAvatarOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::Create2dAvatarRequest&, const Create2dAvatarOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> Create2dAvatarAsyncHandler;
@@ -188,6 +193,9 @@ namespace AlibabaCloud
 			CloseTimedResetOperateOutcome closeTimedResetOperate(const Model::CloseTimedResetOperateRequest &request)const;
 			void closeTimedResetOperateAsync(const Model::CloseTimedResetOperateRequest& request, const CloseTimedResetOperateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloseTimedResetOperateOutcomeCallable closeTimedResetOperateCallable(const Model::CloseTimedResetOperateRequest& request) const;
+			ConfirmAvatar2dTrainOutcome confirmAvatar2dTrain(const Model::ConfirmAvatar2dTrainRequest &request)const;
+			void confirmAvatar2dTrainAsync(const Model::ConfirmAvatar2dTrainRequest& request, const ConfirmAvatar2dTrainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ConfirmAvatar2dTrainOutcomeCallable confirmAvatar2dTrainCallable(const Model::ConfirmAvatar2dTrainRequest& request) const;
 			Create2dAvatarOutcome create2dAvatar(const Model::Create2dAvatarRequest &request)const;
 			void create2dAvatarAsync(const Model::Create2dAvatarRequest& request, const Create2dAvatarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			Create2dAvatarOutcomeCallable create2dAvatarCallable(const Model::Create2dAvatarRequest& request) const;

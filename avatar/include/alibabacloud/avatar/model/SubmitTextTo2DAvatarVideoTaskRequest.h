@@ -39,6 +39,10 @@ public:
 	};
 	struct AvatarInfo {
 		std::string code;
+		int x;
+		int width;
+		int y;
+		int height;
 	};
 	struct VideoInfo {
 		bool isAlpha;

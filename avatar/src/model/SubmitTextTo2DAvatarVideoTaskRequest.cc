@@ -53,6 +53,10 @@ SubmitTextTo2DAvatarVideoTaskRequest::AvatarInfo SubmitTextTo2DAvatarVideoTaskRe
 void SubmitTextTo2DAvatarVideoTaskRequest::setAvatarInfo(const SubmitTextTo2DAvatarVideoTaskRequest::AvatarInfo &avatarInfo) {
   avatarInfo_ = avatarInfo;
   setParameter(std::string("AvatarInfo") + ".Code", avatarInfo.code);
+  setParameter(std::string("AvatarInfo") + ".X", std::to_string(avatarInfo.x));
+  setParameter(std::string("AvatarInfo") + ".Width", std::to_string(avatarInfo.width));
+  setParameter(std::string("AvatarInfo") + ".Y", std::to_string(avatarInfo.y));
+  setParameter(std::string("AvatarInfo") + ".Height", std::to_string(avatarInfo.height));
 }
 
 std::string SubmitTextTo2DAvatarVideoTaskRequest::getTitle() const {

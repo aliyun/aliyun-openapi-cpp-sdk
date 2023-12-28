@@ -29,6 +29,8 @@ set(avatar_public_header_model
 	include/alibabacloud/avatar/model/ClientStartResult.h
 	include/alibabacloud/avatar/model/CloseTimedResetOperateRequest.h
 	include/alibabacloud/avatar/model/CloseTimedResetOperateResult.h
+	include/alibabacloud/avatar/model/ConfirmAvatar2dTrainRequest.h
+	include/alibabacloud/avatar/model/ConfirmAvatar2dTrainResult.h
 	include/alibabacloud/avatar/model/Create2dAvatarRequest.h
 	include/alibabacloud/avatar/model/Create2dAvatarResult.h
 	include/alibabacloud/avatar/model/DeleteAvatarRequest.h
@@ -88,6 +90,8 @@ set(avatar_src
 	src/model/ClientStartResult.cc
 	src/model/CloseTimedResetOperateRequest.cc
 	src/model/CloseTimedResetOperateResult.cc
+	src/model/ConfirmAvatar2dTrainRequest.cc
+	src/model/ConfirmAvatar2dTrainResult.cc
 	src/model/Create2dAvatarRequest.cc
 	src/model/Create2dAvatarResult.cc
 	src/model/DeleteAvatarRequest.cc

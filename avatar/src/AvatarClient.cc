@@ -195,6 +195,42 @@ AvatarClient::CloseTimedResetOperateOutcomeCallable AvatarClient::closeTimedRese
 	return task->get_future();
 }
 
+AvatarClient::ConfirmAvatar2dTrainOutcome AvatarClient::confirmAvatar2dTrain(const ConfirmAvatar2dTrainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ConfirmAvatar2dTrainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ConfirmAvatar2dTrainOutcome(ConfirmAvatar2dTrainResult(outcome.result()));
+	else
+		return ConfirmAvatar2dTrainOutcome(outcome.error());
+}
+
+void AvatarClient::confirmAvatar2dTrainAsync(const ConfirmAvatar2dTrainRequest& request, const ConfirmAvatar2dTrainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, confirmAvatar2dTrain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::ConfirmAvatar2dTrainOutcomeCallable AvatarClient::confirmAvatar2dTrainCallable(const ConfirmAvatar2dTrainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ConfirmAvatar2dTrainOutcome()>>(
+			[this, request]()
+			{
+			return this->confirmAvatar2dTrain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AvatarClient::Create2dAvatarOutcome AvatarClient::create2dAvatar(const Create2dAvatarRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -41,6 +41,10 @@ SubmitAudioTo2DAvatarVideoTaskRequest::AvatarInfo SubmitAudioTo2DAvatarVideoTask
 void SubmitAudioTo2DAvatarVideoTaskRequest::setAvatarInfo(const SubmitAudioTo2DAvatarVideoTaskRequest::AvatarInfo &avatarInfo) {
   avatarInfo_ = avatarInfo;
   setParameter(std::string("AvatarInfo") + ".Code", avatarInfo.code);
+  setParameter(std::string("AvatarInfo") + ".X", std::to_string(avatarInfo.x));
+  setParameter(std::string("AvatarInfo") + ".Width", std::to_string(avatarInfo.width));
+  setParameter(std::string("AvatarInfo") + ".Y", std::to_string(avatarInfo.y));
+  setParameter(std::string("AvatarInfo") + ".Height", std::to_string(avatarInfo.height));
 }
 
 std::string SubmitAudioTo2DAvatarVideoTaskRequest::getTitle() const {
