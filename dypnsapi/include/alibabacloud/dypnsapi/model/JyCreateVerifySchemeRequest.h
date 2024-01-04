@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_GETAUTHTOKENREQUEST_H_
-#define ALIBABACLOUD_DYPNSAPI_MODEL_GETAUTHTOKENREQUEST_H_
+#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_JYCREATEVERIFYSCHEMEREQUEST_H_
+#define ALIBABACLOUD_DYPNSAPI_MODEL_JYCREATEVERIFYSCHEMEREQUEST_H_
 
 #include <alibabacloud/dypnsapi/DypnsapiExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,53 @@
 namespace AlibabaCloud {
 namespace Dypnsapi {
 namespace Model {
-class ALIBABACLOUD_DYPNSAPI_EXPORT GetAuthTokenRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DYPNSAPI_EXPORT JyCreateVerifySchemeRequest : public RpcServiceRequest {
 public:
-	GetAuthTokenRequest();
-	~GetAuthTokenRequest();
+	JyCreateVerifySchemeRequest();
+	~JyCreateVerifySchemeRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getOrigin() const;
-	void setOrigin(const std::string &origin);
+	std::string getBundleId() const;
+	void setBundleId(const std::string &bundleId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSceneCode() const;
-	void setSceneCode(const std::string &sceneCode);
+	std::string getAppName() const;
+	void setAppName(const std::string &appName);
+	std::string getPackSign() const;
+	void setPackSign(const std::string &packSign);
+	std::string getPackName() const;
+	void setPackName(const std::string &packName);
+	long getCuApiCode() const;
+	void setCuApiCode(long cuApiCode);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	long getCtApiCode() const;
+	void setCtApiCode(long ctApiCode);
+	std::string getOsType() const;
+	void setOsType(const std::string &osType);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getUrl() const;
-	void setUrl(const std::string &url);
+	long getCmApiCode() const;
+	void setCmApiCode(long cmApiCode);
+	std::string getSchemeName() const;
+	void setSchemeName(const std::string &schemeName);
 
 private:
 	long resourceOwnerId_;
-	std::string origin_;
+	std::string bundleId_;
 	std::string accessKeyId_;
-	std::string sceneCode_;
+	std::string appName_;
+	std::string packSign_;
+	std::string packName_;
+	long cuApiCode_;
 	std::string resourceOwnerAccount_;
+	long ctApiCode_;
+	std::string osType_;
 	long ownerId_;
-	std::string url_;
+	long cmApiCode_;
+	std::string schemeName_;
 };
 } // namespace Model
 } // namespace Dypnsapi
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_GETAUTHTOKENREQUEST_H_
+#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_JYCREATEVERIFYSCHEMEREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_GETAUTHTOKENREQUEST_H_
-#define ALIBABACLOUD_DYPNSAPI_MODEL_GETAUTHTOKENREQUEST_H_
+#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_JYQUERYAPPINFOBYSCENECODEREQUEST_H_
+#define ALIBABACLOUD_DYPNSAPI_MODEL_JYQUERYAPPINFOBYSCENECODEREQUEST_H_
 
 #include <alibabacloud/dypnsapi/DypnsapiExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,14 +26,12 @@
 namespace AlibabaCloud {
 namespace Dypnsapi {
 namespace Model {
-class ALIBABACLOUD_DYPNSAPI_EXPORT GetAuthTokenRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DYPNSAPI_EXPORT JyQueryAppInfoBySceneCodeRequest : public RpcServiceRequest {
 public:
-	GetAuthTokenRequest();
-	~GetAuthTokenRequest();
+	JyQueryAppInfoBySceneCodeRequest();
+	~JyQueryAppInfoBySceneCodeRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getOrigin() const;
-	void setOrigin(const std::string &origin);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSceneCode() const;
@@ -42,19 +40,15 @@ public:
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getUrl() const;
-	void setUrl(const std::string &url);
 
 private:
 	long resourceOwnerId_;
-	std::string origin_;
 	std::string accessKeyId_;
 	std::string sceneCode_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;
-	std::string url_;
 };
 } // namespace Model
 } // namespace Dypnsapi
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_GETAUTHTOKENREQUEST_H_
+#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_JYQUERYAPPINFOBYSCENECODEREQUEST_H_

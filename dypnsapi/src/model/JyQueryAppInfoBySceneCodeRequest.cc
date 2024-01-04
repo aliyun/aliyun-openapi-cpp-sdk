@@ -14,77 +14,59 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dypnsapi/model/GetAuthTokenRequest.h>
+#include <alibabacloud/dypnsapi/model/JyQueryAppInfoBySceneCodeRequest.h>
 
-using AlibabaCloud::Dypnsapi::Model::GetAuthTokenRequest;
+using AlibabaCloud::Dypnsapi::Model::JyQueryAppInfoBySceneCodeRequest;
 
-GetAuthTokenRequest::GetAuthTokenRequest()
-    : RpcServiceRequest("dypnsapi", "2017-05-25", "GetAuthToken") {
+JyQueryAppInfoBySceneCodeRequest::JyQueryAppInfoBySceneCodeRequest()
+    : RpcServiceRequest("dypnsapi", "2017-05-25", "JyQueryAppInfoBySceneCode") {
   setMethod(HttpRequest::Method::Post);
 }
 
-GetAuthTokenRequest::~GetAuthTokenRequest() {}
+JyQueryAppInfoBySceneCodeRequest::~JyQueryAppInfoBySceneCodeRequest() {}
 
-long GetAuthTokenRequest::getResourceOwnerId() const {
+long JyQueryAppInfoBySceneCodeRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
 
-void GetAuthTokenRequest::setResourceOwnerId(long resourceOwnerId) {
+void JyQueryAppInfoBySceneCodeRequest::setResourceOwnerId(long resourceOwnerId) {
   resourceOwnerId_ = resourceOwnerId;
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string GetAuthTokenRequest::getOrigin() const {
-  return origin_;
-}
-
-void GetAuthTokenRequest::setOrigin(const std::string &origin) {
-  origin_ = origin;
-  setParameter(std::string("Origin"), origin);
-}
-
-std::string GetAuthTokenRequest::getAccessKeyId() const {
+std::string JyQueryAppInfoBySceneCodeRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
 
-void GetAuthTokenRequest::setAccessKeyId(const std::string &accessKeyId) {
+void JyQueryAppInfoBySceneCodeRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string GetAuthTokenRequest::getSceneCode() const {
+std::string JyQueryAppInfoBySceneCodeRequest::getSceneCode() const {
   return sceneCode_;
 }
 
-void GetAuthTokenRequest::setSceneCode(const std::string &sceneCode) {
+void JyQueryAppInfoBySceneCodeRequest::setSceneCode(const std::string &sceneCode) {
   sceneCode_ = sceneCode;
   setParameter(std::string("SceneCode"), sceneCode);
 }
 
-std::string GetAuthTokenRequest::getResourceOwnerAccount() const {
+std::string JyQueryAppInfoBySceneCodeRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
 
-void GetAuthTokenRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+void JyQueryAppInfoBySceneCodeRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
   resourceOwnerAccount_ = resourceOwnerAccount;
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-long GetAuthTokenRequest::getOwnerId() const {
+long JyQueryAppInfoBySceneCodeRequest::getOwnerId() const {
   return ownerId_;
 }
 
-void GetAuthTokenRequest::setOwnerId(long ownerId) {
+void JyQueryAppInfoBySceneCodeRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string GetAuthTokenRequest::getUrl() const {
-  return url_;
-}
-
-void GetAuthTokenRequest::setUrl(const std::string &url) {
-  url_ = url;
-  setParameter(std::string("Url"), url);
 }
 
