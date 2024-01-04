@@ -2247,6 +2247,42 @@ VodClient::DetachAppPolicyFromIdentityOutcomeCallable VodClient::detachAppPolicy
 	return task->get_future();
 }
 
+VodClient::GenerateDownloadSecretKeyOutcome VodClient::generateDownloadSecretKey(const GenerateDownloadSecretKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateDownloadSecretKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateDownloadSecretKeyOutcome(GenerateDownloadSecretKeyResult(outcome.result()));
+	else
+		return GenerateDownloadSecretKeyOutcome(outcome.error());
+}
+
+void VodClient::generateDownloadSecretKeyAsync(const GenerateDownloadSecretKeyRequest& request, const GenerateDownloadSecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateDownloadSecretKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::GenerateDownloadSecretKeyOutcomeCallable VodClient::generateDownloadSecretKeyCallable(const GenerateDownloadSecretKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateDownloadSecretKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->generateDownloadSecretKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::GenerateKMSDataKeyOutcome VodClient::generateKMSDataKey(const GenerateKMSDataKeyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -144,6 +144,8 @@
 #include "model/DescribeVodVerifyContentResult.h"
 #include "model/DetachAppPolicyFromIdentityRequest.h"
 #include "model/DetachAppPolicyFromIdentityResult.h"
+#include "model/GenerateDownloadSecretKeyRequest.h"
+#include "model/GenerateDownloadSecretKeyResult.h"
 #include "model/GenerateKMSDataKeyRequest.h"
 #include "model/GenerateKMSDataKeyResult.h"
 #include "model/GetAIImageJobsRequest.h"
@@ -522,6 +524,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetachAppPolicyFromIdentityResult> DetachAppPolicyFromIdentityOutcome;
 			typedef std::future<DetachAppPolicyFromIdentityOutcome> DetachAppPolicyFromIdentityOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DetachAppPolicyFromIdentityRequest&, const DetachAppPolicyFromIdentityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachAppPolicyFromIdentityAsyncHandler;
+			typedef Outcome<Error, Model::GenerateDownloadSecretKeyResult> GenerateDownloadSecretKeyOutcome;
+			typedef std::future<GenerateDownloadSecretKeyOutcome> GenerateDownloadSecretKeyOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::GenerateDownloadSecretKeyRequest&, const GenerateDownloadSecretKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateDownloadSecretKeyAsyncHandler;
 			typedef Outcome<Error, Model::GenerateKMSDataKeyResult> GenerateKMSDataKeyOutcome;
 			typedef std::future<GenerateKMSDataKeyOutcome> GenerateKMSDataKeyOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GenerateKMSDataKeyRequest&, const GenerateKMSDataKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateKMSDataKeyAsyncHandler;
@@ -989,6 +994,9 @@ namespace AlibabaCloud
 			DetachAppPolicyFromIdentityOutcome detachAppPolicyFromIdentity(const Model::DetachAppPolicyFromIdentityRequest &request)const;
 			void detachAppPolicyFromIdentityAsync(const Model::DetachAppPolicyFromIdentityRequest& request, const DetachAppPolicyFromIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachAppPolicyFromIdentityOutcomeCallable detachAppPolicyFromIdentityCallable(const Model::DetachAppPolicyFromIdentityRequest& request) const;
+			GenerateDownloadSecretKeyOutcome generateDownloadSecretKey(const Model::GenerateDownloadSecretKeyRequest &request)const;
+			void generateDownloadSecretKeyAsync(const Model::GenerateDownloadSecretKeyRequest& request, const GenerateDownloadSecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GenerateDownloadSecretKeyOutcomeCallable generateDownloadSecretKeyCallable(const Model::GenerateDownloadSecretKeyRequest& request) const;
 			GenerateKMSDataKeyOutcome generateKMSDataKey(const Model::GenerateKMSDataKeyRequest &request)const;
 			void generateKMSDataKeyAsync(const Model::GenerateKMSDataKeyRequest& request, const GenerateKMSDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GenerateKMSDataKeyOutcomeCallable generateKMSDataKeyCallable(const Model::GenerateKMSDataKeyRequest& request) const;

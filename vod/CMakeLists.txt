@@ -143,6 +143,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DescribeVodVerifyContentResult.h
 	include/alibabacloud/vod/model/DetachAppPolicyFromIdentityRequest.h
 	include/alibabacloud/vod/model/DetachAppPolicyFromIdentityResult.h
+	include/alibabacloud/vod/model/GenerateDownloadSecretKeyRequest.h
+	include/alibabacloud/vod/model/GenerateDownloadSecretKeyResult.h
 	include/alibabacloud/vod/model/GenerateKMSDataKeyRequest.h
 	include/alibabacloud/vod/model/GenerateKMSDataKeyResult.h
 	include/alibabacloud/vod/model/GetAIImageJobsRequest.h
@@ -454,6 +456,8 @@ set(vod_src
 	src/model/DescribeVodVerifyContentResult.cc
 	src/model/DetachAppPolicyFromIdentityRequest.cc
 	src/model/DetachAppPolicyFromIdentityResult.cc
+	src/model/GenerateDownloadSecretKeyRequest.cc
+	src/model/GenerateDownloadSecretKeyResult.cc
 	src/model/GenerateKMSDataKeyRequest.cc
 	src/model/GenerateKMSDataKeyResult.cc
 	src/model/GetAIImageJobsRequest.cc
