@@ -34,6 +34,8 @@ public:
 	void setDBClusterId(const std::string &dBClusterId);
 	std::string getRuleName() const;
 	void setRuleName(const std::string &ruleName);
+	std::string getRuleVersion() const;
+	void setRuleVersion(const std::string &ruleVersion);
 	std::string getRuleConfig() const;
 	void setRuleConfig(const std::string &ruleConfig);
 	std::string getEnable() const;
@@ -44,6 +46,7 @@ public:
 private:
 	std::string dBClusterId_;
 	std::string ruleName_;
+	std::string ruleVersion_;
 	std::string ruleConfig_;
 	std::string enable_;
 	std::string ruleNameList_;

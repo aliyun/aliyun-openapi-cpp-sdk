@@ -40,6 +40,8 @@ void DescribeMaskingRulesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
+	if(!dataNode["RuleVersion"].isNull())
+		data_.ruleVersion = dataNode["RuleVersion"].asString();
 		auto allRuleList = dataNode["RuleList"]["RuleList"];
 		for (auto value : allRuleList)
 			data_.ruleList.push_back(value.asString());

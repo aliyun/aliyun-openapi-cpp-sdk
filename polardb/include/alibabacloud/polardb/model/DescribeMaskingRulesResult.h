@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::vector<std::string> ruleList;
+					std::string ruleVersion;
 				};
 
 

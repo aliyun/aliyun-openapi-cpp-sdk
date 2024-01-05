@@ -43,6 +43,15 @@ void ModifyMaskingRulesRequest::setRuleName(const std::string &ruleName) {
   setParameter(std::string("RuleName"), ruleName);
 }
 
+std::string ModifyMaskingRulesRequest::getRuleVersion() const {
+  return ruleVersion_;
+}
+
+void ModifyMaskingRulesRequest::setRuleVersion(const std::string &ruleVersion) {
+  ruleVersion_ = ruleVersion;
+  setParameter(std::string("RuleVersion"), ruleVersion);
+}
+
 std::string ModifyMaskingRulesRequest::getRuleConfig() const {
   return ruleConfig_;
 }
