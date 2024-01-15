@@ -38,6 +38,17 @@ void BatchAddThingTopoRequest::setGwProductKey(const std::string& gwProductKey)
 	setParameter("GwProductKey", gwProductKey);
 }
 
+std::string BatchAddThingTopoRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void BatchAddThingTopoRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string BatchAddThingTopoRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -47,6 +58,17 @@ void BatchAddThingTopoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string BatchAddThingTopoRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void BatchAddThingTopoRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string BatchAddThingTopoRequest::getIotInstanceId()const

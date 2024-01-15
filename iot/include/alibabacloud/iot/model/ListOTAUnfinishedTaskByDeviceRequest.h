@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ListOTAUnfinishedTaskByDeviceRequest();
 				~ListOTAUnfinishedTaskByDeviceRequest();
 
+				std::vector<std::string> getTaskStatusList()const;
+				void setTaskStatusList(const std::vector<std::string>& taskStatusList);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTaskStatus()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				void setDeviceName(const std::string& deviceName);
 
             private:
+				std::vector<std::string> taskStatusList_;
 				std::string accessKeyId_;
 				std::string taskStatus_;
 				std::string iotId_;

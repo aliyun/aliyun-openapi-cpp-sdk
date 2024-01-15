@@ -30,21 +30,43 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IOT_EXPORT BatchPubRequest : public RpcServiceRequest
 			{
+			public:
+				struct UserProp
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				BatchPubRequest();
 				~BatchPubRequest();
 
+				std::vector<UserProp> getUserProp()const;
+				void setUserProp(const std::vector<UserProp>& userProp);
+				std::string getResponseTopicTemplateName()const;
+				void setResponseTopicTemplateName(const std::string& responseTopicTemplateName);
 				std::string getMessageContent()const;
 				void setMessageContent(const std::string& messageContent);
+				std::string getTopicTemplateName()const;
+				void setTopicTemplateName(const std::string& topicTemplateName);
 				int getQos()const;
 				void setQos(int qos);
+				std::string getCorrelationData()const;
+				void setCorrelationData(const std::string& correlationData);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
+				long getMessageExpiryInterval()const;
+				void setMessageExpiryInterval(long messageExpiryInterval);
 				std::string getTopicShortName()const;
 				void setTopicShortName(const std::string& topicShortName);
+				int getPayloadFormatIndicator()const;
+				void setPayloadFormatIndicator(int payloadFormatIndicator);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
+				std::string getContentType()const;
+				void setContentType(const std::string& contentType);
+				bool getRetained()const;
+				void setRetained(bool retained);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
@@ -53,11 +75,19 @@ namespace AlibabaCloud
 				void setDeviceName(const std::vector<std::string>& deviceName);
 
             private:
+				std::vector<UserProp> userProp_;
+				std::string responseTopicTemplateName_;
 				std::string messageContent_;
+				std::string topicTemplateName_;
 				int qos_;
+				std::string correlationData_;
 				std::string iotInstanceId_;
+				long messageExpiryInterval_;
 				std::string topicShortName_;
+				int payloadFormatIndicator_;
 				std::string productKey_;
+				std::string contentType_;
+				bool retained_;
 				std::string apiProduct_;
 				std::string apiRevision_;
 				std::vector<std::string> deviceName_;

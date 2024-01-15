@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_BATCHGETDEVICESTATERESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_BATCHGETDEVICESTATERESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_GETTHINGMODELSTATUSINNERRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_GETTHINGMODELSTATUSINNERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT BatchGetDeviceStateResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT GetThingModelStatusInnerResult : public ServiceResult
 			{
 			public:
-				struct DeviceStatus
+				struct Data
 				{
-					std::string status;
-					std::string lastOnlineTime;
-					std::string iotId;
-					std::string asAddress;
-					std::string deviceId;
-					long timestamp;
-					std::string deviceName;
+					int status;
+					std::string rbacTenantId;
+					long modifiedTime;
+					std::string instanceId;
+					long outTime;
+					std::string info;
+					std::string productKey;
 				};
 
 
-				BatchGetDeviceStateResult();
-				explicit BatchGetDeviceStateResult(const std::string &payload);
-				~BatchGetDeviceStateResult();
-				std::vector<DeviceStatus> getDeviceStatusList()const;
-				std::string getErrorMessage()const;
-				std::string getCode()const;
-				bool getSuccess()const;
+				GetThingModelStatusInnerResult();
+				explicit GetThingModelStatusInnerResult(const std::string &payload);
+				~GetThingModelStatusInnerResult();
+				std::string getLocalizedMsg()const;
+				std::string getMessage()const;
+				Data getData()const;
+				int getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DeviceStatus> deviceStatusList_;
-				std::string errorMessage_;
-				std::string code_;
-				bool success_;
+				std::string localizedMsg_;
+				std::string message_;
+				Data data_;
+				int code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_BATCHGETDEVICESTATERESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_GETTHINGMODELSTATUSINNERRESULT_H_

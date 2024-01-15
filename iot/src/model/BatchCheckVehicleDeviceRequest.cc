@@ -60,6 +60,7 @@ void BatchCheckVehicleDeviceRequest::setDeviceList(const std::vector<DeviceList>
 	for(int dep1 = 0; dep1!= deviceList.size(); dep1++) {
 		auto deviceListObj = deviceList.at(dep1);
 		std::string deviceListObjStr = "DeviceList." + std::to_string(dep1 + 1);
+		setParameter(deviceListObjStr + ".DeviceSecret", deviceListObj.deviceSecret);
 		setParameter(deviceListObjStr + ".DeviceName", deviceListObj.deviceName);
 		setParameter(deviceListObjStr + ".DeviceId", deviceListObj.deviceId);
 		setParameter(deviceListObjStr + ".Manufacturer", deviceListObj.manufacturer);

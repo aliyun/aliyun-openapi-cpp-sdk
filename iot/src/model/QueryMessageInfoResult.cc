@@ -48,6 +48,10 @@ void QueryMessageInfoResult::parse(const std::string &payload)
 		message_.messageContent = messageNode["MessageContent"].asString();
 	if(!messageNode["GenerateTime"].isNull())
 		message_.generateTime = std::stol(messageNode["GenerateTime"].asString());
+	if(!messageNode["TransformedMessageContent"].isNull())
+		message_.transformedMessageContent = messageNode["TransformedMessageContent"].asString();
+	if(!messageNode["TransformedTopicFullName"].isNull())
+		message_.transformedTopicFullName = messageNode["TransformedTopicFullName"].asString();
 	auto allUserPropertiesNode = messageNode["UserProperties"]["UserProperty"];
 	for (auto messageNodeUserPropertiesUserProperty : allUserPropertiesNode)
 	{
@@ -57,6 +61,16 @@ void QueryMessageInfoResult::parse(const std::string &payload)
 		if(!messageNodeUserPropertiesUserProperty["Value"].isNull())
 			userPropertyObject.value = messageNodeUserPropertiesUserProperty["Value"].asString();
 		message_.userProperties.push_back(userPropertyObject);
+	}
+	auto allMqttPropertiesNode = messageNode["MqttProperties"]["MqttProperty"];
+	for (auto messageNodeMqttPropertiesMqttProperty : allMqttPropertiesNode)
+	{
+		Message::MqttProperty mqttPropertyObject;
+		if(!messageNodeMqttPropertiesMqttProperty["Key"].isNull())
+			mqttPropertyObject.key = messageNodeMqttPropertiesMqttProperty["Key"].asString();
+		if(!messageNodeMqttPropertiesMqttProperty["Value"].isNull())
+			mqttPropertyObject.value = messageNodeMqttPropertiesMqttProperty["Value"].asString();
+		message_.mqttProperties.push_back(mqttPropertyObject);
 	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";

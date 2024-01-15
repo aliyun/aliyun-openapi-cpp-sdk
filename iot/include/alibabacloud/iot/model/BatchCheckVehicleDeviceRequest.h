@@ -33,6 +33,7 @@ namespace AlibabaCloud
 			public:
 				struct DeviceList
 				{
+					std::string deviceSecret;
 					std::string deviceName;
 					std::string deviceId;
 					std::string manufacturer;

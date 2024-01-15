@@ -55,6 +55,8 @@ void BatchGetDeviceStateResult::parse(const std::string &payload)
 			deviceStatusListObject.lastOnlineTime = valueDeviceStatusListDeviceStatus["LastOnlineTime"].asString();
 		if(!valueDeviceStatusListDeviceStatus["IotId"].isNull())
 			deviceStatusListObject.iotId = valueDeviceStatusListDeviceStatus["IotId"].asString();
+		if(!valueDeviceStatusListDeviceStatus["Timestamp"].isNull())
+			deviceStatusListObject.timestamp = std::stol(valueDeviceStatusListDeviceStatus["Timestamp"].asString());
 		deviceStatusList_.push_back(deviceStatusListObject);
 	}
 	if(!value["Success"].isNull())

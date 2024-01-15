@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_BATCHADDTHINGTOPOREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_BATCHADDTHINGTOPOREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_COPYTHINGMODELASYNCREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_COPYTHINGMODELASYNCREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,53 +28,40 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT BatchAddThingTopoRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT CopyThingModelAsyncRequest : public RpcServiceRequest
 			{
-			public:
-				struct TopoAddItem
-				{
-					std::string clientId;
-					std::string signMethod;
-					std::string sign;
-					std::string deviceName;
-					std::string productKey;
-					std::string timestamp;
-				};
 
 			public:
-				BatchAddThingTopoRequest();
-				~BatchAddThingTopoRequest();
+				CopyThingModelAsyncRequest();
+				~CopyThingModelAsyncRequest();
 
-				std::string getGwProductKey()const;
-				void setGwProductKey(const std::string& gwProductKey);
 				std::string getRealTenantId()const;
 				void setRealTenantId(const std::string& realTenantId);
+				std::string getTargetProductKey()const;
+				void setTargetProductKey(const std::string& targetProductKey);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getRealTripartiteKey()const;
 				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				std::string getExt()const;
-				void setExt(const std::string& ext);
-				std::vector<TopoAddItem> getTopoAddItem()const;
-				void setTopoAddItem(const std::vector<TopoAddItem>& topoAddItem);
-				std::string getGwDeviceName()const;
-				void setGwDeviceName(const std::string& gwDeviceName);
+				std::string getSourceModelVersion()const;
+				void setSourceModelVersion(const std::string& sourceModelVersion);
+				std::string getSourceProductKey()const;
+				void setSourceProductKey(const std::string& sourceProductKey);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
 
             private:
-				std::string gwProductKey_;
 				std::string realTenantId_;
+				std::string targetProductKey_;
 				std::string accessKeyId_;
 				std::string realTripartiteKey_;
 				std::string iotInstanceId_;
-				std::string ext_;
-				std::vector<TopoAddItem> topoAddItem_;
-				std::string gwDeviceName_;
+				std::string sourceModelVersion_;
+				std::string sourceProductKey_;
 				std::string apiProduct_;
 				std::string apiRevision_;
 
@@ -82,4 +69,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_BATCHADDTHINGTOPOREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_COPYTHINGMODELASYNCREQUEST_H_

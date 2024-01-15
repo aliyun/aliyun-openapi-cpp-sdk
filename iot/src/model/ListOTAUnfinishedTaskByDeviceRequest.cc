@@ -27,6 +27,19 @@ ListOTAUnfinishedTaskByDeviceRequest::ListOTAUnfinishedTaskByDeviceRequest() :
 ListOTAUnfinishedTaskByDeviceRequest::~ListOTAUnfinishedTaskByDeviceRequest()
 {}
 
+std::vector<std::string> ListOTAUnfinishedTaskByDeviceRequest::getTaskStatusList()const
+{
+	return taskStatusList_;
+}
+
+void ListOTAUnfinishedTaskByDeviceRequest::setTaskStatusList(const std::vector<std::string>& taskStatusList)
+{
+	taskStatusList_ = taskStatusList;
+	for(int dep1 = 0; dep1!= taskStatusList.size(); dep1++) {
+		setParameter("TaskStatusList."+ std::to_string(dep1), taskStatusList.at(dep1));
+	}
+}
+
 std::string ListOTAUnfinishedTaskByDeviceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

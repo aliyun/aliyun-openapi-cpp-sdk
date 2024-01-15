@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_BATCHIMPORTVEHICLEDEVICEREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_BATCHIMPORTVEHICLEDEVICEREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_DELETEUSERDEFINETABLEDATABYPRIMARYKEYREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_DELETEUSERDEFINETABLEDATABYPRIMARYKEYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT BatchImportVehicleDeviceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT DeleteUserDefineTableDataByPrimaryKeyRequest : public RpcServiceRequest
 			{
-			public:
-				struct DeviceList
-				{
-					std::string deviceSecret;
-					std::string deviceName;
-					std::string deviceId;
-					std::string manufacturer;
-					std::string deviceModel;
-				};
 
 			public:
-				BatchImportVehicleDeviceRequest();
-				~BatchImportVehicleDeviceRequest();
+				DeleteUserDefineTableDataByPrimaryKeyRequest();
+				~DeleteUserDefineTableDataByPrimaryKeyRequest();
 
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				std::string getProductKey()const;
-				void setProductKey(const std::string& productKey);
-				std::vector<DeviceList> getDeviceList()const;
-				void setDeviceList(const std::vector<DeviceList>& deviceList);
+				std::string getTableIdentifier()const;
+				void setTableIdentifier(const std::string& tableIdentifier);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
+				std::string getConditions()const;
+				void setConditions(const std::string& conditions);
 
             private:
 				std::string iotInstanceId_;
-				std::string productKey_;
-				std::vector<DeviceList> deviceList_;
+				std::string tableIdentifier_;
 				std::string apiProduct_;
 				std::string apiRevision_;
+				std::string conditions_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_BATCHIMPORTVEHICLEDEVICEREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_DELETEUSERDEFINETABLEDATABYPRIMARYKEYREQUEST_H_

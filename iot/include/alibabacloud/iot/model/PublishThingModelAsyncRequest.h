@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_BATCHIMPORTVEHICLEDEVICEREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_BATCHIMPORTVEHICLEDEVICEREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_PUBLISHTHINGMODELASYNCREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_PUBLISHTHINGMODELASYNCREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,37 +28,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT BatchImportVehicleDeviceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT PublishThingModelAsyncRequest : public RpcServiceRequest
 			{
-			public:
-				struct DeviceList
-				{
-					std::string deviceSecret;
-					std::string deviceName;
-					std::string deviceId;
-					std::string manufacturer;
-					std::string deviceModel;
-				};
 
 			public:
-				BatchImportVehicleDeviceRequest();
-				~BatchImportVehicleDeviceRequest();
+				PublishThingModelAsyncRequest();
+				~PublishThingModelAsyncRequest();
 
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getThingModelVersion()const;
+				void setThingModelVersion(const std::string& thingModelVersion);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
-				std::vector<DeviceList> getDeviceList()const;
-				void setDeviceList(const std::vector<DeviceList>& deviceList);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
 
             private:
+				std::string description_;
+				std::string thingModelVersion_;
 				std::string iotInstanceId_;
 				std::string productKey_;
-				std::vector<DeviceList> deviceList_;
 				std::string apiProduct_;
 				std::string apiRevision_;
 
@@ -66,4 +60,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_BATCHIMPORTVEHICLEDEVICEREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_PUBLISHTHINGMODELASYNCREQUEST_H_

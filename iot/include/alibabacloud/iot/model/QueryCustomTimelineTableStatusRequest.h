@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_BATCHIMPORTVEHICLEDEVICEREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_BATCHIMPORTVEHICLEDEVICEREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_QUERYCUSTOMTIMELINETABLESTATUSREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_QUERYCUSTOMTIMELINETABLESTATUSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,28 +28,17 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT BatchImportVehicleDeviceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT QueryCustomTimelineTableStatusRequest : public RpcServiceRequest
 			{
-			public:
-				struct DeviceList
-				{
-					std::string deviceSecret;
-					std::string deviceName;
-					std::string deviceId;
-					std::string manufacturer;
-					std::string deviceModel;
-				};
 
 			public:
-				BatchImportVehicleDeviceRequest();
-				~BatchImportVehicleDeviceRequest();
+				QueryCustomTimelineTableStatusRequest();
+				~QueryCustomTimelineTableStatusRequest();
 
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				std::string getProductKey()const;
-				void setProductKey(const std::string& productKey);
-				std::vector<DeviceList> getDeviceList()const;
-				void setDeviceList(const std::vector<DeviceList>& deviceList);
+				std::string getTableName()const;
+				void setTableName(const std::string& tableName);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
@@ -57,8 +46,7 @@ namespace AlibabaCloud
 
             private:
 				std::string iotInstanceId_;
-				std::string productKey_;
-				std::vector<DeviceList> deviceList_;
+				std::string tableName_;
 				std::string apiProduct_;
 				std::string apiRevision_;
 
@@ -66,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_BATCHIMPORTVEHICLEDEVICEREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_QUERYCUSTOMTIMELINETABLESTATUSREQUEST_H_

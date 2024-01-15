@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_QUERYMESSAGEINFORESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_QUERYMESSAGEINFORESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_LISTPOWERSTATIONRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_LISTPOWERSTATIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT QueryMessageInfoResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT ListPowerStationResult : public ServiceResult
 			{
 			public:
-				struct Message
+				struct Data
 				{
-					struct UserProperty
+					struct DataListItem
 					{
-						std::string value;
-						std::string key;
+						std::string description;
+						int ratedPower;
+						std::string powerStationUid;
+						std::string algoInstanceUid;
+						std::string name;
 					};
-					struct MqttProperty
-					{
-						std::string value;
-						std::string key;
-					};
-					std::string messageContent;
-					std::vector<UserProperty> userProperties;
-					std::string transformedMessageContent;
-					long generateTime;
-					std::vector<MqttProperty> mqttProperties;
-					std::string uniMsgId;
-					std::string transformedTopicFullName;
-					std::string topicFullName;
+					std::vector<DataListItem> dataList;
+					int pageSize;
+					long total;
+					int pageNo;
 				};
 
 
-				QueryMessageInfoResult();
-				explicit QueryMessageInfoResult(const std::string &payload);
-				~QueryMessageInfoResult();
-				Message getMessage()const;
+				ListPowerStationResult();
+				explicit ListPowerStationResult(const std::string &payload);
+				~ListPowerStationResult();
+				Data getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -66,7 +60,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Message message_;
+				Data data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -75,4 +69,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_QUERYMESSAGEINFORESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_LISTPOWERSTATIONRESULT_H_
