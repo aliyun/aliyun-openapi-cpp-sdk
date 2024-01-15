@@ -303,6 +303,42 @@ HitsdbClient::GetInstanceIpWhiteListOutcomeCallable HitsdbClient::getInstanceIpW
 	return task->get_future();
 }
 
+HitsdbClient::GetInstanceSecurityGroupsOutcome HitsdbClient::getInstanceSecurityGroups(const GetInstanceSecurityGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetInstanceSecurityGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetInstanceSecurityGroupsOutcome(GetInstanceSecurityGroupsResult(outcome.result()));
+	else
+		return GetInstanceSecurityGroupsOutcome(outcome.error());
+}
+
+void HitsdbClient::getInstanceSecurityGroupsAsync(const GetInstanceSecurityGroupsRequest& request, const GetInstanceSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getInstanceSecurityGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HitsdbClient::GetInstanceSecurityGroupsOutcomeCallable HitsdbClient::getInstanceSecurityGroupsCallable(const GetInstanceSecurityGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetInstanceSecurityGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->getInstanceSecurityGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HitsdbClient::GetLdpsComputeGroupOutcome HitsdbClient::getLdpsComputeGroup(const GetLdpsComputeGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -873,6 +909,42 @@ HitsdbClient::UpdateInstanceIpWhiteListOutcomeCallable HitsdbClient::updateInsta
 			[this, request]()
 			{
 			return this->updateInstanceIpWhiteList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HitsdbClient::UpdateInstanceSecurityGroupsOutcome HitsdbClient::updateInstanceSecurityGroups(const UpdateInstanceSecurityGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateInstanceSecurityGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateInstanceSecurityGroupsOutcome(UpdateInstanceSecurityGroupsResult(outcome.result()));
+	else
+		return UpdateInstanceSecurityGroupsOutcome(outcome.error());
+}
+
+void HitsdbClient::updateInstanceSecurityGroupsAsync(const UpdateInstanceSecurityGroupsRequest& request, const UpdateInstanceSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateInstanceSecurityGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HitsdbClient::UpdateInstanceSecurityGroupsOutcomeCallable HitsdbClient::updateInstanceSecurityGroupsCallable(const UpdateInstanceSecurityGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateInstanceSecurityGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->updateInstanceSecurityGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -35,6 +35,8 @@ set(hitsdb_public_header_model
 	include/alibabacloud/hitsdb/model/GetEngineDefaultAuthResult.h
 	include/alibabacloud/hitsdb/model/GetInstanceIpWhiteListRequest.h
 	include/alibabacloud/hitsdb/model/GetInstanceIpWhiteListResult.h
+	include/alibabacloud/hitsdb/model/GetInstanceSecurityGroupsRequest.h
+	include/alibabacloud/hitsdb/model/GetInstanceSecurityGroupsResult.h
 	include/alibabacloud/hitsdb/model/GetLdpsComputeGroupRequest.h
 	include/alibabacloud/hitsdb/model/GetLdpsComputeGroupResult.h
 	include/alibabacloud/hitsdb/model/GetLdpsNamespacedQuotaRequest.h
@@ -67,6 +69,8 @@ set(hitsdb_public_header_model
 	include/alibabacloud/hitsdb/model/UntagResourcesResult.h
 	include/alibabacloud/hitsdb/model/UpdateInstanceIpWhiteListRequest.h
 	include/alibabacloud/hitsdb/model/UpdateInstanceIpWhiteListResult.h
+	include/alibabacloud/hitsdb/model/UpdateInstanceSecurityGroupsRequest.h
+	include/alibabacloud/hitsdb/model/UpdateInstanceSecurityGroupsResult.h
 	include/alibabacloud/hitsdb/model/UpdateLdpsComputeGroupRequest.h
 	include/alibabacloud/hitsdb/model/UpdateLdpsComputeGroupResult.h
 	include/alibabacloud/hitsdb/model/UpgradeLindormInstanceRequest.h
@@ -88,6 +92,8 @@ set(hitsdb_src
 	src/model/GetEngineDefaultAuthResult.cc
 	src/model/GetInstanceIpWhiteListRequest.cc
 	src/model/GetInstanceIpWhiteListResult.cc
+	src/model/GetInstanceSecurityGroupsRequest.cc
+	src/model/GetInstanceSecurityGroupsResult.cc
 	src/model/GetLdpsComputeGroupRequest.cc
 	src/model/GetLdpsComputeGroupResult.cc
 	src/model/GetLdpsNamespacedQuotaRequest.cc
@@ -120,6 +126,8 @@ set(hitsdb_src
 	src/model/UntagResourcesResult.cc
 	src/model/UpdateInstanceIpWhiteListRequest.cc
 	src/model/UpdateInstanceIpWhiteListResult.cc
+	src/model/UpdateInstanceSecurityGroupsRequest.cc
+	src/model/UpdateInstanceSecurityGroupsResult.cc
 	src/model/UpdateLdpsComputeGroupRequest.cc
 	src/model/UpdateLdpsComputeGroupResult.cc
 	src/model/UpgradeLindormInstanceRequest.cc

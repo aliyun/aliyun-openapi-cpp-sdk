@@ -36,6 +36,8 @@
 #include "model/GetEngineDefaultAuthResult.h"
 #include "model/GetInstanceIpWhiteListRequest.h"
 #include "model/GetInstanceIpWhiteListResult.h"
+#include "model/GetInstanceSecurityGroupsRequest.h"
+#include "model/GetInstanceSecurityGroupsResult.h"
 #include "model/GetLdpsComputeGroupRequest.h"
 #include "model/GetLdpsComputeGroupResult.h"
 #include "model/GetLdpsNamespacedQuotaRequest.h"
@@ -68,6 +70,8 @@
 #include "model/UntagResourcesResult.h"
 #include "model/UpdateInstanceIpWhiteListRequest.h"
 #include "model/UpdateInstanceIpWhiteListResult.h"
+#include "model/UpdateInstanceSecurityGroupsRequest.h"
+#include "model/UpdateInstanceSecurityGroupsResult.h"
 #include "model/UpdateLdpsComputeGroupRequest.h"
 #include "model/UpdateLdpsComputeGroupResult.h"
 #include "model/UpgradeLindormInstanceRequest.h"
@@ -102,6 +106,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetInstanceIpWhiteListResult> GetInstanceIpWhiteListOutcome;
 			typedef std::future<GetInstanceIpWhiteListOutcome> GetInstanceIpWhiteListOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::GetInstanceIpWhiteListRequest&, const GetInstanceIpWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceIpWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::GetInstanceSecurityGroupsResult> GetInstanceSecurityGroupsOutcome;
+			typedef std::future<GetInstanceSecurityGroupsOutcome> GetInstanceSecurityGroupsOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::GetInstanceSecurityGroupsRequest&, const GetInstanceSecurityGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceSecurityGroupsAsyncHandler;
 			typedef Outcome<Error, Model::GetLdpsComputeGroupResult> GetLdpsComputeGroupOutcome;
 			typedef std::future<GetLdpsComputeGroupOutcome> GetLdpsComputeGroupOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::GetLdpsComputeGroupRequest&, const GetLdpsComputeGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLdpsComputeGroupAsyncHandler;
@@ -150,6 +157,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateInstanceIpWhiteListResult> UpdateInstanceIpWhiteListOutcome;
 			typedef std::future<UpdateInstanceIpWhiteListOutcome> UpdateInstanceIpWhiteListOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::UpdateInstanceIpWhiteListRequest&, const UpdateInstanceIpWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceIpWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::UpdateInstanceSecurityGroupsResult> UpdateInstanceSecurityGroupsOutcome;
+			typedef std::future<UpdateInstanceSecurityGroupsOutcome> UpdateInstanceSecurityGroupsOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::UpdateInstanceSecurityGroupsRequest&, const UpdateInstanceSecurityGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceSecurityGroupsAsyncHandler;
 			typedef Outcome<Error, Model::UpdateLdpsComputeGroupResult> UpdateLdpsComputeGroupOutcome;
 			typedef std::future<UpdateLdpsComputeGroupOutcome> UpdateLdpsComputeGroupOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::UpdateLdpsComputeGroupRequest&, const UpdateLdpsComputeGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLdpsComputeGroupAsyncHandler;
@@ -182,6 +192,9 @@ namespace AlibabaCloud
 			GetInstanceIpWhiteListOutcome getInstanceIpWhiteList(const Model::GetInstanceIpWhiteListRequest &request)const;
 			void getInstanceIpWhiteListAsync(const Model::GetInstanceIpWhiteListRequest& request, const GetInstanceIpWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceIpWhiteListOutcomeCallable getInstanceIpWhiteListCallable(const Model::GetInstanceIpWhiteListRequest& request) const;
+			GetInstanceSecurityGroupsOutcome getInstanceSecurityGroups(const Model::GetInstanceSecurityGroupsRequest &request)const;
+			void getInstanceSecurityGroupsAsync(const Model::GetInstanceSecurityGroupsRequest& request, const GetInstanceSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetInstanceSecurityGroupsOutcomeCallable getInstanceSecurityGroupsCallable(const Model::GetInstanceSecurityGroupsRequest& request) const;
 			GetLdpsComputeGroupOutcome getLdpsComputeGroup(const Model::GetLdpsComputeGroupRequest &request)const;
 			void getLdpsComputeGroupAsync(const Model::GetLdpsComputeGroupRequest& request, const GetLdpsComputeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetLdpsComputeGroupOutcomeCallable getLdpsComputeGroupCallable(const Model::GetLdpsComputeGroupRequest& request) const;
@@ -230,6 +243,9 @@ namespace AlibabaCloud
 			UpdateInstanceIpWhiteListOutcome updateInstanceIpWhiteList(const Model::UpdateInstanceIpWhiteListRequest &request)const;
 			void updateInstanceIpWhiteListAsync(const Model::UpdateInstanceIpWhiteListRequest& request, const UpdateInstanceIpWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateInstanceIpWhiteListOutcomeCallable updateInstanceIpWhiteListCallable(const Model::UpdateInstanceIpWhiteListRequest& request) const;
+			UpdateInstanceSecurityGroupsOutcome updateInstanceSecurityGroups(const Model::UpdateInstanceSecurityGroupsRequest &request)const;
+			void updateInstanceSecurityGroupsAsync(const Model::UpdateInstanceSecurityGroupsRequest& request, const UpdateInstanceSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateInstanceSecurityGroupsOutcomeCallable updateInstanceSecurityGroupsCallable(const Model::UpdateInstanceSecurityGroupsRequest& request) const;
 			UpdateLdpsComputeGroupOutcome updateLdpsComputeGroup(const Model::UpdateLdpsComputeGroupRequest &request)const;
 			void updateLdpsComputeGroupAsync(const Model::UpdateLdpsComputeGroupRequest& request, const UpdateLdpsComputeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLdpsComputeGroupOutcomeCallable updateLdpsComputeGroupCallable(const Model::UpdateLdpsComputeGroupRequest& request) const;
