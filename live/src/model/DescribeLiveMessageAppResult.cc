@@ -41,6 +41,8 @@ void DescribeLiveMessageAppResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["AppId"].isNull())
 		appId_ = value["AppId"].asString();
+	if(!value["AppName"].isNull())
+		appName_ = value["AppName"].asString();
 	if(!value["AppKey"].isNull())
 		appKey_ = value["AppKey"].asString();
 	if(!value["AppSign"].isNull())
@@ -49,10 +51,18 @@ void DescribeLiveMessageAppResult::parse(const std::string &payload)
 		auditType_ = std::stoi(value["AuditType"].asString());
 	if(!value["AuditUrl"].isNull())
 		auditUrl_ = value["AuditUrl"].asString();
+	if(!value["EventCallbackUrl"].isNull())
+		eventCallbackUrl_ = value["EventCallbackUrl"].asString();
 	if(!value["CallbackUrl"].isNull())
 		callbackUrl_ = value["CallbackUrl"].asString();
 	if(!value["Disable"].isNull())
 		disable_ = value["Disable"].asString() == "true";
+	if(!value["CreateTime"].isNull())
+		createTime_ = std::stol(value["CreateTime"].asString());
+	if(!value["ModifyTime"].isNull())
+		modifyTime_ = std::stol(value["ModifyTime"].asString());
+	if(!value["DataCenter"].isNull())
+		dataCenter_ = value["DataCenter"].asString();
 
 }
 
@@ -61,9 +71,19 @@ std::string DescribeLiveMessageAppResult::getCallbackUrl()const
 	return callbackUrl_;
 }
 
+long DescribeLiveMessageAppResult::getModifyTime()const
+{
+	return modifyTime_;
+}
+
 std::string DescribeLiveMessageAppResult::getAuditUrl()const
 {
 	return auditUrl_;
+}
+
+std::string DescribeLiveMessageAppResult::getDataCenter()const
+{
+	return dataCenter_;
 }
 
 std::string DescribeLiveMessageAppResult::getAppId()const
@@ -81,6 +101,16 @@ std::string DescribeLiveMessageAppResult::getAppKey()const
 	return appKey_;
 }
 
+long DescribeLiveMessageAppResult::getCreateTime()const
+{
+	return createTime_;
+}
+
+std::string DescribeLiveMessageAppResult::getEventCallbackUrl()const
+{
+	return eventCallbackUrl_;
+}
+
 std::string DescribeLiveMessageAppResult::getAppSign()const
 {
 	return appSign_;
@@ -89,5 +119,10 @@ std::string DescribeLiveMessageAppResult::getAppSign()const
 bool DescribeLiveMessageAppResult::getDisable()const
 {
 	return disable_;
+}
+
+std::string DescribeLiveMessageAppResult::getAppName()const
+{
+	return appName_;
 }
 

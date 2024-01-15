@@ -190,6 +190,10 @@
 #include "model/DeleteLiveLazyPullStreamInfoConfigResult.h"
 #include "model/DeleteLiveMessageGroupRequest.h"
 #include "model/DeleteLiveMessageGroupResult.h"
+#include "model/DeleteLiveMessageGroupMessageRequest.h"
+#include "model/DeleteLiveMessageGroupMessageResult.h"
+#include "model/DeleteLiveMessageUserMessageRequest.h"
+#include "model/DeleteLiveMessageUserMessageResult.h"
 #include "model/DeleteLivePackageConfigRequest.h"
 #include "model/DeleteLivePackageConfigResult.h"
 #include "model/DeleteLivePullStreamInfoConfigRequest.h"
@@ -598,6 +602,10 @@
 #include "model/ListPlaylistResult.h"
 #include "model/ListPlaylistItemsRequest.h"
 #include "model/ListPlaylistItemsResult.h"
+#include "model/MiguLivePullToPushStartRequest.h"
+#include "model/MiguLivePullToPushStartResult.h"
+#include "model/MiguLivePullToPushStatusRequest.h"
+#include "model/MiguLivePullToPushStatusResult.h"
 #include "model/ModifyCasterComponentRequest.h"
 #include "model/ModifyCasterComponentResult.h"
 #include "model/ModifyCasterEpisodeRequest.h"
@@ -1047,6 +1055,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteLiveMessageGroupResult> DeleteLiveMessageGroupOutcome;
 			typedef std::future<DeleteLiveMessageGroupOutcome> DeleteLiveMessageGroupOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveMessageGroupRequest&, const DeleteLiveMessageGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveMessageGroupAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveMessageGroupMessageResult> DeleteLiveMessageGroupMessageOutcome;
+			typedef std::future<DeleteLiveMessageGroupMessageOutcome> DeleteLiveMessageGroupMessageOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveMessageGroupMessageRequest&, const DeleteLiveMessageGroupMessageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveMessageGroupMessageAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveMessageUserMessageResult> DeleteLiveMessageUserMessageOutcome;
+			typedef std::future<DeleteLiveMessageUserMessageOutcome> DeleteLiveMessageUserMessageOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveMessageUserMessageRequest&, const DeleteLiveMessageUserMessageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveMessageUserMessageAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLivePackageConfigResult> DeleteLivePackageConfigOutcome;
 			typedef std::future<DeleteLivePackageConfigOutcome> DeleteLivePackageConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLivePackageConfigRequest&, const DeleteLivePackageConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLivePackageConfigAsyncHandler;
@@ -1659,6 +1673,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListPlaylistItemsResult> ListPlaylistItemsOutcome;
 			typedef std::future<ListPlaylistItemsOutcome> ListPlaylistItemsOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ListPlaylistItemsRequest&, const ListPlaylistItemsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPlaylistItemsAsyncHandler;
+			typedef Outcome<Error, Model::MiguLivePullToPushStartResult> MiguLivePullToPushStartOutcome;
+			typedef std::future<MiguLivePullToPushStartOutcome> MiguLivePullToPushStartOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::MiguLivePullToPushStartRequest&, const MiguLivePullToPushStartOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MiguLivePullToPushStartAsyncHandler;
+			typedef Outcome<Error, Model::MiguLivePullToPushStatusResult> MiguLivePullToPushStatusOutcome;
+			typedef std::future<MiguLivePullToPushStatusOutcome> MiguLivePullToPushStatusOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::MiguLivePullToPushStatusRequest&, const MiguLivePullToPushStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MiguLivePullToPushStatusAsyncHandler;
 			typedef Outcome<Error, Model::ModifyCasterComponentResult> ModifyCasterComponentOutcome;
 			typedef std::future<ModifyCasterComponentOutcome> ModifyCasterComponentOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ModifyCasterComponentRequest&, const ModifyCasterComponentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterComponentAsyncHandler;
@@ -2198,6 +2218,12 @@ namespace AlibabaCloud
 			DeleteLiveMessageGroupOutcome deleteLiveMessageGroup(const Model::DeleteLiveMessageGroupRequest &request)const;
 			void deleteLiveMessageGroupAsync(const Model::DeleteLiveMessageGroupRequest& request, const DeleteLiveMessageGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveMessageGroupOutcomeCallable deleteLiveMessageGroupCallable(const Model::DeleteLiveMessageGroupRequest& request) const;
+			DeleteLiveMessageGroupMessageOutcome deleteLiveMessageGroupMessage(const Model::DeleteLiveMessageGroupMessageRequest &request)const;
+			void deleteLiveMessageGroupMessageAsync(const Model::DeleteLiveMessageGroupMessageRequest& request, const DeleteLiveMessageGroupMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveMessageGroupMessageOutcomeCallable deleteLiveMessageGroupMessageCallable(const Model::DeleteLiveMessageGroupMessageRequest& request) const;
+			DeleteLiveMessageUserMessageOutcome deleteLiveMessageUserMessage(const Model::DeleteLiveMessageUserMessageRequest &request)const;
+			void deleteLiveMessageUserMessageAsync(const Model::DeleteLiveMessageUserMessageRequest& request, const DeleteLiveMessageUserMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveMessageUserMessageOutcomeCallable deleteLiveMessageUserMessageCallable(const Model::DeleteLiveMessageUserMessageRequest& request) const;
 			DeleteLivePackageConfigOutcome deleteLivePackageConfig(const Model::DeleteLivePackageConfigRequest &request)const;
 			void deleteLivePackageConfigAsync(const Model::DeleteLivePackageConfigRequest& request, const DeleteLivePackageConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLivePackageConfigOutcomeCallable deleteLivePackageConfigCallable(const Model::DeleteLivePackageConfigRequest& request) const;
@@ -2810,6 +2836,12 @@ namespace AlibabaCloud
 			ListPlaylistItemsOutcome listPlaylistItems(const Model::ListPlaylistItemsRequest &request)const;
 			void listPlaylistItemsAsync(const Model::ListPlaylistItemsRequest& request, const ListPlaylistItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPlaylistItemsOutcomeCallable listPlaylistItemsCallable(const Model::ListPlaylistItemsRequest& request) const;
+			MiguLivePullToPushStartOutcome miguLivePullToPushStart(const Model::MiguLivePullToPushStartRequest &request)const;
+			void miguLivePullToPushStartAsync(const Model::MiguLivePullToPushStartRequest& request, const MiguLivePullToPushStartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MiguLivePullToPushStartOutcomeCallable miguLivePullToPushStartCallable(const Model::MiguLivePullToPushStartRequest& request) const;
+			MiguLivePullToPushStatusOutcome miguLivePullToPushStatus(const Model::MiguLivePullToPushStatusRequest &request)const;
+			void miguLivePullToPushStatusAsync(const Model::MiguLivePullToPushStatusRequest& request, const MiguLivePullToPushStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MiguLivePullToPushStatusOutcomeCallable miguLivePullToPushStatusCallable(const Model::MiguLivePullToPushStatusRequest& request) const;
 			ModifyCasterComponentOutcome modifyCasterComponent(const Model::ModifyCasterComponentRequest &request)const;
 			void modifyCasterComponentAsync(const Model::ModifyCasterComponentRequest& request, const ModifyCasterComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyCasterComponentOutcomeCallable modifyCasterComponentCallable(const Model::ModifyCasterComponentRequest& request) const;

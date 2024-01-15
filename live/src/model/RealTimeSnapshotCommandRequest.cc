@@ -43,6 +43,15 @@ void RealTimeSnapshotCommandRequest::setMode(int mode) {
   setParameter(std::string("Mode"), std::to_string(mode));
 }
 
+std::string RealTimeSnapshotCommandRequest::getUserData() const {
+  return userData_;
+}
+
+void RealTimeSnapshotCommandRequest::setUserData(const std::string &userData) {
+  userData_ = userData;
+  setParameter(std::string("UserData"), userData);
+}
+
 std::string RealTimeSnapshotCommandRequest::getAppName() const {
   return appName_;
 }
@@ -86,6 +95,15 @@ std::string RealTimeSnapshotCommandRequest::getCommand() const {
 void RealTimeSnapshotCommandRequest::setCommand(const std::string &command) {
   command_ = command;
   setParameter(std::string("Command"), command);
+}
+
+int RealTimeSnapshotCommandRequest::getSnapshotType() const {
+  return snapshotType_;
+}
+
+void RealTimeSnapshotCommandRequest::setSnapshotType(int snapshotType) {
+  snapshotType_ = snapshotType;
+  setParameter(std::string("SnapshotType"), std::to_string(snapshotType));
 }
 
 int RealTimeSnapshotCommandRequest::getInterval() const {

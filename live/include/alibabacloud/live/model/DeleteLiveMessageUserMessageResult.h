@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_LISTLIVEMESSAGEAPPSRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_LISTLIVEMESSAGEAPPSRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DELETELIVEMESSAGEUSERMESSAGERESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DELETELIVEMESSAGEUSERMESSAGERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,38 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT ListLiveMessageAppsResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DeleteLiveMessageUserMessageResult : public ServiceResult
 			{
 			public:
-				struct Apps
-				{
-					long modifyTime;
-					std::string dataCenter;
-					std::string appId;
-					std::string appKey;
-					long createTime;
-					std::string appSign;
-					std::string disable;
-					std::string appName;
-				};
 
 
-				ListLiveMessageAppsResult();
-				explicit ListLiveMessageAppsResult(const std::string &payload);
-				~ListLiveMessageAppsResult();
-				bool getHasMore()const;
-				long getNextPageToken()const;
-				std::vector<Apps> getAppList()const;
+				DeleteLiveMessageUserMessageResult();
+				explicit DeleteLiveMessageUserMessageResult(const std::string &payload);
+				~DeleteLiveMessageUserMessageResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				bool hasMore_;
-				long nextPageToken_;
-				std::vector<Apps> appList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_LISTLIVEMESSAGEAPPSRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DELETELIVEMESSAGEUSERMESSAGERESULT_H_

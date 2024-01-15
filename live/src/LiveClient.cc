@@ -3075,6 +3075,78 @@ LiveClient::DeleteLiveMessageGroupOutcomeCallable LiveClient::deleteLiveMessageG
 	return task->get_future();
 }
 
+LiveClient::DeleteLiveMessageGroupMessageOutcome LiveClient::deleteLiveMessageGroupMessage(const DeleteLiveMessageGroupMessageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveMessageGroupMessageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveMessageGroupMessageOutcome(DeleteLiveMessageGroupMessageResult(outcome.result()));
+	else
+		return DeleteLiveMessageGroupMessageOutcome(outcome.error());
+}
+
+void LiveClient::deleteLiveMessageGroupMessageAsync(const DeleteLiveMessageGroupMessageRequest& request, const DeleteLiveMessageGroupMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLiveMessageGroupMessage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveMessageGroupMessageOutcomeCallable LiveClient::deleteLiveMessageGroupMessageCallable(const DeleteLiveMessageGroupMessageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveMessageGroupMessageOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLiveMessageGroupMessage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DeleteLiveMessageUserMessageOutcome LiveClient::deleteLiveMessageUserMessage(const DeleteLiveMessageUserMessageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveMessageUserMessageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveMessageUserMessageOutcome(DeleteLiveMessageUserMessageResult(outcome.result()));
+	else
+		return DeleteLiveMessageUserMessageOutcome(outcome.error());
+}
+
+void LiveClient::deleteLiveMessageUserMessageAsync(const DeleteLiveMessageUserMessageRequest& request, const DeleteLiveMessageUserMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLiveMessageUserMessage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveMessageUserMessageOutcomeCallable LiveClient::deleteLiveMessageUserMessageCallable(const DeleteLiveMessageUserMessageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveMessageUserMessageOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLiveMessageUserMessage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DeleteLivePackageConfigOutcome LiveClient::deleteLivePackageConfig(const DeleteLivePackageConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -10413,6 +10485,78 @@ LiveClient::ListPlaylistItemsOutcomeCallable LiveClient::listPlaylistItemsCallab
 			[this, request]()
 			{
 			return this->listPlaylistItems(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::MiguLivePullToPushStartOutcome LiveClient::miguLivePullToPushStart(const MiguLivePullToPushStartRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MiguLivePullToPushStartOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MiguLivePullToPushStartOutcome(MiguLivePullToPushStartResult(outcome.result()));
+	else
+		return MiguLivePullToPushStartOutcome(outcome.error());
+}
+
+void LiveClient::miguLivePullToPushStartAsync(const MiguLivePullToPushStartRequest& request, const MiguLivePullToPushStartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, miguLivePullToPushStart(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::MiguLivePullToPushStartOutcomeCallable LiveClient::miguLivePullToPushStartCallable(const MiguLivePullToPushStartRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MiguLivePullToPushStartOutcome()>>(
+			[this, request]()
+			{
+			return this->miguLivePullToPushStart(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::MiguLivePullToPushStatusOutcome LiveClient::miguLivePullToPushStatus(const MiguLivePullToPushStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MiguLivePullToPushStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MiguLivePullToPushStatusOutcome(MiguLivePullToPushStatusResult(outcome.result()));
+	else
+		return MiguLivePullToPushStatusOutcome(outcome.error());
+}
+
+void LiveClient::miguLivePullToPushStatusAsync(const MiguLivePullToPushStatusRequest& request, const MiguLivePullToPushStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, miguLivePullToPushStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::MiguLivePullToPushStatusOutcomeCallable LiveClient::miguLivePullToPushStatusCallable(const MiguLivePullToPushStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MiguLivePullToPushStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->miguLivePullToPushStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

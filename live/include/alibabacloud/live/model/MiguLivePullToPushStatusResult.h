@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_LISTLIVEMESSAGEAPPSRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_LISTLIVEMESSAGEAPPSRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_MIGULIVEPULLTOPUSHSTATUSRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_MIGULIVEPULLTOPUSHSTATUSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,38 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT ListLiveMessageAppsResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT MiguLivePullToPushStatusResult : public ServiceResult
 			{
 			public:
-				struct Apps
+				struct Data
 				{
-					long modifyTime;
-					std::string dataCenter;
-					std::string appId;
-					std::string appKey;
-					long createTime;
-					std::string appSign;
-					std::string disable;
-					std::string appName;
+					std::string status;
+					std::string message;
 				};
 
 
-				ListLiveMessageAppsResult();
-				explicit ListLiveMessageAppsResult(const std::string &payload);
-				~ListLiveMessageAppsResult();
-				bool getHasMore()const;
-				long getNextPageToken()const;
-				std::vector<Apps> getAppList()const;
+				MiguLivePullToPushStatusResult();
+				explicit MiguLivePullToPushStatusResult(const std::string &payload);
+				~MiguLivePullToPushStatusResult();
+				std::string getRequestId()const;
+				std::string getMessage()const;
+				Data getData()const;
+				std::string getCode()const;
+				std::string getTimestamp()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				bool hasMore_;
-				long nextPageToken_;
-				std::vector<Apps> appList_;
+				std::string requestId_;
+				std::string message_;
+				Data data_;
+				std::string code_;
+				std::string timestamp_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_LISTLIVEMESSAGEAPPSRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_MIGULIVEPULLTOPUSHSTATUSRESULT_H_

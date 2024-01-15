@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_REALTIMESNAPSHOTCOMMANDREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_REALTIMESNAPSHOTCOMMANDREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_MIGULIVEPULLTOPUSHSTARTREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_MIGULIVEPULLTOPUSHSTARTREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,44 +26,23 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT RealTimeSnapshotCommandRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT MiguLivePullToPushStartRequest : public RpcServiceRequest {
 public:
-	RealTimeSnapshotCommandRequest();
-	~RealTimeSnapshotCommandRequest();
-	int getSource() const;
-	void setSource(int source);
-	int getMode() const;
-	void setMode(int mode);
-	std::string getUserData() const;
-	void setUserData(const std::string &userData);
-	std::string getAppName() const;
-	void setAppName(const std::string &appName);
-	std::string getStreamName() const;
-	void setStreamName(const std::string &streamName);
+	MiguLivePullToPushStartRequest();
+	~MiguLivePullToPushStartRequest();
+	std::string getMiguData() const;
+	void setMiguData(const std::string &miguData);
 	std::string getDomainName() const;
 	void setDomainName(const std::string &domainName);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getCommand() const;
-	void setCommand(const std::string &command);
-	int getSnapshotType() const;
-	void setSnapshotType(int snapshotType);
-	int getInterval() const;
-	void setInterval(int interval);
 
 private:
-	int source_;
-	int mode_;
-	std::string userData_;
-	std::string appName_;
-	std::string streamName_;
+	std::string miguData_;
 	std::string domainName_;
 	long ownerId_;
-	std::string command_;
-	int snapshotType_;
-	int interval_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_REALTIMESNAPSHOTCOMMANDREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_MIGULIVEPULLTOPUSHSTARTREQUEST_H_

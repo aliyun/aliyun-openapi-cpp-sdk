@@ -51,6 +51,14 @@ void ListLiveMessageAppsResult::parse(const std::string &payload)
 			appListObject.appSign = valueAppListApps["AppSign"].asString();
 		if(!valueAppListApps["Disable"].isNull())
 			appListObject.disable = valueAppListApps["Disable"].asString();
+		if(!valueAppListApps["AppName"].isNull())
+			appListObject.appName = valueAppListApps["AppName"].asString();
+		if(!valueAppListApps["CreateTime"].isNull())
+			appListObject.createTime = std::stol(valueAppListApps["CreateTime"].asString());
+		if(!valueAppListApps["ModifyTime"].isNull())
+			appListObject.modifyTime = std::stol(valueAppListApps["ModifyTime"].asString());
+		if(!valueAppListApps["DataCenter"].isNull())
+			appListObject.dataCenter = valueAppListApps["DataCenter"].asString();
 		appList_.push_back(appListObject);
 	}
 	if(!value["HasMore"].isNull())

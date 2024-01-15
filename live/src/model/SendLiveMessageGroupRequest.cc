@@ -52,6 +52,15 @@ void SendLiveMessageGroupRequest::setStaticsIncrease(long staticsIncrease) {
   setParameter(std::string("StaticsIncrease"), std::to_string(staticsIncrease));
 }
 
+bool SendLiveMessageGroupRequest::getNoCache() const {
+  return noCache_;
+}
+
+void SendLiveMessageGroupRequest::setNoCache(bool noCache) {
+  noCache_ = noCache;
+  setParameter(std::string("NoCache"), noCache ? "true" : "false");
+}
+
 long SendLiveMessageGroupRequest::getMsgType() const {
   return msgType_;
 }

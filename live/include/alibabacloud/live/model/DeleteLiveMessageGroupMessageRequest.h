@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_SENDLIVEMESSAGEGROUPREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_SENDLIVEMESSAGEGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DELETELIVEMESSAGEGROUPMESSAGEREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DELETELIVEMESSAGEGROUPMESSAGEREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,50 +26,32 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT SendLiveMessageGroupRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT DeleteLiveMessageGroupMessageRequest : public RpcServiceRequest {
 public:
-	SendLiveMessageGroupRequest();
-	~SendLiveMessageGroupRequest();
-	std::string getSenderMetaInfo() const;
-	void setSenderMetaInfo(const std::string &senderMetaInfo);
-	std::string getBody() const;
-	void setBody(const std::string &body);
-	long getStaticsIncrease() const;
-	void setStaticsIncrease(long staticsIncrease);
-	bool getNoCache() const;
-	void setNoCache(bool noCache);
-	long getMsgType() const;
-	void setMsgType(long msgType);
-	bool getNoStorage() const;
-	void setNoStorage(bool noStorage);
+	DeleteLiveMessageGroupMessageRequest();
+	~DeleteLiveMessageGroupMessageRequest();
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
-	long getWeight() const;
-	void setWeight(long weight);
+	std::string getMessageId() const;
+	void setMessageId(const std::string &messageId);
 	std::string getDataCenter() const;
 	void setDataCenter(const std::string &dataCenter);
-	std::string getMsgTid() const;
-	void setMsgTid(const std::string &msgTid);
-	std::string getSenderId() const;
-	void setSenderId(const std::string &senderId);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
+	std::string getDeleterId() const;
+	void setDeleterId(const std::string &deleterId);
+	std::string getDeleterInfo() const;
+	void setDeleterInfo(const std::string &deleterInfo);
 
 private:
-	std::string senderMetaInfo_;
-	std::string body_;
-	long staticsIncrease_;
-	bool noCache_;
-	long msgType_;
-	bool noStorage_;
 	std::string groupId_;
-	long weight_;
+	std::string messageId_;
 	std::string dataCenter_;
-	std::string msgTid_;
-	std::string senderId_;
 	std::string appId_;
+	std::string deleterId_;
+	std::string deleterInfo_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_SENDLIVEMESSAGEGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DELETELIVEMESSAGEGROUPMESSAGEREQUEST_H_

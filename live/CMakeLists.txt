@@ -189,6 +189,10 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteLiveLazyPullStreamInfoConfigResult.h
 	include/alibabacloud/live/model/DeleteLiveMessageGroupRequest.h
 	include/alibabacloud/live/model/DeleteLiveMessageGroupResult.h
+	include/alibabacloud/live/model/DeleteLiveMessageGroupMessageRequest.h
+	include/alibabacloud/live/model/DeleteLiveMessageGroupMessageResult.h
+	include/alibabacloud/live/model/DeleteLiveMessageUserMessageRequest.h
+	include/alibabacloud/live/model/DeleteLiveMessageUserMessageResult.h
 	include/alibabacloud/live/model/DeleteLivePackageConfigRequest.h
 	include/alibabacloud/live/model/DeleteLivePackageConfigResult.h
 	include/alibabacloud/live/model/DeleteLivePullStreamInfoConfigRequest.h
@@ -597,6 +601,10 @@ set(live_public_header_model
 	include/alibabacloud/live/model/ListPlaylistResult.h
 	include/alibabacloud/live/model/ListPlaylistItemsRequest.h
 	include/alibabacloud/live/model/ListPlaylistItemsResult.h
+	include/alibabacloud/live/model/MiguLivePullToPushStartRequest.h
+	include/alibabacloud/live/model/MiguLivePullToPushStartResult.h
+	include/alibabacloud/live/model/MiguLivePullToPushStatusRequest.h
+	include/alibabacloud/live/model/MiguLivePullToPushStatusResult.h
 	include/alibabacloud/live/model/ModifyCasterComponentRequest.h
 	include/alibabacloud/live/model/ModifyCasterComponentResult.h
 	include/alibabacloud/live/model/ModifyCasterEpisodeRequest.h
@@ -956,6 +964,10 @@ set(live_src
 	src/model/DeleteLiveLazyPullStreamInfoConfigResult.cc
 	src/model/DeleteLiveMessageGroupRequest.cc
 	src/model/DeleteLiveMessageGroupResult.cc
+	src/model/DeleteLiveMessageGroupMessageRequest.cc
+	src/model/DeleteLiveMessageGroupMessageResult.cc
+	src/model/DeleteLiveMessageUserMessageRequest.cc
+	src/model/DeleteLiveMessageUserMessageResult.cc
 	src/model/DeleteLivePackageConfigRequest.cc
 	src/model/DeleteLivePackageConfigResult.cc
 	src/model/DeleteLivePullStreamInfoConfigRequest.cc
@@ -1364,6 +1376,10 @@ set(live_src
 	src/model/ListPlaylistResult.cc
 	src/model/ListPlaylistItemsRequest.cc
 	src/model/ListPlaylistItemsResult.cc
+	src/model/MiguLivePullToPushStartRequest.cc
+	src/model/MiguLivePullToPushStartResult.cc
+	src/model/MiguLivePullToPushStatusRequest.cc
+	src/model/MiguLivePullToPushStatusResult.cc
 	src/model/ModifyCasterComponentRequest.cc
 	src/model/ModifyCasterComponentResult.cc
 	src/model/ModifyCasterEpisodeRequest.cc
