@@ -1,0 +1,522 @@
+#
+# Copyright 2009-2017 Alibaba Cloud All rights reserved.
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#      http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
+
+set(linkvisual_public_header 
+	include/alibabacloud/linkvisual/LinkvisualClient.h
+	include/alibabacloud/linkvisual/LinkvisualExport.h )
+
+set(linkvisual_public_header_model 
+	include/alibabacloud/linkvisual/model/AddEventRecordPlanDeviceRequest.h
+	include/alibabacloud/linkvisual/model/AddEventRecordPlanDeviceResult.h
+	include/alibabacloud/linkvisual/model/AddFaceDeviceGroupRequest.h
+	include/alibabacloud/linkvisual/model/AddFaceDeviceGroupResult.h
+	include/alibabacloud/linkvisual/model/AddFaceDeviceToDeviceGroupRequest.h
+	include/alibabacloud/linkvisual/model/AddFaceDeviceToDeviceGroupResult.h
+	include/alibabacloud/linkvisual/model/AddFaceUserRequest.h
+	include/alibabacloud/linkvisual/model/AddFaceUserResult.h
+	include/alibabacloud/linkvisual/model/AddFaceUserGroupRequest.h
+	include/alibabacloud/linkvisual/model/AddFaceUserGroupResult.h
+	include/alibabacloud/linkvisual/model/AddFaceUserGroupAndDeviceGroupRelationRequest.h
+	include/alibabacloud/linkvisual/model/AddFaceUserGroupAndDeviceGroupRelationResult.h
+	include/alibabacloud/linkvisual/model/AddFaceUserPictureRequest.h
+	include/alibabacloud/linkvisual/model/AddFaceUserPictureResult.h
+	include/alibabacloud/linkvisual/model/AddFaceUserToUserGroupRequest.h
+	include/alibabacloud/linkvisual/model/AddFaceUserToUserGroupResult.h
+	include/alibabacloud/linkvisual/model/AddRecordPlanDeviceRequest.h
+	include/alibabacloud/linkvisual/model/AddRecordPlanDeviceResult.h
+	include/alibabacloud/linkvisual/model/BatchQueryVisionDeviceInfoRequest.h
+	include/alibabacloud/linkvisual/model/BatchQueryVisionDeviceInfoResult.h
+	include/alibabacloud/linkvisual/model/BindPictureSearchAppWithDevicesRequest.h
+	include/alibabacloud/linkvisual/model/BindPictureSearchAppWithDevicesResult.h
+	include/alibabacloud/linkvisual/model/CheckFaceUserDoExistOnDeviceRequest.h
+	include/alibabacloud/linkvisual/model/CheckFaceUserDoExistOnDeviceResult.h
+	include/alibabacloud/linkvisual/model/ClearFaceDeviceDBRequest.h
+	include/alibabacloud/linkvisual/model/ClearFaceDeviceDBResult.h
+	include/alibabacloud/linkvisual/model/CreateEventRecordPlanRequest.h
+	include/alibabacloud/linkvisual/model/CreateEventRecordPlanResult.h
+	include/alibabacloud/linkvisual/model/CreateGbDeviceRequest.h
+	include/alibabacloud/linkvisual/model/CreateGbDeviceResult.h
+	include/alibabacloud/linkvisual/model/CreateLocalFileUploadJobRequest.h
+	include/alibabacloud/linkvisual/model/CreateLocalFileUploadJobResult.h
+	include/alibabacloud/linkvisual/model/CreateLocalRecordDownloadByTimeJobRequest.h
+	include/alibabacloud/linkvisual/model/CreateLocalRecordDownloadByTimeJobResult.h
+	include/alibabacloud/linkvisual/model/CreatePictureSearchAppRequest.h
+	include/alibabacloud/linkvisual/model/CreatePictureSearchAppResult.h
+	include/alibabacloud/linkvisual/model/CreatePictureSearchJobRequest.h
+	include/alibabacloud/linkvisual/model/CreatePictureSearchJobResult.h
+	include/alibabacloud/linkvisual/model/CreateRecordDownloadByTimeJobRequest.h
+	include/alibabacloud/linkvisual/model/CreateRecordDownloadByTimeJobResult.h
+	include/alibabacloud/linkvisual/model/CreateRecordPlanRequest.h
+	include/alibabacloud/linkvisual/model/CreateRecordPlanResult.h
+	include/alibabacloud/linkvisual/model/CreateRtmpDeviceRequest.h
+	include/alibabacloud/linkvisual/model/CreateRtmpDeviceResult.h
+	include/alibabacloud/linkvisual/model/CreateTimeTemplateRequest.h
+	include/alibabacloud/linkvisual/model/CreateTimeTemplateResult.h
+	include/alibabacloud/linkvisual/model/DeleteEventRecordPlanRequest.h
+	include/alibabacloud/linkvisual/model/DeleteEventRecordPlanResult.h
+	include/alibabacloud/linkvisual/model/DeleteEventRecordPlanDeviceRequest.h
+	include/alibabacloud/linkvisual/model/DeleteEventRecordPlanDeviceResult.h
+	include/alibabacloud/linkvisual/model/DeleteFaceDeviceGroupRequest.h
+	include/alibabacloud/linkvisual/model/DeleteFaceDeviceGroupResult.h
+	include/alibabacloud/linkvisual/model/DeleteFaceUserRequest.h
+	include/alibabacloud/linkvisual/model/DeleteFaceUserResult.h
+	include/alibabacloud/linkvisual/model/DeleteFaceUserGroupRequest.h
+	include/alibabacloud/linkvisual/model/DeleteFaceUserGroupResult.h
+	include/alibabacloud/linkvisual/model/DeleteFaceUserGroupAndDeviceGroupRelationRequest.h
+	include/alibabacloud/linkvisual/model/DeleteFaceUserGroupAndDeviceGroupRelationResult.h
+	include/alibabacloud/linkvisual/model/DeleteFaceUserPictureRequest.h
+	include/alibabacloud/linkvisual/model/DeleteFaceUserPictureResult.h
+	include/alibabacloud/linkvisual/model/DeleteLocalFileUploadJobRequest.h
+	include/alibabacloud/linkvisual/model/DeleteLocalFileUploadJobResult.h
+	include/alibabacloud/linkvisual/model/DeletePictureRequest.h
+	include/alibabacloud/linkvisual/model/DeletePictureResult.h
+	include/alibabacloud/linkvisual/model/DeleteRecordRequest.h
+	include/alibabacloud/linkvisual/model/DeleteRecordResult.h
+	include/alibabacloud/linkvisual/model/DeleteRecordPlanRequest.h
+	include/alibabacloud/linkvisual/model/DeleteRecordPlanResult.h
+	include/alibabacloud/linkvisual/model/DeleteRecordPlanDeviceRequest.h
+	include/alibabacloud/linkvisual/model/DeleteRecordPlanDeviceResult.h
+	include/alibabacloud/linkvisual/model/DeleteRtmpDeviceRequest.h
+	include/alibabacloud/linkvisual/model/DeleteRtmpDeviceResult.h
+	include/alibabacloud/linkvisual/model/DeleteRtmpKeyRequest.h
+	include/alibabacloud/linkvisual/model/DeleteRtmpKeyResult.h
+	include/alibabacloud/linkvisual/model/DeleteTimeTemplateRequest.h
+	include/alibabacloud/linkvisual/model/DeleteTimeTemplateResult.h
+	include/alibabacloud/linkvisual/model/DetectUserFaceByUrlRequest.h
+	include/alibabacloud/linkvisual/model/DetectUserFaceByUrlResult.h
+	include/alibabacloud/linkvisual/model/GetPictureSearchJobStatusRequest.h
+	include/alibabacloud/linkvisual/model/GetPictureSearchJobStatusResult.h
+	include/alibabacloud/linkvisual/model/PictureSearchPictureRequest.h
+	include/alibabacloud/linkvisual/model/PictureSearchPictureResult.h
+	include/alibabacloud/linkvisual/model/QueryCarProcessEventsRequest.h
+	include/alibabacloud/linkvisual/model/QueryCarProcessEventsResult.h
+	include/alibabacloud/linkvisual/model/QueryDeviceEventRequest.h
+	include/alibabacloud/linkvisual/model/QueryDeviceEventResult.h
+	include/alibabacloud/linkvisual/model/QueryDeviceEventPictureRequest.h
+	include/alibabacloud/linkvisual/model/QueryDeviceEventPictureResult.h
+	include/alibabacloud/linkvisual/model/QueryDeviceEventRecordRequest.h
+	include/alibabacloud/linkvisual/model/QueryDeviceEventRecordResult.h
+	include/alibabacloud/linkvisual/model/QueryDevicePictureByListRequest.h
+	include/alibabacloud/linkvisual/model/QueryDevicePictureByListResult.h
+	include/alibabacloud/linkvisual/model/QueryDevicePictureFileRequest.h
+	include/alibabacloud/linkvisual/model/QueryDevicePictureFileResult.h
+	include/alibabacloud/linkvisual/model/QueryDevicePictureLifeCycleRequest.h
+	include/alibabacloud/linkvisual/model/QueryDevicePictureLifeCycleResult.h
+	include/alibabacloud/linkvisual/model/QueryDeviceRecordLifeCycleRequest.h
+	include/alibabacloud/linkvisual/model/QueryDeviceRecordLifeCycleResult.h
+	include/alibabacloud/linkvisual/model/QueryDeviceVodUrlRequest.h
+	include/alibabacloud/linkvisual/model/QueryDeviceVodUrlResult.h
+	include/alibabacloud/linkvisual/model/QueryDeviceVodUrlByTimeRequest.h
+	include/alibabacloud/linkvisual/model/QueryDeviceVodUrlByTimeResult.h
+	include/alibabacloud/linkvisual/model/QueryEventRecordPlanDetailRequest.h
+	include/alibabacloud/linkvisual/model/QueryEventRecordPlanDetailResult.h
+	include/alibabacloud/linkvisual/model/QueryEventRecordPlanDeviceByDeviceRequest.h
+	include/alibabacloud/linkvisual/model/QueryEventRecordPlanDeviceByDeviceResult.h
+	include/alibabacloud/linkvisual/model/QueryEventRecordPlanDeviceByPlanRequest.h
+	include/alibabacloud/linkvisual/model/QueryEventRecordPlanDeviceByPlanResult.h
+	include/alibabacloud/linkvisual/model/QueryEventRecordPlansRequest.h
+	include/alibabacloud/linkvisual/model/QueryEventRecordPlansResult.h
+	include/alibabacloud/linkvisual/model/QueryFaceAllDeviceGroupRequest.h
+	include/alibabacloud/linkvisual/model/QueryFaceAllDeviceGroupResult.h
+	include/alibabacloud/linkvisual/model/QueryFaceAllUserGroupRequest.h
+	include/alibabacloud/linkvisual/model/QueryFaceAllUserGroupResult.h
+	include/alibabacloud/linkvisual/model/QueryFaceAllUserGroupAndDeviceGroupRelationRequest.h
+	include/alibabacloud/linkvisual/model/QueryFaceAllUserGroupAndDeviceGroupRelationResult.h
+	include/alibabacloud/linkvisual/model/QueryFaceAllUserIdsByGroupIdRequest.h
+	include/alibabacloud/linkvisual/model/QueryFaceAllUserIdsByGroupIdResult.h
+	include/alibabacloud/linkvisual/model/QueryFaceCustomUserIdByUserIdRequest.h
+	include/alibabacloud/linkvisual/model/QueryFaceCustomUserIdByUserIdResult.h
+	include/alibabacloud/linkvisual/model/QueryFaceDeviceGroupsByDeviceRequest.h
+	include/alibabacloud/linkvisual/model/QueryFaceDeviceGroupsByDeviceResult.h
+	include/alibabacloud/linkvisual/model/QueryFaceUserRequest.h
+	include/alibabacloud/linkvisual/model/QueryFaceUserResult.h
+	include/alibabacloud/linkvisual/model/QueryFaceUserBatchRequest.h
+	include/alibabacloud/linkvisual/model/QueryFaceUserBatchResult.h
+	include/alibabacloud/linkvisual/model/QueryFaceUserByNameRequest.h
+	include/alibabacloud/linkvisual/model/QueryFaceUserByNameResult.h
+	include/alibabacloud/linkvisual/model/QueryFaceUserGroupRequest.h
+	include/alibabacloud/linkvisual/model/QueryFaceUserGroupResult.h
+	include/alibabacloud/linkvisual/model/QueryFaceUserGroupAndDeviceGroupRelationRequest.h
+	include/alibabacloud/linkvisual/model/QueryFaceUserGroupAndDeviceGroupRelationResult.h
+	include/alibabacloud/linkvisual/model/QueryFaceUserIdByCustomUserIdRequest.h
+	include/alibabacloud/linkvisual/model/QueryFaceUserIdByCustomUserIdResult.h
+	include/alibabacloud/linkvisual/model/QueryLiveStreamingRequest.h
+	include/alibabacloud/linkvisual/model/QueryLiveStreamingResult.h
+	include/alibabacloud/linkvisual/model/QueryLocalFileUploadJobRequest.h
+	include/alibabacloud/linkvisual/model/QueryLocalFileUploadJobResult.h
+	include/alibabacloud/linkvisual/model/QueryMonthRecordRequest.h
+	include/alibabacloud/linkvisual/model/QueryMonthRecordResult.h
+	include/alibabacloud/linkvisual/model/QueryPictureFilesRequest.h
+	include/alibabacloud/linkvisual/model/QueryPictureFilesResult.h
+	include/alibabacloud/linkvisual/model/QueryPictureSearchAiboxesRequest.h
+	include/alibabacloud/linkvisual/model/QueryPictureSearchAiboxesResult.h
+	include/alibabacloud/linkvisual/model/QueryPictureSearchAppsRequest.h
+	include/alibabacloud/linkvisual/model/QueryPictureSearchAppsResult.h
+	include/alibabacloud/linkvisual/model/QueryPictureSearchDevicesRequest.h
+	include/alibabacloud/linkvisual/model/QueryPictureSearchDevicesResult.h
+	include/alibabacloud/linkvisual/model/QueryPictureSearchJobRequest.h
+	include/alibabacloud/linkvisual/model/QueryPictureSearchJobResult.h
+	include/alibabacloud/linkvisual/model/QueryPictureSearchJobResultRequest.h
+	include/alibabacloud/linkvisual/model/QueryPictureSearchJobResultResult.h
+	include/alibabacloud/linkvisual/model/QueryRecordRequest.h
+	include/alibabacloud/linkvisual/model/QueryRecordResult.h
+	include/alibabacloud/linkvisual/model/QueryRecordByRecordIdRequest.h
+	include/alibabacloud/linkvisual/model/QueryRecordByRecordIdResult.h
+	include/alibabacloud/linkvisual/model/QueryRecordDownloadJobByIdRequest.h
+	include/alibabacloud/linkvisual/model/QueryRecordDownloadJobByIdResult.h
+	include/alibabacloud/linkvisual/model/QueryRecordDownloadJobListRequest.h
+	include/alibabacloud/linkvisual/model/QueryRecordDownloadJobListResult.h
+	include/alibabacloud/linkvisual/model/QueryRecordDownloadUrlRequest.h
+	include/alibabacloud/linkvisual/model/QueryRecordDownloadUrlResult.h
+	include/alibabacloud/linkvisual/model/QueryRecordPlanDetailRequest.h
+	include/alibabacloud/linkvisual/model/QueryRecordPlanDetailResult.h
+	include/alibabacloud/linkvisual/model/QueryRecordPlanDeviceByDeviceRequest.h
+	include/alibabacloud/linkvisual/model/QueryRecordPlanDeviceByDeviceResult.h
+	include/alibabacloud/linkvisual/model/QueryRecordPlanDeviceByPlanRequest.h
+	include/alibabacloud/linkvisual/model/QueryRecordPlanDeviceByPlanResult.h
+	include/alibabacloud/linkvisual/model/QueryRecordPlansRequest.h
+	include/alibabacloud/linkvisual/model/QueryRecordPlansResult.h
+	include/alibabacloud/linkvisual/model/QueryRecordUrlRequest.h
+	include/alibabacloud/linkvisual/model/QueryRecordUrlResult.h
+	include/alibabacloud/linkvisual/model/QueryRecordUrlByTimeRequest.h
+	include/alibabacloud/linkvisual/model/QueryRecordUrlByTimeResult.h
+	include/alibabacloud/linkvisual/model/QueryRtmpKeyRequest.h
+	include/alibabacloud/linkvisual/model/QueryRtmpKeyResult.h
+	include/alibabacloud/linkvisual/model/QueryTimeTemplateRequest.h
+	include/alibabacloud/linkvisual/model/QueryTimeTemplateResult.h
+	include/alibabacloud/linkvisual/model/QueryTimeTemplateDetailRequest.h
+	include/alibabacloud/linkvisual/model/QueryTimeTemplateDetailResult.h
+	include/alibabacloud/linkvisual/model/QueryVisionDeviceInfoRequest.h
+	include/alibabacloud/linkvisual/model/QueryVisionDeviceInfoResult.h
+	include/alibabacloud/linkvisual/model/QueryVoiceIntercomRequest.h
+	include/alibabacloud/linkvisual/model/QueryVoiceIntercomResult.h
+	include/alibabacloud/linkvisual/model/RemoveFaceDeviceFromDeviceGroupRequest.h
+	include/alibabacloud/linkvisual/model/RemoveFaceDeviceFromDeviceGroupResult.h
+	include/alibabacloud/linkvisual/model/RemoveFaceUserFromUserGroupRequest.h
+	include/alibabacloud/linkvisual/model/RemoveFaceUserFromUserGroupResult.h
+	include/alibabacloud/linkvisual/model/SetDevicePictureLifeCycleRequest.h
+	include/alibabacloud/linkvisual/model/SetDevicePictureLifeCycleResult.h
+	include/alibabacloud/linkvisual/model/SetDeviceRecordLifeCycleRequest.h
+	include/alibabacloud/linkvisual/model/SetDeviceRecordLifeCycleResult.h
+	include/alibabacloud/linkvisual/model/StopLiveStreamingRequest.h
+	include/alibabacloud/linkvisual/model/StopLiveStreamingResult.h
+	include/alibabacloud/linkvisual/model/StopTriggeredRecordRequest.h
+	include/alibabacloud/linkvisual/model/StopTriggeredRecordResult.h
+	include/alibabacloud/linkvisual/model/TransferDeviceInstanceRequest.h
+	include/alibabacloud/linkvisual/model/TransferDeviceInstanceResult.h
+	include/alibabacloud/linkvisual/model/TriggerCapturePictureRequest.h
+	include/alibabacloud/linkvisual/model/TriggerCapturePictureResult.h
+	include/alibabacloud/linkvisual/model/TriggerRecordRequest.h
+	include/alibabacloud/linkvisual/model/TriggerRecordResult.h
+	include/alibabacloud/linkvisual/model/UnbindPictureSearchAppWithDevicesRequest.h
+	include/alibabacloud/linkvisual/model/UnbindPictureSearchAppWithDevicesResult.h
+	include/alibabacloud/linkvisual/model/UpdateEventRecordPlanRequest.h
+	include/alibabacloud/linkvisual/model/UpdateEventRecordPlanResult.h
+	include/alibabacloud/linkvisual/model/UpdateFaceUserRequest.h
+	include/alibabacloud/linkvisual/model/UpdateFaceUserResult.h
+	include/alibabacloud/linkvisual/model/UpdateFaceUserGroupAndDeviceGroupRelationRequest.h
+	include/alibabacloud/linkvisual/model/UpdateFaceUserGroupAndDeviceGroupRelationResult.h
+	include/alibabacloud/linkvisual/model/UpdateInstanceInternetProtocolRequest.h
+	include/alibabacloud/linkvisual/model/UpdateInstanceInternetProtocolResult.h
+	include/alibabacloud/linkvisual/model/UpdatePictureSearchAppRequest.h
+	include/alibabacloud/linkvisual/model/UpdatePictureSearchAppResult.h
+	include/alibabacloud/linkvisual/model/UpdateRecordPlanRequest.h
+	include/alibabacloud/linkvisual/model/UpdateRecordPlanResult.h
+	include/alibabacloud/linkvisual/model/UpdateRtmpKeyRequest.h
+	include/alibabacloud/linkvisual/model/UpdateRtmpKeyResult.h
+	include/alibabacloud/linkvisual/model/UpdateTimeTemplateRequest.h
+	include/alibabacloud/linkvisual/model/UpdateTimeTemplateResult.h )
+
+set(linkvisual_src 
+	src/LinkvisualClient.cc
+	src/model/AddEventRecordPlanDeviceRequest.cc
+	src/model/AddEventRecordPlanDeviceResult.cc
+	src/model/AddFaceDeviceGroupRequest.cc
+	src/model/AddFaceDeviceGroupResult.cc
+	src/model/AddFaceDeviceToDeviceGroupRequest.cc
+	src/model/AddFaceDeviceToDeviceGroupResult.cc
+	src/model/AddFaceUserRequest.cc
+	src/model/AddFaceUserResult.cc
+	src/model/AddFaceUserGroupRequest.cc
+	src/model/AddFaceUserGroupResult.cc
+	src/model/AddFaceUserGroupAndDeviceGroupRelationRequest.cc
+	src/model/AddFaceUserGroupAndDeviceGroupRelationResult.cc
+	src/model/AddFaceUserPictureRequest.cc
+	src/model/AddFaceUserPictureResult.cc
+	src/model/AddFaceUserToUserGroupRequest.cc
+	src/model/AddFaceUserToUserGroupResult.cc
+	src/model/AddRecordPlanDeviceRequest.cc
+	src/model/AddRecordPlanDeviceResult.cc
+	src/model/BatchQueryVisionDeviceInfoRequest.cc
+	src/model/BatchQueryVisionDeviceInfoResult.cc
+	src/model/BindPictureSearchAppWithDevicesRequest.cc
+	src/model/BindPictureSearchAppWithDevicesResult.cc
+	src/model/CheckFaceUserDoExistOnDeviceRequest.cc
+	src/model/CheckFaceUserDoExistOnDeviceResult.cc
+	src/model/ClearFaceDeviceDBRequest.cc
+	src/model/ClearFaceDeviceDBResult.cc
+	src/model/CreateEventRecordPlanRequest.cc
+	src/model/CreateEventRecordPlanResult.cc
+	src/model/CreateGbDeviceRequest.cc
+	src/model/CreateGbDeviceResult.cc
+	src/model/CreateLocalFileUploadJobRequest.cc
+	src/model/CreateLocalFileUploadJobResult.cc
+	src/model/CreateLocalRecordDownloadByTimeJobRequest.cc
+	src/model/CreateLocalRecordDownloadByTimeJobResult.cc
+	src/model/CreatePictureSearchAppRequest.cc
+	src/model/CreatePictureSearchAppResult.cc
+	src/model/CreatePictureSearchJobRequest.cc
+	src/model/CreatePictureSearchJobResult.cc
+	src/model/CreateRecordDownloadByTimeJobRequest.cc
+	src/model/CreateRecordDownloadByTimeJobResult.cc
+	src/model/CreateRecordPlanRequest.cc
+	src/model/CreateRecordPlanResult.cc
+	src/model/CreateRtmpDeviceRequest.cc
+	src/model/CreateRtmpDeviceResult.cc
+	src/model/CreateTimeTemplateRequest.cc
+	src/model/CreateTimeTemplateResult.cc
+	src/model/DeleteEventRecordPlanRequest.cc
+	src/model/DeleteEventRecordPlanResult.cc
+	src/model/DeleteEventRecordPlanDeviceRequest.cc
+	src/model/DeleteEventRecordPlanDeviceResult.cc
+	src/model/DeleteFaceDeviceGroupRequest.cc
+	src/model/DeleteFaceDeviceGroupResult.cc
+	src/model/DeleteFaceUserRequest.cc
+	src/model/DeleteFaceUserResult.cc
+	src/model/DeleteFaceUserGroupRequest.cc
+	src/model/DeleteFaceUserGroupResult.cc
+	src/model/DeleteFaceUserGroupAndDeviceGroupRelationRequest.cc
+	src/model/DeleteFaceUserGroupAndDeviceGroupRelationResult.cc
+	src/model/DeleteFaceUserPictureRequest.cc
+	src/model/DeleteFaceUserPictureResult.cc
+	src/model/DeleteLocalFileUploadJobRequest.cc
+	src/model/DeleteLocalFileUploadJobResult.cc
+	src/model/DeletePictureRequest.cc
+	src/model/DeletePictureResult.cc
+	src/model/DeleteRecordRequest.cc
+	src/model/DeleteRecordResult.cc
+	src/model/DeleteRecordPlanRequest.cc
+	src/model/DeleteRecordPlanResult.cc
+	src/model/DeleteRecordPlanDeviceRequest.cc
+	src/model/DeleteRecordPlanDeviceResult.cc
+	src/model/DeleteRtmpDeviceRequest.cc
+	src/model/DeleteRtmpDeviceResult.cc
+	src/model/DeleteRtmpKeyRequest.cc
+	src/model/DeleteRtmpKeyResult.cc
+	src/model/DeleteTimeTemplateRequest.cc
+	src/model/DeleteTimeTemplateResult.cc
+	src/model/DetectUserFaceByUrlRequest.cc
+	src/model/DetectUserFaceByUrlResult.cc
+	src/model/GetPictureSearchJobStatusRequest.cc
+	src/model/GetPictureSearchJobStatusResult.cc
+	src/model/PictureSearchPictureRequest.cc
+	src/model/PictureSearchPictureResult.cc
+	src/model/QueryCarProcessEventsRequest.cc
+	src/model/QueryCarProcessEventsResult.cc
+	src/model/QueryDeviceEventRequest.cc
+	src/model/QueryDeviceEventResult.cc
+	src/model/QueryDeviceEventPictureRequest.cc
+	src/model/QueryDeviceEventPictureResult.cc
+	src/model/QueryDeviceEventRecordRequest.cc
+	src/model/QueryDeviceEventRecordResult.cc
+	src/model/QueryDevicePictureByListRequest.cc
+	src/model/QueryDevicePictureByListResult.cc
+	src/model/QueryDevicePictureFileRequest.cc
+	src/model/QueryDevicePictureFileResult.cc
+	src/model/QueryDevicePictureLifeCycleRequest.cc
+	src/model/QueryDevicePictureLifeCycleResult.cc
+	src/model/QueryDeviceRecordLifeCycleRequest.cc
+	src/model/QueryDeviceRecordLifeCycleResult.cc
+	src/model/QueryDeviceVodUrlRequest.cc
+	src/model/QueryDeviceVodUrlResult.cc
+	src/model/QueryDeviceVodUrlByTimeRequest.cc
+	src/model/QueryDeviceVodUrlByTimeResult.cc
+	src/model/QueryEventRecordPlanDetailRequest.cc
+	src/model/QueryEventRecordPlanDetailResult.cc
+	src/model/QueryEventRecordPlanDeviceByDeviceRequest.cc
+	src/model/QueryEventRecordPlanDeviceByDeviceResult.cc
+	src/model/QueryEventRecordPlanDeviceByPlanRequest.cc
+	src/model/QueryEventRecordPlanDeviceByPlanResult.cc
+	src/model/QueryEventRecordPlansRequest.cc
+	src/model/QueryEventRecordPlansResult.cc
+	src/model/QueryFaceAllDeviceGroupRequest.cc
+	src/model/QueryFaceAllDeviceGroupResult.cc
+	src/model/QueryFaceAllUserGroupRequest.cc
+	src/model/QueryFaceAllUserGroupResult.cc
+	src/model/QueryFaceAllUserGroupAndDeviceGroupRelationRequest.cc
+	src/model/QueryFaceAllUserGroupAndDeviceGroupRelationResult.cc
+	src/model/QueryFaceAllUserIdsByGroupIdRequest.cc
+	src/model/QueryFaceAllUserIdsByGroupIdResult.cc
+	src/model/QueryFaceCustomUserIdByUserIdRequest.cc
+	src/model/QueryFaceCustomUserIdByUserIdResult.cc
+	src/model/QueryFaceDeviceGroupsByDeviceRequest.cc
+	src/model/QueryFaceDeviceGroupsByDeviceResult.cc
+	src/model/QueryFaceUserRequest.cc
+	src/model/QueryFaceUserResult.cc
+	src/model/QueryFaceUserBatchRequest.cc
+	src/model/QueryFaceUserBatchResult.cc
+	src/model/QueryFaceUserByNameRequest.cc
+	src/model/QueryFaceUserByNameResult.cc
+	src/model/QueryFaceUserGroupRequest.cc
+	src/model/QueryFaceUserGroupResult.cc
+	src/model/QueryFaceUserGroupAndDeviceGroupRelationRequest.cc
+	src/model/QueryFaceUserGroupAndDeviceGroupRelationResult.cc
+	src/model/QueryFaceUserIdByCustomUserIdRequest.cc
+	src/model/QueryFaceUserIdByCustomUserIdResult.cc
+	src/model/QueryLiveStreamingRequest.cc
+	src/model/QueryLiveStreamingResult.cc
+	src/model/QueryLocalFileUploadJobRequest.cc
+	src/model/QueryLocalFileUploadJobResult.cc
+	src/model/QueryMonthRecordRequest.cc
+	src/model/QueryMonthRecordResult.cc
+	src/model/QueryPictureFilesRequest.cc
+	src/model/QueryPictureFilesResult.cc
+	src/model/QueryPictureSearchAiboxesRequest.cc
+	src/model/QueryPictureSearchAiboxesResult.cc
+	src/model/QueryPictureSearchAppsRequest.cc
+	src/model/QueryPictureSearchAppsResult.cc
+	src/model/QueryPictureSearchDevicesRequest.cc
+	src/model/QueryPictureSearchDevicesResult.cc
+	src/model/QueryPictureSearchJobRequest.cc
+	src/model/QueryPictureSearchJobResult.cc
+	src/model/QueryPictureSearchJobResultRequest.cc
+	src/model/QueryPictureSearchJobResultResult.cc
+	src/model/QueryRecordRequest.cc
+	src/model/QueryRecordResult.cc
+	src/model/QueryRecordByRecordIdRequest.cc
+	src/model/QueryRecordByRecordIdResult.cc
+	src/model/QueryRecordDownloadJobByIdRequest.cc
+	src/model/QueryRecordDownloadJobByIdResult.cc
+	src/model/QueryRecordDownloadJobListRequest.cc
+	src/model/QueryRecordDownloadJobListResult.cc
+	src/model/QueryRecordDownloadUrlRequest.cc
+	src/model/QueryRecordDownloadUrlResult.cc
+	src/model/QueryRecordPlanDetailRequest.cc
+	src/model/QueryRecordPlanDetailResult.cc
+	src/model/QueryRecordPlanDeviceByDeviceRequest.cc
+	src/model/QueryRecordPlanDeviceByDeviceResult.cc
+	src/model/QueryRecordPlanDeviceByPlanRequest.cc
+	src/model/QueryRecordPlanDeviceByPlanResult.cc
+	src/model/QueryRecordPlansRequest.cc
+	src/model/QueryRecordPlansResult.cc
+	src/model/QueryRecordUrlRequest.cc
+	src/model/QueryRecordUrlResult.cc
+	src/model/QueryRecordUrlByTimeRequest.cc
+	src/model/QueryRecordUrlByTimeResult.cc
+	src/model/QueryRtmpKeyRequest.cc
+	src/model/QueryRtmpKeyResult.cc
+	src/model/QueryTimeTemplateRequest.cc
+	src/model/QueryTimeTemplateResult.cc
+	src/model/QueryTimeTemplateDetailRequest.cc
+	src/model/QueryTimeTemplateDetailResult.cc
+	src/model/QueryVisionDeviceInfoRequest.cc
+	src/model/QueryVisionDeviceInfoResult.cc
+	src/model/QueryVoiceIntercomRequest.cc
+	src/model/QueryVoiceIntercomResult.cc
+	src/model/RemoveFaceDeviceFromDeviceGroupRequest.cc
+	src/model/RemoveFaceDeviceFromDeviceGroupResult.cc
+	src/model/RemoveFaceUserFromUserGroupRequest.cc
+	src/model/RemoveFaceUserFromUserGroupResult.cc
+	src/model/SetDevicePictureLifeCycleRequest.cc
+	src/model/SetDevicePictureLifeCycleResult.cc
+	src/model/SetDeviceRecordLifeCycleRequest.cc
+	src/model/SetDeviceRecordLifeCycleResult.cc
+	src/model/StopLiveStreamingRequest.cc
+	src/model/StopLiveStreamingResult.cc
+	src/model/StopTriggeredRecordRequest.cc
+	src/model/StopTriggeredRecordResult.cc
+	src/model/TransferDeviceInstanceRequest.cc
+	src/model/TransferDeviceInstanceResult.cc
+	src/model/TriggerCapturePictureRequest.cc
+	src/model/TriggerCapturePictureResult.cc
+	src/model/TriggerRecordRequest.cc
+	src/model/TriggerRecordResult.cc
+	src/model/UnbindPictureSearchAppWithDevicesRequest.cc
+	src/model/UnbindPictureSearchAppWithDevicesResult.cc
+	src/model/UpdateEventRecordPlanRequest.cc
+	src/model/UpdateEventRecordPlanResult.cc
+	src/model/UpdateFaceUserRequest.cc
+	src/model/UpdateFaceUserResult.cc
+	src/model/UpdateFaceUserGroupAndDeviceGroupRelationRequest.cc
+	src/model/UpdateFaceUserGroupAndDeviceGroupRelationResult.cc
+	src/model/UpdateInstanceInternetProtocolRequest.cc
+	src/model/UpdateInstanceInternetProtocolResult.cc
+	src/model/UpdatePictureSearchAppRequest.cc
+	src/model/UpdatePictureSearchAppResult.cc
+	src/model/UpdateRecordPlanRequest.cc
+	src/model/UpdateRecordPlanResult.cc
+	src/model/UpdateRtmpKeyRequest.cc
+	src/model/UpdateRtmpKeyResult.cc
+	src/model/UpdateTimeTemplateRequest.cc
+	src/model/UpdateTimeTemplateResult.cc )
+
+add_library(linkvisual ${LIB_TYPE}
+	${linkvisual_public_header}
+	${linkvisual_public_header_model}
+	${linkvisual_src})
+
+set_target_properties(linkvisual
+	PROPERTIES
+	LINKER_LANGUAGE CXX
+	ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}linkvisual
+	)
+
+if(${LIB_TYPE} STREQUAL "SHARED")
+	set_target_properties(linkvisual
+		PROPERTIES
+		DEFINE_SYMBOL ALIBABACLOUD_LINKVISUAL_LIBRARY)
+endif()
+
+target_include_directories(linkvisual
+	PRIVATE include
+		${CMAKE_SOURCE_DIR}/core/include
+	)
+target_link_libraries(linkvisual
+	core)
+
+if(CMAKE_HOST_WIN32)
+	ExternalProject_Get_Property(jsoncpp INSTALL_DIR)
+	set(jsoncpp_install_dir ${INSTALL_DIR})
+	add_dependencies(linkvisual
+		jsoncpp)
+	target_include_directories(linkvisual
+		PRIVATE	${jsoncpp_install_dir}/include)
+	target_link_libraries(linkvisual
+		${jsoncpp_install_dir}/lib/jsoncpp.lib)
+	set_target_properties(linkvisual
+    	PROPERTIES
+    		COMPILE_OPTIONS "/bigobj")
+else()
+	target_include_directories(linkvisual
+		PRIVATE /usr/include/jsoncpp)
+	target_link_libraries(linkvisual
+		jsoncpp)
+endif()
+
+install(FILES ${linkvisual_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/linkvisual)
+install(FILES ${linkvisual_public_header_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/linkvisual/model)
+install(TARGETS linkvisual
+	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+	)
