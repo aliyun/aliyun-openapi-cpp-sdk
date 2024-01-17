@@ -159,6 +159,42 @@ AvatarClient::ClientStartOutcomeCallable AvatarClient::clientStartCallable(const
 	return task->get_future();
 }
 
+AvatarClient::ClientUnbindDeviceOutcome AvatarClient::clientUnbindDevice(const ClientUnbindDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ClientUnbindDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ClientUnbindDeviceOutcome(ClientUnbindDeviceResult(outcome.result()));
+	else
+		return ClientUnbindDeviceOutcome(outcome.error());
+}
+
+void AvatarClient::clientUnbindDeviceAsync(const ClientUnbindDeviceRequest& request, const ClientUnbindDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, clientUnbindDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::ClientUnbindDeviceOutcomeCallable AvatarClient::clientUnbindDeviceCallable(const ClientUnbindDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ClientUnbindDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->clientUnbindDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AvatarClient::CloseTimedResetOperateOutcome AvatarClient::closeTimedResetOperate(const CloseTimedResetOperateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

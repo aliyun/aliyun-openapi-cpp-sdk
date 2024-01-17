@@ -36,6 +36,7 @@ public:
 		int volume;
 		int speechRate;
 		int pitchRate;
+		int sampleRate;
 	};
 	struct AvatarInfo {
 		std::string code;
@@ -49,6 +50,14 @@ public:
 		std::string backgroundImageUrl;
 		bool isSubtitles;
 		bool subtitleEmbedded;
+		struct SubtitleStyle {
+			std::string color;
+			int size;
+			std::string name;
+			int y;
+			std::string outlineColor;
+		};
+		SubtitleStyle subtitleStyle;
 		int resolution;
 		int alphaFormat;
 	};

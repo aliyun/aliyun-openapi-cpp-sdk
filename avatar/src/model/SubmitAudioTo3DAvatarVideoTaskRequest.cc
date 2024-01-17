@@ -34,6 +34,15 @@ void SubmitAudioTo3DAvatarVideoTaskRequest::setApp(const SubmitAudioTo3DAvatarVi
   setParameter(std::string("App") + ".AppId", app.appId);
 }
 
+SubmitAudioTo3DAvatarVideoTaskRequest::AudioInfo SubmitAudioTo3DAvatarVideoTaskRequest::getAudioInfo() const {
+  return audioInfo_;
+}
+
+void SubmitAudioTo3DAvatarVideoTaskRequest::setAudioInfo(const SubmitAudioTo3DAvatarVideoTaskRequest::AudioInfo &audioInfo) {
+  audioInfo_ = audioInfo;
+  setParameter(std::string("AudioInfo") + ".SampleRate", std::to_string(audioInfo.sampleRate));
+}
+
 SubmitAudioTo3DAvatarVideoTaskRequest::AvatarInfo SubmitAudioTo3DAvatarVideoTaskRequest::getAvatarInfo() const {
   return avatarInfo_;
 }

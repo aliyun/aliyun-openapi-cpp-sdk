@@ -28,6 +28,8 @@
 #include "model/ClientAuthResult.h"
 #include "model/ClientStartRequest.h"
 #include "model/ClientStartResult.h"
+#include "model/ClientUnbindDeviceRequest.h"
+#include "model/ClientUnbindDeviceResult.h"
 #include "model/CloseTimedResetOperateRequest.h"
 #include "model/CloseTimedResetOperateResult.h"
 #include "model/ConfirmAvatar2dTrainRequest.h"
@@ -98,6 +100,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ClientStartResult> ClientStartOutcome;
 			typedef std::future<ClientStartOutcome> ClientStartOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::ClientStartRequest&, const ClientStartOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ClientStartAsyncHandler;
+			typedef Outcome<Error, Model::ClientUnbindDeviceResult> ClientUnbindDeviceOutcome;
+			typedef std::future<ClientUnbindDeviceOutcome> ClientUnbindDeviceOutcomeCallable;
+			typedef std::function<void(const AvatarClient*, const Model::ClientUnbindDeviceRequest&, const ClientUnbindDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ClientUnbindDeviceAsyncHandler;
 			typedef Outcome<Error, Model::CloseTimedResetOperateResult> CloseTimedResetOperateOutcome;
 			typedef std::future<CloseTimedResetOperateOutcome> CloseTimedResetOperateOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::CloseTimedResetOperateRequest&, const CloseTimedResetOperateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseTimedResetOperateAsyncHandler;
@@ -190,6 +195,9 @@ namespace AlibabaCloud
 			ClientStartOutcome clientStart(const Model::ClientStartRequest &request)const;
 			void clientStartAsync(const Model::ClientStartRequest& request, const ClientStartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ClientStartOutcomeCallable clientStartCallable(const Model::ClientStartRequest& request) const;
+			ClientUnbindDeviceOutcome clientUnbindDevice(const Model::ClientUnbindDeviceRequest &request)const;
+			void clientUnbindDeviceAsync(const Model::ClientUnbindDeviceRequest& request, const ClientUnbindDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ClientUnbindDeviceOutcomeCallable clientUnbindDeviceCallable(const Model::ClientUnbindDeviceRequest& request) const;
 			CloseTimedResetOperateOutcome closeTimedResetOperate(const Model::CloseTimedResetOperateRequest &request)const;
 			void closeTimedResetOperateAsync(const Model::CloseTimedResetOperateRequest& request, const CloseTimedResetOperateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloseTimedResetOperateOutcomeCallable closeTimedResetOperateCallable(const Model::CloseTimedResetOperateRequest& request) const;

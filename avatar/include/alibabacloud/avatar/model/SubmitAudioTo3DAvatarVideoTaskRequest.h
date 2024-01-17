@@ -31,6 +31,9 @@ public:
 	struct App {
 		std::string appId;
 	};
+	struct AudioInfo {
+		int sampleRate;
+	};
 	struct AvatarInfo {
 		std::string code;
 		int locate;
@@ -47,6 +50,8 @@ public:
 	~SubmitAudioTo3DAvatarVideoTaskRequest();
 	App getApp() const;
 	void setApp(const App &app);
+	AudioInfo getAudioInfo() const;
+	void setAudioInfo(const AudioInfo &audioInfo);
 	AvatarInfo getAvatarInfo() const;
 	void setAvatarInfo(const AvatarInfo &avatarInfo);
 	std::string getTitle() const;
@@ -70,6 +75,7 @@ public:
 
 private:
 	App app_;
+	AudioInfo audioInfo_;
 	AvatarInfo avatarInfo_;
 	std::string title_;
 	std::string extParams_;

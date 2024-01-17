@@ -44,6 +44,7 @@ void SubmitTextTo2DAvatarVideoTaskRequest::setAudioInfo(const SubmitTextTo2DAvat
   setParameter(std::string("AudioInfo") + ".Volume", std::to_string(audioInfo.volume));
   setParameter(std::string("AudioInfo") + ".SpeechRate", std::to_string(audioInfo.speechRate));
   setParameter(std::string("AudioInfo") + ".PitchRate", std::to_string(audioInfo.pitchRate));
+  setParameter(std::string("AudioInfo") + ".SampleRate", std::to_string(audioInfo.sampleRate));
 }
 
 SubmitTextTo2DAvatarVideoTaskRequest::AvatarInfo SubmitTextTo2DAvatarVideoTaskRequest::getAvatarInfo() const {
@@ -87,6 +88,11 @@ void SubmitTextTo2DAvatarVideoTaskRequest::setVideoInfo(const SubmitTextTo2DAvat
   setParameter(std::string("VideoInfo") + ".BackgroundImageUrl", videoInfo.backgroundImageUrl);
   setParameter(std::string("VideoInfo") + ".IsSubtitles", videoInfo.isSubtitles ? "true" : "false");
   setParameter(std::string("VideoInfo") + ".SubtitleEmbedded", videoInfo.subtitleEmbedded ? "true" : "false");
+  setParameter(std::string("VideoInfo") + ".SubtitleStyle.Color", videoInfo.subtitleStyle.color);
+  setParameter(std::string("VideoInfo") + ".SubtitleStyle.Size", std::to_string(videoInfo.subtitleStyle.size));
+  setParameter(std::string("VideoInfo") + ".SubtitleStyle.Name", videoInfo.subtitleStyle.name);
+  setParameter(std::string("VideoInfo") + ".SubtitleStyle.Y", std::to_string(videoInfo.subtitleStyle.y));
+  setParameter(std::string("VideoInfo") + ".SubtitleStyle.OutlineColor", videoInfo.subtitleStyle.outlineColor);
   setParameter(std::string("VideoInfo") + ".Resolution", std::to_string(videoInfo.resolution));
   setParameter(std::string("VideoInfo") + ".AlphaFormat", std::to_string(videoInfo.alphaFormat));
 }
