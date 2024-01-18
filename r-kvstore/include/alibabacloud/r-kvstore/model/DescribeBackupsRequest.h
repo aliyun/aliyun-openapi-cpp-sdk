@@ -30,6 +30,8 @@ class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeBackupsRequest : public RpcServiceRe
 public:
 	DescribeBackupsRequest();
 	~DescribeBackupsRequest();
+	int getBackupJobId() const;
+	void setBackupJobId(int backupJobId);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getStartTime() const;
@@ -58,6 +60,7 @@ public:
 	void setInstanceId(const std::string &instanceId);
 
 private:
+	int backupJobId_;
 	long resourceOwnerId_;
 	std::string startTime_;
 	int pageNumber_;

@@ -46,6 +46,7 @@ namespace AlibabaCloud
 				int getPort()const;
 				std::string getVSwitchId()const;
 				std::string getPrivateIpAddr()const;
+				long getOrderId()const;
 				std::string getConnectionDomain()const;
 				std::string getInstanceName()const;
 				std::string getVpcId()const;
@@ -70,6 +71,7 @@ namespace AlibabaCloud
 				int port_;
 				std::string vSwitchId_;
 				std::string privateIpAddr_;
+				long orderId_;
 				std::string connectionDomain_;
 				std::string instanceName_;
 				std::string vpcId_;

@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					std::string port;
 					int directConnection;
 					std::string upgradeable;
+					int isSlaveProxy;
 					std::string connectionString;
 					std::string iPAddress;
 				};

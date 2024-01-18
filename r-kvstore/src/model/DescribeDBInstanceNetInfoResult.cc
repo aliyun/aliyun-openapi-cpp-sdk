@@ -65,6 +65,8 @@ void DescribeDBInstanceNetInfoResult::parse(const std::string &payload)
 			netInfoItemsObject.vPCId = valueNetInfoItemsInstanceNetInfo["VPCId"].asString();
 		if(!valueNetInfoItemsInstanceNetInfo["IPAddress"].isNull())
 			netInfoItemsObject.iPAddress = valueNetInfoItemsInstanceNetInfo["IPAddress"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["IsSlaveProxy"].isNull())
+			netInfoItemsObject.isSlaveProxy = std::stoi(valueNetInfoItemsInstanceNetInfo["IsSlaveProxy"].asString());
 		netInfoItems_.push_back(netInfoItemsObject);
 	}
 	if(!value["InstanceNetworkType"].isNull())

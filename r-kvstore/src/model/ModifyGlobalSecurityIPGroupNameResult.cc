@@ -14,38 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/r-kvstore/model/ModifyNodeSpecResult.h>
+#include <alibabacloud/r-kvstore/model/ModifyGlobalSecurityIPGroupNameResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::R_kvstore;
 using namespace AlibabaCloud::R_kvstore::Model;
 
-ModifyNodeSpecResult::ModifyNodeSpecResult() :
+ModifyGlobalSecurityIPGroupNameResult::ModifyGlobalSecurityIPGroupNameResult() :
 	ServiceResult()
 {}
 
-ModifyNodeSpecResult::ModifyNodeSpecResult(const std::string &payload) :
+ModifyGlobalSecurityIPGroupNameResult::ModifyGlobalSecurityIPGroupNameResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ModifyNodeSpecResult::~ModifyNodeSpecResult()
+ModifyGlobalSecurityIPGroupNameResult::~ModifyGlobalSecurityIPGroupNameResult()
 {}
 
-void ModifyNodeSpecResult::parse(const std::string &payload)
+void ModifyGlobalSecurityIPGroupNameResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["OrderId"].isNull())
-		orderId_ = std::stol(value["OrderId"].asString());
 
-}
-
-long ModifyNodeSpecResult::getOrderId()const
-{
-	return orderId_;
 }
 

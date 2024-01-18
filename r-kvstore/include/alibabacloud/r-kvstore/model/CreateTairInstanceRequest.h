@@ -28,12 +28,18 @@ namespace R_kvstore {
 namespace Model {
 class ALIBABACLOUD_R_KVSTORE_EXPORT CreateTairInstanceRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateTairInstanceRequest();
 	~CreateTairInstanceRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getSecondaryZoneId() const;
 	void setSecondaryZoneId(const std::string &secondaryZoneId);
+	int getSlaveReadOnlyCount() const;
+	void setSlaveReadOnlyCount(int slaveReadOnlyCount);
 	std::string getCouponNo() const;
 	void setCouponNo(const std::string &couponNo);
 	std::string getEngineVersion() const;
@@ -46,6 +52,10 @@ public:
 	void setPassword(const std::string &password);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
+	std::string getGlobalSecurityGroupIds() const;
+	void setGlobalSecurityGroupIds(const std::string &globalSecurityGroupIds);
 	std::string getBusinessInfo() const;
 	void setBusinessInfo(const std::string &businessInfo);
 	int getShardCount() const;
@@ -54,6 +64,8 @@ public:
 	void setAutoRenewPeriod(const std::string &autoRenewPeriod);
 	int getPeriod() const;
 	void setPeriod(int period);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getBackupId() const;
 	void setBackupId(const std::string &backupId);
 	long getOwnerId() const;
@@ -68,6 +80,8 @@ public:
 	void setInstanceName(const std::string &instanceName);
 	std::string getAutoRenew() const;
 	void setAutoRenew(const std::string &autoRenew);
+	int getPort() const;
+	void setPort(int port);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
 	std::string getClientToken() const;
@@ -94,24 +108,34 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	std::string getGlobalInstanceId() const;
 	void setGlobalInstanceId(const std::string &globalInstanceId);
+	std::string getParamGroupId() const;
+	void setParamGroupId(const std::string &paramGroupId);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
+	int getReadOnlyCount() const;
+	void setReadOnlyCount(int readOnlyCount);
 	std::string getChargeType() const;
 	void setChargeType(const std::string &chargeType);
+	std::string getClusterBackupId() const;
+	void setClusterBackupId(const std::string &clusterBackupId);
 
 private:
 	long resourceOwnerId_;
 	std::string secondaryZoneId_;
+	int slaveReadOnlyCount_;
 	std::string couponNo_;
 	std::string engineVersion_;
 	std::string storageType_;
 	std::string resourceGroupId_;
 	std::string password_;
 	std::string securityToken_;
+	std::vector<Tag> tag_;
+	std::string globalSecurityGroupIds_;
 	std::string businessInfo_;
 	int shardCount_;
 	std::string autoRenewPeriod_;
 	int period_;
+	bool dryRun_;
 	std::string backupId_;
 	long ownerId_;
 	std::string shardType_;
@@ -119,6 +143,7 @@ private:
 	std::string privateIpAddress_;
 	std::string instanceName_;
 	std::string autoRenew_;
+	int port_;
 	std::string zoneId_;
 	std::string clientToken_;
 	std::string autoUseCoupon_;
@@ -132,8 +157,11 @@ private:
 	std::string srcDBInstanceId_;
 	std::string ownerAccount_;
 	std::string globalInstanceId_;
+	std::string paramGroupId_;
 	std::string vpcId_;
+	int readOnlyCount_;
 	std::string chargeType_;
+	std::string clusterBackupId_;
 };
 } // namespace Model
 } // namespace R_kvstore

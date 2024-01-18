@@ -43,6 +43,15 @@ void ModifyInstanceSpecRequest::setClientToken(const std::string &clientToken) {
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+int ModifyInstanceSpecRequest::getSlaveReadOnlyCount() const {
+  return slaveReadOnlyCount_;
+}
+
+void ModifyInstanceSpecRequest::setSlaveReadOnlyCount(int slaveReadOnlyCount) {
+  slaveReadOnlyCount_ = slaveReadOnlyCount;
+  setParameter(std::string("SlaveReadOnlyCount"), std::to_string(slaveReadOnlyCount));
+}
+
 std::string ModifyInstanceSpecRequest::getCouponNo() const {
   return couponNo_;
 }
@@ -115,6 +124,15 @@ void ModifyInstanceSpecRequest::setBusinessInfo(const std::string &businessInfo)
   setParameter(std::string("BusinessInfo"), businessInfo);
 }
 
+int ModifyInstanceSpecRequest::getShardCount() const {
+  return shardCount_;
+}
+
+void ModifyInstanceSpecRequest::setShardCount(int shardCount) {
+  shardCount_ = shardCount;
+  setParameter(std::string("ShardCount"), std::to_string(shardCount));
+}
+
 bool ModifyInstanceSpecRequest::getAutoPay() const {
   return autoPay_;
 }
@@ -169,6 +187,15 @@ void ModifyInstanceSpecRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+bool ModifyInstanceSpecRequest::getForceTrans() const {
+  return forceTrans_;
+}
+
+void ModifyInstanceSpecRequest::setForceTrans(bool forceTrans) {
+  forceTrans_ = forceTrans;
+  setParameter(std::string("ForceTrans"), forceTrans ? "true" : "false");
+}
+
 std::string ModifyInstanceSpecRequest::getInstanceId() const {
   return instanceId_;
 }
@@ -176,6 +203,15 @@ std::string ModifyInstanceSpecRequest::getInstanceId() const {
 void ModifyInstanceSpecRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
+}
+
+int ModifyInstanceSpecRequest::getReadOnlyCount() const {
+  return readOnlyCount_;
+}
+
+void ModifyInstanceSpecRequest::setReadOnlyCount(int readOnlyCount) {
+  readOnlyCount_ = readOnlyCount;
+  setParameter(std::string("ReadOnlyCount"), std::to_string(readOnlyCount));
 }
 
 bool ModifyInstanceSpecRequest::getForceUpgrade() const {

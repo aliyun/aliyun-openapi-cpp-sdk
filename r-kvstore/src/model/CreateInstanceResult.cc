@@ -79,6 +79,8 @@ void CreateInstanceResult::parse(const std::string &payload)
 		privateIpAddr_ = value["PrivateIpAddr"].asString();
 	if(!value["UserName"].isNull())
 		userName_ = value["UserName"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
 
 }
 
@@ -125,6 +127,11 @@ std::string CreateInstanceResult::getVSwitchId()const
 std::string CreateInstanceResult::getPrivateIpAddr()const
 {
 	return privateIpAddr_;
+}
+
+long CreateInstanceResult::getOrderId()const
+{
+	return orderId_;
 }
 
 std::string CreateInstanceResult::getConnectionDomain()const

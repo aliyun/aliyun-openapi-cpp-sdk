@@ -58,7 +58,7 @@ void DescribeLogicInstanceTopologyResult::parse(const std::string &payload)
 	auto allRedisShardListNode = value["RedisShardList"]["NodeInfo"];
 	for (auto valueRedisShardListNodeInfo : allRedisShardListNode)
 	{
-		NodeInfo redisShardListObject;
+		NodeInfo1 redisShardListObject;
 		if(!valueRedisShardListNodeInfo["Capacity"].isNull())
 			redisShardListObject.capacity = valueRedisShardListNodeInfo["Capacity"].asString();
 		if(!valueRedisShardListNodeInfo["Connection"].isNull())
@@ -69,6 +69,8 @@ void DescribeLogicInstanceTopologyResult::parse(const std::string &payload)
 			redisShardListObject.bandwidth = valueRedisShardListNodeInfo["Bandwidth"].asString();
 		if(!valueRedisShardListNodeInfo["NodeId"].isNull())
 			redisShardListObject.nodeId = valueRedisShardListNodeInfo["NodeId"].asString();
+		if(!valueRedisShardListNodeInfo["SubInstanceType"].isNull())
+			redisShardListObject.subInstanceType = valueRedisShardListNodeInfo["SubInstanceType"].asString();
 		redisShardList_.push_back(redisShardListObject);
 	}
 	if(!value["InstanceId"].isNull())
@@ -76,7 +78,7 @@ void DescribeLogicInstanceTopologyResult::parse(const std::string &payload)
 
 }
 
-std::vector<DescribeLogicInstanceTopologyResult::NodeInfo> DescribeLogicInstanceTopologyResult::getRedisShardList()const
+std::vector<DescribeLogicInstanceTopologyResult::NodeInfo1> DescribeLogicInstanceTopologyResult::getRedisShardList()const
 {
 	return redisShardList_;
 }

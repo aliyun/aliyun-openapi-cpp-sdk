@@ -34,6 +34,24 @@ void FlushInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string FlushInstanceRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void FlushInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string FlushInstanceRequest::getSecurityToken() const {
+  return securityToken_;
+}
+
+void FlushInstanceRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
+}
+
 std::string FlushInstanceRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -61,15 +79,6 @@ void FlushInstanceRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string FlushInstanceRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void FlushInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string FlushInstanceRequest::getInstanceId() const {
   return instanceId_;
 }
@@ -77,14 +86,5 @@ std::string FlushInstanceRequest::getInstanceId() const {
 void FlushInstanceRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string FlushInstanceRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void FlushInstanceRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
 }
 

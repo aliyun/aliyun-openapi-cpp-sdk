@@ -54,10 +54,12 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVSwitchId() const;
+	void setVSwitchId(const std::string &vSwitchId);
+	bool getForceTrans() const;
+	void setForceTrans(bool forceTrans);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
-	std::string getShardClass() const;
-	void setShardClass(const std::string &shardClass);
 
 private:
 	long resourceOwnerId_;
@@ -72,8 +74,9 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string vSwitchId_;
+	bool forceTrans_;
 	std::string instanceId_;
-	std::string shardClass_;
 };
 } // namespace Model
 } // namespace R_kvstore

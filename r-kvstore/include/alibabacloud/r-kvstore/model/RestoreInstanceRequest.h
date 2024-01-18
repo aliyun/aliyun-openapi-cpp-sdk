@@ -38,6 +38,8 @@ public:
 	void setFilterKey(const std::string &filterKey);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
+	std::string getTimeShift() const;
+	void setTimeShift(const std::string &timeShift);
 	std::string getRestoreTime() const;
 	void setRestoreTime(const std::string &restoreTime);
 	std::string getResourceOwnerAccount() const;
@@ -58,6 +60,7 @@ private:
 	std::string accessKeyId_;
 	std::string filterKey_;
 	std::string securityToken_;
+	std::string timeShift_;
 	std::string restoreTime_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

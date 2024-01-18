@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					std::string vSwitchId;
 					std::string globalInstanceId;
 					std::string instanceClass;
+					std::string secondaryZoneId;
 					std::string connectionDomain;
 					std::string instanceName;
 					std::string vpcId;

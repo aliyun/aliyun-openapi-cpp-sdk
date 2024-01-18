@@ -34,6 +34,15 @@ void CreateInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string CreateInstanceRequest::getConnectionStringPrefix() const {
+  return connectionStringPrefix_;
+}
+
+void CreateInstanceRequest::setConnectionStringPrefix(const std::string &connectionStringPrefix) {
+  connectionStringPrefix_ = connectionStringPrefix;
+  setParameter(std::string("ConnectionStringPrefix"), connectionStringPrefix);
+}
+
 std::string CreateInstanceRequest::getSecondaryZoneId() const {
   return secondaryZoneId_;
 }
@@ -41,6 +50,15 @@ std::string CreateInstanceRequest::getSecondaryZoneId() const {
 void CreateInstanceRequest::setSecondaryZoneId(const std::string &secondaryZoneId) {
   secondaryZoneId_ = secondaryZoneId;
   setParameter(std::string("SecondaryZoneId"), secondaryZoneId);
+}
+
+int CreateInstanceRequest::getSlaveReadOnlyCount() const {
+  return slaveReadOnlyCount_;
+}
+
+void CreateInstanceRequest::setSlaveReadOnlyCount(int slaveReadOnlyCount) {
+  slaveReadOnlyCount_ = slaveReadOnlyCount;
+  setParameter(std::string("SlaveReadOnlyCount"), std::to_string(slaveReadOnlyCount));
 }
 
 std::string CreateInstanceRequest::getCouponNo() const {
@@ -68,6 +86,15 @@ std::string CreateInstanceRequest::getEngineVersion() const {
 void CreateInstanceRequest::setEngineVersion(const std::string &engineVersion) {
   engineVersion_ = engineVersion;
   setParameter(std::string("EngineVersion"), engineVersion);
+}
+
+std::string CreateInstanceRequest::getPhysicalInstanceId() const {
+  return physicalInstanceId_;
+}
+
+void CreateInstanceRequest::setPhysicalInstanceId(const std::string &physicalInstanceId) {
+  physicalInstanceId_ = physicalInstanceId;
+  setParameter(std::string("PhysicalInstanceId"), physicalInstanceId);
 }
 
 std::string CreateInstanceRequest::getResourceGroupId() const {
@@ -109,6 +136,15 @@ void CreateInstanceRequest::setTag(const std::vector<CreateInstanceRequest::Tag>
     setParameter(tagObjStr + ".Value", tagObj.value);
     setParameter(tagObjStr + ".Key", tagObj.key);
   }
+}
+
+std::string CreateInstanceRequest::getGlobalSecurityGroupIds() const {
+  return globalSecurityGroupIds_;
+}
+
+void CreateInstanceRequest::setGlobalSecurityGroupIds(const std::string &globalSecurityGroupIds) {
+  globalSecurityGroupIds_ = globalSecurityGroupIds;
+  setParameter(std::string("GlobalSecurityGroupIds"), globalSecurityGroupIds);
 }
 
 std::string CreateInstanceRequest::getBusinessInfo() const {
@@ -226,6 +262,15 @@ std::string CreateInstanceRequest::getZoneId() const {
 void CreateInstanceRequest::setZoneId(const std::string &zoneId) {
   zoneId_ = zoneId;
   setParameter(std::string("ZoneId"), zoneId);
+}
+
+std::string CreateInstanceRequest::getAppendonly() const {
+  return appendonly_;
+}
+
+void CreateInstanceRequest::setAppendonly(const std::string &appendonly) {
+  appendonly_ = appendonly;
+  setParameter(std::string("Appendonly"), appendonly);
 }
 
 std::string CreateInstanceRequest::getNodeType() const {
@@ -363,6 +408,15 @@ void CreateInstanceRequest::setGlobalInstanceId(const std::string &globalInstanc
   setParameter(std::string("GlobalInstanceId"), globalInstanceId);
 }
 
+std::string CreateInstanceRequest::getParamGroupId() const {
+  return paramGroupId_;
+}
+
+void CreateInstanceRequest::setParamGroupId(const std::string &paramGroupId) {
+  paramGroupId_ = paramGroupId;
+  setParameter(std::string("ParamGroupId"), paramGroupId);
+}
+
 std::string CreateInstanceRequest::getVpcId() const {
   return vpcId_;
 }
@@ -370,6 +424,15 @@ std::string CreateInstanceRequest::getVpcId() const {
 void CreateInstanceRequest::setVpcId(const std::string &vpcId) {
   vpcId_ = vpcId;
   setParameter(std::string("VpcId"), vpcId);
+}
+
+bool CreateInstanceRequest::getDeletePhysicalInstance() const {
+  return deletePhysicalInstance_;
+}
+
+void CreateInstanceRequest::setDeletePhysicalInstance(bool deletePhysicalInstance) {
+  deletePhysicalInstance_ = deletePhysicalInstance;
+  setParameter(std::string("DeletePhysicalInstance"), deletePhysicalInstance ? "true" : "false");
 }
 
 int CreateInstanceRequest::getReadOnlyCount() const {
@@ -397,5 +460,14 @@ std::string CreateInstanceRequest::getConfig() const {
 void CreateInstanceRequest::setConfig(const std::string &config) {
   config_ = config;
   setParameter(std::string("Config"), config);
+}
+
+std::string CreateInstanceRequest::getClusterBackupId() const {
+  return clusterBackupId_;
+}
+
+void CreateInstanceRequest::setClusterBackupId(const std::string &clusterBackupId) {
+  clusterBackupId_ = clusterBackupId;
+  setParameter(std::string("ClusterBackupId"), clusterBackupId);
 }
 

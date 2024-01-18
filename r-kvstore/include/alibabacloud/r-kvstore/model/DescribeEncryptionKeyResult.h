@@ -41,10 +41,12 @@ namespace AlibabaCloud
 				std::string getDescription()const;
 				std::string getEncryptionKeyStatus()const;
 				std::string getMaterialExpireTime()const;
+				std::string getEncryptionName()const;
 				std::string getKeyUsage()const;
 				std::string getEncryptionKey()const;
 				std::string getCreator()const;
 				std::string getDeleteDate()const;
+				std::string getRoleArn()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -53,10 +55,12 @@ namespace AlibabaCloud
 				std::string description_;
 				std::string encryptionKeyStatus_;
 				std::string materialExpireTime_;
+				std::string encryptionName_;
 				std::string keyUsage_;
 				std::string encryptionKey_;
 				std::string creator_;
 				std::string deleteDate_;
+				std::string roleArn_;
 
 			};
 		}

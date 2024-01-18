@@ -32,12 +32,24 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeBackupPolicyResult : public ServiceResult
 			{
 			public:
+				struct AccessDeniedDetail
+				{
+					std::string policyType;
+					std::string authPrincipalOwnerId;
+					std::string encodedDiagnosticMessage;
+					std::string authPrincipalType;
+					std::string authPrincipalDisplayName;
+					std::string noPermissionType;
+					std::string authAction;
+				};
 
 
 				DescribeBackupPolicyResult();
 				explicit DescribeBackupPolicyResult(const std::string &payload);
 				~DescribeBackupPolicyResult();
+				AccessDeniedDetail getAccessDeniedDetail()const;
 				std::string getPreferredBackupPeriod()const;
+				std::string getDbsInstance()const;
 				std::string getPreferredBackupTime()const;
 				int getEnableBackupLog()const;
 				std::string getBackupRetentionPeriod()const;
@@ -46,7 +58,9 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				AccessDeniedDetail accessDeniedDetail_;
 				std::string preferredBackupPeriod_;
+				std::string dbsInstance_;
 				std::string preferredBackupTime_;
 				int enableBackupLog_;
 				std::string backupRetentionPeriod_;

@@ -41,6 +41,7 @@ namespace AlibabaCloud
 				std::string getSSLEnabled()const;
 				std::string getInstanceId()const;
 				std::string getCertCommonName()const;
+				std::string getCertDownloadURL()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -49,6 +50,7 @@ namespace AlibabaCloud
 				std::string sSLEnabled_;
 				std::string instanceId_;
 				std::string certCommonName_;
+				std::string certDownloadURL_;
 
 			};
 		}

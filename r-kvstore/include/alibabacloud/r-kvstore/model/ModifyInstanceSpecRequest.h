@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	int getSlaveReadOnlyCount() const;
+	void setSlaveReadOnlyCount(int slaveReadOnlyCount);
 	std::string getCouponNo() const;
 	void setCouponNo(const std::string &couponNo);
 	std::string getInstanceClass() const;
@@ -50,6 +52,8 @@ public:
 	void setSourceBiz(const std::string &sourceBiz);
 	std::string getBusinessInfo() const;
 	void setBusinessInfo(const std::string &businessInfo);
+	int getShardCount() const;
+	void setShardCount(int shardCount);
 	bool getAutoPay() const;
 	void setAutoPay(bool autoPay);
 	std::string getFromApp() const;
@@ -62,8 +66,12 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	bool getForceTrans() const;
+	void setForceTrans(bool forceTrans);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	int getReadOnlyCount() const;
+	void setReadOnlyCount(int readOnlyCount);
 	bool getForceUpgrade() const;
 	void setForceUpgrade(bool forceUpgrade);
 	std::string getOrderType() const;
@@ -72,6 +80,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string clientToken_;
+	int slaveReadOnlyCount_;
 	std::string couponNo_;
 	std::string instanceClass_;
 	std::string accessKeyId_;
@@ -80,13 +89,16 @@ private:
 	std::string effectiveTime_;
 	std::string sourceBiz_;
 	std::string businessInfo_;
+	int shardCount_;
 	bool autoPay_;
 	std::string fromApp_;
 	std::string majorVersion_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	bool forceTrans_;
 	std::string instanceId_;
+	int readOnlyCount_;
 	bool forceUpgrade_;
 	std::string orderType_;
 };

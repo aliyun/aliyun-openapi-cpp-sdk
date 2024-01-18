@@ -34,6 +34,24 @@ void DescribeMonitorItemsRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeMonitorItemsRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DescribeMonitorItemsRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DescribeMonitorItemsRequest::getSecurityToken() const {
+  return securityToken_;
+}
+
+void DescribeMonitorItemsRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
+}
+
 std::string DescribeMonitorItemsRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -59,23 +77,5 @@ long DescribeMonitorItemsRequest::getOwnerId() const {
 void DescribeMonitorItemsRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string DescribeMonitorItemsRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DescribeMonitorItemsRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DescribeMonitorItemsRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeMonitorItemsRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
 }
 

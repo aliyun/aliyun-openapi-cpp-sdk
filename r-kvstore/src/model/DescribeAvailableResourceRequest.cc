@@ -169,6 +169,15 @@ void DescribeAvailableResourceRequest::setZoneId(const std::string &zoneId) {
   setParameter(std::string("ZoneId"), zoneId);
 }
 
+std::string DescribeAvailableResourceRequest::getInstanceScene() const {
+  return instanceScene_;
+}
+
+void DescribeAvailableResourceRequest::setInstanceScene(const std::string &instanceScene) {
+  instanceScene_ = instanceScene;
+  setParameter(std::string("InstanceScene"), instanceScene);
+}
+
 std::string DescribeAvailableResourceRequest::getOrderType() const {
   return orderType_;
 }

@@ -133,3 +133,12 @@ void SwitchInstanceHARequest::setCategory(const std::string &category) {
   setParameter(std::string("Category"), category);
 }
 
+int SwitchInstanceHARequest::getSwitchZone() const {
+  return switchZone_;
+}
+
+void SwitchInstanceHARequest::setSwitchZone(int switchZone) {
+  switchZone_ = switchZone;
+  setParameter(std::string("SwitchZone"), std::to_string(switchZone));
+}
+

@@ -38,16 +38,20 @@ namespace AlibabaCloud
 				explicit DescribeIntranetAttributeResult(const std::string &payload);
 				~DescribeIntranetAttributeResult();
 				int getIntranetBandwidth()const;
-				std::string getBandwidthExpireTime()const;
+				bool getHasPrePaidBandWidthOrderRunning()const;
 				bool getAutoRenewal()const;
+				std::string getBandwidthExpireTime()const;
+				std::string getBandwidthPrePaid()const;
 				std::string getExpireTime()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int intranetBandwidth_;
-				std::string bandwidthExpireTime_;
+				bool hasPrePaidBandWidthOrderRunning_;
 				bool autoRenewal_;
+				std::string bandwidthExpireTime_;
+				std::string bandwidthPrePaid_;
 				std::string expireTime_;
 
 			};

@@ -97,6 +97,15 @@ void DeleteShardingNodeRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+bool DeleteShardingNodeRequest::getForceTrans() const {
+  return forceTrans_;
+}
+
+void DeleteShardingNodeRequest::setForceTrans(bool forceTrans) {
+  forceTrans_ = forceTrans;
+  setParameter(std::string("ForceTrans"), forceTrans ? "true" : "false");
+}
+
 std::string DeleteShardingNodeRequest::getInstanceId() const {
   return instanceId_;
 }

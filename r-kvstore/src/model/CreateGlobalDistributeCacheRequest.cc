@@ -52,6 +52,15 @@ void CreateGlobalDistributeCacheRequest::setAccessKeyId(const std::string &acces
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CreateGlobalDistributeCacheRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateGlobalDistributeCacheRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateGlobalDistributeCacheRequest::getSecurityToken() const {
   return securityToken_;
 }

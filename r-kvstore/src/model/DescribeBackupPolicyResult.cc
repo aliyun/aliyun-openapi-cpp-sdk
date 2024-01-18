@@ -39,6 +39,21 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto accessDeniedDetailNode = value["AccessDeniedDetail"];
+	if(!accessDeniedDetailNode["AuthAction"].isNull())
+		accessDeniedDetail_.authAction = accessDeniedDetailNode["AuthAction"].asString();
+	if(!accessDeniedDetailNode["AuthPrincipalDisplayName"].isNull())
+		accessDeniedDetail_.authPrincipalDisplayName = accessDeniedDetailNode["AuthPrincipalDisplayName"].asString();
+	if(!accessDeniedDetailNode["AuthPrincipalOwnerId"].isNull())
+		accessDeniedDetail_.authPrincipalOwnerId = accessDeniedDetailNode["AuthPrincipalOwnerId"].asString();
+	if(!accessDeniedDetailNode["AuthPrincipalType"].isNull())
+		accessDeniedDetail_.authPrincipalType = accessDeniedDetailNode["AuthPrincipalType"].asString();
+	if(!accessDeniedDetailNode["EncodedDiagnosticMessage"].isNull())
+		accessDeniedDetail_.encodedDiagnosticMessage = accessDeniedDetailNode["EncodedDiagnosticMessage"].asString();
+	if(!accessDeniedDetailNode["NoPermissionType"].isNull())
+		accessDeniedDetail_.noPermissionType = accessDeniedDetailNode["NoPermissionType"].asString();
+	if(!accessDeniedDetailNode["PolicyType"].isNull())
+		accessDeniedDetail_.policyType = accessDeniedDetailNode["PolicyType"].asString();
 	if(!value["BackupRetentionPeriod"].isNull())
 		backupRetentionPeriod_ = value["BackupRetentionPeriod"].asString();
 	if(!value["PreferredBackupPeriod"].isNull())
@@ -49,12 +64,24 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 		preferredBackupTime_ = value["PreferredBackupTime"].asString();
 	if(!value["EnableBackupLog"].isNull())
 		enableBackupLog_ = std::stoi(value["EnableBackupLog"].asString());
+	if(!value["DbsInstance"].isNull())
+		dbsInstance_ = value["DbsInstance"].asString();
 
+}
+
+DescribeBackupPolicyResult::AccessDeniedDetail DescribeBackupPolicyResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string DescribeBackupPolicyResult::getPreferredBackupPeriod()const
 {
 	return preferredBackupPeriod_;
+}
+
+std::string DescribeBackupPolicyResult::getDbsInstance()const
+{
+	return dbsInstance_;
 }
 
 std::string DescribeBackupPolicyResult::getPreferredBackupTime()const

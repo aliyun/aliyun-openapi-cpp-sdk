@@ -59,9 +59,29 @@ void DescribeBackupTasksResult::parse(const std::string &payload)
 			backupJobsObject.taskAction = valueBackupJobsBackupJob["TaskAction"].asString();
 		backupJobs_.push_back(backupJobsObject);
 	}
+	auto accessDeniedDetailNode = value["AccessDeniedDetail"];
+	if(!accessDeniedDetailNode["AuthAction"].isNull())
+		accessDeniedDetail_.authAction = accessDeniedDetailNode["AuthAction"].asString();
+	if(!accessDeniedDetailNode["AuthPrincipalDisplayName"].isNull())
+		accessDeniedDetail_.authPrincipalDisplayName = accessDeniedDetailNode["AuthPrincipalDisplayName"].asString();
+	if(!accessDeniedDetailNode["AuthPrincipalOwnerId"].isNull())
+		accessDeniedDetail_.authPrincipalOwnerId = accessDeniedDetailNode["AuthPrincipalOwnerId"].asString();
+	if(!accessDeniedDetailNode["AuthPrincipalType"].isNull())
+		accessDeniedDetail_.authPrincipalType = accessDeniedDetailNode["AuthPrincipalType"].asString();
+	if(!accessDeniedDetailNode["EncodedDiagnosticMessage"].isNull())
+		accessDeniedDetail_.encodedDiagnosticMessage = accessDeniedDetailNode["EncodedDiagnosticMessage"].asString();
+	if(!accessDeniedDetailNode["NoPermissionType"].isNull())
+		accessDeniedDetail_.noPermissionType = accessDeniedDetailNode["NoPermissionType"].asString();
+	if(!accessDeniedDetailNode["PolicyType"].isNull())
+		accessDeniedDetail_.policyType = accessDeniedDetailNode["PolicyType"].asString();
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
 
+}
+
+DescribeBackupTasksResult::AccessDeniedDetail DescribeBackupTasksResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string DescribeBackupTasksResult::getInstanceId()const

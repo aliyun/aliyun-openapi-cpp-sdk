@@ -52,6 +52,15 @@ void TransformInstanceChargeTypeRequest::setSecurityToken(const std::string &sec
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+long TransformInstanceChargeTypeRequest::getAutoRenewPeriod() const {
+  return autoRenewPeriod_;
+}
+
+void TransformInstanceChargeTypeRequest::setAutoRenewPeriod(long autoRenewPeriod) {
+  autoRenewPeriod_ = autoRenewPeriod;
+  setParameter(std::string("AutoRenewPeriod"), std::to_string(autoRenewPeriod));
+}
+
 long TransformInstanceChargeTypeRequest::getPeriod() const {
   return period_;
 }
@@ -113,6 +122,15 @@ std::string TransformInstanceChargeTypeRequest::getInstanceId() const {
 void TransformInstanceChargeTypeRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string TransformInstanceChargeTypeRequest::getAutoRenew() const {
+  return autoRenew_;
+}
+
+void TransformInstanceChargeTypeRequest::setAutoRenew(const std::string &autoRenew) {
+  autoRenew_ = autoRenew;
+  setParameter(std::string("AutoRenew"), autoRenew);
 }
 
 std::string TransformInstanceChargeTypeRequest::getChargeType() const {

@@ -39,14 +39,18 @@ void DescribeIntranetAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["BandwidthExpireTime"].isNull())
-		bandwidthExpireTime_ = value["BandwidthExpireTime"].asString();
 	if(!value["AutoRenewal"].isNull())
 		autoRenewal_ = value["AutoRenewal"].asString() == "true";
 	if(!value["ExpireTime"].isNull())
 		expireTime_ = value["ExpireTime"].asString();
 	if(!value["IntranetBandwidth"].isNull())
 		intranetBandwidth_ = std::stoi(value["IntranetBandwidth"].asString());
+	if(!value["HasPrePaidBandWidthOrderRunning"].isNull())
+		hasPrePaidBandWidthOrderRunning_ = value["HasPrePaidBandWidthOrderRunning"].asString() == "true";
+	if(!value["BandwidthExpireTime"].isNull())
+		bandwidthExpireTime_ = value["BandwidthExpireTime"].asString();
+	if(!value["BandwidthPrePaid"].isNull())
+		bandwidthPrePaid_ = value["BandwidthPrePaid"].asString();
 
 }
 
@@ -55,14 +59,24 @@ int DescribeIntranetAttributeResult::getIntranetBandwidth()const
 	return intranetBandwidth_;
 }
 
-std::string DescribeIntranetAttributeResult::getBandwidthExpireTime()const
+bool DescribeIntranetAttributeResult::getHasPrePaidBandWidthOrderRunning()const
 {
-	return bandwidthExpireTime_;
+	return hasPrePaidBandWidthOrderRunning_;
 }
 
 bool DescribeIntranetAttributeResult::getAutoRenewal()const
 {
 	return autoRenewal_;
+}
+
+std::string DescribeIntranetAttributeResult::getBandwidthExpireTime()const
+{
+	return bandwidthExpireTime_;
+}
+
+std::string DescribeIntranetAttributeResult::getBandwidthPrePaid()const
+{
+	return bandwidthPrePaid_;
 }
 
 std::string DescribeIntranetAttributeResult::getExpireTime()const

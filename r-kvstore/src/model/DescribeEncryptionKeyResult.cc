@@ -55,6 +55,10 @@ void DescribeEncryptionKeyResult::parse(const std::string &payload)
 		encryptionKey_ = value["EncryptionKey"].asString();
 	if(!value["Creator"].isNull())
 		creator_ = value["Creator"].asString();
+	if(!value["EncryptionName"].isNull())
+		encryptionName_ = value["EncryptionName"].asString();
+	if(!value["RoleArn"].isNull())
+		roleArn_ = value["RoleArn"].asString();
 
 }
 
@@ -78,6 +82,11 @@ std::string DescribeEncryptionKeyResult::getMaterialExpireTime()const
 	return materialExpireTime_;
 }
 
+std::string DescribeEncryptionKeyResult::getEncryptionName()const
+{
+	return encryptionName_;
+}
+
 std::string DescribeEncryptionKeyResult::getKeyUsage()const
 {
 	return keyUsage_;
@@ -96,5 +105,10 @@ std::string DescribeEncryptionKeyResult::getCreator()const
 std::string DescribeEncryptionKeyResult::getDeleteDate()const
 {
 	return deleteDate_;
+}
+
+std::string DescribeEncryptionKeyResult::getRoleArn()const
+{
+	return roleArn_;
 }
 

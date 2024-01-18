@@ -133,6 +133,24 @@ void AddShardingNodeRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string AddShardingNodeRequest::getVSwitchId() const {
+  return vSwitchId_;
+}
+
+void AddShardingNodeRequest::setVSwitchId(const std::string &vSwitchId) {
+  vSwitchId_ = vSwitchId;
+  setParameter(std::string("VSwitchId"), vSwitchId);
+}
+
+bool AddShardingNodeRequest::getForceTrans() const {
+  return forceTrans_;
+}
+
+void AddShardingNodeRequest::setForceTrans(bool forceTrans) {
+  forceTrans_ = forceTrans;
+  setParameter(std::string("ForceTrans"), forceTrans ? "true" : "false");
+}
+
 std::string AddShardingNodeRequest::getInstanceId() const {
   return instanceId_;
 }
@@ -140,14 +158,5 @@ std::string AddShardingNodeRequest::getInstanceId() const {
 void AddShardingNodeRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string AddShardingNodeRequest::getShardClass() const {
-  return shardClass_;
-}
-
-void AddShardingNodeRequest::setShardClass(const std::string &shardClass) {
-  shardClass_ = shardClass;
-  setParameter(std::string("ShardClass"), shardClass);
 }
 

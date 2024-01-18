@@ -46,6 +46,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	bool getForceTrans() const;
+	void setForceTrans(bool forceTrans);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 
@@ -58,6 +60,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	bool forceTrans_;
 	std::string instanceId_;
 };
 } // namespace Model

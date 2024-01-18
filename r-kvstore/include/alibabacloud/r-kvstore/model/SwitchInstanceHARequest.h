@@ -54,6 +54,8 @@ public:
 	void setSwitchType(const std::string &switchType);
 	std::string getCategory() const;
 	void setCategory(const std::string &category);
+	int getSwitchZone() const;
+	void setSwitchZone(int switchZone);
 
 private:
 	long resourceOwnerId_;
@@ -68,6 +70,7 @@ private:
 	std::string instanceId_;
 	std::string switchType_;
 	std::string category_;
+	int switchZone_;
 };
 } // namespace Model
 } // namespace R_kvstore

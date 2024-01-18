@@ -32,33 +32,83 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeEngineVersionResult : public ServiceResult
 			{
 			public:
+				struct DBLatestMinorVersion
+				{
+					struct VersionRelease
+					{
+						struct ReleaseInfoList
+						{
+							std::string createTime;
+							std::string releaseNote;
+							std::string releaseNoteEn;
+							std::string level;
+							std::string releaseVersion;
+						};
+						std::string versionChangesLevel;
+						std::vector<ReleaseInfoList> releaseInfo;
+					};
+					std::string minorVersion;
+					std::string level;
+					VersionRelease versionRelease;
+				};
+				struct ProxyLatestMinorVersion
+				{
+					struct VersionRelease1
+					{
+						struct ReleaseInfoList3
+						{
+							std::string createTime;
+							std::string releaseNote;
+							std::string releaseNoteEn;
+							std::string level;
+							std::string releaseVersion;
+						};
+						std::vector<ReleaseInfoList3> releaseInfo2;
+						std::string versionChangesLevel;
+					};
+					VersionRelease1 versionRelease1;
+					std::string minorVersion;
+					std::string level;
+				};
 
 
 				DescribeEngineVersionResult();
 				explicit DescribeEngineVersionResult(const std::string &payload);
 				~DescribeEngineVersionResult();
 				std::string getMajorVersion()const;
-				bool getIsLatestVersion()const;
+				DBLatestMinorVersion getDBLatestMinorVersion()const;
+				std::string getIsAutoUpgradeOpen()const;
 				std::string getMinorVersion()const;
 				std::string getProxyMinorVersion()const;
+				std::string getDBVersionRelease()const;
+				bool getEnableUpgradeMajorVersion()const;
+				bool getIsLatestVersion()const;
+				std::string getIsNewSSLMode()const;
+				std::string getIsRedisCompatibleVersion()const;
+				ProxyLatestMinorVersion getProxyLatestMinorVersion()const;
+				std::string getIsSSLEnable()const;
 				std::string getProxyVersionRelease()const;
 				bool getEnableUpgradeMinorVersion()const;
 				std::string getEngine()const;
-				std::string getDBVersionRelease()const;
-				bool getEnableUpgradeMajorVersion()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string majorVersion_;
-				bool isLatestVersion_;
+				DBLatestMinorVersion dBLatestMinorVersion_;
+				std::string isAutoUpgradeOpen_;
 				std::string minorVersion_;
 				std::string proxyMinorVersion_;
+				std::string dBVersionRelease_;
+				bool enableUpgradeMajorVersion_;
+				bool isLatestVersion_;
+				std::string isNewSSLMode_;
+				std::string isRedisCompatibleVersion_;
+				ProxyLatestMinorVersion proxyLatestMinorVersion_;
+				std::string isSSLEnable_;
 				std::string proxyVersionRelease_;
 				bool enableUpgradeMinorVersion_;
 				std::string engine_;
-				std::string dBVersionRelease_;
-				bool enableUpgradeMajorVersion_;
 
 			};
 		}

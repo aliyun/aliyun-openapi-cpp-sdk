@@ -62,6 +62,8 @@ public:
 	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
+	std::string getInstanceScene() const;
+	void setInstanceScene(const std::string &instanceScene);
 	std::string getOrderType() const;
 	void setOrderType(const std::string &orderType);
 
@@ -82,6 +84,7 @@ private:
 	std::string instanceId_;
 	std::string acceptLanguage_;
 	std::string zoneId_;
+	std::string instanceScene_;
 	std::string orderType_;
 };
 } // namespace Model

@@ -69,8 +69,25 @@ void DescribeBackupsResult::parse(const std::string &payload)
 			backupsObject.backupMode = valueBackupsBackup["BackupMode"].asString();
 		if(!valueBackupsBackup["BackupMethod"].isNull())
 			backupsObject.backupMethod = valueBackupsBackup["BackupMethod"].asString();
+		if(!valueBackupsBackup["BackupJobID"].isNull())
+			backupsObject.backupJobID = std::stoi(valueBackupsBackup["BackupJobID"].asString());
 		backups_.push_back(backupsObject);
 	}
+	auto accessDeniedDetailNode = value["AccessDeniedDetail"];
+	if(!accessDeniedDetailNode["AuthAction"].isNull())
+		accessDeniedDetail_.authAction = accessDeniedDetailNode["AuthAction"].asString();
+	if(!accessDeniedDetailNode["AuthPrincipalDisplayName"].isNull())
+		accessDeniedDetail_.authPrincipalDisplayName = accessDeniedDetailNode["AuthPrincipalDisplayName"].asString();
+	if(!accessDeniedDetailNode["AuthPrincipalOwnerId"].isNull())
+		accessDeniedDetail_.authPrincipalOwnerId = accessDeniedDetailNode["AuthPrincipalOwnerId"].asString();
+	if(!accessDeniedDetailNode["AuthPrincipalType"].isNull())
+		accessDeniedDetail_.authPrincipalType = accessDeniedDetailNode["AuthPrincipalType"].asString();
+	if(!accessDeniedDetailNode["EncodedDiagnosticMessage"].isNull())
+		accessDeniedDetail_.encodedDiagnosticMessage = accessDeniedDetailNode["EncodedDiagnosticMessage"].asString();
+	if(!accessDeniedDetailNode["NoPermissionType"].isNull())
+		accessDeniedDetail_.noPermissionType = accessDeniedDetailNode["NoPermissionType"].asString();
+	if(!accessDeniedDetailNode["PolicyType"].isNull())
+		accessDeniedDetail_.policyType = accessDeniedDetailNode["PolicyType"].asString();
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
@@ -78,6 +95,11 @@ void DescribeBackupsResult::parse(const std::string &payload)
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 
+}
+
+DescribeBackupsResult::AccessDeniedDetail DescribeBackupsResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 int DescribeBackupsResult::getTotalCount()const

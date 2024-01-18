@@ -32,6 +32,16 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeBackupTasksResult : public ServiceResult
 			{
 			public:
+				struct AccessDeniedDetail
+				{
+					std::string policyType;
+					std::string authPrincipalOwnerId;
+					std::string encodedDiagnosticMessage;
+					std::string authPrincipalType;
+					std::string authPrincipalDisplayName;
+					std::string noPermissionType;
+					std::string authAction;
+				};
 				struct BackupJob
 				{
 					std::string jobMode;
@@ -47,12 +57,14 @@ namespace AlibabaCloud
 				DescribeBackupTasksResult();
 				explicit DescribeBackupTasksResult(const std::string &payload);
 				~DescribeBackupTasksResult();
+				AccessDeniedDetail getAccessDeniedDetail()const;
 				std::string getInstanceId()const;
 				std::vector<BackupJob> getBackupJobs()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				AccessDeniedDetail accessDeniedDetail_;
 				std::string instanceId_;
 				std::vector<BackupJob> backupJobs_;
 

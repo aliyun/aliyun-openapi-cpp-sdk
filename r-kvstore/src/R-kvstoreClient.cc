@@ -339,6 +339,42 @@ R_kvstoreClient::CreateGlobalDistributeCacheOutcomeCallable R_kvstoreClient::cre
 	return task->get_future();
 }
 
+R_kvstoreClient::CreateGlobalSecurityIPGroupOutcome R_kvstoreClient::createGlobalSecurityIPGroup(const CreateGlobalSecurityIPGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateGlobalSecurityIPGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateGlobalSecurityIPGroupOutcome(CreateGlobalSecurityIPGroupResult(outcome.result()));
+	else
+		return CreateGlobalSecurityIPGroupOutcome(outcome.error());
+}
+
+void R_kvstoreClient::createGlobalSecurityIPGroupAsync(const CreateGlobalSecurityIPGroupRequest& request, const CreateGlobalSecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createGlobalSecurityIPGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::CreateGlobalSecurityIPGroupOutcomeCallable R_kvstoreClient::createGlobalSecurityIPGroupCallable(const CreateGlobalSecurityIPGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateGlobalSecurityIPGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createGlobalSecurityIPGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::CreateInstanceOutcome R_kvstoreClient::createInstance(const CreateInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,6 +513,42 @@ R_kvstoreClient::DeleteAccountOutcomeCallable R_kvstoreClient::deleteAccountCall
 			[this, request]()
 			{
 			return this->deleteAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DeleteGlobalSecurityIPGroupOutcome R_kvstoreClient::deleteGlobalSecurityIPGroup(const DeleteGlobalSecurityIPGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteGlobalSecurityIPGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteGlobalSecurityIPGroupOutcome(DeleteGlobalSecurityIPGroupResult(outcome.result()));
+	else
+		return DeleteGlobalSecurityIPGroupOutcome(outcome.error());
+}
+
+void R_kvstoreClient::deleteGlobalSecurityIPGroupAsync(const DeleteGlobalSecurityIPGroupRequest& request, const DeleteGlobalSecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteGlobalSecurityIPGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DeleteGlobalSecurityIPGroupOutcomeCallable R_kvstoreClient::deleteGlobalSecurityIPGroupCallable(const DeleteGlobalSecurityIPGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteGlobalSecurityIPGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteGlobalSecurityIPGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -915,6 +987,42 @@ R_kvstoreClient::DescribeCacheAnalysisReportListOutcomeCallable R_kvstoreClient:
 	return task->get_future();
 }
 
+R_kvstoreClient::DescribeClusterBackupListOutcome R_kvstoreClient::describeClusterBackupList(const DescribeClusterBackupListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClusterBackupListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClusterBackupListOutcome(DescribeClusterBackupListResult(outcome.result()));
+	else
+		return DescribeClusterBackupListOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeClusterBackupListAsync(const DescribeClusterBackupListRequest& request, const DescribeClusterBackupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeClusterBackupList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeClusterBackupListOutcomeCallable R_kvstoreClient::describeClusterBackupListCallable(const DescribeClusterBackupListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClusterBackupListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeClusterBackupList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::DescribeClusterMemberInfoOutcome R_kvstoreClient::describeClusterMemberInfo(const DescribeClusterMemberInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -981,6 +1089,42 @@ R_kvstoreClient::DescribeDBInstanceNetInfoOutcomeCallable R_kvstoreClient::descr
 			[this, request]()
 			{
 			return this->describeDBInstanceNetInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeDBNodeDirectVipInfoOutcome R_kvstoreClient::describeDBNodeDirectVipInfo(const DescribeDBNodeDirectVipInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBNodeDirectVipInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBNodeDirectVipInfoOutcome(DescribeDBNodeDirectVipInfoResult(outcome.result()));
+	else
+		return DescribeDBNodeDirectVipInfoOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeDBNodeDirectVipInfoAsync(const DescribeDBNodeDirectVipInfoRequest& request, const DescribeDBNodeDirectVipInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBNodeDirectVipInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeDBNodeDirectVipInfoOutcomeCallable R_kvstoreClient::describeDBNodeDirectVipInfoCallable(const DescribeDBNodeDirectVipInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBNodeDirectVipInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBNodeDirectVipInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1167,6 +1311,78 @@ R_kvstoreClient::DescribeGlobalDistributeCacheOutcomeCallable R_kvstoreClient::d
 	return task->get_future();
 }
 
+R_kvstoreClient::DescribeGlobalSecurityIPGroupOutcome R_kvstoreClient::describeGlobalSecurityIPGroup(const DescribeGlobalSecurityIPGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeGlobalSecurityIPGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeGlobalSecurityIPGroupOutcome(DescribeGlobalSecurityIPGroupResult(outcome.result()));
+	else
+		return DescribeGlobalSecurityIPGroupOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeGlobalSecurityIPGroupAsync(const DescribeGlobalSecurityIPGroupRequest& request, const DescribeGlobalSecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeGlobalSecurityIPGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeGlobalSecurityIPGroupOutcomeCallable R_kvstoreClient::describeGlobalSecurityIPGroupCallable(const DescribeGlobalSecurityIPGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeGlobalSecurityIPGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->describeGlobalSecurityIPGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeGlobalSecurityIPGroupRelationOutcome R_kvstoreClient::describeGlobalSecurityIPGroupRelation(const DescribeGlobalSecurityIPGroupRelationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeGlobalSecurityIPGroupRelationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeGlobalSecurityIPGroupRelationOutcome(DescribeGlobalSecurityIPGroupRelationResult(outcome.result()));
+	else
+		return DescribeGlobalSecurityIPGroupRelationOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeGlobalSecurityIPGroupRelationAsync(const DescribeGlobalSecurityIPGroupRelationRequest& request, const DescribeGlobalSecurityIPGroupRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeGlobalSecurityIPGroupRelation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeGlobalSecurityIPGroupRelationOutcomeCallable R_kvstoreClient::describeGlobalSecurityIPGroupRelationCallable(const DescribeGlobalSecurityIPGroupRelationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeGlobalSecurityIPGroupRelationOutcome()>>(
+			[this, request]()
+			{
+			return this->describeGlobalSecurityIPGroupRelation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::DescribeHistoryMonitorValuesOutcome R_kvstoreClient::describeHistoryMonitorValues(const DescribeHistoryMonitorValuesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1197,6 +1413,42 @@ R_kvstoreClient::DescribeHistoryMonitorValuesOutcomeCallable R_kvstoreClient::de
 			[this, request]()
 			{
 			return this->describeHistoryMonitorValues(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeHistoryTasksOutcome R_kvstoreClient::describeHistoryTasks(const DescribeHistoryTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeHistoryTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeHistoryTasksOutcome(DescribeHistoryTasksResult(outcome.result()));
+	else
+		return DescribeHistoryTasksOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeHistoryTasksAsync(const DescribeHistoryTasksRequest& request, const DescribeHistoryTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeHistoryTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeHistoryTasksOutcomeCallable R_kvstoreClient::describeHistoryTasksCallable(const DescribeHistoryTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeHistoryTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeHistoryTasks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1557,6 +1809,42 @@ R_kvstoreClient::DescribeMonitorItemsOutcomeCallable R_kvstoreClient::describeMo
 			[this, request]()
 			{
 			return this->describeMonitorItems(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeParameterModificationHistoryOutcome R_kvstoreClient::describeParameterModificationHistory(const DescribeParameterModificationHistoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeParameterModificationHistoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeParameterModificationHistoryOutcome(DescribeParameterModificationHistoryResult(outcome.result()));
+	else
+		return DescribeParameterModificationHistoryOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeParameterModificationHistoryAsync(const DescribeParameterModificationHistoryRequest& request, const DescribeParameterModificationHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeParameterModificationHistory(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeParameterModificationHistoryOutcomeCallable R_kvstoreClient::describeParameterModificationHistoryCallable(const DescribeParameterModificationHistoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeParameterModificationHistoryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeParameterModificationHistory(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2067,6 +2355,42 @@ R_kvstoreClient::FlushInstanceOutcomeCallable R_kvstoreClient::flushInstanceCall
 	return task->get_future();
 }
 
+R_kvstoreClient::FlushInstanceForDBOutcome R_kvstoreClient::flushInstanceForDB(const FlushInstanceForDBRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FlushInstanceForDBOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FlushInstanceForDBOutcome(FlushInstanceForDBResult(outcome.result()));
+	else
+		return FlushInstanceForDBOutcome(outcome.error());
+}
+
+void R_kvstoreClient::flushInstanceForDBAsync(const FlushInstanceForDBRequest& request, const FlushInstanceForDBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, flushInstanceForDB(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::FlushInstanceForDBOutcomeCallable R_kvstoreClient::flushInstanceForDBCallable(const FlushInstanceForDBRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FlushInstanceForDBOutcome()>>(
+			[this, request]()
+			{
+			return this->flushInstanceForDB(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::GrantAccountPrivilegeOutcome R_kvstoreClient::grantAccountPrivilege(const GrantAccountPrivilegeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2169,6 +2493,42 @@ R_kvstoreClient::ListTagResourcesOutcomeCallable R_kvstoreClient::listTagResourc
 			[this, request]()
 			{
 			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::LockDBInstanceWriteOutcome R_kvstoreClient::lockDBInstanceWrite(const LockDBInstanceWriteRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return LockDBInstanceWriteOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return LockDBInstanceWriteOutcome(LockDBInstanceWriteResult(outcome.result()));
+	else
+		return LockDBInstanceWriteOutcome(outcome.error());
+}
+
+void R_kvstoreClient::lockDBInstanceWriteAsync(const LockDBInstanceWriteRequest& request, const LockDBInstanceWriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, lockDBInstanceWrite(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::LockDBInstanceWriteOutcomeCallable R_kvstoreClient::lockDBInstanceWriteCallable(const LockDBInstanceWriteRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<LockDBInstanceWriteOutcome()>>(
+			[this, request]()
+			{
+			return this->lockDBInstanceWrite(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2427,6 +2787,114 @@ R_kvstoreClient::ModifyDBInstanceConnectionStringOutcomeCallable R_kvstoreClient
 	return task->get_future();
 }
 
+R_kvstoreClient::ModifyGlobalSecurityIPGroupOutcome R_kvstoreClient::modifyGlobalSecurityIPGroup(const ModifyGlobalSecurityIPGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyGlobalSecurityIPGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyGlobalSecurityIPGroupOutcome(ModifyGlobalSecurityIPGroupResult(outcome.result()));
+	else
+		return ModifyGlobalSecurityIPGroupOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyGlobalSecurityIPGroupAsync(const ModifyGlobalSecurityIPGroupRequest& request, const ModifyGlobalSecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyGlobalSecurityIPGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyGlobalSecurityIPGroupOutcomeCallable R_kvstoreClient::modifyGlobalSecurityIPGroupCallable(const ModifyGlobalSecurityIPGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyGlobalSecurityIPGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyGlobalSecurityIPGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::ModifyGlobalSecurityIPGroupNameOutcome R_kvstoreClient::modifyGlobalSecurityIPGroupName(const ModifyGlobalSecurityIPGroupNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyGlobalSecurityIPGroupNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyGlobalSecurityIPGroupNameOutcome(ModifyGlobalSecurityIPGroupNameResult(outcome.result()));
+	else
+		return ModifyGlobalSecurityIPGroupNameOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyGlobalSecurityIPGroupNameAsync(const ModifyGlobalSecurityIPGroupNameRequest& request, const ModifyGlobalSecurityIPGroupNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyGlobalSecurityIPGroupName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyGlobalSecurityIPGroupNameOutcomeCallable R_kvstoreClient::modifyGlobalSecurityIPGroupNameCallable(const ModifyGlobalSecurityIPGroupNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyGlobalSecurityIPGroupNameOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyGlobalSecurityIPGroupName(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::ModifyGlobalSecurityIPGroupRelationOutcome R_kvstoreClient::modifyGlobalSecurityIPGroupRelation(const ModifyGlobalSecurityIPGroupRelationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyGlobalSecurityIPGroupRelationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyGlobalSecurityIPGroupRelationOutcome(ModifyGlobalSecurityIPGroupRelationResult(outcome.result()));
+	else
+		return ModifyGlobalSecurityIPGroupRelationOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyGlobalSecurityIPGroupRelationAsync(const ModifyGlobalSecurityIPGroupRelationRequest& request, const ModifyGlobalSecurityIPGroupRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyGlobalSecurityIPGroupRelation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyGlobalSecurityIPGroupRelationOutcomeCallable R_kvstoreClient::modifyGlobalSecurityIPGroupRelationCallable(const ModifyGlobalSecurityIPGroupRelationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyGlobalSecurityIPGroupRelationOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyGlobalSecurityIPGroupRelation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::ModifyInstanceAttributeOutcome R_kvstoreClient::modifyInstanceAttribute(const ModifyInstanceAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2679,6 +3147,42 @@ R_kvstoreClient::ModifyInstanceNetExpireTimeOutcomeCallable R_kvstoreClient::mod
 	return task->get_future();
 }
 
+R_kvstoreClient::ModifyInstanceParameterOutcome R_kvstoreClient::modifyInstanceParameter(const ModifyInstanceParameterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInstanceParameterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInstanceParameterOutcome(ModifyInstanceParameterResult(outcome.result()));
+	else
+		return ModifyInstanceParameterOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyInstanceParameterAsync(const ModifyInstanceParameterRequest& request, const ModifyInstanceParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInstanceParameter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyInstanceParameterOutcomeCallable R_kvstoreClient::modifyInstanceParameterCallable(const ModifyInstanceParameterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInstanceParameterOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInstanceParameter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::ModifyInstanceSSLOutcome R_kvstoreClient::modifyInstanceSSL(const ModifyInstanceSSLRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2853,42 +3357,6 @@ R_kvstoreClient::ModifyIntranetAttributeOutcomeCallable R_kvstoreClient::modifyI
 			[this, request]()
 			{
 			return this->modifyIntranetAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-R_kvstoreClient::ModifyNodeSpecOutcome R_kvstoreClient::modifyNodeSpec(const ModifyNodeSpecRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyNodeSpecOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyNodeSpecOutcome(ModifyNodeSpecResult(outcome.result()));
-	else
-		return ModifyNodeSpecOutcome(outcome.error());
-}
-
-void R_kvstoreClient::modifyNodeSpecAsync(const ModifyNodeSpecRequest& request, const ModifyNodeSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyNodeSpec(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-R_kvstoreClient::ModifyNodeSpecOutcomeCallable R_kvstoreClient::modifyNodeSpecCallable(const ModifyNodeSpecRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyNodeSpecOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyNodeSpec(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3537,6 +4005,42 @@ R_kvstoreClient::TransformToPrePaidOutcomeCallable R_kvstoreClient::transformToP
 			[this, request]()
 			{
 			return this->transformToPrePaid(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::UnlockDBInstanceWriteOutcome R_kvstoreClient::unlockDBInstanceWrite(const UnlockDBInstanceWriteRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnlockDBInstanceWriteOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnlockDBInstanceWriteOutcome(UnlockDBInstanceWriteResult(outcome.result()));
+	else
+		return UnlockDBInstanceWriteOutcome(outcome.error());
+}
+
+void R_kvstoreClient::unlockDBInstanceWriteAsync(const UnlockDBInstanceWriteRequest& request, const UnlockDBInstanceWriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unlockDBInstanceWrite(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::UnlockDBInstanceWriteOutcomeCallable R_kvstoreClient::unlockDBInstanceWriteCallable(const UnlockDBInstanceWriteRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnlockDBInstanceWriteOutcome()>>(
+			[this, request]()
+			{
+			return this->unlockDBInstanceWrite(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

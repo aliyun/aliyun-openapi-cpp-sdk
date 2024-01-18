@@ -65,6 +65,8 @@ void CreateTairInstanceResult::parse(const std::string &payload)
 		instanceStatus_ = value["InstanceStatus"].asString();
 	if(!value["TaskId"].isNull())
 		taskId_ = value["TaskId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
 
 }
 
@@ -96,6 +98,11 @@ std::string CreateTairInstanceResult::getConfig()const
 int CreateTairInstanceResult::getPort()const
 {
 	return port_;
+}
+
+long CreateTairInstanceResult::getOrderId()const
+{
+	return orderId_;
 }
 
 std::string CreateTairInstanceResult::getConnectionDomain()const

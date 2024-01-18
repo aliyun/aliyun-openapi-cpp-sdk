@@ -47,6 +47,8 @@ void DescribeInstanceSSLResult::parse(const std::string &payload)
 		sSLExpiredTime_ = value["SSLExpiredTime"].asString();
 	if(!value["CertCommonName"].isNull())
 		certCommonName_ = value["CertCommonName"].asString();
+	if(!value["CertDownloadURL"].isNull())
+		certDownloadURL_ = value["CertDownloadURL"].asString();
 
 }
 
@@ -68,5 +70,10 @@ std::string DescribeInstanceSSLResult::getInstanceId()const
 std::string DescribeInstanceSSLResult::getCertCommonName()const
 {
 	return certCommonName_;
+}
+
+std::string DescribeInstanceSSLResult::getCertDownloadURL()const
+{
+	return certDownloadURL_;
 }
 

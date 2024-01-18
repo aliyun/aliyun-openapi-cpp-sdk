@@ -61,6 +61,15 @@ void RestoreInstanceRequest::setSecurityToken(const std::string &securityToken) 
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+std::string RestoreInstanceRequest::getTimeShift() const {
+  return timeShift_;
+}
+
+void RestoreInstanceRequest::setTimeShift(const std::string &timeShift) {
+  timeShift_ = timeShift;
+  setParameter(std::string("TimeShift"), timeShift);
+}
+
 std::string RestoreInstanceRequest::getRestoreTime() const {
   return restoreTime_;
 }

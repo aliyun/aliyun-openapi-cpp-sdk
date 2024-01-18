@@ -87,6 +87,8 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 			instancesObject.securityIPList = valueInstancesDBInstanceAttribute["SecurityIPList"].asString();
 		if(!valueInstancesDBInstanceAttribute["ShardCount"].isNull())
 			instancesObject.shardCount = std::stoi(valueInstancesDBInstanceAttribute["ShardCount"].asString());
+		if(!valueInstancesDBInstanceAttribute["ReadOnlyCount"].isNull())
+			instancesObject.readOnlyCount = std::stoi(valueInstancesDBInstanceAttribute["ReadOnlyCount"].asString());
 		if(!valueInstancesDBInstanceAttribute["GlobalInstanceId"].isNull())
 			instancesObject.globalInstanceId = valueInstancesDBInstanceAttribute["GlobalInstanceId"].asString();
 		if(!valueInstancesDBInstanceAttribute["QPS"].isNull())
@@ -97,10 +99,12 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 			instancesObject.zoneType = valueInstancesDBInstanceAttribute["ZoneType"].asString();
 		if(!valueInstancesDBInstanceAttribute["MaintainStartTime"].isNull())
 			instancesObject.maintainStartTime = valueInstancesDBInstanceAttribute["MaintainStartTime"].asString();
-		if(!valueInstancesDBInstanceAttribute["InstanceClass"].isNull())
-			instancesObject.instanceClass = valueInstancesDBInstanceAttribute["InstanceClass"].asString();
 		if(!valueInstancesDBInstanceAttribute["MaintainEndTime"].isNull())
 			instancesObject.maintainEndTime = valueInstancesDBInstanceAttribute["MaintainEndTime"].asString();
+		if(!valueInstancesDBInstanceAttribute["InstanceClass"].isNull())
+			instancesObject.instanceClass = valueInstancesDBInstanceAttribute["InstanceClass"].asString();
+		if(!valueInstancesDBInstanceAttribute["RealInstanceClass"].isNull())
+			instancesObject.realInstanceClass = valueInstancesDBInstanceAttribute["RealInstanceClass"].asString();
 		if(!valueInstancesDBInstanceAttribute["InstanceId"].isNull())
 			instancesObject.instanceId = valueInstancesDBInstanceAttribute["InstanceId"].asString();
 		if(!valueInstancesDBInstanceAttribute["InstanceType"].isNull())
@@ -125,6 +129,8 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 			instancesObject.connections = std::stol(valueInstancesDBInstanceAttribute["Connections"].asString());
 		if(!valueInstancesDBInstanceAttribute["BackupLogStartTime"].isNull())
 			instancesObject.backupLogStartTime = valueInstancesDBInstanceAttribute["BackupLogStartTime"].asString();
+		if(!valueInstancesDBInstanceAttribute["SlaveReadOnlyCount"].isNull())
+			instancesObject.slaveReadOnlyCount = std::stol(valueInstancesDBInstanceAttribute["SlaveReadOnlyCount"].asString());
 		if(!valueInstancesDBInstanceAttribute["ResourceGroupId"].isNull())
 			instancesObject.resourceGroupId = valueInstancesDBInstanceAttribute["ResourceGroupId"].asString();
 		if(!valueInstancesDBInstanceAttribute["ZoneId"].isNull())
@@ -137,6 +143,10 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 			instancesObject.storage = valueInstancesDBInstanceAttribute["Storage"].asString();
 		if(!valueInstancesDBInstanceAttribute["CloudType"].isNull())
 			instancesObject.cloudType = valueInstancesDBInstanceAttribute["CloudType"].asString();
+		if(!valueInstancesDBInstanceAttribute["IsOrderCompleted"].isNull())
+			instancesObject.isOrderCompleted = valueInstancesDBInstanceAttribute["IsOrderCompleted"].asString() == "true";
+		if(!valueInstancesDBInstanceAttribute["IsSupportTDE"].isNull())
+			instancesObject.isSupportTDE = valueInstancesDBInstanceAttribute["IsSupportTDE"].asString() == "true";
 		auto allTagsNode = valueInstancesDBInstanceAttribute["Tags"]["Tag"];
 		for (auto valueInstancesDBInstanceAttributeTagsTag : allTagsNode)
 		{

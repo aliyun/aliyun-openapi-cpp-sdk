@@ -43,6 +43,15 @@ void CreateTairInstanceRequest::setSecondaryZoneId(const std::string &secondaryZ
   setParameter(std::string("SecondaryZoneId"), secondaryZoneId);
 }
 
+int CreateTairInstanceRequest::getSlaveReadOnlyCount() const {
+  return slaveReadOnlyCount_;
+}
+
+void CreateTairInstanceRequest::setSlaveReadOnlyCount(int slaveReadOnlyCount) {
+  slaveReadOnlyCount_ = slaveReadOnlyCount;
+  setParameter(std::string("SlaveReadOnlyCount"), std::to_string(slaveReadOnlyCount));
+}
+
 std::string CreateTairInstanceRequest::getCouponNo() const {
   return couponNo_;
 }
@@ -97,6 +106,29 @@ void CreateTairInstanceRequest::setSecurityToken(const std::string &securityToke
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+std::vector<CreateTairInstanceRequest::Tag> CreateTairInstanceRequest::getTag() const {
+  return tag_;
+}
+
+void CreateTairInstanceRequest::setTag(const std::vector<CreateTairInstanceRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
+std::string CreateTairInstanceRequest::getGlobalSecurityGroupIds() const {
+  return globalSecurityGroupIds_;
+}
+
+void CreateTairInstanceRequest::setGlobalSecurityGroupIds(const std::string &globalSecurityGroupIds) {
+  globalSecurityGroupIds_ = globalSecurityGroupIds;
+  setParameter(std::string("GlobalSecurityGroupIds"), globalSecurityGroupIds);
+}
+
 std::string CreateTairInstanceRequest::getBusinessInfo() const {
   return businessInfo_;
 }
@@ -131,6 +163,15 @@ int CreateTairInstanceRequest::getPeriod() const {
 void CreateTairInstanceRequest::setPeriod(int period) {
   period_ = period;
   setParameter(std::string("Period"), std::to_string(period));
+}
+
+bool CreateTairInstanceRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void CreateTairInstanceRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
 std::string CreateTairInstanceRequest::getBackupId() const {
@@ -194,6 +235,15 @@ std::string CreateTairInstanceRequest::getAutoRenew() const {
 void CreateTairInstanceRequest::setAutoRenew(const std::string &autoRenew) {
   autoRenew_ = autoRenew;
   setParameter(std::string("AutoRenew"), autoRenew);
+}
+
+int CreateTairInstanceRequest::getPort() const {
+  return port_;
+}
+
+void CreateTairInstanceRequest::setPort(int port) {
+  port_ = port;
+  setParameter(std::string("Port"), std::to_string(port));
 }
 
 std::string CreateTairInstanceRequest::getZoneId() const {
@@ -313,6 +363,15 @@ void CreateTairInstanceRequest::setGlobalInstanceId(const std::string &globalIns
   setParameter(std::string("GlobalInstanceId"), globalInstanceId);
 }
 
+std::string CreateTairInstanceRequest::getParamGroupId() const {
+  return paramGroupId_;
+}
+
+void CreateTairInstanceRequest::setParamGroupId(const std::string &paramGroupId) {
+  paramGroupId_ = paramGroupId;
+  setParameter(std::string("ParamGroupId"), paramGroupId);
+}
+
 std::string CreateTairInstanceRequest::getVpcId() const {
   return vpcId_;
 }
@@ -322,6 +381,15 @@ void CreateTairInstanceRequest::setVpcId(const std::string &vpcId) {
   setParameter(std::string("VpcId"), vpcId);
 }
 
+int CreateTairInstanceRequest::getReadOnlyCount() const {
+  return readOnlyCount_;
+}
+
+void CreateTairInstanceRequest::setReadOnlyCount(int readOnlyCount) {
+  readOnlyCount_ = readOnlyCount;
+  setParameter(std::string("ReadOnlyCount"), std::to_string(readOnlyCount));
+}
+
 std::string CreateTairInstanceRequest::getChargeType() const {
   return chargeType_;
 }
@@ -329,5 +397,14 @@ std::string CreateTairInstanceRequest::getChargeType() const {
 void CreateTairInstanceRequest::setChargeType(const std::string &chargeType) {
   chargeType_ = chargeType;
   setParameter(std::string("ChargeType"), chargeType);
+}
+
+std::string CreateTairInstanceRequest::getClusterBackupId() const {
+  return clusterBackupId_;
+}
+
+void CreateTairInstanceRequest::setClusterBackupId(const std::string &clusterBackupId) {
+  clusterBackupId_ = clusterBackupId;
+  setParameter(std::string("ClusterBackupId"), clusterBackupId);
 }
 

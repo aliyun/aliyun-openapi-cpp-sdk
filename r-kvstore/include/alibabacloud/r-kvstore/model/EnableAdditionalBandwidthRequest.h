@@ -62,6 +62,8 @@ public:
 	void setInstanceId(const std::string &instanceId);
 	bool getAutoRenew() const;
 	void setAutoRenew(bool autoRenew);
+	std::string getChargeType() const;
+	void setChargeType(const std::string &chargeType);
 	std::string getCategory() const;
 	void setCategory(const std::string &category);
 
@@ -82,6 +84,7 @@ private:
 	long ownerId_;
 	std::string instanceId_;
 	bool autoRenew_;
+	std::string chargeType_;
 	std::string category_;
 };
 } // namespace Model

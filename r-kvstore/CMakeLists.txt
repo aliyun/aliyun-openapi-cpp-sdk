@@ -37,6 +37,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/CreateCacheAnalysisTaskResult.h
 	include/alibabacloud/r-kvstore/model/CreateGlobalDistributeCacheRequest.h
 	include/alibabacloud/r-kvstore/model/CreateGlobalDistributeCacheResult.h
+	include/alibabacloud/r-kvstore/model/CreateGlobalSecurityIPGroupRequest.h
+	include/alibabacloud/r-kvstore/model/CreateGlobalSecurityIPGroupResult.h
 	include/alibabacloud/r-kvstore/model/CreateInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/CreateInstanceResult.h
 	include/alibabacloud/r-kvstore/model/CreateInstancesRequest.h
@@ -45,6 +47,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/CreateTairInstanceResult.h
 	include/alibabacloud/r-kvstore/model/DeleteAccountRequest.h
 	include/alibabacloud/r-kvstore/model/DeleteAccountResult.h
+	include/alibabacloud/r-kvstore/model/DeleteGlobalSecurityIPGroupRequest.h
+	include/alibabacloud/r-kvstore/model/DeleteGlobalSecurityIPGroupResult.h
 	include/alibabacloud/r-kvstore/model/DeleteInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/DeleteInstanceResult.h
 	include/alibabacloud/r-kvstore/model/DeleteShardingNodeRequest.h
@@ -69,10 +73,14 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeCacheAnalysisReportResult.h
 	include/alibabacloud/r-kvstore/model/DescribeCacheAnalysisReportListRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeCacheAnalysisReportListResult.h
+	include/alibabacloud/r-kvstore/model/DescribeClusterBackupListRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeClusterBackupListResult.h
 	include/alibabacloud/r-kvstore/model/DescribeClusterMemberInfoRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeClusterMemberInfoResult.h
 	include/alibabacloud/r-kvstore/model/DescribeDBInstanceNetInfoRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeDBInstanceNetInfoResult.h
+	include/alibabacloud/r-kvstore/model/DescribeDBNodeDirectVipInfoRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeDBNodeDirectVipInfoResult.h
 	include/alibabacloud/r-kvstore/model/DescribeDedicatedClusterInstanceListRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeDedicatedClusterInstanceListResult.h
 	include/alibabacloud/r-kvstore/model/DescribeEncryptionKeyRequest.h
@@ -83,8 +91,14 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeEngineVersionResult.h
 	include/alibabacloud/r-kvstore/model/DescribeGlobalDistributeCacheRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeGlobalDistributeCacheResult.h
+	include/alibabacloud/r-kvstore/model/DescribeGlobalSecurityIPGroupRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeGlobalSecurityIPGroupResult.h
+	include/alibabacloud/r-kvstore/model/DescribeGlobalSecurityIPGroupRelationRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeGlobalSecurityIPGroupRelationResult.h
 	include/alibabacloud/r-kvstore/model/DescribeHistoryMonitorValuesRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeHistoryMonitorValuesResult.h
+	include/alibabacloud/r-kvstore/model/DescribeHistoryTasksRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeHistoryTasksResult.h
 	include/alibabacloud/r-kvstore/model/DescribeInstanceAttributeRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeInstanceAttributeResult.h
 	include/alibabacloud/r-kvstore/model/DescribeInstanceAutoRenewalAttributeRequest.h
@@ -105,6 +119,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeLogicInstanceTopologyResult.h
 	include/alibabacloud/r-kvstore/model/DescribeMonitorItemsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeMonitorItemsResult.h
+	include/alibabacloud/r-kvstore/model/DescribeParameterModificationHistoryRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeParameterModificationHistoryResult.h
 	include/alibabacloud/r-kvstore/model/DescribeParameterTemplatesRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeParameterTemplatesResult.h
 	include/alibabacloud/r-kvstore/model/DescribeParametersRequest.h
@@ -133,12 +149,16 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/FlushExpireKeysResult.h
 	include/alibabacloud/r-kvstore/model/FlushInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/FlushInstanceResult.h
+	include/alibabacloud/r-kvstore/model/FlushInstanceForDBRequest.h
+	include/alibabacloud/r-kvstore/model/FlushInstanceForDBResult.h
 	include/alibabacloud/r-kvstore/model/GrantAccountPrivilegeRequest.h
 	include/alibabacloud/r-kvstore/model/GrantAccountPrivilegeResult.h
 	include/alibabacloud/r-kvstore/model/InitializeKvstorePermissionRequest.h
 	include/alibabacloud/r-kvstore/model/InitializeKvstorePermissionResult.h
 	include/alibabacloud/r-kvstore/model/ListTagResourcesRequest.h
 	include/alibabacloud/r-kvstore/model/ListTagResourcesResult.h
+	include/alibabacloud/r-kvstore/model/LockDBInstanceWriteRequest.h
+	include/alibabacloud/r-kvstore/model/LockDBInstanceWriteResult.h
 	include/alibabacloud/r-kvstore/model/MigrateToOtherZoneRequest.h
 	include/alibabacloud/r-kvstore/model/MigrateToOtherZoneResult.h
 	include/alibabacloud/r-kvstore/model/ModifyAccountDescriptionRequest.h
@@ -153,6 +173,12 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ModifyBackupPolicyResult.h
 	include/alibabacloud/r-kvstore/model/ModifyDBInstanceConnectionStringRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyDBInstanceConnectionStringResult.h
+	include/alibabacloud/r-kvstore/model/ModifyGlobalSecurityIPGroupRequest.h
+	include/alibabacloud/r-kvstore/model/ModifyGlobalSecurityIPGroupResult.h
+	include/alibabacloud/r-kvstore/model/ModifyGlobalSecurityIPGroupNameRequest.h
+	include/alibabacloud/r-kvstore/model/ModifyGlobalSecurityIPGroupNameResult.h
+	include/alibabacloud/r-kvstore/model/ModifyGlobalSecurityIPGroupRelationRequest.h
+	include/alibabacloud/r-kvstore/model/ModifyGlobalSecurityIPGroupRelationResult.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceAttributeRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceAttributeResult.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceAutoRenewalAttributeRequest.h
@@ -167,6 +193,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ModifyInstanceMinorVersionResult.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceNetExpireTimeRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceNetExpireTimeResult.h
+	include/alibabacloud/r-kvstore/model/ModifyInstanceParameterRequest.h
+	include/alibabacloud/r-kvstore/model/ModifyInstanceParameterResult.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceSSLRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceSSLResult.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceSpecRequest.h
@@ -177,8 +205,6 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ModifyInstanceVpcAuthModeResult.h
 	include/alibabacloud/r-kvstore/model/ModifyIntranetAttributeRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyIntranetAttributeResult.h
-	include/alibabacloud/r-kvstore/model/ModifyNodeSpecRequest.h
-	include/alibabacloud/r-kvstore/model/ModifyNodeSpecResult.h
 	include/alibabacloud/r-kvstore/model/ModifyResourceGroupRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyResourceGroupResult.h
 	include/alibabacloud/r-kvstore/model/ModifySecurityGroupConfigurationRequest.h
@@ -215,6 +241,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/TransformInstanceChargeTypeResult.h
 	include/alibabacloud/r-kvstore/model/TransformToPrePaidRequest.h
 	include/alibabacloud/r-kvstore/model/TransformToPrePaidResult.h
+	include/alibabacloud/r-kvstore/model/UnlockDBInstanceWriteRequest.h
+	include/alibabacloud/r-kvstore/model/UnlockDBInstanceWriteResult.h
 	include/alibabacloud/r-kvstore/model/UntagResourcesRequest.h
 	include/alibabacloud/r-kvstore/model/UntagResourcesResult.h )
 
@@ -236,6 +264,8 @@ set(r-kvstore_src
 	src/model/CreateCacheAnalysisTaskResult.cc
 	src/model/CreateGlobalDistributeCacheRequest.cc
 	src/model/CreateGlobalDistributeCacheResult.cc
+	src/model/CreateGlobalSecurityIPGroupRequest.cc
+	src/model/CreateGlobalSecurityIPGroupResult.cc
 	src/model/CreateInstanceRequest.cc
 	src/model/CreateInstanceResult.cc
 	src/model/CreateInstancesRequest.cc
@@ -244,6 +274,8 @@ set(r-kvstore_src
 	src/model/CreateTairInstanceResult.cc
 	src/model/DeleteAccountRequest.cc
 	src/model/DeleteAccountResult.cc
+	src/model/DeleteGlobalSecurityIPGroupRequest.cc
+	src/model/DeleteGlobalSecurityIPGroupResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
 	src/model/DeleteShardingNodeRequest.cc
@@ -268,10 +300,14 @@ set(r-kvstore_src
 	src/model/DescribeCacheAnalysisReportResult.cc
 	src/model/DescribeCacheAnalysisReportListRequest.cc
 	src/model/DescribeCacheAnalysisReportListResult.cc
+	src/model/DescribeClusterBackupListRequest.cc
+	src/model/DescribeClusterBackupListResult.cc
 	src/model/DescribeClusterMemberInfoRequest.cc
 	src/model/DescribeClusterMemberInfoResult.cc
 	src/model/DescribeDBInstanceNetInfoRequest.cc
 	src/model/DescribeDBInstanceNetInfoResult.cc
+	src/model/DescribeDBNodeDirectVipInfoRequest.cc
+	src/model/DescribeDBNodeDirectVipInfoResult.cc
 	src/model/DescribeDedicatedClusterInstanceListRequest.cc
 	src/model/DescribeDedicatedClusterInstanceListResult.cc
 	src/model/DescribeEncryptionKeyRequest.cc
@@ -282,8 +318,14 @@ set(r-kvstore_src
 	src/model/DescribeEngineVersionResult.cc
 	src/model/DescribeGlobalDistributeCacheRequest.cc
 	src/model/DescribeGlobalDistributeCacheResult.cc
+	src/model/DescribeGlobalSecurityIPGroupRequest.cc
+	src/model/DescribeGlobalSecurityIPGroupResult.cc
+	src/model/DescribeGlobalSecurityIPGroupRelationRequest.cc
+	src/model/DescribeGlobalSecurityIPGroupRelationResult.cc
 	src/model/DescribeHistoryMonitorValuesRequest.cc
 	src/model/DescribeHistoryMonitorValuesResult.cc
+	src/model/DescribeHistoryTasksRequest.cc
+	src/model/DescribeHistoryTasksResult.cc
 	src/model/DescribeInstanceAttributeRequest.cc
 	src/model/DescribeInstanceAttributeResult.cc
 	src/model/DescribeInstanceAutoRenewalAttributeRequest.cc
@@ -304,6 +346,8 @@ set(r-kvstore_src
 	src/model/DescribeLogicInstanceTopologyResult.cc
 	src/model/DescribeMonitorItemsRequest.cc
 	src/model/DescribeMonitorItemsResult.cc
+	src/model/DescribeParameterModificationHistoryRequest.cc
+	src/model/DescribeParameterModificationHistoryResult.cc
 	src/model/DescribeParameterTemplatesRequest.cc
 	src/model/DescribeParameterTemplatesResult.cc
 	src/model/DescribeParametersRequest.cc
@@ -332,12 +376,16 @@ set(r-kvstore_src
 	src/model/FlushExpireKeysResult.cc
 	src/model/FlushInstanceRequest.cc
 	src/model/FlushInstanceResult.cc
+	src/model/FlushInstanceForDBRequest.cc
+	src/model/FlushInstanceForDBResult.cc
 	src/model/GrantAccountPrivilegeRequest.cc
 	src/model/GrantAccountPrivilegeResult.cc
 	src/model/InitializeKvstorePermissionRequest.cc
 	src/model/InitializeKvstorePermissionResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
+	src/model/LockDBInstanceWriteRequest.cc
+	src/model/LockDBInstanceWriteResult.cc
 	src/model/MigrateToOtherZoneRequest.cc
 	src/model/MigrateToOtherZoneResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
@@ -352,6 +400,12 @@ set(r-kvstore_src
 	src/model/ModifyBackupPolicyResult.cc
 	src/model/ModifyDBInstanceConnectionStringRequest.cc
 	src/model/ModifyDBInstanceConnectionStringResult.cc
+	src/model/ModifyGlobalSecurityIPGroupRequest.cc
+	src/model/ModifyGlobalSecurityIPGroupResult.cc
+	src/model/ModifyGlobalSecurityIPGroupNameRequest.cc
+	src/model/ModifyGlobalSecurityIPGroupNameResult.cc
+	src/model/ModifyGlobalSecurityIPGroupRelationRequest.cc
+	src/model/ModifyGlobalSecurityIPGroupRelationResult.cc
 	src/model/ModifyInstanceAttributeRequest.cc
 	src/model/ModifyInstanceAttributeResult.cc
 	src/model/ModifyInstanceAutoRenewalAttributeRequest.cc
@@ -366,6 +420,8 @@ set(r-kvstore_src
 	src/model/ModifyInstanceMinorVersionResult.cc
 	src/model/ModifyInstanceNetExpireTimeRequest.cc
 	src/model/ModifyInstanceNetExpireTimeResult.cc
+	src/model/ModifyInstanceParameterRequest.cc
+	src/model/ModifyInstanceParameterResult.cc
 	src/model/ModifyInstanceSSLRequest.cc
 	src/model/ModifyInstanceSSLResult.cc
 	src/model/ModifyInstanceSpecRequest.cc
@@ -376,8 +432,6 @@ set(r-kvstore_src
 	src/model/ModifyInstanceVpcAuthModeResult.cc
 	src/model/ModifyIntranetAttributeRequest.cc
 	src/model/ModifyIntranetAttributeResult.cc
-	src/model/ModifyNodeSpecRequest.cc
-	src/model/ModifyNodeSpecResult.cc
 	src/model/ModifyResourceGroupRequest.cc
 	src/model/ModifyResourceGroupResult.cc
 	src/model/ModifySecurityGroupConfigurationRequest.cc
@@ -414,6 +468,8 @@ set(r-kvstore_src
 	src/model/TransformInstanceChargeTypeResult.cc
 	src/model/TransformToPrePaidRequest.cc
 	src/model/TransformToPrePaidResult.cc
+	src/model/UnlockDBInstanceWriteRequest.cc
+	src/model/UnlockDBInstanceWriteResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc )
 

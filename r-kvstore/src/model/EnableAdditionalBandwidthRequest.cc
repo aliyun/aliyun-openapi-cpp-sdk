@@ -169,6 +169,15 @@ void EnableAdditionalBandwidthRequest::setAutoRenew(bool autoRenew) {
   setParameter(std::string("AutoRenew"), autoRenew ? "true" : "false");
 }
 
+std::string EnableAdditionalBandwidthRequest::getChargeType() const {
+  return chargeType_;
+}
+
+void EnableAdditionalBandwidthRequest::setChargeType(const std::string &chargeType) {
+  chargeType_ = chargeType;
+  setParameter(std::string("ChargeType"), chargeType);
+}
+
 std::string EnableAdditionalBandwidthRequest::getCategory() const {
   return category_;
 }

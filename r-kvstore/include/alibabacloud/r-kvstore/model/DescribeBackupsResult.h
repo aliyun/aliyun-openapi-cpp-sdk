@@ -32,6 +32,16 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeBackupsResult : public ServiceResult
 			{
 			public:
+				struct AccessDeniedDetail
+				{
+					std::string policyType;
+					std::string authPrincipalOwnerId;
+					std::string encodedDiagnosticMessage;
+					std::string authPrincipalType;
+					std::string authPrincipalDisplayName;
+					std::string noPermissionType;
+					std::string authAction;
+				};
 				struct Backup
 				{
 					std::string backupMethod;
@@ -41,6 +51,7 @@ namespace AlibabaCloud
 					std::string backupMode;
 					int backupId;
 					std::string nodeInstanceId;
+					int backupJobID;
 					std::string backupDBNames;
 					std::string backupDownloadURL;
 					std::string backupEndTime;
@@ -53,6 +64,7 @@ namespace AlibabaCloud
 				DescribeBackupsResult();
 				explicit DescribeBackupsResult(const std::string &payload);
 				~DescribeBackupsResult();
+				AccessDeniedDetail getAccessDeniedDetail()const;
 				int getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
@@ -61,6 +73,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				AccessDeniedDetail accessDeniedDetail_;
 				int totalCount_;
 				int pageSize_;
 				int pageNumber_;

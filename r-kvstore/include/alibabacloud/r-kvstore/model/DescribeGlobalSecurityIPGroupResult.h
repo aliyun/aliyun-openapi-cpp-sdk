@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYNODESPECRESULT_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYNODESPECRESULT_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEGLOBALSECURITYIPGROUPRESULT_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEGLOBALSECURITYIPGROUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT ModifyNodeSpecResult : public ServiceResult
+			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeGlobalSecurityIPGroupResult : public ServiceResult
 			{
 			public:
+				struct GlobalSecurityIPGroupItem
+				{
+					std::string securityIPType;
+					std::string globalIgName;
+					std::string gIpList;
+					std::string globalSecurityGroupId;
+					std::string regionId;
+					std::vector<std::string> dBInstances;
+					std::string whitelistNetType;
+				};
 
 
-				ModifyNodeSpecResult();
-				explicit ModifyNodeSpecResult(const std::string &payload);
-				~ModifyNodeSpecResult();
-				long getOrderId()const;
+				DescribeGlobalSecurityIPGroupResult();
+				explicit DescribeGlobalSecurityIPGroupResult(const std::string &payload);
+				~DescribeGlobalSecurityIPGroupResult();
+				std::vector<GlobalSecurityIPGroupItem> getGlobalSecurityIPGroup()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long orderId_;
+				std::vector<GlobalSecurityIPGroupItem> globalSecurityIPGroup_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYNODESPECRESULT_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEGLOBALSECURITYIPGROUPRESULT_H_

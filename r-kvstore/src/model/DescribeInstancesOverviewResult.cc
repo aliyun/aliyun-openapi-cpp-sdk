@@ -83,6 +83,8 @@ void DescribeInstancesOverviewResult::parse(const std::string &payload)
 			instancesObject.zoneId = valueInstancesKVStoreInstance["ZoneId"].asString();
 		if(!valueInstancesKVStoreInstance["InstanceStatus"].isNull())
 			instancesObject.instanceStatus = valueInstancesKVStoreInstance["InstanceStatus"].asString();
+		if(!valueInstancesKVStoreInstance["SecondaryZoneId"].isNull())
+			instancesObject.secondaryZoneId = valueInstancesKVStoreInstance["SecondaryZoneId"].asString();
 		instances_.push_back(instancesObject);
 	}
 	if(!value["TotalCount"].isNull())

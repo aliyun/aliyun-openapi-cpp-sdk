@@ -36,14 +36,20 @@ public:
 	~CreateInstanceRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getConnectionStringPrefix() const;
+	void setConnectionStringPrefix(const std::string &connectionStringPrefix);
 	std::string getSecondaryZoneId() const;
 	void setSecondaryZoneId(const std::string &secondaryZoneId);
+	int getSlaveReadOnlyCount() const;
+	void setSlaveReadOnlyCount(int slaveReadOnlyCount);
 	std::string getCouponNo() const;
 	void setCouponNo(const std::string &couponNo);
 	std::string getNetworkType() const;
 	void setNetworkType(const std::string &networkType);
 	std::string getEngineVersion() const;
 	void setEngineVersion(const std::string &engineVersion);
+	std::string getPhysicalInstanceId() const;
+	void setPhysicalInstanceId(const std::string &physicalInstanceId);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getPassword() const;
@@ -52,6 +58,8 @@ public:
 	void setSecurityToken(const std::string &securityToken);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
+	std::string getGlobalSecurityGroupIds() const;
+	void setGlobalSecurityGroupIds(const std::string &globalSecurityGroupIds);
 	std::string getBusinessInfo() const;
 	void setBusinessInfo(const std::string &businessInfo);
 	int getShardCount() const;
@@ -78,6 +86,8 @@ public:
 	void setPort(const std::string &port);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
+	std::string getAppendonly() const;
+	void setAppendonly(const std::string &appendonly);
 	std::string getNodeType() const;
 	void setNodeType(const std::string &nodeType);
 	std::string getAutoUseCoupon() const;
@@ -108,25 +118,35 @@ public:
 	void setToken(const std::string &token);
 	std::string getGlobalInstanceId() const;
 	void setGlobalInstanceId(const std::string &globalInstanceId);
+	std::string getParamGroupId() const;
+	void setParamGroupId(const std::string &paramGroupId);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
+	bool getDeletePhysicalInstance() const;
+	void setDeletePhysicalInstance(bool deletePhysicalInstance);
 	int getReadOnlyCount() const;
 	void setReadOnlyCount(int readOnlyCount);
 	std::string getChargeType() const;
 	void setChargeType(const std::string &chargeType);
 	std::string getConfig() const;
 	void setConfig(const std::string &config);
+	std::string getClusterBackupId() const;
+	void setClusterBackupId(const std::string &clusterBackupId);
 
 private:
 	long resourceOwnerId_;
+	std::string connectionStringPrefix_;
 	std::string secondaryZoneId_;
+	int slaveReadOnlyCount_;
 	std::string couponNo_;
 	std::string networkType_;
 	std::string engineVersion_;
+	std::string physicalInstanceId_;
 	std::string resourceGroupId_;
 	std::string password_;
 	std::string securityToken_;
 	std::vector<Tag> tag_;
+	std::string globalSecurityGroupIds_;
 	std::string businessInfo_;
 	int shardCount_;
 	std::string autoRenewPeriod_;
@@ -140,6 +160,7 @@ private:
 	std::string autoRenew_;
 	std::string port_;
 	std::string zoneId_;
+	std::string appendonly_;
 	std::string nodeType_;
 	std::string autoUseCoupon_;
 	std::string instanceClass_;
@@ -155,10 +176,13 @@ private:
 	bool globalInstance_;
 	std::string token_;
 	std::string globalInstanceId_;
+	std::string paramGroupId_;
 	std::string vpcId_;
+	bool deletePhysicalInstance_;
 	int readOnlyCount_;
 	std::string chargeType_;
 	std::string config_;
+	std::string clusterBackupId_;
 };
 } // namespace Model
 } // namespace R_kvstore

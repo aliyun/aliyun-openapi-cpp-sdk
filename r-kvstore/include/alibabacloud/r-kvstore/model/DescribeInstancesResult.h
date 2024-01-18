@@ -66,8 +66,10 @@ namespace AlibabaCloud
 					std::string zoneId;
 					std::string cloudType;
 					std::string instanceId;
+					std::string shardClass;
 					std::string createTime;
 					std::string vSwitchId;
+					std::string readOnlyCount;
 					std::string instanceClass;
 					bool isRds;
 					std::string secondaryZoneId;

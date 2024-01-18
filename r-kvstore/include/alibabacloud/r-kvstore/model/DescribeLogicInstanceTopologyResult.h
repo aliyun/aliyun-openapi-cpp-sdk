@@ -40,19 +40,28 @@ namespace AlibabaCloud
 					std::string connection;
 					std::string nodeId;
 				};
+				struct NodeInfo1
+				{
+					std::string subInstanceType;
+					std::string capacity;
+					std::string nodeType;
+					std::string bandwidth;
+					std::string connection;
+					std::string nodeId;
+				};
 
 
 				DescribeLogicInstanceTopologyResult();
 				explicit DescribeLogicInstanceTopologyResult(const std::string &payload);
 				~DescribeLogicInstanceTopologyResult();
-				std::vector<NodeInfo> getRedisShardList()const;
+				std::vector<NodeInfo1> getRedisShardList()const;
 				std::string getInstanceId()const;
 				std::vector<NodeInfo> getRedisProxyList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<NodeInfo> redisShardList_;
+				std::vector<NodeInfo1> redisShardList_;
 				std::string instanceId_;
 				std::vector<NodeInfo> redisProxyList_;
 
