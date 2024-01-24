@@ -34,6 +34,18 @@ void StartInstanceRequest::setApp(const std::string &app) {
   setParameter(std::string("App"), app);
 }
 
+StartInstanceRequest::TextRequest StartInstanceRequest::getTextRequest() const {
+  return textRequest_;
+}
+
+void StartInstanceRequest::setTextRequest(const StartInstanceRequest::TextRequest &textRequest) {
+  textRequest_ = textRequest;
+  setParameter(std::string("TextRequest") + ".Voice", textRequest.voice);
+  setParameter(std::string("TextRequest") + ".Volume", std::to_string(textRequest.volume));
+  setParameter(std::string("TextRequest") + ".SpeechRate", std::to_string(textRequest.speechRate));
+  setParameter(std::string("TextRequest") + ".PitchRate", std::to_string(textRequest.pitchRate));
+}
+
 long StartInstanceRequest::getTenantId() const {
   return tenantId_;
 }
@@ -70,7 +82,9 @@ StartInstanceRequest::CommandRequest StartInstanceRequest::getCommandRequest() c
 
 void StartInstanceRequest::setCommandRequest(const StartInstanceRequest::CommandRequest &commandRequest) {
   commandRequest_ = commandRequest;
+  setParameter(std::string("CommandRequest") + ".BackGroundImageUrl", commandRequest.backGroundImageUrl);
   setParameter(std::string("CommandRequest") + ".AlphaSwitch", commandRequest.alphaSwitch ? "true" : "false");
+  setParameter(std::string("CommandRequest") + ".Locate", std::to_string(commandRequest.locate));
 }
 
 std::string StartInstanceRequest::getUser() const {

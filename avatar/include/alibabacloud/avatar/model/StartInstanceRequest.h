@@ -28,17 +28,27 @@ namespace Avatar {
 namespace Model {
 class ALIBABACLOUD_AVATAR_EXPORT StartInstanceRequest : public RpcServiceRequest {
 public:
+	struct TextRequest {
+		std::string voice;
+		int volume;
+		int speechRate;
+		int pitchRate;
+	};
 	struct Channel {
 		std::string type;
 		std::map<std::string, std::string> reqConfig;
 	};
 	struct CommandRequest {
+		std::string backGroundImageUrl;
 		bool alphaSwitch;
+		int locate;
 	};
 	StartInstanceRequest();
 	~StartInstanceRequest();
 	std::string getApp() const;
 	void setApp(const std::string &app);
+	TextRequest getTextRequest() const;
+	void setTextRequest(const TextRequest &textRequest);
 	long getTenantId() const;
 	void setTenantId(long tenantId);
 	std::string getBizId() const;
@@ -52,6 +62,7 @@ public:
 
 private:
 	std::string app_;
+	TextRequest textRequest_;
 	long tenantId_;
 	std::string bizId_;
 	Channel channel_;
