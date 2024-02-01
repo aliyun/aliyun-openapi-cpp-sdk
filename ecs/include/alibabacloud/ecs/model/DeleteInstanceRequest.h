@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	bool getTerminateSubscription() const;
 	void setTerminateSubscription(bool terminateSubscription);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -48,6 +50,7 @@ public:
 private:
 	long resourceOwnerId_;
 	bool terminateSubscription_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

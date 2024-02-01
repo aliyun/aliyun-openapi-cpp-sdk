@@ -51,6 +51,8 @@ public:
 	void setTemporaryEndTime(const std::string &temporaryEndTime);
 	std::string getModifyMode() const;
 	void setModifyMode(const std::string &modifyMode);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -79,6 +81,7 @@ private:
 	std::string instanceType_;
 	std::string temporaryEndTime_;
 	std::string modifyMode_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

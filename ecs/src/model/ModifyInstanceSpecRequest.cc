@@ -97,6 +97,15 @@ void ModifyInstanceSpecRequest::setModifyMode(const std::string &modifyMode) {
   setParameter(std::string("ModifyMode"), modifyMode);
 }
 
+bool ModifyInstanceSpecRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void ModifyInstanceSpecRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string ModifyInstanceSpecRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

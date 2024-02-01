@@ -43,6 +43,15 @@ void DeleteInstanceRequest::setTerminateSubscription(bool terminateSubscription)
   setParameter(std::string("TerminateSubscription"), terminateSubscription ? "true" : "false");
 }
 
+bool DeleteInstanceRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void DeleteInstanceRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string DeleteInstanceRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
