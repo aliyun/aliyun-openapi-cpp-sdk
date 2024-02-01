@@ -36,6 +36,8 @@ public:
 	void setPageNumber(long pageNumber);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	long getPageSize() const;
 	void setPageSize(long pageSize);
 	std::string getResourceOwnerAccount() const;
@@ -48,17 +50,21 @@ public:
 	void setInstanceId(const std::vector<std::string> &instanceId);
 	std::string getName() const;
 	void setName(const std::string &name);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
 
 private:
 	long resourceOwnerId_;
 	long pageNumber_;
 	std::string regionId_;
+	std::string nextToken_;
 	long pageSize_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
 	std::vector<std::string> instanceId_;
 	std::string name_;
+	int maxResults_;
 };
 } // namespace Model
 } // namespace Ecs

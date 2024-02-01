@@ -61,6 +61,15 @@ void DescribeActivationsRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string DescribeActivationsRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void DescribeActivationsRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
 long DescribeActivationsRequest::getPageSize() const {
   return pageSize_;
 }
@@ -118,6 +127,15 @@ std::string DescribeActivationsRequest::getInstanceName() const {
 void DescribeActivationsRequest::setInstanceName(const std::string &instanceName) {
   instanceName_ = instanceName;
   setParameter(std::string("InstanceName"), instanceName);
+}
+
+int DescribeActivationsRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void DescribeActivationsRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
 std::string DescribeActivationsRequest::getActivationId() const {

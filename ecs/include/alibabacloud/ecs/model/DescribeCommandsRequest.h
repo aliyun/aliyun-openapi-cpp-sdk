@@ -50,6 +50,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getProvider() const;
 	void setProvider(const std::string &provider);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	std::string getContentEncoding() const;
 	void setContentEncoding(const std::string &contentEncoding);
 	long getPageSize() const;
@@ -66,6 +68,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getName() const;
 	void setName(const std::string &name);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
 
 private:
 	long resourceOwnerId_;
@@ -76,6 +80,7 @@ private:
 	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string provider_;
+	std::string nextToken_;
 	std::string contentEncoding_;
 	long pageSize_;
 	std::vector<Tag> tag_;
@@ -84,6 +89,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string name_;
+	int maxResults_;
 };
 } // namespace Model
 } // namespace Ecs

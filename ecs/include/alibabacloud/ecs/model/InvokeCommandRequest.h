@@ -33,6 +33,10 @@ public:
 		std::string value;
 		std::string scope;
 	};
+	struct ResourceTag {
+		std::string key;
+		std::string value;
+	};
 	struct Tag {
 		std::string key;
 		std::string value;
@@ -61,6 +65,8 @@ public:
 	void setRepeatMode(const std::string &repeatMode);
 	std::string getWindowsPasswordName() const;
 	void setWindowsPasswordName(const std::string &windowsPasswordName);
+	std::vector<ResourceTag> getResourceTag() const;
+	void setResourceTag(const std::vector<ResourceTag> &resourceTag);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
 	bool getTimed() const;
@@ -92,6 +98,7 @@ private:
 	std::string regionId_;
 	std::string repeatMode_;
 	std::string windowsPasswordName_;
+	std::vector<ResourceTag> resourceTag_;
 	std::vector<Tag> tag_;
 	bool timed_;
 	std::string resourceOwnerAccount_;

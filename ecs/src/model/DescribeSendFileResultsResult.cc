@@ -109,6 +109,8 @@ void DescribeSendFileResultsResult::parse(const std::string &payload)
 		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
 }
 
@@ -120,6 +122,11 @@ long DescribeSendFileResultsResult::getTotalCount()const
 long DescribeSendFileResultsResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+std::string DescribeSendFileResultsResult::getNextToken()const
+{
+	return nextToken_;
 }
 
 std::vector<DescribeSendFileResultsResult::Invocation> DescribeSendFileResultsResult::getInvocations()const

@@ -169,6 +169,15 @@ void ModifyPrepayInstanceSpecRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+ModifyPrepayInstanceSpecRequest::PromotionOptions ModifyPrepayInstanceSpecRequest::getPromotionOptions() const {
+  return promotionOptions_;
+}
+
+void ModifyPrepayInstanceSpecRequest::setPromotionOptions(const ModifyPrepayInstanceSpecRequest::PromotionOptions &promotionOptions) {
+  promotionOptions_ = promotionOptions;
+  setParameter(std::string("PromotionOptions") + ".CouponNo", promotionOptions.couponNo);
+}
+
 std::vector<ModifyPrepayInstanceSpecRequest::Disk> ModifyPrepayInstanceSpecRequest::getDisk() const {
   return disk_;
 }

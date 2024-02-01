@@ -40,6 +40,8 @@ public:
 	void setKeyPairFingerPrint(const std::string &keyPairFingerPrint);
 	std::string getKeyPairName() const;
 	void setKeyPairName(const std::string &keyPairName);
+	bool getIncludePublicKey() const;
+	void setIncludePublicKey(bool includePublicKey);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getResourceGroupId() const;
@@ -59,6 +61,7 @@ private:
 	long resourceOwnerId_;
 	std::string keyPairFingerPrint_;
 	std::string keyPairName_;
+	bool includePublicKey_;
 	int pageNumber_;
 	std::string resourceGroupId_;
 	std::string regionId_;

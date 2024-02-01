@@ -54,6 +54,8 @@ public:
 	void setVisible(bool visible);
 	int getIpv6AddressCount() const;
 	void setIpv6AddressCount(int ipv6AddressCount);
+	int getRxQueueSize() const;
+	void setRxQueueSize(int rxQueueSize);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getVSwitchId() const;
@@ -76,6 +78,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getInstanceType() const;
 	void setInstanceType(const std::string &instanceType);
+	int getTxQueueSize() const;
+	void setTxQueueSize(int txQueueSize);
 	bool getDeleteOnRelease() const;
 	void setDeleteOnRelease(bool deleteOnRelease);
 	std::string getResourceOwnerAccount() const;
@@ -104,6 +108,7 @@ private:
 	std::string networkInterfaceName_;
 	bool visible_;
 	int ipv6AddressCount_;
+	int rxQueueSize_;
 	long ownerId_;
 	std::string vSwitchId_;
 	std::vector<std::string> privateIpAddress_;
@@ -115,6 +120,7 @@ private:
 	int ipv6PrefixCount_;
 	std::string regionId_;
 	std::string instanceType_;
+	int txQueueSize_;
 	bool deleteOnRelease_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

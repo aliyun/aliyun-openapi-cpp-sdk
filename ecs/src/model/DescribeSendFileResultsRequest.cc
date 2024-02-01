@@ -61,6 +61,15 @@ void DescribeSendFileResultsRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string DescribeSendFileResultsRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void DescribeSendFileResultsRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
 long DescribeSendFileResultsRequest::getPageSize() const {
   return pageSize_;
 }
@@ -145,5 +154,14 @@ std::string DescribeSendFileResultsRequest::getName() const {
 void DescribeSendFileResultsRequest::setName(const std::string &name) {
   name_ = name;
   setParameter(std::string("Name"), name);
+}
+
+int DescribeSendFileResultsRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void DescribeSendFileResultsRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 

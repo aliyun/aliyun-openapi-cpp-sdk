@@ -170,6 +170,8 @@ void DescribeNetworkInterfaceAttributeResult::parse(const std::string &payload)
 		queueNumber_ = std::stoi(value["QueueNumber"].asString());
 	if(!value["DeleteOnRelease"].isNull())
 		deleteOnRelease_ = value["DeleteOnRelease"].asString() == "true";
+	if(!value["TcpOptionAddressEnabled"].isNull())
+		tcpOptionAddressEnabled_ = value["TcpOptionAddressEnabled"].asString();
 
 }
 
@@ -276,6 +278,11 @@ std::vector<std::string> DescribeNetworkInterfaceAttributeResult::getSecurityGro
 long DescribeNetworkInterfaceAttributeResult::getServiceID()const
 {
 	return serviceID_;
+}
+
+std::string DescribeNetworkInterfaceAttributeResult::getTcpOptionAddressEnabled()const
+{
+	return tcpOptionAddressEnabled_;
 }
 
 std::string DescribeNetworkInterfaceAttributeResult::getType()const

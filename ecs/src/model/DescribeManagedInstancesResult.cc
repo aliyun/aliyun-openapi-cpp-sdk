@@ -91,6 +91,8 @@ void DescribeManagedInstancesResult::parse(const std::string &payload)
 		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
 }
 
@@ -107,6 +109,11 @@ long DescribeManagedInstancesResult::getTotalCount()const
 long DescribeManagedInstancesResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+std::string DescribeManagedInstancesResult::getNextToken()const
+{
+	return nextToken_;
 }
 
 long DescribeManagedInstancesResult::getPageNumber()const

@@ -50,6 +50,8 @@ public:
 	void setPassword(const std::string &password);
 	std::string getHostName() const;
 	void setHostName(const std::string &hostName);
+	std::string getCpuOptionsTopologyType() const;
+	void setCpuOptionsTopologyType(const std::string &cpuOptionsTopologyType);
 	bool getEnableJumboFrame() const;
 	void setEnableJumboFrame(bool enableJumboFrame);
 	std::string getResourceOwnerAccount() const;
@@ -78,6 +80,7 @@ private:
 	std::string userData_;
 	std::string password_;
 	std::string hostName_;
+	std::string cpuOptionsTopologyType_;
 	bool enableJumboFrame_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

@@ -52,6 +52,15 @@ void DescribeKeyPairsRequest::setKeyPairName(const std::string &keyPairName) {
   setParameter(std::string("KeyPairName"), keyPairName);
 }
 
+bool DescribeKeyPairsRequest::getIncludePublicKey() const {
+  return includePublicKey_;
+}
+
+void DescribeKeyPairsRequest::setIncludePublicKey(bool includePublicKey) {
+  includePublicKey_ = includePublicKey;
+  setParameter(std::string("IncludePublicKey"), includePublicKey ? "true" : "false");
+}
+
 int DescribeKeyPairsRequest::getPageNumber() const {
   return pageNumber_;
 }

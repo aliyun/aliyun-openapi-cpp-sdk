@@ -97,6 +97,15 @@ void DescribeCommandsRequest::setProvider(const std::string &provider) {
   setParameter(std::string("Provider"), provider);
 }
 
+std::string DescribeCommandsRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void DescribeCommandsRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
 std::string DescribeCommandsRequest::getContentEncoding() const {
   return contentEncoding_;
 }
@@ -172,5 +181,14 @@ std::string DescribeCommandsRequest::getName() const {
 void DescribeCommandsRequest::setName(const std::string &name) {
   name_ = name;
   setParameter(std::string("Name"), name);
+}
+
+int DescribeCommandsRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void DescribeCommandsRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 

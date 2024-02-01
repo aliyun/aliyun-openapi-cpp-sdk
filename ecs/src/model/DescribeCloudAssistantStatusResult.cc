@@ -69,6 +69,8 @@ void DescribeCloudAssistantStatusResult::parse(const std::string &payload)
 		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
 }
 
@@ -80,6 +82,11 @@ long DescribeCloudAssistantStatusResult::getTotalCount()const
 long DescribeCloudAssistantStatusResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+std::string DescribeCloudAssistantStatusResult::getNextToken()const
+{
+	return nextToken_;
 }
 
 std::vector<DescribeCloudAssistantStatusResult::InstanceCloudAssistantStatus> DescribeCloudAssistantStatusResult::getInstanceCloudAssistantStatusSet()const

@@ -53,6 +53,7 @@ namespace AlibabaCloud
 				std::vector<InstancePluginStatus> getInstancePluginStatusSet()const;
 				long getTotalCount()const;
 				long getPageSize()const;
+				std::string getNextToken()const;
 				long getPageNumber()const;
 
 			protected:
@@ -61,6 +62,7 @@ namespace AlibabaCloud
 				std::vector<InstancePluginStatus> instancePluginStatusSet_;
 				long totalCount_;
 				long pageSize_;
+				std::string nextToken_;
 				long pageNumber_;
 
 			};

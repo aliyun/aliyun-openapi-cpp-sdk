@@ -52,6 +52,15 @@ void DescribeCloudAssistantStatusRequest::setRegionId(const std::string &regionI
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string DescribeCloudAssistantStatusRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void DescribeCloudAssistantStatusRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
 long DescribeCloudAssistantStatusRequest::getPageSize() const {
   return pageSize_;
 }
@@ -103,5 +112,14 @@ std::vector<std::string> DescribeCloudAssistantStatusRequest::getInstanceId() co
 
 void DescribeCloudAssistantStatusRequest::setInstanceId(const std::vector<std::string> &instanceId) {
   instanceId_ = instanceId;
+}
+
+int DescribeCloudAssistantStatusRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void DescribeCloudAssistantStatusRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 

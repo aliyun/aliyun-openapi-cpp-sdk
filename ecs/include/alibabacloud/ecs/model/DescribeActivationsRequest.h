@@ -42,6 +42,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	long getPageSize() const;
 	void setPageSize(long pageSize);
 	std::vector<Tag> getTag() const;
@@ -54,6 +56,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getInstanceName() const;
 	void setInstanceName(const std::string &instanceName);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
 	std::string getActivationId() const;
 	void setActivationId(const std::string &activationId);
 
@@ -62,12 +66,14 @@ private:
 	long pageNumber_;
 	std::string resourceGroupId_;
 	std::string regionId_;
+	std::string nextToken_;
 	long pageSize_;
 	std::vector<Tag> tag_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string instanceName_;
+	int maxResults_;
 	std::string activationId_;
 };
 } // namespace Model

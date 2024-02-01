@@ -63,6 +63,7 @@ namespace AlibabaCloud
 					TargetCapacitySpecification targetCapacitySpecification;
 					std::string autoProvisioningGroupName;
 					std::string excessCapacityTerminationPolicy;
+					std::string resourceGroupId;
 					PayAsYouGoOptions payAsYouGoOptions;
 					SpotOptions spotOptions;
 					std::string launchTemplateId;

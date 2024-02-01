@@ -61,6 +61,15 @@ void DescribeManagedInstancesRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string DescribeManagedInstancesRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void DescribeManagedInstancesRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
 long DescribeManagedInstancesRequest::getPageSize() const {
   return pageSize_;
 }
@@ -135,6 +144,15 @@ std::vector<std::string> DescribeManagedInstancesRequest::getInstanceId() const 
 
 void DescribeManagedInstancesRequest::setInstanceId(const std::vector<std::string> &instanceId) {
   instanceId_ = instanceId;
+}
+
+int DescribeManagedInstancesRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void DescribeManagedInstancesRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
 std::string DescribeManagedInstancesRequest::getInstanceIp() const {

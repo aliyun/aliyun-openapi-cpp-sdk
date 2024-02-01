@@ -78,6 +78,15 @@ void ModifyNetworkInterfaceAttributeRequest::setNetworkInterfaceName(const std::
   setParameter(std::string("NetworkInterfaceName"), networkInterfaceName);
 }
 
+int ModifyNetworkInterfaceAttributeRequest::getTxQueueSize() const {
+  return txQueueSize_;
+}
+
+void ModifyNetworkInterfaceAttributeRequest::setTxQueueSize(int txQueueSize) {
+  txQueueSize_ = txQueueSize;
+  setParameter(std::string("TxQueueSize"), std::to_string(txQueueSize));
+}
+
 bool ModifyNetworkInterfaceAttributeRequest::getDeleteOnRelease() const {
   return deleteOnRelease_;
 }
@@ -103,6 +112,15 @@ std::string ModifyNetworkInterfaceAttributeRequest::getOwnerAccount() const {
 void ModifyNetworkInterfaceAttributeRequest::setOwnerAccount(const std::string &ownerAccount) {
   ownerAccount_ = ownerAccount;
   setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+int ModifyNetworkInterfaceAttributeRequest::getRxQueueSize() const {
+  return rxQueueSize_;
+}
+
+void ModifyNetworkInterfaceAttributeRequest::setRxQueueSize(int rxQueueSize) {
+  rxQueueSize_ = rxQueueSize;
+  setParameter(std::string("RxQueueSize"), std::to_string(rxQueueSize));
 }
 
 long ModifyNetworkInterfaceAttributeRequest::getOwnerId() const {

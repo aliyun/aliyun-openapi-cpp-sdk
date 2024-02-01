@@ -69,6 +69,8 @@ void ListPluginStatusResult::parse(const std::string &payload)
 		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
 }
 
@@ -85,6 +87,11 @@ long ListPluginStatusResult::getTotalCount()const
 long ListPluginStatusResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+std::string ListPluginStatusResult::getNextToken()const
+{
+	return nextToken_;
 }
 
 long ListPluginStatusResult::getPageNumber()const

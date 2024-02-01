@@ -500,6 +500,15 @@ void RunInstancesRequest::setSpotPriceLimit(float spotPriceLimit) {
   setParameter(std::string("SpotPriceLimit"), std::to_string(spotPriceLimit));
 }
 
+std::string RunInstancesRequest::getCpuOptionsTopologyType() const {
+  return cpuOptionsTopologyType_;
+}
+
+void RunInstancesRequest::setCpuOptionsTopologyType(const std::string &cpuOptionsTopologyType) {
+  cpuOptionsTopologyType_ = cpuOptionsTopologyType;
+  setParameter(std::string("CpuOptions.TopologyType"), cpuOptionsTopologyType);
+}
+
 int RunInstancesRequest::getStorageSetPartitionNumber() const {
   return storageSetPartitionNumber_;
 }
@@ -750,6 +759,8 @@ void RunInstancesRequest::setNetworkInterface(const std::vector<RunInstancesRequ
     setParameter(networkInterfaceObjStr + ".NetworkCardIndex", std::to_string(networkInterfaceObj.networkCardIndex));
     setParameter(networkInterfaceObjStr + ".DeleteOnRelease", networkInterfaceObj.deleteOnRelease ? "true" : "false");
     setParameter(networkInterfaceObjStr + ".NetworkInterfaceId", networkInterfaceObj.networkInterfaceId);
+    setParameter(networkInterfaceObjStr + ".RxQueueSize", std::to_string(networkInterfaceObj.rxQueueSize));
+    setParameter(networkInterfaceObjStr + ".TxQueueSize", std::to_string(networkInterfaceObj.txQueueSize));
   }
 }
 

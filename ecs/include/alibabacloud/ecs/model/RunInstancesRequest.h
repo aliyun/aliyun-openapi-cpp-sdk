@@ -70,6 +70,8 @@ public:
 		int networkCardIndex;
 		bool deleteOnRelease;
 		std::string networkInterfaceId;
+		int rxQueueSize;
+		int txQueueSize;
 	};
 	struct DataDisk {
 		std::string performanceLevel;
@@ -192,6 +194,8 @@ public:
 	void setKeyPairName(const std::string &keyPairName);
 	float getSpotPriceLimit() const;
 	void setSpotPriceLimit(float spotPriceLimit);
+	std::string getCpuOptionsTopologyType() const;
+	void setCpuOptionsTopologyType(const std::string &cpuOptionsTopologyType);
 	int getStorageSetPartitionNumber() const;
 	void setStorageSetPartitionNumber(int storageSetPartitionNumber);
 	std::vector<Tag> getTag() const;
@@ -323,6 +327,7 @@ private:
 	std::string isp_;
 	std::string keyPairName_;
 	float spotPriceLimit_;
+	std::string cpuOptionsTopologyType_;
 	int storageSetPartitionNumber_;
 	std::vector<Tag> tag_;
 	std::string privatePoolOptionsId_;

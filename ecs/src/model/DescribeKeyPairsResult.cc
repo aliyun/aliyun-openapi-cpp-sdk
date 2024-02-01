@@ -51,6 +51,8 @@ void DescribeKeyPairsResult::parse(const std::string &payload)
 			keyPairsObject.keyPairFingerPrint = valueKeyPairsKeyPair["KeyPairFingerPrint"].asString();
 		if(!valueKeyPairsKeyPair["ResourceGroupId"].isNull())
 			keyPairsObject.resourceGroupId = valueKeyPairsKeyPair["ResourceGroupId"].asString();
+		if(!valueKeyPairsKeyPair["PublicKey"].isNull())
+			keyPairsObject.publicKey = valueKeyPairsKeyPair["PublicKey"].asString();
 		auto allTagsNode = valueKeyPairsKeyPair["Tags"]["Tag"];
 		for (auto valueKeyPairsKeyPairTagsTag : allTagsNode)
 		{

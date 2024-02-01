@@ -28,6 +28,9 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT ModifyPrepayInstanceSpecRequest : public RpcServiceRequest {
 public:
+	struct PromotionOptions {
+		std::string couponNo;
+	};
 	struct Disk {
 		std::string performanceLevel;
 		std::string diskId;
@@ -67,6 +70,8 @@ public:
 	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	PromotionOptions getPromotionOptions() const;
+	void setPromotionOptions(const PromotionOptions &promotionOptions);
 	std::vector<Disk> getDisk() const;
 	void setDisk(const std::vector<Disk> &disk);
 	std::string getInstanceId() const;
@@ -89,6 +94,7 @@ private:
 	std::string ownerAccount_;
 	std::string endTime_;
 	long ownerId_;
+	PromotionOptions promotionOptions_;
 	std::vector<Disk> disk_;
 	std::string instanceId_;
 };

@@ -42,6 +42,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	long getPageSize() const;
 	void setPageSize(long pageSize);
 	std::vector<Tag> getTag() const;
@@ -60,12 +62,15 @@ public:
 	void setInvocationStatus(const std::string &invocationStatus);
 	std::string getName() const;
 	void setName(const std::string &name);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
 
 private:
 	long resourceOwnerId_;
 	long pageNumber_;
 	std::string resourceGroupId_;
 	std::string regionId_;
+	std::string nextToken_;
 	long pageSize_;
 	std::vector<Tag> tag_;
 	std::string invokeId_;
@@ -75,6 +80,7 @@ private:
 	std::string instanceId_;
 	std::string invocationStatus_;
 	std::string name_;
+	int maxResults_;
 };
 } // namespace Model
 } // namespace Ecs

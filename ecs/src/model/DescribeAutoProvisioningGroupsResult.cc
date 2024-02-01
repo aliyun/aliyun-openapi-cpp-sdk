@@ -73,6 +73,8 @@ void DescribeAutoProvisioningGroupsResult::parse(const std::string &payload)
 			autoProvisioningGroupsObject.autoProvisioningGroupId = valueAutoProvisioningGroupsAutoProvisioningGroup["AutoProvisioningGroupId"].asString();
 		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["ExcessCapacityTerminationPolicy"].isNull())
 			autoProvisioningGroupsObject.excessCapacityTerminationPolicy = valueAutoProvisioningGroupsAutoProvisioningGroup["ExcessCapacityTerminationPolicy"].asString();
+		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["ResourceGroupId"].isNull())
+			autoProvisioningGroupsObject.resourceGroupId = valueAutoProvisioningGroupsAutoProvisioningGroup["ResourceGroupId"].asString();
 		auto allLaunchTemplateConfigsNode = valueAutoProvisioningGroupsAutoProvisioningGroup["LaunchTemplateConfigs"]["LaunchTemplateConfig"];
 		for (auto valueAutoProvisioningGroupsAutoProvisioningGroupLaunchTemplateConfigsLaunchTemplateConfig : allLaunchTemplateConfigsNode)
 		{

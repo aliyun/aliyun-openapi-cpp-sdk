@@ -83,6 +83,8 @@ void DescribeActivationsResult::parse(const std::string &payload)
 		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
 }
 
@@ -94,6 +96,11 @@ long DescribeActivationsResult::getTotalCount()const
 long DescribeActivationsResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+std::string DescribeActivationsResult::getNextToken()const
+{
+	return nextToken_;
 }
 
 long DescribeActivationsResult::getPageNumber()const

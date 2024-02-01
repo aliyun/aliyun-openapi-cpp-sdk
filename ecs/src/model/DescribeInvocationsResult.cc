@@ -133,6 +133,8 @@ void DescribeInvocationsResult::parse(const std::string &payload)
 		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
 }
 
@@ -144,6 +146,11 @@ long DescribeInvocationsResult::getTotalCount()const
 long DescribeInvocationsResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+std::string DescribeInvocationsResult::getNextToken()const
+{
+	return nextToken_;
 }
 
 std::vector<DescribeInvocationsResult::Invocation> DescribeInvocationsResult::getInvocations()const

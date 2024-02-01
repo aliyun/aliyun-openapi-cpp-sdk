@@ -115,6 +115,15 @@ void ModifyInstanceNetworkSpecRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+ModifyInstanceNetworkSpecRequest::PromotionOptions ModifyInstanceNetworkSpecRequest::getPromotionOptions() const {
+  return promotionOptions_;
+}
+
+void ModifyInstanceNetworkSpecRequest::setPromotionOptions(const ModifyInstanceNetworkSpecRequest::PromotionOptions &promotionOptions) {
+  promotionOptions_ = promotionOptions;
+  setParameter(std::string("PromotionOptions") + ".CouponNo", promotionOptions.couponNo);
+}
+
 std::string ModifyInstanceNetworkSpecRequest::getInstanceId() const {
   return instanceId_;
 }

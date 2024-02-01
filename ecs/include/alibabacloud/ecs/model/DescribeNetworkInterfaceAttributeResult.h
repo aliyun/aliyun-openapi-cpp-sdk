@@ -116,6 +116,7 @@ namespace AlibabaCloud
 				std::string getMacAddress()const;
 				std::vector<std::string> getSecurityGroupIds()const;
 				long getServiceID()const;
+				std::string getTcpOptionAddressEnabled()const;
 				std::string getType()const;
 				int getQueuePairNumber()const;
 				int getQueueNumber()const;
@@ -150,6 +151,7 @@ namespace AlibabaCloud
 				std::string macAddress_;
 				std::vector<std::string> securityGroupIds_;
 				long serviceID_;
+				std::string tcpOptionAddressEnabled_;
 				std::string type_;
 				int queuePairNumber_;
 				int queueNumber_;

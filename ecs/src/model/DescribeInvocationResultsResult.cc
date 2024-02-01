@@ -46,6 +46,8 @@ void DescribeInvocationResultsResult::parse(const std::string &payload)
 		invocation_.pageNumber = std::stol(invocationNode["PageNumber"].asString());
 	if(!invocationNode["TotalCount"].isNull())
 		invocation_.totalCount = std::stol(invocationNode["TotalCount"].asString());
+	if(!invocationNode["NextToken"].isNull())
+		invocation_.nextToken = invocationNode["NextToken"].asString();
 	auto allInvocationResultsNode = invocationNode["InvocationResults"]["InvocationResult"];
 	for (auto invocationNodeInvocationResultsInvocationResult : allInvocationResultsNode)
 	{

@@ -130,6 +130,20 @@ void InvokeCommandRequest::setWindowsPasswordName(const std::string &windowsPass
   setParameter(std::string("WindowsPasswordName"), windowsPasswordName);
 }
 
+std::vector<InvokeCommandRequest::ResourceTag> InvokeCommandRequest::getResourceTag() const {
+  return resourceTag_;
+}
+
+void InvokeCommandRequest::setResourceTag(const std::vector<InvokeCommandRequest::ResourceTag> &resourceTag) {
+  resourceTag_ = resourceTag;
+  for(int dep1 = 0; dep1 != resourceTag.size(); dep1++) {
+  auto resourceTagObj = resourceTag.at(dep1);
+  std::string resourceTagObjStr = std::string("ResourceTag") + "." + std::to_string(dep1 + 1);
+    setParameter(resourceTagObjStr + ".Key", resourceTagObj.key);
+    setParameter(resourceTagObjStr + ".Value", resourceTagObj.value);
+  }
+}
+
 std::vector<InvokeCommandRequest::Tag> InvokeCommandRequest::getTag() const {
   return tag_;
 }

@@ -137,6 +137,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.instanceTypeFamily = valueInstancesInstance["InstanceTypeFamily"].asString();
 		if(!valueInstancesInstance["OSType"].isNull())
 			instancesObject.oSType = valueInstancesInstance["OSType"].asString();
+		if(!valueInstancesInstance["SpotInterruptionBehavior"].isNull())
+			instancesObject.spotInterruptionBehavior = valueInstancesInstance["SpotInterruptionBehavior"].asString();
 		auto allNetworkInterfacesNode = valueInstancesInstance["NetworkInterfaces"]["NetworkInterface"];
 		for (auto valueInstancesInstanceNetworkInterfacesNetworkInterface : allNetworkInterfacesNode)
 		{
@@ -253,6 +255,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.cpuOptions.coreCount = std::stoi(cpuOptionsNode["CoreCount"].asString());
 		if(!cpuOptionsNode["ThreadsPerCore"].isNull())
 			instancesObject.cpuOptions.threadsPerCore = std::stoi(cpuOptionsNode["ThreadsPerCore"].asString());
+		if(!cpuOptionsNode["TopologyType"].isNull())
+			instancesObject.cpuOptions.topologyType = cpuOptionsNode["TopologyType"].asString();
 		auto metadataOptionsNode = value["MetadataOptions"];
 		if(!metadataOptionsNode["HttpEndpoint"].isNull())
 			instancesObject.metadataOptions.httpEndpoint = metadataOptionsNode["HttpEndpoint"].asString();

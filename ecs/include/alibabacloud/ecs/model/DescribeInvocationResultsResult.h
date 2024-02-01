@@ -63,6 +63,7 @@ namespace AlibabaCloud
 					std::vector<InvocationResult> invocationResults;
 					long totalCount;
 					long pageSize;
+					std::string nextToken;
 					long pageNumber;
 				};
 

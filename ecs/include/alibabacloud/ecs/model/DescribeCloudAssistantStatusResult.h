@@ -51,6 +51,7 @@ namespace AlibabaCloud
 				~DescribeCloudAssistantStatusResult();
 				long getTotalCount()const;
 				long getPageSize()const;
+				std::string getNextToken()const;
 				std::vector<InstanceCloudAssistantStatus> getInstanceCloudAssistantStatusSet()const;
 				long getPageNumber()const;
 
@@ -59,6 +60,7 @@ namespace AlibabaCloud
 			private:
 				long totalCount_;
 				long pageSize_;
+				std::string nextToken_;
 				std::vector<InstanceCloudAssistantStatus> instanceCloudAssistantStatusSet_;
 				long pageNumber_;
 

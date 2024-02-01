@@ -73,6 +73,7 @@ namespace AlibabaCloud
 				~DescribeCommandsResult();
 				long getTotalCount()const;
 				long getPageSize()const;
+				std::string getNextToken()const;
 				long getPageNumber()const;
 				std::vector<Command> getCommands()const;
 
@@ -81,6 +82,7 @@ namespace AlibabaCloud
 			private:
 				long totalCount_;
 				long pageSize_;
+				std::string nextToken_;
 				long pageNumber_;
 				std::vector<Command> commands_;
 

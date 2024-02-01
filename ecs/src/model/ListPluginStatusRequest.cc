@@ -52,6 +52,15 @@ void ListPluginStatusRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string ListPluginStatusRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void ListPluginStatusRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
 long ListPluginStatusRequest::getPageSize() const {
   return pageSize_;
 }
@@ -103,5 +112,14 @@ std::string ListPluginStatusRequest::getName() const {
 void ListPluginStatusRequest::setName(const std::string &name) {
   name_ = name;
   setParameter(std::string("Name"), name);
+}
+
+int ListPluginStatusRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void ListPluginStatusRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 

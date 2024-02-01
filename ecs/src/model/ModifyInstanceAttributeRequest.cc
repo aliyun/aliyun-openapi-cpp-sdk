@@ -97,6 +97,15 @@ void ModifyInstanceAttributeRequest::setHostName(const std::string &hostName) {
   setParameter(std::string("HostName"), hostName);
 }
 
+std::string ModifyInstanceAttributeRequest::getCpuOptionsTopologyType() const {
+  return cpuOptionsTopologyType_;
+}
+
+void ModifyInstanceAttributeRequest::setCpuOptionsTopologyType(const std::string &cpuOptionsTopologyType) {
+  cpuOptionsTopologyType_ = cpuOptionsTopologyType;
+  setParameter(std::string("CpuOptions.TopologyType"), cpuOptionsTopologyType);
+}
+
 bool ModifyInstanceAttributeRequest::getEnableJumboFrame() const {
   return enableJumboFrame_;
 }

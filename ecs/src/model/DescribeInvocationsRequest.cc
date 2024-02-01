@@ -88,6 +88,15 @@ void DescribeInvocationsRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string DescribeInvocationsRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void DescribeInvocationsRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
 std::string DescribeInvocationsRequest::getContentEncoding() const {
   return contentEncoding_;
 }
@@ -199,5 +208,14 @@ std::string DescribeInvocationsRequest::getInstanceId() const {
 void DescribeInvocationsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
+}
+
+int DescribeInvocationsRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void DescribeInvocationsRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 

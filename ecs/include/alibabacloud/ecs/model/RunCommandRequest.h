@@ -32,6 +32,10 @@ public:
 		std::string key;
 		std::string value;
 	};
+	struct ResourceTag {
+		std::string key;
+		std::string value;
+	};
 	RunCommandRequest();
 	~RunCommandRequest();
 	long getResourceOwnerId() const;
@@ -78,6 +82,8 @@ public:
 	void setContentEncoding(const std::string &contentEncoding);
 	std::string getWindowsPasswordName() const;
 	void setWindowsPasswordName(const std::string &windowsPasswordName);
+	std::vector<ResourceTag> getResourceTag() const;
+	void setResourceTag(const std::vector<ResourceTag> &resourceTag);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -110,6 +116,7 @@ private:
 	std::string regionId_;
 	std::string contentEncoding_;
 	std::string windowsPasswordName_;
+	std::vector<ResourceTag> resourceTag_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	bool enableParameter_;

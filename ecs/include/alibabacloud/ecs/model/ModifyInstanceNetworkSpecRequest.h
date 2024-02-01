@@ -28,6 +28,9 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT ModifyInstanceNetworkSpecRequest : public RpcServiceRequest {
 public:
+	struct PromotionOptions {
+		std::string couponNo;
+	};
 	ModifyInstanceNetworkSpecRequest();
 	~ModifyInstanceNetworkSpecRequest();
 	long getResourceOwnerId() const;
@@ -50,6 +53,8 @@ public:
 	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	PromotionOptions getPromotionOptions() const;
+	void setPromotionOptions(const PromotionOptions &promotionOptions);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getNetworkChargeType() const;
@@ -70,6 +75,7 @@ private:
 	std::string ownerAccount_;
 	std::string endTime_;
 	long ownerId_;
+	PromotionOptions promotionOptions_;
 	std::string instanceId_;
 	std::string networkChargeType_;
 	int internetMaxBandwidthIn_;

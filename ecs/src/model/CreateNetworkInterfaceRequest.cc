@@ -119,6 +119,15 @@ void CreateNetworkInterfaceRequest::setIpv6AddressCount(int ipv6AddressCount) {
   setParameter(std::string("Ipv6AddressCount"), std::to_string(ipv6AddressCount));
 }
 
+int CreateNetworkInterfaceRequest::getRxQueueSize() const {
+  return rxQueueSize_;
+}
+
+void CreateNetworkInterfaceRequest::setRxQueueSize(int rxQueueSize) {
+  rxQueueSize_ = rxQueueSize;
+  setParameter(std::string("RxQueueSize"), std::to_string(rxQueueSize));
+}
+
 long CreateNetworkInterfaceRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -213,6 +222,15 @@ std::string CreateNetworkInterfaceRequest::getInstanceType() const {
 void CreateNetworkInterfaceRequest::setInstanceType(const std::string &instanceType) {
   instanceType_ = instanceType;
   setParameter(std::string("InstanceType"), instanceType);
+}
+
+int CreateNetworkInterfaceRequest::getTxQueueSize() const {
+  return txQueueSize_;
+}
+
+void CreateNetworkInterfaceRequest::setTxQueueSize(int txQueueSize) {
+  txQueueSize_ = txQueueSize;
+  setParameter(std::string("TxQueueSize"), std::to_string(txQueueSize));
 }
 
 bool CreateNetworkInterfaceRequest::getDeleteOnRelease() const {

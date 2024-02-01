@@ -42,12 +42,16 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getNetworkInterfaceName() const;
 	void setNetworkInterfaceName(const std::string &networkInterfaceName);
+	int getTxQueueSize() const;
+	void setTxQueueSize(int txQueueSize);
 	bool getDeleteOnRelease() const;
 	void setDeleteOnRelease(bool deleteOnRelease);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	int getRxQueueSize() const;
+	void setRxQueueSize(int rxQueueSize);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getNetworkInterfaceId() const;
@@ -60,9 +64,11 @@ private:
 	std::string description_;
 	std::string regionId_;
 	std::string networkInterfaceName_;
+	int txQueueSize_;
 	bool deleteOnRelease_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
+	int rxQueueSize_;
 	long ownerId_;
 	std::string networkInterfaceId_;
 };

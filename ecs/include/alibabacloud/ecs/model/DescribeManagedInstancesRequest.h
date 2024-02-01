@@ -42,6 +42,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	long getPageSize() const;
 	void setPageSize(long pageSize);
 	std::vector<Tag> getTag() const;
@@ -58,6 +60,8 @@ public:
 	void setInstanceName(const std::string &instanceName);
 	std::vector<std::string> getInstanceId() const;
 	void setInstanceId(const std::vector<std::string> &instanceId);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
 	std::string getInstanceIp() const;
 	void setInstanceIp(const std::string &instanceIp);
 	std::string getActivationId() const;
@@ -68,6 +72,7 @@ private:
 	long pageNumber_;
 	std::string resourceGroupId_;
 	std::string regionId_;
+	std::string nextToken_;
 	long pageSize_;
 	std::vector<Tag> tag_;
 	std::string resourceOwnerAccount_;
@@ -76,6 +81,7 @@ private:
 	long ownerId_;
 	std::string instanceName_;
 	std::vector<std::string> instanceId_;
+	int maxResults_;
 	std::string instanceIp_;
 	std::string activationId_;
 };

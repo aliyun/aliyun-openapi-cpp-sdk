@@ -43,6 +43,15 @@ void DescribeAutoProvisioningGroupsRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeAutoProvisioningGroupsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeAutoProvisioningGroupsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeAutoProvisioningGroupsRequest::getRegionId() const {
   return regionId_;
 }
