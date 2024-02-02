@@ -339,6 +339,42 @@ PaiFeatureStoreClient::CreateModelFeatureOutcomeCallable PaiFeatureStoreClient::
 	return task->get_future();
 }
 
+PaiFeatureStoreClient::CreateModelFeatureTrainingSetFGTableOutcome PaiFeatureStoreClient::createModelFeatureTrainingSetFGTable(const CreateModelFeatureTrainingSetFGTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateModelFeatureTrainingSetFGTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateModelFeatureTrainingSetFGTableOutcome(CreateModelFeatureTrainingSetFGTableResult(outcome.result()));
+	else
+		return CreateModelFeatureTrainingSetFGTableOutcome(outcome.error());
+}
+
+void PaiFeatureStoreClient::createModelFeatureTrainingSetFGTableAsync(const CreateModelFeatureTrainingSetFGTableRequest& request, const CreateModelFeatureTrainingSetFGTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createModelFeatureTrainingSetFGTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PaiFeatureStoreClient::CreateModelFeatureTrainingSetFGTableOutcomeCallable PaiFeatureStoreClient::createModelFeatureTrainingSetFGTableCallable(const CreateModelFeatureTrainingSetFGTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateModelFeatureTrainingSetFGTableOutcome()>>(
+			[this, request]()
+			{
+			return this->createModelFeatureTrainingSetFGTable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PaiFeatureStoreClient::CreateProjectOutcome PaiFeatureStoreClient::createProject(const CreateProjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -627,6 +663,42 @@ PaiFeatureStoreClient::DeleteProjectOutcomeCallable PaiFeatureStoreClient::delet
 	return task->get_future();
 }
 
+PaiFeatureStoreClient::ExportModelFeatureTrainingSetFGTableOutcome PaiFeatureStoreClient::exportModelFeatureTrainingSetFGTable(const ExportModelFeatureTrainingSetFGTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExportModelFeatureTrainingSetFGTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExportModelFeatureTrainingSetFGTableOutcome(ExportModelFeatureTrainingSetFGTableResult(outcome.result()));
+	else
+		return ExportModelFeatureTrainingSetFGTableOutcome(outcome.error());
+}
+
+void PaiFeatureStoreClient::exportModelFeatureTrainingSetFGTableAsync(const ExportModelFeatureTrainingSetFGTableRequest& request, const ExportModelFeatureTrainingSetFGTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, exportModelFeatureTrainingSetFGTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PaiFeatureStoreClient::ExportModelFeatureTrainingSetFGTableOutcomeCallable PaiFeatureStoreClient::exportModelFeatureTrainingSetFGTableCallable(const ExportModelFeatureTrainingSetFGTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExportModelFeatureTrainingSetFGTableOutcome()>>(
+			[this, request]()
+			{
+			return this->exportModelFeatureTrainingSetFGTable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PaiFeatureStoreClient::ExportModelFeatureTrainingSetTableOutcome PaiFeatureStoreClient::exportModelFeatureTrainingSetTable(const ExportModelFeatureTrainingSetTableRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -909,6 +981,78 @@ PaiFeatureStoreClient::GetModelFeatureOutcomeCallable PaiFeatureStoreClient::get
 			[this, request]()
 			{
 			return this->getModelFeature(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PaiFeatureStoreClient::GetModelFeatureFGFeatureOutcome PaiFeatureStoreClient::getModelFeatureFGFeature(const GetModelFeatureFGFeatureRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetModelFeatureFGFeatureOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetModelFeatureFGFeatureOutcome(GetModelFeatureFGFeatureResult(outcome.result()));
+	else
+		return GetModelFeatureFGFeatureOutcome(outcome.error());
+}
+
+void PaiFeatureStoreClient::getModelFeatureFGFeatureAsync(const GetModelFeatureFGFeatureRequest& request, const GetModelFeatureFGFeatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getModelFeatureFGFeature(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PaiFeatureStoreClient::GetModelFeatureFGFeatureOutcomeCallable PaiFeatureStoreClient::getModelFeatureFGFeatureCallable(const GetModelFeatureFGFeatureRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetModelFeatureFGFeatureOutcome()>>(
+			[this, request]()
+			{
+			return this->getModelFeatureFGFeature(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PaiFeatureStoreClient::GetModelFeatureFGInfoOutcome PaiFeatureStoreClient::getModelFeatureFGInfo(const GetModelFeatureFGInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetModelFeatureFGInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetModelFeatureFGInfoOutcome(GetModelFeatureFGInfoResult(outcome.result()));
+	else
+		return GetModelFeatureFGInfoOutcome(outcome.error());
+}
+
+void PaiFeatureStoreClient::getModelFeatureFGInfoAsync(const GetModelFeatureFGInfoRequest& request, const GetModelFeatureFGInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getModelFeatureFGInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PaiFeatureStoreClient::GetModelFeatureFGInfoOutcomeCallable PaiFeatureStoreClient::getModelFeatureFGInfoCallable(const GetModelFeatureFGInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetModelFeatureFGInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getModelFeatureFGInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1455,6 +1599,42 @@ PaiFeatureStoreClient::ListLabelTablesOutcomeCallable PaiFeatureStoreClient::lis
 	return task->get_future();
 }
 
+PaiFeatureStoreClient::ListModelFeatureAvailableFeaturesOutcome PaiFeatureStoreClient::listModelFeatureAvailableFeatures(const ListModelFeatureAvailableFeaturesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListModelFeatureAvailableFeaturesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListModelFeatureAvailableFeaturesOutcome(ListModelFeatureAvailableFeaturesResult(outcome.result()));
+	else
+		return ListModelFeatureAvailableFeaturesOutcome(outcome.error());
+}
+
+void PaiFeatureStoreClient::listModelFeatureAvailableFeaturesAsync(const ListModelFeatureAvailableFeaturesRequest& request, const ListModelFeatureAvailableFeaturesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listModelFeatureAvailableFeatures(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PaiFeatureStoreClient::ListModelFeatureAvailableFeaturesOutcomeCallable PaiFeatureStoreClient::listModelFeatureAvailableFeaturesCallable(const ListModelFeatureAvailableFeaturesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListModelFeatureAvailableFeaturesOutcome()>>(
+			[this, request]()
+			{
+			return this->listModelFeatureAvailableFeatures(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PaiFeatureStoreClient::ListModelFeaturesOutcome PaiFeatureStoreClient::listModelFeatures(const ListModelFeaturesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1845,6 +2025,78 @@ PaiFeatureStoreClient::UpdateModelFeatureOutcomeCallable PaiFeatureStoreClient::
 			[this, request]()
 			{
 			return this->updateModelFeature(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PaiFeatureStoreClient::UpdateModelFeatureFGFeatureOutcome PaiFeatureStoreClient::updateModelFeatureFGFeature(const UpdateModelFeatureFGFeatureRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateModelFeatureFGFeatureOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateModelFeatureFGFeatureOutcome(UpdateModelFeatureFGFeatureResult(outcome.result()));
+	else
+		return UpdateModelFeatureFGFeatureOutcome(outcome.error());
+}
+
+void PaiFeatureStoreClient::updateModelFeatureFGFeatureAsync(const UpdateModelFeatureFGFeatureRequest& request, const UpdateModelFeatureFGFeatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateModelFeatureFGFeature(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PaiFeatureStoreClient::UpdateModelFeatureFGFeatureOutcomeCallable PaiFeatureStoreClient::updateModelFeatureFGFeatureCallable(const UpdateModelFeatureFGFeatureRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateModelFeatureFGFeatureOutcome()>>(
+			[this, request]()
+			{
+			return this->updateModelFeatureFGFeature(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PaiFeatureStoreClient::UpdateModelFeatureFGInfoOutcome PaiFeatureStoreClient::updateModelFeatureFGInfo(const UpdateModelFeatureFGInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateModelFeatureFGInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateModelFeatureFGInfoOutcome(UpdateModelFeatureFGInfoResult(outcome.result()));
+	else
+		return UpdateModelFeatureFGInfoOutcome(outcome.error());
+}
+
+void PaiFeatureStoreClient::updateModelFeatureFGInfoAsync(const UpdateModelFeatureFGInfoRequest& request, const UpdateModelFeatureFGInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateModelFeatureFGInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PaiFeatureStoreClient::UpdateModelFeatureFGInfoOutcomeCallable PaiFeatureStoreClient::updateModelFeatureFGInfoCallable(const UpdateModelFeatureFGInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateModelFeatureFGInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->updateModelFeatureFGInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

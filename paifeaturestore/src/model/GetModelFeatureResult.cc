@@ -100,6 +100,8 @@ void GetModelFeatureResult::parse(const std::string &payload)
 		trainingSetTable_ = value["TrainingSetTable"].asString();
 	if(!value["TrainingSetFGTable"].isNull())
 		trainingSetFGTable_ = value["TrainingSetFGTable"].asString();
+	if(!value["ExportTrainingSetTableScript"].isNull())
+		exportTrainingSetTableScript_ = value["ExportTrainingSetTableScript"].asString();
 
 }
 
@@ -118,29 +120,9 @@ std::string GetModelFeatureResult::getProjectId()const
 	return projectId_;
 }
 
-std::string GetModelFeatureResult::getLabelTableName()const
-{
-	return labelTableName_;
-}
-
-std::vector<GetModelFeatureResult::FeaturesItem> GetModelFeatureResult::getFeatures()const
-{
-	return features_;
-}
-
 GetModelFeatureResult::Relations GetModelFeatureResult::getRelations()const
 {
 	return relations_;
-}
-
-std::string GetModelFeatureResult::getLabelTableId()const
-{
-	return labelTableId_;
-}
-
-std::string GetModelFeatureResult::getGmtCreateTime()const
-{
-	return gmtCreateTime_;
 }
 
 std::string GetModelFeatureResult::getGmtModifiedTime()const
@@ -161,5 +143,30 @@ std::string GetModelFeatureResult::getName()const
 std::string GetModelFeatureResult::getTrainingSetTable()const
 {
 	return trainingSetTable_;
+}
+
+std::string GetModelFeatureResult::getExportTrainingSetTableScript()const
+{
+	return exportTrainingSetTableScript_;
+}
+
+std::string GetModelFeatureResult::getLabelTableName()const
+{
+	return labelTableName_;
+}
+
+std::vector<GetModelFeatureResult::FeaturesItem> GetModelFeatureResult::getFeatures()const
+{
+	return features_;
+}
+
+std::string GetModelFeatureResult::getLabelTableId()const
+{
+	return labelTableId_;
+}
+
+std::string GetModelFeatureResult::getGmtCreateTime()const
+{
+	return gmtCreateTime_;
 }
 

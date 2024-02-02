@@ -46,6 +46,7 @@ namespace AlibabaCloud
 				std::string getFeatureEntityName()const;
 				std::string getOwner()const;
 				std::string getProjectName()const;
+				std::string getPublishTableScript()const;
 				std::string getConfig()const;
 				std::string getWriteMethod()const;
 				bool getSyncOnlineTable()const;
@@ -71,6 +72,7 @@ namespace AlibabaCloud
 				std::string featureEntityName_;
 				std::string owner_;
 				std::string projectName_;
+				std::string publishTableScript_;
 				std::string config_;
 				std::string writeMethod_;
 				bool syncOnlineTable_;

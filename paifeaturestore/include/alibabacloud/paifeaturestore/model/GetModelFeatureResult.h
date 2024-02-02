@@ -65,15 +65,16 @@ namespace AlibabaCloud
 				std::string getOwner()const;
 				std::string getProjectName()const;
 				std::string getProjectId()const;
-				std::string getLabelTableName()const;
 				Relations getRelations()const;
-				std::vector<FeaturesItem> getFeatures()const;
-				std::string getLabelTableId()const;
-				std::string getGmtCreateTime()const;
 				std::string getGmtModifiedTime()const;
 				std::string getTrainingSetFGTable()const;
 				std::string getName()const;
 				std::string getTrainingSetTable()const;
+				std::string getExportTrainingSetTableScript()const;
+				std::string getLabelTableName()const;
+				std::vector<FeaturesItem> getFeatures()const;
+				std::string getLabelTableId()const;
+				std::string getGmtCreateTime()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -81,15 +82,16 @@ namespace AlibabaCloud
 				std::string owner_;
 				std::string projectName_;
 				std::string projectId_;
-				std::string labelTableName_;
 				Relations relations_;
-				std::vector<FeaturesItem> features_;
-				std::string labelTableId_;
-				std::string gmtCreateTime_;
 				std::string gmtModifiedTime_;
 				std::string trainingSetFGTable_;
 				std::string name_;
 				std::string trainingSetTable_;
+				std::string exportTrainingSetTableScript_;
+				std::string labelTableName_;
+				std::vector<FeaturesItem> features_;
+				std::string labelTableId_;
+				std::string gmtCreateTime_;
 
 			};
 		}

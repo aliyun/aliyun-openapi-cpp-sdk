@@ -51,6 +51,10 @@ void GetDatasourceResult::parse(const std::string &payload)
 		config_ = value["Config"].asString();
 	if(!value["WorkspaceId"].isNull())
 		workspaceId_ = value["WorkspaceId"].asString();
+	if(!value["GmtCreateTime"].isNull())
+		gmtCreateTime_ = value["GmtCreateTime"].asString();
+	if(!value["GmtModifiedTime"].isNull())
+		gmtModifiedTime_ = value["GmtModifiedTime"].asString();
 
 }
 
@@ -77,6 +81,16 @@ std::string GetDatasourceResult::getWorkspaceId()const
 std::string GetDatasourceResult::getUri()const
 {
 	return uri_;
+}
+
+std::string GetDatasourceResult::getGmtCreateTime()const
+{
+	return gmtCreateTime_;
+}
+
+std::string GetDatasourceResult::getGmtModifiedTime()const
+{
+	return gmtModifiedTime_;
 }
 
 std::string GetDatasourceResult::getName()const

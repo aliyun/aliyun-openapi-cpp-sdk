@@ -93,6 +93,8 @@ void GetFeatureViewResult::parse(const std::string &payload)
 		gmtSyncTime_ = value["GmtSyncTime"].asString();
 	if(!value["LastSyncConfig"].isNull())
 		lastSyncConfig_ = value["LastSyncConfig"].asString();
+	if(!value["PublishTableScript"].isNull())
+		publishTableScript_ = value["PublishTableScript"].asString();
 
 }
 
@@ -109,6 +111,11 @@ std::string GetFeatureViewResult::getOwner()const
 std::string GetFeatureViewResult::getProjectName()const
 {
 	return projectName_;
+}
+
+std::string GetFeatureViewResult::getPublishTableScript()const
+{
+	return publishTableScript_;
 }
 
 std::string GetFeatureViewResult::getConfig()const

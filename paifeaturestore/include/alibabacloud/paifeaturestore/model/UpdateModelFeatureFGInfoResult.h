@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PAIFEATURESTORE_MODEL_GETDATASOURCERESULT_H_
-#define ALIBABACLOUD_PAIFEATURESTORE_MODEL_GETDATASOURCERESULT_H_
+#ifndef ALIBABACLOUD_PAIFEATURESTORE_MODEL_UPDATEMODELFEATUREFGINFORESULT_H_
+#define ALIBABACLOUD_PAIFEATURESTORE_MODEL_UPDATEMODELFEATUREFGINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_PAIFEATURESTORE_EXPORT GetDatasourceResult : public ServiceResult
+			class ALIBABACLOUD_PAIFEATURESTORE_EXPORT UpdateModelFeatureFGInfoResult : public ServiceResult
 			{
 			public:
 
 
-				GetDatasourceResult();
-				explicit GetDatasourceResult(const std::string &payload);
-				~GetDatasourceResult();
-				std::string getType()const;
-				std::string getDatasourceId()const;
-				std::string getConfig()const;
-				std::string getWorkspaceId()const;
-				std::string getUri()const;
-				std::string getGmtCreateTime()const;
-				std::string getGmtModifiedTime()const;
-				std::string getName()const;
+				UpdateModelFeatureFGInfoResult();
+				explicit UpdateModelFeatureFGInfoResult(const std::string &payload);
+				~UpdateModelFeatureFGInfoResult();
+				std::string getRequestId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string type_;
-				std::string datasourceId_;
-				std::string config_;
-				std::string workspaceId_;
-				std::string uri_;
-				std::string gmtCreateTime_;
-				std::string gmtModifiedTime_;
-				std::string name_;
+				std::string requestId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_PAIFEATURESTORE_MODEL_GETDATASOURCERESULT_H_
+#endif // !ALIBABACLOUD_PAIFEATURESTORE_MODEL_UPDATEMODELFEATUREFGINFORESULT_H_

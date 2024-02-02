@@ -47,6 +47,8 @@ void ListProjectFeatureViewsResult::parse(const std::string &payload)
 			featureViewsObject.name = valueFeatureViewsFeatureViewsItem["Name"].asString();
 		if(!valueFeatureViewsFeatureViewsItem["FeatureViewId"].isNull())
 			featureViewsObject.featureViewId = valueFeatureViewsFeatureViewsItem["FeatureViewId"].asString();
+		if(!valueFeatureViewsFeatureViewsItem["Type"].isNull())
+			featureViewsObject.type = valueFeatureViewsFeatureViewsItem["Type"].asString();
 		auto allFeaturesNode = valueFeatureViewsFeatureViewsItem["Features"]["FeaturesItem"];
 		for (auto valueFeatureViewsFeatureViewsItemFeaturesFeaturesItem : allFeaturesNode)
 		{
