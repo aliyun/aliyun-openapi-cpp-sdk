@@ -14235,6 +14235,42 @@ IotClient::UnbindSceneRuleFromEdgeInstanceOutcomeCallable IotClient::unbindScene
 	return task->get_future();
 }
 
+IotClient::UnsubscribeTopicOutcome IotClient::unsubscribeTopic(const UnsubscribeTopicRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnsubscribeTopicOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnsubscribeTopicOutcome(UnsubscribeTopicResult(outcome.result()));
+	else
+		return UnsubscribeTopicOutcome(outcome.error());
+}
+
+void IotClient::unsubscribeTopicAsync(const UnsubscribeTopicRequest& request, const UnsubscribeTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unsubscribeTopic(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::UnsubscribeTopicOutcomeCallable IotClient::unsubscribeTopicCallable(const UnsubscribeTopicRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnsubscribeTopicOutcome()>>(
+			[this, request]()
+			{
+			return this->unsubscribeTopic(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::UpdateConsumerGroupOutcome IotClient::updateConsumerGroup(const UpdateConsumerGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

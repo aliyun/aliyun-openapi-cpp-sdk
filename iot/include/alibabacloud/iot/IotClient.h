@@ -810,6 +810,8 @@
 #include "model/UnbindRoleFromEdgeInstanceResult.h"
 #include "model/UnbindSceneRuleFromEdgeInstanceRequest.h"
 #include "model/UnbindSceneRuleFromEdgeInstanceResult.h"
+#include "model/UnsubscribeTopicRequest.h"
+#include "model/UnsubscribeTopicResult.h"
 #include "model/UpdateConsumerGroupRequest.h"
 #include "model/UpdateConsumerGroupResult.h"
 #include "model/UpdateDestinationRequest.h"
@@ -2061,6 +2063,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnbindSceneRuleFromEdgeInstanceResult> UnbindSceneRuleFromEdgeInstanceOutcome;
 			typedef std::future<UnbindSceneRuleFromEdgeInstanceOutcome> UnbindSceneRuleFromEdgeInstanceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::UnbindSceneRuleFromEdgeInstanceRequest&, const UnbindSceneRuleFromEdgeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindSceneRuleFromEdgeInstanceAsyncHandler;
+			typedef Outcome<Error, Model::UnsubscribeTopicResult> UnsubscribeTopicOutcome;
+			typedef std::future<UnsubscribeTopicOutcome> UnsubscribeTopicOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::UnsubscribeTopicRequest&, const UnsubscribeTopicOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnsubscribeTopicAsyncHandler;
 			typedef Outcome<Error, Model::UpdateConsumerGroupResult> UpdateConsumerGroupOutcome;
 			typedef std::future<UpdateConsumerGroupOutcome> UpdateConsumerGroupOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::UpdateConsumerGroupRequest&, const UpdateConsumerGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateConsumerGroupAsyncHandler;
@@ -3338,6 +3343,9 @@ namespace AlibabaCloud
 			UnbindSceneRuleFromEdgeInstanceOutcome unbindSceneRuleFromEdgeInstance(const Model::UnbindSceneRuleFromEdgeInstanceRequest &request)const;
 			void unbindSceneRuleFromEdgeInstanceAsync(const Model::UnbindSceneRuleFromEdgeInstanceRequest& request, const UnbindSceneRuleFromEdgeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnbindSceneRuleFromEdgeInstanceOutcomeCallable unbindSceneRuleFromEdgeInstanceCallable(const Model::UnbindSceneRuleFromEdgeInstanceRequest& request) const;
+			UnsubscribeTopicOutcome unsubscribeTopic(const Model::UnsubscribeTopicRequest &request)const;
+			void unsubscribeTopicAsync(const Model::UnsubscribeTopicRequest& request, const UnsubscribeTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnsubscribeTopicOutcomeCallable unsubscribeTopicCallable(const Model::UnsubscribeTopicRequest& request) const;
 			UpdateConsumerGroupOutcome updateConsumerGroup(const Model::UpdateConsumerGroupRequest &request)const;
 			void updateConsumerGroupAsync(const Model::UpdateConsumerGroupRequest& request, const UpdateConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateConsumerGroupOutcomeCallable updateConsumerGroupCallable(const Model::UpdateConsumerGroupRequest& request) const;

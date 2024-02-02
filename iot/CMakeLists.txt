@@ -809,6 +809,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/UnbindRoleFromEdgeInstanceResult.h
 	include/alibabacloud/iot/model/UnbindSceneRuleFromEdgeInstanceRequest.h
 	include/alibabacloud/iot/model/UnbindSceneRuleFromEdgeInstanceResult.h
+	include/alibabacloud/iot/model/UnsubscribeTopicRequest.h
+	include/alibabacloud/iot/model/UnsubscribeTopicResult.h
 	include/alibabacloud/iot/model/UpdateConsumerGroupRequest.h
 	include/alibabacloud/iot/model/UpdateConsumerGroupResult.h
 	include/alibabacloud/iot/model/UpdateDestinationRequest.h
@@ -1660,6 +1662,8 @@ set(iot_src
 	src/model/UnbindRoleFromEdgeInstanceResult.cc
 	src/model/UnbindSceneRuleFromEdgeInstanceRequest.cc
 	src/model/UnbindSceneRuleFromEdgeInstanceResult.cc
+	src/model/UnsubscribeTopicRequest.cc
+	src/model/UnsubscribeTopicResult.cc
 	src/model/UpdateConsumerGroupRequest.cc
 	src/model/UpdateConsumerGroupResult.cc
 	src/model/UpdateDestinationRequest.cc
