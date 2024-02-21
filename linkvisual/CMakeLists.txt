@@ -65,6 +65,10 @@ set(linkvisual_public_header_model
 	include/alibabacloud/linkvisual/model/CreateRecordPlanResult.h
 	include/alibabacloud/linkvisual/model/CreateRtmpDeviceRequest.h
 	include/alibabacloud/linkvisual/model/CreateRtmpDeviceResult.h
+	include/alibabacloud/linkvisual/model/CreateStreamPushJobRequest.h
+	include/alibabacloud/linkvisual/model/CreateStreamPushJobResult.h
+	include/alibabacloud/linkvisual/model/CreateStreamSnapshotJobRequest.h
+	include/alibabacloud/linkvisual/model/CreateStreamSnapshotJobResult.h
 	include/alibabacloud/linkvisual/model/CreateTimeTemplateRequest.h
 	include/alibabacloud/linkvisual/model/CreateTimeTemplateResult.h
 	include/alibabacloud/linkvisual/model/DeleteEventRecordPlanRequest.h
@@ -81,6 +85,8 @@ set(linkvisual_public_header_model
 	include/alibabacloud/linkvisual/model/DeleteFaceUserGroupAndDeviceGroupRelationResult.h
 	include/alibabacloud/linkvisual/model/DeleteFaceUserPictureRequest.h
 	include/alibabacloud/linkvisual/model/DeleteFaceUserPictureResult.h
+	include/alibabacloud/linkvisual/model/DeleteGbDeviceRequest.h
+	include/alibabacloud/linkvisual/model/DeleteGbDeviceResult.h
 	include/alibabacloud/linkvisual/model/DeleteLocalFileUploadJobRequest.h
 	include/alibabacloud/linkvisual/model/DeleteLocalFileUploadJobResult.h
 	include/alibabacloud/linkvisual/model/DeletePictureRequest.h
@@ -95,10 +101,16 @@ set(linkvisual_public_header_model
 	include/alibabacloud/linkvisual/model/DeleteRtmpDeviceResult.h
 	include/alibabacloud/linkvisual/model/DeleteRtmpKeyRequest.h
 	include/alibabacloud/linkvisual/model/DeleteRtmpKeyResult.h
+	include/alibabacloud/linkvisual/model/DeleteStreamPushJobRequest.h
+	include/alibabacloud/linkvisual/model/DeleteStreamPushJobResult.h
+	include/alibabacloud/linkvisual/model/DeleteStreamSnapshotJobRequest.h
+	include/alibabacloud/linkvisual/model/DeleteStreamSnapshotJobResult.h
 	include/alibabacloud/linkvisual/model/DeleteTimeTemplateRequest.h
 	include/alibabacloud/linkvisual/model/DeleteTimeTemplateResult.h
 	include/alibabacloud/linkvisual/model/DetectUserFaceByUrlRequest.h
 	include/alibabacloud/linkvisual/model/DetectUserFaceByUrlResult.h
+	include/alibabacloud/linkvisual/model/EnableGbSubDeviceRequest.h
+	include/alibabacloud/linkvisual/model/EnableGbSubDeviceResult.h
 	include/alibabacloud/linkvisual/model/GetPictureSearchJobStatusRequest.h
 	include/alibabacloud/linkvisual/model/GetPictureSearchJobStatusResult.h
 	include/alibabacloud/linkvisual/model/PictureSearchPictureRequest.h
@@ -155,6 +167,8 @@ set(linkvisual_public_header_model
 	include/alibabacloud/linkvisual/model/QueryFaceUserGroupAndDeviceGroupRelationResult.h
 	include/alibabacloud/linkvisual/model/QueryFaceUserIdByCustomUserIdRequest.h
 	include/alibabacloud/linkvisual/model/QueryFaceUserIdByCustomUserIdResult.h
+	include/alibabacloud/linkvisual/model/QueryGbSubDeviceListRequest.h
+	include/alibabacloud/linkvisual/model/QueryGbSubDeviceListResult.h
 	include/alibabacloud/linkvisual/model/QueryLiveStreamingRequest.h
 	include/alibabacloud/linkvisual/model/QueryLiveStreamingResult.h
 	include/alibabacloud/linkvisual/model/QueryLocalFileUploadJobRequest.h
@@ -197,6 +211,12 @@ set(linkvisual_public_header_model
 	include/alibabacloud/linkvisual/model/QueryRecordUrlByTimeResult.h
 	include/alibabacloud/linkvisual/model/QueryRtmpKeyRequest.h
 	include/alibabacloud/linkvisual/model/QueryRtmpKeyResult.h
+	include/alibabacloud/linkvisual/model/QueryStreamPushJobRequest.h
+	include/alibabacloud/linkvisual/model/QueryStreamPushJobResult.h
+	include/alibabacloud/linkvisual/model/QueryStreamPushJobListRequest.h
+	include/alibabacloud/linkvisual/model/QueryStreamPushJobListResult.h
+	include/alibabacloud/linkvisual/model/QueryStreamSnapshotJobRequest.h
+	include/alibabacloud/linkvisual/model/QueryStreamSnapshotJobResult.h
 	include/alibabacloud/linkvisual/model/QueryTimeTemplateRequest.h
 	include/alibabacloud/linkvisual/model/QueryTimeTemplateResult.h
 	include/alibabacloud/linkvisual/model/QueryTimeTemplateDetailRequest.h
@@ -205,6 +225,8 @@ set(linkvisual_public_header_model
 	include/alibabacloud/linkvisual/model/QueryVisionDeviceInfoResult.h
 	include/alibabacloud/linkvisual/model/QueryVoiceIntercomRequest.h
 	include/alibabacloud/linkvisual/model/QueryVoiceIntercomResult.h
+	include/alibabacloud/linkvisual/model/RefreshGbSubDeviceListRequest.h
+	include/alibabacloud/linkvisual/model/RefreshGbSubDeviceListResult.h
 	include/alibabacloud/linkvisual/model/RemoveFaceDeviceFromDeviceGroupRequest.h
 	include/alibabacloud/linkvisual/model/RemoveFaceDeviceFromDeviceGroupResult.h
 	include/alibabacloud/linkvisual/model/RemoveFaceUserFromUserGroupRequest.h
@@ -231,6 +253,8 @@ set(linkvisual_public_header_model
 	include/alibabacloud/linkvisual/model/UpdateFaceUserResult.h
 	include/alibabacloud/linkvisual/model/UpdateFaceUserGroupAndDeviceGroupRelationRequest.h
 	include/alibabacloud/linkvisual/model/UpdateFaceUserGroupAndDeviceGroupRelationResult.h
+	include/alibabacloud/linkvisual/model/UpdateGbDeviceRequest.h
+	include/alibabacloud/linkvisual/model/UpdateGbDeviceResult.h
 	include/alibabacloud/linkvisual/model/UpdateInstanceInternetProtocolRequest.h
 	include/alibabacloud/linkvisual/model/UpdateInstanceInternetProtocolResult.h
 	include/alibabacloud/linkvisual/model/UpdatePictureSearchAppRequest.h
@@ -288,6 +312,10 @@ set(linkvisual_src
 	src/model/CreateRecordPlanResult.cc
 	src/model/CreateRtmpDeviceRequest.cc
 	src/model/CreateRtmpDeviceResult.cc
+	src/model/CreateStreamPushJobRequest.cc
+	src/model/CreateStreamPushJobResult.cc
+	src/model/CreateStreamSnapshotJobRequest.cc
+	src/model/CreateStreamSnapshotJobResult.cc
 	src/model/CreateTimeTemplateRequest.cc
 	src/model/CreateTimeTemplateResult.cc
 	src/model/DeleteEventRecordPlanRequest.cc
@@ -304,6 +332,8 @@ set(linkvisual_src
 	src/model/DeleteFaceUserGroupAndDeviceGroupRelationResult.cc
 	src/model/DeleteFaceUserPictureRequest.cc
 	src/model/DeleteFaceUserPictureResult.cc
+	src/model/DeleteGbDeviceRequest.cc
+	src/model/DeleteGbDeviceResult.cc
 	src/model/DeleteLocalFileUploadJobRequest.cc
 	src/model/DeleteLocalFileUploadJobResult.cc
 	src/model/DeletePictureRequest.cc
@@ -318,10 +348,16 @@ set(linkvisual_src
 	src/model/DeleteRtmpDeviceResult.cc
 	src/model/DeleteRtmpKeyRequest.cc
 	src/model/DeleteRtmpKeyResult.cc
+	src/model/DeleteStreamPushJobRequest.cc
+	src/model/DeleteStreamPushJobResult.cc
+	src/model/DeleteStreamSnapshotJobRequest.cc
+	src/model/DeleteStreamSnapshotJobResult.cc
 	src/model/DeleteTimeTemplateRequest.cc
 	src/model/DeleteTimeTemplateResult.cc
 	src/model/DetectUserFaceByUrlRequest.cc
 	src/model/DetectUserFaceByUrlResult.cc
+	src/model/EnableGbSubDeviceRequest.cc
+	src/model/EnableGbSubDeviceResult.cc
 	src/model/GetPictureSearchJobStatusRequest.cc
 	src/model/GetPictureSearchJobStatusResult.cc
 	src/model/PictureSearchPictureRequest.cc
@@ -378,6 +414,8 @@ set(linkvisual_src
 	src/model/QueryFaceUserGroupAndDeviceGroupRelationResult.cc
 	src/model/QueryFaceUserIdByCustomUserIdRequest.cc
 	src/model/QueryFaceUserIdByCustomUserIdResult.cc
+	src/model/QueryGbSubDeviceListRequest.cc
+	src/model/QueryGbSubDeviceListResult.cc
 	src/model/QueryLiveStreamingRequest.cc
 	src/model/QueryLiveStreamingResult.cc
 	src/model/QueryLocalFileUploadJobRequest.cc
@@ -420,6 +458,12 @@ set(linkvisual_src
 	src/model/QueryRecordUrlByTimeResult.cc
 	src/model/QueryRtmpKeyRequest.cc
 	src/model/QueryRtmpKeyResult.cc
+	src/model/QueryStreamPushJobRequest.cc
+	src/model/QueryStreamPushJobResult.cc
+	src/model/QueryStreamPushJobListRequest.cc
+	src/model/QueryStreamPushJobListResult.cc
+	src/model/QueryStreamSnapshotJobRequest.cc
+	src/model/QueryStreamSnapshotJobResult.cc
 	src/model/QueryTimeTemplateRequest.cc
 	src/model/QueryTimeTemplateResult.cc
 	src/model/QueryTimeTemplateDetailRequest.cc
@@ -428,6 +472,8 @@ set(linkvisual_src
 	src/model/QueryVisionDeviceInfoResult.cc
 	src/model/QueryVoiceIntercomRequest.cc
 	src/model/QueryVoiceIntercomResult.cc
+	src/model/RefreshGbSubDeviceListRequest.cc
+	src/model/RefreshGbSubDeviceListResult.cc
 	src/model/RemoveFaceDeviceFromDeviceGroupRequest.cc
 	src/model/RemoveFaceDeviceFromDeviceGroupResult.cc
 	src/model/RemoveFaceUserFromUserGroupRequest.cc
@@ -454,6 +500,8 @@ set(linkvisual_src
 	src/model/UpdateFaceUserResult.cc
 	src/model/UpdateFaceUserGroupAndDeviceGroupRelationRequest.cc
 	src/model/UpdateFaceUserGroupAndDeviceGroupRelationResult.cc
+	src/model/UpdateGbDeviceRequest.cc
+	src/model/UpdateGbDeviceResult.cc
 	src/model/UpdateInstanceInternetProtocolRequest.cc
 	src/model/UpdateInstanceInternetProtocolResult.cc
 	src/model/UpdatePictureSearchAppRequest.cc

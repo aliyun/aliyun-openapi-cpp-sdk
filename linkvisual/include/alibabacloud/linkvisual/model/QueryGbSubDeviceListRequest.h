@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LINKVISUAL_MODEL_CREATEGBDEVICEREQUEST_H_
-#define ALIBABACLOUD_LINKVISUAL_MODEL_CREATEGBDEVICEREQUEST_H_
+#ifndef ALIBABACLOUD_LINKVISUAL_MODEL_QUERYGBSUBDEVICELISTREQUEST_H_
+#define ALIBABACLOUD_LINKVISUAL_MODEL_QUERYGBSUBDEVICELISTREQUEST_H_
 
 #include <alibabacloud/linkvisual/LinkvisualExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,50 +26,38 @@
 namespace AlibabaCloud {
 namespace Linkvisual {
 namespace Model {
-class ALIBABACLOUD_LINKVISUAL_EXPORT CreateGbDeviceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LINKVISUAL_EXPORT QueryGbSubDeviceListRequest : public RpcServiceRequest {
 public:
-	CreateGbDeviceRequest();
-	~CreateGbDeviceRequest();
-	std::string getSubProductKey() const;
-	void setSubProductKey(const std::string &subProductKey);
-	std::string getGbId() const;
-	void setGbId(const std::string &gbId);
-	std::string getDescription() const;
-	void setDescription(const std::string &description);
-	int getDeviceType() const;
-	void setDeviceType(int deviceType);
-	std::string getPassword() const;
-	void setPassword(const std::string &password);
+	QueryGbSubDeviceListRequest();
+	~QueryGbSubDeviceListRequest();
+	std::string getIotId() const;
+	void setIotId(const std::string &iotId);
 	std::string getIotInstanceId() const;
 	void setIotInstanceId(const std::string &iotInstanceId);
-	int getDeviceProtocol() const;
-	void setDeviceProtocol(int deviceProtocol);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	std::string getProductKey() const;
 	void setProductKey(const std::string &productKey);
-	std::string getMediaNetProtocol() const;
-	void setMediaNetProtocol(const std::string &mediaNetProtocol);
 	std::string getApiProduct() const;
 	void setApiProduct(const std::string &apiProduct);
 	std::string getApiRevision() const;
 	void setApiRevision(const std::string &apiRevision);
 	std::string getDeviceName() const;
 	void setDeviceName(const std::string &deviceName);
+	int getPageStart() const;
+	void setPageStart(int pageStart);
 
 private:
-	std::string subProductKey_;
-	std::string gbId_;
-	std::string description_;
-	int deviceType_;
-	std::string password_;
+	std::string iotId_;
 	std::string iotInstanceId_;
-	int deviceProtocol_;
+	int pageSize_;
 	std::string productKey_;
-	std::string mediaNetProtocol_;
 	std::string apiProduct_;
 	std::string apiRevision_;
 	std::string deviceName_;
+	int pageStart_;
 };
 } // namespace Model
 } // namespace Linkvisual
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LINKVISUAL_MODEL_CREATEGBDEVICEREQUEST_H_
+#endif // !ALIBABACLOUD_LINKVISUAL_MODEL_QUERYGBSUBDEVICELISTREQUEST_H_

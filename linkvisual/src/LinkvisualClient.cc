@@ -843,6 +843,78 @@ LinkvisualClient::CreateRtmpDeviceOutcomeCallable LinkvisualClient::createRtmpDe
 	return task->get_future();
 }
 
+LinkvisualClient::CreateStreamPushJobOutcome LinkvisualClient::createStreamPushJob(const CreateStreamPushJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateStreamPushJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateStreamPushJobOutcome(CreateStreamPushJobResult(outcome.result()));
+	else
+		return CreateStreamPushJobOutcome(outcome.error());
+}
+
+void LinkvisualClient::createStreamPushJobAsync(const CreateStreamPushJobRequest& request, const CreateStreamPushJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createStreamPushJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LinkvisualClient::CreateStreamPushJobOutcomeCallable LinkvisualClient::createStreamPushJobCallable(const CreateStreamPushJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateStreamPushJobOutcome()>>(
+			[this, request]()
+			{
+			return this->createStreamPushJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LinkvisualClient::CreateStreamSnapshotJobOutcome LinkvisualClient::createStreamSnapshotJob(const CreateStreamSnapshotJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateStreamSnapshotJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateStreamSnapshotJobOutcome(CreateStreamSnapshotJobResult(outcome.result()));
+	else
+		return CreateStreamSnapshotJobOutcome(outcome.error());
+}
+
+void LinkvisualClient::createStreamSnapshotJobAsync(const CreateStreamSnapshotJobRequest& request, const CreateStreamSnapshotJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createStreamSnapshotJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LinkvisualClient::CreateStreamSnapshotJobOutcomeCallable LinkvisualClient::createStreamSnapshotJobCallable(const CreateStreamSnapshotJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateStreamSnapshotJobOutcome()>>(
+			[this, request]()
+			{
+			return this->createStreamSnapshotJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LinkvisualClient::CreateTimeTemplateOutcome LinkvisualClient::createTimeTemplate(const CreateTimeTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1131,6 +1203,42 @@ LinkvisualClient::DeleteFaceUserPictureOutcomeCallable LinkvisualClient::deleteF
 	return task->get_future();
 }
 
+LinkvisualClient::DeleteGbDeviceOutcome LinkvisualClient::deleteGbDevice(const DeleteGbDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteGbDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteGbDeviceOutcome(DeleteGbDeviceResult(outcome.result()));
+	else
+		return DeleteGbDeviceOutcome(outcome.error());
+}
+
+void LinkvisualClient::deleteGbDeviceAsync(const DeleteGbDeviceRequest& request, const DeleteGbDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteGbDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LinkvisualClient::DeleteGbDeviceOutcomeCallable LinkvisualClient::deleteGbDeviceCallable(const DeleteGbDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteGbDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteGbDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LinkvisualClient::DeleteLocalFileUploadJobOutcome LinkvisualClient::deleteLocalFileUploadJob(const DeleteLocalFileUploadJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1383,6 +1491,78 @@ LinkvisualClient::DeleteRtmpKeyOutcomeCallable LinkvisualClient::deleteRtmpKeyCa
 	return task->get_future();
 }
 
+LinkvisualClient::DeleteStreamPushJobOutcome LinkvisualClient::deleteStreamPushJob(const DeleteStreamPushJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteStreamPushJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteStreamPushJobOutcome(DeleteStreamPushJobResult(outcome.result()));
+	else
+		return DeleteStreamPushJobOutcome(outcome.error());
+}
+
+void LinkvisualClient::deleteStreamPushJobAsync(const DeleteStreamPushJobRequest& request, const DeleteStreamPushJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteStreamPushJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LinkvisualClient::DeleteStreamPushJobOutcomeCallable LinkvisualClient::deleteStreamPushJobCallable(const DeleteStreamPushJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteStreamPushJobOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteStreamPushJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LinkvisualClient::DeleteStreamSnapshotJobOutcome LinkvisualClient::deleteStreamSnapshotJob(const DeleteStreamSnapshotJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteStreamSnapshotJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteStreamSnapshotJobOutcome(DeleteStreamSnapshotJobResult(outcome.result()));
+	else
+		return DeleteStreamSnapshotJobOutcome(outcome.error());
+}
+
+void LinkvisualClient::deleteStreamSnapshotJobAsync(const DeleteStreamSnapshotJobRequest& request, const DeleteStreamSnapshotJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteStreamSnapshotJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LinkvisualClient::DeleteStreamSnapshotJobOutcomeCallable LinkvisualClient::deleteStreamSnapshotJobCallable(const DeleteStreamSnapshotJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteStreamSnapshotJobOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteStreamSnapshotJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LinkvisualClient::DeleteTimeTemplateOutcome LinkvisualClient::deleteTimeTemplate(const DeleteTimeTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1449,6 +1629,42 @@ LinkvisualClient::DetectUserFaceByUrlOutcomeCallable LinkvisualClient::detectUse
 			[this, request]()
 			{
 			return this->detectUserFaceByUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LinkvisualClient::EnableGbSubDeviceOutcome LinkvisualClient::enableGbSubDevice(const EnableGbSubDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableGbSubDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableGbSubDeviceOutcome(EnableGbSubDeviceResult(outcome.result()));
+	else
+		return EnableGbSubDeviceOutcome(outcome.error());
+}
+
+void LinkvisualClient::enableGbSubDeviceAsync(const EnableGbSubDeviceRequest& request, const EnableGbSubDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableGbSubDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LinkvisualClient::EnableGbSubDeviceOutcomeCallable LinkvisualClient::enableGbSubDeviceCallable(const EnableGbSubDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableGbSubDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->enableGbSubDevice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2463,6 +2679,42 @@ LinkvisualClient::QueryFaceUserIdByCustomUserIdOutcomeCallable LinkvisualClient:
 	return task->get_future();
 }
 
+LinkvisualClient::QueryGbSubDeviceListOutcome LinkvisualClient::queryGbSubDeviceList(const QueryGbSubDeviceListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryGbSubDeviceListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryGbSubDeviceListOutcome(QueryGbSubDeviceListResult(outcome.result()));
+	else
+		return QueryGbSubDeviceListOutcome(outcome.error());
+}
+
+void LinkvisualClient::queryGbSubDeviceListAsync(const QueryGbSubDeviceListRequest& request, const QueryGbSubDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryGbSubDeviceList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LinkvisualClient::QueryGbSubDeviceListOutcomeCallable LinkvisualClient::queryGbSubDeviceListCallable(const QueryGbSubDeviceListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryGbSubDeviceListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryGbSubDeviceList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LinkvisualClient::QueryLiveStreamingOutcome LinkvisualClient::queryLiveStreaming(const QueryLiveStreamingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3219,6 +3471,114 @@ LinkvisualClient::QueryRtmpKeyOutcomeCallable LinkvisualClient::queryRtmpKeyCall
 	return task->get_future();
 }
 
+LinkvisualClient::QueryStreamPushJobOutcome LinkvisualClient::queryStreamPushJob(const QueryStreamPushJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryStreamPushJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryStreamPushJobOutcome(QueryStreamPushJobResult(outcome.result()));
+	else
+		return QueryStreamPushJobOutcome(outcome.error());
+}
+
+void LinkvisualClient::queryStreamPushJobAsync(const QueryStreamPushJobRequest& request, const QueryStreamPushJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryStreamPushJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LinkvisualClient::QueryStreamPushJobOutcomeCallable LinkvisualClient::queryStreamPushJobCallable(const QueryStreamPushJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryStreamPushJobOutcome()>>(
+			[this, request]()
+			{
+			return this->queryStreamPushJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LinkvisualClient::QueryStreamPushJobListOutcome LinkvisualClient::queryStreamPushJobList(const QueryStreamPushJobListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryStreamPushJobListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryStreamPushJobListOutcome(QueryStreamPushJobListResult(outcome.result()));
+	else
+		return QueryStreamPushJobListOutcome(outcome.error());
+}
+
+void LinkvisualClient::queryStreamPushJobListAsync(const QueryStreamPushJobListRequest& request, const QueryStreamPushJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryStreamPushJobList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LinkvisualClient::QueryStreamPushJobListOutcomeCallable LinkvisualClient::queryStreamPushJobListCallable(const QueryStreamPushJobListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryStreamPushJobListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryStreamPushJobList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LinkvisualClient::QueryStreamSnapshotJobOutcome LinkvisualClient::queryStreamSnapshotJob(const QueryStreamSnapshotJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryStreamSnapshotJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryStreamSnapshotJobOutcome(QueryStreamSnapshotJobResult(outcome.result()));
+	else
+		return QueryStreamSnapshotJobOutcome(outcome.error());
+}
+
+void LinkvisualClient::queryStreamSnapshotJobAsync(const QueryStreamSnapshotJobRequest& request, const QueryStreamSnapshotJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryStreamSnapshotJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LinkvisualClient::QueryStreamSnapshotJobOutcomeCallable LinkvisualClient::queryStreamSnapshotJobCallable(const QueryStreamSnapshotJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryStreamSnapshotJobOutcome()>>(
+			[this, request]()
+			{
+			return this->queryStreamSnapshotJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LinkvisualClient::QueryTimeTemplateOutcome LinkvisualClient::queryTimeTemplate(const QueryTimeTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3357,6 +3717,42 @@ LinkvisualClient::QueryVoiceIntercomOutcomeCallable LinkvisualClient::queryVoice
 			[this, request]()
 			{
 			return this->queryVoiceIntercom(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LinkvisualClient::RefreshGbSubDeviceListOutcome LinkvisualClient::refreshGbSubDeviceList(const RefreshGbSubDeviceListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefreshGbSubDeviceListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefreshGbSubDeviceListOutcome(RefreshGbSubDeviceListResult(outcome.result()));
+	else
+		return RefreshGbSubDeviceListOutcome(outcome.error());
+}
+
+void LinkvisualClient::refreshGbSubDeviceListAsync(const RefreshGbSubDeviceListRequest& request, const RefreshGbSubDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refreshGbSubDeviceList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LinkvisualClient::RefreshGbSubDeviceListOutcomeCallable LinkvisualClient::refreshGbSubDeviceListCallable(const RefreshGbSubDeviceListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefreshGbSubDeviceListOutcome()>>(
+			[this, request]()
+			{
+			return this->refreshGbSubDeviceList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3825,6 +4221,42 @@ LinkvisualClient::UpdateFaceUserGroupAndDeviceGroupRelationOutcomeCallable Linkv
 			[this, request]()
 			{
 			return this->updateFaceUserGroupAndDeviceGroupRelation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LinkvisualClient::UpdateGbDeviceOutcome LinkvisualClient::updateGbDevice(const UpdateGbDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateGbDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateGbDeviceOutcome(UpdateGbDeviceResult(outcome.result()));
+	else
+		return UpdateGbDeviceOutcome(outcome.error());
+}
+
+void LinkvisualClient::updateGbDeviceAsync(const UpdateGbDeviceRequest& request, const UpdateGbDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateGbDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LinkvisualClient::UpdateGbDeviceOutcomeCallable LinkvisualClient::updateGbDeviceCallable(const UpdateGbDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateGbDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->updateGbDevice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

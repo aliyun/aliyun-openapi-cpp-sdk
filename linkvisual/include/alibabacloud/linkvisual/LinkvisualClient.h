@@ -66,6 +66,10 @@
 #include "model/CreateRecordPlanResult.h"
 #include "model/CreateRtmpDeviceRequest.h"
 #include "model/CreateRtmpDeviceResult.h"
+#include "model/CreateStreamPushJobRequest.h"
+#include "model/CreateStreamPushJobResult.h"
+#include "model/CreateStreamSnapshotJobRequest.h"
+#include "model/CreateStreamSnapshotJobResult.h"
 #include "model/CreateTimeTemplateRequest.h"
 #include "model/CreateTimeTemplateResult.h"
 #include "model/DeleteEventRecordPlanRequest.h"
@@ -82,6 +86,8 @@
 #include "model/DeleteFaceUserGroupAndDeviceGroupRelationResult.h"
 #include "model/DeleteFaceUserPictureRequest.h"
 #include "model/DeleteFaceUserPictureResult.h"
+#include "model/DeleteGbDeviceRequest.h"
+#include "model/DeleteGbDeviceResult.h"
 #include "model/DeleteLocalFileUploadJobRequest.h"
 #include "model/DeleteLocalFileUploadJobResult.h"
 #include "model/DeletePictureRequest.h"
@@ -96,10 +102,16 @@
 #include "model/DeleteRtmpDeviceResult.h"
 #include "model/DeleteRtmpKeyRequest.h"
 #include "model/DeleteRtmpKeyResult.h"
+#include "model/DeleteStreamPushJobRequest.h"
+#include "model/DeleteStreamPushJobResult.h"
+#include "model/DeleteStreamSnapshotJobRequest.h"
+#include "model/DeleteStreamSnapshotJobResult.h"
 #include "model/DeleteTimeTemplateRequest.h"
 #include "model/DeleteTimeTemplateResult.h"
 #include "model/DetectUserFaceByUrlRequest.h"
 #include "model/DetectUserFaceByUrlResult.h"
+#include "model/EnableGbSubDeviceRequest.h"
+#include "model/EnableGbSubDeviceResult.h"
 #include "model/GetPictureSearchJobStatusRequest.h"
 #include "model/GetPictureSearchJobStatusResult.h"
 #include "model/PictureSearchPictureRequest.h"
@@ -156,6 +168,8 @@
 #include "model/QueryFaceUserGroupAndDeviceGroupRelationResult.h"
 #include "model/QueryFaceUserIdByCustomUserIdRequest.h"
 #include "model/QueryFaceUserIdByCustomUserIdResult.h"
+#include "model/QueryGbSubDeviceListRequest.h"
+#include "model/QueryGbSubDeviceListResult.h"
 #include "model/QueryLiveStreamingRequest.h"
 #include "model/QueryLiveStreamingResult.h"
 #include "model/QueryLocalFileUploadJobRequest.h"
@@ -198,6 +212,12 @@
 #include "model/QueryRecordUrlByTimeResult.h"
 #include "model/QueryRtmpKeyRequest.h"
 #include "model/QueryRtmpKeyResult.h"
+#include "model/QueryStreamPushJobRequest.h"
+#include "model/QueryStreamPushJobResult.h"
+#include "model/QueryStreamPushJobListRequest.h"
+#include "model/QueryStreamPushJobListResult.h"
+#include "model/QueryStreamSnapshotJobRequest.h"
+#include "model/QueryStreamSnapshotJobResult.h"
 #include "model/QueryTimeTemplateRequest.h"
 #include "model/QueryTimeTemplateResult.h"
 #include "model/QueryTimeTemplateDetailRequest.h"
@@ -206,6 +226,8 @@
 #include "model/QueryVisionDeviceInfoResult.h"
 #include "model/QueryVoiceIntercomRequest.h"
 #include "model/QueryVoiceIntercomResult.h"
+#include "model/RefreshGbSubDeviceListRequest.h"
+#include "model/RefreshGbSubDeviceListResult.h"
 #include "model/RemoveFaceDeviceFromDeviceGroupRequest.h"
 #include "model/RemoveFaceDeviceFromDeviceGroupResult.h"
 #include "model/RemoveFaceUserFromUserGroupRequest.h"
@@ -232,6 +254,8 @@
 #include "model/UpdateFaceUserResult.h"
 #include "model/UpdateFaceUserGroupAndDeviceGroupRelationRequest.h"
 #include "model/UpdateFaceUserGroupAndDeviceGroupRelationResult.h"
+#include "model/UpdateGbDeviceRequest.h"
+#include "model/UpdateGbDeviceResult.h"
 #include "model/UpdateInstanceInternetProtocolRequest.h"
 #include "model/UpdateInstanceInternetProtocolResult.h"
 #include "model/UpdatePictureSearchAppRequest.h"
@@ -317,6 +341,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateRtmpDeviceResult> CreateRtmpDeviceOutcome;
 			typedef std::future<CreateRtmpDeviceOutcome> CreateRtmpDeviceOutcomeCallable;
 			typedef std::function<void(const LinkvisualClient*, const Model::CreateRtmpDeviceRequest&, const CreateRtmpDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRtmpDeviceAsyncHandler;
+			typedef Outcome<Error, Model::CreateStreamPushJobResult> CreateStreamPushJobOutcome;
+			typedef std::future<CreateStreamPushJobOutcome> CreateStreamPushJobOutcomeCallable;
+			typedef std::function<void(const LinkvisualClient*, const Model::CreateStreamPushJobRequest&, const CreateStreamPushJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateStreamPushJobAsyncHandler;
+			typedef Outcome<Error, Model::CreateStreamSnapshotJobResult> CreateStreamSnapshotJobOutcome;
+			typedef std::future<CreateStreamSnapshotJobOutcome> CreateStreamSnapshotJobOutcomeCallable;
+			typedef std::function<void(const LinkvisualClient*, const Model::CreateStreamSnapshotJobRequest&, const CreateStreamSnapshotJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateStreamSnapshotJobAsyncHandler;
 			typedef Outcome<Error, Model::CreateTimeTemplateResult> CreateTimeTemplateOutcome;
 			typedef std::future<CreateTimeTemplateOutcome> CreateTimeTemplateOutcomeCallable;
 			typedef std::function<void(const LinkvisualClient*, const Model::CreateTimeTemplateRequest&, const CreateTimeTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTimeTemplateAsyncHandler;
@@ -341,6 +371,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteFaceUserPictureResult> DeleteFaceUserPictureOutcome;
 			typedef std::future<DeleteFaceUserPictureOutcome> DeleteFaceUserPictureOutcomeCallable;
 			typedef std::function<void(const LinkvisualClient*, const Model::DeleteFaceUserPictureRequest&, const DeleteFaceUserPictureOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFaceUserPictureAsyncHandler;
+			typedef Outcome<Error, Model::DeleteGbDeviceResult> DeleteGbDeviceOutcome;
+			typedef std::future<DeleteGbDeviceOutcome> DeleteGbDeviceOutcomeCallable;
+			typedef std::function<void(const LinkvisualClient*, const Model::DeleteGbDeviceRequest&, const DeleteGbDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGbDeviceAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLocalFileUploadJobResult> DeleteLocalFileUploadJobOutcome;
 			typedef std::future<DeleteLocalFileUploadJobOutcome> DeleteLocalFileUploadJobOutcomeCallable;
 			typedef std::function<void(const LinkvisualClient*, const Model::DeleteLocalFileUploadJobRequest&, const DeleteLocalFileUploadJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLocalFileUploadJobAsyncHandler;
@@ -362,12 +395,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRtmpKeyResult> DeleteRtmpKeyOutcome;
 			typedef std::future<DeleteRtmpKeyOutcome> DeleteRtmpKeyOutcomeCallable;
 			typedef std::function<void(const LinkvisualClient*, const Model::DeleteRtmpKeyRequest&, const DeleteRtmpKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRtmpKeyAsyncHandler;
+			typedef Outcome<Error, Model::DeleteStreamPushJobResult> DeleteStreamPushJobOutcome;
+			typedef std::future<DeleteStreamPushJobOutcome> DeleteStreamPushJobOutcomeCallable;
+			typedef std::function<void(const LinkvisualClient*, const Model::DeleteStreamPushJobRequest&, const DeleteStreamPushJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStreamPushJobAsyncHandler;
+			typedef Outcome<Error, Model::DeleteStreamSnapshotJobResult> DeleteStreamSnapshotJobOutcome;
+			typedef std::future<DeleteStreamSnapshotJobOutcome> DeleteStreamSnapshotJobOutcomeCallable;
+			typedef std::function<void(const LinkvisualClient*, const Model::DeleteStreamSnapshotJobRequest&, const DeleteStreamSnapshotJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStreamSnapshotJobAsyncHandler;
 			typedef Outcome<Error, Model::DeleteTimeTemplateResult> DeleteTimeTemplateOutcome;
 			typedef std::future<DeleteTimeTemplateOutcome> DeleteTimeTemplateOutcomeCallable;
 			typedef std::function<void(const LinkvisualClient*, const Model::DeleteTimeTemplateRequest&, const DeleteTimeTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTimeTemplateAsyncHandler;
 			typedef Outcome<Error, Model::DetectUserFaceByUrlResult> DetectUserFaceByUrlOutcome;
 			typedef std::future<DetectUserFaceByUrlOutcome> DetectUserFaceByUrlOutcomeCallable;
 			typedef std::function<void(const LinkvisualClient*, const Model::DetectUserFaceByUrlRequest&, const DetectUserFaceByUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectUserFaceByUrlAsyncHandler;
+			typedef Outcome<Error, Model::EnableGbSubDeviceResult> EnableGbSubDeviceOutcome;
+			typedef std::future<EnableGbSubDeviceOutcome> EnableGbSubDeviceOutcomeCallable;
+			typedef std::function<void(const LinkvisualClient*, const Model::EnableGbSubDeviceRequest&, const EnableGbSubDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableGbSubDeviceAsyncHandler;
 			typedef Outcome<Error, Model::GetPictureSearchJobStatusResult> GetPictureSearchJobStatusOutcome;
 			typedef std::future<GetPictureSearchJobStatusOutcome> GetPictureSearchJobStatusOutcomeCallable;
 			typedef std::function<void(const LinkvisualClient*, const Model::GetPictureSearchJobStatusRequest&, const GetPictureSearchJobStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPictureSearchJobStatusAsyncHandler;
@@ -452,6 +494,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryFaceUserIdByCustomUserIdResult> QueryFaceUserIdByCustomUserIdOutcome;
 			typedef std::future<QueryFaceUserIdByCustomUserIdOutcome> QueryFaceUserIdByCustomUserIdOutcomeCallable;
 			typedef std::function<void(const LinkvisualClient*, const Model::QueryFaceUserIdByCustomUserIdRequest&, const QueryFaceUserIdByCustomUserIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryFaceUserIdByCustomUserIdAsyncHandler;
+			typedef Outcome<Error, Model::QueryGbSubDeviceListResult> QueryGbSubDeviceListOutcome;
+			typedef std::future<QueryGbSubDeviceListOutcome> QueryGbSubDeviceListOutcomeCallable;
+			typedef std::function<void(const LinkvisualClient*, const Model::QueryGbSubDeviceListRequest&, const QueryGbSubDeviceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryGbSubDeviceListAsyncHandler;
 			typedef Outcome<Error, Model::QueryLiveStreamingResult> QueryLiveStreamingOutcome;
 			typedef std::future<QueryLiveStreamingOutcome> QueryLiveStreamingOutcomeCallable;
 			typedef std::function<void(const LinkvisualClient*, const Model::QueryLiveStreamingRequest&, const QueryLiveStreamingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryLiveStreamingAsyncHandler;
@@ -515,6 +560,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryRtmpKeyResult> QueryRtmpKeyOutcome;
 			typedef std::future<QueryRtmpKeyOutcome> QueryRtmpKeyOutcomeCallable;
 			typedef std::function<void(const LinkvisualClient*, const Model::QueryRtmpKeyRequest&, const QueryRtmpKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryRtmpKeyAsyncHandler;
+			typedef Outcome<Error, Model::QueryStreamPushJobResult> QueryStreamPushJobOutcome;
+			typedef std::future<QueryStreamPushJobOutcome> QueryStreamPushJobOutcomeCallable;
+			typedef std::function<void(const LinkvisualClient*, const Model::QueryStreamPushJobRequest&, const QueryStreamPushJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryStreamPushJobAsyncHandler;
+			typedef Outcome<Error, Model::QueryStreamPushJobListResult> QueryStreamPushJobListOutcome;
+			typedef std::future<QueryStreamPushJobListOutcome> QueryStreamPushJobListOutcomeCallable;
+			typedef std::function<void(const LinkvisualClient*, const Model::QueryStreamPushJobListRequest&, const QueryStreamPushJobListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryStreamPushJobListAsyncHandler;
+			typedef Outcome<Error, Model::QueryStreamSnapshotJobResult> QueryStreamSnapshotJobOutcome;
+			typedef std::future<QueryStreamSnapshotJobOutcome> QueryStreamSnapshotJobOutcomeCallable;
+			typedef std::function<void(const LinkvisualClient*, const Model::QueryStreamSnapshotJobRequest&, const QueryStreamSnapshotJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryStreamSnapshotJobAsyncHandler;
 			typedef Outcome<Error, Model::QueryTimeTemplateResult> QueryTimeTemplateOutcome;
 			typedef std::future<QueryTimeTemplateOutcome> QueryTimeTemplateOutcomeCallable;
 			typedef std::function<void(const LinkvisualClient*, const Model::QueryTimeTemplateRequest&, const QueryTimeTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryTimeTemplateAsyncHandler;
@@ -527,6 +581,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryVoiceIntercomResult> QueryVoiceIntercomOutcome;
 			typedef std::future<QueryVoiceIntercomOutcome> QueryVoiceIntercomOutcomeCallable;
 			typedef std::function<void(const LinkvisualClient*, const Model::QueryVoiceIntercomRequest&, const QueryVoiceIntercomOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryVoiceIntercomAsyncHandler;
+			typedef Outcome<Error, Model::RefreshGbSubDeviceListResult> RefreshGbSubDeviceListOutcome;
+			typedef std::future<RefreshGbSubDeviceListOutcome> RefreshGbSubDeviceListOutcomeCallable;
+			typedef std::function<void(const LinkvisualClient*, const Model::RefreshGbSubDeviceListRequest&, const RefreshGbSubDeviceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefreshGbSubDeviceListAsyncHandler;
 			typedef Outcome<Error, Model::RemoveFaceDeviceFromDeviceGroupResult> RemoveFaceDeviceFromDeviceGroupOutcome;
 			typedef std::future<RemoveFaceDeviceFromDeviceGroupOutcome> RemoveFaceDeviceFromDeviceGroupOutcomeCallable;
 			typedef std::function<void(const LinkvisualClient*, const Model::RemoveFaceDeviceFromDeviceGroupRequest&, const RemoveFaceDeviceFromDeviceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveFaceDeviceFromDeviceGroupAsyncHandler;
@@ -566,6 +623,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateFaceUserGroupAndDeviceGroupRelationResult> UpdateFaceUserGroupAndDeviceGroupRelationOutcome;
 			typedef std::future<UpdateFaceUserGroupAndDeviceGroupRelationOutcome> UpdateFaceUserGroupAndDeviceGroupRelationOutcomeCallable;
 			typedef std::function<void(const LinkvisualClient*, const Model::UpdateFaceUserGroupAndDeviceGroupRelationRequest&, const UpdateFaceUserGroupAndDeviceGroupRelationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFaceUserGroupAndDeviceGroupRelationAsyncHandler;
+			typedef Outcome<Error, Model::UpdateGbDeviceResult> UpdateGbDeviceOutcome;
+			typedef std::future<UpdateGbDeviceOutcome> UpdateGbDeviceOutcomeCallable;
+			typedef std::function<void(const LinkvisualClient*, const Model::UpdateGbDeviceRequest&, const UpdateGbDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGbDeviceAsyncHandler;
 			typedef Outcome<Error, Model::UpdateInstanceInternetProtocolResult> UpdateInstanceInternetProtocolOutcome;
 			typedef std::future<UpdateInstanceInternetProtocolOutcome> UpdateInstanceInternetProtocolOutcomeCallable;
 			typedef std::function<void(const LinkvisualClient*, const Model::UpdateInstanceInternetProtocolRequest&, const UpdateInstanceInternetProtocolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceInternetProtocolAsyncHandler;
@@ -652,6 +712,12 @@ namespace AlibabaCloud
 			CreateRtmpDeviceOutcome createRtmpDevice(const Model::CreateRtmpDeviceRequest &request)const;
 			void createRtmpDeviceAsync(const Model::CreateRtmpDeviceRequest& request, const CreateRtmpDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRtmpDeviceOutcomeCallable createRtmpDeviceCallable(const Model::CreateRtmpDeviceRequest& request) const;
+			CreateStreamPushJobOutcome createStreamPushJob(const Model::CreateStreamPushJobRequest &request)const;
+			void createStreamPushJobAsync(const Model::CreateStreamPushJobRequest& request, const CreateStreamPushJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateStreamPushJobOutcomeCallable createStreamPushJobCallable(const Model::CreateStreamPushJobRequest& request) const;
+			CreateStreamSnapshotJobOutcome createStreamSnapshotJob(const Model::CreateStreamSnapshotJobRequest &request)const;
+			void createStreamSnapshotJobAsync(const Model::CreateStreamSnapshotJobRequest& request, const CreateStreamSnapshotJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateStreamSnapshotJobOutcomeCallable createStreamSnapshotJobCallable(const Model::CreateStreamSnapshotJobRequest& request) const;
 			CreateTimeTemplateOutcome createTimeTemplate(const Model::CreateTimeTemplateRequest &request)const;
 			void createTimeTemplateAsync(const Model::CreateTimeTemplateRequest& request, const CreateTimeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTimeTemplateOutcomeCallable createTimeTemplateCallable(const Model::CreateTimeTemplateRequest& request) const;
@@ -676,6 +742,9 @@ namespace AlibabaCloud
 			DeleteFaceUserPictureOutcome deleteFaceUserPicture(const Model::DeleteFaceUserPictureRequest &request)const;
 			void deleteFaceUserPictureAsync(const Model::DeleteFaceUserPictureRequest& request, const DeleteFaceUserPictureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteFaceUserPictureOutcomeCallable deleteFaceUserPictureCallable(const Model::DeleteFaceUserPictureRequest& request) const;
+			DeleteGbDeviceOutcome deleteGbDevice(const Model::DeleteGbDeviceRequest &request)const;
+			void deleteGbDeviceAsync(const Model::DeleteGbDeviceRequest& request, const DeleteGbDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteGbDeviceOutcomeCallable deleteGbDeviceCallable(const Model::DeleteGbDeviceRequest& request) const;
 			DeleteLocalFileUploadJobOutcome deleteLocalFileUploadJob(const Model::DeleteLocalFileUploadJobRequest &request)const;
 			void deleteLocalFileUploadJobAsync(const Model::DeleteLocalFileUploadJobRequest& request, const DeleteLocalFileUploadJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLocalFileUploadJobOutcomeCallable deleteLocalFileUploadJobCallable(const Model::DeleteLocalFileUploadJobRequest& request) const;
@@ -697,12 +766,21 @@ namespace AlibabaCloud
 			DeleteRtmpKeyOutcome deleteRtmpKey(const Model::DeleteRtmpKeyRequest &request)const;
 			void deleteRtmpKeyAsync(const Model::DeleteRtmpKeyRequest& request, const DeleteRtmpKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRtmpKeyOutcomeCallable deleteRtmpKeyCallable(const Model::DeleteRtmpKeyRequest& request) const;
+			DeleteStreamPushJobOutcome deleteStreamPushJob(const Model::DeleteStreamPushJobRequest &request)const;
+			void deleteStreamPushJobAsync(const Model::DeleteStreamPushJobRequest& request, const DeleteStreamPushJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteStreamPushJobOutcomeCallable deleteStreamPushJobCallable(const Model::DeleteStreamPushJobRequest& request) const;
+			DeleteStreamSnapshotJobOutcome deleteStreamSnapshotJob(const Model::DeleteStreamSnapshotJobRequest &request)const;
+			void deleteStreamSnapshotJobAsync(const Model::DeleteStreamSnapshotJobRequest& request, const DeleteStreamSnapshotJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteStreamSnapshotJobOutcomeCallable deleteStreamSnapshotJobCallable(const Model::DeleteStreamSnapshotJobRequest& request) const;
 			DeleteTimeTemplateOutcome deleteTimeTemplate(const Model::DeleteTimeTemplateRequest &request)const;
 			void deleteTimeTemplateAsync(const Model::DeleteTimeTemplateRequest& request, const DeleteTimeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTimeTemplateOutcomeCallable deleteTimeTemplateCallable(const Model::DeleteTimeTemplateRequest& request) const;
 			DetectUserFaceByUrlOutcome detectUserFaceByUrl(const Model::DetectUserFaceByUrlRequest &request)const;
 			void detectUserFaceByUrlAsync(const Model::DetectUserFaceByUrlRequest& request, const DetectUserFaceByUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectUserFaceByUrlOutcomeCallable detectUserFaceByUrlCallable(const Model::DetectUserFaceByUrlRequest& request) const;
+			EnableGbSubDeviceOutcome enableGbSubDevice(const Model::EnableGbSubDeviceRequest &request)const;
+			void enableGbSubDeviceAsync(const Model::EnableGbSubDeviceRequest& request, const EnableGbSubDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableGbSubDeviceOutcomeCallable enableGbSubDeviceCallable(const Model::EnableGbSubDeviceRequest& request) const;
 			GetPictureSearchJobStatusOutcome getPictureSearchJobStatus(const Model::GetPictureSearchJobStatusRequest &request)const;
 			void getPictureSearchJobStatusAsync(const Model::GetPictureSearchJobStatusRequest& request, const GetPictureSearchJobStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPictureSearchJobStatusOutcomeCallable getPictureSearchJobStatusCallable(const Model::GetPictureSearchJobStatusRequest& request) const;
@@ -787,6 +865,9 @@ namespace AlibabaCloud
 			QueryFaceUserIdByCustomUserIdOutcome queryFaceUserIdByCustomUserId(const Model::QueryFaceUserIdByCustomUserIdRequest &request)const;
 			void queryFaceUserIdByCustomUserIdAsync(const Model::QueryFaceUserIdByCustomUserIdRequest& request, const QueryFaceUserIdByCustomUserIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryFaceUserIdByCustomUserIdOutcomeCallable queryFaceUserIdByCustomUserIdCallable(const Model::QueryFaceUserIdByCustomUserIdRequest& request) const;
+			QueryGbSubDeviceListOutcome queryGbSubDeviceList(const Model::QueryGbSubDeviceListRequest &request)const;
+			void queryGbSubDeviceListAsync(const Model::QueryGbSubDeviceListRequest& request, const QueryGbSubDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryGbSubDeviceListOutcomeCallable queryGbSubDeviceListCallable(const Model::QueryGbSubDeviceListRequest& request) const;
 			QueryLiveStreamingOutcome queryLiveStreaming(const Model::QueryLiveStreamingRequest &request)const;
 			void queryLiveStreamingAsync(const Model::QueryLiveStreamingRequest& request, const QueryLiveStreamingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryLiveStreamingOutcomeCallable queryLiveStreamingCallable(const Model::QueryLiveStreamingRequest& request) const;
@@ -850,6 +931,15 @@ namespace AlibabaCloud
 			QueryRtmpKeyOutcome queryRtmpKey(const Model::QueryRtmpKeyRequest &request)const;
 			void queryRtmpKeyAsync(const Model::QueryRtmpKeyRequest& request, const QueryRtmpKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryRtmpKeyOutcomeCallable queryRtmpKeyCallable(const Model::QueryRtmpKeyRequest& request) const;
+			QueryStreamPushJobOutcome queryStreamPushJob(const Model::QueryStreamPushJobRequest &request)const;
+			void queryStreamPushJobAsync(const Model::QueryStreamPushJobRequest& request, const QueryStreamPushJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryStreamPushJobOutcomeCallable queryStreamPushJobCallable(const Model::QueryStreamPushJobRequest& request) const;
+			QueryStreamPushJobListOutcome queryStreamPushJobList(const Model::QueryStreamPushJobListRequest &request)const;
+			void queryStreamPushJobListAsync(const Model::QueryStreamPushJobListRequest& request, const QueryStreamPushJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryStreamPushJobListOutcomeCallable queryStreamPushJobListCallable(const Model::QueryStreamPushJobListRequest& request) const;
+			QueryStreamSnapshotJobOutcome queryStreamSnapshotJob(const Model::QueryStreamSnapshotJobRequest &request)const;
+			void queryStreamSnapshotJobAsync(const Model::QueryStreamSnapshotJobRequest& request, const QueryStreamSnapshotJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryStreamSnapshotJobOutcomeCallable queryStreamSnapshotJobCallable(const Model::QueryStreamSnapshotJobRequest& request) const;
 			QueryTimeTemplateOutcome queryTimeTemplate(const Model::QueryTimeTemplateRequest &request)const;
 			void queryTimeTemplateAsync(const Model::QueryTimeTemplateRequest& request, const QueryTimeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryTimeTemplateOutcomeCallable queryTimeTemplateCallable(const Model::QueryTimeTemplateRequest& request) const;
@@ -862,6 +952,9 @@ namespace AlibabaCloud
 			QueryVoiceIntercomOutcome queryVoiceIntercom(const Model::QueryVoiceIntercomRequest &request)const;
 			void queryVoiceIntercomAsync(const Model::QueryVoiceIntercomRequest& request, const QueryVoiceIntercomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryVoiceIntercomOutcomeCallable queryVoiceIntercomCallable(const Model::QueryVoiceIntercomRequest& request) const;
+			RefreshGbSubDeviceListOutcome refreshGbSubDeviceList(const Model::RefreshGbSubDeviceListRequest &request)const;
+			void refreshGbSubDeviceListAsync(const Model::RefreshGbSubDeviceListRequest& request, const RefreshGbSubDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RefreshGbSubDeviceListOutcomeCallable refreshGbSubDeviceListCallable(const Model::RefreshGbSubDeviceListRequest& request) const;
 			RemoveFaceDeviceFromDeviceGroupOutcome removeFaceDeviceFromDeviceGroup(const Model::RemoveFaceDeviceFromDeviceGroupRequest &request)const;
 			void removeFaceDeviceFromDeviceGroupAsync(const Model::RemoveFaceDeviceFromDeviceGroupRequest& request, const RemoveFaceDeviceFromDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveFaceDeviceFromDeviceGroupOutcomeCallable removeFaceDeviceFromDeviceGroupCallable(const Model::RemoveFaceDeviceFromDeviceGroupRequest& request) const;
@@ -901,6 +994,9 @@ namespace AlibabaCloud
 			UpdateFaceUserGroupAndDeviceGroupRelationOutcome updateFaceUserGroupAndDeviceGroupRelation(const Model::UpdateFaceUserGroupAndDeviceGroupRelationRequest &request)const;
 			void updateFaceUserGroupAndDeviceGroupRelationAsync(const Model::UpdateFaceUserGroupAndDeviceGroupRelationRequest& request, const UpdateFaceUserGroupAndDeviceGroupRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateFaceUserGroupAndDeviceGroupRelationOutcomeCallable updateFaceUserGroupAndDeviceGroupRelationCallable(const Model::UpdateFaceUserGroupAndDeviceGroupRelationRequest& request) const;
+			UpdateGbDeviceOutcome updateGbDevice(const Model::UpdateGbDeviceRequest &request)const;
+			void updateGbDeviceAsync(const Model::UpdateGbDeviceRequest& request, const UpdateGbDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateGbDeviceOutcomeCallable updateGbDeviceCallable(const Model::UpdateGbDeviceRequest& request) const;
 			UpdateInstanceInternetProtocolOutcome updateInstanceInternetProtocol(const Model::UpdateInstanceInternetProtocolRequest &request)const;
 			void updateInstanceInternetProtocolAsync(const Model::UpdateInstanceInternetProtocolRequest& request, const UpdateInstanceInternetProtocolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateInstanceInternetProtocolOutcomeCallable updateInstanceInternetProtocolCallable(const Model::UpdateInstanceInternetProtocolRequest& request) const;

@@ -124,3 +124,12 @@ void CreateGbDeviceRequest::setApiRevision(const std::string &apiRevision) {
   setBodyParameter(std::string("ApiRevision"), apiRevision);
 }
 
+std::string CreateGbDeviceRequest::getDeviceName() const {
+  return deviceName_;
+}
+
+void CreateGbDeviceRequest::setDeviceName(const std::string &deviceName) {
+  deviceName_ = deviceName;
+  setParameter(std::string("DeviceName"), deviceName);
+}
+
