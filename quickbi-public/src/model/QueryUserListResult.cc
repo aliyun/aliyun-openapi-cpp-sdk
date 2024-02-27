@@ -70,6 +70,9 @@ void QueryUserListResult::parse(const std::string &payload)
 			dataItemObject.phone = resultNodeDataDataItem["Phone"].asString();
 		if(!resultNodeDataDataItem["AccountName"].isNull())
 			dataItemObject.accountName = resultNodeDataDataItem["AccountName"].asString();
+		auto allRoleIdList = value["RoleIdList"]["roleIdList"];
+		for (auto value : allRoleIdList)
+			dataItemObject.roleIdList.push_back(value.asString());
 		result_.data.push_back(dataItemObject);
 	}
 	if(!value["Success"].isNull())

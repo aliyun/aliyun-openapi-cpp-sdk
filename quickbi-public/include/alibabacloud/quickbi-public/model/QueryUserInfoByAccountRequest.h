@@ -36,6 +36,8 @@ public:
 	void setAccountType(int accountType);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
+	std::string getParentAccountName() const;
+	void setParentAccountName(const std::string &parentAccountName);
 	std::string getAccount() const;
 	void setAccount(const std::string &account);
 
@@ -43,6 +45,7 @@ private:
 	std::string accessPoint_;
 	int accountType_;
 	std::string signType_;
+	std::string parentAccountName_;
 	std::string account_;
 };
 } // namespace Model

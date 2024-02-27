@@ -42,6 +42,8 @@ public:
 	void setSignType(const std::string &signType);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
+	std::string getRoleIds() const;
+	void setRoleIds(const std::string &roleIds);
 	std::string getPhone() const;
 	void setPhone(const std::string &phone);
 	std::string getNickName() const;
@@ -58,6 +60,7 @@ private:
 	int userType_;
 	std::string signType_;
 	std::string userId_;
+	std::string roleIds_;
 	std::string phone_;
 	std::string nickName_;
 	bool authAdminUser_;

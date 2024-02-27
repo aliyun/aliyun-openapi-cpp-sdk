@@ -58,6 +58,9 @@ void QueryUserInfoByAccountResult::parse(const std::string &payload)
 		result_.phone = resultNode["Phone"].asString();
 	if(!resultNode["AccountName"].isNull())
 		result_.accountName = resultNode["AccountName"].asString();
+		auto allRoleIdList = resultNode["RoleIdList"]["RoleIdList"];
+		for (auto value : allRoleIdList)
+			result_.roleIdList.push_back(value.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

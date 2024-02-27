@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct DataItem
 					{
+						std::vector<std::string> roleIdList;
 						std::string email;
 						std::string accountId;
 						std::string userId;

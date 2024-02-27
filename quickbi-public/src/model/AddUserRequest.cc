@@ -88,6 +88,15 @@ void AddUserRequest::setAccountId(const std::string &accountId) {
   setParameter(std::string("AccountId"), accountId);
 }
 
+std::string AddUserRequest::getRoleIds() const {
+  return roleIds_;
+}
+
+void AddUserRequest::setRoleIds(const std::string &roleIds) {
+  roleIds_ = roleIds;
+  setBodyParameter(std::string("RoleIds"), roleIds);
+}
+
 std::string AddUserRequest::getAccountName() const {
   return accountName_;
 }

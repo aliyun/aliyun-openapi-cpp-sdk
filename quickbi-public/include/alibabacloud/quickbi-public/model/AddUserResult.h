@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Result
 				{
+					std::vector<std::string> roleIdList;
 					std::string email;
 					std::string userId;
 					std::string phone;

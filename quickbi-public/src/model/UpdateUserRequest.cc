@@ -79,6 +79,15 @@ void UpdateUserRequest::setUserId(const std::string &userId) {
   setParameter(std::string("UserId"), userId);
 }
 
+std::string UpdateUserRequest::getRoleIds() const {
+  return roleIds_;
+}
+
+void UpdateUserRequest::setRoleIds(const std::string &roleIds) {
+  roleIds_ = roleIds;
+  setParameter(std::string("RoleIds"), roleIds);
+}
+
 std::string UpdateUserRequest::getPhone() const {
   return phone_;
 }
