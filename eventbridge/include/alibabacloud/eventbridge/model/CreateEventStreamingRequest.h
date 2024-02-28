@@ -435,6 +435,7 @@ public:
 	struct Source {
 		struct SourceMQTTParameters {
 			std::string instanceId;
+			std::string bodyDataType;
 			std::string regionId;
 			std::string topic;
 		};
@@ -493,6 +494,7 @@ public:
 			std::string regionId;
 			std::string vSwitchIds;
 			std::string vpcId;
+			std::string valueDataType;
 			std::string securityGroupId;
 			std::string topic;
 			std::string offsetReset;

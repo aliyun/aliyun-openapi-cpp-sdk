@@ -76,6 +76,7 @@ namespace AlibabaCloud
 							std::string vSwitchIds;
 							std::string network;
 							std::string securityGroupId;
+							std::string valueDataType;
 							std::string regionId;
 							std::string topic;
 							std::string consumerGroup;

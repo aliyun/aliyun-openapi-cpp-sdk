@@ -255,6 +255,7 @@ CreateEventStreamingRequest::Source CreateEventStreamingRequest::getSource() con
 void CreateEventStreamingRequest::setSource(const CreateEventStreamingRequest::Source &source) {
   source_ = source;
   setBodyParameter(std::string("Source") + ".SourceMQTTParameters.InstanceId", source.sourceMQTTParameters.instanceId);
+  setBodyParameter(std::string("Source") + ".SourceMQTTParameters.BodyDataType", source.sourceMQTTParameters.bodyDataType);
   setBodyParameter(std::string("Source") + ".SourceMQTTParameters.RegionId", source.sourceMQTTParameters.regionId);
   setBodyParameter(std::string("Source") + ".SourceMQTTParameters.Topic", source.sourceMQTTParameters.topic);
   setBodyParameter(std::string("Source") + ".SourceRocketMQParameters.FilterSql", source.sourceRocketMQParameters.filterSql);
@@ -298,6 +299,7 @@ void CreateEventStreamingRequest::setSource(const CreateEventStreamingRequest::S
   setBodyParameter(std::string("Source") + ".SourceKafkaParameters.RegionId", source.sourceKafkaParameters.regionId);
   setBodyParameter(std::string("Source") + ".SourceKafkaParameters.VSwitchIds", source.sourceKafkaParameters.vSwitchIds);
   setBodyParameter(std::string("Source") + ".SourceKafkaParameters.VpcId", source.sourceKafkaParameters.vpcId);
+  setBodyParameter(std::string("Source") + ".SourceKafkaParameters.ValueDataType", source.sourceKafkaParameters.valueDataType);
   setBodyParameter(std::string("Source") + ".SourceKafkaParameters.SecurityGroupId", source.sourceKafkaParameters.securityGroupId);
   setBodyParameter(std::string("Source") + ".SourceKafkaParameters.Topic", source.sourceKafkaParameters.topic);
   setBodyParameter(std::string("Source") + ".SourceKafkaParameters.OffsetReset", source.sourceKafkaParameters.offsetReset);

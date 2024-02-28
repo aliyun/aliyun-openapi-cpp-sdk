@@ -247,6 +247,7 @@ void UpdateEventStreamingRequest::setSource(const UpdateEventStreamingRequest::S
   setBodyParameter(std::string("Source") + ".SourceKafkaParameters.RegionId", source.sourceKafkaParameters.regionId);
   setBodyParameter(std::string("Source") + ".SourceKafkaParameters.VSwitchIds", source.sourceKafkaParameters.vSwitchIds);
   setBodyParameter(std::string("Source") + ".SourceKafkaParameters.VpcId", source.sourceKafkaParameters.vpcId);
+  setBodyParameter(std::string("Source") + ".SourceKafkaParameters.ValueDataType", source.sourceKafkaParameters.valueDataType);
   setBodyParameter(std::string("Source") + ".SourceKafkaParameters.SecurityGroupId", source.sourceKafkaParameters.securityGroupId);
   setBodyParameter(std::string("Source") + ".SourceKafkaParameters.Topic", source.sourceKafkaParameters.topic);
   setBodyParameter(std::string("Source") + ".SourceKafkaParameters.OffsetReset", source.sourceKafkaParameters.offsetReset);

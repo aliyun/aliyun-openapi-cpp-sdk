@@ -43,7 +43,7 @@ void ListUserDefinedEventSourcesResult::parse(const std::string &payload)
 	if(!dataNode["NextToken"].isNull())
 		data_.nextToken = dataNode["NextToken"].asString();
 	if(!dataNode["Total"].isNull())
-		data_.total = std::stof(dataNode["Total"].asString());
+		data_.total = std::stoi(dataNode["Total"].asString());
 	auto allEventSourceListNode = dataNode["EventSourceList"]["eventSourceListItem"];
 	for (auto dataNodeEventSourceListeventSourceListItem : allEventSourceListNode)
 	{

@@ -397,6 +397,7 @@ public:
 			std::string regionId;
 			std::string vSwitchIds;
 			std::string vpcId;
+			std::string valueDataType;
 			std::string securityGroupId;
 			std::string topic;
 			std::string offsetReset;

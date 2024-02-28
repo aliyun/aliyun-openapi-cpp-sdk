@@ -123,7 +123,7 @@ namespace AlibabaCloud
 					};
 					std::string nextToken;
 					std::vector<EventSourceListItem> eventSourceList;
-					float total;
+					int total;
 				};
 
 

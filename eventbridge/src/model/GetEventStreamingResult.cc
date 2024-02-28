@@ -127,6 +127,8 @@ void GetEventStreamingResult::parse(const std::string &payload)
 		data_.source.sourceKafkaParameters.vSwitchIds = sourceKafkaParametersNode["VSwitchIds"].asString();
 	if(!sourceKafkaParametersNode["SecurityGroupId"].isNull())
 		data_.source.sourceKafkaParameters.securityGroupId = sourceKafkaParametersNode["SecurityGroupId"].asString();
+	if(!sourceKafkaParametersNode["ValueDataType"].isNull())
+		data_.source.sourceKafkaParameters.valueDataType = sourceKafkaParametersNode["ValueDataType"].asString();
 	auto sourceMQTTParametersNode = sourceNode["SourceMQTTParameters"];
 	if(!sourceMQTTParametersNode["RegionId"].isNull())
 		data_.source.sourceMQTTParameters.regionId = sourceMQTTParametersNode["RegionId"].asString();
