@@ -124,6 +124,15 @@ void DescribeDataLimitsRequest::setAuditStatus(int auditStatus) {
   setParameter(std::string("AuditStatus"), std::to_string(auditStatus));
 }
 
+int DescribeDataLimitsRequest::getFeatureType() const {
+  return featureType_;
+}
+
+void DescribeDataLimitsRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
+}
+
 long DescribeDataLimitsRequest::getEndTime() const {
   return endTime_;
 }

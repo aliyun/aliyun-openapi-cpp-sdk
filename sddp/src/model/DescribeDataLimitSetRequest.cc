@@ -25,6 +25,24 @@ DescribeDataLimitSetRequest::DescribeDataLimitSetRequest()
 
 DescribeDataLimitSetRequest::~DescribeDataLimitSetRequest() {}
 
+int DescribeDataLimitSetRequest::getFeatureType() const {
+  return featureType_;
+}
+
+void DescribeDataLimitSetRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
+}
+
+int DescribeDataLimitSetRequest::getResourceType() const {
+  return resourceType_;
+}
+
+void DescribeDataLimitSetRequest::setResourceType(int resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), std::to_string(resourceType));
+}
+
 std::string DescribeDataLimitSetRequest::getParentId() const {
   return parentId_;
 }
@@ -50,14 +68,5 @@ std::string DescribeDataLimitSetRequest::getLang() const {
 void DescribeDataLimitSetRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
-}
-
-int DescribeDataLimitSetRequest::getResourceType() const {
-  return resourceType_;
-}
-
-void DescribeDataLimitSetRequest::setResourceType(int resourceType) {
-  resourceType_ = resourceType;
-  setParameter(std::string("ResourceType"), std::to_string(resourceType));
 }
 

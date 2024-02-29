@@ -120,6 +120,24 @@ void DescribeUserStatusResult::parse(const std::string &payload)
 		userStatus_.alarmCount = std::stol(userStatusNode["AlarmCount"].asString());
 	if(!userStatusNode["DisplayTime"].isNull())
 		userStatus_.displayTime = userStatusNode["DisplayTime"].asString();
+	if(!userStatusNode["DataManagerRole"].isNull())
+		userStatus_.dataManagerRole = std::stoi(userStatusNode["DataManagerRole"].asString());
+	if(!userStatusNode["ReleaseDays"].isNull())
+		userStatus_.releaseDays = std::stoi(userStatusNode["ReleaseDays"].asString());
+	if(!userStatusNode["AuditClosable"].isNull())
+		userStatus_.auditClosable = userStatusNode["AuditClosable"].asString() == "true";
+	if(!userStatusNode["AuditReleasable"].isNull())
+		userStatus_.auditReleasable = userStatusNode["AuditReleasable"].asString() == "true";
+	if(!userStatusNode["ReleaseTime"].isNull())
+		userStatus_.releaseTime = std::stol(userStatusNode["ReleaseTime"].asString());
+	if(!userStatusNode["InstanceTotalCount"].isNull())
+		userStatus_.instanceTotalCount = std::stol(userStatusNode["InstanceTotalCount"].asString());
+	if(!userStatusNode["OssTotalSize"].isNull())
+		userStatus_.ossTotalSize = std::stol(userStatusNode["OssTotalSize"].asString());
+	if(!userStatusNode["UseAgentAudit"].isNull())
+		userStatus_.useAgentAudit = userStatusNode["UseAgentAudit"].asString() == "true";
+	if(!userStatusNode["ProtectionDays"].isNull())
+		userStatus_.protectionDays = std::stoi(userStatusNode["ProtectionDays"].asString());
 
 }
 

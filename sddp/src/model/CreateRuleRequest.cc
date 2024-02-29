@@ -88,6 +88,15 @@ void CreateRuleRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+int CreateRuleRequest::getMatchType() const {
+  return matchType_;
+}
+
+void CreateRuleRequest::setMatchType(int matchType) {
+  matchType_ = matchType;
+  setParameter(std::string("MatchType"), std::to_string(matchType));
+}
+
 std::string CreateRuleRequest::getLang() const {
   return lang_;
 }
@@ -95,6 +104,15 @@ std::string CreateRuleRequest::getLang() const {
 void CreateRuleRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+int CreateRuleRequest::getSupportForm() const {
+  return supportForm_;
+}
+
+void CreateRuleRequest::setSupportForm(int supportForm) {
+  supportForm_ = supportForm;
+  setParameter(std::string("SupportForm"), std::to_string(supportForm));
 }
 
 int CreateRuleRequest::getFeatureType() const {

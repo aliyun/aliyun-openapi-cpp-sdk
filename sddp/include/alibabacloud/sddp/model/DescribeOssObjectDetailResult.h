@@ -36,7 +36,13 @@ namespace AlibabaCloud
 				{
 					struct Rule
 					{
+						struct ModelTagsItem
+						{
+							long id;
+							std::string name;
+						};
 						int category;
+						std::vector<Rule::ModelTagsItem> modelTags;
 						std::string categoryName;
 						std::string riskLevelName;
 						long count;

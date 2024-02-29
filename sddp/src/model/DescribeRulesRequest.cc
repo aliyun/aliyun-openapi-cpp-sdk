@@ -79,6 +79,15 @@ void DescribeRulesRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+int DescribeRulesRequest::getMatchType() const {
+  return matchType_;
+}
+
+void DescribeRulesRequest::setMatchType(int matchType) {
+  matchType_ = matchType;
+  setParameter(std::string("MatchType"), std::to_string(matchType));
+}
+
 std::string DescribeRulesRequest::getLang() const {
   return lang_;
 }
@@ -97,6 +106,15 @@ void DescribeRulesRequest::setKeywordCompatible(bool keywordCompatible) {
   setParameter(std::string("KeywordCompatible"), keywordCompatible ? "true" : "false");
 }
 
+int DescribeRulesRequest::getSupportForm() const {
+  return supportForm_;
+}
+
+void DescribeRulesRequest::setSupportForm(int supportForm) {
+  supportForm_ = supportForm;
+  setParameter(std::string("SupportForm"), std::to_string(supportForm));
+}
+
 int DescribeRulesRequest::getRuleType() const {
   return ruleType_;
 }
@@ -104,6 +122,15 @@ int DescribeRulesRequest::getRuleType() const {
 void DescribeRulesRequest::setRuleType(int ruleType) {
   ruleType_ = ruleType;
   setParameter(std::string("RuleType"), std::to_string(ruleType));
+}
+
+int DescribeRulesRequest::getFeatureType() const {
+  return featureType_;
+}
+
+void DescribeRulesRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
 }
 
 std::string DescribeRulesRequest::getGroupId() const {

@@ -34,6 +34,15 @@ void DescribeEventTypesRequest::setResourceId(int resourceId) {
   setParameter(std::string("ResourceId"), std::to_string(resourceId));
 }
 
+int DescribeEventTypesRequest::getFeatureType() const {
+  return featureType_;
+}
+
+void DescribeEventTypesRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
+}
+
 long DescribeEventTypesRequest::getParentTypeId() const {
   return parentTypeId_;
 }

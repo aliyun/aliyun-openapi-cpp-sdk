@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					int agentState;
 					std::string connector;
+					std::vector<std::string> vSwitchIdList;
 					int samplingSize;
 					int processStatus;
 					int logStoreDay;
@@ -57,10 +58,12 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string tenantName;
 					long resourceType;
+					std::vector<std::string> securityGroupIdList;
 					std::string localName;
 					int totalCount;
 					long gmtCreate;
 					int auditStatus;
+					std::string vpcId;
 					int datamaskStatus;
 					int autoScan;
 					long nextStartTime;

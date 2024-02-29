@@ -41,6 +41,11 @@ namespace AlibabaCloud
 						long riskLevelId;
 						std::string name;
 					};
+					struct ModelTagsItem
+					{
+						long id;
+						std::string name;
+					};
 					std::vector<Table::Rule> ruleList;
 					std::string owner;
 					std::string productId;
@@ -51,6 +56,7 @@ namespace AlibabaCloud
 					std::string regionName;
 					int totalRows;
 					int s1Count;
+					std::vector<Table::ModelTagsItem> modelTags;
 					bool sensitive;
 					int dataType;
 					long instanceId;

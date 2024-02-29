@@ -32,6 +32,8 @@ public:
 	~CreateDataLimitRequest();
 	int getOcrStatus() const;
 	void setOcrStatus(int ocrStatus);
+	int getSamplingSize() const;
+	void setSamplingSize(int samplingSize);
 	std::string getParentId() const;
 	void setParentId(const std::string &parentId);
 	std::string getPassword() const;
@@ -54,8 +56,12 @@ public:
 	void setAuditStatus(int auditStatus);
 	int getAutoScan() const;
 	void setAutoScan(int autoScan);
+	int getFeatureType() const;
+	void setFeatureType(int featureType);
 	int getLogStoreDay() const;
 	void setLogStoreDay(int logStoreDay);
+	std::string getCertificatePermission() const;
+	void setCertificatePermission(const std::string &certificatePermission);
 	int getResourceType() const;
 	void setResourceType(int resourceType);
 	std::string getConnector() const;
@@ -69,6 +75,7 @@ public:
 
 private:
 	int ocrStatus_;
+	int samplingSize_;
 	std::string parentId_;
 	std::string password_;
 	bool batchCreate_;
@@ -80,7 +87,9 @@ private:
 	std::string engineType_;
 	int auditStatus_;
 	int autoScan_;
+	int featureType_;
 	int logStoreDay_;
+	std::string certificatePermission_;
 	int resourceType_;
 	std::string connector_;
 	int port_;

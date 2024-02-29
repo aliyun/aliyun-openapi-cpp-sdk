@@ -32,6 +32,8 @@ public:
 	~DisableUserConfigRequest();
 	std::string getCode() const;
 	void setCode(const std::string &code);
+	int getFeatureType() const;
+	void setFeatureType(int featureType);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getLang() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string code_;
+	int featureType_;
 	std::string sourceIp_;
 	std::string lang_;
 };

@@ -25,6 +25,15 @@ ModifyReportTaskStatusRequest::ModifyReportTaskStatusRequest()
 
 ModifyReportTaskStatusRequest::~ModifyReportTaskStatusRequest() {}
 
+int ModifyReportTaskStatusRequest::getFeatureType() const {
+  return featureType_;
+}
+
+void ModifyReportTaskStatusRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
+}
+
 std::string ModifyReportTaskStatusRequest::getSourceIp() const {
   return sourceIp_;
 }

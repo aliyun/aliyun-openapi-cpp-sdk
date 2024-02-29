@@ -54,8 +54,12 @@ public:
 	void setFeatureType(int featureType);
 	std::string getOrderBy() const;
 	void setOrderBy(const std::string &orderBy);
+	long getFileCategoryCode() const;
+	void setFileCategoryCode(long fileCategoryCode);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
+	long getTemplateId() const;
+	void setTemplateId(long templateId);
 	std::string getRuleIds() const;
 	void setRuleIds(const std::string &ruleIds);
 	std::string getInstanceId() const;
@@ -80,7 +84,9 @@ private:
 	std::string serviceRegionId_;
 	int featureType_;
 	std::string orderBy_;
+	long fileCategoryCode_;
 	int currentPage_;
+	long templateId_;
 	std::string ruleIds_;
 	std::string instanceId_;
 	std::string name_;

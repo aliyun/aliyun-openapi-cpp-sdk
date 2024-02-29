@@ -30,15 +30,21 @@ class ALIBABACLOUD_SDDP_EXPORT DescribeRiskLevelsRequest : public RpcServiceRequ
 public:
 	DescribeRiskLevelsRequest();
 	~DescribeRiskLevelsRequest();
+	int getFeatureType() const;
+	void setFeatureType(int featureType);
 	int getCustomType() const;
 	void setCustomType(int customType);
+	long getTemplateId() const;
+	void setTemplateId(long templateId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
 
 private:
+	int featureType_;
 	int customType_;
+	long templateId_;
 	std::string sourceIp_;
 	std::string lang_;
 };

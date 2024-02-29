@@ -30,6 +30,8 @@ class ALIBABACLOUD_SDDP_EXPORT DescribeEventsRequest : public RpcServiceRequest 
 public:
 	DescribeEventsRequest();
 	~DescribeEventsRequest();
+	int getWarnLevel() const;
+	void setWarnLevel(int warnLevel);
 	std::string getProductCode() const;
 	void setProductCode(const std::string &productCode);
 	std::string getStartTime() const;
@@ -68,6 +70,7 @@ public:
 	void setUserName(const std::string &userName);
 
 private:
+	int warnLevel_;
 	std::string productCode_;
 	std::string startTime_;
 	long userId_;

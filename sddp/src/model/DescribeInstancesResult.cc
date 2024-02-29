@@ -105,6 +105,16 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			itemsObject.id = std::stol(valueItemsInstance["Id"].asString());
 		if(!valueItemsInstance["ProductCode"].isNull())
 			itemsObject.productCode = valueItemsInstance["ProductCode"].asString();
+		auto allModelTagsNode = valueItemsInstance["ModelTags"]["modelTagsItem"];
+		for (auto valueItemsInstanceModelTagsmodelTagsItem : allModelTagsNode)
+		{
+			Instance::ModelTagsItem modelTagsObject;
+			if(!valueItemsInstanceModelTagsmodelTagsItem["Id"].isNull())
+				modelTagsObject.id = std::stol(valueItemsInstanceModelTagsmodelTagsItem["Id"].asString());
+			if(!valueItemsInstanceModelTagsmodelTagsItem["Name"].isNull())
+				modelTagsObject.name = valueItemsInstanceModelTagsmodelTagsItem["Name"].asString();
+			itemsObject.modelTags.push_back(modelTagsObject);
+		}
 		items_.push_back(itemsObject);
 	}
 	if(!value["CurrentPage"].isNull())

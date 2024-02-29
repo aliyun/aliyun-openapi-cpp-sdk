@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct Instance
 				{
+					struct ModelTagsItem
+					{
+						long id;
+						std::string name;
+					};
 					std::string owner;
 					std::string odpsRiskLevelName;
 					std::string productId;
@@ -42,6 +47,7 @@ namespace AlibabaCloud
 					std::string name;
 					std::string regionName;
 					int s1Count;
+					std::vector<Instance::ModelTagsItem> modelTags;
 					bool sensitive;
 					std::string engineType;
 					bool protection;

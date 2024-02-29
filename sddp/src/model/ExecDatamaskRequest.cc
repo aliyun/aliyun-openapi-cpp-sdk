@@ -34,6 +34,15 @@ void ExecDatamaskRequest::setData(const std::string &data) {
   setParameter(std::string("Data"), data);
 }
 
+int ExecDatamaskRequest::getFeatureType() const {
+  return featureType_;
+}
+
+void ExecDatamaskRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
+}
+
 long ExecDatamaskRequest::getTemplateId() const {
   return templateId_;
 }

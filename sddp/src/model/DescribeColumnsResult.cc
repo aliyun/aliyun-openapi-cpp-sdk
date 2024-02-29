@@ -83,6 +83,16 @@ void DescribeColumnsResult::parse(const std::string &payload)
 			itemsObject.revisionStatus = std::stol(valueItemsColumn["RevisionStatus"].asString());
 		if(!valueItemsColumn["RevisionId"].isNull())
 			itemsObject.revisionId = std::stol(valueItemsColumn["RevisionId"].asString());
+		auto allModelTagsNode = valueItemsColumn["ModelTags"]["modelTagsItem"];
+		for (auto valueItemsColumnModelTagsmodelTagsItem : allModelTagsNode)
+		{
+			Column::ModelTagsItem modelTagsObject;
+			if(!valueItemsColumnModelTagsmodelTagsItem["Id"].isNull())
+				modelTagsObject.id = std::stol(valueItemsColumnModelTagsmodelTagsItem["Id"].asString());
+			if(!valueItemsColumnModelTagsmodelTagsItem["Name"].isNull())
+				modelTagsObject.name = valueItemsColumnModelTagsmodelTagsItem["Name"].asString();
+			itemsObject.modelTags.push_back(modelTagsObject);
+		}
 		auto allSampleList = value["SampleList"]["Sample"];
 		for (auto value : allSampleList)
 			itemsObject.sampleList.push_back(value.asString());

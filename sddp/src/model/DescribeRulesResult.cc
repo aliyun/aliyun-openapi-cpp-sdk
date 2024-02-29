@@ -47,6 +47,8 @@ void DescribeRulesResult::parse(const std::string &payload)
 			itemsObject.displayName = valueItemsRule["DisplayName"].asString();
 		if(!valueItemsRule["Status"].isNull())
 			itemsObject.status = std::stoi(valueItemsRule["Status"].asString());
+		if(!valueItemsRule["SupportForm"].isNull())
+			itemsObject.supportForm = std::stoi(valueItemsRule["SupportForm"].asString());
 		if(!valueItemsRule["WarnLevel"].isNull())
 			itemsObject.warnLevel = std::stoi(valueItemsRule["WarnLevel"].asString());
 		if(!valueItemsRule["UserId"].isNull())
@@ -93,6 +95,8 @@ void DescribeRulesResult::parse(const std::string &payload)
 			itemsObject.id = std::stol(valueItemsRule["Id"].asString());
 		if(!valueItemsRule["ProductCode"].isNull())
 			itemsObject.productCode = valueItemsRule["ProductCode"].asString();
+		if(!valueItemsRule["MatchType"].isNull())
+			itemsObject.matchType = std::stoi(valueItemsRule["MatchType"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["CurrentPage"].isNull())

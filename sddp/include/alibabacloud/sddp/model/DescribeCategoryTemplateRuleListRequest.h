@@ -38,6 +38,8 @@ public:
 	void setPageSize(int pageSize);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	int getFeatureType() const;
+	void setFeatureType(int featureType);
 	std::string getParentCategoryIdList() const;
 	void setParentCategoryIdList(const std::string &parentCategoryIdList);
 	int getCurrentPage() const;
@@ -54,6 +56,7 @@ private:
 	std::string sourceIp_;
 	int pageSize_;
 	std::string lang_;
+	int featureType_;
 	std::string parentCategoryIdList_;
 	int currentPage_;
 	long templateId_;

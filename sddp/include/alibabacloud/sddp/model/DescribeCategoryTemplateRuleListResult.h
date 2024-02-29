@@ -36,16 +36,17 @@ namespace AlibabaCloud
 				{
 					int status;
 					int customType;
-					std::string identificationRuleIds;
 					std::string identificationScope;
 					std::string description;
+					long parentModelId;
+					long riskLevelId;
+					std::string name;
+					std::string identificationRuleIds;
 					int orderNum;
 					int categoryLevel;
 					long id;
-					long riskLevelId;
 					long parentCategoryId;
 					long templateId;
-					std::string name;
 				};
 
 

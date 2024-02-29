@@ -25,6 +25,15 @@ StopMaskingProcessRequest::StopMaskingProcessRequest()
 
 StopMaskingProcessRequest::~StopMaskingProcessRequest() {}
 
+int StopMaskingProcessRequest::getFeatureType() const {
+  return featureType_;
+}
+
+void StopMaskingProcessRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
+}
+
 std::string StopMaskingProcessRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -50,14 +59,5 @@ std::string StopMaskingProcessRequest::getLang() const {
 void StopMaskingProcessRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
-}
-
-int StopMaskingProcessRequest::getFeatureType() const {
-  return featureType_;
-}
-
-void StopMaskingProcessRequest::setFeatureType(int featureType) {
-  featureType_ = featureType;
-  setParameter(std::string("FeatureType"), std::to_string(featureType));
 }
 

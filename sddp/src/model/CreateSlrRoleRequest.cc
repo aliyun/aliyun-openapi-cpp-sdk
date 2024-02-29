@@ -25,6 +25,15 @@ CreateSlrRoleRequest::CreateSlrRoleRequest()
 
 CreateSlrRoleRequest::~CreateSlrRoleRequest() {}
 
+int CreateSlrRoleRequest::getFeatureType() const {
+  return featureType_;
+}
+
+void CreateSlrRoleRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
+}
+
 std::string CreateSlrRoleRequest::getSourceIp() const {
   return sourceIp_;
 }

@@ -36,10 +36,14 @@
 #include "model/DeleteDataLimitResult.h"
 #include "model/DeleteRuleRequest.h"
 #include "model/DeleteRuleResult.h"
+#include "model/DescribeCategoryTemplateListRequest.h"
+#include "model/DescribeCategoryTemplateListResult.h"
 #include "model/DescribeCategoryTemplateRuleListRequest.h"
 #include "model/DescribeCategoryTemplateRuleListResult.h"
 #include "model/DescribeColumnsRequest.h"
 #include "model/DescribeColumnsResult.h"
+#include "model/DescribeColumnsV2Request.h"
+#include "model/DescribeColumnsV2Result.h"
 #include "model/DescribeConfigsRequest.h"
 #include "model/DescribeConfigsResult.h"
 #include "model/DescribeDataAssetsRequest.h"
@@ -54,6 +58,14 @@
 #include "model/DescribeDataMaskingRunHistoryResult.h"
 #include "model/DescribeDataMaskingTasksRequest.h"
 #include "model/DescribeDataMaskingTasksResult.h"
+#include "model/DescribeDataObjectColumnDetailRequest.h"
+#include "model/DescribeDataObjectColumnDetailResult.h"
+#include "model/DescribeDataObjectColumnDetailV2Request.h"
+#include "model/DescribeDataObjectColumnDetailV2Result.h"
+#include "model/DescribeDataObjectsRequest.h"
+#include "model/DescribeDataObjectsResult.h"
+#include "model/DescribeDocTypesRequest.h"
+#include "model/DescribeDocTypesResult.h"
 #include "model/DescribeEventDetailRequest.h"
 #include "model/DescribeEventDetailResult.h"
 #include "model/DescribeEventTypesRequest.h"
@@ -66,16 +78,22 @@
 #include "model/DescribeInstancesResult.h"
 #include "model/DescribeOssObjectDetailRequest.h"
 #include "model/DescribeOssObjectDetailResult.h"
+#include "model/DescribeOssObjectDetailV2Request.h"
+#include "model/DescribeOssObjectDetailV2Result.h"
 #include "model/DescribeOssObjectsRequest.h"
 #include "model/DescribeOssObjectsResult.h"
 #include "model/DescribePackagesRequest.h"
 #include "model/DescribePackagesResult.h"
+#include "model/DescribeParentInstanceRequest.h"
+#include "model/DescribeParentInstanceResult.h"
 #include "model/DescribeRiskLevelsRequest.h"
 #include "model/DescribeRiskLevelsResult.h"
 #include "model/DescribeRulesRequest.h"
 #include "model/DescribeRulesResult.h"
 #include "model/DescribeTablesRequest.h"
 #include "model/DescribeTablesResult.h"
+#include "model/DescribeTemplateAllRulesRequest.h"
+#include "model/DescribeTemplateAllRulesResult.h"
 #include "model/DescribeUserStatusRequest.h"
 #include "model/DescribeUserStatusResult.h"
 #include "model/DisableUserConfigRequest.h"
@@ -130,12 +148,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRuleResult> DeleteRuleOutcome;
 			typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DeleteRuleRequest&, const DeleteRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRuleAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCategoryTemplateListResult> DescribeCategoryTemplateListOutcome;
+			typedef std::future<DescribeCategoryTemplateListOutcome> DescribeCategoryTemplateListOutcomeCallable;
+			typedef std::function<void(const SddpClient*, const Model::DescribeCategoryTemplateListRequest&, const DescribeCategoryTemplateListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCategoryTemplateListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCategoryTemplateRuleListResult> DescribeCategoryTemplateRuleListOutcome;
 			typedef std::future<DescribeCategoryTemplateRuleListOutcome> DescribeCategoryTemplateRuleListOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeCategoryTemplateRuleListRequest&, const DescribeCategoryTemplateRuleListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCategoryTemplateRuleListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeColumnsResult> DescribeColumnsOutcome;
 			typedef std::future<DescribeColumnsOutcome> DescribeColumnsOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeColumnsRequest&, const DescribeColumnsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeColumnsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeColumnsV2Result> DescribeColumnsV2Outcome;
+			typedef std::future<DescribeColumnsV2Outcome> DescribeColumnsV2OutcomeCallable;
+			typedef std::function<void(const SddpClient*, const Model::DescribeColumnsV2Request&, const DescribeColumnsV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeColumnsV2AsyncHandler;
 			typedef Outcome<Error, Model::DescribeConfigsResult> DescribeConfigsOutcome;
 			typedef std::future<DescribeConfigsOutcome> DescribeConfigsOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeConfigsRequest&, const DescribeConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigsAsyncHandler;
@@ -157,6 +181,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDataMaskingTasksResult> DescribeDataMaskingTasksOutcome;
 			typedef std::future<DescribeDataMaskingTasksOutcome> DescribeDataMaskingTasksOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeDataMaskingTasksRequest&, const DescribeDataMaskingTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataMaskingTasksAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDataObjectColumnDetailResult> DescribeDataObjectColumnDetailOutcome;
+			typedef std::future<DescribeDataObjectColumnDetailOutcome> DescribeDataObjectColumnDetailOutcomeCallable;
+			typedef std::function<void(const SddpClient*, const Model::DescribeDataObjectColumnDetailRequest&, const DescribeDataObjectColumnDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataObjectColumnDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDataObjectColumnDetailV2Result> DescribeDataObjectColumnDetailV2Outcome;
+			typedef std::future<DescribeDataObjectColumnDetailV2Outcome> DescribeDataObjectColumnDetailV2OutcomeCallable;
+			typedef std::function<void(const SddpClient*, const Model::DescribeDataObjectColumnDetailV2Request&, const DescribeDataObjectColumnDetailV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataObjectColumnDetailV2AsyncHandler;
+			typedef Outcome<Error, Model::DescribeDataObjectsResult> DescribeDataObjectsOutcome;
+			typedef std::future<DescribeDataObjectsOutcome> DescribeDataObjectsOutcomeCallable;
+			typedef std::function<void(const SddpClient*, const Model::DescribeDataObjectsRequest&, const DescribeDataObjectsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataObjectsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDocTypesResult> DescribeDocTypesOutcome;
+			typedef std::future<DescribeDocTypesOutcome> DescribeDocTypesOutcomeCallable;
+			typedef std::function<void(const SddpClient*, const Model::DescribeDocTypesRequest&, const DescribeDocTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDocTypesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeEventDetailResult> DescribeEventDetailOutcome;
 			typedef std::future<DescribeEventDetailOutcome> DescribeEventDetailOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeEventDetailRequest&, const DescribeEventDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventDetailAsyncHandler;
@@ -175,12 +211,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeOssObjectDetailResult> DescribeOssObjectDetailOutcome;
 			typedef std::future<DescribeOssObjectDetailOutcome> DescribeOssObjectDetailOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeOssObjectDetailRequest&, const DescribeOssObjectDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOssObjectDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeOssObjectDetailV2Result> DescribeOssObjectDetailV2Outcome;
+			typedef std::future<DescribeOssObjectDetailV2Outcome> DescribeOssObjectDetailV2OutcomeCallable;
+			typedef std::function<void(const SddpClient*, const Model::DescribeOssObjectDetailV2Request&, const DescribeOssObjectDetailV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOssObjectDetailV2AsyncHandler;
 			typedef Outcome<Error, Model::DescribeOssObjectsResult> DescribeOssObjectsOutcome;
 			typedef std::future<DescribeOssObjectsOutcome> DescribeOssObjectsOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeOssObjectsRequest&, const DescribeOssObjectsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOssObjectsAsyncHandler;
 			typedef Outcome<Error, Model::DescribePackagesResult> DescribePackagesOutcome;
 			typedef std::future<DescribePackagesOutcome> DescribePackagesOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribePackagesRequest&, const DescribePackagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackagesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeParentInstanceResult> DescribeParentInstanceOutcome;
+			typedef std::future<DescribeParentInstanceOutcome> DescribeParentInstanceOutcomeCallable;
+			typedef std::function<void(const SddpClient*, const Model::DescribeParentInstanceRequest&, const DescribeParentInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParentInstanceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRiskLevelsResult> DescribeRiskLevelsOutcome;
 			typedef std::future<DescribeRiskLevelsOutcome> DescribeRiskLevelsOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeRiskLevelsRequest&, const DescribeRiskLevelsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskLevelsAsyncHandler;
@@ -190,6 +232,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTablesResult> DescribeTablesOutcome;
 			typedef std::future<DescribeTablesOutcome> DescribeTablesOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeTablesRequest&, const DescribeTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTemplateAllRulesResult> DescribeTemplateAllRulesOutcome;
+			typedef std::future<DescribeTemplateAllRulesOutcome> DescribeTemplateAllRulesOutcomeCallable;
+			typedef std::function<void(const SddpClient*, const Model::DescribeTemplateAllRulesRequest&, const DescribeTemplateAllRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateAllRulesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUserStatusResult> DescribeUserStatusOutcome;
 			typedef std::future<DescribeUserStatusOutcome> DescribeUserStatusOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeUserStatusRequest&, const DescribeUserStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserStatusAsyncHandler;
@@ -252,12 +297,18 @@ namespace AlibabaCloud
 			DeleteRuleOutcome deleteRule(const Model::DeleteRuleRequest &request)const;
 			void deleteRuleAsync(const Model::DeleteRuleRequest& request, const DeleteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRuleOutcomeCallable deleteRuleCallable(const Model::DeleteRuleRequest& request) const;
+			DescribeCategoryTemplateListOutcome describeCategoryTemplateList(const Model::DescribeCategoryTemplateListRequest &request)const;
+			void describeCategoryTemplateListAsync(const Model::DescribeCategoryTemplateListRequest& request, const DescribeCategoryTemplateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCategoryTemplateListOutcomeCallable describeCategoryTemplateListCallable(const Model::DescribeCategoryTemplateListRequest& request) const;
 			DescribeCategoryTemplateRuleListOutcome describeCategoryTemplateRuleList(const Model::DescribeCategoryTemplateRuleListRequest &request)const;
 			void describeCategoryTemplateRuleListAsync(const Model::DescribeCategoryTemplateRuleListRequest& request, const DescribeCategoryTemplateRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCategoryTemplateRuleListOutcomeCallable describeCategoryTemplateRuleListCallable(const Model::DescribeCategoryTemplateRuleListRequest& request) const;
 			DescribeColumnsOutcome describeColumns(const Model::DescribeColumnsRequest &request)const;
 			void describeColumnsAsync(const Model::DescribeColumnsRequest& request, const DescribeColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeColumnsOutcomeCallable describeColumnsCallable(const Model::DescribeColumnsRequest& request) const;
+			DescribeColumnsV2Outcome describeColumnsV2(const Model::DescribeColumnsV2Request &request)const;
+			void describeColumnsV2Async(const Model::DescribeColumnsV2Request& request, const DescribeColumnsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeColumnsV2OutcomeCallable describeColumnsV2Callable(const Model::DescribeColumnsV2Request& request) const;
 			DescribeConfigsOutcome describeConfigs(const Model::DescribeConfigsRequest &request)const;
 			void describeConfigsAsync(const Model::DescribeConfigsRequest& request, const DescribeConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeConfigsOutcomeCallable describeConfigsCallable(const Model::DescribeConfigsRequest& request) const;
@@ -279,6 +330,18 @@ namespace AlibabaCloud
 			DescribeDataMaskingTasksOutcome describeDataMaskingTasks(const Model::DescribeDataMaskingTasksRequest &request)const;
 			void describeDataMaskingTasksAsync(const Model::DescribeDataMaskingTasksRequest& request, const DescribeDataMaskingTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDataMaskingTasksOutcomeCallable describeDataMaskingTasksCallable(const Model::DescribeDataMaskingTasksRequest& request) const;
+			DescribeDataObjectColumnDetailOutcome describeDataObjectColumnDetail(const Model::DescribeDataObjectColumnDetailRequest &request)const;
+			void describeDataObjectColumnDetailAsync(const Model::DescribeDataObjectColumnDetailRequest& request, const DescribeDataObjectColumnDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDataObjectColumnDetailOutcomeCallable describeDataObjectColumnDetailCallable(const Model::DescribeDataObjectColumnDetailRequest& request) const;
+			DescribeDataObjectColumnDetailV2Outcome describeDataObjectColumnDetailV2(const Model::DescribeDataObjectColumnDetailV2Request &request)const;
+			void describeDataObjectColumnDetailV2Async(const Model::DescribeDataObjectColumnDetailV2Request& request, const DescribeDataObjectColumnDetailV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDataObjectColumnDetailV2OutcomeCallable describeDataObjectColumnDetailV2Callable(const Model::DescribeDataObjectColumnDetailV2Request& request) const;
+			DescribeDataObjectsOutcome describeDataObjects(const Model::DescribeDataObjectsRequest &request)const;
+			void describeDataObjectsAsync(const Model::DescribeDataObjectsRequest& request, const DescribeDataObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDataObjectsOutcomeCallable describeDataObjectsCallable(const Model::DescribeDataObjectsRequest& request) const;
+			DescribeDocTypesOutcome describeDocTypes(const Model::DescribeDocTypesRequest &request)const;
+			void describeDocTypesAsync(const Model::DescribeDocTypesRequest& request, const DescribeDocTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDocTypesOutcomeCallable describeDocTypesCallable(const Model::DescribeDocTypesRequest& request) const;
 			DescribeEventDetailOutcome describeEventDetail(const Model::DescribeEventDetailRequest &request)const;
 			void describeEventDetailAsync(const Model::DescribeEventDetailRequest& request, const DescribeEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEventDetailOutcomeCallable describeEventDetailCallable(const Model::DescribeEventDetailRequest& request) const;
@@ -297,12 +360,18 @@ namespace AlibabaCloud
 			DescribeOssObjectDetailOutcome describeOssObjectDetail(const Model::DescribeOssObjectDetailRequest &request)const;
 			void describeOssObjectDetailAsync(const Model::DescribeOssObjectDetailRequest& request, const DescribeOssObjectDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeOssObjectDetailOutcomeCallable describeOssObjectDetailCallable(const Model::DescribeOssObjectDetailRequest& request) const;
+			DescribeOssObjectDetailV2Outcome describeOssObjectDetailV2(const Model::DescribeOssObjectDetailV2Request &request)const;
+			void describeOssObjectDetailV2Async(const Model::DescribeOssObjectDetailV2Request& request, const DescribeOssObjectDetailV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeOssObjectDetailV2OutcomeCallable describeOssObjectDetailV2Callable(const Model::DescribeOssObjectDetailV2Request& request) const;
 			DescribeOssObjectsOutcome describeOssObjects(const Model::DescribeOssObjectsRequest &request)const;
 			void describeOssObjectsAsync(const Model::DescribeOssObjectsRequest& request, const DescribeOssObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeOssObjectsOutcomeCallable describeOssObjectsCallable(const Model::DescribeOssObjectsRequest& request) const;
 			DescribePackagesOutcome describePackages(const Model::DescribePackagesRequest &request)const;
 			void describePackagesAsync(const Model::DescribePackagesRequest& request, const DescribePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePackagesOutcomeCallable describePackagesCallable(const Model::DescribePackagesRequest& request) const;
+			DescribeParentInstanceOutcome describeParentInstance(const Model::DescribeParentInstanceRequest &request)const;
+			void describeParentInstanceAsync(const Model::DescribeParentInstanceRequest& request, const DescribeParentInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeParentInstanceOutcomeCallable describeParentInstanceCallable(const Model::DescribeParentInstanceRequest& request) const;
 			DescribeRiskLevelsOutcome describeRiskLevels(const Model::DescribeRiskLevelsRequest &request)const;
 			void describeRiskLevelsAsync(const Model::DescribeRiskLevelsRequest& request, const DescribeRiskLevelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRiskLevelsOutcomeCallable describeRiskLevelsCallable(const Model::DescribeRiskLevelsRequest& request) const;
@@ -312,6 +381,9 @@ namespace AlibabaCloud
 			DescribeTablesOutcome describeTables(const Model::DescribeTablesRequest &request)const;
 			void describeTablesAsync(const Model::DescribeTablesRequest& request, const DescribeTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTablesOutcomeCallable describeTablesCallable(const Model::DescribeTablesRequest& request) const;
+			DescribeTemplateAllRulesOutcome describeTemplateAllRules(const Model::DescribeTemplateAllRulesRequest &request)const;
+			void describeTemplateAllRulesAsync(const Model::DescribeTemplateAllRulesRequest& request, const DescribeTemplateAllRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTemplateAllRulesOutcomeCallable describeTemplateAllRulesCallable(const Model::DescribeTemplateAllRulesRequest& request) const;
 			DescribeUserStatusOutcome describeUserStatus(const Model::DescribeUserStatusRequest &request)const;
 			void describeUserStatusAsync(const Model::DescribeUserStatusRequest& request, const DescribeUserStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUserStatusOutcomeCallable describeUserStatusCallable(const Model::DescribeUserStatusRequest& request) const;

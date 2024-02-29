@@ -73,6 +73,10 @@ void DescribeOssObjectsResult::parse(const std::string &payload)
 			itemsObject.sensitiveCount = std::stoi(valueItemsColumn["SensitiveCount"].asString());
 		if(!valueItemsColumn["Id"].isNull())
 			itemsObject.id = valueItemsColumn["Id"].asString();
+		if(!valueItemsColumn["FileCategoryCode"].isNull())
+			itemsObject.fileCategoryCode = std::stol(valueItemsColumn["FileCategoryCode"].asString());
+		if(!valueItemsColumn["FileCategoryName"].isNull())
+			itemsObject.fileCategoryName = valueItemsColumn["FileCategoryName"].asString();
 		auto allRuleListNode = valueItemsColumn["RuleList"]["Rule"];
 		for (auto valueItemsColumnRuleListRule : allRuleListNode)
 		{

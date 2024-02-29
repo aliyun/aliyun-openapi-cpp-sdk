@@ -34,6 +34,15 @@ void CreateDataLimitRequest::setOcrStatus(int ocrStatus) {
   setParameter(std::string("OcrStatus"), std::to_string(ocrStatus));
 }
 
+int CreateDataLimitRequest::getSamplingSize() const {
+  return samplingSize_;
+}
+
+void CreateDataLimitRequest::setSamplingSize(int samplingSize) {
+  samplingSize_ = samplingSize;
+  setParameter(std::string("SamplingSize"), std::to_string(samplingSize));
+}
+
 std::string CreateDataLimitRequest::getParentId() const {
   return parentId_;
 }
@@ -133,6 +142,15 @@ void CreateDataLimitRequest::setAutoScan(int autoScan) {
   setParameter(std::string("AutoScan"), std::to_string(autoScan));
 }
 
+int CreateDataLimitRequest::getFeatureType() const {
+  return featureType_;
+}
+
+void CreateDataLimitRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
+}
+
 int CreateDataLimitRequest::getLogStoreDay() const {
   return logStoreDay_;
 }
@@ -140,6 +158,15 @@ int CreateDataLimitRequest::getLogStoreDay() const {
 void CreateDataLimitRequest::setLogStoreDay(int logStoreDay) {
   logStoreDay_ = logStoreDay;
   setParameter(std::string("LogStoreDay"), std::to_string(logStoreDay));
+}
+
+std::string CreateDataLimitRequest::getCertificatePermission() const {
+  return certificatePermission_;
+}
+
+void CreateDataLimitRequest::setCertificatePermission(const std::string &certificatePermission) {
+  certificatePermission_ = certificatePermission;
+  setParameter(std::string("CertificatePermission"), certificatePermission);
 }
 
 int CreateDataLimitRequest::getResourceType() const {

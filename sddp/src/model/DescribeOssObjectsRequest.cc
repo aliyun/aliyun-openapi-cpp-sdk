@@ -133,6 +133,15 @@ void DescribeOssObjectsRequest::setOrderBy(const std::string &orderBy) {
   setParameter(std::string("OrderBy"), orderBy);
 }
 
+long DescribeOssObjectsRequest::getFileCategoryCode() const {
+  return fileCategoryCode_;
+}
+
+void DescribeOssObjectsRequest::setFileCategoryCode(long fileCategoryCode) {
+  fileCategoryCode_ = fileCategoryCode;
+  setParameter(std::string("FileCategoryCode"), std::to_string(fileCategoryCode));
+}
+
 int DescribeOssObjectsRequest::getCurrentPage() const {
   return currentPage_;
 }
@@ -140,6 +149,15 @@ int DescribeOssObjectsRequest::getCurrentPage() const {
 void DescribeOssObjectsRequest::setCurrentPage(int currentPage) {
   currentPage_ = currentPage;
   setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+long DescribeOssObjectsRequest::getTemplateId() const {
+  return templateId_;
+}
+
+void DescribeOssObjectsRequest::setTemplateId(long templateId) {
+  templateId_ = templateId;
+  setParameter(std::string("TemplateId"), std::to_string(templateId));
 }
 
 std::string DescribeOssObjectsRequest::getRuleIds() const {

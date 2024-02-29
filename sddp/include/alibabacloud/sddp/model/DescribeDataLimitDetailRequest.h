@@ -30,6 +30,8 @@ class ALIBABACLOUD_SDDP_EXPORT DescribeDataLimitDetailRequest : public RpcServic
 public:
 	DescribeDataLimitDetailRequest();
 	~DescribeDataLimitDetailRequest();
+	int getFeatureType() const;
+	void setFeatureType(int featureType);
 	int getNetworkType() const;
 	void setNetworkType(int networkType);
 	std::string getSourceIp() const;
@@ -40,6 +42,7 @@ public:
 	void setLang(const std::string &lang);
 
 private:
+	int featureType_;
 	int networkType_;
 	std::string sourceIp_;
 	long id_;

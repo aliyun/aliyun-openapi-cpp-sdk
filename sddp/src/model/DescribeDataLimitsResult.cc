@@ -123,6 +123,14 @@ void DescribeDataLimitsResult::parse(const std::string &payload)
 			itemsObject.id = std::stol(valueItemsDataLimit["Id"].asString());
 		if(!valueItemsDataLimit["Enable"].isNull())
 			itemsObject.enable = std::stoi(valueItemsDataLimit["Enable"].asString());
+		if(!valueItemsDataLimit["VpcId"].isNull())
+			itemsObject.vpcId = valueItemsDataLimit["VpcId"].asString();
+		auto allSecurityGroupIdList = value["SecurityGroupIdList"]["seucurityGroup"];
+		for (auto value : allSecurityGroupIdList)
+			itemsObject.securityGroupIdList.push_back(value.asString());
+		auto allVSwitchIdList = value["VSwitchIdList"]["vSwitch"];
+		for (auto value : allVSwitchIdList)
+			itemsObject.vSwitchIdList.push_back(value.asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["CurrentPage"].isNull())

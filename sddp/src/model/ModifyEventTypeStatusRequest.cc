@@ -34,6 +34,15 @@ void ModifyEventTypeStatusRequest::setSubTypeIds(const std::string &subTypeIds) 
   setParameter(std::string("SubTypeIds"), subTypeIds);
 }
 
+int ModifyEventTypeStatusRequest::getFeatureType() const {
+  return featureType_;
+}
+
+void ModifyEventTypeStatusRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
+}
+
 std::string ModifyEventTypeStatusRequest::getSourceIp() const {
   return sourceIp_;
 }

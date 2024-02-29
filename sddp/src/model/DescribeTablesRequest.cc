@@ -223,6 +223,15 @@ void DescribeTablesRequest::setCurrentPage(int currentPage) {
   setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
+long DescribeTablesRequest::getTemplateId() const {
+  return templateId_;
+}
+
+void DescribeTablesRequest::setTemplateId(long templateId) {
+  templateId_ = templateId;
+  setParameter(std::string("TemplateId"), std::to_string(templateId));
+}
+
 std::string DescribeTablesRequest::getRuleIds() const {
   return ruleIds_;
 }

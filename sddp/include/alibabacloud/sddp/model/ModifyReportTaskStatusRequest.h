@@ -30,6 +30,8 @@ class ALIBABACLOUD_SDDP_EXPORT ModifyReportTaskStatusRequest : public RpcService
 public:
 	ModifyReportTaskStatusRequest();
 	~ModifyReportTaskStatusRequest();
+	int getFeatureType() const;
+	void setFeatureType(int featureType);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getReportTaskStatus() const;
@@ -38,6 +40,7 @@ public:
 	void setLang(const std::string &lang);
 
 private:
+	int featureType_;
 	std::string sourceIp_;
 	int reportTaskStatus_;
 	std::string lang_;

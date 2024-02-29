@@ -32,6 +32,8 @@ public:
 	~ExecDatamaskRequest();
 	std::string getData() const;
 	void setData(const std::string &data);
+	int getFeatureType() const;
+	void setFeatureType(int featureType);
 	long getTemplateId() const;
 	void setTemplateId(long templateId);
 	std::string getSourceIp() const;
@@ -41,6 +43,7 @@ public:
 
 private:
 	std::string data_;
+	int featureType_;
 	long templateId_;
 	std::string sourceIp_;
 	std::string lang_;

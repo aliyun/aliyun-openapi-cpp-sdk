@@ -30,20 +30,23 @@ class ALIBABACLOUD_SDDP_EXPORT DescribeDataLimitSetRequest : public RpcServiceRe
 public:
 	DescribeDataLimitSetRequest();
 	~DescribeDataLimitSetRequest();
+	int getFeatureType() const;
+	void setFeatureType(int featureType);
+	int getResourceType() const;
+	void setResourceType(int resourceType);
 	std::string getParentId() const;
 	void setParentId(const std::string &parentId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
-	int getResourceType() const;
-	void setResourceType(int resourceType);
 
 private:
+	int featureType_;
+	int resourceType_;
 	std::string parentId_;
 	std::string sourceIp_;
 	std::string lang_;
-	int resourceType_;
 };
 } // namespace Model
 } // namespace Sddp

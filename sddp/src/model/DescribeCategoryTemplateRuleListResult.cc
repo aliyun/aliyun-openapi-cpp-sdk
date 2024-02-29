@@ -67,6 +67,8 @@ void DescribeCategoryTemplateRuleListResult::parse(const std::string &payload)
 			itemsObject.id = std::stol(valueItemsDataLimit["Id"].asString());
 		if(!valueItemsDataLimit["CategoryLevel"].isNull())
 			itemsObject.categoryLevel = std::stoi(valueItemsDataLimit["CategoryLevel"].asString());
+		if(!valueItemsDataLimit["ParentModelId"].isNull())
+			itemsObject.parentModelId = std::stol(valueItemsDataLimit["ParentModelId"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["CurrentPage"].isNull())

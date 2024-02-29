@@ -66,6 +66,16 @@ void DescribeOssObjectDetailResult::parse(const std::string &payload)
 			ruleObject.count = std::stol(ossObjectDetailNodeRuleListRule["Count"].asString());
 		if(!ossObjectDetailNodeRuleListRule["RuleName"].isNull())
 			ruleObject.ruleName = ossObjectDetailNodeRuleListRule["RuleName"].asString();
+		auto allModelTagsNode = ossObjectDetailNodeRuleListRule["ModelTags"]["modelTagsItem"];
+		for (auto ossObjectDetailNodeRuleListRuleModelTagsmodelTagsItem : allModelTagsNode)
+		{
+			OssObjectDetail::Rule::ModelTagsItem modelTagsObject;
+			if(!ossObjectDetailNodeRuleListRuleModelTagsmodelTagsItem["Id"].isNull())
+				modelTagsObject.id = std::stol(ossObjectDetailNodeRuleListRuleModelTagsmodelTagsItem["Id"].asString());
+			if(!ossObjectDetailNodeRuleListRuleModelTagsmodelTagsItem["Name"].isNull())
+				modelTagsObject.name = ossObjectDetailNodeRuleListRuleModelTagsmodelTagsItem["Name"].asString();
+			ruleObject.modelTags.push_back(modelTagsObject);
+		}
 		auto allSampleList = value["SampleList"]["Sample"];
 		for (auto value : allSampleList)
 			ruleObject.sampleList.push_back(value.asString());

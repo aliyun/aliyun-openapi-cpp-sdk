@@ -30,12 +30,15 @@ class ALIBABACLOUD_SDDP_EXPORT DescribeUserStatusRequest : public RpcServiceRequ
 public:
 	DescribeUserStatusRequest();
 	~DescribeUserStatusRequest();
+	int getFeatureType() const;
+	void setFeatureType(int featureType);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
 
 private:
+	int featureType_;
 	std::string sourceIp_;
 	std::string lang_;
 };

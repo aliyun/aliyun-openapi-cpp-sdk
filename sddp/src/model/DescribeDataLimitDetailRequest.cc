@@ -25,6 +25,15 @@ DescribeDataLimitDetailRequest::DescribeDataLimitDetailRequest()
 
 DescribeDataLimitDetailRequest::~DescribeDataLimitDetailRequest() {}
 
+int DescribeDataLimitDetailRequest::getFeatureType() const {
+  return featureType_;
+}
+
+void DescribeDataLimitDetailRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
+}
+
 int DescribeDataLimitDetailRequest::getNetworkType() const {
   return networkType_;
 }

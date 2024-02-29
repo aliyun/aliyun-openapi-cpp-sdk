@@ -25,6 +25,15 @@ DescribeUserStatusRequest::DescribeUserStatusRequest()
 
 DescribeUserStatusRequest::~DescribeUserStatusRequest() {}
 
+int DescribeUserStatusRequest::getFeatureType() const {
+  return featureType_;
+}
+
+void DescribeUserStatusRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
+}
+
 std::string DescribeUserStatusRequest::getSourceIp() const {
   return sourceIp_;
 }

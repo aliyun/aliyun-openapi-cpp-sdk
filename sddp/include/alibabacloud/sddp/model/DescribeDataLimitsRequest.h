@@ -52,6 +52,8 @@ public:
 	void setEngineType(const std::string &engineType);
 	int getAuditStatus() const;
 	void setAuditStatus(int auditStatus);
+	int getFeatureType() const;
+	void setFeatureType(int featureType);
 	long getEndTime() const;
 	void setEndTime(long endTime);
 	int getCurrentPage() const;
@@ -71,6 +73,7 @@ private:
 	std::string serviceRegionId_;
 	std::string engineType_;
 	int auditStatus_;
+	int featureType_;
 	long endTime_;
 	int currentPage_;
 	int resourceType_;

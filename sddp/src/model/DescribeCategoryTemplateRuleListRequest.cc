@@ -61,6 +61,15 @@ void DescribeCategoryTemplateRuleListRequest::setLang(const std::string &lang) {
   setParameter(std::string("Lang"), lang);
 }
 
+int DescribeCategoryTemplateRuleListRequest::getFeatureType() const {
+  return featureType_;
+}
+
+void DescribeCategoryTemplateRuleListRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
+}
+
 std::string DescribeCategoryTemplateRuleListRequest::getParentCategoryIdList() const {
   return parentCategoryIdList_;
 }

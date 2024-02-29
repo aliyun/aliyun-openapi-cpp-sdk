@@ -303,6 +303,42 @@ SddpClient::DeleteRuleOutcomeCallable SddpClient::deleteRuleCallable(const Delet
 	return task->get_future();
 }
 
+SddpClient::DescribeCategoryTemplateListOutcome SddpClient::describeCategoryTemplateList(const DescribeCategoryTemplateListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCategoryTemplateListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCategoryTemplateListOutcome(DescribeCategoryTemplateListResult(outcome.result()));
+	else
+		return DescribeCategoryTemplateListOutcome(outcome.error());
+}
+
+void SddpClient::describeCategoryTemplateListAsync(const DescribeCategoryTemplateListRequest& request, const DescribeCategoryTemplateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCategoryTemplateList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeCategoryTemplateListOutcomeCallable SddpClient::describeCategoryTemplateListCallable(const DescribeCategoryTemplateListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCategoryTemplateListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCategoryTemplateList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SddpClient::DescribeCategoryTemplateRuleListOutcome SddpClient::describeCategoryTemplateRuleList(const DescribeCategoryTemplateRuleListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,6 +405,42 @@ SddpClient::DescribeColumnsOutcomeCallable SddpClient::describeColumnsCallable(c
 			[this, request]()
 			{
 			return this->describeColumns(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeColumnsV2Outcome SddpClient::describeColumnsV2(const DescribeColumnsV2Request &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeColumnsV2Outcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeColumnsV2Outcome(DescribeColumnsV2Result(outcome.result()));
+	else
+		return DescribeColumnsV2Outcome(outcome.error());
+}
+
+void SddpClient::describeColumnsV2Async(const DescribeColumnsV2Request& request, const DescribeColumnsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeColumnsV2(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeColumnsV2OutcomeCallable SddpClient::describeColumnsV2Callable(const DescribeColumnsV2Request &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeColumnsV2Outcome()>>(
+			[this, request]()
+			{
+			return this->describeColumnsV2(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -627,6 +699,150 @@ SddpClient::DescribeDataMaskingTasksOutcomeCallable SddpClient::describeDataMask
 	return task->get_future();
 }
 
+SddpClient::DescribeDataObjectColumnDetailOutcome SddpClient::describeDataObjectColumnDetail(const DescribeDataObjectColumnDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDataObjectColumnDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDataObjectColumnDetailOutcome(DescribeDataObjectColumnDetailResult(outcome.result()));
+	else
+		return DescribeDataObjectColumnDetailOutcome(outcome.error());
+}
+
+void SddpClient::describeDataObjectColumnDetailAsync(const DescribeDataObjectColumnDetailRequest& request, const DescribeDataObjectColumnDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDataObjectColumnDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeDataObjectColumnDetailOutcomeCallable SddpClient::describeDataObjectColumnDetailCallable(const DescribeDataObjectColumnDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDataObjectColumnDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDataObjectColumnDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeDataObjectColumnDetailV2Outcome SddpClient::describeDataObjectColumnDetailV2(const DescribeDataObjectColumnDetailV2Request &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDataObjectColumnDetailV2Outcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDataObjectColumnDetailV2Outcome(DescribeDataObjectColumnDetailV2Result(outcome.result()));
+	else
+		return DescribeDataObjectColumnDetailV2Outcome(outcome.error());
+}
+
+void SddpClient::describeDataObjectColumnDetailV2Async(const DescribeDataObjectColumnDetailV2Request& request, const DescribeDataObjectColumnDetailV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDataObjectColumnDetailV2(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeDataObjectColumnDetailV2OutcomeCallable SddpClient::describeDataObjectColumnDetailV2Callable(const DescribeDataObjectColumnDetailV2Request &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDataObjectColumnDetailV2Outcome()>>(
+			[this, request]()
+			{
+			return this->describeDataObjectColumnDetailV2(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeDataObjectsOutcome SddpClient::describeDataObjects(const DescribeDataObjectsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDataObjectsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDataObjectsOutcome(DescribeDataObjectsResult(outcome.result()));
+	else
+		return DescribeDataObjectsOutcome(outcome.error());
+}
+
+void SddpClient::describeDataObjectsAsync(const DescribeDataObjectsRequest& request, const DescribeDataObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDataObjects(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeDataObjectsOutcomeCallable SddpClient::describeDataObjectsCallable(const DescribeDataObjectsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDataObjectsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDataObjects(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeDocTypesOutcome SddpClient::describeDocTypes(const DescribeDocTypesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDocTypesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDocTypesOutcome(DescribeDocTypesResult(outcome.result()));
+	else
+		return DescribeDocTypesOutcome(outcome.error());
+}
+
+void SddpClient::describeDocTypesAsync(const DescribeDocTypesRequest& request, const DescribeDocTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDocTypes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeDocTypesOutcomeCallable SddpClient::describeDocTypesCallable(const DescribeDocTypesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDocTypesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDocTypes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SddpClient::DescribeEventDetailOutcome SddpClient::describeEventDetail(const DescribeEventDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -843,6 +1059,42 @@ SddpClient::DescribeOssObjectDetailOutcomeCallable SddpClient::describeOssObject
 	return task->get_future();
 }
 
+SddpClient::DescribeOssObjectDetailV2Outcome SddpClient::describeOssObjectDetailV2(const DescribeOssObjectDetailV2Request &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeOssObjectDetailV2Outcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeOssObjectDetailV2Outcome(DescribeOssObjectDetailV2Result(outcome.result()));
+	else
+		return DescribeOssObjectDetailV2Outcome(outcome.error());
+}
+
+void SddpClient::describeOssObjectDetailV2Async(const DescribeOssObjectDetailV2Request& request, const DescribeOssObjectDetailV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeOssObjectDetailV2(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeOssObjectDetailV2OutcomeCallable SddpClient::describeOssObjectDetailV2Callable(const DescribeOssObjectDetailV2Request &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeOssObjectDetailV2Outcome()>>(
+			[this, request]()
+			{
+			return this->describeOssObjectDetailV2(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SddpClient::DescribeOssObjectsOutcome SddpClient::describeOssObjects(const DescribeOssObjectsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -909,6 +1161,42 @@ SddpClient::DescribePackagesOutcomeCallable SddpClient::describePackagesCallable
 			[this, request]()
 			{
 			return this->describePackages(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeParentInstanceOutcome SddpClient::describeParentInstance(const DescribeParentInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeParentInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeParentInstanceOutcome(DescribeParentInstanceResult(outcome.result()));
+	else
+		return DescribeParentInstanceOutcome(outcome.error());
+}
+
+void SddpClient::describeParentInstanceAsync(const DescribeParentInstanceRequest& request, const DescribeParentInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeParentInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeParentInstanceOutcomeCallable SddpClient::describeParentInstanceCallable(const DescribeParentInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeParentInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeParentInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1017,6 +1305,42 @@ SddpClient::DescribeTablesOutcomeCallable SddpClient::describeTablesCallable(con
 			[this, request]()
 			{
 			return this->describeTables(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeTemplateAllRulesOutcome SddpClient::describeTemplateAllRules(const DescribeTemplateAllRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTemplateAllRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTemplateAllRulesOutcome(DescribeTemplateAllRulesResult(outcome.result()));
+	else
+		return DescribeTemplateAllRulesOutcome(outcome.error());
+}
+
+void SddpClient::describeTemplateAllRulesAsync(const DescribeTemplateAllRulesRequest& request, const DescribeTemplateAllRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTemplateAllRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeTemplateAllRulesOutcomeCallable SddpClient::describeTemplateAllRulesCallable(const DescribeTemplateAllRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTemplateAllRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTemplateAllRules(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

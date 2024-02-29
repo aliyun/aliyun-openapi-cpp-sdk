@@ -32,6 +32,10 @@ public:
 	~ModifyDataLimitRequest();
 	bool getModifyPassword() const;
 	void setModifyPassword(bool modifyPassword);
+	std::vector<std::string> getVSwitchIdList() const;
+	void setVSwitchIdList(const std::vector<std::string> &vSwitchIdList);
+	int getSamplingSize() const;
+	void setSamplingSize(int samplingSize);
 	std::string getPassword() const;
 	void setPassword(const std::string &password);
 	std::string getSourceIp() const;
@@ -48,6 +52,10 @@ public:
 	void setAuditStatus(int auditStatus);
 	int getAutoScan() const;
 	void setAutoScan(int autoScan);
+	int getFeatureType() const;
+	void setFeatureType(int featureType);
+	std::vector<std::string> getSecurityGroupIdList() const;
+	void setSecurityGroupIdList(const std::vector<std::string> &securityGroupIdList);
 	int getLogStoreDay() const;
 	void setLogStoreDay(int logStoreDay);
 	int getResourceType() const;
@@ -56,11 +64,15 @@ public:
 	void setConnector(const std::string &connector);
 	int getPort() const;
 	void setPort(int port);
+	std::string getVpcId() const;
+	void setVpcId(const std::string &vpcId);
 	std::string getUserName() const;
 	void setUserName(const std::string &userName);
 
 private:
 	bool modifyPassword_;
+	std::vector<std::string> vSwitchIdList_;
+	int samplingSize_;
 	std::string password_;
 	std::string sourceIp_;
 	long id_;
@@ -69,10 +81,13 @@ private:
 	std::string engineType_;
 	int auditStatus_;
 	int autoScan_;
+	int featureType_;
+	std::vector<std::string> securityGroupIdList_;
 	int logStoreDay_;
 	int resourceType_;
 	std::string connector_;
 	int port_;
+	std::string vpcId_;
 	std::string userName_;
 };
 } // namespace Model

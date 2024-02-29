@@ -32,6 +32,8 @@ public:
 	~ModifyEventTypeStatusRequest();
 	std::string getSubTypeIds() const;
 	void setSubTypeIds(const std::string &subTypeIds);
+	int getFeatureType() const;
+	void setFeatureType(int featureType);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getLang() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string subTypeIds_;
+	int featureType_;
 	std::string sourceIp_;
 	std::string lang_;
 };

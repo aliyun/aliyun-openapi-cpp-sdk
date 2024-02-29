@@ -44,10 +44,14 @@ public:
 	void setContent(const std::string &content);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	int getMatchType() const;
+	void setMatchType(int matchType);
 	long getId() const;
 	void setId(long id);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	int getSupportForm() const;
+	void setSupportForm(int supportForm);
 	int getFeatureType() const;
 	void setFeatureType(int featureType);
 	int getRuleType() const;
@@ -73,8 +77,10 @@ private:
 	long riskLevelId_;
 	std::string content_;
 	std::string sourceIp_;
+	int matchType_;
 	long id_;
 	std::string lang_;
+	int supportForm_;
 	int featureType_;
 	int ruleType_;
 	std::string statExpress_;

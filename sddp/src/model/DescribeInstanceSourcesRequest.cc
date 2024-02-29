@@ -124,6 +124,15 @@ void DescribeInstanceSourcesRequest::setAuthStatus(int authStatus) {
   setParameter(std::string("AuthStatus"), std::to_string(authStatus));
 }
 
+int DescribeInstanceSourcesRequest::getFeatureType() const {
+  return featureType_;
+}
+
+void DescribeInstanceSourcesRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
+}
+
 int DescribeInstanceSourcesRequest::getCurrentPage() const {
   return currentPage_;
 }

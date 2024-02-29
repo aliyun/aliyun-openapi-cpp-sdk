@@ -30,20 +30,20 @@ class ALIBABACLOUD_SDDP_EXPORT StopMaskingProcessRequest : public RpcServiceRequ
 public:
 	StopMaskingProcessRequest();
 	~StopMaskingProcessRequest();
+	int getFeatureType() const;
+	void setFeatureType(int featureType);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	long getId() const;
 	void setId(long id);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
-	int getFeatureType() const;
-	void setFeatureType(int featureType);
 
 private:
+	int featureType_;
 	std::string sourceIp_;
 	long id_;
 	std::string lang_;
-	int featureType_;
 };
 } // namespace Model
 } // namespace Sddp

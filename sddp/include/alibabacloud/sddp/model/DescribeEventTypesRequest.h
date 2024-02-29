@@ -32,6 +32,8 @@ public:
 	~DescribeEventTypesRequest();
 	int getResourceId() const;
 	void setResourceId(int resourceId);
+	int getFeatureType() const;
+	void setFeatureType(int featureType);
 	long getParentTypeId() const;
 	void setParentTypeId(long parentTypeId);
 	std::string getSourceIp() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	int resourceId_;
+	int featureType_;
 	long parentTypeId_;
 	std::string sourceIp_;
 	std::string lang_;

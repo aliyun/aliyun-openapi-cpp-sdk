@@ -48,6 +48,8 @@ public:
 	void setScanRange(int scanRange);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	int getFeatureType() const;
+	void setFeatureType(int featureType);
 	std::string getOssScanPath() const;
 	void setOssScanPath(const std::string &ossScanPath);
 	long getResourceType() const;
@@ -65,6 +67,7 @@ private:
 	int intervalDay_;
 	int scanRange_;
 	std::string lang_;
+	int featureType_;
 	std::string ossScanPath_;
 	long resourceType_;
 	std::string taskUserName_;

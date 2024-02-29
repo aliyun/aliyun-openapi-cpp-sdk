@@ -25,6 +25,15 @@ DescribeRiskLevelsRequest::DescribeRiskLevelsRequest()
 
 DescribeRiskLevelsRequest::~DescribeRiskLevelsRequest() {}
 
+int DescribeRiskLevelsRequest::getFeatureType() const {
+  return featureType_;
+}
+
+void DescribeRiskLevelsRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
+}
+
 int DescribeRiskLevelsRequest::getCustomType() const {
   return customType_;
 }
@@ -32,6 +41,15 @@ int DescribeRiskLevelsRequest::getCustomType() const {
 void DescribeRiskLevelsRequest::setCustomType(int customType) {
   customType_ = customType;
   setParameter(std::string("CustomType"), std::to_string(customType));
+}
+
+long DescribeRiskLevelsRequest::getTemplateId() const {
+  return templateId_;
+}
+
+void DescribeRiskLevelsRequest::setTemplateId(long templateId) {
+  templateId_ = templateId;
+  setParameter(std::string("TemplateId"), std::to_string(templateId));
 }
 
 std::string DescribeRiskLevelsRequest::getSourceIp() const {

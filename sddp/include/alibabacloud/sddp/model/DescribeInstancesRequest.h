@@ -80,6 +80,8 @@ public:
 	void setCurrentPage(int currentPage);
 	std::string getName() const;
 	void setName(const std::string &name);
+	bool getNeedModelTag() const;
+	void setNeedModelTag(bool needModelTag);
 	long getRuleId() const;
 	void setRuleId(long ruleId);
 	long getLastFinishTimeEnd() const;
@@ -111,6 +113,7 @@ private:
 	long endTime_;
 	int currentPage_;
 	std::string name_;
+	bool needModelTag_;
 	long ruleId_;
 	long lastFinishTimeEnd_;
 };

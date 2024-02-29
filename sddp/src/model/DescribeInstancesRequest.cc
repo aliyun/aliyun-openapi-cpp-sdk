@@ -250,6 +250,15 @@ void DescribeInstancesRequest::setName(const std::string &name) {
   setParameter(std::string("Name"), name);
 }
 
+bool DescribeInstancesRequest::getNeedModelTag() const {
+  return needModelTag_;
+}
+
+void DescribeInstancesRequest::setNeedModelTag(bool needModelTag) {
+  needModelTag_ = needModelTag;
+  setParameter(std::string("NeedModelTag"), needModelTag ? "true" : "false");
+}
+
 long DescribeInstancesRequest::getRuleId() const {
   return ruleId_;
 }

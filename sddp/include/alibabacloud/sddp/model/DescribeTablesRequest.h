@@ -74,6 +74,8 @@ public:
 	void setEndTime(long endTime);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
+	long getTemplateId() const;
+	void setTemplateId(long templateId);
 	std::string getRuleIds() const;
 	void setRuleIds(const std::string &ruleIds);
 	long getInstanceId() const;
@@ -108,6 +110,7 @@ private:
 	std::string orderBy_;
 	long endTime_;
 	int currentPage_;
+	long templateId_;
 	std::string ruleIds_;
 	long instanceId_;
 	std::string instanceName_;

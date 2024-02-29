@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct Column
 				{
+					struct ModelTagsItem
+					{
+						long id;
+						std::string name;
+					};
 					long tableId;
 					int odpsRiskLevelValue;
 					long instanceId;
@@ -48,6 +53,7 @@ namespace AlibabaCloud
 					long revisionStatus;
 					std::string tableName;
 					std::string sensLevelName;
+					std::vector<Column::ModelTagsItem> modelTags;
 					long creationTime;
 					std::string dataType;
 					bool sensitive;

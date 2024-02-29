@@ -34,6 +34,15 @@ void DisableUserConfigRequest::setCode(const std::string &code) {
   setParameter(std::string("Code"), code);
 }
 
+int DisableUserConfigRequest::getFeatureType() const {
+  return featureType_;
+}
+
+void DisableUserConfigRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
+}
+
 std::string DisableUserConfigRequest::getSourceIp() const {
   return sourceIp_;
 }

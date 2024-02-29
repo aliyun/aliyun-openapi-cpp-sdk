@@ -34,6 +34,23 @@ void ModifyDataLimitRequest::setModifyPassword(bool modifyPassword) {
   setParameter(std::string("ModifyPassword"), modifyPassword ? "true" : "false");
 }
 
+std::vector<std::string> ModifyDataLimitRequest::getVSwitchIdList() const {
+  return vSwitchIdList_;
+}
+
+void ModifyDataLimitRequest::setVSwitchIdList(const std::vector<std::string> &vSwitchIdList) {
+  vSwitchIdList_ = vSwitchIdList;
+}
+
+int ModifyDataLimitRequest::getSamplingSize() const {
+  return samplingSize_;
+}
+
+void ModifyDataLimitRequest::setSamplingSize(int samplingSize) {
+  samplingSize_ = samplingSize;
+  setParameter(std::string("SamplingSize"), std::to_string(samplingSize));
+}
+
 std::string ModifyDataLimitRequest::getPassword() const {
   return password_;
 }
@@ -106,6 +123,23 @@ void ModifyDataLimitRequest::setAutoScan(int autoScan) {
   setParameter(std::string("AutoScan"), std::to_string(autoScan));
 }
 
+int ModifyDataLimitRequest::getFeatureType() const {
+  return featureType_;
+}
+
+void ModifyDataLimitRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
+}
+
+std::vector<std::string> ModifyDataLimitRequest::getSecurityGroupIdList() const {
+  return securityGroupIdList_;
+}
+
+void ModifyDataLimitRequest::setSecurityGroupIdList(const std::vector<std::string> &securityGroupIdList) {
+  securityGroupIdList_ = securityGroupIdList;
+}
+
 int ModifyDataLimitRequest::getLogStoreDay() const {
   return logStoreDay_;
 }
@@ -140,6 +174,15 @@ int ModifyDataLimitRequest::getPort() const {
 void ModifyDataLimitRequest::setPort(int port) {
   port_ = port;
   setParameter(std::string("Port"), std::to_string(port));
+}
+
+std::string ModifyDataLimitRequest::getVpcId() const {
+  return vpcId_;
+}
+
+void ModifyDataLimitRequest::setVpcId(const std::string &vpcId) {
+  vpcId_ = vpcId;
+  setParameter(std::string("VpcId"), vpcId);
 }
 
 std::string ModifyDataLimitRequest::getUserName() const {

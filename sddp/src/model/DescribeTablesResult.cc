@@ -111,6 +111,16 @@ void DescribeTablesResult::parse(const std::string &payload)
 				ruleListObject.count = std::stol(valueItemsTableRuleListRule["Count"].asString());
 			itemsObject.ruleList.push_back(ruleListObject);
 		}
+		auto allModelTagsNode = valueItemsTable["ModelTags"]["modelTagsItem"];
+		for (auto valueItemsTableModelTagsmodelTagsItem : allModelTagsNode)
+		{
+			Table::ModelTagsItem modelTagsObject;
+			if(!valueItemsTableModelTagsmodelTagsItem["Id"].isNull())
+				modelTagsObject.id = std::stol(valueItemsTableModelTagsmodelTagsItem["Id"].asString());
+			if(!valueItemsTableModelTagsmodelTagsItem["Name"].isNull())
+				modelTagsObject.name = valueItemsTableModelTagsmodelTagsItem["Name"].asString();
+			itemsObject.modelTags.push_back(modelTagsObject);
+		}
 		items_.push_back(itemsObject);
 	}
 	if(!value["CurrentPage"].isNull())

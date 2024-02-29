@@ -25,6 +25,15 @@ DescribeEventsRequest::DescribeEventsRequest()
 
 DescribeEventsRequest::~DescribeEventsRequest() {}
 
+int DescribeEventsRequest::getWarnLevel() const {
+  return warnLevel_;
+}
+
+void DescribeEventsRequest::setWarnLevel(int warnLevel) {
+  warnLevel_ = warnLevel;
+  setParameter(std::string("WarnLevel"), std::to_string(warnLevel));
+}
+
 std::string DescribeEventsRequest::getProductCode() const {
   return productCode_;
 }

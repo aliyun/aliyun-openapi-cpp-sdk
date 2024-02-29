@@ -52,6 +52,8 @@ public:
 	void setAuditStatus(int auditStatus);
 	int getAuthStatus() const;
 	void setAuthStatus(int authStatus);
+	int getFeatureType() const;
+	void setFeatureType(int featureType);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
 	bool getAuthed() const;
@@ -73,6 +75,7 @@ private:
 	std::string engineType_;
 	int auditStatus_;
 	int authStatus_;
+	int featureType_;
 	int currentPage_;
 	bool authed_;
 	std::string instanceId_;
