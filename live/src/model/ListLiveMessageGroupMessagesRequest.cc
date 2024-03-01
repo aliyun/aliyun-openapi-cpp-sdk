@@ -43,6 +43,24 @@ void ListLiveMessageGroupMessagesRequest::setNextPageToken(long nextPageToken) {
   setParameter(std::string("NextPageToken"), std::to_string(nextPageToken));
 }
 
+int ListLiveMessageGroupMessagesRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListLiveMessageGroupMessagesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+long ListLiveMessageGroupMessagesRequest::getMsgType() const {
+  return msgType_;
+}
+
+void ListLiveMessageGroupMessagesRequest::setMsgType(long msgType) {
+  msgType_ = msgType;
+  setParameter(std::string("MsgType"), std::to_string(msgType));
+}
+
 std::string ListLiveMessageGroupMessagesRequest::getGroupId() const {
   return groupId_;
 }
@@ -86,23 +104,5 @@ std::string ListLiveMessageGroupMessagesRequest::getAppId() const {
 void ListLiveMessageGroupMessagesRequest::setAppId(const std::string &appId) {
   appId_ = appId;
   setParameter(std::string("AppId"), appId);
-}
-
-int ListLiveMessageGroupMessagesRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListLiveMessageGroupMessagesRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
-long ListLiveMessageGroupMessagesRequest::getMsgType() const {
-  return msgType_;
-}
-
-void ListLiveMessageGroupMessagesRequest::setMsgType(long msgType) {
-  msgType_ = msgType;
-  setParameter(std::string("MsgType"), std::to_string(msgType));
 }
 

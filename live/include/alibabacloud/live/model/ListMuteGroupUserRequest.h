@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_LISTLIVEMESSAGEGROUPMESSAGESREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_LISTLIVEMESSAGEGROUPMESSAGESREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_LISTMUTEGROUPUSERREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_LISTMUTEGROUPUSERREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,41 +26,29 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT ListLiveMessageGroupMessagesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT ListMuteGroupUserRequest : public RpcServiceRequest {
 public:
-	ListLiveMessageGroupMessagesRequest();
-	~ListLiveMessageGroupMessagesRequest();
-	int getSortType() const;
-	void setSortType(int sortType);
-	long getNextPageToken() const;
-	void setNextPageToken(long nextPageToken);
+	ListMuteGroupUserRequest();
+	~ListMuteGroupUserRequest();
+	int getPageNum() const;
+	void setPageNum(int pageNum);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	long getMsgType() const;
-	void setMsgType(long msgType);
+	std::string getOperatorUserId() const;
+	void setOperatorUserId(const std::string &operatorUserId);
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
-	long getEndTime() const;
-	void setEndTime(long endTime);
-	long getBeginTime() const;
-	void setBeginTime(long beginTime);
-	std::string getDataCenter() const;
-	void setDataCenter(const std::string &dataCenter);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
 
 private:
-	int sortType_;
-	long nextPageToken_;
+	int pageNum_;
 	int pageSize_;
-	long msgType_;
+	std::string operatorUserId_;
 	std::string groupId_;
-	long endTime_;
-	long beginTime_;
-	std::string dataCenter_;
 	std::string appId_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_LISTLIVEMESSAGEGROUPMESSAGESREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_LISTMUTEGROUPUSERREQUEST_H_

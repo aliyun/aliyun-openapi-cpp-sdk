@@ -61,6 +61,15 @@ void DescribeLiveCdnDiagnoseInfoRequest::setRequestType(const std::string &reque
   setParameter(std::string("requestType"), requestType);
 }
 
+std::string DescribeLiveCdnDiagnoseInfoRequest::getSecurityToken() const {
+  return securityToken_;
+}
+
+void DescribeLiveCdnDiagnoseInfoRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
+}
+
 std::string DescribeLiveCdnDiagnoseInfoRequest::getStreamName() const {
   return streamName_;
 }

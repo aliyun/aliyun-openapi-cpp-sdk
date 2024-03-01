@@ -332,6 +332,8 @@
 #include "model/DescribeLiveDomainMonitoringUsageDataResult.h"
 #include "model/DescribeLiveDomainOnlineUserNumRequest.h"
 #include "model/DescribeLiveDomainOnlineUserNumResult.h"
+#include "model/DescribeLiveDomainPublishErrorCodeRequest.h"
+#include "model/DescribeLiveDomainPublishErrorCodeResult.h"
 #include "model/DescribeLiveDomainPushBpsDataRequest.h"
 #include "model/DescribeLiveDomainPushBpsDataResult.h"
 #include "model/DescribeLiveDomainPushTrafficDataRequest.h"
@@ -472,6 +474,8 @@
 #include "model/DescribeLiveTagResourcesResult.h"
 #include "model/DescribeLiveTopDomainsByFlowRequest.h"
 #include "model/DescribeLiveTopDomainsByFlowResult.h"
+#include "model/DescribeLiveUpVideoAudioInfoRequest.h"
+#include "model/DescribeLiveUpVideoAudioInfoResult.h"
 #include "model/DescribeLiveUserBillPredictionRequest.h"
 #include "model/DescribeLiveUserBillPredictionResult.h"
 #include "model/DescribeLiveUserDomainsRequest.h"
@@ -598,6 +602,8 @@
 #include "model/ListMessageGroupUserResult.h"
 #include "model/ListMessageGroupUserByIdRequest.h"
 #include "model/ListMessageGroupUserByIdResult.h"
+#include "model/ListMuteGroupUserRequest.h"
+#include "model/ListMuteGroupUserResult.h"
 #include "model/ListPlaylistRequest.h"
 #include "model/ListPlaylistResult.h"
 #include "model/ListPlaylistItemsRequest.h"
@@ -1268,6 +1274,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveDomainOnlineUserNumResult> DescribeLiveDomainOnlineUserNumOutcome;
 			typedef std::future<DescribeLiveDomainOnlineUserNumOutcome> DescribeLiveDomainOnlineUserNumOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainOnlineUserNumRequest&, const DescribeLiveDomainOnlineUserNumOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainOnlineUserNumAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveDomainPublishErrorCodeResult> DescribeLiveDomainPublishErrorCodeOutcome;
+			typedef std::future<DescribeLiveDomainPublishErrorCodeOutcome> DescribeLiveDomainPublishErrorCodeOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainPublishErrorCodeRequest&, const DescribeLiveDomainPublishErrorCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainPublishErrorCodeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveDomainPushBpsDataResult> DescribeLiveDomainPushBpsDataOutcome;
 			typedef std::future<DescribeLiveDomainPushBpsDataOutcome> DescribeLiveDomainPushBpsDataOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainPushBpsDataRequest&, const DescribeLiveDomainPushBpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainPushBpsDataAsyncHandler;
@@ -1478,6 +1487,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveTopDomainsByFlowResult> DescribeLiveTopDomainsByFlowOutcome;
 			typedef std::future<DescribeLiveTopDomainsByFlowOutcome> DescribeLiveTopDomainsByFlowOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveTopDomainsByFlowRequest&, const DescribeLiveTopDomainsByFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveTopDomainsByFlowAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveUpVideoAudioInfoResult> DescribeLiveUpVideoAudioInfoOutcome;
+			typedef std::future<DescribeLiveUpVideoAudioInfoOutcome> DescribeLiveUpVideoAudioInfoOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveUpVideoAudioInfoRequest&, const DescribeLiveUpVideoAudioInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveUpVideoAudioInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveUserBillPredictionResult> DescribeLiveUserBillPredictionOutcome;
 			typedef std::future<DescribeLiveUserBillPredictionOutcome> DescribeLiveUserBillPredictionOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveUserBillPredictionRequest&, const DescribeLiveUserBillPredictionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveUserBillPredictionAsyncHandler;
@@ -1667,6 +1679,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListMessageGroupUserByIdResult> ListMessageGroupUserByIdOutcome;
 			typedef std::future<ListMessageGroupUserByIdOutcome> ListMessageGroupUserByIdOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ListMessageGroupUserByIdRequest&, const ListMessageGroupUserByIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMessageGroupUserByIdAsyncHandler;
+			typedef Outcome<Error, Model::ListMuteGroupUserResult> ListMuteGroupUserOutcome;
+			typedef std::future<ListMuteGroupUserOutcome> ListMuteGroupUserOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ListMuteGroupUserRequest&, const ListMuteGroupUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMuteGroupUserAsyncHandler;
 			typedef Outcome<Error, Model::ListPlaylistResult> ListPlaylistOutcome;
 			typedef std::future<ListPlaylistOutcome> ListPlaylistOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ListPlaylistRequest&, const ListPlaylistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPlaylistAsyncHandler;
@@ -2431,6 +2446,9 @@ namespace AlibabaCloud
 			DescribeLiveDomainOnlineUserNumOutcome describeLiveDomainOnlineUserNum(const Model::DescribeLiveDomainOnlineUserNumRequest &request)const;
 			void describeLiveDomainOnlineUserNumAsync(const Model::DescribeLiveDomainOnlineUserNumRequest& request, const DescribeLiveDomainOnlineUserNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveDomainOnlineUserNumOutcomeCallable describeLiveDomainOnlineUserNumCallable(const Model::DescribeLiveDomainOnlineUserNumRequest& request) const;
+			DescribeLiveDomainPublishErrorCodeOutcome describeLiveDomainPublishErrorCode(const Model::DescribeLiveDomainPublishErrorCodeRequest &request)const;
+			void describeLiveDomainPublishErrorCodeAsync(const Model::DescribeLiveDomainPublishErrorCodeRequest& request, const DescribeLiveDomainPublishErrorCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveDomainPublishErrorCodeOutcomeCallable describeLiveDomainPublishErrorCodeCallable(const Model::DescribeLiveDomainPublishErrorCodeRequest& request) const;
 			DescribeLiveDomainPushBpsDataOutcome describeLiveDomainPushBpsData(const Model::DescribeLiveDomainPushBpsDataRequest &request)const;
 			void describeLiveDomainPushBpsDataAsync(const Model::DescribeLiveDomainPushBpsDataRequest& request, const DescribeLiveDomainPushBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveDomainPushBpsDataOutcomeCallable describeLiveDomainPushBpsDataCallable(const Model::DescribeLiveDomainPushBpsDataRequest& request) const;
@@ -2641,6 +2659,9 @@ namespace AlibabaCloud
 			DescribeLiveTopDomainsByFlowOutcome describeLiveTopDomainsByFlow(const Model::DescribeLiveTopDomainsByFlowRequest &request)const;
 			void describeLiveTopDomainsByFlowAsync(const Model::DescribeLiveTopDomainsByFlowRequest& request, const DescribeLiveTopDomainsByFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveTopDomainsByFlowOutcomeCallable describeLiveTopDomainsByFlowCallable(const Model::DescribeLiveTopDomainsByFlowRequest& request) const;
+			DescribeLiveUpVideoAudioInfoOutcome describeLiveUpVideoAudioInfo(const Model::DescribeLiveUpVideoAudioInfoRequest &request)const;
+			void describeLiveUpVideoAudioInfoAsync(const Model::DescribeLiveUpVideoAudioInfoRequest& request, const DescribeLiveUpVideoAudioInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveUpVideoAudioInfoOutcomeCallable describeLiveUpVideoAudioInfoCallable(const Model::DescribeLiveUpVideoAudioInfoRequest& request) const;
 			DescribeLiveUserBillPredictionOutcome describeLiveUserBillPrediction(const Model::DescribeLiveUserBillPredictionRequest &request)const;
 			void describeLiveUserBillPredictionAsync(const Model::DescribeLiveUserBillPredictionRequest& request, const DescribeLiveUserBillPredictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveUserBillPredictionOutcomeCallable describeLiveUserBillPredictionCallable(const Model::DescribeLiveUserBillPredictionRequest& request) const;
@@ -2830,6 +2851,9 @@ namespace AlibabaCloud
 			ListMessageGroupUserByIdOutcome listMessageGroupUserById(const Model::ListMessageGroupUserByIdRequest &request)const;
 			void listMessageGroupUserByIdAsync(const Model::ListMessageGroupUserByIdRequest& request, const ListMessageGroupUserByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMessageGroupUserByIdOutcomeCallable listMessageGroupUserByIdCallable(const Model::ListMessageGroupUserByIdRequest& request) const;
+			ListMuteGroupUserOutcome listMuteGroupUser(const Model::ListMuteGroupUserRequest &request)const;
+			void listMuteGroupUserAsync(const Model::ListMuteGroupUserRequest& request, const ListMuteGroupUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListMuteGroupUserOutcomeCallable listMuteGroupUserCallable(const Model::ListMuteGroupUserRequest& request) const;
 			ListPlaylistOutcome listPlaylist(const Model::ListPlaylistRequest &request)const;
 			void listPlaylistAsync(const Model::ListPlaylistRequest& request, const ListPlaylistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPlaylistOutcomeCallable listPlaylistCallable(const Model::ListPlaylistRequest& request) const;

@@ -42,11 +42,11 @@ StartLiveMPUTaskRequest::SeiParams StartLiveMPUTaskRequest::getSeiParams() const
 
 void StartLiveMPUTaskRequest::setSeiParams(const StartLiveMPUTaskRequest::SeiParams &seiParams) {
   seiParams_ = seiParams;
+  setParameter(std::string("SeiParams") + ".PayloadType", seiParams.payloadType);
   setParameter(std::string("SeiParams") + ".LayoutVolume.FollowIdr", seiParams.layoutVolume.followIdr);
-  setParameter(std::string("SeiParams") + ".LayoutVolume.PayloadType", seiParams.layoutVolume.payloadType);
   setParameter(std::string("SeiParams") + ".LayoutVolume.Interval", seiParams.layoutVolume.interval);
   setParameter(std::string("SeiParams") + ".PassThrough.FollowIdr", seiParams.passThrough.followIdr);
-  setParameter(std::string("SeiParams") + ".PassThrough.PayloadType", seiParams.passThrough.payloadType);
+  setParameter(std::string("SeiParams") + ".PassThrough.PayloadContentKey", seiParams.passThrough.payloadContentKey);
   setParameter(std::string("SeiParams") + ".PassThrough.PayloadContent", seiParams.passThrough.payloadContent);
   setParameter(std::string("SeiParams") + ".PassThrough.Interval", seiParams.passThrough.interval);
 }

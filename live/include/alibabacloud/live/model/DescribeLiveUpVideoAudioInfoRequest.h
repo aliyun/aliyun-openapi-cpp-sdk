@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINTRANSCODEPARAMSREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINTRANSCODEPARAMSREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUPVIDEOAUDIOINFOREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUPVIDEOAUDIOINFOREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,26 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainTranscodeParamsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT DescribeLiveUpVideoAudioInfoRequest : public RpcServiceRequest {
 public:
-	DescribeLiveDomainTranscodeParamsRequest();
-	~DescribeLiveDomainTranscodeParamsRequest();
-	std::string getPushdomain() const;
-	void setPushdomain(const std::string &pushdomain);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
-	std::string getApp() const;
-	void setApp(const std::string &app);
-	std::string getTemplate_name() const;
-	void setTemplate_name(const std::string &template_name);
+	DescribeLiveUpVideoAudioInfoRequest();
+	~DescribeLiveUpVideoAudioInfoRequest();
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
+	std::string getStream() const;
+	void setStream(const std::string &stream);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
 
 private:
-	std::string pushdomain_;
-	std::string securityToken_;
-	std::string app_;
-	std::string template_name_;
+	std::string startTime_;
+	std::string stream_;
+	std::string endTime_;
+	long ownerId_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINTRANSCODEPARAMSREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUPVIDEOAUDIOINFOREQUEST_H_

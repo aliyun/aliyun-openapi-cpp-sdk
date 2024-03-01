@@ -38,6 +38,8 @@ public:
 	void setStartTime(long startTime);
 	std::string getRequestType() const;
 	void setRequestType(const std::string &requestType);
+	std::string getSecurityToken() const;
+	void setSecurityToken(const std::string &securityToken);
 	std::string getStreamName() const;
 	void setStreamName(const std::string &streamName);
 	std::string getApp() const;
@@ -54,6 +56,7 @@ private:
 	std::string streamSuffix_;
 	long startTime_;
 	std::string requestType_;
+	std::string securityToken_;
 	std::string streamName_;
 	std::string app_;
 	int phase_;

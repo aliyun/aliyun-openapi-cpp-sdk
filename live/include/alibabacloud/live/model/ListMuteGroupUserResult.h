@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_CREATELIVEMESSAGEAPPRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_CREATELIVEMESSAGEAPPRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_LISTMUTEGROUPUSERRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_LISTMUTEGROUPUSERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT CreateLiveMessageAppResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT ListMuteGroupUserResult : public ServiceResult
 			{
 			public:
+				struct Result
+				{
+					struct UserListItem
+					{
+						std::string userId;
+					};
+					bool hasMore;
+					int total;
+					std::vector<UserListItem> userList;
+				};
 
 
-				CreateLiveMessageAppResult();
-				explicit CreateLiveMessageAppResult(const std::string &payload);
-				~CreateLiveMessageAppResult();
-				std::string getDataCenter()const;
-				std::string getAppId()const;
-				std::string getAppKey()const;
-				std::string getAppSign()const;
+				ListMuteGroupUserResult();
+				explicit ListMuteGroupUserResult(const std::string &payload);
+				~ListMuteGroupUserResult();
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string dataCenter_;
-				std::string appId_;
-				std::string appKey_;
-				std::string appSign_;
+				Result result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_CREATELIVEMESSAGEAPPRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_LISTMUTEGROUPUSERRESULT_H_

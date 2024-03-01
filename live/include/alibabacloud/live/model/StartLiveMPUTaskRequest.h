@@ -34,15 +34,15 @@ public:
 		std::string userId;
 	};
 	struct SeiParams {
+		std::string payloadType;
 		struct LayoutVolume {
 			std::string followIdr;
-			std::string payloadType;
 			std::string interval;
 		};
 		LayoutVolume layoutVolume;
 		struct PassThrough {
 			std::string followIdr;
-			std::string payloadType;
+			std::string payloadContentKey;
 			std::string payloadContent;
 			std::string interval;
 		};

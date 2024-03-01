@@ -5631,6 +5631,42 @@ LiveClient::DescribeLiveDomainOnlineUserNumOutcomeCallable LiveClient::describeL
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveDomainPublishErrorCodeOutcome LiveClient::describeLiveDomainPublishErrorCode(const DescribeLiveDomainPublishErrorCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveDomainPublishErrorCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveDomainPublishErrorCodeOutcome(DescribeLiveDomainPublishErrorCodeResult(outcome.result()));
+	else
+		return DescribeLiveDomainPublishErrorCodeOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveDomainPublishErrorCodeAsync(const DescribeLiveDomainPublishErrorCodeRequest& request, const DescribeLiveDomainPublishErrorCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveDomainPublishErrorCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDomainPublishErrorCodeOutcomeCallable LiveClient::describeLiveDomainPublishErrorCodeCallable(const DescribeLiveDomainPublishErrorCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveDomainPublishErrorCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveDomainPublishErrorCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveDomainPushBpsDataOutcome LiveClient::describeLiveDomainPushBpsData(const DescribeLiveDomainPushBpsDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8151,6 +8187,42 @@ LiveClient::DescribeLiveTopDomainsByFlowOutcomeCallable LiveClient::describeLive
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveUpVideoAudioInfoOutcome LiveClient::describeLiveUpVideoAudioInfo(const DescribeLiveUpVideoAudioInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveUpVideoAudioInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveUpVideoAudioInfoOutcome(DescribeLiveUpVideoAudioInfoResult(outcome.result()));
+	else
+		return DescribeLiveUpVideoAudioInfoOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveUpVideoAudioInfoAsync(const DescribeLiveUpVideoAudioInfoRequest& request, const DescribeLiveUpVideoAudioInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveUpVideoAudioInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveUpVideoAudioInfoOutcomeCallable LiveClient::describeLiveUpVideoAudioInfoCallable(const DescribeLiveUpVideoAudioInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveUpVideoAudioInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveUpVideoAudioInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveUserBillPredictionOutcome LiveClient::describeLiveUserBillPrediction(const DescribeLiveUserBillPredictionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -10413,6 +10485,42 @@ LiveClient::ListMessageGroupUserByIdOutcomeCallable LiveClient::listMessageGroup
 			[this, request]()
 			{
 			return this->listMessageGroupUserById(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::ListMuteGroupUserOutcome LiveClient::listMuteGroupUser(const ListMuteGroupUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListMuteGroupUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListMuteGroupUserOutcome(ListMuteGroupUserResult(outcome.result()));
+	else
+		return ListMuteGroupUserOutcome(outcome.error());
+}
+
+void LiveClient::listMuteGroupUserAsync(const ListMuteGroupUserRequest& request, const ListMuteGroupUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listMuteGroupUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ListMuteGroupUserOutcomeCallable LiveClient::listMuteGroupUserCallable(const ListMuteGroupUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListMuteGroupUserOutcome()>>(
+			[this, request]()
+			{
+			return this->listMuteGroupUser(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -45,7 +45,14 @@ void CreateLiveMessageAppResult::parse(const std::string &payload)
 		appKey_ = value["AppKey"].asString();
 	if(!value["AppSign"].isNull())
 		appSign_ = value["AppSign"].asString();
+	if(!value["DataCenter"].isNull())
+		dataCenter_ = value["DataCenter"].asString();
 
+}
+
+std::string CreateLiveMessageAppResult::getDataCenter()const
+{
+	return dataCenter_;
 }
 
 std::string CreateLiveMessageAppResult::getAppId()const

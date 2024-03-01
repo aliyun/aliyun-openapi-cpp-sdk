@@ -331,6 +331,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveDomainMonitoringUsageDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainOnlineUserNumRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainOnlineUserNumResult.h
+	include/alibabacloud/live/model/DescribeLiveDomainPublishErrorCodeRequest.h
+	include/alibabacloud/live/model/DescribeLiveDomainPublishErrorCodeResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainPushBpsDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainPushBpsDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainPushTrafficDataRequest.h
@@ -471,6 +473,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveTagResourcesResult.h
 	include/alibabacloud/live/model/DescribeLiveTopDomainsByFlowRequest.h
 	include/alibabacloud/live/model/DescribeLiveTopDomainsByFlowResult.h
+	include/alibabacloud/live/model/DescribeLiveUpVideoAudioInfoRequest.h
+	include/alibabacloud/live/model/DescribeLiveUpVideoAudioInfoResult.h
 	include/alibabacloud/live/model/DescribeLiveUserBillPredictionRequest.h
 	include/alibabacloud/live/model/DescribeLiveUserBillPredictionResult.h
 	include/alibabacloud/live/model/DescribeLiveUserDomainsRequest.h
@@ -597,6 +601,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/ListMessageGroupUserResult.h
 	include/alibabacloud/live/model/ListMessageGroupUserByIdRequest.h
 	include/alibabacloud/live/model/ListMessageGroupUserByIdResult.h
+	include/alibabacloud/live/model/ListMuteGroupUserRequest.h
+	include/alibabacloud/live/model/ListMuteGroupUserResult.h
 	include/alibabacloud/live/model/ListPlaylistRequest.h
 	include/alibabacloud/live/model/ListPlaylistResult.h
 	include/alibabacloud/live/model/ListPlaylistItemsRequest.h
@@ -1106,6 +1112,8 @@ set(live_src
 	src/model/DescribeLiveDomainMonitoringUsageDataResult.cc
 	src/model/DescribeLiveDomainOnlineUserNumRequest.cc
 	src/model/DescribeLiveDomainOnlineUserNumResult.cc
+	src/model/DescribeLiveDomainPublishErrorCodeRequest.cc
+	src/model/DescribeLiveDomainPublishErrorCodeResult.cc
 	src/model/DescribeLiveDomainPushBpsDataRequest.cc
 	src/model/DescribeLiveDomainPushBpsDataResult.cc
 	src/model/DescribeLiveDomainPushTrafficDataRequest.cc
@@ -1246,6 +1254,8 @@ set(live_src
 	src/model/DescribeLiveTagResourcesResult.cc
 	src/model/DescribeLiveTopDomainsByFlowRequest.cc
 	src/model/DescribeLiveTopDomainsByFlowResult.cc
+	src/model/DescribeLiveUpVideoAudioInfoRequest.cc
+	src/model/DescribeLiveUpVideoAudioInfoResult.cc
 	src/model/DescribeLiveUserBillPredictionRequest.cc
 	src/model/DescribeLiveUserBillPredictionResult.cc
 	src/model/DescribeLiveUserDomainsRequest.cc
@@ -1372,6 +1382,8 @@ set(live_src
 	src/model/ListMessageGroupUserResult.cc
 	src/model/ListMessageGroupUserByIdRequest.cc
 	src/model/ListMessageGroupUserByIdResult.cc
+	src/model/ListMuteGroupUserRequest.cc
+	src/model/ListMuteGroupUserResult.cc
 	src/model/ListPlaylistRequest.cc
 	src/model/ListPlaylistResult.cc
 	src/model/ListPlaylistItemsRequest.cc
