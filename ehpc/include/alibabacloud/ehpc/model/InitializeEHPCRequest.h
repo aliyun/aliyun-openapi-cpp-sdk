@@ -32,9 +32,12 @@ public:
 	~InitializeEHPCRequest();
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getServiceName() const;
+	void setServiceName(const std::string &serviceName);
 
 private:
 	std::string regionId_;
+	std::string serviceName_;
 };
 } // namespace Model
 } // namespace EHPC

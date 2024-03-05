@@ -147,6 +147,7 @@ namespace AlibabaCloud
 					std::string baseOsTag;
 					int withoutAgent;
 					std::string imageName;
+					std::string schedulerVersion;
 					bool haEnable;
 					std::string osTag;
 					std::string ecsChargeType;

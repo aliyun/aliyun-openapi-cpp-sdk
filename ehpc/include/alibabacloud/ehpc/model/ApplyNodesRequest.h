@@ -63,6 +63,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSystemDiskType() const;
 	void setSystemDiskType(const std::string &systemDiskType);
+	std::string getUserData() const;
+	void setUserData(const std::string &userData);
 	int getCores() const;
 	void setCores(int cores);
 	int getSystemDiskSize() const;
@@ -111,6 +113,7 @@ private:
 	std::string jobQueue_;
 	std::string accessKeyId_;
 	std::string systemDiskType_;
+	std::string userData_;
 	int cores_;
 	int systemDiskSize_;
 	std::vector<ZoneInfos> zoneInfos_;

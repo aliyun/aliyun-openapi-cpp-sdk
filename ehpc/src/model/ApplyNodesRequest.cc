@@ -115,6 +115,15 @@ void ApplyNodesRequest::setSystemDiskType(const std::string &systemDiskType) {
   setParameter(std::string("SystemDiskType"), systemDiskType);
 }
 
+std::string ApplyNodesRequest::getUserData() const {
+  return userData_;
+}
+
+void ApplyNodesRequest::setUserData(const std::string &userData) {
+  userData_ = userData;
+  setParameter(std::string("UserData"), userData);
+}
+
 int ApplyNodesRequest::getCores() const {
   return cores_;
 }

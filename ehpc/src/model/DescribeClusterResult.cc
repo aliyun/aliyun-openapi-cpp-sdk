@@ -72,6 +72,8 @@ void DescribeClusterResult::parse(const std::string &payload)
 		clusterInfo_.imageId = clusterInfoNode["ImageId"].asString();
 	if(!clusterInfoNode["SchedulerType"].isNull())
 		clusterInfo_.schedulerType = clusterInfoNode["SchedulerType"].asString();
+	if(!clusterInfoNode["SchedulerVersion"].isNull())
+		clusterInfo_.schedulerVersion = clusterInfoNode["SchedulerVersion"].asString();
 	if(!clusterInfoNode["DeployMode"].isNull())
 		clusterInfo_.deployMode = clusterInfoNode["DeployMode"].asString();
 	if(!clusterInfoNode["ImageOwnerAlias"].isNull())

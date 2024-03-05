@@ -69,6 +69,8 @@ void ListClustersMetaResult::parse(const std::string &payload)
 			clustersObject.clientVersion = valueClustersClusterInfoSimple["ClientVersion"].asString();
 		if(!valueClustersClusterInfoSimple["HasPlugin"].isNull())
 			clustersObject.hasPlugin = valueClustersClusterInfoSimple["HasPlugin"].asString() == "true";
+		if(!valueClustersClusterInfoSimple["EhpcVersion"].isNull())
+			clustersObject.ehpcVersion = valueClustersClusterInfoSimple["EhpcVersion"].asString();
 		clusters_.push_back(clustersObject);
 	}
 	if(!value["PageSize"].isNull())

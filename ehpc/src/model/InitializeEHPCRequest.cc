@@ -34,3 +34,12 @@ void InitializeEHPCRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string InitializeEHPCRequest::getServiceName() const {
+  return serviceName_;
+}
+
+void InitializeEHPCRequest::setServiceName(const std::string &serviceName) {
+  serviceName_ = serviceName;
+  setParameter(std::string("ServiceName"), serviceName);
+}
+

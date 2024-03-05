@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					std::string schedulerType;
 					std::string clientVersion;
 					std::string accountType;
+					std::string ehpcVersion;
 					std::string name;
 					std::string vpcId;
 					std::string deployMode;
