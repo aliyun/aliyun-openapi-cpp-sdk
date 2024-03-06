@@ -88,10 +88,10 @@ public:
 		std::vector<UserInfosItem> userInfos;
 		struct EncodeParams {
 			std::string audioOnly;
-			std::string vIdeoWidth;
+			std::string videoWidth;
 			std::string audioBitrate;
 			std::string videoFramerate;
-			std::string vIdeoHeight;
+			std::string videoHeight;
 			std::string videoBitrate;
 			std::string audioSampleRate;
 			std::string videoGop;

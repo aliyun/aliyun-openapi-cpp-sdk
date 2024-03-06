@@ -92,7 +92,7 @@ public:
 			std::string videoWidth;
 			std::string audioBitrate;
 			std::string videoFramerate;
-			std::string vIdeoHeight;
+			std::string videoHeight;
 			std::string videoBitrate;
 			std::string audioSampleRate;
 			std::string videoGop;
