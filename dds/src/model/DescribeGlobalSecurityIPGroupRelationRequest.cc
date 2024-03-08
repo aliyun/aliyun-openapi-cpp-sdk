@@ -52,15 +52,6 @@ void DescribeGlobalSecurityIPGroupRelationRequest::setResourceGroupId(const std:
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string DescribeGlobalSecurityIPGroupRelationRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeGlobalSecurityIPGroupRelationRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeGlobalSecurityIPGroupRelationRequest::getRegionId() const {
   return regionId_;
 }

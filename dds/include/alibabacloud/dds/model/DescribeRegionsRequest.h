@@ -34,8 +34,6 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
@@ -52,7 +50,6 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
-	std::string securityToken_;
 	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

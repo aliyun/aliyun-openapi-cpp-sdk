@@ -42,8 +42,6 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getDatabase() const;
 	void setDatabase(const std::string &database);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getDBInstanceId() const;
@@ -58,6 +56,8 @@ public:
 	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getLogicalOperator() const;
+	void setLogicalOperator(const std::string &logicalOperator);
 	std::string getForm() const;
 	void setForm(const std::string &form);
 	std::string getUser() const;
@@ -72,7 +72,6 @@ private:
 	int pageNumber_;
 	std::string accessKeyId_;
 	std::string database_;
-	std::string securityToken_;
 	int pageSize_;
 	std::string dBInstanceId_;
 	std::string nodeId_;
@@ -80,6 +79,7 @@ private:
 	std::string ownerAccount_;
 	std::string endTime_;
 	long ownerId_;
+	std::string logicalOperator_;
 	std::string form_;
 	std::string user_;
 	std::string orderType_;

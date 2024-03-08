@@ -43,15 +43,6 @@ void DescribeDBInstanceEncryptionKeyRequest::setAccessKeyId(const std::string &a
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeDBInstanceEncryptionKeyRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeDBInstanceEncryptionKeyRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeDBInstanceEncryptionKeyRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

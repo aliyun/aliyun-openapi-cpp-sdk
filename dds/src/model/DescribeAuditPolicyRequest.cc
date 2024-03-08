@@ -43,15 +43,6 @@ void DescribeAuditPolicyRequest::setAccessKeyId(const std::string &accessKeyId) 
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeAuditPolicyRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeAuditPolicyRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeAuditPolicyRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

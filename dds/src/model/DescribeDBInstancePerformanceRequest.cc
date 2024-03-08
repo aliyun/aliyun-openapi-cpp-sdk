@@ -70,15 +70,6 @@ void DescribeDBInstancePerformanceRequest::setReplicaSetRole(const std::string &
   setParameter(std::string("ReplicaSetRole"), replicaSetRole);
 }
 
-std::string DescribeDBInstancePerformanceRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeDBInstancePerformanceRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeDBInstancePerformanceRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

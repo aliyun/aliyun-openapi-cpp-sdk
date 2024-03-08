@@ -52,15 +52,6 @@ void AllocateNodePrivateNetworkAddressRequest::setAccountName(const std::string 
   setParameter(std::string("AccountName"), accountName);
 }
 
-std::string AllocateNodePrivateNetworkAddressRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void AllocateNodePrivateNetworkAddressRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string AllocateNodePrivateNetworkAddressRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

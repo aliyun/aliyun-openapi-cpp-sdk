@@ -79,15 +79,6 @@ void DescribeDBInstancesOverviewRequest::setResourceGroupId(const std::string &r
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string DescribeDBInstancesOverviewRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeDBInstancesOverviewRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeDBInstancesOverviewRequest::getRegionId() const {
   return regionId_;
 }

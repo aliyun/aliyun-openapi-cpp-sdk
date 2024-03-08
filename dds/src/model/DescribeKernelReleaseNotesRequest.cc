@@ -52,15 +52,6 @@ void DescribeKernelReleaseNotesRequest::setKernelVersion(const std::string &kern
   setParameter(std::string("KernelVersion"), kernelVersion);
 }
 
-std::string DescribeKernelReleaseNotesRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeKernelReleaseNotesRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeKernelReleaseNotesRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

@@ -43,15 +43,6 @@ void TransferClusterBackupRequest::setAccessKeyId(const std::string &accessKeyId
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string TransferClusterBackupRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void TransferClusterBackupRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string TransferClusterBackupRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

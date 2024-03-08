@@ -106,15 +106,6 @@ void CreateNodeRequest::setAccountName(const std::string &accountName) {
   setParameter(std::string("AccountName"), accountName);
 }
 
-std::string CreateNodeRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void CreateNodeRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string CreateNodeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

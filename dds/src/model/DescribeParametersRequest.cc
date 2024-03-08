@@ -52,15 +52,6 @@ void DescribeParametersRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeParametersRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeParametersRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeParametersRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

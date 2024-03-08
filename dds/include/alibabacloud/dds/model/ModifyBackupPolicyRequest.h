@@ -36,8 +36,6 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getBackupInterval() const;
 	void setBackupInterval(const std::string &backupInterval);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	long getEnableBackupLog() const;
@@ -56,6 +54,8 @@ public:
 	void setPreferredBackupTime(const std::string &preferredBackupTime);
 	long getBackupRetentionPeriod() const;
 	void setBackupRetentionPeriod(long backupRetentionPeriod);
+	long getHighFrequencyBackupRetention() const;
+	void setHighFrequencyBackupRetention(long highFrequencyBackupRetention);
 	long getLogBackupRetentionPeriod() const;
 	void setLogBackupRetentionPeriod(long logBackupRetentionPeriod);
 
@@ -63,7 +63,6 @@ private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
 	std::string backupInterval_;
-	std::string securityToken_;
 	std::string dBInstanceId_;
 	long enableBackupLog_;
 	std::string preferredBackupPeriod_;
@@ -73,6 +72,7 @@ private:
 	std::string snapshotBackupType_;
 	std::string preferredBackupTime_;
 	long backupRetentionPeriod_;
+	long highFrequencyBackupRetention_;
 	long logBackupRetentionPeriod_;
 };
 } // namespace Model

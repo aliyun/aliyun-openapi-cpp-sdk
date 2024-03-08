@@ -38,8 +38,6 @@ public:
 	void setSwitchMode(int switchMode);
 	std::string getRoleIds() const;
 	void setRoleIds(const std::string &roleIds);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getNodeId() const;
@@ -56,7 +54,6 @@ private:
 	std::string accessKeyId_;
 	int switchMode_;
 	std::string roleIds_;
-	std::string securityToken_;
 	std::string dBInstanceId_;
 	std::string nodeId_;
 	std::string resourceOwnerAccount_;

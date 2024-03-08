@@ -50,8 +50,6 @@ public:
 	void setStorageType(const std::string &storageType);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getDBInstanceDescription() const;
 	void setDBInstanceDescription(const std::string &dBInstanceDescription);
 	std::vector<Tag> getTag() const;
@@ -126,7 +124,6 @@ private:
 	std::string networkType_;
 	std::string storageType_;
 	std::string resourceGroupId_;
-	std::string securityToken_;
 	std::string dBInstanceDescription_;
 	std::vector<Tag> tag_;
 	std::string globalSecurityGroupIds_;

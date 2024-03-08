@@ -52,15 +52,6 @@ void TransformToPrePaidRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string TransformToPrePaidRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void TransformToPrePaidRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string TransformToPrePaidRequest::getBusinessInfo() const {
   return businessInfo_;
 }

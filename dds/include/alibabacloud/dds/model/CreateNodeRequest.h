@@ -48,8 +48,6 @@ public:
 	void setShardDirect(bool shardDirect);
 	std::string getAccountName() const;
 	void setAccountName(const std::string &accountName);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getBusinessInfo() const;
@@ -79,7 +77,6 @@ private:
 	std::string accessKeyId_;
 	bool shardDirect_;
 	std::string accountName_;
-	std::string securityToken_;
 	std::string dBInstanceId_;
 	std::string businessInfo_;
 	bool autoPay_;

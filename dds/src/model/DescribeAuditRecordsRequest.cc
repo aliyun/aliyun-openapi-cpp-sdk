@@ -79,15 +79,6 @@ void DescribeAuditRecordsRequest::setDatabase(const std::string &database) {
   setParameter(std::string("Database"), database);
 }
 
-std::string DescribeAuditRecordsRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeAuditRecordsRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 int DescribeAuditRecordsRequest::getPageSize() const {
   return pageSize_;
 }
@@ -149,6 +140,15 @@ long DescribeAuditRecordsRequest::getOwnerId() const {
 void DescribeAuditRecordsRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DescribeAuditRecordsRequest::getLogicalOperator() const {
+  return logicalOperator_;
+}
+
+void DescribeAuditRecordsRequest::setLogicalOperator(const std::string &logicalOperator) {
+  logicalOperator_ = logicalOperator;
+  setParameter(std::string("LogicalOperator"), logicalOperator);
 }
 
 std::string DescribeAuditRecordsRequest::getForm() const {

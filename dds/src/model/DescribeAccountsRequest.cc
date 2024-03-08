@@ -52,15 +52,6 @@ void DescribeAccountsRequest::setAccountName(const std::string &accountName) {
   setParameter(std::string("AccountName"), accountName);
 }
 
-std::string DescribeAccountsRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeAccountsRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeAccountsRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

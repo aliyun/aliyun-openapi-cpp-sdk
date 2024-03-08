@@ -52,15 +52,6 @@ void ModifyInstanceAutoRenewalAttributeRequest::setDuration(const std::string &d
   setParameter(std::string("Duration"), duration);
 }
 
-std::string ModifyInstanceAutoRenewalAttributeRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void ModifyInstanceAutoRenewalAttributeRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string ModifyInstanceAutoRenewalAttributeRequest::getRegionId() const {
   return regionId_;
 }

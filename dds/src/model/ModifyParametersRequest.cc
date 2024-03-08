@@ -43,15 +43,6 @@ void ModifyParametersRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyParametersRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void ModifyParametersRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string ModifyParametersRequest::getRegionId() const {
   return regionId_;
 }

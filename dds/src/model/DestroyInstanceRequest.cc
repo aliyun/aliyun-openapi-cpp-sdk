@@ -61,15 +61,6 @@ void DestroyInstanceRequest::setResourceGroupId(const std::string &resourceGroup
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string DestroyInstanceRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DestroyInstanceRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DestroyInstanceRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

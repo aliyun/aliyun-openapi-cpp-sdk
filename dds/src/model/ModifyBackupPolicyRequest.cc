@@ -52,15 +52,6 @@ void ModifyBackupPolicyRequest::setBackupInterval(const std::string &backupInter
   setParameter(std::string("BackupInterval"), backupInterval);
 }
 
-std::string ModifyBackupPolicyRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void ModifyBackupPolicyRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string ModifyBackupPolicyRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }
@@ -140,6 +131,15 @@ long ModifyBackupPolicyRequest::getBackupRetentionPeriod() const {
 void ModifyBackupPolicyRequest::setBackupRetentionPeriod(long backupRetentionPeriod) {
   backupRetentionPeriod_ = backupRetentionPeriod;
   setParameter(std::string("BackupRetentionPeriod"), std::to_string(backupRetentionPeriod));
+}
+
+long ModifyBackupPolicyRequest::getHighFrequencyBackupRetention() const {
+  return highFrequencyBackupRetention_;
+}
+
+void ModifyBackupPolicyRequest::setHighFrequencyBackupRetention(long highFrequencyBackupRetention) {
+  highFrequencyBackupRetention_ = highFrequencyBackupRetention;
+  setParameter(std::string("HighFrequencyBackupRetention"), std::to_string(highFrequencyBackupRetention));
 }
 
 long ModifyBackupPolicyRequest::getLogBackupRetentionPeriod() const {

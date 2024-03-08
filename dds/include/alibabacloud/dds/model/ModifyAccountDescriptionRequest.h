@@ -38,8 +38,6 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getAccountName() const;
 	void setAccountName(const std::string &accountName);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getResourceOwnerAccount() const;
@@ -54,7 +52,6 @@ private:
 	std::string accountDescription_;
 	std::string accessKeyId_;
 	std::string accountName_;
-	std::string securityToken_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

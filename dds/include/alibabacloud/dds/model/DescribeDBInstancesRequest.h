@@ -50,8 +50,6 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getExpired() const;
 	void setExpired(const std::string &expired);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getEngine() const;
@@ -100,7 +98,6 @@ private:
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	std::string expired_;
-	std::string securityToken_;
 	std::string regionId_;
 	std::string engine_;
 	int pageSize_;

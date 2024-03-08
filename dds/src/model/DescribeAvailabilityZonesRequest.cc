@@ -34,6 +34,15 @@ void DescribeAvailabilityZonesRequest::setResourceOwnerId(long resourceOwnerId) 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeAvailabilityZonesRequest::getEngineVersion() const {
+  return engineVersion_;
+}
+
+void DescribeAvailabilityZonesRequest::setEngineVersion(const std::string &engineVersion) {
+  engineVersion_ = engineVersion;
+  setParameter(std::string("EngineVersion"), engineVersion);
+}
+
 std::string DescribeAvailabilityZonesRequest::getStorageType() const {
   return storageType_;
 }
@@ -41,6 +50,15 @@ std::string DescribeAvailabilityZonesRequest::getStorageType() const {
 void DescribeAvailabilityZonesRequest::setStorageType(const std::string &storageType) {
   storageType_ = storageType;
   setParameter(std::string("StorageType"), storageType);
+}
+
+std::string DescribeAvailabilityZonesRequest::getReplicationFactor() const {
+  return replicationFactor_;
+}
+
+void DescribeAvailabilityZonesRequest::setReplicationFactor(const std::string &replicationFactor) {
+  replicationFactor_ = replicationFactor;
+  setParameter(std::string("ReplicationFactor"), replicationFactor);
 }
 
 std::string DescribeAvailabilityZonesRequest::getAccessKeyId() const {
@@ -59,15 +77,6 @@ std::string DescribeAvailabilityZonesRequest::getResourceGroupId() const {
 void DescribeAvailabilityZonesRequest::setResourceGroupId(const std::string &resourceGroupId) {
   resourceGroupId_ = resourceGroupId;
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
-}
-
-std::string DescribeAvailabilityZonesRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeAvailabilityZonesRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
 }
 
 std::string DescribeAvailabilityZonesRequest::getRegionId() const {
@@ -149,6 +158,15 @@ long DescribeAvailabilityZonesRequest::getOwnerId() const {
 void DescribeAvailabilityZonesRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DescribeAvailabilityZonesRequest::getDBInstanceClass() const {
+  return dBInstanceClass_;
+}
+
+void DescribeAvailabilityZonesRequest::setDBInstanceClass(const std::string &dBInstanceClass) {
+  dBInstanceClass_ = dBInstanceClass;
+  setParameter(std::string("DBInstanceClass"), dBInstanceClass);
 }
 
 std::string DescribeAvailabilityZonesRequest::getStorageSupport() const {

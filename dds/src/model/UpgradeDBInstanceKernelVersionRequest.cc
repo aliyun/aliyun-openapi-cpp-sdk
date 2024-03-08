@@ -43,15 +43,6 @@ void UpgradeDBInstanceKernelVersionRequest::setAccessKeyId(const std::string &ac
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string UpgradeDBInstanceKernelVersionRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void UpgradeDBInstanceKernelVersionRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string UpgradeDBInstanceKernelVersionRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

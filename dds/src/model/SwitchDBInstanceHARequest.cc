@@ -61,15 +61,6 @@ void SwitchDBInstanceHARequest::setRoleIds(const std::string &roleIds) {
   setParameter(std::string("RoleIds"), roleIds);
 }
 
-std::string SwitchDBInstanceHARequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void SwitchDBInstanceHARequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string SwitchDBInstanceHARequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

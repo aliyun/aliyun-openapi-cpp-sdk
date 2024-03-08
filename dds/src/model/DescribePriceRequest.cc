@@ -70,15 +70,6 @@ void DescribePriceRequest::setResourceGroupId(const std::string &resourceGroupId
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string DescribePriceRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribePriceRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribePriceRequest::getRegionId() const {
   return regionId_;
 }

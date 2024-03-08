@@ -38,8 +38,6 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getDatabaseNames() const;
 	void setDatabaseNames(const std::string &databaseNames);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getRestoreTime() const;
 	void setRestoreTime(const std::string &restoreTime);
 	std::string getResourceOwnerAccount() const;
@@ -58,7 +56,6 @@ private:
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	std::string databaseNames_;
-	std::string securityToken_;
 	std::string restoreTime_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

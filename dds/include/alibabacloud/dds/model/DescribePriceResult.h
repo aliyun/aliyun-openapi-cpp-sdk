@@ -34,6 +34,29 @@ namespace AlibabaCloud
 			public:
 				struct Order
 				{
+					struct DepreciateInfo5
+					{
+						struct ContractActivity7
+						{
+							std::string activityName;
+							double finalPromFee;
+							long activityId;
+							double prodFee;
+							std::string optionCode;
+							double finalFee;
+							std::vector<std::string> optionIds8;
+						};
+						double cheapRate;
+						double differential;
+						std::string differentialName;
+						double monthPrice;
+						ContractActivity7 contractActivity7;
+						double cheapStandAmount;
+						double originalStandAmount;
+						std::string isShow;
+						double listPrice;
+						bool isContractActivity;
+					};
 					struct Coupon
 					{
 						std::string couponNo;
@@ -44,27 +67,138 @@ namespace AlibabaCloud
 						double canPromFee;
 						std::string promotionOptionCode;
 						std::string isSelected;
+						std::vector<std::string> targetArticleItemCodes6;
 						std::string optionCode;
-						std::vector<std::string> targetArticleItemCodes;
 						std::string name;
 						double priceBreakThreshold;
 						double lackForPriceBreak;
 					};
-					std::vector<std::string> ruleIds1;
+					double standPrice;
 					bool showDiscountInfo;
-					std::string currency;
+					std::string message;
+					double standDiscountPrice;
 					std::string tradeAmount;
-					std::vector<Coupon> coupons;
 					std::string originalAmount;
+					std::string code;
 					std::string discountAmount;
+					std::vector<std::string> ruleIds4;
+					bool contractActivity;
+					std::string optionalPromotions;
+					std::string currency;
+					std::string promDetailList;
+					DepreciateInfo5 depreciateInfo5;
+					std::vector<Coupon> coupons;
+					bool isContractActivity;
 				};
 				struct SubOrder
 				{
+					struct DepreciateInfo
+					{
+						struct ContractActivity
+						{
+							std::vector<std::string> optionIds;
+							std::string activityName;
+							double finalPromFee;
+							long activityId;
+							double prodFee;
+							std::string optionCode;
+							double finalFee;
+						};
+						double cheapRate;
+						double differential;
+						std::string differentialName;
+						double monthPrice;
+						double cheapStandAmount;
+						double originalStandAmount;
+						std::string isShow;
+						double listPrice;
+						bool isContractActivity;
+						ContractActivity contractActivity;
+					};
+					struct ModuleInstanceItem
+					{
+						struct DepreciateInfo1
+						{
+							double cheapRate;
+							double differential;
+							std::string differentialName;
+							double monthPrice;
+							double cheapStandAmount;
+							double originalStandAmount;
+							std::string isShow;
+							double listPrice;
+							bool isContractActivity;
+						};
+						struct PromDetal
+						{
+							std::string promotionName;
+							std::string derivedPromType;
+							long promotionId;
+							double finalPromFee;
+							std::string promotionCode;
+							std::string activityExtInfo;
+							std::string optionCode;
+							std::string promType;
+						};
+						struct ModuleAttr
+						{
+							std::string type;
+							std::string value;
+							std::string code;
+							std::string name;
+						};
+						double standPrice;
+						std::string moduleName;
+						std::string discountFee;
+						std::vector<ModuleInstanceItem::PromDetal> promDetailList2;
+						bool needOrderPay;
+						double payFee;
+						bool contractActivity;
+						std::string cycleFee;
+						long moduleId;
+						bool pricingModule;
+						std::string moduleCode;
+						DepreciateInfo1 depreciateInfo1;
+						double totalProductFee;
+						std::vector<ModuleInstanceItem::ModuleAttr> moduleAttrs;
+					};
+					struct OptionalPromotion
+					{
+						std::string activityCategory;
+						std::string promotionName;
+						std::string promotionOptionNo;
+						double canPromFee;
+						std::string activityExtInfo;
+						bool show;
+						std::string optionCode;
+						bool selected;
+						std::vector<std::string> targetArticleItemCodes;
+					};
+					struct PromDetal3
+					{
+						std::string promotionName;
+						std::string derivedPromType;
+						long promotionId;
+						double finalPromFee;
+						std::string promotionCode;
+						std::string activityExtInfo;
+						std::string optionCode;
+						std::string promType;
+					};
+					double standPrice;
 					std::string instanceId;
-					std::vector<std::string> ruleIds;
+					double standDiscountPrice;
 					std::string tradeAmount;
 					std::string originalAmount;
 					std::string discountAmount;
+					DepreciateInfo depreciateInfo;
+					bool contractActivity;
+					std::vector<SubOrder::OptionalPromotion> optionalPromotions;
+					std::string isNewOfficialActivity;
+					std::vector<SubOrder::PromDetal3> promDetailList;
+					std::vector<std::string> ruleIds;
+					std::vector<SubOrder::ModuleInstanceItem> moduleInstance;
+					bool isContractActivity;
 				};
 				struct Rule
 				{

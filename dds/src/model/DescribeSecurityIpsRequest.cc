@@ -34,6 +34,15 @@ void DescribeSecurityIpsRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+bool DescribeSecurityIpsRequest::getShowHDMIps() const {
+  return showHDMIps_;
+}
+
+void DescribeSecurityIpsRequest::setShowHDMIps(bool showHDMIps) {
+  showHDMIps_ = showHDMIps;
+  setParameter(std::string("ShowHDMIps"), showHDMIps ? "true" : "false");
+}
+
 std::string DescribeSecurityIpsRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -41,15 +50,6 @@ std::string DescribeSecurityIpsRequest::getAccessKeyId() const {
 void DescribeSecurityIpsRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DescribeSecurityIpsRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeSecurityIpsRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
 }
 
 std::string DescribeSecurityIpsRequest::getDBInstanceId() const {

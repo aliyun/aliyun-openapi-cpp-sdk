@@ -61,15 +61,6 @@ void DescribeBackupsRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeBackupsRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeBackupsRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 int DescribeBackupsRequest::getPageSize() const {
   return pageSize_;
 }

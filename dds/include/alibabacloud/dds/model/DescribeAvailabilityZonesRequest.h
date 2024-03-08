@@ -32,14 +32,16 @@ public:
 	~DescribeAvailabilityZonesRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getEngineVersion() const;
+	void setEngineVersion(const std::string &engineVersion);
 	std::string getStorageType() const;
 	void setStorageType(const std::string &storageType);
+	std::string getReplicationFactor() const;
+	void setReplicationFactor(const std::string &replicationFactor);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getExcludeZoneId() const;
@@ -58,6 +60,8 @@ public:
 	void setMongoType(const std::string &mongoType);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getDBInstanceClass() const;
+	void setDBInstanceClass(const std::string &dBInstanceClass);
 	std::string getStorageSupport() const;
 	void setStorageSupport(const std::string &storageSupport);
 	std::string getDbType() const;
@@ -69,10 +73,11 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string engineVersion_;
 	std::string storageType_;
+	std::string replicationFactor_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
-	std::string securityToken_;
 	std::string regionId_;
 	std::string excludeZoneId_;
 	std::string excludeSecondaryZoneId_;
@@ -82,6 +87,7 @@ private:
 	std::string ownerAccount_;
 	std::string mongoType_;
 	long ownerId_;
+	std::string dBInstanceClass_;
 	std::string storageSupport_;
 	std::string dbType_;
 	std::string acceptLanguage_;

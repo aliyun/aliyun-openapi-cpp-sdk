@@ -94,15 +94,6 @@ void CreateShardingDBInstanceRequest::setResourceGroupId(const std::string &reso
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string CreateShardingDBInstanceRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void CreateShardingDBInstanceRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string CreateShardingDBInstanceRequest::getDBInstanceDescription() const {
   return dBInstanceDescription_;
 }

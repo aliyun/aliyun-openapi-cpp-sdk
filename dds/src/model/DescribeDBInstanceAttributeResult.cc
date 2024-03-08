@@ -57,6 +57,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			dBInstancesObject.engineVersion = valueDBInstancesDBInstance["EngineVersion"].asString();
 		if(!valueDBInstancesDBInstance["MaxIOPS"].isNull())
 			dBInstancesObject.maxIOPS = std::stoi(valueDBInstancesDBInstance["MaxIOPS"].asString());
+		if(!valueDBInstancesDBInstance["MaxMBPS"].isNull())
+			dBInstancesObject.maxMBPS = std::stoi(valueDBInstancesDBInstance["MaxMBPS"].asString());
 		if(!valueDBInstancesDBInstance["VPCCloudInstanceIds"].isNull())
 			dBInstancesObject.vPCCloudInstanceIds = valueDBInstancesDBInstance["VPCCloudInstanceIds"].asString();
 		if(!valueDBInstancesDBInstance["ProtocolType"].isNull())
@@ -221,6 +223,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 				shardListObject.readonlyReplicas = std::stoi(valueDBInstancesDBInstanceShardListShardAttribute["ReadonlyReplicas"].asString());
 			if(!valueDBInstancesDBInstanceShardListShardAttribute["Status"].isNull())
 				shardListObject.status = valueDBInstancesDBInstanceShardListShardAttribute["Status"].asString();
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["MaxDiskMbps"].isNull())
+				shardListObject.maxDiskMbps = valueDBInstancesDBInstanceShardListShardAttribute["MaxDiskMbps"].asString();
 			dBInstancesObject.shardList.push_back(shardListObject);
 		}
 		auto allConfigserverListNode = valueDBInstancesDBInstance["ConfigserverList"]["ConfigserverAttribute"];

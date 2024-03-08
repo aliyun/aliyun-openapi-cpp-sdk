@@ -43,15 +43,6 @@ void DescribeDBInstanceTDEInfoRequest::setAccessKeyId(const std::string &accessK
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeDBInstanceTDEInfoRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeDBInstanceTDEInfoRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeDBInstanceTDEInfoRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

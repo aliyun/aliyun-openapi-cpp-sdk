@@ -52,15 +52,6 @@ void DescribeInstanceAutoRenewalAttributeRequest::setAccessKeyId(const std::stri
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeInstanceAutoRenewalAttributeRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeInstanceAutoRenewalAttributeRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeInstanceAutoRenewalAttributeRequest::getRegionId() const {
   return regionId_;
 }

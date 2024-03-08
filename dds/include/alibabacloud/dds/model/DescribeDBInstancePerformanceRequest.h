@@ -40,8 +40,6 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getReplicaSetRole() const;
 	void setReplicaSetRole(const std::string &replicaSetRole);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getNodeId() const;
@@ -63,7 +61,6 @@ private:
 	std::string startTime_;
 	std::string accessKeyId_;
 	std::string replicaSetRole_;
-	std::string securityToken_;
 	std::string dBInstanceId_;
 	std::string nodeId_;
 	std::string key_;

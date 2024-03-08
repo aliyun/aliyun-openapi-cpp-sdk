@@ -52,15 +52,6 @@ void ModifyResourceGroupRequest::setResourceGroupId(const std::string &resourceG
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string ModifyResourceGroupRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void ModifyResourceGroupRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string ModifyResourceGroupRequest::getRegionId() const {
   return regionId_;
 }

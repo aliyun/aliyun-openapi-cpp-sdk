@@ -55,6 +55,8 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 		snapshotBackupType_ = value["SnapshotBackupType"].asString();
 	if(!value["BackupInterval"].isNull())
 		backupInterval_ = std::stoi(value["BackupInterval"].asString());
+	if(!value["HighFrequencyBackupRetention"].isNull())
+		highFrequencyBackupRetention_ = value["HighFrequencyBackupRetention"].asString();
 
 }
 
@@ -66,6 +68,11 @@ std::string DescribeBackupPolicyResult::getPreferredBackupPeriod()const
 int DescribeBackupPolicyResult::getLogBackupRetentionPeriod()const
 {
 	return logBackupRetentionPeriod_;
+}
+
+std::string DescribeBackupPolicyResult::getHighFrequencyBackupRetention()const
+{
+	return highFrequencyBackupRetention_;
 }
 
 std::string DescribeBackupPolicyResult::getSnapshotBackupType()const

@@ -44,8 +44,6 @@ public:
 	void setReplicationFactor(const std::string &replicationFactor);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getEffectiveTime() const;
 	void setEffectiveTime(const std::string &effectiveTime);
 	std::string getDBInstanceId() const;
@@ -75,7 +73,6 @@ private:
 	std::string couponNo_;
 	std::string replicationFactor_;
 	std::string accessKeyId_;
-	std::string securityToken_;
 	std::string effectiveTime_;
 	std::string dBInstanceId_;
 	std::string businessInfo_;

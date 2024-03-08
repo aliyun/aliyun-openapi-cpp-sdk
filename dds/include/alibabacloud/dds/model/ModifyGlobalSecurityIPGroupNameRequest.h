@@ -38,8 +38,6 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getGlobalSecurityGroupId() const;
 	void setGlobalSecurityGroupId(const std::string &globalSecurityGroupId);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
@@ -56,7 +54,6 @@ private:
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	std::string globalSecurityGroupId_;
-	std::string securityToken_;
 	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

@@ -61,15 +61,6 @@ void DescribeBackupDBsRequest::setResourceGroupId(const std::string &resourceGro
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string DescribeBackupDBsRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeBackupDBsRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 int DescribeBackupDBsRequest::getPageSize() const {
   return pageSize_;
 }

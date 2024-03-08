@@ -97,15 +97,6 @@ void CreateDBInstanceRequest::setResourceGroupId(const std::string &resourceGrou
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string CreateDBInstanceRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void CreateDBInstanceRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string CreateDBInstanceRequest::getDBInstanceDescription() const {
   return dBInstanceDescription_;
 }

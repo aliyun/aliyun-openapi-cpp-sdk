@@ -43,15 +43,6 @@ void DescribeAuditLogFilterRequest::setAccessKeyId(const std::string &accessKeyI
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeAuditLogFilterRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeAuditLogFilterRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeAuditLogFilterRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

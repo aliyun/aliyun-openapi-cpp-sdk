@@ -97,15 +97,6 @@ void DescribeDBInstancesRequest::setExpired(const std::string &expired) {
   setParameter(std::string("Expired"), expired);
 }
 
-std::string DescribeDBInstancesRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeDBInstancesRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeDBInstancesRequest::getRegionId() const {
   return regionId_;
 }

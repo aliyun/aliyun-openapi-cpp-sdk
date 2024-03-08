@@ -88,15 +88,6 @@ void CreateNodeBatchRequest::setAccountName(const std::string &accountName) {
   setParameter(std::string("AccountName"), accountName);
 }
 
-std::string CreateNodeBatchRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void CreateNodeBatchRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string CreateNodeBatchRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

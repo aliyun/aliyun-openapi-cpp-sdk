@@ -43,15 +43,6 @@ void DescribeMongoDBLogConfigRequest::setAccessKeyId(const std::string &accessKe
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeMongoDBLogConfigRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeMongoDBLogConfigRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeMongoDBLogConfigRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

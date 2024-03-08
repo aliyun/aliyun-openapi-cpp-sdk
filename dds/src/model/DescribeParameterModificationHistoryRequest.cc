@@ -52,15 +52,6 @@ void DescribeParameterModificationHistoryRequest::setAccessKeyId(const std::stri
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeParameterModificationHistoryRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeParameterModificationHistoryRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeParameterModificationHistoryRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -43,15 +43,6 @@ void ModifyInstanceVpcAuthModeRequest::setAccessKeyId(const std::string &accessK
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyInstanceVpcAuthModeRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void ModifyInstanceVpcAuthModeRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string ModifyInstanceVpcAuthModeRequest::getVpcAuthMode() const {
   return vpcAuthMode_;
 }

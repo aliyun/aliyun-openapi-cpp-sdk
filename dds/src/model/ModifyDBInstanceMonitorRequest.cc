@@ -43,15 +43,6 @@ void ModifyDBInstanceMonitorRequest::setAccessKeyId(const std::string &accessKey
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyDBInstanceMonitorRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void ModifyDBInstanceMonitorRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string ModifyDBInstanceMonitorRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

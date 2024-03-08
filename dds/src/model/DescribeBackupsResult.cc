@@ -65,6 +65,8 @@ void DescribeBackupsResult::parse(const std::string &payload)
 			backupsObject.backupDBNames = valueBackupsBackup["BackupDBNames"].asString();
 		if(!valueBackupsBackup["BackupMethod"].isNull())
 			backupsObject.backupMethod = valueBackupsBackup["BackupMethod"].asString();
+		if(!valueBackupsBackup["BackupJobId"].isNull())
+			backupsObject.backupJobId = std::stol(valueBackupsBackup["BackupJobId"].asString());
 		backups_.push_back(backupsObject);
 	}
 	if(!value["TotalCount"].isNull())

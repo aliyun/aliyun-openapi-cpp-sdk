@@ -61,6 +61,15 @@ void DescribeRunningLogRecordsRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeRunningLogRecordsRequest::getQueryKeywords() const {
+  return queryKeywords_;
+}
+
+void DescribeRunningLogRecordsRequest::setQueryKeywords(const std::string &queryKeywords) {
+  queryKeywords_ = queryKeywords;
+  setParameter(std::string("QueryKeywords"), queryKeywords);
+}
+
 std::string DescribeRunningLogRecordsRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -77,15 +86,6 @@ std::string DescribeRunningLogRecordsRequest::getResourceGroupId() const {
 void DescribeRunningLogRecordsRequest::setResourceGroupId(const std::string &resourceGroupId) {
   resourceGroupId_ = resourceGroupId;
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
-}
-
-std::string DescribeRunningLogRecordsRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeRunningLogRecordsRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
 }
 
 int DescribeRunningLogRecordsRequest::getPageSize() const {
@@ -158,6 +158,15 @@ long DescribeRunningLogRecordsRequest::getOwnerId() const {
 void DescribeRunningLogRecordsRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DescribeRunningLogRecordsRequest::getLogicalOperator() const {
+  return logicalOperator_;
+}
+
+void DescribeRunningLogRecordsRequest::setLogicalOperator(const std::string &logicalOperator) {
+  logicalOperator_ = logicalOperator;
+  setParameter(std::string("LogicalOperator"), logicalOperator);
 }
 
 std::string DescribeRunningLogRecordsRequest::getDBName() const {

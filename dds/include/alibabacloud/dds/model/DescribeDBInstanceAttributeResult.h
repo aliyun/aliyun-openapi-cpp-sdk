@@ -73,6 +73,7 @@ namespace AlibabaCloud
 						int port;
 						std::string nodeId;
 						int nodeStorage;
+						std::string maxDiskMbps;
 						std::string connectString;
 						int maxIOPS;
 					};
@@ -113,6 +114,7 @@ namespace AlibabaCloud
 					std::string dBInstanceId;
 					std::string lastDowngradeTime;
 					int dBInstanceStorage;
+					int maxMBPS;
 					std::vector<DBInstance::Tag> tags;
 					std::string dBInstanceDescription;
 					std::string engine;

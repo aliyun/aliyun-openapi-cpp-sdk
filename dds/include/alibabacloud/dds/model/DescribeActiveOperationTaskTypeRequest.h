@@ -38,8 +38,6 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	int getIsHistory() const;
 	void setIsHistory(int isHistory);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -52,7 +50,6 @@ private:
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	int isHistory_;
-	std::string securityToken_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

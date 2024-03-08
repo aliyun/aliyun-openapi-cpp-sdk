@@ -32,12 +32,12 @@ public:
 	~DescribeParameterTemplatesRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getRole() const;
+	void setRole(const std::string &role);
 	std::string getEngineVersion() const;
 	void setEngineVersion(const std::string &engineVersion);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getEngine() const;
@@ -51,9 +51,9 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string role_;
 	std::string engineVersion_;
 	std::string accessKeyId_;
-	std::string securityToken_;
 	std::string regionId_;
 	std::string engine_;
 	std::string resourceOwnerAccount_;

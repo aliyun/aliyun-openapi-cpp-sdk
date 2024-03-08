@@ -36,8 +36,6 @@ public:
 	void setExtraParam(const std::string &extraParam);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getNodeId() const;
@@ -55,7 +53,6 @@ private:
 	long resourceOwnerId_;
 	std::string extraParam_;
 	std::string accessKeyId_;
-	std::string securityToken_;
 	std::string dBInstanceId_;
 	std::string nodeId_;
 	std::string resourceOwnerAccount_;

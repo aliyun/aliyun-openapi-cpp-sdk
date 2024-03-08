@@ -43,15 +43,6 @@ void DescribeSecurityGroupConfigurationRequest::setAccessKeyId(const std::string
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeSecurityGroupConfigurationRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeSecurityGroupConfigurationRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeSecurityGroupConfigurationRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -36,8 +36,6 @@ public:
 	void setStartTime(const std::string &startTime);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getDBInstanceId() const;
@@ -61,7 +59,6 @@ private:
 	long resourceOwnerId_;
 	std::string startTime_;
 	std::string accessKeyId_;
-	std::string securityToken_;
 	int pageSize_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;

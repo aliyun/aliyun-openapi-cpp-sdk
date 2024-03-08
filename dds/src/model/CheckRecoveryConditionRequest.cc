@@ -61,15 +61,6 @@ void CheckRecoveryConditionRequest::setDatabaseNames(const std::string &database
   setParameter(std::string("DatabaseNames"), databaseNames);
 }
 
-std::string CheckRecoveryConditionRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void CheckRecoveryConditionRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string CheckRecoveryConditionRequest::getRestoreTime() const {
   return restoreTime_;
 }

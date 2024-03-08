@@ -61,15 +61,6 @@ void ModifySecurityIpsRequest::setSecurityIpGroupName(const std::string &securit
   setParameter(std::string("SecurityIpGroupName"), securityIpGroupName);
 }
 
-std::string ModifySecurityIpsRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void ModifySecurityIpsRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string ModifySecurityIpsRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

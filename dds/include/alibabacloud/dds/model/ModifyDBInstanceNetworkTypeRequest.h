@@ -36,8 +36,6 @@ public:
 	void setNetworkType(const std::string &networkType);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	int getClassicExpiredDays() const;
 	void setClassicExpiredDays(int classicExpiredDays);
 	std::string getDBInstanceId() const;
@@ -61,7 +59,6 @@ private:
 	long resourceOwnerId_;
 	std::string networkType_;
 	std::string accessKeyId_;
-	std::string securityToken_;
 	int classicExpiredDays_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;

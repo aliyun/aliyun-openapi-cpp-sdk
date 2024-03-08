@@ -36,8 +36,6 @@ public:
 	void setCouponNo(const std::string &couponNo);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getBusinessInfo() const;
 	void setBusinessInfo(const std::string &businessInfo);
 	long getPeriod() const;
@@ -65,7 +63,6 @@ private:
 	long resourceOwnerId_;
 	std::string couponNo_;
 	std::string accessKeyId_;
-	std::string securityToken_;
 	std::string businessInfo_;
 	long period_;
 	bool autoPay_;

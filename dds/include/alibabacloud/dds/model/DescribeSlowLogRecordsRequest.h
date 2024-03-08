@@ -34,14 +34,14 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	std::string getQueryKeywords() const;
+	void setQueryKeywords(const std::string &queryKeywords);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getDBInstanceId() const;
@@ -56,6 +56,8 @@ public:
 	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getLogicalOperator() const;
+	void setLogicalOperator(const std::string &logicalOperator);
 	std::string getDBName() const;
 	void setDBName(const std::string &dBName);
 	std::string getOrderType() const;
@@ -64,10 +66,10 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string startTime_;
+	std::string queryKeywords_;
 	int pageNumber_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
-	std::string securityToken_;
 	int pageSize_;
 	std::string dBInstanceId_;
 	std::string nodeId_;
@@ -75,6 +77,7 @@ private:
 	std::string ownerAccount_;
 	std::string endTime_;
 	long ownerId_;
+	std::string logicalOperator_;
 	std::string dBName_;
 	std::string orderType_;
 };

@@ -52,15 +52,6 @@ void DescribeRenewalPriceRequest::setAccessKeyId(const std::string &accessKeyId)
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeRenewalPriceRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeRenewalPriceRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeRenewalPriceRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

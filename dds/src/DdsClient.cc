@@ -195,6 +195,42 @@ DdsClient::CheckRecoveryConditionOutcomeCallable DdsClient::checkRecoveryConditi
 	return task->get_future();
 }
 
+DdsClient::CreateAccountOutcome DdsClient::createAccount(const CreateAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAccountOutcome(CreateAccountResult(outcome.result()));
+	else
+		return CreateAccountOutcome(outcome.error());
+}
+
+void DdsClient::createAccountAsync(const CreateAccountRequest& request, const CreateAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::CreateAccountOutcomeCallable DdsClient::createAccountCallable(const CreateAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->createAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::CreateBackupOutcome DdsClient::createBackup(const CreateBackupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -627,6 +663,42 @@ DdsClient::DescribeActiveOperationTaskTypeOutcomeCallable DdsClient::describeAct
 	return task->get_future();
 }
 
+DdsClient::DescribeActiveOperationTasksOutcome DdsClient::describeActiveOperationTasks(const DescribeActiveOperationTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeActiveOperationTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeActiveOperationTasksOutcome(DescribeActiveOperationTasksResult(outcome.result()));
+	else
+		return DescribeActiveOperationTasksOutcome(outcome.error());
+}
+
+void DdsClient::describeActiveOperationTasksAsync(const DescribeActiveOperationTasksRequest& request, const DescribeActiveOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeActiveOperationTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeActiveOperationTasksOutcomeCallable DdsClient::describeActiveOperationTasksCallable(const DescribeActiveOperationTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeActiveOperationTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeActiveOperationTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::DescribeAuditLogFilterOutcome DdsClient::describeAuditLogFilter(const DescribeAuditLogFilterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -909,6 +981,78 @@ DdsClient::DescribeBackupPolicyOutcomeCallable DdsClient::describeBackupPolicyCa
 			[this, request]()
 			{
 			return this->describeBackupPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::DescribeBackupStorageOutcome DdsClient::describeBackupStorage(const DescribeBackupStorageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBackupStorageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBackupStorageOutcome(DescribeBackupStorageResult(outcome.result()));
+	else
+		return DescribeBackupStorageOutcome(outcome.error());
+}
+
+void DdsClient::describeBackupStorageAsync(const DescribeBackupStorageRequest& request, const DescribeBackupStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBackupStorage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeBackupStorageOutcomeCallable DdsClient::describeBackupStorageCallable(const DescribeBackupStorageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBackupStorageOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBackupStorage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::DescribeBackupTasksOutcome DdsClient::describeBackupTasks(const DescribeBackupTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBackupTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBackupTasksOutcome(DescribeBackupTasksResult(outcome.result()));
+	else
+		return DescribeBackupTasksOutcome(outcome.error());
+}
+
+void DdsClient::describeBackupTasksAsync(const DescribeBackupTasksRequest& request, const DescribeBackupTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBackupTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeBackupTasksOutcomeCallable DdsClient::describeBackupTasksCallable(const DescribeBackupTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBackupTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBackupTasks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1203,6 +1347,42 @@ DdsClient::DescribeDBInstanceSSLOutcomeCallable DdsClient::describeDBInstanceSSL
 	return task->get_future();
 }
 
+DdsClient::DescribeDBInstanceSwitchLogOutcome DdsClient::describeDBInstanceSwitchLog(const DescribeDBInstanceSwitchLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBInstanceSwitchLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBInstanceSwitchLogOutcome(DescribeDBInstanceSwitchLogResult(outcome.result()));
+	else
+		return DescribeDBInstanceSwitchLogOutcome(outcome.error());
+}
+
+void DdsClient::describeDBInstanceSwitchLogAsync(const DescribeDBInstanceSwitchLogRequest& request, const DescribeDBInstanceSwitchLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBInstanceSwitchLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeDBInstanceSwitchLogOutcomeCallable DdsClient::describeDBInstanceSwitchLogCallable(const DescribeDBInstanceSwitchLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceSwitchLogOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBInstanceSwitchLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::DescribeDBInstanceTDEInfoOutcome DdsClient::describeDBInstanceTDEInfo(const DescribeDBInstanceTDEInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1419,6 +1599,78 @@ DdsClient::DescribeGlobalSecurityIPGroupRelationOutcomeCallable DdsClient::descr
 	return task->get_future();
 }
 
+DdsClient::DescribeHistoryTasksOutcome DdsClient::describeHistoryTasks(const DescribeHistoryTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeHistoryTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeHistoryTasksOutcome(DescribeHistoryTasksResult(outcome.result()));
+	else
+		return DescribeHistoryTasksOutcome(outcome.error());
+}
+
+void DdsClient::describeHistoryTasksAsync(const DescribeHistoryTasksRequest& request, const DescribeHistoryTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeHistoryTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeHistoryTasksOutcomeCallable DdsClient::describeHistoryTasksCallable(const DescribeHistoryTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeHistoryTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeHistoryTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::DescribeHistoryTasksStatOutcome DdsClient::describeHistoryTasksStat(const DescribeHistoryTasksStatRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeHistoryTasksStatOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeHistoryTasksStatOutcome(DescribeHistoryTasksStatResult(outcome.result()));
+	else
+		return DescribeHistoryTasksStatOutcome(outcome.error());
+}
+
+void DdsClient::describeHistoryTasksStatAsync(const DescribeHistoryTasksStatRequest& request, const DescribeHistoryTasksStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeHistoryTasksStat(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeHistoryTasksStatOutcomeCallable DdsClient::describeHistoryTasksStatCallable(const DescribeHistoryTasksStatRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeHistoryTasksStatOutcome()>>(
+			[this, request]()
+			{
+			return this->describeHistoryTasksStat(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::DescribeInstanceAutoRenewalAttributeOutcome DdsClient::describeInstanceAutoRenewalAttribute(const DescribeInstanceAutoRenewalAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1455,6 +1707,42 @@ DdsClient::DescribeInstanceAutoRenewalAttributeOutcomeCallable DdsClient::descri
 	return task->get_future();
 }
 
+DdsClient::DescribeInstanceRecoverTimeOutcome DdsClient::describeInstanceRecoverTime(const DescribeInstanceRecoverTimeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceRecoverTimeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceRecoverTimeOutcome(DescribeInstanceRecoverTimeResult(outcome.result()));
+	else
+		return DescribeInstanceRecoverTimeOutcome(outcome.error());
+}
+
+void DdsClient::describeInstanceRecoverTimeAsync(const DescribeInstanceRecoverTimeRequest& request, const DescribeInstanceRecoverTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceRecoverTime(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeInstanceRecoverTimeOutcomeCallable DdsClient::describeInstanceRecoverTimeCallable(const DescribeInstanceRecoverTimeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceRecoverTimeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceRecoverTime(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::DescribeKernelReleaseNotesOutcome DdsClient::describeKernelReleaseNotes(const DescribeKernelReleaseNotesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1485,6 +1773,42 @@ DdsClient::DescribeKernelReleaseNotesOutcomeCallable DdsClient::describeKernelRe
 			[this, request]()
 			{
 			return this->describeKernelReleaseNotes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::DescribeKmsKeysOutcome DdsClient::describeKmsKeys(const DescribeKmsKeysRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeKmsKeysOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeKmsKeysOutcome(DescribeKmsKeysResult(outcome.result()));
+	else
+		return DescribeKmsKeysOutcome(outcome.error());
+}
+
+void DdsClient::describeKmsKeysAsync(const DescribeKmsKeysRequest& request, const DescribeKmsKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeKmsKeys(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeKmsKeysOutcomeCallable DdsClient::describeKmsKeysCallable(const DescribeKmsKeysRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeKmsKeysOutcome()>>(
+			[this, request]()
+			{
+			return this->describeKmsKeys(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3105,6 +3429,42 @@ DdsClient::ModifySecurityIpsOutcomeCallable DdsClient::modifySecurityIpsCallable
 			[this, request]()
 			{
 			return this->modifySecurityIps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::ModifyTaskInfoOutcome DdsClient::modifyTaskInfo(const ModifyTaskInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyTaskInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyTaskInfoOutcome(ModifyTaskInfoResult(outcome.result()));
+	else
+		return ModifyTaskInfoOutcome(outcome.error());
+}
+
+void DdsClient::modifyTaskInfoAsync(const ModifyTaskInfoRequest& request, const ModifyTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyTaskInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::ModifyTaskInfoOutcomeCallable DdsClient::modifyTaskInfoCallable(const ModifyTaskInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyTaskInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyTaskInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

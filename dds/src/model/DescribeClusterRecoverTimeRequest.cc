@@ -43,15 +43,6 @@ void DescribeClusterRecoverTimeRequest::setAccessKeyId(const std::string &access
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeClusterRecoverTimeRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeClusterRecoverTimeRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeClusterRecoverTimeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

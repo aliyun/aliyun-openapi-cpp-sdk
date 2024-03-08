@@ -52,15 +52,6 @@ void ModifyDBInstanceNetworkTypeRequest::setAccessKeyId(const std::string &acces
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyDBInstanceNetworkTypeRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void ModifyDBInstanceNetworkTypeRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 int ModifyDBInstanceNetworkTypeRequest::getClassicExpiredDays() const {
   return classicExpiredDays_;
 }

@@ -52,15 +52,6 @@ void DescribeClusterBackupsRequest::setAccessKeyId(const std::string &accessKeyI
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeClusterBackupsRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeClusterBackupsRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 int DescribeClusterBackupsRequest::getPageSize() const {
   return pageSize_;
 }

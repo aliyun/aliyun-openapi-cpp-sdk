@@ -34,6 +34,15 @@ void DescribeAvailableResourceRequest::setResourceOwnerId(long resourceOwnerId) 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeAvailableResourceRequest::getEngineVersion() const {
+  return engineVersion_;
+}
+
+void DescribeAvailableResourceRequest::setEngineVersion(const std::string &engineVersion) {
+  engineVersion_ = engineVersion;
+  setParameter(std::string("EngineVersion"), engineVersion);
+}
+
 std::string DescribeAvailableResourceRequest::getStorageType() const {
   return storageType_;
 }
@@ -41,6 +50,15 @@ std::string DescribeAvailableResourceRequest::getStorageType() const {
 void DescribeAvailableResourceRequest::setStorageType(const std::string &storageType) {
   storageType_ = storageType;
   setParameter(std::string("StorageType"), storageType);
+}
+
+std::string DescribeAvailableResourceRequest::getReplicationFactor() const {
+  return replicationFactor_;
+}
+
+void DescribeAvailableResourceRequest::setReplicationFactor(const std::string &replicationFactor) {
+  replicationFactor_ = replicationFactor;
+  setParameter(std::string("ReplicationFactor"), replicationFactor);
 }
 
 std::string DescribeAvailableResourceRequest::getAccessKeyId() const {
@@ -59,15 +77,6 @@ std::string DescribeAvailableResourceRequest::getResourceGroupId() const {
 void DescribeAvailableResourceRequest::setResourceGroupId(const std::string &resourceGroupId) {
   resourceGroupId_ = resourceGroupId;
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
-}
-
-std::string DescribeAvailableResourceRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeAvailableResourceRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
 }
 
 std::string DescribeAvailableResourceRequest::getRegionId() const {
@@ -131,6 +140,15 @@ long DescribeAvailableResourceRequest::getOwnerId() const {
 void DescribeAvailableResourceRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DescribeAvailableResourceRequest::getDBInstanceClass() const {
+  return dBInstanceClass_;
+}
+
+void DescribeAvailableResourceRequest::setDBInstanceClass(const std::string &dBInstanceClass) {
+  dBInstanceClass_ = dBInstanceClass;
+  setParameter(std::string("DBInstanceClass"), dBInstanceClass);
 }
 
 std::string DescribeAvailableResourceRequest::getStorageSupport() const {

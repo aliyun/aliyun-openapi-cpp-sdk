@@ -38,8 +38,6 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityIpGroupName() const;
 	void setSecurityIpGroupName(const std::string &securityIpGroupName);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getModifyMode() const;
@@ -58,7 +56,6 @@ private:
 	std::string securityIps_;
 	std::string accessKeyId_;
 	std::string securityIpGroupName_;
-	std::string securityToken_;
 	std::string dBInstanceId_;
 	std::string modifyMode_;
 	std::string resourceOwnerAccount_;

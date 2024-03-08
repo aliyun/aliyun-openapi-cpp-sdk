@@ -34,6 +34,15 @@ void DescribeParameterTemplatesRequest::setResourceOwnerId(long resourceOwnerId)
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeParameterTemplatesRequest::getRole() const {
+  return role_;
+}
+
+void DescribeParameterTemplatesRequest::setRole(const std::string &role) {
+  role_ = role;
+  setParameter(std::string("Role"), role);
+}
+
 std::string DescribeParameterTemplatesRequest::getEngineVersion() const {
   return engineVersion_;
 }
@@ -50,15 +59,6 @@ std::string DescribeParameterTemplatesRequest::getAccessKeyId() const {
 void DescribeParameterTemplatesRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DescribeParameterTemplatesRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeParameterTemplatesRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
 }
 
 std::string DescribeParameterTemplatesRequest::getRegionId() const {

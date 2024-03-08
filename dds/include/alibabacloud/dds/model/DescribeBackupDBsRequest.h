@@ -38,8 +38,6 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getRestoreTime() const;
@@ -60,7 +58,6 @@ private:
 	int pageNumber_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
-	std::string securityToken_;
 	int pageSize_;
 	std::string restoreTime_;
 	std::string resourceOwnerAccount_;

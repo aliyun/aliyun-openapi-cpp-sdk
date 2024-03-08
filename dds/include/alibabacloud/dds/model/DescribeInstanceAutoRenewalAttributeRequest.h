@@ -36,8 +36,6 @@ public:
 	void setPageNumber(long pageNumber);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	long getPageSize() const;
@@ -57,7 +55,6 @@ private:
 	long resourceOwnerId_;
 	long pageNumber_;
 	std::string accessKeyId_;
-	std::string securityToken_;
 	std::string regionId_;
 	long pageSize_;
 	std::string dBInstanceId_;

@@ -61,15 +61,6 @@ void RenewDBInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string RenewDBInstanceRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void RenewDBInstanceRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string RenewDBInstanceRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }
@@ -131,5 +122,14 @@ long RenewDBInstanceRequest::getOwnerId() const {
 void RenewDBInstanceRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+bool RenewDBInstanceRequest::getAutoRenew() const {
+  return autoRenew_;
+}
+
+void RenewDBInstanceRequest::setAutoRenew(bool autoRenew) {
+  autoRenew_ = autoRenew;
+  setParameter(std::string("AutoRenew"), autoRenew ? "true" : "false");
 }
 

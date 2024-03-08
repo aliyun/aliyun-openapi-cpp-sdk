@@ -52,15 +52,6 @@ void ReleaseNodePrivateNetworkAddressRequest::setAccessKeyId(const std::string &
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ReleaseNodePrivateNetworkAddressRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void ReleaseNodePrivateNetworkAddressRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string ReleaseNodePrivateNetworkAddressRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

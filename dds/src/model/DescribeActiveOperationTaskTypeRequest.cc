@@ -61,15 +61,6 @@ void DescribeActiveOperationTaskTypeRequest::setIsHistory(int isHistory) {
   setParameter(std::string("IsHistory"), std::to_string(isHistory));
 }
 
-std::string DescribeActiveOperationTaskTypeRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeActiveOperationTaskTypeRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeActiveOperationTaskTypeRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

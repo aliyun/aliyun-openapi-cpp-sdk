@@ -61,15 +61,6 @@ void ModifyDBInstanceNetExpireTimeRequest::setAccessKeyId(const std::string &acc
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyDBInstanceNetExpireTimeRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void ModifyDBInstanceNetExpireTimeRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string ModifyDBInstanceNetExpireTimeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }
@@ -104,14 +95,5 @@ long ModifyDBInstanceNetExpireTimeRequest::getOwnerId() const {
 void ModifyDBInstanceNetExpireTimeRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string ModifyDBInstanceNetExpireTimeRequest::getCategory() const {
-  return category_;
-}
-
-void ModifyDBInstanceNetExpireTimeRequest::setCategory(const std::string &category) {
-  category_ = category;
-  setParameter(std::string("Category"), category);
 }
 

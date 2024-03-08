@@ -52,15 +52,6 @@ void ResetAccountPasswordRequest::setAccountName(const std::string &accountName)
   setParameter(std::string("AccountName"), accountName);
 }
 
-std::string ResetAccountPasswordRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void ResetAccountPasswordRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string ResetAccountPasswordRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -52,15 +52,6 @@ void DescribeActiveOperationTaskCountRequest::setResourceGroupId(const std::stri
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string DescribeActiveOperationTaskCountRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeActiveOperationTaskCountRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeActiveOperationTaskCountRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

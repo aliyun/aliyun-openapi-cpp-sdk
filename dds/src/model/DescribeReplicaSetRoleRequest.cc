@@ -43,15 +43,6 @@ void DescribeReplicaSetRoleRequest::setAccessKeyId(const std::string &accessKeyI
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeReplicaSetRoleRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DescribeReplicaSetRoleRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DescribeReplicaSetRoleRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

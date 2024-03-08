@@ -43,15 +43,6 @@ void ModifyDBInstanceMaintainTimeRequest::setAccessKeyId(const std::string &acce
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyDBInstanceMaintainTimeRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void ModifyDBInstanceMaintainTimeRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string ModifyDBInstanceMaintainTimeRequest::getMaintainStartTime() const {
   return maintainStartTime_;
 }

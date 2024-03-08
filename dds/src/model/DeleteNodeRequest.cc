@@ -52,15 +52,6 @@ void DeleteNodeRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DeleteNodeRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void DeleteNodeRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string DeleteNodeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

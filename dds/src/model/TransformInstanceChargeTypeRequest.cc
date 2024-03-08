@@ -52,15 +52,6 @@ void TransformInstanceChargeTypeRequest::setAccessKeyId(const std::string &acces
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string TransformInstanceChargeTypeRequest::getSecurityToken() const {
-  return securityToken_;
-}
-
-void TransformInstanceChargeTypeRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
-}
-
 std::string TransformInstanceChargeTypeRequest::getBusinessInfo() const {
   return businessInfo_;
 }

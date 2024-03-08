@@ -29,6 +29,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/CheckCloudResourceAuthorizedResult.h
 	include/alibabacloud/dds/model/CheckRecoveryConditionRequest.h
 	include/alibabacloud/dds/model/CheckRecoveryConditionResult.h
+	include/alibabacloud/dds/model/CreateAccountRequest.h
+	include/alibabacloud/dds/model/CreateAccountResult.h
 	include/alibabacloud/dds/model/CreateBackupRequest.h
 	include/alibabacloud/dds/model/CreateBackupResult.h
 	include/alibabacloud/dds/model/CreateDBInstanceRequest.h
@@ -53,6 +55,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeActiveOperationTaskCountResult.h
 	include/alibabacloud/dds/model/DescribeActiveOperationTaskTypeRequest.h
 	include/alibabacloud/dds/model/DescribeActiveOperationTaskTypeResult.h
+	include/alibabacloud/dds/model/DescribeActiveOperationTasksRequest.h
+	include/alibabacloud/dds/model/DescribeActiveOperationTasksResult.h
 	include/alibabacloud/dds/model/DescribeAuditLogFilterRequest.h
 	include/alibabacloud/dds/model/DescribeAuditLogFilterResult.h
 	include/alibabacloud/dds/model/DescribeAuditPolicyRequest.h
@@ -69,6 +73,10 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeBackupDBsResult.h
 	include/alibabacloud/dds/model/DescribeBackupPolicyRequest.h
 	include/alibabacloud/dds/model/DescribeBackupPolicyResult.h
+	include/alibabacloud/dds/model/DescribeBackupStorageRequest.h
+	include/alibabacloud/dds/model/DescribeBackupStorageResult.h
+	include/alibabacloud/dds/model/DescribeBackupTasksRequest.h
+	include/alibabacloud/dds/model/DescribeBackupTasksResult.h
 	include/alibabacloud/dds/model/DescribeBackupsRequest.h
 	include/alibabacloud/dds/model/DescribeBackupsResult.h
 	include/alibabacloud/dds/model/DescribeClusterBackupsRequest.h
@@ -85,6 +93,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeDBInstancePerformanceResult.h
 	include/alibabacloud/dds/model/DescribeDBInstanceSSLRequest.h
 	include/alibabacloud/dds/model/DescribeDBInstanceSSLResult.h
+	include/alibabacloud/dds/model/DescribeDBInstanceSwitchLogRequest.h
+	include/alibabacloud/dds/model/DescribeDBInstanceSwitchLogResult.h
 	include/alibabacloud/dds/model/DescribeDBInstanceTDEInfoRequest.h
 	include/alibabacloud/dds/model/DescribeDBInstanceTDEInfoResult.h
 	include/alibabacloud/dds/model/DescribeDBInstancesRequest.h
@@ -97,10 +107,18 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeGlobalSecurityIPGroupResult.h
 	include/alibabacloud/dds/model/DescribeGlobalSecurityIPGroupRelationRequest.h
 	include/alibabacloud/dds/model/DescribeGlobalSecurityIPGroupRelationResult.h
+	include/alibabacloud/dds/model/DescribeHistoryTasksRequest.h
+	include/alibabacloud/dds/model/DescribeHistoryTasksResult.h
+	include/alibabacloud/dds/model/DescribeHistoryTasksStatRequest.h
+	include/alibabacloud/dds/model/DescribeHistoryTasksStatResult.h
 	include/alibabacloud/dds/model/DescribeInstanceAutoRenewalAttributeRequest.h
 	include/alibabacloud/dds/model/DescribeInstanceAutoRenewalAttributeResult.h
+	include/alibabacloud/dds/model/DescribeInstanceRecoverTimeRequest.h
+	include/alibabacloud/dds/model/DescribeInstanceRecoverTimeResult.h
 	include/alibabacloud/dds/model/DescribeKernelReleaseNotesRequest.h
 	include/alibabacloud/dds/model/DescribeKernelReleaseNotesResult.h
+	include/alibabacloud/dds/model/DescribeKmsKeysRequest.h
+	include/alibabacloud/dds/model/DescribeKmsKeysResult.h
 	include/alibabacloud/dds/model/DescribeMongoDBLogConfigRequest.h
 	include/alibabacloud/dds/model/DescribeMongoDBLogConfigResult.h
 	include/alibabacloud/dds/model/DescribeParameterModificationHistoryRequest.h
@@ -191,6 +209,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/ModifySecurityGroupConfigurationResult.h
 	include/alibabacloud/dds/model/ModifySecurityIpsRequest.h
 	include/alibabacloud/dds/model/ModifySecurityIpsResult.h
+	include/alibabacloud/dds/model/ModifyTaskInfoRequest.h
+	include/alibabacloud/dds/model/ModifyTaskInfoResult.h
 	include/alibabacloud/dds/model/ReleaseNodePrivateNetworkAddressRequest.h
 	include/alibabacloud/dds/model/ReleaseNodePrivateNetworkAddressResult.h
 	include/alibabacloud/dds/model/ReleasePublicNetworkAddressRequest.h
@@ -230,6 +250,8 @@ set(dds_src
 	src/model/CheckCloudResourceAuthorizedResult.cc
 	src/model/CheckRecoveryConditionRequest.cc
 	src/model/CheckRecoveryConditionResult.cc
+	src/model/CreateAccountRequest.cc
+	src/model/CreateAccountResult.cc
 	src/model/CreateBackupRequest.cc
 	src/model/CreateBackupResult.cc
 	src/model/CreateDBInstanceRequest.cc
@@ -254,6 +276,8 @@ set(dds_src
 	src/model/DescribeActiveOperationTaskCountResult.cc
 	src/model/DescribeActiveOperationTaskTypeRequest.cc
 	src/model/DescribeActiveOperationTaskTypeResult.cc
+	src/model/DescribeActiveOperationTasksRequest.cc
+	src/model/DescribeActiveOperationTasksResult.cc
 	src/model/DescribeAuditLogFilterRequest.cc
 	src/model/DescribeAuditLogFilterResult.cc
 	src/model/DescribeAuditPolicyRequest.cc
@@ -270,6 +294,10 @@ set(dds_src
 	src/model/DescribeBackupDBsResult.cc
 	src/model/DescribeBackupPolicyRequest.cc
 	src/model/DescribeBackupPolicyResult.cc
+	src/model/DescribeBackupStorageRequest.cc
+	src/model/DescribeBackupStorageResult.cc
+	src/model/DescribeBackupTasksRequest.cc
+	src/model/DescribeBackupTasksResult.cc
 	src/model/DescribeBackupsRequest.cc
 	src/model/DescribeBackupsResult.cc
 	src/model/DescribeClusterBackupsRequest.cc
@@ -286,6 +314,8 @@ set(dds_src
 	src/model/DescribeDBInstancePerformanceResult.cc
 	src/model/DescribeDBInstanceSSLRequest.cc
 	src/model/DescribeDBInstanceSSLResult.cc
+	src/model/DescribeDBInstanceSwitchLogRequest.cc
+	src/model/DescribeDBInstanceSwitchLogResult.cc
 	src/model/DescribeDBInstanceTDEInfoRequest.cc
 	src/model/DescribeDBInstanceTDEInfoResult.cc
 	src/model/DescribeDBInstancesRequest.cc
@@ -298,10 +328,18 @@ set(dds_src
 	src/model/DescribeGlobalSecurityIPGroupResult.cc
 	src/model/DescribeGlobalSecurityIPGroupRelationRequest.cc
 	src/model/DescribeGlobalSecurityIPGroupRelationResult.cc
+	src/model/DescribeHistoryTasksRequest.cc
+	src/model/DescribeHistoryTasksResult.cc
+	src/model/DescribeHistoryTasksStatRequest.cc
+	src/model/DescribeHistoryTasksStatResult.cc
 	src/model/DescribeInstanceAutoRenewalAttributeRequest.cc
 	src/model/DescribeInstanceAutoRenewalAttributeResult.cc
+	src/model/DescribeInstanceRecoverTimeRequest.cc
+	src/model/DescribeInstanceRecoverTimeResult.cc
 	src/model/DescribeKernelReleaseNotesRequest.cc
 	src/model/DescribeKernelReleaseNotesResult.cc
+	src/model/DescribeKmsKeysRequest.cc
+	src/model/DescribeKmsKeysResult.cc
 	src/model/DescribeMongoDBLogConfigRequest.cc
 	src/model/DescribeMongoDBLogConfigResult.cc
 	src/model/DescribeParameterModificationHistoryRequest.cc
@@ -392,6 +430,8 @@ set(dds_src
 	src/model/ModifySecurityGroupConfigurationResult.cc
 	src/model/ModifySecurityIpsRequest.cc
 	src/model/ModifySecurityIpsResult.cc
+	src/model/ModifyTaskInfoRequest.cc
+	src/model/ModifyTaskInfoResult.cc
 	src/model/ReleaseNodePrivateNetworkAddressRequest.cc
 	src/model/ReleaseNodePrivateNetworkAddressResult.cc
 	src/model/ReleasePublicNetworkAddressRequest.cc
