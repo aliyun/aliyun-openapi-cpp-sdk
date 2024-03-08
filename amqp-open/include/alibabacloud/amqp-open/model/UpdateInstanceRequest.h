@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_AMQP_OPEN_MODEL_CREATEINSTANCEREQUEST_H_
-#define ALIBABACLOUD_AMQP_OPEN_MODEL_CREATEINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_AMQP_OPEN_MODEL_UPDATEINSTANCEREQUEST_H_
+#define ALIBABACLOUD_AMQP_OPEN_MODEL_UPDATEINSTANCEREQUEST_H_
 
 #include <alibabacloud/amqp-open/Amqp_openExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,16 +26,14 @@
 namespace AlibabaCloud {
 namespace Amqp_open {
 namespace Model {
-class ALIBABACLOUD_AMQP_OPEN_EXPORT CreateInstanceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_AMQP_OPEN_EXPORT UpdateInstanceRequest : public RpcServiceRequest {
 public:
-	CreateInstanceRequest();
-	~CreateInstanceRequest();
+	UpdateInstanceRequest();
+	~UpdateInstanceRequest();
 	long getMaxPrivateTps() const;
 	void setMaxPrivateTps(long maxPrivateTps);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getPeriodCycle() const;
-	void setPeriodCycle(const std::string &periodCycle);
 	int getStorageSize() const;
 	void setStorageSize(int storageSize);
 	int getQueueCapacity() const;
@@ -50,29 +48,18 @@ public:
 	void setServerlessChargeType(const std::string &serverlessChargeType);
 	std::string getInstanceType() const;
 	void setInstanceType(const std::string &instanceType);
-	std::string getRenewStatus() const;
-	void setRenewStatus(const std::string &renewStatus);
-	int getAutoRenewPeriod() const;
-	void setAutoRenewPeriod(int autoRenewPeriod);
-	int getPeriod() const;
-	void setPeriod(int period);
-	std::string getRenewalDurationUnit() const;
-	void setRenewalDurationUnit(const std::string &renewalDurationUnit);
-	std::string getInstanceName() const;
-	void setInstanceName(const std::string &instanceName);
-	bool getAutoRenew() const;
-	void setAutoRenew(bool autoRenew);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	bool getSupportEip() const;
 	void setSupportEip(bool supportEip);
+	std::string getModifyType() const;
+	void setModifyType(const std::string &modifyType);
 	long getMaxEipTps() const;
 	void setMaxEipTps(long maxEipTps);
-	std::string getPaymentType() const;
-	void setPaymentType(const std::string &paymentType);
 
 private:
 	long maxPrivateTps_;
 	std::string clientToken_;
-	std::string periodCycle_;
 	int storageSize_;
 	int queueCapacity_;
 	int tracingStorageTime_;
@@ -80,17 +67,12 @@ private:
 	bool supportTracing_;
 	std::string serverlessChargeType_;
 	std::string instanceType_;
-	std::string renewStatus_;
-	int autoRenewPeriod_;
-	int period_;
-	std::string renewalDurationUnit_;
-	std::string instanceName_;
-	bool autoRenew_;
+	std::string instanceId_;
 	bool supportEip_;
+	std::string modifyType_;
 	long maxEipTps_;
-	std::string paymentType_;
 };
 } // namespace Model
 } // namespace Amqp_open
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_AMQP_OPEN_MODEL_CREATEINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_AMQP_OPEN_MODEL_UPDATEINSTANCEREQUEST_H_

@@ -97,6 +97,15 @@ void CreateInstanceRequest::setSupportTracing(bool supportTracing) {
   setParameter(std::string("SupportTracing"), supportTracing ? "true" : "false");
 }
 
+std::string CreateInstanceRequest::getServerlessChargeType() const {
+  return serverlessChargeType_;
+}
+
+void CreateInstanceRequest::setServerlessChargeType(const std::string &serverlessChargeType) {
+  serverlessChargeType_ = serverlessChargeType;
+  setParameter(std::string("ServerlessChargeType"), serverlessChargeType);
+}
+
 std::string CreateInstanceRequest::getInstanceType() const {
   return instanceType_;
 }
@@ -104,6 +113,15 @@ std::string CreateInstanceRequest::getInstanceType() const {
 void CreateInstanceRequest::setInstanceType(const std::string &instanceType) {
   instanceType_ = instanceType;
   setParameter(std::string("InstanceType"), instanceType);
+}
+
+std::string CreateInstanceRequest::getRenewStatus() const {
+  return renewStatus_;
+}
+
+void CreateInstanceRequest::setRenewStatus(const std::string &renewStatus) {
+  renewStatus_ = renewStatus;
+  setParameter(std::string("RenewStatus"), renewStatus);
 }
 
 int CreateInstanceRequest::getAutoRenewPeriod() const {
@@ -122,6 +140,24 @@ int CreateInstanceRequest::getPeriod() const {
 void CreateInstanceRequest::setPeriod(int period) {
   period_ = period;
   setParameter(std::string("Period"), std::to_string(period));
+}
+
+std::string CreateInstanceRequest::getRenewalDurationUnit() const {
+  return renewalDurationUnit_;
+}
+
+void CreateInstanceRequest::setRenewalDurationUnit(const std::string &renewalDurationUnit) {
+  renewalDurationUnit_ = renewalDurationUnit;
+  setParameter(std::string("RenewalDurationUnit"), renewalDurationUnit);
+}
+
+std::string CreateInstanceRequest::getInstanceName() const {
+  return instanceName_;
+}
+
+void CreateInstanceRequest::setInstanceName(const std::string &instanceName) {
+  instanceName_ = instanceName;
+  setParameter(std::string("InstanceName"), instanceName);
 }
 
 bool CreateInstanceRequest::getAutoRenew() const {

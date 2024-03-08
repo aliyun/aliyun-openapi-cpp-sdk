@@ -843,6 +843,42 @@ Amqp_openClient::ListVirtualHostsOutcomeCallable Amqp_openClient::listVirtualHos
 	return task->get_future();
 }
 
+Amqp_openClient::UpdateInstanceOutcome Amqp_openClient::updateInstance(const UpdateInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateInstanceOutcome(UpdateInstanceResult(outcome.result()));
+	else
+		return UpdateInstanceOutcome(outcome.error());
+}
+
+void Amqp_openClient::updateInstanceAsync(const UpdateInstanceRequest& request, const UpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Amqp_openClient::UpdateInstanceOutcomeCallable Amqp_openClient::updateInstanceCallable(const UpdateInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->updateInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Amqp_openClient::UpdateInstanceNameOutcome Amqp_openClient::updateInstanceName(const UpdateInstanceNameRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -66,6 +66,8 @@
 #include "model/ListQueuesResult.h"
 #include "model/ListVirtualHostsRequest.h"
 #include "model/ListVirtualHostsResult.h"
+#include "model/UpdateInstanceRequest.h"
+#include "model/UpdateInstanceResult.h"
 #include "model/UpdateInstanceNameRequest.h"
 #include "model/UpdateInstanceNameResult.h"
 
@@ -143,6 +145,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListVirtualHostsResult> ListVirtualHostsOutcome;
 			typedef std::future<ListVirtualHostsOutcome> ListVirtualHostsOutcomeCallable;
 			typedef std::function<void(const Amqp_openClient*, const Model::ListVirtualHostsRequest&, const ListVirtualHostsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListVirtualHostsAsyncHandler;
+			typedef Outcome<Error, Model::UpdateInstanceResult> UpdateInstanceOutcome;
+			typedef std::future<UpdateInstanceOutcome> UpdateInstanceOutcomeCallable;
+			typedef std::function<void(const Amqp_openClient*, const Model::UpdateInstanceRequest&, const UpdateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceAsyncHandler;
 			typedef Outcome<Error, Model::UpdateInstanceNameResult> UpdateInstanceNameOutcome;
 			typedef std::future<UpdateInstanceNameOutcome> UpdateInstanceNameOutcomeCallable;
 			typedef std::function<void(const Amqp_openClient*, const Model::UpdateInstanceNameRequest&, const UpdateInstanceNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceNameAsyncHandler;
@@ -217,6 +222,9 @@ namespace AlibabaCloud
 			ListVirtualHostsOutcome listVirtualHosts(const Model::ListVirtualHostsRequest &request)const;
 			void listVirtualHostsAsync(const Model::ListVirtualHostsRequest& request, const ListVirtualHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListVirtualHostsOutcomeCallable listVirtualHostsCallable(const Model::ListVirtualHostsRequest& request) const;
+			UpdateInstanceOutcome updateInstance(const Model::UpdateInstanceRequest &request)const;
+			void updateInstanceAsync(const Model::UpdateInstanceRequest& request, const UpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateInstanceOutcomeCallable updateInstanceCallable(const Model::UpdateInstanceRequest& request) const;
 			UpdateInstanceNameOutcome updateInstanceName(const Model::UpdateInstanceNameRequest &request)const;
 			void updateInstanceNameAsync(const Model::UpdateInstanceNameRequest& request, const UpdateInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateInstanceNameOutcomeCallable updateInstanceNameCallable(const Model::UpdateInstanceNameRequest& request) const;

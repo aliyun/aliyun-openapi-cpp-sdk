@@ -65,6 +65,8 @@ set(amqp-open_public_header_model
 	include/alibabacloud/amqp-open/model/ListQueuesResult.h
 	include/alibabacloud/amqp-open/model/ListVirtualHostsRequest.h
 	include/alibabacloud/amqp-open/model/ListVirtualHostsResult.h
+	include/alibabacloud/amqp-open/model/UpdateInstanceRequest.h
+	include/alibabacloud/amqp-open/model/UpdateInstanceResult.h
 	include/alibabacloud/amqp-open/model/UpdateInstanceNameRequest.h
 	include/alibabacloud/amqp-open/model/UpdateInstanceNameResult.h )
 
@@ -114,6 +116,8 @@ set(amqp-open_src
 	src/model/ListQueuesResult.cc
 	src/model/ListVirtualHostsRequest.cc
 	src/model/ListVirtualHostsResult.cc
+	src/model/UpdateInstanceRequest.cc
+	src/model/UpdateInstanceResult.cc
 	src/model/UpdateInstanceNameRequest.cc
 	src/model/UpdateInstanceNameResult.cc )
 
