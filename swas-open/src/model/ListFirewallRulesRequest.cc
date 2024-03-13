@@ -61,3 +61,26 @@ void ListFirewallRulesRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::string ListFirewallRulesRequest::getFirewallRuleId() const {
+  return firewallRuleId_;
+}
+
+void ListFirewallRulesRequest::setFirewallRuleId(const std::string &firewallRuleId) {
+  firewallRuleId_ = firewallRuleId;
+  setParameter(std::string("FirewallRuleId"), firewallRuleId);
+}
+
+std::vector<ListFirewallRulesRequest::Tag> ListFirewallRulesRequest::getTag() const {
+  return tag_;
+}
+
+void ListFirewallRulesRequest::setTag(const std::vector<ListFirewallRulesRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+

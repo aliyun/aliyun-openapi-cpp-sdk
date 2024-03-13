@@ -28,6 +28,10 @@ namespace SWAS_OPEN {
 namespace Model {
 class ALIBABACLOUD_SWAS_OPEN_EXPORT CreateCommandRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	CreateCommandRequest();
 	~CreateCommandRequest();
 	std::string getWorkingDir() const;
@@ -42,6 +46,8 @@ public:
 	void setTimeout(long timeout);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getName() const;
 	void setName(const std::string &name);
 	bool getEnableParameter() const;
@@ -54,6 +60,7 @@ private:
 	std::string commandContent_;
 	long timeout_;
 	std::string regionId_;
+	std::vector<Tag> tag_;
 	std::string name_;
 	bool enableParameter_;
 };

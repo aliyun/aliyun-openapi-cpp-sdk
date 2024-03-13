@@ -52,6 +52,31 @@ namespace AlibabaCloud
 						std::string imageContact;
 						std::string imageType;
 					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
+					struct Disk
+					{
+						struct Tag1
+						{
+							std::string value;
+							std::string key;
+						};
+						std::string status;
+						std::string diskType;
+						std::vector<Disk::Tag1> diskTags;
+						std::string category;
+						std::string device;
+						int size;
+						std::string creationTime;
+						std::string diskChargeType;
+						std::string regionId;
+						std::string diskName;
+						std::string diskId;
+						std::string remark;
+					};
 					std::string status;
 					std::string disableReason;
 					std::string instanceId;
@@ -70,7 +95,9 @@ namespace AlibabaCloud
 					std::string expiredTime;
 					std::string creationTime;
 					std::string imageId;
+					std::vector<Instance::Disk> disks;
 					std::string regionId;
+					std::vector<Instance::Tag> tags;
 				};
 
 

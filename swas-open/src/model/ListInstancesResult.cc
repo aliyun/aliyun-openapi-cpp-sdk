@@ -77,6 +77,54 @@ void ListInstancesResult::parse(const std::string &payload)
 			instancesObject.combinationInstanceId = valueInstancesInstance["CombinationInstanceId"].asString();
 		if(!valueInstancesInstance["Uuid"].isNull())
 			instancesObject.uuid = valueInstancesInstance["Uuid"].asString();
+		auto allTagsNode = valueInstancesInstance["Tags"]["tag"];
+		for (auto valueInstancesInstanceTagstag : allTagsNode)
+		{
+			Instance::Tag tagsObject;
+			if(!valueInstancesInstanceTagstag["Key"].isNull())
+				tagsObject.key = valueInstancesInstanceTagstag["Key"].asString();
+			if(!valueInstancesInstanceTagstag["Value"].isNull())
+				tagsObject.value = valueInstancesInstanceTagstag["Value"].asString();
+			instancesObject.tags.push_back(tagsObject);
+		}
+		auto allDisksNode = valueInstancesInstance["Disks"]["disk"];
+		for (auto valueInstancesInstanceDisksdisk : allDisksNode)
+		{
+			Instance::Disk disksObject;
+			if(!valueInstancesInstanceDisksdisk["CreationTime"].isNull())
+				disksObject.creationTime = valueInstancesInstanceDisksdisk["CreationTime"].asString();
+			if(!valueInstancesInstanceDisksdisk["Status"].isNull())
+				disksObject.status = valueInstancesInstanceDisksdisk["Status"].asString();
+			if(!valueInstancesInstanceDisksdisk["Device"].isNull())
+				disksObject.device = valueInstancesInstanceDisksdisk["Device"].asString();
+			if(!valueInstancesInstanceDisksdisk["Size"].isNull())
+				disksObject.size = std::stoi(valueInstancesInstanceDisksdisk["Size"].asString());
+			if(!valueInstancesInstanceDisksdisk["DiskName"].isNull())
+				disksObject.diskName = valueInstancesInstanceDisksdisk["DiskName"].asString();
+			if(!valueInstancesInstanceDisksdisk["DiskChargeType"].isNull())
+				disksObject.diskChargeType = valueInstancesInstanceDisksdisk["DiskChargeType"].asString();
+			if(!valueInstancesInstanceDisksdisk["DiskType"].isNull())
+				disksObject.diskType = valueInstancesInstanceDisksdisk["DiskType"].asString();
+			if(!valueInstancesInstanceDisksdisk["Category"].isNull())
+				disksObject.category = valueInstancesInstanceDisksdisk["Category"].asString();
+			if(!valueInstancesInstanceDisksdisk["DiskId"].isNull())
+				disksObject.diskId = valueInstancesInstanceDisksdisk["DiskId"].asString();
+			if(!valueInstancesInstanceDisksdisk["RegionId"].isNull())
+				disksObject.regionId = valueInstancesInstanceDisksdisk["RegionId"].asString();
+			if(!valueInstancesInstanceDisksdisk["Remark"].isNull())
+				disksObject.remark = valueInstancesInstanceDisksdisk["Remark"].asString();
+			auto allDiskTagsNode = valueInstancesInstanceDisksdisk["DiskTags"]["tag"];
+			for (auto valueInstancesInstanceDisksdiskDiskTagstag : allDiskTagsNode)
+			{
+				Instance::Disk::Tag1 diskTagsObject;
+				if(!valueInstancesInstanceDisksdiskDiskTagstag["Key"].isNull())
+					diskTagsObject.key = valueInstancesInstanceDisksdiskDiskTagstag["Key"].asString();
+				if(!valueInstancesInstanceDisksdiskDiskTagstag["Value"].isNull())
+					diskTagsObject.value = valueInstancesInstanceDisksdiskDiskTagstag["Value"].asString();
+				disksObject.diskTags.push_back(diskTagsObject);
+			}
+			instancesObject.disks.push_back(disksObject);
+		}
 		auto resourceSpecNode = value["ResourceSpec"];
 		if(!resourceSpecNode["DiskCategory"].isNull())
 			instancesObject.resourceSpec.diskCategory = resourceSpecNode["DiskCategory"].asString();

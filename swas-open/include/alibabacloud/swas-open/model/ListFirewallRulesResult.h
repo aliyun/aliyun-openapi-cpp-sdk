@@ -34,11 +34,17 @@ namespace AlibabaCloud
 			public:
 				struct FirewallRule
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string policy;
 					std::string port;
 					std::string ruleId;
 					std::string sourceCidrIp;
 					std::string ruleProtocol;
+					std::vector<FirewallRule::Tag> tags;
 					std::string remark;
 				};
 

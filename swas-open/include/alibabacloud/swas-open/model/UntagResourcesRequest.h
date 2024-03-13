@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_CREATEFIREWALLRULESREQUEST_H_
-#define ALIBABACLOUD_SWAS_OPEN_MODEL_CREATEFIREWALLRULESREQUEST_H_
+#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_UNTAGRESOURCESREQUEST_H_
+#define ALIBABACLOUD_SWAS_OPEN_MODEL_UNTAGRESOURCESREQUEST_H_
 
 #include <alibabacloud/swas-open/SWAS_OPENExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,39 +26,32 @@
 namespace AlibabaCloud {
 namespace SWAS_OPEN {
 namespace Model {
-class ALIBABACLOUD_SWAS_OPEN_EXPORT CreateFirewallRulesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SWAS_OPEN_EXPORT UntagResourcesRequest : public RpcServiceRequest {
 public:
-	struct FirewallRules {
-		std::string ruleProtocol;
-		std::string port;
-		std::string sourceCidrIp;
-		std::string remark;
-	};
-	struct Tag {
-		std::string key;
-		std::string value;
-	};
-	CreateFirewallRulesRequest();
-	~CreateFirewallRulesRequest();
+	UntagResourcesRequest();
+	~UntagResourcesRequest();
+	bool getAll() const;
+	void setAll(bool all);
+	std::vector<std::string> getResourceId() const;
+	void setResourceId(const std::vector<std::string> &resourceId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::vector<FirewallRules> getFirewallRules() const;
-	void setFirewallRules(const std::vector<FirewallRules> &firewallRules);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
+	std::vector<std::string> getTagKey() const;
+	void setTagKey(const std::vector<std::string> &tagKey);
 
 private:
+	bool all_;
+	std::vector<std::string> resourceId_;
 	std::string clientToken_;
-	std::string instanceId_;
+	std::string resourceType_;
 	std::string regionId_;
-	std::vector<FirewallRules> firewallRules_;
-	std::vector<Tag> tag_;
+	std::vector<std::string> tagKey_;
 };
 } // namespace Model
 } // namespace SWAS_OPEN
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_CREATEFIREWALLRULESREQUEST_H_
+#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_UNTAGRESOURCESREQUEST_H_

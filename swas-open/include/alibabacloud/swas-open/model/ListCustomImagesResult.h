@@ -34,9 +34,15 @@ namespace AlibabaCloud
 			public:
 				struct CustomImage
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
 					std::string description;
 					bool inShare;
+					std::string resourceGroupId;
 					std::string instanceId;
 					std::string systemSnapshotId;
 					std::string systemSnapshotName;
@@ -47,6 +53,7 @@ namespace AlibabaCloud
 					std::string creationTime;
 					std::string imageId;
 					std::string regionId;
+					std::vector<CustomImage::Tag> tags;
 				};
 
 

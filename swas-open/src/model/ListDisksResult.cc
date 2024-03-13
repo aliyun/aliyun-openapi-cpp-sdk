@@ -69,6 +69,16 @@ void ListDisksResult::parse(const std::string &payload)
 			disksObject.remark = valueDisksDisk["Remark"].asString();
 		if(!valueDisksDisk["InstanceName"].isNull())
 			disksObject.instanceName = valueDisksDisk["InstanceName"].asString();
+		auto allTagsNode = valueDisksDisk["Tags"]["tag"];
+		for (auto valueDisksDiskTagstag : allTagsNode)
+		{
+			Disk::Tag tagsObject;
+			if(!valueDisksDiskTagstag["Key"].isNull())
+				tagsObject.key = valueDisksDiskTagstag["Key"].asString();
+			if(!valueDisksDiskTagstag["Value"].isNull())
+				tagsObject.value = valueDisksDiskTagstag["Value"].asString();
+			disksObject.tags.push_back(tagsObject);
+		}
 		disks_.push_back(disksObject);
 	}
 	if(!value["TotalCount"].isNull())

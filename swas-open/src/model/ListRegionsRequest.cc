@@ -25,3 +25,12 @@ ListRegionsRequest::ListRegionsRequest()
 
 ListRegionsRequest::~ListRegionsRequest() {}
 
+std::string ListRegionsRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void ListRegionsRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
+}
+

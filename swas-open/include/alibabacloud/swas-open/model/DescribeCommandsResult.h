@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct Command
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					struct ParameterDefinition
 					{
 						std::string defaultValue;
@@ -42,18 +47,19 @@ namespace AlibabaCloud
 						std::string parameterName;
 						std::vector<std::string> possibleValues;
 					};
-					std::string workingDir;
-					std::string commandContent;
 					std::vector<Command::ParameterDefinition> parameterDefinitions;
-					std::string type;
 					std::string description;
 					std::vector<std::string> parameterNames;
 					long timeout;
+					std::string name;
+					std::string provider;
+					std::string workingDir;
+					std::string commandContent;
+					std::string type;
 					std::string creationTime;
 					bool enableParameter;
 					std::string commandId;
-					std::string name;
-					std::string provider;
+					std::vector<Command::Tag> tags;
 				};
 
 

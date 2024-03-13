@@ -70,15 +70,6 @@ void DescribeCommandsRequest::setProvider(const std::string &provider) {
   setParameter(std::string("Provider"), provider);
 }
 
-std::string DescribeCommandsRequest::getName() const {
-  return name_;
-}
-
-void DescribeCommandsRequest::setName(const std::string &name) {
-  name_ = name;
-  setParameter(std::string("Name"), name);
-}
-
 std::string DescribeCommandsRequest::getPageSize() const {
   return pageSize_;
 }
@@ -86,5 +77,28 @@ std::string DescribeCommandsRequest::getPageSize() const {
 void DescribeCommandsRequest::setPageSize(const std::string &pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), pageSize);
+}
+
+std::vector<DescribeCommandsRequest::Tag> DescribeCommandsRequest::getTag() const {
+  return tag_;
+}
+
+void DescribeCommandsRequest::setTag(const std::vector<DescribeCommandsRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+
+std::string DescribeCommandsRequest::getName() const {
+  return name_;
+}
+
+void DescribeCommandsRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 

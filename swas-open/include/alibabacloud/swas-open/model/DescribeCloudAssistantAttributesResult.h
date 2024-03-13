@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_LISTDISKSRESULT_H_
-#define ALIBABACLOUD_SWAS_OPEN_MODEL_LISTDISKSRESULT_H_
+#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_DESCRIBECLOUDASSISTANTATTRIBUTESRESULT_H_
+#define ALIBABACLOUD_SWAS_OPEN_MODEL_DESCRIBECLOUDASSISTANTATTRIBUTESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,51 +29,41 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SWAS_OPEN_EXPORT ListDisksResult : public ServiceResult
+			class ALIBABACLOUD_SWAS_OPEN_EXPORT DescribeCloudAssistantAttributesResult : public ServiceResult
 			{
 			public:
-				struct Disk
+				struct Status
 				{
-					struct Tag
-					{
-						std::string value;
-						std::string key;
-					};
-					std::string status;
-					std::string category;
+					std::string cloudAssistantVersion;
+					bool supportSessionManager;
 					std::string instanceId;
-					std::string device;
-					int size;
-					std::string diskChargeType;
-					std::string diskName;
-					std::string remark;
-					std::string diskType;
-					std::string instanceName;
-					std::string creationTime;
-					std::string regionId;
-					std::vector<Disk::Tag> tags;
-					std::string diskId;
+					long invocationCount;
+					std::string oSType;
+					std::string cloudAssistantStatus;
+					std::string lastHeartbeatTime;
+					std::string lastInvokedTime;
+					long activeTaskCount;
 				};
 
 
-				ListDisksResult();
-				explicit ListDisksResult(const std::string &payload);
-				~ListDisksResult();
+				DescribeCloudAssistantAttributesResult();
+				explicit DescribeCloudAssistantAttributesResult(const std::string &payload);
+				~DescribeCloudAssistantAttributesResult();
 				int getTotalCount()const;
+				std::vector<Status> getCloudAssistant()const;
 				int getPageSize()const;
 				int getPageNumber()const;
-				std::vector<Disk> getDisks()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
+				std::vector<Status> cloudAssistant_;
 				int pageSize_;
 				int pageNumber_;
-				std::vector<Disk> disks_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_LISTDISKSRESULT_H_
+#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_DESCRIBECLOUDASSISTANTATTRIBUTESRESULT_H_

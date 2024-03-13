@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_CREATEFIREWALLRULESRESULT_H_
-#define ALIBABACLOUD_SWAS_OPEN_MODEL_CREATEFIREWALLRULESRESULT_H_
+#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_LISTTAGRESOURCESRESULT_H_
+#define ALIBABACLOUD_SWAS_OPEN_MODEL_LISTTAGRESOURCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SWAS_OPEN_EXPORT CreateFirewallRulesResult : public ServiceResult
+			class ALIBABACLOUD_SWAS_OPEN_EXPORT ListTagResourcesResult : public ServiceResult
 			{
 			public:
+				struct TagResource
+				{
+					std::string resourceId;
+					std::string tagKey;
+					std::string resourceType;
+					std::string tagValue;
+				};
 
 
-				CreateFirewallRulesResult();
-				explicit CreateFirewallRulesResult(const std::string &payload);
-				~CreateFirewallRulesResult();
-				std::vector<std::string> getFirewallRuleIds()const;
+				ListTagResourcesResult();
+				explicit ListTagResourcesResult(const std::string &payload);
+				~ListTagResourcesResult();
+				std::string getNextToken()const;
+				std::vector<TagResource> getTagResources()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<std::string> firewallRuleIds_;
+				std::string nextToken_;
+				std::vector<TagResource> tagResources_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_CREATEFIREWALLRULESRESULT_H_
+#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_LISTTAGRESOURCESRESULT_H_

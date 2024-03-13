@@ -28,31 +28,38 @@ namespace SWAS_OPEN {
 namespace Model {
 class ALIBABACLOUD_SWAS_OPEN_EXPORT ListSnapshotsRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	ListSnapshotsRequest();
 	~ListSnapshotsRequest();
 	std::string getSnapshotIds() const;
 	void setSnapshotIds(const std::string &snapshotIds);
-	std::string getSourceDiskType() const;
-	void setSourceDiskType(const std::string &sourceDiskType);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getDiskId() const;
 	void setDiskId(const std::string &diskId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
+	std::string getSourceDiskType() const;
+	void setSourceDiskType(const std::string &sourceDiskType);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 
 private:
 	std::string snapshotIds_;
-	std::string sourceDiskType_;
 	int pageNumber_;
-	std::string instanceId_;
 	std::string regionId_;
 	int pageSize_;
 	std::string diskId_;
+	std::vector<Tag> tag_;
+	std::string sourceDiskType_;
+	std::string instanceId_;
 };
 } // namespace Model
 } // namespace SWAS_OPEN

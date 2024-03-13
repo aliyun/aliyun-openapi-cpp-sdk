@@ -55,6 +55,16 @@ void ListFirewallRulesResult::parse(const std::string &payload)
 			firewallRulesObject.policy = valueFirewallRulesFirewallRule["Policy"].asString();
 		if(!valueFirewallRulesFirewallRule["SourceCidrIp"].isNull())
 			firewallRulesObject.sourceCidrIp = valueFirewallRulesFirewallRule["SourceCidrIp"].asString();
+		auto allTagsNode = valueFirewallRulesFirewallRule["Tags"]["tag"];
+		for (auto valueFirewallRulesFirewallRuleTagstag : allTagsNode)
+		{
+			FirewallRule::Tag tagsObject;
+			if(!valueFirewallRulesFirewallRuleTagstag["Key"].isNull())
+				tagsObject.key = valueFirewallRulesFirewallRuleTagstag["Key"].asString();
+			if(!valueFirewallRulesFirewallRuleTagstag["Value"].isNull())
+				tagsObject.value = valueFirewallRulesFirewallRuleTagstag["Value"].asString();
+			firewallRulesObject.tags.push_back(tagsObject);
+		}
 		firewallRules_.push_back(firewallRulesObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -69,6 +69,18 @@ void ListCustomImagesResult::parse(const std::string &payload)
 			customImagesObject.status = valueCustomImagesCustomImage["Status"].asString();
 		if(!valueCustomImagesCustomImage["InstanceName"].isNull())
 			customImagesObject.instanceName = valueCustomImagesCustomImage["InstanceName"].asString();
+		if(!valueCustomImagesCustomImage["ResourceGroupId"].isNull())
+			customImagesObject.resourceGroupId = valueCustomImagesCustomImage["ResourceGroupId"].asString();
+		auto allTagsNode = valueCustomImagesCustomImage["Tags"]["tag"];
+		for (auto valueCustomImagesCustomImageTagstag : allTagsNode)
+		{
+			CustomImage::Tag tagsObject;
+			if(!valueCustomImagesCustomImageTagstag["Key"].isNull())
+				tagsObject.key = valueCustomImagesCustomImageTagstag["Key"].asString();
+			if(!valueCustomImagesCustomImageTagstag["Value"].isNull())
+				tagsObject.value = valueCustomImagesCustomImageTagstag["Value"].asString();
+			customImagesObject.tags.push_back(tagsObject);
+		}
 		customImages_.push_back(customImagesObject);
 	}
 	if(!value["TotalCount"].isNull())

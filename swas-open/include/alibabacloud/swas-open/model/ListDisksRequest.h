@@ -28,6 +28,10 @@ namespace SWAS_OPEN {
 namespace Model {
 class ALIBABACLOUD_SWAS_OPEN_EXPORT ListDisksRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	ListDisksRequest();
 	~ListDisksRequest();
 	std::string getDiskType() const;
@@ -42,6 +46,8 @@ public:
 	void setPageSize(int pageSize);
 	std::string getDiskIds() const;
 	void setDiskIds(const std::string &diskIds);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 
 private:
 	std::string diskType_;
@@ -50,6 +56,7 @@ private:
 	std::string regionId_;
 	int pageSize_;
 	std::string diskIds_;
+	std::vector<Tag> tag_;
 };
 } // namespace Model
 } // namespace SWAS_OPEN

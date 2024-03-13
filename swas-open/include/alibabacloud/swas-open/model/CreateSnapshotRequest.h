@@ -28,6 +28,10 @@ namespace SWAS_OPEN {
 namespace Model {
 class ALIBABACLOUD_SWAS_OPEN_EXPORT CreateSnapshotRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	CreateSnapshotRequest();
 	~CreateSnapshotRequest();
 	std::string getClientToken() const;
@@ -38,12 +42,15 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getDiskId() const;
 	void setDiskId(const std::string &diskId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 
 private:
 	std::string clientToken_;
 	std::string snapshotName_;
 	std::string regionId_;
 	std::string diskId_;
+	std::vector<Tag> tag_;
 };
 } // namespace Model
 } // namespace SWAS_OPEN

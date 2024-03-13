@@ -50,6 +50,8 @@
 #include "model/DeleteSnapshotResult.h"
 #include "model/DeleteSnapshotsRequest.h"
 #include "model/DeleteSnapshotsResult.h"
+#include "model/DescribeCloudAssistantAttributesRequest.h"
+#include "model/DescribeCloudAssistantAttributesResult.h"
 #include "model/DescribeCloudAssistantStatusRequest.h"
 #include "model/DescribeCloudAssistantStatusResult.h"
 #include "model/DescribeCloudMonitorAgentStatusesRequest.h"
@@ -114,6 +116,8 @@
 #include "model/ListRegionsResult.h"
 #include "model/ListSnapshotsRequest.h"
 #include "model/ListSnapshotsResult.h"
+#include "model/ListTagResourcesRequest.h"
+#include "model/ListTagResourcesResult.h"
 #include "model/LoginInstanceRequest.h"
 #include "model/LoginInstanceResult.h"
 #include "model/ModifyDatabaseInstanceDescriptionRequest.h"
@@ -158,6 +162,10 @@
 #include "model/StopInstanceResult.h"
 #include "model/StopInstancesRequest.h"
 #include "model/StopInstancesResult.h"
+#include "model/TagResourcesRequest.h"
+#include "model/TagResourcesResult.h"
+#include "model/UntagResourcesRequest.h"
+#include "model/UntagResourcesResult.h"
 #include "model/UpdateCommandAttributeRequest.h"
 #include "model/UpdateCommandAttributeResult.h"
 #include "model/UpdateDiskAttributeRequest.h"
@@ -221,6 +229,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteSnapshotsResult> DeleteSnapshotsOutcome;
 			typedef std::future<DeleteSnapshotsOutcome> DeleteSnapshotsOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteSnapshotsRequest&, const DeleteSnapshotsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCloudAssistantAttributesResult> DescribeCloudAssistantAttributesOutcome;
+			typedef std::future<DescribeCloudAssistantAttributesOutcome> DescribeCloudAssistantAttributesOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeCloudAssistantAttributesRequest&, const DescribeCloudAssistantAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudAssistantAttributesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCloudAssistantStatusResult> DescribeCloudAssistantStatusOutcome;
 			typedef std::future<DescribeCloudAssistantStatusOutcome> DescribeCloudAssistantStatusOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeCloudAssistantStatusRequest&, const DescribeCloudAssistantStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudAssistantStatusAsyncHandler;
@@ -317,6 +328,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListSnapshotsResult> ListSnapshotsOutcome;
 			typedef std::future<ListSnapshotsOutcome> ListSnapshotsOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::ListSnapshotsRequest&, const ListSnapshotsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSnapshotsAsyncHandler;
+			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
+			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::LoginInstanceResult> LoginInstanceOutcome;
 			typedef std::future<LoginInstanceOutcome> LoginInstanceOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::LoginInstanceRequest&, const LoginInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LoginInstanceAsyncHandler;
@@ -383,6 +397,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopInstancesResult> StopInstancesOutcome;
 			typedef std::future<StopInstancesOutcome> StopInstancesOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::StopInstancesRequest&, const StopInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopInstancesAsyncHandler;
+			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
+			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
+			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateCommandAttributeResult> UpdateCommandAttributeOutcome;
 			typedef std::future<UpdateCommandAttributeOutcome> UpdateCommandAttributeOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::UpdateCommandAttributeRequest&, const UpdateCommandAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCommandAttributeAsyncHandler;
@@ -448,6 +468,9 @@ namespace AlibabaCloud
 			DeleteSnapshotsOutcome deleteSnapshots(const Model::DeleteSnapshotsRequest &request)const;
 			void deleteSnapshotsAsync(const Model::DeleteSnapshotsRequest& request, const DeleteSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSnapshotsOutcomeCallable deleteSnapshotsCallable(const Model::DeleteSnapshotsRequest& request) const;
+			DescribeCloudAssistantAttributesOutcome describeCloudAssistantAttributes(const Model::DescribeCloudAssistantAttributesRequest &request)const;
+			void describeCloudAssistantAttributesAsync(const Model::DescribeCloudAssistantAttributesRequest& request, const DescribeCloudAssistantAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCloudAssistantAttributesOutcomeCallable describeCloudAssistantAttributesCallable(const Model::DescribeCloudAssistantAttributesRequest& request) const;
 			DescribeCloudAssistantStatusOutcome describeCloudAssistantStatus(const Model::DescribeCloudAssistantStatusRequest &request)const;
 			void describeCloudAssistantStatusAsync(const Model::DescribeCloudAssistantStatusRequest& request, const DescribeCloudAssistantStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCloudAssistantStatusOutcomeCallable describeCloudAssistantStatusCallable(const Model::DescribeCloudAssistantStatusRequest& request) const;
@@ -544,6 +567,9 @@ namespace AlibabaCloud
 			ListSnapshotsOutcome listSnapshots(const Model::ListSnapshotsRequest &request)const;
 			void listSnapshotsAsync(const Model::ListSnapshotsRequest& request, const ListSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSnapshotsOutcomeCallable listSnapshotsCallable(const Model::ListSnapshotsRequest& request) const;
+			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
+			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
 			LoginInstanceOutcome loginInstance(const Model::LoginInstanceRequest &request)const;
 			void loginInstanceAsync(const Model::LoginInstanceRequest& request, const LoginInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			LoginInstanceOutcomeCallable loginInstanceCallable(const Model::LoginInstanceRequest& request) const;
@@ -610,6 +636,12 @@ namespace AlibabaCloud
 			StopInstancesOutcome stopInstances(const Model::StopInstancesRequest &request)const;
 			void stopInstancesAsync(const Model::StopInstancesRequest& request, const StopInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopInstancesOutcomeCallable stopInstancesCallable(const Model::StopInstancesRequest& request) const;
+			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
+			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
+			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
+			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
 			UpdateCommandAttributeOutcome updateCommandAttribute(const Model::UpdateCommandAttributeRequest &request)const;
 			void updateCommandAttributeAsync(const Model::UpdateCommandAttributeRequest& request, const UpdateCommandAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateCommandAttributeOutcomeCallable updateCommandAttributeCallable(const Model::UpdateCommandAttributeRequest& request) const;

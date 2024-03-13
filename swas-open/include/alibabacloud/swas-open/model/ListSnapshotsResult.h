@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct Snapshot
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
 					std::string snapshotId;
 					std::string progress;
@@ -43,6 +48,7 @@ namespace AlibabaCloud
 					std::string regionId;
 					std::string sourceDiskType;
 					std::string snapshotName;
+					std::vector<Snapshot::Tag> tags;
 					std::string sourceDiskId;
 					std::string remark;
 				};

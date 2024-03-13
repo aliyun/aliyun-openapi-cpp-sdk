@@ -70,6 +70,15 @@ void ListCustomImagesRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string ListCustomImagesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListCustomImagesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListCustomImagesRequest::getRegionId() const {
   return regionId_;
 }
@@ -86,6 +95,20 @@ int ListCustomImagesRequest::getPageSize() const {
 void ListCustomImagesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::vector<ListCustomImagesRequest::Tag> ListCustomImagesRequest::getTag() const {
+  return tag_;
+}
+
+void ListCustomImagesRequest::setTag(const std::vector<ListCustomImagesRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
 }
 
 std::string ListCustomImagesRequest::getImageIds() const {

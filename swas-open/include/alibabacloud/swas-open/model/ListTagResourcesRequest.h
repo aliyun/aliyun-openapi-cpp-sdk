@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_LISTCUSTOMIMAGESREQUEST_H_
-#define ALIBABACLOUD_SWAS_OPEN_MODEL_LISTCUSTOMIMAGESREQUEST_H_
+#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_LISTTAGRESOURCESREQUEST_H_
+#define ALIBABACLOUD_SWAS_OPEN_MODEL_LISTTAGRESOURCESREQUEST_H_
 
 #include <alibabacloud/swas-open/SWAS_OPENExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,48 +26,36 @@
 namespace AlibabaCloud {
 namespace SWAS_OPEN {
 namespace Model {
-class ALIBABACLOUD_SWAS_OPEN_EXPORT ListCustomImagesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SWAS_OPEN_EXPORT ListTagResourcesRequest : public RpcServiceRequest {
 public:
 	struct Tag {
 		std::string key;
 		std::string value;
 	};
-	ListCustomImagesRequest();
-	~ListCustomImagesRequest();
-	std::string getSystemSnapshotId() const;
-	void setSystemSnapshotId(const std::string &systemSnapshotId);
-	std::string getDataSnapshotId() const;
-	void setDataSnapshotId(const std::string &dataSnapshotId);
+	ListTagResourcesRequest();
+	~ListTagResourcesRequest();
+	std::vector<std::string> getResourceId() const;
+	void setResourceId(const std::vector<std::string> &resourceId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getImageNames() const;
-	void setImageNames(const std::string &imageNames);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
-	std::string getResourceGroupId() const;
-	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
-	std::string getImageIds() const;
-	void setImageIds(const std::string &imageIds);
 
 private:
-	std::string systemSnapshotId_;
-	std::string dataSnapshotId_;
+	std::vector<std::string> resourceId_;
 	std::string clientToken_;
-	std::string imageNames_;
-	int pageNumber_;
-	std::string resourceGroupId_;
+	std::string resourceType_;
 	std::string regionId_;
-	int pageSize_;
+	std::string nextToken_;
 	std::vector<Tag> tag_;
-	std::string imageIds_;
 };
 } // namespace Model
 } // namespace SWAS_OPEN
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_LISTCUSTOMIMAGESREQUEST_H_
+#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_LISTTAGRESOURCESREQUEST_H_

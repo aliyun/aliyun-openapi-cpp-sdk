@@ -34,15 +34,6 @@ void ListSnapshotsRequest::setSnapshotIds(const std::string &snapshotIds) {
   setParameter(std::string("SnapshotIds"), snapshotIds);
 }
 
-std::string ListSnapshotsRequest::getSourceDiskType() const {
-  return sourceDiskType_;
-}
-
-void ListSnapshotsRequest::setSourceDiskType(const std::string &sourceDiskType) {
-  sourceDiskType_ = sourceDiskType;
-  setParameter(std::string("SourceDiskType"), sourceDiskType);
-}
-
 int ListSnapshotsRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -50,15 +41,6 @@ int ListSnapshotsRequest::getPageNumber() const {
 void ListSnapshotsRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
-}
-
-std::string ListSnapshotsRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ListSnapshotsRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
 }
 
 std::string ListSnapshotsRequest::getRegionId() const {
@@ -86,5 +68,37 @@ std::string ListSnapshotsRequest::getDiskId() const {
 void ListSnapshotsRequest::setDiskId(const std::string &diskId) {
   diskId_ = diskId;
   setParameter(std::string("DiskId"), diskId);
+}
+
+std::vector<ListSnapshotsRequest::Tag> ListSnapshotsRequest::getTag() const {
+  return tag_;
+}
+
+void ListSnapshotsRequest::setTag(const std::vector<ListSnapshotsRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+
+std::string ListSnapshotsRequest::getSourceDiskType() const {
+  return sourceDiskType_;
+}
+
+void ListSnapshotsRequest::setSourceDiskType(const std::string &sourceDiskType) {
+  sourceDiskType_ = sourceDiskType;
+  setParameter(std::string("SourceDiskType"), sourceDiskType);
+}
+
+std::string ListSnapshotsRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ListSnapshotsRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

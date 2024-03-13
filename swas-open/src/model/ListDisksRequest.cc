@@ -79,3 +79,17 @@ void ListDisksRequest::setDiskIds(const std::string &diskIds) {
   setParameter(std::string("DiskIds"), diskIds);
 }
 
+std::vector<ListDisksRequest::Tag> ListDisksRequest::getTag() const {
+  return tag_;
+}
+
+void ListDisksRequest::setTag(const std::vector<ListDisksRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+

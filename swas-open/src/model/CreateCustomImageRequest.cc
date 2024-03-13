@@ -88,6 +88,20 @@ void CreateCustomImageRequest::setImageName(const std::string &imageName) {
   setParameter(std::string("ImageName"), imageName);
 }
 
+std::vector<CreateCustomImageRequest::Tag> CreateCustomImageRequest::getTag() const {
+  return tag_;
+}
+
+void CreateCustomImageRequest::setTag(const std::vector<CreateCustomImageRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+
 std::string CreateCustomImageRequest::getInstanceId() const {
   return instanceId_;
 }

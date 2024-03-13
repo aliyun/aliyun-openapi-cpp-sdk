@@ -28,6 +28,10 @@ namespace SWAS_OPEN {
 namespace Model {
 class ALIBABACLOUD_SWAS_OPEN_EXPORT CreateCustomImageRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	CreateCustomImageRequest();
 	~CreateCustomImageRequest();
 	std::string getSystemSnapshotId() const;
@@ -44,6 +48,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getImageName() const;
 	void setImageName(const std::string &imageName);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 
@@ -55,6 +61,7 @@ private:
 	std::string platform_;
 	std::string regionId_;
 	std::string imageName_;
+	std::vector<Tag> tag_;
 	std::string instanceId_;
 };
 } // namespace Model

@@ -65,6 +65,16 @@ void ListSnapshotsResult::parse(const std::string &payload)
 			snapshotsObject.instanceId = valueSnapshotsSnapshot["InstanceId"].asString();
 		if(!valueSnapshotsSnapshot["RollbackTime"].isNull())
 			snapshotsObject.rollbackTime = valueSnapshotsSnapshot["RollbackTime"].asString();
+		auto allTagsNode = valueSnapshotsSnapshot["Tags"]["tag"];
+		for (auto valueSnapshotsSnapshotTagstag : allTagsNode)
+		{
+			Snapshot::Tag tagsObject;
+			if(!valueSnapshotsSnapshotTagstag["Key"].isNull())
+				tagsObject.key = valueSnapshotsSnapshotTagstag["Key"].asString();
+			if(!valueSnapshotsSnapshotTagstag["Value"].isNull())
+				tagsObject.value = valueSnapshotsSnapshotTagstag["Value"].asString();
+			snapshotsObject.tags.push_back(tagsObject);
+		}
 		snapshots_.push_back(snapshotsObject);
 	}
 	if(!value["TotalCount"].isNull())

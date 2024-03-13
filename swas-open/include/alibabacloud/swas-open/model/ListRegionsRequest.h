@@ -30,8 +30,11 @@ class ALIBABACLOUD_SWAS_OPEN_EXPORT ListRegionsRequest : public RpcServiceReques
 public:
 	ListRegionsRequest();
 	~ListRegionsRequest();
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace SWAS_OPEN

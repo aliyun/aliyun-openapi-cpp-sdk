@@ -49,6 +49,8 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/DeleteSnapshotResult.h
 	include/alibabacloud/swas-open/model/DeleteSnapshotsRequest.h
 	include/alibabacloud/swas-open/model/DeleteSnapshotsResult.h
+	include/alibabacloud/swas-open/model/DescribeCloudAssistantAttributesRequest.h
+	include/alibabacloud/swas-open/model/DescribeCloudAssistantAttributesResult.h
 	include/alibabacloud/swas-open/model/DescribeCloudAssistantStatusRequest.h
 	include/alibabacloud/swas-open/model/DescribeCloudAssistantStatusResult.h
 	include/alibabacloud/swas-open/model/DescribeCloudMonitorAgentStatusesRequest.h
@@ -113,6 +115,8 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/ListRegionsResult.h
 	include/alibabacloud/swas-open/model/ListSnapshotsRequest.h
 	include/alibabacloud/swas-open/model/ListSnapshotsResult.h
+	include/alibabacloud/swas-open/model/ListTagResourcesRequest.h
+	include/alibabacloud/swas-open/model/ListTagResourcesResult.h
 	include/alibabacloud/swas-open/model/LoginInstanceRequest.h
 	include/alibabacloud/swas-open/model/LoginInstanceResult.h
 	include/alibabacloud/swas-open/model/ModifyDatabaseInstanceDescriptionRequest.h
@@ -157,6 +161,10 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/StopInstanceResult.h
 	include/alibabacloud/swas-open/model/StopInstancesRequest.h
 	include/alibabacloud/swas-open/model/StopInstancesResult.h
+	include/alibabacloud/swas-open/model/TagResourcesRequest.h
+	include/alibabacloud/swas-open/model/TagResourcesResult.h
+	include/alibabacloud/swas-open/model/UntagResourcesRequest.h
+	include/alibabacloud/swas-open/model/UntagResourcesResult.h
 	include/alibabacloud/swas-open/model/UpdateCommandAttributeRequest.h
 	include/alibabacloud/swas-open/model/UpdateCommandAttributeResult.h
 	include/alibabacloud/swas-open/model/UpdateDiskAttributeRequest.h
@@ -200,6 +208,8 @@ set(swas-open_src
 	src/model/DeleteSnapshotResult.cc
 	src/model/DeleteSnapshotsRequest.cc
 	src/model/DeleteSnapshotsResult.cc
+	src/model/DescribeCloudAssistantAttributesRequest.cc
+	src/model/DescribeCloudAssistantAttributesResult.cc
 	src/model/DescribeCloudAssistantStatusRequest.cc
 	src/model/DescribeCloudAssistantStatusResult.cc
 	src/model/DescribeCloudMonitorAgentStatusesRequest.cc
@@ -264,6 +274,8 @@ set(swas-open_src
 	src/model/ListRegionsResult.cc
 	src/model/ListSnapshotsRequest.cc
 	src/model/ListSnapshotsResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
 	src/model/LoginInstanceRequest.cc
 	src/model/LoginInstanceResult.cc
 	src/model/ModifyDatabaseInstanceDescriptionRequest.cc
@@ -308,6 +320,10 @@ set(swas-open_src
 	src/model/StopInstanceResult.cc
 	src/model/StopInstancesRequest.cc
 	src/model/StopInstancesResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc
 	src/model/UpdateCommandAttributeRequest.cc
 	src/model/UpdateCommandAttributeResult.cc
 	src/model/UpdateDiskAttributeRequest.cc

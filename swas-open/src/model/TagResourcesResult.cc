@@ -14,39 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/swas-open/model/CreateFirewallRulesResult.h>
+#include <alibabacloud/swas-open/model/TagResourcesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::SWAS_OPEN;
 using namespace AlibabaCloud::SWAS_OPEN::Model;
 
-CreateFirewallRulesResult::CreateFirewallRulesResult() :
+TagResourcesResult::TagResourcesResult() :
 	ServiceResult()
 {}
 
-CreateFirewallRulesResult::CreateFirewallRulesResult(const std::string &payload) :
+TagResourcesResult::TagResourcesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateFirewallRulesResult::~CreateFirewallRulesResult()
+TagResourcesResult::~TagResourcesResult()
 {}
 
-void CreateFirewallRulesResult::parse(const std::string &payload)
+void TagResourcesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFirewallRuleIds = value["FirewallRuleIds"]["FirewallRuleIds"];
-	for (const auto &item : allFirewallRuleIds)
-		firewallRuleIds_.push_back(item.asString());
 
-}
-
-std::vector<std::string> CreateFirewallRulesResult::getFirewallRuleIds()const
-{
-	return firewallRuleIds_;
 }
 

@@ -28,6 +28,10 @@ namespace SWAS_OPEN {
 namespace Model {
 class ALIBABACLOUD_SWAS_OPEN_EXPORT DescribeCommandsRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	DescribeCommandsRequest();
 	~DescribeCommandsRequest();
 	std::string getType() const;
@@ -40,10 +44,12 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getProvider() const;
 	void setProvider(const std::string &provider);
-	std::string getName() const;
-	void setName(const std::string &name);
 	std::string getPageSize() const;
 	void setPageSize(const std::string &pageSize);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
+	std::string getName() const;
+	void setName(const std::string &name);
 
 private:
 	std::string type_;
@@ -51,8 +57,9 @@ private:
 	std::string pageNumber_;
 	std::string regionId_;
 	std::string provider_;
-	std::string name_;
 	std::string pageSize_;
+	std::vector<Tag> tag_;
+	std::string name_;
 };
 } // namespace Model
 } // namespace SWAS_OPEN

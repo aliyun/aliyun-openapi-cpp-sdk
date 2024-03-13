@@ -43,15 +43,6 @@ void ListInstancesRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ListInstancesRequest::getInstanceIds() const {
-  return instanceIds_;
-}
-
-void ListInstancesRequest::setInstanceIds(const std::string &instanceIds) {
-  instanceIds_ = instanceIds;
-  setParameter(std::string("InstanceIds"), instanceIds);
-}
-
 int ListInstancesRequest::getPageSize() const {
   return pageSize_;
 }
@@ -68,6 +59,29 @@ std::string ListInstancesRequest::getPublicIpAddresses() const {
 void ListInstancesRequest::setPublicIpAddresses(const std::string &publicIpAddresses) {
   publicIpAddresses_ = publicIpAddresses;
   setParameter(std::string("PublicIpAddresses"), publicIpAddresses);
+}
+
+std::vector<ListInstancesRequest::Tag> ListInstancesRequest::getTag() const {
+  return tag_;
+}
+
+void ListInstancesRequest::setTag(const std::vector<ListInstancesRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+
+std::string ListInstancesRequest::getInstanceIds() const {
+  return instanceIds_;
+}
+
+void ListInstancesRequest::setInstanceIds(const std::string &instanceIds) {
+  instanceIds_ = instanceIds;
+  setParameter(std::string("InstanceIds"), instanceIds);
 }
 
 std::string ListInstancesRequest::getChargeType() const {

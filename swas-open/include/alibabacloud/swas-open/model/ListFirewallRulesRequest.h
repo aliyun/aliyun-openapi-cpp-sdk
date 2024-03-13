@@ -28,6 +28,10 @@ namespace SWAS_OPEN {
 namespace Model {
 class ALIBABACLOUD_SWAS_OPEN_EXPORT ListFirewallRulesRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	ListFirewallRulesRequest();
 	~ListFirewallRulesRequest();
 	int getPageNumber() const;
@@ -38,12 +42,18 @@ public:
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getFirewallRuleId() const;
+	void setFirewallRuleId(const std::string &firewallRuleId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 
 private:
 	int pageNumber_;
 	std::string instanceId_;
 	std::string regionId_;
 	int pageSize_;
+	std::string firewallRuleId_;
+	std::vector<Tag> tag_;
 };
 } // namespace Model
 } // namespace SWAS_OPEN

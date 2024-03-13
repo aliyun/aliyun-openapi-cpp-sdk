@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_CREATEFIREWALLRULESRESULT_H_
-#define ALIBABACLOUD_SWAS_OPEN_MODEL_CREATEFIREWALLRULESRESULT_H_
+#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_TAGRESOURCESRESULT_H_
+#define ALIBABACLOUD_SWAS_OPEN_MODEL_TAGRESOURCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SWAS_OPEN_EXPORT CreateFirewallRulesResult : public ServiceResult
+			class ALIBABACLOUD_SWAS_OPEN_EXPORT TagResourcesResult : public ServiceResult
 			{
 			public:
 
 
-				CreateFirewallRulesResult();
-				explicit CreateFirewallRulesResult(const std::string &payload);
-				~CreateFirewallRulesResult();
-				std::vector<std::string> getFirewallRuleIds()const;
+				TagResourcesResult();
+				explicit TagResourcesResult(const std::string &payload);
+				~TagResourcesResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<std::string> firewallRuleIds_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_CREATEFIREWALLRULESRESULT_H_
+#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_TAGRESOURCESRESULT_H_

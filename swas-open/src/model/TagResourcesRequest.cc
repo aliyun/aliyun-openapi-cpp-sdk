@@ -14,58 +14,57 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/swas-open/model/CreateSnapshotRequest.h>
+#include <alibabacloud/swas-open/model/TagResourcesRequest.h>
 
-using AlibabaCloud::SWAS_OPEN::Model::CreateSnapshotRequest;
+using AlibabaCloud::SWAS_OPEN::Model::TagResourcesRequest;
 
-CreateSnapshotRequest::CreateSnapshotRequest()
-    : RpcServiceRequest("swas-open", "2020-06-01", "CreateSnapshot") {
+TagResourcesRequest::TagResourcesRequest()
+    : RpcServiceRequest("swas-open", "2020-06-01", "TagResources") {
   setMethod(HttpRequest::Method::Post);
 }
 
-CreateSnapshotRequest::~CreateSnapshotRequest() {}
+TagResourcesRequest::~TagResourcesRequest() {}
 
-std::string CreateSnapshotRequest::getClientToken() const {
+std::vector<std::string> TagResourcesRequest::getResourceId() const {
+  return resourceId_;
+}
+
+void TagResourcesRequest::setResourceId(const std::vector<std::string> &resourceId) {
+  resourceId_ = resourceId;
+}
+
+std::string TagResourcesRequest::getClientToken() const {
   return clientToken_;
 }
 
-void CreateSnapshotRequest::setClientToken(const std::string &clientToken) {
+void TagResourcesRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
   setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string CreateSnapshotRequest::getSnapshotName() const {
-  return snapshotName_;
+std::string TagResourcesRequest::getResourceType() const {
+  return resourceType_;
 }
 
-void CreateSnapshotRequest::setSnapshotName(const std::string &snapshotName) {
-  snapshotName_ = snapshotName;
-  setParameter(std::string("SnapshotName"), snapshotName);
+void TagResourcesRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
 }
 
-std::string CreateSnapshotRequest::getRegionId() const {
+std::string TagResourcesRequest::getRegionId() const {
   return regionId_;
 }
 
-void CreateSnapshotRequest::setRegionId(const std::string &regionId) {
+void TagResourcesRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
 }
 
-std::string CreateSnapshotRequest::getDiskId() const {
-  return diskId_;
-}
-
-void CreateSnapshotRequest::setDiskId(const std::string &diskId) {
-  diskId_ = diskId;
-  setParameter(std::string("DiskId"), diskId);
-}
-
-std::vector<CreateSnapshotRequest::Tag> CreateSnapshotRequest::getTag() const {
+std::vector<TagResourcesRequest::Tag> TagResourcesRequest::getTag() const {
   return tag_;
 }
 
-void CreateSnapshotRequest::setTag(const std::vector<CreateSnapshotRequest::Tag> &tag) {
+void TagResourcesRequest::setTag(const std::vector<TagResourcesRequest::Tag> &tag) {
   tag_ = tag;
   for(int dep1 = 0; dep1 != tag.size(); dep1++) {
   auto tagObj = tag.at(dep1);

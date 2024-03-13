@@ -555,6 +555,42 @@ SWAS_OPENClient::DeleteSnapshotsOutcomeCallable SWAS_OPENClient::deleteSnapshots
 	return task->get_future();
 }
 
+SWAS_OPENClient::DescribeCloudAssistantAttributesOutcome SWAS_OPENClient::describeCloudAssistantAttributes(const DescribeCloudAssistantAttributesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCloudAssistantAttributesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCloudAssistantAttributesOutcome(DescribeCloudAssistantAttributesResult(outcome.result()));
+	else
+		return DescribeCloudAssistantAttributesOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::describeCloudAssistantAttributesAsync(const DescribeCloudAssistantAttributesRequest& request, const DescribeCloudAssistantAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCloudAssistantAttributes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DescribeCloudAssistantAttributesOutcomeCallable SWAS_OPENClient::describeCloudAssistantAttributesCallable(const DescribeCloudAssistantAttributesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCloudAssistantAttributesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCloudAssistantAttributes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::DescribeCloudAssistantStatusOutcome SWAS_OPENClient::describeCloudAssistantStatus(const DescribeCloudAssistantStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1707,6 +1743,42 @@ SWAS_OPENClient::ListSnapshotsOutcomeCallable SWAS_OPENClient::listSnapshotsCall
 	return task->get_future();
 }
 
+SWAS_OPENClient::ListTagResourcesOutcome SWAS_OPENClient::listTagResources(const ListTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
+	else
+		return ListTagResourcesOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::ListTagResourcesOutcomeCallable SWAS_OPENClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::LoginInstanceOutcome SWAS_OPENClient::loginInstance(const LoginInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2493,6 +2565,78 @@ SWAS_OPENClient::StopInstancesOutcomeCallable SWAS_OPENClient::stopInstancesCall
 			[this, request]()
 			{
 			return this->stopInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::TagResourcesOutcome SWAS_OPENClient::tagResources(const TagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
+	else
+		return TagResourcesOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::TagResourcesOutcomeCallable SWAS_OPENClient::tagResourcesCallable(const TagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::UntagResourcesOutcome SWAS_OPENClient::untagResources(const UntagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UntagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UntagResourcesOutcome(UntagResourcesResult(outcome.result()));
+	else
+		return UntagResourcesOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::untagResourcesAsync(const UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, untagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::UntagResourcesOutcomeCallable SWAS_OPENClient::untagResourcesCallable(const UntagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UntagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->untagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
