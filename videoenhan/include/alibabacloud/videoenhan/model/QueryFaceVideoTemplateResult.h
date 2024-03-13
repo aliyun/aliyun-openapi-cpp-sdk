@@ -48,6 +48,7 @@ namespace AlibabaCloud
 						std::vector<ElementsItem::FaceInfosItem> faceInfos;
 						std::string templateId;
 					};
+					long total;
 					std::vector<ElementsItem> elements;
 				};
 

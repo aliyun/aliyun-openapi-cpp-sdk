@@ -32,12 +32,18 @@ public:
 	~QueryFaceVideoTemplateRequest();
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
+	long getPageSize() const;
+	void setPageSize(long pageSize);
 	std::string getTemplateId() const;
 	void setTemplateId(const std::string &templateId);
+	long getPageNo() const;
+	void setPageNo(long pageNo);
 
 private:
 	std::string userId_;
+	long pageSize_;
 	std::string templateId_;
+	long pageNo_;
 };
 } // namespace Model
 } // namespace Videoenhan

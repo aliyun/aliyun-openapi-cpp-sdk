@@ -40,6 +40,8 @@ void QueryFaceVideoTemplateResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
+	if(!dataNode["Total"].isNull())
+		data_.total = std::stol(dataNode["Total"].asString());
 	auto allElementsNode = dataNode["Elements"]["ElementsItem"];
 	for (auto dataNodeElementsElementsItem : allElementsNode)
 	{

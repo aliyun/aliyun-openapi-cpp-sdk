@@ -34,6 +34,15 @@ void QueryFaceVideoTemplateRequest::setUserId(const std::string &userId) {
   setParameter(std::string("UserId"), userId);
 }
 
+long QueryFaceVideoTemplateRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void QueryFaceVideoTemplateRequest::setPageSize(long pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
 std::string QueryFaceVideoTemplateRequest::getTemplateId() const {
   return templateId_;
 }
@@ -41,5 +50,14 @@ std::string QueryFaceVideoTemplateRequest::getTemplateId() const {
 void QueryFaceVideoTemplateRequest::setTemplateId(const std::string &templateId) {
   templateId_ = templateId;
   setParameter(std::string("TemplateId"), templateId);
+}
+
+long QueryFaceVideoTemplateRequest::getPageNo() const {
+  return pageNo_;
+}
+
+void QueryFaceVideoTemplateRequest::setPageNo(long pageNo) {
+  pageNo_ = pageNo;
+  setParameter(std::string("PageNo"), std::to_string(pageNo));
 }
 
