@@ -34,19 +34,25 @@ public:
 	void setFormatResultToJson(bool formatResultToJson);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
+	long getPageSize() const;
+	void setPageSize(long pageSize);
 	std::string getOssFile() const;
 	void setOssFile(const std::string &ossFile);
 	std::string getTemplateId() const;
 	void setTemplateId(const std::string &templateId);
 	std::string getRequestProxyBy() const;
 	void setRequestProxyBy(const std::string &requestProxyBy);
+	long getPageNo() const;
+	void setPageNo(long pageNo);
 
 private:
 	bool formatResultToJson_;
 	std::string userId_;
+	long pageSize_;
 	std::string ossFile_;
 	std::string templateId_;
 	std::string requestProxyBy_;
+	long pageNo_;
 };
 } // namespace Model
 } // namespace Facebody

@@ -43,6 +43,15 @@ void QueryFaceImageTemplateRequest::setUserId(const std::string &userId) {
   setParameter(std::string("UserId"), userId);
 }
 
+long QueryFaceImageTemplateRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void QueryFaceImageTemplateRequest::setPageSize(long pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
 std::string QueryFaceImageTemplateRequest::getOssFile() const {
   return ossFile_;
 }
@@ -68,5 +77,14 @@ std::string QueryFaceImageTemplateRequest::getRequestProxyBy() const {
 void QueryFaceImageTemplateRequest::setRequestProxyBy(const std::string &requestProxyBy) {
   requestProxyBy_ = requestProxyBy;
   setParameter(std::string("RequestProxyBy"), requestProxyBy);
+}
+
+long QueryFaceImageTemplateRequest::getPageNo() const {
+  return pageNo_;
+}
+
+void QueryFaceImageTemplateRequest::setPageNo(long pageNo) {
+  pageNo_ = pageNo;
+  setParameter(std::string("PageNo"), std::to_string(pageNo));
 }
 
