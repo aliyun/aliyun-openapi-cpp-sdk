@@ -32,6 +32,8 @@ public:
 	~CreateLiveMessageAppRequest();
 	std::string getDataCenter() const;
 	void setDataCenter(const std::string &dataCenter);
+	int getMsgLifeCycle() const;
+	void setMsgLifeCycle(int msgLifeCycle);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
 	int getAuditType() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	std::string dataCenter_;
+	int msgLifeCycle_;
 	std::string appName_;
 	int auditType_;
 	std::string auditUrl_;

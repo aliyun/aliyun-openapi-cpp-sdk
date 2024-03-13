@@ -34,6 +34,15 @@ void CreateLiveMessageAppRequest::setDataCenter(const std::string &dataCenter) {
   setParameter(std::string("DataCenter"), dataCenter);
 }
 
+int CreateLiveMessageAppRequest::getMsgLifeCycle() const {
+  return msgLifeCycle_;
+}
+
+void CreateLiveMessageAppRequest::setMsgLifeCycle(int msgLifeCycle) {
+  msgLifeCycle_ = msgLifeCycle;
+  setParameter(std::string("MsgLifeCycle"), std::to_string(msgLifeCycle));
+}
+
 std::string CreateLiveMessageAppRequest::getAppName() const {
   return appName_;
 }
