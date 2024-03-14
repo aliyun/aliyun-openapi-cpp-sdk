@@ -44,7 +44,7 @@ void PauseEventStreamingResult::parse(const std::string &payload)
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString() == "true";
 	if(!value["Code"].isNull())
-		code_ = value["Code"].asString() == "true";
+		code_ = value["Code"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 
@@ -60,7 +60,7 @@ bool PauseEventStreamingResult::getData()const
 	return data_;
 }
 
-bool PauseEventStreamingResult::getCode()const
+std::string PauseEventStreamingResult::getCode()const
 {
 	return code_;
 }

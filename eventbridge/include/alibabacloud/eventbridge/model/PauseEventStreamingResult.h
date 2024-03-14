@@ -39,7 +39,7 @@ namespace AlibabaCloud
 				~PauseEventStreamingResult();
 				std::string getMessage()const;
 				bool getData()const;
-				bool getCode()const;
+				std::string getCode()const;
 				bool getSuccess()const;
 
 			protected:
@@ -47,7 +47,7 @@ namespace AlibabaCloud
 			private:
 				std::string message_;
 				bool data_;
-				bool code_;
+				std::string code_;
 				bool success_;
 
 			};
