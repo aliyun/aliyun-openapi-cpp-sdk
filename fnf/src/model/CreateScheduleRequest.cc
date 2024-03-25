@@ -25,6 +25,24 @@ CreateScheduleRequest::CreateScheduleRequest()
 
 CreateScheduleRequest::~CreateScheduleRequest() {}
 
+std::string CreateScheduleRequest::getCronExpression() const {
+  return cronExpression_;
+}
+
+void CreateScheduleRequest::setCronExpression(const std::string &cronExpression) {
+  cronExpression_ = cronExpression;
+  setBodyParameter(std::string("CronExpression"), cronExpression);
+}
+
+std::string CreateScheduleRequest::getDescription() const {
+  return description_;
+}
+
+void CreateScheduleRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setBodyParameter(std::string("Description"), description);
+}
+
 std::string CreateScheduleRequest::getScheduleName() const {
   return scheduleName_;
 }
@@ -34,13 +52,13 @@ void CreateScheduleRequest::setScheduleName(const std::string &scheduleName) {
   setBodyParameter(std::string("ScheduleName"), scheduleName);
 }
 
-std::string CreateScheduleRequest::getCronExpression() const {
-  return cronExpression_;
+std::string CreateScheduleRequest::getSignatureVersion() const {
+  return signatureVersion_;
 }
 
-void CreateScheduleRequest::setCronExpression(const std::string &cronExpression) {
-  cronExpression_ = cronExpression;
-  setBodyParameter(std::string("CronExpression"), cronExpression);
+void CreateScheduleRequest::setSignatureVersion(const std::string &signatureVersion) {
+  signatureVersion_ = signatureVersion;
+  setParameter(std::string("SignatureVersion"), signatureVersion);
 }
 
 std::string CreateScheduleRequest::getPayload() const {
@@ -52,15 +70,6 @@ void CreateScheduleRequest::setPayload(const std::string &payload) {
   setBodyParameter(std::string("Payload"), payload);
 }
 
-std::string CreateScheduleRequest::getRequestId() const {
-  return requestId_;
-}
-
-void CreateScheduleRequest::setRequestId(const std::string &requestId) {
-  requestId_ = requestId;
-  setParameter(std::string("RequestId"), requestId);
-}
-
 bool CreateScheduleRequest::getEnable() const {
   return enable_;
 }
@@ -68,15 +77,6 @@ bool CreateScheduleRequest::getEnable() const {
 void CreateScheduleRequest::setEnable(bool enable) {
   enable_ = enable;
   setBodyParameter(std::string("Enable"), enable ? "true" : "false");
-}
-
-std::string CreateScheduleRequest::getDescription() const {
-  return description_;
-}
-
-void CreateScheduleRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setBodyParameter(std::string("Description"), description);
 }
 
 std::string CreateScheduleRequest::getFlowName() const {

@@ -34,15 +34,6 @@ void DescribeScheduleRequest::setScheduleName(const std::string &scheduleName) {
   setParameter(std::string("ScheduleName"), scheduleName);
 }
 
-std::string DescribeScheduleRequest::getRequestId() const {
-  return requestId_;
-}
-
-void DescribeScheduleRequest::setRequestId(const std::string &requestId) {
-  requestId_ = requestId;
-  setParameter(std::string("RequestId"), requestId);
-}
-
 std::string DescribeScheduleRequest::getFlowName() const {
   return flowName_;
 }

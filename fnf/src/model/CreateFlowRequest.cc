@@ -43,15 +43,6 @@ void CreateFlowRequest::setType(const std::string &type) {
   setBodyParameter(std::string("Type"), type);
 }
 
-std::string CreateFlowRequest::getRequestId() const {
-  return requestId_;
-}
-
-void CreateFlowRequest::setRequestId(const std::string &requestId) {
-  requestId_ = requestId;
-  setParameter(std::string("RequestId"), requestId);
-}
-
 std::string CreateFlowRequest::getRoleArn() const {
   return roleArn_;
 }

@@ -43,15 +43,6 @@ void StartSyncExecutionRequest::setInput(const std::string &input) {
   setBodyParameter(std::string("Input"), input);
 }
 
-std::string StartSyncExecutionRequest::getRequestId() const {
-  return requestId_;
-}
-
-void StartSyncExecutionRequest::setRequestId(const std::string &requestId) {
-  requestId_ = requestId;
-  setParameter(std::string("RequestId"), requestId);
-}
-
 std::string StartSyncExecutionRequest::getFlowName() const {
   return flowName_;
 }

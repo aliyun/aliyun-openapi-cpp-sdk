@@ -25,15 +25,6 @@ UpdateScheduleRequest::UpdateScheduleRequest()
 
 UpdateScheduleRequest::~UpdateScheduleRequest() {}
 
-std::string UpdateScheduleRequest::getScheduleName() const {
-  return scheduleName_;
-}
-
-void UpdateScheduleRequest::setScheduleName(const std::string &scheduleName) {
-  scheduleName_ = scheduleName;
-  setBodyParameter(std::string("ScheduleName"), scheduleName);
-}
-
 std::string UpdateScheduleRequest::getCronExpression() const {
   return cronExpression_;
 }
@@ -41,6 +32,24 @@ std::string UpdateScheduleRequest::getCronExpression() const {
 void UpdateScheduleRequest::setCronExpression(const std::string &cronExpression) {
   cronExpression_ = cronExpression;
   setBodyParameter(std::string("CronExpression"), cronExpression);
+}
+
+std::string UpdateScheduleRequest::getDescription() const {
+  return description_;
+}
+
+void UpdateScheduleRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setBodyParameter(std::string("Description"), description);
+}
+
+std::string UpdateScheduleRequest::getScheduleName() const {
+  return scheduleName_;
+}
+
+void UpdateScheduleRequest::setScheduleName(const std::string &scheduleName) {
+  scheduleName_ = scheduleName;
+  setBodyParameter(std::string("ScheduleName"), scheduleName);
 }
 
 std::string UpdateScheduleRequest::getPayload() const {
@@ -52,15 +61,6 @@ void UpdateScheduleRequest::setPayload(const std::string &payload) {
   setBodyParameter(std::string("Payload"), payload);
 }
 
-std::string UpdateScheduleRequest::getRequestId() const {
-  return requestId_;
-}
-
-void UpdateScheduleRequest::setRequestId(const std::string &requestId) {
-  requestId_ = requestId;
-  setParameter(std::string("RequestId"), requestId);
-}
-
 bool UpdateScheduleRequest::getEnable() const {
   return enable_;
 }
@@ -68,15 +68,6 @@ bool UpdateScheduleRequest::getEnable() const {
 void UpdateScheduleRequest::setEnable(bool enable) {
   enable_ = enable;
   setBodyParameter(std::string("Enable"), enable ? "true" : "false");
-}
-
-std::string UpdateScheduleRequest::getDescription() const {
-  return description_;
-}
-
-void UpdateScheduleRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setBodyParameter(std::string("Description"), description);
 }
 
 std::string UpdateScheduleRequest::getFlowName() const {

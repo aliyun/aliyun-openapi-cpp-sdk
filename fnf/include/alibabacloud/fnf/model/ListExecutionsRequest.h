@@ -36,8 +36,6 @@ public:
 	void setExecutionNamePrefix(const std::string &executionNamePrefix);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
-	std::string getRequestId() const;
-	void setRequestId(const std::string &requestId);
 	int getLimit() const;
 	void setLimit(int limit);
 	std::string getFlowName() const;
@@ -51,7 +49,6 @@ private:
 	std::string startedTimeBegin_;
 	std::string executionNamePrefix_;
 	std::string nextToken_;
-	std::string requestId_;
 	int limit_;
 	std::string flowName_;
 	std::string startedTimeEnd_;

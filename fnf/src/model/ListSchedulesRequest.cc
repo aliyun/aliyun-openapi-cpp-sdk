@@ -34,15 +34,6 @@ void ListSchedulesRequest::setNextToken(const std::string &nextToken) {
   setParameter(std::string("NextToken"), nextToken);
 }
 
-std::string ListSchedulesRequest::getRequestId() const {
-  return requestId_;
-}
-
-void ListSchedulesRequest::setRequestId(const std::string &requestId) {
-  requestId_ = requestId;
-  setParameter(std::string("RequestId"), requestId);
-}
-
 int ListSchedulesRequest::getLimit() const {
   return limit_;
 }

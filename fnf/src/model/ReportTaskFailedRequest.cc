@@ -43,15 +43,6 @@ void ReportTaskFailedRequest::setError(const std::string &error) {
   setBodyParameter(std::string("Error"), error);
 }
 
-std::string ReportTaskFailedRequest::getRequestId() const {
-  return requestId_;
-}
-
-void ReportTaskFailedRequest::setRequestId(const std::string &requestId) {
-  requestId_ = requestId;
-  setParameter(std::string("RequestId"), requestId);
-}
-
 std::string ReportTaskFailedRequest::getTaskToken() const {
   return taskToken_;
 }

@@ -30,13 +30,10 @@ class ALIBABACLOUD_FNF_EXPORT DeleteFlowRequest : public RpcServiceRequest {
 public:
 	DeleteFlowRequest();
 	~DeleteFlowRequest();
-	std::string getRequestId() const;
-	void setRequestId(const std::string &requestId);
 	std::string getName() const;
 	void setName(const std::string &name);
 
 private:
-	std::string requestId_;
 	std::string name_;
 };
 } // namespace Model

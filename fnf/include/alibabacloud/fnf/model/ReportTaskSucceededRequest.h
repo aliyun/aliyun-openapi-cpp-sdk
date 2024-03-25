@@ -32,14 +32,11 @@ public:
 	~ReportTaskSucceededRequest();
 	std::string getOutput() const;
 	void setOutput(const std::string &output);
-	std::string getRequestId() const;
-	void setRequestId(const std::string &requestId);
 	std::string getTaskToken() const;
 	void setTaskToken(const std::string &taskToken);
 
 private:
 	std::string output_;
-	std::string requestId_;
 	std::string taskToken_;
 };
 } // namespace Model

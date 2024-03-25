@@ -25,15 +25,6 @@ DescribeFlowRequest::DescribeFlowRequest()
 
 DescribeFlowRequest::~DescribeFlowRequest() {}
 
-std::string DescribeFlowRequest::getRequestId() const {
-  return requestId_;
-}
-
-void DescribeFlowRequest::setRequestId(const std::string &requestId) {
-  requestId_ = requestId;
-  setParameter(std::string("RequestId"), requestId);
-}
-
 std::string DescribeFlowRequest::getName() const {
   return name_;
 }

@@ -52,15 +52,6 @@ void StartExecutionRequest::setInput(const std::string &input) {
   setBodyParameter(std::string("Input"), input);
 }
 
-std::string StartExecutionRequest::getRequestId() const {
-  return requestId_;
-}
-
-void StartExecutionRequest::setRequestId(const std::string &requestId) {
-  requestId_ = requestId;
-  setParameter(std::string("RequestId"), requestId);
-}
-
 std::string StartExecutionRequest::getFlowName() const {
   return flowName_;
 }

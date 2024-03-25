@@ -32,14 +32,11 @@ public:
 	~DescribeScheduleRequest();
 	std::string getScheduleName() const;
 	void setScheduleName(const std::string &scheduleName);
-	std::string getRequestId() const;
-	void setRequestId(const std::string &requestId);
 	std::string getFlowName() const;
 	void setFlowName(const std::string &flowName);
 
 private:
 	std::string scheduleName_;
-	std::string requestId_;
 	std::string flowName_;
 };
 } // namespace Model

@@ -32,8 +32,6 @@ public:
 	~ListSchedulesRequest();
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
-	std::string getRequestId() const;
-	void setRequestId(const std::string &requestId);
 	int getLimit() const;
 	void setLimit(int limit);
 	std::string getFlowName() const;
@@ -41,7 +39,6 @@ public:
 
 private:
 	std::string nextToken_;
-	std::string requestId_;
 	int limit_;
 	std::string flowName_;
 };

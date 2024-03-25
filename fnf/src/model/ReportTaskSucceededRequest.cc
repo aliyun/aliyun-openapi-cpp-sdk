@@ -34,15 +34,6 @@ void ReportTaskSucceededRequest::setOutput(const std::string &output) {
   setBodyParameter(std::string("Output"), output);
 }
 
-std::string ReportTaskSucceededRequest::getRequestId() const {
-  return requestId_;
-}
-
-void ReportTaskSucceededRequest::setRequestId(const std::string &requestId) {
-  requestId_ = requestId;
-  setParameter(std::string("RequestId"), requestId);
-}
-
 std::string ReportTaskSucceededRequest::getTaskToken() const {
   return taskToken_;
 }

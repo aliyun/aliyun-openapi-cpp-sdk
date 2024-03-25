@@ -34,8 +34,6 @@ public:
 	void setDescription(const std::string &description);
 	std::string getType() const;
 	void setType(const std::string &type);
-	std::string getRequestId() const;
-	void setRequestId(const std::string &requestId);
 	std::string getRoleArn() const;
 	void setRoleArn(const std::string &roleArn);
 	std::string getName() const;
@@ -48,7 +46,6 @@ public:
 private:
 	std::string description_;
 	std::string type_;
-	std::string requestId_;
 	std::string roleArn_;
 	std::string name_;
 	std::string definition_;

@@ -52,15 +52,6 @@ void ListExecutionsRequest::setNextToken(const std::string &nextToken) {
   setParameter(std::string("NextToken"), nextToken);
 }
 
-std::string ListExecutionsRequest::getRequestId() const {
-  return requestId_;
-}
-
-void ListExecutionsRequest::setRequestId(const std::string &requestId) {
-  requestId_ = requestId;
-  setParameter(std::string("RequestId"), requestId);
-}
-
 int ListExecutionsRequest::getLimit() const {
   return limit_;
 }

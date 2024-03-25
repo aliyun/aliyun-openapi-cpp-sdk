@@ -34,15 +34,6 @@ void ListFlowsRequest::setNextToken(const std::string &nextToken) {
   setParameter(std::string("NextToken"), nextToken);
 }
 
-std::string ListFlowsRequest::getRequestId() const {
-  return requestId_;
-}
-
-void ListFlowsRequest::setRequestId(const std::string &requestId) {
-  requestId_ = requestId;
-  setParameter(std::string("RequestId"), requestId);
-}
-
 int ListFlowsRequest::getLimit() const {
   return limit_;
 }

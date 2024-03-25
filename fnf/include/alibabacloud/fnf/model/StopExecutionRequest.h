@@ -36,8 +36,6 @@ public:
 	void setCause(const std::string &cause);
 	std::string getError() const;
 	void setError(const std::string &error);
-	std::string getRequestId() const;
-	void setRequestId(const std::string &requestId);
 	std::string getFlowName() const;
 	void setFlowName(const std::string &flowName);
 
@@ -45,7 +43,6 @@ private:
 	std::string executionName_;
 	std::string cause_;
 	std::string error_;
-	std::string requestId_;
 	std::string flowName_;
 };
 } // namespace Model

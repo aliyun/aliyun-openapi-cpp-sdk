@@ -30,28 +30,25 @@ class ALIBABACLOUD_FNF_EXPORT UpdateScheduleRequest : public RpcServiceRequest {
 public:
 	UpdateScheduleRequest();
 	~UpdateScheduleRequest();
-	std::string getScheduleName() const;
-	void setScheduleName(const std::string &scheduleName);
 	std::string getCronExpression() const;
 	void setCronExpression(const std::string &cronExpression);
-	std::string getPayload() const;
-	void setPayload(const std::string &payload);
-	std::string getRequestId() const;
-	void setRequestId(const std::string &requestId);
-	bool getEnable() const;
-	void setEnable(bool enable);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	std::string getScheduleName() const;
+	void setScheduleName(const std::string &scheduleName);
+	std::string getPayload() const;
+	void setPayload(const std::string &payload);
+	bool getEnable() const;
+	void setEnable(bool enable);
 	std::string getFlowName() const;
 	void setFlowName(const std::string &flowName);
 
 private:
-	std::string scheduleName_;
 	std::string cronExpression_;
-	std::string payload_;
-	std::string requestId_;
-	bool enable_;
 	std::string description_;
+	std::string scheduleName_;
+	std::string payload_;
+	bool enable_;
 	std::string flowName_;
 };
 } // namespace Model

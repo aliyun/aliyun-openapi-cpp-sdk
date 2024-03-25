@@ -43,15 +43,6 @@ void DescribeExecutionRequest::setWaitTimeSeconds(int waitTimeSeconds) {
   setParameter(std::string("WaitTimeSeconds"), std::to_string(waitTimeSeconds));
 }
 
-std::string DescribeExecutionRequest::getRequestId() const {
-  return requestId_;
-}
-
-void DescribeExecutionRequest::setRequestId(const std::string &requestId) {
-  requestId_ = requestId;
-  setParameter(std::string("RequestId"), requestId);
-}
-
 std::string DescribeExecutionRequest::getFlowName() const {
   return flowName_;
 }

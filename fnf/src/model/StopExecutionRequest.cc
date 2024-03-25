@@ -52,15 +52,6 @@ void StopExecutionRequest::setError(const std::string &error) {
   setBodyParameter(std::string("Error"), error);
 }
 
-std::string StopExecutionRequest::getRequestId() const {
-  return requestId_;
-}
-
-void StopExecutionRequest::setRequestId(const std::string &requestId) {
-  requestId_ = requestId;
-  setParameter(std::string("RequestId"), requestId);
-}
-
 std::string StopExecutionRequest::getFlowName() const {
   return flowName_;
 }

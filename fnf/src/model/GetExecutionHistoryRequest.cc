@@ -43,15 +43,6 @@ void GetExecutionHistoryRequest::setNextToken(const std::string &nextToken) {
   setParameter(std::string("NextToken"), nextToken);
 }
 
-std::string GetExecutionHistoryRequest::getRequestId() const {
-  return requestId_;
-}
-
-void GetExecutionHistoryRequest::setRequestId(const std::string &requestId) {
-  requestId_ = requestId;
-  setParameter(std::string("RequestId"), requestId);
-}
-
 int GetExecutionHistoryRequest::getLimit() const {
   return limit_;
 }

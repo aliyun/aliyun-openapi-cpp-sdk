@@ -20,7 +20,7 @@ using AlibabaCloud::Fnf::Model::DeleteScheduleRequest;
 
 DeleteScheduleRequest::DeleteScheduleRequest()
     : RpcServiceRequest("fnf", "2019-03-15", "DeleteSchedule") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 DeleteScheduleRequest::~DeleteScheduleRequest() {}
@@ -32,15 +32,6 @@ std::string DeleteScheduleRequest::getScheduleName() const {
 void DeleteScheduleRequest::setScheduleName(const std::string &scheduleName) {
   scheduleName_ = scheduleName;
   setParameter(std::string("ScheduleName"), scheduleName);
-}
-
-std::string DeleteScheduleRequest::getRequestId() const {
-  return requestId_;
-}
-
-void DeleteScheduleRequest::setRequestId(const std::string &requestId) {
-  requestId_ = requestId;
-  setParameter(std::string("RequestId"), requestId);
 }
 
 std::string DeleteScheduleRequest::getFlowName() const {
