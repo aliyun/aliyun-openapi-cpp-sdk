@@ -77,6 +77,12 @@ void DescribeOasAnomalySQLListResult::parse(const std::string &payload)
 			dataObject.avgDbTime = valueDataDataItem["AvgDbTime"].asString();
 		if(!valueDataDataItem["SumDbTime"].isNull())
 			dataObject.sumDbTime = valueDataDataItem["SumDbTime"].asString();
+		if(!valueDataDataItem["AvgRetryCount"].isNull())
+			dataObject.avgRetryCount = std::stof(valueDataDataItem["AvgRetryCount"].asString());
+		if(!valueDataDataItem["SumRetryCount"].isNull())
+			dataObject.sumRetryCount = std::stof(valueDataDataItem["SumRetryCount"].asString());
+		if(!valueDataDataItem["AvgLogicalReads"].isNull())
+			dataObject.avgLogicalReads = std::stof(valueDataDataItem["AvgLogicalReads"].asString());
 		auto allSqlListNode = valueDataDataItem["SqlList"]["SqlListItem"];
 		for (auto valueDataDataItemSqlListSqlListItem : allSqlListNode)
 		{
@@ -113,6 +119,12 @@ void DescribeOasAnomalySQLListResult::parse(const std::string &payload)
 				sqlListObject.avgDbTime = valueDataDataItemSqlListSqlListItem["AvgDbTime"].asString();
 			if(!valueDataDataItemSqlListSqlListItem["SumDbTime"].isNull())
 				sqlListObject.sumDbTime = valueDataDataItemSqlListSqlListItem["SumDbTime"].asString();
+			if(!valueDataDataItemSqlListSqlListItem["AvgRetryCount"].isNull())
+				sqlListObject.avgRetryCount = std::stof(valueDataDataItemSqlListSqlListItem["AvgRetryCount"].asString());
+			if(!valueDataDataItemSqlListSqlListItem["SumRetryCount"].isNull())
+				sqlListObject.sumRetryCount = std::stof(valueDataDataItemSqlListSqlListItem["SumRetryCount"].asString());
+			if(!valueDataDataItemSqlListSqlListItem["AvgLogicalReads"].isNull())
+				sqlListObject.avgLogicalReads = std::stof(valueDataDataItemSqlListSqlListItem["AvgLogicalReads"].asString());
 			auto allDiagTypes1 = value["DiagTypes"]["DiagTypes"];
 			for (auto value : allDiagTypes1)
 				sqlListObject.diagTypes1.push_back(value.asString());

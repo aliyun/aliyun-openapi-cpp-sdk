@@ -22,6 +22,10 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "OceanBaseProExport.h"
+#include "model/CancelProjectModifyRecordRequest.h"
+#include "model/CancelProjectModifyRecordResult.h"
+#include "model/CreateBackupSetDownloadLinkRequest.h"
+#include "model/CreateBackupSetDownloadLinkResult.h"
 #include "model/CreateDatabaseRequest.h"
 #include "model/CreateDatabaseResult.h"
 #include "model/CreateInstanceRequest.h"
@@ -34,10 +38,12 @@
 #include "model/CreateOceanBaseDataSourceResult.h"
 #include "model/CreateOmsMysqlDataSourceRequest.h"
 #include "model/CreateOmsMysqlDataSourceResult.h"
-#include "model/CreateOmsOpenAPIProjectRequest.h"
-#include "model/CreateOmsOpenAPIProjectResult.h"
 #include "model/CreateProjectRequest.h"
 #include "model/CreateProjectResult.h"
+#include "model/CreateProjectModifyRecordsRequest.h"
+#include "model/CreateProjectModifyRecordsResult.h"
+#include "model/CreateRdsPostgreSQLDataSourceRequest.h"
+#include "model/CreateRdsPostgreSQLDataSourceResult.h"
 #include "model/CreateSecurityIpGroupRequest.h"
 #include "model/CreateSecurityIpGroupResult.h"
 #include "model/CreateTenantRequest.h"
@@ -48,12 +54,12 @@
 #include "model/CreateTenantSecurityIpGroupResult.h"
 #include "model/CreateTenantUserRequest.h"
 #include "model/CreateTenantUserResult.h"
+#include "model/DeleteDataSourceRequest.h"
+#include "model/DeleteDataSourceResult.h"
 #include "model/DeleteDatabasesRequest.h"
 #include "model/DeleteDatabasesResult.h"
 #include "model/DeleteInstancesRequest.h"
 #include "model/DeleteInstancesResult.h"
-#include "model/DeleteOmsOpenAPIProjectRequest.h"
-#include "model/DeleteOmsOpenAPIProjectResult.h"
 #include "model/DeleteProjectRequest.h"
 #include "model/DeleteProjectResult.h"
 #include "model/DeleteSecurityIpGroupRequest.h"
@@ -74,8 +80,12 @@
 #include "model/DescribeAvailableSpecResult.h"
 #include "model/DescribeAvailableZoneRequest.h"
 #include "model/DescribeAvailableZoneResult.h"
+#include "model/DescribeBackupSetDownloadLinkRequest.h"
+#include "model/DescribeBackupSetDownloadLinkResult.h"
 #include "model/DescribeCharsetRequest.h"
 #include "model/DescribeCharsetResult.h"
+#include "model/DescribeDataBackupSetRequest.h"
+#include "model/DescribeDataBackupSetResult.h"
 #include "model/DescribeDatabasesRequest.h"
 #include "model/DescribeDatabasesResult.h"
 #include "model/DescribeInstanceRequest.h"
@@ -110,10 +120,6 @@
 #include "model/DescribeOasSlowSQLListResult.h"
 #include "model/DescribeOasTopSQLListRequest.h"
 #include "model/DescribeOasTopSQLListResult.h"
-#include "model/DescribeOmsOpenAPIProjectRequest.h"
-#include "model/DescribeOmsOpenAPIProjectResult.h"
-#include "model/DescribeOmsOpenAPIProjectStepsRequest.h"
-#include "model/DescribeOmsOpenAPIProjectStepsResult.h"
 #include "model/DescribeOutlineBindingRequest.h"
 #include "model/DescribeOutlineBindingResult.h"
 #include "model/DescribeParametersRequest.h"
@@ -140,6 +146,8 @@
 #include "model/DescribeSQLPlansResult.h"
 #include "model/DescribeSQLSamplesRequest.h"
 #include "model/DescribeSQLSamplesResult.h"
+#include "model/DescribeSampleSqlRawTextsRequest.h"
+#include "model/DescribeSampleSqlRawTextsResult.h"
 #include "model/DescribeSecurityIpGroupsRequest.h"
 #include "model/DescribeSecurityIpGroupsResult.h"
 #include "model/DescribeSlowSQLHistoryListRequest.h"
@@ -182,6 +190,8 @@
 #include "model/ListDataSourceResult.h"
 #include "model/ListProjectFullVerifyResultRequest.h"
 #include "model/ListProjectFullVerifyResultResult.h"
+#include "model/ListProjectModifyRecordsRequest.h"
+#include "model/ListProjectModifyRecordsResult.h"
 #include "model/ListProjectsRequest.h"
 #include "model/ListProjectsResult.h"
 #include "model/ListWorkerInstancesRequest.h"
@@ -222,30 +232,22 @@
 #include "model/ModifyTenantUserRolesResult.h"
 #include "model/ModifyTenantUserStatusRequest.h"
 #include "model/ModifyTenantUserStatusResult.h"
-#include "model/ReleaseOmsOpenAPIProjectRequest.h"
-#include "model/ReleaseOmsOpenAPIProjectResult.h"
 #include "model/ReleaseProjectRequest.h"
 #include "model/ReleaseProjectResult.h"
-#include "model/ResetOmsOpenAPIProjectRequest.h"
-#include "model/ResetOmsOpenAPIProjectResult.h"
-#include "model/ResumeOmsOpenAPIProjectRequest.h"
-#include "model/ResumeOmsOpenAPIProjectResult.h"
+#include "model/ReleaseWorkerInstanceRequest.h"
+#include "model/ReleaseWorkerInstanceResult.h"
 #include "model/ResumeProjectRequest.h"
 #include "model/ResumeProjectResult.h"
-#include "model/SearchOmsOpenAPIMonitorMetricRequest.h"
-#include "model/SearchOmsOpenAPIMonitorMetricResult.h"
-#include "model/SearchOmsOpenAPIProjectsRequest.h"
-#include "model/SearchOmsOpenAPIProjectsResult.h"
-#include "model/StartOmsOpenAPIProjectRequest.h"
-#include "model/StartOmsOpenAPIProjectResult.h"
+#include "model/RetryProjectModifyRecordsRequest.h"
+#include "model/RetryProjectModifyRecordsResult.h"
 #include "model/StartProjectRequest.h"
 #include "model/StartProjectResult.h"
 #include "model/StartProjectsByLabelRequest.h"
 #include "model/StartProjectsByLabelResult.h"
-#include "model/StopOmsOpenAPIProjectRequest.h"
-#include "model/StopOmsOpenAPIProjectResult.h"
 #include "model/StopProjectRequest.h"
 #include "model/StopProjectResult.h"
+#include "model/StopProjectModifyRecordsRequest.h"
+#include "model/StopProjectModifyRecordsResult.h"
 #include "model/StopProjectsByLabelRequest.h"
 #include "model/StopProjectsByLabelResult.h"
 #include "model/SwitchoverInstanceRequest.h"
@@ -259,6 +261,12 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_OCEANBASEPRO_EXPORT OceanBaseProClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::CancelProjectModifyRecordResult> CancelProjectModifyRecordOutcome;
+			typedef std::future<CancelProjectModifyRecordOutcome> CancelProjectModifyRecordOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::CancelProjectModifyRecordRequest&, const CancelProjectModifyRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelProjectModifyRecordAsyncHandler;
+			typedef Outcome<Error, Model::CreateBackupSetDownloadLinkResult> CreateBackupSetDownloadLinkOutcome;
+			typedef std::future<CreateBackupSetDownloadLinkOutcome> CreateBackupSetDownloadLinkOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::CreateBackupSetDownloadLinkRequest&, const CreateBackupSetDownloadLinkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupSetDownloadLinkAsyncHandler;
 			typedef Outcome<Error, Model::CreateDatabaseResult> CreateDatabaseOutcome;
 			typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::CreateDatabaseRequest&, const CreateDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatabaseAsyncHandler;
@@ -277,12 +285,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateOmsMysqlDataSourceResult> CreateOmsMysqlDataSourceOutcome;
 			typedef std::future<CreateOmsMysqlDataSourceOutcome> CreateOmsMysqlDataSourceOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::CreateOmsMysqlDataSourceRequest&, const CreateOmsMysqlDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateOmsMysqlDataSourceAsyncHandler;
-			typedef Outcome<Error, Model::CreateOmsOpenAPIProjectResult> CreateOmsOpenAPIProjectOutcome;
-			typedef std::future<CreateOmsOpenAPIProjectOutcome> CreateOmsOpenAPIProjectOutcomeCallable;
-			typedef std::function<void(const OceanBaseProClient*, const Model::CreateOmsOpenAPIProjectRequest&, const CreateOmsOpenAPIProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateOmsOpenAPIProjectAsyncHandler;
 			typedef Outcome<Error, Model::CreateProjectResult> CreateProjectOutcome;
 			typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::CreateProjectRequest&, const CreateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
+			typedef Outcome<Error, Model::CreateProjectModifyRecordsResult> CreateProjectModifyRecordsOutcome;
+			typedef std::future<CreateProjectModifyRecordsOutcome> CreateProjectModifyRecordsOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::CreateProjectModifyRecordsRequest&, const CreateProjectModifyRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectModifyRecordsAsyncHandler;
+			typedef Outcome<Error, Model::CreateRdsPostgreSQLDataSourceResult> CreateRdsPostgreSQLDataSourceOutcome;
+			typedef std::future<CreateRdsPostgreSQLDataSourceOutcome> CreateRdsPostgreSQLDataSourceOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::CreateRdsPostgreSQLDataSourceRequest&, const CreateRdsPostgreSQLDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRdsPostgreSQLDataSourceAsyncHandler;
 			typedef Outcome<Error, Model::CreateSecurityIpGroupResult> CreateSecurityIpGroupOutcome;
 			typedef std::future<CreateSecurityIpGroupOutcome> CreateSecurityIpGroupOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::CreateSecurityIpGroupRequest&, const CreateSecurityIpGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityIpGroupAsyncHandler;
@@ -298,15 +309,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateTenantUserResult> CreateTenantUserOutcome;
 			typedef std::future<CreateTenantUserOutcome> CreateTenantUserOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::CreateTenantUserRequest&, const CreateTenantUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTenantUserAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDataSourceResult> DeleteDataSourceOutcome;
+			typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DeleteDataSourceRequest&, const DeleteDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataSourceAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDatabasesResult> DeleteDatabasesOutcome;
 			typedef std::future<DeleteDatabasesOutcome> DeleteDatabasesOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DeleteDatabasesRequest&, const DeleteDatabasesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDatabasesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteInstancesResult> DeleteInstancesOutcome;
 			typedef std::future<DeleteInstancesOutcome> DeleteInstancesOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DeleteInstancesRequest&, const DeleteInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstancesAsyncHandler;
-			typedef Outcome<Error, Model::DeleteOmsOpenAPIProjectResult> DeleteOmsOpenAPIProjectOutcome;
-			typedef std::future<DeleteOmsOpenAPIProjectOutcome> DeleteOmsOpenAPIProjectOutcomeCallable;
-			typedef std::function<void(const OceanBaseProClient*, const Model::DeleteOmsOpenAPIProjectRequest&, const DeleteOmsOpenAPIProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOmsOpenAPIProjectAsyncHandler;
 			typedef Outcome<Error, Model::DeleteProjectResult> DeleteProjectOutcome;
 			typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DeleteProjectRequest&, const DeleteProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectAsyncHandler;
@@ -337,9 +348,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAvailableZoneResult> DescribeAvailableZoneOutcome;
 			typedef std::future<DescribeAvailableZoneOutcome> DescribeAvailableZoneOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeAvailableZoneRequest&, const DescribeAvailableZoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableZoneAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBackupSetDownloadLinkResult> DescribeBackupSetDownloadLinkOutcome;
+			typedef std::future<DescribeBackupSetDownloadLinkOutcome> DescribeBackupSetDownloadLinkOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeBackupSetDownloadLinkRequest&, const DescribeBackupSetDownloadLinkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupSetDownloadLinkAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCharsetResult> DescribeCharsetOutcome;
 			typedef std::future<DescribeCharsetOutcome> DescribeCharsetOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeCharsetRequest&, const DescribeCharsetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCharsetAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDataBackupSetResult> DescribeDataBackupSetOutcome;
+			typedef std::future<DescribeDataBackupSetOutcome> DescribeDataBackupSetOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeDataBackupSetRequest&, const DescribeDataBackupSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataBackupSetAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDatabasesResult> DescribeDatabasesOutcome;
 			typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeDatabasesRequest&, const DescribeDatabasesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
@@ -391,12 +408,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeOasTopSQLListResult> DescribeOasTopSQLListOutcome;
 			typedef std::future<DescribeOasTopSQLListOutcome> DescribeOasTopSQLListOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeOasTopSQLListRequest&, const DescribeOasTopSQLListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOasTopSQLListAsyncHandler;
-			typedef Outcome<Error, Model::DescribeOmsOpenAPIProjectResult> DescribeOmsOpenAPIProjectOutcome;
-			typedef std::future<DescribeOmsOpenAPIProjectOutcome> DescribeOmsOpenAPIProjectOutcomeCallable;
-			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeOmsOpenAPIProjectRequest&, const DescribeOmsOpenAPIProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOmsOpenAPIProjectAsyncHandler;
-			typedef Outcome<Error, Model::DescribeOmsOpenAPIProjectStepsResult> DescribeOmsOpenAPIProjectStepsOutcome;
-			typedef std::future<DescribeOmsOpenAPIProjectStepsOutcome> DescribeOmsOpenAPIProjectStepsOutcomeCallable;
-			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeOmsOpenAPIProjectStepsRequest&, const DescribeOmsOpenAPIProjectStepsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOmsOpenAPIProjectStepsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeOutlineBindingResult> DescribeOutlineBindingOutcome;
 			typedef std::future<DescribeOutlineBindingOutcome> DescribeOutlineBindingOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeOutlineBindingRequest&, const DescribeOutlineBindingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOutlineBindingAsyncHandler;
@@ -436,6 +447,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSQLSamplesResult> DescribeSQLSamplesOutcome;
 			typedef std::future<DescribeSQLSamplesOutcome> DescribeSQLSamplesOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeSQLSamplesRequest&, const DescribeSQLSamplesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLSamplesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSampleSqlRawTextsResult> DescribeSampleSqlRawTextsOutcome;
+			typedef std::future<DescribeSampleSqlRawTextsOutcome> DescribeSampleSqlRawTextsOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeSampleSqlRawTextsRequest&, const DescribeSampleSqlRawTextsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSampleSqlRawTextsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSecurityIpGroupsResult> DescribeSecurityIpGroupsOutcome;
 			typedef std::future<DescribeSecurityIpGroupsOutcome> DescribeSecurityIpGroupsOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeSecurityIpGroupsRequest&, const DescribeSecurityIpGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityIpGroupsAsyncHandler;
@@ -499,6 +513,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListProjectFullVerifyResultResult> ListProjectFullVerifyResultOutcome;
 			typedef std::future<ListProjectFullVerifyResultOutcome> ListProjectFullVerifyResultOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::ListProjectFullVerifyResultRequest&, const ListProjectFullVerifyResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProjectFullVerifyResultAsyncHandler;
+			typedef Outcome<Error, Model::ListProjectModifyRecordsResult> ListProjectModifyRecordsOutcome;
+			typedef std::future<ListProjectModifyRecordsOutcome> ListProjectModifyRecordsOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::ListProjectModifyRecordsRequest&, const ListProjectModifyRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProjectModifyRecordsAsyncHandler;
 			typedef Outcome<Error, Model::ListProjectsResult> ListProjectsOutcome;
 			typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::ListProjectsRequest&, const ListProjectsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProjectsAsyncHandler;
@@ -559,42 +576,30 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyTenantUserStatusResult> ModifyTenantUserStatusOutcome;
 			typedef std::future<ModifyTenantUserStatusOutcome> ModifyTenantUserStatusOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::ModifyTenantUserStatusRequest&, const ModifyTenantUserStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTenantUserStatusAsyncHandler;
-			typedef Outcome<Error, Model::ReleaseOmsOpenAPIProjectResult> ReleaseOmsOpenAPIProjectOutcome;
-			typedef std::future<ReleaseOmsOpenAPIProjectOutcome> ReleaseOmsOpenAPIProjectOutcomeCallable;
-			typedef std::function<void(const OceanBaseProClient*, const Model::ReleaseOmsOpenAPIProjectRequest&, const ReleaseOmsOpenAPIProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseOmsOpenAPIProjectAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseProjectResult> ReleaseProjectOutcome;
 			typedef std::future<ReleaseProjectOutcome> ReleaseProjectOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::ReleaseProjectRequest&, const ReleaseProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseProjectAsyncHandler;
-			typedef Outcome<Error, Model::ResetOmsOpenAPIProjectResult> ResetOmsOpenAPIProjectOutcome;
-			typedef std::future<ResetOmsOpenAPIProjectOutcome> ResetOmsOpenAPIProjectOutcomeCallable;
-			typedef std::function<void(const OceanBaseProClient*, const Model::ResetOmsOpenAPIProjectRequest&, const ResetOmsOpenAPIProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetOmsOpenAPIProjectAsyncHandler;
-			typedef Outcome<Error, Model::ResumeOmsOpenAPIProjectResult> ResumeOmsOpenAPIProjectOutcome;
-			typedef std::future<ResumeOmsOpenAPIProjectOutcome> ResumeOmsOpenAPIProjectOutcomeCallable;
-			typedef std::function<void(const OceanBaseProClient*, const Model::ResumeOmsOpenAPIProjectRequest&, const ResumeOmsOpenAPIProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResumeOmsOpenAPIProjectAsyncHandler;
+			typedef Outcome<Error, Model::ReleaseWorkerInstanceResult> ReleaseWorkerInstanceOutcome;
+			typedef std::future<ReleaseWorkerInstanceOutcome> ReleaseWorkerInstanceOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::ReleaseWorkerInstanceRequest&, const ReleaseWorkerInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseWorkerInstanceAsyncHandler;
 			typedef Outcome<Error, Model::ResumeProjectResult> ResumeProjectOutcome;
 			typedef std::future<ResumeProjectOutcome> ResumeProjectOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::ResumeProjectRequest&, const ResumeProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResumeProjectAsyncHandler;
-			typedef Outcome<Error, Model::SearchOmsOpenAPIMonitorMetricResult> SearchOmsOpenAPIMonitorMetricOutcome;
-			typedef std::future<SearchOmsOpenAPIMonitorMetricOutcome> SearchOmsOpenAPIMonitorMetricOutcomeCallable;
-			typedef std::function<void(const OceanBaseProClient*, const Model::SearchOmsOpenAPIMonitorMetricRequest&, const SearchOmsOpenAPIMonitorMetricOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchOmsOpenAPIMonitorMetricAsyncHandler;
-			typedef Outcome<Error, Model::SearchOmsOpenAPIProjectsResult> SearchOmsOpenAPIProjectsOutcome;
-			typedef std::future<SearchOmsOpenAPIProjectsOutcome> SearchOmsOpenAPIProjectsOutcomeCallable;
-			typedef std::function<void(const OceanBaseProClient*, const Model::SearchOmsOpenAPIProjectsRequest&, const SearchOmsOpenAPIProjectsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchOmsOpenAPIProjectsAsyncHandler;
-			typedef Outcome<Error, Model::StartOmsOpenAPIProjectResult> StartOmsOpenAPIProjectOutcome;
-			typedef std::future<StartOmsOpenAPIProjectOutcome> StartOmsOpenAPIProjectOutcomeCallable;
-			typedef std::function<void(const OceanBaseProClient*, const Model::StartOmsOpenAPIProjectRequest&, const StartOmsOpenAPIProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartOmsOpenAPIProjectAsyncHandler;
+			typedef Outcome<Error, Model::RetryProjectModifyRecordsResult> RetryProjectModifyRecordsOutcome;
+			typedef std::future<RetryProjectModifyRecordsOutcome> RetryProjectModifyRecordsOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::RetryProjectModifyRecordsRequest&, const RetryProjectModifyRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RetryProjectModifyRecordsAsyncHandler;
 			typedef Outcome<Error, Model::StartProjectResult> StartProjectOutcome;
 			typedef std::future<StartProjectOutcome> StartProjectOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::StartProjectRequest&, const StartProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartProjectAsyncHandler;
 			typedef Outcome<Error, Model::StartProjectsByLabelResult> StartProjectsByLabelOutcome;
 			typedef std::future<StartProjectsByLabelOutcome> StartProjectsByLabelOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::StartProjectsByLabelRequest&, const StartProjectsByLabelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartProjectsByLabelAsyncHandler;
-			typedef Outcome<Error, Model::StopOmsOpenAPIProjectResult> StopOmsOpenAPIProjectOutcome;
-			typedef std::future<StopOmsOpenAPIProjectOutcome> StopOmsOpenAPIProjectOutcomeCallable;
-			typedef std::function<void(const OceanBaseProClient*, const Model::StopOmsOpenAPIProjectRequest&, const StopOmsOpenAPIProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopOmsOpenAPIProjectAsyncHandler;
 			typedef Outcome<Error, Model::StopProjectResult> StopProjectOutcome;
 			typedef std::future<StopProjectOutcome> StopProjectOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::StopProjectRequest&, const StopProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopProjectAsyncHandler;
+			typedef Outcome<Error, Model::StopProjectModifyRecordsResult> StopProjectModifyRecordsOutcome;
+			typedef std::future<StopProjectModifyRecordsOutcome> StopProjectModifyRecordsOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::StopProjectModifyRecordsRequest&, const StopProjectModifyRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopProjectModifyRecordsAsyncHandler;
 			typedef Outcome<Error, Model::StopProjectsByLabelResult> StopProjectsByLabelOutcome;
 			typedef std::future<StopProjectsByLabelOutcome> StopProjectsByLabelOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::StopProjectsByLabelRequest&, const StopProjectsByLabelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopProjectsByLabelAsyncHandler;
@@ -606,6 +611,12 @@ namespace AlibabaCloud
 			OceanBaseProClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			OceanBaseProClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~OceanBaseProClient();
+			CancelProjectModifyRecordOutcome cancelProjectModifyRecord(const Model::CancelProjectModifyRecordRequest &request)const;
+			void cancelProjectModifyRecordAsync(const Model::CancelProjectModifyRecordRequest& request, const CancelProjectModifyRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelProjectModifyRecordOutcomeCallable cancelProjectModifyRecordCallable(const Model::CancelProjectModifyRecordRequest& request) const;
+			CreateBackupSetDownloadLinkOutcome createBackupSetDownloadLink(const Model::CreateBackupSetDownloadLinkRequest &request)const;
+			void createBackupSetDownloadLinkAsync(const Model::CreateBackupSetDownloadLinkRequest& request, const CreateBackupSetDownloadLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateBackupSetDownloadLinkOutcomeCallable createBackupSetDownloadLinkCallable(const Model::CreateBackupSetDownloadLinkRequest& request) const;
 			CreateDatabaseOutcome createDatabase(const Model::CreateDatabaseRequest &request)const;
 			void createDatabaseAsync(const Model::CreateDatabaseRequest& request, const CreateDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDatabaseOutcomeCallable createDatabaseCallable(const Model::CreateDatabaseRequest& request) const;
@@ -624,12 +635,15 @@ namespace AlibabaCloud
 			CreateOmsMysqlDataSourceOutcome createOmsMysqlDataSource(const Model::CreateOmsMysqlDataSourceRequest &request)const;
 			void createOmsMysqlDataSourceAsync(const Model::CreateOmsMysqlDataSourceRequest& request, const CreateOmsMysqlDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateOmsMysqlDataSourceOutcomeCallable createOmsMysqlDataSourceCallable(const Model::CreateOmsMysqlDataSourceRequest& request) const;
-			CreateOmsOpenAPIProjectOutcome createOmsOpenAPIProject(const Model::CreateOmsOpenAPIProjectRequest &request)const;
-			void createOmsOpenAPIProjectAsync(const Model::CreateOmsOpenAPIProjectRequest& request, const CreateOmsOpenAPIProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateOmsOpenAPIProjectOutcomeCallable createOmsOpenAPIProjectCallable(const Model::CreateOmsOpenAPIProjectRequest& request) const;
 			CreateProjectOutcome createProject(const Model::CreateProjectRequest &request)const;
 			void createProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateProjectOutcomeCallable createProjectCallable(const Model::CreateProjectRequest& request) const;
+			CreateProjectModifyRecordsOutcome createProjectModifyRecords(const Model::CreateProjectModifyRecordsRequest &request)const;
+			void createProjectModifyRecordsAsync(const Model::CreateProjectModifyRecordsRequest& request, const CreateProjectModifyRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateProjectModifyRecordsOutcomeCallable createProjectModifyRecordsCallable(const Model::CreateProjectModifyRecordsRequest& request) const;
+			CreateRdsPostgreSQLDataSourceOutcome createRdsPostgreSQLDataSource(const Model::CreateRdsPostgreSQLDataSourceRequest &request)const;
+			void createRdsPostgreSQLDataSourceAsync(const Model::CreateRdsPostgreSQLDataSourceRequest& request, const CreateRdsPostgreSQLDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRdsPostgreSQLDataSourceOutcomeCallable createRdsPostgreSQLDataSourceCallable(const Model::CreateRdsPostgreSQLDataSourceRequest& request) const;
 			CreateSecurityIpGroupOutcome createSecurityIpGroup(const Model::CreateSecurityIpGroupRequest &request)const;
 			void createSecurityIpGroupAsync(const Model::CreateSecurityIpGroupRequest& request, const CreateSecurityIpGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSecurityIpGroupOutcomeCallable createSecurityIpGroupCallable(const Model::CreateSecurityIpGroupRequest& request) const;
@@ -645,15 +659,15 @@ namespace AlibabaCloud
 			CreateTenantUserOutcome createTenantUser(const Model::CreateTenantUserRequest &request)const;
 			void createTenantUserAsync(const Model::CreateTenantUserRequest& request, const CreateTenantUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTenantUserOutcomeCallable createTenantUserCallable(const Model::CreateTenantUserRequest& request) const;
+			DeleteDataSourceOutcome deleteDataSource(const Model::DeleteDataSourceRequest &request)const;
+			void deleteDataSourceAsync(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDataSourceOutcomeCallable deleteDataSourceCallable(const Model::DeleteDataSourceRequest& request) const;
 			DeleteDatabasesOutcome deleteDatabases(const Model::DeleteDatabasesRequest &request)const;
 			void deleteDatabasesAsync(const Model::DeleteDatabasesRequest& request, const DeleteDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDatabasesOutcomeCallable deleteDatabasesCallable(const Model::DeleteDatabasesRequest& request) const;
 			DeleteInstancesOutcome deleteInstances(const Model::DeleteInstancesRequest &request)const;
 			void deleteInstancesAsync(const Model::DeleteInstancesRequest& request, const DeleteInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteInstancesOutcomeCallable deleteInstancesCallable(const Model::DeleteInstancesRequest& request) const;
-			DeleteOmsOpenAPIProjectOutcome deleteOmsOpenAPIProject(const Model::DeleteOmsOpenAPIProjectRequest &request)const;
-			void deleteOmsOpenAPIProjectAsync(const Model::DeleteOmsOpenAPIProjectRequest& request, const DeleteOmsOpenAPIProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteOmsOpenAPIProjectOutcomeCallable deleteOmsOpenAPIProjectCallable(const Model::DeleteOmsOpenAPIProjectRequest& request) const;
 			DeleteProjectOutcome deleteProject(const Model::DeleteProjectRequest &request)const;
 			void deleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteProjectOutcomeCallable deleteProjectCallable(const Model::DeleteProjectRequest& request) const;
@@ -684,9 +698,15 @@ namespace AlibabaCloud
 			DescribeAvailableZoneOutcome describeAvailableZone(const Model::DescribeAvailableZoneRequest &request)const;
 			void describeAvailableZoneAsync(const Model::DescribeAvailableZoneRequest& request, const DescribeAvailableZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAvailableZoneOutcomeCallable describeAvailableZoneCallable(const Model::DescribeAvailableZoneRequest& request) const;
+			DescribeBackupSetDownloadLinkOutcome describeBackupSetDownloadLink(const Model::DescribeBackupSetDownloadLinkRequest &request)const;
+			void describeBackupSetDownloadLinkAsync(const Model::DescribeBackupSetDownloadLinkRequest& request, const DescribeBackupSetDownloadLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBackupSetDownloadLinkOutcomeCallable describeBackupSetDownloadLinkCallable(const Model::DescribeBackupSetDownloadLinkRequest& request) const;
 			DescribeCharsetOutcome describeCharset(const Model::DescribeCharsetRequest &request)const;
 			void describeCharsetAsync(const Model::DescribeCharsetRequest& request, const DescribeCharsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCharsetOutcomeCallable describeCharsetCallable(const Model::DescribeCharsetRequest& request) const;
+			DescribeDataBackupSetOutcome describeDataBackupSet(const Model::DescribeDataBackupSetRequest &request)const;
+			void describeDataBackupSetAsync(const Model::DescribeDataBackupSetRequest& request, const DescribeDataBackupSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDataBackupSetOutcomeCallable describeDataBackupSetCallable(const Model::DescribeDataBackupSetRequest& request) const;
 			DescribeDatabasesOutcome describeDatabases(const Model::DescribeDatabasesRequest &request)const;
 			void describeDatabasesAsync(const Model::DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDatabasesOutcomeCallable describeDatabasesCallable(const Model::DescribeDatabasesRequest& request) const;
@@ -738,12 +758,6 @@ namespace AlibabaCloud
 			DescribeOasTopSQLListOutcome describeOasTopSQLList(const Model::DescribeOasTopSQLListRequest &request)const;
 			void describeOasTopSQLListAsync(const Model::DescribeOasTopSQLListRequest& request, const DescribeOasTopSQLListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeOasTopSQLListOutcomeCallable describeOasTopSQLListCallable(const Model::DescribeOasTopSQLListRequest& request) const;
-			DescribeOmsOpenAPIProjectOutcome describeOmsOpenAPIProject(const Model::DescribeOmsOpenAPIProjectRequest &request)const;
-			void describeOmsOpenAPIProjectAsync(const Model::DescribeOmsOpenAPIProjectRequest& request, const DescribeOmsOpenAPIProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeOmsOpenAPIProjectOutcomeCallable describeOmsOpenAPIProjectCallable(const Model::DescribeOmsOpenAPIProjectRequest& request) const;
-			DescribeOmsOpenAPIProjectStepsOutcome describeOmsOpenAPIProjectSteps(const Model::DescribeOmsOpenAPIProjectStepsRequest &request)const;
-			void describeOmsOpenAPIProjectStepsAsync(const Model::DescribeOmsOpenAPIProjectStepsRequest& request, const DescribeOmsOpenAPIProjectStepsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeOmsOpenAPIProjectStepsOutcomeCallable describeOmsOpenAPIProjectStepsCallable(const Model::DescribeOmsOpenAPIProjectStepsRequest& request) const;
 			DescribeOutlineBindingOutcome describeOutlineBinding(const Model::DescribeOutlineBindingRequest &request)const;
 			void describeOutlineBindingAsync(const Model::DescribeOutlineBindingRequest& request, const DescribeOutlineBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeOutlineBindingOutcomeCallable describeOutlineBindingCallable(const Model::DescribeOutlineBindingRequest& request) const;
@@ -783,6 +797,9 @@ namespace AlibabaCloud
 			DescribeSQLSamplesOutcome describeSQLSamples(const Model::DescribeSQLSamplesRequest &request)const;
 			void describeSQLSamplesAsync(const Model::DescribeSQLSamplesRequest& request, const DescribeSQLSamplesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSQLSamplesOutcomeCallable describeSQLSamplesCallable(const Model::DescribeSQLSamplesRequest& request) const;
+			DescribeSampleSqlRawTextsOutcome describeSampleSqlRawTexts(const Model::DescribeSampleSqlRawTextsRequest &request)const;
+			void describeSampleSqlRawTextsAsync(const Model::DescribeSampleSqlRawTextsRequest& request, const DescribeSampleSqlRawTextsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSampleSqlRawTextsOutcomeCallable describeSampleSqlRawTextsCallable(const Model::DescribeSampleSqlRawTextsRequest& request) const;
 			DescribeSecurityIpGroupsOutcome describeSecurityIpGroups(const Model::DescribeSecurityIpGroupsRequest &request)const;
 			void describeSecurityIpGroupsAsync(const Model::DescribeSecurityIpGroupsRequest& request, const DescribeSecurityIpGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSecurityIpGroupsOutcomeCallable describeSecurityIpGroupsCallable(const Model::DescribeSecurityIpGroupsRequest& request) const;
@@ -846,6 +863,9 @@ namespace AlibabaCloud
 			ListProjectFullVerifyResultOutcome listProjectFullVerifyResult(const Model::ListProjectFullVerifyResultRequest &request)const;
 			void listProjectFullVerifyResultAsync(const Model::ListProjectFullVerifyResultRequest& request, const ListProjectFullVerifyResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListProjectFullVerifyResultOutcomeCallable listProjectFullVerifyResultCallable(const Model::ListProjectFullVerifyResultRequest& request) const;
+			ListProjectModifyRecordsOutcome listProjectModifyRecords(const Model::ListProjectModifyRecordsRequest &request)const;
+			void listProjectModifyRecordsAsync(const Model::ListProjectModifyRecordsRequest& request, const ListProjectModifyRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListProjectModifyRecordsOutcomeCallable listProjectModifyRecordsCallable(const Model::ListProjectModifyRecordsRequest& request) const;
 			ListProjectsOutcome listProjects(const Model::ListProjectsRequest &request)const;
 			void listProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListProjectsOutcomeCallable listProjectsCallable(const Model::ListProjectsRequest& request) const;
@@ -906,42 +926,30 @@ namespace AlibabaCloud
 			ModifyTenantUserStatusOutcome modifyTenantUserStatus(const Model::ModifyTenantUserStatusRequest &request)const;
 			void modifyTenantUserStatusAsync(const Model::ModifyTenantUserStatusRequest& request, const ModifyTenantUserStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyTenantUserStatusOutcomeCallable modifyTenantUserStatusCallable(const Model::ModifyTenantUserStatusRequest& request) const;
-			ReleaseOmsOpenAPIProjectOutcome releaseOmsOpenAPIProject(const Model::ReleaseOmsOpenAPIProjectRequest &request)const;
-			void releaseOmsOpenAPIProjectAsync(const Model::ReleaseOmsOpenAPIProjectRequest& request, const ReleaseOmsOpenAPIProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ReleaseOmsOpenAPIProjectOutcomeCallable releaseOmsOpenAPIProjectCallable(const Model::ReleaseOmsOpenAPIProjectRequest& request) const;
 			ReleaseProjectOutcome releaseProject(const Model::ReleaseProjectRequest &request)const;
 			void releaseProjectAsync(const Model::ReleaseProjectRequest& request, const ReleaseProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseProjectOutcomeCallable releaseProjectCallable(const Model::ReleaseProjectRequest& request) const;
-			ResetOmsOpenAPIProjectOutcome resetOmsOpenAPIProject(const Model::ResetOmsOpenAPIProjectRequest &request)const;
-			void resetOmsOpenAPIProjectAsync(const Model::ResetOmsOpenAPIProjectRequest& request, const ResetOmsOpenAPIProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ResetOmsOpenAPIProjectOutcomeCallable resetOmsOpenAPIProjectCallable(const Model::ResetOmsOpenAPIProjectRequest& request) const;
-			ResumeOmsOpenAPIProjectOutcome resumeOmsOpenAPIProject(const Model::ResumeOmsOpenAPIProjectRequest &request)const;
-			void resumeOmsOpenAPIProjectAsync(const Model::ResumeOmsOpenAPIProjectRequest& request, const ResumeOmsOpenAPIProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ResumeOmsOpenAPIProjectOutcomeCallable resumeOmsOpenAPIProjectCallable(const Model::ResumeOmsOpenAPIProjectRequest& request) const;
+			ReleaseWorkerInstanceOutcome releaseWorkerInstance(const Model::ReleaseWorkerInstanceRequest &request)const;
+			void releaseWorkerInstanceAsync(const Model::ReleaseWorkerInstanceRequest& request, const ReleaseWorkerInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReleaseWorkerInstanceOutcomeCallable releaseWorkerInstanceCallable(const Model::ReleaseWorkerInstanceRequest& request) const;
 			ResumeProjectOutcome resumeProject(const Model::ResumeProjectRequest &request)const;
 			void resumeProjectAsync(const Model::ResumeProjectRequest& request, const ResumeProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResumeProjectOutcomeCallable resumeProjectCallable(const Model::ResumeProjectRequest& request) const;
-			SearchOmsOpenAPIMonitorMetricOutcome searchOmsOpenAPIMonitorMetric(const Model::SearchOmsOpenAPIMonitorMetricRequest &request)const;
-			void searchOmsOpenAPIMonitorMetricAsync(const Model::SearchOmsOpenAPIMonitorMetricRequest& request, const SearchOmsOpenAPIMonitorMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SearchOmsOpenAPIMonitorMetricOutcomeCallable searchOmsOpenAPIMonitorMetricCallable(const Model::SearchOmsOpenAPIMonitorMetricRequest& request) const;
-			SearchOmsOpenAPIProjectsOutcome searchOmsOpenAPIProjects(const Model::SearchOmsOpenAPIProjectsRequest &request)const;
-			void searchOmsOpenAPIProjectsAsync(const Model::SearchOmsOpenAPIProjectsRequest& request, const SearchOmsOpenAPIProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SearchOmsOpenAPIProjectsOutcomeCallable searchOmsOpenAPIProjectsCallable(const Model::SearchOmsOpenAPIProjectsRequest& request) const;
-			StartOmsOpenAPIProjectOutcome startOmsOpenAPIProject(const Model::StartOmsOpenAPIProjectRequest &request)const;
-			void startOmsOpenAPIProjectAsync(const Model::StartOmsOpenAPIProjectRequest& request, const StartOmsOpenAPIProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			StartOmsOpenAPIProjectOutcomeCallable startOmsOpenAPIProjectCallable(const Model::StartOmsOpenAPIProjectRequest& request) const;
+			RetryProjectModifyRecordsOutcome retryProjectModifyRecords(const Model::RetryProjectModifyRecordsRequest &request)const;
+			void retryProjectModifyRecordsAsync(const Model::RetryProjectModifyRecordsRequest& request, const RetryProjectModifyRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RetryProjectModifyRecordsOutcomeCallable retryProjectModifyRecordsCallable(const Model::RetryProjectModifyRecordsRequest& request) const;
 			StartProjectOutcome startProject(const Model::StartProjectRequest &request)const;
 			void startProjectAsync(const Model::StartProjectRequest& request, const StartProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartProjectOutcomeCallable startProjectCallable(const Model::StartProjectRequest& request) const;
 			StartProjectsByLabelOutcome startProjectsByLabel(const Model::StartProjectsByLabelRequest &request)const;
 			void startProjectsByLabelAsync(const Model::StartProjectsByLabelRequest& request, const StartProjectsByLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartProjectsByLabelOutcomeCallable startProjectsByLabelCallable(const Model::StartProjectsByLabelRequest& request) const;
-			StopOmsOpenAPIProjectOutcome stopOmsOpenAPIProject(const Model::StopOmsOpenAPIProjectRequest &request)const;
-			void stopOmsOpenAPIProjectAsync(const Model::StopOmsOpenAPIProjectRequest& request, const StopOmsOpenAPIProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			StopOmsOpenAPIProjectOutcomeCallable stopOmsOpenAPIProjectCallable(const Model::StopOmsOpenAPIProjectRequest& request) const;
 			StopProjectOutcome stopProject(const Model::StopProjectRequest &request)const;
 			void stopProjectAsync(const Model::StopProjectRequest& request, const StopProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopProjectOutcomeCallable stopProjectCallable(const Model::StopProjectRequest& request) const;
+			StopProjectModifyRecordsOutcome stopProjectModifyRecords(const Model::StopProjectModifyRecordsRequest &request)const;
+			void stopProjectModifyRecordsAsync(const Model::StopProjectModifyRecordsRequest& request, const StopProjectModifyRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopProjectModifyRecordsOutcomeCallable stopProjectModifyRecordsCallable(const Model::StopProjectModifyRecordsRequest& request) const;
 			StopProjectsByLabelOutcome stopProjectsByLabel(const Model::StopProjectsByLabelRequest &request)const;
 			void stopProjectsByLabelAsync(const Model::StopProjectsByLabelRequest& request, const StopProjectsByLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopProjectsByLabelOutcomeCallable stopProjectsByLabelCallable(const Model::StopProjectsByLabelRequest& request) const;

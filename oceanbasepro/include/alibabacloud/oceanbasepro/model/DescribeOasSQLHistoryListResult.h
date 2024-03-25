@@ -67,6 +67,7 @@ namespace AlibabaCloud
 					double avgCpuTime;
 					double retCode5024Count;
 					double sumLogicalReads;
+					double sumDbTime;
 					double strongConsistencyPercentage;
 					double retCode4013Count;
 					double avgConcurrencyWaitTime;
@@ -85,6 +86,7 @@ namespace AlibabaCloud
 					long avgRpcCount;
 					double avgNetWaitTime;
 					double maxDiskReads;
+					double avgDbTime;
 					double avgExpectedWorkerCount;
 					double distPlanPercentage;
 					long remotePlans;

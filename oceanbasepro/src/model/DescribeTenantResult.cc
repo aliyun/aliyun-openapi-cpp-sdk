@@ -94,6 +94,8 @@ void DescribeTenantResult::parse(const std::string &payload)
 		tenant_.timeZone = tenantNode["TimeZone"].asString();
 	if(!tenantNode["DataMergeTime"].isNull())
 		tenant_.dataMergeTime = tenantNode["DataMergeTime"].asString();
+	if(!tenantNode["EnableReadOnlyReplica"].isNull())
+		tenant_.enableReadOnlyReplica = tenantNode["EnableReadOnlyReplica"].asString() == "true";
 	auto allTenantConnectionsNode = tenantNode["TenantConnections"]["TenantConnectionsItem"];
 	for (auto tenantNodeTenantConnectionsTenantConnectionsItem : allTenantConnectionsNode)
 	{

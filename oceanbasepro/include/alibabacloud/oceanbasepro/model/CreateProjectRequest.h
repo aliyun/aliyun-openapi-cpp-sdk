@@ -228,17 +228,25 @@ public:
 		std::vector<std::string> tableAndViewWhiteList;
 	};
 	struct CommonTransferConfig {
-		long rocketMqSendMsgTimeout;
 		int mqPartition;
-		std::string tableCategory;
+		std::string syncSchemaColumnName;
 		bool activeActive;
+		bool rocketMqEnableMsgTrace;
+		struct CustomColumnsItem {
+			std::string expression;
+			std::string columnName;
+		};
+		CustomColumnsItem customColumnsItem;
+		std::vector<CustomColumnsItem> customColumns;
+		std::string rocketMqProducerGroup;
+		std::string mqPartitionMode;
+		long rocketMqSendMsgTimeout;
+		std::string tableCategory;
 		std::string datahubTopicType;
 		std::string rocketMqMsgTags;
-		bool rocketMqEnableMsgTrace;
 		std::string dataWorksBusinessName;
-		std::string rocketMqProducerGroup;
+		bool syncSchema;
 		std::string mqSerializerType;
-		std::string mqPartitionMode;
 	};
 	struct StructTransferConfig {
 		std::string byteCharConvertStrategy;
@@ -273,6 +281,8 @@ public:
 	void setTransferMapping(const TransferMapping &transferMapping);
 	std::string getWorkerGradeId() const;
 	void setWorkerGradeId(const std::string &workerGradeId);
+	std::string getId() const;
+	void setId(const std::string &id);
 	CommonTransferConfig getCommonTransferConfig() const;
 	void setCommonTransferConfig(const CommonTransferConfig &commonTransferConfig);
 	StructTransferConfig getStructTransferConfig() const;
@@ -302,6 +312,7 @@ private:
 	bool enableStructTransfer_;
 	TransferMapping transferMapping_;
 	std::string workerGradeId_;
+	std::string id_;
 	CommonTransferConfig commonTransferConfig_;
 	StructTransferConfig structTransferConfig_;
 	bool enableIncrTransfer_;

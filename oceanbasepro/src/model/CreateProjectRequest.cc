@@ -289,23 +289,38 @@ void CreateProjectRequest::setWorkerGradeId(const std::string &workerGradeId) {
   setBodyParameter(std::string("WorkerGradeId"), workerGradeId);
 }
 
+std::string CreateProjectRequest::getId() const {
+  return id_;
+}
+
+void CreateProjectRequest::setId(const std::string &id) {
+  id_ = id;
+  setBodyParameter(std::string("Id"), id);
+}
+
 CreateProjectRequest::CommonTransferConfig CreateProjectRequest::getCommonTransferConfig() const {
   return commonTransferConfig_;
 }
 
 void CreateProjectRequest::setCommonTransferConfig(const CreateProjectRequest::CommonTransferConfig &commonTransferConfig) {
   commonTransferConfig_ = commonTransferConfig;
-  setBodyParameter(std::string("CommonTransferConfig") + ".RocketMqSendMsgTimeout", std::to_string(commonTransferConfig.rocketMqSendMsgTimeout));
   setBodyParameter(std::string("CommonTransferConfig") + ".MqPartition", std::to_string(commonTransferConfig.mqPartition));
-  setBodyParameter(std::string("CommonTransferConfig") + ".TableCategory", commonTransferConfig.tableCategory);
+  setBodyParameter(std::string("CommonTransferConfig") + ".SyncSchemaColumnName", commonTransferConfig.syncSchemaColumnName);
   setBodyParameter(std::string("CommonTransferConfig") + ".ActiveActive", commonTransferConfig.activeActive ? "true" : "false");
+  setBodyParameter(std::string("CommonTransferConfig") + ".RocketMqEnableMsgTrace", commonTransferConfig.rocketMqEnableMsgTrace ? "true" : "false");
+  for(int dep1 = 0; dep1 != commonTransferConfig.customColumns.size(); dep1++) {
+    setBodyParameter(std::string("CommonTransferConfig") + ".CustomColumns." + std::to_string(dep1 + 1) + ".Expression", commonTransferConfig.customColumns[dep1].expression);
+    setBodyParameter(std::string("CommonTransferConfig") + ".CustomColumns." + std::to_string(dep1 + 1) + ".ColumnName", commonTransferConfig.customColumns[dep1].columnName);
+  }
+  setBodyParameter(std::string("CommonTransferConfig") + ".RocketMqProducerGroup", commonTransferConfig.rocketMqProducerGroup);
+  setBodyParameter(std::string("CommonTransferConfig") + ".MqPartitionMode", commonTransferConfig.mqPartitionMode);
+  setBodyParameter(std::string("CommonTransferConfig") + ".RocketMqSendMsgTimeout", std::to_string(commonTransferConfig.rocketMqSendMsgTimeout));
+  setBodyParameter(std::string("CommonTransferConfig") + ".TableCategory", commonTransferConfig.tableCategory);
   setBodyParameter(std::string("CommonTransferConfig") + ".DatahubTopicType", commonTransferConfig.datahubTopicType);
   setBodyParameter(std::string("CommonTransferConfig") + ".RocketMqMsgTags", commonTransferConfig.rocketMqMsgTags);
-  setBodyParameter(std::string("CommonTransferConfig") + ".RocketMqEnableMsgTrace", commonTransferConfig.rocketMqEnableMsgTrace ? "true" : "false");
   setBodyParameter(std::string("CommonTransferConfig") + ".DataWorksBusinessName", commonTransferConfig.dataWorksBusinessName);
-  setBodyParameter(std::string("CommonTransferConfig") + ".RocketMqProducerGroup", commonTransferConfig.rocketMqProducerGroup);
+  setBodyParameter(std::string("CommonTransferConfig") + ".SyncSchema", commonTransferConfig.syncSchema ? "true" : "false");
   setBodyParameter(std::string("CommonTransferConfig") + ".MqSerializerType", commonTransferConfig.mqSerializerType);
-  setBodyParameter(std::string("CommonTransferConfig") + ".MqPartitionMode", commonTransferConfig.mqPartitionMode);
 }
 
 CreateProjectRequest::StructTransferConfig CreateProjectRequest::getStructTransferConfig() const {

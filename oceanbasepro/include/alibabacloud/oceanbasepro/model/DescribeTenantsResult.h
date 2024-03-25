@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					double usedDiskSize;
 					int cpu;
 					std::string charset;
+					bool enableReadOnlyReplica;
 					std::string collation;
 					std::string tenantId;
 					std::string vpcId;

@@ -91,9 +91,11 @@ namespace AlibabaCloud
 					struct DataDiskAutoScaleConfig
 					{
 						long upperbound;
+						std::string upperScaleStep;
 						long scaleStepInNormal;
 						long upperMergeThreshold;
 						long scaleStepInMerge;
+						std::string upperScaleStrategy;
 						long maxDiskSize;
 						long upperThreshold;
 						bool autoScale;
@@ -153,16 +155,19 @@ namespace AlibabaCloud
 					bool enableIsolationOptimization;
 					std::string dataMergeTime;
 					bool inTempCapacityStatus;
+					bool enableReadOnlyReplica;
 					bool isTrustEcs;
 					std::string proxyClusterId;
 					bool isLatestObVersion;
 					std::vector<std::string> availableZones;
 					std::vector<std::string> zones;
 					std::string diskType;
+					int sharedUnitNumLimit;
 					std::string deployMode;
 					std::string version;
 					std::string cpuArchitecture;
 					bool isolationOptimization;
+					std::string unitSpec;
 					std::string instanceRole;
 					std::string maintainTime;
 					std::string obRpmVersion;
@@ -170,6 +175,7 @@ namespace AlibabaCloud
 					std::string status;
 					bool autoUpgradeObVersion;
 					std::string instanceId;
+					int exclusiveUnitNumLimit;
 					std::string createTime;
 					Resource resource;
 					std::string instanceClass;
@@ -181,6 +187,7 @@ namespace AlibabaCloud
 					DataDiskAutoScaleConfig dataDiskAutoScaleConfig;
 					bool enableUpgradeLogDisk;
 					bool autoRenewal;
+					bool enableReadOnlyReplicaManagement;
 					TenantCreatable tenantCreatable;
 					std::string expireTime;
 				};

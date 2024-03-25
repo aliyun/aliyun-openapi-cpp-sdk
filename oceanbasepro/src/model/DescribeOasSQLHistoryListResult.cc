@@ -177,6 +177,10 @@ void DescribeOasSQLHistoryListResult::parse(const std::string &payload)
 			dataObject.sumLogicalReads = valueDataDataItem["SumLogicalReads"].asString();
 		if(!valueDataDataItem["ExecPs"].isNull())
 			dataObject.execPs = valueDataDataItem["ExecPs"].asString();
+		if(!valueDataDataItem["AvgDbTime"].isNull())
+			dataObject.avgDbTime = valueDataDataItem["AvgDbTime"].asString();
+		if(!valueDataDataItem["SumDbTime"].isNull())
+			dataObject.sumDbTime = valueDataDataItem["SumDbTime"].asString();
 		data_.push_back(dataObject);
 	}
 

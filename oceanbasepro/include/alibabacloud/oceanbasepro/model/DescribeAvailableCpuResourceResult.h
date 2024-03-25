@@ -34,6 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct DataItem
 				{
+					std::string reviewCode;
+					std::string comment;
 					long unitNum;
 					long maxCpu;
 					long minCpu;

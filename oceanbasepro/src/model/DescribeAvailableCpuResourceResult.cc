@@ -49,6 +49,10 @@ void DescribeAvailableCpuResourceResult::parse(const std::string &payload)
 			dataObject.minCpu = std::stol(valueDataDataItem["MinCpu"].asString());
 		if(!valueDataDataItem["MaxCpu"].isNull())
 			dataObject.maxCpu = std::stol(valueDataDataItem["MaxCpu"].asString());
+		if(!valueDataDataItem["ReviewCode"].isNull())
+			dataObject.reviewCode = valueDataDataItem["ReviewCode"].asString();
+		if(!valueDataDataItem["Comment"].isNull())
+			dataObject.comment = valueDataDataItem["Comment"].asString();
 		data_.push_back(dataObject);
 	}
 

@@ -79,6 +79,8 @@ void DescribeTenantsResult::parse(const std::string &payload)
 			tenantsObject.charset = valueTenantsData["Charset"].asString();
 		if(!valueTenantsData["Collation"].isNull())
 			tenantsObject.collation = valueTenantsData["Collation"].asString();
+		if(!valueTenantsData["EnableReadOnlyReplica"].isNull())
+			tenantsObject.enableReadOnlyReplica = valueTenantsData["EnableReadOnlyReplica"].asString() == "true";
 		tenants_.push_back(tenantsObject);
 	}
 	if(!value["TotalCount"].isNull())

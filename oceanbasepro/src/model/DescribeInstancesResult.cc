@@ -95,6 +95,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.instanceRole = valueInstancesData["InstanceRole"].asString();
 		if(!valueInstancesData["InTempCapacityStatus"].isNull())
 			instancesObject.inTempCapacityStatus = valueInstancesData["InTempCapacityStatus"].asString() == "true";
+		if(!valueInstancesData["EnableReadOnlyReplicaManagement"].isNull())
+			instancesObject.enableReadOnlyReplicaManagement = valueInstancesData["EnableReadOnlyReplicaManagement"].asString() == "true";
 		auto resourceNode = value["Resource"];
 		if(!resourceNode["UnitCount"].isNull())
 			instancesObject.resource.unitCount = std::stol(resourceNode["UnitCount"].asString());
@@ -147,6 +149,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.dataDiskAutoScaleConfig.scaleStepInNormal = std::stol(dataDiskAutoScaleConfigNode["ScaleStepInNormal"].asString());
 		if(!dataDiskAutoScaleConfigNode["ScaleStepInMerge"].isNull())
 			instancesObject.dataDiskAutoScaleConfig.scaleStepInMerge = std::stol(dataDiskAutoScaleConfigNode["ScaleStepInMerge"].asString());
+		if(!dataDiskAutoScaleConfigNode["UpperScaleStrategy"].isNull())
+			instancesObject.dataDiskAutoScaleConfig.upperScaleStrategy = dataDiskAutoScaleConfigNode["UpperScaleStrategy"].asString();
 		auto allAvailableZones = value["AvailableZones"]["AvailableZones"];
 		for (auto value : allAvailableZones)
 			instancesObject.availableZones.push_back(value.asString());

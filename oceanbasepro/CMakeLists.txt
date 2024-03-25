@@ -21,6 +21,10 @@ set(oceanbasepro_public_header
 	include/alibabacloud/oceanbasepro/OceanBaseProExport.h )
 
 set(oceanbasepro_public_header_model 
+	include/alibabacloud/oceanbasepro/model/CancelProjectModifyRecordRequest.h
+	include/alibabacloud/oceanbasepro/model/CancelProjectModifyRecordResult.h
+	include/alibabacloud/oceanbasepro/model/CreateBackupSetDownloadLinkRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateBackupSetDownloadLinkResult.h
 	include/alibabacloud/oceanbasepro/model/CreateDatabaseRequest.h
 	include/alibabacloud/oceanbasepro/model/CreateDatabaseResult.h
 	include/alibabacloud/oceanbasepro/model/CreateInstanceRequest.h
@@ -33,10 +37,12 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/CreateOceanBaseDataSourceResult.h
 	include/alibabacloud/oceanbasepro/model/CreateOmsMysqlDataSourceRequest.h
 	include/alibabacloud/oceanbasepro/model/CreateOmsMysqlDataSourceResult.h
-	include/alibabacloud/oceanbasepro/model/CreateOmsOpenAPIProjectRequest.h
-	include/alibabacloud/oceanbasepro/model/CreateOmsOpenAPIProjectResult.h
 	include/alibabacloud/oceanbasepro/model/CreateProjectRequest.h
 	include/alibabacloud/oceanbasepro/model/CreateProjectResult.h
+	include/alibabacloud/oceanbasepro/model/CreateProjectModifyRecordsRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateProjectModifyRecordsResult.h
+	include/alibabacloud/oceanbasepro/model/CreateRdsPostgreSQLDataSourceRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateRdsPostgreSQLDataSourceResult.h
 	include/alibabacloud/oceanbasepro/model/CreateSecurityIpGroupRequest.h
 	include/alibabacloud/oceanbasepro/model/CreateSecurityIpGroupResult.h
 	include/alibabacloud/oceanbasepro/model/CreateTenantRequest.h
@@ -47,12 +53,12 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/CreateTenantSecurityIpGroupResult.h
 	include/alibabacloud/oceanbasepro/model/CreateTenantUserRequest.h
 	include/alibabacloud/oceanbasepro/model/CreateTenantUserResult.h
+	include/alibabacloud/oceanbasepro/model/DeleteDataSourceRequest.h
+	include/alibabacloud/oceanbasepro/model/DeleteDataSourceResult.h
 	include/alibabacloud/oceanbasepro/model/DeleteDatabasesRequest.h
 	include/alibabacloud/oceanbasepro/model/DeleteDatabasesResult.h
 	include/alibabacloud/oceanbasepro/model/DeleteInstancesRequest.h
 	include/alibabacloud/oceanbasepro/model/DeleteInstancesResult.h
-	include/alibabacloud/oceanbasepro/model/DeleteOmsOpenAPIProjectRequest.h
-	include/alibabacloud/oceanbasepro/model/DeleteOmsOpenAPIProjectResult.h
 	include/alibabacloud/oceanbasepro/model/DeleteProjectRequest.h
 	include/alibabacloud/oceanbasepro/model/DeleteProjectResult.h
 	include/alibabacloud/oceanbasepro/model/DeleteSecurityIpGroupRequest.h
@@ -73,8 +79,12 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeAvailableSpecResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeAvailableZoneRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeAvailableZoneResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeBackupSetDownloadLinkRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeBackupSetDownloadLinkResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeCharsetRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeCharsetResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeDataBackupSetRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeDataBackupSetResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeDatabasesRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeDatabasesResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeInstanceRequest.h
@@ -109,10 +119,6 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeOasSlowSQLListResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeOasTopSQLListRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeOasTopSQLListResult.h
-	include/alibabacloud/oceanbasepro/model/DescribeOmsOpenAPIProjectRequest.h
-	include/alibabacloud/oceanbasepro/model/DescribeOmsOpenAPIProjectResult.h
-	include/alibabacloud/oceanbasepro/model/DescribeOmsOpenAPIProjectStepsRequest.h
-	include/alibabacloud/oceanbasepro/model/DescribeOmsOpenAPIProjectStepsResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeOutlineBindingRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeOutlineBindingResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeParametersRequest.h
@@ -139,6 +145,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeSQLPlansResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeSQLSamplesRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeSQLSamplesResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeSampleSqlRawTextsRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeSampleSqlRawTextsResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeSecurityIpGroupsRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeSecurityIpGroupsResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLHistoryListRequest.h
@@ -181,6 +189,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/ListDataSourceResult.h
 	include/alibabacloud/oceanbasepro/model/ListProjectFullVerifyResultRequest.h
 	include/alibabacloud/oceanbasepro/model/ListProjectFullVerifyResultResult.h
+	include/alibabacloud/oceanbasepro/model/ListProjectModifyRecordsRequest.h
+	include/alibabacloud/oceanbasepro/model/ListProjectModifyRecordsResult.h
 	include/alibabacloud/oceanbasepro/model/ListProjectsRequest.h
 	include/alibabacloud/oceanbasepro/model/ListProjectsResult.h
 	include/alibabacloud/oceanbasepro/model/ListWorkerInstancesRequest.h
@@ -221,30 +231,22 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/ModifyTenantUserRolesResult.h
 	include/alibabacloud/oceanbasepro/model/ModifyTenantUserStatusRequest.h
 	include/alibabacloud/oceanbasepro/model/ModifyTenantUserStatusResult.h
-	include/alibabacloud/oceanbasepro/model/ReleaseOmsOpenAPIProjectRequest.h
-	include/alibabacloud/oceanbasepro/model/ReleaseOmsOpenAPIProjectResult.h
 	include/alibabacloud/oceanbasepro/model/ReleaseProjectRequest.h
 	include/alibabacloud/oceanbasepro/model/ReleaseProjectResult.h
-	include/alibabacloud/oceanbasepro/model/ResetOmsOpenAPIProjectRequest.h
-	include/alibabacloud/oceanbasepro/model/ResetOmsOpenAPIProjectResult.h
-	include/alibabacloud/oceanbasepro/model/ResumeOmsOpenAPIProjectRequest.h
-	include/alibabacloud/oceanbasepro/model/ResumeOmsOpenAPIProjectResult.h
+	include/alibabacloud/oceanbasepro/model/ReleaseWorkerInstanceRequest.h
+	include/alibabacloud/oceanbasepro/model/ReleaseWorkerInstanceResult.h
 	include/alibabacloud/oceanbasepro/model/ResumeProjectRequest.h
 	include/alibabacloud/oceanbasepro/model/ResumeProjectResult.h
-	include/alibabacloud/oceanbasepro/model/SearchOmsOpenAPIMonitorMetricRequest.h
-	include/alibabacloud/oceanbasepro/model/SearchOmsOpenAPIMonitorMetricResult.h
-	include/alibabacloud/oceanbasepro/model/SearchOmsOpenAPIProjectsRequest.h
-	include/alibabacloud/oceanbasepro/model/SearchOmsOpenAPIProjectsResult.h
-	include/alibabacloud/oceanbasepro/model/StartOmsOpenAPIProjectRequest.h
-	include/alibabacloud/oceanbasepro/model/StartOmsOpenAPIProjectResult.h
+	include/alibabacloud/oceanbasepro/model/RetryProjectModifyRecordsRequest.h
+	include/alibabacloud/oceanbasepro/model/RetryProjectModifyRecordsResult.h
 	include/alibabacloud/oceanbasepro/model/StartProjectRequest.h
 	include/alibabacloud/oceanbasepro/model/StartProjectResult.h
 	include/alibabacloud/oceanbasepro/model/StartProjectsByLabelRequest.h
 	include/alibabacloud/oceanbasepro/model/StartProjectsByLabelResult.h
-	include/alibabacloud/oceanbasepro/model/StopOmsOpenAPIProjectRequest.h
-	include/alibabacloud/oceanbasepro/model/StopOmsOpenAPIProjectResult.h
 	include/alibabacloud/oceanbasepro/model/StopProjectRequest.h
 	include/alibabacloud/oceanbasepro/model/StopProjectResult.h
+	include/alibabacloud/oceanbasepro/model/StopProjectModifyRecordsRequest.h
+	include/alibabacloud/oceanbasepro/model/StopProjectModifyRecordsResult.h
 	include/alibabacloud/oceanbasepro/model/StopProjectsByLabelRequest.h
 	include/alibabacloud/oceanbasepro/model/StopProjectsByLabelResult.h
 	include/alibabacloud/oceanbasepro/model/SwitchoverInstanceRequest.h
@@ -252,6 +254,10 @@ set(oceanbasepro_public_header_model
 
 set(oceanbasepro_src 
 	src/OceanBaseProClient.cc
+	src/model/CancelProjectModifyRecordRequest.cc
+	src/model/CancelProjectModifyRecordResult.cc
+	src/model/CreateBackupSetDownloadLinkRequest.cc
+	src/model/CreateBackupSetDownloadLinkResult.cc
 	src/model/CreateDatabaseRequest.cc
 	src/model/CreateDatabaseResult.cc
 	src/model/CreateInstanceRequest.cc
@@ -264,10 +270,12 @@ set(oceanbasepro_src
 	src/model/CreateOceanBaseDataSourceResult.cc
 	src/model/CreateOmsMysqlDataSourceRequest.cc
 	src/model/CreateOmsMysqlDataSourceResult.cc
-	src/model/CreateOmsOpenAPIProjectRequest.cc
-	src/model/CreateOmsOpenAPIProjectResult.cc
 	src/model/CreateProjectRequest.cc
 	src/model/CreateProjectResult.cc
+	src/model/CreateProjectModifyRecordsRequest.cc
+	src/model/CreateProjectModifyRecordsResult.cc
+	src/model/CreateRdsPostgreSQLDataSourceRequest.cc
+	src/model/CreateRdsPostgreSQLDataSourceResult.cc
 	src/model/CreateSecurityIpGroupRequest.cc
 	src/model/CreateSecurityIpGroupResult.cc
 	src/model/CreateTenantRequest.cc
@@ -278,12 +286,12 @@ set(oceanbasepro_src
 	src/model/CreateTenantSecurityIpGroupResult.cc
 	src/model/CreateTenantUserRequest.cc
 	src/model/CreateTenantUserResult.cc
+	src/model/DeleteDataSourceRequest.cc
+	src/model/DeleteDataSourceResult.cc
 	src/model/DeleteDatabasesRequest.cc
 	src/model/DeleteDatabasesResult.cc
 	src/model/DeleteInstancesRequest.cc
 	src/model/DeleteInstancesResult.cc
-	src/model/DeleteOmsOpenAPIProjectRequest.cc
-	src/model/DeleteOmsOpenAPIProjectResult.cc
 	src/model/DeleteProjectRequest.cc
 	src/model/DeleteProjectResult.cc
 	src/model/DeleteSecurityIpGroupRequest.cc
@@ -304,8 +312,12 @@ set(oceanbasepro_src
 	src/model/DescribeAvailableSpecResult.cc
 	src/model/DescribeAvailableZoneRequest.cc
 	src/model/DescribeAvailableZoneResult.cc
+	src/model/DescribeBackupSetDownloadLinkRequest.cc
+	src/model/DescribeBackupSetDownloadLinkResult.cc
 	src/model/DescribeCharsetRequest.cc
 	src/model/DescribeCharsetResult.cc
+	src/model/DescribeDataBackupSetRequest.cc
+	src/model/DescribeDataBackupSetResult.cc
 	src/model/DescribeDatabasesRequest.cc
 	src/model/DescribeDatabasesResult.cc
 	src/model/DescribeInstanceRequest.cc
@@ -340,10 +352,6 @@ set(oceanbasepro_src
 	src/model/DescribeOasSlowSQLListResult.cc
 	src/model/DescribeOasTopSQLListRequest.cc
 	src/model/DescribeOasTopSQLListResult.cc
-	src/model/DescribeOmsOpenAPIProjectRequest.cc
-	src/model/DescribeOmsOpenAPIProjectResult.cc
-	src/model/DescribeOmsOpenAPIProjectStepsRequest.cc
-	src/model/DescribeOmsOpenAPIProjectStepsResult.cc
 	src/model/DescribeOutlineBindingRequest.cc
 	src/model/DescribeOutlineBindingResult.cc
 	src/model/DescribeParametersRequest.cc
@@ -370,6 +378,8 @@ set(oceanbasepro_src
 	src/model/DescribeSQLPlansResult.cc
 	src/model/DescribeSQLSamplesRequest.cc
 	src/model/DescribeSQLSamplesResult.cc
+	src/model/DescribeSampleSqlRawTextsRequest.cc
+	src/model/DescribeSampleSqlRawTextsResult.cc
 	src/model/DescribeSecurityIpGroupsRequest.cc
 	src/model/DescribeSecurityIpGroupsResult.cc
 	src/model/DescribeSlowSQLHistoryListRequest.cc
@@ -412,6 +422,8 @@ set(oceanbasepro_src
 	src/model/ListDataSourceResult.cc
 	src/model/ListProjectFullVerifyResultRequest.cc
 	src/model/ListProjectFullVerifyResultResult.cc
+	src/model/ListProjectModifyRecordsRequest.cc
+	src/model/ListProjectModifyRecordsResult.cc
 	src/model/ListProjectsRequest.cc
 	src/model/ListProjectsResult.cc
 	src/model/ListWorkerInstancesRequest.cc
@@ -452,30 +464,22 @@ set(oceanbasepro_src
 	src/model/ModifyTenantUserRolesResult.cc
 	src/model/ModifyTenantUserStatusRequest.cc
 	src/model/ModifyTenantUserStatusResult.cc
-	src/model/ReleaseOmsOpenAPIProjectRequest.cc
-	src/model/ReleaseOmsOpenAPIProjectResult.cc
 	src/model/ReleaseProjectRequest.cc
 	src/model/ReleaseProjectResult.cc
-	src/model/ResetOmsOpenAPIProjectRequest.cc
-	src/model/ResetOmsOpenAPIProjectResult.cc
-	src/model/ResumeOmsOpenAPIProjectRequest.cc
-	src/model/ResumeOmsOpenAPIProjectResult.cc
+	src/model/ReleaseWorkerInstanceRequest.cc
+	src/model/ReleaseWorkerInstanceResult.cc
 	src/model/ResumeProjectRequest.cc
 	src/model/ResumeProjectResult.cc
-	src/model/SearchOmsOpenAPIMonitorMetricRequest.cc
-	src/model/SearchOmsOpenAPIMonitorMetricResult.cc
-	src/model/SearchOmsOpenAPIProjectsRequest.cc
-	src/model/SearchOmsOpenAPIProjectsResult.cc
-	src/model/StartOmsOpenAPIProjectRequest.cc
-	src/model/StartOmsOpenAPIProjectResult.cc
+	src/model/RetryProjectModifyRecordsRequest.cc
+	src/model/RetryProjectModifyRecordsResult.cc
 	src/model/StartProjectRequest.cc
 	src/model/StartProjectResult.cc
 	src/model/StartProjectsByLabelRequest.cc
 	src/model/StartProjectsByLabelResult.cc
-	src/model/StopOmsOpenAPIProjectRequest.cc
-	src/model/StopOmsOpenAPIProjectResult.cc
 	src/model/StopProjectRequest.cc
 	src/model/StopProjectResult.cc
+	src/model/StopProjectModifyRecordsRequest.cc
+	src/model/StopProjectModifyRecordsResult.cc
 	src/model/StopProjectsByLabelRequest.cc
 	src/model/StopProjectsByLabelResult.cc
 	src/model/SwitchoverInstanceRequest.cc

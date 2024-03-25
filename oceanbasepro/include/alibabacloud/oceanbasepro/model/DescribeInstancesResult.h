@@ -75,6 +75,7 @@ namespace AlibabaCloud
 						long scaleStepInNormal;
 						long upperMergeThreshold;
 						long scaleStepInMerge;
+						std::string upperScaleStrategy;
 						long maxDiskSize;
 						long upperThreshold;
 						bool autoScale;
@@ -106,6 +107,7 @@ namespace AlibabaCloud
 					std::string vpcId;
 					long mem;
 					std::string state;
+					bool enableReadOnlyReplicaManagement;
 					int expireSeconds;
 					std::string expireTime;
 				};

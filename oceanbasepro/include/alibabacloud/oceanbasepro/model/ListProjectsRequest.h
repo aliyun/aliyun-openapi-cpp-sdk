@@ -48,6 +48,8 @@ public:
 	void setSourceEndpointTypes(const std::vector<std::string> &sourceEndpointTypes);
 	std::string getSortField() const;
 	void setSortField(const std::string &sortField);
+	bool getNeedRelatedInfo() const;
+	void setNeedRelatedInfo(bool needRelatedInfo);
 	std::vector<std::string> getLabelIds() const;
 	void setLabelIds(const std::vector<std::string> &labelIds);
 	std::vector<std::string> getStatus() const;
@@ -63,6 +65,7 @@ private:
 	std::string order_;
 	std::vector<std::string> sourceEndpointTypes_;
 	std::string sortField_;
+	bool needRelatedInfo_;
 	std::vector<std::string> labelIds_;
 	std::vector<std::string> status_;
 };

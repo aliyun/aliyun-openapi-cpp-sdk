@@ -41,14 +41,17 @@ namespace AlibabaCloud
 						double sumDbTime;
 						std::string userName;
 						double lastExecutedTime;
+						float avgRetryCount;
 						double avgGetPlanTime;
 						double cpuTime;
+						float sumRetryCount;
 						std::string sqlId;
 						std::string sumElapsedTime;
 						std::string suggestion;
 						std::string sqlTextShort;
 						double avgElapsedTime;
 						std::string dbName;
+						float avgLogicalReads;
 						std::string diagnosis;
 						std::string riskLevel;
 						double avgDbTime;
@@ -61,8 +64,10 @@ namespace AlibabaCloud
 					std::vector<DataItem::SqlListItem> sqlList;
 					std::string userName;
 					double lastExecutedTime;
+					float avgRetryCount;
 					double avgGetPlanTime;
 					double cpuTime;
+					float sumRetryCount;
 					std::vector<std::string> diagTypes;
 					std::string sqlId;
 					std::string sumElapsedTime;
@@ -70,6 +75,7 @@ namespace AlibabaCloud
 					std::string sqlTextShort;
 					double avgElapsedTime;
 					std::string dbName;
+					float avgLogicalReads;
 					std::string diagnosis;
 					std::string riskLevel;
 					double avgDbTime;

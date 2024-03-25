@@ -148,6 +148,7 @@ namespace AlibabaCloud
 					std::string description;
 					long maxParallelQueryDegree;
 					std::string dataMergeTime;
+					bool enableReadOnlyReplica;
 					std::string masterIntranetAddressZone;
 					std::vector<std::string> availableZones;
 					std::string diskType;

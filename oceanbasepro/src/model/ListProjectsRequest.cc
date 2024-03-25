@@ -110,6 +110,15 @@ void ListProjectsRequest::setSortField(const std::string &sortField) {
   setBodyParameter(std::string("SortField"), sortField);
 }
 
+bool ListProjectsRequest::getNeedRelatedInfo() const {
+  return needRelatedInfo_;
+}
+
+void ListProjectsRequest::setNeedRelatedInfo(bool needRelatedInfo) {
+  needRelatedInfo_ = needRelatedInfo;
+  setBodyParameter(std::string("NeedRelatedInfo"), needRelatedInfo ? "true" : "false");
+}
+
 std::vector<ListProjectsRequest::std::string> ListProjectsRequest::getLabelIds() const {
   return labelIds_;
 }

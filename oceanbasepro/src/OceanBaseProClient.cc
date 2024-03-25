@@ -51,6 +51,78 @@ OceanBaseProClient::OceanBaseProClient(const std::string & accessKeyId, const st
 OceanBaseProClient::~OceanBaseProClient()
 {}
 
+OceanBaseProClient::CancelProjectModifyRecordOutcome OceanBaseProClient::cancelProjectModifyRecord(const CancelProjectModifyRecordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelProjectModifyRecordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelProjectModifyRecordOutcome(CancelProjectModifyRecordResult(outcome.result()));
+	else
+		return CancelProjectModifyRecordOutcome(outcome.error());
+}
+
+void OceanBaseProClient::cancelProjectModifyRecordAsync(const CancelProjectModifyRecordRequest& request, const CancelProjectModifyRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelProjectModifyRecord(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::CancelProjectModifyRecordOutcomeCallable OceanBaseProClient::cancelProjectModifyRecordCallable(const CancelProjectModifyRecordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelProjectModifyRecordOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelProjectModifyRecord(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::CreateBackupSetDownloadLinkOutcome OceanBaseProClient::createBackupSetDownloadLink(const CreateBackupSetDownloadLinkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateBackupSetDownloadLinkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateBackupSetDownloadLinkOutcome(CreateBackupSetDownloadLinkResult(outcome.result()));
+	else
+		return CreateBackupSetDownloadLinkOutcome(outcome.error());
+}
+
+void OceanBaseProClient::createBackupSetDownloadLinkAsync(const CreateBackupSetDownloadLinkRequest& request, const CreateBackupSetDownloadLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createBackupSetDownloadLink(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::CreateBackupSetDownloadLinkOutcomeCallable OceanBaseProClient::createBackupSetDownloadLinkCallable(const CreateBackupSetDownloadLinkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateBackupSetDownloadLinkOutcome()>>(
+			[this, request]()
+			{
+			return this->createBackupSetDownloadLink(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::CreateDatabaseOutcome OceanBaseProClient::createDatabase(const CreateDatabaseRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -267,42 +339,6 @@ OceanBaseProClient::CreateOmsMysqlDataSourceOutcomeCallable OceanBaseProClient::
 	return task->get_future();
 }
 
-OceanBaseProClient::CreateOmsOpenAPIProjectOutcome OceanBaseProClient::createOmsOpenAPIProject(const CreateOmsOpenAPIProjectRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateOmsOpenAPIProjectOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateOmsOpenAPIProjectOutcome(CreateOmsOpenAPIProjectResult(outcome.result()));
-	else
-		return CreateOmsOpenAPIProjectOutcome(outcome.error());
-}
-
-void OceanBaseProClient::createOmsOpenAPIProjectAsync(const CreateOmsOpenAPIProjectRequest& request, const CreateOmsOpenAPIProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createOmsOpenAPIProject(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OceanBaseProClient::CreateOmsOpenAPIProjectOutcomeCallable OceanBaseProClient::createOmsOpenAPIProjectCallable(const CreateOmsOpenAPIProjectRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateOmsOpenAPIProjectOutcome()>>(
-			[this, request]()
-			{
-			return this->createOmsOpenAPIProject(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OceanBaseProClient::CreateProjectOutcome OceanBaseProClient::createProject(const CreateProjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +369,78 @@ OceanBaseProClient::CreateProjectOutcomeCallable OceanBaseProClient::createProje
 			[this, request]()
 			{
 			return this->createProject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::CreateProjectModifyRecordsOutcome OceanBaseProClient::createProjectModifyRecords(const CreateProjectModifyRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateProjectModifyRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateProjectModifyRecordsOutcome(CreateProjectModifyRecordsResult(outcome.result()));
+	else
+		return CreateProjectModifyRecordsOutcome(outcome.error());
+}
+
+void OceanBaseProClient::createProjectModifyRecordsAsync(const CreateProjectModifyRecordsRequest& request, const CreateProjectModifyRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createProjectModifyRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::CreateProjectModifyRecordsOutcomeCallable OceanBaseProClient::createProjectModifyRecordsCallable(const CreateProjectModifyRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateProjectModifyRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->createProjectModifyRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::CreateRdsPostgreSQLDataSourceOutcome OceanBaseProClient::createRdsPostgreSQLDataSource(const CreateRdsPostgreSQLDataSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateRdsPostgreSQLDataSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateRdsPostgreSQLDataSourceOutcome(CreateRdsPostgreSQLDataSourceResult(outcome.result()));
+	else
+		return CreateRdsPostgreSQLDataSourceOutcome(outcome.error());
+}
+
+void OceanBaseProClient::createRdsPostgreSQLDataSourceAsync(const CreateRdsPostgreSQLDataSourceRequest& request, const CreateRdsPostgreSQLDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createRdsPostgreSQLDataSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::CreateRdsPostgreSQLDataSourceOutcomeCallable OceanBaseProClient::createRdsPostgreSQLDataSourceCallable(const CreateRdsPostgreSQLDataSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateRdsPostgreSQLDataSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->createRdsPostgreSQLDataSource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -519,6 +627,42 @@ OceanBaseProClient::CreateTenantUserOutcomeCallable OceanBaseProClient::createTe
 	return task->get_future();
 }
 
+OceanBaseProClient::DeleteDataSourceOutcome OceanBaseProClient::deleteDataSource(const DeleteDataSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDataSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDataSourceOutcome(DeleteDataSourceResult(outcome.result()));
+	else
+		return DeleteDataSourceOutcome(outcome.error());
+}
+
+void OceanBaseProClient::deleteDataSourceAsync(const DeleteDataSourceRequest& request, const DeleteDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDataSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DeleteDataSourceOutcomeCallable OceanBaseProClient::deleteDataSourceCallable(const DeleteDataSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDataSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDataSource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::DeleteDatabasesOutcome OceanBaseProClient::deleteDatabases(const DeleteDatabasesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,42 +729,6 @@ OceanBaseProClient::DeleteInstancesOutcomeCallable OceanBaseProClient::deleteIns
 			[this, request]()
 			{
 			return this->deleteInstances(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OceanBaseProClient::DeleteOmsOpenAPIProjectOutcome OceanBaseProClient::deleteOmsOpenAPIProject(const DeleteOmsOpenAPIProjectRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteOmsOpenAPIProjectOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteOmsOpenAPIProjectOutcome(DeleteOmsOpenAPIProjectResult(outcome.result()));
-	else
-		return DeleteOmsOpenAPIProjectOutcome(outcome.error());
-}
-
-void OceanBaseProClient::deleteOmsOpenAPIProjectAsync(const DeleteOmsOpenAPIProjectRequest& request, const DeleteOmsOpenAPIProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteOmsOpenAPIProject(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OceanBaseProClient::DeleteOmsOpenAPIProjectOutcomeCallable OceanBaseProClient::deleteOmsOpenAPIProjectCallable(const DeleteOmsOpenAPIProjectRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteOmsOpenAPIProjectOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteOmsOpenAPIProject(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -987,6 +1095,42 @@ OceanBaseProClient::DescribeAvailableZoneOutcomeCallable OceanBaseProClient::des
 	return task->get_future();
 }
 
+OceanBaseProClient::DescribeBackupSetDownloadLinkOutcome OceanBaseProClient::describeBackupSetDownloadLink(const DescribeBackupSetDownloadLinkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBackupSetDownloadLinkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBackupSetDownloadLinkOutcome(DescribeBackupSetDownloadLinkResult(outcome.result()));
+	else
+		return DescribeBackupSetDownloadLinkOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeBackupSetDownloadLinkAsync(const DescribeBackupSetDownloadLinkRequest& request, const DescribeBackupSetDownloadLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBackupSetDownloadLink(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeBackupSetDownloadLinkOutcomeCallable OceanBaseProClient::describeBackupSetDownloadLinkCallable(const DescribeBackupSetDownloadLinkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBackupSetDownloadLinkOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBackupSetDownloadLink(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::DescribeCharsetOutcome OceanBaseProClient::describeCharset(const DescribeCharsetRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1017,6 +1161,42 @@ OceanBaseProClient::DescribeCharsetOutcomeCallable OceanBaseProClient::describeC
 			[this, request]()
 			{
 			return this->describeCharset(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::DescribeDataBackupSetOutcome OceanBaseProClient::describeDataBackupSet(const DescribeDataBackupSetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDataBackupSetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDataBackupSetOutcome(DescribeDataBackupSetResult(outcome.result()));
+	else
+		return DescribeDataBackupSetOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeDataBackupSetAsync(const DescribeDataBackupSetRequest& request, const DescribeDataBackupSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDataBackupSet(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeDataBackupSetOutcomeCallable OceanBaseProClient::describeDataBackupSetCallable(const DescribeDataBackupSetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDataBackupSetOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDataBackupSet(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1635,78 +1815,6 @@ OceanBaseProClient::DescribeOasTopSQLListOutcomeCallable OceanBaseProClient::des
 	return task->get_future();
 }
 
-OceanBaseProClient::DescribeOmsOpenAPIProjectOutcome OceanBaseProClient::describeOmsOpenAPIProject(const DescribeOmsOpenAPIProjectRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeOmsOpenAPIProjectOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeOmsOpenAPIProjectOutcome(DescribeOmsOpenAPIProjectResult(outcome.result()));
-	else
-		return DescribeOmsOpenAPIProjectOutcome(outcome.error());
-}
-
-void OceanBaseProClient::describeOmsOpenAPIProjectAsync(const DescribeOmsOpenAPIProjectRequest& request, const DescribeOmsOpenAPIProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeOmsOpenAPIProject(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OceanBaseProClient::DescribeOmsOpenAPIProjectOutcomeCallable OceanBaseProClient::describeOmsOpenAPIProjectCallable(const DescribeOmsOpenAPIProjectRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeOmsOpenAPIProjectOutcome()>>(
-			[this, request]()
-			{
-			return this->describeOmsOpenAPIProject(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OceanBaseProClient::DescribeOmsOpenAPIProjectStepsOutcome OceanBaseProClient::describeOmsOpenAPIProjectSteps(const DescribeOmsOpenAPIProjectStepsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeOmsOpenAPIProjectStepsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeOmsOpenAPIProjectStepsOutcome(DescribeOmsOpenAPIProjectStepsResult(outcome.result()));
-	else
-		return DescribeOmsOpenAPIProjectStepsOutcome(outcome.error());
-}
-
-void OceanBaseProClient::describeOmsOpenAPIProjectStepsAsync(const DescribeOmsOpenAPIProjectStepsRequest& request, const DescribeOmsOpenAPIProjectStepsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeOmsOpenAPIProjectSteps(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OceanBaseProClient::DescribeOmsOpenAPIProjectStepsOutcomeCallable OceanBaseProClient::describeOmsOpenAPIProjectStepsCallable(const DescribeOmsOpenAPIProjectStepsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeOmsOpenAPIProjectStepsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeOmsOpenAPIProjectSteps(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OceanBaseProClient::DescribeOutlineBindingOutcome OceanBaseProClient::describeOutlineBinding(const DescribeOutlineBindingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2169,6 +2277,42 @@ OceanBaseProClient::DescribeSQLSamplesOutcomeCallable OceanBaseProClient::descri
 			[this, request]()
 			{
 			return this->describeSQLSamples(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::DescribeSampleSqlRawTextsOutcome OceanBaseProClient::describeSampleSqlRawTexts(const DescribeSampleSqlRawTextsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSampleSqlRawTextsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSampleSqlRawTextsOutcome(DescribeSampleSqlRawTextsResult(outcome.result()));
+	else
+		return DescribeSampleSqlRawTextsOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeSampleSqlRawTextsAsync(const DescribeSampleSqlRawTextsRequest& request, const DescribeSampleSqlRawTextsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSampleSqlRawTexts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeSampleSqlRawTextsOutcomeCallable OceanBaseProClient::describeSampleSqlRawTextsCallable(const DescribeSampleSqlRawTextsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSampleSqlRawTextsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSampleSqlRawTexts(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2931,6 +3075,42 @@ OceanBaseProClient::ListProjectFullVerifyResultOutcomeCallable OceanBaseProClien
 	return task->get_future();
 }
 
+OceanBaseProClient::ListProjectModifyRecordsOutcome OceanBaseProClient::listProjectModifyRecords(const ListProjectModifyRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListProjectModifyRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListProjectModifyRecordsOutcome(ListProjectModifyRecordsResult(outcome.result()));
+	else
+		return ListProjectModifyRecordsOutcome(outcome.error());
+}
+
+void OceanBaseProClient::listProjectModifyRecordsAsync(const ListProjectModifyRecordsRequest& request, const ListProjectModifyRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listProjectModifyRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::ListProjectModifyRecordsOutcomeCallable OceanBaseProClient::listProjectModifyRecordsCallable(const ListProjectModifyRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListProjectModifyRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->listProjectModifyRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::ListProjectsOutcome OceanBaseProClient::listProjects(const ListProjectsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3651,42 +3831,6 @@ OceanBaseProClient::ModifyTenantUserStatusOutcomeCallable OceanBaseProClient::mo
 	return task->get_future();
 }
 
-OceanBaseProClient::ReleaseOmsOpenAPIProjectOutcome OceanBaseProClient::releaseOmsOpenAPIProject(const ReleaseOmsOpenAPIProjectRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ReleaseOmsOpenAPIProjectOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ReleaseOmsOpenAPIProjectOutcome(ReleaseOmsOpenAPIProjectResult(outcome.result()));
-	else
-		return ReleaseOmsOpenAPIProjectOutcome(outcome.error());
-}
-
-void OceanBaseProClient::releaseOmsOpenAPIProjectAsync(const ReleaseOmsOpenAPIProjectRequest& request, const ReleaseOmsOpenAPIProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, releaseOmsOpenAPIProject(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OceanBaseProClient::ReleaseOmsOpenAPIProjectOutcomeCallable OceanBaseProClient::releaseOmsOpenAPIProjectCallable(const ReleaseOmsOpenAPIProjectRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ReleaseOmsOpenAPIProjectOutcome()>>(
-			[this, request]()
-			{
-			return this->releaseOmsOpenAPIProject(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OceanBaseProClient::ReleaseProjectOutcome OceanBaseProClient::releaseProject(const ReleaseProjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3723,72 +3867,36 @@ OceanBaseProClient::ReleaseProjectOutcomeCallable OceanBaseProClient::releasePro
 	return task->get_future();
 }
 
-OceanBaseProClient::ResetOmsOpenAPIProjectOutcome OceanBaseProClient::resetOmsOpenAPIProject(const ResetOmsOpenAPIProjectRequest &request) const
+OceanBaseProClient::ReleaseWorkerInstanceOutcome OceanBaseProClient::releaseWorkerInstance(const ReleaseWorkerInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ResetOmsOpenAPIProjectOutcome(endpointOutcome.error());
+		return ReleaseWorkerInstanceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ResetOmsOpenAPIProjectOutcome(ResetOmsOpenAPIProjectResult(outcome.result()));
+		return ReleaseWorkerInstanceOutcome(ReleaseWorkerInstanceResult(outcome.result()));
 	else
-		return ResetOmsOpenAPIProjectOutcome(outcome.error());
+		return ReleaseWorkerInstanceOutcome(outcome.error());
 }
 
-void OceanBaseProClient::resetOmsOpenAPIProjectAsync(const ResetOmsOpenAPIProjectRequest& request, const ResetOmsOpenAPIProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void OceanBaseProClient::releaseWorkerInstanceAsync(const ReleaseWorkerInstanceRequest& request, const ReleaseWorkerInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, resetOmsOpenAPIProject(request), context);
+		handler(this, request, releaseWorkerInstance(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-OceanBaseProClient::ResetOmsOpenAPIProjectOutcomeCallable OceanBaseProClient::resetOmsOpenAPIProjectCallable(const ResetOmsOpenAPIProjectRequest &request) const
+OceanBaseProClient::ReleaseWorkerInstanceOutcomeCallable OceanBaseProClient::releaseWorkerInstanceCallable(const ReleaseWorkerInstanceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ResetOmsOpenAPIProjectOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ReleaseWorkerInstanceOutcome()>>(
 			[this, request]()
 			{
-			return this->resetOmsOpenAPIProject(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OceanBaseProClient::ResumeOmsOpenAPIProjectOutcome OceanBaseProClient::resumeOmsOpenAPIProject(const ResumeOmsOpenAPIProjectRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ResumeOmsOpenAPIProjectOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ResumeOmsOpenAPIProjectOutcome(ResumeOmsOpenAPIProjectResult(outcome.result()));
-	else
-		return ResumeOmsOpenAPIProjectOutcome(outcome.error());
-}
-
-void OceanBaseProClient::resumeOmsOpenAPIProjectAsync(const ResumeOmsOpenAPIProjectRequest& request, const ResumeOmsOpenAPIProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, resumeOmsOpenAPIProject(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OceanBaseProClient::ResumeOmsOpenAPIProjectOutcomeCallable OceanBaseProClient::resumeOmsOpenAPIProjectCallable(const ResumeOmsOpenAPIProjectRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ResumeOmsOpenAPIProjectOutcome()>>(
-			[this, request]()
-			{
-			return this->resumeOmsOpenAPIProject(request);
+			return this->releaseWorkerInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3831,108 +3939,36 @@ OceanBaseProClient::ResumeProjectOutcomeCallable OceanBaseProClient::resumeProje
 	return task->get_future();
 }
 
-OceanBaseProClient::SearchOmsOpenAPIMonitorMetricOutcome OceanBaseProClient::searchOmsOpenAPIMonitorMetric(const SearchOmsOpenAPIMonitorMetricRequest &request) const
+OceanBaseProClient::RetryProjectModifyRecordsOutcome OceanBaseProClient::retryProjectModifyRecords(const RetryProjectModifyRecordsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SearchOmsOpenAPIMonitorMetricOutcome(endpointOutcome.error());
+		return RetryProjectModifyRecordsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SearchOmsOpenAPIMonitorMetricOutcome(SearchOmsOpenAPIMonitorMetricResult(outcome.result()));
+		return RetryProjectModifyRecordsOutcome(RetryProjectModifyRecordsResult(outcome.result()));
 	else
-		return SearchOmsOpenAPIMonitorMetricOutcome(outcome.error());
+		return RetryProjectModifyRecordsOutcome(outcome.error());
 }
 
-void OceanBaseProClient::searchOmsOpenAPIMonitorMetricAsync(const SearchOmsOpenAPIMonitorMetricRequest& request, const SearchOmsOpenAPIMonitorMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void OceanBaseProClient::retryProjectModifyRecordsAsync(const RetryProjectModifyRecordsRequest& request, const RetryProjectModifyRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, searchOmsOpenAPIMonitorMetric(request), context);
+		handler(this, request, retryProjectModifyRecords(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-OceanBaseProClient::SearchOmsOpenAPIMonitorMetricOutcomeCallable OceanBaseProClient::searchOmsOpenAPIMonitorMetricCallable(const SearchOmsOpenAPIMonitorMetricRequest &request) const
+OceanBaseProClient::RetryProjectModifyRecordsOutcomeCallable OceanBaseProClient::retryProjectModifyRecordsCallable(const RetryProjectModifyRecordsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SearchOmsOpenAPIMonitorMetricOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<RetryProjectModifyRecordsOutcome()>>(
 			[this, request]()
 			{
-			return this->searchOmsOpenAPIMonitorMetric(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OceanBaseProClient::SearchOmsOpenAPIProjectsOutcome OceanBaseProClient::searchOmsOpenAPIProjects(const SearchOmsOpenAPIProjectsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SearchOmsOpenAPIProjectsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SearchOmsOpenAPIProjectsOutcome(SearchOmsOpenAPIProjectsResult(outcome.result()));
-	else
-		return SearchOmsOpenAPIProjectsOutcome(outcome.error());
-}
-
-void OceanBaseProClient::searchOmsOpenAPIProjectsAsync(const SearchOmsOpenAPIProjectsRequest& request, const SearchOmsOpenAPIProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, searchOmsOpenAPIProjects(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OceanBaseProClient::SearchOmsOpenAPIProjectsOutcomeCallable OceanBaseProClient::searchOmsOpenAPIProjectsCallable(const SearchOmsOpenAPIProjectsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SearchOmsOpenAPIProjectsOutcome()>>(
-			[this, request]()
-			{
-			return this->searchOmsOpenAPIProjects(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OceanBaseProClient::StartOmsOpenAPIProjectOutcome OceanBaseProClient::startOmsOpenAPIProject(const StartOmsOpenAPIProjectRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StartOmsOpenAPIProjectOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StartOmsOpenAPIProjectOutcome(StartOmsOpenAPIProjectResult(outcome.result()));
-	else
-		return StartOmsOpenAPIProjectOutcome(outcome.error());
-}
-
-void OceanBaseProClient::startOmsOpenAPIProjectAsync(const StartOmsOpenAPIProjectRequest& request, const StartOmsOpenAPIProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, startOmsOpenAPIProject(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OceanBaseProClient::StartOmsOpenAPIProjectOutcomeCallable OceanBaseProClient::startOmsOpenAPIProjectCallable(const StartOmsOpenAPIProjectRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StartOmsOpenAPIProjectOutcome()>>(
-			[this, request]()
-			{
-			return this->startOmsOpenAPIProject(request);
+			return this->retryProjectModifyRecords(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4011,42 +4047,6 @@ OceanBaseProClient::StartProjectsByLabelOutcomeCallable OceanBaseProClient::star
 	return task->get_future();
 }
 
-OceanBaseProClient::StopOmsOpenAPIProjectOutcome OceanBaseProClient::stopOmsOpenAPIProject(const StopOmsOpenAPIProjectRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StopOmsOpenAPIProjectOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StopOmsOpenAPIProjectOutcome(StopOmsOpenAPIProjectResult(outcome.result()));
-	else
-		return StopOmsOpenAPIProjectOutcome(outcome.error());
-}
-
-void OceanBaseProClient::stopOmsOpenAPIProjectAsync(const StopOmsOpenAPIProjectRequest& request, const StopOmsOpenAPIProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, stopOmsOpenAPIProject(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OceanBaseProClient::StopOmsOpenAPIProjectOutcomeCallable OceanBaseProClient::stopOmsOpenAPIProjectCallable(const StopOmsOpenAPIProjectRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StopOmsOpenAPIProjectOutcome()>>(
-			[this, request]()
-			{
-			return this->stopOmsOpenAPIProject(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OceanBaseProClient::StopProjectOutcome OceanBaseProClient::stopProject(const StopProjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4077,6 +4077,42 @@ OceanBaseProClient::StopProjectOutcomeCallable OceanBaseProClient::stopProjectCa
 			[this, request]()
 			{
 			return this->stopProject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::StopProjectModifyRecordsOutcome OceanBaseProClient::stopProjectModifyRecords(const StopProjectModifyRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopProjectModifyRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopProjectModifyRecordsOutcome(StopProjectModifyRecordsResult(outcome.result()));
+	else
+		return StopProjectModifyRecordsOutcome(outcome.error());
+}
+
+void OceanBaseProClient::stopProjectModifyRecordsAsync(const StopProjectModifyRecordsRequest& request, const StopProjectModifyRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopProjectModifyRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::StopProjectModifyRecordsOutcomeCallable OceanBaseProClient::stopProjectModifyRecordsCallable(const StopProjectModifyRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopProjectModifyRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->stopProjectModifyRecords(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

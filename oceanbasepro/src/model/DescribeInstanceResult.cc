@@ -102,6 +102,16 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		instance_.proxyClusterId = instanceNode["ProxyClusterId"].asString();
 	if(!instanceNode["CpuArchitecture"].isNull())
 		instance_.cpuArchitecture = instanceNode["CpuArchitecture"].asString();
+	if(!instanceNode["UnitSpec"].isNull())
+		instance_.unitSpec = instanceNode["UnitSpec"].asString();
+	if(!instanceNode["SharedUnitNumLimit"].isNull())
+		instance_.sharedUnitNumLimit = std::stoi(instanceNode["SharedUnitNumLimit"].asString());
+	if(!instanceNode["ExclusiveUnitNumLimit"].isNull())
+		instance_.exclusiveUnitNumLimit = std::stoi(instanceNode["ExclusiveUnitNumLimit"].asString());
+	if(!instanceNode["EnableReadOnlyReplica"].isNull())
+		instance_.enableReadOnlyReplica = instanceNode["EnableReadOnlyReplica"].asString() == "true";
+	if(!instanceNode["EnableReadOnlyReplicaManagement"].isNull())
+		instance_.enableReadOnlyReplicaManagement = instanceNode["EnableReadOnlyReplicaManagement"].asString() == "true";
 	auto resourceNode = instanceNode["Resource"];
 	if(!resourceNode["UnitCount"].isNull())
 		instance_.resource.unitCount = std::stol(resourceNode["UnitCount"].asString());
@@ -182,6 +192,10 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		instance_.dataDiskAutoScaleConfig.scaleStepInNormal = std::stol(dataDiskAutoScaleConfigNode["ScaleStepInNormal"].asString());
 	if(!dataDiskAutoScaleConfigNode["ScaleStepInMerge"].isNull())
 		instance_.dataDiskAutoScaleConfig.scaleStepInMerge = std::stol(dataDiskAutoScaleConfigNode["ScaleStepInMerge"].asString());
+	if(!dataDiskAutoScaleConfigNode["UpperScaleStrategy"].isNull())
+		instance_.dataDiskAutoScaleConfig.upperScaleStrategy = dataDiskAutoScaleConfigNode["UpperScaleStrategy"].asString();
+	if(!dataDiskAutoScaleConfigNode["UpperScaleStep"].isNull())
+		instance_.dataDiskAutoScaleConfig.upperScaleStep = dataDiskAutoScaleConfigNode["UpperScaleStep"].asString();
 	auto readOnlyResourceNode = instanceNode["ReadOnlyResource"];
 	if(!readOnlyResourceNode["UnitCount"].isNull())
 		instance_.readOnlyResource.unitCount = std::stol(readOnlyResourceNode["UnitCount"].asString());
