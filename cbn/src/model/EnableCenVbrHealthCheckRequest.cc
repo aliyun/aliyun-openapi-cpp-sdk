@@ -52,6 +52,15 @@ void EnableCenVbrHealthCheckRequest::setHealthCheckTargetIp(const std::string &h
   setParameter(std::string("HealthCheckTargetIp"), healthCheckTargetIp);
 }
 
+std::string EnableCenVbrHealthCheckRequest::getDescription() const {
+  return description_;
+}
+
+void EnableCenVbrHealthCheckRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
+}
+
 int EnableCenVbrHealthCheckRequest::getHealthyThreshold() const {
   return healthyThreshold_;
 }

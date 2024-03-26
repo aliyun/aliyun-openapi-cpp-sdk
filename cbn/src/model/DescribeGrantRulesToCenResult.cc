@@ -57,6 +57,8 @@ void DescribeGrantRulesToCenResult::parse(const std::string &payload)
 			grantRulesObject.orderType = valueGrantRulesGrantRule["OrderType"].asString();
 		if(!valueGrantRulesGrantRule["CenOwnerId"].isNull())
 			grantRulesObject.cenOwnerId = std::stol(valueGrantRulesGrantRule["CenOwnerId"].asString());
+		if(!valueGrantRulesGrantRule["CreateTime"].isNull())
+			grantRulesObject.createTime = std::stol(valueGrantRulesGrantRule["CreateTime"].asString());
 		grantRules_.push_back(grantRulesObject);
 	}
 	if(!value["TotalCount"].isNull())

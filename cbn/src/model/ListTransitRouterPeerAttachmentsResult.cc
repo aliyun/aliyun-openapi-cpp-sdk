@@ -79,6 +79,8 @@ void ListTransitRouterPeerAttachmentsResult::parse(const std::string &payload)
 			transitRouterAttachmentsObject.transitRouterAttachmentName = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentName"].asString();
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["CenId"].isNull())
 			transitRouterAttachmentsObject.cenId = valueTransitRouterAttachmentsTransitRouterAttachment["CenId"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["DefaultLinkType"].isNull())
+			transitRouterAttachmentsObject.defaultLinkType = valueTransitRouterAttachmentsTransitRouterAttachment["DefaultLinkType"].asString();
 		auto allTagsNode = valueTransitRouterAttachmentsTransitRouterAttachment["Tags"]["Tag"];
 		for (auto valueTransitRouterAttachmentsTransitRouterAttachmentTagsTag : allTagsNode)
 		{

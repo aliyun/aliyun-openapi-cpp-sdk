@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERVBRATTACHMENTSRESULT_H_
-#define ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERVBRATTACHMENTSRESULT_H_
+#ifndef ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERECRATTACHMENTSRESULT_H_
+#define ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERECRATTACHMENTSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CBN_EXPORT ListTransitRouterVbrAttachmentsResult : public ServiceResult
+			class ALIBABACLOUD_CBN_EXPORT ListTransitRouterEcrAttachmentsResult : public ServiceResult
 			{
 			public:
 				struct TransitRouterAttachment
@@ -41,24 +41,24 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::string transitRouterAttachmentId;
+					std::string transitRouterRegionId;
 					std::string transitRouterAttachmentName;
 					std::string resourceType;
-					std::string vbrRegionId;
-					std::string vbrId;
 					bool autoPublishRouteEnabled;
 					std::string orderType;
-					long vbrOwnerId;
+					std::string ecrId;
 					std::string creationTime;
 					std::string cenId;
+					long ecrOwnerId;
 					std::vector<TransitRouterAttachment::Tag> tags;
 					std::string transitRouterAttachmentDescription;
 					std::string transitRouterId;
 				};
 
 
-				ListTransitRouterVbrAttachmentsResult();
-				explicit ListTransitRouterVbrAttachmentsResult(const std::string &payload);
-				~ListTransitRouterVbrAttachmentsResult();
+				ListTransitRouterEcrAttachmentsResult();
+				explicit ListTransitRouterEcrAttachmentsResult(const std::string &payload);
+				~ListTransitRouterEcrAttachmentsResult();
 				int getTotalCount()const;
 				std::string getNextToken()const;
 				int getMaxResults()const;
@@ -76,4 +76,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERVBRATTACHMENTSRESULT_H_
+#endif // !ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERECRATTACHMENTSRESULT_H_

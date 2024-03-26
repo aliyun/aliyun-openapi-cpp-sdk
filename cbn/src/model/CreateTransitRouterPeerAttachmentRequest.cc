@@ -79,6 +79,15 @@ void CreateTransitRouterPeerAttachmentRequest::setTransitRouterAttachmentName(co
   setParameter(std::string("TransitRouterAttachmentName"), transitRouterAttachmentName);
 }
 
+std::string CreateTransitRouterPeerAttachmentRequest::getDefaultLinkType() const {
+  return defaultLinkType_;
+}
+
+void CreateTransitRouterPeerAttachmentRequest::setDefaultLinkType(const std::string &defaultLinkType) {
+  defaultLinkType_ = defaultLinkType;
+  setParameter(std::string("DefaultLinkType"), defaultLinkType);
+}
+
 std::string CreateTransitRouterPeerAttachmentRequest::getRegionId() const {
   return regionId_;
 }

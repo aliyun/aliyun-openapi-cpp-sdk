@@ -46,6 +46,8 @@ public:
 	void setRouteTableAssociationEnabled(bool routeTableAssociationEnabled);
 	std::string getTransitRouterAttachmentName() const;
 	void setTransitRouterAttachmentName(const std::string &transitRouterAttachmentName);
+	std::string getDefaultLinkType() const;
+	void setDefaultLinkType(const std::string &defaultLinkType);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::vector<Tag> getTag() const;
@@ -86,6 +88,7 @@ private:
 	std::string cenId_;
 	bool routeTableAssociationEnabled_;
 	std::string transitRouterAttachmentName_;
+	std::string defaultLinkType_;
 	std::string regionId_;
 	std::vector<Tag> tag_;
 	bool autoPublishRouteEnabled_;

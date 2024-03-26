@@ -43,6 +43,15 @@ void ListTransitRouterPeerAttachmentsRequest::setCenId(const std::string &cenId)
   setParameter(std::string("CenId"), cenId);
 }
 
+std::string ListTransitRouterPeerAttachmentsRequest::getDefaultLinkType() const {
+  return defaultLinkType_;
+}
+
+void ListTransitRouterPeerAttachmentsRequest::setDefaultLinkType(const std::string &defaultLinkType) {
+  defaultLinkType_ = defaultLinkType;
+  setParameter(std::string("DefaultLinkType"), defaultLinkType);
+}
+
 std::string ListTransitRouterPeerAttachmentsRequest::getRegionId() const {
   return regionId_;
 }

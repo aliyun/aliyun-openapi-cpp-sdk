@@ -65,6 +65,8 @@ void DescribeCenVbrHealthCheckResult::parse(const std::string &payload)
 			vbrHealthChecksObject.packetLoss = std::stol(valueVbrHealthChecksVbrHealthCheck["PacketLoss"].asString());
 		if(!valueVbrHealthChecksVbrHealthCheck["HealthCheckOnly"].isNull())
 			vbrHealthChecksObject.healthCheckOnly = valueVbrHealthChecksVbrHealthCheck["HealthCheckOnly"].asString() == "true";
+		if(!valueVbrHealthChecksVbrHealthCheck["Description"].isNull())
+			vbrHealthChecksObject.description = valueVbrHealthChecksVbrHealthCheck["Description"].asString();
 		vbrHealthChecks_.push_back(vbrHealthChecksObject);
 	}
 	if(!value["PageSize"].isNull())

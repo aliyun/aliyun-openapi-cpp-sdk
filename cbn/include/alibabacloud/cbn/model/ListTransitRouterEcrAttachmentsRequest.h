@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERPEERATTACHMENTSREQUEST_H_
-#define ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERPEERATTACHMENTSREQUEST_H_
+#ifndef ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERECRATTACHMENTSREQUEST_H_
+#define ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERECRATTACHMENTSREQUEST_H_
 
 #include <alibabacloud/cbn/CbnExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,18 @@
 namespace AlibabaCloud {
 namespace Cbn {
 namespace Model {
-class ALIBABACLOUD_CBN_EXPORT ListTransitRouterPeerAttachmentsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CBN_EXPORT ListTransitRouterEcrAttachmentsRequest : public RpcServiceRequest {
 public:
 	struct Tag {
 		std::string value;
 		std::string key;
 	};
-	ListTransitRouterPeerAttachmentsRequest();
-	~ListTransitRouterPeerAttachmentsRequest();
+	ListTransitRouterEcrAttachmentsRequest();
+	~ListTransitRouterEcrAttachmentsRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getCenId() const;
 	void setCenId(const std::string &cenId);
-	std::string getDefaultLinkType() const;
-	void setDefaultLinkType(const std::string &defaultLinkType);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
@@ -66,7 +64,6 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string cenId_;
-	std::string defaultLinkType_;
 	std::string regionId_;
 	std::string nextToken_;
 	std::vector<Tag> tag_;
@@ -82,4 +79,4 @@ private:
 } // namespace Model
 } // namespace Cbn
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERPEERATTACHMENTSREQUEST_H_
+#endif // !ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERECRATTACHMENTSREQUEST_H_

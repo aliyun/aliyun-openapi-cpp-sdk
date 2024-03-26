@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					long peerTransitRouterOwnerId;
 					std::string transitRouterAttachmentName;
 					std::string resourceType;
+					std::string defaultLinkType;
 					std::string bandwidthType;
 					bool autoPublishRouteEnabled;
 					int bandwidth;

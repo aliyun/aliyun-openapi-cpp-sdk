@@ -38,6 +38,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getTransitRouterAttachmentName() const;
 	void setTransitRouterAttachmentName(const std::string &transitRouterAttachmentName);
+	std::string getDefaultLinkType() const;
+	void setDefaultLinkType(const std::string &defaultLinkType);
 	bool getAutoPublishRouteEnabled() const;
 	void setAutoPublishRouteEnabled(bool autoPublishRouteEnabled);
 	bool getDryRun() const;
@@ -66,6 +68,7 @@ private:
 	std::string bandwidthType_;
 	std::string clientToken_;
 	std::string transitRouterAttachmentName_;
+	std::string defaultLinkType_;
 	bool autoPublishRouteEnabled_;
 	bool dryRun_;
 	std::string resourceOwnerAccount_;

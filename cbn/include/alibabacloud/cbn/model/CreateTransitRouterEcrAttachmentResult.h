@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CBN_MODEL_DESCRIBEGRANTRULESTORESOURCERESULT_H_
-#define ALIBABACLOUD_CBN_MODEL_DESCRIBEGRANTRULESTORESOURCERESULT_H_
+#ifndef ALIBABACLOUD_CBN_MODEL_CREATETRANSITROUTERECRATTACHMENTRESULT_H_
+#define ALIBABACLOUD_CBN_MODEL_CREATETRANSITROUTERECRATTACHMENTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CBN_EXPORT DescribeGrantRulesToResourceResult : public ServiceResult
+			class ALIBABACLOUD_CBN_EXPORT CreateTransitRouterEcrAttachmentResult : public ServiceResult
 			{
 			public:
-				struct GrantRule
-				{
-					std::string orderType;
-					long cenOwnerId;
-					std::string createTime;
-					std::string cenId;
-				};
 
 
-				DescribeGrantRulesToResourceResult();
-				explicit DescribeGrantRulesToResourceResult(const std::string &payload);
-				~DescribeGrantRulesToResourceResult();
-				int getTotalCount()const;
-				std::string getNextToken()const;
-				int getMaxResults()const;
-				std::vector<GrantRule> getGrantRules()const;
+				CreateTransitRouterEcrAttachmentResult();
+				explicit CreateTransitRouterEcrAttachmentResult(const std::string &payload);
+				~CreateTransitRouterEcrAttachmentResult();
+				std::string getTransitRouterAttachmentId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				std::string nextToken_;
-				int maxResults_;
-				std::vector<GrantRule> grantRules_;
+				std::string transitRouterAttachmentId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CBN_MODEL_DESCRIBEGRANTRULESTORESOURCERESULT_H_
+#endif // !ALIBABACLOUD_CBN_MODEL_CREATETRANSITROUTERECRATTACHMENTRESULT_H_

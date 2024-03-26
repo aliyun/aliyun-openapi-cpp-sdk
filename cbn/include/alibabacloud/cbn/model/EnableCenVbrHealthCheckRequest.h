@@ -36,6 +36,8 @@ public:
 	void setCenId(const std::string &cenId);
 	std::string getHealthCheckTargetIp() const;
 	void setHealthCheckTargetIp(const std::string &healthCheckTargetIp);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
 	int getHealthyThreshold() const;
 	void setHealthyThreshold(int healthyThreshold);
 	long getVbrInstanceOwnerId() const;
@@ -63,6 +65,7 @@ private:
 	long resourceOwnerId_;
 	std::string cenId_;
 	std::string healthCheckTargetIp_;
+	std::string description_;
 	int healthyThreshold_;
 	long vbrInstanceOwnerId_;
 	bool healthCheckOnly_;

@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string childInstanceType;
 					std::string orderType;
 					long cenOwnerId;
+					long createTime;
 					std::string cenId;
 					long childInstanceOwnerId;
 					std::string childInstanceId;

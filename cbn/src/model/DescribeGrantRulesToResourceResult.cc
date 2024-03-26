@@ -49,6 +49,8 @@ void DescribeGrantRulesToResourceResult::parse(const std::string &payload)
 			grantRulesObject.orderType = valueGrantRulesGrantRule["OrderType"].asString();
 		if(!valueGrantRulesGrantRule["CenId"].isNull())
 			grantRulesObject.cenId = valueGrantRulesGrantRule["CenId"].asString();
+		if(!valueGrantRulesGrantRule["CreateTime"].isNull())
+			grantRulesObject.createTime = valueGrantRulesGrantRule["CreateTime"].asString();
 		grantRules_.push_back(grantRulesObject);
 	}
 	if(!value["NextToken"].isNull())

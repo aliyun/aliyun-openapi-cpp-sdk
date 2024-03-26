@@ -43,6 +43,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getCenId() const;
 	void setCenId(const std::string &cenId);
+	bool getGetPrimaryStandbyZoneInfo() const;
+	void setGetPrimaryStandbyZoneInfo(bool getPrimaryStandbyZoneInfo);
 	std::vector<FeatureFilter> getFeatureFilter() const;
 	void setFeatureFilter(const std::vector<FeatureFilter> &featureFilter);
 	std::string getType() const;
@@ -74,6 +76,7 @@ private:
 	std::string transitRouterName_;
 	long resourceOwnerId_;
 	std::string cenId_;
+	bool getPrimaryStandbyZoneInfo_;
 	std::vector<FeatureFilter> featureFilter_;
 	std::string type_;
 	std::vector<std::string> transitRouterIds_;

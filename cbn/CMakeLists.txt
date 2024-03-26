@@ -61,6 +61,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/CreateTransitRouterResult.h
 	include/alibabacloud/cbn/model/CreateTransitRouterCidrRequest.h
 	include/alibabacloud/cbn/model/CreateTransitRouterCidrResult.h
+	include/alibabacloud/cbn/model/CreateTransitRouterEcrAttachmentRequest.h
+	include/alibabacloud/cbn/model/CreateTransitRouterEcrAttachmentResult.h
 	include/alibabacloud/cbn/model/CreateTransitRouterMulticastDomainRequest.h
 	include/alibabacloud/cbn/model/CreateTransitRouterMulticastDomainResult.h
 	include/alibabacloud/cbn/model/CreateTransitRouterPeerAttachmentRequest.h
@@ -105,6 +107,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/DeleteTransitRouterResult.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterCidrRequest.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterCidrResult.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterEcrAttachmentRequest.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterEcrAttachmentResult.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterMulticastDomainRequest.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterMulticastDomainResult.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterPeerAttachmentRequest.h
@@ -205,6 +209,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/ListTransitRouterCidrResult.h
 	include/alibabacloud/cbn/model/ListTransitRouterCidrAllocationRequest.h
 	include/alibabacloud/cbn/model/ListTransitRouterCidrAllocationResult.h
+	include/alibabacloud/cbn/model/ListTransitRouterEcrAttachmentsRequest.h
+	include/alibabacloud/cbn/model/ListTransitRouterEcrAttachmentsResult.h
 	include/alibabacloud/cbn/model/ListTransitRouterMulticastDomainAssociationsRequest.h
 	include/alibabacloud/cbn/model/ListTransitRouterMulticastDomainAssociationsResult.h
 	include/alibabacloud/cbn/model/ListTransitRouterMulticastDomainVSwitchesRequest.h
@@ -291,6 +297,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/UpdateTrafficMarkingPolicyAttributeResult.h
 	include/alibabacloud/cbn/model/UpdateTransitRouterRequest.h
 	include/alibabacloud/cbn/model/UpdateTransitRouterResult.h
+	include/alibabacloud/cbn/model/UpdateTransitRouterEcrAttachmentAttributeRequest.h
+	include/alibabacloud/cbn/model/UpdateTransitRouterEcrAttachmentAttributeResult.h
 	include/alibabacloud/cbn/model/UpdateTransitRouterPeerAttachmentAttributeRequest.h
 	include/alibabacloud/cbn/model/UpdateTransitRouterPeerAttachmentAttributeResult.h
 	include/alibabacloud/cbn/model/UpdateTransitRouterRouteEntryRequest.h
@@ -350,6 +358,8 @@ set(cbn_src
 	src/model/CreateTransitRouterResult.cc
 	src/model/CreateTransitRouterCidrRequest.cc
 	src/model/CreateTransitRouterCidrResult.cc
+	src/model/CreateTransitRouterEcrAttachmentRequest.cc
+	src/model/CreateTransitRouterEcrAttachmentResult.cc
 	src/model/CreateTransitRouterMulticastDomainRequest.cc
 	src/model/CreateTransitRouterMulticastDomainResult.cc
 	src/model/CreateTransitRouterPeerAttachmentRequest.cc
@@ -394,6 +404,8 @@ set(cbn_src
 	src/model/DeleteTransitRouterResult.cc
 	src/model/DeleteTransitRouterCidrRequest.cc
 	src/model/DeleteTransitRouterCidrResult.cc
+	src/model/DeleteTransitRouterEcrAttachmentRequest.cc
+	src/model/DeleteTransitRouterEcrAttachmentResult.cc
 	src/model/DeleteTransitRouterMulticastDomainRequest.cc
 	src/model/DeleteTransitRouterMulticastDomainResult.cc
 	src/model/DeleteTransitRouterPeerAttachmentRequest.cc
@@ -494,6 +506,8 @@ set(cbn_src
 	src/model/ListTransitRouterCidrResult.cc
 	src/model/ListTransitRouterCidrAllocationRequest.cc
 	src/model/ListTransitRouterCidrAllocationResult.cc
+	src/model/ListTransitRouterEcrAttachmentsRequest.cc
+	src/model/ListTransitRouterEcrAttachmentsResult.cc
 	src/model/ListTransitRouterMulticastDomainAssociationsRequest.cc
 	src/model/ListTransitRouterMulticastDomainAssociationsResult.cc
 	src/model/ListTransitRouterMulticastDomainVSwitchesRequest.cc
@@ -580,6 +594,8 @@ set(cbn_src
 	src/model/UpdateTrafficMarkingPolicyAttributeResult.cc
 	src/model/UpdateTransitRouterRequest.cc
 	src/model/UpdateTransitRouterResult.cc
+	src/model/UpdateTransitRouterEcrAttachmentAttributeRequest.cc
+	src/model/UpdateTransitRouterEcrAttachmentAttributeResult.cc
 	src/model/UpdateTransitRouterPeerAttachmentAttributeRequest.cc
 	src/model/UpdateTransitRouterPeerAttachmentAttributeResult.cc
 	src/model/UpdateTransitRouterRouteEntryRequest.cc

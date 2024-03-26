@@ -47,7 +47,13 @@ namespace AlibabaCloud
 						std::string value;
 						std::string key;
 					};
+					struct TransitRouterPrimaryStandbyZoneInfoListItem
+					{
+						std::string role;
+						std::string zoneId;
+					};
 					std::string status;
+					std::vector<TransitRouter::TransitRouterPrimaryStandbyZoneInfoListItem> transitRouterPrimaryStandbyZoneInfoList;
 					std::string transitRouterDescription;
 					std::string transitRouterName;
 					std::string serviceMode;

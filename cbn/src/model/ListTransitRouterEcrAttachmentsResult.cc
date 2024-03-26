@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cbn/model/ListTransitRouterVbrAttachmentsResult.h>
+#include <alibabacloud/cbn/model/ListTransitRouterEcrAttachmentsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Cbn;
 using namespace AlibabaCloud::Cbn::Model;
 
-ListTransitRouterVbrAttachmentsResult::ListTransitRouterVbrAttachmentsResult() :
+ListTransitRouterEcrAttachmentsResult::ListTransitRouterEcrAttachmentsResult() :
 	ServiceResult()
 {}
 
-ListTransitRouterVbrAttachmentsResult::ListTransitRouterVbrAttachmentsResult(const std::string &payload) :
+ListTransitRouterEcrAttachmentsResult::ListTransitRouterEcrAttachmentsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ListTransitRouterVbrAttachmentsResult::~ListTransitRouterVbrAttachmentsResult()
+ListTransitRouterEcrAttachmentsResult::~ListTransitRouterEcrAttachmentsResult()
 {}
 
-void ListTransitRouterVbrAttachmentsResult::parse(const std::string &payload)
+void ListTransitRouterEcrAttachmentsResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -53,16 +53,16 @@ void ListTransitRouterVbrAttachmentsResult::parse(const std::string &payload)
 			transitRouterAttachmentsObject.transitRouterId = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterId"].asString();
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["ResourceType"].isNull())
 			transitRouterAttachmentsObject.resourceType = valueTransitRouterAttachmentsTransitRouterAttachment["ResourceType"].asString();
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["VbrRegionId"].isNull())
-			transitRouterAttachmentsObject.vbrRegionId = valueTransitRouterAttachmentsTransitRouterAttachment["VbrRegionId"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterRegionId"].isNull())
+			transitRouterAttachmentsObject.transitRouterRegionId = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterRegionId"].asString();
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentDescription"].isNull())
 			transitRouterAttachmentsObject.transitRouterAttachmentDescription = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentDescription"].asString();
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["VbrOwnerId"].isNull())
-			transitRouterAttachmentsObject.vbrOwnerId = std::stol(valueTransitRouterAttachmentsTransitRouterAttachment["VbrOwnerId"].asString());
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["EcrOwnerId"].isNull())
+			transitRouterAttachmentsObject.ecrOwnerId = std::stol(valueTransitRouterAttachmentsTransitRouterAttachment["EcrOwnerId"].asString());
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["AutoPublishRouteEnabled"].isNull())
 			transitRouterAttachmentsObject.autoPublishRouteEnabled = valueTransitRouterAttachmentsTransitRouterAttachment["AutoPublishRouteEnabled"].asString() == "true";
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["VbrId"].isNull())
-			transitRouterAttachmentsObject.vbrId = valueTransitRouterAttachmentsTransitRouterAttachment["VbrId"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["EcrId"].isNull())
+			transitRouterAttachmentsObject.ecrId = valueTransitRouterAttachmentsTransitRouterAttachment["EcrId"].asString();
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentName"].isNull())
 			transitRouterAttachmentsObject.transitRouterAttachmentName = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentName"].asString();
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["CenId"].isNull())
@@ -90,22 +90,22 @@ void ListTransitRouterVbrAttachmentsResult::parse(const std::string &payload)
 
 }
 
-int ListTransitRouterVbrAttachmentsResult::getTotalCount()const
+int ListTransitRouterEcrAttachmentsResult::getTotalCount()const
 {
 	return totalCount_;
 }
 
-std::string ListTransitRouterVbrAttachmentsResult::getNextToken()const
+std::string ListTransitRouterEcrAttachmentsResult::getNextToken()const
 {
 	return nextToken_;
 }
 
-int ListTransitRouterVbrAttachmentsResult::getMaxResults()const
+int ListTransitRouterEcrAttachmentsResult::getMaxResults()const
 {
 	return maxResults_;
 }
 
-std::vector<ListTransitRouterVbrAttachmentsResult::TransitRouterAttachment> ListTransitRouterVbrAttachmentsResult::getTransitRouterAttachments()const
+std::vector<ListTransitRouterEcrAttachmentsResult::TransitRouterAttachment> ListTransitRouterEcrAttachmentsResult::getTransitRouterAttachments()const
 {
 	return transitRouterAttachments_;
 }

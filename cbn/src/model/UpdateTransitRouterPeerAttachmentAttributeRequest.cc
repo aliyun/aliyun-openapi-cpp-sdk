@@ -61,6 +61,15 @@ void UpdateTransitRouterPeerAttachmentAttributeRequest::setTransitRouterAttachme
   setParameter(std::string("TransitRouterAttachmentName"), transitRouterAttachmentName);
 }
 
+std::string UpdateTransitRouterPeerAttachmentAttributeRequest::getDefaultLinkType() const {
+  return defaultLinkType_;
+}
+
+void UpdateTransitRouterPeerAttachmentAttributeRequest::setDefaultLinkType(const std::string &defaultLinkType) {
+  defaultLinkType_ = defaultLinkType;
+  setParameter(std::string("DefaultLinkType"), defaultLinkType);
+}
+
 bool UpdateTransitRouterPeerAttachmentAttributeRequest::getAutoPublishRouteEnabled() const {
   return autoPublishRouteEnabled_;
 }

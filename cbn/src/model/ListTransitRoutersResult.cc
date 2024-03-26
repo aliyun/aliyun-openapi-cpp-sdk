@@ -91,6 +91,16 @@ void ListTransitRoutersResult::parse(const std::string &payload)
 				tagsObject.value = valueTransitRoutersTransitRouterTagsTag["Value"].asString();
 			transitRoutersObject.tags.push_back(tagsObject);
 		}
+		auto allTransitRouterPrimaryStandbyZoneInfoListNode = valueTransitRoutersTransitRouter["TransitRouterPrimaryStandbyZoneInfoList"]["TransitRouterPrimaryStandbyZoneInfoListItem"];
+		for (auto valueTransitRoutersTransitRouterTransitRouterPrimaryStandbyZoneInfoListTransitRouterPrimaryStandbyZoneInfoListItem : allTransitRouterPrimaryStandbyZoneInfoListNode)
+		{
+			TransitRouter::TransitRouterPrimaryStandbyZoneInfoListItem transitRouterPrimaryStandbyZoneInfoListObject;
+			if(!valueTransitRoutersTransitRouterTransitRouterPrimaryStandbyZoneInfoListTransitRouterPrimaryStandbyZoneInfoListItem["ZoneId"].isNull())
+				transitRouterPrimaryStandbyZoneInfoListObject.zoneId = valueTransitRoutersTransitRouterTransitRouterPrimaryStandbyZoneInfoListTransitRouterPrimaryStandbyZoneInfoListItem["ZoneId"].asString();
+			if(!valueTransitRoutersTransitRouterTransitRouterPrimaryStandbyZoneInfoListTransitRouterPrimaryStandbyZoneInfoListItem["Role"].isNull())
+				transitRouterPrimaryStandbyZoneInfoListObject.role = valueTransitRoutersTransitRouterTransitRouterPrimaryStandbyZoneInfoListTransitRouterPrimaryStandbyZoneInfoListItem["Role"].asString();
+			transitRoutersObject.transitRouterPrimaryStandbyZoneInfoList.push_back(transitRouterPrimaryStandbyZoneInfoListObject);
+		}
 		transitRouters_.push_back(transitRoutersObject);
 	}
 	if(!value["PageSize"].isNull())

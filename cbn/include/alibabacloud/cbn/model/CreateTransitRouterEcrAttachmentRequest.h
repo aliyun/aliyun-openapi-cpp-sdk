@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERPEERATTACHMENTSREQUEST_H_
-#define ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERPEERATTACHMENTSREQUEST_H_
+#ifndef ALIBABACLOUD_CBN_MODEL_CREATETRANSITROUTERECRATTACHMENTREQUEST_H_
+#define ALIBABACLOUD_CBN_MODEL_CREATETRANSITROUTERECRATTACHMENTREQUEST_H_
 
 #include <alibabacloud/cbn/CbnExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,40 @@
 namespace AlibabaCloud {
 namespace Cbn {
 namespace Model {
-class ALIBABACLOUD_CBN_EXPORT ListTransitRouterPeerAttachmentsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CBN_EXPORT CreateTransitRouterEcrAttachmentRequest : public RpcServiceRequest {
 public:
 	struct Tag {
 		std::string value;
 		std::string key;
 	};
-	ListTransitRouterPeerAttachmentsRequest();
-	~ListTransitRouterPeerAttachmentsRequest();
+	CreateTransitRouterEcrAttachmentRequest();
+	~CreateTransitRouterEcrAttachmentRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getCenId() const;
 	void setCenId(const std::string &cenId);
-	std::string getDefaultLinkType() const;
-	void setDefaultLinkType(const std::string &defaultLinkType);
+	bool getRouteTableAssociationEnabled() const;
+	void setRouteTableAssociationEnabled(bool routeTableAssociationEnabled);
+	std::string getTransitRouterAttachmentName() const;
+	void setTransitRouterAttachmentName(const std::string &transitRouterAttachmentName);
+	bool getFastLink() const;
+	void setFastLink(bool fastLink);
+	std::string getEcrId() const;
+	void setEcrId(const std::string &ecrId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getNextToken() const;
-	void setNextToken(const std::string &nextToken);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
+	bool getAutoPublishRouteEnabled() const;
+	void setAutoPublishRouteEnabled(bool autoPublishRouteEnabled);
+	bool getRouteTablePropagationEnabled() const;
+	void setRouteTablePropagationEnabled(bool routeTablePropagationEnabled);
+	long getEcrOwnerId() const;
+	void setEcrOwnerId(long ecrOwnerId);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -58,28 +72,32 @@ public:
 	void setResourceType(const std::string &resourceType);
 	std::string getVersion() const;
 	void setVersion(const std::string &version);
-	std::string getTransitRouterAttachmentId() const;
-	void setTransitRouterAttachmentId(const std::string &transitRouterAttachmentId);
-	int getMaxResults() const;
-	void setMaxResults(int maxResults);
+	std::string getTransitRouterAttachmentDescription() const;
+	void setTransitRouterAttachmentDescription(const std::string &transitRouterAttachmentDescription);
 
 private:
 	long resourceOwnerId_;
+	std::string clientToken_;
 	std::string cenId_;
-	std::string defaultLinkType_;
+	bool routeTableAssociationEnabled_;
+	std::string transitRouterAttachmentName_;
+	bool fastLink_;
+	std::string ecrId_;
 	std::string regionId_;
-	std::string nextToken_;
 	std::vector<Tag> tag_;
+	bool autoPublishRouteEnabled_;
+	bool routeTablePropagationEnabled_;
+	long ecrOwnerId_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string transitRouterId_;
 	std::string resourceType_;
 	std::string version_;
-	std::string transitRouterAttachmentId_;
-	int maxResults_;
+	std::string transitRouterAttachmentDescription_;
 };
 } // namespace Model
 } // namespace Cbn
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERPEERATTACHMENTSREQUEST_H_
+#endif // !ALIBABACLOUD_CBN_MODEL_CREATETRANSITROUTERECRATTACHMENTREQUEST_H_

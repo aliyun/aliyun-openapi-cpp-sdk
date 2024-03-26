@@ -52,6 +52,15 @@ void ListTransitRoutersRequest::setCenId(const std::string &cenId) {
   setParameter(std::string("CenId"), cenId);
 }
 
+bool ListTransitRoutersRequest::getGetPrimaryStandbyZoneInfo() const {
+  return getPrimaryStandbyZoneInfo_;
+}
+
+void ListTransitRoutersRequest::setGetPrimaryStandbyZoneInfo(bool getPrimaryStandbyZoneInfo) {
+  getPrimaryStandbyZoneInfo_ = getPrimaryStandbyZoneInfo;
+  setParameter(std::string("GetPrimaryStandbyZoneInfo"), getPrimaryStandbyZoneInfo ? "true" : "false");
+}
+
 std::vector<ListTransitRoutersRequest::FeatureFilter> ListTransitRoutersRequest::getFeatureFilter() const {
   return featureFilter_;
 }
