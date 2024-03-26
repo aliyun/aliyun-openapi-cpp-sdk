@@ -31,7 +31,7 @@ std::string DeleteScheduleRequest::getScheduleName() const {
 
 void DeleteScheduleRequest::setScheduleName(const std::string &scheduleName) {
   scheduleName_ = scheduleName;
-  setParameter(std::string("ScheduleName"), scheduleName);
+  setBodyParameter(std::string("ScheduleName"), scheduleName);
 }
 
 std::string DeleteScheduleRequest::getFlowName() const {
@@ -40,6 +40,6 @@ std::string DeleteScheduleRequest::getFlowName() const {
 
 void DeleteScheduleRequest::setFlowName(const std::string &flowName) {
   flowName_ = flowName;
-  setParameter(std::string("FlowName"), flowName);
+  setBodyParameter(std::string("FlowName"), flowName);
 }
 

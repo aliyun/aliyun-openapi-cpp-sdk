@@ -31,6 +31,6 @@ std::string DeleteFlowRequest::getName() const {
 
 void DeleteFlowRequest::setName(const std::string &name) {
   name_ = name;
-  setParameter(std::string("Name"), name);
+  setBodyParameter(std::string("Name"), name);
 }
 
