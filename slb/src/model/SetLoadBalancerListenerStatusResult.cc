@@ -14,46 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/slb/model/DescribeRegionsResult.h>
+#include <alibabacloud/slb/model/SetLoadBalancerListenerStatusResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Slb;
 using namespace AlibabaCloud::Slb::Model;
 
-DescribeRegionsResult::DescribeRegionsResult() :
+SetLoadBalancerListenerStatusResult::SetLoadBalancerListenerStatusResult() :
 	ServiceResult()
 {}
 
-DescribeRegionsResult::DescribeRegionsResult(const std::string &payload) :
+SetLoadBalancerListenerStatusResult::SetLoadBalancerListenerStatusResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeRegionsResult::~DescribeRegionsResult()
+SetLoadBalancerListenerStatusResult::~SetLoadBalancerListenerStatusResult()
 {}
 
-void DescribeRegionsResult::parse(const std::string &payload)
+void SetLoadBalancerListenerStatusResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRegionsNode = value["Regions"]["Region"];
-	for (auto valueRegionsRegion : allRegionsNode)
-	{
-		Region regionsObject;
-		if(!valueRegionsRegion["LocalName"].isNull())
-			regionsObject.localName = valueRegionsRegion["LocalName"].asString();
-		if(!valueRegionsRegion["RegionId"].isNull())
-			regionsObject.regionId = valueRegionsRegion["RegionId"].asString();
-		regions_.push_back(regionsObject);
-	}
 
-}
-
-std::vector<DescribeRegionsResult::Region> DescribeRegionsResult::getRegions()const
-{
-	return regions_;
 }
 

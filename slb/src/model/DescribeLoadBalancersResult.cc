@@ -43,70 +43,40 @@ void DescribeLoadBalancersResult::parse(const std::string &payload)
 	for (auto valueLoadBalancersLoadBalancer : allLoadBalancersNode)
 	{
 		LoadBalancer loadBalancersObject;
-		if(!valueLoadBalancersLoadBalancer["LoadBalancerId"].isNull())
-			loadBalancersObject.loadBalancerId = valueLoadBalancersLoadBalancer["LoadBalancerId"].asString();
-		if(!valueLoadBalancersLoadBalancer["LoadBalancerName"].isNull())
-			loadBalancersObject.loadBalancerName = valueLoadBalancersLoadBalancer["LoadBalancerName"].asString();
-		if(!valueLoadBalancersLoadBalancer["LoadBalancerStatus"].isNull())
-			loadBalancersObject.loadBalancerStatus = valueLoadBalancersLoadBalancer["LoadBalancerStatus"].asString();
-		if(!valueLoadBalancersLoadBalancer["Address"].isNull())
-			loadBalancersObject.address = valueLoadBalancersLoadBalancer["Address"].asString();
-		if(!valueLoadBalancersLoadBalancer["AddressType"].isNull())
-			loadBalancersObject.addressType = valueLoadBalancersLoadBalancer["AddressType"].asString();
-		if(!valueLoadBalancersLoadBalancer["RegionId"].isNull())
-			loadBalancersObject.regionId = valueLoadBalancersLoadBalancer["RegionId"].asString();
-		if(!valueLoadBalancersLoadBalancer["RegionIdAlias"].isNull())
-			loadBalancersObject.regionIdAlias = valueLoadBalancersLoadBalancer["RegionIdAlias"].asString();
-		if(!valueLoadBalancersLoadBalancer["VSwitchId"].isNull())
-			loadBalancersObject.vSwitchId = valueLoadBalancersLoadBalancer["VSwitchId"].asString();
 		if(!valueLoadBalancersLoadBalancer["VpcId"].isNull())
 			loadBalancersObject.vpcId = valueLoadBalancersLoadBalancer["VpcId"].asString();
-		if(!valueLoadBalancersLoadBalancer["NetworkType"].isNull())
-			loadBalancersObject.networkType = valueLoadBalancersLoadBalancer["NetworkType"].asString();
-		if(!valueLoadBalancersLoadBalancer["MasterZoneId"].isNull())
-			loadBalancersObject.masterZoneId = valueLoadBalancersLoadBalancer["MasterZoneId"].asString();
-		if(!valueLoadBalancersLoadBalancer["SlaveZoneId"].isNull())
-			loadBalancersObject.slaveZoneId = valueLoadBalancersLoadBalancer["SlaveZoneId"].asString();
-		if(!valueLoadBalancersLoadBalancer["InternetChargeType"].isNull())
-			loadBalancersObject.internetChargeType = valueLoadBalancersLoadBalancer["InternetChargeType"].asString();
-		if(!valueLoadBalancersLoadBalancer["CreateTime"].isNull())
-			loadBalancersObject.createTime = valueLoadBalancersLoadBalancer["CreateTime"].asString();
 		if(!valueLoadBalancersLoadBalancer["CreateTimeStamp"].isNull())
 			loadBalancersObject.createTimeStamp = std::stol(valueLoadBalancersLoadBalancer["CreateTimeStamp"].asString());
+		if(!valueLoadBalancersLoadBalancer["CreateTime"].isNull())
+			loadBalancersObject.createTime = valueLoadBalancersLoadBalancer["CreateTime"].asString();
+		if(!valueLoadBalancersLoadBalancer["LoadBalancerId"].isNull())
+			loadBalancersObject.loadBalancerId = valueLoadBalancersLoadBalancer["LoadBalancerId"].asString();
 		if(!valueLoadBalancersLoadBalancer["PayType"].isNull())
 			loadBalancersObject.payType = valueLoadBalancersLoadBalancer["PayType"].asString();
+		if(!valueLoadBalancersLoadBalancer["AddressType"].isNull())
+			loadBalancersObject.addressType = valueLoadBalancersLoadBalancer["AddressType"].asString();
+		if(!valueLoadBalancersLoadBalancer["NetworkType"].isNull())
+			loadBalancersObject.networkType = valueLoadBalancersLoadBalancer["NetworkType"].asString();
+		if(!valueLoadBalancersLoadBalancer["RegionId"].isNull())
+			loadBalancersObject.regionId = valueLoadBalancersLoadBalancer["RegionId"].asString();
+		if(!valueLoadBalancersLoadBalancer["VSwitchId"].isNull())
+			loadBalancersObject.vSwitchId = valueLoadBalancersLoadBalancer["VSwitchId"].asString();
+		if(!valueLoadBalancersLoadBalancer["LoadBalancerStatus"].isNull())
+			loadBalancersObject.loadBalancerStatus = valueLoadBalancersLoadBalancer["LoadBalancerStatus"].asString();
+		if(!valueLoadBalancersLoadBalancer["LoadBalancerName"].isNull())
+			loadBalancersObject.loadBalancerName = valueLoadBalancersLoadBalancer["LoadBalancerName"].asString();
 		if(!valueLoadBalancersLoadBalancer["ResourceGroupId"].isNull())
 			loadBalancersObject.resourceGroupId = valueLoadBalancersLoadBalancer["ResourceGroupId"].asString();
-		if(!valueLoadBalancersLoadBalancer["AddressIPVersion"].isNull())
-			loadBalancersObject.addressIPVersion = valueLoadBalancersLoadBalancer["AddressIPVersion"].asString();
-		if(!valueLoadBalancersLoadBalancer["BusinessStatus"].isNull())
-			loadBalancersObject.businessStatus = valueLoadBalancersLoadBalancer["BusinessStatus"].asString();
-		if(!valueLoadBalancersLoadBalancer["ModificationProtectionStatus"].isNull())
-			loadBalancersObject.modificationProtectionStatus = valueLoadBalancersLoadBalancer["ModificationProtectionStatus"].asString();
-		if(!valueLoadBalancersLoadBalancer["ModificationProtectionReason"].isNull())
-			loadBalancersObject.modificationProtectionReason = valueLoadBalancersLoadBalancer["ModificationProtectionReason"].asString();
-		if(!valueLoadBalancersLoadBalancer["Bandwidth"].isNull())
-			loadBalancersObject.bandwidth = std::stoi(valueLoadBalancersLoadBalancer["Bandwidth"].asString());
-		if(!valueLoadBalancersLoadBalancer["InternetChargeTypeAlias"].isNull())
-			loadBalancersObject.internetChargeTypeAlias = valueLoadBalancersLoadBalancer["InternetChargeTypeAlias"].asString();
-		if(!valueLoadBalancersLoadBalancer["LoadBalancerSpec"].isNull())
-			loadBalancersObject.loadBalancerSpec = valueLoadBalancersLoadBalancer["LoadBalancerSpec"].asString();
-		if(!valueLoadBalancersLoadBalancer["DeleteProtection"].isNull())
-			loadBalancersObject.deleteProtection = valueLoadBalancersLoadBalancer["DeleteProtection"].asString();
-		if(!valueLoadBalancersLoadBalancer["SpecBpsFlag"].isNull())
-			loadBalancersObject.specBpsFlag = valueLoadBalancersLoadBalancer["SpecBpsFlag"].asString() == "true";
-		if(!valueLoadBalancersLoadBalancer["SpecType"].isNull())
-			loadBalancersObject.specType = valueLoadBalancersLoadBalancer["SpecType"].asString();
-		auto allTagsNode = valueLoadBalancersLoadBalancer["Tags"]["Tag"];
-		for (auto valueLoadBalancersLoadBalancerTagsTag : allTagsNode)
-		{
-			LoadBalancer::Tag tagsObject;
-			if(!valueLoadBalancersLoadBalancerTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = valueLoadBalancersLoadBalancerTagsTag["TagKey"].asString();
-			if(!valueLoadBalancersLoadBalancerTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = valueLoadBalancersLoadBalancerTagsTag["TagValue"].asString();
-			loadBalancersObject.tags.push_back(tagsObject);
-		}
+		if(!valueLoadBalancersLoadBalancer["InternetChargeType"].isNull())
+			loadBalancersObject.internetChargeType = valueLoadBalancersLoadBalancer["InternetChargeType"].asString();
+		if(!valueLoadBalancersLoadBalancer["Address"].isNull())
+			loadBalancersObject.address = valueLoadBalancersLoadBalancer["Address"].asString();
+		if(!valueLoadBalancersLoadBalancer["SlaveZoneId"].isNull())
+			loadBalancersObject.slaveZoneId = valueLoadBalancersLoadBalancer["SlaveZoneId"].asString();
+		if(!valueLoadBalancersLoadBalancer["RegionIdAlias"].isNull())
+			loadBalancersObject.regionIdAlias = valueLoadBalancersLoadBalancer["RegionIdAlias"].asString();
+		if(!valueLoadBalancersLoadBalancer["MasterZoneId"].isNull())
+			loadBalancersObject.masterZoneId = valueLoadBalancersLoadBalancer["MasterZoneId"].asString();
 		loadBalancers_.push_back(loadBalancersObject);
 	}
 	if(!value["PageNumber"].isNull())

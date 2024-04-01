@@ -43,18 +43,10 @@ void RemoveBackendServersResult::parse(const std::string &payload)
 	for (auto valueBackendServersBackendServer : allBackendServersNode)
 	{
 		BackendServer backendServersObject;
-		if(!valueBackendServersBackendServer["ServerId"].isNull())
-			backendServersObject.serverId = valueBackendServersBackendServer["ServerId"].asString();
 		if(!valueBackendServersBackendServer["Weight"].isNull())
 			backendServersObject.weight = std::stoi(valueBackendServersBackendServer["Weight"].asString());
-		if(!valueBackendServersBackendServer["ServerIp"].isNull())
-			backendServersObject.serverIp = valueBackendServersBackendServer["ServerIp"].asString();
-		if(!valueBackendServersBackendServer["VpcId"].isNull())
-			backendServersObject.vpcId = valueBackendServersBackendServer["VpcId"].asString();
-		if(!valueBackendServersBackendServer["Type"].isNull())
-			backendServersObject.type = valueBackendServersBackendServer["Type"].asString();
-		if(!valueBackendServersBackendServer["Description"].isNull())
-			backendServersObject.description = valueBackendServersBackendServer["Description"].asString();
+		if(!valueBackendServersBackendServer["ServerId"].isNull())
+			backendServersObject.serverId = valueBackendServersBackendServer["ServerId"].asString();
 		backendServers_.push_back(backendServersObject);
 	}
 	if(!value["LoadBalancerId"].isNull())

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SLB_MODEL_ADDBACKENDSERVERSRESULT_H_
-#define ALIBABACLOUD_SLB_MODEL_ADDBACKENDSERVERSRESULT_H_
+#ifndef ALIBABACLOUD_SLB_MODEL_SETLOADBALANCERLISTENERSTATUSRESULT_H_
+#define ALIBABACLOUD_SLB_MODEL_SETLOADBALANCERLISTENERSTATUSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,30 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SLB_EXPORT AddBackendServersResult : public ServiceResult
+			class ALIBABACLOUD_SLB_EXPORT SetLoadBalancerListenerStatusResult : public ServiceResult
 			{
 			public:
-				struct BackendServer
-				{
-					std::string serverId;
-					std::string weight;
-				};
 
 
-				AddBackendServersResult();
-				explicit AddBackendServersResult(const std::string &payload);
-				~AddBackendServersResult();
-				std::string getLoadBalancerId()const;
-				std::vector<BackendServer> getBackendServers()const;
+				SetLoadBalancerListenerStatusResult();
+				explicit SetLoadBalancerListenerStatusResult(const std::string &payload);
+				~SetLoadBalancerListenerStatusResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string loadBalancerId_;
-				std::vector<BackendServer> backendServers_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SLB_MODEL_ADDBACKENDSERVERSRESULT_H_
+#endif // !ALIBABACLOUD_SLB_MODEL_SETLOADBALANCERLISTENERSTATUSRESULT_H_

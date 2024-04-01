@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SLB_MODEL_DESCRIBELOADBALANCERATTRIBUTEREQUEST_H_
-#define ALIBABACLOUD_SLB_MODEL_DESCRIBELOADBALANCERATTRIBUTEREQUEST_H_
+#ifndef ALIBABACLOUD_SLB_MODEL_SETLOADBALANCERLISTENERSTATUSREQUEST_H_
+#define ALIBABACLOUD_SLB_MODEL_SETLOADBALANCERLISTENERSTATUSREQUEST_H_
 
 #include <alibabacloud/slb/SlbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,38 +26,35 @@
 namespace AlibabaCloud {
 namespace Slb {
 namespace Model {
-class ALIBABACLOUD_SLB_EXPORT DescribeLoadBalancerAttributeRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SLB_EXPORT SetLoadBalancerListenerStatusRequest : public RpcServiceRequest {
 public:
-	DescribeLoadBalancerAttributeRequest();
-	~DescribeLoadBalancerAttributeRequest();
-	std::string getAccess_key_id() const;
-	void setAccess_key_id(const std::string &access_key_id);
-	long getResourceOwnerId() const;
-	void setResourceOwnerId(long resourceOwnerId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getResourceOwnerAccount() const;
-	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	SetLoadBalancerListenerStatusRequest();
+	~SetLoadBalancerListenerStatusRequest();
+	int getListenerPort() const;
+	void setListenerPort(int listenerPort);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
-	std::string getTags() const;
-	void setTags(const std::string &tags);
+	std::string getHostId() const;
+	void setHostId(const std::string &hostId);
+	std::string getOwnerId() const;
+	void setOwnerId(const std::string &ownerId);
+	std::string getListenerStatus() const;
+	void setListenerStatus(const std::string &listenerStatus);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getLoadBalancerId() const;
 	void setLoadBalancerId(const std::string &loadBalancerId);
 
 private:
-	std::string access_key_id_;
-	long resourceOwnerId_;
-	std::string accessKeyId_;
-	std::string resourceOwnerAccount_;
+	int listenerPort_;
 	std::string ownerAccount_;
-	long ownerId_;
-	std::string tags_;
+	std::string hostId_;
+	std::string ownerId_;
+	std::string listenerStatus_;
+	std::string accessKeyId_;
 	std::string loadBalancerId_;
 };
 } // namespace Model
 } // namespace Slb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SLB_MODEL_DESCRIBELOADBALANCERATTRIBUTEREQUEST_H_
+#endif // !ALIBABACLOUD_SLB_MODEL_SETLOADBALANCERLISTENERSTATUSREQUEST_H_

@@ -35,7 +35,6 @@ namespace AlibabaCloud
 				struct Region
 				{
 					std::string regionId;
-					std::string regionEndpoint;
 					std::string localName;
 				};
 

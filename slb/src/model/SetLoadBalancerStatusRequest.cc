@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::Slb::Model::SetLoadBalancerStatusRequest;
 
-SetLoadBalancerStatusRequest::SetLoadBalancerStatusRequest() :
-	RpcServiceRequest("slb", "2014-05-15", "SetLoadBalancerStatus")
-{
-	setMethod(HttpRequest::Method::Post);
+SetLoadBalancerStatusRequest::SetLoadBalancerStatusRequest()
+    : RpcServiceRequest("slb", "2013-02-21", "SetLoadBalancerStatus") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SetLoadBalancerStatusRequest::~SetLoadBalancerStatusRequest()
-{}
+SetLoadBalancerStatusRequest::~SetLoadBalancerStatusRequest() {}
 
-std::string SetLoadBalancerStatusRequest::getAccess_key_id()const
-{
-	return access_key_id_;
+std::string SetLoadBalancerStatusRequest::getAccess_key_id() const {
+  return access_key_id_;
 }
 
-void SetLoadBalancerStatusRequest::setAccess_key_id(const std::string& access_key_id)
-{
-	access_key_id_ = access_key_id;
-	setParameter("Access_key_id", access_key_id);
+void SetLoadBalancerStatusRequest::setAccess_key_id(const std::string &access_key_id) {
+  access_key_id_ = access_key_id;
+  setParameter(std::string("access_key_id"), access_key_id);
 }
 
-long SetLoadBalancerStatusRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long SetLoadBalancerStatusRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void SetLoadBalancerStatusRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void SetLoadBalancerStatusRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string SetLoadBalancerStatusRequest::getRegionId()const
-{
-	return regionId_;
+std::string SetLoadBalancerStatusRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void SetLoadBalancerStatusRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void SetLoadBalancerStatusRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string SetLoadBalancerStatusRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string SetLoadBalancerStatusRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void SetLoadBalancerStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void SetLoadBalancerStatusRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string SetLoadBalancerStatusRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string SetLoadBalancerStatusRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void SetLoadBalancerStatusRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void SetLoadBalancerStatusRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long SetLoadBalancerStatusRequest::getOwnerId()const
-{
-	return ownerId_;
+long SetLoadBalancerStatusRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void SetLoadBalancerStatusRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void SetLoadBalancerStatusRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string SetLoadBalancerStatusRequest::getLoadBalancerStatus()const
-{
-	return loadBalancerStatus_;
+std::string SetLoadBalancerStatusRequest::getLoadBalancerStatus() const {
+  return loadBalancerStatus_;
 }
 
-void SetLoadBalancerStatusRequest::setLoadBalancerStatus(const std::string& loadBalancerStatus)
-{
-	loadBalancerStatus_ = loadBalancerStatus;
-	setParameter("LoadBalancerStatus", loadBalancerStatus);
+void SetLoadBalancerStatusRequest::setLoadBalancerStatus(const std::string &loadBalancerStatus) {
+  loadBalancerStatus_ = loadBalancerStatus;
+  setParameter(std::string("LoadBalancerStatus"), loadBalancerStatus);
 }
 
-std::string SetLoadBalancerStatusRequest::getTags()const
-{
-	return tags_;
+std::string SetLoadBalancerStatusRequest::getTags() const {
+  return tags_;
 }
 
-void SetLoadBalancerStatusRequest::setTags(const std::string& tags)
-{
-	tags_ = tags;
-	setParameter("Tags", tags);
+void SetLoadBalancerStatusRequest::setTags(const std::string &tags) {
+  tags_ = tags;
+  setParameter(std::string("Tags"), tags);
 }
 
-std::string SetLoadBalancerStatusRequest::getLoadBalancerId()const
-{
-	return loadBalancerId_;
+std::string SetLoadBalancerStatusRequest::getLoadBalancerId() const {
+  return loadBalancerId_;
 }
 
-void SetLoadBalancerStatusRequest::setLoadBalancerId(const std::string& loadBalancerId)
-{
-	loadBalancerId_ = loadBalancerId;
-	setParameter("LoadBalancerId", loadBalancerId);
+void SetLoadBalancerStatusRequest::setLoadBalancerId(const std::string &loadBalancerId) {
+  loadBalancerId_ = loadBalancerId;
+  setParameter(std::string("LoadBalancerId"), loadBalancerId);
 }
 

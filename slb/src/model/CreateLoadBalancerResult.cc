@@ -39,24 +39,12 @@ void CreateLoadBalancerResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["LoadBalancerId"].isNull())
-		loadBalancerId_ = value["LoadBalancerId"].asString();
-	if(!value["ResourceGroupId"].isNull())
-		resourceGroupId_ = value["ResourceGroupId"].asString();
 	if(!value["Address"].isNull())
 		address_ = value["Address"].asString();
 	if(!value["LoadBalancerName"].isNull())
 		loadBalancerName_ = value["LoadBalancerName"].asString();
-	if(!value["VpcId"].isNull())
-		vpcId_ = value["VpcId"].asString();
-	if(!value["VSwitchId"].isNull())
-		vSwitchId_ = value["VSwitchId"].asString();
-	if(!value["NetworkType"].isNull())
-		networkType_ = value["NetworkType"].asString();
-	if(!value["OrderId"].isNull())
-		orderId_ = std::stol(value["OrderId"].asString());
-	if(!value["AddressIPVersion"].isNull())
-		addressIPVersion_ = value["AddressIPVersion"].asString();
+	if(!value["LoadBalancerId"].isNull())
+		loadBalancerId_ = value["LoadBalancerId"].asString();
 
 }
 
@@ -65,43 +53,13 @@ std::string CreateLoadBalancerResult::getLoadBalancerName()const
 	return loadBalancerName_;
 }
 
-std::string CreateLoadBalancerResult::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
 std::string CreateLoadBalancerResult::getAddress()const
 {
 	return address_;
 }
 
-std::string CreateLoadBalancerResult::getVpcId()const
-{
-	return vpcId_;
-}
-
-std::string CreateLoadBalancerResult::getNetworkType()const
-{
-	return networkType_;
-}
-
-std::string CreateLoadBalancerResult::getVSwitchId()const
-{
-	return vSwitchId_;
-}
-
-std::string CreateLoadBalancerResult::getAddressIPVersion()const
-{
-	return addressIPVersion_;
-}
-
 std::string CreateLoadBalancerResult::getLoadBalancerId()const
 {
 	return loadBalancerId_;
-}
-
-long CreateLoadBalancerResult::getOrderId()const
-{
-	return orderId_;
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SLB_MODEL_DESCRIBELOADBALANCERATTRIBUTEREQUEST_H_
-#define ALIBABACLOUD_SLB_MODEL_DESCRIBELOADBALANCERATTRIBUTEREQUEST_H_
+#ifndef ALIBABACLOUD_SLB_MODEL_DESCRIBEBACKENDSERVERSREQUEST_H_
+#define ALIBABACLOUD_SLB_MODEL_DESCRIBEBACKENDSERVERSREQUEST_H_
 
 #include <alibabacloud/slb/SlbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,16 +26,20 @@
 namespace AlibabaCloud {
 namespace Slb {
 namespace Model {
-class ALIBABACLOUD_SLB_EXPORT DescribeLoadBalancerAttributeRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SLB_EXPORT DescribeBackendServersRequest : public RpcServiceRequest {
 public:
-	DescribeLoadBalancerAttributeRequest();
-	~DescribeLoadBalancerAttributeRequest();
+	DescribeBackendServersRequest();
+	~DescribeBackendServersRequest();
 	std::string getAccess_key_id() const;
 	void setAccess_key_id(const std::string &access_key_id);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	int getListenerPort() const;
+	void setListenerPort(int listenerPort);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -51,6 +55,8 @@ private:
 	std::string access_key_id_;
 	long resourceOwnerId_;
 	std::string accessKeyId_;
+	std::string regionId_;
+	int listenerPort_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
@@ -60,4 +66,4 @@ private:
 } // namespace Model
 } // namespace Slb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SLB_MODEL_DESCRIBELOADBALANCERATTRIBUTEREQUEST_H_
+#endif // !ALIBABACLOUD_SLB_MODEL_DESCRIBEBACKENDSERVERSREQUEST_H_
