@@ -70,6 +70,24 @@ void GetConsumerProgressResult::parse(const std::string &payload)
 		}
 		consumerProgress_.topicList.push_back(topicListItemObject);
 	}
+	auto allRebalanceInfoListNode = consumerProgressNode["RebalanceInfoList"]["RebalanceInfoListItem"];
+	for (auto consumerProgressNodeRebalanceInfoListRebalanceInfoListItem : allRebalanceInfoListNode)
+	{
+		ConsumerProgress::RebalanceInfoListItem rebalanceInfoListItemObject;
+		if(!consumerProgressNodeRebalanceInfoListRebalanceInfoListItem["Generation"].isNull())
+			rebalanceInfoListItemObject.generation = std::stol(consumerProgressNodeRebalanceInfoListRebalanceInfoListItem["Generation"].asString());
+		if(!consumerProgressNodeRebalanceInfoListRebalanceInfoListItem["LastRebalanceTimestamp"].isNull())
+			rebalanceInfoListItemObject.lastRebalanceTimestamp = std::stol(consumerProgressNodeRebalanceInfoListRebalanceInfoListItem["LastRebalanceTimestamp"].asString());
+		if(!consumerProgressNodeRebalanceInfoListRebalanceInfoListItem["Reason"].isNull())
+			rebalanceInfoListItemObject.reason = consumerProgressNodeRebalanceInfoListRebalanceInfoListItem["Reason"].asString();
+		if(!consumerProgressNodeRebalanceInfoListRebalanceInfoListItem["GroupId"].isNull())
+			rebalanceInfoListItemObject.groupId = consumerProgressNodeRebalanceInfoListRebalanceInfoListItem["GroupId"].asString();
+		if(!consumerProgressNodeRebalanceInfoListRebalanceInfoListItem["RebalanceTimeConsuming"].isNull())
+			rebalanceInfoListItemObject.rebalanceTimeConsuming = std::stol(consumerProgressNodeRebalanceInfoListRebalanceInfoListItem["RebalanceTimeConsuming"].asString());
+		if(!consumerProgressNodeRebalanceInfoListRebalanceInfoListItem["RebalanceSuccess"].isNull())
+			rebalanceInfoListItemObject.rebalanceSuccess = consumerProgressNodeRebalanceInfoListRebalanceInfoListItem["RebalanceSuccess"].asString() == "true";
+		consumerProgress_.rebalanceInfoList.push_back(rebalanceInfoListItemObject);
+	}
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())

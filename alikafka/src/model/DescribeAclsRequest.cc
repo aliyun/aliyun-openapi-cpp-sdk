@@ -43,6 +43,15 @@ void DescribeAclsRequest::setAclResourceType(const std::string &aclResourceType)
   setParameter(std::string("AclResourceType"), aclResourceType);
 }
 
+std::string DescribeAclsRequest::getAclOperationType() const {
+  return aclOperationType_;
+}
+
+void DescribeAclsRequest::setAclOperationType(const std::string &aclOperationType) {
+  aclOperationType_ = aclOperationType;
+  setParameter(std::string("AclOperationType"), aclOperationType);
+}
+
 std::string DescribeAclsRequest::getAclResourceName() const {
   return aclResourceName_;
 }
@@ -68,6 +77,24 @@ std::string DescribeAclsRequest::getRegionId() const {
 void DescribeAclsRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeAclsRequest::getHost() const {
+  return host_;
+}
+
+void DescribeAclsRequest::setHost(const std::string &host) {
+  host_ = host;
+  setParameter(std::string("Host"), host);
+}
+
+std::string DescribeAclsRequest::getAclPermissionType() const {
+  return aclPermissionType_;
+}
+
+void DescribeAclsRequest::setAclPermissionType(const std::string &aclPermissionType) {
+  aclPermissionType_ = aclPermissionType;
+  setParameter(std::string("AclPermissionType"), aclPermissionType);
 }
 
 std::string DescribeAclsRequest::getUsername() const {

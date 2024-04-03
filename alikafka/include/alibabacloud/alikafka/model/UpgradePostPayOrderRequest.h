@@ -28,8 +28,14 @@ namespace Alikafka {
 namespace Model {
 class ALIBABACLOUD_ALIKAFKA_EXPORT UpgradePostPayOrderRequest : public RpcServiceRequest {
 public:
+	struct ServerlessConfig {
+		long reservedPublishCapacity;
+		long reservedSubscribeCapacity;
+	};
 	UpgradePostPayOrderRequest();
 	~UpgradePostPayOrderRequest();
+	ServerlessConfig getServerlessConfig() const;
+	void setServerlessConfig(const ServerlessConfig &serverlessConfig);
 	int getDiskSize() const;
 	void setDiskSize(int diskSize);
 	int getIoMax() const;
@@ -52,6 +58,7 @@ public:
 	void setPartitionNum(int partitionNum);
 
 private:
+	ServerlessConfig serverlessConfig_;
 	int diskSize_;
 	int ioMax_;
 	bool eipModel_;

@@ -14,49 +14,40 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/alikafka/model/ModifyTopicRemarkRequest.h>
+#include <alibabacloud/alikafka/model/GetTopicSubscribeStatusRequest.h>
 
-using AlibabaCloud::Alikafka::Model::ModifyTopicRemarkRequest;
+using AlibabaCloud::Alikafka::Model::GetTopicSubscribeStatusRequest;
 
-ModifyTopicRemarkRequest::ModifyTopicRemarkRequest()
-    : RpcServiceRequest("alikafka", "2019-09-16", "ModifyTopicRemark") {
+GetTopicSubscribeStatusRequest::GetTopicSubscribeStatusRequest()
+    : RpcServiceRequest("alikafka", "2019-09-16", "GetTopicSubscribeStatus") {
   setMethod(HttpRequest::Method::Post);
 }
 
-ModifyTopicRemarkRequest::~ModifyTopicRemarkRequest() {}
+GetTopicSubscribeStatusRequest::~GetTopicSubscribeStatusRequest() {}
 
-std::string ModifyTopicRemarkRequest::getRemark() const {
-  return remark_;
-}
-
-void ModifyTopicRemarkRequest::setRemark(const std::string &remark) {
-  remark_ = remark;
-  setParameter(std::string("Remark"), remark);
-}
-
-std::string ModifyTopicRemarkRequest::getInstanceId() const {
+std::string GetTopicSubscribeStatusRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ModifyTopicRemarkRequest::setInstanceId(const std::string &instanceId) {
+void GetTopicSubscribeStatusRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string ModifyTopicRemarkRequest::getRegionId() const {
+std::string GetTopicSubscribeStatusRequest::getRegionId() const {
   return regionId_;
 }
 
-void ModifyTopicRemarkRequest::setRegionId(const std::string &regionId) {
+void GetTopicSubscribeStatusRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ModifyTopicRemarkRequest::getTopic() const {
+std::string GetTopicSubscribeStatusRequest::getTopic() const {
   return topic_;
 }
 
-void ModifyTopicRemarkRequest::setTopic(const std::string &topic) {
+void GetTopicSubscribeStatusRequest::setTopic(const std::string &topic) {
   topic_ = topic;
   setParameter(std::string("Topic"), topic);
 }

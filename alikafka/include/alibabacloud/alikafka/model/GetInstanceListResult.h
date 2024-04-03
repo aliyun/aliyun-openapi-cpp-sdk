@@ -38,12 +38,34 @@ namespace AlibabaCloud
 					{
 						std::string current2OpenSourceVersion;
 					};
+					struct ConfluentConfig
+					{
+						int ksqlStorage;
+						int kafkaRestProxyCU;
+						int zooKeeperReplica;
+						int kafkaReplica;
+						int connectReplica;
+						int controlCenterStorage;
+						int schemaRegistryCU;
+						int kafkaCU;
+						int connectCU;
+						int ksqlCU;
+						int controlCenterReplica;
+						int ksqlReplica;
+						int schemaRegistryReplica;
+						int zooKeeperCU;
+						int kafkaRestProxyReplica;
+						int zooKeeperStorage;
+						int controlCenterCU;
+						int kafkaStorage;
+					};
 					struct TagVO
 					{
 						std::string value;
 						std::string key;
 					};
 					int deployType;
+					int reservedPublishCapacity;
 					std::string resourceGroupId;
 					std::string specType;
 					int ioMax;
@@ -52,9 +74,12 @@ namespace AlibabaCloud
 					UpgradeServiceDetailInfo upgradeServiceDetailInfo;
 					std::string saslDomainEndpoint;
 					std::string name;
+					int viewInstanceStatusCode;
+					ConfluentConfig confluentConfig;
 					int diskType;
 					std::string sslDomainEndpoint;
 					int serviceStatus;
+					int reservedSubscribeCapacity;
 					int msgRetain;
 					long expiredTime;
 					int diskSize;

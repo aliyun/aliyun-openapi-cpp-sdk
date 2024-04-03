@@ -48,6 +48,16 @@ namespace AlibabaCloud
 						long totalDiff;
 						std::string topic;
 					};
+					struct RebalanceInfoListItem
+					{
+						bool rebalanceSuccess;
+						long generation;
+						long rebalanceTimeConsuming;
+						long lastRebalanceTimestamp;
+						std::string reason;
+						std::string groupId;
+					};
+					std::vector<RebalanceInfoListItem> rebalanceInfoList;
 					long lastTimestamp;
 					std::vector<TopicListItem> topicList;
 					long totalDiff;

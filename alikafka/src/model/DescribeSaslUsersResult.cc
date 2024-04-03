@@ -49,6 +49,8 @@ void DescribeSaslUsersResult::parse(const std::string &payload)
 			saslUserListObject.password = valueSaslUserListSaslUserVO["Password"].asString();
 		if(!valueSaslUserListSaslUserVO["Username"].isNull())
 			saslUserListObject.username = valueSaslUserListSaslUserVO["Username"].asString();
+		if(!valueSaslUserListSaslUserVO["Mechanism"].isNull())
+			saslUserListObject.mechanism = valueSaslUserListSaslUserVO["Mechanism"].asString();
 		saslUserList_.push_back(saslUserListObject);
 	}
 	if(!value["Code"].isNull())

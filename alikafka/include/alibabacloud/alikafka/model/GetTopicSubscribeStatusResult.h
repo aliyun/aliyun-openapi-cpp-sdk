@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_GETCONSUMERLISTRESULT_H_
-#define ALIBABACLOUD_ALIKAFKA_MODEL_GETCONSUMERLISTRESULT_H_
+#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_GETTOPICSUBSCRIBESTATUSRESULT_H_
+#define ALIBABACLOUD_ALIKAFKA_MODEL_GETTOPICSUBSCRIBESTATUSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIKAFKA_EXPORT GetConsumerListResult : public ServiceResult
+			class ALIBABACLOUD_ALIKAFKA_EXPORT GetTopicSubscribeStatusResult : public ServiceResult
 			{
 			public:
-				struct ConsumerVO
+				struct TopicSubscribeStatus
 				{
-					struct TagVO
-					{
-						std::string value;
-						std::string key;
-					};
-					std::string instanceId;
-					bool automaticallyCreatedGroup;
-					std::string consumerId;
-					std::string regionId;
-					std::vector<ConsumerVO::TagVO> tags;
-					std::string remark;
+					std::vector<std::string> consumerGroups;
+					std::string topic;
 				};
 
 
-				GetConsumerListResult();
-				explicit GetConsumerListResult(const std::string &payload);
-				~GetConsumerListResult();
+				GetTopicSubscribeStatusResult();
+				explicit GetTopicSubscribeStatusResult(const std::string &payload);
+				~GetTopicSubscribeStatusResult();
 				std::string getMessage()const;
-				int getPageSize()const;
-				int getCurrentPage()const;
-				long getTotal()const;
-				std::vector<ConsumerVO> getConsumerList()const;
+				TopicSubscribeStatus getTopicSubscribeStatus()const;
 				int getCode()const;
 				bool getSuccess()const;
 
@@ -63,10 +51,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				int pageSize_;
-				int currentPage_;
-				long total_;
-				std::vector<ConsumerVO> consumerList_;
+				TopicSubscribeStatus topicSubscribeStatus_;
 				int code_;
 				bool success_;
 
@@ -74,4 +59,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_GETCONSUMERLISTRESULT_H_
+#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_GETTOPICSUBSCRIBESTATUSRESULT_H_

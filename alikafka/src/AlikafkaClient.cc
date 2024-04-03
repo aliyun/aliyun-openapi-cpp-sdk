@@ -31,21 +31,21 @@ AlikafkaClient::AlikafkaClient(const Credentials &credentials, const ClientConfi
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alikafka");
 }
 
 AlikafkaClient::AlikafkaClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alikafka");
 }
 
 AlikafkaClient::AlikafkaClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alikafka");
 }
 
 AlikafkaClient::~AlikafkaClient()
@@ -591,6 +591,78 @@ AlikafkaClient::DescribeSaslUsersOutcomeCallable AlikafkaClient::describeSaslUse
 	return task->get_future();
 }
 
+AlikafkaClient::EnableAutoGroupCreationOutcome AlikafkaClient::enableAutoGroupCreation(const EnableAutoGroupCreationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableAutoGroupCreationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableAutoGroupCreationOutcome(EnableAutoGroupCreationResult(outcome.result()));
+	else
+		return EnableAutoGroupCreationOutcome(outcome.error());
+}
+
+void AlikafkaClient::enableAutoGroupCreationAsync(const EnableAutoGroupCreationRequest& request, const EnableAutoGroupCreationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableAutoGroupCreation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlikafkaClient::EnableAutoGroupCreationOutcomeCallable AlikafkaClient::enableAutoGroupCreationCallable(const EnableAutoGroupCreationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableAutoGroupCreationOutcome()>>(
+			[this, request]()
+			{
+			return this->enableAutoGroupCreation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlikafkaClient::EnableAutoTopicCreationOutcome AlikafkaClient::enableAutoTopicCreation(const EnableAutoTopicCreationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableAutoTopicCreationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableAutoTopicCreationOutcome(EnableAutoTopicCreationResult(outcome.result()));
+	else
+		return EnableAutoTopicCreationOutcome(outcome.error());
+}
+
+void AlikafkaClient::enableAutoTopicCreationAsync(const EnableAutoTopicCreationRequest& request, const EnableAutoTopicCreationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableAutoTopicCreation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlikafkaClient::EnableAutoTopicCreationOutcomeCallable AlikafkaClient::enableAutoTopicCreationCallable(const EnableAutoTopicCreationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableAutoTopicCreationOutcome()>>(
+			[this, request]()
+			{
+			return this->enableAutoTopicCreation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlikafkaClient::GetAllInstanceIdListOutcome AlikafkaClient::getAllInstanceIdList(const GetAllInstanceIdListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -879,6 +951,42 @@ AlikafkaClient::GetTopicStatusOutcomeCallable AlikafkaClient::getTopicStatusCall
 	return task->get_future();
 }
 
+AlikafkaClient::GetTopicSubscribeStatusOutcome AlikafkaClient::getTopicSubscribeStatus(const GetTopicSubscribeStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTopicSubscribeStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTopicSubscribeStatusOutcome(GetTopicSubscribeStatusResult(outcome.result()));
+	else
+		return GetTopicSubscribeStatusOutcome(outcome.error());
+}
+
+void AlikafkaClient::getTopicSubscribeStatusAsync(const GetTopicSubscribeStatusRequest& request, const GetTopicSubscribeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTopicSubscribeStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlikafkaClient::GetTopicSubscribeStatusOutcomeCallable AlikafkaClient::getTopicSubscribeStatusCallable(const GetTopicSubscribeStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTopicSubscribeStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getTopicSubscribeStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlikafkaClient::ListTagResourcesOutcome AlikafkaClient::listTagResources(const ListTagResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1023,6 +1131,42 @@ AlikafkaClient::ModifyTopicRemarkOutcomeCallable AlikafkaClient::modifyTopicRema
 	return task->get_future();
 }
 
+AlikafkaClient::QueryMessageOutcome AlikafkaClient::queryMessage(const QueryMessageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryMessageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryMessageOutcome(QueryMessageResult(outcome.result()));
+	else
+		return QueryMessageOutcome(outcome.error());
+}
+
+void AlikafkaClient::queryMessageAsync(const QueryMessageRequest& request, const QueryMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryMessage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlikafkaClient::QueryMessageOutcomeCallable AlikafkaClient::queryMessageCallable(const QueryMessageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryMessageOutcome()>>(
+			[this, request]()
+			{
+			return this->queryMessage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlikafkaClient::ReleaseInstanceOutcome AlikafkaClient::releaseInstance(const ReleaseInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1059,6 +1203,42 @@ AlikafkaClient::ReleaseInstanceOutcomeCallable AlikafkaClient::releaseInstanceCa
 	return task->get_future();
 }
 
+AlikafkaClient::ReopenInstanceOutcome AlikafkaClient::reopenInstance(const ReopenInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReopenInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReopenInstanceOutcome(ReopenInstanceResult(outcome.result()));
+	else
+		return ReopenInstanceOutcome(outcome.error());
+}
+
+void AlikafkaClient::reopenInstanceAsync(const ReopenInstanceRequest& request, const ReopenInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reopenInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlikafkaClient::ReopenInstanceOutcomeCallable AlikafkaClient::reopenInstanceCallable(const ReopenInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReopenInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->reopenInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlikafkaClient::StartInstanceOutcome AlikafkaClient::startInstance(const StartInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1089,6 +1269,42 @@ AlikafkaClient::StartInstanceOutcomeCallable AlikafkaClient::startInstanceCallab
 			[this, request]()
 			{
 			return this->startInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlikafkaClient::StopInstanceOutcome AlikafkaClient::stopInstance(const StopInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopInstanceOutcome(StopInstanceResult(outcome.result()));
+	else
+		return StopInstanceOutcome(outcome.error());
+}
+
+void AlikafkaClient::stopInstanceAsync(const StopInstanceRequest& request, const StopInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlikafkaClient::StopInstanceOutcomeCallable AlikafkaClient::stopInstanceCallable(const StopInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->stopInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1269,6 +1485,42 @@ AlikafkaClient::UpdateInstanceConfigOutcomeCallable AlikafkaClient::updateInstan
 			[this, request]()
 			{
 			return this->updateInstanceConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlikafkaClient::UpdateTopicConfigOutcome AlikafkaClient::updateTopicConfig(const UpdateTopicConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTopicConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTopicConfigOutcome(UpdateTopicConfigResult(outcome.result()));
+	else
+		return UpdateTopicConfigOutcome(outcome.error());
+}
+
+void AlikafkaClient::updateTopicConfigAsync(const UpdateTopicConfigRequest& request, const UpdateTopicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTopicConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlikafkaClient::UpdateTopicConfigOutcomeCallable AlikafkaClient::updateTopicConfigCallable(const UpdateTopicConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTopicConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTopicConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

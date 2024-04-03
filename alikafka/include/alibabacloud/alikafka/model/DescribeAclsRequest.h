@@ -34,21 +34,30 @@ public:
 	void setAclResourcePatternType(const std::string &aclResourcePatternType);
 	std::string getAclResourceType() const;
 	void setAclResourceType(const std::string &aclResourceType);
+	std::string getAclOperationType() const;
+	void setAclOperationType(const std::string &aclOperationType);
 	std::string getAclResourceName() const;
 	void setAclResourceName(const std::string &aclResourceName);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getHost() const;
+	void setHost(const std::string &host);
+	std::string getAclPermissionType() const;
+	void setAclPermissionType(const std::string &aclPermissionType);
 	std::string getUsername() const;
 	void setUsername(const std::string &username);
 
 private:
 	std::string aclResourcePatternType_;
 	std::string aclResourceType_;
+	std::string aclOperationType_;
 	std::string aclResourceName_;
 	std::string instanceId_;
 	std::string regionId_;
+	std::string host_;
+	std::string aclPermissionType_;
 	std::string username_;
 };
 } // namespace Model

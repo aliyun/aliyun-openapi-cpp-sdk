@@ -25,6 +25,16 @@ UpgradePostPayOrderRequest::UpgradePostPayOrderRequest()
 
 UpgradePostPayOrderRequest::~UpgradePostPayOrderRequest() {}
 
+UpgradePostPayOrderRequest::ServerlessConfig UpgradePostPayOrderRequest::getServerlessConfig() const {
+  return serverlessConfig_;
+}
+
+void UpgradePostPayOrderRequest::setServerlessConfig(const UpgradePostPayOrderRequest::ServerlessConfig &serverlessConfig) {
+  serverlessConfig_ = serverlessConfig;
+  setParameter(std::string("ServerlessConfig") + ".ReservedPublishCapacity", std::to_string(serverlessConfig.reservedPublishCapacity));
+  setParameter(std::string("ServerlessConfig") + ".ReservedSubscribeCapacity", std::to_string(serverlessConfig.reservedSubscribeCapacity));
+}
+
 int UpgradePostPayOrderRequest::getDiskSize() const {
   return diskSize_;
 }

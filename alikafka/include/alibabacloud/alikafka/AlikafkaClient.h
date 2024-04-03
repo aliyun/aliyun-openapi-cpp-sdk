@@ -52,6 +52,10 @@
 #include "model/DescribeAclsResult.h"
 #include "model/DescribeSaslUsersRequest.h"
 #include "model/DescribeSaslUsersResult.h"
+#include "model/EnableAutoGroupCreationRequest.h"
+#include "model/EnableAutoGroupCreationResult.h"
+#include "model/EnableAutoTopicCreationRequest.h"
+#include "model/EnableAutoTopicCreationResult.h"
 #include "model/GetAllInstanceIdListRequest.h"
 #include "model/GetAllInstanceIdListResult.h"
 #include "model/GetAllowedIpListRequest.h"
@@ -68,6 +72,8 @@
 #include "model/GetTopicListResult.h"
 #include "model/GetTopicStatusRequest.h"
 #include "model/GetTopicStatusResult.h"
+#include "model/GetTopicSubscribeStatusRequest.h"
+#include "model/GetTopicSubscribeStatusResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
 #include "model/ModifyInstanceNameRequest.h"
@@ -76,10 +82,16 @@
 #include "model/ModifyPartitionNumResult.h"
 #include "model/ModifyTopicRemarkRequest.h"
 #include "model/ModifyTopicRemarkResult.h"
+#include "model/QueryMessageRequest.h"
+#include "model/QueryMessageResult.h"
 #include "model/ReleaseInstanceRequest.h"
 #include "model/ReleaseInstanceResult.h"
+#include "model/ReopenInstanceRequest.h"
+#include "model/ReopenInstanceResult.h"
 #include "model/StartInstanceRequest.h"
 #include "model/StartInstanceResult.h"
+#include "model/StopInstanceRequest.h"
+#include "model/StopInstanceResult.h"
 #include "model/TagResourcesRequest.h"
 #include "model/TagResourcesResult.h"
 #include "model/UntagResourcesRequest.h"
@@ -90,6 +102,8 @@
 #include "model/UpdateConsumerOffsetResult.h"
 #include "model/UpdateInstanceConfigRequest.h"
 #include "model/UpdateInstanceConfigResult.h"
+#include "model/UpdateTopicConfigRequest.h"
+#include "model/UpdateTopicConfigResult.h"
 #include "model/UpgradeInstanceVersionRequest.h"
 #include "model/UpgradeInstanceVersionResult.h"
 #include "model/UpgradePostPayOrderRequest.h"
@@ -150,6 +164,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSaslUsersResult> DescribeSaslUsersOutcome;
 			typedef std::future<DescribeSaslUsersOutcome> DescribeSaslUsersOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::DescribeSaslUsersRequest&, const DescribeSaslUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSaslUsersAsyncHandler;
+			typedef Outcome<Error, Model::EnableAutoGroupCreationResult> EnableAutoGroupCreationOutcome;
+			typedef std::future<EnableAutoGroupCreationOutcome> EnableAutoGroupCreationOutcomeCallable;
+			typedef std::function<void(const AlikafkaClient*, const Model::EnableAutoGroupCreationRequest&, const EnableAutoGroupCreationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableAutoGroupCreationAsyncHandler;
+			typedef Outcome<Error, Model::EnableAutoTopicCreationResult> EnableAutoTopicCreationOutcome;
+			typedef std::future<EnableAutoTopicCreationOutcome> EnableAutoTopicCreationOutcomeCallable;
+			typedef std::function<void(const AlikafkaClient*, const Model::EnableAutoTopicCreationRequest&, const EnableAutoTopicCreationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableAutoTopicCreationAsyncHandler;
 			typedef Outcome<Error, Model::GetAllInstanceIdListResult> GetAllInstanceIdListOutcome;
 			typedef std::future<GetAllInstanceIdListOutcome> GetAllInstanceIdListOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::GetAllInstanceIdListRequest&, const GetAllInstanceIdListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAllInstanceIdListAsyncHandler;
@@ -174,6 +194,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetTopicStatusResult> GetTopicStatusOutcome;
 			typedef std::future<GetTopicStatusOutcome> GetTopicStatusOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::GetTopicStatusRequest&, const GetTopicStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTopicStatusAsyncHandler;
+			typedef Outcome<Error, Model::GetTopicSubscribeStatusResult> GetTopicSubscribeStatusOutcome;
+			typedef std::future<GetTopicSubscribeStatusOutcome> GetTopicSubscribeStatusOutcomeCallable;
+			typedef std::function<void(const AlikafkaClient*, const Model::GetTopicSubscribeStatusRequest&, const GetTopicSubscribeStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTopicSubscribeStatusAsyncHandler;
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
@@ -186,12 +209,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyTopicRemarkResult> ModifyTopicRemarkOutcome;
 			typedef std::future<ModifyTopicRemarkOutcome> ModifyTopicRemarkOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::ModifyTopicRemarkRequest&, const ModifyTopicRemarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicRemarkAsyncHandler;
+			typedef Outcome<Error, Model::QueryMessageResult> QueryMessageOutcome;
+			typedef std::future<QueryMessageOutcome> QueryMessageOutcomeCallable;
+			typedef std::function<void(const AlikafkaClient*, const Model::QueryMessageRequest&, const QueryMessageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryMessageAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseInstanceResult> ReleaseInstanceOutcome;
 			typedef std::future<ReleaseInstanceOutcome> ReleaseInstanceOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::ReleaseInstanceRequest&, const ReleaseInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseInstanceAsyncHandler;
+			typedef Outcome<Error, Model::ReopenInstanceResult> ReopenInstanceOutcome;
+			typedef std::future<ReopenInstanceOutcome> ReopenInstanceOutcomeCallable;
+			typedef std::function<void(const AlikafkaClient*, const Model::ReopenInstanceRequest&, const ReopenInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReopenInstanceAsyncHandler;
 			typedef Outcome<Error, Model::StartInstanceResult> StartInstanceOutcome;
 			typedef std::future<StartInstanceOutcome> StartInstanceOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::StartInstanceRequest&, const StartInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartInstanceAsyncHandler;
+			typedef Outcome<Error, Model::StopInstanceResult> StopInstanceOutcome;
+			typedef std::future<StopInstanceOutcome> StopInstanceOutcomeCallable;
+			typedef std::function<void(const AlikafkaClient*, const Model::StopInstanceRequest&, const StopInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopInstanceAsyncHandler;
 			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
 			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
@@ -207,6 +239,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateInstanceConfigResult> UpdateInstanceConfigOutcome;
 			typedef std::future<UpdateInstanceConfigOutcome> UpdateInstanceConfigOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::UpdateInstanceConfigRequest&, const UpdateInstanceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceConfigAsyncHandler;
+			typedef Outcome<Error, Model::UpdateTopicConfigResult> UpdateTopicConfigOutcome;
+			typedef std::future<UpdateTopicConfigOutcome> UpdateTopicConfigOutcomeCallable;
+			typedef std::function<void(const AlikafkaClient*, const Model::UpdateTopicConfigRequest&, const UpdateTopicConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTopicConfigAsyncHandler;
 			typedef Outcome<Error, Model::UpgradeInstanceVersionResult> UpgradeInstanceVersionOutcome;
 			typedef std::future<UpgradeInstanceVersionOutcome> UpgradeInstanceVersionOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::UpgradeInstanceVersionRequest&, const UpgradeInstanceVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceVersionAsyncHandler;
@@ -266,6 +301,12 @@ namespace AlibabaCloud
 			DescribeSaslUsersOutcome describeSaslUsers(const Model::DescribeSaslUsersRequest &request)const;
 			void describeSaslUsersAsync(const Model::DescribeSaslUsersRequest& request, const DescribeSaslUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSaslUsersOutcomeCallable describeSaslUsersCallable(const Model::DescribeSaslUsersRequest& request) const;
+			EnableAutoGroupCreationOutcome enableAutoGroupCreation(const Model::EnableAutoGroupCreationRequest &request)const;
+			void enableAutoGroupCreationAsync(const Model::EnableAutoGroupCreationRequest& request, const EnableAutoGroupCreationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableAutoGroupCreationOutcomeCallable enableAutoGroupCreationCallable(const Model::EnableAutoGroupCreationRequest& request) const;
+			EnableAutoTopicCreationOutcome enableAutoTopicCreation(const Model::EnableAutoTopicCreationRequest &request)const;
+			void enableAutoTopicCreationAsync(const Model::EnableAutoTopicCreationRequest& request, const EnableAutoTopicCreationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableAutoTopicCreationOutcomeCallable enableAutoTopicCreationCallable(const Model::EnableAutoTopicCreationRequest& request) const;
 			GetAllInstanceIdListOutcome getAllInstanceIdList(const Model::GetAllInstanceIdListRequest &request)const;
 			void getAllInstanceIdListAsync(const Model::GetAllInstanceIdListRequest& request, const GetAllInstanceIdListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAllInstanceIdListOutcomeCallable getAllInstanceIdListCallable(const Model::GetAllInstanceIdListRequest& request) const;
@@ -290,6 +331,9 @@ namespace AlibabaCloud
 			GetTopicStatusOutcome getTopicStatus(const Model::GetTopicStatusRequest &request)const;
 			void getTopicStatusAsync(const Model::GetTopicStatusRequest& request, const GetTopicStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTopicStatusOutcomeCallable getTopicStatusCallable(const Model::GetTopicStatusRequest& request) const;
+			GetTopicSubscribeStatusOutcome getTopicSubscribeStatus(const Model::GetTopicSubscribeStatusRequest &request)const;
+			void getTopicSubscribeStatusAsync(const Model::GetTopicSubscribeStatusRequest& request, const GetTopicSubscribeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTopicSubscribeStatusOutcomeCallable getTopicSubscribeStatusCallable(const Model::GetTopicSubscribeStatusRequest& request) const;
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
@@ -302,12 +346,21 @@ namespace AlibabaCloud
 			ModifyTopicRemarkOutcome modifyTopicRemark(const Model::ModifyTopicRemarkRequest &request)const;
 			void modifyTopicRemarkAsync(const Model::ModifyTopicRemarkRequest& request, const ModifyTopicRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyTopicRemarkOutcomeCallable modifyTopicRemarkCallable(const Model::ModifyTopicRemarkRequest& request) const;
+			QueryMessageOutcome queryMessage(const Model::QueryMessageRequest &request)const;
+			void queryMessageAsync(const Model::QueryMessageRequest& request, const QueryMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryMessageOutcomeCallable queryMessageCallable(const Model::QueryMessageRequest& request) const;
 			ReleaseInstanceOutcome releaseInstance(const Model::ReleaseInstanceRequest &request)const;
 			void releaseInstanceAsync(const Model::ReleaseInstanceRequest& request, const ReleaseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseInstanceOutcomeCallable releaseInstanceCallable(const Model::ReleaseInstanceRequest& request) const;
+			ReopenInstanceOutcome reopenInstance(const Model::ReopenInstanceRequest &request)const;
+			void reopenInstanceAsync(const Model::ReopenInstanceRequest& request, const ReopenInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReopenInstanceOutcomeCallable reopenInstanceCallable(const Model::ReopenInstanceRequest& request) const;
 			StartInstanceOutcome startInstance(const Model::StartInstanceRequest &request)const;
 			void startInstanceAsync(const Model::StartInstanceRequest& request, const StartInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartInstanceOutcomeCallable startInstanceCallable(const Model::StartInstanceRequest& request) const;
+			StopInstanceOutcome stopInstance(const Model::StopInstanceRequest &request)const;
+			void stopInstanceAsync(const Model::StopInstanceRequest& request, const StopInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopInstanceOutcomeCallable stopInstanceCallable(const Model::StopInstanceRequest& request) const;
 			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
 			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
@@ -323,6 +376,9 @@ namespace AlibabaCloud
 			UpdateInstanceConfigOutcome updateInstanceConfig(const Model::UpdateInstanceConfigRequest &request)const;
 			void updateInstanceConfigAsync(const Model::UpdateInstanceConfigRequest& request, const UpdateInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateInstanceConfigOutcomeCallable updateInstanceConfigCallable(const Model::UpdateInstanceConfigRequest& request) const;
+			UpdateTopicConfigOutcome updateTopicConfig(const Model::UpdateTopicConfigRequest &request)const;
+			void updateTopicConfigAsync(const Model::UpdateTopicConfigRequest& request, const UpdateTopicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateTopicConfigOutcomeCallable updateTopicConfigCallable(const Model::UpdateTopicConfigRequest& request) const;
 			UpgradeInstanceVersionOutcome upgradeInstanceVersion(const Model::UpgradeInstanceVersionRequest &request)const;
 			void upgradeInstanceVersionAsync(const Model::UpgradeInstanceVersionRequest& request, const UpgradeInstanceVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeInstanceVersionOutcomeCallable upgradeInstanceVersionCallable(const Model::UpgradeInstanceVersionRequest& request) const;

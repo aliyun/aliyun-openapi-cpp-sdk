@@ -43,6 +43,15 @@ void CreateAclRequest::setAclResourceType(const std::string &aclResourceType) {
   setParameter(std::string("AclResourceType"), aclResourceType);
 }
 
+std::string CreateAclRequest::getAclOperationTypes() const {
+  return aclOperationTypes_;
+}
+
+void CreateAclRequest::setAclOperationTypes(const std::string &aclOperationTypes) {
+  aclOperationTypes_ = aclOperationTypes;
+  setParameter(std::string("AclOperationTypes"), aclOperationTypes);
+}
+
 std::string CreateAclRequest::getAclOperationType() const {
   return aclOperationType_;
 }
@@ -77,6 +86,24 @@ std::string CreateAclRequest::getRegionId() const {
 void CreateAclRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string CreateAclRequest::getHost() const {
+  return host_;
+}
+
+void CreateAclRequest::setHost(const std::string &host) {
+  host_ = host;
+  setParameter(std::string("Host"), host);
+}
+
+std::string CreateAclRequest::getAclPermissionType() const {
+  return aclPermissionType_;
+}
+
+void CreateAclRequest::setAclPermissionType(const std::string &aclPermissionType) {
+  aclPermissionType_ = aclPermissionType;
+  setParameter(std::string("AclPermissionType"), aclPermissionType);
 }
 
 std::string CreateAclRequest::getUsername() const {

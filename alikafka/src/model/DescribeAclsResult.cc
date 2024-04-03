@@ -55,6 +55,8 @@ void DescribeAclsResult::parse(const std::string &payload)
 			kafkaAclListObject.aclResourcePatternType = valueKafkaAclListKafkaAclVO["AclResourcePatternType"].asString();
 		if(!valueKafkaAclListKafkaAclVO["Username"].isNull())
 			kafkaAclListObject.username = valueKafkaAclListKafkaAclVO["Username"].asString();
+		if(!valueKafkaAclListKafkaAclVO["AclPermissionType"].isNull())
+			kafkaAclListObject.aclPermissionType = valueKafkaAclListKafkaAclVO["AclPermissionType"].asString();
 		kafkaAclList_.push_back(kafkaAclListObject);
 	}
 	if(!value["Code"].isNull())

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_CREATESASLUSERREQUEST_H_
-#define ALIBABACLOUD_ALIKAFKA_MODEL_CREATESASLUSERREQUEST_H_
+#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_UPDATETOPICCONFIGREQUEST_H_
+#define ALIBABACLOUD_ALIKAFKA_MODEL_UPDATETOPICCONFIGREQUEST_H_
 
 #include <alibabacloud/alikafka/AlikafkaExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,29 @@
 namespace AlibabaCloud {
 namespace Alikafka {
 namespace Model {
-class ALIBABACLOUD_ALIKAFKA_EXPORT CreateSaslUserRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ALIKAFKA_EXPORT UpdateTopicConfigRequest : public RpcServiceRequest {
 public:
-	CreateSaslUserRequest();
-	~CreateSaslUserRequest();
-	std::string getType() const;
-	void setType(const std::string &type);
-	std::string getPassword() const;
-	void setPassword(const std::string &password);
+	UpdateTopicConfigRequest();
+	~UpdateTopicConfigRequest();
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getMechanism() const;
-	void setMechanism(const std::string &mechanism);
-	std::string getUsername() const;
-	void setUsername(const std::string &username);
+	std::string getTopic() const;
+	void setTopic(const std::string &topic);
+	std::string getConfig() const;
+	void setConfig(const std::string &config);
+	std::string getValue() const;
+	void setValue(const std::string &value);
 
 private:
-	std::string type_;
-	std::string password_;
 	std::string instanceId_;
 	std::string regionId_;
-	std::string mechanism_;
-	std::string username_;
+	std::string topic_;
+	std::string config_;
+	std::string value_;
 };
 } // namespace Model
 } // namespace Alikafka
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_CREATESASLUSERREQUEST_H_
+#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_UPDATETOPICCONFIGREQUEST_H_

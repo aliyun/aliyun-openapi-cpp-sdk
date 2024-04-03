@@ -71,12 +71,33 @@ void GetConsumerListResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["Total"].isNull())
+		total_ = std::stol(value["Total"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["CurrentPage"].isNull())
+		currentPage_ = std::stoi(value["CurrentPage"].asString());
 
 }
 
 std::string GetConsumerListResult::getMessage()const
 {
 	return message_;
+}
+
+int GetConsumerListResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int GetConsumerListResult::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+long GetConsumerListResult::getTotal()const
+{
+	return total_;
 }
 
 std::vector<GetConsumerListResult::ConsumerVO> GetConsumerListResult::getConsumerList()const

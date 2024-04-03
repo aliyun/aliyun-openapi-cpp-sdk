@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_GETCONSUMERLISTRESULT_H_
-#define ALIBABACLOUD_ALIKAFKA_MODEL_GETCONSUMERLISTRESULT_H_
+#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_REOPENINSTANCERESULT_H_
+#define ALIBABACLOUD_ALIKAFKA_MODEL_REOPENINSTANCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIKAFKA_EXPORT GetConsumerListResult : public ServiceResult
+			class ALIBABACLOUD_ALIKAFKA_EXPORT ReopenInstanceResult : public ServiceResult
 			{
 			public:
-				struct ConsumerVO
-				{
-					struct TagVO
-					{
-						std::string value;
-						std::string key;
-					};
-					std::string instanceId;
-					bool automaticallyCreatedGroup;
-					std::string consumerId;
-					std::string regionId;
-					std::vector<ConsumerVO::TagVO> tags;
-					std::string remark;
-				};
 
 
-				GetConsumerListResult();
-				explicit GetConsumerListResult(const std::string &payload);
-				~GetConsumerListResult();
+				ReopenInstanceResult();
+				explicit ReopenInstanceResult(const std::string &payload);
+				~ReopenInstanceResult();
 				std::string getMessage()const;
-				int getPageSize()const;
-				int getCurrentPage()const;
-				long getTotal()const;
-				std::vector<ConsumerVO> getConsumerList()const;
 				int getCode()const;
 				bool getSuccess()const;
 
@@ -63,10 +45,6 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				int pageSize_;
-				int currentPage_;
-				long total_;
-				std::vector<ConsumerVO> consumerList_;
 				int code_;
 				bool success_;
 
@@ -74,4 +52,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_GETCONSUMERLISTRESULT_H_
+#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_REOPENINSTANCERESULT_H_

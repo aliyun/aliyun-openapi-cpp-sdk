@@ -25,6 +25,14 @@ StartInstanceRequest::StartInstanceRequest()
 
 StartInstanceRequest::~StartInstanceRequest() {}
 
+std::vector<std::string> StartInstanceRequest::getVSwitchIds() const {
+  return vSwitchIds_;
+}
+
+void StartInstanceRequest::setVSwitchIds(const std::vector<std::string> &vSwitchIds) {
+  vSwitchIds_ = vSwitchIds;
+}
+
 std::string StartInstanceRequest::getSelectedZones() const {
   return selectedZones_;
 }

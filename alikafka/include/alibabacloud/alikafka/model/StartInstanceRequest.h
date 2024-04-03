@@ -30,6 +30,8 @@ class ALIBABACLOUD_ALIKAFKA_EXPORT StartInstanceRequest : public RpcServiceReque
 public:
 	StartInstanceRequest();
 	~StartInstanceRequest();
+	std::vector<std::string> getVSwitchIds() const;
+	void setVSwitchIds(const std::vector<std::string> &vSwitchIds);
 	std::string getSelectedZones() const;
 	void setSelectedZones(const std::string &selectedZones);
 	bool getIsEipInner() const;
@@ -72,6 +74,7 @@ public:
 	void setUsername(const std::string &username);
 
 private:
+	std::vector<std::string> vSwitchIds_;
 	std::string selectedZones_;
 	bool isEipInner_;
 	std::string securityGroup_;

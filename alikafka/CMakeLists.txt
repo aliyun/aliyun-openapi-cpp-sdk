@@ -51,6 +51,10 @@ set(alikafka_public_header_model
 	include/alibabacloud/alikafka/model/DescribeAclsResult.h
 	include/alibabacloud/alikafka/model/DescribeSaslUsersRequest.h
 	include/alibabacloud/alikafka/model/DescribeSaslUsersResult.h
+	include/alibabacloud/alikafka/model/EnableAutoGroupCreationRequest.h
+	include/alibabacloud/alikafka/model/EnableAutoGroupCreationResult.h
+	include/alibabacloud/alikafka/model/EnableAutoTopicCreationRequest.h
+	include/alibabacloud/alikafka/model/EnableAutoTopicCreationResult.h
 	include/alibabacloud/alikafka/model/GetAllInstanceIdListRequest.h
 	include/alibabacloud/alikafka/model/GetAllInstanceIdListResult.h
 	include/alibabacloud/alikafka/model/GetAllowedIpListRequest.h
@@ -67,6 +71,8 @@ set(alikafka_public_header_model
 	include/alibabacloud/alikafka/model/GetTopicListResult.h
 	include/alibabacloud/alikafka/model/GetTopicStatusRequest.h
 	include/alibabacloud/alikafka/model/GetTopicStatusResult.h
+	include/alibabacloud/alikafka/model/GetTopicSubscribeStatusRequest.h
+	include/alibabacloud/alikafka/model/GetTopicSubscribeStatusResult.h
 	include/alibabacloud/alikafka/model/ListTagResourcesRequest.h
 	include/alibabacloud/alikafka/model/ListTagResourcesResult.h
 	include/alibabacloud/alikafka/model/ModifyInstanceNameRequest.h
@@ -75,10 +81,16 @@ set(alikafka_public_header_model
 	include/alibabacloud/alikafka/model/ModifyPartitionNumResult.h
 	include/alibabacloud/alikafka/model/ModifyTopicRemarkRequest.h
 	include/alibabacloud/alikafka/model/ModifyTopicRemarkResult.h
+	include/alibabacloud/alikafka/model/QueryMessageRequest.h
+	include/alibabacloud/alikafka/model/QueryMessageResult.h
 	include/alibabacloud/alikafka/model/ReleaseInstanceRequest.h
 	include/alibabacloud/alikafka/model/ReleaseInstanceResult.h
+	include/alibabacloud/alikafka/model/ReopenInstanceRequest.h
+	include/alibabacloud/alikafka/model/ReopenInstanceResult.h
 	include/alibabacloud/alikafka/model/StartInstanceRequest.h
 	include/alibabacloud/alikafka/model/StartInstanceResult.h
+	include/alibabacloud/alikafka/model/StopInstanceRequest.h
+	include/alibabacloud/alikafka/model/StopInstanceResult.h
 	include/alibabacloud/alikafka/model/TagResourcesRequest.h
 	include/alibabacloud/alikafka/model/TagResourcesResult.h
 	include/alibabacloud/alikafka/model/UntagResourcesRequest.h
@@ -89,6 +101,8 @@ set(alikafka_public_header_model
 	include/alibabacloud/alikafka/model/UpdateConsumerOffsetResult.h
 	include/alibabacloud/alikafka/model/UpdateInstanceConfigRequest.h
 	include/alibabacloud/alikafka/model/UpdateInstanceConfigResult.h
+	include/alibabacloud/alikafka/model/UpdateTopicConfigRequest.h
+	include/alibabacloud/alikafka/model/UpdateTopicConfigResult.h
 	include/alibabacloud/alikafka/model/UpgradeInstanceVersionRequest.h
 	include/alibabacloud/alikafka/model/UpgradeInstanceVersionResult.h
 	include/alibabacloud/alikafka/model/UpgradePostPayOrderRequest.h
@@ -128,6 +142,10 @@ set(alikafka_src
 	src/model/DescribeAclsResult.cc
 	src/model/DescribeSaslUsersRequest.cc
 	src/model/DescribeSaslUsersResult.cc
+	src/model/EnableAutoGroupCreationRequest.cc
+	src/model/EnableAutoGroupCreationResult.cc
+	src/model/EnableAutoTopicCreationRequest.cc
+	src/model/EnableAutoTopicCreationResult.cc
 	src/model/GetAllInstanceIdListRequest.cc
 	src/model/GetAllInstanceIdListResult.cc
 	src/model/GetAllowedIpListRequest.cc
@@ -144,6 +162,8 @@ set(alikafka_src
 	src/model/GetTopicListResult.cc
 	src/model/GetTopicStatusRequest.cc
 	src/model/GetTopicStatusResult.cc
+	src/model/GetTopicSubscribeStatusRequest.cc
+	src/model/GetTopicSubscribeStatusResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ModifyInstanceNameRequest.cc
@@ -152,10 +172,16 @@ set(alikafka_src
 	src/model/ModifyPartitionNumResult.cc
 	src/model/ModifyTopicRemarkRequest.cc
 	src/model/ModifyTopicRemarkResult.cc
+	src/model/QueryMessageRequest.cc
+	src/model/QueryMessageResult.cc
 	src/model/ReleaseInstanceRequest.cc
 	src/model/ReleaseInstanceResult.cc
+	src/model/ReopenInstanceRequest.cc
+	src/model/ReopenInstanceResult.cc
 	src/model/StartInstanceRequest.cc
 	src/model/StartInstanceResult.cc
+	src/model/StopInstanceRequest.cc
+	src/model/StopInstanceResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
 	src/model/UntagResourcesRequest.cc
@@ -166,6 +192,8 @@ set(alikafka_src
 	src/model/UpdateConsumerOffsetResult.cc
 	src/model/UpdateInstanceConfigRequest.cc
 	src/model/UpdateInstanceConfigResult.cc
+	src/model/UpdateTopicConfigRequest.cc
+	src/model/UpdateTopicConfigResult.cc
 	src/model/UpgradeInstanceVersionRequest.cc
 	src/model/UpgradeInstanceVersionResult.cc
 	src/model/UpgradePostPayOrderRequest.cc

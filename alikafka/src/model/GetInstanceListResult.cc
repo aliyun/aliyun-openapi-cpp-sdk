@@ -107,6 +107,12 @@ void GetInstanceListResult::parse(const std::string &payload)
 			instanceListObject.standardZoneId = valueInstanceListInstanceVO["StandardZoneId"].asString();
 		if(!valueInstanceListInstanceVO["IoMaxSpec"].isNull())
 			instanceListObject.ioMaxSpec = valueInstanceListInstanceVO["IoMaxSpec"].asString();
+		if(!valueInstanceListInstanceVO["ReservedPublishCapacity"].isNull())
+			instanceListObject.reservedPublishCapacity = std::stoi(valueInstanceListInstanceVO["ReservedPublishCapacity"].asString());
+		if(!valueInstanceListInstanceVO["ReservedSubscribeCapacity"].isNull())
+			instanceListObject.reservedSubscribeCapacity = std::stoi(valueInstanceListInstanceVO["ReservedSubscribeCapacity"].asString());
+		if(!valueInstanceListInstanceVO["ViewInstanceStatusCode"].isNull())
+			instanceListObject.viewInstanceStatusCode = std::stoi(valueInstanceListInstanceVO["ViewInstanceStatusCode"].asString());
 		auto allTagsNode = valueInstanceListInstanceVO["Tags"]["TagVO"];
 		for (auto valueInstanceListInstanceVOTagsTagVO : allTagsNode)
 		{
@@ -120,6 +126,43 @@ void GetInstanceListResult::parse(const std::string &payload)
 		auto upgradeServiceDetailInfoNode = value["UpgradeServiceDetailInfo"];
 		if(!upgradeServiceDetailInfoNode["Current2OpenSourceVersion"].isNull())
 			instanceListObject.upgradeServiceDetailInfo.current2OpenSourceVersion = upgradeServiceDetailInfoNode["Current2OpenSourceVersion"].asString();
+		auto confluentConfigNode = value["ConfluentConfig"];
+		if(!confluentConfigNode["KafkaCU"].isNull())
+			instanceListObject.confluentConfig.kafkaCU = std::stoi(confluentConfigNode["KafkaCU"].asString());
+		if(!confluentConfigNode["KafkaStorage"].isNull())
+			instanceListObject.confluentConfig.kafkaStorage = std::stoi(confluentConfigNode["KafkaStorage"].asString());
+		if(!confluentConfigNode["KafkaReplica"].isNull())
+			instanceListObject.confluentConfig.kafkaReplica = std::stoi(confluentConfigNode["KafkaReplica"].asString());
+		if(!confluentConfigNode["ZooKeeperCU"].isNull())
+			instanceListObject.confluentConfig.zooKeeperCU = std::stoi(confluentConfigNode["ZooKeeperCU"].asString());
+		if(!confluentConfigNode["ZooKeeperStorage"].isNull())
+			instanceListObject.confluentConfig.zooKeeperStorage = std::stoi(confluentConfigNode["ZooKeeperStorage"].asString());
+		if(!confluentConfigNode["ZooKeeperReplica"].isNull())
+			instanceListObject.confluentConfig.zooKeeperReplica = std::stoi(confluentConfigNode["ZooKeeperReplica"].asString());
+		if(!confluentConfigNode["ControlCenterCU"].isNull())
+			instanceListObject.confluentConfig.controlCenterCU = std::stoi(confluentConfigNode["ControlCenterCU"].asString());
+		if(!confluentConfigNode["ControlCenterStorage"].isNull())
+			instanceListObject.confluentConfig.controlCenterStorage = std::stoi(confluentConfigNode["ControlCenterStorage"].asString());
+		if(!confluentConfigNode["ControlCenterReplica"].isNull())
+			instanceListObject.confluentConfig.controlCenterReplica = std::stoi(confluentConfigNode["ControlCenterReplica"].asString());
+		if(!confluentConfigNode["SchemaRegistryCU"].isNull())
+			instanceListObject.confluentConfig.schemaRegistryCU = std::stoi(confluentConfigNode["SchemaRegistryCU"].asString());
+		if(!confluentConfigNode["SchemaRegistryReplica"].isNull())
+			instanceListObject.confluentConfig.schemaRegistryReplica = std::stoi(confluentConfigNode["SchemaRegistryReplica"].asString());
+		if(!confluentConfigNode["ConnectCU"].isNull())
+			instanceListObject.confluentConfig.connectCU = std::stoi(confluentConfigNode["ConnectCU"].asString());
+		if(!confluentConfigNode["ConnectReplica"].isNull())
+			instanceListObject.confluentConfig.connectReplica = std::stoi(confluentConfigNode["ConnectReplica"].asString());
+		if(!confluentConfigNode["KsqlCU"].isNull())
+			instanceListObject.confluentConfig.ksqlCU = std::stoi(confluentConfigNode["KsqlCU"].asString());
+		if(!confluentConfigNode["KsqlStorage"].isNull())
+			instanceListObject.confluentConfig.ksqlStorage = std::stoi(confluentConfigNode["KsqlStorage"].asString());
+		if(!confluentConfigNode["KsqlReplica"].isNull())
+			instanceListObject.confluentConfig.ksqlReplica = std::stoi(confluentConfigNode["KsqlReplica"].asString());
+		if(!confluentConfigNode["KafkaRestProxyCU"].isNull())
+			instanceListObject.confluentConfig.kafkaRestProxyCU = std::stoi(confluentConfigNode["KafkaRestProxyCU"].asString());
+		if(!confluentConfigNode["KafkaRestProxyReplica"].isNull())
+			instanceListObject.confluentConfig.kafkaRestProxyReplica = std::stoi(confluentConfigNode["KafkaRestProxyReplica"].asString());
 		instanceList_.push_back(instanceListObject);
 	}
 	if(!value["Code"].isNull())

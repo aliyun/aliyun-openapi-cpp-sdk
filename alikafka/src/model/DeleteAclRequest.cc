@@ -43,6 +43,15 @@ void DeleteAclRequest::setAclResourceType(const std::string &aclResourceType) {
   setParameter(std::string("AclResourceType"), aclResourceType);
 }
 
+std::string DeleteAclRequest::getAclOperationTypes() const {
+  return aclOperationTypes_;
+}
+
+void DeleteAclRequest::setAclOperationTypes(const std::string &aclOperationTypes) {
+  aclOperationTypes_ = aclOperationTypes;
+  setParameter(std::string("AclOperationTypes"), aclOperationTypes);
+}
+
 std::string DeleteAclRequest::getAclOperationType() const {
   return aclOperationType_;
 }
@@ -77,6 +86,24 @@ std::string DeleteAclRequest::getRegionId() const {
 void DeleteAclRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DeleteAclRequest::getHost() const {
+  return host_;
+}
+
+void DeleteAclRequest::setHost(const std::string &host) {
+  host_ = host;
+  setParameter(std::string("Host"), host);
+}
+
+std::string DeleteAclRequest::getAclPermissionType() const {
+  return aclPermissionType_;
+}
+
+void DeleteAclRequest::setAclPermissionType(const std::string &aclPermissionType) {
+  aclPermissionType_ = aclPermissionType;
+  setParameter(std::string("AclPermissionType"), aclPermissionType);
 }
 
 std::string DeleteAclRequest::getUsername() const {

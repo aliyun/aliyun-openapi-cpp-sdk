@@ -61,6 +61,15 @@ void CreateSaslUserRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string CreateSaslUserRequest::getMechanism() const {
+  return mechanism_;
+}
+
+void CreateSaslUserRequest::setMechanism(const std::string &mechanism) {
+  mechanism_ = mechanism;
+  setParameter(std::string("Mechanism"), mechanism);
+}
+
 std::string CreateSaslUserRequest::getUsername() const {
   return username_;
 }

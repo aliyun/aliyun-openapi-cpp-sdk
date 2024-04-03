@@ -30,20 +30,20 @@ class ALIBABACLOUD_ALIKAFKA_EXPORT ModifyTopicRemarkRequest : public RpcServiceR
 public:
 	ModifyTopicRemarkRequest();
 	~ModifyTopicRemarkRequest();
+	std::string getRemark() const;
+	void setRemark(const std::string &remark);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getTopic() const;
 	void setTopic(const std::string &topic);
-	std::string getRemark() const;
-	void setRemark(const std::string &remark);
 
 private:
+	std::string remark_;
 	std::string instanceId_;
 	std::string regionId_;
 	std::string topic_;
-	std::string remark_;
 };
 } // namespace Model
 } // namespace Alikafka

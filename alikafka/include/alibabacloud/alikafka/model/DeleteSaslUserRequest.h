@@ -36,6 +36,8 @@ public:
 	void setInstanceId(const std::string &instanceId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getMechanism() const;
+	void setMechanism(const std::string &mechanism);
 	std::string getUsername() const;
 	void setUsername(const std::string &username);
 
@@ -43,6 +45,7 @@ private:
 	std::string type_;
 	std::string instanceId_;
 	std::string regionId_;
+	std::string mechanism_;
 	std::string username_;
 };
 } // namespace Model

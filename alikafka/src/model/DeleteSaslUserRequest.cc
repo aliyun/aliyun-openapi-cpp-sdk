@@ -52,6 +52,15 @@ void DeleteSaslUserRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string DeleteSaslUserRequest::getMechanism() const {
+  return mechanism_;
+}
+
+void DeleteSaslUserRequest::setMechanism(const std::string &mechanism) {
+  mechanism_ = mechanism;
+  setParameter(std::string("Mechanism"), mechanism);
+}
+
 std::string DeleteSaslUserRequest::getUsername() const {
   return username_;
 }
