@@ -34,11 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct OssUploadToken
 				{
-					std::string path;
 					std::string secret;
+					std::string path;
 					std::string bucket;
-					long expired;
 					std::string token;
+					long expired;
 					std::string endPoint;
 					std::string key;
 				};

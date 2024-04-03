@@ -51,6 +51,42 @@ CloudauthClient::CloudauthClient(const std::string & accessKeyId, const std::str
 CloudauthClient::~CloudauthClient()
 {}
 
+CloudauthClient::AIGCFaceVerifyOutcome CloudauthClient::aIGCFaceVerify(const AIGCFaceVerifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AIGCFaceVerifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AIGCFaceVerifyOutcome(AIGCFaceVerifyResult(outcome.result()));
+	else
+		return AIGCFaceVerifyOutcome(outcome.error());
+}
+
+void CloudauthClient::aIGCFaceVerifyAsync(const AIGCFaceVerifyRequest& request, const AIGCFaceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, aIGCFaceVerify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::AIGCFaceVerifyOutcomeCallable CloudauthClient::aIGCFaceVerifyCallable(const AIGCFaceVerifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AIGCFaceVerifyOutcome()>>(
+			[this, request]()
+			{
+			return this->aIGCFaceVerify(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::CompareFaceVerifyOutcome CloudauthClient::compareFaceVerify(const CompareFaceVerifyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -339,6 +375,78 @@ CloudauthClient::DescribeOssUploadTokenOutcomeCallable CloudauthClient::describe
 	return task->get_future();
 }
 
+CloudauthClient::DescribePageFaceVerifyDataOutcome CloudauthClient::describePageFaceVerifyData(const DescribePageFaceVerifyDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePageFaceVerifyDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePageFaceVerifyDataOutcome(DescribePageFaceVerifyDataResult(outcome.result()));
+	else
+		return DescribePageFaceVerifyDataOutcome(outcome.error());
+}
+
+void CloudauthClient::describePageFaceVerifyDataAsync(const DescribePageFaceVerifyDataRequest& request, const DescribePageFaceVerifyDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePageFaceVerifyData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribePageFaceVerifyDataOutcomeCallable CloudauthClient::describePageFaceVerifyDataCallable(const DescribePageFaceVerifyDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePageFaceVerifyDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describePageFaceVerifyData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::DescribeSmartStatisticsPageListOutcome CloudauthClient::describeSmartStatisticsPageList(const DescribeSmartStatisticsPageListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSmartStatisticsPageListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSmartStatisticsPageListOutcome(DescribeSmartStatisticsPageListResult(outcome.result()));
+	else
+		return DescribeSmartStatisticsPageListOutcome(outcome.error());
+}
+
+void CloudauthClient::describeSmartStatisticsPageListAsync(const DescribeSmartStatisticsPageListRequest& request, const DescribeSmartStatisticsPageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSmartStatisticsPageList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeSmartStatisticsPageListOutcomeCallable CloudauthClient::describeSmartStatisticsPageListCallable(const DescribeSmartStatisticsPageListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSmartStatisticsPageListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSmartStatisticsPageList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::DescribeVerifyResultOutcome CloudauthClient::describeVerifyResult(const DescribeVerifyResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -483,6 +591,42 @@ CloudauthClient::DetectFaceAttributesOutcomeCallable CloudauthClient::detectFace
 	return task->get_future();
 }
 
+CloudauthClient::Id2MetaVerifyOutcome CloudauthClient::id2MetaVerify(const Id2MetaVerifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return Id2MetaVerifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return Id2MetaVerifyOutcome(Id2MetaVerifyResult(outcome.result()));
+	else
+		return Id2MetaVerifyOutcome(outcome.error());
+}
+
+void CloudauthClient::id2MetaVerifyAsync(const Id2MetaVerifyRequest& request, const Id2MetaVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, id2MetaVerify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::Id2MetaVerifyOutcomeCallable CloudauthClient::id2MetaVerifyCallable(const Id2MetaVerifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<Id2MetaVerifyOutcome()>>(
+			[this, request]()
+			{
+			return this->id2MetaVerify(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::InitFaceVerifyOutcome CloudauthClient::initFaceVerify(const InitFaceVerifyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +693,78 @@ CloudauthClient::LivenessFaceVerifyOutcomeCallable CloudauthClient::livenessFace
 			[this, request]()
 			{
 			return this->livenessFaceVerify(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::Mobile3MetaDetailVerifyOutcome CloudauthClient::mobile3MetaDetailVerify(const Mobile3MetaDetailVerifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return Mobile3MetaDetailVerifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return Mobile3MetaDetailVerifyOutcome(Mobile3MetaDetailVerifyResult(outcome.result()));
+	else
+		return Mobile3MetaDetailVerifyOutcome(outcome.error());
+}
+
+void CloudauthClient::mobile3MetaDetailVerifyAsync(const Mobile3MetaDetailVerifyRequest& request, const Mobile3MetaDetailVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, mobile3MetaDetailVerify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::Mobile3MetaDetailVerifyOutcomeCallable CloudauthClient::mobile3MetaDetailVerifyCallable(const Mobile3MetaDetailVerifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<Mobile3MetaDetailVerifyOutcome()>>(
+			[this, request]()
+			{
+			return this->mobile3MetaDetailVerify(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::Mobile3MetaSimpleVerifyOutcome CloudauthClient::mobile3MetaSimpleVerify(const Mobile3MetaSimpleVerifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return Mobile3MetaSimpleVerifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return Mobile3MetaSimpleVerifyOutcome(Mobile3MetaSimpleVerifyResult(outcome.result()));
+	else
+		return Mobile3MetaSimpleVerifyOutcome(outcome.error());
+}
+
+void CloudauthClient::mobile3MetaSimpleVerifyAsync(const Mobile3MetaSimpleVerifyRequest& request, const Mobile3MetaSimpleVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, mobile3MetaSimpleVerify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::Mobile3MetaSimpleVerifyOutcomeCallable CloudauthClient::mobile3MetaSimpleVerifyCallable(const Mobile3MetaSimpleVerifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<Mobile3MetaSimpleVerifyOutcome()>>(
+			[this, request]()
+			{
+			return this->mobile3MetaSimpleVerify(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -39,16 +39,16 @@ void ModifyDeviceInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DeviceId"].isNull())
-		deviceId_ = value["DeviceId"].asString();
 	if(!value["UserDeviceId"].isNull())
 		userDeviceId_ = value["UserDeviceId"].asString();
-	if(!value["BizType"].isNull())
-		bizType_ = value["BizType"].asString();
-	if(!value["BeginDay"].isNull())
-		beginDay_ = value["BeginDay"].asString();
+	if(!value["DeviceId"].isNull())
+		deviceId_ = value["DeviceId"].asString();
 	if(!value["ExpiredDay"].isNull())
 		expiredDay_ = value["ExpiredDay"].asString();
+	if(!value["BeginDay"].isNull())
+		beginDay_ = value["BeginDay"].asString();
+	if(!value["BizType"].isNull())
+		bizType_ = value["BizType"].asString();
 
 }
 

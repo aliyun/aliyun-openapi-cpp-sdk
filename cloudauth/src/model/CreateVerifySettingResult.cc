@@ -42,12 +42,12 @@ void CreateVerifySettingResult::parse(const std::string &payload)
 	auto allStepList = value["StepList"]["Step"];
 	for (const auto &item : allStepList)
 		stepList_.push_back(item.asString());
-	if(!value["BizType"].isNull())
-		bizType_ = value["BizType"].asString();
 	if(!value["BizName"].isNull())
 		bizName_ = value["BizName"].asString();
 	if(!value["Solution"].isNull())
 		solution_ = value["Solution"].asString();
+	if(!value["BizType"].isNull())
+		bizType_ = value["BizType"].asString();
 
 }
 
@@ -56,14 +56,14 @@ std::vector<std::string> CreateVerifySettingResult::getStepList()const
 	return stepList_;
 }
 
-std::string CreateVerifySettingResult::getBizType()const
-{
-	return bizType_;
-}
-
 std::string CreateVerifySettingResult::getBizName()const
 {
 	return bizName_;
+}
+
+std::string CreateVerifySettingResult::getBizType()const
+{
+	return bizType_;
 }
 
 std::string CreateVerifySettingResult::getSolution()const

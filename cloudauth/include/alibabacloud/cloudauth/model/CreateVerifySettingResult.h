@@ -38,16 +38,16 @@ namespace AlibabaCloud
 				explicit CreateVerifySettingResult(const std::string &payload);
 				~CreateVerifySettingResult();
 				std::vector<std::string> getStepList()const;
-				std::string getBizType()const;
 				std::string getBizName()const;
+				std::string getBizType()const;
 				std::string getSolution()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<std::string> stepList_;
-				std::string bizType_;
 				std::string bizName_;
+				std::string bizType_;
 				std::string solution_;
 
 			};

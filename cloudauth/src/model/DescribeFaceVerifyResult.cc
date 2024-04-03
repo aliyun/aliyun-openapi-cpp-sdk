@@ -50,6 +50,12 @@ void DescribeFaceVerifyResult::parse(const std::string &payload)
 		resultObject_.deviceToken = resultObjectNode["DeviceToken"].asString();
 	if(!resultObjectNode["Passed"].isNull())
 		resultObject_.passed = resultObjectNode["Passed"].asString();
+	if(!resultObjectNode["DeviceRisk"].isNull())
+		resultObject_.deviceRisk = resultObjectNode["DeviceRisk"].asString();
+	if(!resultObjectNode["Success"].isNull())
+		resultObject_.success = resultObjectNode["Success"].asString();
+	if(!resultObjectNode["UserInfo"].isNull())
+		resultObject_.userInfo = resultObjectNode["UserInfo"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

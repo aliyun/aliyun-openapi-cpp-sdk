@@ -40,20 +40,20 @@ void DescribeOssUploadTokenResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto ossUploadTokenNode = value["OssUploadToken"];
-	if(!ossUploadTokenNode["Bucket"].isNull())
-		ossUploadToken_.bucket = ossUploadTokenNode["Bucket"].asString();
-	if(!ossUploadTokenNode["EndPoint"].isNull())
-		ossUploadToken_.endPoint = ossUploadTokenNode["EndPoint"].asString();
-	if(!ossUploadTokenNode["Path"].isNull())
-		ossUploadToken_.path = ossUploadTokenNode["Path"].asString();
-	if(!ossUploadTokenNode["Expired"].isNull())
-		ossUploadToken_.expired = std::stol(ossUploadTokenNode["Expired"].asString());
-	if(!ossUploadTokenNode["Secret"].isNull())
-		ossUploadToken_.secret = ossUploadTokenNode["Secret"].asString();
 	if(!ossUploadTokenNode["Key"].isNull())
 		ossUploadToken_.key = ossUploadTokenNode["Key"].asString();
 	if(!ossUploadTokenNode["Token"].isNull())
 		ossUploadToken_.token = ossUploadTokenNode["Token"].asString();
+	if(!ossUploadTokenNode["Secret"].isNull())
+		ossUploadToken_.secret = ossUploadTokenNode["Secret"].asString();
+	if(!ossUploadTokenNode["Expired"].isNull())
+		ossUploadToken_.expired = std::stol(ossUploadTokenNode["Expired"].asString());
+	if(!ossUploadTokenNode["Path"].isNull())
+		ossUploadToken_.path = ossUploadTokenNode["Path"].asString();
+	if(!ossUploadTokenNode["EndPoint"].isNull())
+		ossUploadToken_.endPoint = ossUploadTokenNode["EndPoint"].asString();
+	if(!ossUploadTokenNode["Bucket"].isNull())
+		ossUploadToken_.bucket = ossUploadTokenNode["Bucket"].asString();
 
 }
 

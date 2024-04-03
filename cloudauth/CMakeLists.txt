@@ -21,6 +21,8 @@ set(cloudauth_public_header
 	include/alibabacloud/cloudauth/CloudauthExport.h )
 
 set(cloudauth_public_header_model 
+	include/alibabacloud/cloudauth/model/AIGCFaceVerifyRequest.h
+	include/alibabacloud/cloudauth/model/AIGCFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/CompareFaceVerifyRequest.h
 	include/alibabacloud/cloudauth/model/CompareFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/CompareFacesRequest.h
@@ -37,6 +39,10 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/DescribeFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/DescribeOssUploadTokenRequest.h
 	include/alibabacloud/cloudauth/model/DescribeOssUploadTokenResult.h
+	include/alibabacloud/cloudauth/model/DescribePageFaceVerifyDataRequest.h
+	include/alibabacloud/cloudauth/model/DescribePageFaceVerifyDataResult.h
+	include/alibabacloud/cloudauth/model/DescribeSmartStatisticsPageListRequest.h
+	include/alibabacloud/cloudauth/model/DescribeSmartStatisticsPageListResult.h
 	include/alibabacloud/cloudauth/model/DescribeVerifyResultRequest.h
 	include/alibabacloud/cloudauth/model/DescribeVerifyResultResult.h
 	include/alibabacloud/cloudauth/model/DescribeVerifySDKRequest.h
@@ -45,10 +51,16 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/DescribeVerifyTokenResult.h
 	include/alibabacloud/cloudauth/model/DetectFaceAttributesRequest.h
 	include/alibabacloud/cloudauth/model/DetectFaceAttributesResult.h
+	include/alibabacloud/cloudauth/model/Id2MetaVerifyRequest.h
+	include/alibabacloud/cloudauth/model/Id2MetaVerifyResult.h
 	include/alibabacloud/cloudauth/model/InitFaceVerifyRequest.h
 	include/alibabacloud/cloudauth/model/InitFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/LivenessFaceVerifyRequest.h
 	include/alibabacloud/cloudauth/model/LivenessFaceVerifyResult.h
+	include/alibabacloud/cloudauth/model/Mobile3MetaDetailVerifyRequest.h
+	include/alibabacloud/cloudauth/model/Mobile3MetaDetailVerifyResult.h
+	include/alibabacloud/cloudauth/model/Mobile3MetaSimpleVerifyRequest.h
+	include/alibabacloud/cloudauth/model/Mobile3MetaSimpleVerifyResult.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoRequest.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoResult.h
 	include/alibabacloud/cloudauth/model/VerifyMaterialRequest.h
@@ -56,6 +68,8 @@ set(cloudauth_public_header_model
 
 set(cloudauth_src 
 	src/CloudauthClient.cc
+	src/model/AIGCFaceVerifyRequest.cc
+	src/model/AIGCFaceVerifyResult.cc
 	src/model/CompareFaceVerifyRequest.cc
 	src/model/CompareFaceVerifyResult.cc
 	src/model/CompareFacesRequest.cc
@@ -72,6 +86,10 @@ set(cloudauth_src
 	src/model/DescribeFaceVerifyResult.cc
 	src/model/DescribeOssUploadTokenRequest.cc
 	src/model/DescribeOssUploadTokenResult.cc
+	src/model/DescribePageFaceVerifyDataRequest.cc
+	src/model/DescribePageFaceVerifyDataResult.cc
+	src/model/DescribeSmartStatisticsPageListRequest.cc
+	src/model/DescribeSmartStatisticsPageListResult.cc
 	src/model/DescribeVerifyResultRequest.cc
 	src/model/DescribeVerifyResultResult.cc
 	src/model/DescribeVerifySDKRequest.cc
@@ -80,10 +98,16 @@ set(cloudauth_src
 	src/model/DescribeVerifyTokenResult.cc
 	src/model/DetectFaceAttributesRequest.cc
 	src/model/DetectFaceAttributesResult.cc
+	src/model/Id2MetaVerifyRequest.cc
+	src/model/Id2MetaVerifyResult.cc
 	src/model/InitFaceVerifyRequest.cc
 	src/model/InitFaceVerifyResult.cc
 	src/model/LivenessFaceVerifyRequest.cc
 	src/model/LivenessFaceVerifyResult.cc
+	src/model/Mobile3MetaDetailVerifyRequest.cc
+	src/model/Mobile3MetaDetailVerifyResult.cc
+	src/model/Mobile3MetaSimpleVerifyRequest.cc
+	src/model/Mobile3MetaSimpleVerifyResult.cc
 	src/model/ModifyDeviceInfoRequest.cc
 	src/model/ModifyDeviceInfoResult.cc
 	src/model/VerifyMaterialRequest.cc

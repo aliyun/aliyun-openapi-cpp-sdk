@@ -43,22 +43,22 @@ void DescribeDeviceInfoResult::parse(const std::string &payload)
 	for (auto valueDeviceInfoListDeviceInfo : allDeviceInfoListNode)
 	{
 		DeviceInfo deviceInfoListObject;
-		if(!valueDeviceInfoListDeviceInfo["DeviceId"].isNull())
-			deviceInfoListObject.deviceId = valueDeviceInfoListDeviceInfo["DeviceId"].asString();
-		if(!valueDeviceInfoListDeviceInfo["UserDeviceId"].isNull())
-			deviceInfoListObject.userDeviceId = valueDeviceInfoListDeviceInfo["UserDeviceId"].asString();
-		if(!valueDeviceInfoListDeviceInfo["BizType"].isNull())
-			deviceInfoListObject.bizType = valueDeviceInfoListDeviceInfo["BizType"].asString();
-		if(!valueDeviceInfoListDeviceInfo["BeginDay"].isNull())
-			deviceInfoListObject.beginDay = valueDeviceInfoListDeviceInfo["BeginDay"].asString();
 		if(!valueDeviceInfoListDeviceInfo["ExpiredDay"].isNull())
 			deviceInfoListObject.expiredDay = valueDeviceInfoListDeviceInfo["ExpiredDay"].asString();
+		if(!valueDeviceInfoListDeviceInfo["UserDeviceId"].isNull())
+			deviceInfoListObject.userDeviceId = valueDeviceInfoListDeviceInfo["UserDeviceId"].asString();
+		if(!valueDeviceInfoListDeviceInfo["DeviceId"].isNull())
+			deviceInfoListObject.deviceId = valueDeviceInfoListDeviceInfo["DeviceId"].asString();
+		if(!valueDeviceInfoListDeviceInfo["BeginDay"].isNull())
+			deviceInfoListObject.beginDay = valueDeviceInfoListDeviceInfo["BeginDay"].asString();
+		if(!valueDeviceInfoListDeviceInfo["BizType"].isNull())
+			deviceInfoListObject.bizType = valueDeviceInfoListDeviceInfo["BizType"].asString();
 		deviceInfoList_.push_back(deviceInfoListObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["CurrentPage"].isNull())
 		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,254 +18,307 @@
 
 using AlibabaCloud::Cloudauth::Model::InitFaceVerifyRequest;
 
-InitFaceVerifyRequest::InitFaceVerifyRequest() :
-	RpcServiceRequest("cloudauth", "2019-03-07", "InitFaceVerify")
-{
-	setMethod(HttpRequest::Method::Post);
+InitFaceVerifyRequest::InitFaceVerifyRequest()
+    : RpcServiceRequest("cloudauth", "2019-03-07", "InitFaceVerify") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-InitFaceVerifyRequest::~InitFaceVerifyRequest()
-{}
+InitFaceVerifyRequest::~InitFaceVerifyRequest() {}
 
-std::string InitFaceVerifyRequest::getProductCode()const
-{
-	return productCode_;
+std::string InitFaceVerifyRequest::getBirthday() const {
+  return birthday_;
 }
 
-void InitFaceVerifyRequest::setProductCode(const std::string& productCode)
-{
-	productCode_ = productCode;
-	setParameter("ProductCode", productCode);
+void InitFaceVerifyRequest::setBirthday(const std::string &birthday) {
+  birthday_ = birthday;
+  setParameter(std::string("Birthday"), birthday);
 }
 
-std::string InitFaceVerifyRequest::getFaceContrastPicture()const
-{
-	return faceContrastPicture_;
+std::string InitFaceVerifyRequest::getProductCode() const {
+  return productCode_;
 }
 
-void InitFaceVerifyRequest::setFaceContrastPicture(const std::string& faceContrastPicture)
-{
-	faceContrastPicture_ = faceContrastPicture;
-	setBodyParameter("FaceContrastPicture", faceContrastPicture);
+void InitFaceVerifyRequest::setProductCode(const std::string &productCode) {
+  productCode_ = productCode;
+  setParameter(std::string("ProductCode"), productCode);
 }
 
-std::string InitFaceVerifyRequest::getUserId()const
-{
-	return userId_;
+std::string InitFaceVerifyRequest::getFaceContrastPicture() const {
+  return faceContrastPicture_;
 }
 
-void InitFaceVerifyRequest::setUserId(const std::string& userId)
-{
-	userId_ = userId;
-	setParameter("UserId", userId);
+void InitFaceVerifyRequest::setFaceContrastPicture(const std::string &faceContrastPicture) {
+  faceContrastPicture_ = faceContrastPicture;
+  setBodyParameter(std::string("FaceContrastPicture"), faceContrastPicture);
 }
 
-std::string InitFaceVerifyRequest::getCertifyId()const
-{
-	return certifyId_;
+std::string InitFaceVerifyRequest::getReadImg() const {
+  return readImg_;
 }
 
-void InitFaceVerifyRequest::setCertifyId(const std::string& certifyId)
-{
-	certifyId_ = certifyId;
-	setParameter("CertifyId", certifyId);
+void InitFaceVerifyRequest::setReadImg(const std::string &readImg) {
+  readImg_ = readImg;
+  setParameter(std::string("ReadImg"), readImg);
 }
 
-std::string InitFaceVerifyRequest::getCertNo()const
-{
-	return certNo_;
+std::string InitFaceVerifyRequest::getRarelyCharacters() const {
+  return rarelyCharacters_;
 }
 
-void InitFaceVerifyRequest::setCertNo(const std::string& certNo)
-{
-	certNo_ = certNo;
-	setParameter("CertNo", certNo);
+void InitFaceVerifyRequest::setRarelyCharacters(const std::string &rarelyCharacters) {
+  rarelyCharacters_ = rarelyCharacters;
+  setParameter(std::string("RarelyCharacters"), rarelyCharacters);
 }
 
-std::string InitFaceVerifyRequest::getOuterOrderNo()const
-{
-	return outerOrderNo_;
+std::string InitFaceVerifyRequest::getVoluntaryCustomizedContent() const {
+  return voluntaryCustomizedContent_;
 }
 
-void InitFaceVerifyRequest::setOuterOrderNo(const std::string& outerOrderNo)
-{
-	outerOrderNo_ = outerOrderNo;
-	setParameter("OuterOrderNo", outerOrderNo);
+void InitFaceVerifyRequest::setVoluntaryCustomizedContent(const std::string &voluntaryCustomizedContent) {
+  voluntaryCustomizedContent_ = voluntaryCustomizedContent;
+  setParameter(std::string("VoluntaryCustomizedContent"), voluntaryCustomizedContent);
 }
 
-std::string InitFaceVerifyRequest::getCertType()const
-{
-	return certType_;
+std::string InitFaceVerifyRequest::getUserId() const {
+  return userId_;
 }
 
-void InitFaceVerifyRequest::setCertType(const std::string& certType)
-{
-	certType_ = certType;
-	setParameter("CertType", certType);
+void InitFaceVerifyRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
 }
 
-std::string InitFaceVerifyRequest::getFaceContrastPictureUrl()const
-{
-	return faceContrastPictureUrl_;
+std::string InitFaceVerifyRequest::getCertifyId() const {
+  return certifyId_;
 }
 
-void InitFaceVerifyRequest::setFaceContrastPictureUrl(const std::string& faceContrastPictureUrl)
-{
-	faceContrastPictureUrl_ = faceContrastPictureUrl;
-	setParameter("FaceContrastPictureUrl", faceContrastPictureUrl);
+void InitFaceVerifyRequest::setCertifyId(const std::string &certifyId) {
+  certifyId_ = certifyId;
+  setParameter(std::string("CertifyId"), certifyId);
 }
 
-std::string InitFaceVerifyRequest::getModel()const
-{
-	return model_;
+std::string InitFaceVerifyRequest::getEncryptType() const {
+  return encryptType_;
 }
 
-void InitFaceVerifyRequest::setModel(const std::string& model)
-{
-	model_ = model;
-	setBodyParameter("Model", model);
+void InitFaceVerifyRequest::setEncryptType(const std::string &encryptType) {
+  encryptType_ = encryptType;
+  setParameter(std::string("EncryptType"), encryptType);
 }
 
-std::string InitFaceVerifyRequest::getMetaInfo()const
-{
-	return metaInfo_;
+std::string InitFaceVerifyRequest::getMode() const {
+  return mode_;
 }
 
-void InitFaceVerifyRequest::setMetaInfo(const std::string& metaInfo)
-{
-	metaInfo_ = metaInfo;
-	setParameter("MetaInfo", metaInfo);
+void InitFaceVerifyRequest::setMode(const std::string &mode) {
+  mode_ = mode;
+  setParameter(std::string("Mode"), mode);
 }
 
-std::string InitFaceVerifyRequest::getOssObjectName()const
-{
-	return ossObjectName_;
+std::string InitFaceVerifyRequest::getCertNo() const {
+  return certNo_;
 }
 
-void InitFaceVerifyRequest::setOssObjectName(const std::string& ossObjectName)
-{
-	ossObjectName_ = ossObjectName;
-	setParameter("OssObjectName", ossObjectName);
+void InitFaceVerifyRequest::setCertNo(const std::string &certNo) {
+  certNo_ = certNo;
+  setParameter(std::string("CertNo"), certNo);
 }
 
-std::string InitFaceVerifyRequest::getCertName()const
-{
-	return certName_;
+std::string InitFaceVerifyRequest::getOuterOrderNo() const {
+  return outerOrderNo_;
 }
 
-void InitFaceVerifyRequest::setCertName(const std::string& certName)
-{
-	certName_ = certName;
-	setParameter("CertName", certName);
+void InitFaceVerifyRequest::setOuterOrderNo(const std::string &outerOrderNo) {
+  outerOrderNo_ = outerOrderNo;
+  setParameter(std::string("OuterOrderNo"), outerOrderNo);
 }
 
-std::string InitFaceVerifyRequest::getIp()const
-{
-	return ip_;
+std::string InitFaceVerifyRequest::getCertType() const {
+  return certType_;
 }
 
-void InitFaceVerifyRequest::setIp(const std::string& ip)
-{
-	ip_ = ip;
-	setParameter("Ip", ip);
+void InitFaceVerifyRequest::setCertType(const std::string &certType) {
+  certType_ = certType;
+  setParameter(std::string("CertType"), certType);
 }
 
-std::string InitFaceVerifyRequest::getMobile()const
-{
-	return mobile_;
+std::string InitFaceVerifyRequest::getFaceContrastPictureUrl() const {
+  return faceContrastPictureUrl_;
 }
 
-void InitFaceVerifyRequest::setMobile(const std::string& mobile)
-{
-	mobile_ = mobile;
-	setParameter("Mobile", mobile);
+void InitFaceVerifyRequest::setFaceContrastPictureUrl(const std::string &faceContrastPictureUrl) {
+  faceContrastPictureUrl_ = faceContrastPictureUrl;
+  setParameter(std::string("FaceContrastPictureUrl"), faceContrastPictureUrl);
 }
 
-std::string InitFaceVerifyRequest::getAuthId()const
-{
-	return authId_;
+std::string InitFaceVerifyRequest::getModel() const {
+  return model_;
 }
 
-void InitFaceVerifyRequest::setAuthId(const std::string& authId)
-{
-	authId_ = authId;
-	setBodyParameter("AuthId", authId);
+void InitFaceVerifyRequest::setModel(const std::string &model) {
+  model_ = model;
+  setBodyParameter(std::string("Model"), model);
 }
 
-long InitFaceVerifyRequest::getSceneId()const
-{
-	return sceneId_;
+std::string InitFaceVerifyRequest::getSuitableType() const {
+  return suitableType_;
 }
 
-void InitFaceVerifyRequest::setSceneId(long sceneId)
-{
-	sceneId_ = sceneId;
-	setParameter("SceneId", std::to_string(sceneId));
+void InitFaceVerifyRequest::setSuitableType(const std::string &suitableType) {
+  suitableType_ = suitableType;
+  setParameter(std::string("SuitableType"), suitableType);
 }
 
-std::string InitFaceVerifyRequest::getOssBucketName()const
-{
-	return ossBucketName_;
+std::string InitFaceVerifyRequest::getCertifyUrlStyle() const {
+  return certifyUrlStyle_;
 }
 
-void InitFaceVerifyRequest::setOssBucketName(const std::string& ossBucketName)
-{
-	ossBucketName_ = ossBucketName;
-	setParameter("OssBucketName", ossBucketName);
+void InitFaceVerifyRequest::setCertifyUrlStyle(const std::string &certifyUrlStyle) {
+  certifyUrlStyle_ = certifyUrlStyle;
+  setParameter(std::string("CertifyUrlStyle"), certifyUrlStyle);
 }
 
-std::string InitFaceVerifyRequest::getCallbackToken()const
-{
-	return callbackToken_;
+std::string InitFaceVerifyRequest::getMetaInfo() const {
+  return metaInfo_;
 }
 
-void InitFaceVerifyRequest::setCallbackToken(const std::string& callbackToken)
-{
-	callbackToken_ = callbackToken;
-	setParameter("CallbackToken", callbackToken);
+void InitFaceVerifyRequest::setMetaInfo(const std::string &metaInfo) {
+  metaInfo_ = metaInfo;
+  setParameter(std::string("MetaInfo"), metaInfo);
 }
 
-std::string InitFaceVerifyRequest::getReturnUrl()const
-{
-	return returnUrl_;
+std::string InitFaceVerifyRequest::getOssObjectName() const {
+  return ossObjectName_;
 }
 
-void InitFaceVerifyRequest::setReturnUrl(const std::string& returnUrl)
-{
-	returnUrl_ = returnUrl;
-	setParameter("ReturnUrl", returnUrl);
+void InitFaceVerifyRequest::setOssObjectName(const std::string &ossObjectName) {
+  ossObjectName_ = ossObjectName;
+  setParameter(std::string("OssObjectName"), ossObjectName);
 }
 
-std::string InitFaceVerifyRequest::getCallbackUrl()const
-{
-	return callbackUrl_;
+std::string InitFaceVerifyRequest::getValidityDate() const {
+  return validityDate_;
 }
 
-void InitFaceVerifyRequest::setCallbackUrl(const std::string& callbackUrl)
-{
-	callbackUrl_ = callbackUrl;
-	setParameter("CallbackUrl", callbackUrl);
+void InitFaceVerifyRequest::setValidityDate(const std::string &validityDate) {
+  validityDate_ = validityDate;
+  setParameter(std::string("ValidityDate"), validityDate);
 }
 
-std::string InitFaceVerifyRequest::getCrop()const
-{
-	return crop_;
+std::string InitFaceVerifyRequest::getCertName() const {
+  return certName_;
 }
 
-void InitFaceVerifyRequest::setCrop(const std::string& crop)
-{
-	crop_ = crop;
-	setBodyParameter("Crop", crop);
+void InitFaceVerifyRequest::setCertName(const std::string &certName) {
+  certName_ = certName;
+  setParameter(std::string("CertName"), certName);
 }
 
-std::string InitFaceVerifyRequest::getCertifyUrlType()const
-{
-	return certifyUrlType_;
+std::string InitFaceVerifyRequest::getIp() const {
+  return ip_;
 }
 
-void InitFaceVerifyRequest::setCertifyUrlType(const std::string& certifyUrlType)
-{
-	certifyUrlType_ = certifyUrlType;
-	setParameter("CertifyUrlType", certifyUrlType);
+void InitFaceVerifyRequest::setIp(const std::string &ip) {
+  ip_ = ip;
+  setParameter(std::string("Ip"), ip);
+}
+
+std::string InitFaceVerifyRequest::getMobile() const {
+  return mobile_;
+}
+
+void InitFaceVerifyRequest::setMobile(const std::string &mobile) {
+  mobile_ = mobile;
+  setParameter(std::string("Mobile"), mobile);
+}
+
+std::string InitFaceVerifyRequest::getFaceGuardOutput() const {
+  return faceGuardOutput_;
+}
+
+void InitFaceVerifyRequest::setFaceGuardOutput(const std::string &faceGuardOutput) {
+  faceGuardOutput_ = faceGuardOutput;
+  setParameter(std::string("FaceGuardOutput"), faceGuardOutput);
+}
+
+std::string InitFaceVerifyRequest::getAuthId() const {
+  return authId_;
+}
+
+void InitFaceVerifyRequest::setAuthId(const std::string &authId) {
+  authId_ = authId;
+  setBodyParameter(std::string("AuthId"), authId);
+}
+
+std::string InitFaceVerifyRequest::getProcedurePriority() const {
+  return procedurePriority_;
+}
+
+void InitFaceVerifyRequest::setProcedurePriority(const std::string &procedurePriority) {
+  procedurePriority_ = procedurePriority;
+  setParameter(std::string("ProcedurePriority"), procedurePriority);
+}
+
+long InitFaceVerifyRequest::getSceneId() const {
+  return sceneId_;
+}
+
+void InitFaceVerifyRequest::setSceneId(long sceneId) {
+  sceneId_ = sceneId;
+  setParameter(std::string("SceneId"), std::to_string(sceneId));
+}
+
+std::string InitFaceVerifyRequest::getOssBucketName() const {
+  return ossBucketName_;
+}
+
+void InitFaceVerifyRequest::setOssBucketName(const std::string &ossBucketName) {
+  ossBucketName_ = ossBucketName;
+  setParameter(std::string("OssBucketName"), ossBucketName);
+}
+
+std::string InitFaceVerifyRequest::getCallbackToken() const {
+  return callbackToken_;
+}
+
+void InitFaceVerifyRequest::setCallbackToken(const std::string &callbackToken) {
+  callbackToken_ = callbackToken;
+  setParameter(std::string("CallbackToken"), callbackToken);
+}
+
+std::string InitFaceVerifyRequest::getReturnUrl() const {
+  return returnUrl_;
+}
+
+void InitFaceVerifyRequest::setReturnUrl(const std::string &returnUrl) {
+  returnUrl_ = returnUrl;
+  setParameter(std::string("ReturnUrl"), returnUrl);
+}
+
+std::string InitFaceVerifyRequest::getCallbackUrl() const {
+  return callbackUrl_;
+}
+
+void InitFaceVerifyRequest::setCallbackUrl(const std::string &callbackUrl) {
+  callbackUrl_ = callbackUrl;
+  setParameter(std::string("CallbackUrl"), callbackUrl);
+}
+
+std::string InitFaceVerifyRequest::getCrop() const {
+  return crop_;
+}
+
+void InitFaceVerifyRequest::setCrop(const std::string &crop) {
+  crop_ = crop;
+  setBodyParameter(std::string("Crop"), crop);
+}
+
+std::string InitFaceVerifyRequest::getCertifyUrlType() const {
+  return certifyUrlType_;
+}
+
+void InitFaceVerifyRequest::setCertifyUrlType(const std::string &certifyUrlType) {
+  certifyUrlType_ = certifyUrlType;
+  setParameter(std::string("CertifyUrlType"), certifyUrlType);
 }
 
