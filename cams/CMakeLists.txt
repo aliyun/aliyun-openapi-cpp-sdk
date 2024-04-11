@@ -47,8 +47,18 @@ set(cams_public_header_model
 	include/alibabacloud/cams/model/CreateChatappMigrationInitiateResult.h
 	include/alibabacloud/cams/model/CreateChatappTemplateRequest.h
 	include/alibabacloud/cams/model/CreateChatappTemplateResult.h
+	include/alibabacloud/cams/model/CreateFlowRequest.h
+	include/alibabacloud/cams/model/CreateFlowResult.h
+	include/alibabacloud/cams/model/CreatePhoneMessageQrdlRequest.h
+	include/alibabacloud/cams/model/CreatePhoneMessageQrdlResult.h
 	include/alibabacloud/cams/model/DeleteChatappTemplateRequest.h
 	include/alibabacloud/cams/model/DeleteChatappTemplateResult.h
+	include/alibabacloud/cams/model/DeleteFlowRequest.h
+	include/alibabacloud/cams/model/DeleteFlowResult.h
+	include/alibabacloud/cams/model/DeletePhoneMessageQrdlRequest.h
+	include/alibabacloud/cams/model/DeletePhoneMessageQrdlResult.h
+	include/alibabacloud/cams/model/DeprecateFlowRequest.h
+	include/alibabacloud/cams/model/DeprecateFlowResult.h
 	include/alibabacloud/cams/model/EnableWhatsappROIMetricRequest.h
 	include/alibabacloud/cams/model/EnableWhatsappROIMetricResult.h
 	include/alibabacloud/cams/model/GetChatappPhoneNumberMetricRequest.h
@@ -63,8 +73,18 @@ set(cams_public_header_model
 	include/alibabacloud/cams/model/GetChatappVerifyCodeResult.h
 	include/alibabacloud/cams/model/GetCommerceSettingRequest.h
 	include/alibabacloud/cams/model/GetCommerceSettingResult.h
+	include/alibabacloud/cams/model/GetFlowRequest.h
+	include/alibabacloud/cams/model/GetFlowResult.h
+	include/alibabacloud/cams/model/GetFlowJSONAssestRequest.h
+	include/alibabacloud/cams/model/GetFlowJSONAssestResult.h
+	include/alibabacloud/cams/model/GetFlowPreviewUrlRequest.h
+	include/alibabacloud/cams/model/GetFlowPreviewUrlResult.h
 	include/alibabacloud/cams/model/GetMigrationVerifyCodeRequest.h
 	include/alibabacloud/cams/model/GetMigrationVerifyCodeResult.h
+	include/alibabacloud/cams/model/GetPermissionByCodeRequest.h
+	include/alibabacloud/cams/model/GetPermissionByCodeResult.h
+	include/alibabacloud/cams/model/GetPhoneEncryptionPublicKeyRequest.h
+	include/alibabacloud/cams/model/GetPhoneEncryptionPublicKeyResult.h
 	include/alibabacloud/cams/model/GetPhoneNumberVerificationStatusRequest.h
 	include/alibabacloud/cams/model/GetPhoneNumberVerificationStatusResult.h
 	include/alibabacloud/cams/model/GetPreValidatePhoneIdRequest.h
@@ -75,14 +95,22 @@ set(cams_public_header_model
 	include/alibabacloud/cams/model/IsvGetAppIdResult.h
 	include/alibabacloud/cams/model/ListChatappTemplateRequest.h
 	include/alibabacloud/cams/model/ListChatappTemplateResult.h
+	include/alibabacloud/cams/model/ListFlowRequest.h
+	include/alibabacloud/cams/model/ListFlowResult.h
+	include/alibabacloud/cams/model/ListPhoneMessageQrdlRequest.h
+	include/alibabacloud/cams/model/ListPhoneMessageQrdlResult.h
 	include/alibabacloud/cams/model/ListProductRequest.h
 	include/alibabacloud/cams/model/ListProductResult.h
 	include/alibabacloud/cams/model/ListProductCatalogRequest.h
 	include/alibabacloud/cams/model/ListProductCatalogResult.h
 	include/alibabacloud/cams/model/ModifyChatappTemplateRequest.h
 	include/alibabacloud/cams/model/ModifyChatappTemplateResult.h
+	include/alibabacloud/cams/model/ModifyFlowRequest.h
+	include/alibabacloud/cams/model/ModifyFlowResult.h
 	include/alibabacloud/cams/model/ModifyPhoneBusinessProfileRequest.h
 	include/alibabacloud/cams/model/ModifyPhoneBusinessProfileResult.h
+	include/alibabacloud/cams/model/PublishFlowRequest.h
+	include/alibabacloud/cams/model/PublishFlowResult.h
 	include/alibabacloud/cams/model/QueryChatappBindWabaRequest.h
 	include/alibabacloud/cams/model/QueryChatappBindWabaResult.h
 	include/alibabacloud/cams/model/QueryChatappPhoneNumbersRequest.h
@@ -101,6 +129,12 @@ set(cams_public_header_model
 	include/alibabacloud/cams/model/UpdateAccountWebhookResult.h
 	include/alibabacloud/cams/model/UpdateCommerceSettingRequest.h
 	include/alibabacloud/cams/model/UpdateCommerceSettingResult.h
+	include/alibabacloud/cams/model/UpdateFlowJSONAssetRequest.h
+	include/alibabacloud/cams/model/UpdateFlowJSONAssetResult.h
+	include/alibabacloud/cams/model/UpdatePhoneEncryptionPublicKeyRequest.h
+	include/alibabacloud/cams/model/UpdatePhoneEncryptionPublicKeyResult.h
+	include/alibabacloud/cams/model/UpdatePhoneMessageQrdlRequest.h
+	include/alibabacloud/cams/model/UpdatePhoneMessageQrdlResult.h
 	include/alibabacloud/cams/model/UpdatePhoneWebhookRequest.h
 	include/alibabacloud/cams/model/UpdatePhoneWebhookResult.h )
 
@@ -132,8 +166,18 @@ set(cams_src
 	src/model/CreateChatappMigrationInitiateResult.cc
 	src/model/CreateChatappTemplateRequest.cc
 	src/model/CreateChatappTemplateResult.cc
+	src/model/CreateFlowRequest.cc
+	src/model/CreateFlowResult.cc
+	src/model/CreatePhoneMessageQrdlRequest.cc
+	src/model/CreatePhoneMessageQrdlResult.cc
 	src/model/DeleteChatappTemplateRequest.cc
 	src/model/DeleteChatappTemplateResult.cc
+	src/model/DeleteFlowRequest.cc
+	src/model/DeleteFlowResult.cc
+	src/model/DeletePhoneMessageQrdlRequest.cc
+	src/model/DeletePhoneMessageQrdlResult.cc
+	src/model/DeprecateFlowRequest.cc
+	src/model/DeprecateFlowResult.cc
 	src/model/EnableWhatsappROIMetricRequest.cc
 	src/model/EnableWhatsappROIMetricResult.cc
 	src/model/GetChatappPhoneNumberMetricRequest.cc
@@ -148,8 +192,18 @@ set(cams_src
 	src/model/GetChatappVerifyCodeResult.cc
 	src/model/GetCommerceSettingRequest.cc
 	src/model/GetCommerceSettingResult.cc
+	src/model/GetFlowRequest.cc
+	src/model/GetFlowResult.cc
+	src/model/GetFlowJSONAssestRequest.cc
+	src/model/GetFlowJSONAssestResult.cc
+	src/model/GetFlowPreviewUrlRequest.cc
+	src/model/GetFlowPreviewUrlResult.cc
 	src/model/GetMigrationVerifyCodeRequest.cc
 	src/model/GetMigrationVerifyCodeResult.cc
+	src/model/GetPermissionByCodeRequest.cc
+	src/model/GetPermissionByCodeResult.cc
+	src/model/GetPhoneEncryptionPublicKeyRequest.cc
+	src/model/GetPhoneEncryptionPublicKeyResult.cc
 	src/model/GetPhoneNumberVerificationStatusRequest.cc
 	src/model/GetPhoneNumberVerificationStatusResult.cc
 	src/model/GetPreValidatePhoneIdRequest.cc
@@ -160,14 +214,22 @@ set(cams_src
 	src/model/IsvGetAppIdResult.cc
 	src/model/ListChatappTemplateRequest.cc
 	src/model/ListChatappTemplateResult.cc
+	src/model/ListFlowRequest.cc
+	src/model/ListFlowResult.cc
+	src/model/ListPhoneMessageQrdlRequest.cc
+	src/model/ListPhoneMessageQrdlResult.cc
 	src/model/ListProductRequest.cc
 	src/model/ListProductResult.cc
 	src/model/ListProductCatalogRequest.cc
 	src/model/ListProductCatalogResult.cc
 	src/model/ModifyChatappTemplateRequest.cc
 	src/model/ModifyChatappTemplateResult.cc
+	src/model/ModifyFlowRequest.cc
+	src/model/ModifyFlowResult.cc
 	src/model/ModifyPhoneBusinessProfileRequest.cc
 	src/model/ModifyPhoneBusinessProfileResult.cc
+	src/model/PublishFlowRequest.cc
+	src/model/PublishFlowResult.cc
 	src/model/QueryChatappBindWabaRequest.cc
 	src/model/QueryChatappBindWabaResult.cc
 	src/model/QueryChatappPhoneNumbersRequest.cc
@@ -186,6 +248,12 @@ set(cams_src
 	src/model/UpdateAccountWebhookResult.cc
 	src/model/UpdateCommerceSettingRequest.cc
 	src/model/UpdateCommerceSettingResult.cc
+	src/model/UpdateFlowJSONAssetRequest.cc
+	src/model/UpdateFlowJSONAssetResult.cc
+	src/model/UpdatePhoneEncryptionPublicKeyRequest.cc
+	src/model/UpdatePhoneEncryptionPublicKeyResult.cc
+	src/model/UpdatePhoneMessageQrdlRequest.cc
+	src/model/UpdatePhoneMessageQrdlResult.cc
 	src/model/UpdatePhoneWebhookRequest.cc
 	src/model/UpdatePhoneWebhookResult.cc )
 

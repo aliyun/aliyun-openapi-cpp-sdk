@@ -48,8 +48,18 @@
 #include "model/CreateChatappMigrationInitiateResult.h"
 #include "model/CreateChatappTemplateRequest.h"
 #include "model/CreateChatappTemplateResult.h"
+#include "model/CreateFlowRequest.h"
+#include "model/CreateFlowResult.h"
+#include "model/CreatePhoneMessageQrdlRequest.h"
+#include "model/CreatePhoneMessageQrdlResult.h"
 #include "model/DeleteChatappTemplateRequest.h"
 #include "model/DeleteChatappTemplateResult.h"
+#include "model/DeleteFlowRequest.h"
+#include "model/DeleteFlowResult.h"
+#include "model/DeletePhoneMessageQrdlRequest.h"
+#include "model/DeletePhoneMessageQrdlResult.h"
+#include "model/DeprecateFlowRequest.h"
+#include "model/DeprecateFlowResult.h"
 #include "model/EnableWhatsappROIMetricRequest.h"
 #include "model/EnableWhatsappROIMetricResult.h"
 #include "model/GetChatappPhoneNumberMetricRequest.h"
@@ -64,8 +74,18 @@
 #include "model/GetChatappVerifyCodeResult.h"
 #include "model/GetCommerceSettingRequest.h"
 #include "model/GetCommerceSettingResult.h"
+#include "model/GetFlowRequest.h"
+#include "model/GetFlowResult.h"
+#include "model/GetFlowJSONAssestRequest.h"
+#include "model/GetFlowJSONAssestResult.h"
+#include "model/GetFlowPreviewUrlRequest.h"
+#include "model/GetFlowPreviewUrlResult.h"
 #include "model/GetMigrationVerifyCodeRequest.h"
 #include "model/GetMigrationVerifyCodeResult.h"
+#include "model/GetPermissionByCodeRequest.h"
+#include "model/GetPermissionByCodeResult.h"
+#include "model/GetPhoneEncryptionPublicKeyRequest.h"
+#include "model/GetPhoneEncryptionPublicKeyResult.h"
 #include "model/GetPhoneNumberVerificationStatusRequest.h"
 #include "model/GetPhoneNumberVerificationStatusResult.h"
 #include "model/GetPreValidatePhoneIdRequest.h"
@@ -76,14 +96,22 @@
 #include "model/IsvGetAppIdResult.h"
 #include "model/ListChatappTemplateRequest.h"
 #include "model/ListChatappTemplateResult.h"
+#include "model/ListFlowRequest.h"
+#include "model/ListFlowResult.h"
+#include "model/ListPhoneMessageQrdlRequest.h"
+#include "model/ListPhoneMessageQrdlResult.h"
 #include "model/ListProductRequest.h"
 #include "model/ListProductResult.h"
 #include "model/ListProductCatalogRequest.h"
 #include "model/ListProductCatalogResult.h"
 #include "model/ModifyChatappTemplateRequest.h"
 #include "model/ModifyChatappTemplateResult.h"
+#include "model/ModifyFlowRequest.h"
+#include "model/ModifyFlowResult.h"
 #include "model/ModifyPhoneBusinessProfileRequest.h"
 #include "model/ModifyPhoneBusinessProfileResult.h"
+#include "model/PublishFlowRequest.h"
+#include "model/PublishFlowResult.h"
 #include "model/QueryChatappBindWabaRequest.h"
 #include "model/QueryChatappBindWabaResult.h"
 #include "model/QueryChatappPhoneNumbersRequest.h"
@@ -102,6 +130,12 @@
 #include "model/UpdateAccountWebhookResult.h"
 #include "model/UpdateCommerceSettingRequest.h"
 #include "model/UpdateCommerceSettingResult.h"
+#include "model/UpdateFlowJSONAssetRequest.h"
+#include "model/UpdateFlowJSONAssetResult.h"
+#include "model/UpdatePhoneEncryptionPublicKeyRequest.h"
+#include "model/UpdatePhoneEncryptionPublicKeyResult.h"
+#include "model/UpdatePhoneMessageQrdlRequest.h"
+#include "model/UpdatePhoneMessageQrdlResult.h"
 #include "model/UpdatePhoneWebhookRequest.h"
 #include "model/UpdatePhoneWebhookResult.h"
 
@@ -152,9 +186,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateChatappTemplateResult> CreateChatappTemplateOutcome;
 			typedef std::future<CreateChatappTemplateOutcome> CreateChatappTemplateOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::CreateChatappTemplateRequest&, const CreateChatappTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateChatappTemplateAsyncHandler;
+			typedef Outcome<Error, Model::CreateFlowResult> CreateFlowOutcome;
+			typedef std::future<CreateFlowOutcome> CreateFlowOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::CreateFlowRequest&, const CreateFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowAsyncHandler;
+			typedef Outcome<Error, Model::CreatePhoneMessageQrdlResult> CreatePhoneMessageQrdlOutcome;
+			typedef std::future<CreatePhoneMessageQrdlOutcome> CreatePhoneMessageQrdlOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::CreatePhoneMessageQrdlRequest&, const CreatePhoneMessageQrdlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePhoneMessageQrdlAsyncHandler;
 			typedef Outcome<Error, Model::DeleteChatappTemplateResult> DeleteChatappTemplateOutcome;
 			typedef std::future<DeleteChatappTemplateOutcome> DeleteChatappTemplateOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::DeleteChatappTemplateRequest&, const DeleteChatappTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteChatappTemplateAsyncHandler;
+			typedef Outcome<Error, Model::DeleteFlowResult> DeleteFlowOutcome;
+			typedef std::future<DeleteFlowOutcome> DeleteFlowOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::DeleteFlowRequest&, const DeleteFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFlowAsyncHandler;
+			typedef Outcome<Error, Model::DeletePhoneMessageQrdlResult> DeletePhoneMessageQrdlOutcome;
+			typedef std::future<DeletePhoneMessageQrdlOutcome> DeletePhoneMessageQrdlOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::DeletePhoneMessageQrdlRequest&, const DeletePhoneMessageQrdlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePhoneMessageQrdlAsyncHandler;
+			typedef Outcome<Error, Model::DeprecateFlowResult> DeprecateFlowOutcome;
+			typedef std::future<DeprecateFlowOutcome> DeprecateFlowOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::DeprecateFlowRequest&, const DeprecateFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeprecateFlowAsyncHandler;
 			typedef Outcome<Error, Model::EnableWhatsappROIMetricResult> EnableWhatsappROIMetricOutcome;
 			typedef std::future<EnableWhatsappROIMetricOutcome> EnableWhatsappROIMetricOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::EnableWhatsappROIMetricRequest&, const EnableWhatsappROIMetricOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableWhatsappROIMetricAsyncHandler;
@@ -176,9 +225,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetCommerceSettingResult> GetCommerceSettingOutcome;
 			typedef std::future<GetCommerceSettingOutcome> GetCommerceSettingOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::GetCommerceSettingRequest&, const GetCommerceSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCommerceSettingAsyncHandler;
+			typedef Outcome<Error, Model::GetFlowResult> GetFlowOutcome;
+			typedef std::future<GetFlowOutcome> GetFlowOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::GetFlowRequest&, const GetFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowAsyncHandler;
+			typedef Outcome<Error, Model::GetFlowJSONAssestResult> GetFlowJSONAssestOutcome;
+			typedef std::future<GetFlowJSONAssestOutcome> GetFlowJSONAssestOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::GetFlowJSONAssestRequest&, const GetFlowJSONAssestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowJSONAssestAsyncHandler;
+			typedef Outcome<Error, Model::GetFlowPreviewUrlResult> GetFlowPreviewUrlOutcome;
+			typedef std::future<GetFlowPreviewUrlOutcome> GetFlowPreviewUrlOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::GetFlowPreviewUrlRequest&, const GetFlowPreviewUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowPreviewUrlAsyncHandler;
 			typedef Outcome<Error, Model::GetMigrationVerifyCodeResult> GetMigrationVerifyCodeOutcome;
 			typedef std::future<GetMigrationVerifyCodeOutcome> GetMigrationVerifyCodeOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::GetMigrationVerifyCodeRequest&, const GetMigrationVerifyCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMigrationVerifyCodeAsyncHandler;
+			typedef Outcome<Error, Model::GetPermissionByCodeResult> GetPermissionByCodeOutcome;
+			typedef std::future<GetPermissionByCodeOutcome> GetPermissionByCodeOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::GetPermissionByCodeRequest&, const GetPermissionByCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPermissionByCodeAsyncHandler;
+			typedef Outcome<Error, Model::GetPhoneEncryptionPublicKeyResult> GetPhoneEncryptionPublicKeyOutcome;
+			typedef std::future<GetPhoneEncryptionPublicKeyOutcome> GetPhoneEncryptionPublicKeyOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::GetPhoneEncryptionPublicKeyRequest&, const GetPhoneEncryptionPublicKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPhoneEncryptionPublicKeyAsyncHandler;
 			typedef Outcome<Error, Model::GetPhoneNumberVerificationStatusResult> GetPhoneNumberVerificationStatusOutcome;
 			typedef std::future<GetPhoneNumberVerificationStatusOutcome> GetPhoneNumberVerificationStatusOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::GetPhoneNumberVerificationStatusRequest&, const GetPhoneNumberVerificationStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPhoneNumberVerificationStatusAsyncHandler;
@@ -194,6 +258,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListChatappTemplateResult> ListChatappTemplateOutcome;
 			typedef std::future<ListChatappTemplateOutcome> ListChatappTemplateOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::ListChatappTemplateRequest&, const ListChatappTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListChatappTemplateAsyncHandler;
+			typedef Outcome<Error, Model::ListFlowResult> ListFlowOutcome;
+			typedef std::future<ListFlowOutcome> ListFlowOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::ListFlowRequest&, const ListFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFlowAsyncHandler;
+			typedef Outcome<Error, Model::ListPhoneMessageQrdlResult> ListPhoneMessageQrdlOutcome;
+			typedef std::future<ListPhoneMessageQrdlOutcome> ListPhoneMessageQrdlOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::ListPhoneMessageQrdlRequest&, const ListPhoneMessageQrdlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPhoneMessageQrdlAsyncHandler;
 			typedef Outcome<Error, Model::ListProductResult> ListProductOutcome;
 			typedef std::future<ListProductOutcome> ListProductOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::ListProductRequest&, const ListProductOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProductAsyncHandler;
@@ -203,9 +273,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyChatappTemplateResult> ModifyChatappTemplateOutcome;
 			typedef std::future<ModifyChatappTemplateOutcome> ModifyChatappTemplateOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::ModifyChatappTemplateRequest&, const ModifyChatappTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyChatappTemplateAsyncHandler;
+			typedef Outcome<Error, Model::ModifyFlowResult> ModifyFlowOutcome;
+			typedef std::future<ModifyFlowOutcome> ModifyFlowOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::ModifyFlowRequest&, const ModifyFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFlowAsyncHandler;
 			typedef Outcome<Error, Model::ModifyPhoneBusinessProfileResult> ModifyPhoneBusinessProfileOutcome;
 			typedef std::future<ModifyPhoneBusinessProfileOutcome> ModifyPhoneBusinessProfileOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::ModifyPhoneBusinessProfileRequest&, const ModifyPhoneBusinessProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPhoneBusinessProfileAsyncHandler;
+			typedef Outcome<Error, Model::PublishFlowResult> PublishFlowOutcome;
+			typedef std::future<PublishFlowOutcome> PublishFlowOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::PublishFlowRequest&, const PublishFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PublishFlowAsyncHandler;
 			typedef Outcome<Error, Model::QueryChatappBindWabaResult> QueryChatappBindWabaOutcome;
 			typedef std::future<QueryChatappBindWabaOutcome> QueryChatappBindWabaOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::QueryChatappBindWabaRequest&, const QueryChatappBindWabaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryChatappBindWabaAsyncHandler;
@@ -233,6 +309,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateCommerceSettingResult> UpdateCommerceSettingOutcome;
 			typedef std::future<UpdateCommerceSettingOutcome> UpdateCommerceSettingOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::UpdateCommerceSettingRequest&, const UpdateCommerceSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCommerceSettingAsyncHandler;
+			typedef Outcome<Error, Model::UpdateFlowJSONAssetResult> UpdateFlowJSONAssetOutcome;
+			typedef std::future<UpdateFlowJSONAssetOutcome> UpdateFlowJSONAssetOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::UpdateFlowJSONAssetRequest&, const UpdateFlowJSONAssetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFlowJSONAssetAsyncHandler;
+			typedef Outcome<Error, Model::UpdatePhoneEncryptionPublicKeyResult> UpdatePhoneEncryptionPublicKeyOutcome;
+			typedef std::future<UpdatePhoneEncryptionPublicKeyOutcome> UpdatePhoneEncryptionPublicKeyOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::UpdatePhoneEncryptionPublicKeyRequest&, const UpdatePhoneEncryptionPublicKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePhoneEncryptionPublicKeyAsyncHandler;
+			typedef Outcome<Error, Model::UpdatePhoneMessageQrdlResult> UpdatePhoneMessageQrdlOutcome;
+			typedef std::future<UpdatePhoneMessageQrdlOutcome> UpdatePhoneMessageQrdlOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::UpdatePhoneMessageQrdlRequest&, const UpdatePhoneMessageQrdlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePhoneMessageQrdlAsyncHandler;
 			typedef Outcome<Error, Model::UpdatePhoneWebhookResult> UpdatePhoneWebhookOutcome;
 			typedef std::future<UpdatePhoneWebhookOutcome> UpdatePhoneWebhookOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::UpdatePhoneWebhookRequest&, const UpdatePhoneWebhookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePhoneWebhookAsyncHandler;
@@ -280,9 +365,24 @@ namespace AlibabaCloud
 			CreateChatappTemplateOutcome createChatappTemplate(const Model::CreateChatappTemplateRequest &request)const;
 			void createChatappTemplateAsync(const Model::CreateChatappTemplateRequest& request, const CreateChatappTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateChatappTemplateOutcomeCallable createChatappTemplateCallable(const Model::CreateChatappTemplateRequest& request) const;
+			CreateFlowOutcome createFlow(const Model::CreateFlowRequest &request)const;
+			void createFlowAsync(const Model::CreateFlowRequest& request, const CreateFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFlowOutcomeCallable createFlowCallable(const Model::CreateFlowRequest& request) const;
+			CreatePhoneMessageQrdlOutcome createPhoneMessageQrdl(const Model::CreatePhoneMessageQrdlRequest &request)const;
+			void createPhoneMessageQrdlAsync(const Model::CreatePhoneMessageQrdlRequest& request, const CreatePhoneMessageQrdlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreatePhoneMessageQrdlOutcomeCallable createPhoneMessageQrdlCallable(const Model::CreatePhoneMessageQrdlRequest& request) const;
 			DeleteChatappTemplateOutcome deleteChatappTemplate(const Model::DeleteChatappTemplateRequest &request)const;
 			void deleteChatappTemplateAsync(const Model::DeleteChatappTemplateRequest& request, const DeleteChatappTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteChatappTemplateOutcomeCallable deleteChatappTemplateCallable(const Model::DeleteChatappTemplateRequest& request) const;
+			DeleteFlowOutcome deleteFlow(const Model::DeleteFlowRequest &request)const;
+			void deleteFlowAsync(const Model::DeleteFlowRequest& request, const DeleteFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteFlowOutcomeCallable deleteFlowCallable(const Model::DeleteFlowRequest& request) const;
+			DeletePhoneMessageQrdlOutcome deletePhoneMessageQrdl(const Model::DeletePhoneMessageQrdlRequest &request)const;
+			void deletePhoneMessageQrdlAsync(const Model::DeletePhoneMessageQrdlRequest& request, const DeletePhoneMessageQrdlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeletePhoneMessageQrdlOutcomeCallable deletePhoneMessageQrdlCallable(const Model::DeletePhoneMessageQrdlRequest& request) const;
+			DeprecateFlowOutcome deprecateFlow(const Model::DeprecateFlowRequest &request)const;
+			void deprecateFlowAsync(const Model::DeprecateFlowRequest& request, const DeprecateFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeprecateFlowOutcomeCallable deprecateFlowCallable(const Model::DeprecateFlowRequest& request) const;
 			EnableWhatsappROIMetricOutcome enableWhatsappROIMetric(const Model::EnableWhatsappROIMetricRequest &request)const;
 			void enableWhatsappROIMetricAsync(const Model::EnableWhatsappROIMetricRequest& request, const EnableWhatsappROIMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableWhatsappROIMetricOutcomeCallable enableWhatsappROIMetricCallable(const Model::EnableWhatsappROIMetricRequest& request) const;
@@ -304,9 +404,24 @@ namespace AlibabaCloud
 			GetCommerceSettingOutcome getCommerceSetting(const Model::GetCommerceSettingRequest &request)const;
 			void getCommerceSettingAsync(const Model::GetCommerceSettingRequest& request, const GetCommerceSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCommerceSettingOutcomeCallable getCommerceSettingCallable(const Model::GetCommerceSettingRequest& request) const;
+			GetFlowOutcome getFlow(const Model::GetFlowRequest &request)const;
+			void getFlowAsync(const Model::GetFlowRequest& request, const GetFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetFlowOutcomeCallable getFlowCallable(const Model::GetFlowRequest& request) const;
+			GetFlowJSONAssestOutcome getFlowJSONAssest(const Model::GetFlowJSONAssestRequest &request)const;
+			void getFlowJSONAssestAsync(const Model::GetFlowJSONAssestRequest& request, const GetFlowJSONAssestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetFlowJSONAssestOutcomeCallable getFlowJSONAssestCallable(const Model::GetFlowJSONAssestRequest& request) const;
+			GetFlowPreviewUrlOutcome getFlowPreviewUrl(const Model::GetFlowPreviewUrlRequest &request)const;
+			void getFlowPreviewUrlAsync(const Model::GetFlowPreviewUrlRequest& request, const GetFlowPreviewUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetFlowPreviewUrlOutcomeCallable getFlowPreviewUrlCallable(const Model::GetFlowPreviewUrlRequest& request) const;
 			GetMigrationVerifyCodeOutcome getMigrationVerifyCode(const Model::GetMigrationVerifyCodeRequest &request)const;
 			void getMigrationVerifyCodeAsync(const Model::GetMigrationVerifyCodeRequest& request, const GetMigrationVerifyCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMigrationVerifyCodeOutcomeCallable getMigrationVerifyCodeCallable(const Model::GetMigrationVerifyCodeRequest& request) const;
+			GetPermissionByCodeOutcome getPermissionByCode(const Model::GetPermissionByCodeRequest &request)const;
+			void getPermissionByCodeAsync(const Model::GetPermissionByCodeRequest& request, const GetPermissionByCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPermissionByCodeOutcomeCallable getPermissionByCodeCallable(const Model::GetPermissionByCodeRequest& request) const;
+			GetPhoneEncryptionPublicKeyOutcome getPhoneEncryptionPublicKey(const Model::GetPhoneEncryptionPublicKeyRequest &request)const;
+			void getPhoneEncryptionPublicKeyAsync(const Model::GetPhoneEncryptionPublicKeyRequest& request, const GetPhoneEncryptionPublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPhoneEncryptionPublicKeyOutcomeCallable getPhoneEncryptionPublicKeyCallable(const Model::GetPhoneEncryptionPublicKeyRequest& request) const;
 			GetPhoneNumberVerificationStatusOutcome getPhoneNumberVerificationStatus(const Model::GetPhoneNumberVerificationStatusRequest &request)const;
 			void getPhoneNumberVerificationStatusAsync(const Model::GetPhoneNumberVerificationStatusRequest& request, const GetPhoneNumberVerificationStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPhoneNumberVerificationStatusOutcomeCallable getPhoneNumberVerificationStatusCallable(const Model::GetPhoneNumberVerificationStatusRequest& request) const;
@@ -322,6 +437,12 @@ namespace AlibabaCloud
 			ListChatappTemplateOutcome listChatappTemplate(const Model::ListChatappTemplateRequest &request)const;
 			void listChatappTemplateAsync(const Model::ListChatappTemplateRequest& request, const ListChatappTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListChatappTemplateOutcomeCallable listChatappTemplateCallable(const Model::ListChatappTemplateRequest& request) const;
+			ListFlowOutcome listFlow(const Model::ListFlowRequest &request)const;
+			void listFlowAsync(const Model::ListFlowRequest& request, const ListFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFlowOutcomeCallable listFlowCallable(const Model::ListFlowRequest& request) const;
+			ListPhoneMessageQrdlOutcome listPhoneMessageQrdl(const Model::ListPhoneMessageQrdlRequest &request)const;
+			void listPhoneMessageQrdlAsync(const Model::ListPhoneMessageQrdlRequest& request, const ListPhoneMessageQrdlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListPhoneMessageQrdlOutcomeCallable listPhoneMessageQrdlCallable(const Model::ListPhoneMessageQrdlRequest& request) const;
 			ListProductOutcome listProduct(const Model::ListProductRequest &request)const;
 			void listProductAsync(const Model::ListProductRequest& request, const ListProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListProductOutcomeCallable listProductCallable(const Model::ListProductRequest& request) const;
@@ -331,9 +452,15 @@ namespace AlibabaCloud
 			ModifyChatappTemplateOutcome modifyChatappTemplate(const Model::ModifyChatappTemplateRequest &request)const;
 			void modifyChatappTemplateAsync(const Model::ModifyChatappTemplateRequest& request, const ModifyChatappTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyChatappTemplateOutcomeCallable modifyChatappTemplateCallable(const Model::ModifyChatappTemplateRequest& request) const;
+			ModifyFlowOutcome modifyFlow(const Model::ModifyFlowRequest &request)const;
+			void modifyFlowAsync(const Model::ModifyFlowRequest& request, const ModifyFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyFlowOutcomeCallable modifyFlowCallable(const Model::ModifyFlowRequest& request) const;
 			ModifyPhoneBusinessProfileOutcome modifyPhoneBusinessProfile(const Model::ModifyPhoneBusinessProfileRequest &request)const;
 			void modifyPhoneBusinessProfileAsync(const Model::ModifyPhoneBusinessProfileRequest& request, const ModifyPhoneBusinessProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyPhoneBusinessProfileOutcomeCallable modifyPhoneBusinessProfileCallable(const Model::ModifyPhoneBusinessProfileRequest& request) const;
+			PublishFlowOutcome publishFlow(const Model::PublishFlowRequest &request)const;
+			void publishFlowAsync(const Model::PublishFlowRequest& request, const PublishFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PublishFlowOutcomeCallable publishFlowCallable(const Model::PublishFlowRequest& request) const;
 			QueryChatappBindWabaOutcome queryChatappBindWaba(const Model::QueryChatappBindWabaRequest &request)const;
 			void queryChatappBindWabaAsync(const Model::QueryChatappBindWabaRequest& request, const QueryChatappBindWabaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryChatappBindWabaOutcomeCallable queryChatappBindWabaCallable(const Model::QueryChatappBindWabaRequest& request) const;
@@ -361,6 +488,15 @@ namespace AlibabaCloud
 			UpdateCommerceSettingOutcome updateCommerceSetting(const Model::UpdateCommerceSettingRequest &request)const;
 			void updateCommerceSettingAsync(const Model::UpdateCommerceSettingRequest& request, const UpdateCommerceSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateCommerceSettingOutcomeCallable updateCommerceSettingCallable(const Model::UpdateCommerceSettingRequest& request) const;
+			UpdateFlowJSONAssetOutcome updateFlowJSONAsset(const Model::UpdateFlowJSONAssetRequest &request)const;
+			void updateFlowJSONAssetAsync(const Model::UpdateFlowJSONAssetRequest& request, const UpdateFlowJSONAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateFlowJSONAssetOutcomeCallable updateFlowJSONAssetCallable(const Model::UpdateFlowJSONAssetRequest& request) const;
+			UpdatePhoneEncryptionPublicKeyOutcome updatePhoneEncryptionPublicKey(const Model::UpdatePhoneEncryptionPublicKeyRequest &request)const;
+			void updatePhoneEncryptionPublicKeyAsync(const Model::UpdatePhoneEncryptionPublicKeyRequest& request, const UpdatePhoneEncryptionPublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdatePhoneEncryptionPublicKeyOutcomeCallable updatePhoneEncryptionPublicKeyCallable(const Model::UpdatePhoneEncryptionPublicKeyRequest& request) const;
+			UpdatePhoneMessageQrdlOutcome updatePhoneMessageQrdl(const Model::UpdatePhoneMessageQrdlRequest &request)const;
+			void updatePhoneMessageQrdlAsync(const Model::UpdatePhoneMessageQrdlRequest& request, const UpdatePhoneMessageQrdlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdatePhoneMessageQrdlOutcomeCallable updatePhoneMessageQrdlCallable(const Model::UpdatePhoneMessageQrdlRequest& request) const;
 			UpdatePhoneWebhookOutcome updatePhoneWebhook(const Model::UpdatePhoneWebhookRequest &request)const;
 			void updatePhoneWebhookAsync(const Model::UpdatePhoneWebhookRequest& request, const UpdatePhoneWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdatePhoneWebhookOutcomeCallable updatePhoneWebhookCallable(const Model::UpdatePhoneWebhookRequest& request) const;

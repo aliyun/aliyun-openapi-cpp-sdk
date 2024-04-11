@@ -34,6 +34,15 @@ void DeleteChatappTemplateRequest::setCustWabaId(const std::string &custWabaId) 
   setParameter(std::string("CustWabaId"), custWabaId);
 }
 
+std::string DeleteChatappTemplateRequest::getLanguage() const {
+  return language_;
+}
+
+void DeleteChatappTemplateRequest::setLanguage(const std::string &language) {
+  language_ = language;
+  setParameter(std::string("Language"), language);
+}
+
 std::string DeleteChatappTemplateRequest::getApiCode() const {
   return apiCode_;
 }
@@ -41,6 +50,24 @@ std::string DeleteChatappTemplateRequest::getApiCode() const {
 void DeleteChatappTemplateRequest::setApiCode(const std::string &apiCode) {
   apiCode_ = apiCode;
   setParameter(std::string("ApiCode"), apiCode);
+}
+
+std::string DeleteChatappTemplateRequest::getTemplateType() const {
+  return templateType_;
+}
+
+void DeleteChatappTemplateRequest::setTemplateType(const std::string &templateType) {
+  templateType_ = templateType;
+  setParameter(std::string("TemplateType"), templateType);
+}
+
+std::string DeleteChatappTemplateRequest::getTemplateName() const {
+  return templateName_;
+}
+
+void DeleteChatappTemplateRequest::setTemplateName(const std::string &templateName) {
+  templateName_ = templateName;
+  setParameter(std::string("TemplateName"), templateName);
 }
 
 std::string DeleteChatappTemplateRequest::getIsvCode() const {

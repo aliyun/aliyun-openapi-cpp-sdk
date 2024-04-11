@@ -49,6 +49,9 @@ void CreateChatappTemplateRequest::setComponents(const std::vector<CreateChatapp
       setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".AutofillText", components[dep1].buttons[dep2].autofillText);
       setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".IsOptOut", components[dep1].buttons[dep2].isOptOut ? "true" : "false");
       setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".CouponCode", components[dep1].buttons[dep2].couponCode);
+      setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".FlowId", components[dep1].buttons[dep2].flowId);
+      setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".FlowAction", components[dep1].buttons[dep2].flowAction);
+      setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".NavigateScreen", components[dep1].buttons[dep2].navigateScreen);
     }
     setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".ThumbUrl", components[dep1].thumbUrl);
     setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Duration", std::to_string(components[dep1].duration));

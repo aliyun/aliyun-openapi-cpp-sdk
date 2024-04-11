@@ -30,17 +30,23 @@ class ALIBABACLOUD_CAMS_EXPORT IsvGetAppIdRequest : public RpcServiceRequest {
 public:
 	IsvGetAppIdRequest();
 	~IsvGetAppIdRequest();
-	std::string getProdCode() const;
-	void setProdCode(const std::string &prodCode);
+	std::string getIntlVersion() const;
+	void setIntlVersion(const std::string &intlVersion);
 	std::string getType() const;
 	void setType(const std::string &type);
 	std::string getApiCode() const;
 	void setApiCode(const std::string &apiCode);
+	std::string getPermissions() const;
+	void setPermissions(const std::string &permissions);
+	std::string getProdCode() const;
+	void setProdCode(const std::string &prodCode);
 
 private:
-	std::string prodCode_;
+	std::string intlVersion_;
 	std::string type_;
 	std::string apiCode_;
+	std::string permissions_;
+	std::string prodCode_;
 };
 } // namespace Model
 } // namespace Cams

@@ -50,6 +50,8 @@ void QueryPhoneBusinessProfileResult::parse(const std::string &payload)
 		data_.email = dataNode["Email"].asString();
 	if(!dataNode["ProfilePictureUrl"].isNull())
 		data_.profilePictureUrl = dataNode["ProfilePictureUrl"].asString();
+	if(!dataNode["About"].isNull())
+		data_.about = dataNode["About"].asString();
 		auto allWebsites = dataNode["Websites"]["网站"];
 		for (auto value : allWebsites)
 			data_.websites.push_back(value.asString());

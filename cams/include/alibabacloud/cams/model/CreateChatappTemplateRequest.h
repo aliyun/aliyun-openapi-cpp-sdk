@@ -46,6 +46,9 @@ public:
 			std::string autofillText;
 			bool isOptOut;
 			std::string couponCode;
+			std::string flowId;
+			std::string flowAction;
+			std::string navigateScreen;
 		};
 		ButtonsItem buttonsItem;
 		std::vector<ButtonsItem> buttons;

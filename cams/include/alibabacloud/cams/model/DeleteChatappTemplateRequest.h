@@ -32,8 +32,14 @@ public:
 	~DeleteChatappTemplateRequest();
 	std::string getCustWabaId() const;
 	void setCustWabaId(const std::string &custWabaId);
+	std::string getLanguage() const;
+	void setLanguage(const std::string &language);
 	std::string getApiCode() const;
 	void setApiCode(const std::string &apiCode);
+	std::string getTemplateType() const;
+	void setTemplateType(const std::string &templateType);
+	std::string getTemplateName() const;
+	void setTemplateName(const std::string &templateName);
 	std::string getIsvCode() const;
 	void setIsvCode(const std::string &isvCode);
 	std::string getProdCode() const;
@@ -45,7 +51,10 @@ public:
 
 private:
 	std::string custWabaId_;
+	std::string language_;
 	std::string apiCode_;
+	std::string templateType_;
+	std::string templateName_;
 	std::string isvCode_;
 	std::string prodCode_;
 	std::string custSpaceId_;

@@ -47,6 +47,8 @@ void IsvGetAppIdResult::parse(const std::string &payload)
 		appId_ = value["AppId"].asString();
 	if(!value["AccessDeniedDetail"].isNull())
 		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
+	if(!value["ConfigId"].isNull())
+		configId_ = value["ConfigId"].asString();
 
 }
 
@@ -63,6 +65,11 @@ std::string IsvGetAppIdResult::getMessage()const
 std::string IsvGetAppIdResult::getAppId()const
 {
 	return appId_;
+}
+
+std::string IsvGetAppIdResult::getConfigId()const
+{
+	return configId_;
 }
 
 std::string IsvGetAppIdResult::getCode()const

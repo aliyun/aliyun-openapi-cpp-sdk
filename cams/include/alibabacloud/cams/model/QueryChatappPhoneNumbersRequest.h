@@ -38,12 +38,15 @@ public:
 	void setProdCode(const std::string &prodCode);
 	std::string getCustSpaceId() const;
 	void setCustSpaceId(const std::string &custSpaceId);
+	std::string getStatus() const;
+	void setStatus(const std::string &status);
 
 private:
 	std::string apiCode_;
 	std::string isvCode_;
 	std::string prodCode_;
 	std::string custSpaceId_;
+	std::string status_;
 };
 } // namespace Model
 } // namespace Cams

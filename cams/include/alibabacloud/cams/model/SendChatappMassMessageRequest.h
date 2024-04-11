@@ -47,6 +47,11 @@ public:
 			std::vector<SectionsItem> sections;
 		};
 		ProductAction productAction;
+		struct FlowAction {
+			std::string flowToken;
+			std::map<std::string, std::string> flowActionData;
+		};
+		FlowAction flowAction;
 	};
 	SendChatappMassMessageRequest();
 	~SendChatappMassMessageRequest();
@@ -64,6 +69,8 @@ public:
 	void setChannelType(const std::string &channelType);
 	std::string getFrom() const;
 	void setFrom(const std::string &from);
+	std::string getTemplateName() const;
+	void setTemplateName(const std::string &templateName);
 	std::string getTag() const;
 	void setTag(const std::string &tag);
 	std::string getFallBackRule() const;
@@ -95,6 +102,7 @@ private:
 	std::string apiCode_;
 	std::string channelType_;
 	std::string from_;
+	std::string templateName_;
 	std::string tag_;
 	std::string fallBackRule_;
 	std::string taskId_;

@@ -122,6 +122,12 @@ void GetChatappTemplateDetailResult::parse(const std::string &payload)
 				buttonsObject.isOptOut = dataNodeComponentscomponentButtonsbutton["IsOptOut"].asString() == "true";
 			if(!dataNodeComponentscomponentButtonsbutton["CouponCode"].isNull())
 				buttonsObject.couponCode = dataNodeComponentscomponentButtonsbutton["CouponCode"].asString();
+			if(!dataNodeComponentscomponentButtonsbutton["FlowId"].isNull())
+				buttonsObject.flowId = dataNodeComponentscomponentButtonsbutton["FlowId"].asString();
+			if(!dataNodeComponentscomponentButtonsbutton["FlowAction"].isNull())
+				buttonsObject.flowAction = dataNodeComponentscomponentButtonsbutton["FlowAction"].asString();
+			if(!dataNodeComponentscomponentButtonsbutton["NavigateScreen"].isNull())
+				buttonsObject.navigateScreen = dataNodeComponentscomponentButtonsbutton["NavigateScreen"].asString();
 			auto extendAttrsNode = value["ExtendAttrs"];
 			if(!extendAttrsNode["NextTemplateCode"].isNull())
 				buttonsObject.extendAttrs.nextTemplateCode = extendAttrsNode["NextTemplateCode"].asString();

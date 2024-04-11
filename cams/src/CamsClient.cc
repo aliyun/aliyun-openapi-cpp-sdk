@@ -519,6 +519,78 @@ CamsClient::CreateChatappTemplateOutcomeCallable CamsClient::createChatappTempla
 	return task->get_future();
 }
 
+CamsClient::CreateFlowOutcome CamsClient::createFlow(const CreateFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFlowOutcome(CreateFlowResult(outcome.result()));
+	else
+		return CreateFlowOutcome(outcome.error());
+}
+
+void CamsClient::createFlowAsync(const CreateFlowRequest& request, const CreateFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::CreateFlowOutcomeCallable CamsClient::createFlowCallable(const CreateFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->createFlow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::CreatePhoneMessageQrdlOutcome CamsClient::createPhoneMessageQrdl(const CreatePhoneMessageQrdlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreatePhoneMessageQrdlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreatePhoneMessageQrdlOutcome(CreatePhoneMessageQrdlResult(outcome.result()));
+	else
+		return CreatePhoneMessageQrdlOutcome(outcome.error());
+}
+
+void CamsClient::createPhoneMessageQrdlAsync(const CreatePhoneMessageQrdlRequest& request, const CreatePhoneMessageQrdlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createPhoneMessageQrdl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::CreatePhoneMessageQrdlOutcomeCallable CamsClient::createPhoneMessageQrdlCallable(const CreatePhoneMessageQrdlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreatePhoneMessageQrdlOutcome()>>(
+			[this, request]()
+			{
+			return this->createPhoneMessageQrdl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CamsClient::DeleteChatappTemplateOutcome CamsClient::deleteChatappTemplate(const DeleteChatappTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +621,114 @@ CamsClient::DeleteChatappTemplateOutcomeCallable CamsClient::deleteChatappTempla
 			[this, request]()
 			{
 			return this->deleteChatappTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::DeleteFlowOutcome CamsClient::deleteFlow(const DeleteFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteFlowOutcome(DeleteFlowResult(outcome.result()));
+	else
+		return DeleteFlowOutcome(outcome.error());
+}
+
+void CamsClient::deleteFlowAsync(const DeleteFlowRequest& request, const DeleteFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::DeleteFlowOutcomeCallable CamsClient::deleteFlowCallable(const DeleteFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteFlow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::DeletePhoneMessageQrdlOutcome CamsClient::deletePhoneMessageQrdl(const DeletePhoneMessageQrdlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePhoneMessageQrdlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePhoneMessageQrdlOutcome(DeletePhoneMessageQrdlResult(outcome.result()));
+	else
+		return DeletePhoneMessageQrdlOutcome(outcome.error());
+}
+
+void CamsClient::deletePhoneMessageQrdlAsync(const DeletePhoneMessageQrdlRequest& request, const DeletePhoneMessageQrdlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePhoneMessageQrdl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::DeletePhoneMessageQrdlOutcomeCallable CamsClient::deletePhoneMessageQrdlCallable(const DeletePhoneMessageQrdlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePhoneMessageQrdlOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePhoneMessageQrdl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::DeprecateFlowOutcome CamsClient::deprecateFlow(const DeprecateFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeprecateFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeprecateFlowOutcome(DeprecateFlowResult(outcome.result()));
+	else
+		return DeprecateFlowOutcome(outcome.error());
+}
+
+void CamsClient::deprecateFlowAsync(const DeprecateFlowRequest& request, const DeprecateFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deprecateFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::DeprecateFlowOutcomeCallable CamsClient::deprecateFlowCallable(const DeprecateFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeprecateFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->deprecateFlow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -807,6 +987,114 @@ CamsClient::GetCommerceSettingOutcomeCallable CamsClient::getCommerceSettingCall
 	return task->get_future();
 }
 
+CamsClient::GetFlowOutcome CamsClient::getFlow(const GetFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetFlowOutcome(GetFlowResult(outcome.result()));
+	else
+		return GetFlowOutcome(outcome.error());
+}
+
+void CamsClient::getFlowAsync(const GetFlowRequest& request, const GetFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::GetFlowOutcomeCallable CamsClient::getFlowCallable(const GetFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->getFlow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::GetFlowJSONAssestOutcome CamsClient::getFlowJSONAssest(const GetFlowJSONAssestRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetFlowJSONAssestOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetFlowJSONAssestOutcome(GetFlowJSONAssestResult(outcome.result()));
+	else
+		return GetFlowJSONAssestOutcome(outcome.error());
+}
+
+void CamsClient::getFlowJSONAssestAsync(const GetFlowJSONAssestRequest& request, const GetFlowJSONAssestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getFlowJSONAssest(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::GetFlowJSONAssestOutcomeCallable CamsClient::getFlowJSONAssestCallable(const GetFlowJSONAssestRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetFlowJSONAssestOutcome()>>(
+			[this, request]()
+			{
+			return this->getFlowJSONAssest(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::GetFlowPreviewUrlOutcome CamsClient::getFlowPreviewUrl(const GetFlowPreviewUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetFlowPreviewUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetFlowPreviewUrlOutcome(GetFlowPreviewUrlResult(outcome.result()));
+	else
+		return GetFlowPreviewUrlOutcome(outcome.error());
+}
+
+void CamsClient::getFlowPreviewUrlAsync(const GetFlowPreviewUrlRequest& request, const GetFlowPreviewUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getFlowPreviewUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::GetFlowPreviewUrlOutcomeCallable CamsClient::getFlowPreviewUrlCallable(const GetFlowPreviewUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetFlowPreviewUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->getFlowPreviewUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CamsClient::GetMigrationVerifyCodeOutcome CamsClient::getMigrationVerifyCode(const GetMigrationVerifyCodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -837,6 +1125,78 @@ CamsClient::GetMigrationVerifyCodeOutcomeCallable CamsClient::getMigrationVerify
 			[this, request]()
 			{
 			return this->getMigrationVerifyCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::GetPermissionByCodeOutcome CamsClient::getPermissionByCode(const GetPermissionByCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPermissionByCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPermissionByCodeOutcome(GetPermissionByCodeResult(outcome.result()));
+	else
+		return GetPermissionByCodeOutcome(outcome.error());
+}
+
+void CamsClient::getPermissionByCodeAsync(const GetPermissionByCodeRequest& request, const GetPermissionByCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPermissionByCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::GetPermissionByCodeOutcomeCallable CamsClient::getPermissionByCodeCallable(const GetPermissionByCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPermissionByCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->getPermissionByCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::GetPhoneEncryptionPublicKeyOutcome CamsClient::getPhoneEncryptionPublicKey(const GetPhoneEncryptionPublicKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPhoneEncryptionPublicKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPhoneEncryptionPublicKeyOutcome(GetPhoneEncryptionPublicKeyResult(outcome.result()));
+	else
+		return GetPhoneEncryptionPublicKeyOutcome(outcome.error());
+}
+
+void CamsClient::getPhoneEncryptionPublicKeyAsync(const GetPhoneEncryptionPublicKeyRequest& request, const GetPhoneEncryptionPublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPhoneEncryptionPublicKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::GetPhoneEncryptionPublicKeyOutcomeCallable CamsClient::getPhoneEncryptionPublicKeyCallable(const GetPhoneEncryptionPublicKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPhoneEncryptionPublicKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->getPhoneEncryptionPublicKey(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1023,6 +1383,78 @@ CamsClient::ListChatappTemplateOutcomeCallable CamsClient::listChatappTemplateCa
 	return task->get_future();
 }
 
+CamsClient::ListFlowOutcome CamsClient::listFlow(const ListFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListFlowOutcome(ListFlowResult(outcome.result()));
+	else
+		return ListFlowOutcome(outcome.error());
+}
+
+void CamsClient::listFlowAsync(const ListFlowRequest& request, const ListFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::ListFlowOutcomeCallable CamsClient::listFlowCallable(const ListFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->listFlow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::ListPhoneMessageQrdlOutcome CamsClient::listPhoneMessageQrdl(const ListPhoneMessageQrdlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPhoneMessageQrdlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPhoneMessageQrdlOutcome(ListPhoneMessageQrdlResult(outcome.result()));
+	else
+		return ListPhoneMessageQrdlOutcome(outcome.error());
+}
+
+void CamsClient::listPhoneMessageQrdlAsync(const ListPhoneMessageQrdlRequest& request, const ListPhoneMessageQrdlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPhoneMessageQrdl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::ListPhoneMessageQrdlOutcomeCallable CamsClient::listPhoneMessageQrdlCallable(const ListPhoneMessageQrdlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPhoneMessageQrdlOutcome()>>(
+			[this, request]()
+			{
+			return this->listPhoneMessageQrdl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CamsClient::ListProductOutcome CamsClient::listProduct(const ListProductRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1131,6 +1563,42 @@ CamsClient::ModifyChatappTemplateOutcomeCallable CamsClient::modifyChatappTempla
 	return task->get_future();
 }
 
+CamsClient::ModifyFlowOutcome CamsClient::modifyFlow(const ModifyFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyFlowOutcome(ModifyFlowResult(outcome.result()));
+	else
+		return ModifyFlowOutcome(outcome.error());
+}
+
+void CamsClient::modifyFlowAsync(const ModifyFlowRequest& request, const ModifyFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::ModifyFlowOutcomeCallable CamsClient::modifyFlowCallable(const ModifyFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyFlow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CamsClient::ModifyPhoneBusinessProfileOutcome CamsClient::modifyPhoneBusinessProfile(const ModifyPhoneBusinessProfileRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1161,6 +1629,42 @@ CamsClient::ModifyPhoneBusinessProfileOutcomeCallable CamsClient::modifyPhoneBus
 			[this, request]()
 			{
 			return this->modifyPhoneBusinessProfile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::PublishFlowOutcome CamsClient::publishFlow(const PublishFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PublishFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PublishFlowOutcome(PublishFlowResult(outcome.result()));
+	else
+		return PublishFlowOutcome(outcome.error());
+}
+
+void CamsClient::publishFlowAsync(const PublishFlowRequest& request, const PublishFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, publishFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::PublishFlowOutcomeCallable CamsClient::publishFlowCallable(const PublishFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PublishFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->publishFlow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1485,6 +1989,114 @@ CamsClient::UpdateCommerceSettingOutcomeCallable CamsClient::updateCommerceSetti
 			[this, request]()
 			{
 			return this->updateCommerceSetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::UpdateFlowJSONAssetOutcome CamsClient::updateFlowJSONAsset(const UpdateFlowJSONAssetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateFlowJSONAssetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateFlowJSONAssetOutcome(UpdateFlowJSONAssetResult(outcome.result()));
+	else
+		return UpdateFlowJSONAssetOutcome(outcome.error());
+}
+
+void CamsClient::updateFlowJSONAssetAsync(const UpdateFlowJSONAssetRequest& request, const UpdateFlowJSONAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateFlowJSONAsset(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::UpdateFlowJSONAssetOutcomeCallable CamsClient::updateFlowJSONAssetCallable(const UpdateFlowJSONAssetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateFlowJSONAssetOutcome()>>(
+			[this, request]()
+			{
+			return this->updateFlowJSONAsset(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::UpdatePhoneEncryptionPublicKeyOutcome CamsClient::updatePhoneEncryptionPublicKey(const UpdatePhoneEncryptionPublicKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePhoneEncryptionPublicKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePhoneEncryptionPublicKeyOutcome(UpdatePhoneEncryptionPublicKeyResult(outcome.result()));
+	else
+		return UpdatePhoneEncryptionPublicKeyOutcome(outcome.error());
+}
+
+void CamsClient::updatePhoneEncryptionPublicKeyAsync(const UpdatePhoneEncryptionPublicKeyRequest& request, const UpdatePhoneEncryptionPublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePhoneEncryptionPublicKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::UpdatePhoneEncryptionPublicKeyOutcomeCallable CamsClient::updatePhoneEncryptionPublicKeyCallable(const UpdatePhoneEncryptionPublicKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePhoneEncryptionPublicKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePhoneEncryptionPublicKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::UpdatePhoneMessageQrdlOutcome CamsClient::updatePhoneMessageQrdl(const UpdatePhoneMessageQrdlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePhoneMessageQrdlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePhoneMessageQrdlOutcome(UpdatePhoneMessageQrdlResult(outcome.result()));
+	else
+		return UpdatePhoneMessageQrdlOutcome(outcome.error());
+}
+
+void CamsClient::updatePhoneMessageQrdlAsync(const UpdatePhoneMessageQrdlRequest& request, const UpdatePhoneMessageQrdlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePhoneMessageQrdl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::UpdatePhoneMessageQrdlOutcomeCallable CamsClient::updatePhoneMessageQrdlCallable(const UpdatePhoneMessageQrdlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePhoneMessageQrdlOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePhoneMessageQrdl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

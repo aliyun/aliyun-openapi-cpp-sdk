@@ -61,6 +61,15 @@ void GetChatappTemplateDetailRequest::setTemplateType(const std::string &templat
   setParameter(std::string("TemplateType"), templateType);
 }
 
+std::string GetChatappTemplateDetailRequest::getTemplateName() const {
+  return templateName_;
+}
+
+void GetChatappTemplateDetailRequest::setTemplateName(const std::string &templateName) {
+  templateName_ = templateName;
+  setParameter(std::string("TemplateName"), templateName);
+}
+
 std::string GetChatappTemplateDetailRequest::getIsvCode() const {
   return isvCode_;
 }

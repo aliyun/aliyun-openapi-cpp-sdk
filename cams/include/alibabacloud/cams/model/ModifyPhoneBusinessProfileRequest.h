@@ -32,6 +32,8 @@ public:
 	~ModifyPhoneBusinessProfileRequest();
 	std::string getPhoneNumber() const;
 	void setPhoneNumber(const std::string &phoneNumber);
+	std::string getAbout() const;
+	void setAbout(const std::string &about);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	std::string getVertical() const;
@@ -53,6 +55,7 @@ public:
 
 private:
 	std::string phoneNumber_;
+	std::string about_;
 	std::string description_;
 	std::string vertical_;
 	std::string apiCode_;

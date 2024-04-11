@@ -47,16 +47,19 @@ namespace AlibabaCloud
 								std::string nextTemplateName;
 							};
 							std::string autofillText;
+							std::string packageName;
+							std::string text;
+							ExtendAttrs extendAttrs;
+							std::string url;
+							std::string flowId;
 							std::string type;
 							std::string couponCode;
 							bool isOptOut;
+							std::string flowAction;
 							std::string signatureHash;
-							std::string packageName;
+							std::string navigateScreen;
 							std::string phoneNumber;
-							std::string text;
 							std::string urlType;
-							ExtendAttrs extendAttrs;
-							std::string url;
 						};
 						struct 轮播卡片列表
 						{

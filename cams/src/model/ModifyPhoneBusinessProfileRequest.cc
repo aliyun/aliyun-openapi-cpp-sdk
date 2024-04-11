@@ -34,6 +34,15 @@ void ModifyPhoneBusinessProfileRequest::setPhoneNumber(const std::string &phoneN
   setParameter(std::string("PhoneNumber"), phoneNumber);
 }
 
+std::string ModifyPhoneBusinessProfileRequest::getAbout() const {
+  return about_;
+}
+
+void ModifyPhoneBusinessProfileRequest::setAbout(const std::string &about) {
+  about_ = about;
+  setParameter(std::string("About"), about);
+}
+
 std::string ModifyPhoneBusinessProfileRequest::getDescription() const {
   return description_;
 }

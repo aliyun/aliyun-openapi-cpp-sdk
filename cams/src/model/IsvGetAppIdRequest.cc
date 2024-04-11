@@ -25,13 +25,13 @@ IsvGetAppIdRequest::IsvGetAppIdRequest()
 
 IsvGetAppIdRequest::~IsvGetAppIdRequest() {}
 
-std::string IsvGetAppIdRequest::getProdCode() const {
-  return prodCode_;
+std::string IsvGetAppIdRequest::getIntlVersion() const {
+  return intlVersion_;
 }
 
-void IsvGetAppIdRequest::setProdCode(const std::string &prodCode) {
-  prodCode_ = prodCode;
-  setParameter(std::string("ProdCode"), prodCode);
+void IsvGetAppIdRequest::setIntlVersion(const std::string &intlVersion) {
+  intlVersion_ = intlVersion;
+  setBodyParameter(std::string("IntlVersion"), intlVersion);
 }
 
 std::string IsvGetAppIdRequest::getType() const {
@@ -50,5 +50,23 @@ std::string IsvGetAppIdRequest::getApiCode() const {
 void IsvGetAppIdRequest::setApiCode(const std::string &apiCode) {
   apiCode_ = apiCode;
   setParameter(std::string("ApiCode"), apiCode);
+}
+
+std::string IsvGetAppIdRequest::getPermissions() const {
+  return permissions_;
+}
+
+void IsvGetAppIdRequest::setPermissions(const std::string &permissions) {
+  permissions_ = permissions;
+  setBodyParameter(std::string("Permissions"), permissions);
+}
+
+std::string IsvGetAppIdRequest::getProdCode() const {
+  return prodCode_;
+}
+
+void IsvGetAppIdRequest::setProdCode(const std::string &prodCode) {
+  prodCode_ = prodCode;
+  setParameter(std::string("ProdCode"), prodCode);
 }
 

@@ -73,6 +73,10 @@ void SendChatappMassMessageRequest::setSenderList(const std::vector<SendChatappM
         setBodyParameter(std::string("SenderList") + "." + std::to_string(dep1 + 1) + ".ProductAction.Sections." + std::to_string(dep2 + 1) + ".ProductItems." + std::to_string(dep3 + 1) + ".ProductRetailerId", senderList[dep1].productAction.sections[dep2].productItems[dep3].productRetailerId);
       }
     }
+    setBodyParameter(std::string("SenderList") + "." + std::to_string(dep1 + 1) + ".FlowAction.FlowToken", senderList[dep1].flowAction.flowToken);
+    for(auto const &iter2 : senderList[dep1].flowAction.flowActionData) {
+      setBodyParameter(std::string("SenderList") + "." + std::to_string(dep1 + 1) + ".FlowAction.FlowActionData." + iter2.first, iter2.second);
+    }
   }
 }
 
@@ -101,6 +105,15 @@ std::string SendChatappMassMessageRequest::getFrom() const {
 void SendChatappMassMessageRequest::setFrom(const std::string &from) {
   from_ = from;
   setBodyParameter(std::string("From"), from);
+}
+
+std::string SendChatappMassMessageRequest::getTemplateName() const {
+  return templateName_;
+}
+
+void SendChatappMassMessageRequest::setTemplateName(const std::string &templateName) {
+  templateName_ = templateName;
+  setBodyParameter(std::string("TemplateName"), templateName);
 }
 
 std::string SendChatappMassMessageRequest::getTag() const {

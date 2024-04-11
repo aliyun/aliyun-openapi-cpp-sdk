@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string address;
 					std::string profilePictureUrl;
 					std::vector<std::string> websites;
+					std::string about;
 				};
 
 

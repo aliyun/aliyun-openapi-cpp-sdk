@@ -61,3 +61,12 @@ void QueryChatappPhoneNumbersRequest::setCustSpaceId(const std::string &custSpac
   setParameter(std::string("CustSpaceId"), custSpaceId);
 }
 
+std::string QueryChatappPhoneNumbersRequest::getStatus() const {
+  return status_;
+}
+
+void QueryChatappPhoneNumbersRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
+}
+

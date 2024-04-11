@@ -40,6 +40,7 @@ namespace AlibabaCloud
 				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				std::string getAppId()const;
+				std::string getConfigId()const;
 				std::string getCode()const;
 
 			protected:
@@ -48,6 +49,7 @@ namespace AlibabaCloud
 				std::string accessDeniedDetail_;
 				std::string message_;
 				std::string appId_;
+				std::string configId_;
 				std::string code_;
 
 			};
