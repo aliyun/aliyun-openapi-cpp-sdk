@@ -1095,6 +1095,42 @@ CsasClient::ListPolicesForUserGroupOutcomeCallable CsasClient::listPolicesForUse
 	return task->get_future();
 }
 
+CsasClient::ListPopTrafficStatisticsOutcome CsasClient::listPopTrafficStatistics(const ListPopTrafficStatisticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPopTrafficStatisticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPopTrafficStatisticsOutcome(ListPopTrafficStatisticsResult(outcome.result()));
+	else
+		return ListPopTrafficStatisticsOutcome(outcome.error());
+}
+
+void CsasClient::listPopTrafficStatisticsAsync(const ListPopTrafficStatisticsRequest& request, const ListPopTrafficStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPopTrafficStatistics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListPopTrafficStatisticsOutcomeCallable CsasClient::listPopTrafficStatisticsCallable(const ListPopTrafficStatisticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPopTrafficStatisticsOutcome()>>(
+			[this, request]()
+			{
+			return this->listPopTrafficStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::ListPrivateAccessApplicationsOutcome CsasClient::listPrivateAccessApplications(const ListPrivateAccessApplicationsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1599,6 +1635,42 @@ CsasClient::ListUserGroupsForRegistrationPolicyOutcomeCallable CsasClient::listU
 	return task->get_future();
 }
 
+CsasClient::ListUsersOutcome CsasClient::listUsers(const ListUsersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListUsersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListUsersOutcome(ListUsersResult(outcome.result()));
+	else
+		return ListUsersOutcome(outcome.error());
+}
+
+void CsasClient::listUsersAsync(const ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listUsers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListUsersOutcomeCallable CsasClient::listUsersCallable(const ListUsersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListUsersOutcome()>>(
+			[this, request]()
+			{
+			return this->listUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::UpdateDynamicRouteOutcome CsasClient::updateDynamicRoute(const UpdateDynamicRouteRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1881,6 +1953,42 @@ CsasClient::UpdateUserGroupOutcomeCallable CsasClient::updateUserGroupCallable(c
 			[this, request]()
 			{
 			return this->updateUserGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::UpdateUsersStatusOutcome CsasClient::updateUsersStatus(const UpdateUsersStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateUsersStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateUsersStatusOutcome(UpdateUsersStatusResult(outcome.result()));
+	else
+		return UpdateUsersStatusOutcome(outcome.error());
+}
+
+void CsasClient::updateUsersStatusAsync(const UpdateUsersStatusRequest& request, const UpdateUsersStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateUsersStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::UpdateUsersStatusOutcomeCallable CsasClient::updateUsersStatusCallable(const UpdateUsersStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateUsersStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->updateUsersStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

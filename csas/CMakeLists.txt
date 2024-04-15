@@ -79,6 +79,8 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/ListPolicesForPrivateAccessTagResult.h
 	include/alibabacloud/csas/model/ListPolicesForUserGroupRequest.h
 	include/alibabacloud/csas/model/ListPolicesForUserGroupResult.h
+	include/alibabacloud/csas/model/ListPopTrafficStatisticsRequest.h
+	include/alibabacloud/csas/model/ListPopTrafficStatisticsResult.h
 	include/alibabacloud/csas/model/ListPrivateAccessApplicationsRequest.h
 	include/alibabacloud/csas/model/ListPrivateAccessApplicationsResult.h
 	include/alibabacloud/csas/model/ListPrivateAccessApplicationsForDynamicRouteRequest.h
@@ -107,6 +109,8 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/ListUserGroupsForPrivateAccessPolicyResult.h
 	include/alibabacloud/csas/model/ListUserGroupsForRegistrationPolicyRequest.h
 	include/alibabacloud/csas/model/ListUserGroupsForRegistrationPolicyResult.h
+	include/alibabacloud/csas/model/ListUsersRequest.h
+	include/alibabacloud/csas/model/ListUsersResult.h
 	include/alibabacloud/csas/model/UpdateDynamicRouteRequest.h
 	include/alibabacloud/csas/model/UpdateDynamicRouteResult.h
 	include/alibabacloud/csas/model/UpdateExcessiveDeviceRegistrationApplicationsStatusRequest.h
@@ -122,7 +126,9 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/UpdateUserDevicesStatusRequest.h
 	include/alibabacloud/csas/model/UpdateUserDevicesStatusResult.h
 	include/alibabacloud/csas/model/UpdateUserGroupRequest.h
-	include/alibabacloud/csas/model/UpdateUserGroupResult.h )
+	include/alibabacloud/csas/model/UpdateUserGroupResult.h
+	include/alibabacloud/csas/model/UpdateUsersStatusRequest.h
+	include/alibabacloud/csas/model/UpdateUsersStatusResult.h )
 
 set(csas_src 
 	src/CsasClient.cc
@@ -184,6 +190,8 @@ set(csas_src
 	src/model/ListPolicesForPrivateAccessTagResult.cc
 	src/model/ListPolicesForUserGroupRequest.cc
 	src/model/ListPolicesForUserGroupResult.cc
+	src/model/ListPopTrafficStatisticsRequest.cc
+	src/model/ListPopTrafficStatisticsResult.cc
 	src/model/ListPrivateAccessApplicationsRequest.cc
 	src/model/ListPrivateAccessApplicationsResult.cc
 	src/model/ListPrivateAccessApplicationsForDynamicRouteRequest.cc
@@ -212,6 +220,8 @@ set(csas_src
 	src/model/ListUserGroupsForPrivateAccessPolicyResult.cc
 	src/model/ListUserGroupsForRegistrationPolicyRequest.cc
 	src/model/ListUserGroupsForRegistrationPolicyResult.cc
+	src/model/ListUsersRequest.cc
+	src/model/ListUsersResult.cc
 	src/model/UpdateDynamicRouteRequest.cc
 	src/model/UpdateDynamicRouteResult.cc
 	src/model/UpdateExcessiveDeviceRegistrationApplicationsStatusRequest.cc
@@ -227,7 +237,9 @@ set(csas_src
 	src/model/UpdateUserDevicesStatusRequest.cc
 	src/model/UpdateUserDevicesStatusResult.cc
 	src/model/UpdateUserGroupRequest.cc
-	src/model/UpdateUserGroupResult.cc )
+	src/model/UpdateUserGroupResult.cc
+	src/model/UpdateUsersStatusRequest.cc
+	src/model/UpdateUsersStatusResult.cc )
 
 add_library(csas ${LIB_TYPE}
 	${csas_public_header}

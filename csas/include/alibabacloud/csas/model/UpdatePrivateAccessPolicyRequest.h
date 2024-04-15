@@ -46,6 +46,8 @@ public:
 	void setCustomUserAttributes(const std::vector<CustomUserAttributes> &customUserAttributes);
 	std::vector<std::string> getTagIds() const;
 	void setTagIds(const std::vector<std::string> &tagIds);
+	std::string getDeviceAttributeId() const;
+	void setDeviceAttributeId(const std::string &deviceAttributeId);
 	std::vector<std::string> getUserGroupIds() const;
 	void setUserGroupIds(const std::vector<std::string> &userGroupIds);
 	std::string getPolicyAction() const;
@@ -69,6 +71,7 @@ private:
 	std::string policyId_;
 	std::vector<CustomUserAttributes> customUserAttributes_;
 	std::vector<std::string> tagIds_;
+	std::string deviceAttributeId_;
 	std::vector<std::string> userGroupIds_;
 	std::string policyAction_;
 	int priority_;

@@ -32,6 +32,8 @@ public:
 	~ListPrivateAccessPolicesRequest();
 	std::vector<std::string> getPolicyIds() const;
 	void setPolicyIds(const std::vector<std::string> &policyIds);
+	std::string getTagName() const;
+	void setTagName(const std::string &tagName);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getPageSize() const;
@@ -46,6 +48,8 @@ public:
 	void setCurrentPage(int currentPage);
 	std::string getPolicyAction() const;
 	void setPolicyAction(const std::string &policyAction);
+	std::string getApplicationName() const;
+	void setApplicationName(const std::string &applicationName);
 	std::string getName() const;
 	void setName(const std::string &name);
 	std::string getStatus() const;
@@ -53,6 +57,7 @@ public:
 
 private:
 	std::vector<std::string> policyIds_;
+	std::string tagName_;
 	std::string sourceIp_;
 	int pageSize_;
 	std::string applicationId_;
@@ -60,6 +65,7 @@ private:
 	std::string userGroupId_;
 	int currentPage_;
 	std::string policyAction_;
+	std::string applicationName_;
 	std::string name_;
 	std::string status_;
 };

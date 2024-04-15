@@ -68,6 +68,15 @@ void CreatePrivateAccessPolicyRequest::setTagIds(const std::vector<CreatePrivate
   }
 }
 
+std::string CreatePrivateAccessPolicyRequest::getDeviceAttributeId() const {
+  return deviceAttributeId_;
+}
+
+void CreatePrivateAccessPolicyRequest::setDeviceAttributeId(const std::string &deviceAttributeId) {
+  deviceAttributeId_ = deviceAttributeId;
+  setBodyParameter(std::string("DeviceAttributeId"), deviceAttributeId);
+}
+
 std::vector<CreatePrivateAccessPolicyRequest::std::string> CreatePrivateAccessPolicyRequest::getUserGroupIds() const {
   return userGroupIds_;
 }

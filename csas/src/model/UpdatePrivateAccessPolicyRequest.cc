@@ -77,6 +77,15 @@ void UpdatePrivateAccessPolicyRequest::setTagIds(const std::vector<UpdatePrivate
   }
 }
 
+std::string UpdatePrivateAccessPolicyRequest::getDeviceAttributeId() const {
+  return deviceAttributeId_;
+}
+
+void UpdatePrivateAccessPolicyRequest::setDeviceAttributeId(const std::string &deviceAttributeId) {
+  deviceAttributeId_ = deviceAttributeId;
+  setBodyParameter(std::string("DeviceAttributeId"), deviceAttributeId);
+}
+
 std::vector<UpdatePrivateAccessPolicyRequest::std::string> UpdatePrivateAccessPolicyRequest::getUserGroupIds() const {
   return userGroupIds_;
 }

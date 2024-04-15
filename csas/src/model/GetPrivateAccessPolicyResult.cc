@@ -58,6 +58,8 @@ void GetPrivateAccessPolicyResult::parse(const std::string &payload)
 		policy_.userGroupMode = policyNode["UserGroupMode"].asString();
 	if(!policyNode["ApplicationType"].isNull())
 		policy_.applicationType = policyNode["ApplicationType"].asString();
+	if(!policyNode["DeviceAttributeId"].isNull())
+		policy_.deviceAttributeId = policyNode["DeviceAttributeId"].asString();
 	auto allCustomUserAttributesNode = policyNode["CustomUserAttributes"]["customUserAttribute"];
 	for (auto policyNodeCustomUserAttributescustomUserAttribute : allCustomUserAttributesNode)
 	{

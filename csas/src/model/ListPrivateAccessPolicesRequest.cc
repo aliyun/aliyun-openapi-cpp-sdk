@@ -36,6 +36,15 @@ void ListPrivateAccessPolicesRequest::setPolicyIds(const std::vector<ListPrivate
   }
 }
 
+std::string ListPrivateAccessPolicesRequest::getTagName() const {
+  return tagName_;
+}
+
+void ListPrivateAccessPolicesRequest::setTagName(const std::string &tagName) {
+  tagName_ = tagName;
+  setParameter(std::string("TagName"), tagName);
+}
+
 std::string ListPrivateAccessPolicesRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -97,6 +106,15 @@ std::string ListPrivateAccessPolicesRequest::getPolicyAction() const {
 void ListPrivateAccessPolicesRequest::setPolicyAction(const std::string &policyAction) {
   policyAction_ = policyAction;
   setParameter(std::string("PolicyAction"), policyAction);
+}
+
+std::string ListPrivateAccessPolicesRequest::getApplicationName() const {
+  return applicationName_;
+}
+
+void ListPrivateAccessPolicesRequest::setApplicationName(const std::string &applicationName) {
+  applicationName_ = applicationName;
+  setParameter(std::string("ApplicationName"), applicationName);
 }
 
 std::string ListPrivateAccessPolicesRequest::getName() const {
