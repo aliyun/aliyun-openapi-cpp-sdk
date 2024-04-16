@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_LISTJOBSREQUEST_H_
-#define ALIBABACLOUD_EHPC_MODEL_LISTJOBSREQUEST_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_DESCRIBEJOBMETRICLASTREQUEST_H_
+#define ALIBABACLOUD_EHPC_MODEL_DESCRIBEJOBMETRICLASTREQUEST_H_
 
 #include <alibabacloud/ehpc/EHPCExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,37 +26,23 @@
 namespace AlibabaCloud {
 namespace EHPC {
 namespace Model {
-class ALIBABACLOUD_EHPC_EXPORT ListJobsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_EHPC_EXPORT DescribeJobMetricLastRequest : public RpcServiceRequest {
 public:
-	struct Filter {
-		std::string jobId;
-		int timeCreatedAfter;
-		int timeCreatedBefore;
-		std::string jobName;
-		std::string status;
-	};
-	struct SortBy {
-		std::string label;
-		std::string order;
-	};
-	ListJobsRequest();
-	~ListJobsRequest();
-	std::string getPageNumber() const;
-	void setPageNumber(const std::string &pageNumber);
-	Filter getFilter() const;
-	void setFilter(const Filter &filter);
-	std::string getPageSize() const;
-	void setPageSize(const std::string &pageSize);
-	SortBy getSortBy() const;
-	void setSortBy(const SortBy &sortBy);
+	DescribeJobMetricLastRequest();
+	~DescribeJobMetricLastRequest();
+	std::string getTaskName() const;
+	void setTaskName(const std::string &taskName);
+	std::string getJobId() const;
+	void setJobId(const std::string &jobId);
+	std::vector<int> getArrayIndex() const;
+	void setArrayIndex(const std::vector<int> &arrayIndex);
 
 private:
-	std::string pageNumber_;
-	Filter filter_;
-	std::string pageSize_;
-	SortBy sortBy_;
+	std::string taskName_;
+	std::string jobId_;
+	std::vector<int> arrayIndex_;
 };
 } // namespace Model
 } // namespace EHPC
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_EHPC_MODEL_LISTJOBSREQUEST_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_DESCRIBEJOBMETRICLASTREQUEST_H_

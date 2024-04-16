@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_LISTIMAGESRESULT_H_
-#define ALIBABACLOUD_EHPC_MODEL_LISTIMAGESRESULT_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_LISTJOBEXECUTORSRESULT_H_
+#define ALIBABACLOUD_EHPC_MODEL_LISTJOBEXECUTORSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,43 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT ListImagesResult : public ServiceResult
+			class ALIBABACLOUD_EHPC_EXPORT ListJobExecutorsResult : public ServiceResult
 			{
 			public:
-				struct Image
+				struct Executor
 				{
 					std::string status;
-					std::string description;
-					std::string appId;
-					std::string version;
-					std::string size;
+					std::string endTime;
+					std::string statusReason;
 					std::string createTime;
-					std::string imageId;
-					std::string label;
-					std::string imageType;
-					std::string name;
+					std::vector<std::string> ipAddress;
+					int arrayIndex;
+					std::vector<std::string> hostName;
 				};
 
 
-				ListImagesResult();
-				explicit ListImagesResult(const std::string &payload);
-				~ListImagesResult();
-				int getTotalCount()const;
-				long getPageSize()const;
-				long getPageNumber()const;
-				std::vector<Image> getImages()const;
-				bool getSuccess()const;
+				ListJobExecutorsResult();
+				explicit ListJobExecutorsResult(const std::string &payload);
+				~ListJobExecutorsResult();
+				std::string getTotalCount()const;
+				std::string getPageSize()const;
+				std::string getTaskName()const;
+				std::string getPageNumber()const;
+				std::vector<Executor> getExecutors()const;
+				std::string getJobId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				long pageSize_;
-				long pageNumber_;
-				std::vector<Image> images_;
-				bool success_;
+				std::string totalCount_;
+				std::string pageSize_;
+				std::string taskName_;
+				std::string pageNumber_;
+				std::vector<Executor> executors_;
+				std::string jobId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_LISTIMAGESRESULT_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_LISTJOBEXECUTORSRESULT_H_

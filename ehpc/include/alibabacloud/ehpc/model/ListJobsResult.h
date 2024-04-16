@@ -32,28 +32,19 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_EHPC_EXPORT ListJobsResult : public ServiceResult
 			{
 			public:
-				struct JobInfo
+				struct Job
 				{
-					struct Resources
-					{
-						int cores;
-						int nodes;
-					};
-					std::string comment;
-					std::string owner;
-					std::string _stderr;
-					std::string priority;
-					std::string nodeList;
+					std::string status;
+					std::string jobDescription;
+					std::string endTime;
+					std::string ownerUid;
+					std::string createTime;
+					int taskCount;
+					std::string jobName;
 					std::string startTime;
-					std::string lastModifyTime;
-					std::string submitTime;
-					std::string _stdout;
-					std::string name;
-					std::string state;
-					std::string shellPath;
-					Resources resources;
-					std::string id;
-					std::string arrayRequest;
+					int executorCount;
+					std::string jobId;
+					bool taskSustainable;
 				};
 
 
@@ -62,16 +53,16 @@ namespace AlibabaCloud
 				~ListJobsResult();
 				int getTotalCount()const;
 				int getPageSize()const;
-				std::vector<JobInfo> getJobs()const;
 				int getPageNumber()const;
+				std::vector<Job> getJobList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
 				int pageSize_;
-				std::vector<JobInfo> jobs_;
 				int pageNumber_;
+				std::vector<Job> jobList_;
 
 			};
 		}

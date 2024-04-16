@@ -14,55 +14,49 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ehpc/model/ListJobsRequest.h>
+#include <alibabacloud/ehpc/model/ListExecutorsRequest.h>
 
-using AlibabaCloud::EHPC::Model::ListJobsRequest;
+using AlibabaCloud::EHPC::Model::ListExecutorsRequest;
 
-ListJobsRequest::ListJobsRequest()
-    : RpcServiceRequest("ehpc", "2023-07-01", "ListJobs") {
+ListExecutorsRequest::ListExecutorsRequest()
+    : RpcServiceRequest("ehpc", "2023-07-01", "ListExecutors") {
   setMethod(HttpRequest::Method::Post);
 }
 
-ListJobsRequest::~ListJobsRequest() {}
+ListExecutorsRequest::~ListExecutorsRequest() {}
 
-std::string ListJobsRequest::getPageNumber() const {
+std::string ListExecutorsRequest::getPageNumber() const {
   return pageNumber_;
 }
 
-void ListJobsRequest::setPageNumber(const std::string &pageNumber) {
+void ListExecutorsRequest::setPageNumber(const std::string &pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), pageNumber);
 }
 
-ListJobsRequest::Filter ListJobsRequest::getFilter() const {
+ListExecutorsRequest::Filter ListExecutorsRequest::getFilter() const {
   return filter_;
 }
 
-void ListJobsRequest::setFilter(const ListJobsRequest::Filter &filter) {
+void ListExecutorsRequest::setFilter(const ListExecutorsRequest::Filter &filter) {
   filter_ = filter;
-  setParameter(std::string("Filter") + ".JobId", filter.jobId);
   setParameter(std::string("Filter") + ".TimeCreatedAfter", std::to_string(filter.timeCreatedAfter));
+  for(int dep1 = 0; dep1 != filter.ipAddresses.size(); dep1++) {
+    setParameter(std::string("Filter") + ".IpAddresses." + std::to_string(dep1 + 1), filter.ipAddresses[dep1]);
+  }
   setParameter(std::string("Filter") + ".TimeCreatedBefore", std::to_string(filter.timeCreatedBefore));
+  for(int dep1 = 0; dep1 != filter.executorIds.size(); dep1++) {
+    setParameter(std::string("Filter") + ".ExecutorIds." + std::to_string(dep1 + 1), filter.executorIds[dep1]);
+  }
   setParameter(std::string("Filter") + ".JobName", filter.jobName);
-  setParameter(std::string("Filter") + ".Status", filter.status);
 }
 
-std::string ListJobsRequest::getPageSize() const {
+std::string ListExecutorsRequest::getPageSize() const {
   return pageSize_;
 }
 
-void ListJobsRequest::setPageSize(const std::string &pageSize) {
+void ListExecutorsRequest::setPageSize(const std::string &pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), pageSize);
-}
-
-ListJobsRequest::SortBy ListJobsRequest::getSortBy() const {
-  return sortBy_;
-}
-
-void ListJobsRequest::setSortBy(const ListJobsRequest::SortBy &sortBy) {
-  sortBy_ = sortBy;
-  setParameter(std::string("SortBy") + ".Label", sortBy.label);
-  setParameter(std::string("SortBy") + ".Order", sortBy.order);
 }
 

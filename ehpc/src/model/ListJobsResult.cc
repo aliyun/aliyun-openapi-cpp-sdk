@@ -39,51 +39,40 @@ void ListJobsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJobsNode = value["Jobs"]["JobInfo"];
-	for (auto valueJobsJobInfo : allJobsNode)
+	auto allJobListNode = value["JobList"]["Job"];
+	for (auto valueJobListJob : allJobListNode)
 	{
-		JobInfo jobsObject;
-		if(!valueJobsJobInfo["Owner"].isNull())
-			jobsObject.owner = valueJobsJobInfo["Owner"].asString();
-		if(!valueJobsJobInfo["Comment"].isNull())
-			jobsObject.comment = valueJobsJobInfo["Comment"].asString();
-		if(!valueJobsJobInfo["State"].isNull())
-			jobsObject.state = valueJobsJobInfo["State"].asString();
-		if(!valueJobsJobInfo["Stderr"].isNull())
-			jobsObject._stderr = valueJobsJobInfo["Stderr"].asString();
-		if(!valueJobsJobInfo["Priority"].isNull())
-			jobsObject.priority = valueJobsJobInfo["Priority"].asString();
-		if(!valueJobsJobInfo["ShellPath"].isNull())
-			jobsObject.shellPath = valueJobsJobInfo["ShellPath"].asString();
-		if(!valueJobsJobInfo["Stdout"].isNull())
-			jobsObject._stdout = valueJobsJobInfo["Stdout"].asString();
-		if(!valueJobsJobInfo["ArrayRequest"].isNull())
-			jobsObject.arrayRequest = valueJobsJobInfo["ArrayRequest"].asString();
-		if(!valueJobsJobInfo["StartTime"].isNull())
-			jobsObject.startTime = valueJobsJobInfo["StartTime"].asString();
-		if(!valueJobsJobInfo["LastModifyTime"].isNull())
-			jobsObject.lastModifyTime = valueJobsJobInfo["LastModifyTime"].asString();
-		if(!valueJobsJobInfo["NodeList"].isNull())
-			jobsObject.nodeList = valueJobsJobInfo["NodeList"].asString();
-		if(!valueJobsJobInfo["Name"].isNull())
-			jobsObject.name = valueJobsJobInfo["Name"].asString();
-		if(!valueJobsJobInfo["Id"].isNull())
-			jobsObject.id = valueJobsJobInfo["Id"].asString();
-		if(!valueJobsJobInfo["SubmitTime"].isNull())
-			jobsObject.submitTime = valueJobsJobInfo["SubmitTime"].asString();
-		auto resourcesNode = value["Resources"];
-		if(!resourcesNode["Nodes"].isNull())
-			jobsObject.resources.nodes = std::stoi(resourcesNode["Nodes"].asString());
-		if(!resourcesNode["Cores"].isNull())
-			jobsObject.resources.cores = std::stoi(resourcesNode["Cores"].asString());
-		jobs_.push_back(jobsObject);
+		Job jobListObject;
+		if(!valueJobListJob["JobName"].isNull())
+			jobListObject.jobName = valueJobListJob["JobName"].asString();
+		if(!valueJobListJob["JobId"].isNull())
+			jobListObject.jobId = valueJobListJob["JobId"].asString();
+		if(!valueJobListJob["JobDescription"].isNull())
+			jobListObject.jobDescription = valueJobListJob["JobDescription"].asString();
+		if(!valueJobListJob["CreateTime"].isNull())
+			jobListObject.createTime = valueJobListJob["CreateTime"].asString();
+		if(!valueJobListJob["OwnerUid"].isNull())
+			jobListObject.ownerUid = valueJobListJob["OwnerUid"].asString();
+		if(!valueJobListJob["Status"].isNull())
+			jobListObject.status = valueJobListJob["Status"].asString();
+		if(!valueJobListJob["TaskCount"].isNull())
+			jobListObject.taskCount = std::stoi(valueJobListJob["TaskCount"].asString());
+		if(!valueJobListJob["ExecutorCount"].isNull())
+			jobListObject.executorCount = std::stoi(valueJobListJob["ExecutorCount"].asString());
+		if(!valueJobListJob["StartTime"].isNull())
+			jobListObject.startTime = valueJobListJob["StartTime"].asString();
+		if(!valueJobListJob["EndTime"].isNull())
+			jobListObject.endTime = valueJobListJob["EndTime"].asString();
+		if(!valueJobListJob["TaskSustainable"].isNull())
+			jobListObject.taskSustainable = valueJobListJob["TaskSustainable"].asString() == "true";
+		jobList_.push_back(jobListObject);
 	}
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -97,13 +86,13 @@ int ListJobsResult::getPageSize()const
 	return pageSize_;
 }
 
-std::vector<ListJobsResult::JobInfo> ListJobsResult::getJobs()const
-{
-	return jobs_;
-}
-
 int ListJobsResult::getPageNumber()const
 {
 	return pageNumber_;
+}
+
+std::vector<ListJobsResult::Job> ListJobsResult::getJobList()const
+{
+	return jobList_;
 }
 

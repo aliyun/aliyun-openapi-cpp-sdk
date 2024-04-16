@@ -39,33 +39,65 @@ void ListImagesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOsTagsNode = value["OsTags"]["OsInfo"];
-	for (auto valueOsTagsOsInfo : allOsTagsNode)
+	auto allImagesNode = value["Images"]["Image"];
+	for (auto valueImagesImage : allImagesNode)
 	{
-		OsInfo osTagsObject;
-		if(!valueOsTagsOsInfo["Version"].isNull())
-			osTagsObject.version = valueOsTagsOsInfo["Version"].asString();
-		if(!valueOsTagsOsInfo["BaseOsTag"].isNull())
-			osTagsObject.baseOsTag = valueOsTagsOsInfo["BaseOsTag"].asString();
-		if(!valueOsTagsOsInfo["Platform"].isNull())
-			osTagsObject.platform = valueOsTagsOsInfo["Platform"].asString();
-		if(!valueOsTagsOsInfo["OsTag"].isNull())
-			osTagsObject.osTag = valueOsTagsOsInfo["OsTag"].asString();
-		if(!valueOsTagsOsInfo["ImageId"].isNull())
-			osTagsObject.imageId = valueOsTagsOsInfo["ImageId"].asString();
-		if(!valueOsTagsOsInfo["Architecture"].isNull())
-			osTagsObject.architecture = valueOsTagsOsInfo["Architecture"].asString();
-		if(!valueOsTagsOsInfo["OSName"].isNull())
-			osTagsObject.oSName = valueOsTagsOsInfo["OSName"].asString();
-		if(!valueOsTagsOsInfo["OSNameEn"].isNull())
-			osTagsObject.oSNameEn = valueOsTagsOsInfo["OSNameEn"].asString();
-		osTags_.push_back(osTagsObject);
+		Image imagesObject;
+		if(!valueImagesImage["ImageType"].isNull())
+			imagesObject.imageType = valueImagesImage["ImageType"].asString();
+		if(!valueImagesImage["ImageId"].isNull())
+			imagesObject.imageId = valueImagesImage["ImageId"].asString();
+		if(!valueImagesImage["AppId"].isNull())
+			imagesObject.appId = valueImagesImage["AppId"].asString();
+		if(!valueImagesImage["Name"].isNull())
+			imagesObject.name = valueImagesImage["Name"].asString();
+		if(!valueImagesImage["Version"].isNull())
+			imagesObject.version = valueImagesImage["Version"].asString();
+		if(!valueImagesImage["Label"].isNull())
+			imagesObject.label = valueImagesImage["Label"].asString();
+		if(!valueImagesImage["Description"].isNull())
+			imagesObject.description = valueImagesImage["Description"].asString();
+		if(!valueImagesImage["Size"].isNull())
+			imagesObject.size = valueImagesImage["Size"].asString();
+		if(!valueImagesImage["CreateTime"].isNull())
+			imagesObject.createTime = valueImagesImage["CreateTime"].asString();
+		if(!valueImagesImage["Status"].isNull())
+			imagesObject.status = valueImagesImage["Status"].asString();
+		images_.push_back(imagesObject);
 	}
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
 
 }
 
-std::vector<ListImagesResult::OsInfo> ListImagesResult::getOsTags()const
+int ListImagesResult::getTotalCount()const
 {
-	return osTags_;
+	return totalCount_;
+}
+
+long ListImagesResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+long ListImagesResult::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+std::vector<ListImagesResult::Image> ListImagesResult::getImages()const
+{
+	return images_;
+}
+
+bool ListImagesResult::getSuccess()const
+{
+	return success_;
 }
 

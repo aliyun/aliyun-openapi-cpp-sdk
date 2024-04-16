@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_LISTJOBSREQUEST_H_
-#define ALIBABACLOUD_EHPC_MODEL_LISTJOBSREQUEST_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_LISTJOBEXECUTORSREQUEST_H_
+#define ALIBABACLOUD_EHPC_MODEL_LISTJOBEXECUTORSREQUEST_H_
 
 #include <alibabacloud/ehpc/EHPCExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,37 +26,26 @@
 namespace AlibabaCloud {
 namespace EHPC {
 namespace Model {
-class ALIBABACLOUD_EHPC_EXPORT ListJobsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_EHPC_EXPORT ListJobExecutorsRequest : public RpcServiceRequest {
 public:
-	struct Filter {
-		std::string jobId;
-		int timeCreatedAfter;
-		int timeCreatedBefore;
-		std::string jobName;
-		std::string status;
-	};
-	struct SortBy {
-		std::string label;
-		std::string order;
-	};
-	ListJobsRequest();
-	~ListJobsRequest();
+	ListJobExecutorsRequest();
+	~ListJobExecutorsRequest();
+	std::string getTaskName() const;
+	void setTaskName(const std::string &taskName);
 	std::string getPageNumber() const;
 	void setPageNumber(const std::string &pageNumber);
-	Filter getFilter() const;
-	void setFilter(const Filter &filter);
+	std::string getJobId() const;
+	void setJobId(const std::string &jobId);
 	std::string getPageSize() const;
 	void setPageSize(const std::string &pageSize);
-	SortBy getSortBy() const;
-	void setSortBy(const SortBy &sortBy);
 
 private:
+	std::string taskName_;
 	std::string pageNumber_;
-	Filter filter_;
+	std::string jobId_;
 	std::string pageSize_;
-	SortBy sortBy_;
 };
 } // namespace Model
 } // namespace EHPC
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_EHPC_MODEL_LISTJOBSREQUEST_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_LISTJOBEXECUTORSREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_LISTIMAGESREQUEST_H_
-#define ALIBABACLOUD_EHPC_MODEL_LISTIMAGESREQUEST_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_GETIMAGEREQUEST_H_
+#define ALIBABACLOUD_EHPC_MODEL_GETIMAGEREQUEST_H_
 
 #include <alibabacloud/ehpc/EHPCExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,26 @@
 namespace AlibabaCloud {
 namespace EHPC {
 namespace Model {
-class ALIBABACLOUD_EHPC_EXPORT ListImagesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_EHPC_EXPORT GetImageRequest : public RpcServiceRequest {
 public:
-	ListImagesRequest();
-	~ListImagesRequest();
+	GetImageRequest();
+	~GetImageRequest();
 	std::string getImageType() const;
 	void setImageType(const std::string &imageType);
-	std::vector<std::string> getImageNames() const;
-	void setImageNames(const std::vector<std::string> &imageNames);
-	long getPageNumber() const;
-	void setPageNumber(long pageNumber);
+	std::string getImageId() const;
+	void setImageId(const std::string &imageId);
 	std::string getImageCategory() const;
 	void setImageCategory(const std::string &imageCategory);
-	std::vector<std::string> getAppIds() const;
-	void setAppIds(const std::vector<std::string> &appIds);
-	long getPageSize() const;
-	void setPageSize(long pageSize);
-	std::vector<std::string> getImageIds() const;
-	void setImageIds(const std::vector<std::string> &imageIds);
+	std::string getAppId() const;
+	void setAppId(const std::string &appId);
 
 private:
 	std::string imageType_;
-	std::vector<std::string> imageNames_;
-	long pageNumber_;
+	std::string imageId_;
 	std::string imageCategory_;
-	std::vector<std::string> appIds_;
-	long pageSize_;
-	std::vector<std::string> imageIds_;
+	std::string appId_;
 };
 } // namespace Model
 } // namespace EHPC
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_EHPC_MODEL_LISTIMAGESREQUEST_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_GETIMAGEREQUEST_H_

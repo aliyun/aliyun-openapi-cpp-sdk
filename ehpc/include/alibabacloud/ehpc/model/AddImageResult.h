@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_LISTIMAGESRESULT_H_
-#define ALIBABACLOUD_EHPC_MODEL_LISTIMAGESRESULT_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_ADDIMAGERESULT_H_
+#define ALIBABACLOUD_EHPC_MODEL_ADDIMAGERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT ListImagesResult : public ServiceResult
+			class ALIBABACLOUD_EHPC_EXPORT AddImageResult : public ServiceResult
 			{
 			public:
-				struct Image
-				{
-					std::string status;
-					std::string description;
-					std::string appId;
-					std::string version;
-					std::string size;
-					std::string createTime;
-					std::string imageId;
-					std::string label;
-					std::string imageType;
-					std::string name;
-				};
 
 
-				ListImagesResult();
-				explicit ListImagesResult(const std::string &payload);
-				~ListImagesResult();
-				int getTotalCount()const;
-				long getPageSize()const;
-				long getPageNumber()const;
-				std::vector<Image> getImages()const;
+				AddImageResult();
+				explicit AddImageResult(const std::string &payload);
+				~AddImageResult();
+				std::string getAppId()const;
+				std::string getImageId()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				long pageSize_;
-				long pageNumber_;
-				std::vector<Image> images_;
+				std::string appId_;
+				std::string imageId_;
 				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_LISTIMAGESRESULT_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_ADDIMAGERESULT_H_

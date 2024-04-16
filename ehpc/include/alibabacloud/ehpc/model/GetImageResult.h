@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_LISTIMAGESRESULT_H_
-#define ALIBABACLOUD_EHPC_MODEL_LISTIMAGESRESULT_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_GETIMAGERESULT_H_
+#define ALIBABACLOUD_EHPC_MODEL_GETIMAGERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,63 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT ListImagesResult : public ServiceResult
+			class ALIBABACLOUD_EHPC_EXPORT GetImageResult : public ServiceResult
 			{
 			public:
 				struct Image
 				{
-					std::string status;
+					struct ContainerImageSpec
+					{
+						struct RegistryCredential
+						{
+							std::string userName;
+							std::string server;
+							std::string password;
+						};
+						bool isACRRegistry;
+						std::string registryCriId;
+						bool isACREnterprise;
+						RegistryCredential registryCredential;
+						std::string registryUrl;
+					};
+					struct VMImageSpec
+					{
+						std::string platform;
+						std::string architecture;
+						std::string version;
+						std::string imageId;
+						std::string osTag;
+					};
+					ContainerImageSpec containerImageSpec;
 					std::string description;
 					std::string appId;
 					std::string version;
 					std::string size;
 					std::string createTime;
-					std::string imageId;
 					std::string label;
+					std::string updateTime;
+					VMImageSpec vMImageSpec;
 					std::string imageType;
 					std::string name;
 				};
 
 
-				ListImagesResult();
-				explicit ListImagesResult(const std::string &payload);
-				~ListImagesResult();
+				GetImageResult();
+				explicit GetImageResult(const std::string &payload);
+				~GetImageResult();
 				int getTotalCount()const;
-				long getPageSize()const;
-				long getPageNumber()const;
-				std::vector<Image> getImages()const;
+				Image getImage()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
-				long pageSize_;
-				long pageNumber_;
-				std::vector<Image> images_;
+				Image image_;
 				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_LISTIMAGESRESULT_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_GETIMAGERESULT_H_

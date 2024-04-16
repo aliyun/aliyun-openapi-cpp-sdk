@@ -19,45 +19,37 @@
 using AlibabaCloud::EHPC::Model::DeleteJobsRequest;
 
 DeleteJobsRequest::DeleteJobsRequest()
-    : RpcServiceRequest("ehpc", "2018-04-12", "DeleteJobs") {
-  setMethod(HttpRequest::Method::Get);
+    : RpcServiceRequest("ehpc", "2023-07-01", "DeleteJobs") {
+  setMethod(HttpRequest::Method::Post);
 }
 
 DeleteJobsRequest::~DeleteJobsRequest() {}
 
-std::string DeleteJobsRequest::getJobs() const {
-  return jobs_;
+std::vector<DeleteJobsRequest::JobSpec> DeleteJobsRequest::getJobSpec() const {
+  return jobSpec_;
 }
 
-void DeleteJobsRequest::setJobs(const std::string &jobs) {
-  jobs_ = jobs;
-  setParameter(std::string("Jobs"), jobs);
+void DeleteJobsRequest::setJobSpec(const std::vector<DeleteJobsRequest::JobSpec> &jobSpec) {
+  jobSpec_ = jobSpec;
+  for(int dep1 = 0; dep1 != jobSpec.size(); dep1++) {
+    setParameter(std::string("JobSpec") + "." + std::to_string(dep1 + 1) + ".JobId", jobSpec[dep1].jobId);
+    for(int dep2 = 0; dep2 != jobSpec[dep1].taskSpec.size(); dep2++) {
+      setParameter(std::string("JobSpec") + "." + std::to_string(dep1 + 1) + ".TaskSpec." + std::to_string(dep2 + 1) + ".TaskName", jobSpec[dep1].taskSpec[dep2].taskName);
+      for(int dep3 = 0; dep3 != jobSpec[dep1].taskSpec[dep2].arrayIndex.size(); dep3++) {
+        setParameter(std::string("JobSpec") + "." + std::to_string(dep1 + 1) + ".TaskSpec." + std::to_string(dep2 + 1) + ".ArrayIndex." + std::to_string(dep3 + 1), std::to_string(jobSpec[dep1].taskSpec[dep2].arrayIndex[dep3]));
+      }
+    }
+  }
 }
 
-std::string DeleteJobsRequest::getClusterId() const {
-  return clusterId_;
+std::vector<DeleteJobsRequest::std::string> DeleteJobsRequest::getExecutorIds() const {
+  return executorIds_;
 }
 
-void DeleteJobsRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
-}
-
-std::string DeleteJobsRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DeleteJobsRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-bool DeleteJobsRequest::getAsync() const {
-  return async_;
-}
-
-void DeleteJobsRequest::setAsync(bool async) {
-  async_ = async;
-  setParameter(std::string("Async"), async ? "true" : "false");
+void DeleteJobsRequest::setExecutorIds(const std::vector<DeleteJobsRequest::std::string> &executorIds) {
+  executorIds_ = executorIds;
+  for(int dep1 = 0; dep1 != executorIds.size(); dep1++) {
+    setParameter(std::string("ExecutorIds") + "." + std::to_string(dep1 + 1), executorIds[dep1]);
+  }
 }
 

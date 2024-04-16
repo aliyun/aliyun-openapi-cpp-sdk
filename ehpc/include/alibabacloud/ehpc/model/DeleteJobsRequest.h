@@ -28,22 +28,26 @@ namespace EHPC {
 namespace Model {
 class ALIBABACLOUD_EHPC_EXPORT DeleteJobsRequest : public RpcServiceRequest {
 public:
+	struct JobSpec {
+		std::string jobId;
+		struct TaskSpecItem {
+			std::string taskName;
+			int integer;
+			std::vector<int> arrayIndex;
+		};
+		TaskSpecItem taskSpecItem;
+		std::vector<TaskSpecItem> taskSpec;
+	};
 	DeleteJobsRequest();
 	~DeleteJobsRequest();
-	std::string getJobs() const;
-	void setJobs(const std::string &jobs);
-	std::string getClusterId() const;
-	void setClusterId(const std::string &clusterId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	bool getAsync() const;
-	void setAsync(bool async);
+	std::vector<JobSpec> getJobSpec() const;
+	void setJobSpec(const std::vector<JobSpec> &jobSpec);
+	std::vector<std::string> getExecutorIds() const;
+	void setExecutorIds(const std::vector<std::string> &executorIds);
 
 private:
-	std::string jobs_;
-	std::string clusterId_;
-	std::string accessKeyId_;
-	bool async_;
+	std::vector<JobSpec> jobSpec_;
+	std::vector<std::string> executorIds_;
 };
 } // namespace Model
 } // namespace EHPC

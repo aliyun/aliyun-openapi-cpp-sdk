@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_LISTIMAGESRESULT_H_
-#define ALIBABACLOUD_EHPC_MODEL_LISTIMAGESRESULT_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_DESCRIBEJOBMETRICDATARESULT_H_
+#define ALIBABACLOUD_EHPC_MODEL_DESCRIBEJOBMETRICDATARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT ListImagesResult : public ServiceResult
+			class ALIBABACLOUD_EHPC_EXPORT DescribeJobMetricDataResult : public ServiceResult
 			{
 			public:
-				struct Image
-				{
-					std::string status;
-					std::string description;
-					std::string appId;
-					std::string version;
-					std::string size;
-					std::string createTime;
-					std::string imageId;
-					std::string label;
-					std::string imageType;
-					std::string name;
-				};
 
 
-				ListImagesResult();
-				explicit ListImagesResult(const std::string &payload);
-				~ListImagesResult();
-				int getTotalCount()const;
-				long getPageSize()const;
-				long getPageNumber()const;
-				std::vector<Image> getImages()const;
-				bool getSuccess()const;
+				DescribeJobMetricDataResult();
+				explicit DescribeJobMetricDataResult(const std::string &payload);
+				~DescribeJobMetricDataResult();
+				int getPeriod()const;
+				std::string getDataPoints()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				long pageSize_;
-				long pageNumber_;
-				std::vector<Image> images_;
-				bool success_;
+				int period_;
+				std::string dataPoints_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_LISTIMAGESRESULT_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_DESCRIBEJOBMETRICDATARESULT_H_
