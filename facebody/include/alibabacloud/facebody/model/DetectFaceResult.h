@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					};
 					std::vector<std::string> faceProbabilityList;
 					int landmarkCount;
+					std::vector<std::string> landmarkScore;
 					std::vector<std::string> faceRectangles;
 					std::vector<std::string> landmarks;
 					Qualities qualities;

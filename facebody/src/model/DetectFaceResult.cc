@@ -84,6 +84,9 @@ void DetectFaceResult::parse(const std::string &payload)
 		auto allLandmarks = dataNode["Landmarks"]["Landmark"];
 		for (auto value : allLandmarks)
 			data_.landmarks.push_back(value.asString());
+		auto allLandmarkScore = dataNode["LandmarkScore"]["LandmarkScore"];
+		for (auto value : allLandmarkScore)
+			data_.landmarkScore.push_back(value.asString());
 
 }
 
