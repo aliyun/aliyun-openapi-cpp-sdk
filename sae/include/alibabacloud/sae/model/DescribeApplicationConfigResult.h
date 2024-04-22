@@ -106,14 +106,17 @@ namespace AlibabaCloud
 					std::string php;
 					std::string commandArgs;
 					std::string acrAssumeRoleArn;
+					std::string saeVersion;
 					int terminationGracePeriodSeconds;
 					std::string securityGroupId;
 					std::string envs;
+					std::string mseApplicationName;
 					std::string jarStartOptions;
 					std::string mountHost;
 					std::string imagePullSecrets;
 					int replicas;
 					std::string customHostAlias;
+					std::string appSource;
 					std::string packageRuntimeCustomBuild;
 					std::string command;
 					bool associateEip;

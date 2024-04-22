@@ -48,6 +48,10 @@ void DescribeNamespaceResult::parse(const std::string &payload)
 		data_.namespaceName = dataNode["NamespaceName"].asString();
 	if(!dataNode["RegionId"].isNull())
 		data_.regionId = dataNode["RegionId"].asString();
+	if(!dataNode["NameSpaceShortId"].isNull())
+		data_.nameSpaceShortId = dataNode["NameSpaceShortId"].asString();
+	if(!dataNode["EnableMicroRegistration"].isNull())
+		data_.enableMicroRegistration = dataNode["EnableMicroRegistration"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["TraceId"].isNull())

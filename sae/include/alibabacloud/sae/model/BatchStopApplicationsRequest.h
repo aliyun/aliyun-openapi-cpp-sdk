@@ -34,10 +34,13 @@ public:
 	void setAppIds(const std::string &appIds);
 	std::string getNamespaceId() const;
 	void setNamespaceId(const std::string &namespaceId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 
 private:
 	std::string appIds_;
 	std::string namespaceId_;
+	std::string version_;
 };
 } // namespace Model
 } // namespace Sae

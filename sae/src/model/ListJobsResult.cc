@@ -88,6 +88,12 @@ void ListJobsResult::parse(const std::string &payload)
 			applicationObject.lastChangeorderState = dataNodeApplicationsApplication["LastChangeorderState"].asString();
 		if(!dataNodeApplicationsApplication["LastJobState"].isNull())
 			applicationObject.lastJobState = dataNodeApplicationsApplication["LastJobState"].asString();
+		if(!dataNodeApplicationsApplication["Cpu"].isNull())
+			applicationObject.cpu = std::stoi(dataNodeApplicationsApplication["Cpu"].asString());
+		if(!dataNodeApplicationsApplication["Mem"].isNull())
+			applicationObject.mem = std::stoi(dataNodeApplicationsApplication["Mem"].asString());
+		if(!dataNodeApplicationsApplication["Message"].isNull())
+			applicationObject.message = dataNodeApplicationsApplication["Message"].asString();
 		auto allTagsNode = dataNodeApplicationsApplication["Tags"]["TagsItem"];
 		for (auto dataNodeApplicationsApplicationTagsTagsItem : allTagsNode)
 		{

@@ -62,6 +62,15 @@ void CreateGreyTagRouteRequest::setDubboRules(const std::string &dubboRules) {
   setParameter(std::string("DubboRules"), dubboRules);
 }
 
+std::string CreateGreyTagRouteRequest::getAlbRules() const {
+  return albRules_;
+}
+
+void CreateGreyTagRouteRequest::setAlbRules(const std::string &albRules) {
+  albRules_ = albRules;
+  setParameter(std::string("AlbRules"), albRules);
+}
+
 std::string CreateGreyTagRouteRequest::getScRules() const {
   return scRules_;
 }

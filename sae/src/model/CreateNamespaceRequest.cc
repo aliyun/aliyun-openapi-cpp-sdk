@@ -44,6 +44,15 @@ void CreateNamespaceRequest::setNamespaceDescription(const std::string &namespac
   setParameter(std::string("NamespaceDescription"), namespaceDescription);
 }
 
+bool CreateNamespaceRequest::getEnableMicroRegistration() const {
+  return enableMicroRegistration_;
+}
+
+void CreateNamespaceRequest::setEnableMicroRegistration(bool enableMicroRegistration) {
+  enableMicroRegistration_ = enableMicroRegistration;
+  setParameter(std::string("EnableMicroRegistration"), enableMicroRegistration ? "true" : "false");
+}
+
 std::string CreateNamespaceRequest::getNamespaceId() const {
   return namespaceId_;
 }
@@ -51,5 +60,14 @@ std::string CreateNamespaceRequest::getNamespaceId() const {
 void CreateNamespaceRequest::setNamespaceId(const std::string &namespaceId) {
   namespaceId_ = namespaceId;
   setParameter(std::string("NamespaceId"), namespaceId);
+}
+
+std::string CreateNamespaceRequest::getNameSpaceShortId() const {
+  return nameSpaceShortId_;
+}
+
+void CreateNamespaceRequest::setNameSpaceShortId(const std::string &nameSpaceShortId) {
+  nameSpaceShortId_ = nameSpaceShortId;
+  setParameter(std::string("NameSpaceShortId"), nameSpaceShortId);
 }
 

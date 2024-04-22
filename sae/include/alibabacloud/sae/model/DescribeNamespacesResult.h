@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct _Namespace
 					{
+						std::string nameSpaceShortId;
 						std::string namespaceName;
 						std::string secretKey;
 						std::string tenantId;

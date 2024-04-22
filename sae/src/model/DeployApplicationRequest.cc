@@ -188,6 +188,15 @@ void DeployApplicationRequest::setPython(const std::string &python) {
   setParameter(std::string("Python"), python);
 }
 
+int DeployApplicationRequest::getCpu() const {
+  return cpu_;
+}
+
+void DeployApplicationRequest::setCpu(int cpu) {
+  cpu_ = cpu;
+  setParameter(std::string("Cpu"), std::to_string(cpu));
+}
+
 std::string DeployApplicationRequest::getUpdateStrategy() const {
   return updateStrategy_;
 }
@@ -195,6 +204,15 @@ std::string DeployApplicationRequest::getUpdateStrategy() const {
 void DeployApplicationRequest::setUpdateStrategy(const std::string &updateStrategy) {
   updateStrategy_ = updateStrategy;
   setParameter(std::string("UpdateStrategy"), updateStrategy);
+}
+
+std::string DeployApplicationRequest::getVSwitchId() const {
+  return vSwitchId_;
+}
+
+void DeployApplicationRequest::setVSwitchId(const std::string &vSwitchId) {
+  vSwitchId_ = vSwitchId;
+  setParameter(std::string("VSwitchId"), vSwitchId);
 }
 
 std::string DeployApplicationRequest::getChangeOrderDesc() const {
@@ -222,6 +240,15 @@ bool DeployApplicationRequest::getAutoEnableApplicationScalingRule() const {
 void DeployApplicationRequest::setAutoEnableApplicationScalingRule(bool autoEnableApplicationScalingRule) {
   autoEnableApplicationScalingRule_ = autoEnableApplicationScalingRule;
   setParameter(std::string("AutoEnableApplicationScalingRule"), autoEnableApplicationScalingRule ? "true" : "false");
+}
+
+std::string DeployApplicationRequest::getPackageType() const {
+  return packageType_;
+}
+
+void DeployApplicationRequest::setPackageType(const std::string &packageType) {
+  packageType_ = packageType;
+  setParameter(std::string("PackageType"), packageType);
 }
 
 std::string DeployApplicationRequest::getPostStart() const {
@@ -287,6 +314,15 @@ void DeployApplicationRequest::setKafkaConfigs(const std::string &kafkaConfigs) 
   setParameter(std::string("KafkaConfigs"), kafkaConfigs);
 }
 
+int DeployApplicationRequest::getMemory() const {
+  return memory_;
+}
+
+void DeployApplicationRequest::setMemory(int memory) {
+  memory_ = memory;
+  setParameter(std::string("Memory"), std::to_string(memory));
+}
+
 std::string DeployApplicationRequest::getCommandArgs() const {
   return commandArgs_;
 }
@@ -339,6 +375,15 @@ std::string DeployApplicationRequest::getLiveness() const {
 void DeployApplicationRequest::setLiveness(const std::string &liveness) {
   liveness_ = liveness;
   setParameter(std::string("Liveness"), liveness);
+}
+
+std::string DeployApplicationRequest::getSecurityGroupId() const {
+  return securityGroupId_;
+}
+
+void DeployApplicationRequest::setSecurityGroupId(const std::string &securityGroupId) {
+  securityGroupId_ = securityGroupId;
+  setParameter(std::string("SecurityGroupId"), securityGroupId);
 }
 
 std::string DeployApplicationRequest::getPackageVersion() const {
@@ -438,6 +483,15 @@ bool DeployApplicationRequest::getEnableGreyTagRoute() const {
 void DeployApplicationRequest::setEnableGreyTagRoute(bool enableGreyTagRoute) {
   enableGreyTagRoute_ = enableGreyTagRoute;
   setParameter(std::string("EnableGreyTagRoute"), enableGreyTagRoute ? "true" : "false");
+}
+
+int DeployApplicationRequest::getReplicas() const {
+  return replicas_;
+}
+
+void DeployApplicationRequest::setReplicas(int replicas) {
+  replicas_ = replicas;
+  setParameter(std::string("Replicas"), std::to_string(replicas));
 }
 
 std::string DeployApplicationRequest::getCommand() const {

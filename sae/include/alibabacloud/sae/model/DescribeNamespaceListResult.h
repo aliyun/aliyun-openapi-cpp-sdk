@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct RegionList
 				{
+					std::string nameSpaceShortId;
 					std::string namespaceName;
 					std::string vpcId;
 					std::string vSwitchId;

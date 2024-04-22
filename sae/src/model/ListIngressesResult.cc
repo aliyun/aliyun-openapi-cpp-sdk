@@ -66,6 +66,12 @@ void ListIngressesResult::parse(const std::string &payload)
 			ingressObject.loadBalanceType = dataNodeIngressListIngress["LoadBalanceType"].asString();
 		if(!dataNodeIngressListIngress["ListenerProtocol"].isNull())
 			ingressObject.listenerProtocol = dataNodeIngressListIngress["ListenerProtocol"].asString();
+		if(!dataNodeIngressListIngress["MseGatewayId"].isNull())
+			ingressObject.mseGatewayId = dataNodeIngressListIngress["MseGatewayId"].asString();
+		if(!dataNodeIngressListIngress["MseGatewayPort"].isNull())
+			ingressObject.mseGatewayPort = dataNodeIngressListIngress["MseGatewayPort"].asString();
+		if(!dataNodeIngressListIngress["MseGatewayProtocol"].isNull())
+			ingressObject.mseGatewayProtocol = dataNodeIngressListIngress["MseGatewayProtocol"].asString();
 		data_.ingressList.push_back(ingressObject);
 	}
 	if(!value["Message"].isNull())

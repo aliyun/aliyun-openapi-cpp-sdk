@@ -170,6 +170,15 @@ void CreateApplicationRequest::setPurchaseEip(bool purchaseEip) {
   setParameter(std::string("PurchaseEip"), purchaseEip ? "true" : "false");
 }
 
+std::string CreateApplicationRequest::getSaeVersion() const {
+  return saeVersion_;
+}
+
+void CreateApplicationRequest::setSaeVersion(const std::string &saeVersion) {
+  saeVersion_ = saeVersion;
+  setParameter(std::string("SaeVersion"), saeVersion);
+}
+
 std::string CreateApplicationRequest::getPvtzDiscoverySvc() const {
   return pvtzDiscoverySvc_;
 }
@@ -242,6 +251,15 @@ void CreateApplicationRequest::setVSwitchId(const std::string &vSwitchId) {
   setParameter(std::string("VSwitchId"), vSwitchId);
 }
 
+std::string CreateApplicationRequest::getEnableEbpf() const {
+  return enableEbpf_;
+}
+
+void CreateApplicationRequest::setEnableEbpf(const std::string &enableEbpf) {
+  enableEbpf_ = enableEbpf;
+  setParameter(std::string("EnableEbpf"), enableEbpf);
+}
+
 std::string CreateApplicationRequest::getPackageType() const {
   return packageType_;
 }
@@ -276,6 +294,15 @@ bool CreateApplicationRequest::getAssociateEip() const {
 void CreateApplicationRequest::setAssociateEip(bool associateEip) {
   associateEip_ = associateEip;
   setBodyParameter(std::string("AssociateEip"), associateEip ? "true" : "false");
+}
+
+std::string CreateApplicationRequest::getAppSource() const {
+  return appSource_;
+}
+
+void CreateApplicationRequest::setAppSource(const std::string &appSource) {
+  appSource_ = appSource;
+  setParameter(std::string("AppSource"), appSource);
 }
 
 std::string CreateApplicationRequest::getWebContainer() const {

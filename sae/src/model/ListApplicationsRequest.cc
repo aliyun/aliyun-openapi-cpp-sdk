@@ -26,6 +26,15 @@ ListApplicationsRequest::ListApplicationsRequest()
 
 ListApplicationsRequest::~ListApplicationsRequest() {}
 
+std::string ListApplicationsRequest::getAppSource() const {
+  return appSource_;
+}
+
+void ListApplicationsRequest::setAppSource(const std::string &appSource) {
+  appSource_ = appSource;
+  setParameter(std::string("AppSource"), appSource);
+}
+
 std::string ListApplicationsRequest::getAppName() const {
   return appName_;
 }

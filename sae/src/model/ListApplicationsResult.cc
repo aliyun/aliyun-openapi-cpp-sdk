@@ -70,6 +70,10 @@ void ListApplicationsResult::parse(const std::string &payload)
 			applicationObject.regionId = dataNodeApplicationsApplication["RegionId"].asString();
 		if(!dataNodeApplicationsApplication["AppDescription"].isNull())
 			applicationObject.appDescription = dataNodeApplicationsApplication["AppDescription"].asString();
+		if(!dataNodeApplicationsApplication["Cpu"].isNull())
+			applicationObject.cpu = std::stoi(dataNodeApplicationsApplication["Cpu"].asString());
+		if(!dataNodeApplicationsApplication["Mem"].isNull())
+			applicationObject.mem = std::stoi(dataNodeApplicationsApplication["Mem"].asString());
 		auto allTagsNode = dataNodeApplicationsApplication["Tags"]["TagsItem"];
 		for (auto dataNodeApplicationsApplicationTagsTagsItem : allTagsNode)
 		{

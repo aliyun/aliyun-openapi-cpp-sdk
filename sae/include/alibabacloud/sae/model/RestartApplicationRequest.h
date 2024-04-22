@@ -36,11 +36,14 @@ public:
 	void setAppId(const std::string &appId);
 	int getMinReadyInstanceRatio() const;
 	void setMinReadyInstanceRatio(int minReadyInstanceRatio);
+	bool getAutoEnableApplicationScalingRule() const;
+	void setAutoEnableApplicationScalingRule(bool autoEnableApplicationScalingRule);
 
 private:
 	int minReadyInstances_;
 	std::string appId_;
 	int minReadyInstanceRatio_;
+	bool autoEnableApplicationScalingRule_;
 };
 } // namespace Model
 } // namespace Sae

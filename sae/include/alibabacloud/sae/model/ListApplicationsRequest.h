@@ -30,6 +30,8 @@ class ALIBABACLOUD_SAE_EXPORT ListApplicationsRequest : public RoaServiceRequest
 public:
 	ListApplicationsRequest();
 	~ListApplicationsRequest();
+	std::string getAppSource() const;
+	void setAppSource(const std::string &appSource);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
 	std::string getNamespaceId() const;
@@ -50,6 +52,7 @@ public:
 	void setTags(const std::string &tags);
 
 private:
+	std::string appSource_;
 	std::string appName_;
 	std::string namespaceId_;
 	int pageSize_;

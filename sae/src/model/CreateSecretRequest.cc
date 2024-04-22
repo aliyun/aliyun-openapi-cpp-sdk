@@ -50,7 +50,7 @@ std::string CreateSecretRequest::getSecretData() const {
 
 void CreateSecretRequest::setSecretData(const std::string &secretData) {
   secretData_ = secretData;
-  setBodyParameter(std::string("SecretData"), secretData);
+  setParameter(std::string("SecretData"), secretData);
 }
 
 std::string CreateSecretRequest::getSecretName() const {

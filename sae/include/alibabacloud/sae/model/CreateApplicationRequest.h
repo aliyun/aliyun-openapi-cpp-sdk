@@ -62,6 +62,8 @@ public:
 	void setNamespaceId(const std::string &namespaceId);
 	bool getPurchaseEip() const;
 	void setPurchaseEip(bool purchaseEip);
+	std::string getSaeVersion() const;
+	void setSaeVersion(const std::string &saeVersion);
 	std::string getPvtzDiscoverySvc() const;
 	void setPvtzDiscoverySvc(const std::string &pvtzDiscoverySvc);
 	std::string getConfigMapMountDesc() const;
@@ -78,6 +80,8 @@ public:
 	void setCpu(int cpu);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
+	std::string getEnableEbpf() const;
+	void setEnableEbpf(const std::string &enableEbpf);
 	std::string getPackageType() const;
 	void setPackageType(const std::string &packageType);
 	std::string getPostStart() const;
@@ -86,6 +90,8 @@ public:
 	void setPhpExtensions(const std::string &phpExtensions);
 	bool getAssociateEip() const;
 	void setAssociateEip(bool associateEip);
+	std::string getAppSource() const;
+	void setAppSource(const std::string &appSource);
 	std::string getWebContainer() const;
 	void setWebContainer(const std::string &webContainer);
 	int getMemory() const;
@@ -168,6 +174,7 @@ private:
 	std::string appName_;
 	std::string namespaceId_;
 	bool purchaseEip_;
+	std::string saeVersion_;
 	std::string pvtzDiscoverySvc_;
 	std::string configMapMountDesc_;
 	std::string ossMountDescs_;
@@ -176,10 +183,12 @@ private:
 	std::string python_;
 	int cpu_;
 	std::string vSwitchId_;
+	std::string enableEbpf_;
 	std::string packageType_;
 	std::string postStart_;
 	std::string phpExtensions_;
 	bool associateEip_;
+	std::string appSource_;
 	std::string webContainer_;
 	int memory_;
 	std::string slsConfigs_;

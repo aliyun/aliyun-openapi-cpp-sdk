@@ -37,12 +37,20 @@ namespace AlibabaCloud
 				DeleteApplicationScalingRuleResult();
 				explicit DeleteApplicationScalingRuleResult(const std::string &payload);
 				~DeleteApplicationScalingRuleResult();
+				std::string getMessage()const;
 				std::string getTraceId()const;
+				std::string getErrorCode()const;
+				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				std::string traceId_;
+				std::string errorCode_;
+				std::string code_;
+				bool success_;
 
 			};
 		}

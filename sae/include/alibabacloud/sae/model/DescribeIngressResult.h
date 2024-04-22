@@ -46,9 +46,18 @@ namespace AlibabaCloud
 						std::string path;
 						std::string backendProtocol;
 						std::string appId;
+						std::string rewritePath;
 						int containerPort;
 						std::string domain;
 						std::string appName;
+					};
+					struct Svc
+					{
+						std::string backendProtocol;
+						std::string appId;
+						int backendPort;
+						long id;
+						std::string name;
 					};
 					DefaultRule defaultRule;
 					std::string slbId;
@@ -59,6 +68,7 @@ namespace AlibabaCloud
 					std::string listenerProtocol;
 					std::vector<Rule> rules;
 					std::string name;
+					std::vector<Svc> svcs;
 					std::string loadBalanceType;
 					std::string namespaceId;
 					long id;

@@ -63,6 +63,8 @@ void DescribeNamespaceListResult::parse(const std::string &payload)
 			dataObject.namespaceName = valueDataRegionList["NamespaceName"].asString();
 		if(!valueDataRegionList["RegionId"].isNull())
 			dataObject.regionId = valueDataRegionList["RegionId"].asString();
+		if(!valueDataRegionList["NameSpaceShortId"].isNull())
+			dataObject.nameSpaceShortId = valueDataRegionList["NameSpaceShortId"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Message"].isNull())

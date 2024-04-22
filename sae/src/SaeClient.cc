@@ -2031,6 +2031,186 @@ SaeClient::ExecJobOutcomeCallable SaeClient::execJobCallable(const ExecJobReques
 	return task->get_future();
 }
 
+SaeClient::GetArmsTopNMetricOutcome SaeClient::getArmsTopNMetric(const GetArmsTopNMetricRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetArmsTopNMetricOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetArmsTopNMetricOutcome(GetArmsTopNMetricResult(outcome.result()));
+	else
+		return GetArmsTopNMetricOutcome(outcome.error());
+}
+
+void SaeClient::getArmsTopNMetricAsync(const GetArmsTopNMetricRequest& request, const GetArmsTopNMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getArmsTopNMetric(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::GetArmsTopNMetricOutcomeCallable SaeClient::getArmsTopNMetricCallable(const GetArmsTopNMetricRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetArmsTopNMetricOutcome()>>(
+			[this, request]()
+			{
+			return this->getArmsTopNMetric(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::GetAvailabilityMetricOutcome SaeClient::getAvailabilityMetric(const GetAvailabilityMetricRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAvailabilityMetricOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAvailabilityMetricOutcome(GetAvailabilityMetricResult(outcome.result()));
+	else
+		return GetAvailabilityMetricOutcome(outcome.error());
+}
+
+void SaeClient::getAvailabilityMetricAsync(const GetAvailabilityMetricRequest& request, const GetAvailabilityMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAvailabilityMetric(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::GetAvailabilityMetricOutcomeCallable SaeClient::getAvailabilityMetricCallable(const GetAvailabilityMetricRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAvailabilityMetricOutcome()>>(
+			[this, request]()
+			{
+			return this->getAvailabilityMetric(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::GetChangeOrderMetricOutcome SaeClient::getChangeOrderMetric(const GetChangeOrderMetricRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetChangeOrderMetricOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetChangeOrderMetricOutcome(GetChangeOrderMetricResult(outcome.result()));
+	else
+		return GetChangeOrderMetricOutcome(outcome.error());
+}
+
+void SaeClient::getChangeOrderMetricAsync(const GetChangeOrderMetricRequest& request, const GetChangeOrderMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getChangeOrderMetric(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::GetChangeOrderMetricOutcomeCallable SaeClient::getChangeOrderMetricCallable(const GetChangeOrderMetricRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetChangeOrderMetricOutcome()>>(
+			[this, request]()
+			{
+			return this->getChangeOrderMetric(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::GetScaleAppMetricOutcome SaeClient::getScaleAppMetric(const GetScaleAppMetricRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetScaleAppMetricOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetScaleAppMetricOutcome(GetScaleAppMetricResult(outcome.result()));
+	else
+		return GetScaleAppMetricOutcome(outcome.error());
+}
+
+void SaeClient::getScaleAppMetricAsync(const GetScaleAppMetricRequest& request, const GetScaleAppMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getScaleAppMetric(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::GetScaleAppMetricOutcomeCallable SaeClient::getScaleAppMetricCallable(const GetScaleAppMetricRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetScaleAppMetricOutcome()>>(
+			[this, request]()
+			{
+			return this->getScaleAppMetric(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::GetWarningEventMetricOutcome SaeClient::getWarningEventMetric(const GetWarningEventMetricRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetWarningEventMetricOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetWarningEventMetricOutcome(GetWarningEventMetricResult(outcome.result()));
+	else
+		return GetWarningEventMetricOutcome(outcome.error());
+}
+
+void SaeClient::getWarningEventMetricAsync(const GetWarningEventMetricRequest& request, const GetWarningEventMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getWarningEventMetric(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::GetWarningEventMetricOutcomeCallable SaeClient::getWarningEventMetricCallable(const GetWarningEventMetricRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetWarningEventMetricOutcome()>>(
+			[this, request]()
+			{
+			return this->getWarningEventMetric(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::ListAppEventsOutcome SaeClient::listAppEvents(const ListAppEventsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -32,9 +32,12 @@ public:
 	~DeleteNamespaceRequest();
 	std::string getNamespaceId() const;
 	void setNamespaceId(const std::string &namespaceId);
+	std::string getNameSpaceShortId() const;
+	void setNameSpaceShortId(const std::string &nameSpaceShortId);
 
 private:
 	std::string namespaceId_;
+	std::string nameSpaceShortId_;
 };
 } // namespace Model
 } // namespace Sae

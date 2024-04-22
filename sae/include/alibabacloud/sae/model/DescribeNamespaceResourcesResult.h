@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					long appCount;
 					bool notificationExpired;
 					std::string belongRegion;
+					std::string nameSpaceShortId;
 					std::string namespaceName;
 					std::string tenantId;
 					std::string vpcId;

@@ -40,6 +40,8 @@ namespace AlibabaCloud
 						{
 							int targetReplicas;
 							std::string atTime;
+							int minReplicas;
+							int maxReplicas;
 						};
 						std::vector<Schedule> schedules;
 						std::string period;
@@ -83,7 +85,11 @@ namespace AlibabaCloud
 						};
 						struct Metric1
 						{
+							std::string slbId;
 							std::string metricType;
+							std::string vport;
+							std::string slbLogstore;
+							std::string slbProject;
 							int metricTargetAverageUtilization;
 						};
 						std::vector<Metric1> metrics;
@@ -97,9 +103,11 @@ namespace AlibabaCloud
 					Timer timer;
 					std::string appId;
 					long lastDisableTime;
+					int minReadyInstances;
 					long createTime;
 					long updateTime;
 					Metric metric;
+					int minReadyInstanceRatio;
 					std::string scaleRuleName;
 					std::string scaleRuleType;
 				};
@@ -108,14 +116,22 @@ namespace AlibabaCloud
 				DescribeApplicationScalingRuleResult();
 				explicit DescribeApplicationScalingRuleResult(const std::string &payload);
 				~DescribeApplicationScalingRuleResult();
+				std::string getMessage()const;
 				std::string getTraceId()const;
 				Data getData()const;
+				std::string getErrorCode()const;
+				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				std::string traceId_;
 				Data data_;
+				std::string errorCode_;
+				std::string code_;
+				bool success_;
 
 			};
 		}

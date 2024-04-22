@@ -53,6 +53,15 @@ void UpdateGreyTagRouteRequest::setDubboRules(const std::string &dubboRules) {
   setParameter(std::string("DubboRules"), dubboRules);
 }
 
+std::string UpdateGreyTagRouteRequest::getAlbRules() const {
+  return albRules_;
+}
+
+void UpdateGreyTagRouteRequest::setAlbRules(const std::string &albRules) {
+  albRules_ = albRules;
+  setParameter(std::string("AlbRules"), albRules);
+}
+
 std::string UpdateGreyTagRouteRequest::getScRules() const {
   return scRules_;
 }

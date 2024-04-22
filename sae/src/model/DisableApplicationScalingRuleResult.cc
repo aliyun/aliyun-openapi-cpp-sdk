@@ -41,11 +41,39 @@ void DisableApplicationScalingRuleResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
+}
+
+std::string DisableApplicationScalingRuleResult::getMessage()const
+{
+	return message_;
 }
 
 std::string DisableApplicationScalingRuleResult::getTraceId()const
 {
 	return traceId_;
+}
+
+std::string DisableApplicationScalingRuleResult::getErrorCode()const
+{
+	return errorCode_;
+}
+
+std::string DisableApplicationScalingRuleResult::getCode()const
+{
+	return code_;
+}
+
+bool DisableApplicationScalingRuleResult::getSuccess()const
+{
+	return success_;
 }
 

@@ -44,3 +44,12 @@ void UpdateNamespaceVpcRequest::setVpcId(const std::string &vpcId) {
   setParameter(std::string("VpcId"), vpcId);
 }
 
+std::string UpdateNamespaceVpcRequest::getNameSpaceShortId() const {
+  return nameSpaceShortId_;
+}
+
+void UpdateNamespaceVpcRequest::setNameSpaceShortId(const std::string &nameSpaceShortId) {
+  nameSpaceShortId_ = nameSpaceShortId;
+  setParameter(std::string("NameSpaceShortId"), nameSpaceShortId);
+}
+

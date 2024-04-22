@@ -34,13 +34,19 @@ public:
 	void setNamespaceName(const std::string &namespaceName);
 	std::string getNamespaceDescription() const;
 	void setNamespaceDescription(const std::string &namespaceDescription);
+	bool getEnableMicroRegistration() const;
+	void setEnableMicroRegistration(bool enableMicroRegistration);
 	std::string getNamespaceId() const;
 	void setNamespaceId(const std::string &namespaceId);
+	std::string getNameSpaceShortId() const;
+	void setNameSpaceShortId(const std::string &nameSpaceShortId);
 
 private:
 	std::string namespaceName_;
 	std::string namespaceDescription_;
+	bool enableMicroRegistration_;
 	std::string namespaceId_;
+	std::string nameSpaceShortId_;
 };
 } // namespace Model
 } // namespace Sae

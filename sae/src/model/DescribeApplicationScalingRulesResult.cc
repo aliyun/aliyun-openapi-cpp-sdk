@@ -64,6 +64,10 @@ void DescribeApplicationScalingRulesResult::parse(const std::string &payload)
 			applicationScalingRuleObject.scaleRuleType = dataNodeApplicationScalingRulesApplicationScalingRule["ScaleRuleType"].asString();
 		if(!dataNodeApplicationScalingRulesApplicationScalingRule["ScaleRuleName"].isNull())
 			applicationScalingRuleObject.scaleRuleName = dataNodeApplicationScalingRulesApplicationScalingRule["ScaleRuleName"].asString();
+		if(!dataNodeApplicationScalingRulesApplicationScalingRule["MinReadyInstances"].isNull())
+			applicationScalingRuleObject.minReadyInstances = std::stoi(dataNodeApplicationScalingRulesApplicationScalingRule["MinReadyInstances"].asString());
+		if(!dataNodeApplicationScalingRulesApplicationScalingRule["MinReadyInstanceRatio"].isNull())
+			applicationScalingRuleObject.minReadyInstanceRatio = std::stoi(dataNodeApplicationScalingRulesApplicationScalingRule["MinReadyInstanceRatio"].asString());
 		auto timerNode = value["Timer"];
 		if(!timerNode["EndDate"].isNull())
 			applicationScalingRuleObject.timer.endDate = timerNode["EndDate"].asString();
@@ -98,6 +102,14 @@ void DescribeApplicationScalingRulesResult::parse(const std::string &payload)
 				metric1Object.metricTargetAverageUtilization = std::stoi(metricNodeMetricsMetric["MetricTargetAverageUtilization"].asString());
 			if(!metricNodeMetricsMetric["MetricType"].isNull())
 				metric1Object.metricType = metricNodeMetricsMetric["MetricType"].asString();
+			if(!metricNodeMetricsMetric["SlbProject"].isNull())
+				metric1Object.slbProject = metricNodeMetricsMetric["SlbProject"].asString();
+			if(!metricNodeMetricsMetric["SlbLogstore"].isNull())
+				metric1Object.slbLogstore = metricNodeMetricsMetric["SlbLogstore"].asString();
+			if(!metricNodeMetricsMetric["Vport"].isNull())
+				metric1Object.vport = metricNodeMetricsMetric["Vport"].asString();
+			if(!metricNodeMetricsMetric["SlbId"].isNull())
+				metric1Object.slbId = metricNodeMetricsMetric["SlbId"].asString();
 			applicationScalingRuleObject.metric.metrics.push_back(metric1Object);
 		}
 		auto metricsStatusNode = metricNode["MetricsStatus"];
@@ -155,7 +167,20 @@ void DescribeApplicationScalingRulesResult::parse(const std::string &payload)
 	}
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
+}
+
+std::string DescribeApplicationScalingRulesResult::getMessage()const
+{
+	return message_;
 }
 
 std::string DescribeApplicationScalingRulesResult::getTraceId()const
@@ -166,5 +191,20 @@ std::string DescribeApplicationScalingRulesResult::getTraceId()const
 DescribeApplicationScalingRulesResult::Data DescribeApplicationScalingRulesResult::getData()const
 {
 	return data_;
+}
+
+std::string DescribeApplicationScalingRulesResult::getErrorCode()const
+{
+	return errorCode_;
+}
+
+std::string DescribeApplicationScalingRulesResult::getCode()const
+{
+	return code_;
+}
+
+bool DescribeApplicationScalingRulesResult::getSuccess()const
+{
+	return success_;
 }
 

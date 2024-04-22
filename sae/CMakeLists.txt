@@ -131,6 +131,16 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/EnableApplicationScalingRuleResult.h
 	include/alibabacloud/sae/model/ExecJobRequest.h
 	include/alibabacloud/sae/model/ExecJobResult.h
+	include/alibabacloud/sae/model/GetArmsTopNMetricRequest.h
+	include/alibabacloud/sae/model/GetArmsTopNMetricResult.h
+	include/alibabacloud/sae/model/GetAvailabilityMetricRequest.h
+	include/alibabacloud/sae/model/GetAvailabilityMetricResult.h
+	include/alibabacloud/sae/model/GetChangeOrderMetricRequest.h
+	include/alibabacloud/sae/model/GetChangeOrderMetricResult.h
+	include/alibabacloud/sae/model/GetScaleAppMetricRequest.h
+	include/alibabacloud/sae/model/GetScaleAppMetricResult.h
+	include/alibabacloud/sae/model/GetWarningEventMetricRequest.h
+	include/alibabacloud/sae/model/GetWarningEventMetricResult.h
 	include/alibabacloud/sae/model/ListAppEventsRequest.h
 	include/alibabacloud/sae/model/ListAppEventsResult.h
 	include/alibabacloud/sae/model/ListAppServicesPageRequest.h
@@ -324,6 +334,16 @@ set(sae_src
 	src/model/EnableApplicationScalingRuleResult.cc
 	src/model/ExecJobRequest.cc
 	src/model/ExecJobResult.cc
+	src/model/GetArmsTopNMetricRequest.cc
+	src/model/GetArmsTopNMetricResult.cc
+	src/model/GetAvailabilityMetricRequest.cc
+	src/model/GetAvailabilityMetricResult.cc
+	src/model/GetChangeOrderMetricRequest.cc
+	src/model/GetChangeOrderMetricResult.cc
+	src/model/GetScaleAppMetricRequest.cc
+	src/model/GetScaleAppMetricResult.cc
+	src/model/GetWarningEventMetricRequest.cc
+	src/model/GetWarningEventMetricResult.cc
 	src/model/ListAppEventsRequest.cc
 	src/model/ListAppEventsResult.cc
 	src/model/ListAppServicesPageRequest.cc

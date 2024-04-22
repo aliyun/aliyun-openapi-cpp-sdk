@@ -45,6 +45,9 @@ namespace AlibabaCloud
 							std::string taskName;
 							bool showManualIgnore;
 							std::string stageId;
+							long createTime;
+							long startTime;
+							long updateTime;
 							std::string errorCode;
 							std::string errorMessage;
 						};

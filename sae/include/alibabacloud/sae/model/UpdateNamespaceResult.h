@@ -34,10 +34,12 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					std::string nameSpaceShortId;
 					std::string namespaceName;
 					std::string namespaceId;
 					std::string regionId;
 					std::string namespaceDescription;
+					bool enableMicroRegistration;
 				};
 
 

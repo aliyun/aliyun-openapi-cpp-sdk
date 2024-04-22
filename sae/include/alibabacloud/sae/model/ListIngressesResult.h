@@ -41,12 +41,15 @@ namespace AlibabaCloud
 						std::string description;
 						std::string certIds;
 						std::string certId;
+						std::string mseGatewayProtocol;
+						std::string listenerProtocol;
+						std::string name;
 						std::string loadBalanceType;
+						std::string mseGatewayId;
 						std::string namespaceId;
 						long id;
-						std::string listenerProtocol;
+						std::string mseGatewayPort;
 						std::string slbType;
-						std::string name;
 					};
 					std::vector<Ingress> ingressList;
 				};

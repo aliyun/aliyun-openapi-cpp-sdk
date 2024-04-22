@@ -132,6 +132,16 @@
 #include "model/EnableApplicationScalingRuleResult.h"
 #include "model/ExecJobRequest.h"
 #include "model/ExecJobResult.h"
+#include "model/GetArmsTopNMetricRequest.h"
+#include "model/GetArmsTopNMetricResult.h"
+#include "model/GetAvailabilityMetricRequest.h"
+#include "model/GetAvailabilityMetricResult.h"
+#include "model/GetChangeOrderMetricRequest.h"
+#include "model/GetChangeOrderMetricResult.h"
+#include "model/GetScaleAppMetricRequest.h"
+#include "model/GetScaleAppMetricResult.h"
+#include "model/GetWarningEventMetricRequest.h"
+#include "model/GetWarningEventMetricResult.h"
 #include "model/ListAppEventsRequest.h"
 #include "model/ListAppEventsResult.h"
 #include "model/ListAppServicesPageRequest.h"
@@ -386,6 +396,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExecJobResult> ExecJobOutcome;
 			typedef std::future<ExecJobOutcome> ExecJobOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::ExecJobRequest&, const ExecJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExecJobAsyncHandler;
+			typedef Outcome<Error, Model::GetArmsTopNMetricResult> GetArmsTopNMetricOutcome;
+			typedef std::future<GetArmsTopNMetricOutcome> GetArmsTopNMetricOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::GetArmsTopNMetricRequest&, const GetArmsTopNMetricOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetArmsTopNMetricAsyncHandler;
+			typedef Outcome<Error, Model::GetAvailabilityMetricResult> GetAvailabilityMetricOutcome;
+			typedef std::future<GetAvailabilityMetricOutcome> GetAvailabilityMetricOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::GetAvailabilityMetricRequest&, const GetAvailabilityMetricOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAvailabilityMetricAsyncHandler;
+			typedef Outcome<Error, Model::GetChangeOrderMetricResult> GetChangeOrderMetricOutcome;
+			typedef std::future<GetChangeOrderMetricOutcome> GetChangeOrderMetricOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::GetChangeOrderMetricRequest&, const GetChangeOrderMetricOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetChangeOrderMetricAsyncHandler;
+			typedef Outcome<Error, Model::GetScaleAppMetricResult> GetScaleAppMetricOutcome;
+			typedef std::future<GetScaleAppMetricOutcome> GetScaleAppMetricOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::GetScaleAppMetricRequest&, const GetScaleAppMetricOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetScaleAppMetricAsyncHandler;
+			typedef Outcome<Error, Model::GetWarningEventMetricResult> GetWarningEventMetricOutcome;
+			typedef std::future<GetWarningEventMetricOutcome> GetWarningEventMetricOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::GetWarningEventMetricRequest&, const GetWarningEventMetricOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWarningEventMetricAsyncHandler;
 			typedef Outcome<Error, Model::ListAppEventsResult> ListAppEventsOutcome;
 			typedef std::future<ListAppEventsOutcome> ListAppEventsOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::ListAppEventsRequest&, const ListAppEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAppEventsAsyncHandler;
@@ -676,6 +701,21 @@ namespace AlibabaCloud
 			ExecJobOutcome execJob(const Model::ExecJobRequest &request)const;
 			void execJobAsync(const Model::ExecJobRequest& request, const ExecJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExecJobOutcomeCallable execJobCallable(const Model::ExecJobRequest& request) const;
+			GetArmsTopNMetricOutcome getArmsTopNMetric(const Model::GetArmsTopNMetricRequest &request)const;
+			void getArmsTopNMetricAsync(const Model::GetArmsTopNMetricRequest& request, const GetArmsTopNMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetArmsTopNMetricOutcomeCallable getArmsTopNMetricCallable(const Model::GetArmsTopNMetricRequest& request) const;
+			GetAvailabilityMetricOutcome getAvailabilityMetric(const Model::GetAvailabilityMetricRequest &request)const;
+			void getAvailabilityMetricAsync(const Model::GetAvailabilityMetricRequest& request, const GetAvailabilityMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAvailabilityMetricOutcomeCallable getAvailabilityMetricCallable(const Model::GetAvailabilityMetricRequest& request) const;
+			GetChangeOrderMetricOutcome getChangeOrderMetric(const Model::GetChangeOrderMetricRequest &request)const;
+			void getChangeOrderMetricAsync(const Model::GetChangeOrderMetricRequest& request, const GetChangeOrderMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetChangeOrderMetricOutcomeCallable getChangeOrderMetricCallable(const Model::GetChangeOrderMetricRequest& request) const;
+			GetScaleAppMetricOutcome getScaleAppMetric(const Model::GetScaleAppMetricRequest &request)const;
+			void getScaleAppMetricAsync(const Model::GetScaleAppMetricRequest& request, const GetScaleAppMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetScaleAppMetricOutcomeCallable getScaleAppMetricCallable(const Model::GetScaleAppMetricRequest& request) const;
+			GetWarningEventMetricOutcome getWarningEventMetric(const Model::GetWarningEventMetricRequest &request)const;
+			void getWarningEventMetricAsync(const Model::GetWarningEventMetricRequest& request, const GetWarningEventMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetWarningEventMetricOutcomeCallable getWarningEventMetricCallable(const Model::GetWarningEventMetricRequest& request) const;
 			ListAppEventsOutcome listAppEvents(const Model::ListAppEventsRequest &request)const;
 			void listAppEventsAsync(const Model::ListAppEventsRequest& request, const ListAppEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAppEventsOutcomeCallable listAppEventsCallable(const Model::ListAppEventsRequest& request) const;

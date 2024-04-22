@@ -53,3 +53,12 @@ void RestartApplicationRequest::setMinReadyInstanceRatio(int minReadyInstanceRat
   setParameter(std::string("MinReadyInstanceRatio"), std::to_string(minReadyInstanceRatio));
 }
 
+bool RestartApplicationRequest::getAutoEnableApplicationScalingRule() const {
+  return autoEnableApplicationScalingRule_;
+}
+
+void RestartApplicationRequest::setAutoEnableApplicationScalingRule(bool autoEnableApplicationScalingRule) {
+  autoEnableApplicationScalingRule_ = autoEnableApplicationScalingRule;
+  setParameter(std::string("AutoEnableApplicationScalingRule"), autoEnableApplicationScalingRule ? "true" : "false");
+}
+

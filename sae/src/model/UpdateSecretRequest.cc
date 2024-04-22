@@ -50,6 +50,6 @@ std::string UpdateSecretRequest::getSecretData() const {
 
 void UpdateSecretRequest::setSecretData(const std::string &secretData) {
   secretData_ = secretData;
-  setBodyParameter(std::string("SecretData"), secretData);
+  setParameter(std::string("SecretData"), secretData);
 }
 

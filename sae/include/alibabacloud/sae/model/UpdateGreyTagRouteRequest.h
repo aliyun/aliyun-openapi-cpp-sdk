@@ -36,6 +36,8 @@ public:
 	void setDescription(const std::string &description);
 	std::string getDubboRules() const;
 	void setDubboRules(const std::string &dubboRules);
+	std::string getAlbRules() const;
+	void setAlbRules(const std::string &albRules);
 	std::string getScRules() const;
 	void setScRules(const std::string &scRules);
 
@@ -43,6 +45,7 @@ private:
 	long greyTagRouteId_;
 	std::string description_;
 	std::string dubboRules_;
+	std::string albRules_;
 	std::string scRules_;
 };
 } // namespace Model

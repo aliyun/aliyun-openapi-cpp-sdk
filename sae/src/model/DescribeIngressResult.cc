@@ -52,8 +52,6 @@ void DescribeIngressResult::parse(const std::string &payload)
 		data_.slbType = dataNode["SlbType"].asString();
 	if(!dataNode["CertId"].isNull())
 		data_.certId = dataNode["CertId"].asString();
-	if(!dataNode["CertIds"].isNull())
-		data_.certIds = dataNode["CertIds"].asString();
 	if(!dataNode["Name"].isNull())
 		data_.name = dataNode["Name"].asString();
 	if(!dataNode["Id"].isNull())
@@ -62,6 +60,8 @@ void DescribeIngressResult::parse(const std::string &payload)
 		data_.loadBalanceType = dataNode["LoadBalanceType"].asString();
 	if(!dataNode["ListenerProtocol"].isNull())
 		data_.listenerProtocol = dataNode["ListenerProtocol"].asString();
+	if(!dataNode["CertIds"].isNull())
+		data_.certIds = dataNode["CertIds"].asString();
 	auto allRulesNode = dataNode["Rules"]["Rule"];
 	for (auto dataNodeRulesRule : allRulesNode)
 	{
@@ -78,7 +78,25 @@ void DescribeIngressResult::parse(const std::string &payload)
 			ruleObject.path = dataNodeRulesRule["Path"].asString();
 		if(!dataNodeRulesRule["BackendProtocol"].isNull())
 			ruleObject.backendProtocol = dataNodeRulesRule["BackendProtocol"].asString();
+		if(!dataNodeRulesRule["RewritePath"].isNull())
+			ruleObject.rewritePath = dataNodeRulesRule["RewritePath"].asString();
 		data_.rules.push_back(ruleObject);
+	}
+	auto allSvcsNode = dataNode["Svcs"]["Svc"];
+	for (auto dataNodeSvcsSvc : allSvcsNode)
+	{
+		Data::Svc svcObject;
+		if(!dataNodeSvcsSvc["id"].isNull())
+			svcObject.id = std::stol(dataNodeSvcsSvc["id"].asString());
+		if(!dataNodeSvcsSvc["appId"].isNull())
+			svcObject.appId = dataNodeSvcsSvc["appId"].asString();
+		if(!dataNodeSvcsSvc["backendProtocol"].isNull())
+			svcObject.backendProtocol = dataNodeSvcsSvc["backendProtocol"].asString();
+		if(!dataNodeSvcsSvc["backendPort"].isNull())
+			svcObject.backendPort = std::stoi(dataNodeSvcsSvc["backendPort"].asString());
+		if(!dataNodeSvcsSvc["name"].isNull())
+			svcObject.name = dataNodeSvcsSvc["name"].asString();
+		data_.svcs.push_back(svcObject);
 	}
 	auto defaultRuleNode = dataNode["DefaultRule"];
 	if(!defaultRuleNode["ContainerPort"].isNull())

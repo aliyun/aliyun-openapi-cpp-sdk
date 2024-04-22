@@ -166,6 +166,12 @@ void DescribeApplicationConfigResult::parse(const std::string &payload)
 		data_.python = dataNode["Python"].asString();
 	if(!dataNode["PythonModules"].isNull())
 		data_.pythonModules = dataNode["PythonModules"].asString();
+	if(!dataNode["MseApplicationName"].isNull())
+		data_.mseApplicationName = dataNode["MseApplicationName"].asString();
+	if(!dataNode["SaeVersion"].isNull())
+		data_.saeVersion = dataNode["SaeVersion"].asString();
+	if(!dataNode["AppSource"].isNull())
+		data_.appSource = dataNode["AppSource"].asString();
 	auto allConfigMapMountDescNode = dataNode["ConfigMapMountDesc"]["ConfigMapMountDescItem"];
 	for (auto dataNodeConfigMapMountDescConfigMapMountDescItem : allConfigMapMountDescNode)
 	{

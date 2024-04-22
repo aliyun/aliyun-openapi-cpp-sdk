@@ -90,6 +90,40 @@ void ListGreyTagRouteResult::parse(const std::string &payload)
 			}
 			resultItemObject.scRules.push_back(scRulesObject);
 		}
+		auto allAlbRulesNode = dataNodeResultresultItem["AlbRules"]["albRule"];
+		for (auto dataNodeResultresultItemAlbRulesalbRule : allAlbRulesNode)
+		{
+			Data::ResultItem::AlbRule albRulesObject;
+			if(!dataNodeResultresultItemAlbRulesalbRule["serviceId"].isNull())
+				albRulesObject.serviceId = dataNodeResultresultItemAlbRulesalbRule["serviceId"].asString();
+			if(!dataNodeResultresultItemAlbRulesalbRule["ingressId"].isNull())
+				albRulesObject.ingressId = dataNodeResultresultItemAlbRulesalbRule["ingressId"].asString();
+			if(!dataNodeResultresultItemAlbRulesalbRule["condition"].isNull())
+				albRulesObject.condition = dataNodeResultresultItemAlbRulesalbRule["condition"].asString();
+			if(!dataNodeResultresultItemAlbRulesalbRule["serviceName"].isNull())
+				albRulesObject.serviceName = dataNodeResultresultItemAlbRulesalbRule["serviceName"].asString();
+			auto allitems1Node = dataNodeResultresultItemAlbRulesalbRule["items"]["item"];
+			for (auto dataNodeResultresultItemAlbRulesalbRuleitemsitem : allitems1Node)
+			{
+				Data::ResultItem::AlbRule::Item2 items1Object;
+				if(!dataNodeResultresultItemAlbRulesalbRuleitemsitem["type"].isNull())
+					items1Object.type = dataNodeResultresultItemAlbRulesalbRuleitemsitem["type"].asString();
+				if(!dataNodeResultresultItemAlbRulesalbRuleitemsitem["name"].isNull())
+					items1Object.name = dataNodeResultresultItemAlbRulesalbRuleitemsitem["name"].asString();
+				if(!dataNodeResultresultItemAlbRulesalbRuleitemsitem["operator"].isNull())
+					items1Object._operator = dataNodeResultresultItemAlbRulesalbRuleitemsitem["operator"].asString();
+				if(!dataNodeResultresultItemAlbRulesalbRuleitemsitem["value"].isNull())
+					items1Object.value = dataNodeResultresultItemAlbRulesalbRuleitemsitem["value"].asString();
+				if(!dataNodeResultresultItemAlbRulesalbRuleitemsitem["cond"].isNull())
+					items1Object.cond = dataNodeResultresultItemAlbRulesalbRuleitemsitem["cond"].asString();
+				if(!dataNodeResultresultItemAlbRulesalbRuleitemsitem["index"].isNull())
+					items1Object.index = std::stoi(dataNodeResultresultItemAlbRulesalbRuleitemsitem["index"].asString());
+				if(!dataNodeResultresultItemAlbRulesalbRuleitemsitem["expr"].isNull())
+					items1Object.expr = dataNodeResultresultItemAlbRulesalbRuleitemsitem["expr"].asString();
+				albRulesObject.items1.push_back(items1Object);
+			}
+			resultItemObject.albRules.push_back(albRulesObject);
+		}
 		auto allDubboRulesNode = dataNodeResultresultItem["DubboRules"]["dubboRule"];
 		for (auto dataNodeResultresultItemDubboRulesdubboRule : allDubboRulesNode)
 		{
@@ -104,25 +138,25 @@ void ListGreyTagRouteResult::parse(const std::string &payload)
 				dubboRulesObject.methodName = dataNodeResultresultItemDubboRulesdubboRule["methodName"].asString();
 			if(!dataNodeResultresultItemDubboRulesdubboRule["condition"].isNull())
 				dubboRulesObject.condition = dataNodeResultresultItemDubboRulesdubboRule["condition"].asString();
-			auto allitems1Node = dataNodeResultresultItemDubboRulesdubboRule["items"]["item"];
-			for (auto dataNodeResultresultItemDubboRulesdubboRuleitemsitem : allitems1Node)
+			auto allitems3Node = dataNodeResultresultItemDubboRulesdubboRule["items"]["item"];
+			for (auto dataNodeResultresultItemDubboRulesdubboRuleitemsitem : allitems3Node)
 			{
-				Data::ResultItem::DubboRule::Item2 items1Object;
+				Data::ResultItem::DubboRule::Item4 items3Object;
 				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["index"].isNull())
-					items1Object.index = std::stoi(dataNodeResultresultItemDubboRulesdubboRuleitemsitem["index"].asString());
+					items3Object.index = std::stoi(dataNodeResultresultItemDubboRulesdubboRuleitemsitem["index"].asString());
 				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["expr"].isNull())
-					items1Object.expr = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["expr"].asString();
+					items3Object.expr = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["expr"].asString();
 				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["operator"].isNull())
-					items1Object._operator = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["operator"].asString();
+					items3Object._operator = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["operator"].asString();
 				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["value"].isNull())
-					items1Object.value = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["value"].asString();
+					items3Object.value = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["value"].asString();
 				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["cond"].isNull())
-					items1Object.cond = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["cond"].asString();
+					items3Object.cond = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["cond"].asString();
 				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["type"].isNull())
-					items1Object.type = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["type"].asString();
+					items3Object.type = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["type"].asString();
 				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["name"].isNull())
-					items1Object.name = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["name"].asString();
-				dubboRulesObject.items1.push_back(items1Object);
+					items3Object.name = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["name"].asString();
+				dubboRulesObject.items3.push_back(items3Object);
 			}
 			resultItemObject.dubboRules.push_back(dubboRulesObject);
 		}

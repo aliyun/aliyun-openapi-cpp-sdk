@@ -35,3 +35,12 @@ void DescribeNamespaceResourcesRequest::setNamespaceId(const std::string &namesp
   setParameter(std::string("NamespaceId"), namespaceId);
 }
 
+std::string DescribeNamespaceResourcesRequest::getNameSpaceShortId() const {
+  return nameSpaceShortId_;
+}
+
+void DescribeNamespaceResourcesRequest::setNameSpaceShortId(const std::string &nameSpaceShortId) {
+  nameSpaceShortId_ = nameSpaceShortId;
+  setParameter(std::string("NameSpaceShortId"), nameSpaceShortId);
+}
+

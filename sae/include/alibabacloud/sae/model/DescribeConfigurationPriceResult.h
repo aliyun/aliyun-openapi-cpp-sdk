@@ -46,14 +46,68 @@ namespace AlibabaCloud
 						float originalAmount;
 						float discountAmount;
 					};
+					struct RequestPrice
+					{
+						struct Order1
+						{
+							float tradeAmount;
+							float originalAmount;
+							float discountAmount;
+							std::vector<std::string> ruleIds4;
+						};
+						struct Rule3
+						{
+							long ruleDescId;
+							std::string name;
+						};
+						Order1 order1;
+						std::vector<Rule3> rules2;
+					};
+					struct TrafficPrice
+					{
+						struct Order5
+						{
+							std::vector<std::string> ruleIds8;
+							float tradeAmount;
+							float originalAmount;
+							float discountAmount;
+						};
+						struct Rule7
+						{
+							float ruleDescId;
+							std::string name;
+						};
+						Order5 order5;
+						std::vector<Rule7> rules6;
+					};
+					struct CpuMemPrice
+					{
+						struct Order9
+						{
+							float tradeAmount;
+							float originalAmount;
+							float discountAmount;
+							std::vector<std::string> ruleIds12;
+						};
+						struct Rule11
+						{
+							float ruleDescId;
+							std::string name;
+						};
+						std::vector<Rule11> rules10;
+						Order9 order9;
+					};
 					struct Rule
 					{
 						long ruleDescId;
 						std::string name;
 					};
 					Order order;
+					TrafficPrice trafficPrice;
+					CpuMemPrice cpuMemPrice;
 					BagUsage bagUsage;
 					std::vector<Rule> rules;
+					RequestPrice requestPrice;
 				};
 
 

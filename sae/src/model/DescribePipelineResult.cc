@@ -90,6 +90,12 @@ void DescribePipelineResult::parse(const std::string &payload)
 				taskListObject.showManualIgnore = dataNodeStageListStageTaskListTask["ShowManualIgnore"].asString() == "true";
 			if(!dataNodeStageListStageTaskListTask["TaskId"].isNull())
 				taskListObject.taskId = dataNodeStageListStageTaskListTask["TaskId"].asString();
+			if(!dataNodeStageListStageTaskListTask["CreateTime"].isNull())
+				taskListObject.createTime = std::stol(dataNodeStageListStageTaskListTask["CreateTime"].asString());
+			if(!dataNodeStageListStageTaskListTask["StartTime"].isNull())
+				taskListObject.startTime = std::stol(dataNodeStageListStageTaskListTask["StartTime"].asString());
+			if(!dataNodeStageListStageTaskListTask["UpdateTime"].isNull())
+				taskListObject.updateTime = std::stol(dataNodeStageListStageTaskListTask["UpdateTime"].asString());
 			stageObject.taskList.push_back(taskListObject);
 		}
 		data_.stageList.push_back(stageObject);

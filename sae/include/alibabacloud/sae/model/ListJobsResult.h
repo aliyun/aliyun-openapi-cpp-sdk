@@ -43,10 +43,12 @@ namespace AlibabaCloud
 						};
 						bool scaleRuleEnabled;
 						std::string appDescription;
+						std::string message;
 						long failed;
 						std::string triggerConfig;
 						int runningInstances;
 						bool suspend;
+						int cpu;
 						std::string lastChangeorderState;
 						std::string scaleRuleType;
 						std::string appName;
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 						long succeeded;
 						long active;
 						std::string appId;
+						int mem;
 						long completionTime;
 						std::string lastJobState;
 						long lastStartTime;

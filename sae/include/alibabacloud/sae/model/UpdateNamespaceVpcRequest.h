@@ -34,10 +34,13 @@ public:
 	void setNamespaceId(const std::string &namespaceId);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
+	std::string getNameSpaceShortId() const;
+	void setNameSpaceShortId(const std::string &nameSpaceShortId);
 
 private:
 	std::string namespaceId_;
 	std::string vpcId_;
+	std::string nameSpaceShortId_;
 };
 } // namespace Model
 } // namespace Sae

@@ -69,6 +69,10 @@ void CreateApplicationScalingRuleResult::parse(const std::string &payload)
 			scheduleObject.atTime = timerNodeSchedulesSchedule["AtTime"].asString();
 		if(!timerNodeSchedulesSchedule["TargetReplicas"].isNull())
 			scheduleObject.targetReplicas = std::stoi(timerNodeSchedulesSchedule["TargetReplicas"].asString());
+		if(!timerNodeSchedulesSchedule["MaxReplicas"].isNull())
+			scheduleObject.maxReplicas = std::stoi(timerNodeSchedulesSchedule["MaxReplicas"].asString());
+		if(!timerNodeSchedulesSchedule["MinReplicas"].isNull())
+			scheduleObject.minReplicas = std::stoi(timerNodeSchedulesSchedule["MinReplicas"].asString());
 		data_.timer.schedules.push_back(scheduleObject);
 	}
 	auto metricNode = dataNode["Metric"];
@@ -84,11 +88,32 @@ void CreateApplicationScalingRuleResult::parse(const std::string &payload)
 			metric1Object.metricTargetAverageUtilization = std::stoi(metricNodeMetricsMetric["MetricTargetAverageUtilization"].asString());
 		if(!metricNodeMetricsMetric["MetricType"].isNull())
 			metric1Object.metricType = metricNodeMetricsMetric["MetricType"].asString();
+		if(!metricNodeMetricsMetric["SlbProject"].isNull())
+			metric1Object.slbProject = metricNodeMetricsMetric["SlbProject"].asString();
+		if(!metricNodeMetricsMetric["SlbLogstore"].isNull())
+			metric1Object.slbLogstore = metricNodeMetricsMetric["SlbLogstore"].asString();
+		if(!metricNodeMetricsMetric["Vport"].isNull())
+			metric1Object.vport = metricNodeMetricsMetric["Vport"].asString();
+		if(!metricNodeMetricsMetric["SlbId"].isNull())
+			metric1Object.slbId = metricNodeMetricsMetric["SlbId"].asString();
 		data_.metric.metrics.push_back(metric1Object);
 	}
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
+}
+
+std::string CreateApplicationScalingRuleResult::getMessage()const
+{
+	return message_;
 }
 
 std::string CreateApplicationScalingRuleResult::getTraceId()const
@@ -99,5 +124,20 @@ std::string CreateApplicationScalingRuleResult::getTraceId()const
 CreateApplicationScalingRuleResult::Data CreateApplicationScalingRuleResult::getData()const
 {
 	return data_;
+}
+
+std::string CreateApplicationScalingRuleResult::getErrorCode()const
+{
+	return errorCode_;
+}
+
+std::string CreateApplicationScalingRuleResult::getCode()const
+{
+	return code_;
+}
+
+bool CreateApplicationScalingRuleResult::getSuccess()const
+{
+	return success_;
 }
 

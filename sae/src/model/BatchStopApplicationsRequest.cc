@@ -44,3 +44,12 @@ void BatchStopApplicationsRequest::setNamespaceId(const std::string &namespaceId
   setParameter(std::string("NamespaceId"), namespaceId);
 }
 
+std::string BatchStopApplicationsRequest::getVersion() const {
+  return version_;
+}
+
+void BatchStopApplicationsRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

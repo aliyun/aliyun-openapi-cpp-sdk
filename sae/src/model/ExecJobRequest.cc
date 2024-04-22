@@ -62,6 +62,15 @@ void ExecJobRequest::setCommandArgs(const std::string &commandArgs) {
   setParameter(std::string("CommandArgs"), commandArgs);
 }
 
+std::string ExecJobRequest::getReplicas() const {
+  return replicas_;
+}
+
+void ExecJobRequest::setReplicas(const std::string &replicas) {
+  replicas_ = replicas;
+  setParameter(std::string("Replicas"), replicas);
+}
+
 std::string ExecJobRequest::getAppId() const {
   return appId_;
 }

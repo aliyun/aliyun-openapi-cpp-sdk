@@ -38,6 +38,8 @@ public:
 	void setJarStartArgs(const std::string &jarStartArgs);
 	std::string getCommandArgs() const;
 	void setCommandArgs(const std::string &commandArgs);
+	std::string getReplicas() const;
+	void setReplicas(const std::string &replicas);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
 	std::string getEnvs() const;
@@ -54,6 +56,7 @@ private:
 	std::string jarStartOptions_;
 	std::string jarStartArgs_;
 	std::string commandArgs_;
+	std::string replicas_;
 	std::string appId_;
 	std::string envs_;
 	std::string time_;

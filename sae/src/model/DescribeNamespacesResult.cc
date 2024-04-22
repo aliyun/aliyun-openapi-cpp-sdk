@@ -66,6 +66,8 @@ void DescribeNamespacesResult::parse(const std::string &payload)
 			_namespaceObject.tenantId = dataNodeNamespacesNamespace["TenantId"].asString();
 		if(!dataNodeNamespacesNamespace["RegionId"].isNull())
 			_namespaceObject.regionId = dataNodeNamespacesNamespace["RegionId"].asString();
+		if(!dataNodeNamespacesNamespace["NameSpaceShortId"].isNull())
+			_namespaceObject.nameSpaceShortId = dataNodeNamespacesNamespace["NameSpaceShortId"].asString();
 		data_.namespaces.push_back(_namespaceObject);
 	}
 	if(!value["Message"].isNull())
