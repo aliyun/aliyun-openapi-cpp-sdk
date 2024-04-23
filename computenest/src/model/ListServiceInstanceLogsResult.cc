@@ -45,8 +45,6 @@ void ListServiceInstanceLogsResult::parse(const std::string &payload)
 		ServiceInstanceLogs serviceInstancesLogsObject;
 		if(!valueServiceInstancesLogsServiceInstanceLogs["Timestamp"].isNull())
 			serviceInstancesLogsObject.timestamp = valueServiceInstancesLogsServiceInstanceLogs["Timestamp"].asString();
-		if(!valueServiceInstancesLogsServiceInstanceLogs["ServiceInstanceId"].isNull())
-			serviceInstancesLogsObject.serviceInstanceId = valueServiceInstancesLogsServiceInstanceLogs["ServiceInstanceId"].asString();
 		if(!valueServiceInstancesLogsServiceInstanceLogs["Source"].isNull())
 			serviceInstancesLogsObject.source = valueServiceInstancesLogsServiceInstanceLogs["Source"].asString();
 		if(!valueServiceInstancesLogsServiceInstanceLogs["Content"].isNull())
@@ -64,7 +62,7 @@ void ListServiceInstanceLogsResult::parse(const std::string &payload)
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 
@@ -73,7 +71,7 @@ std::string ListServiceInstanceLogsResult::getNextToken()const
 	return nextToken_;
 }
 
-std::string ListServiceInstanceLogsResult::getMaxResults()const
+int ListServiceInstanceLogsResult::getMaxResults()const
 {
 	return maxResults_;
 }

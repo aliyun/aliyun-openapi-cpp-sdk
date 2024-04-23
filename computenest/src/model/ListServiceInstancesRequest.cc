@@ -79,12 +79,12 @@ void ListServiceInstancesRequest::setFilter(const std::vector<ListServiceInstanc
   }
 }
 
-std::string ListServiceInstancesRequest::getMaxResults() const {
+int ListServiceInstancesRequest::getMaxResults() const {
   return maxResults_;
 }
 
-void ListServiceInstancesRequest::setMaxResults(const std::string &maxResults) {
+void ListServiceInstancesRequest::setMaxResults(int maxResults) {
   maxResults_ = maxResults;
-  setParameter(std::string("MaxResults"), maxResults);
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 

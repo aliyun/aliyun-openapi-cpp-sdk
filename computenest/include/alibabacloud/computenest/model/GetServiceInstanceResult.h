@@ -110,6 +110,7 @@ namespace AlibabaCloud
 				std::string getOperationStartTime()const;
 				std::string getServiceInstanceId()const;
 				std::string getServiceType()const;
+				std::string getGrafanaDashBoardUrl()const;
 				std::string getTemplateName()const;
 				std::string getMarketInstanceId()const;
 				std::vector<Tag> getTags()const;
@@ -120,6 +121,7 @@ namespace AlibabaCloud
 				NetworkConfig getNetworkConfig()const;
 				Service getService()const;
 				std::string getPayType()const;
+				std::string getBizStatus()const;
 				std::string getLicenseEndTime()const;
 				long getUserId()const;
 				bool getEnableUserPrometheus()const;
@@ -145,6 +147,7 @@ namespace AlibabaCloud
 				std::string operationStartTime_;
 				std::string serviceInstanceId_;
 				std::string serviceType_;
+				std::string grafanaDashBoardUrl_;
 				std::string templateName_;
 				std::string marketInstanceId_;
 				std::vector<Tag> tags_;
@@ -155,6 +158,7 @@ namespace AlibabaCloud
 				NetworkConfig networkConfig_;
 				Service service_;
 				std::string payType_;
+				std::string bizStatus_;
 				std::string licenseEndTime_;
 				long userId_;
 				bool enableUserPrometheus_;

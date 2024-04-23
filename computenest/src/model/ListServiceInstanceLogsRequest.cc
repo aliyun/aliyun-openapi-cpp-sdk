@@ -52,12 +52,30 @@ void ListServiceInstanceLogsRequest::setServiceInstanceId(const std::string &ser
   setParameter(std::string("ServiceInstanceId"), serviceInstanceId);
 }
 
-std::string ListServiceInstanceLogsRequest::getMaxResults() const {
+std::string ListServiceInstanceLogsRequest::getLogSource() const {
+  return logSource_;
+}
+
+void ListServiceInstanceLogsRequest::setLogSource(const std::string &logSource) {
+  logSource_ = logSource;
+  setParameter(std::string("LogSource"), logSource);
+}
+
+int ListServiceInstanceLogsRequest::getMaxResults() const {
   return maxResults_;
 }
 
-void ListServiceInstanceLogsRequest::setMaxResults(const std::string &maxResults) {
+void ListServiceInstanceLogsRequest::setMaxResults(int maxResults) {
   maxResults_ = maxResults;
-  setParameter(std::string("MaxResults"), maxResults);
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
+}
+
+std::string ListServiceInstanceLogsRequest::getLogstore() const {
+  return logstore_;
+}
+
+void ListServiceInstanceLogsRequest::setLogstore(const std::string &logstore) {
+  logstore_ = logstore;
+  setParameter(std::string("Logstore"), logstore);
 }
 

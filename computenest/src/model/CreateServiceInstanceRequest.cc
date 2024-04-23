@@ -32,6 +32,8 @@ CreateServiceInstanceRequest::Commodity CreateServiceInstanceRequest::getCommodi
 void CreateServiceInstanceRequest::setCommodity(const CreateServiceInstanceRequest::Commodity &commodity) {
   commodity_ = commodity;
   setParameter(std::string("Commodity") + ".PayPeriod", std::to_string(commodity.payPeriod));
+  setParameter(std::string("Commodity") + ".AutoPay", commodity.autoPay ? "true" : "false");
+  setParameter(std::string("Commodity") + ".AutoRenew", commodity.autoRenew ? "true" : "false");
   setParameter(std::string("Commodity") + ".PayPeriodUnit", commodity.payPeriodUnit);
 }
 
@@ -182,15 +184,6 @@ std::string CreateServiceInstanceRequest::getParameters() const {
 void CreateServiceInstanceRequest::setParameters(const std::string &parameters) {
   parameters_ = parameters;
   setParameter(std::string("Parameters"), parameters);
-}
-
-long CreateServiceInstanceRequest::getPayType() const {
-  return payType_;
-}
-
-void CreateServiceInstanceRequest::setPayType(long payType) {
-  payType_ = payType;
-  setParameter(std::string("PayType"), std::to_string(payType));
 }
 
 CreateServiceInstanceRequest::OperationMetadata CreateServiceInstanceRequest::getOperationMetadata() const {

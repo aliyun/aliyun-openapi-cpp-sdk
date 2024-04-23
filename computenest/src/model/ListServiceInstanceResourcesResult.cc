@@ -61,12 +61,14 @@ void ListServiceInstanceResourcesResult::parse(const std::string &payload)
 			resourcesObject.productType = valueResourcesResourcesItem["ProductType"].asString();
 		if(!valueResourcesResourcesItem["ProductCode"].isNull())
 			resourcesObject.productCode = valueResourcesResourcesItem["ProductCode"].asString();
+		if(!valueResourcesResourcesItem["Status"].isNull())
+			resourcesObject.status = valueResourcesResourcesItem["Status"].asString();
 		resources_.push_back(resourcesObject);
 	}
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 
@@ -75,7 +77,7 @@ std::string ListServiceInstanceResourcesResult::getNextToken()const
 	return nextToken_;
 }
 
-std::string ListServiceInstanceResourcesResult::getMaxResults()const
+int ListServiceInstanceResourcesResult::getMaxResults()const
 {
 	return maxResults_;
 }

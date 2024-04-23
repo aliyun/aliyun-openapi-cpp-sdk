@@ -203,6 +203,10 @@ void GetServiceInstanceResult::parse(const std::string &payload)
 		marketInstanceId_ = value["MarketInstanceId"].asString();
 	if(!value["ResourceGroupId"].isNull())
 		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["BizStatus"].isNull())
+		bizStatus_ = value["BizStatus"].asString();
+	if(!value["GrafanaDashBoardUrl"].isNull())
+		grafanaDashBoardUrl_ = value["GrafanaDashBoardUrl"].asString();
 
 }
 
@@ -266,6 +270,11 @@ std::string GetServiceInstanceResult::getServiceType()const
 	return serviceType_;
 }
 
+std::string GetServiceInstanceResult::getGrafanaDashBoardUrl()const
+{
+	return grafanaDashBoardUrl_;
+}
+
 std::string GetServiceInstanceResult::getTemplateName()const
 {
 	return templateName_;
@@ -314,6 +323,11 @@ GetServiceInstanceResult::Service GetServiceInstanceResult::getService()const
 std::string GetServiceInstanceResult::getPayType()const
 {
 	return payType_;
+}
+
+std::string GetServiceInstanceResult::getBizStatus()const
+{
+	return bizStatus_;
 }
 
 std::string GetServiceInstanceResult::getLicenseEndTime()const

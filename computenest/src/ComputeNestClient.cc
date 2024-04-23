@@ -51,6 +51,42 @@ ComputeNestClient::ComputeNestClient(const std::string & accessKeyId, const std:
 ComputeNestClient::~ComputeNestClient()
 {}
 
+ComputeNestClient::ChangeResourceGroupOutcome ComputeNestClient::changeResourceGroup(const ChangeResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeResourceGroupOutcome(ChangeResourceGroupResult(outcome.result()));
+	else
+		return ChangeResourceGroupOutcome(outcome.error());
+}
+
+void ComputeNestClient::changeResourceGroupAsync(const ChangeResourceGroupRequest& request, const ChangeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ComputeNestClient::ChangeResourceGroupOutcomeCallable ComputeNestClient::changeResourceGroupCallable(const ChangeResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->changeResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ComputeNestClient::ContinueDeployServiceInstanceOutcome ComputeNestClient::continueDeployServiceInstance(const ContinueDeployServiceInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +225,42 @@ ComputeNestClient::GetServiceInstanceOutcomeCallable ComputeNestClient::getServi
 			[this, request]()
 			{
 			return this->getServiceInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ComputeNestClient::GetServiceTemplateParameterConstraintsOutcome ComputeNestClient::getServiceTemplateParameterConstraints(const GetServiceTemplateParameterConstraintsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetServiceTemplateParameterConstraintsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetServiceTemplateParameterConstraintsOutcome(GetServiceTemplateParameterConstraintsResult(outcome.result()));
+	else
+		return GetServiceTemplateParameterConstraintsOutcome(outcome.error());
+}
+
+void ComputeNestClient::getServiceTemplateParameterConstraintsAsync(const GetServiceTemplateParameterConstraintsRequest& request, const GetServiceTemplateParameterConstraintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getServiceTemplateParameterConstraints(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ComputeNestClient::GetServiceTemplateParameterConstraintsOutcomeCallable ComputeNestClient::getServiceTemplateParameterConstraintsCallable(const GetServiceTemplateParameterConstraintsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetServiceTemplateParameterConstraintsOutcome()>>(
+			[this, request]()
+			{
+			return this->getServiceTemplateParameterConstraints(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

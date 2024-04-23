@@ -21,6 +21,8 @@ set(computenest_public_header
 	include/alibabacloud/computenest/ComputeNestExport.h )
 
 set(computenest_public_header_model 
+	include/alibabacloud/computenest/model/ChangeResourceGroupRequest.h
+	include/alibabacloud/computenest/model/ChangeResourceGroupResult.h
 	include/alibabacloud/computenest/model/ContinueDeployServiceInstanceRequest.h
 	include/alibabacloud/computenest/model/ContinueDeployServiceInstanceResult.h
 	include/alibabacloud/computenest/model/CreateServiceInstanceRequest.h
@@ -29,6 +31,8 @@ set(computenest_public_header_model
 	include/alibabacloud/computenest/model/DeleteServiceInstancesResult.h
 	include/alibabacloud/computenest/model/GetServiceInstanceRequest.h
 	include/alibabacloud/computenest/model/GetServiceInstanceResult.h
+	include/alibabacloud/computenest/model/GetServiceTemplateParameterConstraintsRequest.h
+	include/alibabacloud/computenest/model/GetServiceTemplateParameterConstraintsResult.h
 	include/alibabacloud/computenest/model/ListServiceInstanceLogsRequest.h
 	include/alibabacloud/computenest/model/ListServiceInstanceLogsResult.h
 	include/alibabacloud/computenest/model/ListServiceInstanceResourcesRequest.h
@@ -38,6 +42,8 @@ set(computenest_public_header_model
 
 set(computenest_src 
 	src/ComputeNestClient.cc
+	src/model/ChangeResourceGroupRequest.cc
+	src/model/ChangeResourceGroupResult.cc
 	src/model/ContinueDeployServiceInstanceRequest.cc
 	src/model/ContinueDeployServiceInstanceResult.cc
 	src/model/CreateServiceInstanceRequest.cc
@@ -46,6 +52,8 @@ set(computenest_src
 	src/model/DeleteServiceInstancesResult.cc
 	src/model/GetServiceInstanceRequest.cc
 	src/model/GetServiceInstanceResult.cc
+	src/model/GetServiceTemplateParameterConstraintsRequest.cc
+	src/model/GetServiceTemplateParameterConstraintsResult.cc
 	src/model/ListServiceInstanceLogsRequest.cc
 	src/model/ListServiceInstanceLogsResult.cc
 	src/model/ListServiceInstanceResourcesRequest.cc

@@ -72,6 +72,7 @@ namespace AlibabaCloud
 					std::string payType;
 					std::string source;
 					std::string name;
+					std::string bizStatus;
 					std::string operationStartTime;
 					std::string serviceInstanceId;
 					std::string serviceType;
@@ -91,7 +92,7 @@ namespace AlibabaCloud
 				long getTotalCount()const;
 				std::vector<ServiceInstance> getServiceInstances()const;
 				std::string getNextToken()const;
-				std::string getMaxResults()const;
+				int getMaxResults()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -99,7 +100,7 @@ namespace AlibabaCloud
 				long totalCount_;
 				std::vector<ServiceInstance> serviceInstances_;
 				std::string nextToken_;
-				std::string maxResults_;
+				int maxResults_;
 
 			};
 		}

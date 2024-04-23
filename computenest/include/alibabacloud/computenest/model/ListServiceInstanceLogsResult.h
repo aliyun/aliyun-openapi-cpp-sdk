@@ -35,7 +35,6 @@ namespace AlibabaCloud
 				struct ServiceInstanceLogs
 				{
 					std::string status;
-					std::string serviceInstanceId;
 					std::string resourceId;
 					std::string content;
 					std::string logType;
@@ -49,14 +48,14 @@ namespace AlibabaCloud
 				explicit ListServiceInstanceLogsResult(const std::string &payload);
 				~ListServiceInstanceLogsResult();
 				std::string getNextToken()const;
-				std::string getMaxResults()const;
+				int getMaxResults()const;
 				std::vector<ServiceInstanceLogs> getServiceInstancesLogs()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string nextToken_;
-				std::string maxResults_;
+				int maxResults_;
 				std::vector<ServiceInstanceLogs> serviceInstancesLogs_;
 
 			};

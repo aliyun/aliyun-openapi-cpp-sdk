@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_COMPUTENEST_MODEL_CREATESERVICEINSTANCERESULT_H_
-#define ALIBABACLOUD_COMPUTENEST_MODEL_CREATESERVICEINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_COMPUTENEST_MODEL_CHANGERESOURCEGROUPRESULT_H_
+#define ALIBABACLOUD_COMPUTENEST_MODEL_CHANGERESOURCEGROUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_COMPUTENEST_EXPORT CreateServiceInstanceResult : public ServiceResult
+			class ALIBABACLOUD_COMPUTENEST_EXPORT ChangeResourceGroupResult : public ServiceResult
 			{
 			public:
 
 
-				CreateServiceInstanceResult();
-				explicit CreateServiceInstanceResult(const std::string &payload);
-				~CreateServiceInstanceResult();
-				std::string getStatus()const;
-				std::string getServiceInstanceId()const;
-				std::string getMarketInstanceId()const;
-				std::string getOrderId()const;
+				ChangeResourceGroupResult();
+				explicit ChangeResourceGroupResult(const std::string &payload);
+				~ChangeResourceGroupResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string status_;
-				std::string serviceInstanceId_;
-				std::string marketInstanceId_;
-				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_COMPUTENEST_MODEL_CREATESERVICEINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_COMPUTENEST_MODEL_CHANGERESOURCEGROUPRESULT_H_

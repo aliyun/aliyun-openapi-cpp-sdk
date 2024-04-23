@@ -40,6 +40,8 @@ public:
 	void setNextToken(const std::string &nextToken);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getServiceInstanceResourceType() const;
+	void setServiceInstanceResourceType(const std::string &serviceInstanceResourceType);
 	std::vector<std::string> getResourceARN() const;
 	void setResourceARN(const std::vector<std::string> &resourceARN);
 	std::vector<Tag> getTag() const;
@@ -48,8 +50,8 @@ public:
 	void setServiceInstanceId(const std::string &serviceInstanceId);
 	std::string getExpireTimeStart() const;
 	void setExpireTimeStart(const std::string &expireTimeStart);
-	std::string getMaxResults() const;
-	void setMaxResults(const std::string &maxResults);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
 	std::string getPayType() const;
 	void setPayType(const std::string &payType);
 
@@ -57,11 +59,12 @@ private:
 	std::string expireTimeEnd_;
 	std::string nextToken_;
 	std::string regionId_;
+	std::string serviceInstanceResourceType_;
 	std::vector<std::string> resourceARN_;
 	std::vector<Tag> tag_;
 	std::string serviceInstanceId_;
 	std::string expireTimeStart_;
-	std::string maxResults_;
+	int maxResults_;
 	std::string payType_;
 };
 } // namespace Model

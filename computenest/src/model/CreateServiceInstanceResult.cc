@@ -45,6 +45,8 @@ void CreateServiceInstanceResult::parse(const std::string &payload)
 		serviceInstanceId_ = value["ServiceInstanceId"].asString();
 	if(!value["MarketInstanceId"].isNull())
 		marketInstanceId_ = value["MarketInstanceId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = value["OrderId"].asString();
 
 }
 
@@ -61,5 +63,10 @@ std::string CreateServiceInstanceResult::getServiceInstanceId()const
 std::string CreateServiceInstanceResult::getMarketInstanceId()const
 {
 	return marketInstanceId_;
+}
+
+std::string CreateServiceInstanceResult::getOrderId()const
+{
+	return orderId_;
 }
 

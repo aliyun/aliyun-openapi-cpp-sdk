@@ -36,14 +36,20 @@ public:
 	void setNextToken(const std::string &nextToken);
 	std::string getServiceInstanceId() const;
 	void setServiceInstanceId(const std::string &serviceInstanceId);
-	std::string getMaxResults() const;
-	void setMaxResults(const std::string &maxResults);
+	std::string getLogSource() const;
+	void setLogSource(const std::string &logSource);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
+	std::string getLogstore() const;
+	void setLogstore(const std::string &logstore);
 
 private:
 	std::string regionId_;
 	std::string nextToken_;
 	std::string serviceInstanceId_;
-	std::string maxResults_;
+	std::string logSource_;
+	int maxResults_;
+	std::string logstore_;
 };
 } // namespace Model
 } // namespace ComputeNest

@@ -52,6 +52,15 @@ void ListServiceInstanceResourcesRequest::setRegionId(const std::string &regionI
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string ListServiceInstanceResourcesRequest::getServiceInstanceResourceType() const {
+  return serviceInstanceResourceType_;
+}
+
+void ListServiceInstanceResourcesRequest::setServiceInstanceResourceType(const std::string &serviceInstanceResourceType) {
+  serviceInstanceResourceType_ = serviceInstanceResourceType;
+  setParameter(std::string("ServiceInstanceResourceType"), serviceInstanceResourceType);
+}
+
 std::vector<std::string> ListServiceInstanceResourcesRequest::getResourceARN() const {
   return resourceARN_;
 }
@@ -92,13 +101,13 @@ void ListServiceInstanceResourcesRequest::setExpireTimeStart(const std::string &
   setParameter(std::string("ExpireTimeStart"), expireTimeStart);
 }
 
-std::string ListServiceInstanceResourcesRequest::getMaxResults() const {
+int ListServiceInstanceResourcesRequest::getMaxResults() const {
   return maxResults_;
 }
 
-void ListServiceInstanceResourcesRequest::setMaxResults(const std::string &maxResults) {
+void ListServiceInstanceResourcesRequest::setMaxResults(int maxResults) {
   maxResults_ = maxResults;
-  setParameter(std::string("MaxResults"), maxResults);
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
 std::string ListServiceInstanceResourcesRequest::getPayType() const {

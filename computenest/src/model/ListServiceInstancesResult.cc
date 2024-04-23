@@ -85,6 +85,8 @@ void ListServiceInstancesResult::parse(const std::string &payload)
 			serviceInstancesObject.marketInstanceId = valueServiceInstancesServiceInstance["MarketInstanceId"].asString();
 		if(!valueServiceInstancesServiceInstance["ResourceGroupId"].isNull())
 			serviceInstancesObject.resourceGroupId = valueServiceInstancesServiceInstance["ResourceGroupId"].asString();
+		if(!valueServiceInstancesServiceInstance["BizStatus"].isNull())
+			serviceInstancesObject.bizStatus = valueServiceInstancesServiceInstance["BizStatus"].asString();
 		auto allTagsNode = valueServiceInstancesServiceInstance["Tags"]["Tag"];
 		for (auto valueServiceInstancesServiceInstanceTagsTag : allTagsNode)
 		{
@@ -135,7 +137,7 @@ void ListServiceInstancesResult::parse(const std::string &payload)
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
 	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 
@@ -154,7 +156,7 @@ std::string ListServiceInstancesResult::getNextToken()const
 	return nextToken_;
 }
 
-std::string ListServiceInstancesResult::getMaxResults()const
+int ListServiceInstancesResult::getMaxResults()const
 {
 	return maxResults_;
 }

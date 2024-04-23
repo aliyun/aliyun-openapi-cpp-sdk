@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_COMPUTENEST_MODEL_LISTSERVICEINSTANCESREQUEST_H_
-#define ALIBABACLOUD_COMPUTENEST_MODEL_LISTSERVICEINSTANCESREQUEST_H_
+#ifndef ALIBABACLOUD_COMPUTENEST_MODEL_CHANGERESOURCEGROUPREQUEST_H_
+#define ALIBABACLOUD_COMPUTENEST_MODEL_CHANGERESOURCEGROUPREQUEST_H_
 
 #include <alibabacloud/computenest/ComputeNestExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,39 +26,26 @@
 namespace AlibabaCloud {
 namespace ComputeNest {
 namespace Model {
-class ALIBABACLOUD_COMPUTENEST_EXPORT ListServiceInstancesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_COMPUTENEST_EXPORT ChangeResourceGroupRequest : public RpcServiceRequest {
 public:
-	struct Tag {
-		std::string value;
-		std::string key;
-	};
-	struct Filter {
-		std::string name;
-	};
-	ListServiceInstancesRequest();
-	~ListServiceInstancesRequest();
-	std::string getResourceGroupId() const;
-	void setResourceGroupId(const std::string &resourceGroupId);
+	ChangeResourceGroupRequest();
+	~ChangeResourceGroupRequest();
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getNextToken() const;
-	void setNextToken(const std::string &nextToken);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
-	std::vector<Filter> getFilter() const;
-	void setFilter(const std::vector<Filter> &filter);
-	int getMaxResults() const;
-	void setMaxResults(int maxResults);
+	std::string getResourceId() const;
+	void setResourceId(const std::string &resourceId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::string getNewResourceGroupId() const;
+	void setNewResourceGroupId(const std::string &newResourceGroupId);
 
 private:
-	std::string resourceGroupId_;
 	std::string regionId_;
-	std::string nextToken_;
-	std::vector<Tag> tag_;
-	std::vector<Filter> filter_;
-	int maxResults_;
+	std::string resourceId_;
+	std::string resourceType_;
+	std::string newResourceGroupId_;
 };
 } // namespace Model
 } // namespace ComputeNest
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_COMPUTENEST_MODEL_LISTSERVICEINSTANCESREQUEST_H_
+#endif // !ALIBABACLOUD_COMPUTENEST_MODEL_CHANGERESOURCEGROUPREQUEST_H_

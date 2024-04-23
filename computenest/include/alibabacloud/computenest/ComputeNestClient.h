@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "ComputeNestExport.h"
+#include "model/ChangeResourceGroupRequest.h"
+#include "model/ChangeResourceGroupResult.h"
 #include "model/ContinueDeployServiceInstanceRequest.h"
 #include "model/ContinueDeployServiceInstanceResult.h"
 #include "model/CreateServiceInstanceRequest.h"
@@ -30,6 +32,8 @@
 #include "model/DeleteServiceInstancesResult.h"
 #include "model/GetServiceInstanceRequest.h"
 #include "model/GetServiceInstanceResult.h"
+#include "model/GetServiceTemplateParameterConstraintsRequest.h"
+#include "model/GetServiceTemplateParameterConstraintsResult.h"
 #include "model/ListServiceInstanceLogsRequest.h"
 #include "model/ListServiceInstanceLogsResult.h"
 #include "model/ListServiceInstanceResourcesRequest.h"
@@ -45,6 +49,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_COMPUTENEST_EXPORT ComputeNestClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::ChangeResourceGroupResult> ChangeResourceGroupOutcome;
+			typedef std::future<ChangeResourceGroupOutcome> ChangeResourceGroupOutcomeCallable;
+			typedef std::function<void(const ComputeNestClient*, const Model::ChangeResourceGroupRequest&, const ChangeResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::ContinueDeployServiceInstanceResult> ContinueDeployServiceInstanceOutcome;
 			typedef std::future<ContinueDeployServiceInstanceOutcome> ContinueDeployServiceInstanceOutcomeCallable;
 			typedef std::function<void(const ComputeNestClient*, const Model::ContinueDeployServiceInstanceRequest&, const ContinueDeployServiceInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ContinueDeployServiceInstanceAsyncHandler;
@@ -57,6 +64,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetServiceInstanceResult> GetServiceInstanceOutcome;
 			typedef std::future<GetServiceInstanceOutcome> GetServiceInstanceOutcomeCallable;
 			typedef std::function<void(const ComputeNestClient*, const Model::GetServiceInstanceRequest&, const GetServiceInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceInstanceAsyncHandler;
+			typedef Outcome<Error, Model::GetServiceTemplateParameterConstraintsResult> GetServiceTemplateParameterConstraintsOutcome;
+			typedef std::future<GetServiceTemplateParameterConstraintsOutcome> GetServiceTemplateParameterConstraintsOutcomeCallable;
+			typedef std::function<void(const ComputeNestClient*, const Model::GetServiceTemplateParameterConstraintsRequest&, const GetServiceTemplateParameterConstraintsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceTemplateParameterConstraintsAsyncHandler;
 			typedef Outcome<Error, Model::ListServiceInstanceLogsResult> ListServiceInstanceLogsOutcome;
 			typedef std::future<ListServiceInstanceLogsOutcome> ListServiceInstanceLogsOutcomeCallable;
 			typedef std::function<void(const ComputeNestClient*, const Model::ListServiceInstanceLogsRequest&, const ListServiceInstanceLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListServiceInstanceLogsAsyncHandler;
@@ -71,6 +81,9 @@ namespace AlibabaCloud
 			ComputeNestClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			ComputeNestClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~ComputeNestClient();
+			ChangeResourceGroupOutcome changeResourceGroup(const Model::ChangeResourceGroupRequest &request)const;
+			void changeResourceGroupAsync(const Model::ChangeResourceGroupRequest& request, const ChangeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChangeResourceGroupOutcomeCallable changeResourceGroupCallable(const Model::ChangeResourceGroupRequest& request) const;
 			ContinueDeployServiceInstanceOutcome continueDeployServiceInstance(const Model::ContinueDeployServiceInstanceRequest &request)const;
 			void continueDeployServiceInstanceAsync(const Model::ContinueDeployServiceInstanceRequest& request, const ContinueDeployServiceInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ContinueDeployServiceInstanceOutcomeCallable continueDeployServiceInstanceCallable(const Model::ContinueDeployServiceInstanceRequest& request) const;
@@ -83,6 +96,9 @@ namespace AlibabaCloud
 			GetServiceInstanceOutcome getServiceInstance(const Model::GetServiceInstanceRequest &request)const;
 			void getServiceInstanceAsync(const Model::GetServiceInstanceRequest& request, const GetServiceInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetServiceInstanceOutcomeCallable getServiceInstanceCallable(const Model::GetServiceInstanceRequest& request) const;
+			GetServiceTemplateParameterConstraintsOutcome getServiceTemplateParameterConstraints(const Model::GetServiceTemplateParameterConstraintsRequest &request)const;
+			void getServiceTemplateParameterConstraintsAsync(const Model::GetServiceTemplateParameterConstraintsRequest& request, const GetServiceTemplateParameterConstraintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetServiceTemplateParameterConstraintsOutcomeCallable getServiceTemplateParameterConstraintsCallable(const Model::GetServiceTemplateParameterConstraintsRequest& request) const;
 			ListServiceInstanceLogsOutcome listServiceInstanceLogs(const Model::ListServiceInstanceLogsRequest &request)const;
 			void listServiceInstanceLogsAsync(const Model::ListServiceInstanceLogsRequest& request, const ListServiceInstanceLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListServiceInstanceLogsOutcomeCallable listServiceInstanceLogsCallable(const Model::ListServiceInstanceLogsRequest& request) const;

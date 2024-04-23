@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct ResourcesItem
 				{
+					std::string status;
 					std::string resourceARN;
 					std::string productCode;
 					std::string renewalPeriodUnit;
@@ -50,14 +51,14 @@ namespace AlibabaCloud
 				explicit ListServiceInstanceResourcesResult(const std::string &payload);
 				~ListServiceInstanceResourcesResult();
 				std::string getNextToken()const;
-				std::string getMaxResults()const;
+				int getMaxResults()const;
 				std::vector<ResourcesItem> getResources()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string nextToken_;
-				std::string maxResults_;
+				int maxResults_;
 				std::vector<ResourcesItem> resources_;
 
 			};

@@ -30,6 +30,8 @@ class ALIBABACLOUD_COMPUTENEST_EXPORT CreateServiceInstanceRequest : public RpcS
 public:
 	struct Commodity {
 		long payPeriod;
+		bool autoPay;
+		bool autoRenew;
 		std::string payPeriodUnit;
 	};
 	struct Tag {
@@ -79,8 +81,6 @@ public:
 	void setServiceId(const std::string &serviceId);
 	std::string getParameters() const;
 	void setParameters(const std::string &parameters);
-	long getPayType() const;
-	void setPayType(long payType);
 	OperationMetadata getOperationMetadata() const;
 	void setOperationMetadata(const OperationMetadata &operationMetadata);
 
@@ -102,7 +102,6 @@ private:
 	std::string serviceVersion_;
 	std::string serviceId_;
 	std::string parameters_;
-	long payType_;
 	OperationMetadata operationMetadata_;
 };
 } // namespace Model
