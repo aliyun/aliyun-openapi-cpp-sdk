@@ -114,14 +114,34 @@
 #include "model/DescribeVodCertificateListResult.h"
 #include "model/DescribeVodDomainBpsDataRequest.h"
 #include "model/DescribeVodDomainBpsDataResult.h"
+#include "model/DescribeVodDomainBpsDataByLayerRequest.h"
+#include "model/DescribeVodDomainBpsDataByLayerResult.h"
 #include "model/DescribeVodDomainCertificateInfoRequest.h"
 #include "model/DescribeVodDomainCertificateInfoResult.h"
 #include "model/DescribeVodDomainConfigsRequest.h"
 #include "model/DescribeVodDomainConfigsResult.h"
 #include "model/DescribeVodDomainDetailRequest.h"
 #include "model/DescribeVodDomainDetailResult.h"
+#include "model/DescribeVodDomainHitRateDataRequest.h"
+#include "model/DescribeVodDomainHitRateDataResult.h"
 #include "model/DescribeVodDomainLogRequest.h"
 #include "model/DescribeVodDomainLogResult.h"
+#include "model/DescribeVodDomainRealTimeBpsDataRequest.h"
+#include "model/DescribeVodDomainRealTimeBpsDataResult.h"
+#include "model/DescribeVodDomainRealTimeByteHitRateDataRequest.h"
+#include "model/DescribeVodDomainRealTimeByteHitRateDataResult.h"
+#include "model/DescribeVodDomainRealTimeDetailDataRequest.h"
+#include "model/DescribeVodDomainRealTimeDetailDataResult.h"
+#include "model/DescribeVodDomainRealTimeHttpCodeDataRequest.h"
+#include "model/DescribeVodDomainRealTimeHttpCodeDataResult.h"
+#include "model/DescribeVodDomainRealTimeQpsDataRequest.h"
+#include "model/DescribeVodDomainRealTimeQpsDataResult.h"
+#include "model/DescribeVodDomainRealTimeReqHitRateDataRequest.h"
+#include "model/DescribeVodDomainRealTimeReqHitRateDataResult.h"
+#include "model/DescribeVodDomainRealTimeTrafficDataRequest.h"
+#include "model/DescribeVodDomainRealTimeTrafficDataResult.h"
+#include "model/DescribeVodDomainReqHitRateDataRequest.h"
+#include "model/DescribeVodDomainReqHitRateDataResult.h"
 #include "model/DescribeVodDomainSrcBpsDataRequest.h"
 #include "model/DescribeVodDomainSrcBpsDataResult.h"
 #include "model/DescribeVodDomainSrcTrafficDataRequest.h"
@@ -130,6 +150,10 @@
 #include "model/DescribeVodDomainTrafficDataResult.h"
 #include "model/DescribeVodDomainUsageDataRequest.h"
 #include "model/DescribeVodDomainUsageDataResult.h"
+#include "model/DescribeVodMediaPlayDataRequest.h"
+#include "model/DescribeVodMediaPlayDataResult.h"
+#include "model/DescribeVodRangeDataByLocateAndIspServiceRequest.h"
+#include "model/DescribeVodRangeDataByLocateAndIspServiceResult.h"
 #include "model/DescribeVodRefreshQuotaRequest.h"
 #include "model/DescribeVodRefreshQuotaResult.h"
 #include "model/DescribeVodRefreshTasksRequest.h"
@@ -479,6 +503,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVodDomainBpsDataResult> DescribeVodDomainBpsDataOutcome;
 			typedef std::future<DescribeVodDomainBpsDataOutcome> DescribeVodDomainBpsDataOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainBpsDataRequest&, const DescribeVodDomainBpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainBpsDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodDomainBpsDataByLayerResult> DescribeVodDomainBpsDataByLayerOutcome;
+			typedef std::future<DescribeVodDomainBpsDataByLayerOutcome> DescribeVodDomainBpsDataByLayerOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainBpsDataByLayerRequest&, const DescribeVodDomainBpsDataByLayerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainBpsDataByLayerAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVodDomainCertificateInfoResult> DescribeVodDomainCertificateInfoOutcome;
 			typedef std::future<DescribeVodDomainCertificateInfoOutcome> DescribeVodDomainCertificateInfoOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainCertificateInfoRequest&, const DescribeVodDomainCertificateInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainCertificateInfoAsyncHandler;
@@ -488,9 +515,36 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVodDomainDetailResult> DescribeVodDomainDetailOutcome;
 			typedef std::future<DescribeVodDomainDetailOutcome> DescribeVodDomainDetailOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainDetailRequest&, const DescribeVodDomainDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodDomainHitRateDataResult> DescribeVodDomainHitRateDataOutcome;
+			typedef std::future<DescribeVodDomainHitRateDataOutcome> DescribeVodDomainHitRateDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainHitRateDataRequest&, const DescribeVodDomainHitRateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainHitRateDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVodDomainLogResult> DescribeVodDomainLogOutcome;
 			typedef std::future<DescribeVodDomainLogOutcome> DescribeVodDomainLogOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainLogRequest&, const DescribeVodDomainLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainLogAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodDomainRealTimeBpsDataResult> DescribeVodDomainRealTimeBpsDataOutcome;
+			typedef std::future<DescribeVodDomainRealTimeBpsDataOutcome> DescribeVodDomainRealTimeBpsDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainRealTimeBpsDataRequest&, const DescribeVodDomainRealTimeBpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainRealTimeBpsDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodDomainRealTimeByteHitRateDataResult> DescribeVodDomainRealTimeByteHitRateDataOutcome;
+			typedef std::future<DescribeVodDomainRealTimeByteHitRateDataOutcome> DescribeVodDomainRealTimeByteHitRateDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainRealTimeByteHitRateDataRequest&, const DescribeVodDomainRealTimeByteHitRateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainRealTimeByteHitRateDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodDomainRealTimeDetailDataResult> DescribeVodDomainRealTimeDetailDataOutcome;
+			typedef std::future<DescribeVodDomainRealTimeDetailDataOutcome> DescribeVodDomainRealTimeDetailDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainRealTimeDetailDataRequest&, const DescribeVodDomainRealTimeDetailDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainRealTimeDetailDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodDomainRealTimeHttpCodeDataResult> DescribeVodDomainRealTimeHttpCodeDataOutcome;
+			typedef std::future<DescribeVodDomainRealTimeHttpCodeDataOutcome> DescribeVodDomainRealTimeHttpCodeDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainRealTimeHttpCodeDataRequest&, const DescribeVodDomainRealTimeHttpCodeDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainRealTimeHttpCodeDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodDomainRealTimeQpsDataResult> DescribeVodDomainRealTimeQpsDataOutcome;
+			typedef std::future<DescribeVodDomainRealTimeQpsDataOutcome> DescribeVodDomainRealTimeQpsDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainRealTimeQpsDataRequest&, const DescribeVodDomainRealTimeQpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainRealTimeQpsDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodDomainRealTimeReqHitRateDataResult> DescribeVodDomainRealTimeReqHitRateDataOutcome;
+			typedef std::future<DescribeVodDomainRealTimeReqHitRateDataOutcome> DescribeVodDomainRealTimeReqHitRateDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainRealTimeReqHitRateDataRequest&, const DescribeVodDomainRealTimeReqHitRateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainRealTimeReqHitRateDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodDomainRealTimeTrafficDataResult> DescribeVodDomainRealTimeTrafficDataOutcome;
+			typedef std::future<DescribeVodDomainRealTimeTrafficDataOutcome> DescribeVodDomainRealTimeTrafficDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainRealTimeTrafficDataRequest&, const DescribeVodDomainRealTimeTrafficDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainRealTimeTrafficDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodDomainReqHitRateDataResult> DescribeVodDomainReqHitRateDataOutcome;
+			typedef std::future<DescribeVodDomainReqHitRateDataOutcome> DescribeVodDomainReqHitRateDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainReqHitRateDataRequest&, const DescribeVodDomainReqHitRateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainReqHitRateDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVodDomainSrcBpsDataResult> DescribeVodDomainSrcBpsDataOutcome;
 			typedef std::future<DescribeVodDomainSrcBpsDataOutcome> DescribeVodDomainSrcBpsDataOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainSrcBpsDataRequest&, const DescribeVodDomainSrcBpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainSrcBpsDataAsyncHandler;
@@ -503,6 +557,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVodDomainUsageDataResult> DescribeVodDomainUsageDataOutcome;
 			typedef std::future<DescribeVodDomainUsageDataOutcome> DescribeVodDomainUsageDataOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainUsageDataRequest&, const DescribeVodDomainUsageDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainUsageDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodMediaPlayDataResult> DescribeVodMediaPlayDataOutcome;
+			typedef std::future<DescribeVodMediaPlayDataOutcome> DescribeVodMediaPlayDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodMediaPlayDataRequest&, const DescribeVodMediaPlayDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodMediaPlayDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodRangeDataByLocateAndIspServiceResult> DescribeVodRangeDataByLocateAndIspServiceOutcome;
+			typedef std::future<DescribeVodRangeDataByLocateAndIspServiceOutcome> DescribeVodRangeDataByLocateAndIspServiceOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodRangeDataByLocateAndIspServiceRequest&, const DescribeVodRangeDataByLocateAndIspServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodRangeDataByLocateAndIspServiceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVodRefreshQuotaResult> DescribeVodRefreshQuotaOutcome;
 			typedef std::future<DescribeVodRefreshQuotaOutcome> DescribeVodRefreshQuotaOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodRefreshQuotaRequest&, const DescribeVodRefreshQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodRefreshQuotaAsyncHandler;
@@ -949,6 +1009,9 @@ namespace AlibabaCloud
 			DescribeVodDomainBpsDataOutcome describeVodDomainBpsData(const Model::DescribeVodDomainBpsDataRequest &request)const;
 			void describeVodDomainBpsDataAsync(const Model::DescribeVodDomainBpsDataRequest& request, const DescribeVodDomainBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodDomainBpsDataOutcomeCallable describeVodDomainBpsDataCallable(const Model::DescribeVodDomainBpsDataRequest& request) const;
+			DescribeVodDomainBpsDataByLayerOutcome describeVodDomainBpsDataByLayer(const Model::DescribeVodDomainBpsDataByLayerRequest &request)const;
+			void describeVodDomainBpsDataByLayerAsync(const Model::DescribeVodDomainBpsDataByLayerRequest& request, const DescribeVodDomainBpsDataByLayerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodDomainBpsDataByLayerOutcomeCallable describeVodDomainBpsDataByLayerCallable(const Model::DescribeVodDomainBpsDataByLayerRequest& request) const;
 			DescribeVodDomainCertificateInfoOutcome describeVodDomainCertificateInfo(const Model::DescribeVodDomainCertificateInfoRequest &request)const;
 			void describeVodDomainCertificateInfoAsync(const Model::DescribeVodDomainCertificateInfoRequest& request, const DescribeVodDomainCertificateInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodDomainCertificateInfoOutcomeCallable describeVodDomainCertificateInfoCallable(const Model::DescribeVodDomainCertificateInfoRequest& request) const;
@@ -958,9 +1021,36 @@ namespace AlibabaCloud
 			DescribeVodDomainDetailOutcome describeVodDomainDetail(const Model::DescribeVodDomainDetailRequest &request)const;
 			void describeVodDomainDetailAsync(const Model::DescribeVodDomainDetailRequest& request, const DescribeVodDomainDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodDomainDetailOutcomeCallable describeVodDomainDetailCallable(const Model::DescribeVodDomainDetailRequest& request) const;
+			DescribeVodDomainHitRateDataOutcome describeVodDomainHitRateData(const Model::DescribeVodDomainHitRateDataRequest &request)const;
+			void describeVodDomainHitRateDataAsync(const Model::DescribeVodDomainHitRateDataRequest& request, const DescribeVodDomainHitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodDomainHitRateDataOutcomeCallable describeVodDomainHitRateDataCallable(const Model::DescribeVodDomainHitRateDataRequest& request) const;
 			DescribeVodDomainLogOutcome describeVodDomainLog(const Model::DescribeVodDomainLogRequest &request)const;
 			void describeVodDomainLogAsync(const Model::DescribeVodDomainLogRequest& request, const DescribeVodDomainLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodDomainLogOutcomeCallable describeVodDomainLogCallable(const Model::DescribeVodDomainLogRequest& request) const;
+			DescribeVodDomainRealTimeBpsDataOutcome describeVodDomainRealTimeBpsData(const Model::DescribeVodDomainRealTimeBpsDataRequest &request)const;
+			void describeVodDomainRealTimeBpsDataAsync(const Model::DescribeVodDomainRealTimeBpsDataRequest& request, const DescribeVodDomainRealTimeBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodDomainRealTimeBpsDataOutcomeCallable describeVodDomainRealTimeBpsDataCallable(const Model::DescribeVodDomainRealTimeBpsDataRequest& request) const;
+			DescribeVodDomainRealTimeByteHitRateDataOutcome describeVodDomainRealTimeByteHitRateData(const Model::DescribeVodDomainRealTimeByteHitRateDataRequest &request)const;
+			void describeVodDomainRealTimeByteHitRateDataAsync(const Model::DescribeVodDomainRealTimeByteHitRateDataRequest& request, const DescribeVodDomainRealTimeByteHitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodDomainRealTimeByteHitRateDataOutcomeCallable describeVodDomainRealTimeByteHitRateDataCallable(const Model::DescribeVodDomainRealTimeByteHitRateDataRequest& request) const;
+			DescribeVodDomainRealTimeDetailDataOutcome describeVodDomainRealTimeDetailData(const Model::DescribeVodDomainRealTimeDetailDataRequest &request)const;
+			void describeVodDomainRealTimeDetailDataAsync(const Model::DescribeVodDomainRealTimeDetailDataRequest& request, const DescribeVodDomainRealTimeDetailDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodDomainRealTimeDetailDataOutcomeCallable describeVodDomainRealTimeDetailDataCallable(const Model::DescribeVodDomainRealTimeDetailDataRequest& request) const;
+			DescribeVodDomainRealTimeHttpCodeDataOutcome describeVodDomainRealTimeHttpCodeData(const Model::DescribeVodDomainRealTimeHttpCodeDataRequest &request)const;
+			void describeVodDomainRealTimeHttpCodeDataAsync(const Model::DescribeVodDomainRealTimeHttpCodeDataRequest& request, const DescribeVodDomainRealTimeHttpCodeDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodDomainRealTimeHttpCodeDataOutcomeCallable describeVodDomainRealTimeHttpCodeDataCallable(const Model::DescribeVodDomainRealTimeHttpCodeDataRequest& request) const;
+			DescribeVodDomainRealTimeQpsDataOutcome describeVodDomainRealTimeQpsData(const Model::DescribeVodDomainRealTimeQpsDataRequest &request)const;
+			void describeVodDomainRealTimeQpsDataAsync(const Model::DescribeVodDomainRealTimeQpsDataRequest& request, const DescribeVodDomainRealTimeQpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodDomainRealTimeQpsDataOutcomeCallable describeVodDomainRealTimeQpsDataCallable(const Model::DescribeVodDomainRealTimeQpsDataRequest& request) const;
+			DescribeVodDomainRealTimeReqHitRateDataOutcome describeVodDomainRealTimeReqHitRateData(const Model::DescribeVodDomainRealTimeReqHitRateDataRequest &request)const;
+			void describeVodDomainRealTimeReqHitRateDataAsync(const Model::DescribeVodDomainRealTimeReqHitRateDataRequest& request, const DescribeVodDomainRealTimeReqHitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodDomainRealTimeReqHitRateDataOutcomeCallable describeVodDomainRealTimeReqHitRateDataCallable(const Model::DescribeVodDomainRealTimeReqHitRateDataRequest& request) const;
+			DescribeVodDomainRealTimeTrafficDataOutcome describeVodDomainRealTimeTrafficData(const Model::DescribeVodDomainRealTimeTrafficDataRequest &request)const;
+			void describeVodDomainRealTimeTrafficDataAsync(const Model::DescribeVodDomainRealTimeTrafficDataRequest& request, const DescribeVodDomainRealTimeTrafficDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodDomainRealTimeTrafficDataOutcomeCallable describeVodDomainRealTimeTrafficDataCallable(const Model::DescribeVodDomainRealTimeTrafficDataRequest& request) const;
+			DescribeVodDomainReqHitRateDataOutcome describeVodDomainReqHitRateData(const Model::DescribeVodDomainReqHitRateDataRequest &request)const;
+			void describeVodDomainReqHitRateDataAsync(const Model::DescribeVodDomainReqHitRateDataRequest& request, const DescribeVodDomainReqHitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodDomainReqHitRateDataOutcomeCallable describeVodDomainReqHitRateDataCallable(const Model::DescribeVodDomainReqHitRateDataRequest& request) const;
 			DescribeVodDomainSrcBpsDataOutcome describeVodDomainSrcBpsData(const Model::DescribeVodDomainSrcBpsDataRequest &request)const;
 			void describeVodDomainSrcBpsDataAsync(const Model::DescribeVodDomainSrcBpsDataRequest& request, const DescribeVodDomainSrcBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodDomainSrcBpsDataOutcomeCallable describeVodDomainSrcBpsDataCallable(const Model::DescribeVodDomainSrcBpsDataRequest& request) const;
@@ -973,6 +1063,12 @@ namespace AlibabaCloud
 			DescribeVodDomainUsageDataOutcome describeVodDomainUsageData(const Model::DescribeVodDomainUsageDataRequest &request)const;
 			void describeVodDomainUsageDataAsync(const Model::DescribeVodDomainUsageDataRequest& request, const DescribeVodDomainUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodDomainUsageDataOutcomeCallable describeVodDomainUsageDataCallable(const Model::DescribeVodDomainUsageDataRequest& request) const;
+			DescribeVodMediaPlayDataOutcome describeVodMediaPlayData(const Model::DescribeVodMediaPlayDataRequest &request)const;
+			void describeVodMediaPlayDataAsync(const Model::DescribeVodMediaPlayDataRequest& request, const DescribeVodMediaPlayDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodMediaPlayDataOutcomeCallable describeVodMediaPlayDataCallable(const Model::DescribeVodMediaPlayDataRequest& request) const;
+			DescribeVodRangeDataByLocateAndIspServiceOutcome describeVodRangeDataByLocateAndIspService(const Model::DescribeVodRangeDataByLocateAndIspServiceRequest &request)const;
+			void describeVodRangeDataByLocateAndIspServiceAsync(const Model::DescribeVodRangeDataByLocateAndIspServiceRequest& request, const DescribeVodRangeDataByLocateAndIspServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodRangeDataByLocateAndIspServiceOutcomeCallable describeVodRangeDataByLocateAndIspServiceCallable(const Model::DescribeVodRangeDataByLocateAndIspServiceRequest& request) const;
 			DescribeVodRefreshQuotaOutcome describeVodRefreshQuota(const Model::DescribeVodRefreshQuotaRequest &request)const;
 			void describeVodRefreshQuotaAsync(const Model::DescribeVodRefreshQuotaRequest& request, const DescribeVodRefreshQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodRefreshQuotaOutcomeCallable describeVodRefreshQuotaCallable(const Model::DescribeVodRefreshQuotaRequest& request) const;

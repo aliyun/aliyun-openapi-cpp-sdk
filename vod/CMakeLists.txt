@@ -113,14 +113,34 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DescribeVodCertificateListResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainBpsDataRequest.h
 	include/alibabacloud/vod/model/DescribeVodDomainBpsDataResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainBpsDataByLayerRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainBpsDataByLayerResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainCertificateInfoRequest.h
 	include/alibabacloud/vod/model/DescribeVodDomainCertificateInfoResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainConfigsRequest.h
 	include/alibabacloud/vod/model/DescribeVodDomainConfigsResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainDetailRequest.h
 	include/alibabacloud/vod/model/DescribeVodDomainDetailResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainHitRateDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainHitRateDataResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainLogRequest.h
 	include/alibabacloud/vod/model/DescribeVodDomainLogResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainRealTimeBpsDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainRealTimeBpsDataResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainRealTimeByteHitRateDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainRealTimeByteHitRateDataResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainRealTimeDetailDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainRealTimeDetailDataResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainRealTimeHttpCodeDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainRealTimeHttpCodeDataResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainRealTimeQpsDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainRealTimeQpsDataResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainRealTimeReqHitRateDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainRealTimeReqHitRateDataResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainRealTimeTrafficDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainRealTimeTrafficDataResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainReqHitRateDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainReqHitRateDataResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainSrcBpsDataRequest.h
 	include/alibabacloud/vod/model/DescribeVodDomainSrcBpsDataResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainSrcTrafficDataRequest.h
@@ -129,6 +149,10 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DescribeVodDomainTrafficDataResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainUsageDataRequest.h
 	include/alibabacloud/vod/model/DescribeVodDomainUsageDataResult.h
+	include/alibabacloud/vod/model/DescribeVodMediaPlayDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodMediaPlayDataResult.h
+	include/alibabacloud/vod/model/DescribeVodRangeDataByLocateAndIspServiceRequest.h
+	include/alibabacloud/vod/model/DescribeVodRangeDataByLocateAndIspServiceResult.h
 	include/alibabacloud/vod/model/DescribeVodRefreshQuotaRequest.h
 	include/alibabacloud/vod/model/DescribeVodRefreshQuotaResult.h
 	include/alibabacloud/vod/model/DescribeVodRefreshTasksRequest.h
@@ -426,14 +450,34 @@ set(vod_src
 	src/model/DescribeVodCertificateListResult.cc
 	src/model/DescribeVodDomainBpsDataRequest.cc
 	src/model/DescribeVodDomainBpsDataResult.cc
+	src/model/DescribeVodDomainBpsDataByLayerRequest.cc
+	src/model/DescribeVodDomainBpsDataByLayerResult.cc
 	src/model/DescribeVodDomainCertificateInfoRequest.cc
 	src/model/DescribeVodDomainCertificateInfoResult.cc
 	src/model/DescribeVodDomainConfigsRequest.cc
 	src/model/DescribeVodDomainConfigsResult.cc
 	src/model/DescribeVodDomainDetailRequest.cc
 	src/model/DescribeVodDomainDetailResult.cc
+	src/model/DescribeVodDomainHitRateDataRequest.cc
+	src/model/DescribeVodDomainHitRateDataResult.cc
 	src/model/DescribeVodDomainLogRequest.cc
 	src/model/DescribeVodDomainLogResult.cc
+	src/model/DescribeVodDomainRealTimeBpsDataRequest.cc
+	src/model/DescribeVodDomainRealTimeBpsDataResult.cc
+	src/model/DescribeVodDomainRealTimeByteHitRateDataRequest.cc
+	src/model/DescribeVodDomainRealTimeByteHitRateDataResult.cc
+	src/model/DescribeVodDomainRealTimeDetailDataRequest.cc
+	src/model/DescribeVodDomainRealTimeDetailDataResult.cc
+	src/model/DescribeVodDomainRealTimeHttpCodeDataRequest.cc
+	src/model/DescribeVodDomainRealTimeHttpCodeDataResult.cc
+	src/model/DescribeVodDomainRealTimeQpsDataRequest.cc
+	src/model/DescribeVodDomainRealTimeQpsDataResult.cc
+	src/model/DescribeVodDomainRealTimeReqHitRateDataRequest.cc
+	src/model/DescribeVodDomainRealTimeReqHitRateDataResult.cc
+	src/model/DescribeVodDomainRealTimeTrafficDataRequest.cc
+	src/model/DescribeVodDomainRealTimeTrafficDataResult.cc
+	src/model/DescribeVodDomainReqHitRateDataRequest.cc
+	src/model/DescribeVodDomainReqHitRateDataResult.cc
 	src/model/DescribeVodDomainSrcBpsDataRequest.cc
 	src/model/DescribeVodDomainSrcBpsDataResult.cc
 	src/model/DescribeVodDomainSrcTrafficDataRequest.cc
@@ -442,6 +486,10 @@ set(vod_src
 	src/model/DescribeVodDomainTrafficDataResult.cc
 	src/model/DescribeVodDomainUsageDataRequest.cc
 	src/model/DescribeVodDomainUsageDataResult.cc
+	src/model/DescribeVodMediaPlayDataRequest.cc
+	src/model/DescribeVodMediaPlayDataResult.cc
+	src/model/DescribeVodRangeDataByLocateAndIspServiceRequest.cc
+	src/model/DescribeVodRangeDataByLocateAndIspServiceResult.cc
 	src/model/DescribeVodRefreshQuotaRequest.cc
 	src/model/DescribeVodRefreshQuotaResult.cc
 	src/model/DescribeVodRefreshTasksRequest.cc

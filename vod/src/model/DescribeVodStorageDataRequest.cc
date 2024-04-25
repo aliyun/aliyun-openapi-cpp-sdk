@@ -70,6 +70,15 @@ void DescribeVodStorageDataRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeVodStorageDataRequest::getAppId() const {
+  return appId_;
+}
+
+void DescribeVodStorageDataRequest::setAppId(const std::string &appId) {
+  appId_ = appId;
+  setParameter(std::string("AppId"), appId);
+}
+
 std::string DescribeVodStorageDataRequest::getInterval() const {
   return interval_;
 }

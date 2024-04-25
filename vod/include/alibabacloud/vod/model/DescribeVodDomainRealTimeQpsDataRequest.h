@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_REFRESHVODOBJECTCACHESREQUEST_H_
-#define ALIBABACLOUD_VOD_MODEL_REFRESHVODOBJECTCACHESREQUEST_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_DESCRIBEVODDOMAINREALTIMEQPSDATAREQUEST_H_
+#define ALIBABACLOUD_VOD_MODEL_DESCRIBEVODDOMAINREALTIMEQPSDATAREQUEST_H_
 
 #include <alibabacloud/vod/VodExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,32 @@
 namespace AlibabaCloud {
 namespace Vod {
 namespace Model {
-class ALIBABACLOUD_VOD_EXPORT RefreshVodObjectCachesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_VOD_EXPORT DescribeVodDomainRealTimeQpsDataRequest : public RpcServiceRequest {
 public:
-	RefreshVodObjectCachesRequest();
-	~RefreshVodObjectCachesRequest();
-	std::string getObjectPath() const;
-	void setObjectPath(const std::string &objectPath);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
-	std::string getObjectType() const;
-	void setObjectType(const std::string &objectType);
+	DescribeVodDomainRealTimeQpsDataRequest();
+	~DescribeVodDomainRealTimeQpsDataRequest();
+	std::string getLocationNameEn() const;
+	void setLocationNameEn(const std::string &locationNameEn);
+	std::string getIspNameEn() const;
+	void setIspNameEn(const std::string &ispNameEn);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
+	std::string getDomainName() const;
+	void setDomainName(const std::string &domainName);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	bool getForce() const;
-	void setForce(bool force);
 
 private:
-	std::string objectPath_;
-	std::string securityToken_;
-	std::string objectType_;
+	std::string locationNameEn_;
+	std::string ispNameEn_;
+	std::string startTime_;
+	std::string domainName_;
+	std::string endTime_;
 	long ownerId_;
-	bool force_;
 };
 } // namespace Model
 } // namespace Vod
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_VOD_MODEL_REFRESHVODOBJECTCACHESREQUEST_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_DESCRIBEVODDOMAINREALTIMEQPSDATAREQUEST_H_

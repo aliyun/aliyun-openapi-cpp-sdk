@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_DESCRIBEVODSTORAGEDATAREQUEST_H_
-#define ALIBABACLOUD_VOD_MODEL_DESCRIBEVODSTORAGEDATAREQUEST_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_DESCRIBEVODDOMAINREALTIMEDETAILDATAREQUEST_H_
+#define ALIBABACLOUD_VOD_MODEL_DESCRIBEVODDOMAINREALTIMEDETAILDATAREQUEST_H_
 
 #include <alibabacloud/vod/VodExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,38 +26,41 @@
 namespace AlibabaCloud {
 namespace Vod {
 namespace Model {
-class ALIBABACLOUD_VOD_EXPORT DescribeVodStorageDataRequest : public RpcServiceRequest {
+class ALIBABACLOUD_VOD_EXPORT DescribeVodDomainRealTimeDetailDataRequest : public RpcServiceRequest {
 public:
-	DescribeVodStorageDataRequest();
-	~DescribeVodStorageDataRequest();
+	DescribeVodDomainRealTimeDetailDataRequest();
+	~DescribeVodDomainRealTimeDetailDataRequest();
+	std::string getLocationNameEn() const;
+	void setLocationNameEn(const std::string &locationNameEn);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
-	std::string getStorage() const;
-	void setStorage(const std::string &storage);
-	std::string getStorageType() const;
-	void setStorageType(const std::string &storageType);
+	std::string getIspNameEn() const;
+	void setIspNameEn(const std::string &ispNameEn);
+	std::string getMerge() const;
+	void setMerge(const std::string &merge);
+	std::string getDomainName() const;
+	void setDomainName(const std::string &domainName);
 	std::string getEndTime() const;
 	void setEndTime(const std::string &endTime);
+	std::string getMergeLocIsp() const;
+	void setMergeLocIsp(const std::string &mergeLocIsp);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getAppId() const;
-	void setAppId(const std::string &appId);
-	std::string getInterval() const;
-	void setInterval(const std::string &interval);
-	std::string getRegion() const;
-	void setRegion(const std::string &region);
+	std::string getField() const;
+	void setField(const std::string &field);
 
 private:
+	std::string locationNameEn_;
 	std::string startTime_;
-	std::string storage_;
-	std::string storageType_;
+	std::string ispNameEn_;
+	std::string merge_;
+	std::string domainName_;
 	std::string endTime_;
+	std::string mergeLocIsp_;
 	long ownerId_;
-	std::string appId_;
-	std::string interval_;
-	std::string region_;
+	std::string field_;
 };
 } // namespace Model
 } // namespace Vod
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_VOD_MODEL_DESCRIBEVODSTORAGEDATAREQUEST_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_DESCRIBEVODDOMAINREALTIMEDETAILDATAREQUEST_H_

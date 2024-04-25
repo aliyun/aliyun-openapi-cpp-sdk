@@ -70,6 +70,15 @@ void DescribeVodTranscodeDataRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeVodTranscodeDataRequest::getAppId() const {
+  return appId_;
+}
+
+void DescribeVodTranscodeDataRequest::setAppId(const std::string &appId) {
+  appId_ = appId;
+  setParameter(std::string("AppId"), appId);
+}
+
 std::string DescribeVodTranscodeDataRequest::getInterval() const {
   return interval_;
 }

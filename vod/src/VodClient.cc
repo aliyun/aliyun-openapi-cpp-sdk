@@ -1707,6 +1707,42 @@ VodClient::DescribeVodDomainBpsDataOutcomeCallable VodClient::describeVodDomainB
 	return task->get_future();
 }
 
+VodClient::DescribeVodDomainBpsDataByLayerOutcome VodClient::describeVodDomainBpsDataByLayer(const DescribeVodDomainBpsDataByLayerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodDomainBpsDataByLayerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodDomainBpsDataByLayerOutcome(DescribeVodDomainBpsDataByLayerResult(outcome.result()));
+	else
+		return DescribeVodDomainBpsDataByLayerOutcome(outcome.error());
+}
+
+void VodClient::describeVodDomainBpsDataByLayerAsync(const DescribeVodDomainBpsDataByLayerRequest& request, const DescribeVodDomainBpsDataByLayerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodDomainBpsDataByLayer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodDomainBpsDataByLayerOutcomeCallable VodClient::describeVodDomainBpsDataByLayerCallable(const DescribeVodDomainBpsDataByLayerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodDomainBpsDataByLayerOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodDomainBpsDataByLayer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::DescribeVodDomainCertificateInfoOutcome VodClient::describeVodDomainCertificateInfo(const DescribeVodDomainCertificateInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1815,6 +1851,42 @@ VodClient::DescribeVodDomainDetailOutcomeCallable VodClient::describeVodDomainDe
 	return task->get_future();
 }
 
+VodClient::DescribeVodDomainHitRateDataOutcome VodClient::describeVodDomainHitRateData(const DescribeVodDomainHitRateDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodDomainHitRateDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodDomainHitRateDataOutcome(DescribeVodDomainHitRateDataResult(outcome.result()));
+	else
+		return DescribeVodDomainHitRateDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodDomainHitRateDataAsync(const DescribeVodDomainHitRateDataRequest& request, const DescribeVodDomainHitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodDomainHitRateData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodDomainHitRateDataOutcomeCallable VodClient::describeVodDomainHitRateDataCallable(const DescribeVodDomainHitRateDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodDomainHitRateDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodDomainHitRateData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::DescribeVodDomainLogOutcome VodClient::describeVodDomainLog(const DescribeVodDomainLogRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1845,6 +1917,294 @@ VodClient::DescribeVodDomainLogOutcomeCallable VodClient::describeVodDomainLogCa
 			[this, request]()
 			{
 			return this->describeVodDomainLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DescribeVodDomainRealTimeBpsDataOutcome VodClient::describeVodDomainRealTimeBpsData(const DescribeVodDomainRealTimeBpsDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodDomainRealTimeBpsDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodDomainRealTimeBpsDataOutcome(DescribeVodDomainRealTimeBpsDataResult(outcome.result()));
+	else
+		return DescribeVodDomainRealTimeBpsDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodDomainRealTimeBpsDataAsync(const DescribeVodDomainRealTimeBpsDataRequest& request, const DescribeVodDomainRealTimeBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodDomainRealTimeBpsData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodDomainRealTimeBpsDataOutcomeCallable VodClient::describeVodDomainRealTimeBpsDataCallable(const DescribeVodDomainRealTimeBpsDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodDomainRealTimeBpsDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodDomainRealTimeBpsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DescribeVodDomainRealTimeByteHitRateDataOutcome VodClient::describeVodDomainRealTimeByteHitRateData(const DescribeVodDomainRealTimeByteHitRateDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodDomainRealTimeByteHitRateDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodDomainRealTimeByteHitRateDataOutcome(DescribeVodDomainRealTimeByteHitRateDataResult(outcome.result()));
+	else
+		return DescribeVodDomainRealTimeByteHitRateDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodDomainRealTimeByteHitRateDataAsync(const DescribeVodDomainRealTimeByteHitRateDataRequest& request, const DescribeVodDomainRealTimeByteHitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodDomainRealTimeByteHitRateData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodDomainRealTimeByteHitRateDataOutcomeCallable VodClient::describeVodDomainRealTimeByteHitRateDataCallable(const DescribeVodDomainRealTimeByteHitRateDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodDomainRealTimeByteHitRateDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodDomainRealTimeByteHitRateData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DescribeVodDomainRealTimeDetailDataOutcome VodClient::describeVodDomainRealTimeDetailData(const DescribeVodDomainRealTimeDetailDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodDomainRealTimeDetailDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodDomainRealTimeDetailDataOutcome(DescribeVodDomainRealTimeDetailDataResult(outcome.result()));
+	else
+		return DescribeVodDomainRealTimeDetailDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodDomainRealTimeDetailDataAsync(const DescribeVodDomainRealTimeDetailDataRequest& request, const DescribeVodDomainRealTimeDetailDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodDomainRealTimeDetailData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodDomainRealTimeDetailDataOutcomeCallable VodClient::describeVodDomainRealTimeDetailDataCallable(const DescribeVodDomainRealTimeDetailDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodDomainRealTimeDetailDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodDomainRealTimeDetailData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DescribeVodDomainRealTimeHttpCodeDataOutcome VodClient::describeVodDomainRealTimeHttpCodeData(const DescribeVodDomainRealTimeHttpCodeDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodDomainRealTimeHttpCodeDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodDomainRealTimeHttpCodeDataOutcome(DescribeVodDomainRealTimeHttpCodeDataResult(outcome.result()));
+	else
+		return DescribeVodDomainRealTimeHttpCodeDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodDomainRealTimeHttpCodeDataAsync(const DescribeVodDomainRealTimeHttpCodeDataRequest& request, const DescribeVodDomainRealTimeHttpCodeDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodDomainRealTimeHttpCodeData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodDomainRealTimeHttpCodeDataOutcomeCallable VodClient::describeVodDomainRealTimeHttpCodeDataCallable(const DescribeVodDomainRealTimeHttpCodeDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodDomainRealTimeHttpCodeDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodDomainRealTimeHttpCodeData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DescribeVodDomainRealTimeQpsDataOutcome VodClient::describeVodDomainRealTimeQpsData(const DescribeVodDomainRealTimeQpsDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodDomainRealTimeQpsDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodDomainRealTimeQpsDataOutcome(DescribeVodDomainRealTimeQpsDataResult(outcome.result()));
+	else
+		return DescribeVodDomainRealTimeQpsDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodDomainRealTimeQpsDataAsync(const DescribeVodDomainRealTimeQpsDataRequest& request, const DescribeVodDomainRealTimeQpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodDomainRealTimeQpsData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodDomainRealTimeQpsDataOutcomeCallable VodClient::describeVodDomainRealTimeQpsDataCallable(const DescribeVodDomainRealTimeQpsDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodDomainRealTimeQpsDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodDomainRealTimeQpsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DescribeVodDomainRealTimeReqHitRateDataOutcome VodClient::describeVodDomainRealTimeReqHitRateData(const DescribeVodDomainRealTimeReqHitRateDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodDomainRealTimeReqHitRateDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodDomainRealTimeReqHitRateDataOutcome(DescribeVodDomainRealTimeReqHitRateDataResult(outcome.result()));
+	else
+		return DescribeVodDomainRealTimeReqHitRateDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodDomainRealTimeReqHitRateDataAsync(const DescribeVodDomainRealTimeReqHitRateDataRequest& request, const DescribeVodDomainRealTimeReqHitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodDomainRealTimeReqHitRateData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodDomainRealTimeReqHitRateDataOutcomeCallable VodClient::describeVodDomainRealTimeReqHitRateDataCallable(const DescribeVodDomainRealTimeReqHitRateDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodDomainRealTimeReqHitRateDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodDomainRealTimeReqHitRateData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DescribeVodDomainRealTimeTrafficDataOutcome VodClient::describeVodDomainRealTimeTrafficData(const DescribeVodDomainRealTimeTrafficDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodDomainRealTimeTrafficDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodDomainRealTimeTrafficDataOutcome(DescribeVodDomainRealTimeTrafficDataResult(outcome.result()));
+	else
+		return DescribeVodDomainRealTimeTrafficDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodDomainRealTimeTrafficDataAsync(const DescribeVodDomainRealTimeTrafficDataRequest& request, const DescribeVodDomainRealTimeTrafficDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodDomainRealTimeTrafficData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodDomainRealTimeTrafficDataOutcomeCallable VodClient::describeVodDomainRealTimeTrafficDataCallable(const DescribeVodDomainRealTimeTrafficDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodDomainRealTimeTrafficDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodDomainRealTimeTrafficData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DescribeVodDomainReqHitRateDataOutcome VodClient::describeVodDomainReqHitRateData(const DescribeVodDomainReqHitRateDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodDomainReqHitRateDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodDomainReqHitRateDataOutcome(DescribeVodDomainReqHitRateDataResult(outcome.result()));
+	else
+		return DescribeVodDomainReqHitRateDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodDomainReqHitRateDataAsync(const DescribeVodDomainReqHitRateDataRequest& request, const DescribeVodDomainReqHitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodDomainReqHitRateData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodDomainReqHitRateDataOutcomeCallable VodClient::describeVodDomainReqHitRateDataCallable(const DescribeVodDomainReqHitRateDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodDomainReqHitRateDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodDomainReqHitRateData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1989,6 +2349,78 @@ VodClient::DescribeVodDomainUsageDataOutcomeCallable VodClient::describeVodDomai
 			[this, request]()
 			{
 			return this->describeVodDomainUsageData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DescribeVodMediaPlayDataOutcome VodClient::describeVodMediaPlayData(const DescribeVodMediaPlayDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodMediaPlayDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodMediaPlayDataOutcome(DescribeVodMediaPlayDataResult(outcome.result()));
+	else
+		return DescribeVodMediaPlayDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodMediaPlayDataAsync(const DescribeVodMediaPlayDataRequest& request, const DescribeVodMediaPlayDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodMediaPlayData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodMediaPlayDataOutcomeCallable VodClient::describeVodMediaPlayDataCallable(const DescribeVodMediaPlayDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodMediaPlayDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodMediaPlayData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DescribeVodRangeDataByLocateAndIspServiceOutcome VodClient::describeVodRangeDataByLocateAndIspService(const DescribeVodRangeDataByLocateAndIspServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodRangeDataByLocateAndIspServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodRangeDataByLocateAndIspServiceOutcome(DescribeVodRangeDataByLocateAndIspServiceResult(outcome.result()));
+	else
+		return DescribeVodRangeDataByLocateAndIspServiceOutcome(outcome.error());
+}
+
+void VodClient::describeVodRangeDataByLocateAndIspServiceAsync(const DescribeVodRangeDataByLocateAndIspServiceRequest& request, const DescribeVodRangeDataByLocateAndIspServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodRangeDataByLocateAndIspService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodRangeDataByLocateAndIspServiceOutcomeCallable VodClient::describeVodRangeDataByLocateAndIspServiceCallable(const DescribeVodRangeDataByLocateAndIspServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodRangeDataByLocateAndIspServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodRangeDataByLocateAndIspService(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
