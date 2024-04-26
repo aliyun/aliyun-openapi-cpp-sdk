@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct AutoSnapshotPolicy
 				{
+					struct CopyEncryptionConfiguration
+					{
+						std::string kMSKeyId;
+						bool encrypted;
+					};
 					struct Tag
 					{
 						std::string tagKey;
@@ -48,9 +53,11 @@ namespace AlibabaCloud
 					std::string repeatWeekdays;
 					int diskNums;
 					int copiedSnapshotsRetentionDays;
+					std::string type;
 					std::string targetCopyRegions;
 					bool enableCrossRegionCopy;
 					std::string creationTime;
+					CopyEncryptionConfiguration copyEncryptionConfiguration;
 					std::string regionId;
 					std::string autoSnapshotPolicyName;
 					std::vector<AutoSnapshotPolicy::Tag> tags;

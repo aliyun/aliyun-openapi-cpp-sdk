@@ -258,6 +258,8 @@
 #include "model/DescribeCapacityReservationsResult.h"
 #include "model/DescribeClassicLinkInstancesRequest.h"
 #include "model/DescribeClassicLinkInstancesResult.h"
+#include "model/DescribeCloudAssistantSettingsRequest.h"
+#include "model/DescribeCloudAssistantSettingsResult.h"
 #include "model/DescribeCloudAssistantStatusRequest.h"
 #include "model/DescribeCloudAssistantStatusResult.h"
 #include "model/DescribeClustersRequest.h"
@@ -444,6 +446,8 @@
 #include "model/DescribeTaskAttributeResult.h"
 #include "model/DescribeTasksRequest.h"
 #include "model/DescribeTasksResult.h"
+#include "model/DescribeTerminalSessionsRequest.h"
+#include "model/DescribeTerminalSessionsResult.h"
 #include "model/DescribeUserBusinessBehaviorRequest.h"
 #include "model/DescribeUserBusinessBehaviorResult.h"
 #include "model/DescribeUserDataRequest.h"
@@ -516,6 +520,8 @@
 #include "model/ModifyBandwidthPackageSpecResult.h"
 #include "model/ModifyCapacityReservationRequest.h"
 #include "model/ModifyCapacityReservationResult.h"
+#include "model/ModifyCloudAssistantSettingsRequest.h"
+#include "model/ModifyCloudAssistantSettingsResult.h"
 #include "model/ModifyCommandRequest.h"
 #include "model/ModifyCommandResult.h"
 #include "model/ModifyDedicatedHostAttributeRequest.h"
@@ -582,6 +588,8 @@
 #include "model/ModifyInstanceVncPasswdResult.h"
 #include "model/ModifyInstanceVpcAttributeRequest.h"
 #include "model/ModifyInstanceVpcAttributeResult.h"
+#include "model/ModifyInvocationAttributeRequest.h"
+#include "model/ModifyInvocationAttributeResult.h"
 #include "model/ModifyLaunchTemplateDefaultVersionRequest.h"
 #include "model/ModifyLaunchTemplateDefaultVersionResult.h"
 #include "model/ModifyManagedInstanceRequest.h"
@@ -1081,6 +1089,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeClassicLinkInstancesResult> DescribeClassicLinkInstancesOutcome;
 			typedef std::future<DescribeClassicLinkInstancesOutcome> DescribeClassicLinkInstancesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeClassicLinkInstancesRequest&, const DescribeClassicLinkInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClassicLinkInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCloudAssistantSettingsResult> DescribeCloudAssistantSettingsOutcome;
+			typedef std::future<DescribeCloudAssistantSettingsOutcome> DescribeCloudAssistantSettingsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeCloudAssistantSettingsRequest&, const DescribeCloudAssistantSettingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudAssistantSettingsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCloudAssistantStatusResult> DescribeCloudAssistantStatusOutcome;
 			typedef std::future<DescribeCloudAssistantStatusOutcome> DescribeCloudAssistantStatusOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeCloudAssistantStatusRequest&, const DescribeCloudAssistantStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudAssistantStatusAsyncHandler;
@@ -1360,6 +1371,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTasksResult> DescribeTasksOutcome;
 			typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeTasksRequest&, const DescribeTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTerminalSessionsResult> DescribeTerminalSessionsOutcome;
+			typedef std::future<DescribeTerminalSessionsOutcome> DescribeTerminalSessionsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeTerminalSessionsRequest&, const DescribeTerminalSessionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTerminalSessionsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUserBusinessBehaviorResult> DescribeUserBusinessBehaviorOutcome;
 			typedef std::future<DescribeUserBusinessBehaviorOutcome> DescribeUserBusinessBehaviorOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeUserBusinessBehaviorRequest&, const DescribeUserBusinessBehaviorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserBusinessBehaviorAsyncHandler;
@@ -1468,6 +1482,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyCapacityReservationResult> ModifyCapacityReservationOutcome;
 			typedef std::future<ModifyCapacityReservationOutcome> ModifyCapacityReservationOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyCapacityReservationRequest&, const ModifyCapacityReservationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCapacityReservationAsyncHandler;
+			typedef Outcome<Error, Model::ModifyCloudAssistantSettingsResult> ModifyCloudAssistantSettingsOutcome;
+			typedef std::future<ModifyCloudAssistantSettingsOutcome> ModifyCloudAssistantSettingsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyCloudAssistantSettingsRequest&, const ModifyCloudAssistantSettingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudAssistantSettingsAsyncHandler;
 			typedef Outcome<Error, Model::ModifyCommandResult> ModifyCommandOutcome;
 			typedef std::future<ModifyCommandOutcome> ModifyCommandOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyCommandRequest&, const ModifyCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCommandAsyncHandler;
@@ -1567,6 +1584,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyInstanceVpcAttributeResult> ModifyInstanceVpcAttributeOutcome;
 			typedef std::future<ModifyInstanceVpcAttributeOutcome> ModifyInstanceVpcAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyInstanceVpcAttributeRequest&, const ModifyInstanceVpcAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceVpcAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyInvocationAttributeResult> ModifyInvocationAttributeOutcome;
+			typedef std::future<ModifyInvocationAttributeOutcome> ModifyInvocationAttributeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyInvocationAttributeRequest&, const ModifyInvocationAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInvocationAttributeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyLaunchTemplateDefaultVersionResult> ModifyLaunchTemplateDefaultVersionOutcome;
 			typedef std::future<ModifyLaunchTemplateDefaultVersionOutcome> ModifyLaunchTemplateDefaultVersionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyLaunchTemplateDefaultVersionRequest&, const ModifyLaunchTemplateDefaultVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLaunchTemplateDefaultVersionAsyncHandler;
@@ -2130,6 +2150,9 @@ namespace AlibabaCloud
 			DescribeClassicLinkInstancesOutcome describeClassicLinkInstances(const Model::DescribeClassicLinkInstancesRequest &request)const;
 			void describeClassicLinkInstancesAsync(const Model::DescribeClassicLinkInstancesRequest& request, const DescribeClassicLinkInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeClassicLinkInstancesOutcomeCallable describeClassicLinkInstancesCallable(const Model::DescribeClassicLinkInstancesRequest& request) const;
+			DescribeCloudAssistantSettingsOutcome describeCloudAssistantSettings(const Model::DescribeCloudAssistantSettingsRequest &request)const;
+			void describeCloudAssistantSettingsAsync(const Model::DescribeCloudAssistantSettingsRequest& request, const DescribeCloudAssistantSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCloudAssistantSettingsOutcomeCallable describeCloudAssistantSettingsCallable(const Model::DescribeCloudAssistantSettingsRequest& request) const;
 			DescribeCloudAssistantStatusOutcome describeCloudAssistantStatus(const Model::DescribeCloudAssistantStatusRequest &request)const;
 			void describeCloudAssistantStatusAsync(const Model::DescribeCloudAssistantStatusRequest& request, const DescribeCloudAssistantStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCloudAssistantStatusOutcomeCallable describeCloudAssistantStatusCallable(const Model::DescribeCloudAssistantStatusRequest& request) const;
@@ -2409,6 +2432,9 @@ namespace AlibabaCloud
 			DescribeTasksOutcome describeTasks(const Model::DescribeTasksRequest &request)const;
 			void describeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTasksOutcomeCallable describeTasksCallable(const Model::DescribeTasksRequest& request) const;
+			DescribeTerminalSessionsOutcome describeTerminalSessions(const Model::DescribeTerminalSessionsRequest &request)const;
+			void describeTerminalSessionsAsync(const Model::DescribeTerminalSessionsRequest& request, const DescribeTerminalSessionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTerminalSessionsOutcomeCallable describeTerminalSessionsCallable(const Model::DescribeTerminalSessionsRequest& request) const;
 			DescribeUserBusinessBehaviorOutcome describeUserBusinessBehavior(const Model::DescribeUserBusinessBehaviorRequest &request)const;
 			void describeUserBusinessBehaviorAsync(const Model::DescribeUserBusinessBehaviorRequest& request, const DescribeUserBusinessBehaviorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUserBusinessBehaviorOutcomeCallable describeUserBusinessBehaviorCallable(const Model::DescribeUserBusinessBehaviorRequest& request) const;
@@ -2517,6 +2543,9 @@ namespace AlibabaCloud
 			ModifyCapacityReservationOutcome modifyCapacityReservation(const Model::ModifyCapacityReservationRequest &request)const;
 			void modifyCapacityReservationAsync(const Model::ModifyCapacityReservationRequest& request, const ModifyCapacityReservationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyCapacityReservationOutcomeCallable modifyCapacityReservationCallable(const Model::ModifyCapacityReservationRequest& request) const;
+			ModifyCloudAssistantSettingsOutcome modifyCloudAssistantSettings(const Model::ModifyCloudAssistantSettingsRequest &request)const;
+			void modifyCloudAssistantSettingsAsync(const Model::ModifyCloudAssistantSettingsRequest& request, const ModifyCloudAssistantSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyCloudAssistantSettingsOutcomeCallable modifyCloudAssistantSettingsCallable(const Model::ModifyCloudAssistantSettingsRequest& request) const;
 			ModifyCommandOutcome modifyCommand(const Model::ModifyCommandRequest &request)const;
 			void modifyCommandAsync(const Model::ModifyCommandRequest& request, const ModifyCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyCommandOutcomeCallable modifyCommandCallable(const Model::ModifyCommandRequest& request) const;
@@ -2616,6 +2645,9 @@ namespace AlibabaCloud
 			ModifyInstanceVpcAttributeOutcome modifyInstanceVpcAttribute(const Model::ModifyInstanceVpcAttributeRequest &request)const;
 			void modifyInstanceVpcAttributeAsync(const Model::ModifyInstanceVpcAttributeRequest& request, const ModifyInstanceVpcAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceVpcAttributeOutcomeCallable modifyInstanceVpcAttributeCallable(const Model::ModifyInstanceVpcAttributeRequest& request) const;
+			ModifyInvocationAttributeOutcome modifyInvocationAttribute(const Model::ModifyInvocationAttributeRequest &request)const;
+			void modifyInvocationAttributeAsync(const Model::ModifyInvocationAttributeRequest& request, const ModifyInvocationAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyInvocationAttributeOutcomeCallable modifyInvocationAttributeCallable(const Model::ModifyInvocationAttributeRequest& request) const;
 			ModifyLaunchTemplateDefaultVersionOutcome modifyLaunchTemplateDefaultVersion(const Model::ModifyLaunchTemplateDefaultVersionRequest &request)const;
 			void modifyLaunchTemplateDefaultVersionAsync(const Model::ModifyLaunchTemplateDefaultVersionRequest& request, const ModifyLaunchTemplateDefaultVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyLaunchTemplateDefaultVersionOutcomeCallable modifyLaunchTemplateDefaultVersionCallable(const Model::ModifyLaunchTemplateDefaultVersionRequest& request) const;

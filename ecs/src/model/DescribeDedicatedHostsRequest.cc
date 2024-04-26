@@ -88,6 +88,15 @@ void DescribeDedicatedHostsRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string DescribeDedicatedHostsRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void DescribeDedicatedHostsRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
 int DescribeDedicatedHostsRequest::getPageSize() const {
   return pageSize_;
 }
@@ -181,6 +190,15 @@ std::string DescribeDedicatedHostsRequest::getZoneId() const {
 void DescribeDedicatedHostsRequest::setZoneId(const std::string &zoneId) {
   zoneId_ = zoneId;
   setParameter(std::string("ZoneId"), zoneId);
+}
+
+int DescribeDedicatedHostsRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void DescribeDedicatedHostsRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
 std::string DescribeDedicatedHostsRequest::getStatus() const {

@@ -71,6 +71,8 @@ void DescribeAutoSnapshotPolicyExResult::parse(const std::string &payload)
 			autoSnapshotPoliciesObject.volumeNums = std::stoi(valueAutoSnapshotPoliciesAutoSnapshotPolicy["VolumeNums"].asString());
 		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["ResourceGroupId"].isNull())
 			autoSnapshotPoliciesObject.resourceGroupId = valueAutoSnapshotPoliciesAutoSnapshotPolicy["ResourceGroupId"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["Type"].isNull())
+			autoSnapshotPoliciesObject.type = valueAutoSnapshotPoliciesAutoSnapshotPolicy["Type"].asString();
 		auto allTagsNode = valueAutoSnapshotPoliciesAutoSnapshotPolicy["Tags"]["Tag"];
 		for (auto valueAutoSnapshotPoliciesAutoSnapshotPolicyTagsTag : allTagsNode)
 		{
@@ -81,6 +83,11 @@ void DescribeAutoSnapshotPolicyExResult::parse(const std::string &payload)
 				tagsObject.tagKey = valueAutoSnapshotPoliciesAutoSnapshotPolicyTagsTag["TagKey"].asString();
 			autoSnapshotPoliciesObject.tags.push_back(tagsObject);
 		}
+		auto copyEncryptionConfigurationNode = value["CopyEncryptionConfiguration"];
+		if(!copyEncryptionConfigurationNode["Encrypted"].isNull())
+			autoSnapshotPoliciesObject.copyEncryptionConfiguration.encrypted = copyEncryptionConfigurationNode["Encrypted"].asString() == "true";
+		if(!copyEncryptionConfigurationNode["KMSKeyId"].isNull())
+			autoSnapshotPoliciesObject.copyEncryptionConfiguration.kMSKeyId = copyEncryptionConfigurationNode["KMSKeyId"].asString();
 		autoSnapshotPolicies_.push_back(autoSnapshotPoliciesObject);
 	}
 	if(!value["PageSize"].isNull())

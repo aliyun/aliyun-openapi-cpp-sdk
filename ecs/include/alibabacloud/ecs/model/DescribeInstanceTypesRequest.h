@@ -48,14 +48,22 @@ public:
 	void setMinimumInstancePpsTx(long minimumInstancePpsTx);
 	int getMinimumCpuCoreCount() const;
 	void setMinimumCpuCoreCount(int minimumCpuCoreCount);
+	std::vector<std::string> getLocalStorageCategories() const;
+	void setLocalStorageCategories(const std::vector<std::string> &localStorageCategories);
 	int getMinimumPrimaryEniQueueNumber() const;
 	void setMinimumPrimaryEniQueueNumber(int minimumPrimaryEniQueueNumber);
+	std::vector<std::string> getInstanceTypeFamilies() const;
+	void setInstanceTypeFamilies(const std::vector<std::string> &instanceTypeFamilies);
 	int getMinimumBaselineCredit() const;
 	void setMinimumBaselineCredit(int minimumBaselineCredit);
 	int getMinimumSecondaryEniQueueNumber() const;
 	void setMinimumSecondaryEniQueueNumber(int minimumSecondaryEniQueueNumber);
+	std::vector<std::string> getCpuArchitectures() const;
+	void setCpuArchitectures(const std::vector<std::string> &cpuArchitectures);
 	int getMinimumInstanceBandwidthTx() const;
 	void setMinimumInstanceBandwidthTx(int minimumInstanceBandwidthTx);
+	std::vector<std::string> getInstanceCategories() const;
+	void setInstanceCategories(const std::vector<std::string> &instanceCategories);
 	int getMinimumGPUAmount() const;
 	void setMinimumGPUAmount(int minimumGPUAmount);
 	float getMaximumCpuSpeedFrequency() const;
@@ -64,6 +72,8 @@ public:
 	void setCpuArchitecture(const std::string &cpuArchitecture);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::vector<std::string> getPhysicalProcessorModels() const;
+	void setPhysicalProcessorModels(const std::vector<std::string> &physicalProcessorModels);
 	float getMinimumMemorySize() const;
 	void setMinimumMemorySize(float minimumMemorySize);
 	int getMinimumEniQuantity() const;
@@ -110,6 +120,8 @@ public:
 	void setInstanceTypeFamily(const std::string &instanceTypeFamily);
 	int getMinimumEniPrivateIpAddressQuantity() const;
 	void setMinimumEniPrivateIpAddressQuantity(int minimumEniPrivateIpAddressQuantity);
+	std::vector<std::string> getGpuSpecs() const;
+	void setGpuSpecs(const std::vector<std::string> &gpuSpecs);
 	long getMinimumLocalStorageCapacity() const;
 	void setMinimumLocalStorageCapacity(long minimumLocalStorageCapacity);
 
@@ -123,14 +135,19 @@ private:
 	std::string instanceCategory_;
 	long minimumInstancePpsTx_;
 	int minimumCpuCoreCount_;
+	std::vector<std::string> localStorageCategories_;
 	int minimumPrimaryEniQueueNumber_;
+	std::vector<std::string> instanceTypeFamilies_;
 	int minimumBaselineCredit_;
 	int minimumSecondaryEniQueueNumber_;
+	std::vector<std::string> cpuArchitectures_;
 	int minimumInstanceBandwidthTx_;
+	std::vector<std::string> instanceCategories_;
 	int minimumGPUAmount_;
 	float maximumCpuSpeedFrequency_;
 	std::string cpuArchitecture_;
 	long ownerId_;
+	std::vector<std::string> physicalProcessorModels_;
 	float minimumMemorySize_;
 	int minimumEniQuantity_;
 	std::string instanceFamilyLevel_;
@@ -154,6 +171,7 @@ private:
 	int minimumInitialCredit_;
 	std::string instanceTypeFamily_;
 	int minimumEniPrivateIpAddressQuantity_;
+	std::vector<std::string> gpuSpecs_;
 	long minimumLocalStorageCapacity_;
 };
 } // namespace Model

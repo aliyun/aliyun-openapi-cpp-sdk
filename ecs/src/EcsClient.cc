@@ -4299,6 +4299,42 @@ EcsClient::DescribeClassicLinkInstancesOutcomeCallable EcsClient::describeClassi
 	return task->get_future();
 }
 
+EcsClient::DescribeCloudAssistantSettingsOutcome EcsClient::describeCloudAssistantSettings(const DescribeCloudAssistantSettingsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCloudAssistantSettingsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCloudAssistantSettingsOutcome(DescribeCloudAssistantSettingsResult(outcome.result()));
+	else
+		return DescribeCloudAssistantSettingsOutcome(outcome.error());
+}
+
+void EcsClient::describeCloudAssistantSettingsAsync(const DescribeCloudAssistantSettingsRequest& request, const DescribeCloudAssistantSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCloudAssistantSettings(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeCloudAssistantSettingsOutcomeCallable EcsClient::describeCloudAssistantSettingsCallable(const DescribeCloudAssistantSettingsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCloudAssistantSettingsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCloudAssistantSettings(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeCloudAssistantStatusOutcome EcsClient::describeCloudAssistantStatus(const DescribeCloudAssistantStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7647,6 +7683,42 @@ EcsClient::DescribeTasksOutcomeCallable EcsClient::describeTasksCallable(const D
 	return task->get_future();
 }
 
+EcsClient::DescribeTerminalSessionsOutcome EcsClient::describeTerminalSessions(const DescribeTerminalSessionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTerminalSessionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTerminalSessionsOutcome(DescribeTerminalSessionsResult(outcome.result()));
+	else
+		return DescribeTerminalSessionsOutcome(outcome.error());
+}
+
+void EcsClient::describeTerminalSessionsAsync(const DescribeTerminalSessionsRequest& request, const DescribeTerminalSessionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTerminalSessions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeTerminalSessionsOutcomeCallable EcsClient::describeTerminalSessionsCallable(const DescribeTerminalSessionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTerminalSessionsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTerminalSessions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeUserBusinessBehaviorOutcome EcsClient::describeUserBusinessBehavior(const DescribeUserBusinessBehaviorRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8943,6 +9015,42 @@ EcsClient::ModifyCapacityReservationOutcomeCallable EcsClient::modifyCapacityRes
 	return task->get_future();
 }
 
+EcsClient::ModifyCloudAssistantSettingsOutcome EcsClient::modifyCloudAssistantSettings(const ModifyCloudAssistantSettingsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyCloudAssistantSettingsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyCloudAssistantSettingsOutcome(ModifyCloudAssistantSettingsResult(outcome.result()));
+	else
+		return ModifyCloudAssistantSettingsOutcome(outcome.error());
+}
+
+void EcsClient::modifyCloudAssistantSettingsAsync(const ModifyCloudAssistantSettingsRequest& request, const ModifyCloudAssistantSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyCloudAssistantSettings(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyCloudAssistantSettingsOutcomeCallable EcsClient::modifyCloudAssistantSettingsCallable(const ModifyCloudAssistantSettingsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyCloudAssistantSettingsOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyCloudAssistantSettings(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::ModifyCommandOutcome EcsClient::modifyCommand(const ModifyCommandRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -10125,6 +10233,42 @@ EcsClient::ModifyInstanceVpcAttributeOutcomeCallable EcsClient::modifyInstanceVp
 			[this, request]()
 			{
 			return this->modifyInstanceVpcAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ModifyInvocationAttributeOutcome EcsClient::modifyInvocationAttribute(const ModifyInvocationAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInvocationAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInvocationAttributeOutcome(ModifyInvocationAttributeResult(outcome.result()));
+	else
+		return ModifyInvocationAttributeOutcome(outcome.error());
+}
+
+void EcsClient::modifyInvocationAttributeAsync(const ModifyInvocationAttributeRequest& request, const ModifyInvocationAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInvocationAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyInvocationAttributeOutcomeCallable EcsClient::modifyInvocationAttributeCallable(const ModifyInvocationAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInvocationAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInvocationAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

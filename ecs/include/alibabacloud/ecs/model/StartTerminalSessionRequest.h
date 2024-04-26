@@ -48,6 +48,8 @@ public:
 	void setInstanceId(const std::vector<std::string> &instanceId);
 	int getPortNumber() const;
 	void setPortNumber(int portNumber);
+	std::string getUsername() const;
+	void setUsername(const std::string &username);
 
 private:
 	long resourceOwnerId_;
@@ -59,6 +61,7 @@ private:
 	long ownerId_;
 	std::vector<std::string> instanceId_;
 	int portNumber_;
+	std::string username_;
 };
 } // namespace Model
 } // namespace Ecs

@@ -44,6 +44,9 @@ void CreateAutoProvisioningGroupRequest::setLaunchConfigurationDataDisk(const st
     setParameter(launchConfigurationDataDiskObjStr + ".Category", launchConfigurationDataDiskObj.category);
     setParameter(launchConfigurationDataDiskObjStr + ".DeleteWithInstance", launchConfigurationDataDiskObj.deleteWithInstance ? "true" : "false");
     setParameter(launchConfigurationDataDiskObjStr + ".Encrypted", launchConfigurationDataDiskObj.encrypted ? "true" : "false");
+    setParameter(launchConfigurationDataDiskObjStr + ".EncryptAlgorithm", launchConfigurationDataDiskObj.encryptAlgorithm);
+    setParameter(launchConfigurationDataDiskObjStr + ".ProvisionedIops", std::to_string(launchConfigurationDataDiskObj.provisionedIops));
+    setParameter(launchConfigurationDataDiskObjStr + ".BurstingEnabled", launchConfigurationDataDiskObj.burstingEnabled ? "true" : "false");
   }
 }
 
@@ -169,6 +172,20 @@ std::string CreateAutoProvisioningGroupRequest::getDefaultTargetCapacityType() c
 void CreateAutoProvisioningGroupRequest::setDefaultTargetCapacityType(const std::string &defaultTargetCapacityType) {
   defaultTargetCapacityType_ = defaultTargetCapacityType;
   setParameter(std::string("DefaultTargetCapacityType"), defaultTargetCapacityType);
+}
+
+std::vector<CreateAutoProvisioningGroupRequest::Tag> CreateAutoProvisioningGroupRequest::getTag() const {
+  return tag_;
+}
+
+void CreateAutoProvisioningGroupRequest::setTag(const std::vector<CreateAutoProvisioningGroupRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
 }
 
 std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationKeyPairName() const {
@@ -374,6 +391,8 @@ void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSystemDisk(const 
   setParameter(std::string("LaunchConfiguration.SystemDisk") + ".Encrypted", launchConfigurationSystemDisk.encrypted);
   setParameter(std::string("LaunchConfiguration.SystemDisk") + ".KMSKeyId", launchConfigurationSystemDisk.kMSKeyId);
   setParameter(std::string("LaunchConfiguration.SystemDisk") + ".EncryptAlgorithm", launchConfigurationSystemDisk.encryptAlgorithm);
+  setParameter(std::string("LaunchConfiguration.SystemDisk") + ".ProvisionedIops", std::to_string(launchConfigurationSystemDisk.provisionedIops));
+  setParameter(std::string("LaunchConfiguration.SystemDisk") + ".BurstingEnabled", launchConfigurationSystemDisk.burstingEnabled ? "true" : "false");
 }
 
 std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationInstanceName() const {

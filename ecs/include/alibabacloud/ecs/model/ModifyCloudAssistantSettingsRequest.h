@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEAUTOPROVISIONINGGROUPSREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBEAUTOPROVISIONINGGROUPSREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYCLOUDASSISTANTSETTINGSREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_MODIFYCLOUDASSISTANTSETTINGSREQUEST_H_
 
 #include <alibabacloud/ecs/EcsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,54 +26,60 @@
 namespace AlibabaCloud {
 namespace Ecs {
 namespace Model {
-class ALIBABACLOUD_ECS_EXPORT DescribeAutoProvisioningGroupsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ECS_EXPORT ModifyCloudAssistantSettingsRequest : public RpcServiceRequest {
 public:
-	struct Tag {
-		std::string key;
-		std::string value;
+	struct AgentUpgradeConfig {
+		bool enabled;
+		std::string string;
+		std::vector<std::string> allowedUpgradeWindow;
+		std::string timeZone;
 	};
-	DescribeAutoProvisioningGroupsRequest();
-	~DescribeAutoProvisioningGroupsRequest();
+	struct OssDeliveryConfig {
+		bool enabled;
+		std::string bucketName;
+		std::string prefix;
+		std::string encryptionType;
+		std::string encryptionAlgorithm;
+		std::string encryptionKeyId;
+	};
+	struct SlsDeliveryConfig {
+		bool enabled;
+		std::string projectName;
+		std::string logstoreName;
+	};
+	ModifyCloudAssistantSettingsRequest();
+	~ModifyCloudAssistantSettingsRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
-	std::string getResourceGroupId() const;
-	void setResourceGroupId(const std::string &resourceGroupId);
+	AgentUpgradeConfig getAgentUpgradeConfig() const;
+	void setAgentUpgradeConfig(const AgentUpgradeConfig &agentUpgradeConfig);
+	OssDeliveryConfig getOssDeliveryConfig() const;
+	void setOssDeliveryConfig(const OssDeliveryConfig &ossDeliveryConfig);
+	std::string getSettingType() const;
+	void setSettingType(const std::string &settingType);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
-	std::vector<std::string> getAutoProvisioningGroupStatus() const;
-	void setAutoProvisioningGroupStatus(const std::vector<std::string> &autoProvisioningGroupStatus);
+	SlsDeliveryConfig getSlsDeliveryConfig() const;
+	void setSlsDeliveryConfig(const SlsDeliveryConfig &slsDeliveryConfig);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::vector<std::string> getAutoProvisioningGroupId() const;
-	void setAutoProvisioningGroupId(const std::vector<std::string> &autoProvisioningGroupId);
-	std::string getAutoProvisioningGroupName() const;
-	void setAutoProvisioningGroupName(const std::string &autoProvisioningGroupName);
 
 private:
 	long resourceOwnerId_;
-	int pageNumber_;
-	std::string resourceGroupId_;
+	AgentUpgradeConfig agentUpgradeConfig_;
+	OssDeliveryConfig ossDeliveryConfig_;
+	std::string settingType_;
 	std::string regionId_;
-	int pageSize_;
-	std::vector<Tag> tag_;
-	std::vector<std::string> autoProvisioningGroupStatus_;
+	SlsDeliveryConfig slsDeliveryConfig_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::vector<std::string> autoProvisioningGroupId_;
-	std::string autoProvisioningGroupName_;
 };
 } // namespace Model
 } // namespace Ecs
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEAUTOPROVISIONINGGROUPSREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYCLOUDASSISTANTSETTINGSREQUEST_H_

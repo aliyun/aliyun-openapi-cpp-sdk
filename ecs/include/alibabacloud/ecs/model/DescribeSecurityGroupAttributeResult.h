@@ -32,6 +32,15 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ECS_EXPORT DescribeSecurityGroupAttributeResult : public ServiceResult
 			{
 			public:
+				struct ReferencedInfo
+				{
+					struct ReferencedPrefixListInfo
+					{
+						std::string prefixListId;
+						std::string productProvider;
+					};
+					std::vector<ReferencedPrefixListInfo> referencedPrefixListInfos;
+				};
 				struct Permission
 				{
 					std::string sourceGroupId;
@@ -71,6 +80,7 @@ namespace AlibabaCloud
 				std::vector<Permission> getPermissions()const;
 				std::string getInnerAccessPolicy()const;
 				std::string getRegionId()const;
+				ReferencedInfo getReferencedInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -82,6 +92,7 @@ namespace AlibabaCloud
 				std::vector<Permission> permissions_;
 				std::string innerAccessPolicy_;
 				std::string regionId_;
+				ReferencedInfo referencedInfo_;
 
 			};
 		}

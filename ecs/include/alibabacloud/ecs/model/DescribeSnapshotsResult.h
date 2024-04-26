@@ -64,6 +64,7 @@ namespace AlibabaCloud
 					std::string creationTime;
 					std::string lastModifiedTime;
 					std::string snapshotType;
+					std::string regionId;
 					int remainTime;
 					std::string sourceDiskType;
 				};

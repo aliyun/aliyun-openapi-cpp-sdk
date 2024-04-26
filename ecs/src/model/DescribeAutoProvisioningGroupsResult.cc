@@ -91,6 +91,16 @@ void DescribeAutoProvisioningGroupsResult::parse(const std::string &payload)
 				launchTemplateConfigsObject.instanceType = valueAutoProvisioningGroupsAutoProvisioningGroupLaunchTemplateConfigsLaunchTemplateConfig["InstanceType"].asString();
 			autoProvisioningGroupsObject.launchTemplateConfigs.push_back(launchTemplateConfigsObject);
 		}
+		auto allTagsNode = valueAutoProvisioningGroupsAutoProvisioningGroup["Tags"]["Tag"];
+		for (auto valueAutoProvisioningGroupsAutoProvisioningGroupTagsTag : allTagsNode)
+		{
+			AutoProvisioningGroup::Tag tagsObject;
+			if(!valueAutoProvisioningGroupsAutoProvisioningGroupTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueAutoProvisioningGroupsAutoProvisioningGroupTagsTag["TagKey"].asString();
+			if(!valueAutoProvisioningGroupsAutoProvisioningGroupTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueAutoProvisioningGroupsAutoProvisioningGroupTagsTag["TagValue"].asString();
+			autoProvisioningGroupsObject.tags.push_back(tagsObject);
+		}
 		auto spotOptionsNode = value["SpotOptions"];
 		if(!spotOptionsNode["InstancePoolsToUseCount"].isNull())
 			autoProvisioningGroupsObject.spotOptions.instancePoolsToUseCount = std::stoi(spotOptionsNode["InstancePoolsToUseCount"].asString());

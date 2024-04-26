@@ -106,6 +106,15 @@ void ImportImageRequest::setImageName(const std::string &imageName) {
   setParameter(std::string("ImageName"), imageName);
 }
 
+std::string ImportImageRequest::getStorageLocationArn() const {
+  return storageLocationArn_;
+}
+
+void ImportImageRequest::setStorageLocationArn(const std::string &storageLocationArn) {
+  storageLocationArn_ = storageLocationArn;
+  setParameter(std::string("StorageLocationArn"), storageLocationArn);
+}
+
 std::vector<ImportImageRequest::Tag> ImportImageRequest::getTag() const {
   return tag_;
 }

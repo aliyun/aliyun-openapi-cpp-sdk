@@ -183,6 +183,8 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
 }
 
@@ -199,6 +201,11 @@ int DescribeDedicatedHostsResult::getTotalCount()const
 int DescribeDedicatedHostsResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+std::string DescribeDedicatedHostsResult::getNextToken()const
+{
+	return nextToken_;
 }
 
 int DescribeDedicatedHostsResult::getPageNumber()const

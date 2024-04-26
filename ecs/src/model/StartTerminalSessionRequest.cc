@@ -105,3 +105,12 @@ void StartTerminalSessionRequest::setPortNumber(int portNumber) {
   setParameter(std::string("PortNumber"), std::to_string(portNumber));
 }
 
+std::string StartTerminalSessionRequest::getUsername() const {
+  return username_;
+}
+
+void StartTerminalSessionRequest::setUsername(const std::string &username) {
+  username_ = username;
+  setParameter(std::string("Username"), username);
+}
+

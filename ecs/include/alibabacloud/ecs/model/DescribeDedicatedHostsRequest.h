@@ -48,6 +48,8 @@ public:
 	void setLockReason(const std::string &lockReason);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getDedicatedHostClusterId() const;
@@ -68,6 +70,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
 
@@ -79,6 +83,7 @@ private:
 	std::string resourceGroupId_;
 	std::string lockReason_;
 	std::string regionId_;
+	std::string nextToken_;
 	int pageSize_;
 	std::string dedicatedHostClusterId_;
 	std::string dedicatedHostType_;
@@ -89,6 +94,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string zoneId_;
+	int maxResults_;
 	std::string status_;
 };
 } // namespace Model

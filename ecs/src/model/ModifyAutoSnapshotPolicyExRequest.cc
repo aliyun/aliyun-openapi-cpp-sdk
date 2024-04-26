@@ -34,6 +34,21 @@ void ModifyAutoSnapshotPolicyExRequest::setResourceOwnerId(long resourceOwnerId)
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+ModifyAutoSnapshotPolicyExRequest::CopyEncryptionConfiguration ModifyAutoSnapshotPolicyExRequest::getCopyEncryptionConfiguration() const {
+  return copyEncryptionConfiguration_;
+}
+
+void ModifyAutoSnapshotPolicyExRequest::setCopyEncryptionConfiguration(const ModifyAutoSnapshotPolicyExRequest::CopyEncryptionConfiguration &copyEncryptionConfiguration) {
+  copyEncryptionConfiguration_ = copyEncryptionConfiguration;
+  setParameter(std::string("CopyEncryptionConfiguration") + ".Encrypted", copyEncryptionConfiguration.encrypted ? "true" : "false");
+  setParameter(std::string("CopyEncryptionConfiguration") + ".KMSKeyId", copyEncryptionConfiguration.kMSKeyId);
+  for(int dep1 = 0; dep1 != copyEncryptionConfiguration.arn.size(); dep1++) {
+    setParameter(std::string("CopyEncryptionConfiguration") + ".Arn." + std::to_string(dep1 + 1) + ".Rolearn", copyEncryptionConfiguration.arn[dep1].rolearn);
+    setParameter(std::string("CopyEncryptionConfiguration") + ".Arn." + std::to_string(dep1 + 1) + ".RoleType", copyEncryptionConfiguration.arn[dep1].roleType);
+    setParameter(std::string("CopyEncryptionConfiguration") + ".Arn." + std::to_string(dep1 + 1) + ".AssumeRoleFor", std::to_string(copyEncryptionConfiguration.arn[dep1].assumeRoleFor));
+  }
+}
+
 std::string ModifyAutoSnapshotPolicyExRequest::getAutoSnapshotPolicyId() const {
   return autoSnapshotPolicyId_;
 }

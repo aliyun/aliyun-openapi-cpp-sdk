@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEAUTOPROVISIONINGGROUPSREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBEAUTOPROVISIONINGGROUPSREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBETERMINALSESSIONSREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBETERMINALSESSIONSREQUEST_H_
 
 #include <alibabacloud/ecs/EcsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,54 +26,41 @@
 namespace AlibabaCloud {
 namespace Ecs {
 namespace Model {
-class ALIBABACLOUD_ECS_EXPORT DescribeAutoProvisioningGroupsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ECS_EXPORT DescribeTerminalSessionsRequest : public RpcServiceRequest {
 public:
-	struct Tag {
-		std::string key;
-		std::string value;
-	};
-	DescribeAutoProvisioningGroupsRequest();
-	~DescribeAutoProvisioningGroupsRequest();
+	DescribeTerminalSessionsRequest();
+	~DescribeTerminalSessionsRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
-	std::string getResourceGroupId() const;
-	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getSessionId() const;
+	void setSessionId(const std::string &sessionId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
-	std::vector<std::string> getAutoProvisioningGroupStatus() const;
-	void setAutoProvisioningGroupStatus(const std::vector<std::string> &autoProvisioningGroupStatus);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::vector<std::string> getAutoProvisioningGroupId() const;
-	void setAutoProvisioningGroupId(const std::vector<std::string> &autoProvisioningGroupId);
-	std::string getAutoProvisioningGroupName() const;
-	void setAutoProvisioningGroupName(const std::string &autoProvisioningGroupName);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
 
 private:
 	long resourceOwnerId_;
-	int pageNumber_;
-	std::string resourceGroupId_;
+	std::string sessionId_;
 	std::string regionId_;
-	int pageSize_;
-	std::vector<Tag> tag_;
-	std::vector<std::string> autoProvisioningGroupStatus_;
+	std::string nextToken_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::vector<std::string> autoProvisioningGroupId_;
-	std::string autoProvisioningGroupName_;
+	std::string instanceId_;
+	int maxResults_;
 };
 } // namespace Model
 } // namespace Ecs
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEAUTOPROVISIONINGGROUPSREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBETERMINALSESSIONSREQUEST_H_

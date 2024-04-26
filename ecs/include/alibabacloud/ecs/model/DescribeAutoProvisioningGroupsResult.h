@@ -59,6 +59,11 @@ namespace AlibabaCloud
 						float maxPrice;
 						std::string instanceType;
 					};
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string status;
 					TargetCapacitySpecification targetCapacitySpecification;
 					std::string autoProvisioningGroupName;
@@ -79,6 +84,7 @@ namespace AlibabaCloud
 					float maxSpotPrice;
 					std::string regionId;
 					bool terminateInstances;
+					std::vector<AutoProvisioningGroup::Tag> tags;
 				};
 
 

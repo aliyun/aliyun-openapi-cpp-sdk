@@ -58,6 +58,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getImageName() const;
 	void setImageName(const std::string &imageName);
+	std::string getStorageLocationArn() const;
+	void setStorageLocationArn(const std::string &storageLocationArn);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
 	std::string getArchitecture() const;
@@ -84,6 +86,7 @@ private:
 	std::string bootMode_;
 	std::string regionId_;
 	std::string imageName_;
+	std::string storageLocationArn_;
 	std::vector<Tag> tag_;
 	std::string architecture_;
 	std::string licenseType_;

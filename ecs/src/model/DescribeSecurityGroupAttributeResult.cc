@@ -93,6 +93,17 @@ void DescribeSecurityGroupAttributeResult::parse(const std::string &payload)
 			permissionsObject.sourcePortRange = valuePermissionsPermission["SourcePortRange"].asString();
 		permissions_.push_back(permissionsObject);
 	}
+	auto referencedInfoNode = value["ReferencedInfo"];
+	auto allReferencedPrefixListInfosNode = referencedInfoNode["ReferencedPrefixListInfos"]["ReferencedPrefixListInfo"];
+	for (auto referencedInfoNodeReferencedPrefixListInfosReferencedPrefixListInfo : allReferencedPrefixListInfosNode)
+	{
+		ReferencedInfo::ReferencedPrefixListInfo referencedPrefixListInfoObject;
+		if(!referencedInfoNodeReferencedPrefixListInfosReferencedPrefixListInfo["PrefixListId"].isNull())
+			referencedPrefixListInfoObject.prefixListId = referencedInfoNodeReferencedPrefixListInfosReferencedPrefixListInfo["PrefixListId"].asString();
+		if(!referencedInfoNodeReferencedPrefixListInfosReferencedPrefixListInfo["ProductProvider"].isNull())
+			referencedPrefixListInfoObject.productProvider = referencedInfoNodeReferencedPrefixListInfosReferencedPrefixListInfo["ProductProvider"].asString();
+		referencedInfo_.referencedPrefixListInfos.push_back(referencedPrefixListInfoObject);
+	}
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
 	if(!value["InnerAccessPolicy"].isNull())
@@ -141,5 +152,10 @@ std::string DescribeSecurityGroupAttributeResult::getInnerAccessPolicy()const
 std::string DescribeSecurityGroupAttributeResult::getRegionId()const
 {
 	return regionId_;
+}
+
+DescribeSecurityGroupAttributeResult::ReferencedInfo DescribeSecurityGroupAttributeResult::getReferencedInfo()const
+{
+	return referencedInfo_;
 }
 

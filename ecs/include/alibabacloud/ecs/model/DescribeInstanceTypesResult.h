@@ -57,6 +57,7 @@ namespace AlibabaCloud
 					std::string gPUSpec;
 					std::string cpuArchitecture;
 					std::string instanceTypeId;
+					std::vector<std::string> supportedBootModes;
 					float memorySize;
 					int maximumQueueNumberPerEni;
 					int eniIpv6AddressQuantity;

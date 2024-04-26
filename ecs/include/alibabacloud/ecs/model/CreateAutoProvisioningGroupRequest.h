@@ -39,6 +39,13 @@ public:
 		std::string category;
 		bool deleteWithInstance;
 		bool encrypted;
+		std::string encryptAlgorithm;
+		long provisionedIops;
+		bool burstingEnabled;
+	};
+	struct Tag {
+		std::string key;
+		std::string value;
 	};
 	struct SystemDiskConfig {
 		std::string diskCategory;
@@ -55,6 +62,8 @@ public:
 		std::string encrypted;
 		std::string kMSKeyId;
 		std::string encryptAlgorithm;
+		long provisionedIops;
+		bool burstingEnabled;
 	};
 	struct LaunchTemplateConfig {
 		std::string vSwitchId;
@@ -110,6 +119,8 @@ public:
 	void setPayAsYouGoAllocationStrategy(const std::string &payAsYouGoAllocationStrategy);
 	std::string getDefaultTargetCapacityType() const;
 	void setDefaultTargetCapacityType(const std::string &defaultTargetCapacityType);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getLaunchConfigurationKeyPairName() const;
 	void setLaunchConfigurationKeyPairName(const std::string &launchConfigurationKeyPairName);
 	std::vector<SystemDiskConfig> getSystemDiskConfig() const;
@@ -225,6 +236,7 @@ private:
 	std::string launchConfigurationAutoReleaseTime_;
 	std::string payAsYouGoAllocationStrategy_;
 	std::string defaultTargetCapacityType_;
+	std::vector<Tag> tag_;
 	std::string launchConfigurationKeyPairName_;
 	std::vector<SystemDiskConfig> systemDiskConfig_;
 	std::vector<DataDiskConfig> dataDiskConfig_;

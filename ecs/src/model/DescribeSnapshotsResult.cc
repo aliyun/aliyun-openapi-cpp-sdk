@@ -81,6 +81,8 @@ void DescribeSnapshotsResult::parse(const std::string &payload)
 			snapshotsObject.description = valueSnapshotsSnapshot["Description"].asString();
 		if(!valueSnapshotsSnapshot["SnapshotId"].isNull())
 			snapshotsObject.snapshotId = valueSnapshotsSnapshot["SnapshotId"].asString();
+		if(!valueSnapshotsSnapshot["RegionId"].isNull())
+			snapshotsObject.regionId = valueSnapshotsSnapshot["RegionId"].asString();
 		if(!valueSnapshotsSnapshot["ResourceGroupId"].isNull())
 			snapshotsObject.resourceGroupId = valueSnapshotsSnapshot["ResourceGroupId"].asString();
 		if(!valueSnapshotsSnapshot["Category"].isNull())

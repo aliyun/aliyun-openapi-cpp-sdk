@@ -257,6 +257,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeCapacityReservationsResult.h
 	include/alibabacloud/ecs/model/DescribeClassicLinkInstancesRequest.h
 	include/alibabacloud/ecs/model/DescribeClassicLinkInstancesResult.h
+	include/alibabacloud/ecs/model/DescribeCloudAssistantSettingsRequest.h
+	include/alibabacloud/ecs/model/DescribeCloudAssistantSettingsResult.h
 	include/alibabacloud/ecs/model/DescribeCloudAssistantStatusRequest.h
 	include/alibabacloud/ecs/model/DescribeCloudAssistantStatusResult.h
 	include/alibabacloud/ecs/model/DescribeClustersRequest.h
@@ -443,6 +445,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeTaskAttributeResult.h
 	include/alibabacloud/ecs/model/DescribeTasksRequest.h
 	include/alibabacloud/ecs/model/DescribeTasksResult.h
+	include/alibabacloud/ecs/model/DescribeTerminalSessionsRequest.h
+	include/alibabacloud/ecs/model/DescribeTerminalSessionsResult.h
 	include/alibabacloud/ecs/model/DescribeUserBusinessBehaviorRequest.h
 	include/alibabacloud/ecs/model/DescribeUserBusinessBehaviorResult.h
 	include/alibabacloud/ecs/model/DescribeUserDataRequest.h
@@ -515,6 +519,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyBandwidthPackageSpecResult.h
 	include/alibabacloud/ecs/model/ModifyCapacityReservationRequest.h
 	include/alibabacloud/ecs/model/ModifyCapacityReservationResult.h
+	include/alibabacloud/ecs/model/ModifyCloudAssistantSettingsRequest.h
+	include/alibabacloud/ecs/model/ModifyCloudAssistantSettingsResult.h
 	include/alibabacloud/ecs/model/ModifyCommandRequest.h
 	include/alibabacloud/ecs/model/ModifyCommandResult.h
 	include/alibabacloud/ecs/model/ModifyDedicatedHostAttributeRequest.h
@@ -581,6 +587,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyInstanceVncPasswdResult.h
 	include/alibabacloud/ecs/model/ModifyInstanceVpcAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyInstanceVpcAttributeResult.h
+	include/alibabacloud/ecs/model/ModifyInvocationAttributeRequest.h
+	include/alibabacloud/ecs/model/ModifyInvocationAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyLaunchTemplateDefaultVersionRequest.h
 	include/alibabacloud/ecs/model/ModifyLaunchTemplateDefaultVersionResult.h
 	include/alibabacloud/ecs/model/ModifyManagedInstanceRequest.h
@@ -956,6 +964,8 @@ set(ecs_src
 	src/model/DescribeCapacityReservationsResult.cc
 	src/model/DescribeClassicLinkInstancesRequest.cc
 	src/model/DescribeClassicLinkInstancesResult.cc
+	src/model/DescribeCloudAssistantSettingsRequest.cc
+	src/model/DescribeCloudAssistantSettingsResult.cc
 	src/model/DescribeCloudAssistantStatusRequest.cc
 	src/model/DescribeCloudAssistantStatusResult.cc
 	src/model/DescribeClustersRequest.cc
@@ -1142,6 +1152,8 @@ set(ecs_src
 	src/model/DescribeTaskAttributeResult.cc
 	src/model/DescribeTasksRequest.cc
 	src/model/DescribeTasksResult.cc
+	src/model/DescribeTerminalSessionsRequest.cc
+	src/model/DescribeTerminalSessionsResult.cc
 	src/model/DescribeUserBusinessBehaviorRequest.cc
 	src/model/DescribeUserBusinessBehaviorResult.cc
 	src/model/DescribeUserDataRequest.cc
@@ -1214,6 +1226,8 @@ set(ecs_src
 	src/model/ModifyBandwidthPackageSpecResult.cc
 	src/model/ModifyCapacityReservationRequest.cc
 	src/model/ModifyCapacityReservationResult.cc
+	src/model/ModifyCloudAssistantSettingsRequest.cc
+	src/model/ModifyCloudAssistantSettingsResult.cc
 	src/model/ModifyCommandRequest.cc
 	src/model/ModifyCommandResult.cc
 	src/model/ModifyDedicatedHostAttributeRequest.cc
@@ -1280,6 +1294,8 @@ set(ecs_src
 	src/model/ModifyInstanceVncPasswdResult.cc
 	src/model/ModifyInstanceVpcAttributeRequest.cc
 	src/model/ModifyInstanceVpcAttributeResult.cc
+	src/model/ModifyInvocationAttributeRequest.cc
+	src/model/ModifyInvocationAttributeResult.cc
 	src/model/ModifyLaunchTemplateDefaultVersionRequest.cc
 	src/model/ModifyLaunchTemplateDefaultVersionResult.cc
 	src/model/ModifyManagedInstanceRequest.cc

@@ -106,6 +106,14 @@ void DescribeInstanceTypesRequest::setMinimumCpuCoreCount(int minimumCpuCoreCoun
   setParameter(std::string("MinimumCpuCoreCount"), std::to_string(minimumCpuCoreCount));
 }
 
+std::vector<std::string> DescribeInstanceTypesRequest::getLocalStorageCategories() const {
+  return localStorageCategories_;
+}
+
+void DescribeInstanceTypesRequest::setLocalStorageCategories(const std::vector<std::string> &localStorageCategories) {
+  localStorageCategories_ = localStorageCategories;
+}
+
 int DescribeInstanceTypesRequest::getMinimumPrimaryEniQueueNumber() const {
   return minimumPrimaryEniQueueNumber_;
 }
@@ -113,6 +121,14 @@ int DescribeInstanceTypesRequest::getMinimumPrimaryEniQueueNumber() const {
 void DescribeInstanceTypesRequest::setMinimumPrimaryEniQueueNumber(int minimumPrimaryEniQueueNumber) {
   minimumPrimaryEniQueueNumber_ = minimumPrimaryEniQueueNumber;
   setParameter(std::string("MinimumPrimaryEniQueueNumber"), std::to_string(minimumPrimaryEniQueueNumber));
+}
+
+std::vector<std::string> DescribeInstanceTypesRequest::getInstanceTypeFamilies() const {
+  return instanceTypeFamilies_;
+}
+
+void DescribeInstanceTypesRequest::setInstanceTypeFamilies(const std::vector<std::string> &instanceTypeFamilies) {
+  instanceTypeFamilies_ = instanceTypeFamilies;
 }
 
 int DescribeInstanceTypesRequest::getMinimumBaselineCredit() const {
@@ -133,6 +149,14 @@ void DescribeInstanceTypesRequest::setMinimumSecondaryEniQueueNumber(int minimum
   setParameter(std::string("MinimumSecondaryEniQueueNumber"), std::to_string(minimumSecondaryEniQueueNumber));
 }
 
+std::vector<std::string> DescribeInstanceTypesRequest::getCpuArchitectures() const {
+  return cpuArchitectures_;
+}
+
+void DescribeInstanceTypesRequest::setCpuArchitectures(const std::vector<std::string> &cpuArchitectures) {
+  cpuArchitectures_ = cpuArchitectures;
+}
+
 int DescribeInstanceTypesRequest::getMinimumInstanceBandwidthTx() const {
   return minimumInstanceBandwidthTx_;
 }
@@ -140,6 +164,14 @@ int DescribeInstanceTypesRequest::getMinimumInstanceBandwidthTx() const {
 void DescribeInstanceTypesRequest::setMinimumInstanceBandwidthTx(int minimumInstanceBandwidthTx) {
   minimumInstanceBandwidthTx_ = minimumInstanceBandwidthTx;
   setParameter(std::string("MinimumInstanceBandwidthTx"), std::to_string(minimumInstanceBandwidthTx));
+}
+
+std::vector<std::string> DescribeInstanceTypesRequest::getInstanceCategories() const {
+  return instanceCategories_;
+}
+
+void DescribeInstanceTypesRequest::setInstanceCategories(const std::vector<std::string> &instanceCategories) {
+  instanceCategories_ = instanceCategories;
 }
 
 int DescribeInstanceTypesRequest::getMinimumGPUAmount() const {
@@ -176,6 +208,14 @@ long DescribeInstanceTypesRequest::getOwnerId() const {
 void DescribeInstanceTypesRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::vector<std::string> DescribeInstanceTypesRequest::getPhysicalProcessorModels() const {
+  return physicalProcessorModels_;
+}
+
+void DescribeInstanceTypesRequest::setPhysicalProcessorModels(const std::vector<std::string> &physicalProcessorModels) {
+  physicalProcessorModels_ = physicalProcessorModels;
 }
 
 float DescribeInstanceTypesRequest::getMinimumMemorySize() const {
@@ -382,6 +422,14 @@ int DescribeInstanceTypesRequest::getMinimumEniPrivateIpAddressQuantity() const 
 void DescribeInstanceTypesRequest::setMinimumEniPrivateIpAddressQuantity(int minimumEniPrivateIpAddressQuantity) {
   minimumEniPrivateIpAddressQuantity_ = minimumEniPrivateIpAddressQuantity;
   setParameter(std::string("MinimumEniPrivateIpAddressQuantity"), std::to_string(minimumEniPrivateIpAddressQuantity));
+}
+
+std::vector<std::string> DescribeInstanceTypesRequest::getGpuSpecs() const {
+  return gpuSpecs_;
+}
+
+void DescribeInstanceTypesRequest::setGpuSpecs(const std::vector<std::string> &gpuSpecs) {
+  gpuSpecs_ = gpuSpecs;
 }
 
 long DescribeInstanceTypesRequest::getMinimumLocalStorageCapacity() const {

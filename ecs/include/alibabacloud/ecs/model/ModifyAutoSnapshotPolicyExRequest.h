@@ -28,10 +28,23 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT ModifyAutoSnapshotPolicyExRequest : public RpcServiceRequest {
 public:
+	struct CopyEncryptionConfiguration {
+		bool encrypted;
+		std::string kMSKeyId;
+		struct ArnItem {
+			std::string rolearn;
+			std::string roleType;
+			long assumeRoleFor;
+		};
+		ArnItem arnItem;
+		std::vector<ArnItem> arn;
+	};
 	ModifyAutoSnapshotPolicyExRequest();
 	~ModifyAutoSnapshotPolicyExRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	CopyEncryptionConfiguration getCopyEncryptionConfiguration() const;
+	void setCopyEncryptionConfiguration(const CopyEncryptionConfiguration &copyEncryptionConfiguration);
 	std::string getAutoSnapshotPolicyId() const;
 	void setAutoSnapshotPolicyId(const std::string &autoSnapshotPolicyId);
 	int getCopiedSnapshotsRetentionDays() const;
@@ -57,6 +70,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	CopyEncryptionConfiguration copyEncryptionConfiguration_;
 	std::string autoSnapshotPolicyId_;
 	int copiedSnapshotsRetentionDays_;
 	std::string timePoints_;

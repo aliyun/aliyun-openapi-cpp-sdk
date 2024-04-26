@@ -125,6 +125,9 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 				networkCardsObject.networkCardIndex = std::stoi(valueInstanceTypesInstanceTypeNetworkCardsNetworkCardInfo["NetworkCardIndex"].asString());
 			instanceTypesObject.networkCards.push_back(networkCardsObject);
 		}
+		auto allSupportedBootModes = value["SupportedBootModes"]["SupportedBootMode"];
+		for (auto value : allSupportedBootModes)
+			instanceTypesObject.supportedBootModes.push_back(value.asString());
 		instanceTypes_.push_back(instanceTypesObject);
 	}
 	if(!value["NextToken"].isNull())

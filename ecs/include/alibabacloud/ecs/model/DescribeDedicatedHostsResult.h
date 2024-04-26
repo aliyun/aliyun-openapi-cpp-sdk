@@ -122,6 +122,7 @@ namespace AlibabaCloud
 				std::vector<DedicatedHost> getDedicatedHosts()const;
 				int getTotalCount()const;
 				int getPageSize()const;
+				std::string getNextToken()const;
 				int getPageNumber()const;
 
 			protected:
@@ -130,6 +131,7 @@ namespace AlibabaCloud
 				std::vector<DedicatedHost> dedicatedHosts_;
 				int totalCount_;
 				int pageSize_;
+				std::string nextToken_;
 				int pageNumber_;
 
 			};
