@@ -43,38 +43,33 @@ void DescribeStreamLocationBlockResult::parse(const std::string &payload)
 	for (auto valueStreamBlockListStreamBlock : allStreamBlockListNode)
 	{
 		StreamBlock streamBlockListObject;
-		if(!valueStreamBlockListStreamBlock["Status"].isNull())
-			streamBlockListObject.status = std::stoi(valueStreamBlockListStreamBlock["Status"].asString());
-		if(!valueStreamBlockListStreamBlock["BlockType"].isNull())
-			streamBlockListObject.blockType = valueStreamBlockListStreamBlock["BlockType"].asString();
 		if(!valueStreamBlockListStreamBlock["AppName"].isNull())
 			streamBlockListObject.appName = valueStreamBlockListStreamBlock["AppName"].asString();
-		if(!valueStreamBlockListStreamBlock["UpdateTime"].isNull())
-			streamBlockListObject.updateTime = valueStreamBlockListStreamBlock["UpdateTime"].asString();
-		if(!valueStreamBlockListStreamBlock["StreamName"].isNull())
-			streamBlockListObject.streamName = valueStreamBlockListStreamBlock["StreamName"].asString();
-		if(!valueStreamBlockListStreamBlock["ReleaseTime"].isNull())
-			streamBlockListObject.releaseTime = valueStreamBlockListStreamBlock["ReleaseTime"].asString();
-		if(!valueStreamBlockListStreamBlock["LocationList"].isNull())
-			streamBlockListObject.locationList = valueStreamBlockListStreamBlock["LocationList"].asString();
+		if(!valueStreamBlockListStreamBlock["BlockType"].isNull())
+			streamBlockListObject.blockType = valueStreamBlockListStreamBlock["BlockType"].asString();
 		if(!valueStreamBlockListStreamBlock["DomainName"].isNull())
 			streamBlockListObject.domainName = valueStreamBlockListStreamBlock["DomainName"].asString();
+		if(!valueStreamBlockListStreamBlock["LocationList"].isNull())
+			streamBlockListObject.locationList = valueStreamBlockListStreamBlock["LocationList"].asString();
+		if(!valueStreamBlockListStreamBlock["ReleaseTime"].isNull())
+			streamBlockListObject.releaseTime = valueStreamBlockListStreamBlock["ReleaseTime"].asString();
+		if(!valueStreamBlockListStreamBlock["Status"].isNull())
+			streamBlockListObject.status = std::stoi(valueStreamBlockListStreamBlock["Status"].asString());
+		if(!valueStreamBlockListStreamBlock["StreamName"].isNull())
+			streamBlockListObject.streamName = valueStreamBlockListStreamBlock["StreamName"].asString();
+		if(!valueStreamBlockListStreamBlock["UpdateTime"].isNull())
+			streamBlockListObject.updateTime = valueStreamBlockListStreamBlock["UpdateTime"].asString();
 		streamBlockList_.push_back(streamBlockListObject);
 	}
-	if(!value["TotalPage"].isNull())
-		totalPage_ = std::stoi(value["TotalPage"].asString());
+	if(!value["Count"].isNull())
+		count_ = std::stoi(value["Count"].asString());
 	if(!value["PageNum"].isNull())
 		pageNum_ = std::stoi(value["PageNum"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["Count"].isNull())
-		count_ = std::stoi(value["Count"].asString());
+	if(!value["TotalPage"].isNull())
+		totalPage_ = std::stoi(value["TotalPage"].asString());
 
-}
-
-int DescribeStreamLocationBlockResult::getTotalPage()const
-{
-	return totalPage_;
 }
 
 int DescribeStreamLocationBlockResult::getPageNum()const
@@ -85,6 +80,11 @@ int DescribeStreamLocationBlockResult::getPageNum()const
 int DescribeStreamLocationBlockResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+int DescribeStreamLocationBlockResult::getTotalPage()const
+{
+	return totalPage_;
 }
 
 std::vector<DescribeStreamLocationBlockResult::StreamBlock> DescribeStreamLocationBlockResult::getStreamBlockList()const

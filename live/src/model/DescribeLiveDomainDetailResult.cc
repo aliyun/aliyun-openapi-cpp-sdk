@@ -40,28 +40,28 @@ void DescribeLiveDomainDetailResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto domainDetailNode = value["DomainDetail"];
-	if(!domainDetailNode["SSLPub"].isNull())
-		domainDetail_.sSLPub = domainDetailNode["SSLPub"].asString();
-	if(!domainDetailNode["GmtModified"].isNull())
-		domainDetail_.gmtModified = domainDetailNode["GmtModified"].asString();
-	if(!domainDetailNode["DomainName"].isNull())
-		domainDetail_.domainName = domainDetailNode["DomainName"].asString();
-	if(!domainDetailNode["GmtCreated"].isNull())
-		domainDetail_.gmtCreated = domainDetailNode["GmtCreated"].asString();
-	if(!domainDetailNode["LiveDomainType"].isNull())
-		domainDetail_.liveDomainType = domainDetailNode["LiveDomainType"].asString();
+	if(!domainDetailNode["CertName"].isNull())
+		domainDetail_.certName = domainDetailNode["CertName"].asString();
+	if(!domainDetailNode["Cname"].isNull())
+		domainDetail_.cname = domainDetailNode["Cname"].asString();
 	if(!domainDetailNode["Description"].isNull())
 		domainDetail_.description = domainDetailNode["Description"].asString();
+	if(!domainDetailNode["DomainName"].isNull())
+		domainDetail_.domainName = domainDetailNode["DomainName"].asString();
+	if(!domainDetailNode["DomainStatus"].isNull())
+		domainDetail_.domainStatus = domainDetailNode["DomainStatus"].asString();
+	if(!domainDetailNode["GmtCreated"].isNull())
+		domainDetail_.gmtCreated = domainDetailNode["GmtCreated"].asString();
+	if(!domainDetailNode["GmtModified"].isNull())
+		domainDetail_.gmtModified = domainDetailNode["GmtModified"].asString();
+	if(!domainDetailNode["LiveDomainType"].isNull())
+		domainDetail_.liveDomainType = domainDetailNode["LiveDomainType"].asString();
 	if(!domainDetailNode["Region"].isNull())
 		domainDetail_.region = domainDetailNode["Region"].asString();
 	if(!domainDetailNode["SSLProtocol"].isNull())
 		domainDetail_.sSLProtocol = domainDetailNode["SSLProtocol"].asString();
-	if(!domainDetailNode["CertName"].isNull())
-		domainDetail_.certName = domainDetailNode["CertName"].asString();
-	if(!domainDetailNode["DomainStatus"].isNull())
-		domainDetail_.domainStatus = domainDetailNode["DomainStatus"].asString();
-	if(!domainDetailNode["Cname"].isNull())
-		domainDetail_.cname = domainDetailNode["Cname"].asString();
+	if(!domainDetailNode["SSLPub"].isNull())
+		domainDetail_.sSLPub = domainDetailNode["SSLPub"].asString();
 	if(!domainDetailNode["Scope"].isNull())
 		domainDetail_.scope = domainDetailNode["Scope"].asString();
 

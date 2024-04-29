@@ -43,22 +43,22 @@ void DescribeLiveHttpsDomainListResult::parse(const std::string &payload)
 	for (auto valueCertInfosCertInfo : allCertInfosNode)
 	{
 		CertInfo certInfosObject;
-		if(!valueCertInfosCertInfo["CertStartTime"].isNull())
-			certInfosObject.certStartTime = valueCertInfosCertInfo["CertStartTime"].asString();
-		if(!valueCertInfosCertInfo["CertExpireTime"].isNull())
-			certInfosObject.certExpireTime = valueCertInfosCertInfo["CertExpireTime"].asString();
-		if(!valueCertInfosCertInfo["CertUpdateTime"].isNull())
-			certInfosObject.certUpdateTime = valueCertInfosCertInfo["CertUpdateTime"].asString();
-		if(!valueCertInfosCertInfo["CertType"].isNull())
-			certInfosObject.certType = valueCertInfosCertInfo["CertType"].asString();
-		if(!valueCertInfosCertInfo["CertName"].isNull())
-			certInfosObject.certName = valueCertInfosCertInfo["CertName"].asString();
-		if(!valueCertInfosCertInfo["CertStatus"].isNull())
-			certInfosObject.certStatus = valueCertInfosCertInfo["CertStatus"].asString();
-		if(!valueCertInfosCertInfo["DomainName"].isNull())
-			certInfosObject.domainName = valueCertInfosCertInfo["DomainName"].asString();
 		if(!valueCertInfosCertInfo["CertCommonName"].isNull())
 			certInfosObject.certCommonName = valueCertInfosCertInfo["CertCommonName"].asString();
+		if(!valueCertInfosCertInfo["CertExpireTime"].isNull())
+			certInfosObject.certExpireTime = valueCertInfosCertInfo["CertExpireTime"].asString();
+		if(!valueCertInfosCertInfo["CertName"].isNull())
+			certInfosObject.certName = valueCertInfosCertInfo["CertName"].asString();
+		if(!valueCertInfosCertInfo["CertStartTime"].isNull())
+			certInfosObject.certStartTime = valueCertInfosCertInfo["CertStartTime"].asString();
+		if(!valueCertInfosCertInfo["CertStatus"].isNull())
+			certInfosObject.certStatus = valueCertInfosCertInfo["CertStatus"].asString();
+		if(!valueCertInfosCertInfo["CertType"].isNull())
+			certInfosObject.certType = valueCertInfosCertInfo["CertType"].asString();
+		if(!valueCertInfosCertInfo["CertUpdateTime"].isNull())
+			certInfosObject.certUpdateTime = valueCertInfosCertInfo["CertUpdateTime"].asString();
+		if(!valueCertInfosCertInfo["DomainName"].isNull())
+			certInfosObject.domainName = valueCertInfosCertInfo["DomainName"].asString();
 		certInfos_.push_back(certInfosObject);
 	}
 	if(!value["TotalCount"].isNull())

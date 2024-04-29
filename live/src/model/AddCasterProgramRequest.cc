@@ -35,10 +35,10 @@ void AddCasterProgramRequest::setEpisode(const std::vector<AddCasterProgramReque
   auto episodeObj = episode.at(dep1);
   std::string episodeObjStr = std::string("Episode") + "." + std::to_string(dep1 + 1);
     setParameter(episodeObjStr + ".EndTime", episodeObj.endTime);
-    setParameter(episodeObjStr + ".StartTime", episodeObj.startTime);
     setParameter(episodeObjStr + ".EpisodeName", episodeObj.episodeName);
     setParameter(episodeObjStr + ".EpisodeType", episodeObj.episodeType);
     setParameter(episodeObjStr + ".ResourceId", episodeObj.resourceId);
+    setParameter(episodeObjStr + ".StartTime", episodeObj.startTime);
     setParameter(episodeObjStr + ".SwitchType", episodeObj.switchType);
   }
 }

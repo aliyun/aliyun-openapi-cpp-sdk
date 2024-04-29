@@ -52,65 +52,65 @@ void DescribeCasterConfigResult::parse(const std::string &payload)
 			syncGroupsConfigObject.resourceIds.push_back(value.asString());
 		syncGroupsConfig_.push_back(syncGroupsConfigObject);
 	}
-	auto transcodeConfigNode = value["TranscodeConfig"];
-	if(!transcodeConfigNode["CasterTemplate"].isNull())
-		transcodeConfig_.casterTemplate = transcodeConfigNode["CasterTemplate"].asString();
-		auto allLiveTemplateIds = transcodeConfigNode["LiveTemplateIds"]["LocationId"];
-		for (auto value : allLiveTemplateIds)
-			transcodeConfig_.liveTemplateIds.push_back(value.asString());
 	auto recordConfigNode = value["RecordConfig"];
-	if(!recordConfigNode["OssEndpoint"].isNull())
-		recordConfig_.ossEndpoint = recordConfigNode["OssEndpoint"].asString();
-	if(!recordConfigNode["OssBucket"].isNull())
-		recordConfig_.ossBucket = recordConfigNode["OssBucket"].asString();
 	if(!recordConfigNode["OnDemand"].isNull())
 		recordConfig_.onDemand = std::stoi(recordConfigNode["OnDemand"].asString());
+	if(!recordConfigNode["OssBucket"].isNull())
+		recordConfig_.ossBucket = recordConfigNode["OssBucket"].asString();
+	if(!recordConfigNode["OssEndpoint"].isNull())
+		recordConfig_.ossEndpoint = recordConfigNode["OssEndpoint"].asString();
 	auto allRecordFormatNode = recordConfigNode["RecordFormat"]["RecordFormatItem"];
 	for (auto recordConfigNodeRecordFormatRecordFormatItem : allRecordFormatNode)
 	{
 		RecordConfig::RecordFormatItem recordFormatItemObject;
 		if(!recordConfigNodeRecordFormatRecordFormatItem["CycleDuration"].isNull())
 			recordFormatItemObject.cycleDuration = std::stoi(recordConfigNodeRecordFormatRecordFormatItem["CycleDuration"].asString());
-		if(!recordConfigNodeRecordFormatRecordFormatItem["SliceOssObjectPrefix"].isNull())
-			recordFormatItemObject.sliceOssObjectPrefix = recordConfigNodeRecordFormatRecordFormatItem["SliceOssObjectPrefix"].asString();
-		if(!recordConfigNodeRecordFormatRecordFormatItem["OssObjectPrefix"].isNull())
-			recordFormatItemObject.ossObjectPrefix = recordConfigNodeRecordFormatRecordFormatItem["OssObjectPrefix"].asString();
 		if(!recordConfigNodeRecordFormatRecordFormatItem["Format"].isNull())
 			recordFormatItemObject.format = recordConfigNodeRecordFormatRecordFormatItem["Format"].asString();
+		if(!recordConfigNodeRecordFormatRecordFormatItem["OssObjectPrefix"].isNull())
+			recordFormatItemObject.ossObjectPrefix = recordConfigNodeRecordFormatRecordFormatItem["OssObjectPrefix"].asString();
+		if(!recordConfigNodeRecordFormatRecordFormatItem["SliceOssObjectPrefix"].isNull())
+			recordFormatItemObject.sliceOssObjectPrefix = recordConfigNodeRecordFormatRecordFormatItem["SliceOssObjectPrefix"].asString();
 		recordConfig_.recordFormat.push_back(recordFormatItemObject);
 	}
+	auto transcodeConfigNode = value["TranscodeConfig"];
+	if(!transcodeConfigNode["CasterTemplate"].isNull())
+		transcodeConfig_.casterTemplate = transcodeConfigNode["CasterTemplate"].asString();
+		auto allLiveTemplateIds = transcodeConfigNode["LiveTemplateIds"]["LocationId"];
+		for (auto value : allLiveTemplateIds)
+			transcodeConfig_.liveTemplateIds.push_back(value.asString());
+	if(!value["AutoSwitchUrgentConfig"].isNull())
+		autoSwitchUrgentConfig_ = value["AutoSwitchUrgentConfig"].asString();
+	if(!value["AutoSwitchUrgentOn"].isNull())
+		autoSwitchUrgentOn_ = value["AutoSwitchUrgentOn"].asString();
+	if(!value["CallbackUrl"].isNull())
+		callbackUrl_ = value["CallbackUrl"].asString();
+	if(!value["CasterId"].isNull())
+		casterId_ = value["CasterId"].asString();
+	if(!value["CasterName"].isNull())
+		casterName_ = value["CasterName"].asString();
+	if(!value["ChannelEnable"].isNull())
+		channelEnable_ = std::stoi(value["ChannelEnable"].asString());
 	if(!value["Delay"].isNull())
 		delay_ = std::stof(value["Delay"].asString());
-	if(!value["UrgentLiveStreamUrl"].isNull())
-		urgentLiveStreamUrl_ = value["UrgentLiveStreamUrl"].asString();
-	if(!value["UrgentMaterialId"].isNull())
-		urgentMaterialId_ = value["UrgentMaterialId"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["ProgramEffect"].isNull())
+		programEffect_ = std::stoi(value["ProgramEffect"].asString());
+	if(!value["ProgramName"].isNull())
+		programName_ = value["ProgramName"].asString();
+	if(!value["SideOutputUrl"].isNull())
+		sideOutputUrl_ = value["SideOutputUrl"].asString();
+	if(!value["SideOutputUrlList"].isNull())
+		sideOutputUrlList_ = value["SideOutputUrlList"].asString();
 	if(!value["UrgentImageId"].isNull())
 		urgentImageId_ = value["UrgentImageId"].asString();
 	if(!value["UrgentImageUrl"].isNull())
 		urgentImageUrl_ = value["UrgentImageUrl"].asString();
-	if(!value["CallbackUrl"].isNull())
-		callbackUrl_ = value["CallbackUrl"].asString();
-	if(!value["ProgramName"].isNull())
-		programName_ = value["ProgramName"].asString();
-	if(!value["CasterName"].isNull())
-		casterName_ = value["CasterName"].asString();
-	if(!value["CasterId"].isNull())
-		casterId_ = value["CasterId"].asString();
-	if(!value["ProgramEffect"].isNull())
-		programEffect_ = std::stoi(value["ProgramEffect"].asString());
-	if(!value["ChannelEnable"].isNull())
-		channelEnable_ = std::stoi(value["ChannelEnable"].asString());
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["SideOutputUrlList"].isNull())
-		sideOutputUrlList_ = value["SideOutputUrlList"].asString();
-	if(!value["SideOutputUrl"].isNull())
-		sideOutputUrl_ = value["SideOutputUrl"].asString();
-	if(!value["AutoSwitchUrgentOn"].isNull())
-		autoSwitchUrgentOn_ = value["AutoSwitchUrgentOn"].asString();
-	if(!value["AutoSwitchUrgentConfig"].isNull())
-		autoSwitchUrgentConfig_ = value["AutoSwitchUrgentConfig"].asString();
+	if(!value["UrgentLiveStreamUrl"].isNull())
+		urgentLiveStreamUrl_ = value["UrgentLiveStreamUrl"].asString();
+	if(!value["UrgentMaterialId"].isNull())
+		urgentMaterialId_ = value["UrgentMaterialId"].asString();
 
 }
 
@@ -124,19 +124,14 @@ std::string DescribeCasterConfigResult::getDomainName()const
 	return domainName_;
 }
 
-std::string DescribeCasterConfigResult::getUrgentImageUrl()const
-{
-	return urgentImageUrl_;
-}
-
 std::string DescribeCasterConfigResult::getAutoSwitchUrgentConfig()const
 {
 	return autoSwitchUrgentConfig_;
 }
 
-std::string DescribeCasterConfigResult::getUrgentMaterialId()const
+std::string DescribeCasterConfigResult::getUrgentImageUrl()const
 {
-	return urgentMaterialId_;
+	return urgentImageUrl_;
 }
 
 std::string DescribeCasterConfigResult::getSideOutputUrlList()const
@@ -144,19 +139,24 @@ std::string DescribeCasterConfigResult::getSideOutputUrlList()const
 	return sideOutputUrlList_;
 }
 
+std::string DescribeCasterConfigResult::getUrgentMaterialId()const
+{
+	return urgentMaterialId_;
+}
+
 DescribeCasterConfigResult::TranscodeConfig DescribeCasterConfigResult::getTranscodeConfig()const
 {
 	return transcodeConfig_;
 }
 
-std::string DescribeCasterConfigResult::getUrgentImageId()const
-{
-	return urgentImageId_;
-}
-
 std::string DescribeCasterConfigResult::getProgramName()const
 {
 	return programName_;
+}
+
+std::string DescribeCasterConfigResult::getUrgentImageId()const
+{
+	return urgentImageId_;
 }
 
 float DescribeCasterConfigResult::getDelay()const

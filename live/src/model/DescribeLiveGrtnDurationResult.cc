@@ -43,16 +43,16 @@ void DescribeLiveGrtnDurationResult::parse(const std::string &payload)
 	for (auto valueStreamDetailDataStreamData : allStreamDetailDataNode)
 	{
 		StreamData streamDetailDataObject;
+		if(!valueStreamDetailDataStreamData["AppId"].isNull())
+			streamDetailDataObject.appId = valueStreamDetailDataStreamData["AppId"].asString();
 		if(!valueStreamDetailDataStreamData["Duration"].isNull())
 			streamDetailDataObject.duration = std::stol(valueStreamDetailDataStreamData["Duration"].asString());
-		if(!valueStreamDetailDataStreamData["TimeStamp"].isNull())
-			streamDetailDataObject.timeStamp = valueStreamDetailDataStreamData["TimeStamp"].asString();
 		if(!valueStreamDetailDataStreamData["MediaProfile"].isNull())
 			streamDetailDataObject.mediaProfile = valueStreamDetailDataStreamData["MediaProfile"].asString();
 		if(!valueStreamDetailDataStreamData["MediaType"].isNull())
 			streamDetailDataObject.mediaType = valueStreamDetailDataStreamData["MediaType"].asString();
-		if(!valueStreamDetailDataStreamData["AppId"].isNull())
-			streamDetailDataObject.appId = valueStreamDetailDataStreamData["AppId"].asString();
+		if(!valueStreamDetailDataStreamData["TimeStamp"].isNull())
+			streamDetailDataObject.timeStamp = valueStreamDetailDataStreamData["TimeStamp"].asString();
 		streamDetailData_.push_back(streamDetailDataObject);
 	}
 

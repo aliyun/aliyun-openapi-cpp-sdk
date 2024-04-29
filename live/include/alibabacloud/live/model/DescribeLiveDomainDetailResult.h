@@ -41,8 +41,8 @@ namespace AlibabaCloud
 					std::string sSLPub;
 					std::string gmtModified;
 					std::string region;
-					std::string gmtCreated;
 					std::string certName;
+					std::string gmtCreated;
 					std::string cname;
 					std::string domainStatus;
 					std::string sSLProtocol;

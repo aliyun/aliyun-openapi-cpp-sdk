@@ -34,13 +34,13 @@ void AddShowIntoShowListRequest::setShowList(const std::vector<AddShowIntoShowLi
   for(int dep1 = 0; dep1 != showList.size(); dep1++) {
   auto showListObj = showList.at(dep1);
   std::string showListObjStr = std::string("showList") + "." + std::to_string(dep1 + 1);
-    setParameter(showListObjStr + ".showName", showListObj.showName);
+    setParameter(showListObjStr + ".duration", std::to_string(showListObj.duration));
+    setParameter(showListObjStr + ".liveInputType", std::to_string(showListObj.liveInputType));
     setParameter(showListObjStr + ".repeatTimes", std::to_string(showListObj.repeatTimes));
+    setParameter(showListObjStr + ".resourceId", showListObj.resourceId);
     setParameter(showListObjStr + ".resourceType", showListObj.resourceType);
     setParameter(showListObjStr + ".resourceUrl", showListObj.resourceUrl);
-    setParameter(showListObjStr + ".liveInputType", std::to_string(showListObj.liveInputType));
-    setParameter(showListObjStr + ".duration", std::to_string(showListObj.duration));
-    setParameter(showListObjStr + ".resourceId", showListObj.resourceId);
+    setParameter(showListObjStr + ".showName", showListObj.showName);
   }
 }
 

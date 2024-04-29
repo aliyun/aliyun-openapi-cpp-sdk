@@ -32,11 +32,6 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_LIVE_EXPORT DescribeCasterConfigResult : public ServiceResult
 			{
 			public:
-				struct TranscodeConfig
-				{
-					std::string casterTemplate;
-					std::vector<std::string> liveTemplateIds;
-				};
 				struct RecordConfig
 				{
 					struct RecordFormatItem
@@ -51,6 +46,11 @@ namespace AlibabaCloud
 					std::string ossBucket;
 					int onDemand;
 				};
+				struct TranscodeConfig
+				{
+					std::string casterTemplate;
+					std::vector<std::string> liveTemplateIds;
+				};
 				struct SyncGroup
 				{
 					std::vector<std::string> resourceIds;
@@ -64,13 +64,13 @@ namespace AlibabaCloud
 				~DescribeCasterConfigResult();
 				int getChannelEnable()const;
 				std::string getDomainName()const;
-				std::string getUrgentImageUrl()const;
 				std::string getAutoSwitchUrgentConfig()const;
-				std::string getUrgentMaterialId()const;
+				std::string getUrgentImageUrl()const;
 				std::string getSideOutputUrlList()const;
+				std::string getUrgentMaterialId()const;
 				TranscodeConfig getTranscodeConfig()const;
-				std::string getUrgentImageId()const;
 				std::string getProgramName()const;
+				std::string getUrgentImageId()const;
 				float getDelay()const;
 				std::string getCallbackUrl()const;
 				std::string getSideOutputUrl()const;
@@ -87,13 +87,13 @@ namespace AlibabaCloud
 			private:
 				int channelEnable_;
 				std::string domainName_;
-				std::string urgentImageUrl_;
 				std::string autoSwitchUrgentConfig_;
-				std::string urgentMaterialId_;
+				std::string urgentImageUrl_;
 				std::string sideOutputUrlList_;
+				std::string urgentMaterialId_;
 				TranscodeConfig transcodeConfig_;
-				std::string urgentImageId_;
 				std::string programName_;
+				std::string urgentImageId_;
 				float delay_;
 				std::string callbackUrl_;
 				std::string sideOutputUrl_;

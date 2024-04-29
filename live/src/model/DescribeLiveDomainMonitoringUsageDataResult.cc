@@ -43,30 +43,30 @@ void DescribeLiveDomainMonitoringUsageDataResult::parse(const std::string &paylo
 	for (auto valueMonitoringDataMonitoringDataItem : allMonitoringDataNode)
 	{
 		MonitoringDataItem monitoringDataObject;
-		if(!valueMonitoringDataMonitoringDataItem["Region"].isNull())
-			monitoringDataObject.region = valueMonitoringDataMonitoringDataItem["Region"].asString();
-		if(!valueMonitoringDataMonitoringDataItem["TimeStamp"].isNull())
-			monitoringDataObject.timeStamp = valueMonitoringDataMonitoringDataItem["TimeStamp"].asString();
+		if(!valueMonitoringDataMonitoringDataItem["DomainName"].isNull())
+			monitoringDataObject.domainName = valueMonitoringDataMonitoringDataItem["DomainName"].asString();
 		if(!valueMonitoringDataMonitoringDataItem["Duration"].isNull())
 			monitoringDataObject.duration = std::stoi(valueMonitoringDataMonitoringDataItem["Duration"].asString());
 		if(!valueMonitoringDataMonitoringDataItem["InstanceId"].isNull())
 			monitoringDataObject.instanceId = valueMonitoringDataMonitoringDataItem["InstanceId"].asString();
-		if(!valueMonitoringDataMonitoringDataItem["DomainName"].isNull())
-			monitoringDataObject.domainName = valueMonitoringDataMonitoringDataItem["DomainName"].asString();
+		if(!valueMonitoringDataMonitoringDataItem["Region"].isNull())
+			monitoringDataObject.region = valueMonitoringDataMonitoringDataItem["Region"].asString();
 		if(!valueMonitoringDataMonitoringDataItem["Resolution"].isNull())
 			monitoringDataObject.resolution = valueMonitoringDataMonitoringDataItem["Resolution"].asString();
+		if(!valueMonitoringDataMonitoringDataItem["TimeStamp"].isNull())
+			monitoringDataObject.timeStamp = valueMonitoringDataMonitoringDataItem["TimeStamp"].asString();
 		monitoringData_.push_back(monitoringDataObject);
 	}
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
-	if(!value["Region"].isNull())
-		region_ = value["Region"].asString();
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["Region"].isNull())
+		region_ = value["Region"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 
 }
 
@@ -80,14 +80,14 @@ std::string DescribeLiveDomainMonitoringUsageDataResult::getEndTime()const
 	return endTime_;
 }
 
-std::string DescribeLiveDomainMonitoringUsageDataResult::getInstanceId()const
-{
-	return instanceId_;
-}
-
 std::string DescribeLiveDomainMonitoringUsageDataResult::getDomainName()const
 {
 	return domainName_;
+}
+
+std::string DescribeLiveDomainMonitoringUsageDataResult::getInstanceId()const
+{
+	return instanceId_;
 }
 
 std::string DescribeLiveDomainMonitoringUsageDataResult::getStartTime()const

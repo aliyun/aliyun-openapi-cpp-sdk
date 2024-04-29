@@ -37,15 +37,15 @@ namespace AlibabaCloud
 					struct StreamInfo
 					{
 						std::string outputStreamUrl;
-						std::string videoFormat;
 						std::string transcodeConfig;
+						std::string videoFormat;
 					};
 					std::string sceneId;
 					std::vector<CasterStream::StreamInfo> streamInfos;
 					std::string rtsUrl;
 					std::string streamUrl;
-					std::string rtmpUrl;
 					int outputType;
+					std::string rtmpUrl;
 				};
 
 

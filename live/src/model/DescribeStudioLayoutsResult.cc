@@ -43,94 +43,94 @@ void DescribeStudioLayoutsResult::parse(const std::string &payload)
 	for (auto valueStudioLayoutsStudioLayout : allStudioLayoutsNode)
 	{
 		StudioLayout studioLayoutsObject;
-		if(!valueStudioLayoutsStudioLayout["LayoutType"].isNull())
-			studioLayoutsObject.layoutType = valueStudioLayoutsStudioLayout["LayoutType"].asString();
 		if(!valueStudioLayoutsStudioLayout["LayoutId"].isNull())
 			studioLayoutsObject.layoutId = valueStudioLayoutsStudioLayout["LayoutId"].asString();
 		if(!valueStudioLayoutsStudioLayout["LayoutName"].isNull())
 			studioLayoutsObject.layoutName = valueStudioLayoutsStudioLayout["LayoutName"].asString();
-		auto allScreenInputConfigListNode = valueStudioLayoutsStudioLayout["ScreenInputConfigList"]["ScreenInputConfig"];
-		for (auto valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig : allScreenInputConfigListNode)
+		if(!valueStudioLayoutsStudioLayout["LayoutType"].isNull())
+			studioLayoutsObject.layoutType = valueStudioLayoutsStudioLayout["LayoutType"].asString();
+		auto allLayerOrderConfigListNode = valueStudioLayoutsStudioLayout["LayerOrderConfigList"]["LayerOrderConfig"];
+		for (auto valueStudioLayoutsStudioLayoutLayerOrderConfigListLayerOrderConfig : allLayerOrderConfigListNode)
 		{
-			StudioLayout::ScreenInputConfig screenInputConfigListObject;
-			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["PortraitType"].isNull())
-				screenInputConfigListObject.portraitType = std::stoi(valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["PortraitType"].asString());
-			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["Index"].isNull())
-				screenInputConfigListObject.index = std::stoi(valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["Index"].asString());
-			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["PositionX"].isNull())
-				screenInputConfigListObject.positionX = valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["PositionX"].asString();
-			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["Color"].isNull())
-				screenInputConfigListObject.color = valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["Color"].asString();
-			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["OnlyAudio"].isNull())
-				screenInputConfigListObject.onlyAudio = valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["OnlyAudio"].asString() == "true";
-			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["HeightNormalized"].isNull())
-				screenInputConfigListObject.heightNormalized = std::stof(valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["HeightNormalized"].asString());
-			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["PositionY"].isNull())
-				screenInputConfigListObject.positionY = valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["PositionY"].asString();
-			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["ChannelId"].isNull())
-				screenInputConfigListObject.channelId = valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["ChannelId"].asString();
-			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["VideoResourceId"].isNull())
-				screenInputConfigListObject.videoResourceId = valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["VideoResourceId"].asString();
-			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["Id"].isNull())
-				screenInputConfigListObject.id = valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["Id"].asString();
-			auto audioConfigNode = value["AudioConfig"];
-			if(!audioConfigNode["VolumeRate"].isNull())
-				screenInputConfigListObject.audioConfig.volumeRate = std::stof(audioConfigNode["VolumeRate"].asString());
-			if(!audioConfigNode["ValidChannel"].isNull())
-				screenInputConfigListObject.audioConfig.validChannel = audioConfigNode["ValidChannel"].asString();
-			studioLayoutsObject.screenInputConfigList.push_back(screenInputConfigListObject);
+			StudioLayout::LayerOrderConfig layerOrderConfigListObject;
+			if(!valueStudioLayoutsStudioLayoutLayerOrderConfigListLayerOrderConfig["Id"].isNull())
+				layerOrderConfigListObject.id = valueStudioLayoutsStudioLayoutLayerOrderConfigListLayerOrderConfig["Id"].asString();
+			if(!valueStudioLayoutsStudioLayoutLayerOrderConfigListLayerOrderConfig["Type"].isNull())
+				layerOrderConfigListObject.type = valueStudioLayoutsStudioLayoutLayerOrderConfigListLayerOrderConfig["Type"].asString();
+			studioLayoutsObject.layerOrderConfigList.push_back(layerOrderConfigListObject);
 		}
 		auto allMediaInputConfigListNode = valueStudioLayoutsStudioLayout["MediaInputConfigList"]["MediaInputConfig"];
 		for (auto valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig : allMediaInputConfigListNode)
 		{
 			StudioLayout::MediaInputConfig mediaInputConfigListObject;
-			if(!valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["Index"].isNull())
-				mediaInputConfigListObject.index = std::stoi(valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["Index"].asString());
-			if(!valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["HeightNormalized"].isNull())
-				mediaInputConfigListObject.heightNormalized = std::stof(valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["HeightNormalized"].asString());
-			if(!valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["FillMode"].isNull())
-				mediaInputConfigListObject.fillMode = valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["FillMode"].asString();
-			if(!valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["PositionRefer"].isNull())
-				mediaInputConfigListObject.positionRefer = valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["PositionRefer"].asString();
 			if(!valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["ChannelId"].isNull())
 				mediaInputConfigListObject.channelId = valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["ChannelId"].asString();
+			if(!valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["FillMode"].isNull())
+				mediaInputConfigListObject.fillMode = valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["FillMode"].asString();
+			if(!valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["HeightNormalized"].isNull())
+				mediaInputConfigListObject.heightNormalized = std::stof(valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["HeightNormalized"].asString());
+			if(!valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["Id"].isNull())
+				mediaInputConfigListObject.id = valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["Id"].asString();
+			if(!valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["ImageMaterialId"].isNull())
+				mediaInputConfigListObject.imageMaterialId = valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["ImageMaterialId"].asString();
+			if(!valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["Index"].isNull())
+				mediaInputConfigListObject.index = std::stoi(valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["Index"].asString());
+			if(!valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["PositionRefer"].isNull())
+				mediaInputConfigListObject.positionRefer = valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["PositionRefer"].asString();
 			if(!valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["VideoResourceId"].isNull())
 				mediaInputConfigListObject.videoResourceId = valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["VideoResourceId"].asString();
 			if(!valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["WidthNormalized"].isNull())
 				mediaInputConfigListObject.widthNormalized = std::stof(valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["WidthNormalized"].asString());
-			if(!valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["ImageMaterialId"].isNull())
-				mediaInputConfigListObject.imageMaterialId = valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["ImageMaterialId"].asString();
-			if(!valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["Id"].isNull())
-				mediaInputConfigListObject.id = valueStudioLayoutsStudioLayoutMediaInputConfigListMediaInputConfig["Id"].asString();
 			auto allPositionNormalized = value["PositionNormalized"]["Position"];
 			for (auto value : allPositionNormalized)
 				mediaInputConfigListObject.positionNormalized.push_back(value.asString());
 			studioLayoutsObject.mediaInputConfigList.push_back(mediaInputConfigListObject);
 		}
-		auto allLayerOrderConfigListNode = valueStudioLayoutsStudioLayout["LayerOrderConfigList"]["LayerOrderConfig"];
-		for (auto valueStudioLayoutsStudioLayoutLayerOrderConfigListLayerOrderConfig : allLayerOrderConfigListNode)
+		auto allScreenInputConfigListNode = valueStudioLayoutsStudioLayout["ScreenInputConfigList"]["ScreenInputConfig"];
+		for (auto valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig : allScreenInputConfigListNode)
 		{
-			StudioLayout::LayerOrderConfig layerOrderConfigListObject;
-			if(!valueStudioLayoutsStudioLayoutLayerOrderConfigListLayerOrderConfig["Type"].isNull())
-				layerOrderConfigListObject.type = valueStudioLayoutsStudioLayoutLayerOrderConfigListLayerOrderConfig["Type"].asString();
-			if(!valueStudioLayoutsStudioLayoutLayerOrderConfigListLayerOrderConfig["Id"].isNull())
-				layerOrderConfigListObject.id = valueStudioLayoutsStudioLayoutLayerOrderConfigListLayerOrderConfig["Id"].asString();
-			studioLayoutsObject.layerOrderConfigList.push_back(layerOrderConfigListObject);
+			StudioLayout::ScreenInputConfig screenInputConfigListObject;
+			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["ChannelId"].isNull())
+				screenInputConfigListObject.channelId = valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["ChannelId"].asString();
+			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["Color"].isNull())
+				screenInputConfigListObject.color = valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["Color"].asString();
+			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["HeightNormalized"].isNull())
+				screenInputConfigListObject.heightNormalized = std::stof(valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["HeightNormalized"].asString());
+			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["Id"].isNull())
+				screenInputConfigListObject.id = valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["Id"].asString();
+			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["Index"].isNull())
+				screenInputConfigListObject.index = std::stoi(valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["Index"].asString());
+			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["OnlyAudio"].isNull())
+				screenInputConfigListObject.onlyAudio = valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["OnlyAudio"].asString() == "true";
+			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["PortraitType"].isNull())
+				screenInputConfigListObject.portraitType = std::stoi(valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["PortraitType"].asString());
+			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["PositionX"].isNull())
+				screenInputConfigListObject.positionX = valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["PositionX"].asString();
+			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["PositionY"].isNull())
+				screenInputConfigListObject.positionY = valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["PositionY"].asString();
+			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["VideoResourceId"].isNull())
+				screenInputConfigListObject.videoResourceId = valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["VideoResourceId"].asString();
+			auto audioConfigNode = value["AudioConfig"];
+			if(!audioConfigNode["ValidChannel"].isNull())
+				screenInputConfigListObject.audioConfig.validChannel = audioConfigNode["ValidChannel"].asString();
+			if(!audioConfigNode["VolumeRate"].isNull())
+				screenInputConfigListObject.audioConfig.volumeRate = std::stof(audioConfigNode["VolumeRate"].asString());
+			studioLayoutsObject.screenInputConfigList.push_back(screenInputConfigListObject);
 		}
+		auto bgImageConfigNode = value["BgImageConfig"];
+		if(!bgImageConfigNode["Id"].isNull())
+			studioLayoutsObject.bgImageConfig.id = bgImageConfigNode["Id"].asString();
+		if(!bgImageConfigNode["ImageUrl"].isNull())
+			studioLayoutsObject.bgImageConfig.imageUrl = bgImageConfigNode["ImageUrl"].asString();
+		if(!bgImageConfigNode["LocationId"].isNull())
+			studioLayoutsObject.bgImageConfig.locationId = bgImageConfigNode["LocationId"].asString();
+		if(!bgImageConfigNode["MaterialId"].isNull())
+			studioLayoutsObject.bgImageConfig.materialId = bgImageConfigNode["MaterialId"].asString();
 		auto commonConfigNode = value["CommonConfig"];
 		if(!commonConfigNode["ChannelId"].isNull())
 			studioLayoutsObject.commonConfig.channelId = commonConfigNode["ChannelId"].asString();
 		if(!commonConfigNode["VideoResourceId"].isNull())
 			studioLayoutsObject.commonConfig.videoResourceId = commonConfigNode["VideoResourceId"].asString();
-		auto bgImageConfigNode = value["BgImageConfig"];
-		if(!bgImageConfigNode["MaterialId"].isNull())
-			studioLayoutsObject.bgImageConfig.materialId = bgImageConfigNode["MaterialId"].asString();
-		if(!bgImageConfigNode["ImageUrl"].isNull())
-			studioLayoutsObject.bgImageConfig.imageUrl = bgImageConfigNode["ImageUrl"].asString();
-		if(!bgImageConfigNode["Id"].isNull())
-			studioLayoutsObject.bgImageConfig.id = bgImageConfigNode["Id"].asString();
-		if(!bgImageConfigNode["LocationId"].isNull())
-			studioLayoutsObject.bgImageConfig.locationId = bgImageConfigNode["LocationId"].asString();
 		studioLayouts_.push_back(studioLayoutsObject);
 	}
 	if(!value["Total"].isNull())

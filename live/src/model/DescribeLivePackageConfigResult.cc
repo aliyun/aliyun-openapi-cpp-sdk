@@ -45,32 +45,32 @@ void DescribeLivePackageConfigResult::parse(const std::string &payload)
 		LivePackageConfig livePackageConfigListObject;
 		if(!valueLivePackageConfigListLivePackageConfig["AppName"].isNull())
 			livePackageConfigListObject.appName = valueLivePackageConfigListLivePackageConfig["AppName"].asString();
-		if(!valueLivePackageConfigListLivePackageConfig["SegmentNum"].isNull())
-			livePackageConfigListObject.segmentNum = std::stoi(valueLivePackageConfigListLivePackageConfig["SegmentNum"].asString());
-		if(!valueLivePackageConfigListLivePackageConfig["StreamName"].isNull())
-			livePackageConfigListObject.streamName = valueLivePackageConfigListLivePackageConfig["StreamName"].asString();
-		if(!valueLivePackageConfigListLivePackageConfig["Protocol"].isNull())
-			livePackageConfigListObject.protocol = valueLivePackageConfigListLivePackageConfig["Protocol"].asString();
+		if(!valueLivePackageConfigListLivePackageConfig["DomainName"].isNull())
+			livePackageConfigListObject.domainName = valueLivePackageConfigListLivePackageConfig["DomainName"].asString();
 		if(!valueLivePackageConfigListLivePackageConfig["IgnoreTranscode"].isNull())
 			livePackageConfigListObject.ignoreTranscode = valueLivePackageConfigListLivePackageConfig["IgnoreTranscode"].asString() == "true";
 		if(!valueLivePackageConfigListLivePackageConfig["PartDuration"].isNull())
 			livePackageConfigListObject.partDuration = std::stoi(valueLivePackageConfigListLivePackageConfig["PartDuration"].asString());
+		if(!valueLivePackageConfigListLivePackageConfig["Protocol"].isNull())
+			livePackageConfigListObject.protocol = valueLivePackageConfigListLivePackageConfig["Protocol"].asString();
 		if(!valueLivePackageConfigListLivePackageConfig["SegmentDuration"].isNull())
 			livePackageConfigListObject.segmentDuration = std::stoi(valueLivePackageConfigListLivePackageConfig["SegmentDuration"].asString());
-		if(!valueLivePackageConfigListLivePackageConfig["DomainName"].isNull())
-			livePackageConfigListObject.domainName = valueLivePackageConfigListLivePackageConfig["DomainName"].asString();
+		if(!valueLivePackageConfigListLivePackageConfig["SegmentNum"].isNull())
+			livePackageConfigListObject.segmentNum = std::stoi(valueLivePackageConfigListLivePackageConfig["SegmentNum"].asString());
+		if(!valueLivePackageConfigListLivePackageConfig["StreamName"].isNull())
+			livePackageConfigListObject.streamName = valueLivePackageConfigListLivePackageConfig["StreamName"].asString();
 		livePackageConfigList_.push_back(livePackageConfigListObject);
 	}
-	if(!value["PageNum"].isNull())
-		pageNum_ = std::stoi(value["PageNum"].asString());
 	if(!value["Order"].isNull())
 		order_ = value["Order"].asString();
-	if(!value["TotalPage"].isNull())
-		totalPage_ = std::stoi(value["TotalPage"].asString());
+	if(!value["PageNum"].isNull())
+		pageNum_ = std::stoi(value["PageNum"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalNum"].isNull())
 		totalNum_ = std::stoi(value["TotalNum"].asString());
+	if(!value["TotalPage"].isNull())
+		totalPage_ = std::stoi(value["TotalPage"].asString());
 
 }
 
@@ -89,14 +89,14 @@ int DescribeLivePackageConfigResult::getPageNum()const
 	return pageNum_;
 }
 
-int DescribeLivePackageConfigResult::getTotalPage()const
-{
-	return totalPage_;
-}
-
 int DescribeLivePackageConfigResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+int DescribeLivePackageConfigResult::getTotalPage()const
+{
+	return totalPage_;
 }
 
 std::vector<DescribeLivePackageConfigResult::LivePackageConfig> DescribeLivePackageConfigResult::getLivePackageConfigList()const

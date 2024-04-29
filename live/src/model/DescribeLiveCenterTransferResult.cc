@@ -43,20 +43,20 @@ void DescribeLiveCenterTransferResult::parse(const std::string &payload)
 	for (auto valueLiveCenterTransferInfoListLiveCenterTransferInfo : allLiveCenterTransferInfoListNode)
 	{
 		LiveCenterTransferInfo liveCenterTransferInfoListObject;
-		if(!valueLiveCenterTransferInfoListLiveCenterTransferInfo["EndTime"].isNull())
-			liveCenterTransferInfoListObject.endTime = valueLiveCenterTransferInfoListLiveCenterTransferInfo["EndTime"].asString();
 		if(!valueLiveCenterTransferInfoListLiveCenterTransferInfo["AppName"].isNull())
 			liveCenterTransferInfoListObject.appName = valueLiveCenterTransferInfoListLiveCenterTransferInfo["AppName"].asString();
-		if(!valueLiveCenterTransferInfoListLiveCenterTransferInfo["StartTime"].isNull())
-			liveCenterTransferInfoListObject.startTime = valueLiveCenterTransferInfoListLiveCenterTransferInfo["StartTime"].asString();
-		if(!valueLiveCenterTransferInfoListLiveCenterTransferInfo["TransferArgs"].isNull())
-			liveCenterTransferInfoListObject.transferArgs = valueLiveCenterTransferInfoListLiveCenterTransferInfo["TransferArgs"].asString();
-		if(!valueLiveCenterTransferInfoListLiveCenterTransferInfo["StreamName"].isNull())
-			liveCenterTransferInfoListObject.streamName = valueLiveCenterTransferInfoListLiveCenterTransferInfo["StreamName"].asString();
-		if(!valueLiveCenterTransferInfoListLiveCenterTransferInfo["DstUrl"].isNull())
-			liveCenterTransferInfoListObject.dstUrl = valueLiveCenterTransferInfoListLiveCenterTransferInfo["DstUrl"].asString();
 		if(!valueLiveCenterTransferInfoListLiveCenterTransferInfo["DomainName"].isNull())
 			liveCenterTransferInfoListObject.domainName = valueLiveCenterTransferInfoListLiveCenterTransferInfo["DomainName"].asString();
+		if(!valueLiveCenterTransferInfoListLiveCenterTransferInfo["DstUrl"].isNull())
+			liveCenterTransferInfoListObject.dstUrl = valueLiveCenterTransferInfoListLiveCenterTransferInfo["DstUrl"].asString();
+		if(!valueLiveCenterTransferInfoListLiveCenterTransferInfo["EndTime"].isNull())
+			liveCenterTransferInfoListObject.endTime = valueLiveCenterTransferInfoListLiveCenterTransferInfo["EndTime"].asString();
+		if(!valueLiveCenterTransferInfoListLiveCenterTransferInfo["StartTime"].isNull())
+			liveCenterTransferInfoListObject.startTime = valueLiveCenterTransferInfoListLiveCenterTransferInfo["StartTime"].asString();
+		if(!valueLiveCenterTransferInfoListLiveCenterTransferInfo["StreamName"].isNull())
+			liveCenterTransferInfoListObject.streamName = valueLiveCenterTransferInfoListLiveCenterTransferInfo["StreamName"].asString();
+		if(!valueLiveCenterTransferInfoListLiveCenterTransferInfo["TransferArgs"].isNull())
+			liveCenterTransferInfoListObject.transferArgs = valueLiveCenterTransferInfoListLiveCenterTransferInfo["TransferArgs"].asString();
 		liveCenterTransferInfoList_.push_back(liveCenterTransferInfoListObject);
 	}
 

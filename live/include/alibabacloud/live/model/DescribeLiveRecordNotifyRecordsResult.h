@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string description;
 					std::string streamName;
 					std::string notifyTime;
-					std::string notifyContent;
 					std::string domainName;
+					std::string notifyContent;
 					std::string notifyUrl;
 					std::string notifyResult;
 					std::string appName;
@@ -53,8 +53,8 @@ namespace AlibabaCloud
 				int getTotalNum()const;
 				std::vector<Callback> getCallbackList()const;
 				int getPageNum()const;
-				int getTotalPage()const;
 				int getPageSize()const;
+				int getTotalPage()const;
 				int getCode()const;
 
 			protected:
@@ -64,8 +64,8 @@ namespace AlibabaCloud
 				int totalNum_;
 				std::vector<Callback> callbackList_;
 				int pageNum_;
-				int totalPage_;
 				int pageSize_;
+				int totalPage_;
 				int code_;
 
 			};

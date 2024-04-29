@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					int status;
 					std::string streamName;
 					std::string blockType;
-					std::string releaseTime;
 					std::string domainName;
+					std::string releaseTime;
 					std::string updateTime;
 					std::string locationList;
 					std::string appName;
@@ -48,18 +48,18 @@ namespace AlibabaCloud
 				DescribeStreamLocationBlockResult();
 				explicit DescribeStreamLocationBlockResult(const std::string &payload);
 				~DescribeStreamLocationBlockResult();
-				int getTotalPage()const;
 				int getPageNum()const;
 				int getPageSize()const;
+				int getTotalPage()const;
 				std::vector<StreamBlock> getStreamBlockList()const;
 				int getCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalPage_;
 				int pageNum_;
 				int pageSize_;
+				int totalPage_;
 				std::vector<StreamBlock> streamBlockList_;
 				int count_;
 

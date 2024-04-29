@@ -29,10 +29,10 @@ namespace Model {
 class ALIBABACLOUD_LIVE_EXPORT UpdateCasterSceneAudioRequest : public RpcServiceRequest {
 public:
 	struct AudioLayer {
-		float volumeRate;
+		std::string filter;
 		int fixedDelayDuration;
 		std::string validChannel;
-		std::string filter;
+		float volumeRate;
 	};
 	UpdateCasterSceneAudioRequest();
 	~UpdateCasterSceneAudioRequest();

@@ -34,20 +34,20 @@ namespace AlibabaCloud
 			public:
 				struct SceneInfo
 				{
+					struct StreamInfo
+					{
+						std::string outputStreamUrl;
+						std::string transcodeConfig;
+						std::string videoFormat;
+					};
 					std::string sceneId;
+					std::vector<SceneInfo::StreamInfo> streamInfos;
 					std::string rtsUrl;
 					std::string streamUrl;
 				};
 				struct SceneInfo1
 				{
-					struct StreamInfo
-					{
-						std::string outputStreamUrl;
-						std::string videoFormat;
-						std::string transcodeConfig;
-					};
 					std::string sceneId;
-					std::vector<SceneInfo1::StreamInfo> streamInfos;
 					std::string rtsUrl;
 					std::string streamUrl;
 				};
@@ -56,14 +56,14 @@ namespace AlibabaCloud
 				StartCasterResult();
 				explicit StartCasterResult(const std::string &payload);
 				~StartCasterResult();
-				std::vector<SceneInfo> getPvwSceneInfos()const;
-				std::vector<SceneInfo1> getPgmSceneInfos()const;
+				std::vector<SceneInfo1> getPvwSceneInfos()const;
+				std::vector<SceneInfo> getPgmSceneInfos()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<SceneInfo> pvwSceneInfos_;
-				std::vector<SceneInfo1> pgmSceneInfos_;
+				std::vector<SceneInfo1> pvwSceneInfos_;
+				std::vector<SceneInfo> pgmSceneInfos_;
 
 			};
 		}

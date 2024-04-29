@@ -45,32 +45,32 @@ void DescribeLiveStreamsNotifyRecordsResult::parse(const std::string &payload)
 		LiveStreamNotifyRecordsInfo notifyRecordsInfoObject;
 		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["AppName"].isNull())
 			notifyRecordsInfoObject.appName = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["AppName"].asString();
-		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyType"].isNull())
-			notifyRecordsInfoObject.notifyType = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyType"].asString();
-		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyContent"].isNull())
-			notifyRecordsInfoObject.notifyContent = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyContent"].asString();
 		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["Description"].isNull())
 			notifyRecordsInfoObject.description = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["Description"].asString();
-		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["StreamName"].isNull())
-			notifyRecordsInfoObject.streamName = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["StreamName"].asString();
-		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyUrl"].isNull())
-			notifyRecordsInfoObject.notifyUrl = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyUrl"].asString();
+		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["DomainName"].isNull())
+			notifyRecordsInfoObject.domainName = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["DomainName"].asString();
+		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyContent"].isNull())
+			notifyRecordsInfoObject.notifyContent = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyContent"].asString();
 		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyResult"].isNull())
 			notifyRecordsInfoObject.notifyResult = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyResult"].asString();
 		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyTime"].isNull())
 			notifyRecordsInfoObject.notifyTime = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyTime"].asString();
-		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["DomainName"].isNull())
-			notifyRecordsInfoObject.domainName = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["DomainName"].asString();
+		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyType"].isNull())
+			notifyRecordsInfoObject.notifyType = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyType"].asString();
+		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyUrl"].isNull())
+			notifyRecordsInfoObject.notifyUrl = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyUrl"].asString();
+		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["StreamName"].isNull())
+			notifyRecordsInfoObject.streamName = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["StreamName"].asString();
 		notifyRecordsInfo_.push_back(notifyRecordsInfoObject);
 	}
-	if(!value["TotalPage"].isNull())
-		totalPage_ = std::stoi(value["TotalPage"].asString());
 	if(!value["PageNum"].isNull())
 		pageNum_ = std::stoi(value["PageNum"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalNum"].isNull())
 		totalNum_ = std::stoi(value["TotalNum"].asString());
+	if(!value["TotalPage"].isNull())
+		totalPage_ = std::stoi(value["TotalPage"].asString());
 
 }
 
@@ -84,11 +84,6 @@ int DescribeLiveStreamsNotifyRecordsResult::getTotalNum()const
 	return totalNum_;
 }
 
-int DescribeLiveStreamsNotifyRecordsResult::getTotalPage()const
-{
-	return totalPage_;
-}
-
 int DescribeLiveStreamsNotifyRecordsResult::getPageNum()const
 {
 	return pageNum_;
@@ -97,5 +92,10 @@ int DescribeLiveStreamsNotifyRecordsResult::getPageNum()const
 int DescribeLiveStreamsNotifyRecordsResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+int DescribeLiveStreamsNotifyRecordsResult::getTotalPage()const
+{
+	return totalPage_;
 }
 

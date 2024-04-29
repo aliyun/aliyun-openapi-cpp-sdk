@@ -40,29 +40,29 @@ void MiguLivePullToPushStatusResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["data"];
-	if(!dataNode["status"].isNull())
-		data_.status = dataNode["status"].asString();
 	if(!dataNode["message"].isNull())
 		data_.message = dataNode["message"].asString();
-	if(!value["requestId"].isNull())
-		requestId_ = value["requestId"].asString();
+	if(!dataNode["status"].isNull())
+		data_.status = dataNode["status"].asString();
 	if(!value["code"].isNull())
 		code_ = value["code"].asString();
-	if(!value["timestamp"].isNull())
-		timestamp_ = value["timestamp"].asString();
 	if(!value["message"].isNull())
 		message_ = value["message"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["timestamp"].isNull())
+		timestamp_ = value["timestamp"].asString();
 
-}
-
-std::string MiguLivePullToPushStatusResult::getRequestId()const
-{
-	return requestId_;
 }
 
 std::string MiguLivePullToPushStatusResult::getMessage()const
 {
 	return message_;
+}
+
+std::string MiguLivePullToPushStatusResult::getRequestId()const
+{
+	return requestId_;
 }
 
 MiguLivePullToPushStatusResult::Data MiguLivePullToPushStatusResult::getData()const

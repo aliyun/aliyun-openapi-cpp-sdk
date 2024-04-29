@@ -29,13 +29,13 @@ namespace Model {
 class ALIBABACLOUD_LIVE_EXPORT AddCasterLayoutRequest : public RpcServiceRequest {
 public:
 	struct AudioLayer {
-		float volumeRate;
 		int fixedDelayDuration;
 		std::string validChannel;
+		float volumeRate;
 	};
 	struct VideoLayer {
-		int fixedDelayDuration;
 		std::string fillMode;
+		int fixedDelayDuration;
 		float heightNormalized;
 		std::string positionRefer;
 		float widthNormalized;

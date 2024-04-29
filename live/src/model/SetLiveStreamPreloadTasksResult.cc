@@ -43,22 +43,22 @@ void SetLiveStreamPreloadTasksResult::parse(const std::string &payload)
 	for (auto valuePreloadTasksMessagesPreloadTasksMessage : allPreloadTasksMessagesNode)
 	{
 		PreloadTasksMessage preloadTasksMessagesObject;
-		if(!valuePreloadTasksMessagesPreloadTasksMessage["PlayUrl"].isNull())
-			preloadTasksMessagesObject.playUrl = valuePreloadTasksMessagesPreloadTasksMessage["PlayUrl"].asString();
 		if(!valuePreloadTasksMessagesPreloadTasksMessage["Description"].isNull())
 			preloadTasksMessagesObject.description = valuePreloadTasksMessagesPreloadTasksMessage["Description"].asString();
+		if(!valuePreloadTasksMessagesPreloadTasksMessage["PlayUrl"].isNull())
+			preloadTasksMessagesObject.playUrl = valuePreloadTasksMessagesPreloadTasksMessage["PlayUrl"].asString();
 		if(!valuePreloadTasksMessagesPreloadTasksMessage["TaskId"].isNull())
 			preloadTasksMessagesObject.taskId = valuePreloadTasksMessagesPreloadTasksMessage["TaskId"].asString();
 		preloadTasksMessages_.push_back(preloadTasksMessagesObject);
 	}
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
 	if(!value["FailedURL"].isNull())
 		failedURL_ = std::stoi(value["FailedURL"].asString());
-	if(!value["TotalURL"].isNull())
-		totalURL_ = std::stoi(value["TotalURL"].asString());
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
 	if(!value["SuccessURL"].isNull())
 		successURL_ = std::stoi(value["SuccessURL"].asString());
+	if(!value["TotalURL"].isNull())
+		totalURL_ = std::stoi(value["TotalURL"].asString());
 
 }
 

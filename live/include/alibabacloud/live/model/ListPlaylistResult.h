@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					int repeatNumber;
 					std::string domainName;
 					std::string programId;
-					std::string programName;
 					std::string casterId;
+					std::string programName;
 				};
 
 

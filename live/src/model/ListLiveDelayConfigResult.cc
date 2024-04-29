@@ -43,16 +43,16 @@ void ListLiveDelayConfigResult::parse(const std::string &payload)
 	for (auto valueDelayConfigListDelayConfig : allDelayConfigListNode)
 	{
 		DelayConfig delayConfigListObject;
-		if(!valueDelayConfigListDelayConfig["Stream"].isNull())
-			delayConfigListObject.stream = valueDelayConfigListDelayConfig["Stream"].asString();
-		if(!valueDelayConfigListDelayConfig["Domain"].isNull())
-			delayConfigListObject.domain = valueDelayConfigListDelayConfig["Domain"].asString();
-		if(!valueDelayConfigListDelayConfig["TaskTriggerMode"].isNull())
-			delayConfigListObject.taskTriggerMode = valueDelayConfigListDelayConfig["TaskTriggerMode"].asString();
-		if(!valueDelayConfigListDelayConfig["DelayTime"].isNull())
-			delayConfigListObject.delayTime = valueDelayConfigListDelayConfig["DelayTime"].asString();
 		if(!valueDelayConfigListDelayConfig["App"].isNull())
 			delayConfigListObject.app = valueDelayConfigListDelayConfig["App"].asString();
+		if(!valueDelayConfigListDelayConfig["DelayTime"].isNull())
+			delayConfigListObject.delayTime = valueDelayConfigListDelayConfig["DelayTime"].asString();
+		if(!valueDelayConfigListDelayConfig["Domain"].isNull())
+			delayConfigListObject.domain = valueDelayConfigListDelayConfig["Domain"].asString();
+		if(!valueDelayConfigListDelayConfig["Stream"].isNull())
+			delayConfigListObject.stream = valueDelayConfigListDelayConfig["Stream"].asString();
+		if(!valueDelayConfigListDelayConfig["TaskTriggerMode"].isNull())
+			delayConfigListObject.taskTriggerMode = valueDelayConfigListDelayConfig["TaskTriggerMode"].asString();
 		delayConfigList_.push_back(delayConfigListObject);
 	}
 	if(!value["Total"].isNull())

@@ -40,25 +40,25 @@ void EditPlaylistResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto itemsNode = value["Items"];
-	auto allSuccessItemsNode = itemsNode["SuccessItems"]["SuccessItem"];
-	for (auto itemsNodeSuccessItemsSuccessItem : allSuccessItemsNode)
-	{
-		Items::SuccessItem successItemObject;
-		if(!itemsNodeSuccessItemsSuccessItem["ItemName"].isNull())
-			successItemObject.itemName = itemsNodeSuccessItemsSuccessItem["ItemName"].asString();
-		if(!itemsNodeSuccessItemsSuccessItem["ItemId"].isNull())
-			successItemObject.itemId = itemsNodeSuccessItemsSuccessItem["ItemId"].asString();
-		items_.successItems.push_back(successItemObject);
-	}
 	auto allFailedItemsNode = itemsNode["FailedItems"]["FailedItem"];
 	for (auto itemsNodeFailedItemsFailedItem : allFailedItemsNode)
 	{
 		Items::FailedItem failedItemObject;
-		if(!itemsNodeFailedItemsFailedItem["ItemName"].isNull())
-			failedItemObject.itemName = itemsNodeFailedItemsFailedItem["ItemName"].asString();
 		if(!itemsNodeFailedItemsFailedItem["ItemId"].isNull())
 			failedItemObject.itemId = itemsNodeFailedItemsFailedItem["ItemId"].asString();
+		if(!itemsNodeFailedItemsFailedItem["ItemName"].isNull())
+			failedItemObject.itemName = itemsNodeFailedItemsFailedItem["ItemName"].asString();
 		items_.failedItems.push_back(failedItemObject);
+	}
+	auto allSuccessItemsNode = itemsNode["SuccessItems"]["SuccessItem"];
+	for (auto itemsNodeSuccessItemsSuccessItem : allSuccessItemsNode)
+	{
+		Items::SuccessItem successItemObject;
+		if(!itemsNodeSuccessItemsSuccessItem["ItemId"].isNull())
+			successItemObject.itemId = itemsNodeSuccessItemsSuccessItem["ItemId"].asString();
+		if(!itemsNodeSuccessItemsSuccessItem["ItemName"].isNull())
+			successItemObject.itemName = itemsNodeSuccessItemsSuccessItem["ItemName"].asString();
+		items_.successItems.push_back(successItemObject);
 	}
 	if(!value["CasterId"].isNull())
 		casterId_ = value["CasterId"].asString();

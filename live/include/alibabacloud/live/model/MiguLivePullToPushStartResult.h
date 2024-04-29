@@ -37,16 +37,16 @@ namespace AlibabaCloud
 				MiguLivePullToPushStartResult();
 				explicit MiguLivePullToPushStartResult(const std::string &payload);
 				~MiguLivePullToPushStartResult();
-				std::string getRequestId()const;
 				std::string getMessage()const;
+				std::string getRequestId()const;
 				std::string getCode()const;
 				std::string getTimestamp()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string requestId_;
 				std::string message_;
+				std::string requestId_;
 				std::string code_;
 				std::string timestamp_;
 

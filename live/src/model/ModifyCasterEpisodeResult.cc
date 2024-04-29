@@ -39,10 +39,10 @@ void ModifyCasterEpisodeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["EpisodeId"].isNull())
-		episodeId_ = value["EpisodeId"].asString();
 	if(!value["CasterId"].isNull())
 		casterId_ = value["CasterId"].asString();
+	if(!value["EpisodeId"].isNull())
+		episodeId_ = value["EpisodeId"].asString();
 
 }
 

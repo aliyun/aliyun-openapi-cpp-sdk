@@ -46,14 +46,14 @@ namespace AlibabaCloud
 					long flvCount;
 					float flvBps;
 					std::string timeStamp;
-					float p2pBps;
 					std::string appName;
+					float p2pBps;
 					float rtsBps;
 					float hlsBps;
 					long rtmpTraffic;
 					std::string streamName;
-					long rtmpCount;
 					long flvTraffic;
+					long rtmpCount;
 					long hlsCount;
 					long p2pCount;
 				};

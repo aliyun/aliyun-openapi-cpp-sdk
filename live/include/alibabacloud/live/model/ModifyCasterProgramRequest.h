@@ -30,11 +30,11 @@ class ALIBABACLOUD_LIVE_EXPORT ModifyCasterProgramRequest : public RpcServiceReq
 public:
 	struct Episode {
 		std::string endTime;
-		std::string startTime;
+		std::string episodeId;
 		std::string episodeName;
 		std::string episodeType;
-		std::string episodeId;
 		std::string resourceId;
+		std::string startTime;
 		std::string switchType;
 	};
 	ModifyCasterProgramRequest();

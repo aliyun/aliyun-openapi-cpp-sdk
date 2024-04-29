@@ -34,6 +34,23 @@ namespace AlibabaCloud
 			public:
 				struct Component
 				{
+					struct CaptionLayerContent
+					{
+						float borderWidthNormalized;
+						std::string color;
+						std::string borderColor;
+						std::string locationId;
+						bool showSourceLan;
+						std::string sourceLan;
+						int wordCountPerLine;
+						int ptsOffset;
+						float sizeNormalized;
+						std::string fontName;
+						float wordSpaceNormalized;
+						std::string targetLan;
+						int wordsCount;
+						float lineSpaceNormalized;
+					};
 					struct ComponentLayer
 					{
 						std::vector<std::string> positionNormalizeds;
@@ -41,6 +58,10 @@ namespace AlibabaCloud
 						float heightNormalized;
 						std::string positionRefer;
 						float widthNormalized;
+					};
+					struct ImageLayerContent
+					{
+						std::string materialId;
 					};
 					struct TextLayerContent
 					{
@@ -51,34 +72,13 @@ namespace AlibabaCloud
 						std::string fontName;
 						std::string text;
 					};
-					struct ImageLayerContent
-					{
-						std::string materialId;
-					};
-					struct CaptionLayerContent
-					{
-						float borderWidthNormalized;
-						std::string color;
-						std::string sourceLan;
-						std::string borderColor;
-						std::string locationId;
-						bool showSourceLan;
-						int wordCountPerLine;
-						int ptsOffset;
-						float sizeNormalized;
-						std::string fontName;
-						float wordSpaceNormalized;
-						std::string targetLan;
-						int wordsCount;
-						float lineSpaceNormalized;
-					};
 					CaptionLayerContent captionLayerContent;
 					TextLayerContent textLayerContent;
 					std::string componentType;
 					ComponentLayer componentLayer;
 					std::string locationId;
-					std::string effect;
 					std::string componentName;
+					std::string effect;
 					std::string componentId;
 					ImageLayerContent imageLayerContent;
 				};

@@ -45,32 +45,32 @@ void DescribeLiveStreamTranscodeMetricDataResult::parse(const std::string &paylo
 		StreamData streamDetailDataObject;
 		if(!valueStreamDetailDataStreamData["AppName"].isNull())
 			streamDetailDataObject.appName = valueStreamDetailDataStreamData["AppName"].asString();
-		if(!valueStreamDetailDataStreamData["StreamName"].isNull())
-			streamDetailDataObject.streamName = valueStreamDetailDataStreamData["StreamName"].asString();
-		if(!valueStreamDetailDataStreamData["Region"].isNull())
-			streamDetailDataObject.region = valueStreamDetailDataStreamData["Region"].asString();
 		if(!valueStreamDetailDataStreamData["Duration"].isNull())
 			streamDetailDataObject.duration = std::stol(valueStreamDetailDataStreamData["Duration"].asString());
 		if(!valueStreamDetailDataStreamData["Fps"].isNull())
 			streamDetailDataObject.fps = valueStreamDetailDataStreamData["Fps"].asString();
+		if(!valueStreamDetailDataStreamData["Region"].isNull())
+			streamDetailDataObject.region = valueStreamDetailDataStreamData["Region"].asString();
+		if(!valueStreamDetailDataStreamData["Resolution"].isNull())
+			streamDetailDataObject.resolution = valueStreamDetailDataStreamData["Resolution"].asString();
+		if(!valueStreamDetailDataStreamData["StreamName"].isNull())
+			streamDetailDataObject.streamName = valueStreamDetailDataStreamData["StreamName"].asString();
 		if(!valueStreamDetailDataStreamData["TimeStamp"].isNull())
 			streamDetailDataObject.timeStamp = valueStreamDetailDataStreamData["TimeStamp"].asString();
 		if(!valueStreamDetailDataStreamData["TranscodeType"].isNull())
 			streamDetailDataObject.transcodeType = valueStreamDetailDataStreamData["TranscodeType"].asString();
-		if(!valueStreamDetailDataStreamData["Resolution"].isNull())
-			streamDetailDataObject.resolution = valueStreamDetailDataStreamData["Resolution"].asString();
 		streamDetailData_.push_back(streamDetailDataObject);
 	}
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["NextPageToken"].isNull())
 		nextPageToken_ = value["NextPageToken"].asString();
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 
 }
 

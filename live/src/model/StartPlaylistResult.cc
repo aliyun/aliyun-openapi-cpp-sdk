@@ -50,14 +50,14 @@ void StartPlaylistResult::parse(const std::string &payload)
 	for (auto streamInfoNodeStreamsStream : allStreamsNode)
 	{
 		StreamInfo::Stream streamObject;
-		if(!streamInfoNodeStreamsStream["Quality"].isNull())
-			streamObject.quality = streamInfoNodeStreamsStream["Quality"].asString();
 		if(!streamInfoNodeStreamsStream["PullFlvUrl"].isNull())
 			streamObject.pullFlvUrl = streamInfoNodeStreamsStream["PullFlvUrl"].asString();
 		if(!streamInfoNodeStreamsStream["PullM3U8Url"].isNull())
 			streamObject.pullM3U8Url = streamInfoNodeStreamsStream["PullM3U8Url"].asString();
 		if(!streamInfoNodeStreamsStream["PullRtmpUrl"].isNull())
 			streamObject.pullRtmpUrl = streamInfoNodeStreamsStream["PullRtmpUrl"].asString();
+		if(!streamInfoNodeStreamsStream["Quality"].isNull())
+			streamObject.quality = streamInfoNodeStreamsStream["Quality"].asString();
 		streamInfo_.streams.push_back(streamObject);
 	}
 	if(!value["ProgramId"].isNull())

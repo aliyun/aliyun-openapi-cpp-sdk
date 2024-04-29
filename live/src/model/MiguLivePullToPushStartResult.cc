@@ -39,25 +39,25 @@ void MiguLivePullToPushStartResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["requestId"].isNull())
-		requestId_ = value["requestId"].asString();
 	if(!value["code"].isNull())
 		code_ = value["code"].asString();
-	if(!value["timestamp"].isNull())
-		timestamp_ = value["timestamp"].asString();
 	if(!value["message"].isNull())
 		message_ = value["message"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["timestamp"].isNull())
+		timestamp_ = value["timestamp"].asString();
 
-}
-
-std::string MiguLivePullToPushStartResult::getRequestId()const
-{
-	return requestId_;
 }
 
 std::string MiguLivePullToPushStartResult::getMessage()const
 {
 	return message_;
+}
+
+std::string MiguLivePullToPushStartResult::getRequestId()const
+{
+	return requestId_;
 }
 
 std::string MiguLivePullToPushStartResult::getCode()const

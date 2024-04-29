@@ -39,12 +39,12 @@ void DescribeLiveSnapshotNotifyConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["NotifyReqAuth"].isNull())
-		notifyReqAuth_ = value["NotifyReqAuth"].asString();
-	if(!value["NotifyAuthKey"].isNull())
-		notifyAuthKey_ = value["NotifyAuthKey"].asString();
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
+	if(!value["NotifyAuthKey"].isNull())
+		notifyAuthKey_ = value["NotifyAuthKey"].asString();
+	if(!value["NotifyReqAuth"].isNull())
+		notifyReqAuth_ = value["NotifyReqAuth"].asString();
 	if(!value["NotifyUrl"].isNull())
 		notifyUrl_ = value["NotifyUrl"].asString();
 

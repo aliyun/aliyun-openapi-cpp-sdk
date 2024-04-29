@@ -43,28 +43,28 @@ void DescribeLiveProducerUsageDataResult::parse(const std::string &payload)
 	for (auto valueBillProducerDataBillProducerDataItem : allBillProducerDataNode)
 	{
 		BillProducerDataItem billProducerDataObject;
-		if(!valueBillProducerDataBillProducerDataItem["TranSdDuration"].isNull())
-			billProducerDataObject.tranSdDuration = std::stol(valueBillProducerDataBillProducerDataItem["TranSdDuration"].asString());
-		if(!valueBillProducerDataBillProducerDataItem["Type"].isNull())
-			billProducerDataObject.type = valueBillProducerDataBillProducerDataItem["Type"].asString();
-		if(!valueBillProducerDataBillProducerDataItem["TranLdDuration"].isNull())
-			billProducerDataObject.tranLdDuration = std::stol(valueBillProducerDataBillProducerDataItem["TranLdDuration"].asString());
+		if(!valueBillProducerDataBillProducerDataItem["DomainName"].isNull())
+			billProducerDataObject.domainName = valueBillProducerDataBillProducerDataItem["DomainName"].asString();
 		if(!valueBillProducerDataBillProducerDataItem["Instance"].isNull())
 			billProducerDataObject.instance = valueBillProducerDataBillProducerDataItem["Instance"].asString();
-		if(!valueBillProducerDataBillProducerDataItem["TranHdDuration"].isNull())
-			billProducerDataObject.tranHdDuration = std::stol(valueBillProducerDataBillProducerDataItem["TranHdDuration"].asString());
+		if(!valueBillProducerDataBillProducerDataItem["OutputHdDuration"].isNull())
+			billProducerDataObject.outputHdDuration = std::stol(valueBillProducerDataBillProducerDataItem["OutputHdDuration"].asString());
+		if(!valueBillProducerDataBillProducerDataItem["OutputLdDuration"].isNull())
+			billProducerDataObject.outputLdDuration = std::stol(valueBillProducerDataBillProducerDataItem["OutputLdDuration"].asString());
+		if(!valueBillProducerDataBillProducerDataItem["OutputSdDuration"].isNull())
+			billProducerDataObject.outputSdDuration = std::stol(valueBillProducerDataBillProducerDataItem["OutputSdDuration"].asString());
 		if(!valueBillProducerDataBillProducerDataItem["Region"].isNull())
 			billProducerDataObject.region = valueBillProducerDataBillProducerDataItem["Region"].asString();
 		if(!valueBillProducerDataBillProducerDataItem["TimeStamp"].isNull())
 			billProducerDataObject.timeStamp = valueBillProducerDataBillProducerDataItem["TimeStamp"].asString();
-		if(!valueBillProducerDataBillProducerDataItem["OutputHdDuration"].isNull())
-			billProducerDataObject.outputHdDuration = std::stol(valueBillProducerDataBillProducerDataItem["OutputHdDuration"].asString());
-		if(!valueBillProducerDataBillProducerDataItem["OutputSdDuration"].isNull())
-			billProducerDataObject.outputSdDuration = std::stol(valueBillProducerDataBillProducerDataItem["OutputSdDuration"].asString());
-		if(!valueBillProducerDataBillProducerDataItem["DomainName"].isNull())
-			billProducerDataObject.domainName = valueBillProducerDataBillProducerDataItem["DomainName"].asString();
-		if(!valueBillProducerDataBillProducerDataItem["OutputLdDuration"].isNull())
-			billProducerDataObject.outputLdDuration = std::stol(valueBillProducerDataBillProducerDataItem["OutputLdDuration"].asString());
+		if(!valueBillProducerDataBillProducerDataItem["TranHdDuration"].isNull())
+			billProducerDataObject.tranHdDuration = std::stol(valueBillProducerDataBillProducerDataItem["TranHdDuration"].asString());
+		if(!valueBillProducerDataBillProducerDataItem["TranLdDuration"].isNull())
+			billProducerDataObject.tranLdDuration = std::stol(valueBillProducerDataBillProducerDataItem["TranLdDuration"].asString());
+		if(!valueBillProducerDataBillProducerDataItem["TranSdDuration"].isNull())
+			billProducerDataObject.tranSdDuration = std::stol(valueBillProducerDataBillProducerDataItem["TranSdDuration"].asString());
+		if(!valueBillProducerDataBillProducerDataItem["Type"].isNull())
+			billProducerDataObject.type = valueBillProducerDataBillProducerDataItem["Type"].asString();
 		billProducerData_.push_back(billProducerDataObject);
 	}
 	if(!value["EndTime"].isNull())

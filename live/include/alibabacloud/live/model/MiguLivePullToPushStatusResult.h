@@ -42,8 +42,8 @@ namespace AlibabaCloud
 				MiguLivePullToPushStatusResult();
 				explicit MiguLivePullToPushStatusResult(const std::string &payload);
 				~MiguLivePullToPushStatusResult();
-				std::string getRequestId()const;
 				std::string getMessage()const;
+				std::string getRequestId()const;
 				Data getData()const;
 				std::string getCode()const;
 				std::string getTimestamp()const;
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string requestId_;
 				std::string message_;
+				std::string requestId_;
 				Data data_;
 				std::string code_;
 				std::string timestamp_;

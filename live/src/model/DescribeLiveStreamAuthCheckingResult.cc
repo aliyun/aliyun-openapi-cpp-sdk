@@ -39,10 +39,10 @@ void DescribeLiveStreamAuthCheckingResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
 
 }
 

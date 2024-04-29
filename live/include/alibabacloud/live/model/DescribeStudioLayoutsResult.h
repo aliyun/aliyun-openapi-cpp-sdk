@@ -34,11 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct StudioLayout
 				{
-					struct CommonConfig
-					{
-						std::string channelId;
-						std::string videoResourceId;
-					};
 					struct BgImageConfig
 					{
 						std::string materialId;
@@ -46,24 +41,15 @@ namespace AlibabaCloud
 						std::string imageUrl;
 						std::string id;
 					};
-					struct ScreenInputConfig
+					struct CommonConfig
 					{
-						struct AudioConfig
-						{
-							std::string validChannel;
-							float volumeRate;
-						};
-						std::string positionY;
-						std::string color;
-						AudioConfig audioConfig;
-						int portraitType;
-						float heightNormalized;
-						int index;
-						std::string id;
 						std::string channelId;
 						std::string videoResourceId;
-						std::string positionX;
-						bool onlyAudio;
+					};
+					struct LayerOrderConfig
+					{
+						std::string type;
+						std::string id;
 					};
 					struct MediaInputConfig
 					{
@@ -78,10 +64,24 @@ namespace AlibabaCloud
 						float widthNormalized;
 						std::vector<std::string> positionNormalized;
 					};
-					struct LayerOrderConfig
+					struct ScreenInputConfig
 					{
-						std::string type;
+						struct AudioConfig
+						{
+							std::string validChannel;
+							float volumeRate;
+						};
+						std::string positionY;
+						std::string color;
+						AudioConfig audioConfig;
+						float heightNormalized;
+						int portraitType;
+						int index;
 						std::string id;
+						std::string channelId;
+						std::string videoResourceId;
+						std::string positionX;
+						bool onlyAudio;
 					};
 					std::vector<StudioLayout::ScreenInputConfig> screenInputConfigList;
 					std::vector<StudioLayout::MediaInputConfig> mediaInputConfigList;

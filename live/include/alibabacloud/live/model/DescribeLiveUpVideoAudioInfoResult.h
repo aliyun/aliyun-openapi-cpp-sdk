@@ -34,42 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct PublishItem
 				{
-					struct VideoFramesItem
-					{
-						int value;
-						long time;
-					};
-					struct AudioFramesItem
-					{
-						int value;
-						long time;
-					};
-					struct VideoStampsItem
-					{
-						int value;
-						long time;
-					};
-					struct AudioStampsItem
-					{
-						int value;
-						long time;
-					};
-					struct V_AStamp
-					{
-						int value;
-						long time;
-					};
-					struct AvcHeadersItem
-					{
-						int value;
-						long time;
-					};
 					struct AacHeadersItem
-					{
-						int value;
-						long time;
-					};
-					struct VideoBitRateItem
 					{
 						int value;
 						long time;
@@ -79,7 +44,7 @@ namespace AlibabaCloud
 						int value;
 						long time;
 					};
-					struct VideoIntervalItem
+					struct AudioFramesItem
 					{
 						int value;
 						long time;
@@ -89,14 +54,49 @@ namespace AlibabaCloud
 						int value;
 						long time;
 					};
+					struct AudioStampsItem
+					{
+						int value;
+						long time;
+					};
+					struct AvcHeadersItem
+					{
+						int value;
+						long time;
+					};
 					struct ErrorFlagsItem
 					{
 						int value;
 						long time;
 					};
+					struct V_AStamp
+					{
+						int value;
+						long time;
+					};
+					struct VideoBitRateItem
+					{
+						int value;
+						long time;
+					};
+					struct VideoFramesItem
+					{
+						int value;
+						long time;
+					};
+					struct VideoIntervalItem
+					{
+						int value;
+						long time;
+					};
+					struct VideoStampsItem
+					{
+						int value;
+						long time;
+					};
 					std::vector<PublishItem::VideoStampsItem> videoStamps;
-					std::vector<PublishItem::VideoFramesItem> videoFrames;
 					std::vector<PublishItem::AudioBitRateItem> audioBitRate;
+					std::vector<PublishItem::VideoFramesItem> videoFrames;
 					std::string publishIp;
 					std::string uniqueId;
 					std::string domainName;

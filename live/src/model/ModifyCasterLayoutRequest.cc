@@ -69,9 +69,9 @@ void ModifyCasterLayoutRequest::setAudioLayer(const std::vector<ModifyCasterLayo
   for(int dep1 = 0; dep1 != audioLayer.size(); dep1++) {
   auto audioLayerObj = audioLayer.at(dep1);
   std::string audioLayerObjStr = std::string("AudioLayer") + "." + std::to_string(dep1 + 1);
-    setParameter(audioLayerObjStr + ".VolumeRate", std::to_string(audioLayerObj.volumeRate));
     setParameter(audioLayerObjStr + ".FixedDelayDuration", std::to_string(audioLayerObj.fixedDelayDuration));
     setParameter(audioLayerObjStr + ".ValidChannel", audioLayerObj.validChannel);
+    setParameter(audioLayerObjStr + ".VolumeRate", std::to_string(audioLayerObj.volumeRate));
   }
 }
 
@@ -84,8 +84,8 @@ void ModifyCasterLayoutRequest::setVideoLayer(const std::vector<ModifyCasterLayo
   for(int dep1 = 0; dep1 != videoLayer.size(); dep1++) {
   auto videoLayerObj = videoLayer.at(dep1);
   std::string videoLayerObjStr = std::string("VideoLayer") + "." + std::to_string(dep1 + 1);
-    setParameter(videoLayerObjStr + ".FixedDelayDuration", std::to_string(videoLayerObj.fixedDelayDuration));
     setParameter(videoLayerObjStr + ".FillMode", videoLayerObj.fillMode);
+    setParameter(videoLayerObjStr + ".FixedDelayDuration", std::to_string(videoLayerObj.fixedDelayDuration));
     setParameter(videoLayerObjStr + ".HeightNormalized", std::to_string(videoLayerObj.heightNormalized));
     setParameter(videoLayerObjStr + ".PositionRefer", videoLayerObj.positionRefer);
     setParameter(videoLayerObjStr + ".WidthNormalized", std::to_string(videoLayerObj.widthNormalized));

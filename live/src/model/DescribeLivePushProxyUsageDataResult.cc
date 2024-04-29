@@ -43,14 +43,14 @@ void DescribeLivePushProxyUsageDataResult::parse(const std::string &payload)
 	for (auto valuePushProxyDataPushProxyDataItem : allPushProxyDataNode)
 	{
 		PushProxyDataItem pushProxyDataObject;
-		if(!valuePushProxyDataPushProxyDataItem["TimeStamp"].isNull())
-			pushProxyDataObject.timeStamp = valuePushProxyDataPushProxyDataItem["TimeStamp"].asString();
-		if(!valuePushProxyDataPushProxyDataItem["StreamCount"].isNull())
-			pushProxyDataObject.streamCount = std::stol(valuePushProxyDataPushProxyDataItem["StreamCount"].asString());
 		if(!valuePushProxyDataPushProxyDataItem["DomainName"].isNull())
 			pushProxyDataObject.domainName = valuePushProxyDataPushProxyDataItem["DomainName"].asString();
 		if(!valuePushProxyDataPushProxyDataItem["Region"].isNull())
 			pushProxyDataObject.region = valuePushProxyDataPushProxyDataItem["Region"].asString();
+		if(!valuePushProxyDataPushProxyDataItem["StreamCount"].isNull())
+			pushProxyDataObject.streamCount = std::stol(valuePushProxyDataPushProxyDataItem["StreamCount"].asString());
+		if(!valuePushProxyDataPushProxyDataItem["TimeStamp"].isNull())
+			pushProxyDataObject.timeStamp = valuePushProxyDataPushProxyDataItem["TimeStamp"].asString();
 		pushProxyData_.push_back(pushProxyDataObject);
 	}
 	if(!value["EndTime"].isNull())

@@ -39,10 +39,10 @@ void DeleteCasterLayoutResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["LayoutId"].isNull())
-		layoutId_ = value["LayoutId"].asString();
 	if(!value["CasterId"].isNull())
 		casterId_ = value["CasterId"].asString();
+	if(!value["LayoutId"].isNull())
+		layoutId_ = value["LayoutId"].asString();
 
 }
 

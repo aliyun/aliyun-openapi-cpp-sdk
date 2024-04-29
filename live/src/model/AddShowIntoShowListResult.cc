@@ -41,10 +41,10 @@ void AddShowIntoShowListResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["ShowId"].isNull())
 		showId_ = value["ShowId"].asString();
-	if(!value["successfulShowIds"].isNull())
-		successfulShowIds_ = value["successfulShowIds"].asString();
 	if(!value["failedList"].isNull())
 		failedList_ = value["failedList"].asString();
+	if(!value["successfulShowIds"].isNull())
+		successfulShowIds_ = value["successfulShowIds"].asString();
 
 }
 

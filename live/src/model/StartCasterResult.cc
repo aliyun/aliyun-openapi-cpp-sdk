@@ -39,22 +39,10 @@ void StartCasterResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPvwSceneInfosNode = value["PvwSceneInfos"]["SceneInfo"];
-	for (auto valuePvwSceneInfosSceneInfo : allPvwSceneInfosNode)
-	{
-		SceneInfo pvwSceneInfosObject;
-		if(!valuePvwSceneInfosSceneInfo["RtsUrl"].isNull())
-			pvwSceneInfosObject.rtsUrl = valuePvwSceneInfosSceneInfo["RtsUrl"].asString();
-		if(!valuePvwSceneInfosSceneInfo["SceneId"].isNull())
-			pvwSceneInfosObject.sceneId = valuePvwSceneInfosSceneInfo["SceneId"].asString();
-		if(!valuePvwSceneInfosSceneInfo["StreamUrl"].isNull())
-			pvwSceneInfosObject.streamUrl = valuePvwSceneInfosSceneInfo["StreamUrl"].asString();
-		pvwSceneInfos_.push_back(pvwSceneInfosObject);
-	}
 	auto allPgmSceneInfosNode = value["PgmSceneInfos"]["SceneInfo"];
 	for (auto valuePgmSceneInfosSceneInfo : allPgmSceneInfosNode)
 	{
-		SceneInfo1 pgmSceneInfosObject;
+		SceneInfo pgmSceneInfosObject;
 		if(!valuePgmSceneInfosSceneInfo["RtsUrl"].isNull())
 			pgmSceneInfosObject.rtsUrl = valuePgmSceneInfosSceneInfo["RtsUrl"].asString();
 		if(!valuePgmSceneInfosSceneInfo["SceneId"].isNull())
@@ -64,26 +52,38 @@ void StartCasterResult::parse(const std::string &payload)
 		auto allStreamInfosNode = valuePgmSceneInfosSceneInfo["StreamInfos"]["StreamInfo"];
 		for (auto valuePgmSceneInfosSceneInfoStreamInfosStreamInfo : allStreamInfosNode)
 		{
-			SceneInfo1::StreamInfo streamInfosObject;
-			if(!valuePgmSceneInfosSceneInfoStreamInfosStreamInfo["VideoFormat"].isNull())
-				streamInfosObject.videoFormat = valuePgmSceneInfosSceneInfoStreamInfosStreamInfo["VideoFormat"].asString();
+			SceneInfo::StreamInfo streamInfosObject;
 			if(!valuePgmSceneInfosSceneInfoStreamInfosStreamInfo["OutputStreamUrl"].isNull())
 				streamInfosObject.outputStreamUrl = valuePgmSceneInfosSceneInfoStreamInfosStreamInfo["OutputStreamUrl"].asString();
 			if(!valuePgmSceneInfosSceneInfoStreamInfosStreamInfo["TranscodeConfig"].isNull())
 				streamInfosObject.transcodeConfig = valuePgmSceneInfosSceneInfoStreamInfosStreamInfo["TranscodeConfig"].asString();
+			if(!valuePgmSceneInfosSceneInfoStreamInfosStreamInfo["VideoFormat"].isNull())
+				streamInfosObject.videoFormat = valuePgmSceneInfosSceneInfoStreamInfosStreamInfo["VideoFormat"].asString();
 			pgmSceneInfosObject.streamInfos.push_back(streamInfosObject);
 		}
 		pgmSceneInfos_.push_back(pgmSceneInfosObject);
 	}
+	auto allPvwSceneInfosNode = value["PvwSceneInfos"]["SceneInfo"];
+	for (auto valuePvwSceneInfosSceneInfo : allPvwSceneInfosNode)
+	{
+		SceneInfo1 pvwSceneInfosObject;
+		if(!valuePvwSceneInfosSceneInfo["RtsUrl"].isNull())
+			pvwSceneInfosObject.rtsUrl = valuePvwSceneInfosSceneInfo["RtsUrl"].asString();
+		if(!valuePvwSceneInfosSceneInfo["SceneId"].isNull())
+			pvwSceneInfosObject.sceneId = valuePvwSceneInfosSceneInfo["SceneId"].asString();
+		if(!valuePvwSceneInfosSceneInfo["StreamUrl"].isNull())
+			pvwSceneInfosObject.streamUrl = valuePvwSceneInfosSceneInfo["StreamUrl"].asString();
+		pvwSceneInfos_.push_back(pvwSceneInfosObject);
+	}
 
 }
 
-std::vector<StartCasterResult::SceneInfo> StartCasterResult::getPvwSceneInfos()const
+std::vector<StartCasterResult::SceneInfo1> StartCasterResult::getPvwSceneInfos()const
 {
 	return pvwSceneInfos_;
 }
 
-std::vector<StartCasterResult::SceneInfo1> StartCasterResult::getPgmSceneInfos()const
+std::vector<StartCasterResult::SceneInfo> StartCasterResult::getPgmSceneInfos()const
 {
 	return pgmSceneInfos_;
 }

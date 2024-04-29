@@ -29,13 +29,13 @@ namespace Model {
 class ALIBABACLOUD_LIVE_EXPORT AddShowIntoShowListRequest : public RpcServiceRequest {
 public:
 	struct ShowList {
-		std::string showName;
+		long duration;
+		int liveInputType;
 		int repeatTimes;
+		std::string resourceId;
 		std::string resourceType;
 		std::string resourceUrl;
-		int liveInputType;
-		long duration;
-		std::string resourceId;
+		std::string showName;
 	};
 	AddShowIntoShowListRequest();
 	~AddShowIntoShowListRequest();

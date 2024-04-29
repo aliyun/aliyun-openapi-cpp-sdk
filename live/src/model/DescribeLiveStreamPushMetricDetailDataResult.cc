@@ -45,26 +45,26 @@ void DescribeLiveStreamPushMetricDetailDataResult::parse(const std::string &payl
 		StreamData streamDetailDataObject;
 		if(!valueStreamDetailDataStreamData["AppName"].isNull())
 			streamDetailDataObject.appName = valueStreamDetailDataStreamData["AppName"].asString();
-		if(!valueStreamDetailDataStreamData["TimeStamp"].isNull())
-			streamDetailDataObject.timeStamp = valueStreamDetailDataStreamData["TimeStamp"].asString();
 		if(!valueStreamDetailDataStreamData["ReqBps"].isNull())
 			streamDetailDataObject.reqBps = std::stof(valueStreamDetailDataStreamData["ReqBps"].asString());
 		if(!valueStreamDetailDataStreamData["ReqTraffic"].isNull())
 			streamDetailDataObject.reqTraffic = std::stol(valueStreamDetailDataStreamData["ReqTraffic"].asString());
 		if(!valueStreamDetailDataStreamData["StreamName"].isNull())
 			streamDetailDataObject.streamName = valueStreamDetailDataStreamData["StreamName"].asString();
+		if(!valueStreamDetailDataStreamData["TimeStamp"].isNull())
+			streamDetailDataObject.timeStamp = valueStreamDetailDataStreamData["TimeStamp"].asString();
 		streamDetailData_.push_back(streamDetailDataObject);
 	}
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["NextPageToken"].isNull())
 		nextPageToken_ = value["NextPageToken"].asString();
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 
 }
 

@@ -30,8 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT SetCasterSyncGroupRequest : public RpcServiceRequ
 public:
 	struct SyncGroup {
 		std::string hostResourceId;
-		long syncDelayThreshold;
 		int mode;
+		long syncDelayThreshold;
 	};
 	SetCasterSyncGroupRequest();
 	~SetCasterSyncGroupRequest();

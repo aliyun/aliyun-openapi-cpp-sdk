@@ -34,6 +34,12 @@ namespace AlibabaCloud
 			public:
 				struct Layout
 				{
+					struct AudioLayer
+					{
+						std::string validChannel;
+						float volumeRate;
+						int fixedDelayDuration;
+					};
 					struct VideoLayer
 					{
 						std::vector<std::string> positionNormalizeds;
@@ -42,12 +48,6 @@ namespace AlibabaCloud
 						std::string positionRefer;
 						int fixedDelayDuration;
 						float widthNormalized;
-					};
-					struct AudioLayer
-					{
-						std::string validChannel;
-						float volumeRate;
-						int fixedDelayDuration;
 					};
 					std::vector<std::string> mixList;
 					std::vector<Layout::AudioLayer> audioLayers;

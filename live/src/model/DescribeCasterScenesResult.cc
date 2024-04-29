@@ -43,8 +43,6 @@ void DescribeCasterScenesResult::parse(const std::string &payload)
 	for (auto valueSceneListScene : allSceneListNode)
 	{
 		Scene sceneListObject;
-		if(!valueSceneListScene["Status"].isNull())
-			sceneListObject.status = std::stoi(valueSceneListScene["Status"].asString());
 		if(!valueSceneListScene["LayoutId"].isNull())
 			sceneListObject.layoutId = valueSceneListScene["LayoutId"].asString();
 		if(!valueSceneListScene["OutputType"].isNull())
@@ -55,18 +53,20 @@ void DescribeCasterScenesResult::parse(const std::string &payload)
 			sceneListObject.sceneId = valueSceneListScene["SceneId"].asString();
 		if(!valueSceneListScene["SceneName"].isNull())
 			sceneListObject.sceneName = valueSceneListScene["SceneName"].asString();
+		if(!valueSceneListScene["Status"].isNull())
+			sceneListObject.status = std::stoi(valueSceneListScene["Status"].asString());
 		if(!valueSceneListScene["StreamUrl"].isNull())
 			sceneListObject.streamUrl = valueSceneListScene["StreamUrl"].asString();
 		auto allStreamInfosNode = valueSceneListScene["StreamInfos"]["StreamInfo"];
 		for (auto valueSceneListSceneStreamInfosStreamInfo : allStreamInfosNode)
 		{
 			Scene::StreamInfo streamInfosObject;
-			if(!valueSceneListSceneStreamInfosStreamInfo["VideoFormat"].isNull())
-				streamInfosObject.videoFormat = valueSceneListSceneStreamInfosStreamInfo["VideoFormat"].asString();
 			if(!valueSceneListSceneStreamInfosStreamInfo["OutputStreamUrl"].isNull())
 				streamInfosObject.outputStreamUrl = valueSceneListSceneStreamInfosStreamInfo["OutputStreamUrl"].asString();
 			if(!valueSceneListSceneStreamInfosStreamInfo["TranscodeConfig"].isNull())
 				streamInfosObject.transcodeConfig = valueSceneListSceneStreamInfosStreamInfo["TranscodeConfig"].asString();
+			if(!valueSceneListSceneStreamInfosStreamInfo["VideoFormat"].isNull())
+				streamInfosObject.videoFormat = valueSceneListSceneStreamInfosStreamInfo["VideoFormat"].asString();
 			sceneListObject.streamInfos.push_back(streamInfosObject);
 		}
 		auto allComponentIds = value["ComponentIds"]["componentId"];

@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string description;
 					std::string streamName;
 					std::string notifyTime;
-					std::string notifyContent;
 					std::string domainName;
+					std::string notifyContent;
 					std::string notifyUrl;
 					std::string notifyResult;
 					std::string appName;
@@ -51,18 +51,18 @@ namespace AlibabaCloud
 				~DescribeLiveStreamsNotifyRecordsResult();
 				std::vector<LiveStreamNotifyRecordsInfo> getNotifyRecordsInfo()const;
 				int getTotalNum()const;
-				int getTotalPage()const;
 				int getPageNum()const;
 				int getPageSize()const;
+				int getTotalPage()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<LiveStreamNotifyRecordsInfo> notifyRecordsInfo_;
 				int totalNum_;
-				int totalPage_;
 				int pageNum_;
 				int pageSize_;
+				int totalPage_;
 
 			};
 		}

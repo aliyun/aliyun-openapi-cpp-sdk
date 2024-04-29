@@ -375,6 +375,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveGrtnTrafficUsageResult.h
 	include/alibabacloud/live/model/DescribeLiveHttpsDomainListRequest.h
 	include/alibabacloud/live/model/DescribeLiveHttpsDomainListResult.h
+	include/alibabacloud/live/model/DescribeLiveInteractionMetricDataRequest.h
+	include/alibabacloud/live/model/DescribeLiveInteractionMetricDataResult.h
 	include/alibabacloud/live/model/DescribeLiveIpInfoRequest.h
 	include/alibabacloud/live/model/DescribeLiveIpInfoResult.h
 	include/alibabacloud/live/model/DescribeLiveLazyPullStreamConfigRequest.h
@@ -423,6 +425,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveStreamCountResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamDelayConfigRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamDelayConfigResult.h
+	include/alibabacloud/live/model/DescribeLiveStreamDetailFrameRateAndBitRateDataRequest.h
+	include/alibabacloud/live/model/DescribeLiveStreamDetailFrameRateAndBitRateDataResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamHistoryUserNumRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamHistoryUserNumResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamMetricDetailDataRequest.h
@@ -557,6 +561,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/GetMultiRateConfigResult.h
 	include/alibabacloud/live/model/GetMultiRateConfigListRequest.h
 	include/alibabacloud/live/model/GetMultiRateConfigListResult.h
+	include/alibabacloud/live/model/GetTranscodeTaskStatusRequest.h
+	include/alibabacloud/live/model/GetTranscodeTaskStatusResult.h
 	include/alibabacloud/live/model/HotLiveRtcStreamRequest.h
 	include/alibabacloud/live/model/HotLiveRtcStreamResult.h
 	include/alibabacloud/live/model/InitializeAutoShowListTaskRequest.h
@@ -665,6 +671,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/RemoveTerminalsResult.h
 	include/alibabacloud/live/model/RestartCasterRequest.h
 	include/alibabacloud/live/model/RestartCasterResult.h
+	include/alibabacloud/live/model/RestartTranscodeTaskRequest.h
+	include/alibabacloud/live/model/RestartTranscodeTaskResult.h
 	include/alibabacloud/live/model/ResumeLiveStreamRequest.h
 	include/alibabacloud/live/model/ResumeLiveStreamResult.h
 	include/alibabacloud/live/model/RollbackLiveStagingConfigRequest.h
@@ -1156,6 +1164,8 @@ set(live_src
 	src/model/DescribeLiveGrtnTrafficUsageResult.cc
 	src/model/DescribeLiveHttpsDomainListRequest.cc
 	src/model/DescribeLiveHttpsDomainListResult.cc
+	src/model/DescribeLiveInteractionMetricDataRequest.cc
+	src/model/DescribeLiveInteractionMetricDataResult.cc
 	src/model/DescribeLiveIpInfoRequest.cc
 	src/model/DescribeLiveIpInfoResult.cc
 	src/model/DescribeLiveLazyPullStreamConfigRequest.cc
@@ -1204,6 +1214,8 @@ set(live_src
 	src/model/DescribeLiveStreamCountResult.cc
 	src/model/DescribeLiveStreamDelayConfigRequest.cc
 	src/model/DescribeLiveStreamDelayConfigResult.cc
+	src/model/DescribeLiveStreamDetailFrameRateAndBitRateDataRequest.cc
+	src/model/DescribeLiveStreamDetailFrameRateAndBitRateDataResult.cc
 	src/model/DescribeLiveStreamHistoryUserNumRequest.cc
 	src/model/DescribeLiveStreamHistoryUserNumResult.cc
 	src/model/DescribeLiveStreamMetricDetailDataRequest.cc
@@ -1338,6 +1350,8 @@ set(live_src
 	src/model/GetMultiRateConfigResult.cc
 	src/model/GetMultiRateConfigListRequest.cc
 	src/model/GetMultiRateConfigListResult.cc
+	src/model/GetTranscodeTaskStatusRequest.cc
+	src/model/GetTranscodeTaskStatusResult.cc
 	src/model/HotLiveRtcStreamRequest.cc
 	src/model/HotLiveRtcStreamResult.cc
 	src/model/InitializeAutoShowListTaskRequest.cc
@@ -1446,6 +1460,8 @@ set(live_src
 	src/model/RemoveTerminalsResult.cc
 	src/model/RestartCasterRequest.cc
 	src/model/RestartCasterResult.cc
+	src/model/RestartTranscodeTaskRequest.cc
+	src/model/RestartTranscodeTaskResult.cc
 	src/model/ResumeLiveStreamRequest.cc
 	src/model/ResumeLiveStreamResult.cc
 	src/model/RollbackLiveStagingConfigRequest.cc

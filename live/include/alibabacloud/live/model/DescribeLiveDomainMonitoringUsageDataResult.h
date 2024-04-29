@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct MonitoringDataItem
 				{
-					std::string instanceId;
 					std::string domainName;
+					std::string instanceId;
 					std::string region;
 					int duration;
 					std::string timeStamp;
@@ -48,8 +48,8 @@ namespace AlibabaCloud
 				~DescribeLiveDomainMonitoringUsageDataResult();
 				std::vector<MonitoringDataItem> getMonitoringData()const;
 				std::string getEndTime()const;
-				std::string getInstanceId()const;
 				std::string getDomainName()const;
+				std::string getInstanceId()const;
 				std::string getStartTime()const;
 				std::string getRegion()const;
 
@@ -58,8 +58,8 @@ namespace AlibabaCloud
 			private:
 				std::vector<MonitoringDataItem> monitoringData_;
 				std::string endTime_;
-				std::string instanceId_;
 				std::string domainName_;
+				std::string instanceId_;
 				std::string startTime_;
 				std::string region_;
 

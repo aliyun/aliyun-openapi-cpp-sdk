@@ -6423,6 +6423,42 @@ LiveClient::DescribeLiveHttpsDomainListOutcomeCallable LiveClient::describeLiveH
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveInteractionMetricDataOutcome LiveClient::describeLiveInteractionMetricData(const DescribeLiveInteractionMetricDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveInteractionMetricDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveInteractionMetricDataOutcome(DescribeLiveInteractionMetricDataResult(outcome.result()));
+	else
+		return DescribeLiveInteractionMetricDataOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveInteractionMetricDataAsync(const DescribeLiveInteractionMetricDataRequest& request, const DescribeLiveInteractionMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveInteractionMetricData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveInteractionMetricDataOutcomeCallable LiveClient::describeLiveInteractionMetricDataCallable(const DescribeLiveInteractionMetricDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveInteractionMetricDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveInteractionMetricData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveIpInfoOutcome LiveClient::describeLiveIpInfo(const DescribeLiveIpInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7281,6 +7317,42 @@ LiveClient::DescribeLiveStreamDelayConfigOutcomeCallable LiveClient::describeLiv
 			[this, request]()
 			{
 			return this->describeLiveStreamDelayConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveStreamDetailFrameRateAndBitRateDataOutcome LiveClient::describeLiveStreamDetailFrameRateAndBitRateData(const DescribeLiveStreamDetailFrameRateAndBitRateDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveStreamDetailFrameRateAndBitRateDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveStreamDetailFrameRateAndBitRateDataOutcome(DescribeLiveStreamDetailFrameRateAndBitRateDataResult(outcome.result()));
+	else
+		return DescribeLiveStreamDetailFrameRateAndBitRateDataOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveStreamDetailFrameRateAndBitRateDataAsync(const DescribeLiveStreamDetailFrameRateAndBitRateDataRequest& request, const DescribeLiveStreamDetailFrameRateAndBitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveStreamDetailFrameRateAndBitRateData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveStreamDetailFrameRateAndBitRateDataOutcomeCallable LiveClient::describeLiveStreamDetailFrameRateAndBitRateDataCallable(const DescribeLiveStreamDetailFrameRateAndBitRateDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamDetailFrameRateAndBitRateDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveStreamDetailFrameRateAndBitRateData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9699,6 +9771,42 @@ LiveClient::GetMultiRateConfigListOutcomeCallable LiveClient::getMultiRateConfig
 	return task->get_future();
 }
 
+LiveClient::GetTranscodeTaskStatusOutcome LiveClient::getTranscodeTaskStatus(const GetTranscodeTaskStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTranscodeTaskStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTranscodeTaskStatusOutcome(GetTranscodeTaskStatusResult(outcome.result()));
+	else
+		return GetTranscodeTaskStatusOutcome(outcome.error());
+}
+
+void LiveClient::getTranscodeTaskStatusAsync(const GetTranscodeTaskStatusRequest& request, const GetTranscodeTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTranscodeTaskStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::GetTranscodeTaskStatusOutcomeCallable LiveClient::getTranscodeTaskStatusCallable(const GetTranscodeTaskStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTranscodeTaskStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getTranscodeTaskStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::HotLiveRtcStreamOutcome LiveClient::hotLiveRtcStream(const HotLiveRtcStreamRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -11637,6 +11745,42 @@ LiveClient::RestartCasterOutcomeCallable LiveClient::restartCasterCallable(const
 			[this, request]()
 			{
 			return this->restartCaster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::RestartTranscodeTaskOutcome LiveClient::restartTranscodeTask(const RestartTranscodeTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RestartTranscodeTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RestartTranscodeTaskOutcome(RestartTranscodeTaskResult(outcome.result()));
+	else
+		return RestartTranscodeTaskOutcome(outcome.error());
+}
+
+void LiveClient::restartTranscodeTaskAsync(const RestartTranscodeTaskRequest& request, const RestartTranscodeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, restartTranscodeTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::RestartTranscodeTaskOutcomeCallable LiveClient::restartTranscodeTaskCallable(const RestartTranscodeTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RestartTranscodeTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->restartTranscodeTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

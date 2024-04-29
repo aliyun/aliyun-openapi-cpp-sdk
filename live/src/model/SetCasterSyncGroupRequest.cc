@@ -53,8 +53,8 @@ void SetCasterSyncGroupRequest::setSyncGroup(const std::vector<SetCasterSyncGrou
   auto syncGroupObj = syncGroup.at(dep1);
   std::string syncGroupObjStr = std::string("SyncGroup") + "." + std::to_string(dep1 + 1);
     setParameter(syncGroupObjStr + ".HostResourceId", syncGroupObj.hostResourceId);
-    setParameter(syncGroupObjStr + ".SyncDelayThreshold", std::to_string(syncGroupObj.syncDelayThreshold));
     setParameter(syncGroupObjStr + ".Mode", std::to_string(syncGroupObj.mode));
+    setParameter(syncGroupObjStr + ".SyncDelayThreshold", std::to_string(syncGroupObj.syncDelayThreshold));
   }
 }
 

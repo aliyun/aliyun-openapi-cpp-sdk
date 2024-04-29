@@ -34,12 +34,12 @@ namespace AlibabaCloud
 			public:
 				struct Items
 				{
-					struct SuccessItem
+					struct FailedItem
 					{
 						std::string itemName;
 						std::string itemId;
 					};
-					struct FailedItem
+					struct SuccessItem
 					{
 						std::string itemName;
 						std::string itemId;

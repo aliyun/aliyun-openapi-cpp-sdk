@@ -36,15 +36,15 @@ namespace AlibabaCloud
 				{
 					long outputHdDuration;
 					std::string type;
-					std::string instance;
 					std::string domainName;
+					std::string instance;
 					std::string region;
 					long outputLdDuration;
 					long tranLdDuration;
 					long tranSdDuration;
-					long tranHdDuration;
-					std::string timeStamp;
 					long outputSdDuration;
+					std::string timeStamp;
+					long tranHdDuration;
 				};
 
 

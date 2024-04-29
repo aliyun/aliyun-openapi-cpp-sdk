@@ -39,8 +39,8 @@ namespace AlibabaCloud
 					std::string domainName;
 					int partDuration;
 					std::string protocol;
-					int segmentNum;
 					int segmentDuration;
+					int segmentNum;
 					std::string appName;
 				};
 
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 				std::string getOrder()const;
 				int getTotalNum()const;
 				int getPageNum()const;
-				int getTotalPage()const;
 				int getPageSize()const;
+				int getTotalPage()const;
 				std::vector<LivePackageConfig> getLivePackageConfigList()const;
 
 			protected:
@@ -61,8 +61,8 @@ namespace AlibabaCloud
 				std::string order_;
 				int totalNum_;
 				int pageNum_;
-				int totalPage_;
 				int pageSize_;
+				int totalPage_;
 				std::vector<LivePackageConfig> livePackageConfigList_;
 
 			};

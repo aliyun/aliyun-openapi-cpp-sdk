@@ -63,10 +63,10 @@ void DescribeLiveDomainPublishErrorCodeResult::parse(const std::string &payload)
 		dataInterval_ = value["DataInterval"].asString();
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 
 }
 

@@ -43,16 +43,16 @@ void DescribeLiveDelayedStreamingUsageResult::parse(const std::string &payload)
 	for (auto valueDelayDataDelayDataItem : allDelayDataNode)
 	{
 		DelayDataItem delayDataObject;
-		if(!valueDelayDataDelayDataItem["Duration"].isNull())
-			delayDataObject.duration = std::stol(valueDelayDataDelayDataItem["Duration"].asString());
-		if(!valueDelayDataDelayDataItem["TimeStamp"].isNull())
-			delayDataObject.timeStamp = valueDelayDataDelayDataItem["TimeStamp"].asString();
-		if(!valueDelayDataDelayDataItem["StreamName"].isNull())
-			delayDataObject.streamName = valueDelayDataDelayDataItem["StreamName"].asString();
 		if(!valueDelayDataDelayDataItem["DomainName"].isNull())
 			delayDataObject.domainName = valueDelayDataDelayDataItem["DomainName"].asString();
+		if(!valueDelayDataDelayDataItem["Duration"].isNull())
+			delayDataObject.duration = std::stol(valueDelayDataDelayDataItem["Duration"].asString());
 		if(!valueDelayDataDelayDataItem["Region"].isNull())
 			delayDataObject.region = valueDelayDataDelayDataItem["Region"].asString();
+		if(!valueDelayDataDelayDataItem["StreamName"].isNull())
+			delayDataObject.streamName = valueDelayDataDelayDataItem["StreamName"].asString();
+		if(!valueDelayDataDelayDataItem["TimeStamp"].isNull())
+			delayDataObject.timeStamp = valueDelayDataDelayDataItem["TimeStamp"].asString();
 		delayData_.push_back(delayDataObject);
 	}
 	if(!value["EndTime"].isNull())

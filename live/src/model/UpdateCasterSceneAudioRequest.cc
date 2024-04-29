@@ -52,10 +52,10 @@ void UpdateCasterSceneAudioRequest::setAudioLayer(const std::vector<UpdateCaster
   for(int dep1 = 0; dep1 != audioLayer.size(); dep1++) {
   auto audioLayerObj = audioLayer.at(dep1);
   std::string audioLayerObjStr = std::string("AudioLayer") + "." + std::to_string(dep1 + 1);
-    setParameter(audioLayerObjStr + ".VolumeRate", std::to_string(audioLayerObj.volumeRate));
+    setParameter(audioLayerObjStr + ".Filter", audioLayerObj.filter);
     setParameter(audioLayerObjStr + ".FixedDelayDuration", std::to_string(audioLayerObj.fixedDelayDuration));
     setParameter(audioLayerObjStr + ".ValidChannel", audioLayerObj.validChannel);
-    setParameter(audioLayerObjStr + ".Filter", audioLayerObj.filter);
+    setParameter(audioLayerObjStr + ".VolumeRate", std::to_string(audioLayerObj.volumeRate));
   }
 }
 

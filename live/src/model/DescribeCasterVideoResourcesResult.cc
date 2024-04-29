@@ -43,32 +43,32 @@ void DescribeCasterVideoResourcesResult::parse(const std::string &payload)
 	for (auto valueVideoResourcesVideoResource : allVideoResourcesNode)
 	{
 		VideoResource videoResourcesObject;
+		if(!valueVideoResourcesVideoResource["BeginOffset"].isNull())
+			videoResourcesObject.beginOffset = std::stoi(valueVideoResourcesVideoResource["BeginOffset"].asString());
 		if(!valueVideoResourcesVideoResource["EndOffset"].isNull())
 			videoResourcesObject.endOffset = std::stoi(valueVideoResourcesVideoResource["EndOffset"].asString());
 		if(!valueVideoResourcesVideoResource["FlvUrl"].isNull())
 			videoResourcesObject.flvUrl = valueVideoResourcesVideoResource["FlvUrl"].asString();
-		if(!valueVideoResourcesVideoResource["BeginOffset"].isNull())
-			videoResourcesObject.beginOffset = std::stoi(valueVideoResourcesVideoResource["BeginOffset"].asString());
-		if(!valueVideoResourcesVideoResource["PtsCallbackInterval"].isNull())
-			videoResourcesObject.ptsCallbackInterval = std::stoi(valueVideoResourcesVideoResource["PtsCallbackInterval"].asString());
-		if(!valueVideoResourcesVideoResource["MaterialId"].isNull())
-			videoResourcesObject.materialId = valueVideoResourcesVideoResource["MaterialId"].asString();
-		if(!valueVideoResourcesVideoResource["LocationId"].isNull())
-			videoResourcesObject.locationId = valueVideoResourcesVideoResource["LocationId"].asString();
-		if(!valueVideoResourcesVideoResource["LiveStreamUrl"].isNull())
-			videoResourcesObject.liveStreamUrl = valueVideoResourcesVideoResource["LiveStreamUrl"].asString();
-		if(!valueVideoResourcesVideoResource["VodUrl"].isNull())
-			videoResourcesObject.vodUrl = valueVideoResourcesVideoResource["VodUrl"].asString();
-		if(!valueVideoResourcesVideoResource["ResourceId"].isNull())
-			videoResourcesObject.resourceId = valueVideoResourcesVideoResource["ResourceId"].asString();
-		if(!valueVideoResourcesVideoResource["RepeatNum"].isNull())
-			videoResourcesObject.repeatNum = std::stoi(valueVideoResourcesVideoResource["RepeatNum"].asString());
-		if(!valueVideoResourcesVideoResource["ResourceName"].isNull())
-			videoResourcesObject.resourceName = valueVideoResourcesVideoResource["ResourceName"].asString();
 		if(!valueVideoResourcesVideoResource["ImageId"].isNull())
 			videoResourcesObject.imageId = valueVideoResourcesVideoResource["ImageId"].asString();
 		if(!valueVideoResourcesVideoResource["ImageUrl"].isNull())
 			videoResourcesObject.imageUrl = valueVideoResourcesVideoResource["ImageUrl"].asString();
+		if(!valueVideoResourcesVideoResource["LiveStreamUrl"].isNull())
+			videoResourcesObject.liveStreamUrl = valueVideoResourcesVideoResource["LiveStreamUrl"].asString();
+		if(!valueVideoResourcesVideoResource["LocationId"].isNull())
+			videoResourcesObject.locationId = valueVideoResourcesVideoResource["LocationId"].asString();
+		if(!valueVideoResourcesVideoResource["MaterialId"].isNull())
+			videoResourcesObject.materialId = valueVideoResourcesVideoResource["MaterialId"].asString();
+		if(!valueVideoResourcesVideoResource["PtsCallbackInterval"].isNull())
+			videoResourcesObject.ptsCallbackInterval = std::stoi(valueVideoResourcesVideoResource["PtsCallbackInterval"].asString());
+		if(!valueVideoResourcesVideoResource["RepeatNum"].isNull())
+			videoResourcesObject.repeatNum = std::stoi(valueVideoResourcesVideoResource["RepeatNum"].asString());
+		if(!valueVideoResourcesVideoResource["ResourceId"].isNull())
+			videoResourcesObject.resourceId = valueVideoResourcesVideoResource["ResourceId"].asString();
+		if(!valueVideoResourcesVideoResource["ResourceName"].isNull())
+			videoResourcesObject.resourceName = valueVideoResourcesVideoResource["ResourceName"].asString();
+		if(!valueVideoResourcesVideoResource["VodUrl"].isNull())
+			videoResourcesObject.vodUrl = valueVideoResourcesVideoResource["VodUrl"].asString();
 		videoResources_.push_back(videoResourcesObject);
 	}
 	if(!value["Total"].isNull())

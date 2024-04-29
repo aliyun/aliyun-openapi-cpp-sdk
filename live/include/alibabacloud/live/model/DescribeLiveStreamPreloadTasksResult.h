@@ -52,18 +52,18 @@ namespace AlibabaCloud
 				~DescribeLiveStreamPreloadTasksResult();
 				std::vector<PreloadTask> getPreloadTasks()const;
 				int getTotalNum()const;
-				int getTotalPage()const;
 				int getPageNum()const;
 				int getPageSize()const;
+				int getTotalPage()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<PreloadTask> preloadTasks_;
 				int totalNum_;
-				int totalPage_;
 				int pageNum_;
 				int pageSize_;
+				int totalPage_;
 
 			};
 		}

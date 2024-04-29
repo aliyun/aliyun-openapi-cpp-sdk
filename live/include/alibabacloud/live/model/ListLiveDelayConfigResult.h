@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string app;
 					std::string taskTriggerMode;
 					std::string stream;
-					std::string domain;
 					std::string delayTime;
+					std::string domain;
 				};
 
 
