@@ -66,6 +66,8 @@ public:
 	void setTag(const std::vector<Tag> &tag);
 	std::string getBusinessInfo() const;
 	void setBusinessInfo(const std::string &businessInfo);
+	std::string getWhitelistTemplateList() const;
+	void setWhitelistTemplateList(const std::string &whitelistTemplateList);
 	std::string getPeriod() const;
 	void setPeriod(const std::string &period);
 	bool getDryRun() const;
@@ -112,6 +114,10 @@ public:
 	void setZoneIdSlave2(const std::string &zoneIdSlave2);
 	std::string getDBIsIgnoreCase() const;
 	void setDBIsIgnoreCase(const std::string &dBIsIgnoreCase);
+	std::string getIoAccelerationEnabled() const;
+	void setIoAccelerationEnabled(const std::string &ioAccelerationEnabled);
+	bool getColdDataEnabled() const;
+	void setColdDataEnabled(bool coldDataEnabled);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getRegionId() const;
@@ -173,6 +179,7 @@ private:
 	std::string dBInstanceDescription_;
 	std::vector<Tag> tag_;
 	std::string businessInfo_;
+	std::string whitelistTemplateList_;
 	std::string period_;
 	bool dryRun_;
 	std::string backupId_;
@@ -196,6 +203,8 @@ private:
 	std::string zoneIdSlave1_;
 	std::string zoneIdSlave2_;
 	std::string dBIsIgnoreCase_;
+	std::string ioAccelerationEnabled_;
+	bool coldDataEnabled_;
 	std::string accessKeyId_;
 	std::string regionId_;
 	std::string engine_;

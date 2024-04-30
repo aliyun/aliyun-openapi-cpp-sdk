@@ -79,11 +79,11 @@ void CreateTempDBInstanceRequest::setResourceOwnerAccount(const std::string &res
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-int CreateTempDBInstanceRequest::getBackupId() const {
+long CreateTempDBInstanceRequest::getBackupId() const {
   return backupId_;
 }
 
-void CreateTempDBInstanceRequest::setBackupId(int backupId) {
+void CreateTempDBInstanceRequest::setBackupId(long backupId) {
   backupId_ = backupId;
   setParameter(std::string("BackupId"), std::to_string(backupId));
 }

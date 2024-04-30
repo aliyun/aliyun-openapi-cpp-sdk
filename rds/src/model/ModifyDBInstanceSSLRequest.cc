@@ -61,6 +61,15 @@ void ModifyDBInstanceSSLRequest::setClientCrlEnabled(int clientCrlEnabled) {
   setParameter(std::string("ClientCrlEnabled"), std::to_string(clientCrlEnabled));
 }
 
+std::string ModifyDBInstanceSSLRequest::getCertificate() const {
+  return certificate_;
+}
+
+void ModifyDBInstanceSSLRequest::setCertificate(const std::string &certificate) {
+  certificate_ = certificate;
+  setParameter(std::string("Certificate"), certificate);
+}
+
 std::string ModifyDBInstanceSSLRequest::getACL() const {
   return aCL_;
 }
@@ -77,6 +86,15 @@ std::string ModifyDBInstanceSSLRequest::getAccessKeyId() const {
 void ModifyDBInstanceSSLRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string ModifyDBInstanceSSLRequest::getPassWord() const {
+  return passWord_;
+}
+
+void ModifyDBInstanceSSLRequest::setPassWord(const std::string &passWord) {
+  passWord_ = passWord;
+  setParameter(std::string("PassWord"), passWord);
 }
 
 std::string ModifyDBInstanceSSLRequest::getClientCertRevocationList() const {
@@ -104,6 +122,15 @@ std::string ModifyDBInstanceSSLRequest::getDBInstanceId() const {
 void ModifyDBInstanceSSLRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string ModifyDBInstanceSSLRequest::getForceEncryption() const {
+  return forceEncryption_;
+}
+
+void ModifyDBInstanceSSLRequest::setForceEncryption(const std::string &forceEncryption) {
+  forceEncryption_ = forceEncryption;
+  setParameter(std::string("ForceEncryption"), forceEncryption);
 }
 
 int ModifyDBInstanceSSLRequest::getClientCAEnabled() const {
@@ -176,5 +203,14 @@ int ModifyDBInstanceSSLRequest::getSSLEnabled() const {
 void ModifyDBInstanceSSLRequest::setSSLEnabled(int sSLEnabled) {
   sSLEnabled_ = sSLEnabled;
   setParameter(std::string("SSLEnabled"), std::to_string(sSLEnabled));
+}
+
+std::string ModifyDBInstanceSSLRequest::getTlsVersion() const {
+  return tlsVersion_;
+}
+
+void ModifyDBInstanceSSLRequest::setTlsVersion(const std::string &tlsVersion) {
+  tlsVersion_ = tlsVersion;
+  setParameter(std::string("TlsVersion"), tlsVersion);
 }
 

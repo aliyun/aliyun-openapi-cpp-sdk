@@ -88,6 +88,15 @@ void AddTagsToResourceRequest::setTag1value(const std::string &tag1value) {
   setParameter(std::string("Tag.1.value"), tag1value);
 }
 
+std::string AddTagsToResourceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void AddTagsToResourceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string AddTagsToResourceRequest::getRegionId() const {
   return regionId_;
 }

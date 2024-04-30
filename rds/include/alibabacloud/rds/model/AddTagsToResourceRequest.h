@@ -44,6 +44,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getTag1value() const;
 	void setTag1value(const std::string &tag1value);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
@@ -79,6 +81,7 @@ private:
 	std::string tag3key_;
 	std::string accessKeyId_;
 	std::string tag1value_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string tag3value_;

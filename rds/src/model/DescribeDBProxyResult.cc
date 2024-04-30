@@ -88,6 +88,8 @@ void DescribeDBProxyResult::parse(const std::string &payload)
 		dBProxyInstanceNum_ = std::stoi(value["DBProxyInstanceNum"].asString());
 	if(!value["DBProxyInstanceType"].isNull())
 		dBProxyInstanceType_ = value["DBProxyInstanceType"].asString();
+	if(!value["DBProxyPersistentConnectionStatus"].isNull())
+		dBProxyPersistentConnectionStatus_ = value["DBProxyPersistentConnectionStatus"].asString();
 	if(!value["DBProxyInstanceStatus"].isNull())
 		dBProxyInstanceStatus_ = value["DBProxyInstanceStatus"].asString();
 	if(!value["DBProxyServiceStatus"].isNull())
@@ -108,6 +110,11 @@ void DescribeDBProxyResult::parse(const std::string &payload)
 std::string DescribeDBProxyResult::getDBProxyInstanceCurrentMinorVersion()const
 {
 	return dBProxyInstanceCurrentMinorVersion_;
+}
+
+std::string DescribeDBProxyResult::getDBProxyPersistentConnectionStatus()const
+{
+	return dBProxyPersistentConnectionStatus_;
 }
 
 std::string DescribeDBProxyResult::getDBProxyInstanceLatestMinorVersion()const

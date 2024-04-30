@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_IMPORTDATABASEBETWEENINSTANCESREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_IMPORTDATABASEBETWEENINSTANCESREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBECUSTINSRESOURCEINFOREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_DESCRIBECUSTINSRESOURCEINFOREQUEST_H_
 
 #include <alibabacloud/rds/RdsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,38 +26,29 @@
 namespace AlibabaCloud {
 namespace Rds {
 namespace Model {
-class ALIBABACLOUD_RDS_EXPORT ImportDatabaseBetweenInstancesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_RDS_EXPORT DescribeCustinsResourceInfoRequest : public RpcServiceRequest {
 public:
-	ImportDatabaseBetweenInstancesRequest();
-	~ImportDatabaseBetweenInstancesRequest();
+	DescribeCustinsResourceInfoRequest();
+	~DescribeCustinsResourceInfoRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getDBInfo() const;
-	void setDBInfo(const std::string &dBInfo);
-	std::string getDBInstanceId() const;
-	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getDBInstanceIds() const;
+	void setDBInstanceIds(const std::string &dBInstanceIds);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	std::string getOwnerAccount() const;
-	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getSourceDBInstanceId() const;
-	void setSourceDBInstanceId(const std::string &sourceDBInstanceId);
 
 private:
 	long resourceOwnerId_;
-	std::string accessKeyId_;
-	std::string dBInfo_;
-	std::string dBInstanceId_;
+	std::string resourceGroupId_;
+	std::string dBInstanceIds_;
 	std::string resourceOwnerAccount_;
-	std::string ownerAccount_;
 	long ownerId_;
-	std::string sourceDBInstanceId_;
 };
 } // namespace Model
 } // namespace Rds
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_RDS_MODEL_IMPORTDATABASEBETWEENINSTANCESREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBECUSTINSRESOURCEINFOREQUEST_H_

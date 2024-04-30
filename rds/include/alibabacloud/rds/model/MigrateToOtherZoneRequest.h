@@ -40,6 +40,8 @@ public:
 	void setZoneIdSlave1(const std::string &zoneIdSlave1);
 	std::string getZoneIdSlave2() const;
 	void setZoneIdSlave2(const std::string &zoneIdSlave2);
+	std::string getIoAccelerationEnabled() const;
+	void setIoAccelerationEnabled(const std::string &ioAccelerationEnabled);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getEffectiveTime() const;
@@ -71,6 +73,7 @@ private:
 	std::string isModifySpec_;
 	std::string zoneIdSlave1_;
 	std::string zoneIdSlave2_;
+	std::string ioAccelerationEnabled_;
 	std::string accessKeyId_;
 	std::string effectiveTime_;
 	std::string dBInstanceId_;

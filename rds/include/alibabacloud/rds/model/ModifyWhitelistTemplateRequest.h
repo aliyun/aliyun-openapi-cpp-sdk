@@ -36,6 +36,10 @@ public:
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	int getTemplateId() const;
 	void setTemplateId(int templateId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getTemplateName() const;
 	void setTemplateName(const std::string &templateName);
 	std::string getIpWhitelist() const;
@@ -45,6 +49,8 @@ private:
 	long resourceOwnerId_;
 	std::string resourceOwnerAccount_;
 	int templateId_;
+	std::string resourceGroupId_;
+	std::string regionId_;
 	std::string templateName_;
 	std::string ipWhitelist_;
 };

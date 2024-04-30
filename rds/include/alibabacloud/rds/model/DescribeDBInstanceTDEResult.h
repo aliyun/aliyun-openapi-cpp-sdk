@@ -44,12 +44,14 @@ namespace AlibabaCloud
 				~DescribeDBInstanceTDEResult();
 				std::string getTDEStatus()const;
 				std::vector<Database> getDatabases()const;
+				std::string getTDEMode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string tDEStatus_;
 				std::vector<Database> databases_;
+				std::string tDEMode_;
 
 			};
 		}

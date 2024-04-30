@@ -34,13 +34,19 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getInsName() const;
 	void setInsName(const std::string &insName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 
 private:
 	long resourceOwnerId_;
 	std::string resourceOwnerAccount_;
+	std::string resourceGroupId_;
 	std::string insName_;
+	std::string regionId_;
 };
 } // namespace Model
 } // namespace Rds

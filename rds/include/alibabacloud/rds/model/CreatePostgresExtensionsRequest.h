@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	bool getRiskConfirmed() const;
+	void setRiskConfirmed(bool riskConfirmed);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceGroupId() const;
@@ -58,6 +60,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string clientToken_;
+	bool riskConfirmed_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	std::string accountName_;

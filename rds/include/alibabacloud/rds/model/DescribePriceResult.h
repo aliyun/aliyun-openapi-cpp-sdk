@@ -48,12 +48,28 @@ namespace AlibabaCloud
 						std::string name;
 					};
 					ActivityInfo activityInfo;
+					float tradeMinRCUAmount;
 					float originalPrice;
+					std::string orderLines;
 					float discountPrice;
 					std::string currency;
 					std::vector<std::string> ruleIds;
+					float tradeMaxRCUAmount;
 					float tradePrice;
 					std::vector<Coupon> coupons;
+				};
+				struct ServerlessPrice
+				{
+					float totalOriginalMaxAmount;
+					float tradeMinRCUAmount;
+					float rCUDiscountMaxAmount;
+					float storageOriginalAmount;
+					float totalOriginalMinAmount;
+					float rCUDiscountMinAmount;
+					float rCUOriginalMaxAmount;
+					float rCUOriginalMinAmount;
+					float tradeMaxRCUAmount;
+					float storageDiscountAmount;
 				};
 				struct Rule
 				{
@@ -68,6 +84,8 @@ namespace AlibabaCloud
 				~DescribePriceResult();
 				float getTradeMinRCUAmount()const;
 				bool getShowDiscount()const;
+				ServerlessPrice getServerlessPrice()const;
+				std::string getOrderParams()const;
 				float getTradeMaxRCUAmount()const;
 				std::vector<Rule> getRules()const;
 				PriceInfo getPriceInfo()const;
@@ -77,6 +95,8 @@ namespace AlibabaCloud
 			private:
 				float tradeMinRCUAmount_;
 				bool showDiscount_;
+				ServerlessPrice serverlessPrice_;
+				std::string orderParams_;
 				float tradeMaxRCUAmount_;
 				std::vector<Rule> rules_;
 				PriceInfo priceInfo_;

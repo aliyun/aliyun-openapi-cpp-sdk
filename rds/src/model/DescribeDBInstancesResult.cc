@@ -115,6 +115,10 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			itemsObject.dedicatedHostNameForSlave = valueItemsDBInstance["DedicatedHostNameForSlave"].asString();
 		if(!valueItemsDBInstance["DBInstanceDescription"].isNull())
 			itemsObject.dBInstanceDescription = valueItemsDBInstance["DBInstanceDescription"].asString();
+		if(!valueItemsDBInstance["DBInstanceCPU"].isNull())
+			itemsObject.dBInstanceCPU = valueItemsDBInstance["DBInstanceCPU"].asString();
+		if(!valueItemsDBInstance["DBInstanceMemory"].isNull())
+			itemsObject.dBInstanceMemory = std::stoi(valueItemsDBInstance["DBInstanceMemory"].asString());
 		if(!valueItemsDBInstance["DBInstanceNetType"].isNull())
 			itemsObject.dBInstanceNetType = valueItemsDBInstance["DBInstanceNetType"].asString();
 		if(!valueItemsDBInstance["DBInstanceType"].isNull())
@@ -145,6 +149,10 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			itemsObject.burstingEnabled = valueItemsDBInstance["BurstingEnabled"].asString() == "true";
 		if(!valueItemsDBInstance["BpeEnabled"].isNull())
 			itemsObject.bpeEnabled = valueItemsDBInstance["BpeEnabled"].asString();
+		if(!valueItemsDBInstance["IoAccelerationEnabled"].isNull())
+			itemsObject.ioAccelerationEnabled = valueItemsDBInstance["IoAccelerationEnabled"].asString();
+		if(!valueItemsDBInstance["ColdDataEnabled"].isNull())
+			itemsObject.coldDataEnabled = valueItemsDBInstance["ColdDataEnabled"].asString() == "true";
 		auto allReadOnlyDBInstanceIdsNode = valueItemsDBInstance["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
 		for (auto valueItemsDBInstanceReadOnlyDBInstanceIdsReadOnlyDBInstanceId : allReadOnlyDBInstanceIdsNode)
 		{

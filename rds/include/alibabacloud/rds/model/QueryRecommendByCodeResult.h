@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_IMPORTDATABASEBETWEENINSTANCESRESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_IMPORTDATABASEBETWEENINSTANCESRESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_QUERYRECOMMENDBYCODERESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_QUERYRECOMMENDBYCODERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT ImportDatabaseBetweenInstancesResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT QueryRecommendByCodeResult : public ServiceResult
 			{
 			public:
 
 
-				ImportDatabaseBetweenInstancesResult();
-				explicit ImportDatabaseBetweenInstancesResult(const std::string &payload);
-				~ImportDatabaseBetweenInstancesResult();
-				std::string getImportId()const;
+				QueryRecommendByCodeResult();
+				explicit QueryRecommendByCodeResult(const std::string &payload);
+				~QueryRecommendByCodeResult();
+				std::string getData()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string importId_;
+				std::string data_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_IMPORTDATABASEBETWEENINSTANCESRESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_QUERYRECOMMENDBYCODERESULT_H_

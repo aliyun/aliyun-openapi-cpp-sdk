@@ -160,6 +160,15 @@ void CreateReadOnlyDBInstanceRequest::setAutoRenew(const std::string &autoRenew)
   setParameter(std::string("AutoRenew"), autoRenew);
 }
 
+std::string CreateReadOnlyDBInstanceRequest::getPort() const {
+  return port_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setPort(const std::string &port) {
+  port_ = port;
+  setParameter(std::string("Port"), port);
+}
+
 std::string CreateReadOnlyDBInstanceRequest::getZoneId() const {
   return zoneId_;
 }
@@ -194,6 +203,15 @@ std::string CreateReadOnlyDBInstanceRequest::getInstructionSetArch() const {
 void CreateReadOnlyDBInstanceRequest::setInstructionSetArch(const std::string &instructionSetArch) {
   instructionSetArch_ = instructionSetArch;
   setParameter(std::string("InstructionSetArch"), instructionSetArch);
+}
+
+std::string CreateReadOnlyDBInstanceRequest::getIoAccelerationEnabled() const {
+  return ioAccelerationEnabled_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setIoAccelerationEnabled(const std::string &ioAccelerationEnabled) {
+  ioAccelerationEnabled_ = ioAccelerationEnabled;
+  setParameter(std::string("IoAccelerationEnabled"), ioAccelerationEnabled);
 }
 
 std::string CreateReadOnlyDBInstanceRequest::getAccessKeyId() const {

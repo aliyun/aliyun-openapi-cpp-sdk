@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string temporary;
 					std::string slotStatus;
 					std::string database;
+					std::string subReplayLag;
 					std::string walDelay;
 					std::string slotName;
 					std::string plugin;

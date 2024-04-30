@@ -34,6 +34,15 @@ void ModifyDBProxyInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ModifyDBProxyInstanceRequest::getVSwitchIds() const {
+  return vSwitchIds_;
+}
+
+void ModifyDBProxyInstanceRequest::setVSwitchIds(const std::string &vSwitchIds) {
+  vSwitchIds_ = vSwitchIds;
+  setParameter(std::string("VSwitchIds"), vSwitchIds);
+}
+
 std::string ModifyDBProxyInstanceRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

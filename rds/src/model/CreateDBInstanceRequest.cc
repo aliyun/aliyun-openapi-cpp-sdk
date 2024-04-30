@@ -147,6 +147,15 @@ void CreateDBInstanceRequest::setBusinessInfo(const std::string &businessInfo) {
   setParameter(std::string("BusinessInfo"), businessInfo);
 }
 
+std::string CreateDBInstanceRequest::getWhitelistTemplateList() const {
+  return whitelistTemplateList_;
+}
+
+void CreateDBInstanceRequest::setWhitelistTemplateList(const std::string &whitelistTemplateList) {
+  whitelistTemplateList_ = whitelistTemplateList;
+  setParameter(std::string("WhitelistTemplateList"), whitelistTemplateList);
+}
+
 std::string CreateDBInstanceRequest::getPeriod() const {
   return period_;
 }
@@ -352,6 +361,24 @@ std::string CreateDBInstanceRequest::getDBIsIgnoreCase() const {
 void CreateDBInstanceRequest::setDBIsIgnoreCase(const std::string &dBIsIgnoreCase) {
   dBIsIgnoreCase_ = dBIsIgnoreCase;
   setParameter(std::string("DBIsIgnoreCase"), dBIsIgnoreCase);
+}
+
+std::string CreateDBInstanceRequest::getIoAccelerationEnabled() const {
+  return ioAccelerationEnabled_;
+}
+
+void CreateDBInstanceRequest::setIoAccelerationEnabled(const std::string &ioAccelerationEnabled) {
+  ioAccelerationEnabled_ = ioAccelerationEnabled;
+  setParameter(std::string("IoAccelerationEnabled"), ioAccelerationEnabled);
+}
+
+bool CreateDBInstanceRequest::getColdDataEnabled() const {
+  return coldDataEnabled_;
+}
+
+void CreateDBInstanceRequest::setColdDataEnabled(bool coldDataEnabled) {
+  coldDataEnabled_ = coldDataEnabled;
+  setParameter(std::string("ColdDataEnabled"), coldDataEnabled ? "true" : "false");
 }
 
 std::string CreateDBInstanceRequest::getAccessKeyId() const {

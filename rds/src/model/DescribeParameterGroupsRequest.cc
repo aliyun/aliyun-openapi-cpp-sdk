@@ -43,6 +43,15 @@ void DescribeParameterGroupsRequest::setResourceOwnerAccount(const std::string &
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
+bool DescribeParameterGroupsRequest::getEnableDetail() const {
+  return enableDetail_;
+}
+
+void DescribeParameterGroupsRequest::setEnableDetail(bool enableDetail) {
+  enableDetail_ = enableDetail;
+  setParameter(std::string("EnableDetail"), enableDetail ? "true" : "false");
+}
+
 long DescribeParameterGroupsRequest::getOwnerId() const {
   return ownerId_;
 }

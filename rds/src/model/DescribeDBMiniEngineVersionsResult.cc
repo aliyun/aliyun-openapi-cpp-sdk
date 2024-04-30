@@ -63,6 +63,10 @@ void DescribeDBMiniEngineVersionsResult::parse(const std::string &payload)
 			minorVersionItemsObject.communityMinorVersion = valueMinorVersionItemsMinorVersionItemsItem["CommunityMinorVersion"].asString();
 		if(!valueMinorVersionItemsMinorVersionItemsItem["Tag"].isNull())
 			minorVersionItemsObject.tag = valueMinorVersionItemsMinorVersionItemsItem["Tag"].asString();
+		if(!valueMinorVersionItemsMinorVersionItemsItem["ExpireStatus"].isNull())
+			minorVersionItemsObject.expireStatus = valueMinorVersionItemsMinorVersionItemsItem["ExpireStatus"].asString();
+		if(!valueMinorVersionItemsMinorVersionItemsItem["ExpireDate"].isNull())
+			minorVersionItemsObject.expireDate = valueMinorVersionItemsMinorVersionItemsItem["ExpireDate"].asString();
 		minorVersionItems_.push_back(minorVersionItemsObject);
 	}
 	if(!value["DBInstanceId"].isNull())

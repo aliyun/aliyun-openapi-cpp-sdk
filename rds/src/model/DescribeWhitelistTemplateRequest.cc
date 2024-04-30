@@ -52,3 +52,21 @@ void DescribeWhitelistTemplateRequest::setTemplateId(int templateId) {
   setParameter(std::string("TemplateId"), std::to_string(templateId));
 }
 
+std::string DescribeWhitelistTemplateRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeWhitelistTemplateRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string DescribeWhitelistTemplateRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeWhitelistTemplateRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+

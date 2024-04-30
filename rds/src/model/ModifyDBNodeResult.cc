@@ -14,38 +14,52 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/rds/model/ImportDatabaseBetweenInstancesResult.h>
+#include <alibabacloud/rds/model/ModifyDBNodeResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Rds;
 using namespace AlibabaCloud::Rds::Model;
 
-ImportDatabaseBetweenInstancesResult::ImportDatabaseBetweenInstancesResult() :
+ModifyDBNodeResult::ModifyDBNodeResult() :
 	ServiceResult()
 {}
 
-ImportDatabaseBetweenInstancesResult::ImportDatabaseBetweenInstancesResult(const std::string &payload) :
+ModifyDBNodeResult::ModifyDBNodeResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ImportDatabaseBetweenInstancesResult::~ImportDatabaseBetweenInstancesResult()
+ModifyDBNodeResult::~ModifyDBNodeResult()
 {}
 
-void ImportDatabaseBetweenInstancesResult::parse(const std::string &payload)
+void ModifyDBNodeResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ImportId"].isNull())
-		importId_ = value["ImportId"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
-std::string ImportDatabaseBetweenInstancesResult::getImportId()const
+std::string ModifyDBNodeResult::getDBInstanceId()const
 {
-	return importId_;
+	return dBInstanceId_;
+}
+
+long ModifyDBNodeResult::getOrderId()const
+{
+	return orderId_;
+}
+
+bool ModifyDBNodeResult::getSuccess()const
+{
+	return success_;
 }
 

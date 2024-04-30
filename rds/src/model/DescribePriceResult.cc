@@ -60,6 +60,12 @@ void DescribePriceResult::parse(const std::string &payload)
 		priceInfo_.currency = priceInfoNode["Currency"].asString();
 	if(!priceInfoNode["TradePrice"].isNull())
 		priceInfo_.tradePrice = std::stof(priceInfoNode["TradePrice"].asString());
+	if(!priceInfoNode["TradeMinRCUAmount"].isNull())
+		priceInfo_.tradeMinRCUAmount = std::stof(priceInfoNode["TradeMinRCUAmount"].asString());
+	if(!priceInfoNode["TradeMaxRCUAmount"].isNull())
+		priceInfo_.tradeMaxRCUAmount = std::stof(priceInfoNode["TradeMaxRCUAmount"].asString());
+	if(!priceInfoNode["OrderLines"].isNull())
+		priceInfo_.orderLines = priceInfoNode["OrderLines"].asString();
 	auto allCouponsNode = priceInfoNode["Coupons"]["Coupon"];
 	for (auto priceInfoNodeCouponsCoupon : allCouponsNode)
 	{
@@ -84,6 +90,29 @@ void DescribePriceResult::parse(const std::string &payload)
 		auto allRuleIds = priceInfoNode["RuleIds"]["RuleId"];
 		for (auto value : allRuleIds)
 			priceInfo_.ruleIds.push_back(value.asString());
+	auto serverlessPriceNode = value["ServerlessPrice"];
+	if(!serverlessPriceNode["TotalOriginalMinAmount"].isNull())
+		serverlessPrice_.totalOriginalMinAmount = std::stof(serverlessPriceNode["TotalOriginalMinAmount"].asString());
+	if(!serverlessPriceNode["TotalOriginalMaxAmount"].isNull())
+		serverlessPrice_.totalOriginalMaxAmount = std::stof(serverlessPriceNode["TotalOriginalMaxAmount"].asString());
+	if(!serverlessPriceNode["RCUOriginalMinAmount"].isNull())
+		serverlessPrice_.rCUOriginalMinAmount = std::stof(serverlessPriceNode["RCUOriginalMinAmount"].asString());
+	if(!serverlessPriceNode["RCUOriginalMaxAmount"].isNull())
+		serverlessPrice_.rCUOriginalMaxAmount = std::stof(serverlessPriceNode["RCUOriginalMaxAmount"].asString());
+	if(!serverlessPriceNode["RCUDiscountMinAmount"].isNull())
+		serverlessPrice_.rCUDiscountMinAmount = std::stof(serverlessPriceNode["RCUDiscountMinAmount"].asString());
+	if(!serverlessPriceNode["RCUDiscountMaxAmount"].isNull())
+		serverlessPrice_.rCUDiscountMaxAmount = std::stof(serverlessPriceNode["RCUDiscountMaxAmount"].asString());
+	if(!serverlessPriceNode["TradeMinRCUAmount"].isNull())
+		serverlessPrice_.tradeMinRCUAmount = std::stof(serverlessPriceNode["TradeMinRCUAmount"].asString());
+	if(!serverlessPriceNode["TradeMaxRCUAmount"].isNull())
+		serverlessPrice_.tradeMaxRCUAmount = std::stof(serverlessPriceNode["TradeMaxRCUAmount"].asString());
+	if(!serverlessPriceNode["StorageOriginalAmount"].isNull())
+		serverlessPrice_.storageOriginalAmount = std::stof(serverlessPriceNode["StorageOriginalAmount"].asString());
+	if(!serverlessPriceNode["storageDiscountAmount"].isNull())
+		serverlessPrice_.storageDiscountAmount = std::stof(serverlessPriceNode["storageDiscountAmount"].asString());
+	if(!value["OrderParams"].isNull())
+		orderParams_ = value["OrderParams"].asString();
 	if(!value["ShowDiscount"].isNull())
 		showDiscount_ = value["ShowDiscount"].asString() == "true";
 	if(!value["TradeMaxRCUAmount"].isNull())
@@ -101,6 +130,16 @@ float DescribePriceResult::getTradeMinRCUAmount()const
 bool DescribePriceResult::getShowDiscount()const
 {
 	return showDiscount_;
+}
+
+DescribePriceResult::ServerlessPrice DescribePriceResult::getServerlessPrice()const
+{
+	return serverlessPrice_;
+}
+
+std::string DescribePriceResult::getOrderParams()const
+{
+	return orderParams_;
 }
 
 float DescribePriceResult::getTradeMaxRCUAmount()const

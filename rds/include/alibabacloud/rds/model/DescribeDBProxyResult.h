@@ -57,6 +57,7 @@ namespace AlibabaCloud
 				explicit DescribeDBProxyResult(const std::string &payload);
 				~DescribeDBProxyResult();
 				std::string getDBProxyInstanceCurrentMinorVersion()const;
+				std::string getDBProxyPersistentConnectionStatus()const;
 				std::string getDBProxyInstanceLatestMinorVersion()const;
 				int getDBProxyInstanceNum()const;
 				std::string getResourceGroupId()const;
@@ -75,6 +76,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string dBProxyInstanceCurrentMinorVersion_;
+				std::string dBProxyPersistentConnectionStatus_;
 				std::string dBProxyInstanceLatestMinorVersion_;
 				int dBProxyInstanceNum_;
 				std::string resourceGroupId_;

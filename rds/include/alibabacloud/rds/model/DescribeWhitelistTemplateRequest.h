@@ -36,11 +36,17 @@ public:
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	int getTemplateId() const;
 	void setTemplateId(int templateId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 
 private:
 	long resourceOwnerId_;
 	std::string resourceOwnerAccount_;
 	int templateId_;
+	std::string resourceGroupId_;
+	std::string regionId_;
 };
 } // namespace Model
 } // namespace Rds

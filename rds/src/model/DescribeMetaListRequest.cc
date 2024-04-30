@@ -115,11 +115,11 @@ void DescribeMetaListRequest::setResourceOwnerAccount(const std::string &resourc
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-int DescribeMetaListRequest::getBackupSetID() const {
+long DescribeMetaListRequest::getBackupSetID() const {
   return backupSetID_;
 }
 
-void DescribeMetaListRequest::setBackupSetID(int backupSetID) {
+void DescribeMetaListRequest::setBackupSetID(long backupSetID) {
   backupSetID_ = backupSetID;
   setParameter(std::string("BackupSetID"), std::to_string(backupSetID));
 }

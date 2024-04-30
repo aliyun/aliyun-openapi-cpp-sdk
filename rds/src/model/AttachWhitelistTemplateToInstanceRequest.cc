@@ -52,6 +52,15 @@ void AttachWhitelistTemplateToInstanceRequest::setTemplateId(int templateId) {
   setParameter(std::string("TemplateId"), std::to_string(templateId));
 }
 
+std::string AttachWhitelistTemplateToInstanceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void AttachWhitelistTemplateToInstanceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string AttachWhitelistTemplateToInstanceRequest::getInsName() const {
   return insName_;
 }
@@ -59,5 +68,14 @@ std::string AttachWhitelistTemplateToInstanceRequest::getInsName() const {
 void AttachWhitelistTemplateToInstanceRequest::setInsName(const std::string &insName) {
   insName_ = insName;
   setParameter(std::string("InsName"), insName);
+}
+
+std::string AttachWhitelistTemplateToInstanceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AttachWhitelistTemplateToInstanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 

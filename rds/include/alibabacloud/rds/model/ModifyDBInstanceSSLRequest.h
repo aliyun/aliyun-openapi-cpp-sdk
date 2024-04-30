@@ -38,16 +38,22 @@ public:
 	void setServerKey(const std::string &serverKey);
 	int getClientCrlEnabled() const;
 	void setClientCrlEnabled(int clientCrlEnabled);
+	std::string getCertificate() const;
+	void setCertificate(const std::string &certificate);
 	std::string getACL() const;
 	void setACL(const std::string &aCL);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getPassWord() const;
+	void setPassWord(const std::string &passWord);
 	std::string getClientCertRevocationList() const;
 	void setClientCertRevocationList(const std::string &clientCertRevocationList);
 	std::string getServerCert() const;
 	void setServerCert(const std::string &serverCert);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getForceEncryption() const;
+	void setForceEncryption(const std::string &forceEncryption);
 	int getClientCAEnabled() const;
 	void setClientCAEnabled(int clientCAEnabled);
 	std::string getClientCACert() const;
@@ -64,17 +70,22 @@ public:
 	void setOwnerId(long ownerId);
 	int getSSLEnabled() const;
 	void setSSLEnabled(int sSLEnabled);
+	std::string getTlsVersion() const;
+	void setTlsVersion(const std::string &tlsVersion);
 
 private:
 	long resourceOwnerId_;
 	std::string connectionString_;
 	std::string serverKey_;
 	int clientCrlEnabled_;
+	std::string certificate_;
 	std::string aCL_;
 	std::string accessKeyId_;
+	std::string passWord_;
 	std::string clientCertRevocationList_;
 	std::string serverCert_;
 	std::string dBInstanceId_;
+	std::string forceEncryption_;
 	int clientCAEnabled_;
 	std::string clientCACert_;
 	std::string replicationACL_;
@@ -83,6 +94,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	int sSLEnabled_;
+	std::string tlsVersion_;
 };
 } // namespace Model
 } // namespace Rds

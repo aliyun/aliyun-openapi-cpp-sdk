@@ -42,8 +42,8 @@ public:
 	void setRestoreTime(const std::string &restoreTime);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	int getBackupId() const;
-	void setBackupId(int backupId);
+	long getBackupId() const;
+	void setBackupId(long backupId);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
@@ -56,7 +56,7 @@ private:
 	std::string dBInstanceId_;
 	std::string restoreTime_;
 	std::string resourceOwnerAccount_;
-	int backupId_;
+	long backupId_;
 	std::string ownerAccount_;
 	long ownerId_;
 };

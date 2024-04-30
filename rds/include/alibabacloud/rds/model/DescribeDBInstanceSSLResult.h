@@ -47,9 +47,11 @@ namespace AlibabaCloud
 				std::string getClientCACertExpireTime()const;
 				std::string getSSLExpireTime()const;
 				std::string getServerKey()const;
+				std::string getTlsVersion()const;
 				std::string getSSLCreateTime()const;
 				std::string getServerCert()const;
 				std::string getSSLEnabled()const;
+				std::string getForceEncryption()const;
 				std::string getClientCACert()const;
 				std::string getReplicationACL()const;
 				std::string getRequireUpdateReason()const;
@@ -69,9 +71,11 @@ namespace AlibabaCloud
 				std::string clientCACertExpireTime_;
 				std::string sSLExpireTime_;
 				std::string serverKey_;
+				std::string tlsVersion_;
 				std::string sSLCreateTime_;
 				std::string serverCert_;
 				std::string sSLEnabled_;
+				std::string forceEncryption_;
 				std::string clientCACert_;
 				std::string replicationACL_;
 				std::string requireUpdateReason_;

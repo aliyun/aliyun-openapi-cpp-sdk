@@ -70,6 +70,24 @@ void ModifyDBInstanceSpecRequest::setAutoUseCoupon(bool autoUseCoupon) {
   setParameter(std::string("AutoUseCoupon"), autoUseCoupon ? "true" : "false");
 }
 
+std::string ModifyDBInstanceSpecRequest::getIoAccelerationEnabled() const {
+  return ioAccelerationEnabled_;
+}
+
+void ModifyDBInstanceSpecRequest::setIoAccelerationEnabled(const std::string &ioAccelerationEnabled) {
+  ioAccelerationEnabled_ = ioAccelerationEnabled;
+  setParameter(std::string("IoAccelerationEnabled"), ioAccelerationEnabled);
+}
+
+bool ModifyDBInstanceSpecRequest::getColdDataEnabled() const {
+  return coldDataEnabled_;
+}
+
+void ModifyDBInstanceSpecRequest::setColdDataEnabled(bool coldDataEnabled) {
+  coldDataEnabled_ = coldDataEnabled;
+  setParameter(std::string("ColdDataEnabled"), coldDataEnabled ? "true" : "false");
+}
+
 std::string ModifyDBInstanceSpecRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

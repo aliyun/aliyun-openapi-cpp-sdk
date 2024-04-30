@@ -34,6 +34,42 @@ void CancelImportRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string CancelImportRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void CancelImportRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string CancelImportRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CancelImportRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+int CancelImportRequest::getImportId() const {
+  return importId_;
+}
+
+void CancelImportRequest::setImportId(int importId) {
+  importId_ = importId;
+  setParameter(std::string("ImportId"), std::to_string(importId));
+}
+
+std::string CancelImportRequest::getDBInstanceId() const {
+  return dBInstanceId_;
+}
+
+void CancelImportRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
 std::string CancelImportRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -59,32 +95,5 @@ long CancelImportRequest::getOwnerId() const {
 void CancelImportRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string CancelImportRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void CancelImportRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-int CancelImportRequest::getImportId() const {
-  return importId_;
-}
-
-void CancelImportRequest::setImportId(int importId) {
-  importId_ = importId;
-  setParameter(std::string("ImportId"), std::to_string(importId));
-}
-
-std::string CancelImportRequest::getDBInstanceId() const {
-  return dBInstanceId_;
-}
-
-void CancelImportRequest::setDBInstanceId(const std::string &dBInstanceId) {
-  dBInstanceId_ = dBInstanceId;
-  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 

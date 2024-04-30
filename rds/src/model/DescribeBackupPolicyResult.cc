@@ -101,6 +101,10 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 		supportModifyBackupPriority_ = value["SupportModifyBackupPriority"].asString() == "true";
 	if(!value["BackupPriority"].isNull())
 		backupPriority_ = std::stoi(value["BackupPriority"].asString());
+	if(!value["EnablePitrProtection"].isNull())
+		enablePitrProtection_ = value["EnablePitrProtection"].asString() == "true";
+	if(!value["PitrRetentionPeriod"].isNull())
+		pitrRetentionPeriod_ = std::stoi(value["PitrRetentionPeriod"].asString());
 
 }
 
@@ -164,6 +168,11 @@ int DescribeBackupPolicyResult::getSupportVolumeShadowCopy()const
 	return supportVolumeShadowCopy_;
 }
 
+int DescribeBackupPolicyResult::getPitrRetentionPeriod()const
+{
+	return pitrRetentionPeriod_;
+}
+
 std::string DescribeBackupPolicyResult::getDuplicationContent()const
 {
 	return duplicationContent_;
@@ -212,6 +221,11 @@ std::string DescribeBackupPolicyResult::getCompressType()const
 std::string DescribeBackupPolicyResult::getLogBackupFrequency()const
 {
 	return logBackupFrequency_;
+}
+
+bool DescribeBackupPolicyResult::getEnablePitrProtection()const
+{
+	return enablePitrProtection_;
 }
 
 std::string DescribeBackupPolicyResult::getBackupLog()const

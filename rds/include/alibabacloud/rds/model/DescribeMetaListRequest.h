@@ -50,8 +50,8 @@ public:
 	void setRestoreTime(const std::string &restoreTime);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	int getBackupSetID() const;
-	void setBackupSetID(int backupSetID);
+	long getBackupSetID() const;
+	void setBackupSetID(long backupSetID);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getGetDbName() const;
@@ -70,7 +70,7 @@ private:
 	int pageIndex_;
 	std::string restoreTime_;
 	std::string resourceOwnerAccount_;
-	int backupSetID_;
+	long backupSetID_;
 	long ownerId_;
 	std::string getDbName_;
 	std::string restoreType_;

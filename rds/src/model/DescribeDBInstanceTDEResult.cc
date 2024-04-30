@@ -51,6 +51,8 @@ void DescribeDBInstanceTDEResult::parse(const std::string &payload)
 	}
 	if(!value["TDEStatus"].isNull())
 		tDEStatus_ = value["TDEStatus"].asString();
+	if(!value["TDEMode"].isNull())
+		tDEMode_ = value["TDEMode"].asString();
 
 }
 
@@ -62,5 +64,10 @@ std::string DescribeDBInstanceTDEResult::getTDEStatus()const
 std::vector<DescribeDBInstanceTDEResult::Database> DescribeDBInstanceTDEResult::getDatabases()const
 {
 	return databases_;
+}
+
+std::string DescribeDBInstanceTDEResult::getTDEMode()const
+{
+	return tDEMode_;
 }
 

@@ -32,6 +32,8 @@ public:
 	~ModifyDBProxyInstanceRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getVSwitchIds() const;
+	void setVSwitchIds(const std::string &vSwitchIds);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getEffectiveTime() const;
@@ -55,6 +57,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string vSwitchIds_;
 	std::string accessKeyId_;
 	std::string effectiveTime_;
 	std::string effectiveSpecificTime_;

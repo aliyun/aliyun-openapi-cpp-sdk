@@ -34,7 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct ItemsItem
 				{
-					int status;
+					std::string status;
 					float progress;
 					std::string taskId;
 					std::string endTime;

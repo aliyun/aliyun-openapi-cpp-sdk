@@ -32,6 +32,10 @@ public:
 	~DescribeAllWhitelistTemplateRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getPageNumbers() const;
 	void setPageNumbers(int pageNumbers);
 	std::string getTemplateName() const;
@@ -45,6 +49,8 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string resourceGroupId_;
+	std::string regionId_;
 	int pageNumbers_;
 	std::string templateName_;
 	bool fuzzySearch_;

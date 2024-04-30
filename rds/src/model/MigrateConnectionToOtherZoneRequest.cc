@@ -25,6 +25,15 @@ MigrateConnectionToOtherZoneRequest::MigrateConnectionToOtherZoneRequest()
 
 MigrateConnectionToOtherZoneRequest::~MigrateConnectionToOtherZoneRequest() {}
 
+long MigrateConnectionToOtherZoneRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
+}
+
+void MigrateConnectionToOtherZoneRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
 std::string MigrateConnectionToOtherZoneRequest::getConnectionString() const {
   return connectionString_;
 }
@@ -32,6 +41,15 @@ std::string MigrateConnectionToOtherZoneRequest::getConnectionString() const {
 void MigrateConnectionToOtherZoneRequest::setConnectionString(const std::string &connectionString) {
   connectionString_ = connectionString;
   setParameter(std::string("ConnectionString"), connectionString);
+}
+
+long MigrateConnectionToOtherZoneRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void MigrateConnectionToOtherZoneRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
 std::string MigrateConnectionToOtherZoneRequest::getZoneId() const {

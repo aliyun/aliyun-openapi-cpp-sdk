@@ -30,15 +30,21 @@ class ALIBABACLOUD_RDS_EXPORT MigrateConnectionToOtherZoneRequest : public RpcSe
 public:
 	MigrateConnectionToOtherZoneRequest();
 	~MigrateConnectionToOtherZoneRequest();
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
 	std::string getConnectionString() const;
 	void setConnectionString(const std::string &connectionString);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 
 private:
+	long resourceOwnerId_;
 	std::string connectionString_;
+	long ownerId_;
 	std::string zoneId_;
 	std::string dBInstanceId_;
 };

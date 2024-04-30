@@ -42,6 +42,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getPersistentConnectionStatus() const;
+	void setPersistentConnectionStatus(const std::string &persistentConnectionStatus);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getDBProxyEngineType() const;
@@ -56,6 +58,8 @@ public:
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getAccountPassword() const;
 	void setAccountPassword(const std::string &accountPassword);
+	std::string getDBProxyInstanceType() const;
+	void setDBProxyInstanceType(const std::string &dBProxyInstanceType);
 	std::string getVPCId() const;
 	void setVPCId(const std::string &vPCId);
 	std::string getInstanceNetworkType() const;
@@ -68,6 +72,7 @@ private:
 	std::string accountName_;
 	std::string regionId_;
 	std::string dBInstanceId_;
+	std::string persistentConnectionStatus_;
 	std::string resourceOwnerAccount_;
 	std::string dBProxyEngineType_;
 	long ownerId_;
@@ -75,6 +80,7 @@ private:
 	std::string configDBProxyService_;
 	std::string vSwitchId_;
 	std::string accountPassword_;
+	std::string dBProxyInstanceType_;
 	std::string vPCId_;
 	std::string instanceNetworkType_;
 };

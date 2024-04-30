@@ -59,6 +59,7 @@ namespace AlibabaCloud
 				int getLogBackupLocalRetentionNumber()const;
 				int getSupportReleasedKeep()const;
 				int getSupportVolumeShadowCopy()const;
+				int getPitrRetentionPeriod()const;
 				std::string getDuplicationContent()const;
 				std::string getBackupMethod()const;
 				std::string getDuplication()const;
@@ -69,6 +70,7 @@ namespace AlibabaCloud
 				std::string getHighSpaceUsageProtection()const;
 				std::string getCompressType()const;
 				std::string getLogBackupFrequency()const;
+				bool getEnablePitrProtection()const;
 				std::string getBackupLog()const;
 				std::string getEnableBackupLog()const;
 				std::string getLocalLogRetentionSpace()const;
@@ -91,6 +93,7 @@ namespace AlibabaCloud
 				int logBackupLocalRetentionNumber_;
 				int supportReleasedKeep_;
 				int supportVolumeShadowCopy_;
+				int pitrRetentionPeriod_;
 				std::string duplicationContent_;
 				std::string backupMethod_;
 				std::string duplication_;
@@ -101,6 +104,7 @@ namespace AlibabaCloud
 				std::string highSpaceUsageProtection_;
 				std::string compressType_;
 				std::string logBackupFrequency_;
+				bool enablePitrProtection_;
 				std::string backupLog_;
 				std::string enableBackupLog_;
 				std::string localLogRetentionSpace_;

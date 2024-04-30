@@ -25,6 +25,24 @@ GetDBInstanceTopologyRequest::GetDBInstanceTopologyRequest()
 
 GetDBInstanceTopologyRequest::~GetDBInstanceTopologyRequest() {}
 
+long GetDBInstanceTopologyRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
+}
+
+void GetDBInstanceTopologyRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
+long GetDBInstanceTopologyRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void GetDBInstanceTopologyRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
 std::string GetDBInstanceTopologyRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

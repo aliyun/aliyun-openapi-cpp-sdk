@@ -34,6 +34,24 @@ void DescribeAllWhitelistTemplateRequest::setResourceOwnerId(long resourceOwnerI
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeAllWhitelistTemplateRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeAllWhitelistTemplateRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string DescribeAllWhitelistTemplateRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeAllWhitelistTemplateRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeAllWhitelistTemplateRequest::getPageNumbers() const {
   return pageNumbers_;
 }

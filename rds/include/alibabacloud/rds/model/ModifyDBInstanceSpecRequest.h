@@ -46,6 +46,10 @@ public:
 	void setEngineVersion(const std::string &engineVersion);
 	bool getAutoUseCoupon() const;
 	void setAutoUseCoupon(bool autoUseCoupon);
+	std::string getIoAccelerationEnabled() const;
+	void setIoAccelerationEnabled(const std::string &ioAccelerationEnabled);
+	bool getColdDataEnabled() const;
+	void setColdDataEnabled(bool coldDataEnabled);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceGroupId() const;
@@ -95,6 +99,8 @@ private:
 	std::string clientToken_;
 	std::string engineVersion_;
 	bool autoUseCoupon_;
+	std::string ioAccelerationEnabled_;
+	bool coldDataEnabled_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	ServerlessConfiguration serverlessConfiguration_;

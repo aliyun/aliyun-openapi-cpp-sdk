@@ -43,6 +43,15 @@ void CreatePostgresExtensionsRequest::setClientToken(const std::string &clientTo
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+bool CreatePostgresExtensionsRequest::getRiskConfirmed() const {
+  return riskConfirmed_;
+}
+
+void CreatePostgresExtensionsRequest::setRiskConfirmed(bool riskConfirmed) {
+  riskConfirmed_ = riskConfirmed;
+  setParameter(std::string("RiskConfirmed"), riskConfirmed ? "true" : "false");
+}
+
 std::string CreatePostgresExtensionsRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

@@ -57,6 +57,8 @@ void DescribeSlotsResult::parse(const std::string &payload)
 			slotsObject.slotStatus = valueSlotsSlot["SlotStatus"].asString();
 		if(!valueSlotsSlot["WalDelay"].isNull())
 			slotsObject.walDelay = valueSlotsSlot["WalDelay"].asString();
+		if(!valueSlotsSlot["SubReplayLag"].isNull())
+			slotsObject.subReplayLag = valueSlotsSlot["SubReplayLag"].asString();
 		slots_.push_back(slotsObject);
 	}
 

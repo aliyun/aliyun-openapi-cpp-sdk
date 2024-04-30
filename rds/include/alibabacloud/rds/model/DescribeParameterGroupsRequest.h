@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	bool getEnableDetail() const;
+	void setEnableDetail(bool enableDetail);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getAccessKeyId() const;
@@ -46,6 +48,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string resourceOwnerAccount_;
+	bool enableDetail_;
 	long ownerId_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;

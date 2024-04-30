@@ -209,8 +209,12 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.burstingEnabled = valueItemsDBInstanceAttribute["BurstingEnabled"].asString() == "true";
 		if(!valueItemsDBInstanceAttribute["BpeEnabled"].isNull())
 			itemsObject.bpeEnabled = valueItemsDBInstanceAttribute["BpeEnabled"].asString();
+		if(!valueItemsDBInstanceAttribute["IoAccelerationEnabled"].isNull())
+			itemsObject.ioAccelerationEnabled = valueItemsDBInstanceAttribute["IoAccelerationEnabled"].asString();
 		if(!valueItemsDBInstanceAttribute["PGBouncerEnabled"].isNull())
 			itemsObject.pGBouncerEnabled = valueItemsDBInstanceAttribute["PGBouncerEnabled"].asString();
+		if(!valueItemsDBInstanceAttribute["ColdDataEnabled"].isNull())
+			itemsObject.coldDataEnabled = valueItemsDBInstanceAttribute["ColdDataEnabled"].asString() == "true";
 		auto allSlaveZonesNode = valueItemsDBInstanceAttribute["SlaveZones"]["SlaveZone"];
 		for (auto valueItemsDBInstanceAttributeSlaveZonesSlaveZone : allSlaveZonesNode)
 		{
@@ -241,6 +245,14 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 				dBClusterNodesObject.nodeRole = valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["NodeRole"].asString();
 			if(!valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["ClassCode"].isNull())
 				dBClusterNodesObject.classCode = valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["ClassCode"].asString();
+			if(!valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["ClassType"].isNull())
+				dBClusterNodesObject.classType = valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["ClassType"].asString();
+			if(!valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["Cpu"].isNull())
+				dBClusterNodesObject.cpu = valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["Cpu"].asString();
+			if(!valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["Memory"].isNull())
+				dBClusterNodesObject.memory = valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["Memory"].asString();
+			if(!valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["Status"].isNull())
+				dBClusterNodesObject.status = valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["Status"].asString();
 			itemsObject.dBClusterNodes.push_back(dBClusterNodesObject);
 		}
 		auto extraNode = value["Extra"];

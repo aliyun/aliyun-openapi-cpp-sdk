@@ -63,10 +63,14 @@ namespace AlibabaCloud
 					};
 					struct DBClusterNode
 					{
+						std::string status;
 						std::string nodeZoneId;
 						std::string nodeRole;
 						std::string classCode;
+						std::string memory;
 						std::string nodeId;
+						std::string cpu;
+						std::string classType;
 						std::string nodeRegionId;
 					};
 					long dBInstanceMemory;
@@ -92,6 +96,7 @@ namespace AlibabaCloud
 					std::string dBInstanceDescription;
 					std::string tempUpgradeRecoveryClass;
 					std::string engine;
+					std::string ioAccelerationEnabled;
 					std::string iPType;
 					int maxIOMBPS;
 					std::string engineVersion;
@@ -142,6 +147,7 @@ namespace AlibabaCloud
 					std::string maintainTime;
 					std::string dispenseMode;
 					bool burstingEnabled;
+					bool coldDataEnabled;
 					std::string zoneId;
 					std::string tempUpgradeRecoveryTime;
 					std::string dBInstanceStorageType;

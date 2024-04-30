@@ -70,6 +70,15 @@ void MigrateToOtherZoneRequest::setZoneIdSlave2(const std::string &zoneIdSlave2)
   setParameter(std::string("ZoneIdSlave2"), zoneIdSlave2);
 }
 
+std::string MigrateToOtherZoneRequest::getIoAccelerationEnabled() const {
+  return ioAccelerationEnabled_;
+}
+
+void MigrateToOtherZoneRequest::setIoAccelerationEnabled(const std::string &ioAccelerationEnabled) {
+  ioAccelerationEnabled_ = ioAccelerationEnabled;
+  setParameter(std::string("IoAccelerationEnabled"), ioAccelerationEnabled);
+}
+
 std::string MigrateToOtherZoneRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

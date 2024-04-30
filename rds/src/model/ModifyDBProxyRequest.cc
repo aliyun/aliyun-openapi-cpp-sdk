@@ -79,6 +79,15 @@ void ModifyDBProxyRequest::setDBInstanceId(const std::string &dBInstanceId) {
   setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
+std::string ModifyDBProxyRequest::getPersistentConnectionStatus() const {
+  return persistentConnectionStatus_;
+}
+
+void ModifyDBProxyRequest::setPersistentConnectionStatus(const std::string &persistentConnectionStatus) {
+  persistentConnectionStatus_ = persistentConnectionStatus;
+  setParameter(std::string("PersistentConnectionStatus"), persistentConnectionStatus);
+}
+
 std::string ModifyDBProxyRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -140,6 +149,15 @@ std::string ModifyDBProxyRequest::getAccountPassword() const {
 void ModifyDBProxyRequest::setAccountPassword(const std::string &accountPassword) {
   accountPassword_ = accountPassword;
   setParameter(std::string("AccountPassword"), accountPassword);
+}
+
+std::string ModifyDBProxyRequest::getDBProxyInstanceType() const {
+  return dBProxyInstanceType_;
+}
+
+void ModifyDBProxyRequest::setDBProxyInstanceType(const std::string &dBProxyInstanceType) {
+  dBProxyInstanceType_ = dBProxyInstanceType;
+  setParameter(std::string("DBProxyInstanceType"), dBProxyInstanceType);
 }
 
 std::string ModifyDBProxyRequest::getVPCId() const {

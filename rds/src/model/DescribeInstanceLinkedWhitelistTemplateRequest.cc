@@ -43,6 +43,15 @@ void DescribeInstanceLinkedWhitelistTemplateRequest::setResourceOwnerAccount(con
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
+std::string DescribeInstanceLinkedWhitelistTemplateRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeInstanceLinkedWhitelistTemplateRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeInstanceLinkedWhitelistTemplateRequest::getInsName() const {
   return insName_;
 }
@@ -50,5 +59,14 @@ std::string DescribeInstanceLinkedWhitelistTemplateRequest::getInsName() const {
 void DescribeInstanceLinkedWhitelistTemplateRequest::setInsName(const std::string &insName) {
   insName_ = insName;
   setParameter(std::string("InsName"), insName);
+}
+
+std::string DescribeInstanceLinkedWhitelistTemplateRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeInstanceLinkedWhitelistTemplateRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 

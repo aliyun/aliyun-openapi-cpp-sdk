@@ -75,6 +75,10 @@ void DescribeDBInstanceSSLResult::parse(const std::string &payload)
 		serverKey_ = value["ServerKey"].asString();
 	if(!value["ModifyStatusReason"].isNull())
 		modifyStatusReason_ = value["ModifyStatusReason"].asString();
+	if(!value["ForceEncryption"].isNull())
+		forceEncryption_ = value["ForceEncryption"].asString();
+	if(!value["TlsVersion"].isNull())
+		tlsVersion_ = value["TlsVersion"].asString();
 
 }
 
@@ -128,6 +132,11 @@ std::string DescribeDBInstanceSSLResult::getServerKey()const
 	return serverKey_;
 }
 
+std::string DescribeDBInstanceSSLResult::getTlsVersion()const
+{
+	return tlsVersion_;
+}
+
 std::string DescribeDBInstanceSSLResult::getSSLCreateTime()const
 {
 	return sSLCreateTime_;
@@ -141,6 +150,11 @@ std::string DescribeDBInstanceSSLResult::getServerCert()const
 std::string DescribeDBInstanceSSLResult::getSSLEnabled()const
 {
 	return sSLEnabled_;
+}
+
+std::string DescribeDBInstanceSSLResult::getForceEncryption()const
+{
+	return forceEncryption_;
 }
 
 std::string DescribeDBInstanceSSLResult::getClientCACert()const
