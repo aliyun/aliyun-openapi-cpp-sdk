@@ -39,14 +39,14 @@ void DescribeUserLogserviceStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Enabled"].isNull())
-		enabled_ = value["Enabled"].asString() == "true";
-	if(!value["OnService"].isNull())
-		onService_ = value["OnService"].asString() == "true";
 	if(!value["InDebt"].isNull())
 		inDebt_ = value["InDebt"].asString() == "true";
+	if(!value["OnService"].isNull())
+		onService_ = value["OnService"].asString() == "true";
 	if(!value["InDebtOverdue"].isNull())
 		inDebtOverdue_ = value["InDebtOverdue"].asString() == "true";
+	if(!value["Enabled"].isNull())
+		enabled_ = value["Enabled"].asString() == "true";
 
 }
 

@@ -47,26 +47,26 @@ void DescribeDcdnsecServiceResult::parse(const std::string &payload)
 			operationLocksObject.lockReason = valueOperationLocksLockReason["LockReason"].asString();
 		operationLocks_.push_back(operationLocksObject);
 	}
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
-	if(!value["InternetChargeType"].isNull())
-		internetChargeType_ = value["InternetChargeType"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
-	if(!value["ChangingChargeType"].isNull())
-		changingChargeType_ = value["ChangingChargeType"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 	if(!value["ChangingAffectTime"].isNull())
 		changingAffectTime_ = value["ChangingAffectTime"].asString();
-	if(!value["Version"].isNull())
-		version_ = value["Version"].asString();
-	if(!value["FlowType"].isNull())
-		flowType_ = value["FlowType"].asString();
-	if(!value["RequestType"].isNull())
-		requestType_ = value["RequestType"].asString();
 	if(!value["DomainNum"].isNull())
 		domainNum_ = value["DomainNum"].asString();
+	if(!value["ChangingChargeType"].isNull())
+		changingChargeType_ = value["ChangingChargeType"].asString();
+	if(!value["Version"].isNull())
+		version_ = value["Version"].asString();
+	if(!value["RequestType"].isNull())
+		requestType_ = value["RequestType"].asString();
+	if(!value["FlowType"].isNull())
+		flowType_ = value["FlowType"].asString();
+	if(!value["InternetChargeType"].isNull())
+		internetChargeType_ = value["InternetChargeType"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
 
 }
 
@@ -80,14 +80,14 @@ std::string DescribeDcdnsecServiceResult::getEndTime()const
 	return endTime_;
 }
 
-std::string DescribeDcdnsecServiceResult::getInstanceId()const
-{
-	return instanceId_;
-}
-
 std::string DescribeDcdnsecServiceResult::getVersion()const
 {
 	return version_;
+}
+
+std::string DescribeDcdnsecServiceResult::getInstanceId()const
+{
+	return instanceId_;
 }
 
 std::string DescribeDcdnsecServiceResult::getStartTime()const
@@ -95,14 +95,14 @@ std::string DescribeDcdnsecServiceResult::getStartTime()const
 	return startTime_;
 }
 
-std::string DescribeDcdnsecServiceResult::getFlowType()const
-{
-	return flowType_;
-}
-
 std::string DescribeDcdnsecServiceResult::getDomainNum()const
 {
 	return domainNum_;
+}
+
+std::string DescribeDcdnsecServiceResult::getFlowType()const
+{
+	return flowType_;
 }
 
 std::vector<DescribeDcdnsecServiceResult::LockReason> DescribeDcdnsecServiceResult::getOperationLocks()const
@@ -115,13 +115,13 @@ std::string DescribeDcdnsecServiceResult::getChangingAffectTime()const
 	return changingAffectTime_;
 }
 
-std::string DescribeDcdnsecServiceResult::getInternetChargeType()const
-{
-	return internetChargeType_;
-}
-
 std::string DescribeDcdnsecServiceResult::getRequestType()const
 {
 	return requestType_;
+}
+
+std::string DescribeDcdnsecServiceResult::getInternetChargeType()const
+{
+	return internetChargeType_;
 }
 

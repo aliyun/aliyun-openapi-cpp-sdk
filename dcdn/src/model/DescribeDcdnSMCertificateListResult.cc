@@ -48,12 +48,12 @@ void DescribeDcdnSMCertificateListResult::parse(const std::string &payload)
 		CertificateListModel::Cert certObject;
 		if(!certificateListModelNodeCertListCert["CertName"].isNull())
 			certObject.certName = certificateListModelNodeCertListCert["CertName"].asString();
+		if(!certificateListModelNodeCertListCert["Issuer"].isNull())
+			certObject.issuer = certificateListModelNodeCertListCert["Issuer"].asString();
 		if(!certificateListModelNodeCertListCert["CertIdentifier"].isNull())
 			certObject.certIdentifier = certificateListModelNodeCertListCert["CertIdentifier"].asString();
 		if(!certificateListModelNodeCertListCert["Common"].isNull())
 			certObject.common = certificateListModelNodeCertListCert["Common"].asString();
-		if(!certificateListModelNodeCertListCert["Issuer"].isNull())
-			certObject.issuer = certificateListModelNodeCertListCert["Issuer"].asString();
 		certificateListModel_.certList.push_back(certObject);
 	}
 

@@ -38,28 +38,32 @@ namespace AlibabaCloud
 				explicit DescribeDcdnRefreshQuotaResult(const std::string &payload);
 				~DescribeDcdnRefreshQuotaResult();
 				std::string getUrlRemain()const;
-				std::string getPreloadRemain()const;
 				std::string getBlockRemain()const;
+				std::string getPreloadRemain()const;
+				std::string getIgnoreParamsRemain()const;
 				std::string getRegexRemain()const;
-				std::string getDirRemain()const;
 				std::string getBlockQuota()const;
+				std::string getDirRemain()const;
 				std::string getRegexQuota()const;
 				std::string getUrlQuota()const;
 				std::string getDirQuota()const;
+				std::string getIgnoreParamsQuota()const;
 				std::string getPreloadQuota()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string urlRemain_;
-				std::string preloadRemain_;
 				std::string blockRemain_;
+				std::string preloadRemain_;
+				std::string ignoreParamsRemain_;
 				std::string regexRemain_;
-				std::string dirRemain_;
 				std::string blockQuota_;
+				std::string dirRemain_;
 				std::string regexQuota_;
 				std::string urlQuota_;
 				std::string dirQuota_;
+				std::string ignoreParamsQuota_;
 				std::string preloadQuota_;
 
 			};

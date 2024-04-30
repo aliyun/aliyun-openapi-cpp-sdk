@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct CertInfo
 				{
 					std::string certExpired;
-					std::string issuer;
 					std::string certSubjectCommonName;
+					std::string issuer;
 					std::string certCaIsLegacy;
 					std::string certType;
 					std::string certExpireTime;

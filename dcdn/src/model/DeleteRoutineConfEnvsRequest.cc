@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,28 @@
 
 using AlibabaCloud::Dcdn::Model::DeleteRoutineConfEnvsRequest;
 
-DeleteRoutineConfEnvsRequest::DeleteRoutineConfEnvsRequest() :
-	RpcServiceRequest("dcdn", "2018-01-15", "DeleteRoutineConfEnvs")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteRoutineConfEnvsRequest::DeleteRoutineConfEnvsRequest()
+    : RpcServiceRequest("dcdn", "2018-01-15", "DeleteRoutineConfEnvs") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteRoutineConfEnvsRequest::~DeleteRoutineConfEnvsRequest()
-{}
+DeleteRoutineConfEnvsRequest::~DeleteRoutineConfEnvsRequest() {}
 
-std::string DeleteRoutineConfEnvsRequest::getEnvs()const
-{
-	return envs_;
+std::string DeleteRoutineConfEnvsRequest::getName() const {
+  return name_;
 }
 
-void DeleteRoutineConfEnvsRequest::setEnvs(const std::string& envs)
-{
-	envs_ = envs;
-	setBodyParameter("Envs", envs);
+void DeleteRoutineConfEnvsRequest::setName(const std::string &name) {
+  name_ = name;
+  setBodyParameter(std::string("Name"), name);
 }
 
-long DeleteRoutineConfEnvsRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string DeleteRoutineConfEnvsRequest::getEnvs() const {
+  return envs_;
 }
 
-void DeleteRoutineConfEnvsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DeleteRoutineConfEnvsRequest::getName()const
-{
-	return name_;
-}
-
-void DeleteRoutineConfEnvsRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setBodyParameter("Name", name);
+void DeleteRoutineConfEnvsRequest::setEnvs(const std::string &envs) {
+  envs_ = envs;
+  setBodyParameter(std::string("Envs"), envs);
 }
 

@@ -43,18 +43,18 @@ void DescribeDcdnDomainCcActivityLogResult::parse(const std::string &payload)
 	for (auto valueActivityLogLogInfo : allActivityLogNode)
 	{
 		LogInfo activityLogObject;
-		if(!valueActivityLogLogInfo["TimeStamp"].isNull())
-			activityLogObject.timeStamp = valueActivityLogLogInfo["TimeStamp"].asString();
 		if(!valueActivityLogLogInfo["Value"].isNull())
 			activityLogObject.value = valueActivityLogLogInfo["Value"].asString();
-		if(!valueActivityLogLogInfo["TriggerObject"].isNull())
-			activityLogObject.triggerObject = valueActivityLogLogInfo["TriggerObject"].asString();
-		if(!valueActivityLogLogInfo["DomainName"].isNull())
-			activityLogObject.domainName = valueActivityLogLogInfo["DomainName"].asString();
 		if(!valueActivityLogLogInfo["Ttl"].isNull())
 			activityLogObject.ttl = std::stol(valueActivityLogLogInfo["Ttl"].asString());
 		if(!valueActivityLogLogInfo["Action"].isNull())
 			activityLogObject.action = valueActivityLogLogInfo["Action"].asString();
+		if(!valueActivityLogLogInfo["TriggerObject"].isNull())
+			activityLogObject.triggerObject = valueActivityLogLogInfo["TriggerObject"].asString();
+		if(!valueActivityLogLogInfo["TimeStamp"].isNull())
+			activityLogObject.timeStamp = valueActivityLogLogInfo["TimeStamp"].asString();
+		if(!valueActivityLogLogInfo["DomainName"].isNull())
+			activityLogObject.domainName = valueActivityLogLogInfo["DomainName"].asString();
 		if(!valueActivityLogLogInfo["RuleName"].isNull())
 			activityLogObject.ruleName = valueActivityLogLogInfo["RuleName"].asString();
 		activityLog_.push_back(activityLogObject);

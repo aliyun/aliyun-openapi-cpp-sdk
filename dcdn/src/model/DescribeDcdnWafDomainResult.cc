@@ -43,16 +43,16 @@ void DescribeDcdnWafDomainResult::parse(const std::string &payload)
 	for (auto valueOutPutDomainsOutPutDomain : allOutPutDomainsNode)
 	{
 		OutPutDomain outPutDomainsObject;
+		if(!valueOutPutDomainsOutPutDomain["AclStatus"].isNull())
+			outPutDomainsObject.aclStatus = std::stoi(valueOutPutDomainsOutPutDomain["AclStatus"].asString());
 		if(!valueOutPutDomainsOutPutDomain["Status"].isNull())
 			outPutDomainsObject.status = std::stoi(valueOutPutDomainsOutPutDomain["Status"].asString());
 		if(!valueOutPutDomainsOutPutDomain["Domain"].isNull())
 			outPutDomainsObject.domain = valueOutPutDomainsOutPutDomain["Domain"].asString();
-		if(!valueOutPutDomainsOutPutDomain["WafStatus"].isNull())
-			outPutDomainsObject.wafStatus = std::stoi(valueOutPutDomainsOutPutDomain["WafStatus"].asString());
 		if(!valueOutPutDomainsOutPutDomain["CcStatus"].isNull())
 			outPutDomainsObject.ccStatus = std::stoi(valueOutPutDomainsOutPutDomain["CcStatus"].asString());
-		if(!valueOutPutDomainsOutPutDomain["AclStatus"].isNull())
-			outPutDomainsObject.aclStatus = std::stoi(valueOutPutDomainsOutPutDomain["AclStatus"].asString());
+		if(!valueOutPutDomainsOutPutDomain["WafStatus"].isNull())
+			outPutDomainsObject.wafStatus = std::stoi(valueOutPutDomainsOutPutDomain["WafStatus"].asString());
 		outPutDomains_.push_back(outPutDomainsObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -43,26 +43,26 @@ void DescribeDcdnDomainOriginTrafficDataResult::parse(const std::string &payload
 	for (auto valueOriginTrafficDataPerIntervalDataModule : allOriginTrafficDataPerIntervalNode)
 	{
 		DataModule originTrafficDataPerIntervalObject;
-		if(!valueOriginTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
-			originTrafficDataPerIntervalObject.timeStamp = valueOriginTrafficDataPerIntervalDataModule["TimeStamp"].asString();
-		if(!valueOriginTrafficDataPerIntervalDataModule["OriginTraffic"].isNull())
-			originTrafficDataPerIntervalObject.originTraffic = std::stof(valueOriginTrafficDataPerIntervalDataModule["OriginTraffic"].asString());
 		if(!valueOriginTrafficDataPerIntervalDataModule["DynamicHttpOriginTraffic"].isNull())
 			originTrafficDataPerIntervalObject.dynamicHttpOriginTraffic = std::stof(valueOriginTrafficDataPerIntervalDataModule["DynamicHttpOriginTraffic"].asString());
-		if(!valueOriginTrafficDataPerIntervalDataModule["DynamicHttpsOriginTraffic"].isNull())
-			originTrafficDataPerIntervalObject.dynamicHttpsOriginTraffic = std::stof(valueOriginTrafficDataPerIntervalDataModule["DynamicHttpsOriginTraffic"].asString());
-		if(!valueOriginTrafficDataPerIntervalDataModule["StaticHttpOriginTraffic"].isNull())
-			originTrafficDataPerIntervalObject.staticHttpOriginTraffic = std::stof(valueOriginTrafficDataPerIntervalDataModule["StaticHttpOriginTraffic"].asString());
 		if(!valueOriginTrafficDataPerIntervalDataModule["StaticHttpsOriginTraffic"].isNull())
 			originTrafficDataPerIntervalObject.staticHttpsOriginTraffic = std::stof(valueOriginTrafficDataPerIntervalDataModule["StaticHttpsOriginTraffic"].asString());
+		if(!valueOriginTrafficDataPerIntervalDataModule["OriginTraffic"].isNull())
+			originTrafficDataPerIntervalObject.originTraffic = std::stof(valueOriginTrafficDataPerIntervalDataModule["OriginTraffic"].asString());
+		if(!valueOriginTrafficDataPerIntervalDataModule["StaticHttpOriginTraffic"].isNull())
+			originTrafficDataPerIntervalObject.staticHttpOriginTraffic = std::stof(valueOriginTrafficDataPerIntervalDataModule["StaticHttpOriginTraffic"].asString());
+		if(!valueOriginTrafficDataPerIntervalDataModule["DynamicHttpsOriginTraffic"].isNull())
+			originTrafficDataPerIntervalObject.dynamicHttpsOriginTraffic = std::stof(valueOriginTrafficDataPerIntervalDataModule["DynamicHttpsOriginTraffic"].asString());
+		if(!valueOriginTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
+			originTrafficDataPerIntervalObject.timeStamp = valueOriginTrafficDataPerIntervalDataModule["TimeStamp"].asString();
 		originTrafficDataPerInterval_.push_back(originTrafficDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

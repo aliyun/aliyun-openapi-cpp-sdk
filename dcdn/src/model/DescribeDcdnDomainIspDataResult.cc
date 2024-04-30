@@ -43,38 +43,38 @@ void DescribeDcdnDomainIspDataResult::parse(const std::string &payload)
 	for (auto valueValueIspProportionData : allValueNode)
 	{
 		IspProportionData valueObject;
-		if(!valueValueIspProportionData["Isp"].isNull())
-			valueObject.isp = valueValueIspProportionData["Isp"].asString();
-		if(!valueValueIspProportionData["Proportion"].isNull())
-			valueObject.proportion = valueValueIspProportionData["Proportion"].asString();
-		if(!valueValueIspProportionData["IspEname"].isNull())
-			valueObject.ispEname = valueValueIspProportionData["IspEname"].asString();
-		if(!valueValueIspProportionData["AvgObjectSize"].isNull())
-			valueObject.avgObjectSize = valueValueIspProportionData["AvgObjectSize"].asString();
-		if(!valueValueIspProportionData["AvgResponseTime"].isNull())
-			valueObject.avgResponseTime = valueValueIspProportionData["AvgResponseTime"].asString();
-		if(!valueValueIspProportionData["Bps"].isNull())
-			valueObject.bps = valueValueIspProportionData["Bps"].asString();
 		if(!valueValueIspProportionData["Qps"].isNull())
 			valueObject.qps = valueValueIspProportionData["Qps"].asString();
-		if(!valueValueIspProportionData["AvgResponseRate"].isNull())
-			valueObject.avgResponseRate = valueValueIspProportionData["AvgResponseRate"].asString();
-		if(!valueValueIspProportionData["TotalBytes"].isNull())
-			valueObject.totalBytes = valueValueIspProportionData["TotalBytes"].asString();
-		if(!valueValueIspProportionData["BytesProportion"].isNull())
-			valueObject.bytesProportion = valueValueIspProportionData["BytesProportion"].asString();
 		if(!valueValueIspProportionData["TotalQuery"].isNull())
 			valueObject.totalQuery = valueValueIspProportionData["TotalQuery"].asString();
+		if(!valueValueIspProportionData["TotalBytes"].isNull())
+			valueObject.totalBytes = valueValueIspProportionData["TotalBytes"].asString();
+		if(!valueValueIspProportionData["AvgResponseRate"].isNull())
+			valueObject.avgResponseRate = valueValueIspProportionData["AvgResponseRate"].asString();
+		if(!valueValueIspProportionData["AvgResponseTime"].isNull())
+			valueObject.avgResponseTime = valueValueIspProportionData["AvgResponseTime"].asString();
+		if(!valueValueIspProportionData["Proportion"].isNull())
+			valueObject.proportion = valueValueIspProportionData["Proportion"].asString();
+		if(!valueValueIspProportionData["AvgObjectSize"].isNull())
+			valueObject.avgObjectSize = valueValueIspProportionData["AvgObjectSize"].asString();
+		if(!valueValueIspProportionData["IspEname"].isNull())
+			valueObject.ispEname = valueValueIspProportionData["IspEname"].asString();
+		if(!valueValueIspProportionData["Bps"].isNull())
+			valueObject.bps = valueValueIspProportionData["Bps"].asString();
+		if(!valueValueIspProportionData["Isp"].isNull())
+			valueObject.isp = valueValueIspProportionData["Isp"].asString();
+		if(!valueValueIspProportionData["BytesProportion"].isNull())
+			valueObject.bytesProportion = valueValueIspProportionData["BytesProportion"].asString();
 		value_.push_back(valueObject);
 	}
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
 
 }
 
@@ -93,13 +93,13 @@ std::vector<DescribeDcdnDomainIspDataResult::IspProportionData> DescribeDcdnDoma
 	return value_;
 }
 
-std::string DescribeDcdnDomainIspDataResult::getDataInterval()const
-{
-	return dataInterval_;
-}
-
 std::string DescribeDcdnDomainIspDataResult::getStartTime()const
 {
 	return startTime_;
+}
+
+std::string DescribeDcdnDomainIspDataResult::getDataInterval()const
+{
+	return dataInterval_;
 }
 

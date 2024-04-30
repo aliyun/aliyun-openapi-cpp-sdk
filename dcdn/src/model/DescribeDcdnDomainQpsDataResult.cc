@@ -43,36 +43,36 @@ void DescribeDcdnDomainQpsDataResult::parse(const std::string &payload)
 	for (auto valueQpsDataPerIntervalDataModule : allQpsDataPerIntervalNode)
 	{
 		DataModule qpsDataPerIntervalObject;
-		if(!valueQpsDataPerIntervalDataModule["TimeStamp"].isNull())
-			qpsDataPerIntervalObject.timeStamp = valueQpsDataPerIntervalDataModule["TimeStamp"].asString();
-		if(!valueQpsDataPerIntervalDataModule["Qps"].isNull())
-			qpsDataPerIntervalObject.qps = std::stof(valueQpsDataPerIntervalDataModule["Qps"].asString());
-		if(!valueQpsDataPerIntervalDataModule["DynamicHttpQps"].isNull())
-			qpsDataPerIntervalObject.dynamicHttpQps = std::stof(valueQpsDataPerIntervalDataModule["DynamicHttpQps"].asString());
-		if(!valueQpsDataPerIntervalDataModule["DynamicHttpsQps"].isNull())
-			qpsDataPerIntervalObject.dynamicHttpsQps = std::stof(valueQpsDataPerIntervalDataModule["DynamicHttpsQps"].asString());
-		if(!valueQpsDataPerIntervalDataModule["StaticHttpQps"].isNull())
-			qpsDataPerIntervalObject.staticHttpQps = std::stof(valueQpsDataPerIntervalDataModule["StaticHttpQps"].asString());
-		if(!valueQpsDataPerIntervalDataModule["StaticHttpsQps"].isNull())
-			qpsDataPerIntervalObject.staticHttpsQps = std::stof(valueQpsDataPerIntervalDataModule["StaticHttpsQps"].asString());
-		if(!valueQpsDataPerIntervalDataModule["Acc"].isNull())
-			qpsDataPerIntervalObject.acc = std::stof(valueQpsDataPerIntervalDataModule["Acc"].asString());
-		if(!valueQpsDataPerIntervalDataModule["DynamicHttpAcc"].isNull())
-			qpsDataPerIntervalObject.dynamicHttpAcc = std::stof(valueQpsDataPerIntervalDataModule["DynamicHttpAcc"].asString());
 		if(!valueQpsDataPerIntervalDataModule["DynamicHttpsAcc"].isNull())
 			qpsDataPerIntervalObject.dynamicHttpsAcc = std::stof(valueQpsDataPerIntervalDataModule["DynamicHttpsAcc"].asString());
-		if(!valueQpsDataPerIntervalDataModule["StaticHttpAcc"].isNull())
-			qpsDataPerIntervalObject.staticHttpAcc = std::stof(valueQpsDataPerIntervalDataModule["StaticHttpAcc"].asString());
+		if(!valueQpsDataPerIntervalDataModule["DynamicHttpAcc"].isNull())
+			qpsDataPerIntervalObject.dynamicHttpAcc = std::stof(valueQpsDataPerIntervalDataModule["DynamicHttpAcc"].asString());
+		if(!valueQpsDataPerIntervalDataModule["Qps"].isNull())
+			qpsDataPerIntervalObject.qps = std::stof(valueQpsDataPerIntervalDataModule["Qps"].asString());
 		if(!valueQpsDataPerIntervalDataModule["StaticHttpsAcc"].isNull())
 			qpsDataPerIntervalObject.staticHttpsAcc = std::stof(valueQpsDataPerIntervalDataModule["StaticHttpsAcc"].asString());
+		if(!valueQpsDataPerIntervalDataModule["StaticHttpQps"].isNull())
+			qpsDataPerIntervalObject.staticHttpQps = std::stof(valueQpsDataPerIntervalDataModule["StaticHttpQps"].asString());
+		if(!valueQpsDataPerIntervalDataModule["StaticHttpAcc"].isNull())
+			qpsDataPerIntervalObject.staticHttpAcc = std::stof(valueQpsDataPerIntervalDataModule["StaticHttpAcc"].asString());
+		if(!valueQpsDataPerIntervalDataModule["DynamicHttpsQps"].isNull())
+			qpsDataPerIntervalObject.dynamicHttpsQps = std::stof(valueQpsDataPerIntervalDataModule["DynamicHttpsQps"].asString());
+		if(!valueQpsDataPerIntervalDataModule["Acc"].isNull())
+			qpsDataPerIntervalObject.acc = std::stof(valueQpsDataPerIntervalDataModule["Acc"].asString());
+		if(!valueQpsDataPerIntervalDataModule["StaticHttpsQps"].isNull())
+			qpsDataPerIntervalObject.staticHttpsQps = std::stof(valueQpsDataPerIntervalDataModule["StaticHttpsQps"].asString());
+		if(!valueQpsDataPerIntervalDataModule["DynamicHttpQps"].isNull())
+			qpsDataPerIntervalObject.dynamicHttpQps = std::stof(valueQpsDataPerIntervalDataModule["DynamicHttpQps"].asString());
+		if(!valueQpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			qpsDataPerIntervalObject.timeStamp = valueQpsDataPerIntervalDataModule["TimeStamp"].asString();
 		qpsDataPerInterval_.push_back(qpsDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

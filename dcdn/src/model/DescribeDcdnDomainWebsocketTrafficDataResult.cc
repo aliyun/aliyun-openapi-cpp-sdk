@@ -43,18 +43,18 @@ void DescribeDcdnDomainWebsocketTrafficDataResult::parse(const std::string &payl
 	for (auto valueTrafficDataPerIntervalDataModule : allTrafficDataPerIntervalNode)
 	{
 		DataModule trafficDataPerIntervalObject;
-		if(!valueTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
-			trafficDataPerIntervalObject.timeStamp = valueTrafficDataPerIntervalDataModule["TimeStamp"].asString();
 		if(!valueTrafficDataPerIntervalDataModule["WebsocketTraffic"].isNull())
 			trafficDataPerIntervalObject.websocketTraffic = std::stof(valueTrafficDataPerIntervalDataModule["WebsocketTraffic"].asString());
+		if(!valueTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
+			trafficDataPerIntervalObject.timeStamp = valueTrafficDataPerIntervalDataModule["TimeStamp"].asString();
 		trafficDataPerInterval_.push_back(trafficDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

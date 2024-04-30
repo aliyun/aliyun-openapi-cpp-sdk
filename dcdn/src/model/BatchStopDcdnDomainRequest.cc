@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Dcdn::Model::BatchStopDcdnDomainRequest;
 
-BatchStopDcdnDomainRequest::BatchStopDcdnDomainRequest() :
-	RpcServiceRequest("dcdn", "2018-01-15", "BatchStopDcdnDomain")
-{
-	setMethod(HttpRequest::Method::Post);
+BatchStopDcdnDomainRequest::BatchStopDcdnDomainRequest()
+    : RpcServiceRequest("dcdn", "2018-01-15", "BatchStopDcdnDomain") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-BatchStopDcdnDomainRequest::~BatchStopDcdnDomainRequest()
-{}
+BatchStopDcdnDomainRequest::~BatchStopDcdnDomainRequest() {}
 
-std::string BatchStopDcdnDomainRequest::getDomainNames()const
-{
-	return domainNames_;
+std::string BatchStopDcdnDomainRequest::getDomainNames() const {
+  return domainNames_;
 }
 
-void BatchStopDcdnDomainRequest::setDomainNames(const std::string& domainNames)
-{
-	domainNames_ = domainNames;
-	setParameter("DomainNames", domainNames);
+void BatchStopDcdnDomainRequest::setDomainNames(const std::string &domainNames) {
+  domainNames_ = domainNames;
+  setParameter(std::string("DomainNames"), domainNames);
 }
 
-long BatchStopDcdnDomainRequest::getOwnerId()const
-{
-	return ownerId_;
+long BatchStopDcdnDomainRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void BatchStopDcdnDomainRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void BatchStopDcdnDomainRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string BatchStopDcdnDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string BatchStopDcdnDomainRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void BatchStopDcdnDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void BatchStopDcdnDomainRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 

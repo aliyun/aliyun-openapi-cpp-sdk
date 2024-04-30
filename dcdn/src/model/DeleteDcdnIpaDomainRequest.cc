@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Dcdn::Model::DeleteDcdnIpaDomainRequest;
 
-DeleteDcdnIpaDomainRequest::DeleteDcdnIpaDomainRequest() :
-	RpcServiceRequest("dcdn", "2018-01-15", "DeleteDcdnIpaDomain")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteDcdnIpaDomainRequest::DeleteDcdnIpaDomainRequest()
+    : RpcServiceRequest("dcdn", "2018-01-15", "DeleteDcdnIpaDomain") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteDcdnIpaDomainRequest::~DeleteDcdnIpaDomainRequest()
-{}
+DeleteDcdnIpaDomainRequest::~DeleteDcdnIpaDomainRequest() {}
 
-std::string DeleteDcdnIpaDomainRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DeleteDcdnIpaDomainRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void DeleteDcdnIpaDomainRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DeleteDcdnIpaDomainRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string DeleteDcdnIpaDomainRequest::getDomainName()const
-{
-	return domainName_;
+std::string DeleteDcdnIpaDomainRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DeleteDcdnIpaDomainRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void DeleteDcdnIpaDomainRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DeleteDcdnIpaDomainRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string DeleteDcdnIpaDomainRequest::getDomainName() const {
+  return domainName_;
 }
 
-void DeleteDcdnIpaDomainRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DeleteDcdnIpaDomainRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-std::string DeleteDcdnIpaDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
+long DeleteDcdnIpaDomainRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DeleteDcdnIpaDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void DeleteDcdnIpaDomainRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

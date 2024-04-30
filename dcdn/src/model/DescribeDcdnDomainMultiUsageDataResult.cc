@@ -43,36 +43,36 @@ void DescribeDcdnDomainMultiUsageDataResult::parse(const std::string &payload)
 	for (auto valueRequestPerIntervalRequestDataModule : allRequestPerIntervalNode)
 	{
 		RequestDataModule requestPerIntervalObject;
+		if(!valueRequestPerIntervalRequestDataModule["Type"].isNull())
+			requestPerIntervalObject.type = valueRequestPerIntervalRequestDataModule["Type"].asString();
 		if(!valueRequestPerIntervalRequestDataModule["TimeStamp"].isNull())
 			requestPerIntervalObject.timeStamp = valueRequestPerIntervalRequestDataModule["TimeStamp"].asString();
 		if(!valueRequestPerIntervalRequestDataModule["Domain"].isNull())
 			requestPerIntervalObject.domain = valueRequestPerIntervalRequestDataModule["Domain"].asString();
 		if(!valueRequestPerIntervalRequestDataModule["Request"].isNull())
 			requestPerIntervalObject.request = std::stol(valueRequestPerIntervalRequestDataModule["Request"].asString());
-		if(!valueRequestPerIntervalRequestDataModule["Type"].isNull())
-			requestPerIntervalObject.type = valueRequestPerIntervalRequestDataModule["Type"].asString();
 		requestPerInterval_.push_back(requestPerIntervalObject);
 	}
 	auto allTrafficPerIntervalNode = value["TrafficPerInterval"]["TrafficDataModule"];
 	for (auto valueTrafficPerIntervalTrafficDataModule : allTrafficPerIntervalNode)
 	{
 		TrafficDataModule trafficPerIntervalObject;
-		if(!valueTrafficPerIntervalTrafficDataModule["TimeStamp"].isNull())
-			trafficPerIntervalObject.timeStamp = valueTrafficPerIntervalTrafficDataModule["TimeStamp"].asString();
-		if(!valueTrafficPerIntervalTrafficDataModule["Domain"].isNull())
-			trafficPerIntervalObject.domain = valueTrafficPerIntervalTrafficDataModule["Domain"].asString();
-		if(!valueTrafficPerIntervalTrafficDataModule["Bps"].isNull())
-			trafficPerIntervalObject.bps = std::stof(valueTrafficPerIntervalTrafficDataModule["Bps"].asString());
 		if(!valueTrafficPerIntervalTrafficDataModule["Type"].isNull())
 			trafficPerIntervalObject.type = valueTrafficPerIntervalTrafficDataModule["Type"].asString();
+		if(!valueTrafficPerIntervalTrafficDataModule["Domain"].isNull())
+			trafficPerIntervalObject.domain = valueTrafficPerIntervalTrafficDataModule["Domain"].asString();
+		if(!valueTrafficPerIntervalTrafficDataModule["TimeStamp"].isNull())
+			trafficPerIntervalObject.timeStamp = valueTrafficPerIntervalTrafficDataModule["TimeStamp"].asString();
 		if(!valueTrafficPerIntervalTrafficDataModule["Area"].isNull())
 			trafficPerIntervalObject.area = valueTrafficPerIntervalTrafficDataModule["Area"].asString();
+		if(!valueTrafficPerIntervalTrafficDataModule["Bps"].isNull())
+			trafficPerIntervalObject.bps = std::stof(valueTrafficPerIntervalTrafficDataModule["Bps"].asString());
 		trafficPerInterval_.push_back(trafficPerIntervalObject);
 	}
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 
 }
 

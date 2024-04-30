@@ -39,6 +39,23 @@ void BatchSetDcdnDomainConfigsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allDomainConfigListNode = value["DomainConfigList"]["DomainConfigModel"];
+	for (auto valueDomainConfigListDomainConfigModel : allDomainConfigListNode)
+	{
+		DomainConfigModel domainConfigListObject;
+		if(!valueDomainConfigListDomainConfigModel["ConfigId"].isNull())
+			domainConfigListObject.configId = std::stol(valueDomainConfigListDomainConfigModel["ConfigId"].asString());
+		if(!valueDomainConfigListDomainConfigModel["DomainName"].isNull())
+			domainConfigListObject.domainName = valueDomainConfigListDomainConfigModel["DomainName"].asString();
+		if(!valueDomainConfigListDomainConfigModel["FunctionName"].isNull())
+			domainConfigListObject.functionName = valueDomainConfigListDomainConfigModel["FunctionName"].asString();
+		domainConfigList_.push_back(domainConfigListObject);
+	}
 
+}
+
+std::vector<BatchSetDcdnDomainConfigsResult::DomainConfigModel> BatchSetDcdnDomainConfigsResult::getDomainConfigList()const
+{
+	return domainConfigList_;
 }
 

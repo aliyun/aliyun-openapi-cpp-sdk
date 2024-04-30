@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,37 @@
 
 using AlibabaCloud::Dcdn::Model::CreateRoutineRequest;
 
-CreateRoutineRequest::CreateRoutineRequest() :
-	RpcServiceRequest("dcdn", "2018-01-15", "CreateRoutine")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateRoutineRequest::CreateRoutineRequest()
+    : RpcServiceRequest("dcdn", "2018-01-15", "CreateRoutine") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateRoutineRequest::~CreateRoutineRequest()
-{}
+CreateRoutineRequest::~CreateRoutineRequest() {}
 
-std::string CreateRoutineRequest::getDescription()const
-{
-	return description_;
+std::string CreateRoutineRequest::getEnvConf() const {
+  return envConf_;
 }
 
-void CreateRoutineRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setBodyParameter("Description", description);
+void CreateRoutineRequest::setEnvConf(const std::string &envConf) {
+  envConf_ = envConf;
+  setBodyParameter(std::string("EnvConf"), envConf);
 }
 
-std::string CreateRoutineRequest::getEnvConf()const
-{
-	return envConf_;
+std::string CreateRoutineRequest::getName() const {
+  return name_;
 }
 
-void CreateRoutineRequest::setEnvConf(const std::string& envConf)
-{
-	envConf_ = envConf;
-	setBodyParameter("EnvConf", envConf);
+void CreateRoutineRequest::setName(const std::string &name) {
+  name_ = name;
+  setBodyParameter(std::string("Name"), name);
 }
 
-long CreateRoutineRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string CreateRoutineRequest::getDescription() const {
+  return description_;
 }
 
-void CreateRoutineRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateRoutineRequest::getName()const
-{
-	return name_;
-}
-
-void CreateRoutineRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setBodyParameter("Name", name);
+void CreateRoutineRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setBodyParameter(std::string("Description"), description);
 }
 

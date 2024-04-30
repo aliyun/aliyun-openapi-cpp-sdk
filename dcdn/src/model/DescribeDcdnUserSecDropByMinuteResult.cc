@@ -43,30 +43,30 @@ void DescribeDcdnUserSecDropByMinuteResult::parse(const std::string &payload)
 	for (auto valueRowsRowsItem : allRowsNode)
 	{
 		RowsItem rowsObject;
-		if(!valueRowsRowsItem["RuleName"].isNull())
-			rowsObject.ruleName = valueRowsRowsItem["RuleName"].asString();
-		if(!valueRowsRowsItem["Object"].isNull())
-			rowsObject.object = valueRowsRowsItem["Object"].asString();
 		if(!valueRowsRowsItem["Domain"].isNull())
 			rowsObject.domain = valueRowsRowsItem["Domain"].asString();
-		if(!valueRowsRowsItem["SecFunc"].isNull())
-			rowsObject.secFunc = valueRowsRowsItem["SecFunc"].asString();
 		if(!valueRowsRowsItem["TmStr"].isNull())
 			rowsObject.tmStr = valueRowsRowsItem["TmStr"].asString();
 		if(!valueRowsRowsItem["Drops"].isNull())
 			rowsObject.drops = std::stoi(valueRowsRowsItem["Drops"].asString());
+		if(!valueRowsRowsItem["Object"].isNull())
+			rowsObject.object = valueRowsRowsItem["Object"].asString();
+		if(!valueRowsRowsItem["SecFunc"].isNull())
+			rowsObject.secFunc = valueRowsRowsItem["SecFunc"].asString();
+		if(!valueRowsRowsItem["RuleName"].isNull())
+			rowsObject.ruleName = valueRowsRowsItem["RuleName"].asString();
 		rows_.push_back(rowsObject);
 	}
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["Len"].isNull())
 		len_ = std::stoi(value["Len"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

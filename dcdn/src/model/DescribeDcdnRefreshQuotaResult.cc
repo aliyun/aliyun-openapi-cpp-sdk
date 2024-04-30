@@ -39,26 +39,30 @@ void DescribeDcdnRefreshQuotaResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["UrlQuota"].isNull())
-		urlQuota_ = value["UrlQuota"].asString();
-	if(!value["DirQuota"].isNull())
-		dirQuota_ = value["DirQuota"].asString();
-	if(!value["UrlRemain"].isNull())
-		urlRemain_ = value["UrlRemain"].asString();
-	if(!value["DirRemain"].isNull())
-		dirRemain_ = value["DirRemain"].asString();
-	if(!value["PreloadQuota"].isNull())
-		preloadQuota_ = value["PreloadQuota"].asString();
 	if(!value["BlockQuota"].isNull())
 		blockQuota_ = value["BlockQuota"].asString();
-	if(!value["PreloadRemain"].isNull())
-		preloadRemain_ = value["PreloadRemain"].asString();
-	if(!value["BlockRemain"].isNull())
-		blockRemain_ = value["BlockRemain"].asString();
-	if(!value["RegexQuota"].isNull())
-		regexQuota_ = value["RegexQuota"].asString();
 	if(!value["RegexRemain"].isNull())
 		regexRemain_ = value["RegexRemain"].asString();
+	if(!value["BlockRemain"].isNull())
+		blockRemain_ = value["BlockRemain"].asString();
+	if(!value["PreloadRemain"].isNull())
+		preloadRemain_ = value["PreloadRemain"].asString();
+	if(!value["DirRemain"].isNull())
+		dirRemain_ = value["DirRemain"].asString();
+	if(!value["UrlRemain"].isNull())
+		urlRemain_ = value["UrlRemain"].asString();
+	if(!value["DirQuota"].isNull())
+		dirQuota_ = value["DirQuota"].asString();
+	if(!value["UrlQuota"].isNull())
+		urlQuota_ = value["UrlQuota"].asString();
+	if(!value["PreloadQuota"].isNull())
+		preloadQuota_ = value["PreloadQuota"].asString();
+	if(!value["RegexQuota"].isNull())
+		regexQuota_ = value["RegexQuota"].asString();
+	if(!value["IgnoreParamsQuota"].isNull())
+		ignoreParamsQuota_ = value["IgnoreParamsQuota"].asString();
+	if(!value["IgnoreParamsRemain"].isNull())
+		ignoreParamsRemain_ = value["IgnoreParamsRemain"].asString();
 
 }
 
@@ -67,14 +71,19 @@ std::string DescribeDcdnRefreshQuotaResult::getUrlRemain()const
 	return urlRemain_;
 }
 
+std::string DescribeDcdnRefreshQuotaResult::getBlockRemain()const
+{
+	return blockRemain_;
+}
+
 std::string DescribeDcdnRefreshQuotaResult::getPreloadRemain()const
 {
 	return preloadRemain_;
 }
 
-std::string DescribeDcdnRefreshQuotaResult::getBlockRemain()const
+std::string DescribeDcdnRefreshQuotaResult::getIgnoreParamsRemain()const
 {
-	return blockRemain_;
+	return ignoreParamsRemain_;
 }
 
 std::string DescribeDcdnRefreshQuotaResult::getRegexRemain()const
@@ -82,14 +91,14 @@ std::string DescribeDcdnRefreshQuotaResult::getRegexRemain()const
 	return regexRemain_;
 }
 
-std::string DescribeDcdnRefreshQuotaResult::getDirRemain()const
-{
-	return dirRemain_;
-}
-
 std::string DescribeDcdnRefreshQuotaResult::getBlockQuota()const
 {
 	return blockQuota_;
+}
+
+std::string DescribeDcdnRefreshQuotaResult::getDirRemain()const
+{
+	return dirRemain_;
 }
 
 std::string DescribeDcdnRefreshQuotaResult::getRegexQuota()const
@@ -105,6 +114,11 @@ std::string DescribeDcdnRefreshQuotaResult::getUrlQuota()const
 std::string DescribeDcdnRefreshQuotaResult::getDirQuota()const
 {
 	return dirQuota_;
+}
+
+std::string DescribeDcdnRefreshQuotaResult::getIgnoreParamsQuota()const
+{
+	return ignoreParamsQuota_;
 }
 
 std::string DescribeDcdnRefreshQuotaResult::getPreloadQuota()const

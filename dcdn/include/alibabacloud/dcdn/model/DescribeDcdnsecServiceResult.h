@@ -43,30 +43,30 @@ namespace AlibabaCloud
 				~DescribeDcdnsecServiceResult();
 				std::string getChangingChargeType()const;
 				std::string getEndTime()const;
-				std::string getInstanceId()const;
 				std::string getVersion()const;
+				std::string getInstanceId()const;
 				std::string getStartTime()const;
-				std::string getFlowType()const;
 				std::string getDomainNum()const;
+				std::string getFlowType()const;
 				std::vector<LockReason> getOperationLocks()const;
 				std::string getChangingAffectTime()const;
-				std::string getInternetChargeType()const;
 				std::string getRequestType()const;
+				std::string getInternetChargeType()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string changingChargeType_;
 				std::string endTime_;
-				std::string instanceId_;
 				std::string version_;
+				std::string instanceId_;
 				std::string startTime_;
-				std::string flowType_;
 				std::string domainNum_;
+				std::string flowType_;
 				std::vector<LockReason> operationLocks_;
 				std::string changingAffectTime_;
-				std::string internetChargeType_;
 				std::string requestType_;
+				std::string internetChargeType_;
 
 			};
 		}

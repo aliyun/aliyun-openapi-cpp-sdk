@@ -53,16 +53,16 @@ void DescribeDcdnUserBillHistoryResult::parse(const std::string &payload)
 		for (auto valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem : allBillingDataNode)
 		{
 			BillHistoryDataItem::BillingDataItem billingDataObject;
-			if(!valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["ChargeType"].isNull())
-				billingDataObject.chargeType = valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["ChargeType"].asString();
-			if(!valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["CdnRegion"].isNull())
-				billingDataObject.cdnRegion = valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["CdnRegion"].asString();
-			if(!valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["Bandwidth"].isNull())
-				billingDataObject.bandwidth = std::stof(valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["Bandwidth"].asString());
 			if(!valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["Flow"].isNull())
 				billingDataObject.flow = std::stof(valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["Flow"].asString());
+			if(!valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["Bandwidth"].isNull())
+				billingDataObject.bandwidth = std::stof(valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["Bandwidth"].asString());
 			if(!valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["Count"].isNull())
 				billingDataObject.count = std::stof(valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["Count"].asString());
+			if(!valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["CdnRegion"].isNull())
+				billingDataObject.cdnRegion = valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["CdnRegion"].asString();
+			if(!valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["ChargeType"].isNull())
+				billingDataObject.chargeType = valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["ChargeType"].asString();
 			billHistoryDataObject.billingData.push_back(billingDataObject);
 		}
 		billHistoryData_.push_back(billHistoryDataObject);

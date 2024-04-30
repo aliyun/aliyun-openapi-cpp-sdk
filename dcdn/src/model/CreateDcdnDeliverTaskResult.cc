@@ -39,6 +39,13 @@ void CreateDcdnDeliverTaskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["DeliverId"].isNull())
+		deliverId_ = value["DeliverId"].asString();
 
+}
+
+std::string CreateDcdnDeliverTaskResult::getDeliverId()const
+{
+	return deliverId_;
 }
 

@@ -43,12 +43,12 @@ void CreateDcdnSLSRealTimeLogDeliveryResult::parse(const std::string &payload)
 	for (auto valueContentDomains : allContentNode)
 	{
 		Domains contentObject;
+		if(!valueContentDomains["Status"].isNull())
+			contentObject.status = valueContentDomains["Status"].asString();
 		if(!valueContentDomains["DomainName"].isNull())
 			contentObject.domainName = valueContentDomains["DomainName"].asString();
 		if(!valueContentDomains["Region"].isNull())
 			contentObject.region = valueContentDomains["Region"].asString();
-		if(!valueContentDomains["Status"].isNull())
-			contentObject.status = valueContentDomains["Status"].asString();
 		if(!valueContentDomains["Desc"].isNull())
 			contentObject.desc = valueContentDomains["Desc"].asString();
 		content_.push_back(contentObject);

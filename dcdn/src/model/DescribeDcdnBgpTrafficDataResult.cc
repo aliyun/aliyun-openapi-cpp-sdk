@@ -43,18 +43,18 @@ void DescribeDcdnBgpTrafficDataResult::parse(const std::string &payload)
 	for (auto valueBgpDataIntervalBgpData : allBgpDataIntervalNode)
 	{
 		BgpData bgpDataIntervalObject;
-		if(!valueBgpDataIntervalBgpData["In"].isNull())
-			bgpDataIntervalObject.in = std::stol(valueBgpDataIntervalBgpData["In"].asString());
 		if(!valueBgpDataIntervalBgpData["Out"].isNull())
 			bgpDataIntervalObject.out = std::stol(valueBgpDataIntervalBgpData["Out"].asString());
+		if(!valueBgpDataIntervalBgpData["In"].isNull())
+			bgpDataIntervalObject.in = std::stol(valueBgpDataIntervalBgpData["In"].asString());
 		if(!valueBgpDataIntervalBgpData["TimeStamp"].isNull())
 			bgpDataIntervalObject.timeStamp = valueBgpDataIntervalBgpData["TimeStamp"].asString();
 		bgpDataInterval_.push_back(bgpDataIntervalObject);
 	}
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 
 }
 

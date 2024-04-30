@@ -39,22 +39,22 @@ void DescribeDcdnSMCertificateDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["SignCertificate"].isNull())
-		signCertificate_ = value["SignCertificate"].asString();
-	if(!value["EncryptCertificate"].isNull())
-		encryptCertificate_ = value["EncryptCertificate"].asString();
-	if(!value["CertIdentifier"].isNull())
-		certIdentifier_ = value["CertIdentifier"].asString();
-	if(!value["CertName"].isNull())
-		certName_ = value["CertName"].asString();
-	if(!value["CommonName"].isNull())
-		commonName_ = value["CommonName"].asString();
-	if(!value["Sans"].isNull())
-		sans_ = value["Sans"].asString();
-	if(!value["CertOrg"].isNull())
-		certOrg_ = value["CertOrg"].asString();
 	if(!value["CertExpireTime"].isNull())
 		certExpireTime_ = value["CertExpireTime"].asString();
+	if(!value["CertIdentifier"].isNull())
+		certIdentifier_ = value["CertIdentifier"].asString();
+	if(!value["CommonName"].isNull())
+		commonName_ = value["CommonName"].asString();
+	if(!value["CertName"].isNull())
+		certName_ = value["CertName"].asString();
+	if(!value["Sans"].isNull())
+		sans_ = value["Sans"].asString();
+	if(!value["SignCertificate"].isNull())
+		signCertificate_ = value["SignCertificate"].asString();
+	if(!value["CertOrg"].isNull())
+		certOrg_ = value["CertOrg"].asString();
+	if(!value["EncryptCertificate"].isNull())
+		encryptCertificate_ = value["EncryptCertificate"].asString();
 
 }
 
@@ -73,14 +73,14 @@ std::string DescribeDcdnSMCertificateDetailResult::getCertIdentifier()const
 	return certIdentifier_;
 }
 
-std::string DescribeDcdnSMCertificateDetailResult::getSignCertificate()const
-{
-	return signCertificate_;
-}
-
 std::string DescribeDcdnSMCertificateDetailResult::getCertExpireTime()const
 {
 	return certExpireTime_;
+}
+
+std::string DescribeDcdnSMCertificateDetailResult::getSignCertificate()const
+{
+	return signCertificate_;
 }
 
 std::string DescribeDcdnSMCertificateDetailResult::getCertName()const

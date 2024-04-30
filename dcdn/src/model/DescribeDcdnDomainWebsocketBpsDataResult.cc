@@ -49,12 +49,12 @@ void DescribeDcdnDomainWebsocketBpsDataResult::parse(const std::string &payload)
 			bpsDataPerIntervalObject.websocketBps = std::stof(valueBpsDataPerIntervalDataModule["WebsocketBps"].asString());
 		bpsDataPerInterval_.push_back(bpsDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

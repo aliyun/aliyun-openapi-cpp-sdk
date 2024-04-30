@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,56 +17,47 @@
 #ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINREALTIMEDETAILDATAREQUEST_H_
 #define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINREALTIMEDETAILDATAREQUEST_H_
 
+#include <alibabacloud/dcdn/DcdnExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/dcdn/DcdnExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Dcdn
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnDomainRealTimeDetailDataRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Dcdn {
+namespace Model {
+class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnDomainRealTimeDetailDataRequest : public RpcServiceRequest {
+public:
+	DescribeDcdnDomainRealTimeDetailDataRequest();
+	~DescribeDcdnDomainRealTimeDetailDataRequest();
+	std::string getField() const;
+	void setField(const std::string &field);
+	std::string getMerge() const;
+	void setMerge(const std::string &merge);
+	std::string getDomainName() const;
+	void setDomainName(const std::string &domainName);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
+	std::string getMergeLocIsp() const;
+	void setMergeLocIsp(const std::string &mergeLocIsp);
+	std::string getLocationNameEn() const;
+	void setLocationNameEn(const std::string &locationNameEn);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
+	std::string getIspNameEn() const;
+	void setIspNameEn(const std::string &ispNameEn);
 
-			public:
-				DescribeDcdnDomainRealTimeDetailDataRequest();
-				~DescribeDcdnDomainRealTimeDetailDataRequest();
-
-				std::string getLocationNameEn()const;
-				void setLocationNameEn(const std::string& locationNameEn);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
-				std::string getIspNameEn()const;
-				void setIspNameEn(const std::string& ispNameEn);
-				std::string getMerge()const;
-				void setMerge(const std::string& merge);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
-				std::string getMergeLocIsp()const;
-				void setMergeLocIsp(const std::string& mergeLocIsp);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getField()const;
-				void setField(const std::string& field);
-
-            private:
-				std::string locationNameEn_;
-				std::string startTime_;
-				std::string ispNameEn_;
-				std::string merge_;
-				std::string domainName_;
-				std::string endTime_;
-				std::string mergeLocIsp_;
-				long ownerId_;
-				std::string field_;
-
-			};
-		}
-	}
-}
+private:
+	std::string field_;
+	std::string merge_;
+	std::string domainName_;
+	std::string endTime_;
+	std::string mergeLocIsp_;
+	std::string locationNameEn_;
+	std::string startTime_;
+	std::string ispNameEn_;
+};
+} // namespace Model
+} // namespace Dcdn
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINREALTIMEDETAILDATAREQUEST_H_

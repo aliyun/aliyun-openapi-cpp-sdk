@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,38 +17,29 @@
 #ifndef ALIBABACLOUD_DCDN_MODEL_UPLOADSTAGINGROUTINECODEREQUEST_H_
 #define ALIBABACLOUD_DCDN_MODEL_UPLOADSTAGINGROUTINECODEREQUEST_H_
 
+#include <alibabacloud/dcdn/DcdnExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/dcdn/DcdnExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Dcdn
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_DCDN_EXPORT UploadStagingRoutineCodeRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Dcdn {
+namespace Model {
+class ALIBABACLOUD_DCDN_EXPORT UploadStagingRoutineCodeRequest : public RpcServiceRequest {
+public:
+	UploadStagingRoutineCodeRequest();
+	~UploadStagingRoutineCodeRequest();
+	std::string getCodeDescription() const;
+	void setCodeDescription(const std::string &codeDescription);
+	std::string getName() const;
+	void setName(const std::string &name);
 
-			public:
-				UploadStagingRoutineCodeRequest();
-				~UploadStagingRoutineCodeRequest();
-
-				std::string getCodeDescription()const;
-				void setCodeDescription(const std::string& codeDescription);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getName()const;
-				void setName(const std::string& name);
-
-            private:
-				std::string codeDescription_;
-				long ownerId_;
-				std::string name_;
-
-			};
-		}
-	}
-}
+private:
+	std::string codeDescription_;
+	std::string name_;
+};
+} // namespace Model
+} // namespace Dcdn
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_DCDN_MODEL_UPLOADSTAGINGROUTINECODEREQUEST_H_

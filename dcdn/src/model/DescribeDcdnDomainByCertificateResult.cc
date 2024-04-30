@@ -43,24 +43,24 @@ void DescribeDcdnDomainByCertificateResult::parse(const std::string &payload)
 	for (auto valueCertInfosCertInfo : allCertInfosNode)
 	{
 		CertInfo certInfosObject;
-		if(!valueCertInfosCertInfo["Issuer"].isNull())
-			certInfosObject.issuer = valueCertInfosCertInfo["Issuer"].asString();
-		if(!valueCertInfosCertInfo["CertType"].isNull())
-			certInfosObject.certType = valueCertInfosCertInfo["CertType"].asString();
-		if(!valueCertInfosCertInfo["CertSubjectCommonName"].isNull())
-			certInfosObject.certSubjectCommonName = valueCertInfosCertInfo["CertSubjectCommonName"].asString();
-		if(!valueCertInfosCertInfo["CertExpireTime"].isNull())
-			certInfosObject.certExpireTime = valueCertInfosCertInfo["CertExpireTime"].asString();
 		if(!valueCertInfosCertInfo["CertStartTime"].isNull())
 			certInfosObject.certStartTime = valueCertInfosCertInfo["CertStartTime"].asString();
-		if(!valueCertInfosCertInfo["DomainNames"].isNull())
-			certInfosObject.domainNames = valueCertInfosCertInfo["DomainNames"].asString();
-		if(!valueCertInfosCertInfo["DomainList"].isNull())
-			certInfosObject.domainList = valueCertInfosCertInfo["DomainList"].asString();
-		if(!valueCertInfosCertInfo["CertExpired"].isNull())
-			certInfosObject.certExpired = valueCertInfosCertInfo["CertExpired"].asString();
+		if(!valueCertInfosCertInfo["CertExpireTime"].isNull())
+			certInfosObject.certExpireTime = valueCertInfosCertInfo["CertExpireTime"].asString();
 		if(!valueCertInfosCertInfo["CertCaIsLegacy"].isNull())
 			certInfosObject.certCaIsLegacy = valueCertInfosCertInfo["CertCaIsLegacy"].asString();
+		if(!valueCertInfosCertInfo["CertSubjectCommonName"].isNull())
+			certInfosObject.certSubjectCommonName = valueCertInfosCertInfo["CertSubjectCommonName"].asString();
+		if(!valueCertInfosCertInfo["CertType"].isNull())
+			certInfosObject.certType = valueCertInfosCertInfo["CertType"].asString();
+		if(!valueCertInfosCertInfo["DomainNames"].isNull())
+			certInfosObject.domainNames = valueCertInfosCertInfo["DomainNames"].asString();
+		if(!valueCertInfosCertInfo["CertExpired"].isNull())
+			certInfosObject.certExpired = valueCertInfosCertInfo["CertExpired"].asString();
+		if(!valueCertInfosCertInfo["Issuer"].isNull())
+			certInfosObject.issuer = valueCertInfosCertInfo["Issuer"].asString();
+		if(!valueCertInfosCertInfo["DomainList"].isNull())
+			certInfosObject.domainList = valueCertInfosCertInfo["DomainList"].asString();
 		certInfos_.push_back(certInfosObject);
 	}
 

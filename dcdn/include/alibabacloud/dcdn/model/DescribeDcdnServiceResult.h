@@ -48,8 +48,8 @@ namespace AlibabaCloud
 				std::string getOpeningTime()const;
 				std::vector<LockReason> getOperationLocks()const;
 				std::string getChangingAffectTime()const;
-				std::string getInternetChargeType()const;
 				std::string getWebsocketChangingTime()const;
+				std::string getInternetChargeType()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -61,8 +61,8 @@ namespace AlibabaCloud
 				std::string openingTime_;
 				std::vector<LockReason> operationLocks_;
 				std::string changingAffectTime_;
-				std::string internetChargeType_;
 				std::string websocketChangingTime_;
+				std::string internetChargeType_;
 
 			};
 		}

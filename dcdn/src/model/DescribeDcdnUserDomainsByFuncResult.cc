@@ -43,38 +43,38 @@ void DescribeDcdnUserDomainsByFuncResult::parse(const std::string &payload)
 	for (auto valueDomainsPageData : allDomainsNode)
 	{
 		PageData domainsObject;
-		if(!valueDomainsPageData["DomainName"].isNull())
-			domainsObject.domainName = valueDomainsPageData["DomainName"].asString();
-		if(!valueDomainsPageData["Cname"].isNull())
-			domainsObject.cname = valueDomainsPageData["Cname"].asString();
-		if(!valueDomainsPageData["DomainStatus"].isNull())
-			domainsObject.domainStatus = valueDomainsPageData["DomainStatus"].asString();
 		if(!valueDomainsPageData["GmtCreated"].isNull())
 			domainsObject.gmtCreated = valueDomainsPageData["GmtCreated"].asString();
-		if(!valueDomainsPageData["GmtModified"].isNull())
-			domainsObject.gmtModified = valueDomainsPageData["GmtModified"].asString();
-		if(!valueDomainsPageData["Description"].isNull())
-			domainsObject.description = valueDomainsPageData["Description"].asString();
 		if(!valueDomainsPageData["SslProtocol"].isNull())
 			domainsObject.sslProtocol = valueDomainsPageData["SslProtocol"].asString();
+		if(!valueDomainsPageData["Description"].isNull())
+			domainsObject.description = valueDomainsPageData["Description"].asString();
 		if(!valueDomainsPageData["ResourceGroupId"].isNull())
 			domainsObject.resourceGroupId = valueDomainsPageData["ResourceGroupId"].asString();
 		if(!valueDomainsPageData["Sandbox"].isNull())
 			domainsObject.sandbox = valueDomainsPageData["Sandbox"].asString();
+		if(!valueDomainsPageData["DomainStatus"].isNull())
+			domainsObject.domainStatus = valueDomainsPageData["DomainStatus"].asString();
+		if(!valueDomainsPageData["Cname"].isNull())
+			domainsObject.cname = valueDomainsPageData["Cname"].asString();
+		if(!valueDomainsPageData["GmtModified"].isNull())
+			domainsObject.gmtModified = valueDomainsPageData["GmtModified"].asString();
+		if(!valueDomainsPageData["DomainName"].isNull())
+			domainsObject.domainName = valueDomainsPageData["DomainName"].asString();
 		auto allSourcesNode = valueDomainsPageData["Sources"]["Source"];
 		for (auto valueDomainsPageDataSourcesSource : allSourcesNode)
 		{
 			PageData::Source sourcesObject;
 			if(!valueDomainsPageDataSourcesSource["Type"].isNull())
 				sourcesObject.type = valueDomainsPageDataSourcesSource["Type"].asString();
-			if(!valueDomainsPageDataSourcesSource["Content"].isNull())
-				sourcesObject.content = valueDomainsPageDataSourcesSource["Content"].asString();
-			if(!valueDomainsPageDataSourcesSource["Port"].isNull())
-				sourcesObject.port = std::stoi(valueDomainsPageDataSourcesSource["Port"].asString());
-			if(!valueDomainsPageDataSourcesSource["Priority"].isNull())
-				sourcesObject.priority = valueDomainsPageDataSourcesSource["Priority"].asString();
 			if(!valueDomainsPageDataSourcesSource["Weight"].isNull())
 				sourcesObject.weight = valueDomainsPageDataSourcesSource["Weight"].asString();
+			if(!valueDomainsPageDataSourcesSource["Priority"].isNull())
+				sourcesObject.priority = valueDomainsPageDataSourcesSource["Priority"].asString();
+			if(!valueDomainsPageDataSourcesSource["Port"].isNull())
+				sourcesObject.port = std::stoi(valueDomainsPageDataSourcesSource["Port"].asString());
+			if(!valueDomainsPageDataSourcesSource["Content"].isNull())
+				sourcesObject.content = valueDomainsPageDataSourcesSource["Content"].asString();
 			domainsObject.sources.push_back(sourcesObject);
 		}
 		domains_.push_back(domainsObject);

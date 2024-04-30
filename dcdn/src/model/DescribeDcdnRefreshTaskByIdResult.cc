@@ -43,20 +43,20 @@ void DescribeDcdnRefreshTaskByIdResult::parse(const std::string &payload)
 	for (auto valueTasksCDNTask : allTasksNode)
 	{
 		CDNTask tasksObject;
-		if(!valueTasksCDNTask["TaskId"].isNull())
-			tasksObject.taskId = valueTasksCDNTask["TaskId"].asString();
-		if(!valueTasksCDNTask["ObjectPath"].isNull())
-			tasksObject.objectPath = valueTasksCDNTask["ObjectPath"].asString();
-		if(!valueTasksCDNTask["Process"].isNull())
-			tasksObject.process = valueTasksCDNTask["Process"].asString();
 		if(!valueTasksCDNTask["Status"].isNull())
 			tasksObject.status = valueTasksCDNTask["Status"].asString();
 		if(!valueTasksCDNTask["CreationTime"].isNull())
 			tasksObject.creationTime = valueTasksCDNTask["CreationTime"].asString();
-		if(!valueTasksCDNTask["Description"].isNull())
-			tasksObject.description = valueTasksCDNTask["Description"].asString();
 		if(!valueTasksCDNTask["ObjectType"].isNull())
 			tasksObject.objectType = valueTasksCDNTask["ObjectType"].asString();
+		if(!valueTasksCDNTask["Process"].isNull())
+			tasksObject.process = valueTasksCDNTask["Process"].asString();
+		if(!valueTasksCDNTask["Description"].isNull())
+			tasksObject.description = valueTasksCDNTask["Description"].asString();
+		if(!valueTasksCDNTask["ObjectPath"].isNull())
+			tasksObject.objectPath = valueTasksCDNTask["ObjectPath"].asString();
+		if(!valueTasksCDNTask["TaskId"].isNull())
+			tasksObject.taskId = valueTasksCDNTask["TaskId"].asString();
 		tasks_.push_back(tasksObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -39,23 +39,23 @@ void CreateDcdnCertificateSigningRequestResult::parse(const std::string &payload
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["CommonName"].isNull())
-		commonName_ = value["CommonName"].asString();
-	if(!value["Csr"].isNull())
-		csr_ = value["Csr"].asString();
 	if(!value["PubMd5"].isNull())
 		pubMd5_ = value["PubMd5"].asString();
+	if(!value["Csr"].isNull())
+		csr_ = value["Csr"].asString();
+	if(!value["CommonName"].isNull())
+		commonName_ = value["CommonName"].asString();
 
-}
-
-std::string CreateDcdnCertificateSigningRequestResult::getCsr()const
-{
-	return csr_;
 }
 
 std::string CreateDcdnCertificateSigningRequestResult::getPubMd5()const
 {
 	return pubMd5_;
+}
+
+std::string CreateDcdnCertificateSigningRequestResult::getCsr()const
+{
+	return csr_;
 }
 
 std::string CreateDcdnCertificateSigningRequestResult::getCommonName()const

@@ -39,10 +39,10 @@ void DescribeDcdnUserSecDropResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Drops"].isNull())
-		drops_ = std::stoi(value["Drops"].asString());
 	if(!value["Msg"].isNull())
 		msg_ = value["Msg"].asString();
+	if(!value["Drops"].isNull())
+		drops_ = std::stoi(value["Drops"].asString());
 	if(!value["UuidStr"].isNull())
 		uuidStr_ = value["UuidStr"].asString();
 

@@ -43,12 +43,12 @@ void DescribeDcdnUserRealTimeDeliveryFieldResult::parse(const std::string &paylo
 	for (auto valueContentFields : allContentNode)
 	{
 		Fields contentObject;
-		if(!valueContentFields["FieldName"].isNull())
-			contentObject.fieldName = valueContentFields["FieldName"].asString();
 		if(!valueContentFields["Description"].isNull())
 			contentObject.description = valueContentFields["Description"].asString();
 		if(!valueContentFields["Selected"].isNull())
 			contentObject.selected = valueContentFields["Selected"].asString() == "true";
+		if(!valueContentFields["FieldName"].isNull())
+			contentObject.fieldName = valueContentFields["FieldName"].asString();
 		content_.push_back(contentObject);
 	}
 

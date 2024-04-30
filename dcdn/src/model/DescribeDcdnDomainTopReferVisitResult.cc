@@ -43,22 +43,22 @@ void DescribeDcdnDomainTopReferVisitResult::parse(const std::string &payload)
 	for (auto valueTopReferListReferList : allTopReferListNode)
 	{
 		ReferList topReferListObject;
-		if(!valueTopReferListReferList["ReferDetail"].isNull())
-			topReferListObject.referDetail = valueTopReferListReferList["ReferDetail"].asString();
-		if(!valueTopReferListReferList["VisitData"].isNull())
-			topReferListObject.visitData = valueTopReferListReferList["VisitData"].asString();
-		if(!valueTopReferListReferList["VisitProportion"].isNull())
-			topReferListObject.visitProportion = std::stof(valueTopReferListReferList["VisitProportion"].asString());
 		if(!valueTopReferListReferList["Flow"].isNull())
 			topReferListObject.flow = valueTopReferListReferList["Flow"].asString();
 		if(!valueTopReferListReferList["FlowProportion"].isNull())
 			topReferListObject.flowProportion = std::stof(valueTopReferListReferList["FlowProportion"].asString());
+		if(!valueTopReferListReferList["VisitData"].isNull())
+			topReferListObject.visitData = valueTopReferListReferList["VisitData"].asString();
+		if(!valueTopReferListReferList["ReferDetail"].isNull())
+			topReferListObject.referDetail = valueTopReferListReferList["ReferDetail"].asString();
+		if(!valueTopReferListReferList["VisitProportion"].isNull())
+			topReferListObject.visitProportion = std::stof(valueTopReferListReferList["VisitProportion"].asString());
 		topReferList_.push_back(topReferListObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 
 }
 

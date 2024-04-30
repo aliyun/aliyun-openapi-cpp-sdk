@@ -43,24 +43,24 @@ void DescribeDcdnUserResourcePackageResult::parse(const std::string &payload)
 	for (auto valueResourcePackageInfosResourcePackageInfo : allResourcePackageInfosNode)
 	{
 		ResourcePackageInfo resourcePackageInfosObject;
+		if(!valueResourcePackageInfosResourcePackageInfo["EndTime"].isNull())
+			resourcePackageInfosObject.endTime = valueResourcePackageInfosResourcePackageInfo["EndTime"].asString();
+		if(!valueResourcePackageInfosResourcePackageInfo["Status"].isNull())
+			resourcePackageInfosObject.status = valueResourcePackageInfosResourcePackageInfo["Status"].asString();
+		if(!valueResourcePackageInfosResourcePackageInfo["DisplayName"].isNull())
+			resourcePackageInfosObject.displayName = valueResourcePackageInfosResourcePackageInfo["DisplayName"].asString();
+		if(!valueResourcePackageInfosResourcePackageInfo["StartTime"].isNull())
+			resourcePackageInfosObject.startTime = valueResourcePackageInfosResourcePackageInfo["StartTime"].asString();
+		if(!valueResourcePackageInfosResourcePackageInfo["CommodityCode"].isNull())
+			resourcePackageInfosObject.commodityCode = valueResourcePackageInfosResourcePackageInfo["CommodityCode"].asString();
 		if(!valueResourcePackageInfosResourcePackageInfo["CurrCapacity"].isNull())
 			resourcePackageInfosObject.currCapacity = valueResourcePackageInfosResourcePackageInfo["CurrCapacity"].asString();
 		if(!valueResourcePackageInfosResourcePackageInfo["InitCapacity"].isNull())
 			resourcePackageInfosObject.initCapacity = valueResourcePackageInfosResourcePackageInfo["InitCapacity"].asString();
-		if(!valueResourcePackageInfosResourcePackageInfo["CommodityCode"].isNull())
-			resourcePackageInfosObject.commodityCode = valueResourcePackageInfosResourcePackageInfo["CommodityCode"].asString();
-		if(!valueResourcePackageInfosResourcePackageInfo["DisplayName"].isNull())
-			resourcePackageInfosObject.displayName = valueResourcePackageInfosResourcePackageInfo["DisplayName"].asString();
-		if(!valueResourcePackageInfosResourcePackageInfo["TemplateName"].isNull())
-			resourcePackageInfosObject.templateName = valueResourcePackageInfosResourcePackageInfo["TemplateName"].asString();
 		if(!valueResourcePackageInfosResourcePackageInfo["InstanceId"].isNull())
 			resourcePackageInfosObject.instanceId = valueResourcePackageInfosResourcePackageInfo["InstanceId"].asString();
-		if(!valueResourcePackageInfosResourcePackageInfo["Status"].isNull())
-			resourcePackageInfosObject.status = valueResourcePackageInfosResourcePackageInfo["Status"].asString();
-		if(!valueResourcePackageInfosResourcePackageInfo["StartTime"].isNull())
-			resourcePackageInfosObject.startTime = valueResourcePackageInfosResourcePackageInfo["StartTime"].asString();
-		if(!valueResourcePackageInfosResourcePackageInfo["EndTime"].isNull())
-			resourcePackageInfosObject.endTime = valueResourcePackageInfosResourcePackageInfo["EndTime"].asString();
+		if(!valueResourcePackageInfosResourcePackageInfo["TemplateName"].isNull())
+			resourcePackageInfosObject.templateName = valueResourcePackageInfosResourcePackageInfo["TemplateName"].asString();
 		resourcePackageInfos_.push_back(resourcePackageInfosObject);
 	}
 

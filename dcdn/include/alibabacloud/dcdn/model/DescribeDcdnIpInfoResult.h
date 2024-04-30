@@ -40,8 +40,8 @@ namespace AlibabaCloud
 				std::string getISP()const;
 				std::string getRegion()const;
 				std::string getIspEname()const;
-				std::string getDcdnIp()const;
 				std::string getRegionEname()const;
+				std::string getDcdnIp()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 				std::string iSP_;
 				std::string region_;
 				std::string ispEname_;
-				std::string dcdnIp_;
 				std::string regionEname_;
+				std::string dcdnIp_;
 
 			};
 		}

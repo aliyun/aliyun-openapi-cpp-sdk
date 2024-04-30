@@ -159,6 +159,42 @@ DcdnClient::BatchAddDcdnDomainOutcomeCallable DcdnClient::batchAddDcdnDomainCall
 	return task->get_future();
 }
 
+DcdnClient::BatchCreateDcdnWafRulesOutcome DcdnClient::batchCreateDcdnWafRules(const BatchCreateDcdnWafRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchCreateDcdnWafRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchCreateDcdnWafRulesOutcome(BatchCreateDcdnWafRulesResult(outcome.result()));
+	else
+		return BatchCreateDcdnWafRulesOutcome(outcome.error());
+}
+
+void DcdnClient::batchCreateDcdnWafRulesAsync(const BatchCreateDcdnWafRulesRequest& request, const BatchCreateDcdnWafRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchCreateDcdnWafRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::BatchCreateDcdnWafRulesOutcomeCallable DcdnClient::batchCreateDcdnWafRulesCallable(const BatchCreateDcdnWafRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchCreateDcdnWafRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->batchCreateDcdnWafRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::BatchDeleteDcdnDomainConfigsOutcome DcdnClient::batchDeleteDcdnDomainConfigs(const BatchDeleteDcdnDomainConfigsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +225,222 @@ DcdnClient::BatchDeleteDcdnDomainConfigsOutcomeCallable DcdnClient::batchDeleteD
 			[this, request]()
 			{
 			return this->batchDeleteDcdnDomainConfigs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::BatchDeleteDcdnKvOutcome DcdnClient::batchDeleteDcdnKv(const BatchDeleteDcdnKvRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchDeleteDcdnKvOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchDeleteDcdnKvOutcome(BatchDeleteDcdnKvResult(outcome.result()));
+	else
+		return BatchDeleteDcdnKvOutcome(outcome.error());
+}
+
+void DcdnClient::batchDeleteDcdnKvAsync(const BatchDeleteDcdnKvRequest& request, const BatchDeleteDcdnKvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchDeleteDcdnKv(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::BatchDeleteDcdnKvOutcomeCallable DcdnClient::batchDeleteDcdnKvCallable(const BatchDeleteDcdnKvRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchDeleteDcdnKvOutcome()>>(
+			[this, request]()
+			{
+			return this->batchDeleteDcdnKv(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::BatchDeleteDcdnKvWithHighCapacityOutcome DcdnClient::batchDeleteDcdnKvWithHighCapacity(const BatchDeleteDcdnKvWithHighCapacityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchDeleteDcdnKvWithHighCapacityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchDeleteDcdnKvWithHighCapacityOutcome(BatchDeleteDcdnKvWithHighCapacityResult(outcome.result()));
+	else
+		return BatchDeleteDcdnKvWithHighCapacityOutcome(outcome.error());
+}
+
+void DcdnClient::batchDeleteDcdnKvWithHighCapacityAsync(const BatchDeleteDcdnKvWithHighCapacityRequest& request, const BatchDeleteDcdnKvWithHighCapacityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchDeleteDcdnKvWithHighCapacity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::BatchDeleteDcdnKvWithHighCapacityOutcomeCallable DcdnClient::batchDeleteDcdnKvWithHighCapacityCallable(const BatchDeleteDcdnKvWithHighCapacityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchDeleteDcdnKvWithHighCapacityOutcome()>>(
+			[this, request]()
+			{
+			return this->batchDeleteDcdnKvWithHighCapacity(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::BatchDeleteDcdnWafRulesOutcome DcdnClient::batchDeleteDcdnWafRules(const BatchDeleteDcdnWafRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchDeleteDcdnWafRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchDeleteDcdnWafRulesOutcome(BatchDeleteDcdnWafRulesResult(outcome.result()));
+	else
+		return BatchDeleteDcdnWafRulesOutcome(outcome.error());
+}
+
+void DcdnClient::batchDeleteDcdnWafRulesAsync(const BatchDeleteDcdnWafRulesRequest& request, const BatchDeleteDcdnWafRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchDeleteDcdnWafRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::BatchDeleteDcdnWafRulesOutcomeCallable DcdnClient::batchDeleteDcdnWafRulesCallable(const BatchDeleteDcdnWafRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchDeleteDcdnWafRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->batchDeleteDcdnWafRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::BatchModifyDcdnWafRulesOutcome DcdnClient::batchModifyDcdnWafRules(const BatchModifyDcdnWafRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchModifyDcdnWafRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchModifyDcdnWafRulesOutcome(BatchModifyDcdnWafRulesResult(outcome.result()));
+	else
+		return BatchModifyDcdnWafRulesOutcome(outcome.error());
+}
+
+void DcdnClient::batchModifyDcdnWafRulesAsync(const BatchModifyDcdnWafRulesRequest& request, const BatchModifyDcdnWafRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchModifyDcdnWafRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::BatchModifyDcdnWafRulesOutcomeCallable DcdnClient::batchModifyDcdnWafRulesCallable(const BatchModifyDcdnWafRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchModifyDcdnWafRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->batchModifyDcdnWafRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::BatchPutDcdnKvOutcome DcdnClient::batchPutDcdnKv(const BatchPutDcdnKvRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchPutDcdnKvOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchPutDcdnKvOutcome(BatchPutDcdnKvResult(outcome.result()));
+	else
+		return BatchPutDcdnKvOutcome(outcome.error());
+}
+
+void DcdnClient::batchPutDcdnKvAsync(const BatchPutDcdnKvRequest& request, const BatchPutDcdnKvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchPutDcdnKv(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::BatchPutDcdnKvOutcomeCallable DcdnClient::batchPutDcdnKvCallable(const BatchPutDcdnKvRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchPutDcdnKvOutcome()>>(
+			[this, request]()
+			{
+			return this->batchPutDcdnKv(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::BatchPutDcdnKvWithHighCapacityOutcome DcdnClient::batchPutDcdnKvWithHighCapacity(const BatchPutDcdnKvWithHighCapacityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchPutDcdnKvWithHighCapacityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchPutDcdnKvWithHighCapacityOutcome(BatchPutDcdnKvWithHighCapacityResult(outcome.result()));
+	else
+		return BatchPutDcdnKvWithHighCapacityOutcome(outcome.error());
+}
+
+void DcdnClient::batchPutDcdnKvWithHighCapacityAsync(const BatchPutDcdnKvWithHighCapacityRequest& request, const BatchPutDcdnKvWithHighCapacityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchPutDcdnKvWithHighCapacity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::BatchPutDcdnKvWithHighCapacityOutcomeCallable DcdnClient::batchPutDcdnKvWithHighCapacityCallable(const BatchPutDcdnKvWithHighCapacityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchPutDcdnKvWithHighCapacityOutcome()>>(
+			[this, request]()
+			{
+			return this->batchPutDcdnKvWithHighCapacity(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -297,6 +549,42 @@ DcdnClient::BatchSetDcdnIpaDomainConfigsOutcomeCallable DcdnClient::batchSetDcdn
 			[this, request]()
 			{
 			return this->batchSetDcdnIpaDomainConfigs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::BatchSetDcdnWafDomainConfigsOutcome DcdnClient::batchSetDcdnWafDomainConfigs(const BatchSetDcdnWafDomainConfigsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchSetDcdnWafDomainConfigsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchSetDcdnWafDomainConfigsOutcome(BatchSetDcdnWafDomainConfigsResult(outcome.result()));
+	else
+		return BatchSetDcdnWafDomainConfigsOutcome(outcome.error());
+}
+
+void DcdnClient::batchSetDcdnWafDomainConfigsAsync(const BatchSetDcdnWafDomainConfigsRequest& request, const BatchSetDcdnWafDomainConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchSetDcdnWafDomainConfigs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::BatchSetDcdnWafDomainConfigsOutcomeCallable DcdnClient::batchSetDcdnWafDomainConfigsCallable(const BatchSetDcdnWafDomainConfigsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchSetDcdnWafDomainConfigsOutcome()>>(
+			[this, request]()
+			{
+			return this->batchSetDcdnWafDomainConfigs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -591,6 +879,78 @@ DcdnClient::CreateDcdnSubTaskOutcomeCallable DcdnClient::createDcdnSubTaskCallab
 	return task->get_future();
 }
 
+DcdnClient::CreateDcdnWafGroupOutcome DcdnClient::createDcdnWafGroup(const CreateDcdnWafGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDcdnWafGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDcdnWafGroupOutcome(CreateDcdnWafGroupResult(outcome.result()));
+	else
+		return CreateDcdnWafGroupOutcome(outcome.error());
+}
+
+void DcdnClient::createDcdnWafGroupAsync(const CreateDcdnWafGroupRequest& request, const CreateDcdnWafGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDcdnWafGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::CreateDcdnWafGroupOutcomeCallable DcdnClient::createDcdnWafGroupCallable(const CreateDcdnWafGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDcdnWafGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createDcdnWafGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::CreateDcdnWafPolicyOutcome DcdnClient::createDcdnWafPolicy(const CreateDcdnWafPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDcdnWafPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDcdnWafPolicyOutcome(CreateDcdnWafPolicyResult(outcome.result()));
+	else
+		return CreateDcdnWafPolicyOutcome(outcome.error());
+}
+
+void DcdnClient::createDcdnWafPolicyAsync(const CreateDcdnWafPolicyRequest& request, const CreateDcdnWafPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDcdnWafPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::CreateDcdnWafPolicyOutcomeCallable DcdnClient::createDcdnWafPolicyCallable(const CreateDcdnWafPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDcdnWafPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->createDcdnWafPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::CreateRoutineOutcome DcdnClient::createRoutine(const CreateRoutineRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,42 +1017,6 @@ DcdnClient::CreateSlrAndSlsProjectOutcomeCallable DcdnClient::createSlrAndSlsPro
 			[this, request]()
 			{
 			return this->createSlrAndSlsProject(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DcdnClient::DcdnHttpRequestTestToolOutcome DcdnClient::dcdnHttpRequestTestTool(const DcdnHttpRequestTestToolRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DcdnHttpRequestTestToolOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DcdnHttpRequestTestToolOutcome(DcdnHttpRequestTestToolResult(outcome.result()));
-	else
-		return DcdnHttpRequestTestToolOutcome(outcome.error());
-}
-
-void DcdnClient::dcdnHttpRequestTestToolAsync(const DcdnHttpRequestTestToolRequest& request, const DcdnHttpRequestTestToolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, dcdnHttpRequestTestTool(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DcdnClient::DcdnHttpRequestTestToolOutcomeCallable DcdnClient::dcdnHttpRequestTestToolCallable(const DcdnHttpRequestTestToolRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DcdnHttpRequestTestToolOutcome()>>(
-			[this, request]()
-			{
-			return this->dcdnHttpRequestTestTool(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -843,6 +1167,78 @@ DcdnClient::DeleteDcdnIpaSpecificConfigOutcomeCallable DcdnClient::deleteDcdnIpa
 	return task->get_future();
 }
 
+DcdnClient::DeleteDcdnKvOutcome DcdnClient::deleteDcdnKv(const DeleteDcdnKvRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDcdnKvOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDcdnKvOutcome(DeleteDcdnKvResult(outcome.result()));
+	else
+		return DeleteDcdnKvOutcome(outcome.error());
+}
+
+void DcdnClient::deleteDcdnKvAsync(const DeleteDcdnKvRequest& request, const DeleteDcdnKvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDcdnKv(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DeleteDcdnKvOutcomeCallable DcdnClient::deleteDcdnKvCallable(const DeleteDcdnKvRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDcdnKvOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDcdnKv(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DeleteDcdnKvNamespaceOutcome DcdnClient::deleteDcdnKvNamespace(const DeleteDcdnKvNamespaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDcdnKvNamespaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDcdnKvNamespaceOutcome(DeleteDcdnKvNamespaceResult(outcome.result()));
+	else
+		return DeleteDcdnKvNamespaceOutcome(outcome.error());
+}
+
+void DcdnClient::deleteDcdnKvNamespaceAsync(const DeleteDcdnKvNamespaceRequest& request, const DeleteDcdnKvNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDcdnKvNamespace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DeleteDcdnKvNamespaceOutcomeCallable DcdnClient::deleteDcdnKvNamespaceCallable(const DeleteDcdnKvNamespaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDcdnKvNamespaceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDcdnKvNamespace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::DeleteDcdnRealTimeLogProjectOutcome DcdnClient::deleteDcdnRealTimeLogProject(const DeleteDcdnRealTimeLogProjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -981,6 +1377,114 @@ DcdnClient::DeleteDcdnSubTaskOutcomeCallable DcdnClient::deleteDcdnSubTaskCallab
 			[this, request]()
 			{
 			return this->deleteDcdnSubTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DeleteDcdnUserConfigOutcome DcdnClient::deleteDcdnUserConfig(const DeleteDcdnUserConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDcdnUserConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDcdnUserConfigOutcome(DeleteDcdnUserConfigResult(outcome.result()));
+	else
+		return DeleteDcdnUserConfigOutcome(outcome.error());
+}
+
+void DcdnClient::deleteDcdnUserConfigAsync(const DeleteDcdnUserConfigRequest& request, const DeleteDcdnUserConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDcdnUserConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DeleteDcdnUserConfigOutcomeCallable DcdnClient::deleteDcdnUserConfigCallable(const DeleteDcdnUserConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDcdnUserConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDcdnUserConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DeleteDcdnWafGroupOutcome DcdnClient::deleteDcdnWafGroup(const DeleteDcdnWafGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDcdnWafGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDcdnWafGroupOutcome(DeleteDcdnWafGroupResult(outcome.result()));
+	else
+		return DeleteDcdnWafGroupOutcome(outcome.error());
+}
+
+void DcdnClient::deleteDcdnWafGroupAsync(const DeleteDcdnWafGroupRequest& request, const DeleteDcdnWafGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDcdnWafGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DeleteDcdnWafGroupOutcomeCallable DcdnClient::deleteDcdnWafGroupCallable(const DeleteDcdnWafGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDcdnWafGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDcdnWafGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DeleteDcdnWafPolicyOutcome DcdnClient::deleteDcdnWafPolicy(const DeleteDcdnWafPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDcdnWafPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDcdnWafPolicyOutcome(DeleteDcdnWafPolicyResult(outcome.result()));
+	else
+		return DeleteDcdnWafPolicyOutcome(outcome.error());
+}
+
+void DcdnClient::deleteDcdnWafPolicyAsync(const DeleteDcdnWafPolicyRequest& request, const DeleteDcdnWafPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDcdnWafPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DeleteDcdnWafPolicyOutcomeCallable DcdnClient::deleteDcdnWafPolicyCallable(const DeleteDcdnWafPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDcdnWafPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDcdnWafPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1311,72 +1815,72 @@ DcdnClient::DescribeDcdnCertificateListOutcomeCallable DcdnClient::describeDcdnC
 	return task->get_future();
 }
 
-DcdnClient::DescribeDcdnConfigGroupDetailOutcome DcdnClient::describeDcdnConfigGroupDetail(const DescribeDcdnConfigGroupDetailRequest &request) const
+DcdnClient::DescribeDcdnDdosServiceOutcome DcdnClient::describeDcdnDdosService(const DescribeDcdnDdosServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeDcdnConfigGroupDetailOutcome(endpointOutcome.error());
+		return DescribeDcdnDdosServiceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeDcdnConfigGroupDetailOutcome(DescribeDcdnConfigGroupDetailResult(outcome.result()));
+		return DescribeDcdnDdosServiceOutcome(DescribeDcdnDdosServiceResult(outcome.result()));
 	else
-		return DescribeDcdnConfigGroupDetailOutcome(outcome.error());
+		return DescribeDcdnDdosServiceOutcome(outcome.error());
 }
 
-void DcdnClient::describeDcdnConfigGroupDetailAsync(const DescribeDcdnConfigGroupDetailRequest& request, const DescribeDcdnConfigGroupDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DcdnClient::describeDcdnDdosServiceAsync(const DescribeDcdnDdosServiceRequest& request, const DescribeDcdnDdosServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeDcdnConfigGroupDetail(request), context);
+		handler(this, request, describeDcdnDdosService(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DcdnClient::DescribeDcdnConfigGroupDetailOutcomeCallable DcdnClient::describeDcdnConfigGroupDetailCallable(const DescribeDcdnConfigGroupDetailRequest &request) const
+DcdnClient::DescribeDcdnDdosServiceOutcomeCallable DcdnClient::describeDcdnDdosServiceCallable(const DescribeDcdnDdosServiceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeDcdnConfigGroupDetailOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnDdosServiceOutcome()>>(
 			[this, request]()
 			{
-			return this->describeDcdnConfigGroupDetail(request);
+			return this->describeDcdnDdosService(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-DcdnClient::DescribeDcdnConfigOfVersionOutcome DcdnClient::describeDcdnConfigOfVersion(const DescribeDcdnConfigOfVersionRequest &request) const
+DcdnClient::DescribeDcdnDdosSpecInfoOutcome DcdnClient::describeDcdnDdosSpecInfo(const DescribeDcdnDdosSpecInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeDcdnConfigOfVersionOutcome(endpointOutcome.error());
+		return DescribeDcdnDdosSpecInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeDcdnConfigOfVersionOutcome(DescribeDcdnConfigOfVersionResult(outcome.result()));
+		return DescribeDcdnDdosSpecInfoOutcome(DescribeDcdnDdosSpecInfoResult(outcome.result()));
 	else
-		return DescribeDcdnConfigOfVersionOutcome(outcome.error());
+		return DescribeDcdnDdosSpecInfoOutcome(outcome.error());
 }
 
-void DcdnClient::describeDcdnConfigOfVersionAsync(const DescribeDcdnConfigOfVersionRequest& request, const DescribeDcdnConfigOfVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DcdnClient::describeDcdnDdosSpecInfoAsync(const DescribeDcdnDdosSpecInfoRequest& request, const DescribeDcdnDdosSpecInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeDcdnConfigOfVersion(request), context);
+		handler(this, request, describeDcdnDdosSpecInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DcdnClient::DescribeDcdnConfigOfVersionOutcomeCallable DcdnClient::describeDcdnConfigOfVersionCallable(const DescribeDcdnConfigOfVersionRequest &request) const
+DcdnClient::DescribeDcdnDdosSpecInfoOutcomeCallable DcdnClient::describeDcdnDdosSpecInfoCallable(const DescribeDcdnDdosSpecInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeDcdnConfigOfVersionOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnDdosSpecInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->describeDcdnConfigOfVersion(request);
+			return this->describeDcdnDdosSpecInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1485,6 +1989,42 @@ DcdnClient::DescribeDcdnDomainBpsDataOutcomeCallable DcdnClient::describeDcdnDom
 			[this, request]()
 			{
 			return this->describeDcdnDomainBpsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnDomainBpsDataByLayerOutcome DcdnClient::describeDcdnDomainBpsDataByLayer(const DescribeDcdnDomainBpsDataByLayerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnDomainBpsDataByLayerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnDomainBpsDataByLayerOutcome(DescribeDcdnDomainBpsDataByLayerResult(outcome.result()));
+	else
+		return DescribeDcdnDomainBpsDataByLayerOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnDomainBpsDataByLayerAsync(const DescribeDcdnDomainBpsDataByLayerRequest& request, const DescribeDcdnDomainBpsDataByLayerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnDomainBpsDataByLayer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnDomainBpsDataByLayerOutcomeCallable DcdnClient::describeDcdnDomainBpsDataByLayerCallable(const DescribeDcdnDomainBpsDataByLayerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnDomainBpsDataByLayerOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnDomainBpsDataByLayer(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1779,6 +2319,42 @@ DcdnClient::DescribeDcdnDomainHttpCodeDataOutcomeCallable DcdnClient::describeDc
 	return task->get_future();
 }
 
+DcdnClient::DescribeDcdnDomainHttpCodeDataByLayerOutcome DcdnClient::describeDcdnDomainHttpCodeDataByLayer(const DescribeDcdnDomainHttpCodeDataByLayerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnDomainHttpCodeDataByLayerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnDomainHttpCodeDataByLayerOutcome(DescribeDcdnDomainHttpCodeDataByLayerResult(outcome.result()));
+	else
+		return DescribeDcdnDomainHttpCodeDataByLayerOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnDomainHttpCodeDataByLayerAsync(const DescribeDcdnDomainHttpCodeDataByLayerRequest& request, const DescribeDcdnDomainHttpCodeDataByLayerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnDomainHttpCodeDataByLayer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnDomainHttpCodeDataByLayerOutcomeCallable DcdnClient::describeDcdnDomainHttpCodeDataByLayerCallable(const DescribeDcdnDomainHttpCodeDataByLayerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnDomainHttpCodeDataByLayerOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnDomainHttpCodeDataByLayer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::DescribeDcdnDomainIpaBpsDataOutcome DcdnClient::describeDcdnDomainIpaBpsData(const DescribeDcdnDomainIpaBpsDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1809,6 +2385,42 @@ DcdnClient::DescribeDcdnDomainIpaBpsDataOutcomeCallable DcdnClient::describeDcdn
 			[this, request]()
 			{
 			return this->describeDcdnDomainIpaBpsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnDomainIpaConnDataOutcome DcdnClient::describeDcdnDomainIpaConnData(const DescribeDcdnDomainIpaConnDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnDomainIpaConnDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnDomainIpaConnDataOutcome(DescribeDcdnDomainIpaConnDataResult(outcome.result()));
+	else
+		return DescribeDcdnDomainIpaConnDataOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnDomainIpaConnDataAsync(const DescribeDcdnDomainIpaConnDataRequest& request, const DescribeDcdnDomainIpaConnDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnDomainIpaConnData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnDomainIpaConnDataOutcomeCallable DcdnClient::describeDcdnDomainIpaConnDataCallable(const DescribeDcdnDomainIpaConnDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnDomainIpaConnDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnDomainIpaConnData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1917,6 +2529,42 @@ DcdnClient::DescribeDcdnDomainLogOutcomeCallable DcdnClient::describeDcdnDomainL
 			[this, request]()
 			{
 			return this->describeDcdnDomainLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnDomainLogExTtlOutcome DcdnClient::describeDcdnDomainLogExTtl(const DescribeDcdnDomainLogExTtlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnDomainLogExTtlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnDomainLogExTtlOutcome(DescribeDcdnDomainLogExTtlResult(outcome.result()));
+	else
+		return DescribeDcdnDomainLogExTtlOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnDomainLogExTtlAsync(const DescribeDcdnDomainLogExTtlRequest& request, const DescribeDcdnDomainLogExTtlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnDomainLogExTtl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnDomainLogExTtlOutcomeCallable DcdnClient::describeDcdnDomainLogExTtlCallable(const DescribeDcdnDomainLogExTtlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnDomainLogExTtlOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnDomainLogExTtl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2133,6 +2781,42 @@ DcdnClient::DescribeDcdnDomainQpsDataOutcomeCallable DcdnClient::describeDcdnDom
 			[this, request]()
 			{
 			return this->describeDcdnDomainQpsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnDomainQpsDataByLayerOutcome DcdnClient::describeDcdnDomainQpsDataByLayer(const DescribeDcdnDomainQpsDataByLayerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnDomainQpsDataByLayerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnDomainQpsDataByLayerOutcome(DescribeDcdnDomainQpsDataByLayerResult(outcome.result()));
+	else
+		return DescribeDcdnDomainQpsDataByLayerOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnDomainQpsDataByLayerAsync(const DescribeDcdnDomainQpsDataByLayerRequest& request, const DescribeDcdnDomainQpsDataByLayerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnDomainQpsDataByLayer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnDomainQpsDataByLayerOutcomeCallable DcdnClient::describeDcdnDomainQpsDataByLayerCallable(const DescribeDcdnDomainQpsDataByLayerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnDomainQpsDataByLayerOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnDomainQpsDataByLayer(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2859,72 +3543,144 @@ DcdnClient::DescribeDcdnDomainWebsocketTrafficDataOutcomeCallable DcdnClient::de
 	return task->get_future();
 }
 
-DcdnClient::DescribeDcdnEsExceptionDataOutcome DcdnClient::describeDcdnEsExceptionData(const DescribeDcdnEsExceptionDataRequest &request) const
+DcdnClient::DescribeDcdnDomainsBySourceOutcome DcdnClient::describeDcdnDomainsBySource(const DescribeDcdnDomainsBySourceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeDcdnEsExceptionDataOutcome(endpointOutcome.error());
+		return DescribeDcdnDomainsBySourceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeDcdnEsExceptionDataOutcome(DescribeDcdnEsExceptionDataResult(outcome.result()));
+		return DescribeDcdnDomainsBySourceOutcome(DescribeDcdnDomainsBySourceResult(outcome.result()));
 	else
-		return DescribeDcdnEsExceptionDataOutcome(outcome.error());
+		return DescribeDcdnDomainsBySourceOutcome(outcome.error());
 }
 
-void DcdnClient::describeDcdnEsExceptionDataAsync(const DescribeDcdnEsExceptionDataRequest& request, const DescribeDcdnEsExceptionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DcdnClient::describeDcdnDomainsBySourceAsync(const DescribeDcdnDomainsBySourceRequest& request, const DescribeDcdnDomainsBySourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeDcdnEsExceptionData(request), context);
+		handler(this, request, describeDcdnDomainsBySource(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DcdnClient::DescribeDcdnEsExceptionDataOutcomeCallable DcdnClient::describeDcdnEsExceptionDataCallable(const DescribeDcdnEsExceptionDataRequest &request) const
+DcdnClient::DescribeDcdnDomainsBySourceOutcomeCallable DcdnClient::describeDcdnDomainsBySourceCallable(const DescribeDcdnDomainsBySourceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeDcdnEsExceptionDataOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnDomainsBySourceOutcome()>>(
 			[this, request]()
 			{
-			return this->describeDcdnEsExceptionData(request);
+			return this->describeDcdnDomainsBySource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-DcdnClient::DescribeDcdnEsExecuteDataOutcome DcdnClient::describeDcdnEsExecuteData(const DescribeDcdnEsExecuteDataRequest &request) const
+DcdnClient::DescribeDcdnErUsageDataOutcome DcdnClient::describeDcdnErUsageData(const DescribeDcdnErUsageDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeDcdnEsExecuteDataOutcome(endpointOutcome.error());
+		return DescribeDcdnErUsageDataOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeDcdnEsExecuteDataOutcome(DescribeDcdnEsExecuteDataResult(outcome.result()));
+		return DescribeDcdnErUsageDataOutcome(DescribeDcdnErUsageDataResult(outcome.result()));
 	else
-		return DescribeDcdnEsExecuteDataOutcome(outcome.error());
+		return DescribeDcdnErUsageDataOutcome(outcome.error());
 }
 
-void DcdnClient::describeDcdnEsExecuteDataAsync(const DescribeDcdnEsExecuteDataRequest& request, const DescribeDcdnEsExecuteDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DcdnClient::describeDcdnErUsageDataAsync(const DescribeDcdnErUsageDataRequest& request, const DescribeDcdnErUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeDcdnEsExecuteData(request), context);
+		handler(this, request, describeDcdnErUsageData(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DcdnClient::DescribeDcdnEsExecuteDataOutcomeCallable DcdnClient::describeDcdnEsExecuteDataCallable(const DescribeDcdnEsExecuteDataRequest &request) const
+DcdnClient::DescribeDcdnErUsageDataOutcomeCallable DcdnClient::describeDcdnErUsageDataCallable(const DescribeDcdnErUsageDataRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeDcdnEsExecuteDataOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnErUsageDataOutcome()>>(
 			[this, request]()
 			{
-			return this->describeDcdnEsExecuteData(request);
+			return this->describeDcdnErUsageData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnFullDomainsBlockIPConfigOutcome DcdnClient::describeDcdnFullDomainsBlockIPConfig(const DescribeDcdnFullDomainsBlockIPConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnFullDomainsBlockIPConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnFullDomainsBlockIPConfigOutcome(DescribeDcdnFullDomainsBlockIPConfigResult(outcome.result()));
+	else
+		return DescribeDcdnFullDomainsBlockIPConfigOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnFullDomainsBlockIPConfigAsync(const DescribeDcdnFullDomainsBlockIPConfigRequest& request, const DescribeDcdnFullDomainsBlockIPConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnFullDomainsBlockIPConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnFullDomainsBlockIPConfigOutcomeCallable DcdnClient::describeDcdnFullDomainsBlockIPConfigCallable(const DescribeDcdnFullDomainsBlockIPConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnFullDomainsBlockIPConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnFullDomainsBlockIPConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnFullDomainsBlockIPHistoryOutcome DcdnClient::describeDcdnFullDomainsBlockIPHistory(const DescribeDcdnFullDomainsBlockIPHistoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnFullDomainsBlockIPHistoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnFullDomainsBlockIPHistoryOutcome(DescribeDcdnFullDomainsBlockIPHistoryResult(outcome.result()));
+	else
+		return DescribeDcdnFullDomainsBlockIPHistoryOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnFullDomainsBlockIPHistoryAsync(const DescribeDcdnFullDomainsBlockIPHistoryRequest& request, const DescribeDcdnFullDomainsBlockIPHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnFullDomainsBlockIPHistory(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnFullDomainsBlockIPHistoryOutcomeCallable DcdnClient::describeDcdnFullDomainsBlockIPHistoryCallable(const DescribeDcdnFullDomainsBlockIPHistoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnFullDomainsBlockIPHistoryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnFullDomainsBlockIPHistory(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2997,6 +3753,42 @@ DcdnClient::DescribeDcdnIpInfoOutcomeCallable DcdnClient::describeDcdnIpInfoCall
 			[this, request]()
 			{
 			return this->describeDcdnIpInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnIpaDomainCidrOutcome DcdnClient::describeDcdnIpaDomainCidr(const DescribeDcdnIpaDomainCidrRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnIpaDomainCidrOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnIpaDomainCidrOutcome(DescribeDcdnIpaDomainCidrResult(outcome.result()));
+	else
+		return DescribeDcdnIpaDomainCidrOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnIpaDomainCidrAsync(const DescribeDcdnIpaDomainCidrRequest& request, const DescribeDcdnIpaDomainCidrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnIpaDomainCidr(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnIpaDomainCidrOutcomeCallable DcdnClient::describeDcdnIpaDomainCidrCallable(const DescribeDcdnIpaDomainCidrRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnIpaDomainCidrOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnIpaDomainCidr(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3141,6 +3933,222 @@ DcdnClient::DescribeDcdnIpaUserDomainsOutcomeCallable DcdnClient::describeDcdnIp
 			[this, request]()
 			{
 			return this->describeDcdnIpaUserDomains(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnKvAccountOutcome DcdnClient::describeDcdnKvAccount(const DescribeDcdnKvAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnKvAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnKvAccountOutcome(DescribeDcdnKvAccountResult(outcome.result()));
+	else
+		return DescribeDcdnKvAccountOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnKvAccountAsync(const DescribeDcdnKvAccountRequest& request, const DescribeDcdnKvAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnKvAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnKvAccountOutcomeCallable DcdnClient::describeDcdnKvAccountCallable(const DescribeDcdnKvAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnKvAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnKvAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnKvAccountStatusOutcome DcdnClient::describeDcdnKvAccountStatus(const DescribeDcdnKvAccountStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnKvAccountStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnKvAccountStatusOutcome(DescribeDcdnKvAccountStatusResult(outcome.result()));
+	else
+		return DescribeDcdnKvAccountStatusOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnKvAccountStatusAsync(const DescribeDcdnKvAccountStatusRequest& request, const DescribeDcdnKvAccountStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnKvAccountStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnKvAccountStatusOutcomeCallable DcdnClient::describeDcdnKvAccountStatusCallable(const DescribeDcdnKvAccountStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnKvAccountStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnKvAccountStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnKvNamespaceOutcome DcdnClient::describeDcdnKvNamespace(const DescribeDcdnKvNamespaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnKvNamespaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnKvNamespaceOutcome(DescribeDcdnKvNamespaceResult(outcome.result()));
+	else
+		return DescribeDcdnKvNamespaceOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnKvNamespaceAsync(const DescribeDcdnKvNamespaceRequest& request, const DescribeDcdnKvNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnKvNamespace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnKvNamespaceOutcomeCallable DcdnClient::describeDcdnKvNamespaceCallable(const DescribeDcdnKvNamespaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnKvNamespaceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnKvNamespace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnL2IpsOutcome DcdnClient::describeDcdnL2Ips(const DescribeDcdnL2IpsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnL2IpsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnL2IpsOutcome(DescribeDcdnL2IpsResult(outcome.result()));
+	else
+		return DescribeDcdnL2IpsOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnL2IpsAsync(const DescribeDcdnL2IpsRequest& request, const DescribeDcdnL2IpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnL2Ips(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnL2IpsOutcomeCallable DcdnClient::describeDcdnL2IpsCallable(const DescribeDcdnL2IpsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnL2IpsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnL2Ips(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnL2VipsOutcome DcdnClient::describeDcdnL2Vips(const DescribeDcdnL2VipsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnL2VipsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnL2VipsOutcome(DescribeDcdnL2VipsResult(outcome.result()));
+	else
+		return DescribeDcdnL2VipsOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnL2VipsAsync(const DescribeDcdnL2VipsRequest& request, const DescribeDcdnL2VipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnL2Vips(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnL2VipsOutcomeCallable DcdnClient::describeDcdnL2VipsCallable(const DescribeDcdnL2VipsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnL2VipsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnL2Vips(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnOriginSiteHealthStatusOutcome DcdnClient::describeDcdnOriginSiteHealthStatus(const DescribeDcdnOriginSiteHealthStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnOriginSiteHealthStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnOriginSiteHealthStatusOutcome(DescribeDcdnOriginSiteHealthStatusResult(outcome.result()));
+	else
+		return DescribeDcdnOriginSiteHealthStatusOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnOriginSiteHealthStatusAsync(const DescribeDcdnOriginSiteHealthStatusRequest& request, const DescribeDcdnOriginSiteHealthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnOriginSiteHealthStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnOriginSiteHealthStatusOutcomeCallable DcdnClient::describeDcdnOriginSiteHealthStatusCallable(const DescribeDcdnOriginSiteHealthStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnOriginSiteHealthStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnOriginSiteHealthStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3399,6 +4407,42 @@ DcdnClient::DescribeDcdnReportListOutcomeCallable DcdnClient::describeDcdnReport
 	return task->get_future();
 }
 
+DcdnClient::DescribeDcdnSLSRealTimeLogTypeOutcome DcdnClient::describeDcdnSLSRealTimeLogType(const DescribeDcdnSLSRealTimeLogTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnSLSRealTimeLogTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnSLSRealTimeLogTypeOutcome(DescribeDcdnSLSRealTimeLogTypeResult(outcome.result()));
+	else
+		return DescribeDcdnSLSRealTimeLogTypeOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnSLSRealTimeLogTypeAsync(const DescribeDcdnSLSRealTimeLogTypeRequest& request, const DescribeDcdnSLSRealTimeLogTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnSLSRealTimeLogType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnSLSRealTimeLogTypeOutcomeCallable DcdnClient::describeDcdnSLSRealTimeLogTypeCallable(const DescribeDcdnSLSRealTimeLogTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnSLSRealTimeLogTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnSLSRealTimeLogType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::DescribeDcdnSLSRealtimeLogDeliveryOutcome DcdnClient::describeDcdnSLSRealtimeLogDelivery(const DescribeDcdnSLSRealtimeLogDeliveryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3501,6 +4545,42 @@ DcdnClient::DescribeDcdnSMCertificateListOutcomeCallable DcdnClient::describeDcd
 			[this, request]()
 			{
 			return this->describeDcdnSMCertificateList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnSSLCertificateListOutcome DcdnClient::describeDcdnSSLCertificateList(const DescribeDcdnSSLCertificateListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnSSLCertificateListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnSSLCertificateListOutcome(DescribeDcdnSSLCertificateListResult(outcome.result()));
+	else
+		return DescribeDcdnSSLCertificateListOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnSSLCertificateListAsync(const DescribeDcdnSSLCertificateListRequest& request, const DescribeDcdnSSLCertificateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnSSLCertificateList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnSSLCertificateListOutcomeCallable DcdnClient::describeDcdnSSLCertificateListCallable(const DescribeDcdnSSLCertificateListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnSSLCertificateListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnSSLCertificateList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3831,6 +4911,78 @@ DcdnClient::DescribeDcdnUserBillTypeOutcomeCallable DcdnClient::describeDcdnUser
 	return task->get_future();
 }
 
+DcdnClient::DescribeDcdnUserCertificateExpireCountOutcome DcdnClient::describeDcdnUserCertificateExpireCount(const DescribeDcdnUserCertificateExpireCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnUserCertificateExpireCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnUserCertificateExpireCountOutcome(DescribeDcdnUserCertificateExpireCountResult(outcome.result()));
+	else
+		return DescribeDcdnUserCertificateExpireCountOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnUserCertificateExpireCountAsync(const DescribeDcdnUserCertificateExpireCountRequest& request, const DescribeDcdnUserCertificateExpireCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnUserCertificateExpireCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnUserCertificateExpireCountOutcomeCallable DcdnClient::describeDcdnUserCertificateExpireCountCallable(const DescribeDcdnUserCertificateExpireCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnUserCertificateExpireCountOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnUserCertificateExpireCount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnUserConfigsOutcome DcdnClient::describeDcdnUserConfigs(const DescribeDcdnUserConfigsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnUserConfigsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnUserConfigsOutcome(DescribeDcdnUserConfigsResult(outcome.result()));
+	else
+		return DescribeDcdnUserConfigsOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnUserConfigsAsync(const DescribeDcdnUserConfigsRequest& request, const DescribeDcdnUserConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnUserConfigs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnUserConfigsOutcomeCallable DcdnClient::describeDcdnUserConfigsCallable(const DescribeDcdnUserConfigsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnUserConfigsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnUserConfigs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::DescribeDcdnUserDomainsOutcome DcdnClient::describeDcdnUserDomains(const DescribeDcdnUserDomainsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4119,6 +5271,42 @@ DcdnClient::DescribeDcdnUserTagsOutcomeCallable DcdnClient::describeDcdnUserTags
 	return task->get_future();
 }
 
+DcdnClient::DescribeDcdnUserVipsByDomainOutcome DcdnClient::describeDcdnUserVipsByDomain(const DescribeDcdnUserVipsByDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnUserVipsByDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnUserVipsByDomainOutcome(DescribeDcdnUserVipsByDomainResult(outcome.result()));
+	else
+		return DescribeDcdnUserVipsByDomainOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnUserVipsByDomainAsync(const DescribeDcdnUserVipsByDomainRequest& request, const DescribeDcdnUserVipsByDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnUserVipsByDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnUserVipsByDomainOutcomeCallable DcdnClient::describeDcdnUserVipsByDomainCallable(const DescribeDcdnUserVipsByDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnUserVipsByDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnUserVipsByDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::DescribeDcdnVerifyContentOutcome DcdnClient::describeDcdnVerifyContent(const DescribeDcdnVerifyContentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4149,6 +5337,78 @@ DcdnClient::DescribeDcdnVerifyContentOutcomeCallable DcdnClient::describeDcdnVer
 			[this, request]()
 			{
 			return this->describeDcdnVerifyContent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafBotAppKeyOutcome DcdnClient::describeDcdnWafBotAppKey(const DescribeDcdnWafBotAppKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafBotAppKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafBotAppKeyOutcome(DescribeDcdnWafBotAppKeyResult(outcome.result()));
+	else
+		return DescribeDcdnWafBotAppKeyOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafBotAppKeyAsync(const DescribeDcdnWafBotAppKeyRequest& request, const DescribeDcdnWafBotAppKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafBotAppKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafBotAppKeyOutcomeCallable DcdnClient::describeDcdnWafBotAppKeyCallable(const DescribeDcdnWafBotAppKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafBotAppKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafBotAppKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafDefaultRulesOutcome DcdnClient::describeDcdnWafDefaultRules(const DescribeDcdnWafDefaultRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafDefaultRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafDefaultRulesOutcome(DescribeDcdnWafDefaultRulesResult(outcome.result()));
+	else
+		return DescribeDcdnWafDefaultRulesOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafDefaultRulesAsync(const DescribeDcdnWafDefaultRulesRequest& request, const DescribeDcdnWafDefaultRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafDefaultRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafDefaultRulesOutcomeCallable DcdnClient::describeDcdnWafDefaultRulesCallable(const DescribeDcdnWafDefaultRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafDefaultRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafDefaultRules(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4191,6 +5451,618 @@ DcdnClient::DescribeDcdnWafDomainOutcomeCallable DcdnClient::describeDcdnWafDoma
 	return task->get_future();
 }
 
+DcdnClient::DescribeDcdnWafDomainDetailOutcome DcdnClient::describeDcdnWafDomainDetail(const DescribeDcdnWafDomainDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafDomainDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafDomainDetailOutcome(DescribeDcdnWafDomainDetailResult(outcome.result()));
+	else
+		return DescribeDcdnWafDomainDetailOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafDomainDetailAsync(const DescribeDcdnWafDomainDetailRequest& request, const DescribeDcdnWafDomainDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafDomainDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafDomainDetailOutcomeCallable DcdnClient::describeDcdnWafDomainDetailCallable(const DescribeDcdnWafDomainDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafDomainDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafDomainDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafDomainsOutcome DcdnClient::describeDcdnWafDomains(const DescribeDcdnWafDomainsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafDomainsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafDomainsOutcome(DescribeDcdnWafDomainsResult(outcome.result()));
+	else
+		return DescribeDcdnWafDomainsOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafDomainsAsync(const DescribeDcdnWafDomainsRequest& request, const DescribeDcdnWafDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafDomains(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafDomainsOutcomeCallable DcdnClient::describeDcdnWafDomainsCallable(const DescribeDcdnWafDomainsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafDomainsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafDomains(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafFilterInfoOutcome DcdnClient::describeDcdnWafFilterInfo(const DescribeDcdnWafFilterInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafFilterInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafFilterInfoOutcome(DescribeDcdnWafFilterInfoResult(outcome.result()));
+	else
+		return DescribeDcdnWafFilterInfoOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafFilterInfoAsync(const DescribeDcdnWafFilterInfoRequest& request, const DescribeDcdnWafFilterInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafFilterInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafFilterInfoOutcomeCallable DcdnClient::describeDcdnWafFilterInfoCallable(const DescribeDcdnWafFilterInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafFilterInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafFilterInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafGeoInfoOutcome DcdnClient::describeDcdnWafGeoInfo(const DescribeDcdnWafGeoInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafGeoInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafGeoInfoOutcome(DescribeDcdnWafGeoInfoResult(outcome.result()));
+	else
+		return DescribeDcdnWafGeoInfoOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafGeoInfoAsync(const DescribeDcdnWafGeoInfoRequest& request, const DescribeDcdnWafGeoInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafGeoInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafGeoInfoOutcomeCallable DcdnClient::describeDcdnWafGeoInfoCallable(const DescribeDcdnWafGeoInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafGeoInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafGeoInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafGroupOutcome DcdnClient::describeDcdnWafGroup(const DescribeDcdnWafGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafGroupOutcome(DescribeDcdnWafGroupResult(outcome.result()));
+	else
+		return DescribeDcdnWafGroupOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafGroupAsync(const DescribeDcdnWafGroupRequest& request, const DescribeDcdnWafGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafGroupOutcomeCallable DcdnClient::describeDcdnWafGroupCallable(const DescribeDcdnWafGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafGroupsOutcome DcdnClient::describeDcdnWafGroups(const DescribeDcdnWafGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafGroupsOutcome(DescribeDcdnWafGroupsResult(outcome.result()));
+	else
+		return DescribeDcdnWafGroupsOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafGroupsAsync(const DescribeDcdnWafGroupsRequest& request, const DescribeDcdnWafGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafGroupsOutcomeCallable DcdnClient::describeDcdnWafGroupsCallable(const DescribeDcdnWafGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafLogsOutcome DcdnClient::describeDcdnWafLogs(const DescribeDcdnWafLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafLogsOutcome(DescribeDcdnWafLogsResult(outcome.result()));
+	else
+		return DescribeDcdnWafLogsOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafLogsAsync(const DescribeDcdnWafLogsRequest& request, const DescribeDcdnWafLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafLogsOutcomeCallable DcdnClient::describeDcdnWafLogsCallable(const DescribeDcdnWafLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafPoliciesOutcome DcdnClient::describeDcdnWafPolicies(const DescribeDcdnWafPoliciesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafPoliciesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafPoliciesOutcome(DescribeDcdnWafPoliciesResult(outcome.result()));
+	else
+		return DescribeDcdnWafPoliciesOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafPoliciesAsync(const DescribeDcdnWafPoliciesRequest& request, const DescribeDcdnWafPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafPolicies(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafPoliciesOutcomeCallable DcdnClient::describeDcdnWafPoliciesCallable(const DescribeDcdnWafPoliciesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafPoliciesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafPolicies(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafPolicyOutcome DcdnClient::describeDcdnWafPolicy(const DescribeDcdnWafPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafPolicyOutcome(DescribeDcdnWafPolicyResult(outcome.result()));
+	else
+		return DescribeDcdnWafPolicyOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafPolicyAsync(const DescribeDcdnWafPolicyRequest& request, const DescribeDcdnWafPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafPolicyOutcomeCallable DcdnClient::describeDcdnWafPolicyCallable(const DescribeDcdnWafPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafPolicyDomainsOutcome DcdnClient::describeDcdnWafPolicyDomains(const DescribeDcdnWafPolicyDomainsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafPolicyDomainsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafPolicyDomainsOutcome(DescribeDcdnWafPolicyDomainsResult(outcome.result()));
+	else
+		return DescribeDcdnWafPolicyDomainsOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafPolicyDomainsAsync(const DescribeDcdnWafPolicyDomainsRequest& request, const DescribeDcdnWafPolicyDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafPolicyDomains(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafPolicyDomainsOutcomeCallable DcdnClient::describeDcdnWafPolicyDomainsCallable(const DescribeDcdnWafPolicyDomainsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafPolicyDomainsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafPolicyDomains(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafPolicyValidDomainsOutcome DcdnClient::describeDcdnWafPolicyValidDomains(const DescribeDcdnWafPolicyValidDomainsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafPolicyValidDomainsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafPolicyValidDomainsOutcome(DescribeDcdnWafPolicyValidDomainsResult(outcome.result()));
+	else
+		return DescribeDcdnWafPolicyValidDomainsOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafPolicyValidDomainsAsync(const DescribeDcdnWafPolicyValidDomainsRequest& request, const DescribeDcdnWafPolicyValidDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafPolicyValidDomains(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafPolicyValidDomainsOutcomeCallable DcdnClient::describeDcdnWafPolicyValidDomainsCallable(const DescribeDcdnWafPolicyValidDomainsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafPolicyValidDomainsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafPolicyValidDomains(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafRuleOutcome DcdnClient::describeDcdnWafRule(const DescribeDcdnWafRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafRuleOutcome(DescribeDcdnWafRuleResult(outcome.result()));
+	else
+		return DescribeDcdnWafRuleOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafRuleAsync(const DescribeDcdnWafRuleRequest& request, const DescribeDcdnWafRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafRuleOutcomeCallable DcdnClient::describeDcdnWafRuleCallable(const DescribeDcdnWafRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafRulesOutcome DcdnClient::describeDcdnWafRules(const DescribeDcdnWafRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafRulesOutcome(DescribeDcdnWafRulesResult(outcome.result()));
+	else
+		return DescribeDcdnWafRulesOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafRulesAsync(const DescribeDcdnWafRulesRequest& request, const DescribeDcdnWafRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafRulesOutcomeCallable DcdnClient::describeDcdnWafRulesCallable(const DescribeDcdnWafRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafScenesOutcome DcdnClient::describeDcdnWafScenes(const DescribeDcdnWafScenesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafScenesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafScenesOutcome(DescribeDcdnWafScenesResult(outcome.result()));
+	else
+		return DescribeDcdnWafScenesOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafScenesAsync(const DescribeDcdnWafScenesRequest& request, const DescribeDcdnWafScenesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafScenes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafScenesOutcomeCallable DcdnClient::describeDcdnWafScenesCallable(const DescribeDcdnWafScenesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafScenesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafScenes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafServiceOutcome DcdnClient::describeDcdnWafService(const DescribeDcdnWafServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafServiceOutcome(DescribeDcdnWafServiceResult(outcome.result()));
+	else
+		return DescribeDcdnWafServiceOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafServiceAsync(const DescribeDcdnWafServiceRequest& request, const DescribeDcdnWafServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafServiceOutcomeCallable DcdnClient::describeDcdnWafServiceCallable(const DescribeDcdnWafServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafSpecInfoOutcome DcdnClient::describeDcdnWafSpecInfo(const DescribeDcdnWafSpecInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafSpecInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafSpecInfoOutcome(DescribeDcdnWafSpecInfoResult(outcome.result()));
+	else
+		return DescribeDcdnWafSpecInfoOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafSpecInfoAsync(const DescribeDcdnWafSpecInfoRequest& request, const DescribeDcdnWafSpecInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafSpecInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafSpecInfoOutcomeCallable DcdnClient::describeDcdnWafSpecInfoCallable(const DescribeDcdnWafSpecInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafSpecInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafSpecInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnWafUsageDataOutcome DcdnClient::describeDcdnWafUsageData(const DescribeDcdnWafUsageDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafUsageDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafUsageDataOutcome(DescribeDcdnWafUsageDataResult(outcome.result()));
+	else
+		return DescribeDcdnWafUsageDataOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafUsageDataAsync(const DescribeDcdnWafUsageDataRequest& request, const DescribeDcdnWafUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafUsageData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafUsageDataOutcomeCallable DcdnClient::describeDcdnWafUsageDataCallable(const DescribeDcdnWafUsageDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafUsageDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafUsageData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::DescribeDcdnsecServiceOutcome DcdnClient::describeDcdnsecService(const DescribeDcdnsecServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4221,6 +6093,222 @@ DcdnClient::DescribeDcdnsecServiceOutcomeCallable DcdnClient::describeDcdnsecSer
 			[this, request]()
 			{
 			return this->describeDcdnsecService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDdosAllEventListOutcome DcdnClient::describeDdosAllEventList(const DescribeDdosAllEventListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDdosAllEventListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDdosAllEventListOutcome(DescribeDdosAllEventListResult(outcome.result()));
+	else
+		return DescribeDdosAllEventListOutcome(outcome.error());
+}
+
+void DcdnClient::describeDdosAllEventListAsync(const DescribeDdosAllEventListRequest& request, const DescribeDdosAllEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDdosAllEventList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDdosAllEventListOutcomeCallable DcdnClient::describeDdosAllEventListCallable(const DescribeDdosAllEventListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDdosAllEventListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDdosAllEventList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeEncryptRoutineUidOutcome DcdnClient::describeEncryptRoutineUid(const DescribeEncryptRoutineUidRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEncryptRoutineUidOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEncryptRoutineUidOutcome(DescribeEncryptRoutineUidResult(outcome.result()));
+	else
+		return DescribeEncryptRoutineUidOutcome(outcome.error());
+}
+
+void DcdnClient::describeEncryptRoutineUidAsync(const DescribeEncryptRoutineUidRequest& request, const DescribeEncryptRoutineUidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEncryptRoutineUid(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeEncryptRoutineUidOutcomeCallable DcdnClient::describeEncryptRoutineUidCallable(const DescribeEncryptRoutineUidRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEncryptRoutineUidOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEncryptRoutineUid(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeHighlightInfoOutcome DcdnClient::describeHighlightInfo(const DescribeHighlightInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeHighlightInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeHighlightInfoOutcome(DescribeHighlightInfoResult(outcome.result()));
+	else
+		return DescribeHighlightInfoOutcome(outcome.error());
+}
+
+void DcdnClient::describeHighlightInfoAsync(const DescribeHighlightInfoRequest& request, const DescribeHighlightInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeHighlightInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeHighlightInfoOutcomeCallable DcdnClient::describeHighlightInfoCallable(const DescribeHighlightInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeHighlightInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeHighlightInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeKvUsageDataOutcome DcdnClient::describeKvUsageData(const DescribeKvUsageDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeKvUsageDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeKvUsageDataOutcome(DescribeKvUsageDataResult(outcome.result()));
+	else
+		return DescribeKvUsageDataOutcome(outcome.error());
+}
+
+void DcdnClient::describeKvUsageDataAsync(const DescribeKvUsageDataRequest& request, const DescribeKvUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeKvUsageData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeKvUsageDataOutcomeCallable DcdnClient::describeKvUsageDataCallable(const DescribeKvUsageDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeKvUsageDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeKvUsageData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeRDDomainConfigOutcome DcdnClient::describeRDDomainConfig(const DescribeRDDomainConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRDDomainConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRDDomainConfigOutcome(DescribeRDDomainConfigResult(outcome.result()));
+	else
+		return DescribeRDDomainConfigOutcome(outcome.error());
+}
+
+void DcdnClient::describeRDDomainConfigAsync(const DescribeRDDomainConfigRequest& request, const DescribeRDDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRDDomainConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeRDDomainConfigOutcomeCallable DcdnClient::describeRDDomainConfigCallable(const DescribeRDDomainConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRDDomainConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRDDomainConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeRDDomainsOutcome DcdnClient::describeRDDomains(const DescribeRDDomainsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRDDomainsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRDDomainsOutcome(DescribeRDDomainsResult(outcome.result()));
+	else
+		return DescribeRDDomainsOutcome(outcome.error());
+}
+
+void DcdnClient::describeRDDomainsAsync(const DescribeRDDomainsRequest& request, const DescribeRDDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRDDomains(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeRDDomainsOutcomeCallable DcdnClient::describeRDDomainsCallable(const DescribeRDDomainsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRDDomainsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRDDomains(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4329,6 +6417,42 @@ DcdnClient::DescribeRoutineCodeRevisionOutcomeCallable DcdnClient::describeRouti
 			[this, request]()
 			{
 			return this->describeRoutineCodeRevision(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeRoutineRelatedDomainsOutcome DcdnClient::describeRoutineRelatedDomains(const DescribeRoutineRelatedDomainsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRoutineRelatedDomainsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRoutineRelatedDomainsOutcome(DescribeRoutineRelatedDomainsResult(outcome.result()));
+	else
+		return DescribeRoutineRelatedDomainsOutcome(outcome.error());
+}
+
+void DcdnClient::describeRoutineRelatedDomainsAsync(const DescribeRoutineRelatedDomainsRequest& request, const DescribeRoutineRelatedDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRoutineRelatedDomains(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeRoutineRelatedDomainsOutcomeCallable DcdnClient::describeRoutineRelatedDomainsCallable(const DescribeRoutineRelatedDomainsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRoutineRelatedDomainsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRoutineRelatedDomains(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4587,36 +6711,108 @@ DcdnClient::EditRoutineConfOutcomeCallable DcdnClient::editRoutineConfCallable(c
 	return task->get_future();
 }
 
-DcdnClient::ListDcdnEsTemplateInfoOutcome DcdnClient::listDcdnEsTemplateInfo(const ListDcdnEsTemplateInfoRequest &request) const
+DcdnClient::GetDcdnKvOutcome DcdnClient::getDcdnKv(const GetDcdnKvRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListDcdnEsTemplateInfoOutcome(endpointOutcome.error());
+		return GetDcdnKvOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListDcdnEsTemplateInfoOutcome(ListDcdnEsTemplateInfoResult(outcome.result()));
+		return GetDcdnKvOutcome(GetDcdnKvResult(outcome.result()));
 	else
-		return ListDcdnEsTemplateInfoOutcome(outcome.error());
+		return GetDcdnKvOutcome(outcome.error());
 }
 
-void DcdnClient::listDcdnEsTemplateInfoAsync(const ListDcdnEsTemplateInfoRequest& request, const ListDcdnEsTemplateInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DcdnClient::getDcdnKvAsync(const GetDcdnKvRequest& request, const GetDcdnKvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listDcdnEsTemplateInfo(request), context);
+		handler(this, request, getDcdnKv(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DcdnClient::ListDcdnEsTemplateInfoOutcomeCallable DcdnClient::listDcdnEsTemplateInfoCallable(const ListDcdnEsTemplateInfoRequest &request) const
+DcdnClient::GetDcdnKvOutcomeCallable DcdnClient::getDcdnKvCallable(const GetDcdnKvRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListDcdnEsTemplateInfoOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetDcdnKvOutcome()>>(
 			[this, request]()
 			{
-			return this->listDcdnEsTemplateInfo(request);
+			return this->getDcdnKv(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::GetDcdnKvStatusOutcome DcdnClient::getDcdnKvStatus(const GetDcdnKvStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDcdnKvStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDcdnKvStatusOutcome(GetDcdnKvStatusResult(outcome.result()));
+	else
+		return GetDcdnKvStatusOutcome(outcome.error());
+}
+
+void DcdnClient::getDcdnKvStatusAsync(const GetDcdnKvStatusRequest& request, const GetDcdnKvStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDcdnKvStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::GetDcdnKvStatusOutcomeCallable DcdnClient::getDcdnKvStatusCallable(const GetDcdnKvStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDcdnKvStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getDcdnKvStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::ListDcdnKvOutcome DcdnClient::listDcdnKv(const ListDcdnKvRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDcdnKvOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDcdnKvOutcome(ListDcdnKvResult(outcome.result()));
+	else
+		return ListDcdnKvOutcome(outcome.error());
+}
+
+void DcdnClient::listDcdnKvAsync(const ListDcdnKvRequest& request, const ListDcdnKvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDcdnKv(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::ListDcdnKvOutcomeCallable DcdnClient::listDcdnKvCallable(const ListDcdnKvRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDcdnKvOutcome()>>(
+			[this, request]()
+			{
+			return this->listDcdnKv(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4689,6 +6885,150 @@ DcdnClient::ModifyDCdnDomainSchdmByPropertyOutcomeCallable DcdnClient::modifyDCd
 			[this, request]()
 			{
 			return this->modifyDCdnDomainSchdmByProperty(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::ModifyDcdnWafGroupOutcome DcdnClient::modifyDcdnWafGroup(const ModifyDcdnWafGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDcdnWafGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDcdnWafGroupOutcome(ModifyDcdnWafGroupResult(outcome.result()));
+	else
+		return ModifyDcdnWafGroupOutcome(outcome.error());
+}
+
+void DcdnClient::modifyDcdnWafGroupAsync(const ModifyDcdnWafGroupRequest& request, const ModifyDcdnWafGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDcdnWafGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::ModifyDcdnWafGroupOutcomeCallable DcdnClient::modifyDcdnWafGroupCallable(const ModifyDcdnWafGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDcdnWafGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDcdnWafGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::ModifyDcdnWafPolicyOutcome DcdnClient::modifyDcdnWafPolicy(const ModifyDcdnWafPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDcdnWafPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDcdnWafPolicyOutcome(ModifyDcdnWafPolicyResult(outcome.result()));
+	else
+		return ModifyDcdnWafPolicyOutcome(outcome.error());
+}
+
+void DcdnClient::modifyDcdnWafPolicyAsync(const ModifyDcdnWafPolicyRequest& request, const ModifyDcdnWafPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDcdnWafPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::ModifyDcdnWafPolicyOutcomeCallable DcdnClient::modifyDcdnWafPolicyCallable(const ModifyDcdnWafPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDcdnWafPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDcdnWafPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::ModifyDcdnWafPolicyDomainsOutcome DcdnClient::modifyDcdnWafPolicyDomains(const ModifyDcdnWafPolicyDomainsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDcdnWafPolicyDomainsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDcdnWafPolicyDomainsOutcome(ModifyDcdnWafPolicyDomainsResult(outcome.result()));
+	else
+		return ModifyDcdnWafPolicyDomainsOutcome(outcome.error());
+}
+
+void DcdnClient::modifyDcdnWafPolicyDomainsAsync(const ModifyDcdnWafPolicyDomainsRequest& request, const ModifyDcdnWafPolicyDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDcdnWafPolicyDomains(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::ModifyDcdnWafPolicyDomainsOutcomeCallable DcdnClient::modifyDcdnWafPolicyDomainsCallable(const ModifyDcdnWafPolicyDomainsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDcdnWafPolicyDomainsOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDcdnWafPolicyDomains(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::ModifyDcdnWafRuleOutcome DcdnClient::modifyDcdnWafRule(const ModifyDcdnWafRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDcdnWafRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDcdnWafRuleOutcome(ModifyDcdnWafRuleResult(outcome.result()));
+	else
+		return ModifyDcdnWafRuleOutcome(outcome.error());
+}
+
+void DcdnClient::modifyDcdnWafRuleAsync(const ModifyDcdnWafRuleRequest& request, const ModifyDcdnWafRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDcdnWafRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::ModifyDcdnWafRuleOutcomeCallable DcdnClient::modifyDcdnWafRuleCallable(const ModifyDcdnWafRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDcdnWafRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDcdnWafRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4839,6 +7179,150 @@ DcdnClient::PublishRoutineCodeRevisionOutcomeCallable DcdnClient::publishRoutine
 	return task->get_future();
 }
 
+DcdnClient::PutDcdnKvOutcome DcdnClient::putDcdnKv(const PutDcdnKvRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PutDcdnKvOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PutDcdnKvOutcome(PutDcdnKvResult(outcome.result()));
+	else
+		return PutDcdnKvOutcome(outcome.error());
+}
+
+void DcdnClient::putDcdnKvAsync(const PutDcdnKvRequest& request, const PutDcdnKvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, putDcdnKv(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::PutDcdnKvOutcomeCallable DcdnClient::putDcdnKvCallable(const PutDcdnKvRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PutDcdnKvOutcome()>>(
+			[this, request]()
+			{
+			return this->putDcdnKv(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::PutDcdnKvNamespaceOutcome DcdnClient::putDcdnKvNamespace(const PutDcdnKvNamespaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PutDcdnKvNamespaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PutDcdnKvNamespaceOutcome(PutDcdnKvNamespaceResult(outcome.result()));
+	else
+		return PutDcdnKvNamespaceOutcome(outcome.error());
+}
+
+void DcdnClient::putDcdnKvNamespaceAsync(const PutDcdnKvNamespaceRequest& request, const PutDcdnKvNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, putDcdnKvNamespace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::PutDcdnKvNamespaceOutcomeCallable DcdnClient::putDcdnKvNamespaceCallable(const PutDcdnKvNamespaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PutDcdnKvNamespaceOutcome()>>(
+			[this, request]()
+			{
+			return this->putDcdnKvNamespace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::PutDcdnKvWithHighCapacityOutcome DcdnClient::putDcdnKvWithHighCapacity(const PutDcdnKvWithHighCapacityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PutDcdnKvWithHighCapacityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PutDcdnKvWithHighCapacityOutcome(PutDcdnKvWithHighCapacityResult(outcome.result()));
+	else
+		return PutDcdnKvWithHighCapacityOutcome(outcome.error());
+}
+
+void DcdnClient::putDcdnKvWithHighCapacityAsync(const PutDcdnKvWithHighCapacityRequest& request, const PutDcdnKvWithHighCapacityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, putDcdnKvWithHighCapacity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::PutDcdnKvWithHighCapacityOutcomeCallable DcdnClient::putDcdnKvWithHighCapacityCallable(const PutDcdnKvWithHighCapacityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PutDcdnKvWithHighCapacityOutcome()>>(
+			[this, request]()
+			{
+			return this->putDcdnKvWithHighCapacity(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::RefreshDcdnObjectCacheByCacheTagOutcome DcdnClient::refreshDcdnObjectCacheByCacheTag(const RefreshDcdnObjectCacheByCacheTagRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefreshDcdnObjectCacheByCacheTagOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefreshDcdnObjectCacheByCacheTagOutcome(RefreshDcdnObjectCacheByCacheTagResult(outcome.result()));
+	else
+		return RefreshDcdnObjectCacheByCacheTagOutcome(outcome.error());
+}
+
+void DcdnClient::refreshDcdnObjectCacheByCacheTagAsync(const RefreshDcdnObjectCacheByCacheTagRequest& request, const RefreshDcdnObjectCacheByCacheTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refreshDcdnObjectCacheByCacheTag(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::RefreshDcdnObjectCacheByCacheTagOutcomeCallable DcdnClient::refreshDcdnObjectCacheByCacheTagCallable(const RefreshDcdnObjectCacheByCacheTagRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefreshDcdnObjectCacheByCacheTagOutcome()>>(
+			[this, request]()
+			{
+			return this->refreshDcdnObjectCacheByCacheTag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::RefreshDcdnObjectCachesOutcome DcdnClient::refreshDcdnObjectCaches(const RefreshDcdnObjectCachesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4875,6 +7359,42 @@ DcdnClient::RefreshDcdnObjectCachesOutcomeCallable DcdnClient::refreshDcdnObject
 	return task->get_future();
 }
 
+DcdnClient::RefreshErObjectCachesOutcome DcdnClient::refreshErObjectCaches(const RefreshErObjectCachesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefreshErObjectCachesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefreshErObjectCachesOutcome(RefreshErObjectCachesResult(outcome.result()));
+	else
+		return RefreshErObjectCachesOutcome(outcome.error());
+}
+
+void DcdnClient::refreshErObjectCachesAsync(const RefreshErObjectCachesRequest& request, const RefreshErObjectCachesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refreshErObjectCaches(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::RefreshErObjectCachesOutcomeCallable DcdnClient::refreshErObjectCachesCallable(const RefreshErObjectCachesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefreshErObjectCachesOutcome()>>(
+			[this, request]()
+			{
+			return this->refreshErObjectCaches(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::RollbackDcdnStagingConfigOutcome DcdnClient::rollbackDcdnStagingConfig(const RollbackDcdnStagingConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4905,42 +7425,6 @@ DcdnClient::RollbackDcdnStagingConfigOutcomeCallable DcdnClient::rollbackDcdnSta
 			[this, request]()
 			{
 			return this->rollbackDcdnStagingConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DcdnClient::SetDcdnConfigOfVersionOutcome DcdnClient::setDcdnConfigOfVersion(const SetDcdnConfigOfVersionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetDcdnConfigOfVersionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetDcdnConfigOfVersionOutcome(SetDcdnConfigOfVersionResult(outcome.result()));
-	else
-		return SetDcdnConfigOfVersionOutcome(outcome.error());
-}
-
-void DcdnClient::setDcdnConfigOfVersionAsync(const SetDcdnConfigOfVersionRequest& request, const SetDcdnConfigOfVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setDcdnConfigOfVersion(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DcdnClient::SetDcdnConfigOfVersionOutcomeCallable DcdnClient::setDcdnConfigOfVersionCallable(const SetDcdnConfigOfVersionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetDcdnConfigOfVersionOutcome()>>(
-			[this, request]()
-			{
-			return this->setDcdnConfigOfVersion(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5049,6 +7533,42 @@ DcdnClient::SetDcdnDomainSMCertificateOutcomeCallable DcdnClient::setDcdnDomainS
 			[this, request]()
 			{
 			return this->setDcdnDomainSMCertificate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::SetDcdnDomainSSLCertificateOutcome DcdnClient::setDcdnDomainSSLCertificate(const SetDcdnDomainSSLCertificateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDcdnDomainSSLCertificateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDcdnDomainSSLCertificateOutcome(SetDcdnDomainSSLCertificateResult(outcome.result()));
+	else
+		return SetDcdnDomainSSLCertificateOutcome(outcome.error());
+}
+
+void DcdnClient::setDcdnDomainSSLCertificateAsync(const SetDcdnDomainSSLCertificateRequest& request, const SetDcdnDomainSSLCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDcdnDomainSSLCertificate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::SetDcdnDomainSSLCertificateOutcomeCallable DcdnClient::setDcdnDomainSSLCertificateCallable(const SetDcdnDomainSSLCertificateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDcdnDomainSSLCertificateOutcome()>>(
+			[this, request]()
+			{
+			return this->setDcdnDomainSSLCertificate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -43,10 +43,10 @@ void DescribeDcdnRealTimeDeliveryFieldResult::parse(const std::string &payload)
 	for (auto valueContentFields : allContentNode)
 	{
 		Fields contentObject;
-		if(!valueContentFields["FieldName"].isNull())
-			contentObject.fieldName = valueContentFields["FieldName"].asString();
 		if(!valueContentFields["Description"].isNull())
 			contentObject.description = valueContentFields["Description"].asString();
+		if(!valueContentFields["FieldName"].isNull())
+			contentObject.fieldName = valueContentFields["FieldName"].asString();
 		content_.push_back(contentObject);
 	}
 

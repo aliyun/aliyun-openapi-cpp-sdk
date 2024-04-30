@@ -35,12 +35,12 @@ namespace AlibabaCloud
 				struct ResourcePackageInfo
 				{
 					std::string status;
-					std::string initCapacity;
 					std::string endTime;
+					std::string initCapacity;
 					std::string instanceId;
-					std::string commodityCode;
 					std::string displayName;
 					std::string startTime;
+					std::string commodityCode;
 					std::string templateName;
 					std::string currCapacity;
 				};

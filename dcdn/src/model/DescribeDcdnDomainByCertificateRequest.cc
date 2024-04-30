@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,37 @@
 
 using AlibabaCloud::Dcdn::Model::DescribeDcdnDomainByCertificateRequest;
 
-DescribeDcdnDomainByCertificateRequest::DescribeDcdnDomainByCertificateRequest() :
-	RpcServiceRequest("dcdn", "2018-01-15", "DescribeDcdnDomainByCertificate")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDcdnDomainByCertificateRequest::DescribeDcdnDomainByCertificateRequest()
+    : RpcServiceRequest("dcdn", "2018-01-15", "DescribeDcdnDomainByCertificate") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDcdnDomainByCertificateRequest::~DescribeDcdnDomainByCertificateRequest()
-{}
+DescribeDcdnDomainByCertificateRequest::~DescribeDcdnDomainByCertificateRequest() {}
 
-long DescribeDcdnDomainByCertificateRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string DescribeDcdnDomainByCertificateRequest::getSSLPub() const {
+  return sSLPub_;
 }
 
-void DescribeDcdnDomainByCertificateRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeDcdnDomainByCertificateRequest::setSSLPub(const std::string &sSLPub) {
+  sSLPub_ = sSLPub;
+  setParameter(std::string("SSLPub"), sSLPub);
 }
 
-std::string DescribeDcdnDomainByCertificateRequest::getSSLPub()const
-{
-	return sSLPub_;
+bool DescribeDcdnDomainByCertificateRequest::getExact() const {
+  return exact_;
 }
 
-void DescribeDcdnDomainByCertificateRequest::setSSLPub(const std::string& sSLPub)
-{
-	sSLPub_ = sSLPub;
-	setParameter("SSLPub", sSLPub);
+void DescribeDcdnDomainByCertificateRequest::setExact(bool exact) {
+  exact_ = exact;
+  setParameter(std::string("Exact"), exact ? "true" : "false");
+}
+
+bool DescribeDcdnDomainByCertificateRequest::getSSLStatus() const {
+  return sSLStatus_;
+}
+
+void DescribeDcdnDomainByCertificateRequest::setSSLStatus(bool sSLStatus) {
+  sSLStatus_ = sSLStatus;
+  setParameter(std::string("SSLStatus"), sSLStatus ? "true" : "false");
 }
 

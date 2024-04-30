@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Dcdn::Model::DeleteDcdnSpecificStagingConfigRequest;
 
-DeleteDcdnSpecificStagingConfigRequest::DeleteDcdnSpecificStagingConfigRequest() :
-	RpcServiceRequest("dcdn", "2018-01-15", "DeleteDcdnSpecificStagingConfig")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteDcdnSpecificStagingConfigRequest::DeleteDcdnSpecificStagingConfigRequest()
+    : RpcServiceRequest("dcdn", "2018-01-15", "DeleteDcdnSpecificStagingConfig") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteDcdnSpecificStagingConfigRequest::~DeleteDcdnSpecificStagingConfigRequest()
-{}
+DeleteDcdnSpecificStagingConfigRequest::~DeleteDcdnSpecificStagingConfigRequest() {}
 
-std::string DeleteDcdnSpecificStagingConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string DeleteDcdnSpecificStagingConfigRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void DeleteDcdnSpecificStagingConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void DeleteDcdnSpecificStagingConfigRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string DeleteDcdnSpecificStagingConfigRequest::getDomainName()const
-{
-	return domainName_;
+std::string DeleteDcdnSpecificStagingConfigRequest::getDomainName() const {
+  return domainName_;
 }
 
-void DeleteDcdnSpecificStagingConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void DeleteDcdnSpecificStagingConfigRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-long DeleteDcdnSpecificStagingConfigRequest::getOwnerId()const
-{
-	return ownerId_;
+long DeleteDcdnSpecificStagingConfigRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DeleteDcdnSpecificStagingConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DeleteDcdnSpecificStagingConfigRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DeleteDcdnSpecificStagingConfigRequest::getConfigId()const
-{
-	return configId_;
+std::string DeleteDcdnSpecificStagingConfigRequest::getConfigId() const {
+  return configId_;
 }
 
-void DeleteDcdnSpecificStagingConfigRequest::setConfigId(const std::string& configId)
-{
-	configId_ = configId;
-	setParameter("ConfigId", configId);
+void DeleteDcdnSpecificStagingConfigRequest::setConfigId(const std::string &configId) {
+  configId_ = configId;
+  setParameter(std::string("ConfigId"), configId);
 }
 

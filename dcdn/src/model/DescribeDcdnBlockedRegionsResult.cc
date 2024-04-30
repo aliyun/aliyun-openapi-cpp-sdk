@@ -45,10 +45,10 @@ void DescribeDcdnBlockedRegionsResult::parse(const std::string &payload)
 		InfoItem infoListObject;
 		if(!valueInfoListInfoItem["CountriesAndRegions"].isNull())
 			infoListObject.countriesAndRegions = valueInfoListInfoItem["CountriesAndRegions"].asString();
-		if(!valueInfoListInfoItem["CountriesAndRegionsName"].isNull())
-			infoListObject.countriesAndRegionsName = valueInfoListInfoItem["CountriesAndRegionsName"].asString();
 		if(!valueInfoListInfoItem["Continent"].isNull())
 			infoListObject.continent = valueInfoListInfoItem["Continent"].asString();
+		if(!valueInfoListInfoItem["CountriesAndRegionsName"].isNull())
+			infoListObject.countriesAndRegionsName = valueInfoListInfoItem["CountriesAndRegionsName"].asString();
 		infoList_.push_back(infoListObject);
 	}
 

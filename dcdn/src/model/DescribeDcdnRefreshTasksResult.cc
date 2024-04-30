@@ -43,20 +43,20 @@ void DescribeDcdnRefreshTasksResult::parse(const std::string &payload)
 	for (auto valueTasksTask : allTasksNode)
 	{
 		Task tasksObject;
-		if(!valueTasksTask["TaskId"].isNull())
-			tasksObject.taskId = valueTasksTask["TaskId"].asString();
-		if(!valueTasksTask["ObjectPath"].isNull())
-			tasksObject.objectPath = valueTasksTask["ObjectPath"].asString();
-		if(!valueTasksTask["Process"].isNull())
-			tasksObject.process = valueTasksTask["Process"].asString();
 		if(!valueTasksTask["Status"].isNull())
 			tasksObject.status = valueTasksTask["Status"].asString();
 		if(!valueTasksTask["CreationTime"].isNull())
 			tasksObject.creationTime = valueTasksTask["CreationTime"].asString();
-		if(!valueTasksTask["Description"].isNull())
-			tasksObject.description = valueTasksTask["Description"].asString();
 		if(!valueTasksTask["ObjectType"].isNull())
 			tasksObject.objectType = valueTasksTask["ObjectType"].asString();
+		if(!valueTasksTask["Process"].isNull())
+			tasksObject.process = valueTasksTask["Process"].asString();
+		if(!valueTasksTask["Description"].isNull())
+			tasksObject.description = valueTasksTask["Description"].asString();
+		if(!valueTasksTask["ObjectPath"].isNull())
+			tasksObject.objectPath = valueTasksTask["ObjectPath"].asString();
+		if(!valueTasksTask["TaskId"].isNull())
+			tasksObject.taskId = valueTasksTask["TaskId"].asString();
 		tasks_.push_back(tasksObject);
 	}
 	if(!value["PageNumber"].isNull())

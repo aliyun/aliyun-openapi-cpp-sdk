@@ -45,24 +45,24 @@ void DescribeDcdnDomainBpsDataResult::parse(const std::string &payload)
 		DataModule bpsDataPerIntervalObject;
 		if(!valueBpsDataPerIntervalDataModule["TimeStamp"].isNull())
 			bpsDataPerIntervalObject.timeStamp = valueBpsDataPerIntervalDataModule["TimeStamp"].asString();
-		if(!valueBpsDataPerIntervalDataModule["Bps"].isNull())
-			bpsDataPerIntervalObject.bps = std::stof(valueBpsDataPerIntervalDataModule["Bps"].asString());
-		if(!valueBpsDataPerIntervalDataModule["DynamicHttpBps"].isNull())
-			bpsDataPerIntervalObject.dynamicHttpBps = std::stof(valueBpsDataPerIntervalDataModule["DynamicHttpBps"].asString());
-		if(!valueBpsDataPerIntervalDataModule["DynamicHttpsBps"].isNull())
-			bpsDataPerIntervalObject.dynamicHttpsBps = std::stof(valueBpsDataPerIntervalDataModule["DynamicHttpsBps"].asString());
-		if(!valueBpsDataPerIntervalDataModule["StaticHttpBps"].isNull())
-			bpsDataPerIntervalObject.staticHttpBps = std::stof(valueBpsDataPerIntervalDataModule["StaticHttpBps"].asString());
 		if(!valueBpsDataPerIntervalDataModule["StaticHttpsBps"].isNull())
 			bpsDataPerIntervalObject.staticHttpsBps = std::stof(valueBpsDataPerIntervalDataModule["StaticHttpsBps"].asString());
+		if(!valueBpsDataPerIntervalDataModule["Bps"].isNull())
+			bpsDataPerIntervalObject.bps = std::stof(valueBpsDataPerIntervalDataModule["Bps"].asString());
+		if(!valueBpsDataPerIntervalDataModule["DynamicHttpsBps"].isNull())
+			bpsDataPerIntervalObject.dynamicHttpsBps = std::stof(valueBpsDataPerIntervalDataModule["DynamicHttpsBps"].asString());
+		if(!valueBpsDataPerIntervalDataModule["DynamicHttpBps"].isNull())
+			bpsDataPerIntervalObject.dynamicHttpBps = std::stof(valueBpsDataPerIntervalDataModule["DynamicHttpBps"].asString());
+		if(!valueBpsDataPerIntervalDataModule["StaticHttpBps"].isNull())
+			bpsDataPerIntervalObject.staticHttpBps = std::stof(valueBpsDataPerIntervalDataModule["StaticHttpBps"].asString());
 		bpsDataPerInterval_.push_back(bpsDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				CreateDcdnDeliverTaskResult();
 				explicit CreateDcdnDeliverTaskResult(const std::string &payload);
 				~CreateDcdnDeliverTaskResult();
+				std::string getDeliverId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string deliverId_;
 
 			};
 		}

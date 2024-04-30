@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,82 @@
 
 using AlibabaCloud::Dcdn::Model::DescribeDcdnDomainCcActivityLogRequest;
 
-DescribeDcdnDomainCcActivityLogRequest::DescribeDcdnDomainCcActivityLogRequest() :
-	RpcServiceRequest("dcdn", "2018-01-15", "DescribeDcdnDomainCcActivityLog")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDcdnDomainCcActivityLogRequest::DescribeDcdnDomainCcActivityLogRequest()
+    : RpcServiceRequest("dcdn", "2018-01-15", "DescribeDcdnDomainCcActivityLog") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDcdnDomainCcActivityLogRequest::~DescribeDcdnDomainCcActivityLogRequest()
-{}
+DescribeDcdnDomainCcActivityLogRequest::~DescribeDcdnDomainCcActivityLogRequest() {}
 
-std::string DescribeDcdnDomainCcActivityLogRequest::getRuleName()const
-{
-	return ruleName_;
+std::string DescribeDcdnDomainCcActivityLogRequest::getDomainName() const {
+  return domainName_;
 }
 
-void DescribeDcdnDomainCcActivityLogRequest::setRuleName(const std::string& ruleName)
-{
-	ruleName_ = ruleName;
-	setParameter("RuleName", ruleName);
+void DescribeDcdnDomainCcActivityLogRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-std::string DescribeDcdnDomainCcActivityLogRequest::getStartTime()const
-{
-	return startTime_;
+long DescribeDcdnDomainCcActivityLogRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeDcdnDomainCcActivityLogRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+void DescribeDcdnDomainCcActivityLogRequest::setPageSize(long pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeDcdnDomainCcActivityLogRequest::getTriggerObject()const
-{
-	return triggerObject_;
+std::string DescribeDcdnDomainCcActivityLogRequest::getEndTime() const {
+  return endTime_;
 }
 
-void DescribeDcdnDomainCcActivityLogRequest::setTriggerObject(const std::string& triggerObject)
-{
-	triggerObject_ = triggerObject;
-	setParameter("TriggerObject", triggerObject);
+void DescribeDcdnDomainCcActivityLogRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
-long DescribeDcdnDomainCcActivityLogRequest::getPageNumber()const
-{
-	return pageNumber_;
+std::string DescribeDcdnDomainCcActivityLogRequest::getRuleName() const {
+  return ruleName_;
 }
 
-void DescribeDcdnDomainCcActivityLogRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeDcdnDomainCcActivityLogRequest::setRuleName(const std::string &ruleName) {
+  ruleName_ = ruleName;
+  setParameter(std::string("RuleName"), ruleName);
 }
 
-long DescribeDcdnDomainCcActivityLogRequest::getPageSize()const
-{
-	return pageSize_;
+std::string DescribeDcdnDomainCcActivityLogRequest::getStartTime() const {
+  return startTime_;
 }
 
-void DescribeDcdnDomainCcActivityLogRequest::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeDcdnDomainCcActivityLogRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
 }
 
-std::string DescribeDcdnDomainCcActivityLogRequest::getValue()const
-{
-	return value_;
+std::string DescribeDcdnDomainCcActivityLogRequest::getTriggerObject() const {
+  return triggerObject_;
 }
 
-void DescribeDcdnDomainCcActivityLogRequest::setValue(const std::string& value)
-{
-	value_ = value;
-	setParameter("Value", value);
+void DescribeDcdnDomainCcActivityLogRequest::setTriggerObject(const std::string &triggerObject) {
+  triggerObject_ = triggerObject;
+  setParameter(std::string("TriggerObject"), triggerObject);
 }
 
-std::string DescribeDcdnDomainCcActivityLogRequest::getDomainName()const
-{
-	return domainName_;
+std::string DescribeDcdnDomainCcActivityLogRequest::getValue() const {
+  return value_;
 }
 
-void DescribeDcdnDomainCcActivityLogRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void DescribeDcdnDomainCcActivityLogRequest::setValue(const std::string &value) {
+  value_ = value;
+  setParameter(std::string("Value"), value);
 }
 
-std::string DescribeDcdnDomainCcActivityLogRequest::getEndTime()const
-{
-	return endTime_;
+long DescribeDcdnDomainCcActivityLogRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeDcdnDomainCcActivityLogRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", endTime);
-}
-
-long DescribeDcdnDomainCcActivityLogRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeDcdnDomainCcActivityLogRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeDcdnDomainCcActivityLogRequest::setPageNumber(long pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 

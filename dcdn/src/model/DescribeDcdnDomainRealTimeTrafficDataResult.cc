@@ -43,18 +43,18 @@ void DescribeDcdnDomainRealTimeTrafficDataResult::parse(const std::string &paylo
 	for (auto valueRealTimeTrafficDataPerIntervalDataModule : allRealTimeTrafficDataPerIntervalNode)
 	{
 		DataModule realTimeTrafficDataPerIntervalObject;
-		if(!valueRealTimeTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
-			realTimeTrafficDataPerIntervalObject.timeStamp = valueRealTimeTrafficDataPerIntervalDataModule["TimeStamp"].asString();
 		if(!valueRealTimeTrafficDataPerIntervalDataModule["Value"].isNull())
 			realTimeTrafficDataPerIntervalObject.value = valueRealTimeTrafficDataPerIntervalDataModule["Value"].asString();
+		if(!valueRealTimeTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
+			realTimeTrafficDataPerIntervalObject.timeStamp = valueRealTimeTrafficDataPerIntervalDataModule["TimeStamp"].asString();
 		realTimeTrafficDataPerInterval_.push_back(realTimeTrafficDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

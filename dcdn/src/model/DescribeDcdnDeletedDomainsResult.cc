@@ -43,10 +43,10 @@ void DescribeDcdnDeletedDomainsResult::parse(const std::string &payload)
 	for (auto valueDomainsPageData : allDomainsNode)
 	{
 		PageData domainsObject;
-		if(!valueDomainsPageData["DomainName"].isNull())
-			domainsObject.domainName = valueDomainsPageData["DomainName"].asString();
 		if(!valueDomainsPageData["GmtModified"].isNull())
 			domainsObject.gmtModified = valueDomainsPageData["GmtModified"].asString();
+		if(!valueDomainsPageData["DomainName"].isNull())
+			domainsObject.domainName = valueDomainsPageData["DomainName"].asString();
 		domains_.push_back(domainsObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -55,10 +55,10 @@ void DescribeDcdnDomainUsageDataResult::parse(const std::string &payload)
 	}
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 	if(!value["Type"].isNull())
 		type_ = value["Type"].asString();
 	if(!value["Area"].isNull())

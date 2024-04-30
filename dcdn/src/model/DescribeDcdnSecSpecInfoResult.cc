@@ -51,10 +51,10 @@ void DescribeDcdnSecSpecInfoResult::parse(const std::string &payload)
 			RuleInfoItem::ConfigItem ruleConfigsObject;
 			if(!valueSpecInfosRuleInfoItemRuleConfigsConfigItem["Code"].isNull())
 				ruleConfigsObject.code = valueSpecInfosRuleInfoItemRuleConfigsConfigItem["Code"].asString();
-			if(!valueSpecInfosRuleInfoItemRuleConfigsConfigItem["Expr"].isNull())
-				ruleConfigsObject.expr = valueSpecInfosRuleInfoItemRuleConfigsConfigItem["Expr"].asString();
 			if(!valueSpecInfosRuleInfoItemRuleConfigsConfigItem["Value"].isNull())
 				ruleConfigsObject.value = valueSpecInfosRuleInfoItemRuleConfigsConfigItem["Value"].asString();
+			if(!valueSpecInfosRuleInfoItemRuleConfigsConfigItem["Expr"].isNull())
+				ruleConfigsObject.expr = valueSpecInfosRuleInfoItemRuleConfigsConfigItem["Expr"].asString();
 			specInfosObject.ruleConfigs.push_back(ruleConfigsObject);
 		}
 		specInfos_.push_back(specInfosObject);

@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string certUpdateTime;
 					std::string certStatus;
 					std::string domainName;
-					std::string certCommonName;
 					std::string certType;
+					std::string certCommonName;
 					std::string certExpireTime;
 					std::string certName;
 					std::string certStartTime;

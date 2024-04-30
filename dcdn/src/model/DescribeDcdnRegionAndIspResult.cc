@@ -43,20 +43,20 @@ void DescribeDcdnRegionAndIspResult::parse(const std::string &payload)
 	for (auto valueRegionsRegion : allRegionsNode)
 	{
 		Region regionsObject;
-		if(!valueRegionsRegion["NameZh"].isNull())
-			regionsObject.nameZh = valueRegionsRegion["NameZh"].asString();
 		if(!valueRegionsRegion["NameEn"].isNull())
 			regionsObject.nameEn = valueRegionsRegion["NameEn"].asString();
+		if(!valueRegionsRegion["NameZh"].isNull())
+			regionsObject.nameZh = valueRegionsRegion["NameZh"].asString();
 		regions_.push_back(regionsObject);
 	}
 	auto allIspsNode = value["Isps"]["Isp"];
 	for (auto valueIspsIsp : allIspsNode)
 	{
 		Isp ispsObject;
-		if(!valueIspsIsp["NameZh"].isNull())
-			ispsObject.nameZh = valueIspsIsp["NameZh"].asString();
 		if(!valueIspsIsp["NameEn"].isNull())
 			ispsObject.nameEn = valueIspsIsp["NameEn"].asString();
+		if(!valueIspsIsp["NameZh"].isNull())
+			ispsObject.nameZh = valueIspsIsp["NameZh"].asString();
 		isps_.push_back(ispsObject);
 	}
 

@@ -39,16 +39,16 @@ void DescribeDcdnIpInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["RegionEname"].isNull())
+		regionEname_ = value["RegionEname"].asString();
+	if(!value["Region"].isNull())
+		region_ = value["Region"].asString();
+	if(!value["IspEname"].isNull())
+		ispEname_ = value["IspEname"].asString();
 	if(!value["DcdnIp"].isNull())
 		dcdnIp_ = value["DcdnIp"].asString();
 	if(!value["ISP"].isNull())
 		iSP_ = value["ISP"].asString();
-	if(!value["IspEname"].isNull())
-		ispEname_ = value["IspEname"].asString();
-	if(!value["Region"].isNull())
-		region_ = value["Region"].asString();
-	if(!value["RegionEname"].isNull())
-		regionEname_ = value["RegionEname"].asString();
 
 }
 
@@ -67,13 +67,13 @@ std::string DescribeDcdnIpInfoResult::getIspEname()const
 	return ispEname_;
 }
 
-std::string DescribeDcdnIpInfoResult::getDcdnIp()const
-{
-	return dcdnIp_;
-}
-
 std::string DescribeDcdnIpInfoResult::getRegionEname()const
 {
 	return regionEname_;
+}
+
+std::string DescribeDcdnIpInfoResult::getDcdnIp()const
+{
+	return dcdnIp_;
 }
 

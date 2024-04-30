@@ -39,24 +39,28 @@ void DescribeDcdnUserQuotaResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DomainQuota"].isNull())
-		domainQuota_ = std::stoi(value["DomainQuota"].asString());
-	if(!value["RefreshUrlQuota"].isNull())
-		refreshUrlQuota_ = std::stoi(value["RefreshUrlQuota"].asString());
-	if(!value["RefreshDirQuota"].isNull())
-		refreshDirQuota_ = std::stoi(value["RefreshDirQuota"].asString());
-	if(!value["RefreshUrlRemain"].isNull())
-		refreshUrlRemain_ = std::stoi(value["RefreshUrlRemain"].asString());
-	if(!value["RefreshDirRemain"].isNull())
-		refreshDirRemain_ = std::stoi(value["RefreshDirRemain"].asString());
-	if(!value["PreloadQuota"].isNull())
-		preloadQuota_ = std::stoi(value["PreloadQuota"].asString());
-	if(!value["PreloadRemain"].isNull())
-		preloadRemain_ = std::stoi(value["PreloadRemain"].asString());
 	if(!value["BlockQuota"].isNull())
 		blockQuota_ = std::stoi(value["BlockQuota"].asString());
+	if(!value["RefreshUrlRemain"].isNull())
+		refreshUrlRemain_ = std::stoi(value["RefreshUrlRemain"].asString());
+	if(!value["DomainQuota"].isNull())
+		domainQuota_ = std::stoi(value["DomainQuota"].asString());
 	if(!value["BlockRemain"].isNull())
 		blockRemain_ = std::stoi(value["BlockRemain"].asString());
+	if(!value["PreloadRemain"].isNull())
+		preloadRemain_ = std::stoi(value["PreloadRemain"].asString());
+	if(!value["RefreshUrlQuota"].isNull())
+		refreshUrlQuota_ = std::stoi(value["RefreshUrlQuota"].asString());
+	if(!value["PreloadQuota"].isNull())
+		preloadQuota_ = std::stoi(value["PreloadQuota"].asString());
+	if(!value["RefreshDirQuota"].isNull())
+		refreshDirQuota_ = std::stoi(value["RefreshDirQuota"].asString());
+	if(!value["RefreshDirRemain"].isNull())
+		refreshDirRemain_ = std::stoi(value["RefreshDirRemain"].asString());
+	if(!value["IgnoreParamsQuota"].isNull())
+		ignoreParamsQuota_ = std::stoi(value["IgnoreParamsQuota"].asString());
+	if(!value["IgnoreParamsRemain"].isNull())
+		ignoreParamsRemain_ = std::stoi(value["IgnoreParamsRemain"].asString());
 
 }
 
@@ -65,14 +69,19 @@ int DescribeDcdnUserQuotaResult::getRefreshUrlQuota()const
 	return refreshUrlQuota_;
 }
 
+int DescribeDcdnUserQuotaResult::getBlockRemain()const
+{
+	return blockRemain_;
+}
+
 int DescribeDcdnUserQuotaResult::getPreloadRemain()const
 {
 	return preloadRemain_;
 }
 
-int DescribeDcdnUserQuotaResult::getBlockRemain()const
+int DescribeDcdnUserQuotaResult::getIgnoreParamsRemain()const
 {
-	return blockRemain_;
+	return ignoreParamsRemain_;
 }
 
 int DescribeDcdnUserQuotaResult::getRefreshDirRemain()const
@@ -80,14 +89,14 @@ int DescribeDcdnUserQuotaResult::getRefreshDirRemain()const
 	return refreshDirRemain_;
 }
 
-int DescribeDcdnUserQuotaResult::getRefreshDirQuota()const
-{
-	return refreshDirQuota_;
-}
-
 int DescribeDcdnUserQuotaResult::getBlockQuota()const
 {
 	return blockQuota_;
+}
+
+int DescribeDcdnUserQuotaResult::getRefreshDirQuota()const
+{
+	return refreshDirQuota_;
 }
 
 int DescribeDcdnUserQuotaResult::getDomainQuota()const
@@ -98,6 +107,11 @@ int DescribeDcdnUserQuotaResult::getDomainQuota()const
 int DescribeDcdnUserQuotaResult::getRefreshUrlRemain()const
 {
 	return refreshUrlRemain_;
+}
+
+int DescribeDcdnUserQuotaResult::getIgnoreParamsQuota()const
+{
+	return ignoreParamsQuota_;
 }
 
 int DescribeDcdnUserQuotaResult::getPreloadQuota()const

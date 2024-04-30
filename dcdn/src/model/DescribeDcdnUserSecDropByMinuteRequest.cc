@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,122 +18,91 @@
 
 using AlibabaCloud::Dcdn::Model::DescribeDcdnUserSecDropByMinuteRequest;
 
-DescribeDcdnUserSecDropByMinuteRequest::DescribeDcdnUserSecDropByMinuteRequest() :
-	RpcServiceRequest("dcdn", "2018-01-15", "DescribeDcdnUserSecDropByMinute")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDcdnUserSecDropByMinuteRequest::DescribeDcdnUserSecDropByMinuteRequest()
+    : RpcServiceRequest("dcdn", "2018-01-15", "DescribeDcdnUserSecDropByMinute") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDcdnUserSecDropByMinuteRequest::~DescribeDcdnUserSecDropByMinuteRequest()
-{}
+DescribeDcdnUserSecDropByMinuteRequest::~DescribeDcdnUserSecDropByMinuteRequest() {}
 
-std::string DescribeDcdnUserSecDropByMinuteRequest::getRuleName()const
-{
-	return ruleName_;
+std::string DescribeDcdnUserSecDropByMinuteRequest::getDomainName() const {
+  return domainName_;
 }
 
-void DescribeDcdnUserSecDropByMinuteRequest::setRuleName(const std::string& ruleName)
-{
-	ruleName_ = ruleName;
-	setParameter("RuleName", ruleName);
+void DescribeDcdnUserSecDropByMinuteRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-std::string DescribeDcdnUserSecDropByMinuteRequest::getStartTime()const
-{
-	return startTime_;
+long DescribeDcdnUserSecDropByMinuteRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeDcdnUserSecDropByMinuteRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+void DescribeDcdnUserSecDropByMinuteRequest::setPageSize(long pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-long DescribeDcdnUserSecDropByMinuteRequest::getPageNumber()const
-{
-	return pageNumber_;
+std::string DescribeDcdnUserSecDropByMinuteRequest::getEndTime() const {
+  return endTime_;
 }
 
-void DescribeDcdnUserSecDropByMinuteRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeDcdnUserSecDropByMinuteRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
-long DescribeDcdnUserSecDropByMinuteRequest::getPageSize()const
-{
-	return pageSize_;
+std::string DescribeDcdnUserSecDropByMinuteRequest::getRuleName() const {
+  return ruleName_;
 }
 
-void DescribeDcdnUserSecDropByMinuteRequest::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeDcdnUserSecDropByMinuteRequest::setRuleName(const std::string &ruleName) {
+  ruleName_ = ruleName;
+  setParameter(std::string("RuleName"), ruleName);
 }
 
-std::string DescribeDcdnUserSecDropByMinuteRequest::getLang()const
-{
-	return lang_;
+std::string DescribeDcdnUserSecDropByMinuteRequest::getStartTime() const {
+  return startTime_;
 }
 
-void DescribeDcdnUserSecDropByMinuteRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void DescribeDcdnUserSecDropByMinuteRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
 }
 
-std::string DescribeDcdnUserSecDropByMinuteRequest::getDomainName()const
-{
-	return domainName_;
+std::string DescribeDcdnUserSecDropByMinuteRequest::getSecFunc() const {
+  return secFunc_;
 }
 
-void DescribeDcdnUserSecDropByMinuteRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void DescribeDcdnUserSecDropByMinuteRequest::setSecFunc(const std::string &secFunc) {
+  secFunc_ = secFunc;
+  setParameter(std::string("SecFunc"), secFunc);
 }
 
-std::string DescribeDcdnUserSecDropByMinuteRequest::getEndTime()const
-{
-	return endTime_;
+std::string DescribeDcdnUserSecDropByMinuteRequest::getLang() const {
+  return lang_;
 }
 
-void DescribeDcdnUserSecDropByMinuteRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+void DescribeDcdnUserSecDropByMinuteRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 
-long DescribeDcdnUserSecDropByMinuteRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeDcdnUserSecDropByMinuteRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeDcdnUserSecDropByMinuteRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeDcdnUserSecDropByMinuteRequest::setPageNumber(long pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeDcdnUserSecDropByMinuteRequest::getSecFunc()const
-{
-	return secFunc_;
+std::string DescribeDcdnUserSecDropByMinuteRequest::getObject() const {
+  return object_;
 }
 
-void DescribeDcdnUserSecDropByMinuteRequest::setSecFunc(const std::string& secFunc)
-{
-	secFunc_ = secFunc;
-	setParameter("SecFunc", secFunc);
-}
-
-std::string DescribeDcdnUserSecDropByMinuteRequest::getObject()const
-{
-	return object_;
-}
-
-void DescribeDcdnUserSecDropByMinuteRequest::setObject(const std::string& object)
-{
-	object_ = object;
-	setParameter("Object", object);
+void DescribeDcdnUserSecDropByMinuteRequest::setObject(const std::string &object) {
+  object_ = object;
+  setParameter(std::string("Object"), object);
 }
 

@@ -43,26 +43,26 @@ void DescribeDcdnDomainOriginBpsDataResult::parse(const std::string &payload)
 	for (auto valueOriginBpsDataPerIntervalDataModule : allOriginBpsDataPerIntervalNode)
 	{
 		DataModule originBpsDataPerIntervalObject;
-		if(!valueOriginBpsDataPerIntervalDataModule["TimeStamp"].isNull())
-			originBpsDataPerIntervalObject.timeStamp = valueOriginBpsDataPerIntervalDataModule["TimeStamp"].asString();
-		if(!valueOriginBpsDataPerIntervalDataModule["OriginBps"].isNull())
-			originBpsDataPerIntervalObject.originBps = std::stof(valueOriginBpsDataPerIntervalDataModule["OriginBps"].asString());
 		if(!valueOriginBpsDataPerIntervalDataModule["DynamicHttpOriginBps"].isNull())
 			originBpsDataPerIntervalObject.dynamicHttpOriginBps = std::stof(valueOriginBpsDataPerIntervalDataModule["DynamicHttpOriginBps"].asString());
-		if(!valueOriginBpsDataPerIntervalDataModule["DynamicHttpsOriginBps"].isNull())
-			originBpsDataPerIntervalObject.dynamicHttpsOriginBps = std::stof(valueOriginBpsDataPerIntervalDataModule["DynamicHttpsOriginBps"].asString());
 		if(!valueOriginBpsDataPerIntervalDataModule["StaticHttpOriginBps"].isNull())
 			originBpsDataPerIntervalObject.staticHttpOriginBps = std::stof(valueOriginBpsDataPerIntervalDataModule["StaticHttpOriginBps"].asString());
+		if(!valueOriginBpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			originBpsDataPerIntervalObject.timeStamp = valueOriginBpsDataPerIntervalDataModule["TimeStamp"].asString();
 		if(!valueOriginBpsDataPerIntervalDataModule["StaticHttpsOriginBps"].isNull())
 			originBpsDataPerIntervalObject.staticHttpsOriginBps = std::stof(valueOriginBpsDataPerIntervalDataModule["StaticHttpsOriginBps"].asString());
+		if(!valueOriginBpsDataPerIntervalDataModule["OriginBps"].isNull())
+			originBpsDataPerIntervalObject.originBps = std::stof(valueOriginBpsDataPerIntervalDataModule["OriginBps"].asString());
+		if(!valueOriginBpsDataPerIntervalDataModule["DynamicHttpsOriginBps"].isNull())
+			originBpsDataPerIntervalObject.dynamicHttpsOriginBps = std::stof(valueOriginBpsDataPerIntervalDataModule["DynamicHttpsOriginBps"].asString());
 		originBpsDataPerInterval_.push_back(originBpsDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

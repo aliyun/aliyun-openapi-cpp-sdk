@@ -35,11 +35,11 @@ namespace AlibabaCloud
 				struct DataModule
 				{
 					float dynamicHttpsQps;
-					float staticHttpsQps;
 					float acc;
+					float staticHttpsQps;
 					float dynamicHttpAcc;
-					float staticHttpAcc;
 					float staticHttpsAcc;
+					float staticHttpAcc;
 					float dynamicHttpQps;
 					float qps;
 					float staticHttpQps;

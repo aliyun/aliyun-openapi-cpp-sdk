@@ -43,18 +43,18 @@ void DescribeDcdnDomainIpaTrafficDataResult::parse(const std::string &payload)
 	for (auto valueTrafficDataPerIntervalDataModule : allTrafficDataPerIntervalNode)
 	{
 		DataModule trafficDataPerIntervalObject;
-		if(!valueTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
-			trafficDataPerIntervalObject.timeStamp = valueTrafficDataPerIntervalDataModule["TimeStamp"].asString();
 		if(!valueTrafficDataPerIntervalDataModule["IpaTraffic"].isNull())
 			trafficDataPerIntervalObject.ipaTraffic = std::stof(valueTrafficDataPerIntervalDataModule["IpaTraffic"].asString());
+		if(!valueTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
+			trafficDataPerIntervalObject.timeStamp = valueTrafficDataPerIntervalDataModule["TimeStamp"].asString();
 		trafficDataPerInterval_.push_back(trafficDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

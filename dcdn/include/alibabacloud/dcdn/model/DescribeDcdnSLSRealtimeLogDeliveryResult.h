@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Content
 				{
+					std::string status;
 					std::string type;
 					std::string dataCenter;
 					std::string sLSProject;

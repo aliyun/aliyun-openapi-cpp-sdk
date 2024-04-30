@@ -43,26 +43,26 @@ void ListDcdnRealTimeDeliveryProjectResult::parse(const std::string &payload)
 	for (auto valueContentProjects : allContentNode)
 	{
 		Projects contentObject;
-		if(!valueContentProjects["ProjectName"].isNull())
-			contentObject.projectName = valueContentProjects["ProjectName"].asString();
 		if(!valueContentProjects["Type"].isNull())
 			contentObject.type = valueContentProjects["Type"].asString();
-		if(!valueContentProjects["DomainName"].isNull())
-			contentObject.domainName = valueContentProjects["DomainName"].asString();
-		if(!valueContentProjects["FieldName"].isNull())
-			contentObject.fieldName = valueContentProjects["FieldName"].asString();
-		if(!valueContentProjects["SamplingRate"].isNull())
-			contentObject.samplingRate = std::stof(valueContentProjects["SamplingRate"].asString());
-		if(!valueContentProjects["DataCenter"].isNull())
-			contentObject.dataCenter = valueContentProjects["DataCenter"].asString();
-		if(!valueContentProjects["SLSRegion"].isNull())
-			contentObject.sLSRegion = valueContentProjects["SLSRegion"].asString();
-		if(!valueContentProjects["SLSProject"].isNull())
-			contentObject.sLSProject = valueContentProjects["SLSProject"].asString();
 		if(!valueContentProjects["SLSLogStore"].isNull())
 			contentObject.sLSLogStore = valueContentProjects["SLSLogStore"].asString();
+		if(!valueContentProjects["DataCenter"].isNull())
+			contentObject.dataCenter = valueContentProjects["DataCenter"].asString();
+		if(!valueContentProjects["FieldName"].isNull())
+			contentObject.fieldName = valueContentProjects["FieldName"].asString();
+		if(!valueContentProjects["ProjectName"].isNull())
+			contentObject.projectName = valueContentProjects["ProjectName"].asString();
+		if(!valueContentProjects["SamplingRate"].isNull())
+			contentObject.samplingRate = std::stof(valueContentProjects["SamplingRate"].asString());
+		if(!valueContentProjects["SLSProject"].isNull())
+			contentObject.sLSProject = valueContentProjects["SLSProject"].asString();
+		if(!valueContentProjects["DomainName"].isNull())
+			contentObject.domainName = valueContentProjects["DomainName"].asString();
 		if(!valueContentProjects["BusinessType"].isNull())
 			contentObject.businessType = valueContentProjects["BusinessType"].asString();
+		if(!valueContentProjects["SLSRegion"].isNull())
+			contentObject.sLSRegion = valueContentProjects["SLSRegion"].asString();
 		content_.push_back(contentObject);
 	}
 	if(!value["TotalCount"].isNull())

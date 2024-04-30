@@ -38,6 +38,8 @@ namespace AlibabaCloud
 					std::string certLife;
 					std::string domainName;
 					std::string sSLPub;
+					std::string certId;
+					std::string certRegion;
 					std::string certDomainName;
 					std::string certOrg;
 					std::string certType;

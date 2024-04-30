@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,46 @@
 
 using AlibabaCloud::Dcdn::Model::DescribeDcdnDomainOriginTrafficDataRequest;
 
-DescribeDcdnDomainOriginTrafficDataRequest::DescribeDcdnDomainOriginTrafficDataRequest() :
-	RpcServiceRequest("dcdn", "2018-01-15", "DescribeDcdnDomainOriginTrafficData")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDcdnDomainOriginTrafficDataRequest::DescribeDcdnDomainOriginTrafficDataRequest()
+    : RpcServiceRequest("dcdn", "2018-01-15", "DescribeDcdnDomainOriginTrafficData") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDcdnDomainOriginTrafficDataRequest::~DescribeDcdnDomainOriginTrafficDataRequest()
-{}
+DescribeDcdnDomainOriginTrafficDataRequest::~DescribeDcdnDomainOriginTrafficDataRequest() {}
 
-std::string DescribeDcdnDomainOriginTrafficDataRequest::getStartTime()const
-{
-	return startTime_;
+std::string DescribeDcdnDomainOriginTrafficDataRequest::getDomainName() const {
+  return domainName_;
 }
 
-void DescribeDcdnDomainOriginTrafficDataRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+void DescribeDcdnDomainOriginTrafficDataRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-std::string DescribeDcdnDomainOriginTrafficDataRequest::getDomainName()const
-{
-	return domainName_;
+std::string DescribeDcdnDomainOriginTrafficDataRequest::getEndTime() const {
+  return endTime_;
 }
 
-void DescribeDcdnDomainOriginTrafficDataRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void DescribeDcdnDomainOriginTrafficDataRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
-std::string DescribeDcdnDomainOriginTrafficDataRequest::getEndTime()const
-{
-	return endTime_;
+std::string DescribeDcdnDomainOriginTrafficDataRequest::getInterval() const {
+  return interval_;
 }
 
-void DescribeDcdnDomainOriginTrafficDataRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+void DescribeDcdnDomainOriginTrafficDataRequest::setInterval(const std::string &interval) {
+  interval_ = interval;
+  setParameter(std::string("Interval"), interval);
 }
 
-long DescribeDcdnDomainOriginTrafficDataRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string DescribeDcdnDomainOriginTrafficDataRequest::getStartTime() const {
+  return startTime_;
 }
 
-void DescribeDcdnDomainOriginTrafficDataRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeDcdnDomainOriginTrafficDataRequest::getInterval()const
-{
-	return interval_;
-}
-
-void DescribeDcdnDomainOriginTrafficDataRequest::setInterval(const std::string& interval)
-{
-	interval_ = interval;
-	setParameter("Interval", interval);
+void DescribeDcdnDomainOriginTrafficDataRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
 }
 

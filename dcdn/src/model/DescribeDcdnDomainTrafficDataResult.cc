@@ -43,26 +43,26 @@ void DescribeDcdnDomainTrafficDataResult::parse(const std::string &payload)
 	for (auto valueTrafficDataPerIntervalDataModule : allTrafficDataPerIntervalNode)
 	{
 		DataModule trafficDataPerIntervalObject;
-		if(!valueTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
-			trafficDataPerIntervalObject.timeStamp = valueTrafficDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["StaticHttpTraffic"].isNull())
+			trafficDataPerIntervalObject.staticHttpTraffic = std::stof(valueTrafficDataPerIntervalDataModule["StaticHttpTraffic"].asString());
+		if(!valueTrafficDataPerIntervalDataModule["DynamicHttpsTraffic"].isNull())
+			trafficDataPerIntervalObject.dynamicHttpsTraffic = std::stof(valueTrafficDataPerIntervalDataModule["DynamicHttpsTraffic"].asString());
 		if(!valueTrafficDataPerIntervalDataModule["Traffic"].isNull())
 			trafficDataPerIntervalObject.traffic = std::stof(valueTrafficDataPerIntervalDataModule["Traffic"].asString());
 		if(!valueTrafficDataPerIntervalDataModule["DynamicHttpTraffic"].isNull())
 			trafficDataPerIntervalObject.dynamicHttpTraffic = std::stof(valueTrafficDataPerIntervalDataModule["DynamicHttpTraffic"].asString());
-		if(!valueTrafficDataPerIntervalDataModule["DynamicHttpsTraffic"].isNull())
-			trafficDataPerIntervalObject.dynamicHttpsTraffic = std::stof(valueTrafficDataPerIntervalDataModule["DynamicHttpsTraffic"].asString());
-		if(!valueTrafficDataPerIntervalDataModule["StaticHttpTraffic"].isNull())
-			trafficDataPerIntervalObject.staticHttpTraffic = std::stof(valueTrafficDataPerIntervalDataModule["StaticHttpTraffic"].asString());
+		if(!valueTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
+			trafficDataPerIntervalObject.timeStamp = valueTrafficDataPerIntervalDataModule["TimeStamp"].asString();
 		if(!valueTrafficDataPerIntervalDataModule["StaticHttpsTraffic"].isNull())
 			trafficDataPerIntervalObject.staticHttpsTraffic = std::stof(valueTrafficDataPerIntervalDataModule["StaticHttpsTraffic"].asString());
 		trafficDataPerInterval_.push_back(trafficDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

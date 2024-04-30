@@ -40,26 +40,28 @@ void DescribeDcdnSLSRealtimeLogDeliveryResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto contentNode = value["Content"];
-	if(!contentNode["ProjectName"].isNull())
-		content_.projectName = contentNode["ProjectName"].asString();
-	if(!contentNode["DomainName"].isNull())
-		content_.domainName = contentNode["DomainName"].asString();
-	if(!contentNode["FieldName"].isNull())
-		content_.fieldName = contentNode["FieldName"].asString();
-	if(!contentNode["SamplingRate"].isNull())
-		content_.samplingRate = contentNode["SamplingRate"].asString();
-	if(!contentNode["DataCenter"].isNull())
-		content_.dataCenter = contentNode["DataCenter"].asString();
-	if(!contentNode["SLSRegion"].isNull())
-		content_.sLSRegion = contentNode["SLSRegion"].asString();
-	if(!contentNode["SLSProject"].isNull())
-		content_.sLSProject = contentNode["SLSProject"].asString();
-	if(!contentNode["SLSLogStore"].isNull())
-		content_.sLSLogStore = contentNode["SLSLogStore"].asString();
-	if(!contentNode["BusinessType"].isNull())
-		content_.businessType = contentNode["BusinessType"].asString();
+	if(!contentNode["Status"].isNull())
+		content_.status = contentNode["Status"].asString();
 	if(!contentNode["Type"].isNull())
 		content_.type = contentNode["Type"].asString();
+	if(!contentNode["SLSLogStore"].isNull())
+		content_.sLSLogStore = contentNode["SLSLogStore"].asString();
+	if(!contentNode["DataCenter"].isNull())
+		content_.dataCenter = contentNode["DataCenter"].asString();
+	if(!contentNode["FieldName"].isNull())
+		content_.fieldName = contentNode["FieldName"].asString();
+	if(!contentNode["ProjectName"].isNull())
+		content_.projectName = contentNode["ProjectName"].asString();
+	if(!contentNode["SamplingRate"].isNull())
+		content_.samplingRate = contentNode["SamplingRate"].asString();
+	if(!contentNode["SLSProject"].isNull())
+		content_.sLSProject = contentNode["SLSProject"].asString();
+	if(!contentNode["DomainName"].isNull())
+		content_.domainName = contentNode["DomainName"].asString();
+	if(!contentNode["BusinessType"].isNull())
+		content_.businessType = contentNode["BusinessType"].asString();
+	if(!contentNode["SLSRegion"].isNull())
+		content_.sLSRegion = contentNode["SLSRegion"].asString();
 
 }
 

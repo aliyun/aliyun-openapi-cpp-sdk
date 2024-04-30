@@ -43,12 +43,12 @@ void DescribeDcdnDomainCnameResult::parse(const std::string &payload)
 	for (auto valueCnameDatasData : allCnameDatasNode)
 	{
 		Data cnameDatasObject;
+		if(!valueCnameDatasData["Status"].isNull())
+			cnameDatasObject.status = std::stoi(valueCnameDatasData["Status"].asString());
 		if(!valueCnameDatasData["Domain"].isNull())
 			cnameDatasObject.domain = valueCnameDatasData["Domain"].asString();
 		if(!valueCnameDatasData["Cname"].isNull())
 			cnameDatasObject.cname = valueCnameDatasData["Cname"].asString();
-		if(!valueCnameDatasData["Status"].isNull())
-			cnameDatasObject.status = std::stoi(valueCnameDatasData["Status"].asString());
 		cnameDatas_.push_back(cnameDatasObject);
 	}
 

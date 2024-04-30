@@ -43,18 +43,18 @@ void DescribeDcdnUserBillTypeResult::parse(const std::string &payload)
 	for (auto valueBillTypeDataBillTypeDataItem : allBillTypeDataNode)
 	{
 		BillTypeDataItem billTypeDataObject;
-		if(!valueBillTypeDataBillTypeDataItem["StartTime"].isNull())
-			billTypeDataObject.startTime = valueBillTypeDataBillTypeDataItem["StartTime"].asString();
 		if(!valueBillTypeDataBillTypeDataItem["EndTime"].isNull())
 			billTypeDataObject.endTime = valueBillTypeDataBillTypeDataItem["EndTime"].asString();
-		if(!valueBillTypeDataBillTypeDataItem["Product"].isNull())
-			billTypeDataObject.product = valueBillTypeDataBillTypeDataItem["Product"].asString();
-		if(!valueBillTypeDataBillTypeDataItem["Dimension"].isNull())
-			billTypeDataObject.dimension = valueBillTypeDataBillTypeDataItem["Dimension"].asString();
-		if(!valueBillTypeDataBillTypeDataItem["BillType"].isNull())
-			billTypeDataObject.billType = valueBillTypeDataBillTypeDataItem["BillType"].asString();
+		if(!valueBillTypeDataBillTypeDataItem["StartTime"].isNull())
+			billTypeDataObject.startTime = valueBillTypeDataBillTypeDataItem["StartTime"].asString();
 		if(!valueBillTypeDataBillTypeDataItem["BillingCycle"].isNull())
 			billTypeDataObject.billingCycle = valueBillTypeDataBillTypeDataItem["BillingCycle"].asString();
+		if(!valueBillTypeDataBillTypeDataItem["Product"].isNull())
+			billTypeDataObject.product = valueBillTypeDataBillTypeDataItem["Product"].asString();
+		if(!valueBillTypeDataBillTypeDataItem["BillType"].isNull())
+			billTypeDataObject.billType = valueBillTypeDataBillTypeDataItem["BillType"].asString();
+		if(!valueBillTypeDataBillTypeDataItem["Dimension"].isNull())
+			billTypeDataObject.dimension = valueBillTypeDataBillTypeDataItem["Dimension"].asString();
 		billTypeData_.push_back(billTypeDataObject);
 	}
 

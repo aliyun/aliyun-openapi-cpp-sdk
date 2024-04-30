@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Dcdn::Model::BatchSetDcdnDomainConfigsRequest;
 
-BatchSetDcdnDomainConfigsRequest::BatchSetDcdnDomainConfigsRequest() :
-	RpcServiceRequest("dcdn", "2018-01-15", "BatchSetDcdnDomainConfigs")
-{
-	setMethod(HttpRequest::Method::Post);
+BatchSetDcdnDomainConfigsRequest::BatchSetDcdnDomainConfigsRequest()
+    : RpcServiceRequest("dcdn", "2018-01-15", "BatchSetDcdnDomainConfigs") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-BatchSetDcdnDomainConfigsRequest::~BatchSetDcdnDomainConfigsRequest()
-{}
+BatchSetDcdnDomainConfigsRequest::~BatchSetDcdnDomainConfigsRequest() {}
 
-std::string BatchSetDcdnDomainConfigsRequest::getFunctions()const
-{
-	return functions_;
+std::string BatchSetDcdnDomainConfigsRequest::getFunctions() const {
+  return functions_;
 }
 
-void BatchSetDcdnDomainConfigsRequest::setFunctions(const std::string& functions)
-{
-	functions_ = functions;
-	setParameter("Functions", functions);
+void BatchSetDcdnDomainConfigsRequest::setFunctions(const std::string &functions) {
+  functions_ = functions;
+  setParameter(std::string("Functions"), functions);
 }
 
-std::string BatchSetDcdnDomainConfigsRequest::getDomainNames()const
-{
-	return domainNames_;
+std::string BatchSetDcdnDomainConfigsRequest::getDomainNames() const {
+  return domainNames_;
 }
 
-void BatchSetDcdnDomainConfigsRequest::setDomainNames(const std::string& domainNames)
-{
-	domainNames_ = domainNames;
-	setParameter("DomainNames", domainNames);
+void BatchSetDcdnDomainConfigsRequest::setDomainNames(const std::string &domainNames) {
+  domainNames_ = domainNames;
+  setParameter(std::string("DomainNames"), domainNames);
 }
 
-std::string BatchSetDcdnDomainConfigsRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string BatchSetDcdnDomainConfigsRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void BatchSetDcdnDomainConfigsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void BatchSetDcdnDomainConfigsRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string BatchSetDcdnDomainConfigsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string BatchSetDcdnDomainConfigsRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void BatchSetDcdnDomainConfigsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void BatchSetDcdnDomainConfigsRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long BatchSetDcdnDomainConfigsRequest::getOwnerId()const
-{
-	return ownerId_;
+long BatchSetDcdnDomainConfigsRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void BatchSetDcdnDomainConfigsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void BatchSetDcdnDomainConfigsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

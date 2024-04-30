@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,53 +17,47 @@
 #ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINUSAGEDATAREQUEST_H_
 #define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINUSAGEDATAREQUEST_H_
 
+#include <alibabacloud/dcdn/DcdnExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/dcdn/DcdnExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Dcdn
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnDomainUsageDataRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Dcdn {
+namespace Model {
+class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnDomainUsageDataRequest : public RpcServiceRequest {
+public:
+	DescribeDcdnDomainUsageDataRequest();
+	~DescribeDcdnDomainUsageDataRequest();
+	std::string getArea() const;
+	void setArea(const std::string &area);
+	std::string getField() const;
+	void setField(const std::string &field);
+	std::string getDomainName() const;
+	void setDomainName(const std::string &domainName);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
+	std::string getInterval() const;
+	void setInterval(const std::string &interval);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
+	std::string getType() const;
+	void setType(const std::string &type);
+	std::string getDataProtocol() const;
+	void setDataProtocol(const std::string &dataProtocol);
 
-			public:
-				DescribeDcdnDomainUsageDataRequest();
-				~DescribeDcdnDomainUsageDataRequest();
-
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
-				std::string getDataProtocol()const;
-				void setDataProtocol(const std::string& dataProtocol);
-				std::string getArea()const;
-				void setArea(const std::string& area);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getField()const;
-				void setField(const std::string& field);
-				std::string getInterval()const;
-				void setInterval(const std::string& interval);
-
-            private:
-				std::string startTime_;
-				std::string dataProtocol_;
-				std::string area_;
-				std::string domainName_;
-				std::string endTime_;
-				long ownerId_;
-				std::string field_;
-				std::string interval_;
-
-			};
-		}
-	}
-}
+private:
+	std::string area_;
+	std::string field_;
+	std::string domainName_;
+	std::string endTime_;
+	std::string interval_;
+	std::string startTime_;
+	std::string type_;
+	std::string dataProtocol_;
+};
+} // namespace Model
+} // namespace Dcdn
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINUSAGEDATAREQUEST_H_

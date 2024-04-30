@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string secFunc;
 					int drops;
-					std::string object;
 					std::string tmStr;
+					std::string object;
 					std::string domain;
 					std::string ruleName;
 				};

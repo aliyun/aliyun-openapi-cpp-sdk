@@ -37,15 +37,15 @@ namespace AlibabaCloud
 				CreateDcdnCertificateSigningRequestResult();
 				explicit CreateDcdnCertificateSigningRequestResult(const std::string &payload);
 				~CreateDcdnCertificateSigningRequestResult();
-				std::string getCsr()const;
 				std::string getPubMd5()const;
+				std::string getCsr()const;
 				std::string getCommonName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string csr_;
 				std::string pubMd5_;
+				std::string csr_;
 				std::string commonName_;
 
 			};
