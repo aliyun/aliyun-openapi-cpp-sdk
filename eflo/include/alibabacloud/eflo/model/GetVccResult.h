@@ -84,6 +84,23 @@ namespace AlibabaCloud
 						std::string tagKey;
 						std::string tagValue;
 					};
+					struct VbrInfo
+					{
+						struct VbrBgpPeer
+						{
+							std::string status;
+							std::string bgpPeerId;
+							std::string peerIpAddress;
+							std::string peerAsn;
+							std::string bgpGroupId;
+						};
+						std::string status;
+						std::string gmtCreate;
+						std::vector<VbrInfo::VbrBgpPeer> vbrBgpPeers;
+						std::string cenId;
+						std::string gmtModified;
+						std::string vbrId;
+					};
 					std::string message;
 					std::string resourceGroupId;
 					std::string lineOperator;
@@ -112,6 +129,7 @@ namespace AlibabaCloud
 					std::string vpdId;
 					std::vector<ErInfo> erInfos;
 					std::string cenOwnerId;
+					std::vector<VbrInfo> vbrInfos;
 					bool attachErStatus;
 					std::string cenId;
 					std::string accessPointId;

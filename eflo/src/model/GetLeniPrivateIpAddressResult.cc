@@ -14,52 +14,48 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/eflo/model/GetVccRouteEntryResult.h>
+#include <alibabacloud/eflo/model/GetLeniPrivateIpAddressResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Eflo;
 using namespace AlibabaCloud::Eflo::Model;
 
-GetVccRouteEntryResult::GetVccRouteEntryResult() :
+GetLeniPrivateIpAddressResult::GetLeniPrivateIpAddressResult() :
 	ServiceResult()
 {}
 
-GetVccRouteEntryResult::GetVccRouteEntryResult(const std::string &payload) :
+GetLeniPrivateIpAddressResult::GetLeniPrivateIpAddressResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetVccRouteEntryResult::~GetVccRouteEntryResult()
+GetLeniPrivateIpAddressResult::~GetLeniPrivateIpAddressResult()
 {}
 
-void GetVccRouteEntryResult::parse(const std::string &payload)
+void GetLeniPrivateIpAddressResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto contentNode = value["Content"];
+	if(!contentNode["ElasticNetworkInterfaceId"].isNull())
+		content_.elasticNetworkInterfaceId = contentNode["ElasticNetworkInterfaceId"].asString();
 	if(!contentNode["RegionId"].isNull())
 		content_.regionId = contentNode["RegionId"].asString();
-	if(!contentNode["VccRouteEntryId"].isNull())
-		content_.vccRouteEntryId = contentNode["VccRouteEntryId"].asString();
-	if(!contentNode["TenantId"].isNull())
-		content_.tenantId = contentNode["TenantId"].asString();
-	if(!contentNode["VccId"].isNull())
-		content_.vccId = contentNode["VccId"].asString();
-	if(!contentNode["DestinationCidrBlock"].isNull())
-		content_.destinationCidrBlock = contentNode["DestinationCidrBlock"].asString();
-	if(!contentNode["NextHopType"].isNull())
-		content_.nextHopType = contentNode["NextHopType"].asString();
-	if(!contentNode["NextHopId"].isNull())
-		content_.nextHopId = contentNode["NextHopId"].asString();
-	if(!contentNode["RouteType"].isNull())
-		content_.routeType = contentNode["RouteType"].asString();
-	if(!contentNode["Status"].isNull())
-		content_.status = contentNode["Status"].asString();
+	if(!contentNode["GmtCreate"].isNull())
+		content_.gmtCreate = contentNode["GmtCreate"].asString();
 	if(!contentNode["GmtModified"].isNull())
 		content_.gmtModified = contentNode["GmtModified"].asString();
+	if(!contentNode["IpName"].isNull())
+		content_.ipName = contentNode["IpName"].asString();
+	if(!contentNode["PrivateIpAddress"].isNull())
+		content_.privateIpAddress = contentNode["PrivateIpAddress"].asString();
+	if(!contentNode["Status"].isNull())
+		content_.status = contentNode["Status"].asString();
+	if(!contentNode["Description"].isNull())
+		content_.description = contentNode["Description"].asString();
 	if(!contentNode["Message"].isNull())
 		content_.message = contentNode["Message"].asString();
 	if(!value["Code"].isNull())
@@ -69,17 +65,17 @@ void GetVccRouteEntryResult::parse(const std::string &payload)
 
 }
 
-std::string GetVccRouteEntryResult::getMessage()const
+std::string GetLeniPrivateIpAddressResult::getMessage()const
 {
 	return message_;
 }
 
-GetVccRouteEntryResult::Content GetVccRouteEntryResult::getContent()const
+GetLeniPrivateIpAddressResult::Content GetLeniPrivateIpAddressResult::getContent()const
 {
 	return content_;
 }
 
-int GetVccRouteEntryResult::getCode()const
+int GetLeniPrivateIpAddressResult::getCode()const
 {
 	return code_;
 }

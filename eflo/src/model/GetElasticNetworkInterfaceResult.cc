@@ -72,6 +72,8 @@ void GetElasticNetworkInterfaceResult::parse(const std::string &payload)
 		content_.gmtModified = contentNode["GmtModified"].asString();
 	if(!contentNode["Description"].isNull())
 		content_.description = contentNode["Description"].asString();
+	if(!contentNode["SecurityGroupId"].isNull())
+		content_.securityGroupId = contentNode["SecurityGroupId"].asString();
 	auto allPrivateIpAddressesNode = contentNode["PrivateIpAddresses"]["PrivateIpAddress"];
 	for (auto contentNodePrivateIpAddressesPrivateIpAddress : allPrivateIpAddressesNode)
 	{

@@ -66,6 +66,8 @@ void ListVpdGrantRulesResult::parse(const std::string &payload)
 			dataItemObject.createTime = contentNodeDataDataItem["CreateTime"].asString();
 		if(!contentNodeDataDataItem["GrantRuleId"].isNull())
 			dataItemObject.grantRuleId = contentNodeDataDataItem["GrantRuleId"].asString();
+		if(!contentNodeDataDataItem["ResourceGroupId"].isNull())
+			dataItemObject.resourceGroupId = contentNodeDataDataItem["ResourceGroupId"].asString();
 		content_.data.push_back(dataItemObject);
 	}
 	if(!value["Code"].isNull())

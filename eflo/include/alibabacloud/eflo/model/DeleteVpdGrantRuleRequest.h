@@ -36,17 +36,17 @@ public:
 	void setGrantTenantId(const std::string &grantTenantId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
-	std::string getGrantRuleId() const;
-	void setGrantRuleId(const std::string &grantRuleId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getGrantRuleId() const;
+	void setGrantRuleId(const std::string &grantRuleId);
 
 private:
 	std::string erId_;
 	std::string grantTenantId_;
 	std::string instanceId_;
-	std::string grantRuleId_;
 	std::string regionId_;
+	std::string grantRuleId_;
 };
 } // namespace Model
 } // namespace Eflo

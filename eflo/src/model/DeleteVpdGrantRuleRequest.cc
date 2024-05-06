@@ -52,15 +52,6 @@ void DeleteVpdGrantRuleRequest::setInstanceId(const std::string &instanceId) {
   setBodyParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string DeleteVpdGrantRuleRequest::getGrantRuleId() const {
-  return grantRuleId_;
-}
-
-void DeleteVpdGrantRuleRequest::setGrantRuleId(const std::string &grantRuleId) {
-  grantRuleId_ = grantRuleId;
-  setBodyParameter(std::string("GrantRuleId"), grantRuleId);
-}
-
 std::string DeleteVpdGrantRuleRequest::getRegionId() const {
   return regionId_;
 }
@@ -68,5 +59,14 @@ std::string DeleteVpdGrantRuleRequest::getRegionId() const {
 void DeleteVpdGrantRuleRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+std::string DeleteVpdGrantRuleRequest::getGrantRuleId() const {
+  return grantRuleId_;
+}
+
+void DeleteVpdGrantRuleRequest::setGrantRuleId(const std::string &grantRuleId) {
+  grantRuleId_ = grantRuleId;
+  setBodyParameter(std::string("GrantRuleId"), grantRuleId);
 }
 

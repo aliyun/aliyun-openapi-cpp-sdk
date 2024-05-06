@@ -184,6 +184,38 @@ void GetVccResult::parse(const std::string &payload)
 			tagObject.tagValue = contentNodeTagsTag["TagValue"].asString();
 		content_.tags.push_back(tagObject);
 	}
+	auto allVbrInfosNode = contentNode["VbrInfos"]["VbrInfo"];
+	for (auto contentNodeVbrInfosVbrInfo : allVbrInfosNode)
+	{
+		Content::VbrInfo vbrInfoObject;
+		if(!contentNodeVbrInfosVbrInfo["VbrId"].isNull())
+			vbrInfoObject.vbrId = contentNodeVbrInfosVbrInfo["VbrId"].asString();
+		if(!contentNodeVbrInfosVbrInfo["CenId"].isNull())
+			vbrInfoObject.cenId = contentNodeVbrInfosVbrInfo["CenId"].asString();
+		if(!contentNodeVbrInfosVbrInfo["Status"].isNull())
+			vbrInfoObject.status = contentNodeVbrInfosVbrInfo["Status"].asString();
+		if(!contentNodeVbrInfosVbrInfo["GmtCreate"].isNull())
+			vbrInfoObject.gmtCreate = contentNodeVbrInfosVbrInfo["GmtCreate"].asString();
+		if(!contentNodeVbrInfosVbrInfo["GmtModified"].isNull())
+			vbrInfoObject.gmtModified = contentNodeVbrInfosVbrInfo["GmtModified"].asString();
+		auto allVbrBgpPeersNode = contentNodeVbrInfosVbrInfo["VbrBgpPeers"]["VbrBgpPeer"];
+		for (auto contentNodeVbrInfosVbrInfoVbrBgpPeersVbrBgpPeer : allVbrBgpPeersNode)
+		{
+			Content::VbrInfo::VbrBgpPeer vbrBgpPeersObject;
+			if(!contentNodeVbrInfosVbrInfoVbrBgpPeersVbrBgpPeer["BgpGroupId"].isNull())
+				vbrBgpPeersObject.bgpGroupId = contentNodeVbrInfosVbrInfoVbrBgpPeersVbrBgpPeer["BgpGroupId"].asString();
+			if(!contentNodeVbrInfosVbrInfoVbrBgpPeersVbrBgpPeer["BgpPeerId"].isNull())
+				vbrBgpPeersObject.bgpPeerId = contentNodeVbrInfosVbrInfoVbrBgpPeersVbrBgpPeer["BgpPeerId"].asString();
+			if(!contentNodeVbrInfosVbrInfoVbrBgpPeersVbrBgpPeer["PeerIpAddress"].isNull())
+				vbrBgpPeersObject.peerIpAddress = contentNodeVbrInfosVbrInfoVbrBgpPeersVbrBgpPeer["PeerIpAddress"].asString();
+			if(!contentNodeVbrInfosVbrInfoVbrBgpPeersVbrBgpPeer["PeerAsn"].isNull())
+				vbrBgpPeersObject.peerAsn = contentNodeVbrInfosVbrInfoVbrBgpPeersVbrBgpPeer["PeerAsn"].asString();
+			if(!contentNodeVbrInfosVbrInfoVbrBgpPeersVbrBgpPeer["Status"].isNull())
+				vbrBgpPeersObject.status = contentNodeVbrInfosVbrInfoVbrBgpPeersVbrBgpPeer["Status"].asString();
+			vbrInfoObject.vbrBgpPeers.push_back(vbrBgpPeersObject);
+		}
+		content_.vbrInfos.push_back(vbrInfoObject);
+	}
 	auto vpdBaseInfoNode = contentNode["VpdBaseInfo"];
 	if(!vpdBaseInfoNode["VpdId"].isNull())
 		content_.vpdBaseInfo.vpdId = vpdBaseInfoNode["VpdId"].asString();

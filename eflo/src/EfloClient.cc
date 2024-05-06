@@ -51,6 +51,42 @@ EfloClient::EfloClient(const std::string & accessKeyId, const std::string & acce
 EfloClient::~EfloClient()
 {}
 
+EfloClient::AssignLeniPrivateIpAddressOutcome EfloClient::assignLeniPrivateIpAddress(const AssignLeniPrivateIpAddressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AssignLeniPrivateIpAddressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AssignLeniPrivateIpAddressOutcome(AssignLeniPrivateIpAddressResult(outcome.result()));
+	else
+		return AssignLeniPrivateIpAddressOutcome(outcome.error());
+}
+
+void EfloClient::assignLeniPrivateIpAddressAsync(const AssignLeniPrivateIpAddressRequest& request, const AssignLeniPrivateIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, assignLeniPrivateIpAddress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EfloClient::AssignLeniPrivateIpAddressOutcomeCallable EfloClient::assignLeniPrivateIpAddressCallable(const AssignLeniPrivateIpAddressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AssignLeniPrivateIpAddressOutcome()>>(
+			[this, request]()
+			{
+			return this->assignLeniPrivateIpAddress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EfloClient::AssignPrivateIpAddressOutcome EfloClient::assignPrivateIpAddress(const AssignPrivateIpAddressRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1059,6 +1095,42 @@ EfloClient::GetFabricTopologyOutcomeCallable EfloClient::getFabricTopologyCallab
 	return task->get_future();
 }
 
+EfloClient::GetLeniPrivateIpAddressOutcome EfloClient::getLeniPrivateIpAddress(const GetLeniPrivateIpAddressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetLeniPrivateIpAddressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetLeniPrivateIpAddressOutcome(GetLeniPrivateIpAddressResult(outcome.result()));
+	else
+		return GetLeniPrivateIpAddressOutcome(outcome.error());
+}
+
+void EfloClient::getLeniPrivateIpAddressAsync(const GetLeniPrivateIpAddressRequest& request, const GetLeniPrivateIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getLeniPrivateIpAddress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EfloClient::GetLeniPrivateIpAddressOutcomeCallable EfloClient::getLeniPrivateIpAddressCallable(const GetLeniPrivateIpAddressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetLeniPrivateIpAddressOutcome()>>(
+			[this, request]()
+			{
+			return this->getLeniPrivateIpAddress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EfloClient::GetLniPrivateIpAddressOutcome EfloClient::getLniPrivateIpAddress(const GetLniPrivateIpAddressRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1671,6 +1743,42 @@ EfloClient::ListInstancesByNcdOutcomeCallable EfloClient::listInstancesByNcdCall
 	return task->get_future();
 }
 
+EfloClient::ListLeniPrivateIpAddressesOutcome EfloClient::listLeniPrivateIpAddresses(const ListLeniPrivateIpAddressesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListLeniPrivateIpAddressesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListLeniPrivateIpAddressesOutcome(ListLeniPrivateIpAddressesResult(outcome.result()));
+	else
+		return ListLeniPrivateIpAddressesOutcome(outcome.error());
+}
+
+void EfloClient::listLeniPrivateIpAddressesAsync(const ListLeniPrivateIpAddressesRequest& request, const ListLeniPrivateIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listLeniPrivateIpAddresses(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EfloClient::ListLeniPrivateIpAddressesOutcomeCallable EfloClient::listLeniPrivateIpAddressesCallable(const ListLeniPrivateIpAddressesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListLeniPrivateIpAddressesOutcome()>>(
+			[this, request]()
+			{
+			return this->listLeniPrivateIpAddresses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EfloClient::ListLniPrivateIpAddressOutcome EfloClient::listLniPrivateIpAddress(const ListLniPrivateIpAddressRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2139,6 +2247,42 @@ EfloClient::UnAssociateVpdCidrBlockOutcomeCallable EfloClient::unAssociateVpdCid
 	return task->get_future();
 }
 
+EfloClient::UnassignLeniPrivateIpAddressOutcome EfloClient::unassignLeniPrivateIpAddress(const UnassignLeniPrivateIpAddressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnassignLeniPrivateIpAddressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnassignLeniPrivateIpAddressOutcome(UnassignLeniPrivateIpAddressResult(outcome.result()));
+	else
+		return UnassignLeniPrivateIpAddressOutcome(outcome.error());
+}
+
+void EfloClient::unassignLeniPrivateIpAddressAsync(const UnassignLeniPrivateIpAddressRequest& request, const UnassignLeniPrivateIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unassignLeniPrivateIpAddress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EfloClient::UnassignLeniPrivateIpAddressOutcomeCallable EfloClient::unassignLeniPrivateIpAddressCallable(const UnassignLeniPrivateIpAddressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnassignLeniPrivateIpAddressOutcome()>>(
+			[this, request]()
+			{
+			return this->unassignLeniPrivateIpAddress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EfloClient::UpdateElasticNetworkInterfaceOutcome EfloClient::updateElasticNetworkInterface(const UpdateElasticNetworkInterfaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2277,6 +2421,42 @@ EfloClient::UpdateErRouteMapOutcomeCallable EfloClient::updateErRouteMapCallable
 			[this, request]()
 			{
 			return this->updateErRouteMap(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EfloClient::UpdateLeniPrivateIpAddressOutcome EfloClient::updateLeniPrivateIpAddress(const UpdateLeniPrivateIpAddressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLeniPrivateIpAddressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLeniPrivateIpAddressOutcome(UpdateLeniPrivateIpAddressResult(outcome.result()));
+	else
+		return UpdateLeniPrivateIpAddressOutcome(outcome.error());
+}
+
+void EfloClient::updateLeniPrivateIpAddressAsync(const UpdateLeniPrivateIpAddressRequest& request, const UpdateLeniPrivateIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLeniPrivateIpAddress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EfloClient::UpdateLeniPrivateIpAddressOutcomeCallable EfloClient::updateLeniPrivateIpAddressCallable(const UpdateLeniPrivateIpAddressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLeniPrivateIpAddressOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLeniPrivateIpAddress(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

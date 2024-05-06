@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EFLO_MODEL_GETNODEINFOFORPODRESULT_H_
-#define ALIBABACLOUD_EFLO_MODEL_GETNODEINFOFORPODRESULT_H_
+#ifndef ALIBABACLOUD_EFLO_MODEL_UNASSIGNLENIPRIVATEIPADDRESSRESULT_H_
+#define ALIBABACLOUD_EFLO_MODEL_UNASSIGNLENIPRIVATEIPADDRESSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,26 +29,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EFLO_EXPORT GetNodeInfoForPodResult : public ServiceResult
+			class ALIBABACLOUD_EFLO_EXPORT UnassignLeniPrivateIpAddressResult : public ServiceResult
 			{
 			public:
 				struct Content
 				{
-					std::string zoneId;
-					std::string vpcId;
-					int hdeniQuota;
-					std::string clusterId;
-					int lniSipQuota;
-					std::string nodeId;
-					int leniQuota;
-					std::vector<std::string> vSwitches;
-					std::string regionId;
+					std::string ipName;
+					std::string elasticNetworkInterfaceId;
 				};
 
 
-				GetNodeInfoForPodResult();
-				explicit GetNodeInfoForPodResult(const std::string &payload);
-				~GetNodeInfoForPodResult();
+				UnassignLeniPrivateIpAddressResult();
+				explicit UnassignLeniPrivateIpAddressResult(const std::string &payload);
+				~UnassignLeniPrivateIpAddressResult();
 				std::string getMessage()const;
 				Content getContent()const;
 				int getCode()const;
@@ -64,4 +57,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EFLO_MODEL_GETNODEINFOFORPODRESULT_H_
+#endif // !ALIBABACLOUD_EFLO_MODEL_UNASSIGNLENIPRIVATEIPADDRESSRESULT_H_

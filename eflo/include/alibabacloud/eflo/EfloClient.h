@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "EfloExport.h"
+#include "model/AssignLeniPrivateIpAddressRequest.h"
+#include "model/AssignLeniPrivateIpAddressResult.h"
 #include "model/AssignPrivateIpAddressRequest.h"
 #include "model/AssignPrivateIpAddressResult.h"
 #include "model/AssociateVpdCidrBlockRequest.h"
@@ -78,6 +80,8 @@
 #include "model/GetErRouteMapResult.h"
 #include "model/GetFabricTopologyRequest.h"
 #include "model/GetFabricTopologyResult.h"
+#include "model/GetLeniPrivateIpAddressRequest.h"
+#include "model/GetLeniPrivateIpAddressResult.h"
 #include "model/GetLniPrivateIpAddressRequest.h"
 #include "model/GetLniPrivateIpAddressResult.h"
 #include "model/GetNetworkInterfaceRequest.h"
@@ -112,6 +116,8 @@
 #include "model/ListErsResult.h"
 #include "model/ListInstancesByNcdRequest.h"
 #include "model/ListInstancesByNcdResult.h"
+#include "model/ListLeniPrivateIpAddressesRequest.h"
+#include "model/ListLeniPrivateIpAddressesResult.h"
 #include "model/ListLniPrivateIpAddressRequest.h"
 #include "model/ListLniPrivateIpAddressResult.h"
 #include "model/ListNetworkInterfacesRequest.h"
@@ -138,6 +144,8 @@
 #include "model/UnAssignPrivateIpAddressResult.h"
 #include "model/UnAssociateVpdCidrBlockRequest.h"
 #include "model/UnAssociateVpdCidrBlockResult.h"
+#include "model/UnassignLeniPrivateIpAddressRequest.h"
+#include "model/UnassignLeniPrivateIpAddressResult.h"
 #include "model/UpdateElasticNetworkInterfaceRequest.h"
 #include "model/UpdateElasticNetworkInterfaceResult.h"
 #include "model/UpdateErRequest.h"
@@ -146,6 +154,8 @@
 #include "model/UpdateErAttachmentResult.h"
 #include "model/UpdateErRouteMapRequest.h"
 #include "model/UpdateErRouteMapResult.h"
+#include "model/UpdateLeniPrivateIpAddressRequest.h"
+#include "model/UpdateLeniPrivateIpAddressResult.h"
 #include "model/UpdateSubnetRequest.h"
 #include "model/UpdateSubnetResult.h"
 #include "model/UpdateVccRequest.h"
@@ -161,6 +171,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_EFLO_EXPORT EfloClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AssignLeniPrivateIpAddressResult> AssignLeniPrivateIpAddressOutcome;
+			typedef std::future<AssignLeniPrivateIpAddressOutcome> AssignLeniPrivateIpAddressOutcomeCallable;
+			typedef std::function<void(const EfloClient*, const Model::AssignLeniPrivateIpAddressRequest&, const AssignLeniPrivateIpAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssignLeniPrivateIpAddressAsyncHandler;
 			typedef Outcome<Error, Model::AssignPrivateIpAddressResult> AssignPrivateIpAddressOutcome;
 			typedef std::future<AssignPrivateIpAddressOutcome> AssignPrivateIpAddressOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::AssignPrivateIpAddressRequest&, const AssignPrivateIpAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssignPrivateIpAddressAsyncHandler;
@@ -245,6 +258,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetFabricTopologyResult> GetFabricTopologyOutcome;
 			typedef std::future<GetFabricTopologyOutcome> GetFabricTopologyOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::GetFabricTopologyRequest&, const GetFabricTopologyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFabricTopologyAsyncHandler;
+			typedef Outcome<Error, Model::GetLeniPrivateIpAddressResult> GetLeniPrivateIpAddressOutcome;
+			typedef std::future<GetLeniPrivateIpAddressOutcome> GetLeniPrivateIpAddressOutcomeCallable;
+			typedef std::function<void(const EfloClient*, const Model::GetLeniPrivateIpAddressRequest&, const GetLeniPrivateIpAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLeniPrivateIpAddressAsyncHandler;
 			typedef Outcome<Error, Model::GetLniPrivateIpAddressResult> GetLniPrivateIpAddressOutcome;
 			typedef std::future<GetLniPrivateIpAddressOutcome> GetLniPrivateIpAddressOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::GetLniPrivateIpAddressRequest&, const GetLniPrivateIpAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLniPrivateIpAddressAsyncHandler;
@@ -296,6 +312,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListInstancesByNcdResult> ListInstancesByNcdOutcome;
 			typedef std::future<ListInstancesByNcdOutcome> ListInstancesByNcdOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::ListInstancesByNcdRequest&, const ListInstancesByNcdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstancesByNcdAsyncHandler;
+			typedef Outcome<Error, Model::ListLeniPrivateIpAddressesResult> ListLeniPrivateIpAddressesOutcome;
+			typedef std::future<ListLeniPrivateIpAddressesOutcome> ListLeniPrivateIpAddressesOutcomeCallable;
+			typedef std::function<void(const EfloClient*, const Model::ListLeniPrivateIpAddressesRequest&, const ListLeniPrivateIpAddressesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListLeniPrivateIpAddressesAsyncHandler;
 			typedef Outcome<Error, Model::ListLniPrivateIpAddressResult> ListLniPrivateIpAddressOutcome;
 			typedef std::future<ListLniPrivateIpAddressOutcome> ListLniPrivateIpAddressOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::ListLniPrivateIpAddressRequest&, const ListLniPrivateIpAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListLniPrivateIpAddressAsyncHandler;
@@ -335,6 +354,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnAssociateVpdCidrBlockResult> UnAssociateVpdCidrBlockOutcome;
 			typedef std::future<UnAssociateVpdCidrBlockOutcome> UnAssociateVpdCidrBlockOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::UnAssociateVpdCidrBlockRequest&, const UnAssociateVpdCidrBlockOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnAssociateVpdCidrBlockAsyncHandler;
+			typedef Outcome<Error, Model::UnassignLeniPrivateIpAddressResult> UnassignLeniPrivateIpAddressOutcome;
+			typedef std::future<UnassignLeniPrivateIpAddressOutcome> UnassignLeniPrivateIpAddressOutcomeCallable;
+			typedef std::function<void(const EfloClient*, const Model::UnassignLeniPrivateIpAddressRequest&, const UnassignLeniPrivateIpAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnassignLeniPrivateIpAddressAsyncHandler;
 			typedef Outcome<Error, Model::UpdateElasticNetworkInterfaceResult> UpdateElasticNetworkInterfaceOutcome;
 			typedef std::future<UpdateElasticNetworkInterfaceOutcome> UpdateElasticNetworkInterfaceOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::UpdateElasticNetworkInterfaceRequest&, const UpdateElasticNetworkInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateElasticNetworkInterfaceAsyncHandler;
@@ -347,6 +369,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateErRouteMapResult> UpdateErRouteMapOutcome;
 			typedef std::future<UpdateErRouteMapOutcome> UpdateErRouteMapOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::UpdateErRouteMapRequest&, const UpdateErRouteMapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateErRouteMapAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLeniPrivateIpAddressResult> UpdateLeniPrivateIpAddressOutcome;
+			typedef std::future<UpdateLeniPrivateIpAddressOutcome> UpdateLeniPrivateIpAddressOutcomeCallable;
+			typedef std::function<void(const EfloClient*, const Model::UpdateLeniPrivateIpAddressRequest&, const UpdateLeniPrivateIpAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLeniPrivateIpAddressAsyncHandler;
 			typedef Outcome<Error, Model::UpdateSubnetResult> UpdateSubnetOutcome;
 			typedef std::future<UpdateSubnetOutcome> UpdateSubnetOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::UpdateSubnetRequest&, const UpdateSubnetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSubnetAsyncHandler;
@@ -361,6 +386,9 @@ namespace AlibabaCloud
 			EfloClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			EfloClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~EfloClient();
+			AssignLeniPrivateIpAddressOutcome assignLeniPrivateIpAddress(const Model::AssignLeniPrivateIpAddressRequest &request)const;
+			void assignLeniPrivateIpAddressAsync(const Model::AssignLeniPrivateIpAddressRequest& request, const AssignLeniPrivateIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AssignLeniPrivateIpAddressOutcomeCallable assignLeniPrivateIpAddressCallable(const Model::AssignLeniPrivateIpAddressRequest& request) const;
 			AssignPrivateIpAddressOutcome assignPrivateIpAddress(const Model::AssignPrivateIpAddressRequest &request)const;
 			void assignPrivateIpAddressAsync(const Model::AssignPrivateIpAddressRequest& request, const AssignPrivateIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AssignPrivateIpAddressOutcomeCallable assignPrivateIpAddressCallable(const Model::AssignPrivateIpAddressRequest& request) const;
@@ -445,6 +473,9 @@ namespace AlibabaCloud
 			GetFabricTopologyOutcome getFabricTopology(const Model::GetFabricTopologyRequest &request)const;
 			void getFabricTopologyAsync(const Model::GetFabricTopologyRequest& request, const GetFabricTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetFabricTopologyOutcomeCallable getFabricTopologyCallable(const Model::GetFabricTopologyRequest& request) const;
+			GetLeniPrivateIpAddressOutcome getLeniPrivateIpAddress(const Model::GetLeniPrivateIpAddressRequest &request)const;
+			void getLeniPrivateIpAddressAsync(const Model::GetLeniPrivateIpAddressRequest& request, const GetLeniPrivateIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetLeniPrivateIpAddressOutcomeCallable getLeniPrivateIpAddressCallable(const Model::GetLeniPrivateIpAddressRequest& request) const;
 			GetLniPrivateIpAddressOutcome getLniPrivateIpAddress(const Model::GetLniPrivateIpAddressRequest &request)const;
 			void getLniPrivateIpAddressAsync(const Model::GetLniPrivateIpAddressRequest& request, const GetLniPrivateIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetLniPrivateIpAddressOutcomeCallable getLniPrivateIpAddressCallable(const Model::GetLniPrivateIpAddressRequest& request) const;
@@ -496,6 +527,9 @@ namespace AlibabaCloud
 			ListInstancesByNcdOutcome listInstancesByNcd(const Model::ListInstancesByNcdRequest &request)const;
 			void listInstancesByNcdAsync(const Model::ListInstancesByNcdRequest& request, const ListInstancesByNcdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstancesByNcdOutcomeCallable listInstancesByNcdCallable(const Model::ListInstancesByNcdRequest& request) const;
+			ListLeniPrivateIpAddressesOutcome listLeniPrivateIpAddresses(const Model::ListLeniPrivateIpAddressesRequest &request)const;
+			void listLeniPrivateIpAddressesAsync(const Model::ListLeniPrivateIpAddressesRequest& request, const ListLeniPrivateIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListLeniPrivateIpAddressesOutcomeCallable listLeniPrivateIpAddressesCallable(const Model::ListLeniPrivateIpAddressesRequest& request) const;
 			ListLniPrivateIpAddressOutcome listLniPrivateIpAddress(const Model::ListLniPrivateIpAddressRequest &request)const;
 			void listLniPrivateIpAddressAsync(const Model::ListLniPrivateIpAddressRequest& request, const ListLniPrivateIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListLniPrivateIpAddressOutcomeCallable listLniPrivateIpAddressCallable(const Model::ListLniPrivateIpAddressRequest& request) const;
@@ -535,6 +569,9 @@ namespace AlibabaCloud
 			UnAssociateVpdCidrBlockOutcome unAssociateVpdCidrBlock(const Model::UnAssociateVpdCidrBlockRequest &request)const;
 			void unAssociateVpdCidrBlockAsync(const Model::UnAssociateVpdCidrBlockRequest& request, const UnAssociateVpdCidrBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnAssociateVpdCidrBlockOutcomeCallable unAssociateVpdCidrBlockCallable(const Model::UnAssociateVpdCidrBlockRequest& request) const;
+			UnassignLeniPrivateIpAddressOutcome unassignLeniPrivateIpAddress(const Model::UnassignLeniPrivateIpAddressRequest &request)const;
+			void unassignLeniPrivateIpAddressAsync(const Model::UnassignLeniPrivateIpAddressRequest& request, const UnassignLeniPrivateIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnassignLeniPrivateIpAddressOutcomeCallable unassignLeniPrivateIpAddressCallable(const Model::UnassignLeniPrivateIpAddressRequest& request) const;
 			UpdateElasticNetworkInterfaceOutcome updateElasticNetworkInterface(const Model::UpdateElasticNetworkInterfaceRequest &request)const;
 			void updateElasticNetworkInterfaceAsync(const Model::UpdateElasticNetworkInterfaceRequest& request, const UpdateElasticNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateElasticNetworkInterfaceOutcomeCallable updateElasticNetworkInterfaceCallable(const Model::UpdateElasticNetworkInterfaceRequest& request) const;
@@ -547,6 +584,9 @@ namespace AlibabaCloud
 			UpdateErRouteMapOutcome updateErRouteMap(const Model::UpdateErRouteMapRequest &request)const;
 			void updateErRouteMapAsync(const Model::UpdateErRouteMapRequest& request, const UpdateErRouteMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateErRouteMapOutcomeCallable updateErRouteMapCallable(const Model::UpdateErRouteMapRequest& request) const;
+			UpdateLeniPrivateIpAddressOutcome updateLeniPrivateIpAddress(const Model::UpdateLeniPrivateIpAddressRequest &request)const;
+			void updateLeniPrivateIpAddressAsync(const Model::UpdateLeniPrivateIpAddressRequest& request, const UpdateLeniPrivateIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLeniPrivateIpAddressOutcomeCallable updateLeniPrivateIpAddressCallable(const Model::UpdateLeniPrivateIpAddressRequest& request) const;
 			UpdateSubnetOutcome updateSubnet(const Model::UpdateSubnetRequest &request)const;
 			void updateSubnetAsync(const Model::UpdateSubnetRequest& request, const UpdateSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateSubnetOutcomeCallable updateSubnetCallable(const Model::UpdateSubnetRequest& request) const;

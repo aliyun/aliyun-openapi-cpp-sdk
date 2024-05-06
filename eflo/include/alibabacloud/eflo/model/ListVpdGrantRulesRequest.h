@@ -34,6 +34,8 @@ public:
 	void setGrantTenantId(const std::string &grantTenantId);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getGrantRuleId() const;
@@ -54,6 +56,7 @@ public:
 private:
 	std::string grantTenantId_;
 	int pageNumber_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string grantRuleId_;
 	int pageSize_;

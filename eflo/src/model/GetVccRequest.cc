@@ -25,6 +25,15 @@ GetVccRequest::GetVccRequest()
 
 GetVccRequest::~GetVccRequest() {}
 
+std::string GetVccRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void GetVccRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setBodyParameter(std::string("ClientToken"), clientToken);
+}
+
 int GetVccRequest::getPageNumber() const {
   return pageNumber_;
 }

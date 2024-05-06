@@ -60,6 +60,8 @@ void GetVccGrantRuleResult::parse(const std::string &payload)
 		content_.createTime = contentNode["CreateTime"].asString();
 	if(!contentNode["GrantRuleId"].isNull())
 		content_.grantRuleId = contentNode["GrantRuleId"].asString();
+	if(!contentNode["ResourceGroupId"].isNull())
+		content_.resourceGroupId = contentNode["ResourceGroupId"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EFLO_MODEL_GETVCCREQUEST_H_
-#define ALIBABACLOUD_EFLO_MODEL_GETVCCREQUEST_H_
+#ifndef ALIBABACLOUD_EFLO_MODEL_ASSIGNLENIPRIVATEIPADDRESSREQUEST_H_
+#define ALIBABACLOUD_EFLO_MODEL_ASSIGNLENIPRIVATEIPADDRESSREQUEST_H_
 
 #include <alibabacloud/eflo/EfloExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,29 @@
 namespace AlibabaCloud {
 namespace Eflo {
 namespace Model {
-class ALIBABACLOUD_EFLO_EXPORT GetVccRequest : public RpcServiceRequest {
+class ALIBABACLOUD_EFLO_EXPORT AssignLeniPrivateIpAddressRequest : public RpcServiceRequest {
 public:
-	GetVccRequest();
-	~GetVccRequest();
+	AssignLeniPrivateIpAddressRequest();
+	~AssignLeniPrivateIpAddressRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
+	std::string getPrivateIpAddress() const;
+	void setPrivateIpAddress(const std::string &privateIpAddress);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	bool getEnablePage() const;
-	void setEnablePage(bool enablePage);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::string getVccId() const;
-	void setVccId(const std::string &vccId);
+	std::string getElasticNetworkInterfaceId() const;
+	void setElasticNetworkInterfaceId(const std::string &elasticNetworkInterfaceId);
 
 private:
 	std::string clientToken_;
-	int pageNumber_;
+	std::string description_;
+	std::string privateIpAddress_;
 	std::string regionId_;
-	bool enablePage_;
-	int pageSize_;
-	std::string vccId_;
+	std::string elasticNetworkInterfaceId_;
 };
 } // namespace Model
 } // namespace Eflo
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_EFLO_MODEL_GETVCCREQUEST_H_
+#endif // !ALIBABACLOUD_EFLO_MODEL_ASSIGNLENIPRIVATEIPADDRESSREQUEST_H_

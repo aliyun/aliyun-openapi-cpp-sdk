@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/eflo/model/ListVccRouteEntriesResult.h>
+#include <alibabacloud/eflo/model/ListLeniPrivateIpAddressesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Eflo;
 using namespace AlibabaCloud::Eflo::Model;
 
-ListVccRouteEntriesResult::ListVccRouteEntriesResult() :
+ListLeniPrivateIpAddressesResult::ListLeniPrivateIpAddressesResult() :
 	ServiceResult()
 {}
 
-ListVccRouteEntriesResult::ListVccRouteEntriesResult(const std::string &payload) :
+ListLeniPrivateIpAddressesResult::ListLeniPrivateIpAddressesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ListVccRouteEntriesResult::~ListVccRouteEntriesResult()
+ListLeniPrivateIpAddressesResult::~ListLeniPrivateIpAddressesResult()
 {}
 
-void ListVccRouteEntriesResult::parse(const std::string &payload)
+void ListLeniPrivateIpAddressesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -46,28 +46,22 @@ void ListVccRouteEntriesResult::parse(const std::string &payload)
 	for (auto contentNodeDataDataItem : allDataNode)
 	{
 		Content::DataItem dataItemObject;
-		if(!contentNodeDataDataItem["VccId"].isNull())
-			dataItemObject.vccId = contentNodeDataDataItem["VccId"].asString();
-		if(!contentNodeDataDataItem["TenantId"].isNull())
-			dataItemObject.tenantId = contentNodeDataDataItem["TenantId"].asString();
-		if(!contentNodeDataDataItem["ResourceTenantId"].isNull())
-			dataItemObject.resourceTenantId = contentNodeDataDataItem["ResourceTenantId"].asString();
+		if(!contentNodeDataDataItem["ElasticNetworkInterfaceId"].isNull())
+			dataItemObject.elasticNetworkInterfaceId = contentNodeDataDataItem["ElasticNetworkInterfaceId"].asString();
 		if(!contentNodeDataDataItem["RegionId"].isNull())
 			dataItemObject.regionId = contentNodeDataDataItem["RegionId"].asString();
-		if(!contentNodeDataDataItem["VccRouteEntryId"].isNull())
-			dataItemObject.vccRouteEntryId = contentNodeDataDataItem["VccRouteEntryId"].asString();
-		if(!contentNodeDataDataItem["DestinationCidrBlock"].isNull())
-			dataItemObject.destinationCidrBlock = contentNodeDataDataItem["DestinationCidrBlock"].asString();
-		if(!contentNodeDataDataItem["NextHopType"].isNull())
-			dataItemObject.nextHopType = contentNodeDataDataItem["NextHopType"].asString();
-		if(!contentNodeDataDataItem["NextHopId"].isNull())
-			dataItemObject.nextHopId = contentNodeDataDataItem["NextHopId"].asString();
-		if(!contentNodeDataDataItem["RouteType"].isNull())
-			dataItemObject.routeType = contentNodeDataDataItem["RouteType"].asString();
-		if(!contentNodeDataDataItem["Status"].isNull())
-			dataItemObject.status = contentNodeDataDataItem["Status"].asString();
+		if(!contentNodeDataDataItem["GmtCreate"].isNull())
+			dataItemObject.gmtCreate = contentNodeDataDataItem["GmtCreate"].asString();
 		if(!contentNodeDataDataItem["GmtModified"].isNull())
 			dataItemObject.gmtModified = contentNodeDataDataItem["GmtModified"].asString();
+		if(!contentNodeDataDataItem["IpName"].isNull())
+			dataItemObject.ipName = contentNodeDataDataItem["IpName"].asString();
+		if(!contentNodeDataDataItem["PrivateIpAddress"].isNull())
+			dataItemObject.privateIpAddress = contentNodeDataDataItem["PrivateIpAddress"].asString();
+		if(!contentNodeDataDataItem["Status"].isNull())
+			dataItemObject.status = contentNodeDataDataItem["Status"].asString();
+		if(!contentNodeDataDataItem["Description"].isNull())
+			dataItemObject.description = contentNodeDataDataItem["Description"].asString();
 		if(!contentNodeDataDataItem["Message"].isNull())
 			dataItemObject.message = contentNodeDataDataItem["Message"].asString();
 		content_.data.push_back(dataItemObject);
@@ -79,17 +73,17 @@ void ListVccRouteEntriesResult::parse(const std::string &payload)
 
 }
 
-std::string ListVccRouteEntriesResult::getMessage()const
+std::string ListLeniPrivateIpAddressesResult::getMessage()const
 {
 	return message_;
 }
 
-ListVccRouteEntriesResult::Content ListVccRouteEntriesResult::getContent()const
+ListLeniPrivateIpAddressesResult::Content ListLeniPrivateIpAddressesResult::getContent()const
 {
 	return content_;
 }
 
-int ListVccRouteEntriesResult::getCode()const
+int ListLeniPrivateIpAddressesResult::getCode()const
 {
 	return code_;
 }

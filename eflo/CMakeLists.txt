@@ -21,6 +21,8 @@ set(eflo_public_header
 	include/alibabacloud/eflo/EfloExport.h )
 
 set(eflo_public_header_model 
+	include/alibabacloud/eflo/model/AssignLeniPrivateIpAddressRequest.h
+	include/alibabacloud/eflo/model/AssignLeniPrivateIpAddressResult.h
 	include/alibabacloud/eflo/model/AssignPrivateIpAddressRequest.h
 	include/alibabacloud/eflo/model/AssignPrivateIpAddressResult.h
 	include/alibabacloud/eflo/model/AssociateVpdCidrBlockRequest.h
@@ -77,6 +79,8 @@ set(eflo_public_header_model
 	include/alibabacloud/eflo/model/GetErRouteMapResult.h
 	include/alibabacloud/eflo/model/GetFabricTopologyRequest.h
 	include/alibabacloud/eflo/model/GetFabricTopologyResult.h
+	include/alibabacloud/eflo/model/GetLeniPrivateIpAddressRequest.h
+	include/alibabacloud/eflo/model/GetLeniPrivateIpAddressResult.h
 	include/alibabacloud/eflo/model/GetLniPrivateIpAddressRequest.h
 	include/alibabacloud/eflo/model/GetLniPrivateIpAddressResult.h
 	include/alibabacloud/eflo/model/GetNetworkInterfaceRequest.h
@@ -111,6 +115,8 @@ set(eflo_public_header_model
 	include/alibabacloud/eflo/model/ListErsResult.h
 	include/alibabacloud/eflo/model/ListInstancesByNcdRequest.h
 	include/alibabacloud/eflo/model/ListInstancesByNcdResult.h
+	include/alibabacloud/eflo/model/ListLeniPrivateIpAddressesRequest.h
+	include/alibabacloud/eflo/model/ListLeniPrivateIpAddressesResult.h
 	include/alibabacloud/eflo/model/ListLniPrivateIpAddressRequest.h
 	include/alibabacloud/eflo/model/ListLniPrivateIpAddressResult.h
 	include/alibabacloud/eflo/model/ListNetworkInterfacesRequest.h
@@ -137,6 +143,8 @@ set(eflo_public_header_model
 	include/alibabacloud/eflo/model/UnAssignPrivateIpAddressResult.h
 	include/alibabacloud/eflo/model/UnAssociateVpdCidrBlockRequest.h
 	include/alibabacloud/eflo/model/UnAssociateVpdCidrBlockResult.h
+	include/alibabacloud/eflo/model/UnassignLeniPrivateIpAddressRequest.h
+	include/alibabacloud/eflo/model/UnassignLeniPrivateIpAddressResult.h
 	include/alibabacloud/eflo/model/UpdateElasticNetworkInterfaceRequest.h
 	include/alibabacloud/eflo/model/UpdateElasticNetworkInterfaceResult.h
 	include/alibabacloud/eflo/model/UpdateErRequest.h
@@ -145,6 +153,8 @@ set(eflo_public_header_model
 	include/alibabacloud/eflo/model/UpdateErAttachmentResult.h
 	include/alibabacloud/eflo/model/UpdateErRouteMapRequest.h
 	include/alibabacloud/eflo/model/UpdateErRouteMapResult.h
+	include/alibabacloud/eflo/model/UpdateLeniPrivateIpAddressRequest.h
+	include/alibabacloud/eflo/model/UpdateLeniPrivateIpAddressResult.h
 	include/alibabacloud/eflo/model/UpdateSubnetRequest.h
 	include/alibabacloud/eflo/model/UpdateSubnetResult.h
 	include/alibabacloud/eflo/model/UpdateVccRequest.h
@@ -154,6 +164,8 @@ set(eflo_public_header_model
 
 set(eflo_src 
 	src/EfloClient.cc
+	src/model/AssignLeniPrivateIpAddressRequest.cc
+	src/model/AssignLeniPrivateIpAddressResult.cc
 	src/model/AssignPrivateIpAddressRequest.cc
 	src/model/AssignPrivateIpAddressResult.cc
 	src/model/AssociateVpdCidrBlockRequest.cc
@@ -210,6 +222,8 @@ set(eflo_src
 	src/model/GetErRouteMapResult.cc
 	src/model/GetFabricTopologyRequest.cc
 	src/model/GetFabricTopologyResult.cc
+	src/model/GetLeniPrivateIpAddressRequest.cc
+	src/model/GetLeniPrivateIpAddressResult.cc
 	src/model/GetLniPrivateIpAddressRequest.cc
 	src/model/GetLniPrivateIpAddressResult.cc
 	src/model/GetNetworkInterfaceRequest.cc
@@ -244,6 +258,8 @@ set(eflo_src
 	src/model/ListErsResult.cc
 	src/model/ListInstancesByNcdRequest.cc
 	src/model/ListInstancesByNcdResult.cc
+	src/model/ListLeniPrivateIpAddressesRequest.cc
+	src/model/ListLeniPrivateIpAddressesResult.cc
 	src/model/ListLniPrivateIpAddressRequest.cc
 	src/model/ListLniPrivateIpAddressResult.cc
 	src/model/ListNetworkInterfacesRequest.cc
@@ -270,6 +286,8 @@ set(eflo_src
 	src/model/UnAssignPrivateIpAddressResult.cc
 	src/model/UnAssociateVpdCidrBlockRequest.cc
 	src/model/UnAssociateVpdCidrBlockResult.cc
+	src/model/UnassignLeniPrivateIpAddressRequest.cc
+	src/model/UnassignLeniPrivateIpAddressResult.cc
 	src/model/UpdateElasticNetworkInterfaceRequest.cc
 	src/model/UpdateElasticNetworkInterfaceResult.cc
 	src/model/UpdateErRequest.cc
@@ -278,6 +296,8 @@ set(eflo_src
 	src/model/UpdateErAttachmentResult.cc
 	src/model/UpdateErRouteMapRequest.cc
 	src/model/UpdateErRouteMapResult.cc
+	src/model/UpdateLeniPrivateIpAddressRequest.cc
+	src/model/UpdateLeniPrivateIpAddressResult.cc
 	src/model/UpdateSubnetRequest.cc
 	src/model/UpdateSubnetResult.cc
 	src/model/UpdateVccRequest.cc

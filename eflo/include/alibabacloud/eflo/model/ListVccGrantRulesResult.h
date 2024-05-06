@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string instanceName;
 						std::string tenantId;
 						std::string grantTenantId;
+						std::string resourceGroupId;
 						std::string instanceId;
 						bool used;
 						std::string createTime;

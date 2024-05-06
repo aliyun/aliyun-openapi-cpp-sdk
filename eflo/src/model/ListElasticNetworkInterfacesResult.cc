@@ -78,6 +78,8 @@ void ListElasticNetworkInterfacesResult::parse(const std::string &payload)
 			dataItemObject.gmtModified = contentNodeDataDataItem["GmtModified"].asString();
 		if(!contentNodeDataDataItem["Description"].isNull())
 			dataItemObject.description = contentNodeDataDataItem["Description"].asString();
+		if(!contentNodeDataDataItem["SecurityGroupId"].isNull())
+			dataItemObject.securityGroupId = contentNodeDataDataItem["SecurityGroupId"].asString();
 		content_.data.push_back(dataItemObject);
 	}
 	if(!value["Code"].isNull())

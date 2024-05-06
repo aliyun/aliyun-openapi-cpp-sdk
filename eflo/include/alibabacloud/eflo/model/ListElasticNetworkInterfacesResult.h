@@ -43,6 +43,7 @@ namespace AlibabaCloud
 						std::string ip;
 						std::string vSwitchId;
 						std::string createTime;
+						std::string securityGroupId;
 						std::string mask;
 						std::string gmtModified;
 						std::string mac;

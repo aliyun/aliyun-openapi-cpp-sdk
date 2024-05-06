@@ -43,6 +43,15 @@ void ListVpdGrantRulesRequest::setPageNumber(int pageNumber) {
   setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string ListVpdGrantRulesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListVpdGrantRulesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListVpdGrantRulesRequest::getRegionId() const {
   return regionId_;
 }
