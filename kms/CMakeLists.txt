@@ -113,6 +113,8 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/GetCertificateResult.h
 	include/alibabacloud/kms/model/GetClientKeyRequest.h
 	include/alibabacloud/kms/model/GetClientKeyResult.h
+	include/alibabacloud/kms/model/GetKeyPolicyRequest.h
+	include/alibabacloud/kms/model/GetKeyPolicyResult.h
 	include/alibabacloud/kms/model/GetKmsInstanceRequest.h
 	include/alibabacloud/kms/model/GetKmsInstanceResult.h
 	include/alibabacloud/kms/model/GetParametersForImportRequest.h
@@ -121,6 +123,8 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/GetPublicKeyResult.h
 	include/alibabacloud/kms/model/GetRandomPasswordRequest.h
 	include/alibabacloud/kms/model/GetRandomPasswordResult.h
+	include/alibabacloud/kms/model/GetSecretPolicyRequest.h
+	include/alibabacloud/kms/model/GetSecretPolicyResult.h
 	include/alibabacloud/kms/model/GetSecretValueRequest.h
 	include/alibabacloud/kms/model/GetSecretValueResult.h
 	include/alibabacloud/kms/model/ImportKeyMaterialRequest.h
@@ -165,6 +169,10 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/ScheduleKeyDeletionResult.h
 	include/alibabacloud/kms/model/SetDeletionProtectionRequest.h
 	include/alibabacloud/kms/model/SetDeletionProtectionResult.h
+	include/alibabacloud/kms/model/SetKeyPolicyRequest.h
+	include/alibabacloud/kms/model/SetKeyPolicyResult.h
+	include/alibabacloud/kms/model/SetSecretPolicyRequest.h
+	include/alibabacloud/kms/model/SetSecretPolicyResult.h
 	include/alibabacloud/kms/model/TagResourceRequest.h
 	include/alibabacloud/kms/model/TagResourceResult.h
 	include/alibabacloud/kms/model/TagResourcesRequest.h
@@ -292,6 +300,8 @@ set(kms_src
 	src/model/GetCertificateResult.cc
 	src/model/GetClientKeyRequest.cc
 	src/model/GetClientKeyResult.cc
+	src/model/GetKeyPolicyRequest.cc
+	src/model/GetKeyPolicyResult.cc
 	src/model/GetKmsInstanceRequest.cc
 	src/model/GetKmsInstanceResult.cc
 	src/model/GetParametersForImportRequest.cc
@@ -300,6 +310,8 @@ set(kms_src
 	src/model/GetPublicKeyResult.cc
 	src/model/GetRandomPasswordRequest.cc
 	src/model/GetRandomPasswordResult.cc
+	src/model/GetSecretPolicyRequest.cc
+	src/model/GetSecretPolicyResult.cc
 	src/model/GetSecretValueRequest.cc
 	src/model/GetSecretValueResult.cc
 	src/model/ImportKeyMaterialRequest.cc
@@ -344,6 +356,10 @@ set(kms_src
 	src/model/ScheduleKeyDeletionResult.cc
 	src/model/SetDeletionProtectionRequest.cc
 	src/model/SetDeletionProtectionResult.cc
+	src/model/SetKeyPolicyRequest.cc
+	src/model/SetKeyPolicyResult.cc
+	src/model/SetSecretPolicyRequest.cc
+	src/model/SetSecretPolicyResult.cc
 	src/model/TagResourceRequest.cc
 	src/model/TagResourceResult.cc
 	src/model/TagResourcesRequest.cc

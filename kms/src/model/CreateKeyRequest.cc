@@ -106,3 +106,12 @@ void CreateKeyRequest::setDKMSInstanceId(const std::string &dKMSInstanceId) {
   setParameter(std::string("DKMSInstanceId"), dKMSInstanceId);
 }
 
+std::string CreateKeyRequest::getPolicy() const {
+  return policy_;
+}
+
+void CreateKeyRequest::setPolicy(const std::string &policy) {
+  policy_ = policy;
+  setParameter(std::string("Policy"), policy);
+}
+

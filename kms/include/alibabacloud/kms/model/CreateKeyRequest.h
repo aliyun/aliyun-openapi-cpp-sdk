@@ -48,6 +48,8 @@ public:
 	void setKeyUsage(const std::string &keyUsage);
 	std::string getDKMSInstanceId() const;
 	void setDKMSInstanceId(const std::string &dKMSInstanceId);
+	std::string getPolicy() const;
+	void setPolicy(const std::string &policy);
 
 private:
 	std::string origin_;
@@ -59,6 +61,7 @@ private:
 	std::string protectionLevel_;
 	std::string keyUsage_;
 	std::string dKMSInstanceId_;
+	std::string policy_;
 };
 } // namespace Model
 } // namespace Kms

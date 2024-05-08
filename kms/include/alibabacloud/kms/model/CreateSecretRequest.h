@@ -54,6 +54,8 @@ public:
 	void setSecretName(const std::string &secretName);
 	std::string getSecretDataType() const;
 	void setSecretDataType(const std::string &secretDataType);
+	std::string getPolicy() const;
+	void setPolicy(const std::string &policy);
 
 private:
 	std::string secretType_;
@@ -68,6 +70,7 @@ private:
 	std::string secretData_;
 	std::string secretName_;
 	std::string secretDataType_;
+	std::string policy_;
 };
 } // namespace Model
 } // namespace Kms

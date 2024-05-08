@@ -1707,6 +1707,42 @@ KmsClient::GetClientKeyOutcomeCallable KmsClient::getClientKeyCallable(const Get
 	return task->get_future();
 }
 
+KmsClient::GetKeyPolicyOutcome KmsClient::getKeyPolicy(const GetKeyPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetKeyPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetKeyPolicyOutcome(GetKeyPolicyResult(outcome.result()));
+	else
+		return GetKeyPolicyOutcome(outcome.error());
+}
+
+void KmsClient::getKeyPolicyAsync(const GetKeyPolicyRequest& request, const GetKeyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getKeyPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::GetKeyPolicyOutcomeCallable KmsClient::getKeyPolicyCallable(const GetKeyPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetKeyPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->getKeyPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::GetKmsInstanceOutcome KmsClient::getKmsInstance(const GetKmsInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1845,6 +1881,42 @@ KmsClient::GetRandomPasswordOutcomeCallable KmsClient::getRandomPasswordCallable
 			[this, request]()
 			{
 			return this->getRandomPassword(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::GetSecretPolicyOutcome KmsClient::getSecretPolicy(const GetSecretPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSecretPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSecretPolicyOutcome(GetSecretPolicyResult(outcome.result()));
+	else
+		return GetSecretPolicyOutcome(outcome.error());
+}
+
+void KmsClient::getSecretPolicyAsync(const GetSecretPolicyRequest& request, const GetSecretPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSecretPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::GetSecretPolicyOutcomeCallable KmsClient::getSecretPolicyCallable(const GetSecretPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSecretPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->getSecretPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2637,6 +2709,78 @@ KmsClient::SetDeletionProtectionOutcomeCallable KmsClient::setDeletionProtection
 			[this, request]()
 			{
 			return this->setDeletionProtection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::SetKeyPolicyOutcome KmsClient::setKeyPolicy(const SetKeyPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetKeyPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetKeyPolicyOutcome(SetKeyPolicyResult(outcome.result()));
+	else
+		return SetKeyPolicyOutcome(outcome.error());
+}
+
+void KmsClient::setKeyPolicyAsync(const SetKeyPolicyRequest& request, const SetKeyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setKeyPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::SetKeyPolicyOutcomeCallable KmsClient::setKeyPolicyCallable(const SetKeyPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetKeyPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->setKeyPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::SetSecretPolicyOutcome KmsClient::setSecretPolicy(const SetSecretPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetSecretPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetSecretPolicyOutcome(SetSecretPolicyResult(outcome.result()));
+	else
+		return SetSecretPolicyOutcome(outcome.error());
+}
+
+void KmsClient::setSecretPolicyAsync(const SetSecretPolicyRequest& request, const SetSecretPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setSecretPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::SetSecretPolicyOutcomeCallable KmsClient::setSecretPolicyCallable(const SetSecretPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetSecretPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->setSecretPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

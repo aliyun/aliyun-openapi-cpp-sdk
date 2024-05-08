@@ -114,6 +114,8 @@
 #include "model/GetCertificateResult.h"
 #include "model/GetClientKeyRequest.h"
 #include "model/GetClientKeyResult.h"
+#include "model/GetKeyPolicyRequest.h"
+#include "model/GetKeyPolicyResult.h"
 #include "model/GetKmsInstanceRequest.h"
 #include "model/GetKmsInstanceResult.h"
 #include "model/GetParametersForImportRequest.h"
@@ -122,6 +124,8 @@
 #include "model/GetPublicKeyResult.h"
 #include "model/GetRandomPasswordRequest.h"
 #include "model/GetRandomPasswordResult.h"
+#include "model/GetSecretPolicyRequest.h"
+#include "model/GetSecretPolicyResult.h"
 #include "model/GetSecretValueRequest.h"
 #include "model/GetSecretValueResult.h"
 #include "model/ImportKeyMaterialRequest.h"
@@ -166,6 +170,10 @@
 #include "model/ScheduleKeyDeletionResult.h"
 #include "model/SetDeletionProtectionRequest.h"
 #include "model/SetDeletionProtectionResult.h"
+#include "model/SetKeyPolicyRequest.h"
+#include "model/SetKeyPolicyResult.h"
+#include "model/SetSecretPolicyRequest.h"
+#include "model/SetSecretPolicyResult.h"
 #include "model/TagResourceRequest.h"
 #include "model/TagResourceResult.h"
 #include "model/TagResourcesRequest.h"
@@ -345,6 +353,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetClientKeyResult> GetClientKeyOutcome;
 			typedef std::future<GetClientKeyOutcome> GetClientKeyOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::GetClientKeyRequest&, const GetClientKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetClientKeyAsyncHandler;
+			typedef Outcome<Error, Model::GetKeyPolicyResult> GetKeyPolicyOutcome;
+			typedef std::future<GetKeyPolicyOutcome> GetKeyPolicyOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::GetKeyPolicyRequest&, const GetKeyPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetKeyPolicyAsyncHandler;
 			typedef Outcome<Error, Model::GetKmsInstanceResult> GetKmsInstanceOutcome;
 			typedef std::future<GetKmsInstanceOutcome> GetKmsInstanceOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::GetKmsInstanceRequest&, const GetKmsInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetKmsInstanceAsyncHandler;
@@ -357,6 +368,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetRandomPasswordResult> GetRandomPasswordOutcome;
 			typedef std::future<GetRandomPasswordOutcome> GetRandomPasswordOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::GetRandomPasswordRequest&, const GetRandomPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRandomPasswordAsyncHandler;
+			typedef Outcome<Error, Model::GetSecretPolicyResult> GetSecretPolicyOutcome;
+			typedef std::future<GetSecretPolicyOutcome> GetSecretPolicyOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::GetSecretPolicyRequest&, const GetSecretPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSecretPolicyAsyncHandler;
 			typedef Outcome<Error, Model::GetSecretValueResult> GetSecretValueOutcome;
 			typedef std::future<GetSecretValueOutcome> GetSecretValueOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::GetSecretValueRequest&, const GetSecretValueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSecretValueAsyncHandler;
@@ -423,6 +437,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetDeletionProtectionResult> SetDeletionProtectionOutcome;
 			typedef std::future<SetDeletionProtectionOutcome> SetDeletionProtectionOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::SetDeletionProtectionRequest&, const SetDeletionProtectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDeletionProtectionAsyncHandler;
+			typedef Outcome<Error, Model::SetKeyPolicyResult> SetKeyPolicyOutcome;
+			typedef std::future<SetKeyPolicyOutcome> SetKeyPolicyOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::SetKeyPolicyRequest&, const SetKeyPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetKeyPolicyAsyncHandler;
+			typedef Outcome<Error, Model::SetSecretPolicyResult> SetSecretPolicyOutcome;
+			typedef std::future<SetSecretPolicyOutcome> SetSecretPolicyOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::SetSecretPolicyRequest&, const SetSecretPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetSecretPolicyAsyncHandler;
 			typedef Outcome<Error, Model::TagResourceResult> TagResourceOutcome;
 			typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::TagResourceRequest&, const TagResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourceAsyncHandler;
@@ -614,6 +634,9 @@ namespace AlibabaCloud
 			GetClientKeyOutcome getClientKey(const Model::GetClientKeyRequest &request)const;
 			void getClientKeyAsync(const Model::GetClientKeyRequest& request, const GetClientKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetClientKeyOutcomeCallable getClientKeyCallable(const Model::GetClientKeyRequest& request) const;
+			GetKeyPolicyOutcome getKeyPolicy(const Model::GetKeyPolicyRequest &request)const;
+			void getKeyPolicyAsync(const Model::GetKeyPolicyRequest& request, const GetKeyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetKeyPolicyOutcomeCallable getKeyPolicyCallable(const Model::GetKeyPolicyRequest& request) const;
 			GetKmsInstanceOutcome getKmsInstance(const Model::GetKmsInstanceRequest &request)const;
 			void getKmsInstanceAsync(const Model::GetKmsInstanceRequest& request, const GetKmsInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetKmsInstanceOutcomeCallable getKmsInstanceCallable(const Model::GetKmsInstanceRequest& request) const;
@@ -626,6 +649,9 @@ namespace AlibabaCloud
 			GetRandomPasswordOutcome getRandomPassword(const Model::GetRandomPasswordRequest &request)const;
 			void getRandomPasswordAsync(const Model::GetRandomPasswordRequest& request, const GetRandomPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRandomPasswordOutcomeCallable getRandomPasswordCallable(const Model::GetRandomPasswordRequest& request) const;
+			GetSecretPolicyOutcome getSecretPolicy(const Model::GetSecretPolicyRequest &request)const;
+			void getSecretPolicyAsync(const Model::GetSecretPolicyRequest& request, const GetSecretPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSecretPolicyOutcomeCallable getSecretPolicyCallable(const Model::GetSecretPolicyRequest& request) const;
 			GetSecretValueOutcome getSecretValue(const Model::GetSecretValueRequest &request)const;
 			void getSecretValueAsync(const Model::GetSecretValueRequest& request, const GetSecretValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSecretValueOutcomeCallable getSecretValueCallable(const Model::GetSecretValueRequest& request) const;
@@ -692,6 +718,12 @@ namespace AlibabaCloud
 			SetDeletionProtectionOutcome setDeletionProtection(const Model::SetDeletionProtectionRequest &request)const;
 			void setDeletionProtectionAsync(const Model::SetDeletionProtectionRequest& request, const SetDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDeletionProtectionOutcomeCallable setDeletionProtectionCallable(const Model::SetDeletionProtectionRequest& request) const;
+			SetKeyPolicyOutcome setKeyPolicy(const Model::SetKeyPolicyRequest &request)const;
+			void setKeyPolicyAsync(const Model::SetKeyPolicyRequest& request, const SetKeyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetKeyPolicyOutcomeCallable setKeyPolicyCallable(const Model::SetKeyPolicyRequest& request) const;
+			SetSecretPolicyOutcome setSecretPolicy(const Model::SetSecretPolicyRequest &request)const;
+			void setSecretPolicyAsync(const Model::SetSecretPolicyRequest& request, const SetSecretPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetSecretPolicyOutcomeCallable setSecretPolicyCallable(const Model::SetSecretPolicyRequest& request) const;
 			TagResourceOutcome tagResource(const Model::TagResourceRequest &request)const;
 			void tagResourceAsync(const Model::TagResourceRequest& request, const TagResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourceOutcomeCallable tagResourceCallable(const Model::TagResourceRequest& request) const;

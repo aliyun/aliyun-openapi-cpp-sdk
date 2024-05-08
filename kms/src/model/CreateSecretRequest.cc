@@ -133,3 +133,12 @@ void CreateSecretRequest::setSecretDataType(const std::string &secretDataType) {
   setParameter(std::string("SecretDataType"), secretDataType);
 }
 
+std::string CreateSecretRequest::getPolicy() const {
+  return policy_;
+}
+
+void CreateSecretRequest::setPolicy(const std::string &policy) {
+  policy_ = policy;
+  setParameter(std::string("Policy"), policy);
+}
+
