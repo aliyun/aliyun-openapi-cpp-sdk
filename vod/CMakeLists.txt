@@ -125,6 +125,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DescribeVodDomainHitRateDataResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainLogRequest.h
 	include/alibabacloud/vod/model/DescribeVodDomainLogResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainQpsDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainQpsDataResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainRealTimeBpsDataRequest.h
 	include/alibabacloud/vod/model/DescribeVodDomainRealTimeBpsDataResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainRealTimeByteHitRateDataRequest.h
@@ -462,6 +464,8 @@ set(vod_src
 	src/model/DescribeVodDomainHitRateDataResult.cc
 	src/model/DescribeVodDomainLogRequest.cc
 	src/model/DescribeVodDomainLogResult.cc
+	src/model/DescribeVodDomainQpsDataRequest.cc
+	src/model/DescribeVodDomainQpsDataResult.cc
 	src/model/DescribeVodDomainRealTimeBpsDataRequest.cc
 	src/model/DescribeVodDomainRealTimeBpsDataResult.cc
 	src/model/DescribeVodDomainRealTimeByteHitRateDataRequest.cc

@@ -44,7 +44,7 @@ void DescribeVodMediaPlayDataResult::parse(const std::string &payload)
 	{
 		Data qoeInfoListObject;
 		if(!valueQoeInfoListData["VideoTitle"].isNull())
-			qoeInfoListObject.videoTitle = std::stof(valueQoeInfoListData["VideoTitle"].asString());
+			qoeInfoListObject.videoTitle = valueQoeInfoListData["VideoTitle"].asString();
 		if(!valueQoeInfoListData["VideoDuration"].isNull())
 			qoeInfoListObject.videoDuration = std::stof(valueQoeInfoListData["VideoDuration"].asString());
 		if(!valueQoeInfoListData["MediaId"].isNull())

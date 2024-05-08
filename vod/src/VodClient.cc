@@ -1923,6 +1923,42 @@ VodClient::DescribeVodDomainLogOutcomeCallable VodClient::describeVodDomainLogCa
 	return task->get_future();
 }
 
+VodClient::DescribeVodDomainQpsDataOutcome VodClient::describeVodDomainQpsData(const DescribeVodDomainQpsDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodDomainQpsDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodDomainQpsDataOutcome(DescribeVodDomainQpsDataResult(outcome.result()));
+	else
+		return DescribeVodDomainQpsDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodDomainQpsDataAsync(const DescribeVodDomainQpsDataRequest& request, const DescribeVodDomainQpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodDomainQpsData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodDomainQpsDataOutcomeCallable VodClient::describeVodDomainQpsDataCallable(const DescribeVodDomainQpsDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodDomainQpsDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodDomainQpsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::DescribeVodDomainRealTimeBpsDataOutcome VodClient::describeVodDomainRealTimeBpsData(const DescribeVodDomainRealTimeBpsDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

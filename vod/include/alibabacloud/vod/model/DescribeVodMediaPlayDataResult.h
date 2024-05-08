@@ -41,7 +41,7 @@ namespace AlibabaCloud
 					float playPerVv;
 					float dAU;
 					float playDurationPerUv;
-					float videoTitle;
+					std::string videoTitle;
 				};
 
 
