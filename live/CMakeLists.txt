@@ -287,6 +287,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveAudioAuditNotifyConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveCdnDiagnoseInfoRequest.h
 	include/alibabacloud/live/model/DescribeLiveCdnDiagnoseInfoResult.h
+	include/alibabacloud/live/model/DescribeLiveCenterStreamRateDataRequest.h
+	include/alibabacloud/live/model/DescribeLiveCenterStreamRateDataResult.h
 	include/alibabacloud/live/model/DescribeLiveCenterTransferRequest.h
 	include/alibabacloud/live/model/DescribeLiveCenterTransferResult.h
 	include/alibabacloud/live/model/DescribeLiveCertificateDetailRequest.h
@@ -1076,6 +1078,8 @@ set(live_src
 	src/model/DescribeLiveAudioAuditNotifyConfigResult.cc
 	src/model/DescribeLiveCdnDiagnoseInfoRequest.cc
 	src/model/DescribeLiveCdnDiagnoseInfoResult.cc
+	src/model/DescribeLiveCenterStreamRateDataRequest.cc
+	src/model/DescribeLiveCenterStreamRateDataResult.cc
 	src/model/DescribeLiveCenterTransferRequest.cc
 	src/model/DescribeLiveCenterTransferResult.cc
 	src/model/DescribeLiveCertificateDetailRequest.cc

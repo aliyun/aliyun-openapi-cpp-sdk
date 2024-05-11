@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_MODIFYLIVEMESSAGEUSERINFORESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_MODIFYLIVEMESSAGEUSERINFORESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVECENTERSTREAMRATEDATARESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVECENTERSTREAMRATEDATARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT ModifyLiveMessageUserInfoResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveCenterStreamRateDataResult : public ServiceResult
 			{
 			public:
-				struct SuccessGroups
+				struct Data
 				{
-					bool success;
-					std::string groupId;
-				};
-				struct FailGroups
-				{
-					int code;
-					bool success;
-					std::string reason;
-					std::string groupId;
+					std::string videoFps;
+					std::string audioFps;
+					std::string time;
+					std::string audioRate;
+					std::string videoRate;
 				};
 
 
-				ModifyLiveMessageUserInfoResult();
-				explicit ModifyLiveMessageUserInfoResult(const std::string &payload);
-				~ModifyLiveMessageUserInfoResult();
-				std::vector<SuccessGroups> getSuccessList()const;
-				std::vector<FailGroups> getFailList()const;
+				DescribeLiveCenterStreamRateDataResult();
+				explicit DescribeLiveCenterStreamRateDataResult(const std::string &payload);
+				~DescribeLiveCenterStreamRateDataResult();
+				std::vector<Data> getRateDatas()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<SuccessGroups> successList_;
-				std::vector<FailGroups> failList_;
+				std::vector<Data> rateDatas_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_MODIFYLIVEMESSAGEUSERINFORESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVECENTERSTREAMRATEDATARESULT_H_

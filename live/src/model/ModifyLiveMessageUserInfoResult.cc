@@ -39,6 +39,40 @@ void ModifyLiveMessageUserInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allSuccessListNode = value["SuccessList"]["SuccessGroups"];
+	for (auto valueSuccessListSuccessGroups : allSuccessListNode)
+	{
+		SuccessGroups successListObject;
+		if(!valueSuccessListSuccessGroups["GroupId"].isNull())
+			successListObject.groupId = valueSuccessListSuccessGroups["GroupId"].asString();
+		if(!valueSuccessListSuccessGroups["Success"].isNull())
+			successListObject.success = valueSuccessListSuccessGroups["Success"].asString() == "true";
+		successList_.push_back(successListObject);
+	}
+	auto allFailListNode = value["FailList"]["FailGroups"];
+	for (auto valueFailListFailGroups : allFailListNode)
+	{
+		FailGroups failListObject;
+		if(!valueFailListFailGroups["GroupId"].isNull())
+			failListObject.groupId = valueFailListFailGroups["GroupId"].asString();
+		if(!valueFailListFailGroups["Success"].isNull())
+			failListObject.success = valueFailListFailGroups["Success"].asString() == "true";
+		if(!valueFailListFailGroups["Reason"].isNull())
+			failListObject.reason = valueFailListFailGroups["Reason"].asString();
+		if(!valueFailListFailGroups["Code"].isNull())
+			failListObject.code = std::stoi(valueFailListFailGroups["Code"].asString());
+		failList_.push_back(failListObject);
+	}
 
+}
+
+std::vector<ModifyLiveMessageUserInfoResult::SuccessGroups> ModifyLiveMessageUserInfoResult::getSuccessList()const
+{
+	return successList_;
+}
+
+std::vector<ModifyLiveMessageUserInfoResult::FailGroups> ModifyLiveMessageUserInfoResult::getFailList()const
+{
+	return failList_;
 }
 

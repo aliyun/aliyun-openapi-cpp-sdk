@@ -288,6 +288,8 @@
 #include "model/DescribeLiveAudioAuditNotifyConfigResult.h"
 #include "model/DescribeLiveCdnDiagnoseInfoRequest.h"
 #include "model/DescribeLiveCdnDiagnoseInfoResult.h"
+#include "model/DescribeLiveCenterStreamRateDataRequest.h"
+#include "model/DescribeLiveCenterStreamRateDataResult.h"
 #include "model/DescribeLiveCenterTransferRequest.h"
 #include "model/DescribeLiveCenterTransferResult.h"
 #include "model/DescribeLiveCertificateDetailRequest.h"
@@ -1216,6 +1218,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveCdnDiagnoseInfoResult> DescribeLiveCdnDiagnoseInfoOutcome;
 			typedef std::future<DescribeLiveCdnDiagnoseInfoOutcome> DescribeLiveCdnDiagnoseInfoOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveCdnDiagnoseInfoRequest&, const DescribeLiveCdnDiagnoseInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveCdnDiagnoseInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveCenterStreamRateDataResult> DescribeLiveCenterStreamRateDataOutcome;
+			typedef std::future<DescribeLiveCenterStreamRateDataOutcome> DescribeLiveCenterStreamRateDataOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveCenterStreamRateDataRequest&, const DescribeLiveCenterStreamRateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveCenterStreamRateDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveCenterTransferResult> DescribeLiveCenterTransferOutcome;
 			typedef std::future<DescribeLiveCenterTransferOutcome> DescribeLiveCenterTransferOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveCenterTransferRequest&, const DescribeLiveCenterTransferOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveCenterTransferAsyncHandler;
@@ -2400,6 +2405,9 @@ namespace AlibabaCloud
 			DescribeLiveCdnDiagnoseInfoOutcome describeLiveCdnDiagnoseInfo(const Model::DescribeLiveCdnDiagnoseInfoRequest &request)const;
 			void describeLiveCdnDiagnoseInfoAsync(const Model::DescribeLiveCdnDiagnoseInfoRequest& request, const DescribeLiveCdnDiagnoseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveCdnDiagnoseInfoOutcomeCallable describeLiveCdnDiagnoseInfoCallable(const Model::DescribeLiveCdnDiagnoseInfoRequest& request) const;
+			DescribeLiveCenterStreamRateDataOutcome describeLiveCenterStreamRateData(const Model::DescribeLiveCenterStreamRateDataRequest &request)const;
+			void describeLiveCenterStreamRateDataAsync(const Model::DescribeLiveCenterStreamRateDataRequest& request, const DescribeLiveCenterStreamRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveCenterStreamRateDataOutcomeCallable describeLiveCenterStreamRateDataCallable(const Model::DescribeLiveCenterStreamRateDataRequest& request) const;
 			DescribeLiveCenterTransferOutcome describeLiveCenterTransfer(const Model::DescribeLiveCenterTransferRequest &request)const;
 			void describeLiveCenterTransferAsync(const Model::DescribeLiveCenterTransferRequest& request, const DescribeLiveCenterTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveCenterTransferOutcomeCallable describeLiveCenterTransferCallable(const Model::DescribeLiveCenterTransferRequest& request) const;

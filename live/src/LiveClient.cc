@@ -4839,6 +4839,42 @@ LiveClient::DescribeLiveCdnDiagnoseInfoOutcomeCallable LiveClient::describeLiveC
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveCenterStreamRateDataOutcome LiveClient::describeLiveCenterStreamRateData(const DescribeLiveCenterStreamRateDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveCenterStreamRateDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveCenterStreamRateDataOutcome(DescribeLiveCenterStreamRateDataResult(outcome.result()));
+	else
+		return DescribeLiveCenterStreamRateDataOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveCenterStreamRateDataAsync(const DescribeLiveCenterStreamRateDataRequest& request, const DescribeLiveCenterStreamRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveCenterStreamRateData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveCenterStreamRateDataOutcomeCallable LiveClient::describeLiveCenterStreamRateDataCallable(const DescribeLiveCenterStreamRateDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveCenterStreamRateDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveCenterStreamRateData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveCenterTransferOutcome LiveClient::describeLiveCenterTransfer(const DescribeLiveCenterTransferRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
