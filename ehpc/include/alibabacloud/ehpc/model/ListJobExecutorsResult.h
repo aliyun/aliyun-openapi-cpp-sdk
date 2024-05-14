@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Executor
 				{
 					std::string status;
+					std::string executorId;
 					std::string endTime;
 					std::string statusReason;
 					std::string createTime;

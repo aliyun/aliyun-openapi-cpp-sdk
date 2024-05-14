@@ -43,6 +43,8 @@ void ListJobExecutorsResult::parse(const std::string &payload)
 	for (auto valueExecutorsExecutor : allExecutorsNode)
 	{
 		Executor executorsObject;
+		if(!valueExecutorsExecutor["ExecutorId"].isNull())
+			executorsObject.executorId = valueExecutorsExecutor["ExecutorId"].asString();
 		if(!valueExecutorsExecutor["ArrayIndex"].isNull())
 			executorsObject.arrayIndex = std::stoi(valueExecutorsExecutor["ArrayIndex"].asString());
 		if(!valueExecutorsExecutor["CreateTime"].isNull())

@@ -49,10 +49,10 @@ public:
 	void setImageType(const std::string &imageType);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
-	std::string getVersion() const;
-	void setVersion(const std::string &version);
 	std::string getName() const;
 	void setName(const std::string &name);
+	std::string getImageVersion() const;
+	void setImageVersion(const std::string &imageVersion);
 	ContainerImageSpec getContainerImageSpec() const;
 	void setContainerImageSpec(const ContainerImageSpec &containerImageSpec);
 	VMImageSpec getVMImageSpec() const;
@@ -61,8 +61,8 @@ public:
 private:
 	std::string imageType_;
 	std::string description_;
-	std::string version_;
 	std::string name_;
+	std::string imageVersion_;
 	ContainerImageSpec containerImageSpec_;
 	VMImageSpec vMImageSpec_;
 };

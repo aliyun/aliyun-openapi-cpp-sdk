@@ -32,16 +32,23 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_EHPC_EXPORT CreateJobResult : public ServiceResult
 			{
 			public:
+				struct TasksItem
+				{
+					std::vector<std::string> executorIds;
+					std::string taskName;
+				};
 
 
 				CreateJobResult();
 				explicit CreateJobResult(const std::string &payload);
 				~CreateJobResult();
+				std::vector<TasksItem> getTasks()const;
 				std::string getJobId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<TasksItem> tasks_;
 				std::string jobId_;
 
 			};

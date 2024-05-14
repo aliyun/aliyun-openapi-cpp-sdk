@@ -39,9 +39,25 @@ void CreateJobResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allTasksNode = value["Tasks"]["TasksItem"];
+	for (auto valueTasksTasksItem : allTasksNode)
+	{
+		TasksItem tasksObject;
+		if(!valueTasksTasksItem["TaskName"].isNull())
+			tasksObject.taskName = valueTasksTasksItem["TaskName"].asString();
+		auto allExecutorIds = value["ExecutorIds"]["ExecutorIds"];
+		for (auto value : allExecutorIds)
+			tasksObject.executorIds.push_back(value.asString());
+		tasks_.push_back(tasksObject);
+	}
 	if(!value["JobId"].isNull())
 		jobId_ = value["JobId"].asString();
 
+}
+
+std::vector<CreateJobResult::TasksItem> CreateJobResult::getTasks()const
+{
+	return tasks_;
 }
 
 std::string CreateJobResult::getJobId()const

@@ -43,15 +43,6 @@ void AddImageRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
-std::string AddImageRequest::getVersion() const {
-  return version_;
-}
-
-void AddImageRequest::setVersion(const std::string &version) {
-  version_ = version;
-  setParameter(std::string("Version"), version);
-}
-
 std::string AddImageRequest::getName() const {
   return name_;
 }
@@ -59,6 +50,15 @@ std::string AddImageRequest::getName() const {
 void AddImageRequest::setName(const std::string &name) {
   name_ = name;
   setParameter(std::string("Name"), name);
+}
+
+std::string AddImageRequest::getImageVersion() const {
+  return imageVersion_;
+}
+
+void AddImageRequest::setImageVersion(const std::string &imageVersion) {
+  imageVersion_ = imageVersion;
+  setParameter(std::string("ImageVersion"), imageVersion);
 }
 
 AddImageRequest::ContainerImageSpec AddImageRequest::getContainerImageSpec() const {
