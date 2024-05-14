@@ -70,6 +70,15 @@ void SetDomainRuleGroupRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string SetDomainRuleGroupRequest::getRegionId() const {
+  return regionId_;
+}
+
+void SetDomainRuleGroupRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string SetDomainRuleGroupRequest::getLang() const {
   return lang_;
 }

@@ -52,6 +52,15 @@ void DescribeDomainBasicConfigsRequest::setSourceIp(const std::string &sourceIp)
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string DescribeDomainBasicConfigsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDomainBasicConfigsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeDomainBasicConfigsRequest::getPageSize() const {
   return pageSize_;
 }

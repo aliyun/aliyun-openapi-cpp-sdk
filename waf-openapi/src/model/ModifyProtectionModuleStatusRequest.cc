@@ -25,6 +25,42 @@ ModifyProtectionModuleStatusRequest::ModifyProtectionModuleStatusRequest()
 
 ModifyProtectionModuleStatusRequest::~ModifyProtectionModuleStatusRequest() {}
 
+std::string ModifyProtectionModuleStatusRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ModifyProtectionModuleStatusRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string ModifyProtectionModuleStatusRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void ModifyProtectionModuleStatusRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string ModifyProtectionModuleStatusRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyProtectionModuleStatusRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string ModifyProtectionModuleStatusRequest::getLang() const {
+  return lang_;
+}
+
+void ModifyProtectionModuleStatusRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
 std::string ModifyProtectionModuleStatusRequest::getDefenseType() const {
   return defenseType_;
 }
@@ -43,15 +79,6 @@ void ModifyProtectionModuleStatusRequest::setInstanceId(const std::string &insta
   setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string ModifyProtectionModuleStatusRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void ModifyProtectionModuleStatusRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
-}
-
 std::string ModifyProtectionModuleStatusRequest::getDomain() const {
   return domain_;
 }
@@ -68,14 +95,5 @@ int ModifyProtectionModuleStatusRequest::getModuleStatus() const {
 void ModifyProtectionModuleStatusRequest::setModuleStatus(int moduleStatus) {
   moduleStatus_ = moduleStatus;
   setParameter(std::string("ModuleStatus"), std::to_string(moduleStatus));
-}
-
-std::string ModifyProtectionModuleStatusRequest::getLang() const {
-  return lang_;
-}
-
-void ModifyProtectionModuleStatusRequest::setLang(const std::string &lang) {
-  lang_ = lang;
-  setParameter(std::string("Lang"), lang);
 }
 

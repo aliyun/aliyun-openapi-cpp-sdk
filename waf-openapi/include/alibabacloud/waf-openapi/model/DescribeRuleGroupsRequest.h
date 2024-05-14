@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_CREATECERTIFICATEREQUEST_H_
-#define ALIBABACLOUD_WAF_OPENAPI_MODEL_CREATECERTIFICATEREQUEST_H_
+#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBERULEGROUPSREQUEST_H_
+#define ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBERULEGROUPSREQUEST_H_
 
 #include <alibabacloud/waf-openapi/Waf_openapiExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,41 +26,47 @@
 namespace AlibabaCloud {
 namespace Waf_openapi {
 namespace Model {
-class ALIBABACLOUD_WAF_OPENAPI_EXPORT CreateCertificateRequest : public RpcServiceRequest {
+class ALIBABACLOUD_WAF_OPENAPI_EXPORT DescribeRuleGroupsRequest : public RpcServiceRequest {
 public:
-	CreateCertificateRequest();
-	~CreateCertificateRequest();
-	std::string getCertificate() const;
-	void setCertificate(const std::string &certificate);
-	std::string getPrivateKey() const;
-	void setPrivateKey(const std::string &privateKey);
+	DescribeRuleGroupsRequest();
+	~DescribeRuleGroupsRequest();
+	int getType() const;
+	void setType(int type);
+	std::string getWafLang() const;
+	void setWafLang(const std::string &wafLang);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	long getPolicyId() const;
+	void setPolicyId(long policyId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
-	std::string getDomain() const;
-	void setDomain(const std::string &domain);
-	std::string getCertificateName() const;
-	void setCertificateName(const std::string &certificateName);
+	std::string getRegion() const;
+	void setRegion(const std::string &region);
 
 private:
-	std::string certificate_;
-	std::string privateKey_;
+	int type_;
+	std::string wafLang_;
 	std::string resourceGroupId_;
 	std::string sourceIp_;
+	long policyId_;
 	std::string regionId_;
+	int pageSize_;
 	std::string lang_;
+	int currentPage_;
 	std::string instanceId_;
-	std::string domain_;
-	std::string certificateName_;
+	std::string region_;
 };
 } // namespace Model
 } // namespace Waf_openapi
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_CREATECERTIFICATEREQUEST_H_
+#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBERULEGROUPSREQUEST_H_

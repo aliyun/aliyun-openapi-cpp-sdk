@@ -43,13 +43,13 @@ void ModifyDomainIpv6StatusRequest::setEnabled(const std::string &enabled) {
   setParameter(std::string("Enabled"), enabled);
 }
 
-std::string ModifyDomainIpv6StatusRequest::getInstanceId() const {
-  return instanceId_;
+std::string ModifyDomainIpv6StatusRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void ModifyDomainIpv6StatusRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
+void ModifyDomainIpv6StatusRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string ModifyDomainIpv6StatusRequest::getSourceIp() const {
@@ -61,13 +61,13 @@ void ModifyDomainIpv6StatusRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string ModifyDomainIpv6StatusRequest::getDomain() const {
-  return domain_;
+std::string ModifyDomainIpv6StatusRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ModifyDomainIpv6StatusRequest::setDomain(const std::string &domain) {
-  domain_ = domain;
-  setParameter(std::string("Domain"), domain);
+void ModifyDomainIpv6StatusRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string ModifyDomainIpv6StatusRequest::getLang() const {
@@ -77,5 +77,23 @@ std::string ModifyDomainIpv6StatusRequest::getLang() const {
 void ModifyDomainIpv6StatusRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string ModifyDomainIpv6StatusRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ModifyDomainIpv6StatusRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string ModifyDomainIpv6StatusRequest::getDomain() const {
+  return domain_;
+}
+
+void ModifyDomainIpv6StatusRequest::setDomain(const std::string &domain) {
+  domain_ = domain;
+  setParameter(std::string("Domain"), domain);
 }
 

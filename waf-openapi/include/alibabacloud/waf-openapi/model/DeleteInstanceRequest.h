@@ -32,18 +32,21 @@ public:
 	~DeleteInstanceRequest();
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 
 private:
 	std::string resourceGroupId_;
-	std::string instanceId_;
 	std::string sourceIp_;
+	std::string regionId_;
 	std::string lang_;
+	std::string instanceId_;
 };
 } // namespace Model
 } // namespace Waf_openapi

@@ -59,10 +59,16 @@ set(waf-openapi_public_header_model
 	include/alibabacloud/waf-openapi/model/DescribeLogServiceStatusResult.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleCodeConfigRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleCodeConfigResult.h
+	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleModeRequest.h
+	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleModeResult.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleRulesRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleRulesResult.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleStatusRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleStatusResult.h
+	include/alibabacloud/waf-openapi/model/DescribeRuleGroupsRequest.h
+	include/alibabacloud/waf-openapi/model/DescribeRuleGroupsResult.h
+	include/alibabacloud/waf-openapi/model/DescribeRulesRequest.h
+	include/alibabacloud/waf-openapi/model/DescribeRulesResult.h
 	include/alibabacloud/waf-openapi/model/DescribeWafSourceIpSegmentRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeWafSourceIpSegmentResult.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainRequest.h
@@ -128,10 +134,16 @@ set(waf-openapi_src
 	src/model/DescribeLogServiceStatusResult.cc
 	src/model/DescribeProtectionModuleCodeConfigRequest.cc
 	src/model/DescribeProtectionModuleCodeConfigResult.cc
+	src/model/DescribeProtectionModuleModeRequest.cc
+	src/model/DescribeProtectionModuleModeResult.cc
 	src/model/DescribeProtectionModuleRulesRequest.cc
 	src/model/DescribeProtectionModuleRulesResult.cc
 	src/model/DescribeProtectionModuleStatusRequest.cc
 	src/model/DescribeProtectionModuleStatusResult.cc
+	src/model/DescribeRuleGroupsRequest.cc
+	src/model/DescribeRuleGroupsResult.cc
+	src/model/DescribeRulesRequest.cc
+	src/model/DescribeRulesResult.cc
 	src/model/DescribeWafSourceIpSegmentRequest.cc
 	src/model/DescribeWafSourceIpSegmentResult.cc
 	src/model/ModifyDomainRequest.cc

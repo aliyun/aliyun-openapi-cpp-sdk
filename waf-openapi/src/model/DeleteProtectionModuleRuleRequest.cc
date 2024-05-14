@@ -25,6 +25,42 @@ DeleteProtectionModuleRuleRequest::DeleteProtectionModuleRuleRequest()
 
 DeleteProtectionModuleRuleRequest::~DeleteProtectionModuleRuleRequest() {}
 
+std::string DeleteProtectionModuleRuleRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DeleteProtectionModuleRuleRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string DeleteProtectionModuleRuleRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void DeleteProtectionModuleRuleRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string DeleteProtectionModuleRuleRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteProtectionModuleRuleRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DeleteProtectionModuleRuleRequest::getLang() const {
+  return lang_;
+}
+
+void DeleteProtectionModuleRuleRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
 std::string DeleteProtectionModuleRuleRequest::getDefenseType() const {
   return defenseType_;
 }
@@ -43,15 +79,6 @@ void DeleteProtectionModuleRuleRequest::setInstanceId(const std::string &instanc
   setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string DeleteProtectionModuleRuleRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void DeleteProtectionModuleRuleRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
-}
-
 std::string DeleteProtectionModuleRuleRequest::getDomain() const {
   return domain_;
 }
@@ -59,15 +86,6 @@ std::string DeleteProtectionModuleRuleRequest::getDomain() const {
 void DeleteProtectionModuleRuleRequest::setDomain(const std::string &domain) {
   domain_ = domain;
   setParameter(std::string("Domain"), domain);
-}
-
-std::string DeleteProtectionModuleRuleRequest::getLang() const {
-  return lang_;
-}
-
-void DeleteProtectionModuleRuleRequest::setLang(const std::string &lang) {
-  lang_ = lang;
-  setParameter(std::string("Lang"), lang);
 }
 
 long DeleteProtectionModuleRuleRequest::getRuleId() const {

@@ -43,6 +43,15 @@ void DescribeProtectionModuleCodeConfigRequest::setSourceIp(const std::string &s
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string DescribeProtectionModuleCodeConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeProtectionModuleCodeConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeProtectionModuleCodeConfigRequest::getLang() const {
   return lang_;
 }

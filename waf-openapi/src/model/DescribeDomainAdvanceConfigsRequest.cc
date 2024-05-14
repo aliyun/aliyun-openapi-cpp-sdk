@@ -43,15 +43,6 @@ void DescribeDomainAdvanceConfigsRequest::setResourceGroupId(const std::string &
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string DescribeDomainAdvanceConfigsRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void DescribeDomainAdvanceConfigsRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 std::string DescribeDomainAdvanceConfigsRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -61,6 +52,15 @@ void DescribeDomainAdvanceConfigsRequest::setSourceIp(const std::string &sourceI
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string DescribeDomainAdvanceConfigsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDomainAdvanceConfigsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeDomainAdvanceConfigsRequest::getLang() const {
   return lang_;
 }
@@ -68,5 +68,14 @@ std::string DescribeDomainAdvanceConfigsRequest::getLang() const {
 void DescribeDomainAdvanceConfigsRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string DescribeDomainAdvanceConfigsRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void DescribeDomainAdvanceConfigsRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

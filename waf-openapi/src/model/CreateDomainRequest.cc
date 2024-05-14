@@ -178,6 +178,15 @@ void CreateDomainRequest::setHttpsPort(const std::string &httpsPort) {
   setParameter(std::string("HttpsPort"), httpsPort);
 }
 
+std::string CreateDomainRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateDomainRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int CreateDomainRequest::getSniStatus() const {
   return sniStatus_;
 }

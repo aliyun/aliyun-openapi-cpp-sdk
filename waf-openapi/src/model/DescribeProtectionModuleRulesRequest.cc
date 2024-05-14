@@ -52,6 +52,15 @@ void DescribeProtectionModuleRulesRequest::setSourceIp(const std::string &source
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string DescribeProtectionModuleRulesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeProtectionModuleRulesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeProtectionModuleRulesRequest::getPageSize() const {
   return pageSize_;
 }

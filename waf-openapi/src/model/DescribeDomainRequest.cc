@@ -25,6 +25,15 @@ DescribeDomainRequest::DescribeDomainRequest()
 
 DescribeDomainRequest::~DescribeDomainRequest() {}
 
+std::string DescribeDomainRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeDomainRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeDomainRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -32,6 +41,15 @@ std::string DescribeDomainRequest::getSourceIp() const {
 void DescribeDomainRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string DescribeDomainRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDomainRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string DescribeDomainRequest::getLang() const {

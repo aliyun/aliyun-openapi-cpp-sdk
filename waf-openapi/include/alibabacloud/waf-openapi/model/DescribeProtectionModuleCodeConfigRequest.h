@@ -34,6 +34,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
 	int getCodeValue() const;
@@ -46,6 +48,7 @@ public:
 private:
 	std::string resourceGroupId_;
 	std::string sourceIp_;
+	std::string regionId_;
 	std::string lang_;
 	int codeValue_;
 	std::string instanceId_;

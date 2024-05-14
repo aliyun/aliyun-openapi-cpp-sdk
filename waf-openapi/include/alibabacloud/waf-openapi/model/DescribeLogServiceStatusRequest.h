@@ -38,6 +38,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getInstanceId() const;
@@ -50,6 +52,7 @@ private:
 	int pageNumber_;
 	std::string resourceGroupId_;
 	std::string sourceIp_;
+	std::string regionId_;
 	int pageSize_;
 	std::string instanceId_;
 	std::string region_;

@@ -30,26 +30,32 @@ class ALIBABACLOUD_WAF_OPENAPI_EXPORT ModifyProtectionModuleStatusRequest : publ
 public:
 	ModifyProtectionModuleStatusRequest();
 	~ModifyProtectionModuleStatusRequest();
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getSourceIp() const;
+	void setSourceIp(const std::string &sourceIp);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 	std::string getDefenseType() const;
 	void setDefenseType(const std::string &defenseType);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
-	std::string getSourceIp() const;
-	void setSourceIp(const std::string &sourceIp);
 	std::string getDomain() const;
 	void setDomain(const std::string &domain);
 	int getModuleStatus() const;
 	void setModuleStatus(int moduleStatus);
-	std::string getLang() const;
-	void setLang(const std::string &lang);
 
 private:
+	std::string resourceGroupId_;
+	std::string sourceIp_;
+	std::string regionId_;
+	std::string lang_;
 	std::string defenseType_;
 	std::string instanceId_;
-	std::string sourceIp_;
 	std::string domain_;
 	int moduleStatus_;
-	std::string lang_;
 };
 } // namespace Model
 } // namespace Waf_openapi

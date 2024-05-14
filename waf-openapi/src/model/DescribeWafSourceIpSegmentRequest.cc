@@ -34,15 +34,6 @@ void DescribeWafSourceIpSegmentRequest::setResourceGroupId(const std::string &re
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string DescribeWafSourceIpSegmentRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void DescribeWafSourceIpSegmentRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 std::string DescribeWafSourceIpSegmentRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -52,6 +43,15 @@ void DescribeWafSourceIpSegmentRequest::setSourceIp(const std::string &sourceIp)
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string DescribeWafSourceIpSegmentRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeWafSourceIpSegmentRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeWafSourceIpSegmentRequest::getLang() const {
   return lang_;
 }
@@ -59,5 +59,14 @@ std::string DescribeWafSourceIpSegmentRequest::getLang() const {
 void DescribeWafSourceIpSegmentRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string DescribeWafSourceIpSegmentRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void DescribeWafSourceIpSegmentRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

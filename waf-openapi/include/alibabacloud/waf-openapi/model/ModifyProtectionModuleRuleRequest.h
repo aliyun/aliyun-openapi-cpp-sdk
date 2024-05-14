@@ -34,8 +34,12 @@ public:
 	void setRule(const std::string &rule);
 	long getLockVersion() const;
 	void setLockVersion(long lockVersion);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
 	std::string getDefenseType() const;
@@ -50,7 +54,9 @@ public:
 private:
 	std::string rule_;
 	long lockVersion_;
+	std::string resourceGroupId_;
 	std::string sourceIp_;
+	std::string regionId_;
 	std::string lang_;
 	std::string defenseType_;
 	std::string instanceId_;

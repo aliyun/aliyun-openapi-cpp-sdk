@@ -25,13 +25,13 @@ DeleteDomainRequest::DeleteDomainRequest()
 
 DeleteDomainRequest::~DeleteDomainRequest() {}
 
-std::string DeleteDomainRequest::getInstanceId() const {
-  return instanceId_;
+std::string DeleteDomainRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void DeleteDomainRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
+void DeleteDomainRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string DeleteDomainRequest::getSourceIp() const {
@@ -43,13 +43,13 @@ void DeleteDomainRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string DeleteDomainRequest::getDomain() const {
-  return domain_;
+std::string DeleteDomainRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DeleteDomainRequest::setDomain(const std::string &domain) {
-  domain_ = domain;
-  setParameter(std::string("Domain"), domain);
+void DeleteDomainRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string DeleteDomainRequest::getLang() const {
@@ -59,5 +59,23 @@ std::string DeleteDomainRequest::getLang() const {
 void DeleteDomainRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string DeleteDomainRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void DeleteDomainRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string DeleteDomainRequest::getDomain() const {
+  return domain_;
+}
+
+void DeleteDomainRequest::setDomain(const std::string &domain) {
+  domain_ = domain;
+  setParameter(std::string("Domain"), domain);
 }
 

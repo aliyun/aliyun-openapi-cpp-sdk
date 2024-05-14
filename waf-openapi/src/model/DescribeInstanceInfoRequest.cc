@@ -34,15 +34,6 @@ void DescribeInstanceInfoRequest::setResourceGroupId(const std::string &resource
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string DescribeInstanceInfoRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void DescribeInstanceInfoRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 std::string DescribeInstanceInfoRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -50,6 +41,15 @@ std::string DescribeInstanceInfoRequest::getSourceIp() const {
 void DescribeInstanceInfoRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string DescribeInstanceInfoRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeInstanceInfoRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string DescribeInstanceInfoRequest::getInstanceSource() const {
@@ -68,5 +68,14 @@ std::string DescribeInstanceInfoRequest::getLang() const {
 void DescribeInstanceInfoRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string DescribeInstanceInfoRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void DescribeInstanceInfoRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

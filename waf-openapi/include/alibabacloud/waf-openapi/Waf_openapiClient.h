@@ -60,10 +60,16 @@
 #include "model/DescribeLogServiceStatusResult.h"
 #include "model/DescribeProtectionModuleCodeConfigRequest.h"
 #include "model/DescribeProtectionModuleCodeConfigResult.h"
+#include "model/DescribeProtectionModuleModeRequest.h"
+#include "model/DescribeProtectionModuleModeResult.h"
 #include "model/DescribeProtectionModuleRulesRequest.h"
 #include "model/DescribeProtectionModuleRulesResult.h"
 #include "model/DescribeProtectionModuleStatusRequest.h"
 #include "model/DescribeProtectionModuleStatusResult.h"
+#include "model/DescribeRuleGroupsRequest.h"
+#include "model/DescribeRuleGroupsResult.h"
+#include "model/DescribeRulesRequest.h"
+#include "model/DescribeRulesResult.h"
 #include "model/DescribeWafSourceIpSegmentRequest.h"
 #include "model/DescribeWafSourceIpSegmentResult.h"
 #include "model/ModifyDomainRequest.h"
@@ -154,12 +160,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeProtectionModuleCodeConfigResult> DescribeProtectionModuleCodeConfigOutcome;
 			typedef std::future<DescribeProtectionModuleCodeConfigOutcome> DescribeProtectionModuleCodeConfigOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectionModuleCodeConfigRequest&, const DescribeProtectionModuleCodeConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModuleCodeConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeProtectionModuleModeResult> DescribeProtectionModuleModeOutcome;
+			typedef std::future<DescribeProtectionModuleModeOutcome> DescribeProtectionModuleModeOutcomeCallable;
+			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectionModuleModeRequest&, const DescribeProtectionModuleModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModuleModeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeProtectionModuleRulesResult> DescribeProtectionModuleRulesOutcome;
 			typedef std::future<DescribeProtectionModuleRulesOutcome> DescribeProtectionModuleRulesOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectionModuleRulesRequest&, const DescribeProtectionModuleRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModuleRulesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeProtectionModuleStatusResult> DescribeProtectionModuleStatusOutcome;
 			typedef std::future<DescribeProtectionModuleStatusOutcome> DescribeProtectionModuleStatusOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectionModuleStatusRequest&, const DescribeProtectionModuleStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModuleStatusAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRuleGroupsResult> DescribeRuleGroupsOutcome;
+			typedef std::future<DescribeRuleGroupsOutcome> DescribeRuleGroupsOutcomeCallable;
+			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeRuleGroupsRequest&, const DescribeRuleGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleGroupsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRulesResult> DescribeRulesOutcome;
+			typedef std::future<DescribeRulesOutcome> DescribeRulesOutcomeCallable;
+			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeRulesRequest&, const DescribeRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRulesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeWafSourceIpSegmentResult> DescribeWafSourceIpSegmentOutcome;
 			typedef std::future<DescribeWafSourceIpSegmentOutcome> DescribeWafSourceIpSegmentOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeWafSourceIpSegmentRequest&, const DescribeWafSourceIpSegmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWafSourceIpSegmentAsyncHandler;
@@ -258,12 +273,21 @@ namespace AlibabaCloud
 			DescribeProtectionModuleCodeConfigOutcome describeProtectionModuleCodeConfig(const Model::DescribeProtectionModuleCodeConfigRequest &request)const;
 			void describeProtectionModuleCodeConfigAsync(const Model::DescribeProtectionModuleCodeConfigRequest& request, const DescribeProtectionModuleCodeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeProtectionModuleCodeConfigOutcomeCallable describeProtectionModuleCodeConfigCallable(const Model::DescribeProtectionModuleCodeConfigRequest& request) const;
+			DescribeProtectionModuleModeOutcome describeProtectionModuleMode(const Model::DescribeProtectionModuleModeRequest &request)const;
+			void describeProtectionModuleModeAsync(const Model::DescribeProtectionModuleModeRequest& request, const DescribeProtectionModuleModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeProtectionModuleModeOutcomeCallable describeProtectionModuleModeCallable(const Model::DescribeProtectionModuleModeRequest& request) const;
 			DescribeProtectionModuleRulesOutcome describeProtectionModuleRules(const Model::DescribeProtectionModuleRulesRequest &request)const;
 			void describeProtectionModuleRulesAsync(const Model::DescribeProtectionModuleRulesRequest& request, const DescribeProtectionModuleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeProtectionModuleRulesOutcomeCallable describeProtectionModuleRulesCallable(const Model::DescribeProtectionModuleRulesRequest& request) const;
 			DescribeProtectionModuleStatusOutcome describeProtectionModuleStatus(const Model::DescribeProtectionModuleStatusRequest &request)const;
 			void describeProtectionModuleStatusAsync(const Model::DescribeProtectionModuleStatusRequest& request, const DescribeProtectionModuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeProtectionModuleStatusOutcomeCallable describeProtectionModuleStatusCallable(const Model::DescribeProtectionModuleStatusRequest& request) const;
+			DescribeRuleGroupsOutcome describeRuleGroups(const Model::DescribeRuleGroupsRequest &request)const;
+			void describeRuleGroupsAsync(const Model::DescribeRuleGroupsRequest& request, const DescribeRuleGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRuleGroupsOutcomeCallable describeRuleGroupsCallable(const Model::DescribeRuleGroupsRequest& request) const;
+			DescribeRulesOutcome describeRules(const Model::DescribeRulesRequest &request)const;
+			void describeRulesAsync(const Model::DescribeRulesRequest& request, const DescribeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRulesOutcomeCallable describeRulesCallable(const Model::DescribeRulesRequest& request) const;
 			DescribeWafSourceIpSegmentOutcome describeWafSourceIpSegment(const Model::DescribeWafSourceIpSegmentRequest &request)const;
 			void describeWafSourceIpSegmentAsync(const Model::DescribeWafSourceIpSegmentRequest& request, const DescribeWafSourceIpSegmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeWafSourceIpSegmentOutcomeCallable describeWafSourceIpSegmentCallable(const Model::DescribeWafSourceIpSegmentRequest& request) const;

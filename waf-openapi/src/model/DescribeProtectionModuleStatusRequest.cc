@@ -25,6 +25,42 @@ DescribeProtectionModuleStatusRequest::DescribeProtectionModuleStatusRequest()
 
 DescribeProtectionModuleStatusRequest::~DescribeProtectionModuleStatusRequest() {}
 
+std::string DescribeProtectionModuleStatusRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeProtectionModuleStatusRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string DescribeProtectionModuleStatusRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void DescribeProtectionModuleStatusRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string DescribeProtectionModuleStatusRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeProtectionModuleStatusRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeProtectionModuleStatusRequest::getLang() const {
+  return lang_;
+}
+
+void DescribeProtectionModuleStatusRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
 std::string DescribeProtectionModuleStatusRequest::getDefenseType() const {
   return defenseType_;
 }
@@ -43,15 +79,6 @@ void DescribeProtectionModuleStatusRequest::setInstanceId(const std::string &ins
   setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string DescribeProtectionModuleStatusRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void DescribeProtectionModuleStatusRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
-}
-
 std::string DescribeProtectionModuleStatusRequest::getDomain() const {
   return domain_;
 }
@@ -59,14 +86,5 @@ std::string DescribeProtectionModuleStatusRequest::getDomain() const {
 void DescribeProtectionModuleStatusRequest::setDomain(const std::string &domain) {
   domain_ = domain;
   setParameter(std::string("Domain"), domain);
-}
-
-std::string DescribeProtectionModuleStatusRequest::getLang() const {
-  return lang_;
-}
-
-void DescribeProtectionModuleStatusRequest::setLang(const std::string &lang) {
-  lang_ = lang;
-  setParameter(std::string("Lang"), lang);
 }
 

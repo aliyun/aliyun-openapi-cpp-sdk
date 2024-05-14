@@ -64,6 +64,8 @@ public:
 	void setReadTime(int readTime);
 	std::string getHttpsPort() const;
 	void setHttpsPort(const std::string &httpsPort);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getSniStatus() const;
 	void setSniStatus(int sniStatus);
 	std::string getLang() const;
@@ -107,6 +109,7 @@ private:
 	std::string domain_;
 	int readTime_;
 	std::string httpsPort_;
+	std::string regionId_;
 	int sniStatus_;
 	std::string lang_;
 	bool retry_;

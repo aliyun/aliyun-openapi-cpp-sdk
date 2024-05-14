@@ -30,20 +30,26 @@ class ALIBABACLOUD_WAF_OPENAPI_EXPORT DescribeDomainRuleGroupRequest : public Rp
 public:
 	DescribeDomainRuleGroupRequest();
 	~DescribeDomainRuleGroupRequest();
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	std::string getDomain() const;
-	void setDomain(const std::string &domain);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getDomain() const;
+	void setDomain(const std::string &domain);
 
 private:
-	std::string instanceId_;
+	std::string resourceGroupId_;
 	std::string sourceIp_;
-	std::string domain_;
+	std::string regionId_;
 	std::string lang_;
+	std::string instanceId_;
+	std::string domain_;
 };
 } // namespace Model
 } // namespace Waf_openapi

@@ -43,6 +43,15 @@ void CreateCertificateRequest::setPrivateKey(const std::string &privateKey) {
   setParameter(std::string("PrivateKey"), privateKey);
 }
 
+std::string CreateCertificateRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateCertificateRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateCertificateRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -50,6 +59,15 @@ std::string CreateCertificateRequest::getSourceIp() const {
 void CreateCertificateRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string CreateCertificateRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateCertificateRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string CreateCertificateRequest::getLang() const {

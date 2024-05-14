@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_CREATECERTIFICATEREQUEST_H_
-#define ALIBABACLOUD_WAF_OPENAPI_MODEL_CREATECERTIFICATEREQUEST_H_
+#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEPROTECTIONMODULEMODEREQUEST_H_
+#define ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEPROTECTIONMODULEMODEREQUEST_H_
 
 #include <alibabacloud/waf-openapi/Waf_openapiExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,14 +26,10 @@
 namespace AlibabaCloud {
 namespace Waf_openapi {
 namespace Model {
-class ALIBABACLOUD_WAF_OPENAPI_EXPORT CreateCertificateRequest : public RpcServiceRequest {
+class ALIBABACLOUD_WAF_OPENAPI_EXPORT DescribeProtectionModuleModeRequest : public RpcServiceRequest {
 public:
-	CreateCertificateRequest();
-	~CreateCertificateRequest();
-	std::string getCertificate() const;
-	void setCertificate(const std::string &certificate);
-	std::string getPrivateKey() const;
-	void setPrivateKey(const std::string &privateKey);
+	DescribeProtectionModuleModeRequest();
+	~DescribeProtectionModuleModeRequest();
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSourceIp() const;
@@ -42,25 +38,23 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::string getDefenseType() const;
+	void setDefenseType(const std::string &defenseType);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getDomain() const;
 	void setDomain(const std::string &domain);
-	std::string getCertificateName() const;
-	void setCertificateName(const std::string &certificateName);
 
 private:
-	std::string certificate_;
-	std::string privateKey_;
 	std::string resourceGroupId_;
 	std::string sourceIp_;
 	std::string regionId_;
 	std::string lang_;
+	std::string defenseType_;
 	std::string instanceId_;
 	std::string domain_;
-	std::string certificateName_;
 };
 } // namespace Model
 } // namespace Waf_openapi
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_CREATECERTIFICATEREQUEST_H_
+#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEPROTECTIONMODULEMODEREQUEST_H_

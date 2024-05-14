@@ -25,15 +25,6 @@ ModifyProtectionModuleModeRequest::ModifyProtectionModuleModeRequest()
 
 ModifyProtectionModuleModeRequest::~ModifyProtectionModuleModeRequest() {}
 
-std::string ModifyProtectionModuleModeRequest::getDefenseType() const {
-  return defenseType_;
-}
-
-void ModifyProtectionModuleModeRequest::setDefenseType(const std::string &defenseType) {
-  defenseType_ = defenseType;
-  setParameter(std::string("DefenseType"), defenseType);
-}
-
 int ModifyProtectionModuleModeRequest::getMode() const {
   return mode_;
 }
@@ -43,13 +34,13 @@ void ModifyProtectionModuleModeRequest::setMode(int mode) {
   setParameter(std::string("Mode"), std::to_string(mode));
 }
 
-std::string ModifyProtectionModuleModeRequest::getInstanceId() const {
-  return instanceId_;
+std::string ModifyProtectionModuleModeRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void ModifyProtectionModuleModeRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
+void ModifyProtectionModuleModeRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string ModifyProtectionModuleModeRequest::getSourceIp() const {
@@ -61,13 +52,13 @@ void ModifyProtectionModuleModeRequest::setSourceIp(const std::string &sourceIp)
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string ModifyProtectionModuleModeRequest::getDomain() const {
-  return domain_;
+std::string ModifyProtectionModuleModeRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ModifyProtectionModuleModeRequest::setDomain(const std::string &domain) {
-  domain_ = domain;
-  setParameter(std::string("Domain"), domain);
+void ModifyProtectionModuleModeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string ModifyProtectionModuleModeRequest::getLang() const {
@@ -77,5 +68,32 @@ std::string ModifyProtectionModuleModeRequest::getLang() const {
 void ModifyProtectionModuleModeRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string ModifyProtectionModuleModeRequest::getDefenseType() const {
+  return defenseType_;
+}
+
+void ModifyProtectionModuleModeRequest::setDefenseType(const std::string &defenseType) {
+  defenseType_ = defenseType;
+  setParameter(std::string("DefenseType"), defenseType);
+}
+
+std::string ModifyProtectionModuleModeRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ModifyProtectionModuleModeRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string ModifyProtectionModuleModeRequest::getDomain() const {
+  return domain_;
+}
+
+void ModifyProtectionModuleModeRequest::setDomain(const std::string &domain) {
+  domain_ = domain;
+  setParameter(std::string("Domain"), domain);
 }
 

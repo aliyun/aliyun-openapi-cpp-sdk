@@ -25,13 +25,13 @@ DescribeDomainRuleGroupRequest::DescribeDomainRuleGroupRequest()
 
 DescribeDomainRuleGroupRequest::~DescribeDomainRuleGroupRequest() {}
 
-std::string DescribeDomainRuleGroupRequest::getInstanceId() const {
-  return instanceId_;
+std::string DescribeDomainRuleGroupRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void DescribeDomainRuleGroupRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
+void DescribeDomainRuleGroupRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string DescribeDomainRuleGroupRequest::getSourceIp() const {
@@ -43,13 +43,13 @@ void DescribeDomainRuleGroupRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string DescribeDomainRuleGroupRequest::getDomain() const {
-  return domain_;
+std::string DescribeDomainRuleGroupRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeDomainRuleGroupRequest::setDomain(const std::string &domain) {
-  domain_ = domain;
-  setParameter(std::string("Domain"), domain);
+void DescribeDomainRuleGroupRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string DescribeDomainRuleGroupRequest::getLang() const {
@@ -59,5 +59,23 @@ std::string DescribeDomainRuleGroupRequest::getLang() const {
 void DescribeDomainRuleGroupRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string DescribeDomainRuleGroupRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void DescribeDomainRuleGroupRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string DescribeDomainRuleGroupRequest::getDomain() const {
+  return domain_;
+}
+
+void DescribeDomainRuleGroupRequest::setDomain(const std::string &domain) {
+  domain_ = domain;
+  setParameter(std::string("Domain"), domain);
 }
 

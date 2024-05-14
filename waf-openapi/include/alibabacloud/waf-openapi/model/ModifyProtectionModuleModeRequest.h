@@ -30,26 +30,32 @@ class ALIBABACLOUD_WAF_OPENAPI_EXPORT ModifyProtectionModuleModeRequest : public
 public:
 	ModifyProtectionModuleModeRequest();
 	~ModifyProtectionModuleModeRequest();
-	std::string getDefenseType() const;
-	void setDefenseType(const std::string &defenseType);
 	int getMode() const;
 	void setMode(int mode);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	std::string getDomain() const;
-	void setDomain(const std::string &domain);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::string getDefenseType() const;
+	void setDefenseType(const std::string &defenseType);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getDomain() const;
+	void setDomain(const std::string &domain);
 
 private:
-	std::string defenseType_;
 	int mode_;
-	std::string instanceId_;
+	std::string resourceGroupId_;
 	std::string sourceIp_;
-	std::string domain_;
+	std::string regionId_;
 	std::string lang_;
+	std::string defenseType_;
+	std::string instanceId_;
+	std::string domain_;
 };
 } // namespace Model
 } // namespace Waf_openapi

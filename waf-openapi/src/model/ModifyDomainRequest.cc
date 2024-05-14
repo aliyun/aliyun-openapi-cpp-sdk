@@ -52,6 +52,15 @@ void ModifyDomainRequest::setSniHost(const std::string &sniHost) {
   setParameter(std::string("SniHost"), sniHost);
 }
 
+std::string ModifyDomainRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ModifyDomainRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 int ModifyDomainRequest::getHybridCloudType() const {
   return hybridCloudType_;
 }
@@ -176,6 +185,15 @@ std::string ModifyDomainRequest::getHttpsPort() const {
 void ModifyDomainRequest::setHttpsPort(const std::string &httpsPort) {
   httpsPort_ = httpsPort;
   setParameter(std::string("HttpsPort"), httpsPort);
+}
+
+std::string ModifyDomainRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDomainRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 int ModifyDomainRequest::getSniStatus() const {

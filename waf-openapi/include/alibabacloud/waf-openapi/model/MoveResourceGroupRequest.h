@@ -34,6 +34,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getResourceId() const;
 	void setResourceId(const std::string &resourceId);
 	std::string getResourceType() const;
@@ -42,6 +44,7 @@ public:
 private:
 	std::string resourceGroupId_;
 	std::string sourceIp_;
+	std::string regionId_;
 	std::string resourceId_;
 	std::string resourceType_;
 };

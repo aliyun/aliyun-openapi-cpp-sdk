@@ -43,6 +43,15 @@ void ModifyProtectionModuleRuleRequest::setLockVersion(long lockVersion) {
   setParameter(std::string("LockVersion"), std::to_string(lockVersion));
 }
 
+std::string ModifyProtectionModuleRuleRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ModifyProtectionModuleRuleRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ModifyProtectionModuleRuleRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -50,6 +59,15 @@ std::string ModifyProtectionModuleRuleRequest::getSourceIp() const {
 void ModifyProtectionModuleRuleRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string ModifyProtectionModuleRuleRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyProtectionModuleRuleRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string ModifyProtectionModuleRuleRequest::getLang() const {

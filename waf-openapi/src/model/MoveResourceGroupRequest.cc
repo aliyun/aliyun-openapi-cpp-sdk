@@ -43,6 +43,15 @@ void MoveResourceGroupRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string MoveResourceGroupRequest::getRegionId() const {
+  return regionId_;
+}
+
+void MoveResourceGroupRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string MoveResourceGroupRequest::getResourceId() const {
   return resourceId_;
 }

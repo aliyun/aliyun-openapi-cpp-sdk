@@ -25,6 +25,15 @@ DescribeCertificatesRequest::DescribeCertificatesRequest()
 
 DescribeCertificatesRequest::~DescribeCertificatesRequest() {}
 
+std::string DescribeCertificatesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeCertificatesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeCertificatesRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -32,6 +41,15 @@ std::string DescribeCertificatesRequest::getSourceIp() const {
 void DescribeCertificatesRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string DescribeCertificatesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeCertificatesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string DescribeCertificatesRequest::getLang() const {

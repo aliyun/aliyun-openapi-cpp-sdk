@@ -60,6 +60,15 @@ void DescribeLogServiceStatusRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string DescribeLogServiceStatusRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLogServiceStatusRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeLogServiceStatusRequest::getPageSize() const {
   return pageSize_;
 }

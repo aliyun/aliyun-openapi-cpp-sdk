@@ -43,13 +43,13 @@ void DescribeCertMatchStatusRequest::setPrivateKey(const std::string &privateKey
   setParameter(std::string("PrivateKey"), privateKey);
 }
 
-std::string DescribeCertMatchStatusRequest::getInstanceId() const {
-  return instanceId_;
+std::string DescribeCertMatchStatusRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void DescribeCertMatchStatusRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
+void DescribeCertMatchStatusRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string DescribeCertMatchStatusRequest::getSourceIp() const {
@@ -61,13 +61,13 @@ void DescribeCertMatchStatusRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string DescribeCertMatchStatusRequest::getDomain() const {
-  return domain_;
+std::string DescribeCertMatchStatusRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeCertMatchStatusRequest::setDomain(const std::string &domain) {
-  domain_ = domain;
-  setParameter(std::string("Domain"), domain);
+void DescribeCertMatchStatusRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string DescribeCertMatchStatusRequest::getLang() const {
@@ -77,5 +77,23 @@ std::string DescribeCertMatchStatusRequest::getLang() const {
 void DescribeCertMatchStatusRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string DescribeCertMatchStatusRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void DescribeCertMatchStatusRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string DescribeCertMatchStatusRequest::getDomain() const {
+  return domain_;
+}
+
+void DescribeCertMatchStatusRequest::setDomain(const std::string &domain) {
+  domain_ = domain;
+  setParameter(std::string("Domain"), domain);
 }
 

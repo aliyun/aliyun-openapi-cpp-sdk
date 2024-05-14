@@ -34,13 +34,13 @@ void ModifyLogRetrievalStatusRequest::setEnabled(int enabled) {
   setParameter(std::string("Enabled"), std::to_string(enabled));
 }
 
-std::string ModifyLogRetrievalStatusRequest::getInstanceId() const {
-  return instanceId_;
+std::string ModifyLogRetrievalStatusRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void ModifyLogRetrievalStatusRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
+void ModifyLogRetrievalStatusRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string ModifyLogRetrievalStatusRequest::getSourceIp() const {
@@ -52,13 +52,13 @@ void ModifyLogRetrievalStatusRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string ModifyLogRetrievalStatusRequest::getDomain() const {
-  return domain_;
+std::string ModifyLogRetrievalStatusRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ModifyLogRetrievalStatusRequest::setDomain(const std::string &domain) {
-  domain_ = domain;
-  setParameter(std::string("Domain"), domain);
+void ModifyLogRetrievalStatusRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string ModifyLogRetrievalStatusRequest::getLang() const {
@@ -68,5 +68,23 @@ std::string ModifyLogRetrievalStatusRequest::getLang() const {
 void ModifyLogRetrievalStatusRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string ModifyLogRetrievalStatusRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ModifyLogRetrievalStatusRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string ModifyLogRetrievalStatusRequest::getDomain() const {
+  return domain_;
+}
+
+void ModifyLogRetrievalStatusRequest::setDomain(const std::string &domain) {
+  domain_ = domain;
+  setParameter(std::string("Domain"), domain);
 }
 

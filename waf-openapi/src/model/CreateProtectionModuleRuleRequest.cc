@@ -25,15 +25,6 @@ CreateProtectionModuleRuleRequest::CreateProtectionModuleRuleRequest()
 
 CreateProtectionModuleRuleRequest::~CreateProtectionModuleRuleRequest() {}
 
-std::string CreateProtectionModuleRuleRequest::getDefenseType() const {
-  return defenseType_;
-}
-
-void CreateProtectionModuleRuleRequest::setDefenseType(const std::string &defenseType) {
-  defenseType_ = defenseType;
-  setParameter(std::string("DefenseType"), defenseType);
-}
-
 std::string CreateProtectionModuleRuleRequest::getRule() const {
   return rule_;
 }
@@ -43,13 +34,13 @@ void CreateProtectionModuleRuleRequest::setRule(const std::string &rule) {
   setParameter(std::string("Rule"), rule);
 }
 
-std::string CreateProtectionModuleRuleRequest::getInstanceId() const {
-  return instanceId_;
+std::string CreateProtectionModuleRuleRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void CreateProtectionModuleRuleRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
+void CreateProtectionModuleRuleRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string CreateProtectionModuleRuleRequest::getSourceIp() const {
@@ -61,13 +52,13 @@ void CreateProtectionModuleRuleRequest::setSourceIp(const std::string &sourceIp)
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string CreateProtectionModuleRuleRequest::getDomain() const {
-  return domain_;
+std::string CreateProtectionModuleRuleRequest::getRegionId() const {
+  return regionId_;
 }
 
-void CreateProtectionModuleRuleRequest::setDomain(const std::string &domain) {
-  domain_ = domain;
-  setParameter(std::string("Domain"), domain);
+void CreateProtectionModuleRuleRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string CreateProtectionModuleRuleRequest::getLang() const {
@@ -77,5 +68,32 @@ std::string CreateProtectionModuleRuleRequest::getLang() const {
 void CreateProtectionModuleRuleRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string CreateProtectionModuleRuleRequest::getDefenseType() const {
+  return defenseType_;
+}
+
+void CreateProtectionModuleRuleRequest::setDefenseType(const std::string &defenseType) {
+  defenseType_ = defenseType;
+  setParameter(std::string("DefenseType"), defenseType);
+}
+
+std::string CreateProtectionModuleRuleRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void CreateProtectionModuleRuleRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string CreateProtectionModuleRuleRequest::getDomain() const {
+  return domain_;
+}
+
+void CreateProtectionModuleRuleRequest::setDomain(const std::string &domain) {
+  domain_ = domain;
+  setParameter(std::string("Domain"), domain);
 }
 
