@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Polardbx::Model::ModifyDBInstanceConfigRequest;
 
-ModifyDBInstanceConfigRequest::ModifyDBInstanceConfigRequest() :
-	RpcServiceRequest("polardbx", "2020-02-02", "ModifyDBInstanceConfig")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyDBInstanceConfigRequest::ModifyDBInstanceConfigRequest()
+    : RpcServiceRequest("polardbx", "2020-02-02", "ModifyDBInstanceConfig") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyDBInstanceConfigRequest::~ModifyDBInstanceConfigRequest()
-{}
+ModifyDBInstanceConfigRequest::~ModifyDBInstanceConfigRequest() {}
 
-std::string ModifyDBInstanceConfigRequest::getDBInstanceName()const
-{
-	return dBInstanceName_;
+std::string ModifyDBInstanceConfigRequest::getDBInstanceName() const {
+  return dBInstanceName_;
 }
 
-void ModifyDBInstanceConfigRequest::setDBInstanceName(const std::string& dBInstanceName)
-{
-	dBInstanceName_ = dBInstanceName;
-	setParameter("DBInstanceName", dBInstanceName);
+void ModifyDBInstanceConfigRequest::setDBInstanceName(const std::string &dBInstanceName) {
+  dBInstanceName_ = dBInstanceName;
+  setParameter(std::string("DBInstanceName"), dBInstanceName);
 }
 
-std::string ModifyDBInstanceConfigRequest::getRegionId()const
-{
-	return regionId_;
+std::string ModifyDBInstanceConfigRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ModifyDBInstanceConfigRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ModifyDBInstanceConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ModifyDBInstanceConfigRequest::getConfigName()const
-{
-	return configName_;
+std::string ModifyDBInstanceConfigRequest::getConfigName() const {
+  return configName_;
 }
 
-void ModifyDBInstanceConfigRequest::setConfigName(const std::string& configName)
-{
-	configName_ = configName;
-	setParameter("ConfigName", configName);
+void ModifyDBInstanceConfigRequest::setConfigName(const std::string &configName) {
+  configName_ = configName;
+  setParameter(std::string("ConfigName"), configName);
 }
 
-std::string ModifyDBInstanceConfigRequest::getConfigValue()const
-{
-	return configValue_;
+std::string ModifyDBInstanceConfigRequest::getConfigValue() const {
+  return configValue_;
 }
 
-void ModifyDBInstanceConfigRequest::setConfigValue(const std::string& configValue)
-{
-	configValue_ = configValue;
-	setParameter("ConfigValue", configValue);
+void ModifyDBInstanceConfigRequest::setConfigValue(const std::string &configValue) {
+  configValue_ = configValue;
+  setParameter(std::string("ConfigValue"), configValue);
 }
 

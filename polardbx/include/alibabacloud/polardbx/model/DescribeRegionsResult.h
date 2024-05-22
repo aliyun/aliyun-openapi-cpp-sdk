@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					};
 					bool supportPolarx20;
 					std::string regionId;
+					bool supportPolarx10;
 					std::vector<Region::Zone> zones;
 				};
 

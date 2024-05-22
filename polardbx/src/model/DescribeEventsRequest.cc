@@ -1,0 +1,72 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/polardbx/model/DescribeEventsRequest.h>
+
+using AlibabaCloud::Polardbx::Model::DescribeEventsRequest;
+
+DescribeEventsRequest::DescribeEventsRequest()
+    : RpcServiceRequest("polardbx", "2020-02-02", "DescribeEvents") {
+  setMethod(HttpRequest::Method::Get);
+}
+
+DescribeEventsRequest::~DescribeEventsRequest() {}
+
+std::string DescribeEventsRequest::getStartTime() const {
+  return startTime_;
+}
+
+void DescribeEventsRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
+}
+
+int DescribeEventsRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void DescribeEventsRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+std::string DescribeEventsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeEventsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeEventsRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void DescribeEventsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string DescribeEventsRequest::getEndTime() const {
+  return endTime_;
+}
+
+void DescribeEventsRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
+}
+

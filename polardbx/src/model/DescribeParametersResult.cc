@@ -40,10 +40,10 @@ void DescribeParametersResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Engine"].isNull())
-		data_.engine = dataNode["Engine"].asString();
 	if(!dataNode["EngineVersion"].isNull())
 		data_.engineVersion = dataNode["EngineVersion"].asString();
+	if(!dataNode["Engine"].isNull())
+		data_.engine = dataNode["Engine"].asString();
 	auto allConfigParametersNode = dataNode["ConfigParameters"]["DBInstanceParameter"];
 	for (auto dataNodeConfigParametersDBInstanceParameter : allConfigParametersNode)
 	{

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,41 +17,35 @@
 #ifndef ALIBABACLOUD_POLARDBX_MODEL_UPGRADEDBINSTANCEKERNELVERSIONREQUEST_H_
 #define ALIBABACLOUD_POLARDBX_MODEL_UPGRADEDBINSTANCEKERNELVERSIONREQUEST_H_
 
+#include <alibabacloud/polardbx/PolardbxExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/polardbx/PolardbxExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Polardbx
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_POLARDBX_EXPORT UpgradeDBInstanceKernelVersionRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Polardbx {
+namespace Model {
+class ALIBABACLOUD_POLARDBX_EXPORT UpgradeDBInstanceKernelVersionRequest : public RpcServiceRequest {
+public:
+	UpgradeDBInstanceKernelVersionRequest();
+	~UpgradeDBInstanceKernelVersionRequest();
+	std::string getDBInstanceName() const;
+	void setDBInstanceName(const std::string &dBInstanceName);
+	std::string getSwitchMode() const;
+	void setSwitchMode(const std::string &switchMode);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getMinorVersion() const;
+	void setMinorVersion(const std::string &minorVersion);
 
-			public:
-				UpgradeDBInstanceKernelVersionRequest();
-				~UpgradeDBInstanceKernelVersionRequest();
-
-				std::string getDBInstanceName()const;
-				void setDBInstanceName(const std::string& dBInstanceName);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getSwitchTime()const;
-				void setSwitchTime(const std::string& switchTime);
-				std::string getUpgradeTime()const;
-				void setUpgradeTime(const std::string& upgradeTime);
-
-            private:
-				std::string dBInstanceName_;
-				std::string regionId_;
-				std::string switchTime_;
-				std::string upgradeTime_;
-
-			};
-		}
-	}
-}
+private:
+	std::string dBInstanceName_;
+	std::string switchMode_;
+	std::string regionId_;
+	std::string minorVersion_;
+};
+} // namespace Model
+} // namespace Polardbx
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_POLARDBX_MODEL_UPGRADEDBINSTANCEKERNELVERSIONREQUEST_H_

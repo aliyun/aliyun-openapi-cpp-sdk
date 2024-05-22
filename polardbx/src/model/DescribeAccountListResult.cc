@@ -43,18 +43,20 @@ void DescribeAccountListResult::parse(const std::string &payload)
 	for (auto valueDataAccount : allDataNode)
 	{
 		Account dataObject;
+		if(!valueDataAccount["GmtCreated"].isNull())
+			dataObject.gmtCreated = valueDataAccount["GmtCreated"].asString();
+		if(!valueDataAccount["DBInstanceName"].isNull())
+			dataObject.dBInstanceName = valueDataAccount["DBInstanceName"].asString();
 		if(!valueDataAccount["AccountDescription"].isNull())
 			dataObject.accountDescription = valueDataAccount["AccountDescription"].asString();
-		if(!valueDataAccount["AccountName"].isNull())
-			dataObject.accountName = valueDataAccount["AccountName"].asString();
+		if(!valueDataAccount["DBName"].isNull())
+			dataObject.dBName = valueDataAccount["DBName"].asString();
 		if(!valueDataAccount["AccountPrivilege"].isNull())
 			dataObject.accountPrivilege = valueDataAccount["AccountPrivilege"].asString();
 		if(!valueDataAccount["AccountType"].isNull())
 			dataObject.accountType = valueDataAccount["AccountType"].asString();
-		if(!valueDataAccount["DBInstanceName"].isNull())
-			dataObject.dBInstanceName = valueDataAccount["DBInstanceName"].asString();
-		if(!valueDataAccount["DBName"].isNull())
-			dataObject.dBName = valueDataAccount["DBName"].asString();
+		if(!valueDataAccount["AccountName"].isNull())
+			dataObject.accountName = valueDataAccount["AccountName"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Message"].isNull())

@@ -34,7 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct TaskProgressInfo
 				{
-					std::string finishTime1;
 					std::string status;
 					std::string progress;
 					std::string taskId;
@@ -42,8 +41,8 @@ namespace AlibabaCloud
 					std::string taskAction;
 					std::string progressInfo;
 					std::string scaleOutToken;
-					std::string dBName;
 					std::string beginTime;
+					std::string dBName;
 					std::string taskErrorCode;
 					std::string taskErrorMessage;
 				};

@@ -55,18 +55,18 @@ void DescribeDbListResult::parse(const std::string &payload)
 		for (auto valueDataDBAccountsAccount : allAccountsNode)
 		{
 			DB::Account accountsObject;
-			if(!valueDataDBAccountsAccount["AccountName"].isNull())
-				accountsObject.accountName = valueDataDBAccountsAccount["AccountName"].asString();
 			if(!valueDataDBAccountsAccount["AccountPrivilege"].isNull())
 				accountsObject.accountPrivilege = valueDataDBAccountsAccount["AccountPrivilege"].asString();
+			if(!valueDataDBAccountsAccount["AccountName"].isNull())
+				accountsObject.accountName = valueDataDBAccountsAccount["AccountName"].asString();
 			dataObject.accounts.push_back(accountsObject);
 		}
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

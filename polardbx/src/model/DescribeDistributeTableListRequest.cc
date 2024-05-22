@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Polardbx::Model::DescribeDistributeTableListRequest;
 
-DescribeDistributeTableListRequest::DescribeDistributeTableListRequest() :
-	RpcServiceRequest("polardbx", "2020-02-02", "DescribeDistributeTableList")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDistributeTableListRequest::DescribeDistributeTableListRequest()
+    : RpcServiceRequest("polardbx", "2020-02-02", "DescribeDistributeTableList") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDistributeTableListRequest::~DescribeDistributeTableListRequest()
-{}
+DescribeDistributeTableListRequest::~DescribeDistributeTableListRequest() {}
 
-std::string DescribeDistributeTableListRequest::getDBInstanceName()const
-{
-	return dBInstanceName_;
+std::string DescribeDistributeTableListRequest::getDBInstanceName() const {
+  return dBInstanceName_;
 }
 
-void DescribeDistributeTableListRequest::setDBInstanceName(const std::string& dBInstanceName)
-{
-	dBInstanceName_ = dBInstanceName;
-	setParameter("DBInstanceName", dBInstanceName);
+void DescribeDistributeTableListRequest::setDBInstanceName(const std::string &dBInstanceName) {
+  dBInstanceName_ = dBInstanceName;
+  setParameter(std::string("DBInstanceName"), dBInstanceName);
 }
 
-std::string DescribeDistributeTableListRequest::getDbName()const
-{
-	return dbName_;
+std::string DescribeDistributeTableListRequest::getDbName() const {
+  return dbName_;
 }
 
-void DescribeDistributeTableListRequest::setDbName(const std::string& dbName)
-{
-	dbName_ = dbName;
-	setParameter("DbName", dbName);
+void DescribeDistributeTableListRequest::setDbName(const std::string &dbName) {
+  dbName_ = dbName;
+  setParameter(std::string("DbName"), dbName);
 }
 
-std::string DescribeDistributeTableListRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeDistributeTableListRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeDistributeTableListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeDistributeTableListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 

@@ -40,28 +40,28 @@ void DescribeParameterTemplatesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["EngineVersion"].isNull())
-		data_.engineVersion = dataNode["EngineVersion"].asString();
 	if(!dataNode["Engine"].isNull())
 		data_.engine = dataNode["Engine"].asString();
+	if(!dataNode["EngineVersion"].isNull())
+		data_.engineVersion = dataNode["EngineVersion"].asString();
 	if(!dataNode["ParameterCount"].isNull())
 		data_.parameterCount = std::stoi(dataNode["ParameterCount"].asString());
 	auto allParametersNode = dataNode["Parameters"]["TemplateRecord"];
 	for (auto dataNodeParametersTemplateRecord : allParametersNode)
 	{
 		Data::TemplateRecord templateRecordObject;
+		if(!dataNodeParametersTemplateRecord["CheckingCode"].isNull())
+			templateRecordObject.checkingCode = dataNodeParametersTemplateRecord["CheckingCode"].asString();
 		if(!dataNodeParametersTemplateRecord["ParameterName"].isNull())
 			templateRecordObject.parameterName = dataNodeParametersTemplateRecord["ParameterName"].asString();
+		if(!dataNodeParametersTemplateRecord["Dynamic"].isNull())
+			templateRecordObject.dynamic = std::stoi(dataNodeParametersTemplateRecord["Dynamic"].asString());
 		if(!dataNodeParametersTemplateRecord["ParameterValue"].isNull())
 			templateRecordObject.parameterValue = dataNodeParametersTemplateRecord["ParameterValue"].asString();
 		if(!dataNodeParametersTemplateRecord["ParameterDescription"].isNull())
 			templateRecordObject.parameterDescription = dataNodeParametersTemplateRecord["ParameterDescription"].asString();
-		if(!dataNodeParametersTemplateRecord["CheckingCode"].isNull())
-			templateRecordObject.checkingCode = dataNodeParametersTemplateRecord["CheckingCode"].asString();
 		if(!dataNodeParametersTemplateRecord["Revisable"].isNull())
 			templateRecordObject.revisable = std::stoi(dataNodeParametersTemplateRecord["Revisable"].asString());
-		if(!dataNodeParametersTemplateRecord["Dynamic"].isNull())
-			templateRecordObject.dynamic = std::stoi(dataNodeParametersTemplateRecord["Dynamic"].asString());
 		data_.parameters.push_back(templateRecordObject);
 	}
 

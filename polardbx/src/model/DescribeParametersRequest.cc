@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Polardbx::Model::DescribeParametersRequest;
 
-DescribeParametersRequest::DescribeParametersRequest() :
-	RpcServiceRequest("polardbx", "2020-02-02", "DescribeParameters")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeParametersRequest::DescribeParametersRequest()
+    : RpcServiceRequest("polardbx", "2020-02-02", "DescribeParameters") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeParametersRequest::~DescribeParametersRequest()
-{}
+DescribeParametersRequest::~DescribeParametersRequest() {}
 
-std::string DescribeParametersRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeParametersRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeParametersRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeParametersRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string DescribeParametersRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
+std::string DescribeParametersRequest::getDBInstanceId() const {
+  return dBInstanceId_;
 }
 
-void DescribeParametersRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+void DescribeParametersRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
-std::string DescribeParametersRequest::getParamLevel()const
-{
-	return paramLevel_;
+std::string DescribeParametersRequest::getParamLevel() const {
+  return paramLevel_;
 }
 
-void DescribeParametersRequest::setParamLevel(const std::string& paramLevel)
-{
-	paramLevel_ = paramLevel;
-	setParameter("ParamLevel", paramLevel);
+void DescribeParametersRequest::setParamLevel(const std::string &paramLevel) {
+  paramLevel_ = paramLevel;
+  setParameter(std::string("ParamLevel"), paramLevel);
 }
 

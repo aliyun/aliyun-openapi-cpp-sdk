@@ -45,10 +45,10 @@ void DescribeCharacterSetResult::parse(const std::string &payload)
 		auto allCharacterSet = dataNode["CharacterSet"]["List"];
 		for (auto value : allCharacterSet)
 			data_.characterSet.push_back(value.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -52,10 +52,10 @@ void DescribeSecurityIpsResult::parse(const std::string &payload)
 			groupItemObject.securityIPList = dataNodeGroupItemsGroupItem["SecurityIPList"].asString();
 		data_.groupItems.push_back(groupItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

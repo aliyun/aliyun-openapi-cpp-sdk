@@ -37,9 +37,10 @@ namespace AlibabaCloud
 					std::string accountDescription;
 					std::string accountPrivilege;
 					std::string dBName;
+					std::string gmtCreated;
 					std::string accountType;
-					std::string accountName;
 					std::string dBInstanceName;
+					std::string accountName;
 				};
 
 

@@ -40,12 +40,12 @@ void DescribeDBInstanceConfigResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
+	if(!dataNode["ConfigName"].isNull())
+		data_.configName = dataNode["ConfigName"].asString();
 	if(!dataNode["DbInstanceName"].isNull())
 		data_.dbInstanceName = dataNode["DbInstanceName"].asString();
 	if(!dataNode["ConfigValue"].isNull())
 		data_.configValue = dataNode["ConfigValue"].asString();
-	if(!dataNode["ConfigName"].isNull())
-		data_.configName = dataNode["ConfigName"].asString();
 
 }
 

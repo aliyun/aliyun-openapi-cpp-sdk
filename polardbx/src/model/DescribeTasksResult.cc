@@ -43,38 +43,36 @@ void DescribeTasksResult::parse(const std::string &payload)
 	for (auto valueItemsTaskProgressInfo : allItemsNode)
 	{
 		TaskProgressInfo itemsObject;
-		if(!valueItemsTaskProgressInfo["DBName"].isNull())
-			itemsObject.dBName = valueItemsTaskProgressInfo["DBName"].asString();
-		if(!valueItemsTaskProgressInfo["BeginTime"].isNull())
-			itemsObject.beginTime = valueItemsTaskProgressInfo["BeginTime"].asString();
-		if(!valueItemsTaskProgressInfo["ProgressInfo"].isNull())
-			itemsObject.progressInfo = valueItemsTaskProgressInfo["ProgressInfo"].asString();
-		if(!valueItemsTaskProgressInfo["FinishTime"].isNull())
-			itemsObject.finishTime = valueItemsTaskProgressInfo["FinishTime"].asString();
-		if(!valueItemsTaskProgressInfo["TaskAction"].isNull())
-			itemsObject.taskAction = valueItemsTaskProgressInfo["TaskAction"].asString();
-		if(!valueItemsTaskProgressInfo["TaskId"].isNull())
-			itemsObject.taskId = valueItemsTaskProgressInfo["TaskId"].asString();
-		if(!valueItemsTaskProgressInfo["Progress"].isNull())
-			itemsObject.progress = valueItemsTaskProgressInfo["Progress"].asString();
-		if(!valueItemsTaskProgressInfo["FinishTime"].isNull())
-			itemsObject.finishTime1 = valueItemsTaskProgressInfo["FinishTime"].asString();
 		if(!valueItemsTaskProgressInfo["Status"].isNull())
 			itemsObject.status = valueItemsTaskProgressInfo["Status"].asString();
+		if(!valueItemsTaskProgressInfo["FinishTime"].isNull())
+			itemsObject.finishTime = valueItemsTaskProgressInfo["FinishTime"].asString();
+		if(!valueItemsTaskProgressInfo["Progress"].isNull())
+			itemsObject.progress = valueItemsTaskProgressInfo["Progress"].asString();
+		if(!valueItemsTaskProgressInfo["BeginTime"].isNull())
+			itemsObject.beginTime = valueItemsTaskProgressInfo["BeginTime"].asString();
 		if(!valueItemsTaskProgressInfo["TaskErrorCode"].isNull())
 			itemsObject.taskErrorCode = valueItemsTaskProgressInfo["TaskErrorCode"].asString();
-		if(!valueItemsTaskProgressInfo["TaskErrorMessage"].isNull())
-			itemsObject.taskErrorMessage = valueItemsTaskProgressInfo["TaskErrorMessage"].asString();
+		if(!valueItemsTaskProgressInfo["DBName"].isNull())
+			itemsObject.dBName = valueItemsTaskProgressInfo["DBName"].asString();
+		if(!valueItemsTaskProgressInfo["ProgressInfo"].isNull())
+			itemsObject.progressInfo = valueItemsTaskProgressInfo["ProgressInfo"].asString();
 		if(!valueItemsTaskProgressInfo["ScaleOutToken"].isNull())
 			itemsObject.scaleOutToken = valueItemsTaskProgressInfo["ScaleOutToken"].asString();
+		if(!valueItemsTaskProgressInfo["TaskId"].isNull())
+			itemsObject.taskId = valueItemsTaskProgressInfo["TaskId"].asString();
+		if(!valueItemsTaskProgressInfo["TaskErrorMessage"].isNull())
+			itemsObject.taskErrorMessage = valueItemsTaskProgressInfo["TaskErrorMessage"].asString();
+		if(!valueItemsTaskProgressInfo["TaskAction"].isNull())
+			itemsObject.taskAction = valueItemsTaskProgressInfo["TaskAction"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
 }
 

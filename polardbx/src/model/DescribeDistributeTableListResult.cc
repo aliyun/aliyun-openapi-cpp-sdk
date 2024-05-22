@@ -48,16 +48,16 @@ void DescribeDistributeTableListResult::parse(const std::string &payload)
 			tableObject.tableName = dataNodeTablesTable["TableName"].asString();
 		if(!dataNodeTablesTable["TableType"].isNull())
 			tableObject.tableType = dataNodeTablesTable["TableType"].asString();
-		if(!dataNodeTablesTable["DbKey"].isNull())
-			tableObject.dbKey = dataNodeTablesTable["DbKey"].asString();
 		if(!dataNodeTablesTable["TbKey"].isNull())
 			tableObject.tbKey = dataNodeTablesTable["TbKey"].asString();
+		if(!dataNodeTablesTable["DbKey"].isNull())
+			tableObject.dbKey = dataNodeTablesTable["DbKey"].asString();
 		data_.tables.push_back(tableObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

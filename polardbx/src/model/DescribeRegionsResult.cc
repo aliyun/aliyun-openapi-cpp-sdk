@@ -43,10 +43,12 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	for (auto valueRegionsRegion : allRegionsNode)
 	{
 		Region regionsObject;
-		if(!valueRegionsRegion["RegionId"].isNull())
-			regionsObject.regionId = valueRegionsRegion["RegionId"].asString();
+		if(!valueRegionsRegion["SupportPolarx10"].isNull())
+			regionsObject.supportPolarx10 = valueRegionsRegion["SupportPolarx10"].asString() == "true";
 		if(!valueRegionsRegion["SupportPolarx20"].isNull())
 			regionsObject.supportPolarx20 = valueRegionsRegion["SupportPolarx20"].asString() == "true";
+		if(!valueRegionsRegion["RegionId"].isNull())
+			regionsObject.regionId = valueRegionsRegion["RegionId"].asString();
 		auto allZonesNode = valueRegionsRegion["Zones"]["Zone"];
 		for (auto valueRegionsRegionZonesZone : allZonesNode)
 		{
@@ -61,12 +63,12 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	}
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = std::stoi(value["ErrorCode"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = std::stoi(value["ErrorCode"].asString());
 
 }
 

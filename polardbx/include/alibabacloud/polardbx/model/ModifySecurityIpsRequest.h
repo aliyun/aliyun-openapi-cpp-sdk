@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,44 +17,38 @@
 #ifndef ALIBABACLOUD_POLARDBX_MODEL_MODIFYSECURITYIPSREQUEST_H_
 #define ALIBABACLOUD_POLARDBX_MODEL_MODIFYSECURITYIPSREQUEST_H_
 
+#include <alibabacloud/polardbx/PolardbxExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/polardbx/PolardbxExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Polardbx
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_POLARDBX_EXPORT ModifySecurityIpsRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Polardbx {
+namespace Model {
+class ALIBABACLOUD_POLARDBX_EXPORT ModifySecurityIpsRequest : public RpcServiceRequest {
+public:
+	ModifySecurityIpsRequest();
+	~ModifySecurityIpsRequest();
+	std::string getDBInstanceName() const;
+	void setDBInstanceName(const std::string &dBInstanceName);
+	std::string getModifyMode() const;
+	void setModifyMode(const std::string &modifyMode);
+	std::string getGroupName() const;
+	void setGroupName(const std::string &groupName);
+	std::string getSecurityIPList() const;
+	void setSecurityIPList(const std::string &securityIPList);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 
-			public:
-				ModifySecurityIpsRequest();
-				~ModifySecurityIpsRequest();
-
-				std::string getDBInstanceName()const;
-				void setDBInstanceName(const std::string& dBInstanceName);
-				std::string getModifyMode()const;
-				void setModifyMode(const std::string& modifyMode);
-				std::string getGroupName()const;
-				void setGroupName(const std::string& groupName);
-				std::string getSecurityIPList()const;
-				void setSecurityIPList(const std::string& securityIPList);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-
-            private:
-				std::string dBInstanceName_;
-				std::string modifyMode_;
-				std::string groupName_;
-				std::string securityIPList_;
-				std::string regionId_;
-
-			};
-		}
-	}
-}
+private:
+	std::string dBInstanceName_;
+	std::string modifyMode_;
+	std::string groupName_;
+	std::string securityIPList_;
+	std::string regionId_;
+};
+} // namespace Model
+} // namespace Polardbx
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_POLARDBX_MODEL_MODIFYSECURITYIPSREQUEST_H_
