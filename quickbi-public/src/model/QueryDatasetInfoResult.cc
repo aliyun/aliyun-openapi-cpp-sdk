@@ -66,6 +66,8 @@ void QueryDatasetInfoResult::parse(const std::string &payload)
 		result_.dsType = resultNode["DsType"].asString();
 	if(!resultNode["DatasetId"].isNull())
 		result_.datasetId = resultNode["DatasetId"].asString();
+	if(!resultNode["OpenOfflineAcceleration"].isNull())
+		result_.openOfflineAcceleration = resultNode["OpenOfflineAcceleration"].asString() == "true";
 	auto allCubeTableListNode = resultNode["CubeTableList"]["CubeTableListItem"];
 	for (auto resultNodeCubeTableListCubeTableListItem : allCubeTableListNode)
 	{

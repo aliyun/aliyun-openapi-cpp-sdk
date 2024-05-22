@@ -699,6 +699,42 @@ Quickbi_publicClient::CreateTicketOutcomeCallable Quickbi_publicClient::createTi
 	return task->get_future();
 }
 
+Quickbi_publicClient::CreateTicket4CopilotOutcome Quickbi_publicClient::createTicket4Copilot(const CreateTicket4CopilotRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTicket4CopilotOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTicket4CopilotOutcome(CreateTicket4CopilotResult(outcome.result()));
+	else
+		return CreateTicket4CopilotOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::createTicket4CopilotAsync(const CreateTicket4CopilotRequest& request, const CreateTicket4CopilotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTicket4Copilot(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::CreateTicket4CopilotOutcomeCallable Quickbi_publicClient::createTicket4CopilotCallable(const CreateTicket4CopilotRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTicket4CopilotOutcome()>>(
+			[this, request]()
+			{
+			return this->createTicket4Copilot(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::CreateUserGroupOutcome Quickbi_publicClient::createUserGroup(const CreateUserGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1347,6 +1383,78 @@ Quickbi_publicClient::ListFavoriteReportsOutcomeCallable Quickbi_publicClient::l
 	return task->get_future();
 }
 
+Quickbi_publicClient::ListOrganizationRoleUsersOutcome Quickbi_publicClient::listOrganizationRoleUsers(const ListOrganizationRoleUsersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListOrganizationRoleUsersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListOrganizationRoleUsersOutcome(ListOrganizationRoleUsersResult(outcome.result()));
+	else
+		return ListOrganizationRoleUsersOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::listOrganizationRoleUsersAsync(const ListOrganizationRoleUsersRequest& request, const ListOrganizationRoleUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listOrganizationRoleUsers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ListOrganizationRoleUsersOutcomeCallable Quickbi_publicClient::listOrganizationRoleUsersCallable(const ListOrganizationRoleUsersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListOrganizationRoleUsersOutcome()>>(
+			[this, request]()
+			{
+			return this->listOrganizationRoleUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::ListOrganizationRolesOutcome Quickbi_publicClient::listOrganizationRoles(const ListOrganizationRolesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListOrganizationRolesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListOrganizationRolesOutcome(ListOrganizationRolesResult(outcome.result()));
+	else
+		return ListOrganizationRolesOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::listOrganizationRolesAsync(const ListOrganizationRolesRequest& request, const ListOrganizationRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listOrganizationRoles(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ListOrganizationRolesOutcomeCallable Quickbi_publicClient::listOrganizationRolesCallable(const ListOrganizationRolesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListOrganizationRolesOutcome()>>(
+			[this, request]()
+			{
+			return this->listOrganizationRoles(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::ListPortalMenuAuthorizationOutcome Quickbi_publicClient::listPortalMenuAuthorization(const ListPortalMenuAuthorizationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1521,6 +1629,78 @@ Quickbi_publicClient::ListUserGroupsByUserIdOutcomeCallable Quickbi_publicClient
 			[this, request]()
 			{
 			return this->listUserGroupsByUserId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::ListWorkspaceRoleUsersOutcome Quickbi_publicClient::listWorkspaceRoleUsers(const ListWorkspaceRoleUsersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListWorkspaceRoleUsersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListWorkspaceRoleUsersOutcome(ListWorkspaceRoleUsersResult(outcome.result()));
+	else
+		return ListWorkspaceRoleUsersOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::listWorkspaceRoleUsersAsync(const ListWorkspaceRoleUsersRequest& request, const ListWorkspaceRoleUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listWorkspaceRoleUsers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ListWorkspaceRoleUsersOutcomeCallable Quickbi_publicClient::listWorkspaceRoleUsersCallable(const ListWorkspaceRoleUsersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListWorkspaceRoleUsersOutcome()>>(
+			[this, request]()
+			{
+			return this->listWorkspaceRoleUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::ListWorkspaceRolesOutcome Quickbi_publicClient::listWorkspaceRoles(const ListWorkspaceRolesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListWorkspaceRolesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListWorkspaceRolesOutcome(ListWorkspaceRolesResult(outcome.result()));
+	else
+		return ListWorkspaceRolesOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::listWorkspaceRolesAsync(const ListWorkspaceRolesRequest& request, const ListWorkspaceRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listWorkspaceRoles(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ListWorkspaceRolesOutcomeCallable Quickbi_publicClient::listWorkspaceRolesCallable(const ListWorkspaceRolesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListWorkspaceRolesOutcome()>>(
+			[this, request]()
+			{
+			return this->listWorkspaceRoles(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1917,6 +2097,42 @@ Quickbi_publicClient::QueryEmbeddedStatusOutcomeCallable Quickbi_publicClient::q
 			[this, request]()
 			{
 			return this->queryEmbeddedStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::QueryOrganizationRoleConfigOutcome Quickbi_publicClient::queryOrganizationRoleConfig(const QueryOrganizationRoleConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryOrganizationRoleConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryOrganizationRoleConfigOutcome(QueryOrganizationRoleConfigResult(outcome.result()));
+	else
+		return QueryOrganizationRoleConfigOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryOrganizationRoleConfigAsync(const QueryOrganizationRoleConfigRequest& request, const QueryOrganizationRoleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryOrganizationRoleConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryOrganizationRoleConfigOutcomeCallable Quickbi_publicClient::queryOrganizationRoleConfigCallable(const QueryOrganizationRoleConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryOrganizationRoleConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->queryOrganizationRoleConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2565,6 +2781,42 @@ Quickbi_publicClient::QueryWorksByWorkspaceOutcomeCallable Quickbi_publicClient:
 			[this, request]()
 			{
 			return this->queryWorksByWorkspace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::QueryWorkspaceRoleConfigOutcome Quickbi_publicClient::queryWorkspaceRoleConfig(const QueryWorkspaceRoleConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryWorkspaceRoleConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryWorkspaceRoleConfigOutcome(QueryWorkspaceRoleConfigResult(outcome.result()));
+	else
+		return QueryWorkspaceRoleConfigOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryWorkspaceRoleConfigAsync(const QueryWorkspaceRoleConfigRequest& request, const QueryWorkspaceRoleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryWorkspaceRoleConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryWorkspaceRoleConfigOutcomeCallable Quickbi_publicClient::queryWorkspaceRoleConfigCallable(const QueryWorkspaceRoleConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryWorkspaceRoleConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->queryWorkspaceRoleConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

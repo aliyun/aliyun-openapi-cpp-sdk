@@ -78,6 +78,8 @@ void ListFavoriteReportsResult::parse(const std::string &payload)
 			dataItemObject.workspaceId = resultNodeDataDataItem["WorkspaceId"].asString();
 		if(!resultNodeDataDataItem["WorkspaceName"].isNull())
 			dataItemObject.workspaceName = resultNodeDataDataItem["WorkspaceName"].asString();
+		if(!resultNodeDataDataItem["FavoriteDate"].isNull())
+			dataItemObject.favoriteDate = resultNodeDataDataItem["FavoriteDate"].asString();
 		result_.data.push_back(dataItemObject);
 	}
 	if(!value["Success"].isNull())

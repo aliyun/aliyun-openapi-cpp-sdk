@@ -74,6 +74,7 @@ namespace AlibabaCloud
 						std::string caption;
 						std::string factColumn;
 					};
+					bool openOfflineAcceleration;
 					std::string ownerName;
 					std::string workspaceId;
 					bool rowLevel;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_LISTFAVORITEREPORTSRESULT_H_
-#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_LISTFAVORITEREPORTSRESULT_H_
+#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYWORKSPACEROLECONFIGRESULT_H_
+#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYWORKSPACEROLECONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,26 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT ListFavoriteReportsResult : public ServiceResult
+			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryWorkspaceRoleConfigResult : public ServiceResult
 			{
 			public:
 				struct Result
 				{
-					struct DataItem
+					struct AuthConfigListItem
 					{
-						bool favorite;
-						std::string ownerName;
-						std::string ownerNum;
-						std::string gmtModified;
-						std::string workspaceId;
-						std::string name;
-						std::string type;
-						std::string gmtCreate;
-						std::string treeId;
-						std::string workspaceName;
-						bool hasViewAuth;
-						std::string favoriteDate;
-						int publishStatus;
-						bool hasEditAuth;
+						std::string authKey;
+						std::vector<std::string> actionAuthKeys;
 					};
-					int totalNum;
-					int pageNum;
-					int pageSize;
-					std::vector<DataItem> data;
-					int totalPages;
+					std::string roleName;
+					bool isSystemRole;
+					long roleId;
+					std::vector<AuthConfigListItem> authConfigList;
 				};
 
 
-				ListFavoriteReportsResult();
-				explicit ListFavoriteReportsResult(const std::string &payload);
-				~ListFavoriteReportsResult();
+				QueryWorkspaceRoleConfigResult();
+				explicit QueryWorkspaceRoleConfigResult(const std::string &payload);
+				~QueryWorkspaceRoleConfigResult();
 				bool getSuccess()const;
 				Result getResult()const;
 
@@ -75,4 +62,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_LISTFAVORITEREPORTSRESULT_H_
+#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYWORKSPACEROLECONFIGRESULT_H_

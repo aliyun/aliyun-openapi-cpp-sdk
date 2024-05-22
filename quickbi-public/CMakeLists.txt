@@ -57,6 +57,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/CheckReadableResult.h
 	include/alibabacloud/quickbi-public/model/CreateTicketRequest.h
 	include/alibabacloud/quickbi-public/model/CreateTicketResult.h
+	include/alibabacloud/quickbi-public/model/CreateTicket4CopilotRequest.h
+	include/alibabacloud/quickbi-public/model/CreateTicket4CopilotResult.h
 	include/alibabacloud/quickbi-public/model/CreateUserGroupRequest.h
 	include/alibabacloud/quickbi-public/model/CreateUserGroupResult.h
 	include/alibabacloud/quickbi-public/model/DelayTicketExpireTimeRequest.h
@@ -93,6 +95,10 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/ListDataLevelPermissionWhiteListResult.h
 	include/alibabacloud/quickbi-public/model/ListFavoriteReportsRequest.h
 	include/alibabacloud/quickbi-public/model/ListFavoriteReportsResult.h
+	include/alibabacloud/quickbi-public/model/ListOrganizationRoleUsersRequest.h
+	include/alibabacloud/quickbi-public/model/ListOrganizationRoleUsersResult.h
+	include/alibabacloud/quickbi-public/model/ListOrganizationRolesRequest.h
+	include/alibabacloud/quickbi-public/model/ListOrganizationRolesResult.h
 	include/alibabacloud/quickbi-public/model/ListPortalMenuAuthorizationRequest.h
 	include/alibabacloud/quickbi-public/model/ListPortalMenuAuthorizationResult.h
 	include/alibabacloud/quickbi-public/model/ListPortalMenusRequest.h
@@ -103,6 +109,10 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/ListSharedReportsResult.h
 	include/alibabacloud/quickbi-public/model/ListUserGroupsByUserIdRequest.h
 	include/alibabacloud/quickbi-public/model/ListUserGroupsByUserIdResult.h
+	include/alibabacloud/quickbi-public/model/ListWorkspaceRoleUsersRequest.h
+	include/alibabacloud/quickbi-public/model/ListWorkspaceRoleUsersResult.h
+	include/alibabacloud/quickbi-public/model/ListWorkspaceRolesRequest.h
+	include/alibabacloud/quickbi-public/model/ListWorkspaceRolesResult.h
 	include/alibabacloud/quickbi-public/model/ModifyApiDatasourceParametersRequest.h
 	include/alibabacloud/quickbi-public/model/ModifyApiDatasourceParametersResult.h
 	include/alibabacloud/quickbi-public/model/QueryComponentPerformanceRequest.h
@@ -125,6 +135,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/QueryEmbeddedInfoResult.h
 	include/alibabacloud/quickbi-public/model/QueryEmbeddedStatusRequest.h
 	include/alibabacloud/quickbi-public/model/QueryEmbeddedStatusResult.h
+	include/alibabacloud/quickbi-public/model/QueryOrganizationRoleConfigRequest.h
+	include/alibabacloud/quickbi-public/model/QueryOrganizationRoleConfigResult.h
 	include/alibabacloud/quickbi-public/model/QueryOrganizationWorkspaceListRequest.h
 	include/alibabacloud/quickbi-public/model/QueryOrganizationWorkspaceListResult.h
 	include/alibabacloud/quickbi-public/model/QueryReadableResourcesListByUserIdRequest.h
@@ -161,6 +173,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/QueryWorksByOrganizationResult.h
 	include/alibabacloud/quickbi-public/model/QueryWorksByWorkspaceRequest.h
 	include/alibabacloud/quickbi-public/model/QueryWorksByWorkspaceResult.h
+	include/alibabacloud/quickbi-public/model/QueryWorkspaceRoleConfigRequest.h
+	include/alibabacloud/quickbi-public/model/QueryWorkspaceRoleConfigResult.h
 	include/alibabacloud/quickbi-public/model/QueryWorkspaceUserListRequest.h
 	include/alibabacloud/quickbi-public/model/QueryWorkspaceUserListResult.h
 	include/alibabacloud/quickbi-public/model/ResultCallbackRequest.h
@@ -232,6 +246,8 @@ set(quickbi-public_src
 	src/model/CheckReadableResult.cc
 	src/model/CreateTicketRequest.cc
 	src/model/CreateTicketResult.cc
+	src/model/CreateTicket4CopilotRequest.cc
+	src/model/CreateTicket4CopilotResult.cc
 	src/model/CreateUserGroupRequest.cc
 	src/model/CreateUserGroupResult.cc
 	src/model/DelayTicketExpireTimeRequest.cc
@@ -268,6 +284,10 @@ set(quickbi-public_src
 	src/model/ListDataLevelPermissionWhiteListResult.cc
 	src/model/ListFavoriteReportsRequest.cc
 	src/model/ListFavoriteReportsResult.cc
+	src/model/ListOrganizationRoleUsersRequest.cc
+	src/model/ListOrganizationRoleUsersResult.cc
+	src/model/ListOrganizationRolesRequest.cc
+	src/model/ListOrganizationRolesResult.cc
 	src/model/ListPortalMenuAuthorizationRequest.cc
 	src/model/ListPortalMenuAuthorizationResult.cc
 	src/model/ListPortalMenusRequest.cc
@@ -278,6 +298,10 @@ set(quickbi-public_src
 	src/model/ListSharedReportsResult.cc
 	src/model/ListUserGroupsByUserIdRequest.cc
 	src/model/ListUserGroupsByUserIdResult.cc
+	src/model/ListWorkspaceRoleUsersRequest.cc
+	src/model/ListWorkspaceRoleUsersResult.cc
+	src/model/ListWorkspaceRolesRequest.cc
+	src/model/ListWorkspaceRolesResult.cc
 	src/model/ModifyApiDatasourceParametersRequest.cc
 	src/model/ModifyApiDatasourceParametersResult.cc
 	src/model/QueryComponentPerformanceRequest.cc
@@ -300,6 +324,8 @@ set(quickbi-public_src
 	src/model/QueryEmbeddedInfoResult.cc
 	src/model/QueryEmbeddedStatusRequest.cc
 	src/model/QueryEmbeddedStatusResult.cc
+	src/model/QueryOrganizationRoleConfigRequest.cc
+	src/model/QueryOrganizationRoleConfigResult.cc
 	src/model/QueryOrganizationWorkspaceListRequest.cc
 	src/model/QueryOrganizationWorkspaceListResult.cc
 	src/model/QueryReadableResourcesListByUserIdRequest.cc
@@ -336,6 +362,8 @@ set(quickbi-public_src
 	src/model/QueryWorksByOrganizationResult.cc
 	src/model/QueryWorksByWorkspaceRequest.cc
 	src/model/QueryWorksByWorkspaceResult.cc
+	src/model/QueryWorkspaceRoleConfigRequest.cc
+	src/model/QueryWorkspaceRoleConfigResult.cc
 	src/model/QueryWorkspaceUserListRequest.cc
 	src/model/QueryWorkspaceUserListResult.cc
 	src/model/ResultCallbackRequest.cc

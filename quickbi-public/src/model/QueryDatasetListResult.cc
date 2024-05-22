@@ -72,6 +72,8 @@ void QueryDatasetListResult::parse(const std::string &payload)
 			dataItemObject.datasetName = resultNodeDataDataItem["DatasetName"].asString();
 		if(!resultNodeDataDataItem["DatasetId"].isNull())
 			dataItemObject.datasetId = resultNodeDataDataItem["DatasetId"].asString();
+		if(!resultNodeDataDataItem["OpenOfflineAcceleration"].isNull())
+			dataItemObject.openOfflineAcceleration = resultNodeDataDataItem["OpenOfflineAcceleration"].asString() == "true";
 		auto dataSourceNode = value["DataSource"];
 		if(!dataSourceNode["DsType"].isNull())
 			dataItemObject.dataSource.dsType = dataSourceNode["DsType"].asString();

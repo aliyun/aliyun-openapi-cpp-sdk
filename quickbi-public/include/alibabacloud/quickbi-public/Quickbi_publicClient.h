@@ -58,6 +58,8 @@
 #include "model/CheckReadableResult.h"
 #include "model/CreateTicketRequest.h"
 #include "model/CreateTicketResult.h"
+#include "model/CreateTicket4CopilotRequest.h"
+#include "model/CreateTicket4CopilotResult.h"
 #include "model/CreateUserGroupRequest.h"
 #include "model/CreateUserGroupResult.h"
 #include "model/DelayTicketExpireTimeRequest.h"
@@ -94,6 +96,10 @@
 #include "model/ListDataLevelPermissionWhiteListResult.h"
 #include "model/ListFavoriteReportsRequest.h"
 #include "model/ListFavoriteReportsResult.h"
+#include "model/ListOrganizationRoleUsersRequest.h"
+#include "model/ListOrganizationRoleUsersResult.h"
+#include "model/ListOrganizationRolesRequest.h"
+#include "model/ListOrganizationRolesResult.h"
 #include "model/ListPortalMenuAuthorizationRequest.h"
 #include "model/ListPortalMenuAuthorizationResult.h"
 #include "model/ListPortalMenusRequest.h"
@@ -104,6 +110,10 @@
 #include "model/ListSharedReportsResult.h"
 #include "model/ListUserGroupsByUserIdRequest.h"
 #include "model/ListUserGroupsByUserIdResult.h"
+#include "model/ListWorkspaceRoleUsersRequest.h"
+#include "model/ListWorkspaceRoleUsersResult.h"
+#include "model/ListWorkspaceRolesRequest.h"
+#include "model/ListWorkspaceRolesResult.h"
 #include "model/ModifyApiDatasourceParametersRequest.h"
 #include "model/ModifyApiDatasourceParametersResult.h"
 #include "model/QueryComponentPerformanceRequest.h"
@@ -126,6 +136,8 @@
 #include "model/QueryEmbeddedInfoResult.h"
 #include "model/QueryEmbeddedStatusRequest.h"
 #include "model/QueryEmbeddedStatusResult.h"
+#include "model/QueryOrganizationRoleConfigRequest.h"
+#include "model/QueryOrganizationRoleConfigResult.h"
 #include "model/QueryOrganizationWorkspaceListRequest.h"
 #include "model/QueryOrganizationWorkspaceListResult.h"
 #include "model/QueryReadableResourcesListByUserIdRequest.h"
@@ -162,6 +174,8 @@
 #include "model/QueryWorksByOrganizationResult.h"
 #include "model/QueryWorksByWorkspaceRequest.h"
 #include "model/QueryWorksByWorkspaceResult.h"
+#include "model/QueryWorkspaceRoleConfigRequest.h"
+#include "model/QueryWorkspaceRoleConfigResult.h"
 #include "model/QueryWorkspaceUserListRequest.h"
 #include "model/QueryWorkspaceUserListResult.h"
 #include "model/ResultCallbackRequest.h"
@@ -257,6 +271,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateTicketResult> CreateTicketOutcome;
 			typedef std::future<CreateTicketOutcome> CreateTicketOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::CreateTicketRequest&, const CreateTicketOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTicketAsyncHandler;
+			typedef Outcome<Error, Model::CreateTicket4CopilotResult> CreateTicket4CopilotOutcome;
+			typedef std::future<CreateTicket4CopilotOutcome> CreateTicket4CopilotOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::CreateTicket4CopilotRequest&, const CreateTicket4CopilotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTicket4CopilotAsyncHandler;
 			typedef Outcome<Error, Model::CreateUserGroupResult> CreateUserGroupOutcome;
 			typedef std::future<CreateUserGroupOutcome> CreateUserGroupOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::CreateUserGroupRequest&, const CreateUserGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserGroupAsyncHandler;
@@ -311,6 +328,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListFavoriteReportsResult> ListFavoriteReportsOutcome;
 			typedef std::future<ListFavoriteReportsOutcome> ListFavoriteReportsOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListFavoriteReportsRequest&, const ListFavoriteReportsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFavoriteReportsAsyncHandler;
+			typedef Outcome<Error, Model::ListOrganizationRoleUsersResult> ListOrganizationRoleUsersOutcome;
+			typedef std::future<ListOrganizationRoleUsersOutcome> ListOrganizationRoleUsersOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ListOrganizationRoleUsersRequest&, const ListOrganizationRoleUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOrganizationRoleUsersAsyncHandler;
+			typedef Outcome<Error, Model::ListOrganizationRolesResult> ListOrganizationRolesOutcome;
+			typedef std::future<ListOrganizationRolesOutcome> ListOrganizationRolesOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ListOrganizationRolesRequest&, const ListOrganizationRolesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOrganizationRolesAsyncHandler;
 			typedef Outcome<Error, Model::ListPortalMenuAuthorizationResult> ListPortalMenuAuthorizationOutcome;
 			typedef std::future<ListPortalMenuAuthorizationOutcome> ListPortalMenuAuthorizationOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListPortalMenuAuthorizationRequest&, const ListPortalMenuAuthorizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPortalMenuAuthorizationAsyncHandler;
@@ -326,6 +349,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListUserGroupsByUserIdResult> ListUserGroupsByUserIdOutcome;
 			typedef std::future<ListUserGroupsByUserIdOutcome> ListUserGroupsByUserIdOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListUserGroupsByUserIdRequest&, const ListUserGroupsByUserIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserGroupsByUserIdAsyncHandler;
+			typedef Outcome<Error, Model::ListWorkspaceRoleUsersResult> ListWorkspaceRoleUsersOutcome;
+			typedef std::future<ListWorkspaceRoleUsersOutcome> ListWorkspaceRoleUsersOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ListWorkspaceRoleUsersRequest&, const ListWorkspaceRoleUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkspaceRoleUsersAsyncHandler;
+			typedef Outcome<Error, Model::ListWorkspaceRolesResult> ListWorkspaceRolesOutcome;
+			typedef std::future<ListWorkspaceRolesOutcome> ListWorkspaceRolesOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ListWorkspaceRolesRequest&, const ListWorkspaceRolesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkspaceRolesAsyncHandler;
 			typedef Outcome<Error, Model::ModifyApiDatasourceParametersResult> ModifyApiDatasourceParametersOutcome;
 			typedef std::future<ModifyApiDatasourceParametersOutcome> ModifyApiDatasourceParametersOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ModifyApiDatasourceParametersRequest&, const ModifyApiDatasourceParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiDatasourceParametersAsyncHandler;
@@ -359,6 +388,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryEmbeddedStatusResult> QueryEmbeddedStatusOutcome;
 			typedef std::future<QueryEmbeddedStatusOutcome> QueryEmbeddedStatusOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryEmbeddedStatusRequest&, const QueryEmbeddedStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryEmbeddedStatusAsyncHandler;
+			typedef Outcome<Error, Model::QueryOrganizationRoleConfigResult> QueryOrganizationRoleConfigOutcome;
+			typedef std::future<QueryOrganizationRoleConfigOutcome> QueryOrganizationRoleConfigOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryOrganizationRoleConfigRequest&, const QueryOrganizationRoleConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryOrganizationRoleConfigAsyncHandler;
 			typedef Outcome<Error, Model::QueryOrganizationWorkspaceListResult> QueryOrganizationWorkspaceListOutcome;
 			typedef std::future<QueryOrganizationWorkspaceListOutcome> QueryOrganizationWorkspaceListOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryOrganizationWorkspaceListRequest&, const QueryOrganizationWorkspaceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryOrganizationWorkspaceListAsyncHandler;
@@ -413,6 +445,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryWorksByWorkspaceResult> QueryWorksByWorkspaceOutcome;
 			typedef std::future<QueryWorksByWorkspaceOutcome> QueryWorksByWorkspaceOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryWorksByWorkspaceRequest&, const QueryWorksByWorkspaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryWorksByWorkspaceAsyncHandler;
+			typedef Outcome<Error, Model::QueryWorkspaceRoleConfigResult> QueryWorkspaceRoleConfigOutcome;
+			typedef std::future<QueryWorkspaceRoleConfigOutcome> QueryWorkspaceRoleConfigOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryWorkspaceRoleConfigRequest&, const QueryWorkspaceRoleConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryWorkspaceRoleConfigAsyncHandler;
 			typedef Outcome<Error, Model::QueryWorkspaceUserListResult> QueryWorkspaceUserListOutcome;
 			typedef std::future<QueryWorkspaceUserListOutcome> QueryWorkspaceUserListOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryWorkspaceUserListRequest&, const QueryWorkspaceUserListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryWorkspaceUserListAsyncHandler;
@@ -520,6 +555,9 @@ namespace AlibabaCloud
 			CreateTicketOutcome createTicket(const Model::CreateTicketRequest &request)const;
 			void createTicketAsync(const Model::CreateTicketRequest& request, const CreateTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTicketOutcomeCallable createTicketCallable(const Model::CreateTicketRequest& request) const;
+			CreateTicket4CopilotOutcome createTicket4Copilot(const Model::CreateTicket4CopilotRequest &request)const;
+			void createTicket4CopilotAsync(const Model::CreateTicket4CopilotRequest& request, const CreateTicket4CopilotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTicket4CopilotOutcomeCallable createTicket4CopilotCallable(const Model::CreateTicket4CopilotRequest& request) const;
 			CreateUserGroupOutcome createUserGroup(const Model::CreateUserGroupRequest &request)const;
 			void createUserGroupAsync(const Model::CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateUserGroupOutcomeCallable createUserGroupCallable(const Model::CreateUserGroupRequest& request) const;
@@ -574,6 +612,12 @@ namespace AlibabaCloud
 			ListFavoriteReportsOutcome listFavoriteReports(const Model::ListFavoriteReportsRequest &request)const;
 			void listFavoriteReportsAsync(const Model::ListFavoriteReportsRequest& request, const ListFavoriteReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListFavoriteReportsOutcomeCallable listFavoriteReportsCallable(const Model::ListFavoriteReportsRequest& request) const;
+			ListOrganizationRoleUsersOutcome listOrganizationRoleUsers(const Model::ListOrganizationRoleUsersRequest &request)const;
+			void listOrganizationRoleUsersAsync(const Model::ListOrganizationRoleUsersRequest& request, const ListOrganizationRoleUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListOrganizationRoleUsersOutcomeCallable listOrganizationRoleUsersCallable(const Model::ListOrganizationRoleUsersRequest& request) const;
+			ListOrganizationRolesOutcome listOrganizationRoles(const Model::ListOrganizationRolesRequest &request)const;
+			void listOrganizationRolesAsync(const Model::ListOrganizationRolesRequest& request, const ListOrganizationRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListOrganizationRolesOutcomeCallable listOrganizationRolesCallable(const Model::ListOrganizationRolesRequest& request) const;
 			ListPortalMenuAuthorizationOutcome listPortalMenuAuthorization(const Model::ListPortalMenuAuthorizationRequest &request)const;
 			void listPortalMenuAuthorizationAsync(const Model::ListPortalMenuAuthorizationRequest& request, const ListPortalMenuAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPortalMenuAuthorizationOutcomeCallable listPortalMenuAuthorizationCallable(const Model::ListPortalMenuAuthorizationRequest& request) const;
@@ -589,6 +633,12 @@ namespace AlibabaCloud
 			ListUserGroupsByUserIdOutcome listUserGroupsByUserId(const Model::ListUserGroupsByUserIdRequest &request)const;
 			void listUserGroupsByUserIdAsync(const Model::ListUserGroupsByUserIdRequest& request, const ListUserGroupsByUserIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUserGroupsByUserIdOutcomeCallable listUserGroupsByUserIdCallable(const Model::ListUserGroupsByUserIdRequest& request) const;
+			ListWorkspaceRoleUsersOutcome listWorkspaceRoleUsers(const Model::ListWorkspaceRoleUsersRequest &request)const;
+			void listWorkspaceRoleUsersAsync(const Model::ListWorkspaceRoleUsersRequest& request, const ListWorkspaceRoleUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListWorkspaceRoleUsersOutcomeCallable listWorkspaceRoleUsersCallable(const Model::ListWorkspaceRoleUsersRequest& request) const;
+			ListWorkspaceRolesOutcome listWorkspaceRoles(const Model::ListWorkspaceRolesRequest &request)const;
+			void listWorkspaceRolesAsync(const Model::ListWorkspaceRolesRequest& request, const ListWorkspaceRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListWorkspaceRolesOutcomeCallable listWorkspaceRolesCallable(const Model::ListWorkspaceRolesRequest& request) const;
 			ModifyApiDatasourceParametersOutcome modifyApiDatasourceParameters(const Model::ModifyApiDatasourceParametersRequest &request)const;
 			void modifyApiDatasourceParametersAsync(const Model::ModifyApiDatasourceParametersRequest& request, const ModifyApiDatasourceParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyApiDatasourceParametersOutcomeCallable modifyApiDatasourceParametersCallable(const Model::ModifyApiDatasourceParametersRequest& request) const;
@@ -622,6 +672,9 @@ namespace AlibabaCloud
 			QueryEmbeddedStatusOutcome queryEmbeddedStatus(const Model::QueryEmbeddedStatusRequest &request)const;
 			void queryEmbeddedStatusAsync(const Model::QueryEmbeddedStatusRequest& request, const QueryEmbeddedStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryEmbeddedStatusOutcomeCallable queryEmbeddedStatusCallable(const Model::QueryEmbeddedStatusRequest& request) const;
+			QueryOrganizationRoleConfigOutcome queryOrganizationRoleConfig(const Model::QueryOrganizationRoleConfigRequest &request)const;
+			void queryOrganizationRoleConfigAsync(const Model::QueryOrganizationRoleConfigRequest& request, const QueryOrganizationRoleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryOrganizationRoleConfigOutcomeCallable queryOrganizationRoleConfigCallable(const Model::QueryOrganizationRoleConfigRequest& request) const;
 			QueryOrganizationWorkspaceListOutcome queryOrganizationWorkspaceList(const Model::QueryOrganizationWorkspaceListRequest &request)const;
 			void queryOrganizationWorkspaceListAsync(const Model::QueryOrganizationWorkspaceListRequest& request, const QueryOrganizationWorkspaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryOrganizationWorkspaceListOutcomeCallable queryOrganizationWorkspaceListCallable(const Model::QueryOrganizationWorkspaceListRequest& request) const;
@@ -676,6 +729,9 @@ namespace AlibabaCloud
 			QueryWorksByWorkspaceOutcome queryWorksByWorkspace(const Model::QueryWorksByWorkspaceRequest &request)const;
 			void queryWorksByWorkspaceAsync(const Model::QueryWorksByWorkspaceRequest& request, const QueryWorksByWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryWorksByWorkspaceOutcomeCallable queryWorksByWorkspaceCallable(const Model::QueryWorksByWorkspaceRequest& request) const;
+			QueryWorkspaceRoleConfigOutcome queryWorkspaceRoleConfig(const Model::QueryWorkspaceRoleConfigRequest &request)const;
+			void queryWorkspaceRoleConfigAsync(const Model::QueryWorkspaceRoleConfigRequest& request, const QueryWorkspaceRoleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryWorkspaceRoleConfigOutcomeCallable queryWorkspaceRoleConfigCallable(const Model::QueryWorkspaceRoleConfigRequest& request) const;
 			QueryWorkspaceUserListOutcome queryWorkspaceUserList(const Model::QueryWorkspaceUserListRequest &request)const;
 			void queryWorkspaceUserListAsync(const Model::QueryWorkspaceUserListRequest& request, const QueryWorkspaceUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryWorkspaceUserListOutcomeCallable queryWorkspaceUserListCallable(const Model::QueryWorkspaceUserListRequest& request) const;

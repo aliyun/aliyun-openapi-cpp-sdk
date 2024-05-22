@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYDATASETLISTRESULT_H_
-#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYDATASETLISTRESULT_H_
+#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_LISTORGANIZATIONROLEUSERSRESULT_H_
+#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_LISTORGANIZATIONROLEUSERSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryDatasetListResult : public ServiceResult
+			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT ListOrganizationRoleUsersResult : public ServiceResult
 			{
 			public:
 				struct Result
 				{
 					struct DataItem
 					{
-						struct DataSource
-						{
-							std::string dsName;
-							std::string dsId;
-							std::string dsType;
-						};
-						struct Directory
-						{
-							std::string pathId;
-							std::string pathName;
-							std::string id;
-							std::string name;
-						};
-						std::string modifyTime;
-						bool openOfflineAcceleration;
-						std::string ownerName;
-						std::string description;
-						std::string createTime;
-						std::string workspaceId;
-						bool rowLevel;
-						DataSource dataSource;
-						std::string datasetId;
-						std::string ownerId;
-						std::string datasetName;
-						std::string workspaceName;
-						Directory directory;
+						std::string userId;
+						std::string nickName;
 					};
 					int totalNum;
 					int pageNum;
@@ -71,9 +47,9 @@ namespace AlibabaCloud
 				};
 
 
-				QueryDatasetListResult();
-				explicit QueryDatasetListResult(const std::string &payload);
-				~QueryDatasetListResult();
+				ListOrganizationRoleUsersResult();
+				explicit ListOrganizationRoleUsersResult(const std::string &payload);
+				~ListOrganizationRoleUsersResult();
 				bool getSuccess()const;
 				Result getResult()const;
 
@@ -87,4 +63,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYDATASETLISTRESULT_H_
+#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_LISTORGANIZATIONROLEUSERSRESULT_H_
