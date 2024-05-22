@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ENS_EXPORT RebootInstancesResult : public ServiceResult
 			{
 			public:
-				struct InstanceResponsesItem
+				struct Responses
 				{
 					std::string message;
 					std::string instanceId;
@@ -43,12 +43,12 @@ namespace AlibabaCloud
 				RebootInstancesResult();
 				explicit RebootInstancesResult(const std::string &payload);
 				~RebootInstancesResult();
-				std::vector<InstanceResponsesItem> getInstanceResponses()const;
+				std::vector<Responses> getInstanceResponses()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<InstanceResponsesItem> instanceResponses_;
+				std::vector<Responses> instanceResponses_;
 
 			};
 		}

@@ -30,26 +30,26 @@ class ALIBABACLOUD_ENS_EXPORT RescaleApplicationRequest : public RpcServiceReque
 public:
 	RescaleApplicationRequest();
 	~RescaleApplicationRequest();
-	std::string getResourceSelector() const;
-	void setResourceSelector(const std::string &resourceSelector);
-	std::string getToAppVersion() const;
-	void setToAppVersion(const std::string &toAppVersion);
 	std::string getRescaleType() const;
 	void setRescaleType(const std::string &rescaleType);
+	std::string getResourceSelector() const;
+	void setResourceSelector(const std::string &resourceSelector);
 	int getTimeout() const;
 	void setTimeout(int timeout);
 	std::string getRescaleLevel() const;
 	void setRescaleLevel(const std::string &rescaleLevel);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
+	std::string getToAppVersion() const;
+	void setToAppVersion(const std::string &toAppVersion);
 
 private:
-	std::string resourceSelector_;
-	std::string toAppVersion_;
 	std::string rescaleType_;
+	std::string resourceSelector_;
 	int timeout_;
 	std::string rescaleLevel_;
 	std::string appId_;
+	std::string toAppVersion_;
 };
 } // namespace Model
 } // namespace Ens

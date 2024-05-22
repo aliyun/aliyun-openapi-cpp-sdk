@@ -42,10 +42,13 @@ namespace AlibabaCloud
 						bool standby;
 					};
 					std::string status;
+					std::string type;
+					std::string destCIDR;
 					std::string snatEntryName;
 					std::string sourceCIDR;
 					std::vector<SnatTableEntry::SnatIp> snatIps;
 					std::string snatEntryId;
+					int idleTimeout;
 					std::string snatIp;
 					std::string standbyStatus;
 					std::string natGatewayId;

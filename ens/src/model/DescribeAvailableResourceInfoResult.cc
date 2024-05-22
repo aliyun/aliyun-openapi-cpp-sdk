@@ -77,6 +77,8 @@ void DescribeAvailableResourceInfoResult::parse(const std::string &payload)
 				ensRegionIdsExtendsObject.name = valueSupportResourcesSupportResourceEnsRegionIdsExtendsEnsRegionId["Name"].asString();
 			if(!valueSupportResourcesSupportResourceEnsRegionIdsExtendsEnsRegionId["Province"].isNull())
 				ensRegionIdsExtendsObject.province = valueSupportResourcesSupportResourceEnsRegionIdsExtendsEnsRegionId["Province"].asString();
+			if(!valueSupportResourcesSupportResourceEnsRegionIdsExtendsEnsRegionId["Isp"].isNull())
+				ensRegionIdsExtendsObject.isp = valueSupportResourcesSupportResourceEnsRegionIdsExtendsEnsRegionId["Isp"].asString();
 			supportResourcesObject.ensRegionIdsExtends.push_back(ensRegionIdsExtendsObject);
 		}
 		auto allBandwidthTypes = value["BandwidthTypes"]["BandwidthType"];
@@ -88,6 +90,9 @@ void DescribeAvailableResourceInfoResult::parse(const std::string &payload)
 		auto allInstanceSpeces = value["InstanceSpeces"]["InstanceSpec"];
 		for (auto value : allInstanceSpeces)
 			supportResourcesObject.instanceSpeces.push_back(value.asString());
+		auto allIsp = value["Isp"]["Isp"];
+		for (auto value : allIsp)
+			supportResourcesObject.isp.push_back(value.asString());
 		supportResources_.push_back(supportResourcesObject);
 	}
 

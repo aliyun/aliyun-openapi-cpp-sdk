@@ -116,6 +116,20 @@ void RunInstancesRequest::setEnsRegionId(const std::string &ensRegionId) {
   setParameter(std::string("EnsRegionId"), ensRegionId);
 }
 
+std::vector<RunInstancesRequest::Tag> RunInstancesRequest::getTag() const {
+  return tag_;
+}
+
+void RunInstancesRequest::setTag(const std::vector<RunInstancesRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 long RunInstancesRequest::getPeriod() const {
   return period_;
 }
@@ -134,6 +148,15 @@ void RunInstancesRequest::setPublicIpIdentification(bool publicIpIdentification)
   setParameter(std::string("PublicIpIdentification"), publicIpIdentification ? "true" : "false");
 }
 
+std::string RunInstancesRequest::getBillingCycle() const {
+  return billingCycle_;
+}
+
+void RunInstancesRequest::setBillingCycle(const std::string &billingCycle) {
+  billingCycle_ = billingCycle;
+  setParameter(std::string("BillingCycle"), billingCycle);
+}
+
 std::string RunInstancesRequest::getVSwitchId() const {
   return vSwitchId_;
 }
@@ -150,6 +173,15 @@ std::string RunInstancesRequest::getPrivateIpAddress() const {
 void RunInstancesRequest::setPrivateIpAddress(const std::string &privateIpAddress) {
   privateIpAddress_ = privateIpAddress;
   setParameter(std::string("PrivateIpAddress"), privateIpAddress);
+}
+
+std::string RunInstancesRequest::getSpotStrategy() const {
+  return spotStrategy_;
+}
+
+void RunInstancesRequest::setSpotStrategy(const std::string &spotStrategy) {
+  spotStrategy_ = spotStrategy;
+  setParameter(std::string("SpotStrategy"), spotStrategy);
 }
 
 std::string RunInstancesRequest::getPeriodUnit() const {
@@ -224,6 +256,15 @@ void RunInstancesRequest::setInternetMaxBandwidthOut(long internetMaxBandwidthOu
   setParameter(std::string("InternetMaxBandwidthOut"), std::to_string(internetMaxBandwidthOut));
 }
 
+std::string RunInstancesRequest::getAutoUseCoupon() const {
+  return autoUseCoupon_;
+}
+
+void RunInstancesRequest::setAutoUseCoupon(const std::string &autoUseCoupon) {
+  autoUseCoupon_ = autoUseCoupon;
+  setParameter(std::string("AutoUseCoupon"), autoUseCoupon);
+}
+
 std::string RunInstancesRequest::getUserData() const {
   return userData_;
 }
@@ -269,6 +310,24 @@ void RunInstancesRequest::setAmount(long amount) {
   setParameter(std::string("Amount"), std::to_string(amount));
 }
 
+std::string RunInstancesRequest::getAutoReleaseTime() const {
+  return autoReleaseTime_;
+}
+
+void RunInstancesRequest::setAutoReleaseTime(const std::string &autoReleaseTime) {
+  autoReleaseTime_ = autoReleaseTime;
+  setParameter(std::string("AutoReleaseTime"), autoReleaseTime);
+}
+
+std::string RunInstancesRequest::getIpType() const {
+  return ipType_;
+}
+
+void RunInstancesRequest::setIpType(const std::string &ipType) {
+  ipType_ = ipType;
+  setParameter(std::string("IpType"), ipType);
+}
+
 std::vector<RunInstancesRequest::DataDisk> RunInstancesRequest::getDataDisk() const {
   return dataDisk_;
 }
@@ -277,7 +336,9 @@ void RunInstancesRequest::setDataDisk(const std::vector<RunInstancesRequest::Dat
   dataDisk_ = dataDisk;
   for(int dep1 = 0; dep1 != dataDisk.size(); dep1++) {
     setParameter(std::string("DataDisk") + "." + std::to_string(dep1 + 1) + ".Size", std::to_string(dataDisk[dep1].size));
+    setParameter(std::string("DataDisk") + "." + std::to_string(dep1 + 1) + ".Encrypted", dataDisk[dep1].encrypted ? "true" : "false");
     setParameter(std::string("DataDisk") + "." + std::to_string(dep1 + 1) + ".Category", dataDisk[dep1].category);
+    setParameter(std::string("DataDisk") + "." + std::to_string(dep1 + 1) + ".KMSKeyId", dataDisk[dep1].kMSKeyId);
   }
 }
 

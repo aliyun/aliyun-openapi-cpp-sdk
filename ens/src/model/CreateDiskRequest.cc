@@ -25,13 +25,13 @@ CreateDiskRequest::CreateDiskRequest()
 
 CreateDiskRequest::~CreateDiskRequest() {}
 
-std::string CreateDiskRequest::getSnapshotId() const {
-  return snapshotId_;
+std::string CreateDiskRequest::getDiskName() const {
+  return diskName_;
 }
 
-void CreateDiskRequest::setSnapshotId(const std::string &snapshotId) {
-  snapshotId_ = snapshotId;
-  setParameter(std::string("SnapshotId"), snapshotId);
+void CreateDiskRequest::setDiskName(const std::string &diskName) {
+  diskName_ = diskName;
+  setParameter(std::string("DiskName"), diskName);
 }
 
 std::string CreateDiskRequest::getEnsRegionId() const {
@@ -43,15 +43,6 @@ void CreateDiskRequest::setEnsRegionId(const std::string &ensRegionId) {
   setParameter(std::string("EnsRegionId"), ensRegionId);
 }
 
-std::string CreateDiskRequest::getInstanceChargeType() const {
-  return instanceChargeType_;
-}
-
-void CreateDiskRequest::setInstanceChargeType(const std::string &instanceChargeType) {
-  instanceChargeType_ = instanceChargeType;
-  setParameter(std::string("InstanceChargeType"), instanceChargeType);
-}
-
 std::string CreateDiskRequest::getSize() const {
   return size_;
 }
@@ -61,6 +52,33 @@ void CreateDiskRequest::setSize(const std::string &size) {
   setParameter(std::string("Size"), size);
 }
 
+std::string CreateDiskRequest::getSnapshotId() const {
+  return snapshotId_;
+}
+
+void CreateDiskRequest::setSnapshotId(const std::string &snapshotId) {
+  snapshotId_ = snapshotId;
+  setParameter(std::string("SnapshotId"), snapshotId);
+}
+
+std::string CreateDiskRequest::getInstanceChargeType() const {
+  return instanceChargeType_;
+}
+
+void CreateDiskRequest::setInstanceChargeType(const std::string &instanceChargeType) {
+  instanceChargeType_ = instanceChargeType;
+  setParameter(std::string("InstanceChargeType"), instanceChargeType);
+}
+
+bool CreateDiskRequest::getEncrypted() const {
+  return encrypted_;
+}
+
+void CreateDiskRequest::setEncrypted(bool encrypted) {
+  encrypted_ = encrypted;
+  setParameter(std::string("Encrypted"), encrypted ? "true" : "false");
+}
+
 std::string CreateDiskRequest::getCategory() const {
   return category_;
 }
@@ -68,5 +86,14 @@ std::string CreateDiskRequest::getCategory() const {
 void CreateDiskRequest::setCategory(const std::string &category) {
   category_ = category;
   setParameter(std::string("Category"), category);
+}
+
+std::string CreateDiskRequest::getKMSKeyId() const {
+  return kMSKeyId_;
+}
+
+void CreateDiskRequest::setKMSKeyId(const std::string &kMSKeyId) {
+  kMSKeyId_ = kMSKeyId;
+  setParameter(std::string("KMSKeyId"), kMSKeyId);
 }
 

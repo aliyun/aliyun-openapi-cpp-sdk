@@ -52,3 +52,12 @@ void RenewARMServerInstanceRequest::setInstanceId(const std::string &instanceId)
   setParameter(std::string("InstanceId"), instanceId);
 }
 
+bool RenewARMServerInstanceRequest::getAutoRenew() const {
+  return autoRenew_;
+}
+
+void RenewARMServerInstanceRequest::setAutoRenew(bool autoRenew) {
+  autoRenew_ = autoRenew;
+  setParameter(std::string("AutoRenew"), autoRenew ? "true" : "false");
+}
+

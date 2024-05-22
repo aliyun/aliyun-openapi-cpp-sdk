@@ -34,6 +34,24 @@ void CreateSnatEntryRequest::setSnatIp(const std::string &snatIp) {
   setParameter(std::string("SnatIp"), snatIp);
 }
 
+std::string CreateSnatEntryRequest::getType() const {
+  return type_;
+}
+
+void CreateSnatEntryRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
+}
+
+std::string CreateSnatEntryRequest::getDestCIDR() const {
+  return destCIDR_;
+}
+
+void CreateSnatEntryRequest::setDestCIDR(const std::string &destCIDR) {
+  destCIDR_ = destCIDR;
+  setParameter(std::string("DestCIDR"), destCIDR);
+}
+
 std::string CreateSnatEntryRequest::getSourceVSwitchId() const {
   return sourceVSwitchId_;
 }
@@ -77,6 +95,15 @@ std::string CreateSnatEntryRequest::getNatGatewayId() const {
 void CreateSnatEntryRequest::setNatGatewayId(const std::string &natGatewayId) {
   natGatewayId_ = natGatewayId;
   setParameter(std::string("NatGatewayId"), natGatewayId);
+}
+
+int CreateSnatEntryRequest::getIdleTimeout() const {
+  return idleTimeout_;
+}
+
+void CreateSnatEntryRequest::setIdleTimeout(int idleTimeout) {
+  idleTimeout_ = idleTimeout;
+  setParameter(std::string("IdleTimeout"), std::to_string(idleTimeout));
 }
 
 std::string CreateSnatEntryRequest::getSnatEntryName() const {

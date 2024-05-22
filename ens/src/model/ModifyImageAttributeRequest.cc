@@ -43,12 +43,3 @@ void ModifyImageAttributeRequest::setImageName(const std::string &imageName) {
   setParameter(std::string("ImageName"), imageName);
 }
 
-std::string ModifyImageAttributeRequest::getProduct() const {
-  return product_;
-}
-
-void ModifyImageAttributeRequest::setProduct(const std::string &product) {
-  product_ = product;
-  setParameter(std::string("product"), product);
-}
-

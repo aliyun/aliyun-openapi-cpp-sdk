@@ -52,3 +52,12 @@ void DescribeKeyPairsRequest::setPageSize(const std::string &pageSize) {
   setParameter(std::string("PageSize"), pageSize);
 }
 
+std::string DescribeKeyPairsRequest::getKeyPairId() const {
+  return keyPairId_;
+}
+
+void DescribeKeyPairsRequest::setKeyPairId(const std::string &keyPairId) {
+  keyPairId_ = keyPairId;
+  setParameter(std::string("KeyPairId"), keyPairId);
+}
+

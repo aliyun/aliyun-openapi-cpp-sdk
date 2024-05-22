@@ -40,14 +40,20 @@ namespace AlibabaCloud
 						bool primary;
 					};
 					std::string status;
+					std::string description;
 					std::string instanceId;
 					std::string vSwitchId;
-					std::string creationTime;
+					std::string networkInterfaceName;
 					std::string primaryIpType;
 					std::string primaryIp;
-					std::string ensRegionId;
 					std::string macAddress;
 					std::string networkInterfaceId;
+					std::string networkId;
+					std::vector<std::string> securityGroupIds;
+					std::string instanceName;
+					std::string type;
+					std::string creationTime;
+					std::string ensRegionId;
 					std::vector<NetworkInterfaceSet::PrivateIpSet> privateIpSets;
 				};
 

@@ -143,15 +143,6 @@ void DescribeARMServerInstancesRequest::setMinDate(const std::string &minDate) {
   setParameter(std::string("MinDate"), minDate);
 }
 
-std::string DescribeARMServerInstancesRequest::getLatestAction() const {
-  return latestAction_;
-}
-
-void DescribeARMServerInstancesRequest::setLatestAction(const std::string &latestAction) {
-  latestAction_ = latestAction;
-  setParameter(std::string("LatestAction"), latestAction);
-}
-
 std::string DescribeARMServerInstancesRequest::get_Namespace() const {
   return _namespace_;
 }

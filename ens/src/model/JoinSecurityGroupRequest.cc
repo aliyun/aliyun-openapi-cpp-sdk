@@ -43,3 +43,12 @@ void JoinSecurityGroupRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
+std::string JoinSecurityGroupRequest::getNetworkInterfaceId() const {
+  return networkInterfaceId_;
+}
+
+void JoinSecurityGroupRequest::setNetworkInterfaceId(const std::string &networkInterfaceId) {
+  networkInterfaceId_ = networkInterfaceId;
+  setParameter(std::string("NetworkInterfaceId"), networkInterfaceId);
+}
+

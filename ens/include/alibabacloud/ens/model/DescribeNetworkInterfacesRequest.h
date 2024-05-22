@@ -30,26 +30,47 @@ class ALIBABACLOUD_ENS_EXPORT DescribeNetworkInterfacesRequest : public RpcServi
 public:
 	DescribeNetworkInterfacesRequest();
 	~DescribeNetworkInterfacesRequest();
-	std::string getPageNumber() const;
-	void setPageNumber(const std::string &pageNumber);
+	std::string getType() const;
+	void setType(const std::string &type);
 	std::string getEnsRegionId() const;
 	void setEnsRegionId(const std::string &ensRegionId);
-	std::string getPageSize() const;
-	void setPageSize(const std::string &pageSize);
+	std::string getNetworkInterfaceName() const;
+	void setNetworkInterfaceName(const std::string &networkInterfaceName);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::string getNetworkId() const;
+	void setNetworkId(const std::string &networkId);
+	std::string getStatus() const;
+	void setStatus(const std::string &status);
+	std::string getSecurityGroupId() const;
+	void setSecurityGroupId(const std::string &securityGroupId);
+	std::string getPageNumber() const;
+	void setPageNumber(const std::string &pageNumber);
+	bool getShowDetail() const;
+	void setShowDetail(bool showDetail);
+	std::string getPageSize() const;
+	void setPageSize(const std::string &pageSize);
 	std::string getPrimaryIpAddress() const;
 	void setPrimaryIpAddress(const std::string &primaryIpAddress);
+	std::string getNetworkInterfaceId() const;
+	void setNetworkInterfaceId(const std::string &networkInterfaceId);
 
 private:
-	std::string pageNumber_;
+	std::string type_;
 	std::string ensRegionId_;
-	std::string pageSize_;
+	std::string networkInterfaceName_;
 	std::string vSwitchId_;
 	std::string instanceId_;
+	std::string networkId_;
+	std::string status_;
+	std::string securityGroupId_;
+	std::string pageNumber_;
+	bool showDetail_;
+	std::string pageSize_;
 	std::string primaryIpAddress_;
+	std::string networkInterfaceId_;
 };
 } // namespace Model
 } // namespace Ens

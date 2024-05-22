@@ -49,6 +49,8 @@ void DescribeKeyPairsResult::parse(const std::string &payload)
 			keyPairsObject.keyPairFingerPrint = valueKeyPairsKeyPair["KeyPairFingerPrint"].asString();
 		if(!valueKeyPairsKeyPair["KeyPairName"].isNull())
 			keyPairsObject.keyPairName = valueKeyPairsKeyPair["KeyPairName"].asString();
+		if(!valueKeyPairsKeyPair["KeyPairId"].isNull())
+			keyPairsObject.keyPairId = valueKeyPairsKeyPair["KeyPairId"].asString();
 		keyPairs_.push_back(keyPairsObject);
 	}
 	if(!value["PageNumber"].isNull())

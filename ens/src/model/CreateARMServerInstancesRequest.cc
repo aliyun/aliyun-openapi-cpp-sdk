@@ -106,6 +106,15 @@ void CreateARMServerInstancesRequest::setServerType(const std::string &serverTyp
   setParameter(std::string("ServerType"), serverType);
 }
 
+bool CreateARMServerInstancesRequest::getAutoUseCoupon() const {
+  return autoUseCoupon_;
+}
+
+void CreateARMServerInstancesRequest::setAutoUseCoupon(bool autoUseCoupon) {
+  autoUseCoupon_ = autoUseCoupon;
+  setParameter(std::string("AutoUseCoupon"), autoUseCoupon ? "true" : "false");
+}
+
 std::string CreateARMServerInstancesRequest::getInstanceType() const {
   return instanceType_;
 }

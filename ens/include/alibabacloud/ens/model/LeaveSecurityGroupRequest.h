@@ -34,10 +34,13 @@ public:
 	void setSecurityGroupId(const std::string &securityGroupId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::string getNetworkInterfaceId() const;
+	void setNetworkInterfaceId(const std::string &networkInterfaceId);
 
 private:
 	std::string securityGroupId_;
 	std::string instanceId_;
+	std::string networkInterfaceId_;
 };
 } // namespace Model
 } // namespace Ens

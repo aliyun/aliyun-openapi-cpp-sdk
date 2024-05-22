@@ -43,24 +43,6 @@ void CreateEipInstanceRequest::setEnsRegionId(const std::string &ensRegionId) {
   setParameter(std::string("EnsRegionId"), ensRegionId);
 }
 
-std::string CreateEipInstanceRequest::getInstanceChargeType() const {
-  return instanceChargeType_;
-}
-
-void CreateEipInstanceRequest::setInstanceChargeType(const std::string &instanceChargeType) {
-  instanceChargeType_ = instanceChargeType;
-  setParameter(std::string("InstanceChargeType"), instanceChargeType);
-}
-
-long CreateEipInstanceRequest::getBandwidth() const {
-  return bandwidth_;
-}
-
-void CreateEipInstanceRequest::setBandwidth(long bandwidth) {
-  bandwidth_ = bandwidth;
-  setParameter(std::string("Bandwidth"), std::to_string(bandwidth));
-}
-
 std::string CreateEipInstanceRequest::getInternetChargeType() const {
   return internetChargeType_;
 }
@@ -77,5 +59,32 @@ std::string CreateEipInstanceRequest::getName() const {
 void CreateEipInstanceRequest::setName(const std::string &name) {
   name_ = name;
   setParameter(std::string("Name"), name);
+}
+
+std::string CreateEipInstanceRequest::getDescription() const {
+  return description_;
+}
+
+void CreateEipInstanceRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
+}
+
+std::string CreateEipInstanceRequest::getInstanceChargeType() const {
+  return instanceChargeType_;
+}
+
+void CreateEipInstanceRequest::setInstanceChargeType(const std::string &instanceChargeType) {
+  instanceChargeType_ = instanceChargeType;
+  setParameter(std::string("InstanceChargeType"), instanceChargeType);
+}
+
+long CreateEipInstanceRequest::getBandwidth() const {
+  return bandwidth_;
+}
+
+void CreateEipInstanceRequest::setBandwidth(long bandwidth) {
+  bandwidth_ = bandwidth;
+  setParameter(std::string("Bandwidth"), std::to_string(bandwidth));
 }
 

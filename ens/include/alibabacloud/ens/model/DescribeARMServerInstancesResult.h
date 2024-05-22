@@ -42,8 +42,14 @@ namespace AlibabaCloud
 							std::string ipAddress;
 							std::string networkId;
 						};
+						struct SdgDeployInfo
+						{
+							std::string sDGId;
+							std::string status;
+						};
 						std::string status;
 						NetworkAttributes networkAttributes;
+						SdgDeployInfo sdgDeployInfo;
 						std::string instanceId;
 						std::string state;
 						std::string latestAction;

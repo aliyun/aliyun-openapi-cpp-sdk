@@ -38,8 +38,10 @@ namespace AlibabaCloud
 					std::string category;
 					std::string instanceId;
 					int size;
+					bool encrypted;
 					std::string diskChargeType;
 					std::string diskName;
+					std::string encryptedKeyId;
 					std::string instanceName;
 					bool portable;
 					std::string snapshotId;

@@ -44,29 +44,35 @@ namespace AlibabaCloud
 				explicit DescribeSnatAttributeResult(const std::string &payload);
 				~DescribeSnatAttributeResult();
 				std::string getStatus()const;
-				std::string getSnatEntryName()const;
 				std::string getSourceCIDR()const;
+				int getIdleTimeout()const;
+				std::string getSnatIp()const;
+				std::string getStandbySnatIp()const;
+				std::string getType()const;
+				std::string getDestCIDR()const;
+				std::string getSnatEntryName()const;
 				std::string getCreationTime()const;
 				std::vector<Snatip> getSnatIps()const;
 				std::string getSnatEntryId()const;
-				std::string getSnatIp()const;
 				std::string getStandbyStatus()const;
 				std::string getNatGatewayId()const;
-				std::string getStandbySnatIp()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
-				std::string snatEntryName_;
 				std::string sourceCIDR_;
+				int idleTimeout_;
+				std::string snatIp_;
+				std::string standbySnatIp_;
+				std::string type_;
+				std::string destCIDR_;
+				std::string snatEntryName_;
 				std::string creationTime_;
 				std::vector<Snatip> snatIps_;
 				std::string snatEntryId_;
-				std::string snatIp_;
 				std::string standbyStatus_;
 				std::string natGatewayId_;
-				std::string standbySnatIp_;
 
 			};
 		}

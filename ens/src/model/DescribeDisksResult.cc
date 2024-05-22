@@ -71,6 +71,10 @@ void DescribeDisksResult::parse(const std::string &payload)
 			disksObject.snapshotId = valueDisksDisksItem["SnapshotId"].asString();
 		if(!valueDisksDisksItem["SerialId"].isNull())
 			disksObject.serialId = valueDisksDisksItem["SerialId"].asString();
+		if(!valueDisksDisksItem["Encrypted"].isNull())
+			disksObject.encrypted = valueDisksDisksItem["Encrypted"].asString() == "true";
+		if(!valueDisksDisksItem["EncryptedKeyId"].isNull())
+			disksObject.encryptedKeyId = valueDisksDisksItem["EncryptedKeyId"].asString();
 		disks_.push_back(disksObject);
 	}
 	if(!value["Code"].isNull())

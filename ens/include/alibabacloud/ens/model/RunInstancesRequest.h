@@ -32,9 +32,15 @@ public:
 		long size;
 		std::string category;
 	};
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	struct DataDisk {
 		long size;
+		bool encrypted;
 		std::string category;
+		std::string kMSKeyId;
 	};
 	RunInstancesRequest();
 	~RunInstancesRequest();
@@ -58,14 +64,20 @@ public:
 	void setNetDistrictCode(const std::string &netDistrictCode);
 	std::string getEnsRegionId() const;
 	void setEnsRegionId(const std::string &ensRegionId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	long getPeriod() const;
 	void setPeriod(long period);
 	bool getPublicIpIdentification() const;
 	void setPublicIpIdentification(bool publicIpIdentification);
+	std::string getBillingCycle() const;
+	void setBillingCycle(const std::string &billingCycle);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getPrivateIpAddress() const;
 	void setPrivateIpAddress(const std::string &privateIpAddress);
+	std::string getSpotStrategy() const;
+	void setSpotStrategy(const std::string &spotStrategy);
 	std::string getPeriodUnit() const;
 	void setPeriodUnit(const std::string &periodUnit);
 	std::string getInstanceName() const;
@@ -82,6 +94,8 @@ public:
 	void setImageId(const std::string &imageId);
 	long getInternetMaxBandwidthOut() const;
 	void setInternetMaxBandwidthOut(long internetMaxBandwidthOut);
+	std::string getAutoUseCoupon() const;
+	void setAutoUseCoupon(const std::string &autoUseCoupon);
 	std::string getUserData() const;
 	void setUserData(const std::string &userData);
 	bool getPasswordInherit() const;
@@ -92,6 +106,10 @@ public:
 	void setInstanceChargeType(const std::string &instanceChargeType);
 	long getAmount() const;
 	void setAmount(long amount);
+	std::string getAutoReleaseTime() const;
+	void setAutoReleaseTime(const std::string &autoReleaseTime);
+	std::string getIpType() const;
+	void setIpType(const std::string &ipType);
 	std::vector<DataDisk> getDataDisk() const;
 	void setDataDisk(const std::vector<DataDisk> &dataDisk);
 	std::string getSchedulingStrategy() const;
@@ -110,10 +128,13 @@ private:
 	SystemDisk systemDisk_;
 	std::string netDistrictCode_;
 	std::string ensRegionId_;
+	std::vector<Tag> tag_;
 	long period_;
 	bool publicIpIdentification_;
+	std::string billingCycle_;
 	std::string vSwitchId_;
 	std::string privateIpAddress_;
+	std::string spotStrategy_;
 	std::string periodUnit_;
 	std::string instanceName_;
 	bool autoRenew_;
@@ -122,11 +143,14 @@ private:
 	std::string schedulingPriceStrategy_;
 	std::string imageId_;
 	long internetMaxBandwidthOut_;
+	std::string autoUseCoupon_;
 	std::string userData_;
 	bool passwordInherit_;
 	std::string instanceType_;
 	std::string instanceChargeType_;
 	long amount_;
+	std::string autoReleaseTime_;
+	std::string ipType_;
 	std::vector<DataDisk> dataDisk_;
 	std::string schedulingStrategy_;
 	std::string carrier_;

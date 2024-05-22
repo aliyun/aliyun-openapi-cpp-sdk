@@ -61,6 +61,18 @@ void DescribeInstancesRequest::setEnsServiceId(const std::string &ensServiceId) 
   setParameter(std::string("EnsServiceId"), ensServiceId);
 }
 
+std::vector<DescribeInstancesRequest::Tags> DescribeInstancesRequest::getTags() const {
+  return tags_;
+}
+
+void DescribeInstancesRequest::setTags(const std::vector<DescribeInstancesRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+    setParameter(std::string("Tags") + "." + std::to_string(dep1 + 1) + ".Value", tags[dep1].value);
+    setParameter(std::string("Tags") + "." + std::to_string(dep1 + 1) + ".Key", tags[dep1].key);
+  }
+}
+
 std::string DescribeInstancesRequest::getVSwitchId() const {
   return vSwitchId_;
 }

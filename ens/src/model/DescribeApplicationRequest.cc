@@ -25,6 +25,15 @@ DescribeApplicationRequest::DescribeApplicationRequest()
 
 DescribeApplicationRequest::~DescribeApplicationRequest() {}
 
+std::string DescribeApplicationRequest::getResourceSelector() const {
+  return resourceSelector_;
+}
+
+void DescribeApplicationRequest::setResourceSelector(const std::string &resourceSelector) {
+  resourceSelector_ = resourceSelector;
+  setParameter(std::string("ResourceSelector"), resourceSelector);
+}
+
 std::string DescribeApplicationRequest::getAppVersions() const {
   return appVersions_;
 }

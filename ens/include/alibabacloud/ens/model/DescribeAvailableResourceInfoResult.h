@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					{
 						std::string area;
 						std::string enName;
+						std::string isp;
 						std::string ensRegionId;
 						std::string province;
 						std::string name;
@@ -53,6 +54,7 @@ namespace AlibabaCloud
 					std::vector<std::string> bandwidthTypes;
 					std::vector<std::string> instanceSpeces;
 					int systemDiskMaxSize;
+					std::vector<std::string> isp;
 					std::vector<SupportResource::EnsRegionId> ensRegionIdsExtends;
 					int dataDiskMaxSize;
 					std::vector<std::string> ensRegionIds;

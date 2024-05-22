@@ -77,6 +77,10 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.memory = std::stoi(valueInstancesInstance["Memory"].asString());
 		if(!valueInstancesInstance["ImageId"].isNull())
 			instancesObject.imageId = valueInstancesInstance["ImageId"].asString();
+		if(!valueInstancesInstance["AutoReleaseTime"].isNull())
+			instancesObject.autoReleaseTime = valueInstancesInstance["AutoReleaseTime"].asString();
+		if(!valueInstancesInstance["SpotStrategy"].isNull())
+			instancesObject.spotStrategy = valueInstancesInstance["SpotStrategy"].asString();
 		auto allDataDiskNode = valueInstancesInstance["DataDisk"]["DataDiskItem"];
 		for (auto valueInstancesInstanceDataDiskDataDiskItem : allDataDiskNode)
 		{
@@ -99,6 +103,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 				dataDiskObject.category = valueInstancesInstanceDataDiskDataDiskItem["Category"].asString();
 			if(!valueInstancesInstanceDataDiskDataDiskItem["name"].isNull())
 				dataDiskObject.name = valueInstancesInstanceDataDiskDataDiskItem["name"].asString();
+			if(!valueInstancesInstanceDataDiskDataDiskItem["DiskSize"].isNull())
+				dataDiskObject.diskSize = std::stoi(valueInstancesInstanceDataDiskDataDiskItem["DiskSize"].asString());
 			instancesObject.dataDisk.push_back(dataDiskObject);
 		}
 		auto allPublicIpAddressesNode = valueInstancesInstance["PublicIpAddresses"]["PublicIpAddress"];
@@ -124,6 +130,16 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			if(!valueInstancesInstancePrivateIpAddressesPrivateIpAddress["Isp"].isNull())
 				privateIpAddressesObject.isp = valueInstancesInstancePrivateIpAddressesPrivateIpAddress["Isp"].asString();
 			instancesObject.privateIpAddresses.push_back(privateIpAddressesObject);
+		}
+		auto allTagsNode = valueInstancesInstance["Tags"]["TagsItem"];
+		for (auto valueInstancesInstanceTagsTagsItem : allTagsNode)
+		{
+			Instance::TagsItem tagsObject;
+			if(!valueInstancesInstanceTagsTagsItem["TagValue"].isNull())
+				tagsObject.tagValue = valueInstancesInstanceTagsTagsItem["TagValue"].asString();
+			if(!valueInstancesInstanceTagsTagsItem["TagKey"].isNull())
+				tagsObject.tagKey = valueInstancesInstanceTagsTagsItem["TagKey"].asString();
+			instancesObject.tags.push_back(tagsObject);
 		}
 		auto systemDiskNode = value["SystemDisk"];
 		if(!systemDiskNode["device_type"].isNull())

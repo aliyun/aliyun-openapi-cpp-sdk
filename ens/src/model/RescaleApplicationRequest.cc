@@ -25,24 +25,6 @@ RescaleApplicationRequest::RescaleApplicationRequest()
 
 RescaleApplicationRequest::~RescaleApplicationRequest() {}
 
-std::string RescaleApplicationRequest::getResourceSelector() const {
-  return resourceSelector_;
-}
-
-void RescaleApplicationRequest::setResourceSelector(const std::string &resourceSelector) {
-  resourceSelector_ = resourceSelector;
-  setParameter(std::string("ResourceSelector"), resourceSelector);
-}
-
-std::string RescaleApplicationRequest::getToAppVersion() const {
-  return toAppVersion_;
-}
-
-void RescaleApplicationRequest::setToAppVersion(const std::string &toAppVersion) {
-  toAppVersion_ = toAppVersion;
-  setParameter(std::string("ToAppVersion"), toAppVersion);
-}
-
 std::string RescaleApplicationRequest::getRescaleType() const {
   return rescaleType_;
 }
@@ -50,6 +32,15 @@ std::string RescaleApplicationRequest::getRescaleType() const {
 void RescaleApplicationRequest::setRescaleType(const std::string &rescaleType) {
   rescaleType_ = rescaleType;
   setParameter(std::string("RescaleType"), rescaleType);
+}
+
+std::string RescaleApplicationRequest::getResourceSelector() const {
+  return resourceSelector_;
+}
+
+void RescaleApplicationRequest::setResourceSelector(const std::string &resourceSelector) {
+  resourceSelector_ = resourceSelector;
+  setParameter(std::string("ResourceSelector"), resourceSelector);
 }
 
 int RescaleApplicationRequest::getTimeout() const {
@@ -77,5 +68,14 @@ std::string RescaleApplicationRequest::getAppId() const {
 void RescaleApplicationRequest::setAppId(const std::string &appId) {
   appId_ = appId;
   setParameter(std::string("AppId"), appId);
+}
+
+std::string RescaleApplicationRequest::getToAppVersion() const {
+  return toAppVersion_;
+}
+
+void RescaleApplicationRequest::setToAppVersion(const std::string &toAppVersion) {
+  toAppVersion_ = toAppVersion;
+  setParameter(std::string("ToAppVersion"), toAppVersion);
 }
 

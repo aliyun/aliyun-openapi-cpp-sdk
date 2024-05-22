@@ -28,6 +28,10 @@ namespace Ens {
 namespace Model {
 class ALIBABACLOUD_ENS_EXPORT DescribeInstancesRequest : public RpcServiceRequest {
 public:
+	struct Tags {
+		std::string value;
+		std::string key;
+	};
 	DescribeInstancesRequest();
 	~DescribeInstancesRequest();
 	std::string getOrderByParams() const;
@@ -38,6 +42,8 @@ public:
 	void setInstanceResourceType(const std::string &instanceResourceType);
 	std::string getEnsServiceId() const;
 	void setEnsServiceId(const std::string &ensServiceId);
+	std::vector<Tags> getTags() const;
+	void setTags(const std::vector<Tags> &tags);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getInstanceId() const;
@@ -70,6 +76,7 @@ private:
 	std::string ensRegionId_;
 	std::string instanceResourceType_;
 	std::string ensServiceId_;
+	std::vector<Tags> tags_;
 	std::string vSwitchId_;
 	std::string instanceId_;
 	std::string instanceName_;

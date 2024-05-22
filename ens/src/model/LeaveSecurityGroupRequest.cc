@@ -43,3 +43,12 @@ void LeaveSecurityGroupRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
+std::string LeaveSecurityGroupRequest::getNetworkInterfaceId() const {
+  return networkInterfaceId_;
+}
+
+void LeaveSecurityGroupRequest::setNetworkInterfaceId(const std::string &networkInterfaceId) {
+  networkInterfaceId_ = networkInterfaceId;
+  setParameter(std::string("NetworkInterfaceId"), networkInterfaceId);
+}
+

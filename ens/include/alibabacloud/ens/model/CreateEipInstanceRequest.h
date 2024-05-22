@@ -34,22 +34,25 @@ public:
 	void setIsp(const std::string &isp);
 	std::string getEnsRegionId() const;
 	void setEnsRegionId(const std::string &ensRegionId);
-	std::string getInstanceChargeType() const;
-	void setInstanceChargeType(const std::string &instanceChargeType);
-	long getBandwidth() const;
-	void setBandwidth(long bandwidth);
 	std::string getInternetChargeType() const;
 	void setInternetChargeType(const std::string &internetChargeType);
 	std::string getName() const;
 	void setName(const std::string &name);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
+	std::string getInstanceChargeType() const;
+	void setInstanceChargeType(const std::string &instanceChargeType);
+	long getBandwidth() const;
+	void setBandwidth(long bandwidth);
 
 private:
 	std::string isp_;
 	std::string ensRegionId_;
-	std::string instanceChargeType_;
-	long bandwidth_;
 	std::string internetChargeType_;
 	std::string name_;
+	std::string description_;
+	std::string instanceChargeType_;
+	long bandwidth_;
 };
 } // namespace Model
 } // namespace Ens

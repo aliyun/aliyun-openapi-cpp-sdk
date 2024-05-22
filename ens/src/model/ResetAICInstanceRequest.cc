@@ -43,14 +43,3 @@ void ResetAICInstanceRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::vector<ResetAICInstanceRequest::std::string> ResetAICInstanceRequest::getInstanceIds() const {
-  return instanceIds_;
-}
-
-void ResetAICInstanceRequest::setInstanceIds(const std::vector<ResetAICInstanceRequest::std::string> &instanceIds) {
-  instanceIds_ = instanceIds;
-  for(int dep1 = 0; dep1 != instanceIds.size(); dep1++) {
-    setParameter(std::string("InstanceIds") + "." + std::to_string(dep1 + 1), instanceIds[dep1]);
-  }
-}
-

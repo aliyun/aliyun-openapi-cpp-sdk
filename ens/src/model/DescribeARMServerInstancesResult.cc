@@ -94,6 +94,11 @@ void DescribeARMServerInstancesResult::parse(const std::string &payload)
 				aICInstancesObject.networkAttributes.networkId = networkAttributesNode["NetworkId"].asString();
 			if(!networkAttributesNode["VSwitchId"].isNull())
 				aICInstancesObject.networkAttributes.vSwitchId = networkAttributesNode["VSwitchId"].asString();
+			auto sdgDeployInfoNode = value["SdgDeployInfo"];
+			if(!sdgDeployInfoNode["SDGId"].isNull())
+				aICInstancesObject.sdgDeployInfo.sDGId = sdgDeployInfoNode["SDGId"].asString();
+			if(!sdgDeployInfoNode["Status"].isNull())
+				aICInstancesObject.sdgDeployInfo.status = sdgDeployInfoNode["Status"].asString();
 			serversObject.aICInstances.push_back(aICInstancesObject);
 		}
 		servers_.push_back(serversObject);

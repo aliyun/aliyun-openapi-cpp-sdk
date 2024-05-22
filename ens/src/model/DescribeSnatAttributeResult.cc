@@ -69,6 +69,12 @@ void DescribeSnatAttributeResult::parse(const std::string &payload)
 		standbySnatIp_ = value["StandbySnatIp"].asString();
 	if(!value["StandbyStatus"].isNull())
 		standbyStatus_ = value["StandbyStatus"].asString();
+	if(!value["Type"].isNull())
+		type_ = value["Type"].asString();
+	if(!value["IdleTimeout"].isNull())
+		idleTimeout_ = std::stoi(value["IdleTimeout"].asString());
+	if(!value["DestCIDR"].isNull())
+		destCIDR_ = value["DestCIDR"].asString();
 
 }
 
@@ -77,14 +83,39 @@ std::string DescribeSnatAttributeResult::getStatus()const
 	return status_;
 }
 
-std::string DescribeSnatAttributeResult::getSnatEntryName()const
-{
-	return snatEntryName_;
-}
-
 std::string DescribeSnatAttributeResult::getSourceCIDR()const
 {
 	return sourceCIDR_;
+}
+
+int DescribeSnatAttributeResult::getIdleTimeout()const
+{
+	return idleTimeout_;
+}
+
+std::string DescribeSnatAttributeResult::getSnatIp()const
+{
+	return snatIp_;
+}
+
+std::string DescribeSnatAttributeResult::getStandbySnatIp()const
+{
+	return standbySnatIp_;
+}
+
+std::string DescribeSnatAttributeResult::getType()const
+{
+	return type_;
+}
+
+std::string DescribeSnatAttributeResult::getDestCIDR()const
+{
+	return destCIDR_;
+}
+
+std::string DescribeSnatAttributeResult::getSnatEntryName()const
+{
+	return snatEntryName_;
 }
 
 std::string DescribeSnatAttributeResult::getCreationTime()const
@@ -102,11 +133,6 @@ std::string DescribeSnatAttributeResult::getSnatEntryId()const
 	return snatEntryId_;
 }
 
-std::string DescribeSnatAttributeResult::getSnatIp()const
-{
-	return snatIp_;
-}
-
 std::string DescribeSnatAttributeResult::getStandbyStatus()const
 {
 	return standbyStatus_;
@@ -115,10 +141,5 @@ std::string DescribeSnatAttributeResult::getStandbyStatus()const
 std::string DescribeSnatAttributeResult::getNatGatewayId()const
 {
 	return natGatewayId_;
-}
-
-std::string DescribeSnatAttributeResult::getStandbySnatIp()const
-{
-	return standbySnatIp_;
 }
 

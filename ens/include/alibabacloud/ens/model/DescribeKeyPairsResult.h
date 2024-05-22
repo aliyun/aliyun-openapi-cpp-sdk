@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string keyPairFingerPrint;
 					std::string keyPairName;
+					std::string keyPairId;
 					std::string creationTime;
 				};
 

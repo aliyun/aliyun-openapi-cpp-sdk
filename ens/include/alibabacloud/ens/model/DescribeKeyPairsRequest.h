@@ -36,11 +36,14 @@ public:
 	void setPageNumber(const std::string &pageNumber);
 	std::string getPageSize() const;
 	void setPageSize(const std::string &pageSize);
+	std::string getKeyPairId() const;
+	void setKeyPairId(const std::string &keyPairId);
 
 private:
 	std::string keyPairName_;
 	std::string pageNumber_;
 	std::string pageSize_;
+	std::string keyPairId_;
 };
 } // namespace Model
 } // namespace Ens

@@ -49,6 +49,8 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 			networkInterfaceSetsObject.ensRegionId = valueNetworkInterfaceSetsNetworkInterfaceSet["EnsRegionId"].asString();
 		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["InstanceId"].isNull())
 			networkInterfaceSetsObject.instanceId = valueNetworkInterfaceSetsNetworkInterfaceSet["InstanceId"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["InstanceName"].isNull())
+			networkInterfaceSetsObject.instanceName = valueNetworkInterfaceSetsNetworkInterfaceSet["InstanceName"].asString();
 		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["MacAddress"].isNull())
 			networkInterfaceSetsObject.macAddress = valueNetworkInterfaceSetsNetworkInterfaceSet["MacAddress"].asString();
 		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceId"].isNull())
@@ -59,8 +61,16 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 			networkInterfaceSetsObject.primaryIpType = valueNetworkInterfaceSetsNetworkInterfaceSet["PrimaryIpType"].asString();
 		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["Status"].isNull())
 			networkInterfaceSetsObject.status = valueNetworkInterfaceSetsNetworkInterfaceSet["Status"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkId"].isNull())
+			networkInterfaceSetsObject.networkId = valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkId"].asString();
 		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["VSwitchId"].isNull())
 			networkInterfaceSetsObject.vSwitchId = valueNetworkInterfaceSetsNetworkInterfaceSet["VSwitchId"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceName"].isNull())
+			networkInterfaceSetsObject.networkInterfaceName = valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceName"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["Description"].isNull())
+			networkInterfaceSetsObject.description = valueNetworkInterfaceSetsNetworkInterfaceSet["Description"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["Type"].isNull())
+			networkInterfaceSetsObject.type = valueNetworkInterfaceSetsNetworkInterfaceSet["Type"].asString();
 		auto allPrivateIpSetsNode = valueNetworkInterfaceSetsNetworkInterfaceSet["PrivateIpSets"]["PrivateIpSet"];
 		for (auto valueNetworkInterfaceSetsNetworkInterfaceSetPrivateIpSetsPrivateIpSet : allPrivateIpSetsNode)
 		{
@@ -71,6 +81,9 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 				privateIpSetsObject.primary = valueNetworkInterfaceSetsNetworkInterfaceSetPrivateIpSetsPrivateIpSet["Primary"].asString() == "true";
 			networkInterfaceSetsObject.privateIpSets.push_back(privateIpSetsObject);
 		}
+		auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroup"];
+		for (auto value : allSecurityGroupIds)
+			networkInterfaceSetsObject.securityGroupIds.push_back(value.asString());
 		networkInterfaceSets_.push_back(networkInterfaceSetsObject);
 	}
 	if(!value["PageNumber"].isNull())

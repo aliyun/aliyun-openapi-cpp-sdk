@@ -54,8 +54,6 @@ public:
 	void setEnsRegionIds(const std::vector<std::string> &ensRegionIds);
 	std::string getMinDate() const;
 	void setMinDate(const std::string &minDate);
-	std::string getLatestAction() const;
-	void setLatestAction(const std::string &latestAction);
 	std::string get_Namespace() const;
 	void set_Namespace(const std::string &_namespace);
 
@@ -72,7 +70,6 @@ private:
 	int pageSize_;
 	std::vector<std::string> ensRegionIds_;
 	std::string minDate_;
-	std::string latestAction_;
 	std::string _namespace_;
 };
 } // namespace Model

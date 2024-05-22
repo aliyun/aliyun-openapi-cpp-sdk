@@ -34,3 +34,12 @@ void DeleteKeyPairsRequest::setKeyPairName(const std::string &keyPairName) {
   setParameter(std::string("KeyPairName"), keyPairName);
 }
 
+std::string DeleteKeyPairsRequest::getKeyPairId() const {
+  return keyPairId_;
+}
+
+void DeleteKeyPairsRequest::setKeyPairId(const std::string &keyPairId) {
+  keyPairId_ = keyPairId;
+  setParameter(std::string("KeyPairId"), keyPairId);
+}
+

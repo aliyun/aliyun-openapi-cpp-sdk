@@ -60,6 +60,7 @@ namespace AlibabaCloud
 						int storage;
 						std::string category;
 						int size;
+						int diskSize;
 						std::string diskName;
 						std::string diskId;
 						std::string name;
@@ -76,6 +77,11 @@ namespace AlibabaCloud
 						std::string ip;
 						std::string isp;
 					};
+					struct TagsItem
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::vector<Instance::PrivateIpAddress> privateIpAddresses;
 					std::string instanceTypeFamily;
 					int memory;
@@ -89,7 +95,9 @@ namespace AlibabaCloud
 					std::string imageId;
 					std::vector<Instance::PublicIpAddress> publicIpAddresses;
 					int disk;
+					std::vector<Instance::TagsItem> tags;
 					std::string hostName;
+					std::string spotStrategy;
 					std::string status;
 					std::string instanceId;
 					std::string specName;
@@ -101,6 +109,7 @@ namespace AlibabaCloud
 					std::string creationTime;
 					std::string ensRegionId;
 					std::string instanceResourceType;
+					std::string autoReleaseTime;
 				};
 
 

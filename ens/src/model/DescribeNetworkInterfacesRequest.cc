@@ -25,13 +25,13 @@ DescribeNetworkInterfacesRequest::DescribeNetworkInterfacesRequest()
 
 DescribeNetworkInterfacesRequest::~DescribeNetworkInterfacesRequest() {}
 
-std::string DescribeNetworkInterfacesRequest::getPageNumber() const {
-  return pageNumber_;
+std::string DescribeNetworkInterfacesRequest::getType() const {
+  return type_;
 }
 
-void DescribeNetworkInterfacesRequest::setPageNumber(const std::string &pageNumber) {
-  pageNumber_ = pageNumber;
-  setParameter(std::string("PageNumber"), pageNumber);
+void DescribeNetworkInterfacesRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
 }
 
 std::string DescribeNetworkInterfacesRequest::getEnsRegionId() const {
@@ -43,13 +43,13 @@ void DescribeNetworkInterfacesRequest::setEnsRegionId(const std::string &ensRegi
   setParameter(std::string("EnsRegionId"), ensRegionId);
 }
 
-std::string DescribeNetworkInterfacesRequest::getPageSize() const {
-  return pageSize_;
+std::string DescribeNetworkInterfacesRequest::getNetworkInterfaceName() const {
+  return networkInterfaceName_;
 }
 
-void DescribeNetworkInterfacesRequest::setPageSize(const std::string &pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), pageSize);
+void DescribeNetworkInterfacesRequest::setNetworkInterfaceName(const std::string &networkInterfaceName) {
+  networkInterfaceName_ = networkInterfaceName;
+  setParameter(std::string("NetworkInterfaceName"), networkInterfaceName);
 }
 
 std::string DescribeNetworkInterfacesRequest::getVSwitchId() const {
@@ -70,6 +70,60 @@ void DescribeNetworkInterfacesRequest::setInstanceId(const std::string &instance
   setParameter(std::string("InstanceId"), instanceId);
 }
 
+std::string DescribeNetworkInterfacesRequest::getNetworkId() const {
+  return networkId_;
+}
+
+void DescribeNetworkInterfacesRequest::setNetworkId(const std::string &networkId) {
+  networkId_ = networkId;
+  setParameter(std::string("NetworkId"), networkId);
+}
+
+std::string DescribeNetworkInterfacesRequest::getStatus() const {
+  return status_;
+}
+
+void DescribeNetworkInterfacesRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
+}
+
+std::string DescribeNetworkInterfacesRequest::getSecurityGroupId() const {
+  return securityGroupId_;
+}
+
+void DescribeNetworkInterfacesRequest::setSecurityGroupId(const std::string &securityGroupId) {
+  securityGroupId_ = securityGroupId;
+  setParameter(std::string("SecurityGroupId"), securityGroupId);
+}
+
+std::string DescribeNetworkInterfacesRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void DescribeNetworkInterfacesRequest::setPageNumber(const std::string &pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), pageNumber);
+}
+
+bool DescribeNetworkInterfacesRequest::getShowDetail() const {
+  return showDetail_;
+}
+
+void DescribeNetworkInterfacesRequest::setShowDetail(bool showDetail) {
+  showDetail_ = showDetail;
+  setParameter(std::string("ShowDetail"), showDetail ? "true" : "false");
+}
+
+std::string DescribeNetworkInterfacesRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void DescribeNetworkInterfacesRequest::setPageSize(const std::string &pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), pageSize);
+}
+
 std::string DescribeNetworkInterfacesRequest::getPrimaryIpAddress() const {
   return primaryIpAddress_;
 }
@@ -77,5 +131,14 @@ std::string DescribeNetworkInterfacesRequest::getPrimaryIpAddress() const {
 void DescribeNetworkInterfacesRequest::setPrimaryIpAddress(const std::string &primaryIpAddress) {
   primaryIpAddress_ = primaryIpAddress;
   setParameter(std::string("PrimaryIpAddress"), primaryIpAddress);
+}
+
+std::string DescribeNetworkInterfacesRequest::getNetworkInterfaceId() const {
+  return networkInterfaceId_;
+}
+
+void DescribeNetworkInterfacesRequest::setNetworkInterfaceId(const std::string &networkInterfaceId) {
+  networkInterfaceId_ = networkInterfaceId;
+  setParameter(std::string("NetworkInterfaceId"), networkInterfaceId);
 }
 

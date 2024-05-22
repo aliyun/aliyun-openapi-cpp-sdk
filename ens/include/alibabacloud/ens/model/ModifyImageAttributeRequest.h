@@ -34,13 +34,10 @@ public:
 	void setImageId(const std::string &imageId);
 	std::string getImageName() const;
 	void setImageName(const std::string &imageName);
-	std::string getProduct() const;
-	void setProduct(const std::string &product);
 
 private:
 	std::string imageId_;
 	std::string imageName_;
-	std::string product_;
 };
 } // namespace Model
 } // namespace Ens

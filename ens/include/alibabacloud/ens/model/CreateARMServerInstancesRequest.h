@@ -48,6 +48,8 @@ public:
 	void setImageId(const std::string &imageId);
 	std::string getServerType() const;
 	void setServerType(const std::string &serverType);
+	bool getAutoUseCoupon() const;
+	void setAutoUseCoupon(bool autoUseCoupon);
 	std::string getInstanceType() const;
 	void setInstanceType(const std::string &instanceType);
 	int getAmount() const;
@@ -69,6 +71,7 @@ private:
 	bool autoRenew_;
 	std::string imageId_;
 	std::string serverType_;
+	bool autoUseCoupon_;
 	std::string instanceType_;
 	int amount_;
 	std::string _nameSpace_;

@@ -30,23 +30,32 @@ class ALIBABACLOUD_ENS_EXPORT CreateDiskRequest : public RpcServiceRequest {
 public:
 	CreateDiskRequest();
 	~CreateDiskRequest();
-	std::string getSnapshotId() const;
-	void setSnapshotId(const std::string &snapshotId);
+	std::string getDiskName() const;
+	void setDiskName(const std::string &diskName);
 	std::string getEnsRegionId() const;
 	void setEnsRegionId(const std::string &ensRegionId);
-	std::string getInstanceChargeType() const;
-	void setInstanceChargeType(const std::string &instanceChargeType);
 	std::string getSize() const;
 	void setSize(const std::string &size);
+	std::string getSnapshotId() const;
+	void setSnapshotId(const std::string &snapshotId);
+	std::string getInstanceChargeType() const;
+	void setInstanceChargeType(const std::string &instanceChargeType);
+	bool getEncrypted() const;
+	void setEncrypted(bool encrypted);
 	std::string getCategory() const;
 	void setCategory(const std::string &category);
+	std::string getKMSKeyId() const;
+	void setKMSKeyId(const std::string &kMSKeyId);
 
 private:
-	std::string snapshotId_;
+	std::string diskName_;
 	std::string ensRegionId_;
-	std::string instanceChargeType_;
 	std::string size_;
+	std::string snapshotId_;
+	std::string instanceChargeType_;
+	bool encrypted_;
 	std::string category_;
+	std::string kMSKeyId_;
 };
 } // namespace Model
 } // namespace Ens

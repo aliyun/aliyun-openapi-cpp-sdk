@@ -32,9 +32,12 @@ public:
 	~DeleteKeyPairsRequest();
 	std::string getKeyPairName() const;
 	void setKeyPairName(const std::string &keyPairName);
+	std::string getKeyPairId() const;
+	void setKeyPairId(const std::string &keyPairId);
 
 private:
 	std::string keyPairName_;
+	std::string keyPairId_;
 };
 } // namespace Model
 } // namespace Ens

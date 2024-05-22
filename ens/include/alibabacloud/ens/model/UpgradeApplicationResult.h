@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				UpgradeApplicationResult();
 				explicit UpgradeApplicationResult(const std::string &payload);
 				~UpgradeApplicationResult();
+				std::string getTaskId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string taskId_;
 
 			};
 		}

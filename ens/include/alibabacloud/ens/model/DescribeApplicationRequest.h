@@ -30,6 +30,8 @@ class ALIBABACLOUD_ENS_EXPORT DescribeApplicationRequest : public RpcServiceRequ
 public:
 	DescribeApplicationRequest();
 	~DescribeApplicationRequest();
+	std::string getResourceSelector() const;
+	void setResourceSelector(const std::string &resourceSelector);
 	std::string getAppVersions() const;
 	void setAppVersions(const std::string &appVersions);
 	std::string getOutDetailStatParams() const;
@@ -40,6 +42,7 @@ public:
 	void setAppId(const std::string &appId);
 
 private:
+	std::string resourceSelector_;
 	std::string appVersions_;
 	std::string outDetailStatParams_;
 	std::string level_;

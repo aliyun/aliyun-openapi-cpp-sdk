@@ -39,22 +39,22 @@ void StopInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstanceResponsesNode = value["InstanceResponses"]["InstanceResponsesItem"];
-	for (auto valueInstanceResponsesInstanceResponsesItem : allInstanceResponsesNode)
+	auto allInstanceResponsesNode = value["InstanceResponses"]["responses"];
+	for (auto valueInstanceResponsesresponses : allInstanceResponsesNode)
 	{
-		InstanceResponsesItem instanceResponsesObject;
-		if(!valueInstanceResponsesInstanceResponsesItem["Code"].isNull())
-			instanceResponsesObject.code = std::stol(valueInstanceResponsesInstanceResponsesItem["Code"].asString());
-		if(!valueInstanceResponsesInstanceResponsesItem["Message"].isNull())
-			instanceResponsesObject.message = valueInstanceResponsesInstanceResponsesItem["Message"].asString();
-		if(!valueInstanceResponsesInstanceResponsesItem["InstanceId"].isNull())
-			instanceResponsesObject.instanceId = valueInstanceResponsesInstanceResponsesItem["InstanceId"].asString();
+		Responses instanceResponsesObject;
+		if(!valueInstanceResponsesresponses["Code"].isNull())
+			instanceResponsesObject.code = std::stol(valueInstanceResponsesresponses["Code"].asString());
+		if(!valueInstanceResponsesresponses["Message"].isNull())
+			instanceResponsesObject.message = valueInstanceResponsesresponses["Message"].asString();
+		if(!valueInstanceResponsesresponses["InstanceId"].isNull())
+			instanceResponsesObject.instanceId = valueInstanceResponsesresponses["InstanceId"].asString();
 		instanceResponses_.push_back(instanceResponsesObject);
 	}
 
 }
 
-std::vector<StopInstancesResult::InstanceResponsesItem> StopInstancesResult::getInstanceResponses()const
+std::vector<StopInstancesResult::Responses> StopInstancesResult::getInstanceResponses()const
 {
 	return instanceResponses_;
 }

@@ -36,11 +36,14 @@ public:
 	void setPeriodUnit(const std::string &periodUnit);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	bool getAutoRenew() const;
+	void setAutoRenew(bool autoRenew);
 
 private:
 	int period_;
 	std::string periodUnit_;
 	std::string instanceId_;
+	bool autoRenew_;
 };
 } // namespace Model
 } // namespace Ens

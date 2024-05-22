@@ -32,6 +32,10 @@ public:
 	~CreateSnatEntryRequest();
 	std::string getSnatIp() const;
 	void setSnatIp(const std::string &snatIp);
+	std::string getType() const;
+	void setType(const std::string &type);
+	std::string getDestCIDR() const;
+	void setDestCIDR(const std::string &destCIDR);
 	std::string getSourceVSwitchId() const;
 	void setSourceVSwitchId(const std::string &sourceVSwitchId);
 	std::string getSourceNetworkId() const;
@@ -42,16 +46,21 @@ public:
 	void setSourceCIDR(const std::string &sourceCIDR);
 	std::string getNatGatewayId() const;
 	void setNatGatewayId(const std::string &natGatewayId);
+	int getIdleTimeout() const;
+	void setIdleTimeout(int idleTimeout);
 	std::string getSnatEntryName() const;
 	void setSnatEntryName(const std::string &snatEntryName);
 
 private:
 	std::string snatIp_;
+	std::string type_;
+	std::string destCIDR_;
 	std::string sourceVSwitchId_;
 	std::string sourceNetworkId_;
 	std::string standbySnatIp_;
 	std::string sourceCIDR_;
 	std::string natGatewayId_;
+	int idleTimeout_;
 	std::string snatEntryName_;
 };
 } // namespace Model

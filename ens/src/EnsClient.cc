@@ -483,6 +483,78 @@ EnsClient::CleanDistDataOutcomeCallable EnsClient::cleanDistDataCallable(const C
 	return task->get_future();
 }
 
+EnsClient::CopySDGOutcome EnsClient::copySDG(const CopySDGRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CopySDGOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CopySDGOutcome(CopySDGResult(outcome.result()));
+	else
+		return CopySDGOutcome(outcome.error());
+}
+
+void EnsClient::copySDGAsync(const CopySDGRequest& request, const CopySDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, copySDG(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CopySDGOutcomeCallable EnsClient::copySDGCallable(const CopySDGRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CopySDGOutcome()>>(
+			[this, request]()
+			{
+			return this->copySDG(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::CopySnapshotOutcome EnsClient::copySnapshot(const CopySnapshotRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CopySnapshotOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CopySnapshotOutcome(CopySnapshotResult(outcome.result()));
+	else
+		return CopySnapshotOutcome(outcome.error());
+}
+
+void EnsClient::copySnapshotAsync(const CopySnapshotRequest& request, const CopySnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, copySnapshot(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CopySnapshotOutcomeCallable EnsClient::copySnapshotCallable(const CopySnapshotRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CopySnapshotOutcome()>>(
+			[this, request]()
+			{
+			return this->copySnapshot(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::CreateARMServerInstancesOutcome EnsClient::createARMServerInstances(const CreateARMServerInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1383,6 +1455,42 @@ EnsClient::CreateNetworkAclEntryOutcomeCallable EnsClient::createNetworkAclEntry
 	return task->get_future();
 }
 
+EnsClient::CreateSDGOutcome EnsClient::createSDG(const CreateSDGRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSDGOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSDGOutcome(CreateSDGResult(outcome.result()));
+	else
+		return CreateSDGOutcome(outcome.error());
+}
+
+void EnsClient::createSDGAsync(const CreateSDGRequest& request, const CreateSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSDG(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CreateSDGOutcomeCallable EnsClient::createSDGCallable(const CreateSDGRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSDGOutcome()>>(
+			[this, request]()
+			{
+			return this->createSDG(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::CreateSecurityGroupOutcome EnsClient::createSecurityGroup(const CreateSecurityGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1413,6 +1521,42 @@ EnsClient::CreateSecurityGroupOutcomeCallable EnsClient::createSecurityGroupCall
 			[this, request]()
 			{
 			return this->createSecurityGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::CreateSnapshotOutcome EnsClient::createSnapshot(const CreateSnapshotRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSnapshotOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSnapshotOutcome(CreateSnapshotResult(outcome.result()));
+	else
+		return CreateSnapshotOutcome(outcome.error());
+}
+
+void EnsClient::createSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSnapshot(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CreateSnapshotOutcomeCallable EnsClient::createSnapshotCallable(const CreateSnapshotRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSnapshotOutcome()>>(
+			[this, request]()
+			{
+			return this->createSnapshot(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1521,6 +1665,78 @@ EnsClient::DeleteApplicationOutcomeCallable EnsClient::deleteApplicationCallable
 			[this, request]()
 			{
 			return this->deleteApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DeleteBucketOutcome EnsClient::deleteBucket(const DeleteBucketRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteBucketOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteBucketOutcome(DeleteBucketResult(outcome.result()));
+	else
+		return DeleteBucketOutcome(outcome.error());
+}
+
+void EnsClient::deleteBucketAsync(const DeleteBucketRequest& request, const DeleteBucketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteBucket(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteBucketOutcomeCallable EnsClient::deleteBucketCallable(const DeleteBucketRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteBucketOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteBucket(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DeleteBucketLifecycleOutcome EnsClient::deleteBucketLifecycle(const DeleteBucketLifecycleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteBucketLifecycleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteBucketLifecycleOutcome(DeleteBucketLifecycleResult(outcome.result()));
+	else
+		return DeleteBucketLifecycleOutcome(outcome.error());
+}
+
+void EnsClient::deleteBucketLifecycleAsync(const DeleteBucketLifecycleRequest& request, const DeleteBucketLifecycleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteBucketLifecycle(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteBucketLifecycleOutcomeCallable EnsClient::deleteBucketLifecycleCallable(const DeleteBucketLifecycleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteBucketLifecycleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteBucketLifecycle(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2103,6 +2319,78 @@ EnsClient::DeleteNetworkAclEntryOutcomeCallable EnsClient::deleteNetworkAclEntry
 	return task->get_future();
 }
 
+EnsClient::DeleteObjectOutcome EnsClient::deleteObject(const DeleteObjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteObjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteObjectOutcome(DeleteObjectResult(outcome.result()));
+	else
+		return DeleteObjectOutcome(outcome.error());
+}
+
+void EnsClient::deleteObjectAsync(const DeleteObjectRequest& request, const DeleteObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteObject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteObjectOutcomeCallable EnsClient::deleteObjectCallable(const DeleteObjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteObjectOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteObject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DeleteSDGOutcome EnsClient::deleteSDG(const DeleteSDGRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSDGOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSDGOutcome(DeleteSDGResult(outcome.result()));
+	else
+		return DeleteSDGOutcome(outcome.error());
+}
+
+void EnsClient::deleteSDGAsync(const DeleteSDGRequest& request, const DeleteSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSDG(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteSDGOutcomeCallable EnsClient::deleteSDGCallable(const DeleteSDGRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSDGOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSDG(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DeleteSecurityGroupOutcome EnsClient::deleteSecurityGroup(const DeleteSecurityGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2133,6 +2421,42 @@ EnsClient::DeleteSecurityGroupOutcomeCallable EnsClient::deleteSecurityGroupCall
 			[this, request]()
 			{
 			return this->deleteSecurityGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DeleteSnapshotOutcome EnsClient::deleteSnapshot(const DeleteSnapshotRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSnapshotOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSnapshotOutcome(DeleteSnapshotResult(outcome.result()));
+	else
+		return DeleteSnapshotOutcome(outcome.error());
+}
+
+void EnsClient::deleteSnapshotAsync(const DeleteSnapshotRequest& request, const DeleteSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSnapshot(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteSnapshotOutcomeCallable EnsClient::deleteSnapshotCallable(const DeleteSnapshotRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSnapshotOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSnapshot(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2241,6 +2565,42 @@ EnsClient::DeleteVSwitchOutcomeCallable EnsClient::deleteVSwitchCallable(const D
 			[this, request]()
 			{
 			return this->deleteVSwitch(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DeploySDGOutcome EnsClient::deploySDG(const DeploySDGRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeploySDGOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeploySDGOutcome(DeploySDGResult(outcome.result()));
+	else
+		return DeploySDGOutcome(outcome.error());
+}
+
+void EnsClient::deploySDGAsync(const DeploySDGRequest& request, const DeploySDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deploySDG(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeploySDGOutcomeCallable EnsClient::deploySDGCallable(const DeploySDGRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeploySDGOutcome()>>(
+			[this, request]()
+			{
+			return this->deploySDG(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4695,42 +5055,6 @@ EnsClient::DescribePriceOutcomeCallable EnsClient::describePriceCallable(const D
 	return task->get_future();
 }
 
-EnsClient::DescribeRegionBandwidthQuotaOutcome EnsClient::describeRegionBandwidthQuota(const DescribeRegionBandwidthQuotaRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRegionBandwidthQuotaOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRegionBandwidthQuotaOutcome(DescribeRegionBandwidthQuotaResult(outcome.result()));
-	else
-		return DescribeRegionBandwidthQuotaOutcome(outcome.error());
-}
-
-void EnsClient::describeRegionBandwidthQuotaAsync(const DescribeRegionBandwidthQuotaRequest& request, const DescribeRegionBandwidthQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRegionBandwidthQuota(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::DescribeRegionBandwidthQuotaOutcomeCallable EnsClient::describeRegionBandwidthQuotaCallable(const DescribeRegionBandwidthQuotaRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRegionBandwidthQuotaOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRegionBandwidthQuota(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EnsClient::DescribeRegionIspsOutcome EnsClient::describeRegionIsps(const DescribeRegionIspsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4869,6 +5193,78 @@ EnsClient::DescribeResourceTimelineOutcomeCallable EnsClient::describeResourceTi
 			[this, request]()
 			{
 			return this->describeResourceTimeline(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeSDGDeploymentStatusOutcome EnsClient::describeSDGDeploymentStatus(const DescribeSDGDeploymentStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSDGDeploymentStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSDGDeploymentStatusOutcome(DescribeSDGDeploymentStatusResult(outcome.result()));
+	else
+		return DescribeSDGDeploymentStatusOutcome(outcome.error());
+}
+
+void EnsClient::describeSDGDeploymentStatusAsync(const DescribeSDGDeploymentStatusRequest& request, const DescribeSDGDeploymentStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSDGDeploymentStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeSDGDeploymentStatusOutcomeCallable EnsClient::describeSDGDeploymentStatusCallable(const DescribeSDGDeploymentStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSDGDeploymentStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSDGDeploymentStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeSDGsOutcome EnsClient::describeSDGs(const DescribeSDGsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSDGsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSDGsOutcome(DescribeSDGsResult(outcome.result()));
+	else
+		return DescribeSDGsOutcome(outcome.error());
+}
+
+void EnsClient::describeSDGsAsync(const DescribeSDGsRequest& request, const DescribeSDGsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSDGs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeSDGsOutcomeCallable EnsClient::describeSDGsCallable(const DescribeSDGsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSDGsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSDGs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5019,6 +5415,42 @@ EnsClient::DescribeServcieScheduleOutcomeCallable EnsClient::describeServcieSche
 	return task->get_future();
 }
 
+EnsClient::DescribeSnapshotsOutcome EnsClient::describeSnapshots(const DescribeSnapshotsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSnapshotsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSnapshotsOutcome(DescribeSnapshotsResult(outcome.result()));
+	else
+		return DescribeSnapshotsOutcome(outcome.error());
+}
+
+void EnsClient::describeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSnapshots(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeSnapshotsOutcomeCallable EnsClient::describeSnapshotsCallable(const DescribeSnapshotsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSnapshotsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSnapshots(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeSnatAttributeOutcome EnsClient::describeSnatAttribute(const DescribeSnatAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5157,78 +5589,6 @@ EnsClient::DescribeVSwitchesOutcomeCallable EnsClient::describeVSwitchesCallable
 			[this, request]()
 			{
 			return this->describeVSwitches(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EnsClient::DescribeWorkflowOutcome EnsClient::describeWorkflow(const DescribeWorkflowRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeWorkflowOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeWorkflowOutcome(DescribeWorkflowResult(outcome.result()));
-	else
-		return DescribeWorkflowOutcome(outcome.error());
-}
-
-void EnsClient::describeWorkflowAsync(const DescribeWorkflowRequest& request, const DescribeWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeWorkflow(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::DescribeWorkflowOutcomeCallable EnsClient::describeWorkflowCallable(const DescribeWorkflowRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeWorkflowOutcome()>>(
-			[this, request]()
-			{
-			return this->describeWorkflow(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EnsClient::DescribeWorkflowActivityOutcome EnsClient::describeWorkflowActivity(const DescribeWorkflowActivityRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeWorkflowActivityOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeWorkflowActivityOutcome(DescribeWorkflowActivityResult(outcome.result()));
-	else
-		return DescribeWorkflowActivityOutcome(outcome.error());
-}
-
-void EnsClient::describeWorkflowActivityAsync(const DescribeWorkflowActivityRequest& request, const DescribeWorkflowActivityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeWorkflowActivity(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::DescribeWorkflowActivityOutcomeCallable EnsClient::describeWorkflowActivityCallable(const DescribeWorkflowActivityRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeWorkflowActivityOutcome()>>(
-			[this, request]()
-			{
-			return this->describeWorkflowActivity(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5409,6 +5769,114 @@ EnsClient::ExportMeasurementDataOutcomeCallable EnsClient::exportMeasurementData
 			[this, request]()
 			{
 			return this->exportMeasurementData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::GetBucketAclOutcome EnsClient::getBucketAcl(const GetBucketAclRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetBucketAclOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetBucketAclOutcome(GetBucketAclResult(outcome.result()));
+	else
+		return GetBucketAclOutcome(outcome.error());
+}
+
+void EnsClient::getBucketAclAsync(const GetBucketAclRequest& request, const GetBucketAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getBucketAcl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::GetBucketAclOutcomeCallable EnsClient::getBucketAclCallable(const GetBucketAclRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetBucketAclOutcome()>>(
+			[this, request]()
+			{
+			return this->getBucketAcl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::GetBucketInfoOutcome EnsClient::getBucketInfo(const GetBucketInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetBucketInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetBucketInfoOutcome(GetBucketInfoResult(outcome.result()));
+	else
+		return GetBucketInfoOutcome(outcome.error());
+}
+
+void EnsClient::getBucketInfoAsync(const GetBucketInfoRequest& request, const GetBucketInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getBucketInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::GetBucketInfoOutcomeCallable EnsClient::getBucketInfoCallable(const GetBucketInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetBucketInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getBucketInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::GetBucketLifecycleOutcome EnsClient::getBucketLifecycle(const GetBucketLifecycleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetBucketLifecycleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetBucketLifecycleOutcome(GetBucketLifecycleResult(outcome.result()));
+	else
+		return GetBucketLifecycleOutcome(outcome.error());
+}
+
+void EnsClient::getBucketLifecycleAsync(const GetBucketLifecycleRequest& request, const GetBucketLifecycleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getBucketLifecycle(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::GetBucketLifecycleOutcomeCallable EnsClient::getBucketLifecycleCallable(const GetBucketLifecycleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetBucketLifecycleOutcome()>>(
+			[this, request]()
+			{
+			return this->getBucketLifecycle(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5739,6 +6207,78 @@ EnsClient::ListApplicationsOutcomeCallable EnsClient::listApplicationsCallable(c
 	return task->get_future();
 }
 
+EnsClient::ListBucketsOutcome EnsClient::listBuckets(const ListBucketsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListBucketsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListBucketsOutcome(ListBucketsResult(outcome.result()));
+	else
+		return ListBucketsOutcome(outcome.error());
+}
+
+void EnsClient::listBucketsAsync(const ListBucketsRequest& request, const ListBucketsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listBuckets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ListBucketsOutcomeCallable EnsClient::listBucketsCallable(const ListBucketsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListBucketsOutcome()>>(
+			[this, request]()
+			{
+			return this->listBuckets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::ListObjectsOutcome EnsClient::listObjects(const ListObjectsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListObjectsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListObjectsOutcome(ListObjectsResult(outcome.result()));
+	else
+		return ListObjectsOutcome(outcome.error());
+}
+
+void EnsClient::listObjectsAsync(const ListObjectsRequest& request, const ListObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listObjects(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ListObjectsOutcomeCallable EnsClient::listObjectsCallable(const ListObjectsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListObjectsOutcome()>>(
+			[this, request]()
+			{
+			return this->listObjects(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::ModifyEnsEipAddressAttributeOutcome EnsClient::modifyEnsEipAddressAttribute(const ModifyEnsEipAddressAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6027,6 +6567,42 @@ EnsClient::ModifyInstanceAutoRenewAttributeOutcomeCallable EnsClient::modifyInst
 	return task->get_future();
 }
 
+EnsClient::ModifyInstanceChargeTypeOutcome EnsClient::modifyInstanceChargeType(const ModifyInstanceChargeTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInstanceChargeTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInstanceChargeTypeOutcome(ModifyInstanceChargeTypeResult(outcome.result()));
+	else
+		return ModifyInstanceChargeTypeOutcome(outcome.error());
+}
+
+void EnsClient::modifyInstanceChargeTypeAsync(const ModifyInstanceChargeTypeRequest& request, const ModifyInstanceChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInstanceChargeType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ModifyInstanceChargeTypeOutcomeCallable EnsClient::modifyInstanceChargeTypeCallable(const ModifyInstanceChargeTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInstanceChargeTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInstanceChargeType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::ModifyLoadBalancerAttributeOutcome EnsClient::modifyLoadBalancerAttribute(const ModifyLoadBalancerAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6171,6 +6747,42 @@ EnsClient::ModifySecurityGroupAttributeOutcomeCallable EnsClient::modifySecurity
 	return task->get_future();
 }
 
+EnsClient::ModifySnapshotAttributeOutcome EnsClient::modifySnapshotAttribute(const ModifySnapshotAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifySnapshotAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifySnapshotAttributeOutcome(ModifySnapshotAttributeResult(outcome.result()));
+	else
+		return ModifySnapshotAttributeOutcome(outcome.error());
+}
+
+void EnsClient::modifySnapshotAttributeAsync(const ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifySnapshotAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ModifySnapshotAttributeOutcomeCallable EnsClient::modifySnapshotAttributeCallable(const ModifySnapshotAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifySnapshotAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifySnapshotAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::ModifyVSwitchAttributeOutcome EnsClient::modifyVSwitchAttribute(const ModifyVSwitchAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6237,6 +6849,114 @@ EnsClient::PushApplicationDataOutcomeCallable EnsClient::pushApplicationDataCall
 			[this, request]()
 			{
 			return this->pushApplicationData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::PutBucketOutcome EnsClient::putBucket(const PutBucketRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PutBucketOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PutBucketOutcome(PutBucketResult(outcome.result()));
+	else
+		return PutBucketOutcome(outcome.error());
+}
+
+void EnsClient::putBucketAsync(const PutBucketRequest& request, const PutBucketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, putBucket(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::PutBucketOutcomeCallable EnsClient::putBucketCallable(const PutBucketRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PutBucketOutcome()>>(
+			[this, request]()
+			{
+			return this->putBucket(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::PutBucketAclOutcome EnsClient::putBucketAcl(const PutBucketAclRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PutBucketAclOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PutBucketAclOutcome(PutBucketAclResult(outcome.result()));
+	else
+		return PutBucketAclOutcome(outcome.error());
+}
+
+void EnsClient::putBucketAclAsync(const PutBucketAclRequest& request, const PutBucketAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, putBucketAcl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::PutBucketAclOutcomeCallable EnsClient::putBucketAclCallable(const PutBucketAclRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PutBucketAclOutcome()>>(
+			[this, request]()
+			{
+			return this->putBucketAcl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::PutBucketLifecycleOutcome EnsClient::putBucketLifecycle(const PutBucketLifecycleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PutBucketLifecycleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PutBucketLifecycleOutcome(PutBucketLifecycleResult(outcome.result()));
+	else
+		return PutBucketLifecycleOutcome(outcome.error());
+}
+
+void EnsClient::putBucketLifecycleAsync(const PutBucketLifecycleRequest& request, const PutBucketLifecycleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, putBucketLifecycle(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::PutBucketLifecycleOutcomeCallable EnsClient::putBucketLifecycleCallable(const PutBucketLifecycleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PutBucketLifecycleOutcome()>>(
+			[this, request]()
+			{
+			return this->putBucketLifecycle(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6783,6 +7503,42 @@ EnsClient::RemovePublicIpsFromEpnInstanceOutcomeCallable EnsClient::removePublic
 	return task->get_future();
 }
 
+EnsClient::RemoveSDGOutcome EnsClient::removeSDG(const RemoveSDGRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveSDGOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveSDGOutcome(RemoveSDGResult(outcome.result()));
+	else
+		return RemoveSDGOutcome(outcome.error());
+}
+
+void EnsClient::removeSDGAsync(const RemoveSDGRequest& request, const RemoveSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeSDG(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::RemoveSDGOutcomeCallable EnsClient::removeSDGCallable(const RemoveSDGRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveSDGOutcome()>>(
+			[this, request]()
+			{
+			return this->removeSDG(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::RemoveVSwitchesFromEpnInstanceOutcome EnsClient::removeVSwitchesFromEpnInstance(const RemoveVSwitchesFromEpnInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7143,78 +7899,6 @@ EnsClient::RestartDeviceInstanceOutcomeCallable EnsClient::restartDeviceInstance
 	return task->get_future();
 }
 
-EnsClient::RestartWorkflowOutcome EnsClient::restartWorkflow(const RestartWorkflowRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RestartWorkflowOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RestartWorkflowOutcome(RestartWorkflowResult(outcome.result()));
-	else
-		return RestartWorkflowOutcome(outcome.error());
-}
-
-void EnsClient::restartWorkflowAsync(const RestartWorkflowRequest& request, const RestartWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, restartWorkflow(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::RestartWorkflowOutcomeCallable EnsClient::restartWorkflowCallable(const RestartWorkflowRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RestartWorkflowOutcome()>>(
-			[this, request]()
-			{
-			return this->restartWorkflow(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EnsClient::RetryWorkflowOutcome EnsClient::retryWorkflow(const RetryWorkflowRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RetryWorkflowOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RetryWorkflowOutcome(RetryWorkflowResult(outcome.result()));
-	else
-		return RetryWorkflowOutcome(outcome.error());
-}
-
-void EnsClient::retryWorkflowAsync(const RetryWorkflowRequest& request, const RetryWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, retryWorkflow(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::RetryWorkflowOutcomeCallable EnsClient::retryWorkflowCallable(const RetryWorkflowRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RetryWorkflowOutcome()>>(
-			[this, request]()
-			{
-			return this->retryWorkflow(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EnsClient::RevokeSecurityGroupOutcome EnsClient::revokeSecurityGroup(const RevokeSecurityGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7323,42 +8007,6 @@ EnsClient::RollbackApplicationOutcomeCallable EnsClient::rollbackApplicationCall
 	return task->get_future();
 }
 
-EnsClient::RollbackWorkflowOutcome EnsClient::rollbackWorkflow(const RollbackWorkflowRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RollbackWorkflowOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RollbackWorkflowOutcome(RollbackWorkflowResult(outcome.result()));
-	else
-		return RollbackWorkflowOutcome(outcome.error());
-}
-
-void EnsClient::rollbackWorkflowAsync(const RollbackWorkflowRequest& request, const RollbackWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, rollbackWorkflow(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::RollbackWorkflowOutcomeCallable EnsClient::rollbackWorkflowCallable(const RollbackWorkflowRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RollbackWorkflowOutcome()>>(
-			[this, request]()
-			{
-			return this->rollbackWorkflow(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EnsClient::RunInstancesOutcome EnsClient::runInstances(const RunInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7425,6 +8073,42 @@ EnsClient::RunServiceScheduleOutcomeCallable EnsClient::runServiceScheduleCallab
 			[this, request]()
 			{
 			return this->runServiceSchedule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::SaveSDGOutcome EnsClient::saveSDG(const SaveSDGRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveSDGOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveSDGOutcome(SaveSDGResult(outcome.result()));
+	else
+		return SaveSDGOutcome(outcome.error());
+}
+
+void EnsClient::saveSDGAsync(const SaveSDGRequest& request, const SaveSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveSDG(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::SaveSDGOutcomeCallable EnsClient::saveSDGCallable(const SaveSDGRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveSDGOutcome()>>(
+			[this, request]()
+			{
+			return this->saveSDG(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8001,42 +8685,6 @@ EnsClient::StopSnatIpForSnatEntryOutcomeCallable EnsClient::stopSnatIpForSnatEnt
 			[this, request]()
 			{
 			return this->stopSnatIpForSnatEntry(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EnsClient::TerminateWorkflowOutcome EnsClient::terminateWorkflow(const TerminateWorkflowRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TerminateWorkflowOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TerminateWorkflowOutcome(TerminateWorkflowResult(outcome.result()));
-	else
-		return TerminateWorkflowOutcome(outcome.error());
-}
-
-void EnsClient::terminateWorkflowAsync(const TerminateWorkflowRequest& request, const TerminateWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, terminateWorkflow(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::TerminateWorkflowOutcomeCallable EnsClient::terminateWorkflowCallable(const TerminateWorkflowRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TerminateWorkflowOutcome()>>(
-			[this, request]()
-			{
-			return this->terminateWorkflow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
