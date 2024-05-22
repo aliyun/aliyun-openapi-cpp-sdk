@@ -41,8 +41,12 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/DeleteCommandResult.h
 	include/alibabacloud/swas-open/model/DeleteCustomImageRequest.h
 	include/alibabacloud/swas-open/model/DeleteCustomImageResult.h
+	include/alibabacloud/swas-open/model/DeleteCustomImagesRequest.h
+	include/alibabacloud/swas-open/model/DeleteCustomImagesResult.h
 	include/alibabacloud/swas-open/model/DeleteFirewallRuleRequest.h
 	include/alibabacloud/swas-open/model/DeleteFirewallRuleResult.h
+	include/alibabacloud/swas-open/model/DeleteFirewallRulesRequest.h
+	include/alibabacloud/swas-open/model/DeleteFirewallRulesResult.h
 	include/alibabacloud/swas-open/model/DeleteInstanceKeyPairRequest.h
 	include/alibabacloud/swas-open/model/DeleteInstanceKeyPairResult.h
 	include/alibabacloud/swas-open/model/DeleteSnapshotRequest.h
@@ -200,8 +204,12 @@ set(swas-open_src
 	src/model/DeleteCommandResult.cc
 	src/model/DeleteCustomImageRequest.cc
 	src/model/DeleteCustomImageResult.cc
+	src/model/DeleteCustomImagesRequest.cc
+	src/model/DeleteCustomImagesResult.cc
 	src/model/DeleteFirewallRuleRequest.cc
 	src/model/DeleteFirewallRuleResult.cc
+	src/model/DeleteFirewallRulesRequest.cc
+	src/model/DeleteFirewallRulesResult.cc
 	src/model/DeleteInstanceKeyPairRequest.cc
 	src/model/DeleteInstanceKeyPairResult.cc
 	src/model/DeleteSnapshotRequest.cc

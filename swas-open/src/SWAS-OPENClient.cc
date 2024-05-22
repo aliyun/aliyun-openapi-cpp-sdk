@@ -411,6 +411,42 @@ SWAS_OPENClient::DeleteCustomImageOutcomeCallable SWAS_OPENClient::deleteCustomI
 	return task->get_future();
 }
 
+SWAS_OPENClient::DeleteCustomImagesOutcome SWAS_OPENClient::deleteCustomImages(const DeleteCustomImagesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCustomImagesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCustomImagesOutcome(DeleteCustomImagesResult(outcome.result()));
+	else
+		return DeleteCustomImagesOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::deleteCustomImagesAsync(const DeleteCustomImagesRequest& request, const DeleteCustomImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCustomImages(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DeleteCustomImagesOutcomeCallable SWAS_OPENClient::deleteCustomImagesCallable(const DeleteCustomImagesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCustomImagesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCustomImages(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::DeleteFirewallRuleOutcome SWAS_OPENClient::deleteFirewallRule(const DeleteFirewallRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +477,42 @@ SWAS_OPENClient::DeleteFirewallRuleOutcomeCallable SWAS_OPENClient::deleteFirewa
 			[this, request]()
 			{
 			return this->deleteFirewallRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::DeleteFirewallRulesOutcome SWAS_OPENClient::deleteFirewallRules(const DeleteFirewallRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteFirewallRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteFirewallRulesOutcome(DeleteFirewallRulesResult(outcome.result()));
+	else
+		return DeleteFirewallRulesOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::deleteFirewallRulesAsync(const DeleteFirewallRulesRequest& request, const DeleteFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteFirewallRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DeleteFirewallRulesOutcomeCallable SWAS_OPENClient::deleteFirewallRulesCallable(const DeleteFirewallRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteFirewallRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteFirewallRules(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

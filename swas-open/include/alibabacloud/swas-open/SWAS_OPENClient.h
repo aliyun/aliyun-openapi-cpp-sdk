@@ -42,8 +42,12 @@
 #include "model/DeleteCommandResult.h"
 #include "model/DeleteCustomImageRequest.h"
 #include "model/DeleteCustomImageResult.h"
+#include "model/DeleteCustomImagesRequest.h"
+#include "model/DeleteCustomImagesResult.h"
 #include "model/DeleteFirewallRuleRequest.h"
 #include "model/DeleteFirewallRuleResult.h"
+#include "model/DeleteFirewallRulesRequest.h"
+#include "model/DeleteFirewallRulesResult.h"
 #include "model/DeleteInstanceKeyPairRequest.h"
 #include "model/DeleteInstanceKeyPairResult.h"
 #include "model/DeleteSnapshotRequest.h"
@@ -217,9 +221,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteCustomImageResult> DeleteCustomImageOutcome;
 			typedef std::future<DeleteCustomImageOutcome> DeleteCustomImageOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteCustomImageRequest&, const DeleteCustomImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomImageAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCustomImagesResult> DeleteCustomImagesOutcome;
+			typedef std::future<DeleteCustomImagesOutcome> DeleteCustomImagesOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteCustomImagesRequest&, const DeleteCustomImagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomImagesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteFirewallRuleResult> DeleteFirewallRuleOutcome;
 			typedef std::future<DeleteFirewallRuleOutcome> DeleteFirewallRuleOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteFirewallRuleRequest&, const DeleteFirewallRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFirewallRuleAsyncHandler;
+			typedef Outcome<Error, Model::DeleteFirewallRulesResult> DeleteFirewallRulesOutcome;
+			typedef std::future<DeleteFirewallRulesOutcome> DeleteFirewallRulesOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteFirewallRulesRequest&, const DeleteFirewallRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFirewallRulesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteInstanceKeyPairResult> DeleteInstanceKeyPairOutcome;
 			typedef std::future<DeleteInstanceKeyPairOutcome> DeleteInstanceKeyPairOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteInstanceKeyPairRequest&, const DeleteInstanceKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceKeyPairAsyncHandler;
@@ -456,9 +466,15 @@ namespace AlibabaCloud
 			DeleteCustomImageOutcome deleteCustomImage(const Model::DeleteCustomImageRequest &request)const;
 			void deleteCustomImageAsync(const Model::DeleteCustomImageRequest& request, const DeleteCustomImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCustomImageOutcomeCallable deleteCustomImageCallable(const Model::DeleteCustomImageRequest& request) const;
+			DeleteCustomImagesOutcome deleteCustomImages(const Model::DeleteCustomImagesRequest &request)const;
+			void deleteCustomImagesAsync(const Model::DeleteCustomImagesRequest& request, const DeleteCustomImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCustomImagesOutcomeCallable deleteCustomImagesCallable(const Model::DeleteCustomImagesRequest& request) const;
 			DeleteFirewallRuleOutcome deleteFirewallRule(const Model::DeleteFirewallRuleRequest &request)const;
 			void deleteFirewallRuleAsync(const Model::DeleteFirewallRuleRequest& request, const DeleteFirewallRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteFirewallRuleOutcomeCallable deleteFirewallRuleCallable(const Model::DeleteFirewallRuleRequest& request) const;
+			DeleteFirewallRulesOutcome deleteFirewallRules(const Model::DeleteFirewallRulesRequest &request)const;
+			void deleteFirewallRulesAsync(const Model::DeleteFirewallRulesRequest& request, const DeleteFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteFirewallRulesOutcomeCallable deleteFirewallRulesCallable(const Model::DeleteFirewallRulesRequest& request) const;
 			DeleteInstanceKeyPairOutcome deleteInstanceKeyPair(const Model::DeleteInstanceKeyPairRequest &request)const;
 			void deleteInstanceKeyPairAsync(const Model::DeleteInstanceKeyPairRequest& request, const DeleteInstanceKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteInstanceKeyPairOutcomeCallable deleteInstanceKeyPairCallable(const Model::DeleteInstanceKeyPairRequest& request) const;
