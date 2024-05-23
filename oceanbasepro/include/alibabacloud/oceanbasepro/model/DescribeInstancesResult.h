@@ -38,24 +38,24 @@ namespace AlibabaCloud
 					{
 						struct Cpu
 						{
-							long unitCpu;
-							long totalCpu;
-							long usedCpu;
-							long originalTotalCpu;
+							double unitCpu;
+							double totalCpu;
+							double usedCpu;
+							double originalTotalCpu;
 						};
 						struct Memory
 						{
 							long usedMemory;
 							long unitMemory;
-							long totalMemory;
-							long originalTotalMemory;
+							double totalMemory;
+							double originalTotalMemory;
 						};
 						struct DiskSize
 						{
-							long originalTotalDiskSize;
+							double originalTotalDiskSize;
 							long usedDiskSize;
-							long unitDiskSize;
-							long totalDiskSize;
+							double unitDiskSize;
+							double totalDiskSize;
 						};
 						struct CapacityUnit
 						{
@@ -71,13 +71,13 @@ namespace AlibabaCloud
 					};
 					struct DataDiskAutoScaleConfig
 					{
-						long upperbound;
-						long scaleStepInNormal;
-						long upperMergeThreshold;
-						long scaleStepInMerge;
+						double upperbound;
+						double scaleStepInNormal;
+						double upperMergeThreshold;
+						double scaleStepInMerge;
 						std::string upperScaleStrategy;
 						long maxDiskSize;
-						long upperThreshold;
+						double upperThreshold;
 						bool autoScale;
 					};
 					std::string deployType;

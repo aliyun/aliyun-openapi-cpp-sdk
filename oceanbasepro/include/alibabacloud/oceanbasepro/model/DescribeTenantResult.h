@@ -154,10 +154,12 @@ namespace AlibabaCloud
 					std::string diskType;
 					std::string primaryZoneDeployType;
 					std::string deployMode;
+					std::string version;
 					std::vector<TenantZonesItem> tenantZones;
 					std::string primaryZone;
 					std::string instanceType;
 					std::string tenantMode;
+					std::string lowerCaseTableNames;
 					std::string status;
 					bool enableClogService;
 					std::string tenantName;

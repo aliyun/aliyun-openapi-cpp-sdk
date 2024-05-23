@@ -112,6 +112,10 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		instance_.enableReadOnlyReplica = instanceNode["EnableReadOnlyReplica"].asString() == "true";
 	if(!instanceNode["EnableReadOnlyReplicaManagement"].isNull())
 		instance_.enableReadOnlyReplicaManagement = instanceNode["EnableReadOnlyReplicaManagement"].asString() == "true";
+	if(!instanceNode["PrimaryInstance"].isNull())
+		instance_.primaryInstance = instanceNode["PrimaryInstance"].asString();
+	if(!instanceNode["PrimaryRegion"].isNull())
+		instance_.primaryRegion = instanceNode["PrimaryRegion"].asString();
 	auto resourceNode = instanceNode["Resource"];
 	if(!resourceNode["UnitCount"].isNull())
 		instance_.resource.unitCount = std::stol(resourceNode["UnitCount"].asString());

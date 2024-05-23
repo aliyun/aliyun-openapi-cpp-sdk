@@ -51,6 +51,42 @@ OceanBaseProClient::OceanBaseProClient(const std::string & accessKeyId, const st
 OceanBaseProClient::~OceanBaseProClient()
 {}
 
+OceanBaseProClient::BatchKillProcessListOutcome OceanBaseProClient::batchKillProcessList(const BatchKillProcessListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchKillProcessListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchKillProcessListOutcome(BatchKillProcessListResult(outcome.result()));
+	else
+		return BatchKillProcessListOutcome(outcome.error());
+}
+
+void OceanBaseProClient::batchKillProcessListAsync(const BatchKillProcessListRequest& request, const BatchKillProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchKillProcessList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::BatchKillProcessListOutcomeCallable OceanBaseProClient::batchKillProcessListCallable(const BatchKillProcessListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchKillProcessListOutcome()>>(
+			[this, request]()
+			{
+			return this->batchKillProcessList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::CancelProjectModifyRecordOutcome OceanBaseProClient::cancelProjectModifyRecord(const CancelProjectModifyRecordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -483,6 +519,78 @@ OceanBaseProClient::CreateSecurityIpGroupOutcomeCallable OceanBaseProClient::cre
 	return task->get_future();
 }
 
+OceanBaseProClient::CreateTagOutcome OceanBaseProClient::createTag(const CreateTagRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTagOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTagOutcome(CreateTagResult(outcome.result()));
+	else
+		return CreateTagOutcome(outcome.error());
+}
+
+void OceanBaseProClient::createTagAsync(const CreateTagRequest& request, const CreateTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTag(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::CreateTagOutcomeCallable OceanBaseProClient::createTagCallable(const CreateTagRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTagOutcome()>>(
+			[this, request]()
+			{
+			return this->createTag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::CreateTagValueOutcome OceanBaseProClient::createTagValue(const CreateTagValueRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTagValueOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTagValueOutcome(CreateTagValueResult(outcome.result()));
+	else
+		return CreateTagValueOutcome(outcome.error());
+}
+
+void OceanBaseProClient::createTagValueAsync(const CreateTagValueRequest& request, const CreateTagValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTagValue(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::CreateTagValueOutcomeCallable OceanBaseProClient::createTagValueCallable(const CreateTagValueRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTagValueOutcome()>>(
+			[this, request]()
+			{
+			return this->createTagValue(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::CreateTenantOutcome OceanBaseProClient::createTenant(const CreateTenantRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -801,6 +909,78 @@ OceanBaseProClient::DeleteSecurityIpGroupOutcomeCallable OceanBaseProClient::del
 			[this, request]()
 			{
 			return this->deleteSecurityIpGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::DeleteTagOutcome OceanBaseProClient::deleteTag(const DeleteTagRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTagOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTagOutcome(DeleteTagResult(outcome.result()));
+	else
+		return DeleteTagOutcome(outcome.error());
+}
+
+void OceanBaseProClient::deleteTagAsync(const DeleteTagRequest& request, const DeleteTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTag(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DeleteTagOutcomeCallable OceanBaseProClient::deleteTagCallable(const DeleteTagRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTagOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::DeleteTagValueOutcome OceanBaseProClient::deleteTagValue(const DeleteTagValueRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTagValueOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTagValueOutcome(DeleteTagValueResult(outcome.result()));
+	else
+		return DeleteTagValueOutcome(outcome.error());
+}
+
+void OceanBaseProClient::deleteTagValueAsync(const DeleteTagValueRequest& request, const DeleteTagValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTagValue(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DeleteTagValueOutcomeCallable OceanBaseProClient::deleteTagValueCallable(const DeleteTagValueRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTagValueOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTagValue(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1923,6 +2103,42 @@ OceanBaseProClient::DescribeParametersHistoryOutcomeCallable OceanBaseProClient:
 	return task->get_future();
 }
 
+OceanBaseProClient::DescribeProcessStatsCompositionOutcome OceanBaseProClient::describeProcessStatsComposition(const DescribeProcessStatsCompositionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeProcessStatsCompositionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeProcessStatsCompositionOutcome(DescribeProcessStatsCompositionResult(outcome.result()));
+	else
+		return DescribeProcessStatsCompositionOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeProcessStatsCompositionAsync(const DescribeProcessStatsCompositionRequest& request, const DescribeProcessStatsCompositionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeProcessStatsComposition(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeProcessStatsCompositionOutcomeCallable OceanBaseProClient::describeProcessStatsCompositionCallable(const DescribeProcessStatsCompositionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeProcessStatsCompositionOutcome()>>(
+			[this, request]()
+			{
+			return this->describeProcessStatsComposition(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::DescribeProjectOutcome OceanBaseProClient::describeProject(const DescribeProjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2421,6 +2637,42 @@ OceanBaseProClient::DescribeSlowSQLListOutcomeCallable OceanBaseProClient::descr
 			[this, request]()
 			{
 			return this->describeSlowSQLList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::DescribeTagValuesOutcome OceanBaseProClient::describeTagValues(const DescribeTagValuesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTagValuesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTagValuesOutcome(DescribeTagValuesResult(outcome.result()));
+	else
+		return DescribeTagValuesOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeTagValuesAsync(const DescribeTagValuesRequest& request, const DescribeTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTagValues(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeTagValuesOutcomeCallable OceanBaseProClient::describeTagValuesCallable(const DescribeTagValuesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTagValuesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTagValues(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3507,6 +3759,78 @@ OceanBaseProClient::ModifySecurityIpsOutcomeCallable OceanBaseProClient::modifyS
 	return task->get_future();
 }
 
+OceanBaseProClient::ModifyTagNameOutcome OceanBaseProClient::modifyTagName(const ModifyTagNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyTagNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyTagNameOutcome(ModifyTagNameResult(outcome.result()));
+	else
+		return ModifyTagNameOutcome(outcome.error());
+}
+
+void OceanBaseProClient::modifyTagNameAsync(const ModifyTagNameRequest& request, const ModifyTagNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyTagName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::ModifyTagNameOutcomeCallable OceanBaseProClient::modifyTagNameCallable(const ModifyTagNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyTagNameOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyTagName(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::ModifyTagValueNameOutcome OceanBaseProClient::modifyTagValueName(const ModifyTagValueNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyTagValueNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyTagValueNameOutcome(ModifyTagValueNameResult(outcome.result()));
+	else
+		return ModifyTagValueNameOutcome(outcome.error());
+}
+
+void OceanBaseProClient::modifyTagValueNameAsync(const ModifyTagValueNameRequest& request, const ModifyTagValueNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyTagValueName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::ModifyTagValueNameOutcomeCallable OceanBaseProClient::modifyTagValueNameCallable(const ModifyTagValueNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyTagValueNameOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyTagValueName(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::ModifyTenantEncryptionOutcome OceanBaseProClient::modifyTenantEncryption(const ModifyTenantEncryptionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4185,6 +4509,42 @@ OceanBaseProClient::SwitchoverInstanceOutcomeCallable OceanBaseProClient::switch
 			[this, request]()
 			{
 			return this->switchoverInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::UpdateProjectConfigOutcome OceanBaseProClient::updateProjectConfig(const UpdateProjectConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateProjectConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateProjectConfigOutcome(UpdateProjectConfigResult(outcome.result()));
+	else
+		return UpdateProjectConfigOutcome(outcome.error());
+}
+
+void OceanBaseProClient::updateProjectConfigAsync(const UpdateProjectConfigRequest& request, const UpdateProjectConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateProjectConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::UpdateProjectConfigOutcomeCallable OceanBaseProClient::updateProjectConfigCallable(const UpdateProjectConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateProjectConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateProjectConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

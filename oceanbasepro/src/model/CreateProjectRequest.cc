@@ -77,9 +77,13 @@ CreateProjectRequest::FullTransferConfig CreateProjectRequest::getFullTransferCo
 void CreateProjectRequest::setFullTransferConfig(const CreateProjectRequest::FullTransferConfig &fullTransferConfig) {
   fullTransferConfig_ = fullTransferConfig;
   setBodyParameter(std::string("FullTransferConfig") + ".NonePkUkTruncateDstTable", fullTransferConfig.nonePkUkTruncateDstTable ? "true" : "false");
+  setBodyParameter(std::string("FullTransferConfig") + ".ThrottleRps", std::to_string(fullTransferConfig.throttleRps));
   setBodyParameter(std::string("FullTransferConfig") + ".FullVerifySpeedMode", fullTransferConfig.fullVerifySpeedMode);
+  setBodyParameter(std::string("FullTransferConfig") + ".WriteWorkerNum", std::to_string(fullTransferConfig.writeWorkerNum));
+  setBodyParameter(std::string("FullTransferConfig") + ".ReadWorkerNum", std::to_string(fullTransferConfig.readWorkerNum));
   setBodyParameter(std::string("FullTransferConfig") + ".FullTransferSpeedMode", fullTransferConfig.fullTransferSpeedMode);
   setBodyParameter(std::string("FullTransferConfig") + ".AllowDestTableNotEmpty", fullTransferConfig.allowDestTableNotEmpty ? "true" : "false");
+  setBodyParameter(std::string("FullTransferConfig") + ".ThrottleIOPS", std::to_string(fullTransferConfig.throttleIOPS));
 }
 
 bool CreateProjectRequest::getEnableStructTransfer() const {
@@ -333,6 +337,27 @@ void CreateProjectRequest::setStructTransferConfig(const CreateProjectRequest::S
   setBodyParameter(std::string("StructTransferConfig") + ".DeferIndexCreation", structTransferConfig.deferIndexCreation ? "true" : "false");
 }
 
+CreateProjectRequest::ReverseIncrTransferConfig CreateProjectRequest::getReverseIncrTransferConfig() const {
+  return reverseIncrTransferConfig_;
+}
+
+void CreateProjectRequest::setReverseIncrTransferConfig(const CreateProjectRequest::ReverseIncrTransferConfig &reverseIncrTransferConfig) {
+  reverseIncrTransferConfig_ = reverseIncrTransferConfig;
+  setBodyParameter(std::string("ReverseIncrTransferConfig") + ".ThrottleRps", std::to_string(reverseIncrTransferConfig.throttleRps));
+  setBodyParameter(std::string("ReverseIncrTransferConfig") + ".EnableSequencingWithinTxn", reverseIncrTransferConfig.enableSequencingWithinTxn ? "true" : "false");
+  for(int dep1 = 0; dep1 != reverseIncrTransferConfig.supportDDLTypes.size(); dep1++) {
+    setBodyParameter(std::string("ReverseIncrTransferConfig") + ".SupportDDLTypes." + std::to_string(dep1 + 1), reverseIncrTransferConfig.supportDDLTypes[dep1]);
+  }
+  setBodyParameter(std::string("ReverseIncrTransferConfig") + ".StoreLogKeptHour", std::to_string(reverseIncrTransferConfig.storeLogKeptHour));
+  setBodyParameter(std::string("ReverseIncrTransferConfig") + ".StartTimestamp", reverseIncrTransferConfig.startTimestamp);
+  for(int dep1 = 0; dep1 != reverseIncrTransferConfig.recordTypeWhiteList.size(); dep1++) {
+    setBodyParameter(std::string("ReverseIncrTransferConfig") + ".RecordTypeWhiteList." + std::to_string(dep1 + 1), reverseIncrTransferConfig.recordTypeWhiteList[dep1]);
+  }
+  setBodyParameter(std::string("ReverseIncrTransferConfig") + ".IncrSyncConcurrency", std::to_string(reverseIncrTransferConfig.incrSyncConcurrency));
+  setBodyParameter(std::string("ReverseIncrTransferConfig") + ".EnableIncrSyncStatistics", reverseIncrTransferConfig.enableIncrSyncStatistics ? "true" : "false");
+  setBodyParameter(std::string("ReverseIncrTransferConfig") + ".ThrottleIOPS", std::to_string(reverseIncrTransferConfig.throttleIOPS));
+}
+
 bool CreateProjectRequest::getEnableIncrTransfer() const {
   return enableIncrTransfer_;
 }
@@ -386,7 +411,11 @@ CreateProjectRequest::IncrTransferConfig CreateProjectRequest::getIncrTransferCo
 
 void CreateProjectRequest::setIncrTransferConfig(const CreateProjectRequest::IncrTransferConfig &incrTransferConfig) {
   incrTransferConfig_ = incrTransferConfig;
+  setBodyParameter(std::string("IncrTransferConfig") + ".ThrottleRps", std::to_string(incrTransferConfig.throttleRps));
   setBodyParameter(std::string("IncrTransferConfig") + ".EnableSequencingWithinTxn", incrTransferConfig.enableSequencingWithinTxn ? "true" : "false");
+  for(int dep1 = 0; dep1 != incrTransferConfig.supportDDLTypes.size(); dep1++) {
+    setBodyParameter(std::string("IncrTransferConfig") + ".SupportDDLTypes." + std::to_string(dep1 + 1), incrTransferConfig.supportDDLTypes[dep1]);
+  }
   setBodyParameter(std::string("IncrTransferConfig") + ".StoreLogKeptHour", std::to_string(incrTransferConfig.storeLogKeptHour));
   setBodyParameter(std::string("IncrTransferConfig") + ".StartTimestamp", incrTransferConfig.startTimestamp);
   for(int dep1 = 0; dep1 != incrTransferConfig.recordTypeWhiteList.size(); dep1++) {
@@ -394,6 +423,7 @@ void CreateProjectRequest::setIncrTransferConfig(const CreateProjectRequest::Inc
   }
   setBodyParameter(std::string("IncrTransferConfig") + ".IncrSyncConcurrency", std::to_string(incrTransferConfig.incrSyncConcurrency));
   setBodyParameter(std::string("IncrTransferConfig") + ".EnableIncrSyncStatistics", incrTransferConfig.enableIncrSyncStatistics ? "true" : "false");
+  setBodyParameter(std::string("IncrTransferConfig") + ".ThrottleIOPS", std::to_string(incrTransferConfig.throttleIOPS));
 }
 
 bool CreateProjectRequest::getEnableReverseIncrTransfer() const {

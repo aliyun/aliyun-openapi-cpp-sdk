@@ -30,9 +30,13 @@ class ALIBABACLOUD_OCEANBASEPRO_EXPORT CreateProjectRequest : public RpcServiceR
 public:
 	struct FullTransferConfig {
 		bool nonePkUkTruncateDstTable;
+		int throttleRps;
 		std::string fullVerifySpeedMode;
+		int writeWorkerNum;
+		int readWorkerNum;
 		std::string fullTransferSpeedMode;
 		bool allowDestTableNotEmpty;
+		int throttleIOPS;
 	};
 	struct TransferMapping {
 		std::string mode;
@@ -252,14 +256,31 @@ public:
 		std::string byteCharConvertStrategy;
 		bool deferIndexCreation;
 	};
-	struct IncrTransferConfig {
+	struct ReverseIncrTransferConfig {
+		int throttleRps;
 		bool enableSequencingWithinTxn;
+		std::string string;
+		std::vector<std::string> supportDDLTypes;
 		int storeLogKeptHour;
 		std::string startTimestamp;
 		std::string string;
 		std::vector<std::string> recordTypeWhiteList;
 		int incrSyncConcurrency;
 		bool enableIncrSyncStatistics;
+		int throttleIOPS;
+	};
+	struct IncrTransferConfig {
+		int throttleRps;
+		bool enableSequencingWithinTxn;
+		std::string string;
+		std::vector<std::string> supportDDLTypes;
+		int storeLogKeptHour;
+		std::string startTimestamp;
+		std::string string;
+		std::vector<std::string> recordTypeWhiteList;
+		int incrSyncConcurrency;
+		bool enableIncrSyncStatistics;
+		int throttleIOPS;
 	};
 	CreateProjectRequest();
 	~CreateProjectRequest();
@@ -287,6 +308,8 @@ public:
 	void setCommonTransferConfig(const CommonTransferConfig &commonTransferConfig);
 	StructTransferConfig getStructTransferConfig() const;
 	void setStructTransferConfig(const StructTransferConfig &structTransferConfig);
+	ReverseIncrTransferConfig getReverseIncrTransferConfig() const;
+	void setReverseIncrTransferConfig(const ReverseIncrTransferConfig &reverseIncrTransferConfig);
 	bool getEnableIncrTransfer() const;
 	void setEnableIncrTransfer(bool enableIncrTransfer);
 	bool getEnableFullTransfer() const;
@@ -315,6 +338,7 @@ private:
 	std::string id_;
 	CommonTransferConfig commonTransferConfig_;
 	StructTransferConfig structTransferConfig_;
+	ReverseIncrTransferConfig reverseIncrTransferConfig_;
 	bool enableIncrTransfer_;
 	bool enableFullTransfer_;
 	bool enableFullVerify_;

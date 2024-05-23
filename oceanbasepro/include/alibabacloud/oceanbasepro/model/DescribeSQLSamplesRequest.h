@@ -30,6 +30,8 @@ class ALIBABACLOUD_OCEANBASEPRO_EXPORT DescribeSQLSamplesRequest : public RpcSer
 public:
 	DescribeSQLSamplesRequest();
 	~DescribeSQLSamplesRequest();
+	bool getReturnSqlText() const;
+	void setReturnSqlText(bool returnSqlText);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
 	std::string getTenantId() const;
@@ -44,6 +46,7 @@ public:
 	void setDbName(const std::string &dbName);
 
 private:
+	bool returnSqlText_;
 	std::string startTime_;
 	std::string tenantId_;
 	std::string sqlId_;

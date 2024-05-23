@@ -46,6 +46,8 @@ public:
 	void setPrimaryZone(const std::string &primaryZone);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
+	std::string getUserVpcOwnerId() const;
+	void setUserVpcOwnerId(const std::string &userVpcOwnerId);
 	std::string getUserDirectVSwitchId() const;
 	void setUserDirectVSwitchId(const std::string &userDirectVSwitchId);
 
@@ -58,6 +60,7 @@ private:
 	std::string instanceId_;
 	std::string primaryZone_;
 	std::string vpcId_;
+	std::string userVpcOwnerId_;
 	std::string userDirectVSwitchId_;
 };
 } // namespace Model

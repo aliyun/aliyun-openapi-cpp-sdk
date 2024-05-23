@@ -34,6 +34,15 @@ void DescribeZonesRequest::setSeries(const std::string &series) {
   setBodyParameter(std::string("Series"), series);
 }
 
+std::string DescribeZonesRequest::getCpuArch() const {
+  return cpuArch_;
+}
+
+void DescribeZonesRequest::setCpuArch(const std::string &cpuArch) {
+  cpuArch_ = cpuArch;
+  setBodyParameter(std::string("CpuArch"), cpuArch);
+}
+
 std::string DescribeZonesRequest::getDeployType() const {
   return deployType_;
 }

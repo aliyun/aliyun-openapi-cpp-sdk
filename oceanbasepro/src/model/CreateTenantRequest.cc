@@ -133,6 +133,26 @@ void CreateTenantRequest::setPrimaryZone(const std::string &primaryZone) {
   setBodyParameter(std::string("PrimaryZone"), primaryZone);
 }
 
+std::string CreateTenantRequest::getUserVpcOwnerId() const {
+  return userVpcOwnerId_;
+}
+
+void CreateTenantRequest::setUserVpcOwnerId(const std::string &userVpcOwnerId) {
+  userVpcOwnerId_ = userVpcOwnerId;
+  setBodyParameter(std::string("UserVpcOwnerId"), userVpcOwnerId);
+}
+
+std::map<std::string, std::string> CreateTenantRequest::getCreateParams() const {
+  return createParams_;
+}
+
+void CreateTenantRequest::setCreateParams(const std::map<std::string, std::string> &createParams) {
+  createParams_ = createParams;
+  for(auto const &iter1 : createParams) {
+    setBodyParameter(std::string("CreateParams") + "." + iter1.first, iter1.second);
+  }
+}
+
 std::string CreateTenantRequest::getTenantName() const {
   return tenantName_;
 }

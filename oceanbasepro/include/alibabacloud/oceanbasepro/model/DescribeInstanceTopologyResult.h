@@ -52,7 +52,7 @@ namespace AlibabaCloud
 								bool manualMigrate;
 							};
 							std::string tenantZoneRole;
-							std::string isPrimaryTenantZone;
+							bool isPrimaryTenantZone;
 							std::string tenantZoneId;
 							std::vector<TenantZonesItem::UnitsItem> units;
 						};

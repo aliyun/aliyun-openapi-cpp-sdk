@@ -32,20 +32,23 @@ public:
 	~DescribeAvailableZoneRequest();
 	std::string getSpec() const;
 	void setSpec(const std::string &spec);
+	std::string getInstanceType() const;
+	void setInstanceType(const std::string &instanceType);
 	std::string getObVersion() const;
 	void setObVersion(const std::string &obVersion);
 	std::string getSeries() const;
 	void setSeries(const std::string &series);
-	std::string getInstanceType() const;
-	void setInstanceType(const std::string &instanceType);
+	std::string getCpuArch() const;
+	void setCpuArch(const std::string &cpuArch);
 	std::string getDeployType() const;
 	void setDeployType(const std::string &deployType);
 
 private:
 	std::string spec_;
+	std::string instanceType_;
 	std::string obVersion_;
 	std::string series_;
-	std::string instanceType_;
+	std::string cpuArch_;
 	std::string deployType_;
 };
 } // namespace Model

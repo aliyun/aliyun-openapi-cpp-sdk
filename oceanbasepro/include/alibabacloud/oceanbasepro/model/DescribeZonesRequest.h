@@ -32,11 +32,14 @@ public:
 	~DescribeZonesRequest();
 	std::string getSeries() const;
 	void setSeries(const std::string &series);
+	std::string getCpuArch() const;
+	void setCpuArch(const std::string &cpuArch);
 	std::string getDeployType() const;
 	void setDeployType(const std::string &deployType);
 
 private:
 	std::string series_;
+	std::string cpuArch_;
 	std::string deployType_;
 };
 } // namespace Model

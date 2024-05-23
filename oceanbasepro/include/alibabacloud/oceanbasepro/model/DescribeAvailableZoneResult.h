@@ -62,6 +62,7 @@ namespace AlibabaCloud
 						std::string channel;
 						std::string region;
 						std::string instanceType;
+						std::string cpuArch;
 						std::string zones;
 					};
 					std::vector<AvailableZonesItem> availableZones;

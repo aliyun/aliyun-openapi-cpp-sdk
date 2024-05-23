@@ -66,19 +66,19 @@ void DescribeOasSlowSQLListResult::parse(const std::string &payload)
 		if(!valueDataDataItem["DbName"].isNull())
 			dataObject.dbName = valueDataDataItem["DbName"].asString();
 		if(!valueDataDataItem["RetCode4012Count"].isNull())
-			dataObject.retCode4012Count = std::stol(valueDataDataItem["RetCode4012Count"].asString());
+			dataObject.retCode4012Count = valueDataDataItem["RetCode4012Count"].asString();
 		if(!valueDataDataItem["RetCode4013Count"].isNull())
-			dataObject.retCode4013Count = std::stol(valueDataDataItem["RetCode4013Count"].asString());
+			dataObject.retCode4013Count = valueDataDataItem["RetCode4013Count"].asString();
 		if(!valueDataDataItem["RetCode5001Count"].isNull())
-			dataObject.retCode5001Count = std::stol(valueDataDataItem["RetCode5001Count"].asString());
+			dataObject.retCode5001Count = valueDataDataItem["RetCode5001Count"].asString();
 		if(!valueDataDataItem["RetCode5024Count"].isNull())
-			dataObject.retCode5024Count = std::stol(valueDataDataItem["RetCode5024Count"].asString());
+			dataObject.retCode5024Count = valueDataDataItem["RetCode5024Count"].asString();
 		if(!valueDataDataItem["RetCode5167Count"].isNull())
-			dataObject.retCode5167Count = std::stol(valueDataDataItem["RetCode5167Count"].asString());
+			dataObject.retCode5167Count = valueDataDataItem["RetCode5167Count"].asString();
 		if(!valueDataDataItem["RetCode5217Count"].isNull())
-			dataObject.retCode5217Count = std::stol(valueDataDataItem["RetCode5217Count"].asString());
+			dataObject.retCode5217Count = valueDataDataItem["RetCode5217Count"].asString();
 		if(!valueDataDataItem["RetCode6002Count"].isNull())
-			dataObject.retCode6002Count = std::stol(valueDataDataItem["RetCode6002Count"].asString());
+			dataObject.retCode6002Count = valueDataDataItem["RetCode6002Count"].asString();
 		if(!valueDataDataItem["FailPercentage"].isNull())
 			dataObject.failPercentage = valueDataDataItem["FailPercentage"].asString();
 		if(!valueDataDataItem["SumWaitTime"].isNull())

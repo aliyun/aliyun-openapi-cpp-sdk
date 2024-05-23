@@ -37,12 +37,12 @@ namespace AlibabaCloud
 				DescribeMetricsDataResult();
 				explicit DescribeMetricsDataResult(const std::string &payload);
 				~DescribeMetricsDataResult();
-				std::string getData()const;
+				std::vector<std::string> getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string data_;
+				std::vector<std::string> data_;
 
 			};
 		}

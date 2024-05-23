@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "OceanBaseProExport.h"
+#include "model/BatchKillProcessListRequest.h"
+#include "model/BatchKillProcessListResult.h"
 #include "model/CancelProjectModifyRecordRequest.h"
 #include "model/CancelProjectModifyRecordResult.h"
 #include "model/CreateBackupSetDownloadLinkRequest.h"
@@ -46,6 +48,10 @@
 #include "model/CreateRdsPostgreSQLDataSourceResult.h"
 #include "model/CreateSecurityIpGroupRequest.h"
 #include "model/CreateSecurityIpGroupResult.h"
+#include "model/CreateTagRequest.h"
+#include "model/CreateTagResult.h"
+#include "model/CreateTagValueRequest.h"
+#include "model/CreateTagValueResult.h"
 #include "model/CreateTenantRequest.h"
 #include "model/CreateTenantResult.h"
 #include "model/CreateTenantReadOnlyConnectionRequest.h"
@@ -64,6 +70,10 @@
 #include "model/DeleteProjectResult.h"
 #include "model/DeleteSecurityIpGroupRequest.h"
 #include "model/DeleteSecurityIpGroupResult.h"
+#include "model/DeleteTagRequest.h"
+#include "model/DeleteTagResult.h"
+#include "model/DeleteTagValueRequest.h"
+#include "model/DeleteTagValueResult.h"
 #include "model/DeleteTenantSecurityIpGroupRequest.h"
 #include "model/DeleteTenantSecurityIpGroupResult.h"
 #include "model/DeleteTenantUsersRequest.h"
@@ -126,6 +136,8 @@
 #include "model/DescribeParametersResult.h"
 #include "model/DescribeParametersHistoryRequest.h"
 #include "model/DescribeParametersHistoryResult.h"
+#include "model/DescribeProcessStatsCompositionRequest.h"
+#include "model/DescribeProcessStatsCompositionResult.h"
 #include "model/DescribeProjectRequest.h"
 #include "model/DescribeProjectResult.h"
 #include "model/DescribeProjectComponentsRequest.h"
@@ -154,6 +166,8 @@
 #include "model/DescribeSlowSQLHistoryListResult.h"
 #include "model/DescribeSlowSQLListRequest.h"
 #include "model/DescribeSlowSQLListResult.h"
+#include "model/DescribeTagValuesRequest.h"
+#include "model/DescribeTagValuesResult.h"
 #include "model/DescribeTenantRequest.h"
 #include "model/DescribeTenantResult.h"
 #include "model/DescribeTenantEncryptionRequest.h"
@@ -214,6 +228,10 @@
 #include "model/ModifyParametersResult.h"
 #include "model/ModifySecurityIpsRequest.h"
 #include "model/ModifySecurityIpsResult.h"
+#include "model/ModifyTagNameRequest.h"
+#include "model/ModifyTagNameResult.h"
+#include "model/ModifyTagValueNameRequest.h"
+#include "model/ModifyTagValueNameResult.h"
 #include "model/ModifyTenantEncryptionRequest.h"
 #include "model/ModifyTenantEncryptionResult.h"
 #include "model/ModifyTenantPrimaryZoneRequest.h"
@@ -252,6 +270,8 @@
 #include "model/StopProjectsByLabelResult.h"
 #include "model/SwitchoverInstanceRequest.h"
 #include "model/SwitchoverInstanceResult.h"
+#include "model/UpdateProjectConfigRequest.h"
+#include "model/UpdateProjectConfigResult.h"
 
 
 namespace AlibabaCloud
@@ -261,6 +281,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_OCEANBASEPRO_EXPORT OceanBaseProClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::BatchKillProcessListResult> BatchKillProcessListOutcome;
+			typedef std::future<BatchKillProcessListOutcome> BatchKillProcessListOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::BatchKillProcessListRequest&, const BatchKillProcessListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchKillProcessListAsyncHandler;
 			typedef Outcome<Error, Model::CancelProjectModifyRecordResult> CancelProjectModifyRecordOutcome;
 			typedef std::future<CancelProjectModifyRecordOutcome> CancelProjectModifyRecordOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::CancelProjectModifyRecordRequest&, const CancelProjectModifyRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelProjectModifyRecordAsyncHandler;
@@ -297,6 +320,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateSecurityIpGroupResult> CreateSecurityIpGroupOutcome;
 			typedef std::future<CreateSecurityIpGroupOutcome> CreateSecurityIpGroupOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::CreateSecurityIpGroupRequest&, const CreateSecurityIpGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityIpGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateTagResult> CreateTagOutcome;
+			typedef std::future<CreateTagOutcome> CreateTagOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::CreateTagRequest&, const CreateTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTagAsyncHandler;
+			typedef Outcome<Error, Model::CreateTagValueResult> CreateTagValueOutcome;
+			typedef std::future<CreateTagValueOutcome> CreateTagValueOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::CreateTagValueRequest&, const CreateTagValueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTagValueAsyncHandler;
 			typedef Outcome<Error, Model::CreateTenantResult> CreateTenantOutcome;
 			typedef std::future<CreateTenantOutcome> CreateTenantOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::CreateTenantRequest&, const CreateTenantOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTenantAsyncHandler;
@@ -324,6 +353,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteSecurityIpGroupResult> DeleteSecurityIpGroupOutcome;
 			typedef std::future<DeleteSecurityIpGroupOutcome> DeleteSecurityIpGroupOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DeleteSecurityIpGroupRequest&, const DeleteSecurityIpGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityIpGroupAsyncHandler;
+			typedef Outcome<Error, Model::DeleteTagResult> DeleteTagOutcome;
+			typedef std::future<DeleteTagOutcome> DeleteTagOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DeleteTagRequest&, const DeleteTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTagAsyncHandler;
+			typedef Outcome<Error, Model::DeleteTagValueResult> DeleteTagValueOutcome;
+			typedef std::future<DeleteTagValueOutcome> DeleteTagValueOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DeleteTagValueRequest&, const DeleteTagValueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTagValueAsyncHandler;
 			typedef Outcome<Error, Model::DeleteTenantSecurityIpGroupResult> DeleteTenantSecurityIpGroupOutcome;
 			typedef std::future<DeleteTenantSecurityIpGroupOutcome> DeleteTenantSecurityIpGroupOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DeleteTenantSecurityIpGroupRequest&, const DeleteTenantSecurityIpGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTenantSecurityIpGroupAsyncHandler;
@@ -417,6 +452,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeParametersHistoryResult> DescribeParametersHistoryOutcome;
 			typedef std::future<DescribeParametersHistoryOutcome> DescribeParametersHistoryOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeParametersHistoryRequest&, const DescribeParametersHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParametersHistoryAsyncHandler;
+			typedef Outcome<Error, Model::DescribeProcessStatsCompositionResult> DescribeProcessStatsCompositionOutcome;
+			typedef std::future<DescribeProcessStatsCompositionOutcome> DescribeProcessStatsCompositionOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeProcessStatsCompositionRequest&, const DescribeProcessStatsCompositionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProcessStatsCompositionAsyncHandler;
 			typedef Outcome<Error, Model::DescribeProjectResult> DescribeProjectOutcome;
 			typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeProjectRequest&, const DescribeProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectAsyncHandler;
@@ -459,6 +497,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSlowSQLListResult> DescribeSlowSQLListOutcome;
 			typedef std::future<DescribeSlowSQLListOutcome> DescribeSlowSQLListOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeSlowSQLListRequest&, const DescribeSlowSQLListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowSQLListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTagValuesResult> DescribeTagValuesOutcome;
+			typedef std::future<DescribeTagValuesOutcome> DescribeTagValuesOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeTagValuesRequest&, const DescribeTagValuesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagValuesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTenantResult> DescribeTenantOutcome;
 			typedef std::future<DescribeTenantOutcome> DescribeTenantOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeTenantRequest&, const DescribeTenantOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTenantAsyncHandler;
@@ -549,6 +590,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifySecurityIpsResult> ModifySecurityIpsOutcome;
 			typedef std::future<ModifySecurityIpsOutcome> ModifySecurityIpsOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::ModifySecurityIpsRequest&, const ModifySecurityIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityIpsAsyncHandler;
+			typedef Outcome<Error, Model::ModifyTagNameResult> ModifyTagNameOutcome;
+			typedef std::future<ModifyTagNameOutcome> ModifyTagNameOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::ModifyTagNameRequest&, const ModifyTagNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTagNameAsyncHandler;
+			typedef Outcome<Error, Model::ModifyTagValueNameResult> ModifyTagValueNameOutcome;
+			typedef std::future<ModifyTagValueNameOutcome> ModifyTagValueNameOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::ModifyTagValueNameRequest&, const ModifyTagValueNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTagValueNameAsyncHandler;
 			typedef Outcome<Error, Model::ModifyTenantEncryptionResult> ModifyTenantEncryptionOutcome;
 			typedef std::future<ModifyTenantEncryptionOutcome> ModifyTenantEncryptionOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::ModifyTenantEncryptionRequest&, const ModifyTenantEncryptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTenantEncryptionAsyncHandler;
@@ -606,11 +653,17 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SwitchoverInstanceResult> SwitchoverInstanceOutcome;
 			typedef std::future<SwitchoverInstanceOutcome> SwitchoverInstanceOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::SwitchoverInstanceRequest&, const SwitchoverInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchoverInstanceAsyncHandler;
+			typedef Outcome<Error, Model::UpdateProjectConfigResult> UpdateProjectConfigOutcome;
+			typedef std::future<UpdateProjectConfigOutcome> UpdateProjectConfigOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::UpdateProjectConfigRequest&, const UpdateProjectConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProjectConfigAsyncHandler;
 
 			OceanBaseProClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			OceanBaseProClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			OceanBaseProClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~OceanBaseProClient();
+			BatchKillProcessListOutcome batchKillProcessList(const Model::BatchKillProcessListRequest &request)const;
+			void batchKillProcessListAsync(const Model::BatchKillProcessListRequest& request, const BatchKillProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchKillProcessListOutcomeCallable batchKillProcessListCallable(const Model::BatchKillProcessListRequest& request) const;
 			CancelProjectModifyRecordOutcome cancelProjectModifyRecord(const Model::CancelProjectModifyRecordRequest &request)const;
 			void cancelProjectModifyRecordAsync(const Model::CancelProjectModifyRecordRequest& request, const CancelProjectModifyRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelProjectModifyRecordOutcomeCallable cancelProjectModifyRecordCallable(const Model::CancelProjectModifyRecordRequest& request) const;
@@ -647,6 +700,12 @@ namespace AlibabaCloud
 			CreateSecurityIpGroupOutcome createSecurityIpGroup(const Model::CreateSecurityIpGroupRequest &request)const;
 			void createSecurityIpGroupAsync(const Model::CreateSecurityIpGroupRequest& request, const CreateSecurityIpGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSecurityIpGroupOutcomeCallable createSecurityIpGroupCallable(const Model::CreateSecurityIpGroupRequest& request) const;
+			CreateTagOutcome createTag(const Model::CreateTagRequest &request)const;
+			void createTagAsync(const Model::CreateTagRequest& request, const CreateTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTagOutcomeCallable createTagCallable(const Model::CreateTagRequest& request) const;
+			CreateTagValueOutcome createTagValue(const Model::CreateTagValueRequest &request)const;
+			void createTagValueAsync(const Model::CreateTagValueRequest& request, const CreateTagValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTagValueOutcomeCallable createTagValueCallable(const Model::CreateTagValueRequest& request) const;
 			CreateTenantOutcome createTenant(const Model::CreateTenantRequest &request)const;
 			void createTenantAsync(const Model::CreateTenantRequest& request, const CreateTenantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTenantOutcomeCallable createTenantCallable(const Model::CreateTenantRequest& request) const;
@@ -674,6 +733,12 @@ namespace AlibabaCloud
 			DeleteSecurityIpGroupOutcome deleteSecurityIpGroup(const Model::DeleteSecurityIpGroupRequest &request)const;
 			void deleteSecurityIpGroupAsync(const Model::DeleteSecurityIpGroupRequest& request, const DeleteSecurityIpGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSecurityIpGroupOutcomeCallable deleteSecurityIpGroupCallable(const Model::DeleteSecurityIpGroupRequest& request) const;
+			DeleteTagOutcome deleteTag(const Model::DeleteTagRequest &request)const;
+			void deleteTagAsync(const Model::DeleteTagRequest& request, const DeleteTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteTagOutcomeCallable deleteTagCallable(const Model::DeleteTagRequest& request) const;
+			DeleteTagValueOutcome deleteTagValue(const Model::DeleteTagValueRequest &request)const;
+			void deleteTagValueAsync(const Model::DeleteTagValueRequest& request, const DeleteTagValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteTagValueOutcomeCallable deleteTagValueCallable(const Model::DeleteTagValueRequest& request) const;
 			DeleteTenantSecurityIpGroupOutcome deleteTenantSecurityIpGroup(const Model::DeleteTenantSecurityIpGroupRequest &request)const;
 			void deleteTenantSecurityIpGroupAsync(const Model::DeleteTenantSecurityIpGroupRequest& request, const DeleteTenantSecurityIpGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTenantSecurityIpGroupOutcomeCallable deleteTenantSecurityIpGroupCallable(const Model::DeleteTenantSecurityIpGroupRequest& request) const;
@@ -767,6 +832,9 @@ namespace AlibabaCloud
 			DescribeParametersHistoryOutcome describeParametersHistory(const Model::DescribeParametersHistoryRequest &request)const;
 			void describeParametersHistoryAsync(const Model::DescribeParametersHistoryRequest& request, const DescribeParametersHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeParametersHistoryOutcomeCallable describeParametersHistoryCallable(const Model::DescribeParametersHistoryRequest& request) const;
+			DescribeProcessStatsCompositionOutcome describeProcessStatsComposition(const Model::DescribeProcessStatsCompositionRequest &request)const;
+			void describeProcessStatsCompositionAsync(const Model::DescribeProcessStatsCompositionRequest& request, const DescribeProcessStatsCompositionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeProcessStatsCompositionOutcomeCallable describeProcessStatsCompositionCallable(const Model::DescribeProcessStatsCompositionRequest& request) const;
 			DescribeProjectOutcome describeProject(const Model::DescribeProjectRequest &request)const;
 			void describeProjectAsync(const Model::DescribeProjectRequest& request, const DescribeProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeProjectOutcomeCallable describeProjectCallable(const Model::DescribeProjectRequest& request) const;
@@ -809,6 +877,9 @@ namespace AlibabaCloud
 			DescribeSlowSQLListOutcome describeSlowSQLList(const Model::DescribeSlowSQLListRequest &request)const;
 			void describeSlowSQLListAsync(const Model::DescribeSlowSQLListRequest& request, const DescribeSlowSQLListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSlowSQLListOutcomeCallable describeSlowSQLListCallable(const Model::DescribeSlowSQLListRequest& request) const;
+			DescribeTagValuesOutcome describeTagValues(const Model::DescribeTagValuesRequest &request)const;
+			void describeTagValuesAsync(const Model::DescribeTagValuesRequest& request, const DescribeTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTagValuesOutcomeCallable describeTagValuesCallable(const Model::DescribeTagValuesRequest& request) const;
 			DescribeTenantOutcome describeTenant(const Model::DescribeTenantRequest &request)const;
 			void describeTenantAsync(const Model::DescribeTenantRequest& request, const DescribeTenantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTenantOutcomeCallable describeTenantCallable(const Model::DescribeTenantRequest& request) const;
@@ -899,6 +970,12 @@ namespace AlibabaCloud
 			ModifySecurityIpsOutcome modifySecurityIps(const Model::ModifySecurityIpsRequest &request)const;
 			void modifySecurityIpsAsync(const Model::ModifySecurityIpsRequest& request, const ModifySecurityIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySecurityIpsOutcomeCallable modifySecurityIpsCallable(const Model::ModifySecurityIpsRequest& request) const;
+			ModifyTagNameOutcome modifyTagName(const Model::ModifyTagNameRequest &request)const;
+			void modifyTagNameAsync(const Model::ModifyTagNameRequest& request, const ModifyTagNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyTagNameOutcomeCallable modifyTagNameCallable(const Model::ModifyTagNameRequest& request) const;
+			ModifyTagValueNameOutcome modifyTagValueName(const Model::ModifyTagValueNameRequest &request)const;
+			void modifyTagValueNameAsync(const Model::ModifyTagValueNameRequest& request, const ModifyTagValueNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyTagValueNameOutcomeCallable modifyTagValueNameCallable(const Model::ModifyTagValueNameRequest& request) const;
 			ModifyTenantEncryptionOutcome modifyTenantEncryption(const Model::ModifyTenantEncryptionRequest &request)const;
 			void modifyTenantEncryptionAsync(const Model::ModifyTenantEncryptionRequest& request, const ModifyTenantEncryptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyTenantEncryptionOutcomeCallable modifyTenantEncryptionCallable(const Model::ModifyTenantEncryptionRequest& request) const;
@@ -956,6 +1033,9 @@ namespace AlibabaCloud
 			SwitchoverInstanceOutcome switchoverInstance(const Model::SwitchoverInstanceRequest &request)const;
 			void switchoverInstanceAsync(const Model::SwitchoverInstanceRequest& request, const SwitchoverInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SwitchoverInstanceOutcomeCallable switchoverInstanceCallable(const Model::SwitchoverInstanceRequest& request) const;
+			UpdateProjectConfigOutcome updateProjectConfig(const Model::UpdateProjectConfigRequest &request)const;
+			void updateProjectConfigAsync(const Model::UpdateProjectConfigRequest& request, const UpdateProjectConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateProjectConfigOutcomeCallable updateProjectConfigCallable(const Model::UpdateProjectConfigRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

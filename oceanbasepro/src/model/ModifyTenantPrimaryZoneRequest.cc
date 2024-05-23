@@ -97,6 +97,15 @@ void ModifyTenantPrimaryZoneRequest::setVpcId(const std::string &vpcId) {
   setBodyParameter(std::string("VpcId"), vpcId);
 }
 
+std::string ModifyTenantPrimaryZoneRequest::getUserVpcOwnerId() const {
+  return userVpcOwnerId_;
+}
+
+void ModifyTenantPrimaryZoneRequest::setUserVpcOwnerId(const std::string &userVpcOwnerId) {
+  userVpcOwnerId_ = userVpcOwnerId;
+  setBodyParameter(std::string("UserVpcOwnerId"), userVpcOwnerId);
+}
+
 std::string ModifyTenantPrimaryZoneRequest::getUserDirectVSwitchId() const {
   return userDirectVSwitchId_;
 }

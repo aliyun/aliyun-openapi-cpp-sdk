@@ -34,6 +34,15 @@ void DescribeAvailableZoneRequest::setSpec(const std::string &spec) {
   setBodyParameter(std::string("Spec"), spec);
 }
 
+std::string DescribeAvailableZoneRequest::getInstanceType() const {
+  return instanceType_;
+}
+
+void DescribeAvailableZoneRequest::setInstanceType(const std::string &instanceType) {
+  instanceType_ = instanceType;
+  setBodyParameter(std::string("InstanceType"), instanceType);
+}
+
 std::string DescribeAvailableZoneRequest::getObVersion() const {
   return obVersion_;
 }
@@ -52,13 +61,13 @@ void DescribeAvailableZoneRequest::setSeries(const std::string &series) {
   setBodyParameter(std::string("Series"), series);
 }
 
-std::string DescribeAvailableZoneRequest::getInstanceType() const {
-  return instanceType_;
+std::string DescribeAvailableZoneRequest::getCpuArch() const {
+  return cpuArch_;
 }
 
-void DescribeAvailableZoneRequest::setInstanceType(const std::string &instanceType) {
-  instanceType_ = instanceType;
-  setBodyParameter(std::string("InstanceType"), instanceType);
+void DescribeAvailableZoneRequest::setCpuArch(const std::string &cpuArch) {
+  cpuArch_ = cpuArch;
+  setBodyParameter(std::string("CpuArch"), cpuArch);
 }
 
 std::string DescribeAvailableZoneRequest::getDeployType() const {

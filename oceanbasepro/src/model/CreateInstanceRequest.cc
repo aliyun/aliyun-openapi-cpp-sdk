@@ -160,6 +160,15 @@ void CreateInstanceRequest::setSeries(const std::string &series) {
   setBodyParameter(std::string("Series"), series);
 }
 
+std::string CreateInstanceRequest::getCpuArch() const {
+  return cpuArch_;
+}
+
+void CreateInstanceRequest::setCpuArch(const std::string &cpuArch) {
+  cpuArch_ = cpuArch;
+  setBodyParameter(std::string("CpuArch"), cpuArch);
+}
+
 std::string CreateInstanceRequest::getPrimaryInstance() const {
   return primaryInstance_;
 }

@@ -56,6 +56,8 @@ void DescribeAvailableZoneResult::parse(const std::string &payload)
 			availableZonesItemObject.instanceType = dataNodeAvailableZonesAvailableZonesItem["InstanceType"].asString();
 		if(!dataNodeAvailableZonesAvailableZonesItem["Series"].isNull())
 			availableZonesItemObject.series = dataNodeAvailableZonesAvailableZonesItem["Series"].asString();
+		if(!dataNodeAvailableZonesAvailableZonesItem["CpuArch"].isNull())
+			availableZonesItemObject.cpuArch = dataNodeAvailableZonesAvailableZonesItem["CpuArch"].asString();
 		auto allSupportSpecificationsNode = dataNodeAvailableZonesAvailableZonesItem["SupportSpecifications"]["SupportSpecificationsItem"];
 		for (auto dataNodeAvailableZonesAvailableZonesItemSupportSpecificationsSupportSpecificationsItem : allSupportSpecificationsNode)
 		{

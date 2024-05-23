@@ -21,6 +21,8 @@ set(oceanbasepro_public_header
 	include/alibabacloud/oceanbasepro/OceanBaseProExport.h )
 
 set(oceanbasepro_public_header_model 
+	include/alibabacloud/oceanbasepro/model/BatchKillProcessListRequest.h
+	include/alibabacloud/oceanbasepro/model/BatchKillProcessListResult.h
 	include/alibabacloud/oceanbasepro/model/CancelProjectModifyRecordRequest.h
 	include/alibabacloud/oceanbasepro/model/CancelProjectModifyRecordResult.h
 	include/alibabacloud/oceanbasepro/model/CreateBackupSetDownloadLinkRequest.h
@@ -45,6 +47,10 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/CreateRdsPostgreSQLDataSourceResult.h
 	include/alibabacloud/oceanbasepro/model/CreateSecurityIpGroupRequest.h
 	include/alibabacloud/oceanbasepro/model/CreateSecurityIpGroupResult.h
+	include/alibabacloud/oceanbasepro/model/CreateTagRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateTagResult.h
+	include/alibabacloud/oceanbasepro/model/CreateTagValueRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateTagValueResult.h
 	include/alibabacloud/oceanbasepro/model/CreateTenantRequest.h
 	include/alibabacloud/oceanbasepro/model/CreateTenantResult.h
 	include/alibabacloud/oceanbasepro/model/CreateTenantReadOnlyConnectionRequest.h
@@ -63,6 +69,10 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DeleteProjectResult.h
 	include/alibabacloud/oceanbasepro/model/DeleteSecurityIpGroupRequest.h
 	include/alibabacloud/oceanbasepro/model/DeleteSecurityIpGroupResult.h
+	include/alibabacloud/oceanbasepro/model/DeleteTagRequest.h
+	include/alibabacloud/oceanbasepro/model/DeleteTagResult.h
+	include/alibabacloud/oceanbasepro/model/DeleteTagValueRequest.h
+	include/alibabacloud/oceanbasepro/model/DeleteTagValueResult.h
 	include/alibabacloud/oceanbasepro/model/DeleteTenantSecurityIpGroupRequest.h
 	include/alibabacloud/oceanbasepro/model/DeleteTenantSecurityIpGroupResult.h
 	include/alibabacloud/oceanbasepro/model/DeleteTenantUsersRequest.h
@@ -125,6 +135,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeParametersResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeParametersHistoryRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeParametersHistoryResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeProcessStatsCompositionRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeProcessStatsCompositionResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeProjectRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeProjectResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeProjectComponentsRequest.h
@@ -153,6 +165,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLHistoryListResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLListRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLListResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeTagValuesRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeTagValuesResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeTenantRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeTenantResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeTenantEncryptionRequest.h
@@ -213,6 +227,10 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/ModifyParametersResult.h
 	include/alibabacloud/oceanbasepro/model/ModifySecurityIpsRequest.h
 	include/alibabacloud/oceanbasepro/model/ModifySecurityIpsResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyTagNameRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyTagNameResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyTagValueNameRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyTagValueNameResult.h
 	include/alibabacloud/oceanbasepro/model/ModifyTenantEncryptionRequest.h
 	include/alibabacloud/oceanbasepro/model/ModifyTenantEncryptionResult.h
 	include/alibabacloud/oceanbasepro/model/ModifyTenantPrimaryZoneRequest.h
@@ -250,10 +268,14 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/StopProjectsByLabelRequest.h
 	include/alibabacloud/oceanbasepro/model/StopProjectsByLabelResult.h
 	include/alibabacloud/oceanbasepro/model/SwitchoverInstanceRequest.h
-	include/alibabacloud/oceanbasepro/model/SwitchoverInstanceResult.h )
+	include/alibabacloud/oceanbasepro/model/SwitchoverInstanceResult.h
+	include/alibabacloud/oceanbasepro/model/UpdateProjectConfigRequest.h
+	include/alibabacloud/oceanbasepro/model/UpdateProjectConfigResult.h )
 
 set(oceanbasepro_src 
 	src/OceanBaseProClient.cc
+	src/model/BatchKillProcessListRequest.cc
+	src/model/BatchKillProcessListResult.cc
 	src/model/CancelProjectModifyRecordRequest.cc
 	src/model/CancelProjectModifyRecordResult.cc
 	src/model/CreateBackupSetDownloadLinkRequest.cc
@@ -278,6 +300,10 @@ set(oceanbasepro_src
 	src/model/CreateRdsPostgreSQLDataSourceResult.cc
 	src/model/CreateSecurityIpGroupRequest.cc
 	src/model/CreateSecurityIpGroupResult.cc
+	src/model/CreateTagRequest.cc
+	src/model/CreateTagResult.cc
+	src/model/CreateTagValueRequest.cc
+	src/model/CreateTagValueResult.cc
 	src/model/CreateTenantRequest.cc
 	src/model/CreateTenantResult.cc
 	src/model/CreateTenantReadOnlyConnectionRequest.cc
@@ -296,6 +322,10 @@ set(oceanbasepro_src
 	src/model/DeleteProjectResult.cc
 	src/model/DeleteSecurityIpGroupRequest.cc
 	src/model/DeleteSecurityIpGroupResult.cc
+	src/model/DeleteTagRequest.cc
+	src/model/DeleteTagResult.cc
+	src/model/DeleteTagValueRequest.cc
+	src/model/DeleteTagValueResult.cc
 	src/model/DeleteTenantSecurityIpGroupRequest.cc
 	src/model/DeleteTenantSecurityIpGroupResult.cc
 	src/model/DeleteTenantUsersRequest.cc
@@ -358,6 +388,8 @@ set(oceanbasepro_src
 	src/model/DescribeParametersResult.cc
 	src/model/DescribeParametersHistoryRequest.cc
 	src/model/DescribeParametersHistoryResult.cc
+	src/model/DescribeProcessStatsCompositionRequest.cc
+	src/model/DescribeProcessStatsCompositionResult.cc
 	src/model/DescribeProjectRequest.cc
 	src/model/DescribeProjectResult.cc
 	src/model/DescribeProjectComponentsRequest.cc
@@ -386,6 +418,8 @@ set(oceanbasepro_src
 	src/model/DescribeSlowSQLHistoryListResult.cc
 	src/model/DescribeSlowSQLListRequest.cc
 	src/model/DescribeSlowSQLListResult.cc
+	src/model/DescribeTagValuesRequest.cc
+	src/model/DescribeTagValuesResult.cc
 	src/model/DescribeTenantRequest.cc
 	src/model/DescribeTenantResult.cc
 	src/model/DescribeTenantEncryptionRequest.cc
@@ -446,6 +480,10 @@ set(oceanbasepro_src
 	src/model/ModifyParametersResult.cc
 	src/model/ModifySecurityIpsRequest.cc
 	src/model/ModifySecurityIpsResult.cc
+	src/model/ModifyTagNameRequest.cc
+	src/model/ModifyTagNameResult.cc
+	src/model/ModifyTagValueNameRequest.cc
+	src/model/ModifyTagValueNameResult.cc
 	src/model/ModifyTenantEncryptionRequest.cc
 	src/model/ModifyTenantEncryptionResult.cc
 	src/model/ModifyTenantPrimaryZoneRequest.cc
@@ -483,7 +521,9 @@ set(oceanbasepro_src
 	src/model/StopProjectsByLabelRequest.cc
 	src/model/StopProjectsByLabelResult.cc
 	src/model/SwitchoverInstanceRequest.cc
-	src/model/SwitchoverInstanceResult.cc )
+	src/model/SwitchoverInstanceResult.cc
+	src/model/UpdateProjectConfigRequest.cc
+	src/model/UpdateProjectConfigResult.cc )
 
 add_library(oceanbasepro ${LIB_TYPE}
 	${oceanbasepro_public_header}

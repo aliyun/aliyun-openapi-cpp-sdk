@@ -96,6 +96,10 @@ void DescribeTenantResult::parse(const std::string &payload)
 		tenant_.dataMergeTime = tenantNode["DataMergeTime"].asString();
 	if(!tenantNode["EnableReadOnlyReplica"].isNull())
 		tenant_.enableReadOnlyReplica = tenantNode["EnableReadOnlyReplica"].asString() == "true";
+	if(!tenantNode["LowerCaseTableNames"].isNull())
+		tenant_.lowerCaseTableNames = tenantNode["LowerCaseTableNames"].asString();
+	if(!tenantNode["Version"].isNull())
+		tenant_.version = tenantNode["Version"].asString();
 	auto allTenantConnectionsNode = tenantNode["TenantConnections"]["TenantConnectionsItem"];
 	for (auto tenantNodeTenantConnectionsTenantConnectionsItem : allTenantConnectionsNode)
 	{

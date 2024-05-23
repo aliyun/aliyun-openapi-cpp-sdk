@@ -81,6 +81,7 @@ namespace AlibabaCloud
 					double rowCacheHit;
 					double affectedRows;
 					double usedWorkerCount;
+					std::string sqlText;
 					double applicationWaitTime;
 					std::string waitEvent;
 					double userIoWaitTime;

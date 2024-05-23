@@ -25,6 +25,15 @@ DescribeSQLSamplesRequest::DescribeSQLSamplesRequest()
 
 DescribeSQLSamplesRequest::~DescribeSQLSamplesRequest() {}
 
+bool DescribeSQLSamplesRequest::getReturnSqlText() const {
+  return returnSqlText_;
+}
+
+void DescribeSQLSamplesRequest::setReturnSqlText(bool returnSqlText) {
+  returnSqlText_ = returnSqlText;
+  setBodyParameter(std::string("ReturnSqlText"), returnSqlText ? "true" : "false");
+}
+
 std::string DescribeSQLSamplesRequest::getStartTime() const {
   return startTime_;
 }

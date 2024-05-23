@@ -44,7 +44,7 @@ void DescribeOasTopSQLListResult::parse(const std::string &payload)
 	{
 		DataItem dataObject;
 		if(!valueDataDataItem["Executions"].isNull())
-			dataObject.executions = valueDataDataItem["Executions"].asString();
+			dataObject.executions = std::stol(valueDataDataItem["Executions"].asString());
 		if(!valueDataDataItem["RpcCount"].isNull())
 			dataObject.rpcCount = valueDataDataItem["RpcCount"].asString();
 		if(!valueDataDataItem["RemotePlans"].isNull())
@@ -208,7 +208,7 @@ void DescribeOasTopSQLListResult::parse(const std::string &payload)
 		{
 			DataItem::SqlListItem sqlListObject;
 			if(!valueDataDataItemSqlListSqlListItem["Executions"].isNull())
-				sqlListObject.executions = valueDataDataItemSqlListSqlListItem["Executions"].asString();
+				sqlListObject.executions = std::stol(valueDataDataItemSqlListSqlListItem["Executions"].asString());
 			if(!valueDataDataItemSqlListSqlListItem["RpcCount"].isNull())
 				sqlListObject.rpcCount = valueDataDataItemSqlListSqlListItem["RpcCount"].asString();
 			if(!valueDataDataItemSqlListSqlListItem["RemotePlans"].isNull())

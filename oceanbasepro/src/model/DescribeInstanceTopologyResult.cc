@@ -69,7 +69,7 @@ void DescribeInstanceTopologyResult::parse(const std::string &payload)
 			if(!instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["TenantZoneRole"].isNull())
 				tenantZonesObject.tenantZoneRole = instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["TenantZoneRole"].asString();
 			if(!instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["IsPrimaryTenantZone"].isNull())
-				tenantZonesObject.isPrimaryTenantZone = instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["IsPrimaryTenantZone"].asString();
+				tenantZonesObject.isPrimaryTenantZone = instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["IsPrimaryTenantZone"].asString() == "true";
 			if(!instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["TenantZoneId"].isNull())
 				tenantZonesObject.tenantZoneId = instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["TenantZoneId"].asString();
 			auto allUnitsNode = instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["Units"]["UnitsItem"];

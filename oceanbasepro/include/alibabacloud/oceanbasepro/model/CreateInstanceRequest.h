@@ -60,6 +60,8 @@ public:
 	void setAutoRenew(bool autoRenew);
 	std::string getSeries() const;
 	void setSeries(const std::string &series);
+	std::string getCpuArch() const;
+	void setCpuArch(const std::string &cpuArch);
 	std::string getPrimaryInstance() const;
 	void setPrimaryInstance(const std::string &primaryInstance);
 	std::string getPrimaryRegion() const;
@@ -85,6 +87,7 @@ private:
 	std::string replicaMode_;
 	bool autoRenew_;
 	std::string series_;
+	std::string cpuArch_;
 	std::string primaryInstance_;
 	std::string primaryRegion_;
 	std::string chargeType_;

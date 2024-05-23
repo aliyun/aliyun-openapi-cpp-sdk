@@ -36,7 +36,7 @@ namespace AlibabaCloud
 				{
 					struct SqlListItem
 					{
-						double executions;
+						long executions;
 						double avgRowCacheHit;
 						double maxApplicationWaitTime;
 						std::string server;
@@ -115,7 +115,7 @@ namespace AlibabaCloud
 						double sumWaitTime;
 						long serverPort;
 					};
-					double executions;
+					long executions;
 					double avgRowCacheHit;
 					double maxApplicationWaitTime;
 					std::string server;

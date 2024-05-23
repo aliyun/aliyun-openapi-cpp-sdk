@@ -156,6 +156,7 @@ namespace AlibabaCloud
 					std::string dataMergeTime;
 					bool inTempCapacityStatus;
 					bool enableReadOnlyReplica;
+					std::string primaryInstance;
 					bool isTrustEcs;
 					std::string proxyClusterId;
 					bool isLatestObVersion;
@@ -175,6 +176,7 @@ namespace AlibabaCloud
 					std::string status;
 					bool autoUpgradeObVersion;
 					std::string instanceId;
+					std::string primaryRegion;
 					int exclusiveUnitNumLimit;
 					std::string createTime;
 					Resource resource;

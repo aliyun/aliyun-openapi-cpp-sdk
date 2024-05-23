@@ -54,6 +54,10 @@ public:
 	void setInstanceId(const std::string &instanceId);
 	std::string getPrimaryZone() const;
 	void setPrimaryZone(const std::string &primaryZone);
+	std::string getUserVpcOwnerId() const;
+	void setUserVpcOwnerId(const std::string &userVpcOwnerId);
+	std::map<std::string, std::string> getCreateParams() const;
+	void setCreateParams(const std::map<std::string, std::string> &createParams);
 	std::string getTenantName() const;
 	void setTenantName(const std::string &tenantName);
 	std::string getReadOnlyZoneList() const;
@@ -72,6 +76,8 @@ private:
 	int unitNum_;
 	std::string instanceId_;
 	std::string primaryZone_;
+	std::string userVpcOwnerId_;
+	std::map<std::string, std::string> createParams_;
 	std::string tenantName_;
 	std::string readOnlyZoneList_;
 };

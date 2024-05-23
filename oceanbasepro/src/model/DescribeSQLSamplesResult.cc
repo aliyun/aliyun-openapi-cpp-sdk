@@ -147,6 +147,8 @@ void DescribeSQLSamplesResult::parse(const std::string &payload)
 			dataObject.transHash = valueDataDataItem["TransHash"].asString();
 		if(!valueDataDataItem["FullSqlText"].isNull())
 			dataObject.fullSqlText = valueDataDataItem["FullSqlText"].asString();
+		if(!valueDataDataItem["SqlText"].isNull())
+			dataObject.sqlText = valueDataDataItem["SqlText"].asString();
 		data_.push_back(dataObject);
 	}
 

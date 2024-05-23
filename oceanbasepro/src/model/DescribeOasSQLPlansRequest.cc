@@ -25,6 +25,15 @@ DescribeOasSQLPlansRequest::DescribeOasSQLPlansRequest()
 
 DescribeOasSQLPlansRequest::~DescribeOasSQLPlansRequest() {}
 
+bool DescribeOasSQLPlansRequest::getReturnBriefInfo() const {
+  return returnBriefInfo_;
+}
+
+void DescribeOasSQLPlansRequest::setReturnBriefInfo(bool returnBriefInfo) {
+  returnBriefInfo_ = returnBriefInfo;
+  setBodyParameter(std::string("ReturnBriefInfo"), returnBriefInfo ? "true" : "false");
+}
+
 std::string DescribeOasSQLPlansRequest::getStartTime() const {
   return startTime_;
 }
@@ -32,6 +41,15 @@ std::string DescribeOasSQLPlansRequest::getStartTime() const {
 void DescribeOasSQLPlansRequest::setStartTime(const std::string &startTime) {
   startTime_ = startTime;
   setBodyParameter(std::string("StartTime"), startTime);
+}
+
+std::string DescribeOasSQLPlansRequest::getPlanUnionHash() const {
+  return planUnionHash_;
+}
+
+void DescribeOasSQLPlansRequest::setPlanUnionHash(const std::string &planUnionHash) {
+  planUnionHash_ = planUnionHash;
+  setBodyParameter(std::string("PlanUnionHash"), planUnionHash);
 }
 
 bool DescribeOasSQLPlansRequest::getDynamicSql() const {

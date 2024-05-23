@@ -30,8 +30,12 @@ class ALIBABACLOUD_OCEANBASEPRO_EXPORT DescribeOasSQLPlansRequest : public RpcSe
 public:
 	DescribeOasSQLPlansRequest();
 	~DescribeOasSQLPlansRequest();
+	bool getReturnBriefInfo() const;
+	void setReturnBriefInfo(bool returnBriefInfo);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	std::string getPlanUnionHash() const;
+	void setPlanUnionHash(const std::string &planUnionHash);
 	bool getDynamicSql() const;
 	void setDynamicSql(bool dynamicSql);
 	std::string getTenantId() const;
@@ -48,7 +52,9 @@ public:
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	bool returnBriefInfo_;
 	std::string startTime_;
+	std::string planUnionHash_;
 	bool dynamicSql_;
 	std::string tenantId_;
 	std::string sqlId_;

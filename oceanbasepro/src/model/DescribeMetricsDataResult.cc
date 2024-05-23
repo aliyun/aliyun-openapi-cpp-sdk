@@ -39,12 +39,13 @@ void DescribeMetricsDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
+	auto allData = value["Data"]["Data"];
+	for (const auto &item : allData)
+		data_.push_back(item.asString());
 
 }
 
-std::string DescribeMetricsDataResult::getData()const
+std::vector<std::string> DescribeMetricsDataResult::getData()const
 {
 	return data_;
 }

@@ -102,31 +102,31 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.resource.unitCount = std::stol(resourceNode["UnitCount"].asString());
 		auto cpuNode = resourceNode["Cpu"];
 		if(!cpuNode["TotalCpu"].isNull())
-			instancesObject.resource.cpu.totalCpu = std::stol(cpuNode["TotalCpu"].asString());
+			instancesObject.resource.cpu.totalCpu = cpuNode["TotalCpu"].asString();
 		if(!cpuNode["UsedCpu"].isNull())
-			instancesObject.resource.cpu.usedCpu = std::stol(cpuNode["UsedCpu"].asString());
+			instancesObject.resource.cpu.usedCpu = cpuNode["UsedCpu"].asString();
 		if(!cpuNode["UnitCpu"].isNull())
-			instancesObject.resource.cpu.unitCpu = std::stol(cpuNode["UnitCpu"].asString());
+			instancesObject.resource.cpu.unitCpu = cpuNode["UnitCpu"].asString();
 		if(!cpuNode["OriginalTotalCpu"].isNull())
-			instancesObject.resource.cpu.originalTotalCpu = std::stol(cpuNode["OriginalTotalCpu"].asString());
+			instancesObject.resource.cpu.originalTotalCpu = cpuNode["OriginalTotalCpu"].asString();
 		auto memoryNode = resourceNode["Memory"];
 		if(!memoryNode["TotalMemory"].isNull())
-			instancesObject.resource.memory.totalMemory = std::stol(memoryNode["TotalMemory"].asString());
+			instancesObject.resource.memory.totalMemory = memoryNode["TotalMemory"].asString();
 		if(!memoryNode["UsedMemory"].isNull())
 			instancesObject.resource.memory.usedMemory = std::stol(memoryNode["UsedMemory"].asString());
 		if(!memoryNode["UnitMemory"].isNull())
 			instancesObject.resource.memory.unitMemory = std::stol(memoryNode["UnitMemory"].asString());
 		if(!memoryNode["OriginalTotalMemory"].isNull())
-			instancesObject.resource.memory.originalTotalMemory = std::stol(memoryNode["OriginalTotalMemory"].asString());
+			instancesObject.resource.memory.originalTotalMemory = memoryNode["OriginalTotalMemory"].asString();
 		auto diskSizeNode = resourceNode["DiskSize"];
 		if(!diskSizeNode["TotalDiskSize"].isNull())
-			instancesObject.resource.diskSize.totalDiskSize = std::stol(diskSizeNode["TotalDiskSize"].asString());
+			instancesObject.resource.diskSize.totalDiskSize = diskSizeNode["TotalDiskSize"].asString();
 		if(!diskSizeNode["UsedDiskSize"].isNull())
 			instancesObject.resource.diskSize.usedDiskSize = std::stol(diskSizeNode["UsedDiskSize"].asString());
 		if(!diskSizeNode["UnitDiskSize"].isNull())
-			instancesObject.resource.diskSize.unitDiskSize = std::stol(diskSizeNode["UnitDiskSize"].asString());
+			instancesObject.resource.diskSize.unitDiskSize = diskSizeNode["UnitDiskSize"].asString();
 		if(!diskSizeNode["OriginalTotalDiskSize"].isNull())
-			instancesObject.resource.diskSize.originalTotalDiskSize = std::stol(diskSizeNode["OriginalTotalDiskSize"].asString());
+			instancesObject.resource.diskSize.originalTotalDiskSize = diskSizeNode["OriginalTotalDiskSize"].asString();
 		auto capacityUnitNode = resourceNode["CapacityUnit"];
 		if(!capacityUnitNode["MaxCapacityUnit"].isNull())
 			instancesObject.resource.capacityUnit.maxCapacityUnit = std::stoi(capacityUnitNode["MaxCapacityUnit"].asString());
@@ -138,17 +138,17 @@ void DescribeInstancesResult::parse(const std::string &payload)
 		if(!dataDiskAutoScaleConfigNode["AutoScale"].isNull())
 			instancesObject.dataDiskAutoScaleConfig.autoScale = dataDiskAutoScaleConfigNode["AutoScale"].asString() == "true";
 		if(!dataDiskAutoScaleConfigNode["Upperbound"].isNull())
-			instancesObject.dataDiskAutoScaleConfig.upperbound = std::stol(dataDiskAutoScaleConfigNode["Upperbound"].asString());
+			instancesObject.dataDiskAutoScaleConfig.upperbound = dataDiskAutoScaleConfigNode["Upperbound"].asString();
 		if(!dataDiskAutoScaleConfigNode["UpperThreshold"].isNull())
-			instancesObject.dataDiskAutoScaleConfig.upperThreshold = std::stol(dataDiskAutoScaleConfigNode["UpperThreshold"].asString());
+			instancesObject.dataDiskAutoScaleConfig.upperThreshold = dataDiskAutoScaleConfigNode["UpperThreshold"].asString();
 		if(!dataDiskAutoScaleConfigNode["UpperMergeThreshold"].isNull())
-			instancesObject.dataDiskAutoScaleConfig.upperMergeThreshold = std::stol(dataDiskAutoScaleConfigNode["UpperMergeThreshold"].asString());
+			instancesObject.dataDiskAutoScaleConfig.upperMergeThreshold = dataDiskAutoScaleConfigNode["UpperMergeThreshold"].asString();
 		if(!dataDiskAutoScaleConfigNode["MaxDiskSize"].isNull())
 			instancesObject.dataDiskAutoScaleConfig.maxDiskSize = std::stol(dataDiskAutoScaleConfigNode["MaxDiskSize"].asString());
 		if(!dataDiskAutoScaleConfigNode["ScaleStepInNormal"].isNull())
-			instancesObject.dataDiskAutoScaleConfig.scaleStepInNormal = std::stol(dataDiskAutoScaleConfigNode["ScaleStepInNormal"].asString());
+			instancesObject.dataDiskAutoScaleConfig.scaleStepInNormal = dataDiskAutoScaleConfigNode["ScaleStepInNormal"].asString();
 		if(!dataDiskAutoScaleConfigNode["ScaleStepInMerge"].isNull())
-			instancesObject.dataDiskAutoScaleConfig.scaleStepInMerge = std::stol(dataDiskAutoScaleConfigNode["ScaleStepInMerge"].asString());
+			instancesObject.dataDiskAutoScaleConfig.scaleStepInMerge = dataDiskAutoScaleConfigNode["ScaleStepInMerge"].asString();
 		if(!dataDiskAutoScaleConfigNode["UpperScaleStrategy"].isNull())
 			instancesObject.dataDiskAutoScaleConfig.upperScaleStrategy = dataDiskAutoScaleConfigNode["UpperScaleStrategy"].asString();
 		auto allAvailableZones = value["AvailableZones"]["AvailableZones"];
