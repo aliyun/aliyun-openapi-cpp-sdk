@@ -62,6 +62,18 @@ namespace AlibabaCloud
 					std::string workState;
 					std::string slaveNetworkInterfaceId;
 				};
+				struct NetworkInterfaceTrafficConfig
+				{
+					std::string networkInterfaceTrafficMode;
+					int queueNumber;
+					int queuePairNumber;
+				};
+				struct ConnectionTrackingConfiguration
+				{
+					int tcpClosedAndTimeWaitTimeout;
+					int udpTimeout;
+					int tcpEstablishedTimeout;
+				};
 				struct PrivateIpSet
 				{
 					struct AssociatedPublicIp1
@@ -124,6 +136,8 @@ namespace AlibabaCloud
 				std::vector<Ipv6PrefixSet> getIpv6PrefixSets()const;
 				BondInterfaceSpecification getBondInterfaceSpecification()const;
 				std::string getCreationTime()const;
+				NetworkInterfaceTrafficConfig getNetworkInterfaceTrafficConfig()const;
+				ConnectionTrackingConfiguration getConnectionTrackingConfiguration()const;
 				std::vector<Ipv4PrefixSet> getIpv4PrefixSets()const;
 				std::vector<PrivateIpSet> getPrivateIpSets()const;
 
@@ -159,6 +173,8 @@ namespace AlibabaCloud
 				std::vector<Ipv6PrefixSet> ipv6PrefixSets_;
 				BondInterfaceSpecification bondInterfaceSpecification_;
 				std::string creationTime_;
+				NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig_;
+				ConnectionTrackingConfiguration connectionTrackingConfiguration_;
 				std::vector<Ipv4PrefixSet> ipv4PrefixSets_;
 				std::vector<PrivateIpSet> privateIpSets_;
 

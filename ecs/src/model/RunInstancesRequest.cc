@@ -585,6 +585,15 @@ void RunInstancesRequest::setCapacityReservationPreference(const std::string &ca
   setParameter(std::string("CapacityReservationPreference"), capacityReservationPreference);
 }
 
+RunInstancesRequest::AdditionalInfo RunInstancesRequest::getAdditionalInfo() const {
+  return additionalInfo_;
+}
+
+void RunInstancesRequest::setAdditionalInfo(const RunInstancesRequest::AdditionalInfo &additionalInfo) {
+  additionalInfo_ = additionalInfo;
+  setParameter(std::string("AdditionalInfo") + ".PvdConfig", additionalInfo.pvdConfig);
+}
+
 std::string RunInstancesRequest::getVSwitchId() const {
   return vSwitchId_;
 }

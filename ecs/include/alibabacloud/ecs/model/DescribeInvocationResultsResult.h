@@ -58,6 +58,7 @@ namespace AlibabaCloud
 						std::string errorCode;
 						std::vector<InvocationResult::Tag> tags;
 						std::string invokeId;
+						std::string terminationMode;
 						std::string stopTime;
 					};
 					std::vector<InvocationResult> invocationResults;

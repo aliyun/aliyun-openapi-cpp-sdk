@@ -87,6 +87,9 @@ public:
 		std::string securityGroupId;
 		std::string instanceType;
 	};
+	struct LaunchConfigurationAdditionalInfo {
+		std::string pvdConfig;
+	};
 	CreateAutoProvisioningGroupRequest();
 	~CreateAutoProvisioningGroupRequest();
 	std::vector<LaunchConfigurationDataDisk> getLaunchConfigurationDataDisk() const;
@@ -219,6 +222,8 @@ public:
 	void setValidFrom(const std::string &validFrom);
 	std::string getAutoProvisioningGroupName() const;
 	void setAutoProvisioningGroupName(const std::string &autoProvisioningGroupName);
+	LaunchConfigurationAdditionalInfo getLaunchConfigurationAdditionalInfo() const;
+	void setLaunchConfigurationAdditionalInfo(const LaunchConfigurationAdditionalInfo &launchConfigurationAdditionalInfo);
 
 private:
 	std::vector<LaunchConfigurationDataDisk> launchConfigurationDataDisk_;
@@ -286,6 +291,7 @@ private:
 	std::vector<LaunchConfigurationNetworkInterface> launchConfigurationNetworkInterface_;
 	std::string validFrom_;
 	std::string autoProvisioningGroupName_;
+	LaunchConfigurationAdditionalInfo launchConfigurationAdditionalInfo_;
 };
 } // namespace Model
 } // namespace Ecs

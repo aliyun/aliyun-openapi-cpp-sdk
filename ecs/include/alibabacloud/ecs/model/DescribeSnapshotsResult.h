@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					std::string kMSKeyId;
 					std::string resourceGroupId;
 					bool encrypted;
+					std::string snapshotLinkId;
 					std::string snapshotName;
 					int instantAccessRetentionDays;
 					std::string sourceDiskId;

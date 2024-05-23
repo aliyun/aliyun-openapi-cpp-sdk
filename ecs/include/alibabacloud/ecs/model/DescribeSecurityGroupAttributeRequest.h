@@ -38,6 +38,8 @@ public:
 	void setSecurityGroupId(const std::string &securityGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	std::string getDirection() const;
 	void setDirection(const std::string &direction);
 	std::string getResourceOwnerAccount() const;
@@ -46,16 +48,20 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
 
 private:
 	std::string nicType_;
 	long resourceOwnerId_;
 	std::string securityGroupId_;
 	std::string regionId_;
+	std::string nextToken_;
 	std::string direction_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	int maxResults_;
 };
 } // namespace Model
 } // namespace Ecs

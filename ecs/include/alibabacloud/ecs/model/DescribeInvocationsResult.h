@@ -77,6 +77,7 @@ namespace AlibabaCloud
 					std::string commandName;
 					std::vector<Invocation::Tag> tags;
 					std::string invokeId;
+					std::string terminationMode;
 				};
 
 

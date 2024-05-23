@@ -28,6 +28,9 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT ModifyInstanceAttributeRequest : public RpcServiceRequest {
 public:
+	struct AdditionalInfo {
+		std::string pvdConfig;
+	};
 	struct RemoteConnectionOptions {
 		std::string password;
 		std::string type;
@@ -64,6 +67,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::vector<std::string> getSecurityGroupIds() const;
 	void setSecurityGroupIds(const std::vector<std::string> &securityGroupIds);
+	AdditionalInfo getAdditionalInfo() const;
+	void setAdditionalInfo(const AdditionalInfo &additionalInfo);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getInstanceName() const;
@@ -87,6 +92,7 @@ private:
 	std::string creditSpecification_;
 	long ownerId_;
 	std::vector<std::string> securityGroupIds_;
+	AdditionalInfo additionalInfo_;
 	std::string instanceId_;
 	std::string instanceName_;
 	RemoteConnectionOptions remoteConnectionOptions_;

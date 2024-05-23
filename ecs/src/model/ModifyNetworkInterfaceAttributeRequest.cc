@@ -60,6 +60,19 @@ void ModifyNetworkInterfaceAttributeRequest::setDescription(const std::string &d
   setParameter(std::string("Description"), description);
 }
 
+ModifyNetworkInterfaceAttributeRequest::NetworkInterfaceTrafficConfig ModifyNetworkInterfaceAttributeRequest::getNetworkInterfaceTrafficConfig() const {
+  return networkInterfaceTrafficConfig_;
+}
+
+void ModifyNetworkInterfaceAttributeRequest::setNetworkInterfaceTrafficConfig(const ModifyNetworkInterfaceAttributeRequest::NetworkInterfaceTrafficConfig &networkInterfaceTrafficConfig) {
+  networkInterfaceTrafficConfig_ = networkInterfaceTrafficConfig;
+  setParameter(std::string("NetworkInterfaceTrafficConfig") + ".NetworkInterfaceTrafficMode", networkInterfaceTrafficConfig.networkInterfaceTrafficMode);
+  setParameter(std::string("NetworkInterfaceTrafficConfig") + ".QueueNumber", std::to_string(networkInterfaceTrafficConfig.queueNumber));
+  setParameter(std::string("NetworkInterfaceTrafficConfig") + ".QueuePairNumber", std::to_string(networkInterfaceTrafficConfig.queuePairNumber));
+  setParameter(std::string("NetworkInterfaceTrafficConfig") + ".RxQueueSize", std::to_string(networkInterfaceTrafficConfig.rxQueueSize));
+  setParameter(std::string("NetworkInterfaceTrafficConfig") + ".TxQueueSize", std::to_string(networkInterfaceTrafficConfig.txQueueSize));
+}
+
 std::string ModifyNetworkInterfaceAttributeRequest::getRegionId() const {
   return regionId_;
 }
@@ -130,6 +143,17 @@ long ModifyNetworkInterfaceAttributeRequest::getOwnerId() const {
 void ModifyNetworkInterfaceAttributeRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+ModifyNetworkInterfaceAttributeRequest::ConnectionTrackingConfiguration ModifyNetworkInterfaceAttributeRequest::getConnectionTrackingConfiguration() const {
+  return connectionTrackingConfiguration_;
+}
+
+void ModifyNetworkInterfaceAttributeRequest::setConnectionTrackingConfiguration(const ModifyNetworkInterfaceAttributeRequest::ConnectionTrackingConfiguration &connectionTrackingConfiguration) {
+  connectionTrackingConfiguration_ = connectionTrackingConfiguration;
+  setParameter(std::string("ConnectionTrackingConfiguration") + ".TcpEstablishedTimeout", std::to_string(connectionTrackingConfiguration.tcpEstablishedTimeout));
+  setParameter(std::string("ConnectionTrackingConfiguration") + ".TcpClosedAndTimeWaitTimeout", std::to_string(connectionTrackingConfiguration.tcpClosedAndTimeWaitTimeout));
+  setParameter(std::string("ConnectionTrackingConfiguration") + ".UdpTimeout", std::to_string(connectionTrackingConfiguration.udpTimeout));
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getNetworkInterfaceId() const {

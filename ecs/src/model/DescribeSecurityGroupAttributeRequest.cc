@@ -61,6 +61,15 @@ void DescribeSecurityGroupAttributeRequest::setRegionId(const std::string &regio
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string DescribeSecurityGroupAttributeRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void DescribeSecurityGroupAttributeRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
 std::string DescribeSecurityGroupAttributeRequest::getDirection() const {
   return direction_;
 }
@@ -95,5 +104,14 @@ long DescribeSecurityGroupAttributeRequest::getOwnerId() const {
 void DescribeSecurityGroupAttributeRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+int DescribeSecurityGroupAttributeRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void DescribeSecurityGroupAttributeRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 

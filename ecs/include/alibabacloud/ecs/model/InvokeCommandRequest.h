@@ -77,6 +77,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getTerminationMode() const;
+	void setTerminationMode(const std::string &terminationMode);
 	std::vector<std::string> getInstanceId() const;
 	void setInstanceId(const std::vector<std::string> &instanceId);
 	std::string getContainerId() const;
@@ -104,6 +106,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string terminationMode_;
 	std::vector<std::string> instanceId_;
 	std::string containerId_;
 	std::map<std::string, std::string> parameters_;

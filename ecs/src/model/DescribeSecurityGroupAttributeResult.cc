@@ -116,6 +116,8 @@ void DescribeSecurityGroupAttributeResult::parse(const std::string &payload)
 		securityGroupName_ = value["SecurityGroupName"].asString();
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
 }
 
@@ -132,6 +134,11 @@ std::string DescribeSecurityGroupAttributeResult::getVpcId()const
 std::string DescribeSecurityGroupAttributeResult::getSecurityGroupName()const
 {
 	return securityGroupName_;
+}
+
+std::string DescribeSecurityGroupAttributeResult::getNextToken()const
+{
+	return nextToken_;
 }
 
 std::string DescribeSecurityGroupAttributeResult::getSecurityGroupId()const

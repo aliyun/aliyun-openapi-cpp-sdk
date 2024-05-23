@@ -159,6 +159,15 @@ void ModifyInstanceAttributeRequest::setSecurityGroupIds(const std::vector<std::
   securityGroupIds_ = securityGroupIds;
 }
 
+ModifyInstanceAttributeRequest::AdditionalInfo ModifyInstanceAttributeRequest::getAdditionalInfo() const {
+  return additionalInfo_;
+}
+
+void ModifyInstanceAttributeRequest::setAdditionalInfo(const ModifyInstanceAttributeRequest::AdditionalInfo &additionalInfo) {
+  additionalInfo_ = additionalInfo;
+  setParameter(std::string("AdditionalInfo") + ".PvdConfig", additionalInfo.pvdConfig);
+}
+
 std::string ModifyInstanceAttributeRequest::getInstanceId() const {
   return instanceId_;
 }

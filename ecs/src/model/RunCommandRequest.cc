@@ -259,6 +259,15 @@ void RunCommandRequest::setOwnerAccount(const std::string &ownerAccount) {
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+std::string RunCommandRequest::getTerminationMode() const {
+  return terminationMode_;
+}
+
+void RunCommandRequest::setTerminationMode(const std::string &terminationMode) {
+  terminationMode_ = terminationMode;
+  setParameter(std::string("TerminationMode"), terminationMode);
+}
+
 bool RunCommandRequest::getEnableParameter() const {
   return enableParameter_;
 }

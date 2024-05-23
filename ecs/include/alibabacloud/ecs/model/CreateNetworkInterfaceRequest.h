@@ -28,9 +28,21 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT CreateNetworkInterfaceRequest : public RpcServiceRequest {
 public:
+	struct NetworkInterfaceTrafficConfig {
+		int queueNumber;
+		std::string networkInterfaceTrafficMode;
+		int queuePairNumber;
+		int txQueueSize;
+		int rxQueueSize;
+	};
 	struct Tag {
 		std::string key;
 		std::string value;
+	};
+	struct ConnectionTrackingConfiguration {
+		int tcpEstablishedTimeout;
+		int tcpClosedAndTimeWaitTimeout;
+		int udpTimeout;
 	};
 	CreateNetworkInterfaceRequest();
 	~CreateNetworkInterfaceRequest();
@@ -40,6 +52,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::vector<std::string> getIpv4Prefix() const;
 	void setIpv4Prefix(const std::vector<std::string> &ipv4Prefix);
+	NetworkInterfaceTrafficConfig getNetworkInterfaceTrafficConfig() const;
+	void setNetworkInterfaceTrafficConfig(const NetworkInterfaceTrafficConfig &networkInterfaceTrafficConfig);
 	int getSecondaryPrivateIpAddressCount() const;
 	void setSecondaryPrivateIpAddressCount(int secondaryPrivateIpAddressCount);
 	std::string getBusinessType() const;
@@ -94,6 +108,8 @@ public:
 	void setNetworkInterfaceTrafficMode(const std::string &networkInterfaceTrafficMode);
 	int getIpv4PrefixCount() const;
 	void setIpv4PrefixCount(int ipv4PrefixCount);
+	ConnectionTrackingConfiguration getConnectionTrackingConfiguration() const;
+	void setConnectionTrackingConfiguration(const ConnectionTrackingConfiguration &connectionTrackingConfiguration);
 	std::string getPrimaryIpAddress() const;
 	void setPrimaryIpAddress(const std::string &primaryIpAddress);
 
@@ -101,6 +117,7 @@ private:
 	int queueNumber_;
 	long resourceOwnerId_;
 	std::vector<std::string> ipv4Prefix_;
+	NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig_;
 	int secondaryPrivateIpAddressCount_;
 	std::string businessType_;
 	std::string resourceGroupId_;
@@ -128,6 +145,7 @@ private:
 	std::vector<std::string> securityGroupIds_;
 	std::string networkInterfaceTrafficMode_;
 	int ipv4PrefixCount_;
+	ConnectionTrackingConfiguration connectionTrackingConfiguration_;
 	std::string primaryIpAddress_;
 };
 } // namespace Model

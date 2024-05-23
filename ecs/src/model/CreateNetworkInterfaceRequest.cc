@@ -51,6 +51,19 @@ void CreateNetworkInterfaceRequest::setIpv4Prefix(const std::vector<std::string>
   ipv4Prefix_ = ipv4Prefix;
 }
 
+CreateNetworkInterfaceRequest::NetworkInterfaceTrafficConfig CreateNetworkInterfaceRequest::getNetworkInterfaceTrafficConfig() const {
+  return networkInterfaceTrafficConfig_;
+}
+
+void CreateNetworkInterfaceRequest::setNetworkInterfaceTrafficConfig(const CreateNetworkInterfaceRequest::NetworkInterfaceTrafficConfig &networkInterfaceTrafficConfig) {
+  networkInterfaceTrafficConfig_ = networkInterfaceTrafficConfig;
+  setParameter(std::string("NetworkInterfaceTrafficConfig") + ".QueueNumber", std::to_string(networkInterfaceTrafficConfig.queueNumber));
+  setParameter(std::string("NetworkInterfaceTrafficConfig") + ".NetworkInterfaceTrafficMode", networkInterfaceTrafficConfig.networkInterfaceTrafficMode);
+  setParameter(std::string("NetworkInterfaceTrafficConfig") + ".QueuePairNumber", std::to_string(networkInterfaceTrafficConfig.queuePairNumber));
+  setParameter(std::string("NetworkInterfaceTrafficConfig") + ".TxQueueSize", std::to_string(networkInterfaceTrafficConfig.txQueueSize));
+  setParameter(std::string("NetworkInterfaceTrafficConfig") + ".RxQueueSize", std::to_string(networkInterfaceTrafficConfig.rxQueueSize));
+}
+
 int CreateNetworkInterfaceRequest::getSecondaryPrivateIpAddressCount() const {
   return secondaryPrivateIpAddressCount_;
 }
@@ -293,6 +306,17 @@ int CreateNetworkInterfaceRequest::getIpv4PrefixCount() const {
 void CreateNetworkInterfaceRequest::setIpv4PrefixCount(int ipv4PrefixCount) {
   ipv4PrefixCount_ = ipv4PrefixCount;
   setParameter(std::string("Ipv4PrefixCount"), std::to_string(ipv4PrefixCount));
+}
+
+CreateNetworkInterfaceRequest::ConnectionTrackingConfiguration CreateNetworkInterfaceRequest::getConnectionTrackingConfiguration() const {
+  return connectionTrackingConfiguration_;
+}
+
+void CreateNetworkInterfaceRequest::setConnectionTrackingConfiguration(const CreateNetworkInterfaceRequest::ConnectionTrackingConfiguration &connectionTrackingConfiguration) {
+  connectionTrackingConfiguration_ = connectionTrackingConfiguration;
+  setParameter(std::string("ConnectionTrackingConfiguration") + ".TcpEstablishedTimeout", std::to_string(connectionTrackingConfiguration.tcpEstablishedTimeout));
+  setParameter(std::string("ConnectionTrackingConfiguration") + ".TcpClosedAndTimeWaitTimeout", std::to_string(connectionTrackingConfiguration.tcpClosedAndTimeWaitTimeout));
+  setParameter(std::string("ConnectionTrackingConfiguration") + ".UdpTimeout", std::to_string(connectionTrackingConfiguration.udpTimeout));
 }
 
 std::string CreateNetworkInterfaceRequest::getPrimaryIpAddress() const {

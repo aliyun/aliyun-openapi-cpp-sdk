@@ -34,6 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct Disk
 				{
+					struct Placement
+					{
+						std::string zoneIds;
+					};
 					struct OperationLock
 					{
 						std::string lockReason;
@@ -55,21 +59,14 @@ namespace AlibabaCloud
 						std::string instanceId;
 						std::string device;
 					};
-					std::string detachedTime;
-					std::string description;
 					std::string kMSKeyId;
-					std::string category;
-					int throughputRead;
 					std::string resourceGroupId;
 					bool encrypted;
 					int size;
 					bool deleteAutoSnapshot;
-					std::string diskChargeType;
-					int throughput;
-					int storageSetPartitionNumber;
 					int iOPS;
-					std::vector<Disk::Attachment> attachments;
 					std::string multiAttach;
+					Placement placement;
 					std::string expiredTime;
 					std::string imageId;
 					std::string storageSetId;
@@ -77,32 +74,40 @@ namespace AlibabaCloud
 					std::string status;
 					int iOPSRead;
 					std::string attachedTime;
-					bool burstingEnabled;
-					std::string storageClusterId;
 					int iOPSWrite;
-					std::string zoneId;
-					std::string sourceSnapshotId;
 					std::string instanceId;
 					std::string productCode;
-					std::string performanceLevel;
 					std::string device;
 					bool deleteWithInstance;
+					long provisionedIops;
+					std::string bdfId;
+					int throughputWrite;
+					bool portable;
+					int mountInstanceNum;
+					std::string serialNumber;
+					std::string creationTime;
+					std::string diskId;
+					std::string detachedTime;
+					std::string description;
+					std::string category;
+					int throughputRead;
+					std::string diskChargeType;
+					int throughput;
+					int storageSetPartitionNumber;
+					std::vector<Disk::Attachment> attachments;
+					bool burstingEnabled;
+					std::string storageClusterId;
+					std::string zoneId;
+					std::string sourceSnapshotId;
+					std::string performanceLevel;
 					bool enableAutomatedSnapshotPolicy;
 					bool enableAutoSnapshot;
 					std::string autoSnapshotPolicyId;
 					std::string diskName;
-					long provisionedIops;
 					std::vector<Disk::OperationLock> operationLocks;
-					std::string bdfId;
-					int throughputWrite;
-					bool portable;
 					std::string type;
-					int mountInstanceNum;
-					std::string serialNumber;
 					std::vector<Disk::MountInstance> mountInstances;
-					std::string creationTime;
 					std::string regionId;
-					std::string diskId;
 				};
 
 

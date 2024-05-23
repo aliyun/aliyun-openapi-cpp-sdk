@@ -115,6 +115,15 @@ void AttachDiskRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
+bool AttachDiskRequest::getForce() const {
+  return force_;
+}
+
+void AttachDiskRequest::setForce(bool force) {
+  force_ = force;
+  setParameter(std::string("Force"), force ? "true" : "false");
+}
+
 std::string AttachDiskRequest::getDevice() const {
   return device_;
 }

@@ -673,3 +673,12 @@ void CreateAutoProvisioningGroupRequest::setAutoProvisioningGroupName(const std:
   setParameter(std::string("AutoProvisioningGroupName"), autoProvisioningGroupName);
 }
 
+CreateAutoProvisioningGroupRequest::LaunchConfigurationAdditionalInfo CreateAutoProvisioningGroupRequest::getLaunchConfigurationAdditionalInfo() const {
+  return launchConfigurationAdditionalInfo_;
+}
+
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationAdditionalInfo(const CreateAutoProvisioningGroupRequest::LaunchConfigurationAdditionalInfo &launchConfigurationAdditionalInfo) {
+  launchConfigurationAdditionalInfo_ = launchConfigurationAdditionalInfo;
+  setParameter(std::string("LaunchConfiguration.AdditionalInfo") + ".PvdConfig", launchConfigurationAdditionalInfo.pvdConfig);
+}
+

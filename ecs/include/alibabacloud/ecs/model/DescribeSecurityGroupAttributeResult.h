@@ -76,6 +76,7 @@ namespace AlibabaCloud
 				std::string getDescription()const;
 				std::string getVpcId()const;
 				std::string getSecurityGroupName()const;
+				std::string getNextToken()const;
 				std::string getSecurityGroupId()const;
 				std::vector<Permission> getPermissions()const;
 				std::string getInnerAccessPolicy()const;
@@ -88,6 +89,7 @@ namespace AlibabaCloud
 				std::string description_;
 				std::string vpcId_;
 				std::string securityGroupName_;
+				std::string nextToken_;
 				std::string securityGroupId_;
 				std::vector<Permission> permissions_;
 				std::string innerAccessPolicy_;

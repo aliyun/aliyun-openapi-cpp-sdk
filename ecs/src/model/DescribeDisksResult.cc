@@ -173,6 +173,9 @@ void DescribeDisksResult::parse(const std::string &payload)
 				attachmentsObject.attachedTime = valueDisksDiskAttachmentsAttachment["AttachedTime"].asString();
 			disksObject.attachments.push_back(attachmentsObject);
 		}
+		auto placementNode = value["Placement"];
+		if(!placementNode["ZoneIds"].isNull())
+			disksObject.placement.zoneIds = placementNode["ZoneIds"].asString();
 		disks_.push_back(disksObject);
 	}
 	if(!value["NextToken"].isNull())

@@ -28,6 +28,18 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT ModifyNetworkInterfaceAttributeRequest : public RpcServiceRequest {
 public:
+	struct NetworkInterfaceTrafficConfig {
+		std::string networkInterfaceTrafficMode;
+		int queueNumber;
+		int queuePairNumber;
+		int rxQueueSize;
+		int txQueueSize;
+	};
+	struct ConnectionTrackingConfiguration {
+		int tcpEstablishedTimeout;
+		int tcpClosedAndTimeWaitTimeout;
+		int udpTimeout;
+	};
 	ModifyNetworkInterfaceAttributeRequest();
 	~ModifyNetworkInterfaceAttributeRequest();
 	int getQueueNumber() const;
@@ -38,6 +50,8 @@ public:
 	void setSecurityGroupId(const std::vector<std::string> &securityGroupId);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	NetworkInterfaceTrafficConfig getNetworkInterfaceTrafficConfig() const;
+	void setNetworkInterfaceTrafficConfig(const NetworkInterfaceTrafficConfig &networkInterfaceTrafficConfig);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNetworkInterfaceName() const;
@@ -54,6 +68,8 @@ public:
 	void setRxQueueSize(int rxQueueSize);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	ConnectionTrackingConfiguration getConnectionTrackingConfiguration() const;
+	void setConnectionTrackingConfiguration(const ConnectionTrackingConfiguration &connectionTrackingConfiguration);
 	std::string getNetworkInterfaceId() const;
 	void setNetworkInterfaceId(const std::string &networkInterfaceId);
 
@@ -62,6 +78,7 @@ private:
 	long resourceOwnerId_;
 	std::vector<std::string> securityGroupId_;
 	std::string description_;
+	NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig_;
 	std::string regionId_;
 	std::string networkInterfaceName_;
 	int txQueueSize_;
@@ -70,6 +87,7 @@ private:
 	std::string ownerAccount_;
 	int rxQueueSize_;
 	long ownerId_;
+	ConnectionTrackingConfiguration connectionTrackingConfiguration_;
 	std::string networkInterfaceId_;
 };
 } // namespace Model

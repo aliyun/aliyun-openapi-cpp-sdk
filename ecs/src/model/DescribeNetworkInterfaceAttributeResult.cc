@@ -127,6 +127,20 @@ void DescribeNetworkInterfaceAttributeResult::parse(const std::string &payload)
 		slaveInterfaceSpecification_.workState = slaveInterfaceSpecificationNode["WorkState"].asString();
 	if(!slaveInterfaceSpecificationNode["BondNetworkInterfaceId"].isNull())
 		slaveInterfaceSpecification_.bondNetworkInterfaceId = slaveInterfaceSpecificationNode["BondNetworkInterfaceId"].asString();
+	auto networkInterfaceTrafficConfigNode = value["NetworkInterfaceTrafficConfig"];
+	if(!networkInterfaceTrafficConfigNode["NetworkInterfaceTrafficMode"].isNull())
+		networkInterfaceTrafficConfig_.networkInterfaceTrafficMode = networkInterfaceTrafficConfigNode["NetworkInterfaceTrafficMode"].asString();
+	if(!networkInterfaceTrafficConfigNode["QueueNumber"].isNull())
+		networkInterfaceTrafficConfig_.queueNumber = std::stoi(networkInterfaceTrafficConfigNode["QueueNumber"].asString());
+	if(!networkInterfaceTrafficConfigNode["QueuePairNumber"].isNull())
+		networkInterfaceTrafficConfig_.queuePairNumber = std::stoi(networkInterfaceTrafficConfigNode["QueuePairNumber"].asString());
+	auto connectionTrackingConfigurationNode = value["ConnectionTrackingConfiguration"];
+	if(!connectionTrackingConfigurationNode["TcpEstablishedTimeout"].isNull())
+		connectionTrackingConfiguration_.tcpEstablishedTimeout = std::stoi(connectionTrackingConfigurationNode["TcpEstablishedTimeout"].asString());
+	if(!connectionTrackingConfigurationNode["TcpClosedAndTimeWaitTimeout"].isNull())
+		connectionTrackingConfiguration_.tcpClosedAndTimeWaitTimeout = std::stoi(connectionTrackingConfigurationNode["TcpClosedAndTimeWaitTimeout"].asString());
+	if(!connectionTrackingConfigurationNode["UdpTimeout"].isNull())
+		connectionTrackingConfiguration_.udpTimeout = std::stoi(connectionTrackingConfigurationNode["UdpTimeout"].asString());
 	auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 	for (const auto &item : allSecurityGroupIds)
 		securityGroupIds_.push_back(item.asString());
@@ -318,6 +332,16 @@ DescribeNetworkInterfaceAttributeResult::BondInterfaceSpecification DescribeNetw
 std::string DescribeNetworkInterfaceAttributeResult::getCreationTime()const
 {
 	return creationTime_;
+}
+
+DescribeNetworkInterfaceAttributeResult::NetworkInterfaceTrafficConfig DescribeNetworkInterfaceAttributeResult::getNetworkInterfaceTrafficConfig()const
+{
+	return networkInterfaceTrafficConfig_;
+}
+
+DescribeNetworkInterfaceAttributeResult::ConnectionTrackingConfiguration DescribeNetworkInterfaceAttributeResult::getConnectionTrackingConfiguration()const
+{
+	return connectionTrackingConfiguration_;
 }
 
 std::vector<DescribeNetworkInterfaceAttributeResult::Ipv4PrefixSet> DescribeNetworkInterfaceAttributeResult::getIpv4PrefixSets()const

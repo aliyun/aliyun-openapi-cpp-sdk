@@ -88,6 +88,8 @@ public:
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getTerminationMode() const;
+	void setTerminationMode(const std::string &terminationMode);
 	bool getEnableParameter() const;
 	void setEnableParameter(bool enableParameter);
 	std::string getUsername() const;
@@ -119,6 +121,7 @@ private:
 	std::vector<ResourceTag> resourceTag_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
+	std::string terminationMode_;
 	bool enableParameter_;
 	std::string username_;
 };

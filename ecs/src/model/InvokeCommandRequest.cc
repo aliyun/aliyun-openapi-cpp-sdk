@@ -194,6 +194,15 @@ void InvokeCommandRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string InvokeCommandRequest::getTerminationMode() const {
+  return terminationMode_;
+}
+
+void InvokeCommandRequest::setTerminationMode(const std::string &terminationMode) {
+  terminationMode_ = terminationMode;
+  setParameter(std::string("TerminationMode"), terminationMode);
+}
+
 std::vector<std::string> InvokeCommandRequest::getInstanceId() const {
   return instanceId_;
 }

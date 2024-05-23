@@ -56,6 +56,9 @@ public:
 		std::string key;
 		std::string value;
 	};
+	struct AdditionalInfo {
+		std::string pvdConfig;
+	};
 	struct NetworkInterface {
 		std::string vSwitchId;
 		std::string networkInterfaceName;
@@ -212,6 +215,8 @@ public:
 	void setHostNames(const std::vector<std::string> &hostNames);
 	std::string getCapacityReservationPreference() const;
 	void setCapacityReservationPreference(const std::string &capacityReservationPreference);
+	AdditionalInfo getAdditionalInfo() const;
+	void setAdditionalInfo(const AdditionalInfo &additionalInfo);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getInstanceName() const;
@@ -336,6 +341,7 @@ private:
 	int ipv6AddressCount_;
 	std::vector<std::string> hostNames_;
 	std::string capacityReservationPreference_;
+	AdditionalInfo additionalInfo_;
 	std::string vSwitchId_;
 	std::string instanceName_;
 	std::string zoneId_;

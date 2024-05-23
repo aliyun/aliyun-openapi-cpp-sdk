@@ -97,6 +97,8 @@ void DescribeSnapshotsResult::parse(const std::string &payload)
 			snapshotsObject.sourceSnapshotId = valueSnapshotsSnapshot["SourceSnapshotId"].asString();
 		if(!valueSnapshotsSnapshot["SourceRegionId"].isNull())
 			snapshotsObject.sourceRegionId = valueSnapshotsSnapshot["SourceRegionId"].asString();
+		if(!valueSnapshotsSnapshot["SnapshotLinkId"].isNull())
+			snapshotsObject.snapshotLinkId = valueSnapshotsSnapshot["SnapshotLinkId"].asString();
 		auto allTagsNode = valueSnapshotsSnapshot["Tags"]["Tag"];
 		for (auto valueSnapshotsSnapshotTagsTag : allTagsNode)
 		{

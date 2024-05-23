@@ -50,6 +50,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	bool getForce() const;
+	void setForce(bool force);
 	std::string getDevice() const;
 	void setDevice(const std::string &device);
 
@@ -64,6 +66,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string instanceId_;
+	bool force_;
 	std::string device_;
 };
 } // namespace Model
