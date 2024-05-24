@@ -2607,6 +2607,42 @@ DdsClient::ModifyAccountDescriptionOutcomeCallable DdsClient::modifyAccountDescr
 	return task->get_future();
 }
 
+DdsClient::ModifyActiveOperationTasksOutcome DdsClient::modifyActiveOperationTasks(const ModifyActiveOperationTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyActiveOperationTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyActiveOperationTasksOutcome(ModifyActiveOperationTasksResult(outcome.result()));
+	else
+		return ModifyActiveOperationTasksOutcome(outcome.error());
+}
+
+void DdsClient::modifyActiveOperationTasksAsync(const ModifyActiveOperationTasksRequest& request, const ModifyActiveOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyActiveOperationTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::ModifyActiveOperationTasksOutcomeCallable DdsClient::modifyActiveOperationTasksCallable(const ModifyActiveOperationTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyActiveOperationTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyActiveOperationTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::ModifyAuditLogFilterOutcome DdsClient::modifyAuditLogFilter(const ModifyAuditLogFilterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2781,6 +2817,42 @@ DdsClient::ModifyDBInstanceDescriptionOutcomeCallable DdsClient::modifyDBInstanc
 			[this, request]()
 			{
 			return this->modifyDBInstanceDescription(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::ModifyDBInstanceDiskTypeOutcome DdsClient::modifyDBInstanceDiskType(const ModifyDBInstanceDiskTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDBInstanceDiskTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDBInstanceDiskTypeOutcome(ModifyDBInstanceDiskTypeResult(outcome.result()));
+	else
+		return ModifyDBInstanceDiskTypeOutcome(outcome.error());
+}
+
+void DdsClient::modifyDBInstanceDiskTypeAsync(const ModifyDBInstanceDiskTypeRequest& request, const ModifyDBInstanceDiskTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDBInstanceDiskType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::ModifyDBInstanceDiskTypeOutcomeCallable DdsClient::modifyDBInstanceDiskTypeCallable(const ModifyDBInstanceDiskTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDBInstanceDiskTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDBInstanceDiskType(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

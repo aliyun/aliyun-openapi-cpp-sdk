@@ -34,6 +34,24 @@ void ModifyBackupPolicyRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+int ModifyBackupPolicyRequest::getCrossLogRetentionValue() const {
+  return crossLogRetentionValue_;
+}
+
+void ModifyBackupPolicyRequest::setCrossLogRetentionValue(int crossLogRetentionValue) {
+  crossLogRetentionValue_ = crossLogRetentionValue;
+  setParameter(std::string("CrossLogRetentionValue"), std::to_string(crossLogRetentionValue));
+}
+
+std::string ModifyBackupPolicyRequest::getSrcRegion() const {
+  return srcRegion_;
+}
+
+void ModifyBackupPolicyRequest::setSrcRegion(const std::string &srcRegion) {
+  srcRegion_ = srcRegion;
+  setParameter(std::string("SrcRegion"), srcRegion);
+}
+
 std::string ModifyBackupPolicyRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -43,6 +61,15 @@ void ModifyBackupPolicyRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyBackupPolicyRequest::getCrossRetentionType() const {
+  return crossRetentionType_;
+}
+
+void ModifyBackupPolicyRequest::setCrossRetentionType(const std::string &crossRetentionType) {
+  crossRetentionType_ = crossRetentionType;
+  setParameter(std::string("CrossRetentionType"), crossRetentionType);
+}
+
 std::string ModifyBackupPolicyRequest::getBackupInterval() const {
   return backupInterval_;
 }
@@ -50,6 +77,15 @@ std::string ModifyBackupPolicyRequest::getBackupInterval() const {
 void ModifyBackupPolicyRequest::setBackupInterval(const std::string &backupInterval) {
   backupInterval_ = backupInterval;
   setParameter(std::string("BackupInterval"), backupInterval);
+}
+
+std::string ModifyBackupPolicyRequest::getInstanceType() const {
+  return instanceType_;
+}
+
+void ModifyBackupPolicyRequest::setInstanceType(const std::string &instanceType) {
+  instanceType_ = instanceType;
+  setParameter(std::string("InstanceType"), instanceType);
 }
 
 std::string ModifyBackupPolicyRequest::getDBInstanceId() const {
@@ -79,6 +115,24 @@ void ModifyBackupPolicyRequest::setPreferredBackupPeriod(const std::string &pref
   setParameter(std::string("PreferredBackupPeriod"), preferredBackupPeriod);
 }
 
+int ModifyBackupPolicyRequest::getBackupRetentionPolicyOnClusterDeletion() const {
+  return backupRetentionPolicyOnClusterDeletion_;
+}
+
+void ModifyBackupPolicyRequest::setBackupRetentionPolicyOnClusterDeletion(int backupRetentionPolicyOnClusterDeletion) {
+  backupRetentionPolicyOnClusterDeletion_ = backupRetentionPolicyOnClusterDeletion;
+  setParameter(std::string("BackupRetentionPolicyOnClusterDeletion"), std::to_string(backupRetentionPolicyOnClusterDeletion));
+}
+
+std::string ModifyBackupPolicyRequest::getDestRegion() const {
+  return destRegion_;
+}
+
+void ModifyBackupPolicyRequest::setDestRegion(const std::string &destRegion) {
+  destRegion_ = destRegion;
+  setParameter(std::string("DestRegion"), destRegion);
+}
+
 std::string ModifyBackupPolicyRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -86,6 +140,15 @@ std::string ModifyBackupPolicyRequest::getResourceOwnerAccount() const {
 void ModifyBackupPolicyRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
   resourceOwnerAccount_ = resourceOwnerAccount;
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string ModifyBackupPolicyRequest::getCrossBackupType() const {
+  return crossBackupType_;
+}
+
+void ModifyBackupPolicyRequest::setCrossBackupType(const std::string &crossBackupType) {
+  crossBackupType_ = crossBackupType;
+  setParameter(std::string("CrossBackupType"), crossBackupType);
 }
 
 std::string ModifyBackupPolicyRequest::getOwnerAccount() const {
@@ -140,6 +203,42 @@ long ModifyBackupPolicyRequest::getHighFrequencyBackupRetention() const {
 void ModifyBackupPolicyRequest::setHighFrequencyBackupRetention(long highFrequencyBackupRetention) {
   highFrequencyBackupRetention_ = highFrequencyBackupRetention;
   setParameter(std::string("HighFrequencyBackupRetention"), std::to_string(highFrequencyBackupRetention));
+}
+
+int ModifyBackupPolicyRequest::getEnableCrossLogBackup() const {
+  return enableCrossLogBackup_;
+}
+
+void ModifyBackupPolicyRequest::setEnableCrossLogBackup(int enableCrossLogBackup) {
+  enableCrossLogBackup_ = enableCrossLogBackup;
+  setParameter(std::string("EnableCrossLogBackup"), std::to_string(enableCrossLogBackup));
+}
+
+std::string ModifyBackupPolicyRequest::getCrossBackupPeriod() const {
+  return crossBackupPeriod_;
+}
+
+void ModifyBackupPolicyRequest::setCrossBackupPeriod(const std::string &crossBackupPeriod) {
+  crossBackupPeriod_ = crossBackupPeriod;
+  setParameter(std::string("CrossBackupPeriod"), crossBackupPeriod);
+}
+
+int ModifyBackupPolicyRequest::getCrossRetentionValue() const {
+  return crossRetentionValue_;
+}
+
+void ModifyBackupPolicyRequest::setCrossRetentionValue(int crossRetentionValue) {
+  crossRetentionValue_ = crossRetentionValue;
+  setParameter(std::string("CrossRetentionValue"), std::to_string(crossRetentionValue));
+}
+
+std::string ModifyBackupPolicyRequest::getCrossLogRetentionType() const {
+  return crossLogRetentionType_;
+}
+
+void ModifyBackupPolicyRequest::setCrossLogRetentionType(const std::string &crossLogRetentionType) {
+  crossLogRetentionType_ = crossLogRetentionType;
+  setParameter(std::string("CrossLogRetentionType"), crossLogRetentionType);
 }
 
 long ModifyBackupPolicyRequest::getLogBackupRetentionPeriod() const {

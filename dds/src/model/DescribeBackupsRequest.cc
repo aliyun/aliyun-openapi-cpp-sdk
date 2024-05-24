@@ -43,6 +43,15 @@ void DescribeBackupsRequest::setStartTime(const std::string &startTime) {
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeBackupsRequest::getSrcRegion() const {
+  return srcRegion_;
+}
+
+void DescribeBackupsRequest::setSrcRegion(const std::string &srcRegion) {
+  srcRegion_ = srcRegion;
+  setParameter(std::string("SrcRegion"), srcRegion);
+}
+
 int DescribeBackupsRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -86,6 +95,15 @@ std::string DescribeBackupsRequest::getNodeId() const {
 void DescribeBackupsRequest::setNodeId(const std::string &nodeId) {
   nodeId_ = nodeId;
   setParameter(std::string("NodeId"), nodeId);
+}
+
+std::string DescribeBackupsRequest::getDestRegion() const {
+  return destRegion_;
+}
+
+void DescribeBackupsRequest::setDestRegion(const std::string &destRegion) {
+  destRegion_ = destRegion;
+  setParameter(std::string("DestRegion"), destRegion);
 }
 
 std::string DescribeBackupsRequest::getResourceOwnerAccount() const {

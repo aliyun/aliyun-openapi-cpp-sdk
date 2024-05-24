@@ -54,6 +54,8 @@ public:
 	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getInterval() const;
+	void setInterval(const std::string &interval);
 
 private:
 	long resourceOwnerId_;
@@ -68,6 +70,7 @@ private:
 	std::string ownerAccount_;
 	std::string endTime_;
 	long ownerId_;
+	std::string interval_;
 };
 } // namespace Model
 } // namespace Dds

@@ -52,6 +52,15 @@ void ReleasePublicNetworkAddressRequest::setDBInstanceId(const std::string &dBIn
   setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
+std::string ReleasePublicNetworkAddressRequest::getConnectionType() const {
+  return connectionType_;
+}
+
+void ReleasePublicNetworkAddressRequest::setConnectionType(const std::string &connectionType) {
+  connectionType_ = connectionType;
+  setParameter(std::string("ConnectionType"), connectionType);
+}
+
 std::string ReleasePublicNetworkAddressRequest::getNodeId() const {
   return nodeId_;
 }

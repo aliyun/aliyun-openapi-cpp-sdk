@@ -59,6 +59,8 @@ void DescribeClusterBackupsResult::parse(const std::string &payload)
 			clusterBackupsObject.clusterBackupMode = valueClusterBackupsclusterBackup["ClusterBackupMode"].asString();
 		if(!valueClusterBackupsclusterBackup["Progress"].isNull())
 			clusterBackupsObject.progress = valueClusterBackupsclusterBackup["Progress"].asString();
+		if(!valueClusterBackupsclusterBackup["AttachLogStatus"].isNull())
+			clusterBackupsObject.attachLogStatus = valueClusterBackupsclusterBackup["AttachLogStatus"].asString();
 		auto allBackupsNode = valueClusterBackupsclusterBackup["Backups"]["backup"];
 		for (auto valueClusterBackupsclusterBackupBackupsbackup : allBackupsNode)
 		{
@@ -83,6 +85,15 @@ void DescribeClusterBackupsResult::parse(const std::string &payload)
 				backupsObject.backupStatus = valueClusterBackupsclusterBackupBackupsbackup["BackupStatus"].asString();
 			if(!valueClusterBackupsclusterBackupBackupsbackup["BackupName"].isNull())
 				backupsObject.backupName = valueClusterBackupsclusterBackupBackupsbackup["BackupName"].asString();
+			auto extraInfo1Node = value["ExtraInfo"];
+			if(!extraInfo1Node["NodeId"].isNull())
+				backupsObject.extraInfo1.nodeId = extraInfo1Node["NodeId"].asString();
+			if(!extraInfo1Node["StorageSize"].isNull())
+				backupsObject.extraInfo1.storageSize = extraInfo1Node["StorageSize"].asString();
+			if(!extraInfo1Node["InstanceClass"].isNull())
+				backupsObject.extraInfo1.instanceClass = extraInfo1Node["InstanceClass"].asString();
+			if(!extraInfo1Node["NodeType"].isNull())
+				backupsObject.extraInfo1.nodeType = extraInfo1Node["NodeType"].asString();
 			clusterBackupsObject.backups.push_back(backupsObject);
 		}
 		auto extraInfoNode = value["ExtraInfo"];

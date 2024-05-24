@@ -37,27 +37,45 @@ namespace AlibabaCloud
 				DescribeBackupPolicyResult();
 				explicit DescribeBackupPolicyResult(const std::string &payload);
 				~DescribeBackupPolicyResult();
-				std::string getPreferredBackupPeriod()const;
-				int getLogBackupRetentionPeriod()const;
 				std::string getHighFrequencyBackupRetention()const;
-				std::string getSnapshotBackupType()const;
 				std::string getPreferredBackupTime()const;
+				int getBackupRetentionPolicyOnClusterDeletion()const;
+				std::string getCrossBackupPeriod()const;
+				std::string getPreferredNextBackupTime()const;
+				std::string getPreferredBackupPeriod()const;
+				std::string getCrossLogRetentionType()const;
+				int getLogBackupRetentionPeriod()const;
+				int getCrossRetentionValue()const;
+				std::string getSrcRegion()const;
+				std::string getCrossRetentionType()const;
+				int getCrossLogRetentionValue()const;
+				int getEnableCrossLogBackup()const;
+				std::string getSnapshotBackupType()const;
 				int getEnableBackupLog()const;
 				std::string getBackupRetentionPeriod()const;
-				std::string getPreferredNextBackupTime()const;
+				std::string getDestRegion()const;
 				int getBackupInterval()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string preferredBackupPeriod_;
-				int logBackupRetentionPeriod_;
 				std::string highFrequencyBackupRetention_;
-				std::string snapshotBackupType_;
 				std::string preferredBackupTime_;
+				int backupRetentionPolicyOnClusterDeletion_;
+				std::string crossBackupPeriod_;
+				std::string preferredNextBackupTime_;
+				std::string preferredBackupPeriod_;
+				std::string crossLogRetentionType_;
+				int logBackupRetentionPeriod_;
+				int crossRetentionValue_;
+				std::string srcRegion_;
+				std::string crossRetentionType_;
+				int crossLogRetentionValue_;
+				int enableCrossLogBackup_;
+				std::string snapshotBackupType_;
 				int enableBackupLog_;
 				std::string backupRetentionPeriod_;
-				std::string preferredNextBackupTime_;
+				std::string destRegion_;
 				int backupInterval_;
 
 			};

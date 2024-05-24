@@ -95,6 +95,10 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			dBInstancesObject.secondaryZoneId = valueDBInstancesDBInstance["SecondaryZoneId"].asString();
 		if(!valueDBInstancesDBInstance["HiddenZoneId"].isNull())
 			dBInstancesObject.hiddenZoneId = valueDBInstancesDBInstance["HiddenZoneId"].asString();
+		if(!valueDBInstancesDBInstance["BackupRetentionPolicy"].isNull())
+			dBInstancesObject.backupRetentionPolicy = std::stoi(valueDBInstancesDBInstance["BackupRetentionPolicy"].asString());
+		if(!valueDBInstancesDBInstance["ReleaseTime"].isNull())
+			dBInstancesObject.releaseTime = valueDBInstancesDBInstance["ReleaseTime"].asString();
 		auto allTagsNode = valueDBInstancesDBInstance["Tags"]["Tag"];
 		for (auto valueDBInstancesDBInstanceTagsTag : allTagsNode)
 		{

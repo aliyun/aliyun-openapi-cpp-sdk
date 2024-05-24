@@ -44,7 +44,7 @@ void DescribeBackupTasksResult::parse(const std::string &payload)
 	{
 		BackupTask backupJobsObject;
 		if(!valueBackupJobsBackupTask["BackupjobId"].isNull())
-			backupJobsObject.backupjobId = std::stol(valueBackupJobsBackupTask["BackupjobId"].asString());
+			backupJobsObject.backupjobId = valueBackupJobsBackupTask["BackupjobId"].asString();
 		if(!valueBackupJobsBackupTask["BackupSetStatus"].isNull())
 			backupJobsObject.backupSetStatus = valueBackupJobsBackupTask["BackupSetStatus"].asString();
 		if(!valueBackupJobsBackupTask["BackupStartTime"].isNull())

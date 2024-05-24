@@ -87,26 +87,28 @@ void DescribePriceResult::parse(const std::string &payload)
 				moduleInstanceObject.totalProductFee = valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["TotalProductFee"].asString();
 			if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["ContractActivity"].isNull())
 				moduleInstanceObject.contractActivity = valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["ContractActivity"].asString() == "true";
-			auto allPromDetailList2Node = valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["PromDetailList"]["PromDetal"];
-			for (auto valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetal : allPromDetailList2Node)
+			if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["StandDiscountPrice"].isNull())
+				moduleInstanceObject.standDiscountPrice = valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["StandDiscountPrice"].asString();
+			auto allPromDetailList2Node = valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["PromDetailList"]["PromDetail"];
+			for (auto valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail : allPromDetailList2Node)
 			{
-				SubOrder::ModuleInstanceItem::PromDetal promDetailList2Object;
-				if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetal["FinalPromFee"].isNull())
-					promDetailList2Object.finalPromFee = valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetal["FinalPromFee"].asString();
-				if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetal["ActivityExtInfo"].isNull())
-					promDetailList2Object.activityExtInfo = valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetal["ActivityExtInfo"].asString();
-				if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetal["OptionCode"].isNull())
-					promDetailList2Object.optionCode = valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetal["OptionCode"].asString();
-				if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetal["PromType"].isNull())
-					promDetailList2Object.promType = valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetal["PromType"].asString();
-				if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetal["PromotionId"].isNull())
-					promDetailList2Object.promotionId = std::stol(valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetal["PromotionId"].asString());
-				if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetal["PromotionName"].isNull())
-					promDetailList2Object.promotionName = valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetal["PromotionName"].asString();
-				if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetal["PromotionCode"].isNull())
-					promDetailList2Object.promotionCode = valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetal["PromotionCode"].asString();
-				if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetal["DerivedPromType"].isNull())
-					promDetailList2Object.derivedPromType = valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetal["DerivedPromType"].asString();
+				SubOrder::ModuleInstanceItem::PromDetail promDetailList2Object;
+				if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail["FinalPromFee"].isNull())
+					promDetailList2Object.finalPromFee = valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail["FinalPromFee"].asString();
+				if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail["ActivityExtInfo"].isNull())
+					promDetailList2Object.activityExtInfo = valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail["ActivityExtInfo"].asString();
+				if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail["OptionCode"].isNull())
+					promDetailList2Object.optionCode = valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail["OptionCode"].asString();
+				if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail["PromType"].isNull())
+					promDetailList2Object.promType = valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail["PromType"].asString();
+				if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail["PromotionId"].isNull())
+					promDetailList2Object.promotionId = std::stol(valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail["PromotionId"].asString());
+				if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail["PromotionName"].isNull())
+					promDetailList2Object.promotionName = valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail["PromotionName"].asString();
+				if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail["PromotionCode"].isNull())
+					promDetailList2Object.promotionCode = valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail["PromotionCode"].asString();
+				if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail["DerivedPromType"].isNull())
+					promDetailList2Object.derivedPromType = valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail["DerivedPromType"].asString();
 				moduleInstanceObject.promDetailList2.push_back(promDetailList2Object);
 			}
 			auto allModuleAttrsNode = valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["ModuleAttrs"]["moduleAttr"];
@@ -167,28 +169,31 @@ void DescribePriceResult::parse(const std::string &payload)
 			auto allTargetArticleItemCodes = value["TargetArticleItemCodes"]["targetArticleItemCode"];
 			for (auto value : allTargetArticleItemCodes)
 				optionalPromotionsObject.targetArticleItemCodes.push_back(value.asString());
+			auto allPromotionRuleIdList = value["PromotionRuleIdList"]["promotionRuleId"];
+			for (auto value : allPromotionRuleIdList)
+				optionalPromotionsObject.promotionRuleIdList.push_back(value.asString());
 			subOrdersObject.optionalPromotions.push_back(optionalPromotionsObject);
 		}
-		auto allPromDetailListNode = valueSubOrdersSubOrder["PromDetailList"]["PromDetal"];
-		for (auto valueSubOrdersSubOrderPromDetailListPromDetal : allPromDetailListNode)
+		auto allPromDetailListNode = valueSubOrdersSubOrder["PromDetailList"]["PromDetail"];
+		for (auto valueSubOrdersSubOrderPromDetailListPromDetail : allPromDetailListNode)
 		{
-			SubOrder::PromDetal3 promDetailListObject;
-			if(!valueSubOrdersSubOrderPromDetailListPromDetal["FinalPromFee"].isNull())
-				promDetailListObject.finalPromFee = valueSubOrdersSubOrderPromDetailListPromDetal["FinalPromFee"].asString();
-			if(!valueSubOrdersSubOrderPromDetailListPromDetal["ActivityExtInfo"].isNull())
-				promDetailListObject.activityExtInfo = valueSubOrdersSubOrderPromDetailListPromDetal["ActivityExtInfo"].asString();
-			if(!valueSubOrdersSubOrderPromDetailListPromDetal["OptionCode"].isNull())
-				promDetailListObject.optionCode = valueSubOrdersSubOrderPromDetailListPromDetal["OptionCode"].asString();
-			if(!valueSubOrdersSubOrderPromDetailListPromDetal["PromType"].isNull())
-				promDetailListObject.promType = valueSubOrdersSubOrderPromDetailListPromDetal["PromType"].asString();
-			if(!valueSubOrdersSubOrderPromDetailListPromDetal["PromotionId"].isNull())
-				promDetailListObject.promotionId = std::stol(valueSubOrdersSubOrderPromDetailListPromDetal["PromotionId"].asString());
-			if(!valueSubOrdersSubOrderPromDetailListPromDetal["PromotionName"].isNull())
-				promDetailListObject.promotionName = valueSubOrdersSubOrderPromDetailListPromDetal["PromotionName"].asString();
-			if(!valueSubOrdersSubOrderPromDetailListPromDetal["PromotionCode"].isNull())
-				promDetailListObject.promotionCode = valueSubOrdersSubOrderPromDetailListPromDetal["PromotionCode"].asString();
-			if(!valueSubOrdersSubOrderPromDetailListPromDetal["DerivedPromType"].isNull())
-				promDetailListObject.derivedPromType = valueSubOrdersSubOrderPromDetailListPromDetal["DerivedPromType"].asString();
+			SubOrder::PromDetail3 promDetailListObject;
+			if(!valueSubOrdersSubOrderPromDetailListPromDetail["FinalPromFee"].isNull())
+				promDetailListObject.finalPromFee = valueSubOrdersSubOrderPromDetailListPromDetail["FinalPromFee"].asString();
+			if(!valueSubOrdersSubOrderPromDetailListPromDetail["ActivityExtInfo"].isNull())
+				promDetailListObject.activityExtInfo = valueSubOrdersSubOrderPromDetailListPromDetail["ActivityExtInfo"].asString();
+			if(!valueSubOrdersSubOrderPromDetailListPromDetail["OptionCode"].isNull())
+				promDetailListObject.optionCode = valueSubOrdersSubOrderPromDetailListPromDetail["OptionCode"].asString();
+			if(!valueSubOrdersSubOrderPromDetailListPromDetail["PromType"].isNull())
+				promDetailListObject.promType = valueSubOrdersSubOrderPromDetailListPromDetail["PromType"].asString();
+			if(!valueSubOrdersSubOrderPromDetailListPromDetail["PromotionId"].isNull())
+				promDetailListObject.promotionId = std::stol(valueSubOrdersSubOrderPromDetailListPromDetail["PromotionId"].asString());
+			if(!valueSubOrdersSubOrderPromDetailListPromDetail["PromotionName"].isNull())
+				promDetailListObject.promotionName = valueSubOrdersSubOrderPromDetailListPromDetail["PromotionName"].asString();
+			if(!valueSubOrdersSubOrderPromDetailListPromDetail["PromotionCode"].isNull())
+				promDetailListObject.promotionCode = valueSubOrdersSubOrderPromDetailListPromDetail["PromotionCode"].asString();
+			if(!valueSubOrdersSubOrderPromDetailListPromDetail["DerivedPromType"].isNull())
+				promDetailListObject.derivedPromType = valueSubOrdersSubOrderPromDetailListPromDetail["DerivedPromType"].asString();
 			subOrdersObject.promDetailList.push_back(promDetailListObject);
 		}
 		auto depreciateInfoNode = value["DepreciateInfo"];
@@ -210,6 +215,8 @@ void DescribePriceResult::parse(const std::string &payload)
 			subOrdersObject.depreciateInfo.isContractActivity = depreciateInfoNode["IsContractActivity"].asString() == "true";
 		if(!depreciateInfoNode["IsShow"].isNull())
 			subOrdersObject.depreciateInfo.isShow = depreciateInfoNode["IsShow"].asString();
+		if(!depreciateInfoNode["StartTime"].isNull())
+			subOrdersObject.depreciateInfo.startTime = depreciateInfoNode["StartTime"].asString();
 		auto contractActivityNode = depreciateInfoNode["ContractActivity"];
 		if(!contractActivityNode["FinalPromFee"].isNull())
 			subOrdersObject.depreciateInfo.contractActivity.finalPromFee = contractActivityNode["FinalPromFee"].asString();
@@ -296,12 +303,12 @@ void DescribePriceResult::parse(const std::string &payload)
 			couponObject.optionCode = orderNodeCouponsCoupon["OptionCode"].asString();
 		if(!orderNodeCouponsCoupon["ActivityCategory"].isNull())
 			couponObject.activityCategory = orderNodeCouponsCoupon["ActivityCategory"].asString();
-		auto allPromotionRuleIdList = value["PromotionRuleIdList"]["PromotionRuleId"];
-		for (auto value : allPromotionRuleIdList)
-			couponObject.promotionRuleIdList.push_back(value.asString());
-		auto allTargetArticleItemCodes6 = value["TargetArticleItemCodes"]["TargetArticleItemCode"];
-		for (auto value : allTargetArticleItemCodes6)
-			couponObject.targetArticleItemCodes6.push_back(value.asString());
+		auto allPromotionRuleIdList6 = value["PromotionRuleIdList"]["PromotionRuleId"];
+		for (auto value : allPromotionRuleIdList6)
+			couponObject.promotionRuleIdList6.push_back(value.asString());
+		auto allTargetArticleItemCodes7 = value["TargetArticleItemCodes"]["TargetArticleItemCode"];
+		for (auto value : allTargetArticleItemCodes7)
+			couponObject.targetArticleItemCodes7.push_back(value.asString());
 		order_.coupons.push_back(couponObject);
 	}
 	auto depreciateInfo5Node = orderNode["DepreciateInfo"];
@@ -323,22 +330,22 @@ void DescribePriceResult::parse(const std::string &payload)
 		order_.depreciateInfo5.isContractActivity = depreciateInfo5Node["IsContractActivity"].asString() == "true";
 	if(!depreciateInfo5Node["IsShow"].isNull())
 		order_.depreciateInfo5.isShow = depreciateInfo5Node["IsShow"].asString();
-	auto contractActivity7Node = depreciateInfo5Node["ContractActivity"];
-	if(!contractActivity7Node["FinalPromFee"].isNull())
-		order_.depreciateInfo5.contractActivity7.finalPromFee = contractActivity7Node["FinalPromFee"].asString();
-	if(!contractActivity7Node["FinalFee"].isNull())
-		order_.depreciateInfo5.contractActivity7.finalFee = contractActivity7Node["FinalFee"].asString();
-	if(!contractActivity7Node["ProdFee"].isNull())
-		order_.depreciateInfo5.contractActivity7.prodFee = contractActivity7Node["ProdFee"].asString();
-	if(!contractActivity7Node["ActivityId"].isNull())
-		order_.depreciateInfo5.contractActivity7.activityId = std::stol(contractActivity7Node["ActivityId"].asString());
-	if(!contractActivity7Node["OptionCode"].isNull())
-		order_.depreciateInfo5.contractActivity7.optionCode = contractActivity7Node["OptionCode"].asString();
-	if(!contractActivity7Node["ActivityName"].isNull())
-		order_.depreciateInfo5.contractActivity7.activityName = contractActivity7Node["ActivityName"].asString();
-		auto allOptionIds8 = contractActivity7Node["OptionIds"]["OptionId"];
-		for (auto value : allOptionIds8)
-			order_.depreciateInfo5.contractActivity7.optionIds8.push_back(value.asString());
+	auto contractActivity8Node = depreciateInfo5Node["ContractActivity"];
+	if(!contractActivity8Node["FinalPromFee"].isNull())
+		order_.depreciateInfo5.contractActivity8.finalPromFee = contractActivity8Node["FinalPromFee"].asString();
+	if(!contractActivity8Node["FinalFee"].isNull())
+		order_.depreciateInfo5.contractActivity8.finalFee = contractActivity8Node["FinalFee"].asString();
+	if(!contractActivity8Node["ProdFee"].isNull())
+		order_.depreciateInfo5.contractActivity8.prodFee = contractActivity8Node["ProdFee"].asString();
+	if(!contractActivity8Node["ActivityId"].isNull())
+		order_.depreciateInfo5.contractActivity8.activityId = std::stol(contractActivity8Node["ActivityId"].asString());
+	if(!contractActivity8Node["OptionCode"].isNull())
+		order_.depreciateInfo5.contractActivity8.optionCode = contractActivity8Node["OptionCode"].asString();
+	if(!contractActivity8Node["ActivityName"].isNull())
+		order_.depreciateInfo5.contractActivity8.activityName = contractActivity8Node["ActivityName"].asString();
+		auto allOptionIds9 = contractActivity8Node["OptionIds"]["OptionId"];
+		for (auto value : allOptionIds9)
+			order_.depreciateInfo5.contractActivity8.optionIds9.push_back(value.asString());
 		auto allRuleIds4 = orderNode["RuleIds"]["RuleId"];
 		for (auto value : allRuleIds4)
 			order_.ruleIds4.push_back(value.asString());

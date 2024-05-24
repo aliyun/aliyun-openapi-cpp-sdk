@@ -163,6 +163,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/MigrateToOtherZoneResult.h
 	include/alibabacloud/dds/model/ModifyAccountDescriptionRequest.h
 	include/alibabacloud/dds/model/ModifyAccountDescriptionResult.h
+	include/alibabacloud/dds/model/ModifyActiveOperationTasksRequest.h
+	include/alibabacloud/dds/model/ModifyActiveOperationTasksResult.h
 	include/alibabacloud/dds/model/ModifyAuditLogFilterRequest.h
 	include/alibabacloud/dds/model/ModifyAuditLogFilterResult.h
 	include/alibabacloud/dds/model/ModifyAuditPolicyRequest.h
@@ -173,6 +175,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/ModifyDBInstanceConnectionStringResult.h
 	include/alibabacloud/dds/model/ModifyDBInstanceDescriptionRequest.h
 	include/alibabacloud/dds/model/ModifyDBInstanceDescriptionResult.h
+	include/alibabacloud/dds/model/ModifyDBInstanceDiskTypeRequest.h
+	include/alibabacloud/dds/model/ModifyDBInstanceDiskTypeResult.h
 	include/alibabacloud/dds/model/ModifyDBInstanceMaintainTimeRequest.h
 	include/alibabacloud/dds/model/ModifyDBInstanceMaintainTimeResult.h
 	include/alibabacloud/dds/model/ModifyDBInstanceMonitorRequest.h
@@ -384,6 +388,8 @@ set(dds_src
 	src/model/MigrateToOtherZoneResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
 	src/model/ModifyAccountDescriptionResult.cc
+	src/model/ModifyActiveOperationTasksRequest.cc
+	src/model/ModifyActiveOperationTasksResult.cc
 	src/model/ModifyAuditLogFilterRequest.cc
 	src/model/ModifyAuditLogFilterResult.cc
 	src/model/ModifyAuditPolicyRequest.cc
@@ -394,6 +400,8 @@ set(dds_src
 	src/model/ModifyDBInstanceConnectionStringResult.cc
 	src/model/ModifyDBInstanceDescriptionRequest.cc
 	src/model/ModifyDBInstanceDescriptionResult.cc
+	src/model/ModifyDBInstanceDiskTypeRequest.cc
+	src/model/ModifyDBInstanceDiskTypeResult.cc
 	src/model/ModifyDBInstanceMaintainTimeRequest.cc
 	src/model/ModifyDBInstanceMaintainTimeResult.cc
 	src/model/ModifyDBInstanceMonitorRequest.cc

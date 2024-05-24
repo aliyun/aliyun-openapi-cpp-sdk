@@ -61,6 +61,15 @@ void CreateShardingDBInstanceRequest::setNetworkType(const std::string &networkT
   setParameter(std::string("NetworkType"), networkType);
 }
 
+std::string CreateShardingDBInstanceRequest::getSrcRegion() const {
+  return srcRegion_;
+}
+
+void CreateShardingDBInstanceRequest::setSrcRegion(const std::string &srcRegion) {
+  srcRegion_ = srcRegion;
+  setParameter(std::string("SrcRegion"), srcRegion);
+}
+
 std::vector<CreateShardingDBInstanceRequest::ReplicaSet> CreateShardingDBInstanceRequest::getReplicaSet() const {
   return replicaSet_;
 }
@@ -133,6 +142,15 @@ int CreateShardingDBInstanceRequest::getPeriod() const {
 void CreateShardingDBInstanceRequest::setPeriod(int period) {
   period_ = period;
   setParameter(std::string("Period"), std::to_string(period));
+}
+
+std::string CreateShardingDBInstanceRequest::getBackupId() const {
+  return backupId_;
+}
+
+void CreateShardingDBInstanceRequest::setBackupId(const std::string &backupId) {
+  backupId_ = backupId;
+  setParameter(std::string("BackupId"), backupId);
 }
 
 std::string CreateShardingDBInstanceRequest::getEncryptionKey() const {
@@ -288,6 +306,15 @@ void CreateShardingDBInstanceRequest::setRestoreTime(const std::string &restoreT
   setParameter(std::string("RestoreTime"), restoreTime);
 }
 
+std::string CreateShardingDBInstanceRequest::getDestRegion() const {
+  return destRegion_;
+}
+
+void CreateShardingDBInstanceRequest::setDestRegion(const std::string &destRegion) {
+  destRegion_ = destRegion;
+  setParameter(std::string("DestRegion"), destRegion);
+}
+
 std::string CreateShardingDBInstanceRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -313,6 +340,15 @@ std::string CreateShardingDBInstanceRequest::getOwnerAccount() const {
 void CreateShardingDBInstanceRequest::setOwnerAccount(const std::string &ownerAccount) {
   ownerAccount_ = ownerAccount;
   setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+std::string CreateShardingDBInstanceRequest::getRestoreType() const {
+  return restoreType_;
+}
+
+void CreateShardingDBInstanceRequest::setRestoreType(const std::string &restoreType) {
+  restoreType_ = restoreType;
+  setParameter(std::string("RestoreType"), restoreType);
 }
 
 std::string CreateShardingDBInstanceRequest::getAccountPassword() const {

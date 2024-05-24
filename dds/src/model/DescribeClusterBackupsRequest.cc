@@ -43,6 +43,15 @@ void DescribeClusterBackupsRequest::setStartTime(const std::string &startTime) {
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeClusterBackupsRequest::getSrcRegion() const {
+  return srcRegion_;
+}
+
+void DescribeClusterBackupsRequest::setSrcRegion(const std::string &srcRegion) {
+  srcRegion_ = srcRegion;
+  setParameter(std::string("SrcRegion"), srcRegion);
+}
+
 std::string DescribeClusterBackupsRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -68,6 +77,15 @@ std::string DescribeClusterBackupsRequest::getDBInstanceId() const {
 void DescribeClusterBackupsRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string DescribeClusterBackupsRequest::getDestRegion() const {
+  return destRegion_;
+}
+
+void DescribeClusterBackupsRequest::setDestRegion(const std::string &destRegion) {
+  destRegion_ = destRegion;
+  setParameter(std::string("DestRegion"), destRegion);
 }
 
 std::string DescribeClusterBackupsRequest::getResourceOwnerAccount() const {

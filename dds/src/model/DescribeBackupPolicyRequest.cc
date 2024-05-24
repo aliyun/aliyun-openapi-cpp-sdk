@@ -34,6 +34,15 @@ void DescribeBackupPolicyRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeBackupPolicyRequest::getSrcRegion() const {
+  return srcRegion_;
+}
+
+void DescribeBackupPolicyRequest::setSrcRegion(const std::string &srcRegion) {
+  srcRegion_ = srcRegion;
+  setParameter(std::string("SrcRegion"), srcRegion);
+}
+
 std::string DescribeBackupPolicyRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -50,6 +59,15 @@ std::string DescribeBackupPolicyRequest::getSecurityToken() const {
 void DescribeBackupPolicyRequest::setSecurityToken(const std::string &securityToken) {
   securityToken_ = securityToken;
   setParameter(std::string("SecurityToken"), securityToken);
+}
+
+std::string DescribeBackupPolicyRequest::getInstanceType() const {
+  return instanceType_;
+}
+
+void DescribeBackupPolicyRequest::setInstanceType(const std::string &instanceType) {
+  instanceType_ = instanceType;
+  setParameter(std::string("InstanceType"), instanceType);
 }
 
 std::string DescribeBackupPolicyRequest::getDBInstanceId() const {

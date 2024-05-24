@@ -30,8 +30,8 @@ class ALIBABACLOUD_DDS_EXPORT DescribeBackupTasksRequest : public RpcServiceRequ
 public:
 	DescribeBackupTasksRequest();
 	~DescribeBackupTasksRequest();
-	long getBackupJobId() const;
-	void setBackupJobId(long backupJobId);
+	std::string getBackupJobId() const;
+	void setBackupJobId(const std::string &backupJobId);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
@@ -48,7 +48,7 @@ public:
 	void setOwnerId(long ownerId);
 
 private:
-	long backupJobId_;
+	std::string backupJobId_;
 	long resourceOwnerId_;
 	std::string accessKeyId_;
 	std::string securityToken_;

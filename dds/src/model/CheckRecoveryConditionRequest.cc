@@ -34,6 +34,15 @@ void CheckRecoveryConditionRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string CheckRecoveryConditionRequest::getSrcRegion() const {
+  return srcRegion_;
+}
+
+void CheckRecoveryConditionRequest::setSrcRegion(const std::string &srcRegion) {
+  srcRegion_ = srcRegion;
+  setParameter(std::string("SrcRegion"), srcRegion);
+}
+
 std::string CheckRecoveryConditionRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -61,6 +70,15 @@ void CheckRecoveryConditionRequest::setDatabaseNames(const std::string &database
   setParameter(std::string("DatabaseNames"), databaseNames);
 }
 
+std::string CheckRecoveryConditionRequest::getInstanceType() const {
+  return instanceType_;
+}
+
+void CheckRecoveryConditionRequest::setInstanceType(const std::string &instanceType) {
+  instanceType_ = instanceType;
+  setParameter(std::string("InstanceType"), instanceType);
+}
+
 std::string CheckRecoveryConditionRequest::getRestoreTime() const {
   return restoreTime_;
 }
@@ -68,6 +86,15 @@ std::string CheckRecoveryConditionRequest::getRestoreTime() const {
 void CheckRecoveryConditionRequest::setRestoreTime(const std::string &restoreTime) {
   restoreTime_ = restoreTime;
   setParameter(std::string("RestoreTime"), restoreTime);
+}
+
+std::string CheckRecoveryConditionRequest::getDestRegion() const {
+  return destRegion_;
+}
+
+void CheckRecoveryConditionRequest::setDestRegion(const std::string &destRegion) {
+  destRegion_ = destRegion;
+  setParameter(std::string("DestRegion"), destRegion);
 }
 
 std::string CheckRecoveryConditionRequest::getResourceOwnerAccount() const {
@@ -113,5 +140,14 @@ long CheckRecoveryConditionRequest::getOwnerId() const {
 void CheckRecoveryConditionRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string CheckRecoveryConditionRequest::getRestoreType() const {
+  return restoreType_;
+}
+
+void CheckRecoveryConditionRequest::setRestoreType(const std::string &restoreType) {
+  restoreType_ = restoreType;
+  setParameter(std::string("RestoreType"), restoreType);
 }
 

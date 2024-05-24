@@ -79,6 +79,15 @@ void CreateDBInstanceRequest::setNetworkType(const std::string &networkType) {
   setParameter(std::string("NetworkType"), networkType);
 }
 
+std::string CreateDBInstanceRequest::getSrcRegion() const {
+  return srcRegion_;
+}
+
+void CreateDBInstanceRequest::setSrcRegion(const std::string &srcRegion) {
+  srcRegion_ = srcRegion;
+  setParameter(std::string("SrcRegion"), srcRegion);
+}
+
 std::string CreateDBInstanceRequest::getStorageType() const {
   return storageType_;
 }
@@ -352,6 +361,15 @@ std::string CreateDBInstanceRequest::getClusterId() const {
 void CreateDBInstanceRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
   setParameter(std::string("ClusterId"), clusterId);
+}
+
+std::string CreateDBInstanceRequest::getRestoreType() const {
+  return restoreType_;
+}
+
+void CreateDBInstanceRequest::setRestoreType(const std::string &restoreType) {
+  restoreType_ = restoreType;
+  setParameter(std::string("RestoreType"), restoreType);
 }
 
 std::string CreateDBInstanceRequest::getAccountPassword() const {

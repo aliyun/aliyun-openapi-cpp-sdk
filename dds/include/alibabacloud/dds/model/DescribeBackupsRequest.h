@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	std::string getSrcRegion() const;
+	void setSrcRegion(const std::string &srcRegion);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
@@ -44,6 +46,8 @@ public:
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getNodeId() const;
 	void setNodeId(const std::string &nodeId);
+	std::string getDestRegion() const;
+	void setDestRegion(const std::string &destRegion);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -58,11 +62,13 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string startTime_;
+	std::string srcRegion_;
 	int pageNumber_;
 	std::string accessKeyId_;
 	int pageSize_;
 	std::string dBInstanceId_;
 	std::string nodeId_;
+	std::string destRegion_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string backupId_;

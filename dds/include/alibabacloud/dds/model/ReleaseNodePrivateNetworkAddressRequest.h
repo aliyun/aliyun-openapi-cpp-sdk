@@ -38,6 +38,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getConnectionType() const;
+	void setConnectionType(const std::string &connectionType);
 	std::string getNodeId() const;
 	void setNodeId(const std::string &nodeId);
 	std::string getResourceOwnerAccount() const;
@@ -52,6 +54,7 @@ private:
 	std::string networkType_;
 	std::string accessKeyId_;
 	std::string dBInstanceId_;
+	std::string connectionType_;
 	std::string nodeId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

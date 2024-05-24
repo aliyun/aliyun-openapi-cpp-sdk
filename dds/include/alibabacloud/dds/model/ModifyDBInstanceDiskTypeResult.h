@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBEBACKUPTASKSRESULT_H_
-#define ALIBABACLOUD_DDS_MODEL_DESCRIBEBACKUPTASKSRESULT_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCEDISKTYPERESULT_H_
+#define ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCEDISKTYPERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT DescribeBackupTasksResult : public ServiceResult
+			class ALIBABACLOUD_DDS_EXPORT ModifyDBInstanceDiskTypeResult : public ServiceResult
 			{
 			public:
-				struct BackupTask
-				{
-					std::string jobMode;
-					std::string progress;
-					std::string backupjobId;
-					std::string backupStartTime;
-					std::string backupSetStatus;
-				};
 
 
-				DescribeBackupTasksResult();
-				explicit DescribeBackupTasksResult(const std::string &payload);
-				~DescribeBackupTasksResult();
-				std::vector<BackupTask> getBackupJobs()const;
+				ModifyDBInstanceDiskTypeResult();
+				explicit ModifyDBInstanceDiskTypeResult(const std::string &payload);
+				~ModifyDBInstanceDiskTypeResult();
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<BackupTask> backupJobs_;
+				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBEBACKUPTASKSRESULT_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCEDISKTYPERESULT_H_

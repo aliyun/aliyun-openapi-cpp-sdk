@@ -164,6 +164,8 @@
 #include "model/MigrateToOtherZoneResult.h"
 #include "model/ModifyAccountDescriptionRequest.h"
 #include "model/ModifyAccountDescriptionResult.h"
+#include "model/ModifyActiveOperationTasksRequest.h"
+#include "model/ModifyActiveOperationTasksResult.h"
 #include "model/ModifyAuditLogFilterRequest.h"
 #include "model/ModifyAuditLogFilterResult.h"
 #include "model/ModifyAuditPolicyRequest.h"
@@ -174,6 +176,8 @@
 #include "model/ModifyDBInstanceConnectionStringResult.h"
 #include "model/ModifyDBInstanceDescriptionRequest.h"
 #include "model/ModifyDBInstanceDescriptionResult.h"
+#include "model/ModifyDBInstanceDiskTypeRequest.h"
+#include "model/ModifyDBInstanceDiskTypeResult.h"
 #include "model/ModifyDBInstanceMaintainTimeRequest.h"
 #include "model/ModifyDBInstanceMaintainTimeResult.h"
 #include "model/ModifyDBInstanceMonitorRequest.h"
@@ -462,6 +466,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyAccountDescriptionResult> ModifyAccountDescriptionOutcome;
 			typedef std::future<ModifyAccountDescriptionOutcome> ModifyAccountDescriptionOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ModifyAccountDescriptionRequest&, const ModifyAccountDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountDescriptionAsyncHandler;
+			typedef Outcome<Error, Model::ModifyActiveOperationTasksResult> ModifyActiveOperationTasksOutcome;
+			typedef std::future<ModifyActiveOperationTasksOutcome> ModifyActiveOperationTasksOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::ModifyActiveOperationTasksRequest&, const ModifyActiveOperationTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyActiveOperationTasksAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAuditLogFilterResult> ModifyAuditLogFilterOutcome;
 			typedef std::future<ModifyAuditLogFilterOutcome> ModifyAuditLogFilterOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ModifyAuditLogFilterRequest&, const ModifyAuditLogFilterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuditLogFilterAsyncHandler;
@@ -477,6 +484,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDBInstanceDescriptionResult> ModifyDBInstanceDescriptionOutcome;
 			typedef std::future<ModifyDBInstanceDescriptionOutcome> ModifyDBInstanceDescriptionOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ModifyDBInstanceDescriptionRequest&, const ModifyDBInstanceDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceDescriptionAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDBInstanceDiskTypeResult> ModifyDBInstanceDiskTypeOutcome;
+			typedef std::future<ModifyDBInstanceDiskTypeOutcome> ModifyDBInstanceDiskTypeOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::ModifyDBInstanceDiskTypeRequest&, const ModifyDBInstanceDiskTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceDiskTypeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDBInstanceMaintainTimeResult> ModifyDBInstanceMaintainTimeOutcome;
 			typedef std::future<ModifyDBInstanceMaintainTimeOutcome> ModifyDBInstanceMaintainTimeOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ModifyDBInstanceMaintainTimeRequest&, const ModifyDBInstanceMaintainTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceMaintainTimeAsyncHandler;
@@ -794,6 +804,9 @@ namespace AlibabaCloud
 			ModifyAccountDescriptionOutcome modifyAccountDescription(const Model::ModifyAccountDescriptionRequest &request)const;
 			void modifyAccountDescriptionAsync(const Model::ModifyAccountDescriptionRequest& request, const ModifyAccountDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAccountDescriptionOutcomeCallable modifyAccountDescriptionCallable(const Model::ModifyAccountDescriptionRequest& request) const;
+			ModifyActiveOperationTasksOutcome modifyActiveOperationTasks(const Model::ModifyActiveOperationTasksRequest &request)const;
+			void modifyActiveOperationTasksAsync(const Model::ModifyActiveOperationTasksRequest& request, const ModifyActiveOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyActiveOperationTasksOutcomeCallable modifyActiveOperationTasksCallable(const Model::ModifyActiveOperationTasksRequest& request) const;
 			ModifyAuditLogFilterOutcome modifyAuditLogFilter(const Model::ModifyAuditLogFilterRequest &request)const;
 			void modifyAuditLogFilterAsync(const Model::ModifyAuditLogFilterRequest& request, const ModifyAuditLogFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAuditLogFilterOutcomeCallable modifyAuditLogFilterCallable(const Model::ModifyAuditLogFilterRequest& request) const;
@@ -809,6 +822,9 @@ namespace AlibabaCloud
 			ModifyDBInstanceDescriptionOutcome modifyDBInstanceDescription(const Model::ModifyDBInstanceDescriptionRequest &request)const;
 			void modifyDBInstanceDescriptionAsync(const Model::ModifyDBInstanceDescriptionRequest& request, const ModifyDBInstanceDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBInstanceDescriptionOutcomeCallable modifyDBInstanceDescriptionCallable(const Model::ModifyDBInstanceDescriptionRequest& request) const;
+			ModifyDBInstanceDiskTypeOutcome modifyDBInstanceDiskType(const Model::ModifyDBInstanceDiskTypeRequest &request)const;
+			void modifyDBInstanceDiskTypeAsync(const Model::ModifyDBInstanceDiskTypeRequest& request, const ModifyDBInstanceDiskTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDBInstanceDiskTypeOutcomeCallable modifyDBInstanceDiskTypeCallable(const Model::ModifyDBInstanceDiskTypeRequest& request) const;
 			ModifyDBInstanceMaintainTimeOutcome modifyDBInstanceMaintainTime(const Model::ModifyDBInstanceMaintainTimeRequest &request)const;
 			void modifyDBInstanceMaintainTimeAsync(const Model::ModifyDBInstanceMaintainTimeRequest& request, const ModifyDBInstanceMaintainTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBInstanceMaintainTimeOutcomeCallable modifyDBInstanceMaintainTimeCallable(const Model::ModifyDBInstanceMaintainTimeRequest& request) const;

@@ -54,6 +54,8 @@ public:
 	void setEngineVersion(const std::string &engineVersion);
 	std::string getNetworkType() const;
 	void setNetworkType(const std::string &networkType);
+	std::string getSrcRegion() const;
+	void setSrcRegion(const std::string &srcRegion);
 	std::vector<ReplicaSet> getReplicaSet() const;
 	void setReplicaSet(const std::vector<ReplicaSet> &replicaSet);
 	std::string getStorageType() const;
@@ -68,6 +70,8 @@ public:
 	void setGlobalSecurityGroupIds(const std::string &globalSecurityGroupIds);
 	int getPeriod() const;
 	void setPeriod(int period);
+	std::string getBackupId() const;
+	void setBackupId(const std::string &backupId);
 	std::string getEncryptionKey() const;
 	void setEncryptionKey(const std::string &encryptionKey);
 	std::vector<ConfigServer> getConfigServer() const;
@@ -100,12 +104,16 @@ public:
 	void setHiddenZoneId(const std::string &hiddenZoneId);
 	std::string getRestoreTime() const;
 	void setRestoreTime(const std::string &restoreTime);
+	std::string getDestRegion() const;
+	void setDestRegion(const std::string &destRegion);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getSrcDBInstanceId() const;
 	void setSrcDBInstanceId(const std::string &srcDBInstanceId);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getRestoreType() const;
+	void setRestoreType(const std::string &restoreType);
 	std::string getAccountPassword() const;
 	void setAccountPassword(const std::string &accountPassword);
 	bool getEncrypted() const;
@@ -122,6 +130,7 @@ private:
 	std::string secondaryZoneId_;
 	std::string engineVersion_;
 	std::string networkType_;
+	std::string srcRegion_;
 	std::vector<ReplicaSet> replicaSet_;
 	std::string storageType_;
 	std::string resourceGroupId_;
@@ -129,6 +138,7 @@ private:
 	std::vector<Tag> tag_;
 	std::string globalSecurityGroupIds_;
 	int period_;
+	std::string backupId_;
 	std::string encryptionKey_;
 	std::vector<ConfigServer> configServer_;
 	long ownerId_;
@@ -145,9 +155,11 @@ private:
 	std::string engine_;
 	std::string hiddenZoneId_;
 	std::string restoreTime_;
+	std::string destRegion_;
 	std::string resourceOwnerAccount_;
 	std::string srcDBInstanceId_;
 	std::string ownerAccount_;
+	std::string restoreType_;
 	std::string accountPassword_;
 	bool encrypted_;
 	std::string vpcId_;

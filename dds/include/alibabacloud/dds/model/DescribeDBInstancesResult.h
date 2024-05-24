@@ -76,12 +76,14 @@ namespace AlibabaCloud
 					std::vector<DBInstance::ShardAttribute> shardList;
 					std::string lockMode;
 					std::string secondaryZoneId;
+					std::string releaseTime;
 					std::string chargeType;
 					std::string vpcAuthMode;
 					std::string creationTime;
 					std::string regionId;
 					std::string expireTime;
 					std::string kindCode;
+					int backupRetentionPolicy;
 				};
 
 

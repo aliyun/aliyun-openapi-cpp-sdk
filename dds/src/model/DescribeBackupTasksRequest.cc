@@ -25,13 +25,13 @@ DescribeBackupTasksRequest::DescribeBackupTasksRequest()
 
 DescribeBackupTasksRequest::~DescribeBackupTasksRequest() {}
 
-long DescribeBackupTasksRequest::getBackupJobId() const {
+std::string DescribeBackupTasksRequest::getBackupJobId() const {
   return backupJobId_;
 }
 
-void DescribeBackupTasksRequest::setBackupJobId(long backupJobId) {
+void DescribeBackupTasksRequest::setBackupJobId(const std::string &backupJobId) {
   backupJobId_ = backupJobId;
-  setParameter(std::string("BackupJobId"), std::to_string(backupJobId));
+  setParameter(std::string("BackupJobId"), backupJobId);
 }
 
 long DescribeBackupTasksRequest::getResourceOwnerId() const {

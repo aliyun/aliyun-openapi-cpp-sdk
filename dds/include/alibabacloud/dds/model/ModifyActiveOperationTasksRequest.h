@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBECLUSTERBACKUPSREQUEST_H_
-#define ALIBABACLOUD_DDS_MODEL_DESCRIBECLUSTERBACKUPSREQUEST_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_MODIFYACTIVEOPERATIONTASKSREQUEST_H_
+#define ALIBABACLOUD_DDS_MODEL_MODIFYACTIVEOPERATIONTASKSREQUEST_H_
 
 #include <alibabacloud/dds/DdsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,56 +26,41 @@
 namespace AlibabaCloud {
 namespace Dds {
 namespace Model {
-class ALIBABACLOUD_DDS_EXPORT DescribeClusterBackupsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DDS_EXPORT ModifyActiveOperationTasksRequest : public RpcServiceRequest {
 public:
-	DescribeClusterBackupsRequest();
-	~DescribeClusterBackupsRequest();
+	ModifyActiveOperationTasksRequest();
+	~ModifyActiveOperationTasksRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getStartTime() const;
-	void setStartTime(const std::string &startTime);
-	std::string getSrcRegion() const;
-	void setSrcRegion(const std::string &srcRegion);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::string getDBInstanceId() const;
-	void setDBInstanceId(const std::string &dBInstanceId);
-	std::string getDestRegion() const;
-	void setDestRegion(const std::string &destRegion);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getSwitchTime() const;
+	void setSwitchTime(const std::string &switchTime);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
-	std::string getBackupId() const;
-	void setBackupId(const std::string &backupId);
-	std::string getEndTime() const;
-	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	bool getIsOnlyGetClusterBackUp() const;
-	void setIsOnlyGetClusterBackUp(bool isOnlyGetClusterBackUp);
-	int getPageNo() const;
-	void setPageNo(int pageNo);
+	std::string getIds() const;
+	void setIds(const std::string &ids);
+	int getImmediateStart() const;
+	void setImmediateStart(int immediateStart);
 
 private:
 	long resourceOwnerId_;
-	std::string startTime_;
-	std::string srcRegion_;
 	std::string accessKeyId_;
-	int pageSize_;
-	std::string dBInstanceId_;
-	std::string destRegion_;
+	std::string regionId_;
+	std::string switchTime_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
-	std::string backupId_;
-	std::string endTime_;
 	long ownerId_;
-	bool isOnlyGetClusterBackUp_;
-	int pageNo_;
+	std::string ids_;
+	int immediateStart_;
 };
 } // namespace Model
 } // namespace Dds
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBECLUSTERBACKUPSREQUEST_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_MODIFYACTIVEOPERATIONTASKSREQUEST_H_

@@ -46,6 +46,8 @@ public:
 	void setEngineVersion(const std::string &engineVersion);
 	std::string getNetworkType() const;
 	void setNetworkType(const std::string &networkType);
+	std::string getSrcRegion() const;
+	void setSrcRegion(const std::string &srcRegion);
 	std::string getStorageType() const;
 	void setStorageType(const std::string &storageType);
 	std::string getResourceGroupId() const;
@@ -106,6 +108,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
+	std::string getRestoreType() const;
+	void setRestoreType(const std::string &restoreType);
 	std::string getAccountPassword() const;
 	void setAccountPassword(const std::string &accountPassword);
 	bool getEncrypted() const;
@@ -122,6 +126,7 @@ private:
 	std::string couponNo_;
 	std::string engineVersion_;
 	std::string networkType_;
+	std::string srcRegion_;
 	std::string storageType_;
 	std::string resourceGroupId_;
 	std::string dBInstanceDescription_;
@@ -152,6 +157,7 @@ private:
 	std::string srcDBInstanceId_;
 	std::string ownerAccount_;
 	std::string clusterId_;
+	std::string restoreType_;
 	std::string accountPassword_;
 	bool encrypted_;
 	std::string vpcId_;

@@ -60,13 +60,19 @@ void DescribeBackupsResult::parse(const std::string &payload)
 		if(!valueBackupsBackup["BackupEndTime"].isNull())
 			backupsObject.backupEndTime = valueBackupsBackup["BackupEndTime"].asString();
 		if(!valueBackupsBackup["BackupId"].isNull())
-			backupsObject.backupId = std::stoi(valueBackupsBackup["BackupId"].asString());
+			backupsObject.backupId = valueBackupsBackup["BackupId"].asString();
 		if(!valueBackupsBackup["BackupDBNames"].isNull())
 			backupsObject.backupDBNames = valueBackupsBackup["BackupDBNames"].asString();
 		if(!valueBackupsBackup["BackupMethod"].isNull())
 			backupsObject.backupMethod = valueBackupsBackup["BackupMethod"].asString();
 		if(!valueBackupsBackup["BackupJobId"].isNull())
-			backupsObject.backupJobId = std::stol(valueBackupsBackup["BackupJobId"].asString());
+			backupsObject.backupJobId = valueBackupsBackup["BackupJobId"].asString();
+		if(!valueBackupsBackup["BackupName"].isNull())
+			backupsObject.backupName = valueBackupsBackup["BackupName"].asString();
+		if(!valueBackupsBackup["BackupScale"].isNull())
+			backupsObject.backupScale = valueBackupsBackup["BackupScale"].asString();
+		if(!valueBackupsBackup["IsAvail"].isNull())
+			backupsObject.isAvail = valueBackupsBackup["IsAvail"].asString() == "true";
 		backups_.push_back(backupsObject);
 	}
 	if(!value["TotalCount"].isNull())

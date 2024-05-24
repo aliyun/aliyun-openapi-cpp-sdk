@@ -32,10 +32,14 @@ public:
 	~DescribeBackupPolicyRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getSrcRegion() const;
+	void setSrcRegion(const std::string &srcRegion);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
+	std::string getInstanceType() const;
+	void setInstanceType(const std::string &instanceType);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getResourceOwnerAccount() const;
@@ -47,8 +51,10 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string srcRegion_;
 	std::string accessKeyId_;
 	std::string securityToken_;
+	std::string instanceType_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

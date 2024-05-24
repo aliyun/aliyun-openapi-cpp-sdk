@@ -32,14 +32,20 @@ public:
 	~CheckRecoveryConditionRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getSrcRegion() const;
+	void setSrcRegion(const std::string &srcRegion);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getDatabaseNames() const;
 	void setDatabaseNames(const std::string &databaseNames);
+	std::string getInstanceType() const;
+	void setInstanceType(const std::string &instanceType);
 	std::string getRestoreTime() const;
 	void setRestoreTime(const std::string &restoreTime);
+	std::string getDestRegion() const;
+	void setDestRegion(const std::string &destRegion);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -50,18 +56,24 @@ public:
 	void setSourceDBInstance(const std::string &sourceDBInstance);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getRestoreType() const;
+	void setRestoreType(const std::string &restoreType);
 
 private:
 	long resourceOwnerId_;
+	std::string srcRegion_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	std::string databaseNames_;
+	std::string instanceType_;
 	std::string restoreTime_;
+	std::string destRegion_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string backupId_;
 	std::string sourceDBInstance_;
 	long ownerId_;
+	std::string restoreType_;
 };
 } // namespace Model
 } // namespace Dds

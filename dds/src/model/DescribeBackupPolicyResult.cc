@@ -57,17 +57,25 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 		backupInterval_ = std::stoi(value["BackupInterval"].asString());
 	if(!value["HighFrequencyBackupRetention"].isNull())
 		highFrequencyBackupRetention_ = value["HighFrequencyBackupRetention"].asString();
+	if(!value["BackupRetentionPolicyOnClusterDeletion"].isNull())
+		backupRetentionPolicyOnClusterDeletion_ = std::stoi(value["BackupRetentionPolicyOnClusterDeletion"].asString());
+	if(!value["SrcRegion"].isNull())
+		srcRegion_ = value["SrcRegion"].asString();
+	if(!value["DestRegion"].isNull())
+		destRegion_ = value["DestRegion"].asString();
+	if(!value["CrossRetentionType"].isNull())
+		crossRetentionType_ = value["CrossRetentionType"].asString();
+	if(!value["CrossRetentionValue"].isNull())
+		crossRetentionValue_ = std::stoi(value["CrossRetentionValue"].asString());
+	if(!value["CrossBackupPeriod"].isNull())
+		crossBackupPeriod_ = value["CrossBackupPeriod"].asString();
+	if(!value["EnableCrossLogBackup"].isNull())
+		enableCrossLogBackup_ = std::stoi(value["EnableCrossLogBackup"].asString());
+	if(!value["CrossLogRetentionType"].isNull())
+		crossLogRetentionType_ = value["CrossLogRetentionType"].asString();
+	if(!value["CrossLogRetentionValue"].isNull())
+		crossLogRetentionValue_ = std::stoi(value["CrossLogRetentionValue"].asString());
 
-}
-
-std::string DescribeBackupPolicyResult::getPreferredBackupPeriod()const
-{
-	return preferredBackupPeriod_;
-}
-
-int DescribeBackupPolicyResult::getLogBackupRetentionPeriod()const
-{
-	return logBackupRetentionPeriod_;
 }
 
 std::string DescribeBackupPolicyResult::getHighFrequencyBackupRetention()const
@@ -75,14 +83,69 @@ std::string DescribeBackupPolicyResult::getHighFrequencyBackupRetention()const
 	return highFrequencyBackupRetention_;
 }
 
-std::string DescribeBackupPolicyResult::getSnapshotBackupType()const
-{
-	return snapshotBackupType_;
-}
-
 std::string DescribeBackupPolicyResult::getPreferredBackupTime()const
 {
 	return preferredBackupTime_;
+}
+
+int DescribeBackupPolicyResult::getBackupRetentionPolicyOnClusterDeletion()const
+{
+	return backupRetentionPolicyOnClusterDeletion_;
+}
+
+std::string DescribeBackupPolicyResult::getCrossBackupPeriod()const
+{
+	return crossBackupPeriod_;
+}
+
+std::string DescribeBackupPolicyResult::getPreferredNextBackupTime()const
+{
+	return preferredNextBackupTime_;
+}
+
+std::string DescribeBackupPolicyResult::getPreferredBackupPeriod()const
+{
+	return preferredBackupPeriod_;
+}
+
+std::string DescribeBackupPolicyResult::getCrossLogRetentionType()const
+{
+	return crossLogRetentionType_;
+}
+
+int DescribeBackupPolicyResult::getLogBackupRetentionPeriod()const
+{
+	return logBackupRetentionPeriod_;
+}
+
+int DescribeBackupPolicyResult::getCrossRetentionValue()const
+{
+	return crossRetentionValue_;
+}
+
+std::string DescribeBackupPolicyResult::getSrcRegion()const
+{
+	return srcRegion_;
+}
+
+std::string DescribeBackupPolicyResult::getCrossRetentionType()const
+{
+	return crossRetentionType_;
+}
+
+int DescribeBackupPolicyResult::getCrossLogRetentionValue()const
+{
+	return crossLogRetentionValue_;
+}
+
+int DescribeBackupPolicyResult::getEnableCrossLogBackup()const
+{
+	return enableCrossLogBackup_;
+}
+
+std::string DescribeBackupPolicyResult::getSnapshotBackupType()const
+{
+	return snapshotBackupType_;
 }
 
 int DescribeBackupPolicyResult::getEnableBackupLog()const
@@ -95,9 +158,9 @@ std::string DescribeBackupPolicyResult::getBackupRetentionPeriod()const
 	return backupRetentionPeriod_;
 }
 
-std::string DescribeBackupPolicyResult::getPreferredNextBackupTime()const
+std::string DescribeBackupPolicyResult::getDestRegion()const
 {
-	return preferredNextBackupTime_;
+	return destRegion_;
 }
 
 int DescribeBackupPolicyResult::getBackupInterval()const

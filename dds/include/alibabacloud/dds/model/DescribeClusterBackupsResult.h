@@ -40,6 +40,13 @@ namespace AlibabaCloud
 					};
 					struct Backup
 					{
+						struct ExtraInfo1
+						{
+							std::string nodeType;
+							std::string nodeId;
+							std::string storageSize;
+							std::string instanceClass;
+						};
 						std::string instanceName;
 						std::string backupDownloadURL;
 						std::string backupIntranetDownloadURL;
@@ -48,12 +55,14 @@ namespace AlibabaCloud
 						std::string backupStartTime;
 						std::string backupId;
 						std::string isAvail;
+						ExtraInfo1 extraInfo1;
 						std::string backupStatus;
 						std::string backupName;
 					};
 					std::string clusterBackupId;
 					std::string clusterBackupStartTime;
 					std::string progress;
+					std::string attachLogStatus;
 					std::string clusterBackupStatus;
 					std::string clusterBackupSize;
 					std::vector<ClusterBackup::Backup> backups;
