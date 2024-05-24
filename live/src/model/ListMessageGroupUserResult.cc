@@ -40,18 +40,18 @@ void ListMessageGroupUserResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["Total"].isNull())
-		result_.total = std::stoi(resultNode["Total"].asString());
 	if(!resultNode["HasMore"].isNull())
 		result_.hasMore = resultNode["HasMore"].asString() == "true";
+	if(!resultNode["Total"].isNull())
+		result_.total = std::stoi(resultNode["Total"].asString());
 	auto allUserListNode = resultNode["UserList"]["userListItem"];
 	for (auto resultNodeUserListuserListItem : allUserListNode)
 	{
 		Result::UserListItem userListItemObject;
-		if(!resultNodeUserListuserListItem["UserId"].isNull())
-			userListItemObject.userId = resultNodeUserListuserListItem["UserId"].asString();
 		if(!resultNodeUserListuserListItem["JoinTime"].isNull())
 			userListItemObject.joinTime = std::stol(resultNodeUserListuserListItem["JoinTime"].asString());
+		if(!resultNodeUserListuserListItem["UserId"].isNull())
+			userListItemObject.userId = resultNodeUserListuserListItem["UserId"].asString();
 		result_.userList.push_back(userListItemObject);
 	}
 

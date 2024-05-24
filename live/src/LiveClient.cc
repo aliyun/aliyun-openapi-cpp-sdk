@@ -1887,6 +1887,42 @@ LiveClient::CreateLiveMessageGroupOutcomeCallable LiveClient::createLiveMessageG
 	return task->get_future();
 }
 
+LiveClient::CreateLivePrivateLineOutcome LiveClient::createLivePrivateLine(const CreateLivePrivateLineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateLivePrivateLineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateLivePrivateLineOutcome(CreateLivePrivateLineResult(outcome.result()));
+	else
+		return CreateLivePrivateLineOutcome(outcome.error());
+}
+
+void LiveClient::createLivePrivateLineAsync(const CreateLivePrivateLineRequest& request, const CreateLivePrivateLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createLivePrivateLine(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::CreateLivePrivateLineOutcomeCallable LiveClient::createLivePrivateLineCallable(const CreateLivePrivateLineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateLivePrivateLineOutcome()>>(
+			[this, request]()
+			{
+			return this->createLivePrivateLine(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::CreateLiveRealTimeLogDeliveryOutcome LiveClient::createLiveRealTimeLogDelivery(const CreateLiveRealTimeLogDeliveryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3177,6 +3213,42 @@ LiveClient::DeleteLivePackageConfigOutcomeCallable LiveClient::deleteLivePackage
 			[this, request]()
 			{
 			return this->deleteLivePackageConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DeleteLivePrivateLineOutcome LiveClient::deleteLivePrivateLine(const DeleteLivePrivateLineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLivePrivateLineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLivePrivateLineOutcome(DeleteLivePrivateLineResult(outcome.result()));
+	else
+		return DeleteLivePrivateLineOutcome(outcome.error());
+}
+
+void LiveClient::deleteLivePrivateLineAsync(const DeleteLivePrivateLineRequest& request, const DeleteLivePrivateLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLivePrivateLine(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLivePrivateLineOutcomeCallable LiveClient::deleteLivePrivateLineCallable(const DeleteLivePrivateLineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLivePrivateLineOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLivePrivateLine(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6711,6 +6783,78 @@ LiveClient::DescribeLivePackageConfigOutcomeCallable LiveClient::describeLivePac
 	return task->get_future();
 }
 
+LiveClient::DescribeLivePrivateLineAreasOutcome LiveClient::describeLivePrivateLineAreas(const DescribeLivePrivateLineAreasRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLivePrivateLineAreasOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLivePrivateLineAreasOutcome(DescribeLivePrivateLineAreasResult(outcome.result()));
+	else
+		return DescribeLivePrivateLineAreasOutcome(outcome.error());
+}
+
+void LiveClient::describeLivePrivateLineAreasAsync(const DescribeLivePrivateLineAreasRequest& request, const DescribeLivePrivateLineAreasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLivePrivateLineAreas(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLivePrivateLineAreasOutcomeCallable LiveClient::describeLivePrivateLineAreasCallable(const DescribeLivePrivateLineAreasRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLivePrivateLineAreasOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLivePrivateLineAreas(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLivePrivateLineAvailGAOutcome LiveClient::describeLivePrivateLineAvailGA(const DescribeLivePrivateLineAvailGARequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLivePrivateLineAvailGAOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLivePrivateLineAvailGAOutcome(DescribeLivePrivateLineAvailGAResult(outcome.result()));
+	else
+		return DescribeLivePrivateLineAvailGAOutcome(outcome.error());
+}
+
+void LiveClient::describeLivePrivateLineAvailGAAsync(const DescribeLivePrivateLineAvailGARequest& request, const DescribeLivePrivateLineAvailGAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLivePrivateLineAvailGA(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLivePrivateLineAvailGAOutcomeCallable LiveClient::describeLivePrivateLineAvailGACallable(const DescribeLivePrivateLineAvailGARequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLivePrivateLineAvailGAOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLivePrivateLineAvailGA(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveProducerUsageDataOutcome LiveClient::describeLiveProducerUsageData(const DescribeLiveProducerUsageDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7425,6 +7569,42 @@ LiveClient::DescribeLiveStreamHistoryUserNumOutcomeCallable LiveClient::describe
 			[this, request]()
 			{
 			return this->describeLiveStreamHistoryUserNum(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveStreamMergeOutcome LiveClient::describeLiveStreamMerge(const DescribeLiveStreamMergeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveStreamMergeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveStreamMergeOutcome(DescribeLiveStreamMergeResult(outcome.result()));
+	else
+		return DescribeLiveStreamMergeOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveStreamMergeAsync(const DescribeLiveStreamMergeRequest& request, const DescribeLiveStreamMergeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveStreamMerge(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveStreamMergeOutcomeCallable LiveClient::describeLiveStreamMergeCallable(const DescribeLiveStreamMergeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamMergeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveStreamMerge(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8433,6 +8613,42 @@ LiveClient::DescribeLiveUserTagsOutcomeCallable LiveClient::describeLiveUserTags
 			[this, request]()
 			{
 			return this->describeLiveUserTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeMeterLiveBypassDurationOutcome LiveClient::describeMeterLiveBypassDuration(const DescribeMeterLiveBypassDurationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMeterLiveBypassDurationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMeterLiveBypassDurationOutcome(DescribeMeterLiveBypassDurationResult(outcome.result()));
+	else
+		return DescribeMeterLiveBypassDurationOutcome(outcome.error());
+}
+
+void LiveClient::describeMeterLiveBypassDurationAsync(const DescribeMeterLiveBypassDurationRequest& request, const DescribeMeterLiveBypassDurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMeterLiveBypassDuration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeMeterLiveBypassDurationOutcomeCallable LiveClient::describeMeterLiveBypassDurationCallable(const DescribeMeterLiveBypassDurationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMeterLiveBypassDurationOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMeterLiveBypassDuration(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

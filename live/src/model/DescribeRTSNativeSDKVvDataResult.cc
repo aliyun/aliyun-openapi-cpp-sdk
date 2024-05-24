@@ -45,18 +45,18 @@ void DescribeRTSNativeSDKVvDataResult::parse(const std::string &payload)
 		Data vvDataObject;
 		if(!valueVvDataData["TimeStamp"].isNull())
 			vvDataObject.timeStamp = valueVvDataData["TimeStamp"].asString();
-		if(!valueVvDataData["VvTotal"].isNull())
-			vvDataObject.vvTotal = valueVvDataData["VvTotal"].asString();
 		if(!valueVvDataData["VvSuccess"].isNull())
 			vvDataObject.vvSuccess = valueVvDataData["VvSuccess"].asString();
+		if(!valueVvDataData["VvTotal"].isNull())
+			vvDataObject.vvTotal = valueVvDataData["VvTotal"].asString();
 		vvData_.push_back(vvDataObject);
 	}
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 
 }
 

@@ -40,18 +40,18 @@ void GetMessageAppResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
+	if(!resultNode["AppConfig"].isNull())
+		result_.appConfig = resultNode["AppConfig"].asString();
 	if(!resultNode["AppId"].isNull())
 		result_.appId = resultNode["AppId"].asString();
 	if(!resultNode["AppName"].isNull())
 		result_.appName = resultNode["AppName"].asString();
 	if(!resultNode["CreateTime"].isNull())
 		result_.createTime = std::stol(resultNode["CreateTime"].asString());
-	if(!resultNode["Status"].isNull())
-		result_.status = std::stoi(resultNode["Status"].asString());
-	if(!resultNode["AppConfig"].isNull())
-		result_.appConfig = resultNode["AppConfig"].asString();
 	if(!resultNode["Extension"].isNull())
 		result_.extension = resultNode["Extension"].asString();
+	if(!resultNode["Status"].isNull())
+		result_.status = std::stoi(resultNode["Status"].asString());
 
 }
 

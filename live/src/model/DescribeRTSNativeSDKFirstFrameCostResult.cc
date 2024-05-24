@@ -43,26 +43,26 @@ void DescribeRTSNativeSDKFirstFrameCostResult::parse(const std::string &payload)
 	for (auto valueFirstFrameCostDataData : allFirstFrameCostDataNode)
 	{
 		Data firstFrameCostDataObject;
-		if(!valueFirstFrameCostDataData["TimeStamp"].isNull())
-			firstFrameCostDataObject.timeStamp = valueFirstFrameCostDataData["TimeStamp"].asString();
-		if(!valueFirstFrameCostDataData["Initialized"].isNull())
-			firstFrameCostDataObject.initialized = valueFirstFrameCostDataData["Initialized"].asString();
 		if(!valueFirstFrameCostDataData["Connected"].isNull())
 			firstFrameCostDataObject.connected = valueFirstFrameCostDataData["Connected"].asString();
 		if(!valueFirstFrameCostDataData["FinishGetStreamInfo"].isNull())
 			firstFrameCostDataObject.finishGetStreamInfo = valueFirstFrameCostDataData["FinishGetStreamInfo"].asString();
-		if(!valueFirstFrameCostDataData["FirstPacket"].isNull())
-			firstFrameCostDataObject.firstPacket = valueFirstFrameCostDataData["FirstPacket"].asString();
 		if(!valueFirstFrameCostDataData["FirstFrameComplete"].isNull())
 			firstFrameCostDataObject.firstFrameComplete = valueFirstFrameCostDataData["FirstFrameComplete"].asString();
+		if(!valueFirstFrameCostDataData["FirstPacket"].isNull())
+			firstFrameCostDataObject.firstPacket = valueFirstFrameCostDataData["FirstPacket"].asString();
+		if(!valueFirstFrameCostDataData["Initialized"].isNull())
+			firstFrameCostDataObject.initialized = valueFirstFrameCostDataData["Initialized"].asString();
+		if(!valueFirstFrameCostDataData["TimeStamp"].isNull())
+			firstFrameCostDataObject.timeStamp = valueFirstFrameCostDataData["TimeStamp"].asString();
 		firstFrameCostData_.push_back(firstFrameCostDataObject);
 	}
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 
 }
 

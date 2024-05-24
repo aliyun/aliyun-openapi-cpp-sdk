@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					struct AppListItem
 					{
-						int status;
 						std::string extension;
+						int status;
 						std::string appConfig;
 						std::string appId;
 						long createTime;

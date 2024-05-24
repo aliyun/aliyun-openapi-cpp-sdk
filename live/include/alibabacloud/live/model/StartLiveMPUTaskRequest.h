@@ -53,15 +53,15 @@ public:
 			struct UserPanesItem {
 				std::string backgroundImageUrl;
 				std::string zOrder;
-				std::string x;
 				std::string width;
+				std::string x;
 				std::string y;
+				std::string renderMode;
 				struct UserInfo {
 					std::string sourceType;
 					std::string userId;
 				};
 				UserInfo userInfo;
-				std::string renderMode;
 				std::string height;
 			};
 			UserPanesItem userPanesItem;
@@ -76,8 +76,8 @@ public:
 		};
 		Layout layout;
 		struct Background {
-			std::string uRL;
 			std::string renderMode;
+			std::string uRL;
 		};
 		Background background;
 		struct UserInfosItem {
@@ -93,10 +93,10 @@ public:
 			std::string audioBitrate;
 			std::string videoFramerate;
 			std::string videoHeight;
-			std::string videoBitrate;
 			std::string audioSampleRate;
-			std::string videoGop;
+			std::string videoBitrate;
 			std::string audioChannels;
+			std::string videoGop;
 		};
 		EncodeParams encodeParams;
 	};

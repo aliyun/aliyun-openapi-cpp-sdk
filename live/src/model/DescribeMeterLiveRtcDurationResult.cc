@@ -43,12 +43,12 @@ void DescribeMeterLiveRtcDurationResult::parse(const std::string &payload)
 	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
+		if(!valueDataDataItem["AudioDuration"].isNull())
+			dataObject.audioDuration = std::stol(valueDataDataItem["AudioDuration"].asString());
 		if(!valueDataDataItem["Timestamp"].isNull())
 			dataObject.timestamp = valueDataDataItem["Timestamp"].asString();
 		if(!valueDataDataItem["TotalDuration"].isNull())
 			dataObject.totalDuration = std::stol(valueDataDataItem["TotalDuration"].asString());
-		if(!valueDataDataItem["AudioDuration"].isNull())
-			dataObject.audioDuration = std::stol(valueDataDataItem["AudioDuration"].asString());
 		if(!valueDataDataItem["V480Duration"].isNull())
 			dataObject.v480Duration = std::stol(valueDataDataItem["V480Duration"].asString());
 		if(!valueDataDataItem["V720Duration"].isNull())
@@ -57,10 +57,10 @@ void DescribeMeterLiveRtcDurationResult::parse(const std::string &payload)
 			dataObject.v1080Duration = std::stol(valueDataDataItem["V1080Duration"].asString());
 		data_.push_back(dataObject);
 	}
-	if(!value["TotalSummaryDuration"].isNull())
-		totalSummaryDuration_ = std::stol(value["TotalSummaryDuration"].asString());
 	if(!value["AudioSummaryDuration"].isNull())
 		audioSummaryDuration_ = std::stol(value["AudioSummaryDuration"].asString());
+	if(!value["TotalSummaryDuration"].isNull())
+		totalSummaryDuration_ = std::stol(value["TotalSummaryDuration"].asString());
 	if(!value["V480SummaryDuration"].isNull())
 		v480SummaryDuration_ = std::stol(value["V480SummaryDuration"].asString());
 	if(!value["V720SummaryDuration"].isNull())
@@ -90,13 +90,13 @@ std::vector<DescribeMeterLiveRtcDurationResult::DataItem> DescribeMeterLiveRtcDu
 	return data_;
 }
 
-long DescribeMeterLiveRtcDurationResult::getTotalSummaryDuration()const
-{
-	return totalSummaryDuration_;
-}
-
 long DescribeMeterLiveRtcDurationResult::getAudioSummaryDuration()const
 {
 	return audioSummaryDuration_;
+}
+
+long DescribeMeterLiveRtcDurationResult::getTotalSummaryDuration()const
+{
+	return totalSummaryDuration_;
 }
 

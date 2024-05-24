@@ -43,20 +43,20 @@ void DescribeRTSNativeSDKPlayTimeResult::parse(const std::string &payload)
 	for (auto valuePlayTimeDataData : allPlayTimeDataNode)
 	{
 		Data playTimeDataObject;
-		if(!valuePlayTimeDataData["TimeStamp"].isNull())
-			playTimeDataObject.timeStamp = valuePlayTimeDataData["TimeStamp"].asString();
 		if(!valuePlayTimeDataData["PlayTime"].isNull())
 			playTimeDataObject.playTime = valuePlayTimeDataData["PlayTime"].asString();
 		if(!valuePlayTimeDataData["StallTime"].isNull())
 			playTimeDataObject.stallTime = valuePlayTimeDataData["StallTime"].asString();
+		if(!valuePlayTimeDataData["TimeStamp"].isNull())
+			playTimeDataObject.timeStamp = valuePlayTimeDataData["TimeStamp"].asString();
 		playTimeData_.push_back(playTimeDataObject);
 	}
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 
 }
 

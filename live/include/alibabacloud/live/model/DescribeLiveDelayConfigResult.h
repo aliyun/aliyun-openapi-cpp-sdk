@@ -40,8 +40,8 @@ namespace AlibabaCloud
 				std::string getApp()const;
 				std::string getTaskTriggerMode()const;
 				std::string getStream()const;
-				std::string getDomain()const;
 				std::string getDelayTime()const;
+				std::string getDomain()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 				std::string app_;
 				std::string taskTriggerMode_;
 				std::string stream_;
-				std::string domain_;
 				std::string delayTime_;
+				std::string domain_;
 
 			};
 		}

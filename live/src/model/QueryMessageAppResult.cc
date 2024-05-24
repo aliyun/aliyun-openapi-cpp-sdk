@@ -43,26 +43,26 @@ void QueryMessageAppResult::parse(const std::string &payload)
 	for (auto valueResultresultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultresultItem["TotalCount"].isNull())
-			resultObject.totalCount = std::stoi(valueResultresultItem["TotalCount"].asString());
 		if(!valueResultresultItem["HasMore"].isNull())
 			resultObject.hasMore = valueResultresultItem["HasMore"].asString() == "true";
+		if(!valueResultresultItem["TotalCount"].isNull())
+			resultObject.totalCount = std::stoi(valueResultresultItem["TotalCount"].asString());
 		auto allAppListNode = valueResultresultItem["AppList"]["appListItem"];
 		for (auto valueResultresultItemAppListappListItem : allAppListNode)
 		{
 			ResultItem::AppListItem appListObject;
+			if(!valueResultresultItemAppListappListItem["AppConfig"].isNull())
+				appListObject.appConfig = valueResultresultItemAppListappListItem["AppConfig"].asString();
 			if(!valueResultresultItemAppListappListItem["AppId"].isNull())
 				appListObject.appId = valueResultresultItemAppListappListItem["AppId"].asString();
 			if(!valueResultresultItemAppListappListItem["AppName"].isNull())
 				appListObject.appName = valueResultresultItemAppListappListItem["AppName"].asString();
 			if(!valueResultresultItemAppListappListItem["CreateTime"].isNull())
 				appListObject.createTime = std::stol(valueResultresultItemAppListappListItem["CreateTime"].asString());
-			if(!valueResultresultItemAppListappListItem["Status"].isNull())
-				appListObject.status = std::stoi(valueResultresultItemAppListappListItem["Status"].asString());
-			if(!valueResultresultItemAppListappListItem["AppConfig"].isNull())
-				appListObject.appConfig = valueResultresultItemAppListappListItem["AppConfig"].asString();
 			if(!valueResultresultItemAppListappListItem["Extension"].isNull())
 				appListObject.extension = valueResultresultItemAppListappListItem["Extension"].asString();
+			if(!valueResultresultItemAppListappListItem["Status"].isNull())
+				appListObject.status = std::stoi(valueResultresultItemAppListappListItem["Status"].asString());
 			resultObject.appList.push_back(appListObject);
 		}
 		result_.push_back(resultObject);

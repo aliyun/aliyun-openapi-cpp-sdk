@@ -40,24 +40,24 @@ void ListMessageGroupUserByIdResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["Total"].isNull())
-		result_.total = std::stoi(resultNode["Total"].asString());
 	if(!resultNode["HasMore"].isNull())
 		result_.hasMore = resultNode["HasMore"].asString() == "true";
+	if(!resultNode["Total"].isNull())
+		result_.total = std::stoi(resultNode["Total"].asString());
 	auto allUserListNode = resultNode["UserList"]["userListItem"];
 	for (auto resultNodeUserListuserListItem : allUserListNode)
 	{
 		Result::UserListItem userListItemObject;
-		if(!resultNodeUserListuserListItem["UserId"].isNull())
-			userListItemObject.userId = resultNodeUserListuserListItem["UserId"].asString();
-		if(!resultNodeUserListuserListItem["UserNick"].isNull())
-			userListItemObject.userNick = resultNodeUserListuserListItem["UserNick"].asString();
+		if(!resultNodeUserListuserListItem["IsMute"].isNull())
+			userListItemObject.isMute = resultNodeUserListuserListItem["IsMute"].asString() == "true";
 		if(!resultNodeUserListuserListItem["UserAvatar"].isNull())
 			userListItemObject.userAvatar = resultNodeUserListuserListItem["UserAvatar"].asString();
 		if(!resultNodeUserListuserListItem["UserExtension"].isNull())
 			userListItemObject.userExtension = resultNodeUserListuserListItem["UserExtension"].asString();
-		if(!resultNodeUserListuserListItem["IsMute"].isNull())
-			userListItemObject.isMute = resultNodeUserListuserListItem["IsMute"].asString() == "true";
+		if(!resultNodeUserListuserListItem["UserId"].isNull())
+			userListItemObject.userId = resultNodeUserListuserListItem["UserId"].asString();
+		if(!resultNodeUserListuserListItem["UserNick"].isNull())
+			userListItemObject.userNick = resultNodeUserListuserListItem["UserNick"].asString();
 		auto allMuteBy = value["MuteBy"]["muteBy"];
 		for (auto value : allMuteBy)
 			userListItemObject.muteBy.push_back(value.asString());

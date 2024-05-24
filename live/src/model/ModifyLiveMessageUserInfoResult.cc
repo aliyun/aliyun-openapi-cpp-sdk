@@ -39,6 +39,20 @@ void ModifyLiveMessageUserInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allFailListNode = value["FailList"]["FailGroups"];
+	for (auto valueFailListFailGroups : allFailListNode)
+	{
+		FailGroups failListObject;
+		if(!valueFailListFailGroups["Code"].isNull())
+			failListObject.code = std::stoi(valueFailListFailGroups["Code"].asString());
+		if(!valueFailListFailGroups["GroupId"].isNull())
+			failListObject.groupId = valueFailListFailGroups["GroupId"].asString();
+		if(!valueFailListFailGroups["Reason"].isNull())
+			failListObject.reason = valueFailListFailGroups["Reason"].asString();
+		if(!valueFailListFailGroups["Success"].isNull())
+			failListObject.success = valueFailListFailGroups["Success"].asString() == "true";
+		failList_.push_back(failListObject);
+	}
 	auto allSuccessListNode = value["SuccessList"]["SuccessGroups"];
 	for (auto valueSuccessListSuccessGroups : allSuccessListNode)
 	{
@@ -48,20 +62,6 @@ void ModifyLiveMessageUserInfoResult::parse(const std::string &payload)
 		if(!valueSuccessListSuccessGroups["Success"].isNull())
 			successListObject.success = valueSuccessListSuccessGroups["Success"].asString() == "true";
 		successList_.push_back(successListObject);
-	}
-	auto allFailListNode = value["FailList"]["FailGroups"];
-	for (auto valueFailListFailGroups : allFailListNode)
-	{
-		FailGroups failListObject;
-		if(!valueFailListFailGroups["GroupId"].isNull())
-			failListObject.groupId = valueFailListFailGroups["GroupId"].asString();
-		if(!valueFailListFailGroups["Success"].isNull())
-			failListObject.success = valueFailListFailGroups["Success"].asString() == "true";
-		if(!valueFailListFailGroups["Reason"].isNull())
-			failListObject.reason = valueFailListFailGroups["Reason"].asString();
-		if(!valueFailListFailGroups["Code"].isNull())
-			failListObject.code = std::stoi(valueFailListFailGroups["Code"].asString());
-		failList_.push_back(failListObject);
 	}
 
 }

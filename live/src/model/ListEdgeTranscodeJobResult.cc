@@ -43,28 +43,28 @@ void ListEdgeTranscodeJobResult::parse(const std::string &payload)
 	for (auto valueJobListJob : allJobListNode)
 	{
 		Job jobListObject;
-		if(!valueJobListJob["Status"].isNull())
-			jobListObject.status = valueJobListJob["Status"].asString();
-		if(!valueJobListJob["Type"].isNull())
-			jobListObject.type = valueJobListJob["Type"].asString();
-		if(!valueJobListJob["StreamInput"].isNull())
-			jobListObject.streamInput = valueJobListJob["StreamInput"].asString();
-		if(!valueJobListJob["StreamOutput"].isNull())
-			jobListObject.streamOutput = valueJobListJob["StreamOutput"].asString();
-		if(!valueJobListJob["LastStopAt"].isNull())
-			jobListObject.lastStopAt = valueJobListJob["LastStopAt"].asString();
-		if(!valueJobListJob["LastStartAt"].isNull())
-			jobListObject.lastStartAt = valueJobListJob["LastStartAt"].asString();
 		if(!valueJobListJob["CreateTime"].isNull())
 			jobListObject.createTime = valueJobListJob["CreateTime"].asString();
 		if(!valueJobListJob["JobId"].isNull())
 			jobListObject.jobId = valueJobListJob["JobId"].asString();
-		if(!valueJobListJob["TemplateName"].isNull())
-			jobListObject.templateName = valueJobListJob["TemplateName"].asString();
+		if(!valueJobListJob["LastStartAt"].isNull())
+			jobListObject.lastStartAt = valueJobListJob["LastStartAt"].asString();
+		if(!valueJobListJob["LastStopAt"].isNull())
+			jobListObject.lastStopAt = valueJobListJob["LastStopAt"].asString();
 		if(!valueJobListJob["Name"].isNull())
 			jobListObject.name = valueJobListJob["Name"].asString();
+		if(!valueJobListJob["Status"].isNull())
+			jobListObject.status = valueJobListJob["Status"].asString();
+		if(!valueJobListJob["StreamInput"].isNull())
+			jobListObject.streamInput = valueJobListJob["StreamInput"].asString();
+		if(!valueJobListJob["StreamOutput"].isNull())
+			jobListObject.streamOutput = valueJobListJob["StreamOutput"].asString();
 		if(!valueJobListJob["TemplateId"].isNull())
 			jobListObject.templateId = valueJobListJob["TemplateId"].asString();
+		if(!valueJobListJob["TemplateName"].isNull())
+			jobListObject.templateName = valueJobListJob["TemplateName"].asString();
+		if(!valueJobListJob["Type"].isNull())
+			jobListObject.type = valueJobListJob["Type"].asString();
 		jobList_.push_back(jobListObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -45,8 +45,8 @@ namespace AlibabaCloud
 				std::vector<UsageData> getUsageDataPerInterval()const;
 				std::string getArea()const;
 				std::string getFiled()const;
-				std::string getEndTime()const;
 				std::string getAppId()const;
+				std::string getEndTime()const;
 				std::string getStartTime()const;
 
 			protected:
@@ -55,8 +55,8 @@ namespace AlibabaCloud
 				std::vector<UsageData> usageDataPerInterval_;
 				std::string area_;
 				std::string filed_;
-				std::string endTime_;
 				std::string appId_;
+				std::string endTime_;
 				std::string startTime_;
 
 			};

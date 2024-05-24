@@ -32,6 +32,8 @@ public:
 	~ListLiveMessageGroupsRequest();
 	int getSortType() const;
 	void setSortType(int sortType);
+	int getGroupStatus() const;
+	void setGroupStatus(int groupStatus);
 	long getNextPageToken() const;
 	void setNextPageToken(long nextPageToken);
 	std::string getDataCenter() const;
@@ -41,6 +43,7 @@ public:
 
 private:
 	int sortType_;
+	int groupStatus_;
 	long nextPageToken_;
 	std::string dataCenter_;
 	std::string appId_;

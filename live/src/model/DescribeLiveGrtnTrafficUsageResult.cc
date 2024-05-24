@@ -43,22 +43,22 @@ void DescribeLiveGrtnTrafficUsageResult::parse(const std::string &payload)
 	for (auto valueUsageDataPerIntervalUsageData : allUsageDataPerIntervalNode)
 	{
 		UsageData usageDataPerIntervalObject;
-		if(!valueUsageDataPerIntervalUsageData["Value"].isNull())
-			usageDataPerIntervalObject.value = valueUsageDataPerIntervalUsageData["Value"].asString();
 		if(!valueUsageDataPerIntervalUsageData["TimeStamp"].isNull())
 			usageDataPerIntervalObject.timeStamp = valueUsageDataPerIntervalUsageData["TimeStamp"].asString();
+		if(!valueUsageDataPerIntervalUsageData["Value"].isNull())
+			usageDataPerIntervalObject.value = valueUsageDataPerIntervalUsageData["Value"].asString();
 		usageDataPerInterval_.push_back(usageDataPerIntervalObject);
 	}
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
-	if(!value["Filed"].isNull())
-		filed_ = value["Filed"].asString();
 	if(!value["AppId"].isNull())
 		appId_ = value["AppId"].asString();
 	if(!value["Area"].isNull())
 		area_ = value["Area"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["Filed"].isNull())
+		filed_ = value["Filed"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 
 }
 
@@ -77,14 +77,14 @@ std::string DescribeLiveGrtnTrafficUsageResult::getFiled()const
 	return filed_;
 }
 
-std::string DescribeLiveGrtnTrafficUsageResult::getEndTime()const
-{
-	return endTime_;
-}
-
 std::string DescribeLiveGrtnTrafficUsageResult::getAppId()const
 {
 	return appId_;
+}
+
+std::string DescribeLiveGrtnTrafficUsageResult::getEndTime()const
+{
+	return endTime_;
 }
 
 std::string DescribeLiveGrtnTrafficUsageResult::getStartTime()const

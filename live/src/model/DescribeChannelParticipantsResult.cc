@@ -42,12 +42,12 @@ void DescribeChannelParticipantsResult::parse(const std::string &payload)
 	auto allUserList = value["UserList"]["Users"];
 	for (const auto &item : allUserList)
 		userList_.push_back(item.asString());
-	if(!value["TotalPage"].isNull())
-		totalPage_ = std::stoi(value["TotalPage"].asString());
-	if(!value["TotalNum"].isNull())
-		totalNum_ = std::stoi(value["TotalNum"].asString());
 	if(!value["Times"].isNull())
 		times_ = std::stol(value["Times"].asString());
+	if(!value["TotalNum"].isNull())
+		totalNum_ = std::stoi(value["TotalNum"].asString());
+	if(!value["TotalPage"].isNull())
+		totalPage_ = std::stoi(value["TotalPage"].asString());
 
 }
 

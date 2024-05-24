@@ -40,10 +40,10 @@ void ListMuteGroupUserResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["Total"].isNull())
-		result_.total = std::stoi(resultNode["Total"].asString());
 	if(!resultNode["HasMore"].isNull())
 		result_.hasMore = resultNode["HasMore"].asString() == "true";
+	if(!resultNode["Total"].isNull())
+		result_.total = std::stoi(resultNode["Total"].asString());
 	auto allUserListNode = resultNode["UserList"]["userListItem"];
 	for (auto resultNodeUserListuserListItem : allUserListNode)
 	{

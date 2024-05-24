@@ -43,24 +43,24 @@ void ListEdgeTranscodeTemplateResult::parse(const std::string &payload)
 	for (auto valueTemplateListTemplate : allTemplateListNode)
 	{
 		_Template templateListObject;
-		if(!valueTemplateListTemplate["Type"].isNull())
-			templateListObject.type = valueTemplateListTemplate["Type"].asString();
-		if(!valueTemplateListTemplate["Gop"].isNull())
-			templateListObject.gop = valueTemplateListTemplate["Gop"].asString();
-		if(!valueTemplateListTemplate["CreateTime"].isNull())
-			templateListObject.createTime = valueTemplateListTemplate["CreateTime"].asString();
-		if(!valueTemplateListTemplate["Codec"].isNull())
-			templateListObject.codec = valueTemplateListTemplate["Codec"].asString();
-		if(!valueTemplateListTemplate["Fps"].isNull())
-			templateListObject.fps = valueTemplateListTemplate["Fps"].asString();
 		if(!valueTemplateListTemplate["Bitrate"].isNull())
 			templateListObject.bitrate = valueTemplateListTemplate["Bitrate"].asString();
+		if(!valueTemplateListTemplate["Codec"].isNull())
+			templateListObject.codec = valueTemplateListTemplate["Codec"].asString();
+		if(!valueTemplateListTemplate["CreateTime"].isNull())
+			templateListObject.createTime = valueTemplateListTemplate["CreateTime"].asString();
+		if(!valueTemplateListTemplate["Fps"].isNull())
+			templateListObject.fps = valueTemplateListTemplate["Fps"].asString();
+		if(!valueTemplateListTemplate["Gop"].isNull())
+			templateListObject.gop = valueTemplateListTemplate["Gop"].asString();
 		if(!valueTemplateListTemplate["Name"].isNull())
 			templateListObject.name = valueTemplateListTemplate["Name"].asString();
 		if(!valueTemplateListTemplate["Resolution"].isNull())
 			templateListObject.resolution = valueTemplateListTemplate["Resolution"].asString();
 		if(!valueTemplateListTemplate["TemplateId"].isNull())
 			templateListObject.templateId = valueTemplateListTemplate["TemplateId"].asString();
+		if(!valueTemplateListTemplate["Type"].isNull())
+			templateListObject.type = valueTemplateListTemplate["Type"].asString();
 		templateList_.push_back(templateListObject);
 	}
 	if(!value["TotalCount"].isNull())

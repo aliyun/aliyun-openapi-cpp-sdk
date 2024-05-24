@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct _Template
 				{
-					std::string type;
 					std::string codec;
+					std::string type;
 					std::string createTime;
 					std::string fps;
 					std::string gop;

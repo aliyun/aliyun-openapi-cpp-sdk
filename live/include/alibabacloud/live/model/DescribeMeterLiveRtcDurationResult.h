@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					long v1080Duration;
 					long v480Duration;
 					std::string timestamp;
-					long totalDuration;
 					long audioDuration;
+					long totalDuration;
 				};
 
 
@@ -50,8 +50,8 @@ namespace AlibabaCloud
 				long getV1080SummaryDuration()const;
 				long getV720SummaryDuration()const;
 				std::vector<DataItem> getData()const;
-				long getTotalSummaryDuration()const;
 				long getAudioSummaryDuration()const;
+				long getTotalSummaryDuration()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -60,8 +60,8 @@ namespace AlibabaCloud
 				long v1080SummaryDuration_;
 				long v720SummaryDuration_;
 				std::vector<DataItem> data_;
-				long totalSummaryDuration_;
 				long audioSummaryDuration_;
+				long totalSummaryDuration_;
 
 			};
 		}

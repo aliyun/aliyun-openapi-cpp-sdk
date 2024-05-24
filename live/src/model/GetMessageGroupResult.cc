@@ -40,18 +40,18 @@ void GetMessageGroupResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["GroupId"].isNull())
-		result_.groupId = resultNode["GroupId"].asString();
 	if(!resultNode["CreateTime"].isNull())
 		result_.createTime = std::stol(resultNode["CreateTime"].asString());
-	if(!resultNode["Status"].isNull())
-		result_.status = std::stoi(resultNode["Status"].asString());
 	if(!resultNode["CreatorId"].isNull())
 		result_.creatorId = resultNode["CreatorId"].asString();
 	if(!resultNode["Extension"].isNull())
 		result_.extension = resultNode["Extension"].asString();
+	if(!resultNode["GroupId"].isNull())
+		result_.groupId = resultNode["GroupId"].asString();
 	if(!resultNode["IsMuteAll"].isNull())
 		result_.isMuteAll = resultNode["IsMuteAll"].asString() == "true";
+	if(!resultNode["Status"].isNull())
+		result_.status = std::stoi(resultNode["Status"].asString());
 
 }
 

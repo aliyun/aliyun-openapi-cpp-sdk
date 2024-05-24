@@ -123,6 +123,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/CreateLiveMessageAppResult.h
 	include/alibabacloud/live/model/CreateLiveMessageGroupRequest.h
 	include/alibabacloud/live/model/CreateLiveMessageGroupResult.h
+	include/alibabacloud/live/model/CreateLivePrivateLineRequest.h
+	include/alibabacloud/live/model/CreateLivePrivateLineResult.h
 	include/alibabacloud/live/model/CreateLiveRealTimeLogDeliveryRequest.h
 	include/alibabacloud/live/model/CreateLiveRealTimeLogDeliveryResult.h
 	include/alibabacloud/live/model/CreateLiveStreamMonitorRequest.h
@@ -195,6 +197,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteLiveMessageUserMessageResult.h
 	include/alibabacloud/live/model/DeleteLivePackageConfigRequest.h
 	include/alibabacloud/live/model/DeleteLivePackageConfigResult.h
+	include/alibabacloud/live/model/DeleteLivePrivateLineRequest.h
+	include/alibabacloud/live/model/DeleteLivePrivateLineResult.h
 	include/alibabacloud/live/model/DeleteLivePullStreamInfoConfigRequest.h
 	include/alibabacloud/live/model/DeleteLivePullStreamInfoConfigResult.h
 	include/alibabacloud/live/model/DeleteLiveRealTimeLogLogstoreRequest.h
@@ -391,6 +395,10 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveMessageGroupBandResult.h
 	include/alibabacloud/live/model/DescribeLivePackageConfigRequest.h
 	include/alibabacloud/live/model/DescribeLivePackageConfigResult.h
+	include/alibabacloud/live/model/DescribeLivePrivateLineAreasRequest.h
+	include/alibabacloud/live/model/DescribeLivePrivateLineAreasResult.h
+	include/alibabacloud/live/model/DescribeLivePrivateLineAvailGARequest.h
+	include/alibabacloud/live/model/DescribeLivePrivateLineAvailGAResult.h
 	include/alibabacloud/live/model/DescribeLiveProducerUsageDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveProducerUsageDataResult.h
 	include/alibabacloud/live/model/DescribeLivePullStreamConfigRequest.h
@@ -431,6 +439,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveStreamDetailFrameRateAndBitRateDataResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamHistoryUserNumRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamHistoryUserNumResult.h
+	include/alibabacloud/live/model/DescribeLiveStreamMergeRequest.h
+	include/alibabacloud/live/model/DescribeLiveStreamMergeResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamMetricDetailDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamMetricDetailDataResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamMonitorListRequest.h
@@ -487,6 +497,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveUserDomainsResult.h
 	include/alibabacloud/live/model/DescribeLiveUserTagsRequest.h
 	include/alibabacloud/live/model/DescribeLiveUserTagsResult.h
+	include/alibabacloud/live/model/DescribeMeterLiveBypassDurationRequest.h
+	include/alibabacloud/live/model/DescribeMeterLiveBypassDurationResult.h
 	include/alibabacloud/live/model/DescribeMeterLiveInteractionDauRequest.h
 	include/alibabacloud/live/model/DescribeMeterLiveInteractionDauResult.h
 	include/alibabacloud/live/model/DescribeMeterLiveRtcDurationRequest.h
@@ -914,6 +926,8 @@ set(live_src
 	src/model/CreateLiveMessageAppResult.cc
 	src/model/CreateLiveMessageGroupRequest.cc
 	src/model/CreateLiveMessageGroupResult.cc
+	src/model/CreateLivePrivateLineRequest.cc
+	src/model/CreateLivePrivateLineResult.cc
 	src/model/CreateLiveRealTimeLogDeliveryRequest.cc
 	src/model/CreateLiveRealTimeLogDeliveryResult.cc
 	src/model/CreateLiveStreamMonitorRequest.cc
@@ -986,6 +1000,8 @@ set(live_src
 	src/model/DeleteLiveMessageUserMessageResult.cc
 	src/model/DeleteLivePackageConfigRequest.cc
 	src/model/DeleteLivePackageConfigResult.cc
+	src/model/DeleteLivePrivateLineRequest.cc
+	src/model/DeleteLivePrivateLineResult.cc
 	src/model/DeleteLivePullStreamInfoConfigRequest.cc
 	src/model/DeleteLivePullStreamInfoConfigResult.cc
 	src/model/DeleteLiveRealTimeLogLogstoreRequest.cc
@@ -1182,6 +1198,10 @@ set(live_src
 	src/model/DescribeLiveMessageGroupBandResult.cc
 	src/model/DescribeLivePackageConfigRequest.cc
 	src/model/DescribeLivePackageConfigResult.cc
+	src/model/DescribeLivePrivateLineAreasRequest.cc
+	src/model/DescribeLivePrivateLineAreasResult.cc
+	src/model/DescribeLivePrivateLineAvailGARequest.cc
+	src/model/DescribeLivePrivateLineAvailGAResult.cc
 	src/model/DescribeLiveProducerUsageDataRequest.cc
 	src/model/DescribeLiveProducerUsageDataResult.cc
 	src/model/DescribeLivePullStreamConfigRequest.cc
@@ -1222,6 +1242,8 @@ set(live_src
 	src/model/DescribeLiveStreamDetailFrameRateAndBitRateDataResult.cc
 	src/model/DescribeLiveStreamHistoryUserNumRequest.cc
 	src/model/DescribeLiveStreamHistoryUserNumResult.cc
+	src/model/DescribeLiveStreamMergeRequest.cc
+	src/model/DescribeLiveStreamMergeResult.cc
 	src/model/DescribeLiveStreamMetricDetailDataRequest.cc
 	src/model/DescribeLiveStreamMetricDetailDataResult.cc
 	src/model/DescribeLiveStreamMonitorListRequest.cc
@@ -1278,6 +1300,8 @@ set(live_src
 	src/model/DescribeLiveUserDomainsResult.cc
 	src/model/DescribeLiveUserTagsRequest.cc
 	src/model/DescribeLiveUserTagsResult.cc
+	src/model/DescribeMeterLiveBypassDurationRequest.cc
+	src/model/DescribeMeterLiveBypassDurationResult.cc
 	src/model/DescribeMeterLiveInteractionDauRequest.cc
 	src/model/DescribeMeterLiveInteractionDauResult.cc
 	src/model/DescribeMeterLiveRtcDurationRequest.cc

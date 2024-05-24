@@ -44,12 +44,12 @@ void BatchGetOnlineUsersResult::parse(const std::string &payload)
 	for (auto resultNodeOnlineUsersonlineUsersItem : allOnlineUsersNode)
 	{
 		Result::OnlineUsersItem onlineUsersItemObject;
-		if(!resultNodeOnlineUsersonlineUsersItem["UserId"].isNull())
-			onlineUsersItemObject.userId = resultNodeOnlineUsersonlineUsersItem["UserId"].asString();
 		if(!resultNodeOnlineUsersonlineUsersItem["JoinTime"].isNull())
 			onlineUsersItemObject.joinTime = std::stol(resultNodeOnlineUsersonlineUsersItem["JoinTime"].asString());
 		if(!resultNodeOnlineUsersonlineUsersItem["Online"].isNull())
 			onlineUsersItemObject.online = resultNodeOnlineUsersonlineUsersItem["Online"].asString() == "true";
+		if(!resultNodeOnlineUsersonlineUsersItem["UserId"].isNull())
+			onlineUsersItemObject.userId = resultNodeOnlineUsersonlineUsersItem["UserId"].asString();
 		result_.onlineUsers.push_back(onlineUsersItemObject);
 	}
 

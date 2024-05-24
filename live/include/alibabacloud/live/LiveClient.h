@@ -124,6 +124,8 @@
 #include "model/CreateLiveMessageAppResult.h"
 #include "model/CreateLiveMessageGroupRequest.h"
 #include "model/CreateLiveMessageGroupResult.h"
+#include "model/CreateLivePrivateLineRequest.h"
+#include "model/CreateLivePrivateLineResult.h"
 #include "model/CreateLiveRealTimeLogDeliveryRequest.h"
 #include "model/CreateLiveRealTimeLogDeliveryResult.h"
 #include "model/CreateLiveStreamMonitorRequest.h"
@@ -196,6 +198,8 @@
 #include "model/DeleteLiveMessageUserMessageResult.h"
 #include "model/DeleteLivePackageConfigRequest.h"
 #include "model/DeleteLivePackageConfigResult.h"
+#include "model/DeleteLivePrivateLineRequest.h"
+#include "model/DeleteLivePrivateLineResult.h"
 #include "model/DeleteLivePullStreamInfoConfigRequest.h"
 #include "model/DeleteLivePullStreamInfoConfigResult.h"
 #include "model/DeleteLiveRealTimeLogLogstoreRequest.h"
@@ -392,6 +396,10 @@
 #include "model/DescribeLiveMessageGroupBandResult.h"
 #include "model/DescribeLivePackageConfigRequest.h"
 #include "model/DescribeLivePackageConfigResult.h"
+#include "model/DescribeLivePrivateLineAreasRequest.h"
+#include "model/DescribeLivePrivateLineAreasResult.h"
+#include "model/DescribeLivePrivateLineAvailGARequest.h"
+#include "model/DescribeLivePrivateLineAvailGAResult.h"
 #include "model/DescribeLiveProducerUsageDataRequest.h"
 #include "model/DescribeLiveProducerUsageDataResult.h"
 #include "model/DescribeLivePullStreamConfigRequest.h"
@@ -432,6 +440,8 @@
 #include "model/DescribeLiveStreamDetailFrameRateAndBitRateDataResult.h"
 #include "model/DescribeLiveStreamHistoryUserNumRequest.h"
 #include "model/DescribeLiveStreamHistoryUserNumResult.h"
+#include "model/DescribeLiveStreamMergeRequest.h"
+#include "model/DescribeLiveStreamMergeResult.h"
 #include "model/DescribeLiveStreamMetricDetailDataRequest.h"
 #include "model/DescribeLiveStreamMetricDetailDataResult.h"
 #include "model/DescribeLiveStreamMonitorListRequest.h"
@@ -488,6 +498,8 @@
 #include "model/DescribeLiveUserDomainsResult.h"
 #include "model/DescribeLiveUserTagsRequest.h"
 #include "model/DescribeLiveUserTagsResult.h"
+#include "model/DescribeMeterLiveBypassDurationRequest.h"
+#include "model/DescribeMeterLiveBypassDurationResult.h"
 #include "model/DescribeMeterLiveInteractionDauRequest.h"
 #include "model/DescribeMeterLiveInteractionDauResult.h"
 #include "model/DescribeMeterLiveRtcDurationRequest.h"
@@ -972,6 +984,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateLiveMessageGroupResult> CreateLiveMessageGroupOutcome;
 			typedef std::future<CreateLiveMessageGroupOutcome> CreateLiveMessageGroupOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::CreateLiveMessageGroupRequest&, const CreateLiveMessageGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveMessageGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateLivePrivateLineResult> CreateLivePrivateLineOutcome;
+			typedef std::future<CreateLivePrivateLineOutcome> CreateLivePrivateLineOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::CreateLivePrivateLineRequest&, const CreateLivePrivateLineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLivePrivateLineAsyncHandler;
 			typedef Outcome<Error, Model::CreateLiveRealTimeLogDeliveryResult> CreateLiveRealTimeLogDeliveryOutcome;
 			typedef std::future<CreateLiveRealTimeLogDeliveryOutcome> CreateLiveRealTimeLogDeliveryOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::CreateLiveRealTimeLogDeliveryRequest&, const CreateLiveRealTimeLogDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveRealTimeLogDeliveryAsyncHandler;
@@ -1080,6 +1095,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteLivePackageConfigResult> DeleteLivePackageConfigOutcome;
 			typedef std::future<DeleteLivePackageConfigOutcome> DeleteLivePackageConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLivePackageConfigRequest&, const DeleteLivePackageConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLivePackageConfigAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLivePrivateLineResult> DeleteLivePrivateLineOutcome;
+			typedef std::future<DeleteLivePrivateLineOutcome> DeleteLivePrivateLineOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLivePrivateLineRequest&, const DeleteLivePrivateLineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLivePrivateLineAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLivePullStreamInfoConfigResult> DeleteLivePullStreamInfoConfigOutcome;
 			typedef std::future<DeleteLivePullStreamInfoConfigOutcome> DeleteLivePullStreamInfoConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLivePullStreamInfoConfigRequest&, const DeleteLivePullStreamInfoConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLivePullStreamInfoConfigAsyncHandler;
@@ -1374,6 +1392,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLivePackageConfigResult> DescribeLivePackageConfigOutcome;
 			typedef std::future<DescribeLivePackageConfigOutcome> DescribeLivePackageConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLivePackageConfigRequest&, const DescribeLivePackageConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePackageConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLivePrivateLineAreasResult> DescribeLivePrivateLineAreasOutcome;
+			typedef std::future<DescribeLivePrivateLineAreasOutcome> DescribeLivePrivateLineAreasOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLivePrivateLineAreasRequest&, const DescribeLivePrivateLineAreasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePrivateLineAreasAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLivePrivateLineAvailGAResult> DescribeLivePrivateLineAvailGAOutcome;
+			typedef std::future<DescribeLivePrivateLineAvailGAOutcome> DescribeLivePrivateLineAvailGAOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLivePrivateLineAvailGARequest&, const DescribeLivePrivateLineAvailGAOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePrivateLineAvailGAAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveProducerUsageDataResult> DescribeLiveProducerUsageDataOutcome;
 			typedef std::future<DescribeLiveProducerUsageDataOutcome> DescribeLiveProducerUsageDataOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveProducerUsageDataRequest&, const DescribeLiveProducerUsageDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveProducerUsageDataAsyncHandler;
@@ -1434,6 +1458,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveStreamHistoryUserNumResult> DescribeLiveStreamHistoryUserNumOutcome;
 			typedef std::future<DescribeLiveStreamHistoryUserNumOutcome> DescribeLiveStreamHistoryUserNumOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamHistoryUserNumRequest&, const DescribeLiveStreamHistoryUserNumOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamHistoryUserNumAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamMergeResult> DescribeLiveStreamMergeOutcome;
+			typedef std::future<DescribeLiveStreamMergeOutcome> DescribeLiveStreamMergeOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamMergeRequest&, const DescribeLiveStreamMergeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamMergeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveStreamMetricDetailDataResult> DescribeLiveStreamMetricDetailDataOutcome;
 			typedef std::future<DescribeLiveStreamMetricDetailDataOutcome> DescribeLiveStreamMetricDetailDataOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamMetricDetailDataRequest&, const DescribeLiveStreamMetricDetailDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamMetricDetailDataAsyncHandler;
@@ -1518,6 +1545,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveUserTagsResult> DescribeLiveUserTagsOutcome;
 			typedef std::future<DescribeLiveUserTagsOutcome> DescribeLiveUserTagsOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveUserTagsRequest&, const DescribeLiveUserTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveUserTagsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMeterLiveBypassDurationResult> DescribeMeterLiveBypassDurationOutcome;
+			typedef std::future<DescribeMeterLiveBypassDurationOutcome> DescribeMeterLiveBypassDurationOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeMeterLiveBypassDurationRequest&, const DescribeMeterLiveBypassDurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMeterLiveBypassDurationAsyncHandler;
 			typedef Outcome<Error, Model::DescribeMeterLiveInteractionDauResult> DescribeMeterLiveInteractionDauOutcome;
 			typedef std::future<DescribeMeterLiveInteractionDauOutcome> DescribeMeterLiveInteractionDauOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeMeterLiveInteractionDauRequest&, const DescribeMeterLiveInteractionDauOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMeterLiveInteractionDauAsyncHandler;
@@ -2159,6 +2189,9 @@ namespace AlibabaCloud
 			CreateLiveMessageGroupOutcome createLiveMessageGroup(const Model::CreateLiveMessageGroupRequest &request)const;
 			void createLiveMessageGroupAsync(const Model::CreateLiveMessageGroupRequest& request, const CreateLiveMessageGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLiveMessageGroupOutcomeCallable createLiveMessageGroupCallable(const Model::CreateLiveMessageGroupRequest& request) const;
+			CreateLivePrivateLineOutcome createLivePrivateLine(const Model::CreateLivePrivateLineRequest &request)const;
+			void createLivePrivateLineAsync(const Model::CreateLivePrivateLineRequest& request, const CreateLivePrivateLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateLivePrivateLineOutcomeCallable createLivePrivateLineCallable(const Model::CreateLivePrivateLineRequest& request) const;
 			CreateLiveRealTimeLogDeliveryOutcome createLiveRealTimeLogDelivery(const Model::CreateLiveRealTimeLogDeliveryRequest &request)const;
 			void createLiveRealTimeLogDeliveryAsync(const Model::CreateLiveRealTimeLogDeliveryRequest& request, const CreateLiveRealTimeLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLiveRealTimeLogDeliveryOutcomeCallable createLiveRealTimeLogDeliveryCallable(const Model::CreateLiveRealTimeLogDeliveryRequest& request) const;
@@ -2267,6 +2300,9 @@ namespace AlibabaCloud
 			DeleteLivePackageConfigOutcome deleteLivePackageConfig(const Model::DeleteLivePackageConfigRequest &request)const;
 			void deleteLivePackageConfigAsync(const Model::DeleteLivePackageConfigRequest& request, const DeleteLivePackageConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLivePackageConfigOutcomeCallable deleteLivePackageConfigCallable(const Model::DeleteLivePackageConfigRequest& request) const;
+			DeleteLivePrivateLineOutcome deleteLivePrivateLine(const Model::DeleteLivePrivateLineRequest &request)const;
+			void deleteLivePrivateLineAsync(const Model::DeleteLivePrivateLineRequest& request, const DeleteLivePrivateLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLivePrivateLineOutcomeCallable deleteLivePrivateLineCallable(const Model::DeleteLivePrivateLineRequest& request) const;
 			DeleteLivePullStreamInfoConfigOutcome deleteLivePullStreamInfoConfig(const Model::DeleteLivePullStreamInfoConfigRequest &request)const;
 			void deleteLivePullStreamInfoConfigAsync(const Model::DeleteLivePullStreamInfoConfigRequest& request, const DeleteLivePullStreamInfoConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLivePullStreamInfoConfigOutcomeCallable deleteLivePullStreamInfoConfigCallable(const Model::DeleteLivePullStreamInfoConfigRequest& request) const;
@@ -2561,6 +2597,12 @@ namespace AlibabaCloud
 			DescribeLivePackageConfigOutcome describeLivePackageConfig(const Model::DescribeLivePackageConfigRequest &request)const;
 			void describeLivePackageConfigAsync(const Model::DescribeLivePackageConfigRequest& request, const DescribeLivePackageConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLivePackageConfigOutcomeCallable describeLivePackageConfigCallable(const Model::DescribeLivePackageConfigRequest& request) const;
+			DescribeLivePrivateLineAreasOutcome describeLivePrivateLineAreas(const Model::DescribeLivePrivateLineAreasRequest &request)const;
+			void describeLivePrivateLineAreasAsync(const Model::DescribeLivePrivateLineAreasRequest& request, const DescribeLivePrivateLineAreasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLivePrivateLineAreasOutcomeCallable describeLivePrivateLineAreasCallable(const Model::DescribeLivePrivateLineAreasRequest& request) const;
+			DescribeLivePrivateLineAvailGAOutcome describeLivePrivateLineAvailGA(const Model::DescribeLivePrivateLineAvailGARequest &request)const;
+			void describeLivePrivateLineAvailGAAsync(const Model::DescribeLivePrivateLineAvailGARequest& request, const DescribeLivePrivateLineAvailGAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLivePrivateLineAvailGAOutcomeCallable describeLivePrivateLineAvailGACallable(const Model::DescribeLivePrivateLineAvailGARequest& request) const;
 			DescribeLiveProducerUsageDataOutcome describeLiveProducerUsageData(const Model::DescribeLiveProducerUsageDataRequest &request)const;
 			void describeLiveProducerUsageDataAsync(const Model::DescribeLiveProducerUsageDataRequest& request, const DescribeLiveProducerUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveProducerUsageDataOutcomeCallable describeLiveProducerUsageDataCallable(const Model::DescribeLiveProducerUsageDataRequest& request) const;
@@ -2621,6 +2663,9 @@ namespace AlibabaCloud
 			DescribeLiveStreamHistoryUserNumOutcome describeLiveStreamHistoryUserNum(const Model::DescribeLiveStreamHistoryUserNumRequest &request)const;
 			void describeLiveStreamHistoryUserNumAsync(const Model::DescribeLiveStreamHistoryUserNumRequest& request, const DescribeLiveStreamHistoryUserNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamHistoryUserNumOutcomeCallable describeLiveStreamHistoryUserNumCallable(const Model::DescribeLiveStreamHistoryUserNumRequest& request) const;
+			DescribeLiveStreamMergeOutcome describeLiveStreamMerge(const Model::DescribeLiveStreamMergeRequest &request)const;
+			void describeLiveStreamMergeAsync(const Model::DescribeLiveStreamMergeRequest& request, const DescribeLiveStreamMergeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamMergeOutcomeCallable describeLiveStreamMergeCallable(const Model::DescribeLiveStreamMergeRequest& request) const;
 			DescribeLiveStreamMetricDetailDataOutcome describeLiveStreamMetricDetailData(const Model::DescribeLiveStreamMetricDetailDataRequest &request)const;
 			void describeLiveStreamMetricDetailDataAsync(const Model::DescribeLiveStreamMetricDetailDataRequest& request, const DescribeLiveStreamMetricDetailDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamMetricDetailDataOutcomeCallable describeLiveStreamMetricDetailDataCallable(const Model::DescribeLiveStreamMetricDetailDataRequest& request) const;
@@ -2705,6 +2750,9 @@ namespace AlibabaCloud
 			DescribeLiveUserTagsOutcome describeLiveUserTags(const Model::DescribeLiveUserTagsRequest &request)const;
 			void describeLiveUserTagsAsync(const Model::DescribeLiveUserTagsRequest& request, const DescribeLiveUserTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveUserTagsOutcomeCallable describeLiveUserTagsCallable(const Model::DescribeLiveUserTagsRequest& request) const;
+			DescribeMeterLiveBypassDurationOutcome describeMeterLiveBypassDuration(const Model::DescribeMeterLiveBypassDurationRequest &request)const;
+			void describeMeterLiveBypassDurationAsync(const Model::DescribeMeterLiveBypassDurationRequest& request, const DescribeMeterLiveBypassDurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMeterLiveBypassDurationOutcomeCallable describeMeterLiveBypassDurationCallable(const Model::DescribeMeterLiveBypassDurationRequest& request) const;
 			DescribeMeterLiveInteractionDauOutcome describeMeterLiveInteractionDau(const Model::DescribeMeterLiveInteractionDauRequest &request)const;
 			void describeMeterLiveInteractionDauAsync(const Model::DescribeMeterLiveInteractionDauRequest& request, const DescribeMeterLiveInteractionDauAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMeterLiveInteractionDauOutcomeCallable describeMeterLiveInteractionDauCallable(const Model::DescribeMeterLiveInteractionDauRequest& request) const;

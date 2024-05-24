@@ -59,20 +59,20 @@ void UpdateLiveMPUTaskRequest::setTranscodeParams(const UpdateLiveMPUTaskRequest
   for(int dep1 = 0; dep1 != transcodeParams.layout.userPanes.size(); dep1++) {
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".BackgroundImageUrl", transcodeParams.layout.userPanes[dep1].backgroundImageUrl);
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".ZOrder", transcodeParams.layout.userPanes[dep1].zOrder);
-    setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".X", transcodeParams.layout.userPanes[dep1].x);
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".Width", transcodeParams.layout.userPanes[dep1].width);
+    setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".X", transcodeParams.layout.userPanes[dep1].x);
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".Y", transcodeParams.layout.userPanes[dep1].y);
+    setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".RenderMode", transcodeParams.layout.userPanes[dep1].renderMode);
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".UserInfo.SourceType", transcodeParams.layout.userPanes[dep1].userInfo.sourceType);
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".UserInfo.UserId", transcodeParams.layout.userPanes[dep1].userInfo.userId);
-    setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".RenderMode", transcodeParams.layout.userPanes[dep1].renderMode);
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".Height", transcodeParams.layout.userPanes[dep1].height);
   }
   setParameter(std::string("TranscodeParams") + ".Layout.LayoutMode", transcodeParams.layout.layoutMode);
   setParameter(std::string("TranscodeParams") + ".Layout.MaxVideoUser.StreamType", transcodeParams.layout.maxVideoUser.streamType);
   setParameter(std::string("TranscodeParams") + ".Layout.MaxVideoUser.SourceType", transcodeParams.layout.maxVideoUser.sourceType);
   setParameter(std::string("TranscodeParams") + ".Layout.MaxVideoUser.UserId", transcodeParams.layout.maxVideoUser.userId);
-  setParameter(std::string("TranscodeParams") + ".Background.URL", transcodeParams.background.uRL);
   setParameter(std::string("TranscodeParams") + ".Background.RenderMode", transcodeParams.background.renderMode);
+  setParameter(std::string("TranscodeParams") + ".Background.URL", transcodeParams.background.uRL);
   for(int dep1 = 0; dep1 != transcodeParams.userInfos.size(); dep1++) {
     setParameter(std::string("TranscodeParams") + ".UserInfos." + std::to_string(dep1 + 1) + ".StreamType", transcodeParams.userInfos[dep1].streamType);
     setParameter(std::string("TranscodeParams") + ".UserInfos." + std::to_string(dep1 + 1) + ".SourceType", transcodeParams.userInfos[dep1].sourceType);
@@ -83,10 +83,10 @@ void UpdateLiveMPUTaskRequest::setTranscodeParams(const UpdateLiveMPUTaskRequest
   setParameter(std::string("TranscodeParams") + ".EncodeParams.AudioBitrate", transcodeParams.encodeParams.audioBitrate);
   setParameter(std::string("TranscodeParams") + ".EncodeParams.VideoFramerate", transcodeParams.encodeParams.videoFramerate);
   setParameter(std::string("TranscodeParams") + ".EncodeParams.VideoHeight", transcodeParams.encodeParams.videoHeight);
-  setParameter(std::string("TranscodeParams") + ".EncodeParams.VideoBitrate", transcodeParams.encodeParams.videoBitrate);
   setParameter(std::string("TranscodeParams") + ".EncodeParams.AudioSampleRate", transcodeParams.encodeParams.audioSampleRate);
-  setParameter(std::string("TranscodeParams") + ".EncodeParams.VideoGop", transcodeParams.encodeParams.videoGop);
+  setParameter(std::string("TranscodeParams") + ".EncodeParams.VideoBitrate", transcodeParams.encodeParams.videoBitrate);
   setParameter(std::string("TranscodeParams") + ".EncodeParams.AudioChannels", transcodeParams.encodeParams.audioChannels);
+  setParameter(std::string("TranscodeParams") + ".EncodeParams.VideoGop", transcodeParams.encodeParams.videoGop);
 }
 
 std::string UpdateLiveMPUTaskRequest::getAppId() const {

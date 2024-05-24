@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Result
 				{
-					int status;
 					std::string extension;
+					int status;
 					std::string creatorId;
 					long createTime;
 					bool isMuteAll;

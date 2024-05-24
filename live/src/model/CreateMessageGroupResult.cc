@@ -40,10 +40,10 @@ void CreateMessageGroupResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["GroupId"].isNull())
-		result_.groupId = resultNode["GroupId"].asString();
 	if(!resultNode["Extension"].isNull())
 		result_.extension = resultNode["Extension"].asString();
+	if(!resultNode["GroupId"].isNull())
+		result_.groupId = resultNode["GroupId"].asString();
 
 }
 

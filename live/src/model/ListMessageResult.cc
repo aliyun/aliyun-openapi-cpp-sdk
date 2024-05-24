@@ -46,16 +46,16 @@ void ListMessageResult::parse(const std::string &payload)
 	for (auto resultNodeMessageListmessageListItem : allMessageListNode)
 	{
 		Result::MessageListItem messageListItemObject;
+		if(!resultNodeMessageListmessageListItem["Data"].isNull())
+			messageListItemObject.data = resultNodeMessageListmessageListItem["Data"].asString();
 		if(!resultNodeMessageListmessageListItem["GroupId"].isNull())
 			messageListItemObject.groupId = resultNodeMessageListmessageListItem["GroupId"].asString();
 		if(!resultNodeMessageListmessageListItem["MessageId"].isNull())
 			messageListItemObject.messageId = resultNodeMessageListmessageListItem["MessageId"].asString();
-		if(!resultNodeMessageListmessageListItem["Type"].isNull())
-			messageListItemObject.type = std::stoi(resultNodeMessageListmessageListItem["Type"].asString());
 		if(!resultNodeMessageListmessageListItem["SenderId"].isNull())
 			messageListItemObject.senderId = resultNodeMessageListmessageListItem["SenderId"].asString();
-		if(!resultNodeMessageListmessageListItem["Data"].isNull())
-			messageListItemObject.data = resultNodeMessageListmessageListItem["Data"].asString();
+		if(!resultNodeMessageListmessageListItem["Type"].isNull())
+			messageListItemObject.type = std::stoi(resultNodeMessageListmessageListItem["Type"].asString());
 		result_.messageList.push_back(messageListItemObject);
 	}
 

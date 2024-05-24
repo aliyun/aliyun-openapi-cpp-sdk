@@ -43,20 +43,20 @@ void DescribeLiveStreamDetailFrameRateAndBitRateDataResult::parse(const std::str
 	for (auto valueFrameRateAndBitRateInfosfrabr : allFrameRateAndBitRateInfosNode)
 	{
 		Frabr frameRateAndBitRateInfosObject;
-		if(!valueFrameRateAndBitRateInfosfrabr["Time"].isNull())
-			frameRateAndBitRateInfosObject.time = valueFrameRateAndBitRateInfosfrabr["Time"].asString();
-		if(!valueFrameRateAndBitRateInfosfrabr["VideoFrameRate"].isNull())
-			frameRateAndBitRateInfosObject.videoFrameRate = std::stof(valueFrameRateAndBitRateInfosfrabr["VideoFrameRate"].asString());
-		if(!valueFrameRateAndBitRateInfosfrabr["AudioFrameRate"].isNull())
-			frameRateAndBitRateInfosObject.audioFrameRate = std::stof(valueFrameRateAndBitRateInfosfrabr["AudioFrameRate"].asString());
-		if(!valueFrameRateAndBitRateInfosfrabr["StreamUrl"].isNull())
-			frameRateAndBitRateInfosObject.streamUrl = valueFrameRateAndBitRateInfosfrabr["StreamUrl"].asString();
-		if(!valueFrameRateAndBitRateInfosfrabr["BitRate"].isNull())
-			frameRateAndBitRateInfosObject.bitRate = std::stof(valueFrameRateAndBitRateInfosfrabr["BitRate"].asString());
-		if(!valueFrameRateAndBitRateInfosfrabr["VideoBitRate"].isNull())
-			frameRateAndBitRateInfosObject.videoBitRate = std::stof(valueFrameRateAndBitRateInfosfrabr["VideoBitRate"].asString());
 		if(!valueFrameRateAndBitRateInfosfrabr["AudioBitRate"].isNull())
 			frameRateAndBitRateInfosObject.audioBitRate = std::stof(valueFrameRateAndBitRateInfosfrabr["AudioBitRate"].asString());
+		if(!valueFrameRateAndBitRateInfosfrabr["AudioFrameRate"].isNull())
+			frameRateAndBitRateInfosObject.audioFrameRate = std::stof(valueFrameRateAndBitRateInfosfrabr["AudioFrameRate"].asString());
+		if(!valueFrameRateAndBitRateInfosfrabr["BitRate"].isNull())
+			frameRateAndBitRateInfosObject.bitRate = std::stof(valueFrameRateAndBitRateInfosfrabr["BitRate"].asString());
+		if(!valueFrameRateAndBitRateInfosfrabr["StreamUrl"].isNull())
+			frameRateAndBitRateInfosObject.streamUrl = valueFrameRateAndBitRateInfosfrabr["StreamUrl"].asString();
+		if(!valueFrameRateAndBitRateInfosfrabr["Time"].isNull())
+			frameRateAndBitRateInfosObject.time = valueFrameRateAndBitRateInfosfrabr["Time"].asString();
+		if(!valueFrameRateAndBitRateInfosfrabr["VideoBitRate"].isNull())
+			frameRateAndBitRateInfosObject.videoBitRate = std::stof(valueFrameRateAndBitRateInfosfrabr["VideoBitRate"].asString());
+		if(!valueFrameRateAndBitRateInfosfrabr["VideoFrameRate"].isNull())
+			frameRateAndBitRateInfosObject.videoFrameRate = std::stof(valueFrameRateAndBitRateInfosfrabr["VideoFrameRate"].asString());
 		frameRateAndBitRateInfos_.push_back(frameRateAndBitRateInfosObject);
 	}
 

@@ -43,18 +43,18 @@ void DescribeRTSNativeSDKFirstFrameDelayResult::parse(const std::string &payload
 	for (auto valueFrameDelayDataData : allFrameDelayDataNode)
 	{
 		Data frameDelayDataObject;
-		if(!valueFrameDelayDataData["TimeStamp"].isNull())
-			frameDelayDataObject.timeStamp = valueFrameDelayDataData["TimeStamp"].asString();
 		if(!valueFrameDelayDataData["FrameDelay"].isNull())
 			frameDelayDataObject.frameDelay = valueFrameDelayDataData["FrameDelay"].asString();
+		if(!valueFrameDelayDataData["TimeStamp"].isNull())
+			frameDelayDataObject.timeStamp = valueFrameDelayDataData["TimeStamp"].asString();
 		frameDelayData_.push_back(frameDelayDataObject);
 	}
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 
 }
 

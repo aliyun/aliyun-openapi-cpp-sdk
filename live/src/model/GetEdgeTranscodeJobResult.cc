@@ -40,28 +40,28 @@ void GetEdgeTranscodeJobResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto jobNode = value["Job"];
-	if(!jobNode["Status"].isNull())
-		job_.status = jobNode["Status"].asString();
-	if(!jobNode["Type"].isNull())
-		job_.type = jobNode["Type"].asString();
-	if(!jobNode["StreamInput"].isNull())
-		job_.streamInput = jobNode["StreamInput"].asString();
-	if(!jobNode["StreamOutput"].isNull())
-		job_.streamOutput = jobNode["StreamOutput"].asString();
-	if(!jobNode["LastStopAt"].isNull())
-		job_.lastStopAt = jobNode["LastStopAt"].asString();
-	if(!jobNode["LastStartAt"].isNull())
-		job_.lastStartAt = jobNode["LastStartAt"].asString();
 	if(!jobNode["CreateTime"].isNull())
 		job_.createTime = jobNode["CreateTime"].asString();
 	if(!jobNode["JobId"].isNull())
 		job_.jobId = jobNode["JobId"].asString();
-	if(!jobNode["TemplateName"].isNull())
-		job_.templateName = jobNode["TemplateName"].asString();
+	if(!jobNode["LastStartAt"].isNull())
+		job_.lastStartAt = jobNode["LastStartAt"].asString();
+	if(!jobNode["LastStopAt"].isNull())
+		job_.lastStopAt = jobNode["LastStopAt"].asString();
 	if(!jobNode["Name"].isNull())
 		job_.name = jobNode["Name"].asString();
+	if(!jobNode["Status"].isNull())
+		job_.status = jobNode["Status"].asString();
+	if(!jobNode["StreamInput"].isNull())
+		job_.streamInput = jobNode["StreamInput"].asString();
+	if(!jobNode["StreamOutput"].isNull())
+		job_.streamOutput = jobNode["StreamOutput"].asString();
 	if(!jobNode["TemplateId"].isNull())
 		job_.templateId = jobNode["TemplateId"].asString();
+	if(!jobNode["TemplateName"].isNull())
+		job_.templateName = jobNode["TemplateName"].asString();
+	if(!jobNode["Type"].isNull())
+		job_.type = jobNode["Type"].asString();
 
 }
 

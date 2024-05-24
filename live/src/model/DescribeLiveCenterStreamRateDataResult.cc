@@ -43,16 +43,16 @@ void DescribeLiveCenterStreamRateDataResult::parse(const std::string &payload)
 	for (auto valueRateDatasData : allRateDatasNode)
 	{
 		Data rateDatasObject;
-		if(!valueRateDatasData["VideoFps"].isNull())
-			rateDatasObject.videoFps = valueRateDatasData["VideoFps"].asString();
-		if(!valueRateDatasData["VideoRate"].isNull())
-			rateDatasObject.videoRate = valueRateDatasData["VideoRate"].asString();
 		if(!valueRateDatasData["AudioFps"].isNull())
 			rateDatasObject.audioFps = valueRateDatasData["AudioFps"].asString();
 		if(!valueRateDatasData["AudioRate"].isNull())
 			rateDatasObject.audioRate = valueRateDatasData["AudioRate"].asString();
 		if(!valueRateDatasData["Time"].isNull())
 			rateDatasObject.time = valueRateDatasData["Time"].asString();
+		if(!valueRateDatasData["VideoFps"].isNull())
+			rateDatasObject.videoFps = valueRateDatasData["VideoFps"].asString();
+		if(!valueRateDatasData["VideoRate"].isNull())
+			rateDatasObject.videoRate = valueRateDatasData["VideoRate"].asString();
 		rateDatas_.push_back(rateDatasObject);
 	}
 

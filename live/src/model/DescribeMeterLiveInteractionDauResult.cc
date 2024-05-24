@@ -43,10 +43,10 @@ void DescribeMeterLiveInteractionDauResult::parse(const std::string &payload)
 	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!valueDataDataItem["Timestamp"].isNull())
-			dataObject.timestamp = std::stol(valueDataDataItem["Timestamp"].asString());
 		if(!valueDataDataItem["Dau"].isNull())
 			dataObject.dau = valueDataDataItem["Dau"].asString();
+		if(!valueDataDataItem["Timestamp"].isNull())
+			dataObject.timestamp = std::stol(valueDataDataItem["Timestamp"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["PeakDau"].isNull())

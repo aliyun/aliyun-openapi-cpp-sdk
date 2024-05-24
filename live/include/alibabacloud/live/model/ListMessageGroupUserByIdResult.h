@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					{
 						std::string userAvatar;
 						std::string userId;
-						std::string userExtension;
 						bool isMute;
+						std::string userExtension;
 						std::string userNick;
 						std::vector<std::string> muteBy;
 					};

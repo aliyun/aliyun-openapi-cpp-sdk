@@ -43,10 +43,10 @@ void CheckLiveMessageUsersOnlineResult::parse(const std::string &payload)
 	for (auto valueUserListUsers : allUserListNode)
 	{
 		Users userListObject;
-		if(!valueUserListUsers["UserId"].isNull())
-			userListObject.userId = valueUserListUsers["UserId"].asString();
 		if(!valueUserListUsers["Online"].isNull())
 			userListObject.online = valueUserListUsers["Online"].asString() == "true";
+		if(!valueUserListUsers["UserId"].isNull())
+			userListObject.userId = valueUserListUsers["UserId"].asString();
 		userList_.push_back(userListObject);
 	}
 

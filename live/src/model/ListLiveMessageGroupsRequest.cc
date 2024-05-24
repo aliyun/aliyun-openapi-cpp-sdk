@@ -34,6 +34,15 @@ void ListLiveMessageGroupsRequest::setSortType(int sortType) {
   setParameter(std::string("SortType"), std::to_string(sortType));
 }
 
+int ListLiveMessageGroupsRequest::getGroupStatus() const {
+  return groupStatus_;
+}
+
+void ListLiveMessageGroupsRequest::setGroupStatus(int groupStatus) {
+  groupStatus_ = groupStatus;
+  setParameter(std::string("GroupStatus"), std::to_string(groupStatus));
+}
+
 long ListLiveMessageGroupsRequest::getNextPageToken() const {
   return nextPageToken_;
 }

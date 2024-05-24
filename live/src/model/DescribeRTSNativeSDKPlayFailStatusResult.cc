@@ -61,10 +61,10 @@ void DescribeRTSNativeSDKPlayFailStatusResult::parse(const std::string &payload)
 	}
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 
 }
 

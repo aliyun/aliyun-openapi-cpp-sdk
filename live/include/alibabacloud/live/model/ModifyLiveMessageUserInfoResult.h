@@ -32,16 +32,16 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_LIVE_EXPORT ModifyLiveMessageUserInfoResult : public ServiceResult
 			{
 			public:
-				struct SuccessGroups
-				{
-					bool success;
-					std::string groupId;
-				};
 				struct FailGroups
 				{
 					int code;
-					bool success;
 					std::string reason;
+					bool success;
+					std::string groupId;
+				};
+				struct SuccessGroups
+				{
+					bool success;
 					std::string groupId;
 				};
 

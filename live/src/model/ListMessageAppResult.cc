@@ -40,26 +40,26 @@ void ListMessageAppResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["Total"].isNull())
-		result_.total = std::stoi(resultNode["Total"].asString());
 	if(!resultNode["HasMore"].isNull())
 		result_.hasMore = resultNode["HasMore"].asString() == "true";
+	if(!resultNode["Total"].isNull())
+		result_.total = std::stoi(resultNode["Total"].asString());
 	auto allAppListNode = resultNode["AppList"]["appListItem"];
 	for (auto resultNodeAppListappListItem : allAppListNode)
 	{
 		Result::AppListItem appListItemObject;
+		if(!resultNodeAppListappListItem["AppConfig"].isNull())
+			appListItemObject.appConfig = resultNodeAppListappListItem["AppConfig"].asString();
 		if(!resultNodeAppListappListItem["AppId"].isNull())
 			appListItemObject.appId = resultNodeAppListappListItem["AppId"].asString();
 		if(!resultNodeAppListappListItem["AppName"].isNull())
 			appListItemObject.appName = resultNodeAppListappListItem["AppName"].asString();
 		if(!resultNodeAppListappListItem["CreateTime"].isNull())
 			appListItemObject.createTime = std::stol(resultNodeAppListappListItem["CreateTime"].asString());
-		if(!resultNodeAppListappListItem["Status"].isNull())
-			appListItemObject.status = std::stoi(resultNodeAppListappListItem["Status"].asString());
-		if(!resultNodeAppListappListItem["AppConfig"].isNull())
-			appListItemObject.appConfig = resultNodeAppListappListItem["AppConfig"].asString();
 		if(!resultNodeAppListappListItem["Extension"].isNull())
 			appListItemObject.extension = resultNodeAppListappListItem["Extension"].asString();
+		if(!resultNodeAppListappListItem["Status"].isNull())
+			appListItemObject.status = std::stoi(resultNodeAppListappListItem["Status"].asString());
 		result_.appList.push_back(appListItemObject);
 	}
 

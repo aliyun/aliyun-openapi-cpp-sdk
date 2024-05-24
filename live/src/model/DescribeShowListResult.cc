@@ -40,37 +40,37 @@ void DescribeShowListResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto showListInfoNode = value["ShowListInfo"];
-	if(!showListInfoNode["HighPriorityShowStartTime"].isNull())
-		showListInfo_.highPriorityShowStartTime = showListInfoNode["HighPriorityShowStartTime"].asString();
-	if(!showListInfoNode["TotalShowListRepeatTimes"].isNull())
-		showListInfo_.totalShowListRepeatTimes = std::stoi(showListInfoNode["TotalShowListRepeatTimes"].asString());
-	if(!showListInfoNode["ShowListRepeatTimes"].isNull())
-		showListInfo_.showListRepeatTimes = std::stoi(showListInfoNode["ShowListRepeatTimes"].asString());
 	if(!showListInfoNode["CurrentShowId"].isNull())
 		showListInfo_.currentShowId = showListInfoNode["CurrentShowId"].asString();
 	if(!showListInfoNode["HighPriorityShowId"].isNull())
 		showListInfo_.highPriorityShowId = showListInfoNode["HighPriorityShowId"].asString();
+	if(!showListInfoNode["HighPriorityShowStartTime"].isNull())
+		showListInfo_.highPriorityShowStartTime = showListInfoNode["HighPriorityShowStartTime"].asString();
+	if(!showListInfoNode["ShowListRepeatTimes"].isNull())
+		showListInfo_.showListRepeatTimes = std::stoi(showListInfoNode["ShowListRepeatTimes"].asString());
+	if(!showListInfoNode["TotalShowListRepeatTimes"].isNull())
+		showListInfo_.totalShowListRepeatTimes = std::stoi(showListInfoNode["TotalShowListRepeatTimes"].asString());
 	auto allShowListNode = showListInfoNode["ShowList"]["Show"];
 	for (auto showListInfoNodeShowListShow : allShowListNode)
 	{
 		ShowListInfo::Show showObject;
-		if(!showListInfoNodeShowListShow["ShowName"].isNull())
-			showObject.showName = showListInfoNodeShowListShow["ShowName"].asString();
 		if(!showListInfoNodeShowListShow["Duration"].isNull())
 			showObject.duration = std::stol(showListInfoNodeShowListShow["Duration"].asString());
 		if(!showListInfoNodeShowListShow["RepeatTimes"].isNull())
 			showObject.repeatTimes = std::stoi(showListInfoNodeShowListShow["RepeatTimes"].asString());
 		if(!showListInfoNodeShowListShow["ShowId"].isNull())
 			showObject.showId = showListInfoNodeShowListShow["ShowId"].asString();
+		if(!showListInfoNodeShowListShow["ShowName"].isNull())
+			showObject.showName = showListInfoNodeShowListShow["ShowName"].asString();
 		auto resourceInfoNode = value["ResourceInfo"];
 		if(!resourceInfoNode["LiveInputType"].isNull())
 			showObject.resourceInfo.liveInputType = std::stoi(resourceInfoNode["LiveInputType"].asString());
-		if(!resourceInfoNode["ResourceUrl"].isNull())
-			showObject.resourceInfo.resourceUrl = resourceInfoNode["ResourceUrl"].asString();
-		if(!resourceInfoNode["ResourceType"].isNull())
-			showObject.resourceInfo.resourceType = resourceInfoNode["ResourceType"].asString();
 		if(!resourceInfoNode["ResourceId"].isNull())
 			showObject.resourceInfo.resourceId = resourceInfoNode["ResourceId"].asString();
+		if(!resourceInfoNode["ResourceType"].isNull())
+			showObject.resourceInfo.resourceType = resourceInfoNode["ResourceType"].asString();
+		if(!resourceInfoNode["ResourceUrl"].isNull())
+			showObject.resourceInfo.resourceUrl = resourceInfoNode["ResourceUrl"].asString();
 		showListInfo_.showList.push_back(showObject);
 	}
 	if(!value["ShowList"].isNull())

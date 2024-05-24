@@ -39,16 +39,16 @@ void DescribeLiveDelayConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Domain"].isNull())
-		domain_ = value["Domain"].asString();
-	if(!value["TaskTriggerMode"].isNull())
-		taskTriggerMode_ = value["TaskTriggerMode"].asString();
 	if(!value["App"].isNull())
 		app_ = value["App"].asString();
 	if(!value["DelayTime"].isNull())
 		delayTime_ = value["DelayTime"].asString();
+	if(!value["Domain"].isNull())
+		domain_ = value["Domain"].asString();
 	if(!value["Stream"].isNull())
 		stream_ = value["Stream"].asString();
+	if(!value["TaskTriggerMode"].isNull())
+		taskTriggerMode_ = value["TaskTriggerMode"].asString();
 
 }
 
@@ -67,13 +67,13 @@ std::string DescribeLiveDelayConfigResult::getStream()const
 	return stream_;
 }
 
-std::string DescribeLiveDelayConfigResult::getDomain()const
-{
-	return domain_;
-}
-
 std::string DescribeLiveDelayConfigResult::getDelayTime()const
 {
 	return delayTime_;
+}
+
+std::string DescribeLiveDelayConfigResult::getDomain()const
+{
+	return domain_;
 }
 

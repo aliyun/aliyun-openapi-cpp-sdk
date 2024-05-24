@@ -42,10 +42,10 @@ void GetMessageTokenResult::parse(const std::string &payload)
 	auto resultNode = value["Result"];
 	if(!resultNode["AccessToken"].isNull())
 		result_.accessToken = resultNode["AccessToken"].asString();
-	if(!resultNode["RefreshToken"].isNull())
-		result_.refreshToken = resultNode["RefreshToken"].asString();
 	if(!resultNode["AccessTokenExpiredTime"].isNull())
 		result_.accessTokenExpiredTime = std::stol(resultNode["AccessTokenExpiredTime"].asString());
+	if(!resultNode["RefreshToken"].isNull())
+		result_.refreshToken = resultNode["RefreshToken"].asString();
 
 }
 
