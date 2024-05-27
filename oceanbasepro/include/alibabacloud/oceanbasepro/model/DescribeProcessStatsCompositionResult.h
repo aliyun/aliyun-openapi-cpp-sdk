@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_OCEANBASEPRO_EXPORT DescribeProcessStatsCompositionResult : public ServiceResult
 			{
 			public:
-				struct DataItem
+				struct Data
 				{
 					struct SessionStatistics
 					{
@@ -84,19 +84,19 @@ namespace AlibabaCloud
 					int activeSessionCount;
 					int idleSessionCount;
 					std::string obVersion;
-					std::vector<DataItem::AllProcessListItem> allProcessList;
+					std::vector<AllProcessListItem> allProcessList;
 				};
 
 
 				DescribeProcessStatsCompositionResult();
 				explicit DescribeProcessStatsCompositionResult(const std::string &payload);
 				~DescribeProcessStatsCompositionResult();
-				std::vector<DataItem> getData()const;
+				Data getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DataItem> data_;
+				Data data_;
 
 			};
 		}
