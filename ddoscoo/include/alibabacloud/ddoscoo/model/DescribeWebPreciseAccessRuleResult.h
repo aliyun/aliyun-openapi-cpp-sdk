@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						{
 							std::string matchMethod;
 							std::string field;
+							std::vector<std::string> contentList;
 							std::string headerName;
 							std::string content;
 						};

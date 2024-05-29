@@ -34,15 +34,21 @@ namespace AlibabaCloud
 			public:
 				struct InstanceSpec
 				{
-					int qpsLimit;
-					int baseBandwidth;
-					int elasticBw;
+					long connLimit;
 					int portLimit;
 					std::string instanceId;
-					int defenseCount;
-					std::string functionVersion;
 					int domainLimit;
 					int siteLimit;
+					long realLimitBw;
+					long elasticQps;
+					int qpsLimit;
+					long cpsLimit;
+					int baseBandwidth;
+					int elasticBw;
+					std::string elasticQpsMode;
+					int defenseCount;
+					std::string functionVersion;
+					std::string elasticBwModel;
 					int elasticBandwidth;
 					int bandwidthMbps;
 				};

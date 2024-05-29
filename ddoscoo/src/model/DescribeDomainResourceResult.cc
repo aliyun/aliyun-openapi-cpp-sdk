@@ -75,6 +75,8 @@ void DescribeDomainResourceResult::parse(const std::string &payload)
 			webRulesObject.policyMode = valueWebRulesWebRule["PolicyMode"].asString();
 		if(!valueWebRulesWebRule["Cname"].isNull())
 			webRulesObject.cname = valueWebRulesWebRule["Cname"].asString();
+		if(!valueWebRulesWebRule["OcspEnabled"].isNull())
+			webRulesObject.ocspEnabled = valueWebRulesWebRule["OcspEnabled"].asString() == "true";
 		if(!valueWebRulesWebRule["Http2Enable"].isNull())
 			webRulesObject.http2Enable = valueWebRulesWebRule["Http2Enable"].asString() == "true";
 		if(!valueWebRulesWebRule["Https2HttpEnable"].isNull())
@@ -102,7 +104,7 @@ void DescribeDomainResourceResult::parse(const std::string &payload)
 		auto allBlackList = value["BlackList"]["BlackItem"];
 		for (auto value : allBlackList)
 			webRulesObject.blackList.push_back(value.asString());
-		auto allRealServers = value["RealServers"]["RealServers"];
+		auto allRealServers = value["RealServers"]["RealServer"];
 		for (auto value : allRealServers)
 			webRulesObject.realServers.push_back(value.asString());
 		webRules_.push_back(webRulesObject);

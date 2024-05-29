@@ -36,6 +36,12 @@ namespace AlibabaCloud
 				{
 					struct Attribute
 					{
+						int connectTimeout;
+						int maxFails;
+						int failTimeout;
+						std::string mode;
+						int readTimeout;
+						int sendTimeout;
 						int weight;
 					};
 					std::string realServer;
@@ -47,12 +53,14 @@ namespace AlibabaCloud
 				DescribeL7RsPolicyResult();
 				explicit DescribeL7RsPolicyResult(const std::string &payload);
 				~DescribeL7RsPolicyResult();
+				int getUpstreamRetry()const;
 				std::vector<AttributeItem> getAttributes()const;
 				std::string getProxyMode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int upstreamRetry_;
 				std::vector<AttributeItem> attributes_;
 				std::string proxyMode_;
 

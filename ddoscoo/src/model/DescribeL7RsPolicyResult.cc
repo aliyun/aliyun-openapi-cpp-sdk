@@ -50,11 +50,30 @@ void DescribeL7RsPolicyResult::parse(const std::string &payload)
 		auto attributeNode = value["Attribute"];
 		if(!attributeNode["Weight"].isNull())
 			attributesObject.attribute.weight = std::stoi(attributeNode["Weight"].asString());
+		if(!attributeNode["ConnectTimeout"].isNull())
+			attributesObject.attribute.connectTimeout = std::stoi(attributeNode["ConnectTimeout"].asString());
+		if(!attributeNode["FailTimeout"].isNull())
+			attributesObject.attribute.failTimeout = std::stoi(attributeNode["FailTimeout"].asString());
+		if(!attributeNode["MaxFails"].isNull())
+			attributesObject.attribute.maxFails = std::stoi(attributeNode["MaxFails"].asString());
+		if(!attributeNode["Mode"].isNull())
+			attributesObject.attribute.mode = attributeNode["Mode"].asString();
+		if(!attributeNode["ReadTimeout"].isNull())
+			attributesObject.attribute.readTimeout = std::stoi(attributeNode["ReadTimeout"].asString());
+		if(!attributeNode["SendTimeout"].isNull())
+			attributesObject.attribute.sendTimeout = std::stoi(attributeNode["SendTimeout"].asString());
 		attributes_.push_back(attributesObject);
 	}
 	if(!value["ProxyMode"].isNull())
 		proxyMode_ = value["ProxyMode"].asString();
+	if(!value["UpstreamRetry"].isNull())
+		upstreamRetry_ = std::stoi(value["UpstreamRetry"].asString());
 
+}
+
+int DescribeL7RsPolicyResult::getUpstreamRetry()const
+{
+	return upstreamRetry_;
 }
 
 std::vector<DescribeL7RsPolicyResult::AttributeItem> DescribeL7RsPolicyResult::getAttributes()const

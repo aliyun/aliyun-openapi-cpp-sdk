@@ -29,6 +29,8 @@ namespace Model {
 class ALIBABACLOUD_DDOSCOO_EXPORT CreateDomainResourceRequest : public RpcServiceRequest {
 public:
 	struct ProxyTypes {
+		int integer;
+		std::vector<int> proxyPorts;
 		std::string proxyType;
 	};
 	CreateDomainResourceRequest();

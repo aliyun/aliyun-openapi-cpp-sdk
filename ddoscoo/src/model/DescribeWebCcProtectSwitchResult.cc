@@ -63,6 +63,8 @@ void DescribeWebCcProtectSwitchResult::parse(const std::string &payload)
 			protectSwitchListObject.ccCustomRuleEnable = std::stoi(valueProtectSwitchListProtectSwitch["CcCustomRuleEnable"].asString());
 		if(!valueProtectSwitchListProtectSwitch["CcEnable"].isNull())
 			protectSwitchListObject.ccEnable = std::stoi(valueProtectSwitchListProtectSwitch["CcEnable"].asString());
+		if(!valueProtectSwitchListProtectSwitch["CcGlobalSwitch"].isNull())
+			protectSwitchListObject.ccGlobalSwitch = valueProtectSwitchListProtectSwitch["CcGlobalSwitch"].asString();
 		protectSwitchList_.push_back(protectSwitchListObject);
 	}
 

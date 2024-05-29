@@ -29,6 +29,8 @@ namespace Model {
 class ALIBABACLOUD_DDOSCOO_EXPORT ModifyDomainResourceRequest : public RpcServiceRequest {
 public:
 	struct ProxyTypes {
+		int integer;
+		std::vector<int> proxyPorts;
 		std::string proxyType;
 	};
 	ModifyDomainResourceRequest();
@@ -41,10 +43,10 @@ public:
 	void setRsType(int rsType);
 	std::vector<std::string> getRealServers() const;
 	void setRealServers(const std::vector<std::string> &realServers);
-	std::vector<ProxyTypes> getProxyTypes() const;
-	void setProxyTypes(const std::vector<ProxyTypes> &proxyTypes);
 	std::vector<std::string> getInstanceIds() const;
 	void setInstanceIds(const std::vector<std::string> &instanceIds);
+	std::vector<ProxyTypes> getProxyTypes() const;
+	void setProxyTypes(const std::vector<ProxyTypes> &proxyTypes);
 	std::string getDomain() const;
 	void setDomain(const std::string &domain);
 
@@ -53,8 +55,8 @@ private:
 	std::string sourceIp_;
 	int rsType_;
 	std::vector<std::string> realServers_;
-	std::vector<ProxyTypes> proxyTypes_;
 	std::vector<std::string> instanceIds_;
+	std::vector<ProxyTypes> proxyTypes_;
 	std::string domain_;
 };
 } // namespace Model

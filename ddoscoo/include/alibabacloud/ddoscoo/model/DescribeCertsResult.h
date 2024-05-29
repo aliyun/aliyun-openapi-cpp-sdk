@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string startDate;
 					bool domainRelated;
 					std::string issuer;
+					std::string certIdentifier;
 					int id;
 					std::string endDate;
 					std::string name;

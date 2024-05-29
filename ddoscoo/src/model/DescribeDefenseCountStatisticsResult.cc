@@ -48,6 +48,34 @@ void DescribeDefenseCountStatisticsResult::parse(const std::string &payload)
 		defenseCountStatistics_.defenseCountTotalUsageOfCurrentMonth = std::stoi(defenseCountStatisticsNode["DefenseCountTotalUsageOfCurrentMonth"].asString());
 	if(!defenseCountStatisticsNode["SecHighSpeedCountRemain"].isNull())
 		defenseCountStatistics_.secHighSpeedCountRemain = std::stoi(defenseCountStatisticsNode["SecHighSpeedCountRemain"].asString());
+	auto allHkPackageDetailNode = defenseCountStatisticsNode["HkPackageDetail"]["hkResourcePackageDetail"];
+	for (auto defenseCountStatisticsNodeHkPackageDetailhkResourcePackageDetail : allHkPackageDetailNode)
+	{
+		DefenseCountStatistics::HkResourcePackageDetail hkResourcePackageDetailObject;
+		if(!defenseCountStatisticsNodeHkPackageDetailhkResourcePackageDetail["EndTime"].isNull())
+			hkResourcePackageDetailObject.endTime = std::stol(defenseCountStatisticsNodeHkPackageDetailhkResourcePackageDetail["EndTime"].asString());
+		if(!defenseCountStatisticsNodeHkPackageDetailhkResourcePackageDetail["StartTime"].isNull())
+			hkResourcePackageDetailObject.startTime = std::stol(defenseCountStatisticsNodeHkPackageDetailhkResourcePackageDetail["StartTime"].asString());
+		if(!defenseCountStatisticsNodeHkPackageDetailhkResourcePackageDetail["BuyNum"].isNull())
+			hkResourcePackageDetailObject.buyNum = std::stol(defenseCountStatisticsNodeHkPackageDetailhkResourcePackageDetail["BuyNum"].asString());
+		if(!defenseCountStatisticsNodeHkPackageDetailhkResourcePackageDetail["UsedNum"].isNull())
+			hkResourcePackageDetailObject.usedNum = std::stol(defenseCountStatisticsNodeHkPackageDetailhkResourcePackageDetail["UsedNum"].asString());
+		defenseCountStatistics_.hkPackageDetail.push_back(hkResourcePackageDetailObject);
+	}
+	auto allUnlimitedPackageDetailNode = defenseCountStatisticsNode["UnlimitedPackageDetail"]["unlimitedResourcePackageDetail"];
+	for (auto defenseCountStatisticsNodeUnlimitedPackageDetailunlimitedResourcePackageDetail : allUnlimitedPackageDetailNode)
+	{
+		DefenseCountStatistics::UnlimitedResourcePackageDetail unlimitedResourcePackageDetailObject;
+		if(!defenseCountStatisticsNodeUnlimitedPackageDetailunlimitedResourcePackageDetail["EndTime"].isNull())
+			unlimitedResourcePackageDetailObject.endTime = std::stol(defenseCountStatisticsNodeUnlimitedPackageDetailunlimitedResourcePackageDetail["EndTime"].asString());
+		if(!defenseCountStatisticsNodeUnlimitedPackageDetailunlimitedResourcePackageDetail["StartTime"].isNull())
+			unlimitedResourcePackageDetailObject.startTime = std::stol(defenseCountStatisticsNodeUnlimitedPackageDetailunlimitedResourcePackageDetail["StartTime"].asString());
+		if(!defenseCountStatisticsNodeUnlimitedPackageDetailunlimitedResourcePackageDetail["BuyNum"].isNull())
+			unlimitedResourcePackageDetailObject.buyNum = std::stol(defenseCountStatisticsNodeUnlimitedPackageDetailunlimitedResourcePackageDetail["BuyNum"].asString());
+		if(!defenseCountStatisticsNodeUnlimitedPackageDetailunlimitedResourcePackageDetail["UsedNum"].isNull())
+			unlimitedResourcePackageDetailObject.usedNum = std::stol(defenseCountStatisticsNodeUnlimitedPackageDetailunlimitedResourcePackageDetail["UsedNum"].asString());
+		defenseCountStatistics_.unlimitedPackageDetail.push_back(unlimitedResourcePackageDetailObject);
+	}
 
 }
 

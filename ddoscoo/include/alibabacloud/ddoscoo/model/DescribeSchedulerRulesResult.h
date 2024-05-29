@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					struct Rule
 					{
 						int status;
+						std::string line;
 						std::string type;
 						int restoreDelay;
 						int valueType;

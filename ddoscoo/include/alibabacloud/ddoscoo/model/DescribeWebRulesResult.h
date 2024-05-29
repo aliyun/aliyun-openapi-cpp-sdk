@@ -55,6 +55,7 @@ namespace AlibabaCloud
 					bool ccEnabled;
 					std::string sslProtocols;
 					std::vector<WebRule::ProxyConfig> proxyTypes;
+					std::string certRegion;
 					bool ccRuleEnabled;
 					std::vector<std::string> whiteList;
 					std::string sslCiphers;

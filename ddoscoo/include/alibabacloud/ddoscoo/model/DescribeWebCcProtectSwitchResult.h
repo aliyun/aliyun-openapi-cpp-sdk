@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct ProtectSwitch
 				{
 					int ccEnable;
+					std::string ccGlobalSwitch;
 					int blackWhiteListEnable;
 					int aiRuleEnable;
 					int ccCustomRuleEnable;

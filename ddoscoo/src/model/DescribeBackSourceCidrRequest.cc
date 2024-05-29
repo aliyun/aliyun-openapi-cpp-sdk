@@ -52,3 +52,12 @@ void DescribeBackSourceCidrRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string DescribeBackSourceCidrRequest::getIpVersion() const {
+  return ipVersion_;
+}
+
+void DescribeBackSourceCidrRequest::setIpVersion(const std::string &ipVersion) {
+  ipVersion_ = ipVersion;
+  setParameter(std::string("IpVersion"), ipVersion);
+}
+

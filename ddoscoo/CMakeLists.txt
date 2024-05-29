@@ -31,6 +31,8 @@ set(ddoscoo_public_header_model
 	include/alibabacloud/ddoscoo/model/AttachSceneDefenseObjectResult.h
 	include/alibabacloud/ddoscoo/model/ConfigL7RsPolicyRequest.h
 	include/alibabacloud/ddoscoo/model/ConfigL7RsPolicyResult.h
+	include/alibabacloud/ddoscoo/model/ConfigLayer4RealLimitRequest.h
+	include/alibabacloud/ddoscoo/model/ConfigLayer4RealLimitResult.h
 	include/alibabacloud/ddoscoo/model/ConfigLayer4RemarkRequest.h
 	include/alibabacloud/ddoscoo/model/ConfigLayer4RemarkResult.h
 	include/alibabacloud/ddoscoo/model/ConfigLayer4RuleBakModeRequest.h
@@ -135,10 +137,10 @@ set(ddoscoo_public_header_model
 	include/alibabacloud/ddoscoo/model/DescribeDomainOverviewResult.h
 	include/alibabacloud/ddoscoo/model/DescribeDomainQPSListRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeDomainQPSListResult.h
-	include/alibabacloud/ddoscoo/model/DescribeDomainQpsWithCacheRequest.h
-	include/alibabacloud/ddoscoo/model/DescribeDomainQpsWithCacheResult.h
 	include/alibabacloud/ddoscoo/model/DescribeDomainResourceRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeDomainResourceResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainSecurityProfileRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainSecurityProfileResult.h
 	include/alibabacloud/ddoscoo/model/DescribeDomainStatusCodeCountRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeDomainStatusCodeCountResult.h
 	include/alibabacloud/ddoscoo/model/DescribeDomainStatusCodeListRequest.h
@@ -157,12 +159,20 @@ set(ddoscoo_public_header_model
 	include/alibabacloud/ddoscoo/model/DescribeDomainsResult.h
 	include/alibabacloud/ddoscoo/model/DescribeElasticBandwidthSpecRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeElasticBandwidthSpecResult.h
+	include/alibabacloud/ddoscoo/model/DescribeElasticQpsRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeElasticQpsResult.h
+	include/alibabacloud/ddoscoo/model/DescribeElasticQpsRecordRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeElasticQpsRecordResult.h
+	include/alibabacloud/ddoscoo/model/DescribeHeadersRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeHeadersResult.h
 	include/alibabacloud/ddoscoo/model/DescribeHealthCheckListRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeHealthCheckListResult.h
 	include/alibabacloud/ddoscoo/model/DescribeHealthCheckStatusRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeHealthCheckStatusResult.h
 	include/alibabacloud/ddoscoo/model/DescribeInstanceDetailsRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeInstanceDetailsResult.h
+	include/alibabacloud/ddoscoo/model/DescribeInstanceExtRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeInstanceExtResult.h
 	include/alibabacloud/ddoscoo/model/DescribeInstanceIdsRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeInstanceIdsResult.h
 	include/alibabacloud/ddoscoo/model/DescribeInstanceSpecsRequest.h
@@ -193,6 +203,8 @@ set(ddoscoo_public_header_model
 	include/alibabacloud/ddoscoo/model/DescribePortAttackMaxFlowResult.h
 	include/alibabacloud/ddoscoo/model/DescribePortAutoCcStatusRequest.h
 	include/alibabacloud/ddoscoo/model/DescribePortAutoCcStatusResult.h
+	include/alibabacloud/ddoscoo/model/DescribePortCcAttackTopIPRequest.h
+	include/alibabacloud/ddoscoo/model/DescribePortCcAttackTopIPResult.h
 	include/alibabacloud/ddoscoo/model/DescribePortConnsCountRequest.h
 	include/alibabacloud/ddoscoo/model/DescribePortConnsCountResult.h
 	include/alibabacloud/ddoscoo/model/DescribePortConnsListRequest.h
@@ -213,6 +225,8 @@ set(ddoscoo_public_header_model
 	include/alibabacloud/ddoscoo/model/DescribeSceneDefensePoliciesResult.h
 	include/alibabacloud/ddoscoo/model/DescribeSchedulerRulesRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeSchedulerRulesResult.h
+	include/alibabacloud/ddoscoo/model/DescribeSlaEventListRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeSlaEventListResult.h
 	include/alibabacloud/ddoscoo/model/DescribeSlsAuthStatusRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeSlsAuthStatusResult.h
 	include/alibabacloud/ddoscoo/model/DescribeSlsLogstoreInfoRequest.h
@@ -227,6 +241,8 @@ set(ddoscoo_public_header_model
 	include/alibabacloud/ddoscoo/model/DescribeTagKeysResult.h
 	include/alibabacloud/ddoscoo/model/DescribeTagResourcesRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeTagResourcesResult.h
+	include/alibabacloud/ddoscoo/model/DescribeTotalAttackMaxFlowRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeTotalAttackMaxFlowResult.h
 	include/alibabacloud/ddoscoo/model/DescribeUdpReflectRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeUdpReflectResult.h
 	include/alibabacloud/ddoscoo/model/DescribeUnBlackholeCountRequest.h
@@ -255,6 +271,8 @@ set(ddoscoo_public_header_model
 	include/alibabacloud/ddoscoo/model/DescribeWebInstanceRelationsResult.h
 	include/alibabacloud/ddoscoo/model/DescribeWebPreciseAccessRuleRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeWebPreciseAccessRuleResult.h
+	include/alibabacloud/ddoscoo/model/DescribeWebReportTopIpRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeWebReportTopIpResult.h
 	include/alibabacloud/ddoscoo/model/DescribeWebRulesRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeWebRulesResult.h
 	include/alibabacloud/ddoscoo/model/DetachSceneDefenseObjectRequest.h
@@ -281,6 +299,8 @@ set(ddoscoo_public_header_model
 	include/alibabacloud/ddoscoo/model/EnableWebCCResult.h
 	include/alibabacloud/ddoscoo/model/EnableWebCCRuleRequest.h
 	include/alibabacloud/ddoscoo/model/EnableWebCCRuleResult.h
+	include/alibabacloud/ddoscoo/model/ModifyBizBandWidthModeRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyBizBandWidthModeResult.h
 	include/alibabacloud/ddoscoo/model/ModifyBlackholeStatusRequest.h
 	include/alibabacloud/ddoscoo/model/ModifyBlackholeStatusResult.h
 	include/alibabacloud/ddoscoo/model/ModifyBlockStatusRequest.h
@@ -291,8 +311,14 @@ set(ddoscoo_public_header_model
 	include/alibabacloud/ddoscoo/model/ModifyDomainResourceResult.h
 	include/alibabacloud/ddoscoo/model/ModifyElasticBandWidthRequest.h
 	include/alibabacloud/ddoscoo/model/ModifyElasticBandWidthResult.h
+	include/alibabacloud/ddoscoo/model/ModifyElasticBizBandWidthRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyElasticBizBandWidthResult.h
+	include/alibabacloud/ddoscoo/model/ModifyElasticBizQpsRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyElasticBizQpsResult.h
 	include/alibabacloud/ddoscoo/model/ModifyFullLogTtlRequest.h
 	include/alibabacloud/ddoscoo/model/ModifyFullLogTtlResult.h
+	include/alibabacloud/ddoscoo/model/ModifyHeadersRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyHeadersResult.h
 	include/alibabacloud/ddoscoo/model/ModifyHealthCheckConfigRequest.h
 	include/alibabacloud/ddoscoo/model/ModifyHealthCheckConfigResult.h
 	include/alibabacloud/ddoscoo/model/ModifyHttp2EnableRequest.h
@@ -301,10 +327,14 @@ set(ddoscoo_public_header_model
 	include/alibabacloud/ddoscoo/model/ModifyInstanceRemarkResult.h
 	include/alibabacloud/ddoscoo/model/ModifyNetworkRuleAttributeRequest.h
 	include/alibabacloud/ddoscoo/model/ModifyNetworkRuleAttributeResult.h
+	include/alibabacloud/ddoscoo/model/ModifyOcspStatusRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyOcspStatusResult.h
 	include/alibabacloud/ddoscoo/model/ModifyPortRequest.h
 	include/alibabacloud/ddoscoo/model/ModifyPortResult.h
 	include/alibabacloud/ddoscoo/model/ModifyPortAutoCcStatusRequest.h
 	include/alibabacloud/ddoscoo/model/ModifyPortAutoCcStatusResult.h
+	include/alibabacloud/ddoscoo/model/ModifyQpsModeRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyQpsModeResult.h
 	include/alibabacloud/ddoscoo/model/ModifySceneDefensePolicyRequest.h
 	include/alibabacloud/ddoscoo/model/ModifySceneDefensePolicyResult.h
 	include/alibabacloud/ddoscoo/model/ModifySchedulerRuleRequest.h
@@ -354,6 +384,8 @@ set(ddoscoo_src
 	src/model/AttachSceneDefenseObjectResult.cc
 	src/model/ConfigL7RsPolicyRequest.cc
 	src/model/ConfigL7RsPolicyResult.cc
+	src/model/ConfigLayer4RealLimitRequest.cc
+	src/model/ConfigLayer4RealLimitResult.cc
 	src/model/ConfigLayer4RemarkRequest.cc
 	src/model/ConfigLayer4RemarkResult.cc
 	src/model/ConfigLayer4RuleBakModeRequest.cc
@@ -458,10 +490,10 @@ set(ddoscoo_src
 	src/model/DescribeDomainOverviewResult.cc
 	src/model/DescribeDomainQPSListRequest.cc
 	src/model/DescribeDomainQPSListResult.cc
-	src/model/DescribeDomainQpsWithCacheRequest.cc
-	src/model/DescribeDomainQpsWithCacheResult.cc
 	src/model/DescribeDomainResourceRequest.cc
 	src/model/DescribeDomainResourceResult.cc
+	src/model/DescribeDomainSecurityProfileRequest.cc
+	src/model/DescribeDomainSecurityProfileResult.cc
 	src/model/DescribeDomainStatusCodeCountRequest.cc
 	src/model/DescribeDomainStatusCodeCountResult.cc
 	src/model/DescribeDomainStatusCodeListRequest.cc
@@ -480,12 +512,20 @@ set(ddoscoo_src
 	src/model/DescribeDomainsResult.cc
 	src/model/DescribeElasticBandwidthSpecRequest.cc
 	src/model/DescribeElasticBandwidthSpecResult.cc
+	src/model/DescribeElasticQpsRequest.cc
+	src/model/DescribeElasticQpsResult.cc
+	src/model/DescribeElasticQpsRecordRequest.cc
+	src/model/DescribeElasticQpsRecordResult.cc
+	src/model/DescribeHeadersRequest.cc
+	src/model/DescribeHeadersResult.cc
 	src/model/DescribeHealthCheckListRequest.cc
 	src/model/DescribeHealthCheckListResult.cc
 	src/model/DescribeHealthCheckStatusRequest.cc
 	src/model/DescribeHealthCheckStatusResult.cc
 	src/model/DescribeInstanceDetailsRequest.cc
 	src/model/DescribeInstanceDetailsResult.cc
+	src/model/DescribeInstanceExtRequest.cc
+	src/model/DescribeInstanceExtResult.cc
 	src/model/DescribeInstanceIdsRequest.cc
 	src/model/DescribeInstanceIdsResult.cc
 	src/model/DescribeInstanceSpecsRequest.cc
@@ -516,6 +556,8 @@ set(ddoscoo_src
 	src/model/DescribePortAttackMaxFlowResult.cc
 	src/model/DescribePortAutoCcStatusRequest.cc
 	src/model/DescribePortAutoCcStatusResult.cc
+	src/model/DescribePortCcAttackTopIPRequest.cc
+	src/model/DescribePortCcAttackTopIPResult.cc
 	src/model/DescribePortConnsCountRequest.cc
 	src/model/DescribePortConnsCountResult.cc
 	src/model/DescribePortConnsListRequest.cc
@@ -536,6 +578,8 @@ set(ddoscoo_src
 	src/model/DescribeSceneDefensePoliciesResult.cc
 	src/model/DescribeSchedulerRulesRequest.cc
 	src/model/DescribeSchedulerRulesResult.cc
+	src/model/DescribeSlaEventListRequest.cc
+	src/model/DescribeSlaEventListResult.cc
 	src/model/DescribeSlsAuthStatusRequest.cc
 	src/model/DescribeSlsAuthStatusResult.cc
 	src/model/DescribeSlsLogstoreInfoRequest.cc
@@ -550,6 +594,8 @@ set(ddoscoo_src
 	src/model/DescribeTagKeysResult.cc
 	src/model/DescribeTagResourcesRequest.cc
 	src/model/DescribeTagResourcesResult.cc
+	src/model/DescribeTotalAttackMaxFlowRequest.cc
+	src/model/DescribeTotalAttackMaxFlowResult.cc
 	src/model/DescribeUdpReflectRequest.cc
 	src/model/DescribeUdpReflectResult.cc
 	src/model/DescribeUnBlackholeCountRequest.cc
@@ -578,6 +624,8 @@ set(ddoscoo_src
 	src/model/DescribeWebInstanceRelationsResult.cc
 	src/model/DescribeWebPreciseAccessRuleRequest.cc
 	src/model/DescribeWebPreciseAccessRuleResult.cc
+	src/model/DescribeWebReportTopIpRequest.cc
+	src/model/DescribeWebReportTopIpResult.cc
 	src/model/DescribeWebRulesRequest.cc
 	src/model/DescribeWebRulesResult.cc
 	src/model/DetachSceneDefenseObjectRequest.cc
@@ -604,6 +652,8 @@ set(ddoscoo_src
 	src/model/EnableWebCCResult.cc
 	src/model/EnableWebCCRuleRequest.cc
 	src/model/EnableWebCCRuleResult.cc
+	src/model/ModifyBizBandWidthModeRequest.cc
+	src/model/ModifyBizBandWidthModeResult.cc
 	src/model/ModifyBlackholeStatusRequest.cc
 	src/model/ModifyBlackholeStatusResult.cc
 	src/model/ModifyBlockStatusRequest.cc
@@ -614,8 +664,14 @@ set(ddoscoo_src
 	src/model/ModifyDomainResourceResult.cc
 	src/model/ModifyElasticBandWidthRequest.cc
 	src/model/ModifyElasticBandWidthResult.cc
+	src/model/ModifyElasticBizBandWidthRequest.cc
+	src/model/ModifyElasticBizBandWidthResult.cc
+	src/model/ModifyElasticBizQpsRequest.cc
+	src/model/ModifyElasticBizQpsResult.cc
 	src/model/ModifyFullLogTtlRequest.cc
 	src/model/ModifyFullLogTtlResult.cc
+	src/model/ModifyHeadersRequest.cc
+	src/model/ModifyHeadersResult.cc
 	src/model/ModifyHealthCheckConfigRequest.cc
 	src/model/ModifyHealthCheckConfigResult.cc
 	src/model/ModifyHttp2EnableRequest.cc
@@ -624,10 +680,14 @@ set(ddoscoo_src
 	src/model/ModifyInstanceRemarkResult.cc
 	src/model/ModifyNetworkRuleAttributeRequest.cc
 	src/model/ModifyNetworkRuleAttributeResult.cc
+	src/model/ModifyOcspStatusRequest.cc
+	src/model/ModifyOcspStatusResult.cc
 	src/model/ModifyPortRequest.cc
 	src/model/ModifyPortResult.cc
 	src/model/ModifyPortAutoCcStatusRequest.cc
 	src/model/ModifyPortAutoCcStatusResult.cc
+	src/model/ModifyQpsModeRequest.cc
+	src/model/ModifyQpsModeResult.cc
 	src/model/ModifySceneDefensePolicyRequest.cc
 	src/model/ModifySceneDefensePolicyResult.cc
 	src/model/ModifySchedulerRuleRequest.cc

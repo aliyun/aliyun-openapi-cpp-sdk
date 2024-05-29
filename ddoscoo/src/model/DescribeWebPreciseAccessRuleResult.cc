@@ -69,6 +69,9 @@ void DescribeWebPreciseAccessRuleResult::parse(const std::string &payload)
 					conditionListObject.content = valuePreciseAccessConfigListPreciseAccessConfigRuleListRuleConditionListCondition["Content"].asString();
 				if(!valuePreciseAccessConfigListPreciseAccessConfigRuleListRuleConditionListCondition["HeaderName"].isNull())
 					conditionListObject.headerName = valuePreciseAccessConfigListPreciseAccessConfigRuleListRuleConditionListCondition["HeaderName"].asString();
+				auto allContentList = value["ContentList"]["ContentList"];
+				for (auto value : allContentList)
+					conditionListObject.contentList.push_back(value.asString());
 				ruleListObject.conditionList.push_back(conditionListObject);
 			}
 			preciseAccessConfigListObject.ruleList.push_back(ruleListObject);

@@ -67,6 +67,8 @@ void DescribeSchedulerRulesResult::parse(const std::string &payload)
 				rulesObject.restoreDelay = std::stoi(valueSchedulerRulesSchedulerRuleRulesRule["RestoreDelay"].asString());
 			if(!valueSchedulerRulesSchedulerRuleRulesRule["RegionId"].isNull())
 				rulesObject.regionId = valueSchedulerRulesSchedulerRuleRulesRule["RegionId"].asString();
+			if(!valueSchedulerRulesSchedulerRuleRulesRule["Line"].isNull())
+				rulesObject.line = valueSchedulerRulesSchedulerRuleRulesRule["Line"].asString();
 			schedulerRulesObject.rules.push_back(rulesObject);
 		}
 		auto paramNode = value["Param"];

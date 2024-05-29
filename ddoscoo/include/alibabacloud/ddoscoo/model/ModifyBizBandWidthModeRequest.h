@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDOMAINQPSWITHCACHEREQUEST_H_
-#define ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDOMAINQPSWITHCACHEREQUEST_H_
+#ifndef ALIBABACLOUD_DDOSCOO_MODEL_MODIFYBIZBANDWIDTHMODEREQUEST_H_
+#define ALIBABACLOUD_DDOSCOO_MODEL_MODIFYBIZBANDWIDTHMODEREQUEST_H_
 
 #include <alibabacloud/ddoscoo/DdoscooExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,23 @@
 namespace AlibabaCloud {
 namespace Ddoscoo {
 namespace Model {
-class ALIBABACLOUD_DDOSCOO_EXPORT DescribeDomainQpsWithCacheRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DDOSCOO_EXPORT ModifyBizBandWidthModeRequest : public RpcServiceRequest {
 public:
-	DescribeDomainQpsWithCacheRequest();
-	~DescribeDomainQpsWithCacheRequest();
-	long getEndTime() const;
-	void setEndTime(long endTime);
-	long getStartTime() const;
-	void setStartTime(long startTime);
-	std::string getResourceGroupId() const;
-	void setResourceGroupId(const std::string &resourceGroupId);
+	ModifyBizBandWidthModeRequest();
+	~ModifyBizBandWidthModeRequest();
+	std::string getMode() const;
+	void setMode(const std::string &mode);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	std::string getDomain() const;
-	void setDomain(const std::string &domain);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 
 private:
-	long endTime_;
-	long startTime_;
-	std::string resourceGroupId_;
+	std::string mode_;
 	std::string sourceIp_;
-	std::string domain_;
+	std::string instanceId_;
 };
 } // namespace Model
 } // namespace Ddoscoo
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDOMAINQPSWITHCACHEREQUEST_H_
+#endif // !ALIBABACLOUD_DDOSCOO_MODEL_MODIFYBIZBANDWIDTHMODEREQUEST_H_

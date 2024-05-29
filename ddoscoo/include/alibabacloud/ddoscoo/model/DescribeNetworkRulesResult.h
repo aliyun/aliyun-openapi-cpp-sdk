@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::vector<std::string> realServers;
 					int frontendPort;
 					std::string protocol;
+					std::string remark;
 				};
 
 

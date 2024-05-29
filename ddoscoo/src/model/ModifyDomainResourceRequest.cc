@@ -60,6 +60,14 @@ void ModifyDomainResourceRequest::setRealServers(const std::vector<std::string> 
   realServers_ = realServers;
 }
 
+std::vector<std::string> ModifyDomainResourceRequest::getInstanceIds() const {
+  return instanceIds_;
+}
+
+void ModifyDomainResourceRequest::setInstanceIds(const std::vector<std::string> &instanceIds) {
+  instanceIds_ = instanceIds;
+}
+
 std::vector<ModifyDomainResourceRequest::ProxyTypes> ModifyDomainResourceRequest::getProxyTypes() const {
   return proxyTypes_;
 }
@@ -67,18 +75,11 @@ std::vector<ModifyDomainResourceRequest::ProxyTypes> ModifyDomainResourceRequest
 void ModifyDomainResourceRequest::setProxyTypes(const std::vector<ModifyDomainResourceRequest::ProxyTypes> &proxyTypes) {
   proxyTypes_ = proxyTypes;
   for(int dep1 = 0; dep1 != proxyTypes.size(); dep1++) {
-  auto proxyTypesObj = proxyTypes.at(dep1);
-  std::string proxyTypesObjStr = std::string("ProxyTypes") + "." + std::to_string(dep1 + 1);
-    setParameter(proxyTypesObjStr + ".ProxyType", proxyTypesObj.proxyType);
+    for(int dep2 = 0; dep2 != proxyTypes[dep1].proxyPorts.size(); dep2++) {
+      setParameter(std::string("ProxyTypes") + "." + std::to_string(dep1 + 1) + ".ProxyPorts." + std::to_string(dep2 + 1), std::to_string(proxyTypes[dep1].proxyPorts[dep2]));
+    }
+    setParameter(std::string("ProxyTypes") + "." + std::to_string(dep1 + 1) + ".ProxyType", proxyTypes[dep1].proxyType);
   }
-}
-
-std::vector<std::string> ModifyDomainResourceRequest::getInstanceIds() const {
-  return instanceIds_;
-}
-
-void ModifyDomainResourceRequest::setInstanceIds(const std::vector<std::string> &instanceIds) {
-  instanceIds_ = instanceIds;
 }
 
 std::string ModifyDomainResourceRequest::getDomain() const {

@@ -77,6 +77,8 @@ void DescribeWebRulesResult::parse(const std::string &payload)
 			webRulesObject.http2Enable = valueWebRulesWebRule["Http2Enable"].asString() == "true";
 		if(!valueWebRulesWebRule["Https2HttpEnable"].isNull())
 			webRulesObject.https2HttpEnable = valueWebRulesWebRule["Https2HttpEnable"].asString() == "true";
+		if(!valueWebRulesWebRule["CertRegion"].isNull())
+			webRulesObject.certRegion = valueWebRulesWebRule["CertRegion"].asString();
 		auto allProxyTypesNode = valueWebRulesWebRule["ProxyTypes"]["ProxyConfig"];
 		for (auto valueWebRulesWebRuleProxyTypesProxyConfig : allProxyTypesNode)
 		{

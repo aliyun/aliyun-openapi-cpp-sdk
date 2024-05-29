@@ -30,6 +30,8 @@ class ALIBABACLOUD_DDOSCOO_EXPORT ConfigL7RsPolicyRequest : public RpcServiceReq
 public:
 	ConfigL7RsPolicyRequest();
 	~ConfigL7RsPolicyRequest();
+	int getUpstreamRetry() const;
+	void setUpstreamRetry(int upstreamRetry);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSourceIp() const;
@@ -40,6 +42,7 @@ public:
 	void setPolicy(const std::string &policy);
 
 private:
+	int upstreamRetry_;
 	std::string resourceGroupId_;
 	std::string sourceIp_;
 	std::string domain_;

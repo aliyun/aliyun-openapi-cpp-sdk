@@ -57,6 +57,8 @@ void DescribeCertsResult::parse(const std::string &payload)
 			certsObject.common = valueCertsCertItem["Common"].asString();
 		if(!valueCertsCertItem["Id"].isNull())
 			certsObject.id = std::stoi(valueCertsCertItem["Id"].asString());
+		if(!valueCertsCertItem["CertIdentifier"].isNull())
+			certsObject.certIdentifier = valueCertsCertItem["CertIdentifier"].asString();
 		certs_.push_back(certsObject);
 	}
 

@@ -53,6 +53,8 @@ void DescribeNetworkRulesResult::parse(const std::string &payload)
 			networkRulesObject.protocol = valueNetworkRulesNetworkRule["Protocol"].asString();
 		if(!valueNetworkRulesNetworkRule["BackendPort"].isNull())
 			networkRulesObject.backendPort = std::stoi(valueNetworkRulesNetworkRule["BackendPort"].asString());
+		if(!valueNetworkRulesNetworkRule["Remark"].isNull())
+			networkRulesObject.remark = valueNetworkRulesNetworkRule["Remark"].asString();
 		auto allRealServers = value["RealServers"]["RealServers"];
 		for (auto value : allRealServers)
 			networkRulesObject.realServers.push_back(value.asString());

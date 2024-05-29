@@ -65,6 +65,18 @@ void DescribeInstanceSpecsResult::parse(const std::string &payload)
 			instanceSpecsObject.instanceId = valueInstanceSpecsInstanceSpec["InstanceId"].asString();
 		if(!valueInstanceSpecsInstanceSpec["DomainLimit"].isNull())
 			instanceSpecsObject.domainLimit = std::stoi(valueInstanceSpecsInstanceSpec["DomainLimit"].asString());
+		if(!valueInstanceSpecsInstanceSpec["ElasticBwModel"].isNull())
+			instanceSpecsObject.elasticBwModel = valueInstanceSpecsInstanceSpec["ElasticBwModel"].asString();
+		if(!valueInstanceSpecsInstanceSpec["CpsLimit"].isNull())
+			instanceSpecsObject.cpsLimit = std::stol(valueInstanceSpecsInstanceSpec["CpsLimit"].asString());
+		if(!valueInstanceSpecsInstanceSpec["ConnLimit"].isNull())
+			instanceSpecsObject.connLimit = std::stol(valueInstanceSpecsInstanceSpec["ConnLimit"].asString());
+		if(!valueInstanceSpecsInstanceSpec["RealLimitBw"].isNull())
+			instanceSpecsObject.realLimitBw = std::stol(valueInstanceSpecsInstanceSpec["RealLimitBw"].asString());
+		if(!valueInstanceSpecsInstanceSpec["ElasticQpsMode"].isNull())
+			instanceSpecsObject.elasticQpsMode = valueInstanceSpecsInstanceSpec["ElasticQpsMode"].asString();
+		if(!valueInstanceSpecsInstanceSpec["ElasticQps"].isNull())
+			instanceSpecsObject.elasticQps = std::stol(valueInstanceSpecsInstanceSpec["ElasticQps"].asString());
 		instanceSpecs_.push_back(instanceSpecsObject);
 	}
 

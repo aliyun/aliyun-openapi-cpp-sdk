@@ -34,15 +34,23 @@ namespace AlibabaCloud
 			public:
 				struct PortFlow
 				{
-					long outPps;
 					long outBps;
-					long inBps;
-					long inPps;
-					std::string region;
+					long slaBpsDropBps;
+					long slaCpsDropPps;
 					long index;
 					long time;
-					long attackBps;
+					long slaPpsDropBps;
+					long slaConnDropPps;
 					long attackPps;
+					long outPps;
+					long inBps;
+					long slaConnDropBps;
+					long inPps;
+					std::string region;
+					long slaPpsDropPps;
+					long attackBps;
+					long slaBpsDropPps;
+					long slaCpsDropBps;
 				};
 
 

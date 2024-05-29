@@ -25,6 +25,15 @@ ConfigL7RsPolicyRequest::ConfigL7RsPolicyRequest()
 
 ConfigL7RsPolicyRequest::~ConfigL7RsPolicyRequest() {}
 
+int ConfigL7RsPolicyRequest::getUpstreamRetry() const {
+  return upstreamRetry_;
+}
+
+void ConfigL7RsPolicyRequest::setUpstreamRetry(int upstreamRetry) {
+  upstreamRetry_ = upstreamRetry;
+  setParameter(std::string("UpstreamRetry"), std::to_string(upstreamRetry));
+}
+
 std::string ConfigL7RsPolicyRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }

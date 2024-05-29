@@ -38,13 +38,16 @@ namespace AlibabaCloud
 					std::string ipVersion;
 					std::string instanceId;
 					long createTime;
-					std::string connInstanceId;
+					long isFirstOpenQps;
+					std::string ip;
 					int enabled;
 					std::string ipMode;
-					long expireTime;
+					long isFirstOpenBw;
 					int edition;
-					int debtStatus;
 					std::string remark;
+					std::string connInstanceId;
+					long expireTime;
+					int debtStatus;
 				};
 
 

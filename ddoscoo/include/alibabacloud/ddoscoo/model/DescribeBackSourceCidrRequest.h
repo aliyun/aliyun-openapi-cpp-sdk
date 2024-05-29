@@ -36,11 +36,14 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getIpVersion() const;
+	void setIpVersion(const std::string &ipVersion);
 
 private:
 	std::string line_;
 	std::string resourceGroupId_;
 	std::string sourceIp_;
+	std::string ipVersion_;
 };
 } // namespace Model
 } // namespace Ddoscoo

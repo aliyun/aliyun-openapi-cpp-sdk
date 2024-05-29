@@ -34,9 +34,25 @@ namespace AlibabaCloud
 			public:
 				struct DefenseCountStatistics
 				{
+					struct HkResourcePackageDetail
+					{
+						long endTime;
+						long usedNum;
+						long startTime;
+						long buyNum;
+					};
+					struct UnlimitedResourcePackageDetail
+					{
+						long endTime;
+						long usedNum;
+						long startTime;
+						long buyNum;
+					};
 					int secHighSpeedCountRemain;
 					int defenseCountTotalUsageOfCurrentMonth;
+					std::vector<UnlimitedResourcePackageDetail> unlimitedPackageDetail;
 					int maxUsableDefenseCountCurrentMonth;
+					std::vector<HkResourcePackageDetail> hkPackageDetail;
 					int flowPackCountRemain;
 				};
 

@@ -40,8 +40,12 @@ public:
 	void setSourceIp(const std::string &sourceIp);
 	std::string getKey() const;
 	void setKey(const std::string &key);
+	std::string getCertRegion() const;
+	void setCertRegion(const std::string &certRegion);
 	std::string getCertName() const;
 	void setCertName(const std::string &certName);
+	std::string getCertIdentifier() const;
+	void setCertIdentifier(const std::string &certIdentifier);
 	std::string getDomain() const;
 	void setDomain(const std::string &domain);
 
@@ -51,7 +55,9 @@ private:
 	std::string resourceGroupId_;
 	std::string sourceIp_;
 	std::string key_;
+	std::string certRegion_;
 	std::string certName_;
+	std::string certIdentifier_;
 	std::string domain_;
 };
 } // namespace Model

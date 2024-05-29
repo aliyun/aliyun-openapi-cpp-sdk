@@ -61,6 +61,22 @@ void DescribePortFlowListResult::parse(const std::string &payload)
 			portFlowListObject.outBps = std::stol(valuePortFlowListPortFlow["OutBps"].asString());
 		if(!valuePortFlowListPortFlow["AttackBps"].isNull())
 			portFlowListObject.attackBps = std::stol(valuePortFlowListPortFlow["AttackBps"].asString());
+		if(!valuePortFlowListPortFlow["SlaBpsDropBps"].isNull())
+			portFlowListObject.slaBpsDropBps = std::stol(valuePortFlowListPortFlow["SlaBpsDropBps"].asString());
+		if(!valuePortFlowListPortFlow["SlaPpsDropBps"].isNull())
+			portFlowListObject.slaPpsDropBps = std::stol(valuePortFlowListPortFlow["SlaPpsDropBps"].asString());
+		if(!valuePortFlowListPortFlow["SlaCpsDropBps"].isNull())
+			portFlowListObject.slaCpsDropBps = std::stol(valuePortFlowListPortFlow["SlaCpsDropBps"].asString());
+		if(!valuePortFlowListPortFlow["SlaConnDropBps"].isNull())
+			portFlowListObject.slaConnDropBps = std::stol(valuePortFlowListPortFlow["SlaConnDropBps"].asString());
+		if(!valuePortFlowListPortFlow["SlaBpsDropPps"].isNull())
+			portFlowListObject.slaBpsDropPps = std::stol(valuePortFlowListPortFlow["SlaBpsDropPps"].asString());
+		if(!valuePortFlowListPortFlow["SlaPpsDropPps"].isNull())
+			portFlowListObject.slaPpsDropPps = std::stol(valuePortFlowListPortFlow["SlaPpsDropPps"].asString());
+		if(!valuePortFlowListPortFlow["SlaCpsDropPps"].isNull())
+			portFlowListObject.slaCpsDropPps = std::stol(valuePortFlowListPortFlow["SlaCpsDropPps"].asString());
+		if(!valuePortFlowListPortFlow["SlaConnDropPps"].isNull())
+			portFlowListObject.slaConnDropPps = std::stol(valuePortFlowListPortFlow["SlaConnDropPps"].asString());
 		portFlowList_.push_back(portFlowListObject);
 	}
 

@@ -65,6 +65,12 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
 		if(!valueInstancesInstance["ConnInstanceId"].isNull())
 			instancesObject.connInstanceId = valueInstancesInstance["ConnInstanceId"].asString();
+		if(!valueInstancesInstance["IsFirstOpenBw"].isNull())
+			instancesObject.isFirstOpenBw = std::stol(valueInstancesInstance["IsFirstOpenBw"].asString());
+		if(!valueInstancesInstance["IsFirstOpenQps"].isNull())
+			instancesObject.isFirstOpenQps = std::stol(valueInstancesInstance["IsFirstOpenQps"].asString());
+		if(!valueInstancesInstance["Ip"].isNull())
+			instancesObject.ip = valueInstancesInstance["Ip"].asString();
 		instances_.push_back(instancesObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -31,7 +31,7 @@ std::string AssociateWebCertRequest::getCert() const {
 
 void AssociateWebCertRequest::setCert(const std::string &cert) {
   cert_ = cert;
-  setParameter(std::string("Cert"), cert);
+  setBodyParameter(std::string("Cert"), cert);
 }
 
 int AssociateWebCertRequest::getCertId() const {
@@ -40,7 +40,7 @@ int AssociateWebCertRequest::getCertId() const {
 
 void AssociateWebCertRequest::setCertId(int certId) {
   certId_ = certId;
-  setParameter(std::string("CertId"), std::to_string(certId));
+  setBodyParameter(std::string("CertId"), std::to_string(certId));
 }
 
 std::string AssociateWebCertRequest::getResourceGroupId() const {
@@ -67,7 +67,16 @@ std::string AssociateWebCertRequest::getKey() const {
 
 void AssociateWebCertRequest::setKey(const std::string &key) {
   key_ = key;
-  setParameter(std::string("Key"), key);
+  setBodyParameter(std::string("Key"), key);
+}
+
+std::string AssociateWebCertRequest::getCertRegion() const {
+  return certRegion_;
+}
+
+void AssociateWebCertRequest::setCertRegion(const std::string &certRegion) {
+  certRegion_ = certRegion;
+  setBodyParameter(std::string("CertRegion"), certRegion);
 }
 
 std::string AssociateWebCertRequest::getCertName() const {
@@ -76,7 +85,16 @@ std::string AssociateWebCertRequest::getCertName() const {
 
 void AssociateWebCertRequest::setCertName(const std::string &certName) {
   certName_ = certName;
-  setParameter(std::string("CertName"), certName);
+  setBodyParameter(std::string("CertName"), certName);
+}
+
+std::string AssociateWebCertRequest::getCertIdentifier() const {
+  return certIdentifier_;
+}
+
+void AssociateWebCertRequest::setCertIdentifier(const std::string &certIdentifier) {
+  certIdentifier_ = certIdentifier;
+  setBodyParameter(std::string("CertIdentifier"), certIdentifier);
 }
 
 std::string AssociateWebCertRequest::getDomain() const {
@@ -85,6 +103,6 @@ std::string AssociateWebCertRequest::getDomain() const {
 
 void AssociateWebCertRequest::setDomain(const std::string &domain) {
   domain_ = domain;
-  setParameter(std::string("Domain"), domain);
+  setBodyParameter(std::string("Domain"), domain);
 }
 

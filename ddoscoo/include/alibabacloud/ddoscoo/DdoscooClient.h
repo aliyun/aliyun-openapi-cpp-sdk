@@ -32,6 +32,8 @@
 #include "model/AttachSceneDefenseObjectResult.h"
 #include "model/ConfigL7RsPolicyRequest.h"
 #include "model/ConfigL7RsPolicyResult.h"
+#include "model/ConfigLayer4RealLimitRequest.h"
+#include "model/ConfigLayer4RealLimitResult.h"
 #include "model/ConfigLayer4RemarkRequest.h"
 #include "model/ConfigLayer4RemarkResult.h"
 #include "model/ConfigLayer4RuleBakModeRequest.h"
@@ -136,10 +138,10 @@
 #include "model/DescribeDomainOverviewResult.h"
 #include "model/DescribeDomainQPSListRequest.h"
 #include "model/DescribeDomainQPSListResult.h"
-#include "model/DescribeDomainQpsWithCacheRequest.h"
-#include "model/DescribeDomainQpsWithCacheResult.h"
 #include "model/DescribeDomainResourceRequest.h"
 #include "model/DescribeDomainResourceResult.h"
+#include "model/DescribeDomainSecurityProfileRequest.h"
+#include "model/DescribeDomainSecurityProfileResult.h"
 #include "model/DescribeDomainStatusCodeCountRequest.h"
 #include "model/DescribeDomainStatusCodeCountResult.h"
 #include "model/DescribeDomainStatusCodeListRequest.h"
@@ -158,12 +160,20 @@
 #include "model/DescribeDomainsResult.h"
 #include "model/DescribeElasticBandwidthSpecRequest.h"
 #include "model/DescribeElasticBandwidthSpecResult.h"
+#include "model/DescribeElasticQpsRequest.h"
+#include "model/DescribeElasticQpsResult.h"
+#include "model/DescribeElasticQpsRecordRequest.h"
+#include "model/DescribeElasticQpsRecordResult.h"
+#include "model/DescribeHeadersRequest.h"
+#include "model/DescribeHeadersResult.h"
 #include "model/DescribeHealthCheckListRequest.h"
 #include "model/DescribeHealthCheckListResult.h"
 #include "model/DescribeHealthCheckStatusRequest.h"
 #include "model/DescribeHealthCheckStatusResult.h"
 #include "model/DescribeInstanceDetailsRequest.h"
 #include "model/DescribeInstanceDetailsResult.h"
+#include "model/DescribeInstanceExtRequest.h"
+#include "model/DescribeInstanceExtResult.h"
 #include "model/DescribeInstanceIdsRequest.h"
 #include "model/DescribeInstanceIdsResult.h"
 #include "model/DescribeInstanceSpecsRequest.h"
@@ -194,6 +204,8 @@
 #include "model/DescribePortAttackMaxFlowResult.h"
 #include "model/DescribePortAutoCcStatusRequest.h"
 #include "model/DescribePortAutoCcStatusResult.h"
+#include "model/DescribePortCcAttackTopIPRequest.h"
+#include "model/DescribePortCcAttackTopIPResult.h"
 #include "model/DescribePortConnsCountRequest.h"
 #include "model/DescribePortConnsCountResult.h"
 #include "model/DescribePortConnsListRequest.h"
@@ -214,6 +226,8 @@
 #include "model/DescribeSceneDefensePoliciesResult.h"
 #include "model/DescribeSchedulerRulesRequest.h"
 #include "model/DescribeSchedulerRulesResult.h"
+#include "model/DescribeSlaEventListRequest.h"
+#include "model/DescribeSlaEventListResult.h"
 #include "model/DescribeSlsAuthStatusRequest.h"
 #include "model/DescribeSlsAuthStatusResult.h"
 #include "model/DescribeSlsLogstoreInfoRequest.h"
@@ -228,6 +242,8 @@
 #include "model/DescribeTagKeysResult.h"
 #include "model/DescribeTagResourcesRequest.h"
 #include "model/DescribeTagResourcesResult.h"
+#include "model/DescribeTotalAttackMaxFlowRequest.h"
+#include "model/DescribeTotalAttackMaxFlowResult.h"
 #include "model/DescribeUdpReflectRequest.h"
 #include "model/DescribeUdpReflectResult.h"
 #include "model/DescribeUnBlackholeCountRequest.h"
@@ -256,6 +272,8 @@
 #include "model/DescribeWebInstanceRelationsResult.h"
 #include "model/DescribeWebPreciseAccessRuleRequest.h"
 #include "model/DescribeWebPreciseAccessRuleResult.h"
+#include "model/DescribeWebReportTopIpRequest.h"
+#include "model/DescribeWebReportTopIpResult.h"
 #include "model/DescribeWebRulesRequest.h"
 #include "model/DescribeWebRulesResult.h"
 #include "model/DetachSceneDefenseObjectRequest.h"
@@ -282,6 +300,8 @@
 #include "model/EnableWebCCResult.h"
 #include "model/EnableWebCCRuleRequest.h"
 #include "model/EnableWebCCRuleResult.h"
+#include "model/ModifyBizBandWidthModeRequest.h"
+#include "model/ModifyBizBandWidthModeResult.h"
 #include "model/ModifyBlackholeStatusRequest.h"
 #include "model/ModifyBlackholeStatusResult.h"
 #include "model/ModifyBlockStatusRequest.h"
@@ -292,8 +312,14 @@
 #include "model/ModifyDomainResourceResult.h"
 #include "model/ModifyElasticBandWidthRequest.h"
 #include "model/ModifyElasticBandWidthResult.h"
+#include "model/ModifyElasticBizBandWidthRequest.h"
+#include "model/ModifyElasticBizBandWidthResult.h"
+#include "model/ModifyElasticBizQpsRequest.h"
+#include "model/ModifyElasticBizQpsResult.h"
 #include "model/ModifyFullLogTtlRequest.h"
 #include "model/ModifyFullLogTtlResult.h"
+#include "model/ModifyHeadersRequest.h"
+#include "model/ModifyHeadersResult.h"
 #include "model/ModifyHealthCheckConfigRequest.h"
 #include "model/ModifyHealthCheckConfigResult.h"
 #include "model/ModifyHttp2EnableRequest.h"
@@ -302,10 +328,14 @@
 #include "model/ModifyInstanceRemarkResult.h"
 #include "model/ModifyNetworkRuleAttributeRequest.h"
 #include "model/ModifyNetworkRuleAttributeResult.h"
+#include "model/ModifyOcspStatusRequest.h"
+#include "model/ModifyOcspStatusResult.h"
 #include "model/ModifyPortRequest.h"
 #include "model/ModifyPortResult.h"
 #include "model/ModifyPortAutoCcStatusRequest.h"
 #include "model/ModifyPortAutoCcStatusResult.h"
+#include "model/ModifyQpsModeRequest.h"
+#include "model/ModifyQpsModeResult.h"
 #include "model/ModifySceneDefensePolicyRequest.h"
 #include "model/ModifySceneDefensePolicyResult.h"
 #include "model/ModifySchedulerRuleRequest.h"
@@ -366,6 +396,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ConfigL7RsPolicyResult> ConfigL7RsPolicyOutcome;
 			typedef std::future<ConfigL7RsPolicyOutcome> ConfigL7RsPolicyOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::ConfigL7RsPolicyRequest&, const ConfigL7RsPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfigL7RsPolicyAsyncHandler;
+			typedef Outcome<Error, Model::ConfigLayer4RealLimitResult> ConfigLayer4RealLimitOutcome;
+			typedef std::future<ConfigLayer4RealLimitOutcome> ConfigLayer4RealLimitOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::ConfigLayer4RealLimitRequest&, const ConfigLayer4RealLimitOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfigLayer4RealLimitAsyncHandler;
 			typedef Outcome<Error, Model::ConfigLayer4RemarkResult> ConfigLayer4RemarkOutcome;
 			typedef std::future<ConfigLayer4RemarkOutcome> ConfigLayer4RemarkOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::ConfigLayer4RemarkRequest&, const ConfigLayer4RemarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfigLayer4RemarkAsyncHandler;
@@ -522,12 +555,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDomainQPSListResult> DescribeDomainQPSListOutcome;
 			typedef std::future<DescribeDomainQPSListOutcome> DescribeDomainQPSListOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeDomainQPSListRequest&, const DescribeDomainQPSListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainQPSListAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDomainQpsWithCacheResult> DescribeDomainQpsWithCacheOutcome;
-			typedef std::future<DescribeDomainQpsWithCacheOutcome> DescribeDomainQpsWithCacheOutcomeCallable;
-			typedef std::function<void(const DdoscooClient*, const Model::DescribeDomainQpsWithCacheRequest&, const DescribeDomainQpsWithCacheOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainQpsWithCacheAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainResourceResult> DescribeDomainResourceOutcome;
 			typedef std::future<DescribeDomainResourceOutcome> DescribeDomainResourceOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeDomainResourceRequest&, const DescribeDomainResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainResourceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDomainSecurityProfileResult> DescribeDomainSecurityProfileOutcome;
+			typedef std::future<DescribeDomainSecurityProfileOutcome> DescribeDomainSecurityProfileOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::DescribeDomainSecurityProfileRequest&, const DescribeDomainSecurityProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainSecurityProfileAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainStatusCodeCountResult> DescribeDomainStatusCodeCountOutcome;
 			typedef std::future<DescribeDomainStatusCodeCountOutcome> DescribeDomainStatusCodeCountOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeDomainStatusCodeCountRequest&, const DescribeDomainStatusCodeCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainStatusCodeCountAsyncHandler;
@@ -555,6 +588,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeElasticBandwidthSpecResult> DescribeElasticBandwidthSpecOutcome;
 			typedef std::future<DescribeElasticBandwidthSpecOutcome> DescribeElasticBandwidthSpecOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeElasticBandwidthSpecRequest&, const DescribeElasticBandwidthSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeElasticBandwidthSpecAsyncHandler;
+			typedef Outcome<Error, Model::DescribeElasticQpsResult> DescribeElasticQpsOutcome;
+			typedef std::future<DescribeElasticQpsOutcome> DescribeElasticQpsOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::DescribeElasticQpsRequest&, const DescribeElasticQpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeElasticQpsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeElasticQpsRecordResult> DescribeElasticQpsRecordOutcome;
+			typedef std::future<DescribeElasticQpsRecordOutcome> DescribeElasticQpsRecordOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::DescribeElasticQpsRecordRequest&, const DescribeElasticQpsRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeElasticQpsRecordAsyncHandler;
+			typedef Outcome<Error, Model::DescribeHeadersResult> DescribeHeadersOutcome;
+			typedef std::future<DescribeHeadersOutcome> DescribeHeadersOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::DescribeHeadersRequest&, const DescribeHeadersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHeadersAsyncHandler;
 			typedef Outcome<Error, Model::DescribeHealthCheckListResult> DescribeHealthCheckListOutcome;
 			typedef std::future<DescribeHealthCheckListOutcome> DescribeHealthCheckListOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeHealthCheckListRequest&, const DescribeHealthCheckListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHealthCheckListAsyncHandler;
@@ -564,6 +606,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceDetailsResult> DescribeInstanceDetailsOutcome;
 			typedef std::future<DescribeInstanceDetailsOutcome> DescribeInstanceDetailsOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeInstanceDetailsRequest&, const DescribeInstanceDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceDetailsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeInstanceExtResult> DescribeInstanceExtOutcome;
+			typedef std::future<DescribeInstanceExtOutcome> DescribeInstanceExtOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::DescribeInstanceExtRequest&, const DescribeInstanceExtOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceExtAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceIdsResult> DescribeInstanceIdsOutcome;
 			typedef std::future<DescribeInstanceIdsOutcome> DescribeInstanceIdsOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeInstanceIdsRequest&, const DescribeInstanceIdsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceIdsAsyncHandler;
@@ -609,6 +654,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribePortAutoCcStatusResult> DescribePortAutoCcStatusOutcome;
 			typedef std::future<DescribePortAutoCcStatusOutcome> DescribePortAutoCcStatusOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribePortAutoCcStatusRequest&, const DescribePortAutoCcStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePortAutoCcStatusAsyncHandler;
+			typedef Outcome<Error, Model::DescribePortCcAttackTopIPResult> DescribePortCcAttackTopIPOutcome;
+			typedef std::future<DescribePortCcAttackTopIPOutcome> DescribePortCcAttackTopIPOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::DescribePortCcAttackTopIPRequest&, const DescribePortCcAttackTopIPOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePortCcAttackTopIPAsyncHandler;
 			typedef Outcome<Error, Model::DescribePortConnsCountResult> DescribePortConnsCountOutcome;
 			typedef std::future<DescribePortConnsCountOutcome> DescribePortConnsCountOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribePortConnsCountRequest&, const DescribePortConnsCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePortConnsCountAsyncHandler;
@@ -639,6 +687,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSchedulerRulesResult> DescribeSchedulerRulesOutcome;
 			typedef std::future<DescribeSchedulerRulesOutcome> DescribeSchedulerRulesOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeSchedulerRulesRequest&, const DescribeSchedulerRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSchedulerRulesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSlaEventListResult> DescribeSlaEventListOutcome;
+			typedef std::future<DescribeSlaEventListOutcome> DescribeSlaEventListOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::DescribeSlaEventListRequest&, const DescribeSlaEventListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlaEventListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSlsAuthStatusResult> DescribeSlsAuthStatusOutcome;
 			typedef std::future<DescribeSlsAuthStatusOutcome> DescribeSlsAuthStatusOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeSlsAuthStatusRequest&, const DescribeSlsAuthStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlsAuthStatusAsyncHandler;
@@ -660,6 +711,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTagResourcesResult> DescribeTagResourcesOutcome;
 			typedef std::future<DescribeTagResourcesOutcome> DescribeTagResourcesOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeTagResourcesRequest&, const DescribeTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTotalAttackMaxFlowResult> DescribeTotalAttackMaxFlowOutcome;
+			typedef std::future<DescribeTotalAttackMaxFlowOutcome> DescribeTotalAttackMaxFlowOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::DescribeTotalAttackMaxFlowRequest&, const DescribeTotalAttackMaxFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTotalAttackMaxFlowAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUdpReflectResult> DescribeUdpReflectOutcome;
 			typedef std::future<DescribeUdpReflectOutcome> DescribeUdpReflectOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeUdpReflectRequest&, const DescribeUdpReflectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUdpReflectAsyncHandler;
@@ -702,6 +756,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeWebPreciseAccessRuleResult> DescribeWebPreciseAccessRuleOutcome;
 			typedef std::future<DescribeWebPreciseAccessRuleOutcome> DescribeWebPreciseAccessRuleOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeWebPreciseAccessRuleRequest&, const DescribeWebPreciseAccessRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebPreciseAccessRuleAsyncHandler;
+			typedef Outcome<Error, Model::DescribeWebReportTopIpResult> DescribeWebReportTopIpOutcome;
+			typedef std::future<DescribeWebReportTopIpOutcome> DescribeWebReportTopIpOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::DescribeWebReportTopIpRequest&, const DescribeWebReportTopIpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebReportTopIpAsyncHandler;
 			typedef Outcome<Error, Model::DescribeWebRulesResult> DescribeWebRulesOutcome;
 			typedef std::future<DescribeWebRulesOutcome> DescribeWebRulesOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeWebRulesRequest&, const DescribeWebRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebRulesAsyncHandler;
@@ -741,6 +798,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnableWebCCRuleResult> EnableWebCCRuleOutcome;
 			typedef std::future<EnableWebCCRuleOutcome> EnableWebCCRuleOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::EnableWebCCRuleRequest&, const EnableWebCCRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableWebCCRuleAsyncHandler;
+			typedef Outcome<Error, Model::ModifyBizBandWidthModeResult> ModifyBizBandWidthModeOutcome;
+			typedef std::future<ModifyBizBandWidthModeOutcome> ModifyBizBandWidthModeOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::ModifyBizBandWidthModeRequest&, const ModifyBizBandWidthModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBizBandWidthModeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyBlackholeStatusResult> ModifyBlackholeStatusOutcome;
 			typedef std::future<ModifyBlackholeStatusOutcome> ModifyBlackholeStatusOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::ModifyBlackholeStatusRequest&, const ModifyBlackholeStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlackholeStatusAsyncHandler;
@@ -756,9 +816,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyElasticBandWidthResult> ModifyElasticBandWidthOutcome;
 			typedef std::future<ModifyElasticBandWidthOutcome> ModifyElasticBandWidthOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::ModifyElasticBandWidthRequest&, const ModifyElasticBandWidthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyElasticBandWidthAsyncHandler;
+			typedef Outcome<Error, Model::ModifyElasticBizBandWidthResult> ModifyElasticBizBandWidthOutcome;
+			typedef std::future<ModifyElasticBizBandWidthOutcome> ModifyElasticBizBandWidthOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::ModifyElasticBizBandWidthRequest&, const ModifyElasticBizBandWidthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyElasticBizBandWidthAsyncHandler;
+			typedef Outcome<Error, Model::ModifyElasticBizQpsResult> ModifyElasticBizQpsOutcome;
+			typedef std::future<ModifyElasticBizQpsOutcome> ModifyElasticBizQpsOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::ModifyElasticBizQpsRequest&, const ModifyElasticBizQpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyElasticBizQpsAsyncHandler;
 			typedef Outcome<Error, Model::ModifyFullLogTtlResult> ModifyFullLogTtlOutcome;
 			typedef std::future<ModifyFullLogTtlOutcome> ModifyFullLogTtlOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::ModifyFullLogTtlRequest&, const ModifyFullLogTtlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFullLogTtlAsyncHandler;
+			typedef Outcome<Error, Model::ModifyHeadersResult> ModifyHeadersOutcome;
+			typedef std::future<ModifyHeadersOutcome> ModifyHeadersOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::ModifyHeadersRequest&, const ModifyHeadersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHeadersAsyncHandler;
 			typedef Outcome<Error, Model::ModifyHealthCheckConfigResult> ModifyHealthCheckConfigOutcome;
 			typedef std::future<ModifyHealthCheckConfigOutcome> ModifyHealthCheckConfigOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::ModifyHealthCheckConfigRequest&, const ModifyHealthCheckConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHealthCheckConfigAsyncHandler;
@@ -771,12 +840,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyNetworkRuleAttributeResult> ModifyNetworkRuleAttributeOutcome;
 			typedef std::future<ModifyNetworkRuleAttributeOutcome> ModifyNetworkRuleAttributeOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::ModifyNetworkRuleAttributeRequest&, const ModifyNetworkRuleAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNetworkRuleAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyOcspStatusResult> ModifyOcspStatusOutcome;
+			typedef std::future<ModifyOcspStatusOutcome> ModifyOcspStatusOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::ModifyOcspStatusRequest&, const ModifyOcspStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOcspStatusAsyncHandler;
 			typedef Outcome<Error, Model::ModifyPortResult> ModifyPortOutcome;
 			typedef std::future<ModifyPortOutcome> ModifyPortOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::ModifyPortRequest&, const ModifyPortOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPortAsyncHandler;
 			typedef Outcome<Error, Model::ModifyPortAutoCcStatusResult> ModifyPortAutoCcStatusOutcome;
 			typedef std::future<ModifyPortAutoCcStatusOutcome> ModifyPortAutoCcStatusOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::ModifyPortAutoCcStatusRequest&, const ModifyPortAutoCcStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPortAutoCcStatusAsyncHandler;
+			typedef Outcome<Error, Model::ModifyQpsModeResult> ModifyQpsModeOutcome;
+			typedef std::future<ModifyQpsModeOutcome> ModifyQpsModeOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::ModifyQpsModeRequest&, const ModifyQpsModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyQpsModeAsyncHandler;
 			typedef Outcome<Error, Model::ModifySceneDefensePolicyResult> ModifySceneDefensePolicyOutcome;
 			typedef std::future<ModifySceneDefensePolicyOutcome> ModifySceneDefensePolicyOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::ModifySceneDefensePolicyRequest&, const ModifySceneDefensePolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySceneDefensePolicyAsyncHandler;
@@ -851,6 +926,9 @@ namespace AlibabaCloud
 			ConfigL7RsPolicyOutcome configL7RsPolicy(const Model::ConfigL7RsPolicyRequest &request)const;
 			void configL7RsPolicyAsync(const Model::ConfigL7RsPolicyRequest& request, const ConfigL7RsPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConfigL7RsPolicyOutcomeCallable configL7RsPolicyCallable(const Model::ConfigL7RsPolicyRequest& request) const;
+			ConfigLayer4RealLimitOutcome configLayer4RealLimit(const Model::ConfigLayer4RealLimitRequest &request)const;
+			void configLayer4RealLimitAsync(const Model::ConfigLayer4RealLimitRequest& request, const ConfigLayer4RealLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ConfigLayer4RealLimitOutcomeCallable configLayer4RealLimitCallable(const Model::ConfigLayer4RealLimitRequest& request) const;
 			ConfigLayer4RemarkOutcome configLayer4Remark(const Model::ConfigLayer4RemarkRequest &request)const;
 			void configLayer4RemarkAsync(const Model::ConfigLayer4RemarkRequest& request, const ConfigLayer4RemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConfigLayer4RemarkOutcomeCallable configLayer4RemarkCallable(const Model::ConfigLayer4RemarkRequest& request) const;
@@ -1007,12 +1085,12 @@ namespace AlibabaCloud
 			DescribeDomainQPSListOutcome describeDomainQPSList(const Model::DescribeDomainQPSListRequest &request)const;
 			void describeDomainQPSListAsync(const Model::DescribeDomainQPSListRequest& request, const DescribeDomainQPSListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainQPSListOutcomeCallable describeDomainQPSListCallable(const Model::DescribeDomainQPSListRequest& request) const;
-			DescribeDomainQpsWithCacheOutcome describeDomainQpsWithCache(const Model::DescribeDomainQpsWithCacheRequest &request)const;
-			void describeDomainQpsWithCacheAsync(const Model::DescribeDomainQpsWithCacheRequest& request, const DescribeDomainQpsWithCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDomainQpsWithCacheOutcomeCallable describeDomainQpsWithCacheCallable(const Model::DescribeDomainQpsWithCacheRequest& request) const;
 			DescribeDomainResourceOutcome describeDomainResource(const Model::DescribeDomainResourceRequest &request)const;
 			void describeDomainResourceAsync(const Model::DescribeDomainResourceRequest& request, const DescribeDomainResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainResourceOutcomeCallable describeDomainResourceCallable(const Model::DescribeDomainResourceRequest& request) const;
+			DescribeDomainSecurityProfileOutcome describeDomainSecurityProfile(const Model::DescribeDomainSecurityProfileRequest &request)const;
+			void describeDomainSecurityProfileAsync(const Model::DescribeDomainSecurityProfileRequest& request, const DescribeDomainSecurityProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDomainSecurityProfileOutcomeCallable describeDomainSecurityProfileCallable(const Model::DescribeDomainSecurityProfileRequest& request) const;
 			DescribeDomainStatusCodeCountOutcome describeDomainStatusCodeCount(const Model::DescribeDomainStatusCodeCountRequest &request)const;
 			void describeDomainStatusCodeCountAsync(const Model::DescribeDomainStatusCodeCountRequest& request, const DescribeDomainStatusCodeCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainStatusCodeCountOutcomeCallable describeDomainStatusCodeCountCallable(const Model::DescribeDomainStatusCodeCountRequest& request) const;
@@ -1040,6 +1118,15 @@ namespace AlibabaCloud
 			DescribeElasticBandwidthSpecOutcome describeElasticBandwidthSpec(const Model::DescribeElasticBandwidthSpecRequest &request)const;
 			void describeElasticBandwidthSpecAsync(const Model::DescribeElasticBandwidthSpecRequest& request, const DescribeElasticBandwidthSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeElasticBandwidthSpecOutcomeCallable describeElasticBandwidthSpecCallable(const Model::DescribeElasticBandwidthSpecRequest& request) const;
+			DescribeElasticQpsOutcome describeElasticQps(const Model::DescribeElasticQpsRequest &request)const;
+			void describeElasticQpsAsync(const Model::DescribeElasticQpsRequest& request, const DescribeElasticQpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeElasticQpsOutcomeCallable describeElasticQpsCallable(const Model::DescribeElasticQpsRequest& request) const;
+			DescribeElasticQpsRecordOutcome describeElasticQpsRecord(const Model::DescribeElasticQpsRecordRequest &request)const;
+			void describeElasticQpsRecordAsync(const Model::DescribeElasticQpsRecordRequest& request, const DescribeElasticQpsRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeElasticQpsRecordOutcomeCallable describeElasticQpsRecordCallable(const Model::DescribeElasticQpsRecordRequest& request) const;
+			DescribeHeadersOutcome describeHeaders(const Model::DescribeHeadersRequest &request)const;
+			void describeHeadersAsync(const Model::DescribeHeadersRequest& request, const DescribeHeadersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeHeadersOutcomeCallable describeHeadersCallable(const Model::DescribeHeadersRequest& request) const;
 			DescribeHealthCheckListOutcome describeHealthCheckList(const Model::DescribeHealthCheckListRequest &request)const;
 			void describeHealthCheckListAsync(const Model::DescribeHealthCheckListRequest& request, const DescribeHealthCheckListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeHealthCheckListOutcomeCallable describeHealthCheckListCallable(const Model::DescribeHealthCheckListRequest& request) const;
@@ -1049,6 +1136,9 @@ namespace AlibabaCloud
 			DescribeInstanceDetailsOutcome describeInstanceDetails(const Model::DescribeInstanceDetailsRequest &request)const;
 			void describeInstanceDetailsAsync(const Model::DescribeInstanceDetailsRequest& request, const DescribeInstanceDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceDetailsOutcomeCallable describeInstanceDetailsCallable(const Model::DescribeInstanceDetailsRequest& request) const;
+			DescribeInstanceExtOutcome describeInstanceExt(const Model::DescribeInstanceExtRequest &request)const;
+			void describeInstanceExtAsync(const Model::DescribeInstanceExtRequest& request, const DescribeInstanceExtAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeInstanceExtOutcomeCallable describeInstanceExtCallable(const Model::DescribeInstanceExtRequest& request) const;
 			DescribeInstanceIdsOutcome describeInstanceIds(const Model::DescribeInstanceIdsRequest &request)const;
 			void describeInstanceIdsAsync(const Model::DescribeInstanceIdsRequest& request, const DescribeInstanceIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceIdsOutcomeCallable describeInstanceIdsCallable(const Model::DescribeInstanceIdsRequest& request) const;
@@ -1094,6 +1184,9 @@ namespace AlibabaCloud
 			DescribePortAutoCcStatusOutcome describePortAutoCcStatus(const Model::DescribePortAutoCcStatusRequest &request)const;
 			void describePortAutoCcStatusAsync(const Model::DescribePortAutoCcStatusRequest& request, const DescribePortAutoCcStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePortAutoCcStatusOutcomeCallable describePortAutoCcStatusCallable(const Model::DescribePortAutoCcStatusRequest& request) const;
+			DescribePortCcAttackTopIPOutcome describePortCcAttackTopIP(const Model::DescribePortCcAttackTopIPRequest &request)const;
+			void describePortCcAttackTopIPAsync(const Model::DescribePortCcAttackTopIPRequest& request, const DescribePortCcAttackTopIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePortCcAttackTopIPOutcomeCallable describePortCcAttackTopIPCallable(const Model::DescribePortCcAttackTopIPRequest& request) const;
 			DescribePortConnsCountOutcome describePortConnsCount(const Model::DescribePortConnsCountRequest &request)const;
 			void describePortConnsCountAsync(const Model::DescribePortConnsCountRequest& request, const DescribePortConnsCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePortConnsCountOutcomeCallable describePortConnsCountCallable(const Model::DescribePortConnsCountRequest& request) const;
@@ -1124,6 +1217,9 @@ namespace AlibabaCloud
 			DescribeSchedulerRulesOutcome describeSchedulerRules(const Model::DescribeSchedulerRulesRequest &request)const;
 			void describeSchedulerRulesAsync(const Model::DescribeSchedulerRulesRequest& request, const DescribeSchedulerRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSchedulerRulesOutcomeCallable describeSchedulerRulesCallable(const Model::DescribeSchedulerRulesRequest& request) const;
+			DescribeSlaEventListOutcome describeSlaEventList(const Model::DescribeSlaEventListRequest &request)const;
+			void describeSlaEventListAsync(const Model::DescribeSlaEventListRequest& request, const DescribeSlaEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSlaEventListOutcomeCallable describeSlaEventListCallable(const Model::DescribeSlaEventListRequest& request) const;
 			DescribeSlsAuthStatusOutcome describeSlsAuthStatus(const Model::DescribeSlsAuthStatusRequest &request)const;
 			void describeSlsAuthStatusAsync(const Model::DescribeSlsAuthStatusRequest& request, const DescribeSlsAuthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSlsAuthStatusOutcomeCallable describeSlsAuthStatusCallable(const Model::DescribeSlsAuthStatusRequest& request) const;
@@ -1145,6 +1241,9 @@ namespace AlibabaCloud
 			DescribeTagResourcesOutcome describeTagResources(const Model::DescribeTagResourcesRequest &request)const;
 			void describeTagResourcesAsync(const Model::DescribeTagResourcesRequest& request, const DescribeTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTagResourcesOutcomeCallable describeTagResourcesCallable(const Model::DescribeTagResourcesRequest& request) const;
+			DescribeTotalAttackMaxFlowOutcome describeTotalAttackMaxFlow(const Model::DescribeTotalAttackMaxFlowRequest &request)const;
+			void describeTotalAttackMaxFlowAsync(const Model::DescribeTotalAttackMaxFlowRequest& request, const DescribeTotalAttackMaxFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTotalAttackMaxFlowOutcomeCallable describeTotalAttackMaxFlowCallable(const Model::DescribeTotalAttackMaxFlowRequest& request) const;
 			DescribeUdpReflectOutcome describeUdpReflect(const Model::DescribeUdpReflectRequest &request)const;
 			void describeUdpReflectAsync(const Model::DescribeUdpReflectRequest& request, const DescribeUdpReflectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUdpReflectOutcomeCallable describeUdpReflectCallable(const Model::DescribeUdpReflectRequest& request) const;
@@ -1187,6 +1286,9 @@ namespace AlibabaCloud
 			DescribeWebPreciseAccessRuleOutcome describeWebPreciseAccessRule(const Model::DescribeWebPreciseAccessRuleRequest &request)const;
 			void describeWebPreciseAccessRuleAsync(const Model::DescribeWebPreciseAccessRuleRequest& request, const DescribeWebPreciseAccessRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeWebPreciseAccessRuleOutcomeCallable describeWebPreciseAccessRuleCallable(const Model::DescribeWebPreciseAccessRuleRequest& request) const;
+			DescribeWebReportTopIpOutcome describeWebReportTopIp(const Model::DescribeWebReportTopIpRequest &request)const;
+			void describeWebReportTopIpAsync(const Model::DescribeWebReportTopIpRequest& request, const DescribeWebReportTopIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeWebReportTopIpOutcomeCallable describeWebReportTopIpCallable(const Model::DescribeWebReportTopIpRequest& request) const;
 			DescribeWebRulesOutcome describeWebRules(const Model::DescribeWebRulesRequest &request)const;
 			void describeWebRulesAsync(const Model::DescribeWebRulesRequest& request, const DescribeWebRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeWebRulesOutcomeCallable describeWebRulesCallable(const Model::DescribeWebRulesRequest& request) const;
@@ -1226,6 +1328,9 @@ namespace AlibabaCloud
 			EnableWebCCRuleOutcome enableWebCCRule(const Model::EnableWebCCRuleRequest &request)const;
 			void enableWebCCRuleAsync(const Model::EnableWebCCRuleRequest& request, const EnableWebCCRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableWebCCRuleOutcomeCallable enableWebCCRuleCallable(const Model::EnableWebCCRuleRequest& request) const;
+			ModifyBizBandWidthModeOutcome modifyBizBandWidthMode(const Model::ModifyBizBandWidthModeRequest &request)const;
+			void modifyBizBandWidthModeAsync(const Model::ModifyBizBandWidthModeRequest& request, const ModifyBizBandWidthModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyBizBandWidthModeOutcomeCallable modifyBizBandWidthModeCallable(const Model::ModifyBizBandWidthModeRequest& request) const;
 			ModifyBlackholeStatusOutcome modifyBlackholeStatus(const Model::ModifyBlackholeStatusRequest &request)const;
 			void modifyBlackholeStatusAsync(const Model::ModifyBlackholeStatusRequest& request, const ModifyBlackholeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBlackholeStatusOutcomeCallable modifyBlackholeStatusCallable(const Model::ModifyBlackholeStatusRequest& request) const;
@@ -1241,9 +1346,18 @@ namespace AlibabaCloud
 			ModifyElasticBandWidthOutcome modifyElasticBandWidth(const Model::ModifyElasticBandWidthRequest &request)const;
 			void modifyElasticBandWidthAsync(const Model::ModifyElasticBandWidthRequest& request, const ModifyElasticBandWidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyElasticBandWidthOutcomeCallable modifyElasticBandWidthCallable(const Model::ModifyElasticBandWidthRequest& request) const;
+			ModifyElasticBizBandWidthOutcome modifyElasticBizBandWidth(const Model::ModifyElasticBizBandWidthRequest &request)const;
+			void modifyElasticBizBandWidthAsync(const Model::ModifyElasticBizBandWidthRequest& request, const ModifyElasticBizBandWidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyElasticBizBandWidthOutcomeCallable modifyElasticBizBandWidthCallable(const Model::ModifyElasticBizBandWidthRequest& request) const;
+			ModifyElasticBizQpsOutcome modifyElasticBizQps(const Model::ModifyElasticBizQpsRequest &request)const;
+			void modifyElasticBizQpsAsync(const Model::ModifyElasticBizQpsRequest& request, const ModifyElasticBizQpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyElasticBizQpsOutcomeCallable modifyElasticBizQpsCallable(const Model::ModifyElasticBizQpsRequest& request) const;
 			ModifyFullLogTtlOutcome modifyFullLogTtl(const Model::ModifyFullLogTtlRequest &request)const;
 			void modifyFullLogTtlAsync(const Model::ModifyFullLogTtlRequest& request, const ModifyFullLogTtlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyFullLogTtlOutcomeCallable modifyFullLogTtlCallable(const Model::ModifyFullLogTtlRequest& request) const;
+			ModifyHeadersOutcome modifyHeaders(const Model::ModifyHeadersRequest &request)const;
+			void modifyHeadersAsync(const Model::ModifyHeadersRequest& request, const ModifyHeadersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyHeadersOutcomeCallable modifyHeadersCallable(const Model::ModifyHeadersRequest& request) const;
 			ModifyHealthCheckConfigOutcome modifyHealthCheckConfig(const Model::ModifyHealthCheckConfigRequest &request)const;
 			void modifyHealthCheckConfigAsync(const Model::ModifyHealthCheckConfigRequest& request, const ModifyHealthCheckConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyHealthCheckConfigOutcomeCallable modifyHealthCheckConfigCallable(const Model::ModifyHealthCheckConfigRequest& request) const;
@@ -1256,12 +1370,18 @@ namespace AlibabaCloud
 			ModifyNetworkRuleAttributeOutcome modifyNetworkRuleAttribute(const Model::ModifyNetworkRuleAttributeRequest &request)const;
 			void modifyNetworkRuleAttributeAsync(const Model::ModifyNetworkRuleAttributeRequest& request, const ModifyNetworkRuleAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyNetworkRuleAttributeOutcomeCallable modifyNetworkRuleAttributeCallable(const Model::ModifyNetworkRuleAttributeRequest& request) const;
+			ModifyOcspStatusOutcome modifyOcspStatus(const Model::ModifyOcspStatusRequest &request)const;
+			void modifyOcspStatusAsync(const Model::ModifyOcspStatusRequest& request, const ModifyOcspStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyOcspStatusOutcomeCallable modifyOcspStatusCallable(const Model::ModifyOcspStatusRequest& request) const;
 			ModifyPortOutcome modifyPort(const Model::ModifyPortRequest &request)const;
 			void modifyPortAsync(const Model::ModifyPortRequest& request, const ModifyPortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyPortOutcomeCallable modifyPortCallable(const Model::ModifyPortRequest& request) const;
 			ModifyPortAutoCcStatusOutcome modifyPortAutoCcStatus(const Model::ModifyPortAutoCcStatusRequest &request)const;
 			void modifyPortAutoCcStatusAsync(const Model::ModifyPortAutoCcStatusRequest& request, const ModifyPortAutoCcStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyPortAutoCcStatusOutcomeCallable modifyPortAutoCcStatusCallable(const Model::ModifyPortAutoCcStatusRequest& request) const;
+			ModifyQpsModeOutcome modifyQpsMode(const Model::ModifyQpsModeRequest &request)const;
+			void modifyQpsModeAsync(const Model::ModifyQpsModeRequest& request, const ModifyQpsModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyQpsModeOutcomeCallable modifyQpsModeCallable(const Model::ModifyQpsModeRequest& request) const;
 			ModifySceneDefensePolicyOutcome modifySceneDefensePolicy(const Model::ModifySceneDefensePolicyRequest &request)const;
 			void modifySceneDefensePolicyAsync(const Model::ModifySceneDefensePolicyRequest& request, const ModifySceneDefensePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySceneDefensePolicyOutcomeCallable modifySceneDefensePolicyCallable(const Model::ModifySceneDefensePolicyRequest& request) const;
