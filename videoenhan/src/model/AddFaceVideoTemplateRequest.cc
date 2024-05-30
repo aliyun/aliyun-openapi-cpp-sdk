@@ -43,6 +43,15 @@ void AddFaceVideoTemplateRequest::setVideoScene(const std::string &videoScene) {
   setBodyParameter(std::string("VideoScene"), videoScene);
 }
 
+bool AddFaceVideoTemplateRequest::getReturnTrans() const {
+  return returnTrans_;
+}
+
+void AddFaceVideoTemplateRequest::setReturnTrans(bool returnTrans) {
+  returnTrans_ = returnTrans;
+  setBodyParameter(std::string("ReturnTrans"), returnTrans ? "true" : "false");
+}
+
 bool AddFaceVideoTemplateRequest::getAsync() const {
   return async_;
 }

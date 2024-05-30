@@ -42,6 +42,8 @@ void AddFaceVideoTemplateResult::parse(const std::string &payload)
 	auto dateNode = value["Date"];
 	if(!dateNode["TemplateId"].isNull())
 		date_.templateId = dateNode["TemplateId"].asString();
+	if(!dateNode["TransResult"].isNull())
+		date_.transResult = dateNode["TransResult"].asString();
 	auto allFaceInfosNode = dateNode["FaceInfos"]["faceInfosItem"];
 	for (auto dateNodeFaceInfosfaceInfosItem : allFaceInfosNode)
 	{

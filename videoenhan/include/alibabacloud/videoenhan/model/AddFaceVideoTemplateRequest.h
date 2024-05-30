@@ -34,6 +34,8 @@ public:
 	void setUserId(const std::string &userId);
 	std::string getVideoScene() const;
 	void setVideoScene(const std::string &videoScene);
+	bool getReturnTrans() const;
+	void setReturnTrans(bool returnTrans);
 	bool getAsync() const;
 	void setAsync(bool async);
 	std::string getVideoURL() const;
@@ -42,6 +44,7 @@ public:
 private:
 	std::string userId_;
 	std::string videoScene_;
+	bool returnTrans_;
 	bool async_;
 	std::string videoURL_;
 };

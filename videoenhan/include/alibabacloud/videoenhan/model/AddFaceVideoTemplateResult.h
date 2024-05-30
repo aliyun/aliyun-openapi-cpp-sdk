@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string templateFaceID;
 						std::string templateFaceURL;
 					};
+					std::string transResult;
 					std::vector<FaceInfosItem> faceInfos;
 					std::string templateId;
 				};
