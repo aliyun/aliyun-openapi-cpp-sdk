@@ -19,7 +19,7 @@
 using AlibabaCloud::Slb::Model::AddBackendServersRequest;
 
 AddBackendServersRequest::AddBackendServersRequest()
-    : RpcServiceRequest("slb", "2013-02-21", "AddBackendServers") {
+    : RpcServiceRequest("slb", "2014-05-15", "AddBackendServers") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -52,13 +52,13 @@ void AddBackendServersRequest::setBackendServers(const std::string &backendServe
   setParameter(std::string("BackendServers"), backendServers);
 }
 
-std::string AddBackendServersRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string AddBackendServersRequest::getRegionId() const {
+  return regionId_;
 }
 
-void AddBackendServersRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void AddBackendServersRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string AddBackendServersRequest::getResourceOwnerAccount() const {

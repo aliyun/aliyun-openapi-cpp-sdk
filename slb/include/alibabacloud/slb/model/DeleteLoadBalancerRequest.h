@@ -34,8 +34,10 @@ public:
 	void setAccess_key_id(const std::string &access_key_id);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getEnableEipReserve() const;
+	void setEnableEipReserve(const std::string &enableEipReserve);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -50,7 +52,8 @@ public:
 private:
 	std::string access_key_id_;
 	long resourceOwnerId_;
-	std::string accessKeyId_;
+	std::string regionId_;
+	std::string enableEipReserve_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

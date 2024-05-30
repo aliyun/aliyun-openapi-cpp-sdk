@@ -19,7 +19,7 @@
 using AlibabaCloud::Slb::Model::DescribeLoadBalancerHTTPListenerAttributeRequest;
 
 DescribeLoadBalancerHTTPListenerAttributeRequest::DescribeLoadBalancerHTTPListenerAttributeRequest()
-    : RpcServiceRequest("slb", "2013-02-21", "DescribeLoadBalancerHTTPListenerAttribute") {
+    : RpcServiceRequest("slb", "2014-05-15", "DescribeLoadBalancerHTTPListenerAttribute") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -43,13 +43,13 @@ void DescribeLoadBalancerHTTPListenerAttributeRequest::setResourceOwnerId(long r
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeLoadBalancerHTTPListenerAttributeRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string DescribeLoadBalancerHTTPListenerAttributeRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeLoadBalancerHTTPListenerAttributeRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void DescribeLoadBalancerHTTPListenerAttributeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 int DescribeLoadBalancerHTTPListenerAttributeRequest::getListenerPort() const {

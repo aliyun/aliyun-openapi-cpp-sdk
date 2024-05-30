@@ -43,8 +43,16 @@ void AddBackendServersResult::parse(const std::string &payload)
 	for (auto valueBackendServersBackendServer : allBackendServersNode)
 	{
 		BackendServer backendServersObject;
+		if(!valueBackendServersBackendServer["VpcId"].isNull())
+			backendServersObject.vpcId = valueBackendServersBackendServer["VpcId"].asString();
+		if(!valueBackendServersBackendServer["Type"].isNull())
+			backendServersObject.type = valueBackendServersBackendServer["Type"].asString();
 		if(!valueBackendServersBackendServer["Weight"].isNull())
 			backendServersObject.weight = valueBackendServersBackendServer["Weight"].asString();
+		if(!valueBackendServersBackendServer["Description"].isNull())
+			backendServersObject.description = valueBackendServersBackendServer["Description"].asString();
+		if(!valueBackendServersBackendServer["ServerIp"].isNull())
+			backendServersObject.serverIp = valueBackendServersBackendServer["ServerIp"].asString();
 		if(!valueBackendServersBackendServer["ServerId"].isNull())
 			backendServersObject.serverId = valueBackendServersBackendServer["ServerId"].asString();
 		backendServers_.push_back(backendServersObject);

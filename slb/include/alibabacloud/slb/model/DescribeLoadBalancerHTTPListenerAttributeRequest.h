@@ -34,8 +34,8 @@ public:
 	void setAccess_key_id(const std::string &access_key_id);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getListenerPort() const;
 	void setListenerPort(int listenerPort);
 	std::string getResourceOwnerAccount() const;
@@ -52,7 +52,7 @@ public:
 private:
 	std::string access_key_id_;
 	long resourceOwnerId_;
-	std::string accessKeyId_;
+	std::string regionId_;
 	int listenerPort_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

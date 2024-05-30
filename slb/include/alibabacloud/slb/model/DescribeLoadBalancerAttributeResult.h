@@ -32,6 +32,11 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SLB_EXPORT DescribeLoadBalancerAttributeResult : public ServiceResult
 			{
 			public:
+				struct Tag
+				{
+					std::string tagKey;
+					std::string tagValue;
+				};
 				struct ListenerPortAndProtocal
 				{
 					int listenerPort;
@@ -39,12 +44,19 @@ namespace AlibabaCloud
 				};
 				struct ListenerPortAndProtocol
 				{
+					std::string listenerForward;
 					int listenerPort;
+					std::string description;
+					int forwardPort;
 					std::string listenerProtocol;
 				};
 				struct BackendServer
 				{
+					std::string type;
+					std::string description;
 					std::string serverId;
+					std::string vpcId;
+					std::string serverIp;
 					int weight;
 				};
 
@@ -53,61 +65,115 @@ namespace AlibabaCloud
 				explicit DescribeLoadBalancerAttributeResult(const std::string &payload);
 				~DescribeLoadBalancerAttributeResult();
 				std::vector<ListenerPortAndProtocal> getListenerPortsAndProtocal()const;
-				std::string getEndTime()const;
 				std::string getAddress()const;
+				std::string getResourceGroupId()const;
+				std::string getSpecType()const;
+				std::string getInstanceChargeType()const;
+				std::vector<BackendServer> getBackendServers()const;
+				std::string getHasReservedInfo()const;
+				std::string getBusinessStatus()const;
+				std::string getLoadBalancerSpec()const;
+				std::string getServiceManagedMode()const;
+				std::string getModificationProtectionReason()const;
+				std::string getAssociatedCenId()const;
+				std::vector<Tag> getTags()const;
+				std::vector<std::string> getListenerPorts()const;
+				std::string getCloudInstanceType()const;
+				std::string getVSwitchId()const;
+				std::string getRenewalStatus()const;
+				std::vector<std::string> getLabels()const;
+				std::string getPayType()const;
+				std::string getInternetChargeType()const;
+				std::string getReservedInfoInternetChargeType()const;
+				std::string getVpcId()const;
+				std::string getDeleteProtection()const;
+				long getEndTimeStamp()const;
+				std::string getLoadBalancerStatus()const;
+				long getAutoReleaseTime()const;
+				int getRenewalDuration()const;
+				std::string getAssociatedCenStatus()const;
+				std::string getEndTime()const;
+				bool getSupportPrivateLink()const;
+				std::string getAddressIPVersion()const;
 				std::vector<ListenerPortAndProtocol> getListenerPortsAndProtocol()const;
 				std::string getLoadBalancerId()const;
-				std::vector<BackendServer> getBackendServers()const;
-				std::string getLoadBalancerSpec()const;
+				std::string getReservedInfoBandwidth()const;
+				std::string getModificationProtectionStatus()const;
 				std::string getNetworkType()const;
 				int getBandwidth()const;
-				std::vector<std::string> getListenerPorts()const;
+				bool getSpecBpsFlag()const;
 				std::string getMasterZoneId()const;
+				std::string getTunnelType()const;
+				std::string getCloudType()const;
 				std::string getCreateTime()const;
-				std::string getVSwitchId()const;
-				std::string getPayType()const;
+				long getCloudInstanceUid()const;
+				std::string getRenewalCycUnit()const;
+				std::string getReservedInfoActiveTime()const;
+				std::string getCloudInstanceId()const;
 				std::string getSlaveZoneId()const;
-				std::string getInternetChargeType()const;
 				std::string getRegionIdAlias()const;
 				std::string getLoadBalancerName()const;
-				std::string getIsPublicAddress()const;
-				std::string getVpcId()const;
-				long getEndTimeStamp()const;
+				std::string getReservedInfoOrderType()const;
 				std::string getRegionId()const;
 				std::string getAddressType()const;
-				std::string getLoadBalancerStatus()const;
 				long getCreateTimeStamp()const;
-				long getAutoReleaseTime()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<ListenerPortAndProtocal> listenerPortsAndProtocal_;
-				std::string endTime_;
 				std::string address_;
+				std::string resourceGroupId_;
+				std::string specType_;
+				std::string instanceChargeType_;
+				std::vector<BackendServer> backendServers_;
+				std::string hasReservedInfo_;
+				std::string businessStatus_;
+				std::string loadBalancerSpec_;
+				std::string serviceManagedMode_;
+				std::string modificationProtectionReason_;
+				std::string associatedCenId_;
+				std::vector<Tag> tags_;
+				std::vector<std::string> listenerPorts_;
+				std::string cloudInstanceType_;
+				std::string vSwitchId_;
+				std::string renewalStatus_;
+				std::vector<std::string> labels_;
+				std::string payType_;
+				std::string internetChargeType_;
+				std::string reservedInfoInternetChargeType_;
+				std::string vpcId_;
+				std::string deleteProtection_;
+				long endTimeStamp_;
+				std::string loadBalancerStatus_;
+				long autoReleaseTime_;
+				int renewalDuration_;
+				std::string associatedCenStatus_;
+				std::string endTime_;
+				bool supportPrivateLink_;
+				std::string addressIPVersion_;
 				std::vector<ListenerPortAndProtocol> listenerPortsAndProtocol_;
 				std::string loadBalancerId_;
-				std::vector<BackendServer> backendServers_;
-				std::string loadBalancerSpec_;
+				std::string reservedInfoBandwidth_;
+				std::string modificationProtectionStatus_;
 				std::string networkType_;
 				int bandwidth_;
-				std::vector<std::string> listenerPorts_;
+				bool specBpsFlag_;
 				std::string masterZoneId_;
+				std::string tunnelType_;
+				std::string cloudType_;
 				std::string createTime_;
-				std::string vSwitchId_;
-				std::string payType_;
+				long cloudInstanceUid_;
+				std::string renewalCycUnit_;
+				std::string reservedInfoActiveTime_;
+				std::string cloudInstanceId_;
 				std::string slaveZoneId_;
-				std::string internetChargeType_;
 				std::string regionIdAlias_;
 				std::string loadBalancerName_;
-				std::string isPublicAddress_;
-				std::string vpcId_;
-				long endTimeStamp_;
+				std::string reservedInfoOrderType_;
 				std::string regionId_;
 				std::string addressType_;
-				std::string loadBalancerStatus_;
 				long createTimeStamp_;
-				long autoReleaseTime_;
 
 			};
 		}

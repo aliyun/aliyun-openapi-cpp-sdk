@@ -34,25 +34,28 @@ public:
 	void setAccess_key_id(const std::string &access_key_id);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getTags() const;
 	void setTags(const std::string &tags);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string access_key_id_;
 	long resourceOwnerId_;
+	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string accessKeyId_;
 	std::string tags_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Slb

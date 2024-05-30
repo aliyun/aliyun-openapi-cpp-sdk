@@ -19,7 +19,7 @@
 using AlibabaCloud::Slb::Model::DescribeRegionsRequest;
 
 DescribeRegionsRequest::DescribeRegionsRequest()
-    : RpcServiceRequest("slb", "2013-02-21", "DescribeRegions") {
+    : RpcServiceRequest("slb", "2014-05-15", "DescribeRegions") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -41,6 +41,15 @@ long DescribeRegionsRequest::getResourceOwnerId() const {
 void DescribeRegionsRequest::setResourceOwnerId(long resourceOwnerId) {
   resourceOwnerId_ = resourceOwnerId;
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
+std::string DescribeRegionsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeRegionsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string DescribeRegionsRequest::getResourceOwnerAccount() const {
@@ -70,15 +79,6 @@ void DescribeRegionsRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DescribeRegionsRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DescribeRegionsRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string DescribeRegionsRequest::getTags() const {
   return tags_;
 }
@@ -86,5 +86,14 @@ std::string DescribeRegionsRequest::getTags() const {
 void DescribeRegionsRequest::setTags(const std::string &tags) {
   tags_ = tags;
   setParameter(std::string("Tags"), tags);
+}
+
+std::string DescribeRegionsRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void DescribeRegionsRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

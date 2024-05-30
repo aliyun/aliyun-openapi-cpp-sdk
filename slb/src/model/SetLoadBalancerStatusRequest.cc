@@ -19,7 +19,7 @@
 using AlibabaCloud::Slb::Model::SetLoadBalancerStatusRequest;
 
 SetLoadBalancerStatusRequest::SetLoadBalancerStatusRequest()
-    : RpcServiceRequest("slb", "2013-02-21", "SetLoadBalancerStatus") {
+    : RpcServiceRequest("slb", "2014-05-15", "SetLoadBalancerStatus") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -43,13 +43,13 @@ void SetLoadBalancerStatusRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string SetLoadBalancerStatusRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string SetLoadBalancerStatusRequest::getRegionId() const {
+  return regionId_;
 }
 
-void SetLoadBalancerStatusRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void SetLoadBalancerStatusRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string SetLoadBalancerStatusRequest::getResourceOwnerAccount() const {

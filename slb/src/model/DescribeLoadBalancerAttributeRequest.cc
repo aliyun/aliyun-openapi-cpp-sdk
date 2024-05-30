@@ -19,7 +19,7 @@
 using AlibabaCloud::Slb::Model::DescribeLoadBalancerAttributeRequest;
 
 DescribeLoadBalancerAttributeRequest::DescribeLoadBalancerAttributeRequest()
-    : RpcServiceRequest("slb", "2013-02-21", "DescribeLoadBalancerAttribute") {
+    : RpcServiceRequest("slb", "2014-05-15", "DescribeLoadBalancerAttribute") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -43,13 +43,22 @@ void DescribeLoadBalancerAttributeRequest::setResourceOwnerId(long resourceOwner
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeLoadBalancerAttributeRequest::getAccessKeyId() const {
-  return accessKeyId_;
+bool DescribeLoadBalancerAttributeRequest::getIncludeReservedData() const {
+  return includeReservedData_;
 }
 
-void DescribeLoadBalancerAttributeRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void DescribeLoadBalancerAttributeRequest::setIncludeReservedData(bool includeReservedData) {
+  includeReservedData_ = includeReservedData;
+  setParameter(std::string("IncludeReservedData"), includeReservedData ? "true" : "false");
+}
+
+std::string DescribeLoadBalancerAttributeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLoadBalancerAttributeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string DescribeLoadBalancerAttributeRequest::getResourceOwnerAccount() const {

@@ -19,7 +19,7 @@
 using AlibabaCloud::Slb::Model::RemoveBackendServersRequest;
 
 RemoveBackendServersRequest::RemoveBackendServersRequest()
-    : RpcServiceRequest("slb", "2013-02-21", "RemoveBackendServers") {
+    : RpcServiceRequest("slb", "2014-05-15", "RemoveBackendServers") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -52,13 +52,13 @@ void RemoveBackendServersRequest::setBackendServers(const std::string &backendSe
   setParameter(std::string("BackendServers"), backendServers);
 }
 
-std::string RemoveBackendServersRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string RemoveBackendServersRequest::getRegionId() const {
+  return regionId_;
 }
 
-void RemoveBackendServersRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void RemoveBackendServersRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string RemoveBackendServersRequest::getResourceOwnerAccount() const {

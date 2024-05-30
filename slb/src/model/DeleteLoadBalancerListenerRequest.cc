@@ -19,7 +19,7 @@
 using AlibabaCloud::Slb::Model::DeleteLoadBalancerListenerRequest;
 
 DeleteLoadBalancerListenerRequest::DeleteLoadBalancerListenerRequest()
-    : RpcServiceRequest("slb", "2013-02-21", "DeleteLoadBalancerListener") {
+    : RpcServiceRequest("slb", "2014-05-15", "DeleteLoadBalancerListener") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -43,13 +43,13 @@ void DeleteLoadBalancerListenerRequest::setResourceOwnerId(long resourceOwnerId)
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DeleteLoadBalancerListenerRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string DeleteLoadBalancerListenerRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DeleteLoadBalancerListenerRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void DeleteLoadBalancerListenerRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 int DeleteLoadBalancerListenerRequest::getListenerPort() const {
@@ -86,6 +86,15 @@ long DeleteLoadBalancerListenerRequest::getOwnerId() const {
 void DeleteLoadBalancerListenerRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DeleteLoadBalancerListenerRequest::getListenerProtocol() const {
+  return listenerProtocol_;
+}
+
+void DeleteLoadBalancerListenerRequest::setListenerProtocol(const std::string &listenerProtocol) {
+  listenerProtocol_ = listenerProtocol;
+  setParameter(std::string("ListenerProtocol"), listenerProtocol);
 }
 
 std::string DeleteLoadBalancerListenerRequest::getTags() const {

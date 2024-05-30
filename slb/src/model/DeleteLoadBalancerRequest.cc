@@ -19,7 +19,7 @@
 using AlibabaCloud::Slb::Model::DeleteLoadBalancerRequest;
 
 DeleteLoadBalancerRequest::DeleteLoadBalancerRequest()
-    : RpcServiceRequest("slb", "2013-02-21", "DeleteLoadBalancer") {
+    : RpcServiceRequest("slb", "2014-05-15", "DeleteLoadBalancer") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -43,13 +43,22 @@ void DeleteLoadBalancerRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DeleteLoadBalancerRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string DeleteLoadBalancerRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DeleteLoadBalancerRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void DeleteLoadBalancerRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DeleteLoadBalancerRequest::getEnableEipReserve() const {
+  return enableEipReserve_;
+}
+
+void DeleteLoadBalancerRequest::setEnableEipReserve(const std::string &enableEipReserve) {
+  enableEipReserve_ = enableEipReserve;
+  setParameter(std::string("EnableEipReserve"), enableEipReserve);
 }
 
 std::string DeleteLoadBalancerRequest::getResourceOwnerAccount() const {

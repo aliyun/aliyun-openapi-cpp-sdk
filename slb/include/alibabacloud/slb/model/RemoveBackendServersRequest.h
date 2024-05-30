@@ -36,8 +36,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getBackendServers() const;
 	void setBackendServers(const std::string &backendServers);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -53,7 +53,7 @@ private:
 	std::string access_key_id_;
 	long resourceOwnerId_;
 	std::string backendServers_;
-	std::string accessKeyId_;
+	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
