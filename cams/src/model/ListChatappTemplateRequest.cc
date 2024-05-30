@@ -25,6 +25,15 @@ ListChatappTemplateRequest::ListChatappTemplateRequest()
 
 ListChatappTemplateRequest::~ListChatappTemplateRequest() {}
 
+std::string ListChatappTemplateRequest::getCode() const {
+  return code_;
+}
+
+void ListChatappTemplateRequest::setCode(const std::string &code) {
+  code_ = code;
+  setParameter(std::string("Code"), code);
+}
+
 std::string ListChatappTemplateRequest::getLanguage() const {
   return language_;
 }

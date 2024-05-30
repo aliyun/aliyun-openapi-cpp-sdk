@@ -37,20 +37,14 @@ namespace AlibabaCloud
 				DeleteFlowResult();
 				explicit DeleteFlowResult(const std::string &payload);
 				~DeleteFlowResult();
-				std::string getResponse()const;
-				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				std::string getCode()const;
-				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string response_;
-				std::string accessDeniedDetail_;
 				std::string message_;
 				std::string code_;
-				bool success_;
 
 			};
 		}

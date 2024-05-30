@@ -25,84 +25,49 @@ ListFlowRequest::ListFlowRequest()
 
 ListFlowRequest::~ListFlowRequest() {}
 
-long ListFlowRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+std::string ListFlowRequest::getApiCode() const {
+  return apiCode_;
 }
 
-void ListFlowRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void ListFlowRequest::setApiCode(const std::string &apiCode) {
+  apiCode_ = apiCode;
+  setParameter(std::string("ApiCode"), apiCode);
 }
 
-std::string ListFlowRequest::getExtendFunction() const {
-  return extendFunction_;
+std::string ListFlowRequest::getProdCode() const {
+  return prodCode_;
 }
 
-void ListFlowRequest::setExtendFunction(const std::string &extendFunction) {
-  extendFunction_ = extendFunction;
-  setParameter(std::string("ExtendFunction"), extendFunction);
+void ListFlowRequest::setProdCode(const std::string &prodCode) {
+  prodCode_ = prodCode;
+  setParameter(std::string("ProdCode"), prodCode);
 }
 
-std::string ListFlowRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string ListFlowRequest::getCustSpaceId() const {
+  return custSpaceId_;
 }
 
-void ListFlowRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void ListFlowRequest::setCustSpaceId(const std::string &custSpaceId) {
+  custSpaceId_ = custSpaceId;
+  setBodyParameter(std::string("CustSpaceId"), custSpaceId);
 }
 
-long ListFlowRequest::getPageSize() const {
-  return pageSize_;
+std::string ListFlowRequest::getFlowName() const {
+  return flowName_;
 }
 
-void ListFlowRequest::setPageSize(long pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
+void ListFlowRequest::setFlowName(const std::string &flowName) {
+  flowName_ = flowName;
+  setBodyParameter(std::string("FlowName"), flowName);
 }
 
-std::string ListFlowRequest::getRouteName() const {
-  return routeName_;
+ListFlowRequest::Page ListFlowRequest::getPage() const {
+  return page_;
 }
 
-void ListFlowRequest::setRouteName(const std::string &routeName) {
-  routeName_ = routeName;
-  setParameter(std::string("RouteName"), routeName);
-}
-
-std::string ListFlowRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void ListFlowRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-long ListFlowRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void ListFlowRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-long ListFlowRequest::getPageNo() const {
-  return pageNo_;
-}
-
-void ListFlowRequest::setPageNo(long pageNo) {
-  pageNo_ = pageNo;
-  setParameter(std::string("PageNo"), std::to_string(pageNo));
-}
-
-std::string ListFlowRequest::getStatus() const {
-  return status_;
-}
-
-void ListFlowRequest::setStatus(const std::string &status) {
-  status_ = status;
-  setParameter(std::string("Status"), status);
+void ListFlowRequest::setPage(const ListFlowRequest::Page &page) {
+  page_ = page;
+  setBodyParameter(std::string("Page") + ".Size", std::to_string(page.size));
+  setBodyParameter(std::string("Page") + ".Index", std::to_string(page.index));
 }
 

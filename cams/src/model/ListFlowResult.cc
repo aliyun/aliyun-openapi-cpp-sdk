@@ -39,51 +39,24 @@ void ListFlowResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataNode = value["Data"]["dataItem"];
-	for (auto valueDatadataItem : allDataNode)
+	auto allDataNode = value["Data"]["返回结果"];
+	for (auto valueData返回结果 : allDataNode)
 	{
-		DataItem dataObject;
-		if(!valueDatadataItem["Status"].isNull())
-			dataObject.status = valueDatadataItem["Status"].asString();
-		if(!valueDatadataItem["GmtCreate"].isNull())
-			dataObject.gmtCreate = valueDatadataItem["GmtCreate"].asString();
-		if(!valueDatadataItem["GmtModified"].isNull())
-			dataObject.gmtModified = valueDatadataItem["GmtModified"].asString();
-		if(!valueDatadataItem["Title"].isNull())
-			dataObject.title = valueDatadataItem["Title"].asString();
-		if(!valueDatadataItem["PartnerId"].isNull())
-			dataObject.partnerId = valueDatadataItem["PartnerId"].asString();
-		if(!valueDatadataItem["Id"].isNull())
-			dataObject.id = valueDatadataItem["Id"].asString();
-		if(!valueDatadataItem["Code"].isNull())
-			dataObject.code = valueDatadataItem["Code"].asString();
-		if(!valueDatadataItem["BizCode"].isNull())
-			dataObject.bizCode = valueDatadataItem["BizCode"].asString();
-		if(!valueDatadataItem["Remark"].isNull())
-			dataObject.remark = valueDatadataItem["Remark"].asString();
+		返回结果 dataObject;
+		if(!valueData返回结果["FlowId"].isNull())
+			dataObject.flowId = valueData返回结果["FlowId"].asString();
+		if(!valueData返回结果["FlowName"].isNull())
+			dataObject.flowName = valueData返回结果["FlowName"].asString();
+		auto allCategories = value["Categories"]["目录"];
+		for (auto value : allCategories)
+			dataObject.categories.push_back(value.asString());
 		data_.push_back(dataObject);
 	}
-	if(!value["Response"].isNull())
-		response_ = value["Response"].asString();
-	if(!value["AccessDeniedDetail"].isNull())
-		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
-}
-
-std::string ListFlowResult::getResponse()const
-{
-	return response_;
-}
-
-std::string ListFlowResult::getAccessDeniedDetail()const
-{
-	return accessDeniedDetail_;
 }
 
 std::string ListFlowResult::getMessage()const
@@ -91,7 +64,7 @@ std::string ListFlowResult::getMessage()const
 	return message_;
 }
 
-std::vector<ListFlowResult::DataItem> ListFlowResult::getData()const
+std::vector<ListFlowResult::返回结果> ListFlowResult::getData()const
 {
 	return data_;
 }
@@ -99,10 +72,5 @@ std::vector<ListFlowResult::DataItem> ListFlowResult::getData()const
 std::string ListFlowResult::getCode()const
 {
 	return code_;
-}
-
-bool ListFlowResult::getSuccess()const
-{
-	return success_;
 }
 

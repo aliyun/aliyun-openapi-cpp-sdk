@@ -32,39 +32,27 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CAMS_EXPORT ListFlowResult : public ServiceResult
 			{
 			public:
-				struct DataItem
+				struct 返回结果
 				{
-					std::string status;
-					std::string gmtCreate;
-					std::string gmtModified;
-					std::string title;
-					std::string partnerId;
-					std::string id;
-					std::string code;
-					std::string bizCode;
-					std::string remark;
+					std::string flowId;
+					std::vector<std::string> categories;
+					std::string flowName;
 				};
 
 
 				ListFlowResult();
 				explicit ListFlowResult(const std::string &payload);
 				~ListFlowResult();
-				std::string getResponse()const;
-				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
-				std::vector<DataItem> getData()const;
+				std::vector<返回结果> getData()const;
 				std::string getCode()const;
-				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string response_;
-				std::string accessDeniedDetail_;
 				std::string message_;
-				std::vector<DataItem> data_;
+				std::vector<返回结果> data_;
 				std::string code_;
-				bool success_;
 
 			};
 		}

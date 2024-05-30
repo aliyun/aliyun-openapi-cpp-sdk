@@ -25,66 +25,39 @@ DeleteFlowRequest::DeleteFlowRequest()
 
 DeleteFlowRequest::~DeleteFlowRequest() {}
 
-long DeleteFlowRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+std::string DeleteFlowRequest::getApiCode() const {
+  return apiCode_;
 }
 
-void DeleteFlowRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void DeleteFlowRequest::setApiCode(const std::string &apiCode) {
+  apiCode_ = apiCode;
+  setParameter(std::string("ApiCode"), apiCode);
 }
 
-std::string DeleteFlowRequest::getCode() const {
-  return code_;
+std::string DeleteFlowRequest::getProdCode() const {
+  return prodCode_;
 }
 
-void DeleteFlowRequest::setCode(const std::string &code) {
-  code_ = code;
-  setParameter(std::string("Code"), code);
+void DeleteFlowRequest::setProdCode(const std::string &prodCode) {
+  prodCode_ = prodCode;
+  setParameter(std::string("ProdCode"), prodCode);
 }
 
-std::string DeleteFlowRequest::getExtendFunction() const {
-  return extendFunction_;
+std::string DeleteFlowRequest::getCustSpaceId() const {
+  return custSpaceId_;
 }
 
-void DeleteFlowRequest::setExtendFunction(const std::string &extendFunction) {
-  extendFunction_ = extendFunction;
-  setParameter(std::string("ExtendFunction"), extendFunction);
+void DeleteFlowRequest::setCustSpaceId(const std::string &custSpaceId) {
+  custSpaceId_ = custSpaceId;
+  setBodyParameter(std::string("CustSpaceId"), custSpaceId);
 }
 
-std::string DeleteFlowRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string DeleteFlowRequest::getFlowId() const {
+  return flowId_;
 }
 
-void DeleteFlowRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DeleteFlowRequest::getRouteName() const {
-  return routeName_;
-}
-
-void DeleteFlowRequest::setRouteName(const std::string &routeName) {
-  routeName_ = routeName;
-  setParameter(std::string("RouteName"), routeName);
-}
-
-std::string DeleteFlowRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DeleteFlowRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-long DeleteFlowRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DeleteFlowRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DeleteFlowRequest::setFlowId(const std::string &flowId) {
+  flowId_ = flowId;
+  setBodyParameter(std::string("FlowId"), flowId);
 }
 

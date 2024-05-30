@@ -34,11 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					std::string authInternationalRateEligibility;
 					std::string currency;
 					std::string id;
 					std::string accountReviewStatus;
 					std::string messageTemplateNamespace;
 					std::string name;
+					std::string primaryBusinessLocation;
 				};
 
 
@@ -49,6 +51,7 @@ namespace AlibabaCloud
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -57,6 +60,7 @@ namespace AlibabaCloud
 				std::string message_;
 				Data data_;
 				std::string code_;
+				bool success_;
 
 			};
 		}

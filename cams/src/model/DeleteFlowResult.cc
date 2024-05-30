@@ -39,27 +39,11 @@ void DeleteFlowResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Response"].isNull())
-		response_ = value["Response"].asString();
-	if(!value["AccessDeniedDetail"].isNull())
-		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
-}
-
-std::string DeleteFlowResult::getResponse()const
-{
-	return response_;
-}
-
-std::string DeleteFlowResult::getAccessDeniedDetail()const
-{
-	return accessDeniedDetail_;
 }
 
 std::string DeleteFlowResult::getMessage()const
@@ -70,10 +54,5 @@ std::string DeleteFlowResult::getMessage()const
 std::string DeleteFlowResult::getCode()const
 {
 	return code_;
-}
-
-bool DeleteFlowResult::getSuccess()const
-{
-	return success_;
 }
 

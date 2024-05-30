@@ -25,13 +25,58 @@ QueryChatappBindWabaRequest::QueryChatappBindWabaRequest()
 
 QueryChatappBindWabaRequest::~QueryChatappBindWabaRequest() {}
 
-std::string QueryChatappBindWabaRequest::getApiCode() const {
-  return apiCode_;
+long QueryChatappBindWabaRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void QueryChatappBindWabaRequest::setApiCode(const std::string &apiCode) {
-  apiCode_ = apiCode;
-  setParameter(std::string("ApiCode"), apiCode);
+void QueryChatappBindWabaRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
+std::string QueryChatappBindWabaRequest::getLowcodeTenantId() const {
+  return lowcodeTenantId_;
+}
+
+void QueryChatappBindWabaRequest::setLowcodeTenantId(const std::string &lowcodeTenantId) {
+  lowcodeTenantId_ = lowcodeTenantId;
+  setParameter(std::string("LowcodeTenantId"), lowcodeTenantId);
+}
+
+std::string QueryChatappBindWabaRequest::getExtendFunction() const {
+  return extendFunction_;
+}
+
+void QueryChatappBindWabaRequest::setExtendFunction(const std::string &extendFunction) {
+  extendFunction_ = extendFunction;
+  setParameter(std::string("ExtendFunction"), extendFunction);
+}
+
+std::string QueryChatappBindWabaRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void QueryChatappBindWabaRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string QueryChatappBindWabaRequest::getLowcodePhysicAppName() const {
+  return lowcodePhysicAppName_;
+}
+
+void QueryChatappBindWabaRequest::setLowcodePhysicAppName(const std::string &lowcodePhysicAppName) {
+  lowcodePhysicAppName_ = lowcodePhysicAppName;
+  setParameter(std::string("LowcodePhysicAppName"), lowcodePhysicAppName);
+}
+
+std::string QueryChatappBindWabaRequest::getRouteName() const {
+  return routeName_;
+}
+
+void QueryChatappBindWabaRequest::setRouteName(const std::string &routeName) {
+  routeName_ = routeName;
+  setParameter(std::string("RouteName"), routeName);
 }
 
 std::string QueryChatappBindWabaRequest::getIsvCode() const {
@@ -43,13 +88,31 @@ void QueryChatappBindWabaRequest::setIsvCode(const std::string &isvCode) {
   setParameter(std::string("IsvCode"), isvCode);
 }
 
-std::string QueryChatappBindWabaRequest::getProdCode() const {
-  return prodCode_;
+std::string QueryChatappBindWabaRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void QueryChatappBindWabaRequest::setProdCode(const std::string &prodCode) {
-  prodCode_ = prodCode;
-  setParameter(std::string("ProdCode"), prodCode);
+void QueryChatappBindWabaRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long QueryChatappBindWabaRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void QueryChatappBindWabaRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string QueryChatappBindWabaRequest::getLowcodeLogicAppName() const {
+  return lowcodeLogicAppName_;
+}
+
+void QueryChatappBindWabaRequest::setLowcodeLogicAppName(const std::string &lowcodeLogicAppName) {
+  lowcodeLogicAppName_ = lowcodeLogicAppName;
+  setParameter(std::string("LowcodeLogicAppName"), lowcodeLogicAppName);
 }
 
 std::string QueryChatappBindWabaRequest::getCustSpaceId() const {

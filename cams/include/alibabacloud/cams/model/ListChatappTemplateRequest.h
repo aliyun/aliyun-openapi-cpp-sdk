@@ -34,6 +34,8 @@ public:
 	};
 	ListChatappTemplateRequest();
 	~ListChatappTemplateRequest();
+	std::string getCode() const;
+	void setCode(const std::string &code);
 	std::string getLanguage() const;
 	void setLanguage(const std::string &language);
 	std::string getCustWabaId() const;
@@ -56,6 +58,7 @@ public:
 	void setPage(const Page &page);
 
 private:
+	std::string code_;
 	std::string language_;
 	std::string custWabaId_;
 	std::string apiCode_;

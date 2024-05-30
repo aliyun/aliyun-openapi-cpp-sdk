@@ -40,22 +40,28 @@ void QueryChatappBindWabaResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Name"].isNull())
-		data_.name = dataNode["Name"].asString();
+	if(!dataNode["AuthInternationalRateEligibility"].isNull())
+		data_.authInternationalRateEligibility = dataNode["AuthInternationalRateEligibility"].asString();
 	if(!dataNode["Currency"].isNull())
 		data_.currency = dataNode["Currency"].asString();
 	if(!dataNode["Id"].isNull())
 		data_.id = dataNode["Id"].asString();
-	if(!dataNode["MessageTemplateNamespace"].isNull())
-		data_.messageTemplateNamespace = dataNode["MessageTemplateNamespace"].asString();
 	if(!dataNode["AccountReviewStatus"].isNull())
 		data_.accountReviewStatus = dataNode["AccountReviewStatus"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!dataNode["MessageTemplateNamespace"].isNull())
+		data_.messageTemplateNamespace = dataNode["MessageTemplateNamespace"].asString();
+	if(!dataNode["Name"].isNull())
+		data_.name = dataNode["Name"].asString();
+	if(!dataNode["PrimaryBusinessLocation"].isNull())
+		data_.primaryBusinessLocation = dataNode["PrimaryBusinessLocation"].asString();
 	if(!value["AccessDeniedDetail"].isNull())
 		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -77,5 +83,10 @@ QueryChatappBindWabaResult::Data QueryChatappBindWabaResult::getData()const
 std::string QueryChatappBindWabaResult::getCode()const
 {
 	return code_;
+}
+
+bool QueryChatappBindWabaResult::getSuccess()const
+{
+	return success_;
 }
 

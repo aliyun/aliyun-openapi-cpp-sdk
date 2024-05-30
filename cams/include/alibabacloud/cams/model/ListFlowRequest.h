@@ -28,37 +28,29 @@ namespace Cams {
 namespace Model {
 class ALIBABACLOUD_CAMS_EXPORT ListFlowRequest : public RpcServiceRequest {
 public:
+	struct Page {
+		int size;
+		int index;
+	};
 	ListFlowRequest();
 	~ListFlowRequest();
-	long getResourceOwnerId() const;
-	void setResourceOwnerId(long resourceOwnerId);
-	std::string getExtendFunction() const;
-	void setExtendFunction(const std::string &extendFunction);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	long getPageSize() const;
-	void setPageSize(long pageSize);
-	std::string getRouteName() const;
-	void setRouteName(const std::string &routeName);
-	std::string getResourceOwnerAccount() const;
-	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
-	long getPageNo() const;
-	void setPageNo(long pageNo);
-	std::string getStatus() const;
-	void setStatus(const std::string &status);
+	std::string getApiCode() const;
+	void setApiCode(const std::string &apiCode);
+	std::string getProdCode() const;
+	void setProdCode(const std::string &prodCode);
+	std::string getCustSpaceId() const;
+	void setCustSpaceId(const std::string &custSpaceId);
+	std::string getFlowName() const;
+	void setFlowName(const std::string &flowName);
+	Page getPage() const;
+	void setPage(const Page &page);
 
 private:
-	long resourceOwnerId_;
-	std::string extendFunction_;
-	std::string accessKeyId_;
-	long pageSize_;
-	std::string routeName_;
-	std::string resourceOwnerAccount_;
-	long ownerId_;
-	long pageNo_;
-	std::string status_;
+	std::string apiCode_;
+	std::string prodCode_;
+	std::string custSpaceId_;
+	std::string flowName_;
+	Page page_;
 };
 } // namespace Model
 } // namespace Cams

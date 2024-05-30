@@ -30,29 +30,20 @@ class ALIBABACLOUD_CAMS_EXPORT DeleteFlowRequest : public RpcServiceRequest {
 public:
 	DeleteFlowRequest();
 	~DeleteFlowRequest();
-	long getResourceOwnerId() const;
-	void setResourceOwnerId(long resourceOwnerId);
-	std::string getCode() const;
-	void setCode(const std::string &code);
-	std::string getExtendFunction() const;
-	void setExtendFunction(const std::string &extendFunction);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getRouteName() const;
-	void setRouteName(const std::string &routeName);
-	std::string getResourceOwnerAccount() const;
-	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
+	std::string getApiCode() const;
+	void setApiCode(const std::string &apiCode);
+	std::string getProdCode() const;
+	void setProdCode(const std::string &prodCode);
+	std::string getCustSpaceId() const;
+	void setCustSpaceId(const std::string &custSpaceId);
+	std::string getFlowId() const;
+	void setFlowId(const std::string &flowId);
 
 private:
-	long resourceOwnerId_;
-	std::string code_;
-	std::string extendFunction_;
-	std::string accessKeyId_;
-	std::string routeName_;
-	std::string resourceOwnerAccount_;
-	long ownerId_;
+	std::string apiCode_;
+	std::string prodCode_;
+	std::string custSpaceId_;
+	std::string flowId_;
 };
 } // namespace Model
 } // namespace Cams
