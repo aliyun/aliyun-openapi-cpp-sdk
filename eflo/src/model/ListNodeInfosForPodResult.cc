@@ -57,6 +57,10 @@ void ListNodeInfosForPodResult::parse(const std::string &payload)
 			contentObject.leniQuota = std::stoi(valueContentContentItem["LeniQuota"].asString());
 		if(!valueContentContentItem["LniSipQuota"].isNull())
 			contentObject.lniSipQuota = std::stoi(valueContentContentItem["LniSipQuota"].asString());
+		if(!valueContentContentItem["LeniSipQuota"].isNull())
+			contentObject.leniSipQuota = std::stoi(valueContentContentItem["LeniSipQuota"].asString());
+		if(!valueContentContentItem["HdeniQuota"].isNull())
+			contentObject.hdeniQuota = std::stoi(valueContentContentItem["HdeniQuota"].asString());
 		auto allVSwitches = value["VSwitches"]["VSwitche"];
 		for (auto value : allVSwitches)
 			contentObject.vSwitches.push_back(value.asString());

@@ -34,8 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct ContentItem
 				{
+					int leniSipQuota;
 					std::string zoneId;
 					std::string vpcId;
+					int hdeniQuota;
 					std::string clusterId;
 					int lniSipQuota;
 					std::string nodeId;

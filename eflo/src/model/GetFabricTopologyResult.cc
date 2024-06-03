@@ -44,6 +44,10 @@ void GetFabricTopologyResult::parse(const std::string &payload)
 		content_.regionId = contentNode["RegionId"].asString();
 	if(!contentNode["VpdId"].isNull())
 		content_.vpdId = contentNode["VpdId"].asString();
+	if(!contentNode["VpcId"].isNull())
+		content_.vpcId = contentNode["VpcId"].asString();
+	if(!contentNode["ClusterId"].isNull())
+		content_.clusterId = contentNode["ClusterId"].asString();
 	auto allTopoInfoNode = contentNode["TopoInfo"]["Layer"];
 	for (auto contentNodeTopoInfoLayer : allTopoInfoNode)
 	{

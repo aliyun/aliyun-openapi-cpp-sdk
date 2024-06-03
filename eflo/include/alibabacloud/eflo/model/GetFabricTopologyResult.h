@@ -40,7 +40,9 @@ namespace AlibabaCloud
 						std::vector<std::string> nextLayer;
 						std::string layerType;
 					};
+					std::string vpcId;
 					std::string vpdId;
+					std::string clusterId;
 					std::string regionId;
 					std::vector<Layer> topoInfo;
 				};
