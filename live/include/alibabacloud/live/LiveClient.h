@@ -38,6 +38,10 @@
 #include "model/AddCasterVideoResourceResult.h"
 #include "model/AddCustomLiveStreamTranscodeRequest.h"
 #include "model/AddCustomLiveStreamTranscodeResult.h"
+#include "model/AddLiveAIProduceRulesRequest.h"
+#include "model/AddLiveAIProduceRulesResult.h"
+#include "model/AddLiveAISubtitleRequest.h"
+#include "model/AddLiveAISubtitleResult.h"
 #include "model/AddLiveAppRecordConfigRequest.h"
 #include "model/AddLiveAppRecordConfigResult.h"
 #include "model/AddLiveAppSnapshotConfigRequest.h"
@@ -142,6 +146,8 @@
 #include "model/CreateMixStreamResult.h"
 #include "model/CreateRoomRealTimeStreamAddressRequest.h"
 #include "model/CreateRoomRealTimeStreamAddressResult.h"
+#include "model/CreateRtcAsrTaskRequest.h"
+#include "model/CreateRtcAsrTaskResult.h"
 #include "model/DeleteCasterRequest.h"
 #include "model/DeleteCasterResult.h"
 #include "model/DeleteCasterComponentRequest.h"
@@ -166,6 +172,10 @@
 #include "model/DeleteEdgeTranscodeJobResult.h"
 #include "model/DeleteEventSubRequest.h"
 #include "model/DeleteEventSubResult.h"
+#include "model/DeleteLiveAIProduceRulesRequest.h"
+#include "model/DeleteLiveAIProduceRulesResult.h"
+#include "model/DeleteLiveAISubtitleRequest.h"
+#include "model/DeleteLiveAISubtitleResult.h"
 #include "model/DeleteLiveAppRecordConfigRequest.h"
 #include "model/DeleteLiveAppRecordConfigResult.h"
 #include "model/DeleteLiveAppSnapshotConfigRequest.h"
@@ -286,6 +296,10 @@
 #include "model/DescribeForbidPushStreamRoomListResult.h"
 #include "model/DescribeHlsLiveStreamRealTimeBpsDataRequest.h"
 #include "model/DescribeHlsLiveStreamRealTimeBpsDataResult.h"
+#include "model/DescribeLiveAIProduceRulesRequest.h"
+#include "model/DescribeLiveAIProduceRulesResult.h"
+#include "model/DescribeLiveAISubtitleRequest.h"
+#include "model/DescribeLiveAISubtitleResult.h"
 #include "model/DescribeLiveAudioAuditConfigRequest.h"
 #include "model/DescribeLiveAudioAuditConfigResult.h"
 #include "model/DescribeLiveAudioAuditNotifyConfigRequest.h"
@@ -600,6 +614,8 @@
 #include "model/ListLiveDelayConfigResult.h"
 #include "model/ListLiveMessageAppsRequest.h"
 #include "model/ListLiveMessageAppsResult.h"
+#include "model/ListLiveMessageGroupByPageRequest.h"
+#include "model/ListLiveMessageGroupByPageResult.h"
 #include "model/ListLiveMessageGroupMessagesRequest.h"
 #include "model/ListLiveMessageGroupMessagesResult.h"
 #include "model/ListLiveMessageGroupUsersRequest.h"
@@ -674,6 +690,8 @@
 #include "model/PublishLiveStagingConfigToProductionResult.h"
 #include "model/QueryMessageAppRequest.h"
 #include "model/QueryMessageAppResult.h"
+#include "model/QueryRtcAsrTasksRequest.h"
+#include "model/QueryRtcAsrTasksResult.h"
 #include "model/QuerySnapshotCallbackAuthRequest.h"
 #include "model/QuerySnapshotCallbackAuthResult.h"
 #include "model/RealTimeRecordCommandRequest.h"
@@ -766,6 +784,8 @@
 #include "model/StopLiveStreamMonitorResult.h"
 #include "model/StopPlaylistRequest.h"
 #include "model/StopPlaylistResult.h"
+#include "model/StopRtcAsrTaskRequest.h"
+#include "model/StopRtcAsrTaskResult.h"
 #include "model/TagLiveResourcesRequest.h"
 #include "model/TagLiveResourcesResult.h"
 #include "model/UnTagLiveResourcesRequest.h"
@@ -778,6 +798,10 @@
 #include "model/UpdateEdgeTranscodeJobResult.h"
 #include "model/UpdateEventSubRequest.h"
 #include "model/UpdateEventSubResult.h"
+#include "model/UpdateLiveAIProduceRulesRequest.h"
+#include "model/UpdateLiveAIProduceRulesResult.h"
+#include "model/UpdateLiveAISubtitleRequest.h"
+#include "model/UpdateLiveAISubtitleResult.h"
 #include "model/UpdateLiveAppRecordConfigRequest.h"
 #include "model/UpdateLiveAppRecordConfigResult.h"
 #include "model/UpdateLiveAppSnapshotConfigRequest.h"
@@ -855,6 +879,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddCustomLiveStreamTranscodeResult> AddCustomLiveStreamTranscodeOutcome;
 			typedef std::future<AddCustomLiveStreamTranscodeOutcome> AddCustomLiveStreamTranscodeOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::AddCustomLiveStreamTranscodeRequest&, const AddCustomLiveStreamTranscodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCustomLiveStreamTranscodeAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveAIProduceRulesResult> AddLiveAIProduceRulesOutcome;
+			typedef std::future<AddLiveAIProduceRulesOutcome> AddLiveAIProduceRulesOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveAIProduceRulesRequest&, const AddLiveAIProduceRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveAIProduceRulesAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveAISubtitleResult> AddLiveAISubtitleOutcome;
+			typedef std::future<AddLiveAISubtitleOutcome> AddLiveAISubtitleOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveAISubtitleRequest&, const AddLiveAISubtitleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveAISubtitleAsyncHandler;
 			typedef Outcome<Error, Model::AddLiveAppRecordConfigResult> AddLiveAppRecordConfigOutcome;
 			typedef std::future<AddLiveAppRecordConfigOutcome> AddLiveAppRecordConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::AddLiveAppRecordConfigRequest&, const AddLiveAppRecordConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveAppRecordConfigAsyncHandler;
@@ -1011,6 +1041,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateRoomRealTimeStreamAddressResult> CreateRoomRealTimeStreamAddressOutcome;
 			typedef std::future<CreateRoomRealTimeStreamAddressOutcome> CreateRoomRealTimeStreamAddressOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::CreateRoomRealTimeStreamAddressRequest&, const CreateRoomRealTimeStreamAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoomRealTimeStreamAddressAsyncHandler;
+			typedef Outcome<Error, Model::CreateRtcAsrTaskResult> CreateRtcAsrTaskOutcome;
+			typedef std::future<CreateRtcAsrTaskOutcome> CreateRtcAsrTaskOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::CreateRtcAsrTaskRequest&, const CreateRtcAsrTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRtcAsrTaskAsyncHandler;
 			typedef Outcome<Error, Model::DeleteCasterResult> DeleteCasterOutcome;
 			typedef std::future<DeleteCasterOutcome> DeleteCasterOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteCasterRequest&, const DeleteCasterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterAsyncHandler;
@@ -1047,6 +1080,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteEventSubResult> DeleteEventSubOutcome;
 			typedef std::future<DeleteEventSubOutcome> DeleteEventSubOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteEventSubRequest&, const DeleteEventSubOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEventSubAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveAIProduceRulesResult> DeleteLiveAIProduceRulesOutcome;
+			typedef std::future<DeleteLiveAIProduceRulesOutcome> DeleteLiveAIProduceRulesOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveAIProduceRulesRequest&, const DeleteLiveAIProduceRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveAIProduceRulesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveAISubtitleResult> DeleteLiveAISubtitleOutcome;
+			typedef std::future<DeleteLiveAISubtitleOutcome> DeleteLiveAISubtitleOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveAISubtitleRequest&, const DeleteLiveAISubtitleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveAISubtitleAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLiveAppRecordConfigResult> DeleteLiveAppRecordConfigOutcome;
 			typedef std::future<DeleteLiveAppRecordConfigOutcome> DeleteLiveAppRecordConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveAppRecordConfigRequest&, const DeleteLiveAppRecordConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveAppRecordConfigAsyncHandler;
@@ -1227,6 +1266,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeHlsLiveStreamRealTimeBpsDataResult> DescribeHlsLiveStreamRealTimeBpsDataOutcome;
 			typedef std::future<DescribeHlsLiveStreamRealTimeBpsDataOutcome> DescribeHlsLiveStreamRealTimeBpsDataOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeHlsLiveStreamRealTimeBpsDataRequest&, const DescribeHlsLiveStreamRealTimeBpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHlsLiveStreamRealTimeBpsDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveAIProduceRulesResult> DescribeLiveAIProduceRulesOutcome;
+			typedef std::future<DescribeLiveAIProduceRulesOutcome> DescribeLiveAIProduceRulesOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveAIProduceRulesRequest&, const DescribeLiveAIProduceRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveAIProduceRulesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveAISubtitleResult> DescribeLiveAISubtitleOutcome;
+			typedef std::future<DescribeLiveAISubtitleOutcome> DescribeLiveAISubtitleOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveAISubtitleRequest&, const DescribeLiveAISubtitleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveAISubtitleAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveAudioAuditConfigResult> DescribeLiveAudioAuditConfigOutcome;
 			typedef std::future<DescribeLiveAudioAuditConfigOutcome> DescribeLiveAudioAuditConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveAudioAuditConfigRequest&, const DescribeLiveAudioAuditConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveAudioAuditConfigAsyncHandler;
@@ -1698,6 +1743,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListLiveMessageAppsResult> ListLiveMessageAppsOutcome;
 			typedef std::future<ListLiveMessageAppsOutcome> ListLiveMessageAppsOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ListLiveMessageAppsRequest&, const ListLiveMessageAppsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListLiveMessageAppsAsyncHandler;
+			typedef Outcome<Error, Model::ListLiveMessageGroupByPageResult> ListLiveMessageGroupByPageOutcome;
+			typedef std::future<ListLiveMessageGroupByPageOutcome> ListLiveMessageGroupByPageOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ListLiveMessageGroupByPageRequest&, const ListLiveMessageGroupByPageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListLiveMessageGroupByPageAsyncHandler;
 			typedef Outcome<Error, Model::ListLiveMessageGroupMessagesResult> ListLiveMessageGroupMessagesOutcome;
 			typedef std::future<ListLiveMessageGroupMessagesOutcome> ListLiveMessageGroupMessagesOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ListLiveMessageGroupMessagesRequest&, const ListLiveMessageGroupMessagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListLiveMessageGroupMessagesAsyncHandler;
@@ -1809,6 +1857,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryMessageAppResult> QueryMessageAppOutcome;
 			typedef std::future<QueryMessageAppOutcome> QueryMessageAppOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::QueryMessageAppRequest&, const QueryMessageAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryMessageAppAsyncHandler;
+			typedef Outcome<Error, Model::QueryRtcAsrTasksResult> QueryRtcAsrTasksOutcome;
+			typedef std::future<QueryRtcAsrTasksOutcome> QueryRtcAsrTasksOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::QueryRtcAsrTasksRequest&, const QueryRtcAsrTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryRtcAsrTasksAsyncHandler;
 			typedef Outcome<Error, Model::QuerySnapshotCallbackAuthResult> QuerySnapshotCallbackAuthOutcome;
 			typedef std::future<QuerySnapshotCallbackAuthOutcome> QuerySnapshotCallbackAuthOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::QuerySnapshotCallbackAuthRequest&, const QuerySnapshotCallbackAuthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySnapshotCallbackAuthAsyncHandler;
@@ -1947,6 +1998,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopPlaylistResult> StopPlaylistOutcome;
 			typedef std::future<StopPlaylistOutcome> StopPlaylistOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::StopPlaylistRequest&, const StopPlaylistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopPlaylistAsyncHandler;
+			typedef Outcome<Error, Model::StopRtcAsrTaskResult> StopRtcAsrTaskOutcome;
+			typedef std::future<StopRtcAsrTaskOutcome> StopRtcAsrTaskOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::StopRtcAsrTaskRequest&, const StopRtcAsrTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopRtcAsrTaskAsyncHandler;
 			typedef Outcome<Error, Model::TagLiveResourcesResult> TagLiveResourcesOutcome;
 			typedef std::future<TagLiveResourcesOutcome> TagLiveResourcesOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::TagLiveResourcesRequest&, const TagLiveResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagLiveResourcesAsyncHandler;
@@ -1965,6 +2019,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateEventSubResult> UpdateEventSubOutcome;
 			typedef std::future<UpdateEventSubOutcome> UpdateEventSubOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UpdateEventSubRequest&, const UpdateEventSubOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEventSubAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLiveAIProduceRulesResult> UpdateLiveAIProduceRulesOutcome;
+			typedef std::future<UpdateLiveAIProduceRulesOutcome> UpdateLiveAIProduceRulesOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateLiveAIProduceRulesRequest&, const UpdateLiveAIProduceRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveAIProduceRulesAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLiveAISubtitleResult> UpdateLiveAISubtitleOutcome;
+			typedef std::future<UpdateLiveAISubtitleOutcome> UpdateLiveAISubtitleOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateLiveAISubtitleRequest&, const UpdateLiveAISubtitleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveAISubtitleAsyncHandler;
 			typedef Outcome<Error, Model::UpdateLiveAppRecordConfigResult> UpdateLiveAppRecordConfigOutcome;
 			typedef std::future<UpdateLiveAppRecordConfigOutcome> UpdateLiveAppRecordConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UpdateLiveAppRecordConfigRequest&, const UpdateLiveAppRecordConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveAppRecordConfigAsyncHandler;
@@ -2060,6 +2120,12 @@ namespace AlibabaCloud
 			AddCustomLiveStreamTranscodeOutcome addCustomLiveStreamTranscode(const Model::AddCustomLiveStreamTranscodeRequest &request)const;
 			void addCustomLiveStreamTranscodeAsync(const Model::AddCustomLiveStreamTranscodeRequest& request, const AddCustomLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddCustomLiveStreamTranscodeOutcomeCallable addCustomLiveStreamTranscodeCallable(const Model::AddCustomLiveStreamTranscodeRequest& request) const;
+			AddLiveAIProduceRulesOutcome addLiveAIProduceRules(const Model::AddLiveAIProduceRulesRequest &request)const;
+			void addLiveAIProduceRulesAsync(const Model::AddLiveAIProduceRulesRequest& request, const AddLiveAIProduceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveAIProduceRulesOutcomeCallable addLiveAIProduceRulesCallable(const Model::AddLiveAIProduceRulesRequest& request) const;
+			AddLiveAISubtitleOutcome addLiveAISubtitle(const Model::AddLiveAISubtitleRequest &request)const;
+			void addLiveAISubtitleAsync(const Model::AddLiveAISubtitleRequest& request, const AddLiveAISubtitleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveAISubtitleOutcomeCallable addLiveAISubtitleCallable(const Model::AddLiveAISubtitleRequest& request) const;
 			AddLiveAppRecordConfigOutcome addLiveAppRecordConfig(const Model::AddLiveAppRecordConfigRequest &request)const;
 			void addLiveAppRecordConfigAsync(const Model::AddLiveAppRecordConfigRequest& request, const AddLiveAppRecordConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddLiveAppRecordConfigOutcomeCallable addLiveAppRecordConfigCallable(const Model::AddLiveAppRecordConfigRequest& request) const;
@@ -2216,6 +2282,9 @@ namespace AlibabaCloud
 			CreateRoomRealTimeStreamAddressOutcome createRoomRealTimeStreamAddress(const Model::CreateRoomRealTimeStreamAddressRequest &request)const;
 			void createRoomRealTimeStreamAddressAsync(const Model::CreateRoomRealTimeStreamAddressRequest& request, const CreateRoomRealTimeStreamAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRoomRealTimeStreamAddressOutcomeCallable createRoomRealTimeStreamAddressCallable(const Model::CreateRoomRealTimeStreamAddressRequest& request) const;
+			CreateRtcAsrTaskOutcome createRtcAsrTask(const Model::CreateRtcAsrTaskRequest &request)const;
+			void createRtcAsrTaskAsync(const Model::CreateRtcAsrTaskRequest& request, const CreateRtcAsrTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRtcAsrTaskOutcomeCallable createRtcAsrTaskCallable(const Model::CreateRtcAsrTaskRequest& request) const;
 			DeleteCasterOutcome deleteCaster(const Model::DeleteCasterRequest &request)const;
 			void deleteCasterAsync(const Model::DeleteCasterRequest& request, const DeleteCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCasterOutcomeCallable deleteCasterCallable(const Model::DeleteCasterRequest& request) const;
@@ -2252,6 +2321,12 @@ namespace AlibabaCloud
 			DeleteEventSubOutcome deleteEventSub(const Model::DeleteEventSubRequest &request)const;
 			void deleteEventSubAsync(const Model::DeleteEventSubRequest& request, const DeleteEventSubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteEventSubOutcomeCallable deleteEventSubCallable(const Model::DeleteEventSubRequest& request) const;
+			DeleteLiveAIProduceRulesOutcome deleteLiveAIProduceRules(const Model::DeleteLiveAIProduceRulesRequest &request)const;
+			void deleteLiveAIProduceRulesAsync(const Model::DeleteLiveAIProduceRulesRequest& request, const DeleteLiveAIProduceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveAIProduceRulesOutcomeCallable deleteLiveAIProduceRulesCallable(const Model::DeleteLiveAIProduceRulesRequest& request) const;
+			DeleteLiveAISubtitleOutcome deleteLiveAISubtitle(const Model::DeleteLiveAISubtitleRequest &request)const;
+			void deleteLiveAISubtitleAsync(const Model::DeleteLiveAISubtitleRequest& request, const DeleteLiveAISubtitleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveAISubtitleOutcomeCallable deleteLiveAISubtitleCallable(const Model::DeleteLiveAISubtitleRequest& request) const;
 			DeleteLiveAppRecordConfigOutcome deleteLiveAppRecordConfig(const Model::DeleteLiveAppRecordConfigRequest &request)const;
 			void deleteLiveAppRecordConfigAsync(const Model::DeleteLiveAppRecordConfigRequest& request, const DeleteLiveAppRecordConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveAppRecordConfigOutcomeCallable deleteLiveAppRecordConfigCallable(const Model::DeleteLiveAppRecordConfigRequest& request) const;
@@ -2432,6 +2507,12 @@ namespace AlibabaCloud
 			DescribeHlsLiveStreamRealTimeBpsDataOutcome describeHlsLiveStreamRealTimeBpsData(const Model::DescribeHlsLiveStreamRealTimeBpsDataRequest &request)const;
 			void describeHlsLiveStreamRealTimeBpsDataAsync(const Model::DescribeHlsLiveStreamRealTimeBpsDataRequest& request, const DescribeHlsLiveStreamRealTimeBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeHlsLiveStreamRealTimeBpsDataOutcomeCallable describeHlsLiveStreamRealTimeBpsDataCallable(const Model::DescribeHlsLiveStreamRealTimeBpsDataRequest& request) const;
+			DescribeLiveAIProduceRulesOutcome describeLiveAIProduceRules(const Model::DescribeLiveAIProduceRulesRequest &request)const;
+			void describeLiveAIProduceRulesAsync(const Model::DescribeLiveAIProduceRulesRequest& request, const DescribeLiveAIProduceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveAIProduceRulesOutcomeCallable describeLiveAIProduceRulesCallable(const Model::DescribeLiveAIProduceRulesRequest& request) const;
+			DescribeLiveAISubtitleOutcome describeLiveAISubtitle(const Model::DescribeLiveAISubtitleRequest &request)const;
+			void describeLiveAISubtitleAsync(const Model::DescribeLiveAISubtitleRequest& request, const DescribeLiveAISubtitleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveAISubtitleOutcomeCallable describeLiveAISubtitleCallable(const Model::DescribeLiveAISubtitleRequest& request) const;
 			DescribeLiveAudioAuditConfigOutcome describeLiveAudioAuditConfig(const Model::DescribeLiveAudioAuditConfigRequest &request)const;
 			void describeLiveAudioAuditConfigAsync(const Model::DescribeLiveAudioAuditConfigRequest& request, const DescribeLiveAudioAuditConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveAudioAuditConfigOutcomeCallable describeLiveAudioAuditConfigCallable(const Model::DescribeLiveAudioAuditConfigRequest& request) const;
@@ -2903,6 +2984,9 @@ namespace AlibabaCloud
 			ListLiveMessageAppsOutcome listLiveMessageApps(const Model::ListLiveMessageAppsRequest &request)const;
 			void listLiveMessageAppsAsync(const Model::ListLiveMessageAppsRequest& request, const ListLiveMessageAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListLiveMessageAppsOutcomeCallable listLiveMessageAppsCallable(const Model::ListLiveMessageAppsRequest& request) const;
+			ListLiveMessageGroupByPageOutcome listLiveMessageGroupByPage(const Model::ListLiveMessageGroupByPageRequest &request)const;
+			void listLiveMessageGroupByPageAsync(const Model::ListLiveMessageGroupByPageRequest& request, const ListLiveMessageGroupByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListLiveMessageGroupByPageOutcomeCallable listLiveMessageGroupByPageCallable(const Model::ListLiveMessageGroupByPageRequest& request) const;
 			ListLiveMessageGroupMessagesOutcome listLiveMessageGroupMessages(const Model::ListLiveMessageGroupMessagesRequest &request)const;
 			void listLiveMessageGroupMessagesAsync(const Model::ListLiveMessageGroupMessagesRequest& request, const ListLiveMessageGroupMessagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListLiveMessageGroupMessagesOutcomeCallable listLiveMessageGroupMessagesCallable(const Model::ListLiveMessageGroupMessagesRequest& request) const;
@@ -3014,6 +3098,9 @@ namespace AlibabaCloud
 			QueryMessageAppOutcome queryMessageApp(const Model::QueryMessageAppRequest &request)const;
 			void queryMessageAppAsync(const Model::QueryMessageAppRequest& request, const QueryMessageAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryMessageAppOutcomeCallable queryMessageAppCallable(const Model::QueryMessageAppRequest& request) const;
+			QueryRtcAsrTasksOutcome queryRtcAsrTasks(const Model::QueryRtcAsrTasksRequest &request)const;
+			void queryRtcAsrTasksAsync(const Model::QueryRtcAsrTasksRequest& request, const QueryRtcAsrTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryRtcAsrTasksOutcomeCallable queryRtcAsrTasksCallable(const Model::QueryRtcAsrTasksRequest& request) const;
 			QuerySnapshotCallbackAuthOutcome querySnapshotCallbackAuth(const Model::QuerySnapshotCallbackAuthRequest &request)const;
 			void querySnapshotCallbackAuthAsync(const Model::QuerySnapshotCallbackAuthRequest& request, const QuerySnapshotCallbackAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySnapshotCallbackAuthOutcomeCallable querySnapshotCallbackAuthCallable(const Model::QuerySnapshotCallbackAuthRequest& request) const;
@@ -3152,6 +3239,9 @@ namespace AlibabaCloud
 			StopPlaylistOutcome stopPlaylist(const Model::StopPlaylistRequest &request)const;
 			void stopPlaylistAsync(const Model::StopPlaylistRequest& request, const StopPlaylistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopPlaylistOutcomeCallable stopPlaylistCallable(const Model::StopPlaylistRequest& request) const;
+			StopRtcAsrTaskOutcome stopRtcAsrTask(const Model::StopRtcAsrTaskRequest &request)const;
+			void stopRtcAsrTaskAsync(const Model::StopRtcAsrTaskRequest& request, const StopRtcAsrTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopRtcAsrTaskOutcomeCallable stopRtcAsrTaskCallable(const Model::StopRtcAsrTaskRequest& request) const;
 			TagLiveResourcesOutcome tagLiveResources(const Model::TagLiveResourcesRequest &request)const;
 			void tagLiveResourcesAsync(const Model::TagLiveResourcesRequest& request, const TagLiveResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagLiveResourcesOutcomeCallable tagLiveResourcesCallable(const Model::TagLiveResourcesRequest& request) const;
@@ -3170,6 +3260,12 @@ namespace AlibabaCloud
 			UpdateEventSubOutcome updateEventSub(const Model::UpdateEventSubRequest &request)const;
 			void updateEventSubAsync(const Model::UpdateEventSubRequest& request, const UpdateEventSubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateEventSubOutcomeCallable updateEventSubCallable(const Model::UpdateEventSubRequest& request) const;
+			UpdateLiveAIProduceRulesOutcome updateLiveAIProduceRules(const Model::UpdateLiveAIProduceRulesRequest &request)const;
+			void updateLiveAIProduceRulesAsync(const Model::UpdateLiveAIProduceRulesRequest& request, const UpdateLiveAIProduceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLiveAIProduceRulesOutcomeCallable updateLiveAIProduceRulesCallable(const Model::UpdateLiveAIProduceRulesRequest& request) const;
+			UpdateLiveAISubtitleOutcome updateLiveAISubtitle(const Model::UpdateLiveAISubtitleRequest &request)const;
+			void updateLiveAISubtitleAsync(const Model::UpdateLiveAISubtitleRequest& request, const UpdateLiveAISubtitleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLiveAISubtitleOutcomeCallable updateLiveAISubtitleCallable(const Model::UpdateLiveAISubtitleRequest& request) const;
 			UpdateLiveAppRecordConfigOutcome updateLiveAppRecordConfig(const Model::UpdateLiveAppRecordConfigRequest &request)const;
 			void updateLiveAppRecordConfigAsync(const Model::UpdateLiveAppRecordConfigRequest& request, const UpdateLiveAppRecordConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLiveAppRecordConfigOutcomeCallable updateLiveAppRecordConfigCallable(const Model::UpdateLiveAppRecordConfigRequest& request) const;

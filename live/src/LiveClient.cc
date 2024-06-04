@@ -339,6 +339,78 @@ LiveClient::AddCustomLiveStreamTranscodeOutcomeCallable LiveClient::addCustomLiv
 	return task->get_future();
 }
 
+LiveClient::AddLiveAIProduceRulesOutcome LiveClient::addLiveAIProduceRules(const AddLiveAIProduceRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddLiveAIProduceRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddLiveAIProduceRulesOutcome(AddLiveAIProduceRulesResult(outcome.result()));
+	else
+		return AddLiveAIProduceRulesOutcome(outcome.error());
+}
+
+void LiveClient::addLiveAIProduceRulesAsync(const AddLiveAIProduceRulesRequest& request, const AddLiveAIProduceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addLiveAIProduceRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::AddLiveAIProduceRulesOutcomeCallable LiveClient::addLiveAIProduceRulesCallable(const AddLiveAIProduceRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddLiveAIProduceRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->addLiveAIProduceRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::AddLiveAISubtitleOutcome LiveClient::addLiveAISubtitle(const AddLiveAISubtitleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddLiveAISubtitleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddLiveAISubtitleOutcome(AddLiveAISubtitleResult(outcome.result()));
+	else
+		return AddLiveAISubtitleOutcome(outcome.error());
+}
+
+void LiveClient::addLiveAISubtitleAsync(const AddLiveAISubtitleRequest& request, const AddLiveAISubtitleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addLiveAISubtitle(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::AddLiveAISubtitleOutcomeCallable LiveClient::addLiveAISubtitleCallable(const AddLiveAISubtitleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddLiveAISubtitleOutcome()>>(
+			[this, request]()
+			{
+			return this->addLiveAISubtitle(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::AddLiveAppRecordConfigOutcome LiveClient::addLiveAppRecordConfig(const AddLiveAppRecordConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2211,6 +2283,42 @@ LiveClient::CreateRoomRealTimeStreamAddressOutcomeCallable LiveClient::createRoo
 	return task->get_future();
 }
 
+LiveClient::CreateRtcAsrTaskOutcome LiveClient::createRtcAsrTask(const CreateRtcAsrTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateRtcAsrTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateRtcAsrTaskOutcome(CreateRtcAsrTaskResult(outcome.result()));
+	else
+		return CreateRtcAsrTaskOutcome(outcome.error());
+}
+
+void LiveClient::createRtcAsrTaskAsync(const CreateRtcAsrTaskRequest& request, const CreateRtcAsrTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createRtcAsrTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::CreateRtcAsrTaskOutcomeCallable LiveClient::createRtcAsrTaskCallable(const CreateRtcAsrTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateRtcAsrTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createRtcAsrTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DeleteCasterOutcome LiveClient::deleteCaster(const DeleteCasterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2637,6 +2745,78 @@ LiveClient::DeleteEventSubOutcomeCallable LiveClient::deleteEventSubCallable(con
 			[this, request]()
 			{
 			return this->deleteEventSub(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DeleteLiveAIProduceRulesOutcome LiveClient::deleteLiveAIProduceRules(const DeleteLiveAIProduceRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveAIProduceRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveAIProduceRulesOutcome(DeleteLiveAIProduceRulesResult(outcome.result()));
+	else
+		return DeleteLiveAIProduceRulesOutcome(outcome.error());
+}
+
+void LiveClient::deleteLiveAIProduceRulesAsync(const DeleteLiveAIProduceRulesRequest& request, const DeleteLiveAIProduceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLiveAIProduceRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveAIProduceRulesOutcomeCallable LiveClient::deleteLiveAIProduceRulesCallable(const DeleteLiveAIProduceRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveAIProduceRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLiveAIProduceRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DeleteLiveAISubtitleOutcome LiveClient::deleteLiveAISubtitle(const DeleteLiveAISubtitleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveAISubtitleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveAISubtitleOutcome(DeleteLiveAISubtitleResult(outcome.result()));
+	else
+		return DeleteLiveAISubtitleOutcome(outcome.error());
+}
+
+void LiveClient::deleteLiveAISubtitleAsync(const DeleteLiveAISubtitleRequest& request, const DeleteLiveAISubtitleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLiveAISubtitle(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveAISubtitleOutcomeCallable LiveClient::deleteLiveAISubtitleCallable(const DeleteLiveAISubtitleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveAISubtitleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLiveAISubtitle(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4797,6 +4977,78 @@ LiveClient::DescribeHlsLiveStreamRealTimeBpsDataOutcomeCallable LiveClient::desc
 			[this, request]()
 			{
 			return this->describeHlsLiveStreamRealTimeBpsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveAIProduceRulesOutcome LiveClient::describeLiveAIProduceRules(const DescribeLiveAIProduceRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveAIProduceRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveAIProduceRulesOutcome(DescribeLiveAIProduceRulesResult(outcome.result()));
+	else
+		return DescribeLiveAIProduceRulesOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveAIProduceRulesAsync(const DescribeLiveAIProduceRulesRequest& request, const DescribeLiveAIProduceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveAIProduceRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveAIProduceRulesOutcomeCallable LiveClient::describeLiveAIProduceRulesCallable(const DescribeLiveAIProduceRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveAIProduceRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveAIProduceRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveAISubtitleOutcome LiveClient::describeLiveAISubtitle(const DescribeLiveAISubtitleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveAISubtitleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveAISubtitleOutcome(DescribeLiveAISubtitleResult(outcome.result()));
+	else
+		return DescribeLiveAISubtitleOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveAISubtitleAsync(const DescribeLiveAISubtitleRequest& request, const DescribeLiveAISubtitleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveAISubtitle(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveAISubtitleOutcomeCallable LiveClient::describeLiveAISubtitleCallable(const DescribeLiveAISubtitleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveAISubtitleOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveAISubtitle(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -10455,6 +10707,42 @@ LiveClient::ListLiveMessageAppsOutcomeCallable LiveClient::listLiveMessageAppsCa
 	return task->get_future();
 }
 
+LiveClient::ListLiveMessageGroupByPageOutcome LiveClient::listLiveMessageGroupByPage(const ListLiveMessageGroupByPageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListLiveMessageGroupByPageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListLiveMessageGroupByPageOutcome(ListLiveMessageGroupByPageResult(outcome.result()));
+	else
+		return ListLiveMessageGroupByPageOutcome(outcome.error());
+}
+
+void LiveClient::listLiveMessageGroupByPageAsync(const ListLiveMessageGroupByPageRequest& request, const ListLiveMessageGroupByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listLiveMessageGroupByPage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ListLiveMessageGroupByPageOutcomeCallable LiveClient::listLiveMessageGroupByPageCallable(const ListLiveMessageGroupByPageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListLiveMessageGroupByPageOutcome()>>(
+			[this, request]()
+			{
+			return this->listLiveMessageGroupByPage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::ListLiveMessageGroupMessagesOutcome LiveClient::listLiveMessageGroupMessages(const ListLiveMessageGroupMessagesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -11781,6 +12069,42 @@ LiveClient::QueryMessageAppOutcomeCallable LiveClient::queryMessageAppCallable(c
 			[this, request]()
 			{
 			return this->queryMessageApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::QueryRtcAsrTasksOutcome LiveClient::queryRtcAsrTasks(const QueryRtcAsrTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryRtcAsrTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryRtcAsrTasksOutcome(QueryRtcAsrTasksResult(outcome.result()));
+	else
+		return QueryRtcAsrTasksOutcome(outcome.error());
+}
+
+void LiveClient::queryRtcAsrTasksAsync(const QueryRtcAsrTasksRequest& request, const QueryRtcAsrTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryRtcAsrTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::QueryRtcAsrTasksOutcomeCallable LiveClient::queryRtcAsrTasksCallable(const QueryRtcAsrTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryRtcAsrTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->queryRtcAsrTasks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -13443,6 +13767,42 @@ LiveClient::StopPlaylistOutcomeCallable LiveClient::stopPlaylistCallable(const S
 	return task->get_future();
 }
 
+LiveClient::StopRtcAsrTaskOutcome LiveClient::stopRtcAsrTask(const StopRtcAsrTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopRtcAsrTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopRtcAsrTaskOutcome(StopRtcAsrTaskResult(outcome.result()));
+	else
+		return StopRtcAsrTaskOutcome(outcome.error());
+}
+
+void LiveClient::stopRtcAsrTaskAsync(const StopRtcAsrTaskRequest& request, const StopRtcAsrTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopRtcAsrTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::StopRtcAsrTaskOutcomeCallable LiveClient::stopRtcAsrTaskCallable(const StopRtcAsrTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopRtcAsrTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->stopRtcAsrTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::TagLiveResourcesOutcome LiveClient::tagLiveResources(const TagLiveResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -13653,6 +14013,78 @@ LiveClient::UpdateEventSubOutcomeCallable LiveClient::updateEventSubCallable(con
 			[this, request]()
 			{
 			return this->updateEventSub(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::UpdateLiveAIProduceRulesOutcome LiveClient::updateLiveAIProduceRules(const UpdateLiveAIProduceRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLiveAIProduceRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLiveAIProduceRulesOutcome(UpdateLiveAIProduceRulesResult(outcome.result()));
+	else
+		return UpdateLiveAIProduceRulesOutcome(outcome.error());
+}
+
+void LiveClient::updateLiveAIProduceRulesAsync(const UpdateLiveAIProduceRulesRequest& request, const UpdateLiveAIProduceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLiveAIProduceRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateLiveAIProduceRulesOutcomeCallable LiveClient::updateLiveAIProduceRulesCallable(const UpdateLiveAIProduceRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLiveAIProduceRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLiveAIProduceRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::UpdateLiveAISubtitleOutcome LiveClient::updateLiveAISubtitle(const UpdateLiveAISubtitleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLiveAISubtitleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLiveAISubtitleOutcome(UpdateLiveAISubtitleResult(outcome.result()));
+	else
+		return UpdateLiveAISubtitleOutcome(outcome.error());
+}
+
+void LiveClient::updateLiveAISubtitleAsync(const UpdateLiveAISubtitleRequest& request, const UpdateLiveAISubtitleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLiveAISubtitle(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateLiveAISubtitleOutcomeCallable LiveClient::updateLiveAISubtitleCallable(const UpdateLiveAISubtitleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLiveAISubtitleOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLiveAISubtitle(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
