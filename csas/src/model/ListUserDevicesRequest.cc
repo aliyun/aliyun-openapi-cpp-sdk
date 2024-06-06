@@ -123,6 +123,15 @@ void ListUserDevicesRequest::setDepartment(const std::string &department) {
   setParameter(std::string("Department"), department);
 }
 
+std::string ListUserDevicesRequest::getInnerIp() const {
+  return innerIp_;
+}
+
+void ListUserDevicesRequest::setInnerIp(const std::string &innerIp) {
+  innerIp_ = innerIp;
+  setParameter(std::string("InnerIp"), innerIp);
+}
+
 std::vector<ListUserDevicesRequest::std::string> ListUserDevicesRequest::getIaStatuses() const {
   return iaStatuses_;
 }

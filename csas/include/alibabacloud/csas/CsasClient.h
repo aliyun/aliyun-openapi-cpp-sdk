@@ -24,8 +24,12 @@
 #include "CsasExport.h"
 #include "model/AttachApplication2ConnectorRequest.h"
 #include "model/AttachApplication2ConnectorResult.h"
+#include "model/CreateClientUserRequest.h"
+#include "model/CreateClientUserResult.h"
 #include "model/CreateDynamicRouteRequest.h"
 #include "model/CreateDynamicRouteResult.h"
+#include "model/CreateIdpDepartmentRequest.h"
+#include "model/CreateIdpDepartmentResult.h"
 #include "model/CreatePrivateAccessApplicationRequest.h"
 #include "model/CreatePrivateAccessApplicationResult.h"
 #include "model/CreatePrivateAccessPolicyRequest.h"
@@ -36,8 +40,12 @@
 #include "model/CreateRegistrationPolicyResult.h"
 #include "model/CreateUserGroupRequest.h"
 #include "model/CreateUserGroupResult.h"
+#include "model/DeleteClientUserRequest.h"
+#include "model/DeleteClientUserResult.h"
 #include "model/DeleteDynamicRouteRequest.h"
 #include "model/DeleteDynamicRouteResult.h"
+#include "model/DeleteIdpDepartmentRequest.h"
+#include "model/DeleteIdpDepartmentResult.h"
 #include "model/DeletePrivateAccessApplicationRequest.h"
 #include "model/DeletePrivateAccessApplicationResult.h"
 #include "model/DeletePrivateAccessPolicyRequest.h"
@@ -50,8 +58,14 @@
 #include "model/DeleteUserGroupResult.h"
 #include "model/DetachApplication2ConnectorRequest.h"
 #include "model/DetachApplication2ConnectorResult.h"
+#include "model/GetActiveIdpConfigRequest.h"
+#include "model/GetActiveIdpConfigResult.h"
+#include "model/GetClientUserRequest.h"
+#include "model/GetClientUserResult.h"
 #include "model/GetDynamicRouteRequest.h"
 #include "model/GetDynamicRouteResult.h"
+#include "model/GetIdpConfigRequest.h"
+#include "model/GetIdpConfigResult.h"
 #include "model/GetPrivateAccessApplicationRequest.h"
 #include "model/GetPrivateAccessApplicationResult.h"
 #include "model/GetPrivateAccessPolicyRequest.h"
@@ -66,6 +80,8 @@
 #include "model/ListApplicationsForPrivateAccessPolicyResult.h"
 #include "model/ListApplicationsForPrivateAccessTagRequest.h"
 #include "model/ListApplicationsForPrivateAccessTagResult.h"
+#include "model/ListClientUsersRequest.h"
+#include "model/ListClientUsersResult.h"
 #include "model/ListConnectorsRequest.h"
 #include "model/ListConnectorsResult.h"
 #include "model/ListDynamicRouteRegionsRequest.h"
@@ -74,6 +90,10 @@
 #include "model/ListDynamicRoutesResult.h"
 #include "model/ListExcessiveDeviceRegistrationApplicationsRequest.h"
 #include "model/ListExcessiveDeviceRegistrationApplicationsResult.h"
+#include "model/ListIdpConfigsRequest.h"
+#include "model/ListIdpConfigsResult.h"
+#include "model/ListIdpDepartmentsRequest.h"
+#include "model/ListIdpDepartmentsResult.h"
 #include "model/ListPolicesForPrivateAccessApplicationRequest.h"
 #include "model/ListPolicesForPrivateAccessApplicationResult.h"
 #include "model/ListPolicesForPrivateAccessTagRequest.h"
@@ -112,10 +132,20 @@
 #include "model/ListUserGroupsForRegistrationPolicyResult.h"
 #include "model/ListUsersRequest.h"
 #include "model/ListUsersResult.h"
+#include "model/RevokeUserSessionRequest.h"
+#include "model/RevokeUserSessionResult.h"
+#include "model/UpdateClientUserRequest.h"
+#include "model/UpdateClientUserResult.h"
+#include "model/UpdateClientUserPasswordRequest.h"
+#include "model/UpdateClientUserPasswordResult.h"
+#include "model/UpdateClientUserStatusRequest.h"
+#include "model/UpdateClientUserStatusResult.h"
 #include "model/UpdateDynamicRouteRequest.h"
 #include "model/UpdateDynamicRouteResult.h"
 #include "model/UpdateExcessiveDeviceRegistrationApplicationsStatusRequest.h"
 #include "model/UpdateExcessiveDeviceRegistrationApplicationsStatusResult.h"
+#include "model/UpdateIdpDepartmentRequest.h"
+#include "model/UpdateIdpDepartmentResult.h"
 #include "model/UpdatePrivateAccessApplicationRequest.h"
 #include "model/UpdatePrivateAccessApplicationResult.h"
 #include "model/UpdatePrivateAccessPolicyRequest.h"
@@ -142,9 +172,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AttachApplication2ConnectorResult> AttachApplication2ConnectorOutcome;
 			typedef std::future<AttachApplication2ConnectorOutcome> AttachApplication2ConnectorOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::AttachApplication2ConnectorRequest&, const AttachApplication2ConnectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachApplication2ConnectorAsyncHandler;
+			typedef Outcome<Error, Model::CreateClientUserResult> CreateClientUserOutcome;
+			typedef std::future<CreateClientUserOutcome> CreateClientUserOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::CreateClientUserRequest&, const CreateClientUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateClientUserAsyncHandler;
 			typedef Outcome<Error, Model::CreateDynamicRouteResult> CreateDynamicRouteOutcome;
 			typedef std::future<CreateDynamicRouteOutcome> CreateDynamicRouteOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::CreateDynamicRouteRequest&, const CreateDynamicRouteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDynamicRouteAsyncHandler;
+			typedef Outcome<Error, Model::CreateIdpDepartmentResult> CreateIdpDepartmentOutcome;
+			typedef std::future<CreateIdpDepartmentOutcome> CreateIdpDepartmentOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::CreateIdpDepartmentRequest&, const CreateIdpDepartmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateIdpDepartmentAsyncHandler;
 			typedef Outcome<Error, Model::CreatePrivateAccessApplicationResult> CreatePrivateAccessApplicationOutcome;
 			typedef std::future<CreatePrivateAccessApplicationOutcome> CreatePrivateAccessApplicationOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::CreatePrivateAccessApplicationRequest&, const CreatePrivateAccessApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrivateAccessApplicationAsyncHandler;
@@ -160,9 +196,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateUserGroupResult> CreateUserGroupOutcome;
 			typedef std::future<CreateUserGroupOutcome> CreateUserGroupOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::CreateUserGroupRequest&, const CreateUserGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserGroupAsyncHandler;
+			typedef Outcome<Error, Model::DeleteClientUserResult> DeleteClientUserOutcome;
+			typedef std::future<DeleteClientUserOutcome> DeleteClientUserOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::DeleteClientUserRequest&, const DeleteClientUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClientUserAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDynamicRouteResult> DeleteDynamicRouteOutcome;
 			typedef std::future<DeleteDynamicRouteOutcome> DeleteDynamicRouteOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::DeleteDynamicRouteRequest&, const DeleteDynamicRouteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDynamicRouteAsyncHandler;
+			typedef Outcome<Error, Model::DeleteIdpDepartmentResult> DeleteIdpDepartmentOutcome;
+			typedef std::future<DeleteIdpDepartmentOutcome> DeleteIdpDepartmentOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::DeleteIdpDepartmentRequest&, const DeleteIdpDepartmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIdpDepartmentAsyncHandler;
 			typedef Outcome<Error, Model::DeletePrivateAccessApplicationResult> DeletePrivateAccessApplicationOutcome;
 			typedef std::future<DeletePrivateAccessApplicationOutcome> DeletePrivateAccessApplicationOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::DeletePrivateAccessApplicationRequest&, const DeletePrivateAccessApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrivateAccessApplicationAsyncHandler;
@@ -181,9 +223,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetachApplication2ConnectorResult> DetachApplication2ConnectorOutcome;
 			typedef std::future<DetachApplication2ConnectorOutcome> DetachApplication2ConnectorOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::DetachApplication2ConnectorRequest&, const DetachApplication2ConnectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachApplication2ConnectorAsyncHandler;
+			typedef Outcome<Error, Model::GetActiveIdpConfigResult> GetActiveIdpConfigOutcome;
+			typedef std::future<GetActiveIdpConfigOutcome> GetActiveIdpConfigOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::GetActiveIdpConfigRequest&, const GetActiveIdpConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetActiveIdpConfigAsyncHandler;
+			typedef Outcome<Error, Model::GetClientUserResult> GetClientUserOutcome;
+			typedef std::future<GetClientUserOutcome> GetClientUserOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::GetClientUserRequest&, const GetClientUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetClientUserAsyncHandler;
 			typedef Outcome<Error, Model::GetDynamicRouteResult> GetDynamicRouteOutcome;
 			typedef std::future<GetDynamicRouteOutcome> GetDynamicRouteOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::GetDynamicRouteRequest&, const GetDynamicRouteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDynamicRouteAsyncHandler;
+			typedef Outcome<Error, Model::GetIdpConfigResult> GetIdpConfigOutcome;
+			typedef std::future<GetIdpConfigOutcome> GetIdpConfigOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::GetIdpConfigRequest&, const GetIdpConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetIdpConfigAsyncHandler;
 			typedef Outcome<Error, Model::GetPrivateAccessApplicationResult> GetPrivateAccessApplicationOutcome;
 			typedef std::future<GetPrivateAccessApplicationOutcome> GetPrivateAccessApplicationOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::GetPrivateAccessApplicationRequest&, const GetPrivateAccessApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPrivateAccessApplicationAsyncHandler;
@@ -205,6 +256,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListApplicationsForPrivateAccessTagResult> ListApplicationsForPrivateAccessTagOutcome;
 			typedef std::future<ListApplicationsForPrivateAccessTagOutcome> ListApplicationsForPrivateAccessTagOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListApplicationsForPrivateAccessTagRequest&, const ListApplicationsForPrivateAccessTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApplicationsForPrivateAccessTagAsyncHandler;
+			typedef Outcome<Error, Model::ListClientUsersResult> ListClientUsersOutcome;
+			typedef std::future<ListClientUsersOutcome> ListClientUsersOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListClientUsersRequest&, const ListClientUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClientUsersAsyncHandler;
 			typedef Outcome<Error, Model::ListConnectorsResult> ListConnectorsOutcome;
 			typedef std::future<ListConnectorsOutcome> ListConnectorsOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListConnectorsRequest&, const ListConnectorsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListConnectorsAsyncHandler;
@@ -217,6 +271,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListExcessiveDeviceRegistrationApplicationsResult> ListExcessiveDeviceRegistrationApplicationsOutcome;
 			typedef std::future<ListExcessiveDeviceRegistrationApplicationsOutcome> ListExcessiveDeviceRegistrationApplicationsOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListExcessiveDeviceRegistrationApplicationsRequest&, const ListExcessiveDeviceRegistrationApplicationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListExcessiveDeviceRegistrationApplicationsAsyncHandler;
+			typedef Outcome<Error, Model::ListIdpConfigsResult> ListIdpConfigsOutcome;
+			typedef std::future<ListIdpConfigsOutcome> ListIdpConfigsOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListIdpConfigsRequest&, const ListIdpConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListIdpConfigsAsyncHandler;
+			typedef Outcome<Error, Model::ListIdpDepartmentsResult> ListIdpDepartmentsOutcome;
+			typedef std::future<ListIdpDepartmentsOutcome> ListIdpDepartmentsOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListIdpDepartmentsRequest&, const ListIdpDepartmentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListIdpDepartmentsAsyncHandler;
 			typedef Outcome<Error, Model::ListPolicesForPrivateAccessApplicationResult> ListPolicesForPrivateAccessApplicationOutcome;
 			typedef std::future<ListPolicesForPrivateAccessApplicationOutcome> ListPolicesForPrivateAccessApplicationOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListPolicesForPrivateAccessApplicationRequest&, const ListPolicesForPrivateAccessApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPolicesForPrivateAccessApplicationAsyncHandler;
@@ -274,12 +334,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListUsersResult> ListUsersOutcome;
 			typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListUsersRequest&, const ListUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersAsyncHandler;
+			typedef Outcome<Error, Model::RevokeUserSessionResult> RevokeUserSessionOutcome;
+			typedef std::future<RevokeUserSessionOutcome> RevokeUserSessionOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::RevokeUserSessionRequest&, const RevokeUserSessionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RevokeUserSessionAsyncHandler;
+			typedef Outcome<Error, Model::UpdateClientUserResult> UpdateClientUserOutcome;
+			typedef std::future<UpdateClientUserOutcome> UpdateClientUserOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::UpdateClientUserRequest&, const UpdateClientUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateClientUserAsyncHandler;
+			typedef Outcome<Error, Model::UpdateClientUserPasswordResult> UpdateClientUserPasswordOutcome;
+			typedef std::future<UpdateClientUserPasswordOutcome> UpdateClientUserPasswordOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::UpdateClientUserPasswordRequest&, const UpdateClientUserPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateClientUserPasswordAsyncHandler;
+			typedef Outcome<Error, Model::UpdateClientUserStatusResult> UpdateClientUserStatusOutcome;
+			typedef std::future<UpdateClientUserStatusOutcome> UpdateClientUserStatusOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::UpdateClientUserStatusRequest&, const UpdateClientUserStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateClientUserStatusAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDynamicRouteResult> UpdateDynamicRouteOutcome;
 			typedef std::future<UpdateDynamicRouteOutcome> UpdateDynamicRouteOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::UpdateDynamicRouteRequest&, const UpdateDynamicRouteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDynamicRouteAsyncHandler;
 			typedef Outcome<Error, Model::UpdateExcessiveDeviceRegistrationApplicationsStatusResult> UpdateExcessiveDeviceRegistrationApplicationsStatusOutcome;
 			typedef std::future<UpdateExcessiveDeviceRegistrationApplicationsStatusOutcome> UpdateExcessiveDeviceRegistrationApplicationsStatusOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::UpdateExcessiveDeviceRegistrationApplicationsStatusRequest&, const UpdateExcessiveDeviceRegistrationApplicationsStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateExcessiveDeviceRegistrationApplicationsStatusAsyncHandler;
+			typedef Outcome<Error, Model::UpdateIdpDepartmentResult> UpdateIdpDepartmentOutcome;
+			typedef std::future<UpdateIdpDepartmentOutcome> UpdateIdpDepartmentOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::UpdateIdpDepartmentRequest&, const UpdateIdpDepartmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateIdpDepartmentAsyncHandler;
 			typedef Outcome<Error, Model::UpdatePrivateAccessApplicationResult> UpdatePrivateAccessApplicationOutcome;
 			typedef std::future<UpdatePrivateAccessApplicationOutcome> UpdatePrivateAccessApplicationOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::UpdatePrivateAccessApplicationRequest&, const UpdatePrivateAccessApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePrivateAccessApplicationAsyncHandler;
@@ -309,9 +384,15 @@ namespace AlibabaCloud
 			AttachApplication2ConnectorOutcome attachApplication2Connector(const Model::AttachApplication2ConnectorRequest &request)const;
 			void attachApplication2ConnectorAsync(const Model::AttachApplication2ConnectorRequest& request, const AttachApplication2ConnectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachApplication2ConnectorOutcomeCallable attachApplication2ConnectorCallable(const Model::AttachApplication2ConnectorRequest& request) const;
+			CreateClientUserOutcome createClientUser(const Model::CreateClientUserRequest &request)const;
+			void createClientUserAsync(const Model::CreateClientUserRequest& request, const CreateClientUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateClientUserOutcomeCallable createClientUserCallable(const Model::CreateClientUserRequest& request) const;
 			CreateDynamicRouteOutcome createDynamicRoute(const Model::CreateDynamicRouteRequest &request)const;
 			void createDynamicRouteAsync(const Model::CreateDynamicRouteRequest& request, const CreateDynamicRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDynamicRouteOutcomeCallable createDynamicRouteCallable(const Model::CreateDynamicRouteRequest& request) const;
+			CreateIdpDepartmentOutcome createIdpDepartment(const Model::CreateIdpDepartmentRequest &request)const;
+			void createIdpDepartmentAsync(const Model::CreateIdpDepartmentRequest& request, const CreateIdpDepartmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateIdpDepartmentOutcomeCallable createIdpDepartmentCallable(const Model::CreateIdpDepartmentRequest& request) const;
 			CreatePrivateAccessApplicationOutcome createPrivateAccessApplication(const Model::CreatePrivateAccessApplicationRequest &request)const;
 			void createPrivateAccessApplicationAsync(const Model::CreatePrivateAccessApplicationRequest& request, const CreatePrivateAccessApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatePrivateAccessApplicationOutcomeCallable createPrivateAccessApplicationCallable(const Model::CreatePrivateAccessApplicationRequest& request) const;
@@ -327,9 +408,15 @@ namespace AlibabaCloud
 			CreateUserGroupOutcome createUserGroup(const Model::CreateUserGroupRequest &request)const;
 			void createUserGroupAsync(const Model::CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateUserGroupOutcomeCallable createUserGroupCallable(const Model::CreateUserGroupRequest& request) const;
+			DeleteClientUserOutcome deleteClientUser(const Model::DeleteClientUserRequest &request)const;
+			void deleteClientUserAsync(const Model::DeleteClientUserRequest& request, const DeleteClientUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteClientUserOutcomeCallable deleteClientUserCallable(const Model::DeleteClientUserRequest& request) const;
 			DeleteDynamicRouteOutcome deleteDynamicRoute(const Model::DeleteDynamicRouteRequest &request)const;
 			void deleteDynamicRouteAsync(const Model::DeleteDynamicRouteRequest& request, const DeleteDynamicRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDynamicRouteOutcomeCallable deleteDynamicRouteCallable(const Model::DeleteDynamicRouteRequest& request) const;
+			DeleteIdpDepartmentOutcome deleteIdpDepartment(const Model::DeleteIdpDepartmentRequest &request)const;
+			void deleteIdpDepartmentAsync(const Model::DeleteIdpDepartmentRequest& request, const DeleteIdpDepartmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteIdpDepartmentOutcomeCallable deleteIdpDepartmentCallable(const Model::DeleteIdpDepartmentRequest& request) const;
 			DeletePrivateAccessApplicationOutcome deletePrivateAccessApplication(const Model::DeletePrivateAccessApplicationRequest &request)const;
 			void deletePrivateAccessApplicationAsync(const Model::DeletePrivateAccessApplicationRequest& request, const DeletePrivateAccessApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeletePrivateAccessApplicationOutcomeCallable deletePrivateAccessApplicationCallable(const Model::DeletePrivateAccessApplicationRequest& request) const;
@@ -348,9 +435,18 @@ namespace AlibabaCloud
 			DetachApplication2ConnectorOutcome detachApplication2Connector(const Model::DetachApplication2ConnectorRequest &request)const;
 			void detachApplication2ConnectorAsync(const Model::DetachApplication2ConnectorRequest& request, const DetachApplication2ConnectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachApplication2ConnectorOutcomeCallable detachApplication2ConnectorCallable(const Model::DetachApplication2ConnectorRequest& request) const;
+			GetActiveIdpConfigOutcome getActiveIdpConfig(const Model::GetActiveIdpConfigRequest &request)const;
+			void getActiveIdpConfigAsync(const Model::GetActiveIdpConfigRequest& request, const GetActiveIdpConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetActiveIdpConfigOutcomeCallable getActiveIdpConfigCallable(const Model::GetActiveIdpConfigRequest& request) const;
+			GetClientUserOutcome getClientUser(const Model::GetClientUserRequest &request)const;
+			void getClientUserAsync(const Model::GetClientUserRequest& request, const GetClientUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetClientUserOutcomeCallable getClientUserCallable(const Model::GetClientUserRequest& request) const;
 			GetDynamicRouteOutcome getDynamicRoute(const Model::GetDynamicRouteRequest &request)const;
 			void getDynamicRouteAsync(const Model::GetDynamicRouteRequest& request, const GetDynamicRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDynamicRouteOutcomeCallable getDynamicRouteCallable(const Model::GetDynamicRouteRequest& request) const;
+			GetIdpConfigOutcome getIdpConfig(const Model::GetIdpConfigRequest &request)const;
+			void getIdpConfigAsync(const Model::GetIdpConfigRequest& request, const GetIdpConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetIdpConfigOutcomeCallable getIdpConfigCallable(const Model::GetIdpConfigRequest& request) const;
 			GetPrivateAccessApplicationOutcome getPrivateAccessApplication(const Model::GetPrivateAccessApplicationRequest &request)const;
 			void getPrivateAccessApplicationAsync(const Model::GetPrivateAccessApplicationRequest& request, const GetPrivateAccessApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPrivateAccessApplicationOutcomeCallable getPrivateAccessApplicationCallable(const Model::GetPrivateAccessApplicationRequest& request) const;
@@ -372,6 +468,9 @@ namespace AlibabaCloud
 			ListApplicationsForPrivateAccessTagOutcome listApplicationsForPrivateAccessTag(const Model::ListApplicationsForPrivateAccessTagRequest &request)const;
 			void listApplicationsForPrivateAccessTagAsync(const Model::ListApplicationsForPrivateAccessTagRequest& request, const ListApplicationsForPrivateAccessTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListApplicationsForPrivateAccessTagOutcomeCallable listApplicationsForPrivateAccessTagCallable(const Model::ListApplicationsForPrivateAccessTagRequest& request) const;
+			ListClientUsersOutcome listClientUsers(const Model::ListClientUsersRequest &request)const;
+			void listClientUsersAsync(const Model::ListClientUsersRequest& request, const ListClientUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClientUsersOutcomeCallable listClientUsersCallable(const Model::ListClientUsersRequest& request) const;
 			ListConnectorsOutcome listConnectors(const Model::ListConnectorsRequest &request)const;
 			void listConnectorsAsync(const Model::ListConnectorsRequest& request, const ListConnectorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListConnectorsOutcomeCallable listConnectorsCallable(const Model::ListConnectorsRequest& request) const;
@@ -384,6 +483,12 @@ namespace AlibabaCloud
 			ListExcessiveDeviceRegistrationApplicationsOutcome listExcessiveDeviceRegistrationApplications(const Model::ListExcessiveDeviceRegistrationApplicationsRequest &request)const;
 			void listExcessiveDeviceRegistrationApplicationsAsync(const Model::ListExcessiveDeviceRegistrationApplicationsRequest& request, const ListExcessiveDeviceRegistrationApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListExcessiveDeviceRegistrationApplicationsOutcomeCallable listExcessiveDeviceRegistrationApplicationsCallable(const Model::ListExcessiveDeviceRegistrationApplicationsRequest& request) const;
+			ListIdpConfigsOutcome listIdpConfigs(const Model::ListIdpConfigsRequest &request)const;
+			void listIdpConfigsAsync(const Model::ListIdpConfigsRequest& request, const ListIdpConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListIdpConfigsOutcomeCallable listIdpConfigsCallable(const Model::ListIdpConfigsRequest& request) const;
+			ListIdpDepartmentsOutcome listIdpDepartments(const Model::ListIdpDepartmentsRequest &request)const;
+			void listIdpDepartmentsAsync(const Model::ListIdpDepartmentsRequest& request, const ListIdpDepartmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListIdpDepartmentsOutcomeCallable listIdpDepartmentsCallable(const Model::ListIdpDepartmentsRequest& request) const;
 			ListPolicesForPrivateAccessApplicationOutcome listPolicesForPrivateAccessApplication(const Model::ListPolicesForPrivateAccessApplicationRequest &request)const;
 			void listPolicesForPrivateAccessApplicationAsync(const Model::ListPolicesForPrivateAccessApplicationRequest& request, const ListPolicesForPrivateAccessApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPolicesForPrivateAccessApplicationOutcomeCallable listPolicesForPrivateAccessApplicationCallable(const Model::ListPolicesForPrivateAccessApplicationRequest& request) const;
@@ -441,12 +546,27 @@ namespace AlibabaCloud
 			ListUsersOutcome listUsers(const Model::ListUsersRequest &request)const;
 			void listUsersAsync(const Model::ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUsersOutcomeCallable listUsersCallable(const Model::ListUsersRequest& request) const;
+			RevokeUserSessionOutcome revokeUserSession(const Model::RevokeUserSessionRequest &request)const;
+			void revokeUserSessionAsync(const Model::RevokeUserSessionRequest& request, const RevokeUserSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RevokeUserSessionOutcomeCallable revokeUserSessionCallable(const Model::RevokeUserSessionRequest& request) const;
+			UpdateClientUserOutcome updateClientUser(const Model::UpdateClientUserRequest &request)const;
+			void updateClientUserAsync(const Model::UpdateClientUserRequest& request, const UpdateClientUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateClientUserOutcomeCallable updateClientUserCallable(const Model::UpdateClientUserRequest& request) const;
+			UpdateClientUserPasswordOutcome updateClientUserPassword(const Model::UpdateClientUserPasswordRequest &request)const;
+			void updateClientUserPasswordAsync(const Model::UpdateClientUserPasswordRequest& request, const UpdateClientUserPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateClientUserPasswordOutcomeCallable updateClientUserPasswordCallable(const Model::UpdateClientUserPasswordRequest& request) const;
+			UpdateClientUserStatusOutcome updateClientUserStatus(const Model::UpdateClientUserStatusRequest &request)const;
+			void updateClientUserStatusAsync(const Model::UpdateClientUserStatusRequest& request, const UpdateClientUserStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateClientUserStatusOutcomeCallable updateClientUserStatusCallable(const Model::UpdateClientUserStatusRequest& request) const;
 			UpdateDynamicRouteOutcome updateDynamicRoute(const Model::UpdateDynamicRouteRequest &request)const;
 			void updateDynamicRouteAsync(const Model::UpdateDynamicRouteRequest& request, const UpdateDynamicRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDynamicRouteOutcomeCallable updateDynamicRouteCallable(const Model::UpdateDynamicRouteRequest& request) const;
 			UpdateExcessiveDeviceRegistrationApplicationsStatusOutcome updateExcessiveDeviceRegistrationApplicationsStatus(const Model::UpdateExcessiveDeviceRegistrationApplicationsStatusRequest &request)const;
 			void updateExcessiveDeviceRegistrationApplicationsStatusAsync(const Model::UpdateExcessiveDeviceRegistrationApplicationsStatusRequest& request, const UpdateExcessiveDeviceRegistrationApplicationsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateExcessiveDeviceRegistrationApplicationsStatusOutcomeCallable updateExcessiveDeviceRegistrationApplicationsStatusCallable(const Model::UpdateExcessiveDeviceRegistrationApplicationsStatusRequest& request) const;
+			UpdateIdpDepartmentOutcome updateIdpDepartment(const Model::UpdateIdpDepartmentRequest &request)const;
+			void updateIdpDepartmentAsync(const Model::UpdateIdpDepartmentRequest& request, const UpdateIdpDepartmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateIdpDepartmentOutcomeCallable updateIdpDepartmentCallable(const Model::UpdateIdpDepartmentRequest& request) const;
 			UpdatePrivateAccessApplicationOutcome updatePrivateAccessApplication(const Model::UpdatePrivateAccessApplicationRequest &request)const;
 			void updatePrivateAccessApplicationAsync(const Model::UpdatePrivateAccessApplicationRequest& request, const UpdatePrivateAccessApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdatePrivateAccessApplicationOutcomeCallable updatePrivateAccessApplicationCallable(const Model::UpdatePrivateAccessApplicationRequest& request) const;

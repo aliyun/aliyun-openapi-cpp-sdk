@@ -23,8 +23,12 @@ set(csas_public_header
 set(csas_public_header_model 
 	include/alibabacloud/csas/model/AttachApplication2ConnectorRequest.h
 	include/alibabacloud/csas/model/AttachApplication2ConnectorResult.h
+	include/alibabacloud/csas/model/CreateClientUserRequest.h
+	include/alibabacloud/csas/model/CreateClientUserResult.h
 	include/alibabacloud/csas/model/CreateDynamicRouteRequest.h
 	include/alibabacloud/csas/model/CreateDynamicRouteResult.h
+	include/alibabacloud/csas/model/CreateIdpDepartmentRequest.h
+	include/alibabacloud/csas/model/CreateIdpDepartmentResult.h
 	include/alibabacloud/csas/model/CreatePrivateAccessApplicationRequest.h
 	include/alibabacloud/csas/model/CreatePrivateAccessApplicationResult.h
 	include/alibabacloud/csas/model/CreatePrivateAccessPolicyRequest.h
@@ -35,8 +39,12 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/CreateRegistrationPolicyResult.h
 	include/alibabacloud/csas/model/CreateUserGroupRequest.h
 	include/alibabacloud/csas/model/CreateUserGroupResult.h
+	include/alibabacloud/csas/model/DeleteClientUserRequest.h
+	include/alibabacloud/csas/model/DeleteClientUserResult.h
 	include/alibabacloud/csas/model/DeleteDynamicRouteRequest.h
 	include/alibabacloud/csas/model/DeleteDynamicRouteResult.h
+	include/alibabacloud/csas/model/DeleteIdpDepartmentRequest.h
+	include/alibabacloud/csas/model/DeleteIdpDepartmentResult.h
 	include/alibabacloud/csas/model/DeletePrivateAccessApplicationRequest.h
 	include/alibabacloud/csas/model/DeletePrivateAccessApplicationResult.h
 	include/alibabacloud/csas/model/DeletePrivateAccessPolicyRequest.h
@@ -49,8 +57,14 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/DeleteUserGroupResult.h
 	include/alibabacloud/csas/model/DetachApplication2ConnectorRequest.h
 	include/alibabacloud/csas/model/DetachApplication2ConnectorResult.h
+	include/alibabacloud/csas/model/GetActiveIdpConfigRequest.h
+	include/alibabacloud/csas/model/GetActiveIdpConfigResult.h
+	include/alibabacloud/csas/model/GetClientUserRequest.h
+	include/alibabacloud/csas/model/GetClientUserResult.h
 	include/alibabacloud/csas/model/GetDynamicRouteRequest.h
 	include/alibabacloud/csas/model/GetDynamicRouteResult.h
+	include/alibabacloud/csas/model/GetIdpConfigRequest.h
+	include/alibabacloud/csas/model/GetIdpConfigResult.h
 	include/alibabacloud/csas/model/GetPrivateAccessApplicationRequest.h
 	include/alibabacloud/csas/model/GetPrivateAccessApplicationResult.h
 	include/alibabacloud/csas/model/GetPrivateAccessPolicyRequest.h
@@ -65,6 +79,8 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/ListApplicationsForPrivateAccessPolicyResult.h
 	include/alibabacloud/csas/model/ListApplicationsForPrivateAccessTagRequest.h
 	include/alibabacloud/csas/model/ListApplicationsForPrivateAccessTagResult.h
+	include/alibabacloud/csas/model/ListClientUsersRequest.h
+	include/alibabacloud/csas/model/ListClientUsersResult.h
 	include/alibabacloud/csas/model/ListConnectorsRequest.h
 	include/alibabacloud/csas/model/ListConnectorsResult.h
 	include/alibabacloud/csas/model/ListDynamicRouteRegionsRequest.h
@@ -73,6 +89,10 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/ListDynamicRoutesResult.h
 	include/alibabacloud/csas/model/ListExcessiveDeviceRegistrationApplicationsRequest.h
 	include/alibabacloud/csas/model/ListExcessiveDeviceRegistrationApplicationsResult.h
+	include/alibabacloud/csas/model/ListIdpConfigsRequest.h
+	include/alibabacloud/csas/model/ListIdpConfigsResult.h
+	include/alibabacloud/csas/model/ListIdpDepartmentsRequest.h
+	include/alibabacloud/csas/model/ListIdpDepartmentsResult.h
 	include/alibabacloud/csas/model/ListPolicesForPrivateAccessApplicationRequest.h
 	include/alibabacloud/csas/model/ListPolicesForPrivateAccessApplicationResult.h
 	include/alibabacloud/csas/model/ListPolicesForPrivateAccessTagRequest.h
@@ -111,10 +131,20 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/ListUserGroupsForRegistrationPolicyResult.h
 	include/alibabacloud/csas/model/ListUsersRequest.h
 	include/alibabacloud/csas/model/ListUsersResult.h
+	include/alibabacloud/csas/model/RevokeUserSessionRequest.h
+	include/alibabacloud/csas/model/RevokeUserSessionResult.h
+	include/alibabacloud/csas/model/UpdateClientUserRequest.h
+	include/alibabacloud/csas/model/UpdateClientUserResult.h
+	include/alibabacloud/csas/model/UpdateClientUserPasswordRequest.h
+	include/alibabacloud/csas/model/UpdateClientUserPasswordResult.h
+	include/alibabacloud/csas/model/UpdateClientUserStatusRequest.h
+	include/alibabacloud/csas/model/UpdateClientUserStatusResult.h
 	include/alibabacloud/csas/model/UpdateDynamicRouteRequest.h
 	include/alibabacloud/csas/model/UpdateDynamicRouteResult.h
 	include/alibabacloud/csas/model/UpdateExcessiveDeviceRegistrationApplicationsStatusRequest.h
 	include/alibabacloud/csas/model/UpdateExcessiveDeviceRegistrationApplicationsStatusResult.h
+	include/alibabacloud/csas/model/UpdateIdpDepartmentRequest.h
+	include/alibabacloud/csas/model/UpdateIdpDepartmentResult.h
 	include/alibabacloud/csas/model/UpdatePrivateAccessApplicationRequest.h
 	include/alibabacloud/csas/model/UpdatePrivateAccessApplicationResult.h
 	include/alibabacloud/csas/model/UpdatePrivateAccessPolicyRequest.h
@@ -134,8 +164,12 @@ set(csas_src
 	src/CsasClient.cc
 	src/model/AttachApplication2ConnectorRequest.cc
 	src/model/AttachApplication2ConnectorResult.cc
+	src/model/CreateClientUserRequest.cc
+	src/model/CreateClientUserResult.cc
 	src/model/CreateDynamicRouteRequest.cc
 	src/model/CreateDynamicRouteResult.cc
+	src/model/CreateIdpDepartmentRequest.cc
+	src/model/CreateIdpDepartmentResult.cc
 	src/model/CreatePrivateAccessApplicationRequest.cc
 	src/model/CreatePrivateAccessApplicationResult.cc
 	src/model/CreatePrivateAccessPolicyRequest.cc
@@ -146,8 +180,12 @@ set(csas_src
 	src/model/CreateRegistrationPolicyResult.cc
 	src/model/CreateUserGroupRequest.cc
 	src/model/CreateUserGroupResult.cc
+	src/model/DeleteClientUserRequest.cc
+	src/model/DeleteClientUserResult.cc
 	src/model/DeleteDynamicRouteRequest.cc
 	src/model/DeleteDynamicRouteResult.cc
+	src/model/DeleteIdpDepartmentRequest.cc
+	src/model/DeleteIdpDepartmentResult.cc
 	src/model/DeletePrivateAccessApplicationRequest.cc
 	src/model/DeletePrivateAccessApplicationResult.cc
 	src/model/DeletePrivateAccessPolicyRequest.cc
@@ -160,8 +198,14 @@ set(csas_src
 	src/model/DeleteUserGroupResult.cc
 	src/model/DetachApplication2ConnectorRequest.cc
 	src/model/DetachApplication2ConnectorResult.cc
+	src/model/GetActiveIdpConfigRequest.cc
+	src/model/GetActiveIdpConfigResult.cc
+	src/model/GetClientUserRequest.cc
+	src/model/GetClientUserResult.cc
 	src/model/GetDynamicRouteRequest.cc
 	src/model/GetDynamicRouteResult.cc
+	src/model/GetIdpConfigRequest.cc
+	src/model/GetIdpConfigResult.cc
 	src/model/GetPrivateAccessApplicationRequest.cc
 	src/model/GetPrivateAccessApplicationResult.cc
 	src/model/GetPrivateAccessPolicyRequest.cc
@@ -176,6 +220,8 @@ set(csas_src
 	src/model/ListApplicationsForPrivateAccessPolicyResult.cc
 	src/model/ListApplicationsForPrivateAccessTagRequest.cc
 	src/model/ListApplicationsForPrivateAccessTagResult.cc
+	src/model/ListClientUsersRequest.cc
+	src/model/ListClientUsersResult.cc
 	src/model/ListConnectorsRequest.cc
 	src/model/ListConnectorsResult.cc
 	src/model/ListDynamicRouteRegionsRequest.cc
@@ -184,6 +230,10 @@ set(csas_src
 	src/model/ListDynamicRoutesResult.cc
 	src/model/ListExcessiveDeviceRegistrationApplicationsRequest.cc
 	src/model/ListExcessiveDeviceRegistrationApplicationsResult.cc
+	src/model/ListIdpConfigsRequest.cc
+	src/model/ListIdpConfigsResult.cc
+	src/model/ListIdpDepartmentsRequest.cc
+	src/model/ListIdpDepartmentsResult.cc
 	src/model/ListPolicesForPrivateAccessApplicationRequest.cc
 	src/model/ListPolicesForPrivateAccessApplicationResult.cc
 	src/model/ListPolicesForPrivateAccessTagRequest.cc
@@ -222,10 +272,20 @@ set(csas_src
 	src/model/ListUserGroupsForRegistrationPolicyResult.cc
 	src/model/ListUsersRequest.cc
 	src/model/ListUsersResult.cc
+	src/model/RevokeUserSessionRequest.cc
+	src/model/RevokeUserSessionResult.cc
+	src/model/UpdateClientUserRequest.cc
+	src/model/UpdateClientUserResult.cc
+	src/model/UpdateClientUserPasswordRequest.cc
+	src/model/UpdateClientUserPasswordResult.cc
+	src/model/UpdateClientUserStatusRequest.cc
+	src/model/UpdateClientUserStatusResult.cc
 	src/model/UpdateDynamicRouteRequest.cc
 	src/model/UpdateDynamicRouteResult.cc
 	src/model/UpdateExcessiveDeviceRegistrationApplicationsStatusRequest.cc
 	src/model/UpdateExcessiveDeviceRegistrationApplicationsStatusResult.cc
+	src/model/UpdateIdpDepartmentRequest.cc
+	src/model/UpdateIdpDepartmentResult.cc
 	src/model/UpdatePrivateAccessApplicationRequest.cc
 	src/model/UpdatePrivateAccessApplicationResult.cc
 	src/model/UpdatePrivateAccessPolicyRequest.cc

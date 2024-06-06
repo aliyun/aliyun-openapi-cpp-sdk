@@ -50,6 +50,8 @@ public:
 	void setNacStatuses(const std::vector<std::string> &nacStatuses);
 	std::string getDepartment() const;
 	void setDepartment(const std::string &department);
+	std::string getInnerIp() const;
+	void setInnerIp(const std::string &innerIp);
 	std::vector<std::string> getIaStatuses() const;
 	void setIaStatuses(const std::vector<std::string> &iaStatuses);
 	std::string getDeviceBelong() const;
@@ -80,6 +82,7 @@ private:
 	long pageSize_;
 	std::vector<std::string> nacStatuses_;
 	std::string department_;
+	std::string innerIp_;
 	std::vector<std::string> iaStatuses_;
 	std::string deviceBelong_;
 	long currentPage_;

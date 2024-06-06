@@ -87,6 +87,42 @@ CsasClient::AttachApplication2ConnectorOutcomeCallable CsasClient::attachApplica
 	return task->get_future();
 }
 
+CsasClient::CreateClientUserOutcome CsasClient::createClientUser(const CreateClientUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateClientUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateClientUserOutcome(CreateClientUserResult(outcome.result()));
+	else
+		return CreateClientUserOutcome(outcome.error());
+}
+
+void CsasClient::createClientUserAsync(const CreateClientUserRequest& request, const CreateClientUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createClientUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::CreateClientUserOutcomeCallable CsasClient::createClientUserCallable(const CreateClientUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateClientUserOutcome()>>(
+			[this, request]()
+			{
+			return this->createClientUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::CreateDynamicRouteOutcome CsasClient::createDynamicRoute(const CreateDynamicRouteRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -117,6 +153,42 @@ CsasClient::CreateDynamicRouteOutcomeCallable CsasClient::createDynamicRouteCall
 			[this, request]()
 			{
 			return this->createDynamicRoute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::CreateIdpDepartmentOutcome CsasClient::createIdpDepartment(const CreateIdpDepartmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateIdpDepartmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateIdpDepartmentOutcome(CreateIdpDepartmentResult(outcome.result()));
+	else
+		return CreateIdpDepartmentOutcome(outcome.error());
+}
+
+void CsasClient::createIdpDepartmentAsync(const CreateIdpDepartmentRequest& request, const CreateIdpDepartmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createIdpDepartment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::CreateIdpDepartmentOutcomeCallable CsasClient::createIdpDepartmentCallable(const CreateIdpDepartmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateIdpDepartmentOutcome()>>(
+			[this, request]()
+			{
+			return this->createIdpDepartment(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -303,6 +375,42 @@ CsasClient::CreateUserGroupOutcomeCallable CsasClient::createUserGroupCallable(c
 	return task->get_future();
 }
 
+CsasClient::DeleteClientUserOutcome CsasClient::deleteClientUser(const DeleteClientUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteClientUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteClientUserOutcome(DeleteClientUserResult(outcome.result()));
+	else
+		return DeleteClientUserOutcome(outcome.error());
+}
+
+void CsasClient::deleteClientUserAsync(const DeleteClientUserRequest& request, const DeleteClientUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteClientUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::DeleteClientUserOutcomeCallable CsasClient::deleteClientUserCallable(const DeleteClientUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteClientUserOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteClientUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::DeleteDynamicRouteOutcome CsasClient::deleteDynamicRoute(const DeleteDynamicRouteRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +441,42 @@ CsasClient::DeleteDynamicRouteOutcomeCallable CsasClient::deleteDynamicRouteCall
 			[this, request]()
 			{
 			return this->deleteDynamicRoute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::DeleteIdpDepartmentOutcome CsasClient::deleteIdpDepartment(const DeleteIdpDepartmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteIdpDepartmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteIdpDepartmentOutcome(DeleteIdpDepartmentResult(outcome.result()));
+	else
+		return DeleteIdpDepartmentOutcome(outcome.error());
+}
+
+void CsasClient::deleteIdpDepartmentAsync(const DeleteIdpDepartmentRequest& request, const DeleteIdpDepartmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteIdpDepartment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::DeleteIdpDepartmentOutcomeCallable CsasClient::deleteIdpDepartmentCallable(const DeleteIdpDepartmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteIdpDepartmentOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteIdpDepartment(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -555,6 +699,78 @@ CsasClient::DetachApplication2ConnectorOutcomeCallable CsasClient::detachApplica
 	return task->get_future();
 }
 
+CsasClient::GetActiveIdpConfigOutcome CsasClient::getActiveIdpConfig(const GetActiveIdpConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetActiveIdpConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetActiveIdpConfigOutcome(GetActiveIdpConfigResult(outcome.result()));
+	else
+		return GetActiveIdpConfigOutcome(outcome.error());
+}
+
+void CsasClient::getActiveIdpConfigAsync(const GetActiveIdpConfigRequest& request, const GetActiveIdpConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getActiveIdpConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::GetActiveIdpConfigOutcomeCallable CsasClient::getActiveIdpConfigCallable(const GetActiveIdpConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetActiveIdpConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->getActiveIdpConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::GetClientUserOutcome CsasClient::getClientUser(const GetClientUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetClientUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetClientUserOutcome(GetClientUserResult(outcome.result()));
+	else
+		return GetClientUserOutcome(outcome.error());
+}
+
+void CsasClient::getClientUserAsync(const GetClientUserRequest& request, const GetClientUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getClientUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::GetClientUserOutcomeCallable CsasClient::getClientUserCallable(const GetClientUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetClientUserOutcome()>>(
+			[this, request]()
+			{
+			return this->getClientUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::GetDynamicRouteOutcome CsasClient::getDynamicRoute(const GetDynamicRouteRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +801,42 @@ CsasClient::GetDynamicRouteOutcomeCallable CsasClient::getDynamicRouteCallable(c
 			[this, request]()
 			{
 			return this->getDynamicRoute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::GetIdpConfigOutcome CsasClient::getIdpConfig(const GetIdpConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetIdpConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetIdpConfigOutcome(GetIdpConfigResult(outcome.result()));
+	else
+		return GetIdpConfigOutcome(outcome.error());
+}
+
+void CsasClient::getIdpConfigAsync(const GetIdpConfigRequest& request, const GetIdpConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getIdpConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::GetIdpConfigOutcomeCallable CsasClient::getIdpConfigCallable(const GetIdpConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetIdpConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->getIdpConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -843,6 +1095,42 @@ CsasClient::ListApplicationsForPrivateAccessTagOutcomeCallable CsasClient::listA
 	return task->get_future();
 }
 
+CsasClient::ListClientUsersOutcome CsasClient::listClientUsers(const ListClientUsersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListClientUsersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListClientUsersOutcome(ListClientUsersResult(outcome.result()));
+	else
+		return ListClientUsersOutcome(outcome.error());
+}
+
+void CsasClient::listClientUsersAsync(const ListClientUsersRequest& request, const ListClientUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listClientUsers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListClientUsersOutcomeCallable CsasClient::listClientUsersCallable(const ListClientUsersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListClientUsersOutcome()>>(
+			[this, request]()
+			{
+			return this->listClientUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::ListConnectorsOutcome CsasClient::listConnectors(const ListConnectorsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -981,6 +1269,78 @@ CsasClient::ListExcessiveDeviceRegistrationApplicationsOutcomeCallable CsasClien
 			[this, request]()
 			{
 			return this->listExcessiveDeviceRegistrationApplications(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::ListIdpConfigsOutcome CsasClient::listIdpConfigs(const ListIdpConfigsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListIdpConfigsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListIdpConfigsOutcome(ListIdpConfigsResult(outcome.result()));
+	else
+		return ListIdpConfigsOutcome(outcome.error());
+}
+
+void CsasClient::listIdpConfigsAsync(const ListIdpConfigsRequest& request, const ListIdpConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listIdpConfigs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListIdpConfigsOutcomeCallable CsasClient::listIdpConfigsCallable(const ListIdpConfigsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListIdpConfigsOutcome()>>(
+			[this, request]()
+			{
+			return this->listIdpConfigs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::ListIdpDepartmentsOutcome CsasClient::listIdpDepartments(const ListIdpDepartmentsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListIdpDepartmentsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListIdpDepartmentsOutcome(ListIdpDepartmentsResult(outcome.result()));
+	else
+		return ListIdpDepartmentsOutcome(outcome.error());
+}
+
+void CsasClient::listIdpDepartmentsAsync(const ListIdpDepartmentsRequest& request, const ListIdpDepartmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listIdpDepartments(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListIdpDepartmentsOutcomeCallable CsasClient::listIdpDepartmentsCallable(const ListIdpDepartmentsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListIdpDepartmentsOutcome()>>(
+			[this, request]()
+			{
+			return this->listIdpDepartments(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1671,6 +2031,150 @@ CsasClient::ListUsersOutcomeCallable CsasClient::listUsersCallable(const ListUse
 	return task->get_future();
 }
 
+CsasClient::RevokeUserSessionOutcome CsasClient::revokeUserSession(const RevokeUserSessionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RevokeUserSessionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RevokeUserSessionOutcome(RevokeUserSessionResult(outcome.result()));
+	else
+		return RevokeUserSessionOutcome(outcome.error());
+}
+
+void CsasClient::revokeUserSessionAsync(const RevokeUserSessionRequest& request, const RevokeUserSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, revokeUserSession(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::RevokeUserSessionOutcomeCallable CsasClient::revokeUserSessionCallable(const RevokeUserSessionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RevokeUserSessionOutcome()>>(
+			[this, request]()
+			{
+			return this->revokeUserSession(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::UpdateClientUserOutcome CsasClient::updateClientUser(const UpdateClientUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateClientUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateClientUserOutcome(UpdateClientUserResult(outcome.result()));
+	else
+		return UpdateClientUserOutcome(outcome.error());
+}
+
+void CsasClient::updateClientUserAsync(const UpdateClientUserRequest& request, const UpdateClientUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateClientUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::UpdateClientUserOutcomeCallable CsasClient::updateClientUserCallable(const UpdateClientUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateClientUserOutcome()>>(
+			[this, request]()
+			{
+			return this->updateClientUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::UpdateClientUserPasswordOutcome CsasClient::updateClientUserPassword(const UpdateClientUserPasswordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateClientUserPasswordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateClientUserPasswordOutcome(UpdateClientUserPasswordResult(outcome.result()));
+	else
+		return UpdateClientUserPasswordOutcome(outcome.error());
+}
+
+void CsasClient::updateClientUserPasswordAsync(const UpdateClientUserPasswordRequest& request, const UpdateClientUserPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateClientUserPassword(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::UpdateClientUserPasswordOutcomeCallable CsasClient::updateClientUserPasswordCallable(const UpdateClientUserPasswordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateClientUserPasswordOutcome()>>(
+			[this, request]()
+			{
+			return this->updateClientUserPassword(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::UpdateClientUserStatusOutcome CsasClient::updateClientUserStatus(const UpdateClientUserStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateClientUserStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateClientUserStatusOutcome(UpdateClientUserStatusResult(outcome.result()));
+	else
+		return UpdateClientUserStatusOutcome(outcome.error());
+}
+
+void CsasClient::updateClientUserStatusAsync(const UpdateClientUserStatusRequest& request, const UpdateClientUserStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateClientUserStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::UpdateClientUserStatusOutcomeCallable CsasClient::updateClientUserStatusCallable(const UpdateClientUserStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateClientUserStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->updateClientUserStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::UpdateDynamicRouteOutcome CsasClient::updateDynamicRoute(const UpdateDynamicRouteRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1737,6 +2241,42 @@ CsasClient::UpdateExcessiveDeviceRegistrationApplicationsStatusOutcomeCallable C
 			[this, request]()
 			{
 			return this->updateExcessiveDeviceRegistrationApplicationsStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::UpdateIdpDepartmentOutcome CsasClient::updateIdpDepartment(const UpdateIdpDepartmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateIdpDepartmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateIdpDepartmentOutcome(UpdateIdpDepartmentResult(outcome.result()));
+	else
+		return UpdateIdpDepartmentOutcome(outcome.error());
+}
+
+void CsasClient::updateIdpDepartmentAsync(const UpdateIdpDepartmentRequest& request, const UpdateIdpDepartmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateIdpDepartment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::UpdateIdpDepartmentOutcomeCallable CsasClient::updateIdpDepartmentCallable(const UpdateIdpDepartmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateIdpDepartmentOutcome()>>(
+			[this, request]()
+			{
+			return this->updateIdpDepartment(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
