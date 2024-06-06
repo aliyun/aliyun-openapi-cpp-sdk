@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IDAAS_DORAEMON_MODEL_SERVICEINVOKERESULT_H_
-#define ALIBABACLOUD_IDAAS_DORAEMON_MODEL_SERVICEINVOKERESULT_H_
+#ifndef ALIBABACLOUD_IDAAS_DORAEMON_MODEL_LISTCOSTUNITORDERSRESULT_H_
+#define ALIBABACLOUD_IDAAS_DORAEMON_MODEL_LISTCOSTUNITORDERSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,41 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IDAAS_DORAEMON_EXPORT ServiceInvokeResult : public ServiceResult
+			class ALIBABACLOUD_IDAAS_DORAEMON_EXPORT ListCostUnitOrdersResult : public ServiceResult
 			{
 			public:
+				struct Item
+				{
+					long refundTime;
+					std::string orderStatus;
+					std::string aliOrderInstanceId;
+					std::string aliOrderCode;
+					long totalCostUnit;
+					long createTime;
+					long expiredTime;
+					long usedCostUnit;
+					bool exhausted;
+				};
 
 
-				ServiceInvokeResult();
-				explicit ServiceInvokeResult(const std::string &payload);
-				~ServiceInvokeResult();
-				std::string getIdToken()const;
-				std::string getMessage()const;
-				std::string getEventId()const;
-				std::string getData()const;
-				std::string getCode()const;
-				bool getSuccess()const;
+				ListCostUnitOrdersResult();
+				explicit ListCostUnitOrdersResult(const std::string &payload);
+				~ListCostUnitOrdersResult();
+				long getPageSize()const;
+				long getTotalElements()const;
+				std::vector<Item> getItems()const;
+				long getTotalPages()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string idToken_;
-				std::string message_;
-				std::string eventId_;
-				std::string data_;
-				std::string code_;
-				bool success_;
+				long pageSize_;
+				long totalElements_;
+				std::vector<Item> items_;
+				long totalPages_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IDAAS_DORAEMON_MODEL_SERVICEINVOKERESULT_H_
+#endif // !ALIBABACLOUD_IDAAS_DORAEMON_MODEL_LISTCOSTUNITORDERSRESULT_H_

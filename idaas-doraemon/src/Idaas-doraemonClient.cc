@@ -31,21 +31,21 @@ Idaas_doraemonClient::Idaas_doraemonClient(const Credentials &credentials, const
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "idaasauth");
 }
 
 Idaas_doraemonClient::Idaas_doraemonClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "idaasauth");
 }
 
 Idaas_doraemonClient::Idaas_doraemonClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "idaasauth");
 }
 
 Idaas_doraemonClient::~Idaas_doraemonClient()
@@ -339,6 +339,78 @@ Idaas_doraemonClient::ListAuthenticatorsOutcomeCallable Idaas_doraemonClient::li
 	return task->get_future();
 }
 
+Idaas_doraemonClient::ListCostUnitOrdersOutcome Idaas_doraemonClient::listCostUnitOrders(const ListCostUnitOrdersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCostUnitOrdersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCostUnitOrdersOutcome(ListCostUnitOrdersResult(outcome.result()));
+	else
+		return ListCostUnitOrdersOutcome(outcome.error());
+}
+
+void Idaas_doraemonClient::listCostUnitOrdersAsync(const ListCostUnitOrdersRequest& request, const ListCostUnitOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCostUnitOrders(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Idaas_doraemonClient::ListCostUnitOrdersOutcomeCallable Idaas_doraemonClient::listCostUnitOrdersCallable(const ListCostUnitOrdersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCostUnitOrdersOutcome()>>(
+			[this, request]()
+			{
+			return this->listCostUnitOrders(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Idaas_doraemonClient::ListOrderConsumeStatisticRecordsOutcome Idaas_doraemonClient::listOrderConsumeStatisticRecords(const ListOrderConsumeStatisticRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListOrderConsumeStatisticRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListOrderConsumeStatisticRecordsOutcome(ListOrderConsumeStatisticRecordsResult(outcome.result()));
+	else
+		return ListOrderConsumeStatisticRecordsOutcome(outcome.error());
+}
+
+void Idaas_doraemonClient::listOrderConsumeStatisticRecordsAsync(const ListOrderConsumeStatisticRecordsRequest& request, const ListOrderConsumeStatisticRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listOrderConsumeStatisticRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Idaas_doraemonClient::ListOrderConsumeStatisticRecordsOutcomeCallable Idaas_doraemonClient::listOrderConsumeStatisticRecordsCallable(const ListOrderConsumeStatisticRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListOrderConsumeStatisticRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->listOrderConsumeStatisticRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Idaas_doraemonClient::ListPwnedPasswordsOutcome Idaas_doraemonClient::listPwnedPasswords(const ListPwnedPasswordsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +477,78 @@ Idaas_doraemonClient::ListUsersOutcomeCallable Idaas_doraemonClient::listUsersCa
 			[this, request]()
 			{
 			return this->listUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Idaas_doraemonClient::QuerySmsReportsOutcome Idaas_doraemonClient::querySmsReports(const QuerySmsReportsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySmsReportsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySmsReportsOutcome(QuerySmsReportsResult(outcome.result()));
+	else
+		return QuerySmsReportsOutcome(outcome.error());
+}
+
+void Idaas_doraemonClient::querySmsReportsAsync(const QuerySmsReportsRequest& request, const QuerySmsReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySmsReports(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Idaas_doraemonClient::QuerySmsReportsOutcomeCallable Idaas_doraemonClient::querySmsReportsCallable(const QuerySmsReportsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySmsReportsOutcome()>>(
+			[this, request]()
+			{
+			return this->querySmsReports(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Idaas_doraemonClient::QuerySmsUpsOutcome Idaas_doraemonClient::querySmsUps(const QuerySmsUpsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySmsUpsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySmsUpsOutcome(QuerySmsUpsResult(outcome.result()));
+	else
+		return QuerySmsUpsOutcome(outcome.error());
+}
+
+void Idaas_doraemonClient::querySmsUpsAsync(const QuerySmsUpsRequest& request, const QuerySmsUpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySmsUps(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Idaas_doraemonClient::QuerySmsUpsOutcomeCallable Idaas_doraemonClient::querySmsUpsCallable(const QuerySmsUpsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySmsUpsOutcome()>>(
+			[this, request]()
+			{
+			return this->querySmsUps(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -37,10 +37,18 @@ set(idaas-doraemon_public_header_model
 	include/alibabacloud/idaas-doraemon/model/ListAuthenticatorOpsLogsResult.h
 	include/alibabacloud/idaas-doraemon/model/ListAuthenticatorsRequest.h
 	include/alibabacloud/idaas-doraemon/model/ListAuthenticatorsResult.h
+	include/alibabacloud/idaas-doraemon/model/ListCostUnitOrdersRequest.h
+	include/alibabacloud/idaas-doraemon/model/ListCostUnitOrdersResult.h
+	include/alibabacloud/idaas-doraemon/model/ListOrderConsumeStatisticRecordsRequest.h
+	include/alibabacloud/idaas-doraemon/model/ListOrderConsumeStatisticRecordsResult.h
 	include/alibabacloud/idaas-doraemon/model/ListPwnedPasswordsRequest.h
 	include/alibabacloud/idaas-doraemon/model/ListPwnedPasswordsResult.h
 	include/alibabacloud/idaas-doraemon/model/ListUsersRequest.h
 	include/alibabacloud/idaas-doraemon/model/ListUsersResult.h
+	include/alibabacloud/idaas-doraemon/model/QuerySmsReportsRequest.h
+	include/alibabacloud/idaas-doraemon/model/QuerySmsReportsResult.h
+	include/alibabacloud/idaas-doraemon/model/QuerySmsUpsRequest.h
+	include/alibabacloud/idaas-doraemon/model/QuerySmsUpsResult.h
 	include/alibabacloud/idaas-doraemon/model/RegisterAuthenticatorRequest.h
 	include/alibabacloud/idaas-doraemon/model/RegisterAuthenticatorResult.h
 	include/alibabacloud/idaas-doraemon/model/ServiceInvokeRequest.h
@@ -70,10 +78,18 @@ set(idaas-doraemon_src
 	src/model/ListAuthenticatorOpsLogsResult.cc
 	src/model/ListAuthenticatorsRequest.cc
 	src/model/ListAuthenticatorsResult.cc
+	src/model/ListCostUnitOrdersRequest.cc
+	src/model/ListCostUnitOrdersResult.cc
+	src/model/ListOrderConsumeStatisticRecordsRequest.cc
+	src/model/ListOrderConsumeStatisticRecordsResult.cc
 	src/model/ListPwnedPasswordsRequest.cc
 	src/model/ListPwnedPasswordsResult.cc
 	src/model/ListUsersRequest.cc
 	src/model/ListUsersResult.cc
+	src/model/QuerySmsReportsRequest.cc
+	src/model/QuerySmsReportsResult.cc
+	src/model/QuerySmsUpsRequest.cc
+	src/model/QuerySmsUpsResult.cc
 	src/model/RegisterAuthenticatorRequest.cc
 	src/model/RegisterAuthenticatorResult.cc
 	src/model/ServiceInvokeRequest.cc

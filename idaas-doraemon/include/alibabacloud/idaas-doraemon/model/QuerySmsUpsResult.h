@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IDAAS_DORAEMON_MODEL_SERVICEINVOKERESULT_H_
-#define ALIBABACLOUD_IDAAS_DORAEMON_MODEL_SERVICEINVOKERESULT_H_
+#ifndef ALIBABACLOUD_IDAAS_DORAEMON_MODEL_QUERYSMSUPSRESULT_H_
+#define ALIBABACLOUD_IDAAS_DORAEMON_MODEL_QUERYSMSUPSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,34 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IDAAS_DORAEMON_EXPORT ServiceInvokeResult : public ServiceResult
+			class ALIBABACLOUD_IDAAS_DORAEMON_EXPORT QuerySmsUpsResult : public ServiceResult
 			{
 			public:
+				struct SmsUpsItem
+				{
+					std::string sendTime;
+					std::string tenantId;
+					std::string content;
+					std::string phoneNumber;
+					std::string destCode;
+					std::string sequenceId;
+				};
 
 
-				ServiceInvokeResult();
-				explicit ServiceInvokeResult(const std::string &payload);
-				~ServiceInvokeResult();
-				std::string getIdToken()const;
-				std::string getMessage()const;
-				std::string getEventId()const;
-				std::string getData()const;
-				std::string getCode()const;
-				bool getSuccess()const;
+				QuerySmsUpsResult();
+				explicit QuerySmsUpsResult(const std::string &payload);
+				~QuerySmsUpsResult();
+				std::vector<SmsUpsItem> getSmsUps()const;
+				long getTotalElements()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string idToken_;
-				std::string message_;
-				std::string eventId_;
-				std::string data_;
-				std::string code_;
-				bool success_;
+				std::vector<SmsUpsItem> smsUps_;
+				long totalElements_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IDAAS_DORAEMON_MODEL_SERVICEINVOKERESULT_H_
+#endif // !ALIBABACLOUD_IDAAS_DORAEMON_MODEL_QUERYSMSUPSRESULT_H_

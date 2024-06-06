@@ -49,6 +49,8 @@ void ServiceInvokeResult::parse(const std::string &payload)
 		success_ = value["Success"].asString() == "true";
 	if(!value["IdToken"].isNull())
 		idToken_ = value["IdToken"].asString();
+	if(!value["EventId"].isNull())
+		eventId_ = value["EventId"].asString();
 
 }
 
@@ -60,6 +62,11 @@ std::string ServiceInvokeResult::getIdToken()const
 std::string ServiceInvokeResult::getMessage()const
 {
 	return message_;
+}
+
+std::string ServiceInvokeResult::getEventId()const
+{
+	return eventId_;
 }
 
 std::string ServiceInvokeResult::getData()const

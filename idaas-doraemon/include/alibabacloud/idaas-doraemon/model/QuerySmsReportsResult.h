@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IDAAS_DORAEMON_MODEL_SERVICEINVOKERESULT_H_
-#define ALIBABACLOUD_IDAAS_DORAEMON_MODEL_SERVICEINVOKERESULT_H_
+#ifndef ALIBABACLOUD_IDAAS_DORAEMON_MODEL_QUERYSMSREPORTSRESULT_H_
+#define ALIBABACLOUD_IDAAS_DORAEMON_MODEL_QUERYSMSREPORTSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IDAAS_DORAEMON_EXPORT ServiceInvokeResult : public ServiceResult
+			class ALIBABACLOUD_IDAAS_DORAEMON_EXPORT QuerySmsReportsResult : public ServiceResult
 			{
 			public:
+				struct SmsReportsItem
+				{
+					std::string tenantId;
+					std::string stat;
+					std::string appId;
+					int chargedCount;
+					std::string eventId;
+					std::string time;
+					std::string sn;
+					std::string mobile;
+					std::string code;
+					std::string tid;
+				};
 
 
-				ServiceInvokeResult();
-				explicit ServiceInvokeResult(const std::string &payload);
-				~ServiceInvokeResult();
-				std::string getIdToken()const;
-				std::string getMessage()const;
-				std::string getEventId()const;
-				std::string getData()const;
-				std::string getCode()const;
-				bool getSuccess()const;
+				QuerySmsReportsResult();
+				explicit QuerySmsReportsResult(const std::string &payload);
+				~QuerySmsReportsResult();
+				std::vector<SmsReportsItem> getSmsReports()const;
+				long getTotalElements()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string idToken_;
-				std::string message_;
-				std::string eventId_;
-				std::string data_;
-				std::string code_;
-				bool success_;
+				std::vector<SmsReportsItem> smsReports_;
+				long totalElements_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IDAAS_DORAEMON_MODEL_SERVICEINVOKERESULT_H_
+#endif // !ALIBABACLOUD_IDAAS_DORAEMON_MODEL_QUERYSMSREPORTSRESULT_H_

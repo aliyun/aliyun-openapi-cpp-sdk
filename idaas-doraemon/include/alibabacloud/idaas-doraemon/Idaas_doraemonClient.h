@@ -38,10 +38,18 @@
 #include "model/ListAuthenticatorOpsLogsResult.h"
 #include "model/ListAuthenticatorsRequest.h"
 #include "model/ListAuthenticatorsResult.h"
+#include "model/ListCostUnitOrdersRequest.h"
+#include "model/ListCostUnitOrdersResult.h"
+#include "model/ListOrderConsumeStatisticRecordsRequest.h"
+#include "model/ListOrderConsumeStatisticRecordsResult.h"
 #include "model/ListPwnedPasswordsRequest.h"
 #include "model/ListPwnedPasswordsResult.h"
 #include "model/ListUsersRequest.h"
 #include "model/ListUsersResult.h"
+#include "model/QuerySmsReportsRequest.h"
+#include "model/QuerySmsReportsResult.h"
+#include "model/QuerySmsUpsRequest.h"
+#include "model/QuerySmsUpsResult.h"
 #include "model/RegisterAuthenticatorRequest.h"
 #include "model/RegisterAuthenticatorResult.h"
 #include "model/ServiceInvokeRequest.h"
@@ -85,12 +93,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListAuthenticatorsResult> ListAuthenticatorsOutcome;
 			typedef std::future<ListAuthenticatorsOutcome> ListAuthenticatorsOutcomeCallable;
 			typedef std::function<void(const Idaas_doraemonClient*, const Model::ListAuthenticatorsRequest&, const ListAuthenticatorsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAuthenticatorsAsyncHandler;
+			typedef Outcome<Error, Model::ListCostUnitOrdersResult> ListCostUnitOrdersOutcome;
+			typedef std::future<ListCostUnitOrdersOutcome> ListCostUnitOrdersOutcomeCallable;
+			typedef std::function<void(const Idaas_doraemonClient*, const Model::ListCostUnitOrdersRequest&, const ListCostUnitOrdersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCostUnitOrdersAsyncHandler;
+			typedef Outcome<Error, Model::ListOrderConsumeStatisticRecordsResult> ListOrderConsumeStatisticRecordsOutcome;
+			typedef std::future<ListOrderConsumeStatisticRecordsOutcome> ListOrderConsumeStatisticRecordsOutcomeCallable;
+			typedef std::function<void(const Idaas_doraemonClient*, const Model::ListOrderConsumeStatisticRecordsRequest&, const ListOrderConsumeStatisticRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOrderConsumeStatisticRecordsAsyncHandler;
 			typedef Outcome<Error, Model::ListPwnedPasswordsResult> ListPwnedPasswordsOutcome;
 			typedef std::future<ListPwnedPasswordsOutcome> ListPwnedPasswordsOutcomeCallable;
 			typedef std::function<void(const Idaas_doraemonClient*, const Model::ListPwnedPasswordsRequest&, const ListPwnedPasswordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPwnedPasswordsAsyncHandler;
 			typedef Outcome<Error, Model::ListUsersResult> ListUsersOutcome;
 			typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
 			typedef std::function<void(const Idaas_doraemonClient*, const Model::ListUsersRequest&, const ListUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersAsyncHandler;
+			typedef Outcome<Error, Model::QuerySmsReportsResult> QuerySmsReportsOutcome;
+			typedef std::future<QuerySmsReportsOutcome> QuerySmsReportsOutcomeCallable;
+			typedef std::function<void(const Idaas_doraemonClient*, const Model::QuerySmsReportsRequest&, const QuerySmsReportsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySmsReportsAsyncHandler;
+			typedef Outcome<Error, Model::QuerySmsUpsResult> QuerySmsUpsOutcome;
+			typedef std::future<QuerySmsUpsOutcome> QuerySmsUpsOutcomeCallable;
+			typedef std::function<void(const Idaas_doraemonClient*, const Model::QuerySmsUpsRequest&, const QuerySmsUpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySmsUpsAsyncHandler;
 			typedef Outcome<Error, Model::RegisterAuthenticatorResult> RegisterAuthenticatorOutcome;
 			typedef std::future<RegisterAuthenticatorOutcome> RegisterAuthenticatorOutcomeCallable;
 			typedef std::function<void(const Idaas_doraemonClient*, const Model::RegisterAuthenticatorRequest&, const RegisterAuthenticatorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegisterAuthenticatorAsyncHandler;
@@ -135,12 +155,24 @@ namespace AlibabaCloud
 			ListAuthenticatorsOutcome listAuthenticators(const Model::ListAuthenticatorsRequest &request)const;
 			void listAuthenticatorsAsync(const Model::ListAuthenticatorsRequest& request, const ListAuthenticatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAuthenticatorsOutcomeCallable listAuthenticatorsCallable(const Model::ListAuthenticatorsRequest& request) const;
+			ListCostUnitOrdersOutcome listCostUnitOrders(const Model::ListCostUnitOrdersRequest &request)const;
+			void listCostUnitOrdersAsync(const Model::ListCostUnitOrdersRequest& request, const ListCostUnitOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCostUnitOrdersOutcomeCallable listCostUnitOrdersCallable(const Model::ListCostUnitOrdersRequest& request) const;
+			ListOrderConsumeStatisticRecordsOutcome listOrderConsumeStatisticRecords(const Model::ListOrderConsumeStatisticRecordsRequest &request)const;
+			void listOrderConsumeStatisticRecordsAsync(const Model::ListOrderConsumeStatisticRecordsRequest& request, const ListOrderConsumeStatisticRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListOrderConsumeStatisticRecordsOutcomeCallable listOrderConsumeStatisticRecordsCallable(const Model::ListOrderConsumeStatisticRecordsRequest& request) const;
 			ListPwnedPasswordsOutcome listPwnedPasswords(const Model::ListPwnedPasswordsRequest &request)const;
 			void listPwnedPasswordsAsync(const Model::ListPwnedPasswordsRequest& request, const ListPwnedPasswordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPwnedPasswordsOutcomeCallable listPwnedPasswordsCallable(const Model::ListPwnedPasswordsRequest& request) const;
 			ListUsersOutcome listUsers(const Model::ListUsersRequest &request)const;
 			void listUsersAsync(const Model::ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUsersOutcomeCallable listUsersCallable(const Model::ListUsersRequest& request) const;
+			QuerySmsReportsOutcome querySmsReports(const Model::QuerySmsReportsRequest &request)const;
+			void querySmsReportsAsync(const Model::QuerySmsReportsRequest& request, const QuerySmsReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySmsReportsOutcomeCallable querySmsReportsCallable(const Model::QuerySmsReportsRequest& request) const;
+			QuerySmsUpsOutcome querySmsUps(const Model::QuerySmsUpsRequest &request)const;
+			void querySmsUpsAsync(const Model::QuerySmsUpsRequest& request, const QuerySmsUpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySmsUpsOutcomeCallable querySmsUpsCallable(const Model::QuerySmsUpsRequest& request) const;
 			RegisterAuthenticatorOutcome registerAuthenticator(const Model::RegisterAuthenticatorRequest &request)const;
 			void registerAuthenticatorAsync(const Model::RegisterAuthenticatorRequest& request, const RegisterAuthenticatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RegisterAuthenticatorOutcomeCallable registerAuthenticatorCallable(const Model::RegisterAuthenticatorRequest& request) const;
