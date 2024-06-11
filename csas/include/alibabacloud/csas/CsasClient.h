@@ -54,10 +54,14 @@
 #include "model/DeletePrivateAccessTagResult.h"
 #include "model/DeleteRegistrationPoliciesRequest.h"
 #include "model/DeleteRegistrationPoliciesResult.h"
+#include "model/DeleteUserDevicesRequest.h"
+#include "model/DeleteUserDevicesResult.h"
 #include "model/DeleteUserGroupRequest.h"
 #include "model/DeleteUserGroupResult.h"
 #include "model/DetachApplication2ConnectorRequest.h"
 #include "model/DetachApplication2ConnectorResult.h"
+#include "model/ExportUserDevicesRequest.h"
+#include "model/ExportUserDevicesResult.h"
 #include "model/GetActiveIdpConfigRequest.h"
 #include "model/GetActiveIdpConfigResult.h"
 #include "model/GetClientUserRequest.h"
@@ -217,12 +221,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRegistrationPoliciesResult> DeleteRegistrationPoliciesOutcome;
 			typedef std::future<DeleteRegistrationPoliciesOutcome> DeleteRegistrationPoliciesOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::DeleteRegistrationPoliciesRequest&, const DeleteRegistrationPoliciesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRegistrationPoliciesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteUserDevicesResult> DeleteUserDevicesOutcome;
+			typedef std::future<DeleteUserDevicesOutcome> DeleteUserDevicesOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::DeleteUserDevicesRequest&, const DeleteUserDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserDevicesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteUserGroupResult> DeleteUserGroupOutcome;
 			typedef std::future<DeleteUserGroupOutcome> DeleteUserGroupOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::DeleteUserGroupRequest&, const DeleteUserGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserGroupAsyncHandler;
 			typedef Outcome<Error, Model::DetachApplication2ConnectorResult> DetachApplication2ConnectorOutcome;
 			typedef std::future<DetachApplication2ConnectorOutcome> DetachApplication2ConnectorOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::DetachApplication2ConnectorRequest&, const DetachApplication2ConnectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachApplication2ConnectorAsyncHandler;
+			typedef Outcome<Error, Model::ExportUserDevicesResult> ExportUserDevicesOutcome;
+			typedef std::future<ExportUserDevicesOutcome> ExportUserDevicesOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ExportUserDevicesRequest&, const ExportUserDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExportUserDevicesAsyncHandler;
 			typedef Outcome<Error, Model::GetActiveIdpConfigResult> GetActiveIdpConfigOutcome;
 			typedef std::future<GetActiveIdpConfigOutcome> GetActiveIdpConfigOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::GetActiveIdpConfigRequest&, const GetActiveIdpConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetActiveIdpConfigAsyncHandler;
@@ -429,12 +439,18 @@ namespace AlibabaCloud
 			DeleteRegistrationPoliciesOutcome deleteRegistrationPolicies(const Model::DeleteRegistrationPoliciesRequest &request)const;
 			void deleteRegistrationPoliciesAsync(const Model::DeleteRegistrationPoliciesRequest& request, const DeleteRegistrationPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRegistrationPoliciesOutcomeCallable deleteRegistrationPoliciesCallable(const Model::DeleteRegistrationPoliciesRequest& request) const;
+			DeleteUserDevicesOutcome deleteUserDevices(const Model::DeleteUserDevicesRequest &request)const;
+			void deleteUserDevicesAsync(const Model::DeleteUserDevicesRequest& request, const DeleteUserDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteUserDevicesOutcomeCallable deleteUserDevicesCallable(const Model::DeleteUserDevicesRequest& request) const;
 			DeleteUserGroupOutcome deleteUserGroup(const Model::DeleteUserGroupRequest &request)const;
 			void deleteUserGroupAsync(const Model::DeleteUserGroupRequest& request, const DeleteUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUserGroupOutcomeCallable deleteUserGroupCallable(const Model::DeleteUserGroupRequest& request) const;
 			DetachApplication2ConnectorOutcome detachApplication2Connector(const Model::DetachApplication2ConnectorRequest &request)const;
 			void detachApplication2ConnectorAsync(const Model::DetachApplication2ConnectorRequest& request, const DetachApplication2ConnectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachApplication2ConnectorOutcomeCallable detachApplication2ConnectorCallable(const Model::DetachApplication2ConnectorRequest& request) const;
+			ExportUserDevicesOutcome exportUserDevices(const Model::ExportUserDevicesRequest &request)const;
+			void exportUserDevicesAsync(const Model::ExportUserDevicesRequest& request, const ExportUserDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ExportUserDevicesOutcomeCallable exportUserDevicesCallable(const Model::ExportUserDevicesRequest& request) const;
 			GetActiveIdpConfigOutcome getActiveIdpConfig(const Model::GetActiveIdpConfigRequest &request)const;
 			void getActiveIdpConfigAsync(const Model::GetActiveIdpConfigRequest& request, const GetActiveIdpConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetActiveIdpConfigOutcomeCallable getActiveIdpConfigCallable(const Model::GetActiveIdpConfigRequest& request) const;

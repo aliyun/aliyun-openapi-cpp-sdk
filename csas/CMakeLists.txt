@@ -53,10 +53,14 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/DeletePrivateAccessTagResult.h
 	include/alibabacloud/csas/model/DeleteRegistrationPoliciesRequest.h
 	include/alibabacloud/csas/model/DeleteRegistrationPoliciesResult.h
+	include/alibabacloud/csas/model/DeleteUserDevicesRequest.h
+	include/alibabacloud/csas/model/DeleteUserDevicesResult.h
 	include/alibabacloud/csas/model/DeleteUserGroupRequest.h
 	include/alibabacloud/csas/model/DeleteUserGroupResult.h
 	include/alibabacloud/csas/model/DetachApplication2ConnectorRequest.h
 	include/alibabacloud/csas/model/DetachApplication2ConnectorResult.h
+	include/alibabacloud/csas/model/ExportUserDevicesRequest.h
+	include/alibabacloud/csas/model/ExportUserDevicesResult.h
 	include/alibabacloud/csas/model/GetActiveIdpConfigRequest.h
 	include/alibabacloud/csas/model/GetActiveIdpConfigResult.h
 	include/alibabacloud/csas/model/GetClientUserRequest.h
@@ -194,10 +198,14 @@ set(csas_src
 	src/model/DeletePrivateAccessTagResult.cc
 	src/model/DeleteRegistrationPoliciesRequest.cc
 	src/model/DeleteRegistrationPoliciesResult.cc
+	src/model/DeleteUserDevicesRequest.cc
+	src/model/DeleteUserDevicesResult.cc
 	src/model/DeleteUserGroupRequest.cc
 	src/model/DeleteUserGroupResult.cc
 	src/model/DetachApplication2ConnectorRequest.cc
 	src/model/DetachApplication2ConnectorResult.cc
+	src/model/ExportUserDevicesRequest.cc
+	src/model/ExportUserDevicesResult.cc
 	src/model/GetActiveIdpConfigRequest.cc
 	src/model/GetActiveIdpConfigResult.cc
 	src/model/GetClientUserRequest.cc

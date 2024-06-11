@@ -627,6 +627,42 @@ CsasClient::DeleteRegistrationPoliciesOutcomeCallable CsasClient::deleteRegistra
 	return task->get_future();
 }
 
+CsasClient::DeleteUserDevicesOutcome CsasClient::deleteUserDevices(const DeleteUserDevicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteUserDevicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteUserDevicesOutcome(DeleteUserDevicesResult(outcome.result()));
+	else
+		return DeleteUserDevicesOutcome(outcome.error());
+}
+
+void CsasClient::deleteUserDevicesAsync(const DeleteUserDevicesRequest& request, const DeleteUserDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteUserDevices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::DeleteUserDevicesOutcomeCallable CsasClient::deleteUserDevicesCallable(const DeleteUserDevicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteUserDevicesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteUserDevices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::DeleteUserGroupOutcome CsasClient::deleteUserGroup(const DeleteUserGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +729,42 @@ CsasClient::DetachApplication2ConnectorOutcomeCallable CsasClient::detachApplica
 			[this, request]()
 			{
 			return this->detachApplication2Connector(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::ExportUserDevicesOutcome CsasClient::exportUserDevices(const ExportUserDevicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExportUserDevicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExportUserDevicesOutcome(ExportUserDevicesResult(outcome.result()));
+	else
+		return ExportUserDevicesOutcome(outcome.error());
+}
+
+void CsasClient::exportUserDevicesAsync(const ExportUserDevicesRequest& request, const ExportUserDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, exportUserDevices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ExportUserDevicesOutcomeCallable CsasClient::exportUserDevicesCallable(const ExportUserDevicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExportUserDevicesOutcome()>>(
+			[this, request]()
+			{
+			return this->exportUserDevices(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
