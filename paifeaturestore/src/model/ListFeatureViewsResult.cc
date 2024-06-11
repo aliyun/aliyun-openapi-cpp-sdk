@@ -57,6 +57,8 @@ void ListFeatureViewsResult::parse(const std::string &payload)
 			featureViewsObject.owner = valueFeatureViewsFeatureViewsItem["Owner"].asString();
 		if(!valueFeatureViewsFeatureViewsItem["Type"].isNull())
 			featureViewsObject.type = valueFeatureViewsFeatureViewsItem["Type"].asString();
+		if(!valueFeatureViewsFeatureViewsItem["WriteToFeatureDB"].isNull())
+			featureViewsObject.writeToFeatureDB = valueFeatureViewsFeatureViewsItem["WriteToFeatureDB"].asString() == "true";
 		if(!valueFeatureViewsFeatureViewsItem["GmtCreateTime"].isNull())
 			featureViewsObject.gmtCreateTime = valueFeatureViewsFeatureViewsItem["GmtCreateTime"].asString();
 		if(!valueFeatureViewsFeatureViewsItem["GmtModifiedTime"].isNull())

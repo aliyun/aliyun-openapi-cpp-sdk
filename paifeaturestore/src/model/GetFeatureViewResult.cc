@@ -83,6 +83,8 @@ void GetFeatureViewResult::parse(const std::string &payload)
 		registerDatasourceId_ = value["RegisterDatasourceId"].asString();
 	if(!value["RegisterDatasourceName"].isNull())
 		registerDatasourceName_ = value["RegisterDatasourceName"].asString();
+	if(!value["WriteToFeatureDB"].isNull())
+		writeToFeatureDB_ = value["WriteToFeatureDB"].asString() == "true";
 	if(!value["SyncOnlineTable"].isNull())
 		syncOnlineTable_ = value["SyncOnlineTable"].asString() == "true";
 	if(!value["TTL"].isNull())
@@ -106,6 +108,11 @@ std::string GetFeatureViewResult::getFeatureEntityName()const
 std::string GetFeatureViewResult::getOwner()const
 {
 	return owner_;
+}
+
+bool GetFeatureViewResult::getWriteToFeatureDB()const
+{
+	return writeToFeatureDB_;
 }
 
 std::string GetFeatureViewResult::getProjectName()const

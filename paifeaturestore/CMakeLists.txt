@@ -99,6 +99,8 @@ set(paifeaturestore_public_header_model
 	include/alibabacloud/paifeaturestore/model/ListFeatureEntitiesResult.h
 	include/alibabacloud/paifeaturestore/model/ListFeatureViewFieldRelationshipsRequest.h
 	include/alibabacloud/paifeaturestore/model/ListFeatureViewFieldRelationshipsResult.h
+	include/alibabacloud/paifeaturestore/model/ListFeatureViewOnlineFeaturesRequest.h
+	include/alibabacloud/paifeaturestore/model/ListFeatureViewOnlineFeaturesResult.h
 	include/alibabacloud/paifeaturestore/model/ListFeatureViewRelationshipsRequest.h
 	include/alibabacloud/paifeaturestore/model/ListFeatureViewRelationshipsResult.h
 	include/alibabacloud/paifeaturestore/model/ListFeatureViewsRequest.h
@@ -222,6 +224,8 @@ set(paifeaturestore_src
 	src/model/ListFeatureEntitiesResult.cc
 	src/model/ListFeatureViewFieldRelationshipsRequest.cc
 	src/model/ListFeatureViewFieldRelationshipsResult.cc
+	src/model/ListFeatureViewOnlineFeaturesRequest.cc
+	src/model/ListFeatureViewOnlineFeaturesResult.cc
 	src/model/ListFeatureViewRelationshipsRequest.cc
 	src/model/ListFeatureViewRelationshipsResult.cc
 	src/model/ListFeatureViewsRequest.cc

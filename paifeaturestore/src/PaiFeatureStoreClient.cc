@@ -1455,6 +1455,42 @@ PaiFeatureStoreClient::ListFeatureViewFieldRelationshipsOutcomeCallable PaiFeatu
 	return task->get_future();
 }
 
+PaiFeatureStoreClient::ListFeatureViewOnlineFeaturesOutcome PaiFeatureStoreClient::listFeatureViewOnlineFeatures(const ListFeatureViewOnlineFeaturesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListFeatureViewOnlineFeaturesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListFeatureViewOnlineFeaturesOutcome(ListFeatureViewOnlineFeaturesResult(outcome.result()));
+	else
+		return ListFeatureViewOnlineFeaturesOutcome(outcome.error());
+}
+
+void PaiFeatureStoreClient::listFeatureViewOnlineFeaturesAsync(const ListFeatureViewOnlineFeaturesRequest& request, const ListFeatureViewOnlineFeaturesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listFeatureViewOnlineFeatures(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PaiFeatureStoreClient::ListFeatureViewOnlineFeaturesOutcomeCallable PaiFeatureStoreClient::listFeatureViewOnlineFeaturesCallable(const ListFeatureViewOnlineFeaturesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListFeatureViewOnlineFeaturesOutcome()>>(
+			[this, request]()
+			{
+			return this->listFeatureViewOnlineFeatures(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PaiFeatureStoreClient::ListFeatureViewRelationshipsOutcome PaiFeatureStoreClient::listFeatureViewRelationships(const ListFeatureViewRelationshipsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -100,6 +100,8 @@
 #include "model/ListFeatureEntitiesResult.h"
 #include "model/ListFeatureViewFieldRelationshipsRequest.h"
 #include "model/ListFeatureViewFieldRelationshipsResult.h"
+#include "model/ListFeatureViewOnlineFeaturesRequest.h"
+#include "model/ListFeatureViewOnlineFeaturesResult.h"
 #include "model/ListFeatureViewRelationshipsRequest.h"
 #include "model/ListFeatureViewRelationshipsResult.h"
 #include "model/ListFeatureViewsRequest.h"
@@ -268,6 +270,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListFeatureViewFieldRelationshipsResult> ListFeatureViewFieldRelationshipsOutcome;
 			typedef std::future<ListFeatureViewFieldRelationshipsOutcome> ListFeatureViewFieldRelationshipsOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ListFeatureViewFieldRelationshipsRequest&, const ListFeatureViewFieldRelationshipsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFeatureViewFieldRelationshipsAsyncHandler;
+			typedef Outcome<Error, Model::ListFeatureViewOnlineFeaturesResult> ListFeatureViewOnlineFeaturesOutcome;
+			typedef std::future<ListFeatureViewOnlineFeaturesOutcome> ListFeatureViewOnlineFeaturesOutcomeCallable;
+			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ListFeatureViewOnlineFeaturesRequest&, const ListFeatureViewOnlineFeaturesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFeatureViewOnlineFeaturesAsyncHandler;
 			typedef Outcome<Error, Model::ListFeatureViewRelationshipsResult> ListFeatureViewRelationshipsOutcome;
 			typedef std::future<ListFeatureViewRelationshipsOutcome> ListFeatureViewRelationshipsOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ListFeatureViewRelationshipsRequest&, const ListFeatureViewRelationshipsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFeatureViewRelationshipsAsyncHandler;
@@ -453,6 +458,9 @@ namespace AlibabaCloud
 			ListFeatureViewFieldRelationshipsOutcome listFeatureViewFieldRelationships(const Model::ListFeatureViewFieldRelationshipsRequest &request)const;
 			void listFeatureViewFieldRelationshipsAsync(const Model::ListFeatureViewFieldRelationshipsRequest& request, const ListFeatureViewFieldRelationshipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListFeatureViewFieldRelationshipsOutcomeCallable listFeatureViewFieldRelationshipsCallable(const Model::ListFeatureViewFieldRelationshipsRequest& request) const;
+			ListFeatureViewOnlineFeaturesOutcome listFeatureViewOnlineFeatures(const Model::ListFeatureViewOnlineFeaturesRequest &request)const;
+			void listFeatureViewOnlineFeaturesAsync(const Model::ListFeatureViewOnlineFeaturesRequest& request, const ListFeatureViewOnlineFeaturesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFeatureViewOnlineFeaturesOutcomeCallable listFeatureViewOnlineFeaturesCallable(const Model::ListFeatureViewOnlineFeaturesRequest& request) const;
 			ListFeatureViewRelationshipsOutcome listFeatureViewRelationships(const Model::ListFeatureViewRelationshipsRequest &request)const;
 			void listFeatureViewRelationshipsAsync(const Model::ListFeatureViewRelationshipsRequest& request, const ListFeatureViewRelationshipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListFeatureViewRelationshipsOutcomeCallable listFeatureViewRelationshipsCallable(const Model::ListFeatureViewRelationshipsRequest& request) const;

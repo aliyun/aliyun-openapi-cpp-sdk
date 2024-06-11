@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string featureEntityName;
 					std::string owner;
+					bool writeToFeatureDB;
 					std::string featureViewId;
 					std::string projectName;
 					std::string projectId;

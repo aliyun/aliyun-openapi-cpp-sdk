@@ -45,6 +45,7 @@ namespace AlibabaCloud
 				~GetFeatureViewResult();
 				std::string getFeatureEntityName()const;
 				std::string getOwner()const;
+				bool getWriteToFeatureDB()const;
 				std::string getProjectName()const;
 				std::string getPublishTableScript()const;
 				std::string getConfig()const;
@@ -71,6 +72,7 @@ namespace AlibabaCloud
 			private:
 				std::string featureEntityName_;
 				std::string owner_;
+				bool writeToFeatureDB_;
 				std::string projectName_;
 				std::string publishTableScript_;
 				std::string config_;
