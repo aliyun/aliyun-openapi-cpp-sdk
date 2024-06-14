@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/RealTimeSnapshotCommandResult.h>
+#include <alibabacloud/live/model/DeleteRtcMPUEventSubResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-RealTimeSnapshotCommandResult::RealTimeSnapshotCommandResult() :
+DeleteRtcMPUEventSubResult::DeleteRtcMPUEventSubResult() :
 	ServiceResult()
 {}
 
-RealTimeSnapshotCommandResult::RealTimeSnapshotCommandResult(const std::string &payload) :
+DeleteRtcMPUEventSubResult::DeleteRtcMPUEventSubResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-RealTimeSnapshotCommandResult::~RealTimeSnapshotCommandResult()
+DeleteRtcMPUEventSubResult::~DeleteRtcMPUEventSubResult()
 {}
 
-void RealTimeSnapshotCommandResult::parse(const std::string &payload)
+void DeleteRtcMPUEventSubResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

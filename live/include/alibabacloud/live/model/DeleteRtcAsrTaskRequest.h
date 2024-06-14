@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DELETEMULTIRATECONFIGREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DELETEMULTIRATECONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DELETERTCASRTASKREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DELETERTCASRTASKREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,20 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT DeleteMultiRateConfigRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT DeleteRtcAsrTaskRequest : public RpcServiceRequest {
 public:
-	DeleteMultiRateConfigRequest();
-	~DeleteMultiRateConfigRequest();
-	std::string getDeleteAll() const;
-	void setDeleteAll(const std::string &deleteAll);
-	std::string getApp() const;
-	void setApp(const std::string &app);
-	std::string getGroupId() const;
-	void setGroupId(const std::string &groupId);
-	std::string getTemplates() const;
-	void setTemplates(const std::string &templates);
-	std::string getDomainName() const;
-	void setDomainName(const std::string &domainName);
+	DeleteRtcAsrTaskRequest();
+	~DeleteRtcAsrTaskRequest();
+	std::string getTaskId() const;
+	void setTaskId(const std::string &taskId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 
 private:
-	std::string deleteAll_;
-	std::string app_;
-	std::string groupId_;
-	std::string templates_;
-	std::string domainName_;
+	std::string taskId_;
 	long ownerId_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_DELETEMULTIRATECONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DELETERTCASRTASKREQUEST_H_

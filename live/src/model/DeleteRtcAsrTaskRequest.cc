@@ -14,31 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/GetMultiRateConfigListRequest.h>
+#include <alibabacloud/live/model/DeleteRtcAsrTaskRequest.h>
 
-using AlibabaCloud::Live::Model::GetMultiRateConfigListRequest;
+using AlibabaCloud::Live::Model::DeleteRtcAsrTaskRequest;
 
-GetMultiRateConfigListRequest::GetMultiRateConfigListRequest()
-    : RpcServiceRequest("live", "2016-11-01", "GetMultiRateConfigList") {
+DeleteRtcAsrTaskRequest::DeleteRtcAsrTaskRequest()
+    : RpcServiceRequest("live", "2016-11-01", "DeleteRtcAsrTask") {
   setMethod(HttpRequest::Method::Post);
 }
 
-GetMultiRateConfigListRequest::~GetMultiRateConfigListRequest() {}
+DeleteRtcAsrTaskRequest::~DeleteRtcAsrTaskRequest() {}
 
-std::string GetMultiRateConfigListRequest::getDomainName() const {
-  return domainName_;
+std::string DeleteRtcAsrTaskRequest::getTaskId() const {
+  return taskId_;
 }
 
-void GetMultiRateConfigListRequest::setDomainName(const std::string &domainName) {
-  domainName_ = domainName;
-  setParameter(std::string("DomainName"), domainName);
+void DeleteRtcAsrTaskRequest::setTaskId(const std::string &taskId) {
+  taskId_ = taskId;
+  setParameter(std::string("TaskId"), taskId);
 }
 
-long GetMultiRateConfigListRequest::getOwnerId() const {
+long DeleteRtcAsrTaskRequest::getOwnerId() const {
   return ownerId_;
 }
 
-void GetMultiRateConfigListRequest::setOwnerId(long ownerId) {
+void DeleteRtcAsrTaskRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }

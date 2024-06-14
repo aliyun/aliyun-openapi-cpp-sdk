@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/SetLiveStreamOptimizedFeatureConfigResult.h>
+#include <alibabacloud/live/model/UpdateRtcMPUEventSubResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-SetLiveStreamOptimizedFeatureConfigResult::SetLiveStreamOptimizedFeatureConfigResult() :
+UpdateRtcMPUEventSubResult::UpdateRtcMPUEventSubResult() :
 	ServiceResult()
 {}
 
-SetLiveStreamOptimizedFeatureConfigResult::SetLiveStreamOptimizedFeatureConfigResult(const std::string &payload) :
+UpdateRtcMPUEventSubResult::UpdateRtcMPUEventSubResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SetLiveStreamOptimizedFeatureConfigResult::~SetLiveStreamOptimizedFeatureConfigResult()
+UpdateRtcMPUEventSubResult::~UpdateRtcMPUEventSubResult()
 {}
 
-void SetLiveStreamOptimizedFeatureConfigResult::parse(const std::string &payload)
+void UpdateRtcMPUEventSubResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

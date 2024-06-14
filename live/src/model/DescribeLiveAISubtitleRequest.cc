@@ -52,6 +52,15 @@ void DescribeLiveAISubtitleRequest::setPageSize(const std::string &pageSize) {
   setParameter(std::string("PageSize"), pageSize);
 }
 
+bool DescribeLiveAISubtitleRequest::getIsDefault() const {
+  return isDefault_;
+}
+
+void DescribeLiveAISubtitleRequest::setIsDefault(bool isDefault) {
+  isDefault_ = isDefault;
+  setParameter(std::string("IsDefault"), isDefault ? "true" : "false");
+}
+
 long DescribeLiveAISubtitleRequest::getOwnerId() const {
   return ownerId_;
 }

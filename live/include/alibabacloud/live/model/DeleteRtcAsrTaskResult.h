@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_SETLIVESTREAMOPTIMIZEDFEATURECONFIGRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_SETLIVESTREAMOPTIMIZEDFEATURECONFIGRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DELETERTCASRTASKRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DELETERTCASRTASKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT SetLiveStreamOptimizedFeatureConfigResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DeleteRtcAsrTaskResult : public ServiceResult
 			{
 			public:
 
 
-				SetLiveStreamOptimizedFeatureConfigResult();
-				explicit SetLiveStreamOptimizedFeatureConfigResult(const std::string &payload);
-				~SetLiveStreamOptimizedFeatureConfigResult();
+				DeleteRtcAsrTaskResult();
+				explicit DeleteRtcAsrTaskResult(const std::string &payload);
+				~DeleteRtcAsrTaskResult();
+				std::string getDescription()const;
+				long getRetCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string description_;
+				long retCode_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_SETLIVESTREAMOPTIMIZEDFEATURECONFIGRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DELETERTCASRTASKRESULT_H_

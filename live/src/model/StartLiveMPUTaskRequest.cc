@@ -63,9 +63,9 @@ void StartLiveMPUTaskRequest::setTranscodeParams(const StartLiveMPUTaskRequest::
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".Width", transcodeParams.layout.userPanes[dep1].width);
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".X", transcodeParams.layout.userPanes[dep1].x);
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".Y", transcodeParams.layout.userPanes[dep1].y);
-    setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".RenderMode", transcodeParams.layout.userPanes[dep1].renderMode);
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".UserInfo.SourceType", transcodeParams.layout.userPanes[dep1].userInfo.sourceType);
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".UserInfo.UserId", transcodeParams.layout.userPanes[dep1].userInfo.userId);
+    setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".RenderMode", transcodeParams.layout.userPanes[dep1].renderMode);
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".Height", transcodeParams.layout.userPanes[dep1].height);
   }
   setParameter(std::string("TranscodeParams") + ".Layout.LayoutMode", transcodeParams.layout.layoutMode);
@@ -82,10 +82,12 @@ void StartLiveMPUTaskRequest::setTranscodeParams(const StartLiveMPUTaskRequest::
   setParameter(std::string("TranscodeParams") + ".EncodeParams.AudioOnly", transcodeParams.encodeParams.audioOnly);
   setParameter(std::string("TranscodeParams") + ".EncodeParams.VideoWidth", transcodeParams.encodeParams.videoWidth);
   setParameter(std::string("TranscodeParams") + ".EncodeParams.AudioBitrate", transcodeParams.encodeParams.audioBitrate);
+  setParameter(std::string("TranscodeParams") + ".EncodeParams.EnhancedParam", transcodeParams.encodeParams.enhancedParam);
   setParameter(std::string("TranscodeParams") + ".EncodeParams.VideoFramerate", transcodeParams.encodeParams.videoFramerate);
   setParameter(std::string("TranscodeParams") + ".EncodeParams.VideoHeight", transcodeParams.encodeParams.videoHeight);
   setParameter(std::string("TranscodeParams") + ".EncodeParams.AudioSampleRate", transcodeParams.encodeParams.audioSampleRate);
   setParameter(std::string("TranscodeParams") + ".EncodeParams.VideoBitrate", transcodeParams.encodeParams.videoBitrate);
+  setParameter(std::string("TranscodeParams") + ".EncodeParams.VideoCodec", transcodeParams.encodeParams.videoCodec);
   setParameter(std::string("TranscodeParams") + ".EncodeParams.AudioChannels", transcodeParams.encodeParams.audioChannels);
   setParameter(std::string("TranscodeParams") + ".EncodeParams.VideoGop", transcodeParams.encodeParams.videoGop);
 }

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_REALTIMESNAPSHOTCOMMANDRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_REALTIMESNAPSHOTCOMMANDRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_LISTRTCMPUEVENTSUBRECORDRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_LISTRTCMPUEVENTSUBRECORDRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT RealTimeSnapshotCommandResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT ListRtcMPUEventSubRecordResult : public ServiceResult
 			{
 			public:
+				struct SubInfo
+				{
+					std::string callbackUrl;
+					std::string subId;
+					std::string appId;
+					std::string data;
+					std::string time;
+					std::string hTTPCode;
+					long cost;
+					std::string msgId;
+				};
 
 
-				RealTimeSnapshotCommandResult();
-				explicit RealTimeSnapshotCommandResult(const std::string &payload);
-				~RealTimeSnapshotCommandResult();
+				ListRtcMPUEventSubRecordResult();
+				explicit ListRtcMPUEventSubRecordResult(const std::string &payload);
+				~ListRtcMPUEventSubRecordResult();
+				bool getHasMore()const;
+				std::vector<SubInfo> getLogs()const;
+				long getCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				bool hasMore_;
+				std::vector<SubInfo> logs_;
+				long count_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_REALTIMESNAPSHOTCOMMANDRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_LISTRTCMPUEVENTSUBRECORDRESULT_H_

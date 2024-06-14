@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_GETMULTIRATECONFIGLISTREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_GETMULTIRATECONFIGLISTREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_CREATERTCMPUEVENTSUBREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_CREATERTCMPUEVENTSUBREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,23 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT GetMultiRateConfigListRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT CreateRtcMPUEventSubRequest : public RpcServiceRequest {
 public:
-	GetMultiRateConfigListRequest();
-	~GetMultiRateConfigListRequest();
-	std::string getDomainName() const;
-	void setDomainName(const std::string &domainName);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
+	CreateRtcMPUEventSubRequest();
+	~CreateRtcMPUEventSubRequest();
+	std::string getAppId() const;
+	void setAppId(const std::string &appId);
+	std::string getCallbackUrl() const;
+	void setCallbackUrl(const std::string &callbackUrl);
+	std::string getChannelIds() const;
+	void setChannelIds(const std::string &channelIds);
 
 private:
-	std::string domainName_;
-	long ownerId_;
+	std::string appId_;
+	std::string callbackUrl_;
+	std::string channelIds_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_GETMULTIRATECONFIGLISTREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_CREATERTCMPUEVENTSUBREQUEST_H_

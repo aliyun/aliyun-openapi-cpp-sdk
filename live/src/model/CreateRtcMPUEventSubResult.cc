@@ -14,45 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/DeleteMultiRateConfigResult.h>
+#include <alibabacloud/live/model/CreateRtcMPUEventSubResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-DeleteMultiRateConfigResult::DeleteMultiRateConfigResult() :
+CreateRtcMPUEventSubResult::CreateRtcMPUEventSubResult() :
 	ServiceResult()
 {}
 
-DeleteMultiRateConfigResult::DeleteMultiRateConfigResult(const std::string &payload) :
+CreateRtcMPUEventSubResult::CreateRtcMPUEventSubResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteMultiRateConfigResult::~DeleteMultiRateConfigResult()
+CreateRtcMPUEventSubResult::~CreateRtcMPUEventSubResult()
 {}
 
-void DeleteMultiRateConfigResult::parse(const std::string &payload)
+void CreateRtcMPUEventSubResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!value["SubId"].isNull())
+		subId_ = value["SubId"].asString();
 
 }
 
-std::string DeleteMultiRateConfigResult::getMessage()const
+std::string CreateRtcMPUEventSubResult::getSubId()const
 {
-	return message_;
-}
-
-int DeleteMultiRateConfigResult::getCode()const
-{
-	return code_;
+	return subId_;
 }
 

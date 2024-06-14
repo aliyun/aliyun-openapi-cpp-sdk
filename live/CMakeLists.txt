@@ -79,8 +79,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/AddLiveStreamWatermarkResult.h
 	include/alibabacloud/live/model/AddLiveStreamWatermarkRuleRequest.h
 	include/alibabacloud/live/model/AddLiveStreamWatermarkRuleResult.h
-	include/alibabacloud/live/model/AddMultiRateConfigRequest.h
-	include/alibabacloud/live/model/AddMultiRateConfigResult.h
 	include/alibabacloud/live/model/AddPlaylistItemsRequest.h
 	include/alibabacloud/live/model/AddPlaylistItemsResult.h
 	include/alibabacloud/live/model/AddRtsLiveStreamTranscodeRequest.h
@@ -135,8 +133,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/CreateLiveStreamMonitorResult.h
 	include/alibabacloud/live/model/CreateLiveStreamRecordIndexFilesRequest.h
 	include/alibabacloud/live/model/CreateLiveStreamRecordIndexFilesResult.h
-	include/alibabacloud/live/model/CreateLiveTranscodeTemplateRequest.h
-	include/alibabacloud/live/model/CreateLiveTranscodeTemplateResult.h
 	include/alibabacloud/live/model/CreateMessageAppRequest.h
 	include/alibabacloud/live/model/CreateMessageAppResult.h
 	include/alibabacloud/live/model/CreateMessageGroupRequest.h
@@ -147,6 +143,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/CreateRoomRealTimeStreamAddressResult.h
 	include/alibabacloud/live/model/CreateRtcAsrTaskRequest.h
 	include/alibabacloud/live/model/CreateRtcAsrTaskResult.h
+	include/alibabacloud/live/model/CreateRtcMPUEventSubRequest.h
+	include/alibabacloud/live/model/CreateRtcMPUEventSubResult.h
 	include/alibabacloud/live/model/DeleteCasterRequest.h
 	include/alibabacloud/live/model/DeleteCasterResult.h
 	include/alibabacloud/live/model/DeleteCasterComponentRequest.h
@@ -245,14 +243,16 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteMessageAppResult.h
 	include/alibabacloud/live/model/DeleteMixStreamRequest.h
 	include/alibabacloud/live/model/DeleteMixStreamResult.h
-	include/alibabacloud/live/model/DeleteMultiRateConfigRequest.h
-	include/alibabacloud/live/model/DeleteMultiRateConfigResult.h
 	include/alibabacloud/live/model/DeletePlaylistRequest.h
 	include/alibabacloud/live/model/DeletePlaylistResult.h
 	include/alibabacloud/live/model/DeletePlaylistItemsRequest.h
 	include/alibabacloud/live/model/DeletePlaylistItemsResult.h
 	include/alibabacloud/live/model/DeleteRoomRequest.h
 	include/alibabacloud/live/model/DeleteRoomResult.h
+	include/alibabacloud/live/model/DeleteRtcAsrTaskRequest.h
+	include/alibabacloud/live/model/DeleteRtcAsrTaskResult.h
+	include/alibabacloud/live/model/DeleteRtcMPUEventSubRequest.h
+	include/alibabacloud/live/model/DeleteRtcMPUEventSubResult.h
 	include/alibabacloud/live/model/DeleteSnapshotCallbackAuthRequest.h
 	include/alibabacloud/live/model/DeleteSnapshotCallbackAuthResult.h
 	include/alibabacloud/live/model/DeleteSnapshotFilesRequest.h
@@ -531,10 +531,10 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeRTSNativeSDKVvDataResult.h
 	include/alibabacloud/live/model/DescribeRoomKickoutUserListRequest.h
 	include/alibabacloud/live/model/DescribeRoomKickoutUserListResult.h
-	include/alibabacloud/live/model/DescribeRoomListRequest.h
-	include/alibabacloud/live/model/DescribeRoomListResult.h
 	include/alibabacloud/live/model/DescribeRoomStatusRequest.h
 	include/alibabacloud/live/model/DescribeRoomStatusResult.h
+	include/alibabacloud/live/model/DescribeRtcMPUEventSubRequest.h
+	include/alibabacloud/live/model/DescribeRtcMPUEventSubResult.h
 	include/alibabacloud/live/model/DescribeShowListRequest.h
 	include/alibabacloud/live/model/DescribeShowListResult.h
 	include/alibabacloud/live/model/DescribeStreamLocationBlockRequest.h
@@ -585,10 +585,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/GetMessageGroupResult.h
 	include/alibabacloud/live/model/GetMessageTokenRequest.h
 	include/alibabacloud/live/model/GetMessageTokenResult.h
-	include/alibabacloud/live/model/GetMultiRateConfigRequest.h
-	include/alibabacloud/live/model/GetMultiRateConfigResult.h
-	include/alibabacloud/live/model/GetMultiRateConfigListRequest.h
-	include/alibabacloud/live/model/GetMultiRateConfigListResult.h
 	include/alibabacloud/live/model/GetTranscodeTaskStatusRequest.h
 	include/alibabacloud/live/model/GetTranscodeTaskStatusResult.h
 	include/alibabacloud/live/model/HotLiveRtcStreamRequest.h
@@ -643,6 +639,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/ListPlaylistResult.h
 	include/alibabacloud/live/model/ListPlaylistItemsRequest.h
 	include/alibabacloud/live/model/ListPlaylistItemsResult.h
+	include/alibabacloud/live/model/ListRtcMPUEventSubRecordRequest.h
+	include/alibabacloud/live/model/ListRtcMPUEventSubRecordResult.h
 	include/alibabacloud/live/model/MiguLivePullToPushStartRequest.h
 	include/alibabacloud/live/model/MiguLivePullToPushStartResult.h
 	include/alibabacloud/live/model/MiguLivePullToPushStatusRequest.h
@@ -695,8 +693,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/QuerySnapshotCallbackAuthResult.h
 	include/alibabacloud/live/model/RealTimeRecordCommandRequest.h
 	include/alibabacloud/live/model/RealTimeRecordCommandResult.h
-	include/alibabacloud/live/model/RealTimeSnapshotCommandRequest.h
-	include/alibabacloud/live/model/RealTimeSnapshotCommandResult.h
 	include/alibabacloud/live/model/RemoveShowFromShowListRequest.h
 	include/alibabacloud/live/model/RemoveShowFromShowListResult.h
 	include/alibabacloud/live/model/RemoveTerminalsRequest.h
@@ -747,8 +743,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/SetLiveStreamBlockResult.h
 	include/alibabacloud/live/model/SetLiveStreamDelayConfigRequest.h
 	include/alibabacloud/live/model/SetLiveStreamDelayConfigResult.h
-	include/alibabacloud/live/model/SetLiveStreamOptimizedFeatureConfigRequest.h
-	include/alibabacloud/live/model/SetLiveStreamOptimizedFeatureConfigResult.h
 	include/alibabacloud/live/model/SetLiveStreamPreloadTasksRequest.h
 	include/alibabacloud/live/model/SetLiveStreamPreloadTasksResult.h
 	include/alibabacloud/live/model/SetLiveStreamsNotifyUrlConfigRequest.h
@@ -843,6 +837,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/UpdateMessageGroupResult.h
 	include/alibabacloud/live/model/UpdateMixStreamRequest.h
 	include/alibabacloud/live/model/UpdateMixStreamResult.h
+	include/alibabacloud/live/model/UpdateRtcMPUEventSubRequest.h
+	include/alibabacloud/live/model/UpdateRtcMPUEventSubResult.h
 	include/alibabacloud/live/model/VerifyLiveDomainOwnerRequest.h
 	include/alibabacloud/live/model/VerifyLiveDomainOwnerResult.h )
 
@@ -906,8 +902,6 @@ set(live_src
 	src/model/AddLiveStreamWatermarkResult.cc
 	src/model/AddLiveStreamWatermarkRuleRequest.cc
 	src/model/AddLiveStreamWatermarkRuleResult.cc
-	src/model/AddMultiRateConfigRequest.cc
-	src/model/AddMultiRateConfigResult.cc
 	src/model/AddPlaylistItemsRequest.cc
 	src/model/AddPlaylistItemsResult.cc
 	src/model/AddRtsLiveStreamTranscodeRequest.cc
@@ -962,8 +956,6 @@ set(live_src
 	src/model/CreateLiveStreamMonitorResult.cc
 	src/model/CreateLiveStreamRecordIndexFilesRequest.cc
 	src/model/CreateLiveStreamRecordIndexFilesResult.cc
-	src/model/CreateLiveTranscodeTemplateRequest.cc
-	src/model/CreateLiveTranscodeTemplateResult.cc
 	src/model/CreateMessageAppRequest.cc
 	src/model/CreateMessageAppResult.cc
 	src/model/CreateMessageGroupRequest.cc
@@ -974,6 +966,8 @@ set(live_src
 	src/model/CreateRoomRealTimeStreamAddressResult.cc
 	src/model/CreateRtcAsrTaskRequest.cc
 	src/model/CreateRtcAsrTaskResult.cc
+	src/model/CreateRtcMPUEventSubRequest.cc
+	src/model/CreateRtcMPUEventSubResult.cc
 	src/model/DeleteCasterRequest.cc
 	src/model/DeleteCasterResult.cc
 	src/model/DeleteCasterComponentRequest.cc
@@ -1072,14 +1066,16 @@ set(live_src
 	src/model/DeleteMessageAppResult.cc
 	src/model/DeleteMixStreamRequest.cc
 	src/model/DeleteMixStreamResult.cc
-	src/model/DeleteMultiRateConfigRequest.cc
-	src/model/DeleteMultiRateConfigResult.cc
 	src/model/DeletePlaylistRequest.cc
 	src/model/DeletePlaylistResult.cc
 	src/model/DeletePlaylistItemsRequest.cc
 	src/model/DeletePlaylistItemsResult.cc
 	src/model/DeleteRoomRequest.cc
 	src/model/DeleteRoomResult.cc
+	src/model/DeleteRtcAsrTaskRequest.cc
+	src/model/DeleteRtcAsrTaskResult.cc
+	src/model/DeleteRtcMPUEventSubRequest.cc
+	src/model/DeleteRtcMPUEventSubResult.cc
 	src/model/DeleteSnapshotCallbackAuthRequest.cc
 	src/model/DeleteSnapshotCallbackAuthResult.cc
 	src/model/DeleteSnapshotFilesRequest.cc
@@ -1358,10 +1354,10 @@ set(live_src
 	src/model/DescribeRTSNativeSDKVvDataResult.cc
 	src/model/DescribeRoomKickoutUserListRequest.cc
 	src/model/DescribeRoomKickoutUserListResult.cc
-	src/model/DescribeRoomListRequest.cc
-	src/model/DescribeRoomListResult.cc
 	src/model/DescribeRoomStatusRequest.cc
 	src/model/DescribeRoomStatusResult.cc
+	src/model/DescribeRtcMPUEventSubRequest.cc
+	src/model/DescribeRtcMPUEventSubResult.cc
 	src/model/DescribeShowListRequest.cc
 	src/model/DescribeShowListResult.cc
 	src/model/DescribeStreamLocationBlockRequest.cc
@@ -1412,10 +1408,6 @@ set(live_src
 	src/model/GetMessageGroupResult.cc
 	src/model/GetMessageTokenRequest.cc
 	src/model/GetMessageTokenResult.cc
-	src/model/GetMultiRateConfigRequest.cc
-	src/model/GetMultiRateConfigResult.cc
-	src/model/GetMultiRateConfigListRequest.cc
-	src/model/GetMultiRateConfigListResult.cc
 	src/model/GetTranscodeTaskStatusRequest.cc
 	src/model/GetTranscodeTaskStatusResult.cc
 	src/model/HotLiveRtcStreamRequest.cc
@@ -1470,6 +1462,8 @@ set(live_src
 	src/model/ListPlaylistResult.cc
 	src/model/ListPlaylistItemsRequest.cc
 	src/model/ListPlaylistItemsResult.cc
+	src/model/ListRtcMPUEventSubRecordRequest.cc
+	src/model/ListRtcMPUEventSubRecordResult.cc
 	src/model/MiguLivePullToPushStartRequest.cc
 	src/model/MiguLivePullToPushStartResult.cc
 	src/model/MiguLivePullToPushStatusRequest.cc
@@ -1522,8 +1516,6 @@ set(live_src
 	src/model/QuerySnapshotCallbackAuthResult.cc
 	src/model/RealTimeRecordCommandRequest.cc
 	src/model/RealTimeRecordCommandResult.cc
-	src/model/RealTimeSnapshotCommandRequest.cc
-	src/model/RealTimeSnapshotCommandResult.cc
 	src/model/RemoveShowFromShowListRequest.cc
 	src/model/RemoveShowFromShowListResult.cc
 	src/model/RemoveTerminalsRequest.cc
@@ -1574,8 +1566,6 @@ set(live_src
 	src/model/SetLiveStreamBlockResult.cc
 	src/model/SetLiveStreamDelayConfigRequest.cc
 	src/model/SetLiveStreamDelayConfigResult.cc
-	src/model/SetLiveStreamOptimizedFeatureConfigRequest.cc
-	src/model/SetLiveStreamOptimizedFeatureConfigResult.cc
 	src/model/SetLiveStreamPreloadTasksRequest.cc
 	src/model/SetLiveStreamPreloadTasksResult.cc
 	src/model/SetLiveStreamsNotifyUrlConfigRequest.cc
@@ -1670,6 +1660,8 @@ set(live_src
 	src/model/UpdateMessageGroupResult.cc
 	src/model/UpdateMixStreamRequest.cc
 	src/model/UpdateMixStreamResult.cc
+	src/model/UpdateRtcMPUEventSubRequest.cc
+	src/model/UpdateRtcMPUEventSubResult.cc
 	src/model/VerifyLiveDomainOwnerRequest.cc
 	src/model/VerifyLiveDomainOwnerResult.cc )
 

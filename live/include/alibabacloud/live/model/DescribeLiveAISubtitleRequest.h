@@ -36,6 +36,8 @@ public:
 	void setPageNumber(const std::string &pageNumber);
 	std::string getPageSize() const;
 	void setPageSize(const std::string &pageSize);
+	bool getIsDefault() const;
+	void setIsDefault(bool isDefault);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getSubtitleId() const;
@@ -45,6 +47,7 @@ private:
 	std::string subtitleName_;
 	std::string pageNumber_;
 	std::string pageSize_;
+	bool isDefault_;
 	long ownerId_;
 	std::string subtitleId_;
 };

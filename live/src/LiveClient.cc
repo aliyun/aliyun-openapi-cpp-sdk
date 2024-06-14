@@ -1095,42 +1095,6 @@ LiveClient::AddLiveStreamWatermarkRuleOutcomeCallable LiveClient::addLiveStreamW
 	return task->get_future();
 }
 
-LiveClient::AddMultiRateConfigOutcome LiveClient::addMultiRateConfig(const AddMultiRateConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddMultiRateConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddMultiRateConfigOutcome(AddMultiRateConfigResult(outcome.result()));
-	else
-		return AddMultiRateConfigOutcome(outcome.error());
-}
-
-void LiveClient::addMultiRateConfigAsync(const AddMultiRateConfigRequest& request, const AddMultiRateConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addMultiRateConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::AddMultiRateConfigOutcomeCallable LiveClient::addMultiRateConfigCallable(const AddMultiRateConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddMultiRateConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->addMultiRateConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::AddPlaylistItemsOutcome LiveClient::addPlaylistItems(const AddPlaylistItemsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2103,42 +2067,6 @@ LiveClient::CreateLiveStreamRecordIndexFilesOutcomeCallable LiveClient::createLi
 	return task->get_future();
 }
 
-LiveClient::CreateLiveTranscodeTemplateOutcome LiveClient::createLiveTranscodeTemplate(const CreateLiveTranscodeTemplateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateLiveTranscodeTemplateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateLiveTranscodeTemplateOutcome(CreateLiveTranscodeTemplateResult(outcome.result()));
-	else
-		return CreateLiveTranscodeTemplateOutcome(outcome.error());
-}
-
-void LiveClient::createLiveTranscodeTemplateAsync(const CreateLiveTranscodeTemplateRequest& request, const CreateLiveTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createLiveTranscodeTemplate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::CreateLiveTranscodeTemplateOutcomeCallable LiveClient::createLiveTranscodeTemplateCallable(const CreateLiveTranscodeTemplateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateLiveTranscodeTemplateOutcome()>>(
-			[this, request]()
-			{
-			return this->createLiveTranscodeTemplate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::CreateMessageAppOutcome LiveClient::createMessageApp(const CreateMessageAppRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2313,6 +2241,42 @@ LiveClient::CreateRtcAsrTaskOutcomeCallable LiveClient::createRtcAsrTaskCallable
 			[this, request]()
 			{
 			return this->createRtcAsrTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::CreateRtcMPUEventSubOutcome LiveClient::createRtcMPUEventSub(const CreateRtcMPUEventSubRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateRtcMPUEventSubOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateRtcMPUEventSubOutcome(CreateRtcMPUEventSubResult(outcome.result()));
+	else
+		return CreateRtcMPUEventSubOutcome(outcome.error());
+}
+
+void LiveClient::createRtcMPUEventSubAsync(const CreateRtcMPUEventSubRequest& request, const CreateRtcMPUEventSubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createRtcMPUEventSub(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::CreateRtcMPUEventSubOutcomeCallable LiveClient::createRtcMPUEventSubCallable(const CreateRtcMPUEventSubRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateRtcMPUEventSubOutcome()>>(
+			[this, request]()
+			{
+			return this->createRtcMPUEventSub(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4083,42 +4047,6 @@ LiveClient::DeleteMixStreamOutcomeCallable LiveClient::deleteMixStreamCallable(c
 	return task->get_future();
 }
 
-LiveClient::DeleteMultiRateConfigOutcome LiveClient::deleteMultiRateConfig(const DeleteMultiRateConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteMultiRateConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteMultiRateConfigOutcome(DeleteMultiRateConfigResult(outcome.result()));
-	else
-		return DeleteMultiRateConfigOutcome(outcome.error());
-}
-
-void LiveClient::deleteMultiRateConfigAsync(const DeleteMultiRateConfigRequest& request, const DeleteMultiRateConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteMultiRateConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DeleteMultiRateConfigOutcomeCallable LiveClient::deleteMultiRateConfigCallable(const DeleteMultiRateConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteMultiRateConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteMultiRateConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::DeletePlaylistOutcome LiveClient::deletePlaylist(const DeletePlaylistRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4221,6 +4149,78 @@ LiveClient::DeleteRoomOutcomeCallable LiveClient::deleteRoomCallable(const Delet
 			[this, request]()
 			{
 			return this->deleteRoom(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DeleteRtcAsrTaskOutcome LiveClient::deleteRtcAsrTask(const DeleteRtcAsrTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRtcAsrTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRtcAsrTaskOutcome(DeleteRtcAsrTaskResult(outcome.result()));
+	else
+		return DeleteRtcAsrTaskOutcome(outcome.error());
+}
+
+void LiveClient::deleteRtcAsrTaskAsync(const DeleteRtcAsrTaskRequest& request, const DeleteRtcAsrTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRtcAsrTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteRtcAsrTaskOutcomeCallable LiveClient::deleteRtcAsrTaskCallable(const DeleteRtcAsrTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRtcAsrTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRtcAsrTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DeleteRtcMPUEventSubOutcome LiveClient::deleteRtcMPUEventSub(const DeleteRtcMPUEventSubRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRtcMPUEventSubOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRtcMPUEventSubOutcome(DeleteRtcMPUEventSubResult(outcome.result()));
+	else
+		return DeleteRtcMPUEventSubOutcome(outcome.error());
+}
+
+void LiveClient::deleteRtcMPUEventSubAsync(const DeleteRtcMPUEventSubRequest& request, const DeleteRtcMPUEventSubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRtcMPUEventSub(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteRtcMPUEventSubOutcomeCallable LiveClient::deleteRtcMPUEventSubCallable(const DeleteRtcMPUEventSubRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRtcMPUEventSubOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRtcMPUEventSub(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9231,42 +9231,6 @@ LiveClient::DescribeRoomKickoutUserListOutcomeCallable LiveClient::describeRoomK
 	return task->get_future();
 }
 
-LiveClient::DescribeRoomListOutcome LiveClient::describeRoomList(const DescribeRoomListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRoomListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRoomListOutcome(DescribeRoomListResult(outcome.result()));
-	else
-		return DescribeRoomListOutcome(outcome.error());
-}
-
-void LiveClient::describeRoomListAsync(const DescribeRoomListRequest& request, const DescribeRoomListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRoomList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeRoomListOutcomeCallable LiveClient::describeRoomListCallable(const DescribeRoomListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRoomListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRoomList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::DescribeRoomStatusOutcome LiveClient::describeRoomStatus(const DescribeRoomStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -9297,6 +9261,42 @@ LiveClient::DescribeRoomStatusOutcomeCallable LiveClient::describeRoomStatusCall
 			[this, request]()
 			{
 			return this->describeRoomStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeRtcMPUEventSubOutcome LiveClient::describeRtcMPUEventSub(const DescribeRtcMPUEventSubRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRtcMPUEventSubOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRtcMPUEventSubOutcome(DescribeRtcMPUEventSubResult(outcome.result()));
+	else
+		return DescribeRtcMPUEventSubOutcome(outcome.error());
+}
+
+void LiveClient::describeRtcMPUEventSubAsync(const DescribeRtcMPUEventSubRequest& request, const DescribeRtcMPUEventSubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRtcMPUEventSub(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeRtcMPUEventSubOutcomeCallable LiveClient::describeRtcMPUEventSubCallable(const DescribeRtcMPUEventSubRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRtcMPUEventSubOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRtcMPUEventSub(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -10197,78 +10197,6 @@ LiveClient::GetMessageTokenOutcomeCallable LiveClient::getMessageTokenCallable(c
 			[this, request]()
 			{
 			return this->getMessageToken(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::GetMultiRateConfigOutcome LiveClient::getMultiRateConfig(const GetMultiRateConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetMultiRateConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetMultiRateConfigOutcome(GetMultiRateConfigResult(outcome.result()));
-	else
-		return GetMultiRateConfigOutcome(outcome.error());
-}
-
-void LiveClient::getMultiRateConfigAsync(const GetMultiRateConfigRequest& request, const GetMultiRateConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getMultiRateConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::GetMultiRateConfigOutcomeCallable LiveClient::getMultiRateConfigCallable(const GetMultiRateConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetMultiRateConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->getMultiRateConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::GetMultiRateConfigListOutcome LiveClient::getMultiRateConfigList(const GetMultiRateConfigListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetMultiRateConfigListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetMultiRateConfigListOutcome(GetMultiRateConfigListResult(outcome.result()));
-	else
-		return GetMultiRateConfigListOutcome(outcome.error());
-}
-
-void LiveClient::getMultiRateConfigListAsync(const GetMultiRateConfigListRequest& request, const GetMultiRateConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getMultiRateConfigList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::GetMultiRateConfigListOutcomeCallable LiveClient::getMultiRateConfigListCallable(const GetMultiRateConfigListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetMultiRateConfigListOutcome()>>(
-			[this, request]()
-			{
-			return this->getMultiRateConfigList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -11247,6 +11175,42 @@ LiveClient::ListPlaylistItemsOutcomeCallable LiveClient::listPlaylistItemsCallab
 	return task->get_future();
 }
 
+LiveClient::ListRtcMPUEventSubRecordOutcome LiveClient::listRtcMPUEventSubRecord(const ListRtcMPUEventSubRecordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRtcMPUEventSubRecordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRtcMPUEventSubRecordOutcome(ListRtcMPUEventSubRecordResult(outcome.result()));
+	else
+		return ListRtcMPUEventSubRecordOutcome(outcome.error());
+}
+
+void LiveClient::listRtcMPUEventSubRecordAsync(const ListRtcMPUEventSubRecordRequest& request, const ListRtcMPUEventSubRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRtcMPUEventSubRecord(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ListRtcMPUEventSubRecordOutcomeCallable LiveClient::listRtcMPUEventSubRecordCallable(const ListRtcMPUEventSubRecordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRtcMPUEventSubRecordOutcome()>>(
+			[this, request]()
+			{
+			return this->listRtcMPUEventSubRecord(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::MiguLivePullToPushStartOutcome LiveClient::miguLivePullToPushStart(const MiguLivePullToPushStartRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -12183,42 +12147,6 @@ LiveClient::RealTimeRecordCommandOutcomeCallable LiveClient::realTimeRecordComma
 	return task->get_future();
 }
 
-LiveClient::RealTimeSnapshotCommandOutcome LiveClient::realTimeSnapshotCommand(const RealTimeSnapshotCommandRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RealTimeSnapshotCommandOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RealTimeSnapshotCommandOutcome(RealTimeSnapshotCommandResult(outcome.result()));
-	else
-		return RealTimeSnapshotCommandOutcome(outcome.error());
-}
-
-void LiveClient::realTimeSnapshotCommandAsync(const RealTimeSnapshotCommandRequest& request, const RealTimeSnapshotCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, realTimeSnapshotCommand(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::RealTimeSnapshotCommandOutcomeCallable LiveClient::realTimeSnapshotCommandCallable(const RealTimeSnapshotCommandRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RealTimeSnapshotCommandOutcome()>>(
-			[this, request]()
-			{
-			return this->realTimeSnapshotCommand(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::RemoveShowFromShowListOutcome LiveClient::removeShowFromShowList(const RemoveShowFromShowListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -13113,42 +13041,6 @@ LiveClient::SetLiveStreamDelayConfigOutcomeCallable LiveClient::setLiveStreamDel
 			[this, request]()
 			{
 			return this->setLiveStreamDelayConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::SetLiveStreamOptimizedFeatureConfigOutcome LiveClient::setLiveStreamOptimizedFeatureConfig(const SetLiveStreamOptimizedFeatureConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetLiveStreamOptimizedFeatureConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetLiveStreamOptimizedFeatureConfigOutcome(SetLiveStreamOptimizedFeatureConfigResult(outcome.result()));
-	else
-		return SetLiveStreamOptimizedFeatureConfigOutcome(outcome.error());
-}
-
-void LiveClient::setLiveStreamOptimizedFeatureConfigAsync(const SetLiveStreamOptimizedFeatureConfigRequest& request, const SetLiveStreamOptimizedFeatureConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setLiveStreamOptimizedFeatureConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::SetLiveStreamOptimizedFeatureConfigOutcomeCallable LiveClient::setLiveStreamOptimizedFeatureConfigCallable(const SetLiveStreamOptimizedFeatureConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetLiveStreamOptimizedFeatureConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->setLiveStreamOptimizedFeatureConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -14841,6 +14733,42 @@ LiveClient::UpdateMixStreamOutcomeCallable LiveClient::updateMixStreamCallable(c
 			[this, request]()
 			{
 			return this->updateMixStream(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::UpdateRtcMPUEventSubOutcome LiveClient::updateRtcMPUEventSub(const UpdateRtcMPUEventSubRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateRtcMPUEventSubOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateRtcMPUEventSubOutcome(UpdateRtcMPUEventSubResult(outcome.result()));
+	else
+		return UpdateRtcMPUEventSubOutcome(outcome.error());
+}
+
+void LiveClient::updateRtcMPUEventSubAsync(const UpdateRtcMPUEventSubRequest& request, const UpdateRtcMPUEventSubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateRtcMPUEventSub(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateRtcMPUEventSubOutcomeCallable LiveClient::updateRtcMPUEventSubCallable(const UpdateRtcMPUEventSubRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateRtcMPUEventSubOutcome()>>(
+			[this, request]()
+			{
+			return this->updateRtcMPUEventSub(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_GETMULTIRATECONFIGREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_GETMULTIRATECONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_LISTRTCMPUEVENTSUBRECORDREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_LISTRTCMPUEVENTSUBRECORDREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,32 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT GetMultiRateConfigRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT ListRtcMPUEventSubRecordRequest : public RpcServiceRequest {
 public:
-	GetMultiRateConfigRequest();
-	~GetMultiRateConfigRequest();
-	std::string getApp() const;
-	void setApp(const std::string &app);
-	std::string getGroupId() const;
-	void setGroupId(const std::string &groupId);
-	std::string getDomainName() const;
-	void setDomainName(const std::string &domainName);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
+	ListRtcMPUEventSubRecordRequest();
+	~ListRtcMPUEventSubRecordRequest();
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
+	std::string getSubId() const;
+	void setSubId(const std::string &subId);
+	int getPageNo() const;
+	void setPageNo(int pageNo);
+	std::string getAppId() const;
+	void setAppId(const std::string &appId);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 
 private:
-	std::string app_;
-	std::string groupId_;
-	std::string domainName_;
-	long ownerId_;
+	std::string endTime_;
+	std::string startTime_;
+	std::string subId_;
+	int pageNo_;
+	std::string appId_;
+	int pageSize_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_GETMULTIRATECONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_LISTRTCMPUEVENTSUBRECORDREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DELETEMULTIRATECONFIGRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DELETEMULTIRATECONFIGRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBERTCMPUEVENTSUBRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBERTCMPUEVENTSUBRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DeleteMultiRateConfigResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeRtcMPUEventSubResult : public ServiceResult
 			{
 			public:
+				struct SubInfo
+				{
+					std::string callbackUrl;
+					std::string subId;
+					std::string appId;
+					std::string createTime;
+					std::string channelIds;
+				};
 
 
-				DeleteMultiRateConfigResult();
-				explicit DeleteMultiRateConfigResult(const std::string &payload);
-				~DeleteMultiRateConfigResult();
-				std::string getMessage()const;
-				int getCode()const;
+				DescribeRtcMPUEventSubResult();
+				explicit DescribeRtcMPUEventSubResult(const std::string &payload);
+				~DescribeRtcMPUEventSubResult();
+				SubInfo getSubInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				int code_;
+				SubInfo subInfo_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DELETEMULTIRATECONFIGRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBERTCMPUEVENTSUBRESULT_H_

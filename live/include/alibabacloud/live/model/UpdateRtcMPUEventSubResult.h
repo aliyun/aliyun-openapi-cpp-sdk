@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_ADDMULTIRATECONFIGRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_ADDMULTIRATECONFIGRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_UPDATERTCMPUEVENTSUBRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_UPDATERTCMPUEVENTSUBRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT AddMultiRateConfigResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT UpdateRtcMPUEventSubResult : public ServiceResult
 			{
 			public:
-				struct FailedTemplates
-				{
-					std::string _template;
-					int fps;
-					std::string gop;
-					std::string templateType;
-					int profile;
-					int bandWidth;
-					int audioBitrate;
-					std::string audioProfile;
-					int height;
-					int audioChannelNum;
-					int width;
-					int audioRate;
-					std::string audioCodec;
-					int videoBitrate;
-				};
 
 
-				AddMultiRateConfigResult();
-				explicit AddMultiRateConfigResult(const std::string &payload);
-				~AddMultiRateConfigResult();
-				std::string getMessage()const;
-				std::vector<FailedTemplates> getBody()const;
-				int getCode()const;
+				UpdateRtcMPUEventSubResult();
+				explicit UpdateRtcMPUEventSubResult(const std::string &payload);
+				~UpdateRtcMPUEventSubResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				std::vector<FailedTemplates> body_;
-				int code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_ADDMULTIRATECONFIGRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_UPDATERTCMPUEVENTSUBRESULT_H_

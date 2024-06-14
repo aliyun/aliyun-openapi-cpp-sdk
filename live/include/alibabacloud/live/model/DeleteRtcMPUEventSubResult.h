@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_CREATELIVETRANSCODETEMPLATERESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_CREATELIVETRANSCODETEMPLATERESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DELETERTCMPUEVENTSUBRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DELETERTCMPUEVENTSUBRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT CreateLiveTranscodeTemplateResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DeleteRtcMPUEventSubResult : public ServiceResult
 			{
 			public:
 
 
-				CreateLiveTranscodeTemplateResult();
-				explicit CreateLiveTranscodeTemplateResult(const std::string &payload);
-				~CreateLiveTranscodeTemplateResult();
-				std::string getTemplateId()const;
+				DeleteRtcMPUEventSubResult();
+				explicit DeleteRtcMPUEventSubResult(const std::string &payload);
+				~DeleteRtcMPUEventSubResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string templateId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_CREATELIVETRANSCODETEMPLATERESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DELETERTCMPUEVENTSUBRESULT_H_

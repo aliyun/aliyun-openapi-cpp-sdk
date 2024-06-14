@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_CREATELIVETRANSCODETEMPLATEREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_CREATELIVETRANSCODETEMPLATEREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DELETERTCMPUEVENTSUBREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DELETERTCMPUEVENTSUBREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,17 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT CreateLiveTranscodeTemplateRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT DeleteRtcMPUEventSubRequest : public RpcServiceRequest {
 public:
-	CreateLiveTranscodeTemplateRequest();
-	~CreateLiveTranscodeTemplateRequest();
-	std::string getType() const;
-	void setType(const std::string &type);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
-	std::string getTemplateConfig() const;
-	void setTemplateConfig(const std::string &templateConfig);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
+	DeleteRtcMPUEventSubRequest();
+	~DeleteRtcMPUEventSubRequest();
+	std::string getAppId() const;
+	void setAppId(const std::string &appId);
 
 private:
-	std::string type_;
-	std::string securityToken_;
-	std::string templateConfig_;
-	long ownerId_;
+	std::string appId_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_CREATELIVETRANSCODETEMPLATEREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DELETERTCMPUEVENTSUBREQUEST_H_

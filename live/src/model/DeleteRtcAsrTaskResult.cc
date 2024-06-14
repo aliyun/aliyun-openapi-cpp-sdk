@@ -14,38 +14,45 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/CreateLiveTranscodeTemplateResult.h>
+#include <alibabacloud/live/model/DeleteRtcAsrTaskResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-CreateLiveTranscodeTemplateResult::CreateLiveTranscodeTemplateResult() :
+DeleteRtcAsrTaskResult::DeleteRtcAsrTaskResult() :
 	ServiceResult()
 {}
 
-CreateLiveTranscodeTemplateResult::CreateLiveTranscodeTemplateResult(const std::string &payload) :
+DeleteRtcAsrTaskResult::DeleteRtcAsrTaskResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateLiveTranscodeTemplateResult::~CreateLiveTranscodeTemplateResult()
+DeleteRtcAsrTaskResult::~DeleteRtcAsrTaskResult()
 {}
 
-void CreateLiveTranscodeTemplateResult::parse(const std::string &payload)
+void DeleteRtcAsrTaskResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TemplateId"].isNull())
-		templateId_ = value["TemplateId"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["RetCode"].isNull())
+		retCode_ = std::stol(value["RetCode"].asString());
 
 }
 
-std::string CreateLiveTranscodeTemplateResult::getTemplateId()const
+std::string DeleteRtcAsrTaskResult::getDescription()const
 {
-	return templateId_;
+	return description_;
+}
+
+long DeleteRtcAsrTaskResult::getRetCode()const
+{
+	return retCode_;
 }
 

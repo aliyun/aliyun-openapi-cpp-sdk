@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_GETMULTIRATECONFIGLISTRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_GETMULTIRATECONFIGLISTRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_CREATERTCMPUEVENTSUBRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_CREATERTCMPUEVENTSUBRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT GetMultiRateConfigListResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT CreateRtcMPUEventSubResult : public ServiceResult
 			{
 			public:
-				struct Info
-				{
-					std::string app;
-					int count;
-					std::string avFormat;
-					std::string groupId;
-				};
 
 
-				GetMultiRateConfigListResult();
-				explicit GetMultiRateConfigListResult(const std::string &payload);
-				~GetMultiRateConfigListResult();
-				std::string getMessage()const;
-				std::vector<Info> getGroupInfo()const;
-				int getCode()const;
+				CreateRtcMPUEventSubResult();
+				explicit CreateRtcMPUEventSubResult(const std::string &payload);
+				~CreateRtcMPUEventSubResult();
+				std::string getSubId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				std::vector<Info> groupInfo_;
-				int code_;
+				std::string subId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_GETMULTIRATECONFIGLISTRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_CREATERTCMPUEVENTSUBRESULT_H_

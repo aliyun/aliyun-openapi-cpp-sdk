@@ -56,12 +56,12 @@ public:
 				std::string width;
 				std::string x;
 				std::string y;
-				std::string renderMode;
 				struct UserInfo {
 					std::string sourceType;
 					std::string userId;
 				};
 				UserInfo userInfo;
+				std::string renderMode;
 				std::string height;
 			};
 			UserPanesItem userPanesItem;
@@ -91,10 +91,12 @@ public:
 			std::string audioOnly;
 			std::string videoWidth;
 			std::string audioBitrate;
+			std::string enhancedParam;
 			std::string videoFramerate;
 			std::string videoHeight;
 			std::string audioSampleRate;
 			std::string videoBitrate;
+			std::string videoCodec;
 			std::string audioChannels;
 			std::string videoGop;
 		};
