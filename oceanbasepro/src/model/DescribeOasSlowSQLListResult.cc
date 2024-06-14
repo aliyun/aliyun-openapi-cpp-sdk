@@ -66,9 +66,9 @@ void DescribeOasSlowSQLListResult::parse(const std::string &payload)
 		if(!valueDataDataItem["DbName"].isNull())
 			dataObject.dbName = valueDataDataItem["DbName"].asString();
 		if(!valueDataDataItem["RetCode4012Count"].isNull())
-			dataObject.retCode4012Count = valueDataDataItem["RetCode4012Count"].asString();
+			dataObject.retCode4012Count = std::stol(valueDataDataItem["RetCode4012Count"].asString());
 		if(!valueDataDataItem["RetCode4013Count"].isNull())
-			dataObject.retCode4013Count = valueDataDataItem["RetCode4013Count"].asString();
+			dataObject.retCode4013Count = std::stol(valueDataDataItem["RetCode4013Count"].asString());
 		if(!valueDataDataItem["RetCode5001Count"].isNull())
 			dataObject.retCode5001Count = valueDataDataItem["RetCode5001Count"].asString();
 		if(!valueDataDataItem["RetCode5024Count"].isNull())

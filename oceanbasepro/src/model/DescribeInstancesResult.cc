@@ -97,6 +97,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.inTempCapacityStatus = valueInstancesData["InTempCapacityStatus"].asString() == "true";
 		if(!valueInstancesData["EnableReadOnlyReplicaManagement"].isNull())
 			instancesObject.enableReadOnlyReplicaManagement = valueInstancesData["EnableReadOnlyReplicaManagement"].asString() == "true";
+		if(!valueInstancesData["SpecType"].isNull())
+			instancesObject.specType = valueInstancesData["SpecType"].asString();
 		auto resourceNode = value["Resource"];
 		if(!resourceNode["UnitCount"].isNull())
 			instancesObject.resource.unitCount = std::stol(resourceNode["UnitCount"].asString());

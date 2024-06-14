@@ -154,9 +154,11 @@ namespace AlibabaCloud
 					std::string nodeNum;
 					bool enableIsolationOptimization;
 					std::string dataMergeTime;
+					std::string specType;
 					bool inTempCapacityStatus;
 					bool enableReadOnlyReplica;
 					std::string primaryInstance;
+					bool allowModifyInternetAddressConnectionLimit;
 					bool isTrustEcs;
 					std::string proxyClusterId;
 					bool isLatestObVersion;

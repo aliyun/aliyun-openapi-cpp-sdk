@@ -82,6 +82,7 @@ namespace AlibabaCloud
 					};
 					std::string deployType;
 					std::string resourceGroupId;
+					std::string specType;
 					bool enableUpgradeNodes;
 					long usedDiskSize;
 					int cpu;

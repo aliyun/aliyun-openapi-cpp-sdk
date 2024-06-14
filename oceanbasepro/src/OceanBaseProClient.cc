@@ -2787,6 +2787,42 @@ OceanBaseProClient::DescribeTenantMetricsOutcomeCallable OceanBaseProClient::des
 	return task->get_future();
 }
 
+OceanBaseProClient::DescribeTenantReadableScnOutcome OceanBaseProClient::describeTenantReadableScn(const DescribeTenantReadableScnRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTenantReadableScnOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTenantReadableScnOutcome(DescribeTenantReadableScnResult(outcome.result()));
+	else
+		return DescribeTenantReadableScnOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeTenantReadableScnAsync(const DescribeTenantReadableScnRequest& request, const DescribeTenantReadableScnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTenantReadableScn(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeTenantReadableScnOutcomeCallable OceanBaseProClient::describeTenantReadableScnCallable(const DescribeTenantReadableScnRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTenantReadableScnOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTenantReadableScn(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::DescribeTenantSecurityConfigsOutcome OceanBaseProClient::describeTenantSecurityConfigs(const DescribeTenantSecurityConfigsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3573,6 +3609,42 @@ OceanBaseProClient::ModifyInstanceNodeNumOutcomeCallable OceanBaseProClient::mod
 			[this, request]()
 			{
 			return this->modifyInstanceNodeNum(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::ModifyInstanceSSLOutcome OceanBaseProClient::modifyInstanceSSL(const ModifyInstanceSSLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInstanceSSLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInstanceSSLOutcome(ModifyInstanceSSLResult(outcome.result()));
+	else
+		return ModifyInstanceSSLOutcome(outcome.error());
+}
+
+void OceanBaseProClient::modifyInstanceSSLAsync(const ModifyInstanceSSLRequest& request, const ModifyInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInstanceSSL(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::ModifyInstanceSSLOutcomeCallable OceanBaseProClient::modifyInstanceSSLCallable(const ModifyInstanceSSLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInstanceSSLOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInstanceSSL(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -88,3 +88,12 @@ void ModifyInstanceSpecRequest::setLogDiskSize(long logDiskSize) {
   setBodyParameter(std::string("LogDiskSize"), std::to_string(logDiskSize));
 }
 
+bool ModifyInstanceSpecRequest::getUpgradeSpecNative() const {
+  return upgradeSpecNative_;
+}
+
+void ModifyInstanceSpecRequest::setUpgradeSpecNative(bool upgradeSpecNative) {
+  upgradeSpecNative_ = upgradeSpecNative;
+  setBodyParameter(std::string("UpgradeSpecNative"), upgradeSpecNative ? "true" : "false");
+}
+

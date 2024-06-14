@@ -173,6 +173,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeTenantEncryptionResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeTenantMetricsRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeTenantMetricsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantReadableScnRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeTenantReadableScnResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeTenantSecurityConfigsRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeTenantSecurityConfigsResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeTenantSecurityIpGroupsRequest.h
@@ -217,6 +219,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/ModifyInstanceNameResult.h
 	include/alibabacloud/oceanbasepro/model/ModifyInstanceNodeNumRequest.h
 	include/alibabacloud/oceanbasepro/model/ModifyInstanceNodeNumResult.h
+	include/alibabacloud/oceanbasepro/model/ModifyInstanceSSLRequest.h
+	include/alibabacloud/oceanbasepro/model/ModifyInstanceSSLResult.h
 	include/alibabacloud/oceanbasepro/model/ModifyInstanceSpecRequest.h
 	include/alibabacloud/oceanbasepro/model/ModifyInstanceSpecResult.h
 	include/alibabacloud/oceanbasepro/model/ModifyInstanceTagsRequest.h
@@ -426,6 +430,8 @@ set(oceanbasepro_src
 	src/model/DescribeTenantEncryptionResult.cc
 	src/model/DescribeTenantMetricsRequest.cc
 	src/model/DescribeTenantMetricsResult.cc
+	src/model/DescribeTenantReadableScnRequest.cc
+	src/model/DescribeTenantReadableScnResult.cc
 	src/model/DescribeTenantSecurityConfigsRequest.cc
 	src/model/DescribeTenantSecurityConfigsResult.cc
 	src/model/DescribeTenantSecurityIpGroupsRequest.cc
@@ -470,6 +476,8 @@ set(oceanbasepro_src
 	src/model/ModifyInstanceNameResult.cc
 	src/model/ModifyInstanceNodeNumRequest.cc
 	src/model/ModifyInstanceNodeNumResult.cc
+	src/model/ModifyInstanceSSLRequest.cc
+	src/model/ModifyInstanceSSLResult.cc
 	src/model/ModifyInstanceSpecRequest.cc
 	src/model/ModifyInstanceSpecResult.cc
 	src/model/ModifyInstanceTagsRequest.cc

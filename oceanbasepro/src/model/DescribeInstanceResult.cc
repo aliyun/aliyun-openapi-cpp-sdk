@@ -116,6 +116,10 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		instance_.primaryInstance = instanceNode["PrimaryInstance"].asString();
 	if(!instanceNode["PrimaryRegion"].isNull())
 		instance_.primaryRegion = instanceNode["PrimaryRegion"].asString();
+	if(!instanceNode["SpecType"].isNull())
+		instance_.specType = instanceNode["SpecType"].asString();
+	if(!instanceNode["AllowModifyInternetAddressConnectionLimit"].isNull())
+		instance_.allowModifyInternetAddressConnectionLimit = instanceNode["AllowModifyInternetAddressConnectionLimit"].asString() == "true";
 	auto resourceNode = instanceNode["Resource"];
 	if(!resourceNode["UnitCount"].isNull())
 		instance_.resource.unitCount = std::stol(resourceNode["UnitCount"].asString());

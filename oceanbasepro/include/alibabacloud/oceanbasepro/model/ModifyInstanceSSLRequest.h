@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBEINSTANCEREQUEST_H_
-#define ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBEINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_OCEANBASEPRO_MODEL_MODIFYINSTANCESSLREQUEST_H_
+#define ALIBABACLOUD_OCEANBASEPRO_MODEL_MODIFYINSTANCESSLREQUEST_H_
 
 #include <alibabacloud/oceanbasepro/OceanBaseProExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,20 @@
 namespace AlibabaCloud {
 namespace OceanBasePro {
 namespace Model {
-class ALIBABACLOUD_OCEANBASEPRO_EXPORT DescribeInstanceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_OCEANBASEPRO_EXPORT ModifyInstanceSSLRequest : public RpcServiceRequest {
 public:
-	DescribeInstanceRequest();
-	~DescribeInstanceRequest();
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
-	std::string getMaxConnectionLimit() const;
-	void setMaxConnectionLimit(const std::string &maxConnectionLimit);
+	ModifyInstanceSSLRequest();
+	~ModifyInstanceSSLRequest();
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::string getEnableSSL() const;
+	void setEnableSSL(const std::string &enableSSL);
 
 private:
-	int pageNumber_;
-	std::string maxConnectionLimit_;
 	std::string instanceId_;
+	std::string enableSSL_;
 };
 } // namespace Model
 } // namespace OceanBasePro
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBEINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_OCEANBASEPRO_MODEL_MODIFYINSTANCESSLREQUEST_H_

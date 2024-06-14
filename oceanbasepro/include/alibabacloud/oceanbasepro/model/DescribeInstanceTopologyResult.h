@@ -52,17 +52,22 @@ namespace AlibabaCloud
 								bool manualMigrate;
 							};
 							std::string tenantZoneRole;
+							std::string replicaType;
 							bool isPrimaryTenantZone;
 							std::string tenantZoneId;
+							std::string logicalZone;
 							std::vector<TenantZonesItem::UnitsItem> units;
 						};
+						float tenantDiskSize;
+						std::string tenantName;
 						std::string primaryZoneDeployType;
 						std::string tenantId;
 						std::string tenantStatus;
-						std::string tenantName;
 						float tenantMemory;
 						std::vector<TenantsItem::TenantZonesItem> tenantZones;
 						int tenantUnitNum;
+						float tenantUnitMemory;
+						float tenantUnitCpu;
 						float tenantCpu;
 						std::string tenantDeployType;
 						std::string tenantMode;
@@ -104,6 +109,7 @@ namespace AlibabaCloud
 							std::vector<NodesItem::NodeResourceItem> nodeResource;
 							std::string replicaType;
 							std::string nodeId;
+							std::string logicalZone;
 							long readOnlyCopyId;
 							std::string nodeStatus;
 							long fullCopyId;
@@ -115,7 +121,40 @@ namespace AlibabaCloud
 						std::string zoneDisk;
 						std::vector<ZonesItem::NodesItem> nodes;
 					};
+					struct ReplicasItem
+					{
+						struct ReplicaResource
+						{
+							struct Memory2
+							{
+								long usedMemory;
+								long totalMemory;
+							};
+							struct DiskSize3
+							{
+								float usedDiskSize;
+								long totalDiskSize;
+							};
+							struct Cpu4
+							{
+								int totalCpu;
+								int usedCpu;
+							};
+							DiskSize3 diskSize3;
+							Memory2 memory2;
+							Cpu4 cpu4;
+						};
+						int zoneLogicalId;
+						std::string status;
+						ReplicaResource replicaResource;
+						int nodeNum;
+						std::string replicaType;
+						std::string logicalZone;
+						std::string zoneRegionName;
+						std::string zoneLogicalName;
+					};
 					std::vector<TenantsItem> tenants;
+					std::vector<ReplicasItem> replicas;
 					std::vector<ZonesItem> zones;
 				};
 

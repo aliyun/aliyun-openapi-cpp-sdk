@@ -96,6 +96,8 @@ void DescribeTenantResult::parse(const std::string &payload)
 		tenant_.dataMergeTime = tenantNode["DataMergeTime"].asString();
 	if(!tenantNode["EnableReadOnlyReplica"].isNull())
 		tenant_.enableReadOnlyReplica = tenantNode["EnableReadOnlyReplica"].asString() == "true";
+	if(!tenantNode["RecycleBinStatus"].isNull())
+		tenant_.recycleBinStatus = tenantNode["RecycleBinStatus"].asString();
 	if(!tenantNode["LowerCaseTableNames"].isNull())
 		tenant_.lowerCaseTableNames = tenantNode["LowerCaseTableNames"].asString();
 	if(!tenantNode["Version"].isNull())
@@ -138,9 +140,24 @@ void DescribeTenantResult::parse(const std::string &payload)
 			tenantConnectionsItemObject.maxConnectionNum = std::stol(tenantNodeTenantConnectionsTenantConnectionsItem["MaxConnectionNum"].asString());
 		if(!tenantNodeTenantConnectionsTenantConnectionsItem["ConnectionReplicaType"].isNull())
 			tenantConnectionsItemObject.connectionReplicaType = tenantNodeTenantConnectionsTenantConnectionsItem["ConnectionReplicaType"].asString();
+		if(!tenantNodeTenantConnectionsTenantConnectionsItem["ProxyClusterId"].isNull())
+			tenantConnectionsItemObject.proxyClusterId = tenantNodeTenantConnectionsTenantConnectionsItem["ProxyClusterId"].asString();
+		if(!tenantNodeTenantConnectionsTenantConnectionsItem["MaxConnectionLimit"].isNull())
+			tenantConnectionsItemObject.maxConnectionLimit = std::stol(tenantNodeTenantConnectionsTenantConnectionsItem["MaxConnectionLimit"].asString());
+		if(!tenantNodeTenantConnectionsTenantConnectionsItem["InternetMaxConnectionLimit"].isNull())
+			tenantConnectionsItemObject.internetMaxConnectionLimit = std::stol(tenantNodeTenantConnectionsTenantConnectionsItem["InternetMaxConnectionLimit"].asString());
+		if(!tenantNodeTenantConnectionsTenantConnectionsItem["IntranetRpcPort"].isNull())
+			tenantConnectionsItemObject.intranetRpcPort = std::stoi(tenantNodeTenantConnectionsTenantConnectionsItem["IntranetRpcPort"].asString());
+		if(!tenantNodeTenantConnectionsTenantConnectionsItem["InternetMaxConnectionNum"].isNull())
+			tenantConnectionsItemObject.internetMaxConnectionNum = std::stol(tenantNodeTenantConnectionsTenantConnectionsItem["InternetMaxConnectionNum"].asString());
+		if(!tenantNodeTenantConnectionsTenantConnectionsItem["InternetRpcPort"].isNull())
+			tenantConnectionsItemObject.internetRpcPort = std::stoi(tenantNodeTenantConnectionsTenantConnectionsItem["InternetRpcPort"].asString());
 		auto allConnectionZones = value["ConnectionZones"]["ConnectionZones"];
 		for (auto value : allConnectionZones)
 			tenantConnectionsItemObject.connectionZones.push_back(value.asString());
+		auto allConnectionLogicalZones = value["ConnectionLogicalZones"]["ConnectionLogicalZones"];
+		for (auto value : allConnectionLogicalZones)
+			tenantConnectionsItemObject.connectionLogicalZones.push_back(value.asString());
 		tenant_.tenantConnections.push_back(tenantConnectionsItemObject);
 	}
 	auto allTenantZonesNode = tenantNode["TenantZones"]["TenantZonesItem"];

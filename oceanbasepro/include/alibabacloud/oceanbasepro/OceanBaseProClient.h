@@ -174,6 +174,8 @@
 #include "model/DescribeTenantEncryptionResult.h"
 #include "model/DescribeTenantMetricsRequest.h"
 #include "model/DescribeTenantMetricsResult.h"
+#include "model/DescribeTenantReadableScnRequest.h"
+#include "model/DescribeTenantReadableScnResult.h"
 #include "model/DescribeTenantSecurityConfigsRequest.h"
 #include "model/DescribeTenantSecurityConfigsResult.h"
 #include "model/DescribeTenantSecurityIpGroupsRequest.h"
@@ -218,6 +220,8 @@
 #include "model/ModifyInstanceNameResult.h"
 #include "model/ModifyInstanceNodeNumRequest.h"
 #include "model/ModifyInstanceNodeNumResult.h"
+#include "model/ModifyInstanceSSLRequest.h"
+#include "model/ModifyInstanceSSLResult.h"
 #include "model/ModifyInstanceSpecRequest.h"
 #include "model/ModifyInstanceSpecResult.h"
 #include "model/ModifyInstanceTagsRequest.h"
@@ -509,6 +513,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTenantMetricsResult> DescribeTenantMetricsOutcome;
 			typedef std::future<DescribeTenantMetricsOutcome> DescribeTenantMetricsOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeTenantMetricsRequest&, const DescribeTenantMetricsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTenantMetricsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTenantReadableScnResult> DescribeTenantReadableScnOutcome;
+			typedef std::future<DescribeTenantReadableScnOutcome> DescribeTenantReadableScnOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeTenantReadableScnRequest&, const DescribeTenantReadableScnOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTenantReadableScnAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTenantSecurityConfigsResult> DescribeTenantSecurityConfigsOutcome;
 			typedef std::future<DescribeTenantSecurityConfigsOutcome> DescribeTenantSecurityConfigsOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeTenantSecurityConfigsRequest&, const DescribeTenantSecurityConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTenantSecurityConfigsAsyncHandler;
@@ -575,6 +582,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyInstanceNodeNumResult> ModifyInstanceNodeNumOutcome;
 			typedef std::future<ModifyInstanceNodeNumOutcome> ModifyInstanceNodeNumOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::ModifyInstanceNodeNumRequest&, const ModifyInstanceNodeNumOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceNodeNumAsyncHandler;
+			typedef Outcome<Error, Model::ModifyInstanceSSLResult> ModifyInstanceSSLOutcome;
+			typedef std::future<ModifyInstanceSSLOutcome> ModifyInstanceSSLOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::ModifyInstanceSSLRequest&, const ModifyInstanceSSLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceSSLAsyncHandler;
 			typedef Outcome<Error, Model::ModifyInstanceSpecResult> ModifyInstanceSpecOutcome;
 			typedef std::future<ModifyInstanceSpecOutcome> ModifyInstanceSpecOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::ModifyInstanceSpecRequest&, const ModifyInstanceSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceSpecAsyncHandler;
@@ -889,6 +899,9 @@ namespace AlibabaCloud
 			DescribeTenantMetricsOutcome describeTenantMetrics(const Model::DescribeTenantMetricsRequest &request)const;
 			void describeTenantMetricsAsync(const Model::DescribeTenantMetricsRequest& request, const DescribeTenantMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTenantMetricsOutcomeCallable describeTenantMetricsCallable(const Model::DescribeTenantMetricsRequest& request) const;
+			DescribeTenantReadableScnOutcome describeTenantReadableScn(const Model::DescribeTenantReadableScnRequest &request)const;
+			void describeTenantReadableScnAsync(const Model::DescribeTenantReadableScnRequest& request, const DescribeTenantReadableScnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTenantReadableScnOutcomeCallable describeTenantReadableScnCallable(const Model::DescribeTenantReadableScnRequest& request) const;
 			DescribeTenantSecurityConfigsOutcome describeTenantSecurityConfigs(const Model::DescribeTenantSecurityConfigsRequest &request)const;
 			void describeTenantSecurityConfigsAsync(const Model::DescribeTenantSecurityConfigsRequest& request, const DescribeTenantSecurityConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTenantSecurityConfigsOutcomeCallable describeTenantSecurityConfigsCallable(const Model::DescribeTenantSecurityConfigsRequest& request) const;
@@ -955,6 +968,9 @@ namespace AlibabaCloud
 			ModifyInstanceNodeNumOutcome modifyInstanceNodeNum(const Model::ModifyInstanceNodeNumRequest &request)const;
 			void modifyInstanceNodeNumAsync(const Model::ModifyInstanceNodeNumRequest& request, const ModifyInstanceNodeNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceNodeNumOutcomeCallable modifyInstanceNodeNumCallable(const Model::ModifyInstanceNodeNumRequest& request) const;
+			ModifyInstanceSSLOutcome modifyInstanceSSL(const Model::ModifyInstanceSSLRequest &request)const;
+			void modifyInstanceSSLAsync(const Model::ModifyInstanceSSLRequest& request, const ModifyInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyInstanceSSLOutcomeCallable modifyInstanceSSLCallable(const Model::ModifyInstanceSSLRequest& request) const;
 			ModifyInstanceSpecOutcome modifyInstanceSpec(const Model::ModifyInstanceSpecRequest &request)const;
 			void modifyInstanceSpecAsync(const Model::ModifyInstanceSpecRequest& request, const ModifyInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceSpecOutcomeCallable modifyInstanceSpecCallable(const Model::ModifyInstanceSpecRequest& request) const;

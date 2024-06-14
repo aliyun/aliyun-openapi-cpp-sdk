@@ -44,6 +44,8 @@ public:
 	void setInstanceId(const std::string &instanceId);
 	long getLogDiskSize() const;
 	void setLogDiskSize(long logDiskSize);
+	bool getUpgradeSpecNative() const;
+	void setUpgradeSpecNative(bool upgradeSpecNative);
 
 private:
 	bool autoUseCoupon_;
@@ -53,6 +55,7 @@ private:
 	std::string diskType_;
 	std::string instanceId_;
 	long logDiskSize_;
+	bool upgradeSpecNative_;
 };
 } // namespace Model
 } // namespace OceanBasePro

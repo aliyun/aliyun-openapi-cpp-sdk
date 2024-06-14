@@ -154,7 +154,7 @@ namespace AlibabaCloud
 					double avgCpuTime;
 					double sumDbTime;
 					double strongConsistencyPercentage;
-					double retCode4013Count;
+					long retCode4013Count;
 					double avgConcurrencyWaitTime;
 					double avgBlockIndexCacheHit;
 					double sumElapsedTime;
@@ -187,7 +187,7 @@ namespace AlibabaCloud
 					double missPlanPercentage;
 					std::string waitEvent;
 					double totalWaitTime;
-					double retCode4012Count;
+					long retCode4012Count;
 					double avgElapsedTime;
 					double failPercentage;
 					double maxReturnRows;

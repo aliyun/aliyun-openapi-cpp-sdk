@@ -62,6 +62,12 @@ void DescribeInstanceTopologyResult::parse(const std::string &payload)
 			tenantsItemObject.tenantUnitNum = std::stoi(instanceTopologyNodeTenantsTenantsItem["TenantUnitNum"].asString());
 		if(!instanceTopologyNodeTenantsTenantsItem["PrimaryZoneDeployType"].isNull())
 			tenantsItemObject.primaryZoneDeployType = instanceTopologyNodeTenantsTenantsItem["PrimaryZoneDeployType"].asString();
+		if(!instanceTopologyNodeTenantsTenantsItem["TenantDiskSize"].isNull())
+			tenantsItemObject.tenantDiskSize = std::stof(instanceTopologyNodeTenantsTenantsItem["TenantDiskSize"].asString());
+		if(!instanceTopologyNodeTenantsTenantsItem["TenantUnitCpu"].isNull())
+			tenantsItemObject.tenantUnitCpu = std::stof(instanceTopologyNodeTenantsTenantsItem["TenantUnitCpu"].asString());
+		if(!instanceTopologyNodeTenantsTenantsItem["TenantUnitMemory"].isNull())
+			tenantsItemObject.tenantUnitMemory = std::stof(instanceTopologyNodeTenantsTenantsItem["TenantUnitMemory"].asString());
 		auto allTenantZonesNode = instanceTopologyNodeTenantsTenantsItem["TenantZones"]["TenantZonesItem"];
 		for (auto instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem : allTenantZonesNode)
 		{
@@ -72,6 +78,10 @@ void DescribeInstanceTopologyResult::parse(const std::string &payload)
 				tenantZonesObject.isPrimaryTenantZone = instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["IsPrimaryTenantZone"].asString() == "true";
 			if(!instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["TenantZoneId"].isNull())
 				tenantZonesObject.tenantZoneId = instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["TenantZoneId"].asString();
+			if(!instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["LogicalZone"].isNull())
+				tenantZonesObject.logicalZone = instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["LogicalZone"].asString();
+			if(!instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["ReplicaType"].isNull())
+				tenantZonesObject.replicaType = instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["ReplicaType"].asString();
 			auto allUnitsNode = instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["Units"]["UnitsItem"];
 			for (auto instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItemUnitsUnitsItem : allUnitsNode)
 			{
@@ -128,6 +138,8 @@ void DescribeInstanceTopologyResult::parse(const std::string &payload)
 				nodesObject.fullCopyId = std::stol(instanceTopologyNodeZonesZonesItemNodesNodesItem["FullCopyId"].asString());
 			if(!instanceTopologyNodeZonesZonesItemNodesNodesItem["ReadOnlyCopyId"].isNull())
 				nodesObject.readOnlyCopyId = std::stol(instanceTopologyNodeZonesZonesItemNodesNodesItem["ReadOnlyCopyId"].asString());
+			if(!instanceTopologyNodeZonesZonesItemNodesNodesItem["LogicalZone"].isNull())
+				nodesObject.logicalZone = instanceTopologyNodeZonesZonesItemNodesNodesItem["LogicalZone"].asString();
 			auto allNodeResourceNode = instanceTopologyNodeZonesZonesItemNodesNodesItem["NodeResource"]["NodeResourceItem"];
 			for (auto instanceTopologyNodeZonesZonesItemNodesNodesItemNodeResourceNodeResourceItem : allNodeResourceNode)
 			{
@@ -159,6 +171,42 @@ void DescribeInstanceTopologyResult::parse(const std::string &payload)
 			for (auto value : allMaxDiskUsedObServer)
 				zonesItemObject.zoneResource.diskSize1.maxDiskUsedObServer.push_back(value.asString());
 		instanceTopology_.zones.push_back(zonesItemObject);
+	}
+	auto allReplicasNode = instanceTopologyNode["Replicas"]["ReplicasItem"];
+	for (auto instanceTopologyNodeReplicasReplicasItem : allReplicasNode)
+	{
+		InstanceTopology::ReplicasItem replicasItemObject;
+		if(!instanceTopologyNodeReplicasReplicasItem["LogicalZone"].isNull())
+			replicasItemObject.logicalZone = instanceTopologyNodeReplicasReplicasItem["LogicalZone"].asString();
+		if(!instanceTopologyNodeReplicasReplicasItem["NodeNum"].isNull())
+			replicasItemObject.nodeNum = std::stoi(instanceTopologyNodeReplicasReplicasItem["NodeNum"].asString());
+		if(!instanceTopologyNodeReplicasReplicasItem["ZoneLogicalName"].isNull())
+			replicasItemObject.zoneLogicalName = instanceTopologyNodeReplicasReplicasItem["ZoneLogicalName"].asString();
+		if(!instanceTopologyNodeReplicasReplicasItem["ZoneRegionName"].isNull())
+			replicasItemObject.zoneRegionName = instanceTopologyNodeReplicasReplicasItem["ZoneRegionName"].asString();
+		if(!instanceTopologyNodeReplicasReplicasItem["ZoneLogicalId"].isNull())
+			replicasItemObject.zoneLogicalId = std::stoi(instanceTopologyNodeReplicasReplicasItem["ZoneLogicalId"].asString());
+		if(!instanceTopologyNodeReplicasReplicasItem["ReplicaType"].isNull())
+			replicasItemObject.replicaType = instanceTopologyNodeReplicasReplicasItem["ReplicaType"].asString();
+		if(!instanceTopologyNodeReplicasReplicasItem["Status"].isNull())
+			replicasItemObject.status = instanceTopologyNodeReplicasReplicasItem["Status"].asString();
+		auto replicaResourceNode = value["ReplicaResource"];
+		auto memory2Node = replicaResourceNode["Memory"];
+		if(!memory2Node["UsedMemory"].isNull())
+			replicasItemObject.replicaResource.memory2.usedMemory = std::stol(memory2Node["UsedMemory"].asString());
+		if(!memory2Node["TotalMemory"].isNull())
+			replicasItemObject.replicaResource.memory2.totalMemory = std::stol(memory2Node["TotalMemory"].asString());
+		auto diskSize3Node = replicaResourceNode["DiskSize"];
+		if(!diskSize3Node["UsedDiskSize"].isNull())
+			replicasItemObject.replicaResource.diskSize3.usedDiskSize = std::stof(diskSize3Node["UsedDiskSize"].asString());
+		if(!diskSize3Node["TotalDiskSize"].isNull())
+			replicasItemObject.replicaResource.diskSize3.totalDiskSize = std::stol(diskSize3Node["TotalDiskSize"].asString());
+		auto cpu4Node = replicaResourceNode["Cpu"];
+		if(!cpu4Node["TotalCpu"].isNull())
+			replicasItemObject.replicaResource.cpu4.totalCpu = std::stoi(cpu4Node["TotalCpu"].asString());
+		if(!cpu4Node["UsedCpu"].isNull())
+			replicasItemObject.replicaResource.cpu4.usedCpu = std::stoi(cpu4Node["UsedCpu"].asString());
+		instanceTopology_.replicas.push_back(replicasItemObject);
 	}
 
 }
