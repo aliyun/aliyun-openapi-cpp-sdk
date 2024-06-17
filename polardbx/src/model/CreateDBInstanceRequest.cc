@@ -223,6 +223,15 @@ void CreateDBInstanceRequest::setUsedTime(int usedTime) {
   setParameter(std::string("UsedTime"), std::to_string(usedTime));
 }
 
+std::string CreateDBInstanceRequest::getDnStorageSpace() const {
+  return dnStorageSpace_;
+}
+
+void CreateDBInstanceRequest::setDnStorageSpace(const std::string &dnStorageSpace) {
+  dnStorageSpace_ = dnStorageSpace;
+  setParameter(std::string("DnStorageSpace"), dnStorageSpace);
+}
+
 std::string CreateDBInstanceRequest::getPrimaryZone() const {
   return primaryZone_;
 }

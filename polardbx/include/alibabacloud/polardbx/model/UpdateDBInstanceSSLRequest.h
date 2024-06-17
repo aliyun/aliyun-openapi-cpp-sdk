@@ -34,18 +34,18 @@ public:
 	void setDBInstanceName(const std::string &dBInstanceName);
 	std::string getCertCommonName() const;
 	void setCertCommonName(const std::string &certCommonName);
-	bool getEnableSSL() const;
-	void setEnableSSL(bool enableSSL);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	bool getEnableSSL() const;
+	void setEnableSSL(bool enableSSL);
 	bool getForce() const;
 	void setForce(bool force);
 
 private:
 	std::string dBInstanceName_;
 	std::string certCommonName_;
-	bool enableSSL_;
 	std::string regionId_;
+	bool enableSSL_;
 	bool force_;
 };
 } // namespace Model

@@ -65,6 +65,7 @@ namespace AlibabaCloud
 					std::string dBInstanceType;
 					std::string cnNodeClassCode;
 					std::string dBType;
+					std::string specCategory;
 					std::string tertiaryZone;
 					std::string dBVersion;
 					std::vector<std::string> columnarReadDBInstances;

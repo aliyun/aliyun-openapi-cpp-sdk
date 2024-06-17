@@ -43,13 +43,13 @@ void DescribeScaleOutMigrateTaskListRequest::setResourceOwnerId(long resourceOwn
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeScaleOutMigrateTaskListRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string DescribeScaleOutMigrateTaskListRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeScaleOutMigrateTaskListRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void DescribeScaleOutMigrateTaskListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string DescribeScaleOutMigrateTaskListRequest::getResourceOwnerAccount() const {

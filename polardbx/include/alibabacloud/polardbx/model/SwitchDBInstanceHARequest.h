@@ -32,24 +32,24 @@ public:
 	~SwitchDBInstanceHARequest();
 	std::string getDBInstanceName() const;
 	void setDBInstanceName(const std::string &dBInstanceName);
-	std::string getTargetPrimaryRegionId() const;
-	void setTargetPrimaryRegionId(const std::string &targetPrimaryRegionId);
 	std::string getSwitchTimeMode() const;
 	void setSwitchTimeMode(const std::string &switchTimeMode);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getTargetPrimaryAzoneId() const;
-	void setTargetPrimaryAzoneId(const std::string &targetPrimaryAzoneId);
 	std::string getSwitchTime() const;
 	void setSwitchTime(const std::string &switchTime);
+	std::string getTargetPrimaryRegionId() const;
+	void setTargetPrimaryRegionId(const std::string &targetPrimaryRegionId);
+	std::string getTargetPrimaryAzoneId() const;
+	void setTargetPrimaryAzoneId(const std::string &targetPrimaryAzoneId);
 
 private:
 	std::string dBInstanceName_;
-	std::string targetPrimaryRegionId_;
 	std::string switchTimeMode_;
 	std::string regionId_;
-	std::string targetPrimaryAzoneId_;
 	std::string switchTime_;
+	std::string targetPrimaryRegionId_;
+	std::string targetPrimaryAzoneId_;
 };
 } // namespace Model
 } // namespace Polardbx

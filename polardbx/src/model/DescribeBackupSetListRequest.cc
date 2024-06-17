@@ -34,15 +34,6 @@ void DescribeBackupSetListRequest::setDBInstanceName(const std::string &dBInstan
   setParameter(std::string("DBInstanceName"), dBInstanceName);
 }
 
-long DescribeBackupSetListRequest::getEndTime() const {
-  return endTime_;
-}
-
-void DescribeBackupSetListRequest::setEndTime(long endTime) {
-  endTime_ = endTime;
-  setParameter(std::string("EndTime"), std::to_string(endTime));
-}
-
 long DescribeBackupSetListRequest::getStartTime() const {
   return startTime_;
 }
@@ -50,15 +41,6 @@ long DescribeBackupSetListRequest::getStartTime() const {
 void DescribeBackupSetListRequest::setStartTime(long startTime) {
   startTime_ = startTime;
   setParameter(std::string("StartTime"), std::to_string(startTime));
-}
-
-std::string DescribeBackupSetListRequest::getDestCrossRegion() const {
-  return destCrossRegion_;
-}
-
-void DescribeBackupSetListRequest::setDestCrossRegion(const std::string &destCrossRegion) {
-  destCrossRegion_ = destCrossRegion;
-  setParameter(std::string("DestCrossRegion"), destCrossRegion);
 }
 
 int DescribeBackupSetListRequest::getPageNumber() const {
@@ -86,5 +68,23 @@ int DescribeBackupSetListRequest::getPageSize() const {
 void DescribeBackupSetListRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+long DescribeBackupSetListRequest::getEndTime() const {
+  return endTime_;
+}
+
+void DescribeBackupSetListRequest::setEndTime(long endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), std::to_string(endTime));
+}
+
+std::string DescribeBackupSetListRequest::getDestCrossRegion() const {
+  return destCrossRegion_;
+}
+
+void DescribeBackupSetListRequest::setDestCrossRegion(const std::string &destCrossRegion) {
+  destCrossRegion_ = destCrossRegion;
+  setParameter(std::string("DestCrossRegion"), destCrossRegion);
 }
 

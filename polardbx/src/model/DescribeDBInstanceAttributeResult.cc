@@ -128,6 +128,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 		dBInstance_.columnarInstanceName = dBInstanceNode["ColumnarInstanceName"].asString();
 	if(!dBInstanceNode["CanNotCreateColumnar"].isNull())
 		dBInstance_.canNotCreateColumnar = dBInstanceNode["CanNotCreateColumnar"].asString() == "true";
+	if(!dBInstanceNode["SpecCategory"].isNull())
+		dBInstance_.specCategory = dBInstanceNode["SpecCategory"].asString();
 	auto allDBNodesNode = dBInstanceNode["DBNodes"]["DBNode"];
 	for (auto dBInstanceNodeDBNodesDBNode : allDBNodesNode)
 	{

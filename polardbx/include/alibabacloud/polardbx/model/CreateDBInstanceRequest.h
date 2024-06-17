@@ -74,6 +74,8 @@ public:
 	void setDnClass(const std::string &dnClass);
 	int getUsedTime() const;
 	void setUsedTime(int usedTime);
+	std::string getDnStorageSpace() const;
+	void setDnStorageSpace(const std::string &dnStorageSpace);
 	std::string getPrimaryZone() const;
 	void setPrimaryZone(const std::string &primaryZone);
 	std::string getSeries() const;
@@ -106,6 +108,7 @@ private:
 	int dBNodeCount_;
 	std::string dnClass_;
 	int usedTime_;
+	std::string dnStorageSpace_;
 	std::string primaryZone_;
 	std::string series_;
 	std::string vPCId_;

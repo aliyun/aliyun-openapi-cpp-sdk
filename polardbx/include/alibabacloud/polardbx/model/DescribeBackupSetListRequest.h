@@ -32,27 +32,27 @@ public:
 	~DescribeBackupSetListRequest();
 	std::string getDBInstanceName() const;
 	void setDBInstanceName(const std::string &dBInstanceName);
-	long getEndTime() const;
-	void setEndTime(long endTime);
 	long getStartTime() const;
 	void setStartTime(long startTime);
-	std::string getDestCrossRegion() const;
-	void setDestCrossRegion(const std::string &destCrossRegion);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	long getEndTime() const;
+	void setEndTime(long endTime);
+	std::string getDestCrossRegion() const;
+	void setDestCrossRegion(const std::string &destCrossRegion);
 
 private:
 	std::string dBInstanceName_;
-	long endTime_;
 	long startTime_;
-	std::string destCrossRegion_;
 	int pageNumber_;
 	std::string regionId_;
 	int pageSize_;
+	long endTime_;
+	std::string destCrossRegion_;
 };
 } // namespace Model
 } // namespace Polardbx

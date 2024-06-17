@@ -43,15 +43,6 @@ void UpdateDBInstanceSSLRequest::setCertCommonName(const std::string &certCommon
   setParameter(std::string("CertCommonName"), certCommonName);
 }
 
-bool UpdateDBInstanceSSLRequest::getEnableSSL() const {
-  return enableSSL_;
-}
-
-void UpdateDBInstanceSSLRequest::setEnableSSL(bool enableSSL) {
-  enableSSL_ = enableSSL;
-  setParameter(std::string("EnableSSL"), enableSSL ? "true" : "false");
-}
-
 std::string UpdateDBInstanceSSLRequest::getRegionId() const {
   return regionId_;
 }
@@ -59,6 +50,15 @@ std::string UpdateDBInstanceSSLRequest::getRegionId() const {
 void UpdateDBInstanceSSLRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+bool UpdateDBInstanceSSLRequest::getEnableSSL() const {
+  return enableSSL_;
+}
+
+void UpdateDBInstanceSSLRequest::setEnableSSL(bool enableSSL) {
+  enableSSL_ = enableSSL;
+  setParameter(std::string("EnableSSL"), enableSSL ? "true" : "false");
 }
 
 bool UpdateDBInstanceSSLRequest::getForce() const {

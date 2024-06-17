@@ -34,15 +34,6 @@ void SwitchDBInstanceHARequest::setDBInstanceName(const std::string &dBInstanceN
   setParameter(std::string("DBInstanceName"), dBInstanceName);
 }
 
-std::string SwitchDBInstanceHARequest::getTargetPrimaryRegionId() const {
-  return targetPrimaryRegionId_;
-}
-
-void SwitchDBInstanceHARequest::setTargetPrimaryRegionId(const std::string &targetPrimaryRegionId) {
-  targetPrimaryRegionId_ = targetPrimaryRegionId;
-  setParameter(std::string("TargetPrimaryRegionId"), targetPrimaryRegionId);
-}
-
 std::string SwitchDBInstanceHARequest::getSwitchTimeMode() const {
   return switchTimeMode_;
 }
@@ -61,15 +52,6 @@ void SwitchDBInstanceHARequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
-std::string SwitchDBInstanceHARequest::getTargetPrimaryAzoneId() const {
-  return targetPrimaryAzoneId_;
-}
-
-void SwitchDBInstanceHARequest::setTargetPrimaryAzoneId(const std::string &targetPrimaryAzoneId) {
-  targetPrimaryAzoneId_ = targetPrimaryAzoneId;
-  setParameter(std::string("TargetPrimaryAzoneId"), targetPrimaryAzoneId);
-}
-
 std::string SwitchDBInstanceHARequest::getSwitchTime() const {
   return switchTime_;
 }
@@ -77,5 +59,23 @@ std::string SwitchDBInstanceHARequest::getSwitchTime() const {
 void SwitchDBInstanceHARequest::setSwitchTime(const std::string &switchTime) {
   switchTime_ = switchTime;
   setParameter(std::string("SwitchTime"), switchTime);
+}
+
+std::string SwitchDBInstanceHARequest::getTargetPrimaryRegionId() const {
+  return targetPrimaryRegionId_;
+}
+
+void SwitchDBInstanceHARequest::setTargetPrimaryRegionId(const std::string &targetPrimaryRegionId) {
+  targetPrimaryRegionId_ = targetPrimaryRegionId;
+  setParameter(std::string("TargetPrimaryRegionId"), targetPrimaryRegionId);
+}
+
+std::string SwitchDBInstanceHARequest::getTargetPrimaryAzoneId() const {
+  return targetPrimaryAzoneId_;
+}
+
+void SwitchDBInstanceHARequest::setTargetPrimaryAzoneId(const std::string &targetPrimaryAzoneId) {
+  targetPrimaryAzoneId_ = targetPrimaryAzoneId;
+  setParameter(std::string("TargetPrimaryAzoneId"), targetPrimaryAzoneId);
 }
 
