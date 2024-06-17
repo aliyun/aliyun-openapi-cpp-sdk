@@ -77,6 +77,8 @@ void ListInstancesResult::parse(const std::string &payload)
 			instancesObject.combinationInstanceId = valueInstancesInstance["CombinationInstanceId"].asString();
 		if(!valueInstancesInstance["Uuid"].isNull())
 			instancesObject.uuid = valueInstancesInstance["Uuid"].asString();
+		if(!valueInstancesInstance["ResourceGroupId"].isNull())
+			instancesObject.resourceGroupId = valueInstancesInstance["ResourceGroupId"].asString();
 		auto allTagsNode = valueInstancesInstance["Tags"]["tag"];
 		for (auto valueInstancesInstanceTagstag : allTagsNode)
 		{
@@ -113,6 +115,8 @@ void ListInstancesResult::parse(const std::string &payload)
 				disksObject.regionId = valueInstancesInstanceDisksdisk["RegionId"].asString();
 			if(!valueInstancesInstanceDisksdisk["Remark"].isNull())
 				disksObject.remark = valueInstancesInstanceDisksdisk["Remark"].asString();
+			if(!valueInstancesInstanceDisksdisk["ResourceGroupId"].isNull())
+				disksObject.resourceGroupId = valueInstancesInstanceDisksdisk["ResourceGroupId"].asString();
 			auto allDiskTagsNode = valueInstancesInstanceDisksdisk["DiskTags"]["tag"];
 			for (auto valueInstancesInstanceDisksdiskDiskTagstag : allDiskTagsNode)
 			{

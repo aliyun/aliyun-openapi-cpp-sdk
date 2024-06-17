@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_LISTDISKSREQUEST_H_
-#define ALIBABACLOUD_SWAS_OPEN_MODEL_LISTDISKSREQUEST_H_
+#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_LISTKEYPAIRSREQUEST_H_
+#define ALIBABACLOUD_SWAS_OPEN_MODEL_LISTKEYPAIRSREQUEST_H_
 
 #include <alibabacloud/swas-open/SWAS_OPENExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,42 +26,29 @@
 namespace AlibabaCloud {
 namespace SWAS_OPEN {
 namespace Model {
-class ALIBABACLOUD_SWAS_OPEN_EXPORT ListDisksRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SWAS_OPEN_EXPORT ListKeyPairsRequest : public RpcServiceRequest {
 public:
-	struct Tag {
-		std::string key;
-		std::string value;
-	};
-	ListDisksRequest();
-	~ListDisksRequest();
+	ListKeyPairsRequest();
+	~ListKeyPairsRequest();
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getKeyPairName() const;
+	void setKeyPairName(const std::string &keyPairName);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
-	std::string getResourceGroupId() const;
-	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	std::string getDiskIds() const;
-	void setDiskIds(const std::string &diskIds);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
-	std::string getDiskType() const;
-	void setDiskType(const std::string &diskType);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
 
 private:
+	std::string clientToken_;
+	std::string keyPairName_;
 	int pageNumber_;
-	std::string resourceGroupId_;
 	std::string regionId_;
 	int pageSize_;
-	std::string diskIds_;
-	std::vector<Tag> tag_;
-	std::string diskType_;
-	std::string instanceId_;
 };
 } // namespace Model
 } // namespace SWAS_OPEN
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_LISTDISKSREQUEST_H_
+#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_LISTKEYPAIRSREQUEST_H_

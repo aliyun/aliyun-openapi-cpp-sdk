@@ -63,6 +63,8 @@ void DescribeCommandsResult::parse(const std::string &payload)
 			commandsObject.commandContent = valueCommandscommand["CommandContent"].asString();
 		if(!valueCommandscommand["EnableParameter"].isNull())
 			commandsObject.enableParameter = valueCommandscommand["EnableParameter"].asString() == "true";
+		if(!valueCommandscommand["ResourceGroupId"].isNull())
+			commandsObject.resourceGroupId = valueCommandscommand["ResourceGroupId"].asString();
 		auto allTagsNode = valueCommandscommand["Tags"]["tag"];
 		for (auto valueCommandscommandTagstag : allTagsNode)
 		{

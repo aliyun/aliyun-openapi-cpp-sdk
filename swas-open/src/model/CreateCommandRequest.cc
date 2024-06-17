@@ -70,6 +70,15 @@ void CreateCommandRequest::setTimeout(long timeout) {
   setParameter(std::string("Timeout"), std::to_string(timeout));
 }
 
+std::string CreateCommandRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateCommandRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateCommandRequest::getRegionId() const {
   return regionId_;
 }

@@ -87,6 +87,42 @@ SWAS_OPENClient::AllocatePublicConnectionOutcomeCallable SWAS_OPENClient::alloca
 	return task->get_future();
 }
 
+SWAS_OPENClient::AttachKeyPairOutcome SWAS_OPENClient::attachKeyPair(const AttachKeyPairRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AttachKeyPairOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AttachKeyPairOutcome(AttachKeyPairResult(outcome.result()));
+	else
+		return AttachKeyPairOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::attachKeyPairAsync(const AttachKeyPairRequest& request, const AttachKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, attachKeyPair(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::AttachKeyPairOutcomeCallable SWAS_OPENClient::attachKeyPairCallable(const AttachKeyPairRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AttachKeyPairOutcome()>>(
+			[this, request]()
+			{
+			return this->attachKeyPair(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::CreateCommandOutcome SWAS_OPENClient::createCommand(const CreateCommandRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +333,42 @@ SWAS_OPENClient::CreateInstancesOutcomeCallable SWAS_OPENClient::createInstances
 			[this, request]()
 			{
 			return this->createInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::CreateKeyPairOutcome SWAS_OPENClient::createKeyPair(const CreateKeyPairRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateKeyPairOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateKeyPairOutcome(CreateKeyPairResult(outcome.result()));
+	else
+		return CreateKeyPairOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::createKeyPairAsync(const CreateKeyPairRequest& request, const CreateKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createKeyPair(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::CreateKeyPairOutcomeCallable SWAS_OPENClient::createKeyPairCallable(const CreateKeyPairRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateKeyPairOutcome()>>(
+			[this, request]()
+			{
+			return this->createKeyPair(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -549,6 +621,42 @@ SWAS_OPENClient::DeleteInstanceKeyPairOutcomeCallable SWAS_OPENClient::deleteIns
 			[this, request]()
 			{
 			return this->deleteInstanceKeyPair(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::DeleteKeyPairsOutcome SWAS_OPENClient::deleteKeyPairs(const DeleteKeyPairsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteKeyPairsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteKeyPairsOutcome(DeleteKeyPairsResult(outcome.result()));
+	else
+		return DeleteKeyPairsOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::deleteKeyPairsAsync(const DeleteKeyPairsRequest& request, const DeleteKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteKeyPairs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DeleteKeyPairsOutcomeCallable SWAS_OPENClient::deleteKeyPairsCallable(const DeleteKeyPairsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteKeyPairsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteKeyPairs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1239,6 +1347,42 @@ SWAS_OPENClient::DescribeSecurityAgentStatusOutcomeCallable SWAS_OPENClient::des
 	return task->get_future();
 }
 
+SWAS_OPENClient::DetachKeyPairOutcome SWAS_OPENClient::detachKeyPair(const DetachKeyPairRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetachKeyPairOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetachKeyPairOutcome(DetachKeyPairResult(outcome.result()));
+	else
+		return DetachKeyPairOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::detachKeyPairAsync(const DetachKeyPairRequest& request, const DetachKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detachKeyPair(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DetachKeyPairOutcomeCallable SWAS_OPENClient::detachKeyPairCallable(const DetachKeyPairRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetachKeyPairOutcome()>>(
+			[this, request]()
+			{
+			return this->detachKeyPair(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::DisableFirewallRuleOutcome SWAS_OPENClient::disableFirewallRule(const DisableFirewallRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1305,6 +1449,42 @@ SWAS_OPENClient::EnableFirewallRuleOutcomeCallable SWAS_OPENClient::enableFirewa
 			[this, request]()
 			{
 			return this->enableFirewallRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::ImportKeyPairOutcome SWAS_OPENClient::importKeyPair(const ImportKeyPairRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ImportKeyPairOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ImportKeyPairOutcome(ImportKeyPairResult(outcome.result()));
+	else
+		return ImportKeyPairOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::importKeyPairAsync(const ImportKeyPairRequest& request, const ImportKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, importKeyPair(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::ImportKeyPairOutcomeCallable SWAS_OPENClient::importKeyPairCallable(const ImportKeyPairRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ImportKeyPairOutcome()>>(
+			[this, request]()
+			{
+			return this->importKeyPair(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1701,6 +1881,42 @@ SWAS_OPENClient::ListInstancesTrafficPackagesOutcomeCallable SWAS_OPENClient::li
 			[this, request]()
 			{
 			return this->listInstancesTrafficPackages(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::ListKeyPairsOutcome SWAS_OPENClient::listKeyPairs(const ListKeyPairsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListKeyPairsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListKeyPairsOutcome(ListKeyPairsResult(outcome.result()));
+	else
+		return ListKeyPairsOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::listKeyPairsAsync(const ListKeyPairsRequest& request, const ListKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listKeyPairs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::ListKeyPairsOutcomeCallable SWAS_OPENClient::listKeyPairsCallable(const ListKeyPairsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListKeyPairsOutcome()>>(
+			[this, request]()
+			{
+			return this->listKeyPairs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

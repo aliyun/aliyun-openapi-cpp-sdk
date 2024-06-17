@@ -23,6 +23,8 @@ set(swas-open_public_header
 set(swas-open_public_header_model 
 	include/alibabacloud/swas-open/model/AllocatePublicConnectionRequest.h
 	include/alibabacloud/swas-open/model/AllocatePublicConnectionResult.h
+	include/alibabacloud/swas-open/model/AttachKeyPairRequest.h
+	include/alibabacloud/swas-open/model/AttachKeyPairResult.h
 	include/alibabacloud/swas-open/model/CreateCommandRequest.h
 	include/alibabacloud/swas-open/model/CreateCommandResult.h
 	include/alibabacloud/swas-open/model/CreateCustomImageRequest.h
@@ -35,6 +37,8 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/CreateInstanceKeyPairResult.h
 	include/alibabacloud/swas-open/model/CreateInstancesRequest.h
 	include/alibabacloud/swas-open/model/CreateInstancesResult.h
+	include/alibabacloud/swas-open/model/CreateKeyPairRequest.h
+	include/alibabacloud/swas-open/model/CreateKeyPairResult.h
 	include/alibabacloud/swas-open/model/CreateSnapshotRequest.h
 	include/alibabacloud/swas-open/model/CreateSnapshotResult.h
 	include/alibabacloud/swas-open/model/DeleteCommandRequest.h
@@ -49,6 +53,8 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/DeleteFirewallRulesResult.h
 	include/alibabacloud/swas-open/model/DeleteInstanceKeyPairRequest.h
 	include/alibabacloud/swas-open/model/DeleteInstanceKeyPairResult.h
+	include/alibabacloud/swas-open/model/DeleteKeyPairsRequest.h
+	include/alibabacloud/swas-open/model/DeleteKeyPairsResult.h
 	include/alibabacloud/swas-open/model/DeleteSnapshotRequest.h
 	include/alibabacloud/swas-open/model/DeleteSnapshotResult.h
 	include/alibabacloud/swas-open/model/DeleteSnapshotsRequest.h
@@ -87,10 +93,14 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/DescribeMonitorDataResult.h
 	include/alibabacloud/swas-open/model/DescribeSecurityAgentStatusRequest.h
 	include/alibabacloud/swas-open/model/DescribeSecurityAgentStatusResult.h
+	include/alibabacloud/swas-open/model/DetachKeyPairRequest.h
+	include/alibabacloud/swas-open/model/DetachKeyPairResult.h
 	include/alibabacloud/swas-open/model/DisableFirewallRuleRequest.h
 	include/alibabacloud/swas-open/model/DisableFirewallRuleResult.h
 	include/alibabacloud/swas-open/model/EnableFirewallRuleRequest.h
 	include/alibabacloud/swas-open/model/EnableFirewallRuleResult.h
+	include/alibabacloud/swas-open/model/ImportKeyPairRequest.h
+	include/alibabacloud/swas-open/model/ImportKeyPairResult.h
 	include/alibabacloud/swas-open/model/InstallCloudAssistantRequest.h
 	include/alibabacloud/swas-open/model/InstallCloudAssistantResult.h
 	include/alibabacloud/swas-open/model/InstallCloudMonitorAgentRequest.h
@@ -113,6 +123,8 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/ListInstancesResult.h
 	include/alibabacloud/swas-open/model/ListInstancesTrafficPackagesRequest.h
 	include/alibabacloud/swas-open/model/ListInstancesTrafficPackagesResult.h
+	include/alibabacloud/swas-open/model/ListKeyPairsRequest.h
+	include/alibabacloud/swas-open/model/ListKeyPairsResult.h
 	include/alibabacloud/swas-open/model/ListPlansRequest.h
 	include/alibabacloud/swas-open/model/ListPlansResult.h
 	include/alibabacloud/swas-open/model/ListRegionsRequest.h
@@ -186,6 +198,8 @@ set(swas-open_src
 	src/SWAS-OPENClient.cc
 	src/model/AllocatePublicConnectionRequest.cc
 	src/model/AllocatePublicConnectionResult.cc
+	src/model/AttachKeyPairRequest.cc
+	src/model/AttachKeyPairResult.cc
 	src/model/CreateCommandRequest.cc
 	src/model/CreateCommandResult.cc
 	src/model/CreateCustomImageRequest.cc
@@ -198,6 +212,8 @@ set(swas-open_src
 	src/model/CreateInstanceKeyPairResult.cc
 	src/model/CreateInstancesRequest.cc
 	src/model/CreateInstancesResult.cc
+	src/model/CreateKeyPairRequest.cc
+	src/model/CreateKeyPairResult.cc
 	src/model/CreateSnapshotRequest.cc
 	src/model/CreateSnapshotResult.cc
 	src/model/DeleteCommandRequest.cc
@@ -212,6 +228,8 @@ set(swas-open_src
 	src/model/DeleteFirewallRulesResult.cc
 	src/model/DeleteInstanceKeyPairRequest.cc
 	src/model/DeleteInstanceKeyPairResult.cc
+	src/model/DeleteKeyPairsRequest.cc
+	src/model/DeleteKeyPairsResult.cc
 	src/model/DeleteSnapshotRequest.cc
 	src/model/DeleteSnapshotResult.cc
 	src/model/DeleteSnapshotsRequest.cc
@@ -250,10 +268,14 @@ set(swas-open_src
 	src/model/DescribeMonitorDataResult.cc
 	src/model/DescribeSecurityAgentStatusRequest.cc
 	src/model/DescribeSecurityAgentStatusResult.cc
+	src/model/DetachKeyPairRequest.cc
+	src/model/DetachKeyPairResult.cc
 	src/model/DisableFirewallRuleRequest.cc
 	src/model/DisableFirewallRuleResult.cc
 	src/model/EnableFirewallRuleRequest.cc
 	src/model/EnableFirewallRuleResult.cc
+	src/model/ImportKeyPairRequest.cc
+	src/model/ImportKeyPairResult.cc
 	src/model/InstallCloudAssistantRequest.cc
 	src/model/InstallCloudAssistantResult.cc
 	src/model/InstallCloudMonitorAgentRequest.cc
@@ -276,6 +298,8 @@ set(swas-open_src
 	src/model/ListInstancesResult.cc
 	src/model/ListInstancesTrafficPackagesRequest.cc
 	src/model/ListInstancesTrafficPackagesResult.cc
+	src/model/ListKeyPairsRequest.cc
+	src/model/ListKeyPairsResult.cc
 	src/model/ListPlansRequest.cc
 	src/model/ListPlansResult.cc
 	src/model/ListRegionsRequest.cc

@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::string category;
+					std::string resourceGroupId;
 					std::string instanceId;
 					std::string device;
 					int size;

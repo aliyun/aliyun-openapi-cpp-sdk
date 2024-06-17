@@ -65,6 +65,8 @@ void ListSnapshotsResult::parse(const std::string &payload)
 			snapshotsObject.instanceId = valueSnapshotsSnapshot["InstanceId"].asString();
 		if(!valueSnapshotsSnapshot["RollbackTime"].isNull())
 			snapshotsObject.rollbackTime = valueSnapshotsSnapshot["RollbackTime"].asString();
+		if(!valueSnapshotsSnapshot["ResourceGroupId"].isNull())
+			snapshotsObject.resourceGroupId = valueSnapshotsSnapshot["ResourceGroupId"].asString();
 		auto allTagsNode = valueSnapshotsSnapshot["Tags"]["tag"];
 		for (auto valueSnapshotsSnapshotTagstag : allTagsNode)
 		{

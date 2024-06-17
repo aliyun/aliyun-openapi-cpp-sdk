@@ -61,6 +61,15 @@ void CreateCustomImageRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
+std::string CreateCustomImageRequest::getResoureGroupId() const {
+  return resoureGroupId_;
+}
+
+void CreateCustomImageRequest::setResoureGroupId(const std::string &resoureGroupId) {
+  resoureGroupId_ = resoureGroupId;
+  setParameter(std::string("ResoureGroupId"), resoureGroupId);
+}
+
 std::string CreateCustomImageRequest::getPlatform() const {
   return platform_;
 }

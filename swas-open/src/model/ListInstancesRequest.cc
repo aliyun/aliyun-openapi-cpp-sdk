@@ -34,6 +34,15 @@ void ListInstancesRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string ListInstancesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListInstancesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListInstancesRequest::getRegionId() const {
   return regionId_;
 }
@@ -73,6 +82,15 @@ void ListInstancesRequest::setTag(const std::vector<ListInstancesRequest::Tag> &
     setParameter(tagObjStr + ".Key", tagObj.key);
     setParameter(tagObjStr + ".Value", tagObj.value);
   }
+}
+
+std::string ListInstancesRequest::getInstanceName() const {
+  return instanceName_;
+}
+
+void ListInstancesRequest::setInstanceName(const std::string &instanceName) {
+  instanceName_ = instanceName;
+  setParameter(std::string("InstanceName"), instanceName);
 }
 
 std::string ListInstancesRequest::getInstanceIds() const {

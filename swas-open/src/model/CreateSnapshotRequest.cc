@@ -43,6 +43,15 @@ void CreateSnapshotRequest::setSnapshotName(const std::string &snapshotName) {
   setParameter(std::string("SnapshotName"), snapshotName);
 }
 
+std::string CreateSnapshotRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateSnapshotRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateSnapshotRequest::getRegionId() const {
   return regionId_;
 }

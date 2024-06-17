@@ -24,6 +24,8 @@
 #include "SWAS_OPENExport.h"
 #include "model/AllocatePublicConnectionRequest.h"
 #include "model/AllocatePublicConnectionResult.h"
+#include "model/AttachKeyPairRequest.h"
+#include "model/AttachKeyPairResult.h"
 #include "model/CreateCommandRequest.h"
 #include "model/CreateCommandResult.h"
 #include "model/CreateCustomImageRequest.h"
@@ -36,6 +38,8 @@
 #include "model/CreateInstanceKeyPairResult.h"
 #include "model/CreateInstancesRequest.h"
 #include "model/CreateInstancesResult.h"
+#include "model/CreateKeyPairRequest.h"
+#include "model/CreateKeyPairResult.h"
 #include "model/CreateSnapshotRequest.h"
 #include "model/CreateSnapshotResult.h"
 #include "model/DeleteCommandRequest.h"
@@ -50,6 +54,8 @@
 #include "model/DeleteFirewallRulesResult.h"
 #include "model/DeleteInstanceKeyPairRequest.h"
 #include "model/DeleteInstanceKeyPairResult.h"
+#include "model/DeleteKeyPairsRequest.h"
+#include "model/DeleteKeyPairsResult.h"
 #include "model/DeleteSnapshotRequest.h"
 #include "model/DeleteSnapshotResult.h"
 #include "model/DeleteSnapshotsRequest.h"
@@ -88,10 +94,14 @@
 #include "model/DescribeMonitorDataResult.h"
 #include "model/DescribeSecurityAgentStatusRequest.h"
 #include "model/DescribeSecurityAgentStatusResult.h"
+#include "model/DetachKeyPairRequest.h"
+#include "model/DetachKeyPairResult.h"
 #include "model/DisableFirewallRuleRequest.h"
 #include "model/DisableFirewallRuleResult.h"
 #include "model/EnableFirewallRuleRequest.h"
 #include "model/EnableFirewallRuleResult.h"
+#include "model/ImportKeyPairRequest.h"
+#include "model/ImportKeyPairResult.h"
 #include "model/InstallCloudAssistantRequest.h"
 #include "model/InstallCloudAssistantResult.h"
 #include "model/InstallCloudMonitorAgentRequest.h"
@@ -114,6 +124,8 @@
 #include "model/ListInstancesResult.h"
 #include "model/ListInstancesTrafficPackagesRequest.h"
 #include "model/ListInstancesTrafficPackagesResult.h"
+#include "model/ListKeyPairsRequest.h"
+#include "model/ListKeyPairsResult.h"
 #include "model/ListPlansRequest.h"
 #include "model/ListPlansResult.h"
 #include "model/ListRegionsRequest.h"
@@ -194,6 +206,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AllocatePublicConnectionResult> AllocatePublicConnectionOutcome;
 			typedef std::future<AllocatePublicConnectionOutcome> AllocatePublicConnectionOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::AllocatePublicConnectionRequest&, const AllocatePublicConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocatePublicConnectionAsyncHandler;
+			typedef Outcome<Error, Model::AttachKeyPairResult> AttachKeyPairOutcome;
+			typedef std::future<AttachKeyPairOutcome> AttachKeyPairOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::AttachKeyPairRequest&, const AttachKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachKeyPairAsyncHandler;
 			typedef Outcome<Error, Model::CreateCommandResult> CreateCommandOutcome;
 			typedef std::future<CreateCommandOutcome> CreateCommandOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::CreateCommandRequest&, const CreateCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCommandAsyncHandler;
@@ -212,6 +227,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateInstancesResult> CreateInstancesOutcome;
 			typedef std::future<CreateInstancesOutcome> CreateInstancesOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::CreateInstancesRequest&, const CreateInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancesAsyncHandler;
+			typedef Outcome<Error, Model::CreateKeyPairResult> CreateKeyPairOutcome;
+			typedef std::future<CreateKeyPairOutcome> CreateKeyPairOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::CreateKeyPairRequest&, const CreateKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateKeyPairAsyncHandler;
 			typedef Outcome<Error, Model::CreateSnapshotResult> CreateSnapshotOutcome;
 			typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::CreateSnapshotRequest&, const CreateSnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotAsyncHandler;
@@ -233,6 +251,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteInstanceKeyPairResult> DeleteInstanceKeyPairOutcome;
 			typedef std::future<DeleteInstanceKeyPairOutcome> DeleteInstanceKeyPairOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteInstanceKeyPairRequest&, const DeleteInstanceKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceKeyPairAsyncHandler;
+			typedef Outcome<Error, Model::DeleteKeyPairsResult> DeleteKeyPairsOutcome;
+			typedef std::future<DeleteKeyPairsOutcome> DeleteKeyPairsOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteKeyPairsRequest&, const DeleteKeyPairsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKeyPairsAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSnapshotResult> DeleteSnapshotOutcome;
 			typedef std::future<DeleteSnapshotOutcome> DeleteSnapshotOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteSnapshotRequest&, const DeleteSnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotAsyncHandler;
@@ -290,12 +311,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSecurityAgentStatusResult> DescribeSecurityAgentStatusOutcome;
 			typedef std::future<DescribeSecurityAgentStatusOutcome> DescribeSecurityAgentStatusOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeSecurityAgentStatusRequest&, const DescribeSecurityAgentStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityAgentStatusAsyncHandler;
+			typedef Outcome<Error, Model::DetachKeyPairResult> DetachKeyPairOutcome;
+			typedef std::future<DetachKeyPairOutcome> DetachKeyPairOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DetachKeyPairRequest&, const DetachKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachKeyPairAsyncHandler;
 			typedef Outcome<Error, Model::DisableFirewallRuleResult> DisableFirewallRuleOutcome;
 			typedef std::future<DisableFirewallRuleOutcome> DisableFirewallRuleOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DisableFirewallRuleRequest&, const DisableFirewallRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableFirewallRuleAsyncHandler;
 			typedef Outcome<Error, Model::EnableFirewallRuleResult> EnableFirewallRuleOutcome;
 			typedef std::future<EnableFirewallRuleOutcome> EnableFirewallRuleOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::EnableFirewallRuleRequest&, const EnableFirewallRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableFirewallRuleAsyncHandler;
+			typedef Outcome<Error, Model::ImportKeyPairResult> ImportKeyPairOutcome;
+			typedef std::future<ImportKeyPairOutcome> ImportKeyPairOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::ImportKeyPairRequest&, const ImportKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImportKeyPairAsyncHandler;
 			typedef Outcome<Error, Model::InstallCloudAssistantResult> InstallCloudAssistantOutcome;
 			typedef std::future<InstallCloudAssistantOutcome> InstallCloudAssistantOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::InstallCloudAssistantRequest&, const InstallCloudAssistantOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InstallCloudAssistantAsyncHandler;
@@ -329,6 +356,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListInstancesTrafficPackagesResult> ListInstancesTrafficPackagesOutcome;
 			typedef std::future<ListInstancesTrafficPackagesOutcome> ListInstancesTrafficPackagesOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::ListInstancesTrafficPackagesRequest&, const ListInstancesTrafficPackagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstancesTrafficPackagesAsyncHandler;
+			typedef Outcome<Error, Model::ListKeyPairsResult> ListKeyPairsOutcome;
+			typedef std::future<ListKeyPairsOutcome> ListKeyPairsOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::ListKeyPairsRequest&, const ListKeyPairsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListKeyPairsAsyncHandler;
 			typedef Outcome<Error, Model::ListPlansResult> ListPlansOutcome;
 			typedef std::future<ListPlansOutcome> ListPlansOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::ListPlansRequest&, const ListPlansOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPlansAsyncHandler;
@@ -439,6 +469,9 @@ namespace AlibabaCloud
 			AllocatePublicConnectionOutcome allocatePublicConnection(const Model::AllocatePublicConnectionRequest &request)const;
 			void allocatePublicConnectionAsync(const Model::AllocatePublicConnectionRequest& request, const AllocatePublicConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AllocatePublicConnectionOutcomeCallable allocatePublicConnectionCallable(const Model::AllocatePublicConnectionRequest& request) const;
+			AttachKeyPairOutcome attachKeyPair(const Model::AttachKeyPairRequest &request)const;
+			void attachKeyPairAsync(const Model::AttachKeyPairRequest& request, const AttachKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AttachKeyPairOutcomeCallable attachKeyPairCallable(const Model::AttachKeyPairRequest& request) const;
 			CreateCommandOutcome createCommand(const Model::CreateCommandRequest &request)const;
 			void createCommandAsync(const Model::CreateCommandRequest& request, const CreateCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCommandOutcomeCallable createCommandCallable(const Model::CreateCommandRequest& request) const;
@@ -457,6 +490,9 @@ namespace AlibabaCloud
 			CreateInstancesOutcome createInstances(const Model::CreateInstancesRequest &request)const;
 			void createInstancesAsync(const Model::CreateInstancesRequest& request, const CreateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstancesOutcomeCallable createInstancesCallable(const Model::CreateInstancesRequest& request) const;
+			CreateKeyPairOutcome createKeyPair(const Model::CreateKeyPairRequest &request)const;
+			void createKeyPairAsync(const Model::CreateKeyPairRequest& request, const CreateKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateKeyPairOutcomeCallable createKeyPairCallable(const Model::CreateKeyPairRequest& request) const;
 			CreateSnapshotOutcome createSnapshot(const Model::CreateSnapshotRequest &request)const;
 			void createSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSnapshotOutcomeCallable createSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
@@ -478,6 +514,9 @@ namespace AlibabaCloud
 			DeleteInstanceKeyPairOutcome deleteInstanceKeyPair(const Model::DeleteInstanceKeyPairRequest &request)const;
 			void deleteInstanceKeyPairAsync(const Model::DeleteInstanceKeyPairRequest& request, const DeleteInstanceKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteInstanceKeyPairOutcomeCallable deleteInstanceKeyPairCallable(const Model::DeleteInstanceKeyPairRequest& request) const;
+			DeleteKeyPairsOutcome deleteKeyPairs(const Model::DeleteKeyPairsRequest &request)const;
+			void deleteKeyPairsAsync(const Model::DeleteKeyPairsRequest& request, const DeleteKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteKeyPairsOutcomeCallable deleteKeyPairsCallable(const Model::DeleteKeyPairsRequest& request) const;
 			DeleteSnapshotOutcome deleteSnapshot(const Model::DeleteSnapshotRequest &request)const;
 			void deleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSnapshotOutcomeCallable deleteSnapshotCallable(const Model::DeleteSnapshotRequest& request) const;
@@ -535,12 +574,18 @@ namespace AlibabaCloud
 			DescribeSecurityAgentStatusOutcome describeSecurityAgentStatus(const Model::DescribeSecurityAgentStatusRequest &request)const;
 			void describeSecurityAgentStatusAsync(const Model::DescribeSecurityAgentStatusRequest& request, const DescribeSecurityAgentStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSecurityAgentStatusOutcomeCallable describeSecurityAgentStatusCallable(const Model::DescribeSecurityAgentStatusRequest& request) const;
+			DetachKeyPairOutcome detachKeyPair(const Model::DetachKeyPairRequest &request)const;
+			void detachKeyPairAsync(const Model::DetachKeyPairRequest& request, const DetachKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetachKeyPairOutcomeCallable detachKeyPairCallable(const Model::DetachKeyPairRequest& request) const;
 			DisableFirewallRuleOutcome disableFirewallRule(const Model::DisableFirewallRuleRequest &request)const;
 			void disableFirewallRuleAsync(const Model::DisableFirewallRuleRequest& request, const DisableFirewallRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableFirewallRuleOutcomeCallable disableFirewallRuleCallable(const Model::DisableFirewallRuleRequest& request) const;
 			EnableFirewallRuleOutcome enableFirewallRule(const Model::EnableFirewallRuleRequest &request)const;
 			void enableFirewallRuleAsync(const Model::EnableFirewallRuleRequest& request, const EnableFirewallRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableFirewallRuleOutcomeCallable enableFirewallRuleCallable(const Model::EnableFirewallRuleRequest& request) const;
+			ImportKeyPairOutcome importKeyPair(const Model::ImportKeyPairRequest &request)const;
+			void importKeyPairAsync(const Model::ImportKeyPairRequest& request, const ImportKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ImportKeyPairOutcomeCallable importKeyPairCallable(const Model::ImportKeyPairRequest& request) const;
 			InstallCloudAssistantOutcome installCloudAssistant(const Model::InstallCloudAssistantRequest &request)const;
 			void installCloudAssistantAsync(const Model::InstallCloudAssistantRequest& request, const InstallCloudAssistantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InstallCloudAssistantOutcomeCallable installCloudAssistantCallable(const Model::InstallCloudAssistantRequest& request) const;
@@ -574,6 +619,9 @@ namespace AlibabaCloud
 			ListInstancesTrafficPackagesOutcome listInstancesTrafficPackages(const Model::ListInstancesTrafficPackagesRequest &request)const;
 			void listInstancesTrafficPackagesAsync(const Model::ListInstancesTrafficPackagesRequest& request, const ListInstancesTrafficPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstancesTrafficPackagesOutcomeCallable listInstancesTrafficPackagesCallable(const Model::ListInstancesTrafficPackagesRequest& request) const;
+			ListKeyPairsOutcome listKeyPairs(const Model::ListKeyPairsRequest &request)const;
+			void listKeyPairsAsync(const Model::ListKeyPairsRequest& request, const ListKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListKeyPairsOutcomeCallable listKeyPairsCallable(const Model::ListKeyPairsRequest& request) const;
 			ListPlansOutcome listPlans(const Model::ListPlansRequest &request)const;
 			void listPlansAsync(const Model::ListPlansRequest& request, const ListPlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPlansOutcomeCallable listPlansCallable(const Model::ListPlansRequest& request) const;

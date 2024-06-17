@@ -25,15 +25,6 @@ ListDisksRequest::ListDisksRequest()
 
 ListDisksRequest::~ListDisksRequest() {}
 
-std::string ListDisksRequest::getDiskType() const {
-  return diskType_;
-}
-
-void ListDisksRequest::setDiskType(const std::string &diskType) {
-  diskType_ = diskType;
-  setParameter(std::string("DiskType"), diskType);
-}
-
 int ListDisksRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -43,13 +34,13 @@ void ListDisksRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string ListDisksRequest::getInstanceId() const {
-  return instanceId_;
+std::string ListDisksRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void ListDisksRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
+void ListDisksRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string ListDisksRequest::getRegionId() const {
@@ -91,5 +82,23 @@ void ListDisksRequest::setTag(const std::vector<ListDisksRequest::Tag> &tag) {
     setParameter(tagObjStr + ".Key", tagObj.key);
     setParameter(tagObjStr + ".Value", tagObj.value);
   }
+}
+
+std::string ListDisksRequest::getDiskType() const {
+  return diskType_;
+}
+
+void ListDisksRequest::setDiskType(const std::string &diskType) {
+  diskType_ = diskType;
+  setParameter(std::string("DiskType"), diskType);
+}
+
+std::string ListDisksRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ListDisksRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

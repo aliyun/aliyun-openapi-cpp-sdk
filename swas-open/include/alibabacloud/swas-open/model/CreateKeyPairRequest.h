@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_CREATESNAPSHOTREQUEST_H_
-#define ALIBABACLOUD_SWAS_OPEN_MODEL_CREATESNAPSHOTREQUEST_H_
+#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_CREATEKEYPAIRREQUEST_H_
+#define ALIBABACLOUD_SWAS_OPEN_MODEL_CREATEKEYPAIRREQUEST_H_
 
 #include <alibabacloud/swas-open/SWAS_OPENExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,36 +26,23 @@
 namespace AlibabaCloud {
 namespace SWAS_OPEN {
 namespace Model {
-class ALIBABACLOUD_SWAS_OPEN_EXPORT CreateSnapshotRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SWAS_OPEN_EXPORT CreateKeyPairRequest : public RpcServiceRequest {
 public:
-	struct Tag {
-		std::string key;
-		std::string value;
-	};
-	CreateSnapshotRequest();
-	~CreateSnapshotRequest();
+	CreateKeyPairRequest();
+	~CreateKeyPairRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getSnapshotName() const;
-	void setSnapshotName(const std::string &snapshotName);
-	std::string getResourceGroupId() const;
-	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getKeyPairName() const;
+	void setKeyPairName(const std::string &keyPairName);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getDiskId() const;
-	void setDiskId(const std::string &diskId);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
 
 private:
 	std::string clientToken_;
-	std::string snapshotName_;
-	std::string resourceGroupId_;
+	std::string keyPairName_;
 	std::string regionId_;
-	std::string diskId_;
-	std::vector<Tag> tag_;
 };
 } // namespace Model
 } // namespace SWAS_OPEN
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_CREATESNAPSHOTREQUEST_H_
+#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_CREATEKEYPAIRREQUEST_H_

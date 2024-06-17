@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_LISTSNAPSHOTSRESULT_H_
-#define ALIBABACLOUD_SWAS_OPEN_MODEL_LISTSNAPSHOTSRESULT_H_
+#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_LISTKEYPAIRSRESULT_H_
+#define ALIBABACLOUD_SWAS_OPEN_MODEL_LISTKEYPAIRSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SWAS_OPEN_EXPORT ListSnapshotsResult : public ServiceResult
+			class ALIBABACLOUD_SWAS_OPEN_EXPORT ListKeyPairsResult : public ServiceResult
 			{
 			public:
-				struct Snapshot
+				struct KeyPair
 				{
-					struct Tag
-					{
-						std::string value;
-						std::string key;
-					};
-					std::string status;
-					std::string progress;
-					std::string resourceGroupId;
-					std::string instanceId;
-					std::string rollbackTime;
-					std::string snapshotName;
-					std::string sourceDiskId;
-					std::string remark;
-					std::string snapshotId;
+					std::string keyPairName;
+					std::string publicKey;
 					std::string creationTime;
-					std::string regionId;
-					std::string sourceDiskType;
-					std::vector<Snapshot::Tag> tags;
+					std::vector<std::string> instanceIds;
 				};
 
 
-				ListSnapshotsResult();
-				explicit ListSnapshotsResult(const std::string &payload);
-				~ListSnapshotsResult();
+				ListKeyPairsResult();
+				explicit ListKeyPairsResult(const std::string &payload);
+				~ListKeyPairsResult();
 				int getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
-				std::vector<Snapshot> getSnapshots()const;
+				std::vector<KeyPair> getKeyPairs()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -69,10 +55,10 @@ namespace AlibabaCloud
 				int totalCount_;
 				int pageSize_;
 				int pageNumber_;
-				std::vector<Snapshot> snapshots_;
+				std::vector<KeyPair> keyPairs_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_LISTSNAPSHOTSRESULT_H_
+#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_LISTKEYPAIRSRESULT_H_

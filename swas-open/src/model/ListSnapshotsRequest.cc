@@ -43,6 +43,15 @@ void ListSnapshotsRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string ListSnapshotsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListSnapshotsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListSnapshotsRequest::getRegionId() const {
   return regionId_;
 }
