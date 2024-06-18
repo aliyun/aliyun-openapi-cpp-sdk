@@ -11211,6 +11211,42 @@ LiveClient::ListRtcMPUEventSubRecordOutcomeCallable LiveClient::listRtcMPUEventS
 	return task->get_future();
 }
 
+LiveClient::ListRtcMPUTaskDetailOutcome LiveClient::listRtcMPUTaskDetail(const ListRtcMPUTaskDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRtcMPUTaskDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRtcMPUTaskDetailOutcome(ListRtcMPUTaskDetailResult(outcome.result()));
+	else
+		return ListRtcMPUTaskDetailOutcome(outcome.error());
+}
+
+void LiveClient::listRtcMPUTaskDetailAsync(const ListRtcMPUTaskDetailRequest& request, const ListRtcMPUTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRtcMPUTaskDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ListRtcMPUTaskDetailOutcomeCallable LiveClient::listRtcMPUTaskDetailCallable(const ListRtcMPUTaskDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRtcMPUTaskDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->listRtcMPUTaskDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::MiguLivePullToPushStartOutcome LiveClient::miguLivePullToPushStart(const MiguLivePullToPushStartRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

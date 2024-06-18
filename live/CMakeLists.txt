@@ -641,6 +641,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/ListPlaylistItemsResult.h
 	include/alibabacloud/live/model/ListRtcMPUEventSubRecordRequest.h
 	include/alibabacloud/live/model/ListRtcMPUEventSubRecordResult.h
+	include/alibabacloud/live/model/ListRtcMPUTaskDetailRequest.h
+	include/alibabacloud/live/model/ListRtcMPUTaskDetailResult.h
 	include/alibabacloud/live/model/MiguLivePullToPushStartRequest.h
 	include/alibabacloud/live/model/MiguLivePullToPushStartResult.h
 	include/alibabacloud/live/model/MiguLivePullToPushStatusRequest.h
@@ -1464,6 +1466,8 @@ set(live_src
 	src/model/ListPlaylistItemsResult.cc
 	src/model/ListRtcMPUEventSubRecordRequest.cc
 	src/model/ListRtcMPUEventSubRecordResult.cc
+	src/model/ListRtcMPUTaskDetailRequest.cc
+	src/model/ListRtcMPUTaskDetailResult.cc
 	src/model/MiguLivePullToPushStartRequest.cc
 	src/model/MiguLivePullToPushStartResult.cc
 	src/model/MiguLivePullToPushStatusRequest.cc

@@ -642,6 +642,8 @@
 #include "model/ListPlaylistItemsResult.h"
 #include "model/ListRtcMPUEventSubRecordRequest.h"
 #include "model/ListRtcMPUEventSubRecordResult.h"
+#include "model/ListRtcMPUTaskDetailRequest.h"
+#include "model/ListRtcMPUTaskDetailResult.h"
 #include "model/MiguLivePullToPushStartRequest.h"
 #include "model/MiguLivePullToPushStartResult.h"
 #include "model/MiguLivePullToPushStatusRequest.h"
@@ -1781,6 +1783,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListRtcMPUEventSubRecordResult> ListRtcMPUEventSubRecordOutcome;
 			typedef std::future<ListRtcMPUEventSubRecordOutcome> ListRtcMPUEventSubRecordOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ListRtcMPUEventSubRecordRequest&, const ListRtcMPUEventSubRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRtcMPUEventSubRecordAsyncHandler;
+			typedef Outcome<Error, Model::ListRtcMPUTaskDetailResult> ListRtcMPUTaskDetailOutcome;
+			typedef std::future<ListRtcMPUTaskDetailOutcome> ListRtcMPUTaskDetailOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ListRtcMPUTaskDetailRequest&, const ListRtcMPUTaskDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRtcMPUTaskDetailAsyncHandler;
 			typedef Outcome<Error, Model::MiguLivePullToPushStartResult> MiguLivePullToPushStartOutcome;
 			typedef std::future<MiguLivePullToPushStartOutcome> MiguLivePullToPushStartOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::MiguLivePullToPushStartRequest&, const MiguLivePullToPushStartOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MiguLivePullToPushStartAsyncHandler;
@@ -3016,6 +3021,9 @@ namespace AlibabaCloud
 			ListRtcMPUEventSubRecordOutcome listRtcMPUEventSubRecord(const Model::ListRtcMPUEventSubRecordRequest &request)const;
 			void listRtcMPUEventSubRecordAsync(const Model::ListRtcMPUEventSubRecordRequest& request, const ListRtcMPUEventSubRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRtcMPUEventSubRecordOutcomeCallable listRtcMPUEventSubRecordCallable(const Model::ListRtcMPUEventSubRecordRequest& request) const;
+			ListRtcMPUTaskDetailOutcome listRtcMPUTaskDetail(const Model::ListRtcMPUTaskDetailRequest &request)const;
+			void listRtcMPUTaskDetailAsync(const Model::ListRtcMPUTaskDetailRequest& request, const ListRtcMPUTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListRtcMPUTaskDetailOutcomeCallable listRtcMPUTaskDetailCallable(const Model::ListRtcMPUTaskDetailRequest& request) const;
 			MiguLivePullToPushStartOutcome miguLivePullToPushStart(const Model::MiguLivePullToPushStartRequest &request)const;
 			void miguLivePullToPushStartAsync(const Model::MiguLivePullToPushStartRequest& request, const MiguLivePullToPushStartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MiguLivePullToPushStartOutcomeCallable miguLivePullToPushStartCallable(const Model::MiguLivePullToPushStartRequest& request) const;
