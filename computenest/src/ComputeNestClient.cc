@@ -375,3 +375,111 @@ ComputeNestClient::ListServiceInstancesOutcomeCallable ComputeNestClient::listSe
 	return task->get_future();
 }
 
+ComputeNestClient::RestartServiceInstanceOutcome ComputeNestClient::restartServiceInstance(const RestartServiceInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RestartServiceInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RestartServiceInstanceOutcome(RestartServiceInstanceResult(outcome.result()));
+	else
+		return RestartServiceInstanceOutcome(outcome.error());
+}
+
+void ComputeNestClient::restartServiceInstanceAsync(const RestartServiceInstanceRequest& request, const RestartServiceInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, restartServiceInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ComputeNestClient::RestartServiceInstanceOutcomeCallable ComputeNestClient::restartServiceInstanceCallable(const RestartServiceInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RestartServiceInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->restartServiceInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ComputeNestClient::StartServiceInstanceOutcome ComputeNestClient::startServiceInstance(const StartServiceInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartServiceInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartServiceInstanceOutcome(StartServiceInstanceResult(outcome.result()));
+	else
+		return StartServiceInstanceOutcome(outcome.error());
+}
+
+void ComputeNestClient::startServiceInstanceAsync(const StartServiceInstanceRequest& request, const StartServiceInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startServiceInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ComputeNestClient::StartServiceInstanceOutcomeCallable ComputeNestClient::startServiceInstanceCallable(const StartServiceInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartServiceInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->startServiceInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ComputeNestClient::StopServiceInstanceOutcome ComputeNestClient::stopServiceInstance(const StopServiceInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopServiceInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopServiceInstanceOutcome(StopServiceInstanceResult(outcome.result()));
+	else
+		return StopServiceInstanceOutcome(outcome.error());
+}
+
+void ComputeNestClient::stopServiceInstanceAsync(const StopServiceInstanceRequest& request, const StopServiceInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopServiceInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ComputeNestClient::StopServiceInstanceOutcomeCallable ComputeNestClient::stopServiceInstanceCallable(const StopServiceInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopServiceInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->stopServiceInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+

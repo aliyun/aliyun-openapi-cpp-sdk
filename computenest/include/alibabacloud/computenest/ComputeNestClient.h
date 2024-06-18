@@ -40,6 +40,12 @@
 #include "model/ListServiceInstanceResourcesResult.h"
 #include "model/ListServiceInstancesRequest.h"
 #include "model/ListServiceInstancesResult.h"
+#include "model/RestartServiceInstanceRequest.h"
+#include "model/RestartServiceInstanceResult.h"
+#include "model/StartServiceInstanceRequest.h"
+#include "model/StartServiceInstanceResult.h"
+#include "model/StopServiceInstanceRequest.h"
+#include "model/StopServiceInstanceResult.h"
 
 
 namespace AlibabaCloud
@@ -76,6 +82,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListServiceInstancesResult> ListServiceInstancesOutcome;
 			typedef std::future<ListServiceInstancesOutcome> ListServiceInstancesOutcomeCallable;
 			typedef std::function<void(const ComputeNestClient*, const Model::ListServiceInstancesRequest&, const ListServiceInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListServiceInstancesAsyncHandler;
+			typedef Outcome<Error, Model::RestartServiceInstanceResult> RestartServiceInstanceOutcome;
+			typedef std::future<RestartServiceInstanceOutcome> RestartServiceInstanceOutcomeCallable;
+			typedef std::function<void(const ComputeNestClient*, const Model::RestartServiceInstanceRequest&, const RestartServiceInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartServiceInstanceAsyncHandler;
+			typedef Outcome<Error, Model::StartServiceInstanceResult> StartServiceInstanceOutcome;
+			typedef std::future<StartServiceInstanceOutcome> StartServiceInstanceOutcomeCallable;
+			typedef std::function<void(const ComputeNestClient*, const Model::StartServiceInstanceRequest&, const StartServiceInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartServiceInstanceAsyncHandler;
+			typedef Outcome<Error, Model::StopServiceInstanceResult> StopServiceInstanceOutcome;
+			typedef std::future<StopServiceInstanceOutcome> StopServiceInstanceOutcomeCallable;
+			typedef std::function<void(const ComputeNestClient*, const Model::StopServiceInstanceRequest&, const StopServiceInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopServiceInstanceAsyncHandler;
 
 			ComputeNestClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			ComputeNestClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -108,6 +123,15 @@ namespace AlibabaCloud
 			ListServiceInstancesOutcome listServiceInstances(const Model::ListServiceInstancesRequest &request)const;
 			void listServiceInstancesAsync(const Model::ListServiceInstancesRequest& request, const ListServiceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListServiceInstancesOutcomeCallable listServiceInstancesCallable(const Model::ListServiceInstancesRequest& request) const;
+			RestartServiceInstanceOutcome restartServiceInstance(const Model::RestartServiceInstanceRequest &request)const;
+			void restartServiceInstanceAsync(const Model::RestartServiceInstanceRequest& request, const RestartServiceInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RestartServiceInstanceOutcomeCallable restartServiceInstanceCallable(const Model::RestartServiceInstanceRequest& request) const;
+			StartServiceInstanceOutcome startServiceInstance(const Model::StartServiceInstanceRequest &request)const;
+			void startServiceInstanceAsync(const Model::StartServiceInstanceRequest& request, const StartServiceInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartServiceInstanceOutcomeCallable startServiceInstanceCallable(const Model::StartServiceInstanceRequest& request) const;
+			StopServiceInstanceOutcome stopServiceInstance(const Model::StopServiceInstanceRequest &request)const;
+			void stopServiceInstanceAsync(const Model::StopServiceInstanceRequest& request, const StopServiceInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopServiceInstanceOutcomeCallable stopServiceInstanceCallable(const Model::StopServiceInstanceRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

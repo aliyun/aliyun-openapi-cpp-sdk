@@ -38,7 +38,13 @@ set(computenest_public_header_model
 	include/alibabacloud/computenest/model/ListServiceInstanceResourcesRequest.h
 	include/alibabacloud/computenest/model/ListServiceInstanceResourcesResult.h
 	include/alibabacloud/computenest/model/ListServiceInstancesRequest.h
-	include/alibabacloud/computenest/model/ListServiceInstancesResult.h )
+	include/alibabacloud/computenest/model/ListServiceInstancesResult.h
+	include/alibabacloud/computenest/model/RestartServiceInstanceRequest.h
+	include/alibabacloud/computenest/model/RestartServiceInstanceResult.h
+	include/alibabacloud/computenest/model/StartServiceInstanceRequest.h
+	include/alibabacloud/computenest/model/StartServiceInstanceResult.h
+	include/alibabacloud/computenest/model/StopServiceInstanceRequest.h
+	include/alibabacloud/computenest/model/StopServiceInstanceResult.h )
 
 set(computenest_src 
 	src/ComputeNestClient.cc
@@ -59,7 +65,13 @@ set(computenest_src
 	src/model/ListServiceInstanceResourcesRequest.cc
 	src/model/ListServiceInstanceResourcesResult.cc
 	src/model/ListServiceInstancesRequest.cc
-	src/model/ListServiceInstancesResult.cc )
+	src/model/ListServiceInstancesResult.cc
+	src/model/RestartServiceInstanceRequest.cc
+	src/model/RestartServiceInstanceResult.cc
+	src/model/StartServiceInstanceRequest.cc
+	src/model/StartServiceInstanceResult.cc
+	src/model/StopServiceInstanceRequest.cc
+	src/model/StopServiceInstanceResult.cc )
 
 add_library(computenest ${LIB_TYPE}
 	${computenest_public_header}

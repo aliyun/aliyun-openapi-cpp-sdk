@@ -36,6 +36,11 @@ namespace AlibabaCloud
 				{
 					struct Service
 					{
+						struct Commodity
+						{
+							std::string type;
+							std::string saasBoostMetadata;
+						};
 						struct ServiceInfo
 						{
 							std::string locale;
@@ -45,6 +50,7 @@ namespace AlibabaCloud
 						};
 						std::string status;
 						std::string deployType;
+						Commodity commodity;
 						std::string version;
 						std::string supplierName;
 						std::string serviceType;
@@ -59,30 +65,31 @@ namespace AlibabaCloud
 						std::string value;
 						std::string key;
 					};
-					std::string status;
 					std::string operatedServiceInstanceId;
-					long progress;
-					std::string parameters;
 					std::string endTime;
 					std::string resourceGroupId;
 					std::string operationEndTime;
-					std::string createTime;
 					bool enableInstanceOps;
-					Service service;
-					std::string payType;
 					std::string source;
 					std::string name;
-					std::string bizStatus;
 					std::string operationStartTime;
 					std::string serviceInstanceId;
 					std::string serviceType;
+					std::string templateName;
+					std::string marketInstanceId;
+					std::vector<ServiceInstance::Tag> tags;
+					std::string status;
+					long progress;
+					std::string parameters;
+					std::string createTime;
+					Service service;
+					std::string payType;
+					std::string orderId;
+					std::string bizStatus;
 					std::string statusDetail;
 					std::string outputs;
 					std::string updateTime;
-					std::string templateName;
 					std::string resources;
-					std::string marketInstanceId;
-					std::vector<ServiceInstance::Tag> tags;
 				};
 
 

@@ -87,6 +87,8 @@ void ListServiceInstancesResult::parse(const std::string &payload)
 			serviceInstancesObject.resourceGroupId = valueServiceInstancesServiceInstance["ResourceGroupId"].asString();
 		if(!valueServiceInstancesServiceInstance["BizStatus"].isNull())
 			serviceInstancesObject.bizStatus = valueServiceInstancesServiceInstance["BizStatus"].asString();
+		if(!valueServiceInstancesServiceInstance["OrderId"].isNull())
+			serviceInstancesObject.orderId = valueServiceInstancesServiceInstance["OrderId"].asString();
 		auto allTagsNode = valueServiceInstancesServiceInstance["Tags"]["Tag"];
 		for (auto valueServiceInstancesServiceInstanceTagsTag : allTagsNode)
 		{
@@ -130,6 +132,11 @@ void ListServiceInstancesResult::parse(const std::string &payload)
 				serviceInfoObject.shortDescription = serviceNodeServiceInfosServiceInfo["ShortDescription"].asString();
 			serviceInstancesObject.service.serviceInfos.push_back(serviceInfoObject);
 		}
+		auto commodityNode = serviceNode["Commodity"];
+		if(!commodityNode["SaasBoostMetadata"].isNull())
+			serviceInstancesObject.service.commodity.saasBoostMetadata = commodityNode["SaasBoostMetadata"].asString();
+		if(!commodityNode["Type"].isNull())
+			serviceInstancesObject.service.commodity.type = commodityNode["Type"].asString();
 		serviceInstances_.push_back(serviceInstancesObject);
 	}
 	if(!value["NextToken"].isNull())
