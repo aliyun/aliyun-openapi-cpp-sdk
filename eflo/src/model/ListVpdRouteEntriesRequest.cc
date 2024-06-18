@@ -52,6 +52,15 @@ void ListVpdRouteEntriesRequest::setRouteType(const std::string &routeType) {
   setBodyParameter(std::string("RouteType"), routeType);
 }
 
+std::string ListVpdRouteEntriesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListVpdRouteEntriesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListVpdRouteEntriesRequest::getRegionId() const {
   return regionId_;
 }

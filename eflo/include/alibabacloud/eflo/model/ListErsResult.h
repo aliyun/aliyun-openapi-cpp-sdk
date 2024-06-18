@@ -38,15 +38,16 @@ namespace AlibabaCloud
 					{
 						std::string status;
 						long connections;
-						std::string erName;
-						std::string tenantId;
 						std::string description;
 						std::string message;
+						std::string resourceGroupId;
 						std::string createTime;
 						std::string gmtModified;
 						std::string erId;
-						std::string regionId;
 						long routeMaps;
+						std::string erName;
+						std::string tenantId;
+						std::string regionId;
 						std::string masterZoneId;
 					};
 					long total;

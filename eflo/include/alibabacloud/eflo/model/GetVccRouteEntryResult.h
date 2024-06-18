@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string tenantId;
 					std::string routeType;
 					std::string message;
+					std::string resourceGroupId;
 					std::string nextHopId;
 					std::string gmtModified;
 					std::string regionId;

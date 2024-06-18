@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string message;
+					std::string resourceGroupId;
 					std::string instanceId;
 					std::string createTime;
 					std::string gmtModified;

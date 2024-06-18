@@ -52,6 +52,15 @@ void ListVccRouteEntriesRequest::setRouteType(const std::string &routeType) {
   setBodyParameter(std::string("RouteType"), routeType);
 }
 
+std::string ListVccRouteEntriesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListVccRouteEntriesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListVccRouteEntriesRequest::getRegionId() const {
   return regionId_;
 }

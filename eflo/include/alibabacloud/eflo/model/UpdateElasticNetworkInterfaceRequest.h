@@ -32,6 +32,8 @@ public:
 	~UpdateElasticNetworkInterfaceRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::string getSecurityGroupId() const;
+	void setSecurityGroupId(const std::string &securityGroupId);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	std::string getRegionId() const;
@@ -41,6 +43,7 @@ public:
 
 private:
 	std::string clientToken_;
+	std::string securityGroupId_;
 	std::string description_;
 	std::string regionId_;
 	std::string elasticNetworkInterfaceId_;

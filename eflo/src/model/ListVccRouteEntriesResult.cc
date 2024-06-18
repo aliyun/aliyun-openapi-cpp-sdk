@@ -70,6 +70,8 @@ void ListVccRouteEntriesResult::parse(const std::string &payload)
 			dataItemObject.gmtModified = contentNodeDataDataItem["GmtModified"].asString();
 		if(!contentNodeDataDataItem["Message"].isNull())
 			dataItemObject.message = contentNodeDataDataItem["Message"].asString();
+		if(!contentNodeDataDataItem["ResourceGroupId"].isNull())
+			dataItemObject.resourceGroupId = contentNodeDataDataItem["ResourceGroupId"].asString();
 		content_.data.push_back(dataItemObject);
 	}
 	if(!value["Code"].isNull())

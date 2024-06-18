@@ -52,6 +52,15 @@ void ListErRouteEntriesRequest::setRouteType(const std::string &routeType) {
   setBodyParameter(std::string("RouteType"), routeType);
 }
 
+std::string ListErRouteEntriesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListErRouteEntriesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListErRouteEntriesRequest::getRegionId() const {
   return regionId_;
 }

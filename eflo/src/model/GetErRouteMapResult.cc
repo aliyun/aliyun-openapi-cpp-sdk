@@ -52,8 +52,6 @@ void GetErRouteMapResult::parse(const std::string &payload)
 		content_.message = contentNode["Message"].asString();
 	if(!contentNode["Status"].isNull())
 		content_.status = contentNode["Status"].asString();
-	if(!contentNode["ErRouteMapName"].isNull())
-		content_.erRouteMapName = contentNode["ErRouteMapName"].asString();
 	if(!contentNode["ErRouteMapId"].isNull())
 		content_.erRouteMapId = contentNode["ErRouteMapId"].asString();
 	if(!contentNode["ErId"].isNull())
@@ -82,6 +80,10 @@ void GetErRouteMapResult::parse(const std::string &payload)
 		content_.transmissionInstanceOwner = contentNode["TransmissionInstanceOwner"].asString();
 	if(!contentNode["ReceptionInstanceOwner"].isNull())
 		content_.receptionInstanceOwner = contentNode["ReceptionInstanceOwner"].asString();
+	if(!contentNode["ResourceGroupId"].isNull())
+		content_.resourceGroupId = contentNode["ResourceGroupId"].asString();
+	if(!contentNode["ErRouteMapName"].isNull())
+		content_.erRouteMapName = contentNode["ErRouteMapName"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())

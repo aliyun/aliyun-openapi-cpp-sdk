@@ -60,6 +60,8 @@ void GetErResult::parse(const std::string &payload)
 		content_.masterZoneId = contentNode["MasterZoneId"].asString();
 	if(!contentNode["Description"].isNull())
 		content_.description = contentNode["Description"].asString();
+	if(!contentNode["ResourceGroupId"].isNull())
+		content_.resourceGroupId = contentNode["ResourceGroupId"].asString();
 	auto allErAttachmentsNode = contentNode["ErAttachments"]["ErAttachment"];
 	for (auto contentNodeErAttachmentsErAttachment : allErAttachmentsNode)
 	{
@@ -94,6 +96,8 @@ void GetErResult::parse(const std::string &payload)
 			erAttachmentObject.across = contentNodeErAttachmentsErAttachment["Across"].asString() == "true";
 		if(!contentNodeErAttachmentsErAttachment["ResourceTenantId"].isNull())
 			erAttachmentObject.resourceTenantId = contentNodeErAttachmentsErAttachment["ResourceTenantId"].asString();
+		if(!contentNodeErAttachmentsErAttachment["ResourceGroupId"].isNull())
+			erAttachmentObject.resourceGroupId = contentNodeErAttachmentsErAttachment["ResourceGroupId"].asString();
 		content_.erAttachments.push_back(erAttachmentObject);
 	}
 	auto allErRouteMapsNode = contentNode["ErRouteMaps"]["ErRouteMap"];
@@ -112,8 +116,6 @@ void GetErResult::parse(const std::string &payload)
 			erRouteMapObject.message = contentNodeErRouteMapsErRouteMap["Message"].asString();
 		if(!contentNodeErRouteMapsErRouteMap["Status"].isNull())
 			erRouteMapObject.status = contentNodeErRouteMapsErRouteMap["Status"].asString();
-		if(!contentNodeErRouteMapsErRouteMap["ErRouteMapName"].isNull())
-			erRouteMapObject.erRouteMapName = contentNodeErRouteMapsErRouteMap["ErRouteMapName"].asString();
 		if(!contentNodeErRouteMapsErRouteMap["ErRouteMapId"].isNull())
 			erRouteMapObject.erRouteMapId = contentNodeErRouteMapsErRouteMap["ErRouteMapId"].asString();
 		if(!contentNodeErRouteMapsErRouteMap["ErId"].isNull())
@@ -142,6 +144,10 @@ void GetErResult::parse(const std::string &payload)
 			erRouteMapObject.transmissionInstanceOwner = contentNodeErRouteMapsErRouteMap["TransmissionInstanceOwner"].asString();
 		if(!contentNodeErRouteMapsErRouteMap["ReceptionInstanceOwner"].isNull())
 			erRouteMapObject.receptionInstanceOwner = contentNodeErRouteMapsErRouteMap["ReceptionInstanceOwner"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["ResourceGroupId"].isNull())
+			erRouteMapObject.resourceGroupId = contentNodeErRouteMapsErRouteMap["ResourceGroupId"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["ErRouteMapName"].isNull())
+			erRouteMapObject.erRouteMapName = contentNodeErRouteMapsErRouteMap["ErRouteMapName"].asString();
 		content_.erRouteMaps.push_back(erRouteMapObject);
 	}
 	auto allErRouteEntrysNode = contentNode["ErRouteEntrys"]["ErRouteEntry"];
@@ -170,6 +176,8 @@ void GetErResult::parse(const std::string &payload)
 			erRouteEntryObject.status = contentNodeErRouteEntrysErRouteEntry["Status"].asString();
 		if(!contentNodeErRouteEntrysErRouteEntry["GmtModified"].isNull())
 			erRouteEntryObject.gmtModified = contentNodeErRouteEntrysErRouteEntry["GmtModified"].asString();
+		if(!contentNodeErRouteEntrysErRouteEntry["ResourceGroupId"].isNull())
+			erRouteEntryObject.resourceGroupId = contentNodeErRouteEntrysErRouteEntry["ResourceGroupId"].asString();
 		content_.erRouteEntrys.push_back(erRouteEntryObject);
 	}
 	if(!value["Code"].isNull())

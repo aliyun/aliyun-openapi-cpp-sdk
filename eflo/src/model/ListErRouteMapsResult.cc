@@ -86,6 +86,8 @@ void ListErRouteMapsResult::parse(const std::string &payload)
 			dataItemObject.transmissionInstanceOwner = contentNodeDataDataItem["TransmissionInstanceOwner"].asString();
 		if(!contentNodeDataDataItem["ReceptionInstanceOwner"].isNull())
 			dataItemObject.receptionInstanceOwner = contentNodeDataDataItem["ReceptionInstanceOwner"].asString();
+		if(!contentNodeDataDataItem["ResourceGroupId"].isNull())
+			dataItemObject.resourceGroupId = contentNodeDataDataItem["ResourceGroupId"].asString();
 		content_.data.push_back(dataItemObject);
 	}
 	if(!value["Code"].isNull())

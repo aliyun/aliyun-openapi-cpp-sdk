@@ -34,6 +34,15 @@ void UpdateElasticNetworkInterfaceRequest::setClientToken(const std::string &cli
   setBodyParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string UpdateElasticNetworkInterfaceRequest::getSecurityGroupId() const {
+  return securityGroupId_;
+}
+
+void UpdateElasticNetworkInterfaceRequest::setSecurityGroupId(const std::string &securityGroupId) {
+  securityGroupId_ = securityGroupId;
+  setBodyParameter(std::string("SecurityGroupId"), securityGroupId);
+}
+
 std::string UpdateElasticNetworkInterfaceRequest::getDescription() const {
   return description_;
 }

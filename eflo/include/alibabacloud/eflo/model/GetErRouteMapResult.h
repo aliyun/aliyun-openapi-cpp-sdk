@@ -40,8 +40,9 @@ namespace AlibabaCloud
 					std::string description;
 					std::string receptionInstanceType;
 					std::string message;
-					std::string erRouteMapName;
 					std::string receptionInstanceId;
+					std::string resourceGroupId;
+					std::string erRouteMapName;
 					std::string gmtModified;
 					std::string erId;
 					std::string transmissionInstanceName;

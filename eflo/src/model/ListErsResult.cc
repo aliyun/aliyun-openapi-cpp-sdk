@@ -70,6 +70,8 @@ void ListErsResult::parse(const std::string &payload)
 			dataItemObject.connections = std::stol(contentNodeDataDataItem["Connections"].asString());
 		if(!contentNodeDataDataItem["RouteMaps"].isNull())
 			dataItemObject.routeMaps = std::stol(contentNodeDataDataItem["RouteMaps"].asString());
+		if(!contentNodeDataDataItem["ResourceGroupId"].isNull())
+			dataItemObject.resourceGroupId = contentNodeDataDataItem["ResourceGroupId"].asString();
 		content_.data.push_back(dataItemObject);
 	}
 	if(!value["Code"].isNull())

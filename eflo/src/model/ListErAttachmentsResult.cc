@@ -76,6 +76,8 @@ void ListErAttachmentsResult::parse(const std::string &payload)
 			dataItemObject.across = contentNodeDataDataItem["Across"].asString() == "true";
 		if(!contentNodeDataDataItem["ResourceTenantId"].isNull())
 			dataItemObject.resourceTenantId = contentNodeDataDataItem["ResourceTenantId"].asString();
+		if(!contentNodeDataDataItem["ResourceGroupId"].isNull())
+			dataItemObject.resourceGroupId = contentNodeDataDataItem["ResourceGroupId"].asString();
 		content_.data.push_back(dataItemObject);
 	}
 	if(!value["Code"].isNull())

@@ -61,6 +61,15 @@ void ListErRouteMapsRequest::setPageNumber(int pageNumber) {
   setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string ListErRouteMapsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListErRouteMapsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListErRouteMapsRequest::getRouteMapAction() const {
   return routeMapAction_;
 }

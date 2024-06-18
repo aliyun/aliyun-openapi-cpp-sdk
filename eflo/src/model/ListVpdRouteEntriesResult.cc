@@ -68,6 +68,8 @@ void ListVpdRouteEntriesResult::parse(const std::string &payload)
 			dataItemObject.status = contentNodeDataDataItem["Status"].asString();
 		if(!contentNodeDataDataItem["GmtModified"].isNull())
 			dataItemObject.gmtModified = contentNodeDataDataItem["GmtModified"].asString();
+		if(!contentNodeDataDataItem["ResourceGroupId"].isNull())
+			dataItemObject.resourceGroupId = contentNodeDataDataItem["ResourceGroupId"].asString();
 		content_.data.push_back(dataItemObject);
 	}
 	if(!value["Code"].isNull())

@@ -43,6 +43,7 @@ namespace AlibabaCloud
 						std::string receptionInstanceType;
 						std::string message;
 						std::string receptionInstanceId;
+						std::string resourceGroupId;
 						std::string createTime;
 						std::string gmtModified;
 						std::string erId;

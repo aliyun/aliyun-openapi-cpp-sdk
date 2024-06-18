@@ -38,6 +38,8 @@ public:
 	void setErRouteMapNum(int erRouteMapNum);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRouteMapAction() const;
 	void setRouteMapAction(const std::string &routeMapAction);
 	std::string getTransmissionInstanceType() const;
@@ -66,6 +68,7 @@ private:
 	std::string receptionInstanceId_;
 	int erRouteMapNum_;
 	int pageNumber_;
+	std::string resourceGroupId_;
 	std::string routeMapAction_;
 	std::string transmissionInstanceType_;
 	std::string regionId_;

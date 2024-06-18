@@ -34,6 +34,8 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getResourceTenantId() const;
 	void setResourceTenantId(const std::string &resourceTenantId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	bool getAutoReceiveAllRoute() const;
@@ -58,6 +60,7 @@ public:
 private:
 	int pageNumber_;
 	std::string resourceTenantId_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	bool autoReceiveAllRoute_;
 	int pageSize_;

@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					{
 						std::string status;
 						std::string message;
+						std::string resourceGroupId;
 						std::string instanceId;
 						std::string createTime;
 						std::string gmtModified;
@@ -60,8 +61,9 @@ namespace AlibabaCloud
 						std::string description;
 						std::string receptionInstanceType;
 						std::string message;
-						std::string erRouteMapName;
 						std::string receptionInstanceId;
+						std::string resourceGroupId;
+						std::string erRouteMapName;
 						std::string createTime;
 						std::string gmtModified;
 						std::string erId;
@@ -84,6 +86,7 @@ namespace AlibabaCloud
 						std::string resourceTenantId;
 						std::string routeType;
 						std::string erRouteEntryId;
+						std::string resourceGroupId;
 						std::string nextHopId;
 						std::string gmtModified;
 						std::string erId;
@@ -93,6 +96,7 @@ namespace AlibabaCloud
 					std::string status;
 					std::string description;
 					std::string message;
+					std::string resourceGroupId;
 					std::string createTime;
 					std::string gmtModified;
 					std::string erId;

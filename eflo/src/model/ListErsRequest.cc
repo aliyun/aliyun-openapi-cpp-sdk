@@ -43,6 +43,15 @@ void ListErsRequest::setPageNumber(int pageNumber) {
   setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string ListErsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListErsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListErsRequest::getRegionId() const {
   return regionId_;
 }

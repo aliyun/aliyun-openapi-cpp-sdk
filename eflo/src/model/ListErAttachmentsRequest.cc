@@ -43,6 +43,15 @@ void ListErAttachmentsRequest::setResourceTenantId(const std::string &resourceTe
   setBodyParameter(std::string("ResourceTenantId"), resourceTenantId);
 }
 
+std::string ListErAttachmentsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListErAttachmentsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListErAttachmentsRequest::getRegionId() const {
   return regionId_;
 }

@@ -52,6 +52,15 @@ void CreateErRequest::setMasterZoneId(const std::string &masterZoneId) {
   setBodyParameter(std::string("MasterZoneId"), masterZoneId);
 }
 
+std::string CreateErRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateErRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateErRequest::getRegionId() const {
   return regionId_;
 }

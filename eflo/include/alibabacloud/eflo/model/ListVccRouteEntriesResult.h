@@ -38,16 +38,17 @@ namespace AlibabaCloud
 					{
 						std::string status;
 						std::string vccRouteEntryId;
+						std::string message;
+						std::string resourceGroupId;
+						std::string nextHopId;
+						std::string gmtModified;
+						std::string destinationCidrBlock;
 						std::string nextHopType;
 						std::string tenantId;
 						std::string resourceTenantId;
 						std::string routeType;
-						std::string message;
-						std::string nextHopId;
-						std::string gmtModified;
 						std::string vccId;
 						std::string regionId;
-						std::string destinationCidrBlock;
 					};
 					long total;
 					std::vector<DataItem> data;
