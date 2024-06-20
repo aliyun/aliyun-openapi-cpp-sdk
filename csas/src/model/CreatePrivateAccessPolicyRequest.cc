@@ -106,6 +106,15 @@ void CreatePrivateAccessPolicyRequest::setPriority(int priority) {
   setBodyParameter(std::string("Priority"), std::to_string(priority));
 }
 
+std::string CreatePrivateAccessPolicyRequest::getDeviceAttributeAction() const {
+  return deviceAttributeAction_;
+}
+
+void CreatePrivateAccessPolicyRequest::setDeviceAttributeAction(const std::string &deviceAttributeAction) {
+  deviceAttributeAction_ = deviceAttributeAction;
+  setBodyParameter(std::string("DeviceAttributeAction"), deviceAttributeAction);
+}
+
 std::vector<CreatePrivateAccessPolicyRequest::std::string> CreatePrivateAccessPolicyRequest::getApplicationIds() const {
   return applicationIds_;
 }

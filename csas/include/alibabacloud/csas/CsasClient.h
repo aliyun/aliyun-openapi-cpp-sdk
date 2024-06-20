@@ -40,6 +40,14 @@
 #include "model/CreateRegistrationPolicyResult.h"
 #include "model/CreateUserGroupRequest.h"
 #include "model/CreateUserGroupResult.h"
+#include "model/CreateWmBaseImageRequest.h"
+#include "model/CreateWmBaseImageResult.h"
+#include "model/CreateWmEmbedTaskRequest.h"
+#include "model/CreateWmEmbedTaskResult.h"
+#include "model/CreateWmExtractTaskRequest.h"
+#include "model/CreateWmExtractTaskResult.h"
+#include "model/CreateWmInfoMappingRequest.h"
+#include "model/CreateWmInfoMappingResult.h"
 #include "model/DeleteClientUserRequest.h"
 #include "model/DeleteClientUserResult.h"
 #include "model/DeleteDynamicRouteRequest.h"
@@ -80,6 +88,10 @@
 #include "model/GetUserDeviceResult.h"
 #include "model/GetUserGroupRequest.h"
 #include "model/GetUserGroupResult.h"
+#include "model/GetWmEmbedTaskRequest.h"
+#include "model/GetWmEmbedTaskResult.h"
+#include "model/GetWmExtractTaskRequest.h"
+#include "model/GetWmExtractTaskResult.h"
 #include "model/ListApplicationsForPrivateAccessPolicyRequest.h"
 #include "model/ListApplicationsForPrivateAccessPolicyResult.h"
 #include "model/ListApplicationsForPrivateAccessTagRequest.h"
@@ -136,6 +148,8 @@
 #include "model/ListUserGroupsForRegistrationPolicyResult.h"
 #include "model/ListUsersRequest.h"
 #include "model/ListUsersResult.h"
+#include "model/LookupWmInfoMappingRequest.h"
+#include "model/LookupWmInfoMappingResult.h"
 #include "model/RevokeUserSessionRequest.h"
 #include "model/RevokeUserSessionResult.h"
 #include "model/UpdateClientUserRequest.h"
@@ -200,6 +214,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateUserGroupResult> CreateUserGroupOutcome;
 			typedef std::future<CreateUserGroupOutcome> CreateUserGroupOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::CreateUserGroupRequest&, const CreateUserGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateWmBaseImageResult> CreateWmBaseImageOutcome;
+			typedef std::future<CreateWmBaseImageOutcome> CreateWmBaseImageOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::CreateWmBaseImageRequest&, const CreateWmBaseImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateWmBaseImageAsyncHandler;
+			typedef Outcome<Error, Model::CreateWmEmbedTaskResult> CreateWmEmbedTaskOutcome;
+			typedef std::future<CreateWmEmbedTaskOutcome> CreateWmEmbedTaskOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::CreateWmEmbedTaskRequest&, const CreateWmEmbedTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateWmEmbedTaskAsyncHandler;
+			typedef Outcome<Error, Model::CreateWmExtractTaskResult> CreateWmExtractTaskOutcome;
+			typedef std::future<CreateWmExtractTaskOutcome> CreateWmExtractTaskOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::CreateWmExtractTaskRequest&, const CreateWmExtractTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateWmExtractTaskAsyncHandler;
+			typedef Outcome<Error, Model::CreateWmInfoMappingResult> CreateWmInfoMappingOutcome;
+			typedef std::future<CreateWmInfoMappingOutcome> CreateWmInfoMappingOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::CreateWmInfoMappingRequest&, const CreateWmInfoMappingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateWmInfoMappingAsyncHandler;
 			typedef Outcome<Error, Model::DeleteClientUserResult> DeleteClientUserOutcome;
 			typedef std::future<DeleteClientUserOutcome> DeleteClientUserOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::DeleteClientUserRequest&, const DeleteClientUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClientUserAsyncHandler;
@@ -260,6 +286,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetUserGroupResult> GetUserGroupOutcome;
 			typedef std::future<GetUserGroupOutcome> GetUserGroupOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::GetUserGroupRequest&, const GetUserGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserGroupAsyncHandler;
+			typedef Outcome<Error, Model::GetWmEmbedTaskResult> GetWmEmbedTaskOutcome;
+			typedef std::future<GetWmEmbedTaskOutcome> GetWmEmbedTaskOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::GetWmEmbedTaskRequest&, const GetWmEmbedTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWmEmbedTaskAsyncHandler;
+			typedef Outcome<Error, Model::GetWmExtractTaskResult> GetWmExtractTaskOutcome;
+			typedef std::future<GetWmExtractTaskOutcome> GetWmExtractTaskOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::GetWmExtractTaskRequest&, const GetWmExtractTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWmExtractTaskAsyncHandler;
 			typedef Outcome<Error, Model::ListApplicationsForPrivateAccessPolicyResult> ListApplicationsForPrivateAccessPolicyOutcome;
 			typedef std::future<ListApplicationsForPrivateAccessPolicyOutcome> ListApplicationsForPrivateAccessPolicyOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListApplicationsForPrivateAccessPolicyRequest&, const ListApplicationsForPrivateAccessPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApplicationsForPrivateAccessPolicyAsyncHandler;
@@ -344,6 +376,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListUsersResult> ListUsersOutcome;
 			typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListUsersRequest&, const ListUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersAsyncHandler;
+			typedef Outcome<Error, Model::LookupWmInfoMappingResult> LookupWmInfoMappingOutcome;
+			typedef std::future<LookupWmInfoMappingOutcome> LookupWmInfoMappingOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::LookupWmInfoMappingRequest&, const LookupWmInfoMappingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LookupWmInfoMappingAsyncHandler;
 			typedef Outcome<Error, Model::RevokeUserSessionResult> RevokeUserSessionOutcome;
 			typedef std::future<RevokeUserSessionOutcome> RevokeUserSessionOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::RevokeUserSessionRequest&, const RevokeUserSessionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RevokeUserSessionAsyncHandler;
@@ -418,6 +453,18 @@ namespace AlibabaCloud
 			CreateUserGroupOutcome createUserGroup(const Model::CreateUserGroupRequest &request)const;
 			void createUserGroupAsync(const Model::CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateUserGroupOutcomeCallable createUserGroupCallable(const Model::CreateUserGroupRequest& request) const;
+			CreateWmBaseImageOutcome createWmBaseImage(const Model::CreateWmBaseImageRequest &request)const;
+			void createWmBaseImageAsync(const Model::CreateWmBaseImageRequest& request, const CreateWmBaseImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateWmBaseImageOutcomeCallable createWmBaseImageCallable(const Model::CreateWmBaseImageRequest& request) const;
+			CreateWmEmbedTaskOutcome createWmEmbedTask(const Model::CreateWmEmbedTaskRequest &request)const;
+			void createWmEmbedTaskAsync(const Model::CreateWmEmbedTaskRequest& request, const CreateWmEmbedTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateWmEmbedTaskOutcomeCallable createWmEmbedTaskCallable(const Model::CreateWmEmbedTaskRequest& request) const;
+			CreateWmExtractTaskOutcome createWmExtractTask(const Model::CreateWmExtractTaskRequest &request)const;
+			void createWmExtractTaskAsync(const Model::CreateWmExtractTaskRequest& request, const CreateWmExtractTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateWmExtractTaskOutcomeCallable createWmExtractTaskCallable(const Model::CreateWmExtractTaskRequest& request) const;
+			CreateWmInfoMappingOutcome createWmInfoMapping(const Model::CreateWmInfoMappingRequest &request)const;
+			void createWmInfoMappingAsync(const Model::CreateWmInfoMappingRequest& request, const CreateWmInfoMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateWmInfoMappingOutcomeCallable createWmInfoMappingCallable(const Model::CreateWmInfoMappingRequest& request) const;
 			DeleteClientUserOutcome deleteClientUser(const Model::DeleteClientUserRequest &request)const;
 			void deleteClientUserAsync(const Model::DeleteClientUserRequest& request, const DeleteClientUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteClientUserOutcomeCallable deleteClientUserCallable(const Model::DeleteClientUserRequest& request) const;
@@ -478,6 +525,12 @@ namespace AlibabaCloud
 			GetUserGroupOutcome getUserGroup(const Model::GetUserGroupRequest &request)const;
 			void getUserGroupAsync(const Model::GetUserGroupRequest& request, const GetUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUserGroupOutcomeCallable getUserGroupCallable(const Model::GetUserGroupRequest& request) const;
+			GetWmEmbedTaskOutcome getWmEmbedTask(const Model::GetWmEmbedTaskRequest &request)const;
+			void getWmEmbedTaskAsync(const Model::GetWmEmbedTaskRequest& request, const GetWmEmbedTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetWmEmbedTaskOutcomeCallable getWmEmbedTaskCallable(const Model::GetWmEmbedTaskRequest& request) const;
+			GetWmExtractTaskOutcome getWmExtractTask(const Model::GetWmExtractTaskRequest &request)const;
+			void getWmExtractTaskAsync(const Model::GetWmExtractTaskRequest& request, const GetWmExtractTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetWmExtractTaskOutcomeCallable getWmExtractTaskCallable(const Model::GetWmExtractTaskRequest& request) const;
 			ListApplicationsForPrivateAccessPolicyOutcome listApplicationsForPrivateAccessPolicy(const Model::ListApplicationsForPrivateAccessPolicyRequest &request)const;
 			void listApplicationsForPrivateAccessPolicyAsync(const Model::ListApplicationsForPrivateAccessPolicyRequest& request, const ListApplicationsForPrivateAccessPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListApplicationsForPrivateAccessPolicyOutcomeCallable listApplicationsForPrivateAccessPolicyCallable(const Model::ListApplicationsForPrivateAccessPolicyRequest& request) const;
@@ -562,6 +615,9 @@ namespace AlibabaCloud
 			ListUsersOutcome listUsers(const Model::ListUsersRequest &request)const;
 			void listUsersAsync(const Model::ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUsersOutcomeCallable listUsersCallable(const Model::ListUsersRequest& request) const;
+			LookupWmInfoMappingOutcome lookupWmInfoMapping(const Model::LookupWmInfoMappingRequest &request)const;
+			void lookupWmInfoMappingAsync(const Model::LookupWmInfoMappingRequest& request, const LookupWmInfoMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			LookupWmInfoMappingOutcomeCallable lookupWmInfoMappingCallable(const Model::LookupWmInfoMappingRequest& request) const;
 			RevokeUserSessionOutcome revokeUserSession(const Model::RevokeUserSessionRequest &request)const;
 			void revokeUserSessionAsync(const Model::RevokeUserSessionRequest& request, const RevokeUserSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RevokeUserSessionOutcomeCallable revokeUserSessionCallable(const Model::RevokeUserSessionRequest& request) const;

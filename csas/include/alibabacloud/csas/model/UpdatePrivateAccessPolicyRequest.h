@@ -54,6 +54,8 @@ public:
 	void setPolicyAction(const std::string &policyAction);
 	int getPriority() const;
 	void setPriority(int priority);
+	std::string getDeviceAttributeAction() const;
+	void setDeviceAttributeAction(const std::string &deviceAttributeAction);
 	std::vector<std::string> getApplicationIds() const;
 	void setApplicationIds(const std::vector<std::string> &applicationIds);
 	std::string getUserGroupMode() const;
@@ -75,6 +77,7 @@ private:
 	std::vector<std::string> userGroupIds_;
 	std::string policyAction_;
 	int priority_;
+	std::string deviceAttributeAction_;
 	std::vector<std::string> applicationIds_;
 	std::string userGroupMode_;
 	std::string modifyType_;

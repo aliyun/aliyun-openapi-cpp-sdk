@@ -51,6 +51,7 @@ namespace AlibabaCloud
 					std::string name;
 					std::string userGroupMode;
 					std::string applicationType;
+					std::string deviceAttributeAction;
 					std::vector<std::string> userGroupIds;
 					std::string deviceAttributeId;
 					std::string policyAction;

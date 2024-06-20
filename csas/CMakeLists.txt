@@ -39,6 +39,14 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/CreateRegistrationPolicyResult.h
 	include/alibabacloud/csas/model/CreateUserGroupRequest.h
 	include/alibabacloud/csas/model/CreateUserGroupResult.h
+	include/alibabacloud/csas/model/CreateWmBaseImageRequest.h
+	include/alibabacloud/csas/model/CreateWmBaseImageResult.h
+	include/alibabacloud/csas/model/CreateWmEmbedTaskRequest.h
+	include/alibabacloud/csas/model/CreateWmEmbedTaskResult.h
+	include/alibabacloud/csas/model/CreateWmExtractTaskRequest.h
+	include/alibabacloud/csas/model/CreateWmExtractTaskResult.h
+	include/alibabacloud/csas/model/CreateWmInfoMappingRequest.h
+	include/alibabacloud/csas/model/CreateWmInfoMappingResult.h
 	include/alibabacloud/csas/model/DeleteClientUserRequest.h
 	include/alibabacloud/csas/model/DeleteClientUserResult.h
 	include/alibabacloud/csas/model/DeleteDynamicRouteRequest.h
@@ -79,6 +87,10 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/GetUserDeviceResult.h
 	include/alibabacloud/csas/model/GetUserGroupRequest.h
 	include/alibabacloud/csas/model/GetUserGroupResult.h
+	include/alibabacloud/csas/model/GetWmEmbedTaskRequest.h
+	include/alibabacloud/csas/model/GetWmEmbedTaskResult.h
+	include/alibabacloud/csas/model/GetWmExtractTaskRequest.h
+	include/alibabacloud/csas/model/GetWmExtractTaskResult.h
 	include/alibabacloud/csas/model/ListApplicationsForPrivateAccessPolicyRequest.h
 	include/alibabacloud/csas/model/ListApplicationsForPrivateAccessPolicyResult.h
 	include/alibabacloud/csas/model/ListApplicationsForPrivateAccessTagRequest.h
@@ -135,6 +147,8 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/ListUserGroupsForRegistrationPolicyResult.h
 	include/alibabacloud/csas/model/ListUsersRequest.h
 	include/alibabacloud/csas/model/ListUsersResult.h
+	include/alibabacloud/csas/model/LookupWmInfoMappingRequest.h
+	include/alibabacloud/csas/model/LookupWmInfoMappingResult.h
 	include/alibabacloud/csas/model/RevokeUserSessionRequest.h
 	include/alibabacloud/csas/model/RevokeUserSessionResult.h
 	include/alibabacloud/csas/model/UpdateClientUserRequest.h
@@ -184,6 +198,14 @@ set(csas_src
 	src/model/CreateRegistrationPolicyResult.cc
 	src/model/CreateUserGroupRequest.cc
 	src/model/CreateUserGroupResult.cc
+	src/model/CreateWmBaseImageRequest.cc
+	src/model/CreateWmBaseImageResult.cc
+	src/model/CreateWmEmbedTaskRequest.cc
+	src/model/CreateWmEmbedTaskResult.cc
+	src/model/CreateWmExtractTaskRequest.cc
+	src/model/CreateWmExtractTaskResult.cc
+	src/model/CreateWmInfoMappingRequest.cc
+	src/model/CreateWmInfoMappingResult.cc
 	src/model/DeleteClientUserRequest.cc
 	src/model/DeleteClientUserResult.cc
 	src/model/DeleteDynamicRouteRequest.cc
@@ -224,6 +246,10 @@ set(csas_src
 	src/model/GetUserDeviceResult.cc
 	src/model/GetUserGroupRequest.cc
 	src/model/GetUserGroupResult.cc
+	src/model/GetWmEmbedTaskRequest.cc
+	src/model/GetWmEmbedTaskResult.cc
+	src/model/GetWmExtractTaskRequest.cc
+	src/model/GetWmExtractTaskResult.cc
 	src/model/ListApplicationsForPrivateAccessPolicyRequest.cc
 	src/model/ListApplicationsForPrivateAccessPolicyResult.cc
 	src/model/ListApplicationsForPrivateAccessTagRequest.cc
@@ -280,6 +306,8 @@ set(csas_src
 	src/model/ListUserGroupsForRegistrationPolicyResult.cc
 	src/model/ListUsersRequest.cc
 	src/model/ListUsersResult.cc
+	src/model/LookupWmInfoMappingRequest.cc
+	src/model/LookupWmInfoMappingResult.cc
 	src/model/RevokeUserSessionRequest.cc
 	src/model/RevokeUserSessionResult.cc
 	src/model/UpdateClientUserRequest.cc

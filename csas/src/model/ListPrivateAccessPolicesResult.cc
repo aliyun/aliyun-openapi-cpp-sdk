@@ -63,6 +63,8 @@ void ListPrivateAccessPolicesResult::parse(const std::string &payload)
 			policesObject.applicationType = valuePolicespolicy["ApplicationType"].asString();
 		if(!valuePolicespolicy["DeviceAttributeId"].isNull())
 			policesObject.deviceAttributeId = valuePolicespolicy["DeviceAttributeId"].asString();
+		if(!valuePolicespolicy["DeviceAttributeAction"].isNull())
+			policesObject.deviceAttributeAction = valuePolicespolicy["DeviceAttributeAction"].asString();
 		auto allCustomUserAttributesNode = valuePolicespolicy["CustomUserAttributes"]["customUserAttribute"];
 		for (auto valuePolicespolicyCustomUserAttributescustomUserAttribute : allCustomUserAttributesNode)
 		{

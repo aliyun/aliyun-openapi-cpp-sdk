@@ -375,6 +375,150 @@ CsasClient::CreateUserGroupOutcomeCallable CsasClient::createUserGroupCallable(c
 	return task->get_future();
 }
 
+CsasClient::CreateWmBaseImageOutcome CsasClient::createWmBaseImage(const CreateWmBaseImageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateWmBaseImageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateWmBaseImageOutcome(CreateWmBaseImageResult(outcome.result()));
+	else
+		return CreateWmBaseImageOutcome(outcome.error());
+}
+
+void CsasClient::createWmBaseImageAsync(const CreateWmBaseImageRequest& request, const CreateWmBaseImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createWmBaseImage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::CreateWmBaseImageOutcomeCallable CsasClient::createWmBaseImageCallable(const CreateWmBaseImageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateWmBaseImageOutcome()>>(
+			[this, request]()
+			{
+			return this->createWmBaseImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::CreateWmEmbedTaskOutcome CsasClient::createWmEmbedTask(const CreateWmEmbedTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateWmEmbedTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateWmEmbedTaskOutcome(CreateWmEmbedTaskResult(outcome.result()));
+	else
+		return CreateWmEmbedTaskOutcome(outcome.error());
+}
+
+void CsasClient::createWmEmbedTaskAsync(const CreateWmEmbedTaskRequest& request, const CreateWmEmbedTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createWmEmbedTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::CreateWmEmbedTaskOutcomeCallable CsasClient::createWmEmbedTaskCallable(const CreateWmEmbedTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateWmEmbedTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createWmEmbedTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::CreateWmExtractTaskOutcome CsasClient::createWmExtractTask(const CreateWmExtractTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateWmExtractTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateWmExtractTaskOutcome(CreateWmExtractTaskResult(outcome.result()));
+	else
+		return CreateWmExtractTaskOutcome(outcome.error());
+}
+
+void CsasClient::createWmExtractTaskAsync(const CreateWmExtractTaskRequest& request, const CreateWmExtractTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createWmExtractTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::CreateWmExtractTaskOutcomeCallable CsasClient::createWmExtractTaskCallable(const CreateWmExtractTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateWmExtractTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createWmExtractTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::CreateWmInfoMappingOutcome CsasClient::createWmInfoMapping(const CreateWmInfoMappingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateWmInfoMappingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateWmInfoMappingOutcome(CreateWmInfoMappingResult(outcome.result()));
+	else
+		return CreateWmInfoMappingOutcome(outcome.error());
+}
+
+void CsasClient::createWmInfoMappingAsync(const CreateWmInfoMappingRequest& request, const CreateWmInfoMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createWmInfoMapping(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::CreateWmInfoMappingOutcomeCallable CsasClient::createWmInfoMappingCallable(const CreateWmInfoMappingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateWmInfoMappingOutcome()>>(
+			[this, request]()
+			{
+			return this->createWmInfoMapping(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::DeleteClientUserOutcome CsasClient::deleteClientUser(const DeleteClientUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1089,6 +1233,78 @@ CsasClient::GetUserGroupOutcomeCallable CsasClient::getUserGroupCallable(const G
 			[this, request]()
 			{
 			return this->getUserGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::GetWmEmbedTaskOutcome CsasClient::getWmEmbedTask(const GetWmEmbedTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetWmEmbedTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetWmEmbedTaskOutcome(GetWmEmbedTaskResult(outcome.result()));
+	else
+		return GetWmEmbedTaskOutcome(outcome.error());
+}
+
+void CsasClient::getWmEmbedTaskAsync(const GetWmEmbedTaskRequest& request, const GetWmEmbedTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getWmEmbedTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::GetWmEmbedTaskOutcomeCallable CsasClient::getWmEmbedTaskCallable(const GetWmEmbedTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetWmEmbedTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->getWmEmbedTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::GetWmExtractTaskOutcome CsasClient::getWmExtractTask(const GetWmExtractTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetWmExtractTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetWmExtractTaskOutcome(GetWmExtractTaskResult(outcome.result()));
+	else
+		return GetWmExtractTaskOutcome(outcome.error());
+}
+
+void CsasClient::getWmExtractTaskAsync(const GetWmExtractTaskRequest& request, const GetWmExtractTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getWmExtractTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::GetWmExtractTaskOutcomeCallable CsasClient::getWmExtractTaskCallable(const GetWmExtractTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetWmExtractTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->getWmExtractTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2097,6 +2313,42 @@ CsasClient::ListUsersOutcomeCallable CsasClient::listUsersCallable(const ListUse
 			[this, request]()
 			{
 			return this->listUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::LookupWmInfoMappingOutcome CsasClient::lookupWmInfoMapping(const LookupWmInfoMappingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return LookupWmInfoMappingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return LookupWmInfoMappingOutcome(LookupWmInfoMappingResult(outcome.result()));
+	else
+		return LookupWmInfoMappingOutcome(outcome.error());
+}
+
+void CsasClient::lookupWmInfoMappingAsync(const LookupWmInfoMappingRequest& request, const LookupWmInfoMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, lookupWmInfoMapping(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::LookupWmInfoMappingOutcomeCallable CsasClient::lookupWmInfoMappingCallable(const LookupWmInfoMappingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<LookupWmInfoMappingOutcome()>>(
+			[this, request]()
+			{
+			return this->lookupWmInfoMapping(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
