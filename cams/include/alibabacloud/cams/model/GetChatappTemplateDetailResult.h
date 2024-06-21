@@ -46,6 +46,11 @@ namespace AlibabaCloud
 								std::string intentCode;
 								std::string nextTemplateName;
 							};
+							struct SupportedAppsItem
+							{
+								std::string signatureHash;
+								std::string packageName;
+							};
 							std::string autofillText;
 							std::string packageName;
 							std::string text;
@@ -59,6 +64,7 @@ namespace AlibabaCloud
 							std::string signatureHash;
 							std::string navigateScreen;
 							std::string phoneNumber;
+							std::vector<Button::SupportedAppsItem> supportedApps;
 							std::string urlType;
 						};
 						struct 轮播卡片列表

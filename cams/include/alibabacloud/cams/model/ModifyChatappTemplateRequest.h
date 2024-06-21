@@ -49,6 +49,12 @@ public:
 			std::string flowId;
 			std::string flowAction;
 			std::string navigateScreen;
+			struct SupportedAppsItem {
+				std::string signatureHash;
+				std::string packageName;
+			};
+			SupportedAppsItem supportedAppsItem;
+			std::vector<SupportedAppsItem> supportedApps;
 		};
 		ButtonsItem buttonsItem;
 		std::vector<ButtonsItem> buttons;

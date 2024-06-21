@@ -52,6 +52,10 @@ void ModifyChatappTemplateRequest::setComponents(const std::vector<ModifyChatapp
       setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".FlowId", components[dep1].buttons[dep2].flowId);
       setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".FlowAction", components[dep1].buttons[dep2].flowAction);
       setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".NavigateScreen", components[dep1].buttons[dep2].navigateScreen);
+      for(int dep3 = 0; dep3 != components[dep1].buttons[dep2].supportedApps.size(); dep3++) {
+        setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".SupportedApps." + std::to_string(dep3 + 1) + ".SignatureHash", components[dep1].buttons[dep2].supportedApps[dep3].signatureHash);
+        setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".SupportedApps." + std::to_string(dep3 + 1) + ".PackageName", components[dep1].buttons[dep2].supportedApps[dep3].packageName);
+      }
     }
     setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".ThumbUrl", components[dep1].thumbUrl);
     setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Duration", std::to_string(components[dep1].duration));

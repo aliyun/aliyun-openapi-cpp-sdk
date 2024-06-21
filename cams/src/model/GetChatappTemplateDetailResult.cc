@@ -128,6 +128,16 @@ void GetChatappTemplateDetailResult::parse(const std::string &payload)
 				buttonsObject.flowAction = dataNodeComponentscomponentButtonsbutton["FlowAction"].asString();
 			if(!dataNodeComponentscomponentButtonsbutton["NavigateScreen"].isNull())
 				buttonsObject.navigateScreen = dataNodeComponentscomponentButtonsbutton["NavigateScreen"].asString();
+			auto allSupportedAppsNode = dataNodeComponentscomponentButtonsbutton["SupportedApps"]["supportedAppsItem"];
+			for (auto dataNodeComponentscomponentButtonsbuttonSupportedAppssupportedAppsItem : allSupportedAppsNode)
+			{
+				Data::Component::Button::SupportedAppsItem supportedAppsObject;
+				if(!dataNodeComponentscomponentButtonsbuttonSupportedAppssupportedAppsItem["SignatureHash"].isNull())
+					supportedAppsObject.signatureHash = dataNodeComponentscomponentButtonsbuttonSupportedAppssupportedAppsItem["SignatureHash"].asString();
+				if(!dataNodeComponentscomponentButtonsbuttonSupportedAppssupportedAppsItem["PackageName"].isNull())
+					supportedAppsObject.packageName = dataNodeComponentscomponentButtonsbuttonSupportedAppssupportedAppsItem["PackageName"].asString();
+				buttonsObject.supportedApps.push_back(supportedAppsObject);
+			}
 			auto extendAttrsNode = value["ExtendAttrs"];
 			if(!extendAttrsNode["NextTemplateCode"].isNull())
 				buttonsObject.extendAttrs.nextTemplateCode = extendAttrsNode["NextTemplateCode"].asString();
