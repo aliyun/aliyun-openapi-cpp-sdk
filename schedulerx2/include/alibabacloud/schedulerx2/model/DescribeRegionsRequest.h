@@ -30,8 +30,11 @@ class ALIBABACLOUD_SCHEDULERX2_EXPORT DescribeRegionsRequest : public RpcService
 public:
 	DescribeRegionsRequest();
 	~DescribeRegionsRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 
 private:
+	std::string regionId_;
 };
 } // namespace Model
 } // namespace Schedulerx2

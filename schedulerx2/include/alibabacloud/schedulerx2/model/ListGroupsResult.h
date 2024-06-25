@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct AppGroup
 					{
+						int appVersion;
 						std::string description;
 						long appGroupId;
 						std::string appKey;

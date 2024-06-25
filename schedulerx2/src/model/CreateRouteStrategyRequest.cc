@@ -25,24 +25,6 @@ CreateRouteStrategyRequest::CreateRouteStrategyRequest()
 
 CreateRouteStrategyRequest::~CreateRouteStrategyRequest() {}
 
-std::string CreateRouteStrategyRequest::getGroupId() const {
-  return groupId_;
-}
-
-void CreateRouteStrategyRequest::setGroupId(const std::string &groupId) {
-  groupId_ = groupId;
-  setParameter(std::string("GroupId"), groupId);
-}
-
-std::string CreateRouteStrategyRequest::getStrategyContent() const {
-  return strategyContent_;
-}
-
-void CreateRouteStrategyRequest::setStrategyContent(const std::string &strategyContent) {
-  strategyContent_ = strategyContent;
-  setParameter(std::string("StrategyContent"), strategyContent);
-}
-
 int CreateRouteStrategyRequest::getType() const {
   return type_;
 }
@@ -68,6 +50,24 @@ std::string CreateRouteStrategyRequest::getRegionId() const {
 void CreateRouteStrategyRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string CreateRouteStrategyRequest::getGroupId() const {
+  return groupId_;
+}
+
+void CreateRouteStrategyRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
+}
+
+std::string CreateRouteStrategyRequest::getStrategyContent() const {
+  return strategyContent_;
+}
+
+void CreateRouteStrategyRequest::setStrategyContent(const std::string &strategyContent) {
+  strategyContent_ = strategyContent;
+  setParameter(std::string("StrategyContent"), strategyContent);
 }
 
 std::string CreateRouteStrategyRequest::getName() const {

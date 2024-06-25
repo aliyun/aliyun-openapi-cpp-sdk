@@ -43,15 +43,6 @@ void RerunJobRequest::setDataTime(const std::string &dataTime) {
   setBodyParameter(std::string("DataTime"), dataTime);
 }
 
-std::string RerunJobRequest::getGroupId() const {
-  return groupId_;
-}
-
-void RerunJobRequest::setGroupId(const std::string &groupId) {
-  groupId_ = groupId;
-  setBodyParameter(std::string("GroupId"), groupId);
-}
-
 long RerunJobRequest::getStartDate() const {
   return startDate_;
 }
@@ -70,15 +61,6 @@ void RerunJobRequest::setJobId(long jobId) {
   setBodyParameter(std::string("JobId"), std::to_string(jobId));
 }
 
-long RerunJobRequest::getEndDate() const {
-  return endDate_;
-}
-
-void RerunJobRequest::setEndDate(long endDate) {
-  endDate_ = endDate;
-  setBodyParameter(std::string("EndDate"), std::to_string(endDate));
-}
-
 std::string RerunJobRequest::getRegionId() const {
   return regionId_;
 }
@@ -86,6 +68,24 @@ std::string RerunJobRequest::getRegionId() const {
 void RerunJobRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+std::string RerunJobRequest::getGroupId() const {
+  return groupId_;
+}
+
+void RerunJobRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setBodyParameter(std::string("GroupId"), groupId);
+}
+
+long RerunJobRequest::getEndDate() const {
+  return endDate_;
+}
+
+void RerunJobRequest::setEndDate(long endDate) {
+  endDate_ = endDate;
+  setBodyParameter(std::string("EndDate"), std::to_string(endDate));
 }
 
 std::string RerunJobRequest::get_Namespace() const {

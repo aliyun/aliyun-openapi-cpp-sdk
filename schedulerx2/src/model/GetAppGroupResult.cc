@@ -68,6 +68,8 @@ void GetAppGroupResult::parse(const std::string &payload)
 		data_.appKey = dataNode["AppKey"].asString();
 	if(!dataNode["Xattrs"].isNull())
 		data_.xattrs = dataNode["Xattrs"].asString();
+	if(!dataNode["AppVersion"].isNull())
+		data_.appVersion = dataNode["AppVersion"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())

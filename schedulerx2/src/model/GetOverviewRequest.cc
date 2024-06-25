@@ -43,6 +43,24 @@ void GetOverviewRequest::setNamespaceSource(const std::string &namespaceSource) 
   setParameter(std::string("NamespaceSource"), namespaceSource);
 }
 
+long GetOverviewRequest::getStartTime() const {
+  return startTime_;
+}
+
+void GetOverviewRequest::setStartTime(long startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), std::to_string(startTime));
+}
+
+std::string GetOverviewRequest::getRegionId() const {
+  return regionId_;
+}
+
+void GetOverviewRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string GetOverviewRequest::getGroupId() const {
   return groupId_;
 }
@@ -61,15 +79,6 @@ void GetOverviewRequest::setEndTime(long endTime) {
   setParameter(std::string("EndTime"), std::to_string(endTime));
 }
 
-long GetOverviewRequest::getStartTime() const {
-  return startTime_;
-}
-
-void GetOverviewRequest::setStartTime(long startTime) {
-  startTime_ = startTime;
-  setParameter(std::string("StartTime"), std::to_string(startTime));
-}
-
 std::string GetOverviewRequest::getOperate() const {
   return operate_;
 }
@@ -77,15 +86,6 @@ std::string GetOverviewRequest::getOperate() const {
 void GetOverviewRequest::setOperate(const std::string &operate) {
   operate_ = operate;
   setParameter(std::string("Operate"), operate);
-}
-
-std::string GetOverviewRequest::getRegionId() const {
-  return regionId_;
-}
-
-void GetOverviewRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string GetOverviewRequest::get_Namespace() const {

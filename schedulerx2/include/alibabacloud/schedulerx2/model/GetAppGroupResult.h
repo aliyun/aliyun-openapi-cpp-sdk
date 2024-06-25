@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					int maxConcurrency;
 					std::string appName;
 					std::string groupId;
+					std::string appVersion;
 					std::string monitorConfigJson;
 					int readyInstanceNum;
 					long appGroupId;

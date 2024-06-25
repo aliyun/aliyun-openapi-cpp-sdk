@@ -44,6 +44,8 @@ public:
 	void setMetricsThresholdJson(const std::string &metricsThresholdJson);
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
+	int getAppVersion() const;
+	void setAppVersion(int appVersion);
 	std::string get_Namespace() const;
 	void set_Namespace(const std::string &_namespace);
 	std::string getXattrs() const;
@@ -59,6 +61,7 @@ private:
 	int maxJobs_;
 	std::string metricsThresholdJson_;
 	std::string groupId_;
+	int appVersion_;
 	std::string _namespace_;
 	std::string xattrs_;
 	int maxConcurrency_;

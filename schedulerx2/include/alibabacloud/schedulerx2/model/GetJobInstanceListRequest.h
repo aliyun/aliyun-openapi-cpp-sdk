@@ -32,16 +32,20 @@ public:
 	~GetJobInstanceListRequest();
 	std::string getNamespaceSource() const;
 	void setNamespaceSource(const std::string &namespaceSource);
-	std::string getGroupId() const;
-	void setGroupId(const std::string &groupId);
 	long getStartTimestamp() const;
 	void setStartTimestamp(long startTimestamp);
+	int getPageNum() const;
+	void setPageNum(int pageNum);
 	long getEndTimestamp() const;
 	void setEndTimestamp(long endTimestamp);
 	long getJobId() const;
 	void setJobId(long jobId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getGroupId() const;
+	void setGroupId(const std::string &groupId);
 	std::string get_Namespace() const;
 	void set_Namespace(const std::string &_namespace);
 	int getStatus() const;
@@ -49,11 +53,13 @@ public:
 
 private:
 	std::string namespaceSource_;
-	std::string groupId_;
 	long startTimestamp_;
+	int pageNum_;
 	long endTimestamp_;
 	long jobId_;
 	std::string regionId_;
+	int pageSize_;
+	std::string groupId_;
 	std::string _namespace_;
 	int status_;
 };

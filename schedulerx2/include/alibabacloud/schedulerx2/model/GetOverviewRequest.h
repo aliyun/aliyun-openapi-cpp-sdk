@@ -34,27 +34,27 @@ public:
 	void setMetricType(int metricType);
 	std::string getNamespaceSource() const;
 	void setNamespaceSource(const std::string &namespaceSource);
+	long getStartTime() const;
+	void setStartTime(long startTime);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
 	long getEndTime() const;
 	void setEndTime(long endTime);
-	long getStartTime() const;
-	void setStartTime(long startTime);
 	std::string getOperate() const;
 	void setOperate(const std::string &operate);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	std::string get_Namespace() const;
 	void set_Namespace(const std::string &_namespace);
 
 private:
 	int metricType_;
 	std::string namespaceSource_;
+	long startTime_;
+	std::string regionId_;
 	std::string groupId_;
 	long endTime_;
-	long startTime_;
 	std::string operate_;
-	std::string regionId_;
 	std::string _namespace_;
 };
 } // namespace Model

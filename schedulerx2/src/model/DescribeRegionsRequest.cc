@@ -25,3 +25,12 @@ DescribeRegionsRequest::DescribeRegionsRequest()
 
 DescribeRegionsRequest::~DescribeRegionsRequest() {}
 
+std::string DescribeRegionsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeRegionsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+

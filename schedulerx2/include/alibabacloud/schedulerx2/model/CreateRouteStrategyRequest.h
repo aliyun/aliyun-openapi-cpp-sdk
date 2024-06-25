@@ -30,16 +30,16 @@ class ALIBABACLOUD_SCHEDULERX2_EXPORT CreateRouteStrategyRequest : public RpcSer
 public:
 	CreateRouteStrategyRequest();
 	~CreateRouteStrategyRequest();
-	std::string getGroupId() const;
-	void setGroupId(const std::string &groupId);
-	std::string getStrategyContent() const;
-	void setStrategyContent(const std::string &strategyContent);
 	int getType() const;
 	void setType(int type);
 	long getJobId() const;
 	void setJobId(long jobId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getGroupId() const;
+	void setGroupId(const std::string &groupId);
+	std::string getStrategyContent() const;
+	void setStrategyContent(const std::string &strategyContent);
 	std::string getName() const;
 	void setName(const std::string &name);
 	std::string get_Namespace() const;
@@ -48,11 +48,11 @@ public:
 	void setStatus(int status);
 
 private:
-	std::string groupId_;
-	std::string strategyContent_;
 	int type_;
 	long jobId_;
 	std::string regionId_;
+	std::string groupId_;
+	std::string strategyContent_;
 	std::string name_;
 	std::string _namespace_;
 	int status_;

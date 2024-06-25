@@ -34,15 +34,6 @@ void GetJobInstanceListRequest::setNamespaceSource(const std::string &namespaceS
   setParameter(std::string("NamespaceSource"), namespaceSource);
 }
 
-std::string GetJobInstanceListRequest::getGroupId() const {
-  return groupId_;
-}
-
-void GetJobInstanceListRequest::setGroupId(const std::string &groupId) {
-  groupId_ = groupId;
-  setParameter(std::string("GroupId"), groupId);
-}
-
 long GetJobInstanceListRequest::getStartTimestamp() const {
   return startTimestamp_;
 }
@@ -50,6 +41,15 @@ long GetJobInstanceListRequest::getStartTimestamp() const {
 void GetJobInstanceListRequest::setStartTimestamp(long startTimestamp) {
   startTimestamp_ = startTimestamp;
   setParameter(std::string("StartTimestamp"), std::to_string(startTimestamp));
+}
+
+int GetJobInstanceListRequest::getPageNum() const {
+  return pageNum_;
+}
+
+void GetJobInstanceListRequest::setPageNum(int pageNum) {
+  pageNum_ = pageNum;
+  setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
 long GetJobInstanceListRequest::getEndTimestamp() const {
@@ -77,6 +77,24 @@ std::string GetJobInstanceListRequest::getRegionId() const {
 void GetJobInstanceListRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+int GetJobInstanceListRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void GetJobInstanceListRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string GetJobInstanceListRequest::getGroupId() const {
+  return groupId_;
+}
+
+void GetJobInstanceListRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
 }
 
 std::string GetJobInstanceListRequest::get_Namespace() const {

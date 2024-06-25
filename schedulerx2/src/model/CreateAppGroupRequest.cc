@@ -133,6 +133,15 @@ void CreateAppGroupRequest::setAppType(int appType) {
   setParameter(std::string("AppType"), std::to_string(appType));
 }
 
+int CreateAppGroupRequest::getAppVersion() const {
+  return appVersion_;
+}
+
+void CreateAppGroupRequest::setAppVersion(int appVersion) {
+  appVersion_ = appVersion;
+  setParameter(std::string("AppVersion"), std::to_string(appVersion));
+}
+
 std::string CreateAppGroupRequest::getMonitorConfigJson() const {
   return monitorConfigJson_;
 }

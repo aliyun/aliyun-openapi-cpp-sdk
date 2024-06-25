@@ -54,6 +54,8 @@ public:
 	void setGroupId(const std::string &groupId);
 	int getAppType() const;
 	void setAppType(int appType);
+	int getAppVersion() const;
+	void setAppVersion(int appVersion);
 	std::string getMonitorConfigJson() const;
 	void setMonitorConfigJson(const std::string &monitorConfigJson);
 	std::string get_Namespace() const;
@@ -78,6 +80,7 @@ private:
 	std::string metricsThresholdJson_;
 	std::string groupId_;
 	int appType_;
+	int appVersion_;
 	std::string monitorConfigJson_;
 	std::string _namespace_;
 	std::string xattrs_;

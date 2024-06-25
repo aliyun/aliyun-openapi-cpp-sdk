@@ -34,27 +34,27 @@ public:
 	void setNamespaceSource(const std::string &namespaceSource);
 	std::string getDataTime() const;
 	void setDataTime(const std::string &dataTime);
-	std::string getGroupId() const;
-	void setGroupId(const std::string &groupId);
 	long getStartDate() const;
 	void setStartDate(long startDate);
 	long getJobId() const;
 	void setJobId(long jobId);
-	long getEndDate() const;
-	void setEndDate(long endDate);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getGroupId() const;
+	void setGroupId(const std::string &groupId);
+	long getEndDate() const;
+	void setEndDate(long endDate);
 	std::string get_Namespace() const;
 	void set_Namespace(const std::string &_namespace);
 
 private:
 	std::string namespaceSource_;
 	std::string dataTime_;
-	std::string groupId_;
 	long startDate_;
 	long jobId_;
-	long endDate_;
 	std::string regionId_;
+	std::string groupId_;
+	long endDate_;
 	std::string _namespace_;
 };
 } // namespace Model

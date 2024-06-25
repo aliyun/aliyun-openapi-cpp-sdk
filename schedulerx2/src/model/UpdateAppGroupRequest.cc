@@ -88,6 +88,15 @@ void UpdateAppGroupRequest::setGroupId(const std::string &groupId) {
   setParameter(std::string("GroupId"), groupId);
 }
 
+int UpdateAppGroupRequest::getAppVersion() const {
+  return appVersion_;
+}
+
+void UpdateAppGroupRequest::setAppVersion(int appVersion) {
+  appVersion_ = appVersion;
+  setParameter(std::string("AppVersion"), std::to_string(appVersion));
+}
+
 std::string UpdateAppGroupRequest::get_Namespace() const {
   return _namespace_;
 }
