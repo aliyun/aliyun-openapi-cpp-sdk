@@ -62,6 +62,10 @@
 #include "model/CreateTicket4CopilotResult.h"
 #include "model/CreateUserGroupRequest.h"
 #include "model/CreateUserGroupResult.h"
+#include "model/DataSetBloodRequest.h"
+#include "model/DataSetBloodResult.h"
+#include "model/DataSourceBloodRequest.h"
+#include "model/DataSourceBloodResult.h"
 #include "model/DelayTicketExpireTimeRequest.h"
 #include "model/DelayTicketExpireTimeResult.h"
 #include "model/DeleteDataLevelPermissionRuleUsersRequest.h"
@@ -116,6 +120,10 @@
 #include "model/ListWorkspaceRolesResult.h"
 #include "model/ModifyApiDatasourceParametersRequest.h"
 #include "model/ModifyApiDatasourceParametersResult.h"
+#include "model/QueryApprovalInfoRequest.h"
+#include "model/QueryApprovalInfoResult.h"
+#include "model/QueryAuditLogRequest.h"
+#include "model/QueryAuditLogResult.h"
 #include "model/QueryComponentPerformanceRequest.h"
 #include "model/QueryComponentPerformanceResult.h"
 #include "model/QueryCubeOptimizationRequest.h"
@@ -124,6 +132,8 @@
 #include "model/QueryCubePerformanceResult.h"
 #include "model/QueryDataServiceRequest.h"
 #include "model/QueryDataServiceResult.h"
+#include "model/QueryDataServiceListRequest.h"
+#include "model/QueryDataServiceListResult.h"
 #include "model/QueryDatasetDetailInfoRequest.h"
 #include "model/QueryDatasetDetailInfoResult.h"
 #include "model/QueryDatasetInfoRequest.h"
@@ -277,6 +287,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateUserGroupResult> CreateUserGroupOutcome;
 			typedef std::future<CreateUserGroupOutcome> CreateUserGroupOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::CreateUserGroupRequest&, const CreateUserGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserGroupAsyncHandler;
+			typedef Outcome<Error, Model::DataSetBloodResult> DataSetBloodOutcome;
+			typedef std::future<DataSetBloodOutcome> DataSetBloodOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::DataSetBloodRequest&, const DataSetBloodOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DataSetBloodAsyncHandler;
+			typedef Outcome<Error, Model::DataSourceBloodResult> DataSourceBloodOutcome;
+			typedef std::future<DataSourceBloodOutcome> DataSourceBloodOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::DataSourceBloodRequest&, const DataSourceBloodOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DataSourceBloodAsyncHandler;
 			typedef Outcome<Error, Model::DelayTicketExpireTimeResult> DelayTicketExpireTimeOutcome;
 			typedef std::future<DelayTicketExpireTimeOutcome> DelayTicketExpireTimeOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::DelayTicketExpireTimeRequest&, const DelayTicketExpireTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DelayTicketExpireTimeAsyncHandler;
@@ -358,6 +374,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyApiDatasourceParametersResult> ModifyApiDatasourceParametersOutcome;
 			typedef std::future<ModifyApiDatasourceParametersOutcome> ModifyApiDatasourceParametersOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ModifyApiDatasourceParametersRequest&, const ModifyApiDatasourceParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiDatasourceParametersAsyncHandler;
+			typedef Outcome<Error, Model::QueryApprovalInfoResult> QueryApprovalInfoOutcome;
+			typedef std::future<QueryApprovalInfoOutcome> QueryApprovalInfoOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryApprovalInfoRequest&, const QueryApprovalInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryApprovalInfoAsyncHandler;
+			typedef Outcome<Error, Model::QueryAuditLogResult> QueryAuditLogOutcome;
+			typedef std::future<QueryAuditLogOutcome> QueryAuditLogOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryAuditLogRequest&, const QueryAuditLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryAuditLogAsyncHandler;
 			typedef Outcome<Error, Model::QueryComponentPerformanceResult> QueryComponentPerformanceOutcome;
 			typedef std::future<QueryComponentPerformanceOutcome> QueryComponentPerformanceOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryComponentPerformanceRequest&, const QueryComponentPerformanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryComponentPerformanceAsyncHandler;
@@ -370,6 +392,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryDataServiceResult> QueryDataServiceOutcome;
 			typedef std::future<QueryDataServiceOutcome> QueryDataServiceOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryDataServiceRequest&, const QueryDataServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDataServiceAsyncHandler;
+			typedef Outcome<Error, Model::QueryDataServiceListResult> QueryDataServiceListOutcome;
+			typedef std::future<QueryDataServiceListOutcome> QueryDataServiceListOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryDataServiceListRequest&, const QueryDataServiceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDataServiceListAsyncHandler;
 			typedef Outcome<Error, Model::QueryDatasetDetailInfoResult> QueryDatasetDetailInfoOutcome;
 			typedef std::future<QueryDatasetDetailInfoOutcome> QueryDatasetDetailInfoOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryDatasetDetailInfoRequest&, const QueryDatasetDetailInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDatasetDetailInfoAsyncHandler;
@@ -561,6 +586,12 @@ namespace AlibabaCloud
 			CreateUserGroupOutcome createUserGroup(const Model::CreateUserGroupRequest &request)const;
 			void createUserGroupAsync(const Model::CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateUserGroupOutcomeCallable createUserGroupCallable(const Model::CreateUserGroupRequest& request) const;
+			DataSetBloodOutcome dataSetBlood(const Model::DataSetBloodRequest &request)const;
+			void dataSetBloodAsync(const Model::DataSetBloodRequest& request, const DataSetBloodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DataSetBloodOutcomeCallable dataSetBloodCallable(const Model::DataSetBloodRequest& request) const;
+			DataSourceBloodOutcome dataSourceBlood(const Model::DataSourceBloodRequest &request)const;
+			void dataSourceBloodAsync(const Model::DataSourceBloodRequest& request, const DataSourceBloodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DataSourceBloodOutcomeCallable dataSourceBloodCallable(const Model::DataSourceBloodRequest& request) const;
 			DelayTicketExpireTimeOutcome delayTicketExpireTime(const Model::DelayTicketExpireTimeRequest &request)const;
 			void delayTicketExpireTimeAsync(const Model::DelayTicketExpireTimeRequest& request, const DelayTicketExpireTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DelayTicketExpireTimeOutcomeCallable delayTicketExpireTimeCallable(const Model::DelayTicketExpireTimeRequest& request) const;
@@ -642,6 +673,12 @@ namespace AlibabaCloud
 			ModifyApiDatasourceParametersOutcome modifyApiDatasourceParameters(const Model::ModifyApiDatasourceParametersRequest &request)const;
 			void modifyApiDatasourceParametersAsync(const Model::ModifyApiDatasourceParametersRequest& request, const ModifyApiDatasourceParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyApiDatasourceParametersOutcomeCallable modifyApiDatasourceParametersCallable(const Model::ModifyApiDatasourceParametersRequest& request) const;
+			QueryApprovalInfoOutcome queryApprovalInfo(const Model::QueryApprovalInfoRequest &request)const;
+			void queryApprovalInfoAsync(const Model::QueryApprovalInfoRequest& request, const QueryApprovalInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryApprovalInfoOutcomeCallable queryApprovalInfoCallable(const Model::QueryApprovalInfoRequest& request) const;
+			QueryAuditLogOutcome queryAuditLog(const Model::QueryAuditLogRequest &request)const;
+			void queryAuditLogAsync(const Model::QueryAuditLogRequest& request, const QueryAuditLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryAuditLogOutcomeCallable queryAuditLogCallable(const Model::QueryAuditLogRequest& request) const;
 			QueryComponentPerformanceOutcome queryComponentPerformance(const Model::QueryComponentPerformanceRequest &request)const;
 			void queryComponentPerformanceAsync(const Model::QueryComponentPerformanceRequest& request, const QueryComponentPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryComponentPerformanceOutcomeCallable queryComponentPerformanceCallable(const Model::QueryComponentPerformanceRequest& request) const;
@@ -654,6 +691,9 @@ namespace AlibabaCloud
 			QueryDataServiceOutcome queryDataService(const Model::QueryDataServiceRequest &request)const;
 			void queryDataServiceAsync(const Model::QueryDataServiceRequest& request, const QueryDataServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDataServiceOutcomeCallable queryDataServiceCallable(const Model::QueryDataServiceRequest& request) const;
+			QueryDataServiceListOutcome queryDataServiceList(const Model::QueryDataServiceListRequest &request)const;
+			void queryDataServiceListAsync(const Model::QueryDataServiceListRequest& request, const QueryDataServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDataServiceListOutcomeCallable queryDataServiceListCallable(const Model::QueryDataServiceListRequest& request) const;
 			QueryDatasetDetailInfoOutcome queryDatasetDetailInfo(const Model::QueryDatasetDetailInfoRequest &request)const;
 			void queryDatasetDetailInfoAsync(const Model::QueryDatasetDetailInfoRequest& request, const QueryDatasetDetailInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDatasetDetailInfoOutcomeCallable queryDatasetDetailInfoCallable(const Model::QueryDatasetDetailInfoRequest& request) const;

@@ -771,6 +771,78 @@ Quickbi_publicClient::CreateUserGroupOutcomeCallable Quickbi_publicClient::creat
 	return task->get_future();
 }
 
+Quickbi_publicClient::DataSetBloodOutcome Quickbi_publicClient::dataSetBlood(const DataSetBloodRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DataSetBloodOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DataSetBloodOutcome(DataSetBloodResult(outcome.result()));
+	else
+		return DataSetBloodOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::dataSetBloodAsync(const DataSetBloodRequest& request, const DataSetBloodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, dataSetBlood(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::DataSetBloodOutcomeCallable Quickbi_publicClient::dataSetBloodCallable(const DataSetBloodRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DataSetBloodOutcome()>>(
+			[this, request]()
+			{
+			return this->dataSetBlood(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::DataSourceBloodOutcome Quickbi_publicClient::dataSourceBlood(const DataSourceBloodRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DataSourceBloodOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DataSourceBloodOutcome(DataSourceBloodResult(outcome.result()));
+	else
+		return DataSourceBloodOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::dataSourceBloodAsync(const DataSourceBloodRequest& request, const DataSourceBloodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, dataSourceBlood(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::DataSourceBloodOutcomeCallable Quickbi_publicClient::dataSourceBloodCallable(const DataSourceBloodRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DataSourceBloodOutcome()>>(
+			[this, request]()
+			{
+			return this->dataSourceBlood(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::DelayTicketExpireTimeOutcome Quickbi_publicClient::delayTicketExpireTime(const DelayTicketExpireTimeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1743,6 +1815,78 @@ Quickbi_publicClient::ModifyApiDatasourceParametersOutcomeCallable Quickbi_publi
 	return task->get_future();
 }
 
+Quickbi_publicClient::QueryApprovalInfoOutcome Quickbi_publicClient::queryApprovalInfo(const QueryApprovalInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryApprovalInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryApprovalInfoOutcome(QueryApprovalInfoResult(outcome.result()));
+	else
+		return QueryApprovalInfoOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryApprovalInfoAsync(const QueryApprovalInfoRequest& request, const QueryApprovalInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryApprovalInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryApprovalInfoOutcomeCallable Quickbi_publicClient::queryApprovalInfoCallable(const QueryApprovalInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryApprovalInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->queryApprovalInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::QueryAuditLogOutcome Quickbi_publicClient::queryAuditLog(const QueryAuditLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryAuditLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryAuditLogOutcome(QueryAuditLogResult(outcome.result()));
+	else
+		return QueryAuditLogOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryAuditLogAsync(const QueryAuditLogRequest& request, const QueryAuditLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryAuditLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryAuditLogOutcomeCallable Quickbi_publicClient::queryAuditLogCallable(const QueryAuditLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryAuditLogOutcome()>>(
+			[this, request]()
+			{
+			return this->queryAuditLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::QueryComponentPerformanceOutcome Quickbi_publicClient::queryComponentPerformance(const QueryComponentPerformanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1881,6 +2025,42 @@ Quickbi_publicClient::QueryDataServiceOutcomeCallable Quickbi_publicClient::quer
 			[this, request]()
 			{
 			return this->queryDataService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::QueryDataServiceListOutcome Quickbi_publicClient::queryDataServiceList(const QueryDataServiceListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDataServiceListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDataServiceListOutcome(QueryDataServiceListResult(outcome.result()));
+	else
+		return QueryDataServiceListOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryDataServiceListAsync(const QueryDataServiceListRequest& request, const QueryDataServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDataServiceList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryDataServiceListOutcomeCallable Quickbi_publicClient::queryDataServiceListCallable(const QueryDataServiceListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDataServiceListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDataServiceList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

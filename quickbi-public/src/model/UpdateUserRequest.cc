@@ -79,6 +79,15 @@ void UpdateUserRequest::setUserId(const std::string &userId) {
   setParameter(std::string("UserId"), userId);
 }
 
+bool UpdateUserRequest::getIsDeleted() const {
+  return isDeleted_;
+}
+
+void UpdateUserRequest::setIsDeleted(bool isDeleted) {
+  isDeleted_ = isDeleted;
+  setParameter(std::string("IsDeleted"), isDeleted ? "true" : "false");
+}
+
 std::string UpdateUserRequest::getRoleIds() const {
   return roleIds_;
 }

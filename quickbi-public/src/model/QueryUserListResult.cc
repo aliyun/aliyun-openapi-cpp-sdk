@@ -70,6 +70,10 @@ void QueryUserListResult::parse(const std::string &payload)
 			dataItemObject.phone = resultNodeDataDataItem["Phone"].asString();
 		if(!resultNodeDataDataItem["AccountName"].isNull())
 			dataItemObject.accountName = resultNodeDataDataItem["AccountName"].asString();
+		if(!resultNodeDataDataItem["JoinedDate"].isNull())
+			dataItemObject.joinedDate = std::stol(resultNodeDataDataItem["JoinedDate"].asString());
+		if(!resultNodeDataDataItem["LastLoginTime"].isNull())
+			dataItemObject.lastLoginTime = std::stol(resultNodeDataDataItem["LastLoginTime"].asString());
 		auto allRoleIdList = value["RoleIdList"]["roleIdList"];
 		for (auto value : allRoleIdList)
 			dataItemObject.roleIdList.push_back(value.asString());

@@ -45,6 +45,7 @@ namespace AlibabaCloud
 						};
 						int status;
 						std::string ownerName;
+						long publicInvalidTime;
 						std::string description;
 						std::string workType;
 						std::string modifyName;
@@ -56,6 +57,7 @@ namespace AlibabaCloud
 						std::string securityLevel;
 						std::string workName;
 						std::string workspaceName;
+						bool publicFlag;
 						std::string worksId;
 						Directory directory;
 					};

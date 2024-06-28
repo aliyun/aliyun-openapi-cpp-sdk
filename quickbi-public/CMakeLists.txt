@@ -61,6 +61,10 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/CreateTicket4CopilotResult.h
 	include/alibabacloud/quickbi-public/model/CreateUserGroupRequest.h
 	include/alibabacloud/quickbi-public/model/CreateUserGroupResult.h
+	include/alibabacloud/quickbi-public/model/DataSetBloodRequest.h
+	include/alibabacloud/quickbi-public/model/DataSetBloodResult.h
+	include/alibabacloud/quickbi-public/model/DataSourceBloodRequest.h
+	include/alibabacloud/quickbi-public/model/DataSourceBloodResult.h
 	include/alibabacloud/quickbi-public/model/DelayTicketExpireTimeRequest.h
 	include/alibabacloud/quickbi-public/model/DelayTicketExpireTimeResult.h
 	include/alibabacloud/quickbi-public/model/DeleteDataLevelPermissionRuleUsersRequest.h
@@ -115,6 +119,10 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/ListWorkspaceRolesResult.h
 	include/alibabacloud/quickbi-public/model/ModifyApiDatasourceParametersRequest.h
 	include/alibabacloud/quickbi-public/model/ModifyApiDatasourceParametersResult.h
+	include/alibabacloud/quickbi-public/model/QueryApprovalInfoRequest.h
+	include/alibabacloud/quickbi-public/model/QueryApprovalInfoResult.h
+	include/alibabacloud/quickbi-public/model/QueryAuditLogRequest.h
+	include/alibabacloud/quickbi-public/model/QueryAuditLogResult.h
 	include/alibabacloud/quickbi-public/model/QueryComponentPerformanceRequest.h
 	include/alibabacloud/quickbi-public/model/QueryComponentPerformanceResult.h
 	include/alibabacloud/quickbi-public/model/QueryCubeOptimizationRequest.h
@@ -123,6 +131,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/QueryCubePerformanceResult.h
 	include/alibabacloud/quickbi-public/model/QueryDataServiceRequest.h
 	include/alibabacloud/quickbi-public/model/QueryDataServiceResult.h
+	include/alibabacloud/quickbi-public/model/QueryDataServiceListRequest.h
+	include/alibabacloud/quickbi-public/model/QueryDataServiceListResult.h
 	include/alibabacloud/quickbi-public/model/QueryDatasetDetailInfoRequest.h
 	include/alibabacloud/quickbi-public/model/QueryDatasetDetailInfoResult.h
 	include/alibabacloud/quickbi-public/model/QueryDatasetInfoRequest.h
@@ -250,6 +260,10 @@ set(quickbi-public_src
 	src/model/CreateTicket4CopilotResult.cc
 	src/model/CreateUserGroupRequest.cc
 	src/model/CreateUserGroupResult.cc
+	src/model/DataSetBloodRequest.cc
+	src/model/DataSetBloodResult.cc
+	src/model/DataSourceBloodRequest.cc
+	src/model/DataSourceBloodResult.cc
 	src/model/DelayTicketExpireTimeRequest.cc
 	src/model/DelayTicketExpireTimeResult.cc
 	src/model/DeleteDataLevelPermissionRuleUsersRequest.cc
@@ -304,6 +318,10 @@ set(quickbi-public_src
 	src/model/ListWorkspaceRolesResult.cc
 	src/model/ModifyApiDatasourceParametersRequest.cc
 	src/model/ModifyApiDatasourceParametersResult.cc
+	src/model/QueryApprovalInfoRequest.cc
+	src/model/QueryApprovalInfoResult.cc
+	src/model/QueryAuditLogRequest.cc
+	src/model/QueryAuditLogResult.cc
 	src/model/QueryComponentPerformanceRequest.cc
 	src/model/QueryComponentPerformanceResult.cc
 	src/model/QueryCubeOptimizationRequest.cc
@@ -312,6 +330,8 @@ set(quickbi-public_src
 	src/model/QueryCubePerformanceResult.cc
 	src/model/QueryDataServiceRequest.cc
 	src/model/QueryDataServiceResult.cc
+	src/model/QueryDataServiceListRequest.cc
+	src/model/QueryDataServiceListResult.cc
 	src/model/QueryDatasetDetailInfoRequest.cc
 	src/model/QueryDatasetDetailInfoResult.cc
 	src/model/QueryDatasetInfoRequest.cc

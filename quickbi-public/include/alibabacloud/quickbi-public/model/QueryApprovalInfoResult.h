@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYWORKSBYWORKSPACERESULT_H_
-#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYWORKSBYWORKSPACERESULT_H_
+#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYAPPROVALINFORESULT_H_
+#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYAPPROVALINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,49 +29,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryWorksByWorkspaceResult : public ServiceResult
+			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryApprovalInfoResult : public ServiceResult
 			{
 			public:
 				struct Result
 				{
-					struct DataItem
+					struct ApprovalsResultModel
 					{
-						struct Directory
-						{
-							std::string pathId;
-							std::string pathName;
-							std::string id;
-							std::string name;
-						};
-						int status;
-						std::string ownerName;
-						long publicInvalidTime;
-						std::string description;
-						std::string workType;
-						std::string modifyName;
-						std::string workspaceId;
-						int auth3rdFlag;
-						std::string gmtCreate;
-						std::string ownerId;
-						std::string gmtModify;
-						std::string securityLevel;
-						std::string workName;
+						long expireDate;
+						int flagStatus;
+						std::string resourceName;
+						std::string applicantName;
+						long gmtModified;
+						std::string resourceType;
+						std::string handleReason;
+						std::string applyReason;
+						bool deleteFlag;
+						long gmtCreate;
+						std::string resourceId;
+						std::string applicantId;
+						std::string approverId;
 						std::string workspaceName;
-						bool publicFlag;
-						std::string worksId;
-						Directory directory;
+						std::string approverName;
+						std::string applicationId;
 					};
-					int totalNum;
-					int pageNum;
 					int pageSize;
-					std::vector<DataItem> data;
+					int start;
+					int total;
+					std::vector<ApprovalsResultModel> data;
 					int totalPages;
+					int page;
 				};
 
 
-				QueryWorksByWorkspaceResult();
-				explicit QueryWorksByWorkspaceResult(const std::string &payload);
-				~QueryWorksByWorkspaceResult();
+				QueryApprovalInfoResult();
+				explicit QueryApprovalInfoResult(const std::string &payload);
+				~QueryApprovalInfoResult();
 				bool getSuccess()const;
 				Result getResult()const;
 
@@ -85,4 +78,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYWORKSBYWORKSPACERESULT_H_
+#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYAPPROVALINFORESULT_H_

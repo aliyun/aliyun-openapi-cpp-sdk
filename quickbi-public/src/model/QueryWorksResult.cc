@@ -68,6 +68,10 @@ void QueryWorksResult::parse(const std::string &payload)
 		result_.gmtModify = resultNode["GmtModify"].asString();
 	if(!resultNode["Status"].isNull())
 		result_.status = std::stoi(resultNode["Status"].asString());
+	if(!resultNode["PublicFlag"].isNull())
+		result_.publicFlag = resultNode["PublicFlag"].asString() == "true";
+	if(!resultNode["PublicInvalidTime"].isNull())
+		result_.publicInvalidTime = std::stol(resultNode["PublicInvalidTime"].asString());
 	auto directoryNode = resultNode["Directory"];
 	if(!directoryNode["Id"].isNull())
 		result_.directory.id = directoryNode["Id"].asString();

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYUSERLISTRESULT_H_
-#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYUSERLISTRESULT_H_
+#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_DATASETBLOODRESULT_H_
+#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_DATASETBLOODRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,48 +29,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryUserListResult : public ServiceResult
+			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT DataSetBloodResult : public ServiceResult
 			{
 			public:
-				struct Result
+				struct WorksModels
 				{
-					struct DataItem
-					{
-						long lastLoginTime;
-						std::vector<std::string> roleIdList;
-						std::string email;
-						std::string accountId;
-						std::string userId;
-						std::string phone;
-						bool adminUser;
-						std::string nickName;
-						int userType;
-						long joinedDate;
-						bool authAdminUser;
-						std::string accountName;
-					};
-					int totalNum;
-					int pageNum;
-					int pageSize;
-					std::vector<DataItem> data;
-					int totalPages;
+					std::string worksType;
+					std::string worksId;
 				};
 
 
-				QueryUserListResult();
-				explicit QueryUserListResult(const std::string &payload);
-				~QueryUserListResult();
+				DataSetBloodResult();
+				explicit DataSetBloodResult(const std::string &payload);
+				~DataSetBloodResult();
 				bool getSuccess()const;
-				Result getResult()const;
+				std::vector<WorksModels> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				bool success_;
-				Result result_;
+				std::vector<WorksModels> result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYUSERLISTRESULT_H_
+#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_DATASETBLOODRESULT_H_

@@ -80,6 +80,10 @@ void QueryWorksByOrganizationResult::parse(const std::string &payload)
 			dataItemObject.workName = resultNodeDataDataItem["WorkName"].asString();
 		if(!resultNodeDataDataItem["GmtCreate"].isNull())
 			dataItemObject.gmtCreate = resultNodeDataDataItem["GmtCreate"].asString();
+		if(!resultNodeDataDataItem["PublicFlag"].isNull())
+			dataItemObject.publicFlag = resultNodeDataDataItem["PublicFlag"].asString() == "true";
+		if(!resultNodeDataDataItem["PublicInvalidTime"].isNull())
+			dataItemObject.publicInvalidTime = std::stol(resultNodeDataDataItem["PublicInvalidTime"].asString());
 		auto directoryNode = value["Directory"];
 		if(!directoryNode["PathId"].isNull())
 			dataItemObject.directory.pathId = directoryNode["PathId"].asString();
