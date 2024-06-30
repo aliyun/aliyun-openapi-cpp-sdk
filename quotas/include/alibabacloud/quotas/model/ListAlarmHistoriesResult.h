@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::vector<std::string> notifyChannels;
 					float thresholdPercent;
 					std::string alarmName;
-					std::string productCode;
 					std::string notifyTarget;
+					std::string productCode;
 					std::string createTime;
 					float quotaUsage;
 					float threshold;

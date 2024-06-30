@@ -40,30 +40,32 @@ void GetQuotaAlarmResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto quotaAlarmNode = value["QuotaAlarm"];
-	if(!quotaAlarmNode["AlarmId"].isNull())
-		quotaAlarm_.alarmId = quotaAlarmNode["AlarmId"].asString();
-	if(!quotaAlarmNode["QuotaActionCode"].isNull())
-		quotaAlarm_.quotaActionCode = quotaAlarmNode["QuotaActionCode"].asString();
-	if(!quotaAlarmNode["QuotaValue"].isNull())
-		quotaAlarm_.quotaValue = std::stof(quotaAlarmNode["QuotaValue"].asString());
 	if(!quotaAlarmNode["ThresholdPercent"].isNull())
 		quotaAlarm_.thresholdPercent = std::stof(quotaAlarmNode["ThresholdPercent"].asString());
-	if(!quotaAlarmNode["AlarmName"].isNull())
-		quotaAlarm_.alarmName = quotaAlarmNode["AlarmName"].asString();
-	if(!quotaAlarmNode["ProductCode"].isNull())
-		quotaAlarm_.productCode = quotaAlarmNode["ProductCode"].asString();
-	if(!quotaAlarmNode["NotifyTarget"].isNull())
-		quotaAlarm_.notifyTarget = quotaAlarmNode["NotifyTarget"].asString();
-	if(!quotaAlarmNode["CreateTime"].isNull())
-		quotaAlarm_.createTime = quotaAlarmNode["CreateTime"].asString();
-	if(!quotaAlarmNode["QuotaDimension"].isNull())
-		quotaAlarm_.quotaDimension = quotaAlarmNode["QuotaDimension"].asString();
-	if(!quotaAlarmNode["QuotaUsage"].isNull())
-		quotaAlarm_.quotaUsage = std::stof(quotaAlarmNode["QuotaUsage"].asString());
-	if(!quotaAlarmNode["Threshold"].isNull())
-		quotaAlarm_.threshold = std::stof(quotaAlarmNode["Threshold"].asString());
 	if(!quotaAlarmNode["ThresholdType"].isNull())
 		quotaAlarm_.thresholdType = quotaAlarmNode["ThresholdType"].asString();
+	if(!quotaAlarmNode["QuotaDimension"].isNull())
+		quotaAlarm_.quotaDimension = quotaAlarmNode["QuotaDimension"].asString();
+	if(!quotaAlarmNode["CreateTime"].isNull())
+		quotaAlarm_.createTime = quotaAlarmNode["CreateTime"].asString();
+	if(!quotaAlarmNode["QuotaActionCode"].isNull())
+		quotaAlarm_.quotaActionCode = quotaAlarmNode["QuotaActionCode"].asString();
+	if(!quotaAlarmNode["AlarmName"].isNull())
+		quotaAlarm_.alarmName = quotaAlarmNode["AlarmName"].asString();
+	if(!quotaAlarmNode["NotifyTarget"].isNull())
+		quotaAlarm_.notifyTarget = quotaAlarmNode["NotifyTarget"].asString();
+	if(!quotaAlarmNode["QuotaUsage"].isNull())
+		quotaAlarm_.quotaUsage = std::stof(quotaAlarmNode["QuotaUsage"].asString());
+	if(!quotaAlarmNode["QuotaValue"].isNull())
+		quotaAlarm_.quotaValue = std::stof(quotaAlarmNode["QuotaValue"].asString());
+	if(!quotaAlarmNode["AlarmId"].isNull())
+		quotaAlarm_.alarmId = quotaAlarmNode["AlarmId"].asString();
+	if(!quotaAlarmNode["Threshold"].isNull())
+		quotaAlarm_.threshold = std::stof(quotaAlarmNode["Threshold"].asString());
+	if(!quotaAlarmNode["ProductCode"].isNull())
+		quotaAlarm_.productCode = quotaAlarmNode["ProductCode"].asString();
+	if(!quotaAlarmNode["Webhook"].isNull())
+		quotaAlarm_.webhook = quotaAlarmNode["Webhook"].asString();
 		auto allNotifyChannels = quotaAlarmNode["NotifyChannels"]["NotifyChannels"];
 		for (auto value : allNotifyChannels)
 			quotaAlarm_.notifyChannels.push_back(value.asString());

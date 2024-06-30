@@ -34,13 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct ProductInfos
 				{
-					std::string secondCategoryNameEn;
 					bool dynamic;
-					std::string commonQuotaSupport;
+					std::string secondCategoryNameEn;
 					std::string productName;
-					std::string productCode;
+					std::string commonQuotaSupport;
 					std::string secondCategoryName;
+					std::string productCode;
 					std::string flowControlSupport;
+					std::string whiteListLabelQuotaSupport;
 					long secondCategoryId;
 					std::string productNameEn;
 				};

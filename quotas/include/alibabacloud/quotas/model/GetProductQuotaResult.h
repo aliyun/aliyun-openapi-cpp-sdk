@@ -39,28 +39,41 @@ namespace AlibabaCloud
 						int periodValue;
 						std::string periodUnit;
 					};
+					struct UsageMetric
+					{
+						std::string metricName;
+						std::string metricDimensions;
+						std::string metricNamespace;
+					};
 					struct QuotaItemsItem
 					{
-						std::string usage;
 						std::string type;
+						std::string usage;
 						std::string quota;
 						std::string quotaUnit;
 					};
 					std::string quotaDescription;
-					bool consumable;
 					std::string unadjustableDetail;
-					std::string productCode;
+					bool consumable;
+					UsageMetric usageMetric;
 					float totalUsage;
+					std::string productCode;
+					std::string effectiveTime;
 					std::string quotaType;
 					Period period;
-					std::string dimensions;
 					std::string quotaUnit;
+					std::string dimensions;
+					bool globalQuota;
 					bool adjustable;
 					std::string quotaActionCode;
 					std::vector<QuotaItemsItem> quotaItems;
 					std::string quotaName;
 					std::string quotaArn;
 					float totalQuota;
+					std::string applyReasonTips;
+					std::string quotaCategory;
+					std::vector<std::string> supportedRange;
+					std::string expireTime;
 					std::string applicableType;
 					std::vector<std::string> applicableRange;
 				};

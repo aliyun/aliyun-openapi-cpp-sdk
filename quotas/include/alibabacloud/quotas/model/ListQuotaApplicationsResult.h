@@ -40,14 +40,14 @@ namespace AlibabaCloud
 						std::string periodUnit;
 					};
 					std::string status;
-					std::string applyTime;
 					std::string comment;
+					std::string applyTime;
 					std::string quotaDescription;
-					std::string productCode;
 					std::string effectiveTime;
+					std::string productCode;
 					Period period;
-					std::string auditReason;
 					std::string quotaUnit;
+					std::string auditReason;
 					std::string dimension;
 					float approveValue;
 					std::string reason;
@@ -55,9 +55,9 @@ namespace AlibabaCloud
 					std::string quotaName;
 					std::string quotaArn;
 					int noticeType;
-					std::string applicationId;
-					float desireValue;
 					std::string expireTime;
+					float desireValue;
+					std::string applicationId;
 				};
 
 

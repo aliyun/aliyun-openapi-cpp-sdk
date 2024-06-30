@@ -55,12 +55,12 @@ void ListDependentQuotasResult::parse(const std::string &payload)
 			QuotasItem::DimensionsItem dimensionsObject;
 			if(!valueQuotasQuotasItemDimensionsDimensionsItem["DimensionKey"].isNull())
 				dimensionsObject.dimensionKey = valueQuotasQuotasItemDimensionsDimensionsItem["DimensionKey"].asString();
-			auto allDimensionValues = value["DimensionValues"]["DimensionValues"];
-			for (auto value : allDimensionValues)
-				dimensionsObject.dimensionValues.push_back(value.asString());
 			auto allDependentDimension = value["DependentDimension"]["DependentDimension"];
 			for (auto value : allDependentDimension)
 				dimensionsObject.dependentDimension.push_back(value.asString());
+			auto allDimensionValues = value["DimensionValues"]["DimensionValues"];
+			for (auto value : allDimensionValues)
+				dimensionsObject.dimensionValues.push_back(value.asString());
 			quotasObject.dimensions.push_back(dimensionsObject);
 		}
 		quotas_.push_back(quotasObject);

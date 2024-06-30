@@ -26,8 +26,14 @@
 #include "model/CreateQuotaAlarmResult.h"
 #include "model/CreateQuotaApplicationRequest.h"
 #include "model/CreateQuotaApplicationResult.h"
+#include "model/CreateQuotaApplicationsForTemplateRequest.h"
+#include "model/CreateQuotaApplicationsForTemplateResult.h"
+#include "model/CreateTemplateQuotaItemRequest.h"
+#include "model/CreateTemplateQuotaItemResult.h"
 #include "model/DeleteQuotaAlarmRequest.h"
 #include "model/DeleteQuotaAlarmResult.h"
+#include "model/DeleteTemplateQuotaItemRequest.h"
+#include "model/DeleteTemplateQuotaItemResult.h"
 #include "model/GetProductQuotaRequest.h"
 #include "model/GetProductQuotaResult.h"
 #include "model/GetProductQuotaDimensionRequest.h"
@@ -36,6 +42,10 @@
 #include "model/GetQuotaAlarmResult.h"
 #include "model/GetQuotaApplicationRequest.h"
 #include "model/GetQuotaApplicationResult.h"
+#include "model/GetQuotaApplicationApprovalRequest.h"
+#include "model/GetQuotaApplicationApprovalResult.h"
+#include "model/GetQuotaTemplateServiceStatusRequest.h"
+#include "model/GetQuotaTemplateServiceStatusResult.h"
 #include "model/ListAlarmHistoriesRequest.h"
 #include "model/ListAlarmHistoriesResult.h"
 #include "model/ListDependentQuotasRequest.h"
@@ -50,8 +60,20 @@
 #include "model/ListProductsResult.h"
 #include "model/ListQuotaAlarmsRequest.h"
 #include "model/ListQuotaAlarmsResult.h"
+#include "model/ListQuotaApplicationTemplatesRequest.h"
+#include "model/ListQuotaApplicationTemplatesResult.h"
 #include "model/ListQuotaApplicationsRequest.h"
 #include "model/ListQuotaApplicationsResult.h"
+#include "model/ListQuotaApplicationsDetailForTemplateRequest.h"
+#include "model/ListQuotaApplicationsDetailForTemplateResult.h"
+#include "model/ListQuotaApplicationsForTemplateRequest.h"
+#include "model/ListQuotaApplicationsForTemplateResult.h"
+#include "model/ModifyQuotaTemplateServiceStatusRequest.h"
+#include "model/ModifyQuotaTemplateServiceStatusResult.h"
+#include "model/ModifyTemplateQuotaItemRequest.h"
+#include "model/ModifyTemplateQuotaItemResult.h"
+#include "model/RemindQuotaApplicationApprovalRequest.h"
+#include "model/RemindQuotaApplicationApprovalResult.h"
 #include "model/UpdateQuotaAlarmRequest.h"
 #include "model/UpdateQuotaAlarmResult.h"
 
@@ -69,9 +91,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateQuotaApplicationResult> CreateQuotaApplicationOutcome;
 			typedef std::future<CreateQuotaApplicationOutcome> CreateQuotaApplicationOutcomeCallable;
 			typedef std::function<void(const QuotasClient*, const Model::CreateQuotaApplicationRequest&, const CreateQuotaApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateQuotaApplicationAsyncHandler;
+			typedef Outcome<Error, Model::CreateQuotaApplicationsForTemplateResult> CreateQuotaApplicationsForTemplateOutcome;
+			typedef std::future<CreateQuotaApplicationsForTemplateOutcome> CreateQuotaApplicationsForTemplateOutcomeCallable;
+			typedef std::function<void(const QuotasClient*, const Model::CreateQuotaApplicationsForTemplateRequest&, const CreateQuotaApplicationsForTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateQuotaApplicationsForTemplateAsyncHandler;
+			typedef Outcome<Error, Model::CreateTemplateQuotaItemResult> CreateTemplateQuotaItemOutcome;
+			typedef std::future<CreateTemplateQuotaItemOutcome> CreateTemplateQuotaItemOutcomeCallable;
+			typedef std::function<void(const QuotasClient*, const Model::CreateTemplateQuotaItemRequest&, const CreateTemplateQuotaItemOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTemplateQuotaItemAsyncHandler;
 			typedef Outcome<Error, Model::DeleteQuotaAlarmResult> DeleteQuotaAlarmOutcome;
 			typedef std::future<DeleteQuotaAlarmOutcome> DeleteQuotaAlarmOutcomeCallable;
 			typedef std::function<void(const QuotasClient*, const Model::DeleteQuotaAlarmRequest&, const DeleteQuotaAlarmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQuotaAlarmAsyncHandler;
+			typedef Outcome<Error, Model::DeleteTemplateQuotaItemResult> DeleteTemplateQuotaItemOutcome;
+			typedef std::future<DeleteTemplateQuotaItemOutcome> DeleteTemplateQuotaItemOutcomeCallable;
+			typedef std::function<void(const QuotasClient*, const Model::DeleteTemplateQuotaItemRequest&, const DeleteTemplateQuotaItemOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTemplateQuotaItemAsyncHandler;
 			typedef Outcome<Error, Model::GetProductQuotaResult> GetProductQuotaOutcome;
 			typedef std::future<GetProductQuotaOutcome> GetProductQuotaOutcomeCallable;
 			typedef std::function<void(const QuotasClient*, const Model::GetProductQuotaRequest&, const GetProductQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProductQuotaAsyncHandler;
@@ -84,6 +115,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetQuotaApplicationResult> GetQuotaApplicationOutcome;
 			typedef std::future<GetQuotaApplicationOutcome> GetQuotaApplicationOutcomeCallable;
 			typedef std::function<void(const QuotasClient*, const Model::GetQuotaApplicationRequest&, const GetQuotaApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetQuotaApplicationAsyncHandler;
+			typedef Outcome<Error, Model::GetQuotaApplicationApprovalResult> GetQuotaApplicationApprovalOutcome;
+			typedef std::future<GetQuotaApplicationApprovalOutcome> GetQuotaApplicationApprovalOutcomeCallable;
+			typedef std::function<void(const QuotasClient*, const Model::GetQuotaApplicationApprovalRequest&, const GetQuotaApplicationApprovalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetQuotaApplicationApprovalAsyncHandler;
+			typedef Outcome<Error, Model::GetQuotaTemplateServiceStatusResult> GetQuotaTemplateServiceStatusOutcome;
+			typedef std::future<GetQuotaTemplateServiceStatusOutcome> GetQuotaTemplateServiceStatusOutcomeCallable;
+			typedef std::function<void(const QuotasClient*, const Model::GetQuotaTemplateServiceStatusRequest&, const GetQuotaTemplateServiceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetQuotaTemplateServiceStatusAsyncHandler;
 			typedef Outcome<Error, Model::ListAlarmHistoriesResult> ListAlarmHistoriesOutcome;
 			typedef std::future<ListAlarmHistoriesOutcome> ListAlarmHistoriesOutcomeCallable;
 			typedef std::function<void(const QuotasClient*, const Model::ListAlarmHistoriesRequest&, const ListAlarmHistoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAlarmHistoriesAsyncHandler;
@@ -105,9 +142,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListQuotaAlarmsResult> ListQuotaAlarmsOutcome;
 			typedef std::future<ListQuotaAlarmsOutcome> ListQuotaAlarmsOutcomeCallable;
 			typedef std::function<void(const QuotasClient*, const Model::ListQuotaAlarmsRequest&, const ListQuotaAlarmsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListQuotaAlarmsAsyncHandler;
+			typedef Outcome<Error, Model::ListQuotaApplicationTemplatesResult> ListQuotaApplicationTemplatesOutcome;
+			typedef std::future<ListQuotaApplicationTemplatesOutcome> ListQuotaApplicationTemplatesOutcomeCallable;
+			typedef std::function<void(const QuotasClient*, const Model::ListQuotaApplicationTemplatesRequest&, const ListQuotaApplicationTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListQuotaApplicationTemplatesAsyncHandler;
 			typedef Outcome<Error, Model::ListQuotaApplicationsResult> ListQuotaApplicationsOutcome;
 			typedef std::future<ListQuotaApplicationsOutcome> ListQuotaApplicationsOutcomeCallable;
 			typedef std::function<void(const QuotasClient*, const Model::ListQuotaApplicationsRequest&, const ListQuotaApplicationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListQuotaApplicationsAsyncHandler;
+			typedef Outcome<Error, Model::ListQuotaApplicationsDetailForTemplateResult> ListQuotaApplicationsDetailForTemplateOutcome;
+			typedef std::future<ListQuotaApplicationsDetailForTemplateOutcome> ListQuotaApplicationsDetailForTemplateOutcomeCallable;
+			typedef std::function<void(const QuotasClient*, const Model::ListQuotaApplicationsDetailForTemplateRequest&, const ListQuotaApplicationsDetailForTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListQuotaApplicationsDetailForTemplateAsyncHandler;
+			typedef Outcome<Error, Model::ListQuotaApplicationsForTemplateResult> ListQuotaApplicationsForTemplateOutcome;
+			typedef std::future<ListQuotaApplicationsForTemplateOutcome> ListQuotaApplicationsForTemplateOutcomeCallable;
+			typedef std::function<void(const QuotasClient*, const Model::ListQuotaApplicationsForTemplateRequest&, const ListQuotaApplicationsForTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListQuotaApplicationsForTemplateAsyncHandler;
+			typedef Outcome<Error, Model::ModifyQuotaTemplateServiceStatusResult> ModifyQuotaTemplateServiceStatusOutcome;
+			typedef std::future<ModifyQuotaTemplateServiceStatusOutcome> ModifyQuotaTemplateServiceStatusOutcomeCallable;
+			typedef std::function<void(const QuotasClient*, const Model::ModifyQuotaTemplateServiceStatusRequest&, const ModifyQuotaTemplateServiceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyQuotaTemplateServiceStatusAsyncHandler;
+			typedef Outcome<Error, Model::ModifyTemplateQuotaItemResult> ModifyTemplateQuotaItemOutcome;
+			typedef std::future<ModifyTemplateQuotaItemOutcome> ModifyTemplateQuotaItemOutcomeCallable;
+			typedef std::function<void(const QuotasClient*, const Model::ModifyTemplateQuotaItemRequest&, const ModifyTemplateQuotaItemOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTemplateQuotaItemAsyncHandler;
+			typedef Outcome<Error, Model::RemindQuotaApplicationApprovalResult> RemindQuotaApplicationApprovalOutcome;
+			typedef std::future<RemindQuotaApplicationApprovalOutcome> RemindQuotaApplicationApprovalOutcomeCallable;
+			typedef std::function<void(const QuotasClient*, const Model::RemindQuotaApplicationApprovalRequest&, const RemindQuotaApplicationApprovalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemindQuotaApplicationApprovalAsyncHandler;
 			typedef Outcome<Error, Model::UpdateQuotaAlarmResult> UpdateQuotaAlarmOutcome;
 			typedef std::future<UpdateQuotaAlarmOutcome> UpdateQuotaAlarmOutcomeCallable;
 			typedef std::function<void(const QuotasClient*, const Model::UpdateQuotaAlarmRequest&, const UpdateQuotaAlarmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateQuotaAlarmAsyncHandler;
@@ -122,9 +177,18 @@ namespace AlibabaCloud
 			CreateQuotaApplicationOutcome createQuotaApplication(const Model::CreateQuotaApplicationRequest &request)const;
 			void createQuotaApplicationAsync(const Model::CreateQuotaApplicationRequest& request, const CreateQuotaApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateQuotaApplicationOutcomeCallable createQuotaApplicationCallable(const Model::CreateQuotaApplicationRequest& request) const;
+			CreateQuotaApplicationsForTemplateOutcome createQuotaApplicationsForTemplate(const Model::CreateQuotaApplicationsForTemplateRequest &request)const;
+			void createQuotaApplicationsForTemplateAsync(const Model::CreateQuotaApplicationsForTemplateRequest& request, const CreateQuotaApplicationsForTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateQuotaApplicationsForTemplateOutcomeCallable createQuotaApplicationsForTemplateCallable(const Model::CreateQuotaApplicationsForTemplateRequest& request) const;
+			CreateTemplateQuotaItemOutcome createTemplateQuotaItem(const Model::CreateTemplateQuotaItemRequest &request)const;
+			void createTemplateQuotaItemAsync(const Model::CreateTemplateQuotaItemRequest& request, const CreateTemplateQuotaItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTemplateQuotaItemOutcomeCallable createTemplateQuotaItemCallable(const Model::CreateTemplateQuotaItemRequest& request) const;
 			DeleteQuotaAlarmOutcome deleteQuotaAlarm(const Model::DeleteQuotaAlarmRequest &request)const;
 			void deleteQuotaAlarmAsync(const Model::DeleteQuotaAlarmRequest& request, const DeleteQuotaAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteQuotaAlarmOutcomeCallable deleteQuotaAlarmCallable(const Model::DeleteQuotaAlarmRequest& request) const;
+			DeleteTemplateQuotaItemOutcome deleteTemplateQuotaItem(const Model::DeleteTemplateQuotaItemRequest &request)const;
+			void deleteTemplateQuotaItemAsync(const Model::DeleteTemplateQuotaItemRequest& request, const DeleteTemplateQuotaItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteTemplateQuotaItemOutcomeCallable deleteTemplateQuotaItemCallable(const Model::DeleteTemplateQuotaItemRequest& request) const;
 			GetProductQuotaOutcome getProductQuota(const Model::GetProductQuotaRequest &request)const;
 			void getProductQuotaAsync(const Model::GetProductQuotaRequest& request, const GetProductQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetProductQuotaOutcomeCallable getProductQuotaCallable(const Model::GetProductQuotaRequest& request) const;
@@ -137,6 +201,12 @@ namespace AlibabaCloud
 			GetQuotaApplicationOutcome getQuotaApplication(const Model::GetQuotaApplicationRequest &request)const;
 			void getQuotaApplicationAsync(const Model::GetQuotaApplicationRequest& request, const GetQuotaApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetQuotaApplicationOutcomeCallable getQuotaApplicationCallable(const Model::GetQuotaApplicationRequest& request) const;
+			GetQuotaApplicationApprovalOutcome getQuotaApplicationApproval(const Model::GetQuotaApplicationApprovalRequest &request)const;
+			void getQuotaApplicationApprovalAsync(const Model::GetQuotaApplicationApprovalRequest& request, const GetQuotaApplicationApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetQuotaApplicationApprovalOutcomeCallable getQuotaApplicationApprovalCallable(const Model::GetQuotaApplicationApprovalRequest& request) const;
+			GetQuotaTemplateServiceStatusOutcome getQuotaTemplateServiceStatus(const Model::GetQuotaTemplateServiceStatusRequest &request)const;
+			void getQuotaTemplateServiceStatusAsync(const Model::GetQuotaTemplateServiceStatusRequest& request, const GetQuotaTemplateServiceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetQuotaTemplateServiceStatusOutcomeCallable getQuotaTemplateServiceStatusCallable(const Model::GetQuotaTemplateServiceStatusRequest& request) const;
 			ListAlarmHistoriesOutcome listAlarmHistories(const Model::ListAlarmHistoriesRequest &request)const;
 			void listAlarmHistoriesAsync(const Model::ListAlarmHistoriesRequest& request, const ListAlarmHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAlarmHistoriesOutcomeCallable listAlarmHistoriesCallable(const Model::ListAlarmHistoriesRequest& request) const;
@@ -158,9 +228,27 @@ namespace AlibabaCloud
 			ListQuotaAlarmsOutcome listQuotaAlarms(const Model::ListQuotaAlarmsRequest &request)const;
 			void listQuotaAlarmsAsync(const Model::ListQuotaAlarmsRequest& request, const ListQuotaAlarmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListQuotaAlarmsOutcomeCallable listQuotaAlarmsCallable(const Model::ListQuotaAlarmsRequest& request) const;
+			ListQuotaApplicationTemplatesOutcome listQuotaApplicationTemplates(const Model::ListQuotaApplicationTemplatesRequest &request)const;
+			void listQuotaApplicationTemplatesAsync(const Model::ListQuotaApplicationTemplatesRequest& request, const ListQuotaApplicationTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListQuotaApplicationTemplatesOutcomeCallable listQuotaApplicationTemplatesCallable(const Model::ListQuotaApplicationTemplatesRequest& request) const;
 			ListQuotaApplicationsOutcome listQuotaApplications(const Model::ListQuotaApplicationsRequest &request)const;
 			void listQuotaApplicationsAsync(const Model::ListQuotaApplicationsRequest& request, const ListQuotaApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListQuotaApplicationsOutcomeCallable listQuotaApplicationsCallable(const Model::ListQuotaApplicationsRequest& request) const;
+			ListQuotaApplicationsDetailForTemplateOutcome listQuotaApplicationsDetailForTemplate(const Model::ListQuotaApplicationsDetailForTemplateRequest &request)const;
+			void listQuotaApplicationsDetailForTemplateAsync(const Model::ListQuotaApplicationsDetailForTemplateRequest& request, const ListQuotaApplicationsDetailForTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListQuotaApplicationsDetailForTemplateOutcomeCallable listQuotaApplicationsDetailForTemplateCallable(const Model::ListQuotaApplicationsDetailForTemplateRequest& request) const;
+			ListQuotaApplicationsForTemplateOutcome listQuotaApplicationsForTemplate(const Model::ListQuotaApplicationsForTemplateRequest &request)const;
+			void listQuotaApplicationsForTemplateAsync(const Model::ListQuotaApplicationsForTemplateRequest& request, const ListQuotaApplicationsForTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListQuotaApplicationsForTemplateOutcomeCallable listQuotaApplicationsForTemplateCallable(const Model::ListQuotaApplicationsForTemplateRequest& request) const;
+			ModifyQuotaTemplateServiceStatusOutcome modifyQuotaTemplateServiceStatus(const Model::ModifyQuotaTemplateServiceStatusRequest &request)const;
+			void modifyQuotaTemplateServiceStatusAsync(const Model::ModifyQuotaTemplateServiceStatusRequest& request, const ModifyQuotaTemplateServiceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyQuotaTemplateServiceStatusOutcomeCallable modifyQuotaTemplateServiceStatusCallable(const Model::ModifyQuotaTemplateServiceStatusRequest& request) const;
+			ModifyTemplateQuotaItemOutcome modifyTemplateQuotaItem(const Model::ModifyTemplateQuotaItemRequest &request)const;
+			void modifyTemplateQuotaItemAsync(const Model::ModifyTemplateQuotaItemRequest& request, const ModifyTemplateQuotaItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyTemplateQuotaItemOutcomeCallable modifyTemplateQuotaItemCallable(const Model::ModifyTemplateQuotaItemRequest& request) const;
+			RemindQuotaApplicationApprovalOutcome remindQuotaApplicationApproval(const Model::RemindQuotaApplicationApprovalRequest &request)const;
+			void remindQuotaApplicationApprovalAsync(const Model::RemindQuotaApplicationApprovalRequest& request, const RemindQuotaApplicationApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemindQuotaApplicationApprovalOutcomeCallable remindQuotaApplicationApprovalCallable(const Model::RemindQuotaApplicationApprovalRequest& request) const;
 			UpdateQuotaAlarmOutcome updateQuotaAlarm(const Model::UpdateQuotaAlarmRequest &request)const;
 			void updateQuotaAlarmAsync(const Model::UpdateQuotaAlarmRequest& request, const UpdateQuotaAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateQuotaAlarmOutcomeCallable updateQuotaAlarmCallable(const Model::UpdateQuotaAlarmRequest& request) const;

@@ -40,10 +40,10 @@ namespace AlibabaCloud
 				std::string getStatus()const;
 				std::string getApplyTime()const;
 				std::string getQuotaDescription()const;
-				std::string getEffectiveTime()const;
 				std::string getProductCode()const;
-				std::string getQuotaUnit()const;
+				std::string getEffectiveTime()const;
 				std::string getAuditReason()const;
+				std::string getQuotaUnit()const;
 				std::string getDimension()const;
 				float getApproveValue()const;
 				std::string getReason()const;
@@ -51,9 +51,9 @@ namespace AlibabaCloud
 				std::string getQuotaName()const;
 				std::string getQuotaArn()const;
 				long getNoticeType()const;
-				std::string getExpireTime()const;
-				std::string getApplicationId()const;
 				int getDesireValue()const;
+				std::string getApplicationId()const;
+				std::string getExpireTime()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -61,10 +61,10 @@ namespace AlibabaCloud
 				std::string status_;
 				std::string applyTime_;
 				std::string quotaDescription_;
-				std::string effectiveTime_;
 				std::string productCode_;
-				std::string quotaUnit_;
+				std::string effectiveTime_;
 				std::string auditReason_;
+				std::string quotaUnit_;
 				std::string dimension_;
 				float approveValue_;
 				std::string reason_;
@@ -72,9 +72,9 @@ namespace AlibabaCloud
 				std::string quotaName_;
 				std::string quotaArn_;
 				long noticeType_;
-				std::string expireTime_;
-				std::string applicationId_;
 				int desireValue_;
+				std::string applicationId_;
+				std::string expireTime_;
 
 			};
 		}

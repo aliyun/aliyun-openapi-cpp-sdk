@@ -36,14 +36,20 @@ namespace AlibabaCloud
 				{
 					struct DimensionValueDetailItem
 					{
+						struct DependentDimension
+						{
+							std::string value;
+							std::string key;
+						};
 						std::string value;
+						std::vector<DimensionValueDetailItem::DependentDimension> dependentDimensions1;
 						std::string name;
 					};
 					std::string dimensionKey;
 					std::vector<std::string> dimensionValues;
 					std::vector<QuotaDimensionsItem::DimensionValueDetailItem> dimensionValueDetail;
-					std::string name;
 					bool requisite;
+					std::string name;
 					std::vector<std::string> dependentDimensions;
 				};
 

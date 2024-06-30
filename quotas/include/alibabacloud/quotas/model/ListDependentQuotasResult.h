@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					struct DimensionsItem
 					{
 						std::string dimensionKey;
-						std::vector<std::string> dimensionValues;
 						std::vector<std::string> dependentDimension;
+						std::vector<std::string> dimensionValues;
 					};
 					std::string quotaActionCode;
 					std::string productCode;

@@ -43,28 +43,38 @@ void ListProductQuotaDimensionsResult::parse(const std::string &payload)
 	for (auto valueQuotaDimensionsQuotaDimensionsItem : allQuotaDimensionsNode)
 	{
 		QuotaDimensionsItem quotaDimensionsObject;
+		if(!valueQuotaDimensionsQuotaDimensionsItem["Requisite"].isNull())
+			quotaDimensionsObject.requisite = valueQuotaDimensionsQuotaDimensionsItem["Requisite"].asString() == "true";
 		if(!valueQuotaDimensionsQuotaDimensionsItem["DimensionKey"].isNull())
 			quotaDimensionsObject.dimensionKey = valueQuotaDimensionsQuotaDimensionsItem["DimensionKey"].asString();
 		if(!valueQuotaDimensionsQuotaDimensionsItem["Name"].isNull())
 			quotaDimensionsObject.name = valueQuotaDimensionsQuotaDimensionsItem["Name"].asString();
-		if(!valueQuotaDimensionsQuotaDimensionsItem["Requisite"].isNull())
-			quotaDimensionsObject.requisite = valueQuotaDimensionsQuotaDimensionsItem["Requisite"].asString() == "true";
 		auto allDimensionValueDetailNode = valueQuotaDimensionsQuotaDimensionsItem["DimensionValueDetail"]["DimensionValueDetailItem"];
 		for (auto valueQuotaDimensionsQuotaDimensionsItemDimensionValueDetailDimensionValueDetailItem : allDimensionValueDetailNode)
 		{
 			QuotaDimensionsItem::DimensionValueDetailItem dimensionValueDetailObject;
-			if(!valueQuotaDimensionsQuotaDimensionsItemDimensionValueDetailDimensionValueDetailItem["Value"].isNull())
-				dimensionValueDetailObject.value = valueQuotaDimensionsQuotaDimensionsItemDimensionValueDetailDimensionValueDetailItem["Value"].asString();
 			if(!valueQuotaDimensionsQuotaDimensionsItemDimensionValueDetailDimensionValueDetailItem["Name"].isNull())
 				dimensionValueDetailObject.name = valueQuotaDimensionsQuotaDimensionsItemDimensionValueDetailDimensionValueDetailItem["Name"].asString();
+			if(!valueQuotaDimensionsQuotaDimensionsItemDimensionValueDetailDimensionValueDetailItem["Value"].isNull())
+				dimensionValueDetailObject.value = valueQuotaDimensionsQuotaDimensionsItemDimensionValueDetailDimensionValueDetailItem["Value"].asString();
+			auto allDependentDimensions1Node = valueQuotaDimensionsQuotaDimensionsItemDimensionValueDetailDimensionValueDetailItem["DependentDimensions"]["DependentDimension"];
+			for (auto valueQuotaDimensionsQuotaDimensionsItemDimensionValueDetailDimensionValueDetailItemDependentDimensionsDependentDimension : allDependentDimensions1Node)
+			{
+				QuotaDimensionsItem::DimensionValueDetailItem::DependentDimension dependentDimensions1Object;
+				if(!valueQuotaDimensionsQuotaDimensionsItemDimensionValueDetailDimensionValueDetailItemDependentDimensionsDependentDimension["Key"].isNull())
+					dependentDimensions1Object.key = valueQuotaDimensionsQuotaDimensionsItemDimensionValueDetailDimensionValueDetailItemDependentDimensionsDependentDimension["Key"].asString();
+				if(!valueQuotaDimensionsQuotaDimensionsItemDimensionValueDetailDimensionValueDetailItemDependentDimensionsDependentDimension["Value"].isNull())
+					dependentDimensions1Object.value = valueQuotaDimensionsQuotaDimensionsItemDimensionValueDetailDimensionValueDetailItemDependentDimensionsDependentDimension["Value"].asString();
+				dimensionValueDetailObject.dependentDimensions1.push_back(dependentDimensions1Object);
+			}
 			quotaDimensionsObject.dimensionValueDetail.push_back(dimensionValueDetailObject);
 		}
-		auto allDimensionValues = value["DimensionValues"]["DimensionValues"];
-		for (auto value : allDimensionValues)
-			quotaDimensionsObject.dimensionValues.push_back(value.asString());
 		auto allDependentDimensions = value["DependentDimensions"]["DependentDimension"];
 		for (auto value : allDependentDimensions)
 			quotaDimensionsObject.dependentDimensions.push_back(value.asString());
+		auto allDimensionValues = value["DimensionValues"]["DimensionValues"];
+		for (auto value : allDimensionValues)
+			quotaDimensionsObject.dimensionValues.push_back(value.asString());
 		quotaDimensions_.push_back(quotaDimensionsObject);
 	}
 	if(!value["TotalCount"].isNull())

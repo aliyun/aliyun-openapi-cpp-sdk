@@ -45,40 +45,40 @@ void ListQuotaApplicationsResult::parse(const std::string &payload)
 		QuotaApplicationsItem quotaApplicationsObject;
 		if(!valueQuotaApplicationsQuotaApplicationsItem["Status"].isNull())
 			quotaApplicationsObject.status = valueQuotaApplicationsQuotaApplicationsItem["Status"].asString();
-		if(!valueQuotaApplicationsQuotaApplicationsItem["ApplyTime"].isNull())
-			quotaApplicationsObject.applyTime = valueQuotaApplicationsQuotaApplicationsItem["ApplyTime"].asString();
 		if(!valueQuotaApplicationsQuotaApplicationsItem["Comment"].isNull())
 			quotaApplicationsObject.comment = valueQuotaApplicationsQuotaApplicationsItem["Comment"].asString();
-		if(!valueQuotaApplicationsQuotaApplicationsItem["QuotaDescription"].isNull())
-			quotaApplicationsObject.quotaDescription = valueQuotaApplicationsQuotaApplicationsItem["QuotaDescription"].asString();
-		if(!valueQuotaApplicationsQuotaApplicationsItem["ProductCode"].isNull())
-			quotaApplicationsObject.productCode = valueQuotaApplicationsQuotaApplicationsItem["ProductCode"].asString();
-		if(!valueQuotaApplicationsQuotaApplicationsItem["EffectiveTime"].isNull())
-			quotaApplicationsObject.effectiveTime = valueQuotaApplicationsQuotaApplicationsItem["EffectiveTime"].asString();
-		if(!valueQuotaApplicationsQuotaApplicationsItem["AuditReason"].isNull())
-			quotaApplicationsObject.auditReason = valueQuotaApplicationsQuotaApplicationsItem["AuditReason"].asString();
-		if(!valueQuotaApplicationsQuotaApplicationsItem["QuotaUnit"].isNull())
-			quotaApplicationsObject.quotaUnit = valueQuotaApplicationsQuotaApplicationsItem["QuotaUnit"].asString();
-		if(!valueQuotaApplicationsQuotaApplicationsItem["Dimension"].isNull())
-			quotaApplicationsObject.dimension = valueQuotaApplicationsQuotaApplicationsItem["Dimension"].asString();
-		if(!valueQuotaApplicationsQuotaApplicationsItem["ApproveValue"].isNull())
-			quotaApplicationsObject.approveValue = std::stof(valueQuotaApplicationsQuotaApplicationsItem["ApproveValue"].asString());
-		if(!valueQuotaApplicationsQuotaApplicationsItem["Reason"].isNull())
-			quotaApplicationsObject.reason = valueQuotaApplicationsQuotaApplicationsItem["Reason"].asString();
-		if(!valueQuotaApplicationsQuotaApplicationsItem["QuotaActionCode"].isNull())
-			quotaApplicationsObject.quotaActionCode = valueQuotaApplicationsQuotaApplicationsItem["QuotaActionCode"].asString();
-		if(!valueQuotaApplicationsQuotaApplicationsItem["QuotaName"].isNull())
-			quotaApplicationsObject.quotaName = valueQuotaApplicationsQuotaApplicationsItem["QuotaName"].asString();
-		if(!valueQuotaApplicationsQuotaApplicationsItem["QuotaArn"].isNull())
-			quotaApplicationsObject.quotaArn = valueQuotaApplicationsQuotaApplicationsItem["QuotaArn"].asString();
-		if(!valueQuotaApplicationsQuotaApplicationsItem["NoticeType"].isNull())
-			quotaApplicationsObject.noticeType = std::stoi(valueQuotaApplicationsQuotaApplicationsItem["NoticeType"].asString());
-		if(!valueQuotaApplicationsQuotaApplicationsItem["ApplicationId"].isNull())
-			quotaApplicationsObject.applicationId = valueQuotaApplicationsQuotaApplicationsItem["ApplicationId"].asString();
-		if(!valueQuotaApplicationsQuotaApplicationsItem["DesireValue"].isNull())
-			quotaApplicationsObject.desireValue = std::stof(valueQuotaApplicationsQuotaApplicationsItem["DesireValue"].asString());
 		if(!valueQuotaApplicationsQuotaApplicationsItem["ExpireTime"].isNull())
 			quotaApplicationsObject.expireTime = valueQuotaApplicationsQuotaApplicationsItem["ExpireTime"].asString();
+		if(!valueQuotaApplicationsQuotaApplicationsItem["QuotaUnit"].isNull())
+			quotaApplicationsObject.quotaUnit = valueQuotaApplicationsQuotaApplicationsItem["QuotaUnit"].asString();
+		if(!valueQuotaApplicationsQuotaApplicationsItem["DesireValue"].isNull())
+			quotaApplicationsObject.desireValue = std::stof(valueQuotaApplicationsQuotaApplicationsItem["DesireValue"].asString());
+		if(!valueQuotaApplicationsQuotaApplicationsItem["NoticeType"].isNull())
+			quotaApplicationsObject.noticeType = std::stoi(valueQuotaApplicationsQuotaApplicationsItem["NoticeType"].asString());
+		if(!valueQuotaApplicationsQuotaApplicationsItem["QuotaActionCode"].isNull())
+			quotaApplicationsObject.quotaActionCode = valueQuotaApplicationsQuotaApplicationsItem["QuotaActionCode"].asString();
+		if(!valueQuotaApplicationsQuotaApplicationsItem["Dimension"].isNull())
+			quotaApplicationsObject.dimension = valueQuotaApplicationsQuotaApplicationsItem["Dimension"].asString();
+		if(!valueQuotaApplicationsQuotaApplicationsItem["QuotaDescription"].isNull())
+			quotaApplicationsObject.quotaDescription = valueQuotaApplicationsQuotaApplicationsItem["QuotaDescription"].asString();
+		if(!valueQuotaApplicationsQuotaApplicationsItem["QuotaArn"].isNull())
+			quotaApplicationsObject.quotaArn = valueQuotaApplicationsQuotaApplicationsItem["QuotaArn"].asString();
+		if(!valueQuotaApplicationsQuotaApplicationsItem["EffectiveTime"].isNull())
+			quotaApplicationsObject.effectiveTime = valueQuotaApplicationsQuotaApplicationsItem["EffectiveTime"].asString();
+		if(!valueQuotaApplicationsQuotaApplicationsItem["ApproveValue"].isNull())
+			quotaApplicationsObject.approveValue = std::stof(valueQuotaApplicationsQuotaApplicationsItem["ApproveValue"].asString());
+		if(!valueQuotaApplicationsQuotaApplicationsItem["QuotaName"].isNull())
+			quotaApplicationsObject.quotaName = valueQuotaApplicationsQuotaApplicationsItem["QuotaName"].asString();
+		if(!valueQuotaApplicationsQuotaApplicationsItem["ApplicationId"].isNull())
+			quotaApplicationsObject.applicationId = valueQuotaApplicationsQuotaApplicationsItem["ApplicationId"].asString();
+		if(!valueQuotaApplicationsQuotaApplicationsItem["AuditReason"].isNull())
+			quotaApplicationsObject.auditReason = valueQuotaApplicationsQuotaApplicationsItem["AuditReason"].asString();
+		if(!valueQuotaApplicationsQuotaApplicationsItem["Reason"].isNull())
+			quotaApplicationsObject.reason = valueQuotaApplicationsQuotaApplicationsItem["Reason"].asString();
+		if(!valueQuotaApplicationsQuotaApplicationsItem["ApplyTime"].isNull())
+			quotaApplicationsObject.applyTime = valueQuotaApplicationsQuotaApplicationsItem["ApplyTime"].asString();
+		if(!valueQuotaApplicationsQuotaApplicationsItem["ProductCode"].isNull())
+			quotaApplicationsObject.productCode = valueQuotaApplicationsQuotaApplicationsItem["ProductCode"].asString();
 		auto periodNode = value["Period"];
 		if(!periodNode["PeriodValue"].isNull())
 			quotaApplicationsObject.period.periodValue = std::stol(periodNode["PeriodValue"].asString());

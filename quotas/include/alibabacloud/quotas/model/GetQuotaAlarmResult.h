@@ -45,8 +45,9 @@ namespace AlibabaCloud
 					std::string alarmName;
 					std::string notifyTarget;
 					std::string quotaDimension;
-					float threshold;
+					std::string webhook;
 					std::string thresholdType;
+					float threshold;
 				};
 
 

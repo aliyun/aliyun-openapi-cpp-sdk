@@ -123,6 +123,78 @@ QuotasClient::CreateQuotaApplicationOutcomeCallable QuotasClient::createQuotaApp
 	return task->get_future();
 }
 
+QuotasClient::CreateQuotaApplicationsForTemplateOutcome QuotasClient::createQuotaApplicationsForTemplate(const CreateQuotaApplicationsForTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateQuotaApplicationsForTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateQuotaApplicationsForTemplateOutcome(CreateQuotaApplicationsForTemplateResult(outcome.result()));
+	else
+		return CreateQuotaApplicationsForTemplateOutcome(outcome.error());
+}
+
+void QuotasClient::createQuotaApplicationsForTemplateAsync(const CreateQuotaApplicationsForTemplateRequest& request, const CreateQuotaApplicationsForTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createQuotaApplicationsForTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+QuotasClient::CreateQuotaApplicationsForTemplateOutcomeCallable QuotasClient::createQuotaApplicationsForTemplateCallable(const CreateQuotaApplicationsForTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateQuotaApplicationsForTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->createQuotaApplicationsForTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+QuotasClient::CreateTemplateQuotaItemOutcome QuotasClient::createTemplateQuotaItem(const CreateTemplateQuotaItemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTemplateQuotaItemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTemplateQuotaItemOutcome(CreateTemplateQuotaItemResult(outcome.result()));
+	else
+		return CreateTemplateQuotaItemOutcome(outcome.error());
+}
+
+void QuotasClient::createTemplateQuotaItemAsync(const CreateTemplateQuotaItemRequest& request, const CreateTemplateQuotaItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTemplateQuotaItem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+QuotasClient::CreateTemplateQuotaItemOutcomeCallable QuotasClient::createTemplateQuotaItemCallable(const CreateTemplateQuotaItemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTemplateQuotaItemOutcome()>>(
+			[this, request]()
+			{
+			return this->createTemplateQuotaItem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 QuotasClient::DeleteQuotaAlarmOutcome QuotasClient::deleteQuotaAlarm(const DeleteQuotaAlarmRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +225,42 @@ QuotasClient::DeleteQuotaAlarmOutcomeCallable QuotasClient::deleteQuotaAlarmCall
 			[this, request]()
 			{
 			return this->deleteQuotaAlarm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+QuotasClient::DeleteTemplateQuotaItemOutcome QuotasClient::deleteTemplateQuotaItem(const DeleteTemplateQuotaItemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTemplateQuotaItemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTemplateQuotaItemOutcome(DeleteTemplateQuotaItemResult(outcome.result()));
+	else
+		return DeleteTemplateQuotaItemOutcome(outcome.error());
+}
+
+void QuotasClient::deleteTemplateQuotaItemAsync(const DeleteTemplateQuotaItemRequest& request, const DeleteTemplateQuotaItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTemplateQuotaItem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+QuotasClient::DeleteTemplateQuotaItemOutcomeCallable QuotasClient::deleteTemplateQuotaItemCallable(const DeleteTemplateQuotaItemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTemplateQuotaItemOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTemplateQuotaItem(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -297,6 +405,78 @@ QuotasClient::GetQuotaApplicationOutcomeCallable QuotasClient::getQuotaApplicati
 			[this, request]()
 			{
 			return this->getQuotaApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+QuotasClient::GetQuotaApplicationApprovalOutcome QuotasClient::getQuotaApplicationApproval(const GetQuotaApplicationApprovalRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetQuotaApplicationApprovalOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetQuotaApplicationApprovalOutcome(GetQuotaApplicationApprovalResult(outcome.result()));
+	else
+		return GetQuotaApplicationApprovalOutcome(outcome.error());
+}
+
+void QuotasClient::getQuotaApplicationApprovalAsync(const GetQuotaApplicationApprovalRequest& request, const GetQuotaApplicationApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getQuotaApplicationApproval(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+QuotasClient::GetQuotaApplicationApprovalOutcomeCallable QuotasClient::getQuotaApplicationApprovalCallable(const GetQuotaApplicationApprovalRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetQuotaApplicationApprovalOutcome()>>(
+			[this, request]()
+			{
+			return this->getQuotaApplicationApproval(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+QuotasClient::GetQuotaTemplateServiceStatusOutcome QuotasClient::getQuotaTemplateServiceStatus(const GetQuotaTemplateServiceStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetQuotaTemplateServiceStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetQuotaTemplateServiceStatusOutcome(GetQuotaTemplateServiceStatusResult(outcome.result()));
+	else
+		return GetQuotaTemplateServiceStatusOutcome(outcome.error());
+}
+
+void QuotasClient::getQuotaTemplateServiceStatusAsync(const GetQuotaTemplateServiceStatusRequest& request, const GetQuotaTemplateServiceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getQuotaTemplateServiceStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+QuotasClient::GetQuotaTemplateServiceStatusOutcomeCallable QuotasClient::getQuotaTemplateServiceStatusCallable(const GetQuotaTemplateServiceStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetQuotaTemplateServiceStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getQuotaTemplateServiceStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -555,6 +735,42 @@ QuotasClient::ListQuotaAlarmsOutcomeCallable QuotasClient::listQuotaAlarmsCallab
 	return task->get_future();
 }
 
+QuotasClient::ListQuotaApplicationTemplatesOutcome QuotasClient::listQuotaApplicationTemplates(const ListQuotaApplicationTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListQuotaApplicationTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListQuotaApplicationTemplatesOutcome(ListQuotaApplicationTemplatesResult(outcome.result()));
+	else
+		return ListQuotaApplicationTemplatesOutcome(outcome.error());
+}
+
+void QuotasClient::listQuotaApplicationTemplatesAsync(const ListQuotaApplicationTemplatesRequest& request, const ListQuotaApplicationTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listQuotaApplicationTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+QuotasClient::ListQuotaApplicationTemplatesOutcomeCallable QuotasClient::listQuotaApplicationTemplatesCallable(const ListQuotaApplicationTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListQuotaApplicationTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->listQuotaApplicationTemplates(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 QuotasClient::ListQuotaApplicationsOutcome QuotasClient::listQuotaApplications(const ListQuotaApplicationsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +801,186 @@ QuotasClient::ListQuotaApplicationsOutcomeCallable QuotasClient::listQuotaApplic
 			[this, request]()
 			{
 			return this->listQuotaApplications(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+QuotasClient::ListQuotaApplicationsDetailForTemplateOutcome QuotasClient::listQuotaApplicationsDetailForTemplate(const ListQuotaApplicationsDetailForTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListQuotaApplicationsDetailForTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListQuotaApplicationsDetailForTemplateOutcome(ListQuotaApplicationsDetailForTemplateResult(outcome.result()));
+	else
+		return ListQuotaApplicationsDetailForTemplateOutcome(outcome.error());
+}
+
+void QuotasClient::listQuotaApplicationsDetailForTemplateAsync(const ListQuotaApplicationsDetailForTemplateRequest& request, const ListQuotaApplicationsDetailForTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listQuotaApplicationsDetailForTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+QuotasClient::ListQuotaApplicationsDetailForTemplateOutcomeCallable QuotasClient::listQuotaApplicationsDetailForTemplateCallable(const ListQuotaApplicationsDetailForTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListQuotaApplicationsDetailForTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->listQuotaApplicationsDetailForTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+QuotasClient::ListQuotaApplicationsForTemplateOutcome QuotasClient::listQuotaApplicationsForTemplate(const ListQuotaApplicationsForTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListQuotaApplicationsForTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListQuotaApplicationsForTemplateOutcome(ListQuotaApplicationsForTemplateResult(outcome.result()));
+	else
+		return ListQuotaApplicationsForTemplateOutcome(outcome.error());
+}
+
+void QuotasClient::listQuotaApplicationsForTemplateAsync(const ListQuotaApplicationsForTemplateRequest& request, const ListQuotaApplicationsForTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listQuotaApplicationsForTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+QuotasClient::ListQuotaApplicationsForTemplateOutcomeCallable QuotasClient::listQuotaApplicationsForTemplateCallable(const ListQuotaApplicationsForTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListQuotaApplicationsForTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->listQuotaApplicationsForTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+QuotasClient::ModifyQuotaTemplateServiceStatusOutcome QuotasClient::modifyQuotaTemplateServiceStatus(const ModifyQuotaTemplateServiceStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyQuotaTemplateServiceStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyQuotaTemplateServiceStatusOutcome(ModifyQuotaTemplateServiceStatusResult(outcome.result()));
+	else
+		return ModifyQuotaTemplateServiceStatusOutcome(outcome.error());
+}
+
+void QuotasClient::modifyQuotaTemplateServiceStatusAsync(const ModifyQuotaTemplateServiceStatusRequest& request, const ModifyQuotaTemplateServiceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyQuotaTemplateServiceStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+QuotasClient::ModifyQuotaTemplateServiceStatusOutcomeCallable QuotasClient::modifyQuotaTemplateServiceStatusCallable(const ModifyQuotaTemplateServiceStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyQuotaTemplateServiceStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyQuotaTemplateServiceStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+QuotasClient::ModifyTemplateQuotaItemOutcome QuotasClient::modifyTemplateQuotaItem(const ModifyTemplateQuotaItemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyTemplateQuotaItemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyTemplateQuotaItemOutcome(ModifyTemplateQuotaItemResult(outcome.result()));
+	else
+		return ModifyTemplateQuotaItemOutcome(outcome.error());
+}
+
+void QuotasClient::modifyTemplateQuotaItemAsync(const ModifyTemplateQuotaItemRequest& request, const ModifyTemplateQuotaItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyTemplateQuotaItem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+QuotasClient::ModifyTemplateQuotaItemOutcomeCallable QuotasClient::modifyTemplateQuotaItemCallable(const ModifyTemplateQuotaItemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyTemplateQuotaItemOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyTemplateQuotaItem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+QuotasClient::RemindQuotaApplicationApprovalOutcome QuotasClient::remindQuotaApplicationApproval(const RemindQuotaApplicationApprovalRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemindQuotaApplicationApprovalOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemindQuotaApplicationApprovalOutcome(RemindQuotaApplicationApprovalResult(outcome.result()));
+	else
+		return RemindQuotaApplicationApprovalOutcome(outcome.error());
+}
+
+void QuotasClient::remindQuotaApplicationApprovalAsync(const RemindQuotaApplicationApprovalRequest& request, const RemindQuotaApplicationApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, remindQuotaApplicationApproval(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+QuotasClient::RemindQuotaApplicationApprovalOutcomeCallable QuotasClient::remindQuotaApplicationApprovalCallable(const RemindQuotaApplicationApprovalRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemindQuotaApplicationApprovalOutcome()>>(
+			[this, request]()
+			{
+			return this->remindQuotaApplicationApproval(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

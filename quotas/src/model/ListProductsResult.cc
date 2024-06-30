@@ -43,24 +43,26 @@ void ListProductsResult::parse(const std::string &payload)
 	for (auto valueProductInfoProductInfos : allProductInfoNode)
 	{
 		ProductInfos productInfoObject;
-		if(!valueProductInfoProductInfos["SecondCategoryNameEn"].isNull())
-			productInfoObject.secondCategoryNameEn = valueProductInfoProductInfos["SecondCategoryNameEn"].asString();
-		if(!valueProductInfoProductInfos["Dynamic"].isNull())
-			productInfoObject.dynamic = valueProductInfoProductInfos["Dynamic"].asString() == "true";
-		if(!valueProductInfoProductInfos["CommonQuotaSupport"].isNull())
-			productInfoObject.commonQuotaSupport = valueProductInfoProductInfos["CommonQuotaSupport"].asString();
 		if(!valueProductInfoProductInfos["ProductName"].isNull())
 			productInfoObject.productName = valueProductInfoProductInfos["ProductName"].asString();
-		if(!valueProductInfoProductInfos["ProductCode"].isNull())
-			productInfoObject.productCode = valueProductInfoProductInfos["ProductCode"].asString();
-		if(!valueProductInfoProductInfos["SecondCategoryName"].isNull())
-			productInfoObject.secondCategoryName = valueProductInfoProductInfos["SecondCategoryName"].asString();
-		if(!valueProductInfoProductInfos["FlowControlSupport"].isNull())
-			productInfoObject.flowControlSupport = valueProductInfoProductInfos["FlowControlSupport"].asString();
 		if(!valueProductInfoProductInfos["SecondCategoryId"].isNull())
 			productInfoObject.secondCategoryId = std::stol(valueProductInfoProductInfos["SecondCategoryId"].asString());
 		if(!valueProductInfoProductInfos["ProductNameEn"].isNull())
 			productInfoObject.productNameEn = valueProductInfoProductInfos["ProductNameEn"].asString();
+		if(!valueProductInfoProductInfos["Dynamic"].isNull())
+			productInfoObject.dynamic = valueProductInfoProductInfos["Dynamic"].asString() == "true";
+		if(!valueProductInfoProductInfos["SecondCategoryNameEn"].isNull())
+			productInfoObject.secondCategoryNameEn = valueProductInfoProductInfos["SecondCategoryNameEn"].asString();
+		if(!valueProductInfoProductInfos["SecondCategoryName"].isNull())
+			productInfoObject.secondCategoryName = valueProductInfoProductInfos["SecondCategoryName"].asString();
+		if(!valueProductInfoProductInfos["ProductCode"].isNull())
+			productInfoObject.productCode = valueProductInfoProductInfos["ProductCode"].asString();
+		if(!valueProductInfoProductInfos["FlowControlSupport"].isNull())
+			productInfoObject.flowControlSupport = valueProductInfoProductInfos["FlowControlSupport"].asString();
+		if(!valueProductInfoProductInfos["CommonQuotaSupport"].isNull())
+			productInfoObject.commonQuotaSupport = valueProductInfoProductInfos["CommonQuotaSupport"].asString();
+		if(!valueProductInfoProductInfos["WhiteListLabelQuotaSupport"].isNull())
+			productInfoObject.whiteListLabelQuotaSupport = valueProductInfoProductInfos["WhiteListLabelQuotaSupport"].asString();
 		productInfo_.push_back(productInfoObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -25,8 +25,14 @@ set(quotas_public_header_model
 	include/alibabacloud/quotas/model/CreateQuotaAlarmResult.h
 	include/alibabacloud/quotas/model/CreateQuotaApplicationRequest.h
 	include/alibabacloud/quotas/model/CreateQuotaApplicationResult.h
+	include/alibabacloud/quotas/model/CreateQuotaApplicationsForTemplateRequest.h
+	include/alibabacloud/quotas/model/CreateQuotaApplicationsForTemplateResult.h
+	include/alibabacloud/quotas/model/CreateTemplateQuotaItemRequest.h
+	include/alibabacloud/quotas/model/CreateTemplateQuotaItemResult.h
 	include/alibabacloud/quotas/model/DeleteQuotaAlarmRequest.h
 	include/alibabacloud/quotas/model/DeleteQuotaAlarmResult.h
+	include/alibabacloud/quotas/model/DeleteTemplateQuotaItemRequest.h
+	include/alibabacloud/quotas/model/DeleteTemplateQuotaItemResult.h
 	include/alibabacloud/quotas/model/GetProductQuotaRequest.h
 	include/alibabacloud/quotas/model/GetProductQuotaResult.h
 	include/alibabacloud/quotas/model/GetProductQuotaDimensionRequest.h
@@ -35,6 +41,10 @@ set(quotas_public_header_model
 	include/alibabacloud/quotas/model/GetQuotaAlarmResult.h
 	include/alibabacloud/quotas/model/GetQuotaApplicationRequest.h
 	include/alibabacloud/quotas/model/GetQuotaApplicationResult.h
+	include/alibabacloud/quotas/model/GetQuotaApplicationApprovalRequest.h
+	include/alibabacloud/quotas/model/GetQuotaApplicationApprovalResult.h
+	include/alibabacloud/quotas/model/GetQuotaTemplateServiceStatusRequest.h
+	include/alibabacloud/quotas/model/GetQuotaTemplateServiceStatusResult.h
 	include/alibabacloud/quotas/model/ListAlarmHistoriesRequest.h
 	include/alibabacloud/quotas/model/ListAlarmHistoriesResult.h
 	include/alibabacloud/quotas/model/ListDependentQuotasRequest.h
@@ -49,8 +59,20 @@ set(quotas_public_header_model
 	include/alibabacloud/quotas/model/ListProductsResult.h
 	include/alibabacloud/quotas/model/ListQuotaAlarmsRequest.h
 	include/alibabacloud/quotas/model/ListQuotaAlarmsResult.h
+	include/alibabacloud/quotas/model/ListQuotaApplicationTemplatesRequest.h
+	include/alibabacloud/quotas/model/ListQuotaApplicationTemplatesResult.h
 	include/alibabacloud/quotas/model/ListQuotaApplicationsRequest.h
 	include/alibabacloud/quotas/model/ListQuotaApplicationsResult.h
+	include/alibabacloud/quotas/model/ListQuotaApplicationsDetailForTemplateRequest.h
+	include/alibabacloud/quotas/model/ListQuotaApplicationsDetailForTemplateResult.h
+	include/alibabacloud/quotas/model/ListQuotaApplicationsForTemplateRequest.h
+	include/alibabacloud/quotas/model/ListQuotaApplicationsForTemplateResult.h
+	include/alibabacloud/quotas/model/ModifyQuotaTemplateServiceStatusRequest.h
+	include/alibabacloud/quotas/model/ModifyQuotaTemplateServiceStatusResult.h
+	include/alibabacloud/quotas/model/ModifyTemplateQuotaItemRequest.h
+	include/alibabacloud/quotas/model/ModifyTemplateQuotaItemResult.h
+	include/alibabacloud/quotas/model/RemindQuotaApplicationApprovalRequest.h
+	include/alibabacloud/quotas/model/RemindQuotaApplicationApprovalResult.h
 	include/alibabacloud/quotas/model/UpdateQuotaAlarmRequest.h
 	include/alibabacloud/quotas/model/UpdateQuotaAlarmResult.h )
 
@@ -60,8 +82,14 @@ set(quotas_src
 	src/model/CreateQuotaAlarmResult.cc
 	src/model/CreateQuotaApplicationRequest.cc
 	src/model/CreateQuotaApplicationResult.cc
+	src/model/CreateQuotaApplicationsForTemplateRequest.cc
+	src/model/CreateQuotaApplicationsForTemplateResult.cc
+	src/model/CreateTemplateQuotaItemRequest.cc
+	src/model/CreateTemplateQuotaItemResult.cc
 	src/model/DeleteQuotaAlarmRequest.cc
 	src/model/DeleteQuotaAlarmResult.cc
+	src/model/DeleteTemplateQuotaItemRequest.cc
+	src/model/DeleteTemplateQuotaItemResult.cc
 	src/model/GetProductQuotaRequest.cc
 	src/model/GetProductQuotaResult.cc
 	src/model/GetProductQuotaDimensionRequest.cc
@@ -70,6 +98,10 @@ set(quotas_src
 	src/model/GetQuotaAlarmResult.cc
 	src/model/GetQuotaApplicationRequest.cc
 	src/model/GetQuotaApplicationResult.cc
+	src/model/GetQuotaApplicationApprovalRequest.cc
+	src/model/GetQuotaApplicationApprovalResult.cc
+	src/model/GetQuotaTemplateServiceStatusRequest.cc
+	src/model/GetQuotaTemplateServiceStatusResult.cc
 	src/model/ListAlarmHistoriesRequest.cc
 	src/model/ListAlarmHistoriesResult.cc
 	src/model/ListDependentQuotasRequest.cc
@@ -84,8 +116,20 @@ set(quotas_src
 	src/model/ListProductsResult.cc
 	src/model/ListQuotaAlarmsRequest.cc
 	src/model/ListQuotaAlarmsResult.cc
+	src/model/ListQuotaApplicationTemplatesRequest.cc
+	src/model/ListQuotaApplicationTemplatesResult.cc
 	src/model/ListQuotaApplicationsRequest.cc
 	src/model/ListQuotaApplicationsResult.cc
+	src/model/ListQuotaApplicationsDetailForTemplateRequest.cc
+	src/model/ListQuotaApplicationsDetailForTemplateResult.cc
+	src/model/ListQuotaApplicationsForTemplateRequest.cc
+	src/model/ListQuotaApplicationsForTemplateResult.cc
+	src/model/ModifyQuotaTemplateServiceStatusRequest.cc
+	src/model/ModifyQuotaTemplateServiceStatusResult.cc
+	src/model/ModifyTemplateQuotaItemRequest.cc
+	src/model/ModifyTemplateQuotaItemResult.cc
+	src/model/RemindQuotaApplicationApprovalRequest.cc
+	src/model/RemindQuotaApplicationApprovalResult.cc
 	src/model/UpdateQuotaAlarmRequest.cc
 	src/model/UpdateQuotaAlarmResult.cc )
 

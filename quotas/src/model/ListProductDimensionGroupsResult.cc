@@ -43,12 +43,12 @@ void ListProductDimensionGroupsResult::parse(const std::string &payload)
 	for (auto valueDimensionGroupsDimensionGroupsItem : allDimensionGroupsNode)
 	{
 		DimensionGroupsItem dimensionGroupsObject;
-		if(!valueDimensionGroupsDimensionGroupsItem["GroupName"].isNull())
-			dimensionGroupsObject.groupName = valueDimensionGroupsDimensionGroupsItem["GroupName"].asString();
 		if(!valueDimensionGroupsDimensionGroupsItem["ProductCode"].isNull())
 			dimensionGroupsObject.productCode = valueDimensionGroupsDimensionGroupsItem["ProductCode"].asString();
 		if(!valueDimensionGroupsDimensionGroupsItem["GroupCode"].isNull())
 			dimensionGroupsObject.groupCode = valueDimensionGroupsDimensionGroupsItem["GroupCode"].asString();
+		if(!valueDimensionGroupsDimensionGroupsItem["GroupName"].isNull())
+			dimensionGroupsObject.groupName = valueDimensionGroupsDimensionGroupsItem["GroupName"].asString();
 		auto allDimensionKeys = value["DimensionKeys"]["DimensionKeys"];
 		for (auto value : allDimensionKeys)
 			dimensionGroupsObject.dimensionKeys.push_back(value.asString());

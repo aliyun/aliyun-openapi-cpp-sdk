@@ -43,34 +43,34 @@ void ListQuotaAlarmsResult::parse(const std::string &payload)
 	for (auto valueQuotaAlarmsQuotaAlarm : allQuotaAlarmsNode)
 	{
 		QuotaAlarm quotaAlarmsObject;
-		if(!valueQuotaAlarmsQuotaAlarm["AlarmId"].isNull())
-			quotaAlarmsObject.alarmId = valueQuotaAlarmsQuotaAlarm["AlarmId"].asString();
-		if(!valueQuotaAlarmsQuotaAlarm["QuotaDimensions"].isNull())
-			quotaAlarmsObject.quotaDimensions = valueQuotaAlarmsQuotaAlarm["QuotaDimensions"].asString();
 		if(!valueQuotaAlarmsQuotaAlarm["ThresholdPercent"].isNull())
 			quotaAlarmsObject.thresholdPercent = std::stof(valueQuotaAlarmsQuotaAlarm["ThresholdPercent"].asString());
-		if(!valueQuotaAlarmsQuotaAlarm["ProductCode"].isNull())
-			quotaAlarmsObject.productCode = valueQuotaAlarmsQuotaAlarm["ProductCode"].asString();
+		if(!valueQuotaAlarmsQuotaAlarm["ThresholdType"].isNull())
+			quotaAlarmsObject.thresholdType = valueQuotaAlarmsQuotaAlarm["ThresholdType"].asString();
+		if(!valueQuotaAlarmsQuotaAlarm["QuotaDimensions"].isNull())
+			quotaAlarmsObject.quotaDimensions = valueQuotaAlarmsQuotaAlarm["QuotaDimensions"].asString();
 		if(!valueQuotaAlarmsQuotaAlarm["CreateTime"].isNull())
 			quotaAlarmsObject.createTime = valueQuotaAlarmsQuotaAlarm["CreateTime"].asString();
-		if(!valueQuotaAlarmsQuotaAlarm["WebHook"].isNull())
-			quotaAlarmsObject.webHook = valueQuotaAlarmsQuotaAlarm["WebHook"].asString();
-		if(!valueQuotaAlarmsQuotaAlarm["QuotaUsage"].isNull())
-			quotaAlarmsObject.quotaUsage = std::stof(valueQuotaAlarmsQuotaAlarm["QuotaUsage"].asString());
-		if(!valueQuotaAlarmsQuotaAlarm["ExceedThreshold"].isNull())
-			quotaAlarmsObject.exceedThreshold = valueQuotaAlarmsQuotaAlarm["ExceedThreshold"].asString() == "true";
 		if(!valueQuotaAlarmsQuotaAlarm["QuotaActionCode"].isNull())
 			quotaAlarmsObject.quotaActionCode = valueQuotaAlarmsQuotaAlarm["QuotaActionCode"].asString();
-		if(!valueQuotaAlarmsQuotaAlarm["QuotaValue"].isNull())
-			quotaAlarmsObject.quotaValue = std::stof(valueQuotaAlarmsQuotaAlarm["QuotaValue"].asString());
 		if(!valueQuotaAlarmsQuotaAlarm["AlarmName"].isNull())
 			quotaAlarmsObject.alarmName = valueQuotaAlarmsQuotaAlarm["AlarmName"].asString();
 		if(!valueQuotaAlarmsQuotaAlarm["NotifyTarget"].isNull())
 			quotaAlarmsObject.notifyTarget = valueQuotaAlarmsQuotaAlarm["NotifyTarget"].asString();
+		if(!valueQuotaAlarmsQuotaAlarm["QuotaUsage"].isNull())
+			quotaAlarmsObject.quotaUsage = std::stof(valueQuotaAlarmsQuotaAlarm["QuotaUsage"].asString());
+		if(!valueQuotaAlarmsQuotaAlarm["QuotaValue"].isNull())
+			quotaAlarmsObject.quotaValue = std::stof(valueQuotaAlarmsQuotaAlarm["QuotaValue"].asString());
+		if(!valueQuotaAlarmsQuotaAlarm["AlarmId"].isNull())
+			quotaAlarmsObject.alarmId = valueQuotaAlarmsQuotaAlarm["AlarmId"].asString();
 		if(!valueQuotaAlarmsQuotaAlarm["Threshold"].isNull())
 			quotaAlarmsObject.threshold = std::stof(valueQuotaAlarmsQuotaAlarm["Threshold"].asString());
-		if(!valueQuotaAlarmsQuotaAlarm["ThresholdType"].isNull())
-			quotaAlarmsObject.thresholdType = valueQuotaAlarmsQuotaAlarm["ThresholdType"].asString();
+		if(!valueQuotaAlarmsQuotaAlarm["ProductCode"].isNull())
+			quotaAlarmsObject.productCode = valueQuotaAlarmsQuotaAlarm["ProductCode"].asString();
+		if(!valueQuotaAlarmsQuotaAlarm["WebHook"].isNull())
+			quotaAlarmsObject.webHook = valueQuotaAlarmsQuotaAlarm["WebHook"].asString();
+		if(!valueQuotaAlarmsQuotaAlarm["ExceedThreshold"].isNull())
+			quotaAlarmsObject.exceedThreshold = valueQuotaAlarmsQuotaAlarm["ExceedThreshold"].asString() == "true";
 		auto allNotifyChannels = value["NotifyChannels"]["NotifyChannels"];
 		for (auto value : allNotifyChannels)
 			quotaAlarmsObject.notifyChannels.push_back(value.asString());

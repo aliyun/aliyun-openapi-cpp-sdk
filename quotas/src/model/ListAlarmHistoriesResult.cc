@@ -43,33 +43,33 @@ void ListAlarmHistoriesResult::parse(const std::string &payload)
 	for (auto valueAlarmHistoriesAlarmHistory : allAlarmHistoriesNode)
 	{
 		AlarmHistory alarmHistoriesObject;
-		if(!valueAlarmHistoriesAlarmHistory["AlarmName"].isNull())
-			alarmHistoriesObject.alarmName = valueAlarmHistoriesAlarmHistory["AlarmName"].asString();
 		if(!valueAlarmHistoriesAlarmHistory["QuotaUsage"].isNull())
 			alarmHistoriesObject.quotaUsage = std::stof(valueAlarmHistoriesAlarmHistory["QuotaUsage"].asString());
-		if(!valueAlarmHistoriesAlarmHistory["ProductCode"].isNull())
-			alarmHistoriesObject.productCode = valueAlarmHistoriesAlarmHistory["ProductCode"].asString();
+		if(!valueAlarmHistoriesAlarmHistory["ThresholdPercent"].isNull())
+			alarmHistoriesObject.thresholdPercent = std::stof(valueAlarmHistoriesAlarmHistory["ThresholdPercent"].asString());
 		if(!valueAlarmHistoriesAlarmHistory["CreateTime"].isNull())
 			alarmHistoriesObject.createTime = valueAlarmHistoriesAlarmHistory["CreateTime"].asString();
+		if(!valueAlarmHistoriesAlarmHistory["QuotaActionCode"].isNull())
+			alarmHistoriesObject.quotaActionCode = valueAlarmHistoriesAlarmHistory["QuotaActionCode"].asString();
+		if(!valueAlarmHistoriesAlarmHistory["AlarmName"].isNull())
+			alarmHistoriesObject.alarmName = valueAlarmHistoriesAlarmHistory["AlarmName"].asString();
 		if(!valueAlarmHistoriesAlarmHistory["NotifyTarget"].isNull())
 			alarmHistoriesObject.notifyTarget = valueAlarmHistoriesAlarmHistory["NotifyTarget"].asString();
 		if(!valueAlarmHistoriesAlarmHistory["Threshold"].isNull())
 			alarmHistoriesObject.threshold = std::stof(valueAlarmHistoriesAlarmHistory["Threshold"].asString());
-		if(!valueAlarmHistoriesAlarmHistory["ThresholdPercent"].isNull())
-			alarmHistoriesObject.thresholdPercent = std::stof(valueAlarmHistoriesAlarmHistory["ThresholdPercent"].asString());
-		if(!valueAlarmHistoriesAlarmHistory["QuotaActionCode"].isNull())
-			alarmHistoriesObject.quotaActionCode = valueAlarmHistoriesAlarmHistory["QuotaActionCode"].asString();
+		if(!valueAlarmHistoriesAlarmHistory["ProductCode"].isNull())
+			alarmHistoriesObject.productCode = valueAlarmHistoriesAlarmHistory["ProductCode"].asString();
 		auto allNotifyChannels = value["NotifyChannels"]["NotifyChannels"];
 		for (auto value : allNotifyChannels)
 			alarmHistoriesObject.notifyChannels.push_back(value.asString());
 		alarmHistories_.push_back(alarmHistoriesObject);
 	}
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 	if(!value["MaxResults"].isNull())
 		maxResults_ = std::stoi(value["MaxResults"].asString());
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
