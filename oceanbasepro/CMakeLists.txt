@@ -23,6 +23,8 @@ set(oceanbasepro_public_header
 set(oceanbasepro_public_header_model 
 	include/alibabacloud/oceanbasepro/model/BatchKillProcessListRequest.h
 	include/alibabacloud/oceanbasepro/model/BatchKillProcessListResult.h
+	include/alibabacloud/oceanbasepro/model/BatchKillSessionListRequest.h
+	include/alibabacloud/oceanbasepro/model/BatchKillSessionListResult.h
 	include/alibabacloud/oceanbasepro/model/CancelProjectModifyRecordRequest.h
 	include/alibabacloud/oceanbasepro/model/CancelProjectModifyRecordResult.h
 	include/alibabacloud/oceanbasepro/model/CreateBackupSetDownloadLinkRequest.h
@@ -161,6 +163,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeSampleSqlRawTextsResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeSecurityIpGroupsRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeSecurityIpGroupsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeSessionListRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeSessionListResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLHistoryListRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLHistoryListResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLListRequest.h
@@ -280,6 +284,8 @@ set(oceanbasepro_src
 	src/OceanBaseProClient.cc
 	src/model/BatchKillProcessListRequest.cc
 	src/model/BatchKillProcessListResult.cc
+	src/model/BatchKillSessionListRequest.cc
+	src/model/BatchKillSessionListResult.cc
 	src/model/CancelProjectModifyRecordRequest.cc
 	src/model/CancelProjectModifyRecordResult.cc
 	src/model/CreateBackupSetDownloadLinkRequest.cc
@@ -418,6 +424,8 @@ set(oceanbasepro_src
 	src/model/DescribeSampleSqlRawTextsResult.cc
 	src/model/DescribeSecurityIpGroupsRequest.cc
 	src/model/DescribeSecurityIpGroupsResult.cc
+	src/model/DescribeSessionListRequest.cc
+	src/model/DescribeSessionListResult.cc
 	src/model/DescribeSlowSQLHistoryListRequest.cc
 	src/model/DescribeSlowSQLHistoryListResult.cc
 	src/model/DescribeSlowSQLListRequest.cc

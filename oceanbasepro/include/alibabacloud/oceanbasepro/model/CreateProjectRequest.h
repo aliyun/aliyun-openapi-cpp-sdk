@@ -235,6 +235,7 @@ public:
 		int mqPartition;
 		std::string syncSchemaColumnName;
 		bool activeActive;
+		std::string sinkStoreFormat;
 		bool rocketMqEnableMsgTrace;
 		struct CustomColumnsItem {
 			std::string expression;
@@ -249,6 +250,7 @@ public:
 		std::string datahubTopicType;
 		std::string rocketMqMsgTags;
 		std::string dataWorksBusinessName;
+		std::string sourceStoreFormat;
 		bool syncSchema;
 		std::string mqSerializerType;
 	};

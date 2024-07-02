@@ -25,6 +25,16 @@ UpdateProjectConfigRequest::UpdateProjectConfigRequest()
 
 UpdateProjectConfigRequest::~UpdateProjectConfigRequest() {}
 
+UpdateProjectConfigRequest::CommonTransferConfig UpdateProjectConfigRequest::getCommonTransferConfig() const {
+  return commonTransferConfig_;
+}
+
+void UpdateProjectConfigRequest::setCommonTransferConfig(const UpdateProjectConfigRequest::CommonTransferConfig &commonTransferConfig) {
+  commonTransferConfig_ = commonTransferConfig;
+  setBodyParameter(std::string("CommonTransferConfig") + ".SinkStoreFormat", commonTransferConfig.sinkStoreFormat);
+  setBodyParameter(std::string("CommonTransferConfig") + ".SourceStoreFormat", commonTransferConfig.sourceStoreFormat);
+}
+
 UpdateProjectConfigRequest::ReverseIncrTransferConfig UpdateProjectConfigRequest::getReverseIncrTransferConfig() const {
   return reverseIncrTransferConfig_;
 }

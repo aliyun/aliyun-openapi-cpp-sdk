@@ -28,6 +28,10 @@ namespace OceanBasePro {
 namespace Model {
 class ALIBABACLOUD_OCEANBASEPRO_EXPORT UpdateProjectConfigRequest : public RpcServiceRequest {
 public:
+	struct CommonTransferConfig {
+		std::string sinkStoreFormat;
+		std::string sourceStoreFormat;
+	};
 	struct ReverseIncrTransferConfig {
 		int throttleRps;
 		std::string string;
@@ -54,6 +58,8 @@ public:
 	};
 	UpdateProjectConfigRequest();
 	~UpdateProjectConfigRequest();
+	CommonTransferConfig getCommonTransferConfig() const;
+	void setCommonTransferConfig(const CommonTransferConfig &commonTransferConfig);
 	ReverseIncrTransferConfig getReverseIncrTransferConfig() const;
 	void setReverseIncrTransferConfig(const ReverseIncrTransferConfig &reverseIncrTransferConfig);
 	FullTransferConfig getFullTransferConfig() const;
@@ -64,6 +70,7 @@ public:
 	void setIncrTransferConfig(const IncrTransferConfig &incrTransferConfig);
 
 private:
+	CommonTransferConfig commonTransferConfig_;
 	ReverseIncrTransferConfig reverseIncrTransferConfig_;
 	FullTransferConfig fullTransferConfig_;
 	std::string id_;

@@ -87,6 +87,42 @@ OceanBaseProClient::BatchKillProcessListOutcomeCallable OceanBaseProClient::batc
 	return task->get_future();
 }
 
+OceanBaseProClient::BatchKillSessionListOutcome OceanBaseProClient::batchKillSessionList(const BatchKillSessionListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchKillSessionListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchKillSessionListOutcome(BatchKillSessionListResult(outcome.result()));
+	else
+		return BatchKillSessionListOutcome(outcome.error());
+}
+
+void OceanBaseProClient::batchKillSessionListAsync(const BatchKillSessionListRequest& request, const BatchKillSessionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchKillSessionList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::BatchKillSessionListOutcomeCallable OceanBaseProClient::batchKillSessionListCallable(const BatchKillSessionListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchKillSessionListOutcome()>>(
+			[this, request]()
+			{
+			return this->batchKillSessionList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::CancelProjectModifyRecordOutcome OceanBaseProClient::cancelProjectModifyRecord(const CancelProjectModifyRecordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2565,6 +2601,42 @@ OceanBaseProClient::DescribeSecurityIpGroupsOutcomeCallable OceanBaseProClient::
 			[this, request]()
 			{
 			return this->describeSecurityIpGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::DescribeSessionListOutcome OceanBaseProClient::describeSessionList(const DescribeSessionListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSessionListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSessionListOutcome(DescribeSessionListResult(outcome.result()));
+	else
+		return DescribeSessionListOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeSessionListAsync(const DescribeSessionListRequest& request, const DescribeSessionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSessionList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeSessionListOutcomeCallable OceanBaseProClient::describeSessionListCallable(const DescribeSessionListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSessionListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSessionList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

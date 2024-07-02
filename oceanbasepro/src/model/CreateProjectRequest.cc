@@ -311,6 +311,7 @@ void CreateProjectRequest::setCommonTransferConfig(const CreateProjectRequest::C
   setBodyParameter(std::string("CommonTransferConfig") + ".MqPartition", std::to_string(commonTransferConfig.mqPartition));
   setBodyParameter(std::string("CommonTransferConfig") + ".SyncSchemaColumnName", commonTransferConfig.syncSchemaColumnName);
   setBodyParameter(std::string("CommonTransferConfig") + ".ActiveActive", commonTransferConfig.activeActive ? "true" : "false");
+  setBodyParameter(std::string("CommonTransferConfig") + ".SinkStoreFormat", commonTransferConfig.sinkStoreFormat);
   setBodyParameter(std::string("CommonTransferConfig") + ".RocketMqEnableMsgTrace", commonTransferConfig.rocketMqEnableMsgTrace ? "true" : "false");
   for(int dep1 = 0; dep1 != commonTransferConfig.customColumns.size(); dep1++) {
     setBodyParameter(std::string("CommonTransferConfig") + ".CustomColumns." + std::to_string(dep1 + 1) + ".Expression", commonTransferConfig.customColumns[dep1].expression);
@@ -323,6 +324,7 @@ void CreateProjectRequest::setCommonTransferConfig(const CreateProjectRequest::C
   setBodyParameter(std::string("CommonTransferConfig") + ".DatahubTopicType", commonTransferConfig.datahubTopicType);
   setBodyParameter(std::string("CommonTransferConfig") + ".RocketMqMsgTags", commonTransferConfig.rocketMqMsgTags);
   setBodyParameter(std::string("CommonTransferConfig") + ".DataWorksBusinessName", commonTransferConfig.dataWorksBusinessName);
+  setBodyParameter(std::string("CommonTransferConfig") + ".SourceStoreFormat", commonTransferConfig.sourceStoreFormat);
   setBodyParameter(std::string("CommonTransferConfig") + ".SyncSchema", commonTransferConfig.syncSchema ? "true" : "false");
   setBodyParameter(std::string("CommonTransferConfig") + ".MqSerializerType", commonTransferConfig.mqSerializerType);
 }

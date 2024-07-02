@@ -36,6 +36,8 @@ public:
 	void setDescription(const std::string &description);
 	std::string getType() const;
 	void setType(const std::string &type);
+	bool getUseSsl() const;
+	void setUseSsl(bool useSsl);
 	std::string getPassword() const;
 	void setPassword(const std::string &password);
 	std::string getDgInstanceId() const;
@@ -57,6 +59,7 @@ private:
 	std::string schema_;
 	std::string description_;
 	std::string type_;
+	bool useSsl_;
 	std::string password_;
 	std::string dgInstanceId_;
 	std::string ip_;

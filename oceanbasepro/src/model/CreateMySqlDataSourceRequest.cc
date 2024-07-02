@@ -52,6 +52,15 @@ void CreateMySqlDataSourceRequest::setType(const std::string &type) {
   setBodyParameter(std::string("Type"), type);
 }
 
+bool CreateMySqlDataSourceRequest::getUseSsl() const {
+  return useSsl_;
+}
+
+void CreateMySqlDataSourceRequest::setUseSsl(bool useSsl) {
+  useSsl_ = useSsl;
+  setBodyParameter(std::string("UseSsl"), useSsl ? "true" : "false");
+}
+
 std::string CreateMySqlDataSourceRequest::getPassword() const {
   return password_;
 }

@@ -24,6 +24,8 @@
 #include "OceanBaseProExport.h"
 #include "model/BatchKillProcessListRequest.h"
 #include "model/BatchKillProcessListResult.h"
+#include "model/BatchKillSessionListRequest.h"
+#include "model/BatchKillSessionListResult.h"
 #include "model/CancelProjectModifyRecordRequest.h"
 #include "model/CancelProjectModifyRecordResult.h"
 #include "model/CreateBackupSetDownloadLinkRequest.h"
@@ -162,6 +164,8 @@
 #include "model/DescribeSampleSqlRawTextsResult.h"
 #include "model/DescribeSecurityIpGroupsRequest.h"
 #include "model/DescribeSecurityIpGroupsResult.h"
+#include "model/DescribeSessionListRequest.h"
+#include "model/DescribeSessionListResult.h"
 #include "model/DescribeSlowSQLHistoryListRequest.h"
 #include "model/DescribeSlowSQLHistoryListResult.h"
 #include "model/DescribeSlowSQLListRequest.h"
@@ -288,6 +292,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BatchKillProcessListResult> BatchKillProcessListOutcome;
 			typedef std::future<BatchKillProcessListOutcome> BatchKillProcessListOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::BatchKillProcessListRequest&, const BatchKillProcessListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchKillProcessListAsyncHandler;
+			typedef Outcome<Error, Model::BatchKillSessionListResult> BatchKillSessionListOutcome;
+			typedef std::future<BatchKillSessionListOutcome> BatchKillSessionListOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::BatchKillSessionListRequest&, const BatchKillSessionListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchKillSessionListAsyncHandler;
 			typedef Outcome<Error, Model::CancelProjectModifyRecordResult> CancelProjectModifyRecordOutcome;
 			typedef std::future<CancelProjectModifyRecordOutcome> CancelProjectModifyRecordOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::CancelProjectModifyRecordRequest&, const CancelProjectModifyRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelProjectModifyRecordAsyncHandler;
@@ -495,6 +502,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSecurityIpGroupsResult> DescribeSecurityIpGroupsOutcome;
 			typedef std::future<DescribeSecurityIpGroupsOutcome> DescribeSecurityIpGroupsOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeSecurityIpGroupsRequest&, const DescribeSecurityIpGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityIpGroupsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSessionListResult> DescribeSessionListOutcome;
+			typedef std::future<DescribeSessionListOutcome> DescribeSessionListOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeSessionListRequest&, const DescribeSessionListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSessionListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSlowSQLHistoryListResult> DescribeSlowSQLHistoryListOutcome;
 			typedef std::future<DescribeSlowSQLHistoryListOutcome> DescribeSlowSQLHistoryListOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeSlowSQLHistoryListRequest&, const DescribeSlowSQLHistoryListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowSQLHistoryListAsyncHandler;
@@ -674,6 +684,9 @@ namespace AlibabaCloud
 			BatchKillProcessListOutcome batchKillProcessList(const Model::BatchKillProcessListRequest &request)const;
 			void batchKillProcessListAsync(const Model::BatchKillProcessListRequest& request, const BatchKillProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchKillProcessListOutcomeCallable batchKillProcessListCallable(const Model::BatchKillProcessListRequest& request) const;
+			BatchKillSessionListOutcome batchKillSessionList(const Model::BatchKillSessionListRequest &request)const;
+			void batchKillSessionListAsync(const Model::BatchKillSessionListRequest& request, const BatchKillSessionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchKillSessionListOutcomeCallable batchKillSessionListCallable(const Model::BatchKillSessionListRequest& request) const;
 			CancelProjectModifyRecordOutcome cancelProjectModifyRecord(const Model::CancelProjectModifyRecordRequest &request)const;
 			void cancelProjectModifyRecordAsync(const Model::CancelProjectModifyRecordRequest& request, const CancelProjectModifyRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelProjectModifyRecordOutcomeCallable cancelProjectModifyRecordCallable(const Model::CancelProjectModifyRecordRequest& request) const;
@@ -881,6 +894,9 @@ namespace AlibabaCloud
 			DescribeSecurityIpGroupsOutcome describeSecurityIpGroups(const Model::DescribeSecurityIpGroupsRequest &request)const;
 			void describeSecurityIpGroupsAsync(const Model::DescribeSecurityIpGroupsRequest& request, const DescribeSecurityIpGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSecurityIpGroupsOutcomeCallable describeSecurityIpGroupsCallable(const Model::DescribeSecurityIpGroupsRequest& request) const;
+			DescribeSessionListOutcome describeSessionList(const Model::DescribeSessionListRequest &request)const;
+			void describeSessionListAsync(const Model::DescribeSessionListRequest& request, const DescribeSessionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSessionListOutcomeCallable describeSessionListCallable(const Model::DescribeSessionListRequest& request) const;
 			DescribeSlowSQLHistoryListOutcome describeSlowSQLHistoryList(const Model::DescribeSlowSQLHistoryListRequest &request)const;
 			void describeSlowSQLHistoryListAsync(const Model::DescribeSlowSQLHistoryListRequest& request, const DescribeSlowSQLHistoryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSlowSQLHistoryListOutcomeCallable describeSlowSQLHistoryListCallable(const Model::DescribeSlowSQLHistoryListRequest& request) const;
