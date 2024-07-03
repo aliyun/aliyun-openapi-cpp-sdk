@@ -110,6 +110,8 @@
 #include "model/ListIdpConfigsResult.h"
 #include "model/ListIdpDepartmentsRequest.h"
 #include "model/ListIdpDepartmentsResult.h"
+#include "model/ListNacUserCertRequest.h"
+#include "model/ListNacUserCertResult.h"
 #include "model/ListPolicesForPrivateAccessApplicationRequest.h"
 #include "model/ListPolicesForPrivateAccessApplicationResult.h"
 #include "model/ListPolicesForPrivateAccessTagRequest.h"
@@ -164,6 +166,8 @@
 #include "model/UpdateExcessiveDeviceRegistrationApplicationsStatusResult.h"
 #include "model/UpdateIdpDepartmentRequest.h"
 #include "model/UpdateIdpDepartmentResult.h"
+#include "model/UpdateNacUserCertStatusRequest.h"
+#include "model/UpdateNacUserCertStatusResult.h"
 #include "model/UpdatePrivateAccessApplicationRequest.h"
 #include "model/UpdatePrivateAccessApplicationResult.h"
 #include "model/UpdatePrivateAccessPolicyRequest.h"
@@ -319,6 +323,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListIdpDepartmentsResult> ListIdpDepartmentsOutcome;
 			typedef std::future<ListIdpDepartmentsOutcome> ListIdpDepartmentsOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListIdpDepartmentsRequest&, const ListIdpDepartmentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListIdpDepartmentsAsyncHandler;
+			typedef Outcome<Error, Model::ListNacUserCertResult> ListNacUserCertOutcome;
+			typedef std::future<ListNacUserCertOutcome> ListNacUserCertOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListNacUserCertRequest&, const ListNacUserCertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListNacUserCertAsyncHandler;
 			typedef Outcome<Error, Model::ListPolicesForPrivateAccessApplicationResult> ListPolicesForPrivateAccessApplicationOutcome;
 			typedef std::future<ListPolicesForPrivateAccessApplicationOutcome> ListPolicesForPrivateAccessApplicationOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListPolicesForPrivateAccessApplicationRequest&, const ListPolicesForPrivateAccessApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPolicesForPrivateAccessApplicationAsyncHandler;
@@ -400,6 +407,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateIdpDepartmentResult> UpdateIdpDepartmentOutcome;
 			typedef std::future<UpdateIdpDepartmentOutcome> UpdateIdpDepartmentOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::UpdateIdpDepartmentRequest&, const UpdateIdpDepartmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateIdpDepartmentAsyncHandler;
+			typedef Outcome<Error, Model::UpdateNacUserCertStatusResult> UpdateNacUserCertStatusOutcome;
+			typedef std::future<UpdateNacUserCertStatusOutcome> UpdateNacUserCertStatusOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::UpdateNacUserCertStatusRequest&, const UpdateNacUserCertStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNacUserCertStatusAsyncHandler;
 			typedef Outcome<Error, Model::UpdatePrivateAccessApplicationResult> UpdatePrivateAccessApplicationOutcome;
 			typedef std::future<UpdatePrivateAccessApplicationOutcome> UpdatePrivateAccessApplicationOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::UpdatePrivateAccessApplicationRequest&, const UpdatePrivateAccessApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePrivateAccessApplicationAsyncHandler;
@@ -558,6 +568,9 @@ namespace AlibabaCloud
 			ListIdpDepartmentsOutcome listIdpDepartments(const Model::ListIdpDepartmentsRequest &request)const;
 			void listIdpDepartmentsAsync(const Model::ListIdpDepartmentsRequest& request, const ListIdpDepartmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListIdpDepartmentsOutcomeCallable listIdpDepartmentsCallable(const Model::ListIdpDepartmentsRequest& request) const;
+			ListNacUserCertOutcome listNacUserCert(const Model::ListNacUserCertRequest &request)const;
+			void listNacUserCertAsync(const Model::ListNacUserCertRequest& request, const ListNacUserCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListNacUserCertOutcomeCallable listNacUserCertCallable(const Model::ListNacUserCertRequest& request) const;
 			ListPolicesForPrivateAccessApplicationOutcome listPolicesForPrivateAccessApplication(const Model::ListPolicesForPrivateAccessApplicationRequest &request)const;
 			void listPolicesForPrivateAccessApplicationAsync(const Model::ListPolicesForPrivateAccessApplicationRequest& request, const ListPolicesForPrivateAccessApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPolicesForPrivateAccessApplicationOutcomeCallable listPolicesForPrivateAccessApplicationCallable(const Model::ListPolicesForPrivateAccessApplicationRequest& request) const;
@@ -639,6 +652,9 @@ namespace AlibabaCloud
 			UpdateIdpDepartmentOutcome updateIdpDepartment(const Model::UpdateIdpDepartmentRequest &request)const;
 			void updateIdpDepartmentAsync(const Model::UpdateIdpDepartmentRequest& request, const UpdateIdpDepartmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateIdpDepartmentOutcomeCallable updateIdpDepartmentCallable(const Model::UpdateIdpDepartmentRequest& request) const;
+			UpdateNacUserCertStatusOutcome updateNacUserCertStatus(const Model::UpdateNacUserCertStatusRequest &request)const;
+			void updateNacUserCertStatusAsync(const Model::UpdateNacUserCertStatusRequest& request, const UpdateNacUserCertStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateNacUserCertStatusOutcomeCallable updateNacUserCertStatusCallable(const Model::UpdateNacUserCertStatusRequest& request) const;
 			UpdatePrivateAccessApplicationOutcome updatePrivateAccessApplication(const Model::UpdatePrivateAccessApplicationRequest &request)const;
 			void updatePrivateAccessApplicationAsync(const Model::UpdatePrivateAccessApplicationRequest& request, const UpdatePrivateAccessApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdatePrivateAccessApplicationOutcomeCallable updatePrivateAccessApplicationCallable(const Model::UpdatePrivateAccessApplicationRequest& request) const;

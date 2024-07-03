@@ -109,6 +109,8 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/ListIdpConfigsResult.h
 	include/alibabacloud/csas/model/ListIdpDepartmentsRequest.h
 	include/alibabacloud/csas/model/ListIdpDepartmentsResult.h
+	include/alibabacloud/csas/model/ListNacUserCertRequest.h
+	include/alibabacloud/csas/model/ListNacUserCertResult.h
 	include/alibabacloud/csas/model/ListPolicesForPrivateAccessApplicationRequest.h
 	include/alibabacloud/csas/model/ListPolicesForPrivateAccessApplicationResult.h
 	include/alibabacloud/csas/model/ListPolicesForPrivateAccessTagRequest.h
@@ -163,6 +165,8 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/UpdateExcessiveDeviceRegistrationApplicationsStatusResult.h
 	include/alibabacloud/csas/model/UpdateIdpDepartmentRequest.h
 	include/alibabacloud/csas/model/UpdateIdpDepartmentResult.h
+	include/alibabacloud/csas/model/UpdateNacUserCertStatusRequest.h
+	include/alibabacloud/csas/model/UpdateNacUserCertStatusResult.h
 	include/alibabacloud/csas/model/UpdatePrivateAccessApplicationRequest.h
 	include/alibabacloud/csas/model/UpdatePrivateAccessApplicationResult.h
 	include/alibabacloud/csas/model/UpdatePrivateAccessPolicyRequest.h
@@ -268,6 +272,8 @@ set(csas_src
 	src/model/ListIdpConfigsResult.cc
 	src/model/ListIdpDepartmentsRequest.cc
 	src/model/ListIdpDepartmentsResult.cc
+	src/model/ListNacUserCertRequest.cc
+	src/model/ListNacUserCertResult.cc
 	src/model/ListPolicesForPrivateAccessApplicationRequest.cc
 	src/model/ListPolicesForPrivateAccessApplicationResult.cc
 	src/model/ListPolicesForPrivateAccessTagRequest.cc
@@ -322,6 +328,8 @@ set(csas_src
 	src/model/UpdateExcessiveDeviceRegistrationApplicationsStatusResult.cc
 	src/model/UpdateIdpDepartmentRequest.cc
 	src/model/UpdateIdpDepartmentResult.cc
+	src/model/UpdateNacUserCertStatusRequest.cc
+	src/model/UpdateNacUserCertStatusResult.cc
 	src/model/UpdatePrivateAccessApplicationRequest.cc
 	src/model/UpdatePrivateAccessApplicationResult.cc
 	src/model/UpdatePrivateAccessPolicyRequest.cc

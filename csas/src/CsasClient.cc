@@ -1635,6 +1635,42 @@ CsasClient::ListIdpDepartmentsOutcomeCallable CsasClient::listIdpDepartmentsCall
 	return task->get_future();
 }
 
+CsasClient::ListNacUserCertOutcome CsasClient::listNacUserCert(const ListNacUserCertRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListNacUserCertOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListNacUserCertOutcome(ListNacUserCertResult(outcome.result()));
+	else
+		return ListNacUserCertOutcome(outcome.error());
+}
+
+void CsasClient::listNacUserCertAsync(const ListNacUserCertRequest& request, const ListNacUserCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listNacUserCert(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListNacUserCertOutcomeCallable CsasClient::listNacUserCertCallable(const ListNacUserCertRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListNacUserCertOutcome()>>(
+			[this, request]()
+			{
+			return this->listNacUserCert(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::ListPolicesForPrivateAccessApplicationOutcome CsasClient::listPolicesForPrivateAccessApplication(const ListPolicesForPrivateAccessApplicationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2601,6 +2637,42 @@ CsasClient::UpdateIdpDepartmentOutcomeCallable CsasClient::updateIdpDepartmentCa
 			[this, request]()
 			{
 			return this->updateIdpDepartment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::UpdateNacUserCertStatusOutcome CsasClient::updateNacUserCertStatus(const UpdateNacUserCertStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateNacUserCertStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateNacUserCertStatusOutcome(UpdateNacUserCertStatusResult(outcome.result()));
+	else
+		return UpdateNacUserCertStatusOutcome(outcome.error());
+}
+
+void CsasClient::updateNacUserCertStatusAsync(const UpdateNacUserCertStatusRequest& request, const UpdateNacUserCertStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateNacUserCertStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::UpdateNacUserCertStatusOutcomeCallable CsasClient::updateNacUserCertStatusCallable(const UpdateNacUserCertStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateNacUserCertStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->updateNacUserCertStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
