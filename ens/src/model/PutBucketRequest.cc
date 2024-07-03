@@ -133,6 +133,15 @@ void PutBucketRequest::setStorageClass(const std::string &storageClass) {
   setBodyParameter(std::string("StorageClass"), storageClass);
 }
 
+std::string PutBucketRequest::getDispatchScope() const {
+  return dispatchScope_;
+}
+
+void PutBucketRequest::setDispatchScope(const std::string &dispatchScope) {
+  dispatchScope_ = dispatchScope;
+  setBodyParameter(std::string("DispatchScope"), dispatchScope);
+}
+
 std::string PutBucketRequest::getComment() const {
   return comment_;
 }

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ens/model/DeleteSDGResult.h>
+#include <alibabacloud/ens/model/UnloadRegionSDGResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ens;
 using namespace AlibabaCloud::Ens::Model;
 
-DeleteSDGResult::DeleteSDGResult() :
+UnloadRegionSDGResult::UnloadRegionSDGResult() :
 	ServiceResult()
 {}
 
-DeleteSDGResult::DeleteSDGResult(const std::string &payload) :
+UnloadRegionSDGResult::UnloadRegionSDGResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteSDGResult::~DeleteSDGResult()
+UnloadRegionSDGResult::~UnloadRegionSDGResult()
 {}
 
-void DeleteSDGResult::parse(const std::string &payload)
+void UnloadRegionSDGResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -53,17 +53,16 @@ void DeleteSDGResult::parse(const std::string &payload)
 	for (auto resultNodeFailedItemsFailedItemsItem : allFailedItemsNode)
 	{
 		Data::Result::FailedItemsItem failedItemsItemObject;
-		if(!resultNodeFailedItemsFailedItemsItem["ErrMessage"].isNull())
-			failedItemsItemObject.errMessage = resultNodeFailedItemsFailedItemsItem["ErrMessage"].asString();
-		auto itemNode = value["Item"];
-		if(!itemNode["SdgId"].isNull())
-			failedItemsItemObject.item.sdgId = itemNode["SdgId"].asString();
+		if(!resultNodeFailedItemsFailedItemsItem["ErrorMessage"].isNull())
+			failedItemsItemObject.errorMessage = resultNodeFailedItemsFailedItemsItem["ErrorMessage"].asString();
+		if(!resultNodeFailedItemsFailedItemsItem["DestinationRegionId"].isNull())
+			failedItemsItemObject.destinationRegionId = resultNodeFailedItemsFailedItemsItem["DestinationRegionId"].asString();
 		data_.result.failedItems.push_back(failedItemsItemObject);
 	}
 
 }
 
-DeleteSDGResult::Data DeleteSDGResult::getData()const
+UnloadRegionSDGResult::Data UnloadRegionSDGResult::getData()const
 {
 	return data_;
 }

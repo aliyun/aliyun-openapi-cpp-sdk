@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ens/model/DeleteSDGResult.h>
+#include <alibabacloud/ens/model/DeployInstanceSDGResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ens;
 using namespace AlibabaCloud::Ens::Model;
 
-DeleteSDGResult::DeleteSDGResult() :
+DeployInstanceSDGResult::DeployInstanceSDGResult() :
 	ServiceResult()
 {}
 
-DeleteSDGResult::DeleteSDGResult(const std::string &payload) :
+DeployInstanceSDGResult::DeployInstanceSDGResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteSDGResult::~DeleteSDGResult()
+DeployInstanceSDGResult::~DeployInstanceSDGResult()
 {}
 
-void DeleteSDGResult::parse(const std::string &payload)
+void DeployInstanceSDGResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -49,21 +49,20 @@ void DeleteSDGResult::parse(const std::string &payload)
 		data_.result.failedCount = std::stol(resultNode["FailedCount"].asString());
 	if(!resultNode["SuccessCount"].isNull())
 		data_.result.successCount = std::stol(resultNode["SuccessCount"].asString());
-	auto allFailedItemsNode = resultNode["FailedItems"]["FailedItemsItem"];
-	for (auto resultNodeFailedItemsFailedItemsItem : allFailedItemsNode)
+	auto allFailedItemsNode = resultNode["FailedItems"]["FailedItem"];
+	for (auto resultNodeFailedItemsFailedItem : allFailedItemsNode)
 	{
-		Data::Result::FailedItemsItem failedItemsItemObject;
-		if(!resultNodeFailedItemsFailedItemsItem["ErrMessage"].isNull())
-			failedItemsItemObject.errMessage = resultNodeFailedItemsFailedItemsItem["ErrMessage"].asString();
-		auto itemNode = value["Item"];
-		if(!itemNode["SdgId"].isNull())
-			failedItemsItemObject.item.sdgId = itemNode["SdgId"].asString();
-		data_.result.failedItems.push_back(failedItemsItemObject);
+		Data::Result::FailedItem failedItemObject;
+		if(!resultNodeFailedItemsFailedItem["ErrMessage"].isNull())
+			failedItemObject.errMessage = resultNodeFailedItemsFailedItem["ErrMessage"].asString();
+		if(!resultNodeFailedItemsFailedItem["InstanceId"].isNull())
+			failedItemObject.instanceId = resultNodeFailedItemsFailedItem["InstanceId"].asString();
+		data_.result.failedItems.push_back(failedItemObject);
 	}
 
 }
 
-DeleteSDGResult::Data DeleteSDGResult::getData()const
+DeployInstanceSDGResult::Data DeployInstanceSDGResult::getData()const
 {
 	return data_;
 }

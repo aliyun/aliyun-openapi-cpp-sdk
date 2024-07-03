@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DELETESDGRESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_DELETESDGRESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_DEPLOYINSTANCESDGRESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_DEPLOYINSTANCESDGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT DeleteSDGResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT DeployInstanceSDGResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
 					struct Result
 					{
-						struct FailedItemsItem
+						struct FailedItem
 						{
-							struct Item
-							{
-								std::string sdgId;
-							};
-							Item item;
+							std::string instanceId;
 							std::string errMessage;
 						};
-						std::vector<FailedItemsItem> failedItems;
+						std::vector<FailedItem> failedItems;
 						long failedCount;
 						long successCount;
 					};
@@ -55,9 +51,9 @@ namespace AlibabaCloud
 				};
 
 
-				DeleteSDGResult();
-				explicit DeleteSDGResult(const std::string &payload);
-				~DeleteSDGResult();
+				DeployInstanceSDGResult();
+				explicit DeployInstanceSDGResult(const std::string &payload);
+				~DeployInstanceSDGResult();
 				Data getData()const;
 
 			protected:
@@ -69,4 +65,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_DELETESDGRESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_DEPLOYINSTANCESDGRESULT_H_

@@ -36,6 +36,8 @@ public:
 	~DeleteEnsSaleControlRequest();
 	std::vector<SaleControls> getSaleControls() const;
 	void setSaleControls(const std::vector<SaleControls> &saleControls);
+	std::string getCustomAccount() const;
+	void setCustomAccount(const std::string &customAccount);
 	std::string getCommodityCode() const;
 	void setCommodityCode(const std::string &commodityCode);
 	std::string getAliUidAccount() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	std::vector<SaleControls> saleControls_;
+	std::string customAccount_;
 	std::string commodityCode_;
 	std::string aliUidAccount_;
 };

@@ -68,6 +68,8 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getPageSize() const;
 	void setPageSize(const std::string &pageSize);
+	std::string getInstanceType() const;
+	void setInstanceType(const std::string &instanceType);
 	std::string getEnsRegionIds() const;
 	void setEnsRegionIds(const std::string &ensRegionIds);
 
@@ -89,6 +91,7 @@ private:
 	std::string searchKey_;
 	int pageNumber_;
 	std::string pageSize_;
+	std::string instanceType_;
 	std::string ensRegionIds_;
 };
 } // namespace Model

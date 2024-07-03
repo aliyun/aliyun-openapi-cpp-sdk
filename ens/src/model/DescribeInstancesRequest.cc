@@ -181,6 +181,15 @@ void DescribeInstancesRequest::setPageSize(const std::string &pageSize) {
   setParameter(std::string("PageSize"), pageSize);
 }
 
+std::string DescribeInstancesRequest::getInstanceType() const {
+  return instanceType_;
+}
+
+void DescribeInstancesRequest::setInstanceType(const std::string &instanceType) {
+  instanceType_ = instanceType;
+  setParameter(std::string("InstanceType"), instanceType);
+}
+
 std::string DescribeInstancesRequest::getEnsRegionIds() const {
   return ensRegionIds_;
 }

@@ -54,6 +54,8 @@ public:
 	void setResourceType(const std::string &resourceType);
 	std::string getStorageClass() const;
 	void setStorageClass(const std::string &storageClass);
+	std::string getDispatchScope() const;
+	void setDispatchScope(const std::string &dispatchScope);
 	std::string getComment() const;
 	void setComment(const std::string &comment);
 
@@ -70,6 +72,7 @@ private:
 	std::string dispatcherType_;
 	std::string resourceType_;
 	std::string storageClass_;
+	std::string dispatchScope_;
 	std::string comment_;
 };
 } // namespace Model

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DELETESDGRESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_DELETESDGRESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_UNTAGRESOURCESRESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_UNTAGRESOURCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT DeleteSDGResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT UntagResourcesResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct Result
-					{
-						struct FailedItemsItem
-						{
-							struct Item
-							{
-								std::string sdgId;
-							};
-							Item item;
-							std::string errMessage;
-						};
-						std::vector<FailedItemsItem> failedItems;
-						long failedCount;
-						long successCount;
-					};
-					std::string message;
-					bool success;
-					Result result;
-				};
 
 
-				DeleteSDGResult();
-				explicit DeleteSDGResult(const std::string &payload);
-				~DeleteSDGResult();
-				Data getData()const;
+				UntagResourcesResult();
+				explicit UntagResourcesResult(const std::string &payload);
+				~UntagResourcesResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Data data_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_DELETESDGRESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_UNTAGRESOURCESRESULT_H_

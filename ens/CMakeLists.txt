@@ -161,6 +161,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DeleteSnatIpForSnatEntryResult.h
 	include/alibabacloud/ens/model/DeleteVSwitchRequest.h
 	include/alibabacloud/ens/model/DeleteVSwitchResult.h
+	include/alibabacloud/ens/model/DeployInstanceSDGRequest.h
+	include/alibabacloud/ens/model/DeployInstanceSDGResult.h
 	include/alibabacloud/ens/model/DeploySDGRequest.h
 	include/alibabacloud/ens/model/DeploySDGResult.h
 	include/alibabacloud/ens/model/DescribeAICImagesRequest.h
@@ -307,6 +309,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeReservedResourceResult.h
 	include/alibabacloud/ens/model/DescribeResourceTimelineRequest.h
 	include/alibabacloud/ens/model/DescribeResourceTimelineResult.h
+	include/alibabacloud/ens/model/DescribeSDGRequest.h
+	include/alibabacloud/ens/model/DescribeSDGResult.h
 	include/alibabacloud/ens/model/DescribeSDGDeploymentStatusRequest.h
 	include/alibabacloud/ens/model/DescribeSDGDeploymentStatusResult.h
 	include/alibabacloud/ens/model/DescribeSDGsRequest.h
@@ -367,6 +371,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/ListBucketsResult.h
 	include/alibabacloud/ens/model/ListObjectsRequest.h
 	include/alibabacloud/ens/model/ListObjectsResult.h
+	include/alibabacloud/ens/model/ListTagResourcesRequest.h
+	include/alibabacloud/ens/model/ListTagResourcesResult.h
 	include/alibabacloud/ens/model/ModifyEnsEipAddressAttributeRequest.h
 	include/alibabacloud/ens/model/ModifyEnsEipAddressAttributeResult.h
 	include/alibabacloud/ens/model/ModifyEpnInstanceRequest.h
@@ -397,6 +403,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/ModifySnapshotAttributeResult.h
 	include/alibabacloud/ens/model/ModifyVSwitchAttributeRequest.h
 	include/alibabacloud/ens/model/ModifyVSwitchAttributeResult.h
+	include/alibabacloud/ens/model/PreloadRegionSDGRequest.h
+	include/alibabacloud/ens/model/PreloadRegionSDGResult.h
 	include/alibabacloud/ens/model/PushApplicationDataRequest.h
 	include/alibabacloud/ens/model/PushApplicationDataResult.h
 	include/alibabacloud/ens/model/PutBucketRequest.h
@@ -433,6 +441,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/ReleasePrePaidInstanceResult.h
 	include/alibabacloud/ens/model/RemoveBackendServersRequest.h
 	include/alibabacloud/ens/model/RemoveBackendServersResult.h
+	include/alibabacloud/ens/model/RemoveInstanceSDGRequest.h
+	include/alibabacloud/ens/model/RemoveInstanceSDGResult.h
 	include/alibabacloud/ens/model/RemovePublicIpsFromEpnInstanceRequest.h
 	include/alibabacloud/ens/model/RemovePublicIpsFromEpnInstanceResult.h
 	include/alibabacloud/ens/model/RemoveSDGRequest.h
@@ -501,12 +511,18 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/StopLoadBalancerListenerResult.h
 	include/alibabacloud/ens/model/StopSnatIpForSnatEntryRequest.h
 	include/alibabacloud/ens/model/StopSnatIpForSnatEntryResult.h
+	include/alibabacloud/ens/model/TagResourcesRequest.h
+	include/alibabacloud/ens/model/TagResourcesResult.h
 	include/alibabacloud/ens/model/UnAssociateEnsEipAddressRequest.h
 	include/alibabacloud/ens/model/UnAssociateEnsEipAddressResult.h
 	include/alibabacloud/ens/model/UnassignPrivateIpAddressesRequest.h
 	include/alibabacloud/ens/model/UnassignPrivateIpAddressesResult.h
 	include/alibabacloud/ens/model/UnassociateNetworkAclRequest.h
 	include/alibabacloud/ens/model/UnassociateNetworkAclResult.h
+	include/alibabacloud/ens/model/UnloadRegionSDGRequest.h
+	include/alibabacloud/ens/model/UnloadRegionSDGResult.h
+	include/alibabacloud/ens/model/UntagResourcesRequest.h
+	include/alibabacloud/ens/model/UntagResourcesResult.h
 	include/alibabacloud/ens/model/UpdateEnsSaleControlRequest.h
 	include/alibabacloud/ens/model/UpdateEnsSaleControlResult.h
 	include/alibabacloud/ens/model/UpgradeAICInstanceImageRequest.h
@@ -656,6 +672,8 @@ set(ens_src
 	src/model/DeleteSnatIpForSnatEntryResult.cc
 	src/model/DeleteVSwitchRequest.cc
 	src/model/DeleteVSwitchResult.cc
+	src/model/DeployInstanceSDGRequest.cc
+	src/model/DeployInstanceSDGResult.cc
 	src/model/DeploySDGRequest.cc
 	src/model/DeploySDGResult.cc
 	src/model/DescribeAICImagesRequest.cc
@@ -802,6 +820,8 @@ set(ens_src
 	src/model/DescribeReservedResourceResult.cc
 	src/model/DescribeResourceTimelineRequest.cc
 	src/model/DescribeResourceTimelineResult.cc
+	src/model/DescribeSDGRequest.cc
+	src/model/DescribeSDGResult.cc
 	src/model/DescribeSDGDeploymentStatusRequest.cc
 	src/model/DescribeSDGDeploymentStatusResult.cc
 	src/model/DescribeSDGsRequest.cc
@@ -862,6 +882,8 @@ set(ens_src
 	src/model/ListBucketsResult.cc
 	src/model/ListObjectsRequest.cc
 	src/model/ListObjectsResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
 	src/model/ModifyEnsEipAddressAttributeRequest.cc
 	src/model/ModifyEnsEipAddressAttributeResult.cc
 	src/model/ModifyEpnInstanceRequest.cc
@@ -892,6 +914,8 @@ set(ens_src
 	src/model/ModifySnapshotAttributeResult.cc
 	src/model/ModifyVSwitchAttributeRequest.cc
 	src/model/ModifyVSwitchAttributeResult.cc
+	src/model/PreloadRegionSDGRequest.cc
+	src/model/PreloadRegionSDGResult.cc
 	src/model/PushApplicationDataRequest.cc
 	src/model/PushApplicationDataResult.cc
 	src/model/PutBucketRequest.cc
@@ -928,6 +952,8 @@ set(ens_src
 	src/model/ReleasePrePaidInstanceResult.cc
 	src/model/RemoveBackendServersRequest.cc
 	src/model/RemoveBackendServersResult.cc
+	src/model/RemoveInstanceSDGRequest.cc
+	src/model/RemoveInstanceSDGResult.cc
 	src/model/RemovePublicIpsFromEpnInstanceRequest.cc
 	src/model/RemovePublicIpsFromEpnInstanceResult.cc
 	src/model/RemoveSDGRequest.cc
@@ -996,12 +1022,18 @@ set(ens_src
 	src/model/StopLoadBalancerListenerResult.cc
 	src/model/StopSnatIpForSnatEntryRequest.cc
 	src/model/StopSnatIpForSnatEntryResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
 	src/model/UnAssociateEnsEipAddressRequest.cc
 	src/model/UnAssociateEnsEipAddressResult.cc
 	src/model/UnassignPrivateIpAddressesRequest.cc
 	src/model/UnassignPrivateIpAddressesResult.cc
 	src/model/UnassociateNetworkAclRequest.cc
 	src/model/UnassociateNetworkAclResult.cc
+	src/model/UnloadRegionSDGRequest.cc
+	src/model/UnloadRegionSDGResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc
 	src/model/UpdateEnsSaleControlRequest.cc
 	src/model/UpdateEnsSaleControlResult.cc
 	src/model/UpgradeAICInstanceImageRequest.cc

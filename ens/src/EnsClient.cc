@@ -2571,6 +2571,42 @@ EnsClient::DeleteVSwitchOutcomeCallable EnsClient::deleteVSwitchCallable(const D
 	return task->get_future();
 }
 
+EnsClient::DeployInstanceSDGOutcome EnsClient::deployInstanceSDG(const DeployInstanceSDGRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeployInstanceSDGOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeployInstanceSDGOutcome(DeployInstanceSDGResult(outcome.result()));
+	else
+		return DeployInstanceSDGOutcome(outcome.error());
+}
+
+void EnsClient::deployInstanceSDGAsync(const DeployInstanceSDGRequest& request, const DeployInstanceSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deployInstanceSDG(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeployInstanceSDGOutcomeCallable EnsClient::deployInstanceSDGCallable(const DeployInstanceSDGRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeployInstanceSDGOutcome()>>(
+			[this, request]()
+			{
+			return this->deployInstanceSDG(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DeploySDGOutcome EnsClient::deploySDG(const DeploySDGRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5199,6 +5235,42 @@ EnsClient::DescribeResourceTimelineOutcomeCallable EnsClient::describeResourceTi
 	return task->get_future();
 }
 
+EnsClient::DescribeSDGOutcome EnsClient::describeSDG(const DescribeSDGRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSDGOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSDGOutcome(DescribeSDGResult(outcome.result()));
+	else
+		return DescribeSDGOutcome(outcome.error());
+}
+
+void EnsClient::describeSDGAsync(const DescribeSDGRequest& request, const DescribeSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSDG(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeSDGOutcomeCallable EnsClient::describeSDGCallable(const DescribeSDGRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSDGOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSDG(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeSDGDeploymentStatusOutcome EnsClient::describeSDGDeploymentStatus(const DescribeSDGDeploymentStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6279,6 +6351,42 @@ EnsClient::ListObjectsOutcomeCallable EnsClient::listObjectsCallable(const ListO
 	return task->get_future();
 }
 
+EnsClient::ListTagResourcesOutcome EnsClient::listTagResources(const ListTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
+	else
+		return ListTagResourcesOutcome(outcome.error());
+}
+
+void EnsClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ListTagResourcesOutcomeCallable EnsClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::ModifyEnsEipAddressAttributeOutcome EnsClient::modifyEnsEipAddressAttribute(const ModifyEnsEipAddressAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6813,6 +6921,42 @@ EnsClient::ModifyVSwitchAttributeOutcomeCallable EnsClient::modifyVSwitchAttribu
 			[this, request]()
 			{
 			return this->modifyVSwitchAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::PreloadRegionSDGOutcome EnsClient::preloadRegionSDG(const PreloadRegionSDGRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PreloadRegionSDGOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PreloadRegionSDGOutcome(PreloadRegionSDGResult(outcome.result()));
+	else
+		return PreloadRegionSDGOutcome(outcome.error());
+}
+
+void EnsClient::preloadRegionSDGAsync(const PreloadRegionSDGRequest& request, const PreloadRegionSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, preloadRegionSDG(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::PreloadRegionSDGOutcomeCallable EnsClient::preloadRegionSDGCallable(const PreloadRegionSDGRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PreloadRegionSDGOutcome()>>(
+			[this, request]()
+			{
+			return this->preloadRegionSDG(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7461,6 +7605,42 @@ EnsClient::RemoveBackendServersOutcomeCallable EnsClient::removeBackendServersCa
 			[this, request]()
 			{
 			return this->removeBackendServers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::RemoveInstanceSDGOutcome EnsClient::removeInstanceSDG(const RemoveInstanceSDGRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveInstanceSDGOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveInstanceSDGOutcome(RemoveInstanceSDGResult(outcome.result()));
+	else
+		return RemoveInstanceSDGOutcome(outcome.error());
+}
+
+void EnsClient::removeInstanceSDGAsync(const RemoveInstanceSDGRequest& request, const RemoveInstanceSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeInstanceSDG(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::RemoveInstanceSDGOutcomeCallable EnsClient::removeInstanceSDGCallable(const RemoveInstanceSDGRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveInstanceSDGOutcome()>>(
+			[this, request]()
+			{
+			return this->removeInstanceSDG(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8691,6 +8871,42 @@ EnsClient::StopSnatIpForSnatEntryOutcomeCallable EnsClient::stopSnatIpForSnatEnt
 	return task->get_future();
 }
 
+EnsClient::TagResourcesOutcome EnsClient::tagResources(const TagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
+	else
+		return TagResourcesOutcome(outcome.error());
+}
+
+void EnsClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::TagResourcesOutcomeCallable EnsClient::tagResourcesCallable(const TagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::UnAssociateEnsEipAddressOutcome EnsClient::unAssociateEnsEipAddress(const UnAssociateEnsEipAddressRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8793,6 +9009,78 @@ EnsClient::UnassociateNetworkAclOutcomeCallable EnsClient::unassociateNetworkAcl
 			[this, request]()
 			{
 			return this->unassociateNetworkAcl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::UnloadRegionSDGOutcome EnsClient::unloadRegionSDG(const UnloadRegionSDGRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnloadRegionSDGOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnloadRegionSDGOutcome(UnloadRegionSDGResult(outcome.result()));
+	else
+		return UnloadRegionSDGOutcome(outcome.error());
+}
+
+void EnsClient::unloadRegionSDGAsync(const UnloadRegionSDGRequest& request, const UnloadRegionSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unloadRegionSDG(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::UnloadRegionSDGOutcomeCallable EnsClient::unloadRegionSDGCallable(const UnloadRegionSDGRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnloadRegionSDGOutcome()>>(
+			[this, request]()
+			{
+			return this->unloadRegionSDG(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::UntagResourcesOutcome EnsClient::untagResources(const UntagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UntagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UntagResourcesOutcome(UntagResourcesResult(outcome.result()));
+	else
+		return UntagResourcesOutcome(outcome.error());
+}
+
+void EnsClient::untagResourcesAsync(const UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, untagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::UntagResourcesOutcomeCallable EnsClient::untagResourcesCallable(const UntagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UntagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->untagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -37,6 +37,15 @@ void DeleteEnsSaleControlRequest::setSaleControls(const std::vector<DeleteEnsSal
   }
 }
 
+std::string DeleteEnsSaleControlRequest::getCustomAccount() const {
+  return customAccount_;
+}
+
+void DeleteEnsSaleControlRequest::setCustomAccount(const std::string &customAccount) {
+  customAccount_ = customAccount;
+  setParameter(std::string("CustomAccount"), customAccount);
+}
+
 std::string DeleteEnsSaleControlRequest::getCommodityCode() const {
   return commodityCode_;
 }

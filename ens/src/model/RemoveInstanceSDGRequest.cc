@@ -14,33 +14,22 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ens/model/DescribeSDGsRequest.h>
+#include <alibabacloud/ens/model/RemoveInstanceSDGRequest.h>
 
-using AlibabaCloud::Ens::Model::DescribeSDGsRequest;
+using AlibabaCloud::Ens::Model::RemoveInstanceSDGRequest;
 
-DescribeSDGsRequest::DescribeSDGsRequest()
-    : RpcServiceRequest("ens", "2017-11-10", "DescribeSDGs") {
+RemoveInstanceSDGRequest::RemoveInstanceSDGRequest()
+    : RpcServiceRequest("ens", "2017-11-10", "RemoveInstanceSDG") {
   setMethod(HttpRequest::Method::Post);
 }
 
-DescribeSDGsRequest::~DescribeSDGsRequest() {}
+RemoveInstanceSDGRequest::~RemoveInstanceSDGRequest() {}
 
-std::vector<DescribeSDGsRequest::std::string> DescribeSDGsRequest::getSDGIds() const {
-  return sDGIds_;
-}
-
-void DescribeSDGsRequest::setSDGIds(const std::vector<DescribeSDGsRequest::std::string> &sDGIds) {
-  sDGIds_ = sDGIds;
-  for(int dep1 = 0; dep1 != sDGIds.size(); dep1++) {
-    setParameter(std::string("SDGIds") + "." + std::to_string(dep1 + 1), sDGIds[dep1]);
-  }
-}
-
-std::vector<DescribeSDGsRequest::std::string> DescribeSDGsRequest::getInstanceIds() const {
+std::vector<RemoveInstanceSDGRequest::std::string> RemoveInstanceSDGRequest::getInstanceIds() const {
   return instanceIds_;
 }
 
-void DescribeSDGsRequest::setInstanceIds(const std::vector<DescribeSDGsRequest::std::string> &instanceIds) {
+void RemoveInstanceSDGRequest::setInstanceIds(const std::vector<RemoveInstanceSDGRequest::std::string> &instanceIds) {
   instanceIds_ = instanceIds;
   for(int dep1 = 0; dep1 != instanceIds.size(); dep1++) {
     setParameter(std::string("InstanceIds") + "." + std::to_string(dep1 + 1), instanceIds[dep1]);

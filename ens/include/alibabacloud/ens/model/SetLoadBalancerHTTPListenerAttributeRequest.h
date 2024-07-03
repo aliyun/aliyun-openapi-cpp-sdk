@@ -34,6 +34,8 @@ public:
 	void setHealthCheckTimeout(int healthCheckTimeout);
 	std::string getHealthCheckURI() const;
 	void setHealthCheckURI(const std::string &healthCheckURI);
+	std::string getXForwardedFor() const;
+	void setXForwardedFor(const std::string &xForwardedFor);
 	std::string getHealthCheck() const;
 	void setHealthCheck(const std::string &healthCheck);
 	std::string getProtocol() const;
@@ -76,6 +78,7 @@ public:
 private:
 	int healthCheckTimeout_;
 	std::string healthCheckURI_;
+	std::string xForwardedFor_;
 	std::string healthCheck_;
 	std::string protocol_;
 	std::string cookie_;

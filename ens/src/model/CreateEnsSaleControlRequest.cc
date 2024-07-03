@@ -48,6 +48,15 @@ void CreateEnsSaleControlRequest::setSaleControls(const std::vector<CreateEnsSal
   }
 }
 
+std::string CreateEnsSaleControlRequest::getCustomAccount() const {
+  return customAccount_;
+}
+
+void CreateEnsSaleControlRequest::setCustomAccount(const std::string &customAccount) {
+  customAccount_ = customAccount;
+  setParameter(std::string("CustomAccount"), customAccount);
+}
+
 std::string CreateEnsSaleControlRequest::getCommodityCode() const {
   return commodityCode_;
 }

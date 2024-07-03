@@ -162,6 +162,8 @@
 #include "model/DeleteSnatIpForSnatEntryResult.h"
 #include "model/DeleteVSwitchRequest.h"
 #include "model/DeleteVSwitchResult.h"
+#include "model/DeployInstanceSDGRequest.h"
+#include "model/DeployInstanceSDGResult.h"
 #include "model/DeploySDGRequest.h"
 #include "model/DeploySDGResult.h"
 #include "model/DescribeAICImagesRequest.h"
@@ -308,6 +310,8 @@
 #include "model/DescribeReservedResourceResult.h"
 #include "model/DescribeResourceTimelineRequest.h"
 #include "model/DescribeResourceTimelineResult.h"
+#include "model/DescribeSDGRequest.h"
+#include "model/DescribeSDGResult.h"
 #include "model/DescribeSDGDeploymentStatusRequest.h"
 #include "model/DescribeSDGDeploymentStatusResult.h"
 #include "model/DescribeSDGsRequest.h"
@@ -368,6 +372,8 @@
 #include "model/ListBucketsResult.h"
 #include "model/ListObjectsRequest.h"
 #include "model/ListObjectsResult.h"
+#include "model/ListTagResourcesRequest.h"
+#include "model/ListTagResourcesResult.h"
 #include "model/ModifyEnsEipAddressAttributeRequest.h"
 #include "model/ModifyEnsEipAddressAttributeResult.h"
 #include "model/ModifyEpnInstanceRequest.h"
@@ -398,6 +404,8 @@
 #include "model/ModifySnapshotAttributeResult.h"
 #include "model/ModifyVSwitchAttributeRequest.h"
 #include "model/ModifyVSwitchAttributeResult.h"
+#include "model/PreloadRegionSDGRequest.h"
+#include "model/PreloadRegionSDGResult.h"
 #include "model/PushApplicationDataRequest.h"
 #include "model/PushApplicationDataResult.h"
 #include "model/PutBucketRequest.h"
@@ -434,6 +442,8 @@
 #include "model/ReleasePrePaidInstanceResult.h"
 #include "model/RemoveBackendServersRequest.h"
 #include "model/RemoveBackendServersResult.h"
+#include "model/RemoveInstanceSDGRequest.h"
+#include "model/RemoveInstanceSDGResult.h"
 #include "model/RemovePublicIpsFromEpnInstanceRequest.h"
 #include "model/RemovePublicIpsFromEpnInstanceResult.h"
 #include "model/RemoveSDGRequest.h"
@@ -502,12 +512,18 @@
 #include "model/StopLoadBalancerListenerResult.h"
 #include "model/StopSnatIpForSnatEntryRequest.h"
 #include "model/StopSnatIpForSnatEntryResult.h"
+#include "model/TagResourcesRequest.h"
+#include "model/TagResourcesResult.h"
 #include "model/UnAssociateEnsEipAddressRequest.h"
 #include "model/UnAssociateEnsEipAddressResult.h"
 #include "model/UnassignPrivateIpAddressesRequest.h"
 #include "model/UnassignPrivateIpAddressesResult.h"
 #include "model/UnassociateNetworkAclRequest.h"
 #include "model/UnassociateNetworkAclResult.h"
+#include "model/UnloadRegionSDGRequest.h"
+#include "model/UnloadRegionSDGResult.h"
+#include "model/UntagResourcesRequest.h"
+#include "model/UntagResourcesResult.h"
 #include "model/UpdateEnsSaleControlRequest.h"
 #include "model/UpdateEnsSaleControlResult.h"
 #include "model/UpgradeAICInstanceImageRequest.h"
@@ -733,6 +749,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteVSwitchResult> DeleteVSwitchOutcome;
 			typedef std::future<DeleteVSwitchOutcome> DeleteVSwitchOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DeleteVSwitchRequest&, const DeleteVSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVSwitchAsyncHandler;
+			typedef Outcome<Error, Model::DeployInstanceSDGResult> DeployInstanceSDGOutcome;
+			typedef std::future<DeployInstanceSDGOutcome> DeployInstanceSDGOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::DeployInstanceSDGRequest&, const DeployInstanceSDGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeployInstanceSDGAsyncHandler;
 			typedef Outcome<Error, Model::DeploySDGResult> DeploySDGOutcome;
 			typedef std::future<DeploySDGOutcome> DeploySDGOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DeploySDGRequest&, const DeploySDGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeploySDGAsyncHandler;
@@ -952,6 +971,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeResourceTimelineResult> DescribeResourceTimelineOutcome;
 			typedef std::future<DescribeResourceTimelineOutcome> DescribeResourceTimelineOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DescribeResourceTimelineRequest&, const DescribeResourceTimelineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceTimelineAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSDGResult> DescribeSDGOutcome;
+			typedef std::future<DescribeSDGOutcome> DescribeSDGOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::DescribeSDGRequest&, const DescribeSDGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSDGAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSDGDeploymentStatusResult> DescribeSDGDeploymentStatusOutcome;
 			typedef std::future<DescribeSDGDeploymentStatusOutcome> DescribeSDGDeploymentStatusOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DescribeSDGDeploymentStatusRequest&, const DescribeSDGDeploymentStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSDGDeploymentStatusAsyncHandler;
@@ -1042,6 +1064,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListObjectsResult> ListObjectsOutcome;
 			typedef std::future<ListObjectsOutcome> ListObjectsOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::ListObjectsRequest&, const ListObjectsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListObjectsAsyncHandler;
+			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
+			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::ModifyEnsEipAddressAttributeResult> ModifyEnsEipAddressAttributeOutcome;
 			typedef std::future<ModifyEnsEipAddressAttributeOutcome> ModifyEnsEipAddressAttributeOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::ModifyEnsEipAddressAttributeRequest&, const ModifyEnsEipAddressAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnsEipAddressAttributeAsyncHandler;
@@ -1087,6 +1112,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyVSwitchAttributeResult> ModifyVSwitchAttributeOutcome;
 			typedef std::future<ModifyVSwitchAttributeOutcome> ModifyVSwitchAttributeOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::ModifyVSwitchAttributeRequest&, const ModifyVSwitchAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVSwitchAttributeAsyncHandler;
+			typedef Outcome<Error, Model::PreloadRegionSDGResult> PreloadRegionSDGOutcome;
+			typedef std::future<PreloadRegionSDGOutcome> PreloadRegionSDGOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::PreloadRegionSDGRequest&, const PreloadRegionSDGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PreloadRegionSDGAsyncHandler;
 			typedef Outcome<Error, Model::PushApplicationDataResult> PushApplicationDataOutcome;
 			typedef std::future<PushApplicationDataOutcome> PushApplicationDataOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::PushApplicationDataRequest&, const PushApplicationDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PushApplicationDataAsyncHandler;
@@ -1141,6 +1169,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RemoveBackendServersResult> RemoveBackendServersOutcome;
 			typedef std::future<RemoveBackendServersOutcome> RemoveBackendServersOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::RemoveBackendServersRequest&, const RemoveBackendServersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveBackendServersAsyncHandler;
+			typedef Outcome<Error, Model::RemoveInstanceSDGResult> RemoveInstanceSDGOutcome;
+			typedef std::future<RemoveInstanceSDGOutcome> RemoveInstanceSDGOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::RemoveInstanceSDGRequest&, const RemoveInstanceSDGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveInstanceSDGAsyncHandler;
 			typedef Outcome<Error, Model::RemovePublicIpsFromEpnInstanceResult> RemovePublicIpsFromEpnInstanceOutcome;
 			typedef std::future<RemovePublicIpsFromEpnInstanceOutcome> RemovePublicIpsFromEpnInstanceOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::RemovePublicIpsFromEpnInstanceRequest&, const RemovePublicIpsFromEpnInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemovePublicIpsFromEpnInstanceAsyncHandler;
@@ -1243,6 +1274,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopSnatIpForSnatEntryResult> StopSnatIpForSnatEntryOutcome;
 			typedef std::future<StopSnatIpForSnatEntryOutcome> StopSnatIpForSnatEntryOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::StopSnatIpForSnatEntryRequest&, const StopSnatIpForSnatEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopSnatIpForSnatEntryAsyncHandler;
+			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
+			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UnAssociateEnsEipAddressResult> UnAssociateEnsEipAddressOutcome;
 			typedef std::future<UnAssociateEnsEipAddressOutcome> UnAssociateEnsEipAddressOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::UnAssociateEnsEipAddressRequest&, const UnAssociateEnsEipAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnAssociateEnsEipAddressAsyncHandler;
@@ -1252,6 +1286,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnassociateNetworkAclResult> UnassociateNetworkAclOutcome;
 			typedef std::future<UnassociateNetworkAclOutcome> UnassociateNetworkAclOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::UnassociateNetworkAclRequest&, const UnassociateNetworkAclOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnassociateNetworkAclAsyncHandler;
+			typedef Outcome<Error, Model::UnloadRegionSDGResult> UnloadRegionSDGOutcome;
+			typedef std::future<UnloadRegionSDGOutcome> UnloadRegionSDGOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::UnloadRegionSDGRequest&, const UnloadRegionSDGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnloadRegionSDGAsyncHandler;
+			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
+			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateEnsSaleControlResult> UpdateEnsSaleControlOutcome;
 			typedef std::future<UpdateEnsSaleControlOutcome> UpdateEnsSaleControlOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::UpdateEnsSaleControlRequest&, const UpdateEnsSaleControlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEnsSaleControlAsyncHandler;
@@ -1476,6 +1516,9 @@ namespace AlibabaCloud
 			DeleteVSwitchOutcome deleteVSwitch(const Model::DeleteVSwitchRequest &request)const;
 			void deleteVSwitchAsync(const Model::DeleteVSwitchRequest& request, const DeleteVSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteVSwitchOutcomeCallable deleteVSwitchCallable(const Model::DeleteVSwitchRequest& request) const;
+			DeployInstanceSDGOutcome deployInstanceSDG(const Model::DeployInstanceSDGRequest &request)const;
+			void deployInstanceSDGAsync(const Model::DeployInstanceSDGRequest& request, const DeployInstanceSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeployInstanceSDGOutcomeCallable deployInstanceSDGCallable(const Model::DeployInstanceSDGRequest& request) const;
 			DeploySDGOutcome deploySDG(const Model::DeploySDGRequest &request)const;
 			void deploySDGAsync(const Model::DeploySDGRequest& request, const DeploySDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeploySDGOutcomeCallable deploySDGCallable(const Model::DeploySDGRequest& request) const;
@@ -1695,6 +1738,9 @@ namespace AlibabaCloud
 			DescribeResourceTimelineOutcome describeResourceTimeline(const Model::DescribeResourceTimelineRequest &request)const;
 			void describeResourceTimelineAsync(const Model::DescribeResourceTimelineRequest& request, const DescribeResourceTimelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeResourceTimelineOutcomeCallable describeResourceTimelineCallable(const Model::DescribeResourceTimelineRequest& request) const;
+			DescribeSDGOutcome describeSDG(const Model::DescribeSDGRequest &request)const;
+			void describeSDGAsync(const Model::DescribeSDGRequest& request, const DescribeSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSDGOutcomeCallable describeSDGCallable(const Model::DescribeSDGRequest& request) const;
 			DescribeSDGDeploymentStatusOutcome describeSDGDeploymentStatus(const Model::DescribeSDGDeploymentStatusRequest &request)const;
 			void describeSDGDeploymentStatusAsync(const Model::DescribeSDGDeploymentStatusRequest& request, const DescribeSDGDeploymentStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSDGDeploymentStatusOutcomeCallable describeSDGDeploymentStatusCallable(const Model::DescribeSDGDeploymentStatusRequest& request) const;
@@ -1785,6 +1831,9 @@ namespace AlibabaCloud
 			ListObjectsOutcome listObjects(const Model::ListObjectsRequest &request)const;
 			void listObjectsAsync(const Model::ListObjectsRequest& request, const ListObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListObjectsOutcomeCallable listObjectsCallable(const Model::ListObjectsRequest& request) const;
+			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
+			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
 			ModifyEnsEipAddressAttributeOutcome modifyEnsEipAddressAttribute(const Model::ModifyEnsEipAddressAttributeRequest &request)const;
 			void modifyEnsEipAddressAttributeAsync(const Model::ModifyEnsEipAddressAttributeRequest& request, const ModifyEnsEipAddressAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyEnsEipAddressAttributeOutcomeCallable modifyEnsEipAddressAttributeCallable(const Model::ModifyEnsEipAddressAttributeRequest& request) const;
@@ -1830,6 +1879,9 @@ namespace AlibabaCloud
 			ModifyVSwitchAttributeOutcome modifyVSwitchAttribute(const Model::ModifyVSwitchAttributeRequest &request)const;
 			void modifyVSwitchAttributeAsync(const Model::ModifyVSwitchAttributeRequest& request, const ModifyVSwitchAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyVSwitchAttributeOutcomeCallable modifyVSwitchAttributeCallable(const Model::ModifyVSwitchAttributeRequest& request) const;
+			PreloadRegionSDGOutcome preloadRegionSDG(const Model::PreloadRegionSDGRequest &request)const;
+			void preloadRegionSDGAsync(const Model::PreloadRegionSDGRequest& request, const PreloadRegionSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PreloadRegionSDGOutcomeCallable preloadRegionSDGCallable(const Model::PreloadRegionSDGRequest& request) const;
 			PushApplicationDataOutcome pushApplicationData(const Model::PushApplicationDataRequest &request)const;
 			void pushApplicationDataAsync(const Model::PushApplicationDataRequest& request, const PushApplicationDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PushApplicationDataOutcomeCallable pushApplicationDataCallable(const Model::PushApplicationDataRequest& request) const;
@@ -1884,6 +1936,9 @@ namespace AlibabaCloud
 			RemoveBackendServersOutcome removeBackendServers(const Model::RemoveBackendServersRequest &request)const;
 			void removeBackendServersAsync(const Model::RemoveBackendServersRequest& request, const RemoveBackendServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveBackendServersOutcomeCallable removeBackendServersCallable(const Model::RemoveBackendServersRequest& request) const;
+			RemoveInstanceSDGOutcome removeInstanceSDG(const Model::RemoveInstanceSDGRequest &request)const;
+			void removeInstanceSDGAsync(const Model::RemoveInstanceSDGRequest& request, const RemoveInstanceSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveInstanceSDGOutcomeCallable removeInstanceSDGCallable(const Model::RemoveInstanceSDGRequest& request) const;
 			RemovePublicIpsFromEpnInstanceOutcome removePublicIpsFromEpnInstance(const Model::RemovePublicIpsFromEpnInstanceRequest &request)const;
 			void removePublicIpsFromEpnInstanceAsync(const Model::RemovePublicIpsFromEpnInstanceRequest& request, const RemovePublicIpsFromEpnInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemovePublicIpsFromEpnInstanceOutcomeCallable removePublicIpsFromEpnInstanceCallable(const Model::RemovePublicIpsFromEpnInstanceRequest& request) const;
@@ -1986,6 +2041,9 @@ namespace AlibabaCloud
 			StopSnatIpForSnatEntryOutcome stopSnatIpForSnatEntry(const Model::StopSnatIpForSnatEntryRequest &request)const;
 			void stopSnatIpForSnatEntryAsync(const Model::StopSnatIpForSnatEntryRequest& request, const StopSnatIpForSnatEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopSnatIpForSnatEntryOutcomeCallable stopSnatIpForSnatEntryCallable(const Model::StopSnatIpForSnatEntryRequest& request) const;
+			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
+			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
 			UnAssociateEnsEipAddressOutcome unAssociateEnsEipAddress(const Model::UnAssociateEnsEipAddressRequest &request)const;
 			void unAssociateEnsEipAddressAsync(const Model::UnAssociateEnsEipAddressRequest& request, const UnAssociateEnsEipAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnAssociateEnsEipAddressOutcomeCallable unAssociateEnsEipAddressCallable(const Model::UnAssociateEnsEipAddressRequest& request) const;
@@ -1995,6 +2053,12 @@ namespace AlibabaCloud
 			UnassociateNetworkAclOutcome unassociateNetworkAcl(const Model::UnassociateNetworkAclRequest &request)const;
 			void unassociateNetworkAclAsync(const Model::UnassociateNetworkAclRequest& request, const UnassociateNetworkAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnassociateNetworkAclOutcomeCallable unassociateNetworkAclCallable(const Model::UnassociateNetworkAclRequest& request) const;
+			UnloadRegionSDGOutcome unloadRegionSDG(const Model::UnloadRegionSDGRequest &request)const;
+			void unloadRegionSDGAsync(const Model::UnloadRegionSDGRequest& request, const UnloadRegionSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnloadRegionSDGOutcomeCallable unloadRegionSDGCallable(const Model::UnloadRegionSDGRequest& request) const;
+			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
+			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
 			UpdateEnsSaleControlOutcome updateEnsSaleControl(const Model::UpdateEnsSaleControlRequest &request)const;
 			void updateEnsSaleControlAsync(const Model::UpdateEnsSaleControlRequest& request, const UpdateEnsSaleControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateEnsSaleControlOutcomeCallable updateEnsSaleControlCallable(const Model::UpdateEnsSaleControlRequest& request) const;

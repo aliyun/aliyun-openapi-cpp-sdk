@@ -87,37 +87,14 @@ void DescribeLoadBalancerHTTPListenerAttributeResult::parse(const std::string &p
 		serverCertificateId_ = value["ServerCertificateId"].asString();
 	if(!value["HealthCheckMethod"].isNull())
 		healthCheckMethod_ = value["HealthCheckMethod"].asString();
+	if(!value["XForwardedFor"].isNull())
+		xForwardedFor_ = value["XForwardedFor"].asString();
 
-}
-
-std::string DescribeLoadBalancerHTTPListenerAttributeResult::getStatus()const
-{
-	return status_;
 }
 
 int DescribeLoadBalancerHTTPListenerAttributeResult::getCookieTimeout()const
 {
 	return cookieTimeout_;
-}
-
-std::string DescribeLoadBalancerHTTPListenerAttributeResult::getCookie()const
-{
-	return cookie_;
-}
-
-int DescribeLoadBalancerHTTPListenerAttributeResult::getListenerPort()const
-{
-	return listenerPort_;
-}
-
-int DescribeLoadBalancerHTTPListenerAttributeResult::getRequestTimeout()const
-{
-	return requestTimeout_;
-}
-
-int DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckInterval()const
-{
-	return healthCheckInterval_;
 }
 
 std::string DescribeLoadBalancerHTTPListenerAttributeResult::getDescription()const
@@ -150,29 +127,9 @@ int DescribeLoadBalancerHTTPListenerAttributeResult::getIdleTimeout()const
 	return idleTimeout_;
 }
 
-int DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckTimeout()const
-{
-	return healthCheckTimeout_;
-}
-
-std::string DescribeLoadBalancerHTTPListenerAttributeResult::getListenerForward()const
-{
-	return listenerForward_;
-}
-
-std::string DescribeLoadBalancerHTTPListenerAttributeResult::getStickySession()const
-{
-	return stickySession_;
-}
-
 int DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckConnectPort()const
 {
 	return healthCheckConnectPort_;
-}
-
-int DescribeLoadBalancerHTTPListenerAttributeResult::getForwardPort()const
-{
-	return forwardPort_;
 }
 
 std::string DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckMethod()const
@@ -183,16 +140,6 @@ std::string DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckMetho
 int DescribeLoadBalancerHTTPListenerAttributeResult::getBandwidth()const
 {
 	return bandwidth_;
-}
-
-int DescribeLoadBalancerHTTPListenerAttributeResult::getHealthyThreshold()const
-{
-	return healthyThreshold_;
-}
-
-std::string DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckDomain()const
-{
-	return healthCheckDomain_;
 }
 
 std::string DescribeLoadBalancerHTTPListenerAttributeResult::getServerCertificateId()const
@@ -208,5 +155,65 @@ std::string DescribeLoadBalancerHTTPListenerAttributeResult::getStickySessionTyp
 std::string DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckHttpCode()const
 {
 	return healthCheckHttpCode_;
+}
+
+std::string DescribeLoadBalancerHTTPListenerAttributeResult::getStatus()const
+{
+	return status_;
+}
+
+std::string DescribeLoadBalancerHTTPListenerAttributeResult::getCookie()const
+{
+	return cookie_;
+}
+
+int DescribeLoadBalancerHTTPListenerAttributeResult::getListenerPort()const
+{
+	return listenerPort_;
+}
+
+int DescribeLoadBalancerHTTPListenerAttributeResult::getRequestTimeout()const
+{
+	return requestTimeout_;
+}
+
+int DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckInterval()const
+{
+	return healthCheckInterval_;
+}
+
+int DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckTimeout()const
+{
+	return healthCheckTimeout_;
+}
+
+std::string DescribeLoadBalancerHTTPListenerAttributeResult::getListenerForward()const
+{
+	return listenerForward_;
+}
+
+std::string DescribeLoadBalancerHTTPListenerAttributeResult::getStickySession()const
+{
+	return stickySession_;
+}
+
+int DescribeLoadBalancerHTTPListenerAttributeResult::getForwardPort()const
+{
+	return forwardPort_;
+}
+
+int DescribeLoadBalancerHTTPListenerAttributeResult::getHealthyThreshold()const
+{
+	return healthyThreshold_;
+}
+
+std::string DescribeLoadBalancerHTTPListenerAttributeResult::getXForwardedFor()const
+{
+	return xForwardedFor_;
+}
+
+std::string DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckDomain()const
+{
+	return healthCheckDomain_;
 }
 

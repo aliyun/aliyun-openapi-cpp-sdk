@@ -20,7 +20,7 @@ using AlibabaCloud::Ens::Model::DeleteSDGRequest;
 
 DeleteSDGRequest::DeleteSDGRequest()
     : RpcServiceRequest("ens", "2017-11-10", "DeleteSDG") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 DeleteSDGRequest::~DeleteSDGRequest() {}

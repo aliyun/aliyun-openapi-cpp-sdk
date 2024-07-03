@@ -43,6 +43,15 @@ void SetLoadBalancerHTTPListenerAttributeRequest::setHealthCheckURI(const std::s
   setParameter(std::string("HealthCheckURI"), healthCheckURI);
 }
 
+std::string SetLoadBalancerHTTPListenerAttributeRequest::getXForwardedFor() const {
+  return xForwardedFor_;
+}
+
+void SetLoadBalancerHTTPListenerAttributeRequest::setXForwardedFor(const std::string &xForwardedFor) {
+  xForwardedFor_ = xForwardedFor;
+  setParameter(std::string("XForwardedFor"), xForwardedFor);
+}
+
 std::string SetLoadBalancerHTTPListenerAttributeRequest::getHealthCheck() const {
   return healthCheck_;
 }
