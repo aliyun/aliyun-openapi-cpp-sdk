@@ -140,27 +140,22 @@ void DescribeInstanceTopologyResult::parse(const std::string &payload)
 				nodesObject.readOnlyCopyId = std::stol(instanceTopologyNodeZonesZonesItemNodesNodesItem["ReadOnlyCopyId"].asString());
 			if(!instanceTopologyNodeZonesZonesItemNodesNodesItem["LogicalZone"].isNull())
 				nodesObject.logicalZone = instanceTopologyNodeZonesZonesItemNodesNodesItem["LogicalZone"].asString();
-			auto allNodeResourceNode = instanceTopologyNodeZonesZonesItemNodesNodesItem["NodeResource"]["NodeResourceItem"];
-			for (auto instanceTopologyNodeZonesZonesItemNodesNodesItemNodeResourceNodeResourceItem : allNodeResourceNode)
-			{
-				InstanceTopology::ZonesItem::NodesItem::NodeResourceItem nodeResourceObject;
-				auto cpuNode = value["Cpu"];
-				if(!cpuNode["UsedCpu"].isNull())
-					nodeResourceObject.cpu.usedCpu = std::stof(cpuNode["UsedCpu"].asString());
-				if(!cpuNode["TotalCpu"].isNull())
-					nodeResourceObject.cpu.totalCpu = std::stoi(cpuNode["TotalCpu"].asString());
-				auto memoryNode = value["Memory"];
-				if(!memoryNode["UsedMemory"].isNull())
-					nodeResourceObject.memory.usedMemory = std::stof(memoryNode["UsedMemory"].asString());
-				if(!memoryNode["TotalMemory"].isNull())
-					nodeResourceObject.memory.totalMemory = std::stol(memoryNode["TotalMemory"].asString());
-				auto diskSizeNode = value["DiskSize"];
-				if(!diskSizeNode["TotalDiskSize"].isNull())
-					nodeResourceObject.diskSize.totalDiskSize = diskSizeNode["TotalDiskSize"].asString();
-				if(!diskSizeNode["UsedDiskSize"].isNull())
-					nodeResourceObject.diskSize.usedDiskSize = diskSizeNode["UsedDiskSize"].asString();
-				nodesObject.nodeResource.push_back(nodeResourceObject);
-			}
+			auto nodeResourceNode = value["NodeResource"];
+			auto cpuNode = nodeResourceNode["Cpu"];
+			if(!cpuNode["UsedCpu"].isNull())
+				nodesObject.nodeResource.cpu.usedCpu = std::stof(cpuNode["UsedCpu"].asString());
+			if(!cpuNode["TotalCpu"].isNull())
+				nodesObject.nodeResource.cpu.totalCpu = std::stoi(cpuNode["TotalCpu"].asString());
+			auto memoryNode = nodeResourceNode["Memory"];
+			if(!memoryNode["UsedMemory"].isNull())
+				nodesObject.nodeResource.memory.usedMemory = std::stof(memoryNode["UsedMemory"].asString());
+			if(!memoryNode["TotalMemory"].isNull())
+				nodesObject.nodeResource.memory.totalMemory = std::stol(memoryNode["TotalMemory"].asString());
+			auto diskSizeNode = nodeResourceNode["DiskSize"];
+			if(!diskSizeNode["TotalDiskSize"].isNull())
+				nodesObject.nodeResource.diskSize.totalDiskSize = diskSizeNode["TotalDiskSize"].asString();
+			if(!diskSizeNode["UsedDiskSize"].isNull())
+				nodesObject.nodeResource.diskSize.usedDiskSize = diskSizeNode["UsedDiskSize"].asString();
 			zonesItemObject.nodes.push_back(nodesObject);
 		}
 		auto zoneResourceNode = value["ZoneResource"];

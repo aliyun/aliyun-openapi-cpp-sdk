@@ -85,7 +85,7 @@ namespace AlibabaCloud
 						};
 						struct NodesItem
 						{
-							struct NodeResourceItem
+							struct NodeResource
 							{
 								struct Cpu
 								{
@@ -106,7 +106,7 @@ namespace AlibabaCloud
 								DiskSize diskSize;
 								Cpu cpu;
 							};
-							std::vector<NodesItem::NodeResourceItem> nodeResource;
+							NodeResource nodeResource;
 							std::string replicaType;
 							std::string nodeId;
 							std::string logicalZone;
