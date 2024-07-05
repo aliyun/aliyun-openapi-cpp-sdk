@@ -89,8 +89,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/AddStudioLayoutResult.h
 	include/alibabacloud/live/model/AddTrancodeSEIRequest.h
 	include/alibabacloud/live/model/AddTrancodeSEIResult.h
-	include/alibabacloud/live/model/AllowPushStreamRequest.h
-	include/alibabacloud/live/model/AllowPushStreamResult.h
 	include/alibabacloud/live/model/BatchDeleteLiveDomainConfigsRequest.h
 	include/alibabacloud/live/model/BatchDeleteLiveDomainConfigsResult.h
 	include/alibabacloud/live/model/BatchGetOnlineUsersRequest.h
@@ -247,8 +245,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeletePlaylistResult.h
 	include/alibabacloud/live/model/DeletePlaylistItemsRequest.h
 	include/alibabacloud/live/model/DeletePlaylistItemsResult.h
-	include/alibabacloud/live/model/DeleteRoomRequest.h
-	include/alibabacloud/live/model/DeleteRoomResult.h
 	include/alibabacloud/live/model/DeleteRtcAsrTaskRequest.h
 	include/alibabacloud/live/model/DeleteRtcAsrTaskResult.h
 	include/alibabacloud/live/model/DeleteRtcMPUEventSubRequest.h
@@ -291,8 +287,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeDomainUsageDataResult.h
 	include/alibabacloud/live/model/DescribeDomainWithIntegrityRequest.h
 	include/alibabacloud/live/model/DescribeDomainWithIntegrityResult.h
-	include/alibabacloud/live/model/DescribeForbidPushStreamRoomListRequest.h
-	include/alibabacloud/live/model/DescribeForbidPushStreamRoomListResult.h
 	include/alibabacloud/live/model/DescribeHlsLiveStreamRealTimeBpsDataRequest.h
 	include/alibabacloud/live/model/DescribeHlsLiveStreamRealTimeBpsDataResult.h
 	include/alibabacloud/live/model/DescribeLiveAIProduceRulesRequest.h
@@ -529,10 +523,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeRTSNativeSDKPlayTimeResult.h
 	include/alibabacloud/live/model/DescribeRTSNativeSDKVvDataRequest.h
 	include/alibabacloud/live/model/DescribeRTSNativeSDKVvDataResult.h
-	include/alibabacloud/live/model/DescribeRoomKickoutUserListRequest.h
-	include/alibabacloud/live/model/DescribeRoomKickoutUserListResult.h
-	include/alibabacloud/live/model/DescribeRoomStatusRequest.h
-	include/alibabacloud/live/model/DescribeRoomStatusResult.h
 	include/alibabacloud/live/model/DescribeRtcMPUEventSubRequest.h
 	include/alibabacloud/live/model/DescribeRtcMPUEventSubResult.h
 	include/alibabacloud/live/model/DescribeShowListRequest.h
@@ -567,8 +557,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/EnableLiveRealtimeLogDeliveryResult.h
 	include/alibabacloud/live/model/ForbidLiveStreamRequest.h
 	include/alibabacloud/live/model/ForbidLiveStreamResult.h
-	include/alibabacloud/live/model/ForbidPushStreamRequest.h
-	include/alibabacloud/live/model/ForbidPushStreamResult.h
 	include/alibabacloud/live/model/GetAllCustomTemplatesRequest.h
 	include/alibabacloud/live/model/GetAllCustomTemplatesResult.h
 	include/alibabacloud/live/model/GetCustomTemplateRequest.h
@@ -695,6 +683,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/QuerySnapshotCallbackAuthResult.h
 	include/alibabacloud/live/model/RealTimeRecordCommandRequest.h
 	include/alibabacloud/live/model/RealTimeRecordCommandResult.h
+	include/alibabacloud/live/model/RecoverLiveMessageDeletedGroupRequest.h
+	include/alibabacloud/live/model/RecoverLiveMessageDeletedGroupResult.h
 	include/alibabacloud/live/model/RemoveShowFromShowListRequest.h
 	include/alibabacloud/live/model/RemoveShowFromShowListResult.h
 	include/alibabacloud/live/model/RemoveTerminalsRequest.h
@@ -717,10 +707,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/SendMessageToGroupResult.h
 	include/alibabacloud/live/model/SendMessageToGroupUsersRequest.h
 	include/alibabacloud/live/model/SendMessageToGroupUsersResult.h
-	include/alibabacloud/live/model/SendRoomNotificationRequest.h
-	include/alibabacloud/live/model/SendRoomNotificationResult.h
-	include/alibabacloud/live/model/SendRoomUserNotificationRequest.h
-	include/alibabacloud/live/model/SendRoomUserNotificationResult.h
 	include/alibabacloud/live/model/SetCasterChannelRequest.h
 	include/alibabacloud/live/model/SetCasterChannelResult.h
 	include/alibabacloud/live/model/SetCasterConfigRequest.h
@@ -914,8 +900,6 @@ set(live_src
 	src/model/AddStudioLayoutResult.cc
 	src/model/AddTrancodeSEIRequest.cc
 	src/model/AddTrancodeSEIResult.cc
-	src/model/AllowPushStreamRequest.cc
-	src/model/AllowPushStreamResult.cc
 	src/model/BatchDeleteLiveDomainConfigsRequest.cc
 	src/model/BatchDeleteLiveDomainConfigsResult.cc
 	src/model/BatchGetOnlineUsersRequest.cc
@@ -1072,8 +1056,6 @@ set(live_src
 	src/model/DeletePlaylistResult.cc
 	src/model/DeletePlaylistItemsRequest.cc
 	src/model/DeletePlaylistItemsResult.cc
-	src/model/DeleteRoomRequest.cc
-	src/model/DeleteRoomResult.cc
 	src/model/DeleteRtcAsrTaskRequest.cc
 	src/model/DeleteRtcAsrTaskResult.cc
 	src/model/DeleteRtcMPUEventSubRequest.cc
@@ -1116,8 +1098,6 @@ set(live_src
 	src/model/DescribeDomainUsageDataResult.cc
 	src/model/DescribeDomainWithIntegrityRequest.cc
 	src/model/DescribeDomainWithIntegrityResult.cc
-	src/model/DescribeForbidPushStreamRoomListRequest.cc
-	src/model/DescribeForbidPushStreamRoomListResult.cc
 	src/model/DescribeHlsLiveStreamRealTimeBpsDataRequest.cc
 	src/model/DescribeHlsLiveStreamRealTimeBpsDataResult.cc
 	src/model/DescribeLiveAIProduceRulesRequest.cc
@@ -1354,10 +1334,6 @@ set(live_src
 	src/model/DescribeRTSNativeSDKPlayTimeResult.cc
 	src/model/DescribeRTSNativeSDKVvDataRequest.cc
 	src/model/DescribeRTSNativeSDKVvDataResult.cc
-	src/model/DescribeRoomKickoutUserListRequest.cc
-	src/model/DescribeRoomKickoutUserListResult.cc
-	src/model/DescribeRoomStatusRequest.cc
-	src/model/DescribeRoomStatusResult.cc
 	src/model/DescribeRtcMPUEventSubRequest.cc
 	src/model/DescribeRtcMPUEventSubResult.cc
 	src/model/DescribeShowListRequest.cc
@@ -1392,8 +1368,6 @@ set(live_src
 	src/model/EnableLiveRealtimeLogDeliveryResult.cc
 	src/model/ForbidLiveStreamRequest.cc
 	src/model/ForbidLiveStreamResult.cc
-	src/model/ForbidPushStreamRequest.cc
-	src/model/ForbidPushStreamResult.cc
 	src/model/GetAllCustomTemplatesRequest.cc
 	src/model/GetAllCustomTemplatesResult.cc
 	src/model/GetCustomTemplateRequest.cc
@@ -1520,6 +1494,8 @@ set(live_src
 	src/model/QuerySnapshotCallbackAuthResult.cc
 	src/model/RealTimeRecordCommandRequest.cc
 	src/model/RealTimeRecordCommandResult.cc
+	src/model/RecoverLiveMessageDeletedGroupRequest.cc
+	src/model/RecoverLiveMessageDeletedGroupResult.cc
 	src/model/RemoveShowFromShowListRequest.cc
 	src/model/RemoveShowFromShowListResult.cc
 	src/model/RemoveTerminalsRequest.cc
@@ -1542,10 +1518,6 @@ set(live_src
 	src/model/SendMessageToGroupResult.cc
 	src/model/SendMessageToGroupUsersRequest.cc
 	src/model/SendMessageToGroupUsersResult.cc
-	src/model/SendRoomNotificationRequest.cc
-	src/model/SendRoomNotificationResult.cc
-	src/model/SendRoomUserNotificationRequest.cc
-	src/model/SendRoomUserNotificationResult.cc
 	src/model/SetCasterChannelRequest.cc
 	src/model/SetCasterChannelResult.cc
 	src/model/SetCasterConfigRequest.cc

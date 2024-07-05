@@ -14,38 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/SendRoomNotificationResult.h>
+#include <alibabacloud/live/model/RecoverLiveMessageDeletedGroupResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-SendRoomNotificationResult::SendRoomNotificationResult() :
+RecoverLiveMessageDeletedGroupResult::RecoverLiveMessageDeletedGroupResult() :
 	ServiceResult()
 {}
 
-SendRoomNotificationResult::SendRoomNotificationResult(const std::string &payload) :
+RecoverLiveMessageDeletedGroupResult::RecoverLiveMessageDeletedGroupResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SendRoomNotificationResult::~SendRoomNotificationResult()
+RecoverLiveMessageDeletedGroupResult::~RecoverLiveMessageDeletedGroupResult()
 {}
 
-void SendRoomNotificationResult::parse(const std::string &payload)
+void RecoverLiveMessageDeletedGroupResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["MessageId"].isNull())
-		messageId_ = value["MessageId"].asString();
+	if(!value["GroupId"].isNull())
+		groupId_ = value["GroupId"].asString();
 
 }
 
-std::string SendRoomNotificationResult::getMessageId()const
+std::string RecoverLiveMessageDeletedGroupResult::getGroupId()const
 {
-	return messageId_;
+	return groupId_;
 }
 

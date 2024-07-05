@@ -68,6 +68,8 @@ void DescribeLiveStreamRecordIndexFileResult::parse(const std::string &payload)
 		recordIndexInfo_.duration = std::stof(recordIndexInfoNode["Duration"].asString());
 	if(!recordIndexInfoNode["OssEndpoint"].isNull())
 		recordIndexInfo_.ossEndpoint = recordIndexInfoNode["OssEndpoint"].asString();
+	if(!recordIndexInfoNode["Format"].isNull())
+		recordIndexInfo_.format = recordIndexInfoNode["Format"].asString();
 
 }
 

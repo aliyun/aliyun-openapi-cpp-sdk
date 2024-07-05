@@ -71,6 +71,8 @@ void DescribeLiveStreamRecordIndexFilesResult::parse(const std::string &payload)
 			recordIndexInfoListObject.duration = std::stof(valueRecordIndexInfoListRecordIndexInfo["Duration"].asString());
 		if(!valueRecordIndexInfoListRecordIndexInfo["OssEndpoint"].isNull())
 			recordIndexInfoListObject.ossEndpoint = valueRecordIndexInfoListRecordIndexInfo["OssEndpoint"].asString();
+		if(!valueRecordIndexInfoListRecordIndexInfo["Format"].isNull())
+			recordIndexInfoListObject.format = valueRecordIndexInfoListRecordIndexInfo["Format"].asString();
 		recordIndexInfoList_.push_back(recordIndexInfoListObject);
 	}
 	if(!value["PageNum"].isNull())

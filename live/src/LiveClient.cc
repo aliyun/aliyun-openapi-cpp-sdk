@@ -1275,42 +1275,6 @@ LiveClient::AddTrancodeSEIOutcomeCallable LiveClient::addTrancodeSEICallable(con
 	return task->get_future();
 }
 
-LiveClient::AllowPushStreamOutcome LiveClient::allowPushStream(const AllowPushStreamRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AllowPushStreamOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AllowPushStreamOutcome(AllowPushStreamResult(outcome.result()));
-	else
-		return AllowPushStreamOutcome(outcome.error());
-}
-
-void LiveClient::allowPushStreamAsync(const AllowPushStreamRequest& request, const AllowPushStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, allowPushStream(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::AllowPushStreamOutcomeCallable LiveClient::allowPushStreamCallable(const AllowPushStreamRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AllowPushStreamOutcome()>>(
-			[this, request]()
-			{
-			return this->allowPushStream(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::BatchDeleteLiveDomainConfigsOutcome LiveClient::batchDeleteLiveDomainConfigs(const BatchDeleteLiveDomainConfigsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4119,42 +4083,6 @@ LiveClient::DeletePlaylistItemsOutcomeCallable LiveClient::deletePlaylistItemsCa
 	return task->get_future();
 }
 
-LiveClient::DeleteRoomOutcome LiveClient::deleteRoom(const DeleteRoomRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteRoomOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteRoomOutcome(DeleteRoomResult(outcome.result()));
-	else
-		return DeleteRoomOutcome(outcome.error());
-}
-
-void LiveClient::deleteRoomAsync(const DeleteRoomRequest& request, const DeleteRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteRoom(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DeleteRoomOutcomeCallable LiveClient::deleteRoomCallable(const DeleteRoomRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteRoomOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteRoom(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::DeleteRtcAsrTaskOutcome LiveClient::deleteRtcAsrTask(const DeleteRtcAsrTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4905,42 +4833,6 @@ LiveClient::DescribeDomainWithIntegrityOutcomeCallable LiveClient::describeDomai
 			[this, request]()
 			{
 			return this->describeDomainWithIntegrity(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::DescribeForbidPushStreamRoomListOutcome LiveClient::describeForbidPushStreamRoomList(const DescribeForbidPushStreamRoomListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeForbidPushStreamRoomListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeForbidPushStreamRoomListOutcome(DescribeForbidPushStreamRoomListResult(outcome.result()));
-	else
-		return DescribeForbidPushStreamRoomListOutcome(outcome.error());
-}
-
-void LiveClient::describeForbidPushStreamRoomListAsync(const DescribeForbidPushStreamRoomListRequest& request, const DescribeForbidPushStreamRoomListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeForbidPushStreamRoomList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeForbidPushStreamRoomListOutcomeCallable LiveClient::describeForbidPushStreamRoomListCallable(const DescribeForbidPushStreamRoomListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeForbidPushStreamRoomListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeForbidPushStreamRoomList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9195,78 +9087,6 @@ LiveClient::DescribeRTSNativeSDKVvDataOutcomeCallable LiveClient::describeRTSNat
 	return task->get_future();
 }
 
-LiveClient::DescribeRoomKickoutUserListOutcome LiveClient::describeRoomKickoutUserList(const DescribeRoomKickoutUserListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRoomKickoutUserListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRoomKickoutUserListOutcome(DescribeRoomKickoutUserListResult(outcome.result()));
-	else
-		return DescribeRoomKickoutUserListOutcome(outcome.error());
-}
-
-void LiveClient::describeRoomKickoutUserListAsync(const DescribeRoomKickoutUserListRequest& request, const DescribeRoomKickoutUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRoomKickoutUserList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeRoomKickoutUserListOutcomeCallable LiveClient::describeRoomKickoutUserListCallable(const DescribeRoomKickoutUserListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRoomKickoutUserListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRoomKickoutUserList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::DescribeRoomStatusOutcome LiveClient::describeRoomStatus(const DescribeRoomStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRoomStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRoomStatusOutcome(DescribeRoomStatusResult(outcome.result()));
-	else
-		return DescribeRoomStatusOutcome(outcome.error());
-}
-
-void LiveClient::describeRoomStatusAsync(const DescribeRoomStatusRequest& request, const DescribeRoomStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRoomStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeRoomStatusOutcomeCallable LiveClient::describeRoomStatusCallable(const DescribeRoomStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRoomStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRoomStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::DescribeRtcMPUEventSubOutcome LiveClient::describeRtcMPUEventSub(const DescribeRtcMPUEventSubRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -9873,42 +9693,6 @@ LiveClient::ForbidLiveStreamOutcomeCallable LiveClient::forbidLiveStreamCallable
 			[this, request]()
 			{
 			return this->forbidLiveStream(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::ForbidPushStreamOutcome LiveClient::forbidPushStream(const ForbidPushStreamRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ForbidPushStreamOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ForbidPushStreamOutcome(ForbidPushStreamResult(outcome.result()));
-	else
-		return ForbidPushStreamOutcome(outcome.error());
-}
-
-void LiveClient::forbidPushStreamAsync(const ForbidPushStreamRequest& request, const ForbidPushStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, forbidPushStream(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::ForbidPushStreamOutcomeCallable LiveClient::forbidPushStreamCallable(const ForbidPushStreamRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ForbidPushStreamOutcome()>>(
-			[this, request]()
-			{
-			return this->forbidPushStream(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -12183,6 +11967,42 @@ LiveClient::RealTimeRecordCommandOutcomeCallable LiveClient::realTimeRecordComma
 	return task->get_future();
 }
 
+LiveClient::RecoverLiveMessageDeletedGroupOutcome LiveClient::recoverLiveMessageDeletedGroup(const RecoverLiveMessageDeletedGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RecoverLiveMessageDeletedGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RecoverLiveMessageDeletedGroupOutcome(RecoverLiveMessageDeletedGroupResult(outcome.result()));
+	else
+		return RecoverLiveMessageDeletedGroupOutcome(outcome.error());
+}
+
+void LiveClient::recoverLiveMessageDeletedGroupAsync(const RecoverLiveMessageDeletedGroupRequest& request, const RecoverLiveMessageDeletedGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, recoverLiveMessageDeletedGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::RecoverLiveMessageDeletedGroupOutcomeCallable LiveClient::recoverLiveMessageDeletedGroupCallable(const RecoverLiveMessageDeletedGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RecoverLiveMessageDeletedGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->recoverLiveMessageDeletedGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::RemoveShowFromShowListOutcome LiveClient::removeShowFromShowList(const RemoveShowFromShowListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -12573,78 +12393,6 @@ LiveClient::SendMessageToGroupUsersOutcomeCallable LiveClient::sendMessageToGrou
 			[this, request]()
 			{
 			return this->sendMessageToGroupUsers(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::SendRoomNotificationOutcome LiveClient::sendRoomNotification(const SendRoomNotificationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SendRoomNotificationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SendRoomNotificationOutcome(SendRoomNotificationResult(outcome.result()));
-	else
-		return SendRoomNotificationOutcome(outcome.error());
-}
-
-void LiveClient::sendRoomNotificationAsync(const SendRoomNotificationRequest& request, const SendRoomNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, sendRoomNotification(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::SendRoomNotificationOutcomeCallable LiveClient::sendRoomNotificationCallable(const SendRoomNotificationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SendRoomNotificationOutcome()>>(
-			[this, request]()
-			{
-			return this->sendRoomNotification(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::SendRoomUserNotificationOutcome LiveClient::sendRoomUserNotification(const SendRoomUserNotificationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SendRoomUserNotificationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SendRoomUserNotificationOutcome(SendRoomUserNotificationResult(outcome.result()));
-	else
-		return SendRoomUserNotificationOutcome(outcome.error());
-}
-
-void LiveClient::sendRoomUserNotificationAsync(const SendRoomUserNotificationRequest& request, const SendRoomUserNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, sendRoomUserNotification(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::SendRoomUserNotificationOutcomeCallable LiveClient::sendRoomUserNotificationCallable(const SendRoomUserNotificationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SendRoomUserNotificationOutcome()>>(
-			[this, request]()
-			{
-			return this->sendRoomUserNotification(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

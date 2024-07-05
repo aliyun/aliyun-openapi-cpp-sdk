@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBEFORBIDPUSHSTREAMROOMLISTRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBEFORBIDPUSHSTREAMROOMLISTRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_RECOVERLIVEMESSAGEDELETEDGROUPRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_RECOVERLIVEMESSAGEDELETEDGROUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeForbidPushStreamRoomListResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT RecoverLiveMessageDeletedGroupResult : public ServiceResult
 			{
 			public:
-				struct Room
-				{
-					std::string opStartTime;
-					std::string anchorId;
-					std::string opEndTime;
-					std::string roomId;
-				};
 
 
-				DescribeForbidPushStreamRoomListResult();
-				explicit DescribeForbidPushStreamRoomListResult(const std::string &payload);
-				~DescribeForbidPushStreamRoomListResult();
-				int getTotalNum()const;
-				int getTotalPage()const;
-				std::vector<Room> getRoomList()const;
+				RecoverLiveMessageDeletedGroupResult();
+				explicit RecoverLiveMessageDeletedGroupResult(const std::string &payload);
+				~RecoverLiveMessageDeletedGroupResult();
+				std::string getGroupId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalNum_;
-				int totalPage_;
-				std::vector<Room> roomList_;
+				std::string groupId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBEFORBIDPUSHSTREAMROOMLISTRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_RECOVERLIVEMESSAGEDELETEDGROUPRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBEROOMKICKOUTUSERLISTREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBEROOMKICKOUTUSERLISTREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_RECOVERLIVEMESSAGEDELETEDGROUPREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_RECOVERLIVEMESSAGEDELETEDGROUPREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,23 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT DescribeRoomKickoutUserListRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT RecoverLiveMessageDeletedGroupRequest : public RpcServiceRequest {
 public:
-	DescribeRoomKickoutUserListRequest();
-	~DescribeRoomKickoutUserListRequest();
-	int getPageNum() const;
-	void setPageNum(int pageNum);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::string getOrder() const;
-	void setOrder(const std::string &order);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
-	std::string getRoomId() const;
-	void setRoomId(const std::string &roomId);
+	RecoverLiveMessageDeletedGroupRequest();
+	~RecoverLiveMessageDeletedGroupRequest();
+	std::string getGroupId() const;
+	void setGroupId(const std::string &groupId);
+	std::string getDataCenter() const;
+	void setDataCenter(const std::string &dataCenter);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
 
 private:
-	int pageNum_;
-	int pageSize_;
-	std::string order_;
-	long ownerId_;
-	std::string roomId_;
+	std::string groupId_;
+	std::string dataCenter_;
 	std::string appId_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBEROOMKICKOUTUSERLISTREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_RECOVERLIVEMESSAGEDELETEDGROUPREQUEST_H_

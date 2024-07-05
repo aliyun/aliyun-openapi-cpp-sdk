@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					float duration;
 					std::string appName;
 					std::string streamName;
+					std::string format;
 					std::string recordUrl;
 					std::string ossEndpoint;
 					std::string ossObject;
