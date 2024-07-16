@@ -52,6 +52,15 @@ void LoginInstanceRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+int LoginInstanceRequest::getPort() const {
+  return port_;
+}
+
+void LoginInstanceRequest::setPort(int port) {
+  port_ = port;
+  setParameter(std::string("Port"), std::to_string(port));
+}
+
 std::string LoginInstanceRequest::getUsername() const {
   return username_;
 }

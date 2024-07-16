@@ -21,8 +21,12 @@ set(swas-open_public_header
 	include/alibabacloud/swas-open/SWAS_OPENExport.h )
 
 set(swas-open_public_header_model 
+	include/alibabacloud/swas-open/model/AddCustomImageShareAccountRequest.h
+	include/alibabacloud/swas-open/model/AddCustomImageShareAccountResult.h
 	include/alibabacloud/swas-open/model/AllocatePublicConnectionRequest.h
 	include/alibabacloud/swas-open/model/AllocatePublicConnectionResult.h
+	include/alibabacloud/swas-open/model/ApplyFirewallTemplateRequest.h
+	include/alibabacloud/swas-open/model/ApplyFirewallTemplateResult.h
 	include/alibabacloud/swas-open/model/AttachKeyPairRequest.h
 	include/alibabacloud/swas-open/model/AttachKeyPairResult.h
 	include/alibabacloud/swas-open/model/CreateCommandRequest.h
@@ -33,6 +37,10 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/CreateFirewallRuleResult.h
 	include/alibabacloud/swas-open/model/CreateFirewallRulesRequest.h
 	include/alibabacloud/swas-open/model/CreateFirewallRulesResult.h
+	include/alibabacloud/swas-open/model/CreateFirewallTemplateRequest.h
+	include/alibabacloud/swas-open/model/CreateFirewallTemplateResult.h
+	include/alibabacloud/swas-open/model/CreateFirewallTemplateRulesRequest.h
+	include/alibabacloud/swas-open/model/CreateFirewallTemplateRulesResult.h
 	include/alibabacloud/swas-open/model/CreateInstanceKeyPairRequest.h
 	include/alibabacloud/swas-open/model/CreateInstanceKeyPairResult.h
 	include/alibabacloud/swas-open/model/CreateInstancesRequest.h
@@ -51,6 +59,10 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/DeleteFirewallRuleResult.h
 	include/alibabacloud/swas-open/model/DeleteFirewallRulesRequest.h
 	include/alibabacloud/swas-open/model/DeleteFirewallRulesResult.h
+	include/alibabacloud/swas-open/model/DeleteFirewallTemplateRulesRequest.h
+	include/alibabacloud/swas-open/model/DeleteFirewallTemplateRulesResult.h
+	include/alibabacloud/swas-open/model/DeleteFirewallTemplatesRequest.h
+	include/alibabacloud/swas-open/model/DeleteFirewallTemplatesResult.h
 	include/alibabacloud/swas-open/model/DeleteInstanceKeyPairRequest.h
 	include/alibabacloud/swas-open/model/DeleteInstanceKeyPairResult.h
 	include/alibabacloud/swas-open/model/DeleteKeyPairsRequest.h
@@ -79,6 +91,12 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/DescribeDatabaseInstancesResult.h
 	include/alibabacloud/swas-open/model/DescribeDatabaseSlowLogRecordsRequest.h
 	include/alibabacloud/swas-open/model/DescribeDatabaseSlowLogRecordsResult.h
+	include/alibabacloud/swas-open/model/DescribeFirewallTemplateApplyResultsRequest.h
+	include/alibabacloud/swas-open/model/DescribeFirewallTemplateApplyResultsResult.h
+	include/alibabacloud/swas-open/model/DescribeFirewallTemplateRulesApplyResultRequest.h
+	include/alibabacloud/swas-open/model/DescribeFirewallTemplateRulesApplyResultResult.h
+	include/alibabacloud/swas-open/model/DescribeFirewallTemplatesRequest.h
+	include/alibabacloud/swas-open/model/DescribeFirewallTemplatesResult.h
 	include/alibabacloud/swas-open/model/DescribeInstanceKeyPairRequest.h
 	include/alibabacloud/swas-open/model/DescribeInstanceKeyPairResult.h
 	include/alibabacloud/swas-open/model/DescribeInstancePasswordsSettingRequest.h
@@ -107,6 +125,8 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/InstallCloudMonitorAgentResult.h
 	include/alibabacloud/swas-open/model/InvokeCommandRequest.h
 	include/alibabacloud/swas-open/model/InvokeCommandResult.h
+	include/alibabacloud/swas-open/model/ListCustomImageShareAccountsRequest.h
+	include/alibabacloud/swas-open/model/ListCustomImageShareAccountsResult.h
 	include/alibabacloud/swas-open/model/ListCustomImagesRequest.h
 	include/alibabacloud/swas-open/model/ListCustomImagesResult.h
 	include/alibabacloud/swas-open/model/ListDisksRequest.h
@@ -141,6 +161,8 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/ModifyDatabaseInstanceParameterResult.h
 	include/alibabacloud/swas-open/model/ModifyFirewallRuleRequest.h
 	include/alibabacloud/swas-open/model/ModifyFirewallRuleResult.h
+	include/alibabacloud/swas-open/model/ModifyFirewallTemplateRequest.h
+	include/alibabacloud/swas-open/model/ModifyFirewallTemplateResult.h
 	include/alibabacloud/swas-open/model/ModifyImageShareStatusRequest.h
 	include/alibabacloud/swas-open/model/ModifyImageShareStatusResult.h
 	include/alibabacloud/swas-open/model/ModifyInstanceVncPasswordRequest.h
@@ -151,6 +173,8 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/RebootInstancesResult.h
 	include/alibabacloud/swas-open/model/ReleasePublicConnectionRequest.h
 	include/alibabacloud/swas-open/model/ReleasePublicConnectionResult.h
+	include/alibabacloud/swas-open/model/RemoveCustomImageShareAccountRequest.h
+	include/alibabacloud/swas-open/model/RemoveCustomImageShareAccountResult.h
 	include/alibabacloud/swas-open/model/RenewInstanceRequest.h
 	include/alibabacloud/swas-open/model/RenewInstanceResult.h
 	include/alibabacloud/swas-open/model/ResetDatabaseAccountPasswordRequest.h
@@ -196,8 +220,12 @@ set(swas-open_public_header_model
 
 set(swas-open_src 
 	src/SWAS-OPENClient.cc
+	src/model/AddCustomImageShareAccountRequest.cc
+	src/model/AddCustomImageShareAccountResult.cc
 	src/model/AllocatePublicConnectionRequest.cc
 	src/model/AllocatePublicConnectionResult.cc
+	src/model/ApplyFirewallTemplateRequest.cc
+	src/model/ApplyFirewallTemplateResult.cc
 	src/model/AttachKeyPairRequest.cc
 	src/model/AttachKeyPairResult.cc
 	src/model/CreateCommandRequest.cc
@@ -208,6 +236,10 @@ set(swas-open_src
 	src/model/CreateFirewallRuleResult.cc
 	src/model/CreateFirewallRulesRequest.cc
 	src/model/CreateFirewallRulesResult.cc
+	src/model/CreateFirewallTemplateRequest.cc
+	src/model/CreateFirewallTemplateResult.cc
+	src/model/CreateFirewallTemplateRulesRequest.cc
+	src/model/CreateFirewallTemplateRulesResult.cc
 	src/model/CreateInstanceKeyPairRequest.cc
 	src/model/CreateInstanceKeyPairResult.cc
 	src/model/CreateInstancesRequest.cc
@@ -226,6 +258,10 @@ set(swas-open_src
 	src/model/DeleteFirewallRuleResult.cc
 	src/model/DeleteFirewallRulesRequest.cc
 	src/model/DeleteFirewallRulesResult.cc
+	src/model/DeleteFirewallTemplateRulesRequest.cc
+	src/model/DeleteFirewallTemplateRulesResult.cc
+	src/model/DeleteFirewallTemplatesRequest.cc
+	src/model/DeleteFirewallTemplatesResult.cc
 	src/model/DeleteInstanceKeyPairRequest.cc
 	src/model/DeleteInstanceKeyPairResult.cc
 	src/model/DeleteKeyPairsRequest.cc
@@ -254,6 +290,12 @@ set(swas-open_src
 	src/model/DescribeDatabaseInstancesResult.cc
 	src/model/DescribeDatabaseSlowLogRecordsRequest.cc
 	src/model/DescribeDatabaseSlowLogRecordsResult.cc
+	src/model/DescribeFirewallTemplateApplyResultsRequest.cc
+	src/model/DescribeFirewallTemplateApplyResultsResult.cc
+	src/model/DescribeFirewallTemplateRulesApplyResultRequest.cc
+	src/model/DescribeFirewallTemplateRulesApplyResultResult.cc
+	src/model/DescribeFirewallTemplatesRequest.cc
+	src/model/DescribeFirewallTemplatesResult.cc
 	src/model/DescribeInstanceKeyPairRequest.cc
 	src/model/DescribeInstanceKeyPairResult.cc
 	src/model/DescribeInstancePasswordsSettingRequest.cc
@@ -282,6 +324,8 @@ set(swas-open_src
 	src/model/InstallCloudMonitorAgentResult.cc
 	src/model/InvokeCommandRequest.cc
 	src/model/InvokeCommandResult.cc
+	src/model/ListCustomImageShareAccountsRequest.cc
+	src/model/ListCustomImageShareAccountsResult.cc
 	src/model/ListCustomImagesRequest.cc
 	src/model/ListCustomImagesResult.cc
 	src/model/ListDisksRequest.cc
@@ -316,6 +360,8 @@ set(swas-open_src
 	src/model/ModifyDatabaseInstanceParameterResult.cc
 	src/model/ModifyFirewallRuleRequest.cc
 	src/model/ModifyFirewallRuleResult.cc
+	src/model/ModifyFirewallTemplateRequest.cc
+	src/model/ModifyFirewallTemplateResult.cc
 	src/model/ModifyImageShareStatusRequest.cc
 	src/model/ModifyImageShareStatusResult.cc
 	src/model/ModifyInstanceVncPasswordRequest.cc
@@ -326,6 +372,8 @@ set(swas-open_src
 	src/model/RebootInstancesResult.cc
 	src/model/ReleasePublicConnectionRequest.cc
 	src/model/ReleasePublicConnectionResult.cc
+	src/model/RemoveCustomImageShareAccountRequest.cc
+	src/model/RemoveCustomImageShareAccountResult.cc
 	src/model/RenewInstanceRequest.cc
 	src/model/RenewInstanceResult.cc
 	src/model/ResetDatabaseAccountPasswordRequest.cc

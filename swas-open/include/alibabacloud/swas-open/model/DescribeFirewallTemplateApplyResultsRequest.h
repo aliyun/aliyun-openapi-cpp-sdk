@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_LISTCUSTOMIMAGESREQUEST_H_
-#define ALIBABACLOUD_SWAS_OPEN_MODEL_LISTCUSTOMIMAGESREQUEST_H_
+#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_DESCRIBEFIREWALLTEMPLATEAPPLYRESULTSREQUEST_H_
+#define ALIBABACLOUD_SWAS_OPEN_MODEL_DESCRIBEFIREWALLTEMPLATEAPPLYRESULTSREQUEST_H_
 
 #include <alibabacloud/swas-open/SWAS_OPENExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,54 +26,35 @@
 namespace AlibabaCloud {
 namespace SWAS_OPEN {
 namespace Model {
-class ALIBABACLOUD_SWAS_OPEN_EXPORT ListCustomImagesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SWAS_OPEN_EXPORT DescribeFirewallTemplateApplyResultsRequest : public RpcServiceRequest {
 public:
-	struct Tag {
-		std::string key;
-		std::string value;
-	};
-	ListCustomImagesRequest();
-	~ListCustomImagesRequest();
-	std::string getSystemSnapshotId() const;
-	void setSystemSnapshotId(const std::string &systemSnapshotId);
-	std::string getDataSnapshotId() const;
-	void setDataSnapshotId(const std::string &dataSnapshotId);
+	DescribeFirewallTemplateApplyResultsRequest();
+	~DescribeFirewallTemplateApplyResultsRequest();
+	std::string getFirewallTemplateId() const;
+	void setFirewallTemplateId(const std::string &firewallTemplateId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getImageNames() const;
-	void setImageNames(const std::string &imageNames);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
-	std::string getResourceGroupId() const;
-	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	bool getShare() const;
-	void setShare(bool share);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
-	std::string getImageIds() const;
-	void setImageIds(const std::string &imageIds);
+	std::vector<std::string> getTaskId() const;
+	void setTaskId(const std::vector<std::string> &taskId);
 
 private:
-	std::string systemSnapshotId_;
-	std::string dataSnapshotId_;
+	std::string firewallTemplateId_;
 	std::string clientToken_;
-	std::string imageNames_;
 	int pageNumber_;
-	std::string resourceGroupId_;
+	std::string instanceId_;
 	std::string regionId_;
 	int pageSize_;
-	bool share_;
-	std::vector<Tag> tag_;
-	std::string instanceId_;
-	std::string imageIds_;
+	std::vector<std::string> taskId_;
 };
 } // namespace Model
 } // namespace SWAS_OPEN
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_LISTCUSTOMIMAGESREQUEST_H_
+#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_DESCRIBEFIREWALLTEMPLATEAPPLYRESULTSREQUEST_H_

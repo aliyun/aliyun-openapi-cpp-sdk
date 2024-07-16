@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_LOGININSTANCEREQUEST_H_
-#define ALIBABACLOUD_SWAS_OPEN_MODEL_LOGININSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_CREATEFIREWALLTEMPLATERULESREQUEST_H_
+#define ALIBABACLOUD_SWAS_OPEN_MODEL_CREATEFIREWALLTEMPLATERULESREQUEST_H_
 
 #include <alibabacloud/swas-open/SWAS_OPENExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,29 @@
 namespace AlibabaCloud {
 namespace SWAS_OPEN {
 namespace Model {
-class ALIBABACLOUD_SWAS_OPEN_EXPORT LoginInstanceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SWAS_OPEN_EXPORT CreateFirewallTemplateRulesRequest : public RpcServiceRequest {
 public:
-	LoginInstanceRequest();
-	~LoginInstanceRequest();
-	std::string getPassword() const;
-	void setPassword(const std::string &password);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
+	struct FirewallRule {
+		std::string ruleProtocol;
+		std::string port;
+		std::string sourceCidrIp;
+		std::string remark;
+	};
+	CreateFirewallTemplateRulesRequest();
+	~CreateFirewallTemplateRulesRequest();
+	std::string getFirewallTemplateId() const;
+	void setFirewallTemplateId(const std::string &firewallTemplateId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	int getPort() const;
-	void setPort(int port);
-	std::string getUsername() const;
-	void setUsername(const std::string &username);
+	std::vector<FirewallRule> getFirewallRule() const;
+	void setFirewallRule(const std::vector<FirewallRule> &firewallRule);
 
 private:
-	std::string password_;
-	std::string instanceId_;
+	std::string firewallTemplateId_;
 	std::string regionId_;
-	int port_;
-	std::string username_;
+	std::vector<FirewallRule> firewallRule_;
 };
 } // namespace Model
 } // namespace SWAS_OPEN
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_LOGININSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_CREATEFIREWALLTEMPLATERULESREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_LISTCUSTOMIMAGESRESULT_H_
-#define ALIBABACLOUD_SWAS_OPEN_MODEL_LISTCUSTOMIMAGESRESULT_H_
+#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_DESCRIBEFIREWALLTEMPLATEAPPLYRESULTSRESULT_H_
+#define ALIBABACLOUD_SWAS_OPEN_MODEL_DESCRIBEFIREWALLTEMPLATEAPPLYRESULTSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,43 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SWAS_OPEN_EXPORT ListCustomImagesResult : public ServiceResult
+			class ALIBABACLOUD_SWAS_OPEN_EXPORT DescribeFirewallTemplateApplyResultsResult : public ServiceResult
 			{
 			public:
-				struct CustomImage
+				struct ApplyFirewallTemplateResult
 				{
-					struct Tag
+					struct ApplyInstanceResult
 					{
-						std::string value;
-						std::string key;
+						std::string status;
+						std::string instanceId;
 					};
 					std::string status;
-					std::string description;
-					bool inShare;
-					std::string resourceGroupId;
-					std::string instanceId;
-					bool inShareUser;
-					std::string systemSnapshotId;
-					std::string systemSnapshotName;
-					std::string dataSnapshotId;
-					std::string name;
-					std::string dataSnapshotName;
-					std::string instanceName;
-					std::string osType;
-					long userId;
-					std::string creationTime;
-					std::string imageId;
-					std::vector<std::string> createInstances;
-					std::string regionId;
-					std::vector<CustomImage::Tag> tags;
+					std::vector<ApplyFirewallTemplateResult::ApplyInstanceResult> instanceApplyResults;
+					std::string totalCount;
+					std::string taskId;
+					std::string createTime;
+					std::string firewallTemplateId;
+					std::string failedCount;
 				};
 
 
-				ListCustomImagesResult();
-				explicit ListCustomImagesResult(const std::string &payload);
-				~ListCustomImagesResult();
+				DescribeFirewallTemplateApplyResultsResult();
+				explicit DescribeFirewallTemplateApplyResultsResult(const std::string &payload);
+				~DescribeFirewallTemplateApplyResultsResult();
 				std::string getTotalCount()const;
-				std::vector<CustomImage> getCustomImages()const;
+				std::vector<ApplyFirewallTemplateResult> getdata()const;
 				std::string getPageSize()const;
 				std::string getPageNumber()const;
 
@@ -73,7 +61,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string totalCount_;
-				std::vector<CustomImage> customImages_;
+				std::vector<ApplyFirewallTemplateResult> data_;
 				std::string pageSize_;
 				std::string pageNumber_;
 
@@ -81,4 +69,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_LISTCUSTOMIMAGESRESULT_H_
+#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_DESCRIBEFIREWALLTEMPLATEAPPLYRESULTSRESULT_H_

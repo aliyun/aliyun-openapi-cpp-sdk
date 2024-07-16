@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_LOGININSTANCEREQUEST_H_
-#define ALIBABACLOUD_SWAS_OPEN_MODEL_LOGININSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_DESCRIBEFIREWALLTEMPLATESREQUEST_H_
+#define ALIBABACLOUD_SWAS_OPEN_MODEL_DESCRIBEFIREWALLTEMPLATESREQUEST_H_
 
 #include <alibabacloud/swas-open/SWAS_OPENExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,29 @@
 namespace AlibabaCloud {
 namespace SWAS_OPEN {
 namespace Model {
-class ALIBABACLOUD_SWAS_OPEN_EXPORT LoginInstanceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SWAS_OPEN_EXPORT DescribeFirewallTemplatesRequest : public RpcServiceRequest {
 public:
-	LoginInstanceRequest();
-	~LoginInstanceRequest();
-	std::string getPassword() const;
-	void setPassword(const std::string &password);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
+	DescribeFirewallTemplatesRequest();
+	~DescribeFirewallTemplatesRequest();
+	std::vector<std::string> getFirewallTemplateId() const;
+	void setFirewallTemplateId(const std::vector<std::string> &firewallTemplateId);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	int getPort() const;
-	void setPort(int port);
-	std::string getUsername() const;
-	void setUsername(const std::string &username);
+	std::string getName() const;
+	void setName(const std::string &name);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 
 private:
-	std::string password_;
-	std::string instanceId_;
+	std::vector<std::string> firewallTemplateId_;
+	int pageNumber_;
 	std::string regionId_;
-	int port_;
-	std::string username_;
+	std::string name_;
+	int pageSize_;
 };
 } // namespace Model
 } // namespace SWAS_OPEN
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_LOGININSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_DESCRIBEFIREWALLTEMPLATESREQUEST_H_

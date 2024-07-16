@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_LOGININSTANCEREQUEST_H_
-#define ALIBABACLOUD_SWAS_OPEN_MODEL_LOGININSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_DESCRIBEFIREWALLTEMPLATERULESAPPLYRESULTREQUEST_H_
+#define ALIBABACLOUD_SWAS_OPEN_MODEL_DESCRIBEFIREWALLTEMPLATERULESAPPLYRESULTREQUEST_H_
 
 #include <alibabacloud/swas-open/SWAS_OPENExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,29 @@
 namespace AlibabaCloud {
 namespace SWAS_OPEN {
 namespace Model {
-class ALIBABACLOUD_SWAS_OPEN_EXPORT LoginInstanceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SWAS_OPEN_EXPORT DescribeFirewallTemplateRulesApplyResultRequest : public RpcServiceRequest {
 public:
-	LoginInstanceRequest();
-	~LoginInstanceRequest();
-	std::string getPassword() const;
-	void setPassword(const std::string &password);
+	DescribeFirewallTemplateRulesApplyResultRequest();
+	~DescribeFirewallTemplateRulesApplyResultRequest();
+	std::string getFirewallTemplateId() const;
+	void setFirewallTemplateId(const std::string &firewallTemplateId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	int getPort() const;
-	void setPort(int port);
-	std::string getUsername() const;
-	void setUsername(const std::string &username);
+	std::string getTaskId() const;
+	void setTaskId(const std::string &taskId);
 
 private:
-	std::string password_;
+	std::string firewallTemplateId_;
+	std::string clientToken_;
 	std::string instanceId_;
 	std::string regionId_;
-	int port_;
-	std::string username_;
+	std::string taskId_;
 };
 } // namespace Model
 } // namespace SWAS_OPEN
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_LOGININSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_DESCRIBEFIREWALLTEMPLATERULESAPPLYRESULTREQUEST_H_

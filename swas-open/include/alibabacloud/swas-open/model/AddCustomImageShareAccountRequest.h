@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_LOGININSTANCEREQUEST_H_
-#define ALIBABACLOUD_SWAS_OPEN_MODEL_LOGININSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_SWAS_OPEN_MODEL_ADDCUSTOMIMAGESHAREACCOUNTREQUEST_H_
+#define ALIBABACLOUD_SWAS_OPEN_MODEL_ADDCUSTOMIMAGESHAREACCOUNTREQUEST_H_
 
 #include <alibabacloud/swas-open/SWAS_OPENExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,26 @@
 namespace AlibabaCloud {
 namespace SWAS_OPEN {
 namespace Model {
-class ALIBABACLOUD_SWAS_OPEN_EXPORT LoginInstanceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SWAS_OPEN_EXPORT AddCustomImageShareAccountRequest : public RpcServiceRequest {
 public:
-	LoginInstanceRequest();
-	~LoginInstanceRequest();
-	std::string getPassword() const;
-	void setPassword(const std::string &password);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
+	AddCustomImageShareAccountRequest();
+	~AddCustomImageShareAccountRequest();
+	std::string getImageId() const;
+	void setImageId(const std::string &imageId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	int getPort() const;
-	void setPort(int port);
-	std::string getUsername() const;
-	void setUsername(const std::string &username);
+	std::vector<long> getAccount() const;
+	void setAccount(const std::vector<long> &account);
 
 private:
-	std::string password_;
-	std::string instanceId_;
+	std::string imageId_;
+	std::string clientToken_;
 	std::string regionId_;
-	int port_;
-	std::string username_;
+	std::vector<long> account_;
 };
 } // namespace Model
 } // namespace SWAS_OPEN
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_LOGININSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_SWAS_OPEN_MODEL_ADDCUSTOMIMAGESHAREACCOUNTREQUEST_H_

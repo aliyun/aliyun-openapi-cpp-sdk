@@ -51,6 +51,8 @@ void ListCustomImagesResult::parse(const std::string &payload)
 			customImagesObject.systemSnapshotId = valueCustomImagesCustomImage["SystemSnapshotId"].asString();
 		if(!valueCustomImagesCustomImage["InShare"].isNull())
 			customImagesObject.inShare = valueCustomImagesCustomImage["InShare"].asString() == "true";
+		if(!valueCustomImagesCustomImage["InShareUser"].isNull())
+			customImagesObject.inShareUser = valueCustomImagesCustomImage["InShareUser"].asString() == "true";
 		if(!valueCustomImagesCustomImage["InstanceId"].isNull())
 			customImagesObject.instanceId = valueCustomImagesCustomImage["InstanceId"].asString();
 		if(!valueCustomImagesCustomImage["DataSnapshotId"].isNull())
@@ -71,6 +73,10 @@ void ListCustomImagesResult::parse(const std::string &payload)
 			customImagesObject.instanceName = valueCustomImagesCustomImage["InstanceName"].asString();
 		if(!valueCustomImagesCustomImage["ResourceGroupId"].isNull())
 			customImagesObject.resourceGroupId = valueCustomImagesCustomImage["ResourceGroupId"].asString();
+		if(!valueCustomImagesCustomImage["UserId"].isNull())
+			customImagesObject.userId = std::stol(valueCustomImagesCustomImage["UserId"].asString());
+		if(!valueCustomImagesCustomImage["OsType"].isNull())
+			customImagesObject.osType = valueCustomImagesCustomImage["OsType"].asString();
 		auto allTagsNode = valueCustomImagesCustomImage["Tags"]["tag"];
 		for (auto valueCustomImagesCustomImageTagstag : allTagsNode)
 		{
@@ -81,6 +87,9 @@ void ListCustomImagesResult::parse(const std::string &payload)
 				tagsObject.value = valueCustomImagesCustomImageTagstag["Value"].asString();
 			customImagesObject.tags.push_back(tagsObject);
 		}
+		auto allCreateInstances = value["CreateInstances"]["createInstance"];
+		for (auto value : allCreateInstances)
+			customImagesObject.createInstances.push_back(value.asString());
 		customImages_.push_back(customImagesObject);
 	}
 	if(!value["TotalCount"].isNull())

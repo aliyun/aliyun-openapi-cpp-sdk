@@ -97,6 +97,15 @@ void ListCustomImagesRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+bool ListCustomImagesRequest::getShare() const {
+  return share_;
+}
+
+void ListCustomImagesRequest::setShare(bool share) {
+  share_ = share;
+  setParameter(std::string("Share"), share ? "true" : "false");
+}
+
 std::vector<ListCustomImagesRequest::Tag> ListCustomImagesRequest::getTag() const {
   return tag_;
 }
@@ -109,6 +118,15 @@ void ListCustomImagesRequest::setTag(const std::vector<ListCustomImagesRequest::
     setParameter(tagObjStr + ".Key", tagObj.key);
     setParameter(tagObjStr + ".Value", tagObj.value);
   }
+}
+
+std::string ListCustomImagesRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ListCustomImagesRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
 std::string ListCustomImagesRequest::getImageIds() const {

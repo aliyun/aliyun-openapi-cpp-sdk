@@ -22,8 +22,12 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "SWAS_OPENExport.h"
+#include "model/AddCustomImageShareAccountRequest.h"
+#include "model/AddCustomImageShareAccountResult.h"
 #include "model/AllocatePublicConnectionRequest.h"
 #include "model/AllocatePublicConnectionResult.h"
+#include "model/ApplyFirewallTemplateRequest.h"
+#include "model/ApplyFirewallTemplateResult.h"
 #include "model/AttachKeyPairRequest.h"
 #include "model/AttachKeyPairResult.h"
 #include "model/CreateCommandRequest.h"
@@ -34,6 +38,10 @@
 #include "model/CreateFirewallRuleResult.h"
 #include "model/CreateFirewallRulesRequest.h"
 #include "model/CreateFirewallRulesResult.h"
+#include "model/CreateFirewallTemplateRequest.h"
+#include "model/CreateFirewallTemplateResult.h"
+#include "model/CreateFirewallTemplateRulesRequest.h"
+#include "model/CreateFirewallTemplateRulesResult.h"
 #include "model/CreateInstanceKeyPairRequest.h"
 #include "model/CreateInstanceKeyPairResult.h"
 #include "model/CreateInstancesRequest.h"
@@ -52,6 +60,10 @@
 #include "model/DeleteFirewallRuleResult.h"
 #include "model/DeleteFirewallRulesRequest.h"
 #include "model/DeleteFirewallRulesResult.h"
+#include "model/DeleteFirewallTemplateRulesRequest.h"
+#include "model/DeleteFirewallTemplateRulesResult.h"
+#include "model/DeleteFirewallTemplatesRequest.h"
+#include "model/DeleteFirewallTemplatesResult.h"
 #include "model/DeleteInstanceKeyPairRequest.h"
 #include "model/DeleteInstanceKeyPairResult.h"
 #include "model/DeleteKeyPairsRequest.h"
@@ -80,6 +92,12 @@
 #include "model/DescribeDatabaseInstancesResult.h"
 #include "model/DescribeDatabaseSlowLogRecordsRequest.h"
 #include "model/DescribeDatabaseSlowLogRecordsResult.h"
+#include "model/DescribeFirewallTemplateApplyResultsRequest.h"
+#include "model/DescribeFirewallTemplateApplyResultsResult.h"
+#include "model/DescribeFirewallTemplateRulesApplyResultRequest.h"
+#include "model/DescribeFirewallTemplateRulesApplyResultResult.h"
+#include "model/DescribeFirewallTemplatesRequest.h"
+#include "model/DescribeFirewallTemplatesResult.h"
 #include "model/DescribeInstanceKeyPairRequest.h"
 #include "model/DescribeInstanceKeyPairResult.h"
 #include "model/DescribeInstancePasswordsSettingRequest.h"
@@ -108,6 +126,8 @@
 #include "model/InstallCloudMonitorAgentResult.h"
 #include "model/InvokeCommandRequest.h"
 #include "model/InvokeCommandResult.h"
+#include "model/ListCustomImageShareAccountsRequest.h"
+#include "model/ListCustomImageShareAccountsResult.h"
 #include "model/ListCustomImagesRequest.h"
 #include "model/ListCustomImagesResult.h"
 #include "model/ListDisksRequest.h"
@@ -142,6 +162,8 @@
 #include "model/ModifyDatabaseInstanceParameterResult.h"
 #include "model/ModifyFirewallRuleRequest.h"
 #include "model/ModifyFirewallRuleResult.h"
+#include "model/ModifyFirewallTemplateRequest.h"
+#include "model/ModifyFirewallTemplateResult.h"
 #include "model/ModifyImageShareStatusRequest.h"
 #include "model/ModifyImageShareStatusResult.h"
 #include "model/ModifyInstanceVncPasswordRequest.h"
@@ -152,6 +174,8 @@
 #include "model/RebootInstancesResult.h"
 #include "model/ReleasePublicConnectionRequest.h"
 #include "model/ReleasePublicConnectionResult.h"
+#include "model/RemoveCustomImageShareAccountRequest.h"
+#include "model/RemoveCustomImageShareAccountResult.h"
 #include "model/RenewInstanceRequest.h"
 #include "model/RenewInstanceResult.h"
 #include "model/ResetDatabaseAccountPasswordRequest.h"
@@ -203,9 +227,15 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_SWAS_OPEN_EXPORT SWAS_OPENClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AddCustomImageShareAccountResult> AddCustomImageShareAccountOutcome;
+			typedef std::future<AddCustomImageShareAccountOutcome> AddCustomImageShareAccountOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::AddCustomImageShareAccountRequest&, const AddCustomImageShareAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCustomImageShareAccountAsyncHandler;
 			typedef Outcome<Error, Model::AllocatePublicConnectionResult> AllocatePublicConnectionOutcome;
 			typedef std::future<AllocatePublicConnectionOutcome> AllocatePublicConnectionOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::AllocatePublicConnectionRequest&, const AllocatePublicConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocatePublicConnectionAsyncHandler;
+			typedef Outcome<Error, Model::ApplyFirewallTemplateResult> ApplyFirewallTemplateOutcome;
+			typedef std::future<ApplyFirewallTemplateOutcome> ApplyFirewallTemplateOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::ApplyFirewallTemplateRequest&, const ApplyFirewallTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApplyFirewallTemplateAsyncHandler;
 			typedef Outcome<Error, Model::AttachKeyPairResult> AttachKeyPairOutcome;
 			typedef std::future<AttachKeyPairOutcome> AttachKeyPairOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::AttachKeyPairRequest&, const AttachKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachKeyPairAsyncHandler;
@@ -221,6 +251,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateFirewallRulesResult> CreateFirewallRulesOutcome;
 			typedef std::future<CreateFirewallRulesOutcome> CreateFirewallRulesOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::CreateFirewallRulesRequest&, const CreateFirewallRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFirewallRulesAsyncHandler;
+			typedef Outcome<Error, Model::CreateFirewallTemplateResult> CreateFirewallTemplateOutcome;
+			typedef std::future<CreateFirewallTemplateOutcome> CreateFirewallTemplateOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::CreateFirewallTemplateRequest&, const CreateFirewallTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFirewallTemplateAsyncHandler;
+			typedef Outcome<Error, Model::CreateFirewallTemplateRulesResult> CreateFirewallTemplateRulesOutcome;
+			typedef std::future<CreateFirewallTemplateRulesOutcome> CreateFirewallTemplateRulesOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::CreateFirewallTemplateRulesRequest&, const CreateFirewallTemplateRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFirewallTemplateRulesAsyncHandler;
 			typedef Outcome<Error, Model::CreateInstanceKeyPairResult> CreateInstanceKeyPairOutcome;
 			typedef std::future<CreateInstanceKeyPairOutcome> CreateInstanceKeyPairOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::CreateInstanceKeyPairRequest&, const CreateInstanceKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceKeyPairAsyncHandler;
@@ -248,6 +284,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteFirewallRulesResult> DeleteFirewallRulesOutcome;
 			typedef std::future<DeleteFirewallRulesOutcome> DeleteFirewallRulesOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteFirewallRulesRequest&, const DeleteFirewallRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFirewallRulesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteFirewallTemplateRulesResult> DeleteFirewallTemplateRulesOutcome;
+			typedef std::future<DeleteFirewallTemplateRulesOutcome> DeleteFirewallTemplateRulesOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteFirewallTemplateRulesRequest&, const DeleteFirewallTemplateRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFirewallTemplateRulesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteFirewallTemplatesResult> DeleteFirewallTemplatesOutcome;
+			typedef std::future<DeleteFirewallTemplatesOutcome> DeleteFirewallTemplatesOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteFirewallTemplatesRequest&, const DeleteFirewallTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFirewallTemplatesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteInstanceKeyPairResult> DeleteInstanceKeyPairOutcome;
 			typedef std::future<DeleteInstanceKeyPairOutcome> DeleteInstanceKeyPairOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteInstanceKeyPairRequest&, const DeleteInstanceKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceKeyPairAsyncHandler;
@@ -290,6 +332,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDatabaseSlowLogRecordsResult> DescribeDatabaseSlowLogRecordsOutcome;
 			typedef std::future<DescribeDatabaseSlowLogRecordsOutcome> DescribeDatabaseSlowLogRecordsOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeDatabaseSlowLogRecordsRequest&, const DescribeDatabaseSlowLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseSlowLogRecordsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFirewallTemplateApplyResultsResult> DescribeFirewallTemplateApplyResultsOutcome;
+			typedef std::future<DescribeFirewallTemplateApplyResultsOutcome> DescribeFirewallTemplateApplyResultsOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeFirewallTemplateApplyResultsRequest&, const DescribeFirewallTemplateApplyResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirewallTemplateApplyResultsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFirewallTemplateRulesApplyResultResult> DescribeFirewallTemplateRulesApplyResultOutcome;
+			typedef std::future<DescribeFirewallTemplateRulesApplyResultOutcome> DescribeFirewallTemplateRulesApplyResultOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeFirewallTemplateRulesApplyResultRequest&, const DescribeFirewallTemplateRulesApplyResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirewallTemplateRulesApplyResultAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFirewallTemplatesResult> DescribeFirewallTemplatesOutcome;
+			typedef std::future<DescribeFirewallTemplatesOutcome> DescribeFirewallTemplatesOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeFirewallTemplatesRequest&, const DescribeFirewallTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirewallTemplatesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceKeyPairResult> DescribeInstanceKeyPairOutcome;
 			typedef std::future<DescribeInstanceKeyPairOutcome> DescribeInstanceKeyPairOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeInstanceKeyPairRequest&, const DescribeInstanceKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceKeyPairAsyncHandler;
@@ -332,6 +383,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InvokeCommandResult> InvokeCommandOutcome;
 			typedef std::future<InvokeCommandOutcome> InvokeCommandOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::InvokeCommandRequest&, const InvokeCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InvokeCommandAsyncHandler;
+			typedef Outcome<Error, Model::ListCustomImageShareAccountsResult> ListCustomImageShareAccountsOutcome;
+			typedef std::future<ListCustomImageShareAccountsOutcome> ListCustomImageShareAccountsOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::ListCustomImageShareAccountsRequest&, const ListCustomImageShareAccountsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCustomImageShareAccountsAsyncHandler;
 			typedef Outcome<Error, Model::ListCustomImagesResult> ListCustomImagesOutcome;
 			typedef std::future<ListCustomImagesOutcome> ListCustomImagesOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::ListCustomImagesRequest&, const ListCustomImagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCustomImagesAsyncHandler;
@@ -383,6 +437,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyFirewallRuleResult> ModifyFirewallRuleOutcome;
 			typedef std::future<ModifyFirewallRuleOutcome> ModifyFirewallRuleOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::ModifyFirewallRuleRequest&, const ModifyFirewallRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFirewallRuleAsyncHandler;
+			typedef Outcome<Error, Model::ModifyFirewallTemplateResult> ModifyFirewallTemplateOutcome;
+			typedef std::future<ModifyFirewallTemplateOutcome> ModifyFirewallTemplateOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::ModifyFirewallTemplateRequest&, const ModifyFirewallTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFirewallTemplateAsyncHandler;
 			typedef Outcome<Error, Model::ModifyImageShareStatusResult> ModifyImageShareStatusOutcome;
 			typedef std::future<ModifyImageShareStatusOutcome> ModifyImageShareStatusOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::ModifyImageShareStatusRequest&, const ModifyImageShareStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageShareStatusAsyncHandler;
@@ -398,6 +455,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ReleasePublicConnectionResult> ReleasePublicConnectionOutcome;
 			typedef std::future<ReleasePublicConnectionOutcome> ReleasePublicConnectionOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::ReleasePublicConnectionRequest&, const ReleasePublicConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleasePublicConnectionAsyncHandler;
+			typedef Outcome<Error, Model::RemoveCustomImageShareAccountResult> RemoveCustomImageShareAccountOutcome;
+			typedef std::future<RemoveCustomImageShareAccountOutcome> RemoveCustomImageShareAccountOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::RemoveCustomImageShareAccountRequest&, const RemoveCustomImageShareAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveCustomImageShareAccountAsyncHandler;
 			typedef Outcome<Error, Model::RenewInstanceResult> RenewInstanceOutcome;
 			typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::RenewInstanceRequest&, const RenewInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
@@ -466,9 +526,15 @@ namespace AlibabaCloud
 			SWAS_OPENClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			SWAS_OPENClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~SWAS_OPENClient();
+			AddCustomImageShareAccountOutcome addCustomImageShareAccount(const Model::AddCustomImageShareAccountRequest &request)const;
+			void addCustomImageShareAccountAsync(const Model::AddCustomImageShareAccountRequest& request, const AddCustomImageShareAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddCustomImageShareAccountOutcomeCallable addCustomImageShareAccountCallable(const Model::AddCustomImageShareAccountRequest& request) const;
 			AllocatePublicConnectionOutcome allocatePublicConnection(const Model::AllocatePublicConnectionRequest &request)const;
 			void allocatePublicConnectionAsync(const Model::AllocatePublicConnectionRequest& request, const AllocatePublicConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AllocatePublicConnectionOutcomeCallable allocatePublicConnectionCallable(const Model::AllocatePublicConnectionRequest& request) const;
+			ApplyFirewallTemplateOutcome applyFirewallTemplate(const Model::ApplyFirewallTemplateRequest &request)const;
+			void applyFirewallTemplateAsync(const Model::ApplyFirewallTemplateRequest& request, const ApplyFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ApplyFirewallTemplateOutcomeCallable applyFirewallTemplateCallable(const Model::ApplyFirewallTemplateRequest& request) const;
 			AttachKeyPairOutcome attachKeyPair(const Model::AttachKeyPairRequest &request)const;
 			void attachKeyPairAsync(const Model::AttachKeyPairRequest& request, const AttachKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachKeyPairOutcomeCallable attachKeyPairCallable(const Model::AttachKeyPairRequest& request) const;
@@ -484,6 +550,12 @@ namespace AlibabaCloud
 			CreateFirewallRulesOutcome createFirewallRules(const Model::CreateFirewallRulesRequest &request)const;
 			void createFirewallRulesAsync(const Model::CreateFirewallRulesRequest& request, const CreateFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateFirewallRulesOutcomeCallable createFirewallRulesCallable(const Model::CreateFirewallRulesRequest& request) const;
+			CreateFirewallTemplateOutcome createFirewallTemplate(const Model::CreateFirewallTemplateRequest &request)const;
+			void createFirewallTemplateAsync(const Model::CreateFirewallTemplateRequest& request, const CreateFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFirewallTemplateOutcomeCallable createFirewallTemplateCallable(const Model::CreateFirewallTemplateRequest& request) const;
+			CreateFirewallTemplateRulesOutcome createFirewallTemplateRules(const Model::CreateFirewallTemplateRulesRequest &request)const;
+			void createFirewallTemplateRulesAsync(const Model::CreateFirewallTemplateRulesRequest& request, const CreateFirewallTemplateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFirewallTemplateRulesOutcomeCallable createFirewallTemplateRulesCallable(const Model::CreateFirewallTemplateRulesRequest& request) const;
 			CreateInstanceKeyPairOutcome createInstanceKeyPair(const Model::CreateInstanceKeyPairRequest &request)const;
 			void createInstanceKeyPairAsync(const Model::CreateInstanceKeyPairRequest& request, const CreateInstanceKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstanceKeyPairOutcomeCallable createInstanceKeyPairCallable(const Model::CreateInstanceKeyPairRequest& request) const;
@@ -511,6 +583,12 @@ namespace AlibabaCloud
 			DeleteFirewallRulesOutcome deleteFirewallRules(const Model::DeleteFirewallRulesRequest &request)const;
 			void deleteFirewallRulesAsync(const Model::DeleteFirewallRulesRequest& request, const DeleteFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteFirewallRulesOutcomeCallable deleteFirewallRulesCallable(const Model::DeleteFirewallRulesRequest& request) const;
+			DeleteFirewallTemplateRulesOutcome deleteFirewallTemplateRules(const Model::DeleteFirewallTemplateRulesRequest &request)const;
+			void deleteFirewallTemplateRulesAsync(const Model::DeleteFirewallTemplateRulesRequest& request, const DeleteFirewallTemplateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteFirewallTemplateRulesOutcomeCallable deleteFirewallTemplateRulesCallable(const Model::DeleteFirewallTemplateRulesRequest& request) const;
+			DeleteFirewallTemplatesOutcome deleteFirewallTemplates(const Model::DeleteFirewallTemplatesRequest &request)const;
+			void deleteFirewallTemplatesAsync(const Model::DeleteFirewallTemplatesRequest& request, const DeleteFirewallTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteFirewallTemplatesOutcomeCallable deleteFirewallTemplatesCallable(const Model::DeleteFirewallTemplatesRequest& request) const;
 			DeleteInstanceKeyPairOutcome deleteInstanceKeyPair(const Model::DeleteInstanceKeyPairRequest &request)const;
 			void deleteInstanceKeyPairAsync(const Model::DeleteInstanceKeyPairRequest& request, const DeleteInstanceKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteInstanceKeyPairOutcomeCallable deleteInstanceKeyPairCallable(const Model::DeleteInstanceKeyPairRequest& request) const;
@@ -553,6 +631,15 @@ namespace AlibabaCloud
 			DescribeDatabaseSlowLogRecordsOutcome describeDatabaseSlowLogRecords(const Model::DescribeDatabaseSlowLogRecordsRequest &request)const;
 			void describeDatabaseSlowLogRecordsAsync(const Model::DescribeDatabaseSlowLogRecordsRequest& request, const DescribeDatabaseSlowLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDatabaseSlowLogRecordsOutcomeCallable describeDatabaseSlowLogRecordsCallable(const Model::DescribeDatabaseSlowLogRecordsRequest& request) const;
+			DescribeFirewallTemplateApplyResultsOutcome describeFirewallTemplateApplyResults(const Model::DescribeFirewallTemplateApplyResultsRequest &request)const;
+			void describeFirewallTemplateApplyResultsAsync(const Model::DescribeFirewallTemplateApplyResultsRequest& request, const DescribeFirewallTemplateApplyResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFirewallTemplateApplyResultsOutcomeCallable describeFirewallTemplateApplyResultsCallable(const Model::DescribeFirewallTemplateApplyResultsRequest& request) const;
+			DescribeFirewallTemplateRulesApplyResultOutcome describeFirewallTemplateRulesApplyResult(const Model::DescribeFirewallTemplateRulesApplyResultRequest &request)const;
+			void describeFirewallTemplateRulesApplyResultAsync(const Model::DescribeFirewallTemplateRulesApplyResultRequest& request, const DescribeFirewallTemplateRulesApplyResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFirewallTemplateRulesApplyResultOutcomeCallable describeFirewallTemplateRulesApplyResultCallable(const Model::DescribeFirewallTemplateRulesApplyResultRequest& request) const;
+			DescribeFirewallTemplatesOutcome describeFirewallTemplates(const Model::DescribeFirewallTemplatesRequest &request)const;
+			void describeFirewallTemplatesAsync(const Model::DescribeFirewallTemplatesRequest& request, const DescribeFirewallTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFirewallTemplatesOutcomeCallable describeFirewallTemplatesCallable(const Model::DescribeFirewallTemplatesRequest& request) const;
 			DescribeInstanceKeyPairOutcome describeInstanceKeyPair(const Model::DescribeInstanceKeyPairRequest &request)const;
 			void describeInstanceKeyPairAsync(const Model::DescribeInstanceKeyPairRequest& request, const DescribeInstanceKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceKeyPairOutcomeCallable describeInstanceKeyPairCallable(const Model::DescribeInstanceKeyPairRequest& request) const;
@@ -595,6 +682,9 @@ namespace AlibabaCloud
 			InvokeCommandOutcome invokeCommand(const Model::InvokeCommandRequest &request)const;
 			void invokeCommandAsync(const Model::InvokeCommandRequest& request, const InvokeCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InvokeCommandOutcomeCallable invokeCommandCallable(const Model::InvokeCommandRequest& request) const;
+			ListCustomImageShareAccountsOutcome listCustomImageShareAccounts(const Model::ListCustomImageShareAccountsRequest &request)const;
+			void listCustomImageShareAccountsAsync(const Model::ListCustomImageShareAccountsRequest& request, const ListCustomImageShareAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCustomImageShareAccountsOutcomeCallable listCustomImageShareAccountsCallable(const Model::ListCustomImageShareAccountsRequest& request) const;
 			ListCustomImagesOutcome listCustomImages(const Model::ListCustomImagesRequest &request)const;
 			void listCustomImagesAsync(const Model::ListCustomImagesRequest& request, const ListCustomImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCustomImagesOutcomeCallable listCustomImagesCallable(const Model::ListCustomImagesRequest& request) const;
@@ -646,6 +736,9 @@ namespace AlibabaCloud
 			ModifyFirewallRuleOutcome modifyFirewallRule(const Model::ModifyFirewallRuleRequest &request)const;
 			void modifyFirewallRuleAsync(const Model::ModifyFirewallRuleRequest& request, const ModifyFirewallRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyFirewallRuleOutcomeCallable modifyFirewallRuleCallable(const Model::ModifyFirewallRuleRequest& request) const;
+			ModifyFirewallTemplateOutcome modifyFirewallTemplate(const Model::ModifyFirewallTemplateRequest &request)const;
+			void modifyFirewallTemplateAsync(const Model::ModifyFirewallTemplateRequest& request, const ModifyFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyFirewallTemplateOutcomeCallable modifyFirewallTemplateCallable(const Model::ModifyFirewallTemplateRequest& request) const;
 			ModifyImageShareStatusOutcome modifyImageShareStatus(const Model::ModifyImageShareStatusRequest &request)const;
 			void modifyImageShareStatusAsync(const Model::ModifyImageShareStatusRequest& request, const ModifyImageShareStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyImageShareStatusOutcomeCallable modifyImageShareStatusCallable(const Model::ModifyImageShareStatusRequest& request) const;
@@ -661,6 +754,9 @@ namespace AlibabaCloud
 			ReleasePublicConnectionOutcome releasePublicConnection(const Model::ReleasePublicConnectionRequest &request)const;
 			void releasePublicConnectionAsync(const Model::ReleasePublicConnectionRequest& request, const ReleasePublicConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleasePublicConnectionOutcomeCallable releasePublicConnectionCallable(const Model::ReleasePublicConnectionRequest& request) const;
+			RemoveCustomImageShareAccountOutcome removeCustomImageShareAccount(const Model::RemoveCustomImageShareAccountRequest &request)const;
+			void removeCustomImageShareAccountAsync(const Model::RemoveCustomImageShareAccountRequest& request, const RemoveCustomImageShareAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveCustomImageShareAccountOutcomeCallable removeCustomImageShareAccountCallable(const Model::RemoveCustomImageShareAccountRequest& request) const;
 			RenewInstanceOutcome renewInstance(const Model::RenewInstanceRequest &request)const;
 			void renewInstanceAsync(const Model::RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenewInstanceOutcomeCallable renewInstanceCallable(const Model::RenewInstanceRequest& request) const;

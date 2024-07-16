@@ -51,6 +51,42 @@ SWAS_OPENClient::SWAS_OPENClient(const std::string & accessKeyId, const std::str
 SWAS_OPENClient::~SWAS_OPENClient()
 {}
 
+SWAS_OPENClient::AddCustomImageShareAccountOutcome SWAS_OPENClient::addCustomImageShareAccount(const AddCustomImageShareAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddCustomImageShareAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddCustomImageShareAccountOutcome(AddCustomImageShareAccountResult(outcome.result()));
+	else
+		return AddCustomImageShareAccountOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::addCustomImageShareAccountAsync(const AddCustomImageShareAccountRequest& request, const AddCustomImageShareAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addCustomImageShareAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::AddCustomImageShareAccountOutcomeCallable SWAS_OPENClient::addCustomImageShareAccountCallable(const AddCustomImageShareAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddCustomImageShareAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->addCustomImageShareAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::AllocatePublicConnectionOutcome SWAS_OPENClient::allocatePublicConnection(const AllocatePublicConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -81,6 +117,42 @@ SWAS_OPENClient::AllocatePublicConnectionOutcomeCallable SWAS_OPENClient::alloca
 			[this, request]()
 			{
 			return this->allocatePublicConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::ApplyFirewallTemplateOutcome SWAS_OPENClient::applyFirewallTemplate(const ApplyFirewallTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ApplyFirewallTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ApplyFirewallTemplateOutcome(ApplyFirewallTemplateResult(outcome.result()));
+	else
+		return ApplyFirewallTemplateOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::applyFirewallTemplateAsync(const ApplyFirewallTemplateRequest& request, const ApplyFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, applyFirewallTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::ApplyFirewallTemplateOutcomeCallable SWAS_OPENClient::applyFirewallTemplateCallable(const ApplyFirewallTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ApplyFirewallTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->applyFirewallTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -261,6 +333,78 @@ SWAS_OPENClient::CreateFirewallRulesOutcomeCallable SWAS_OPENClient::createFirew
 			[this, request]()
 			{
 			return this->createFirewallRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::CreateFirewallTemplateOutcome SWAS_OPENClient::createFirewallTemplate(const CreateFirewallTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFirewallTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFirewallTemplateOutcome(CreateFirewallTemplateResult(outcome.result()));
+	else
+		return CreateFirewallTemplateOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::createFirewallTemplateAsync(const CreateFirewallTemplateRequest& request, const CreateFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFirewallTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::CreateFirewallTemplateOutcomeCallable SWAS_OPENClient::createFirewallTemplateCallable(const CreateFirewallTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFirewallTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->createFirewallTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::CreateFirewallTemplateRulesOutcome SWAS_OPENClient::createFirewallTemplateRules(const CreateFirewallTemplateRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFirewallTemplateRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFirewallTemplateRulesOutcome(CreateFirewallTemplateRulesResult(outcome.result()));
+	else
+		return CreateFirewallTemplateRulesOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::createFirewallTemplateRulesAsync(const CreateFirewallTemplateRulesRequest& request, const CreateFirewallTemplateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFirewallTemplateRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::CreateFirewallTemplateRulesOutcomeCallable SWAS_OPENClient::createFirewallTemplateRulesCallable(const CreateFirewallTemplateRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFirewallTemplateRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->createFirewallTemplateRules(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -585,6 +729,78 @@ SWAS_OPENClient::DeleteFirewallRulesOutcomeCallable SWAS_OPENClient::deleteFirew
 			[this, request]()
 			{
 			return this->deleteFirewallRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::DeleteFirewallTemplateRulesOutcome SWAS_OPENClient::deleteFirewallTemplateRules(const DeleteFirewallTemplateRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteFirewallTemplateRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteFirewallTemplateRulesOutcome(DeleteFirewallTemplateRulesResult(outcome.result()));
+	else
+		return DeleteFirewallTemplateRulesOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::deleteFirewallTemplateRulesAsync(const DeleteFirewallTemplateRulesRequest& request, const DeleteFirewallTemplateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteFirewallTemplateRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DeleteFirewallTemplateRulesOutcomeCallable SWAS_OPENClient::deleteFirewallTemplateRulesCallable(const DeleteFirewallTemplateRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteFirewallTemplateRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteFirewallTemplateRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::DeleteFirewallTemplatesOutcome SWAS_OPENClient::deleteFirewallTemplates(const DeleteFirewallTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteFirewallTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteFirewallTemplatesOutcome(DeleteFirewallTemplatesResult(outcome.result()));
+	else
+		return DeleteFirewallTemplatesOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::deleteFirewallTemplatesAsync(const DeleteFirewallTemplatesRequest& request, const DeleteFirewallTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteFirewallTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DeleteFirewallTemplatesOutcomeCallable SWAS_OPENClient::deleteFirewallTemplatesCallable(const DeleteFirewallTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteFirewallTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteFirewallTemplates(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1095,6 +1311,114 @@ SWAS_OPENClient::DescribeDatabaseSlowLogRecordsOutcomeCallable SWAS_OPENClient::
 	return task->get_future();
 }
 
+SWAS_OPENClient::DescribeFirewallTemplateApplyResultsOutcome SWAS_OPENClient::describeFirewallTemplateApplyResults(const DescribeFirewallTemplateApplyResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFirewallTemplateApplyResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFirewallTemplateApplyResultsOutcome(DescribeFirewallTemplateApplyResultsResult(outcome.result()));
+	else
+		return DescribeFirewallTemplateApplyResultsOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::describeFirewallTemplateApplyResultsAsync(const DescribeFirewallTemplateApplyResultsRequest& request, const DescribeFirewallTemplateApplyResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFirewallTemplateApplyResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DescribeFirewallTemplateApplyResultsOutcomeCallable SWAS_OPENClient::describeFirewallTemplateApplyResultsCallable(const DescribeFirewallTemplateApplyResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFirewallTemplateApplyResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFirewallTemplateApplyResults(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::DescribeFirewallTemplateRulesApplyResultOutcome SWAS_OPENClient::describeFirewallTemplateRulesApplyResult(const DescribeFirewallTemplateRulesApplyResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFirewallTemplateRulesApplyResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFirewallTemplateRulesApplyResultOutcome(DescribeFirewallTemplateRulesApplyResultResult(outcome.result()));
+	else
+		return DescribeFirewallTemplateRulesApplyResultOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::describeFirewallTemplateRulesApplyResultAsync(const DescribeFirewallTemplateRulesApplyResultRequest& request, const DescribeFirewallTemplateRulesApplyResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFirewallTemplateRulesApplyResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DescribeFirewallTemplateRulesApplyResultOutcomeCallable SWAS_OPENClient::describeFirewallTemplateRulesApplyResultCallable(const DescribeFirewallTemplateRulesApplyResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFirewallTemplateRulesApplyResultOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFirewallTemplateRulesApplyResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::DescribeFirewallTemplatesOutcome SWAS_OPENClient::describeFirewallTemplates(const DescribeFirewallTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFirewallTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFirewallTemplatesOutcome(DescribeFirewallTemplatesResult(outcome.result()));
+	else
+		return DescribeFirewallTemplatesOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::describeFirewallTemplatesAsync(const DescribeFirewallTemplatesRequest& request, const DescribeFirewallTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFirewallTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DescribeFirewallTemplatesOutcomeCallable SWAS_OPENClient::describeFirewallTemplatesCallable(const DescribeFirewallTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFirewallTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFirewallTemplates(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::DescribeInstanceKeyPairOutcome SWAS_OPENClient::describeInstanceKeyPair(const DescribeInstanceKeyPairRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1593,6 +1917,42 @@ SWAS_OPENClient::InvokeCommandOutcomeCallable SWAS_OPENClient::invokeCommandCall
 			[this, request]()
 			{
 			return this->invokeCommand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::ListCustomImageShareAccountsOutcome SWAS_OPENClient::listCustomImageShareAccounts(const ListCustomImageShareAccountsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCustomImageShareAccountsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCustomImageShareAccountsOutcome(ListCustomImageShareAccountsResult(outcome.result()));
+	else
+		return ListCustomImageShareAccountsOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::listCustomImageShareAccountsAsync(const ListCustomImageShareAccountsRequest& request, const ListCustomImageShareAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCustomImageShareAccounts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::ListCustomImageShareAccountsOutcomeCallable SWAS_OPENClient::listCustomImageShareAccountsCallable(const ListCustomImageShareAccountsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCustomImageShareAccountsOutcome()>>(
+			[this, request]()
+			{
+			return this->listCustomImageShareAccounts(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2211,6 +2571,42 @@ SWAS_OPENClient::ModifyFirewallRuleOutcomeCallable SWAS_OPENClient::modifyFirewa
 	return task->get_future();
 }
 
+SWAS_OPENClient::ModifyFirewallTemplateOutcome SWAS_OPENClient::modifyFirewallTemplate(const ModifyFirewallTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyFirewallTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyFirewallTemplateOutcome(ModifyFirewallTemplateResult(outcome.result()));
+	else
+		return ModifyFirewallTemplateOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::modifyFirewallTemplateAsync(const ModifyFirewallTemplateRequest& request, const ModifyFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyFirewallTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::ModifyFirewallTemplateOutcomeCallable SWAS_OPENClient::modifyFirewallTemplateCallable(const ModifyFirewallTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyFirewallTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyFirewallTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::ModifyImageShareStatusOutcome SWAS_OPENClient::modifyImageShareStatus(const ModifyImageShareStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2385,6 +2781,42 @@ SWAS_OPENClient::ReleasePublicConnectionOutcomeCallable SWAS_OPENClient::release
 			[this, request]()
 			{
 			return this->releasePublicConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::RemoveCustomImageShareAccountOutcome SWAS_OPENClient::removeCustomImageShareAccount(const RemoveCustomImageShareAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveCustomImageShareAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveCustomImageShareAccountOutcome(RemoveCustomImageShareAccountResult(outcome.result()));
+	else
+		return RemoveCustomImageShareAccountOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::removeCustomImageShareAccountAsync(const RemoveCustomImageShareAccountRequest& request, const RemoveCustomImageShareAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeCustomImageShareAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::RemoveCustomImageShareAccountOutcomeCallable SWAS_OPENClient::removeCustomImageShareAccountCallable(const RemoveCustomImageShareAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveCustomImageShareAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->removeCustomImageShareAccount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
