@@ -318,6 +318,15 @@ void CreateTairInstanceRequest::setInstanceType(const std::string &instanceType)
   setParameter(std::string("InstanceType"), instanceType);
 }
 
+std::string CreateTairInstanceRequest::getRestoreTime() const {
+  return restoreTime_;
+}
+
+void CreateTairInstanceRequest::setRestoreTime(const std::string &restoreTime) {
+  restoreTime_ = restoreTime;
+  setParameter(std::string("RestoreTime"), restoreTime);
+}
+
 bool CreateTairInstanceRequest::getAutoPay() const {
   return autoPay_;
 }
@@ -352,6 +361,15 @@ std::string CreateTairInstanceRequest::getOwnerAccount() const {
 void CreateTairInstanceRequest::setOwnerAccount(const std::string &ownerAccount) {
   ownerAccount_ = ownerAccount;
   setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+std::string CreateTairInstanceRequest::getRecoverConfigMode() const {
+  return recoverConfigMode_;
+}
+
+void CreateTairInstanceRequest::setRecoverConfigMode(const std::string &recoverConfigMode) {
+  recoverConfigMode_ = recoverConfigMode;
+  setParameter(std::string("RecoverConfigMode"), recoverConfigMode);
 }
 
 std::string CreateTairInstanceRequest::getGlobalInstanceId() const {

@@ -61,6 +61,15 @@ void ResetAccountPasswordRequest::setSecurityToken(const std::string &securityTo
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+std::string ResetAccountPasswordRequest::getSourceBiz() const {
+  return sourceBiz_;
+}
+
+void ResetAccountPasswordRequest::setSourceBiz(const std::string &sourceBiz) {
+  sourceBiz_ = sourceBiz;
+  setParameter(std::string("SourceBiz"), sourceBiz);
+}
+
 std::string ResetAccountPasswordRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

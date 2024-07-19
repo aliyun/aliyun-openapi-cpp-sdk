@@ -70,6 +70,15 @@ void GrantAccountPrivilegeRequest::setSecurityToken(const std::string &securityT
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+std::string GrantAccountPrivilegeRequest::getSourceBiz() const {
+  return sourceBiz_;
+}
+
+void GrantAccountPrivilegeRequest::setSourceBiz(const std::string &sourceBiz) {
+  sourceBiz_ = sourceBiz;
+  setParameter(std::string("SourceBiz"), sourceBiz);
+}
+
 std::string GrantAccountPrivilegeRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

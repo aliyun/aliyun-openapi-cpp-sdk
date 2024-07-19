@@ -61,6 +61,15 @@ void DeleteAccountRequest::setSecurityToken(const std::string &securityToken) {
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+std::string DeleteAccountRequest::getSourceBiz() const {
+  return sourceBiz_;
+}
+
+void DeleteAccountRequest::setSourceBiz(const std::string &sourceBiz) {
+  sourceBiz_ = sourceBiz;
+  setParameter(std::string("SourceBiz"), sourceBiz);
+}
+
 std::string DeleteAccountRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

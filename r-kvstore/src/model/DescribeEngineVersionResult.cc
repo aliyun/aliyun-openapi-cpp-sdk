@@ -113,6 +113,8 @@ void DescribeEngineVersionResult::parse(const std::string &payload)
 		isNewSSLMode_ = value["IsNewSSLMode"].asString();
 	if(!value["IsAutoUpgradeOpen"].isNull())
 		isAutoUpgradeOpen_ = value["IsAutoUpgradeOpen"].asString();
+	if(!value["IsOpenNGLB"].isNull())
+		isOpenNGLB_ = value["IsOpenNGLB"].asString();
 
 }
 
@@ -159,6 +161,11 @@ bool DescribeEngineVersionResult::getIsLatestVersion()const
 std::string DescribeEngineVersionResult::getIsNewSSLMode()const
 {
 	return isNewSSLMode_;
+}
+
+std::string DescribeEngineVersionResult::getIsOpenNGLB()const
+{
+	return isOpenNGLB_;
 }
 
 std::string DescribeEngineVersionResult::getIsRedisCompatibleVersion()const

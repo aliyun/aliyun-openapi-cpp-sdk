@@ -48,6 +48,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getPreferredBackupTime() const;
 	void setPreferredBackupTime(const std::string &preferredBackupTime);
+	int getBackupRetentionPeriod() const;
+	void setBackupRetentionPeriod(int backupRetentionPeriod);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 
@@ -61,6 +63,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string preferredBackupTime_;
+	int backupRetentionPeriod_;
 	std::string instanceId_;
 };
 } // namespace Model

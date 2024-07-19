@@ -46,6 +46,8 @@ public:
 	void setAccountName(const std::string &accountName);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
+	std::string getSourceBiz() const;
+	void setSourceBiz(const std::string &sourceBiz);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -66,6 +68,7 @@ private:
 	std::string accountPrivilege_;
 	std::string accountName_;
 	std::string securityToken_;
+	std::string sourceBiz_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

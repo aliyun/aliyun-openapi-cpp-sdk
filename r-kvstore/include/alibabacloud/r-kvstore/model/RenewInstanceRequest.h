@@ -60,6 +60,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	bool getAutoRenew() const;
+	void setAutoRenew(bool autoRenew);
 	bool getForceUpgrade() const;
 	void setForceUpgrade(bool forceUpgrade);
 
@@ -79,6 +81,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string instanceId_;
+	bool autoRenew_;
 	bool forceUpgrade_;
 };
 } // namespace Model

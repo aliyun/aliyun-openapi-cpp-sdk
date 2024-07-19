@@ -40,6 +40,8 @@ public:
 	void setNewAccountPassword(const std::string &newAccountPassword);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
+	std::string getSourceBiz() const;
+	void setSourceBiz(const std::string &sourceBiz);
 	std::string getOldAccountPassword() const;
 	void setOldAccountPassword(const std::string &oldAccountPassword);
 	std::string getResourceOwnerAccount() const;
@@ -57,6 +59,7 @@ private:
 	std::string accountName_;
 	std::string newAccountPassword_;
 	std::string securityToken_;
+	std::string sourceBiz_;
 	std::string oldAccountPassword_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

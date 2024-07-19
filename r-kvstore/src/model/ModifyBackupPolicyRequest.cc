@@ -106,6 +106,15 @@ void ModifyBackupPolicyRequest::setPreferredBackupTime(const std::string &prefer
   setParameter(std::string("PreferredBackupTime"), preferredBackupTime);
 }
 
+int ModifyBackupPolicyRequest::getBackupRetentionPeriod() const {
+  return backupRetentionPeriod_;
+}
+
+void ModifyBackupPolicyRequest::setBackupRetentionPeriod(int backupRetentionPeriod) {
+  backupRetentionPeriod_ = backupRetentionPeriod;
+  setParameter(std::string("BackupRetentionPeriod"), std::to_string(backupRetentionPeriod));
+}
+
 std::string ModifyBackupPolicyRequest::getInstanceId() const {
   return instanceId_;
 }

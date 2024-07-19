@@ -114,6 +114,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	bool getGlobalInstance() const;
 	void setGlobalInstance(bool globalInstance);
+	std::string getRecoverConfigMode() const;
+	void setRecoverConfigMode(const std::string &recoverConfigMode);
 	std::string getToken() const;
 	void setToken(const std::string &token);
 	std::string getGlobalInstanceId() const;
@@ -174,6 +176,7 @@ private:
 	std::string srcDBInstanceId_;
 	std::string ownerAccount_;
 	bool globalInstance_;
+	std::string recoverConfigMode_;
 	std::string token_;
 	std::string globalInstanceId_;
 	std::string paramGroupId_;

@@ -70,6 +70,15 @@ void CreateGlobalDistributeCacheRequest::setSecurityToken(const std::string &sec
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+std::string CreateGlobalDistributeCacheRequest::getEffectiveTime() const {
+  return effectiveTime_;
+}
+
+void CreateGlobalDistributeCacheRequest::setEffectiveTime(const std::string &effectiveTime) {
+  effectiveTime_ = effectiveTime;
+  setParameter(std::string("EffectiveTime"), effectiveTime);
+}
+
 std::string CreateGlobalDistributeCacheRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

@@ -45,13 +45,14 @@ namespace AlibabaCloud
 				struct Backup
 				{
 					std::string backupMethod;
+					std::string recoverConfigMode;
 					std::string engineVersion;
 					std::string backupIntranetDownloadURL;
 					long backupSize;
 					std::string backupMode;
-					int backupId;
+					long backupId;
 					std::string nodeInstanceId;
-					int backupJobID;
+					long backupJobID;
 					std::string backupDBNames;
 					std::string backupDownloadURL;
 					std::string backupEndTime;
@@ -68,7 +69,10 @@ namespace AlibabaCloud
 				int getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
+				long getFreeSize()const;
 				std::vector<Backup> getBackups()const;
+				long getFullStorageSize()const;
+				long getLogStorageSize()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -77,7 +81,10 @@ namespace AlibabaCloud
 				int totalCount_;
 				int pageSize_;
 				int pageNumber_;
+				long freeSize_;
 				std::vector<Backup> backups_;
+				long fullStorageSize_;
+				long logStorageSize_;
 
 			};
 		}

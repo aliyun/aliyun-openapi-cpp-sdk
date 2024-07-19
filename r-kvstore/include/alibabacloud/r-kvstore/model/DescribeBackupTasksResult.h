@@ -50,7 +50,7 @@ namespace AlibabaCloud
 					std::string nodeId;
 					std::string backupProgressStatus;
 					std::string process;
-					int backupJobID;
+					long backupJobID;
 				};
 
 

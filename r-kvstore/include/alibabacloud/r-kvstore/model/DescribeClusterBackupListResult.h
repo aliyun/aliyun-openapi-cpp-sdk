@@ -47,18 +47,19 @@ namespace AlibabaCloud
 							std::string custinsDbVersion;
 							int custinsLevelId;
 						};
-						std::string instanceName;
-						std::string backupDownloadURL;
+						std::string recoverConfigMode;
 						std::string backupIntranetDownloadURL;
-						std::string backupEndTime;
 						std::string backupSize;
-						std::string backupStartTime;
 						std::string backupId;
 						std::string isAvail;
+						std::string backupName;
+						std::string instanceName;
+						std::string backupDownloadURL;
+						std::string backupEndTime;
+						std::string backupStartTime;
 						std::string engine;
 						ExtraInfo1 extraInfo1;
 						std::string backupStatus;
-						std::string backupName;
 					};
 					std::string clusterBackupId;
 					std::string clusterBackupStartTime;
@@ -80,7 +81,10 @@ namespace AlibabaCloud
 				std::vector<ClusterBackup> getClusterBackups()const;
 				int getPageSize()const;
 				int getPageNumber()const;
+				long getFreeSize()const;
 				int getMaxResults()const;
+				long getFullStorageSize()const;
+				long getLogStorageSize()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -88,7 +92,10 @@ namespace AlibabaCloud
 				std::vector<ClusterBackup> clusterBackups_;
 				int pageSize_;
 				int pageNumber_;
+				long freeSize_;
 				int maxResults_;
+				long fullStorageSize_;
+				long logStorageSize_;
 
 			};
 		}

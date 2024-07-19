@@ -32,6 +32,8 @@ public:
 	~ModifyInstanceSpecRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getNodeType() const;
+	void setNodeType(const std::string &nodeType);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	int getSlaveReadOnlyCount() const;
@@ -79,6 +81,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string nodeType_;
 	std::string clientToken_;
 	int slaveReadOnlyCount_;
 	std::string couponNo_;

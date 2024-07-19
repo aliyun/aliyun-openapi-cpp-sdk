@@ -84,6 +84,7 @@ namespace AlibabaCloud
 				bool getEnableUpgradeMajorVersion()const;
 				bool getIsLatestVersion()const;
 				std::string getIsNewSSLMode()const;
+				std::string getIsOpenNGLB()const;
 				std::string getIsRedisCompatibleVersion()const;
 				ProxyLatestMinorVersion getProxyLatestMinorVersion()const;
 				std::string getIsSSLEnable()const;
@@ -103,6 +104,7 @@ namespace AlibabaCloud
 				bool enableUpgradeMajorVersion_;
 				bool isLatestVersion_;
 				std::string isNewSSLMode_;
+				std::string isOpenNGLB_;
 				std::string isRedisCompatibleVersion_;
 				ProxyLatestMinorVersion proxyLatestMinorVersion_;
 				std::string isSSLEnable_;

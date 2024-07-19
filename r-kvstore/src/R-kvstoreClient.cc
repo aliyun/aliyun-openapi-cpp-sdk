@@ -447,6 +447,42 @@ R_kvstoreClient::CreateInstancesOutcomeCallable R_kvstoreClient::createInstances
 	return task->get_future();
 }
 
+R_kvstoreClient::CreateParameterGroupOutcome R_kvstoreClient::createParameterGroup(const CreateParameterGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateParameterGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateParameterGroupOutcome(CreateParameterGroupResult(outcome.result()));
+	else
+		return CreateParameterGroupOutcome(outcome.error());
+}
+
+void R_kvstoreClient::createParameterGroupAsync(const CreateParameterGroupRequest& request, const CreateParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createParameterGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::CreateParameterGroupOutcomeCallable R_kvstoreClient::createParameterGroupCallable(const CreateParameterGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateParameterGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createParameterGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::CreateTairInstanceOutcome R_kvstoreClient::createTairInstance(const CreateTairInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -591,6 +627,42 @@ R_kvstoreClient::DeleteInstanceOutcomeCallable R_kvstoreClient::deleteInstanceCa
 	return task->get_future();
 }
 
+R_kvstoreClient::DeleteParameterGroupOutcome R_kvstoreClient::deleteParameterGroup(const DeleteParameterGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteParameterGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteParameterGroupOutcome(DeleteParameterGroupResult(outcome.result()));
+	else
+		return DeleteParameterGroupOutcome(outcome.error());
+}
+
+void R_kvstoreClient::deleteParameterGroupAsync(const DeleteParameterGroupRequest& request, const DeleteParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteParameterGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DeleteParameterGroupOutcomeCallable R_kvstoreClient::deleteParameterGroupCallable(const DeleteParameterGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteParameterGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteParameterGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::DeleteShardingNodeOutcome R_kvstoreClient::deleteShardingNode(const DeleteShardingNodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +765,42 @@ R_kvstoreClient::DescribeActiveOperationTaskOutcomeCallable R_kvstoreClient::des
 			[this, request]()
 			{
 			return this->describeActiveOperationTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeActiveOperationTasksOutcome R_kvstoreClient::describeActiveOperationTasks(const DescribeActiveOperationTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeActiveOperationTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeActiveOperationTasksOutcome(DescribeActiveOperationTasksResult(outcome.result()));
+	else
+		return DescribeActiveOperationTasksOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeActiveOperationTasksAsync(const DescribeActiveOperationTasksRequest& request, const DescribeActiveOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeActiveOperationTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeActiveOperationTasksOutcomeCallable R_kvstoreClient::describeActiveOperationTasksCallable(const DescribeActiveOperationTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeActiveOperationTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeActiveOperationTasks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1815,6 +1923,150 @@ R_kvstoreClient::DescribeMonitorItemsOutcomeCallable R_kvstoreClient::describeMo
 	return task->get_future();
 }
 
+R_kvstoreClient::DescribeParameterGroupOutcome R_kvstoreClient::describeParameterGroup(const DescribeParameterGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeParameterGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeParameterGroupOutcome(DescribeParameterGroupResult(outcome.result()));
+	else
+		return DescribeParameterGroupOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeParameterGroupAsync(const DescribeParameterGroupRequest& request, const DescribeParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeParameterGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeParameterGroupOutcomeCallable R_kvstoreClient::describeParameterGroupCallable(const DescribeParameterGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeParameterGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->describeParameterGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeParameterGroupSupportParamOutcome R_kvstoreClient::describeParameterGroupSupportParam(const DescribeParameterGroupSupportParamRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeParameterGroupSupportParamOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeParameterGroupSupportParamOutcome(DescribeParameterGroupSupportParamResult(outcome.result()));
+	else
+		return DescribeParameterGroupSupportParamOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeParameterGroupSupportParamAsync(const DescribeParameterGroupSupportParamRequest& request, const DescribeParameterGroupSupportParamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeParameterGroupSupportParam(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeParameterGroupSupportParamOutcomeCallable R_kvstoreClient::describeParameterGroupSupportParamCallable(const DescribeParameterGroupSupportParamRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeParameterGroupSupportParamOutcome()>>(
+			[this, request]()
+			{
+			return this->describeParameterGroupSupportParam(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeParameterGroupTemplateListOutcome R_kvstoreClient::describeParameterGroupTemplateList(const DescribeParameterGroupTemplateListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeParameterGroupTemplateListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeParameterGroupTemplateListOutcome(DescribeParameterGroupTemplateListResult(outcome.result()));
+	else
+		return DescribeParameterGroupTemplateListOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeParameterGroupTemplateListAsync(const DescribeParameterGroupTemplateListRequest& request, const DescribeParameterGroupTemplateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeParameterGroupTemplateList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeParameterGroupTemplateListOutcomeCallable R_kvstoreClient::describeParameterGroupTemplateListCallable(const DescribeParameterGroupTemplateListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeParameterGroupTemplateListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeParameterGroupTemplateList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeParameterGroupsOutcome R_kvstoreClient::describeParameterGroups(const DescribeParameterGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeParameterGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeParameterGroupsOutcome(DescribeParameterGroupsResult(outcome.result()));
+	else
+		return DescribeParameterGroupsOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeParameterGroupsAsync(const DescribeParameterGroupsRequest& request, const DescribeParameterGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeParameterGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeParameterGroupsOutcomeCallable R_kvstoreClient::describeParameterGroupsCallable(const DescribeParameterGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeParameterGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeParameterGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::DescribeParameterModificationHistoryOutcome R_kvstoreClient::describeParameterModificationHistory(const DescribeParameterModificationHistoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2679,6 +2931,42 @@ R_kvstoreClient::ModifyActiveOperationTaskOutcomeCallable R_kvstoreClient::modif
 	return task->get_future();
 }
 
+R_kvstoreClient::ModifyActiveOperationTasksOutcome R_kvstoreClient::modifyActiveOperationTasks(const ModifyActiveOperationTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyActiveOperationTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyActiveOperationTasksOutcome(ModifyActiveOperationTasksResult(outcome.result()));
+	else
+		return ModifyActiveOperationTasksOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyActiveOperationTasksAsync(const ModifyActiveOperationTasksRequest& request, const ModifyActiveOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyActiveOperationTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyActiveOperationTasksOutcomeCallable R_kvstoreClient::modifyActiveOperationTasksCallable(const ModifyActiveOperationTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyActiveOperationTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyActiveOperationTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::ModifyAuditLogConfigOutcome R_kvstoreClient::modifyAuditLogConfig(const ModifyAuditLogConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2745,6 +3033,42 @@ R_kvstoreClient::ModifyBackupPolicyOutcomeCallable R_kvstoreClient::modifyBackup
 			[this, request]()
 			{
 			return this->modifyBackupPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::ModifyDBInstanceAutoUpgradeOutcome R_kvstoreClient::modifyDBInstanceAutoUpgrade(const ModifyDBInstanceAutoUpgradeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDBInstanceAutoUpgradeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDBInstanceAutoUpgradeOutcome(ModifyDBInstanceAutoUpgradeResult(outcome.result()));
+	else
+		return ModifyDBInstanceAutoUpgradeOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyDBInstanceAutoUpgradeAsync(const ModifyDBInstanceAutoUpgradeRequest& request, const ModifyDBInstanceAutoUpgradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDBInstanceAutoUpgrade(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyDBInstanceAutoUpgradeOutcomeCallable R_kvstoreClient::modifyDBInstanceAutoUpgradeCallable(const ModifyDBInstanceAutoUpgradeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDBInstanceAutoUpgradeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDBInstanceAutoUpgrade(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3357,6 +3681,42 @@ R_kvstoreClient::ModifyIntranetAttributeOutcomeCallable R_kvstoreClient::modifyI
 			[this, request]()
 			{
 			return this->modifyIntranetAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::ModifyParameterGroupOutcome R_kvstoreClient::modifyParameterGroup(const ModifyParameterGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyParameterGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyParameterGroupOutcome(ModifyParameterGroupResult(outcome.result()));
+	else
+		return ModifyParameterGroupOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyParameterGroupAsync(const ModifyParameterGroupRequest& request, const ModifyParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyParameterGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyParameterGroupOutcomeCallable R_kvstoreClient::modifyParameterGroupCallable(const ModifyParameterGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyParameterGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyParameterGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

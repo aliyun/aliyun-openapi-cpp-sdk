@@ -98,6 +98,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getInstanceType() const;
 	void setInstanceType(const std::string &instanceType);
+	std::string getRestoreTime() const;
+	void setRestoreTime(const std::string &restoreTime);
 	bool getAutoPay() const;
 	void setAutoPay(bool autoPay);
 	std::string getResourceOwnerAccount() const;
@@ -106,6 +108,8 @@ public:
 	void setSrcDBInstanceId(const std::string &srcDBInstanceId);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getRecoverConfigMode() const;
+	void setRecoverConfigMode(const std::string &recoverConfigMode);
 	std::string getGlobalInstanceId() const;
 	void setGlobalInstanceId(const std::string &globalInstanceId);
 	std::string getParamGroupId() const;
@@ -152,10 +156,12 @@ private:
 	std::string accessKeyId_;
 	std::string regionId_;
 	std::string instanceType_;
+	std::string restoreTime_;
 	bool autoPay_;
 	std::string resourceOwnerAccount_;
 	std::string srcDBInstanceId_;
 	std::string ownerAccount_;
+	std::string recoverConfigMode_;
 	std::string globalInstanceId_;
 	std::string paramGroupId_;
 	std::string vpcId_;

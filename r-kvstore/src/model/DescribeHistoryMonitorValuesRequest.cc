@@ -34,6 +34,15 @@ void DescribeHistoryMonitorValuesRequest::setResourceOwnerId(long resourceOwnerI
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeHistoryMonitorValuesRequest::getNodeRole() const {
+  return nodeRole_;
+}
+
+void DescribeHistoryMonitorValuesRequest::setNodeRole(const std::string &nodeRole) {
+  nodeRole_ = nodeRole;
+  setParameter(std::string("NodeRole"), nodeRole);
+}
+
 std::string DescribeHistoryMonitorValuesRequest::getStartTime() const {
   return startTime_;
 }

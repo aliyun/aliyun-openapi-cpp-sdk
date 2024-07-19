@@ -25,11 +25,11 @@ DescribeBackupsRequest::DescribeBackupsRequest()
 
 DescribeBackupsRequest::~DescribeBackupsRequest() {}
 
-int DescribeBackupsRequest::getBackupJobId() const {
+long DescribeBackupsRequest::getBackupJobId() const {
   return backupJobId_;
 }
 
-void DescribeBackupsRequest::setBackupJobId(int backupJobId) {
+void DescribeBackupsRequest::setBackupJobId(long backupJobId) {
   backupJobId_ = backupJobId;
   setParameter(std::string("BackupJobId"), std::to_string(backupJobId));
 }
@@ -106,11 +106,11 @@ void DescribeBackupsRequest::setOwnerAccount(const std::string &ownerAccount) {
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-int DescribeBackupsRequest::getBackupId() const {
+long DescribeBackupsRequest::getBackupId() const {
   return backupId_;
 }
 
-void DescribeBackupsRequest::setBackupId(int backupId) {
+void DescribeBackupsRequest::setBackupId(long backupId) {
   backupId_ = backupId;
   setParameter(std::string("BackupId"), std::to_string(backupId));
 }

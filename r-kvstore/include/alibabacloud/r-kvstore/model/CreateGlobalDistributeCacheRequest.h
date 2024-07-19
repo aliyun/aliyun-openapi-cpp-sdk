@@ -40,6 +40,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
+	std::string getEffectiveTime() const;
+	void setEffectiveTime(const std::string &effectiveTime);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -55,6 +57,7 @@ private:
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	std::string securityToken_;
+	std::string effectiveTime_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

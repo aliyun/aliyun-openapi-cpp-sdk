@@ -390,6 +390,15 @@ void CreateInstanceRequest::setGlobalInstance(bool globalInstance) {
   setParameter(std::string("GlobalInstance"), globalInstance ? "true" : "false");
 }
 
+std::string CreateInstanceRequest::getRecoverConfigMode() const {
+  return recoverConfigMode_;
+}
+
+void CreateInstanceRequest::setRecoverConfigMode(const std::string &recoverConfigMode) {
+  recoverConfigMode_ = recoverConfigMode;
+  setParameter(std::string("RecoverConfigMode"), recoverConfigMode);
+}
+
 std::string CreateInstanceRequest::getToken() const {
   return token_;
 }

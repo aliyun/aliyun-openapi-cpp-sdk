@@ -117,6 +117,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.instanceStatus = valueInstancesKVStoreInstance["InstanceStatus"].asString();
 		if(!valueInstancesKVStoreInstance["ProxyCount"].isNull())
 			instancesObject.proxyCount = std::stoi(valueInstancesKVStoreInstance["ProxyCount"].asString());
+		if(!valueInstancesKVStoreInstance["ComputingType"].isNull())
+			instancesObject.computingType = valueInstancesKVStoreInstance["ComputingType"].asString();
 		if(!valueInstancesKVStoreInstance["CloudType"].isNull())
 			instancesObject.cloudType = valueInstancesKVStoreInstance["CloudType"].asString();
 		if(!valueInstancesKVStoreInstance["EditionType"].isNull())

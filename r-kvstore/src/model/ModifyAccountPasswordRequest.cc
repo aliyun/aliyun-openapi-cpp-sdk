@@ -70,6 +70,15 @@ void ModifyAccountPasswordRequest::setSecurityToken(const std::string &securityT
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+std::string ModifyAccountPasswordRequest::getSourceBiz() const {
+  return sourceBiz_;
+}
+
+void ModifyAccountPasswordRequest::setSourceBiz(const std::string &sourceBiz) {
+  sourceBiz_ = sourceBiz;
+  setParameter(std::string("SourceBiz"), sourceBiz);
+}
+
 std::string ModifyAccountPasswordRequest::getOldAccountPassword() const {
   return oldAccountPassword_;
 }

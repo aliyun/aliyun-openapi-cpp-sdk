@@ -50,7 +50,7 @@ void DescribeBackupTasksResult::parse(const std::string &payload)
 		if(!valueBackupJobsBackupJob["JobMode"].isNull())
 			backupJobsObject.jobMode = valueBackupJobsBackupJob["JobMode"].asString();
 		if(!valueBackupJobsBackupJob["BackupJobID"].isNull())
-			backupJobsObject.backupJobID = std::stoi(valueBackupJobsBackupJob["BackupJobID"].asString());
+			backupJobsObject.backupJobID = std::stol(valueBackupJobsBackupJob["BackupJobID"].asString());
 		if(!valueBackupJobsBackupJob["BackupProgressStatus"].isNull())
 			backupJobsObject.backupProgressStatus = valueBackupJobsBackupJob["BackupProgressStatus"].asString();
 		if(!valueBackupJobsBackupJob["NodeId"].isNull())

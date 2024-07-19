@@ -73,6 +73,8 @@ void DescribeClusterBackupListResult::parse(const std::string &payload)
 				backupsObject.backupDownloadURL = valueClusterBackupsclusterBackupBackupsbackup["BackupDownloadURL"].asString();
 			if(!valueClusterBackupsclusterBackupBackupsbackup["BackupIntranetDownloadURL"].isNull())
 				backupsObject.backupIntranetDownloadURL = valueClusterBackupsclusterBackupBackupsbackup["BackupIntranetDownloadURL"].asString();
+			if(!valueClusterBackupsclusterBackupBackupsbackup["RecoverConfigMode"].isNull())
+				backupsObject.recoverConfigMode = valueClusterBackupsclusterBackupBackupsbackup["RecoverConfigMode"].asString();
 			if(!valueClusterBackupsclusterBackupBackupsbackup["BackupStartTime"].isNull())
 				backupsObject.backupStartTime = valueClusterBackupsclusterBackupBackupsbackup["BackupStartTime"].asString();
 			if(!valueClusterBackupsclusterBackupBackupsbackup["BackupEndTime"].isNull())
@@ -109,6 +111,12 @@ void DescribeClusterBackupListResult::parse(const std::string &payload)
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["FullStorageSize"].isNull())
+		fullStorageSize_ = std::stol(value["FullStorageSize"].asString());
+	if(!value["LogStorageSize"].isNull())
+		logStorageSize_ = std::stol(value["LogStorageSize"].asString());
+	if(!value["FreeSize"].isNull())
+		freeSize_ = std::stol(value["FreeSize"].asString());
 
 }
 
@@ -127,8 +135,23 @@ int DescribeClusterBackupListResult::getPageNumber()const
 	return pageNumber_;
 }
 
+long DescribeClusterBackupListResult::getFreeSize()const
+{
+	return freeSize_;
+}
+
 int DescribeClusterBackupListResult::getMaxResults()const
 {
 	return maxResults_;
+}
+
+long DescribeClusterBackupListResult::getFullStorageSize()const
+{
+	return fullStorageSize_;
+}
+
+long DescribeClusterBackupListResult::getLogStorageSize()const
+{
+	return logStorageSize_;
 }
 

@@ -70,6 +70,15 @@ void ModifyAccountDescriptionRequest::setSecurityToken(const std::string &securi
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+std::string ModifyAccountDescriptionRequest::getSourceBiz() const {
+  return sourceBiz_;
+}
+
+void ModifyAccountDescriptionRequest::setSourceBiz(const std::string &sourceBiz) {
+  sourceBiz_ = sourceBiz;
+  setParameter(std::string("SourceBiz"), sourceBiz);
+}
+
 std::string ModifyAccountDescriptionRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

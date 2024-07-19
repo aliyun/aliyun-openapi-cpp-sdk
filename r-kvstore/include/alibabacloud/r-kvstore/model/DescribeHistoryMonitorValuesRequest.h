@@ -32,6 +32,8 @@ public:
 	~DescribeHistoryMonitorValuesRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getNodeRole() const;
+	void setNodeRole(const std::string &nodeRole);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
 	std::string getAccessKeyId() const;
@@ -65,6 +67,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string nodeRole_;
 	std::string startTime_;
 	std::string accessKeyId_;
 	std::string replicatorJobId_;

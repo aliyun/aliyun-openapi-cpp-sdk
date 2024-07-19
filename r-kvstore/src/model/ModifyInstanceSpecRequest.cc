@@ -34,6 +34,15 @@ void ModifyInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ModifyInstanceSpecRequest::getNodeType() const {
+  return nodeType_;
+}
+
+void ModifyInstanceSpecRequest::setNodeType(const std::string &nodeType) {
+  nodeType_ = nodeType;
+  setParameter(std::string("NodeType"), nodeType);
+}
+
 std::string ModifyInstanceSpecRequest::getClientToken() const {
   return clientToken_;
 }

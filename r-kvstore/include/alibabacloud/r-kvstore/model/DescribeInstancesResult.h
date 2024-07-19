@@ -76,6 +76,7 @@ namespace AlibabaCloud
 					std::string instanceName;
 					std::string vpcId;
 					std::string chargeType;
+					std::string computingType;
 					std::string nodeType;
 					std::string connectionMode;
 					int proxyCount;

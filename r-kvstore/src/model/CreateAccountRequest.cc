@@ -97,6 +97,15 @@ void CreateAccountRequest::setSecurityToken(const std::string &securityToken) {
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+std::string CreateAccountRequest::getSourceBiz() const {
+  return sourceBiz_;
+}
+
+void CreateAccountRequest::setSourceBiz(const std::string &sourceBiz) {
+  sourceBiz_ = sourceBiz;
+  setParameter(std::string("SourceBiz"), sourceBiz);
+}
+
 std::string CreateAccountRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

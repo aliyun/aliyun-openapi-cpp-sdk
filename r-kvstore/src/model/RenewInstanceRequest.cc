@@ -160,6 +160,15 @@ void RenewInstanceRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
+bool RenewInstanceRequest::getAutoRenew() const {
+  return autoRenew_;
+}
+
+void RenewInstanceRequest::setAutoRenew(bool autoRenew) {
+  autoRenew_ = autoRenew;
+  setParameter(std::string("AutoRenew"), autoRenew ? "true" : "false");
+}
+
 bool RenewInstanceRequest::getForceUpgrade() const {
   return forceUpgrade_;
 }

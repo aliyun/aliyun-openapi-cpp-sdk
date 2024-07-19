@@ -56,7 +56,7 @@ void DescribeBackupsResult::parse(const std::string &payload)
 		if(!valueBackupsBackup["BackupEndTime"].isNull())
 			backupsObject.backupEndTime = valueBackupsBackup["BackupEndTime"].asString();
 		if(!valueBackupsBackup["BackupId"].isNull())
-			backupsObject.backupId = std::stoi(valueBackupsBackup["BackupId"].asString());
+			backupsObject.backupId = std::stol(valueBackupsBackup["BackupId"].asString());
 		if(!valueBackupsBackup["BackupDBNames"].isNull())
 			backupsObject.backupDBNames = valueBackupsBackup["BackupDBNames"].asString();
 		if(!valueBackupsBackup["EngineVersion"].isNull())
@@ -70,7 +70,9 @@ void DescribeBackupsResult::parse(const std::string &payload)
 		if(!valueBackupsBackup["BackupMethod"].isNull())
 			backupsObject.backupMethod = valueBackupsBackup["BackupMethod"].asString();
 		if(!valueBackupsBackup["BackupJobID"].isNull())
-			backupsObject.backupJobID = std::stoi(valueBackupsBackup["BackupJobID"].asString());
+			backupsObject.backupJobID = std::stol(valueBackupsBackup["BackupJobID"].asString());
+		if(!valueBackupsBackup["RecoverConfigMode"].isNull())
+			backupsObject.recoverConfigMode = valueBackupsBackup["RecoverConfigMode"].asString();
 		backups_.push_back(backupsObject);
 	}
 	auto accessDeniedDetailNode = value["AccessDeniedDetail"];
@@ -94,6 +96,12 @@ void DescribeBackupsResult::parse(const std::string &payload)
 		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["FullStorageSize"].isNull())
+		fullStorageSize_ = std::stol(value["FullStorageSize"].asString());
+	if(!value["LogStorageSize"].isNull())
+		logStorageSize_ = std::stol(value["LogStorageSize"].asString());
+	if(!value["FreeSize"].isNull())
+		freeSize_ = std::stol(value["FreeSize"].asString());
 
 }
 
@@ -117,8 +125,23 @@ int DescribeBackupsResult::getPageNumber()const
 	return pageNumber_;
 }
 
+long DescribeBackupsResult::getFreeSize()const
+{
+	return freeSize_;
+}
+
 std::vector<DescribeBackupsResult::Backup> DescribeBackupsResult::getBackups()const
 {
 	return backups_;
+}
+
+long DescribeBackupsResult::getFullStorageSize()const
+{
+	return fullStorageSize_;
+}
+
+long DescribeBackupsResult::getLogStorageSize()const
+{
+	return logStorageSize_;
 }
 
