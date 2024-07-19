@@ -36,6 +36,8 @@ public:
 	void setReturnForm(const std::string &returnForm);
 	std::string getOssFile() const;
 	void setOssFile(const std::string &ossFile);
+	long getOutMode() const;
+	void setOutMode(long outMode);
 	std::string getRequestProxyBy() const;
 	void setRequestProxyBy(const std::string &requestProxyBy);
 	std::string getImageURL() const;
@@ -45,6 +47,7 @@ private:
 	std::vector<std::string> clothClass_;
 	std::string returnForm_;
 	std::string ossFile_;
+	long outMode_;
 	std::string requestProxyBy_;
 	std::string imageURL_;
 };

@@ -51,6 +51,15 @@ void SegmentClothRequest::setOssFile(const std::string &ossFile) {
   setParameter(std::string("OssFile"), ossFile);
 }
 
+long SegmentClothRequest::getOutMode() const {
+  return outMode_;
+}
+
+void SegmentClothRequest::setOutMode(long outMode) {
+  outMode_ = outMode;
+  setParameter(std::string("OutMode"), std::to_string(outMode));
+}
+
 std::string SegmentClothRequest::getRequestProxyBy() const {
   return requestProxyBy_;
 }
