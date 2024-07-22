@@ -30,11 +30,11 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT DescribeAckOperatorRequest : public RoaS
 public:
 	DescribeAckOperatorRequest();
 	~DescribeAckOperatorRequest();
-	string getClusterId() const;
-	void setClusterId(string clusterId);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 
 private:
-	string clusterId_;
+	std::string clusterId_;
 };
 } // namespace Model
 } // namespace Elasticsearch

@@ -30,20 +30,20 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT UpdateTemplateRequest : public RoaServic
 public:
 	UpdateTemplateRequest();
 	~UpdateTemplateRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	string getTemplateName() const;
-	void setTemplateName(string templateName);
-	string getBody() const;
-	void setBody(string body);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getTemplateName() const;
+	void setTemplateName(const std::string &templateName);
+	std::string getBody() const;
+	void setBody(const std::string &body);
 
 private:
-	string instanceId_;
-	string clientToken_;
-	string templateName_;
-	string body_;
+	std::string instanceId_;
+	std::string clientToken_;
+	std::string templateName_;
+	std::string body_;
 };
 } // namespace Model
 } // namespace Elasticsearch

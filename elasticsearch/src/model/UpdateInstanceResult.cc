@@ -128,7 +128,21 @@ void UpdateInstanceResult::parse(const std::string &payload)
 		result_.masterConfiguration.disk = std::stoi(masterConfigurationNode["disk"].asString());
 	if(!masterConfigurationNode["diskType"].isNull())
 		result_.masterConfiguration.diskType = masterConfigurationNode["diskType"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string UpdateInstanceResult::getMessage()const
+{
+	return message_;
+}
+
+std::string UpdateInstanceResult::getCode()const
+{
+	return code_;
 }
 
 UpdateInstanceResult::Result UpdateInstanceResult::getResult()const

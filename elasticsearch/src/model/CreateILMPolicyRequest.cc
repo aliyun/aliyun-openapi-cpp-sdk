@@ -26,30 +26,30 @@ CreateILMPolicyRequest::CreateILMPolicyRequest()
 
 CreateILMPolicyRequest::~CreateILMPolicyRequest() {}
 
-string CreateILMPolicyRequest::getInstanceId() const {
+std::string CreateILMPolicyRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void CreateILMPolicyRequest::setInstanceId(string instanceId) {
+void CreateILMPolicyRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string CreateILMPolicyRequest::getClientToken() const {
+std::string CreateILMPolicyRequest::getClientToken() const {
   return clientToken_;
 }
 
-void CreateILMPolicyRequest::setClientToken(string clientToken) {
+void CreateILMPolicyRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string CreateILMPolicyRequest::getBody() const {
+std::string CreateILMPolicyRequest::getBody() const {
   return body_;
 }
 
-void CreateILMPolicyRequest::setBody(string body) {
+void CreateILMPolicyRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

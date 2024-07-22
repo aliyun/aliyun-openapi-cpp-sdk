@@ -26,12 +26,12 @@ ListDataTasksRequest::ListDataTasksRequest()
 
 ListDataTasksRequest::~ListDataTasksRequest() {}
 
-string ListDataTasksRequest::getInstanceId() const {
+std::string ListDataTasksRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListDataTasksRequest::setInstanceId(string instanceId) {
+void ListDataTasksRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

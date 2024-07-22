@@ -26,30 +26,30 @@ CloseManagedIndexRequest::CloseManagedIndexRequest()
 
 CloseManagedIndexRequest::~CloseManagedIndexRequest() {}
 
-string CloseManagedIndexRequest::getInstanceId() const {
+std::string CloseManagedIndexRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void CloseManagedIndexRequest::setInstanceId(string instanceId) {
+void CloseManagedIndexRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string CloseManagedIndexRequest::getClientToken() const {
+std::string CloseManagedIndexRequest::getClientToken() const {
   return clientToken_;
 }
 
-void CloseManagedIndexRequest::setClientToken(string clientToken) {
+void CloseManagedIndexRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string CloseManagedIndexRequest::getIndex() const {
+std::string CloseManagedIndexRequest::getIndex() const {
   return index_;
 }
 
-void CloseManagedIndexRequest::setIndex(string index) {
+void CloseManagedIndexRequest::setIndex(const std::string &index) {
   index_ = index;
-  setParameter(std::string("Index"), std::to_string(index));
+  setParameter(std::string("Index"), index);
 }
 

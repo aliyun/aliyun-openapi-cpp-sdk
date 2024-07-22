@@ -26,30 +26,30 @@ CreateDataStreamRequest::CreateDataStreamRequest()
 
 CreateDataStreamRequest::~CreateDataStreamRequest() {}
 
-string CreateDataStreamRequest::getInstanceId() const {
+std::string CreateDataStreamRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void CreateDataStreamRequest::setInstanceId(string instanceId) {
+void CreateDataStreamRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string CreateDataStreamRequest::getClientToken() const {
+std::string CreateDataStreamRequest::getClientToken() const {
   return clientToken_;
 }
 
-void CreateDataStreamRequest::setClientToken(string clientToken) {
+void CreateDataStreamRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string CreateDataStreamRequest::getBody() const {
+std::string CreateDataStreamRequest::getBody() const {
   return body_;
 }
 
-void CreateDataStreamRequest::setBody(string body) {
+void CreateDataStreamRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

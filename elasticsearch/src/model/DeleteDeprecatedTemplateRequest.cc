@@ -26,21 +26,21 @@ DeleteDeprecatedTemplateRequest::DeleteDeprecatedTemplateRequest()
 
 DeleteDeprecatedTemplateRequest::~DeleteDeprecatedTemplateRequest() {}
 
-string DeleteDeprecatedTemplateRequest::getInstanceId() const {
+std::string DeleteDeprecatedTemplateRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DeleteDeprecatedTemplateRequest::setInstanceId(string instanceId) {
+void DeleteDeprecatedTemplateRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DeleteDeprecatedTemplateRequest::getName() const {
+std::string DeleteDeprecatedTemplateRequest::getName() const {
   return name_;
 }
 
-void DeleteDeprecatedTemplateRequest::setName(string name) {
+void DeleteDeprecatedTemplateRequest::setName(const std::string &name) {
   name_ = name;
-  setParameter(std::string("name"), std::to_string(name));
+  setParameter(std::string("name"), name);
 }
 

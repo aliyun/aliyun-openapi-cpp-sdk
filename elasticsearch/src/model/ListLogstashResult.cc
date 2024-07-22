@@ -59,6 +59,8 @@ void ListLogstashResult::parse(const std::string &payload)
 			resultObject.instanceId = valueResultInstance["instanceId"].asString();
 		if(!valueResultInstance["version"].isNull())
 			resultObject.version = valueResultInstance["version"].asString();
+		if(!valueResultInstance["resourceGroupId"].isNull())
+			resultObject.resourceGroupId = valueResultInstance["resourceGroupId"].asString();
 		auto allTagsNode = valueResultInstance["Tags"]["tagsItem"];
 		for (auto valueResultInstanceTagstagsItem : allTagsNode)
 		{

@@ -26,48 +26,48 @@ UntagResourcesRequest::UntagResourcesRequest()
 
 UntagResourcesRequest::~UntagResourcesRequest() {}
 
-boolean UntagResourcesRequest::getAll() const {
+bool UntagResourcesRequest::getAll() const {
   return all_;
 }
 
-void UntagResourcesRequest::setAll(boolean all) {
+void UntagResourcesRequest::setAll(bool all) {
   all_ = all;
-  setParameter(std::string("All"), std::to_string(all));
+  setParameter(std::string("All"), all ? "true" : "false");
 }
 
-string UntagResourcesRequest::getTagKeys() const {
+std::string UntagResourcesRequest::getTagKeys() const {
   return tagKeys_;
 }
 
-void UntagResourcesRequest::setTagKeys(string tagKeys) {
+void UntagResourcesRequest::setTagKeys(const std::string &tagKeys) {
   tagKeys_ = tagKeys;
-  setParameter(std::string("TagKeys"), std::to_string(tagKeys));
+  setParameter(std::string("TagKeys"), tagKeys);
 }
 
-string UntagResourcesRequest::getBody() const {
+std::string UntagResourcesRequest::getBody() const {
   return body_;
 }
 
-void UntagResourcesRequest::setBody(string body) {
+void UntagResourcesRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 
-string UntagResourcesRequest::getResourceType() const {
+std::string UntagResourcesRequest::getResourceType() const {
   return resourceType_;
 }
 
-void UntagResourcesRequest::setResourceType(string resourceType) {
+void UntagResourcesRequest::setResourceType(const std::string &resourceType) {
   resourceType_ = resourceType;
-  setParameter(std::string("ResourceType"), std::to_string(resourceType));
+  setParameter(std::string("ResourceType"), resourceType);
 }
 
-string UntagResourcesRequest::getResourceIds() const {
+std::string UntagResourcesRequest::getResourceIds() const {
   return resourceIds_;
 }
 
-void UntagResourcesRequest::setResourceIds(string resourceIds) {
+void UntagResourcesRequest::setResourceIds(const std::string &resourceIds) {
   resourceIds_ = resourceIds;
-  setParameter(std::string("ResourceIds"), std::to_string(resourceIds));
+  setParameter(std::string("ResourceIds"), resourceIds);
 }
 

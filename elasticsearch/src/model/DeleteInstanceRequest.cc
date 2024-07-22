@@ -26,30 +26,30 @@ DeleteInstanceRequest::DeleteInstanceRequest()
 
 DeleteInstanceRequest::~DeleteInstanceRequest() {}
 
-string DeleteInstanceRequest::getInstanceId() const {
+std::string DeleteInstanceRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DeleteInstanceRequest::setInstanceId(string instanceId) {
+void DeleteInstanceRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DeleteInstanceRequest::getClientToken() const {
+std::string DeleteInstanceRequest::getClientToken() const {
   return clientToken_;
 }
 
-void DeleteInstanceRequest::setClientToken(string clientToken) {
+void DeleteInstanceRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string DeleteInstanceRequest::getDeleteType() const {
+std::string DeleteInstanceRequest::getDeleteType() const {
   return deleteType_;
 }
 
-void DeleteInstanceRequest::setDeleteType(string deleteType) {
+void DeleteInstanceRequest::setDeleteType(const std::string &deleteType) {
   deleteType_ = deleteType;
-  setParameter(std::string("deleteType"), std::to_string(deleteType));
+  setParameter(std::string("deleteType"), deleteType);
 }
 

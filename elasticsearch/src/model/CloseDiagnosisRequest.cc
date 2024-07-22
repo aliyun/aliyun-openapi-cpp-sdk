@@ -26,30 +26,30 @@ CloseDiagnosisRequest::CloseDiagnosisRequest()
 
 CloseDiagnosisRequest::~CloseDiagnosisRequest() {}
 
-string CloseDiagnosisRequest::getInstanceId() const {
+std::string CloseDiagnosisRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void CloseDiagnosisRequest::setInstanceId(string instanceId) {
+void CloseDiagnosisRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string CloseDiagnosisRequest::getClientToken() const {
+std::string CloseDiagnosisRequest::getClientToken() const {
   return clientToken_;
 }
 
-void CloseDiagnosisRequest::setClientToken(string clientToken) {
+void CloseDiagnosisRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string CloseDiagnosisRequest::getLang() const {
+std::string CloseDiagnosisRequest::getLang() const {
   return lang_;
 }
 
-void CloseDiagnosisRequest::setLang(string lang) {
+void CloseDiagnosisRequest::setLang(const std::string &lang) {
   lang_ = lang;
-  setParameter(std::string("lang"), std::to_string(lang));
+  setParameter(std::string("lang"), lang);
 }
 

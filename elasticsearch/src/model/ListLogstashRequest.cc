@@ -26,75 +26,75 @@ ListLogstashRequest::ListLogstashRequest()
 
 ListLogstashRequest::~ListLogstashRequest() {}
 
-string ListLogstashRequest::getResourceGroupId() const {
+std::string ListLogstashRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }
 
-void ListLogstashRequest::setResourceGroupId(string resourceGroupId) {
+void ListLogstashRequest::setResourceGroupId(const std::string &resourceGroupId) {
   resourceGroupId_ = resourceGroupId;
-  setParameter(std::string("resourceGroupId"), std::to_string(resourceGroupId));
+  setParameter(std::string("resourceGroupId"), resourceGroupId);
 }
 
-string ListLogstashRequest::getInstanceId() const {
+std::string ListLogstashRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListLogstashRequest::setInstanceId(string instanceId) {
+void ListLogstashRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("instanceId"), std::to_string(instanceId));
+  setParameter(std::string("instanceId"), instanceId);
 }
 
-integer ListLogstashRequest::getSize() const {
+int ListLogstashRequest::getSize() const {
   return size_;
 }
 
-void ListLogstashRequest::setSize(integer size) {
+void ListLogstashRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-string ListLogstashRequest::getDescription() const {
+std::string ListLogstashRequest::getDescription() const {
   return description_;
 }
 
-void ListLogstashRequest::setDescription(string description) {
+void ListLogstashRequest::setDescription(const std::string &description) {
   description_ = description;
-  setParameter(std::string("description"), std::to_string(description));
+  setParameter(std::string("description"), description);
 }
 
-integer ListLogstashRequest::getPage() const {
+int ListLogstashRequest::getPage() const {
   return page_;
 }
 
-void ListLogstashRequest::setPage(integer page) {
+void ListLogstashRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }
 
-string ListLogstashRequest::getOwnerId() const {
+std::string ListLogstashRequest::getOwnerId() const {
   return ownerId_;
 }
 
-void ListLogstashRequest::setOwnerId(string ownerId) {
+void ListLogstashRequest::setOwnerId(const std::string &ownerId) {
   ownerId_ = ownerId;
-  setParameter(std::string("ownerId"), std::to_string(ownerId));
+  setParameter(std::string("ownerId"), ownerId);
 }
 
-string ListLogstashRequest::getVersion() const {
+std::string ListLogstashRequest::getVersion() const {
   return version_;
 }
 
-void ListLogstashRequest::setVersion(string version) {
+void ListLogstashRequest::setVersion(const std::string &version) {
   version_ = version;
-  setParameter(std::string("version"), std::to_string(version));
+  setParameter(std::string("version"), version);
 }
 
-string ListLogstashRequest::getTags() const {
+std::string ListLogstashRequest::getTags() const {
   return tags_;
 }
 
-void ListLogstashRequest::setTags(string tags) {
+void ListLogstashRequest::setTags(const std::string &tags) {
   tags_ = tags;
-  setParameter(std::string("tags"), std::to_string(tags));
+  setParameter(std::string("tags"), tags);
 }
 

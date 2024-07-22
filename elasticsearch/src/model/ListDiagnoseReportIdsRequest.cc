@@ -26,66 +26,66 @@ ListDiagnoseReportIdsRequest::ListDiagnoseReportIdsRequest()
 
 ListDiagnoseReportIdsRequest::~ListDiagnoseReportIdsRequest() {}
 
-string ListDiagnoseReportIdsRequest::getInstanceId() const {
+std::string ListDiagnoseReportIdsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListDiagnoseReportIdsRequest::setInstanceId(string instanceId) {
+void ListDiagnoseReportIdsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-integer ListDiagnoseReportIdsRequest::getSize() const {
+int ListDiagnoseReportIdsRequest::getSize() const {
   return size_;
 }
 
-void ListDiagnoseReportIdsRequest::setSize(integer size) {
+void ListDiagnoseReportIdsRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-integer ListDiagnoseReportIdsRequest::getEndTime() const {
+long ListDiagnoseReportIdsRequest::getEndTime() const {
   return endTime_;
 }
 
-void ListDiagnoseReportIdsRequest::setEndTime(integer endTime) {
+void ListDiagnoseReportIdsRequest::setEndTime(long endTime) {
   endTime_ = endTime;
   setParameter(std::string("endTime"), std::to_string(endTime));
 }
 
-integer ListDiagnoseReportIdsRequest::getStartTime() const {
+long ListDiagnoseReportIdsRequest::getStartTime() const {
   return startTime_;
 }
 
-void ListDiagnoseReportIdsRequest::setStartTime(integer startTime) {
+void ListDiagnoseReportIdsRequest::setStartTime(long startTime) {
   startTime_ = startTime;
   setParameter(std::string("startTime"), std::to_string(startTime));
 }
 
-integer ListDiagnoseReportIdsRequest::getPage() const {
+int ListDiagnoseReportIdsRequest::getPage() const {
   return page_;
 }
 
-void ListDiagnoseReportIdsRequest::setPage(integer page) {
+void ListDiagnoseReportIdsRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }
 
-string ListDiagnoseReportIdsRequest::getTrigger() const {
+std::string ListDiagnoseReportIdsRequest::getTrigger() const {
   return trigger_;
 }
 
-void ListDiagnoseReportIdsRequest::setTrigger(string trigger) {
+void ListDiagnoseReportIdsRequest::setTrigger(const std::string &trigger) {
   trigger_ = trigger;
-  setParameter(std::string("trigger"), std::to_string(trigger));
+  setParameter(std::string("trigger"), trigger);
 }
 
-string ListDiagnoseReportIdsRequest::getLang() const {
+std::string ListDiagnoseReportIdsRequest::getLang() const {
   return lang_;
 }
 
-void ListDiagnoseReportIdsRequest::setLang(string lang) {
+void ListDiagnoseReportIdsRequest::setLang(const std::string &lang) {
   lang_ = lang;
-  setParameter(std::string("lang"), std::to_string(lang));
+  setParameter(std::string("lang"), lang);
 }
 

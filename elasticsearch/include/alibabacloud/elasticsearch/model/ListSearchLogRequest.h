@@ -30,29 +30,29 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListSearchLogRequest : public RoaService
 public:
 	ListSearchLogRequest();
 	~ListSearchLogRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	integer getSize() const;
-	void setSize(integer size);
-	string getQuery() const;
-	void setQuery(string query);
-	integer getEndTime() const;
-	void setEndTime(integer endTime);
-	integer getBeginTime() const;
-	void setBeginTime(integer beginTime);
-	integer getPage() const;
-	void setPage(integer page);
-	string getType() const;
-	void setType(string type);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	int getSize() const;
+	void setSize(int size);
+	std::string getQuery() const;
+	void setQuery(const std::string &query);
+	long getEndTime() const;
+	void setEndTime(long endTime);
+	long getBeginTime() const;
+	void setBeginTime(long beginTime);
+	int getPage() const;
+	void setPage(int page);
+	std::string getType() const;
+	void setType(const std::string &type);
 
 private:
-	string instanceId_;
-	integer size_;
-	string query_;
-	integer endTime_;
-	integer beginTime_;
-	integer page_;
-	string type_;
+	std::string instanceId_;
+	int size_;
+	std::string query_;
+	long endTime_;
+	long beginTime_;
+	int page_;
+	std::string type_;
 };
 } // namespace Model
 } // namespace Elasticsearch

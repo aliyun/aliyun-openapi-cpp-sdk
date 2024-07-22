@@ -26,39 +26,39 @@ UpdateDiagnosisSettingsRequest::UpdateDiagnosisSettingsRequest()
 
 UpdateDiagnosisSettingsRequest::~UpdateDiagnosisSettingsRequest() {}
 
-string UpdateDiagnosisSettingsRequest::getInstanceId() const {
+std::string UpdateDiagnosisSettingsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateDiagnosisSettingsRequest::setInstanceId(string instanceId) {
+void UpdateDiagnosisSettingsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateDiagnosisSettingsRequest::getClientToken() const {
+std::string UpdateDiagnosisSettingsRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateDiagnosisSettingsRequest::setClientToken(string clientToken) {
+void UpdateDiagnosisSettingsRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string UpdateDiagnosisSettingsRequest::getLang() const {
+std::string UpdateDiagnosisSettingsRequest::getLang() const {
   return lang_;
 }
 
-void UpdateDiagnosisSettingsRequest::setLang(string lang) {
+void UpdateDiagnosisSettingsRequest::setLang(const std::string &lang) {
   lang_ = lang;
-  setParameter(std::string("lang"), std::to_string(lang));
+  setParameter(std::string("lang"), lang);
 }
 
-string UpdateDiagnosisSettingsRequest::getBody() const {
+std::string UpdateDiagnosisSettingsRequest::getBody() const {
   return body_;
 }
 
-void UpdateDiagnosisSettingsRequest::setBody(string body) {
+void UpdateDiagnosisSettingsRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

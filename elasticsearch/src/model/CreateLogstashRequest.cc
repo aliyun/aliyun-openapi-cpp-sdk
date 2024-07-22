@@ -26,13 +26,13 @@ CreateLogstashRequest::CreateLogstashRequest()
 
 CreateLogstashRequest::~CreateLogstashRequest() {}
 
-string CreateLogstashRequest::getClientToken() const {
+std::string CreateLogstashRequest::getClientToken() const {
   return clientToken_;
 }
 
-void CreateLogstashRequest::setClientToken(string clientToken) {
+void CreateLogstashRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
 std::string CreateLogstashRequest::getBody() const {

@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT DeleteDataStreamRequest : public RoaServ
 public:
 	DeleteDataStreamRequest();
 	~DeleteDataStreamRequest();
-	string getDataStream() const;
-	void setDataStream(string dataStream);
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
+	std::string getDataStream() const;
+	void setDataStream(const std::string &dataStream);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 
 private:
-	string dataStream_;
-	string instanceId_;
-	string clientToken_;
+	std::string dataStream_;
+	std::string instanceId_;
+	std::string clientToken_;
 };
 } // namespace Model
 } // namespace Elasticsearch

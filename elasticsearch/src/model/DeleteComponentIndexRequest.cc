@@ -26,21 +26,21 @@ DeleteComponentIndexRequest::DeleteComponentIndexRequest()
 
 DeleteComponentIndexRequest::~DeleteComponentIndexRequest() {}
 
-string DeleteComponentIndexRequest::getInstanceId() const {
+std::string DeleteComponentIndexRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DeleteComponentIndexRequest::setInstanceId(string instanceId) {
+void DeleteComponentIndexRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DeleteComponentIndexRequest::getName() const {
+std::string DeleteComponentIndexRequest::getName() const {
   return name_;
 }
 
-void DeleteComponentIndexRequest::setName(string name) {
+void DeleteComponentIndexRequest::setName(const std::string &name) {
   name_ = name;
-  setParameter(std::string("name"), std::to_string(name));
+  setParameter(std::string("name"), name);
 }
 

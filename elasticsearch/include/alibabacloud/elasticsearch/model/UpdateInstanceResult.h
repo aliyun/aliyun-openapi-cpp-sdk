@@ -100,11 +100,15 @@ namespace AlibabaCloud
 				UpdateInstanceResult();
 				explicit UpdateInstanceResult(const std::string &payload);
 				~UpdateInstanceResult();
+				std::string getMessage()const;
+				std::string getCode()const;
 				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
+				std::string code_;
 				Result result_;
 
 			};

@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT TransferNodeRequest : public RoaServiceR
 public:
 	TransferNodeRequest();
 	~TransferNodeRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getNodeType() const;
-	void setNodeType(string nodeType);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getNodeType() const;
+	void setNodeType(const std::string &nodeType);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 
 private:
-	string instanceId_;
-	string nodeType_;
-	string clientToken_;
+	std::string instanceId_;
+	std::string nodeType_;
+	std::string clientToken_;
 };
 } // namespace Model
 } // namespace Elasticsearch

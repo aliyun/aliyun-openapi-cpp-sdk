@@ -26,22 +26,22 @@ UninstallLogstashPluginRequest::UninstallLogstashPluginRequest()
 
 UninstallLogstashPluginRequest::~UninstallLogstashPluginRequest() {}
 
-string UninstallLogstashPluginRequest::getInstanceId() const {
+std::string UninstallLogstashPluginRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UninstallLogstashPluginRequest::setInstanceId(string instanceId) {
+void UninstallLogstashPluginRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UninstallLogstashPluginRequest::getClientToken() const {
+std::string UninstallLogstashPluginRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UninstallLogstashPluginRequest::setClientToken(string clientToken) {
+void UninstallLogstashPluginRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
 std::string UninstallLogstashPluginRequest::getBody() const {

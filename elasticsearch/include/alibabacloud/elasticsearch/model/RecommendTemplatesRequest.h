@@ -30,14 +30,14 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT RecommendTemplatesRequest : public RoaSe
 public:
 	RecommendTemplatesRequest();
 	~RecommendTemplatesRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getUsageScenario() const;
-	void setUsageScenario(string usageScenario);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getUsageScenario() const;
+	void setUsageScenario(const std::string &usageScenario);
 
 private:
-	string instanceId_;
-	string usageScenario_;
+	std::string instanceId_;
+	std::string usageScenario_;
 };
 } // namespace Model
 } // namespace Elasticsearch

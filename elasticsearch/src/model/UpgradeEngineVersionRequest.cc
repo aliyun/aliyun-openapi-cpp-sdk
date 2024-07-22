@@ -26,31 +26,31 @@ UpgradeEngineVersionRequest::UpgradeEngineVersionRequest()
 
 UpgradeEngineVersionRequest::~UpgradeEngineVersionRequest() {}
 
-string UpgradeEngineVersionRequest::getInstanceId() const {
+std::string UpgradeEngineVersionRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpgradeEngineVersionRequest::setInstanceId(string instanceId) {
+void UpgradeEngineVersionRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-boolean UpgradeEngineVersionRequest::getDryRun() const {
+bool UpgradeEngineVersionRequest::getDryRun() const {
   return dryRun_;
 }
 
-void UpgradeEngineVersionRequest::setDryRun(boolean dryRun) {
+void UpgradeEngineVersionRequest::setDryRun(bool dryRun) {
   dryRun_ = dryRun;
-  setParameter(std::string("dryRun"), std::to_string(dryRun));
+  setParameter(std::string("dryRun"), dryRun ? "true" : "false");
 }
 
-string UpgradeEngineVersionRequest::getClientToken() const {
+std::string UpgradeEngineVersionRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpgradeEngineVersionRequest::setClientToken(string clientToken) {
+void UpgradeEngineVersionRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
 std::string UpgradeEngineVersionRequest::getBody() const {

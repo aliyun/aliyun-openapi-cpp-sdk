@@ -26,21 +26,21 @@ ListShardRecoveriesRequest::ListShardRecoveriesRequest()
 
 ListShardRecoveriesRequest::~ListShardRecoveriesRequest() {}
 
-boolean ListShardRecoveriesRequest::getActiveOnly() const {
+bool ListShardRecoveriesRequest::getActiveOnly() const {
   return activeOnly_;
 }
 
-void ListShardRecoveriesRequest::setActiveOnly(boolean activeOnly) {
+void ListShardRecoveriesRequest::setActiveOnly(bool activeOnly) {
   activeOnly_ = activeOnly;
-  setParameter(std::string("activeOnly"), std::to_string(activeOnly));
+  setParameter(std::string("activeOnly"), activeOnly ? "true" : "false");
 }
 
-string ListShardRecoveriesRequest::getInstanceId() const {
+std::string ListShardRecoveriesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListShardRecoveriesRequest::setInstanceId(string instanceId) {
+void ListShardRecoveriesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

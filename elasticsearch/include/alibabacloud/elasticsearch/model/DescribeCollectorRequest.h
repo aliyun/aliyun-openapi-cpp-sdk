@@ -30,11 +30,11 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT DescribeCollectorRequest : public RoaSer
 public:
 	DescribeCollectorRequest();
 	~DescribeCollectorRequest();
-	string getResId() const;
-	void setResId(string resId);
+	std::string getResId() const;
+	void setResId(const std::string &resId);
 
 private:
-	string resId_;
+	std::string resId_;
 };
 } // namespace Model
 } // namespace Elasticsearch

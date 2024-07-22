@@ -26,22 +26,22 @@ UpdateDescriptionRequest::UpdateDescriptionRequest()
 
 UpdateDescriptionRequest::~UpdateDescriptionRequest() {}
 
-string UpdateDescriptionRequest::getInstanceId() const {
+std::string UpdateDescriptionRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateDescriptionRequest::setInstanceId(string instanceId) {
+void UpdateDescriptionRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateDescriptionRequest::getClientToken() const {
+std::string UpdateDescriptionRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateDescriptionRequest::setClientToken(string clientToken) {
+void UpdateDescriptionRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
 std::string UpdateDescriptionRequest::getBody() const {

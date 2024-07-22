@@ -26,30 +26,30 @@ MigrateToOtherZoneRequest::MigrateToOtherZoneRequest()
 
 MigrateToOtherZoneRequest::~MigrateToOtherZoneRequest() {}
 
-string MigrateToOtherZoneRequest::getInstanceId() const {
+std::string MigrateToOtherZoneRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void MigrateToOtherZoneRequest::setInstanceId(string instanceId) {
+void MigrateToOtherZoneRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-boolean MigrateToOtherZoneRequest::getDryRun() const {
+bool MigrateToOtherZoneRequest::getDryRun() const {
   return dryRun_;
 }
 
-void MigrateToOtherZoneRequest::setDryRun(boolean dryRun) {
+void MigrateToOtherZoneRequest::setDryRun(bool dryRun) {
   dryRun_ = dryRun;
-  setParameter(std::string("dryRun"), std::to_string(dryRun));
+  setParameter(std::string("dryRun"), dryRun ? "true" : "false");
 }
 
-string MigrateToOtherZoneRequest::getBody() const {
+std::string MigrateToOtherZoneRequest::getBody() const {
   return body_;
 }
 
-void MigrateToOtherZoneRequest::setBody(string body) {
+void MigrateToOtherZoneRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

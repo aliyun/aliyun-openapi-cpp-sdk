@@ -26,21 +26,21 @@ ListDiagnoseIndicesRequest::ListDiagnoseIndicesRequest()
 
 ListDiagnoseIndicesRequest::~ListDiagnoseIndicesRequest() {}
 
-string ListDiagnoseIndicesRequest::getInstanceId() const {
+std::string ListDiagnoseIndicesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListDiagnoseIndicesRequest::setInstanceId(string instanceId) {
+void ListDiagnoseIndicesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string ListDiagnoseIndicesRequest::getLang() const {
+std::string ListDiagnoseIndicesRequest::getLang() const {
   return lang_;
 }
 
-void ListDiagnoseIndicesRequest::setLang(string lang) {
+void ListDiagnoseIndicesRequest::setLang(const std::string &lang) {
   lang_ = lang;
-  setParameter(std::string("lang"), std::to_string(lang));
+  setParameter(std::string("lang"), lang);
 }
 

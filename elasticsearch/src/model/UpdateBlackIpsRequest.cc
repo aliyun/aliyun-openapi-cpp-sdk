@@ -26,21 +26,21 @@ UpdateBlackIpsRequest::UpdateBlackIpsRequest()
 
 UpdateBlackIpsRequest::~UpdateBlackIpsRequest() {}
 
-string UpdateBlackIpsRequest::getInstanceId() const {
+std::string UpdateBlackIpsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateBlackIpsRequest::setInstanceId(string instanceId) {
+void UpdateBlackIpsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateBlackIpsRequest::getClientToken() const {
+std::string UpdateBlackIpsRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateBlackIpsRequest::setClientToken(string clientToken) {
+void UpdateBlackIpsRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 

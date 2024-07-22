@@ -26,30 +26,30 @@ UpdateSynonymsDictsRequest::UpdateSynonymsDictsRequest()
 
 UpdateSynonymsDictsRequest::~UpdateSynonymsDictsRequest() {}
 
-string UpdateSynonymsDictsRequest::getInstanceId() const {
+std::string UpdateSynonymsDictsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateSynonymsDictsRequest::setInstanceId(string instanceId) {
+void UpdateSynonymsDictsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateSynonymsDictsRequest::getClientToken() const {
+std::string UpdateSynonymsDictsRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateSynonymsDictsRequest::setClientToken(string clientToken) {
+void UpdateSynonymsDictsRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string UpdateSynonymsDictsRequest::getBody() const {
+std::string UpdateSynonymsDictsRequest::getBody() const {
   return body_;
 }
 
-void UpdateSynonymsDictsRequest::setBody(string body) {
+void UpdateSynonymsDictsRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

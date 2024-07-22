@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListDefaultCollectorConfigurationsReques
 public:
 	ListDefaultCollectorConfigurationsRequest();
 	~ListDefaultCollectorConfigurationsRequest();
-	string getResType() const;
-	void setResType(string resType);
-	string getResVersion() const;
-	void setResVersion(string resVersion);
-	string getSourceType() const;
-	void setSourceType(string sourceType);
+	std::string getResType() const;
+	void setResType(const std::string &resType);
+	std::string getResVersion() const;
+	void setResVersion(const std::string &resVersion);
+	std::string getSourceType() const;
+	void setSourceType(const std::string &sourceType);
 
 private:
-	string resType_;
-	string resVersion_;
-	string sourceType_;
+	std::string resType_;
+	std::string resVersion_;
+	std::string sourceType_;
 };
 } // namespace Model
 } // namespace Elasticsearch

@@ -39,14 +39,6 @@ void CreateInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-	if(!resultNode["instanceId"].isNull())
-		result_.instanceId = resultNode["instanceId"].asString();
 
-}
-
-CreateInstanceResult::Result CreateInstanceResult::getResult()const
-{
-	return result_;
 }
 

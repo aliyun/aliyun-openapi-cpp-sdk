@@ -26,22 +26,22 @@ UpdateAdminPasswordRequest::UpdateAdminPasswordRequest()
 
 UpdateAdminPasswordRequest::~UpdateAdminPasswordRequest() {}
 
-string UpdateAdminPasswordRequest::getInstanceId() const {
+std::string UpdateAdminPasswordRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateAdminPasswordRequest::setInstanceId(string instanceId) {
+void UpdateAdminPasswordRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateAdminPasswordRequest::getClientToken() const {
+std::string UpdateAdminPasswordRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateAdminPasswordRequest::setClientToken(string clientToken) {
+void UpdateAdminPasswordRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
 std::string UpdateAdminPasswordRequest::getBody() const {

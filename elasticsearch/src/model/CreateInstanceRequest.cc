@@ -26,13 +26,13 @@ CreateInstanceRequest::CreateInstanceRequest()
 
 CreateInstanceRequest::~CreateInstanceRequest() {}
 
-string CreateInstanceRequest::getClientToken() const {
+std::string CreateInstanceRequest::getClientToken() const {
   return clientToken_;
 }
 
-void CreateInstanceRequest::setClientToken(string clientToken) {
+void CreateInstanceRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
 std::string CreateInstanceRequest::getBody() const {

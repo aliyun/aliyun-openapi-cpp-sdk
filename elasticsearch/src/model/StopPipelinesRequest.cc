@@ -26,30 +26,30 @@ StopPipelinesRequest::StopPipelinesRequest()
 
 StopPipelinesRequest::~StopPipelinesRequest() {}
 
-string StopPipelinesRequest::getInstanceId() const {
+std::string StopPipelinesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void StopPipelinesRequest::setInstanceId(string instanceId) {
+void StopPipelinesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string StopPipelinesRequest::getClientToken() const {
+std::string StopPipelinesRequest::getClientToken() const {
   return clientToken_;
 }
 
-void StopPipelinesRequest::setClientToken(string clientToken) {
+void StopPipelinesRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string StopPipelinesRequest::getBody() const {
+std::string StopPipelinesRequest::getBody() const {
   return body_;
 }
 
-void StopPipelinesRequest::setBody(string body) {
+void StopPipelinesRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

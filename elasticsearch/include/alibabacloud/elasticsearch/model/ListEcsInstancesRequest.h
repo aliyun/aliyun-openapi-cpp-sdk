@@ -30,26 +30,26 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListEcsInstancesRequest : public RoaServ
 public:
 	ListEcsInstancesRequest();
 	~ListEcsInstancesRequest();
-	string getEcsInstanceName() const;
-	void setEcsInstanceName(string ecsInstanceName);
-	string getEcsInstanceIds() const;
-	void setEcsInstanceIds(string ecsInstanceIds);
-	integer getSize() const;
-	void setSize(integer size);
-	string getVpcId() const;
-	void setVpcId(string vpcId);
-	integer getPage() const;
-	void setPage(integer page);
-	string getTags() const;
-	void setTags(string tags);
+	std::string getEcsInstanceName() const;
+	void setEcsInstanceName(const std::string &ecsInstanceName);
+	std::string getEcsInstanceIds() const;
+	void setEcsInstanceIds(const std::string &ecsInstanceIds);
+	int getSize() const;
+	void setSize(int size);
+	std::string getVpcId() const;
+	void setVpcId(const std::string &vpcId);
+	int getPage() const;
+	void setPage(int page);
+	std::string getTags() const;
+	void setTags(const std::string &tags);
 
 private:
-	string ecsInstanceName_;
-	string ecsInstanceIds_;
-	integer size_;
-	string vpcId_;
-	integer page_;
-	string tags_;
+	std::string ecsInstanceName_;
+	std::string ecsInstanceIds_;
+	int size_;
+	std::string vpcId_;
+	int page_;
+	std::string tags_;
 };
 } // namespace Model
 } // namespace Elasticsearch

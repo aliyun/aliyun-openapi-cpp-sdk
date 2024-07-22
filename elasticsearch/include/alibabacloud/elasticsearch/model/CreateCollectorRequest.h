@@ -30,14 +30,14 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT CreateCollectorRequest : public RoaServi
 public:
 	CreateCollectorRequest();
 	~CreateCollectorRequest();
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	string getBody() const;
-	void setBody(string body);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getBody() const;
+	void setBody(const std::string &body);
 
 private:
-	string clientToken_;
-	string body_;
+	std::string clientToken_;
+	std::string body_;
 };
 } // namespace Model
 } // namespace Elasticsearch

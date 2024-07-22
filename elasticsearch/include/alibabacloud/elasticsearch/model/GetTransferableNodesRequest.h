@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT GetTransferableNodesRequest : public Roa
 public:
 	GetTransferableNodesRequest();
 	~GetTransferableNodesRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getNodeType() const;
-	void setNodeType(string nodeType);
-	integer getCount() const;
-	void setCount(integer count);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getNodeType() const;
+	void setNodeType(const std::string &nodeType);
+	int getCount() const;
+	void setCount(int count);
 
 private:
-	string instanceId_;
-	string nodeType_;
-	integer count_;
+	std::string instanceId_;
+	std::string nodeType_;
+	int count_;
 };
 } // namespace Model
 } // namespace Elasticsearch

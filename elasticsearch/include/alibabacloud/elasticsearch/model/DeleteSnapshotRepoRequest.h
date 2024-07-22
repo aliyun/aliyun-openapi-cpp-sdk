@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT DeleteSnapshotRepoRequest : public RoaSe
 public:
 	DeleteSnapshotRepoRequest();
 	~DeleteSnapshotRepoRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	string getRepoPath() const;
-	void setRepoPath(string repoPath);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getRepoPath() const;
+	void setRepoPath(const std::string &repoPath);
 
 private:
-	string instanceId_;
-	string clientToken_;
-	string repoPath_;
+	std::string instanceId_;
+	std::string clientToken_;
+	std::string repoPath_;
 };
 } // namespace Model
 } // namespace Elasticsearch

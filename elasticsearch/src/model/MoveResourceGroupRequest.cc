@@ -26,30 +26,30 @@ MoveResourceGroupRequest::MoveResourceGroupRequest()
 
 MoveResourceGroupRequest::~MoveResourceGroupRequest() {}
 
-string MoveResourceGroupRequest::getInstanceId() const {
+std::string MoveResourceGroupRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void MoveResourceGroupRequest::setInstanceId(string instanceId) {
+void MoveResourceGroupRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string MoveResourceGroupRequest::getClientToken() const {
+std::string MoveResourceGroupRequest::getClientToken() const {
   return clientToken_;
 }
 
-void MoveResourceGroupRequest::setClientToken(string clientToken) {
+void MoveResourceGroupRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string MoveResourceGroupRequest::getBody() const {
+std::string MoveResourceGroupRequest::getBody() const {
   return body_;
 }
 
-void MoveResourceGroupRequest::setBody(string body) {
+void MoveResourceGroupRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

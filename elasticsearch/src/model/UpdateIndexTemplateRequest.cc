@@ -26,39 +26,39 @@ UpdateIndexTemplateRequest::UpdateIndexTemplateRequest()
 
 UpdateIndexTemplateRequest::~UpdateIndexTemplateRequest() {}
 
-string UpdateIndexTemplateRequest::getInstanceId() const {
+std::string UpdateIndexTemplateRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateIndexTemplateRequest::setInstanceId(string instanceId) {
+void UpdateIndexTemplateRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateIndexTemplateRequest::getClientToken() const {
+std::string UpdateIndexTemplateRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateIndexTemplateRequest::setClientToken(string clientToken) {
+void UpdateIndexTemplateRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string UpdateIndexTemplateRequest::getBody() const {
+std::string UpdateIndexTemplateRequest::getBody() const {
   return body_;
 }
 
-void UpdateIndexTemplateRequest::setBody(string body) {
+void UpdateIndexTemplateRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 
-string UpdateIndexTemplateRequest::getIndexTemplate() const {
+std::string UpdateIndexTemplateRequest::getIndexTemplate() const {
   return indexTemplate_;
 }
 
-void UpdateIndexTemplateRequest::setIndexTemplate(string indexTemplate) {
+void UpdateIndexTemplateRequest::setIndexTemplate(const std::string &indexTemplate) {
   indexTemplate_ = indexTemplate;
-  setParameter(std::string("IndexTemplate"), std::to_string(indexTemplate));
+  setParameter(std::string("IndexTemplate"), indexTemplate);
 }
 

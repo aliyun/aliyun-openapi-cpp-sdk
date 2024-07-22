@@ -26,30 +26,30 @@ UpdateAliwsDictRequest::UpdateAliwsDictRequest()
 
 UpdateAliwsDictRequest::~UpdateAliwsDictRequest() {}
 
-string UpdateAliwsDictRequest::getInstanceId() const {
+std::string UpdateAliwsDictRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateAliwsDictRequest::setInstanceId(string instanceId) {
+void UpdateAliwsDictRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateAliwsDictRequest::getClientToken() const {
+std::string UpdateAliwsDictRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateAliwsDictRequest::setClientToken(string clientToken) {
+void UpdateAliwsDictRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string UpdateAliwsDictRequest::getBody() const {
+std::string UpdateAliwsDictRequest::getBody() const {
   return body_;
 }
 
-void UpdateAliwsDictRequest::setBody(string body) {
+void UpdateAliwsDictRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

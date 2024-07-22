@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListVpcEndpointsRequest : public RoaServ
 public:
 	ListVpcEndpointsRequest();
 	~ListVpcEndpointsRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	integer getSize() const;
-	void setSize(integer size);
-	integer getPage() const;
-	void setPage(integer page);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	int getSize() const;
+	void setSize(int size);
+	int getPage() const;
+	void setPage(int page);
 
 private:
-	string instanceId_;
-	integer size_;
-	integer page_;
+	std::string instanceId_;
+	int size_;
+	int page_;
 };
 } // namespace Model
 } // namespace Elasticsearch

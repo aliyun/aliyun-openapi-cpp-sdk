@@ -26,21 +26,21 @@ DeleteILMPolicyRequest::DeleteILMPolicyRequest()
 
 DeleteILMPolicyRequest::~DeleteILMPolicyRequest() {}
 
-string DeleteILMPolicyRequest::getInstanceId() const {
+std::string DeleteILMPolicyRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DeleteILMPolicyRequest::setInstanceId(string instanceId) {
+void DeleteILMPolicyRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DeleteILMPolicyRequest::getPolicyName() const {
+std::string DeleteILMPolicyRequest::getPolicyName() const {
   return policyName_;
 }
 
-void DeleteILMPolicyRequest::setPolicyName(string policyName) {
+void DeleteILMPolicyRequest::setPolicyName(const std::string &policyName) {
   policyName_ = policyName;
-  setParameter(std::string("PolicyName"), std::to_string(policyName));
+  setParameter(std::string("PolicyName"), policyName);
 }
 

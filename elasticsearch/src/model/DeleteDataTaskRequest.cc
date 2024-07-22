@@ -26,30 +26,30 @@ DeleteDataTaskRequest::DeleteDataTaskRequest()
 
 DeleteDataTaskRequest::~DeleteDataTaskRequest() {}
 
-string DeleteDataTaskRequest::getInstanceId() const {
+std::string DeleteDataTaskRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DeleteDataTaskRequest::setInstanceId(string instanceId) {
+void DeleteDataTaskRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DeleteDataTaskRequest::getClientToken() const {
+std::string DeleteDataTaskRequest::getClientToken() const {
   return clientToken_;
 }
 
-void DeleteDataTaskRequest::setClientToken(string clientToken) {
+void DeleteDataTaskRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string DeleteDataTaskRequest::getTaskId() const {
+std::string DeleteDataTaskRequest::getTaskId() const {
   return taskId_;
 }
 
-void DeleteDataTaskRequest::setTaskId(string taskId) {
+void DeleteDataTaskRequest::setTaskId(const std::string &taskId) {
   taskId_ = taskId;
-  setParameter(std::string("taskId"), std::to_string(taskId));
+  setParameter(std::string("taskId"), taskId);
 }
 

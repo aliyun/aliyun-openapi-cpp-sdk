@@ -26,22 +26,22 @@ UpdateLogstashRequest::UpdateLogstashRequest()
 
 UpdateLogstashRequest::~UpdateLogstashRequest() {}
 
-string UpdateLogstashRequest::getInstanceId() const {
+std::string UpdateLogstashRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateLogstashRequest::setInstanceId(string instanceId) {
+void UpdateLogstashRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateLogstashRequest::getClientToken() const {
+std::string UpdateLogstashRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateLogstashRequest::setClientToken(string clientToken) {
+void UpdateLogstashRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
 std::string UpdateLogstashRequest::getBody() const {

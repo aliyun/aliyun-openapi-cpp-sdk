@@ -26,12 +26,12 @@ DescribeSnapshotSettingRequest::DescribeSnapshotSettingRequest()
 
 DescribeSnapshotSettingRequest::~DescribeSnapshotSettingRequest() {}
 
-string DescribeSnapshotSettingRequest::getInstanceId() const {
+std::string DescribeSnapshotSettingRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribeSnapshotSettingRequest::setInstanceId(string instanceId) {
+void DescribeSnapshotSettingRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

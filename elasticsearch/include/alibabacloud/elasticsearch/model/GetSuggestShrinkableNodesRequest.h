@@ -30,20 +30,20 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT GetSuggestShrinkableNodesRequest : publi
 public:
 	GetSuggestShrinkableNodesRequest();
 	~GetSuggestShrinkableNodesRequest();
-	boolean getIgnoreStatus() const;
-	void setIgnoreStatus(boolean ignoreStatus);
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getNodeType() const;
-	void setNodeType(string nodeType);
-	integer getCount() const;
-	void setCount(integer count);
+	bool getIgnoreStatus() const;
+	void setIgnoreStatus(bool ignoreStatus);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getNodeType() const;
+	void setNodeType(const std::string &nodeType);
+	int getCount() const;
+	void setCount(int count);
 
 private:
-	boolean ignoreStatus_;
-	string instanceId_;
-	string nodeType_;
-	integer count_;
+	bool ignoreStatus_;
+	std::string instanceId_;
+	std::string nodeType_;
+	int count_;
 };
 } // namespace Model
 } // namespace Elasticsearch

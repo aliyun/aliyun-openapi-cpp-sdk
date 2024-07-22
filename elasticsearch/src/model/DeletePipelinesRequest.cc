@@ -26,30 +26,30 @@ DeletePipelinesRequest::DeletePipelinesRequest()
 
 DeletePipelinesRequest::~DeletePipelinesRequest() {}
 
-string DeletePipelinesRequest::getInstanceId() const {
+std::string DeletePipelinesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DeletePipelinesRequest::setInstanceId(string instanceId) {
+void DeletePipelinesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DeletePipelinesRequest::getClientToken() const {
+std::string DeletePipelinesRequest::getClientToken() const {
   return clientToken_;
 }
 
-void DeletePipelinesRequest::setClientToken(string clientToken) {
+void DeletePipelinesRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string DeletePipelinesRequest::getPipelineIds() const {
+std::string DeletePipelinesRequest::getPipelineIds() const {
   return pipelineIds_;
 }
 
-void DeletePipelinesRequest::setPipelineIds(string pipelineIds) {
+void DeletePipelinesRequest::setPipelineIds(const std::string &pipelineIds) {
   pipelineIds_ = pipelineIds;
-  setParameter(std::string("pipelineIds"), std::to_string(pipelineIds));
+  setParameter(std::string("pipelineIds"), pipelineIds);
 }
 

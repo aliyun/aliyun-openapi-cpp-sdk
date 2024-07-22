@@ -30,14 +30,14 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListTagsRequest : public RoaServiceReque
 public:
 	ListTagsRequest();
 	~ListTagsRequest();
-	integer getPageSize() const;
-	void setPageSize(integer pageSize);
-	string getResourceType() const;
-	void setResourceType(string resourceType);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
 
 private:
-	integer pageSize_;
-	string resourceType_;
+	int pageSize_;
+	std::string resourceType_;
 };
 } // namespace Model
 } // namespace Elasticsearch

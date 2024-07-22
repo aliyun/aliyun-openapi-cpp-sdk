@@ -30,20 +30,20 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT CreatePipelinesRequest : public RoaServi
 public:
 	CreatePipelinesRequest();
 	~CreatePipelinesRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	boolean getTrigger() const;
-	void setTrigger(boolean trigger);
-	string getBody() const;
-	void setBody(string body);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	bool getTrigger() const;
+	void setTrigger(bool trigger);
+	std::string getBody() const;
+	void setBody(const std::string &body);
 
 private:
-	string instanceId_;
-	string clientToken_;
-	boolean trigger_;
-	string body_;
+	std::string instanceId_;
+	std::string clientToken_;
+	bool trigger_;
+	std::string body_;
 };
 } // namespace Model
 } // namespace Elasticsearch

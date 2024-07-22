@@ -26,21 +26,21 @@ CancelLogstashDeletionRequest::CancelLogstashDeletionRequest()
 
 CancelLogstashDeletionRequest::~CancelLogstashDeletionRequest() {}
 
-string CancelLogstashDeletionRequest::getInstanceId() const {
+std::string CancelLogstashDeletionRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void CancelLogstashDeletionRequest::setInstanceId(string instanceId) {
+void CancelLogstashDeletionRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string CancelLogstashDeletionRequest::getClientToken() const {
+std::string CancelLogstashDeletionRequest::getClientToken() const {
   return clientToken_;
 }
 
-void CancelLogstashDeletionRequest::setClientToken(string clientToken) {
+void CancelLogstashDeletionRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 

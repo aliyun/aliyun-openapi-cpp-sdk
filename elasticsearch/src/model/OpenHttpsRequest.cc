@@ -26,21 +26,21 @@ OpenHttpsRequest::OpenHttpsRequest()
 
 OpenHttpsRequest::~OpenHttpsRequest() {}
 
-string OpenHttpsRequest::getInstanceId() const {
+std::string OpenHttpsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void OpenHttpsRequest::setInstanceId(string instanceId) {
+void OpenHttpsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string OpenHttpsRequest::getClientToken() const {
+std::string OpenHttpsRequest::getClientToken() const {
   return clientToken_;
 }
 
-void OpenHttpsRequest::setClientToken(string clientToken) {
+void OpenHttpsRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 

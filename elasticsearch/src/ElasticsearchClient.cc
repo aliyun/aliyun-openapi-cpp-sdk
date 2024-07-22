@@ -519,42 +519,6 @@ ElasticsearchClient::CreateDataStreamOutcomeCallable ElasticsearchClient::create
 	return task->get_future();
 }
 
-ElasticsearchClient::CreateDataTasksOutcome ElasticsearchClient::createDataTasks(const CreateDataTasksRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateDataTasksOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateDataTasksOutcome(CreateDataTasksResult(outcome.result()));
-	else
-		return CreateDataTasksOutcome(outcome.error());
-}
-
-void ElasticsearchClient::createDataTasksAsync(const CreateDataTasksRequest& request, const CreateDataTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createDataTasks(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ElasticsearchClient::CreateDataTasksOutcomeCallable ElasticsearchClient::createDataTasksCallable(const CreateDataTasksRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateDataTasksOutcome()>>(
-			[this, request]()
-			{
-			return this->createDataTasks(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ElasticsearchClient::CreateILMPolicyOutcome ElasticsearchClient::createILMPolicy(const CreateILMPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2103,6 +2067,78 @@ ElasticsearchClient::DiagnoseInstanceOutcomeCallable ElasticsearchClient::diagno
 	return task->get_future();
 }
 
+ElasticsearchClient::DisableKibanaPvlNetworkOutcome ElasticsearchClient::disableKibanaPvlNetwork(const DisableKibanaPvlNetworkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableKibanaPvlNetworkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableKibanaPvlNetworkOutcome(DisableKibanaPvlNetworkResult(outcome.result()));
+	else
+		return DisableKibanaPvlNetworkOutcome(outcome.error());
+}
+
+void ElasticsearchClient::disableKibanaPvlNetworkAsync(const DisableKibanaPvlNetworkRequest& request, const DisableKibanaPvlNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableKibanaPvlNetwork(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::DisableKibanaPvlNetworkOutcomeCallable ElasticsearchClient::disableKibanaPvlNetworkCallable(const DisableKibanaPvlNetworkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableKibanaPvlNetworkOutcome()>>(
+			[this, request]()
+			{
+			return this->disableKibanaPvlNetwork(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::EnableKibanaPvlNetworkOutcome ElasticsearchClient::enableKibanaPvlNetwork(const EnableKibanaPvlNetworkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableKibanaPvlNetworkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableKibanaPvlNetworkOutcome(EnableKibanaPvlNetworkResult(outcome.result()));
+	else
+		return EnableKibanaPvlNetworkOutcome(outcome.error());
+}
+
+void ElasticsearchClient::enableKibanaPvlNetworkAsync(const EnableKibanaPvlNetworkRequest& request, const EnableKibanaPvlNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableKibanaPvlNetwork(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::EnableKibanaPvlNetworkOutcomeCallable ElasticsearchClient::enableKibanaPvlNetworkCallable(const EnableKibanaPvlNetworkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableKibanaPvlNetworkOutcome()>>(
+			[this, request]()
+			{
+			return this->enableKibanaPvlNetwork(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::EstimatedLogstashRestartTimeOutcome ElasticsearchClient::estimatedLogstashRestartTime(const EstimatedLogstashRestartTimeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2421,6 +2457,42 @@ ElasticsearchClient::GetRegionConfigurationOutcomeCallable ElasticsearchClient::
 			[this, request]()
 			{
 			return this->getRegionConfiguration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::GetRegionalInstanceConfigOutcome ElasticsearchClient::getRegionalInstanceConfig(const GetRegionalInstanceConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRegionalInstanceConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRegionalInstanceConfigOutcome(GetRegionalInstanceConfigResult(outcome.result()));
+	else
+		return GetRegionalInstanceConfigOutcome(outcome.error());
+}
+
+void ElasticsearchClient::getRegionalInstanceConfigAsync(const GetRegionalInstanceConfigRequest& request, const GetRegionalInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRegionalInstanceConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::GetRegionalInstanceConfigOutcomeCallable ElasticsearchClient::getRegionalInstanceConfigCallable(const GetRegionalInstanceConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRegionalInstanceConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->getRegionalInstanceConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3399,6 +3471,42 @@ ElasticsearchClient::ListDiagnoseReportIdsOutcomeCallable ElasticsearchClient::l
 	return task->get_future();
 }
 
+ElasticsearchClient::ListDiagnosisItemsOutcome ElasticsearchClient::listDiagnosisItems(const ListDiagnosisItemsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDiagnosisItemsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDiagnosisItemsOutcome(ListDiagnosisItemsResult(outcome.result()));
+	else
+		return ListDiagnosisItemsOutcome(outcome.error());
+}
+
+void ElasticsearchClient::listDiagnosisItemsAsync(const ListDiagnosisItemsRequest& request, const ListDiagnosisItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDiagnosisItems(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ListDiagnosisItemsOutcomeCallable ElasticsearchClient::listDiagnosisItemsCallable(const ListDiagnosisItemsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDiagnosisItemsOutcome()>>(
+			[this, request]()
+			{
+			return this->listDiagnosisItems(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::ListDictInformationOutcome ElasticsearchClient::listDictInformation(const ListDictInformationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3753,6 +3861,42 @@ ElasticsearchClient::ListKibanaPluginsOutcomeCallable ElasticsearchClient::listK
 			[this, request]()
 			{
 			return this->listKibanaPlugins(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::ListKibanaPvlNetworkOutcome ElasticsearchClient::listKibanaPvlNetwork(const ListKibanaPvlNetworkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListKibanaPvlNetworkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListKibanaPvlNetworkOutcome(ListKibanaPvlNetworkResult(outcome.result()));
+	else
+		return ListKibanaPvlNetworkOutcome(outcome.error());
+}
+
+void ElasticsearchClient::listKibanaPvlNetworkAsync(const ListKibanaPvlNetworkRequest& request, const ListKibanaPvlNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listKibanaPvlNetwork(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ListKibanaPvlNetworkOutcomeCallable ElasticsearchClient::listKibanaPvlNetworkCallable(const ListKibanaPvlNetworkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListKibanaPvlNetworkOutcome()>>(
+			[this, request]()
+			{
+			return this->listKibanaPvlNetwork(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6165,6 +6309,42 @@ ElasticsearchClient::UpdateInstanceSettingsOutcomeCallable ElasticsearchClient::
 			[this, request]()
 			{
 			return this->updateInstanceSettings(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::UpdateKibanaPvlNetworkOutcome ElasticsearchClient::updateKibanaPvlNetwork(const UpdateKibanaPvlNetworkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateKibanaPvlNetworkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateKibanaPvlNetworkOutcome(UpdateKibanaPvlNetworkResult(outcome.result()));
+	else
+		return UpdateKibanaPvlNetworkOutcome(outcome.error());
+}
+
+void ElasticsearchClient::updateKibanaPvlNetworkAsync(const UpdateKibanaPvlNetworkRequest& request, const UpdateKibanaPvlNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateKibanaPvlNetwork(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::UpdateKibanaPvlNetworkOutcomeCallable ElasticsearchClient::updateKibanaPvlNetworkCallable(const UpdateKibanaPvlNetworkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateKibanaPvlNetworkOutcome()>>(
+			[this, request]()
+			{
+			return this->updateKibanaPvlNetwork(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

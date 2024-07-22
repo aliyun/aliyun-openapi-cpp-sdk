@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListDataStreamsRequest : public RoaServi
 public:
 	ListDataStreamsRequest();
 	~ListDataStreamsRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	boolean getIsManaged() const;
-	void setIsManaged(boolean isManaged);
-	string getName() const;
-	void setName(string name);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	bool getIsManaged() const;
+	void setIsManaged(bool isManaged);
+	std::string getName() const;
+	void setName(const std::string &name);
 
 private:
-	string instanceId_;
-	boolean isManaged_;
-	string name_;
+	std::string instanceId_;
+	bool isManaged_;
+	std::string name_;
 };
 } // namespace Model
 } // namespace Elasticsearch

@@ -30,23 +30,23 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListApmRequest : public RoaServiceReques
 public:
 	ListApmRequest();
 	~ListApmRequest();
-	string getOutput() const;
-	void setOutput(string output);
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	integer getSize() const;
-	void setSize(integer size);
-	string getDescription() const;
-	void setDescription(string description);
-	integer getPage() const;
-	void setPage(integer page);
+	std::string getOutput() const;
+	void setOutput(const std::string &output);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	long getSize() const;
+	void setSize(long size);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
+	long getPage() const;
+	void setPage(long page);
 
 private:
-	string output_;
-	string instanceId_;
-	integer size_;
-	string description_;
-	integer page_;
+	std::string output_;
+	std::string instanceId_;
+	long size_;
+	std::string description_;
+	long page_;
 };
 } // namespace Model
 } // namespace Elasticsearch

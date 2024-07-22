@@ -26,31 +26,31 @@ CreateVpcEndpointRequest::CreateVpcEndpointRequest()
 
 CreateVpcEndpointRequest::~CreateVpcEndpointRequest() {}
 
-string CreateVpcEndpointRequest::getInstanceId() const {
+std::string CreateVpcEndpointRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void CreateVpcEndpointRequest::setInstanceId(string instanceId) {
+void CreateVpcEndpointRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-boolean CreateVpcEndpointRequest::getDryRun() const {
+bool CreateVpcEndpointRequest::getDryRun() const {
   return dryRun_;
 }
 
-void CreateVpcEndpointRequest::setDryRun(boolean dryRun) {
+void CreateVpcEndpointRequest::setDryRun(bool dryRun) {
   dryRun_ = dryRun;
-  setParameter(std::string("dryRun"), std::to_string(dryRun));
+  setParameter(std::string("dryRun"), dryRun ? "true" : "false");
 }
 
-string CreateVpcEndpointRequest::getClientToken() const {
+std::string CreateVpcEndpointRequest::getClientToken() const {
   return clientToken_;
 }
 
-void CreateVpcEndpointRequest::setClientToken(string clientToken) {
+void CreateVpcEndpointRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
 std::string CreateVpcEndpointRequest::getBody() const {

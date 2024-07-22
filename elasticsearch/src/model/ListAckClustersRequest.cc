@@ -26,29 +26,29 @@ ListAckClustersRequest::ListAckClustersRequest()
 
 ListAckClustersRequest::~ListAckClustersRequest() {}
 
-integer ListAckClustersRequest::getSize() const {
+int ListAckClustersRequest::getSize() const {
   return size_;
 }
 
-void ListAckClustersRequest::setSize(integer size) {
+void ListAckClustersRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-string ListAckClustersRequest::getVpcId() const {
+std::string ListAckClustersRequest::getVpcId() const {
   return vpcId_;
 }
 
-void ListAckClustersRequest::setVpcId(string vpcId) {
+void ListAckClustersRequest::setVpcId(const std::string &vpcId) {
   vpcId_ = vpcId;
-  setParameter(std::string("vpcId"), std::to_string(vpcId));
+  setParameter(std::string("vpcId"), vpcId);
 }
 
-integer ListAckClustersRequest::getPage() const {
+int ListAckClustersRequest::getPage() const {
   return page_;
 }
 
-void ListAckClustersRequest::setPage(integer page) {
+void ListAckClustersRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }

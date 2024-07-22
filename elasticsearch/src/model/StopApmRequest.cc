@@ -26,12 +26,12 @@ StopApmRequest::StopApmRequest()
 
 StopApmRequest::~StopApmRequest() {}
 
-string StopApmRequest::getInstanceId() const {
+std::string StopApmRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void StopApmRequest::setInstanceId(string instanceId) {
+void StopApmRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("instanceId"), std::to_string(instanceId));
+  setParameter(std::string("instanceId"), instanceId);
 }
 

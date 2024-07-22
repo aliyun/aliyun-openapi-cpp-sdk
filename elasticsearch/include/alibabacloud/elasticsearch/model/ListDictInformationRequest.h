@@ -30,20 +30,20 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListDictInformationRequest : public RoaS
 public:
 	ListDictInformationRequest();
 	~ListDictInformationRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getAnalyzerType() const;
-	void setAnalyzerType(string analyzerType);
-	string getBucketName() const;
-	void setBucketName(string bucketName);
-	string getKey() const;
-	void setKey(string key);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getAnalyzerType() const;
+	void setAnalyzerType(const std::string &analyzerType);
+	std::string getBucketName() const;
+	void setBucketName(const std::string &bucketName);
+	std::string getKey() const;
+	void setKey(const std::string &key);
 
 private:
-	string instanceId_;
-	string analyzerType_;
-	string bucketName_;
-	string key_;
+	std::string instanceId_;
+	std::string analyzerType_;
+	std::string bucketName_;
+	std::string key_;
 };
 } // namespace Model
 } // namespace Elasticsearch

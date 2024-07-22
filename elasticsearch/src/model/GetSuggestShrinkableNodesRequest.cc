@@ -26,38 +26,38 @@ GetSuggestShrinkableNodesRequest::GetSuggestShrinkableNodesRequest()
 
 GetSuggestShrinkableNodesRequest::~GetSuggestShrinkableNodesRequest() {}
 
-boolean GetSuggestShrinkableNodesRequest::getIgnoreStatus() const {
+bool GetSuggestShrinkableNodesRequest::getIgnoreStatus() const {
   return ignoreStatus_;
 }
 
-void GetSuggestShrinkableNodesRequest::setIgnoreStatus(boolean ignoreStatus) {
+void GetSuggestShrinkableNodesRequest::setIgnoreStatus(bool ignoreStatus) {
   ignoreStatus_ = ignoreStatus;
-  setParameter(std::string("ignoreStatus"), std::to_string(ignoreStatus));
+  setParameter(std::string("ignoreStatus"), ignoreStatus ? "true" : "false");
 }
 
-string GetSuggestShrinkableNodesRequest::getInstanceId() const {
+std::string GetSuggestShrinkableNodesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void GetSuggestShrinkableNodesRequest::setInstanceId(string instanceId) {
+void GetSuggestShrinkableNodesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string GetSuggestShrinkableNodesRequest::getNodeType() const {
+std::string GetSuggestShrinkableNodesRequest::getNodeType() const {
   return nodeType_;
 }
 
-void GetSuggestShrinkableNodesRequest::setNodeType(string nodeType) {
+void GetSuggestShrinkableNodesRequest::setNodeType(const std::string &nodeType) {
   nodeType_ = nodeType;
-  setParameter(std::string("nodeType"), std::to_string(nodeType));
+  setParameter(std::string("nodeType"), nodeType);
 }
 
-integer GetSuggestShrinkableNodesRequest::getCount() const {
+int GetSuggestShrinkableNodesRequest::getCount() const {
   return count_;
 }
 
-void GetSuggestShrinkableNodesRequest::setCount(integer count) {
+void GetSuggestShrinkableNodesRequest::setCount(int count) {
   count_ = count;
   setParameter(std::string("count"), std::to_string(count));
 }

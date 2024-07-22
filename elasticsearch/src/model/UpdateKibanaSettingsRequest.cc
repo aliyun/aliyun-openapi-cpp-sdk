@@ -26,30 +26,30 @@ UpdateKibanaSettingsRequest::UpdateKibanaSettingsRequest()
 
 UpdateKibanaSettingsRequest::~UpdateKibanaSettingsRequest() {}
 
-string UpdateKibanaSettingsRequest::getInstanceId() const {
+std::string UpdateKibanaSettingsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateKibanaSettingsRequest::setInstanceId(string instanceId) {
+void UpdateKibanaSettingsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateKibanaSettingsRequest::getClientToken() const {
+std::string UpdateKibanaSettingsRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateKibanaSettingsRequest::setClientToken(string clientToken) {
+void UpdateKibanaSettingsRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string UpdateKibanaSettingsRequest::getBody() const {
+std::string UpdateKibanaSettingsRequest::getBody() const {
   return body_;
 }
 
-void UpdateKibanaSettingsRequest::setBody(string body) {
+void UpdateKibanaSettingsRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

@@ -26,120 +26,120 @@ ListInstanceRequest::ListInstanceRequest()
 
 ListInstanceRequest::~ListInstanceRequest() {}
 
-string ListInstanceRequest::getDescription() const {
+std::string ListInstanceRequest::getDescription() const {
   return description_;
 }
 
-void ListInstanceRequest::setDescription(string description) {
+void ListInstanceRequest::setDescription(const std::string &description) {
   description_ = description;
-  setParameter(std::string("description"), std::to_string(description));
+  setParameter(std::string("description"), description);
 }
 
-string ListInstanceRequest::getInstanceCategory() const {
+std::string ListInstanceRequest::getInstanceCategory() const {
   return instanceCategory_;
 }
 
-void ListInstanceRequest::setInstanceCategory(string instanceCategory) {
+void ListInstanceRequest::setInstanceCategory(const std::string &instanceCategory) {
   instanceCategory_ = instanceCategory;
-  setParameter(std::string("instanceCategory"), std::to_string(instanceCategory));
+  setParameter(std::string("instanceCategory"), instanceCategory);
 }
 
-string ListInstanceRequest::getInnerapiOwnerId() const {
+std::string ListInstanceRequest::getInnerapiOwnerId() const {
   return innerapiOwnerId_;
 }
 
-void ListInstanceRequest::setInnerapiOwnerId(string innerapiOwnerId) {
+void ListInstanceRequest::setInnerapiOwnerId(const std::string &innerapiOwnerId) {
   innerapiOwnerId_ = innerapiOwnerId;
-  setParameter(std::string("innerapiOwnerId"), std::to_string(innerapiOwnerId));
+  setParameter(std::string("innerapiOwnerId"), innerapiOwnerId);
 }
 
-string ListInstanceRequest::getTags() const {
+std::string ListInstanceRequest::getTags() const {
   return tags_;
 }
 
-void ListInstanceRequest::setTags(string tags) {
+void ListInstanceRequest::setTags(const std::string &tags) {
   tags_ = tags;
-  setParameter(std::string("tags"), std::to_string(tags));
+  setParameter(std::string("tags"), tags);
 }
 
-string ListInstanceRequest::getProductType() const {
+std::string ListInstanceRequest::getProductType() const {
   return productType_;
 }
 
-void ListInstanceRequest::setProductType(string productType) {
+void ListInstanceRequest::setProductType(const std::string &productType) {
   productType_ = productType;
-  setParameter(std::string("productType"), std::to_string(productType));
+  setParameter(std::string("productType"), productType);
 }
 
-string ListInstanceRequest::getResourceGroupId() const {
+std::string ListInstanceRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }
 
-void ListInstanceRequest::setResourceGroupId(string resourceGroupId) {
+void ListInstanceRequest::setResourceGroupId(const std::string &resourceGroupId) {
   resourceGroupId_ = resourceGroupId;
-  setParameter(std::string("resourceGroupId"), std::to_string(resourceGroupId));
+  setParameter(std::string("resourceGroupId"), resourceGroupId);
 }
 
-string ListInstanceRequest::getInstanceId() const {
+std::string ListInstanceRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListInstanceRequest::setInstanceId(string instanceId) {
+void ListInstanceRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("instanceId"), std::to_string(instanceId));
+  setParameter(std::string("instanceId"), instanceId);
 }
 
-integer ListInstanceRequest::getSize() const {
+int ListInstanceRequest::getSize() const {
   return size_;
 }
 
-void ListInstanceRequest::setSize(integer size) {
+void ListInstanceRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-string ListInstanceRequest::getEsVersion() const {
+std::string ListInstanceRequest::getEsVersion() const {
   return esVersion_;
 }
 
-void ListInstanceRequest::setEsVersion(string esVersion) {
+void ListInstanceRequest::setEsVersion(const std::string &esVersion) {
   esVersion_ = esVersion;
-  setParameter(std::string("esVersion"), std::to_string(esVersion));
+  setParameter(std::string("esVersion"), esVersion);
 }
 
-string ListInstanceRequest::getVpcId() const {
+std::string ListInstanceRequest::getVpcId() const {
   return vpcId_;
 }
 
-void ListInstanceRequest::setVpcId(string vpcId) {
+void ListInstanceRequest::setVpcId(const std::string &vpcId) {
   vpcId_ = vpcId;
-  setParameter(std::string("vpcId"), std::to_string(vpcId));
+  setParameter(std::string("vpcId"), vpcId);
 }
 
-string ListInstanceRequest::getZoneId() const {
+std::string ListInstanceRequest::getZoneId() const {
   return zoneId_;
 }
 
-void ListInstanceRequest::setZoneId(string zoneId) {
+void ListInstanceRequest::setZoneId(const std::string &zoneId) {
   zoneId_ = zoneId;
-  setParameter(std::string("zoneId"), std::to_string(zoneId));
+  setParameter(std::string("zoneId"), zoneId);
 }
 
-integer ListInstanceRequest::getPage() const {
+int ListInstanceRequest::getPage() const {
   return page_;
 }
 
-void ListInstanceRequest::setPage(integer page) {
+void ListInstanceRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }
 
-string ListInstanceRequest::getPaymentType() const {
+std::string ListInstanceRequest::getPaymentType() const {
   return paymentType_;
 }
 
-void ListInstanceRequest::setPaymentType(string paymentType) {
+void ListInstanceRequest::setPaymentType(const std::string &paymentType) {
   paymentType_ = paymentType;
-  setParameter(std::string("paymentType"), std::to_string(paymentType));
+  setParameter(std::string("paymentType"), paymentType);
 }
 

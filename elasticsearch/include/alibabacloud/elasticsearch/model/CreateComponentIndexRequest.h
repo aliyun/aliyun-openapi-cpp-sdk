@@ -30,16 +30,16 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT CreateComponentIndexRequest : public Roa
 public:
 	CreateComponentIndexRequest();
 	~CreateComponentIndexRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getName() const;
-	void setName(string name);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getName() const;
+	void setName(const std::string &name);
 	std::string getBody() const;
 	void setBody(const std::string &body);
 
 private:
-	string instanceId_;
-	string name_;
+	std::string instanceId_;
+	std::string name_;
 	std::string body_;
 };
 } // namespace Model

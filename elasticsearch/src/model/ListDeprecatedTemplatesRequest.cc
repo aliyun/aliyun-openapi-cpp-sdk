@@ -26,38 +26,38 @@ ListDeprecatedTemplatesRequest::ListDeprecatedTemplatesRequest()
 
 ListDeprecatedTemplatesRequest::~ListDeprecatedTemplatesRequest() {}
 
-string ListDeprecatedTemplatesRequest::getInstanceId() const {
+std::string ListDeprecatedTemplatesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListDeprecatedTemplatesRequest::setInstanceId(string instanceId) {
+void ListDeprecatedTemplatesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-integer ListDeprecatedTemplatesRequest::getSize() const {
+int ListDeprecatedTemplatesRequest::getSize() const {
   return size_;
 }
 
-void ListDeprecatedTemplatesRequest::setSize(integer size) {
+void ListDeprecatedTemplatesRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-string ListDeprecatedTemplatesRequest::getName() const {
+std::string ListDeprecatedTemplatesRequest::getName() const {
   return name_;
 }
 
-void ListDeprecatedTemplatesRequest::setName(string name) {
+void ListDeprecatedTemplatesRequest::setName(const std::string &name) {
   name_ = name;
-  setParameter(std::string("name"), std::to_string(name));
+  setParameter(std::string("name"), name);
 }
 
-integer ListDeprecatedTemplatesRequest::getPage() const {
+int ListDeprecatedTemplatesRequest::getPage() const {
   return page_;
 }
 
-void ListDeprecatedTemplatesRequest::setPage(integer page) {
+void ListDeprecatedTemplatesRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }

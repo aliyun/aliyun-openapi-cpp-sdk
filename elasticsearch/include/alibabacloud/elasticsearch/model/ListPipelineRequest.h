@@ -30,20 +30,20 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListPipelineRequest : public RoaServiceR
 public:
 	ListPipelineRequest();
 	~ListPipelineRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	integer getSize() const;
-	void setSize(integer size);
-	integer getPage() const;
-	void setPage(integer page);
-	string getPipelineId() const;
-	void setPipelineId(string pipelineId);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	int getSize() const;
+	void setSize(int size);
+	int getPage() const;
+	void setPage(int page);
+	std::string getPipelineId() const;
+	void setPipelineId(const std::string &pipelineId);
 
 private:
-	string instanceId_;
-	integer size_;
-	integer page_;
-	string pipelineId_;
+	std::string instanceId_;
+	int size_;
+	int page_;
+	std::string pipelineId_;
 };
 } // namespace Model
 } // namespace Elasticsearch

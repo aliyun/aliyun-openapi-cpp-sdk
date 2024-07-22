@@ -26,30 +26,30 @@ UninstallKibanaPluginRequest::UninstallKibanaPluginRequest()
 
 UninstallKibanaPluginRequest::~UninstallKibanaPluginRequest() {}
 
-string UninstallKibanaPluginRequest::getInstanceId() const {
+std::string UninstallKibanaPluginRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UninstallKibanaPluginRequest::setInstanceId(string instanceId) {
+void UninstallKibanaPluginRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UninstallKibanaPluginRequest::getClientToken() const {
+std::string UninstallKibanaPluginRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UninstallKibanaPluginRequest::setClientToken(string clientToken) {
+void UninstallKibanaPluginRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string UninstallKibanaPluginRequest::getBody() const {
+std::string UninstallKibanaPluginRequest::getBody() const {
   return body_;
 }
 
-void UninstallKibanaPluginRequest::setBody(string body) {
+void UninstallKibanaPluginRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

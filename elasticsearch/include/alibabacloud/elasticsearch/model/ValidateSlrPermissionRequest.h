@@ -30,14 +30,14 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ValidateSlrPermissionRequest : public Ro
 public:
 	ValidateSlrPermissionRequest();
 	~ValidateSlrPermissionRequest();
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	string getRolename() const;
-	void setRolename(string rolename);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getRolename() const;
+	void setRolename(const std::string &rolename);
 
 private:
-	string clientToken_;
-	string rolename_;
+	std::string clientToken_;
+	std::string rolename_;
 };
 } // namespace Model
 } // namespace Elasticsearch

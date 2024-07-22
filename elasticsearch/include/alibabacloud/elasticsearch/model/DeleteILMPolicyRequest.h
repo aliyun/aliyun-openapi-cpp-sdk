@@ -30,14 +30,14 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT DeleteILMPolicyRequest : public RoaServi
 public:
 	DeleteILMPolicyRequest();
 	~DeleteILMPolicyRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getPolicyName() const;
-	void setPolicyName(string policyName);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getPolicyName() const;
+	void setPolicyName(const std::string &policyName);
 
 private:
-	string instanceId_;
-	string policyName_;
+	std::string instanceId_;
+	std::string policyName_;
 };
 } // namespace Model
 } // namespace Elasticsearch

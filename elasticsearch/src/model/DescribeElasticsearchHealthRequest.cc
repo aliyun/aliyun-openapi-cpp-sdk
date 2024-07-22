@@ -26,12 +26,12 @@ DescribeElasticsearchHealthRequest::DescribeElasticsearchHealthRequest()
 
 DescribeElasticsearchHealthRequest::~DescribeElasticsearchHealthRequest() {}
 
-string DescribeElasticsearchHealthRequest::getInstanceId() const {
+std::string DescribeElasticsearchHealthRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribeElasticsearchHealthRequest::setInstanceId(string instanceId) {
+void DescribeElasticsearchHealthRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

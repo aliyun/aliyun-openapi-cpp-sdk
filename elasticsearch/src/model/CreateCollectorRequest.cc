@@ -26,21 +26,21 @@ CreateCollectorRequest::CreateCollectorRequest()
 
 CreateCollectorRequest::~CreateCollectorRequest() {}
 
-string CreateCollectorRequest::getClientToken() const {
+std::string CreateCollectorRequest::getClientToken() const {
   return clientToken_;
 }
 
-void CreateCollectorRequest::setClientToken(string clientToken) {
+void CreateCollectorRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string CreateCollectorRequest::getBody() const {
+std::string CreateCollectorRequest::getBody() const {
   return body_;
 }
 
-void CreateCollectorRequest::setBody(string body) {
+void CreateCollectorRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

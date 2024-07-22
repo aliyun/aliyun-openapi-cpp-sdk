@@ -26,48 +26,48 @@ UpdateDynamicSettingsRequest::UpdateDynamicSettingsRequest()
 
 UpdateDynamicSettingsRequest::~UpdateDynamicSettingsRequest() {}
 
-string UpdateDynamicSettingsRequest::getMode() const {
+std::string UpdateDynamicSettingsRequest::getMode() const {
   return mode_;
 }
 
-void UpdateDynamicSettingsRequest::setMode(string mode) {
+void UpdateDynamicSettingsRequest::setMode(const std::string &mode) {
   mode_ = mode;
-  setParameter(std::string("mode"), std::to_string(mode));
+  setParameter(std::string("mode"), mode);
 }
 
-string UpdateDynamicSettingsRequest::getInstanceId() const {
+std::string UpdateDynamicSettingsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateDynamicSettingsRequest::setInstanceId(string instanceId) {
+void UpdateDynamicSettingsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateDynamicSettingsRequest::getClientToken() const {
+std::string UpdateDynamicSettingsRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateDynamicSettingsRequest::setClientToken(string clientToken) {
+void UpdateDynamicSettingsRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string UpdateDynamicSettingsRequest::getRegionId() const {
+std::string UpdateDynamicSettingsRequest::getRegionId() const {
   return regionId_;
 }
 
-void UpdateDynamicSettingsRequest::setRegionId(string regionId) {
+void UpdateDynamicSettingsRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
-  setParameter(std::string("RegionId"), std::to_string(regionId));
+  setParameter(std::string("RegionId"), regionId);
 }
 
-string UpdateDynamicSettingsRequest::getBody() const {
+std::string UpdateDynamicSettingsRequest::getBody() const {
   return body_;
 }
 
-void UpdateDynamicSettingsRequest::setBody(string body) {
+void UpdateDynamicSettingsRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

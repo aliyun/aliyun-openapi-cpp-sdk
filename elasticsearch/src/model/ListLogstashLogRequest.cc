@@ -26,66 +26,66 @@ ListLogstashLogRequest::ListLogstashLogRequest()
 
 ListLogstashLogRequest::~ListLogstashLogRequest() {}
 
-string ListLogstashLogRequest::getInstanceId() const {
+std::string ListLogstashLogRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListLogstashLogRequest::setInstanceId(string instanceId) {
+void ListLogstashLogRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-integer ListLogstashLogRequest::getSize() const {
+int ListLogstashLogRequest::getSize() const {
   return size_;
 }
 
-void ListLogstashLogRequest::setSize(integer size) {
+void ListLogstashLogRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-string ListLogstashLogRequest::getQuery() const {
+std::string ListLogstashLogRequest::getQuery() const {
   return query_;
 }
 
-void ListLogstashLogRequest::setQuery(string query) {
+void ListLogstashLogRequest::setQuery(const std::string &query) {
   query_ = query;
-  setParameter(std::string("query"), std::to_string(query));
+  setParameter(std::string("query"), query);
 }
 
-integer ListLogstashLogRequest::getEndTime() const {
+long ListLogstashLogRequest::getEndTime() const {
   return endTime_;
 }
 
-void ListLogstashLogRequest::setEndTime(integer endTime) {
+void ListLogstashLogRequest::setEndTime(long endTime) {
   endTime_ = endTime;
   setParameter(std::string("endTime"), std::to_string(endTime));
 }
 
-integer ListLogstashLogRequest::getBeginTime() const {
+long ListLogstashLogRequest::getBeginTime() const {
   return beginTime_;
 }
 
-void ListLogstashLogRequest::setBeginTime(integer beginTime) {
+void ListLogstashLogRequest::setBeginTime(long beginTime) {
   beginTime_ = beginTime;
   setParameter(std::string("beginTime"), std::to_string(beginTime));
 }
 
-integer ListLogstashLogRequest::getPage() const {
+int ListLogstashLogRequest::getPage() const {
   return page_;
 }
 
-void ListLogstashLogRequest::setPage(integer page) {
+void ListLogstashLogRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }
 
-string ListLogstashLogRequest::getType() const {
+std::string ListLogstashLogRequest::getType() const {
   return type_;
 }
 
-void ListLogstashLogRequest::setType(string type) {
+void ListLogstashLogRequest::setType(const std::string &type) {
   type_ = type;
-  setParameter(std::string("type"), std::to_string(type));
+  setParameter(std::string("type"), type);
 }
 

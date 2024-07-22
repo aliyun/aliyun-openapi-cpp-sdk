@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_CREATEDATATASKSREQUEST_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_CREATEDATATASKSREQUEST_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTKIBANAPVLNETWORKREQUEST_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTKIBANAPVLNETWORKREQUEST_H_
 
 #include <alibabacloud/elasticsearch/ElasticsearchExport.h>
 #include <alibabacloud/core/RoaServiceRequest.h>
@@ -26,23 +26,17 @@
 namespace AlibabaCloud {
 namespace Elasticsearch {
 namespace Model {
-class ALIBABACLOUD_ELASTICSEARCH_EXPORT CreateDataTasksRequest : public RoaServiceRequest {
+class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListKibanaPvlNetworkRequest : public RoaServiceRequest {
 public:
-	CreateDataTasksRequest();
-	~CreateDataTasksRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	string getBody() const;
-	void setBody(string body);
+	ListKibanaPvlNetworkRequest();
+	~ListKibanaPvlNetworkRequest();
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 
 private:
-	string instanceId_;
-	string clientToken_;
-	string body_;
+	std::string instanceId_;
 };
 } // namespace Model
 } // namespace Elasticsearch
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_CREATEDATATASKSREQUEST_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTKIBANAPVLNETWORKREQUEST_H_

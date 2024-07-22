@@ -30,20 +30,20 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT UpdatePublicWhiteIpsRequest : public Roa
 public:
 	UpdatePublicWhiteIpsRequest();
 	~UpdatePublicWhiteIpsRequest();
-	string getModifyMode() const;
-	void setModifyMode(string modifyMode);
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	string getBody() const;
-	void setBody(string body);
+	std::string getModifyMode() const;
+	void setModifyMode(const std::string &modifyMode);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getBody() const;
+	void setBody(const std::string &body);
 
 private:
-	string modifyMode_;
-	string instanceId_;
-	string clientToken_;
-	string body_;
+	std::string modifyMode_;
+	std::string instanceId_;
+	std::string clientToken_;
+	std::string body_;
 };
 } // namespace Model
 } // namespace Elasticsearch

@@ -30,11 +30,11 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT GetRegionConfigurationRequest : public R
 public:
 	GetRegionConfigurationRequest();
 	~GetRegionConfigurationRequest();
-	string getZoneId() const;
-	void setZoneId(string zoneId);
+	std::string getZoneId() const;
+	void setZoneId(const std::string &zoneId);
 
 private:
-	string zoneId_;
+	std::string zoneId_;
 };
 } // namespace Model
 } // namespace Elasticsearch

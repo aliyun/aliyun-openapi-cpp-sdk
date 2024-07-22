@@ -26,30 +26,30 @@ UpdateExtendfilesRequest::UpdateExtendfilesRequest()
 
 UpdateExtendfilesRequest::~UpdateExtendfilesRequest() {}
 
-string UpdateExtendfilesRequest::getInstanceId() const {
+std::string UpdateExtendfilesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateExtendfilesRequest::setInstanceId(string instanceId) {
+void UpdateExtendfilesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateExtendfilesRequest::getClientToken() const {
+std::string UpdateExtendfilesRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateExtendfilesRequest::setClientToken(string clientToken) {
+void UpdateExtendfilesRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string UpdateExtendfilesRequest::getBody() const {
+std::string UpdateExtendfilesRequest::getBody() const {
   return body_;
 }
 
-void UpdateExtendfilesRequest::setBody(string body) {
+void UpdateExtendfilesRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

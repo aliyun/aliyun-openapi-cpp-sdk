@@ -26,21 +26,21 @@ DescribePipelineManagementConfigRequest::DescribePipelineManagementConfigRequest
 
 DescribePipelineManagementConfigRequest::~DescribePipelineManagementConfigRequest() {}
 
-string DescribePipelineManagementConfigRequest::getInstanceId() const {
+std::string DescribePipelineManagementConfigRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribePipelineManagementConfigRequest::setInstanceId(string instanceId) {
+void DescribePipelineManagementConfigRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DescribePipelineManagementConfigRequest::getClientToken() const {
+std::string DescribePipelineManagementConfigRequest::getClientToken() const {
   return clientToken_;
 }
 
-void DescribePipelineManagementConfigRequest::setClientToken(string clientToken) {
+void DescribePipelineManagementConfigRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 

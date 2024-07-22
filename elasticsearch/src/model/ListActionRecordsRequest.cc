@@ -26,84 +26,84 @@ ListActionRecordsRequest::ListActionRecordsRequest()
 
 ListActionRecordsRequest::~ListActionRecordsRequest() {}
 
-string ListActionRecordsRequest::getFilter() const {
+std::string ListActionRecordsRequest::getFilter() const {
   return filter_;
 }
 
-void ListActionRecordsRequest::setFilter(string filter) {
+void ListActionRecordsRequest::setFilter(const std::string &filter) {
   filter_ = filter;
-  setParameter(std::string("filter"), std::to_string(filter));
+  setParameter(std::string("filter"), filter);
 }
 
-string ListActionRecordsRequest::getActionNames() const {
+std::string ListActionRecordsRequest::getActionNames() const {
   return actionNames_;
 }
 
-void ListActionRecordsRequest::setActionNames(string actionNames) {
+void ListActionRecordsRequest::setActionNames(const std::string &actionNames) {
   actionNames_ = actionNames;
-  setParameter(std::string("actionNames"), std::to_string(actionNames));
+  setParameter(std::string("actionNames"), actionNames);
 }
 
-string ListActionRecordsRequest::getInstanceId() const {
+std::string ListActionRecordsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListActionRecordsRequest::setInstanceId(string instanceId) {
+void ListActionRecordsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-integer ListActionRecordsRequest::getSize() const {
+int ListActionRecordsRequest::getSize() const {
   return size_;
 }
 
-void ListActionRecordsRequest::setSize(integer size) {
+void ListActionRecordsRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-string ListActionRecordsRequest::getRequestId() const {
+std::string ListActionRecordsRequest::getRequestId() const {
   return requestId_;
 }
 
-void ListActionRecordsRequest::setRequestId(string requestId) {
+void ListActionRecordsRequest::setRequestId(const std::string &requestId) {
   requestId_ = requestId;
-  setParameter(std::string("requestId"), std::to_string(requestId));
+  setParameter(std::string("requestId"), requestId);
 }
 
-integer ListActionRecordsRequest::getEndTime() const {
+long ListActionRecordsRequest::getEndTime() const {
   return endTime_;
 }
 
-void ListActionRecordsRequest::setEndTime(integer endTime) {
+void ListActionRecordsRequest::setEndTime(long endTime) {
   endTime_ = endTime;
   setParameter(std::string("endTime"), std::to_string(endTime));
 }
 
-integer ListActionRecordsRequest::getPage() const {
+int ListActionRecordsRequest::getPage() const {
   return page_;
 }
 
-void ListActionRecordsRequest::setPage(integer page) {
+void ListActionRecordsRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }
 
-integer ListActionRecordsRequest::getStartTime() const {
+long ListActionRecordsRequest::getStartTime() const {
   return startTime_;
 }
 
-void ListActionRecordsRequest::setStartTime(integer startTime) {
+void ListActionRecordsRequest::setStartTime(long startTime) {
   startTime_ = startTime;
   setParameter(std::string("startTime"), std::to_string(startTime));
 }
 
-string ListActionRecordsRequest::getUserId() const {
+std::string ListActionRecordsRequest::getUserId() const {
   return userId_;
 }
 
-void ListActionRecordsRequest::setUserId(string userId) {
+void ListActionRecordsRequest::setUserId(const std::string &userId) {
   userId_ = userId;
-  setParameter(std::string("userId"), std::to_string(userId));
+  setParameter(std::string("userId"), userId);
 }
 

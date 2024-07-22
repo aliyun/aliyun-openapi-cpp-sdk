@@ -30,19 +30,19 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT DiagnoseInstanceRequest : public RoaServ
 public:
 	DiagnoseInstanceRequest();
 	~DiagnoseInstanceRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	string getLang() const;
-	void setLang(string lang);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 	std::string getBody() const;
 	void setBody(const std::string &body);
 
 private:
-	string instanceId_;
-	string clientToken_;
-	string lang_;
+	std::string instanceId_;
+	std::string clientToken_;
+	std::string lang_;
 	std::string body_;
 };
 } // namespace Model

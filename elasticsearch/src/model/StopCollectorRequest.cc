@@ -26,21 +26,21 @@ StopCollectorRequest::StopCollectorRequest()
 
 StopCollectorRequest::~StopCollectorRequest() {}
 
-string StopCollectorRequest::getClientToken() const {
+std::string StopCollectorRequest::getClientToken() const {
   return clientToken_;
 }
 
-void StopCollectorRequest::setClientToken(string clientToken) {
+void StopCollectorRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string StopCollectorRequest::getResId() const {
+std::string StopCollectorRequest::getResId() const {
   return resId_;
 }
 
-void StopCollectorRequest::setResId(string resId) {
+void StopCollectorRequest::setResId(const std::string &resId) {
   resId_ = resId;
-  setParameter(std::string("ResId"), std::to_string(resId));
+  setParameter(std::string("ResId"), resId);
 }
 

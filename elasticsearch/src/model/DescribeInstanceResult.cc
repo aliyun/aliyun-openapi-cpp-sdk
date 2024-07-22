@@ -100,6 +100,12 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		result_.description = resultNode["description"].asString();
 	if(!resultNode["kibanaDomain"].isNull())
 		result_.kibanaDomain = resultNode["kibanaDomain"].asString();
+	if(!resultNode["instanceCategory"].isNull())
+		result_.instanceCategory = resultNode["instanceCategory"].asString();
+	if(!resultNode["endtime"].isNull())
+		result_.endtime = std::stol(resultNode["endtime"].asString());
+	if(!resultNode["archType"].isNull())
+		result_.archType = resultNode["archType"].asString();
 	auto alldictListNode = resultNode["dictList"]["DictListItem"];
 	for (auto resultNodedictListDictListItem : alldictListNode)
 	{
@@ -187,6 +193,8 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		result_.nodeSpec.diskType = nodeSpecNode["diskType"].asString();
 	if(!nodeSpecNode["performanceLevel"].isNull())
 		result_.nodeSpec.performanceLevel = nodeSpecNode["performanceLevel"].asString();
+	if(!nodeSpecNode["specInfo"].isNull())
+		result_.nodeSpec.specInfo = nodeSpecNode["specInfo"].asString();
 	auto networkConfigNode = resultNode["networkConfig"];
 	if(!networkConfigNode["vpcId"].isNull())
 		result_.networkConfig.vpcId = networkConfigNode["vpcId"].asString();
@@ -216,6 +224,8 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		result_.kibanaConfiguration.spec = kibanaConfigurationNode["spec"].asString();
 	if(!kibanaConfigurationNode["disk"].isNull())
 		result_.kibanaConfiguration.disk = std::stoi(kibanaConfigurationNode["disk"].asString());
+	if(!kibanaConfigurationNode["specInfo"].isNull())
+		result_.kibanaConfiguration.specInfo = kibanaConfigurationNode["specInfo"].asString();
 	auto masterConfigurationNode = resultNode["masterConfiguration"];
 	if(!masterConfigurationNode["spec"].isNull())
 		result_.masterConfiguration.spec = masterConfigurationNode["spec"].asString();
@@ -225,6 +235,8 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		result_.masterConfiguration.disk = std::stoi(masterConfigurationNode["disk"].asString());
 	if(!masterConfigurationNode["diskType"].isNull())
 		result_.masterConfiguration.diskType = masterConfigurationNode["diskType"].asString();
+	if(!masterConfigurationNode["specInfo"].isNull())
+		result_.masterConfiguration.specInfo = masterConfigurationNode["specInfo"].asString();
 	auto clientNodeConfigurationNode = resultNode["clientNodeConfiguration"];
 	if(!clientNodeConfigurationNode["spec"].isNull())
 		result_.clientNodeConfiguration.spec = clientNodeConfigurationNode["spec"].asString();
@@ -234,6 +246,8 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		result_.clientNodeConfiguration.disk = std::stoi(clientNodeConfigurationNode["disk"].asString());
 	if(!clientNodeConfigurationNode["diskType"].isNull())
 		result_.clientNodeConfiguration.diskType = clientNodeConfigurationNode["diskType"].asString();
+	if(!clientNodeConfigurationNode["specInfo"].isNull())
+		result_.clientNodeConfiguration.specInfo = clientNodeConfigurationNode["specInfo"].asString();
 	auto warmNodeConfigurationNode = resultNode["warmNodeConfiguration"];
 	if(!warmNodeConfigurationNode["amount"].isNull())
 		result_.warmNodeConfiguration.amount = std::stoi(warmNodeConfigurationNode["amount"].asString());
@@ -245,6 +259,8 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		result_.warmNodeConfiguration.diskEncryption = warmNodeConfigurationNode["diskEncryption"].asString() == "true";
 	if(!warmNodeConfigurationNode["diskType"].isNull())
 		result_.warmNodeConfiguration.diskType = warmNodeConfigurationNode["diskType"].asString();
+	if(!warmNodeConfigurationNode["specInfo"].isNull())
+		result_.warmNodeConfiguration.specInfo = warmNodeConfigurationNode["specInfo"].asString();
 	auto advancedSettingNode = resultNode["advancedSetting"];
 	if(!advancedSettingNode["gcName"].isNull())
 		result_.advancedSetting.gcName = advancedSettingNode["gcName"].asString();
@@ -259,6 +275,8 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		result_.elasticDataNodeConfiguration.diskEncryption = elasticDataNodeConfigurationNode["diskEncryption"].asString() == "true";
 	if(!elasticDataNodeConfigurationNode["diskType"].isNull())
 		result_.elasticDataNodeConfiguration.diskType = elasticDataNodeConfigurationNode["diskType"].asString();
+	if(!elasticDataNodeConfigurationNode["specInfo"].isNull())
+		result_.elasticDataNodeConfiguration.specInfo = elasticDataNodeConfigurationNode["specInfo"].asString();
 		auto allEsIPWhitelist = resultNode["esIPWhitelist"]["EsIPWhitelist"];
 		for (auto value : allEsIPWhitelist)
 			result_.esIPWhitelist.push_back(value.asString());

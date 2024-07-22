@@ -26,93 +26,102 @@ ListInstanceHistoryEventsRequest::ListInstanceHistoryEventsRequest()
 
 ListInstanceHistoryEventsRequest::~ListInstanceHistoryEventsRequest() {}
 
-string ListInstanceHistoryEventsRequest::getEventFinashEndTime() const {
+std::string ListInstanceHistoryEventsRequest::getEventFinashEndTime() const {
   return eventFinashEndTime_;
 }
 
-void ListInstanceHistoryEventsRequest::setEventFinashEndTime(string eventFinashEndTime) {
+void ListInstanceHistoryEventsRequest::setEventFinashEndTime(const std::string &eventFinashEndTime) {
   eventFinashEndTime_ = eventFinashEndTime;
-  setParameter(std::string("eventFinashEndTime"), std::to_string(eventFinashEndTime));
+  setParameter(std::string("eventFinashEndTime"), eventFinashEndTime);
 }
 
-string ListInstanceHistoryEventsRequest::getInstanceId() const {
+std::string ListInstanceHistoryEventsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListInstanceHistoryEventsRequest::setInstanceId(string instanceId) {
+void ListInstanceHistoryEventsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("instanceId"), std::to_string(instanceId));
+  setParameter(std::string("instanceId"), instanceId);
 }
 
-integer ListInstanceHistoryEventsRequest::getSize() const {
+int ListInstanceHistoryEventsRequest::getSize() const {
   return size_;
 }
 
-void ListInstanceHistoryEventsRequest::setSize(integer size) {
+void ListInstanceHistoryEventsRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-string ListInstanceHistoryEventsRequest::getEventExecuteStartTime() const {
+std::string ListInstanceHistoryEventsRequest::getEventExecuteStartTime() const {
   return eventExecuteStartTime_;
 }
 
-void ListInstanceHistoryEventsRequest::setEventExecuteStartTime(string eventExecuteStartTime) {
+void ListInstanceHistoryEventsRequest::setEventExecuteStartTime(const std::string &eventExecuteStartTime) {
   eventExecuteStartTime_ = eventExecuteStartTime;
-  setParameter(std::string("eventExecuteStartTime"), std::to_string(eventExecuteStartTime));
+  setParameter(std::string("eventExecuteStartTime"), eventExecuteStartTime);
 }
 
-string ListInstanceHistoryEventsRequest::getEventFinashStartTime() const {
+std::string ListInstanceHistoryEventsRequest::getEventFinashStartTime() const {
   return eventFinashStartTime_;
 }
 
-void ListInstanceHistoryEventsRequest::setEventFinashStartTime(string eventFinashStartTime) {
+void ListInstanceHistoryEventsRequest::setEventFinashStartTime(const std::string &eventFinashStartTime) {
   eventFinashStartTime_ = eventFinashStartTime;
-  setParameter(std::string("eventFinashStartTime"), std::to_string(eventFinashStartTime));
+  setParameter(std::string("eventFinashStartTime"), eventFinashStartTime);
 }
 
-string ListInstanceHistoryEventsRequest::getNodeIP() const {
+std::string ListInstanceHistoryEventsRequest::getNodeIP() const {
   return nodeIP_;
 }
 
-void ListInstanceHistoryEventsRequest::setNodeIP(string nodeIP) {
+void ListInstanceHistoryEventsRequest::setNodeIP(const std::string &nodeIP) {
   nodeIP_ = nodeIP;
-  setParameter(std::string("nodeIP"), std::to_string(nodeIP));
+  setParameter(std::string("nodeIP"), nodeIP);
 }
 
-integer ListInstanceHistoryEventsRequest::getPage() const {
+int ListInstanceHistoryEventsRequest::getPage() const {
   return page_;
 }
 
-void ListInstanceHistoryEventsRequest::setPage(integer page) {
+void ListInstanceHistoryEventsRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }
 
-string ListInstanceHistoryEventsRequest::getEventCreateEndTime() const {
+std::string ListInstanceHistoryEventsRequest::getEventCreateEndTime() const {
   return eventCreateEndTime_;
 }
 
-void ListInstanceHistoryEventsRequest::setEventCreateEndTime(string eventCreateEndTime) {
+void ListInstanceHistoryEventsRequest::setEventCreateEndTime(const std::string &eventCreateEndTime) {
   eventCreateEndTime_ = eventCreateEndTime;
-  setParameter(std::string("eventCreateEndTime"), std::to_string(eventCreateEndTime));
+  setParameter(std::string("eventCreateEndTime"), eventCreateEndTime);
 }
 
-string ListInstanceHistoryEventsRequest::getEventCreateStartTime() const {
+std::string ListInstanceHistoryEventsRequest::getBody() const {
+  return body_;
+}
+
+void ListInstanceHistoryEventsRequest::setBody(const std::string &body) {
+  body_ = body;
+  setBodyParameter(std::string("body"), body);
+}
+
+std::string ListInstanceHistoryEventsRequest::getEventCreateStartTime() const {
   return eventCreateStartTime_;
 }
 
-void ListInstanceHistoryEventsRequest::setEventCreateStartTime(string eventCreateStartTime) {
+void ListInstanceHistoryEventsRequest::setEventCreateStartTime(const std::string &eventCreateStartTime) {
   eventCreateStartTime_ = eventCreateStartTime;
-  setParameter(std::string("eventCreateStartTime"), std::to_string(eventCreateStartTime));
+  setParameter(std::string("eventCreateStartTime"), eventCreateStartTime);
 }
 
-string ListInstanceHistoryEventsRequest::getEventExecuteEndTime() const {
+std::string ListInstanceHistoryEventsRequest::getEventExecuteEndTime() const {
   return eventExecuteEndTime_;
 }
 
-void ListInstanceHistoryEventsRequest::setEventExecuteEndTime(string eventExecuteEndTime) {
+void ListInstanceHistoryEventsRequest::setEventExecuteEndTime(const std::string &eventExecuteEndTime) {
   eventExecuteEndTime_ = eventExecuteEndTime;
-  setParameter(std::string("eventExecuteEndTime"), std::to_string(eventExecuteEndTime));
+  setParameter(std::string("eventExecuteEndTime"), eventExecuteEndTime);
 }
 

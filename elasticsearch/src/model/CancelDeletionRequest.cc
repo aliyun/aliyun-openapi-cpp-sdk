@@ -26,21 +26,21 @@ CancelDeletionRequest::CancelDeletionRequest()
 
 CancelDeletionRequest::~CancelDeletionRequest() {}
 
-string CancelDeletionRequest::getInstanceId() const {
+std::string CancelDeletionRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void CancelDeletionRequest::setInstanceId(string instanceId) {
+void CancelDeletionRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string CancelDeletionRequest::getClientToken() const {
+std::string CancelDeletionRequest::getClientToken() const {
   return clientToken_;
 }
 
-void CancelDeletionRequest::setClientToken(string clientToken) {
+void CancelDeletionRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 

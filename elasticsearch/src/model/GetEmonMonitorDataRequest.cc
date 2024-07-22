@@ -26,21 +26,21 @@ GetEmonMonitorDataRequest::GetEmonMonitorDataRequest()
 
 GetEmonMonitorDataRequest::~GetEmonMonitorDataRequest() {}
 
-string GetEmonMonitorDataRequest::getBody() const {
+std::string GetEmonMonitorDataRequest::getBody() const {
   return body_;
 }
 
-void GetEmonMonitorDataRequest::setBody(string body) {
+void GetEmonMonitorDataRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 
-string GetEmonMonitorDataRequest::getProjectId() const {
+std::string GetEmonMonitorDataRequest::getProjectId() const {
   return projectId_;
 }
 
-void GetEmonMonitorDataRequest::setProjectId(string projectId) {
+void GetEmonMonitorDataRequest::setProjectId(const std::string &projectId) {
   projectId_ = projectId;
-  setParameter(std::string("ProjectId"), std::to_string(projectId));
+  setParameter(std::string("ProjectId"), projectId);
 }
 

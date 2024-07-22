@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT DeleteConnectedClusterRequest : public R
 public:
 	DeleteConnectedClusterRequest();
 	~DeleteConnectedClusterRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	string getConnectedInstanceId() const;
-	void setConnectedInstanceId(string connectedInstanceId);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getConnectedInstanceId() const;
+	void setConnectedInstanceId(const std::string &connectedInstanceId);
 
 private:
-	string instanceId_;
-	string clientToken_;
-	string connectedInstanceId_;
+	std::string instanceId_;
+	std::string clientToken_;
+	std::string connectedInstanceId_;
 };
 } // namespace Model
 } // namespace Elasticsearch

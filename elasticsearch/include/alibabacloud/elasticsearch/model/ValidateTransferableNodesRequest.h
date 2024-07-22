@@ -30,14 +30,14 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ValidateTransferableNodesRequest : publi
 public:
 	ValidateTransferableNodesRequest();
 	~ValidateTransferableNodesRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getNodeType() const;
-	void setNodeType(string nodeType);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getNodeType() const;
+	void setNodeType(const std::string &nodeType);
 
 private:
-	string instanceId_;
-	string nodeType_;
+	std::string instanceId_;
+	std::string nodeType_;
 };
 } // namespace Model
 } // namespace Elasticsearch

@@ -30,26 +30,26 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListTagResourcesRequest : public RoaServ
 public:
 	ListTagResourcesRequest();
 	~ListTagResourcesRequest();
-	integer getSize() const;
-	void setSize(integer size);
-	string getNextToken() const;
-	void setNextToken(string nextToken);
-	integer getPage() const;
-	void setPage(integer page);
-	string getResourceType() const;
-	void setResourceType(string resourceType);
-	string getResourceIds() const;
-	void setResourceIds(string resourceIds);
-	string getTags() const;
-	void setTags(string tags);
+	int getSize() const;
+	void setSize(int size);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
+	int getPage() const;
+	void setPage(int page);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::string getResourceIds() const;
+	void setResourceIds(const std::string &resourceIds);
+	std::string getTags() const;
+	void setTags(const std::string &tags);
 
 private:
-	integer size_;
-	string nextToken_;
-	integer page_;
-	string resourceType_;
-	string resourceIds_;
-	string tags_;
+	int size_;
+	std::string nextToken_;
+	int page_;
+	std::string resourceType_;
+	std::string resourceIds_;
+	std::string tags_;
 };
 } // namespace Model
 } // namespace Elasticsearch

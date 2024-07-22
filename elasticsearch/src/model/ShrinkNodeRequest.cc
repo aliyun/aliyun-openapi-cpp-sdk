@@ -26,47 +26,47 @@ ShrinkNodeRequest::ShrinkNodeRequest()
 
 ShrinkNodeRequest::~ShrinkNodeRequest() {}
 
-boolean ShrinkNodeRequest::getIgnoreStatus() const {
+bool ShrinkNodeRequest::getIgnoreStatus() const {
   return ignoreStatus_;
 }
 
-void ShrinkNodeRequest::setIgnoreStatus(boolean ignoreStatus) {
+void ShrinkNodeRequest::setIgnoreStatus(bool ignoreStatus) {
   ignoreStatus_ = ignoreStatus;
-  setParameter(std::string("ignoreStatus"), std::to_string(ignoreStatus));
+  setParameter(std::string("ignoreStatus"), ignoreStatus ? "true" : "false");
 }
 
-string ShrinkNodeRequest::getInstanceId() const {
+std::string ShrinkNodeRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ShrinkNodeRequest::setInstanceId(string instanceId) {
+void ShrinkNodeRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string ShrinkNodeRequest::getNodeType() const {
+std::string ShrinkNodeRequest::getNodeType() const {
   return nodeType_;
 }
 
-void ShrinkNodeRequest::setNodeType(string nodeType) {
+void ShrinkNodeRequest::setNodeType(const std::string &nodeType) {
   nodeType_ = nodeType;
-  setParameter(std::string("nodeType"), std::to_string(nodeType));
+  setParameter(std::string("nodeType"), nodeType);
 }
 
-string ShrinkNodeRequest::getClientToken() const {
+std::string ShrinkNodeRequest::getClientToken() const {
   return clientToken_;
 }
 
-void ShrinkNodeRequest::setClientToken(string clientToken) {
+void ShrinkNodeRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-integer ShrinkNodeRequest::getCount() const {
+int ShrinkNodeRequest::getCount() const {
   return count_;
 }
 
-void ShrinkNodeRequest::setCount(integer count) {
+void ShrinkNodeRequest::setCount(int count) {
   count_ = count;
   setParameter(std::string("count"), std::to_string(count));
 }

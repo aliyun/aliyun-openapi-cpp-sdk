@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT EstimatedRestartTimeRequest : public Roa
 public:
 	EstimatedRestartTimeRequest();
 	~EstimatedRestartTimeRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	boolean getForce() const;
-	void setForce(boolean force);
-	string getBody() const;
-	void setBody(string body);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	bool getForce() const;
+	void setForce(bool force);
+	std::string getBody() const;
+	void setBody(const std::string &body);
 
 private:
-	string instanceId_;
-	boolean force_;
-	string body_;
+	std::string instanceId_;
+	bool force_;
+	std::string body_;
 };
 } // namespace Model
 } // namespace Elasticsearch

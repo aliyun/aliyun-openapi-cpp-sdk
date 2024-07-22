@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					struct NodeSpec
 					{
 						std::string diskType;
+						std::string specInfo;
 						bool diskEncryption;
 						std::string performanceLevel;
 						std::string spec;
@@ -58,6 +59,7 @@ namespace AlibabaCloud
 					};
 					struct KibanaConfiguration
 					{
+						std::string specInfo;
 						int amount;
 						std::string spec;
 						int disk;
@@ -65,6 +67,7 @@ namespace AlibabaCloud
 					struct MasterConfiguration
 					{
 						std::string diskType;
+						std::string specInfo;
 						int amount;
 						std::string spec;
 						int disk;
@@ -72,6 +75,7 @@ namespace AlibabaCloud
 					struct ClientNodeConfiguration
 					{
 						std::string diskType;
+						std::string specInfo;
 						int amount;
 						std::string spec;
 						int disk;
@@ -79,6 +83,7 @@ namespace AlibabaCloud
 					struct WarmNodeConfiguration
 					{
 						std::string diskType;
+						std::string specInfo;
 						bool diskEncryption;
 						int amount;
 						std::string spec;
@@ -91,6 +96,7 @@ namespace AlibabaCloud
 					struct ElasticDataNodeConfiguration
 					{
 						std::string diskType;
+						std::string specInfo;
 						bool diskEncryption;
 						int amount;
 						std::string spec;
@@ -164,6 +170,7 @@ namespace AlibabaCloud
 					ClientNodeConfiguration clientNodeConfiguration;
 					std::string description;
 					bool enablePublic;
+					std::string archType;
 					bool advancedDedicateMaster;
 					std::string paymentType;
 					std::string protocol;
@@ -173,11 +180,13 @@ namespace AlibabaCloud
 					bool enableKibanaPublicNetwork;
 					NetworkConfig networkConfig;
 					AdvancedSetting advancedSetting;
+					std::string instanceCategory;
 					int nodeAmount;
 					std::string esVersion;
 					std::string updatedAt;
 					std::string publicDomain;
 					std::string esConfig;
+					long endtime;
 					std::vector<std::string> esIPWhitelist;
 					std::vector<std::string> kibanaIPWhitelist;
 					std::vector<std::string> privateNetworkIpWhiteList;

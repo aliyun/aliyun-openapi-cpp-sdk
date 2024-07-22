@@ -26,30 +26,30 @@ ListAckNamespacesRequest::ListAckNamespacesRequest()
 
 ListAckNamespacesRequest::~ListAckNamespacesRequest() {}
 
-integer ListAckNamespacesRequest::getSize() const {
+int ListAckNamespacesRequest::getSize() const {
   return size_;
 }
 
-void ListAckNamespacesRequest::setSize(integer size) {
+void ListAckNamespacesRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-integer ListAckNamespacesRequest::getPage() const {
+int ListAckNamespacesRequest::getPage() const {
   return page_;
 }
 
-void ListAckNamespacesRequest::setPage(integer page) {
+void ListAckNamespacesRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }
 
-string ListAckNamespacesRequest::getClusterId() const {
+std::string ListAckNamespacesRequest::getClusterId() const {
   return clusterId_;
 }
 
-void ListAckNamespacesRequest::setClusterId(string clusterId) {
+void ListAckNamespacesRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

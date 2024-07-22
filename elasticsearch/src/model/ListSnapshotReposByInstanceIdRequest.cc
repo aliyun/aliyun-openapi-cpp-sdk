@@ -26,12 +26,12 @@ ListSnapshotReposByInstanceIdRequest::ListSnapshotReposByInstanceIdRequest()
 
 ListSnapshotReposByInstanceIdRequest::~ListSnapshotReposByInstanceIdRequest() {}
 
-string ListSnapshotReposByInstanceIdRequest::getInstanceId() const {
+std::string ListSnapshotReposByInstanceIdRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListSnapshotReposByInstanceIdRequest::setInstanceId(string instanceId) {
+void ListSnapshotReposByInstanceIdRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT CloseManagedIndexRequest : public RoaSer
 public:
 	CloseManagedIndexRequest();
 	~CloseManagedIndexRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	string getIndex() const;
-	void setIndex(string index);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getIndex() const;
+	void setIndex(const std::string &index);
 
 private:
-	string instanceId_;
-	string clientToken_;
-	string index_;
+	std::string instanceId_;
+	std::string clientToken_;
+	std::string index_;
 };
 } // namespace Model
 } // namespace Elasticsearch

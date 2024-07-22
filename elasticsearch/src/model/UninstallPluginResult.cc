@@ -39,7 +39,7 @@ void UninstallPluginResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResult = value["Result"]["Result"];
+	auto allResult = value["Result"]["result"];
 	for (const auto &item : allResult)
 		result_.push_back(item.asString());
 

@@ -26,21 +26,21 @@ DescribePipelineRequest::DescribePipelineRequest()
 
 DescribePipelineRequest::~DescribePipelineRequest() {}
 
-string DescribePipelineRequest::getInstanceId() const {
+std::string DescribePipelineRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribePipelineRequest::setInstanceId(string instanceId) {
+void DescribePipelineRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DescribePipelineRequest::getPipelineId() const {
+std::string DescribePipelineRequest::getPipelineId() const {
   return pipelineId_;
 }
 
-void DescribePipelineRequest::setPipelineId(string pipelineId) {
+void DescribePipelineRequest::setPipelineId(const std::string &pipelineId) {
   pipelineId_ = pipelineId;
-  setParameter(std::string("PipelineId"), std::to_string(pipelineId));
+  setParameter(std::string("PipelineId"), pipelineId);
 }
 

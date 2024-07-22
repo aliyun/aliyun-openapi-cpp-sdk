@@ -26,12 +26,12 @@ GetClusterDataInformationRequest::GetClusterDataInformationRequest()
 
 GetClusterDataInformationRequest::~GetClusterDataInformationRequest() {}
 
-string GetClusterDataInformationRequest::getBody() const {
+std::string GetClusterDataInformationRequest::getBody() const {
   return body_;
 }
 
-void GetClusterDataInformationRequest::setBody(string body) {
+void GetClusterDataInformationRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

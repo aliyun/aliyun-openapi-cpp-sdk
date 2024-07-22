@@ -26,30 +26,30 @@ ReinstallCollectorRequest::ReinstallCollectorRequest()
 
 ReinstallCollectorRequest::~ReinstallCollectorRequest() {}
 
-string ReinstallCollectorRequest::getClientToken() const {
+std::string ReinstallCollectorRequest::getClientToken() const {
   return clientToken_;
 }
 
-void ReinstallCollectorRequest::setClientToken(string clientToken) {
+void ReinstallCollectorRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string ReinstallCollectorRequest::getBody() const {
+std::string ReinstallCollectorRequest::getBody() const {
   return body_;
 }
 
-void ReinstallCollectorRequest::setBody(string body) {
+void ReinstallCollectorRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 
-string ReinstallCollectorRequest::getResId() const {
+std::string ReinstallCollectorRequest::getResId() const {
   return resId_;
 }
 
-void ReinstallCollectorRequest::setResId(string resId) {
+void ReinstallCollectorRequest::setResId(const std::string &resId) {
   resId_ = resId;
-  setParameter(std::string("ResId"), std::to_string(resId));
+  setParameter(std::string("ResId"), resId);
 }
 

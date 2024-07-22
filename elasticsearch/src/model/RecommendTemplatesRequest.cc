@@ -26,21 +26,21 @@ RecommendTemplatesRequest::RecommendTemplatesRequest()
 
 RecommendTemplatesRequest::~RecommendTemplatesRequest() {}
 
-string RecommendTemplatesRequest::getInstanceId() const {
+std::string RecommendTemplatesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void RecommendTemplatesRequest::setInstanceId(string instanceId) {
+void RecommendTemplatesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string RecommendTemplatesRequest::getUsageScenario() const {
+std::string RecommendTemplatesRequest::getUsageScenario() const {
   return usageScenario_;
 }
 
-void RecommendTemplatesRequest::setUsageScenario(string usageScenario) {
+void RecommendTemplatesRequest::setUsageScenario(const std::string &usageScenario) {
   usageScenario_ = usageScenario;
-  setParameter(std::string("usageScenario"), std::to_string(usageScenario));
+  setParameter(std::string("usageScenario"), usageScenario);
 }
 

@@ -26,30 +26,30 @@ EstimatedRestartTimeRequest::EstimatedRestartTimeRequest()
 
 EstimatedRestartTimeRequest::~EstimatedRestartTimeRequest() {}
 
-string EstimatedRestartTimeRequest::getInstanceId() const {
+std::string EstimatedRestartTimeRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void EstimatedRestartTimeRequest::setInstanceId(string instanceId) {
+void EstimatedRestartTimeRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-boolean EstimatedRestartTimeRequest::getForce() const {
+bool EstimatedRestartTimeRequest::getForce() const {
   return force_;
 }
 
-void EstimatedRestartTimeRequest::setForce(boolean force) {
+void EstimatedRestartTimeRequest::setForce(bool force) {
   force_ = force;
-  setParameter(std::string("force"), std::to_string(force));
+  setParameter(std::string("force"), force ? "true" : "false");
 }
 
-string EstimatedRestartTimeRequest::getBody() const {
+std::string EstimatedRestartTimeRequest::getBody() const {
   return body_;
 }
 
-void EstimatedRestartTimeRequest::setBody(string body) {
+void EstimatedRestartTimeRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

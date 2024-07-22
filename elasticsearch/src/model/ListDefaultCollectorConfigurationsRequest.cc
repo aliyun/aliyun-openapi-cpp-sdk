@@ -26,30 +26,30 @@ ListDefaultCollectorConfigurationsRequest::ListDefaultCollectorConfigurationsReq
 
 ListDefaultCollectorConfigurationsRequest::~ListDefaultCollectorConfigurationsRequest() {}
 
-string ListDefaultCollectorConfigurationsRequest::getResType() const {
+std::string ListDefaultCollectorConfigurationsRequest::getResType() const {
   return resType_;
 }
 
-void ListDefaultCollectorConfigurationsRequest::setResType(string resType) {
+void ListDefaultCollectorConfigurationsRequest::setResType(const std::string &resType) {
   resType_ = resType;
-  setParameter(std::string("resType"), std::to_string(resType));
+  setParameter(std::string("resType"), resType);
 }
 
-string ListDefaultCollectorConfigurationsRequest::getResVersion() const {
+std::string ListDefaultCollectorConfigurationsRequest::getResVersion() const {
   return resVersion_;
 }
 
-void ListDefaultCollectorConfigurationsRequest::setResVersion(string resVersion) {
+void ListDefaultCollectorConfigurationsRequest::setResVersion(const std::string &resVersion) {
   resVersion_ = resVersion;
-  setParameter(std::string("resVersion"), std::to_string(resVersion));
+  setParameter(std::string("resVersion"), resVersion);
 }
 
-string ListDefaultCollectorConfigurationsRequest::getSourceType() const {
+std::string ListDefaultCollectorConfigurationsRequest::getSourceType() const {
   return sourceType_;
 }
 
-void ListDefaultCollectorConfigurationsRequest::setSourceType(string sourceType) {
+void ListDefaultCollectorConfigurationsRequest::setSourceType(const std::string &sourceType) {
   sourceType_ = sourceType;
-  setParameter(std::string("sourceType"), std::to_string(sourceType));
+  setParameter(std::string("sourceType"), sourceType);
 }
 

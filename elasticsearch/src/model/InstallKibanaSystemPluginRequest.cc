@@ -26,30 +26,30 @@ InstallKibanaSystemPluginRequest::InstallKibanaSystemPluginRequest()
 
 InstallKibanaSystemPluginRequest::~InstallKibanaSystemPluginRequest() {}
 
-string InstallKibanaSystemPluginRequest::getInstanceId() const {
+std::string InstallKibanaSystemPluginRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void InstallKibanaSystemPluginRequest::setInstanceId(string instanceId) {
+void InstallKibanaSystemPluginRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string InstallKibanaSystemPluginRequest::getClientToken() const {
+std::string InstallKibanaSystemPluginRequest::getClientToken() const {
   return clientToken_;
 }
 
-void InstallKibanaSystemPluginRequest::setClientToken(string clientToken) {
+void InstallKibanaSystemPluginRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string InstallKibanaSystemPluginRequest::getBody() const {
+std::string InstallKibanaSystemPluginRequest::getBody() const {
   return body_;
 }
 
-void InstallKibanaSystemPluginRequest::setBody(string body) {
+void InstallKibanaSystemPluginRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

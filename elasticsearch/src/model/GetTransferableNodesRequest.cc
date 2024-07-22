@@ -26,29 +26,29 @@ GetTransferableNodesRequest::GetTransferableNodesRequest()
 
 GetTransferableNodesRequest::~GetTransferableNodesRequest() {}
 
-string GetTransferableNodesRequest::getInstanceId() const {
+std::string GetTransferableNodesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void GetTransferableNodesRequest::setInstanceId(string instanceId) {
+void GetTransferableNodesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string GetTransferableNodesRequest::getNodeType() const {
+std::string GetTransferableNodesRequest::getNodeType() const {
   return nodeType_;
 }
 
-void GetTransferableNodesRequest::setNodeType(string nodeType) {
+void GetTransferableNodesRequest::setNodeType(const std::string &nodeType) {
   nodeType_ = nodeType;
-  setParameter(std::string("nodeType"), std::to_string(nodeType));
+  setParameter(std::string("nodeType"), nodeType);
 }
 
-integer GetTransferableNodesRequest::getCount() const {
+int GetTransferableNodesRequest::getCount() const {
   return count_;
 }
 
-void GetTransferableNodesRequest::setCount(integer count) {
+void GetTransferableNodesRequest::setCount(int count) {
   count_ = count;
   setParameter(std::string("count"), std::to_string(count));
 }

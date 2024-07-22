@@ -48,8 +48,6 @@
 #include "model/CreateComponentIndexResult.h"
 #include "model/CreateDataStreamRequest.h"
 #include "model/CreateDataStreamResult.h"
-#include "model/CreateDataTasksRequest.h"
-#include "model/CreateDataTasksResult.h"
 #include "model/CreateILMPolicyRequest.h"
 #include "model/CreateILMPolicyResult.h"
 #include "model/CreateIndexTemplateRequest.h"
@@ -136,6 +134,10 @@
 #include "model/DescribeXpackMonitorConfigResult.h"
 #include "model/DiagnoseInstanceRequest.h"
 #include "model/DiagnoseInstanceResult.h"
+#include "model/DisableKibanaPvlNetworkRequest.h"
+#include "model/DisableKibanaPvlNetworkResult.h"
+#include "model/EnableKibanaPvlNetworkRequest.h"
+#include "model/EnableKibanaPvlNetworkResult.h"
 #include "model/EstimatedLogstashRestartTimeRequest.h"
 #include "model/EstimatedLogstashRestartTimeResult.h"
 #include "model/EstimatedRestartTimeRequest.h"
@@ -154,6 +156,8 @@
 #include "model/GetOpenStoreUsageResult.h"
 #include "model/GetRegionConfigurationRequest.h"
 #include "model/GetRegionConfigurationResult.h"
+#include "model/GetRegionalInstanceConfigRequest.h"
+#include "model/GetRegionalInstanceConfigResult.h"
 #include "model/GetSuggestShrinkableNodesRequest.h"
 #include "model/GetSuggestShrinkableNodesResult.h"
 #include "model/GetTransferableNodesRequest.h"
@@ -208,6 +212,8 @@
 #include "model/ListDiagnoseReportResult.h"
 #include "model/ListDiagnoseReportIdsRequest.h"
 #include "model/ListDiagnoseReportIdsResult.h"
+#include "model/ListDiagnosisItemsRequest.h"
+#include "model/ListDiagnosisItemsResult.h"
 #include "model/ListDictInformationRequest.h"
 #include "model/ListDictInformationResult.h"
 #include "model/ListDictsRequest.h"
@@ -228,6 +234,8 @@
 #include "model/ListInstanceIndicesResult.h"
 #include "model/ListKibanaPluginsRequest.h"
 #include "model/ListKibanaPluginsResult.h"
+#include "model/ListKibanaPvlNetworkRequest.h"
+#include "model/ListKibanaPvlNetworkResult.h"
 #include "model/ListLogstashRequest.h"
 #include "model/ListLogstashResult.h"
 #include "model/ListLogstashLogRequest.h"
@@ -362,6 +370,8 @@
 #include "model/UpdateInstanceChargeTypeResult.h"
 #include "model/UpdateInstanceSettingsRequest.h"
 #include "model/UpdateInstanceSettingsResult.h"
+#include "model/UpdateKibanaPvlNetworkRequest.h"
+#include "model/UpdateKibanaPvlNetworkResult.h"
 #include "model/UpdateKibanaSettingsRequest.h"
 #include "model/UpdateKibanaSettingsResult.h"
 #include "model/UpdateKibanaWhiteIpsRequest.h"
@@ -454,9 +464,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDataStreamResult> CreateDataStreamOutcome;
 			typedef std::future<CreateDataStreamOutcome> CreateDataStreamOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::CreateDataStreamRequest&, const CreateDataStreamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataStreamAsyncHandler;
-			typedef Outcome<Error, Model::CreateDataTasksResult> CreateDataTasksOutcome;
-			typedef std::future<CreateDataTasksOutcome> CreateDataTasksOutcomeCallable;
-			typedef std::function<void(const ElasticsearchClient*, const Model::CreateDataTasksRequest&, const CreateDataTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataTasksAsyncHandler;
 			typedef Outcome<Error, Model::CreateILMPolicyResult> CreateILMPolicyOutcome;
 			typedef std::future<CreateILMPolicyOutcome> CreateILMPolicyOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::CreateILMPolicyRequest&, const CreateILMPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateILMPolicyAsyncHandler;
@@ -586,6 +593,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DiagnoseInstanceResult> DiagnoseInstanceOutcome;
 			typedef std::future<DiagnoseInstanceOutcome> DiagnoseInstanceOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DiagnoseInstanceRequest&, const DiagnoseInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DiagnoseInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DisableKibanaPvlNetworkResult> DisableKibanaPvlNetworkOutcome;
+			typedef std::future<DisableKibanaPvlNetworkOutcome> DisableKibanaPvlNetworkOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DisableKibanaPvlNetworkRequest&, const DisableKibanaPvlNetworkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableKibanaPvlNetworkAsyncHandler;
+			typedef Outcome<Error, Model::EnableKibanaPvlNetworkResult> EnableKibanaPvlNetworkOutcome;
+			typedef std::future<EnableKibanaPvlNetworkOutcome> EnableKibanaPvlNetworkOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::EnableKibanaPvlNetworkRequest&, const EnableKibanaPvlNetworkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableKibanaPvlNetworkAsyncHandler;
 			typedef Outcome<Error, Model::EstimatedLogstashRestartTimeResult> EstimatedLogstashRestartTimeOutcome;
 			typedef std::future<EstimatedLogstashRestartTimeOutcome> EstimatedLogstashRestartTimeOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::EstimatedLogstashRestartTimeRequest&, const EstimatedLogstashRestartTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EstimatedLogstashRestartTimeAsyncHandler;
@@ -613,6 +626,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetRegionConfigurationResult> GetRegionConfigurationOutcome;
 			typedef std::future<GetRegionConfigurationOutcome> GetRegionConfigurationOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::GetRegionConfigurationRequest&, const GetRegionConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRegionConfigurationAsyncHandler;
+			typedef Outcome<Error, Model::GetRegionalInstanceConfigResult> GetRegionalInstanceConfigOutcome;
+			typedef std::future<GetRegionalInstanceConfigOutcome> GetRegionalInstanceConfigOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::GetRegionalInstanceConfigRequest&, const GetRegionalInstanceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRegionalInstanceConfigAsyncHandler;
 			typedef Outcome<Error, Model::GetSuggestShrinkableNodesResult> GetSuggestShrinkableNodesOutcome;
 			typedef std::future<GetSuggestShrinkableNodesOutcome> GetSuggestShrinkableNodesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::GetSuggestShrinkableNodesRequest&, const GetSuggestShrinkableNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSuggestShrinkableNodesAsyncHandler;
@@ -694,6 +710,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDiagnoseReportIdsResult> ListDiagnoseReportIdsOutcome;
 			typedef std::future<ListDiagnoseReportIdsOutcome> ListDiagnoseReportIdsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListDiagnoseReportIdsRequest&, const ListDiagnoseReportIdsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDiagnoseReportIdsAsyncHandler;
+			typedef Outcome<Error, Model::ListDiagnosisItemsResult> ListDiagnosisItemsOutcome;
+			typedef std::future<ListDiagnosisItemsOutcome> ListDiagnosisItemsOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListDiagnosisItemsRequest&, const ListDiagnosisItemsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDiagnosisItemsAsyncHandler;
 			typedef Outcome<Error, Model::ListDictInformationResult> ListDictInformationOutcome;
 			typedef std::future<ListDictInformationOutcome> ListDictInformationOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListDictInformationRequest&, const ListDictInformationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDictInformationAsyncHandler;
@@ -724,6 +743,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListKibanaPluginsResult> ListKibanaPluginsOutcome;
 			typedef std::future<ListKibanaPluginsOutcome> ListKibanaPluginsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListKibanaPluginsRequest&, const ListKibanaPluginsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListKibanaPluginsAsyncHandler;
+			typedef Outcome<Error, Model::ListKibanaPvlNetworkResult> ListKibanaPvlNetworkOutcome;
+			typedef std::future<ListKibanaPvlNetworkOutcome> ListKibanaPvlNetworkOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListKibanaPvlNetworkRequest&, const ListKibanaPvlNetworkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListKibanaPvlNetworkAsyncHandler;
 			typedef Outcome<Error, Model::ListLogstashResult> ListLogstashOutcome;
 			typedef std::future<ListLogstashOutcome> ListLogstashOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListLogstashRequest&, const ListLogstashOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListLogstashAsyncHandler;
@@ -925,6 +947,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateInstanceSettingsResult> UpdateInstanceSettingsOutcome;
 			typedef std::future<UpdateInstanceSettingsOutcome> UpdateInstanceSettingsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateInstanceSettingsRequest&, const UpdateInstanceSettingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceSettingsAsyncHandler;
+			typedef Outcome<Error, Model::UpdateKibanaPvlNetworkResult> UpdateKibanaPvlNetworkOutcome;
+			typedef std::future<UpdateKibanaPvlNetworkOutcome> UpdateKibanaPvlNetworkOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateKibanaPvlNetworkRequest&, const UpdateKibanaPvlNetworkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateKibanaPvlNetworkAsyncHandler;
 			typedef Outcome<Error, Model::UpdateKibanaSettingsResult> UpdateKibanaSettingsOutcome;
 			typedef std::future<UpdateKibanaSettingsOutcome> UpdateKibanaSettingsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateKibanaSettingsRequest&, const UpdateKibanaSettingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateKibanaSettingsAsyncHandler;
@@ -1035,9 +1060,6 @@ namespace AlibabaCloud
 			CreateDataStreamOutcome createDataStream(const Model::CreateDataStreamRequest &request)const;
 			void createDataStreamAsync(const Model::CreateDataStreamRequest& request, const CreateDataStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDataStreamOutcomeCallable createDataStreamCallable(const Model::CreateDataStreamRequest& request) const;
-			CreateDataTasksOutcome createDataTasks(const Model::CreateDataTasksRequest &request)const;
-			void createDataTasksAsync(const Model::CreateDataTasksRequest& request, const CreateDataTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateDataTasksOutcomeCallable createDataTasksCallable(const Model::CreateDataTasksRequest& request) const;
 			CreateILMPolicyOutcome createILMPolicy(const Model::CreateILMPolicyRequest &request)const;
 			void createILMPolicyAsync(const Model::CreateILMPolicyRequest& request, const CreateILMPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateILMPolicyOutcomeCallable createILMPolicyCallable(const Model::CreateILMPolicyRequest& request) const;
@@ -1167,6 +1189,12 @@ namespace AlibabaCloud
 			DiagnoseInstanceOutcome diagnoseInstance(const Model::DiagnoseInstanceRequest &request)const;
 			void diagnoseInstanceAsync(const Model::DiagnoseInstanceRequest& request, const DiagnoseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DiagnoseInstanceOutcomeCallable diagnoseInstanceCallable(const Model::DiagnoseInstanceRequest& request) const;
+			DisableKibanaPvlNetworkOutcome disableKibanaPvlNetwork(const Model::DisableKibanaPvlNetworkRequest &request)const;
+			void disableKibanaPvlNetworkAsync(const Model::DisableKibanaPvlNetworkRequest& request, const DisableKibanaPvlNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DisableKibanaPvlNetworkOutcomeCallable disableKibanaPvlNetworkCallable(const Model::DisableKibanaPvlNetworkRequest& request) const;
+			EnableKibanaPvlNetworkOutcome enableKibanaPvlNetwork(const Model::EnableKibanaPvlNetworkRequest &request)const;
+			void enableKibanaPvlNetworkAsync(const Model::EnableKibanaPvlNetworkRequest& request, const EnableKibanaPvlNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableKibanaPvlNetworkOutcomeCallable enableKibanaPvlNetworkCallable(const Model::EnableKibanaPvlNetworkRequest& request) const;
 			EstimatedLogstashRestartTimeOutcome estimatedLogstashRestartTime(const Model::EstimatedLogstashRestartTimeRequest &request)const;
 			void estimatedLogstashRestartTimeAsync(const Model::EstimatedLogstashRestartTimeRequest& request, const EstimatedLogstashRestartTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EstimatedLogstashRestartTimeOutcomeCallable estimatedLogstashRestartTimeCallable(const Model::EstimatedLogstashRestartTimeRequest& request) const;
@@ -1194,6 +1222,9 @@ namespace AlibabaCloud
 			GetRegionConfigurationOutcome getRegionConfiguration(const Model::GetRegionConfigurationRequest &request)const;
 			void getRegionConfigurationAsync(const Model::GetRegionConfigurationRequest& request, const GetRegionConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRegionConfigurationOutcomeCallable getRegionConfigurationCallable(const Model::GetRegionConfigurationRequest& request) const;
+			GetRegionalInstanceConfigOutcome getRegionalInstanceConfig(const Model::GetRegionalInstanceConfigRequest &request)const;
+			void getRegionalInstanceConfigAsync(const Model::GetRegionalInstanceConfigRequest& request, const GetRegionalInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetRegionalInstanceConfigOutcomeCallable getRegionalInstanceConfigCallable(const Model::GetRegionalInstanceConfigRequest& request) const;
 			GetSuggestShrinkableNodesOutcome getSuggestShrinkableNodes(const Model::GetSuggestShrinkableNodesRequest &request)const;
 			void getSuggestShrinkableNodesAsync(const Model::GetSuggestShrinkableNodesRequest& request, const GetSuggestShrinkableNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSuggestShrinkableNodesOutcomeCallable getSuggestShrinkableNodesCallable(const Model::GetSuggestShrinkableNodesRequest& request) const;
@@ -1275,6 +1306,9 @@ namespace AlibabaCloud
 			ListDiagnoseReportIdsOutcome listDiagnoseReportIds(const Model::ListDiagnoseReportIdsRequest &request)const;
 			void listDiagnoseReportIdsAsync(const Model::ListDiagnoseReportIdsRequest& request, const ListDiagnoseReportIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDiagnoseReportIdsOutcomeCallable listDiagnoseReportIdsCallable(const Model::ListDiagnoseReportIdsRequest& request) const;
+			ListDiagnosisItemsOutcome listDiagnosisItems(const Model::ListDiagnosisItemsRequest &request)const;
+			void listDiagnosisItemsAsync(const Model::ListDiagnosisItemsRequest& request, const ListDiagnosisItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDiagnosisItemsOutcomeCallable listDiagnosisItemsCallable(const Model::ListDiagnosisItemsRequest& request) const;
 			ListDictInformationOutcome listDictInformation(const Model::ListDictInformationRequest &request)const;
 			void listDictInformationAsync(const Model::ListDictInformationRequest& request, const ListDictInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDictInformationOutcomeCallable listDictInformationCallable(const Model::ListDictInformationRequest& request) const;
@@ -1305,6 +1339,9 @@ namespace AlibabaCloud
 			ListKibanaPluginsOutcome listKibanaPlugins(const Model::ListKibanaPluginsRequest &request)const;
 			void listKibanaPluginsAsync(const Model::ListKibanaPluginsRequest& request, const ListKibanaPluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListKibanaPluginsOutcomeCallable listKibanaPluginsCallable(const Model::ListKibanaPluginsRequest& request) const;
+			ListKibanaPvlNetworkOutcome listKibanaPvlNetwork(const Model::ListKibanaPvlNetworkRequest &request)const;
+			void listKibanaPvlNetworkAsync(const Model::ListKibanaPvlNetworkRequest& request, const ListKibanaPvlNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListKibanaPvlNetworkOutcomeCallable listKibanaPvlNetworkCallable(const Model::ListKibanaPvlNetworkRequest& request) const;
 			ListLogstashOutcome listLogstash(const Model::ListLogstashRequest &request)const;
 			void listLogstashAsync(const Model::ListLogstashRequest& request, const ListLogstashAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListLogstashOutcomeCallable listLogstashCallable(const Model::ListLogstashRequest& request) const;
@@ -1506,6 +1543,9 @@ namespace AlibabaCloud
 			UpdateInstanceSettingsOutcome updateInstanceSettings(const Model::UpdateInstanceSettingsRequest &request)const;
 			void updateInstanceSettingsAsync(const Model::UpdateInstanceSettingsRequest& request, const UpdateInstanceSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateInstanceSettingsOutcomeCallable updateInstanceSettingsCallable(const Model::UpdateInstanceSettingsRequest& request) const;
+			UpdateKibanaPvlNetworkOutcome updateKibanaPvlNetwork(const Model::UpdateKibanaPvlNetworkRequest &request)const;
+			void updateKibanaPvlNetworkAsync(const Model::UpdateKibanaPvlNetworkRequest& request, const UpdateKibanaPvlNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateKibanaPvlNetworkOutcomeCallable updateKibanaPvlNetworkCallable(const Model::UpdateKibanaPvlNetworkRequest& request) const;
 			UpdateKibanaSettingsOutcome updateKibanaSettings(const Model::UpdateKibanaSettingsRequest &request)const;
 			void updateKibanaSettingsAsync(const Model::UpdateKibanaSettingsRequest& request, const UpdateKibanaSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateKibanaSettingsOutcomeCallable updateKibanaSettingsCallable(const Model::UpdateKibanaSettingsRequest& request) const;

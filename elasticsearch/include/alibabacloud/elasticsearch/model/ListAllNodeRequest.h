@@ -30,14 +30,14 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListAllNodeRequest : public RoaServiceRe
 public:
 	ListAllNodeRequest();
 	~ListAllNodeRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	boolean getExtended() const;
-	void setExtended(boolean extended);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	bool getExtended() const;
+	void setExtended(bool extended);
 
 private:
-	string instanceId_;
-	boolean extended_;
+	std::string instanceId_;
+	bool extended_;
 };
 } // namespace Model
 } // namespace Elasticsearch

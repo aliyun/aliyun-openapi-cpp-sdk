@@ -26,21 +26,21 @@ DescribeConnectableClustersRequest::DescribeConnectableClustersRequest()
 
 DescribeConnectableClustersRequest::~DescribeConnectableClustersRequest() {}
 
-string DescribeConnectableClustersRequest::getInstanceId() const {
+std::string DescribeConnectableClustersRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribeConnectableClustersRequest::setInstanceId(string instanceId) {
+void DescribeConnectableClustersRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-boolean DescribeConnectableClustersRequest::getAlreadySetItems() const {
+bool DescribeConnectableClustersRequest::getAlreadySetItems() const {
   return alreadySetItems_;
 }
 
-void DescribeConnectableClustersRequest::setAlreadySetItems(boolean alreadySetItems) {
+void DescribeConnectableClustersRequest::setAlreadySetItems(bool alreadySetItems) {
   alreadySetItems_ = alreadySetItems;
-  setParameter(std::string("alreadySetItems"), std::to_string(alreadySetItems));
+  setParameter(std::string("alreadySetItems"), alreadySetItems ? "true" : "false");
 }
 

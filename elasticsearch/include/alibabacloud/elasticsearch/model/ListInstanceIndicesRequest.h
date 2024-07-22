@@ -30,29 +30,29 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListInstanceIndicesRequest : public RoaS
 public:
 	ListInstanceIndicesRequest();
 	~ListInstanceIndicesRequest();
-	boolean getAll() const;
-	void setAll(boolean all);
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	boolean getIsManaged() const;
-	void setIsManaged(boolean isManaged);
-	integer getSize() const;
-	void setSize(integer size);
-	string getName() const;
-	void setName(string name);
-	integer getPage() const;
-	void setPage(integer page);
-	boolean getIsOpenstore() const;
-	void setIsOpenstore(boolean isOpenstore);
+	bool getAll() const;
+	void setAll(bool all);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	bool getIsManaged() const;
+	void setIsManaged(bool isManaged);
+	int getSize() const;
+	void setSize(int size);
+	std::string getName() const;
+	void setName(const std::string &name);
+	int getPage() const;
+	void setPage(int page);
+	bool getIsOpenstore() const;
+	void setIsOpenstore(bool isOpenstore);
 
 private:
-	boolean all_;
-	string instanceId_;
-	boolean isManaged_;
-	integer size_;
-	string name_;
-	integer page_;
-	boolean isOpenstore_;
+	bool all_;
+	std::string instanceId_;
+	bool isManaged_;
+	int size_;
+	std::string name_;
+	int page_;
+	bool isOpenstore_;
 };
 } // namespace Model
 } // namespace Elasticsearch

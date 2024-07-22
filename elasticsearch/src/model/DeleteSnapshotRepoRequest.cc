@@ -26,30 +26,30 @@ DeleteSnapshotRepoRequest::DeleteSnapshotRepoRequest()
 
 DeleteSnapshotRepoRequest::~DeleteSnapshotRepoRequest() {}
 
-string DeleteSnapshotRepoRequest::getInstanceId() const {
+std::string DeleteSnapshotRepoRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DeleteSnapshotRepoRequest::setInstanceId(string instanceId) {
+void DeleteSnapshotRepoRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DeleteSnapshotRepoRequest::getClientToken() const {
+std::string DeleteSnapshotRepoRequest::getClientToken() const {
   return clientToken_;
 }
 
-void DeleteSnapshotRepoRequest::setClientToken(string clientToken) {
+void DeleteSnapshotRepoRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string DeleteSnapshotRepoRequest::getRepoPath() const {
+std::string DeleteSnapshotRepoRequest::getRepoPath() const {
   return repoPath_;
 }
 
-void DeleteSnapshotRepoRequest::setRepoPath(string repoPath) {
+void DeleteSnapshotRepoRequest::setRepoPath(const std::string &repoPath) {
   repoPath_ = repoPath;
-  setParameter(std::string("repoPath"), std::to_string(repoPath));
+  setParameter(std::string("repoPath"), repoPath);
 }
 

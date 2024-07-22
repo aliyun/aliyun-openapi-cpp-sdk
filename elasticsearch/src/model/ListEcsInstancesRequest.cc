@@ -26,57 +26,57 @@ ListEcsInstancesRequest::ListEcsInstancesRequest()
 
 ListEcsInstancesRequest::~ListEcsInstancesRequest() {}
 
-string ListEcsInstancesRequest::getEcsInstanceName() const {
+std::string ListEcsInstancesRequest::getEcsInstanceName() const {
   return ecsInstanceName_;
 }
 
-void ListEcsInstancesRequest::setEcsInstanceName(string ecsInstanceName) {
+void ListEcsInstancesRequest::setEcsInstanceName(const std::string &ecsInstanceName) {
   ecsInstanceName_ = ecsInstanceName;
-  setParameter(std::string("ecsInstanceName"), std::to_string(ecsInstanceName));
+  setParameter(std::string("ecsInstanceName"), ecsInstanceName);
 }
 
-string ListEcsInstancesRequest::getEcsInstanceIds() const {
+std::string ListEcsInstancesRequest::getEcsInstanceIds() const {
   return ecsInstanceIds_;
 }
 
-void ListEcsInstancesRequest::setEcsInstanceIds(string ecsInstanceIds) {
+void ListEcsInstancesRequest::setEcsInstanceIds(const std::string &ecsInstanceIds) {
   ecsInstanceIds_ = ecsInstanceIds;
-  setParameter(std::string("ecsInstanceIds"), std::to_string(ecsInstanceIds));
+  setParameter(std::string("ecsInstanceIds"), ecsInstanceIds);
 }
 
-integer ListEcsInstancesRequest::getSize() const {
+int ListEcsInstancesRequest::getSize() const {
   return size_;
 }
 
-void ListEcsInstancesRequest::setSize(integer size) {
+void ListEcsInstancesRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-string ListEcsInstancesRequest::getVpcId() const {
+std::string ListEcsInstancesRequest::getVpcId() const {
   return vpcId_;
 }
 
-void ListEcsInstancesRequest::setVpcId(string vpcId) {
+void ListEcsInstancesRequest::setVpcId(const std::string &vpcId) {
   vpcId_ = vpcId;
-  setParameter(std::string("vpcId"), std::to_string(vpcId));
+  setParameter(std::string("vpcId"), vpcId);
 }
 
-integer ListEcsInstancesRequest::getPage() const {
+int ListEcsInstancesRequest::getPage() const {
   return page_;
 }
 
-void ListEcsInstancesRequest::setPage(integer page) {
+void ListEcsInstancesRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }
 
-string ListEcsInstancesRequest::getTags() const {
+std::string ListEcsInstancesRequest::getTags() const {
   return tags_;
 }
 
-void ListEcsInstancesRequest::setTags(string tags) {
+void ListEcsInstancesRequest::setTags(const std::string &tags) {
   tags_ = tags;
-  setParameter(std::string("tags"), std::to_string(tags));
+  setParameter(std::string("tags"), tags);
 }
 

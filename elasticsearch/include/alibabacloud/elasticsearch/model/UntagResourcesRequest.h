@@ -30,23 +30,23 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT UntagResourcesRequest : public RoaServic
 public:
 	UntagResourcesRequest();
 	~UntagResourcesRequest();
-	boolean getAll() const;
-	void setAll(boolean all);
-	string getTagKeys() const;
-	void setTagKeys(string tagKeys);
-	string getBody() const;
-	void setBody(string body);
-	string getResourceType() const;
-	void setResourceType(string resourceType);
-	string getResourceIds() const;
-	void setResourceIds(string resourceIds);
+	bool getAll() const;
+	void setAll(bool all);
+	std::string getTagKeys() const;
+	void setTagKeys(const std::string &tagKeys);
+	std::string getBody() const;
+	void setBody(const std::string &body);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::string getResourceIds() const;
+	void setResourceIds(const std::string &resourceIds);
 
 private:
-	boolean all_;
-	string tagKeys_;
-	string body_;
-	string resourceType_;
-	string resourceIds_;
+	bool all_;
+	std::string tagKeys_;
+	std::string body_;
+	std::string resourceType_;
+	std::string resourceIds_;
 };
 } // namespace Model
 } // namespace Elasticsearch

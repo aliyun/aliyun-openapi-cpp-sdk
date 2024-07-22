@@ -30,23 +30,23 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListLogstashPluginsRequest : public RoaS
 public:
 	ListLogstashPluginsRequest();
 	~ListLogstashPluginsRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	integer getSize() const;
-	void setSize(integer size);
-	string getName() const;
-	void setName(string name);
-	integer getPage() const;
-	void setPage(integer page);
-	string getSource() const;
-	void setSource(string source);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	int getSize() const;
+	void setSize(int size);
+	std::string getName() const;
+	void setName(const std::string &name);
+	int getPage() const;
+	void setPage(int page);
+	std::string getSource() const;
+	void setSource(const std::string &source);
 
 private:
-	string instanceId_;
-	integer size_;
-	string name_;
-	integer page_;
-	string source_;
+	std::string instanceId_;
+	int size_;
+	std::string name_;
+	int page_;
+	std::string source_;
 };
 } // namespace Model
 } // namespace Elasticsearch

@@ -26,30 +26,30 @@ ListDataStreamsRequest::ListDataStreamsRequest()
 
 ListDataStreamsRequest::~ListDataStreamsRequest() {}
 
-string ListDataStreamsRequest::getInstanceId() const {
+std::string ListDataStreamsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListDataStreamsRequest::setInstanceId(string instanceId) {
+void ListDataStreamsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-boolean ListDataStreamsRequest::getIsManaged() const {
+bool ListDataStreamsRequest::getIsManaged() const {
   return isManaged_;
 }
 
-void ListDataStreamsRequest::setIsManaged(boolean isManaged) {
+void ListDataStreamsRequest::setIsManaged(bool isManaged) {
   isManaged_ = isManaged;
-  setParameter(std::string("isManaged"), std::to_string(isManaged));
+  setParameter(std::string("isManaged"), isManaged ? "true" : "false");
 }
 
-string ListDataStreamsRequest::getName() const {
+std::string ListDataStreamsRequest::getName() const {
   return name_;
 }
 
-void ListDataStreamsRequest::setName(string name) {
+void ListDataStreamsRequest::setName(const std::string &name) {
   name_ = name;
-  setParameter(std::string("name"), std::to_string(name));
+  setParameter(std::string("name"), name);
 }
 

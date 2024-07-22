@@ -26,57 +26,57 @@ ListTagResourcesRequest::ListTagResourcesRequest()
 
 ListTagResourcesRequest::~ListTagResourcesRequest() {}
 
-integer ListTagResourcesRequest::getSize() const {
+int ListTagResourcesRequest::getSize() const {
   return size_;
 }
 
-void ListTagResourcesRequest::setSize(integer size) {
+void ListTagResourcesRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("Size"), std::to_string(size));
 }
 
-string ListTagResourcesRequest::getNextToken() const {
+std::string ListTagResourcesRequest::getNextToken() const {
   return nextToken_;
 }
 
-void ListTagResourcesRequest::setNextToken(string nextToken) {
+void ListTagResourcesRequest::setNextToken(const std::string &nextToken) {
   nextToken_ = nextToken;
-  setParameter(std::string("NextToken"), std::to_string(nextToken));
+  setParameter(std::string("NextToken"), nextToken);
 }
 
-integer ListTagResourcesRequest::getPage() const {
+int ListTagResourcesRequest::getPage() const {
   return page_;
 }
 
-void ListTagResourcesRequest::setPage(integer page) {
+void ListTagResourcesRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("Page"), std::to_string(page));
 }
 
-string ListTagResourcesRequest::getResourceType() const {
+std::string ListTagResourcesRequest::getResourceType() const {
   return resourceType_;
 }
 
-void ListTagResourcesRequest::setResourceType(string resourceType) {
+void ListTagResourcesRequest::setResourceType(const std::string &resourceType) {
   resourceType_ = resourceType;
-  setParameter(std::string("ResourceType"), std::to_string(resourceType));
+  setParameter(std::string("ResourceType"), resourceType);
 }
 
-string ListTagResourcesRequest::getResourceIds() const {
+std::string ListTagResourcesRequest::getResourceIds() const {
   return resourceIds_;
 }
 
-void ListTagResourcesRequest::setResourceIds(string resourceIds) {
+void ListTagResourcesRequest::setResourceIds(const std::string &resourceIds) {
   resourceIds_ = resourceIds;
-  setParameter(std::string("ResourceIds"), std::to_string(resourceIds));
+  setParameter(std::string("ResourceIds"), resourceIds);
 }
 
-string ListTagResourcesRequest::getTags() const {
+std::string ListTagResourcesRequest::getTags() const {
   return tags_;
 }
 
-void ListTagResourcesRequest::setTags(string tags) {
+void ListTagResourcesRequest::setTags(const std::string &tags) {
   tags_ = tags;
-  setParameter(std::string("Tags"), std::to_string(tags));
+  setParameter(std::string("Tags"), tags);
 }
 

@@ -30,20 +30,20 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT RestartInstanceRequest : public RoaServi
 public:
 	RestartInstanceRequest();
 	~RestartInstanceRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	boolean getForce() const;
-	void setForce(boolean force);
-	string getBody() const;
-	void setBody(string body);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	bool getForce() const;
+	void setForce(bool force);
+	std::string getBody() const;
+	void setBody(const std::string &body);
 
 private:
-	string instanceId_;
-	string clientToken_;
-	boolean force_;
-	string body_;
+	std::string instanceId_;
+	std::string clientToken_;
+	bool force_;
+	std::string body_;
 };
 } // namespace Model
 } // namespace Elasticsearch

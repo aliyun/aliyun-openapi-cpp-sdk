@@ -59,6 +59,7 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::string description;
+					std::string resourceGroupId;
 					std::string instanceId;
 					std::string version;
 					NodeSpec nodeSpec;

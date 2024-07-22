@@ -30,20 +30,20 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT UpdateILMPolicyRequest : public RoaServi
 public:
 	UpdateILMPolicyRequest();
 	~UpdateILMPolicyRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	string getPolicyName() const;
-	void setPolicyName(string policyName);
-	string getBody() const;
-	void setBody(string body);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getPolicyName() const;
+	void setPolicyName(const std::string &policyName);
+	std::string getBody() const;
+	void setBody(const std::string &body);
 
 private:
-	string instanceId_;
-	string clientToken_;
-	string policyName_;
-	string body_;
+	std::string instanceId_;
+	std::string clientToken_;
+	std::string policyName_;
+	std::string body_;
 };
 } // namespace Model
 } // namespace Elasticsearch

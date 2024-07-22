@@ -26,12 +26,12 @@ DescribeInstanceRequest::DescribeInstanceRequest()
 
 DescribeInstanceRequest::~DescribeInstanceRequest() {}
 
-string DescribeInstanceRequest::getInstanceId() const {
+std::string DescribeInstanceRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribeInstanceRequest::setInstanceId(string instanceId) {
+void DescribeInstanceRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

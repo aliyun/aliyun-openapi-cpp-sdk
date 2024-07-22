@@ -26,22 +26,22 @@ UpdateComponentIndexRequest::UpdateComponentIndexRequest()
 
 UpdateComponentIndexRequest::~UpdateComponentIndexRequest() {}
 
-string UpdateComponentIndexRequest::getInstanceId() const {
+std::string UpdateComponentIndexRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateComponentIndexRequest::setInstanceId(string instanceId) {
+void UpdateComponentIndexRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateComponentIndexRequest::getName() const {
+std::string UpdateComponentIndexRequest::getName() const {
   return name_;
 }
 
-void UpdateComponentIndexRequest::setName(string name) {
+void UpdateComponentIndexRequest::setName(const std::string &name) {
   name_ = name;
-  setParameter(std::string("name"), std::to_string(name));
+  setParameter(std::string("name"), name);
 }
 
 std::string UpdateComponentIndexRequest::getBody() const {

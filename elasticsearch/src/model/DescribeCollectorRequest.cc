@@ -26,12 +26,12 @@ DescribeCollectorRequest::DescribeCollectorRequest()
 
 DescribeCollectorRequest::~DescribeCollectorRequest() {}
 
-string DescribeCollectorRequest::getResId() const {
+std::string DescribeCollectorRequest::getResId() const {
   return resId_;
 }
 
-void DescribeCollectorRequest::setResId(string resId) {
+void DescribeCollectorRequest::setResId(const std::string &resId) {
   resId_ = resId;
-  setParameter(std::string("ResId"), std::to_string(resId));
+  setParameter(std::string("ResId"), resId);
 }
 

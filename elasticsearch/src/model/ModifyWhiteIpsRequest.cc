@@ -26,22 +26,22 @@ ModifyWhiteIpsRequest::ModifyWhiteIpsRequest()
 
 ModifyWhiteIpsRequest::~ModifyWhiteIpsRequest() {}
 
-string ModifyWhiteIpsRequest::getInstanceId() const {
+std::string ModifyWhiteIpsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ModifyWhiteIpsRequest::setInstanceId(string instanceId) {
+void ModifyWhiteIpsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string ModifyWhiteIpsRequest::getClientToken() const {
+std::string ModifyWhiteIpsRequest::getClientToken() const {
   return clientToken_;
 }
 
-void ModifyWhiteIpsRequest::setClientToken(string clientToken) {
+void ModifyWhiteIpsRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
 std::string ModifyWhiteIpsRequest::getBody() const {

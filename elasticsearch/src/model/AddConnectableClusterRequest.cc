@@ -26,30 +26,30 @@ AddConnectableClusterRequest::AddConnectableClusterRequest()
 
 AddConnectableClusterRequest::~AddConnectableClusterRequest() {}
 
-string AddConnectableClusterRequest::getInstanceId() const {
+std::string AddConnectableClusterRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void AddConnectableClusterRequest::setInstanceId(string instanceId) {
+void AddConnectableClusterRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string AddConnectableClusterRequest::getClientToken() const {
+std::string AddConnectableClusterRequest::getClientToken() const {
   return clientToken_;
 }
 
-void AddConnectableClusterRequest::setClientToken(string clientToken) {
+void AddConnectableClusterRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string AddConnectableClusterRequest::getBody() const {
+std::string AddConnectableClusterRequest::getBody() const {
   return body_;
 }
 
-void AddConnectableClusterRequest::setBody(string body) {
+void AddConnectableClusterRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

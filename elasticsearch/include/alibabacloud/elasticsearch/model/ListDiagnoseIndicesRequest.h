@@ -30,14 +30,14 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListDiagnoseIndicesRequest : public RoaS
 public:
 	ListDiagnoseIndicesRequest();
 	~ListDiagnoseIndicesRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getLang() const;
-	void setLang(string lang);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 
 private:
-	string instanceId_;
-	string lang_;
+	std::string instanceId_;
+	std::string lang_;
 };
 } // namespace Model
 } // namespace Elasticsearch

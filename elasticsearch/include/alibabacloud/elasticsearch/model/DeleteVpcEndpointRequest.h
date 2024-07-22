@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT DeleteVpcEndpointRequest : public RoaSer
 public:
 	DeleteVpcEndpointRequest();
 	~DeleteVpcEndpointRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	string getEndpointId() const;
-	void setEndpointId(string endpointId);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getEndpointId() const;
+	void setEndpointId(const std::string &endpointId);
 
 private:
-	string instanceId_;
-	string clientToken_;
-	string endpointId_;
+	std::string instanceId_;
+	std::string clientToken_;
+	std::string endpointId_;
 };
 } // namespace Model
 } // namespace Elasticsearch

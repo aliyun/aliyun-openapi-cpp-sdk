@@ -26,30 +26,30 @@ DeleteVpcEndpointRequest::DeleteVpcEndpointRequest()
 
 DeleteVpcEndpointRequest::~DeleteVpcEndpointRequest() {}
 
-string DeleteVpcEndpointRequest::getInstanceId() const {
+std::string DeleteVpcEndpointRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DeleteVpcEndpointRequest::setInstanceId(string instanceId) {
+void DeleteVpcEndpointRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DeleteVpcEndpointRequest::getClientToken() const {
+std::string DeleteVpcEndpointRequest::getClientToken() const {
   return clientToken_;
 }
 
-void DeleteVpcEndpointRequest::setClientToken(string clientToken) {
+void DeleteVpcEndpointRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string DeleteVpcEndpointRequest::getEndpointId() const {
+std::string DeleteVpcEndpointRequest::getEndpointId() const {
   return endpointId_;
 }
 
-void DeleteVpcEndpointRequest::setEndpointId(string endpointId) {
+void DeleteVpcEndpointRequest::setEndpointId(const std::string &endpointId) {
   endpointId_ = endpointId;
-  setParameter(std::string("EndpointId"), std::to_string(endpointId));
+  setParameter(std::string("EndpointId"), endpointId);
 }
 

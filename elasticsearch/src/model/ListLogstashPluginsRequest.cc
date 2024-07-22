@@ -26,48 +26,48 @@ ListLogstashPluginsRequest::ListLogstashPluginsRequest()
 
 ListLogstashPluginsRequest::~ListLogstashPluginsRequest() {}
 
-string ListLogstashPluginsRequest::getInstanceId() const {
+std::string ListLogstashPluginsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListLogstashPluginsRequest::setInstanceId(string instanceId) {
+void ListLogstashPluginsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-integer ListLogstashPluginsRequest::getSize() const {
+int ListLogstashPluginsRequest::getSize() const {
   return size_;
 }
 
-void ListLogstashPluginsRequest::setSize(integer size) {
+void ListLogstashPluginsRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-string ListLogstashPluginsRequest::getName() const {
+std::string ListLogstashPluginsRequest::getName() const {
   return name_;
 }
 
-void ListLogstashPluginsRequest::setName(string name) {
+void ListLogstashPluginsRequest::setName(const std::string &name) {
   name_ = name;
-  setParameter(std::string("name"), std::to_string(name));
+  setParameter(std::string("name"), name);
 }
 
-integer ListLogstashPluginsRequest::getPage() const {
+int ListLogstashPluginsRequest::getPage() const {
   return page_;
 }
 
-void ListLogstashPluginsRequest::setPage(integer page) {
+void ListLogstashPluginsRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }
 
-string ListLogstashPluginsRequest::getSource() const {
+std::string ListLogstashPluginsRequest::getSource() const {
   return source_;
 }
 
-void ListLogstashPluginsRequest::setSource(string source) {
+void ListLogstashPluginsRequest::setSource(const std::string &source) {
   source_ = source;
-  setParameter(std::string("source"), std::to_string(source));
+  setParameter(std::string("source"), source);
 }
 

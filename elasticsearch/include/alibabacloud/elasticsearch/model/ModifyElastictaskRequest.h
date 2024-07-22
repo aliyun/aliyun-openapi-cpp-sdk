@@ -30,14 +30,14 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ModifyElastictaskRequest : public RoaSer
 public:
 	ModifyElastictaskRequest();
 	~ModifyElastictaskRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getBody() const;
-	void setBody(string body);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getBody() const;
+	void setBody(const std::string &body);
 
 private:
-	string instanceId_;
-	string body_;
+	std::string instanceId_;
+	std::string body_;
 };
 } // namespace Model
 } // namespace Elasticsearch

@@ -47,8 +47,6 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/CreateComponentIndexResult.h
 	include/alibabacloud/elasticsearch/model/CreateDataStreamRequest.h
 	include/alibabacloud/elasticsearch/model/CreateDataStreamResult.h
-	include/alibabacloud/elasticsearch/model/CreateDataTasksRequest.h
-	include/alibabacloud/elasticsearch/model/CreateDataTasksResult.h
 	include/alibabacloud/elasticsearch/model/CreateILMPolicyRequest.h
 	include/alibabacloud/elasticsearch/model/CreateILMPolicyResult.h
 	include/alibabacloud/elasticsearch/model/CreateIndexTemplateRequest.h
@@ -135,6 +133,10 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/DescribeXpackMonitorConfigResult.h
 	include/alibabacloud/elasticsearch/model/DiagnoseInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/DiagnoseInstanceResult.h
+	include/alibabacloud/elasticsearch/model/DisableKibanaPvlNetworkRequest.h
+	include/alibabacloud/elasticsearch/model/DisableKibanaPvlNetworkResult.h
+	include/alibabacloud/elasticsearch/model/EnableKibanaPvlNetworkRequest.h
+	include/alibabacloud/elasticsearch/model/EnableKibanaPvlNetworkResult.h
 	include/alibabacloud/elasticsearch/model/EstimatedLogstashRestartTimeRequest.h
 	include/alibabacloud/elasticsearch/model/EstimatedLogstashRestartTimeResult.h
 	include/alibabacloud/elasticsearch/model/EstimatedRestartTimeRequest.h
@@ -153,6 +155,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/GetOpenStoreUsageResult.h
 	include/alibabacloud/elasticsearch/model/GetRegionConfigurationRequest.h
 	include/alibabacloud/elasticsearch/model/GetRegionConfigurationResult.h
+	include/alibabacloud/elasticsearch/model/GetRegionalInstanceConfigRequest.h
+	include/alibabacloud/elasticsearch/model/GetRegionalInstanceConfigResult.h
 	include/alibabacloud/elasticsearch/model/GetSuggestShrinkableNodesRequest.h
 	include/alibabacloud/elasticsearch/model/GetSuggestShrinkableNodesResult.h
 	include/alibabacloud/elasticsearch/model/GetTransferableNodesRequest.h
@@ -207,6 +211,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/ListDiagnoseReportResult.h
 	include/alibabacloud/elasticsearch/model/ListDiagnoseReportIdsRequest.h
 	include/alibabacloud/elasticsearch/model/ListDiagnoseReportIdsResult.h
+	include/alibabacloud/elasticsearch/model/ListDiagnosisItemsRequest.h
+	include/alibabacloud/elasticsearch/model/ListDiagnosisItemsResult.h
 	include/alibabacloud/elasticsearch/model/ListDictInformationRequest.h
 	include/alibabacloud/elasticsearch/model/ListDictInformationResult.h
 	include/alibabacloud/elasticsearch/model/ListDictsRequest.h
@@ -227,6 +233,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/ListInstanceIndicesResult.h
 	include/alibabacloud/elasticsearch/model/ListKibanaPluginsRequest.h
 	include/alibabacloud/elasticsearch/model/ListKibanaPluginsResult.h
+	include/alibabacloud/elasticsearch/model/ListKibanaPvlNetworkRequest.h
+	include/alibabacloud/elasticsearch/model/ListKibanaPvlNetworkResult.h
 	include/alibabacloud/elasticsearch/model/ListLogstashRequest.h
 	include/alibabacloud/elasticsearch/model/ListLogstashResult.h
 	include/alibabacloud/elasticsearch/model/ListLogstashLogRequest.h
@@ -361,6 +369,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/UpdateInstanceChargeTypeResult.h
 	include/alibabacloud/elasticsearch/model/UpdateInstanceSettingsRequest.h
 	include/alibabacloud/elasticsearch/model/UpdateInstanceSettingsResult.h
+	include/alibabacloud/elasticsearch/model/UpdateKibanaPvlNetworkRequest.h
+	include/alibabacloud/elasticsearch/model/UpdateKibanaPvlNetworkResult.h
 	include/alibabacloud/elasticsearch/model/UpdateKibanaSettingsRequest.h
 	include/alibabacloud/elasticsearch/model/UpdateKibanaSettingsResult.h
 	include/alibabacloud/elasticsearch/model/UpdateKibanaWhiteIpsRequest.h
@@ -434,8 +444,6 @@ set(elasticsearch_src
 	src/model/CreateComponentIndexResult.cc
 	src/model/CreateDataStreamRequest.cc
 	src/model/CreateDataStreamResult.cc
-	src/model/CreateDataTasksRequest.cc
-	src/model/CreateDataTasksResult.cc
 	src/model/CreateILMPolicyRequest.cc
 	src/model/CreateILMPolicyResult.cc
 	src/model/CreateIndexTemplateRequest.cc
@@ -522,6 +530,10 @@ set(elasticsearch_src
 	src/model/DescribeXpackMonitorConfigResult.cc
 	src/model/DiagnoseInstanceRequest.cc
 	src/model/DiagnoseInstanceResult.cc
+	src/model/DisableKibanaPvlNetworkRequest.cc
+	src/model/DisableKibanaPvlNetworkResult.cc
+	src/model/EnableKibanaPvlNetworkRequest.cc
+	src/model/EnableKibanaPvlNetworkResult.cc
 	src/model/EstimatedLogstashRestartTimeRequest.cc
 	src/model/EstimatedLogstashRestartTimeResult.cc
 	src/model/EstimatedRestartTimeRequest.cc
@@ -540,6 +552,8 @@ set(elasticsearch_src
 	src/model/GetOpenStoreUsageResult.cc
 	src/model/GetRegionConfigurationRequest.cc
 	src/model/GetRegionConfigurationResult.cc
+	src/model/GetRegionalInstanceConfigRequest.cc
+	src/model/GetRegionalInstanceConfigResult.cc
 	src/model/GetSuggestShrinkableNodesRequest.cc
 	src/model/GetSuggestShrinkableNodesResult.cc
 	src/model/GetTransferableNodesRequest.cc
@@ -594,6 +608,8 @@ set(elasticsearch_src
 	src/model/ListDiagnoseReportResult.cc
 	src/model/ListDiagnoseReportIdsRequest.cc
 	src/model/ListDiagnoseReportIdsResult.cc
+	src/model/ListDiagnosisItemsRequest.cc
+	src/model/ListDiagnosisItemsResult.cc
 	src/model/ListDictInformationRequest.cc
 	src/model/ListDictInformationResult.cc
 	src/model/ListDictsRequest.cc
@@ -614,6 +630,8 @@ set(elasticsearch_src
 	src/model/ListInstanceIndicesResult.cc
 	src/model/ListKibanaPluginsRequest.cc
 	src/model/ListKibanaPluginsResult.cc
+	src/model/ListKibanaPvlNetworkRequest.cc
+	src/model/ListKibanaPvlNetworkResult.cc
 	src/model/ListLogstashRequest.cc
 	src/model/ListLogstashResult.cc
 	src/model/ListLogstashLogRequest.cc
@@ -748,6 +766,8 @@ set(elasticsearch_src
 	src/model/UpdateInstanceChargeTypeResult.cc
 	src/model/UpdateInstanceSettingsRequest.cc
 	src/model/UpdateInstanceSettingsResult.cc
+	src/model/UpdateKibanaPvlNetworkRequest.cc
+	src/model/UpdateKibanaPvlNetworkResult.cc
 	src/model/UpdateKibanaSettingsRequest.cc
 	src/model/UpdateKibanaSettingsResult.cc
 	src/model/UpdateKibanaWhiteIpsRequest.cc

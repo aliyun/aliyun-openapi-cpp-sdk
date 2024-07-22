@@ -26,39 +26,39 @@ UpdateTemplateRequest::UpdateTemplateRequest()
 
 UpdateTemplateRequest::~UpdateTemplateRequest() {}
 
-string UpdateTemplateRequest::getInstanceId() const {
+std::string UpdateTemplateRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateTemplateRequest::setInstanceId(string instanceId) {
+void UpdateTemplateRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateTemplateRequest::getClientToken() const {
+std::string UpdateTemplateRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateTemplateRequest::setClientToken(string clientToken) {
+void UpdateTemplateRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string UpdateTemplateRequest::getTemplateName() const {
+std::string UpdateTemplateRequest::getTemplateName() const {
   return templateName_;
 }
 
-void UpdateTemplateRequest::setTemplateName(string templateName) {
+void UpdateTemplateRequest::setTemplateName(const std::string &templateName) {
   templateName_ = templateName;
-  setParameter(std::string("TemplateName"), std::to_string(templateName));
+  setParameter(std::string("TemplateName"), templateName);
 }
 
-string UpdateTemplateRequest::getBody() const {
+std::string UpdateTemplateRequest::getBody() const {
   return body_;
 }
 
-void UpdateTemplateRequest::setBody(string body) {
+void UpdateTemplateRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

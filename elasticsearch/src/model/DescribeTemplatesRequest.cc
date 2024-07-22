@@ -26,12 +26,12 @@ DescribeTemplatesRequest::DescribeTemplatesRequest()
 
 DescribeTemplatesRequest::~DescribeTemplatesRequest() {}
 
-string DescribeTemplatesRequest::getInstanceId() const {
+std::string DescribeTemplatesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribeTemplatesRequest::setInstanceId(string instanceId) {
+void DescribeTemplatesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

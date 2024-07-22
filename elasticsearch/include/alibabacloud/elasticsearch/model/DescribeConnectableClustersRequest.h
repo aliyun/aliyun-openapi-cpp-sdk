@@ -30,14 +30,14 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT DescribeConnectableClustersRequest : pub
 public:
 	DescribeConnectableClustersRequest();
 	~DescribeConnectableClustersRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	boolean getAlreadySetItems() const;
-	void setAlreadySetItems(boolean alreadySetItems);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	bool getAlreadySetItems() const;
+	void setAlreadySetItems(bool alreadySetItems);
 
 private:
-	string instanceId_;
-	boolean alreadySetItems_;
+	std::string instanceId_;
+	bool alreadySetItems_;
 };
 } // namespace Model
 } // namespace Elasticsearch

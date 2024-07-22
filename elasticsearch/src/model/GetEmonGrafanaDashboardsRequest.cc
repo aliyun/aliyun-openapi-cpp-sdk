@@ -26,21 +26,21 @@ GetEmonGrafanaDashboardsRequest::GetEmonGrafanaDashboardsRequest()
 
 GetEmonGrafanaDashboardsRequest::~GetEmonGrafanaDashboardsRequest() {}
 
-string GetEmonGrafanaDashboardsRequest::getBody() const {
+std::string GetEmonGrafanaDashboardsRequest::getBody() const {
   return body_;
 }
 
-void GetEmonGrafanaDashboardsRequest::setBody(string body) {
+void GetEmonGrafanaDashboardsRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 
-string GetEmonGrafanaDashboardsRequest::getProjectId() const {
+std::string GetEmonGrafanaDashboardsRequest::getProjectId() const {
   return projectId_;
 }
 
-void GetEmonGrafanaDashboardsRequest::setProjectId(string projectId) {
+void GetEmonGrafanaDashboardsRequest::setProjectId(const std::string &projectId) {
   projectId_ = projectId;
-  setParameter(std::string("ProjectId"), std::to_string(projectId));
+  setParameter(std::string("ProjectId"), projectId);
 }
 

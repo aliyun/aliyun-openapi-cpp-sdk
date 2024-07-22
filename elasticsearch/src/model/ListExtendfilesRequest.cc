@@ -26,12 +26,12 @@ ListExtendfilesRequest::ListExtendfilesRequest()
 
 ListExtendfilesRequest::~ListExtendfilesRequest() {}
 
-string ListExtendfilesRequest::getInstanceId() const {
+std::string ListExtendfilesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListExtendfilesRequest::setInstanceId(string instanceId) {
+void ListExtendfilesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

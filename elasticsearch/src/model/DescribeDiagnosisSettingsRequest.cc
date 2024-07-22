@@ -26,21 +26,21 @@ DescribeDiagnosisSettingsRequest::DescribeDiagnosisSettingsRequest()
 
 DescribeDiagnosisSettingsRequest::~DescribeDiagnosisSettingsRequest() {}
 
-string DescribeDiagnosisSettingsRequest::getInstanceId() const {
+std::string DescribeDiagnosisSettingsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribeDiagnosisSettingsRequest::setInstanceId(string instanceId) {
+void DescribeDiagnosisSettingsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DescribeDiagnosisSettingsRequest::getLang() const {
+std::string DescribeDiagnosisSettingsRequest::getLang() const {
   return lang_;
 }
 
-void DescribeDiagnosisSettingsRequest::setLang(string lang) {
+void DescribeDiagnosisSettingsRequest::setLang(const std::string &lang) {
   lang_ = lang;
-  setParameter(std::string("lang"), std::to_string(lang));
+  setParameter(std::string("lang"), lang);
 }
 

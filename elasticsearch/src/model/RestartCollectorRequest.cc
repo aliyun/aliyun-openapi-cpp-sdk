@@ -26,21 +26,21 @@ RestartCollectorRequest::RestartCollectorRequest()
 
 RestartCollectorRequest::~RestartCollectorRequest() {}
 
-string RestartCollectorRequest::getClientToken() const {
+std::string RestartCollectorRequest::getClientToken() const {
   return clientToken_;
 }
 
-void RestartCollectorRequest::setClientToken(string clientToken) {
+void RestartCollectorRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string RestartCollectorRequest::getResId() const {
+std::string RestartCollectorRequest::getResId() const {
   return resId_;
 }
 
-void RestartCollectorRequest::setResId(string resId) {
+void RestartCollectorRequest::setResId(const std::string &resId) {
   resId_ = resId;
-  setParameter(std::string("ResId"), std::to_string(resId));
+  setParameter(std::string("ResId"), resId);
 }
 

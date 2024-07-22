@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT MigrateToOtherZoneRequest : public RoaSe
 public:
 	MigrateToOtherZoneRequest();
 	~MigrateToOtherZoneRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	boolean getDryRun() const;
-	void setDryRun(boolean dryRun);
-	string getBody() const;
-	void setBody(string body);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
+	std::string getBody() const;
+	void setBody(const std::string &body);
 
 private:
-	string instanceId_;
-	boolean dryRun_;
-	string body_;
+	std::string instanceId_;
+	bool dryRun_;
+	std::string body_;
 };
 } // namespace Model
 } // namespace Elasticsearch

@@ -26,30 +26,30 @@ DeleteConnectedClusterRequest::DeleteConnectedClusterRequest()
 
 DeleteConnectedClusterRequest::~DeleteConnectedClusterRequest() {}
 
-string DeleteConnectedClusterRequest::getInstanceId() const {
+std::string DeleteConnectedClusterRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DeleteConnectedClusterRequest::setInstanceId(string instanceId) {
+void DeleteConnectedClusterRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DeleteConnectedClusterRequest::getClientToken() const {
+std::string DeleteConnectedClusterRequest::getClientToken() const {
   return clientToken_;
 }
 
-void DeleteConnectedClusterRequest::setClientToken(string clientToken) {
+void DeleteConnectedClusterRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string DeleteConnectedClusterRequest::getConnectedInstanceId() const {
+std::string DeleteConnectedClusterRequest::getConnectedInstanceId() const {
   return connectedInstanceId_;
 }
 
-void DeleteConnectedClusterRequest::setConnectedInstanceId(string connectedInstanceId) {
+void DeleteConnectedClusterRequest::setConnectedInstanceId(const std::string &connectedInstanceId) {
   connectedInstanceId_ = connectedInstanceId;
-  setParameter(std::string("connectedInstanceId"), std::to_string(connectedInstanceId));
+  setParameter(std::string("connectedInstanceId"), connectedInstanceId);
 }
 

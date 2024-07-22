@@ -26,13 +26,13 @@ UpdateApmRequest::UpdateApmRequest()
 
 UpdateApmRequest::~UpdateApmRequest() {}
 
-string UpdateApmRequest::getInstanceId() const {
+std::string UpdateApmRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateApmRequest::setInstanceId(string instanceId) {
+void UpdateApmRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("instanceId"), std::to_string(instanceId));
+  setParameter(std::string("instanceId"), instanceId);
 }
 
 std::string UpdateApmRequest::getBody() const {

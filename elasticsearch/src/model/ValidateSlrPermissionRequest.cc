@@ -26,21 +26,21 @@ ValidateSlrPermissionRequest::ValidateSlrPermissionRequest()
 
 ValidateSlrPermissionRequest::~ValidateSlrPermissionRequest() {}
 
-string ValidateSlrPermissionRequest::getClientToken() const {
+std::string ValidateSlrPermissionRequest::getClientToken() const {
   return clientToken_;
 }
 
-void ValidateSlrPermissionRequest::setClientToken(string clientToken) {
+void ValidateSlrPermissionRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string ValidateSlrPermissionRequest::getRolename() const {
+std::string ValidateSlrPermissionRequest::getRolename() const {
   return rolename_;
 }
 
-void ValidateSlrPermissionRequest::setRolename(string rolename) {
+void ValidateSlrPermissionRequest::setRolename(const std::string &rolename) {
   rolename_ = rolename;
-  setParameter(std::string("rolename"), std::to_string(rolename));
+  setParameter(std::string("rolename"), rolename);
 }
 

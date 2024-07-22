@@ -26,30 +26,30 @@ RunPipelinesRequest::RunPipelinesRequest()
 
 RunPipelinesRequest::~RunPipelinesRequest() {}
 
-string RunPipelinesRequest::getInstanceId() const {
+std::string RunPipelinesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void RunPipelinesRequest::setInstanceId(string instanceId) {
+void RunPipelinesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string RunPipelinesRequest::getClientToken() const {
+std::string RunPipelinesRequest::getClientToken() const {
   return clientToken_;
 }
 
-void RunPipelinesRequest::setClientToken(string clientToken) {
+void RunPipelinesRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string RunPipelinesRequest::getBody() const {
+std::string RunPipelinesRequest::getBody() const {
   return body_;
 }
 
-void RunPipelinesRequest::setBody(string body) {
+void RunPipelinesRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

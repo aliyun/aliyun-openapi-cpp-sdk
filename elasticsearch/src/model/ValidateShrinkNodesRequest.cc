@@ -26,38 +26,38 @@ ValidateShrinkNodesRequest::ValidateShrinkNodesRequest()
 
 ValidateShrinkNodesRequest::~ValidateShrinkNodesRequest() {}
 
-boolean ValidateShrinkNodesRequest::getIgnoreStatus() const {
+bool ValidateShrinkNodesRequest::getIgnoreStatus() const {
   return ignoreStatus_;
 }
 
-void ValidateShrinkNodesRequest::setIgnoreStatus(boolean ignoreStatus) {
+void ValidateShrinkNodesRequest::setIgnoreStatus(bool ignoreStatus) {
   ignoreStatus_ = ignoreStatus;
-  setParameter(std::string("ignoreStatus"), std::to_string(ignoreStatus));
+  setParameter(std::string("ignoreStatus"), ignoreStatus ? "true" : "false");
 }
 
-string ValidateShrinkNodesRequest::getInstanceId() const {
+std::string ValidateShrinkNodesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ValidateShrinkNodesRequest::setInstanceId(string instanceId) {
+void ValidateShrinkNodesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string ValidateShrinkNodesRequest::getNodeType() const {
+std::string ValidateShrinkNodesRequest::getNodeType() const {
   return nodeType_;
 }
 
-void ValidateShrinkNodesRequest::setNodeType(string nodeType) {
+void ValidateShrinkNodesRequest::setNodeType(const std::string &nodeType) {
   nodeType_ = nodeType;
-  setParameter(std::string("nodeType"), std::to_string(nodeType));
+  setParameter(std::string("nodeType"), nodeType);
 }
 
-integer ValidateShrinkNodesRequest::getCount() const {
+int ValidateShrinkNodesRequest::getCount() const {
   return count_;
 }
 
-void ValidateShrinkNodesRequest::setCount(integer count) {
+void ValidateShrinkNodesRequest::setCount(int count) {
   count_ = count;
   setParameter(std::string("count"), std::to_string(count));
 }

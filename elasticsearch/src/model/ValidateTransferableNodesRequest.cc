@@ -26,21 +26,21 @@ ValidateTransferableNodesRequest::ValidateTransferableNodesRequest()
 
 ValidateTransferableNodesRequest::~ValidateTransferableNodesRequest() {}
 
-string ValidateTransferableNodesRequest::getInstanceId() const {
+std::string ValidateTransferableNodesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ValidateTransferableNodesRequest::setInstanceId(string instanceId) {
+void ValidateTransferableNodesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string ValidateTransferableNodesRequest::getNodeType() const {
+std::string ValidateTransferableNodesRequest::getNodeType() const {
   return nodeType_;
 }
 
-void ValidateTransferableNodesRequest::setNodeType(string nodeType) {
+void ValidateTransferableNodesRequest::setNodeType(const std::string &nodeType) {
   nodeType_ = nodeType;
-  setParameter(std::string("nodeType"), std::to_string(nodeType));
+  setParameter(std::string("nodeType"), nodeType);
 }
 

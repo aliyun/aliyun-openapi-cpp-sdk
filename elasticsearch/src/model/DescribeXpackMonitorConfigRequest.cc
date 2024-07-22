@@ -26,12 +26,12 @@ DescribeXpackMonitorConfigRequest::DescribeXpackMonitorConfigRequest()
 
 DescribeXpackMonitorConfigRequest::~DescribeXpackMonitorConfigRequest() {}
 
-string DescribeXpackMonitorConfigRequest::getInstanceId() const {
+std::string DescribeXpackMonitorConfigRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribeXpackMonitorConfigRequest::setInstanceId(string instanceId) {
+void DescribeXpackMonitorConfigRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

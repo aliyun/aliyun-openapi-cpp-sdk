@@ -26,12 +26,12 @@ DescribeDynamicSettingsRequest::DescribeDynamicSettingsRequest()
 
 DescribeDynamicSettingsRequest::~DescribeDynamicSettingsRequest() {}
 
-string DescribeDynamicSettingsRequest::getInstanceId() const {
+std::string DescribeDynamicSettingsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribeDynamicSettingsRequest::setInstanceId(string instanceId) {
+void DescribeDynamicSettingsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

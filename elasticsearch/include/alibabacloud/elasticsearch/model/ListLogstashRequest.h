@@ -30,32 +30,32 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListLogstashRequest : public RoaServiceR
 public:
 	ListLogstashRequest();
 	~ListLogstashRequest();
-	string getResourceGroupId() const;
-	void setResourceGroupId(string resourceGroupId);
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	integer getSize() const;
-	void setSize(integer size);
-	string getDescription() const;
-	void setDescription(string description);
-	integer getPage() const;
-	void setPage(integer page);
-	string getOwnerId() const;
-	void setOwnerId(string ownerId);
-	string getVersion() const;
-	void setVersion(string version);
-	string getTags() const;
-	void setTags(string tags);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	int getSize() const;
+	void setSize(int size);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
+	int getPage() const;
+	void setPage(int page);
+	std::string getOwnerId() const;
+	void setOwnerId(const std::string &ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
+	std::string getTags() const;
+	void setTags(const std::string &tags);
 
 private:
-	string resourceGroupId_;
-	string instanceId_;
-	integer size_;
-	string description_;
-	integer page_;
-	string ownerId_;
-	string version_;
-	string tags_;
+	std::string resourceGroupId_;
+	std::string instanceId_;
+	int size_;
+	std::string description_;
+	int page_;
+	std::string ownerId_;
+	std::string version_;
+	std::string tags_;
 };
 } // namespace Model
 } // namespace Elasticsearch

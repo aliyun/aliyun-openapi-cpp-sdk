@@ -26,12 +26,12 @@ StartApmRequest::StartApmRequest()
 
 StartApmRequest::~StartApmRequest() {}
 
-string StartApmRequest::getInstanceId() const {
+std::string StartApmRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void StartApmRequest::setInstanceId(string instanceId) {
+void StartApmRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("instanceId"), std::to_string(instanceId));
+  setParameter(std::string("instanceId"), instanceId);
 }
 

@@ -26,30 +26,30 @@ InstallAckOperatorRequest::InstallAckOperatorRequest()
 
 InstallAckOperatorRequest::~InstallAckOperatorRequest() {}
 
-string InstallAckOperatorRequest::getClientToken() const {
+std::string InstallAckOperatorRequest::getClientToken() const {
   return clientToken_;
 }
 
-void InstallAckOperatorRequest::setClientToken(string clientToken) {
+void InstallAckOperatorRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string InstallAckOperatorRequest::getClusterId() const {
+std::string InstallAckOperatorRequest::getClusterId() const {
   return clusterId_;
 }
 
-void InstallAckOperatorRequest::setClusterId(string clusterId) {
+void InstallAckOperatorRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
-string InstallAckOperatorRequest::getBody() const {
+std::string InstallAckOperatorRequest::getBody() const {
   return body_;
 }
 
-void InstallAckOperatorRequest::setBody(string body) {
+void InstallAckOperatorRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

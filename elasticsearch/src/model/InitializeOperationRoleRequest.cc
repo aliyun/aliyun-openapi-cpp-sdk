@@ -26,21 +26,21 @@ InitializeOperationRoleRequest::InitializeOperationRoleRequest()
 
 InitializeOperationRoleRequest::~InitializeOperationRoleRequest() {}
 
-string InitializeOperationRoleRequest::getClientToken() const {
+std::string InitializeOperationRoleRequest::getClientToken() const {
   return clientToken_;
 }
 
-void InitializeOperationRoleRequest::setClientToken(string clientToken) {
+void InitializeOperationRoleRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string InitializeOperationRoleRequest::getBody() const {
+std::string InitializeOperationRoleRequest::getBody() const {
   return body_;
 }
 
-void InitializeOperationRoleRequest::setBody(string body) {
+void InitializeOperationRoleRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

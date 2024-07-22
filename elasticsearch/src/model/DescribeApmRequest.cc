@@ -26,12 +26,12 @@ DescribeApmRequest::DescribeApmRequest()
 
 DescribeApmRequest::~DescribeApmRequest() {}
 
-string DescribeApmRequest::getInstanceId() const {
+std::string DescribeApmRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribeApmRequest::setInstanceId(string instanceId) {
+void DescribeApmRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("instanceId"), std::to_string(instanceId));
+  setParameter(std::string("instanceId"), instanceId);
 }
 

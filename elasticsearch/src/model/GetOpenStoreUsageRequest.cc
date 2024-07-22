@@ -26,12 +26,12 @@ GetOpenStoreUsageRequest::GetOpenStoreUsageRequest()
 
 GetOpenStoreUsageRequest::~GetOpenStoreUsageRequest() {}
 
-string GetOpenStoreUsageRequest::getInstanceId() const {
+std::string GetOpenStoreUsageRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void GetOpenStoreUsageRequest::setInstanceId(string instanceId) {
+void GetOpenStoreUsageRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

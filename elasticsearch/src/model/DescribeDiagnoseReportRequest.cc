@@ -26,30 +26,30 @@ DescribeDiagnoseReportRequest::DescribeDiagnoseReportRequest()
 
 DescribeDiagnoseReportRequest::~DescribeDiagnoseReportRequest() {}
 
-string DescribeDiagnoseReportRequest::getInstanceId() const {
+std::string DescribeDiagnoseReportRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribeDiagnoseReportRequest::setInstanceId(string instanceId) {
+void DescribeDiagnoseReportRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DescribeDiagnoseReportRequest::getReportId() const {
+std::string DescribeDiagnoseReportRequest::getReportId() const {
   return reportId_;
 }
 
-void DescribeDiagnoseReportRequest::setReportId(string reportId) {
+void DescribeDiagnoseReportRequest::setReportId(const std::string &reportId) {
   reportId_ = reportId;
-  setParameter(std::string("ReportId"), std::to_string(reportId));
+  setParameter(std::string("ReportId"), reportId);
 }
 
-string DescribeDiagnoseReportRequest::getLang() const {
+std::string DescribeDiagnoseReportRequest::getLang() const {
   return lang_;
 }
 
-void DescribeDiagnoseReportRequest::setLang(string lang) {
+void DescribeDiagnoseReportRequest::setLang(const std::string &lang) {
   lang_ = lang;
-  setParameter(std::string("lang"), std::to_string(lang));
+  setParameter(std::string("lang"), lang);
 }
 

@@ -26,30 +26,30 @@ DeleteLogstashRequest::DeleteLogstashRequest()
 
 DeleteLogstashRequest::~DeleteLogstashRequest() {}
 
-string DeleteLogstashRequest::getInstanceId() const {
+std::string DeleteLogstashRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DeleteLogstashRequest::setInstanceId(string instanceId) {
+void DeleteLogstashRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DeleteLogstashRequest::getClientToken() const {
+std::string DeleteLogstashRequest::getClientToken() const {
   return clientToken_;
 }
 
-void DeleteLogstashRequest::setClientToken(string clientToken) {
+void DeleteLogstashRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string DeleteLogstashRequest::getDeleteType() const {
+std::string DeleteLogstashRequest::getDeleteType() const {
   return deleteType_;
 }
 
-void DeleteLogstashRequest::setDeleteType(string deleteType) {
+void DeleteLogstashRequest::setDeleteType(const std::string &deleteType) {
   deleteType_ = deleteType;
-  setParameter(std::string("deleteType"), std::to_string(deleteType));
+  setParameter(std::string("deleteType"), deleteType);
 }
 

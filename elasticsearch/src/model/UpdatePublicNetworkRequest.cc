@@ -26,30 +26,30 @@ UpdatePublicNetworkRequest::UpdatePublicNetworkRequest()
 
 UpdatePublicNetworkRequest::~UpdatePublicNetworkRequest() {}
 
-string UpdatePublicNetworkRequest::getInstanceId() const {
+std::string UpdatePublicNetworkRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdatePublicNetworkRequest::setInstanceId(string instanceId) {
+void UpdatePublicNetworkRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdatePublicNetworkRequest::getClientToken() const {
+std::string UpdatePublicNetworkRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdatePublicNetworkRequest::setClientToken(string clientToken) {
+void UpdatePublicNetworkRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string UpdatePublicNetworkRequest::getBody() const {
+std::string UpdatePublicNetworkRequest::getBody() const {
   return body_;
 }
 
-void UpdatePublicNetworkRequest::setBody(string body) {
+void UpdatePublicNetworkRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

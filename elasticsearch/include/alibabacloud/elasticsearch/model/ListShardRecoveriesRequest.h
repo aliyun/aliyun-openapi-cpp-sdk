@@ -30,14 +30,14 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListShardRecoveriesRequest : public RoaS
 public:
 	ListShardRecoveriesRequest();
 	~ListShardRecoveriesRequest();
-	boolean getActiveOnly() const;
-	void setActiveOnly(boolean activeOnly);
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
+	bool getActiveOnly() const;
+	void setActiveOnly(bool activeOnly);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 
 private:
-	boolean activeOnly_;
-	string instanceId_;
+	bool activeOnly_;
+	std::string instanceId_;
 };
 } // namespace Model
 } // namespace Elasticsearch

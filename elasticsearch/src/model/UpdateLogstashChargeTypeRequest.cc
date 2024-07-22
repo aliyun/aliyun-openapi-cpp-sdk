@@ -26,30 +26,30 @@ UpdateLogstashChargeTypeRequest::UpdateLogstashChargeTypeRequest()
 
 UpdateLogstashChargeTypeRequest::~UpdateLogstashChargeTypeRequest() {}
 
-string UpdateLogstashChargeTypeRequest::getInstanceId() const {
+std::string UpdateLogstashChargeTypeRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateLogstashChargeTypeRequest::setInstanceId(string instanceId) {
+void UpdateLogstashChargeTypeRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateLogstashChargeTypeRequest::getClientToken() const {
+std::string UpdateLogstashChargeTypeRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateLogstashChargeTypeRequest::setClientToken(string clientToken) {
+void UpdateLogstashChargeTypeRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string UpdateLogstashChargeTypeRequest::getBody() const {
+std::string UpdateLogstashChargeTypeRequest::getBody() const {
   return body_;
 }
 
-void UpdateLogstashChargeTypeRequest::setBody(string body) {
+void UpdateLogstashChargeTypeRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

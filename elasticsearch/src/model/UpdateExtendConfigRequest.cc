@@ -26,30 +26,30 @@ UpdateExtendConfigRequest::UpdateExtendConfigRequest()
 
 UpdateExtendConfigRequest::~UpdateExtendConfigRequest() {}
 
-string UpdateExtendConfigRequest::getInstanceId() const {
+std::string UpdateExtendConfigRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateExtendConfigRequest::setInstanceId(string instanceId) {
+void UpdateExtendConfigRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateExtendConfigRequest::getClientToken() const {
+std::string UpdateExtendConfigRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateExtendConfigRequest::setClientToken(string clientToken) {
+void UpdateExtendConfigRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string UpdateExtendConfigRequest::getBody() const {
+std::string UpdateExtendConfigRequest::getBody() const {
   return body_;
 }
 
-void UpdateExtendConfigRequest::setBody(string body) {
+void UpdateExtendConfigRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

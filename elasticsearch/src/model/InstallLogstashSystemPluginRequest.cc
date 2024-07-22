@@ -26,30 +26,30 @@ InstallLogstashSystemPluginRequest::InstallLogstashSystemPluginRequest()
 
 InstallLogstashSystemPluginRequest::~InstallLogstashSystemPluginRequest() {}
 
-string InstallLogstashSystemPluginRequest::getInstanceId() const {
+std::string InstallLogstashSystemPluginRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void InstallLogstashSystemPluginRequest::setInstanceId(string instanceId) {
+void InstallLogstashSystemPluginRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string InstallLogstashSystemPluginRequest::getClientToken() const {
+std::string InstallLogstashSystemPluginRequest::getClientToken() const {
   return clientToken_;
 }
 
-void InstallLogstashSystemPluginRequest::setClientToken(string clientToken) {
+void InstallLogstashSystemPluginRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string InstallLogstashSystemPluginRequest::getBody() const {
+std::string InstallLogstashSystemPluginRequest::getBody() const {
   return body_;
 }
 
-void InstallLogstashSystemPluginRequest::setBody(string body) {
+void InstallLogstashSystemPluginRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

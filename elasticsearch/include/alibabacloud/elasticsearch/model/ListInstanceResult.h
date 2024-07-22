@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					struct ClientNodeConfiguration
 					{
 						std::string diskType;
+						std::string specInfo;
 						int amount;
 						std::string spec;
 						int disk;
@@ -48,6 +49,7 @@ namespace AlibabaCloud
 					struct ElasticDataNodeConfiguration
 					{
 						std::string diskType;
+						std::string specInfo;
 						bool diskEncryption;
 						int amount;
 						std::string spec;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 					struct KibanaConfiguration
 					{
 						std::string diskType;
+						std::string specInfo;
 						int amount;
 						std::string spec;
 						int disk;
@@ -63,20 +66,29 @@ namespace AlibabaCloud
 					struct MasterConfiguration
 					{
 						std::string diskType;
+						std::string specInfo;
 						int amount;
 						std::string spec;
 						int disk;
 					};
 					struct NetworkConfig
 					{
+						struct WhiteIpGroupListItem
+						{
+							std::string groupName;
+							std::string whiteIpType;
+							std::vector<std::string> ips;
+						};
 						std::string type;
 						std::string vpcId;
+						std::vector<WhiteIpGroupListItem> whiteIpGroupList;
 						std::string vswitchId;
 						std::string vsArea;
 					};
 					struct NodeSpec
 					{
 						std::string diskType;
+						std::string specInfo;
 						bool diskEncryption;
 						std::string performanceLevel;
 						std::string spec;
@@ -88,27 +100,33 @@ namespace AlibabaCloud
 						std::string tagValue;
 					};
 					MasterConfiguration masterConfiguration;
-					std::string status;
-					std::vector<std::string> extendConfigs;
 					std::string description;
 					std::string resourceGroupId;
+					long endTime;
 					ElasticDataNodeConfiguration elasticDataNodeConfiguration;
-					std::string instanceId;
 					bool dedicateMaster;
 					std::string createdAt;
+					std::vector<std::string> kibanaPrivateIPWhitelist;
+					std::string archType;
+					KibanaConfiguration kibanaConfiguration;
+					bool advancedDedicateMaster;
+					bool serviceVpc;
+					std::string paymentType;
+					std::string postpaidServiceStatus;
+					std::string status;
+					std::vector<std::string> extendConfigs;
+					std::vector<std::string> publicIpWhitelist;
+					std::string instanceId;
 					NetworkConfig networkConfig;
 					std::string isNewDeployment;
 					int nodeAmount;
 					std::string esVersion;
 					std::string updatedAt;
 					std::vector<Instance::Tag> tags;
-					KibanaConfiguration kibanaConfiguration;
-					bool advancedDedicateMaster;
+					std::vector<std::string> kibanaIPWhitelist;
 					NodeSpec nodeSpec;
-					bool serviceVpc;
-					std::string paymentType;
+					std::vector<std::string> privateNetworkIpWhiteList;
 					std::string vpcInstanceId;
-					std::string postpaidServiceStatus;
 					ClientNodeConfiguration clientNodeConfiguration;
 				};
 

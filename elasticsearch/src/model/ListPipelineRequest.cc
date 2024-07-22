@@ -26,39 +26,39 @@ ListPipelineRequest::ListPipelineRequest()
 
 ListPipelineRequest::~ListPipelineRequest() {}
 
-string ListPipelineRequest::getInstanceId() const {
+std::string ListPipelineRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListPipelineRequest::setInstanceId(string instanceId) {
+void ListPipelineRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-integer ListPipelineRequest::getSize() const {
+int ListPipelineRequest::getSize() const {
   return size_;
 }
 
-void ListPipelineRequest::setSize(integer size) {
+void ListPipelineRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-integer ListPipelineRequest::getPage() const {
+int ListPipelineRequest::getPage() const {
   return page_;
 }
 
-void ListPipelineRequest::setPage(integer page) {
+void ListPipelineRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }
 
-string ListPipelineRequest::getPipelineId() const {
+std::string ListPipelineRequest::getPipelineId() const {
   return pipelineId_;
 }
 
-void ListPipelineRequest::setPipelineId(string pipelineId) {
+void ListPipelineRequest::setPipelineId(const std::string &pipelineId) {
   pipelineId_ = pipelineId;
-  setParameter(std::string("pipelineId"), std::to_string(pipelineId));
+  setParameter(std::string("pipelineId"), pipelineId);
 }
 

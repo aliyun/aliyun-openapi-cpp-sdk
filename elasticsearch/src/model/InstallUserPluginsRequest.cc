@@ -26,21 +26,21 @@ InstallUserPluginsRequest::InstallUserPluginsRequest()
 
 InstallUserPluginsRequest::~InstallUserPluginsRequest() {}
 
-string InstallUserPluginsRequest::getInstanceId() const {
+std::string InstallUserPluginsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void InstallUserPluginsRequest::setInstanceId(string instanceId) {
+void InstallUserPluginsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string InstallUserPluginsRequest::getBody() const {
+std::string InstallUserPluginsRequest::getBody() const {
   return body_;
 }
 
-void InstallUserPluginsRequest::setBody(string body) {
+void InstallUserPluginsRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

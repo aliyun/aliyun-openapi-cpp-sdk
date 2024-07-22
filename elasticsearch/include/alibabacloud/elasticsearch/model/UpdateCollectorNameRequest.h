@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT UpdateCollectorNameRequest : public RoaS
 public:
 	UpdateCollectorNameRequest();
 	~UpdateCollectorNameRequest();
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	string getBody() const;
-	void setBody(string body);
-	string getResId() const;
-	void setResId(string resId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getBody() const;
+	void setBody(const std::string &body);
+	std::string getResId() const;
+	void setResId(const std::string &resId);
 
 private:
-	string clientToken_;
-	string body_;
-	string resId_;
+	std::string clientToken_;
+	std::string body_;
+	std::string resId_;
 };
 } // namespace Model
 } // namespace Elasticsearch

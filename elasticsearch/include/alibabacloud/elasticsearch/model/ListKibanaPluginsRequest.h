@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListKibanaPluginsRequest : public RoaSer
 public:
 	ListKibanaPluginsRequest();
 	~ListKibanaPluginsRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	integer getSize() const;
-	void setSize(integer size);
-	string getPage() const;
-	void setPage(string page);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	int getSize() const;
+	void setSize(int size);
+	std::string getPage() const;
+	void setPage(const std::string &page);
 
 private:
-	string instanceId_;
-	integer size_;
-	string page_;
+	std::string instanceId_;
+	int size_;
+	std::string page_;
 };
 } // namespace Model
 } // namespace Elasticsearch

@@ -26,30 +26,30 @@ ModifyInstanceMaintainTimeRequest::ModifyInstanceMaintainTimeRequest()
 
 ModifyInstanceMaintainTimeRequest::~ModifyInstanceMaintainTimeRequest() {}
 
-string ModifyInstanceMaintainTimeRequest::getInstanceId() const {
+std::string ModifyInstanceMaintainTimeRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ModifyInstanceMaintainTimeRequest::setInstanceId(string instanceId) {
+void ModifyInstanceMaintainTimeRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string ModifyInstanceMaintainTimeRequest::getClientToken() const {
+std::string ModifyInstanceMaintainTimeRequest::getClientToken() const {
   return clientToken_;
 }
 
-void ModifyInstanceMaintainTimeRequest::setClientToken(string clientToken) {
+void ModifyInstanceMaintainTimeRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string ModifyInstanceMaintainTimeRequest::getBody() const {
+std::string ModifyInstanceMaintainTimeRequest::getBody() const {
   return body_;
 }
 
-void ModifyInstanceMaintainTimeRequest::setBody(string body) {
+void ModifyInstanceMaintainTimeRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

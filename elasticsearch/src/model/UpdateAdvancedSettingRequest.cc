@@ -26,30 +26,30 @@ UpdateAdvancedSettingRequest::UpdateAdvancedSettingRequest()
 
 UpdateAdvancedSettingRequest::~UpdateAdvancedSettingRequest() {}
 
-string UpdateAdvancedSettingRequest::getInstanceId() const {
+std::string UpdateAdvancedSettingRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateAdvancedSettingRequest::setInstanceId(string instanceId) {
+void UpdateAdvancedSettingRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateAdvancedSettingRequest::getClientToken() const {
+std::string UpdateAdvancedSettingRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateAdvancedSettingRequest::setClientToken(string clientToken) {
+void UpdateAdvancedSettingRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string UpdateAdvancedSettingRequest::getBody() const {
+std::string UpdateAdvancedSettingRequest::getBody() const {
   return body_;
 }
 
-void UpdateAdvancedSettingRequest::setBody(string body) {
+void UpdateAdvancedSettingRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

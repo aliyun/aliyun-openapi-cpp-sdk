@@ -30,19 +30,19 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT CreateVpcEndpointRequest : public RoaSer
 public:
 	CreateVpcEndpointRequest();
 	~CreateVpcEndpointRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	boolean getDryRun() const;
-	void setDryRun(boolean dryRun);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getBody() const;
 	void setBody(const std::string &body);
 
 private:
-	string instanceId_;
-	boolean dryRun_;
-	string clientToken_;
+	std::string instanceId_;
+	bool dryRun_;
+	std::string clientToken_;
 	std::string body_;
 };
 } // namespace Model

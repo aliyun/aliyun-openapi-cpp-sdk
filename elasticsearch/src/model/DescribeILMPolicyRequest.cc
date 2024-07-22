@@ -26,21 +26,21 @@ DescribeILMPolicyRequest::DescribeILMPolicyRequest()
 
 DescribeILMPolicyRequest::~DescribeILMPolicyRequest() {}
 
-string DescribeILMPolicyRequest::getInstanceId() const {
+std::string DescribeILMPolicyRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribeILMPolicyRequest::setInstanceId(string instanceId) {
+void DescribeILMPolicyRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DescribeILMPolicyRequest::getPolicyName() const {
+std::string DescribeILMPolicyRequest::getPolicyName() const {
   return policyName_;
 }
 
-void DescribeILMPolicyRequest::setPolicyName(string policyName) {
+void DescribeILMPolicyRequest::setPolicyName(const std::string &policyName) {
   policyName_ = policyName;
-  setParameter(std::string("PolicyName"), std::to_string(policyName));
+  setParameter(std::string("PolicyName"), policyName);
 }
 

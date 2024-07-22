@@ -26,39 +26,39 @@ RestartInstanceRequest::RestartInstanceRequest()
 
 RestartInstanceRequest::~RestartInstanceRequest() {}
 
-string RestartInstanceRequest::getInstanceId() const {
+std::string RestartInstanceRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void RestartInstanceRequest::setInstanceId(string instanceId) {
+void RestartInstanceRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string RestartInstanceRequest::getClientToken() const {
+std::string RestartInstanceRequest::getClientToken() const {
   return clientToken_;
 }
 
-void RestartInstanceRequest::setClientToken(string clientToken) {
+void RestartInstanceRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-boolean RestartInstanceRequest::getForce() const {
+bool RestartInstanceRequest::getForce() const {
   return force_;
 }
 
-void RestartInstanceRequest::setForce(boolean force) {
+void RestartInstanceRequest::setForce(bool force) {
   force_ = force;
-  setParameter(std::string("force"), std::to_string(force));
+  setParameter(std::string("force"), force ? "true" : "false");
 }
 
-string RestartInstanceRequest::getBody() const {
+std::string RestartInstanceRequest::getBody() const {
   return body_;
 }
 
-void RestartInstanceRequest::setBody(string body) {
+void RestartInstanceRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

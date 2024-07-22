@@ -26,30 +26,30 @@ DeleteDataStreamRequest::DeleteDataStreamRequest()
 
 DeleteDataStreamRequest::~DeleteDataStreamRequest() {}
 
-string DeleteDataStreamRequest::getDataStream() const {
+std::string DeleteDataStreamRequest::getDataStream() const {
   return dataStream_;
 }
 
-void DeleteDataStreamRequest::setDataStream(string dataStream) {
+void DeleteDataStreamRequest::setDataStream(const std::string &dataStream) {
   dataStream_ = dataStream;
-  setParameter(std::string("DataStream"), std::to_string(dataStream));
+  setParameter(std::string("DataStream"), dataStream);
 }
 
-string DeleteDataStreamRequest::getInstanceId() const {
+std::string DeleteDataStreamRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DeleteDataStreamRequest::setInstanceId(string instanceId) {
+void DeleteDataStreamRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DeleteDataStreamRequest::getClientToken() const {
+std::string DeleteDataStreamRequest::getClientToken() const {
   return clientToken_;
 }
 
-void DeleteDataStreamRequest::setClientToken(string clientToken) {
+void DeleteDataStreamRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 

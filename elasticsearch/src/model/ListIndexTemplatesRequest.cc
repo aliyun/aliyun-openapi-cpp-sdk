@@ -26,39 +26,39 @@ ListIndexTemplatesRequest::ListIndexTemplatesRequest()
 
 ListIndexTemplatesRequest::~ListIndexTemplatesRequest() {}
 
-string ListIndexTemplatesRequest::getInstanceId() const {
+std::string ListIndexTemplatesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListIndexTemplatesRequest::setInstanceId(string instanceId) {
+void ListIndexTemplatesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-integer ListIndexTemplatesRequest::getSize() const {
+int ListIndexTemplatesRequest::getSize() const {
   return size_;
 }
 
-void ListIndexTemplatesRequest::setSize(integer size) {
+void ListIndexTemplatesRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-integer ListIndexTemplatesRequest::getPage() const {
+int ListIndexTemplatesRequest::getPage() const {
   return page_;
 }
 
-void ListIndexTemplatesRequest::setPage(integer page) {
+void ListIndexTemplatesRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }
 
-string ListIndexTemplatesRequest::getIndexTemplate() const {
+std::string ListIndexTemplatesRequest::getIndexTemplate() const {
   return indexTemplate_;
 }
 
-void ListIndexTemplatesRequest::setIndexTemplate(string indexTemplate) {
+void ListIndexTemplatesRequest::setIndexTemplate(const std::string &indexTemplate) {
   indexTemplate_ = indexTemplate;
-  setParameter(std::string("indexTemplate"), std::to_string(indexTemplate));
+  setParameter(std::string("indexTemplate"), indexTemplate);
 }
 

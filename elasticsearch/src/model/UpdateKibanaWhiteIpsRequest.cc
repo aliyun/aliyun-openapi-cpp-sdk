@@ -26,31 +26,31 @@ UpdateKibanaWhiteIpsRequest::UpdateKibanaWhiteIpsRequest()
 
 UpdateKibanaWhiteIpsRequest::~UpdateKibanaWhiteIpsRequest() {}
 
-string UpdateKibanaWhiteIpsRequest::getModifyMode() const {
+std::string UpdateKibanaWhiteIpsRequest::getModifyMode() const {
   return modifyMode_;
 }
 
-void UpdateKibanaWhiteIpsRequest::setModifyMode(string modifyMode) {
+void UpdateKibanaWhiteIpsRequest::setModifyMode(const std::string &modifyMode) {
   modifyMode_ = modifyMode;
-  setParameter(std::string("modifyMode"), std::to_string(modifyMode));
+  setParameter(std::string("modifyMode"), modifyMode);
 }
 
-string UpdateKibanaWhiteIpsRequest::getInstanceId() const {
+std::string UpdateKibanaWhiteIpsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateKibanaWhiteIpsRequest::setInstanceId(string instanceId) {
+void UpdateKibanaWhiteIpsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateKibanaWhiteIpsRequest::getClientToken() const {
+std::string UpdateKibanaWhiteIpsRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateKibanaWhiteIpsRequest::setClientToken(string clientToken) {
+void UpdateKibanaWhiteIpsRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
 std::string UpdateKibanaWhiteIpsRequest::getBody() const {

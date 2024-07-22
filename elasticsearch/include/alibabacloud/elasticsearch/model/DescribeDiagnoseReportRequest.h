@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT DescribeDiagnoseReportRequest : public R
 public:
 	DescribeDiagnoseReportRequest();
 	~DescribeDiagnoseReportRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getReportId() const;
-	void setReportId(string reportId);
-	string getLang() const;
-	void setLang(string lang);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getReportId() const;
+	void setReportId(const std::string &reportId);
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 
 private:
-	string instanceId_;
-	string reportId_;
-	string lang_;
+	std::string instanceId_;
+	std::string reportId_;
+	std::string lang_;
 };
 } // namespace Model
 } // namespace Elasticsearch

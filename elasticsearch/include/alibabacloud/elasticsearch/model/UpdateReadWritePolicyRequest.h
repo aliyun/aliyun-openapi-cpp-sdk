@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT UpdateReadWritePolicyRequest : public Ro
 public:
 	UpdateReadWritePolicyRequest();
 	~UpdateReadWritePolicyRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	string getBody() const;
-	void setBody(string body);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getBody() const;
+	void setBody(const std::string &body);
 
 private:
-	string instanceId_;
-	string clientToken_;
-	string body_;
+	std::string instanceId_;
+	std::string clientToken_;
+	std::string body_;
 };
 } // namespace Model
 } // namespace Elasticsearch

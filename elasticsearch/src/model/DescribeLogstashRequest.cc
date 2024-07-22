@@ -26,12 +26,12 @@ DescribeLogstashRequest::DescribeLogstashRequest()
 
 DescribeLogstashRequest::~DescribeLogstashRequest() {}
 
-string DescribeLogstashRequest::getInstanceId() const {
+std::string DescribeLogstashRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribeLogstashRequest::setInstanceId(string instanceId) {
+void DescribeLogstashRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

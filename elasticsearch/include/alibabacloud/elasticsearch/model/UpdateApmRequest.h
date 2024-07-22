@@ -30,13 +30,13 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT UpdateApmRequest : public RoaServiceRequ
 public:
 	UpdateApmRequest();
 	~UpdateApmRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	std::string getBody() const;
 	void setBody(const std::string &body);
 
 private:
-	string instanceId_;
+	std::string instanceId_;
 	std::string body_;
 };
 } // namespace Model

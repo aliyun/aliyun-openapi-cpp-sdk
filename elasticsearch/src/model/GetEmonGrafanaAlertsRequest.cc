@@ -26,21 +26,21 @@ GetEmonGrafanaAlertsRequest::GetEmonGrafanaAlertsRequest()
 
 GetEmonGrafanaAlertsRequest::~GetEmonGrafanaAlertsRequest() {}
 
-string GetEmonGrafanaAlertsRequest::getBody() const {
+std::string GetEmonGrafanaAlertsRequest::getBody() const {
   return body_;
 }
 
-void GetEmonGrafanaAlertsRequest::setBody(string body) {
+void GetEmonGrafanaAlertsRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 
-string GetEmonGrafanaAlertsRequest::getProjectId() const {
+std::string GetEmonGrafanaAlertsRequest::getProjectId() const {
   return projectId_;
 }
 
-void GetEmonGrafanaAlertsRequest::setProjectId(string projectId) {
+void GetEmonGrafanaAlertsRequest::setProjectId(const std::string &projectId) {
   projectId_ = projectId;
-  setParameter(std::string("ProjectId"), std::to_string(projectId));
+  setParameter(std::string("ProjectId"), projectId);
 }
 

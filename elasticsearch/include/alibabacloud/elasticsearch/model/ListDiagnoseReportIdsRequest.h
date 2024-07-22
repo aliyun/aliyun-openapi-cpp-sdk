@@ -30,29 +30,29 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListDiagnoseReportIdsRequest : public Ro
 public:
 	ListDiagnoseReportIdsRequest();
 	~ListDiagnoseReportIdsRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	integer getSize() const;
-	void setSize(integer size);
-	integer getEndTime() const;
-	void setEndTime(integer endTime);
-	integer getStartTime() const;
-	void setStartTime(integer startTime);
-	integer getPage() const;
-	void setPage(integer page);
-	string getTrigger() const;
-	void setTrigger(string trigger);
-	string getLang() const;
-	void setLang(string lang);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	int getSize() const;
+	void setSize(int size);
+	long getEndTime() const;
+	void setEndTime(long endTime);
+	long getStartTime() const;
+	void setStartTime(long startTime);
+	int getPage() const;
+	void setPage(int page);
+	std::string getTrigger() const;
+	void setTrigger(const std::string &trigger);
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 
 private:
-	string instanceId_;
-	integer size_;
-	integer endTime_;
-	integer startTime_;
-	integer page_;
-	string trigger_;
-	string lang_;
+	std::string instanceId_;
+	int size_;
+	long endTime_;
+	long startTime_;
+	int page_;
+	std::string trigger_;
+	std::string lang_;
 };
 } // namespace Model
 } // namespace Elasticsearch

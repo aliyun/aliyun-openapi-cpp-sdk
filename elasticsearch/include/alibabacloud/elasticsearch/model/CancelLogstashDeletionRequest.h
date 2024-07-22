@@ -30,14 +30,14 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT CancelLogstashDeletionRequest : public R
 public:
 	CancelLogstashDeletionRequest();
 	~CancelLogstashDeletionRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 
 private:
-	string instanceId_;
-	string clientToken_;
+	std::string instanceId_;
+	std::string clientToken_;
 };
 } // namespace Model
 } // namespace Elasticsearch

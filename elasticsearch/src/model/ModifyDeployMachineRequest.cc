@@ -26,30 +26,30 @@ ModifyDeployMachineRequest::ModifyDeployMachineRequest()
 
 ModifyDeployMachineRequest::~ModifyDeployMachineRequest() {}
 
-string ModifyDeployMachineRequest::getClientToken() const {
+std::string ModifyDeployMachineRequest::getClientToken() const {
   return clientToken_;
 }
 
-void ModifyDeployMachineRequest::setClientToken(string clientToken) {
+void ModifyDeployMachineRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string ModifyDeployMachineRequest::getBody() const {
+std::string ModifyDeployMachineRequest::getBody() const {
   return body_;
 }
 
-void ModifyDeployMachineRequest::setBody(string body) {
+void ModifyDeployMachineRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 
-string ModifyDeployMachineRequest::getResId() const {
+std::string ModifyDeployMachineRequest::getResId() const {
   return resId_;
 }
 
-void ModifyDeployMachineRequest::setResId(string resId) {
+void ModifyDeployMachineRequest::setResId(const std::string &resId) {
   resId_ = resId;
-  setParameter(std::string("ResId"), std::to_string(resId));
+  setParameter(std::string("ResId"), resId);
 }
 

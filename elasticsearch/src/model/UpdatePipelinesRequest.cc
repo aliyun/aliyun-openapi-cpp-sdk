@@ -26,39 +26,39 @@ UpdatePipelinesRequest::UpdatePipelinesRequest()
 
 UpdatePipelinesRequest::~UpdatePipelinesRequest() {}
 
-string UpdatePipelinesRequest::getInstanceId() const {
+std::string UpdatePipelinesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdatePipelinesRequest::setInstanceId(string instanceId) {
+void UpdatePipelinesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdatePipelinesRequest::getClientToken() const {
+std::string UpdatePipelinesRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdatePipelinesRequest::setClientToken(string clientToken) {
+void UpdatePipelinesRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-boolean UpdatePipelinesRequest::getTrigger() const {
+bool UpdatePipelinesRequest::getTrigger() const {
   return trigger_;
 }
 
-void UpdatePipelinesRequest::setTrigger(boolean trigger) {
+void UpdatePipelinesRequest::setTrigger(bool trigger) {
   trigger_ = trigger;
-  setParameter(std::string("trigger"), std::to_string(trigger));
+  setParameter(std::string("trigger"), trigger ? "true" : "false");
 }
 
-string UpdatePipelinesRequest::getBody() const {
+std::string UpdatePipelinesRequest::getBody() const {
   return body_;
 }
 
-void UpdatePipelinesRequest::setBody(string body) {
+void UpdatePipelinesRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

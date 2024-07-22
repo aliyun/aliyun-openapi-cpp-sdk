@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT PostEmonTryAlarmRuleRequest : public Roa
 public:
 	PostEmonTryAlarmRuleRequest();
 	~PostEmonTryAlarmRuleRequest();
-	string getAlarmGroupId() const;
-	void setAlarmGroupId(string alarmGroupId);
-	string getBody() const;
-	void setBody(string body);
-	string getProjectId() const;
-	void setProjectId(string projectId);
+	std::string getAlarmGroupId() const;
+	void setAlarmGroupId(const std::string &alarmGroupId);
+	std::string getBody() const;
+	void setBody(const std::string &body);
+	std::string getProjectId() const;
+	void setProjectId(const std::string &projectId);
 
 private:
-	string alarmGroupId_;
-	string body_;
-	string projectId_;
+	std::string alarmGroupId_;
+	std::string body_;
+	std::string projectId_;
 };
 } // namespace Model
 } // namespace Elasticsearch

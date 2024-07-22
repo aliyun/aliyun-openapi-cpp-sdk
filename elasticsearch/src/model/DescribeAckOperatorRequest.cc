@@ -26,12 +26,12 @@ DescribeAckOperatorRequest::DescribeAckOperatorRequest()
 
 DescribeAckOperatorRequest::~DescribeAckOperatorRequest() {}
 
-string DescribeAckOperatorRequest::getClusterId() const {
+std::string DescribeAckOperatorRequest::getClusterId() const {
   return clusterId_;
 }
 
-void DescribeAckOperatorRequest::setClusterId(string clusterId) {
+void DescribeAckOperatorRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

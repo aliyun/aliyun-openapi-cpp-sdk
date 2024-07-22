@@ -26,12 +26,12 @@ ListConnectedClustersRequest::ListConnectedClustersRequest()
 
 ListConnectedClustersRequest::~ListConnectedClustersRequest() {}
 
-string ListConnectedClustersRequest::getInstanceId() const {
+std::string ListConnectedClustersRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListConnectedClustersRequest::setInstanceId(string instanceId) {
+void ListConnectedClustersRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

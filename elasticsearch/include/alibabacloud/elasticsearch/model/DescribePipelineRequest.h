@@ -30,14 +30,14 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT DescribePipelineRequest : public RoaServ
 public:
 	DescribePipelineRequest();
 	~DescribePipelineRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getPipelineId() const;
-	void setPipelineId(string pipelineId);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getPipelineId() const;
+	void setPipelineId(const std::string &pipelineId);
 
 private:
-	string instanceId_;
-	string pipelineId_;
+	std::string instanceId_;
+	std::string pipelineId_;
 };
 } // namespace Model
 } // namespace Elasticsearch

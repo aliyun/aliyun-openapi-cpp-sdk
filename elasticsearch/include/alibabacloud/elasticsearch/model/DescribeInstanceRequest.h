@@ -30,11 +30,11 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT DescribeInstanceRequest : public RoaServ
 public:
 	DescribeInstanceRequest();
 	~DescribeInstanceRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 
 private:
-	string instanceId_;
+	std::string instanceId_;
 };
 } // namespace Model
 } // namespace Elasticsearch

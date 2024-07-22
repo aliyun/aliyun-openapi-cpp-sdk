@@ -26,39 +26,39 @@ UpdatePrivateNetworkWhiteIpsRequest::UpdatePrivateNetworkWhiteIpsRequest()
 
 UpdatePrivateNetworkWhiteIpsRequest::~UpdatePrivateNetworkWhiteIpsRequest() {}
 
-string UpdatePrivateNetworkWhiteIpsRequest::getModifyMode() const {
+std::string UpdatePrivateNetworkWhiteIpsRequest::getModifyMode() const {
   return modifyMode_;
 }
 
-void UpdatePrivateNetworkWhiteIpsRequest::setModifyMode(string modifyMode) {
+void UpdatePrivateNetworkWhiteIpsRequest::setModifyMode(const std::string &modifyMode) {
   modifyMode_ = modifyMode;
-  setParameter(std::string("modifyMode"), std::to_string(modifyMode));
+  setParameter(std::string("modifyMode"), modifyMode);
 }
 
-string UpdatePrivateNetworkWhiteIpsRequest::getInstanceId() const {
+std::string UpdatePrivateNetworkWhiteIpsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdatePrivateNetworkWhiteIpsRequest::setInstanceId(string instanceId) {
+void UpdatePrivateNetworkWhiteIpsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdatePrivateNetworkWhiteIpsRequest::getClientToken() const {
+std::string UpdatePrivateNetworkWhiteIpsRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdatePrivateNetworkWhiteIpsRequest::setClientToken(string clientToken) {
+void UpdatePrivateNetworkWhiteIpsRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string UpdatePrivateNetworkWhiteIpsRequest::getBody() const {
+std::string UpdatePrivateNetworkWhiteIpsRequest::getBody() const {
   return body_;
 }
 
-void UpdatePrivateNetworkWhiteIpsRequest::setBody(string body) {
+void UpdatePrivateNetworkWhiteIpsRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

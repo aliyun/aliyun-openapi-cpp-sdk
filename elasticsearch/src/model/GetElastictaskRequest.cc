@@ -26,12 +26,12 @@ GetElastictaskRequest::GetElastictaskRequest()
 
 GetElastictaskRequest::~GetElastictaskRequest() {}
 
-string GetElastictaskRequest::getInstanceId() const {
+std::string GetElastictaskRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void GetElastictaskRequest::setInstanceId(string instanceId) {
+void GetElastictaskRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

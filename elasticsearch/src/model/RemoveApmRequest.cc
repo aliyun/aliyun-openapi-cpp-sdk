@@ -26,12 +26,12 @@ RemoveApmRequest::RemoveApmRequest()
 
 RemoveApmRequest::~RemoveApmRequest() {}
 
-string RemoveApmRequest::getInstanceId() const {
+std::string RemoveApmRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void RemoveApmRequest::setInstanceId(string instanceId) {
+void RemoveApmRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("instanceId"), std::to_string(instanceId));
+  setParameter(std::string("instanceId"), instanceId);
 }
 

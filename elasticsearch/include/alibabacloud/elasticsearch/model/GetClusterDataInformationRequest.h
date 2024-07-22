@@ -30,11 +30,11 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT GetClusterDataInformationRequest : publi
 public:
 	GetClusterDataInformationRequest();
 	~GetClusterDataInformationRequest();
-	string getBody() const;
-	void setBody(string body);
+	std::string getBody() const;
+	void setBody(const std::string &body);
 
 private:
-	string body_;
+	std::string body_;
 };
 } // namespace Model
 } // namespace Elasticsearch

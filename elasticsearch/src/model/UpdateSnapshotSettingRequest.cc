@@ -26,21 +26,21 @@ UpdateSnapshotSettingRequest::UpdateSnapshotSettingRequest()
 
 UpdateSnapshotSettingRequest::~UpdateSnapshotSettingRequest() {}
 
-string UpdateSnapshotSettingRequest::getInstanceId() const {
+std::string UpdateSnapshotSettingRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateSnapshotSettingRequest::setInstanceId(string instanceId) {
+void UpdateSnapshotSettingRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateSnapshotSettingRequest::getBody() const {
+std::string UpdateSnapshotSettingRequest::getBody() const {
   return body_;
 }
 
-void UpdateSnapshotSettingRequest::setBody(string body) {
+void UpdateSnapshotSettingRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

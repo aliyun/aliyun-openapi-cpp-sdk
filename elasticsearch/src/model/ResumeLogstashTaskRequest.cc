@@ -26,21 +26,21 @@ ResumeLogstashTaskRequest::ResumeLogstashTaskRequest()
 
 ResumeLogstashTaskRequest::~ResumeLogstashTaskRequest() {}
 
-string ResumeLogstashTaskRequest::getInstanceId() const {
+std::string ResumeLogstashTaskRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ResumeLogstashTaskRequest::setInstanceId(string instanceId) {
+void ResumeLogstashTaskRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string ResumeLogstashTaskRequest::getClientToken() const {
+std::string ResumeLogstashTaskRequest::getClientToken() const {
   return clientToken_;
 }
 
-void ResumeLogstashTaskRequest::setClientToken(string clientToken) {
+void ResumeLogstashTaskRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 

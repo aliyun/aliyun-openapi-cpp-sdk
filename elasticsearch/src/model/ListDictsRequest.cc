@@ -26,30 +26,30 @@ ListDictsRequest::ListDictsRequest()
 
 ListDictsRequest::~ListDictsRequest() {}
 
-string ListDictsRequest::getInstanceId() const {
+std::string ListDictsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListDictsRequest::setInstanceId(string instanceId) {
+void ListDictsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string ListDictsRequest::getAnalyzerType() const {
+std::string ListDictsRequest::getAnalyzerType() const {
   return analyzerType_;
 }
 
-void ListDictsRequest::setAnalyzerType(string analyzerType) {
+void ListDictsRequest::setAnalyzerType(const std::string &analyzerType) {
   analyzerType_ = analyzerType;
-  setParameter(std::string("analyzerType"), std::to_string(analyzerType));
+  setParameter(std::string("analyzerType"), analyzerType);
 }
 
-string ListDictsRequest::getName() const {
+std::string ListDictsRequest::getName() const {
   return name_;
 }
 
-void ListDictsRequest::setName(string name) {
+void ListDictsRequest::setName(const std::string &name) {
   name_ = name;
-  setParameter(std::string("name"), std::to_string(name));
+  setParameter(std::string("name"), name);
 }
 

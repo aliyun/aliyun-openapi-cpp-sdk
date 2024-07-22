@@ -26,21 +26,21 @@ ListAllNodeRequest::ListAllNodeRequest()
 
 ListAllNodeRequest::~ListAllNodeRequest() {}
 
-string ListAllNodeRequest::getInstanceId() const {
+std::string ListAllNodeRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListAllNodeRequest::setInstanceId(string instanceId) {
+void ListAllNodeRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-boolean ListAllNodeRequest::getExtended() const {
+bool ListAllNodeRequest::getExtended() const {
   return extended_;
 }
 
-void ListAllNodeRequest::setExtended(boolean extended) {
+void ListAllNodeRequest::setExtended(bool extended) {
   extended_ = extended;
-  setParameter(std::string("extended"), std::to_string(extended));
+  setParameter(std::string("extended"), extended ? "true" : "false");
 }
 

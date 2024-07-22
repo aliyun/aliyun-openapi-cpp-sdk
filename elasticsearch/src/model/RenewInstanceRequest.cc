@@ -26,30 +26,30 @@ RenewInstanceRequest::RenewInstanceRequest()
 
 RenewInstanceRequest::~RenewInstanceRequest() {}
 
-string RenewInstanceRequest::getInstanceId() const {
+std::string RenewInstanceRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void RenewInstanceRequest::setInstanceId(string instanceId) {
+void RenewInstanceRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string RenewInstanceRequest::getClientToken() const {
+std::string RenewInstanceRequest::getClientToken() const {
   return clientToken_;
 }
 
-void RenewInstanceRequest::setClientToken(string clientToken) {
+void RenewInstanceRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string RenewInstanceRequest::getBody() const {
+std::string RenewInstanceRequest::getBody() const {
   return body_;
 }
 
-void RenewInstanceRequest::setBody(string body) {
+void RenewInstanceRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

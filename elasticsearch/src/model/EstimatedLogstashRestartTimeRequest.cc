@@ -26,30 +26,30 @@ EstimatedLogstashRestartTimeRequest::EstimatedLogstashRestartTimeRequest()
 
 EstimatedLogstashRestartTimeRequest::~EstimatedLogstashRestartTimeRequest() {}
 
-string EstimatedLogstashRestartTimeRequest::getInstanceId() const {
+std::string EstimatedLogstashRestartTimeRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void EstimatedLogstashRestartTimeRequest::setInstanceId(string instanceId) {
+void EstimatedLogstashRestartTimeRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-boolean EstimatedLogstashRestartTimeRequest::getForce() const {
+bool EstimatedLogstashRestartTimeRequest::getForce() const {
   return force_;
 }
 
-void EstimatedLogstashRestartTimeRequest::setForce(boolean force) {
+void EstimatedLogstashRestartTimeRequest::setForce(bool force) {
   force_ = force;
-  setParameter(std::string("force"), std::to_string(force));
+  setParameter(std::string("force"), force ? "true" : "false");
 }
 
-string EstimatedLogstashRestartTimeRequest::getBody() const {
+std::string EstimatedLogstashRestartTimeRequest::getBody() const {
   return body_;
 }
 
-void EstimatedLogstashRestartTimeRequest::setBody(string body) {
+void EstimatedLogstashRestartTimeRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

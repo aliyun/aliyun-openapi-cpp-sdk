@@ -26,22 +26,22 @@ TriggerNetworkRequest::TriggerNetworkRequest()
 
 TriggerNetworkRequest::~TriggerNetworkRequest() {}
 
-string TriggerNetworkRequest::getInstanceId() const {
+std::string TriggerNetworkRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void TriggerNetworkRequest::setInstanceId(string instanceId) {
+void TriggerNetworkRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string TriggerNetworkRequest::getClientToken() const {
+std::string TriggerNetworkRequest::getClientToken() const {
   return clientToken_;
 }
 
-void TriggerNetworkRequest::setClientToken(string clientToken) {
+void TriggerNetworkRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
 std::string TriggerNetworkRequest::getBody() const {

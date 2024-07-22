@@ -26,21 +26,21 @@ ListPipelineIdsRequest::ListPipelineIdsRequest()
 
 ListPipelineIdsRequest::~ListPipelineIdsRequest() {}
 
-string ListPipelineIdsRequest::getInstanceId() const {
+std::string ListPipelineIdsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListPipelineIdsRequest::setInstanceId(string instanceId) {
+void ListPipelineIdsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string ListPipelineIdsRequest::getBody() const {
+std::string ListPipelineIdsRequest::getBody() const {
   return body_;
 }
 
-void ListPipelineIdsRequest::setBody(string body) {
+void ListPipelineIdsRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

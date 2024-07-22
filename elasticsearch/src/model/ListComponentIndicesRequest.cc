@@ -26,38 +26,38 @@ ListComponentIndicesRequest::ListComponentIndicesRequest()
 
 ListComponentIndicesRequest::~ListComponentIndicesRequest() {}
 
-string ListComponentIndicesRequest::getInstanceId() const {
+std::string ListComponentIndicesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListComponentIndicesRequest::setInstanceId(string instanceId) {
+void ListComponentIndicesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-integer ListComponentIndicesRequest::getSize() const {
+int ListComponentIndicesRequest::getSize() const {
   return size_;
 }
 
-void ListComponentIndicesRequest::setSize(integer size) {
+void ListComponentIndicesRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-string ListComponentIndicesRequest::getName() const {
+std::string ListComponentIndicesRequest::getName() const {
   return name_;
 }
 
-void ListComponentIndicesRequest::setName(string name) {
+void ListComponentIndicesRequest::setName(const std::string &name) {
   name_ = name;
-  setParameter(std::string("name"), std::to_string(name));
+  setParameter(std::string("name"), name);
 }
 
-integer ListComponentIndicesRequest::getPage() const {
+int ListComponentIndicesRequest::getPage() const {
   return page_;
 }
 
-void ListComponentIndicesRequest::setPage(integer page) {
+void ListComponentIndicesRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }

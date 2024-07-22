@@ -26,21 +26,21 @@ DeleteIndexTemplateRequest::DeleteIndexTemplateRequest()
 
 DeleteIndexTemplateRequest::~DeleteIndexTemplateRequest() {}
 
-string DeleteIndexTemplateRequest::getInstanceId() const {
+std::string DeleteIndexTemplateRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DeleteIndexTemplateRequest::setInstanceId(string instanceId) {
+void DeleteIndexTemplateRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DeleteIndexTemplateRequest::getIndexTemplate() const {
+std::string DeleteIndexTemplateRequest::getIndexTemplate() const {
   return indexTemplate_;
 }
 
-void DeleteIndexTemplateRequest::setIndexTemplate(string indexTemplate) {
+void DeleteIndexTemplateRequest::setIndexTemplate(const std::string &indexTemplate) {
   indexTemplate_ = indexTemplate;
-  setParameter(std::string("IndexTemplate"), std::to_string(indexTemplate));
+  setParameter(std::string("IndexTemplate"), indexTemplate);
 }
 

@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT DeletePipelinesRequest : public RoaServi
 public:
 	DeletePipelinesRequest();
 	~DeletePipelinesRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	string getPipelineIds() const;
-	void setPipelineIds(string pipelineIds);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getPipelineIds() const;
+	void setPipelineIds(const std::string &pipelineIds);
 
 private:
-	string instanceId_;
-	string clientToken_;
-	string pipelineIds_;
+	std::string instanceId_;
+	std::string clientToken_;
+	std::string pipelineIds_;
 };
 } // namespace Model
 } // namespace Elasticsearch

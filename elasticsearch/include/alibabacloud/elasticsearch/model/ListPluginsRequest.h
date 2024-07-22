@@ -30,23 +30,23 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListPluginsRequest : public RoaServiceRe
 public:
 	ListPluginsRequest();
 	~ListPluginsRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	integer getSize() const;
-	void setSize(integer size);
-	string getName() const;
-	void setName(string name);
-	string getPage() const;
-	void setPage(string page);
-	string getSource() const;
-	void setSource(string source);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	int getSize() const;
+	void setSize(int size);
+	std::string getName() const;
+	void setName(const std::string &name);
+	std::string getPage() const;
+	void setPage(const std::string &page);
+	std::string getSource() const;
+	void setSource(const std::string &source);
 
 private:
-	string instanceId_;
-	integer size_;
-	string name_;
-	string page_;
-	string source_;
+	std::string instanceId_;
+	int size_;
+	std::string name_;
+	std::string page_;
+	std::string source_;
 };
 } // namespace Model
 } // namespace Elasticsearch

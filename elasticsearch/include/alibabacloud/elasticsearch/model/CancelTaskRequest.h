@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT CancelTaskRequest : public RoaServiceReq
 public:
 	CancelTaskRequest();
 	~CancelTaskRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getTaskType() const;
-	void setTaskType(string taskType);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getTaskType() const;
+	void setTaskType(const std::string &taskType);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 
 private:
-	string instanceId_;
-	string taskType_;
-	string clientToken_;
+	std::string instanceId_;
+	std::string taskType_;
+	std::string clientToken_;
 };
 } // namespace Model
 } // namespace Elasticsearch

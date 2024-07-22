@@ -30,26 +30,26 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListCollectorsRequest : public RoaServic
 public:
 	ListCollectorsRequest();
 	~ListCollectorsRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	integer getSize() const;
-	void setSize(integer size);
-	string getName() const;
-	void setName(string name);
-	string getSourceType() const;
-	void setSourceType(string sourceType);
-	integer getPage() const;
-	void setPage(integer page);
-	string getResId() const;
-	void setResId(string resId);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	int getSize() const;
+	void setSize(int size);
+	std::string getName() const;
+	void setName(const std::string &name);
+	std::string getSourceType() const;
+	void setSourceType(const std::string &sourceType);
+	int getPage() const;
+	void setPage(int page);
+	std::string getResId() const;
+	void setResId(const std::string &resId);
 
 private:
-	string instanceId_;
-	integer size_;
-	string name_;
-	string sourceType_;
-	integer page_;
-	string resId_;
+	std::string instanceId_;
+	int size_;
+	std::string name_;
+	std::string sourceType_;
+	int page_;
+	std::string resId_;
 };
 } // namespace Model
 } // namespace Elasticsearch

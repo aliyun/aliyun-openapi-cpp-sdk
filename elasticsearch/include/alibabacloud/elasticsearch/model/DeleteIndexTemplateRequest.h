@@ -30,14 +30,14 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT DeleteIndexTemplateRequest : public RoaS
 public:
 	DeleteIndexTemplateRequest();
 	~DeleteIndexTemplateRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getIndexTemplate() const;
-	void setIndexTemplate(string indexTemplate);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getIndexTemplate() const;
+	void setIndexTemplate(const std::string &indexTemplate);
 
 private:
-	string instanceId_;
-	string indexTemplate_;
+	std::string instanceId_;
+	std::string indexTemplate_;
 };
 } // namespace Model
 } // namespace Elasticsearch

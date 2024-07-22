@@ -26,21 +26,21 @@ ListILMPoliciesRequest::ListILMPoliciesRequest()
 
 ListILMPoliciesRequest::~ListILMPoliciesRequest() {}
 
-string ListILMPoliciesRequest::getInstanceId() const {
+std::string ListILMPoliciesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListILMPoliciesRequest::setInstanceId(string instanceId) {
+void ListILMPoliciesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string ListILMPoliciesRequest::getPolicyName() const {
+std::string ListILMPoliciesRequest::getPolicyName() const {
   return policyName_;
 }
 
-void ListILMPoliciesRequest::setPolicyName(string policyName) {
+void ListILMPoliciesRequest::setPolicyName(const std::string &policyName) {
   policyName_ = policyName;
-  setParameter(std::string("policyName"), std::to_string(policyName));
+  setParameter(std::string("policyName"), policyName);
 }
 

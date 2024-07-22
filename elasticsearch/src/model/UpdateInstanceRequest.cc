@@ -26,40 +26,40 @@ UpdateInstanceRequest::UpdateInstanceRequest()
 
 UpdateInstanceRequest::~UpdateInstanceRequest() {}
 
-boolean UpdateInstanceRequest::getIgnoreStatus() const {
+bool UpdateInstanceRequest::getIgnoreStatus() const {
   return ignoreStatus_;
 }
 
-void UpdateInstanceRequest::setIgnoreStatus(boolean ignoreStatus) {
+void UpdateInstanceRequest::setIgnoreStatus(bool ignoreStatus) {
   ignoreStatus_ = ignoreStatus;
-  setParameter(std::string("ignoreStatus"), std::to_string(ignoreStatus));
+  setParameter(std::string("ignoreStatus"), ignoreStatus ? "true" : "false");
 }
 
-string UpdateInstanceRequest::getInstanceId() const {
+std::string UpdateInstanceRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateInstanceRequest::setInstanceId(string instanceId) {
+void UpdateInstanceRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateInstanceRequest::getClientToken() const {
+std::string UpdateInstanceRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateInstanceRequest::setClientToken(string clientToken) {
+void UpdateInstanceRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-boolean UpdateInstanceRequest::getForce() const {
+bool UpdateInstanceRequest::getForce() const {
   return force_;
 }
 
-void UpdateInstanceRequest::setForce(boolean force) {
+void UpdateInstanceRequest::setForce(bool force) {
   force_ = force;
-  setParameter(std::string("force"), std::to_string(force));
+  setParameter(std::string("force"), force ? "true" : "false");
 }
 
 std::string UpdateInstanceRequest::getBody() const {
@@ -71,12 +71,12 @@ void UpdateInstanceRequest::setBody(const std::string &body) {
   setBodyParameter(std::string("body"), body);
 }
 
-string UpdateInstanceRequest::getOrderActionType() const {
+std::string UpdateInstanceRequest::getOrderActionType() const {
   return orderActionType_;
 }
 
-void UpdateInstanceRequest::setOrderActionType(string orderActionType) {
+void UpdateInstanceRequest::setOrderActionType(const std::string &orderActionType) {
   orderActionType_ = orderActionType;
-  setParameter(std::string("orderActionType"), std::to_string(orderActionType));
+  setParameter(std::string("orderActionType"), orderActionType);
 }
 

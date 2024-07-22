@@ -30,35 +30,35 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListActionRecordsRequest : public RoaSer
 public:
 	ListActionRecordsRequest();
 	~ListActionRecordsRequest();
-	string getFilter() const;
-	void setFilter(string filter);
-	string getActionNames() const;
-	void setActionNames(string actionNames);
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	integer getSize() const;
-	void setSize(integer size);
-	string getRequestId() const;
-	void setRequestId(string requestId);
-	integer getEndTime() const;
-	void setEndTime(integer endTime);
-	integer getPage() const;
-	void setPage(integer page);
-	integer getStartTime() const;
-	void setStartTime(integer startTime);
-	string getUserId() const;
-	void setUserId(string userId);
+	std::string getFilter() const;
+	void setFilter(const std::string &filter);
+	std::string getActionNames() const;
+	void setActionNames(const std::string &actionNames);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	int getSize() const;
+	void setSize(int size);
+	std::string getRequestId() const;
+	void setRequestId(const std::string &requestId);
+	long getEndTime() const;
+	void setEndTime(long endTime);
+	int getPage() const;
+	void setPage(int page);
+	long getStartTime() const;
+	void setStartTime(long startTime);
+	std::string getUserId() const;
+	void setUserId(const std::string &userId);
 
 private:
-	string filter_;
-	string actionNames_;
-	string instanceId_;
-	integer size_;
-	string requestId_;
-	integer endTime_;
-	integer page_;
-	integer startTime_;
-	string userId_;
+	std::string filter_;
+	std::string actionNames_;
+	std::string instanceId_;
+	int size_;
+	std::string requestId_;
+	long endTime_;
+	int page_;
+	long startTime_;
+	std::string userId_;
 };
 } // namespace Model
 } // namespace Elasticsearch

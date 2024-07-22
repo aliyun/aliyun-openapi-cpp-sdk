@@ -26,30 +26,30 @@ TransferNodeRequest::TransferNodeRequest()
 
 TransferNodeRequest::~TransferNodeRequest() {}
 
-string TransferNodeRequest::getInstanceId() const {
+std::string TransferNodeRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void TransferNodeRequest::setInstanceId(string instanceId) {
+void TransferNodeRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string TransferNodeRequest::getNodeType() const {
+std::string TransferNodeRequest::getNodeType() const {
   return nodeType_;
 }
 
-void TransferNodeRequest::setNodeType(string nodeType) {
+void TransferNodeRequest::setNodeType(const std::string &nodeType) {
   nodeType_ = nodeType;
-  setParameter(std::string("nodeType"), std::to_string(nodeType));
+  setParameter(std::string("nodeType"), nodeType);
 }
 
-string TransferNodeRequest::getClientToken() const {
+std::string TransferNodeRequest::getClientToken() const {
   return clientToken_;
 }
 
-void TransferNodeRequest::setClientToken(string clientToken) {
+void TransferNodeRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 

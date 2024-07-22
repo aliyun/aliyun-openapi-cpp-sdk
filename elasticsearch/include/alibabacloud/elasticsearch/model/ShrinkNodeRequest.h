@@ -30,25 +30,25 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ShrinkNodeRequest : public RoaServiceReq
 public:
 	ShrinkNodeRequest();
 	~ShrinkNodeRequest();
-	boolean getIgnoreStatus() const;
-	void setIgnoreStatus(boolean ignoreStatus);
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getNodeType() const;
-	void setNodeType(string nodeType);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	integer getCount() const;
-	void setCount(integer count);
+	bool getIgnoreStatus() const;
+	void setIgnoreStatus(bool ignoreStatus);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getNodeType() const;
+	void setNodeType(const std::string &nodeType);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	int getCount() const;
+	void setCount(int count);
 	std::string getBody() const;
 	void setBody(const std::string &body);
 
 private:
-	boolean ignoreStatus_;
-	string instanceId_;
-	string nodeType_;
-	string clientToken_;
-	integer count_;
+	bool ignoreStatus_;
+	std::string instanceId_;
+	std::string nodeType_;
+	std::string clientToken_;
+	int count_;
 	std::string body_;
 };
 } // namespace Model

@@ -26,30 +26,30 @@ OpenDiagnosisRequest::OpenDiagnosisRequest()
 
 OpenDiagnosisRequest::~OpenDiagnosisRequest() {}
 
-string OpenDiagnosisRequest::getInstanceId() const {
+std::string OpenDiagnosisRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void OpenDiagnosisRequest::setInstanceId(string instanceId) {
+void OpenDiagnosisRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string OpenDiagnosisRequest::getClientToken() const {
+std::string OpenDiagnosisRequest::getClientToken() const {
   return clientToken_;
 }
 
-void OpenDiagnosisRequest::setClientToken(string clientToken) {
+void OpenDiagnosisRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string OpenDiagnosisRequest::getLang() const {
+std::string OpenDiagnosisRequest::getLang() const {
   return lang_;
 }
 
-void OpenDiagnosisRequest::setLang(string lang) {
+void OpenDiagnosisRequest::setLang(const std::string &lang) {
   lang_ = lang;
-  setParameter(std::string("lang"), std::to_string(lang));
+  setParameter(std::string("lang"), lang);
 }
 

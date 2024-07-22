@@ -26,21 +26,21 @@ ListAlternativeSnapshotReposRequest::ListAlternativeSnapshotReposRequest()
 
 ListAlternativeSnapshotReposRequest::~ListAlternativeSnapshotReposRequest() {}
 
-string ListAlternativeSnapshotReposRequest::getInstanceId() const {
+std::string ListAlternativeSnapshotReposRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListAlternativeSnapshotReposRequest::setInstanceId(string instanceId) {
+void ListAlternativeSnapshotReposRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-boolean ListAlternativeSnapshotReposRequest::getAlreadySetItems() const {
+bool ListAlternativeSnapshotReposRequest::getAlreadySetItems() const {
   return alreadySetItems_;
 }
 
-void ListAlternativeSnapshotReposRequest::setAlreadySetItems(boolean alreadySetItems) {
+void ListAlternativeSnapshotReposRequest::setAlreadySetItems(bool alreadySetItems) {
   alreadySetItems_ = alreadySetItems;
-  setParameter(std::string("alreadySetItems"), std::to_string(alreadySetItems));
+  setParameter(std::string("alreadySetItems"), alreadySetItems ? "true" : "false");
 }
 

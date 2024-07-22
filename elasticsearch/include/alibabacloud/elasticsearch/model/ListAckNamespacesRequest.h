@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListAckNamespacesRequest : public RoaSer
 public:
 	ListAckNamespacesRequest();
 	~ListAckNamespacesRequest();
-	integer getSize() const;
-	void setSize(integer size);
-	integer getPage() const;
-	void setPage(integer page);
-	string getClusterId() const;
-	void setClusterId(string clusterId);
+	int getSize() const;
+	void setSize(int size);
+	int getPage() const;
+	void setPage(int page);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 
 private:
-	integer size_;
-	integer page_;
-	string clusterId_;
+	int size_;
+	int page_;
+	std::string clusterId_;
 };
 } // namespace Model
 } // namespace Elasticsearch

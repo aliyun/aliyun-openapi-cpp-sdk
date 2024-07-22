@@ -26,30 +26,30 @@ CancelTaskRequest::CancelTaskRequest()
 
 CancelTaskRequest::~CancelTaskRequest() {}
 
-string CancelTaskRequest::getInstanceId() const {
+std::string CancelTaskRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void CancelTaskRequest::setInstanceId(string instanceId) {
+void CancelTaskRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string CancelTaskRequest::getTaskType() const {
+std::string CancelTaskRequest::getTaskType() const {
   return taskType_;
 }
 
-void CancelTaskRequest::setTaskType(string taskType) {
+void CancelTaskRequest::setTaskType(const std::string &taskType) {
   taskType_ = taskType;
-  setParameter(std::string("taskType"), std::to_string(taskType));
+  setParameter(std::string("taskType"), taskType);
 }
 
-string CancelTaskRequest::getClientToken() const {
+std::string CancelTaskRequest::getClientToken() const {
   return clientToken_;
 }
 
-void CancelTaskRequest::setClientToken(string clientToken) {
+void CancelTaskRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 

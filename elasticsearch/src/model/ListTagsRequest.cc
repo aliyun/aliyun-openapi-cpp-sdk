@@ -26,21 +26,21 @@ ListTagsRequest::ListTagsRequest()
 
 ListTagsRequest::~ListTagsRequest() {}
 
-integer ListTagsRequest::getPageSize() const {
+int ListTagsRequest::getPageSize() const {
   return pageSize_;
 }
 
-void ListTagsRequest::setPageSize(integer pageSize) {
+void ListTagsRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("pageSize"), std::to_string(pageSize));
 }
 
-string ListTagsRequest::getResourceType() const {
+std::string ListTagsRequest::getResourceType() const {
   return resourceType_;
 }
 
-void ListTagsRequest::setResourceType(string resourceType) {
+void ListTagsRequest::setResourceType(const std::string &resourceType) {
   resourceType_ = resourceType;
-  setParameter(std::string("resourceType"), std::to_string(resourceType));
+  setParameter(std::string("resourceType"), resourceType);
 }
 

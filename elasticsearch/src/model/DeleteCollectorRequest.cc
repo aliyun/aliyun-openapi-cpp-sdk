@@ -26,21 +26,21 @@ DeleteCollectorRequest::DeleteCollectorRequest()
 
 DeleteCollectorRequest::~DeleteCollectorRequest() {}
 
-string DeleteCollectorRequest::getClientToken() const {
+std::string DeleteCollectorRequest::getClientToken() const {
   return clientToken_;
 }
 
-void DeleteCollectorRequest::setClientToken(string clientToken) {
+void DeleteCollectorRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string DeleteCollectorRequest::getResId() const {
+std::string DeleteCollectorRequest::getResId() const {
   return resId_;
 }
 
-void DeleteCollectorRequest::setResId(string resId) {
+void DeleteCollectorRequest::setResId(const std::string &resId) {
   resId_ = resId;
-  setParameter(std::string("ResId"), std::to_string(resId));
+  setParameter(std::string("ResId"), resId);
 }
 

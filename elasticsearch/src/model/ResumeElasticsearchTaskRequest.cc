@@ -26,21 +26,21 @@ ResumeElasticsearchTaskRequest::ResumeElasticsearchTaskRequest()
 
 ResumeElasticsearchTaskRequest::~ResumeElasticsearchTaskRequest() {}
 
-string ResumeElasticsearchTaskRequest::getInstanceId() const {
+std::string ResumeElasticsearchTaskRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ResumeElasticsearchTaskRequest::setInstanceId(string instanceId) {
+void ResumeElasticsearchTaskRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string ResumeElasticsearchTaskRequest::getClientToken() const {
+std::string ResumeElasticsearchTaskRequest::getClientToken() const {
   return clientToken_;
 }
 
-void ResumeElasticsearchTaskRequest::setClientToken(string clientToken) {
+void ResumeElasticsearchTaskRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 

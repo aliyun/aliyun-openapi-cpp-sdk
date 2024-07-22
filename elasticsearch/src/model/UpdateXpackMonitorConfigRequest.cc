@@ -26,22 +26,22 @@ UpdateXpackMonitorConfigRequest::UpdateXpackMonitorConfigRequest()
 
 UpdateXpackMonitorConfigRequest::~UpdateXpackMonitorConfigRequest() {}
 
-string UpdateXpackMonitorConfigRequest::getInstanceId() const {
+std::string UpdateXpackMonitorConfigRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdateXpackMonitorConfigRequest::setInstanceId(string instanceId) {
+void UpdateXpackMonitorConfigRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdateXpackMonitorConfigRequest::getClientToken() const {
+std::string UpdateXpackMonitorConfigRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateXpackMonitorConfigRequest::setClientToken(string clientToken) {
+void UpdateXpackMonitorConfigRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
 std::string UpdateXpackMonitorConfigRequest::getBody() const {

@@ -26,48 +26,48 @@ ListPluginsRequest::ListPluginsRequest()
 
 ListPluginsRequest::~ListPluginsRequest() {}
 
-string ListPluginsRequest::getInstanceId() const {
+std::string ListPluginsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListPluginsRequest::setInstanceId(string instanceId) {
+void ListPluginsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-integer ListPluginsRequest::getSize() const {
+int ListPluginsRequest::getSize() const {
   return size_;
 }
 
-void ListPluginsRequest::setSize(integer size) {
+void ListPluginsRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-string ListPluginsRequest::getName() const {
+std::string ListPluginsRequest::getName() const {
   return name_;
 }
 
-void ListPluginsRequest::setName(string name) {
+void ListPluginsRequest::setName(const std::string &name) {
   name_ = name;
-  setParameter(std::string("name"), std::to_string(name));
+  setParameter(std::string("name"), name);
 }
 
-string ListPluginsRequest::getPage() const {
+std::string ListPluginsRequest::getPage() const {
   return page_;
 }
 
-void ListPluginsRequest::setPage(string page) {
+void ListPluginsRequest::setPage(const std::string &page) {
   page_ = page;
-  setParameter(std::string("page"), std::to_string(page));
+  setParameter(std::string("page"), page);
 }
 
-string ListPluginsRequest::getSource() const {
+std::string ListPluginsRequest::getSource() const {
   return source_;
 }
 
-void ListPluginsRequest::setSource(string source) {
+void ListPluginsRequest::setSource(const std::string &source) {
   source_ = source;
-  setParameter(std::string("source"), std::to_string(source));
+  setParameter(std::string("source"), source);
 }
 

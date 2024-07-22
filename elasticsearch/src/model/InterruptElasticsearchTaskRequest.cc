@@ -26,21 +26,21 @@ InterruptElasticsearchTaskRequest::InterruptElasticsearchTaskRequest()
 
 InterruptElasticsearchTaskRequest::~InterruptElasticsearchTaskRequest() {}
 
-string InterruptElasticsearchTaskRequest::getInstanceId() const {
+std::string InterruptElasticsearchTaskRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void InterruptElasticsearchTaskRequest::setInstanceId(string instanceId) {
+void InterruptElasticsearchTaskRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string InterruptElasticsearchTaskRequest::getClientToken() const {
+std::string InterruptElasticsearchTaskRequest::getClientToken() const {
   return clientToken_;
 }
 
-void InterruptElasticsearchTaskRequest::setClientToken(string clientToken) {
+void InterruptElasticsearchTaskRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 

@@ -26,21 +26,21 @@ ModifyElastictaskRequest::ModifyElastictaskRequest()
 
 ModifyElastictaskRequest::~ModifyElastictaskRequest() {}
 
-string ModifyElastictaskRequest::getInstanceId() const {
+std::string ModifyElastictaskRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ModifyElastictaskRequest::setInstanceId(string instanceId) {
+void ModifyElastictaskRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string ModifyElastictaskRequest::getBody() const {
+std::string ModifyElastictaskRequest::getBody() const {
   return body_;
 }
 
-void ModifyElastictaskRequest::setBody(string body) {
+void ModifyElastictaskRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

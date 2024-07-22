@@ -26,21 +26,21 @@ DescribeIndexTemplateRequest::DescribeIndexTemplateRequest()
 
 DescribeIndexTemplateRequest::~DescribeIndexTemplateRequest() {}
 
-string DescribeIndexTemplateRequest::getInstanceId() const {
+std::string DescribeIndexTemplateRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribeIndexTemplateRequest::setInstanceId(string instanceId) {
+void DescribeIndexTemplateRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DescribeIndexTemplateRequest::getIndexTemplate() const {
+std::string DescribeIndexTemplateRequest::getIndexTemplate() const {
   return indexTemplate_;
 }
 
-void DescribeIndexTemplateRequest::setIndexTemplate(string indexTemplate) {
+void DescribeIndexTemplateRequest::setIndexTemplate(const std::string &indexTemplate) {
   indexTemplate_ = indexTemplate;
-  setParameter(std::string("IndexTemplate"), std::to_string(indexTemplate));
+  setParameter(std::string("IndexTemplate"), indexTemplate);
 }
 

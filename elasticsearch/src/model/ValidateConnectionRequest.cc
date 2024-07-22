@@ -26,30 +26,30 @@ ValidateConnectionRequest::ValidateConnectionRequest()
 
 ValidateConnectionRequest::~ValidateConnectionRequest() {}
 
-string ValidateConnectionRequest::getInstanceId() const {
+std::string ValidateConnectionRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ValidateConnectionRequest::setInstanceId(string instanceId) {
+void ValidateConnectionRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string ValidateConnectionRequest::getClientToken() const {
+std::string ValidateConnectionRequest::getClientToken() const {
   return clientToken_;
 }
 
-void ValidateConnectionRequest::setClientToken(string clientToken) {
+void ValidateConnectionRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string ValidateConnectionRequest::getBody() const {
+std::string ValidateConnectionRequest::getBody() const {
   return body_;
 }
 
-void ValidateConnectionRequest::setBody(string body) {
+void ValidateConnectionRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

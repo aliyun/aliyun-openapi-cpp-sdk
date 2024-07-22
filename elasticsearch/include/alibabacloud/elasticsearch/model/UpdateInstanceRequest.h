@@ -30,26 +30,26 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT UpdateInstanceRequest : public RoaServic
 public:
 	UpdateInstanceRequest();
 	~UpdateInstanceRequest();
-	boolean getIgnoreStatus() const;
-	void setIgnoreStatus(boolean ignoreStatus);
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	boolean getForce() const;
-	void setForce(boolean force);
+	bool getIgnoreStatus() const;
+	void setIgnoreStatus(bool ignoreStatus);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	bool getForce() const;
+	void setForce(bool force);
 	std::string getBody() const;
 	void setBody(const std::string &body);
-	string getOrderActionType() const;
-	void setOrderActionType(string orderActionType);
+	std::string getOrderActionType() const;
+	void setOrderActionType(const std::string &orderActionType);
 
 private:
-	boolean ignoreStatus_;
-	string instanceId_;
-	string clientToken_;
-	boolean force_;
+	bool ignoreStatus_;
+	std::string instanceId_;
+	std::string clientToken_;
+	bool force_;
 	std::string body_;
-	string orderActionType_;
+	std::string orderActionType_;
 };
 } // namespace Model
 } // namespace Elasticsearch

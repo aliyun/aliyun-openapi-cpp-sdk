@@ -30,13 +30,13 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT CreateLogstashRequest : public RoaServic
 public:
 	CreateLogstashRequest();
 	~CreateLogstashRequest();
-	string getClientToken() const;
-	void setClientToken(string clientToken);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getBody() const;
 	void setBody(const std::string &body);
 
 private:
-	string clientToken_;
+	std::string clientToken_;
 	std::string body_;
 };
 } // namespace Model

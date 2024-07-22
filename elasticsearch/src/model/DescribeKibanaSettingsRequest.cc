@@ -26,12 +26,12 @@ DescribeKibanaSettingsRequest::DescribeKibanaSettingsRequest()
 
 DescribeKibanaSettingsRequest::~DescribeKibanaSettingsRequest() {}
 
-string DescribeKibanaSettingsRequest::getInstanceId() const {
+std::string DescribeKibanaSettingsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribeKibanaSettingsRequest::setInstanceId(string instanceId) {
+void DescribeKibanaSettingsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

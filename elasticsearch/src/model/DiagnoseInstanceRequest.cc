@@ -26,31 +26,31 @@ DiagnoseInstanceRequest::DiagnoseInstanceRequest()
 
 DiagnoseInstanceRequest::~DiagnoseInstanceRequest() {}
 
-string DiagnoseInstanceRequest::getInstanceId() const {
+std::string DiagnoseInstanceRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DiagnoseInstanceRequest::setInstanceId(string instanceId) {
+void DiagnoseInstanceRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DiagnoseInstanceRequest::getClientToken() const {
+std::string DiagnoseInstanceRequest::getClientToken() const {
   return clientToken_;
 }
 
-void DiagnoseInstanceRequest::setClientToken(string clientToken) {
+void DiagnoseInstanceRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string DiagnoseInstanceRequest::getLang() const {
+std::string DiagnoseInstanceRequest::getLang() const {
   return lang_;
 }
 
-void DiagnoseInstanceRequest::setLang(string lang) {
+void DiagnoseInstanceRequest::setLang(const std::string &lang) {
   lang_ = lang;
-  setParameter(std::string("lang"), std::to_string(lang));
+  setParameter(std::string("lang"), lang);
 }
 
 std::string DiagnoseInstanceRequest::getBody() const {

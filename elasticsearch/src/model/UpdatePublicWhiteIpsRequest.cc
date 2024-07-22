@@ -26,39 +26,39 @@ UpdatePublicWhiteIpsRequest::UpdatePublicWhiteIpsRequest()
 
 UpdatePublicWhiteIpsRequest::~UpdatePublicWhiteIpsRequest() {}
 
-string UpdatePublicWhiteIpsRequest::getModifyMode() const {
+std::string UpdatePublicWhiteIpsRequest::getModifyMode() const {
   return modifyMode_;
 }
 
-void UpdatePublicWhiteIpsRequest::setModifyMode(string modifyMode) {
+void UpdatePublicWhiteIpsRequest::setModifyMode(const std::string &modifyMode) {
   modifyMode_ = modifyMode;
-  setParameter(std::string("modifyMode"), std::to_string(modifyMode));
+  setParameter(std::string("modifyMode"), modifyMode);
 }
 
-string UpdatePublicWhiteIpsRequest::getInstanceId() const {
+std::string UpdatePublicWhiteIpsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdatePublicWhiteIpsRequest::setInstanceId(string instanceId) {
+void UpdatePublicWhiteIpsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdatePublicWhiteIpsRequest::getClientToken() const {
+std::string UpdatePublicWhiteIpsRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdatePublicWhiteIpsRequest::setClientToken(string clientToken) {
+void UpdatePublicWhiteIpsRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string UpdatePublicWhiteIpsRequest::getBody() const {
+std::string UpdatePublicWhiteIpsRequest::getBody() const {
   return body_;
 }
 
-void UpdatePublicWhiteIpsRequest::setBody(string body) {
+void UpdatePublicWhiteIpsRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

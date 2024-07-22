@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListAckClustersRequest : public RoaServi
 public:
 	ListAckClustersRequest();
 	~ListAckClustersRequest();
-	integer getSize() const;
-	void setSize(integer size);
-	string getVpcId() const;
-	void setVpcId(string vpcId);
-	integer getPage() const;
-	void setPage(integer page);
+	int getSize() const;
+	void setSize(int size);
+	std::string getVpcId() const;
+	void setVpcId(const std::string &vpcId);
+	int getPage() const;
+	void setPage(int page);
 
 private:
-	integer size_;
-	string vpcId_;
-	integer page_;
+	int size_;
+	std::string vpcId_;
+	int page_;
 };
 } // namespace Model
 } // namespace Elasticsearch

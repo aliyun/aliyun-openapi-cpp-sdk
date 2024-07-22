@@ -26,47 +26,47 @@ ListApmRequest::ListApmRequest()
 
 ListApmRequest::~ListApmRequest() {}
 
-string ListApmRequest::getOutput() const {
+std::string ListApmRequest::getOutput() const {
   return output_;
 }
 
-void ListApmRequest::setOutput(string output) {
+void ListApmRequest::setOutput(const std::string &output) {
   output_ = output;
-  setParameter(std::string("output"), std::to_string(output));
+  setParameter(std::string("output"), output);
 }
 
-string ListApmRequest::getInstanceId() const {
+std::string ListApmRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListApmRequest::setInstanceId(string instanceId) {
+void ListApmRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("instanceId"), std::to_string(instanceId));
+  setParameter(std::string("instanceId"), instanceId);
 }
 
-integer ListApmRequest::getSize() const {
+long ListApmRequest::getSize() const {
   return size_;
 }
 
-void ListApmRequest::setSize(integer size) {
+void ListApmRequest::setSize(long size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-string ListApmRequest::getDescription() const {
+std::string ListApmRequest::getDescription() const {
   return description_;
 }
 
-void ListApmRequest::setDescription(string description) {
+void ListApmRequest::setDescription(const std::string &description) {
   description_ = description;
-  setParameter(std::string("description"), std::to_string(description));
+  setParameter(std::string("description"), description);
 }
 
-integer ListApmRequest::getPage() const {
+long ListApmRequest::getPage() const {
   return page_;
 }
 
-void ListApmRequest::setPage(integer page) {
+void ListApmRequest::setPage(long page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }

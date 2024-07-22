@@ -26,30 +26,30 @@ RenewLogstashRequest::RenewLogstashRequest()
 
 RenewLogstashRequest::~RenewLogstashRequest() {}
 
-string RenewLogstashRequest::getInstanceId() const {
+std::string RenewLogstashRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void RenewLogstashRequest::setInstanceId(string instanceId) {
+void RenewLogstashRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string RenewLogstashRequest::getClientToken() const {
+std::string RenewLogstashRequest::getClientToken() const {
   return clientToken_;
 }
 
-void RenewLogstashRequest::setClientToken(string clientToken) {
+void RenewLogstashRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string RenewLogstashRequest::getBody() const {
+std::string RenewLogstashRequest::getBody() const {
   return body_;
 }
 
-void RenewLogstashRequest::setBody(string body) {
+void RenewLogstashRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

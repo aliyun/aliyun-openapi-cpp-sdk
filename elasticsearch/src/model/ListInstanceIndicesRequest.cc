@@ -26,66 +26,66 @@ ListInstanceIndicesRequest::ListInstanceIndicesRequest()
 
 ListInstanceIndicesRequest::~ListInstanceIndicesRequest() {}
 
-boolean ListInstanceIndicesRequest::getAll() const {
+bool ListInstanceIndicesRequest::getAll() const {
   return all_;
 }
 
-void ListInstanceIndicesRequest::setAll(boolean all) {
+void ListInstanceIndicesRequest::setAll(bool all) {
   all_ = all;
-  setParameter(std::string("all"), std::to_string(all));
+  setParameter(std::string("all"), all ? "true" : "false");
 }
 
-string ListInstanceIndicesRequest::getInstanceId() const {
+std::string ListInstanceIndicesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListInstanceIndicesRequest::setInstanceId(string instanceId) {
+void ListInstanceIndicesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-boolean ListInstanceIndicesRequest::getIsManaged() const {
+bool ListInstanceIndicesRequest::getIsManaged() const {
   return isManaged_;
 }
 
-void ListInstanceIndicesRequest::setIsManaged(boolean isManaged) {
+void ListInstanceIndicesRequest::setIsManaged(bool isManaged) {
   isManaged_ = isManaged;
-  setParameter(std::string("isManaged"), std::to_string(isManaged));
+  setParameter(std::string("isManaged"), isManaged ? "true" : "false");
 }
 
-integer ListInstanceIndicesRequest::getSize() const {
+int ListInstanceIndicesRequest::getSize() const {
   return size_;
 }
 
-void ListInstanceIndicesRequest::setSize(integer size) {
+void ListInstanceIndicesRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-string ListInstanceIndicesRequest::getName() const {
+std::string ListInstanceIndicesRequest::getName() const {
   return name_;
 }
 
-void ListInstanceIndicesRequest::setName(string name) {
+void ListInstanceIndicesRequest::setName(const std::string &name) {
   name_ = name;
-  setParameter(std::string("name"), std::to_string(name));
+  setParameter(std::string("name"), name);
 }
 
-integer ListInstanceIndicesRequest::getPage() const {
+int ListInstanceIndicesRequest::getPage() const {
   return page_;
 }
 
-void ListInstanceIndicesRequest::setPage(integer page) {
+void ListInstanceIndicesRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }
 
-boolean ListInstanceIndicesRequest::getIsOpenstore() const {
+bool ListInstanceIndicesRequest::getIsOpenstore() const {
   return isOpenstore_;
 }
 
-void ListInstanceIndicesRequest::setIsOpenstore(boolean isOpenstore) {
+void ListInstanceIndicesRequest::setIsOpenstore(bool isOpenstore) {
   isOpenstore_ = isOpenstore;
-  setParameter(std::string("isOpenstore"), std::to_string(isOpenstore));
+  setParameter(std::string("isOpenstore"), isOpenstore ? "true" : "false");
 }
 

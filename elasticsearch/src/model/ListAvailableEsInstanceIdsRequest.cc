@@ -26,12 +26,12 @@ ListAvailableEsInstanceIdsRequest::ListAvailableEsInstanceIdsRequest()
 
 ListAvailableEsInstanceIdsRequest::~ListAvailableEsInstanceIdsRequest() {}
 
-string ListAvailableEsInstanceIdsRequest::getInstanceId() const {
+std::string ListAvailableEsInstanceIdsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListAvailableEsInstanceIdsRequest::setInstanceId(string instanceId) {
+void ListAvailableEsInstanceIdsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

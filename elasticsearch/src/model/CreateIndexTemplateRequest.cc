@@ -26,30 +26,30 @@ CreateIndexTemplateRequest::CreateIndexTemplateRequest()
 
 CreateIndexTemplateRequest::~CreateIndexTemplateRequest() {}
 
-string CreateIndexTemplateRequest::getInstanceId() const {
+std::string CreateIndexTemplateRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void CreateIndexTemplateRequest::setInstanceId(string instanceId) {
+void CreateIndexTemplateRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string CreateIndexTemplateRequest::getClientToken() const {
+std::string CreateIndexTemplateRequest::getClientToken() const {
   return clientToken_;
 }
 
-void CreateIndexTemplateRequest::setClientToken(string clientToken) {
+void CreateIndexTemplateRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string CreateIndexTemplateRequest::getBody() const {
+std::string CreateIndexTemplateRequest::getBody() const {
   return body_;
 }
 
-void CreateIndexTemplateRequest::setBody(string body) {
+void CreateIndexTemplateRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

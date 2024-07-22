@@ -26,30 +26,30 @@ UpdateCollectorRequest::UpdateCollectorRequest()
 
 UpdateCollectorRequest::~UpdateCollectorRequest() {}
 
-string UpdateCollectorRequest::getClientToken() const {
+std::string UpdateCollectorRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateCollectorRequest::setClientToken(string clientToken) {
+void UpdateCollectorRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string UpdateCollectorRequest::getBody() const {
+std::string UpdateCollectorRequest::getBody() const {
   return body_;
 }
 
-void UpdateCollectorRequest::setBody(string body) {
+void UpdateCollectorRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 
-string UpdateCollectorRequest::getResId() const {
+std::string UpdateCollectorRequest::getResId() const {
   return resId_;
 }
 
-void UpdateCollectorRequest::setResId(string resId) {
+void UpdateCollectorRequest::setResId(const std::string &resId) {
   resId_ = resId;
-  setParameter(std::string("ResId"), std::to_string(resId));
+  setParameter(std::string("ResId"), resId);
 }
 

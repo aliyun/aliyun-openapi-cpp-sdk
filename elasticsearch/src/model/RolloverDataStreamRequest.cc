@@ -26,30 +26,30 @@ RolloverDataStreamRequest::RolloverDataStreamRequest()
 
 RolloverDataStreamRequest::~RolloverDataStreamRequest() {}
 
-string RolloverDataStreamRequest::getDataStream() const {
+std::string RolloverDataStreamRequest::getDataStream() const {
   return dataStream_;
 }
 
-void RolloverDataStreamRequest::setDataStream(string dataStream) {
+void RolloverDataStreamRequest::setDataStream(const std::string &dataStream) {
   dataStream_ = dataStream;
-  setParameter(std::string("DataStream"), std::to_string(dataStream));
+  setParameter(std::string("DataStream"), dataStream);
 }
 
-string RolloverDataStreamRequest::getInstanceId() const {
+std::string RolloverDataStreamRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void RolloverDataStreamRequest::setInstanceId(string instanceId) {
+void RolloverDataStreamRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string RolloverDataStreamRequest::getClientToken() const {
+std::string RolloverDataStreamRequest::getClientToken() const {
   return clientToken_;
 }
 
-void RolloverDataStreamRequest::setClientToken(string clientToken) {
+void RolloverDataStreamRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 

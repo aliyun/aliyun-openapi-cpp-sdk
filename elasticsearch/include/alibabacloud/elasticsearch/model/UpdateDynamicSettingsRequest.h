@@ -30,23 +30,23 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT UpdateDynamicSettingsRequest : public Ro
 public:
 	UpdateDynamicSettingsRequest();
 	~UpdateDynamicSettingsRequest();
-	string getMode() const;
-	void setMode(string mode);
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	string getRegionId() const;
-	void setRegionId(string regionId);
-	string getBody() const;
-	void setBody(string body);
+	std::string getMode() const;
+	void setMode(const std::string &mode);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getBody() const;
+	void setBody(const std::string &body);
 
 private:
-	string mode_;
-	string instanceId_;
-	string clientToken_;
-	string regionId_;
-	string body_;
+	std::string mode_;
+	std::string instanceId_;
+	std::string clientToken_;
+	std::string regionId_;
+	std::string body_;
 };
 } // namespace Model
 } // namespace Elasticsearch

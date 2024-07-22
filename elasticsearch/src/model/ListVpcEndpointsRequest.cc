@@ -26,29 +26,29 @@ ListVpcEndpointsRequest::ListVpcEndpointsRequest()
 
 ListVpcEndpointsRequest::~ListVpcEndpointsRequest() {}
 
-string ListVpcEndpointsRequest::getInstanceId() const {
+std::string ListVpcEndpointsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListVpcEndpointsRequest::setInstanceId(string instanceId) {
+void ListVpcEndpointsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-integer ListVpcEndpointsRequest::getSize() const {
+int ListVpcEndpointsRequest::getSize() const {
   return size_;
 }
 
-void ListVpcEndpointsRequest::setSize(integer size) {
+void ListVpcEndpointsRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-integer ListVpcEndpointsRequest::getPage() const {
+int ListVpcEndpointsRequest::getPage() const {
   return page_;
 }
 
-void ListVpcEndpointsRequest::setPage(integer page) {
+void ListVpcEndpointsRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }

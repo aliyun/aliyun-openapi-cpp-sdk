@@ -26,21 +26,21 @@ AddSnapshotRepoRequest::AddSnapshotRepoRequest()
 
 AddSnapshotRepoRequest::~AddSnapshotRepoRequest() {}
 
-string AddSnapshotRepoRequest::getInstanceId() const {
+std::string AddSnapshotRepoRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void AddSnapshotRepoRequest::setInstanceId(string instanceId) {
+void AddSnapshotRepoRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string AddSnapshotRepoRequest::getBody() const {
+std::string AddSnapshotRepoRequest::getBody() const {
   return body_;
 }
 
-void AddSnapshotRepoRequest::setBody(string body) {
+void AddSnapshotRepoRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

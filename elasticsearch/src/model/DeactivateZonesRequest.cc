@@ -26,30 +26,30 @@ DeactivateZonesRequest::DeactivateZonesRequest()
 
 DeactivateZonesRequest::~DeactivateZonesRequest() {}
 
-string DeactivateZonesRequest::getInstanceId() const {
+std::string DeactivateZonesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DeactivateZonesRequest::setInstanceId(string instanceId) {
+void DeactivateZonesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DeactivateZonesRequest::getClientToken() const {
+std::string DeactivateZonesRequest::getClientToken() const {
   return clientToken_;
 }
 
-void DeactivateZonesRequest::setClientToken(string clientToken) {
+void DeactivateZonesRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string DeactivateZonesRequest::getBody() const {
+std::string DeactivateZonesRequest::getBody() const {
   return body_;
 }
 
-void DeactivateZonesRequest::setBody(string body) {
+void DeactivateZonesRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

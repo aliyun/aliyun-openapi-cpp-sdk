@@ -26,66 +26,66 @@ ListSearchLogRequest::ListSearchLogRequest()
 
 ListSearchLogRequest::~ListSearchLogRequest() {}
 
-string ListSearchLogRequest::getInstanceId() const {
+std::string ListSearchLogRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListSearchLogRequest::setInstanceId(string instanceId) {
+void ListSearchLogRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-integer ListSearchLogRequest::getSize() const {
+int ListSearchLogRequest::getSize() const {
   return size_;
 }
 
-void ListSearchLogRequest::setSize(integer size) {
+void ListSearchLogRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-string ListSearchLogRequest::getQuery() const {
+std::string ListSearchLogRequest::getQuery() const {
   return query_;
 }
 
-void ListSearchLogRequest::setQuery(string query) {
+void ListSearchLogRequest::setQuery(const std::string &query) {
   query_ = query;
-  setParameter(std::string("query"), std::to_string(query));
+  setParameter(std::string("query"), query);
 }
 
-integer ListSearchLogRequest::getEndTime() const {
+long ListSearchLogRequest::getEndTime() const {
   return endTime_;
 }
 
-void ListSearchLogRequest::setEndTime(integer endTime) {
+void ListSearchLogRequest::setEndTime(long endTime) {
   endTime_ = endTime;
   setParameter(std::string("endTime"), std::to_string(endTime));
 }
 
-integer ListSearchLogRequest::getBeginTime() const {
+long ListSearchLogRequest::getBeginTime() const {
   return beginTime_;
 }
 
-void ListSearchLogRequest::setBeginTime(integer beginTime) {
+void ListSearchLogRequest::setBeginTime(long beginTime) {
   beginTime_ = beginTime;
   setParameter(std::string("beginTime"), std::to_string(beginTime));
 }
 
-integer ListSearchLogRequest::getPage() const {
+int ListSearchLogRequest::getPage() const {
   return page_;
 }
 
-void ListSearchLogRequest::setPage(integer page) {
+void ListSearchLogRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }
 
-string ListSearchLogRequest::getType() const {
+std::string ListSearchLogRequest::getType() const {
   return type_;
 }
 
-void ListSearchLogRequest::setType(string type) {
+void ListSearchLogRequest::setType(const std::string &type) {
   type_ = type;
-  setParameter(std::string("type"), std::to_string(type));
+  setParameter(std::string("type"), type);
 }
 

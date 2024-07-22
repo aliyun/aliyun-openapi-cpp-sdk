@@ -26,57 +26,57 @@ ListNodesRequest::ListNodesRequest()
 
 ListNodesRequest::~ListNodesRequest() {}
 
-string ListNodesRequest::getEcsInstanceName() const {
+std::string ListNodesRequest::getEcsInstanceName() const {
   return ecsInstanceName_;
 }
 
-void ListNodesRequest::setEcsInstanceName(string ecsInstanceName) {
+void ListNodesRequest::setEcsInstanceName(const std::string &ecsInstanceName) {
   ecsInstanceName_ = ecsInstanceName;
-  setParameter(std::string("ecsInstanceName"), std::to_string(ecsInstanceName));
+  setParameter(std::string("ecsInstanceName"), ecsInstanceName);
 }
 
-string ListNodesRequest::getEcsInstanceIds() const {
+std::string ListNodesRequest::getEcsInstanceIds() const {
   return ecsInstanceIds_;
 }
 
-void ListNodesRequest::setEcsInstanceIds(string ecsInstanceIds) {
+void ListNodesRequest::setEcsInstanceIds(const std::string &ecsInstanceIds) {
   ecsInstanceIds_ = ecsInstanceIds;
-  setParameter(std::string("ecsInstanceIds"), std::to_string(ecsInstanceIds));
+  setParameter(std::string("ecsInstanceIds"), ecsInstanceIds);
 }
 
-integer ListNodesRequest::getSize() const {
+int ListNodesRequest::getSize() const {
   return size_;
 }
 
-void ListNodesRequest::setSize(integer size) {
+void ListNodesRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-integer ListNodesRequest::getPage() const {
+int ListNodesRequest::getPage() const {
   return page_;
 }
 
-void ListNodesRequest::setPage(integer page) {
+void ListNodesRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }
 
-string ListNodesRequest::getResId() const {
+std::string ListNodesRequest::getResId() const {
   return resId_;
 }
 
-void ListNodesRequest::setResId(string resId) {
+void ListNodesRequest::setResId(const std::string &resId) {
   resId_ = resId;
-  setParameter(std::string("ResId"), std::to_string(resId));
+  setParameter(std::string("ResId"), resId);
 }
 
-string ListNodesRequest::getTags() const {
+std::string ListNodesRequest::getTags() const {
   return tags_;
 }
 
-void ListNodesRequest::setTags(string tags) {
+void ListNodesRequest::setTags(const std::string &tags) {
   tags_ = tags;
-  setParameter(std::string("tags"), std::to_string(tags));
+  setParameter(std::string("tags"), tags);
 }
 

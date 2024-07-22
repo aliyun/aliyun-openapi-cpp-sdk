@@ -26,30 +26,30 @@ UpdateCollectorNameRequest::UpdateCollectorNameRequest()
 
 UpdateCollectorNameRequest::~UpdateCollectorNameRequest() {}
 
-string UpdateCollectorNameRequest::getClientToken() const {
+std::string UpdateCollectorNameRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateCollectorNameRequest::setClientToken(string clientToken) {
+void UpdateCollectorNameRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string UpdateCollectorNameRequest::getBody() const {
+std::string UpdateCollectorNameRequest::getBody() const {
   return body_;
 }
 
-void UpdateCollectorNameRequest::setBody(string body) {
+void UpdateCollectorNameRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 
-string UpdateCollectorNameRequest::getResId() const {
+std::string UpdateCollectorNameRequest::getResId() const {
   return resId_;
 }
 
-void UpdateCollectorNameRequest::setResId(string resId) {
+void UpdateCollectorNameRequest::setResId(const std::string &resId) {
   resId_ = resId;
-  setParameter(std::string("ResId"), std::to_string(resId));
+  setParameter(std::string("ResId"), resId);
 }
 

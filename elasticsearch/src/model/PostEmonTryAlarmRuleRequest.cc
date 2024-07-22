@@ -26,30 +26,30 @@ PostEmonTryAlarmRuleRequest::PostEmonTryAlarmRuleRequest()
 
 PostEmonTryAlarmRuleRequest::~PostEmonTryAlarmRuleRequest() {}
 
-string PostEmonTryAlarmRuleRequest::getAlarmGroupId() const {
+std::string PostEmonTryAlarmRuleRequest::getAlarmGroupId() const {
   return alarmGroupId_;
 }
 
-void PostEmonTryAlarmRuleRequest::setAlarmGroupId(string alarmGroupId) {
+void PostEmonTryAlarmRuleRequest::setAlarmGroupId(const std::string &alarmGroupId) {
   alarmGroupId_ = alarmGroupId;
-  setParameter(std::string("AlarmGroupId"), std::to_string(alarmGroupId));
+  setParameter(std::string("AlarmGroupId"), alarmGroupId);
 }
 
-string PostEmonTryAlarmRuleRequest::getBody() const {
+std::string PostEmonTryAlarmRuleRequest::getBody() const {
   return body_;
 }
 
-void PostEmonTryAlarmRuleRequest::setBody(string body) {
+void PostEmonTryAlarmRuleRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 
-string PostEmonTryAlarmRuleRequest::getProjectId() const {
+std::string PostEmonTryAlarmRuleRequest::getProjectId() const {
   return projectId_;
 }
 
-void PostEmonTryAlarmRuleRequest::setProjectId(string projectId) {
+void PostEmonTryAlarmRuleRequest::setProjectId(const std::string &projectId) {
   projectId_ = projectId;
-  setParameter(std::string("ProjectId"), std::to_string(projectId));
+  setParameter(std::string("ProjectId"), projectId);
 }
 

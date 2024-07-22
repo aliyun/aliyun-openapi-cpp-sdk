@@ -26,21 +26,21 @@ DescribeComponentIndexRequest::DescribeComponentIndexRequest()
 
 DescribeComponentIndexRequest::~DescribeComponentIndexRequest() {}
 
-string DescribeComponentIndexRequest::getInstanceId() const {
+std::string DescribeComponentIndexRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribeComponentIndexRequest::setInstanceId(string instanceId) {
+void DescribeComponentIndexRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string DescribeComponentIndexRequest::getName() const {
+std::string DescribeComponentIndexRequest::getName() const {
   return name_;
 }
 
-void DescribeComponentIndexRequest::setName(string name) {
+void DescribeComponentIndexRequest::setName(const std::string &name) {
   name_ = name;
-  setParameter(std::string("name"), std::to_string(name));
+  setParameter(std::string("name"), name);
 }
 

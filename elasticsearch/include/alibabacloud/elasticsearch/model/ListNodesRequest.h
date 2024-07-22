@@ -30,26 +30,26 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListNodesRequest : public RoaServiceRequ
 public:
 	ListNodesRequest();
 	~ListNodesRequest();
-	string getEcsInstanceName() const;
-	void setEcsInstanceName(string ecsInstanceName);
-	string getEcsInstanceIds() const;
-	void setEcsInstanceIds(string ecsInstanceIds);
-	integer getSize() const;
-	void setSize(integer size);
-	integer getPage() const;
-	void setPage(integer page);
-	string getResId() const;
-	void setResId(string resId);
-	string getTags() const;
-	void setTags(string tags);
+	std::string getEcsInstanceName() const;
+	void setEcsInstanceName(const std::string &ecsInstanceName);
+	std::string getEcsInstanceIds() const;
+	void setEcsInstanceIds(const std::string &ecsInstanceIds);
+	int getSize() const;
+	void setSize(int size);
+	int getPage() const;
+	void setPage(int page);
+	std::string getResId() const;
+	void setResId(const std::string &resId);
+	std::string getTags() const;
+	void setTags(const std::string &tags);
 
 private:
-	string ecsInstanceName_;
-	string ecsInstanceIds_;
-	integer size_;
-	integer page_;
-	string resId_;
-	string tags_;
+	std::string ecsInstanceName_;
+	std::string ecsInstanceIds_;
+	int size_;
+	int page_;
+	std::string resId_;
+	std::string tags_;
 };
 } // namespace Model
 } // namespace Elasticsearch

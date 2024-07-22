@@ -26,30 +26,30 @@ CreateSnapshotRequest::CreateSnapshotRequest()
 
 CreateSnapshotRequest::~CreateSnapshotRequest() {}
 
-string CreateSnapshotRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void CreateSnapshotRequest::setInstanceId(string instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
-}
-
-string CreateSnapshotRequest::getClientToken() const {
+std::string CreateSnapshotRequest::getClientToken() const {
   return clientToken_;
 }
 
-void CreateSnapshotRequest::setClientToken(string clientToken) {
+void CreateSnapshotRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-string CreateSnapshotRequest::getBody() const {
+std::string CreateSnapshotRequest::getBody() const {
   return body_;
 }
 
-void CreateSnapshotRequest::setBody(string body) {
+void CreateSnapshotRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
+}
+
+std::string CreateSnapshotRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void CreateSnapshotRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT DeleteInstanceRequest : public RoaServic
 public:
 	DeleteInstanceRequest();
 	~DeleteInstanceRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	string getDeleteType() const;
-	void setDeleteType(string deleteType);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getDeleteType() const;
+	void setDeleteType(const std::string &deleteType);
 
 private:
-	string instanceId_;
-	string clientToken_;
-	string deleteType_;
+	std::string instanceId_;
+	std::string clientToken_;
+	std::string deleteType_;
 };
 } // namespace Model
 } // namespace Elasticsearch

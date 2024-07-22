@@ -30,16 +30,16 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT UpdateAdminPasswordRequest : public RoaS
 public:
 	UpdateAdminPasswordRequest();
 	~UpdateAdminPasswordRequest();
-	string getInstanceId() const;
-	void setInstanceId(string instanceId);
-	string getClientToken() const;
-	void setClientToken(string clientToken);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getBody() const;
 	void setBody(const std::string &body);
 
 private:
-	string instanceId_;
-	string clientToken_;
+	std::string instanceId_;
+	std::string clientToken_;
 	std::string body_;
 };
 } // namespace Model

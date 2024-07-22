@@ -26,21 +26,21 @@ CloseHttpsRequest::CloseHttpsRequest()
 
 CloseHttpsRequest::~CloseHttpsRequest() {}
 
-string CloseHttpsRequest::getInstanceId() const {
+std::string CloseHttpsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void CloseHttpsRequest::setInstanceId(string instanceId) {
+void CloseHttpsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string CloseHttpsRequest::getClientToken() const {
+std::string CloseHttpsRequest::getClientToken() const {
   return clientToken_;
 }
 
-void CloseHttpsRequest::setClientToken(string clientToken) {
+void CloseHttpsRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 

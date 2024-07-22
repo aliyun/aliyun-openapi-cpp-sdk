@@ -26,39 +26,39 @@ ListDictInformationRequest::ListDictInformationRequest()
 
 ListDictInformationRequest::~ListDictInformationRequest() {}
 
-string ListDictInformationRequest::getInstanceId() const {
+std::string ListDictInformationRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListDictInformationRequest::setInstanceId(string instanceId) {
+void ListDictInformationRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string ListDictInformationRequest::getAnalyzerType() const {
+std::string ListDictInformationRequest::getAnalyzerType() const {
   return analyzerType_;
 }
 
-void ListDictInformationRequest::setAnalyzerType(string analyzerType) {
+void ListDictInformationRequest::setAnalyzerType(const std::string &analyzerType) {
   analyzerType_ = analyzerType;
-  setParameter(std::string("analyzerType"), std::to_string(analyzerType));
+  setParameter(std::string("analyzerType"), analyzerType);
 }
 
-string ListDictInformationRequest::getBucketName() const {
+std::string ListDictInformationRequest::getBucketName() const {
   return bucketName_;
 }
 
-void ListDictInformationRequest::setBucketName(string bucketName) {
+void ListDictInformationRequest::setBucketName(const std::string &bucketName) {
   bucketName_ = bucketName;
-  setParameter(std::string("bucketName"), std::to_string(bucketName));
+  setParameter(std::string("bucketName"), bucketName);
 }
 
-string ListDictInformationRequest::getKey() const {
+std::string ListDictInformationRequest::getKey() const {
   return key_;
 }
 
-void ListDictInformationRequest::setKey(string key) {
+void ListDictInformationRequest::setKey(const std::string &key) {
   key_ = key;
-  setParameter(std::string("key"), std::to_string(key));
+  setParameter(std::string("key"), key);
 }
 

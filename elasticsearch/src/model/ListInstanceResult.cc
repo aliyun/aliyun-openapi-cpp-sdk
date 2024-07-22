@@ -73,6 +73,10 @@ void ListInstanceResult::parse(const std::string &payload)
 			resultObject.instanceId = valueResultInstance["instanceId"].asString();
 		if(!valueResultInstance["vpcInstanceId"].isNull())
 			resultObject.vpcInstanceId = valueResultInstance["vpcInstanceId"].asString();
+		if(!valueResultInstance["endTime"].isNull())
+			resultObject.endTime = std::stol(valueResultInstance["endTime"].asString());
+		if(!valueResultInstance["archType"].isNull())
+			resultObject.archType = valueResultInstance["archType"].asString();
 		auto alltagsNode = valueResultInstance["tags"]["Tag"];
 		for (auto valueResultInstancetagsTag : alltagsNode)
 		{
@@ -92,6 +96,8 @@ void ListInstanceResult::parse(const std::string &payload)
 			resultObject.clientNodeConfiguration.disk = std::stoi(clientNodeConfigurationNode["disk"].asString());
 		if(!clientNodeConfigurationNode["diskType"].isNull())
 			resultObject.clientNodeConfiguration.diskType = clientNodeConfigurationNode["diskType"].asString();
+		if(!clientNodeConfigurationNode["specInfo"].isNull())
+			resultObject.clientNodeConfiguration.specInfo = clientNodeConfigurationNode["specInfo"].asString();
 		auto elasticDataNodeConfigurationNode = value["elasticDataNodeConfiguration"];
 		if(!elasticDataNodeConfigurationNode["spec"].isNull())
 			resultObject.elasticDataNodeConfiguration.spec = elasticDataNodeConfigurationNode["spec"].asString();
@@ -103,6 +109,8 @@ void ListInstanceResult::parse(const std::string &payload)
 			resultObject.elasticDataNodeConfiguration.diskEncryption = elasticDataNodeConfigurationNode["diskEncryption"].asString() == "true";
 		if(!elasticDataNodeConfigurationNode["diskType"].isNull())
 			resultObject.elasticDataNodeConfiguration.diskType = elasticDataNodeConfigurationNode["diskType"].asString();
+		if(!elasticDataNodeConfigurationNode["specInfo"].isNull())
+			resultObject.elasticDataNodeConfiguration.specInfo = elasticDataNodeConfigurationNode["specInfo"].asString();
 		auto kibanaConfigurationNode = value["kibanaConfiguration"];
 		if(!kibanaConfigurationNode["spec"].isNull())
 			resultObject.kibanaConfiguration.spec = kibanaConfigurationNode["spec"].asString();
@@ -112,6 +120,8 @@ void ListInstanceResult::parse(const std::string &payload)
 			resultObject.kibanaConfiguration.disk = std::stoi(kibanaConfigurationNode["disk"].asString());
 		if(!kibanaConfigurationNode["diskType"].isNull())
 			resultObject.kibanaConfiguration.diskType = kibanaConfigurationNode["diskType"].asString();
+		if(!kibanaConfigurationNode["specInfo"].isNull())
+			resultObject.kibanaConfiguration.specInfo = kibanaConfigurationNode["specInfo"].asString();
 		auto masterConfigurationNode = value["masterConfiguration"];
 		if(!masterConfigurationNode["spec"].isNull())
 			resultObject.masterConfiguration.spec = masterConfigurationNode["spec"].asString();
@@ -121,6 +131,8 @@ void ListInstanceResult::parse(const std::string &payload)
 			resultObject.masterConfiguration.disk = std::stoi(masterConfigurationNode["disk"].asString());
 		if(!masterConfigurationNode["diskType"].isNull())
 			resultObject.masterConfiguration.diskType = masterConfigurationNode["diskType"].asString();
+		if(!masterConfigurationNode["specInfo"].isNull())
+			resultObject.masterConfiguration.specInfo = masterConfigurationNode["specInfo"].asString();
 		auto networkConfigNode = value["networkConfig"];
 		if(!networkConfigNode["vpcId"].isNull())
 			resultObject.networkConfig.vpcId = networkConfigNode["vpcId"].asString();
@@ -130,6 +142,19 @@ void ListInstanceResult::parse(const std::string &payload)
 			resultObject.networkConfig.type = networkConfigNode["type"].asString();
 		if(!networkConfigNode["vswitchId"].isNull())
 			resultObject.networkConfig.vswitchId = networkConfigNode["vswitchId"].asString();
+		auto allwhiteIpGroupListNode = networkConfigNode["whiteIpGroupList"]["whiteIpGroupListItem"];
+		for (auto networkConfigNodewhiteIpGroupListwhiteIpGroupListItem : allwhiteIpGroupListNode)
+		{
+			Instance::NetworkConfig::WhiteIpGroupListItem whiteIpGroupListItemObject;
+			if(!networkConfigNodewhiteIpGroupListwhiteIpGroupListItem["groupName"].isNull())
+				whiteIpGroupListItemObject.groupName = networkConfigNodewhiteIpGroupListwhiteIpGroupListItem["groupName"].asString();
+			if(!networkConfigNodewhiteIpGroupListwhiteIpGroupListItem["whiteIpType"].isNull())
+				whiteIpGroupListItemObject.whiteIpType = networkConfigNodewhiteIpGroupListwhiteIpGroupListItem["whiteIpType"].asString();
+			auto allIps = value["ips"]["ips"];
+			for (auto value : allIps)
+				whiteIpGroupListItemObject.ips.push_back(value.asString());
+			resultObject.networkConfig.whiteIpGroupList.push_back(whiteIpGroupListItemObject);
+		}
 		auto nodeSpecNode = value["nodeSpec"];
 		if(!nodeSpecNode["spec"].isNull())
 			resultObject.nodeSpec.spec = nodeSpecNode["spec"].asString();
@@ -141,9 +166,23 @@ void ListInstanceResult::parse(const std::string &payload)
 			resultObject.nodeSpec.diskType = nodeSpecNode["diskType"].asString();
 		if(!nodeSpecNode["performanceLevel"].isNull())
 			resultObject.nodeSpec.performanceLevel = nodeSpecNode["performanceLevel"].asString();
+		if(!nodeSpecNode["specInfo"].isNull())
+			resultObject.nodeSpec.specInfo = nodeSpecNode["specInfo"].asString();
 		auto allExtendConfigs = value["extendConfigs"]["extendConfigs"];
 		for (auto value : allExtendConfigs)
 			resultObject.extendConfigs.push_back(value.asString());
+		auto allKibanaIPWhitelist = value["kibanaIPWhitelist"]["kibanaIPWhitelist"];
+		for (auto value : allKibanaIPWhitelist)
+			resultObject.kibanaIPWhitelist.push_back(value.asString());
+		auto allKibanaPrivateIPWhitelist = value["kibanaPrivateIPWhitelist"]["kibanaPrivateIPWhitelist"];
+		for (auto value : allKibanaPrivateIPWhitelist)
+			resultObject.kibanaPrivateIPWhitelist.push_back(value.asString());
+		auto allPublicIpWhitelist = value["publicIpWhitelist"]["publicIpWhitelist"];
+		for (auto value : allPublicIpWhitelist)
+			resultObject.publicIpWhitelist.push_back(value.asString());
+		auto allPrivateNetworkIpWhiteList = value["privateNetworkIpWhiteList"]["privateNetworkIpWhiteList"];
+		for (auto value : allPrivateNetworkIpWhiteList)
+			resultObject.privateNetworkIpWhiteList.push_back(value.asString());
 		result_.push_back(resultObject);
 	}
 	auto headersNode = value["Headers"];

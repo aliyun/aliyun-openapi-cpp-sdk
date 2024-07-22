@@ -26,31 +26,31 @@ RestartLogstashRequest::RestartLogstashRequest()
 
 RestartLogstashRequest::~RestartLogstashRequest() {}
 
-string RestartLogstashRequest::getInstanceId() const {
+std::string RestartLogstashRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void RestartLogstashRequest::setInstanceId(string instanceId) {
+void RestartLogstashRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string RestartLogstashRequest::getClientToken() const {
+std::string RestartLogstashRequest::getClientToken() const {
   return clientToken_;
 }
 
-void RestartLogstashRequest::setClientToken(string clientToken) {
+void RestartLogstashRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-boolean RestartLogstashRequest::getForce() const {
+bool RestartLogstashRequest::getForce() const {
   return force_;
 }
 
-void RestartLogstashRequest::setForce(boolean force) {
+void RestartLogstashRequest::setForce(bool force) {
   force_ = force;
-  setParameter(std::string("force"), std::to_string(force));
+  setParameter(std::string("force"), force ? "true" : "false");
 }
 
 std::string RestartLogstashRequest::getBody() const {

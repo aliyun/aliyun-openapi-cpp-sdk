@@ -32,21 +32,15 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ELASTICSEARCH_EXPORT CreateInstanceResult : public ServiceResult
 			{
 			public:
-				struct Result
-				{
-					std::string instanceId;
-				};
 
 
 				CreateInstanceResult();
 				explicit CreateInstanceResult(const std::string &payload);
 				~CreateInstanceResult();
-				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Result result_;
 
 			};
 		}

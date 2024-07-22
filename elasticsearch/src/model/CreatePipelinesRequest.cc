@@ -26,39 +26,39 @@ CreatePipelinesRequest::CreatePipelinesRequest()
 
 CreatePipelinesRequest::~CreatePipelinesRequest() {}
 
-string CreatePipelinesRequest::getInstanceId() const {
+std::string CreatePipelinesRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void CreatePipelinesRequest::setInstanceId(string instanceId) {
+void CreatePipelinesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string CreatePipelinesRequest::getClientToken() const {
+std::string CreatePipelinesRequest::getClientToken() const {
   return clientToken_;
 }
 
-void CreatePipelinesRequest::setClientToken(string clientToken) {
+void CreatePipelinesRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), std::to_string(clientToken));
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-boolean CreatePipelinesRequest::getTrigger() const {
+bool CreatePipelinesRequest::getTrigger() const {
   return trigger_;
 }
 
-void CreatePipelinesRequest::setTrigger(boolean trigger) {
+void CreatePipelinesRequest::setTrigger(bool trigger) {
   trigger_ = trigger;
-  setParameter(std::string("trigger"), std::to_string(trigger));
+  setParameter(std::string("trigger"), trigger ? "true" : "false");
 }
 
-string CreatePipelinesRequest::getBody() const {
+std::string CreatePipelinesRequest::getBody() const {
   return body_;
 }
 
-void CreatePipelinesRequest::setBody(string body) {
+void CreatePipelinesRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

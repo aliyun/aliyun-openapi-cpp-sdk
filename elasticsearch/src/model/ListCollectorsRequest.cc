@@ -26,57 +26,57 @@ ListCollectorsRequest::ListCollectorsRequest()
 
 ListCollectorsRequest::~ListCollectorsRequest() {}
 
-string ListCollectorsRequest::getInstanceId() const {
+std::string ListCollectorsRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void ListCollectorsRequest::setInstanceId(string instanceId) {
+void ListCollectorsRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("instanceId"), std::to_string(instanceId));
+  setParameter(std::string("instanceId"), instanceId);
 }
 
-integer ListCollectorsRequest::getSize() const {
+int ListCollectorsRequest::getSize() const {
   return size_;
 }
 
-void ListCollectorsRequest::setSize(integer size) {
+void ListCollectorsRequest::setSize(int size) {
   size_ = size;
   setParameter(std::string("size"), std::to_string(size));
 }
 
-string ListCollectorsRequest::getName() const {
+std::string ListCollectorsRequest::getName() const {
   return name_;
 }
 
-void ListCollectorsRequest::setName(string name) {
+void ListCollectorsRequest::setName(const std::string &name) {
   name_ = name;
-  setParameter(std::string("name"), std::to_string(name));
+  setParameter(std::string("name"), name);
 }
 
-string ListCollectorsRequest::getSourceType() const {
+std::string ListCollectorsRequest::getSourceType() const {
   return sourceType_;
 }
 
-void ListCollectorsRequest::setSourceType(string sourceType) {
+void ListCollectorsRequest::setSourceType(const std::string &sourceType) {
   sourceType_ = sourceType;
-  setParameter(std::string("sourceType"), std::to_string(sourceType));
+  setParameter(std::string("sourceType"), sourceType);
 }
 
-integer ListCollectorsRequest::getPage() const {
+int ListCollectorsRequest::getPage() const {
   return page_;
 }
 
-void ListCollectorsRequest::setPage(integer page) {
+void ListCollectorsRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("page"), std::to_string(page));
 }
 
-string ListCollectorsRequest::getResId() const {
+std::string ListCollectorsRequest::getResId() const {
   return resId_;
 }
 
-void ListCollectorsRequest::setResId(string resId) {
+void ListCollectorsRequest::setResId(const std::string &resId) {
   resId_ = resId;
-  setParameter(std::string("resId"), std::to_string(resId));
+  setParameter(std::string("resId"), resId);
 }
 

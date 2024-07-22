@@ -30,17 +30,17 @@ class ALIBABACLOUD_ELASTICSEARCH_EXPORT InstallAckOperatorRequest : public RoaSe
 public:
 	InstallAckOperatorRequest();
 	~InstallAckOperatorRequest();
-	string getClientToken() const;
-	void setClientToken(string clientToken);
-	string getClusterId() const;
-	void setClusterId(string clusterId);
-	string getBody() const;
-	void setBody(string body);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
+	std::string getBody() const;
+	void setBody(const std::string &body);
 
 private:
-	string clientToken_;
-	string clusterId_;
-	string body_;
+	std::string clientToken_;
+	std::string clusterId_;
+	std::string body_;
 };
 } // namespace Model
 } // namespace Elasticsearch

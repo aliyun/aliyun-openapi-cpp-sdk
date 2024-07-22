@@ -26,30 +26,39 @@ UninstallPluginRequest::UninstallPluginRequest()
 
 UninstallPluginRequest::~UninstallPluginRequest() {}
 
-string UninstallPluginRequest::getInstanceId() const {
+std::string UninstallPluginRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UninstallPluginRequest::setInstanceId(string instanceId) {
+void UninstallPluginRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UninstallPluginRequest::getClientToken() const {
+std::string UninstallPluginRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UninstallPluginRequest::setClientToken(string clientToken) {
+void UninstallPluginRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string UninstallPluginRequest::getBody() const {
+bool UninstallPluginRequest::getForce() const {
+  return force_;
+}
+
+void UninstallPluginRequest::setForce(bool force) {
+  force_ = force;
+  setParameter(std::string("force"), force ? "true" : "false");
+}
+
+std::string UninstallPluginRequest::getBody() const {
   return body_;
 }
 
-void UninstallPluginRequest::setBody(string body) {
+void UninstallPluginRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

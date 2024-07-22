@@ -26,22 +26,22 @@ UpdatePipelineManagementConfigRequest::UpdatePipelineManagementConfigRequest()
 
 UpdatePipelineManagementConfigRequest::~UpdatePipelineManagementConfigRequest() {}
 
-string UpdatePipelineManagementConfigRequest::getInstanceId() const {
+std::string UpdatePipelineManagementConfigRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void UpdatePipelineManagementConfigRequest::setInstanceId(string instanceId) {
+void UpdatePipelineManagementConfigRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string UpdatePipelineManagementConfigRequest::getClientToken() const {
+std::string UpdatePipelineManagementConfigRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdatePipelineManagementConfigRequest::setClientToken(string clientToken) {
+void UpdatePipelineManagementConfigRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
 std::string UpdatePipelineManagementConfigRequest::getBody() const {

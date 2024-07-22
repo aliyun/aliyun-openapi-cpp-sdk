@@ -26,22 +26,22 @@ CreateComponentIndexRequest::CreateComponentIndexRequest()
 
 CreateComponentIndexRequest::~CreateComponentIndexRequest() {}
 
-string CreateComponentIndexRequest::getInstanceId() const {
+std::string CreateComponentIndexRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void CreateComponentIndexRequest::setInstanceId(string instanceId) {
+void CreateComponentIndexRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string CreateComponentIndexRequest::getName() const {
+std::string CreateComponentIndexRequest::getName() const {
   return name_;
 }
 
-void CreateComponentIndexRequest::setName(string name) {
+void CreateComponentIndexRequest::setName(const std::string &name) {
   name_ = name;
-  setParameter(std::string("name"), std::to_string(name));
+  setParameter(std::string("name"), name);
 }
 
 std::string CreateComponentIndexRequest::getBody() const {

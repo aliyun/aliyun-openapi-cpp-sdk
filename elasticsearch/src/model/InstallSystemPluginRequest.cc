@@ -26,30 +26,30 @@ InstallSystemPluginRequest::InstallSystemPluginRequest()
 
 InstallSystemPluginRequest::~InstallSystemPluginRequest() {}
 
-string InstallSystemPluginRequest::getInstanceId() const {
+std::string InstallSystemPluginRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void InstallSystemPluginRequest::setInstanceId(string instanceId) {
+void InstallSystemPluginRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-string InstallSystemPluginRequest::getClientToken() const {
+std::string InstallSystemPluginRequest::getClientToken() const {
   return clientToken_;
 }
 
-void InstallSystemPluginRequest::setClientToken(string clientToken) {
+void InstallSystemPluginRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
-  setParameter(std::string("clientToken"), std::to_string(clientToken));
+  setParameter(std::string("clientToken"), clientToken);
 }
 
-string InstallSystemPluginRequest::getBody() const {
+std::string InstallSystemPluginRequest::getBody() const {
   return body_;
 }
 
-void InstallSystemPluginRequest::setBody(string body) {
+void InstallSystemPluginRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 
