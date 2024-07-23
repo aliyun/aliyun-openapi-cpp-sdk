@@ -34,6 +34,15 @@ void SearchTemplateRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+bool SearchTemplateRequest::getForFrontend() const {
+  return forFrontend_;
+}
+
+void SearchTemplateRequest::setForFrontend(bool forFrontend) {
+  forFrontend_ = forFrontend;
+  setParameter(std::string("ForFrontend"), forFrontend ? "true" : "false");
+}
+
 long SearchTemplateRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -70,6 +79,15 @@ void SearchTemplateRequest::setState(const std::string &state) {
   setParameter(std::string("State"), state);
 }
 
+std::string SearchTemplateRequest::getNamePrefix() const {
+  return namePrefix_;
+}
+
+void SearchTemplateRequest::setNamePrefix(const std::string &namePrefix) {
+  namePrefix_ = namePrefix;
+  setParameter(std::string("NamePrefix"), namePrefix);
+}
+
 std::string SearchTemplateRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -95,5 +113,14 @@ long SearchTemplateRequest::getOwnerId() const {
 void SearchTemplateRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string SearchTemplateRequest::getTemplateId() const {
+  return templateId_;
+}
+
+void SearchTemplateRequest::setTemplateId(const std::string &templateId) {
+  templateId_ = templateId;
+  setParameter(std::string("TemplateId"), templateId);
 }
 

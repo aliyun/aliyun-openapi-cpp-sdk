@@ -61,6 +61,15 @@ void QueryFpShotJobListRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string QueryFpShotJobListRequest::getUserData() const {
+  return userData_;
+}
+
+void QueryFpShotJobListRequest::setUserData(const std::string &userData) {
+  userData_ = userData;
+  setParameter(std::string("UserData"), userData);
+}
+
 std::string QueryFpShotJobListRequest::getState() const {
   return state_;
 }

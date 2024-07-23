@@ -174,6 +174,11 @@ void QueryMediaCensorJobListResult::parse(const std::string &payload)
 				censorResult2Object.rate = vensorCensorResultNodeCensorResultsCensorResult["Rate"].asString();
 			mediaCensorJobListObject.vensorCensorResult.censorResults.push_back(censorResult2Object);
 		}
+		auto audioCensorResultNode = value["AudioCensorResult"];
+		if(!audioCensorResultNode["Suggestion"].isNull())
+			mediaCensorJobListObject.audioCensorResult.suggestion = audioCensorResultNode["Suggestion"].asString();
+		if(!audioCensorResultNode["Label"].isNull())
+			mediaCensorJobListObject.audioCensorResult.label = audioCensorResultNode["Label"].asString();
 		mediaCensorJobList_.push_back(mediaCensorJobListObject);
 	}
 	auto allNonExistIds = value["NonExistIds"]["String"];

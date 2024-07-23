@@ -34,6 +34,15 @@ void BindOutputBucketRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string BindOutputBucketRequest::getDepositorCredentials() const {
+  return depositorCredentials_;
+}
+
+void BindOutputBucketRequest::setDepositorCredentials(const std::string &depositorCredentials) {
+  depositorCredentials_ = depositorCredentials;
+  setParameter(std::string("DepositorCredentials"), depositorCredentials);
+}
+
 std::string BindOutputBucketRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

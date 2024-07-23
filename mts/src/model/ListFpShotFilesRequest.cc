@@ -52,6 +52,15 @@ void ListFpShotFilesRequest::setNextPageToken(const std::string &nextPageToken) 
   setParameter(std::string("NextPageToken"), nextPageToken);
 }
 
+std::string ListFpShotFilesRequest::getStartTime() const {
+  return startTime_;
+}
+
+void ListFpShotFilesRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
+}
+
 std::string ListFpShotFilesRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -86,6 +95,15 @@ std::string ListFpShotFilesRequest::getOwnerAccount() const {
 void ListFpShotFilesRequest::setOwnerAccount(const std::string &ownerAccount) {
   ownerAccount_ = ownerAccount;
   setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+std::string ListFpShotFilesRequest::getEndTime() const {
+  return endTime_;
+}
+
+void ListFpShotFilesRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
 long ListFpShotFilesRequest::getOwnerId() const {

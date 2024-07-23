@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string object;
 						std::string location;
 					};
+					std::string storeTime;
 					std::string primaryKey;
 					std::string fileId;
 					InputFile inputFile;

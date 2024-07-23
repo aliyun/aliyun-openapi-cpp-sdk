@@ -61,15 +61,6 @@ void QueryMediaCensorJobListRequest::setAccessKeyId(const std::string &accessKey
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string QueryMediaCensorJobListRequest::getJobId() const {
-  return jobId_;
-}
-
-void QueryMediaCensorJobListRequest::setJobId(const std::string &jobId) {
-  jobId_ = jobId;
-  setParameter(std::string("JobId"), jobId);
-}
-
 std::string QueryMediaCensorJobListRequest::getState() const {
   return state_;
 }
@@ -131,5 +122,14 @@ std::string QueryMediaCensorJobListRequest::getPipelineId() const {
 void QueryMediaCensorJobListRequest::setPipelineId(const std::string &pipelineId) {
   pipelineId_ = pipelineId;
   setParameter(std::string("PipelineId"), pipelineId);
+}
+
+std::string QueryMediaCensorJobListRequest::getJobIds() const {
+  return jobIds_;
+}
+
+void QueryMediaCensorJobListRequest::setJobIds(const std::string &jobIds) {
+  jobIds_ = jobIds;
+  setParameter(std::string("JobIds"), jobIds);
 }
 

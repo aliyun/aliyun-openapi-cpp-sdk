@@ -99,6 +99,11 @@ namespace AlibabaCloud
 						std::string nextPageToken;
 						std::vector<VideoTimeline> videoTimelines;
 					};
+					struct AudioCensorResult
+					{
+						std::string suggestion;
+						std::string label;
+					};
 					struct CoverImageCensorResult
 					{
 						struct Result
@@ -120,6 +125,7 @@ namespace AlibabaCloud
 					std::string code;
 					std::string suggestion;
 					Input input;
+					AudioCensorResult audioCensorResult;
 					std::string finishTime;
 					VensorCensorResult vensorCensorResult;
 					std::string state;

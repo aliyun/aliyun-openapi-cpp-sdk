@@ -25,6 +25,15 @@ BindInputBucketRequest::BindInputBucketRequest()
 
 BindInputBucketRequest::~BindInputBucketRequest() {}
 
+std::string BindInputBucketRequest::getReferer() const {
+  return referer_;
+}
+
+void BindInputBucketRequest::setReferer(const std::string &referer) {
+  referer_ = referer;
+  setParameter(std::string("Referer"), referer);
+}
+
 long BindInputBucketRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
@@ -32,6 +41,15 @@ long BindInputBucketRequest::getResourceOwnerId() const {
 void BindInputBucketRequest::setResourceOwnerId(long resourceOwnerId) {
   resourceOwnerId_ = resourceOwnerId;
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
+std::string BindInputBucketRequest::getDepositorCredentials() const {
+  return depositorCredentials_;
+}
+
+void BindInputBucketRequest::setDepositorCredentials(const std::string &depositorCredentials) {
+  depositorCredentials_ = depositorCredentials;
+  setParameter(std::string("DepositorCredentials"), depositorCredentials);
 }
 
 std::string BindInputBucketRequest::getAccessKeyId() const {

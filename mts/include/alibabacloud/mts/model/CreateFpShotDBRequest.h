@@ -44,6 +44,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	std::string getName() const;
 	void setName(const std::string &name);
 	std::string getConfig() const;
@@ -57,6 +59,7 @@ private:
 	int modelId_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string instanceId_;
 	std::string name_;
 	std::string config_;
 };

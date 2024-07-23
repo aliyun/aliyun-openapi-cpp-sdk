@@ -43,6 +43,24 @@ void QueryTemplateListRequest::setTemplateIds(const std::string &templateIds) {
   setParameter(std::string("TemplateIds"), templateIds);
 }
 
+bool QueryTemplateListRequest::getForFrontend() const {
+  return forFrontend_;
+}
+
+void QueryTemplateListRequest::setForFrontend(bool forFrontend) {
+  forFrontend_ = forFrontend;
+  setParameter(std::string("ForFrontend"), forFrontend ? "true" : "false");
+}
+
+std::string QueryTemplateListRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void QueryTemplateListRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
 std::string QueryTemplateListRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -68,14 +86,5 @@ long QueryTemplateListRequest::getOwnerId() const {
 void QueryTemplateListRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string QueryTemplateListRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void QueryTemplateListRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 

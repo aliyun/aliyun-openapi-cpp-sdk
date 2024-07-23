@@ -58,7 +58,26 @@ namespace AlibabaCloud
 							std::string primaryKey;
 							std::vector<FpShot::FpShotSlice> fpShotSlices;
 						};
+						struct TextFpShot
+						{
+							struct TextFpShotSlice
+							{
+								struct InputFragment
+								{
+									std::string start;
+									std::string duration;
+								};
+								std::string similarity;
+								std::string inputText;
+								std::string duplicationText;
+								InputFragment inputFragment;
+							};
+							std::string similarity;
+							std::string primaryKey;
+							std::vector<TextFpShot::TextFpShotSlice> textFpShotSlices;
+						};
 						std::vector<FpShot> audioFpShots;
+						std::vector<TextFpShot> textFpShots;
 						std::vector<FpShot> fpShots;
 					};
 					struct FpShotConfig
@@ -78,10 +97,12 @@ namespace AlibabaCloud
 					std::string userData;
 					std::string txHash;
 					FpShotResult fpShotResult;
+					int duration;
 					std::string code;
 					InputFile inputFile;
 					std::string transactionId;
 					FpShotConfig fpShotConfig;
+					std::string input;
 					std::string finishTime;
 					std::string state;
 					std::string creationTime;

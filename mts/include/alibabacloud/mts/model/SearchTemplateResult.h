@@ -41,7 +41,15 @@ namespace AlibabaCloud
 							std::string min;
 							std::string max;
 						};
+						struct NarrowBand
+						{
+							float maxAbrRatio;
+							std::string version;
+							float abrmax;
+						};
+						NarrowBand narrowBand;
 						std::string bufsize;
+						std::string hdr2sdr;
 						std::string qscale;
 						std::string scanMode;
 						std::string preset;
@@ -62,6 +70,7 @@ namespace AlibabaCloud
 						std::string height;
 						std::string degrain;
 						std::string width;
+						std::string resoPriority;
 					};
 					struct TransConfig
 					{
@@ -104,10 +113,20 @@ namespace AlibabaCloud
 					{
 						std::string format;
 					};
+					struct FrontendHint
+					{
+						std::string bitrateControlType;
+						bool isDynamic;
+						std::string transcodeType;
+						std::string source;
+						bool hasOldHdr2Sdr;
+					};
 					Container container;
 					TransConfig transConfig;
 					Video video;
 					std::string state;
+					std::string creationTime;
+					FrontendHint frontendHint;
 					std::string id;
 					Audio audio;
 					MuxConfig muxConfig;

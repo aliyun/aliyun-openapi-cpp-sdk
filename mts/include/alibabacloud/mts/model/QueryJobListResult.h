@@ -186,29 +186,32 @@ namespace AlibabaCloud
 										std::string preloadTime;
 										std::string costBandwidth;
 									};
-									std::string codecTag;
 									std::string codecTimeBase;
 									std::string sar;
-									std::string startTime;
 									std::string fps;
 									std::string index;
-									std::string lang;
-									std::string duration;
 									std::string pixFmt;
+									std::string bitsPerRawSample;
 									NetworkCost networkCost;
-									std::string bitrate;
 									std::string codecName;
 									std::string avgFPS;
 									std::string profile;
+									std::string colorPrimaries;
+									std::string height;
+									std::string numFrames;
+									std::string width;
+									std::string colorTransfer;
+									std::string codecTag;
+									std::string startTime;
+									std::string lang;
+									std::string duration;
+									std::string bitrate;
 									std::string timebase;
 									std::string codecTagString;
 									std::string hasBFrames;
 									std::string dar;
 									std::string codecLongName;
-									std::string height;
 									std::string level;
-									std::string numFrames;
-									std::string width;
 								};
 								struct AudioStream
 								{
@@ -263,6 +266,25 @@ namespace AlibabaCloud
 							std::string bitrate;
 							Streams streams;
 							std::string fileSize;
+						};
+						struct MultiSpeedInfo
+						{
+							std::string message;
+							std::string downgradePolicy;
+							std::string enable;
+							int settingSpeed;
+							double realSpeed;
+							double duration;
+							double timeCost;
+							std::string code;
+						};
+						struct TraceMark
+						{
+							std::string enable;
+						};
+						struct CopyrightMark
+						{
+							std::string content;
 						};
 						struct WaterMark
 						{
@@ -321,6 +343,7 @@ namespace AlibabaCloud
 						};
 						std::string rotate;
 						std::string userData;
+						TraceMark traceMark;
 						Encryption encryption;
 						Properties properties;
 						SuperReso superReso;
@@ -329,14 +352,17 @@ namespace AlibabaCloud
 						Container container;
 						TransConfig transConfig;
 						std::string waterMarkConfigUrl;
+						std::string extendData;
 						MuxConfig muxConfig;
 						SubtitleConfig subtitleConfig;
 						std::vector<Opening> openingList;
 						std::string templateId;
+						CopyrightMark copyrightMark;
 						OutputFile outputFile;
 						std::vector<TailSlate> tailSlateList;
 						std::string priority;
 						std::string mergeConfigUrl;
+						MultiSpeedInfo multiSpeedInfo;
 						std::string deWatermark;
 						M3U8NonStandardSupport m3U8NonStandardSupport;
 						Video video;
@@ -358,16 +384,32 @@ namespace AlibabaCloud
 						std::string errorMessage;
 						std::string messageId;
 					};
-					Input input;
-					std::string finishTime;
+					struct Pipeline
+					{
+						struct ExtendConfig
+						{
+							bool isBoostNew;
+							std::string multiSpeedDowngradePolicy;
+							int maxMultiSpeed;
+						};
+						std::string speed;
+						std::string state;
+						std::string id;
+						ExtendConfig extendConfig;
+						std::string name;
+					};
 					std::string message;
 					long percent;
+					std::string code;
+					std::string submitTime;
+					Pipeline pipeline;
+					Input input;
+					std::string finishTime;
 					std::string state;
 					Output output;
 					MNSMessageResult mNSMessageResult;
 					std::string creationTime;
 					std::string pipelineId;
-					std::string code;
 					std::string jobId;
 				};
 

@@ -171,6 +171,25 @@ void QueryMediaCensorJobDetailResult::parse(const std::string &payload)
 			censorResult2Object.rate = vensorCensorResultNodeCensorResultsCensorResult["Rate"].asString();
 		mediaCensorJobDetail_.vensorCensorResult.censorResults.push_back(censorResult2Object);
 	}
+	auto audioCensorResultNode = mediaCensorJobDetailNode["AudioCensorResult"];
+	if(!audioCensorResultNode["Suggestion"].isNull())
+		mediaCensorJobDetail_.audioCensorResult.suggestion = audioCensorResultNode["Suggestion"].asString();
+	if(!audioCensorResultNode["Label"].isNull())
+		mediaCensorJobDetail_.audioCensorResult.label = audioCensorResultNode["Label"].asString();
+	auto allAudioDetailResultListNode = audioCensorResultNode["AudioDetailResultList"]["AudioDetailResult"];
+	for (auto audioCensorResultNodeAudioDetailResultListAudioDetailResult : allAudioDetailResultListNode)
+	{
+		MediaCensorJobDetail::AudioCensorResult::AudioDetailResult audioDetailResultObject;
+		if(!audioCensorResultNodeAudioDetailResultListAudioDetailResult["StartTime"].isNull())
+			audioDetailResultObject.startTime = std::stoi(audioCensorResultNodeAudioDetailResultListAudioDetailResult["StartTime"].asString());
+		if(!audioCensorResultNodeAudioDetailResultListAudioDetailResult["EndTime"].isNull())
+			audioDetailResultObject.endTime = std::stoi(audioCensorResultNodeAudioDetailResultListAudioDetailResult["EndTime"].asString());
+		if(!audioCensorResultNodeAudioDetailResultListAudioDetailResult["Text"].isNull())
+			audioDetailResultObject.text = audioCensorResultNodeAudioDetailResultListAudioDetailResult["Text"].asString();
+		if(!audioCensorResultNodeAudioDetailResultListAudioDetailResult["Label"].isNull())
+			audioDetailResultObject.label = audioCensorResultNodeAudioDetailResultListAudioDetailResult["Label"].asString();
+		mediaCensorJobDetail_.audioCensorResult.audioDetailResultList.push_back(audioDetailResultObject);
+	}
 
 }
 

@@ -41,12 +41,19 @@ namespace AlibabaCloud
 						std::string topic;
 						std::string queueName;
 					};
+					struct ExtendConfig
+					{
+						bool isBoostNew;
+						std::string multiSpeedDowngradePolicy;
+						int maxMultiSpeed;
+					};
 					std::string role;
 					std::string speed;
 					long quotaAllocate;
 					std::string state;
 					NotifyConfig notifyConfig;
 					std::string id;
+					ExtendConfig extendConfig;
 					std::string name;
 				};
 

@@ -25,6 +25,15 @@ SubmitMediaCensorJobRequest::SubmitMediaCensorJobRequest()
 
 SubmitMediaCensorJobRequest::~SubmitMediaCensorJobRequest() {}
 
+std::string SubmitMediaCensorJobRequest::getExternalUrl() const {
+  return externalUrl_;
+}
+
+void SubmitMediaCensorJobRequest::setExternalUrl(const std::string &externalUrl) {
+  externalUrl_ = externalUrl;
+  setParameter(std::string("ExternalUrl"), externalUrl);
+}
+
 long SubmitMediaCensorJobRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }

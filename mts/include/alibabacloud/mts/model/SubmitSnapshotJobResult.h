@@ -64,6 +64,7 @@ namespace AlibabaCloud
 						};
 						OutputFile outputFile;
 						TileOutputFile tileOutputFile;
+						std::vector<std::string> timeArray;
 						std::string frameType;
 						std::string num;
 						TileOut tileOut;

@@ -88,3 +88,21 @@ void UpdateMediaWorkflowRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string UpdateMediaWorkflowRequest::getTriggerMode() const {
+  return triggerMode_;
+}
+
+void UpdateMediaWorkflowRequest::setTriggerMode(const std::string &triggerMode) {
+  triggerMode_ = triggerMode;
+  setParameter(std::string("TriggerMode"), triggerMode);
+}
+
+std::string UpdateMediaWorkflowRequest::getName() const {
+  return name_;
+}
+
+void UpdateMediaWorkflowRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
+}
+

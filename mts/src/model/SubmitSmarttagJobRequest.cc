@@ -124,6 +124,15 @@ void SubmitSmarttagJobRequest::setTemplateId(const std::string &templateId) {
   setParameter(std::string("TemplateId"), templateId);
 }
 
+std::string SubmitSmarttagJobRequest::getPriority() const {
+  return priority_;
+}
+
+void SubmitSmarttagJobRequest::setPriority(const std::string &priority) {
+  priority_ = priority;
+  setParameter(std::string("Priority"), priority);
+}
+
 std::string SubmitSmarttagJobRequest::getPipelineId() const {
   return pipelineId_;
 }

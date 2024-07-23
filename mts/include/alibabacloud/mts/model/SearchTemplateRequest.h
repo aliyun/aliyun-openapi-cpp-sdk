@@ -32,6 +32,8 @@ public:
 	~SearchTemplateRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	bool getForFrontend() const;
+	void setForFrontend(bool forFrontend);
 	long getPageNumber() const;
 	void setPageNumber(long pageNumber);
 	std::string getAccessKeyId() const;
@@ -40,22 +42,29 @@ public:
 	void setPageSize(long pageSize);
 	std::string getState() const;
 	void setState(const std::string &state);
+	std::string getNamePrefix() const;
+	void setNamePrefix(const std::string &namePrefix);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getTemplateId() const;
+	void setTemplateId(const std::string &templateId);
 
 private:
 	long resourceOwnerId_;
+	bool forFrontend_;
 	long pageNumber_;
 	std::string accessKeyId_;
 	long pageSize_;
 	std::string state_;
+	std::string namePrefix_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string templateId_;
 };
 } // namespace Model
 } // namespace Mts

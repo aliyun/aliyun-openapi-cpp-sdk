@@ -38,6 +38,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getUserData() const;
 	void setUserData(const std::string &userData);
+	std::string getPrimaryKeys() const;
+	void setPrimaryKeys(const std::string &primaryKeys);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -54,6 +56,7 @@ private:
 	std::string fpDBId_;
 	std::string accessKeyId_;
 	std::string userData_;
+	std::string primaryKeys_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

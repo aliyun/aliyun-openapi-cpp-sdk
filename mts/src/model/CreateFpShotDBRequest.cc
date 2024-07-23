@@ -88,6 +88,15 @@ void CreateFpShotDBRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string CreateFpShotDBRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void CreateFpShotDBRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
 std::string CreateFpShotDBRequest::getName() const {
   return name_;
 }

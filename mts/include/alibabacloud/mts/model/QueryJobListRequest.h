@@ -32,23 +32,26 @@ public:
 	~QueryJobListRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	bool getIncludePipelineInfo() const;
+	void setIncludePipelineInfo(bool includePipelineInfo);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getJobIds() const;
 	void setJobIds(const std::string &jobIds);
 
 private:
 	long resourceOwnerId_;
+	bool includePipelineInfo_;
+	std::string accessKeyId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string accessKeyId_;
 	std::string jobIds_;
 };
 } // namespace Model

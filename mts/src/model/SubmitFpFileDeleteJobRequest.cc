@@ -61,6 +61,15 @@ void SubmitFpFileDeleteJobRequest::setUserData(const std::string &userData) {
   setParameter(std::string("UserData"), userData);
 }
 
+std::string SubmitFpFileDeleteJobRequest::getPrimaryKeys() const {
+  return primaryKeys_;
+}
+
+void SubmitFpFileDeleteJobRequest::setPrimaryKeys(const std::string &primaryKeys) {
+  primaryKeys_ = primaryKeys;
+  setParameter(std::string("PrimaryKeys"), primaryKeys);
+}
+
 std::string SubmitFpFileDeleteJobRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

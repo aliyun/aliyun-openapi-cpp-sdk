@@ -34,6 +34,24 @@ void QuerySmarttagJobRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string QuerySmarttagJobRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void QuerySmarttagJobRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string QuerySmarttagJobRequest::getJobId() const {
+  return jobId_;
+}
+
+void QuerySmarttagJobRequest::setJobId(const std::string &jobId) {
+  jobId_ = jobId;
+  setParameter(std::string("JobId"), jobId);
+}
+
 std::string QuerySmarttagJobRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -61,21 +79,12 @@ void QuerySmarttagJobRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string QuerySmarttagJobRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string QuerySmarttagJobRequest::getParams() const {
+  return params_;
 }
 
-void QuerySmarttagJobRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string QuerySmarttagJobRequest::getJobId() const {
-  return jobId_;
-}
-
-void QuerySmarttagJobRequest::setJobId(const std::string &jobId) {
-  jobId_ = jobId;
-  setParameter(std::string("JobId"), jobId);
+void QuerySmarttagJobRequest::setParams(const std::string &params) {
+  params_ = params;
+  setParameter(std::string("Params"), params);
 }
 

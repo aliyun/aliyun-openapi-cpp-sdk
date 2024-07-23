@@ -59,6 +59,8 @@ void QueryJobListResult::parse(const std::string &payload)
 			jobListObject.message = valueJobListJob["Message"].asString();
 		if(!valueJobListJob["PipelineId"].isNull())
 			jobListObject.pipelineId = valueJobListJob["PipelineId"].asString();
+		if(!valueJobListJob["SubmitTime"].isNull())
+			jobListObject.submitTime = valueJobListJob["SubmitTime"].asString();
 		auto outputNode = value["Output"];
 		if(!outputNode["WaterMarkConfigUrl"].isNull())
 			jobListObject.output.waterMarkConfigUrl = outputNode["WaterMarkConfigUrl"].asString();
@@ -70,6 +72,8 @@ void QueryJobListResult::parse(const std::string &payload)
 			jobListObject.output.audioStreamMap = outputNode["AudioStreamMap"].asString();
 		if(!outputNode["UserData"].isNull())
 			jobListObject.output.userData = outputNode["UserData"].asString();
+		if(!outputNode["ExtendData"].isNull())
+			jobListObject.output.extendData = outputNode["ExtendData"].asString();
 		if(!outputNode["VideoStreamMap"].isNull())
 			jobListObject.output.videoStreamMap = outputNode["VideoStreamMap"].asString();
 		if(!outputNode["Rotate"].isNull())
@@ -407,6 +411,12 @@ void QueryJobListResult::parse(const std::string &payload)
 				videoStreamObject.codecTimeBase = streamsNodeVideoStreamListVideoStream["CodecTimeBase"].asString();
 			if(!streamsNodeVideoStreamListVideoStream["Level"].isNull())
 				videoStreamObject.level = streamsNodeVideoStreamListVideoStream["Level"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["colorTransfer"].isNull())
+				videoStreamObject.colorTransfer = streamsNodeVideoStreamListVideoStream["colorTransfer"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["colorPrimaries"].isNull())
+				videoStreamObject.colorPrimaries = streamsNodeVideoStreamListVideoStream["colorPrimaries"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["bitsPerRawSample"].isNull())
+				videoStreamObject.bitsPerRawSample = streamsNodeVideoStreamListVideoStream["bitsPerRawSample"].asString();
 			auto networkCostNode = value["NetworkCost"];
 			if(!networkCostNode["PreloadTime"].isNull())
 				videoStreamObject.networkCost.preloadTime = networkCostNode["PreloadTime"].asString();
@@ -481,6 +491,29 @@ void QueryJobListResult::parse(const std::string &payload)
 			jobListObject.output.properties.format.bitrate = formatNode["Bitrate"].asString();
 		if(!formatNode["FormatName"].isNull())
 			jobListObject.output.properties.format.formatName = formatNode["FormatName"].asString();
+		auto multiSpeedInfoNode = outputNode["MultiSpeedInfo"];
+		if(!multiSpeedInfoNode["Enable"].isNull())
+			jobListObject.output.multiSpeedInfo.enable = multiSpeedInfoNode["Enable"].asString();
+		if(!multiSpeedInfoNode["Code"].isNull())
+			jobListObject.output.multiSpeedInfo.code = multiSpeedInfoNode["Code"].asString();
+		if(!multiSpeedInfoNode["Message"].isNull())
+			jobListObject.output.multiSpeedInfo.message = multiSpeedInfoNode["Message"].asString();
+		if(!multiSpeedInfoNode["SettingSpeed"].isNull())
+			jobListObject.output.multiSpeedInfo.settingSpeed = std::stoi(multiSpeedInfoNode["SettingSpeed"].asString());
+		if(!multiSpeedInfoNode["DowngradePolicy"].isNull())
+			jobListObject.output.multiSpeedInfo.downgradePolicy = multiSpeedInfoNode["DowngradePolicy"].asString();
+		if(!multiSpeedInfoNode["RealSpeed"].isNull())
+			jobListObject.output.multiSpeedInfo.realSpeed = multiSpeedInfoNode["RealSpeed"].asString();
+		if(!multiSpeedInfoNode["Duration"].isNull())
+			jobListObject.output.multiSpeedInfo.duration = multiSpeedInfoNode["Duration"].asString();
+		if(!multiSpeedInfoNode["TimeCost"].isNull())
+			jobListObject.output.multiSpeedInfo.timeCost = multiSpeedInfoNode["TimeCost"].asString();
+		auto traceMarkNode = outputNode["TraceMark"];
+		if(!traceMarkNode["Enable"].isNull())
+			jobListObject.output.traceMark.enable = traceMarkNode["Enable"].asString();
+		auto copyrightMarkNode = outputNode["CopyrightMark"];
+		if(!copyrightMarkNode["Content"].isNull())
+			jobListObject.output.copyrightMark.content = copyrightMarkNode["Content"].asString();
 		auto inputNode = value["Input"];
 		if(!inputNode["Object"].isNull())
 			jobListObject.input.object = inputNode["Object"].asString();
@@ -495,6 +528,22 @@ void QueryJobListResult::parse(const std::string &payload)
 			jobListObject.mNSMessageResult.errorMessage = mNSMessageResultNode["ErrorMessage"].asString();
 		if(!mNSMessageResultNode["ErrorCode"].isNull())
 			jobListObject.mNSMessageResult.errorCode = mNSMessageResultNode["ErrorCode"].asString();
+		auto pipelineNode = value["Pipeline"];
+		if(!pipelineNode["Id"].isNull())
+			jobListObject.pipeline.id = pipelineNode["Id"].asString();
+		if(!pipelineNode["Name"].isNull())
+			jobListObject.pipeline.name = pipelineNode["Name"].asString();
+		if(!pipelineNode["Speed"].isNull())
+			jobListObject.pipeline.speed = pipelineNode["Speed"].asString();
+		if(!pipelineNode["State"].isNull())
+			jobListObject.pipeline.state = pipelineNode["State"].asString();
+		auto extendConfigNode = pipelineNode["ExtendConfig"];
+		if(!extendConfigNode["IsBoostNew"].isNull())
+			jobListObject.pipeline.extendConfig.isBoostNew = extendConfigNode["IsBoostNew"].asString() == "true";
+		if(!extendConfigNode["MaxMultiSpeed"].isNull())
+			jobListObject.pipeline.extendConfig.maxMultiSpeed = std::stoi(extendConfigNode["MaxMultiSpeed"].asString());
+		if(!extendConfigNode["MultiSpeedDowngradePolicy"].isNull())
+			jobListObject.pipeline.extendConfig.multiSpeedDowngradePolicy = extendConfigNode["MultiSpeedDowngradePolicy"].asString();
 		jobList_.push_back(jobListObject);
 	}
 	auto allNonExistJobIds = value["NonExistJobIds"]["String"];

@@ -66,6 +66,13 @@ void QueryPipelineListResult::parse(const std::string &payload)
 			pipelineListObject.notifyConfig.mqTag = notifyConfigNode["MqTag"].asString();
 		if(!notifyConfigNode["Topic"].isNull())
 			pipelineListObject.notifyConfig.topic = notifyConfigNode["Topic"].asString();
+		auto extendConfigNode = value["ExtendConfig"];
+		if(!extendConfigNode["IsBoostNew"].isNull())
+			pipelineListObject.extendConfig.isBoostNew = extendConfigNode["IsBoostNew"].asString() == "true";
+		if(!extendConfigNode["MaxMultiSpeed"].isNull())
+			pipelineListObject.extendConfig.maxMultiSpeed = std::stoi(extendConfigNode["MaxMultiSpeed"].asString());
+		if(!extendConfigNode["MultiSpeedDowngradePolicy"].isNull())
+			pipelineListObject.extendConfig.multiSpeedDowngradePolicy = extendConfigNode["MultiSpeedDowngradePolicy"].asString();
 		pipelineList_.push_back(pipelineListObject);
 	}
 	auto allNonExistPids = value["NonExistPids"]["String"];

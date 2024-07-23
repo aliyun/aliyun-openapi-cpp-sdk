@@ -34,6 +34,15 @@ void UnbindInputBucketRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string UnbindInputBucketRequest::getDepositorCredentials() const {
+  return depositorCredentials_;
+}
+
+void UnbindInputBucketRequest::setDepositorCredentials(const std::string &depositorCredentials) {
+  depositorCredentials_ = depositorCredentials;
+  setParameter(std::string("DepositorCredentials"), depositorCredentials);
+}
+
 std::string UnbindInputBucketRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

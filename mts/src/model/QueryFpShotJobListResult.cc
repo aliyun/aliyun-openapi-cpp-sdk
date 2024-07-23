@@ -59,12 +59,16 @@ void QueryFpShotJobListResult::parse(const std::string &payload)
 			fpShotJobListObject.fileId = valueFpShotJobListFpShotJob["FileId"].asString();
 		if(!valueFpShotJobListFpShotJob["UserData"].isNull())
 			fpShotJobListObject.userData = valueFpShotJobListFpShotJob["UserData"].asString();
+		if(!valueFpShotJobListFpShotJob["Duration"].isNull())
+			fpShotJobListObject.duration = std::stoi(valueFpShotJobListFpShotJob["Duration"].asString());
 		if(!valueFpShotJobListFpShotJob["Code"].isNull())
 			fpShotJobListObject.code = valueFpShotJobListFpShotJob["Code"].asString();
 		if(!valueFpShotJobListFpShotJob["PipelineId"].isNull())
 			fpShotJobListObject.pipelineId = valueFpShotJobListFpShotJob["PipelineId"].asString();
 		if(!valueFpShotJobListFpShotJob["Id"].isNull())
 			fpShotJobListObject.id = valueFpShotJobListFpShotJob["Id"].asString();
+		if(!valueFpShotJobListFpShotJob["Input"].isNull())
+			fpShotJobListObject.input = valueFpShotJobListFpShotJob["Input"].asString();
 		auto fpShotResultNode = value["FpShotResult"];
 		auto allAudioFpShotsNode = fpShotResultNode["AudioFpShots"]["FpShot"];
 		for (auto fpShotResultNodeAudioFpShotsFpShot : allAudioFpShotsNode)
@@ -121,6 +125,33 @@ void QueryFpShotJobListResult::parse(const std::string &payload)
 				fpShotObject.fpShotSlices.push_back(fpShotSlicesObject);
 			}
 			fpShotJobListObject.fpShotResult.fpShots.push_back(fpShotObject);
+		}
+		auto allTextFpShotsNode = fpShotResultNode["TextFpShots"]["TextFpShot"];
+		for (auto fpShotResultNodeTextFpShotsTextFpShot : allTextFpShotsNode)
+		{
+			FpShotJob::FpShotResult::TextFpShot textFpShotObject;
+			if(!fpShotResultNodeTextFpShotsTextFpShot["PrimaryKey"].isNull())
+				textFpShotObject.primaryKey = fpShotResultNodeTextFpShotsTextFpShot["PrimaryKey"].asString();
+			if(!fpShotResultNodeTextFpShotsTextFpShot["Similarity"].isNull())
+				textFpShotObject.similarity = fpShotResultNodeTextFpShotsTextFpShot["Similarity"].asString();
+			auto allTextFpShotSlicesNode = fpShotResultNodeTextFpShotsTextFpShot["TextFpShotSlices"]["TextFpShotSlice"];
+			for (auto fpShotResultNodeTextFpShotsTextFpShotTextFpShotSlicesTextFpShotSlice : allTextFpShotSlicesNode)
+			{
+				FpShotJob::FpShotResult::TextFpShot::TextFpShotSlice textFpShotSlicesObject;
+				if(!fpShotResultNodeTextFpShotsTextFpShotTextFpShotSlicesTextFpShotSlice["Similarity"].isNull())
+					textFpShotSlicesObject.similarity = fpShotResultNodeTextFpShotsTextFpShotTextFpShotSlicesTextFpShotSlice["Similarity"].asString();
+				if(!fpShotResultNodeTextFpShotsTextFpShotTextFpShotSlicesTextFpShotSlice["InputText"].isNull())
+					textFpShotSlicesObject.inputText = fpShotResultNodeTextFpShotsTextFpShotTextFpShotSlicesTextFpShotSlice["InputText"].asString();
+				if(!fpShotResultNodeTextFpShotsTextFpShotTextFpShotSlicesTextFpShotSlice["DuplicationText"].isNull())
+					textFpShotSlicesObject.duplicationText = fpShotResultNodeTextFpShotsTextFpShotTextFpShotSlicesTextFpShotSlice["DuplicationText"].asString();
+				auto inputFragmentNode = value["InputFragment"];
+				if(!inputFragmentNode["Start"].isNull())
+					textFpShotSlicesObject.inputFragment.start = inputFragmentNode["Start"].asString();
+				if(!inputFragmentNode["Duration"].isNull())
+					textFpShotSlicesObject.inputFragment.duration = inputFragmentNode["Duration"].asString();
+				textFpShotObject.textFpShotSlices.push_back(textFpShotSlicesObject);
+			}
+			fpShotJobListObject.fpShotResult.textFpShots.push_back(textFpShotObject);
 		}
 		auto fpShotConfigNode = value["FpShotConfig"];
 		if(!fpShotConfigNode["PrimaryKey"].isNull())

@@ -61,6 +61,15 @@ void AddPipelineRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string AddPipelineRequest::getExtendConfig() const {
+  return extendConfig_;
+}
+
+void AddPipelineRequest::setExtendConfig(const std::string &extendConfig) {
+  extendConfig_ = extendConfig;
+  setParameter(std::string("ExtendConfig"), extendConfig);
+}
+
 std::string AddPipelineRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

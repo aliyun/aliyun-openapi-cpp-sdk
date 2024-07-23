@@ -38,6 +38,8 @@ public:
 	void setStartOfJobCreatedTimeRange(const std::string &startOfJobCreatedTimeRange);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getUserData() const;
+	void setUserData(const std::string &userData);
 	std::string getState() const;
 	void setState(const std::string &state);
 	std::string getEndOfJobCreatedTimeRange() const;
@@ -62,6 +64,7 @@ private:
 	std::string nextPageToken_;
 	std::string startOfJobCreatedTimeRange_;
 	std::string accessKeyId_;
+	std::string userData_;
 	std::string state_;
 	std::string endOfJobCreatedTimeRange_;
 	std::string resourceOwnerAccount_;

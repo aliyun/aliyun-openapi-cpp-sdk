@@ -36,6 +36,8 @@ public:
 	void setFpDBId(const std::string &fpDBId);
 	std::string getNextPageToken() const;
 	void setNextPageToken(const std::string &nextPageToken);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	int getPageSize() const;
@@ -44,6 +46,8 @@ public:
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 
@@ -51,10 +55,12 @@ private:
 	long resourceOwnerId_;
 	std::string fpDBId_;
 	std::string nextPageToken_;
+	std::string startTime_;
 	std::string accessKeyId_;
 	int pageSize_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
+	std::string endTime_;
 	long ownerId_;
 };
 } // namespace Model

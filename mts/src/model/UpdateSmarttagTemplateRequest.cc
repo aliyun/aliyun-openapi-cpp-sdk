@@ -34,6 +34,15 @@ void UpdateSmarttagTemplateRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string UpdateSmarttagTemplateRequest::getKnowledgeConfig() const {
+  return knowledgeConfig_;
+}
+
+void UpdateSmarttagTemplateRequest::setKnowledgeConfig(const std::string &knowledgeConfig) {
+  knowledgeConfig_ = knowledgeConfig;
+  setParameter(std::string("KnowledgeConfig"), knowledgeConfig);
+}
+
 std::string UpdateSmarttagTemplateRequest::getIndustry() const {
   return industry_;
 }
@@ -41,6 +50,15 @@ std::string UpdateSmarttagTemplateRequest::getIndustry() const {
 void UpdateSmarttagTemplateRequest::setIndustry(const std::string &industry) {
   industry_ = industry;
   setParameter(std::string("Industry"), industry);
+}
+
+std::string UpdateSmarttagTemplateRequest::getLabelVersion() const {
+  return labelVersion_;
+}
+
+void UpdateSmarttagTemplateRequest::setLabelVersion(const std::string &labelVersion) {
+  labelVersion_ = labelVersion;
+  setParameter(std::string("LabelVersion"), labelVersion);
 }
 
 std::string UpdateSmarttagTemplateRequest::getAccessKeyId() const {
@@ -59,6 +77,15 @@ std::string UpdateSmarttagTemplateRequest::getScene() const {
 void UpdateSmarttagTemplateRequest::setScene(const std::string &scene) {
   scene_ = scene;
   setParameter(std::string("Scene"), scene);
+}
+
+std::string UpdateSmarttagTemplateRequest::getFaceCustomParamsConfig() const {
+  return faceCustomParamsConfig_;
+}
+
+void UpdateSmarttagTemplateRequest::setFaceCustomParamsConfig(const std::string &faceCustomParamsConfig) {
+  faceCustomParamsConfig_ = faceCustomParamsConfig;
+  setParameter(std::string("FaceCustomParamsConfig"), faceCustomParamsConfig);
 }
 
 std::string UpdateSmarttagTemplateRequest::getTemplateName() const {
@@ -88,6 +115,24 @@ void UpdateSmarttagTemplateRequest::setFaceCategoryIds(const std::string &faceCa
   setParameter(std::string("FaceCategoryIds"), faceCategoryIds);
 }
 
+std::string UpdateSmarttagTemplateRequest::getKeywordConfig() const {
+  return keywordConfig_;
+}
+
+void UpdateSmarttagTemplateRequest::setKeywordConfig(const std::string &keywordConfig) {
+  keywordConfig_ = keywordConfig;
+  setParameter(std::string("KeywordConfig"), keywordConfig);
+}
+
+std::string UpdateSmarttagTemplateRequest::getLandmarkGroupIds() const {
+  return landmarkGroupIds_;
+}
+
+void UpdateSmarttagTemplateRequest::setLandmarkGroupIds(const std::string &landmarkGroupIds) {
+  landmarkGroupIds_ = landmarkGroupIds;
+  setParameter(std::string("LandmarkGroupIds"), landmarkGroupIds);
+}
+
 std::string UpdateSmarttagTemplateRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -104,6 +149,15 @@ std::string UpdateSmarttagTemplateRequest::getOwnerAccount() const {
 void UpdateSmarttagTemplateRequest::setOwnerAccount(const std::string &ownerAccount) {
   ownerAccount_ = ownerAccount;
   setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+std::string UpdateSmarttagTemplateRequest::getObjectGroupIds() const {
+  return objectGroupIds_;
+}
+
+void UpdateSmarttagTemplateRequest::setObjectGroupIds(const std::string &objectGroupIds) {
+  objectGroupIds_ = objectGroupIds;
+  setParameter(std::string("ObjectGroupIds"), objectGroupIds);
 }
 
 long UpdateSmarttagTemplateRequest::getOwnerId() const {
@@ -131,5 +185,14 @@ std::string UpdateSmarttagTemplateRequest::getAnalyseTypes() const {
 void UpdateSmarttagTemplateRequest::setAnalyseTypes(const std::string &analyseTypes) {
   analyseTypes_ = analyseTypes;
   setParameter(std::string("AnalyseTypes"), analyseTypes);
+}
+
+std::string UpdateSmarttagTemplateRequest::getLabelType() const {
+  return labelType_;
+}
+
+void UpdateSmarttagTemplateRequest::setLabelType(const std::string &labelType) {
+  labelType_ = labelType;
+  setParameter(std::string("LabelType"), labelType);
 }
 

@@ -89,11 +89,20 @@ void UpdateTemplateResult::parse(const std::string &payload)
 		_template_.video.scanMode = videoNode["ScanMode"].asString();
 	if(!videoNode["ResoPriority"].isNull())
 		_template_.video.resoPriority = videoNode["ResoPriority"].asString();
+	if(!videoNode["Hdr2sdr"].isNull())
+		_template_.video.hdr2sdr = videoNode["Hdr2sdr"].asString();
 	auto bitrateBndNode = videoNode["BitrateBnd"];
 	if(!bitrateBndNode["Max"].isNull())
 		_template_.video.bitrateBnd.max = bitrateBndNode["Max"].asString();
 	if(!bitrateBndNode["Min"].isNull())
 		_template_.video.bitrateBnd.min = bitrateBndNode["Min"].asString();
+	auto narrowBandNode = videoNode["NarrowBand"];
+	if(!narrowBandNode["Version"].isNull())
+		_template_.video.narrowBand.version = narrowBandNode["Version"].asString();
+	if(!narrowBandNode["Abrmax"].isNull())
+		_template_.video.narrowBand.abrmax = std::stof(narrowBandNode["Abrmax"].asString());
+	if(!narrowBandNode["MaxAbrRatio"].isNull())
+		_template_.video.narrowBand.maxAbrRatio = std::stof(narrowBandNode["MaxAbrRatio"].asString());
 	auto transConfigNode = _templateNode["TransConfig"];
 	if(!transConfigNode["IsCheckAudioBitrate"].isNull())
 		_template_.transConfig.isCheckAudioBitrate = transConfigNode["IsCheckAudioBitrate"].asString();
@@ -142,6 +151,19 @@ void UpdateTemplateResult::parse(const std::string &payload)
 		_template_.audio.channels = audioNode["Channels"].asString();
 	if(!audioNode["Bitrate"].isNull())
 		_template_.audio.bitrate = audioNode["Bitrate"].asString();
+	auto volumeNode = audioNode["Volume"];
+	if(!volumeNode["Method"].isNull())
+		_template_.audio.volume.method = volumeNode["Method"].asString();
+	if(!volumeNode["TruePeak"].isNull())
+		_template_.audio.volume.truePeak = volumeNode["TruePeak"].asString();
+	if(!volumeNode["IntegratedLoudnessTarget"].isNull())
+		_template_.audio.volume.integratedLoudnessTarget = volumeNode["IntegratedLoudnessTarget"].asString();
+	if(!volumeNode["Level"].isNull())
+		_template_.audio.volume.level = volumeNode["Level"].asString();
+	if(!volumeNode["LoudnessRangeTarget"].isNull())
+		_template_.audio.volume.loudnessRangeTarget = volumeNode["LoudnessRangeTarget"].asString();
+	if(!volumeNode["PeakLevel"].isNull())
+		_template_.audio.volume.peakLevel = volumeNode["PeakLevel"].asString();
 	auto containerNode = _templateNode["Container"];
 	if(!containerNode["Format"].isNull())
 		_template_.container.format = containerNode["Format"].asString();

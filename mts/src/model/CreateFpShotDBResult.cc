@@ -52,6 +52,8 @@ void CreateFpShotDBResult::parse(const std::string &payload)
 		fpShotDB_.modelId = std::stoi(fpShotDBNode["ModelId"].asString());
 	if(!fpShotDBNode["Config"].isNull())
 		fpShotDB_.config = fpShotDBNode["Config"].asString();
+	if(!fpShotDBNode["InstanceId"].isNull())
+		fpShotDB_.instanceId = fpShotDBNode["InstanceId"].asString();
 
 }
 

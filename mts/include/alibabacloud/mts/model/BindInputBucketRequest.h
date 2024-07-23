@@ -30,8 +30,12 @@ class ALIBABACLOUD_MTS_EXPORT BindInputBucketRequest : public RpcServiceRequest 
 public:
 	BindInputBucketRequest();
 	~BindInputBucketRequest();
+	std::string getReferer() const;
+	void setReferer(const std::string &referer);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getDepositorCredentials() const;
+	void setDepositorCredentials(const std::string &depositorCredentials);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceOwnerAccount() const;
@@ -46,7 +50,9 @@ public:
 	void setRoleArn(const std::string &roleArn);
 
 private:
+	std::string referer_;
 	long resourceOwnerId_;
+	std::string depositorCredentials_;
 	std::string accessKeyId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

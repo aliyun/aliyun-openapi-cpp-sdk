@@ -38,6 +38,8 @@ public:
 	void setSpeed(const std::string &speed);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getExtendConfig() const;
+	void setExtendConfig(const std::string &extendConfig);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -56,6 +58,7 @@ private:
 	std::string role_;
 	std::string speed_;
 	std::string accessKeyId_;
+	std::string extendConfig_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string notifyConfig_;

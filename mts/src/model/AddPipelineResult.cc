@@ -63,6 +63,13 @@ void AddPipelineResult::parse(const std::string &payload)
 		pipeline_.notifyConfig.mqTag = notifyConfigNode["MqTag"].asString();
 	if(!notifyConfigNode["Topic"].isNull())
 		pipeline_.notifyConfig.topic = notifyConfigNode["Topic"].asString();
+	auto extendConfigNode = pipelineNode["ExtendConfig"];
+	if(!extendConfigNode["IsBoostNew"].isNull())
+		pipeline_.extendConfig.isBoostNew = extendConfigNode["IsBoostNew"].asString() == "true";
+	if(!extendConfigNode["MaxMultiSpeed"].isNull())
+		pipeline_.extendConfig.maxMultiSpeed = std::stoi(extendConfigNode["MaxMultiSpeed"].asString());
+	if(!extendConfigNode["MultiSpeedDowngradePolicy"].isNull())
+		pipeline_.extendConfig.multiSpeedDowngradePolicy = extendConfigNode["MultiSpeedDowngradePolicy"].asString();
 
 }
 

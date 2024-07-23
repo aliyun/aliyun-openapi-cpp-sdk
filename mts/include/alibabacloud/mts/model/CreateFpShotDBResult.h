@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct FpShotDB
 				{
 					std::string description;
+					std::string instanceId;
 					std::string state;
 					std::string config;
 					std::string fpDBId;

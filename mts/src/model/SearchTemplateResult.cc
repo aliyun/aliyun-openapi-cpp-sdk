@@ -49,6 +49,8 @@ void SearchTemplateResult::parse(const std::string &payload)
 			templateListObject.name = valueTemplateListTemplate["Name"].asString();
 		if(!valueTemplateListTemplate["Id"].isNull())
 			templateListObject.id = valueTemplateListTemplate["Id"].asString();
+		if(!valueTemplateListTemplate["CreationTime"].isNull())
+			templateListObject.creationTime = valueTemplateListTemplate["CreationTime"].asString();
 		auto videoNode = value["Video"];
 		if(!videoNode["Bufsize"].isNull())
 			templateListObject.video.bufsize = videoNode["Bufsize"].asString();
@@ -90,11 +92,22 @@ void SearchTemplateResult::parse(const std::string &payload)
 			templateListObject.video.preset = videoNode["Preset"].asString();
 		if(!videoNode["ScanMode"].isNull())
 			templateListObject.video.scanMode = videoNode["ScanMode"].asString();
+		if(!videoNode["ResoPriority"].isNull())
+			templateListObject.video.resoPriority = videoNode["ResoPriority"].asString();
+		if(!videoNode["Hdr2sdr"].isNull())
+			templateListObject.video.hdr2sdr = videoNode["Hdr2sdr"].asString();
 		auto bitrateBndNode = videoNode["BitrateBnd"];
 		if(!bitrateBndNode["Max"].isNull())
 			templateListObject.video.bitrateBnd.max = bitrateBndNode["Max"].asString();
 		if(!bitrateBndNode["Min"].isNull())
 			templateListObject.video.bitrateBnd.min = bitrateBndNode["Min"].asString();
+		auto narrowBandNode = videoNode["NarrowBand"];
+		if(!narrowBandNode["Abrmax"].isNull())
+			templateListObject.video.narrowBand.abrmax = std::stof(narrowBandNode["Abrmax"].asString());
+		if(!narrowBandNode["MaxAbrRatio"].isNull())
+			templateListObject.video.narrowBand.maxAbrRatio = std::stof(narrowBandNode["MaxAbrRatio"].asString());
+		if(!narrowBandNode["Version"].isNull())
+			templateListObject.video.narrowBand.version = narrowBandNode["Version"].asString();
 		auto transConfigNode = value["TransConfig"];
 		if(!transConfigNode["IsCheckAudioBitrate"].isNull())
 			templateListObject.transConfig.isCheckAudioBitrate = transConfigNode["IsCheckAudioBitrate"].asString();
@@ -143,6 +156,17 @@ void SearchTemplateResult::parse(const std::string &payload)
 		auto containerNode = value["Container"];
 		if(!containerNode["Format"].isNull())
 			templateListObject.container.format = containerNode["Format"].asString();
+		auto frontendHintNode = value["FrontendHint"];
+		if(!frontendHintNode["TranscodeType"].isNull())
+			templateListObject.frontendHint.transcodeType = frontendHintNode["TranscodeType"].asString();
+		if(!frontendHintNode["BitrateControlType"].isNull())
+			templateListObject.frontendHint.bitrateControlType = frontendHintNode["BitrateControlType"].asString();
+		if(!frontendHintNode["Source"].isNull())
+			templateListObject.frontendHint.source = frontendHintNode["Source"].asString();
+		if(!frontendHintNode["IsDynamic"].isNull())
+			templateListObject.frontendHint.isDynamic = frontendHintNode["IsDynamic"].asString() == "true";
+		if(!frontendHintNode["HasOldHdr2Sdr"].isNull())
+			templateListObject.frontendHint.hasOldHdr2Sdr = frontendHintNode["HasOldHdr2Sdr"].asString() == "true";
 		templateList_.push_back(templateListObject);
 	}
 	if(!value["TotalCount"].isNull())

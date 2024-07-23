@@ -34,13 +34,20 @@ namespace AlibabaCloud
 			public:
 				struct _Template
 				{
-					std::string industry;
 					bool isDefault;
 					std::string faceCategoryIds;
+					std::string labelVersion;
+					std::string objectGroupIds;
+					std::string scene;
+					std::string industry;
+					std::string keywordConfig;
+					std::string labelType;
 					std::string analyseTypes;
 					std::string templateName;
-					std::string scene;
+					std::string knowledgeConfig;
+					std::string faceCustomParamsConfig;
 					std::string templateId;
+					std::string landmarkGroupIds;
 				};
 
 

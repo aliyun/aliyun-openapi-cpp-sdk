@@ -47,6 +47,8 @@ void ListFpShotFilesResult::parse(const std::string &payload)
 			fpShotFileListObject.primaryKey = valueFpShotFileListFpShotFile["PrimaryKey"].asString();
 		if(!valueFpShotFileListFpShotFile["FileId"].isNull())
 			fpShotFileListObject.fileId = valueFpShotFileListFpShotFile["FileId"].asString();
+		if(!valueFpShotFileListFpShotFile["StoreTime"].isNull())
+			fpShotFileListObject.storeTime = valueFpShotFileListFpShotFile["StoreTime"].asString();
 		auto inputFileNode = value["InputFile"];
 		if(!inputFileNode["Object"].isNull())
 			fpShotFileListObject.inputFile.object = inputFileNode["Object"].asString();

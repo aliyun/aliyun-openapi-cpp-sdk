@@ -44,6 +44,10 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getTriggerMode() const;
+	void setTriggerMode(const std::string &triggerMode);
+	std::string getName() const;
+	void setName(const std::string &name);
 
 private:
 	long resourceOwnerId_;
@@ -53,6 +57,8 @@ private:
 	std::string topology_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string triggerMode_;
+	std::string name_;
 };
 } // namespace Model
 } // namespace Mts

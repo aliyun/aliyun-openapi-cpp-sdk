@@ -55,8 +55,22 @@ void QuerySmarttagTemplateListResult::parse(const std::string &payload)
 			templatesObject.templateId = valueTemplatesTemplate["TemplateId"].asString();
 		if(!valueTemplatesTemplate["FaceCategoryIds"].isNull())
 			templatesObject.faceCategoryIds = valueTemplatesTemplate["FaceCategoryIds"].asString();
+		if(!valueTemplatesTemplate["FaceCustomParamsConfig"].isNull())
+			templatesObject.faceCustomParamsConfig = valueTemplatesTemplate["FaceCustomParamsConfig"].asString();
+		if(!valueTemplatesTemplate["ObjectGroupIds"].isNull())
+			templatesObject.objectGroupIds = valueTemplatesTemplate["ObjectGroupIds"].asString();
+		if(!valueTemplatesTemplate["LandmarkGroupIds"].isNull())
+			templatesObject.landmarkGroupIds = valueTemplatesTemplate["LandmarkGroupIds"].asString();
 		if(!valueTemplatesTemplate["Scene"].isNull())
 			templatesObject.scene = valueTemplatesTemplate["Scene"].asString();
+		if(!valueTemplatesTemplate["LabelType"].isNull())
+			templatesObject.labelType = valueTemplatesTemplate["LabelType"].asString();
+		if(!valueTemplatesTemplate["LabelVersion"].isNull())
+			templatesObject.labelVersion = valueTemplatesTemplate["LabelVersion"].asString();
+		if(!valueTemplatesTemplate["KnowledgeConfig"].isNull())
+			templatesObject.knowledgeConfig = valueTemplatesTemplate["KnowledgeConfig"].asString();
+		if(!valueTemplatesTemplate["KeywordConfig"].isNull())
+			templatesObject.keywordConfig = valueTemplatesTemplate["KeywordConfig"].asString();
 		templates_.push_back(templatesObject);
 	}
 

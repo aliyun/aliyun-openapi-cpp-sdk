@@ -34,6 +34,24 @@ void QueryJobListRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+bool QueryJobListRequest::getIncludePipelineInfo() const {
+  return includePipelineInfo_;
+}
+
+void QueryJobListRequest::setIncludePipelineInfo(bool includePipelineInfo) {
+  includePipelineInfo_ = includePipelineInfo;
+  setParameter(std::string("IncludePipelineInfo"), includePipelineInfo ? "true" : "false");
+}
+
+std::string QueryJobListRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void QueryJobListRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
 std::string QueryJobListRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -59,15 +77,6 @@ long QueryJobListRequest::getOwnerId() const {
 void QueryJobListRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string QueryJobListRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void QueryJobListRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
 std::string QueryJobListRequest::getJobIds() const {

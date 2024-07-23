@@ -41,7 +41,15 @@ namespace AlibabaCloud
 							std::string min;
 							std::string max;
 						};
+						struct NarrowBand
+						{
+							float maxAbrRatio;
+							std::string version;
+							float abrmax;
+						};
+						NarrowBand narrowBand;
 						std::string bufsize;
+						std::string hdr2sdr;
 						std::string qscale;
 						std::string scanMode;
 						std::string preset;
@@ -100,8 +108,12 @@ namespace AlibabaCloud
 					{
 						struct Volume
 						{
+							std::string loudnessRangeTarget;
+							std::string truePeak;
+							std::string integratedLoudnessTarget;
 							std::string level;
 							std::string method;
+							std::string peakLevel;
 						};
 						std::string codec;
 						std::string qscale;

@@ -57,6 +57,8 @@ void SearchPipelineResult::parse(const std::string &payload)
 			pipelineListObject.id = valuePipelineListPipeline["Id"].asString();
 		if(!valuePipelineListPipeline["QuotaAllocate"].isNull())
 			pipelineListObject.quotaAllocate = std::stol(valuePipelineListPipeline["QuotaAllocate"].asString());
+		if(!valuePipelineListPipeline["CreationTime"].isNull())
+			pipelineListObject.creationTime = valuePipelineListPipeline["CreationTime"].asString();
 		auto notifyConfigNode = value["NotifyConfig"];
 		if(!notifyConfigNode["MqTopic"].isNull())
 			pipelineListObject.notifyConfig.mqTopic = notifyConfigNode["MqTopic"].asString();
@@ -66,6 +68,13 @@ void SearchPipelineResult::parse(const std::string &payload)
 			pipelineListObject.notifyConfig.mqTag = notifyConfigNode["MqTag"].asString();
 		if(!notifyConfigNode["Topic"].isNull())
 			pipelineListObject.notifyConfig.topic = notifyConfigNode["Topic"].asString();
+		auto extendConfigNode = value["ExtendConfig"];
+		if(!extendConfigNode["IsBoostNew"].isNull())
+			pipelineListObject.extendConfig.isBoostNew = extendConfigNode["IsBoostNew"].asString() == "true";
+		if(!extendConfigNode["MaxMultiSpeed"].isNull())
+			pipelineListObject.extendConfig.maxMultiSpeed = std::stoi(extendConfigNode["MaxMultiSpeed"].asString());
+		if(!extendConfigNode["MultiSpeedDowngradePolicy"].isNull())
+			pipelineListObject.extendConfig.multiSpeedDowngradePolicy = extendConfigNode["MultiSpeedDowngradePolicy"].asString();
 		pipelineList_.push_back(pipelineListObject);
 	}
 	if(!value["TotalCount"].isNull())

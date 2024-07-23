@@ -32,6 +32,8 @@ public:
 	~BindOutputBucketRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getDepositorCredentials() const;
+	void setDepositorCredentials(const std::string &depositorCredentials);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceOwnerAccount() const;
@@ -47,6 +49,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string depositorCredentials_;
 	std::string accessKeyId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

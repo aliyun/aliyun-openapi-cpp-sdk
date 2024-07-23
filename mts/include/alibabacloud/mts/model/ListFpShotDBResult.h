@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string description;
+					std::string instanceId;
 					int modelId;
 					std::string fpDBId;
 					std::string name;

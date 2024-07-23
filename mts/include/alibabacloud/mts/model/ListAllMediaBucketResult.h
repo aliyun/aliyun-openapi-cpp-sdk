@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string type;
 					std::string bucket;
+					std::string referer;
 				};
 
 

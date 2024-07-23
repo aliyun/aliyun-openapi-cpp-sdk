@@ -111,6 +111,9 @@ void QuerySnapshotJobListResult::parse(const std::string &payload)
 			snapshotJobListObject.snapshotConfig.tileOutputFile.location = tileOutputFileNode["Location"].asString();
 		if(!tileOutputFileNode["Bucket"].isNull())
 			snapshotJobListObject.snapshotConfig.tileOutputFile.bucket = tileOutputFileNode["Bucket"].asString();
+			auto allTimeArray = snapshotConfigNode["TimeArray"]["TimePointList"];
+			for (auto value : allTimeArray)
+				snapshotJobListObject.snapshotConfig.timeArray.push_back(value.asString());
 		auto mNSMessageResultNode = value["MNSMessageResult"];
 		if(!mNSMessageResultNode["MessageId"].isNull())
 			snapshotJobListObject.mNSMessageResult.messageId = mNSMessageResultNode["MessageId"].asString();

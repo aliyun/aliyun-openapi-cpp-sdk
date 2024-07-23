@@ -34,22 +34,25 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getTemplateIds() const;
 	void setTemplateIds(const std::string &templateIds);
+	bool getForFrontend() const;
+	void setForFrontend(bool forFrontend);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 
 private:
 	long resourceOwnerId_;
 	std::string templateIds_;
+	bool forFrontend_;
+	std::string accessKeyId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string accessKeyId_;
 };
 } // namespace Model
 } // namespace Mts

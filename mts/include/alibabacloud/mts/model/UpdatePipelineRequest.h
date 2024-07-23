@@ -38,6 +38,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getState() const;
 	void setState(const std::string &state);
+	std::string getExtendConfig() const;
+	void setExtendConfig(const std::string &extendConfig);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -56,6 +58,7 @@ private:
 	std::string role_;
 	std::string accessKeyId_;
 	std::string state_;
+	std::string extendConfig_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string notifyConfig_;

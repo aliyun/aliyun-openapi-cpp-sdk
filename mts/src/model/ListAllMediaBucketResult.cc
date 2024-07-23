@@ -47,6 +47,8 @@ void ListAllMediaBucketResult::parse(const std::string &payload)
 			mediaBucketListObject.type = valueMediaBucketListMediaBucket["Type"].asString();
 		if(!valueMediaBucketListMediaBucket["Bucket"].isNull())
 			mediaBucketListObject.bucket = valueMediaBucketListMediaBucket["Bucket"].asString();
+		if(!valueMediaBucketListMediaBucket["Referer"].isNull())
+			mediaBucketListObject.referer = valueMediaBucketListMediaBucket["Referer"].asString();
 		mediaBucketList_.push_back(mediaBucketListObject);
 	}
 	if(!value["NextPageToken"].isNull())

@@ -38,8 +38,6 @@ public:
 	void setStartOfJobCreatedTimeRange(const std::string &startOfJobCreatedTimeRange);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getJobId() const;
-	void setJobId(const std::string &jobId);
 	std::string getState() const;
 	void setState(const std::string &state);
 	std::string getEndOfJobCreatedTimeRange() const;
@@ -54,13 +52,14 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getPipelineId() const;
 	void setPipelineId(const std::string &pipelineId);
+	std::string getJobIds() const;
+	void setJobIds(const std::string &jobIds);
 
 private:
 	long resourceOwnerId_;
 	std::string nextPageToken_;
 	std::string startOfJobCreatedTimeRange_;
 	std::string accessKeyId_;
-	std::string jobId_;
 	std::string state_;
 	std::string endOfJobCreatedTimeRange_;
 	std::string resourceOwnerAccount_;
@@ -68,6 +67,7 @@ private:
 	long maximumPageSize_;
 	long ownerId_;
 	std::string pipelineId_;
+	std::string jobIds_;
 };
 } // namespace Model
 } // namespace Mts

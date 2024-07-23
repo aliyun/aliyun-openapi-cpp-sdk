@@ -32,24 +32,27 @@ public:
 	~QuerySmarttagJobRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getJobId() const;
+	void setJobId(const std::string &jobId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getJobId() const;
-	void setJobId(const std::string &jobId);
+	std::string getParams() const;
+	void setParams(const std::string &params);
 
 private:
 	long resourceOwnerId_;
+	std::string accessKeyId_;
+	std::string jobId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string accessKeyId_;
-	std::string jobId_;
+	std::string params_;
 };
 } // namespace Model
 } // namespace Mts

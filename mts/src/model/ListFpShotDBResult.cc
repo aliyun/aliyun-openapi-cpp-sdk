@@ -53,6 +53,8 @@ void ListFpShotDBResult::parse(const std::string &payload)
 			fpShotDBListObject.modelId = std::stoi(valueFpShotDBListFpShotDB["ModelId"].asString());
 		if(!valueFpShotDBListFpShotDB["FpDBId"].isNull())
 			fpShotDBListObject.fpDBId = valueFpShotDBListFpShotDB["FpDBId"].asString();
+		if(!valueFpShotDBListFpShotDB["InstanceId"].isNull())
+			fpShotDBListObject.instanceId = valueFpShotDBListFpShotDB["InstanceId"].asString();
 		fpShotDBList_.push_back(fpShotDBListObject);
 	}
 	auto allNonExistIds = value["NonExistIds"]["String"];

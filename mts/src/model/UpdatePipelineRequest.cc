@@ -61,6 +61,15 @@ void UpdatePipelineRequest::setState(const std::string &state) {
   setParameter(std::string("State"), state);
 }
 
+std::string UpdatePipelineRequest::getExtendConfig() const {
+  return extendConfig_;
+}
+
+void UpdatePipelineRequest::setExtendConfig(const std::string &extendConfig) {
+  extendConfig_ = extendConfig;
+  setParameter(std::string("ExtendConfig"), extendConfig);
+}
+
 std::string UpdatePipelineRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

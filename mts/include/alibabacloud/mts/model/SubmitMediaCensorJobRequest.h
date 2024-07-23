@@ -30,6 +30,8 @@ class ALIBABACLOUD_MTS_EXPORT SubmitMediaCensorJobRequest : public RpcServiceReq
 public:
 	SubmitMediaCensorJobRequest();
 	~SubmitMediaCensorJobRequest();
+	std::string getExternalUrl() const;
+	void setExternalUrl(const std::string &externalUrl);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getDescription() const;
@@ -58,6 +60,7 @@ public:
 	void setBarrages(const std::string &barrages);
 
 private:
+	std::string externalUrl_;
 	long resourceOwnerId_;
 	std::string description_;
 	std::string title_;
