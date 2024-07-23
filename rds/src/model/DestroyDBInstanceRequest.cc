@@ -34,15 +34,6 @@ void DestroyDBInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DestroyDBInstanceRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DestroyDBInstanceRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
 std::string DestroyDBInstanceRequest::getClientToken() const {
   return clientToken_;
 }
@@ -50,6 +41,42 @@ std::string DestroyDBInstanceRequest::getClientToken() const {
 void DestroyDBInstanceRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
   setParameter(std::string("ClientToken"), clientToken);
+}
+
+std::string DestroyDBInstanceRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DestroyDBInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DestroyDBInstanceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DestroyDBInstanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DestroyDBInstanceRequest::getDBInstanceId() const {
+  return dBInstanceId_;
+}
+
+void DestroyDBInstanceRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string DestroyDBInstanceRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DestroyDBInstanceRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
 std::string DestroyDBInstanceRequest::getOwnerAccount() const {
@@ -68,23 +95,5 @@ long DestroyDBInstanceRequest::getOwnerId() const {
 void DestroyDBInstanceRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string DestroyDBInstanceRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DestroyDBInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DestroyDBInstanceRequest::getDBInstanceId() const {
-  return dBInstanceId_;
-}
-
-void DestroyDBInstanceRequest::setDBInstanceId(const std::string &dBInstanceId) {
-  dBInstanceId_ = dBInstanceId;
-  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 

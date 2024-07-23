@@ -43,6 +43,15 @@ void DescribeBackupPolicyRequest::setAccessKeyId(const std::string &accessKeyId)
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeBackupPolicyRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeBackupPolicyRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeBackupPolicyRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -34,6 +34,33 @@ void DeleteBackupRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DeleteBackupRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DeleteBackupRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DeleteBackupRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteBackupRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DeleteBackupRequest::getDBInstanceId() const {
+  return dBInstanceId_;
+}
+
+void DeleteBackupRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
 std::string DeleteBackupRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -68,23 +95,5 @@ long DeleteBackupRequest::getOwnerId() const {
 void DeleteBackupRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string DeleteBackupRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DeleteBackupRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DeleteBackupRequest::getDBInstanceId() const {
-  return dBInstanceId_;
-}
-
-void DeleteBackupRequest::setDBInstanceId(const std::string &dBInstanceId) {
-  dBInstanceId_ = dBInstanceId;
-  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 

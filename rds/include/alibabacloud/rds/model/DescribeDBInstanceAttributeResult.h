@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string activeReplicaDBInstanceID;
 						std::string replicaGroupID;
 						std::vector<std::string> dBInstanceIds;
+						std::string recoveryModel;
 					};
 					struct ServerlessConfig
 					{

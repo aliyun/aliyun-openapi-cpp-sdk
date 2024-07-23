@@ -70,6 +70,15 @@ void ModifyDBInstanceTDERequest::setPassWord(const std::string &passWord) {
   setParameter(std::string("PassWord"), passWord);
 }
 
+std::string ModifyDBInstanceTDERequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDBInstanceTDERequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyDBInstanceTDERequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

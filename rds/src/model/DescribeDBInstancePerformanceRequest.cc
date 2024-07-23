@@ -61,6 +61,15 @@ void DescribeDBInstancePerformanceRequest::setAccessKeyId(const std::string &acc
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDBInstancePerformanceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDBInstancePerformanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeDBInstancePerformanceRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

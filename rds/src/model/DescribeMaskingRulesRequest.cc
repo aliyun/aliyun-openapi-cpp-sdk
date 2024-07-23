@@ -70,3 +70,12 @@ void DescribeMaskingRulesRequest::setOwnerId(const std::string &ownerId) {
   setParameter(std::string("OwnerId"), ownerId);
 }
 
+std::string DescribeMaskingRulesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeMaskingRulesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+

@@ -34,6 +34,42 @@ void DeleteAccountRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DeleteAccountRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DeleteAccountRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DeleteAccountRequest::getAccountName() const {
+  return accountName_;
+}
+
+void DeleteAccountRequest::setAccountName(const std::string &accountName) {
+  accountName_ = accountName;
+  setParameter(std::string("AccountName"), accountName);
+}
+
+std::string DeleteAccountRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteAccountRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DeleteAccountRequest::getDBInstanceId() const {
+  return dBInstanceId_;
+}
+
+void DeleteAccountRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
 std::string DeleteAccountRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -59,32 +95,5 @@ long DeleteAccountRequest::getOwnerId() const {
 void DeleteAccountRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string DeleteAccountRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DeleteAccountRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DeleteAccountRequest::getAccountName() const {
-  return accountName_;
-}
-
-void DeleteAccountRequest::setAccountName(const std::string &accountName) {
-  accountName_ = accountName;
-  setParameter(std::string("AccountName"), accountName);
-}
-
-std::string DeleteAccountRequest::getDBInstanceId() const {
-  return dBInstanceId_;
-}
-
-void DeleteAccountRequest::setDBInstanceId(const std::string &dBInstanceId) {
-  dBInstanceId_ = dBInstanceId;
-  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 

@@ -61,6 +61,15 @@ void CreateMaskingRulesRequest::setRuleName(const std::string &ruleName) {
   setParameter(std::string("RuleName"), ruleName);
 }
 
+std::string CreateMaskingRulesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateMaskingRulesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateMaskingRulesRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

@@ -61,6 +61,15 @@ void ModifyAccountDescriptionRequest::setAccountName(const std::string &accountN
   setParameter(std::string("AccountName"), accountName);
 }
 
+std::string ModifyAccountDescriptionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyAccountDescriptionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyAccountDescriptionRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

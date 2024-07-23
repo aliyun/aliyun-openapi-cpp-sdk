@@ -61,6 +61,15 @@ void DescribeDBInstanceNetInfoForChannelRequest::setAccessKeyId(const std::strin
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDBInstanceNetInfoForChannelRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDBInstanceNetInfoForChannelRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeDBInstanceNetInfoForChannelRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

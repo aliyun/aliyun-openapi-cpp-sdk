@@ -34,6 +34,15 @@ void QueryNotifyRequest::setPageNumber(int pageNumber) {
   setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string QueryNotifyRequest::getRegionId() const {
+  return regionId_;
+}
+
+void QueryNotifyRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 bool QueryNotifyRequest::getWithConfirmed() const {
   return withConfirmed_;
 }

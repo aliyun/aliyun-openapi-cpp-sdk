@@ -47,29 +47,32 @@ public:
 	};
 	CreateGadInstanceMemberRequest();
 	~CreateGadInstanceMemberRequest();
+	std::string getCentralRdsDtsAdminAccount() const;
+	void setCentralRdsDtsAdminAccount(const std::string &centralRdsDtsAdminAccount);
+	std::string getCentralRegionId() const;
+	void setCentralRegionId(const std::string &centralRegionId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getGadInstanceId() const;
+	void setGadInstanceId(const std::string &gadInstanceId);
+	std::vector<UnitNode> getUnitNode() const;
+	void setUnitNode(const std::vector<UnitNode> &unitNode);
 	std::string getDBList() const;
 	void setDBList(const std::string &dBList);
 	std::string getCentralDBInstanceId() const;
 	void setCentralDBInstanceId(const std::string &centralDBInstanceId);
 	std::string getCentralRdsDtsAdminPassword() const;
 	void setCentralRdsDtsAdminPassword(const std::string &centralRdsDtsAdminPassword);
-	std::string getCentralRdsDtsAdminAccount() const;
-	void setCentralRdsDtsAdminAccount(const std::string &centralRdsDtsAdminAccount);
-	std::string getCentralRegionId() const;
-	void setCentralRegionId(const std::string &centralRegionId);
-	std::string getGadInstanceId() const;
-	void setGadInstanceId(const std::string &gadInstanceId);
-	std::vector<UnitNode> getUnitNode() const;
-	void setUnitNode(const std::vector<UnitNode> &unitNode);
 
 private:
+	std::string centralRdsDtsAdminAccount_;
+	std::string centralRegionId_;
+	std::string regionId_;
+	std::string gadInstanceId_;
+	std::vector<UnitNode> unitNode_;
 	std::string dBList_;
 	std::string centralDBInstanceId_;
 	std::string centralRdsDtsAdminPassword_;
-	std::string centralRdsDtsAdminAccount_;
-	std::string centralRegionId_;
-	std::string gadInstanceId_;
-	std::vector<UnitNode> unitNode_;
 };
 } // namespace Model
 } // namespace Rds

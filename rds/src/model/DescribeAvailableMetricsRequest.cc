@@ -79,3 +79,12 @@ void DescribeAvailableMetricsRequest::setResourceGroupId(const std::string &reso
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribeAvailableMetricsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeAvailableMetricsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+

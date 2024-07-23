@@ -61,6 +61,15 @@ void CreateDBNodesRequest::setResourceGroupId(const std::string &resourceGroupId
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string CreateDBNodesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateDBNodesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateDBNodesRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

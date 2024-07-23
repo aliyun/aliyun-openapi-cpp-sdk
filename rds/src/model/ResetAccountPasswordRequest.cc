@@ -52,6 +52,15 @@ void ResetAccountPasswordRequest::setAccountName(const std::string &accountName)
   setParameter(std::string("AccountName"), accountName);
 }
 
+std::string ResetAccountPasswordRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ResetAccountPasswordRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ResetAccountPasswordRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

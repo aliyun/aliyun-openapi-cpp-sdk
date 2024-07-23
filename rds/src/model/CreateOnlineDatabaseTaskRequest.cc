@@ -52,6 +52,15 @@ void CreateOnlineDatabaseTaskRequest::setAccessKeyId(const std::string &accessKe
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CreateOnlineDatabaseTaskRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateOnlineDatabaseTaskRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateOnlineDatabaseTaskRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

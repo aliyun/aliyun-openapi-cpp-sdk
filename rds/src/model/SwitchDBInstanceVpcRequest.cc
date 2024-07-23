@@ -43,6 +43,15 @@ void SwitchDBInstanceVpcRequest::setAccessKeyId(const std::string &accessKeyId) 
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string SwitchDBInstanceVpcRequest::getRegionId() const {
+  return regionId_;
+}
+
+void SwitchDBInstanceVpcRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string SwitchDBInstanceVpcRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

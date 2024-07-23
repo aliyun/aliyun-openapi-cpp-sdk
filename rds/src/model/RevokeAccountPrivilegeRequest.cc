@@ -52,6 +52,15 @@ void RevokeAccountPrivilegeRequest::setAccountName(const std::string &accountNam
   setParameter(std::string("AccountName"), accountName);
 }
 
+std::string RevokeAccountPrivilegeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void RevokeAccountPrivilegeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string RevokeAccountPrivilegeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

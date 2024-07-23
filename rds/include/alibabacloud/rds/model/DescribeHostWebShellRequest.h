@@ -38,8 +38,8 @@ public:
 	void setHostName(const std::string &hostName);
 	std::string getAccountName() const;
 	void setAccountName(const std::string &accountName);
-	std::string getRegionID() const;
-	void setRegionID(const std::string &regionID);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getResourceOwnerAccount() const;
@@ -54,7 +54,7 @@ private:
 	std::string accessKeyId_;
 	std::string hostName_;
 	std::string accountName_;
-	std::string regionID_;
+	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;

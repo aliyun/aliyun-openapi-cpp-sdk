@@ -61,6 +61,15 @@ void ModifyCustinsResourceRequest::setAccessKeyId(const std::string &accessKeyId
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyCustinsResourceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyCustinsResourceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyCustinsResourceRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -61,6 +61,15 @@ void ModifyResourceGroupRequest::setResourceGroupId(const std::string &resourceG
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string ModifyResourceGroupRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyResourceGroupRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyResourceGroupRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

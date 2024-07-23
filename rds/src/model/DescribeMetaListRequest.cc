@@ -70,6 +70,15 @@ void DescribeMetaListRequest::setResourceGroupId(const std::string &resourceGrou
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribeMetaListRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeMetaListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeMetaListRequest::getPageSize() const {
   return pageSize_;
 }

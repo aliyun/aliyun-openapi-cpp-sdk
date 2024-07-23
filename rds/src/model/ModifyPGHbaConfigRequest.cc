@@ -61,6 +61,15 @@ void ModifyPGHbaConfigRequest::setOpsType(const std::string &opsType) {
   setParameter(std::string("OpsType"), opsType);
 }
 
+std::string ModifyPGHbaConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyPGHbaConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyPGHbaConfigRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

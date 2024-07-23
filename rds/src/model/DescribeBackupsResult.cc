@@ -99,6 +99,10 @@ void DescribeBackupsResult::parse(const std::string &payload)
 			itemsObject.checksum = valueItemsBackup["Checksum"].asString();
 		if(!valueItemsBackup["ResourceGroupId"].isNull())
 			itemsObject.resourceGroupId = valueItemsBackup["ResourceGroupId"].asString();
+		if(!valueItemsBackup["Engine"].isNull())
+			itemsObject.engine = valueItemsBackup["Engine"].asString();
+		if(!valueItemsBackup["EngineVersion"].isNull())
+			itemsObject.engineVersion = valueItemsBackup["EngineVersion"].asString();
 		auto allBackupDownloadLinkByDBNode = valueItemsBackup["BackupDownloadLinkByDB"]["BackupDownloadLinkByDBItem"];
 		for (auto valueItemsBackupBackupDownloadLinkByDBBackupDownloadLinkByDBItem : allBackupDownloadLinkByDBNode)
 		{

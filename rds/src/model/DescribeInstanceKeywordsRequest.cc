@@ -70,6 +70,15 @@ void DescribeInstanceKeywordsRequest::setAccessKeyId(const std::string &accessKe
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeInstanceKeywordsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeInstanceKeywordsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeInstanceKeywordsRequest::getKey() const {
   return key_;
 }

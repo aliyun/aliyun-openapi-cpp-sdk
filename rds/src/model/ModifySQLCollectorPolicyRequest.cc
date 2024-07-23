@@ -79,6 +79,15 @@ void ModifySQLCollectorPolicyRequest::setSQLCollectorStatus(const std::string &s
   setParameter(std::string("SQLCollectorStatus"), sQLCollectorStatus);
 }
 
+std::string ModifySQLCollectorPolicyRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifySQLCollectorPolicyRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifySQLCollectorPolicyRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

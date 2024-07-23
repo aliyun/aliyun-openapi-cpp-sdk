@@ -70,6 +70,15 @@ void UpgradeDBInstanceEngineVersionRequest::setEffectiveTime(const std::string &
   setParameter(std::string("EffectiveTime"), effectiveTime);
 }
 
+std::string UpgradeDBInstanceEngineVersionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpgradeDBInstanceEngineVersionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string UpgradeDBInstanceEngineVersionRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

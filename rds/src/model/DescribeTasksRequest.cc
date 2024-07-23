@@ -61,6 +61,15 @@ void DescribeTasksRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeTasksRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeTasksRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeTasksRequest::getPageSize() const {
   return pageSize_;
 }

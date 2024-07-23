@@ -70,6 +70,15 @@ void ModifySecurityGroupConfigurationRequest::setAccessKeyId(const std::string &
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifySecurityGroupConfigurationRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifySecurityGroupConfigurationRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifySecurityGroupConfigurationRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

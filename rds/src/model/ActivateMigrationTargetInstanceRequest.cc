@@ -70,6 +70,15 @@ void ActivateMigrationTargetInstanceRequest::setSwitchTimeMode(const std::string
   setParameter(std::string("SwitchTimeMode"), switchTimeMode);
 }
 
+std::string ActivateMigrationTargetInstanceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ActivateMigrationTargetInstanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ActivateMigrationTargetInstanceRequest::getSwitchTime() const {
   return switchTime_;
 }

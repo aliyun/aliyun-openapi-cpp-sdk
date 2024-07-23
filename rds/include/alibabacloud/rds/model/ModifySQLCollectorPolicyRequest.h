@@ -42,6 +42,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSQLCollectorStatus() const;
 	void setSQLCollectorStatus(const std::string &sQLCollectorStatus);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getResourceOwnerAccount() const;
@@ -58,6 +60,7 @@ private:
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	std::string sQLCollectorStatus_;
+	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

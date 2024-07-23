@@ -43,24 +43,6 @@ void QueryRecommendByCodeRequest::setCode(const std::string &code) {
   setParameter(std::string("Code"), code);
 }
 
-std::string QueryRecommendByCodeRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void QueryRecommendByCodeRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string QueryRecommendByCodeRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void QueryRecommendByCodeRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
-}
-
 std::string QueryRecommendByCodeRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -77,5 +59,32 @@ std::string QueryRecommendByCodeRequest::getResourceGroupId() const {
 void QueryRecommendByCodeRequest::setResourceGroupId(const std::string &resourceGroupId) {
   resourceGroupId_ = resourceGroupId;
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string QueryRecommendByCodeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void QueryRecommendByCodeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string QueryRecommendByCodeRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void QueryRecommendByCodeRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string QueryRecommendByCodeRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void QueryRecommendByCodeRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

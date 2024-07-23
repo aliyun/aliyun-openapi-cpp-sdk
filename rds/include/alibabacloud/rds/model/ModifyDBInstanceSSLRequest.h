@@ -48,6 +48,8 @@ public:
 	void setPassWord(const std::string &passWord);
 	std::string getClientCertRevocationList() const;
 	void setClientCertRevocationList(const std::string &clientCertRevocationList);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getServerCert() const;
 	void setServerCert(const std::string &serverCert);
 	std::string getDBInstanceId() const;
@@ -83,6 +85,7 @@ private:
 	std::string accessKeyId_;
 	std::string passWord_;
 	std::string clientCertRevocationList_;
+	std::string regionId_;
 	std::string serverCert_;
 	std::string dBInstanceId_;
 	std::string forceEncryption_;

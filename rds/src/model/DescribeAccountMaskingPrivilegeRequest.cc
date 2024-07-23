@@ -61,6 +61,15 @@ void DescribeAccountMaskingPrivilegeRequest::setOwnerId(const std::string &owner
   setParameter(std::string("OwnerId"), ownerId);
 }
 
+std::string DescribeAccountMaskingPrivilegeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeAccountMaskingPrivilegeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeAccountMaskingPrivilegeRequest::getUserName() const {
   return userName_;
 }

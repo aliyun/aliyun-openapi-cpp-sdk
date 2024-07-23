@@ -52,6 +52,15 @@ void ModifyDasInstanceConfigRequest::setAccessKeyId(const std::string &accessKey
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDasInstanceConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDasInstanceConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyDasInstanceConfigRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

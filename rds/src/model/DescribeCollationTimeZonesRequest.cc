@@ -61,3 +61,12 @@ void DescribeCollationTimeZonesRequest::setAccessKeyId(const std::string &access
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeCollationTimeZonesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeCollationTimeZonesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+

@@ -61,6 +61,15 @@ void UpdatePostgresExtensionsRequest::setResourceGroupId(const std::string &reso
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string UpdatePostgresExtensionsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpdatePostgresExtensionsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string UpdatePostgresExtensionsRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

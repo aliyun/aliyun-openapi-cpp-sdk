@@ -88,6 +88,15 @@ void ModifySecurityIpsRequest::setWhitelistNetworkType(const std::string &whitel
   setParameter(std::string("WhitelistNetworkType"), whitelistNetworkType);
 }
 
+std::string ModifySecurityIpsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifySecurityIpsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifySecurityIpsRequest::getSecurityIPType() const {
   return securityIPType_;
 }

@@ -136,6 +136,15 @@ void ModifyDBInstanceSpecRequest::setDBInstanceTransType(const std::string &dBIn
   setParameter(std::string("DBInstanceTransType"), dBInstanceTransType);
 }
 
+std::string ModifyDBInstanceSpecRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDBInstanceSpecRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyDBInstanceSpecRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

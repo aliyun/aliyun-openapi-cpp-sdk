@@ -61,6 +61,15 @@ void CheckAccountNameAvailableRequest::setAccountName(const std::string &account
   setParameter(std::string("AccountName"), accountName);
 }
 
+std::string CheckAccountNameAvailableRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CheckAccountNameAvailableRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CheckAccountNameAvailableRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -52,6 +52,15 @@ void MigrateConnectionToOtherZoneRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string MigrateConnectionToOtherZoneRequest::getRegionId() const {
+  return regionId_;
+}
+
+void MigrateConnectionToOtherZoneRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string MigrateConnectionToOtherZoneRequest::getZoneId() const {
   return zoneId_;
 }

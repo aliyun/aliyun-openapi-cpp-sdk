@@ -40,6 +40,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getAccountName() const;
 	void setAccountName(const std::string &accountName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 
@@ -49,6 +51,7 @@ private:
 	long ownerId_;
 	std::string accessKeyId_;
 	std::string accountName_;
+	std::string regionId_;
 	std::string dBInstanceId_;
 };
 } // namespace Model

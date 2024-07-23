@@ -70,6 +70,15 @@ void ModifyDatabaseConfigRequest::setResourceGroupId(const std::string &resource
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string ModifyDatabaseConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDatabaseConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyDatabaseConfigRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

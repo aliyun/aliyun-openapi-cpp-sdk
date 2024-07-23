@@ -52,6 +52,15 @@ void CreateMigrateTaskRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CreateMigrateTaskRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateMigrateTaskRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateMigrateTaskRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

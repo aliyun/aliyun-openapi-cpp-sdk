@@ -61,6 +61,15 @@ void DescribeBinlogFilesRequest::setAccessKeyId(const std::string &accessKeyId) 
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeBinlogFilesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeBinlogFilesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeBinlogFilesRequest::getPageSize() const {
   return pageSize_;
 }

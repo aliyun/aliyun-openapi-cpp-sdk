@@ -48,6 +48,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getOpsType() const;
 	void setOpsType(const std::string &opsType);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getResourceOwnerAccount() const;
@@ -64,6 +66,7 @@ private:
 	std::string clientToken_;
 	std::string accessKeyId_;
 	std::string opsType_;
+	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

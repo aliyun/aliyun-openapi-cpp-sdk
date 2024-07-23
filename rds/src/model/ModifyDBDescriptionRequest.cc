@@ -43,6 +43,15 @@ void ModifyDBDescriptionRequest::setAccessKeyId(const std::string &accessKeyId) 
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBDescriptionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDBDescriptionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyDBDescriptionRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

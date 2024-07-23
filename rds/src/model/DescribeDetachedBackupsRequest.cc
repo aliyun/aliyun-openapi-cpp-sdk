@@ -79,6 +79,15 @@ void DescribeDetachedBackupsRequest::setResourceGroupId(const std::string &resou
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribeDetachedBackupsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDetachedBackupsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeDetachedBackupsRequest::getPageSize() const {
   return pageSize_;
 }

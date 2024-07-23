@@ -79,6 +79,15 @@ void DescribeBackupsRequest::setResourceGroupId(const std::string &resourceGroup
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribeBackupsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeBackupsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeBackupsRequest::getPageSize() const {
   return pageSize_;
 }

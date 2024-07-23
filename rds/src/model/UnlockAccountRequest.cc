@@ -70,6 +70,15 @@ void UnlockAccountRequest::setAccountName(const std::string &accountName) {
   setParameter(std::string("AccountName"), accountName);
 }
 
+std::string UnlockAccountRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UnlockAccountRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string UnlockAccountRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

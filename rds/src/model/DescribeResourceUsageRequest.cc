@@ -61,6 +61,15 @@ void DescribeResourceUsageRequest::setResourceGroupId(const std::string &resourc
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribeResourceUsageRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeResourceUsageRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeResourceUsageRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

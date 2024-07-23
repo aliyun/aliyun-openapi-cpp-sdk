@@ -36,6 +36,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	long getOwnerId() const;
@@ -45,6 +47,7 @@ private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
+	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;
 };

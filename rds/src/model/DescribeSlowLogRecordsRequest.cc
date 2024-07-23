@@ -61,6 +61,15 @@ void DescribeSlowLogRecordsRequest::setAccessKeyId(const std::string &accessKeyI
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeSlowLogRecordsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeSlowLogRecordsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeSlowLogRecordsRequest::getPageSize() const {
   return pageSize_;
 }

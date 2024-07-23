@@ -25,33 +25,6 @@ CreateGadInstanceMemberRequest::CreateGadInstanceMemberRequest()
 
 CreateGadInstanceMemberRequest::~CreateGadInstanceMemberRequest() {}
 
-std::string CreateGadInstanceMemberRequest::getDBList() const {
-  return dBList_;
-}
-
-void CreateGadInstanceMemberRequest::setDBList(const std::string &dBList) {
-  dBList_ = dBList;
-  setParameter(std::string("DBList"), dBList);
-}
-
-std::string CreateGadInstanceMemberRequest::getCentralDBInstanceId() const {
-  return centralDBInstanceId_;
-}
-
-void CreateGadInstanceMemberRequest::setCentralDBInstanceId(const std::string &centralDBInstanceId) {
-  centralDBInstanceId_ = centralDBInstanceId;
-  setParameter(std::string("CentralDBInstanceId"), centralDBInstanceId);
-}
-
-std::string CreateGadInstanceMemberRequest::getCentralRdsDtsAdminPassword() const {
-  return centralRdsDtsAdminPassword_;
-}
-
-void CreateGadInstanceMemberRequest::setCentralRdsDtsAdminPassword(const std::string &centralRdsDtsAdminPassword) {
-  centralRdsDtsAdminPassword_ = centralRdsDtsAdminPassword;
-  setParameter(std::string("CentralRdsDtsAdminPassword"), centralRdsDtsAdminPassword);
-}
-
 std::string CreateGadInstanceMemberRequest::getCentralRdsDtsAdminAccount() const {
   return centralRdsDtsAdminAccount_;
 }
@@ -68,6 +41,15 @@ std::string CreateGadInstanceMemberRequest::getCentralRegionId() const {
 void CreateGadInstanceMemberRequest::setCentralRegionId(const std::string &centralRegionId) {
   centralRegionId_ = centralRegionId;
   setParameter(std::string("CentralRegionId"), centralRegionId);
+}
+
+std::string CreateGadInstanceMemberRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateGadInstanceMemberRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string CreateGadInstanceMemberRequest::getGadInstanceId() const {
@@ -104,5 +86,32 @@ void CreateGadInstanceMemberRequest::setUnitNode(const std::vector<CreateGadInst
     setParameter(unitNodeObjStr + ".DBInstanceStorageType", unitNodeObj.dBInstanceStorageType);
     setParameter(unitNodeObjStr + ".DtsConflict", unitNodeObj.dtsConflict);
   }
+}
+
+std::string CreateGadInstanceMemberRequest::getDBList() const {
+  return dBList_;
+}
+
+void CreateGadInstanceMemberRequest::setDBList(const std::string &dBList) {
+  dBList_ = dBList;
+  setParameter(std::string("DBList"), dBList);
+}
+
+std::string CreateGadInstanceMemberRequest::getCentralDBInstanceId() const {
+  return centralDBInstanceId_;
+}
+
+void CreateGadInstanceMemberRequest::setCentralDBInstanceId(const std::string &centralDBInstanceId) {
+  centralDBInstanceId_ = centralDBInstanceId;
+  setParameter(std::string("CentralDBInstanceId"), centralDBInstanceId);
+}
+
+std::string CreateGadInstanceMemberRequest::getCentralRdsDtsAdminPassword() const {
+  return centralRdsDtsAdminPassword_;
+}
+
+void CreateGadInstanceMemberRequest::setCentralRdsDtsAdminPassword(const std::string &centralRdsDtsAdminPassword) {
+  centralRdsDtsAdminPassword_ = centralRdsDtsAdminPassword;
+  setParameter(std::string("CentralRdsDtsAdminPassword"), centralRdsDtsAdminPassword);
 }
 

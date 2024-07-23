@@ -38,6 +38,8 @@ public:
 	void setAccountPrivilege(const std::string &accountPrivilege);
 	std::string getAccountName() const;
 	void setAccountName(const std::string &accountName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getResourceOwnerAccount() const;
@@ -54,6 +56,7 @@ private:
 	std::string accessKeyId_;
 	std::string accountPrivilege_;
 	std::string accountName_;
+	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

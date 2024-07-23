@@ -52,6 +52,15 @@ void DescribeUpgradeMajorVersionTasksRequest::setAccessKeyId(const std::string &
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeUpgradeMajorVersionTasksRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeUpgradeMajorVersionTasksRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeUpgradeMajorVersionTasksRequest::getPageSize() const {
   return pageSize_;
 }

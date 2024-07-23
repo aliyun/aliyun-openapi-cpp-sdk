@@ -61,6 +61,15 @@ void ModifyDBInstanceDeletionProtectionRequest::setDeletionProtection(bool delet
   setParameter(std::string("DeletionProtection"), deletionProtection ? "true" : "false");
 }
 
+std::string ModifyDBInstanceDeletionProtectionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDBInstanceDeletionProtectionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyDBInstanceDeletionProtectionRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

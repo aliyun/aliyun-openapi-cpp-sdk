@@ -52,6 +52,15 @@ void ModifyReadonlyInstanceDelayReplicationTimeRequest::setResourceGroupId(const
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string ModifyReadonlyInstanceDelayReplicationTimeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyReadonlyInstanceDelayReplicationTimeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyReadonlyInstanceDelayReplicationTimeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

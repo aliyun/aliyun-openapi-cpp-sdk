@@ -45,12 +45,20 @@ namespace AlibabaCloud
 					std::string parameterName;
 					std::string parameterDescription;
 				};
+				struct DBInstanceParameter1
+				{
+					std::string parameterValueRange;
+					std::string parameterValue;
+					std::string parameterDefaultValue;
+					std::string parameterName;
+					std::string parameterDescription;
+				};
 
 
 				DescribeParametersResult();
 				explicit DescribeParametersResult(const std::string &payload);
 				~DescribeParametersResult();
-				std::vector<DBInstanceParameter> getRunningParameters()const;
+				std::vector<DBInstanceParameter1> getRunningParameters()const;
 				std::string getEngineVersion()const;
 				ParamGroupInfo getParamGroupInfo()const;
 				std::vector<DBInstanceParameter> getConfigParameters()const;
@@ -59,7 +67,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DBInstanceParameter> runningParameters_;
+				std::vector<DBInstanceParameter1> runningParameters_;
 				std::string engineVersion_;
 				ParamGroupInfo paramGroupInfo_;
 				std::vector<DBInstanceParameter> configParameters_;

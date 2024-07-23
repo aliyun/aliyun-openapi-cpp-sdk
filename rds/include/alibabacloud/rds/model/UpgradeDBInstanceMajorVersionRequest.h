@@ -48,6 +48,8 @@ public:
 	void setSwitchOver(const std::string &switchOver);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getCollectStatMode() const;
 	void setCollectStatMode(const std::string &collectStatMode);
 	std::string getDBInstanceDescription() const;
@@ -95,6 +97,7 @@ private:
 	std::string switchTimeMode_;
 	std::string switchOver_;
 	std::string resourceGroupId_;
+	std::string regionId_;
 	std::string collectStatMode_;
 	std::string dBInstanceDescription_;
 	std::string switchTime_;

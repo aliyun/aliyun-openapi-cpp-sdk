@@ -61,6 +61,15 @@ void DescribeSQLCollectorPolicyRequest::setResourceGroupId(const std::string &re
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribeSQLCollectorPolicyRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeSQLCollectorPolicyRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeSQLCollectorPolicyRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

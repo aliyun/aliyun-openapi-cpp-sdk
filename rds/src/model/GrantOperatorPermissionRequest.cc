@@ -52,6 +52,15 @@ void GrantOperatorPermissionRequest::setAccessKeyId(const std::string &accessKey
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string GrantOperatorPermissionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void GrantOperatorPermissionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string GrantOperatorPermissionRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

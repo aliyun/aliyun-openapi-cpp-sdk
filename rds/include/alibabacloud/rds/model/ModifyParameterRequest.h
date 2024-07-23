@@ -40,6 +40,8 @@ public:
 	void setSwitchTimeMode(const std::string &switchTimeMode);
 	std::string getParameterGroupId() const;
 	void setParameterGroupId(const std::string &parameterGroupId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	bool getForcerestart() const;
@@ -61,6 +63,7 @@ private:
 	std::string accessKeyId_;
 	std::string switchTimeMode_;
 	std::string parameterGroupId_;
+	std::string regionId_;
 	std::string dBInstanceId_;
 	bool forcerestart_;
 	std::string switchTime_;

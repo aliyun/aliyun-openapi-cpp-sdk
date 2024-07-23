@@ -38,6 +38,8 @@ public:
 	void setStartTime(const std::string &startTime);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getNodeId() const;
@@ -60,6 +62,7 @@ private:
 	std::string roleId_;
 	std::string startTime_;
 	std::string accessKeyId_;
+	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string nodeId_;
 	std::string key_;

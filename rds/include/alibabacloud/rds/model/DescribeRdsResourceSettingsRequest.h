@@ -40,6 +40,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 
 private:
 	long resourceOwnerId_;
@@ -47,6 +49,7 @@ private:
 	std::string resourceNiche_;
 	long ownerId_;
 	std::string accessKeyId_;
+	std::string regionId_;
 };
 } // namespace Model
 } // namespace Rds

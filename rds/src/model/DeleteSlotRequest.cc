@@ -70,6 +70,15 @@ void DeleteSlotRequest::setResourceGroupId(const std::string &resourceGroupId) {
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DeleteSlotRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteSlotRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteSlotRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -32,6 +32,8 @@ public:
 	~QueryNotifyRequest();
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	bool getWithConfirmed() const;
 	void setWithConfirmed(bool withConfirmed);
 	int getPageSize() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	int pageNumber_;
+	std::string regionId_;
 	bool withConfirmed_;
 	int pageSize_;
 	std::string from_;

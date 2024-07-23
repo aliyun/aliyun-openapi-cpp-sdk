@@ -34,15 +34,6 @@ void DescribeRegionsRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeRegionsRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DescribeRegionsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
 std::string DescribeRegionsRequest::getClientToken() const {
   return clientToken_;
 }
@@ -50,6 +41,33 @@ std::string DescribeRegionsRequest::getClientToken() const {
 void DescribeRegionsRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
   setParameter(std::string("ClientToken"), clientToken);
+}
+
+std::string DescribeRegionsRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DescribeRegionsRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DescribeRegionsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeRegionsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeRegionsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeRegionsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
 std::string DescribeRegionsRequest::getOwnerAccount() const {
@@ -68,15 +86,6 @@ long DescribeRegionsRequest::getOwnerId() const {
 void DescribeRegionsRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string DescribeRegionsRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DescribeRegionsRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
 std::string DescribeRegionsRequest::getAcceptLanguage() const {

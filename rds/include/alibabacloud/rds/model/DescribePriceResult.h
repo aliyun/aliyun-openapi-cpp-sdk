@@ -32,74 +32,15 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_RDS_EXPORT DescribePriceResult : public ServiceResult
 			{
 			public:
-				struct PriceInfo
-				{
-					struct ActivityInfo
-					{
-						std::string errorCode;
-						std::string checkErrMsg;
-						std::string success;
-					};
-					struct Coupon
-					{
-						std::string couponNo;
-						std::string description;
-						std::string isSelected;
-						std::string name;
-					};
-					ActivityInfo activityInfo;
-					float tradeMinRCUAmount;
-					float originalPrice;
-					std::string orderLines;
-					float discountPrice;
-					std::string currency;
-					std::vector<std::string> ruleIds;
-					float tradeMaxRCUAmount;
-					float tradePrice;
-					std::vector<Coupon> coupons;
-				};
-				struct ServerlessPrice
-				{
-					float totalOriginalMaxAmount;
-					float tradeMinRCUAmount;
-					float rCUDiscountMaxAmount;
-					float storageOriginalAmount;
-					float totalOriginalMinAmount;
-					float rCUDiscountMinAmount;
-					float rCUOriginalMaxAmount;
-					float rCUOriginalMinAmount;
-					float tradeMaxRCUAmount;
-					float storageDiscountAmount;
-				};
-				struct Rule
-				{
-					std::string description;
-					long ruleId;
-					std::string name;
-				};
 
 
 				DescribePriceResult();
 				explicit DescribePriceResult(const std::string &payload);
 				~DescribePriceResult();
-				float getTradeMinRCUAmount()const;
-				bool getShowDiscount()const;
-				ServerlessPrice getServerlessPrice()const;
-				std::string getOrderParams()const;
-				float getTradeMaxRCUAmount()const;
-				std::vector<Rule> getRules()const;
-				PriceInfo getPriceInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				float tradeMinRCUAmount_;
-				bool showDiscount_;
-				ServerlessPrice serverlessPrice_;
-				std::string orderParams_;
-				float tradeMaxRCUAmount_;
-				std::vector<Rule> rules_;
-				PriceInfo priceInfo_;
 
 			};
 		}

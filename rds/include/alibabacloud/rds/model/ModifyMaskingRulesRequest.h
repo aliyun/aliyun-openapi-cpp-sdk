@@ -48,6 +48,8 @@ public:
 	void setRuleName(const std::string &ruleName);
 	std::string getEnabled() const;
 	void setEnabled(const std::string &enabled);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerId() const;
@@ -63,6 +65,7 @@ private:
 	std::string maskingAlgo_;
 	std::string ruleName_;
 	std::string enabled_;
+	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerId_;
 	std::string defaultAlgo_;

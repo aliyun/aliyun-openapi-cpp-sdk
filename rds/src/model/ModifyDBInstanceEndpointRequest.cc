@@ -52,6 +52,15 @@ void ModifyDBInstanceEndpointRequest::setAccessKeyId(const std::string &accessKe
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBInstanceEndpointRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDBInstanceEndpointRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyDBInstanceEndpointRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

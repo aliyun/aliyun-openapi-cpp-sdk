@@ -106,6 +106,15 @@ void ModifyDBInstanceSSLRequest::setClientCertRevocationList(const std::string &
   setParameter(std::string("ClientCertRevocationList"), clientCertRevocationList);
 }
 
+std::string ModifyDBInstanceSSLRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDBInstanceSSLRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyDBInstanceSSLRequest::getServerCert() const {
   return serverCert_;
 }

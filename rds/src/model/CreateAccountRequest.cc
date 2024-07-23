@@ -70,6 +70,15 @@ void CreateAccountRequest::setAccountName(const std::string &accountName) {
   setParameter(std::string("AccountName"), accountName);
 }
 
+std::string CreateAccountRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateAccountRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateAccountRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

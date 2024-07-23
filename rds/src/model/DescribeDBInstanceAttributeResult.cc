@@ -262,6 +262,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.extra.activeReplicaDBInstanceID = extraNode["ActiveReplicaDBInstanceID"].asString();
 		if(!extraNode["ReplicaGroupID"].isNull())
 			itemsObject.extra.replicaGroupID = extraNode["ReplicaGroupID"].asString();
+		if(!extraNode["RecoveryModel"].isNull())
+			itemsObject.extra.recoveryModel = extraNode["RecoveryModel"].asString();
 			auto allDBInstanceIds = extraNode["DBInstanceIds"]["DBInstanceId"];
 			for (auto value : allDBInstanceIds)
 				itemsObject.extra.dBInstanceIds.push_back(value.asString());

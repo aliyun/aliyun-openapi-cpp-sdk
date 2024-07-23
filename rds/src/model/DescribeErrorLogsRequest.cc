@@ -61,6 +61,15 @@ void DescribeErrorLogsRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeErrorLogsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeErrorLogsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeErrorLogsRequest::getPageSize() const {
   return pageSize_;
 }

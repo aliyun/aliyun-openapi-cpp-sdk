@@ -43,6 +43,15 @@ void DescribeDiagnosticReportListRequest::setResourceGroupId(const std::string &
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribeDiagnosticReportListRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDiagnosticReportListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeDiagnosticReportListRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

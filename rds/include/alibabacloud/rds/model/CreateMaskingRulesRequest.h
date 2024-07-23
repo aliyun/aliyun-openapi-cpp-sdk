@@ -46,6 +46,8 @@ public:
 	void setMaskingAlgo(const std::string &maskingAlgo);
 	std::string getRuleName() const;
 	void setRuleName(const std::string &ruleName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerId() const;
@@ -60,6 +62,7 @@ private:
 	long resourceOwnerId_;
 	std::string maskingAlgo_;
 	std::string ruleName_;
+	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerId_;
 	std::string defaultAlgo_;

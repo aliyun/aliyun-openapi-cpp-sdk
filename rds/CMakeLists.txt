@@ -73,6 +73,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/CreateDBInstanceEndpointAddressResult.h
 	include/alibabacloud/rds/model/CreateDBInstanceForRebuildRequest.h
 	include/alibabacloud/rds/model/CreateDBInstanceForRebuildResult.h
+	include/alibabacloud/rds/model/CreateDBInstanceSecurityGroupRuleRequest.h
+	include/alibabacloud/rds/model/CreateDBInstanceSecurityGroupRuleResult.h
 	include/alibabacloud/rds/model/CreateDBNodesRequest.h
 	include/alibabacloud/rds/model/CreateDBNodesResult.h
 	include/alibabacloud/rds/model/CreateDBProxyEndpointAddressRequest.h
@@ -123,6 +125,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DeleteDBInstanceEndpointResult.h
 	include/alibabacloud/rds/model/DeleteDBInstanceEndpointAddressRequest.h
 	include/alibabacloud/rds/model/DeleteDBInstanceEndpointAddressResult.h
+	include/alibabacloud/rds/model/DeleteDBInstanceSecurityGroupRuleRequest.h
+	include/alibabacloud/rds/model/DeleteDBInstanceSecurityGroupRuleResult.h
 	include/alibabacloud/rds/model/DeleteDBNodesRequest.h
 	include/alibabacloud/rds/model/DeleteDBNodesResult.h
 	include/alibabacloud/rds/model/DeleteDBProxyEndpointAddressRequest.h
@@ -235,6 +239,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeDBInstanceProxyConfigurationResult.h
 	include/alibabacloud/rds/model/DescribeDBInstanceSSLRequest.h
 	include/alibabacloud/rds/model/DescribeDBInstanceSSLResult.h
+	include/alibabacloud/rds/model/DescribeDBInstanceSecurityGroupRuleRequest.h
+	include/alibabacloud/rds/model/DescribeDBInstanceSecurityGroupRuleResult.h
 	include/alibabacloud/rds/model/DescribeDBInstanceTDERequest.h
 	include/alibabacloud/rds/model/DescribeDBInstanceTDEResult.h
 	include/alibabacloud/rds/model/DescribeDBInstancesRequest.h
@@ -473,6 +479,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifyDBInstanceProxyConfigurationResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceSSLRequest.h
 	include/alibabacloud/rds/model/ModifyDBInstanceSSLResult.h
+	include/alibabacloud/rds/model/ModifyDBInstanceSecurityGroupRuleRequest.h
+	include/alibabacloud/rds/model/ModifyDBInstanceSecurityGroupRuleResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceSpecRequest.h
 	include/alibabacloud/rds/model/ModifyDBInstanceSpecResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceTDERequest.h
@@ -660,6 +668,8 @@ set(rds_src
 	src/model/CreateDBInstanceEndpointAddressResult.cc
 	src/model/CreateDBInstanceForRebuildRequest.cc
 	src/model/CreateDBInstanceForRebuildResult.cc
+	src/model/CreateDBInstanceSecurityGroupRuleRequest.cc
+	src/model/CreateDBInstanceSecurityGroupRuleResult.cc
 	src/model/CreateDBNodesRequest.cc
 	src/model/CreateDBNodesResult.cc
 	src/model/CreateDBProxyEndpointAddressRequest.cc
@@ -710,6 +720,8 @@ set(rds_src
 	src/model/DeleteDBInstanceEndpointResult.cc
 	src/model/DeleteDBInstanceEndpointAddressRequest.cc
 	src/model/DeleteDBInstanceEndpointAddressResult.cc
+	src/model/DeleteDBInstanceSecurityGroupRuleRequest.cc
+	src/model/DeleteDBInstanceSecurityGroupRuleResult.cc
 	src/model/DeleteDBNodesRequest.cc
 	src/model/DeleteDBNodesResult.cc
 	src/model/DeleteDBProxyEndpointAddressRequest.cc
@@ -822,6 +834,8 @@ set(rds_src
 	src/model/DescribeDBInstanceProxyConfigurationResult.cc
 	src/model/DescribeDBInstanceSSLRequest.cc
 	src/model/DescribeDBInstanceSSLResult.cc
+	src/model/DescribeDBInstanceSecurityGroupRuleRequest.cc
+	src/model/DescribeDBInstanceSecurityGroupRuleResult.cc
 	src/model/DescribeDBInstanceTDERequest.cc
 	src/model/DescribeDBInstanceTDEResult.cc
 	src/model/DescribeDBInstancesRequest.cc
@@ -1060,6 +1074,8 @@ set(rds_src
 	src/model/ModifyDBInstanceProxyConfigurationResult.cc
 	src/model/ModifyDBInstanceSSLRequest.cc
 	src/model/ModifyDBInstanceSSLResult.cc
+	src/model/ModifyDBInstanceSecurityGroupRuleRequest.cc
+	src/model/ModifyDBInstanceSecurityGroupRuleResult.cc
 	src/model/ModifyDBInstanceSpecRequest.cc
 	src/model/ModifyDBInstanceSpecResult.cc
 	src/model/ModifyDBInstanceTDERequest.cc

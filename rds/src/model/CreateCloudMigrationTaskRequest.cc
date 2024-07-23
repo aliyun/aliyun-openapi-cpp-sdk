@@ -79,6 +79,15 @@ void CreateCloudMigrationTaskRequest::setSourcePort(long sourcePort) {
   setParameter(std::string("SourcePort"), std::to_string(sourcePort));
 }
 
+std::string CreateCloudMigrationTaskRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateCloudMigrationTaskRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateCloudMigrationTaskRequest::getSourcePassword() const {
   return sourcePassword_;
 }

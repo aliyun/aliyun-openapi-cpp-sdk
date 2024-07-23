@@ -70,6 +70,15 @@ void RevokeOperatorPermissionRequest::setAccessKeyId(const std::string &accessKe
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string RevokeOperatorPermissionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void RevokeOperatorPermissionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string RevokeOperatorPermissionRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

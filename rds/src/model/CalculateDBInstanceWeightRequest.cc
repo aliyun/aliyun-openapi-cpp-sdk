@@ -70,6 +70,15 @@ void CalculateDBInstanceWeightRequest::setAccessKeyId(const std::string &accessK
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CalculateDBInstanceWeightRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CalculateDBInstanceWeightRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CalculateDBInstanceWeightRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

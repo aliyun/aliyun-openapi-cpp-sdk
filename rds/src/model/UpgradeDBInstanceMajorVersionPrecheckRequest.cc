@@ -34,6 +34,33 @@ void UpgradeDBInstanceMajorVersionPrecheckRequest::setResourceOwnerId(long resou
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string UpgradeDBInstanceMajorVersionPrecheckRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void UpgradeDBInstanceMajorVersionPrecheckRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string UpgradeDBInstanceMajorVersionPrecheckRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpgradeDBInstanceMajorVersionPrecheckRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string UpgradeDBInstanceMajorVersionPrecheckRequest::getDBInstanceId() const {
+  return dBInstanceId_;
+}
+
+void UpgradeDBInstanceMajorVersionPrecheckRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
 std::string UpgradeDBInstanceMajorVersionPrecheckRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -59,24 +86,6 @@ long UpgradeDBInstanceMajorVersionPrecheckRequest::getOwnerId() const {
 void UpgradeDBInstanceMajorVersionPrecheckRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string UpgradeDBInstanceMajorVersionPrecheckRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void UpgradeDBInstanceMajorVersionPrecheckRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string UpgradeDBInstanceMajorVersionPrecheckRequest::getDBInstanceId() const {
-  return dBInstanceId_;
-}
-
-void UpgradeDBInstanceMajorVersionPrecheckRequest::setDBInstanceId(const std::string &dBInstanceId) {
-  dBInstanceId_ = dBInstanceId;
-  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
 std::string UpgradeDBInstanceMajorVersionPrecheckRequest::getTargetMajorVersion() const {

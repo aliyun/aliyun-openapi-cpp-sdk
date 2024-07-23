@@ -70,6 +70,15 @@ void TerminateMigrateTaskRequest::setAccessKeyId(const std::string &accessKeyId)
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string TerminateMigrateTaskRequest::getRegionId() const {
+  return regionId_;
+}
+
+void TerminateMigrateTaskRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string TerminateMigrateTaskRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

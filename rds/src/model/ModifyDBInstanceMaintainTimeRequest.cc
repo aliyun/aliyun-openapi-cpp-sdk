@@ -61,6 +61,15 @@ void ModifyDBInstanceMaintainTimeRequest::setMaintainTime(const std::string &mai
   setParameter(std::string("MaintainTime"), maintainTime);
 }
 
+std::string ModifyDBInstanceMaintainTimeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDBInstanceMaintainTimeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyDBInstanceMaintainTimeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

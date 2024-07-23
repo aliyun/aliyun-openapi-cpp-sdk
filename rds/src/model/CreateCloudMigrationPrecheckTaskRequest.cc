@@ -79,6 +79,15 @@ void CreateCloudMigrationPrecheckTaskRequest::setSourcePort(long sourcePort) {
   setParameter(std::string("SourcePort"), std::to_string(sourcePort));
 }
 
+std::string CreateCloudMigrationPrecheckTaskRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateCloudMigrationPrecheckTaskRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateCloudMigrationPrecheckTaskRequest::getSourcePassword() const {
   return sourcePassword_;
 }

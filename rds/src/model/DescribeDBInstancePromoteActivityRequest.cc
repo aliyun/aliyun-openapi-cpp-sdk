@@ -61,6 +61,15 @@ void DescribeDBInstancePromoteActivityRequest::setResourceGroupId(const std::str
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribeDBInstancePromoteActivityRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDBInstancePromoteActivityRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeDBInstancePromoteActivityRequest::getAliUid() const {
   return aliUid_;
 }

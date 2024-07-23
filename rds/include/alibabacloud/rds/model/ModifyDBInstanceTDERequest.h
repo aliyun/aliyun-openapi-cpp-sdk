@@ -40,6 +40,8 @@ public:
 	void setPrivateKey(const std::string &privateKey);
 	std::string getPassWord() const;
 	void setPassWord(const std::string &passWord);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getResourceOwnerAccount() const;
@@ -65,6 +67,7 @@ private:
 	std::string accessKeyId_;
 	std::string privateKey_;
 	std::string passWord_;
+	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

@@ -79,6 +79,15 @@ void DescribeCloudMigrationResultRequest::setSourcePort(long sourcePort) {
   setParameter(std::string("SourcePort"), std::to_string(sourcePort));
 }
 
+std::string DescribeCloudMigrationResultRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeCloudMigrationResultRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long DescribeCloudMigrationResultRequest::getPageSize() const {
   return pageSize_;
 }

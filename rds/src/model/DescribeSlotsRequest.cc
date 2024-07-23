@@ -61,6 +61,15 @@ void DescribeSlotsRequest::setResourceGroupId(const std::string &resourceGroupId
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribeSlotsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeSlotsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeSlotsRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

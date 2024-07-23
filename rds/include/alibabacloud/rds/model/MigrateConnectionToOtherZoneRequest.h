@@ -36,6 +36,8 @@ public:
 	void setConnectionString(const std::string &connectionString);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
 	std::string getDBInstanceId() const;
@@ -45,6 +47,7 @@ private:
 	long resourceOwnerId_;
 	std::string connectionString_;
 	long ownerId_;
+	std::string regionId_;
 	std::string zoneId_;
 	std::string dBInstanceId_;
 };

@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDbInstanceId() const;
 	void setDbInstanceId(const std::string &dbInstanceId);
 	std::string getHAMode() const;
@@ -50,6 +52,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
+	std::string regionId_;
 	std::string dbInstanceId_;
 	std::string hAMode_;
 	std::string resourceOwnerAccount_;

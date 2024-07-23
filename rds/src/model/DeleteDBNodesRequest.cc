@@ -70,6 +70,15 @@ void DeleteDBNodesRequest::setResourceGroupId(const std::string &resourceGroupId
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DeleteDBNodesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteDBNodesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteDBNodesRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

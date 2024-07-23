@@ -70,6 +70,15 @@ void LockAccountRequest::setAccountName(const std::string &accountName) {
   setParameter(std::string("AccountName"), accountName);
 }
 
+std::string LockAccountRequest::getRegionId() const {
+  return regionId_;
+}
+
+void LockAccountRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string LockAccountRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

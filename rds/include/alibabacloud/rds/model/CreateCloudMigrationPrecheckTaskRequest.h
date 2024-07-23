@@ -42,6 +42,8 @@ public:
 	void setSourceAccount(const std::string &sourceAccount);
 	long getSourcePort() const;
 	void setSourcePort(long sourcePort);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getSourcePassword() const;
 	void setSourcePassword(const std::string &sourcePassword);
 	std::string getSourceIpAddress() const;
@@ -60,6 +62,7 @@ private:
 	std::string accessKeyId_;
 	std::string sourceAccount_;
 	long sourcePort_;
+	std::string regionId_;
 	std::string sourcePassword_;
 	std::string sourceIpAddress_;
 	std::string resourceOwnerAccount_;

@@ -61,6 +61,15 @@ void DescribeSQLLogReportListRequest::setAccessKeyId(const std::string &accessKe
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeSQLLogReportListRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeSQLLogReportListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeSQLLogReportListRequest::getPageSize() const {
   return pageSize_;
 }

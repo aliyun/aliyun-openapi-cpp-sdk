@@ -70,6 +70,15 @@ void ModifyMaskingRulesRequest::setEnabled(const std::string &enabled) {
   setParameter(std::string("Enabled"), enabled);
 }
 
+std::string ModifyMaskingRulesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyMaskingRulesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyMaskingRulesRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

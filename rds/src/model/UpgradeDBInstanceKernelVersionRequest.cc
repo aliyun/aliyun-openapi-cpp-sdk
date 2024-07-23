@@ -43,6 +43,15 @@ void UpgradeDBInstanceKernelVersionRequest::setAccessKeyId(const std::string &ac
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string UpgradeDBInstanceKernelVersionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpgradeDBInstanceKernelVersionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string UpgradeDBInstanceKernelVersionRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

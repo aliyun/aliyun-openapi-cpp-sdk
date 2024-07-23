@@ -32,11 +32,14 @@ public:
 	~ConfirmNotifyRequest();
 	std::vector<long> getNotifyIdList() const;
 	void setNotifyIdList(const std::vector<long> &notifyIdList);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	long getConfirmor() const;
 	void setConfirmor(long confirmor);
 
 private:
 	std::vector<long> notifyIdList_;
+	std::string regionId_;
 	long confirmor_;
 };
 } // namespace Model

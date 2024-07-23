@@ -34,6 +34,42 @@ void DescribeMigrateTaskByIdRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeMigrateTaskByIdRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DescribeMigrateTaskByIdRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DescribeMigrateTaskByIdRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeMigrateTaskByIdRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string DescribeMigrateTaskByIdRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeMigrateTaskByIdRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeMigrateTaskByIdRequest::getDBInstanceId() const {
+  return dBInstanceId_;
+}
+
+void DescribeMigrateTaskByIdRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
 std::string DescribeMigrateTaskByIdRequest::getMigrateTaskId() const {
   return migrateTaskId_;
 }
@@ -59,32 +95,5 @@ long DescribeMigrateTaskByIdRequest::getOwnerId() const {
 void DescribeMigrateTaskByIdRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string DescribeMigrateTaskByIdRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DescribeMigrateTaskByIdRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DescribeMigrateTaskByIdRequest::getResourceGroupId() const {
-  return resourceGroupId_;
-}
-
-void DescribeMigrateTaskByIdRequest::setResourceGroupId(const std::string &resourceGroupId) {
-  resourceGroupId_ = resourceGroupId;
-  setParameter(std::string("ResourceGroupId"), resourceGroupId);
-}
-
-std::string DescribeMigrateTaskByIdRequest::getDBInstanceId() const {
-  return dBInstanceId_;
-}
-
-void DescribeMigrateTaskByIdRequest::setDBInstanceId(const std::string &dBInstanceId) {
-  dBInstanceId_ = dBInstanceId;
-  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 

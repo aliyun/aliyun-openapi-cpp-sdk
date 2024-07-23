@@ -38,6 +38,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getDBInstanceEndpointId() const;
 	void setDBInstanceEndpointId(const std::string &dBInstanceEndpointId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 
@@ -46,6 +48,7 @@ private:
 	std::string clientToken_;
 	std::string accessKeyId_;
 	std::string dBInstanceEndpointId_;
+	std::string regionId_;
 	std::string dBInstanceId_;
 };
 } // namespace Model

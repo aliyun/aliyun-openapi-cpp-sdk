@@ -46,6 +46,8 @@ public:
 	void setImportId(int importId);
 	std::string getEngine() const;
 	void setEngine(const std::string &engine);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getDBInstanceId() const;
@@ -68,6 +70,7 @@ private:
 	std::string resourceGroupId_;
 	int importId_;
 	std::string engine_;
+	std::string regionId_;
 	int pageSize_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;

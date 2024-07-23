@@ -40,6 +40,8 @@ public:
 	void setConnectionString(const std::string &connectionString);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getVSwitchId() const;
@@ -59,6 +61,7 @@ private:
 	std::string clientToken_;
 	std::string connectionString_;
 	std::string accessKeyId_;
+	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string vSwitchId_;
 	std::string privateIpAddress_;

@@ -61,6 +61,15 @@ void DescribeDBInstanceProxyConfigurationRequest::setAccessKeyId(const std::stri
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDBInstanceProxyConfigurationRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDBInstanceProxyConfigurationRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeDBInstanceProxyConfigurationRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

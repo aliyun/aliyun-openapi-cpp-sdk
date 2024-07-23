@@ -61,6 +61,15 @@ void GrantAccountPrivilegeRequest::setAccountName(const std::string &accountName
   setParameter(std::string("AccountName"), accountName);
 }
 
+std::string GrantAccountPrivilegeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void GrantAccountPrivilegeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string GrantAccountPrivilegeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

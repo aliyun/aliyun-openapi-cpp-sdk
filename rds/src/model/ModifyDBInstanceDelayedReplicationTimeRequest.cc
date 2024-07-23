@@ -70,6 +70,15 @@ void ModifyDBInstanceDelayedReplicationTimeRequest::setReadSQLReplicationTime(co
   setParameter(std::string("ReadSQLReplicationTime"), readSQLReplicationTime);
 }
 
+std::string ModifyDBInstanceDelayedReplicationTimeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDBInstanceDelayedReplicationTimeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyDBInstanceDelayedReplicationTimeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

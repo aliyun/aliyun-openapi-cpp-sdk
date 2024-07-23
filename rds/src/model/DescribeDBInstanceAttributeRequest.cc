@@ -61,6 +61,15 @@ void DescribeDBInstanceAttributeRequest::setExpired(const std::string &expired) 
   setParameter(std::string("Expired"), expired);
 }
 
+std::string DescribeDBInstanceAttributeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDBInstanceAttributeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeDBInstanceAttributeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

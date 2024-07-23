@@ -70,6 +70,15 @@ void DescribeBackupDatabaseRequest::setAccessKeyId(const std::string &accessKeyI
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeBackupDatabaseRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeBackupDatabaseRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeBackupDatabaseRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

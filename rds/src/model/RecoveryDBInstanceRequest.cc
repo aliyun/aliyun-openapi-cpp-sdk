@@ -70,6 +70,15 @@ void RecoveryDBInstanceRequest::setResourceGroupId(const std::string &resourceGr
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string RecoveryDBInstanceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void RecoveryDBInstanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string RecoveryDBInstanceRequest::getDBInstanceDescription() const {
   return dBInstanceDescription_;
 }

@@ -34,15 +34,6 @@ void PurgeDBInstanceLogRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string PurgeDBInstanceLogRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void PurgeDBInstanceLogRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
 std::string PurgeDBInstanceLogRequest::getClientToken() const {
   return clientToken_;
 }
@@ -50,6 +41,42 @@ std::string PurgeDBInstanceLogRequest::getClientToken() const {
 void PurgeDBInstanceLogRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
   setParameter(std::string("ClientToken"), clientToken);
+}
+
+std::string PurgeDBInstanceLogRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void PurgeDBInstanceLogRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string PurgeDBInstanceLogRequest::getRegionId() const {
+  return regionId_;
+}
+
+void PurgeDBInstanceLogRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string PurgeDBInstanceLogRequest::getDBInstanceId() const {
+  return dBInstanceId_;
+}
+
+void PurgeDBInstanceLogRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string PurgeDBInstanceLogRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void PurgeDBInstanceLogRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
 std::string PurgeDBInstanceLogRequest::getOwnerAccount() const {
@@ -68,23 +95,5 @@ long PurgeDBInstanceLogRequest::getOwnerId() const {
 void PurgeDBInstanceLogRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string PurgeDBInstanceLogRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void PurgeDBInstanceLogRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string PurgeDBInstanceLogRequest::getDBInstanceId() const {
-  return dBInstanceId_;
-}
-
-void PurgeDBInstanceLogRequest::setDBInstanceId(const std::string &dBInstanceId) {
-  dBInstanceId_ = dBInstanceId;
-  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 

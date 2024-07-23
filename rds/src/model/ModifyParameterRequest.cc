@@ -70,6 +70,15 @@ void ModifyParameterRequest::setParameterGroupId(const std::string &parameterGro
   setParameter(std::string("ParameterGroupId"), parameterGroupId);
 }
 
+std::string ModifyParameterRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyParameterRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyParameterRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -97,6 +97,15 @@ void MigrateToOtherZoneRequest::setEffectiveTime(const std::string &effectiveTim
   setParameter(std::string("EffectiveTime"), effectiveTime);
 }
 
+std::string MigrateToOtherZoneRequest::getRegionId() const {
+  return regionId_;
+}
+
+void MigrateToOtherZoneRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string MigrateToOtherZoneRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -70,6 +70,15 @@ void ModifyDBNodeRequest::setEffectiveTime(const std::string &effectiveTime) {
   setParameter(std::string("EffectiveTime"), effectiveTime);
 }
 
+std::string ModifyDBNodeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDBNodeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyDBNodeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

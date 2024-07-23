@@ -70,6 +70,15 @@ void ReleaseReadWriteSplittingConnectionRequest::setAccessKeyId(const std::strin
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ReleaseReadWriteSplittingConnectionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ReleaseReadWriteSplittingConnectionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ReleaseReadWriteSplittingConnectionRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

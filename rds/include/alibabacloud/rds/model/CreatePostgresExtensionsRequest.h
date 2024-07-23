@@ -42,6 +42,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getAccountName() const;
 	void setAccountName(const std::string &accountName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getSourceDatabase() const;
@@ -64,6 +66,7 @@ private:
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	std::string accountName_;
+	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string sourceDatabase_;
 	std::string resourceOwnerAccount_;

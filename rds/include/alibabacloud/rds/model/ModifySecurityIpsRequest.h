@@ -44,6 +44,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getWhitelistNetworkType() const;
 	void setWhitelistNetworkType(const std::string &whitelistNetworkType);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getSecurityIPType() const;
 	void setSecurityIPType(const std::string &securityIPType);
 	std::string getDBInstanceId() const;
@@ -69,6 +71,7 @@ private:
 	std::string securityGroupId_;
 	std::string accessKeyId_;
 	std::string whitelistNetworkType_;
+	std::string regionId_;
 	std::string securityIPType_;
 	std::string dBInstanceId_;
 	std::string modifyMode_;

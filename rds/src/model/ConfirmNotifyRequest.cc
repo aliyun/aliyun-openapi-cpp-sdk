@@ -36,6 +36,15 @@ void ConfirmNotifyRequest::setNotifyIdList(const std::vector<ConfirmNotifyReques
   }
 }
 
+std::string ConfirmNotifyRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ConfirmNotifyRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long ConfirmNotifyRequest::getConfirmor() const {
   return confirmor_;
 }

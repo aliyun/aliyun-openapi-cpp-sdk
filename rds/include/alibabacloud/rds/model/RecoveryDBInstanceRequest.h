@@ -40,6 +40,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceDescription() const;
 	void setDBInstanceDescription(const std::string &dBInstanceDescription);
 	std::string getDBInstanceId() const;
@@ -83,6 +85,7 @@ private:
 	std::string clientToken_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
+	std::string regionId_;
 	std::string dBInstanceDescription_;
 	std::string dBInstanceId_;
 	std::string dBInstanceStorageType_;

@@ -61,6 +61,15 @@ void CreateGADInstanceRequest::setResourceGroupId(const std::string &resourceGro
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string CreateGADInstanceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateGADInstanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::vector<CreateGADInstanceRequest::Tag> CreateGADInstanceRequest::getTag() const {
   return tag_;
 }

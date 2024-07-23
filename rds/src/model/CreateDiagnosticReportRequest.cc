@@ -52,6 +52,15 @@ void CreateDiagnosticReportRequest::setAccessKeyId(const std::string &accessKeyI
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CreateDiagnosticReportRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateDiagnosticReportRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateDiagnosticReportRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

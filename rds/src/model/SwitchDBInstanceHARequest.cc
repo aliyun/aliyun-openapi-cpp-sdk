@@ -52,6 +52,15 @@ void SwitchDBInstanceHARequest::setEffectiveTime(const std::string &effectiveTim
   setParameter(std::string("EffectiveTime"), effectiveTime);
 }
 
+std::string SwitchDBInstanceHARequest::getRegionId() const {
+  return regionId_;
+}
+
+void SwitchDBInstanceHARequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string SwitchDBInstanceHARequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

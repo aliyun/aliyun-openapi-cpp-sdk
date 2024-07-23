@@ -52,6 +52,15 @@ void ModifyDBInstanceNetworkTypeRequest::setClassicExpiredDays(const std::string
   setParameter(std::string("ClassicExpiredDays"), classicExpiredDays);
 }
 
+std::string ModifyDBInstanceNetworkTypeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDBInstanceNetworkTypeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyDBInstanceNetworkTypeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

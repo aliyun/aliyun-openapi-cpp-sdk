@@ -32,27 +32,30 @@ public:
 	~ModifyCollationTimeZoneRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getResourceOwnerAccount() const;
-	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getTimezone() const;
 	void setTimezone(const std::string &timezone);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getCollation() const;
 	void setCollation(const std::string &collation);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
 
 private:
 	long resourceOwnerId_;
-	std::string resourceOwnerAccount_;
 	std::string timezone_;
-	long ownerId_;
 	std::string accessKeyId_;
+	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string collation_;
+	std::string resourceOwnerAccount_;
+	long ownerId_;
 };
 } // namespace Model
 } // namespace Rds

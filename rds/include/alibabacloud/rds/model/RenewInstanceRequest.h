@@ -36,6 +36,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getBusinessInfo() const;
@@ -55,6 +57,7 @@ private:
 	long resourceOwnerId_;
 	std::string clientToken_;
 	std::string accessKeyId_;
+	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string businessInfo_;
 	int period_;

@@ -61,6 +61,15 @@ void CopyDatabaseBetweenInstancesRequest::setResourceGroupId(const std::string &
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string CopyDatabaseBetweenInstancesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CopyDatabaseBetweenInstancesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CopyDatabaseBetweenInstancesRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

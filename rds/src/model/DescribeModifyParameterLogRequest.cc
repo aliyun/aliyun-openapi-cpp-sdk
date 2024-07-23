@@ -61,6 +61,15 @@ void DescribeModifyParameterLogRequest::setAccessKeyId(const std::string &access
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeModifyParameterLogRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeModifyParameterLogRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeModifyParameterLogRequest::getPageSize() const {
   return pageSize_;
 }

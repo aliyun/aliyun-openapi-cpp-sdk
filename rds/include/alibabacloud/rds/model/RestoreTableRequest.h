@@ -40,6 +40,8 @@ public:
 	void setInstantRecovery(bool instantRecovery);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getTableMeta() const;
 	void setTableMeta(const std::string &tableMeta);
 	std::string getDBInstanceId() const;
@@ -61,6 +63,7 @@ private:
 	std::string clientToken_;
 	bool instantRecovery_;
 	std::string accessKeyId_;
+	std::string regionId_;
 	std::string tableMeta_;
 	std::string dBInstanceId_;
 	std::string restoreTime_;

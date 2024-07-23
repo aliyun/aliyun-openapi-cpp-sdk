@@ -88,6 +88,15 @@ void DescribeSQLLogRecordsRequest::setDatabase(const std::string &database) {
   setParameter(std::string("Database"), database);
 }
 
+std::string DescribeSQLLogRecordsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeSQLLogRecordsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeSQLLogRecordsRequest::getPageSize() const {
   return pageSize_;
 }

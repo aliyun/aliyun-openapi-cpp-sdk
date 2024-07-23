@@ -54,13 +54,17 @@ void DescribeParametersResult::parse(const std::string &payload)
 	auto allRunningParametersNode = value["RunningParameters"]["DBInstanceParameter"];
 	for (auto valueRunningParametersDBInstanceParameter : allRunningParametersNode)
 	{
-		DBInstanceParameter runningParametersObject;
+		DBInstanceParameter1 runningParametersObject;
 		if(!valueRunningParametersDBInstanceParameter["ParameterDescription"].isNull())
 			runningParametersObject.parameterDescription = valueRunningParametersDBInstanceParameter["ParameterDescription"].asString();
 		if(!valueRunningParametersDBInstanceParameter["ParameterName"].isNull())
 			runningParametersObject.parameterName = valueRunningParametersDBInstanceParameter["ParameterName"].asString();
 		if(!valueRunningParametersDBInstanceParameter["ParameterValue"].isNull())
 			runningParametersObject.parameterValue = valueRunningParametersDBInstanceParameter["ParameterValue"].asString();
+		if(!valueRunningParametersDBInstanceParameter["ParameterValueRange"].isNull())
+			runningParametersObject.parameterValueRange = valueRunningParametersDBInstanceParameter["ParameterValueRange"].asString();
+		if(!valueRunningParametersDBInstanceParameter["ParameterDefaultValue"].isNull())
+			runningParametersObject.parameterDefaultValue = valueRunningParametersDBInstanceParameter["ParameterDefaultValue"].asString();
 		runningParameters_.push_back(runningParametersObject);
 	}
 	auto paramGroupInfoNode = value["ParamGroupInfo"];
@@ -79,7 +83,7 @@ void DescribeParametersResult::parse(const std::string &payload)
 
 }
 
-std::vector<DescribeParametersResult::DBInstanceParameter> DescribeParametersResult::getRunningParameters()const
+std::vector<DescribeParametersResult::DBInstanceParameter1> DescribeParametersResult::getRunningParameters()const
 {
 	return runningParameters_;
 }

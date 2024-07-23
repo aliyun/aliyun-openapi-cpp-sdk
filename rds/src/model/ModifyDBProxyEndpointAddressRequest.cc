@@ -52,6 +52,15 @@ void ModifyDBProxyEndpointAddressRequest::setAccessKeyId(const std::string &acce
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBProxyEndpointAddressRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDBProxyEndpointAddressRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyDBProxyEndpointAddressRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

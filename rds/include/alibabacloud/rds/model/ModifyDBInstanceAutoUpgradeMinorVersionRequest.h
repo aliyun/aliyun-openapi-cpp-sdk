@@ -32,27 +32,30 @@ public:
 	~ModifyDBInstanceAutoUpgradeMinorVersionRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getResourceOwnerAccount() const;
-	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getAutoUpgradeMinorVersion() const;
 	void setAutoUpgradeMinorVersion(const std::string &autoUpgradeMinorVersion);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
 
 private:
 	long resourceOwnerId_;
-	std::string resourceOwnerAccount_;
 	std::string clientToken_;
-	long ownerId_;
 	std::string accessKeyId_;
 	std::string autoUpgradeMinorVersion_;
+	std::string regionId_;
 	std::string dBInstanceId_;
+	std::string resourceOwnerAccount_;
+	long ownerId_;
 };
 } // namespace Model
 } // namespace Rds

@@ -61,6 +61,15 @@ void CreateBackupRequest::setBackupStrategy(const std::string &backupStrategy) {
   setParameter(std::string("BackupStrategy"), backupStrategy);
 }
 
+std::string CreateBackupRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateBackupRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateBackupRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

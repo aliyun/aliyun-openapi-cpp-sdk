@@ -61,6 +61,15 @@ void DescribeCrossBackupMetaListRequest::setResourceGroupId(const std::string &r
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribeCrossBackupMetaListRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeCrossBackupMetaListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeCrossBackupMetaListRequest::getPageSize() const {
   return pageSize_;
 }

@@ -60,6 +60,8 @@ public:
 	void setEffectiveTime(const std::string &effectiveTime);
 	std::string getDBInstanceTransType() const;
 	void setDBInstanceTransType(const std::string &dBInstanceTransType);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getSwitchTime() const;
@@ -106,6 +108,7 @@ private:
 	ServerlessConfiguration serverlessConfiguration_;
 	std::string effectiveTime_;
 	std::string dBInstanceTransType_;
+	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string switchTime_;
 	std::string dBInstanceStorageType_;

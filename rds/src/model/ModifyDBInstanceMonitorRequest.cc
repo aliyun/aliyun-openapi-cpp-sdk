@@ -52,6 +52,15 @@ void ModifyDBInstanceMonitorRequest::setAccessKeyId(const std::string &accessKey
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBInstanceMonitorRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDBInstanceMonitorRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyDBInstanceMonitorRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

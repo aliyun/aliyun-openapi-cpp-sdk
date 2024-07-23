@@ -61,6 +61,15 @@ void DescribeAccountsRequest::setAccountName(const std::string &accountName) {
   setParameter(std::string("AccountName"), accountName);
 }
 
+std::string DescribeAccountsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeAccountsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeAccountsRequest::getPageSize() const {
   return pageSize_;
 }

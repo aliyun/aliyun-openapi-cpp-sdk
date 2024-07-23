@@ -52,6 +52,15 @@ void ModifyDBInstancePayTypeRequest::setAccessKeyId(const std::string &accessKey
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBInstancePayTypeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDBInstancePayTypeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyDBInstancePayTypeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

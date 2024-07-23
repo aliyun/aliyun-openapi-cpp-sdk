@@ -43,6 +43,15 @@ void UpgradeDBProxyInstanceKernelVersionRequest::setAccessKeyId(const std::strin
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string UpgradeDBProxyInstanceKernelVersionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpgradeDBProxyInstanceKernelVersionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string UpgradeDBProxyInstanceKernelVersionRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

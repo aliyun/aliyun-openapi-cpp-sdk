@@ -40,6 +40,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getKey() const;
 	void setKey(const std::string &key);
 
@@ -49,6 +51,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string accessKeyId_;
+	std::string regionId_;
 	std::string key_;
 };
 } // namespace Model

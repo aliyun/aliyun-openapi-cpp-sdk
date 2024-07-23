@@ -61,6 +61,15 @@ void ModifySQLCollectorRetentionRequest::setSecurityToken(const std::string &sec
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+std::string ModifySQLCollectorRetentionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifySQLCollectorRetentionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifySQLCollectorRetentionRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

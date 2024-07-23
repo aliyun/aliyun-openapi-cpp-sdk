@@ -61,13 +61,13 @@ void DescribeHostWebShellRequest::setAccountName(const std::string &accountName)
   setParameter(std::string("AccountName"), accountName);
 }
 
-std::string DescribeHostWebShellRequest::getRegionID() const {
-  return regionID_;
+std::string DescribeHostWebShellRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeHostWebShellRequest::setRegionID(const std::string &regionID) {
-  regionID_ = regionID;
-  setParameter(std::string("RegionID"), regionID);
+void DescribeHostWebShellRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string DescribeHostWebShellRequest::getDBInstanceId() const {

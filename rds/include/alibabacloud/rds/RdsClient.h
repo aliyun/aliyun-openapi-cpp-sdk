@@ -74,6 +74,8 @@
 #include "model/CreateDBInstanceEndpointAddressResult.h"
 #include "model/CreateDBInstanceForRebuildRequest.h"
 #include "model/CreateDBInstanceForRebuildResult.h"
+#include "model/CreateDBInstanceSecurityGroupRuleRequest.h"
+#include "model/CreateDBInstanceSecurityGroupRuleResult.h"
 #include "model/CreateDBNodesRequest.h"
 #include "model/CreateDBNodesResult.h"
 #include "model/CreateDBProxyEndpointAddressRequest.h"
@@ -124,6 +126,8 @@
 #include "model/DeleteDBInstanceEndpointResult.h"
 #include "model/DeleteDBInstanceEndpointAddressRequest.h"
 #include "model/DeleteDBInstanceEndpointAddressResult.h"
+#include "model/DeleteDBInstanceSecurityGroupRuleRequest.h"
+#include "model/DeleteDBInstanceSecurityGroupRuleResult.h"
 #include "model/DeleteDBNodesRequest.h"
 #include "model/DeleteDBNodesResult.h"
 #include "model/DeleteDBProxyEndpointAddressRequest.h"
@@ -236,6 +240,8 @@
 #include "model/DescribeDBInstanceProxyConfigurationResult.h"
 #include "model/DescribeDBInstanceSSLRequest.h"
 #include "model/DescribeDBInstanceSSLResult.h"
+#include "model/DescribeDBInstanceSecurityGroupRuleRequest.h"
+#include "model/DescribeDBInstanceSecurityGroupRuleResult.h"
 #include "model/DescribeDBInstanceTDERequest.h"
 #include "model/DescribeDBInstanceTDEResult.h"
 #include "model/DescribeDBInstancesRequest.h"
@@ -474,6 +480,8 @@
 #include "model/ModifyDBInstanceProxyConfigurationResult.h"
 #include "model/ModifyDBInstanceSSLRequest.h"
 #include "model/ModifyDBInstanceSSLResult.h"
+#include "model/ModifyDBInstanceSecurityGroupRuleRequest.h"
+#include "model/ModifyDBInstanceSecurityGroupRuleResult.h"
 #include "model/ModifyDBInstanceSpecRequest.h"
 #include "model/ModifyDBInstanceSpecResult.h"
 #include "model/ModifyDBInstanceTDERequest.h"
@@ -693,6 +701,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDBInstanceForRebuildResult> CreateDBInstanceForRebuildOutcome;
 			typedef std::future<CreateDBInstanceForRebuildOutcome> CreateDBInstanceForRebuildOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CreateDBInstanceForRebuildRequest&, const CreateDBInstanceForRebuildOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceForRebuildAsyncHandler;
+			typedef Outcome<Error, Model::CreateDBInstanceSecurityGroupRuleResult> CreateDBInstanceSecurityGroupRuleOutcome;
+			typedef std::future<CreateDBInstanceSecurityGroupRuleOutcome> CreateDBInstanceSecurityGroupRuleOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::CreateDBInstanceSecurityGroupRuleRequest&, const CreateDBInstanceSecurityGroupRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceSecurityGroupRuleAsyncHandler;
 			typedef Outcome<Error, Model::CreateDBNodesResult> CreateDBNodesOutcome;
 			typedef std::future<CreateDBNodesOutcome> CreateDBNodesOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CreateDBNodesRequest&, const CreateDBNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBNodesAsyncHandler;
@@ -768,6 +779,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDBInstanceEndpointAddressResult> DeleteDBInstanceEndpointAddressOutcome;
 			typedef std::future<DeleteDBInstanceEndpointAddressOutcome> DeleteDBInstanceEndpointAddressOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DeleteDBInstanceEndpointAddressRequest&, const DeleteDBInstanceEndpointAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBInstanceEndpointAddressAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDBInstanceSecurityGroupRuleResult> DeleteDBInstanceSecurityGroupRuleOutcome;
+			typedef std::future<DeleteDBInstanceSecurityGroupRuleOutcome> DeleteDBInstanceSecurityGroupRuleOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DeleteDBInstanceSecurityGroupRuleRequest&, const DeleteDBInstanceSecurityGroupRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBInstanceSecurityGroupRuleAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDBNodesResult> DeleteDBNodesOutcome;
 			typedef std::future<DeleteDBNodesOutcome> DeleteDBNodesOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DeleteDBNodesRequest&, const DeleteDBNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBNodesAsyncHandler;
@@ -936,6 +950,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDBInstanceSSLResult> DescribeDBInstanceSSLOutcome;
 			typedef std::future<DescribeDBInstanceSSLOutcome> DescribeDBInstanceSSLOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeDBInstanceSSLRequest&, const DescribeDBInstanceSSLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceSSLAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBInstanceSecurityGroupRuleResult> DescribeDBInstanceSecurityGroupRuleOutcome;
+			typedef std::future<DescribeDBInstanceSecurityGroupRuleOutcome> DescribeDBInstanceSecurityGroupRuleOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeDBInstanceSecurityGroupRuleRequest&, const DescribeDBInstanceSecurityGroupRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceSecurityGroupRuleAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBInstanceTDEResult> DescribeDBInstanceTDEOutcome;
 			typedef std::future<DescribeDBInstanceTDEOutcome> DescribeDBInstanceTDEOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeDBInstanceTDERequest&, const DescribeDBInstanceTDEOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceTDEAsyncHandler;
@@ -1293,6 +1310,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDBInstanceSSLResult> ModifyDBInstanceSSLOutcome;
 			typedef std::future<ModifyDBInstanceSSLOutcome> ModifyDBInstanceSSLOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyDBInstanceSSLRequest&, const ModifyDBInstanceSSLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSSLAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDBInstanceSecurityGroupRuleResult> ModifyDBInstanceSecurityGroupRuleOutcome;
+			typedef std::future<ModifyDBInstanceSecurityGroupRuleOutcome> ModifyDBInstanceSecurityGroupRuleOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyDBInstanceSecurityGroupRuleRequest&, const ModifyDBInstanceSecurityGroupRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSecurityGroupRuleAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDBInstanceSpecResult> ModifyDBInstanceSpecOutcome;
 			typedef std::future<ModifyDBInstanceSpecOutcome> ModifyDBInstanceSpecOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyDBInstanceSpecRequest&, const ModifyDBInstanceSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSpecAsyncHandler;
@@ -1574,6 +1594,9 @@ namespace AlibabaCloud
 			CreateDBInstanceForRebuildOutcome createDBInstanceForRebuild(const Model::CreateDBInstanceForRebuildRequest &request)const;
 			void createDBInstanceForRebuildAsync(const Model::CreateDBInstanceForRebuildRequest& request, const CreateDBInstanceForRebuildAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDBInstanceForRebuildOutcomeCallable createDBInstanceForRebuildCallable(const Model::CreateDBInstanceForRebuildRequest& request) const;
+			CreateDBInstanceSecurityGroupRuleOutcome createDBInstanceSecurityGroupRule(const Model::CreateDBInstanceSecurityGroupRuleRequest &request)const;
+			void createDBInstanceSecurityGroupRuleAsync(const Model::CreateDBInstanceSecurityGroupRuleRequest& request, const CreateDBInstanceSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDBInstanceSecurityGroupRuleOutcomeCallable createDBInstanceSecurityGroupRuleCallable(const Model::CreateDBInstanceSecurityGroupRuleRequest& request) const;
 			CreateDBNodesOutcome createDBNodes(const Model::CreateDBNodesRequest &request)const;
 			void createDBNodesAsync(const Model::CreateDBNodesRequest& request, const CreateDBNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDBNodesOutcomeCallable createDBNodesCallable(const Model::CreateDBNodesRequest& request) const;
@@ -1649,6 +1672,9 @@ namespace AlibabaCloud
 			DeleteDBInstanceEndpointAddressOutcome deleteDBInstanceEndpointAddress(const Model::DeleteDBInstanceEndpointAddressRequest &request)const;
 			void deleteDBInstanceEndpointAddressAsync(const Model::DeleteDBInstanceEndpointAddressRequest& request, const DeleteDBInstanceEndpointAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDBInstanceEndpointAddressOutcomeCallable deleteDBInstanceEndpointAddressCallable(const Model::DeleteDBInstanceEndpointAddressRequest& request) const;
+			DeleteDBInstanceSecurityGroupRuleOutcome deleteDBInstanceSecurityGroupRule(const Model::DeleteDBInstanceSecurityGroupRuleRequest &request)const;
+			void deleteDBInstanceSecurityGroupRuleAsync(const Model::DeleteDBInstanceSecurityGroupRuleRequest& request, const DeleteDBInstanceSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDBInstanceSecurityGroupRuleOutcomeCallable deleteDBInstanceSecurityGroupRuleCallable(const Model::DeleteDBInstanceSecurityGroupRuleRequest& request) const;
 			DeleteDBNodesOutcome deleteDBNodes(const Model::DeleteDBNodesRequest &request)const;
 			void deleteDBNodesAsync(const Model::DeleteDBNodesRequest& request, const DeleteDBNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDBNodesOutcomeCallable deleteDBNodesCallable(const Model::DeleteDBNodesRequest& request) const;
@@ -1817,6 +1843,9 @@ namespace AlibabaCloud
 			DescribeDBInstanceSSLOutcome describeDBInstanceSSL(const Model::DescribeDBInstanceSSLRequest &request)const;
 			void describeDBInstanceSSLAsync(const Model::DescribeDBInstanceSSLRequest& request, const DescribeDBInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBInstanceSSLOutcomeCallable describeDBInstanceSSLCallable(const Model::DescribeDBInstanceSSLRequest& request) const;
+			DescribeDBInstanceSecurityGroupRuleOutcome describeDBInstanceSecurityGroupRule(const Model::DescribeDBInstanceSecurityGroupRuleRequest &request)const;
+			void describeDBInstanceSecurityGroupRuleAsync(const Model::DescribeDBInstanceSecurityGroupRuleRequest& request, const DescribeDBInstanceSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBInstanceSecurityGroupRuleOutcomeCallable describeDBInstanceSecurityGroupRuleCallable(const Model::DescribeDBInstanceSecurityGroupRuleRequest& request) const;
 			DescribeDBInstanceTDEOutcome describeDBInstanceTDE(const Model::DescribeDBInstanceTDERequest &request)const;
 			void describeDBInstanceTDEAsync(const Model::DescribeDBInstanceTDERequest& request, const DescribeDBInstanceTDEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBInstanceTDEOutcomeCallable describeDBInstanceTDECallable(const Model::DescribeDBInstanceTDERequest& request) const;
@@ -2174,6 +2203,9 @@ namespace AlibabaCloud
 			ModifyDBInstanceSSLOutcome modifyDBInstanceSSL(const Model::ModifyDBInstanceSSLRequest &request)const;
 			void modifyDBInstanceSSLAsync(const Model::ModifyDBInstanceSSLRequest& request, const ModifyDBInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBInstanceSSLOutcomeCallable modifyDBInstanceSSLCallable(const Model::ModifyDBInstanceSSLRequest& request) const;
+			ModifyDBInstanceSecurityGroupRuleOutcome modifyDBInstanceSecurityGroupRule(const Model::ModifyDBInstanceSecurityGroupRuleRequest &request)const;
+			void modifyDBInstanceSecurityGroupRuleAsync(const Model::ModifyDBInstanceSecurityGroupRuleRequest& request, const ModifyDBInstanceSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDBInstanceSecurityGroupRuleOutcomeCallable modifyDBInstanceSecurityGroupRuleCallable(const Model::ModifyDBInstanceSecurityGroupRuleRequest& request) const;
 			ModifyDBInstanceSpecOutcome modifyDBInstanceSpec(const Model::ModifyDBInstanceSpecRequest &request)const;
 			void modifyDBInstanceSpecAsync(const Model::ModifyDBInstanceSpecRequest& request, const ModifyDBInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBInstanceSpecOutcomeCallable modifyDBInstanceSpecCallable(const Model::ModifyDBInstanceSpecRequest& request) const;

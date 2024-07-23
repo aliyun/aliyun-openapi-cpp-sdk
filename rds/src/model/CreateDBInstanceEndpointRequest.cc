@@ -70,6 +70,15 @@ void CreateDBInstanceEndpointRequest::setResourceGroupId(const std::string &reso
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string CreateDBInstanceEndpointRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateDBInstanceEndpointRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateDBInstanceEndpointRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

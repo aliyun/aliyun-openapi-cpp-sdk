@@ -52,6 +52,15 @@ void CreateTempDBInstanceRequest::setResourceGroupId(const std::string &resource
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string CreateTempDBInstanceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateTempDBInstanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateTempDBInstanceRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

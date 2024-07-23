@@ -61,6 +61,15 @@ void CancelImportRequest::setImportId(int importId) {
   setParameter(std::string("ImportId"), std::to_string(importId));
 }
 
+std::string CancelImportRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CancelImportRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CancelImportRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

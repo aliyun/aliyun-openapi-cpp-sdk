@@ -43,6 +43,15 @@ void ModifyDBInstanceHAConfigRequest::setAccessKeyId(const std::string &accessKe
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBInstanceHAConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDBInstanceHAConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyDBInstanceHAConfigRequest::getDbInstanceId() const {
   return dbInstanceId_;
 }

@@ -70,6 +70,15 @@ void DescribeMigrateTasksRequest::setResourceGroupId(const std::string &resource
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribeMigrateTasksRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeMigrateTasksRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeMigrateTasksRequest::getPageSize() const {
   return pageSize_;
 }

@@ -34,15 +34,6 @@ void DescribeDBInstanceDetailRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeDBInstanceDetailRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DescribeDBInstanceDetailRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
 std::string DescribeDBInstanceDetailRequest::getClientToken() const {
   return clientToken_;
 }
@@ -50,15 +41,6 @@ std::string DescribeDBInstanceDetailRequest::getClientToken() const {
 void DescribeDBInstanceDetailRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
   setParameter(std::string("ClientToken"), clientToken);
-}
-
-long DescribeDBInstanceDetailRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeDBInstanceDetailRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
 std::string DescribeDBInstanceDetailRequest::getAccessKeyId() const {
@@ -79,6 +61,15 @@ void DescribeDBInstanceDetailRequest::setResourceGroupId(const std::string &reso
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribeDBInstanceDetailRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDBInstanceDetailRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeDBInstanceDetailRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }
@@ -86,5 +77,23 @@ std::string DescribeDBInstanceDetailRequest::getDBInstanceId() const {
 void DescribeDBInstanceDetailRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string DescribeDBInstanceDetailRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeDBInstanceDetailRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long DescribeDBInstanceDetailRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeDBInstanceDetailRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

@@ -79,3 +79,12 @@ void DescribeDBInstanceMetricsRequest::setResourceGroupId(const std::string &res
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribeDBInstanceMetricsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDBInstanceMetricsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+

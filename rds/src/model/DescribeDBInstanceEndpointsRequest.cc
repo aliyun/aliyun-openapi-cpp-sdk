@@ -61,6 +61,15 @@ void DescribeDBInstanceEndpointsRequest::setDBInstanceEndpointId(const std::stri
   setParameter(std::string("DBInstanceEndpointId"), dBInstanceEndpointId);
 }
 
+std::string DescribeDBInstanceEndpointsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDBInstanceEndpointsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeDBInstanceEndpointsRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

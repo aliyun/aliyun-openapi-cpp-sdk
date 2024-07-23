@@ -61,6 +61,15 @@ void DescribeDatabasesRequest::setResourceGroupId(const std::string &resourceGro
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribeDatabasesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDatabasesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeDatabasesRequest::getDBStatus() const {
   return dBStatus_;
 }

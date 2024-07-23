@@ -61,6 +61,15 @@ void DeletePostgresExtensionsRequest::setResourceGroupId(const std::string &reso
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DeletePostgresExtensionsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeletePostgresExtensionsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeletePostgresExtensionsRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

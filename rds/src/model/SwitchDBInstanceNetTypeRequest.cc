@@ -61,6 +61,15 @@ void SwitchDBInstanceNetTypeRequest::setAccessKeyId(const std::string &accessKey
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string SwitchDBInstanceNetTypeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void SwitchDBInstanceNetTypeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string SwitchDBInstanceNetTypeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -44,6 +44,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getDatabase() const;
 	void setDatabase(const std::string &database);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getDBInstanceId() const;
@@ -71,6 +73,7 @@ private:
 	int pageNumber_;
 	std::string accessKeyId_;
 	std::string database_;
+	std::string regionId_;
 	int pageSize_;
 	std::string dBInstanceId_;
 	long sQLId_;

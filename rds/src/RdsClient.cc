@@ -987,6 +987,42 @@ RdsClient::CreateDBInstanceForRebuildOutcomeCallable RdsClient::createDBInstance
 	return task->get_future();
 }
 
+RdsClient::CreateDBInstanceSecurityGroupRuleOutcome RdsClient::createDBInstanceSecurityGroupRule(const CreateDBInstanceSecurityGroupRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDBInstanceSecurityGroupRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDBInstanceSecurityGroupRuleOutcome(CreateDBInstanceSecurityGroupRuleResult(outcome.result()));
+	else
+		return CreateDBInstanceSecurityGroupRuleOutcome(outcome.error());
+}
+
+void RdsClient::createDBInstanceSecurityGroupRuleAsync(const CreateDBInstanceSecurityGroupRuleRequest& request, const CreateDBInstanceSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDBInstanceSecurityGroupRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::CreateDBInstanceSecurityGroupRuleOutcomeCallable RdsClient::createDBInstanceSecurityGroupRuleCallable(const CreateDBInstanceSecurityGroupRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDBInstanceSecurityGroupRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->createDBInstanceSecurityGroupRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::CreateDBNodesOutcome RdsClient::createDBNodes(const CreateDBNodesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1881,6 +1917,42 @@ RdsClient::DeleteDBInstanceEndpointAddressOutcomeCallable RdsClient::deleteDBIns
 			[this, request]()
 			{
 			return this->deleteDBInstanceEndpointAddress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DeleteDBInstanceSecurityGroupRuleOutcome RdsClient::deleteDBInstanceSecurityGroupRule(const DeleteDBInstanceSecurityGroupRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDBInstanceSecurityGroupRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDBInstanceSecurityGroupRuleOutcome(DeleteDBInstanceSecurityGroupRuleResult(outcome.result()));
+	else
+		return DeleteDBInstanceSecurityGroupRuleOutcome(outcome.error());
+}
+
+void RdsClient::deleteDBInstanceSecurityGroupRuleAsync(const DeleteDBInstanceSecurityGroupRuleRequest& request, const DeleteDBInstanceSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDBInstanceSecurityGroupRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DeleteDBInstanceSecurityGroupRuleOutcomeCallable RdsClient::deleteDBInstanceSecurityGroupRuleCallable(const DeleteDBInstanceSecurityGroupRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDBInstanceSecurityGroupRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDBInstanceSecurityGroupRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3897,6 +3969,42 @@ RdsClient::DescribeDBInstanceSSLOutcomeCallable RdsClient::describeDBInstanceSSL
 			[this, request]()
 			{
 			return this->describeDBInstanceSSL(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeDBInstanceSecurityGroupRuleOutcome RdsClient::describeDBInstanceSecurityGroupRule(const DescribeDBInstanceSecurityGroupRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBInstanceSecurityGroupRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBInstanceSecurityGroupRuleOutcome(DescribeDBInstanceSecurityGroupRuleResult(outcome.result()));
+	else
+		return DescribeDBInstanceSecurityGroupRuleOutcome(outcome.error());
+}
+
+void RdsClient::describeDBInstanceSecurityGroupRuleAsync(const DescribeDBInstanceSecurityGroupRuleRequest& request, const DescribeDBInstanceSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBInstanceSecurityGroupRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeDBInstanceSecurityGroupRuleOutcomeCallable RdsClient::describeDBInstanceSecurityGroupRuleCallable(const DescribeDBInstanceSecurityGroupRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceSecurityGroupRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBInstanceSecurityGroupRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8181,6 +8289,42 @@ RdsClient::ModifyDBInstanceSSLOutcomeCallable RdsClient::modifyDBInstanceSSLCall
 			[this, request]()
 			{
 			return this->modifyDBInstanceSSL(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ModifyDBInstanceSecurityGroupRuleOutcome RdsClient::modifyDBInstanceSecurityGroupRule(const ModifyDBInstanceSecurityGroupRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDBInstanceSecurityGroupRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDBInstanceSecurityGroupRuleOutcome(ModifyDBInstanceSecurityGroupRuleResult(outcome.result()));
+	else
+		return ModifyDBInstanceSecurityGroupRuleOutcome(outcome.error());
+}
+
+void RdsClient::modifyDBInstanceSecurityGroupRuleAsync(const ModifyDBInstanceSecurityGroupRuleRequest& request, const ModifyDBInstanceSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDBInstanceSecurityGroupRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyDBInstanceSecurityGroupRuleOutcomeCallable RdsClient::modifyDBInstanceSecurityGroupRuleCallable(const ModifyDBInstanceSecurityGroupRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDBInstanceSecurityGroupRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDBInstanceSecurityGroupRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

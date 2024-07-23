@@ -70,6 +70,15 @@ void RestartDBInstanceRequest::setEffectiveTime(const std::string &effectiveTime
   setParameter(std::string("EffectiveTime"), effectiveTime);
 }
 
+std::string RestartDBInstanceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void RestartDBInstanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string RestartDBInstanceRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

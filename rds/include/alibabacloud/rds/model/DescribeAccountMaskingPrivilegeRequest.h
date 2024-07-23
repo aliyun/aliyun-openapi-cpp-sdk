@@ -38,6 +38,8 @@ public:
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getUserName() const;
 	void setUserName(const std::string &userName);
 
@@ -46,6 +48,7 @@ private:
 	long resourceOwnerId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerId_;
+	std::string regionId_;
 	std::string userName_;
 };
 } // namespace Model

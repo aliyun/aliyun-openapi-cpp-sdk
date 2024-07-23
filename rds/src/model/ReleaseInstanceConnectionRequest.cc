@@ -43,6 +43,15 @@ void ReleaseInstanceConnectionRequest::setAccessKeyId(const std::string &accessK
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ReleaseInstanceConnectionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ReleaseInstanceConnectionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ReleaseInstanceConnectionRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -61,6 +61,15 @@ void AllocateReadWriteSplittingConnectionRequest::setDistributionType(const std:
   setParameter(std::string("DistributionType"), distributionType);
 }
 
+std::string AllocateReadWriteSplittingConnectionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AllocateReadWriteSplittingConnectionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string AllocateReadWriteSplittingConnectionRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

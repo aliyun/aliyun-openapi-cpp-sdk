@@ -70,6 +70,15 @@ void AllocateInstancePublicConnectionRequest::setAccessKeyId(const std::string &
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string AllocateInstancePublicConnectionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AllocateInstancePublicConnectionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string AllocateInstancePublicConnectionRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

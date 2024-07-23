@@ -40,6 +40,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSwitchTimeMode() const;
 	void setSwitchTimeMode(const std::string &switchTimeMode);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getSwitchTime() const;
 	void setSwitchTime(const std::string &switchTime);
 	std::string getResourceOwnerAccount() const;
@@ -53,6 +55,7 @@ private:
 	std::string forceSwitch_;
 	std::string accessKeyId_;
 	std::string switchTimeMode_;
+	std::string regionId_;
 	std::string switchTime_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;

@@ -52,6 +52,33 @@ void ModifyDBInstanceMetricsRequest::setMetricsConfig(const std::string &metrics
   setParameter(std::string("MetricsConfig"), metricsConfig);
 }
 
+std::string ModifyDBInstanceMetricsRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void ModifyDBInstanceMetricsRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string ModifyDBInstanceMetricsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDBInstanceMetricsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string ModifyDBInstanceMetricsRequest::getScope() const {
+  return scope_;
+}
+
+void ModifyDBInstanceMetricsRequest::setScope(const std::string &scope) {
+  scope_ = scope;
+  setParameter(std::string("Scope"), scope);
+}
+
 std::string ModifyDBInstanceMetricsRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -68,23 +95,5 @@ long ModifyDBInstanceMetricsRequest::getOwnerId() const {
 void ModifyDBInstanceMetricsRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string ModifyDBInstanceMetricsRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void ModifyDBInstanceMetricsRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string ModifyDBInstanceMetricsRequest::getScope() const {
-  return scope_;
-}
-
-void ModifyDBInstanceMetricsRequest::setScope(const std::string &scope) {
-  scope_ = scope;
-  setParameter(std::string("Scope"), scope);
 }
 

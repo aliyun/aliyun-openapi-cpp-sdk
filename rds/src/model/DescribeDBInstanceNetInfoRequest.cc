@@ -70,6 +70,15 @@ void DescribeDBInstanceNetInfoRequest::setAccessKeyId(const std::string &accessK
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDBInstanceNetInfoRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDBInstanceNetInfoRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeDBInstanceNetInfoRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -40,6 +40,8 @@ public:
 	void setRestartMethod(const std::string &restartMethod);
 	std::string getEffectiveTime() const;
 	void setEffectiveTime(const std::string &effectiveTime);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getSwitchTime() const;
@@ -59,6 +61,7 @@ private:
 	std::string accessKeyId_;
 	std::string restartMethod_;
 	std::string effectiveTime_;
+	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string switchTime_;
 	std::string nodeId_;

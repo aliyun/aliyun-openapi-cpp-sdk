@@ -79,6 +79,15 @@ void CreatePostgresExtensionsRequest::setAccountName(const std::string &accountN
   setParameter(std::string("AccountName"), accountName);
 }
 
+std::string CreatePostgresExtensionsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreatePostgresExtensionsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreatePostgresExtensionsRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -34,6 +34,33 @@ void ReleaseInstancePublicConnectionRequest::setResourceOwnerId(long resourceOwn
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ReleaseInstancePublicConnectionRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void ReleaseInstancePublicConnectionRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string ReleaseInstancePublicConnectionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ReleaseInstancePublicConnectionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string ReleaseInstancePublicConnectionRequest::getDBInstanceId() const {
+  return dBInstanceId_;
+}
+
+void ReleaseInstancePublicConnectionRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
 std::string ReleaseInstancePublicConnectionRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -68,23 +95,5 @@ std::string ReleaseInstancePublicConnectionRequest::getCurrentConnectionString()
 void ReleaseInstancePublicConnectionRequest::setCurrentConnectionString(const std::string &currentConnectionString) {
   currentConnectionString_ = currentConnectionString;
   setParameter(std::string("CurrentConnectionString"), currentConnectionString);
-}
-
-std::string ReleaseInstancePublicConnectionRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void ReleaseInstancePublicConnectionRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string ReleaseInstancePublicConnectionRequest::getDBInstanceId() const {
-  return dBInstanceId_;
-}
-
-void ReleaseInstancePublicConnectionRequest::setDBInstanceId(const std::string &dBInstanceId) {
-  dBInstanceId_ = dBInstanceId;
-  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 

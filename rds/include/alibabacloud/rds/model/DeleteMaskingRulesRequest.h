@@ -40,6 +40,8 @@ public:
 	void setRuleName(const std::string &ruleName);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 
 private:
 	std::string dBInstanceName_;
@@ -47,6 +49,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ruleName_;
 	std::string ownerId_;
+	std::string regionId_;
 };
 } // namespace Model
 } // namespace Rds

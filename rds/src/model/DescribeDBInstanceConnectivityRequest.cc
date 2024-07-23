@@ -70,6 +70,15 @@ void DescribeDBInstanceConnectivityRequest::setSecurityToken(const std::string &
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+std::string DescribeDBInstanceConnectivityRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDBInstanceConnectivityRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeDBInstanceConnectivityRequest::getSourceIpAddress() const {
   return sourceIpAddress_;
 }

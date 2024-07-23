@@ -36,6 +36,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getRestoreTime() const;
@@ -53,6 +55,7 @@ private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
+	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string restoreTime_;
 	std::string resourceOwnerAccount_;

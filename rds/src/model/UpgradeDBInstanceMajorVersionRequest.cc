@@ -106,6 +106,15 @@ void UpgradeDBInstanceMajorVersionRequest::setResourceGroupId(const std::string 
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string UpgradeDBInstanceMajorVersionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpgradeDBInstanceMajorVersionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string UpgradeDBInstanceMajorVersionRequest::getCollectStatMode() const {
   return collectStatMode_;
 }

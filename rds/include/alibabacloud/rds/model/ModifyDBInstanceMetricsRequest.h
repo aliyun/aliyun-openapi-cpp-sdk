@@ -36,23 +36,26 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getMetricsConfig() const;
 	void setMetricsConfig(const std::string &metricsConfig);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getScope() const;
+	void setScope(const std::string &scope);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getScope() const;
-	void setScope(const std::string &scope);
 
 private:
 	std::string dBInstanceName_;
 	long resourceOwnerId_;
 	std::string metricsConfig_;
+	std::string accessKeyId_;
+	std::string regionId_;
+	std::string scope_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;
-	std::string accessKeyId_;
-	std::string scope_;
 };
 } // namespace Model
 } // namespace Rds

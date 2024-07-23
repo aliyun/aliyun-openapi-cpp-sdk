@@ -34,6 +34,42 @@ void DescribeDBInstanceIPArrayListRequest::setResourceOwnerId(long resourceOwner
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeDBInstanceIPArrayListRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DescribeDBInstanceIPArrayListRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DescribeDBInstanceIPArrayListRequest::getWhitelistNetworkType() const {
+  return whitelistNetworkType_;
+}
+
+void DescribeDBInstanceIPArrayListRequest::setWhitelistNetworkType(const std::string &whitelistNetworkType) {
+  whitelistNetworkType_ = whitelistNetworkType;
+  setParameter(std::string("WhitelistNetworkType"), whitelistNetworkType);
+}
+
+std::string DescribeDBInstanceIPArrayListRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDBInstanceIPArrayListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeDBInstanceIPArrayListRequest::getDBInstanceId() const {
+  return dBInstanceId_;
+}
+
+void DescribeDBInstanceIPArrayListRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
 std::string DescribeDBInstanceIPArrayListRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -59,32 +95,5 @@ long DescribeDBInstanceIPArrayListRequest::getOwnerId() const {
 void DescribeDBInstanceIPArrayListRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string DescribeDBInstanceIPArrayListRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DescribeDBInstanceIPArrayListRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DescribeDBInstanceIPArrayListRequest::getWhitelistNetworkType() const {
-  return whitelistNetworkType_;
-}
-
-void DescribeDBInstanceIPArrayListRequest::setWhitelistNetworkType(const std::string &whitelistNetworkType) {
-  whitelistNetworkType_ = whitelistNetworkType;
-  setParameter(std::string("WhitelistNetworkType"), whitelistNetworkType);
-}
-
-std::string DescribeDBInstanceIPArrayListRequest::getDBInstanceId() const {
-  return dBInstanceId_;
-}
-
-void DescribeDBInstanceIPArrayListRequest::setDBInstanceId(const std::string &dBInstanceId) {
-  dBInstanceId_ = dBInstanceId;
-  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 

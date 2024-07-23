@@ -61,6 +61,15 @@ void DescribePGHbaConfigRequest::setResourceGroupId(const std::string &resourceG
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribePGHbaConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribePGHbaConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribePGHbaConfigRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -52,6 +52,15 @@ void DescribeSupportOnlineResizeDiskRequest::setResourceGroupId(const std::strin
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribeSupportOnlineResizeDiskRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeSupportOnlineResizeDiskRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeSupportOnlineResizeDiskRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

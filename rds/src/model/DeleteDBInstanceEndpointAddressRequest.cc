@@ -70,6 +70,15 @@ void DeleteDBInstanceEndpointAddressRequest::setDBInstanceEndpointId(const std::
   setBodyParameter(std::string("DBInstanceEndpointId"), dBInstanceEndpointId);
 }
 
+std::string DeleteDBInstanceEndpointAddressRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteDBInstanceEndpointAddressRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteDBInstanceEndpointAddressRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

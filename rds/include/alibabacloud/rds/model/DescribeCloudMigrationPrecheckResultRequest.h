@@ -42,6 +42,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	long getSourcePort() const;
 	void setSourcePort(long sourcePort);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	long getPageSize() const;
 	void setPageSize(long pageSize);
 	long getTaskId() const;
@@ -60,6 +62,7 @@ private:
 	long pageNumber_;
 	std::string accessKeyId_;
 	long sourcePort_;
+	std::string regionId_;
 	long pageSize_;
 	long taskId_;
 	std::string sourceIpAddress_;

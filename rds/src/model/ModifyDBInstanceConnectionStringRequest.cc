@@ -70,6 +70,15 @@ void ModifyDBInstanceConnectionStringRequest::setAccessKeyId(const std::string &
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBInstanceConnectionStringRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyDBInstanceConnectionStringRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyDBInstanceConnectionStringRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

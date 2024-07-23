@@ -97,6 +97,15 @@ void DescibeImportsFromDatabaseRequest::setEngine(const std::string &engine) {
   setParameter(std::string("Engine"), engine);
 }
 
+std::string DescibeImportsFromDatabaseRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescibeImportsFromDatabaseRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescibeImportsFromDatabaseRequest::getPageSize() const {
   return pageSize_;
 }

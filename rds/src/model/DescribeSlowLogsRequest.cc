@@ -70,6 +70,15 @@ void DescribeSlowLogsRequest::setSortKey(const std::string &sortKey) {
   setParameter(std::string("SortKey"), sortKey);
 }
 
+std::string DescribeSlowLogsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeSlowLogsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeSlowLogsRequest::getPageSize() const {
   return pageSize_;
 }

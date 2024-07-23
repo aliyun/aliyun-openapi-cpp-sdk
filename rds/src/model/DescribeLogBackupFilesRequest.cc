@@ -61,6 +61,15 @@ void DescribeLogBackupFilesRequest::setAccessKeyId(const std::string &accessKeyI
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeLogBackupFilesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLogBackupFilesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeLogBackupFilesRequest::getPageSize() const {
   return pageSize_;
 }

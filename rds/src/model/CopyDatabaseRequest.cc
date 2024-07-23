@@ -52,6 +52,15 @@ void CopyDatabaseRequest::setResourceGroupId(const std::string &resourceGroupId)
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string CopyDatabaseRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CopyDatabaseRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CopyDatabaseRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

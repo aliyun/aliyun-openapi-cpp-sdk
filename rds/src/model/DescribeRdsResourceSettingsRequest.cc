@@ -70,3 +70,12 @@ void DescribeRdsResourceSettingsRequest::setAccessKeyId(const std::string &acces
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeRdsResourceSettingsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeRdsResourceSettingsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
