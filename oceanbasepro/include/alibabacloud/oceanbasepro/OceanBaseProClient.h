@@ -160,6 +160,8 @@
 #include "model/DescribeSQLPlansResult.h"
 #include "model/DescribeSQLSamplesRequest.h"
 #include "model/DescribeSQLSamplesResult.h"
+#include "model/DescribeSQLTuningAdvicesRequest.h"
+#include "model/DescribeSQLTuningAdvicesResult.h"
 #include "model/DescribeSampleSqlRawTextsRequest.h"
 #include "model/DescribeSampleSqlRawTextsResult.h"
 #include "model/DescribeSecurityIpGroupsRequest.h"
@@ -496,6 +498,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSQLSamplesResult> DescribeSQLSamplesOutcome;
 			typedef std::future<DescribeSQLSamplesOutcome> DescribeSQLSamplesOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeSQLSamplesRequest&, const DescribeSQLSamplesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLSamplesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSQLTuningAdvicesResult> DescribeSQLTuningAdvicesOutcome;
+			typedef std::future<DescribeSQLTuningAdvicesOutcome> DescribeSQLTuningAdvicesOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeSQLTuningAdvicesRequest&, const DescribeSQLTuningAdvicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLTuningAdvicesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSampleSqlRawTextsResult> DescribeSampleSqlRawTextsOutcome;
 			typedef std::future<DescribeSampleSqlRawTextsOutcome> DescribeSampleSqlRawTextsOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeSampleSqlRawTextsRequest&, const DescribeSampleSqlRawTextsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSampleSqlRawTextsAsyncHandler;
@@ -888,6 +893,9 @@ namespace AlibabaCloud
 			DescribeSQLSamplesOutcome describeSQLSamples(const Model::DescribeSQLSamplesRequest &request)const;
 			void describeSQLSamplesAsync(const Model::DescribeSQLSamplesRequest& request, const DescribeSQLSamplesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSQLSamplesOutcomeCallable describeSQLSamplesCallable(const Model::DescribeSQLSamplesRequest& request) const;
+			DescribeSQLTuningAdvicesOutcome describeSQLTuningAdvices(const Model::DescribeSQLTuningAdvicesRequest &request)const;
+			void describeSQLTuningAdvicesAsync(const Model::DescribeSQLTuningAdvicesRequest& request, const DescribeSQLTuningAdvicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSQLTuningAdvicesOutcomeCallable describeSQLTuningAdvicesCallable(const Model::DescribeSQLTuningAdvicesRequest& request) const;
 			DescribeSampleSqlRawTextsOutcome describeSampleSqlRawTexts(const Model::DescribeSampleSqlRawTextsRequest &request)const;
 			void describeSampleSqlRawTextsAsync(const Model::DescribeSampleSqlRawTextsRequest& request, const DescribeSampleSqlRawTextsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSampleSqlRawTextsOutcomeCallable describeSampleSqlRawTextsCallable(const Model::DescribeSampleSqlRawTextsRequest& request) const;

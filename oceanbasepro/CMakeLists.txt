@@ -159,6 +159,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeSQLPlansResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeSQLSamplesRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeSQLSamplesResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeSQLTuningAdvicesRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeSQLTuningAdvicesResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeSampleSqlRawTextsRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeSampleSqlRawTextsResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeSecurityIpGroupsRequest.h
@@ -420,6 +422,8 @@ set(oceanbasepro_src
 	src/model/DescribeSQLPlansResult.cc
 	src/model/DescribeSQLSamplesRequest.cc
 	src/model/DescribeSQLSamplesResult.cc
+	src/model/DescribeSQLTuningAdvicesRequest.cc
+	src/model/DescribeSQLTuningAdvicesResult.cc
 	src/model/DescribeSampleSqlRawTextsRequest.cc
 	src/model/DescribeSampleSqlRawTextsResult.cc
 	src/model/DescribeSecurityIpGroupsRequest.cc

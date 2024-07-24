@@ -2535,6 +2535,42 @@ OceanBaseProClient::DescribeSQLSamplesOutcomeCallable OceanBaseProClient::descri
 	return task->get_future();
 }
 
+OceanBaseProClient::DescribeSQLTuningAdvicesOutcome OceanBaseProClient::describeSQLTuningAdvices(const DescribeSQLTuningAdvicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSQLTuningAdvicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSQLTuningAdvicesOutcome(DescribeSQLTuningAdvicesResult(outcome.result()));
+	else
+		return DescribeSQLTuningAdvicesOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeSQLTuningAdvicesAsync(const DescribeSQLTuningAdvicesRequest& request, const DescribeSQLTuningAdvicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSQLTuningAdvices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeSQLTuningAdvicesOutcomeCallable OceanBaseProClient::describeSQLTuningAdvicesCallable(const DescribeSQLTuningAdvicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSQLTuningAdvicesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSQLTuningAdvices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::DescribeSampleSqlRawTextsOutcome OceanBaseProClient::describeSampleSqlRawTexts(const DescribeSampleSqlRawTextsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
