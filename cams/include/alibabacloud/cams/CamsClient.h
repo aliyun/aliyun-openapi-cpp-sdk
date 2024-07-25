@@ -74,6 +74,8 @@
 #include "model/GetChatappVerifyCodeResult.h"
 #include "model/GetCommerceSettingRequest.h"
 #include "model/GetCommerceSettingResult.h"
+#include "model/GetConversationalAutomationRequest.h"
+#include "model/GetConversationalAutomationResult.h"
 #include "model/GetFlowRequest.h"
 #include "model/GetFlowResult.h"
 #include "model/GetFlowJSONAssestRequest.h"
@@ -92,6 +94,8 @@
 #include "model/GetPreValidatePhoneIdResult.h"
 #include "model/GetWhatsappConnectionCatalogRequest.h"
 #include "model/GetWhatsappConnectionCatalogResult.h"
+#include "model/GetWhatsappHealthStatusRequest.h"
+#include "model/GetWhatsappHealthStatusResult.h"
 #include "model/IsvGetAppIdRequest.h"
 #include "model/IsvGetAppIdResult.h"
 #include "model/ListChatappTemplateRequest.h"
@@ -130,6 +134,8 @@
 #include "model/UpdateAccountWebhookResult.h"
 #include "model/UpdateCommerceSettingRequest.h"
 #include "model/UpdateCommerceSettingResult.h"
+#include "model/UpdateConversationalAutomationRequest.h"
+#include "model/UpdateConversationalAutomationResult.h"
 #include "model/UpdateFlowJSONAssetRequest.h"
 #include "model/UpdateFlowJSONAssetResult.h"
 #include "model/UpdatePhoneEncryptionPublicKeyRequest.h"
@@ -225,6 +231,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetCommerceSettingResult> GetCommerceSettingOutcome;
 			typedef std::future<GetCommerceSettingOutcome> GetCommerceSettingOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::GetCommerceSettingRequest&, const GetCommerceSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCommerceSettingAsyncHandler;
+			typedef Outcome<Error, Model::GetConversationalAutomationResult> GetConversationalAutomationOutcome;
+			typedef std::future<GetConversationalAutomationOutcome> GetConversationalAutomationOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::GetConversationalAutomationRequest&, const GetConversationalAutomationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetConversationalAutomationAsyncHandler;
 			typedef Outcome<Error, Model::GetFlowResult> GetFlowOutcome;
 			typedef std::future<GetFlowOutcome> GetFlowOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::GetFlowRequest&, const GetFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowAsyncHandler;
@@ -252,6 +261,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetWhatsappConnectionCatalogResult> GetWhatsappConnectionCatalogOutcome;
 			typedef std::future<GetWhatsappConnectionCatalogOutcome> GetWhatsappConnectionCatalogOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::GetWhatsappConnectionCatalogRequest&, const GetWhatsappConnectionCatalogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWhatsappConnectionCatalogAsyncHandler;
+			typedef Outcome<Error, Model::GetWhatsappHealthStatusResult> GetWhatsappHealthStatusOutcome;
+			typedef std::future<GetWhatsappHealthStatusOutcome> GetWhatsappHealthStatusOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::GetWhatsappHealthStatusRequest&, const GetWhatsappHealthStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWhatsappHealthStatusAsyncHandler;
 			typedef Outcome<Error, Model::IsvGetAppIdResult> IsvGetAppIdOutcome;
 			typedef std::future<IsvGetAppIdOutcome> IsvGetAppIdOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::IsvGetAppIdRequest&, const IsvGetAppIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> IsvGetAppIdAsyncHandler;
@@ -309,6 +321,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateCommerceSettingResult> UpdateCommerceSettingOutcome;
 			typedef std::future<UpdateCommerceSettingOutcome> UpdateCommerceSettingOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::UpdateCommerceSettingRequest&, const UpdateCommerceSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCommerceSettingAsyncHandler;
+			typedef Outcome<Error, Model::UpdateConversationalAutomationResult> UpdateConversationalAutomationOutcome;
+			typedef std::future<UpdateConversationalAutomationOutcome> UpdateConversationalAutomationOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::UpdateConversationalAutomationRequest&, const UpdateConversationalAutomationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateConversationalAutomationAsyncHandler;
 			typedef Outcome<Error, Model::UpdateFlowJSONAssetResult> UpdateFlowJSONAssetOutcome;
 			typedef std::future<UpdateFlowJSONAssetOutcome> UpdateFlowJSONAssetOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::UpdateFlowJSONAssetRequest&, const UpdateFlowJSONAssetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFlowJSONAssetAsyncHandler;
@@ -404,6 +419,9 @@ namespace AlibabaCloud
 			GetCommerceSettingOutcome getCommerceSetting(const Model::GetCommerceSettingRequest &request)const;
 			void getCommerceSettingAsync(const Model::GetCommerceSettingRequest& request, const GetCommerceSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCommerceSettingOutcomeCallable getCommerceSettingCallable(const Model::GetCommerceSettingRequest& request) const;
+			GetConversationalAutomationOutcome getConversationalAutomation(const Model::GetConversationalAutomationRequest &request)const;
+			void getConversationalAutomationAsync(const Model::GetConversationalAutomationRequest& request, const GetConversationalAutomationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetConversationalAutomationOutcomeCallable getConversationalAutomationCallable(const Model::GetConversationalAutomationRequest& request) const;
 			GetFlowOutcome getFlow(const Model::GetFlowRequest &request)const;
 			void getFlowAsync(const Model::GetFlowRequest& request, const GetFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetFlowOutcomeCallable getFlowCallable(const Model::GetFlowRequest& request) const;
@@ -431,6 +449,9 @@ namespace AlibabaCloud
 			GetWhatsappConnectionCatalogOutcome getWhatsappConnectionCatalog(const Model::GetWhatsappConnectionCatalogRequest &request)const;
 			void getWhatsappConnectionCatalogAsync(const Model::GetWhatsappConnectionCatalogRequest& request, const GetWhatsappConnectionCatalogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetWhatsappConnectionCatalogOutcomeCallable getWhatsappConnectionCatalogCallable(const Model::GetWhatsappConnectionCatalogRequest& request) const;
+			GetWhatsappHealthStatusOutcome getWhatsappHealthStatus(const Model::GetWhatsappHealthStatusRequest &request)const;
+			void getWhatsappHealthStatusAsync(const Model::GetWhatsappHealthStatusRequest& request, const GetWhatsappHealthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetWhatsappHealthStatusOutcomeCallable getWhatsappHealthStatusCallable(const Model::GetWhatsappHealthStatusRequest& request) const;
 			IsvGetAppIdOutcome isvGetAppId(const Model::IsvGetAppIdRequest &request)const;
 			void isvGetAppIdAsync(const Model::IsvGetAppIdRequest& request, const IsvGetAppIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			IsvGetAppIdOutcomeCallable isvGetAppIdCallable(const Model::IsvGetAppIdRequest& request) const;
@@ -488,6 +509,9 @@ namespace AlibabaCloud
 			UpdateCommerceSettingOutcome updateCommerceSetting(const Model::UpdateCommerceSettingRequest &request)const;
 			void updateCommerceSettingAsync(const Model::UpdateCommerceSettingRequest& request, const UpdateCommerceSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateCommerceSettingOutcomeCallable updateCommerceSettingCallable(const Model::UpdateCommerceSettingRequest& request) const;
+			UpdateConversationalAutomationOutcome updateConversationalAutomation(const Model::UpdateConversationalAutomationRequest &request)const;
+			void updateConversationalAutomationAsync(const Model::UpdateConversationalAutomationRequest& request, const UpdateConversationalAutomationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateConversationalAutomationOutcomeCallable updateConversationalAutomationCallable(const Model::UpdateConversationalAutomationRequest& request) const;
 			UpdateFlowJSONAssetOutcome updateFlowJSONAsset(const Model::UpdateFlowJSONAssetRequest &request)const;
 			void updateFlowJSONAssetAsync(const Model::UpdateFlowJSONAssetRequest& request, const UpdateFlowJSONAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateFlowJSONAssetOutcomeCallable updateFlowJSONAssetCallable(const Model::UpdateFlowJSONAssetRequest& request) const;

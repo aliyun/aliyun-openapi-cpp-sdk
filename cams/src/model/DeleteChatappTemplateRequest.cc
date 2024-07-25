@@ -25,6 +25,15 @@ DeleteChatappTemplateRequest::DeleteChatappTemplateRequest()
 
 DeleteChatappTemplateRequest::~DeleteChatappTemplateRequest() {}
 
+long DeleteChatappTemplateRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
+}
+
+void DeleteChatappTemplateRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
 std::string DeleteChatappTemplateRequest::getCustWabaId() const {
   return custWabaId_;
 }
@@ -43,13 +52,40 @@ void DeleteChatappTemplateRequest::setLanguage(const std::string &language) {
   setParameter(std::string("Language"), language);
 }
 
-std::string DeleteChatappTemplateRequest::getApiCode() const {
-  return apiCode_;
+std::string DeleteChatappTemplateRequest::getLowcodeTenantId() const {
+  return lowcodeTenantId_;
 }
 
-void DeleteChatappTemplateRequest::setApiCode(const std::string &apiCode) {
-  apiCode_ = apiCode;
-  setParameter(std::string("ApiCode"), apiCode);
+void DeleteChatappTemplateRequest::setLowcodeTenantId(const std::string &lowcodeTenantId) {
+  lowcodeTenantId_ = lowcodeTenantId;
+  setParameter(std::string("LowcodeTenantId"), lowcodeTenantId);
+}
+
+std::string DeleteChatappTemplateRequest::getExtendFunction() const {
+  return extendFunction_;
+}
+
+void DeleteChatappTemplateRequest::setExtendFunction(const std::string &extendFunction) {
+  extendFunction_ = extendFunction;
+  setParameter(std::string("ExtendFunction"), extendFunction);
+}
+
+std::string DeleteChatappTemplateRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DeleteChatappTemplateRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DeleteChatappTemplateRequest::getLowcodePhysicAppName() const {
+  return lowcodePhysicAppName_;
+}
+
+void DeleteChatappTemplateRequest::setLowcodePhysicAppName(const std::string &lowcodePhysicAppName) {
+  lowcodePhysicAppName_ = lowcodePhysicAppName;
+  setParameter(std::string("LowcodePhysicAppName"), lowcodePhysicAppName);
 }
 
 std::string DeleteChatappTemplateRequest::getTemplateType() const {
@@ -70,6 +106,15 @@ void DeleteChatappTemplateRequest::setTemplateName(const std::string &templateNa
   setParameter(std::string("TemplateName"), templateName);
 }
 
+std::string DeleteChatappTemplateRequest::getRouteName() const {
+  return routeName_;
+}
+
+void DeleteChatappTemplateRequest::setRouteName(const std::string &routeName) {
+  routeName_ = routeName;
+  setParameter(std::string("RouteName"), routeName);
+}
+
 std::string DeleteChatappTemplateRequest::getIsvCode() const {
   return isvCode_;
 }
@@ -79,13 +124,31 @@ void DeleteChatappTemplateRequest::setIsvCode(const std::string &isvCode) {
   setParameter(std::string("IsvCode"), isvCode);
 }
 
-std::string DeleteChatappTemplateRequest::getProdCode() const {
-  return prodCode_;
+std::string DeleteChatappTemplateRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DeleteChatappTemplateRequest::setProdCode(const std::string &prodCode) {
-  prodCode_ = prodCode;
-  setParameter(std::string("ProdCode"), prodCode);
+void DeleteChatappTemplateRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long DeleteChatappTemplateRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DeleteChatappTemplateRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DeleteChatappTemplateRequest::getLowcodeLogicAppName() const {
+  return lowcodeLogicAppName_;
+}
+
+void DeleteChatappTemplateRequest::setLowcodeLogicAppName(const std::string &lowcodeLogicAppName) {
+  lowcodeLogicAppName_ = lowcodeLogicAppName;
+  setParameter(std::string("LowcodeLogicAppName"), lowcodeLogicAppName);
 }
 
 std::string DeleteChatappTemplateRequest::getCustSpaceId() const {

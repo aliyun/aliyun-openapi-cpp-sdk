@@ -48,6 +48,7 @@ namespace AlibabaCloud
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -56,6 +57,7 @@ namespace AlibabaCloud
 				std::string message_;
 				Data data_;
 				std::string code_;
+				bool success_;
 
 			};
 		}

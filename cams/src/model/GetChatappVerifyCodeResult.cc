@@ -39,12 +39,14 @@ void GetChatappVerifyCodeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["AccessDeniedDetail"].isNull())
 		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -61,5 +63,10 @@ std::string GetChatappVerifyCodeResult::getMessage()const
 std::string GetChatappVerifyCodeResult::getCode()const
 {
 	return code_;
+}
+
+bool GetChatappVerifyCodeResult::getSuccess()const
+{
+	return success_;
 }
 

@@ -39,11 +39,20 @@ void UpdateCommerceSettingResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
+}
+
+std::string UpdateCommerceSettingResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string UpdateCommerceSettingResult::getMessage()const
@@ -54,5 +63,10 @@ std::string UpdateCommerceSettingResult::getMessage()const
 std::string UpdateCommerceSettingResult::getCode()const
 {
 	return code_;
+}
+
+bool UpdateCommerceSettingResult::getSuccess()const
+{
+	return success_;
 }
 

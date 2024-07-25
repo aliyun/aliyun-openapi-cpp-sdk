@@ -73,6 +73,8 @@ set(cams_public_header_model
 	include/alibabacloud/cams/model/GetChatappVerifyCodeResult.h
 	include/alibabacloud/cams/model/GetCommerceSettingRequest.h
 	include/alibabacloud/cams/model/GetCommerceSettingResult.h
+	include/alibabacloud/cams/model/GetConversationalAutomationRequest.h
+	include/alibabacloud/cams/model/GetConversationalAutomationResult.h
 	include/alibabacloud/cams/model/GetFlowRequest.h
 	include/alibabacloud/cams/model/GetFlowResult.h
 	include/alibabacloud/cams/model/GetFlowJSONAssestRequest.h
@@ -91,6 +93,8 @@ set(cams_public_header_model
 	include/alibabacloud/cams/model/GetPreValidatePhoneIdResult.h
 	include/alibabacloud/cams/model/GetWhatsappConnectionCatalogRequest.h
 	include/alibabacloud/cams/model/GetWhatsappConnectionCatalogResult.h
+	include/alibabacloud/cams/model/GetWhatsappHealthStatusRequest.h
+	include/alibabacloud/cams/model/GetWhatsappHealthStatusResult.h
 	include/alibabacloud/cams/model/IsvGetAppIdRequest.h
 	include/alibabacloud/cams/model/IsvGetAppIdResult.h
 	include/alibabacloud/cams/model/ListChatappTemplateRequest.h
@@ -129,6 +133,8 @@ set(cams_public_header_model
 	include/alibabacloud/cams/model/UpdateAccountWebhookResult.h
 	include/alibabacloud/cams/model/UpdateCommerceSettingRequest.h
 	include/alibabacloud/cams/model/UpdateCommerceSettingResult.h
+	include/alibabacloud/cams/model/UpdateConversationalAutomationRequest.h
+	include/alibabacloud/cams/model/UpdateConversationalAutomationResult.h
 	include/alibabacloud/cams/model/UpdateFlowJSONAssetRequest.h
 	include/alibabacloud/cams/model/UpdateFlowJSONAssetResult.h
 	include/alibabacloud/cams/model/UpdatePhoneEncryptionPublicKeyRequest.h
@@ -192,6 +198,8 @@ set(cams_src
 	src/model/GetChatappVerifyCodeResult.cc
 	src/model/GetCommerceSettingRequest.cc
 	src/model/GetCommerceSettingResult.cc
+	src/model/GetConversationalAutomationRequest.cc
+	src/model/GetConversationalAutomationResult.cc
 	src/model/GetFlowRequest.cc
 	src/model/GetFlowResult.cc
 	src/model/GetFlowJSONAssestRequest.cc
@@ -210,6 +218,8 @@ set(cams_src
 	src/model/GetPreValidatePhoneIdResult.cc
 	src/model/GetWhatsappConnectionCatalogRequest.cc
 	src/model/GetWhatsappConnectionCatalogResult.cc
+	src/model/GetWhatsappHealthStatusRequest.cc
+	src/model/GetWhatsappHealthStatusResult.cc
 	src/model/IsvGetAppIdRequest.cc
 	src/model/IsvGetAppIdResult.cc
 	src/model/ListChatappTemplateRequest.cc
@@ -248,6 +258,8 @@ set(cams_src
 	src/model/UpdateAccountWebhookResult.cc
 	src/model/UpdateCommerceSettingRequest.cc
 	src/model/UpdateCommerceSettingResult.cc
+	src/model/UpdateConversationalAutomationRequest.cc
+	src/model/UpdateConversationalAutomationResult.cc
 	src/model/UpdateFlowJSONAssetRequest.cc
 	src/model/UpdateFlowJSONAssetResult.cc
 	src/model/UpdatePhoneEncryptionPublicKeyRequest.cc

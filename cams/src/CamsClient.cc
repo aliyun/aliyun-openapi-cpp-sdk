@@ -987,6 +987,42 @@ CamsClient::GetCommerceSettingOutcomeCallable CamsClient::getCommerceSettingCall
 	return task->get_future();
 }
 
+CamsClient::GetConversationalAutomationOutcome CamsClient::getConversationalAutomation(const GetConversationalAutomationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetConversationalAutomationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetConversationalAutomationOutcome(GetConversationalAutomationResult(outcome.result()));
+	else
+		return GetConversationalAutomationOutcome(outcome.error());
+}
+
+void CamsClient::getConversationalAutomationAsync(const GetConversationalAutomationRequest& request, const GetConversationalAutomationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getConversationalAutomation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::GetConversationalAutomationOutcomeCallable CamsClient::getConversationalAutomationCallable(const GetConversationalAutomationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetConversationalAutomationOutcome()>>(
+			[this, request]()
+			{
+			return this->getConversationalAutomation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CamsClient::GetFlowOutcome CamsClient::getFlow(const GetFlowRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1305,6 +1341,42 @@ CamsClient::GetWhatsappConnectionCatalogOutcomeCallable CamsClient::getWhatsappC
 			[this, request]()
 			{
 			return this->getWhatsappConnectionCatalog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::GetWhatsappHealthStatusOutcome CamsClient::getWhatsappHealthStatus(const GetWhatsappHealthStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetWhatsappHealthStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetWhatsappHealthStatusOutcome(GetWhatsappHealthStatusResult(outcome.result()));
+	else
+		return GetWhatsappHealthStatusOutcome(outcome.error());
+}
+
+void CamsClient::getWhatsappHealthStatusAsync(const GetWhatsappHealthStatusRequest& request, const GetWhatsappHealthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getWhatsappHealthStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::GetWhatsappHealthStatusOutcomeCallable CamsClient::getWhatsappHealthStatusCallable(const GetWhatsappHealthStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetWhatsappHealthStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getWhatsappHealthStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1989,6 +2061,42 @@ CamsClient::UpdateCommerceSettingOutcomeCallable CamsClient::updateCommerceSetti
 			[this, request]()
 			{
 			return this->updateCommerceSetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CamsClient::UpdateConversationalAutomationOutcome CamsClient::updateConversationalAutomation(const UpdateConversationalAutomationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateConversationalAutomationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateConversationalAutomationOutcome(UpdateConversationalAutomationResult(outcome.result()));
+	else
+		return UpdateConversationalAutomationOutcome(outcome.error());
+}
+
+void CamsClient::updateConversationalAutomationAsync(const UpdateConversationalAutomationRequest& request, const UpdateConversationalAutomationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateConversationalAutomation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::UpdateConversationalAutomationOutcomeCallable CamsClient::updateConversationalAutomationCallable(const UpdateConversationalAutomationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateConversationalAutomationOutcome()>>(
+			[this, request]()
+			{
+			return this->updateConversationalAutomation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

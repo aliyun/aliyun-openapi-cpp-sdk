@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CAMS_MODEL_CHATAPPBINDWABAREQUEST_H_
-#define ALIBABACLOUD_CAMS_MODEL_CHATAPPBINDWABAREQUEST_H_
+#ifndef ALIBABACLOUD_CAMS_MODEL_GETCONVERSATIONALAUTOMATIONREQUEST_H_
+#define ALIBABACLOUD_CAMS_MODEL_GETCONVERSATIONALAUTOMATIONREQUEST_H_
 
 #include <alibabacloud/cams/CamsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,12 +26,14 @@
 namespace AlibabaCloud {
 namespace Cams {
 namespace Model {
-class ALIBABACLOUD_CAMS_EXPORT ChatappBindWabaRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CAMS_EXPORT GetConversationalAutomationRequest : public RpcServiceRequest {
 public:
-	ChatappBindWabaRequest();
-	~ChatappBindWabaRequest();
+	GetConversationalAutomationRequest();
+	~GetConversationalAutomationRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getPhoneNumber() const;
+	void setPhoneNumber(const std::string &phoneNumber);
 	std::string getLowcodeTenantId() const;
 	void setLowcodeTenantId(const std::string &lowcodeTenantId);
 	std::string getExtendFunction() const;
@@ -48,11 +50,12 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getLowcodeLogicAppName() const;
 	void setLowcodeLogicAppName(const std::string &lowcodeLogicAppName);
-	std::string getWabaId() const;
-	void setWabaId(const std::string &wabaId);
+	std::string getCustSpaceId() const;
+	void setCustSpaceId(const std::string &custSpaceId);
 
 private:
 	long resourceOwnerId_;
+	std::string phoneNumber_;
 	std::string lowcodeTenantId_;
 	std::string extendFunction_;
 	std::string accessKeyId_;
@@ -61,9 +64,9 @@ private:
 	std::string resourceOwnerAccount_;
 	long ownerId_;
 	std::string lowcodeLogicAppName_;
-	std::string wabaId_;
+	std::string custSpaceId_;
 };
 } // namespace Model
 } // namespace Cams
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CAMS_MODEL_CHATAPPBINDWABAREQUEST_H_
+#endif // !ALIBABACLOUD_CAMS_MODEL_GETCONVERSATIONALAUTOMATIONREQUEST_H_

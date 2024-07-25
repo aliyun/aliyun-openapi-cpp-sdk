@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CAMS_MODEL_CHATAPPBINDWABARESULT_H_
-#define ALIBABACLOUD_CAMS_MODEL_CHATAPPBINDWABARESULT_H_
+#ifndef ALIBABACLOUD_CAMS_MODEL_GETWHATSAPPHEALTHSTATUSRESULT_H_
+#define ALIBABACLOUD_CAMS_MODEL_GETWHATSAPPHEALTHSTATUSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,19 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CAMS_EXPORT ChatappBindWabaResult : public ServiceResult
+			class ALIBABACLOUD_CAMS_EXPORT GetWhatsappHealthStatusResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					std::string custSpaceId;
-					std::string wabaId;
+					struct EntitiesItem
+					{
+						struct ErrorsItem
+						{
+							std::string errorDescription;
+							std::string possibleSolution;
+							std::string errorCode;
+						};
+						std::string entityType;
+						std::string templateCode;
+						std::vector<EntitiesItem::ErrorsItem> errors;
+						std::string language;
+						std::string canSendMessage;
+						std::string phoneNumber;
+						std::string wabaId;
+						std::string businessId;
+					};
+					std::string canSendMessage;
+					std::vector<EntitiesItem> entities;
 				};
 
 
-				ChatappBindWabaResult();
-				explicit ChatappBindWabaResult(const std::string &payload);
-				~ChatappBindWabaResult();
+				GetWhatsappHealthStatusResult();
+				explicit GetWhatsappHealthStatusResult(const std::string &payload);
+				~GetWhatsappHealthStatusResult();
 				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				Data getData()const;
@@ -61,4 +78,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CAMS_MODEL_CHATAPPBINDWABARESULT_H_
+#endif // !ALIBABACLOUD_CAMS_MODEL_GETWHATSAPPHEALTHSTATUSRESULT_H_

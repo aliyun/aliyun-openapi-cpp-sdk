@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string auditStatus;
 					std::string category;
 					std::string language;
+					long lastUpdateTime;
 					std::string templateName;
 					std::string templateType;
 					std::string reason;

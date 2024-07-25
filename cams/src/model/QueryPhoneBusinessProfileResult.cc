@@ -40,27 +40,29 @@ void QueryPhoneBusinessProfileResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Address"].isNull())
-		data_.address = dataNode["Address"].asString();
-	if(!dataNode["Description"].isNull())
-		data_.description = dataNode["Description"].asString();
 	if(!dataNode["Vertical"].isNull())
 		data_.vertical = dataNode["Vertical"].asString();
+	if(!dataNode["Description"].isNull())
+		data_.description = dataNode["Description"].asString();
 	if(!dataNode["Email"].isNull())
 		data_.email = dataNode["Email"].asString();
+	if(!dataNode["Address"].isNull())
+		data_.address = dataNode["Address"].asString();
 	if(!dataNode["ProfilePictureUrl"].isNull())
 		data_.profilePictureUrl = dataNode["ProfilePictureUrl"].asString();
 	if(!dataNode["About"].isNull())
 		data_.about = dataNode["About"].asString();
-		auto allWebsites = dataNode["Websites"]["网站"];
+		auto allWebsites = dataNode["Websites"]["websites"];
 		for (auto value : allWebsites)
 			data_.websites.push_back(value.asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["AccessDeniedDetail"].isNull())
 		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -82,5 +84,10 @@ QueryPhoneBusinessProfileResult::Data QueryPhoneBusinessProfileResult::getData()
 std::string QueryPhoneBusinessProfileResult::getCode()const
 {
 	return code_;
+}
+
+bool QueryPhoneBusinessProfileResult::getSuccess()const
+{
+	return success_;
 }
 

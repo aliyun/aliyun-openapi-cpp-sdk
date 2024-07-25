@@ -40,20 +40,22 @@ void QueryWabaBusinessInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["BusinessId"].isNull())
-		data_.businessId = dataNode["BusinessId"].asString();
-	if(!dataNode["BusinessName"].isNull())
-		data_.businessName = dataNode["BusinessName"].asString();
-	if(!dataNode["VerificationStatus"].isNull())
-		data_.verificationStatus = dataNode["VerificationStatus"].asString();
 	if(!dataNode["Vertical"].isNull())
 		data_.vertical = dataNode["Vertical"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!dataNode["VerificationStatus"].isNull())
+		data_.verificationStatus = dataNode["VerificationStatus"].asString();
+	if(!dataNode["BusinessName"].isNull())
+		data_.businessName = dataNode["BusinessName"].asString();
+	if(!dataNode["BusinessId"].isNull())
+		data_.businessId = dataNode["BusinessId"].asString();
 	if(!value["AccessDeniedDetail"].isNull())
 		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -75,5 +77,10 @@ QueryWabaBusinessInfoResult::Data QueryWabaBusinessInfoResult::getData()const
 std::string QueryWabaBusinessInfoResult::getCode()const
 {
 	return code_;
+}
+
+bool QueryWabaBusinessInfoResult::getSuccess()const
+{
+	return success_;
 }
 

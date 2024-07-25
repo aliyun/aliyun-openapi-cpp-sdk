@@ -30,6 +30,8 @@ class ALIBABACLOUD_CAMS_EXPORT ModifyPhoneBusinessProfileRequest : public RpcSer
 public:
 	ModifyPhoneBusinessProfileRequest();
 	~ModifyPhoneBusinessProfileRequest();
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
 	std::string getPhoneNumber() const;
 	void setPhoneNumber(const std::string &phoneNumber);
 	std::string getAbout() const;
@@ -38,14 +40,26 @@ public:
 	void setDescription(const std::string &description);
 	std::string getVertical() const;
 	void setVertical(const std::string &vertical);
-	std::string getApiCode() const;
-	void setApiCode(const std::string &apiCode);
+	std::string getLowcodeTenantId() const;
+	void setLowcodeTenantId(const std::string &lowcodeTenantId);
+	std::string getExtendFunction() const;
+	void setExtendFunction(const std::string &extendFunction);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getLowcodePhysicAppName() const;
+	void setLowcodePhysicAppName(const std::string &lowcodePhysicAppName);
+	std::string getRouteName() const;
+	void setRouteName(const std::string &routeName);
 	std::string getEmail() const;
 	void setEmail(const std::string &email);
 	std::string getAddress() const;
 	void setAddress(const std::string &address);
-	std::string getProdCode() const;
-	void setProdCode(const std::string &prodCode);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
+	std::string getLowcodeLogicAppName() const;
+	void setLowcodeLogicAppName(const std::string &lowcodeLogicAppName);
 	std::string getProfilePictureUrl() const;
 	void setProfilePictureUrl(const std::string &profilePictureUrl);
 	std::string getCustSpaceId() const;
@@ -54,14 +68,21 @@ public:
 	void setWebsites(const std::vector<std::string> &websites);
 
 private:
+	long resourceOwnerId_;
 	std::string phoneNumber_;
 	std::string about_;
 	std::string description_;
 	std::string vertical_;
-	std::string apiCode_;
+	std::string lowcodeTenantId_;
+	std::string extendFunction_;
+	std::string accessKeyId_;
+	std::string lowcodePhysicAppName_;
+	std::string routeName_;
 	std::string email_;
 	std::string address_;
-	std::string prodCode_;
+	std::string resourceOwnerAccount_;
+	long ownerId_;
+	std::string lowcodeLogicAppName_;
 	std::string profilePictureUrl_;
 	std::string custSpaceId_;
 	std::vector<std::string> websites_;

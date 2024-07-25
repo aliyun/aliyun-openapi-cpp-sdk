@@ -57,6 +57,8 @@ void ListChatappTemplateResult::parse(const std::string &payload)
 			listTemplateObject.templateType = valueListTemplatetemplate["TemplateType"].asString();
 		if(!valueListTemplatetemplate["Reason"].isNull())
 			listTemplateObject.reason = valueListTemplatetemplate["Reason"].asString();
+		if(!valueListTemplatetemplate["LastUpdateTime"].isNull())
+			listTemplateObject.lastUpdateTime = std::stol(valueListTemplatetemplate["LastUpdateTime"].asString());
 		listTemplate_.push_back(listTemplateObject);
 	}
 	if(!value["Code"].isNull())

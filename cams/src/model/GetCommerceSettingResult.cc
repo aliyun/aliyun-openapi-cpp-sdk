@@ -44,11 +44,20 @@ void GetCommerceSettingResult::parse(const std::string &payload)
 		data_.cartEnable = dataNode["CartEnable"].asString() == "true";
 	if(!dataNode["CatalogVisible"].isNull())
 		data_.catalogVisible = dataNode["CatalogVisible"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
+}
+
+std::string GetCommerceSettingResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string GetCommerceSettingResult::getMessage()const
@@ -64,5 +73,10 @@ GetCommerceSettingResult::Data GetCommerceSettingResult::getData()const
 std::string GetCommerceSettingResult::getCode()const
 {
 	return code_;
+}
+
+bool GetCommerceSettingResult::getSuccess()const
+{
+	return success_;
 }
 

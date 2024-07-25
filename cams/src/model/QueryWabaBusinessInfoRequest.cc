@@ -25,22 +25,85 @@ QueryWabaBusinessInfoRequest::QueryWabaBusinessInfoRequest()
 
 QueryWabaBusinessInfoRequest::~QueryWabaBusinessInfoRequest() {}
 
-std::string QueryWabaBusinessInfoRequest::getApiCode() const {
-  return apiCode_;
+long QueryWabaBusinessInfoRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void QueryWabaBusinessInfoRequest::setApiCode(const std::string &apiCode) {
-  apiCode_ = apiCode;
-  setParameter(std::string("ApiCode"), apiCode);
+void QueryWabaBusinessInfoRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string QueryWabaBusinessInfoRequest::getProdCode() const {
-  return prodCode_;
+std::string QueryWabaBusinessInfoRequest::getLowcodeTenantId() const {
+  return lowcodeTenantId_;
 }
 
-void QueryWabaBusinessInfoRequest::setProdCode(const std::string &prodCode) {
-  prodCode_ = prodCode;
-  setParameter(std::string("ProdCode"), prodCode);
+void QueryWabaBusinessInfoRequest::setLowcodeTenantId(const std::string &lowcodeTenantId) {
+  lowcodeTenantId_ = lowcodeTenantId;
+  setParameter(std::string("LowcodeTenantId"), lowcodeTenantId);
+}
+
+std::string QueryWabaBusinessInfoRequest::getExtendFunction() const {
+  return extendFunction_;
+}
+
+void QueryWabaBusinessInfoRequest::setExtendFunction(const std::string &extendFunction) {
+  extendFunction_ = extendFunction;
+  setParameter(std::string("ExtendFunction"), extendFunction);
+}
+
+std::string QueryWabaBusinessInfoRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void QueryWabaBusinessInfoRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string QueryWabaBusinessInfoRequest::getLowcodePhysicAppName() const {
+  return lowcodePhysicAppName_;
+}
+
+void QueryWabaBusinessInfoRequest::setLowcodePhysicAppName(const std::string &lowcodePhysicAppName) {
+  lowcodePhysicAppName_ = lowcodePhysicAppName;
+  setParameter(std::string("LowcodePhysicAppName"), lowcodePhysicAppName);
+}
+
+std::string QueryWabaBusinessInfoRequest::getRouteName() const {
+  return routeName_;
+}
+
+void QueryWabaBusinessInfoRequest::setRouteName(const std::string &routeName) {
+  routeName_ = routeName;
+  setParameter(std::string("RouteName"), routeName);
+}
+
+std::string QueryWabaBusinessInfoRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void QueryWabaBusinessInfoRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long QueryWabaBusinessInfoRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void QueryWabaBusinessInfoRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string QueryWabaBusinessInfoRequest::getLowcodeLogicAppName() const {
+  return lowcodeLogicAppName_;
+}
+
+void QueryWabaBusinessInfoRequest::setLowcodeLogicAppName(const std::string &lowcodeLogicAppName) {
+  lowcodeLogicAppName_ = lowcodeLogicAppName;
+  setParameter(std::string("LowcodeLogicAppName"), lowcodeLogicAppName);
 }
 
 std::string QueryWabaBusinessInfoRequest::getWabaId() const {

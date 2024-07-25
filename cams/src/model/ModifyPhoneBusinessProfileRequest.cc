@@ -25,6 +25,15 @@ ModifyPhoneBusinessProfileRequest::ModifyPhoneBusinessProfileRequest()
 
 ModifyPhoneBusinessProfileRequest::~ModifyPhoneBusinessProfileRequest() {}
 
+long ModifyPhoneBusinessProfileRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
+}
+
+void ModifyPhoneBusinessProfileRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
 std::string ModifyPhoneBusinessProfileRequest::getPhoneNumber() const {
   return phoneNumber_;
 }
@@ -61,13 +70,49 @@ void ModifyPhoneBusinessProfileRequest::setVertical(const std::string &vertical)
   setParameter(std::string("Vertical"), vertical);
 }
 
-std::string ModifyPhoneBusinessProfileRequest::getApiCode() const {
-  return apiCode_;
+std::string ModifyPhoneBusinessProfileRequest::getLowcodeTenantId() const {
+  return lowcodeTenantId_;
 }
 
-void ModifyPhoneBusinessProfileRequest::setApiCode(const std::string &apiCode) {
-  apiCode_ = apiCode;
-  setParameter(std::string("ApiCode"), apiCode);
+void ModifyPhoneBusinessProfileRequest::setLowcodeTenantId(const std::string &lowcodeTenantId) {
+  lowcodeTenantId_ = lowcodeTenantId;
+  setParameter(std::string("LowcodeTenantId"), lowcodeTenantId);
+}
+
+std::string ModifyPhoneBusinessProfileRequest::getExtendFunction() const {
+  return extendFunction_;
+}
+
+void ModifyPhoneBusinessProfileRequest::setExtendFunction(const std::string &extendFunction) {
+  extendFunction_ = extendFunction;
+  setParameter(std::string("ExtendFunction"), extendFunction);
+}
+
+std::string ModifyPhoneBusinessProfileRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void ModifyPhoneBusinessProfileRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string ModifyPhoneBusinessProfileRequest::getLowcodePhysicAppName() const {
+  return lowcodePhysicAppName_;
+}
+
+void ModifyPhoneBusinessProfileRequest::setLowcodePhysicAppName(const std::string &lowcodePhysicAppName) {
+  lowcodePhysicAppName_ = lowcodePhysicAppName;
+  setParameter(std::string("LowcodePhysicAppName"), lowcodePhysicAppName);
+}
+
+std::string ModifyPhoneBusinessProfileRequest::getRouteName() const {
+  return routeName_;
+}
+
+void ModifyPhoneBusinessProfileRequest::setRouteName(const std::string &routeName) {
+  routeName_ = routeName;
+  setParameter(std::string("RouteName"), routeName);
 }
 
 std::string ModifyPhoneBusinessProfileRequest::getEmail() const {
@@ -88,13 +133,31 @@ void ModifyPhoneBusinessProfileRequest::setAddress(const std::string &address) {
   setParameter(std::string("Address"), address);
 }
 
-std::string ModifyPhoneBusinessProfileRequest::getProdCode() const {
-  return prodCode_;
+std::string ModifyPhoneBusinessProfileRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ModifyPhoneBusinessProfileRequest::setProdCode(const std::string &prodCode) {
-  prodCode_ = prodCode;
-  setParameter(std::string("ProdCode"), prodCode);
+void ModifyPhoneBusinessProfileRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long ModifyPhoneBusinessProfileRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void ModifyPhoneBusinessProfileRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string ModifyPhoneBusinessProfileRequest::getLowcodeLogicAppName() const {
+  return lowcodeLogicAppName_;
+}
+
+void ModifyPhoneBusinessProfileRequest::setLowcodeLogicAppName(const std::string &lowcodeLogicAppName) {
+  lowcodeLogicAppName_ = lowcodeLogicAppName;
+  setParameter(std::string("LowcodeLogicAppName"), lowcodeLogicAppName);
 }
 
 std::string ModifyPhoneBusinessProfileRequest::getProfilePictureUrl() const {

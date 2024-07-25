@@ -39,46 +39,48 @@ void ChatappSyncPhoneNumberResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPhoneNumbersNode = value["PhoneNumbers"]["phoneNumbersItem"];
-	for (auto valuePhoneNumbersphoneNumbersItem : allPhoneNumbersNode)
+	auto allPhoneNumbersNode = value["PhoneNumbers"]["content"];
+	for (auto valuePhoneNumberscontent : allPhoneNumbersNode)
 	{
-		PhoneNumbersItem phoneNumbersObject;
-		if(!valuePhoneNumbersphoneNumbersItem["UpQueue"].isNull())
-			phoneNumbersObject.upQueue = valuePhoneNumbersphoneNumbersItem["UpQueue"].asString();
-		if(!valuePhoneNumbersphoneNumbersItem["PhoneNumber"].isNull())
-			phoneNumbersObject.phoneNumber = valuePhoneNumbersphoneNumbersItem["PhoneNumber"].asString();
-		if(!valuePhoneNumbersphoneNumbersItem["StatusQueue"].isNull())
-			phoneNumbersObject.statusQueue = valuePhoneNumbersphoneNumbersItem["StatusQueue"].asString();
-		if(!valuePhoneNumbersphoneNumbersItem["VerifiedName"].isNull())
-			phoneNumbersObject.verifiedName = valuePhoneNumbersphoneNumbersItem["VerifiedName"].asString();
-		if(!valuePhoneNumbersphoneNumbersItem["StatusCallbackUrl"].isNull())
-			phoneNumbersObject.statusCallbackUrl = valuePhoneNumbersphoneNumbersItem["StatusCallbackUrl"].asString();
-		if(!valuePhoneNumbersphoneNumbersItem["UpCallbackUrl"].isNull())
-			phoneNumbersObject.upCallbackUrl = valuePhoneNumbersphoneNumbersItem["UpCallbackUrl"].asString();
-		if(!valuePhoneNumbersphoneNumbersItem["QualityRating"].isNull())
-			phoneNumbersObject.qualityRating = valuePhoneNumbersphoneNumbersItem["QualityRating"].asString();
-		if(!valuePhoneNumbersphoneNumbersItem["Status"].isNull())
-			phoneNumbersObject.status = valuePhoneNumbersphoneNumbersItem["Status"].asString();
-		if(!valuePhoneNumbersphoneNumbersItem["CodeVerificationStatus"].isNull())
-			phoneNumbersObject.codeVerificationStatus = valuePhoneNumbersphoneNumbersItem["CodeVerificationStatus"].asString();
-		if(!valuePhoneNumbersphoneNumbersItem["NameStatus"].isNull())
-			phoneNumbersObject.nameStatus = valuePhoneNumbersphoneNumbersItem["NameStatus"].asString();
-		if(!valuePhoneNumbersphoneNumbersItem["MessagingLimitTier"].isNull())
-			phoneNumbersObject.messagingLimitTier = valuePhoneNumbersphoneNumbersItem["MessagingLimitTier"].asString();
-		if(!valuePhoneNumbersphoneNumbersItem["NewNameStatus"].isNull())
-			phoneNumbersObject.newNameStatus = valuePhoneNumbersphoneNumbersItem["NewNameStatus"].asString();
+		Content phoneNumbersObject;
+		if(!valuePhoneNumberscontent["VerifiedName"].isNull())
+			phoneNumbersObject.verifiedName = valuePhoneNumberscontent["VerifiedName"].asString();
+		if(!valuePhoneNumberscontent["Status"].isNull())
+			phoneNumbersObject.status = valuePhoneNumberscontent["Status"].asString();
+		if(!valuePhoneNumberscontent["QualityRating"].isNull())
+			phoneNumbersObject.qualityRating = valuePhoneNumberscontent["QualityRating"].asString();
+		if(!valuePhoneNumberscontent["CodeVerificationStatus"].isNull())
+			phoneNumbersObject.codeVerificationStatus = valuePhoneNumberscontent["CodeVerificationStatus"].asString();
+		if(!valuePhoneNumberscontent["NewNameStatus"].isNull())
+			phoneNumbersObject.newNameStatus = valuePhoneNumberscontent["NewNameStatus"].asString();
+		if(!valuePhoneNumberscontent["PhoneNumber"].isNull())
+			phoneNumbersObject.phoneNumber = valuePhoneNumberscontent["PhoneNumber"].asString();
+		if(!valuePhoneNumberscontent["StatusQueue"].isNull())
+			phoneNumbersObject.statusQueue = valuePhoneNumberscontent["StatusQueue"].asString();
+		if(!valuePhoneNumberscontent["UpQueue"].isNull())
+			phoneNumbersObject.upQueue = valuePhoneNumberscontent["UpQueue"].asString();
+		if(!valuePhoneNumberscontent["NameStatus"].isNull())
+			phoneNumbersObject.nameStatus = valuePhoneNumberscontent["NameStatus"].asString();
+		if(!valuePhoneNumberscontent["UpCallbackUrl"].isNull())
+			phoneNumbersObject.upCallbackUrl = valuePhoneNumberscontent["UpCallbackUrl"].asString();
+		if(!valuePhoneNumberscontent["MessagingLimitTier"].isNull())
+			phoneNumbersObject.messagingLimitTier = valuePhoneNumberscontent["MessagingLimitTier"].asString();
+		if(!valuePhoneNumberscontent["StatusCallbackUrl"].isNull())
+			phoneNumbersObject.statusCallbackUrl = valuePhoneNumberscontent["StatusCallbackUrl"].asString();
 		phoneNumbers_.push_back(phoneNumbersObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["AccessDeniedDetail"].isNull())
 		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
-std::vector<ChatappSyncPhoneNumberResult::PhoneNumbersItem> ChatappSyncPhoneNumberResult::getPhoneNumbers()const
+std::vector<ChatappSyncPhoneNumberResult::Content> ChatappSyncPhoneNumberResult::getPhoneNumbers()const
 {
 	return phoneNumbers_;
 }
@@ -96,5 +98,10 @@ std::string ChatappSyncPhoneNumberResult::getMessage()const
 std::string ChatappSyncPhoneNumberResult::getCode()const
 {
 	return code_;
+}
+
+bool ChatappSyncPhoneNumberResult::getSuccess()const
+{
+	return success_;
 }
 

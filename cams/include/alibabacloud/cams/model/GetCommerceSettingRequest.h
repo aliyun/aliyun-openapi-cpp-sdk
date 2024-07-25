@@ -30,19 +30,40 @@ class ALIBABACLOUD_CAMS_EXPORT GetCommerceSettingRequest : public RpcServiceRequ
 public:
 	GetCommerceSettingRequest();
 	~GetCommerceSettingRequest();
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
 	std::string getPhoneNumber() const;
 	void setPhoneNumber(const std::string &phoneNumber);
-	std::string getApiCode() const;
-	void setApiCode(const std::string &apiCode);
-	std::string getProdCode() const;
-	void setProdCode(const std::string &prodCode);
+	std::string getLowcodeTenantId() const;
+	void setLowcodeTenantId(const std::string &lowcodeTenantId);
+	std::string getExtendFunction() const;
+	void setExtendFunction(const std::string &extendFunction);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getLowcodePhysicAppName() const;
+	void setLowcodePhysicAppName(const std::string &lowcodePhysicAppName);
+	std::string getRouteName() const;
+	void setRouteName(const std::string &routeName);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
+	std::string getLowcodeLogicAppName() const;
+	void setLowcodeLogicAppName(const std::string &lowcodeLogicAppName);
 	std::string getCustSpaceId() const;
 	void setCustSpaceId(const std::string &custSpaceId);
 
 private:
+	long resourceOwnerId_;
 	std::string phoneNumber_;
-	std::string apiCode_;
-	std::string prodCode_;
+	std::string lowcodeTenantId_;
+	std::string extendFunction_;
+	std::string accessKeyId_;
+	std::string lowcodePhysicAppName_;
+	std::string routeName_;
+	std::string resourceOwnerAccount_;
+	long ownerId_;
+	std::string lowcodeLogicAppName_;
 	std::string custSpaceId_;
 };
 } // namespace Model

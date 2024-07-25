@@ -40,6 +40,7 @@ namespace AlibabaCloud
 				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -47,6 +48,7 @@ namespace AlibabaCloud
 				std::string accessDeniedDetail_;
 				std::string message_;
 				std::string code_;
+				bool success_;
 
 			};
 		}

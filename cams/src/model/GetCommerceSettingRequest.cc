@@ -25,6 +25,15 @@ GetCommerceSettingRequest::GetCommerceSettingRequest()
 
 GetCommerceSettingRequest::~GetCommerceSettingRequest() {}
 
+long GetCommerceSettingRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
+}
+
+void GetCommerceSettingRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
 std::string GetCommerceSettingRequest::getPhoneNumber() const {
   return phoneNumber_;
 }
@@ -34,22 +43,76 @@ void GetCommerceSettingRequest::setPhoneNumber(const std::string &phoneNumber) {
   setParameter(std::string("PhoneNumber"), phoneNumber);
 }
 
-std::string GetCommerceSettingRequest::getApiCode() const {
-  return apiCode_;
+std::string GetCommerceSettingRequest::getLowcodeTenantId() const {
+  return lowcodeTenantId_;
 }
 
-void GetCommerceSettingRequest::setApiCode(const std::string &apiCode) {
-  apiCode_ = apiCode;
-  setParameter(std::string("ApiCode"), apiCode);
+void GetCommerceSettingRequest::setLowcodeTenantId(const std::string &lowcodeTenantId) {
+  lowcodeTenantId_ = lowcodeTenantId;
+  setParameter(std::string("LowcodeTenantId"), lowcodeTenantId);
 }
 
-std::string GetCommerceSettingRequest::getProdCode() const {
-  return prodCode_;
+std::string GetCommerceSettingRequest::getExtendFunction() const {
+  return extendFunction_;
 }
 
-void GetCommerceSettingRequest::setProdCode(const std::string &prodCode) {
-  prodCode_ = prodCode;
-  setParameter(std::string("ProdCode"), prodCode);
+void GetCommerceSettingRequest::setExtendFunction(const std::string &extendFunction) {
+  extendFunction_ = extendFunction;
+  setParameter(std::string("ExtendFunction"), extendFunction);
+}
+
+std::string GetCommerceSettingRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void GetCommerceSettingRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string GetCommerceSettingRequest::getLowcodePhysicAppName() const {
+  return lowcodePhysicAppName_;
+}
+
+void GetCommerceSettingRequest::setLowcodePhysicAppName(const std::string &lowcodePhysicAppName) {
+  lowcodePhysicAppName_ = lowcodePhysicAppName;
+  setParameter(std::string("LowcodePhysicAppName"), lowcodePhysicAppName);
+}
+
+std::string GetCommerceSettingRequest::getRouteName() const {
+  return routeName_;
+}
+
+void GetCommerceSettingRequest::setRouteName(const std::string &routeName) {
+  routeName_ = routeName;
+  setParameter(std::string("RouteName"), routeName);
+}
+
+std::string GetCommerceSettingRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void GetCommerceSettingRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long GetCommerceSettingRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void GetCommerceSettingRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string GetCommerceSettingRequest::getLowcodeLogicAppName() const {
+  return lowcodeLogicAppName_;
+}
+
+void GetCommerceSettingRequest::setLowcodeLogicAppName(const std::string &lowcodeLogicAppName) {
+  lowcodeLogicAppName_ = lowcodeLogicAppName;
+  setParameter(std::string("LowcodeLogicAppName"), lowcodeLogicAppName);
 }
 
 std::string GetCommerceSettingRequest::getCustSpaceId() const {

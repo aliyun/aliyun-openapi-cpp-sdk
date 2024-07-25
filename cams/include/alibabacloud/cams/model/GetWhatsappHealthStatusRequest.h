@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CAMS_MODEL_CHATAPPBINDWABAREQUEST_H_
-#define ALIBABACLOUD_CAMS_MODEL_CHATAPPBINDWABAREQUEST_H_
+#ifndef ALIBABACLOUD_CAMS_MODEL_GETWHATSAPPHEALTHSTATUSREQUEST_H_
+#define ALIBABACLOUD_CAMS_MODEL_GETWHATSAPPHEALTHSTATUSREQUEST_H_
 
 #include <alibabacloud/cams/CamsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,12 +26,18 @@
 namespace AlibabaCloud {
 namespace Cams {
 namespace Model {
-class ALIBABACLOUD_CAMS_EXPORT ChatappBindWabaRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CAMS_EXPORT GetWhatsappHealthStatusRequest : public RpcServiceRequest {
 public:
-	ChatappBindWabaRequest();
-	~ChatappBindWabaRequest();
+	GetWhatsappHealthStatusRequest();
+	~GetWhatsappHealthStatusRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getNodeType() const;
+	void setNodeType(const std::string &nodeType);
+	std::string getPhoneNumber() const;
+	void setPhoneNumber(const std::string &phoneNumber);
+	std::string getLanguage() const;
+	void setLanguage(const std::string &language);
 	std::string getLowcodeTenantId() const;
 	void setLowcodeTenantId(const std::string &lowcodeTenantId);
 	std::string getExtendFunction() const;
@@ -50,9 +56,16 @@ public:
 	void setLowcodeLogicAppName(const std::string &lowcodeLogicAppName);
 	std::string getWabaId() const;
 	void setWabaId(const std::string &wabaId);
+	std::string getCustSpaceId() const;
+	void setCustSpaceId(const std::string &custSpaceId);
+	std::string getTemplateCode() const;
+	void setTemplateCode(const std::string &templateCode);
 
 private:
 	long resourceOwnerId_;
+	std::string nodeType_;
+	std::string phoneNumber_;
+	std::string language_;
 	std::string lowcodeTenantId_;
 	std::string extendFunction_;
 	std::string accessKeyId_;
@@ -62,8 +75,10 @@ private:
 	long ownerId_;
 	std::string lowcodeLogicAppName_;
 	std::string wabaId_;
+	std::string custSpaceId_;
+	std::string templateCode_;
 };
 } // namespace Model
 } // namespace Cams
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CAMS_MODEL_CHATAPPBINDWABAREQUEST_H_
+#endif // !ALIBABACLOUD_CAMS_MODEL_GETWHATSAPPHEALTHSTATUSREQUEST_H_

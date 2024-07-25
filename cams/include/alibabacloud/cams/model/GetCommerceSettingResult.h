@@ -42,16 +42,20 @@ namespace AlibabaCloud
 				GetCommerceSettingResult();
 				explicit GetCommerceSettingResult(const std::string &payload);
 				~GetCommerceSettingResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string message_;
 				Data data_;
 				std::string code_;
+				bool success_;
 
 			};
 		}

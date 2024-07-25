@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CAMS_EXPORT ChatappSyncPhoneNumberResult : public ServiceResult
 			{
 			public:
-				struct PhoneNumbersItem
+				struct Content
 				{
 					std::string verifiedName;
 					std::string status;
@@ -52,18 +52,20 @@ namespace AlibabaCloud
 				ChatappSyncPhoneNumberResult();
 				explicit ChatappSyncPhoneNumberResult(const std::string &payload);
 				~ChatappSyncPhoneNumberResult();
-				std::vector<PhoneNumbersItem> getPhoneNumbers()const;
+				std::vector<Content> getPhoneNumbers()const;
 				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<PhoneNumbersItem> phoneNumbers_;
+				std::vector<Content> phoneNumbers_;
 				std::string accessDeniedDetail_;
 				std::string message_;
 				std::string code_;
+				bool success_;
 
 			};
 		}

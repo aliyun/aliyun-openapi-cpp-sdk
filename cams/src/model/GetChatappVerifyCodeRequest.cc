@@ -25,13 +25,31 @@ GetChatappVerifyCodeRequest::GetChatappVerifyCodeRequest()
 
 GetChatappVerifyCodeRequest::~GetChatappVerifyCodeRequest() {}
 
+long GetChatappVerifyCodeRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
+}
+
+void GetChatappVerifyCodeRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
 std::string GetChatappVerifyCodeRequest::getPhoneNumber() const {
   return phoneNumber_;
 }
 
 void GetChatappVerifyCodeRequest::setPhoneNumber(const std::string &phoneNumber) {
   phoneNumber_ = phoneNumber;
-  setBodyParameter(std::string("PhoneNumber"), phoneNumber);
+  setParameter(std::string("PhoneNumber"), phoneNumber);
+}
+
+std::string GetChatappVerifyCodeRequest::getLowcodeTenantId() const {
+  return lowcodeTenantId_;
+}
+
+void GetChatappVerifyCodeRequest::setLowcodeTenantId(const std::string &lowcodeTenantId) {
+  lowcodeTenantId_ = lowcodeTenantId;
+  setParameter(std::string("LowcodeTenantId"), lowcodeTenantId);
 }
 
 std::string GetChatappVerifyCodeRequest::getLocale() const {
@@ -40,16 +58,43 @@ std::string GetChatappVerifyCodeRequest::getLocale() const {
 
 void GetChatappVerifyCodeRequest::setLocale(const std::string &locale) {
   locale_ = locale;
-  setBodyParameter(std::string("Locale"), locale);
+  setParameter(std::string("Locale"), locale);
 }
 
-std::string GetChatappVerifyCodeRequest::getApiCode() const {
-  return apiCode_;
+std::string GetChatappVerifyCodeRequest::getExtendFunction() const {
+  return extendFunction_;
 }
 
-void GetChatappVerifyCodeRequest::setApiCode(const std::string &apiCode) {
-  apiCode_ = apiCode;
-  setParameter(std::string("ApiCode"), apiCode);
+void GetChatappVerifyCodeRequest::setExtendFunction(const std::string &extendFunction) {
+  extendFunction_ = extendFunction;
+  setParameter(std::string("ExtendFunction"), extendFunction);
+}
+
+std::string GetChatappVerifyCodeRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void GetChatappVerifyCodeRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string GetChatappVerifyCodeRequest::getLowcodePhysicAppName() const {
+  return lowcodePhysicAppName_;
+}
+
+void GetChatappVerifyCodeRequest::setLowcodePhysicAppName(const std::string &lowcodePhysicAppName) {
+  lowcodePhysicAppName_ = lowcodePhysicAppName;
+  setParameter(std::string("LowcodePhysicAppName"), lowcodePhysicAppName);
+}
+
+std::string GetChatappVerifyCodeRequest::getRouteName() const {
+  return routeName_;
+}
+
+void GetChatappVerifyCodeRequest::setRouteName(const std::string &routeName) {
+  routeName_ = routeName;
+  setParameter(std::string("RouteName"), routeName);
 }
 
 std::string GetChatappVerifyCodeRequest::getMethod() const {
@@ -58,16 +103,34 @@ std::string GetChatappVerifyCodeRequest::getMethod() const {
 
 void GetChatappVerifyCodeRequest::setMethod(const std::string &method) {
   method_ = method;
-  setBodyParameter(std::string("Method"), method);
+  setParameter(std::string("Method"), method);
 }
 
-std::string GetChatappVerifyCodeRequest::getProdCode() const {
-  return prodCode_;
+std::string GetChatappVerifyCodeRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void GetChatappVerifyCodeRequest::setProdCode(const std::string &prodCode) {
-  prodCode_ = prodCode;
-  setParameter(std::string("ProdCode"), prodCode);
+void GetChatappVerifyCodeRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long GetChatappVerifyCodeRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void GetChatappVerifyCodeRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string GetChatappVerifyCodeRequest::getLowcodeLogicAppName() const {
+  return lowcodeLogicAppName_;
+}
+
+void GetChatappVerifyCodeRequest::setLowcodeLogicAppName(const std::string &lowcodeLogicAppName) {
+  lowcodeLogicAppName_ = lowcodeLogicAppName;
+  setParameter(std::string("LowcodeLogicAppName"), lowcodeLogicAppName);
 }
 
 std::string GetChatappVerifyCodeRequest::getCustSpaceId() const {
@@ -76,6 +139,6 @@ std::string GetChatappVerifyCodeRequest::getCustSpaceId() const {
 
 void GetChatappVerifyCodeRequest::setCustSpaceId(const std::string &custSpaceId) {
   custSpaceId_ = custSpaceId;
-  setBodyParameter(std::string("CustSpaceId"), custSpaceId);
+  setParameter(std::string("CustSpaceId"), custSpaceId);
 }
 

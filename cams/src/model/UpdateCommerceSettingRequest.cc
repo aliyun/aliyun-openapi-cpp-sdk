@@ -25,6 +25,15 @@ UpdateCommerceSettingRequest::UpdateCommerceSettingRequest()
 
 UpdateCommerceSettingRequest::~UpdateCommerceSettingRequest() {}
 
+long UpdateCommerceSettingRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
+}
+
+void UpdateCommerceSettingRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
 std::string UpdateCommerceSettingRequest::getPhoneNumber() const {
   return phoneNumber_;
 }
@@ -34,13 +43,40 @@ void UpdateCommerceSettingRequest::setPhoneNumber(const std::string &phoneNumber
   setParameter(std::string("PhoneNumber"), phoneNumber);
 }
 
-std::string UpdateCommerceSettingRequest::getApiCode() const {
-  return apiCode_;
+std::string UpdateCommerceSettingRequest::getLowcodeTenantId() const {
+  return lowcodeTenantId_;
 }
 
-void UpdateCommerceSettingRequest::setApiCode(const std::string &apiCode) {
-  apiCode_ = apiCode;
-  setParameter(std::string("ApiCode"), apiCode);
+void UpdateCommerceSettingRequest::setLowcodeTenantId(const std::string &lowcodeTenantId) {
+  lowcodeTenantId_ = lowcodeTenantId;
+  setParameter(std::string("LowcodeTenantId"), lowcodeTenantId);
+}
+
+std::string UpdateCommerceSettingRequest::getExtendFunction() const {
+  return extendFunction_;
+}
+
+void UpdateCommerceSettingRequest::setExtendFunction(const std::string &extendFunction) {
+  extendFunction_ = extendFunction;
+  setParameter(std::string("ExtendFunction"), extendFunction);
+}
+
+std::string UpdateCommerceSettingRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void UpdateCommerceSettingRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string UpdateCommerceSettingRequest::getLowcodePhysicAppName() const {
+  return lowcodePhysicAppName_;
+}
+
+void UpdateCommerceSettingRequest::setLowcodePhysicAppName(const std::string &lowcodePhysicAppName) {
+  lowcodePhysicAppName_ = lowcodePhysicAppName;
+  setParameter(std::string("LowcodePhysicAppName"), lowcodePhysicAppName);
 }
 
 bool UpdateCommerceSettingRequest::getCatalogVisible() const {
@@ -52,6 +88,15 @@ void UpdateCommerceSettingRequest::setCatalogVisible(bool catalogVisible) {
   setParameter(std::string("CatalogVisible"), catalogVisible ? "true" : "false");
 }
 
+std::string UpdateCommerceSettingRequest::getRouteName() const {
+  return routeName_;
+}
+
+void UpdateCommerceSettingRequest::setRouteName(const std::string &routeName) {
+  routeName_ = routeName;
+  setParameter(std::string("RouteName"), routeName);
+}
+
 bool UpdateCommerceSettingRequest::getCartEnable() const {
   return cartEnable_;
 }
@@ -61,13 +106,31 @@ void UpdateCommerceSettingRequest::setCartEnable(bool cartEnable) {
   setParameter(std::string("CartEnable"), cartEnable ? "true" : "false");
 }
 
-std::string UpdateCommerceSettingRequest::getProdCode() const {
-  return prodCode_;
+std::string UpdateCommerceSettingRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void UpdateCommerceSettingRequest::setProdCode(const std::string &prodCode) {
-  prodCode_ = prodCode;
-  setParameter(std::string("ProdCode"), prodCode);
+void UpdateCommerceSettingRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long UpdateCommerceSettingRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void UpdateCommerceSettingRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string UpdateCommerceSettingRequest::getLowcodeLogicAppName() const {
+  return lowcodeLogicAppName_;
+}
+
+void UpdateCommerceSettingRequest::setLowcodeLogicAppName(const std::string &lowcodeLogicAppName) {
+  lowcodeLogicAppName_ = lowcodeLogicAppName;
+  setParameter(std::string("LowcodeLogicAppName"), lowcodeLogicAppName);
 }
 
 std::string UpdateCommerceSettingRequest::getCustSpaceId() const {

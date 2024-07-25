@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cams/model/AddChatappPhoneNumberResult.h>
+#include <alibabacloud/cams/model/UpdateConversationalAutomationResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Cams;
 using namespace AlibabaCloud::Cams::Model;
 
-AddChatappPhoneNumberResult::AddChatappPhoneNumberResult() :
+UpdateConversationalAutomationResult::UpdateConversationalAutomationResult() :
 	ServiceResult()
 {}
 
-AddChatappPhoneNumberResult::AddChatappPhoneNumberResult(const std::string &payload) :
+UpdateConversationalAutomationResult::UpdateConversationalAutomationResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-AddChatappPhoneNumberResult::~AddChatappPhoneNumberResult()
+UpdateConversationalAutomationResult::~UpdateConversationalAutomationResult()
 {}
 
-void AddChatappPhoneNumberResult::parse(const std::string &payload)
+void UpdateConversationalAutomationResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -50,22 +50,22 @@ void AddChatappPhoneNumberResult::parse(const std::string &payload)
 
 }
 
-std::string AddChatappPhoneNumberResult::getAccessDeniedDetail()const
+std::string UpdateConversationalAutomationResult::getAccessDeniedDetail()const
 {
 	return accessDeniedDetail_;
 }
 
-std::string AddChatappPhoneNumberResult::getMessage()const
+std::string UpdateConversationalAutomationResult::getMessage()const
 {
 	return message_;
 }
 
-std::string AddChatappPhoneNumberResult::getCode()const
+std::string UpdateConversationalAutomationResult::getCode()const
 {
 	return code_;
 }
 
-bool AddChatappPhoneNumberResult::getSuccess()const
+bool UpdateConversationalAutomationResult::getSuccess()const
 {
 	return success_;
 }

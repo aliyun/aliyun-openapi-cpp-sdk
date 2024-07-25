@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CAMS_MODEL_CHATAPPBINDWABARESULT_H_
-#define ALIBABACLOUD_CAMS_MODEL_CHATAPPBINDWABARESULT_H_
+#ifndef ALIBABACLOUD_CAMS_MODEL_UPDATECONVERSATIONALAUTOMATIONRESULT_H_
+#define ALIBABACLOUD_CAMS_MODEL_UPDATECONVERSATIONALAUTOMATIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,22 +29,16 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CAMS_EXPORT ChatappBindWabaResult : public ServiceResult
+			class ALIBABACLOUD_CAMS_EXPORT UpdateConversationalAutomationResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					std::string custSpaceId;
-					std::string wabaId;
-				};
 
 
-				ChatappBindWabaResult();
-				explicit ChatappBindWabaResult(const std::string &payload);
-				~ChatappBindWabaResult();
+				UpdateConversationalAutomationResult();
+				explicit UpdateConversationalAutomationResult(const std::string &payload);
+				~UpdateConversationalAutomationResult();
 				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
-				Data getData()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -53,7 +47,6 @@ namespace AlibabaCloud
 			private:
 				std::string accessDeniedDetail_;
 				std::string message_;
-				Data data_;
 				std::string code_;
 				bool success_;
 
@@ -61,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CAMS_MODEL_CHATAPPBINDWABARESULT_H_
+#endif // !ALIBABACLOUD_CAMS_MODEL_UPDATECONVERSATIONALAUTOMATIONRESULT_H_

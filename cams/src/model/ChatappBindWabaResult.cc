@@ -44,12 +44,14 @@ void ChatappBindWabaResult::parse(const std::string &payload)
 		data_.custSpaceId = dataNode["CustSpaceId"].asString();
 	if(!dataNode["WabaId"].isNull())
 		data_.wabaId = dataNode["WabaId"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["AccessDeniedDetail"].isNull())
 		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -71,5 +73,10 @@ ChatappBindWabaResult::Data ChatappBindWabaResult::getData()const
 std::string ChatappBindWabaResult::getCode()const
 {
 	return code_;
+}
+
+bool ChatappBindWabaResult::getSuccess()const
+{
+	return success_;
 }
 

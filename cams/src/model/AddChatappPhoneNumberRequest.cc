@@ -25,13 +25,22 @@ AddChatappPhoneNumberRequest::AddChatappPhoneNumberRequest()
 
 AddChatappPhoneNumberRequest::~AddChatappPhoneNumberRequest() {}
 
+long AddChatappPhoneNumberRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
+}
+
+void AddChatappPhoneNumberRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
 std::string AddChatappPhoneNumberRequest::getPreValidateId() const {
   return preValidateId_;
 }
 
 void AddChatappPhoneNumberRequest::setPreValidateId(const std::string &preValidateId) {
   preValidateId_ = preValidateId;
-  setBodyParameter(std::string("PreValidateId"), preValidateId);
+  setParameter(std::string("PreValidateId"), preValidateId);
 }
 
 std::string AddChatappPhoneNumberRequest::getVerifiedName() const {
@@ -40,7 +49,7 @@ std::string AddChatappPhoneNumberRequest::getVerifiedName() const {
 
 void AddChatappPhoneNumberRequest::setVerifiedName(const std::string &verifiedName) {
   verifiedName_ = verifiedName;
-  setBodyParameter(std::string("VerifiedName"), verifiedName);
+  setParameter(std::string("VerifiedName"), verifiedName);
 }
 
 std::string AddChatappPhoneNumberRequest::getPhoneNumber() const {
@@ -49,16 +58,52 @@ std::string AddChatappPhoneNumberRequest::getPhoneNumber() const {
 
 void AddChatappPhoneNumberRequest::setPhoneNumber(const std::string &phoneNumber) {
   phoneNumber_ = phoneNumber;
-  setBodyParameter(std::string("PhoneNumber"), phoneNumber);
+  setParameter(std::string("PhoneNumber"), phoneNumber);
 }
 
-std::string AddChatappPhoneNumberRequest::getApiCode() const {
-  return apiCode_;
+std::string AddChatappPhoneNumberRequest::getLowcodeTenantId() const {
+  return lowcodeTenantId_;
 }
 
-void AddChatappPhoneNumberRequest::setApiCode(const std::string &apiCode) {
-  apiCode_ = apiCode;
-  setParameter(std::string("ApiCode"), apiCode);
+void AddChatappPhoneNumberRequest::setLowcodeTenantId(const std::string &lowcodeTenantId) {
+  lowcodeTenantId_ = lowcodeTenantId;
+  setParameter(std::string("LowcodeTenantId"), lowcodeTenantId);
+}
+
+std::string AddChatappPhoneNumberRequest::getExtendFunction() const {
+  return extendFunction_;
+}
+
+void AddChatappPhoneNumberRequest::setExtendFunction(const std::string &extendFunction) {
+  extendFunction_ = extendFunction;
+  setParameter(std::string("ExtendFunction"), extendFunction);
+}
+
+std::string AddChatappPhoneNumberRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void AddChatappPhoneNumberRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string AddChatappPhoneNumberRequest::getLowcodePhysicAppName() const {
+  return lowcodePhysicAppName_;
+}
+
+void AddChatappPhoneNumberRequest::setLowcodePhysicAppName(const std::string &lowcodePhysicAppName) {
+  lowcodePhysicAppName_ = lowcodePhysicAppName;
+  setParameter(std::string("LowcodePhysicAppName"), lowcodePhysicAppName);
+}
+
+std::string AddChatappPhoneNumberRequest::getRouteName() const {
+  return routeName_;
+}
+
+void AddChatappPhoneNumberRequest::setRouteName(const std::string &routeName) {
+  routeName_ = routeName;
+  setParameter(std::string("RouteName"), routeName);
 }
 
 std::string AddChatappPhoneNumberRequest::getCc() const {
@@ -67,16 +112,34 @@ std::string AddChatappPhoneNumberRequest::getCc() const {
 
 void AddChatappPhoneNumberRequest::setCc(const std::string &cc) {
   cc_ = cc;
-  setBodyParameter(std::string("Cc"), cc);
+  setParameter(std::string("Cc"), cc);
 }
 
-std::string AddChatappPhoneNumberRequest::getProdCode() const {
-  return prodCode_;
+std::string AddChatappPhoneNumberRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void AddChatappPhoneNumberRequest::setProdCode(const std::string &prodCode) {
-  prodCode_ = prodCode;
-  setParameter(std::string("ProdCode"), prodCode);
+void AddChatappPhoneNumberRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long AddChatappPhoneNumberRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void AddChatappPhoneNumberRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string AddChatappPhoneNumberRequest::getLowcodeLogicAppName() const {
+  return lowcodeLogicAppName_;
+}
+
+void AddChatappPhoneNumberRequest::setLowcodeLogicAppName(const std::string &lowcodeLogicAppName) {
+  lowcodeLogicAppName_ = lowcodeLogicAppName;
+  setParameter(std::string("LowcodeLogicAppName"), lowcodeLogicAppName);
 }
 
 std::string AddChatappPhoneNumberRequest::getCustSpaceId() const {
@@ -85,6 +148,6 @@ std::string AddChatappPhoneNumberRequest::getCustSpaceId() const {
 
 void AddChatappPhoneNumberRequest::setCustSpaceId(const std::string &custSpaceId) {
   custSpaceId_ = custSpaceId;
-  setBodyParameter(std::string("CustSpaceId"), custSpaceId);
+  setParameter(std::string("CustSpaceId"), custSpaceId);
 }
 
