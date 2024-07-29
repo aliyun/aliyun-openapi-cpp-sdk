@@ -124,6 +124,10 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		supplierName_ = value["SupplierName"].asString();
 	if(!value["AutoRenewal"].isNull())
 		autoRenewal_ = value["AutoRenewal"].asString();
+	if(!value["ActiveAddress"].isNull())
+		activeAddress_ = value["ActiveAddress"].asString();
+	if(!value["LicenseCode"].isNull())
+		licenseCode_ = value["LicenseCode"].asString();
 
 }
 
@@ -132,9 +136,19 @@ std::string DescribeInstanceResult::getStatus()const
 	return status_;
 }
 
+std::string DescribeInstanceResult::getLicenseCode()const
+{
+	return licenseCode_;
+}
+
 std::string DescribeInstanceResult::getProductName()const
 {
 	return productName_;
+}
+
+std::string DescribeInstanceResult::getActiveAddress()const
+{
+	return activeAddress_;
 }
 
 long DescribeInstanceResult::getInstanceId()const

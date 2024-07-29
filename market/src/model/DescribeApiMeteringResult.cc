@@ -53,6 +53,8 @@ void DescribeApiMeteringResult::parse(const std::string &payload)
 			resultObject.totalQuota = std::stol(valueResultresultItem["TotalQuota"].asString());
 		if(!valueResultresultItem["TotalUsage"].isNull())
 			resultObject.totalUsage = std::stol(valueResultresultItem["TotalUsage"].asString());
+		if(!valueResultresultItem["TotalCapacity"].isNull())
+			resultObject.totalCapacity = std::stol(valueResultresultItem["TotalCapacity"].asString());
 		if(!valueResultresultItem["Unit"].isNull())
 			resultObject.unit = valueResultresultItem["Unit"].asString();
 		result_.push_back(resultObject);

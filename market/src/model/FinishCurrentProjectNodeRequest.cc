@@ -34,15 +34,6 @@ void FinishCurrentProjectNodeRequest::setTemplateForm(const std::string &templat
   setParameter(std::string("TemplateForm"), templateForm);
 }
 
-std::string FinishCurrentProjectNodeRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void FinishCurrentProjectNodeRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 std::string FinishCurrentProjectNodeRequest::getRemark() const {
   return remark_;
 }
@@ -50,6 +41,15 @@ std::string FinishCurrentProjectNodeRequest::getRemark() const {
 void FinishCurrentProjectNodeRequest::setRemark(const std::string &remark) {
   remark_ = remark;
   setParameter(std::string("Remark"), remark);
+}
+
+std::string FinishCurrentProjectNodeRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void FinishCurrentProjectNodeRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
 long FinishCurrentProjectNodeRequest::getNodeId() const {

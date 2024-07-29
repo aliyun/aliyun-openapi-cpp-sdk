@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string productCode;
 					long totalQuota;
 					long totalUsage;
+					long totalCapacity;
 					std::string unit;
 				};
 

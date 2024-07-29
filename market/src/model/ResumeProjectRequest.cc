@@ -25,15 +25,6 @@ ResumeProjectRequest::ResumeProjectRequest()
 
 ResumeProjectRequest::~ResumeProjectRequest() {}
 
-std::string ResumeProjectRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ResumeProjectRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 std::string ResumeProjectRequest::getRemark() const {
   return remark_;
 }
@@ -41,6 +32,15 @@ std::string ResumeProjectRequest::getRemark() const {
 void ResumeProjectRequest::setRemark(const std::string &remark) {
   remark_ = remark;
   setParameter(std::string("Remark"), remark);
+}
+
+std::string ResumeProjectRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ResumeProjectRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
 long ResumeProjectRequest::getNodeId() const {

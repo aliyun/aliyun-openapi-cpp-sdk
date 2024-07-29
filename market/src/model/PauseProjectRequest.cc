@@ -25,15 +25,6 @@ PauseProjectRequest::PauseProjectRequest()
 
 PauseProjectRequest::~PauseProjectRequest() {}
 
-std::string PauseProjectRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void PauseProjectRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 std::string PauseProjectRequest::getRemark() const {
   return remark_;
 }
@@ -41,6 +32,15 @@ std::string PauseProjectRequest::getRemark() const {
 void PauseProjectRequest::setRemark(const std::string &remark) {
   remark_ = remark;
   setParameter(std::string("Remark"), remark);
+}
+
+std::string PauseProjectRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void PauseProjectRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
 long PauseProjectRequest::getNodeId() const {

@@ -25,15 +25,6 @@ RollbackCurrentProjectNodeRequest::RollbackCurrentProjectNodeRequest()
 
 RollbackCurrentProjectNodeRequest::~RollbackCurrentProjectNodeRequest() {}
 
-std::string RollbackCurrentProjectNodeRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void RollbackCurrentProjectNodeRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 std::string RollbackCurrentProjectNodeRequest::getRemark() const {
   return remark_;
 }
@@ -41,6 +32,15 @@ std::string RollbackCurrentProjectNodeRequest::getRemark() const {
 void RollbackCurrentProjectNodeRequest::setRemark(const std::string &remark) {
   remark_ = remark;
   setParameter(std::string("Remark"), remark);
+}
+
+std::string RollbackCurrentProjectNodeRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void RollbackCurrentProjectNodeRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
 long RollbackCurrentProjectNodeRequest::getNodeId() const {

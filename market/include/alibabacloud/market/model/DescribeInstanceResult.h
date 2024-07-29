@@ -67,7 +67,9 @@ namespace AlibabaCloud
 				explicit DescribeInstanceResult(const std::string &payload);
 				~DescribeInstanceResult();
 				std::string getStatus()const;
+				std::string getLicenseCode()const;
 				std::string getProductName()const;
+				std::string getActiveAddress()const;
 				long getInstanceId()const;
 				long getEndOn()const;
 				std::string getProductCode()const;
@@ -91,7 +93,9 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
+				std::string licenseCode_;
 				std::string productName_;
+				std::string activeAddress_;
 				long instanceId_;
 				long endOn_;
 				std::string productCode_;

@@ -30,16 +30,16 @@ class ALIBABACLOUD_MARKET_EXPORT RollbackCurrentProjectNodeRequest : public RpcS
 public:
 	RollbackCurrentProjectNodeRequest();
 	~RollbackCurrentProjectNodeRequest();
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
 	std::string getRemark() const;
 	void setRemark(const std::string &remark);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	long getNodeId() const;
 	void setNodeId(long nodeId);
 
 private:
-	std::string instanceId_;
 	std::string remark_;
+	std::string instanceId_;
 	long nodeId_;
 };
 } // namespace Model
