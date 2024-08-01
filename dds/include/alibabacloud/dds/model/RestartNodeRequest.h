@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_RESTOREDBINSTANCEREQUEST_H_
-#define ALIBABACLOUD_DDS_MODEL_RESTOREDBINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_RESTARTNODEREQUEST_H_
+#define ALIBABACLOUD_DDS_MODEL_RESTARTNODEREQUEST_H_
 
 #include <alibabacloud/dds/DdsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,38 @@
 namespace AlibabaCloud {
 namespace Dds {
 namespace Model {
-class ALIBABACLOUD_DDS_EXPORT RestoreDBInstanceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DDS_EXPORT RestartNodeRequest : public RpcServiceRequest {
 public:
-	RestoreDBInstanceRequest();
-	~RestoreDBInstanceRequest();
+	RestartNodeRequest();
+	~RestartNodeRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getRoleId() const;
+	void setRoleId(const std::string &roleId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getNodeId() const;
+	void setNodeId(const std::string &nodeId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
-	int getBackupId() const;
-	void setBackupId(int backupId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 
 private:
 	long resourceOwnerId_;
+	std::string roleId_;
 	std::string accessKeyId_;
 	std::string dBInstanceId_;
+	std::string nodeId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
-	int backupId_;
 	long ownerId_;
 };
 } // namespace Model
 } // namespace Dds
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DDS_MODEL_RESTOREDBINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_RESTARTNODEREQUEST_H_

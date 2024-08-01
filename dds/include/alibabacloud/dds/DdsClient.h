@@ -226,8 +226,8 @@
 #include "model/ResetAccountPasswordResult.h"
 #include "model/RestartDBInstanceRequest.h"
 #include "model/RestartDBInstanceResult.h"
-#include "model/RestoreDBInstanceRequest.h"
-#include "model/RestoreDBInstanceResult.h"
+#include "model/RestartNodeRequest.h"
+#include "model/RestartNodeResult.h"
 #include "model/SwitchDBInstanceHARequest.h"
 #include "model/SwitchDBInstanceHAResult.h"
 #include "model/TagResourcesRequest.h"
@@ -559,9 +559,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RestartDBInstanceResult> RestartDBInstanceOutcome;
 			typedef std::future<RestartDBInstanceOutcome> RestartDBInstanceOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::RestartDBInstanceRequest&, const RestartDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartDBInstanceAsyncHandler;
-			typedef Outcome<Error, Model::RestoreDBInstanceResult> RestoreDBInstanceOutcome;
-			typedef std::future<RestoreDBInstanceOutcome> RestoreDBInstanceOutcomeCallable;
-			typedef std::function<void(const DdsClient*, const Model::RestoreDBInstanceRequest&, const RestoreDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestoreDBInstanceAsyncHandler;
+			typedef Outcome<Error, Model::RestartNodeResult> RestartNodeOutcome;
+			typedef std::future<RestartNodeOutcome> RestartNodeOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::RestartNodeRequest&, const RestartNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartNodeAsyncHandler;
 			typedef Outcome<Error, Model::SwitchDBInstanceHAResult> SwitchDBInstanceHAOutcome;
 			typedef std::future<SwitchDBInstanceHAOutcome> SwitchDBInstanceHAOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::SwitchDBInstanceHARequest&, const SwitchDBInstanceHAOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchDBInstanceHAAsyncHandler;
@@ -897,9 +897,9 @@ namespace AlibabaCloud
 			RestartDBInstanceOutcome restartDBInstance(const Model::RestartDBInstanceRequest &request)const;
 			void restartDBInstanceAsync(const Model::RestartDBInstanceRequest& request, const RestartDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RestartDBInstanceOutcomeCallable restartDBInstanceCallable(const Model::RestartDBInstanceRequest& request) const;
-			RestoreDBInstanceOutcome restoreDBInstance(const Model::RestoreDBInstanceRequest &request)const;
-			void restoreDBInstanceAsync(const Model::RestoreDBInstanceRequest& request, const RestoreDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RestoreDBInstanceOutcomeCallable restoreDBInstanceCallable(const Model::RestoreDBInstanceRequest& request) const;
+			RestartNodeOutcome restartNode(const Model::RestartNodeRequest &request)const;
+			void restartNodeAsync(const Model::RestartNodeRequest& request, const RestartNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RestartNodeOutcomeCallable restartNodeCallable(const Model::RestartNodeRequest& request) const;
 			SwitchDBInstanceHAOutcome switchDBInstanceHA(const Model::SwitchDBInstanceHARequest &request)const;
 			void switchDBInstanceHAAsync(const Model::SwitchDBInstanceHARequest& request, const SwitchDBInstanceHAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SwitchDBInstanceHAOutcomeCallable switchDBInstanceHACallable(const Model::SwitchDBInstanceHARequest& request) const;

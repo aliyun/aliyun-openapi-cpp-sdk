@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dds/model/RestoreDBInstanceResult.h>
+#include <alibabacloud/dds/model/RestartNodeResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dds;
 using namespace AlibabaCloud::Dds::Model;
 
-RestoreDBInstanceResult::RestoreDBInstanceResult() :
+RestartNodeResult::RestartNodeResult() :
 	ServiceResult()
 {}
 
-RestoreDBInstanceResult::RestoreDBInstanceResult(const std::string &payload) :
+RestartNodeResult::RestartNodeResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-RestoreDBInstanceResult::~RestoreDBInstanceResult()
+RestartNodeResult::~RestartNodeResult()
 {}
 
-void RestoreDBInstanceResult::parse(const std::string &payload)
+void RestartNodeResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

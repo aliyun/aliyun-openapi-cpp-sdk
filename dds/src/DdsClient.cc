@@ -3723,36 +3723,36 @@ DdsClient::RestartDBInstanceOutcomeCallable DdsClient::restartDBInstanceCallable
 	return task->get_future();
 }
 
-DdsClient::RestoreDBInstanceOutcome DdsClient::restoreDBInstance(const RestoreDBInstanceRequest &request) const
+DdsClient::RestartNodeOutcome DdsClient::restartNode(const RestartNodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return RestoreDBInstanceOutcome(endpointOutcome.error());
+		return RestartNodeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return RestoreDBInstanceOutcome(RestoreDBInstanceResult(outcome.result()));
+		return RestartNodeOutcome(RestartNodeResult(outcome.result()));
 	else
-		return RestoreDBInstanceOutcome(outcome.error());
+		return RestartNodeOutcome(outcome.error());
 }
 
-void DdsClient::restoreDBInstanceAsync(const RestoreDBInstanceRequest& request, const RestoreDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DdsClient::restartNodeAsync(const RestartNodeRequest& request, const RestartNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, restoreDBInstance(request), context);
+		handler(this, request, restartNode(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DdsClient::RestoreDBInstanceOutcomeCallable DdsClient::restoreDBInstanceCallable(const RestoreDBInstanceRequest &request) const
+DdsClient::RestartNodeOutcomeCallable DdsClient::restartNodeCallable(const RestartNodeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<RestoreDBInstanceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<RestartNodeOutcome()>>(
 			[this, request]()
 			{
-			return this->restoreDBInstance(request);
+			return this->restartNode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

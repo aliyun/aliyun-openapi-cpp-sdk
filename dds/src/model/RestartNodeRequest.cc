@@ -14,76 +14,85 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dds/model/RestoreDBInstanceRequest.h>
+#include <alibabacloud/dds/model/RestartNodeRequest.h>
 
-using AlibabaCloud::Dds::Model::RestoreDBInstanceRequest;
+using AlibabaCloud::Dds::Model::RestartNodeRequest;
 
-RestoreDBInstanceRequest::RestoreDBInstanceRequest()
-    : RpcServiceRequest("dds", "2015-12-01", "RestoreDBInstance") {
+RestartNodeRequest::RestartNodeRequest()
+    : RpcServiceRequest("dds", "2015-12-01", "RestartNode") {
   setMethod(HttpRequest::Method::Post);
 }
 
-RestoreDBInstanceRequest::~RestoreDBInstanceRequest() {}
+RestartNodeRequest::~RestartNodeRequest() {}
 
-long RestoreDBInstanceRequest::getResourceOwnerId() const {
+long RestartNodeRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
 
-void RestoreDBInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
+void RestartNodeRequest::setResourceOwnerId(long resourceOwnerId) {
   resourceOwnerId_ = resourceOwnerId;
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string RestoreDBInstanceRequest::getAccessKeyId() const {
+std::string RestartNodeRequest::getRoleId() const {
+  return roleId_;
+}
+
+void RestartNodeRequest::setRoleId(const std::string &roleId) {
+  roleId_ = roleId;
+  setParameter(std::string("RoleId"), roleId);
+}
+
+std::string RestartNodeRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
 
-void RestoreDBInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
+void RestartNodeRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string RestoreDBInstanceRequest::getDBInstanceId() const {
+std::string RestartNodeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }
 
-void RestoreDBInstanceRequest::setDBInstanceId(const std::string &dBInstanceId) {
+void RestartNodeRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
-std::string RestoreDBInstanceRequest::getResourceOwnerAccount() const {
+std::string RestartNodeRequest::getNodeId() const {
+  return nodeId_;
+}
+
+void RestartNodeRequest::setNodeId(const std::string &nodeId) {
+  nodeId_ = nodeId;
+  setParameter(std::string("NodeId"), nodeId);
+}
+
+std::string RestartNodeRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
 
-void RestoreDBInstanceRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+void RestartNodeRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
   resourceOwnerAccount_ = resourceOwnerAccount;
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string RestoreDBInstanceRequest::getOwnerAccount() const {
+std::string RestartNodeRequest::getOwnerAccount() const {
   return ownerAccount_;
 }
 
-void RestoreDBInstanceRequest::setOwnerAccount(const std::string &ownerAccount) {
+void RestartNodeRequest::setOwnerAccount(const std::string &ownerAccount) {
   ownerAccount_ = ownerAccount;
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-int RestoreDBInstanceRequest::getBackupId() const {
-  return backupId_;
-}
-
-void RestoreDBInstanceRequest::setBackupId(int backupId) {
-  backupId_ = backupId;
-  setParameter(std::string("BackupId"), std::to_string(backupId));
-}
-
-long RestoreDBInstanceRequest::getOwnerId() const {
+long RestartNodeRequest::getOwnerId() const {
   return ownerId_;
 }
 
-void RestoreDBInstanceRequest::setOwnerId(long ownerId) {
+void RestartNodeRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }

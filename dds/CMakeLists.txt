@@ -225,8 +225,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/ResetAccountPasswordResult.h
 	include/alibabacloud/dds/model/RestartDBInstanceRequest.h
 	include/alibabacloud/dds/model/RestartDBInstanceResult.h
-	include/alibabacloud/dds/model/RestoreDBInstanceRequest.h
-	include/alibabacloud/dds/model/RestoreDBInstanceResult.h
+	include/alibabacloud/dds/model/RestartNodeRequest.h
+	include/alibabacloud/dds/model/RestartNodeResult.h
 	include/alibabacloud/dds/model/SwitchDBInstanceHARequest.h
 	include/alibabacloud/dds/model/SwitchDBInstanceHAResult.h
 	include/alibabacloud/dds/model/TagResourcesRequest.h
@@ -450,8 +450,8 @@ set(dds_src
 	src/model/ResetAccountPasswordResult.cc
 	src/model/RestartDBInstanceRequest.cc
 	src/model/RestartDBInstanceResult.cc
-	src/model/RestoreDBInstanceRequest.cc
-	src/model/RestoreDBInstanceResult.cc
+	src/model/RestartNodeRequest.cc
+	src/model/RestartNodeResult.cc
 	src/model/SwitchDBInstanceHARequest.cc
 	src/model/SwitchDBInstanceHAResult.cc
 	src/model/TagResourcesRequest.cc

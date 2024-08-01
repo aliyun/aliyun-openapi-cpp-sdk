@@ -34,6 +34,15 @@ void MigrateAvailableZoneRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string MigrateAvailableZoneRequest::getSecondaryZoneId() const {
+  return secondaryZoneId_;
+}
+
+void MigrateAvailableZoneRequest::setSecondaryZoneId(const std::string &secondaryZoneId) {
+  secondaryZoneId_ = secondaryZoneId;
+  setParameter(std::string("SecondaryZoneId"), secondaryZoneId);
+}
+
 std::string MigrateAvailableZoneRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -50,6 +59,15 @@ std::string MigrateAvailableZoneRequest::getEffectiveTime() const {
 void MigrateAvailableZoneRequest::setEffectiveTime(const std::string &effectiveTime) {
   effectiveTime_ = effectiveTime;
   setParameter(std::string("EffectiveTime"), effectiveTime);
+}
+
+std::string MigrateAvailableZoneRequest::getHiddenZoneId() const {
+  return hiddenZoneId_;
+}
+
+void MigrateAvailableZoneRequest::setHiddenZoneId(const std::string &hiddenZoneId) {
+  hiddenZoneId_ = hiddenZoneId;
+  setParameter(std::string("HiddenZoneId"), hiddenZoneId);
 }
 
 std::string MigrateAvailableZoneRequest::getDBInstanceId() const {

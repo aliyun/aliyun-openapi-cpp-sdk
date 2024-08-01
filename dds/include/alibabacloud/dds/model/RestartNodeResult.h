@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_RESTOREDBINSTANCERESULT_H_
-#define ALIBABACLOUD_DDS_MODEL_RESTOREDBINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_RESTARTNODERESULT_H_
+#define ALIBABACLOUD_DDS_MODEL_RESTARTNODERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT RestoreDBInstanceResult : public ServiceResult
+			class ALIBABACLOUD_DDS_EXPORT RestartNodeResult : public ServiceResult
 			{
 			public:
 
 
-				RestoreDBInstanceResult();
-				explicit RestoreDBInstanceResult(const std::string &payload);
-				~RestoreDBInstanceResult();
+				RestartNodeResult();
+				explicit RestartNodeResult(const std::string &payload);
+				~RestartNodeResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_RESTOREDBINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_RESTARTNODERESULT_H_

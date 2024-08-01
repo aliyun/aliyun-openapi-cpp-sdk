@@ -32,10 +32,14 @@ public:
 	~MigrateAvailableZoneRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getSecondaryZoneId() const;
+	void setSecondaryZoneId(const std::string &secondaryZoneId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getEffectiveTime() const;
 	void setEffectiveTime(const std::string &effectiveTime);
+	std::string getHiddenZoneId() const;
+	void setHiddenZoneId(const std::string &hiddenZoneId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getResourceOwnerAccount() const;
@@ -51,8 +55,10 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string secondaryZoneId_;
 	std::string accessKeyId_;
 	std::string effectiveTime_;
+	std::string hiddenZoneId_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
