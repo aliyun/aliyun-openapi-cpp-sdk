@@ -43,46 +43,14 @@ void AliyunConsoleOpenApiQueryAliyunConsoleServcieListResult::parse(const std::s
 	for (auto valuedatadataItem : alldataNode)
 	{
 		DataItem dataObject;
-		if(!valuedatadataItem["id"].isNull())
-			dataObject.id = valuedatadataItem["id"].asString();
-		if(!valuedatadataItem["modelId"].isNull())
-			dataObject.modelId = valuedatadataItem["modelId"].asString();
-		if(!valuedatadataItem["name"].isNull())
-			dataObject.name = valuedatadataItem["name"].asString();
-		if(!valuedatadataItem["objectType"].isNull())
-			dataObject.objectType = valuedatadataItem["objectType"].asString();
-		if(!valuedatadataItem["jobStatus"].isNull())
-			dataObject.jobStatus = valuedatadataItem["jobStatus"].asString();
-		if(!valuedatadataItem["jobTrainProgress"].isNull())
-			dataObject.jobTrainProgress = valuedatadataItem["jobTrainProgress"].asString();
-		if(!valuedatadataItem["inferenceImageCount"].isNull())
-			dataObject.inferenceImageCount = std::stoi(valuedatadataItem["inferenceImageCount"].asString());
-		if(!valuedatadataItem["createTime"].isNull())
-			dataObject.createTime = valuedatadataItem["createTime"].asString();
-		auto allinferenceJobListNode = valuedatadataItem["inferenceJobList"]["inferenceJobListItem"];
-		for (auto valuedatadataIteminferenceJobListinferenceJobListItem : allinferenceJobListNode)
-		{
-			DataItem::InferenceJobListItem inferenceJobListObject;
-			if(!valuedatadataIteminferenceJobListinferenceJobListItem["id"].isNull())
-				inferenceJobListObject.id = valuedatadataIteminferenceJobListinferenceJobListItem["id"].asString();
-			if(!valuedatadataIteminferenceJobListinferenceJobListItem["promptId"].isNull())
-				inferenceJobListObject.promptId = valuedatadataIteminferenceJobListinferenceJobListItem["promptId"].asString();
-			if(!valuedatadataIteminferenceJobListinferenceJobListItem["modelId"].isNull())
-				inferenceJobListObject.modelId = valuedatadataIteminferenceJobListinferenceJobListItem["modelId"].asString();
-			if(!valuedatadataIteminferenceJobListinferenceJobListItem["jobStatus"].isNull())
-				inferenceJobListObject.jobStatus = valuedatadataIteminferenceJobListinferenceJobListItem["jobStatus"].asString();
-			if(!valuedatadataIteminferenceJobListinferenceJobListItem["jobTrainProgress"].isNull())
-				inferenceJobListObject.jobTrainProgress = valuedatadataIteminferenceJobListinferenceJobListItem["jobTrainProgress"].asString();
-			if(!valuedatadataIteminferenceJobListinferenceJobListItem["createTime"].isNull())
-				inferenceJobListObject.createTime = valuedatadataIteminferenceJobListinferenceJobListItem["createTime"].asString();
-			auto allResultImageUrl = value["resultImageUrl"]["resultImageUrl"];
-			for (auto value : allResultImageUrl)
-				inferenceJobListObject.resultImageUrl.push_back(value.asString());
-			dataObject.inferenceJobList.push_back(inferenceJobListObject);
-		}
-		auto allImageUrl = value["imageUrl"]["imageUrl"];
-		for (auto value : allImageUrl)
-			dataObject.imageUrl.push_back(value.asString());
+		if(!valuedatadataItem["ServiceCode"].isNull())
+			dataObject.serviceCode = valuedatadataItem["ServiceCode"].asString();
+		if(!valuedatadataItem["ServiceName"].isNull())
+			dataObject.serviceName = valuedatadataItem["ServiceName"].asString();
+		if(!valuedatadataItem["FreeCount"].isNull())
+			dataObject.freeCount = std::stoi(valuedatadataItem["FreeCount"].asString());
+		if(!valuedatadataItem["FreeConcurrencyCount"].isNull())
+			dataObject.freeConcurrencyCount = std::stoi(valuedatadataItem["FreeConcurrencyCount"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["requestId"].isNull())
@@ -93,6 +61,8 @@ void AliyunConsoleOpenApiQueryAliyunConsoleServcieListResult::parse(const std::s
 		errCode_ = value["errCode"].asString();
 	if(!value["errMessage"].isNull())
 		errMessage_ = value["errMessage"].asString();
+	if(!value["httpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["httpStatusCode"].asString());
 
 }
 
@@ -104,6 +74,11 @@ std::vector<AliyunConsoleOpenApiQueryAliyunConsoleServcieListResult::DataItem> A
 std::string AliyunConsoleOpenApiQueryAliyunConsoleServcieListResult::getRequestId()const
 {
 	return requestId_;
+}
+
+int AliyunConsoleOpenApiQueryAliyunConsoleServcieListResult::getHttpStatusCode()const
+{
+	return httpStatusCode_;
 }
 
 std::string AliyunConsoleOpenApiQueryAliyunConsoleServcieListResult::getErrMessage()const

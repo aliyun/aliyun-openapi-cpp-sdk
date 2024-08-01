@@ -34,26 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct DataItem
 				{
-					struct InferenceJobListItem
-					{
-						std::string jobStatus;
-						double jobTrainProgress;
-						std::string createTime;
-						std::string id;
-						std::vector<std::string> resultImageUrl;
-						std::string promptId;
-						std::string modelId;
-					};
-					std::string jobStatus;
-					std::string objectType;
-					double jobTrainProgress;
-					std::string createTime;
-					std::vector<std::string> imageUrl;
-					std::string id;
-					int inferenceImageCount;
-					std::vector<DataItem::InferenceJobListItem> inferenceJobList;
-					std::string modelId;
-					std::string name;
+					std::string serviceCode;
+					std::string serviceName;
+					int freeConcurrencyCount;
+					int freeCount;
 				};
 
 
@@ -62,6 +46,7 @@ namespace AlibabaCloud
 				~AliyunConsoleOpenApiQueryAliyunConsoleServcieListResult();
 				std::vector<DataItem> getdata()const;
 				std::string getRequestId()const;
+				int getHttpStatusCode()const;
 				std::string getErrMessage()const;
 				bool getSuccess()const;
 				std::string getErrCode()const;
@@ -71,6 +56,7 @@ namespace AlibabaCloud
 			private:
 				std::vector<DataItem> data_;
 				std::string requestId_;
+				int httpStatusCode_;
 				std::string errMessage_;
 				bool success_;
 				std::string errCode_;

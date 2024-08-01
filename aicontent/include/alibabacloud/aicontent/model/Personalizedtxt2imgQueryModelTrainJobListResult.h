@@ -62,6 +62,7 @@ namespace AlibabaCloud
 				~Personalizedtxt2imgQueryModelTrainJobListResult();
 				std::vector<DataItem> getdata()const;
 				std::string getRequestId()const;
+				int getHttpStatusCode()const;
 				std::string getErrMessage()const;
 				bool getSuccess()const;
 				std::string getErrCode()const;
@@ -71,6 +72,7 @@ namespace AlibabaCloud
 			private:
 				std::vector<DataItem> data_;
 				std::string requestId_;
+				int httpStatusCode_;
 				std::string errMessage_;
 				bool success_;
 				std::string errCode_;

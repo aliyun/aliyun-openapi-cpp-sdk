@@ -42,6 +42,7 @@ namespace AlibabaCloud
 				explicit Personalizedtxt2imgQueryModelTrainStatusResult(const std::string &payload);
 				~Personalizedtxt2imgQueryModelTrainStatusResult();
 				std::string getRequestId()const;
+				int getHttpStatusCode()const;
 				Data getData()const;
 				std::string getErrMessage()const;
 				bool getSuccess()const;
@@ -51,6 +52,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string requestId_;
+				int httpStatusCode_;
 				Data data_;
 				std::string errMessage_;
 				bool success_;

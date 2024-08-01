@@ -39,7 +39,7 @@ void Personalizedtxt2imgQueryModelTrainStatusResult::parse(const std::string &pa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
+	auto dataNode = value["data"];
 	if(!dataNode["modelTrainStatus"].isNull())
 		data_.modelTrainStatus = dataNode["modelTrainStatus"].asString();
 	if(!value["requestId"].isNull())
@@ -50,12 +50,19 @@ void Personalizedtxt2imgQueryModelTrainStatusResult::parse(const std::string &pa
 		errCode_ = value["errCode"].asString();
 	if(!value["errMessage"].isNull())
 		errMessage_ = value["errMessage"].asString();
+	if(!value["httpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["httpStatusCode"].asString());
 
 }
 
 std::string Personalizedtxt2imgQueryModelTrainStatusResult::getRequestId()const
 {
 	return requestId_;
+}
+
+int Personalizedtxt2imgQueryModelTrainStatusResult::getHttpStatusCode()const
+{
+	return httpStatusCode_;
 }
 
 Personalizedtxt2imgQueryModelTrainStatusResult::Data Personalizedtxt2imgQueryModelTrainStatusResult::getData()const

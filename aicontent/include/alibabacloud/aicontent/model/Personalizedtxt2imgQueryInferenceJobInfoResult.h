@@ -34,7 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					std::string modelTrainStatus;
+					std::string jobStatus;
+					double jobTrainProgress;
+					std::string createTime;
+					std::string id;
+					std::vector<std::string> resultImageUrl;
+					std::string promptId;
+					std::string modelId;
 				};
 
 
@@ -42,6 +48,7 @@ namespace AlibabaCloud
 				explicit Personalizedtxt2imgQueryInferenceJobInfoResult(const std::string &payload);
 				~Personalizedtxt2imgQueryInferenceJobInfoResult();
 				std::string getRequestId()const;
+				int getHttpStatusCode()const;
 				Data getData()const;
 				std::string getErrMessage()const;
 				bool getSuccess()const;
@@ -51,6 +58,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string requestId_;
+				int httpStatusCode_;
 				Data data_;
 				std::string errMessage_;
 				bool success_;

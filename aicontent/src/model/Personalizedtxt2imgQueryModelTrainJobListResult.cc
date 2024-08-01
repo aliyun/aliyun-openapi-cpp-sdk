@@ -93,6 +93,8 @@ void Personalizedtxt2imgQueryModelTrainJobListResult::parse(const std::string &p
 		errCode_ = value["errCode"].asString();
 	if(!value["errMessage"].isNull())
 		errMessage_ = value["errMessage"].asString();
+	if(!value["httpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["httpStatusCode"].asString());
 
 }
 
@@ -104,6 +106,11 @@ std::vector<Personalizedtxt2imgQueryModelTrainJobListResult::DataItem> Personali
 std::string Personalizedtxt2imgQueryModelTrainJobListResult::getRequestId()const
 {
 	return requestId_;
+}
+
+int Personalizedtxt2imgQueryModelTrainJobListResult::getHttpStatusCode()const
+{
+	return httpStatusCode_;
 }
 
 std::string Personalizedtxt2imgQueryModelTrainJobListResult::getErrMessage()const

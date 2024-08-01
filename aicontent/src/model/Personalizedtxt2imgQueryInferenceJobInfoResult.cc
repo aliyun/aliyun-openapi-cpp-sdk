@@ -39,9 +39,22 @@ void Personalizedtxt2imgQueryInferenceJobInfoResult::parse(const std::string &pa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["modelTrainStatus"].isNull())
-		data_.modelTrainStatus = dataNode["modelTrainStatus"].asString();
+	auto dataNode = value["data"];
+	if(!dataNode["id"].isNull())
+		data_.id = dataNode["id"].asString();
+	if(!dataNode["promptId"].isNull())
+		data_.promptId = dataNode["promptId"].asString();
+	if(!dataNode["modelId"].isNull())
+		data_.modelId = dataNode["modelId"].asString();
+	if(!dataNode["jobStatus"].isNull())
+		data_.jobStatus = dataNode["jobStatus"].asString();
+	if(!dataNode["jobTrainProgress"].isNull())
+		data_.jobTrainProgress = dataNode["jobTrainProgress"].asString();
+	if(!dataNode["createTime"].isNull())
+		data_.createTime = dataNode["createTime"].asString();
+		auto allResultImageUrl = dataNode["resultImageUrl"]["resultImageUrl"];
+		for (auto value : allResultImageUrl)
+			data_.resultImageUrl.push_back(value.asString());
 	if(!value["requestId"].isNull())
 		requestId_ = value["requestId"].asString();
 	if(!value["success"].isNull())
@@ -50,12 +63,19 @@ void Personalizedtxt2imgQueryInferenceJobInfoResult::parse(const std::string &pa
 		errCode_ = value["errCode"].asString();
 	if(!value["errMessage"].isNull())
 		errMessage_ = value["errMessage"].asString();
+	if(!value["httpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["httpStatusCode"].asString());
 
 }
 
 std::string Personalizedtxt2imgQueryInferenceJobInfoResult::getRequestId()const
 {
 	return requestId_;
+}
+
+int Personalizedtxt2imgQueryInferenceJobInfoResult::getHttpStatusCode()const
+{
+	return httpStatusCode_;
 }
 
 Personalizedtxt2imgQueryInferenceJobInfoResult::Data Personalizedtxt2imgQueryInferenceJobInfoResult::getData()const
