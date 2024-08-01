@@ -70,6 +70,15 @@ void DescribeLiveStreamsOnlineListRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+bool DescribeLiveStreamsOnlineListRequest::getIsGetCurrentRate() const {
+  return isGetCurrentRate_;
+}
+
+void DescribeLiveStreamsOnlineListRequest::setIsGetCurrentRate(bool isGetCurrentRate) {
+  isGetCurrentRate_ = isGetCurrentRate;
+  setParameter(std::string("IsGetCurrentRate"), isGetCurrentRate ? "true" : "false");
+}
+
 std::string DescribeLiveStreamsOnlineListRequest::getStreamName() const {
   return streamName_;
 }

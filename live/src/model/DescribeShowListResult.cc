@@ -42,6 +42,10 @@ void DescribeShowListResult::parse(const std::string &payload)
 	auto showListInfoNode = value["ShowListInfo"];
 	if(!showListInfoNode["CurrentShowId"].isNull())
 		showListInfo_.currentShowId = showListInfoNode["CurrentShowId"].asString();
+	if(!showListInfoNode["Background"].isNull())
+		showListInfo_.background = showListInfoNode["Background"].asString();
+	if(!showListInfoNode["Watermark"].isNull())
+		showListInfo_.watermark = showListInfoNode["Watermark"].asString();
 	if(!showListInfoNode["HighPriorityShowId"].isNull())
 		showListInfo_.highPriorityShowId = showListInfoNode["HighPriorityShowId"].asString();
 	if(!showListInfoNode["HighPriorityShowStartTime"].isNull())

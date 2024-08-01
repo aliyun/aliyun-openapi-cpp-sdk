@@ -37,34 +37,36 @@ namespace AlibabaCloud
 				DescribeLiveMessageAppResult();
 				explicit DescribeLiveMessageAppResult(const std::string &payload);
 				~DescribeLiveMessageAppResult();
-				std::string getCallbackUrl()const;
 				long getModifyTime()const;
+				int getAuditType()const;
+				long getCreateTime()const;
+				int getMsgLifeCycle()const;
+				std::string getEventCallbackUrl()const;
+				std::string getAppName()const;
+				std::string getCallbackUrl()const;
 				std::string getAuditUrl()const;
 				std::string getDataCenter()const;
 				std::string getAppId()const;
-				int getAuditType()const;
 				std::string getAppKey()const;
-				long getCreateTime()const;
-				std::string getEventCallbackUrl()const;
 				std::string getAppSign()const;
 				bool getDisable()const;
-				std::string getAppName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string callbackUrl_;
 				long modifyTime_;
+				int auditType_;
+				long createTime_;
+				int msgLifeCycle_;
+				std::string eventCallbackUrl_;
+				std::string appName_;
+				std::string callbackUrl_;
 				std::string auditUrl_;
 				std::string dataCenter_;
 				std::string appId_;
-				int auditType_;
 				std::string appKey_;
-				long createTime_;
-				std::string eventCallbackUrl_;
 				std::string appSign_;
 				bool disable_;
-				std::string appName_;
 
 			};
 		}

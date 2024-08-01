@@ -5415,42 +5415,6 @@ LiveClient::DescribeLiveDomainBpsDataByLayerOutcomeCallable LiveClient::describe
 	return task->get_future();
 }
 
-LiveClient::DescribeLiveDomainBpsDataByTimeStampOutcome LiveClient::describeLiveDomainBpsDataByTimeStamp(const DescribeLiveDomainBpsDataByTimeStampRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLiveDomainBpsDataByTimeStampOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLiveDomainBpsDataByTimeStampOutcome(DescribeLiveDomainBpsDataByTimeStampResult(outcome.result()));
-	else
-		return DescribeLiveDomainBpsDataByTimeStampOutcome(outcome.error());
-}
-
-void LiveClient::describeLiveDomainBpsDataByTimeStampAsync(const DescribeLiveDomainBpsDataByTimeStampRequest& request, const DescribeLiveDomainBpsDataByTimeStampAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLiveDomainBpsDataByTimeStamp(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeLiveDomainBpsDataByTimeStampOutcomeCallable LiveClient::describeLiveDomainBpsDataByTimeStampCallable(const DescribeLiveDomainBpsDataByTimeStampRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLiveDomainBpsDataByTimeStampOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLiveDomainBpsDataByTimeStamp(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::DescribeLiveDomainByCertificateOutcome LiveClient::describeLiveDomainByCertificate(const DescribeLiveDomainByCertificateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6597,42 +6561,6 @@ LiveClient::DescribeLiveGrtnDurationOutcomeCallable LiveClient::describeLiveGrtn
 			[this, request]()
 			{
 			return this->describeLiveGrtnDuration(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::DescribeLiveGrtnTrafficUsageOutcome LiveClient::describeLiveGrtnTrafficUsage(const DescribeLiveGrtnTrafficUsageRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLiveGrtnTrafficUsageOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLiveGrtnTrafficUsageOutcome(DescribeLiveGrtnTrafficUsageResult(outcome.result()));
-	else
-		return DescribeLiveGrtnTrafficUsageOutcome(outcome.error());
-}
-
-void LiveClient::describeLiveGrtnTrafficUsageAsync(const DescribeLiveGrtnTrafficUsageRequest& request, const DescribeLiveGrtnTrafficUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLiveGrtnTrafficUsage(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeLiveGrtnTrafficUsageOutcomeCallable LiveClient::describeLiveGrtnTrafficUsageCallable(const DescribeLiveGrtnTrafficUsageRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLiveGrtnTrafficUsageOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLiveGrtnTrafficUsage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7821,42 +7749,6 @@ LiveClient::DescribeLiveStreamMonitorListOutcomeCallable LiveClient::describeLiv
 			[this, request]()
 			{
 			return this->describeLiveStreamMonitorList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::DescribeLiveStreamOptimizedFeatureConfigOutcome LiveClient::describeLiveStreamOptimizedFeatureConfig(const DescribeLiveStreamOptimizedFeatureConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLiveStreamOptimizedFeatureConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLiveStreamOptimizedFeatureConfigOutcome(DescribeLiveStreamOptimizedFeatureConfigResult(outcome.result()));
-	else
-		return DescribeLiveStreamOptimizedFeatureConfigOutcome(outcome.error());
-}
-
-void LiveClient::describeLiveStreamOptimizedFeatureConfigAsync(const DescribeLiveStreamOptimizedFeatureConfigRequest& request, const DescribeLiveStreamOptimizedFeatureConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLiveStreamOptimizedFeatureConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeLiveStreamOptimizedFeatureConfigOutcomeCallable LiveClient::describeLiveStreamOptimizedFeatureConfigCallable(const DescribeLiveStreamOptimizedFeatureConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamOptimizedFeatureConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLiveStreamOptimizedFeatureConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -12897,6 +12789,42 @@ LiveClient::SetLiveStreamsNotifyUrlConfigOutcomeCallable LiveClient::setLiveStre
 			[this, request]()
 			{
 			return this->setLiveStreamsNotifyUrlConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::SetShowListBackgroundOutcome LiveClient::setShowListBackground(const SetShowListBackgroundRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetShowListBackgroundOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetShowListBackgroundOutcome(SetShowListBackgroundResult(outcome.result()));
+	else
+		return SetShowListBackgroundOutcome(outcome.error());
+}
+
+void LiveClient::setShowListBackgroundAsync(const SetShowListBackgroundRequest& request, const SetShowListBackgroundAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setShowListBackground(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::SetShowListBackgroundOutcomeCallable LiveClient::setShowListBackgroundCallable(const SetShowListBackgroundRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetShowListBackgroundOutcome()>>(
+			[this, request]()
+			{
+			return this->setShowListBackground(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

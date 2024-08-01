@@ -61,19 +61,46 @@ void DescribeLiveMessageAppResult::parse(const std::string &payload)
 		createTime_ = std::stol(value["CreateTime"].asString());
 	if(!value["ModifyTime"].isNull())
 		modifyTime_ = std::stol(value["ModifyTime"].asString());
+	if(!value["MsgLifeCycle"].isNull())
+		msgLifeCycle_ = std::stoi(value["MsgLifeCycle"].asString());
 	if(!value["DataCenter"].isNull())
 		dataCenter_ = value["DataCenter"].asString();
 
 }
 
-std::string DescribeLiveMessageAppResult::getCallbackUrl()const
-{
-	return callbackUrl_;
-}
-
 long DescribeLiveMessageAppResult::getModifyTime()const
 {
 	return modifyTime_;
+}
+
+int DescribeLiveMessageAppResult::getAuditType()const
+{
+	return auditType_;
+}
+
+long DescribeLiveMessageAppResult::getCreateTime()const
+{
+	return createTime_;
+}
+
+int DescribeLiveMessageAppResult::getMsgLifeCycle()const
+{
+	return msgLifeCycle_;
+}
+
+std::string DescribeLiveMessageAppResult::getEventCallbackUrl()const
+{
+	return eventCallbackUrl_;
+}
+
+std::string DescribeLiveMessageAppResult::getAppName()const
+{
+	return appName_;
+}
+
+std::string DescribeLiveMessageAppResult::getCallbackUrl()const
+{
+	return callbackUrl_;
 }
 
 std::string DescribeLiveMessageAppResult::getAuditUrl()const
@@ -91,24 +118,9 @@ std::string DescribeLiveMessageAppResult::getAppId()const
 	return appId_;
 }
 
-int DescribeLiveMessageAppResult::getAuditType()const
-{
-	return auditType_;
-}
-
 std::string DescribeLiveMessageAppResult::getAppKey()const
 {
 	return appKey_;
-}
-
-long DescribeLiveMessageAppResult::getCreateTime()const
-{
-	return createTime_;
-}
-
-std::string DescribeLiveMessageAppResult::getEventCallbackUrl()const
-{
-	return eventCallbackUrl_;
 }
 
 std::string DescribeLiveMessageAppResult::getAppSign()const
@@ -119,10 +131,5 @@ std::string DescribeLiveMessageAppResult::getAppSign()const
 bool DescribeLiveMessageAppResult::getDisable()const
 {
 	return disable_;
-}
-
-std::string DescribeLiveMessageAppResult::getAppName()const
-{
-	return appName_;
 }
 

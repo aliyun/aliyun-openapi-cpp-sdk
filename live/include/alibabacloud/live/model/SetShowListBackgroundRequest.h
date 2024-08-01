@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMOPTIMIZEDFEATURECONFIGREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMOPTIMIZEDFEATURECONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_SETSHOWLISTBACKGROUNDREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_SETSHOWLISTBACKGROUNDREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,29 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT DescribeLiveStreamOptimizedFeatureConfigRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT SetShowListBackgroundRequest : public RpcServiceRequest {
 public:
-	DescribeLiveStreamOptimizedFeatureConfigRequest();
-	~DescribeLiveStreamOptimizedFeatureConfigRequest();
-	std::string getConfigName() const;
-	void setConfigName(const std::string &configName);
-	std::string getDomainName() const;
-	void setDomainName(const std::string &domainName);
+	SetShowListBackgroundRequest();
+	~SetShowListBackgroundRequest();
+	std::string getMaterialId() const;
+	void setMaterialId(const std::string &materialId);
+	std::string getCasterId() const;
+	void setCasterId(const std::string &casterId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::string getResourceUrl() const;
+	void setResourceUrl(const std::string &resourceUrl);
 
 private:
-	std::string configName_;
-	std::string domainName_;
+	std::string materialId_;
+	std::string casterId_;
 	long ownerId_;
+	std::string resourceType_;
+	std::string resourceUrl_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMOPTIMIZEDFEATURECONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_SETSHOWLISTBACKGROUNDREQUEST_H_

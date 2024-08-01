@@ -35,25 +35,31 @@ namespace AlibabaCloud
 				struct LiveStreamOnlineInfo
 				{
 					std::string publishUrl;
-					int frameRate;
-					std::string domainName;
-					std::string transcodeId;
-					std::string serverIp;
+					int currAudioDataRate;
 					std::string streamUrlArgs;
+					int currWidth;
 					std::string transcodeDrm;
 					std::string clientIp;
+					int currFrameRate;
 					std::string publishType;
 					std::string appName;
 					int audioDataRate;
 					std::string streamName;
 					std::string publishDomain;
-					std::string transcoded;
 					int height;
 					std::string publishTime;
 					int audioCodecId;
-					int videoDataRate;
 					int width;
 					int videoCodecId;
+					int frameRate;
+					int currVideoDataRate;
+					std::string domainName;
+					std::string transcodeId;
+					std::string serverIp;
+					int currHeight;
+					int currVideoCodecId;
+					std::string transcoded;
+					int videoDataRate;
 				};
 
 

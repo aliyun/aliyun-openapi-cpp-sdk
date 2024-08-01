@@ -40,6 +40,8 @@ public:
 	void setAppName(const std::string &appName);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	bool getIsGetCurrentRate() const;
+	void setIsGetCurrentRate(bool isGetCurrentRate);
 	std::string getStreamName() const;
 	void setStreamName(const std::string &streamName);
 	std::string getQueryType() const;
@@ -61,6 +63,7 @@ private:
 	int pageNum_;
 	std::string appName_;
 	int pageSize_;
+	bool isGetCurrentRate_;
 	std::string streamName_;
 	std::string queryType_;
 	std::string streamType_;

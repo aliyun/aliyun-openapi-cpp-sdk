@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string appId;
 					std::string appKey;
 					long createTime;
+					int msgLifeCycle;
 					std::string appSign;
 					std::string disable;
 					std::string appName;

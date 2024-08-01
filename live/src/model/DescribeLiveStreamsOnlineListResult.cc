@@ -83,6 +83,18 @@ void DescribeLiveStreamsOnlineListResult::parse(const std::string &payload)
 			onlineInfoObject.serverIp = valueOnlineInfoLiveStreamOnlineInfo["ServerIp"].asString();
 		if(!valueOnlineInfoLiveStreamOnlineInfo["StreamUrlArgs"].isNull())
 			onlineInfoObject.streamUrlArgs = valueOnlineInfoLiveStreamOnlineInfo["StreamUrlArgs"].asString();
+		if(!valueOnlineInfoLiveStreamOnlineInfo["CurrAudioDataRate"].isNull())
+			onlineInfoObject.currAudioDataRate = std::stoi(valueOnlineInfoLiveStreamOnlineInfo["CurrAudioDataRate"].asString());
+		if(!valueOnlineInfoLiveStreamOnlineInfo["CurrVideoDataRate"].isNull())
+			onlineInfoObject.currVideoDataRate = std::stoi(valueOnlineInfoLiveStreamOnlineInfo["CurrVideoDataRate"].asString());
+		if(!valueOnlineInfoLiveStreamOnlineInfo["CurrWidth"].isNull())
+			onlineInfoObject.currWidth = std::stoi(valueOnlineInfoLiveStreamOnlineInfo["CurrWidth"].asString());
+		if(!valueOnlineInfoLiveStreamOnlineInfo["CurrHeight"].isNull())
+			onlineInfoObject.currHeight = std::stoi(valueOnlineInfoLiveStreamOnlineInfo["CurrHeight"].asString());
+		if(!valueOnlineInfoLiveStreamOnlineInfo["CurrFrameRate"].isNull())
+			onlineInfoObject.currFrameRate = std::stoi(valueOnlineInfoLiveStreamOnlineInfo["CurrFrameRate"].asString());
+		if(!valueOnlineInfoLiveStreamOnlineInfo["CurrVideoCodecId"].isNull())
+			onlineInfoObject.currVideoCodecId = std::stoi(valueOnlineInfoLiveStreamOnlineInfo["CurrVideoCodecId"].asString());
 		onlineInfo_.push_back(onlineInfoObject);
 	}
 	if(!value["TotalPage"].isNull())

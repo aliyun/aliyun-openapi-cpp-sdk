@@ -319,8 +319,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveDomainBpsDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainBpsDataByLayerRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainBpsDataByLayerResult.h
-	include/alibabacloud/live/model/DescribeLiveDomainBpsDataByTimeStampRequest.h
-	include/alibabacloud/live/model/DescribeLiveDomainBpsDataByTimeStampResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainByCertificateRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainByCertificateResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainCertificateInfoRequest.h
@@ -385,8 +383,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveEdgeTransferResult.h
 	include/alibabacloud/live/model/DescribeLiveGrtnDurationRequest.h
 	include/alibabacloud/live/model/DescribeLiveGrtnDurationResult.h
-	include/alibabacloud/live/model/DescribeLiveGrtnTrafficUsageRequest.h
-	include/alibabacloud/live/model/DescribeLiveGrtnTrafficUsageResult.h
 	include/alibabacloud/live/model/DescribeLiveHttpsDomainListRequest.h
 	include/alibabacloud/live/model/DescribeLiveHttpsDomainListResult.h
 	include/alibabacloud/live/model/DescribeLiveInteractionMetricDataRequest.h
@@ -453,8 +449,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveStreamMetricDetailDataResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamMonitorListRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamMonitorListResult.h
-	include/alibabacloud/live/model/DescribeLiveStreamOptimizedFeatureConfigRequest.h
-	include/alibabacloud/live/model/DescribeLiveStreamOptimizedFeatureConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamPreloadTasksRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamPreloadTasksResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamPushMetricDetailDataRequest.h
@@ -735,6 +729,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/SetLiveStreamPreloadTasksResult.h
 	include/alibabacloud/live/model/SetLiveStreamsNotifyUrlConfigRequest.h
 	include/alibabacloud/live/model/SetLiveStreamsNotifyUrlConfigResult.h
+	include/alibabacloud/live/model/SetShowListBackgroundRequest.h
+	include/alibabacloud/live/model/SetShowListBackgroundResult.h
 	include/alibabacloud/live/model/SetSnapshotCallbackAuthRequest.h
 	include/alibabacloud/live/model/SetSnapshotCallbackAuthResult.h
 	include/alibabacloud/live/model/StartCasterRequest.h
@@ -1130,8 +1126,6 @@ set(live_src
 	src/model/DescribeLiveDomainBpsDataResult.cc
 	src/model/DescribeLiveDomainBpsDataByLayerRequest.cc
 	src/model/DescribeLiveDomainBpsDataByLayerResult.cc
-	src/model/DescribeLiveDomainBpsDataByTimeStampRequest.cc
-	src/model/DescribeLiveDomainBpsDataByTimeStampResult.cc
 	src/model/DescribeLiveDomainByCertificateRequest.cc
 	src/model/DescribeLiveDomainByCertificateResult.cc
 	src/model/DescribeLiveDomainCertificateInfoRequest.cc
@@ -1196,8 +1190,6 @@ set(live_src
 	src/model/DescribeLiveEdgeTransferResult.cc
 	src/model/DescribeLiveGrtnDurationRequest.cc
 	src/model/DescribeLiveGrtnDurationResult.cc
-	src/model/DescribeLiveGrtnTrafficUsageRequest.cc
-	src/model/DescribeLiveGrtnTrafficUsageResult.cc
 	src/model/DescribeLiveHttpsDomainListRequest.cc
 	src/model/DescribeLiveHttpsDomainListResult.cc
 	src/model/DescribeLiveInteractionMetricDataRequest.cc
@@ -1264,8 +1256,6 @@ set(live_src
 	src/model/DescribeLiveStreamMetricDetailDataResult.cc
 	src/model/DescribeLiveStreamMonitorListRequest.cc
 	src/model/DescribeLiveStreamMonitorListResult.cc
-	src/model/DescribeLiveStreamOptimizedFeatureConfigRequest.cc
-	src/model/DescribeLiveStreamOptimizedFeatureConfigResult.cc
 	src/model/DescribeLiveStreamPreloadTasksRequest.cc
 	src/model/DescribeLiveStreamPreloadTasksResult.cc
 	src/model/DescribeLiveStreamPushMetricDetailDataRequest.cc
@@ -1546,6 +1536,8 @@ set(live_src
 	src/model/SetLiveStreamPreloadTasksResult.cc
 	src/model/SetLiveStreamsNotifyUrlConfigRequest.cc
 	src/model/SetLiveStreamsNotifyUrlConfigResult.cc
+	src/model/SetShowListBackgroundRequest.cc
+	src/model/SetShowListBackgroundResult.cc
 	src/model/SetSnapshotCallbackAuthRequest.cc
 	src/model/SetSnapshotCallbackAuthResult.cc
 	src/model/StartCasterRequest.cc

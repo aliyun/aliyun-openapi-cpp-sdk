@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINBPSDATABYTIMESTAMPRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINBPSDATABYTIMESTAMPRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_SETSHOWLISTBACKGROUNDRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_SETSHOWLISTBACKGROUNDRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainBpsDataByTimeStampResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT SetShowListBackgroundResult : public ServiceResult
 			{
 			public:
-				struct BpsDataModel
-				{
-					std::string ispName;
-					long bps;
-					std::string timeStamp;
-					std::string locationName;
-				};
 
 
-				DescribeLiveDomainBpsDataByTimeStampResult();
-				explicit DescribeLiveDomainBpsDataByTimeStampResult(const std::string &payload);
-				~DescribeLiveDomainBpsDataByTimeStampResult();
-				std::vector<BpsDataModel> getBpsDataList()const;
-				std::string getDomainName()const;
-				std::string getTimeStamp()const;
+				SetShowListBackgroundResult();
+				explicit SetShowListBackgroundResult(const std::string &payload);
+				~SetShowListBackgroundResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<BpsDataModel> bpsDataList_;
-				std::string domainName_;
-				std::string timeStamp_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINBPSDATABYTIMESTAMPRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_SETSHOWLISTBACKGROUNDRESULT_H_

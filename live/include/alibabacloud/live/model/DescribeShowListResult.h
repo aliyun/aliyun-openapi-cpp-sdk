@@ -49,10 +49,12 @@ namespace AlibabaCloud
 						int repeatTimes;
 						std::string showName;
 					};
+					std::string background;
 					std::string currentShowId;
 					std::string highPriorityShowId;
 					std::string highPriorityShowStartTime;
 					int totalShowListRepeatTimes;
+					std::string watermark;
 					int showListRepeatTimes;
 					std::vector<Show> showList;
 				};

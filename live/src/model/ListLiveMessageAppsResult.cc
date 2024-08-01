@@ -59,6 +59,8 @@ void ListLiveMessageAppsResult::parse(const std::string &payload)
 			appListObject.disable = valueAppListApps["Disable"].asString();
 		if(!valueAppListApps["ModifyTime"].isNull())
 			appListObject.modifyTime = std::stol(valueAppListApps["ModifyTime"].asString());
+		if(!valueAppListApps["MsgLifeCycle"].isNull())
+			appListObject.msgLifeCycle = std::stoi(valueAppListApps["MsgLifeCycle"].asString());
 		appList_.push_back(appListObject);
 	}
 	if(!value["HasMore"].isNull())
