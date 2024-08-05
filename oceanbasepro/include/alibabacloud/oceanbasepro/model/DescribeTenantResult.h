@@ -166,7 +166,7 @@ namespace AlibabaCloud
 					std::string primaryZone;
 					std::string instanceType;
 					std::string tenantMode;
-					std::string lowerCaseTableNames;
+					int lowerCaseTableNames;
 					std::string status;
 					std::string recycleBinStatus;
 					bool enableClogService;

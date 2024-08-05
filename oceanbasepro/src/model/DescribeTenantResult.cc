@@ -99,7 +99,7 @@ void DescribeTenantResult::parse(const std::string &payload)
 	if(!tenantNode["RecycleBinStatus"].isNull())
 		tenant_.recycleBinStatus = tenantNode["RecycleBinStatus"].asString();
 	if(!tenantNode["LowerCaseTableNames"].isNull())
-		tenant_.lowerCaseTableNames = tenantNode["LowerCaseTableNames"].asString();
+		tenant_.lowerCaseTableNames = std::stoi(tenantNode["LowerCaseTableNames"].asString());
 	if(!tenantNode["Version"].isNull())
 		tenant_.version = tenantNode["Version"].asString();
 	auto allTenantConnectionsNode = tenantNode["TenantConnections"]["TenantConnectionsItem"];
