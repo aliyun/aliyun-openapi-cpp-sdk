@@ -30,12 +30,15 @@ class ALIBABACLOUD_ARMS_EXPORT SetRetcodeShareStatusRequest : public RpcServiceR
 public:
 	SetRetcodeShareStatusRequest();
 	~SetRetcodeShareStatusRequest();
+	std::string getAppName() const;
+	void setAppName(const std::string &appName);
 	std::string getPid() const;
 	void setPid(const std::string &pid);
 	bool getStatus() const;
 	void setStatus(bool status);
 
 private:
+	std::string appName_;
 	std::string pid_;
 	bool status_;
 };

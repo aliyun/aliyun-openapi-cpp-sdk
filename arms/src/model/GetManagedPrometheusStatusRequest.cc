@@ -25,6 +25,15 @@ GetManagedPrometheusStatusRequest::GetManagedPrometheusStatusRequest()
 
 GetManagedPrometheusStatusRequest::~GetManagedPrometheusStatusRequest() {}
 
+std::string GetManagedPrometheusStatusRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void GetManagedPrometheusStatusRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
+}
+
 std::string GetManagedPrometheusStatusRequest::getClusterType() const {
   return clusterType_;
 }
@@ -32,6 +41,15 @@ std::string GetManagedPrometheusStatusRequest::getClusterType() const {
 void GetManagedPrometheusStatusRequest::setClusterType(const std::string &clusterType) {
   clusterType_ = clusterType;
   setParameter(std::string("ClusterType"), clusterType);
+}
+
+std::string GetManagedPrometheusStatusRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void GetManagedPrometheusStatusRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string GetManagedPrometheusStatusRequest::getRegionId() const {
@@ -43,12 +61,12 @@ void GetManagedPrometheusStatusRequest::setRegionId(const std::string &regionId)
   setParameter(std::string("RegionId"), regionId);
 }
 
-std::string GetManagedPrometheusStatusRequest::getClusterId() const {
-  return clusterId_;
+std::string GetManagedPrometheusStatusRequest::getVpcId() const {
+  return vpcId_;
 }
 
-void GetManagedPrometheusStatusRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
+void GetManagedPrometheusStatusRequest::setVpcId(const std::string &vpcId) {
+  vpcId_ = vpcId;
+  setParameter(std::string("VpcId"), vpcId);
 }
 

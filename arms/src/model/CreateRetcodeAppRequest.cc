@@ -25,6 +25,15 @@ CreateRetcodeAppRequest::CreateRetcodeAppRequest()
 
 CreateRetcodeAppRequest::~CreateRetcodeAppRequest() {}
 
+std::string CreateRetcodeAppRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateRetcodeAppRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateRetcodeAppRequest::getRegionId() const {
   return regionId_;
 }
@@ -50,5 +59,19 @@ std::string CreateRetcodeAppRequest::getRetcodeAppType() const {
 void CreateRetcodeAppRequest::setRetcodeAppType(const std::string &retcodeAppType) {
   retcodeAppType_ = retcodeAppType;
   setParameter(std::string("RetcodeAppType"), retcodeAppType);
+}
+
+std::vector<CreateRetcodeAppRequest::Tags> CreateRetcodeAppRequest::getTags() const {
+  return tags_;
+}
+
+void CreateRetcodeAppRequest::setTags(const std::vector<CreateRetcodeAppRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
 }
 

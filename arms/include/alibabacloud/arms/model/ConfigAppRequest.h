@@ -36,11 +36,14 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getEnable() const;
 	void setEnable(const std::string &enable);
+	std::string getType() const;
+	void setType(const std::string &type);
 
 private:
 	std::string appIds_;
 	std::string regionId_;
 	std::string enable_;
+	std::string type_;
 };
 } // namespace Model
 } // namespace ARMS

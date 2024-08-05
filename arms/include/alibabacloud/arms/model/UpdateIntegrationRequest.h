@@ -32,10 +32,6 @@ public:
 	~UpdateIntegrationRequest();
 	std::string getShortToken() const;
 	void setShortToken(const std::string &shortToken);
-	std::string getFieldRedefineRules() const;
-	void setFieldRedefineRules(const std::string &fieldRedefineRules);
-	std::string getStat() const;
-	void setStat(const std::string &stat);
 	std::string getInitiativeRecoverValue() const;
 	void setInitiativeRecoverValue(const std::string &initiativeRecoverValue);
 	std::string getLiveness() const;
@@ -46,8 +42,6 @@ public:
 	void setDescription(const std::string &description);
 	std::string getApiEndpoint() const;
 	void setApiEndpoint(const std::string &apiEndpoint);
-	bool getAutoRecover() const;
-	void setAutoRecover(bool autoRecover);
 	long getRecoverTime() const;
 	void setRecoverTime(long recoverTime);
 	std::string getDuplicateKey() const;
@@ -56,29 +50,35 @@ public:
 	void setIntegrationName(const std::string &integrationName);
 	bool getState() const;
 	void setState(bool state);
-	std::string getExtendedFieldRedefineRules() const;
-	void setExtendedFieldRedefineRules(const std::string &extendedFieldRedefineRules);
 	std::string getInitiativeRecoverField() const;
 	void setInitiativeRecoverField(const std::string &initiativeRecoverField);
+	std::string getFieldRedefineRules() const;
+	void setFieldRedefineRules(const std::string &fieldRedefineRules);
+	std::string getStat() const;
+	void setStat(const std::string &stat);
+	bool getAutoRecover() const;
+	void setAutoRecover(bool autoRecover);
+	std::string getExtendedFieldRedefineRules() const;
+	void setExtendedFieldRedefineRules(const std::string &extendedFieldRedefineRules);
 	std::string getIntegrationProductType() const;
 	void setIntegrationProductType(const std::string &integrationProductType);
 
 private:
 	std::string shortToken_;
-	std::string fieldRedefineRules_;
-	std::string stat_;
 	std::string initiativeRecoverValue_;
 	std::string liveness_;
 	long integrationId_;
 	std::string description_;
 	std::string apiEndpoint_;
-	bool autoRecover_;
 	long recoverTime_;
 	std::string duplicateKey_;
 	std::string integrationName_;
 	bool state_;
-	std::string extendedFieldRedefineRules_;
 	std::string initiativeRecoverField_;
+	std::string fieldRedefineRules_;
+	std::string stat_;
+	bool autoRecover_;
+	std::string extendedFieldRedefineRules_;
 	std::string integrationProductType_;
 };
 } // namespace Model

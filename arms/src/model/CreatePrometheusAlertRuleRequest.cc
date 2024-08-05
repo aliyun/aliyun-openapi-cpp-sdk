@@ -115,6 +115,20 @@ void CreatePrometheusAlertRuleRequest::setLabels(const std::string &labels) {
   setParameter(std::string("Labels"), labels);
 }
 
+std::vector<CreatePrometheusAlertRuleRequest::Tags> CreatePrometheusAlertRuleRequest::getTags() const {
+  return tags_;
+}
+
+void CreatePrometheusAlertRuleRequest::setTags(const std::vector<CreatePrometheusAlertRuleRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
+}
+
 std::string CreatePrometheusAlertRuleRequest::getDuration() const {
   return duration_;
 }

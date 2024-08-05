@@ -116,11 +116,32 @@ void ListDashboardsResult::parse(const std::string &payload)
 			dashboardVosObject.tags.push_back(value.asString());
 		dashboardVos_.push_back(dashboardVosObject);
 	}
+	if(!value["PrometheusServiceOpened"].isNull())
+		prometheusServiceOpened_ = value["PrometheusServiceOpened"].asString();
+	if(!value["EnvironmentId"].isNull())
+		environmentId_ = value["EnvironmentId"].asString();
+	if(!value["GrafanaServiceOpened"].isNull())
+		grafanaServiceOpened_ = value["GrafanaServiceOpened"].asString();
 
 }
 
 std::vector<ListDashboardsResult::DashboardVosItem> ListDashboardsResult::getDashboardVos()const
 {
 	return dashboardVos_;
+}
+
+std::string ListDashboardsResult::getEnvironmentId()const
+{
+	return environmentId_;
+}
+
+std::string ListDashboardsResult::getPrometheusServiceOpened()const
+{
+	return prometheusServiceOpened_;
+}
+
+std::string ListDashboardsResult::getGrafanaServiceOpened()const
+{
+	return grafanaServiceOpened_;
 }
 

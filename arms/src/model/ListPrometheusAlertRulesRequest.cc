@@ -52,6 +52,20 @@ void ListPrometheusAlertRulesRequest::setType(const std::string &type) {
   setParameter(std::string("Type"), type);
 }
 
+std::vector<ListPrometheusAlertRulesRequest::Tags> ListPrometheusAlertRulesRequest::getTags() const {
+  return tags_;
+}
+
+void ListPrometheusAlertRulesRequest::setTags(const std::vector<ListPrometheusAlertRulesRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
+}
+
 std::string ListPrometheusAlertRulesRequest::getRegionId() const {
   return regionId_;
 }

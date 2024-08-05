@@ -25,13 +25,13 @@ ListRetcodeAppsRequest::ListRetcodeAppsRequest()
 
 ListRetcodeAppsRequest::~ListRetcodeAppsRequest() {}
 
-std::string ListRetcodeAppsRequest::getSecurityToken() const {
-  return securityToken_;
+std::string ListRetcodeAppsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void ListRetcodeAppsRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
+void ListRetcodeAppsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string ListRetcodeAppsRequest::getRegionId() const {
@@ -43,12 +43,17 @@ void ListRetcodeAppsRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ListRetcodeAppsRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::vector<ListRetcodeAppsRequest::Tags> ListRetcodeAppsRequest::getTags() const {
+  return tags_;
 }
 
-void ListRetcodeAppsRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void ListRetcodeAppsRequest::setTags(const std::vector<ListRetcodeAppsRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
 }
 

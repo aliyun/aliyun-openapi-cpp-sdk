@@ -41,11 +41,32 @@ void DeleteTraceAppResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stol(value["Code"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
+}
+
+std::string DeleteTraceAppResult::getMessage()const
+{
+	return message_;
 }
 
 std::string DeleteTraceAppResult::getData()const
 {
 	return data_;
+}
+
+long DeleteTraceAppResult::getCode()const
+{
+	return code_;
+}
+
+bool DeleteTraceAppResult::getSuccess()const
+{
+	return success_;
 }
 

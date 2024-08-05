@@ -41,11 +41,32 @@ void DeleteRetcodeAppResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string DeleteRetcodeAppResult::getMessage()const
+{
+	return message_;
 }
 
 std::string DeleteRetcodeAppResult::getData()const
 {
 	return data_;
+}
+
+int DeleteRetcodeAppResult::getCode()const
+{
+	return code_;
+}
+
+bool DeleteRetcodeAppResult::getSuccess()const
+{
+	return success_;
 }
 

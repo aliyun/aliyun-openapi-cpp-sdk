@@ -37,12 +37,16 @@ namespace AlibabaCloud
 				ListDashboardsByNameResult();
 				explicit ListDashboardsByNameResult(const std::string &payload);
 				~ListDashboardsByNameResult();
+				std::string getMessage()const;
 				std::string getData()const;
+				int getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				std::string data_;
+				int code_;
 
 			};
 		}

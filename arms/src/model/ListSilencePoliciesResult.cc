@@ -54,6 +54,8 @@ void ListSilencePoliciesResult::parse(const std::string &payload)
 			policiesObject.id = std::stol(pageBeanNodeSilencePoliciespolicies["Id"].asString());
 		if(!pageBeanNodeSilencePoliciespolicies["Name"].isNull())
 			policiesObject.name = pageBeanNodeSilencePoliciespolicies["Name"].asString();
+		if(!pageBeanNodeSilencePoliciespolicies["State"].isNull())
+			policiesObject.state = pageBeanNodeSilencePoliciespolicies["State"].asString();
 		auto allMatchingRulesNode = pageBeanNodeSilencePoliciespolicies["MatchingRules"]["matchingRulesItem"];
 		for (auto pageBeanNodeSilencePoliciespoliciesMatchingRulesmatchingRulesItem : allMatchingRulesNode)
 		{

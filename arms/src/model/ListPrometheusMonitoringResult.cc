@@ -1,0 +1,79 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/arms/model/ListPrometheusMonitoringResult.h>
+#include <json/json.h>
+
+using namespace AlibabaCloud::ARMS;
+using namespace AlibabaCloud::ARMS::Model;
+
+ListPrometheusMonitoringResult::ListPrometheusMonitoringResult() :
+	ServiceResult()
+{}
+
+ListPrometheusMonitoringResult::ListPrometheusMonitoringResult(const std::string &payload) :
+	ServiceResult()
+{
+	parse(payload);
+}
+
+ListPrometheusMonitoringResult::~ListPrometheusMonitoringResult()
+{}
+
+void ListPrometheusMonitoringResult::parse(const std::string &payload)
+{
+	Json::Reader reader;
+	Json::Value value;
+	reader.parse(payload, value);
+	setRequestId(value["RequestId"].asString());
+	auto allDataNode = value["Data"]["Monitoring"];
+	for (auto valueDataMonitoring : allDataNode)
+	{
+		Monitoring dataObject;
+		if(!valueDataMonitoring["ClusterId"].isNull())
+			dataObject.clusterId = valueDataMonitoring["ClusterId"].asString();
+		if(!valueDataMonitoring["MonitoringName"].isNull())
+			dataObject.monitoringName = valueDataMonitoring["MonitoringName"].asString();
+		if(!valueDataMonitoring["Type"].isNull())
+			dataObject.type = valueDataMonitoring["Type"].asString();
+		if(!valueDataMonitoring["ConfigYaml"].isNull())
+			dataObject.configYaml = valueDataMonitoring["ConfigYaml"].asString();
+		if(!valueDataMonitoring["Status"].isNull())
+			dataObject.status = valueDataMonitoring["Status"].asString();
+		data_.push_back(dataObject);
+	}
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+
+}
+
+std::string ListPrometheusMonitoringResult::getMessage()const
+{
+	return message_;
+}
+
+std::vector<ListPrometheusMonitoringResult::Monitoring> ListPrometheusMonitoringResult::getData()const
+{
+	return data_;
+}
+
+int ListPrometheusMonitoringResult::getCode()const
+{
+	return code_;
+}
+

@@ -30,6 +30,10 @@ class ALIBABACLOUD_ARMS_EXPORT InstallManagedPrometheusRequest : public RpcServi
 public:
 	InstallManagedPrometheusRequest();
 	~InstallManagedPrometheusRequest();
+	std::string getGrafanaInstanceId() const;
+	void setGrafanaInstanceId(const std::string &grafanaInstanceId);
+	std::string getClusterName() const;
+	void setClusterName(const std::string &clusterName);
 	std::string getSecurityGroupId() const;
 	void setSecurityGroupId(const std::string &securityGroupId);
 	std::string getClusterId() const;
@@ -40,17 +44,22 @@ public:
 	void setClusterType(const std::string &clusterType);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
 
 private:
+	std::string grafanaInstanceId_;
+	std::string clusterName_;
 	std::string securityGroupId_;
 	std::string clusterId_;
 	std::string kubeConfig_;
 	std::string clusterType_;
 	std::string vSwitchId_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string vpcId_;
 };

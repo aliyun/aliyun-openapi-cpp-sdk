@@ -32,6 +32,8 @@ public:
 	~ListAlertsRequest();
 	std::string getSeverity() const;
 	void setSeverity(const std::string &severity);
+	std::string getOwner() const;
+	void setOwner(const std::string &owner);
 	std::string getIntegrationType() const;
 	void setIntegrationType(const std::string &integrationType);
 	std::string getAlertName() const;
@@ -46,8 +48,14 @@ public:
 	void setStartTime(const std::string &startTime);
 	bool getShowEvents() const;
 	void setShowEvents(bool showEvents);
+	std::string getProxyUserId() const;
+	void setProxyUserId(const std::string &proxyUserId);
+	std::string getNotifyRobotName() const;
+	void setNotifyRobotName(const std::string &notifyRobotName);
 	long getSize() const;
 	void setSize(long size);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	long getState() const;
 	void setState(long state);
 	long getPage() const;
@@ -55,6 +63,7 @@ public:
 
 private:
 	std::string severity_;
+	std::string owner_;
 	std::string integrationType_;
 	std::string alertName_;
 	bool showActivities_;
@@ -62,7 +71,10 @@ private:
 	long dispatchRuleId_;
 	std::string startTime_;
 	bool showEvents_;
+	std::string proxyUserId_;
+	std::string notifyRobotName_;
 	long size_;
+	std::string regionId_;
 	long state_;
 	long page_;
 };

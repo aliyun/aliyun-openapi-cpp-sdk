@@ -25,13 +25,13 @@ UninstallPromClusterRequest::UninstallPromClusterRequest()
 
 UninstallPromClusterRequest::~UninstallPromClusterRequest() {}
 
-std::string UninstallPromClusterRequest::getRegionId() const {
-  return regionId_;
+std::string UninstallPromClusterRequest::getAliyunLang() const {
+  return aliyunLang_;
 }
 
-void UninstallPromClusterRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void UninstallPromClusterRequest::setAliyunLang(const std::string &aliyunLang) {
+  aliyunLang_ = aliyunLang;
+  setParameter(std::string("AliyunLang"), aliyunLang);
 }
 
 std::string UninstallPromClusterRequest::getClusterId() const {
@@ -41,5 +41,14 @@ std::string UninstallPromClusterRequest::getClusterId() const {
 void UninstallPromClusterRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
   setParameter(std::string("ClusterId"), clusterId);
+}
+
+std::string UninstallPromClusterRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UninstallPromClusterRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 

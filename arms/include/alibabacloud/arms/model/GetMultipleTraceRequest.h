@@ -34,10 +34,16 @@ public:
 	void setTraceIDs(const std::vector<std::string> &traceIDs);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	long getEndTime() const;
+	void setEndTime(long endTime);
+	long getStartTime() const;
+	void setStartTime(long startTime);
 
 private:
 	std::vector<std::string> traceIDs_;
 	std::string regionId_;
+	long endTime_;
+	long startTime_;
 };
 } // namespace Model
 } // namespace ARMS

@@ -43,6 +43,20 @@ void ImportAppAlertRulesRequest::setProxyUserId(const std::string &proxyUserId) 
   setParameter(std::string("ProxyUserId"), proxyUserId);
 }
 
+std::vector<ImportAppAlertRulesRequest::Tags> ImportAppAlertRulesRequest::getTags() const {
+  return tags_;
+}
+
+void ImportAppAlertRulesRequest::setTags(const std::vector<ImportAppAlertRulesRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
+}
+
 std::string ImportAppAlertRulesRequest::getRegionId() const {
   return regionId_;
 }

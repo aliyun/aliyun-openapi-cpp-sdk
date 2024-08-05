@@ -52,6 +52,15 @@ void CreateAlertContactRequest::setContactName(const std::string &contactName) {
   setParameter(std::string("ContactName"), contactName);
 }
 
+std::string CreateAlertContactRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateAlertContactRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateAlertContactRequest::getRegionId() const {
   return regionId_;
 }

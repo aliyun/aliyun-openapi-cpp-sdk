@@ -37,12 +37,18 @@ namespace AlibabaCloud
 				SaveTraceAppConfigResult();
 				explicit SaveTraceAppConfigResult(const std::string &payload);
 				~SaveTraceAppConfigResult();
+				std::string getMessage()const;
 				std::string getData()const;
+				long getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				std::string data_;
+				long code_;
+				bool success_;
 
 			};
 		}

@@ -37,12 +37,16 @@ namespace AlibabaCloud
 				GetIntegrationStateResult();
 				explicit GetIntegrationStateResult(const std::string &payload);
 				~GetIntegrationStateResult();
+				std::string getMessage()const;
 				bool getState()const;
+				int getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				bool state_;
+				int code_;
 
 			};
 		}

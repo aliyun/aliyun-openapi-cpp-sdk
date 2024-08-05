@@ -44,18 +44,24 @@ namespace AlibabaCloud
 						std::string value;
 						std::string name;
 					};
+					struct TagsItem
+					{
+						std::string value;
+						std::string key;
+					};
 					int status;
 					std::string notifyType;
+					std::string alertName;
+					std::string message;
+					std::string clusterId;
+					std::vector<PrometheusAlertRule::Label> labels;
+					std::string duration;
 					std::string type;
 					long alertId;
 					std::vector<PrometheusAlertRule::Annotation> annotations;
-					std::string alertName;
-					std::string message;
 					std::string expression;
-					std::string clusterId;
 					long dispatchRuleId;
-					std::vector<PrometheusAlertRule::Label> labels;
-					std::string duration;
+					std::vector<PrometheusAlertRule::TagsItem> tags;
 				};
 
 
@@ -63,11 +69,17 @@ namespace AlibabaCloud
 				explicit ListPrometheusAlertRulesResult(const std::string &payload);
 				~ListPrometheusAlertRulesResult();
 				std::vector<PrometheusAlertRule> getPrometheusAlertRules()const;
+				std::string getMessage()const;
+				long getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<PrometheusAlertRule> prometheusAlertRules_;
+				std::string message_;
+				long code_;
+				bool success_;
 
 			};
 		}

@@ -43,3 +43,17 @@ void GetTraceAppRequest::setPid(const std::string &pid) {
   setParameter(std::string("Pid"), pid);
 }
 
+std::vector<GetTraceAppRequest::Tags> GetTraceAppRequest::getTags() const {
+  return tags_;
+}
+
+void GetTraceAppRequest::setTags(const std::vector<GetTraceAppRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
+}
+

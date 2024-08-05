@@ -25,6 +25,15 @@ AddPrometheusGlobalViewRequest::AddPrometheusGlobalViewRequest()
 
 AddPrometheusGlobalViewRequest::~AddPrometheusGlobalViewRequest() {}
 
+std::string AddPrometheusGlobalViewRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void AddPrometheusGlobalViewRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string AddPrometheusGlobalViewRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,6 +41,20 @@ std::string AddPrometheusGlobalViewRequest::getRegionId() const {
 void AddPrometheusGlobalViewRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::vector<AddPrometheusGlobalViewRequest::Tag> AddPrometheusGlobalViewRequest::getTag() const {
+  return tag_;
+}
+
+void AddPrometheusGlobalViewRequest::setTag(const std::vector<AddPrometheusGlobalViewRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
 std::string AddPrometheusGlobalViewRequest::getGroupName() const {

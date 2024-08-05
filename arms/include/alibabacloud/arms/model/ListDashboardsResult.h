@@ -79,11 +79,17 @@ namespace AlibabaCloud
 				explicit ListDashboardsResult(const std::string &payload);
 				~ListDashboardsResult();
 				std::vector<DashboardVosItem> getDashboardVos()const;
+				std::string getEnvironmentId()const;
+				std::string getPrometheusServiceOpened()const;
+				std::string getGrafanaServiceOpened()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<DashboardVosItem> dashboardVos_;
+				std::string environmentId_;
+				std::string prometheusServiceOpened_;
+				std::string grafanaServiceOpened_;
 
 			};
 		}

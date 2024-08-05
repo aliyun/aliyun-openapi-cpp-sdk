@@ -41,11 +41,25 @@ void GetIntegrationStateResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["State"].isNull())
 		state_ = value["State"].asString() == "true";
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string GetIntegrationStateResult::getMessage()const
+{
+	return message_;
 }
 
 bool GetIntegrationStateResult::getState()const
 {
 	return state_;
+}
+
+int GetIntegrationStateResult::getCode()const
+{
+	return code_;
 }
 

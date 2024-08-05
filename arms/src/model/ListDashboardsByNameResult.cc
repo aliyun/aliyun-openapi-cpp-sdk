@@ -41,11 +41,25 @@ void ListDashboardsByNameResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string ListDashboardsByNameResult::getMessage()const
+{
+	return message_;
 }
 
 std::string ListDashboardsByNameResult::getData()const
 {
 	return data_;
+}
+
+int ListDashboardsByNameResult::getCode()const
+{
+	return code_;
 }
 

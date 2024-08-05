@@ -51,7 +51,7 @@ void GetAlertRulesResult::parse(const std::string &payload)
 	{
 		PageBean::AlertRulesItem alertRulesItemObject;
 		if(!pageBeanNodeAlertRulesalertRulesItem["AlertId"].isNull())
-			alertRulesItemObject.alertId = std::stof(pageBeanNodeAlertRulesalertRulesItem["AlertId"].asString());
+			alertRulesItemObject.alertId = std::stol(pageBeanNodeAlertRulesalertRulesItem["AlertId"].asString());
 		if(!pageBeanNodeAlertRulesalertRulesItem["AlertName"].isNull())
 			alertRulesItemObject.alertName = pageBeanNodeAlertRulesalertRulesItem["AlertName"].asString();
 		if(!pageBeanNodeAlertRulesalertRulesItem["UserId"].isNull())
@@ -88,6 +88,8 @@ void GetAlertRulesResult::parse(const std::string &payload)
 			alertRulesItemObject.level = pageBeanNodeAlertRulesalertRulesItem["Level"].asString();
 		if(!pageBeanNodeAlertRulesalertRulesItem["Message"].isNull())
 			alertRulesItemObject.message = pageBeanNodeAlertRulesalertRulesItem["Message"].asString();
+		if(!pageBeanNodeAlertRulesalertRulesItem["DurationCompareType"].isNull())
+			alertRulesItemObject.durationCompareType = pageBeanNodeAlertRulesalertRulesItem["DurationCompareType"].asString();
 		auto allLabelsNode = pageBeanNodeAlertRulesalertRulesItem["Labels"]["labelsItem"];
 		for (auto pageBeanNodeAlertRulesalertRulesItemLabelslabelsItem : allLabelsNode)
 		{
@@ -108,6 +110,16 @@ void GetAlertRulesResult::parse(const std::string &payload)
 				annotationsObject.value = pageBeanNodeAlertRulesalertRulesItemAnnotationsannotationsItem["Value"].asString();
 			alertRulesItemObject.annotations.push_back(annotationsObject);
 		}
+		auto allTagsNode = pageBeanNodeAlertRulesalertRulesItem["Tags"]["tagsItem"];
+		for (auto pageBeanNodeAlertRulesalertRulesItemTagstagsItem : allTagsNode)
+		{
+			PageBean::AlertRulesItem::TagsItem tagsObject;
+			if(!pageBeanNodeAlertRulesalertRulesItemTagstagsItem["Key"].isNull())
+				tagsObject.key = pageBeanNodeAlertRulesalertRulesItemTagstagsItem["Key"].asString();
+			if(!pageBeanNodeAlertRulesalertRulesItemTagstagsItem["Value"].isNull())
+				tagsObject.value = pageBeanNodeAlertRulesalertRulesItemTagstagsItem["Value"].asString();
+			alertRulesItemObject.tags.push_back(tagsObject);
+		}
 		auto alertRuleContentNode = value["AlertRuleContent"];
 		if(!alertRuleContentNode["Condition"].isNull())
 			alertRulesItemObject.alertRuleContent.condition = alertRuleContentNode["Condition"].asString();
@@ -116,7 +128,7 @@ void GetAlertRulesResult::parse(const std::string &payload)
 		{
 			PageBean::AlertRulesItem::AlertRuleContent::AlertRuleItemsItem alertRuleItemsItemObject;
 			if(!alertRuleContentNodeAlertRuleItemsalertRuleItemsItem["N"].isNull())
-				alertRuleItemsItemObject.n = std::stof(alertRuleContentNodeAlertRuleItemsalertRuleItemsItem["N"].asString());
+				alertRuleItemsItemObject.n = std::stol(alertRuleContentNodeAlertRuleItemsalertRuleItemsItem["N"].asString());
 			if(!alertRuleContentNodeAlertRuleItemsalertRuleItemsItem["MetricKey"].isNull())
 				alertRuleItemsItemObject.metricKey = alertRuleContentNodeAlertRuleItemsalertRuleItemsItem["MetricKey"].asString();
 			if(!alertRuleContentNodeAlertRuleItemsalertRuleItemsItem["Aggregate"].isNull())

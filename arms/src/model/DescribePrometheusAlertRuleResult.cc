@@ -80,11 +80,32 @@ void DescribePrometheusAlertRuleResult::parse(const std::string &payload)
 			annotationObject.value = prometheusAlertRuleNodeAnnotationsAnnotation["Value"].asString();
 		prometheusAlertRule_.annotations.push_back(annotationObject);
 	}
+	if(!value["Code"].isNull())
+		code_ = std::stol(value["Code"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string DescribePrometheusAlertRuleResult::getMessage()const
+{
+	return message_;
 }
 
 DescribePrometheusAlertRuleResult::PrometheusAlertRule DescribePrometheusAlertRuleResult::getPrometheusAlertRule()const
 {
 	return prometheusAlertRule_;
+}
+
+long DescribePrometheusAlertRuleResult::getCode()const
+{
+	return code_;
+}
+
+bool DescribePrometheusAlertRuleResult::getSuccess()const
+{
+	return success_;
 }
 

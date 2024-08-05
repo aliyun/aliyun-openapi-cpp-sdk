@@ -37,12 +37,16 @@ namespace AlibabaCloud
 				ListPrometheusGlobalViewResult();
 				explicit ListPrometheusGlobalViewResult(const std::string &payload);
 				~ListPrometheusGlobalViewResult();
+				std::string getMessage()const;
 				std::string getData()const;
+				int getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				std::string data_;
+				int code_;
 
 			};
 		}

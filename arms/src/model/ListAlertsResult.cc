@@ -64,6 +64,20 @@ void ListAlertsResult::parse(const std::string &payload)
 			listAlertsItemObject.createTime = pageBeanNodeListAlertslistAlertsItem["CreateTime"].asString();
 		if(!pageBeanNodeListAlertslistAlertsItem["AlertId"].isNull())
 			listAlertsItemObject.alertId = std::stol(pageBeanNodeListAlertslistAlertsItem["AlertId"].asString());
+		if(!pageBeanNodeListAlertslistAlertsItem["Solution"].isNull())
+			listAlertsItemObject.solution = pageBeanNodeListAlertslistAlertsItem["Solution"].asString();
+		if(!pageBeanNodeListAlertslistAlertsItem["Owner"].isNull())
+			listAlertsItemObject.owner = pageBeanNodeListAlertslistAlertsItem["Owner"].asString();
+		if(!pageBeanNodeListAlertslistAlertsItem["Handler"].isNull())
+			listAlertsItemObject.handler = pageBeanNodeListAlertslistAlertsItem["Handler"].asString();
+		if(!pageBeanNodeListAlertslistAlertsItem["AcknowledgeTime"].isNull())
+			listAlertsItemObject.acknowledgeTime = std::stol(pageBeanNodeListAlertslistAlertsItem["AcknowledgeTime"].asString());
+		if(!pageBeanNodeListAlertslistAlertsItem["RecoverTime"].isNull())
+			listAlertsItemObject.recoverTime = std::stol(pageBeanNodeListAlertslistAlertsItem["RecoverTime"].asString());
+		if(!pageBeanNodeListAlertslistAlertsItem["NotifyRobots"].isNull())
+			listAlertsItemObject.notifyRobots = pageBeanNodeListAlertslistAlertsItem["NotifyRobots"].asString();
+		if(!pageBeanNodeListAlertslistAlertsItem["Describe"].isNull())
+			listAlertsItemObject.describe = pageBeanNodeListAlertslistAlertsItem["Describe"].asString();
 		auto allActivitiesNode = pageBeanNodeListAlertslistAlertsItem["Activities"]["activitiesItem"];
 		for (auto pageBeanNodeListAlertslistAlertsItemActivitiesactivitiesItem : allActivitiesNode)
 		{

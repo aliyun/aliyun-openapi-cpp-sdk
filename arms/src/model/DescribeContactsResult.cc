@@ -62,6 +62,14 @@ void DescribeContactsResult::parse(const std::string &payload)
 			contactsObject.isVerify = pageBeanNodeAlertContactscontacts["IsVerify"].asString() == "true";
 		if(!pageBeanNodeAlertContactscontacts["ReissueSendNotice"].isNull())
 			contactsObject.reissueSendNotice = std::stol(pageBeanNodeAlertContactscontacts["ReissueSendNotice"].asString());
+		if(!pageBeanNodeAlertContactscontacts["IsEmailVerify"].isNull())
+			contactsObject.isEmailVerify = pageBeanNodeAlertContactscontacts["IsEmailVerify"].asString() == "true";
+		if(!pageBeanNodeAlertContactscontacts["ArmsContactId"].isNull())
+			contactsObject.armsContactId = std::stol(pageBeanNodeAlertContactscontacts["ArmsContactId"].asString());
+		if(!pageBeanNodeAlertContactscontacts["DingRobotUrl"].isNull())
+			contactsObject.dingRobotUrl = pageBeanNodeAlertContactscontacts["DingRobotUrl"].asString();
+		if(!pageBeanNodeAlertContactscontacts["Webhook"].isNull())
+			contactsObject.webhook = pageBeanNodeAlertContactscontacts["Webhook"].asString();
 		pageBean_.alertContacts.push_back(contactsObject);
 	}
 

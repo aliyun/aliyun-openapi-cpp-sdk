@@ -25,6 +25,15 @@ ListPrometheusInstancesRequest::ListPrometheusInstancesRequest()
 
 ListPrometheusInstancesRequest::~ListPrometheusInstancesRequest() {}
 
+std::string ListPrometheusInstancesRequest::getClusterType() const {
+  return clusterType_;
+}
+
+void ListPrometheusInstancesRequest::setClusterType(const std::string &clusterType) {
+  clusterType_ = clusterType;
+  setParameter(std::string("ClusterType"), clusterType);
+}
+
 bool ListPrometheusInstancesRequest::getShowGlobalView() const {
   return showGlobalView_;
 }

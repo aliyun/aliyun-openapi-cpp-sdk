@@ -30,16 +30,19 @@ class ALIBABACLOUD_ARMS_EXPORT DescribeWebhookContactsRequest : public RpcServic
 public:
 	DescribeWebhookContactsRequest();
 	~DescribeWebhookContactsRequest();
-	long getSize() const;
-	void setSize(long size);
 	std::string getWebhookName() const;
 	void setWebhookName(const std::string &webhookName);
+	std::string getContactIds() const;
+	void setContactIds(const std::string &contactIds);
+	long getSize() const;
+	void setSize(long size);
 	long getPage() const;
 	void setPage(long page);
 
 private:
-	long size_;
 	std::string webhookName_;
+	std::string contactIds_;
+	long size_;
 	long page_;
 };
 } // namespace Model

@@ -78,30 +78,37 @@ namespace AlibabaCloud
 						std::string value;
 						std::string name;
 					};
-					std::string alertName;
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					long createdTime;
 					std::string message;
-					std::string clusterId;
-					std::string promQL;
 					std::string alertCheckType;
-					AlertRuleContent alertRuleContent;
 					std::string notifyStrategy;
-					std::vector<LabelsItem> labels;
-					std::string duration;
 					std::vector<std::string> pids;
 					std::string alertType;
 					Filters filters;
-					float alertId;
 					long alertGroup;
 					std::vector<AnnotationsItem> annotations;
+					std::string alertStatus;
+					std::string metricsType;
+					std::vector<Tag> tags;
+					std::string alertName;
+					std::string clusterId;
+					std::string promQL;
+					AlertRuleContent alertRuleContent;
+					std::vector<LabelsItem> labels;
+					std::string duration;
+					float alertId;
+					std::string notifyMode;
 					std::string extend;
 					std::string userId;
-					std::string alertStatus;
 					bool autoAddNewApplication;
 					std::string level;
 					std::string regionId;
 					long updatedTime;
-					std::string metricsType;
 				};
 
 

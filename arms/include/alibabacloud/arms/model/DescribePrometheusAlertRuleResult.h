@@ -62,12 +62,18 @@ namespace AlibabaCloud
 				DescribePrometheusAlertRuleResult();
 				explicit DescribePrometheusAlertRuleResult(const std::string &payload);
 				~DescribePrometheusAlertRuleResult();
+				std::string getMessage()const;
 				PrometheusAlertRule getPrometheusAlertRule()const;
+				long getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				PrometheusAlertRule prometheusAlertRule_;
+				long code_;
+				bool success_;
 
 			};
 		}

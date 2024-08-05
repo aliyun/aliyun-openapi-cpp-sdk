@@ -83,6 +83,7 @@ namespace AlibabaCloud
 						MetricParam metricParam;
 						int alertVersion;
 						long taskId;
+						std::string resourceGroupId;
 						std::string contactGroupIds;
 						std::string config;
 						long createTime;
@@ -90,6 +91,7 @@ namespace AlibabaCloud
 						std::string title;
 						std::string taskStatus;
 						AlarmContext alarmContext;
+						std::vector<std::string> alertWay;
 						int alertType;
 						std::string contactGroupIdList;
 						Notice notice;

@@ -41,11 +41,25 @@ void ManageRecordingRuleResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string ManageRecordingRuleResult::getMessage()const
+{
+	return message_;
 }
 
 std::string ManageRecordingRuleResult::getData()const
 {
 	return data_;
+}
+
+int ManageRecordingRuleResult::getCode()const
+{
+	return code_;
 }
 

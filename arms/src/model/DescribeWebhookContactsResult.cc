@@ -54,6 +54,8 @@ void DescribeWebhookContactsResult::parse(const std::string &payload)
 			webhookContactsItemObject.webhookId = std::stof(pageBeanNodeWebhookContactswebhookContactsItem["WebhookId"].asString());
 		if(!pageBeanNodeWebhookContactswebhookContactsItem["WebhookName"].isNull())
 			webhookContactsItemObject.webhookName = pageBeanNodeWebhookContactswebhookContactsItem["WebhookName"].asString();
+		if(!pageBeanNodeWebhookContactswebhookContactsItem["ArmsContactId"].isNull())
+			webhookContactsItemObject.armsContactId = std::stol(pageBeanNodeWebhookContactswebhookContactsItem["ArmsContactId"].asString());
 		auto webhookNode = value["Webhook"];
 		if(!webhookNode["Method"].isNull())
 			webhookContactsItemObject.webhook.method = webhookNode["Method"].asString();

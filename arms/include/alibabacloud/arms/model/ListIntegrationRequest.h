@@ -30,21 +30,21 @@ class ALIBABACLOUD_ARMS_EXPORT ListIntegrationRequest : public RpcServiceRequest
 public:
 	ListIntegrationRequest();
 	~ListIntegrationRequest();
+	bool getIsDetail() const;
+	void setIsDetail(bool isDetail);
 	long getSize() const;
 	void setSize(long size);
 	std::string getIntegrationName() const;
 	void setIntegrationName(const std::string &integrationName);
-	bool getIsDetail() const;
-	void setIsDetail(bool isDetail);
 	long getPage() const;
 	void setPage(long page);
 	std::string getIntegrationProductType() const;
 	void setIntegrationProductType(const std::string &integrationProductType);
 
 private:
+	bool isDetail_;
 	long size_;
 	std::string integrationName_;
-	bool isDetail_;
 	long page_;
 	std::string integrationProductType_;
 };

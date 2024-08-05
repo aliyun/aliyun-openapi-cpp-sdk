@@ -65,6 +65,7 @@ namespace AlibabaCloud
 						std::string netDnsNs;
 						long netIcmpSwitch;
 						std::string whiteList;
+						std::string netDnsTimeout;
 						long netDnsServer;
 						long netTraceRouteTimeout;
 						std::string netDnsQueryMethod;
@@ -150,7 +151,24 @@ namespace AlibabaCloud
 						std::string customHostIp;
 						long protocolMonitorTimeout;
 					};
-					struct MinotorListItem
+					struct CommonParam
+					{
+						struct AlertListItem
+						{
+							std::string seriousAlert;
+							std::string generalAlert;
+							std::string symbols;
+							std::string isCritical;
+							std::string name;
+						};
+						std::string startExecutionTime;
+						std::string alertPolicyId;
+						std::string alertNotifierId;
+						long alarmFlag;
+						std::vector<AlertListItem> alertList;
+						std::string monitorSamples;
+					};
+					struct MonitorListItem
 					{
 						long cityCode;
 						long netServiceId;
@@ -158,14 +176,16 @@ namespace AlibabaCloud
 						long sendCount;
 					};
 					Nav nav;
-					std::vector<MinotorListItem> minotorList;
 					long taskId;
 					long ipType;
 					long intervalType;
 					long intervalTime;
 					std::string url;
 					ExtendInterval extendInterval;
+					std::string monitorListString;
+					std::vector<MonitorListItem> monitorList;
 					std::string taskName;
+					CommonParam commonParam;
 					long taskType;
 					Net net;
 					Protocol protocol;

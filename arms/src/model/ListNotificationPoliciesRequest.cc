@@ -25,6 +25,24 @@ ListNotificationPoliciesRequest::ListNotificationPoliciesRequest()
 
 ListNotificationPoliciesRequest::~ListNotificationPoliciesRequest() {}
 
+bool ListNotificationPoliciesRequest::getIsDetail() const {
+  return isDetail_;
+}
+
+void ListNotificationPoliciesRequest::setIsDetail(bool isDetail) {
+  isDetail_ = isDetail;
+  setParameter(std::string("IsDetail"), isDetail ? "true" : "false");
+}
+
+bool ListNotificationPoliciesRequest::getDirectedMode() const {
+  return directedMode_;
+}
+
+void ListNotificationPoliciesRequest::setDirectedMode(bool directedMode) {
+  directedMode_ = directedMode;
+  setParameter(std::string("DirectedMode"), directedMode ? "true" : "false");
+}
+
 long ListNotificationPoliciesRequest::getSize() const {
   return size_;
 }
@@ -52,13 +70,13 @@ void ListNotificationPoliciesRequest::setName(const std::string &name) {
   setParameter(std::string("Name"), name);
 }
 
-bool ListNotificationPoliciesRequest::getIsDetail() const {
-  return isDetail_;
+std::string ListNotificationPoliciesRequest::getIds() const {
+  return ids_;
 }
 
-void ListNotificationPoliciesRequest::setIsDetail(bool isDetail) {
-  isDetail_ = isDetail;
-  setParameter(std::string("IsDetail"), isDetail ? "true" : "false");
+void ListNotificationPoliciesRequest::setIds(const std::string &ids) {
+  ids_ = ids;
+  setParameter(std::string("Ids"), ids);
 }
 
 long ListNotificationPoliciesRequest::getPage() const {

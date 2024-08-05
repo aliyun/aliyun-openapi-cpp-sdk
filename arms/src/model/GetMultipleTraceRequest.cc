@@ -42,3 +42,21 @@ void GetMultipleTraceRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+long GetMultipleTraceRequest::getEndTime() const {
+  return endTime_;
+}
+
+void GetMultipleTraceRequest::setEndTime(long endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), std::to_string(endTime));
+}
+
+long GetMultipleTraceRequest::getStartTime() const {
+  return startTime_;
+}
+
+void GetMultipleTraceRequest::setStartTime(long startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), std::to_string(startTime));
+}
+

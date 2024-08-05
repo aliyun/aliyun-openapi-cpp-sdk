@@ -36,10 +36,14 @@ public:
 	void setEndTime(const std::string &endTime);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	std::string getProxyUserId() const;
+	void setProxyUserId(const std::string &proxyUserId);
 	long getSize() const;
 	void setSize(long size);
 	std::string getMatchingConditions() const;
 	void setMatchingConditions(const std::string &matchingConditions);
+	bool getShowNotificationPolicies() const;
+	void setShowNotificationPolicies(bool showNotificationPolicies);
 	long getPage() const;
 	void setPage(long page);
 	std::string getStatus() const;
@@ -49,8 +53,10 @@ private:
 	std::string alertName_;
 	std::string endTime_;
 	std::string startTime_;
+	std::string proxyUserId_;
 	long size_;
 	std::string matchingConditions_;
+	bool showNotificationPolicies_;
 	long page_;
 	std::string status_;
 };

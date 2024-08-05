@@ -52,6 +52,15 @@ void ListAlertEventsRequest::setStartTime(const std::string &startTime) {
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string ListAlertEventsRequest::getProxyUserId() const {
+  return proxyUserId_;
+}
+
+void ListAlertEventsRequest::setProxyUserId(const std::string &proxyUserId) {
+  proxyUserId_ = proxyUserId;
+  setParameter(std::string("ProxyUserId"), proxyUserId);
+}
+
 long ListAlertEventsRequest::getSize() const {
   return size_;
 }
@@ -68,6 +77,15 @@ std::string ListAlertEventsRequest::getMatchingConditions() const {
 void ListAlertEventsRequest::setMatchingConditions(const std::string &matchingConditions) {
   matchingConditions_ = matchingConditions;
   setParameter(std::string("MatchingConditions"), matchingConditions);
+}
+
+bool ListAlertEventsRequest::getShowNotificationPolicies() const {
+  return showNotificationPolicies_;
+}
+
+void ListAlertEventsRequest::setShowNotificationPolicies(bool showNotificationPolicies) {
+  showNotificationPolicies_ = showNotificationPolicies;
+  setParameter(std::string("ShowNotificationPolicies"), showNotificationPolicies ? "true" : "false");
 }
 
 long ListAlertEventsRequest::getPage() const {

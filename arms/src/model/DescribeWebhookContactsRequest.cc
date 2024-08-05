@@ -25,15 +25,6 @@ DescribeWebhookContactsRequest::DescribeWebhookContactsRequest()
 
 DescribeWebhookContactsRequest::~DescribeWebhookContactsRequest() {}
 
-long DescribeWebhookContactsRequest::getSize() const {
-  return size_;
-}
-
-void DescribeWebhookContactsRequest::setSize(long size) {
-  size_ = size;
-  setParameter(std::string("Size"), std::to_string(size));
-}
-
 std::string DescribeWebhookContactsRequest::getWebhookName() const {
   return webhookName_;
 }
@@ -41,6 +32,24 @@ std::string DescribeWebhookContactsRequest::getWebhookName() const {
 void DescribeWebhookContactsRequest::setWebhookName(const std::string &webhookName) {
   webhookName_ = webhookName;
   setParameter(std::string("WebhookName"), webhookName);
+}
+
+std::string DescribeWebhookContactsRequest::getContactIds() const {
+  return contactIds_;
+}
+
+void DescribeWebhookContactsRequest::setContactIds(const std::string &contactIds) {
+  contactIds_ = contactIds;
+  setParameter(std::string("ContactIds"), contactIds);
+}
+
+long DescribeWebhookContactsRequest::getSize() const {
+  return size_;
+}
+
+void DescribeWebhookContactsRequest::setSize(long size) {
+  size_ = size;
+  setParameter(std::string("Size"), std::to_string(size));
 }
 
 long DescribeWebhookContactsRequest::getPage() const {

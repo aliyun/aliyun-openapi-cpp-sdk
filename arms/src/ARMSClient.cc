@@ -267,6 +267,42 @@ ARMSClient::AddPrometheusInstanceOutcomeCallable ARMSClient::addPrometheusInstan
 	return task->get_future();
 }
 
+ARMSClient::AddPrometheusIntegrationOutcome ARMSClient::addPrometheusIntegration(const AddPrometheusIntegrationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddPrometheusIntegrationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddPrometheusIntegrationOutcome(AddPrometheusIntegrationResult(outcome.result()));
+	else
+		return AddPrometheusIntegrationOutcome(outcome.error());
+}
+
+void ARMSClient::addPrometheusIntegrationAsync(const AddPrometheusIntegrationRequest& request, const AddPrometheusIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addPrometheusIntegration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::AddPrometheusIntegrationOutcomeCallable ARMSClient::addPrometheusIntegrationCallable(const AddPrometheusIntegrationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddPrometheusIntegrationOutcome()>>(
+			[this, request]()
+			{
+			return this->addPrometheusIntegration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::AddRecordingRuleOutcome ARMSClient::addRecordingRule(const AddRecordingRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +333,42 @@ ARMSClient::AddRecordingRuleOutcomeCallable ARMSClient::addRecordingRuleCallable
 			[this, request]()
 			{
 			return this->addRecordingRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::AddTagToFlinkClusterOutcome ARMSClient::addTagToFlinkCluster(const AddTagToFlinkClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddTagToFlinkClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddTagToFlinkClusterOutcome(AddTagToFlinkClusterResult(outcome.result()));
+	else
+		return AddTagToFlinkClusterOutcome(outcome.error());
+}
+
+void ARMSClient::addTagToFlinkClusterAsync(const AddTagToFlinkClusterRequest& request, const AddTagToFlinkClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addTagToFlinkCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::AddTagToFlinkClusterOutcomeCallable ARMSClient::addTagToFlinkClusterCallable(const AddTagToFlinkClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddTagToFlinkClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->addTagToFlinkCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,6 +447,186 @@ ARMSClient::ApplyScenarioOutcomeCallable ARMSClient::applyScenarioCallable(const
 	return task->get_future();
 }
 
+ARMSClient::BindPrometheusGrafanaInstanceOutcome ARMSClient::bindPrometheusGrafanaInstance(const BindPrometheusGrafanaInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindPrometheusGrafanaInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindPrometheusGrafanaInstanceOutcome(BindPrometheusGrafanaInstanceResult(outcome.result()));
+	else
+		return BindPrometheusGrafanaInstanceOutcome(outcome.error());
+}
+
+void ARMSClient::bindPrometheusGrafanaInstanceAsync(const BindPrometheusGrafanaInstanceRequest& request, const BindPrometheusGrafanaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindPrometheusGrafanaInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::BindPrometheusGrafanaInstanceOutcomeCallable ARMSClient::bindPrometheusGrafanaInstanceCallable(const BindPrometheusGrafanaInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindPrometheusGrafanaInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->bindPrometheusGrafanaInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::BlockAlarmNotificationOutcome ARMSClient::blockAlarmNotification(const BlockAlarmNotificationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BlockAlarmNotificationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BlockAlarmNotificationOutcome(BlockAlarmNotificationResult(outcome.result()));
+	else
+		return BlockAlarmNotificationOutcome(outcome.error());
+}
+
+void ARMSClient::blockAlarmNotificationAsync(const BlockAlarmNotificationRequest& request, const BlockAlarmNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, blockAlarmNotification(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::BlockAlarmNotificationOutcomeCallable ARMSClient::blockAlarmNotificationCallable(const BlockAlarmNotificationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BlockAlarmNotificationOutcome()>>(
+			[this, request]()
+			{
+			return this->blockAlarmNotification(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ChangeAlarmSeverityOutcome ARMSClient::changeAlarmSeverity(const ChangeAlarmSeverityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeAlarmSeverityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeAlarmSeverityOutcome(ChangeAlarmSeverityResult(outcome.result()));
+	else
+		return ChangeAlarmSeverityOutcome(outcome.error());
+}
+
+void ARMSClient::changeAlarmSeverityAsync(const ChangeAlarmSeverityRequest& request, const ChangeAlarmSeverityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeAlarmSeverity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ChangeAlarmSeverityOutcomeCallable ARMSClient::changeAlarmSeverityCallable(const ChangeAlarmSeverityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeAlarmSeverityOutcome()>>(
+			[this, request]()
+			{
+			return this->changeAlarmSeverity(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ChangeResourceGroupOutcome ARMSClient::changeResourceGroup(const ChangeResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeResourceGroupOutcome(ChangeResourceGroupResult(outcome.result()));
+	else
+		return ChangeResourceGroupOutcome(outcome.error());
+}
+
+void ARMSClient::changeResourceGroupAsync(const ChangeResourceGroupRequest& request, const ChangeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ChangeResourceGroupOutcomeCallable ARMSClient::changeResourceGroupCallable(const ChangeResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->changeResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::CheckCommercialStatusOutcome ARMSClient::checkCommercialStatus(const CheckCommercialStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckCommercialStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckCommercialStatusOutcome(CheckCommercialStatusResult(outcome.result()));
+	else
+		return CheckCommercialStatusOutcome(outcome.error());
+}
+
+void ARMSClient::checkCommercialStatusAsync(const CheckCommercialStatusRequest& request, const CheckCommercialStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkCommercialStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CheckCommercialStatusOutcomeCallable ARMSClient::checkCommercialStatusCallable(const CheckCommercialStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckCommercialStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->checkCommercialStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::CheckServiceStatusOutcome ARMSClient::checkServiceStatus(const CheckServiceStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +657,78 @@ ARMSClient::CheckServiceStatusOutcomeCallable ARMSClient::checkServiceStatusCall
 			[this, request]()
 			{
 			return this->checkServiceStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ClaimAlarmOutcome ARMSClient::claimAlarm(const ClaimAlarmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ClaimAlarmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ClaimAlarmOutcome(ClaimAlarmResult(outcome.result()));
+	else
+		return ClaimAlarmOutcome(outcome.error());
+}
+
+void ARMSClient::claimAlarmAsync(const ClaimAlarmRequest& request, const ClaimAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, claimAlarm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ClaimAlarmOutcomeCallable ARMSClient::claimAlarmCallable(const ClaimAlarmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ClaimAlarmOutcome()>>(
+			[this, request]()
+			{
+			return this->claimAlarm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::CloseAlarmOutcome ARMSClient::closeAlarm(const CloseAlarmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CloseAlarmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CloseAlarmOutcome(CloseAlarmResult(outcome.result()));
+	else
+		return CloseAlarmOutcome(outcome.error());
+}
+
+void ARMSClient::closeAlarmAsync(const CloseAlarmRequest& request, const CloseAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, closeAlarm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CloseAlarmOutcomeCallable ARMSClient::closeAlarmCallable(const CloseAlarmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CloseAlarmOutcome()>>(
+			[this, request]()
+			{
+			return this->closeAlarm(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -549,6 +873,186 @@ ARMSClient::CreateDispatchRuleOutcomeCallable ARMSClient::createDispatchRuleCall
 			[this, request]()
 			{
 			return this->createDispatchRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::CreateEnvCustomJobOutcome ARMSClient::createEnvCustomJob(const CreateEnvCustomJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateEnvCustomJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateEnvCustomJobOutcome(CreateEnvCustomJobResult(outcome.result()));
+	else
+		return CreateEnvCustomJobOutcome(outcome.error());
+}
+
+void ARMSClient::createEnvCustomJobAsync(const CreateEnvCustomJobRequest& request, const CreateEnvCustomJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createEnvCustomJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CreateEnvCustomJobOutcomeCallable ARMSClient::createEnvCustomJobCallable(const CreateEnvCustomJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateEnvCustomJobOutcome()>>(
+			[this, request]()
+			{
+			return this->createEnvCustomJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::CreateEnvPodMonitorOutcome ARMSClient::createEnvPodMonitor(const CreateEnvPodMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateEnvPodMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateEnvPodMonitorOutcome(CreateEnvPodMonitorResult(outcome.result()));
+	else
+		return CreateEnvPodMonitorOutcome(outcome.error());
+}
+
+void ARMSClient::createEnvPodMonitorAsync(const CreateEnvPodMonitorRequest& request, const CreateEnvPodMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createEnvPodMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CreateEnvPodMonitorOutcomeCallable ARMSClient::createEnvPodMonitorCallable(const CreateEnvPodMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateEnvPodMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->createEnvPodMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::CreateEnvServiceMonitorOutcome ARMSClient::createEnvServiceMonitor(const CreateEnvServiceMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateEnvServiceMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateEnvServiceMonitorOutcome(CreateEnvServiceMonitorResult(outcome.result()));
+	else
+		return CreateEnvServiceMonitorOutcome(outcome.error());
+}
+
+void ARMSClient::createEnvServiceMonitorAsync(const CreateEnvServiceMonitorRequest& request, const CreateEnvServiceMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createEnvServiceMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CreateEnvServiceMonitorOutcomeCallable ARMSClient::createEnvServiceMonitorCallable(const CreateEnvServiceMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateEnvServiceMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->createEnvServiceMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::CreateEnvironmentOutcome ARMSClient::createEnvironment(const CreateEnvironmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateEnvironmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateEnvironmentOutcome(CreateEnvironmentResult(outcome.result()));
+	else
+		return CreateEnvironmentOutcome(outcome.error());
+}
+
+void ARMSClient::createEnvironmentAsync(const CreateEnvironmentRequest& request, const CreateEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createEnvironment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CreateEnvironmentOutcomeCallable ARMSClient::createEnvironmentCallable(const CreateEnvironmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateEnvironmentOutcome()>>(
+			[this, request]()
+			{
+			return this->createEnvironment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::CreateGrafanaWorkspaceOutcome ARMSClient::createGrafanaWorkspace(const CreateGrafanaWorkspaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateGrafanaWorkspaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateGrafanaWorkspaceOutcome(CreateGrafanaWorkspaceResult(outcome.result()));
+	else
+		return CreateGrafanaWorkspaceOutcome(outcome.error());
+}
+
+void ARMSClient::createGrafanaWorkspaceAsync(const CreateGrafanaWorkspaceRequest& request, const CreateGrafanaWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createGrafanaWorkspace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CreateGrafanaWorkspaceOutcomeCallable ARMSClient::createGrafanaWorkspaceCallable(const CreateGrafanaWorkspaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateGrafanaWorkspaceOutcome()>>(
+			[this, request]()
+			{
+			return this->createGrafanaWorkspace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -915,6 +1419,78 @@ ARMSClient::CreatePrometheusAlertRuleOutcomeCallable ARMSClient::createPrometheu
 	return task->get_future();
 }
 
+ARMSClient::CreatePrometheusInstanceOutcome ARMSClient::createPrometheusInstance(const CreatePrometheusInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreatePrometheusInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreatePrometheusInstanceOutcome(CreatePrometheusInstanceResult(outcome.result()));
+	else
+		return CreatePrometheusInstanceOutcome(outcome.error());
+}
+
+void ARMSClient::createPrometheusInstanceAsync(const CreatePrometheusInstanceRequest& request, const CreatePrometheusInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createPrometheusInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CreatePrometheusInstanceOutcomeCallable ARMSClient::createPrometheusInstanceCallable(const CreatePrometheusInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreatePrometheusInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->createPrometheusInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::CreatePrometheusMonitoringOutcome ARMSClient::createPrometheusMonitoring(const CreatePrometheusMonitoringRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreatePrometheusMonitoringOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreatePrometheusMonitoringOutcome(CreatePrometheusMonitoringResult(outcome.result()));
+	else
+		return CreatePrometheusMonitoringOutcome(outcome.error());
+}
+
+void ARMSClient::createPrometheusMonitoringAsync(const CreatePrometheusMonitoringRequest& request, const CreatePrometheusMonitoringAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createPrometheusMonitoring(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CreatePrometheusMonitoringOutcomeCallable ARMSClient::createPrometheusMonitoringCallable(const CreatePrometheusMonitoringRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreatePrometheusMonitoringOutcome()>>(
+			[this, request]()
+			{
+			return this->createPrometheusMonitoring(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::CreateRetcodeAppOutcome ARMSClient::createRetcodeApp(const CreateRetcodeAppRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -951,6 +1527,78 @@ ARMSClient::CreateRetcodeAppOutcomeCallable ARMSClient::createRetcodeAppCallable
 	return task->get_future();
 }
 
+ARMSClient::CreateRumAppOutcome ARMSClient::createRumApp(const CreateRumAppRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateRumAppOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateRumAppOutcome(CreateRumAppResult(outcome.result()));
+	else
+		return CreateRumAppOutcome(outcome.error());
+}
+
+void ARMSClient::createRumAppAsync(const CreateRumAppRequest& request, const CreateRumAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createRumApp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CreateRumAppOutcomeCallable ARMSClient::createRumAppCallable(const CreateRumAppRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateRumAppOutcome()>>(
+			[this, request]()
+			{
+			return this->createRumApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::CreateRumUploadFileUrlOutcome ARMSClient::createRumUploadFileUrl(const CreateRumUploadFileUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateRumUploadFileUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateRumUploadFileUrlOutcome(CreateRumUploadFileUrlResult(outcome.result()));
+	else
+		return CreateRumUploadFileUrlOutcome(outcome.error());
+}
+
+void ARMSClient::createRumUploadFileUrlAsync(const CreateRumUploadFileUrlRequest& request, const CreateRumUploadFileUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createRumUploadFileUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CreateRumUploadFileUrlOutcomeCallable ARMSClient::createRumUploadFileUrlCallable(const CreateRumUploadFileUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateRumUploadFileUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->createRumUploadFileUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::CreateSyntheticTaskOutcome ARMSClient::createSyntheticTask(const CreateSyntheticTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -981,6 +1629,42 @@ ARMSClient::CreateSyntheticTaskOutcomeCallable ARMSClient::createSyntheticTaskCa
 			[this, request]()
 			{
 			return this->createSyntheticTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::CreateTimingSyntheticTaskOutcome ARMSClient::createTimingSyntheticTask(const CreateTimingSyntheticTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTimingSyntheticTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTimingSyntheticTaskOutcome(CreateTimingSyntheticTaskResult(outcome.result()));
+	else
+		return CreateTimingSyntheticTaskOutcome(outcome.error());
+}
+
+void ARMSClient::createTimingSyntheticTaskAsync(const CreateTimingSyntheticTaskRequest& request, const CreateTimingSyntheticTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTimingSyntheticTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CreateTimingSyntheticTaskOutcomeCallable ARMSClient::createTimingSyntheticTaskCallable(const CreateTimingSyntheticTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTimingSyntheticTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createTimingSyntheticTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1053,6 +1737,42 @@ ARMSClient::DelAuthTokenOutcomeCallable ARMSClient::delAuthTokenCallable(const D
 			[this, request]()
 			{
 			return this->delAuthToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DeleteAddonReleaseOutcome ARMSClient::deleteAddonRelease(const DeleteAddonReleaseRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAddonReleaseOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAddonReleaseOutcome(DeleteAddonReleaseResult(outcome.result()));
+	else
+		return DeleteAddonReleaseOutcome(outcome.error());
+}
+
+void ARMSClient::deleteAddonReleaseAsync(const DeleteAddonReleaseRequest& request, const DeleteAddonReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAddonRelease(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeleteAddonReleaseOutcomeCallable ARMSClient::deleteAddonReleaseCallable(const DeleteAddonReleaseRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAddonReleaseOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAddonRelease(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1203,6 +1923,42 @@ ARMSClient::DeleteAlertRulesOutcomeCallable ARMSClient::deleteAlertRulesCallable
 	return task->get_future();
 }
 
+ARMSClient::DeleteAppListOutcome ARMSClient::deleteAppList(const DeleteAppListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAppListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAppListOutcome(DeleteAppListResult(outcome.result()));
+	else
+		return DeleteAppListOutcome(outcome.error());
+}
+
+void ARMSClient::deleteAppListAsync(const DeleteAppListRequest& request, const DeleteAppListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAppList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeleteAppListOutcomeCallable ARMSClient::deleteAppListCallable(const DeleteAppListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAppListOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAppList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::DeleteCmsExporterOutcome ARMSClient::deleteCmsExporter(const DeleteCmsExporterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1347,6 +2103,186 @@ ARMSClient::DeleteDispatchRuleOutcomeCallable ARMSClient::deleteDispatchRuleCall
 	return task->get_future();
 }
 
+ARMSClient::DeleteEnvCustomJobOutcome ARMSClient::deleteEnvCustomJob(const DeleteEnvCustomJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteEnvCustomJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteEnvCustomJobOutcome(DeleteEnvCustomJobResult(outcome.result()));
+	else
+		return DeleteEnvCustomJobOutcome(outcome.error());
+}
+
+void ARMSClient::deleteEnvCustomJobAsync(const DeleteEnvCustomJobRequest& request, const DeleteEnvCustomJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteEnvCustomJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeleteEnvCustomJobOutcomeCallable ARMSClient::deleteEnvCustomJobCallable(const DeleteEnvCustomJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteEnvCustomJobOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteEnvCustomJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DeleteEnvPodMonitorOutcome ARMSClient::deleteEnvPodMonitor(const DeleteEnvPodMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteEnvPodMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteEnvPodMonitorOutcome(DeleteEnvPodMonitorResult(outcome.result()));
+	else
+		return DeleteEnvPodMonitorOutcome(outcome.error());
+}
+
+void ARMSClient::deleteEnvPodMonitorAsync(const DeleteEnvPodMonitorRequest& request, const DeleteEnvPodMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteEnvPodMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeleteEnvPodMonitorOutcomeCallable ARMSClient::deleteEnvPodMonitorCallable(const DeleteEnvPodMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteEnvPodMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteEnvPodMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DeleteEnvServiceMonitorOutcome ARMSClient::deleteEnvServiceMonitor(const DeleteEnvServiceMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteEnvServiceMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteEnvServiceMonitorOutcome(DeleteEnvServiceMonitorResult(outcome.result()));
+	else
+		return DeleteEnvServiceMonitorOutcome(outcome.error());
+}
+
+void ARMSClient::deleteEnvServiceMonitorAsync(const DeleteEnvServiceMonitorRequest& request, const DeleteEnvServiceMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteEnvServiceMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeleteEnvServiceMonitorOutcomeCallable ARMSClient::deleteEnvServiceMonitorCallable(const DeleteEnvServiceMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteEnvServiceMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteEnvServiceMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DeleteEnvironmentOutcome ARMSClient::deleteEnvironment(const DeleteEnvironmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteEnvironmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteEnvironmentOutcome(DeleteEnvironmentResult(outcome.result()));
+	else
+		return DeleteEnvironmentOutcome(outcome.error());
+}
+
+void ARMSClient::deleteEnvironmentAsync(const DeleteEnvironmentRequest& request, const DeleteEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteEnvironment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeleteEnvironmentOutcomeCallable ARMSClient::deleteEnvironmentCallable(const DeleteEnvironmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteEnvironmentOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteEnvironment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DeleteEnvironmentFeatureOutcome ARMSClient::deleteEnvironmentFeature(const DeleteEnvironmentFeatureRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteEnvironmentFeatureOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteEnvironmentFeatureOutcome(DeleteEnvironmentFeatureResult(outcome.result()));
+	else
+		return DeleteEnvironmentFeatureOutcome(outcome.error());
+}
+
+void ARMSClient::deleteEnvironmentFeatureAsync(const DeleteEnvironmentFeatureRequest& request, const DeleteEnvironmentFeatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteEnvironmentFeature(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeleteEnvironmentFeatureOutcomeCallable ARMSClient::deleteEnvironmentFeatureCallable(const DeleteEnvironmentFeatureRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteEnvironmentFeatureOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteEnvironmentFeature(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::DeleteEventBridgeIntegrationOutcome ARMSClient::deleteEventBridgeIntegration(const DeleteEventBridgeIntegrationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1413,6 +2349,42 @@ ARMSClient::DeleteGrafanaResourceOutcomeCallable ARMSClient::deleteGrafanaResour
 			[this, request]()
 			{
 			return this->deleteGrafanaResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DeleteGrafanaWorkspaceOutcome ARMSClient::deleteGrafanaWorkspace(const DeleteGrafanaWorkspaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteGrafanaWorkspaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteGrafanaWorkspaceOutcome(DeleteGrafanaWorkspaceResult(outcome.result()));
+	else
+		return DeleteGrafanaWorkspaceOutcome(outcome.error());
+}
+
+void ARMSClient::deleteGrafanaWorkspaceAsync(const DeleteGrafanaWorkspaceRequest& request, const DeleteGrafanaWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteGrafanaWorkspace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeleteGrafanaWorkspaceOutcomeCallable ARMSClient::deleteGrafanaWorkspaceCallable(const DeleteGrafanaWorkspaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteGrafanaWorkspaceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteGrafanaWorkspace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1635,6 +2607,78 @@ ARMSClient::DeletePrometheusGlobalViewOutcomeCallable ARMSClient::deletePromethe
 	return task->get_future();
 }
 
+ARMSClient::DeletePrometheusIntegrationOutcome ARMSClient::deletePrometheusIntegration(const DeletePrometheusIntegrationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePrometheusIntegrationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePrometheusIntegrationOutcome(DeletePrometheusIntegrationResult(outcome.result()));
+	else
+		return DeletePrometheusIntegrationOutcome(outcome.error());
+}
+
+void ARMSClient::deletePrometheusIntegrationAsync(const DeletePrometheusIntegrationRequest& request, const DeletePrometheusIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePrometheusIntegration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeletePrometheusIntegrationOutcomeCallable ARMSClient::deletePrometheusIntegrationCallable(const DeletePrometheusIntegrationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePrometheusIntegrationOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePrometheusIntegration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DeletePrometheusMonitoringOutcome ARMSClient::deletePrometheusMonitoring(const DeletePrometheusMonitoringRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePrometheusMonitoringOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePrometheusMonitoringOutcome(DeletePrometheusMonitoringResult(outcome.result()));
+	else
+		return DeletePrometheusMonitoringOutcome(outcome.error());
+}
+
+void ARMSClient::deletePrometheusMonitoringAsync(const DeletePrometheusMonitoringRequest& request, const DeletePrometheusMonitoringAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePrometheusMonitoring(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeletePrometheusMonitoringOutcomeCallable ARMSClient::deletePrometheusMonitoringCallable(const DeletePrometheusMonitoringRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePrometheusMonitoringOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePrometheusMonitoring(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::DeleteRetcodeAppOutcome ARMSClient::deleteRetcodeApp(const DeleteRetcodeAppRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1665,6 +2709,78 @@ ARMSClient::DeleteRetcodeAppOutcomeCallable ARMSClient::deleteRetcodeAppCallable
 			[this, request]()
 			{
 			return this->deleteRetcodeApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DeleteRumAppOutcome ARMSClient::deleteRumApp(const DeleteRumAppRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRumAppOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRumAppOutcome(DeleteRumAppResult(outcome.result()));
+	else
+		return DeleteRumAppOutcome(outcome.error());
+}
+
+void ARMSClient::deleteRumAppAsync(const DeleteRumAppRequest& request, const DeleteRumAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRumApp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeleteRumAppOutcomeCallable ARMSClient::deleteRumAppCallable(const DeleteRumAppRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRumAppOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRumApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DeleteRumUploadFileOutcome ARMSClient::deleteRumUploadFile(const DeleteRumUploadFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRumUploadFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRumUploadFileOutcome(DeleteRumUploadFileResult(outcome.result()));
+	else
+		return DeleteRumUploadFileOutcome(outcome.error());
+}
+
+void ARMSClient::deleteRumUploadFileAsync(const DeleteRumUploadFileRequest& request, const DeleteRumUploadFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRumUploadFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeleteRumUploadFileOutcomeCallable ARMSClient::deleteRumUploadFileCallable(const DeleteRumUploadFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRumUploadFileOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRumUploadFile(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1815,6 +2931,42 @@ ARMSClient::DeleteSyntheticTaskOutcomeCallable ARMSClient::deleteSyntheticTaskCa
 	return task->get_future();
 }
 
+ARMSClient::DeleteTimingSyntheticTaskOutcome ARMSClient::deleteTimingSyntheticTask(const DeleteTimingSyntheticTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTimingSyntheticTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTimingSyntheticTaskOutcome(DeleteTimingSyntheticTaskResult(outcome.result()));
+	else
+		return DeleteTimingSyntheticTaskOutcome(outcome.error());
+}
+
+void ARMSClient::deleteTimingSyntheticTaskAsync(const DeleteTimingSyntheticTaskRequest& request, const DeleteTimingSyntheticTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTimingSyntheticTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeleteTimingSyntheticTaskOutcomeCallable ARMSClient::deleteTimingSyntheticTaskCallable(const DeleteTimingSyntheticTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTimingSyntheticTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTimingSyntheticTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::DeleteTraceAppOutcome ARMSClient::deleteTraceApp(const DeleteTraceAppRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1881,6 +3033,42 @@ ARMSClient::DeleteWebhookContactOutcomeCallable ARMSClient::deleteWebhookContact
 			[this, request]()
 			{
 			return this->deleteWebhookContact(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DescribeAddonReleaseOutcome ARMSClient::describeAddonRelease(const DescribeAddonReleaseRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAddonReleaseOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAddonReleaseOutcome(DescribeAddonReleaseResult(outcome.result()));
+	else
+		return DescribeAddonReleaseOutcome(outcome.error());
+}
+
+void ARMSClient::describeAddonReleaseAsync(const DescribeAddonReleaseRequest& request, const DescribeAddonReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAddonRelease(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DescribeAddonReleaseOutcomeCallable ARMSClient::describeAddonReleaseCallable(const DescribeAddonReleaseRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAddonReleaseOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAddonRelease(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1989,6 +3177,186 @@ ARMSClient::DescribeDispatchRuleOutcomeCallable ARMSClient::describeDispatchRule
 			[this, request]()
 			{
 			return this->describeDispatchRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DescribeEnvCustomJobOutcome ARMSClient::describeEnvCustomJob(const DescribeEnvCustomJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEnvCustomJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEnvCustomJobOutcome(DescribeEnvCustomJobResult(outcome.result()));
+	else
+		return DescribeEnvCustomJobOutcome(outcome.error());
+}
+
+void ARMSClient::describeEnvCustomJobAsync(const DescribeEnvCustomJobRequest& request, const DescribeEnvCustomJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEnvCustomJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DescribeEnvCustomJobOutcomeCallable ARMSClient::describeEnvCustomJobCallable(const DescribeEnvCustomJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEnvCustomJobOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEnvCustomJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DescribeEnvPodMonitorOutcome ARMSClient::describeEnvPodMonitor(const DescribeEnvPodMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEnvPodMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEnvPodMonitorOutcome(DescribeEnvPodMonitorResult(outcome.result()));
+	else
+		return DescribeEnvPodMonitorOutcome(outcome.error());
+}
+
+void ARMSClient::describeEnvPodMonitorAsync(const DescribeEnvPodMonitorRequest& request, const DescribeEnvPodMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEnvPodMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DescribeEnvPodMonitorOutcomeCallable ARMSClient::describeEnvPodMonitorCallable(const DescribeEnvPodMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEnvPodMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEnvPodMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DescribeEnvServiceMonitorOutcome ARMSClient::describeEnvServiceMonitor(const DescribeEnvServiceMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEnvServiceMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEnvServiceMonitorOutcome(DescribeEnvServiceMonitorResult(outcome.result()));
+	else
+		return DescribeEnvServiceMonitorOutcome(outcome.error());
+}
+
+void ARMSClient::describeEnvServiceMonitorAsync(const DescribeEnvServiceMonitorRequest& request, const DescribeEnvServiceMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEnvServiceMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DescribeEnvServiceMonitorOutcomeCallable ARMSClient::describeEnvServiceMonitorCallable(const DescribeEnvServiceMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEnvServiceMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEnvServiceMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DescribeEnvironmentOutcome ARMSClient::describeEnvironment(const DescribeEnvironmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEnvironmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEnvironmentOutcome(DescribeEnvironmentResult(outcome.result()));
+	else
+		return DescribeEnvironmentOutcome(outcome.error());
+}
+
+void ARMSClient::describeEnvironmentAsync(const DescribeEnvironmentRequest& request, const DescribeEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEnvironment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DescribeEnvironmentOutcomeCallable ARMSClient::describeEnvironmentCallable(const DescribeEnvironmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEnvironmentOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEnvironment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DescribeEnvironmentFeatureOutcome ARMSClient::describeEnvironmentFeature(const DescribeEnvironmentFeatureRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEnvironmentFeatureOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEnvironmentFeatureOutcome(DescribeEnvironmentFeatureResult(outcome.result()));
+	else
+		return DescribeEnvironmentFeatureOutcome(outcome.error());
+}
+
+void ARMSClient::describeEnvironmentFeatureAsync(const DescribeEnvironmentFeatureRequest& request, const DescribeEnvironmentFeatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEnvironmentFeature(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DescribeEnvironmentFeatureOutcomeCallable ARMSClient::describeEnvironmentFeatureCallable(const DescribeEnvironmentFeatureRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEnvironmentFeatureOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEnvironmentFeature(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2139,6 +3507,78 @@ ARMSClient::DescribeWebhookContactsOutcomeCallable ARMSClient::describeWebhookCo
 	return task->get_future();
 }
 
+ARMSClient::DoInsightsActionOutcome ARMSClient::doInsightsAction(const DoInsightsActionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DoInsightsActionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DoInsightsActionOutcome(DoInsightsActionResult(outcome.result()));
+	else
+		return DoInsightsActionOutcome(outcome.error());
+}
+
+void ARMSClient::doInsightsActionAsync(const DoInsightsActionRequest& request, const DoInsightsActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, doInsightsAction(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DoInsightsActionOutcomeCallable ARMSClient::doInsightsActionCallable(const DoInsightsActionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DoInsightsActionOutcome()>>(
+			[this, request]()
+			{
+			return this->doInsightsAction(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::EnableMetricOutcome ARMSClient::enableMetric(const EnableMetricRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableMetricOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableMetricOutcome(EnableMetricResult(outcome.result()));
+	else
+		return EnableMetricOutcome(outcome.error());
+}
+
+void ARMSClient::enableMetricAsync(const EnableMetricRequest& request, const EnableMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableMetric(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::EnableMetricOutcomeCallable ARMSClient::enableMetricCallable(const EnableMetricRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableMetricOutcome()>>(
+			[this, request]()
+			{
+			return this->enableMetric(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::GetAgentDownloadUrlOutcome ARMSClient::getAgentDownloadUrl(const GetAgentDownloadUrlRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2247,6 +3687,42 @@ ARMSClient::GetAppApiByPageOutcomeCallable ARMSClient::getAppApiByPageCallable(c
 	return task->get_future();
 }
 
+ARMSClient::GetAppJVMConfigOutcome ARMSClient::getAppJVMConfig(const GetAppJVMConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAppJVMConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAppJVMConfigOutcome(GetAppJVMConfigResult(outcome.result()));
+	else
+		return GetAppJVMConfigOutcome(outcome.error());
+}
+
+void ARMSClient::getAppJVMConfigAsync(const GetAppJVMConfigRequest& request, const GetAppJVMConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAppJVMConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetAppJVMConfigOutcomeCallable ARMSClient::getAppJVMConfigCallable(const GetAppJVMConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAppJVMConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->getAppJVMConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::GetAuthTokenOutcome ARMSClient::getAuthToken(const GetAuthTokenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2277,6 +3753,42 @@ ARMSClient::GetAuthTokenOutcomeCallable ARMSClient::getAuthTokenCallable(const G
 			[this, request]()
 			{
 			return this->getAuthToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetCloudClusterAllUrlOutcome ARMSClient::getCloudClusterAllUrl(const GetCloudClusterAllUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCloudClusterAllUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCloudClusterAllUrlOutcome(GetCloudClusterAllUrlResult(outcome.result()));
+	else
+		return GetCloudClusterAllUrlOutcome(outcome.error());
+}
+
+void ARMSClient::getCloudClusterAllUrlAsync(const GetCloudClusterAllUrlRequest& request, const GetCloudClusterAllUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCloudClusterAllUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetCloudClusterAllUrlOutcomeCallable ARMSClient::getCloudClusterAllUrlCallable(const GetCloudClusterAllUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCloudClusterAllUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->getCloudClusterAllUrl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2319,6 +3831,42 @@ ARMSClient::GetClusterAllUrlOutcomeCallable ARMSClient::getClusterAllUrlCallable
 	return task->get_future();
 }
 
+ARMSClient::GetCommercialStatusOutcome ARMSClient::getCommercialStatus(const GetCommercialStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCommercialStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCommercialStatusOutcome(GetCommercialStatusResult(outcome.result()));
+	else
+		return GetCommercialStatusOutcome(outcome.error());
+}
+
+void ARMSClient::getCommercialStatusAsync(const GetCommercialStatusRequest& request, const GetCommercialStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCommercialStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetCommercialStatusOutcomeCallable ARMSClient::getCommercialStatusCallable(const GetCommercialStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCommercialStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getCommercialStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::GetExploreUrlOutcome ARMSClient::getExploreUrl(const GetExploreUrlRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2349,6 +3897,42 @@ ARMSClient::GetExploreUrlOutcomeCallable ARMSClient::getExploreUrlCallable(const
 			[this, request]()
 			{
 			return this->getExploreUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetGrafanaWorkspaceOutcome ARMSClient::getGrafanaWorkspace(const GetGrafanaWorkspaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetGrafanaWorkspaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetGrafanaWorkspaceOutcome(GetGrafanaWorkspaceResult(outcome.result()));
+	else
+		return GetGrafanaWorkspaceOutcome(outcome.error());
+}
+
+void ARMSClient::getGrafanaWorkspaceAsync(const GetGrafanaWorkspaceRequest& request, const GetGrafanaWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getGrafanaWorkspace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetGrafanaWorkspaceOutcomeCallable ARMSClient::getGrafanaWorkspaceCallable(const GetGrafanaWorkspaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetGrafanaWorkspaceOutcome()>>(
+			[this, request]()
+			{
+			return this->getGrafanaWorkspace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2571,6 +4155,114 @@ ARMSClient::GetPrometheusGlobalViewOutcomeCallable ARMSClient::getPrometheusGlob
 	return task->get_future();
 }
 
+ARMSClient::GetPrometheusInstanceOutcome ARMSClient::getPrometheusInstance(const GetPrometheusInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPrometheusInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPrometheusInstanceOutcome(GetPrometheusInstanceResult(outcome.result()));
+	else
+		return GetPrometheusInstanceOutcome(outcome.error());
+}
+
+void ARMSClient::getPrometheusInstanceAsync(const GetPrometheusInstanceRequest& request, const GetPrometheusInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPrometheusInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetPrometheusInstanceOutcomeCallable ARMSClient::getPrometheusInstanceCallable(const GetPrometheusInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPrometheusInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->getPrometheusInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetPrometheusIntegrationOutcome ARMSClient::getPrometheusIntegration(const GetPrometheusIntegrationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPrometheusIntegrationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPrometheusIntegrationOutcome(GetPrometheusIntegrationResult(outcome.result()));
+	else
+		return GetPrometheusIntegrationOutcome(outcome.error());
+}
+
+void ARMSClient::getPrometheusIntegrationAsync(const GetPrometheusIntegrationRequest& request, const GetPrometheusIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPrometheusIntegration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetPrometheusIntegrationOutcomeCallable ARMSClient::getPrometheusIntegrationCallable(const GetPrometheusIntegrationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPrometheusIntegrationOutcome()>>(
+			[this, request]()
+			{
+			return this->getPrometheusIntegration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetPrometheusMonitoringOutcome ARMSClient::getPrometheusMonitoring(const GetPrometheusMonitoringRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPrometheusMonitoringOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPrometheusMonitoringOutcome(GetPrometheusMonitoringResult(outcome.result()));
+	else
+		return GetPrometheusMonitoringOutcome(outcome.error());
+}
+
+void ARMSClient::getPrometheusMonitoringAsync(const GetPrometheusMonitoringRequest& request, const GetPrometheusMonitoringAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPrometheusMonitoring(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetPrometheusMonitoringOutcomeCallable ARMSClient::getPrometheusMonitoringCallable(const GetPrometheusMonitoringRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPrometheusMonitoringOutcome()>>(
+			[this, request]()
+			{
+			return this->getPrometheusMonitoring(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::GetRecordingRuleOutcome ARMSClient::getRecordingRule(const GetRecordingRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2607,6 +4299,114 @@ ARMSClient::GetRecordingRuleOutcomeCallable ARMSClient::getRecordingRuleCallable
 	return task->get_future();
 }
 
+ARMSClient::GetRetcodeAppByPidOutcome ARMSClient::getRetcodeAppByPid(const GetRetcodeAppByPidRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRetcodeAppByPidOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRetcodeAppByPidOutcome(GetRetcodeAppByPidResult(outcome.result()));
+	else
+		return GetRetcodeAppByPidOutcome(outcome.error());
+}
+
+void ARMSClient::getRetcodeAppByPidAsync(const GetRetcodeAppByPidRequest& request, const GetRetcodeAppByPidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRetcodeAppByPid(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetRetcodeAppByPidOutcomeCallable ARMSClient::getRetcodeAppByPidCallable(const GetRetcodeAppByPidRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRetcodeAppByPidOutcome()>>(
+			[this, request]()
+			{
+			return this->getRetcodeAppByPid(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetRetcodeDataByQueryOutcome ARMSClient::getRetcodeDataByQuery(const GetRetcodeDataByQueryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRetcodeDataByQueryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRetcodeDataByQueryOutcome(GetRetcodeDataByQueryResult(outcome.result()));
+	else
+		return GetRetcodeDataByQueryOutcome(outcome.error());
+}
+
+void ARMSClient::getRetcodeDataByQueryAsync(const GetRetcodeDataByQueryRequest& request, const GetRetcodeDataByQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRetcodeDataByQuery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetRetcodeDataByQueryOutcomeCallable ARMSClient::getRetcodeDataByQueryCallable(const GetRetcodeDataByQueryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRetcodeDataByQueryOutcome()>>(
+			[this, request]()
+			{
+			return this->getRetcodeDataByQuery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetRetcodeLogstoreOutcome ARMSClient::getRetcodeLogstore(const GetRetcodeLogstoreRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRetcodeLogstoreOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRetcodeLogstoreOutcome(GetRetcodeLogstoreResult(outcome.result()));
+	else
+		return GetRetcodeLogstoreOutcome(outcome.error());
+}
+
+void ARMSClient::getRetcodeLogstoreAsync(const GetRetcodeLogstoreRequest& request, const GetRetcodeLogstoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRetcodeLogstore(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetRetcodeLogstoreOutcomeCallable ARMSClient::getRetcodeLogstoreCallable(const GetRetcodeLogstoreRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRetcodeLogstoreOutcome()>>(
+			[this, request]()
+			{
+			return this->getRetcodeLogstore(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::GetRetcodeShareUrlOutcome ARMSClient::getRetcodeShareUrl(const GetRetcodeShareUrlRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2637,6 +4437,222 @@ ARMSClient::GetRetcodeShareUrlOutcomeCallable ARMSClient::getRetcodeShareUrlCall
 			[this, request]()
 			{
 			return this->getRetcodeShareUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetRumAppInfoOutcome ARMSClient::getRumAppInfo(const GetRumAppInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRumAppInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRumAppInfoOutcome(GetRumAppInfoResult(outcome.result()));
+	else
+		return GetRumAppInfoOutcome(outcome.error());
+}
+
+void ARMSClient::getRumAppInfoAsync(const GetRumAppInfoRequest& request, const GetRumAppInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRumAppInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetRumAppInfoOutcomeCallable ARMSClient::getRumAppInfoCallable(const GetRumAppInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRumAppInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getRumAppInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetRumAppsOutcome ARMSClient::getRumApps(const GetRumAppsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRumAppsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRumAppsOutcome(GetRumAppsResult(outcome.result()));
+	else
+		return GetRumAppsOutcome(outcome.error());
+}
+
+void ARMSClient::getRumAppsAsync(const GetRumAppsRequest& request, const GetRumAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRumApps(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetRumAppsOutcomeCallable ARMSClient::getRumAppsCallable(const GetRumAppsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRumAppsOutcome()>>(
+			[this, request]()
+			{
+			return this->getRumApps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetRumDataForPageOutcome ARMSClient::getRumDataForPage(const GetRumDataForPageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRumDataForPageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRumDataForPageOutcome(GetRumDataForPageResult(outcome.result()));
+	else
+		return GetRumDataForPageOutcome(outcome.error());
+}
+
+void ARMSClient::getRumDataForPageAsync(const GetRumDataForPageRequest& request, const GetRumDataForPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRumDataForPage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetRumDataForPageOutcomeCallable ARMSClient::getRumDataForPageCallable(const GetRumDataForPageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRumDataForPageOutcome()>>(
+			[this, request]()
+			{
+			return this->getRumDataForPage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetRumExceptionStackOutcome ARMSClient::getRumExceptionStack(const GetRumExceptionStackRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRumExceptionStackOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRumExceptionStackOutcome(GetRumExceptionStackResult(outcome.result()));
+	else
+		return GetRumExceptionStackOutcome(outcome.error());
+}
+
+void ARMSClient::getRumExceptionStackAsync(const GetRumExceptionStackRequest& request, const GetRumExceptionStackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRumExceptionStack(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetRumExceptionStackOutcomeCallable ARMSClient::getRumExceptionStackCallable(const GetRumExceptionStackRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRumExceptionStackOutcome()>>(
+			[this, request]()
+			{
+			return this->getRumExceptionStack(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetRumOcuStatisticDataOutcome ARMSClient::getRumOcuStatisticData(const GetRumOcuStatisticDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRumOcuStatisticDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRumOcuStatisticDataOutcome(GetRumOcuStatisticDataResult(outcome.result()));
+	else
+		return GetRumOcuStatisticDataOutcome(outcome.error());
+}
+
+void ARMSClient::getRumOcuStatisticDataAsync(const GetRumOcuStatisticDataRequest& request, const GetRumOcuStatisticDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRumOcuStatisticData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetRumOcuStatisticDataOutcomeCallable ARMSClient::getRumOcuStatisticDataCallable(const GetRumOcuStatisticDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRumOcuStatisticDataOutcome()>>(
+			[this, request]()
+			{
+			return this->getRumOcuStatisticData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetRumUploadFilesOutcome ARMSClient::getRumUploadFiles(const GetRumUploadFilesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRumUploadFilesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRumUploadFilesOutcome(GetRumUploadFilesResult(outcome.result()));
+	else
+		return GetRumUploadFilesOutcome(outcome.error());
+}
+
+void ARMSClient::getRumUploadFilesAsync(const GetRumUploadFilesRequest& request, const GetRumUploadFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRumUploadFiles(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetRumUploadFilesOutcomeCallable ARMSClient::getRumUploadFilesCallable(const GetRumUploadFilesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRumUploadFilesOutcome()>>(
+			[this, request]()
+			{
+			return this->getRumUploadFiles(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2709,6 +4725,42 @@ ARMSClient::GetStackOutcomeCallable ARMSClient::getStackCallable(const GetStackR
 			[this, request]()
 			{
 			return this->getStack(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetSyntheticMonitorsOutcome ARMSClient::getSyntheticMonitors(const GetSyntheticMonitorsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSyntheticMonitorsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSyntheticMonitorsOutcome(GetSyntheticMonitorsResult(outcome.result()));
+	else
+		return GetSyntheticMonitorsOutcome(outcome.error());
+}
+
+void ARMSClient::getSyntheticMonitorsAsync(const GetSyntheticMonitorsRequest& request, const GetSyntheticMonitorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSyntheticMonitors(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetSyntheticMonitorsOutcomeCallable ARMSClient::getSyntheticMonitorsCallable(const GetSyntheticMonitorsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSyntheticMonitorsOutcome()>>(
+			[this, request]()
+			{
+			return this->getSyntheticMonitors(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2823,6 +4875,42 @@ ARMSClient::GetSyntheticTaskMonitorsOutcomeCallable ARMSClient::getSyntheticTask
 	return task->get_future();
 }
 
+ARMSClient::GetTimingSyntheticTaskOutcome ARMSClient::getTimingSyntheticTask(const GetTimingSyntheticTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTimingSyntheticTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTimingSyntheticTaskOutcome(GetTimingSyntheticTaskResult(outcome.result()));
+	else
+		return GetTimingSyntheticTaskOutcome(outcome.error());
+}
+
+void ARMSClient::getTimingSyntheticTaskAsync(const GetTimingSyntheticTaskRequest& request, const GetTimingSyntheticTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTimingSyntheticTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetTimingSyntheticTaskOutcomeCallable ARMSClient::getTimingSyntheticTaskCallable(const GetTimingSyntheticTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTimingSyntheticTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->getTimingSyntheticTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::GetTraceOutcome ARMSClient::getTrace(const GetTraceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2895,6 +4983,42 @@ ARMSClient::GetTraceAppOutcomeCallable ARMSClient::getTraceAppCallable(const Get
 	return task->get_future();
 }
 
+ARMSClient::GetTraceAppConfigOutcome ARMSClient::getTraceAppConfig(const GetTraceAppConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTraceAppConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTraceAppConfigOutcome(GetTraceAppConfigResult(outcome.result()));
+	else
+		return GetTraceAppConfigOutcome(outcome.error());
+}
+
+void ARMSClient::getTraceAppConfigAsync(const GetTraceAppConfigRequest& request, const GetTraceAppConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTraceAppConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetTraceAppConfigOutcomeCallable ARMSClient::getTraceAppConfigCallable(const GetTraceAppConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTraceAppConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->getTraceAppConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::ImportAppAlertRulesOutcome ARMSClient::importAppAlertRules(const ImportAppAlertRulesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2931,6 +5055,78 @@ ARMSClient::ImportAppAlertRulesOutcomeCallable ARMSClient::importAppAlertRulesCa
 	return task->get_future();
 }
 
+ARMSClient::InitEnvironmentOutcome ARMSClient::initEnvironment(const InitEnvironmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InitEnvironmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InitEnvironmentOutcome(InitEnvironmentResult(outcome.result()));
+	else
+		return InitEnvironmentOutcome(outcome.error());
+}
+
+void ARMSClient::initEnvironmentAsync(const InitEnvironmentRequest& request, const InitEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, initEnvironment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::InitEnvironmentOutcomeCallable ARMSClient::initEnvironmentCallable(const InitEnvironmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InitEnvironmentOutcome()>>(
+			[this, request]()
+			{
+			return this->initEnvironment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::InstallAddonOutcome ARMSClient::installAddon(const InstallAddonRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InstallAddonOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InstallAddonOutcome(InstallAddonResult(outcome.result()));
+	else
+		return InstallAddonOutcome(outcome.error());
+}
+
+void ARMSClient::installAddonAsync(const InstallAddonRequest& request, const InstallAddonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, installAddon(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::InstallAddonOutcomeCallable ARMSClient::installAddonCallable(const InstallAddonRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InstallAddonOutcome()>>(
+			[this, request]()
+			{
+			return this->installAddon(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::InstallCmsExporterOutcome ARMSClient::installCmsExporter(const InstallCmsExporterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2961,6 +5157,42 @@ ARMSClient::InstallCmsExporterOutcomeCallable ARMSClient::installCmsExporterCall
 			[this, request]()
 			{
 			return this->installCmsExporter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::InstallEnvironmentFeatureOutcome ARMSClient::installEnvironmentFeature(const InstallEnvironmentFeatureRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InstallEnvironmentFeatureOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InstallEnvironmentFeatureOutcome(InstallEnvironmentFeatureResult(outcome.result()));
+	else
+		return InstallEnvironmentFeatureOutcome(outcome.error());
+}
+
+void ARMSClient::installEnvironmentFeatureAsync(const InstallEnvironmentFeatureRequest& request, const InstallEnvironmentFeatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, installEnvironmentFeature(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::InstallEnvironmentFeatureOutcomeCallable ARMSClient::installEnvironmentFeatureCallable(const InstallEnvironmentFeatureRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InstallEnvironmentFeatureOutcome()>>(
+			[this, request]()
+			{
+			return this->installEnvironmentFeature(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3033,6 +5265,78 @@ ARMSClient::ListActivatedAlertsOutcomeCallable ARMSClient::listActivatedAlertsCa
 			[this, request]()
 			{
 			return this->listActivatedAlerts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ListAddonReleasesOutcome ARMSClient::listAddonReleases(const ListAddonReleasesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAddonReleasesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAddonReleasesOutcome(ListAddonReleasesResult(outcome.result()));
+	else
+		return ListAddonReleasesOutcome(outcome.error());
+}
+
+void ARMSClient::listAddonReleasesAsync(const ListAddonReleasesRequest& request, const ListAddonReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAddonReleases(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListAddonReleasesOutcomeCallable ARMSClient::listAddonReleasesCallable(const ListAddonReleasesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAddonReleasesOutcome()>>(
+			[this, request]()
+			{
+			return this->listAddonReleases(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ListAddonsOutcome ARMSClient::listAddons(const ListAddonsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAddonsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAddonsOutcome(ListAddonsResult(outcome.result()));
+	else
+		return ListAddonsOutcome(outcome.error());
+}
+
+void ARMSClient::listAddonsAsync(const ListAddonsRequest& request, const ListAddonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAddons(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListAddonsOutcomeCallable ARMSClient::listAddonsCallable(const ListAddonsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAddonsOutcome()>>(
+			[this, request]()
+			{
+			return this->listAddons(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3291,6 +5595,222 @@ ARMSClient::ListDispatchRuleOutcomeCallable ARMSClient::listDispatchRuleCallable
 	return task->get_future();
 }
 
+ARMSClient::ListEnvCustomJobsOutcome ARMSClient::listEnvCustomJobs(const ListEnvCustomJobsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListEnvCustomJobsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListEnvCustomJobsOutcome(ListEnvCustomJobsResult(outcome.result()));
+	else
+		return ListEnvCustomJobsOutcome(outcome.error());
+}
+
+void ARMSClient::listEnvCustomJobsAsync(const ListEnvCustomJobsRequest& request, const ListEnvCustomJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listEnvCustomJobs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListEnvCustomJobsOutcomeCallable ARMSClient::listEnvCustomJobsCallable(const ListEnvCustomJobsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListEnvCustomJobsOutcome()>>(
+			[this, request]()
+			{
+			return this->listEnvCustomJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ListEnvPodMonitorsOutcome ARMSClient::listEnvPodMonitors(const ListEnvPodMonitorsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListEnvPodMonitorsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListEnvPodMonitorsOutcome(ListEnvPodMonitorsResult(outcome.result()));
+	else
+		return ListEnvPodMonitorsOutcome(outcome.error());
+}
+
+void ARMSClient::listEnvPodMonitorsAsync(const ListEnvPodMonitorsRequest& request, const ListEnvPodMonitorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listEnvPodMonitors(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListEnvPodMonitorsOutcomeCallable ARMSClient::listEnvPodMonitorsCallable(const ListEnvPodMonitorsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListEnvPodMonitorsOutcome()>>(
+			[this, request]()
+			{
+			return this->listEnvPodMonitors(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ListEnvServiceMonitorsOutcome ARMSClient::listEnvServiceMonitors(const ListEnvServiceMonitorsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListEnvServiceMonitorsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListEnvServiceMonitorsOutcome(ListEnvServiceMonitorsResult(outcome.result()));
+	else
+		return ListEnvServiceMonitorsOutcome(outcome.error());
+}
+
+void ARMSClient::listEnvServiceMonitorsAsync(const ListEnvServiceMonitorsRequest& request, const ListEnvServiceMonitorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listEnvServiceMonitors(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListEnvServiceMonitorsOutcomeCallable ARMSClient::listEnvServiceMonitorsCallable(const ListEnvServiceMonitorsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListEnvServiceMonitorsOutcome()>>(
+			[this, request]()
+			{
+			return this->listEnvServiceMonitors(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ListEnvironmentDashboardsOutcome ARMSClient::listEnvironmentDashboards(const ListEnvironmentDashboardsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListEnvironmentDashboardsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListEnvironmentDashboardsOutcome(ListEnvironmentDashboardsResult(outcome.result()));
+	else
+		return ListEnvironmentDashboardsOutcome(outcome.error());
+}
+
+void ARMSClient::listEnvironmentDashboardsAsync(const ListEnvironmentDashboardsRequest& request, const ListEnvironmentDashboardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listEnvironmentDashboards(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListEnvironmentDashboardsOutcomeCallable ARMSClient::listEnvironmentDashboardsCallable(const ListEnvironmentDashboardsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListEnvironmentDashboardsOutcome()>>(
+			[this, request]()
+			{
+			return this->listEnvironmentDashboards(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ListEnvironmentFeaturesOutcome ARMSClient::listEnvironmentFeatures(const ListEnvironmentFeaturesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListEnvironmentFeaturesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListEnvironmentFeaturesOutcome(ListEnvironmentFeaturesResult(outcome.result()));
+	else
+		return ListEnvironmentFeaturesOutcome(outcome.error());
+}
+
+void ARMSClient::listEnvironmentFeaturesAsync(const ListEnvironmentFeaturesRequest& request, const ListEnvironmentFeaturesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listEnvironmentFeatures(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListEnvironmentFeaturesOutcomeCallable ARMSClient::listEnvironmentFeaturesCallable(const ListEnvironmentFeaturesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListEnvironmentFeaturesOutcome()>>(
+			[this, request]()
+			{
+			return this->listEnvironmentFeatures(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ListEnvironmentsOutcome ARMSClient::listEnvironments(const ListEnvironmentsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListEnvironmentsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListEnvironmentsOutcome(ListEnvironmentsResult(outcome.result()));
+	else
+		return ListEnvironmentsOutcome(outcome.error());
+}
+
+void ARMSClient::listEnvironmentsAsync(const ListEnvironmentsRequest& request, const ListEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listEnvironments(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListEnvironmentsOutcomeCallable ARMSClient::listEnvironmentsCallable(const ListEnvironmentsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListEnvironmentsOutcome()>>(
+			[this, request]()
+			{
+			return this->listEnvironments(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::ListEscalationPoliciesOutcome ARMSClient::listEscalationPolicies(const ListEscalationPoliciesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3357,6 +5877,42 @@ ARMSClient::ListEventBridgeIntegrationsOutcomeCallable ARMSClient::listEventBrid
 			[this, request]()
 			{
 			return this->listEventBridgeIntegrations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ListGrafanaWorkspaceOutcome ARMSClient::listGrafanaWorkspace(const ListGrafanaWorkspaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListGrafanaWorkspaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListGrafanaWorkspaceOutcome(ListGrafanaWorkspaceResult(outcome.result()));
+	else
+		return ListGrafanaWorkspaceOutcome(outcome.error());
+}
+
+void ARMSClient::listGrafanaWorkspaceAsync(const ListGrafanaWorkspaceRequest& request, const ListGrafanaWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listGrafanaWorkspace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListGrafanaWorkspaceOutcomeCallable ARMSClient::listGrafanaWorkspaceCallable(const ListGrafanaWorkspaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListGrafanaWorkspaceOutcome()>>(
+			[this, request]()
+			{
+			return this->listGrafanaWorkspace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3615,6 +6171,42 @@ ARMSClient::ListPrometheusGlobalViewOutcomeCallable ARMSClient::listPrometheusGl
 	return task->get_future();
 }
 
+ARMSClient::ListPrometheusInstanceByTagAndResourceGroupIdOutcome ARMSClient::listPrometheusInstanceByTagAndResourceGroupId(const ListPrometheusInstanceByTagAndResourceGroupIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPrometheusInstanceByTagAndResourceGroupIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPrometheusInstanceByTagAndResourceGroupIdOutcome(ListPrometheusInstanceByTagAndResourceGroupIdResult(outcome.result()));
+	else
+		return ListPrometheusInstanceByTagAndResourceGroupIdOutcome(outcome.error());
+}
+
+void ARMSClient::listPrometheusInstanceByTagAndResourceGroupIdAsync(const ListPrometheusInstanceByTagAndResourceGroupIdRequest& request, const ListPrometheusInstanceByTagAndResourceGroupIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPrometheusInstanceByTagAndResourceGroupId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListPrometheusInstanceByTagAndResourceGroupIdOutcomeCallable ARMSClient::listPrometheusInstanceByTagAndResourceGroupIdCallable(const ListPrometheusInstanceByTagAndResourceGroupIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPrometheusInstanceByTagAndResourceGroupIdOutcome()>>(
+			[this, request]()
+			{
+			return this->listPrometheusInstanceByTagAndResourceGroupId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::ListPrometheusInstancesOutcome ARMSClient::listPrometheusInstances(const ListPrometheusInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3645,6 +6237,78 @@ ARMSClient::ListPrometheusInstancesOutcomeCallable ARMSClient::listPrometheusIns
 			[this, request]()
 			{
 			return this->listPrometheusInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ListPrometheusIntegrationOutcome ARMSClient::listPrometheusIntegration(const ListPrometheusIntegrationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPrometheusIntegrationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPrometheusIntegrationOutcome(ListPrometheusIntegrationResult(outcome.result()));
+	else
+		return ListPrometheusIntegrationOutcome(outcome.error());
+}
+
+void ARMSClient::listPrometheusIntegrationAsync(const ListPrometheusIntegrationRequest& request, const ListPrometheusIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPrometheusIntegration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListPrometheusIntegrationOutcomeCallable ARMSClient::listPrometheusIntegrationCallable(const ListPrometheusIntegrationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPrometheusIntegrationOutcome()>>(
+			[this, request]()
+			{
+			return this->listPrometheusIntegration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ListPrometheusMonitoringOutcome ARMSClient::listPrometheusMonitoring(const ListPrometheusMonitoringRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPrometheusMonitoringOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPrometheusMonitoringOutcome(ListPrometheusMonitoringResult(outcome.result()));
+	else
+		return ListPrometheusMonitoringOutcome(outcome.error());
+}
+
+void ARMSClient::listPrometheusMonitoringAsync(const ListPrometheusMonitoringRequest& request, const ListPrometheusMonitoringAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPrometheusMonitoring(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListPrometheusMonitoringOutcomeCallable ARMSClient::listPrometheusMonitoringCallable(const ListPrometheusMonitoringRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPrometheusMonitoringOutcome()>>(
+			[this, request]()
+			{
+			return this->listPrometheusMonitoring(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3753,6 +6417,78 @@ ARMSClient::ListSilencePoliciesOutcomeCallable ARMSClient::listSilencePoliciesCa
 			[this, request]()
 			{
 			return this->listSilencePolicies(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ListSyntheticDetailOutcome ARMSClient::listSyntheticDetail(const ListSyntheticDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSyntheticDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSyntheticDetailOutcome(ListSyntheticDetailResult(outcome.result()));
+	else
+		return ListSyntheticDetailOutcome(outcome.error());
+}
+
+void ARMSClient::listSyntheticDetailAsync(const ListSyntheticDetailRequest& request, const ListSyntheticDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSyntheticDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListSyntheticDetailOutcomeCallable ARMSClient::listSyntheticDetailCallable(const ListSyntheticDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSyntheticDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->listSyntheticDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ListTimingSyntheticTasksOutcome ARMSClient::listTimingSyntheticTasks(const ListTimingSyntheticTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTimingSyntheticTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTimingSyntheticTasksOutcome(ListTimingSyntheticTasksResult(outcome.result()));
+	else
+		return ListTimingSyntheticTasksOutcome(outcome.error());
+}
+
+void ARMSClient::listTimingSyntheticTasksAsync(const ListTimingSyntheticTasksRequest& request, const ListTimingSyntheticTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTimingSyntheticTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListTimingSyntheticTasksOutcomeCallable ARMSClient::listTimingSyntheticTasksCallable(const ListTimingSyntheticTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTimingSyntheticTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->listTimingSyntheticTasks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4011,6 +6747,114 @@ ARMSClient::OpenXtraceDefaultSLROutcomeCallable ARMSClient::openXtraceDefaultSLR
 	return task->get_future();
 }
 
+ARMSClient::QueryAppMetadataOutcome ARMSClient::queryAppMetadata(const QueryAppMetadataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryAppMetadataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryAppMetadataOutcome(QueryAppMetadataResult(outcome.result()));
+	else
+		return QueryAppMetadataOutcome(outcome.error());
+}
+
+void ARMSClient::queryAppMetadataAsync(const QueryAppMetadataRequest& request, const QueryAppMetadataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryAppMetadata(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::QueryAppMetadataOutcomeCallable ARMSClient::queryAppMetadataCallable(const QueryAppMetadataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryAppMetadataOutcome()>>(
+			[this, request]()
+			{
+			return this->queryAppMetadata(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::QueryAppTopologyOutcome ARMSClient::queryAppTopology(const QueryAppTopologyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryAppTopologyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryAppTopologyOutcome(QueryAppTopologyResult(outcome.result()));
+	else
+		return QueryAppTopologyOutcome(outcome.error());
+}
+
+void ARMSClient::queryAppTopologyAsync(const QueryAppTopologyRequest& request, const QueryAppTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryAppTopology(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::QueryAppTopologyOutcomeCallable ARMSClient::queryAppTopologyCallable(const QueryAppTopologyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryAppTopologyOutcome()>>(
+			[this, request]()
+			{
+			return this->queryAppTopology(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::QueryCommercialUsageOutcome ARMSClient::queryCommercialUsage(const QueryCommercialUsageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryCommercialUsageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryCommercialUsageOutcome(QueryCommercialUsageResult(outcome.result()));
+	else
+		return QueryCommercialUsageOutcome(outcome.error());
+}
+
+void ARMSClient::queryCommercialUsageAsync(const QueryCommercialUsageRequest& request, const QueryCommercialUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryCommercialUsage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::QueryCommercialUsageOutcomeCallable ARMSClient::queryCommercialUsageCallable(const QueryCommercialUsageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryCommercialUsageOutcome()>>(
+			[this, request]()
+			{
+			return this->queryCommercialUsage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::QueryMetricByPageOutcome ARMSClient::queryMetricByPage(const QueryMetricByPageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4185,6 +7029,42 @@ ARMSClient::RemoveSourcesFromPrometheusGlobalViewOutcomeCallable ARMSClient::rem
 			[this, request]()
 			{
 			return this->removeSourcesFromPrometheusGlobalView(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::RestartEnvironmentFeatureOutcome ARMSClient::restartEnvironmentFeature(const RestartEnvironmentFeatureRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RestartEnvironmentFeatureOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RestartEnvironmentFeatureOutcome(RestartEnvironmentFeatureResult(outcome.result()));
+	else
+		return RestartEnvironmentFeatureOutcome(outcome.error());
+}
+
+void ARMSClient::restartEnvironmentFeatureAsync(const RestartEnvironmentFeatureRequest& request, const RestartEnvironmentFeatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, restartEnvironmentFeature(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::RestartEnvironmentFeatureOutcomeCallable ARMSClient::restartEnvironmentFeatureCallable(const RestartEnvironmentFeatureRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RestartEnvironmentFeatureOutcome()>>(
+			[this, request]()
+			{
+			return this->restartEnvironmentFeature(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4695,6 +7575,42 @@ ARMSClient::StartAlertOutcomeCallable ARMSClient::startAlertCallable(const Start
 	return task->get_future();
 }
 
+ARMSClient::StartTimingSyntheticTaskOutcome ARMSClient::startTimingSyntheticTask(const StartTimingSyntheticTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartTimingSyntheticTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartTimingSyntheticTaskOutcome(StartTimingSyntheticTaskResult(outcome.result()));
+	else
+		return StartTimingSyntheticTaskOutcome(outcome.error());
+}
+
+void ARMSClient::startTimingSyntheticTaskAsync(const StartTimingSyntheticTaskRequest& request, const StartTimingSyntheticTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startTimingSyntheticTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::StartTimingSyntheticTaskOutcomeCallable ARMSClient::startTimingSyntheticTaskCallable(const StartTimingSyntheticTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartTimingSyntheticTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->startTimingSyntheticTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::StopAlertOutcome ARMSClient::stopAlert(const StopAlertRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4725,6 +7641,42 @@ ARMSClient::StopAlertOutcomeCallable ARMSClient::stopAlertCallable(const StopAle
 			[this, request]()
 			{
 			return this->stopAlert(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::StopTimingSyntheticTaskOutcome ARMSClient::stopTimingSyntheticTask(const StopTimingSyntheticTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopTimingSyntheticTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopTimingSyntheticTaskOutcome(StopTimingSyntheticTaskResult(outcome.result()));
+	else
+		return StopTimingSyntheticTaskOutcome(outcome.error());
+}
+
+void ARMSClient::stopTimingSyntheticTaskAsync(const StopTimingSyntheticTaskRequest& request, const StopTimingSyntheticTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopTimingSyntheticTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::StopTimingSyntheticTaskOutcomeCallable ARMSClient::stopTimingSyntheticTaskCallable(const StopTimingSyntheticTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopTimingSyntheticTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->stopTimingSyntheticTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4803,36 +7755,36 @@ ARMSClient::SyncRecordingRulesOutcomeCallable ARMSClient::syncRecordingRulesCall
 	return task->get_future();
 }
 
-ARMSClient::TurnOnSecondSwitchOutcome ARMSClient::turnOnSecondSwitch(const TurnOnSecondSwitchRequest &request) const
+ARMSClient::TagResourcesOutcome ARMSClient::tagResources(const TagResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return TurnOnSecondSwitchOutcome(endpointOutcome.error());
+		return TagResourcesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return TurnOnSecondSwitchOutcome(TurnOnSecondSwitchResult(outcome.result()));
+		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
 	else
-		return TurnOnSecondSwitchOutcome(outcome.error());
+		return TagResourcesOutcome(outcome.error());
 }
 
-void ARMSClient::turnOnSecondSwitchAsync(const TurnOnSecondSwitchRequest& request, const TurnOnSecondSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void ARMSClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, turnOnSecondSwitch(request), context);
+		handler(this, request, tagResources(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-ARMSClient::TurnOnSecondSwitchOutcomeCallable ARMSClient::turnOnSecondSwitchCallable(const TurnOnSecondSwitchRequest &request) const
+ARMSClient::TagResourcesOutcomeCallable ARMSClient::tagResourcesCallable(const TagResourcesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<TurnOnSecondSwitchOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
 			[this, request]()
 			{
-			return this->turnOnSecondSwitch(request);
+			return this->tagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4905,6 +7857,42 @@ ARMSClient::UninstallPromClusterOutcomeCallable ARMSClient::uninstallPromCluster
 			[this, request]()
 			{
 			return this->uninstallPromCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UntagResourcesOutcome ARMSClient::untagResources(const UntagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UntagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UntagResourcesOutcome(UntagResourcesResult(outcome.result()));
+	else
+		return UntagResourcesOutcome(outcome.error());
+}
+
+void ARMSClient::untagResourcesAsync(const UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, untagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UntagResourcesOutcomeCallable ARMSClient::untagResourcesCallable(const UntagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UntagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->untagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5055,6 +8043,222 @@ ARMSClient::UpdateDispatchRuleOutcomeCallable ARMSClient::updateDispatchRuleCall
 	return task->get_future();
 }
 
+ARMSClient::UpdateEnvCustomJobOutcome ARMSClient::updateEnvCustomJob(const UpdateEnvCustomJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateEnvCustomJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateEnvCustomJobOutcome(UpdateEnvCustomJobResult(outcome.result()));
+	else
+		return UpdateEnvCustomJobOutcome(outcome.error());
+}
+
+void ARMSClient::updateEnvCustomJobAsync(const UpdateEnvCustomJobRequest& request, const UpdateEnvCustomJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateEnvCustomJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdateEnvCustomJobOutcomeCallable ARMSClient::updateEnvCustomJobCallable(const UpdateEnvCustomJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateEnvCustomJobOutcome()>>(
+			[this, request]()
+			{
+			return this->updateEnvCustomJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpdateEnvPodMonitorOutcome ARMSClient::updateEnvPodMonitor(const UpdateEnvPodMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateEnvPodMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateEnvPodMonitorOutcome(UpdateEnvPodMonitorResult(outcome.result()));
+	else
+		return UpdateEnvPodMonitorOutcome(outcome.error());
+}
+
+void ARMSClient::updateEnvPodMonitorAsync(const UpdateEnvPodMonitorRequest& request, const UpdateEnvPodMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateEnvPodMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdateEnvPodMonitorOutcomeCallable ARMSClient::updateEnvPodMonitorCallable(const UpdateEnvPodMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateEnvPodMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->updateEnvPodMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpdateEnvServiceMonitorOutcome ARMSClient::updateEnvServiceMonitor(const UpdateEnvServiceMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateEnvServiceMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateEnvServiceMonitorOutcome(UpdateEnvServiceMonitorResult(outcome.result()));
+	else
+		return UpdateEnvServiceMonitorOutcome(outcome.error());
+}
+
+void ARMSClient::updateEnvServiceMonitorAsync(const UpdateEnvServiceMonitorRequest& request, const UpdateEnvServiceMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateEnvServiceMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdateEnvServiceMonitorOutcomeCallable ARMSClient::updateEnvServiceMonitorCallable(const UpdateEnvServiceMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateEnvServiceMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->updateEnvServiceMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpdateEnvironmentOutcome ARMSClient::updateEnvironment(const UpdateEnvironmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateEnvironmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateEnvironmentOutcome(UpdateEnvironmentResult(outcome.result()));
+	else
+		return UpdateEnvironmentOutcome(outcome.error());
+}
+
+void ARMSClient::updateEnvironmentAsync(const UpdateEnvironmentRequest& request, const UpdateEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateEnvironment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdateEnvironmentOutcomeCallable ARMSClient::updateEnvironmentCallable(const UpdateEnvironmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateEnvironmentOutcome()>>(
+			[this, request]()
+			{
+			return this->updateEnvironment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpdateGrafanaWorkspaceOutcome ARMSClient::updateGrafanaWorkspace(const UpdateGrafanaWorkspaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateGrafanaWorkspaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateGrafanaWorkspaceOutcome(UpdateGrafanaWorkspaceResult(outcome.result()));
+	else
+		return UpdateGrafanaWorkspaceOutcome(outcome.error());
+}
+
+void ARMSClient::updateGrafanaWorkspaceAsync(const UpdateGrafanaWorkspaceRequest& request, const UpdateGrafanaWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateGrafanaWorkspace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdateGrafanaWorkspaceOutcomeCallable ARMSClient::updateGrafanaWorkspaceCallable(const UpdateGrafanaWorkspaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateGrafanaWorkspaceOutcome()>>(
+			[this, request]()
+			{
+			return this->updateGrafanaWorkspace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpdateGrafanaWorkspaceVersionOutcome ARMSClient::updateGrafanaWorkspaceVersion(const UpdateGrafanaWorkspaceVersionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateGrafanaWorkspaceVersionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateGrafanaWorkspaceVersionOutcome(UpdateGrafanaWorkspaceVersionResult(outcome.result()));
+	else
+		return UpdateGrafanaWorkspaceVersionOutcome(outcome.error());
+}
+
+void ARMSClient::updateGrafanaWorkspaceVersionAsync(const UpdateGrafanaWorkspaceVersionRequest& request, const UpdateGrafanaWorkspaceVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateGrafanaWorkspaceVersion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdateGrafanaWorkspaceVersionOutcomeCallable ARMSClient::updateGrafanaWorkspaceVersionCallable(const UpdateGrafanaWorkspaceVersionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateGrafanaWorkspaceVersionOutcome()>>(
+			[this, request]()
+			{
+			return this->updateGrafanaWorkspaceVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::UpdateIntegrationOutcome ARMSClient::updateIntegration(const UpdateIntegrationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5085,6 +8289,42 @@ ARMSClient::UpdateIntegrationOutcomeCallable ARMSClient::updateIntegrationCallab
 			[this, request]()
 			{
 			return this->updateIntegration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpdateMetricDropOutcome ARMSClient::updateMetricDrop(const UpdateMetricDropRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateMetricDropOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateMetricDropOutcome(UpdateMetricDropResult(outcome.result()));
+	else
+		return UpdateMetricDropOutcome(outcome.error());
+}
+
+void ARMSClient::updateMetricDropAsync(const UpdateMetricDropRequest& request, const UpdateMetricDropAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateMetricDrop(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdateMetricDropOutcomeCallable ARMSClient::updateMetricDropCallable(const UpdateMetricDropRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateMetricDropOutcome()>>(
+			[this, request]()
+			{
+			return this->updateMetricDrop(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5127,6 +8367,294 @@ ARMSClient::UpdatePrometheusAlertRuleOutcomeCallable ARMSClient::updatePrometheu
 	return task->get_future();
 }
 
+ARMSClient::UpdatePrometheusGlobalViewOutcome ARMSClient::updatePrometheusGlobalView(const UpdatePrometheusGlobalViewRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePrometheusGlobalViewOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePrometheusGlobalViewOutcome(UpdatePrometheusGlobalViewResult(outcome.result()));
+	else
+		return UpdatePrometheusGlobalViewOutcome(outcome.error());
+}
+
+void ARMSClient::updatePrometheusGlobalViewAsync(const UpdatePrometheusGlobalViewRequest& request, const UpdatePrometheusGlobalViewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePrometheusGlobalView(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdatePrometheusGlobalViewOutcomeCallable ARMSClient::updatePrometheusGlobalViewCallable(const UpdatePrometheusGlobalViewRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePrometheusGlobalViewOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePrometheusGlobalView(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpdatePrometheusInstanceOutcome ARMSClient::updatePrometheusInstance(const UpdatePrometheusInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePrometheusInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePrometheusInstanceOutcome(UpdatePrometheusInstanceResult(outcome.result()));
+	else
+		return UpdatePrometheusInstanceOutcome(outcome.error());
+}
+
+void ARMSClient::updatePrometheusInstanceAsync(const UpdatePrometheusInstanceRequest& request, const UpdatePrometheusInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePrometheusInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdatePrometheusInstanceOutcomeCallable ARMSClient::updatePrometheusInstanceCallable(const UpdatePrometheusInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePrometheusInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePrometheusInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpdatePrometheusIntegrationOutcome ARMSClient::updatePrometheusIntegration(const UpdatePrometheusIntegrationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePrometheusIntegrationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePrometheusIntegrationOutcome(UpdatePrometheusIntegrationResult(outcome.result()));
+	else
+		return UpdatePrometheusIntegrationOutcome(outcome.error());
+}
+
+void ARMSClient::updatePrometheusIntegrationAsync(const UpdatePrometheusIntegrationRequest& request, const UpdatePrometheusIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePrometheusIntegration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdatePrometheusIntegrationOutcomeCallable ARMSClient::updatePrometheusIntegrationCallable(const UpdatePrometheusIntegrationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePrometheusIntegrationOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePrometheusIntegration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpdatePrometheusMonitoringOutcome ARMSClient::updatePrometheusMonitoring(const UpdatePrometheusMonitoringRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePrometheusMonitoringOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePrometheusMonitoringOutcome(UpdatePrometheusMonitoringResult(outcome.result()));
+	else
+		return UpdatePrometheusMonitoringOutcome(outcome.error());
+}
+
+void ARMSClient::updatePrometheusMonitoringAsync(const UpdatePrometheusMonitoringRequest& request, const UpdatePrometheusMonitoringAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePrometheusMonitoring(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdatePrometheusMonitoringOutcomeCallable ARMSClient::updatePrometheusMonitoringCallable(const UpdatePrometheusMonitoringRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePrometheusMonitoringOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePrometheusMonitoring(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpdatePrometheusMonitoringStatusOutcome ARMSClient::updatePrometheusMonitoringStatus(const UpdatePrometheusMonitoringStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePrometheusMonitoringStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePrometheusMonitoringStatusOutcome(UpdatePrometheusMonitoringStatusResult(outcome.result()));
+	else
+		return UpdatePrometheusMonitoringStatusOutcome(outcome.error());
+}
+
+void ARMSClient::updatePrometheusMonitoringStatusAsync(const UpdatePrometheusMonitoringStatusRequest& request, const UpdatePrometheusMonitoringStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePrometheusMonitoringStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdatePrometheusMonitoringStatusOutcomeCallable ARMSClient::updatePrometheusMonitoringStatusCallable(const UpdatePrometheusMonitoringStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePrometheusMonitoringStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePrometheusMonitoringStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpdateRumAppOutcome ARMSClient::updateRumApp(const UpdateRumAppRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateRumAppOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateRumAppOutcome(UpdateRumAppResult(outcome.result()));
+	else
+		return UpdateRumAppOutcome(outcome.error());
+}
+
+void ARMSClient::updateRumAppAsync(const UpdateRumAppRequest& request, const UpdateRumAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateRumApp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdateRumAppOutcomeCallable ARMSClient::updateRumAppCallable(const UpdateRumAppRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateRumAppOutcome()>>(
+			[this, request]()
+			{
+			return this->updateRumApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpdateRumFileStatusOutcome ARMSClient::updateRumFileStatus(const UpdateRumFileStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateRumFileStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateRumFileStatusOutcome(UpdateRumFileStatusResult(outcome.result()));
+	else
+		return UpdateRumFileStatusOutcome(outcome.error());
+}
+
+void ARMSClient::updateRumFileStatusAsync(const UpdateRumFileStatusRequest& request, const UpdateRumFileStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateRumFileStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdateRumFileStatusOutcomeCallable ARMSClient::updateRumFileStatusCallable(const UpdateRumFileStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateRumFileStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->updateRumFileStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpdateTimingSyntheticTaskOutcome ARMSClient::updateTimingSyntheticTask(const UpdateTimingSyntheticTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTimingSyntheticTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTimingSyntheticTaskOutcome(UpdateTimingSyntheticTaskResult(outcome.result()));
+	else
+		return UpdateTimingSyntheticTaskOutcome(outcome.error());
+}
+
+void ARMSClient::updateTimingSyntheticTaskAsync(const UpdateTimingSyntheticTaskRequest& request, const UpdateTimingSyntheticTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTimingSyntheticTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdateTimingSyntheticTaskOutcomeCallable ARMSClient::updateTimingSyntheticTaskCallable(const UpdateTimingSyntheticTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTimingSyntheticTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTimingSyntheticTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::UpdateWebhookOutcome ARMSClient::updateWebhook(const UpdateWebhookRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5157,6 +8685,78 @@ ARMSClient::UpdateWebhookOutcomeCallable ARMSClient::updateWebhookCallable(const
 			[this, request]()
 			{
 			return this->updateWebhook(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpgradeAddonReleaseOutcome ARMSClient::upgradeAddonRelease(const UpgradeAddonReleaseRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpgradeAddonReleaseOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpgradeAddonReleaseOutcome(UpgradeAddonReleaseResult(outcome.result()));
+	else
+		return UpgradeAddonReleaseOutcome(outcome.error());
+}
+
+void ARMSClient::upgradeAddonReleaseAsync(const UpgradeAddonReleaseRequest& request, const UpgradeAddonReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, upgradeAddonRelease(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpgradeAddonReleaseOutcomeCallable ARMSClient::upgradeAddonReleaseCallable(const UpgradeAddonReleaseRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpgradeAddonReleaseOutcome()>>(
+			[this, request]()
+			{
+			return this->upgradeAddonRelease(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpgradeEnvironmentFeatureOutcome ARMSClient::upgradeEnvironmentFeature(const UpgradeEnvironmentFeatureRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpgradeEnvironmentFeatureOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpgradeEnvironmentFeatureOutcome(UpgradeEnvironmentFeatureResult(outcome.result()));
+	else
+		return UpgradeEnvironmentFeatureOutcome(outcome.error());
+}
+
+void ARMSClient::upgradeEnvironmentFeatureAsync(const UpgradeEnvironmentFeatureRequest& request, const UpgradeEnvironmentFeatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, upgradeEnvironmentFeature(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpgradeEnvironmentFeatureOutcomeCallable ARMSClient::upgradeEnvironmentFeatureCallable(const UpgradeEnvironmentFeatureRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpgradeEnvironmentFeatureOutcome()>>(
+			[this, request]()
+			{
+			return this->upgradeEnvironmentFeature(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

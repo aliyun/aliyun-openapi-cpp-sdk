@@ -52,3 +52,12 @@ void ConfigAppRequest::setEnable(const std::string &enable) {
   setParameter(std::string("Enable"), enable);
 }
 
+std::string ConfigAppRequest::getType() const {
+  return type_;
+}
+
+void ConfigAppRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
+}
+

@@ -30,12 +30,15 @@ class ALIBABACLOUD_ARMS_EXPORT ListPrometheusInstancesRequest : public RpcServic
 public:
 	ListPrometheusInstancesRequest();
 	~ListPrometheusInstancesRequest();
+	std::string getClusterType() const;
+	void setClusterType(const std::string &clusterType);
 	bool getShowGlobalView() const;
 	void setShowGlobalView(bool showGlobalView);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 
 private:
+	std::string clusterType_;
 	bool showGlobalView_;
 	std::string regionId_;
 };

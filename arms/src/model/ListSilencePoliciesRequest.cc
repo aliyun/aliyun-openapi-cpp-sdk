@@ -25,6 +25,15 @@ ListSilencePoliciesRequest::ListSilencePoliciesRequest()
 
 ListSilencePoliciesRequest::~ListSilencePoliciesRequest() {}
 
+bool ListSilencePoliciesRequest::getIsDetail() const {
+  return isDetail_;
+}
+
+void ListSilencePoliciesRequest::setIsDetail(bool isDetail) {
+  isDetail_ = isDetail;
+  setParameter(std::string("IsDetail"), isDetail ? "true" : "false");
+}
+
 long ListSilencePoliciesRequest::getSize() const {
   return size_;
 }
@@ -50,15 +59,6 @@ std::string ListSilencePoliciesRequest::getName() const {
 void ListSilencePoliciesRequest::setName(const std::string &name) {
   name_ = name;
   setParameter(std::string("Name"), name);
-}
-
-bool ListSilencePoliciesRequest::getIsDetail() const {
-  return isDetail_;
-}
-
-void ListSilencePoliciesRequest::setIsDetail(bool isDetail) {
-  isDetail_ = isDetail;
-  setParameter(std::string("IsDetail"), isDetail ? "true" : "false");
 }
 
 long ListSilencePoliciesRequest::getPage() const {

@@ -37,12 +37,16 @@ namespace AlibabaCloud
 				UninstallPromClusterResult();
 				explicit UninstallPromClusterResult(const std::string &payload);
 				~UninstallPromClusterResult();
-				bool getData()const;
+				std::string getMessage()const;
+				std::string getData()const;
+				int getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				bool data_;
+				std::string message_;
+				std::string data_;
+				int code_;
 
 			};
 		}

@@ -51,6 +51,20 @@ void ListRetcodeAppsResult::parse(const std::string &payload)
 			retcodeAppsObject.appId = std::stol(valueRetcodeAppsRetcodeApp["AppId"].asString());
 		if(!valueRetcodeAppsRetcodeApp["Pid"].isNull())
 			retcodeAppsObject.pid = valueRetcodeAppsRetcodeApp["Pid"].asString();
+		if(!valueRetcodeAppsRetcodeApp["NickName"].isNull())
+			retcodeAppsObject.nickName = valueRetcodeAppsRetcodeApp["NickName"].asString();
+		if(!valueRetcodeAppsRetcodeApp["ResourceGroupId"].isNull())
+			retcodeAppsObject.resourceGroupId = valueRetcodeAppsRetcodeApp["ResourceGroupId"].asString();
+		auto allTagsNode = valueRetcodeAppsRetcodeApp["Tags"]["TagsItem"];
+		for (auto valueRetcodeAppsRetcodeAppTagsTagsItem : allTagsNode)
+		{
+			RetcodeApp::TagsItem tagsObject;
+			if(!valueRetcodeAppsRetcodeAppTagsTagsItem["Key"].isNull())
+				tagsObject.key = valueRetcodeAppsRetcodeAppTagsTagsItem["Key"].asString();
+			if(!valueRetcodeAppsRetcodeAppTagsTagsItem["Value"].isNull())
+				tagsObject.value = valueRetcodeAppsRetcodeAppTagsTagsItem["Value"].asString();
+			retcodeAppsObject.tags.push_back(tagsObject);
+		}
 		retcodeApps_.push_back(retcodeAppsObject);
 	}
 

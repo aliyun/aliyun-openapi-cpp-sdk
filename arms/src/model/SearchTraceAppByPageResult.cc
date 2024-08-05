@@ -68,6 +68,18 @@ void SearchTraceAppByPageResult::parse(const std::string &payload)
 			traceAppObject.userId = pageBeanNodeTraceAppsTraceApp["UserId"].asString();
 		if(!pageBeanNodeTraceAppsTraceApp["RegionId"].isNull())
 			traceAppObject.regionId = pageBeanNodeTraceAppsTraceApp["RegionId"].asString();
+		if(!pageBeanNodeTraceAppsTraceApp["ResourceGroupId"].isNull())
+			traceAppObject.resourceGroupId = pageBeanNodeTraceAppsTraceApp["ResourceGroupId"].asString();
+		auto allTagsNode = pageBeanNodeTraceAppsTraceApp["Tags"]["TagsItem"];
+		for (auto pageBeanNodeTraceAppsTraceAppTagsTagsItem : allTagsNode)
+		{
+			PageBean::TraceApp::TagsItem tagsObject;
+			if(!pageBeanNodeTraceAppsTraceAppTagsTagsItem["Key"].isNull())
+				tagsObject.key = pageBeanNodeTraceAppsTraceAppTagsTagsItem["Key"].asString();
+			if(!pageBeanNodeTraceAppsTraceAppTagsTagsItem["Value"].isNull())
+				tagsObject.value = pageBeanNodeTraceAppsTraceAppTagsTagsItem["Value"].asString();
+			traceAppObject.tags.push_back(tagsObject);
+		}
 		auto allLabels = value["Labels"]["Labels"];
 		for (auto value : allLabels)
 			traceAppObject.labels.push_back(value.asString());

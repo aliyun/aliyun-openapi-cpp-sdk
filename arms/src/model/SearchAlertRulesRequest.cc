@@ -88,6 +88,38 @@ void SearchAlertRulesRequest::setType(const std::string &type) {
   setParameter(std::string("Type"), type);
 }
 
+std::vector<SearchAlertRulesRequest::Tags> SearchAlertRulesRequest::getTags() const {
+  return tags_;
+}
+
+void SearchAlertRulesRequest::setTags(const std::vector<SearchAlertRulesRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
+}
+
+std::string SearchAlertRulesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void SearchAlertRulesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string SearchAlertRulesRequest::getAlertRuleId() const {
+  return alertRuleId_;
+}
+
+void SearchAlertRulesRequest::setAlertRuleId(const std::string &alertRuleId) {
+  alertRuleId_ = alertRuleId;
+  setParameter(std::string("AlertRuleId"), alertRuleId);
+}
+
 std::string SearchAlertRulesRequest::getRegionId() const {
   return regionId_;
 }

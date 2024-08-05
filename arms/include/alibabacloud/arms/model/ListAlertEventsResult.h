@@ -43,18 +43,26 @@ namespace AlibabaCloud
 							int state;
 							std::string createTime;
 						};
+						struct NotificationPolicy
+						{
+							long id;
+							std::string name;
+						};
 						std::string status;
 						std::string alertName;
 						std::string description;
 						std::string endTime;
+						std::vector<EventsItem::NotificationPolicy> notificationPolicies;
 						std::vector<EventsItem::AlarmsItem> alarms;
 						std::string startTime;
 						std::string severity;
 						std::string labels;
 						std::string generatorURL;
 						std::string integrationName;
+						long triggerCount;
 						std::string annotations;
 						std::string receiveTime;
+						std::string handlerName;
 						std::string integrationType;
 					};
 					std::vector<EventsItem> events;

@@ -30,17 +30,23 @@ class ALIBABACLOUD_ARMS_EXPORT GetManagedPrometheusStatusRequest : public RpcSer
 public:
 	GetManagedPrometheusStatusRequest();
 	~GetManagedPrometheusStatusRequest();
-	std::string getClusterType() const;
-	void setClusterType(const std::string &clusterType);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
+	std::string getClusterType() const;
+	void setClusterType(const std::string &clusterType);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getVpcId() const;
+	void setVpcId(const std::string &vpcId);
 
 private:
-	std::string clusterType_;
-	std::string regionId_;
 	std::string clusterId_;
+	std::string clusterType_;
+	std::string resourceGroupId_;
+	std::string regionId_;
+	std::string vpcId_;
 };
 } // namespace Model
 } // namespace ARMS

@@ -25,6 +25,19 @@ DeleteTraceAppRequest::DeleteTraceAppRequest()
 
 DeleteTraceAppRequest::~DeleteTraceAppRequest() {}
 
+DeleteTraceAppRequest::DeleteReason DeleteTraceAppRequest::getDeleteReason() const {
+  return deleteReason_;
+}
+
+void DeleteTraceAppRequest::setDeleteReason(const DeleteTraceAppRequest::DeleteReason &deleteReason) {
+  deleteReason_ = deleteReason;
+  setParameter(std::string("DeleteReason") + ".Remark", deleteReason.remark);
+  for(int dep1 = 0; dep1 != deleteReason.reasonIds.size(); dep1++) {
+    setParameter(std::string("DeleteReason") + ".ReasonIds." + std::to_string(dep1 + 1) + ".Name", deleteReason.reasonIds[dep1].name);
+    setParameter(std::string("DeleteReason") + ".ReasonIds." + std::to_string(dep1 + 1) + ".Id", std::to_string(deleteReason.reasonIds[dep1].id));
+  }
+}
+
 std::string DeleteTraceAppRequest::getRegionId() const {
   return regionId_;
 }

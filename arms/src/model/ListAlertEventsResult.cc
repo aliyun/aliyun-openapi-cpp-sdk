@@ -74,6 +74,10 @@ void ListAlertEventsResult::parse(const std::string &payload)
 			eventsItemObject.annotations = pageBeanNodeEventseventsItem["Annotations"].asString();
 		if(!pageBeanNodeEventseventsItem["Labels"].isNull())
 			eventsItemObject.labels = pageBeanNodeEventseventsItem["Labels"].asString();
+		if(!pageBeanNodeEventseventsItem["HandlerName"].isNull())
+			eventsItemObject.handlerName = pageBeanNodeEventseventsItem["HandlerName"].asString();
+		if(!pageBeanNodeEventseventsItem["TriggerCount"].isNull())
+			eventsItemObject.triggerCount = std::stol(pageBeanNodeEventseventsItem["TriggerCount"].asString());
 		auto allAlarmsNode = pageBeanNodeEventseventsItem["Alarms"]["alarmsItem"];
 		for (auto pageBeanNodeEventseventsItemAlarmsalarmsItem : allAlarmsNode)
 		{
@@ -87,6 +91,16 @@ void ListAlertEventsResult::parse(const std::string &payload)
 			if(!pageBeanNodeEventseventsItemAlarmsalarmsItem["CreateTime"].isNull())
 				alarmsObject.createTime = pageBeanNodeEventseventsItemAlarmsalarmsItem["CreateTime"].asString();
 			eventsItemObject.alarms.push_back(alarmsObject);
+		}
+		auto allNotificationPoliciesNode = pageBeanNodeEventseventsItem["NotificationPolicies"]["NotificationPolicy"];
+		for (auto pageBeanNodeEventseventsItemNotificationPoliciesNotificationPolicy : allNotificationPoliciesNode)
+		{
+			PageBean::EventsItem::NotificationPolicy notificationPoliciesObject;
+			if(!pageBeanNodeEventseventsItemNotificationPoliciesNotificationPolicy["Id"].isNull())
+				notificationPoliciesObject.id = std::stol(pageBeanNodeEventseventsItemNotificationPoliciesNotificationPolicy["Id"].asString());
+			if(!pageBeanNodeEventseventsItemNotificationPoliciesNotificationPolicy["Name"].isNull())
+				notificationPoliciesObject.name = pageBeanNodeEventseventsItemNotificationPoliciesNotificationPolicy["Name"].asString();
+			eventsItemObject.notificationPolicies.push_back(notificationPoliciesObject);
 		}
 		pageBean_.events.push_back(eventsItemObject);
 	}

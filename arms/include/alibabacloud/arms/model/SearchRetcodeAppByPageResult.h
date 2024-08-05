@@ -36,14 +36,22 @@ namespace AlibabaCloud
 				{
 					struct RetcodeApp
 					{
+						struct TagsItem
+						{
+							std::string value;
+							std::string key;
+						};
 						std::string retcodeAppType;
 						std::string type;
 						long appId;
+						std::string resourceGroupId;
 						std::string userId;
 						long createTime;
 						long updateTime;
 						std::string pid;
 						std::string regionId;
+						std::string nickName;
+						std::vector<RetcodeApp::TagsItem> tags;
 						std::string appName;
 					};
 					int totalCount;

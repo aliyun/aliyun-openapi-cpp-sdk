@@ -62,6 +62,20 @@ void DescribeIMRobotsResult::parse(const std::string &payload)
 			iMRobotsObject.dailyNoc = pageBeanNodeAlertIMRobotsIMRobots["DailyNoc"].asString() == "true";
 		if(!pageBeanNodeAlertIMRobotsIMRobots["DailyNocTime"].isNull())
 			iMRobotsObject.dailyNocTime = pageBeanNodeAlertIMRobotsIMRobots["DailyNocTime"].asString();
+		if(!pageBeanNodeAlertIMRobotsIMRobots["DingSignKey"].isNull())
+			iMRobotsObject.dingSignKey = pageBeanNodeAlertIMRobotsIMRobots["DingSignKey"].asString();
+		if(!pageBeanNodeAlertIMRobotsIMRobots["CreateTime"].isNull())
+			iMRobotsObject.createTime = pageBeanNodeAlertIMRobotsIMRobots["CreateTime"].asString();
+		auto allDispatchRulesNode = pageBeanNodeAlertIMRobotsIMRobots["DispatchRules"]["DispatchRule"];
+		for (auto pageBeanNodeAlertIMRobotsIMRobotsDispatchRulesDispatchRule : allDispatchRulesNode)
+		{
+			PageBean::IMRobots::DispatchRule dispatchRulesObject;
+			if(!pageBeanNodeAlertIMRobotsIMRobotsDispatchRulesDispatchRule["id"].isNull())
+				dispatchRulesObject.id = std::stol(pageBeanNodeAlertIMRobotsIMRobotsDispatchRulesDispatchRule["id"].asString());
+			if(!pageBeanNodeAlertIMRobotsIMRobotsDispatchRulesDispatchRule["name"].isNull())
+				dispatchRulesObject.name = pageBeanNodeAlertIMRobotsIMRobotsDispatchRulesDispatchRule["name"].asString();
+			iMRobotsObject.dispatchRules.push_back(dispatchRulesObject);
+		}
 		pageBean_.alertIMRobots.push_back(iMRobotsObject);
 	}
 

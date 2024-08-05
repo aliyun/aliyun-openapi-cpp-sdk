@@ -28,6 +28,10 @@ namespace ARMS {
 namespace Model {
 class ALIBABACLOUD_ARMS_EXPORT CreatePrometheusAlertRuleRequest : public RpcServiceRequest {
 public:
+	struct Tags {
+		std::string value;
+		std::string key;
+	};
 	CreatePrometheusAlertRuleRequest();
 	~CreatePrometheusAlertRuleRequest();
 	std::string getProductCode() const;
@@ -50,6 +54,8 @@ public:
 	void setMessage(const std::string &message);
 	std::string getLabels() const;
 	void setLabels(const std::string &labels);
+	std::vector<Tags> getTags() const;
+	void setTags(const std::vector<Tags> &tags);
 	std::string getDuration() const;
 	void setDuration(const std::string &duration);
 	std::string getRegionId() const;
@@ -68,6 +74,7 @@ private:
 	std::string type_;
 	std::string message_;
 	std::string labels_;
+	std::vector<Tags> tags_;
 	std::string duration_;
 	std::string regionId_;
 	std::string notifyType_;

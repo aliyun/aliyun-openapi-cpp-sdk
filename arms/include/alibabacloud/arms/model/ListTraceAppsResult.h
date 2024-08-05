@@ -34,16 +34,29 @@ namespace AlibabaCloud
 			public:
 				struct TraceApp
 				{
+					struct TagsItem
+					{
+						std::string value;
+						std::string key;
+					};
+					std::string resourceGroupId;
+					std::string clusterId;
+					long createTime;
+					std::string pid;
+					std::string _namespace;
+					std::vector<std::string> labels;
+					std::string source;
+					std::string appName;
 					std::string type;
 					long appId;
+					std::string workloadName;
+					std::string language;
 					std::string userId;
-					long createTime;
 					long updateTime;
 					bool show;
-					std::string pid;
-					std::vector<std::string> labels;
 					std::string regionId;
-					std::string appName;
+					std::vector<TraceApp::TagsItem> tags;
+					std::string workloadKind;
 				};
 
 

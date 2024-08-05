@@ -28,6 +28,10 @@ namespace ARMS {
 namespace Model {
 class ALIBABACLOUD_ARMS_EXPORT SearchAlertRulesRequest : public RpcServiceRequest {
 public:
+	struct Tags {
+		std::string value;
+		std::string key;
+	};
 	SearchAlertRulesRequest();
 	~SearchAlertRulesRequest();
 	std::string getAppType() const;
@@ -44,6 +48,12 @@ public:
 	void setTitle(const std::string &title);
 	std::string getType() const;
 	void setType(const std::string &type);
+	std::vector<Tags> getTags() const;
+	void setTags(const std::vector<Tags> &tags);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getAlertRuleId() const;
+	void setAlertRuleId(const std::string &alertRuleId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
@@ -57,6 +67,9 @@ private:
 	std::string proxyUserId_;
 	std::string title_;
 	std::string type_;
+	std::vector<Tags> tags_;
+	std::string resourceGroupId_;
+	std::string alertRuleId_;
 	std::string regionId_;
 	int pageSize_;
 };

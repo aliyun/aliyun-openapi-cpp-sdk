@@ -36,10 +36,18 @@ namespace AlibabaCloud
 				{
 					struct IMRobots
 					{
+						struct DispatchRule
+						{
+							long id;
+							std::string name;
+						};
 						std::string type;
+						std::string dingSignKey;
+						std::vector<IMRobots::DispatchRule> dispatchRules;
 						float robotId;
 						std::string robotName;
 						std::string robotAddr;
+						std::string createTime;
 						std::string dailyNocTime;
 						bool dailyNoc;
 					};

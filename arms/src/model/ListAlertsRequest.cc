@@ -34,6 +34,15 @@ void ListAlertsRequest::setSeverity(const std::string &severity) {
   setParameter(std::string("Severity"), severity);
 }
 
+std::string ListAlertsRequest::getOwner() const {
+  return owner_;
+}
+
+void ListAlertsRequest::setOwner(const std::string &owner) {
+  owner_ = owner;
+  setParameter(std::string("Owner"), owner);
+}
+
 std::string ListAlertsRequest::getIntegrationType() const {
   return integrationType_;
 }
@@ -97,6 +106,24 @@ void ListAlertsRequest::setShowEvents(bool showEvents) {
   setParameter(std::string("ShowEvents"), showEvents ? "true" : "false");
 }
 
+std::string ListAlertsRequest::getProxyUserId() const {
+  return proxyUserId_;
+}
+
+void ListAlertsRequest::setProxyUserId(const std::string &proxyUserId) {
+  proxyUserId_ = proxyUserId;
+  setParameter(std::string("ProxyUserId"), proxyUserId);
+}
+
+std::string ListAlertsRequest::getNotifyRobotName() const {
+  return notifyRobotName_;
+}
+
+void ListAlertsRequest::setNotifyRobotName(const std::string &notifyRobotName) {
+  notifyRobotName_ = notifyRobotName;
+  setParameter(std::string("NotifyRobotName"), notifyRobotName);
+}
+
 long ListAlertsRequest::getSize() const {
   return size_;
 }
@@ -104,6 +131,15 @@ long ListAlertsRequest::getSize() const {
 void ListAlertsRequest::setSize(long size) {
   size_ = size;
   setParameter(std::string("Size"), std::to_string(size));
+}
+
+std::string ListAlertsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ListAlertsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 long ListAlertsRequest::getState() const {

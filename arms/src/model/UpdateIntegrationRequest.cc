@@ -34,24 +34,6 @@ void UpdateIntegrationRequest::setShortToken(const std::string &shortToken) {
   setBodyParameter(std::string("ShortToken"), shortToken);
 }
 
-std::string UpdateIntegrationRequest::getFieldRedefineRules() const {
-  return fieldRedefineRules_;
-}
-
-void UpdateIntegrationRequest::setFieldRedefineRules(const std::string &fieldRedefineRules) {
-  fieldRedefineRules_ = fieldRedefineRules;
-  setBodyParameter(std::string("FieldRedefineRules"), fieldRedefineRules);
-}
-
-std::string UpdateIntegrationRequest::getStat() const {
-  return stat_;
-}
-
-void UpdateIntegrationRequest::setStat(const std::string &stat) {
-  stat_ = stat;
-  setBodyParameter(std::string("Stat"), stat);
-}
-
 std::string UpdateIntegrationRequest::getInitiativeRecoverValue() const {
   return initiativeRecoverValue_;
 }
@@ -97,15 +79,6 @@ void UpdateIntegrationRequest::setApiEndpoint(const std::string &apiEndpoint) {
   setBodyParameter(std::string("ApiEndpoint"), apiEndpoint);
 }
 
-bool UpdateIntegrationRequest::getAutoRecover() const {
-  return autoRecover_;
-}
-
-void UpdateIntegrationRequest::setAutoRecover(bool autoRecover) {
-  autoRecover_ = autoRecover;
-  setBodyParameter(std::string("AutoRecover"), autoRecover ? "true" : "false");
-}
-
 long UpdateIntegrationRequest::getRecoverTime() const {
   return recoverTime_;
 }
@@ -142,15 +115,6 @@ void UpdateIntegrationRequest::setState(bool state) {
   setBodyParameter(std::string("State"), state ? "true" : "false");
 }
 
-std::string UpdateIntegrationRequest::getExtendedFieldRedefineRules() const {
-  return extendedFieldRedefineRules_;
-}
-
-void UpdateIntegrationRequest::setExtendedFieldRedefineRules(const std::string &extendedFieldRedefineRules) {
-  extendedFieldRedefineRules_ = extendedFieldRedefineRules;
-  setBodyParameter(std::string("ExtendedFieldRedefineRules"), extendedFieldRedefineRules);
-}
-
 std::string UpdateIntegrationRequest::getInitiativeRecoverField() const {
   return initiativeRecoverField_;
 }
@@ -158,6 +122,42 @@ std::string UpdateIntegrationRequest::getInitiativeRecoverField() const {
 void UpdateIntegrationRequest::setInitiativeRecoverField(const std::string &initiativeRecoverField) {
   initiativeRecoverField_ = initiativeRecoverField;
   setBodyParameter(std::string("InitiativeRecoverField"), initiativeRecoverField);
+}
+
+std::string UpdateIntegrationRequest::getFieldRedefineRules() const {
+  return fieldRedefineRules_;
+}
+
+void UpdateIntegrationRequest::setFieldRedefineRules(const std::string &fieldRedefineRules) {
+  fieldRedefineRules_ = fieldRedefineRules;
+  setBodyParameter(std::string("FieldRedefineRules"), fieldRedefineRules);
+}
+
+std::string UpdateIntegrationRequest::getStat() const {
+  return stat_;
+}
+
+void UpdateIntegrationRequest::setStat(const std::string &stat) {
+  stat_ = stat;
+  setBodyParameter(std::string("Stat"), stat);
+}
+
+bool UpdateIntegrationRequest::getAutoRecover() const {
+  return autoRecover_;
+}
+
+void UpdateIntegrationRequest::setAutoRecover(bool autoRecover) {
+  autoRecover_ = autoRecover;
+  setBodyParameter(std::string("AutoRecover"), autoRecover ? "true" : "false");
+}
+
+std::string UpdateIntegrationRequest::getExtendedFieldRedefineRules() const {
+  return extendedFieldRedefineRules_;
+}
+
+void UpdateIntegrationRequest::setExtendedFieldRedefineRules(const std::string &extendedFieldRedefineRules) {
+  extendedFieldRedefineRules_ = extendedFieldRedefineRules;
+  setBodyParameter(std::string("ExtendedFieldRedefineRules"), extendedFieldRedefineRules);
 }
 
 std::string UpdateIntegrationRequest::getIntegrationProductType() const {

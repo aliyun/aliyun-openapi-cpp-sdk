@@ -58,6 +58,24 @@ void GetTraceAppResult::parse(const std::string &payload)
 		traceApp_.userId = traceAppNode["UserId"].asString();
 	if(!traceAppNode["RegionId"].isNull())
 		traceApp_.regionId = traceAppNode["RegionId"].asString();
+	if(!traceAppNode["Source"].isNull())
+		traceApp_.source = traceAppNode["Source"].asString();
+	if(!traceAppNode["ResourceGroupId"].isNull())
+		traceApp_.resourceGroupId = traceAppNode["ResourceGroupId"].asString();
+	if(!traceAppNode["ClusterId"].isNull())
+		traceApp_.clusterId = traceAppNode["ClusterId"].asString();
+	if(!traceAppNode["Language"].isNull())
+		traceApp_.language = traceAppNode["Language"].asString();
+	auto allTagsNode = traceAppNode["Tags"]["TagsItem"];
+	for (auto traceAppNodeTagsTagsItem : allTagsNode)
+	{
+		TraceApp::TagsItem tagsItemObject;
+		if(!traceAppNodeTagsTagsItem["Key"].isNull())
+			tagsItemObject.key = traceAppNodeTagsTagsItem["Key"].asString();
+		if(!traceAppNodeTagsTagsItem["Value"].isNull())
+			tagsItemObject.value = traceAppNodeTagsTagsItem["Value"].asString();
+		traceApp_.tags.push_back(tagsItemObject);
+	}
 		auto allLabels = traceAppNode["Labels"]["Labels"];
 		for (auto value : allLabels)
 			traceApp_.labels.push_back(value.asString());

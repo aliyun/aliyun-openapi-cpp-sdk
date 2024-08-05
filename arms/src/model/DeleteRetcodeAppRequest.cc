@@ -25,6 +25,15 @@ DeleteRetcodeAppRequest::DeleteRetcodeAppRequest()
 
 DeleteRetcodeAppRequest::~DeleteRetcodeAppRequest() {}
 
+std::string DeleteRetcodeAppRequest::getAppName() const {
+  return appName_;
+}
+
+void DeleteRetcodeAppRequest::setAppName(const std::string &appName) {
+  appName_ = appName;
+  setParameter(std::string("AppName"), appName);
+}
+
 std::string DeleteRetcodeAppRequest::getRegionId() const {
   return regionId_;
 }
@@ -41,5 +50,14 @@ std::string DeleteRetcodeAppRequest::getAppId() const {
 void DeleteRetcodeAppRequest::setAppId(const std::string &appId) {
   appId_ = appId;
   setParameter(std::string("AppId"), appId);
+}
+
+std::string DeleteRetcodeAppRequest::getPid() const {
+  return pid_;
+}
+
+void DeleteRetcodeAppRequest::setPid(const std::string &pid) {
+  pid_ = pid;
+  setParameter(std::string("Pid"), pid);
 }
 

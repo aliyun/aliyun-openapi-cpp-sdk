@@ -78,6 +78,8 @@ void CreateOrUpdateAlertRuleResult::parse(const std::string &payload)
 		alertRule_.level = alertRuleNode["Level"].asString();
 	if(!alertRuleNode["Message"].isNull())
 		alertRule_.message = alertRuleNode["Message"].asString();
+	if(!alertRuleNode["NotifyMode"].isNull())
+		alertRule_.notifyMode = alertRuleNode["NotifyMode"].asString();
 	auto allLabelsNode = alertRuleNode["Labels"]["labelsItem"];
 	for (auto alertRuleNodeLabelslabelsItem : allLabelsNode)
 	{
@@ -97,6 +99,16 @@ void CreateOrUpdateAlertRuleResult::parse(const std::string &payload)
 		if(!alertRuleNodeAnnotationsannotationsItem["Value"].isNull())
 			annotationsItemObject.value = alertRuleNodeAnnotationsannotationsItem["Value"].asString();
 		alertRule_.annotations.push_back(annotationsItemObject);
+	}
+	auto allTagsNode = alertRuleNode["Tags"]["Tag"];
+	for (auto alertRuleNodeTagsTag : allTagsNode)
+	{
+		AlertRule::Tag tagObject;
+		if(!alertRuleNodeTagsTag["Key"].isNull())
+			tagObject.key = alertRuleNodeTagsTag["Key"].asString();
+		if(!alertRuleNodeTagsTag["Value"].isNull())
+			tagObject.value = alertRuleNodeTagsTag["Value"].asString();
+		alertRule_.tags.push_back(tagObject);
 	}
 	auto alertRuleContentNode = alertRuleNode["AlertRuleContent"];
 	if(!alertRuleContentNode["Condition"].isNull())

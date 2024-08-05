@@ -37,6 +37,8 @@ namespace AlibabaCloud
 					std::string email;
 					bool isVerify;
 					std::string phone;
+					std::string dingRobotUrl;
+					bool isEmailVerify;
 					float contactId;
 					std::string contactName;
 					long reissueSendNotice;

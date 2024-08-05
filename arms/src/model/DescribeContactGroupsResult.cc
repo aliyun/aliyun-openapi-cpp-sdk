@@ -54,6 +54,8 @@ void DescribeContactGroupsResult::parse(const std::string &payload)
 			contactGroupsObject.contactGroupId = std::stof(pageBeanNodeAlertContactGroupscontactGroups["ContactGroupId"].asString());
 		if(!pageBeanNodeAlertContactGroupscontactGroups["ContactGroupName"].isNull())
 			contactGroupsObject.contactGroupName = pageBeanNodeAlertContactGroupscontactGroups["ContactGroupName"].asString();
+		if(!pageBeanNodeAlertContactGroupscontactGroups["ArmsContactGroupId"].isNull())
+			contactGroupsObject.armsContactGroupId = std::stol(pageBeanNodeAlertContactGroupscontactGroups["ArmsContactGroupId"].asString());
 		auto allContactsNode = pageBeanNodeAlertContactGroupscontactGroups["Contacts"]["contactsItem"];
 		for (auto pageBeanNodeAlertContactGroupscontactGroupsContactscontactsItem : allContactsNode)
 		{
@@ -66,6 +68,12 @@ void DescribeContactGroupsResult::parse(const std::string &payload)
 				contactsObject.phone = pageBeanNodeAlertContactGroupscontactGroupsContactscontactsItem["Phone"].asString();
 			if(!pageBeanNodeAlertContactGroupscontactGroupsContactscontactsItem["Email"].isNull())
 				contactsObject.email = pageBeanNodeAlertContactGroupscontactGroupsContactscontactsItem["Email"].asString();
+			if(!pageBeanNodeAlertContactGroupscontactGroupsContactscontactsItem["ArmsContactId"].isNull())
+				contactsObject.armsContactId = std::stol(pageBeanNodeAlertContactGroupscontactGroupsContactscontactsItem["ArmsContactId"].asString());
+			if(!pageBeanNodeAlertContactGroupscontactGroupsContactscontactsItem["Webhook"].isNull())
+				contactsObject.webhook = pageBeanNodeAlertContactGroupscontactGroupsContactscontactsItem["Webhook"].asString();
+			if(!pageBeanNodeAlertContactGroupscontactGroupsContactscontactsItem["DingRobotUrl"].isNull())
+				contactsObject.dingRobotUrl = pageBeanNodeAlertContactGroupscontactGroupsContactscontactsItem["DingRobotUrl"].asString();
 			contactGroupsObject.contacts.push_back(contactsObject);
 		}
 		pageBean_.alertContactGroups.push_back(contactGroupsObject);

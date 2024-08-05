@@ -30,22 +30,28 @@ class ALIBABACLOUD_ARMS_EXPORT ListNotificationPoliciesRequest : public RpcServi
 public:
 	ListNotificationPoliciesRequest();
 	~ListNotificationPoliciesRequest();
+	bool getIsDetail() const;
+	void setIsDetail(bool isDetail);
+	bool getDirectedMode() const;
+	void setDirectedMode(bool directedMode);
 	long getSize() const;
 	void setSize(long size);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getName() const;
 	void setName(const std::string &name);
-	bool getIsDetail() const;
-	void setIsDetail(bool isDetail);
+	std::string getIds() const;
+	void setIds(const std::string &ids);
 	long getPage() const;
 	void setPage(long page);
 
 private:
+	bool isDetail_;
+	bool directedMode_;
 	long size_;
 	std::string regionId_;
 	std::string name_;
-	bool isDetail_;
+	std::string ids_;
 	long page_;
 };
 } // namespace Model

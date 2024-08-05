@@ -36,6 +36,8 @@ public:
 	void setProxyUserId(const std::string &proxyUserId);
 	std::string getContactName() const;
 	void setContactName(const std::string &contactName);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getDingRobotWebhookUrl() const;
@@ -49,6 +51,7 @@ private:
 	std::string phoneNum_;
 	std::string proxyUserId_;
 	std::string contactName_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string dingRobotWebhookUrl_;
 	std::string email_;

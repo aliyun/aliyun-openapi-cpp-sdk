@@ -72,6 +72,8 @@ void SearchAlertContactResult::parse(const std::string &payload)
 			contactObject.content = pageBeanNodeContactsContact["Content"].asString();
 		if(!pageBeanNodeContactsContact["Phone"].isNull())
 			contactObject.phone = pageBeanNodeContactsContact["Phone"].asString();
+		if(!pageBeanNodeContactsContact["ResourceGroupId"].isNull())
+			contactObject.resourceGroupId = pageBeanNodeContactsContact["ResourceGroupId"].asString();
 		pageBean_.contacts.push_back(contactObject);
 	}
 

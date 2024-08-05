@@ -32,9 +32,12 @@ public:
 	~DescribePrometheusAlertRuleRequest();
 	long getAlertId() const;
 	void setAlertId(long alertId);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 
 private:
 	long alertId_;
+	std::string clusterId_;
 };
 } // namespace Model
 } // namespace ARMS

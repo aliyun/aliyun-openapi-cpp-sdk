@@ -28,16 +28,23 @@ namespace ARMS {
 namespace Model {
 class ALIBABACLOUD_ARMS_EXPORT GetTraceAppRequest : public RpcServiceRequest {
 public:
+	struct Tags {
+		std::string value;
+		std::string key;
+	};
 	GetTraceAppRequest();
 	~GetTraceAppRequest();
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getPid() const;
 	void setPid(const std::string &pid);
+	std::vector<Tags> getTags() const;
+	void setTags(const std::vector<Tags> &tags);
 
 private:
 	std::string regionId_;
 	std::string pid_;
+	std::vector<Tags> tags_;
 };
 } // namespace Model
 } // namespace ARMS

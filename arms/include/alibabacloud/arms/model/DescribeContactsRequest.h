@@ -30,21 +30,30 @@ class ALIBABACLOUD_ARMS_EXPORT DescribeContactsRequest : public RpcServiceReques
 public:
 	DescribeContactsRequest();
 	~DescribeContactsRequest();
+	std::string getContactIds() const;
+	void setContactIds(const std::string &contactIds);
+	std::string getVerbose() const;
+	void setVerbose(const std::string &verbose);
 	std::string getContactName() const;
 	void setContactName(const std::string &contactName);
 	long getSize() const;
 	void setSize(long size);
 	std::string getPhone() const;
 	void setPhone(const std::string &phone);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	long getPage() const;
 	void setPage(long page);
 	std::string getEmail() const;
 	void setEmail(const std::string &email);
 
 private:
+	std::string contactIds_;
+	std::string verbose_;
 	std::string contactName_;
 	long size_;
 	std::string phone_;
+	std::string regionId_;
 	long page_;
 	std::string email_;
 };

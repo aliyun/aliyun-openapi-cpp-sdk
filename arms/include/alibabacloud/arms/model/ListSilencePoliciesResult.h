@@ -46,6 +46,7 @@ namespace AlibabaCloud
 							};
 							std::vector<MatchingRulesItem::MatchingConditionsItem> matchingConditions;
 						};
+						std::string state;
 						std::vector<Policies::MatchingRulesItem> matchingRules;
 						long id;
 						std::string name;

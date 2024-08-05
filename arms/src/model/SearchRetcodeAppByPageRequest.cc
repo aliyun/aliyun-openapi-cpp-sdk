@@ -25,6 +25,47 @@ SearchRetcodeAppByPageRequest::SearchRetcodeAppByPageRequest()
 
 SearchRetcodeAppByPageRequest::~SearchRetcodeAppByPageRequest() {}
 
+std::string SearchRetcodeAppByPageRequest::getRetcodeAppId() const {
+  return retcodeAppId_;
+}
+
+void SearchRetcodeAppByPageRequest::setRetcodeAppId(const std::string &retcodeAppId) {
+  retcodeAppId_ = retcodeAppId;
+  setParameter(std::string("RetcodeAppId"), retcodeAppId);
+}
+
+int SearchRetcodeAppByPageRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void SearchRetcodeAppByPageRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+std::vector<SearchRetcodeAppByPageRequest::Tags> SearchRetcodeAppByPageRequest::getTags() const {
+  return tags_;
+}
+
+void SearchRetcodeAppByPageRequest::setTags(const std::vector<SearchRetcodeAppByPageRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
+}
+
+std::string SearchRetcodeAppByPageRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void SearchRetcodeAppByPageRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string SearchRetcodeAppByPageRequest::getRegionId() const {
   return regionId_;
 }
@@ -50,14 +91,5 @@ int SearchRetcodeAppByPageRequest::getPageSize() const {
 void SearchRetcodeAppByPageRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
-int SearchRetcodeAppByPageRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void SearchRetcodeAppByPageRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 

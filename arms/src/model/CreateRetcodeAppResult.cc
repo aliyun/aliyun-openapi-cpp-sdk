@@ -44,11 +44,51 @@ void CreateRetcodeAppResult::parse(const std::string &payload)
 		retcodeAppDataBean_.pid = retcodeAppDataBeanNode["Pid"].asString();
 	if(!retcodeAppDataBeanNode["AppId"].isNull())
 		retcodeAppDataBean_.appId = std::stol(retcodeAppDataBeanNode["AppId"].asString());
+	if(!retcodeAppDataBeanNode["ResourceGroupId"].isNull())
+		retcodeAppDataBean_.resourceGroupId = retcodeAppDataBeanNode["ResourceGroupId"].asString();
+	auto allTagsNode = retcodeAppDataBeanNode["Tags"]["TagsItem"];
+	for (auto retcodeAppDataBeanNodeTagsTagsItem : allTagsNode)
+	{
+		RetcodeAppDataBean::TagsItem tagsItemObject;
+		if(!retcodeAppDataBeanNodeTagsTagsItem["Key"].isNull())
+			tagsItemObject.key = retcodeAppDataBeanNodeTagsTagsItem["Key"].asString();
+		if(!retcodeAppDataBeanNodeTagsTagsItem["Value"].isNull())
+			tagsItemObject.value = retcodeAppDataBeanNodeTagsTagsItem["Value"].asString();
+		retcodeAppDataBean_.tags.push_back(tagsItemObject);
+	}
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 
 CreateRetcodeAppResult::RetcodeAppDataBean CreateRetcodeAppResult::getRetcodeAppDataBean()const
 {
 	return retcodeAppDataBean_;
+}
+
+std::string CreateRetcodeAppResult::getMessage()const
+{
+	return message_;
+}
+
+std::string CreateRetcodeAppResult::getData()const
+{
+	return data_;
+}
+
+int CreateRetcodeAppResult::getCode()const
+{
+	return code_;
+}
+
+bool CreateRetcodeAppResult::getSuccess()const
+{
+	return success_;
 }
 

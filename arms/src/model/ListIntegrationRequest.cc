@@ -25,6 +25,15 @@ ListIntegrationRequest::ListIntegrationRequest()
 
 ListIntegrationRequest::~ListIntegrationRequest() {}
 
+bool ListIntegrationRequest::getIsDetail() const {
+  return isDetail_;
+}
+
+void ListIntegrationRequest::setIsDetail(bool isDetail) {
+  isDetail_ = isDetail;
+  setParameter(std::string("IsDetail"), isDetail ? "true" : "false");
+}
+
 long ListIntegrationRequest::getSize() const {
   return size_;
 }
@@ -41,15 +50,6 @@ std::string ListIntegrationRequest::getIntegrationName() const {
 void ListIntegrationRequest::setIntegrationName(const std::string &integrationName) {
   integrationName_ = integrationName;
   setParameter(std::string("IntegrationName"), integrationName);
-}
-
-bool ListIntegrationRequest::getIsDetail() const {
-  return isDetail_;
-}
-
-void ListIntegrationRequest::setIsDetail(bool isDetail) {
-  isDetail_ = isDetail;
-  setParameter(std::string("IsDetail"), isDetail ? "true" : "false");
 }
 
 long ListIntegrationRequest::getPage() const {

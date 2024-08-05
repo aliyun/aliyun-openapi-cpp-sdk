@@ -28,12 +28,18 @@ namespace ARMS {
 namespace Model {
 class ALIBABACLOUD_ARMS_EXPORT ImportAppAlertRulesRequest : public RpcServiceRequest {
 public:
+	struct Tags {
+		std::string value;
+		std::string key;
+	};
 	ImportAppAlertRulesRequest();
 	~ImportAppAlertRulesRequest();
 	bool getIsAutoStart() const;
 	void setIsAutoStart(bool isAutoStart);
 	std::string getProxyUserId() const;
 	void setProxyUserId(const std::string &proxyUserId);
+	std::vector<Tags> getTags() const;
+	void setTags(const std::vector<Tags> &tags);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getContactGroupIds() const;
@@ -48,6 +54,7 @@ public:
 private:
 	bool isAutoStart_;
 	std::string proxyUserId_;
+	std::vector<Tags> tags_;
 	std::string regionId_;
 	std::string contactGroupIds_;
 	std::string pids_;

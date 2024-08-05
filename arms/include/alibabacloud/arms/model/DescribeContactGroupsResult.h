@@ -40,12 +40,16 @@ namespace AlibabaCloud
 						{
 							std::string email;
 							std::string phone;
+							std::string dingRobotUrl;
+							long armsContactId;
+							std::string webhook;
 							float contactId;
 							std::string contactName;
 						};
 						float contactGroupId;
 						std::vector<ContactGroups::ContactsItem> contacts;
 						std::string contactGroupName;
+						long armsContactGroupId;
 					};
 					std::vector<ContactGroups> alertContactGroups;
 					long size;

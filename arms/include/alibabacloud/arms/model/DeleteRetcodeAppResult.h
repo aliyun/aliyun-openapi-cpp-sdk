@@ -37,12 +37,18 @@ namespace AlibabaCloud
 				DeleteRetcodeAppResult();
 				explicit DeleteRetcodeAppResult(const std::string &payload);
 				~DeleteRetcodeAppResult();
+				std::string getMessage()const;
 				std::string getData()const;
+				int getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				std::string data_;
+				int code_;
+				bool success_;
 
 			};
 		}

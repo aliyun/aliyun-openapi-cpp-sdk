@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string desc;
 					std::string type;
+					std::string problemId;
 					std::string title;
 					std::string pid;
 					std::string level;

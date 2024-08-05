@@ -44,13 +44,32 @@ void AddPrometheusGlobalViewResult::parse(const std::string &payload)
 		data_.success = dataNode["Success"].asString() == "true";
 	if(!dataNode["Msg"].isNull())
 		data_.msg = dataNode["Msg"].asString();
-	if(!dataNode["Info"].isNull())
-		data_.info = dataNode["Info"].asString();
+	auto infoNode = dataNode["Info"];
+	if(!infoNode["RegionId"].isNull())
+		data_.info.regionId = infoNode["RegionId"].asString();
+	if(!infoNode["GlobalViewClusterId"].isNull())
+		data_.info.globalViewClusterId = infoNode["GlobalViewClusterId"].asString();
+	if(!infoNode["FailedInstances"].isNull())
+		data_.info.failedInstances = infoNode["FailedInstances"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string AddPrometheusGlobalViewResult::getMessage()const
+{
+	return message_;
 }
 
 AddPrometheusGlobalViewResult::Data AddPrometheusGlobalViewResult::getData()const
 {
 	return data_;
+}
+
+int AddPrometheusGlobalViewResult::getCode()const
+{
+	return code_;
 }
 

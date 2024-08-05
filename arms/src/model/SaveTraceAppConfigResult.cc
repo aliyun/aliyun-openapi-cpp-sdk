@@ -41,11 +41,32 @@ void SaveTraceAppConfigResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stol(value["Code"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
+}
+
+std::string SaveTraceAppConfigResult::getMessage()const
+{
+	return message_;
 }
 
 std::string SaveTraceAppConfigResult::getData()const
 {
 	return data_;
+}
+
+long SaveTraceAppConfigResult::getCode()const
+{
+	return code_;
+}
+
+bool SaveTraceAppConfigResult::getSuccess()const
+{
+	return success_;
 }
 

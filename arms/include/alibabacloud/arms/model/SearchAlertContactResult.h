@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					struct Contact
 					{
 						std::string email;
+						std::string resourceGroupId;
 						std::string userId;
 						std::string content;
 						std::string phone;

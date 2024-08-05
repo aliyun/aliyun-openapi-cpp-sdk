@@ -28,8 +28,19 @@ namespace ARMS {
 namespace Model {
 class ALIBABACLOUD_ARMS_EXPORT DeleteTraceAppRequest : public RpcServiceRequest {
 public:
+	struct DeleteReason {
+		std::string remark;
+		struct ReasonIdsItem {
+			std::string name;
+			int id;
+		};
+		ReasonIdsItem reasonIdsItem;
+		std::vector<ReasonIdsItem> reasonIds;
+	};
 	DeleteTraceAppRequest();
 	~DeleteTraceAppRequest();
+	DeleteReason getDeleteReason() const;
+	void setDeleteReason(const DeleteReason &deleteReason);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getAppId() const;
@@ -40,6 +51,7 @@ public:
 	void setType(const std::string &type);
 
 private:
+	DeleteReason deleteReason_;
 	std::string regionId_;
 	std::string appId_;
 	std::string pid_;

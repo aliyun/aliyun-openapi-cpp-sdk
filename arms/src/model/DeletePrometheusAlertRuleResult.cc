@@ -41,7 +41,21 @@ void DeletePrometheusAlertRuleResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["Code"].isNull())
+		code_ = std::stol(value["Code"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string DeletePrometheusAlertRuleResult::getMessage()const
+{
+	return message_;
+}
+
+long DeletePrometheusAlertRuleResult::getCode()const
+{
+	return code_;
 }
 
 bool DeletePrometheusAlertRuleResult::getSuccess()const

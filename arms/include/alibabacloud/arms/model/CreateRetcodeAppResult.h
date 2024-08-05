@@ -34,8 +34,15 @@ namespace AlibabaCloud
 			public:
 				struct RetcodeAppDataBean
 				{
+					struct TagsItem
+					{
+						std::string value;
+						std::string key;
+					};
 					long appId;
+					std::string resourceGroupId;
 					std::string pid;
+					std::vector<TagsItem> tags;
 				};
 
 
@@ -43,11 +50,19 @@ namespace AlibabaCloud
 				explicit CreateRetcodeAppResult(const std::string &payload);
 				~CreateRetcodeAppResult();
 				RetcodeAppDataBean getRetcodeAppDataBean()const;
+				std::string getMessage()const;
+				std::string getData()const;
+				int getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				RetcodeAppDataBean retcodeAppDataBean_;
+				std::string message_;
+				std::string data_;
+				int code_;
+				bool success_;
 
 			};
 		}

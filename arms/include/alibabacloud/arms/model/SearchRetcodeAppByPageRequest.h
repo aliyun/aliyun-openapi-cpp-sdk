@@ -28,22 +28,35 @@ namespace ARMS {
 namespace Model {
 class ALIBABACLOUD_ARMS_EXPORT SearchRetcodeAppByPageRequest : public RpcServiceRequest {
 public:
+	struct Tags {
+		std::string value;
+		std::string key;
+	};
 	SearchRetcodeAppByPageRequest();
 	~SearchRetcodeAppByPageRequest();
+	std::string getRetcodeAppId() const;
+	void setRetcodeAppId(const std::string &retcodeAppId);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
+	std::vector<Tags> getTags() const;
+	void setTags(const std::vector<Tags> &tags);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getRetcodeAppName() const;
 	void setRetcodeAppName(const std::string &retcodeAppName);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
 
 private:
+	std::string retcodeAppId_;
+	int pageNumber_;
+	std::vector<Tags> tags_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string retcodeAppName_;
 	int pageSize_;
-	int pageNumber_;
 };
 } // namespace Model
 } // namespace ARMS

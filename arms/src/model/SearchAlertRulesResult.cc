@@ -84,6 +84,8 @@ void SearchAlertRulesResult::parse(const std::string &payload)
 			alertRuleEntityObject.taskId = std::stol(pageBeanNodeAlertRulesAlertRuleEntity["TaskId"].asString());
 		if(!pageBeanNodeAlertRulesAlertRuleEntity["Id"].isNull())
 			alertRuleEntityObject.id = std::stol(pageBeanNodeAlertRulesAlertRuleEntity["Id"].asString());
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["ResourceGroupId"].isNull())
+			alertRuleEntityObject.resourceGroupId = pageBeanNodeAlertRulesAlertRuleEntity["ResourceGroupId"].asString();
 		auto alarmContextNode = value["AlarmContext"];
 		if(!alarmContextNode["AlarmContentTemplate"].isNull())
 			alertRuleEntityObject.alarmContext.alarmContentTemplate = alarmContextNode["AlarmContentTemplate"].asString();
@@ -147,6 +149,9 @@ void SearchAlertRulesResult::parse(const std::string &payload)
 		auto allAlertWays = value["AlertWays"]["AlertWay"];
 		for (auto value : allAlertWays)
 			alertRuleEntityObject.alertWays.push_back(value.asString());
+		auto allAlertWay = value["AlertWay"]["AlertWay"];
+		for (auto value : allAlertWay)
+			alertRuleEntityObject.alertWay.push_back(value.asString());
 		pageBean_.alertRules.push_back(alertRuleEntityObject);
 	}
 

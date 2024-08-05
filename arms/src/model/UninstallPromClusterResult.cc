@@ -40,12 +40,26 @@ void UninstallPromClusterResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	if(!value["Data"].isNull())
-		data_ = value["Data"].asString() == "true";
+		data_ = value["Data"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
 
 }
 
-bool UninstallPromClusterResult::getData()const
+std::string UninstallPromClusterResult::getMessage()const
+{
+	return message_;
+}
+
+std::string UninstallPromClusterResult::getData()const
 {
 	return data_;
+}
+
+int UninstallPromClusterResult::getCode()const
+{
+	return code_;
 }
 

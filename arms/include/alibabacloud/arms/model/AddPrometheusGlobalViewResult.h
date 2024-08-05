@@ -34,8 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					struct Info
+					{
+						std::string failedInstances;
+						std::string globalViewClusterId;
+						std::string regionId;
+					};
 					std::string msg;
-					std::string info;
+					Info info;
 					bool success;
 				};
 
@@ -43,12 +49,16 @@ namespace AlibabaCloud
 				AddPrometheusGlobalViewResult();
 				explicit AddPrometheusGlobalViewResult(const std::string &payload);
 				~AddPrometheusGlobalViewResult();
+				std::string getMessage()const;
 				Data getData()const;
+				int getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				Data data_;
+				int code_;
 
 			};
 		}

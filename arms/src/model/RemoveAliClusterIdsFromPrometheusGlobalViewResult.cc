@@ -46,11 +46,25 @@ void RemoveAliClusterIdsFromPrometheusGlobalViewResult::parse(const std::string 
 		data_.msg = dataNode["Msg"].asString();
 	if(!dataNode["Info"].isNull())
 		data_.info = dataNode["Info"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
 
+}
+
+std::string RemoveAliClusterIdsFromPrometheusGlobalViewResult::getMessage()const
+{
+	return message_;
 }
 
 RemoveAliClusterIdsFromPrometheusGlobalViewResult::Data RemoveAliClusterIdsFromPrometheusGlobalViewResult::getData()const
 {
 	return data_;
+}
+
+int RemoveAliClusterIdsFromPrometheusGlobalViewResult::getCode()const
+{
+	return code_;
 }
 

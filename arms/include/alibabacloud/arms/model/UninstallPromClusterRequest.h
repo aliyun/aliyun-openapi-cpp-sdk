@@ -30,14 +30,17 @@ class ALIBABACLOUD_ARMS_EXPORT UninstallPromClusterRequest : public RpcServiceRe
 public:
 	UninstallPromClusterRequest();
 	~UninstallPromClusterRequest();
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
+	std::string getAliyunLang() const;
+	void setAliyunLang(const std::string &aliyunLang);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 
 private:
-	std::string regionId_;
+	std::string aliyunLang_;
 	std::string clusterId_;
+	std::string regionId_;
 };
 } // namespace Model
 } // namespace ARMS

@@ -34,3 +34,12 @@ void DescribePrometheusAlertRuleRequest::setAlertId(long alertId) {
   setParameter(std::string("AlertId"), std::to_string(alertId));
 }
 
+std::string DescribePrometheusAlertRuleRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void DescribePrometheusAlertRuleRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
+}
+

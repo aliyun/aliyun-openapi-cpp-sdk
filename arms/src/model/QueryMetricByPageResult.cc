@@ -46,6 +46,8 @@ void QueryMetricByPageResult::parse(const std::string &payload)
 		data_.total = std::stoi(dataNode["Total"].asString());
 	if(!dataNode["Page"].isNull())
 		data_.page = std::stoi(dataNode["Page"].asString());
+	if(!dataNode["Completed"].isNull())
+		data_.completed = dataNode["Completed"].asString() == "true";
 		auto allItems = dataNode["Items"]["Items"];
 		for (auto value : allItems)
 			data_.items.push_back(value.asString());

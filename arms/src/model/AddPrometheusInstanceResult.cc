@@ -41,11 +41,32 @@ void AddPrometheusInstanceResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
+}
+
+std::string AddPrometheusInstanceResult::getMessage()const
+{
+	return message_;
 }
 
 std::string AddPrometheusInstanceResult::getData()const
 {
 	return data_;
+}
+
+int AddPrometheusInstanceResult::getCode()const
+{
+	return code_;
+}
+
+bool AddPrometheusInstanceResult::getSuccess()const
+{
+	return success_;
 }
 

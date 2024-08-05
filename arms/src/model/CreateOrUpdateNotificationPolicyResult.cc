@@ -54,6 +54,10 @@ void CreateOrUpdateNotificationPolicyResult::parse(const std::string &payload)
 		notificationPolicy_.repeatInterval = std::stol(notificationPolicyNode["RepeatInterval"].asString());
 	if(!notificationPolicyNode["IntegrationId"].isNull())
 		notificationPolicy_.integrationId = std::stol(notificationPolicyNode["IntegrationId"].asString());
+	if(!notificationPolicyNode["DirectedMode"].isNull())
+		notificationPolicy_.directedMode = notificationPolicyNode["DirectedMode"].asString() == "true";
+	if(!notificationPolicyNode["State"].isNull())
+		notificationPolicy_.state = notificationPolicyNode["State"].asString();
 	auto allMatchingRulesNode = notificationPolicyNode["MatchingRules"]["matchingRulesItem"];
 	for (auto notificationPolicyNodeMatchingRulesmatchingRulesItem : allMatchingRulesNode)
 	{
@@ -95,6 +99,9 @@ void CreateOrUpdateNotificationPolicyResult::parse(const std::string &payload)
 			notifyObjectsItemObject.notifyObjectId = std::stol(notifyRuleNodeNotifyObjectsnotifyObjectsItem["NotifyObjectId"].asString());
 		if(!notifyRuleNodeNotifyObjectsnotifyObjectsItem["NotifyObjectName"].isNull())
 			notifyObjectsItemObject.notifyObjectName = notifyRuleNodeNotifyObjectsnotifyObjectsItem["NotifyObjectName"].asString();
+		auto allNotifyChannels1 = value["NotifyChannels"]["notifyChannels"];
+		for (auto value : allNotifyChannels1)
+			notifyObjectsItemObject.notifyChannels1.push_back(value.asString());
 		notificationPolicy_.notifyRule.notifyObjects.push_back(notifyObjectsItemObject);
 	}
 		auto allNotifyChannels = notifyRuleNode["NotifyChannels"]["notifyChannels"];

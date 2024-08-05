@@ -83,13 +83,44 @@ void ListPrometheusAlertRulesResult::parse(const std::string &payload)
 				annotationsObject.value = valuePrometheusAlertRulesPrometheusAlertRuleAnnotationsAnnotation["Value"].asString();
 			prometheusAlertRulesObject.annotations.push_back(annotationsObject);
 		}
+		auto allTagsNode = valuePrometheusAlertRulesPrometheusAlertRule["Tags"]["tagsItem"];
+		for (auto valuePrometheusAlertRulesPrometheusAlertRuleTagstagsItem : allTagsNode)
+		{
+			PrometheusAlertRule::TagsItem tagsObject;
+			if(!valuePrometheusAlertRulesPrometheusAlertRuleTagstagsItem["Key"].isNull())
+				tagsObject.key = valuePrometheusAlertRulesPrometheusAlertRuleTagstagsItem["Key"].asString();
+			if(!valuePrometheusAlertRulesPrometheusAlertRuleTagstagsItem["Value"].isNull())
+				tagsObject.value = valuePrometheusAlertRulesPrometheusAlertRuleTagstagsItem["Value"].asString();
+			prometheusAlertRulesObject.tags.push_back(tagsObject);
+		}
 		prometheusAlertRules_.push_back(prometheusAlertRulesObject);
 	}
+	if(!value["Code"].isNull())
+		code_ = std::stol(value["Code"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
 std::vector<ListPrometheusAlertRulesResult::PrometheusAlertRule> ListPrometheusAlertRulesResult::getPrometheusAlertRules()const
 {
 	return prometheusAlertRules_;
+}
+
+std::string ListPrometheusAlertRulesResult::getMessage()const
+{
+	return message_;
+}
+
+long ListPrometheusAlertRulesResult::getCode()const
+{
+	return code_;
+}
+
+bool ListPrometheusAlertRulesResult::getSuccess()const
+{
+	return success_;
 }
 

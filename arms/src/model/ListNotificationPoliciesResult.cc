@@ -64,6 +64,10 @@ void ListNotificationPoliciesResult::parse(const std::string &payload)
 			policiesObject.escalationPolicyId = std::stol(pageBeanNodeNotificationPoliciespolicies["EscalationPolicyId"].asString());
 		if(!pageBeanNodeNotificationPoliciespolicies["IntegrationId"].isNull())
 			policiesObject.integrationId = std::stol(pageBeanNodeNotificationPoliciespolicies["IntegrationId"].asString());
+		if(!pageBeanNodeNotificationPoliciespolicies["DirectedMode"].isNull())
+			policiesObject.directedMode = pageBeanNodeNotificationPoliciespolicies["DirectedMode"].asString() == "true";
+		if(!pageBeanNodeNotificationPoliciespolicies["State"].isNull())
+			policiesObject.state = pageBeanNodeNotificationPoliciespolicies["State"].asString();
 		auto allMatchingRulesNode = pageBeanNodeNotificationPoliciespolicies["MatchingRules"]["matchingRulesItem"];
 		for (auto pageBeanNodeNotificationPoliciespoliciesMatchingRulesmatchingRulesItem : allMatchingRulesNode)
 		{
@@ -105,6 +109,9 @@ void ListNotificationPoliciesResult::parse(const std::string &payload)
 				notifyObjectsItemObject.notifyObjectId = std::stol(notifyRuleNodeNotifyObjectsnotifyObjectsItem["NotifyObjectId"].asString());
 			if(!notifyRuleNodeNotifyObjectsnotifyObjectsItem["NotifyObjectName"].isNull())
 				notifyObjectsItemObject.notifyObjectName = notifyRuleNodeNotifyObjectsnotifyObjectsItem["NotifyObjectName"].asString();
+			auto allNotifyChannels1 = value["NotifyChannels"]["notifyChannels"];
+			for (auto value : allNotifyChannels1)
+				notifyObjectsItemObject.notifyChannels1.push_back(value.asString());
 			policiesObject.notifyRule.notifyObjects.push_back(notifyObjectsItemObject);
 		}
 			auto allNotifyChannels = notifyRuleNode["NotifyChannels"]["notifyChannels"];

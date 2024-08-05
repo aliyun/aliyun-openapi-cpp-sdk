@@ -30,16 +30,19 @@ class ALIBABACLOUD_ARMS_EXPORT DescribeIMRobotsRequest : public RpcServiceReques
 public:
 	DescribeIMRobotsRequest();
 	~DescribeIMRobotsRequest();
-	long getSize() const;
-	void setSize(long size);
+	std::string getRobotIds() const;
+	void setRobotIds(const std::string &robotIds);
 	std::string getRobotName() const;
 	void setRobotName(const std::string &robotName);
+	long getSize() const;
+	void setSize(long size);
 	long getPage() const;
 	void setPage(long page);
 
 private:
-	long size_;
+	std::string robotIds_;
 	std::string robotName_;
+	long size_;
 	long page_;
 };
 } // namespace Model

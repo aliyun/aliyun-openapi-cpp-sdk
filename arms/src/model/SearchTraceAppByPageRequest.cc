@@ -25,6 +25,38 @@ SearchTraceAppByPageRequest::SearchTraceAppByPageRequest()
 
 SearchTraceAppByPageRequest::~SearchTraceAppByPageRequest() {}
 
+int SearchTraceAppByPageRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void SearchTraceAppByPageRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+std::vector<SearchTraceAppByPageRequest::Tags> SearchTraceAppByPageRequest::getTags() const {
+  return tags_;
+}
+
+void SearchTraceAppByPageRequest::setTags(const std::vector<SearchTraceAppByPageRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
+}
+
+std::string SearchTraceAppByPageRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void SearchTraceAppByPageRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string SearchTraceAppByPageRequest::getRegionId() const {
   return regionId_;
 }
@@ -50,14 +82,5 @@ int SearchTraceAppByPageRequest::getPageSize() const {
 void SearchTraceAppByPageRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
-int SearchTraceAppByPageRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void SearchTraceAppByPageRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 

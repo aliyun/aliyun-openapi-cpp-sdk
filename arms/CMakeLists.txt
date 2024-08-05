@@ -33,14 +33,32 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/AddPrometheusGlobalViewByAliClusterIdsResult.h
 	include/alibabacloud/arms/model/AddPrometheusInstanceRequest.h
 	include/alibabacloud/arms/model/AddPrometheusInstanceResult.h
+	include/alibabacloud/arms/model/AddPrometheusIntegrationRequest.h
+	include/alibabacloud/arms/model/AddPrometheusIntegrationResult.h
 	include/alibabacloud/arms/model/AddRecordingRuleRequest.h
 	include/alibabacloud/arms/model/AddRecordingRuleResult.h
+	include/alibabacloud/arms/model/AddTagToFlinkClusterRequest.h
+	include/alibabacloud/arms/model/AddTagToFlinkClusterResult.h
 	include/alibabacloud/arms/model/AppendInstancesToPrometheusGlobalViewRequest.h
 	include/alibabacloud/arms/model/AppendInstancesToPrometheusGlobalViewResult.h
 	include/alibabacloud/arms/model/ApplyScenarioRequest.h
 	include/alibabacloud/arms/model/ApplyScenarioResult.h
+	include/alibabacloud/arms/model/BindPrometheusGrafanaInstanceRequest.h
+	include/alibabacloud/arms/model/BindPrometheusGrafanaInstanceResult.h
+	include/alibabacloud/arms/model/BlockAlarmNotificationRequest.h
+	include/alibabacloud/arms/model/BlockAlarmNotificationResult.h
+	include/alibabacloud/arms/model/ChangeAlarmSeverityRequest.h
+	include/alibabacloud/arms/model/ChangeAlarmSeverityResult.h
+	include/alibabacloud/arms/model/ChangeResourceGroupRequest.h
+	include/alibabacloud/arms/model/ChangeResourceGroupResult.h
+	include/alibabacloud/arms/model/CheckCommercialStatusRequest.h
+	include/alibabacloud/arms/model/CheckCommercialStatusResult.h
 	include/alibabacloud/arms/model/CheckServiceStatusRequest.h
 	include/alibabacloud/arms/model/CheckServiceStatusResult.h
+	include/alibabacloud/arms/model/ClaimAlarmRequest.h
+	include/alibabacloud/arms/model/ClaimAlarmResult.h
+	include/alibabacloud/arms/model/CloseAlarmRequest.h
+	include/alibabacloud/arms/model/CloseAlarmResult.h
 	include/alibabacloud/arms/model/ConfigAppRequest.h
 	include/alibabacloud/arms/model/ConfigAppResult.h
 	include/alibabacloud/arms/model/CreateAlertContactRequest.h
@@ -49,6 +67,16 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/CreateAlertContactGroupResult.h
 	include/alibabacloud/arms/model/CreateDispatchRuleRequest.h
 	include/alibabacloud/arms/model/CreateDispatchRuleResult.h
+	include/alibabacloud/arms/model/CreateEnvCustomJobRequest.h
+	include/alibabacloud/arms/model/CreateEnvCustomJobResult.h
+	include/alibabacloud/arms/model/CreateEnvPodMonitorRequest.h
+	include/alibabacloud/arms/model/CreateEnvPodMonitorResult.h
+	include/alibabacloud/arms/model/CreateEnvServiceMonitorRequest.h
+	include/alibabacloud/arms/model/CreateEnvServiceMonitorResult.h
+	include/alibabacloud/arms/model/CreateEnvironmentRequest.h
+	include/alibabacloud/arms/model/CreateEnvironmentResult.h
+	include/alibabacloud/arms/model/CreateGrafanaWorkspaceRequest.h
+	include/alibabacloud/arms/model/CreateGrafanaWorkspaceResult.h
 	include/alibabacloud/arms/model/CreateIntegrationRequest.h
 	include/alibabacloud/arms/model/CreateIntegrationResult.h
 	include/alibabacloud/arms/model/CreateOrUpdateAlertRuleRequest.h
@@ -69,14 +97,26 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/CreateOrUpdateWebhookContactResult.h
 	include/alibabacloud/arms/model/CreatePrometheusAlertRuleRequest.h
 	include/alibabacloud/arms/model/CreatePrometheusAlertRuleResult.h
+	include/alibabacloud/arms/model/CreatePrometheusInstanceRequest.h
+	include/alibabacloud/arms/model/CreatePrometheusInstanceResult.h
+	include/alibabacloud/arms/model/CreatePrometheusMonitoringRequest.h
+	include/alibabacloud/arms/model/CreatePrometheusMonitoringResult.h
 	include/alibabacloud/arms/model/CreateRetcodeAppRequest.h
 	include/alibabacloud/arms/model/CreateRetcodeAppResult.h
+	include/alibabacloud/arms/model/CreateRumAppRequest.h
+	include/alibabacloud/arms/model/CreateRumAppResult.h
+	include/alibabacloud/arms/model/CreateRumUploadFileUrlRequest.h
+	include/alibabacloud/arms/model/CreateRumUploadFileUrlResult.h
 	include/alibabacloud/arms/model/CreateSyntheticTaskRequest.h
 	include/alibabacloud/arms/model/CreateSyntheticTaskResult.h
+	include/alibabacloud/arms/model/CreateTimingSyntheticTaskRequest.h
+	include/alibabacloud/arms/model/CreateTimingSyntheticTaskResult.h
 	include/alibabacloud/arms/model/CreateWebhookRequest.h
 	include/alibabacloud/arms/model/CreateWebhookResult.h
 	include/alibabacloud/arms/model/DelAuthTokenRequest.h
 	include/alibabacloud/arms/model/DelAuthTokenResult.h
+	include/alibabacloud/arms/model/DeleteAddonReleaseRequest.h
+	include/alibabacloud/arms/model/DeleteAddonReleaseResult.h
 	include/alibabacloud/arms/model/DeleteAlertContactRequest.h
 	include/alibabacloud/arms/model/DeleteAlertContactResult.h
 	include/alibabacloud/arms/model/DeleteAlertContactGroupRequest.h
@@ -85,6 +125,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/DeleteAlertRuleResult.h
 	include/alibabacloud/arms/model/DeleteAlertRulesRequest.h
 	include/alibabacloud/arms/model/DeleteAlertRulesResult.h
+	include/alibabacloud/arms/model/DeleteAppListRequest.h
+	include/alibabacloud/arms/model/DeleteAppListResult.h
 	include/alibabacloud/arms/model/DeleteCmsExporterRequest.h
 	include/alibabacloud/arms/model/DeleteCmsExporterResult.h
 	include/alibabacloud/arms/model/DeleteContactRequest.h
@@ -93,10 +135,22 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/DeleteContactGroupResult.h
 	include/alibabacloud/arms/model/DeleteDispatchRuleRequest.h
 	include/alibabacloud/arms/model/DeleteDispatchRuleResult.h
+	include/alibabacloud/arms/model/DeleteEnvCustomJobRequest.h
+	include/alibabacloud/arms/model/DeleteEnvCustomJobResult.h
+	include/alibabacloud/arms/model/DeleteEnvPodMonitorRequest.h
+	include/alibabacloud/arms/model/DeleteEnvPodMonitorResult.h
+	include/alibabacloud/arms/model/DeleteEnvServiceMonitorRequest.h
+	include/alibabacloud/arms/model/DeleteEnvServiceMonitorResult.h
+	include/alibabacloud/arms/model/DeleteEnvironmentRequest.h
+	include/alibabacloud/arms/model/DeleteEnvironmentResult.h
+	include/alibabacloud/arms/model/DeleteEnvironmentFeatureRequest.h
+	include/alibabacloud/arms/model/DeleteEnvironmentFeatureResult.h
 	include/alibabacloud/arms/model/DeleteEventBridgeIntegrationRequest.h
 	include/alibabacloud/arms/model/DeleteEventBridgeIntegrationResult.h
 	include/alibabacloud/arms/model/DeleteGrafanaResourceRequest.h
 	include/alibabacloud/arms/model/DeleteGrafanaResourceResult.h
+	include/alibabacloud/arms/model/DeleteGrafanaWorkspaceRequest.h
+	include/alibabacloud/arms/model/DeleteGrafanaWorkspaceResult.h
 	include/alibabacloud/arms/model/DeleteIMRobotRequest.h
 	include/alibabacloud/arms/model/DeleteIMRobotResult.h
 	include/alibabacloud/arms/model/DeleteIntegrationRequest.h
@@ -109,8 +163,16 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/DeletePrometheusAlertRuleResult.h
 	include/alibabacloud/arms/model/DeletePrometheusGlobalViewRequest.h
 	include/alibabacloud/arms/model/DeletePrometheusGlobalViewResult.h
+	include/alibabacloud/arms/model/DeletePrometheusIntegrationRequest.h
+	include/alibabacloud/arms/model/DeletePrometheusIntegrationResult.h
+	include/alibabacloud/arms/model/DeletePrometheusMonitoringRequest.h
+	include/alibabacloud/arms/model/DeletePrometheusMonitoringResult.h
 	include/alibabacloud/arms/model/DeleteRetcodeAppRequest.h
 	include/alibabacloud/arms/model/DeleteRetcodeAppResult.h
+	include/alibabacloud/arms/model/DeleteRumAppRequest.h
+	include/alibabacloud/arms/model/DeleteRumAppResult.h
+	include/alibabacloud/arms/model/DeleteRumUploadFileRequest.h
+	include/alibabacloud/arms/model/DeleteRumUploadFileResult.h
 	include/alibabacloud/arms/model/DeleteScenarioRequest.h
 	include/alibabacloud/arms/model/DeleteScenarioResult.h
 	include/alibabacloud/arms/model/DeleteSilencePolicyRequest.h
@@ -119,16 +181,30 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/DeleteSourceMapResult.h
 	include/alibabacloud/arms/model/DeleteSyntheticTaskRequest.h
 	include/alibabacloud/arms/model/DeleteSyntheticTaskResult.h
+	include/alibabacloud/arms/model/DeleteTimingSyntheticTaskRequest.h
+	include/alibabacloud/arms/model/DeleteTimingSyntheticTaskResult.h
 	include/alibabacloud/arms/model/DeleteTraceAppRequest.h
 	include/alibabacloud/arms/model/DeleteTraceAppResult.h
 	include/alibabacloud/arms/model/DeleteWebhookContactRequest.h
 	include/alibabacloud/arms/model/DeleteWebhookContactResult.h
+	include/alibabacloud/arms/model/DescribeAddonReleaseRequest.h
+	include/alibabacloud/arms/model/DescribeAddonReleaseResult.h
 	include/alibabacloud/arms/model/DescribeContactGroupsRequest.h
 	include/alibabacloud/arms/model/DescribeContactGroupsResult.h
 	include/alibabacloud/arms/model/DescribeContactsRequest.h
 	include/alibabacloud/arms/model/DescribeContactsResult.h
 	include/alibabacloud/arms/model/DescribeDispatchRuleRequest.h
 	include/alibabacloud/arms/model/DescribeDispatchRuleResult.h
+	include/alibabacloud/arms/model/DescribeEnvCustomJobRequest.h
+	include/alibabacloud/arms/model/DescribeEnvCustomJobResult.h
+	include/alibabacloud/arms/model/DescribeEnvPodMonitorRequest.h
+	include/alibabacloud/arms/model/DescribeEnvPodMonitorResult.h
+	include/alibabacloud/arms/model/DescribeEnvServiceMonitorRequest.h
+	include/alibabacloud/arms/model/DescribeEnvServiceMonitorResult.h
+	include/alibabacloud/arms/model/DescribeEnvironmentRequest.h
+	include/alibabacloud/arms/model/DescribeEnvironmentResult.h
+	include/alibabacloud/arms/model/DescribeEnvironmentFeatureRequest.h
+	include/alibabacloud/arms/model/DescribeEnvironmentFeatureResult.h
 	include/alibabacloud/arms/model/DescribeIMRobotsRequest.h
 	include/alibabacloud/arms/model/DescribeIMRobotsResult.h
 	include/alibabacloud/arms/model/DescribePrometheusAlertRuleRequest.h
@@ -137,18 +213,30 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/DescribeTraceLicenseKeyResult.h
 	include/alibabacloud/arms/model/DescribeWebhookContactsRequest.h
 	include/alibabacloud/arms/model/DescribeWebhookContactsResult.h
+	include/alibabacloud/arms/model/DoInsightsActionRequest.h
+	include/alibabacloud/arms/model/DoInsightsActionResult.h
+	include/alibabacloud/arms/model/EnableMetricRequest.h
+	include/alibabacloud/arms/model/EnableMetricResult.h
 	include/alibabacloud/arms/model/GetAgentDownloadUrlRequest.h
 	include/alibabacloud/arms/model/GetAgentDownloadUrlResult.h
 	include/alibabacloud/arms/model/GetAlertRulesRequest.h
 	include/alibabacloud/arms/model/GetAlertRulesResult.h
 	include/alibabacloud/arms/model/GetAppApiByPageRequest.h
 	include/alibabacloud/arms/model/GetAppApiByPageResult.h
+	include/alibabacloud/arms/model/GetAppJVMConfigRequest.h
+	include/alibabacloud/arms/model/GetAppJVMConfigResult.h
 	include/alibabacloud/arms/model/GetAuthTokenRequest.h
 	include/alibabacloud/arms/model/GetAuthTokenResult.h
+	include/alibabacloud/arms/model/GetCloudClusterAllUrlRequest.h
+	include/alibabacloud/arms/model/GetCloudClusterAllUrlResult.h
 	include/alibabacloud/arms/model/GetClusterAllUrlRequest.h
 	include/alibabacloud/arms/model/GetClusterAllUrlResult.h
+	include/alibabacloud/arms/model/GetCommercialStatusRequest.h
+	include/alibabacloud/arms/model/GetCommercialStatusResult.h
 	include/alibabacloud/arms/model/GetExploreUrlRequest.h
 	include/alibabacloud/arms/model/GetExploreUrlResult.h
+	include/alibabacloud/arms/model/GetGrafanaWorkspaceRequest.h
+	include/alibabacloud/arms/model/GetGrafanaWorkspaceResult.h
 	include/alibabacloud/arms/model/GetIntegrationStateRequest.h
 	include/alibabacloud/arms/model/GetIntegrationStateResult.h
 	include/alibabacloud/arms/model/GetManagedPrometheusStatusRequest.h
@@ -161,32 +249,72 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/GetPrometheusApiTokenResult.h
 	include/alibabacloud/arms/model/GetPrometheusGlobalViewRequest.h
 	include/alibabacloud/arms/model/GetPrometheusGlobalViewResult.h
+	include/alibabacloud/arms/model/GetPrometheusInstanceRequest.h
+	include/alibabacloud/arms/model/GetPrometheusInstanceResult.h
+	include/alibabacloud/arms/model/GetPrometheusIntegrationRequest.h
+	include/alibabacloud/arms/model/GetPrometheusIntegrationResult.h
+	include/alibabacloud/arms/model/GetPrometheusMonitoringRequest.h
+	include/alibabacloud/arms/model/GetPrometheusMonitoringResult.h
 	include/alibabacloud/arms/model/GetRecordingRuleRequest.h
 	include/alibabacloud/arms/model/GetRecordingRuleResult.h
+	include/alibabacloud/arms/model/GetRetcodeAppByPidRequest.h
+	include/alibabacloud/arms/model/GetRetcodeAppByPidResult.h
+	include/alibabacloud/arms/model/GetRetcodeDataByQueryRequest.h
+	include/alibabacloud/arms/model/GetRetcodeDataByQueryResult.h
+	include/alibabacloud/arms/model/GetRetcodeLogstoreRequest.h
+	include/alibabacloud/arms/model/GetRetcodeLogstoreResult.h
 	include/alibabacloud/arms/model/GetRetcodeShareUrlRequest.h
 	include/alibabacloud/arms/model/GetRetcodeShareUrlResult.h
+	include/alibabacloud/arms/model/GetRumAppInfoRequest.h
+	include/alibabacloud/arms/model/GetRumAppInfoResult.h
+	include/alibabacloud/arms/model/GetRumAppsRequest.h
+	include/alibabacloud/arms/model/GetRumAppsResult.h
+	include/alibabacloud/arms/model/GetRumDataForPageRequest.h
+	include/alibabacloud/arms/model/GetRumDataForPageResult.h
+	include/alibabacloud/arms/model/GetRumExceptionStackRequest.h
+	include/alibabacloud/arms/model/GetRumExceptionStackResult.h
+	include/alibabacloud/arms/model/GetRumOcuStatisticDataRequest.h
+	include/alibabacloud/arms/model/GetRumOcuStatisticDataResult.h
+	include/alibabacloud/arms/model/GetRumUploadFilesRequest.h
+	include/alibabacloud/arms/model/GetRumUploadFilesResult.h
 	include/alibabacloud/arms/model/GetSourceMapInfoRequest.h
 	include/alibabacloud/arms/model/GetSourceMapInfoResult.h
 	include/alibabacloud/arms/model/GetStackRequest.h
 	include/alibabacloud/arms/model/GetStackResult.h
+	include/alibabacloud/arms/model/GetSyntheticMonitorsRequest.h
+	include/alibabacloud/arms/model/GetSyntheticMonitorsResult.h
 	include/alibabacloud/arms/model/GetSyntheticTaskDetailRequest.h
 	include/alibabacloud/arms/model/GetSyntheticTaskDetailResult.h
 	include/alibabacloud/arms/model/GetSyntheticTaskListRequest.h
 	include/alibabacloud/arms/model/GetSyntheticTaskListResult.h
 	include/alibabacloud/arms/model/GetSyntheticTaskMonitorsRequest.h
 	include/alibabacloud/arms/model/GetSyntheticTaskMonitorsResult.h
+	include/alibabacloud/arms/model/GetTimingSyntheticTaskRequest.h
+	include/alibabacloud/arms/model/GetTimingSyntheticTaskResult.h
 	include/alibabacloud/arms/model/GetTraceRequest.h
 	include/alibabacloud/arms/model/GetTraceResult.h
 	include/alibabacloud/arms/model/GetTraceAppRequest.h
 	include/alibabacloud/arms/model/GetTraceAppResult.h
+	include/alibabacloud/arms/model/GetTraceAppConfigRequest.h
+	include/alibabacloud/arms/model/GetTraceAppConfigResult.h
 	include/alibabacloud/arms/model/ImportAppAlertRulesRequest.h
 	include/alibabacloud/arms/model/ImportAppAlertRulesResult.h
+	include/alibabacloud/arms/model/InitEnvironmentRequest.h
+	include/alibabacloud/arms/model/InitEnvironmentResult.h
+	include/alibabacloud/arms/model/InstallAddonRequest.h
+	include/alibabacloud/arms/model/InstallAddonResult.h
 	include/alibabacloud/arms/model/InstallCmsExporterRequest.h
 	include/alibabacloud/arms/model/InstallCmsExporterResult.h
+	include/alibabacloud/arms/model/InstallEnvironmentFeatureRequest.h
+	include/alibabacloud/arms/model/InstallEnvironmentFeatureResult.h
 	include/alibabacloud/arms/model/InstallManagedPrometheusRequest.h
 	include/alibabacloud/arms/model/InstallManagedPrometheusResult.h
 	include/alibabacloud/arms/model/ListActivatedAlertsRequest.h
 	include/alibabacloud/arms/model/ListActivatedAlertsResult.h
+	include/alibabacloud/arms/model/ListAddonReleasesRequest.h
+	include/alibabacloud/arms/model/ListAddonReleasesResult.h
+	include/alibabacloud/arms/model/ListAddonsRequest.h
+	include/alibabacloud/arms/model/ListAddonsResult.h
 	include/alibabacloud/arms/model/ListAlertEventsRequest.h
 	include/alibabacloud/arms/model/ListAlertEventsResult.h
 	include/alibabacloud/arms/model/ListAlertsRequest.h
@@ -201,10 +329,24 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/ListDashboardsByNameResult.h
 	include/alibabacloud/arms/model/ListDispatchRuleRequest.h
 	include/alibabacloud/arms/model/ListDispatchRuleResult.h
+	include/alibabacloud/arms/model/ListEnvCustomJobsRequest.h
+	include/alibabacloud/arms/model/ListEnvCustomJobsResult.h
+	include/alibabacloud/arms/model/ListEnvPodMonitorsRequest.h
+	include/alibabacloud/arms/model/ListEnvPodMonitorsResult.h
+	include/alibabacloud/arms/model/ListEnvServiceMonitorsRequest.h
+	include/alibabacloud/arms/model/ListEnvServiceMonitorsResult.h
+	include/alibabacloud/arms/model/ListEnvironmentDashboardsRequest.h
+	include/alibabacloud/arms/model/ListEnvironmentDashboardsResult.h
+	include/alibabacloud/arms/model/ListEnvironmentFeaturesRequest.h
+	include/alibabacloud/arms/model/ListEnvironmentFeaturesResult.h
+	include/alibabacloud/arms/model/ListEnvironmentsRequest.h
+	include/alibabacloud/arms/model/ListEnvironmentsResult.h
 	include/alibabacloud/arms/model/ListEscalationPoliciesRequest.h
 	include/alibabacloud/arms/model/ListEscalationPoliciesResult.h
 	include/alibabacloud/arms/model/ListEventBridgeIntegrationsRequest.h
 	include/alibabacloud/arms/model/ListEventBridgeIntegrationsResult.h
+	include/alibabacloud/arms/model/ListGrafanaWorkspaceRequest.h
+	include/alibabacloud/arms/model/ListGrafanaWorkspaceResult.h
 	include/alibabacloud/arms/model/ListInsightsEventsRequest.h
 	include/alibabacloud/arms/model/ListInsightsEventsResult.h
 	include/alibabacloud/arms/model/ListIntegrationRequest.h
@@ -219,14 +361,24 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/ListPrometheusAlertTemplatesResult.h
 	include/alibabacloud/arms/model/ListPrometheusGlobalViewRequest.h
 	include/alibabacloud/arms/model/ListPrometheusGlobalViewResult.h
+	include/alibabacloud/arms/model/ListPrometheusInstanceByTagAndResourceGroupIdRequest.h
+	include/alibabacloud/arms/model/ListPrometheusInstanceByTagAndResourceGroupIdResult.h
 	include/alibabacloud/arms/model/ListPrometheusInstancesRequest.h
 	include/alibabacloud/arms/model/ListPrometheusInstancesResult.h
+	include/alibabacloud/arms/model/ListPrometheusIntegrationRequest.h
+	include/alibabacloud/arms/model/ListPrometheusIntegrationResult.h
+	include/alibabacloud/arms/model/ListPrometheusMonitoringRequest.h
+	include/alibabacloud/arms/model/ListPrometheusMonitoringResult.h
 	include/alibabacloud/arms/model/ListRetcodeAppsRequest.h
 	include/alibabacloud/arms/model/ListRetcodeAppsResult.h
 	include/alibabacloud/arms/model/ListScenarioRequest.h
 	include/alibabacloud/arms/model/ListScenarioResult.h
 	include/alibabacloud/arms/model/ListSilencePoliciesRequest.h
 	include/alibabacloud/arms/model/ListSilencePoliciesResult.h
+	include/alibabacloud/arms/model/ListSyntheticDetailRequest.h
+	include/alibabacloud/arms/model/ListSyntheticDetailResult.h
+	include/alibabacloud/arms/model/ListTimingSyntheticTasksRequest.h
+	include/alibabacloud/arms/model/ListTimingSyntheticTasksResult.h
 	include/alibabacloud/arms/model/ListTraceAppsRequest.h
 	include/alibabacloud/arms/model/ListTraceAppsResult.h
 	include/alibabacloud/arms/model/ManageGetRecordingRuleRequest.h
@@ -241,6 +393,12 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/OpenVClusterResult.h
 	include/alibabacloud/arms/model/OpenXtraceDefaultSLRRequest.h
 	include/alibabacloud/arms/model/OpenXtraceDefaultSLRResult.h
+	include/alibabacloud/arms/model/QueryAppMetadataRequest.h
+	include/alibabacloud/arms/model/QueryAppMetadataResult.h
+	include/alibabacloud/arms/model/QueryAppTopologyRequest.h
+	include/alibabacloud/arms/model/QueryAppTopologyResult.h
+	include/alibabacloud/arms/model/QueryCommercialUsageRequest.h
+	include/alibabacloud/arms/model/QueryCommercialUsageResult.h
 	include/alibabacloud/arms/model/QueryMetricByPageRequest.h
 	include/alibabacloud/arms/model/QueryMetricByPageResult.h
 	include/alibabacloud/arms/model/QueryPromInstallStatusRequest.h
@@ -251,6 +409,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/RemoveAliClusterIdsFromPrometheusGlobalViewResult.h
 	include/alibabacloud/arms/model/RemoveSourcesFromPrometheusGlobalViewRequest.h
 	include/alibabacloud/arms/model/RemoveSourcesFromPrometheusGlobalViewResult.h
+	include/alibabacloud/arms/model/RestartEnvironmentFeatureRequest.h
+	include/alibabacloud/arms/model/RestartEnvironmentFeatureResult.h
 	include/alibabacloud/arms/model/SaveTraceAppConfigRequest.h
 	include/alibabacloud/arms/model/SaveTraceAppConfigResult.h
 	include/alibabacloud/arms/model/SearchAlertContactRequest.h
@@ -279,18 +439,24 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/SetRetcodeShareStatusResult.h
 	include/alibabacloud/arms/model/StartAlertRequest.h
 	include/alibabacloud/arms/model/StartAlertResult.h
+	include/alibabacloud/arms/model/StartTimingSyntheticTaskRequest.h
+	include/alibabacloud/arms/model/StartTimingSyntheticTaskResult.h
 	include/alibabacloud/arms/model/StopAlertRequest.h
 	include/alibabacloud/arms/model/StopAlertResult.h
+	include/alibabacloud/arms/model/StopTimingSyntheticTaskRequest.h
+	include/alibabacloud/arms/model/StopTimingSyntheticTaskResult.h
 	include/alibabacloud/arms/model/SwitchSyntheticTaskStatusRequest.h
 	include/alibabacloud/arms/model/SwitchSyntheticTaskStatusResult.h
 	include/alibabacloud/arms/model/SyncRecordingRulesRequest.h
 	include/alibabacloud/arms/model/SyncRecordingRulesResult.h
-	include/alibabacloud/arms/model/TurnOnSecondSwitchRequest.h
-	include/alibabacloud/arms/model/TurnOnSecondSwitchResult.h
+	include/alibabacloud/arms/model/TagResourcesRequest.h
+	include/alibabacloud/arms/model/TagResourcesResult.h
 	include/alibabacloud/arms/model/UninstallManagedPrometheusRequest.h
 	include/alibabacloud/arms/model/UninstallManagedPrometheusResult.h
 	include/alibabacloud/arms/model/UninstallPromClusterRequest.h
 	include/alibabacloud/arms/model/UninstallPromClusterResult.h
+	include/alibabacloud/arms/model/UntagResourcesRequest.h
+	include/alibabacloud/arms/model/UntagResourcesResult.h
 	include/alibabacloud/arms/model/UpdateAlertContactRequest.h
 	include/alibabacloud/arms/model/UpdateAlertContactResult.h
 	include/alibabacloud/arms/model/UpdateAlertContactGroupRequest.h
@@ -299,12 +465,46 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/UpdateAlertRuleResult.h
 	include/alibabacloud/arms/model/UpdateDispatchRuleRequest.h
 	include/alibabacloud/arms/model/UpdateDispatchRuleResult.h
+	include/alibabacloud/arms/model/UpdateEnvCustomJobRequest.h
+	include/alibabacloud/arms/model/UpdateEnvCustomJobResult.h
+	include/alibabacloud/arms/model/UpdateEnvPodMonitorRequest.h
+	include/alibabacloud/arms/model/UpdateEnvPodMonitorResult.h
+	include/alibabacloud/arms/model/UpdateEnvServiceMonitorRequest.h
+	include/alibabacloud/arms/model/UpdateEnvServiceMonitorResult.h
+	include/alibabacloud/arms/model/UpdateEnvironmentRequest.h
+	include/alibabacloud/arms/model/UpdateEnvironmentResult.h
+	include/alibabacloud/arms/model/UpdateGrafanaWorkspaceRequest.h
+	include/alibabacloud/arms/model/UpdateGrafanaWorkspaceResult.h
+	include/alibabacloud/arms/model/UpdateGrafanaWorkspaceVersionRequest.h
+	include/alibabacloud/arms/model/UpdateGrafanaWorkspaceVersionResult.h
 	include/alibabacloud/arms/model/UpdateIntegrationRequest.h
 	include/alibabacloud/arms/model/UpdateIntegrationResult.h
+	include/alibabacloud/arms/model/UpdateMetricDropRequest.h
+	include/alibabacloud/arms/model/UpdateMetricDropResult.h
 	include/alibabacloud/arms/model/UpdatePrometheusAlertRuleRequest.h
 	include/alibabacloud/arms/model/UpdatePrometheusAlertRuleResult.h
+	include/alibabacloud/arms/model/UpdatePrometheusGlobalViewRequest.h
+	include/alibabacloud/arms/model/UpdatePrometheusGlobalViewResult.h
+	include/alibabacloud/arms/model/UpdatePrometheusInstanceRequest.h
+	include/alibabacloud/arms/model/UpdatePrometheusInstanceResult.h
+	include/alibabacloud/arms/model/UpdatePrometheusIntegrationRequest.h
+	include/alibabacloud/arms/model/UpdatePrometheusIntegrationResult.h
+	include/alibabacloud/arms/model/UpdatePrometheusMonitoringRequest.h
+	include/alibabacloud/arms/model/UpdatePrometheusMonitoringResult.h
+	include/alibabacloud/arms/model/UpdatePrometheusMonitoringStatusRequest.h
+	include/alibabacloud/arms/model/UpdatePrometheusMonitoringStatusResult.h
+	include/alibabacloud/arms/model/UpdateRumAppRequest.h
+	include/alibabacloud/arms/model/UpdateRumAppResult.h
+	include/alibabacloud/arms/model/UpdateRumFileStatusRequest.h
+	include/alibabacloud/arms/model/UpdateRumFileStatusResult.h
+	include/alibabacloud/arms/model/UpdateTimingSyntheticTaskRequest.h
+	include/alibabacloud/arms/model/UpdateTimingSyntheticTaskResult.h
 	include/alibabacloud/arms/model/UpdateWebhookRequest.h
 	include/alibabacloud/arms/model/UpdateWebhookResult.h
+	include/alibabacloud/arms/model/UpgradeAddonReleaseRequest.h
+	include/alibabacloud/arms/model/UpgradeAddonReleaseResult.h
+	include/alibabacloud/arms/model/UpgradeEnvironmentFeatureRequest.h
+	include/alibabacloud/arms/model/UpgradeEnvironmentFeatureResult.h
 	include/alibabacloud/arms/model/UploadRequest.h
 	include/alibabacloud/arms/model/UploadResult.h )
 
@@ -322,14 +522,32 @@ set(arms_src
 	src/model/AddPrometheusGlobalViewByAliClusterIdsResult.cc
 	src/model/AddPrometheusInstanceRequest.cc
 	src/model/AddPrometheusInstanceResult.cc
+	src/model/AddPrometheusIntegrationRequest.cc
+	src/model/AddPrometheusIntegrationResult.cc
 	src/model/AddRecordingRuleRequest.cc
 	src/model/AddRecordingRuleResult.cc
+	src/model/AddTagToFlinkClusterRequest.cc
+	src/model/AddTagToFlinkClusterResult.cc
 	src/model/AppendInstancesToPrometheusGlobalViewRequest.cc
 	src/model/AppendInstancesToPrometheusGlobalViewResult.cc
 	src/model/ApplyScenarioRequest.cc
 	src/model/ApplyScenarioResult.cc
+	src/model/BindPrometheusGrafanaInstanceRequest.cc
+	src/model/BindPrometheusGrafanaInstanceResult.cc
+	src/model/BlockAlarmNotificationRequest.cc
+	src/model/BlockAlarmNotificationResult.cc
+	src/model/ChangeAlarmSeverityRequest.cc
+	src/model/ChangeAlarmSeverityResult.cc
+	src/model/ChangeResourceGroupRequest.cc
+	src/model/ChangeResourceGroupResult.cc
+	src/model/CheckCommercialStatusRequest.cc
+	src/model/CheckCommercialStatusResult.cc
 	src/model/CheckServiceStatusRequest.cc
 	src/model/CheckServiceStatusResult.cc
+	src/model/ClaimAlarmRequest.cc
+	src/model/ClaimAlarmResult.cc
+	src/model/CloseAlarmRequest.cc
+	src/model/CloseAlarmResult.cc
 	src/model/ConfigAppRequest.cc
 	src/model/ConfigAppResult.cc
 	src/model/CreateAlertContactRequest.cc
@@ -338,6 +556,16 @@ set(arms_src
 	src/model/CreateAlertContactGroupResult.cc
 	src/model/CreateDispatchRuleRequest.cc
 	src/model/CreateDispatchRuleResult.cc
+	src/model/CreateEnvCustomJobRequest.cc
+	src/model/CreateEnvCustomJobResult.cc
+	src/model/CreateEnvPodMonitorRequest.cc
+	src/model/CreateEnvPodMonitorResult.cc
+	src/model/CreateEnvServiceMonitorRequest.cc
+	src/model/CreateEnvServiceMonitorResult.cc
+	src/model/CreateEnvironmentRequest.cc
+	src/model/CreateEnvironmentResult.cc
+	src/model/CreateGrafanaWorkspaceRequest.cc
+	src/model/CreateGrafanaWorkspaceResult.cc
 	src/model/CreateIntegrationRequest.cc
 	src/model/CreateIntegrationResult.cc
 	src/model/CreateOrUpdateAlertRuleRequest.cc
@@ -358,14 +586,26 @@ set(arms_src
 	src/model/CreateOrUpdateWebhookContactResult.cc
 	src/model/CreatePrometheusAlertRuleRequest.cc
 	src/model/CreatePrometheusAlertRuleResult.cc
+	src/model/CreatePrometheusInstanceRequest.cc
+	src/model/CreatePrometheusInstanceResult.cc
+	src/model/CreatePrometheusMonitoringRequest.cc
+	src/model/CreatePrometheusMonitoringResult.cc
 	src/model/CreateRetcodeAppRequest.cc
 	src/model/CreateRetcodeAppResult.cc
+	src/model/CreateRumAppRequest.cc
+	src/model/CreateRumAppResult.cc
+	src/model/CreateRumUploadFileUrlRequest.cc
+	src/model/CreateRumUploadFileUrlResult.cc
 	src/model/CreateSyntheticTaskRequest.cc
 	src/model/CreateSyntheticTaskResult.cc
+	src/model/CreateTimingSyntheticTaskRequest.cc
+	src/model/CreateTimingSyntheticTaskResult.cc
 	src/model/CreateWebhookRequest.cc
 	src/model/CreateWebhookResult.cc
 	src/model/DelAuthTokenRequest.cc
 	src/model/DelAuthTokenResult.cc
+	src/model/DeleteAddonReleaseRequest.cc
+	src/model/DeleteAddonReleaseResult.cc
 	src/model/DeleteAlertContactRequest.cc
 	src/model/DeleteAlertContactResult.cc
 	src/model/DeleteAlertContactGroupRequest.cc
@@ -374,6 +614,8 @@ set(arms_src
 	src/model/DeleteAlertRuleResult.cc
 	src/model/DeleteAlertRulesRequest.cc
 	src/model/DeleteAlertRulesResult.cc
+	src/model/DeleteAppListRequest.cc
+	src/model/DeleteAppListResult.cc
 	src/model/DeleteCmsExporterRequest.cc
 	src/model/DeleteCmsExporterResult.cc
 	src/model/DeleteContactRequest.cc
@@ -382,10 +624,22 @@ set(arms_src
 	src/model/DeleteContactGroupResult.cc
 	src/model/DeleteDispatchRuleRequest.cc
 	src/model/DeleteDispatchRuleResult.cc
+	src/model/DeleteEnvCustomJobRequest.cc
+	src/model/DeleteEnvCustomJobResult.cc
+	src/model/DeleteEnvPodMonitorRequest.cc
+	src/model/DeleteEnvPodMonitorResult.cc
+	src/model/DeleteEnvServiceMonitorRequest.cc
+	src/model/DeleteEnvServiceMonitorResult.cc
+	src/model/DeleteEnvironmentRequest.cc
+	src/model/DeleteEnvironmentResult.cc
+	src/model/DeleteEnvironmentFeatureRequest.cc
+	src/model/DeleteEnvironmentFeatureResult.cc
 	src/model/DeleteEventBridgeIntegrationRequest.cc
 	src/model/DeleteEventBridgeIntegrationResult.cc
 	src/model/DeleteGrafanaResourceRequest.cc
 	src/model/DeleteGrafanaResourceResult.cc
+	src/model/DeleteGrafanaWorkspaceRequest.cc
+	src/model/DeleteGrafanaWorkspaceResult.cc
 	src/model/DeleteIMRobotRequest.cc
 	src/model/DeleteIMRobotResult.cc
 	src/model/DeleteIntegrationRequest.cc
@@ -398,8 +652,16 @@ set(arms_src
 	src/model/DeletePrometheusAlertRuleResult.cc
 	src/model/DeletePrometheusGlobalViewRequest.cc
 	src/model/DeletePrometheusGlobalViewResult.cc
+	src/model/DeletePrometheusIntegrationRequest.cc
+	src/model/DeletePrometheusIntegrationResult.cc
+	src/model/DeletePrometheusMonitoringRequest.cc
+	src/model/DeletePrometheusMonitoringResult.cc
 	src/model/DeleteRetcodeAppRequest.cc
 	src/model/DeleteRetcodeAppResult.cc
+	src/model/DeleteRumAppRequest.cc
+	src/model/DeleteRumAppResult.cc
+	src/model/DeleteRumUploadFileRequest.cc
+	src/model/DeleteRumUploadFileResult.cc
 	src/model/DeleteScenarioRequest.cc
 	src/model/DeleteScenarioResult.cc
 	src/model/DeleteSilencePolicyRequest.cc
@@ -408,16 +670,30 @@ set(arms_src
 	src/model/DeleteSourceMapResult.cc
 	src/model/DeleteSyntheticTaskRequest.cc
 	src/model/DeleteSyntheticTaskResult.cc
+	src/model/DeleteTimingSyntheticTaskRequest.cc
+	src/model/DeleteTimingSyntheticTaskResult.cc
 	src/model/DeleteTraceAppRequest.cc
 	src/model/DeleteTraceAppResult.cc
 	src/model/DeleteWebhookContactRequest.cc
 	src/model/DeleteWebhookContactResult.cc
+	src/model/DescribeAddonReleaseRequest.cc
+	src/model/DescribeAddonReleaseResult.cc
 	src/model/DescribeContactGroupsRequest.cc
 	src/model/DescribeContactGroupsResult.cc
 	src/model/DescribeContactsRequest.cc
 	src/model/DescribeContactsResult.cc
 	src/model/DescribeDispatchRuleRequest.cc
 	src/model/DescribeDispatchRuleResult.cc
+	src/model/DescribeEnvCustomJobRequest.cc
+	src/model/DescribeEnvCustomJobResult.cc
+	src/model/DescribeEnvPodMonitorRequest.cc
+	src/model/DescribeEnvPodMonitorResult.cc
+	src/model/DescribeEnvServiceMonitorRequest.cc
+	src/model/DescribeEnvServiceMonitorResult.cc
+	src/model/DescribeEnvironmentRequest.cc
+	src/model/DescribeEnvironmentResult.cc
+	src/model/DescribeEnvironmentFeatureRequest.cc
+	src/model/DescribeEnvironmentFeatureResult.cc
 	src/model/DescribeIMRobotsRequest.cc
 	src/model/DescribeIMRobotsResult.cc
 	src/model/DescribePrometheusAlertRuleRequest.cc
@@ -426,18 +702,30 @@ set(arms_src
 	src/model/DescribeTraceLicenseKeyResult.cc
 	src/model/DescribeWebhookContactsRequest.cc
 	src/model/DescribeWebhookContactsResult.cc
+	src/model/DoInsightsActionRequest.cc
+	src/model/DoInsightsActionResult.cc
+	src/model/EnableMetricRequest.cc
+	src/model/EnableMetricResult.cc
 	src/model/GetAgentDownloadUrlRequest.cc
 	src/model/GetAgentDownloadUrlResult.cc
 	src/model/GetAlertRulesRequest.cc
 	src/model/GetAlertRulesResult.cc
 	src/model/GetAppApiByPageRequest.cc
 	src/model/GetAppApiByPageResult.cc
+	src/model/GetAppJVMConfigRequest.cc
+	src/model/GetAppJVMConfigResult.cc
 	src/model/GetAuthTokenRequest.cc
 	src/model/GetAuthTokenResult.cc
+	src/model/GetCloudClusterAllUrlRequest.cc
+	src/model/GetCloudClusterAllUrlResult.cc
 	src/model/GetClusterAllUrlRequest.cc
 	src/model/GetClusterAllUrlResult.cc
+	src/model/GetCommercialStatusRequest.cc
+	src/model/GetCommercialStatusResult.cc
 	src/model/GetExploreUrlRequest.cc
 	src/model/GetExploreUrlResult.cc
+	src/model/GetGrafanaWorkspaceRequest.cc
+	src/model/GetGrafanaWorkspaceResult.cc
 	src/model/GetIntegrationStateRequest.cc
 	src/model/GetIntegrationStateResult.cc
 	src/model/GetManagedPrometheusStatusRequest.cc
@@ -450,32 +738,72 @@ set(arms_src
 	src/model/GetPrometheusApiTokenResult.cc
 	src/model/GetPrometheusGlobalViewRequest.cc
 	src/model/GetPrometheusGlobalViewResult.cc
+	src/model/GetPrometheusInstanceRequest.cc
+	src/model/GetPrometheusInstanceResult.cc
+	src/model/GetPrometheusIntegrationRequest.cc
+	src/model/GetPrometheusIntegrationResult.cc
+	src/model/GetPrometheusMonitoringRequest.cc
+	src/model/GetPrometheusMonitoringResult.cc
 	src/model/GetRecordingRuleRequest.cc
 	src/model/GetRecordingRuleResult.cc
+	src/model/GetRetcodeAppByPidRequest.cc
+	src/model/GetRetcodeAppByPidResult.cc
+	src/model/GetRetcodeDataByQueryRequest.cc
+	src/model/GetRetcodeDataByQueryResult.cc
+	src/model/GetRetcodeLogstoreRequest.cc
+	src/model/GetRetcodeLogstoreResult.cc
 	src/model/GetRetcodeShareUrlRequest.cc
 	src/model/GetRetcodeShareUrlResult.cc
+	src/model/GetRumAppInfoRequest.cc
+	src/model/GetRumAppInfoResult.cc
+	src/model/GetRumAppsRequest.cc
+	src/model/GetRumAppsResult.cc
+	src/model/GetRumDataForPageRequest.cc
+	src/model/GetRumDataForPageResult.cc
+	src/model/GetRumExceptionStackRequest.cc
+	src/model/GetRumExceptionStackResult.cc
+	src/model/GetRumOcuStatisticDataRequest.cc
+	src/model/GetRumOcuStatisticDataResult.cc
+	src/model/GetRumUploadFilesRequest.cc
+	src/model/GetRumUploadFilesResult.cc
 	src/model/GetSourceMapInfoRequest.cc
 	src/model/GetSourceMapInfoResult.cc
 	src/model/GetStackRequest.cc
 	src/model/GetStackResult.cc
+	src/model/GetSyntheticMonitorsRequest.cc
+	src/model/GetSyntheticMonitorsResult.cc
 	src/model/GetSyntheticTaskDetailRequest.cc
 	src/model/GetSyntheticTaskDetailResult.cc
 	src/model/GetSyntheticTaskListRequest.cc
 	src/model/GetSyntheticTaskListResult.cc
 	src/model/GetSyntheticTaskMonitorsRequest.cc
 	src/model/GetSyntheticTaskMonitorsResult.cc
+	src/model/GetTimingSyntheticTaskRequest.cc
+	src/model/GetTimingSyntheticTaskResult.cc
 	src/model/GetTraceRequest.cc
 	src/model/GetTraceResult.cc
 	src/model/GetTraceAppRequest.cc
 	src/model/GetTraceAppResult.cc
+	src/model/GetTraceAppConfigRequest.cc
+	src/model/GetTraceAppConfigResult.cc
 	src/model/ImportAppAlertRulesRequest.cc
 	src/model/ImportAppAlertRulesResult.cc
+	src/model/InitEnvironmentRequest.cc
+	src/model/InitEnvironmentResult.cc
+	src/model/InstallAddonRequest.cc
+	src/model/InstallAddonResult.cc
 	src/model/InstallCmsExporterRequest.cc
 	src/model/InstallCmsExporterResult.cc
+	src/model/InstallEnvironmentFeatureRequest.cc
+	src/model/InstallEnvironmentFeatureResult.cc
 	src/model/InstallManagedPrometheusRequest.cc
 	src/model/InstallManagedPrometheusResult.cc
 	src/model/ListActivatedAlertsRequest.cc
 	src/model/ListActivatedAlertsResult.cc
+	src/model/ListAddonReleasesRequest.cc
+	src/model/ListAddonReleasesResult.cc
+	src/model/ListAddonsRequest.cc
+	src/model/ListAddonsResult.cc
 	src/model/ListAlertEventsRequest.cc
 	src/model/ListAlertEventsResult.cc
 	src/model/ListAlertsRequest.cc
@@ -490,10 +818,24 @@ set(arms_src
 	src/model/ListDashboardsByNameResult.cc
 	src/model/ListDispatchRuleRequest.cc
 	src/model/ListDispatchRuleResult.cc
+	src/model/ListEnvCustomJobsRequest.cc
+	src/model/ListEnvCustomJobsResult.cc
+	src/model/ListEnvPodMonitorsRequest.cc
+	src/model/ListEnvPodMonitorsResult.cc
+	src/model/ListEnvServiceMonitorsRequest.cc
+	src/model/ListEnvServiceMonitorsResult.cc
+	src/model/ListEnvironmentDashboardsRequest.cc
+	src/model/ListEnvironmentDashboardsResult.cc
+	src/model/ListEnvironmentFeaturesRequest.cc
+	src/model/ListEnvironmentFeaturesResult.cc
+	src/model/ListEnvironmentsRequest.cc
+	src/model/ListEnvironmentsResult.cc
 	src/model/ListEscalationPoliciesRequest.cc
 	src/model/ListEscalationPoliciesResult.cc
 	src/model/ListEventBridgeIntegrationsRequest.cc
 	src/model/ListEventBridgeIntegrationsResult.cc
+	src/model/ListGrafanaWorkspaceRequest.cc
+	src/model/ListGrafanaWorkspaceResult.cc
 	src/model/ListInsightsEventsRequest.cc
 	src/model/ListInsightsEventsResult.cc
 	src/model/ListIntegrationRequest.cc
@@ -508,14 +850,24 @@ set(arms_src
 	src/model/ListPrometheusAlertTemplatesResult.cc
 	src/model/ListPrometheusGlobalViewRequest.cc
 	src/model/ListPrometheusGlobalViewResult.cc
+	src/model/ListPrometheusInstanceByTagAndResourceGroupIdRequest.cc
+	src/model/ListPrometheusInstanceByTagAndResourceGroupIdResult.cc
 	src/model/ListPrometheusInstancesRequest.cc
 	src/model/ListPrometheusInstancesResult.cc
+	src/model/ListPrometheusIntegrationRequest.cc
+	src/model/ListPrometheusIntegrationResult.cc
+	src/model/ListPrometheusMonitoringRequest.cc
+	src/model/ListPrometheusMonitoringResult.cc
 	src/model/ListRetcodeAppsRequest.cc
 	src/model/ListRetcodeAppsResult.cc
 	src/model/ListScenarioRequest.cc
 	src/model/ListScenarioResult.cc
 	src/model/ListSilencePoliciesRequest.cc
 	src/model/ListSilencePoliciesResult.cc
+	src/model/ListSyntheticDetailRequest.cc
+	src/model/ListSyntheticDetailResult.cc
+	src/model/ListTimingSyntheticTasksRequest.cc
+	src/model/ListTimingSyntheticTasksResult.cc
 	src/model/ListTraceAppsRequest.cc
 	src/model/ListTraceAppsResult.cc
 	src/model/ManageGetRecordingRuleRequest.cc
@@ -530,6 +882,12 @@ set(arms_src
 	src/model/OpenVClusterResult.cc
 	src/model/OpenXtraceDefaultSLRRequest.cc
 	src/model/OpenXtraceDefaultSLRResult.cc
+	src/model/QueryAppMetadataRequest.cc
+	src/model/QueryAppMetadataResult.cc
+	src/model/QueryAppTopologyRequest.cc
+	src/model/QueryAppTopologyResult.cc
+	src/model/QueryCommercialUsageRequest.cc
+	src/model/QueryCommercialUsageResult.cc
 	src/model/QueryMetricByPageRequest.cc
 	src/model/QueryMetricByPageResult.cc
 	src/model/QueryPromInstallStatusRequest.cc
@@ -540,6 +898,8 @@ set(arms_src
 	src/model/RemoveAliClusterIdsFromPrometheusGlobalViewResult.cc
 	src/model/RemoveSourcesFromPrometheusGlobalViewRequest.cc
 	src/model/RemoveSourcesFromPrometheusGlobalViewResult.cc
+	src/model/RestartEnvironmentFeatureRequest.cc
+	src/model/RestartEnvironmentFeatureResult.cc
 	src/model/SaveTraceAppConfigRequest.cc
 	src/model/SaveTraceAppConfigResult.cc
 	src/model/SearchAlertContactRequest.cc
@@ -568,18 +928,24 @@ set(arms_src
 	src/model/SetRetcodeShareStatusResult.cc
 	src/model/StartAlertRequest.cc
 	src/model/StartAlertResult.cc
+	src/model/StartTimingSyntheticTaskRequest.cc
+	src/model/StartTimingSyntheticTaskResult.cc
 	src/model/StopAlertRequest.cc
 	src/model/StopAlertResult.cc
+	src/model/StopTimingSyntheticTaskRequest.cc
+	src/model/StopTimingSyntheticTaskResult.cc
 	src/model/SwitchSyntheticTaskStatusRequest.cc
 	src/model/SwitchSyntheticTaskStatusResult.cc
 	src/model/SyncRecordingRulesRequest.cc
 	src/model/SyncRecordingRulesResult.cc
-	src/model/TurnOnSecondSwitchRequest.cc
-	src/model/TurnOnSecondSwitchResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
 	src/model/UninstallManagedPrometheusRequest.cc
 	src/model/UninstallManagedPrometheusResult.cc
 	src/model/UninstallPromClusterRequest.cc
 	src/model/UninstallPromClusterResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc
 	src/model/UpdateAlertContactRequest.cc
 	src/model/UpdateAlertContactResult.cc
 	src/model/UpdateAlertContactGroupRequest.cc
@@ -588,12 +954,46 @@ set(arms_src
 	src/model/UpdateAlertRuleResult.cc
 	src/model/UpdateDispatchRuleRequest.cc
 	src/model/UpdateDispatchRuleResult.cc
+	src/model/UpdateEnvCustomJobRequest.cc
+	src/model/UpdateEnvCustomJobResult.cc
+	src/model/UpdateEnvPodMonitorRequest.cc
+	src/model/UpdateEnvPodMonitorResult.cc
+	src/model/UpdateEnvServiceMonitorRequest.cc
+	src/model/UpdateEnvServiceMonitorResult.cc
+	src/model/UpdateEnvironmentRequest.cc
+	src/model/UpdateEnvironmentResult.cc
+	src/model/UpdateGrafanaWorkspaceRequest.cc
+	src/model/UpdateGrafanaWorkspaceResult.cc
+	src/model/UpdateGrafanaWorkspaceVersionRequest.cc
+	src/model/UpdateGrafanaWorkspaceVersionResult.cc
 	src/model/UpdateIntegrationRequest.cc
 	src/model/UpdateIntegrationResult.cc
+	src/model/UpdateMetricDropRequest.cc
+	src/model/UpdateMetricDropResult.cc
 	src/model/UpdatePrometheusAlertRuleRequest.cc
 	src/model/UpdatePrometheusAlertRuleResult.cc
+	src/model/UpdatePrometheusGlobalViewRequest.cc
+	src/model/UpdatePrometheusGlobalViewResult.cc
+	src/model/UpdatePrometheusInstanceRequest.cc
+	src/model/UpdatePrometheusInstanceResult.cc
+	src/model/UpdatePrometheusIntegrationRequest.cc
+	src/model/UpdatePrometheusIntegrationResult.cc
+	src/model/UpdatePrometheusMonitoringRequest.cc
+	src/model/UpdatePrometheusMonitoringResult.cc
+	src/model/UpdatePrometheusMonitoringStatusRequest.cc
+	src/model/UpdatePrometheusMonitoringStatusResult.cc
+	src/model/UpdateRumAppRequest.cc
+	src/model/UpdateRumAppResult.cc
+	src/model/UpdateRumFileStatusRequest.cc
+	src/model/UpdateRumFileStatusResult.cc
+	src/model/UpdateTimingSyntheticTaskRequest.cc
+	src/model/UpdateTimingSyntheticTaskResult.cc
 	src/model/UpdateWebhookRequest.cc
 	src/model/UpdateWebhookResult.cc
+	src/model/UpgradeAddonReleaseRequest.cc
+	src/model/UpgradeAddonReleaseResult.cc
+	src/model/UpgradeEnvironmentFeatureRequest.cc
+	src/model/UpgradeEnvironmentFeatureResult.cc
 	src/model/UploadRequest.cc
 	src/model/UploadResult.cc )
 

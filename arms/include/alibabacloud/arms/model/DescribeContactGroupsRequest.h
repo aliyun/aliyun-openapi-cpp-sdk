@@ -30,20 +30,29 @@ class ALIBABACLOUD_ARMS_EXPORT DescribeContactGroupsRequest : public RpcServiceR
 public:
 	DescribeContactGroupsRequest();
 	~DescribeContactGroupsRequest();
-	long getSize() const;
-	void setSize(long size);
 	bool getIsDetail() const;
 	void setIsDetail(bool isDetail);
-	long getPage() const;
-	void setPage(long page);
 	std::string getContactGroupName() const;
 	void setContactGroupName(const std::string &contactGroupName);
+	std::string getVerbose() const;
+	void setVerbose(const std::string &verbose);
+	long getSize() const;
+	void setSize(long size);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getGroupIds() const;
+	void setGroupIds(const std::string &groupIds);
+	long getPage() const;
+	void setPage(long page);
 
 private:
-	long size_;
 	bool isDetail_;
-	long page_;
 	std::string contactGroupName_;
+	std::string verbose_;
+	long size_;
+	std::string regionId_;
+	std::string groupIds_;
+	long page_;
 };
 } // namespace Model
 } // namespace ARMS

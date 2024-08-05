@@ -25,6 +25,15 @@ UninstallManagedPrometheusRequest::UninstallManagedPrometheusRequest()
 
 UninstallManagedPrometheusRequest::~UninstallManagedPrometheusRequest() {}
 
+std::string UninstallManagedPrometheusRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void UninstallManagedPrometheusRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
+}
+
 std::string UninstallManagedPrometheusRequest::getClusterType() const {
   return clusterType_;
 }
@@ -32,6 +41,15 @@ std::string UninstallManagedPrometheusRequest::getClusterType() const {
 void UninstallManagedPrometheusRequest::setClusterType(const std::string &clusterType) {
   clusterType_ = clusterType;
   setParameter(std::string("ClusterType"), clusterType);
+}
+
+std::string UninstallManagedPrometheusRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void UninstallManagedPrometheusRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string UninstallManagedPrometheusRequest::getRegionId() const {
@@ -50,14 +68,5 @@ std::string UninstallManagedPrometheusRequest::getVpcId() const {
 void UninstallManagedPrometheusRequest::setVpcId(const std::string &vpcId) {
   vpcId_ = vpcId;
   setParameter(std::string("VpcId"), vpcId);
-}
-
-std::string UninstallManagedPrometheusRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void UninstallManagedPrometheusRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
 }
 

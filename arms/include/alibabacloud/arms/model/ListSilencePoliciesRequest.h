@@ -30,22 +30,22 @@ class ALIBABACLOUD_ARMS_EXPORT ListSilencePoliciesRequest : public RpcServiceReq
 public:
 	ListSilencePoliciesRequest();
 	~ListSilencePoliciesRequest();
+	bool getIsDetail() const;
+	void setIsDetail(bool isDetail);
 	long getSize() const;
 	void setSize(long size);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getName() const;
 	void setName(const std::string &name);
-	bool getIsDetail() const;
-	void setIsDetail(bool isDetail);
 	long getPage() const;
 	void setPage(long page);
 
 private:
+	bool isDetail_;
 	long size_;
 	std::string regionId_;
 	std::string name_;
-	bool isDetail_;
 	long page_;
 };
 } // namespace Model

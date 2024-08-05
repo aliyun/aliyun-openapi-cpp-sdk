@@ -48,6 +48,7 @@ namespace AlibabaCloud
 						float webhookId;
 						std::string webhookName;
 						Webhook webhook;
+						long armsContactId;
 					};
 					std::vector<WebhookContactsItem> webhookContacts;
 					long size;

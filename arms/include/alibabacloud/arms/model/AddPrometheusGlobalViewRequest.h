@@ -28,17 +28,27 @@ namespace ARMS {
 namespace Model {
 class ALIBABACLOUD_ARMS_EXPORT AddPrometheusGlobalViewRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	AddPrometheusGlobalViewRequest();
 	~AddPrometheusGlobalViewRequest();
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getGroupName() const;
 	void setGroupName(const std::string &groupName);
 	std::string getClusters() const;
 	void setClusters(const std::string &clusters);
 
 private:
+	std::string resourceGroupId_;
 	std::string regionId_;
+	std::vector<Tag> tag_;
 	std::string groupName_;
 	std::string clusters_;
 };

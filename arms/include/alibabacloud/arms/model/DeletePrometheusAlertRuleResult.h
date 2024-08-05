@@ -37,11 +37,15 @@ namespace AlibabaCloud
 				DeletePrometheusAlertRuleResult();
 				explicit DeletePrometheusAlertRuleResult(const std::string &payload);
 				~DeletePrometheusAlertRuleResult();
+				std::string getMessage()const;
+				long getCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
+				long code_;
 				bool success_;
 
 			};

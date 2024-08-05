@@ -30,20 +30,29 @@ class ALIBABACLOUD_ARMS_EXPORT CreateOrUpdateSilencePolicyRequest : public RpcSe
 public:
 	CreateOrUpdateSilencePolicyRequest();
 	~CreateOrUpdateSilencePolicyRequest();
+	std::string getProxyUserId() const;
+	void setProxyUserId(const std::string &proxyUserId);
+	std::string getMatchingRules() const;
+	void setMatchingRules(const std::string &matchingRules);
+	std::string getAreaCodes() const;
+	void setAreaCodes(const std::string &areaCodes);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getName() const;
 	void setName(const std::string &name);
 	long getId() const;
 	void setId(long id);
-	std::string getMatchingRules() const;
-	void setMatchingRules(const std::string &matchingRules);
+	std::string getState() const;
+	void setState(const std::string &state);
 
 private:
+	std::string proxyUserId_;
+	std::string matchingRules_;
+	std::string areaCodes_;
 	std::string regionId_;
 	std::string name_;
 	long id_;
-	std::string matchingRules_;
+	std::string state_;
 };
 } // namespace Model
 } // namespace ARMS

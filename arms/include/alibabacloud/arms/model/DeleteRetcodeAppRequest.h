@@ -30,14 +30,20 @@ class ALIBABACLOUD_ARMS_EXPORT DeleteRetcodeAppRequest : public RpcServiceReques
 public:
 	DeleteRetcodeAppRequest();
 	~DeleteRetcodeAppRequest();
+	std::string getAppName() const;
+	void setAppName(const std::string &appName);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
+	std::string getPid() const;
+	void setPid(const std::string &pid);
 
 private:
+	std::string appName_;
 	std::string regionId_;
 	std::string appId_;
+	std::string pid_;
 };
 } // namespace Model
 } // namespace ARMS

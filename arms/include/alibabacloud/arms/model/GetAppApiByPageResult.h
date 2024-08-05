@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					int pageSize;
 					std::string total;
+					bool completed;
 					int page;
 					std::vector<std::string> items;
 				};

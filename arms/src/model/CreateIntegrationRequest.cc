@@ -25,6 +25,15 @@ CreateIntegrationRequest::CreateIntegrationRequest()
 
 CreateIntegrationRequest::~CreateIntegrationRequest() {}
 
+std::string CreateIntegrationRequest::getDescription() const {
+  return description_;
+}
+
+void CreateIntegrationRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setBodyParameter(std::string("Description"), description);
+}
+
 bool CreateIntegrationRequest::getAutoRecover() const {
   return autoRecover_;
 }
@@ -43,6 +52,15 @@ void CreateIntegrationRequest::setRecoverTime(long recoverTime) {
   setBodyParameter(std::string("RecoverTime"), std::to_string(recoverTime));
 }
 
+std::string CreateIntegrationRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateIntegrationRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateIntegrationRequest::getIntegrationName() const {
   return integrationName_;
 }
@@ -50,15 +68,6 @@ std::string CreateIntegrationRequest::getIntegrationName() const {
 void CreateIntegrationRequest::setIntegrationName(const std::string &integrationName) {
   integrationName_ = integrationName;
   setBodyParameter(std::string("IntegrationName"), integrationName);
-}
-
-std::string CreateIntegrationRequest::getDescription() const {
-  return description_;
-}
-
-void CreateIntegrationRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setBodyParameter(std::string("Description"), description);
 }
 
 std::string CreateIntegrationRequest::getIntegrationProductType() const {

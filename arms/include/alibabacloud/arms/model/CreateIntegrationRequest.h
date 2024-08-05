@@ -30,22 +30,25 @@ class ALIBABACLOUD_ARMS_EXPORT CreateIntegrationRequest : public RpcServiceReque
 public:
 	CreateIntegrationRequest();
 	~CreateIntegrationRequest();
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
 	bool getAutoRecover() const;
 	void setAutoRecover(bool autoRecover);
 	long getRecoverTime() const;
 	void setRecoverTime(long recoverTime);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getIntegrationName() const;
 	void setIntegrationName(const std::string &integrationName);
-	std::string getDescription() const;
-	void setDescription(const std::string &description);
 	std::string getIntegrationProductType() const;
 	void setIntegrationProductType(const std::string &integrationProductType);
 
 private:
+	std::string description_;
 	bool autoRecover_;
 	long recoverTime_;
+	std::string regionId_;
 	std::string integrationName_;
-	std::string description_;
 	std::string integrationProductType_;
 };
 } // namespace Model

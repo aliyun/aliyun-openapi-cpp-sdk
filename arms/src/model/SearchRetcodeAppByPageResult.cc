@@ -68,6 +68,20 @@ void SearchRetcodeAppByPageResult::parse(const std::string &payload)
 			retcodeAppObject.userId = pageBeanNodeRetcodeAppsRetcodeApp["UserId"].asString();
 		if(!pageBeanNodeRetcodeAppsRetcodeApp["RegionId"].isNull())
 			retcodeAppObject.regionId = pageBeanNodeRetcodeAppsRetcodeApp["RegionId"].asString();
+		if(!pageBeanNodeRetcodeAppsRetcodeApp["NickName"].isNull())
+			retcodeAppObject.nickName = pageBeanNodeRetcodeAppsRetcodeApp["NickName"].asString();
+		if(!pageBeanNodeRetcodeAppsRetcodeApp["ResourceGroupId"].isNull())
+			retcodeAppObject.resourceGroupId = pageBeanNodeRetcodeAppsRetcodeApp["ResourceGroupId"].asString();
+		auto allTagsNode = pageBeanNodeRetcodeAppsRetcodeApp["Tags"]["TagsItem"];
+		for (auto pageBeanNodeRetcodeAppsRetcodeAppTagsTagsItem : allTagsNode)
+		{
+			PageBean::RetcodeApp::TagsItem tagsObject;
+			if(!pageBeanNodeRetcodeAppsRetcodeAppTagsTagsItem["Key"].isNull())
+				tagsObject.key = pageBeanNodeRetcodeAppsRetcodeAppTagsTagsItem["Key"].asString();
+			if(!pageBeanNodeRetcodeAppsRetcodeAppTagsTagsItem["Value"].isNull())
+				tagsObject.value = pageBeanNodeRetcodeAppsRetcodeAppTagsTagsItem["Value"].asString();
+			retcodeAppObject.tags.push_back(tagsObject);
+		}
 		pageBean_.retcodeApps.push_back(retcodeAppObject);
 	}
 

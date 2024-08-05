@@ -50,6 +50,8 @@ public:
 	void setMinDuration(long minDuration);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	bool getIsError() const;
+	void setIsError(bool isError);
 	std::vector<Tags> getTags() const;
 	void setTags(const std::vector<Tags> &tags);
 	std::string getServiceIp() const;
@@ -72,6 +74,7 @@ private:
 	bool reverse_;
 	long minDuration_;
 	int pageNumber_;
+	bool isError_;
 	std::vector<Tags> tags_;
 	std::string serviceIp_;
 	std::vector<ExclusionFilters> exclusionFilters_;

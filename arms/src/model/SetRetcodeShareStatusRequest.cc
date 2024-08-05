@@ -25,6 +25,15 @@ SetRetcodeShareStatusRequest::SetRetcodeShareStatusRequest()
 
 SetRetcodeShareStatusRequest::~SetRetcodeShareStatusRequest() {}
 
+std::string SetRetcodeShareStatusRequest::getAppName() const {
+  return appName_;
+}
+
+void SetRetcodeShareStatusRequest::setAppName(const std::string &appName) {
+  appName_ = appName;
+  setParameter(std::string("AppName"), appName);
+}
+
 std::string SetRetcodeShareStatusRequest::getPid() const {
   return pid_;
 }

@@ -46,11 +46,25 @@ void AddAliClusterIdsToPrometheusGlobalViewResult::parse(const std::string &payl
 		data_.msg = dataNode["Msg"].asString();
 	if(!dataNode["Info"].isNull())
 		data_.info = dataNode["Info"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string AddAliClusterIdsToPrometheusGlobalViewResult::getMessage()const
+{
+	return message_;
 }
 
 AddAliClusterIdsToPrometheusGlobalViewResult::Data AddAliClusterIdsToPrometheusGlobalViewResult::getData()const
 {
 	return data_;
+}
+
+int AddAliClusterIdsToPrometheusGlobalViewResult::getCode()const
+{
+	return code_;
 }
 

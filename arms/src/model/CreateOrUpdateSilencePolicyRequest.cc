@@ -25,6 +25,33 @@ CreateOrUpdateSilencePolicyRequest::CreateOrUpdateSilencePolicyRequest()
 
 CreateOrUpdateSilencePolicyRequest::~CreateOrUpdateSilencePolicyRequest() {}
 
+std::string CreateOrUpdateSilencePolicyRequest::getProxyUserId() const {
+  return proxyUserId_;
+}
+
+void CreateOrUpdateSilencePolicyRequest::setProxyUserId(const std::string &proxyUserId) {
+  proxyUserId_ = proxyUserId;
+  setBodyParameter(std::string("ProxyUserId"), proxyUserId);
+}
+
+std::string CreateOrUpdateSilencePolicyRequest::getMatchingRules() const {
+  return matchingRules_;
+}
+
+void CreateOrUpdateSilencePolicyRequest::setMatchingRules(const std::string &matchingRules) {
+  matchingRules_ = matchingRules;
+  setBodyParameter(std::string("MatchingRules"), matchingRules);
+}
+
+std::string CreateOrUpdateSilencePolicyRequest::getAreaCodes() const {
+  return areaCodes_;
+}
+
+void CreateOrUpdateSilencePolicyRequest::setAreaCodes(const std::string &areaCodes) {
+  areaCodes_ = areaCodes;
+  setBodyParameter(std::string("AreaCodes"), areaCodes);
+}
+
 std::string CreateOrUpdateSilencePolicyRequest::getRegionId() const {
   return regionId_;
 }
@@ -52,12 +79,12 @@ void CreateOrUpdateSilencePolicyRequest::setId(long id) {
   setBodyParameter(std::string("Id"), std::to_string(id));
 }
 
-std::string CreateOrUpdateSilencePolicyRequest::getMatchingRules() const {
-  return matchingRules_;
+std::string CreateOrUpdateSilencePolicyRequest::getState() const {
+  return state_;
 }
 
-void CreateOrUpdateSilencePolicyRequest::setMatchingRules(const std::string &matchingRules) {
-  matchingRules_ = matchingRules;
-  setBodyParameter(std::string("MatchingRules"), matchingRules);
+void CreateOrUpdateSilencePolicyRequest::setState(const std::string &state) {
+  state_ = state;
+  setBodyParameter(std::string("State"), state);
 }
 

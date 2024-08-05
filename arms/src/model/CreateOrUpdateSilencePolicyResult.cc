@@ -44,6 +44,8 @@ void CreateOrUpdateSilencePolicyResult::parse(const std::string &payload)
 		silencePolicy_.id = std::stol(silencePolicyNode["Id"].asString());
 	if(!silencePolicyNode["Name"].isNull())
 		silencePolicy_.name = silencePolicyNode["Name"].asString();
+	if(!silencePolicyNode["State"].isNull())
+		silencePolicy_.state = silencePolicyNode["State"].asString();
 	auto allMatchingRulesNode = silencePolicyNode["MatchingRules"]["matchingRulesItem"];
 	for (auto silencePolicyNodeMatchingRulesmatchingRulesItem : allMatchingRulesNode)
 	{

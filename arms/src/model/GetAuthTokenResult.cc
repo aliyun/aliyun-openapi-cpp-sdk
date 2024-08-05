@@ -41,11 +41,32 @@ void GetAuthTokenResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
+}
+
+std::string GetAuthTokenResult::getMessage()const
+{
+	return message_;
 }
 
 std::string GetAuthTokenResult::getData()const
 {
 	return data_;
+}
+
+int GetAuthTokenResult::getCode()const
+{
+	return code_;
+}
+
+bool GetAuthTokenResult::getSuccess()const
+{
+	return success_;
 }
 

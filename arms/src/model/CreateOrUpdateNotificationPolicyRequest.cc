@@ -25,24 +25,6 @@ CreateOrUpdateNotificationPolicyRequest::CreateOrUpdateNotificationPolicyRequest
 
 CreateOrUpdateNotificationPolicyRequest::~CreateOrUpdateNotificationPolicyRequest() {}
 
-long CreateOrUpdateNotificationPolicyRequest::getEscalationPolicyId() const {
-  return escalationPolicyId_;
-}
-
-void CreateOrUpdateNotificationPolicyRequest::setEscalationPolicyId(long escalationPolicyId) {
-  escalationPolicyId_ = escalationPolicyId;
-  setBodyParameter(std::string("EscalationPolicyId"), std::to_string(escalationPolicyId));
-}
-
-bool CreateOrUpdateNotificationPolicyRequest::getSendRecoverMessage() const {
-  return sendRecoverMessage_;
-}
-
-void CreateOrUpdateNotificationPolicyRequest::setSendRecoverMessage(bool sendRecoverMessage) {
-  sendRecoverMessage_ = sendRecoverMessage;
-  setBodyParameter(std::string("SendRecoverMessage"), sendRecoverMessage ? "true" : "false");
-}
-
 long CreateOrUpdateNotificationPolicyRequest::getIntegrationId() const {
   return integrationId_;
 }
@@ -52,13 +34,13 @@ void CreateOrUpdateNotificationPolicyRequest::setIntegrationId(long integrationI
   setBodyParameter(std::string("IntegrationId"), std::to_string(integrationId));
 }
 
-std::string CreateOrUpdateNotificationPolicyRequest::getMatchingRules() const {
-  return matchingRules_;
+std::string CreateOrUpdateNotificationPolicyRequest::getAreaCodes() const {
+  return areaCodes_;
 }
 
-void CreateOrUpdateNotificationPolicyRequest::setMatchingRules(const std::string &matchingRules) {
-  matchingRules_ = matchingRules;
-  setBodyParameter(std::string("MatchingRules"), matchingRules);
+void CreateOrUpdateNotificationPolicyRequest::setAreaCodes(const std::string &areaCodes) {
+  areaCodes_ = areaCodes;
+  setBodyParameter(std::string("AreaCodes"), areaCodes);
 }
 
 std::string CreateOrUpdateNotificationPolicyRequest::getGroupRule() const {
@@ -88,15 +70,6 @@ void CreateOrUpdateNotificationPolicyRequest::setRepeat(bool repeat) {
   setBodyParameter(std::string("Repeat"), repeat ? "true" : "false");
 }
 
-std::string CreateOrUpdateNotificationPolicyRequest::getName() const {
-  return name_;
-}
-
-void CreateOrUpdateNotificationPolicyRequest::setName(const std::string &name) {
-  name_ = name;
-  setBodyParameter(std::string("Name"), name);
-}
-
 long CreateOrUpdateNotificationPolicyRequest::getId() const {
   return id_;
 }
@@ -115,13 +88,13 @@ void CreateOrUpdateNotificationPolicyRequest::setNotifyRule(const std::string &n
   setBodyParameter(std::string("NotifyRule"), notifyRule);
 }
 
-std::string CreateOrUpdateNotificationPolicyRequest::getNotifyTemplate() const {
-  return notifyTemplate_;
+std::string CreateOrUpdateNotificationPolicyRequest::getState() const {
+  return state_;
 }
 
-void CreateOrUpdateNotificationPolicyRequest::setNotifyTemplate(const std::string &notifyTemplate) {
-  notifyTemplate_ = notifyTemplate;
-  setBodyParameter(std::string("NotifyTemplate"), notifyTemplate);
+void CreateOrUpdateNotificationPolicyRequest::setState(const std::string &state) {
+  state_ = state;
+  setBodyParameter(std::string("State"), state);
 }
 
 long CreateOrUpdateNotificationPolicyRequest::getRepeatInterval() const {
@@ -131,5 +104,68 @@ long CreateOrUpdateNotificationPolicyRequest::getRepeatInterval() const {
 void CreateOrUpdateNotificationPolicyRequest::setRepeatInterval(long repeatInterval) {
   repeatInterval_ = repeatInterval;
   setBodyParameter(std::string("RepeatInterval"), std::to_string(repeatInterval));
+}
+
+long CreateOrUpdateNotificationPolicyRequest::getEscalationPolicyId() const {
+  return escalationPolicyId_;
+}
+
+void CreateOrUpdateNotificationPolicyRequest::setEscalationPolicyId(long escalationPolicyId) {
+  escalationPolicyId_ = escalationPolicyId;
+  setBodyParameter(std::string("EscalationPolicyId"), std::to_string(escalationPolicyId));
+}
+
+bool CreateOrUpdateNotificationPolicyRequest::getSendRecoverMessage() const {
+  return sendRecoverMessage_;
+}
+
+void CreateOrUpdateNotificationPolicyRequest::setSendRecoverMessage(bool sendRecoverMessage) {
+  sendRecoverMessage_ = sendRecoverMessage;
+  setBodyParameter(std::string("SendRecoverMessage"), sendRecoverMessage ? "true" : "false");
+}
+
+std::string CreateOrUpdateNotificationPolicyRequest::getProxyUserId() const {
+  return proxyUserId_;
+}
+
+void CreateOrUpdateNotificationPolicyRequest::setProxyUserId(const std::string &proxyUserId) {
+  proxyUserId_ = proxyUserId;
+  setBodyParameter(std::string("ProxyUserId"), proxyUserId);
+}
+
+std::string CreateOrUpdateNotificationPolicyRequest::getMatchingRules() const {
+  return matchingRules_;
+}
+
+void CreateOrUpdateNotificationPolicyRequest::setMatchingRules(const std::string &matchingRules) {
+  matchingRules_ = matchingRules;
+  setBodyParameter(std::string("MatchingRules"), matchingRules);
+}
+
+bool CreateOrUpdateNotificationPolicyRequest::getDirectedMode() const {
+  return directedMode_;
+}
+
+void CreateOrUpdateNotificationPolicyRequest::setDirectedMode(bool directedMode) {
+  directedMode_ = directedMode;
+  setBodyParameter(std::string("DirectedMode"), directedMode ? "true" : "false");
+}
+
+std::string CreateOrUpdateNotificationPolicyRequest::getName() const {
+  return name_;
+}
+
+void CreateOrUpdateNotificationPolicyRequest::setName(const std::string &name) {
+  name_ = name;
+  setBodyParameter(std::string("Name"), name);
+}
+
+std::string CreateOrUpdateNotificationPolicyRequest::getNotifyTemplate() const {
+  return notifyTemplate_;
+}
+
+void CreateOrUpdateNotificationPolicyRequest::setNotifyTemplate(const std::string &notifyTemplate) {
+  notifyTemplate_ = notifyTemplate;
+  setBodyParameter(std::string("NotifyTemplate"), notifyTemplate);
 }
 

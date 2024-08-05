@@ -46,6 +46,7 @@ namespace AlibabaCloud
 						{
 							struct NotifyObjectsItem
 							{
+								std::vector<std::string> notifyChannels1;
 								std::string notifyObjectName;
 								std::string notifyObjectType;
 								long notifyObjectId;
@@ -81,12 +82,14 @@ namespace AlibabaCloud
 						NotifyTemplate notifyTemplate;
 						NotifyRule notifyRule;
 						bool sendRecoverMessage;
-						GroupRule groupRule;
 						std::vector<Policies::MatchingRulesItem> matchingRules;
 						bool repeat;
 						long integrationId;
-						long id;
 						std::string name;
+						std::string state;
+						GroupRule groupRule;
+						long id;
+						bool directedMode;
 						long repeatInterval;
 					};
 					long size;

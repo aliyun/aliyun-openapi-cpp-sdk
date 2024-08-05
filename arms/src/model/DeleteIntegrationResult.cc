@@ -41,11 +41,25 @@ void DeleteIntegrationResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string DeleteIntegrationResult::getMessage()const
+{
+	return message_;
 }
 
 std::string DeleteIntegrationResult::getData()const
 {
 	return data_;
+}
+
+int DeleteIntegrationResult::getCode()const
+{
+	return code_;
 }
 

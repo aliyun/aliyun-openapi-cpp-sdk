@@ -61,6 +61,15 @@ void CreateOrUpdateContactRequest::setProxyUserId(const std::string &proxyUserId
   setBodyParameter(std::string("ProxyUserId"), proxyUserId);
 }
 
+std::string CreateOrUpdateContactRequest::getCorpUserId() const {
+  return corpUserId_;
+}
+
+void CreateOrUpdateContactRequest::setCorpUserId(const std::string &corpUserId) {
+  corpUserId_ = corpUserId;
+  setBodyParameter(std::string("CorpUserId"), corpUserId);
+}
+
 std::string CreateOrUpdateContactRequest::getContactName() const {
   return contactName_;
 }
@@ -68,6 +77,24 @@ std::string CreateOrUpdateContactRequest::getContactName() const {
 void CreateOrUpdateContactRequest::setContactName(const std::string &contactName) {
   contactName_ = contactName;
   setBodyParameter(std::string("ContactName"), contactName);
+}
+
+std::string CreateOrUpdateContactRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateOrUpdateContactRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string CreateOrUpdateContactRequest::getDingRobotUrl() const {
+  return dingRobotUrl_;
+}
+
+void CreateOrUpdateContactRequest::setDingRobotUrl(const std::string &dingRobotUrl) {
+  dingRobotUrl_ = dingRobotUrl;
+  setParameter(std::string("DingRobotUrl"), dingRobotUrl);
 }
 
 std::string CreateOrUpdateContactRequest::getPhone() const {
@@ -86,5 +113,14 @@ std::string CreateOrUpdateContactRequest::getEmail() const {
 void CreateOrUpdateContactRequest::setEmail(const std::string &email) {
   email_ = email;
   setBodyParameter(std::string("Email"), email);
+}
+
+bool CreateOrUpdateContactRequest::getIsEmailVerify() const {
+  return isEmailVerify_;
+}
+
+void CreateOrUpdateContactRequest::setIsEmailVerify(bool isEmailVerify) {
+  isEmailVerify_ = isEmailVerify;
+  setBodyParameter(std::string("IsEmailVerify"), isEmailVerify ? "true" : "false");
 }
 

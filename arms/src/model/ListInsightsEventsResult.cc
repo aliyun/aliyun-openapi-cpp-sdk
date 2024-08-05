@@ -55,6 +55,8 @@ void ListInsightsEventsResult::parse(const std::string &payload)
 			insightsEventsObject.level = valueInsightsEventsProblemInfos["Level"].asString();
 		if(!valueInsightsEventsProblemInfos["Date"].isNull())
 			insightsEventsObject.date = std::stol(valueInsightsEventsProblemInfos["Date"].asString());
+		if(!valueInsightsEventsProblemInfos["ProblemId"].isNull())
+			insightsEventsObject.problemId = valueInsightsEventsProblemInfos["ProblemId"].asString();
 		insightsEvents_.push_back(insightsEventsObject);
 	}
 

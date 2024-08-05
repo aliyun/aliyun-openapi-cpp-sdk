@@ -28,6 +28,10 @@ namespace ARMS {
 namespace Model {
 class ALIBABACLOUD_ARMS_EXPORT ListPrometheusAlertRulesRequest : public RpcServiceRequest {
 public:
+	struct Tags {
+		std::string value;
+		std::string key;
+	};
 	ListPrometheusAlertRulesRequest();
 	~ListPrometheusAlertRulesRequest();
 	std::string getClusterId() const;
@@ -36,6 +40,8 @@ public:
 	void setProxyUserId(const std::string &proxyUserId);
 	std::string getType() const;
 	void setType(const std::string &type);
+	std::vector<Tags> getTags() const;
+	void setTags(const std::vector<Tags> &tags);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getName() const;
@@ -49,6 +55,7 @@ private:
 	std::string clusterId_;
 	std::string proxyUserId_;
 	std::string type_;
+	std::vector<Tags> tags_;
 	std::string regionId_;
 	std::string name_;
 	std::string matchExpressions_;

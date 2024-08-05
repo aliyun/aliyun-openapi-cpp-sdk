@@ -46,11 +46,25 @@ void RemoveSourcesFromPrometheusGlobalViewResult::parse(const std::string &paylo
 		data_.msg = dataNode["Msg"].asString();
 	if(!dataNode["Info"].isNull())
 		data_.info = dataNode["Info"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
 
+}
+
+std::string RemoveSourcesFromPrometheusGlobalViewResult::getMessage()const
+{
+	return message_;
 }
 
 RemoveSourcesFromPrometheusGlobalViewResult::Data RemoveSourcesFromPrometheusGlobalViewResult::getData()const
 {
 	return data_;
+}
+
+int RemoveSourcesFromPrometheusGlobalViewResult::getCode()const
+{
+	return code_;
 }
 

@@ -61,6 +61,15 @@ void CreateOrUpdateAlertRuleRequest::setAnnotations(const std::string &annotatio
   setBodyParameter(std::string("Annotations"), annotations);
 }
 
+std::string CreateOrUpdateAlertRuleRequest::getDataConfig() const {
+  return dataConfig_;
+}
+
+void CreateOrUpdateAlertRuleRequest::setDataConfig(const std::string &dataConfig) {
+  dataConfig_ = dataConfig;
+  setBodyParameter(std::string("DataConfig"), dataConfig);
+}
+
 long CreateOrUpdateAlertRuleRequest::getDuration() const {
   return duration_;
 }
@@ -68,6 +77,15 @@ long CreateOrUpdateAlertRuleRequest::getDuration() const {
 void CreateOrUpdateAlertRuleRequest::setDuration(long duration) {
   duration_ = duration;
   setBodyParameter(std::string("Duration"), std::to_string(duration));
+}
+
+std::string CreateOrUpdateAlertRuleRequest::getAutoAddTargetConfig() const {
+  return autoAddTargetConfig_;
+}
+
+void CreateOrUpdateAlertRuleRequest::setAutoAddTargetConfig(const std::string &autoAddTargetConfig) {
+  autoAddTargetConfig_ = autoAddTargetConfig;
+  setBodyParameter(std::string("AutoAddTargetConfig"), autoAddTargetConfig);
 }
 
 std::string CreateOrUpdateAlertRuleRequest::getRegionId() const {
@@ -88,6 +106,38 @@ void CreateOrUpdateAlertRuleRequest::setMetricsKey(const std::string &metricsKey
   setBodyParameter(std::string("MetricsKey"), metricsKey);
 }
 
+std::string CreateOrUpdateAlertRuleRequest::getAlertPiplines() const {
+  return alertPiplines_;
+}
+
+void CreateOrUpdateAlertRuleRequest::setAlertPiplines(const std::string &alertPiplines) {
+  alertPiplines_ = alertPiplines;
+  setBodyParameter(std::string("AlertPiplines"), alertPiplines);
+}
+
+std::vector<CreateOrUpdateAlertRuleRequest::MarkTags> CreateOrUpdateAlertRuleRequest::getMarkTags() const {
+  return markTags_;
+}
+
+void CreateOrUpdateAlertRuleRequest::setMarkTags(const std::vector<CreateOrUpdateAlertRuleRequest::MarkTags> &markTags) {
+  markTags_ = markTags;
+  for(int dep1 = 0; dep1 != markTags.size(); dep1++) {
+  auto markTagsObj = markTags.at(dep1);
+  std::string markTagsObjStr = std::string("MarkTags") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(markTagsObjStr + ".Value", markTagsObj.value);
+    setBodyParameter(markTagsObjStr + ".Key", markTagsObj.key);
+  }
+}
+
+std::string CreateOrUpdateAlertRuleRequest::getNotice() const {
+  return notice_;
+}
+
+void CreateOrUpdateAlertRuleRequest::setNotice(const std::string &notice) {
+  notice_ = notice;
+  setBodyParameter(std::string("Notice"), notice);
+}
+
 std::string CreateOrUpdateAlertRuleRequest::getAlertRuleContent() const {
   return alertRuleContent_;
 }
@@ -104,6 +154,15 @@ std::string CreateOrUpdateAlertRuleRequest::getPromQL() const {
 void CreateOrUpdateAlertRuleRequest::setPromQL(const std::string &promQL) {
   promQL_ = promQL;
   setBodyParameter(std::string("PromQL"), promQL);
+}
+
+std::string CreateOrUpdateAlertRuleRequest::getProduct() const {
+  return product_;
+}
+
+void CreateOrUpdateAlertRuleRequest::setProduct(const std::string &product) {
+  product_ = product;
+  setBodyParameter(std::string("Product"), product);
 }
 
 std::string CreateOrUpdateAlertRuleRequest::getLevel() const {
@@ -151,6 +210,24 @@ void CreateOrUpdateAlertRuleRequest::setMessage(const std::string &message) {
   setBodyParameter(std::string("Message"), message);
 }
 
+std::string CreateOrUpdateAlertRuleRequest::getDurationCompareType() const {
+  return durationCompareType_;
+}
+
+void CreateOrUpdateAlertRuleRequest::setDurationCompareType(const std::string &durationCompareType) {
+  durationCompareType_ = durationCompareType;
+  setBodyParameter(std::string("DurationCompareType"), durationCompareType);
+}
+
+std::string CreateOrUpdateAlertRuleRequest::getProxyUserId() const {
+  return proxyUserId_;
+}
+
+void CreateOrUpdateAlertRuleRequest::setProxyUserId(const std::string &proxyUserId) {
+  proxyUserId_ = proxyUserId;
+  setParameter(std::string("ProxyUserId"), proxyUserId);
+}
+
 std::string CreateOrUpdateAlertRuleRequest::getNotifyStrategy() const {
   return notifyStrategy_;
 }
@@ -167,6 +244,29 @@ std::string CreateOrUpdateAlertRuleRequest::getLabels() const {
 void CreateOrUpdateAlertRuleRequest::setLabels(const std::string &labels) {
   labels_ = labels;
   setBodyParameter(std::string("Labels"), labels);
+}
+
+std::vector<CreateOrUpdateAlertRuleRequest::Tags> CreateOrUpdateAlertRuleRequest::getTags() const {
+  return tags_;
+}
+
+void CreateOrUpdateAlertRuleRequest::setTags(const std::vector<CreateOrUpdateAlertRuleRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(tagsObjStr + ".Value", tagsObj.value);
+    setBodyParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
+}
+
+std::string CreateOrUpdateAlertRuleRequest::getNotifyMode() const {
+  return notifyMode_;
+}
+
+void CreateOrUpdateAlertRuleRequest::setNotifyMode(const std::string &notifyMode) {
+  notifyMode_ = notifyMode;
+  setBodyParameter(std::string("NotifyMode"), notifyMode);
 }
 
 std::string CreateOrUpdateAlertRuleRequest::getAlertType() const {

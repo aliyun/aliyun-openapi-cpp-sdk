@@ -38,21 +38,33 @@ public:
 	void setIsVerify(bool isVerify);
 	std::string getProxyUserId() const;
 	void setProxyUserId(const std::string &proxyUserId);
+	std::string getCorpUserId() const;
+	void setCorpUserId(const std::string &corpUserId);
 	std::string getContactName() const;
 	void setContactName(const std::string &contactName);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getDingRobotUrl() const;
+	void setDingRobotUrl(const std::string &dingRobotUrl);
 	std::string getPhone() const;
 	void setPhone(const std::string &phone);
 	std::string getEmail() const;
 	void setEmail(const std::string &email);
+	bool getIsEmailVerify() const;
+	void setIsEmailVerify(bool isEmailVerify);
 
 private:
 	long contactId_;
 	long reissueSendNotice_;
 	bool isVerify_;
 	std::string proxyUserId_;
+	std::string corpUserId_;
 	std::string contactName_;
+	std::string resourceGroupId_;
+	std::string dingRobotUrl_;
 	std::string phone_;
 	std::string email_;
+	bool isEmailVerify_;
 };
 } // namespace Model
 } // namespace ARMS

@@ -61,6 +61,18 @@ void SearchTraceAppByNameResult::parse(const std::string &payload)
 			traceAppsObject.userId = valueTraceAppsTraceApp["UserId"].asString();
 		if(!valueTraceAppsTraceApp["RegionId"].isNull())
 			traceAppsObject.regionId = valueTraceAppsTraceApp["RegionId"].asString();
+		if(!valueTraceAppsTraceApp["ResourceGroupId"].isNull())
+			traceAppsObject.resourceGroupId = valueTraceAppsTraceApp["ResourceGroupId"].asString();
+		auto allTagsNode = valueTraceAppsTraceApp["Tags"]["TagsItem"];
+		for (auto valueTraceAppsTraceAppTagsTagsItem : allTagsNode)
+		{
+			TraceApp::TagsItem tagsObject;
+			if(!valueTraceAppsTraceAppTagsTagsItem["Key"].isNull())
+				tagsObject.key = valueTraceAppsTraceAppTagsTagsItem["Key"].asString();
+			if(!valueTraceAppsTraceAppTagsTagsItem["Value"].isNull())
+				tagsObject.value = valueTraceAppsTraceAppTagsTagsItem["Value"].asString();
+			traceAppsObject.tags.push_back(tagsObject);
+		}
 		auto allLabels = value["Labels"]["Labels"];
 		for (auto value : allLabels)
 			traceAppsObject.labels.push_back(value.asString());

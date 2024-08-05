@@ -25,6 +25,24 @@ DescribeContactsRequest::DescribeContactsRequest()
 
 DescribeContactsRequest::~DescribeContactsRequest() {}
 
+std::string DescribeContactsRequest::getContactIds() const {
+  return contactIds_;
+}
+
+void DescribeContactsRequest::setContactIds(const std::string &contactIds) {
+  contactIds_ = contactIds;
+  setParameter(std::string("ContactIds"), contactIds);
+}
+
+std::string DescribeContactsRequest::getVerbose() const {
+  return verbose_;
+}
+
+void DescribeContactsRequest::setVerbose(const std::string &verbose) {
+  verbose_ = verbose;
+  setParameter(std::string("Verbose"), verbose);
+}
+
 std::string DescribeContactsRequest::getContactName() const {
   return contactName_;
 }
@@ -50,6 +68,15 @@ std::string DescribeContactsRequest::getPhone() const {
 void DescribeContactsRequest::setPhone(const std::string &phone) {
   phone_ = phone;
   setParameter(std::string("Phone"), phone);
+}
+
+std::string DescribeContactsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeContactsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 long DescribeContactsRequest::getPage() const {

@@ -25,6 +25,15 @@ GetAlertRulesRequest::GetAlertRulesRequest()
 
 GetAlertRulesRequest::~GetAlertRulesRequest() {}
 
+std::string GetAlertRulesRequest::getProductCode() const {
+  return productCode_;
+}
+
+void GetAlertRulesRequest::setProductCode(const std::string &productCode) {
+  productCode_ = productCode;
+  setParameter(std::string("ProductCode"), productCode);
+}
+
 std::string GetAlertRulesRequest::getAlertStatus() const {
   return alertStatus_;
 }
@@ -41,6 +50,29 @@ std::string GetAlertRulesRequest::getClusterId() const {
 void GetAlertRulesRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
   setParameter(std::string("ClusterId"), clusterId);
+}
+
+std::string GetAlertRulesRequest::getProxyUserId() const {
+  return proxyUserId_;
+}
+
+void GetAlertRulesRequest::setProxyUserId(const std::string &proxyUserId) {
+  proxyUserId_ = proxyUserId;
+  setParameter(std::string("ProxyUserId"), proxyUserId);
+}
+
+std::vector<GetAlertRulesRequest::Tags> GetAlertRulesRequest::getTags() const {
+  return tags_;
+}
+
+void GetAlertRulesRequest::setTags(const std::vector<GetAlertRulesRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
 }
 
 std::string GetAlertRulesRequest::getAlertNames() const {
@@ -95,5 +127,14 @@ long GetAlertRulesRequest::getPage() const {
 void GetAlertRulesRequest::setPage(long page) {
   page_ = page;
   setParameter(std::string("Page"), std::to_string(page));
+}
+
+bool GetAlertRulesRequest::getIsOr() const {
+  return isOr_;
+}
+
+void GetAlertRulesRequest::setIsOr(bool isOr) {
+  isOr_ = isOr;
+  setParameter(std::string("IsOr"), isOr ? "true" : "false");
 }
 

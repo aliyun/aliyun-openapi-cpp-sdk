@@ -52,6 +52,10 @@ void CreateOrUpdateContactResult::parse(const std::string &payload)
 		alertContact_.isVerify = alertContactNode["IsVerify"].asString() == "true";
 	if(!alertContactNode["ReissueSendNotice"].isNull())
 		alertContact_.reissueSendNotice = std::stol(alertContactNode["ReissueSendNotice"].asString());
+	if(!alertContactNode["isEmailVerify"].isNull())
+		alertContact_.isEmailVerify = alertContactNode["isEmailVerify"].asString() == "true";
+	if(!alertContactNode["DingRobotUrl"].isNull())
+		alertContact_.dingRobotUrl = alertContactNode["DingRobotUrl"].asString();
 
 }
 

@@ -79,6 +79,15 @@ void SearchTracesByPageRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+bool SearchTracesByPageRequest::getIsError() const {
+  return isError_;
+}
+
+void SearchTracesByPageRequest::setIsError(bool isError) {
+  isError_ = isError;
+  setParameter(std::string("IsError"), isError ? "true" : "false");
+}
+
 std::vector<SearchTracesByPageRequest::Tags> SearchTracesByPageRequest::getTags() const {
   return tags_;
 }

@@ -61,6 +61,30 @@ void ListTraceAppsResult::parse(const std::string &payload)
 			traceAppsObject.userId = valueTraceAppsTraceApp["UserId"].asString();
 		if(!valueTraceAppsTraceApp["RegionId"].isNull())
 			traceAppsObject.regionId = valueTraceAppsTraceApp["RegionId"].asString();
+		if(!valueTraceAppsTraceApp["ResourceGroupId"].isNull())
+			traceAppsObject.resourceGroupId = valueTraceAppsTraceApp["ResourceGroupId"].asString();
+		if(!valueTraceAppsTraceApp["Source"].isNull())
+			traceAppsObject.source = valueTraceAppsTraceApp["Source"].asString();
+		if(!valueTraceAppsTraceApp["WorkloadName"].isNull())
+			traceAppsObject.workloadName = valueTraceAppsTraceApp["WorkloadName"].asString();
+		if(!valueTraceAppsTraceApp["WorkloadKind"].isNull())
+			traceAppsObject.workloadKind = valueTraceAppsTraceApp["WorkloadKind"].asString();
+		if(!valueTraceAppsTraceApp["Namespace"].isNull())
+			traceAppsObject._namespace = valueTraceAppsTraceApp["Namespace"].asString();
+		if(!valueTraceAppsTraceApp["ClusterId"].isNull())
+			traceAppsObject.clusterId = valueTraceAppsTraceApp["ClusterId"].asString();
+		if(!valueTraceAppsTraceApp["Language"].isNull())
+			traceAppsObject.language = valueTraceAppsTraceApp["Language"].asString();
+		auto allTagsNode = valueTraceAppsTraceApp["Tags"]["TagsItem"];
+		for (auto valueTraceAppsTraceAppTagsTagsItem : allTagsNode)
+		{
+			TraceApp::TagsItem tagsObject;
+			if(!valueTraceAppsTraceAppTagsTagsItem["Key"].isNull())
+				tagsObject.key = valueTraceAppsTraceAppTagsTagsItem["Key"].asString();
+			if(!valueTraceAppsTraceAppTagsTagsItem["Value"].isNull())
+				tagsObject.value = valueTraceAppsTraceAppTagsTagsItem["Value"].asString();
+			traceAppsObject.tags.push_back(tagsObject);
+		}
 		auto allLabels = value["Labels"]["Labels"];
 		for (auto value : allLabels)
 			traceAppsObject.labels.push_back(value.asString());

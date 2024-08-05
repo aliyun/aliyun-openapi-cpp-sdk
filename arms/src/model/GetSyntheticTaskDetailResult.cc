@@ -54,19 +54,21 @@ void GetSyntheticTaskDetailResult::parse(const std::string &payload)
 		taskDetail_.intervalType = std::stol(taskDetailNode["IntervalType"].asString());
 	if(!taskDetailNode["IpType"].isNull())
 		taskDetail_.ipType = std::stol(taskDetailNode["IpType"].asString());
-	auto allMinotorListNode = taskDetailNode["MinotorList"]["minotorListItem"];
-	for (auto taskDetailNodeMinotorListminotorListItem : allMinotorListNode)
+	if(!taskDetailNode["MonitorListString"].isNull())
+		taskDetail_.monitorListString = taskDetailNode["MonitorListString"].asString();
+	auto allMonitorListNode = taskDetailNode["MonitorList"]["monitorListItem"];
+	for (auto taskDetailNodeMonitorListmonitorListItem : allMonitorListNode)
 	{
-		TaskDetail::MinotorListItem minotorListItemObject;
-		if(!taskDetailNodeMinotorListminotorListItem["CityCode"].isNull())
-			minotorListItemObject.cityCode = std::stol(taskDetailNodeMinotorListminotorListItem["CityCode"].asString());
-		if(!taskDetailNodeMinotorListminotorListItem["NetServiceId"].isNull())
-			minotorListItemObject.netServiceId = std::stol(taskDetailNodeMinotorListminotorListItem["NetServiceId"].asString());
-		if(!taskDetailNodeMinotorListminotorListItem["MonitorType"].isNull())
-			minotorListItemObject.monitorType = std::stol(taskDetailNodeMinotorListminotorListItem["MonitorType"].asString());
-		if(!taskDetailNodeMinotorListminotorListItem["SendCount"].isNull())
-			minotorListItemObject.sendCount = std::stol(taskDetailNodeMinotorListminotorListItem["SendCount"].asString());
-		taskDetail_.minotorList.push_back(minotorListItemObject);
+		TaskDetail::MonitorListItem monitorListItemObject;
+		if(!taskDetailNodeMonitorListmonitorListItem["CityCode"].isNull())
+			monitorListItemObject.cityCode = std::stol(taskDetailNodeMonitorListmonitorListItem["CityCode"].asString());
+		if(!taskDetailNodeMonitorListmonitorListItem["NetServiceId"].isNull())
+			monitorListItemObject.netServiceId = std::stol(taskDetailNodeMonitorListmonitorListItem["NetServiceId"].asString());
+		if(!taskDetailNodeMonitorListmonitorListItem["MonitorType"].isNull())
+			monitorListItemObject.monitorType = std::stol(taskDetailNodeMonitorListmonitorListItem["MonitorType"].asString());
+		if(!taskDetailNodeMonitorListmonitorListItem["SendCount"].isNull())
+			monitorListItemObject.sendCount = std::stol(taskDetailNodeMonitorListmonitorListItem["SendCount"].asString());
+		taskDetail_.monitorList.push_back(monitorListItemObject);
 	}
 	auto extendIntervalNode = taskDetailNode["ExtendInterval"];
 	if(!extendIntervalNode["StartTime"].isNull())
@@ -142,6 +144,8 @@ void GetSyntheticTaskDetailResult::parse(const std::string &payload)
 		taskDetail_.net.netDigSwitch = std::stol(netNode["NetDigSwitch"].asString());
 	if(!netNode["NetDnsServer"].isNull())
 		taskDetail_.net.netDnsServer = std::stol(netNode["NetDnsServer"].asString());
+	if(!netNode["NetDnsTimeout"].isNull())
+		taskDetail_.net.netDnsTimeout = netNode["NetDnsTimeout"].asString();
 	auto navNode = taskDetailNode["Nav"];
 	if(!navNode["NavDisableCache"].isNull())
 		taskDetail_.nav.navDisableCache = std::stol(navNode["NavDisableCache"].asString());
@@ -246,6 +250,33 @@ void GetSyntheticTaskDetailResult::parse(const std::string &payload)
 		taskDetail_.protocol.requestContent.body.urlencoded.key = urlencodedNode["Key"].asString();
 	if(!urlencodedNode["Value"].isNull())
 		taskDetail_.protocol.requestContent.body.urlencoded.value = urlencodedNode["Value"].asString();
+	auto commonParamNode = taskDetailNode["CommonParam"];
+	if(!commonParamNode["AlarmFlag"].isNull())
+		taskDetail_.commonParam.alarmFlag = std::stol(commonParamNode["AlarmFlag"].asString());
+	if(!commonParamNode["AlertPolicyId"].isNull())
+		taskDetail_.commonParam.alertPolicyId = commonParamNode["AlertPolicyId"].asString();
+	if(!commonParamNode["AlertNotifierId"].isNull())
+		taskDetail_.commonParam.alertNotifierId = commonParamNode["AlertNotifierId"].asString();
+	if(!commonParamNode["StartExecutionTime"].isNull())
+		taskDetail_.commonParam.startExecutionTime = commonParamNode["StartExecutionTime"].asString();
+	if(!commonParamNode["MonitorSamples"].isNull())
+		taskDetail_.commonParam.monitorSamples = commonParamNode["MonitorSamples"].asString();
+	auto allAlertListNode = commonParamNode["AlertList"]["alertListItem"];
+	for (auto commonParamNodeAlertListalertListItem : allAlertListNode)
+	{
+		TaskDetail::CommonParam::AlertListItem alertListItemObject;
+		if(!commonParamNodeAlertListalertListItem["Name"].isNull())
+			alertListItemObject.name = commonParamNodeAlertListalertListItem["Name"].asString();
+		if(!commonParamNodeAlertListalertListItem["GeneralAlert"].isNull())
+			alertListItemObject.generalAlert = commonParamNodeAlertListalertListItem["GeneralAlert"].asString();
+		if(!commonParamNodeAlertListalertListItem["SeriousAlert"].isNull())
+			alertListItemObject.seriousAlert = commonParamNodeAlertListalertListItem["SeriousAlert"].asString();
+		if(!commonParamNodeAlertListalertListItem["IsCritical"].isNull())
+			alertListItemObject.isCritical = commonParamNodeAlertListalertListItem["IsCritical"].asString();
+		if(!commonParamNodeAlertListalertListItem["Symbols"].isNull())
+			alertListItemObject.symbols = commonParamNodeAlertListalertListItem["Symbols"].asString();
+		taskDetail_.commonParam.alertList.push_back(alertListItemObject);
+	}
 
 }
 

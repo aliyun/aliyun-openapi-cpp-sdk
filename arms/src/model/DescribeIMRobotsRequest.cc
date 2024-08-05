@@ -25,13 +25,13 @@ DescribeIMRobotsRequest::DescribeIMRobotsRequest()
 
 DescribeIMRobotsRequest::~DescribeIMRobotsRequest() {}
 
-long DescribeIMRobotsRequest::getSize() const {
-  return size_;
+std::string DescribeIMRobotsRequest::getRobotIds() const {
+  return robotIds_;
 }
 
-void DescribeIMRobotsRequest::setSize(long size) {
-  size_ = size;
-  setParameter(std::string("Size"), std::to_string(size));
+void DescribeIMRobotsRequest::setRobotIds(const std::string &robotIds) {
+  robotIds_ = robotIds;
+  setParameter(std::string("RobotIds"), robotIds);
 }
 
 std::string DescribeIMRobotsRequest::getRobotName() const {
@@ -41,6 +41,15 @@ std::string DescribeIMRobotsRequest::getRobotName() const {
 void DescribeIMRobotsRequest::setRobotName(const std::string &robotName) {
   robotName_ = robotName;
   setParameter(std::string("RobotName"), robotName);
+}
+
+long DescribeIMRobotsRequest::getSize() const {
+  return size_;
+}
+
+void DescribeIMRobotsRequest::setSize(long size) {
+  size_ = size;
+  setParameter(std::string("Size"), std::to_string(size));
 }
 
 long DescribeIMRobotsRequest::getPage() const {
