@@ -55,6 +55,14 @@ void ListRtcMPUTaskDetailResult::parse(const std::string &payload)
 			mPUTasksObject.streamURL = valueMPUTasksmpuTask["StreamURL"].asString();
 		if(!valueMPUTasksmpuTask["Region"].isNull())
 			mPUTasksObject.region = valueMPUTasksmpuTask["Region"].asString();
+		auto allMultiStreamURLNode = valueMPUTasksmpuTask["MultiStreamURL"]["MultiStreamURLItem"];
+		for (auto valueMPUTasksmpuTaskMultiStreamURLMultiStreamURLItem : allMultiStreamURLNode)
+		{
+			MpuTask::MultiStreamURLItem multiStreamURLObject;
+			if(!valueMPUTasksmpuTaskMultiStreamURLMultiStreamURLItem["URL"].isNull())
+				multiStreamURLObject.uRL = valueMPUTasksmpuTaskMultiStreamURLMultiStreamURLItem["URL"].asString();
+			mPUTasksObject.multiStreamURL.push_back(multiStreamURLObject);
+		}
 		auto singleSubParamsNode = value["SingleSubParams"];
 		if(!singleSubParamsNode["SourceType"].isNull())
 			mPUTasksObject.singleSubParams.sourceType = singleSubParamsNode["SourceType"].asString();

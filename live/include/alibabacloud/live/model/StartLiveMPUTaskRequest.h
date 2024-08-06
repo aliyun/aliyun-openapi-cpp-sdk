@@ -33,6 +33,9 @@ public:
 		std::string sourceType;
 		std::string userId;
 	};
+	struct MultiStreamURL {
+		std::string uRL;
+	};
 	struct SeiParams {
 		std::string payloadType;
 		struct LayoutVolume {
@@ -106,6 +109,12 @@ public:
 	~StartLiveMPUTaskRequest();
 	SingleSubParams getSingleSubParams() const;
 	void setSingleSubParams(const SingleSubParams &singleSubParams);
+	std::string getTaskId() const;
+	void setTaskId(const std::string &taskId);
+	std::string getStreamURL() const;
+	void setStreamURL(const std::string &streamURL);
+	std::vector<MultiStreamURL> getMultiStreamURL() const;
+	void setMultiStreamURL(const std::vector<MultiStreamURL> &multiStreamURL);
 	SeiParams getSeiParams() const;
 	void setSeiParams(const SeiParams &seiParams);
 	TranscodeParams getTranscodeParams() const;
@@ -118,21 +127,18 @@ public:
 	void setMixMode(const std::string &mixMode);
 	std::string getChannelId() const;
 	void setChannelId(const std::string &channelId);
-	std::string getTaskId() const;
-	void setTaskId(const std::string &taskId);
-	std::string getStreamURL() const;
-	void setStreamURL(const std::string &streamURL);
 
 private:
 	SingleSubParams singleSubParams_;
+	std::string taskId_;
+	std::string streamURL_;
+	std::vector<MultiStreamURL> multiStreamURL_;
 	SeiParams seiParams_;
 	TranscodeParams transcodeParams_;
 	std::string appId_;
 	std::string region_;
 	std::string mixMode_;
 	std::string channelId_;
-	std::string taskId_;
-	std::string streamURL_;
 };
 } // namespace Model
 } // namespace Live

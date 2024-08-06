@@ -36,6 +36,35 @@ void StartLiveMPUTaskRequest::setSingleSubParams(const StartLiveMPUTaskRequest::
   setParameter(std::string("SingleSubParams") + ".UserId", singleSubParams.userId);
 }
 
+std::string StartLiveMPUTaskRequest::getTaskId() const {
+  return taskId_;
+}
+
+void StartLiveMPUTaskRequest::setTaskId(const std::string &taskId) {
+  taskId_ = taskId;
+  setParameter(std::string("TaskId"), taskId);
+}
+
+std::string StartLiveMPUTaskRequest::getStreamURL() const {
+  return streamURL_;
+}
+
+void StartLiveMPUTaskRequest::setStreamURL(const std::string &streamURL) {
+  streamURL_ = streamURL;
+  setParameter(std::string("StreamURL"), streamURL);
+}
+
+std::vector<StartLiveMPUTaskRequest::MultiStreamURL> StartLiveMPUTaskRequest::getMultiStreamURL() const {
+  return multiStreamURL_;
+}
+
+void StartLiveMPUTaskRequest::setMultiStreamURL(const std::vector<StartLiveMPUTaskRequest::MultiStreamURL> &multiStreamURL) {
+  multiStreamURL_ = multiStreamURL;
+  for(int dep1 = 0; dep1 != multiStreamURL.size(); dep1++) {
+    setParameter(std::string("MultiStreamURL") + "." + std::to_string(dep1 + 1) + ".URL", multiStreamURL[dep1].uRL);
+  }
+}
+
 StartLiveMPUTaskRequest::SeiParams StartLiveMPUTaskRequest::getSeiParams() const {
   return seiParams_;
 }
@@ -126,23 +155,5 @@ std::string StartLiveMPUTaskRequest::getChannelId() const {
 void StartLiveMPUTaskRequest::setChannelId(const std::string &channelId) {
   channelId_ = channelId;
   setParameter(std::string("ChannelId"), channelId);
-}
-
-std::string StartLiveMPUTaskRequest::getTaskId() const {
-  return taskId_;
-}
-
-void StartLiveMPUTaskRequest::setTaskId(const std::string &taskId) {
-  taskId_ = taskId;
-  setParameter(std::string("TaskId"), taskId);
-}
-
-std::string StartLiveMPUTaskRequest::getStreamURL() const {
-  return streamURL_;
-}
-
-void StartLiveMPUTaskRequest::setStreamURL(const std::string &streamURL) {
-  streamURL_ = streamURL;
-  setParameter(std::string("StreamURL"), streamURL);
 }
 

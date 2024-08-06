@@ -25,6 +25,17 @@ UpdateLiveMPUTaskRequest::UpdateLiveMPUTaskRequest()
 
 UpdateLiveMPUTaskRequest::~UpdateLiveMPUTaskRequest() {}
 
+std::vector<UpdateLiveMPUTaskRequest::MultiStreamURL> UpdateLiveMPUTaskRequest::getMultiStreamURL() const {
+  return multiStreamURL_;
+}
+
+void UpdateLiveMPUTaskRequest::setMultiStreamURL(const std::vector<UpdateLiveMPUTaskRequest::MultiStreamURL> &multiStreamURL) {
+  multiStreamURL_ = multiStreamURL;
+  for(int dep1 = 0; dep1 != multiStreamURL.size(); dep1++) {
+    setParameter(std::string("MultiStreamURL") + "." + std::to_string(dep1 + 1) + ".URL", multiStreamURL[dep1].uRL);
+  }
+}
+
 UpdateLiveMPUTaskRequest::SingleSubParams UpdateLiveMPUTaskRequest::getSingleSubParams() const {
   return singleSubParams_;
 }

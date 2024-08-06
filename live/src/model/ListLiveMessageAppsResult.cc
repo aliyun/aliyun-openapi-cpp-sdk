@@ -47,20 +47,20 @@ void ListLiveMessageAppsResult::parse(const std::string &payload)
 			appListObject.appId = valueAppListApps["AppId"].asString();
 		if(!valueAppListApps["AppKey"].isNull())
 			appListObject.appKey = valueAppListApps["AppKey"].asString();
-		if(!valueAppListApps["AppName"].isNull())
-			appListObject.appName = valueAppListApps["AppName"].asString();
 		if(!valueAppListApps["AppSign"].isNull())
 			appListObject.appSign = valueAppListApps["AppSign"].asString();
-		if(!valueAppListApps["CreateTime"].isNull())
-			appListObject.createTime = std::stol(valueAppListApps["CreateTime"].asString());
-		if(!valueAppListApps["DataCenter"].isNull())
-			appListObject.dataCenter = valueAppListApps["DataCenter"].asString();
 		if(!valueAppListApps["Disable"].isNull())
 			appListObject.disable = valueAppListApps["Disable"].asString();
+		if(!valueAppListApps["AppName"].isNull())
+			appListObject.appName = valueAppListApps["AppName"].asString();
+		if(!valueAppListApps["CreateTime"].isNull())
+			appListObject.createTime = std::stol(valueAppListApps["CreateTime"].asString());
 		if(!valueAppListApps["ModifyTime"].isNull())
 			appListObject.modifyTime = std::stol(valueAppListApps["ModifyTime"].asString());
 		if(!valueAppListApps["MsgLifeCycle"].isNull())
 			appListObject.msgLifeCycle = std::stoi(valueAppListApps["MsgLifeCycle"].asString());
+		if(!valueAppListApps["DataCenter"].isNull())
+			appListObject.dataCenter = valueAppListApps["DataCenter"].asString();
 		appList_.push_back(appListObject);
 	}
 	if(!value["HasMore"].isNull())

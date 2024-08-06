@@ -28,6 +28,9 @@ namespace Live {
 namespace Model {
 class ALIBABACLOUD_LIVE_EXPORT UpdateLiveMPUTaskRequest : public RpcServiceRequest {
 public:
+	struct MultiStreamURL {
+		std::string uRL;
+	};
 	struct SingleSubParams {
 		std::string streamType;
 		std::string sourceType;
@@ -103,6 +106,8 @@ public:
 	};
 	UpdateLiveMPUTaskRequest();
 	~UpdateLiveMPUTaskRequest();
+	std::vector<MultiStreamURL> getMultiStreamURL() const;
+	void setMultiStreamURL(const std::vector<MultiStreamURL> &multiStreamURL);
 	SingleSubParams getSingleSubParams() const;
 	void setSingleSubParams(const SingleSubParams &singleSubParams);
 	SeiParams getSeiParams() const;
@@ -121,6 +126,7 @@ public:
 	void setStreamURL(const std::string &streamURL);
 
 private:
+	std::vector<MultiStreamURL> multiStreamURL_;
 	SingleSubParams singleSubParams_;
 	SeiParams seiParams_;
 	TranscodeParams transcodeParams_;

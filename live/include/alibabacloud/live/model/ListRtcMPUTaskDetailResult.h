@@ -118,6 +118,10 @@ namespace AlibabaCloud
 						PassThrough passThrough;
 						std::string payloadType;
 					};
+					struct MultiStreamURLItem
+					{
+						std::string uRL;
+					};
 					std::string taskId;
 					std::string mixMode;
 					std::string appId;
@@ -126,6 +130,7 @@ namespace AlibabaCloud
 					SingleSubParams singleSubParams;
 					TranscodeParams transcodeParams;
 					std::string channelId;
+					std::vector<MpuTask::MultiStreamURLItem> multiStreamURL;
 					std::string streamURL;
 				};
 
