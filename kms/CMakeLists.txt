@@ -432,6 +432,12 @@ if(CMAKE_HOST_WIN32)
 	set_target_properties(kms
     	PROPERTIES
     		COMPILE_OPTIONS "/bigobj")
+elseif(CMAKE_HOST_APPLE)
+	MESSAGE(STATUS "kms: include & link for MACOS")
+	target_include_directories(kms
+			PRIVATE /usr/local/include)
+	target_link_libraries(kms
+			/usr/local/lib/libjsoncpp.dylib)
 else()
 	target_include_directories(kms
 		PRIVATE /usr/include/jsoncpp)
