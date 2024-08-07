@@ -1815,6 +1815,42 @@ Quickbi_publicClient::ModifyApiDatasourceParametersOutcomeCallable Quickbi_publi
 	return task->get_future();
 }
 
+Quickbi_publicClient::ModifyCopilotEmbedConfigOutcome Quickbi_publicClient::modifyCopilotEmbedConfig(const ModifyCopilotEmbedConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyCopilotEmbedConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyCopilotEmbedConfigOutcome(ModifyCopilotEmbedConfigResult(outcome.result()));
+	else
+		return ModifyCopilotEmbedConfigOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::modifyCopilotEmbedConfigAsync(const ModifyCopilotEmbedConfigRequest& request, const ModifyCopilotEmbedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyCopilotEmbedConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ModifyCopilotEmbedConfigOutcomeCallable Quickbi_publicClient::modifyCopilotEmbedConfigCallable(const ModifyCopilotEmbedConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyCopilotEmbedConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyCopilotEmbedConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::QueryApprovalInfoOutcome Quickbi_publicClient::queryApprovalInfo(const QueryApprovalInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1923,6 +1959,42 @@ Quickbi_publicClient::QueryComponentPerformanceOutcomeCallable Quickbi_publicCli
 	return task->get_future();
 }
 
+Quickbi_publicClient::QueryCopilotEmbedConfigOutcome Quickbi_publicClient::queryCopilotEmbedConfig(const QueryCopilotEmbedConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryCopilotEmbedConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryCopilotEmbedConfigOutcome(QueryCopilotEmbedConfigResult(outcome.result()));
+	else
+		return QueryCopilotEmbedConfigOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryCopilotEmbedConfigAsync(const QueryCopilotEmbedConfigRequest& request, const QueryCopilotEmbedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryCopilotEmbedConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryCopilotEmbedConfigOutcomeCallable Quickbi_publicClient::queryCopilotEmbedConfigCallable(const QueryCopilotEmbedConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryCopilotEmbedConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->queryCopilotEmbedConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::QueryCubeOptimizationOutcome Quickbi_publicClient::queryCubeOptimization(const QueryCubeOptimizationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1989,6 +2061,78 @@ Quickbi_publicClient::QueryCubePerformanceOutcomeCallable Quickbi_publicClient::
 			[this, request]()
 			{
 			return this->queryCubePerformance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::QueryDataOutcome Quickbi_publicClient::queryData(const QueryDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDataOutcome(QueryDataResult(outcome.result()));
+	else
+		return QueryDataOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryDataAsync(const QueryDataRequest& request, const QueryDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryDataOutcomeCallable Quickbi_publicClient::queryDataCallable(const QueryDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDataOutcome()>>(
+			[this, request]()
+			{
+			return this->queryData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::QueryDataRangeOutcome Quickbi_publicClient::queryDataRange(const QueryDataRangeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDataRangeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDataRangeOutcome(QueryDataRangeResult(outcome.result()));
+	else
+		return QueryDataRangeOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryDataRangeAsync(const QueryDataRangeRequest& request, const QueryDataRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDataRange(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryDataRangeOutcomeCallable Quickbi_publicClient::queryDataRangeCallable(const QueryDataRangeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDataRangeOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDataRange(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

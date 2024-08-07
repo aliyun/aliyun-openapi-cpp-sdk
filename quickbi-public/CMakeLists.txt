@@ -119,16 +119,24 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/ListWorkspaceRolesResult.h
 	include/alibabacloud/quickbi-public/model/ModifyApiDatasourceParametersRequest.h
 	include/alibabacloud/quickbi-public/model/ModifyApiDatasourceParametersResult.h
+	include/alibabacloud/quickbi-public/model/ModifyCopilotEmbedConfigRequest.h
+	include/alibabacloud/quickbi-public/model/ModifyCopilotEmbedConfigResult.h
 	include/alibabacloud/quickbi-public/model/QueryApprovalInfoRequest.h
 	include/alibabacloud/quickbi-public/model/QueryApprovalInfoResult.h
 	include/alibabacloud/quickbi-public/model/QueryAuditLogRequest.h
 	include/alibabacloud/quickbi-public/model/QueryAuditLogResult.h
 	include/alibabacloud/quickbi-public/model/QueryComponentPerformanceRequest.h
 	include/alibabacloud/quickbi-public/model/QueryComponentPerformanceResult.h
+	include/alibabacloud/quickbi-public/model/QueryCopilotEmbedConfigRequest.h
+	include/alibabacloud/quickbi-public/model/QueryCopilotEmbedConfigResult.h
 	include/alibabacloud/quickbi-public/model/QueryCubeOptimizationRequest.h
 	include/alibabacloud/quickbi-public/model/QueryCubeOptimizationResult.h
 	include/alibabacloud/quickbi-public/model/QueryCubePerformanceRequest.h
 	include/alibabacloud/quickbi-public/model/QueryCubePerformanceResult.h
+	include/alibabacloud/quickbi-public/model/QueryDataRequest.h
+	include/alibabacloud/quickbi-public/model/QueryDataResult.h
+	include/alibabacloud/quickbi-public/model/QueryDataRangeRequest.h
+	include/alibabacloud/quickbi-public/model/QueryDataRangeResult.h
 	include/alibabacloud/quickbi-public/model/QueryDataServiceRequest.h
 	include/alibabacloud/quickbi-public/model/QueryDataServiceResult.h
 	include/alibabacloud/quickbi-public/model/QueryDataServiceListRequest.h
@@ -318,16 +326,24 @@ set(quickbi-public_src
 	src/model/ListWorkspaceRolesResult.cc
 	src/model/ModifyApiDatasourceParametersRequest.cc
 	src/model/ModifyApiDatasourceParametersResult.cc
+	src/model/ModifyCopilotEmbedConfigRequest.cc
+	src/model/ModifyCopilotEmbedConfigResult.cc
 	src/model/QueryApprovalInfoRequest.cc
 	src/model/QueryApprovalInfoResult.cc
 	src/model/QueryAuditLogRequest.cc
 	src/model/QueryAuditLogResult.cc
 	src/model/QueryComponentPerformanceRequest.cc
 	src/model/QueryComponentPerformanceResult.cc
+	src/model/QueryCopilotEmbedConfigRequest.cc
+	src/model/QueryCopilotEmbedConfigResult.cc
 	src/model/QueryCubeOptimizationRequest.cc
 	src/model/QueryCubeOptimizationResult.cc
 	src/model/QueryCubePerformanceRequest.cc
 	src/model/QueryCubePerformanceResult.cc
+	src/model/QueryDataRequest.cc
+	src/model/QueryDataResult.cc
+	src/model/QueryDataRangeRequest.cc
+	src/model/QueryDataRangeResult.cc
 	src/model/QueryDataServiceRequest.cc
 	src/model/QueryDataServiceResult.cc
 	src/model/QueryDataServiceListRequest.cc

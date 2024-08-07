@@ -120,16 +120,24 @@
 #include "model/ListWorkspaceRolesResult.h"
 #include "model/ModifyApiDatasourceParametersRequest.h"
 #include "model/ModifyApiDatasourceParametersResult.h"
+#include "model/ModifyCopilotEmbedConfigRequest.h"
+#include "model/ModifyCopilotEmbedConfigResult.h"
 #include "model/QueryApprovalInfoRequest.h"
 #include "model/QueryApprovalInfoResult.h"
 #include "model/QueryAuditLogRequest.h"
 #include "model/QueryAuditLogResult.h"
 #include "model/QueryComponentPerformanceRequest.h"
 #include "model/QueryComponentPerformanceResult.h"
+#include "model/QueryCopilotEmbedConfigRequest.h"
+#include "model/QueryCopilotEmbedConfigResult.h"
 #include "model/QueryCubeOptimizationRequest.h"
 #include "model/QueryCubeOptimizationResult.h"
 #include "model/QueryCubePerformanceRequest.h"
 #include "model/QueryCubePerformanceResult.h"
+#include "model/QueryDataRequest.h"
+#include "model/QueryDataResult.h"
+#include "model/QueryDataRangeRequest.h"
+#include "model/QueryDataRangeResult.h"
 #include "model/QueryDataServiceRequest.h"
 #include "model/QueryDataServiceResult.h"
 #include "model/QueryDataServiceListRequest.h"
@@ -374,6 +382,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyApiDatasourceParametersResult> ModifyApiDatasourceParametersOutcome;
 			typedef std::future<ModifyApiDatasourceParametersOutcome> ModifyApiDatasourceParametersOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ModifyApiDatasourceParametersRequest&, const ModifyApiDatasourceParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiDatasourceParametersAsyncHandler;
+			typedef Outcome<Error, Model::ModifyCopilotEmbedConfigResult> ModifyCopilotEmbedConfigOutcome;
+			typedef std::future<ModifyCopilotEmbedConfigOutcome> ModifyCopilotEmbedConfigOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ModifyCopilotEmbedConfigRequest&, const ModifyCopilotEmbedConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCopilotEmbedConfigAsyncHandler;
 			typedef Outcome<Error, Model::QueryApprovalInfoResult> QueryApprovalInfoOutcome;
 			typedef std::future<QueryApprovalInfoOutcome> QueryApprovalInfoOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryApprovalInfoRequest&, const QueryApprovalInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryApprovalInfoAsyncHandler;
@@ -383,12 +394,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryComponentPerformanceResult> QueryComponentPerformanceOutcome;
 			typedef std::future<QueryComponentPerformanceOutcome> QueryComponentPerformanceOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryComponentPerformanceRequest&, const QueryComponentPerformanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryComponentPerformanceAsyncHandler;
+			typedef Outcome<Error, Model::QueryCopilotEmbedConfigResult> QueryCopilotEmbedConfigOutcome;
+			typedef std::future<QueryCopilotEmbedConfigOutcome> QueryCopilotEmbedConfigOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryCopilotEmbedConfigRequest&, const QueryCopilotEmbedConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCopilotEmbedConfigAsyncHandler;
 			typedef Outcome<Error, Model::QueryCubeOptimizationResult> QueryCubeOptimizationOutcome;
 			typedef std::future<QueryCubeOptimizationOutcome> QueryCubeOptimizationOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryCubeOptimizationRequest&, const QueryCubeOptimizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCubeOptimizationAsyncHandler;
 			typedef Outcome<Error, Model::QueryCubePerformanceResult> QueryCubePerformanceOutcome;
 			typedef std::future<QueryCubePerformanceOutcome> QueryCubePerformanceOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryCubePerformanceRequest&, const QueryCubePerformanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCubePerformanceAsyncHandler;
+			typedef Outcome<Error, Model::QueryDataResult> QueryDataOutcome;
+			typedef std::future<QueryDataOutcome> QueryDataOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryDataRequest&, const QueryDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDataAsyncHandler;
+			typedef Outcome<Error, Model::QueryDataRangeResult> QueryDataRangeOutcome;
+			typedef std::future<QueryDataRangeOutcome> QueryDataRangeOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryDataRangeRequest&, const QueryDataRangeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDataRangeAsyncHandler;
 			typedef Outcome<Error, Model::QueryDataServiceResult> QueryDataServiceOutcome;
 			typedef std::future<QueryDataServiceOutcome> QueryDataServiceOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryDataServiceRequest&, const QueryDataServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDataServiceAsyncHandler;
@@ -673,6 +693,9 @@ namespace AlibabaCloud
 			ModifyApiDatasourceParametersOutcome modifyApiDatasourceParameters(const Model::ModifyApiDatasourceParametersRequest &request)const;
 			void modifyApiDatasourceParametersAsync(const Model::ModifyApiDatasourceParametersRequest& request, const ModifyApiDatasourceParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyApiDatasourceParametersOutcomeCallable modifyApiDatasourceParametersCallable(const Model::ModifyApiDatasourceParametersRequest& request) const;
+			ModifyCopilotEmbedConfigOutcome modifyCopilotEmbedConfig(const Model::ModifyCopilotEmbedConfigRequest &request)const;
+			void modifyCopilotEmbedConfigAsync(const Model::ModifyCopilotEmbedConfigRequest& request, const ModifyCopilotEmbedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyCopilotEmbedConfigOutcomeCallable modifyCopilotEmbedConfigCallable(const Model::ModifyCopilotEmbedConfigRequest& request) const;
 			QueryApprovalInfoOutcome queryApprovalInfo(const Model::QueryApprovalInfoRequest &request)const;
 			void queryApprovalInfoAsync(const Model::QueryApprovalInfoRequest& request, const QueryApprovalInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryApprovalInfoOutcomeCallable queryApprovalInfoCallable(const Model::QueryApprovalInfoRequest& request) const;
@@ -682,12 +705,21 @@ namespace AlibabaCloud
 			QueryComponentPerformanceOutcome queryComponentPerformance(const Model::QueryComponentPerformanceRequest &request)const;
 			void queryComponentPerformanceAsync(const Model::QueryComponentPerformanceRequest& request, const QueryComponentPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryComponentPerformanceOutcomeCallable queryComponentPerformanceCallable(const Model::QueryComponentPerformanceRequest& request) const;
+			QueryCopilotEmbedConfigOutcome queryCopilotEmbedConfig(const Model::QueryCopilotEmbedConfigRequest &request)const;
+			void queryCopilotEmbedConfigAsync(const Model::QueryCopilotEmbedConfigRequest& request, const QueryCopilotEmbedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryCopilotEmbedConfigOutcomeCallable queryCopilotEmbedConfigCallable(const Model::QueryCopilotEmbedConfigRequest& request) const;
 			QueryCubeOptimizationOutcome queryCubeOptimization(const Model::QueryCubeOptimizationRequest &request)const;
 			void queryCubeOptimizationAsync(const Model::QueryCubeOptimizationRequest& request, const QueryCubeOptimizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryCubeOptimizationOutcomeCallable queryCubeOptimizationCallable(const Model::QueryCubeOptimizationRequest& request) const;
 			QueryCubePerformanceOutcome queryCubePerformance(const Model::QueryCubePerformanceRequest &request)const;
 			void queryCubePerformanceAsync(const Model::QueryCubePerformanceRequest& request, const QueryCubePerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryCubePerformanceOutcomeCallable queryCubePerformanceCallable(const Model::QueryCubePerformanceRequest& request) const;
+			QueryDataOutcome queryData(const Model::QueryDataRequest &request)const;
+			void queryDataAsync(const Model::QueryDataRequest& request, const QueryDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDataOutcomeCallable queryDataCallable(const Model::QueryDataRequest& request) const;
+			QueryDataRangeOutcome queryDataRange(const Model::QueryDataRangeRequest &request)const;
+			void queryDataRangeAsync(const Model::QueryDataRangeRequest& request, const QueryDataRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDataRangeOutcomeCallable queryDataRangeCallable(const Model::QueryDataRangeRequest& request) const;
 			QueryDataServiceOutcome queryDataService(const Model::QueryDataServiceRequest &request)const;
 			void queryDataServiceAsync(const Model::QueryDataServiceRequest& request, const QueryDataServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDataServiceOutcomeCallable queryDataServiceCallable(const Model::QueryDataServiceRequest& request) const;
