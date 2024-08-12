@@ -61,15 +61,6 @@ void CreateCustomImageRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
-std::string CreateCustomImageRequest::getResoureGroupId() const {
-  return resoureGroupId_;
-}
-
-void CreateCustomImageRequest::setResoureGroupId(const std::string &resoureGroupId) {
-  resoureGroupId_ = resoureGroupId;
-  setParameter(std::string("ResoureGroupId"), resoureGroupId);
-}
-
 std::string CreateCustomImageRequest::getPlatform() const {
   return platform_;
 }
@@ -77,6 +68,15 @@ std::string CreateCustomImageRequest::getPlatform() const {
 void CreateCustomImageRequest::setPlatform(const std::string &platform) {
   platform_ = platform;
   setParameter(std::string("Platform"), platform);
+}
+
+std::string CreateCustomImageRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateCustomImageRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string CreateCustomImageRequest::getRegionId() const {

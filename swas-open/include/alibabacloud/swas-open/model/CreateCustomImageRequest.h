@@ -42,10 +42,10 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
-	std::string getResoureGroupId() const;
-	void setResoureGroupId(const std::string &resoureGroupId);
 	std::string getPlatform() const;
 	void setPlatform(const std::string &platform);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getImageName() const;
@@ -60,8 +60,8 @@ private:
 	std::string dataSnapshotId_;
 	std::string clientToken_;
 	std::string description_;
-	std::string resoureGroupId_;
 	std::string platform_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string imageName_;
 	std::vector<Tag> tag_;
