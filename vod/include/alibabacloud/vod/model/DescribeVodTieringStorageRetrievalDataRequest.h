@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_PRELOADVODOBJECTCACHESREQUEST_H_
-#define ALIBABACLOUD_VOD_MODEL_PRELOADVODOBJECTCACHESREQUEST_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_DESCRIBEVODTIERINGSTORAGERETRIEVALDATAREQUEST_H_
+#define ALIBABACLOUD_VOD_MODEL_DESCRIBEVODTIERINGSTORAGERETRIEVALDATAREQUEST_H_
 
 #include <alibabacloud/vod/VodExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,32 @@
 namespace AlibabaCloud {
 namespace Vod {
 namespace Model {
-class ALIBABACLOUD_VOD_EXPORT PreloadVodObjectCachesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_VOD_EXPORT DescribeVodTieringStorageRetrievalDataRequest : public RpcServiceRequest {
 public:
-	PreloadVodObjectCachesRequest();
-	~PreloadVodObjectCachesRequest();
-	std::string getObjectPath() const;
-	void setObjectPath(const std::string &objectPath);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
-	bool getL2Preload() const;
-	void setL2Preload(bool l2Preload);
-	std::string getArea() const;
-	void setArea(const std::string &area);
-	std::string getWithHeader() const;
-	void setWithHeader(const std::string &withHeader);
+	DescribeVodTieringStorageRetrievalDataRequest();
+	~DescribeVodTieringStorageRetrievalDataRequest();
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
+	std::string getSplitBy() const;
+	void setSplitBy(const std::string &splitBy);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getStorageClass() const;
+	void setStorageClass(const std::string &storageClass);
+	std::string getRegion() const;
+	void setRegion(const std::string &region);
 
 private:
-	std::string objectPath_;
-	std::string securityToken_;
-	bool l2Preload_;
-	std::string area_;
-	std::string withHeader_;
+	std::string startTime_;
+	std::string splitBy_;
+	std::string endTime_;
 	long ownerId_;
+	std::string storageClass_;
+	std::string region_;
 };
 } // namespace Model
 } // namespace Vod
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_VOD_MODEL_PRELOADVODOBJECTCACHESREQUEST_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_DESCRIBEVODTIERINGSTORAGERETRIEVALDATAREQUEST_H_

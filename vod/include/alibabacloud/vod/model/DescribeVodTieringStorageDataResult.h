@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_GETAPPINFOSRESULT_H_
-#define ALIBABACLOUD_VOD_MODEL_GETAPPINFOSRESULT_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_DESCRIBEVODTIERINGSTORAGEDATARESULT_H_
+#define ALIBABACLOUD_VOD_MODEL_DESCRIBEVODTIERINGSTORAGEDATARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,38 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT GetAppInfosResult : public ServiceResult
+			class ALIBABACLOUD_VOD_EXPORT DescribeVodTieringStorageDataResult : public ServiceResult
 			{
 			public:
-				struct AppInfo
+				struct DataModule
 				{
-					std::string status;
-					std::string type;
-					std::string description;
-					std::string appId;
-					std::string resourceGroupId;
-					std::string creationTime;
-					std::string modificationTime;
-					std::string appName;
+					long lessthanMonthDatasize;
+					long storageUtilization;
+					std::string storageClass;
+					std::string region;
+					std::string timeStamp;
 				};
 
 
-				GetAppInfosResult();
-				explicit GetAppInfosResult(const std::string &payload);
-				~GetAppInfosResult();
-				std::vector<AppInfo> getAppInfoList()const;
-				std::string getCode()const;
-				std::vector<std::string> getNonExistAppIds()const;
+				DescribeVodTieringStorageDataResult();
+				explicit DescribeVodTieringStorageDataResult(const std::string &payload);
+				~DescribeVodTieringStorageDataResult();
+				std::vector<DataModule> getStorageData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<AppInfo> appInfoList_;
-				std::string code_;
-				std::vector<std::string> nonExistAppIds_;
+				std::vector<DataModule> storageData_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_GETAPPINFOSRESULT_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_DESCRIBEVODTIERINGSTORAGEDATARESULT_H_

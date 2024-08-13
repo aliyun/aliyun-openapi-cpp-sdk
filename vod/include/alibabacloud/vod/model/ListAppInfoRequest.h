@@ -38,6 +38,8 @@ public:
 	void setResourceRealOwnerId(long resourceRealOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	Tag getTag() const;
@@ -50,6 +52,7 @@ public:
 private:
 	long resourceRealOwnerId_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	int pageSize_;
 	Tag tag_;
 	int pageNo_;

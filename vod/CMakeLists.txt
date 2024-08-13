@@ -161,6 +161,10 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DescribeVodRefreshTasksResult.h
 	include/alibabacloud/vod/model/DescribeVodStorageDataRequest.h
 	include/alibabacloud/vod/model/DescribeVodStorageDataResult.h
+	include/alibabacloud/vod/model/DescribeVodTieringStorageDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodTieringStorageDataResult.h
+	include/alibabacloud/vod/model/DescribeVodTieringStorageRetrievalDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodTieringStorageRetrievalDataResult.h
 	include/alibabacloud/vod/model/DescribeVodTranscodeDataRequest.h
 	include/alibabacloud/vod/model/DescribeVodTranscodeDataResult.h
 	include/alibabacloud/vod/model/DescribeVodUserDomainsRequest.h
@@ -500,6 +504,10 @@ set(vod_src
 	src/model/DescribeVodRefreshTasksResult.cc
 	src/model/DescribeVodStorageDataRequest.cc
 	src/model/DescribeVodStorageDataResult.cc
+	src/model/DescribeVodTieringStorageDataRequest.cc
+	src/model/DescribeVodTieringStorageDataResult.cc
+	src/model/DescribeVodTieringStorageRetrievalDataRequest.cc
+	src/model/DescribeVodTieringStorageRetrievalDataResult.cc
 	src/model/DescribeVodTranscodeDataRequest.cc
 	src/model/DescribeVodTranscodeDataResult.cc
 	src/model/DescribeVodUserDomainsRequest.cc

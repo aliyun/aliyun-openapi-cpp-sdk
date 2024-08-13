@@ -58,6 +58,20 @@ void DescribeVodCertificateListResult::parse(const std::string &payload)
 			certObject.certId = std::stol(certificateListModelNodeCertListCert["CertId"].asString());
 		if(!certificateListModelNodeCertListCert["Common"].isNull())
 			certObject.common = certificateListModelNodeCertListCert["Common"].asString();
+		if(!certificateListModelNodeCertListCert["CreateTime"].isNull())
+			certObject.createTime = std::stol(certificateListModelNodeCertListCert["CreateTime"].asString());
+		if(!certificateListModelNodeCertListCert["EndTime"].isNull())
+			certObject.endTime = std::stol(certificateListModelNodeCertListCert["EndTime"].asString());
+		if(!certificateListModelNodeCertListCert["Algorithm"].isNull())
+			certObject.algorithm = certificateListModelNodeCertListCert["Algorithm"].asString();
+		if(!certificateListModelNodeCertListCert["CertIdentifier"].isNull())
+			certObject.certIdentifier = certificateListModelNodeCertListCert["CertIdentifier"].asString();
+		if(!certificateListModelNodeCertListCert["DomainMatchCert"].isNull())
+			certObject.domainMatchCert = certificateListModelNodeCertListCert["DomainMatchCert"].asString() == "true";
+		if(!certificateListModelNodeCertListCert["InstanceId"].isNull())
+			certObject.instanceId = certificateListModelNodeCertListCert["InstanceId"].asString();
+		if(!certificateListModelNodeCertListCert["SignAlgorithm"].isNull())
+			certObject.signAlgorithm = certificateListModelNodeCertListCert["SignAlgorithm"].asString();
 		certificateListModel_.certList.push_back(certObject);
 	}
 

@@ -37,11 +37,18 @@ namespace AlibabaCloud
 					struct Cert
 					{
 						std::string fingerprint;
+						long endTime;
 						std::string issuer;
+						std::string instanceId;
 						long certId;
+						long createTime;
+						std::string algorithm;
+						bool domainMatchCert;
+						std::string common;
+						std::string certIdentifier;
 						std::string certName;
 						long lastTime;
-						std::string common;
+						std::string signAlgorithm;
 					};
 					std::vector<Cert> certList;
 					int count;

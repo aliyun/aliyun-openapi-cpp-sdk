@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					std::string type;
 					std::string description;
 					std::string appId;
+					std::string resourceGroupId;
 					std::string creationTime;
 					std::string modificationTime;
 					std::string regionId;

@@ -43,6 +43,15 @@ void ListAppInfoRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ListAppInfoRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListAppInfoRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 int ListAppInfoRequest::getPageSize() const {
   return pageSize_;
 }

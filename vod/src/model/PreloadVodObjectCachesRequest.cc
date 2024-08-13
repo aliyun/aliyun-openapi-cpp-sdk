@@ -34,15 +34,6 @@ void PreloadVodObjectCachesRequest::setObjectPath(const std::string &objectPath)
   setParameter(std::string("ObjectPath"), objectPath);
 }
 
-long PreloadVodObjectCachesRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void PreloadVodObjectCachesRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string PreloadVodObjectCachesRequest::getSecurityToken() const {
   return securityToken_;
 }
@@ -50,5 +41,41 @@ std::string PreloadVodObjectCachesRequest::getSecurityToken() const {
 void PreloadVodObjectCachesRequest::setSecurityToken(const std::string &securityToken) {
   securityToken_ = securityToken;
   setParameter(std::string("SecurityToken"), securityToken);
+}
+
+bool PreloadVodObjectCachesRequest::getL2Preload() const {
+  return l2Preload_;
+}
+
+void PreloadVodObjectCachesRequest::setL2Preload(bool l2Preload) {
+  l2Preload_ = l2Preload;
+  setParameter(std::string("L2Preload"), l2Preload ? "true" : "false");
+}
+
+std::string PreloadVodObjectCachesRequest::getArea() const {
+  return area_;
+}
+
+void PreloadVodObjectCachesRequest::setArea(const std::string &area) {
+  area_ = area;
+  setParameter(std::string("Area"), area);
+}
+
+std::string PreloadVodObjectCachesRequest::getWithHeader() const {
+  return withHeader_;
+}
+
+void PreloadVodObjectCachesRequest::setWithHeader(const std::string &withHeader) {
+  withHeader_ = withHeader;
+  setParameter(std::string("WithHeader"), withHeader);
+}
+
+long PreloadVodObjectCachesRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void PreloadVodObjectCachesRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

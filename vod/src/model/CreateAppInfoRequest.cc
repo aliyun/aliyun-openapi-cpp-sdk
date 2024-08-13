@@ -52,6 +52,15 @@ void CreateAppInfoRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CreateAppInfoRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateAppInfoRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateAppInfoRequest::getAppName() const {
   return appName_;
 }

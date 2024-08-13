@@ -2571,6 +2571,78 @@ VodClient::DescribeVodStorageDataOutcomeCallable VodClient::describeVodStorageDa
 	return task->get_future();
 }
 
+VodClient::DescribeVodTieringStorageDataOutcome VodClient::describeVodTieringStorageData(const DescribeVodTieringStorageDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodTieringStorageDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodTieringStorageDataOutcome(DescribeVodTieringStorageDataResult(outcome.result()));
+	else
+		return DescribeVodTieringStorageDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodTieringStorageDataAsync(const DescribeVodTieringStorageDataRequest& request, const DescribeVodTieringStorageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodTieringStorageData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodTieringStorageDataOutcomeCallable VodClient::describeVodTieringStorageDataCallable(const DescribeVodTieringStorageDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodTieringStorageDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodTieringStorageData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DescribeVodTieringStorageRetrievalDataOutcome VodClient::describeVodTieringStorageRetrievalData(const DescribeVodTieringStorageRetrievalDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodTieringStorageRetrievalDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodTieringStorageRetrievalDataOutcome(DescribeVodTieringStorageRetrievalDataResult(outcome.result()));
+	else
+		return DescribeVodTieringStorageRetrievalDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodTieringStorageRetrievalDataAsync(const DescribeVodTieringStorageRetrievalDataRequest& request, const DescribeVodTieringStorageRetrievalDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodTieringStorageRetrievalData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodTieringStorageRetrievalDataOutcomeCallable VodClient::describeVodTieringStorageRetrievalDataCallable(const DescribeVodTieringStorageRetrievalDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodTieringStorageRetrievalDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodTieringStorageRetrievalData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::DescribeVodTranscodeDataOutcome VodClient::describeVodTranscodeData(const DescribeVodTranscodeDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -57,6 +57,8 @@ void GetAppInfosResult::parse(const std::string &payload)
 			appInfoListObject.appId = valueAppInfoListAppInfo["AppId"].asString();
 		if(!valueAppInfoListAppInfo["ModificationTime"].isNull())
 			appInfoListObject.modificationTime = valueAppInfoListAppInfo["ModificationTime"].asString();
+		if(!valueAppInfoListAppInfo["ResourceGroupId"].isNull())
+			appInfoListObject.resourceGroupId = valueAppInfoListAppInfo["ResourceGroupId"].asString();
 		appInfoList_.push_back(appInfoListObject);
 	}
 	auto allNonExistAppIds = value["NonExistAppIds"]["AppId"];

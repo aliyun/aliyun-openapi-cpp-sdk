@@ -162,6 +162,10 @@
 #include "model/DescribeVodRefreshTasksResult.h"
 #include "model/DescribeVodStorageDataRequest.h"
 #include "model/DescribeVodStorageDataResult.h"
+#include "model/DescribeVodTieringStorageDataRequest.h"
+#include "model/DescribeVodTieringStorageDataResult.h"
+#include "model/DescribeVodTieringStorageRetrievalDataRequest.h"
+#include "model/DescribeVodTieringStorageRetrievalDataResult.h"
 #include "model/DescribeVodTranscodeDataRequest.h"
 #include "model/DescribeVodTranscodeDataResult.h"
 #include "model/DescribeVodUserDomainsRequest.h"
@@ -577,6 +581,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVodStorageDataResult> DescribeVodStorageDataOutcome;
 			typedef std::future<DescribeVodStorageDataOutcome> DescribeVodStorageDataOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodStorageDataRequest&, const DescribeVodStorageDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodStorageDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodTieringStorageDataResult> DescribeVodTieringStorageDataOutcome;
+			typedef std::future<DescribeVodTieringStorageDataOutcome> DescribeVodTieringStorageDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodTieringStorageDataRequest&, const DescribeVodTieringStorageDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodTieringStorageDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodTieringStorageRetrievalDataResult> DescribeVodTieringStorageRetrievalDataOutcome;
+			typedef std::future<DescribeVodTieringStorageRetrievalDataOutcome> DescribeVodTieringStorageRetrievalDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodTieringStorageRetrievalDataRequest&, const DescribeVodTieringStorageRetrievalDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodTieringStorageRetrievalDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVodTranscodeDataResult> DescribeVodTranscodeDataOutcome;
 			typedef std::future<DescribeVodTranscodeDataOutcome> DescribeVodTranscodeDataOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodTranscodeDataRequest&, const DescribeVodTranscodeDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodTranscodeDataAsyncHandler;
@@ -1086,6 +1096,12 @@ namespace AlibabaCloud
 			DescribeVodStorageDataOutcome describeVodStorageData(const Model::DescribeVodStorageDataRequest &request)const;
 			void describeVodStorageDataAsync(const Model::DescribeVodStorageDataRequest& request, const DescribeVodStorageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodStorageDataOutcomeCallable describeVodStorageDataCallable(const Model::DescribeVodStorageDataRequest& request) const;
+			DescribeVodTieringStorageDataOutcome describeVodTieringStorageData(const Model::DescribeVodTieringStorageDataRequest &request)const;
+			void describeVodTieringStorageDataAsync(const Model::DescribeVodTieringStorageDataRequest& request, const DescribeVodTieringStorageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodTieringStorageDataOutcomeCallable describeVodTieringStorageDataCallable(const Model::DescribeVodTieringStorageDataRequest& request) const;
+			DescribeVodTieringStorageRetrievalDataOutcome describeVodTieringStorageRetrievalData(const Model::DescribeVodTieringStorageRetrievalDataRequest &request)const;
+			void describeVodTieringStorageRetrievalDataAsync(const Model::DescribeVodTieringStorageRetrievalDataRequest& request, const DescribeVodTieringStorageRetrievalDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodTieringStorageRetrievalDataOutcomeCallable describeVodTieringStorageRetrievalDataCallable(const Model::DescribeVodTieringStorageRetrievalDataRequest& request) const;
 			DescribeVodTranscodeDataOutcome describeVodTranscodeData(const Model::DescribeVodTranscodeDataRequest &request)const;
 			void describeVodTranscodeDataAsync(const Model::DescribeVodTranscodeDataRequest& request, const DescribeVodTranscodeDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodTranscodeDataOutcomeCallable describeVodTranscodeDataCallable(const Model::DescribeVodTranscodeDataRequest& request) const;

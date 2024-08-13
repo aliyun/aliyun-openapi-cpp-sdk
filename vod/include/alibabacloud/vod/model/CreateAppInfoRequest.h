@@ -36,6 +36,8 @@ public:
 	void setResourceRealOwnerId(long resourceRealOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
 
@@ -43,6 +45,7 @@ private:
 	std::string description_;
 	long resourceRealOwnerId_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	std::string appName_;
 };
 } // namespace Model

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_GETAPPINFOSRESULT_H_
-#define ALIBABACLOUD_VOD_MODEL_GETAPPINFOSRESULT_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_DESCRIBEVODTIERINGSTORAGERETRIEVALDATARESULT_H_
+#define ALIBABACLOUD_VOD_MODEL_DESCRIBEVODTIERINGSTORAGERETRIEVALDATARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,38 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT GetAppInfosResult : public ServiceResult
+			class ALIBABACLOUD_VOD_EXPORT DescribeVodTieringStorageRetrievalDataResult : public ServiceResult
 			{
 			public:
-				struct AppInfo
+				struct RetrievalDataItem
 				{
-					std::string status;
-					std::string type;
-					std::string description;
-					std::string appId;
-					std::string resourceGroupId;
-					std::string creationTime;
-					std::string modificationTime;
-					std::string appName;
+					long cABulkRetrievalData;
+					long cAStdRetrievalData;
+					std::string storageClass;
+					std::string region;
+					long cAHighPriorRetrievalData;
+					long retrievalData;
+					std::string timeStamp;
 				};
 
 
-				GetAppInfosResult();
-				explicit GetAppInfosResult(const std::string &payload);
-				~GetAppInfosResult();
-				std::vector<AppInfo> getAppInfoList()const;
-				std::string getCode()const;
-				std::vector<std::string> getNonExistAppIds()const;
+				DescribeVodTieringStorageRetrievalDataResult();
+				explicit DescribeVodTieringStorageRetrievalDataResult(const std::string &payload);
+				~DescribeVodTieringStorageRetrievalDataResult();
+				std::vector<RetrievalDataItem> getRetrievalData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<AppInfo> appInfoList_;
-				std::string code_;
-				std::vector<std::string> nonExistAppIds_;
+				std::vector<RetrievalDataItem> retrievalData_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_GETAPPINFOSRESULT_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_DESCRIBEVODTIERINGSTORAGERETRIEVALDATARESULT_H_

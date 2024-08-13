@@ -76,6 +76,8 @@ void DescribeVodDomainDetailResult::parse(const std::string &payload)
 			sourceObject.content = domainDetailNodeSourcesSource["Content"].asString();
 		if(!domainDetailNodeSourcesSource["Enabled"].isNull())
 			sourceObject.enabled = domainDetailNodeSourcesSource["Enabled"].asString();
+		if(!domainDetailNodeSourcesSource["Weight"].isNull())
+			sourceObject.weight = domainDetailNodeSourcesSource["Weight"].asString();
 		domainDetail_.sources.push_back(sourceObject);
 	}
 

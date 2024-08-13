@@ -41,6 +41,7 @@ namespace AlibabaCloud
 						std::string content;
 						int port;
 						std::string enabled;
+						std::string weight;
 					};
 					std::string description;
 					std::string scope;
