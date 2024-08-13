@@ -25,6 +25,15 @@ GenerateDataKeyWithoutPlaintextRequest::GenerateDataKeyWithoutPlaintextRequest()
 
 GenerateDataKeyWithoutPlaintextRequest::~GenerateDataKeyWithoutPlaintextRequest() {}
 
+std::string GenerateDataKeyWithoutPlaintextRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void GenerateDataKeyWithoutPlaintextRequest::setDryRun(const std::string &dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun);
+}
+
 std::string GenerateDataKeyWithoutPlaintextRequest::getKeyId() const {
   return keyId_;
 }

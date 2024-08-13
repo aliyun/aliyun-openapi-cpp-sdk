@@ -30,6 +30,8 @@ class ALIBABACLOUD_KMS_EXPORT AsymmetricVerifyRequest : public RpcServiceRequest
 public:
 	AsymmetricVerifyRequest();
 	~AsymmetricVerifyRequest();
+	std::string getDryRun() const;
+	void setDryRun(const std::string &dryRun);
 	std::string getKeyVersionId() const;
 	void setKeyVersionId(const std::string &keyVersionId);
 	std::string getKeyId() const;
@@ -42,6 +44,7 @@ public:
 	void setAlgorithm(const std::string &algorithm);
 
 private:
+	std::string dryRun_;
 	std::string keyVersionId_;
 	std::string keyId_;
 	std::string digest_;

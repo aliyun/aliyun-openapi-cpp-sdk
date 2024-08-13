@@ -30,6 +30,8 @@ class ALIBABACLOUD_KMS_EXPORT GenerateAndExportDataKeyRequest : public RpcServic
 public:
 	GenerateAndExportDataKeyRequest();
 	~GenerateAndExportDataKeyRequest();
+	std::string getDryRun() const;
+	void setDryRun(const std::string &dryRun);
 	std::string getKeyId() const;
 	void setKeyId(const std::string &keyId);
 	std::string getKeySpec() const;
@@ -46,6 +48,7 @@ public:
 	void setWrappingKeySpec(const std::string &wrappingKeySpec);
 
 private:
+	std::string dryRun_;
 	std::string keyId_;
 	std::string keySpec_;
 	int numberOfBytes_;

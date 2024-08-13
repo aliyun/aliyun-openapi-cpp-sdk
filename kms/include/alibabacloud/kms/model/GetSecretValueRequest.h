@@ -30,6 +30,8 @@ class ALIBABACLOUD_KMS_EXPORT GetSecretValueRequest : public RpcServiceRequest {
 public:
 	GetSecretValueRequest();
 	~GetSecretValueRequest();
+	std::string getDryRun() const;
+	void setDryRun(const std::string &dryRun);
 	std::string getVersionId() const;
 	void setVersionId(const std::string &versionId);
 	std::string getVersionStage() const;
@@ -40,6 +42,7 @@ public:
 	void setFetchExtendedConfig(bool fetchExtendedConfig);
 
 private:
+	std::string dryRun_;
 	std::string versionId_;
 	std::string versionStage_;
 	std::string secretName_;

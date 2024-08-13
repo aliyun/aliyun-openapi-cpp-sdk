@@ -32,6 +32,8 @@ public:
 	~ReEncryptRequest();
 	std::string getDestinationEncryptionContext() const;
 	void setDestinationEncryptionContext(const std::string &destinationEncryptionContext);
+	std::string getDryRun() const;
+	void setDryRun(const std::string &dryRun);
 	std::string getSourceKeyId() const;
 	void setSourceKeyId(const std::string &sourceKeyId);
 	std::string getSourceEncryptionAlgorithm() const;
@@ -47,6 +49,7 @@ public:
 
 private:
 	std::string destinationEncryptionContext_;
+	std::string dryRun_;
 	std::string sourceKeyId_;
 	std::string sourceEncryptionAlgorithm_;
 	std::string sourceKeyVersionId_;

@@ -30,6 +30,8 @@ class ALIBABACLOUD_KMS_EXPORT ExportDataKeyRequest : public RpcServiceRequest {
 public:
 	ExportDataKeyRequest();
 	~ExportDataKeyRequest();
+	std::string getDryRun() const;
+	void setDryRun(const std::string &dryRun);
 	std::string getPublicKeyBlob() const;
 	void setPublicKeyBlob(const std::string &publicKeyBlob);
 	std::string getEncryptionContext() const;
@@ -42,6 +44,7 @@ public:
 	void setWrappingKeySpec(const std::string &wrappingKeySpec);
 
 private:
+	std::string dryRun_;
 	std::string publicKeyBlob_;
 	std::string encryptionContext_;
 	std::string wrappingAlgorithm_;

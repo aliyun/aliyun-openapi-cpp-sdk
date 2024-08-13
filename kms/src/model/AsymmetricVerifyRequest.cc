@@ -25,6 +25,15 @@ AsymmetricVerifyRequest::AsymmetricVerifyRequest()
 
 AsymmetricVerifyRequest::~AsymmetricVerifyRequest() {}
 
+std::string AsymmetricVerifyRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void AsymmetricVerifyRequest::setDryRun(const std::string &dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun);
+}
+
 std::string AsymmetricVerifyRequest::getKeyVersionId() const {
   return keyVersionId_;
 }

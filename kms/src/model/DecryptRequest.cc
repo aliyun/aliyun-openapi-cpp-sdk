@@ -25,6 +25,15 @@ DecryptRequest::DecryptRequest()
 
 DecryptRequest::~DecryptRequest() {}
 
+std::string DecryptRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void DecryptRequest::setDryRun(const std::string &dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun);
+}
+
 std::string DecryptRequest::getEncryptionContext() const {
   return encryptionContext_;
 }

@@ -25,6 +25,15 @@ GetSecretValueRequest::GetSecretValueRequest()
 
 GetSecretValueRequest::~GetSecretValueRequest() {}
 
+std::string GetSecretValueRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void GetSecretValueRequest::setDryRun(const std::string &dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun);
+}
+
 std::string GetSecretValueRequest::getVersionId() const {
   return versionId_;
 }

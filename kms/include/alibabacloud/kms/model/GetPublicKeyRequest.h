@@ -30,12 +30,15 @@ class ALIBABACLOUD_KMS_EXPORT GetPublicKeyRequest : public RpcServiceRequest {
 public:
 	GetPublicKeyRequest();
 	~GetPublicKeyRequest();
+	std::string getDryRun() const;
+	void setDryRun(const std::string &dryRun);
 	std::string getKeyVersionId() const;
 	void setKeyVersionId(const std::string &keyVersionId);
 	std::string getKeyId() const;
 	void setKeyId(const std::string &keyId);
 
 private:
+	std::string dryRun_;
 	std::string keyVersionId_;
 	std::string keyId_;
 };

@@ -30,6 +30,8 @@ class ALIBABACLOUD_KMS_EXPORT EncryptRequest : public RpcServiceRequest {
 public:
 	EncryptRequest();
 	~EncryptRequest();
+	std::string getDryRun() const;
+	void setDryRun(const std::string &dryRun);
 	std::string getKeyId() const;
 	void setKeyId(const std::string &keyId);
 	std::string getPlaintext() const;
@@ -38,6 +40,7 @@ public:
 	void setEncryptionContext(const std::string &encryptionContext);
 
 private:
+	std::string dryRun_;
 	std::string keyId_;
 	std::string plaintext_;
 	std::string encryptionContext_;

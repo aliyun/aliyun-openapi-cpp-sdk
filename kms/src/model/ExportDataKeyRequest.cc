@@ -25,6 +25,15 @@ ExportDataKeyRequest::ExportDataKeyRequest()
 
 ExportDataKeyRequest::~ExportDataKeyRequest() {}
 
+std::string ExportDataKeyRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void ExportDataKeyRequest::setDryRun(const std::string &dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun);
+}
+
 std::string ExportDataKeyRequest::getPublicKeyBlob() const {
   return publicKeyBlob_;
 }

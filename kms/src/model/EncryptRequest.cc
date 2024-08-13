@@ -25,6 +25,15 @@ EncryptRequest::EncryptRequest()
 
 EncryptRequest::~EncryptRequest() {}
 
+std::string EncryptRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void EncryptRequest::setDryRun(const std::string &dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun);
+}
+
 std::string EncryptRequest::getKeyId() const {
   return keyId_;
 }

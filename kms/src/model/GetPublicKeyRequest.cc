@@ -25,6 +25,15 @@ GetPublicKeyRequest::GetPublicKeyRequest()
 
 GetPublicKeyRequest::~GetPublicKeyRequest() {}
 
+std::string GetPublicKeyRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void GetPublicKeyRequest::setDryRun(const std::string &dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun);
+}
+
 std::string GetPublicKeyRequest::getKeyVersionId() const {
   return keyVersionId_;
 }

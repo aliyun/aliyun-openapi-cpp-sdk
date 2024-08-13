@@ -25,6 +25,15 @@ GenerateDataKeyRequest::GenerateDataKeyRequest()
 
 GenerateDataKeyRequest::~GenerateDataKeyRequest() {}
 
+std::string GenerateDataKeyRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void GenerateDataKeyRequest::setDryRun(const std::string &dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun);
+}
+
 std::string GenerateDataKeyRequest::getKeyId() const {
   return keyId_;
 }

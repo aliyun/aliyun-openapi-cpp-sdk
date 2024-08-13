@@ -34,6 +34,15 @@ void ReEncryptRequest::setDestinationEncryptionContext(const std::string &destin
   setParameter(std::string("DestinationEncryptionContext"), destinationEncryptionContext);
 }
 
+std::string ReEncryptRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void ReEncryptRequest::setDryRun(const std::string &dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun);
+}
+
 std::string ReEncryptRequest::getSourceKeyId() const {
   return sourceKeyId_;
 }

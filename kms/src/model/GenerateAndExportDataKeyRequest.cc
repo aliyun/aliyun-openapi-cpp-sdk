@@ -25,6 +25,15 @@ GenerateAndExportDataKeyRequest::GenerateAndExportDataKeyRequest()
 
 GenerateAndExportDataKeyRequest::~GenerateAndExportDataKeyRequest() {}
 
+std::string GenerateAndExportDataKeyRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void GenerateAndExportDataKeyRequest::setDryRun(const std::string &dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun);
+}
+
 std::string GenerateAndExportDataKeyRequest::getKeyId() const {
   return keyId_;
 }

@@ -25,6 +25,15 @@ AsymmetricEncryptRequest::AsymmetricEncryptRequest()
 
 AsymmetricEncryptRequest::~AsymmetricEncryptRequest() {}
 
+std::string AsymmetricEncryptRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void AsymmetricEncryptRequest::setDryRun(const std::string &dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun);
+}
+
 std::string AsymmetricEncryptRequest::getKeyVersionId() const {
   return keyVersionId_;
 }

@@ -25,6 +25,15 @@ AsymmetricSignRequest::AsymmetricSignRequest()
 
 AsymmetricSignRequest::~AsymmetricSignRequest() {}
 
+std::string AsymmetricSignRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void AsymmetricSignRequest::setDryRun(const std::string &dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun);
+}
+
 std::string AsymmetricSignRequest::getKeyVersionId() const {
   return keyVersionId_;
 }
