@@ -34,8 +34,6 @@
 #include "model/AttachWhitelistTemplateToInstanceResult.h"
 #include "model/CalculateDBInstanceWeightRequest.h"
 #include "model/CalculateDBInstanceWeightResult.h"
-#include "model/CancelImportRequest.h"
-#include "model/CancelImportResult.h"
 #include "model/CheckAccountNameAvailableRequest.h"
 #include "model/CheckAccountNameAvailableResult.h"
 #include "model/CheckCloudResourceAuthorizedRequest.h"
@@ -448,8 +446,6 @@
 #include "model/ModifyDBInstanceAutoUpgradeMinorVersionResult.h"
 #include "model/ModifyDBInstanceConfigRequest.h"
 #include "model/ModifyDBInstanceConfigResult.h"
-#include "model/ModifyDBInstanceConnectionModeRequest.h"
-#include "model/ModifyDBInstanceConnectionModeResult.h"
 #include "model/ModifyDBInstanceConnectionStringRequest.h"
 #include "model/ModifyDBInstanceConnectionStringResult.h"
 #include "model/ModifyDBInstanceDelayedReplicationTimeRequest.h"
@@ -476,8 +472,6 @@
 #include "model/ModifyDBInstanceNetworkTypeResult.h"
 #include "model/ModifyDBInstancePayTypeRequest.h"
 #include "model/ModifyDBInstancePayTypeResult.h"
-#include "model/ModifyDBInstanceProxyConfigurationRequest.h"
-#include "model/ModifyDBInstanceProxyConfigurationResult.h"
 #include "model/ModifyDBInstanceSSLRequest.h"
 #include "model/ModifyDBInstanceSSLResult.h"
 #include "model/ModifyDBInstanceSecurityGroupRuleRequest.h"
@@ -588,8 +582,6 @@
 #include "model/SwitchDBInstanceNetTypeResult.h"
 #include "model/SwitchDBInstanceVpcRequest.h"
 #include "model/SwitchDBInstanceVpcResult.h"
-#include "model/SwitchGuardToMasterInstanceRequest.h"
-#include "model/SwitchGuardToMasterInstanceResult.h"
 #include "model/TagResourcesRequest.h"
 #include "model/TagResourcesResult.h"
 #include "model/TerminateMigrateTaskRequest.h"
@@ -641,9 +633,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CalculateDBInstanceWeightResult> CalculateDBInstanceWeightOutcome;
 			typedef std::future<CalculateDBInstanceWeightOutcome> CalculateDBInstanceWeightOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CalculateDBInstanceWeightRequest&, const CalculateDBInstanceWeightOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CalculateDBInstanceWeightAsyncHandler;
-			typedef Outcome<Error, Model::CancelImportResult> CancelImportOutcome;
-			typedef std::future<CancelImportOutcome> CancelImportOutcomeCallable;
-			typedef std::function<void(const RdsClient*, const Model::CancelImportRequest&, const CancelImportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelImportAsyncHandler;
 			typedef Outcome<Error, Model::CheckAccountNameAvailableResult> CheckAccountNameAvailableOutcome;
 			typedef std::future<CheckAccountNameAvailableOutcome> CheckAccountNameAvailableOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CheckAccountNameAvailableRequest&, const CheckAccountNameAvailableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckAccountNameAvailableAsyncHandler;
@@ -1262,9 +1251,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDBInstanceConfigResult> ModifyDBInstanceConfigOutcome;
 			typedef std::future<ModifyDBInstanceConfigOutcome> ModifyDBInstanceConfigOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyDBInstanceConfigRequest&, const ModifyDBInstanceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceConfigAsyncHandler;
-			typedef Outcome<Error, Model::ModifyDBInstanceConnectionModeResult> ModifyDBInstanceConnectionModeOutcome;
-			typedef std::future<ModifyDBInstanceConnectionModeOutcome> ModifyDBInstanceConnectionModeOutcomeCallable;
-			typedef std::function<void(const RdsClient*, const Model::ModifyDBInstanceConnectionModeRequest&, const ModifyDBInstanceConnectionModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceConnectionModeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDBInstanceConnectionStringResult> ModifyDBInstanceConnectionStringOutcome;
 			typedef std::future<ModifyDBInstanceConnectionStringOutcome> ModifyDBInstanceConnectionStringOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyDBInstanceConnectionStringRequest&, const ModifyDBInstanceConnectionStringOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceConnectionStringAsyncHandler;
@@ -1304,9 +1290,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDBInstancePayTypeResult> ModifyDBInstancePayTypeOutcome;
 			typedef std::future<ModifyDBInstancePayTypeOutcome> ModifyDBInstancePayTypeOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyDBInstancePayTypeRequest&, const ModifyDBInstancePayTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstancePayTypeAsyncHandler;
-			typedef Outcome<Error, Model::ModifyDBInstanceProxyConfigurationResult> ModifyDBInstanceProxyConfigurationOutcome;
-			typedef std::future<ModifyDBInstanceProxyConfigurationOutcome> ModifyDBInstanceProxyConfigurationOutcomeCallable;
-			typedef std::function<void(const RdsClient*, const Model::ModifyDBInstanceProxyConfigurationRequest&, const ModifyDBInstanceProxyConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceProxyConfigurationAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDBInstanceSSLResult> ModifyDBInstanceSSLOutcome;
 			typedef std::future<ModifyDBInstanceSSLOutcome> ModifyDBInstanceSSLOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyDBInstanceSSLRequest&, const ModifyDBInstanceSSLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSSLAsyncHandler;
@@ -1472,9 +1455,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SwitchDBInstanceVpcResult> SwitchDBInstanceVpcOutcome;
 			typedef std::future<SwitchDBInstanceVpcOutcome> SwitchDBInstanceVpcOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::SwitchDBInstanceVpcRequest&, const SwitchDBInstanceVpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchDBInstanceVpcAsyncHandler;
-			typedef Outcome<Error, Model::SwitchGuardToMasterInstanceResult> SwitchGuardToMasterInstanceOutcome;
-			typedef std::future<SwitchGuardToMasterInstanceOutcome> SwitchGuardToMasterInstanceOutcomeCallable;
-			typedef std::function<void(const RdsClient*, const Model::SwitchGuardToMasterInstanceRequest&, const SwitchGuardToMasterInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchGuardToMasterInstanceAsyncHandler;
 			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
 			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
@@ -1534,9 +1514,6 @@ namespace AlibabaCloud
 			CalculateDBInstanceWeightOutcome calculateDBInstanceWeight(const Model::CalculateDBInstanceWeightRequest &request)const;
 			void calculateDBInstanceWeightAsync(const Model::CalculateDBInstanceWeightRequest& request, const CalculateDBInstanceWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CalculateDBInstanceWeightOutcomeCallable calculateDBInstanceWeightCallable(const Model::CalculateDBInstanceWeightRequest& request) const;
-			CancelImportOutcome cancelImport(const Model::CancelImportRequest &request)const;
-			void cancelImportAsync(const Model::CancelImportRequest& request, const CancelImportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CancelImportOutcomeCallable cancelImportCallable(const Model::CancelImportRequest& request) const;
 			CheckAccountNameAvailableOutcome checkAccountNameAvailable(const Model::CheckAccountNameAvailableRequest &request)const;
 			void checkAccountNameAvailableAsync(const Model::CheckAccountNameAvailableRequest& request, const CheckAccountNameAvailableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckAccountNameAvailableOutcomeCallable checkAccountNameAvailableCallable(const Model::CheckAccountNameAvailableRequest& request) const;
@@ -2155,9 +2132,6 @@ namespace AlibabaCloud
 			ModifyDBInstanceConfigOutcome modifyDBInstanceConfig(const Model::ModifyDBInstanceConfigRequest &request)const;
 			void modifyDBInstanceConfigAsync(const Model::ModifyDBInstanceConfigRequest& request, const ModifyDBInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBInstanceConfigOutcomeCallable modifyDBInstanceConfigCallable(const Model::ModifyDBInstanceConfigRequest& request) const;
-			ModifyDBInstanceConnectionModeOutcome modifyDBInstanceConnectionMode(const Model::ModifyDBInstanceConnectionModeRequest &request)const;
-			void modifyDBInstanceConnectionModeAsync(const Model::ModifyDBInstanceConnectionModeRequest& request, const ModifyDBInstanceConnectionModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyDBInstanceConnectionModeOutcomeCallable modifyDBInstanceConnectionModeCallable(const Model::ModifyDBInstanceConnectionModeRequest& request) const;
 			ModifyDBInstanceConnectionStringOutcome modifyDBInstanceConnectionString(const Model::ModifyDBInstanceConnectionStringRequest &request)const;
 			void modifyDBInstanceConnectionStringAsync(const Model::ModifyDBInstanceConnectionStringRequest& request, const ModifyDBInstanceConnectionStringAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBInstanceConnectionStringOutcomeCallable modifyDBInstanceConnectionStringCallable(const Model::ModifyDBInstanceConnectionStringRequest& request) const;
@@ -2197,9 +2171,6 @@ namespace AlibabaCloud
 			ModifyDBInstancePayTypeOutcome modifyDBInstancePayType(const Model::ModifyDBInstancePayTypeRequest &request)const;
 			void modifyDBInstancePayTypeAsync(const Model::ModifyDBInstancePayTypeRequest& request, const ModifyDBInstancePayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBInstancePayTypeOutcomeCallable modifyDBInstancePayTypeCallable(const Model::ModifyDBInstancePayTypeRequest& request) const;
-			ModifyDBInstanceProxyConfigurationOutcome modifyDBInstanceProxyConfiguration(const Model::ModifyDBInstanceProxyConfigurationRequest &request)const;
-			void modifyDBInstanceProxyConfigurationAsync(const Model::ModifyDBInstanceProxyConfigurationRequest& request, const ModifyDBInstanceProxyConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyDBInstanceProxyConfigurationOutcomeCallable modifyDBInstanceProxyConfigurationCallable(const Model::ModifyDBInstanceProxyConfigurationRequest& request) const;
 			ModifyDBInstanceSSLOutcome modifyDBInstanceSSL(const Model::ModifyDBInstanceSSLRequest &request)const;
 			void modifyDBInstanceSSLAsync(const Model::ModifyDBInstanceSSLRequest& request, const ModifyDBInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBInstanceSSLOutcomeCallable modifyDBInstanceSSLCallable(const Model::ModifyDBInstanceSSLRequest& request) const;
@@ -2365,9 +2336,6 @@ namespace AlibabaCloud
 			SwitchDBInstanceVpcOutcome switchDBInstanceVpc(const Model::SwitchDBInstanceVpcRequest &request)const;
 			void switchDBInstanceVpcAsync(const Model::SwitchDBInstanceVpcRequest& request, const SwitchDBInstanceVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SwitchDBInstanceVpcOutcomeCallable switchDBInstanceVpcCallable(const Model::SwitchDBInstanceVpcRequest& request) const;
-			SwitchGuardToMasterInstanceOutcome switchGuardToMasterInstance(const Model::SwitchGuardToMasterInstanceRequest &request)const;
-			void switchGuardToMasterInstanceAsync(const Model::SwitchGuardToMasterInstanceRequest& request, const SwitchGuardToMasterInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SwitchGuardToMasterInstanceOutcomeCallable switchGuardToMasterInstanceCallable(const Model::SwitchGuardToMasterInstanceRequest& request) const;
 			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
 			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;

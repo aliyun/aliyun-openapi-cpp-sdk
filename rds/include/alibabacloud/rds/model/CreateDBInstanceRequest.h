@@ -52,6 +52,8 @@ public:
 	void setSystemDBCharset(const std::string &systemDBCharset);
 	std::string getConnectionString() const;
 	void setConnectionString(const std::string &connectionString);
+	bool getAutoCreateProxy() const;
+	void setAutoCreateProxy(bool autoCreateProxy);
 	std::string getEngineVersion() const;
 	void setEngineVersion(const std::string &engineVersion);
 	bool getDeletionProtection() const;
@@ -172,6 +174,7 @@ private:
 	int dBInstanceStorage_;
 	std::string systemDBCharset_;
 	std::string connectionString_;
+	bool autoCreateProxy_;
 	std::string engineVersion_;
 	bool deletionProtection_;
 	std::string resourceGroupId_;

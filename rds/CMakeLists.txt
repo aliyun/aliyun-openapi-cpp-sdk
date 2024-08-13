@@ -33,8 +33,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/AttachWhitelistTemplateToInstanceResult.h
 	include/alibabacloud/rds/model/CalculateDBInstanceWeightRequest.h
 	include/alibabacloud/rds/model/CalculateDBInstanceWeightResult.h
-	include/alibabacloud/rds/model/CancelImportRequest.h
-	include/alibabacloud/rds/model/CancelImportResult.h
 	include/alibabacloud/rds/model/CheckAccountNameAvailableRequest.h
 	include/alibabacloud/rds/model/CheckAccountNameAvailableResult.h
 	include/alibabacloud/rds/model/CheckCloudResourceAuthorizedRequest.h
@@ -447,8 +445,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifyDBInstanceAutoUpgradeMinorVersionResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceConfigRequest.h
 	include/alibabacloud/rds/model/ModifyDBInstanceConfigResult.h
-	include/alibabacloud/rds/model/ModifyDBInstanceConnectionModeRequest.h
-	include/alibabacloud/rds/model/ModifyDBInstanceConnectionModeResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceConnectionStringRequest.h
 	include/alibabacloud/rds/model/ModifyDBInstanceConnectionStringResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceDelayedReplicationTimeRequest.h
@@ -475,8 +471,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifyDBInstanceNetworkTypeResult.h
 	include/alibabacloud/rds/model/ModifyDBInstancePayTypeRequest.h
 	include/alibabacloud/rds/model/ModifyDBInstancePayTypeResult.h
-	include/alibabacloud/rds/model/ModifyDBInstanceProxyConfigurationRequest.h
-	include/alibabacloud/rds/model/ModifyDBInstanceProxyConfigurationResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceSSLRequest.h
 	include/alibabacloud/rds/model/ModifyDBInstanceSSLResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceSecurityGroupRuleRequest.h
@@ -587,8 +581,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/SwitchDBInstanceNetTypeResult.h
 	include/alibabacloud/rds/model/SwitchDBInstanceVpcRequest.h
 	include/alibabacloud/rds/model/SwitchDBInstanceVpcResult.h
-	include/alibabacloud/rds/model/SwitchGuardToMasterInstanceRequest.h
-	include/alibabacloud/rds/model/SwitchGuardToMasterInstanceResult.h
 	include/alibabacloud/rds/model/TagResourcesRequest.h
 	include/alibabacloud/rds/model/TagResourcesResult.h
 	include/alibabacloud/rds/model/TerminateMigrateTaskRequest.h
@@ -628,8 +620,6 @@ set(rds_src
 	src/model/AttachWhitelistTemplateToInstanceResult.cc
 	src/model/CalculateDBInstanceWeightRequest.cc
 	src/model/CalculateDBInstanceWeightResult.cc
-	src/model/CancelImportRequest.cc
-	src/model/CancelImportResult.cc
 	src/model/CheckAccountNameAvailableRequest.cc
 	src/model/CheckAccountNameAvailableResult.cc
 	src/model/CheckCloudResourceAuthorizedRequest.cc
@@ -1042,8 +1032,6 @@ set(rds_src
 	src/model/ModifyDBInstanceAutoUpgradeMinorVersionResult.cc
 	src/model/ModifyDBInstanceConfigRequest.cc
 	src/model/ModifyDBInstanceConfigResult.cc
-	src/model/ModifyDBInstanceConnectionModeRequest.cc
-	src/model/ModifyDBInstanceConnectionModeResult.cc
 	src/model/ModifyDBInstanceConnectionStringRequest.cc
 	src/model/ModifyDBInstanceConnectionStringResult.cc
 	src/model/ModifyDBInstanceDelayedReplicationTimeRequest.cc
@@ -1070,8 +1058,6 @@ set(rds_src
 	src/model/ModifyDBInstanceNetworkTypeResult.cc
 	src/model/ModifyDBInstancePayTypeRequest.cc
 	src/model/ModifyDBInstancePayTypeResult.cc
-	src/model/ModifyDBInstanceProxyConfigurationRequest.cc
-	src/model/ModifyDBInstanceProxyConfigurationResult.cc
 	src/model/ModifyDBInstanceSSLRequest.cc
 	src/model/ModifyDBInstanceSSLResult.cc
 	src/model/ModifyDBInstanceSecurityGroupRuleRequest.cc
@@ -1182,8 +1168,6 @@ set(rds_src
 	src/model/SwitchDBInstanceNetTypeResult.cc
 	src/model/SwitchDBInstanceVpcRequest.cc
 	src/model/SwitchDBInstanceVpcResult.cc
-	src/model/SwitchGuardToMasterInstanceRequest.cc
-	src/model/SwitchGuardToMasterInstanceResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
 	src/model/TerminateMigrateTaskRequest.cc

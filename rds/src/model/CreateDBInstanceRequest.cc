@@ -79,6 +79,15 @@ void CreateDBInstanceRequest::setConnectionString(const std::string &connectionS
   setParameter(std::string("ConnectionString"), connectionString);
 }
 
+bool CreateDBInstanceRequest::getAutoCreateProxy() const {
+  return autoCreateProxy_;
+}
+
+void CreateDBInstanceRequest::setAutoCreateProxy(bool autoCreateProxy) {
+  autoCreateProxy_ = autoCreateProxy;
+  setParameter(std::string("AutoCreateProxy"), autoCreateProxy ? "true" : "false");
+}
+
 std::string CreateDBInstanceRequest::getEngineVersion() const {
   return engineVersion_;
 }

@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	int getDBInstanceStorage() const;
 	void setDBInstanceStorage(int dBInstanceStorage);
+	bool getAutoCreateProxy() const;
+	void setAutoCreateProxy(bool autoCreateProxy);
 	std::string getEngineVersion() const;
 	void setEngineVersion(const std::string &engineVersion);
 	bool getDeletionProtection() const;
@@ -106,6 +108,7 @@ public:
 private:
 	long resourceOwnerId_;
 	int dBInstanceStorage_;
+	bool autoCreateProxy_;
 	std::string engineVersion_;
 	bool deletionProtection_;
 	std::string resourceGroupId_;

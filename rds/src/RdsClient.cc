@@ -267,42 +267,6 @@ RdsClient::CalculateDBInstanceWeightOutcomeCallable RdsClient::calculateDBInstan
 	return task->get_future();
 }
 
-RdsClient::CancelImportOutcome RdsClient::cancelImport(const CancelImportRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CancelImportOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CancelImportOutcome(CancelImportResult(outcome.result()));
-	else
-		return CancelImportOutcome(outcome.error());
-}
-
-void RdsClient::cancelImportAsync(const CancelImportRequest& request, const CancelImportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, cancelImport(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::CancelImportOutcomeCallable RdsClient::cancelImportCallable(const CancelImportRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CancelImportOutcome()>>(
-			[this, request]()
-			{
-			return this->cancelImport(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::CheckAccountNameAvailableOutcome RdsClient::checkAccountNameAvailable(const CheckAccountNameAvailableRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7719,42 +7683,6 @@ RdsClient::ModifyDBInstanceConfigOutcomeCallable RdsClient::modifyDBInstanceConf
 	return task->get_future();
 }
 
-RdsClient::ModifyDBInstanceConnectionModeOutcome RdsClient::modifyDBInstanceConnectionMode(const ModifyDBInstanceConnectionModeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyDBInstanceConnectionModeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyDBInstanceConnectionModeOutcome(ModifyDBInstanceConnectionModeResult(outcome.result()));
-	else
-		return ModifyDBInstanceConnectionModeOutcome(outcome.error());
-}
-
-void RdsClient::modifyDBInstanceConnectionModeAsync(const ModifyDBInstanceConnectionModeRequest& request, const ModifyDBInstanceConnectionModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyDBInstanceConnectionMode(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::ModifyDBInstanceConnectionModeOutcomeCallable RdsClient::modifyDBInstanceConnectionModeCallable(const ModifyDBInstanceConnectionModeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyDBInstanceConnectionModeOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyDBInstanceConnectionMode(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::ModifyDBInstanceConnectionStringOutcome RdsClient::modifyDBInstanceConnectionString(const ModifyDBInstanceConnectionStringRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8217,42 +8145,6 @@ RdsClient::ModifyDBInstancePayTypeOutcomeCallable RdsClient::modifyDBInstancePay
 			[this, request]()
 			{
 			return this->modifyDBInstancePayType(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::ModifyDBInstanceProxyConfigurationOutcome RdsClient::modifyDBInstanceProxyConfiguration(const ModifyDBInstanceProxyConfigurationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyDBInstanceProxyConfigurationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyDBInstanceProxyConfigurationOutcome(ModifyDBInstanceProxyConfigurationResult(outcome.result()));
-	else
-		return ModifyDBInstanceProxyConfigurationOutcome(outcome.error());
-}
-
-void RdsClient::modifyDBInstanceProxyConfigurationAsync(const ModifyDBInstanceProxyConfigurationRequest& request, const ModifyDBInstanceProxyConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyDBInstanceProxyConfiguration(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::ModifyDBInstanceProxyConfigurationOutcomeCallable RdsClient::modifyDBInstanceProxyConfigurationCallable(const ModifyDBInstanceProxyConfigurationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyDBInstanceProxyConfigurationOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyDBInstanceProxyConfiguration(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -10233,42 +10125,6 @@ RdsClient::SwitchDBInstanceVpcOutcomeCallable RdsClient::switchDBInstanceVpcCall
 			[this, request]()
 			{
 			return this->switchDBInstanceVpc(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::SwitchGuardToMasterInstanceOutcome RdsClient::switchGuardToMasterInstance(const SwitchGuardToMasterInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SwitchGuardToMasterInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SwitchGuardToMasterInstanceOutcome(SwitchGuardToMasterInstanceResult(outcome.result()));
-	else
-		return SwitchGuardToMasterInstanceOutcome(outcome.error());
-}
-
-void RdsClient::switchGuardToMasterInstanceAsync(const SwitchGuardToMasterInstanceRequest& request, const SwitchGuardToMasterInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, switchGuardToMasterInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::SwitchGuardToMasterInstanceOutcomeCallable RdsClient::switchGuardToMasterInstanceCallable(const SwitchGuardToMasterInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SwitchGuardToMasterInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->switchGuardToMasterInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

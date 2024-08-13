@@ -25,13 +25,13 @@ CreateYouhuiForOrderRequest::CreateYouhuiForOrderRequest()
 
 CreateYouhuiForOrderRequest::~CreateYouhuiForOrderRequest() {}
 
-std::string CreateYouhuiForOrderRequest::getResourceOwnerId() const {
+long CreateYouhuiForOrderRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
 
-void CreateYouhuiForOrderRequest::setResourceOwnerId(const std::string &resourceOwnerId) {
+void CreateYouhuiForOrderRequest::setResourceOwnerId(long resourceOwnerId) {
   resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), resourceOwnerId);
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
 std::string CreateYouhuiForOrderRequest::getResourceOwnerAccount() const {

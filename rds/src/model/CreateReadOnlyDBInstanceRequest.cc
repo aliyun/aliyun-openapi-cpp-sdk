@@ -43,6 +43,15 @@ void CreateReadOnlyDBInstanceRequest::setDBInstanceStorage(int dBInstanceStorage
   setParameter(std::string("DBInstanceStorage"), std::to_string(dBInstanceStorage));
 }
 
+bool CreateReadOnlyDBInstanceRequest::getAutoCreateProxy() const {
+  return autoCreateProxy_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setAutoCreateProxy(bool autoCreateProxy) {
+  autoCreateProxy_ = autoCreateProxy;
+  setParameter(std::string("AutoCreateProxy"), autoCreateProxy ? "true" : "false");
+}
+
 std::string CreateReadOnlyDBInstanceRequest::getEngineVersion() const {
   return engineVersion_;
 }

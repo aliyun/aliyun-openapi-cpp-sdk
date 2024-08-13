@@ -30,8 +30,8 @@ class ALIBABACLOUD_RDS_EXPORT CreateYouhuiForOrderRequest : public RpcServiceReq
 public:
 	CreateYouhuiForOrderRequest();
 	~CreateYouhuiForOrderRequest();
-	std::string getResourceOwnerId() const;
-	void setResourceOwnerId(const std::string &resourceOwnerId);
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerId() const;
@@ -46,7 +46,7 @@ public:
 	void setRegionId(const std::string &regionId);
 
 private:
-	std::string resourceOwnerId_;
+	long resourceOwnerId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerId_;
 	long promotionId_;
