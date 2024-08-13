@@ -75,6 +75,8 @@ void ListRtcMPUTaskDetailResult::parse(const std::string &payload)
 		for (auto transcodeParamsNodeUserInfosUserInfo : allUserInfosNode)
 		{
 			MpuTask::TranscodeParams::UserInfo userInfoObject;
+			if(!transcodeParamsNodeUserInfosUserInfo["ChannelId"].isNull())
+				userInfoObject.channelId = transcodeParamsNodeUserInfosUserInfo["ChannelId"].asString();
 			if(!transcodeParamsNodeUserInfosUserInfo["UserId"].isNull())
 				userInfoObject.userId = transcodeParamsNodeUserInfosUserInfo["UserId"].asString();
 			if(!transcodeParamsNodeUserInfosUserInfo["SourceType"].isNull())
@@ -135,6 +137,8 @@ void ListRtcMPUTaskDetailResult::parse(const std::string &payload)
 			auto userInfo1Node = value["UserInfo"];
 			if(!userInfo1Node["SourceType"].isNull())
 				userPaneObject.userInfo1.sourceType = userInfo1Node["SourceType"].asString();
+			if(!userInfo1Node["ChannelId"].isNull())
+				userPaneObject.userInfo1.channelId = userInfo1Node["ChannelId"].asString();
 			if(!userInfo1Node["UserId"].isNull())
 				userPaneObject.userInfo1.userId = userInfo1Node["UserId"].asString();
 			mPUTasksObject.transcodeParams.layout.userPanes.push_back(userPaneObject);
@@ -144,6 +148,8 @@ void ListRtcMPUTaskDetailResult::parse(const std::string &payload)
 			mPUTasksObject.transcodeParams.layout.maxVideoUser.sourceType = maxVideoUserNode["SourceType"].asString();
 		if(!maxVideoUserNode["StreamType"].isNull())
 			mPUTasksObject.transcodeParams.layout.maxVideoUser.streamType = maxVideoUserNode["StreamType"].asString();
+		if(!maxVideoUserNode["ChannelId"].isNull())
+			mPUTasksObject.transcodeParams.layout.maxVideoUser.channelId = maxVideoUserNode["ChannelId"].asString();
 		if(!maxVideoUserNode["UserId"].isNull())
 			mPUTasksObject.transcodeParams.layout.maxVideoUser.userId = maxVideoUserNode["UserId"].asString();
 		auto seiParamsNode = value["SeiParams"];

@@ -68,6 +68,7 @@ namespace AlibabaCloud
 								std::string streamType;
 								std::string userId;
 								std::string sourceType;
+								std::string channelId;
 							};
 							struct UserPane
 							{
@@ -75,6 +76,7 @@ namespace AlibabaCloud
 								{
 									std::string userId;
 									std::string sourceType;
+									std::string channelId;
 								};
 								std::string backgroundImageUrl;
 								std::string renderMode;
@@ -94,6 +96,7 @@ namespace AlibabaCloud
 							std::string streamType;
 							std::string userId;
 							std::string sourceType;
+							std::string channelId;
 						};
 						Background background;
 						Layout layout;

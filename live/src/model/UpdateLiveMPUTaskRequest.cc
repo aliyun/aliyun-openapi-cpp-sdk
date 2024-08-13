@@ -75,6 +75,7 @@ void UpdateLiveMPUTaskRequest::setTranscodeParams(const UpdateLiveMPUTaskRequest
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".Y", transcodeParams.layout.userPanes[dep1].y);
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".UserInfo.SourceType", transcodeParams.layout.userPanes[dep1].userInfo.sourceType);
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".UserInfo.UserId", transcodeParams.layout.userPanes[dep1].userInfo.userId);
+    setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".UserInfo.ChannelId", transcodeParams.layout.userPanes[dep1].userInfo.channelId);
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".RenderMode", transcodeParams.layout.userPanes[dep1].renderMode);
     setParameter(std::string("TranscodeParams") + ".Layout.UserPanes." + std::to_string(dep1 + 1) + ".Height", transcodeParams.layout.userPanes[dep1].height);
   }
@@ -82,12 +83,14 @@ void UpdateLiveMPUTaskRequest::setTranscodeParams(const UpdateLiveMPUTaskRequest
   setParameter(std::string("TranscodeParams") + ".Layout.MaxVideoUser.StreamType", transcodeParams.layout.maxVideoUser.streamType);
   setParameter(std::string("TranscodeParams") + ".Layout.MaxVideoUser.SourceType", transcodeParams.layout.maxVideoUser.sourceType);
   setParameter(std::string("TranscodeParams") + ".Layout.MaxVideoUser.UserId", transcodeParams.layout.maxVideoUser.userId);
+  setParameter(std::string("TranscodeParams") + ".Layout.MaxVideoUser.ChannelId", transcodeParams.layout.maxVideoUser.channelId);
   setParameter(std::string("TranscodeParams") + ".Background.RenderMode", transcodeParams.background.renderMode);
   setParameter(std::string("TranscodeParams") + ".Background.URL", transcodeParams.background.uRL);
   for(int dep1 = 0; dep1 != transcodeParams.userInfos.size(); dep1++) {
     setParameter(std::string("TranscodeParams") + ".UserInfos." + std::to_string(dep1 + 1) + ".StreamType", transcodeParams.userInfos[dep1].streamType);
     setParameter(std::string("TranscodeParams") + ".UserInfos." + std::to_string(dep1 + 1) + ".SourceType", transcodeParams.userInfos[dep1].sourceType);
     setParameter(std::string("TranscodeParams") + ".UserInfos." + std::to_string(dep1 + 1) + ".UserId", transcodeParams.userInfos[dep1].userId);
+    setParameter(std::string("TranscodeParams") + ".UserInfos." + std::to_string(dep1 + 1) + ".ChannelId", transcodeParams.userInfos[dep1].channelId);
   }
   setParameter(std::string("TranscodeParams") + ".EncodeParams.AudioOnly", transcodeParams.encodeParams.audioOnly);
   setParameter(std::string("TranscodeParams") + ".EncodeParams.VideoWidth", transcodeParams.encodeParams.videoWidth);

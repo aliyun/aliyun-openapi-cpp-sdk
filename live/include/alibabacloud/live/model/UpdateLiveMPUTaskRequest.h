@@ -61,6 +61,7 @@ public:
 				struct UserInfo {
 					std::string sourceType;
 					std::string userId;
+					std::string channelId;
 				};
 				UserInfo userInfo;
 				std::string renderMode;
@@ -73,6 +74,7 @@ public:
 				std::string streamType;
 				std::string sourceType;
 				std::string userId;
+				std::string channelId;
 			};
 			MaxVideoUser maxVideoUser;
 		};
@@ -86,6 +88,7 @@ public:
 			std::string streamType;
 			std::string sourceType;
 			std::string userId;
+			std::string channelId;
 		};
 		UserInfosItem userInfosItem;
 		std::vector<UserInfosItem> userInfos;
