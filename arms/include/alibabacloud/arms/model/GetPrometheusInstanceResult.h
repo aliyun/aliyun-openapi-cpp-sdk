@@ -40,13 +40,13 @@ namespace AlibabaCloud
 						std::string tagValue;
 					};
 					int archiveDuration;
+					std::vector<std::string> supportAuthTypes;
 					std::string resourceGroupId;
 					std::string remoteReadIntraUrl;
 					std::string product;
 					std::string remoteWriteIntraUrl;
 					std::string subClustersJson;
 					std::string httpApiInterUrl;
-					std::vector<std::string> surpportAuthTypes;
 					std::string remoteReadInterUrl;
 					std::string pushGatewayInterUrl;
 					std::string clusterName;

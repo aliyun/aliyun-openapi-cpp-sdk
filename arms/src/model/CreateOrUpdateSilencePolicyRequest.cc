@@ -43,6 +43,15 @@ void CreateOrUpdateSilencePolicyRequest::setMatchingRules(const std::string &mat
   setBodyParameter(std::string("MatchingRules"), matchingRules);
 }
 
+std::string CreateOrUpdateSilencePolicyRequest::getTimeSlots() const {
+  return timeSlots_;
+}
+
+void CreateOrUpdateSilencePolicyRequest::setTimeSlots(const std::string &timeSlots) {
+  timeSlots_ = timeSlots;
+  setParameter(std::string("TimeSlots"), timeSlots);
+}
+
 std::string CreateOrUpdateSilencePolicyRequest::getAreaCodes() const {
   return areaCodes_;
 }
@@ -50,6 +59,15 @@ std::string CreateOrUpdateSilencePolicyRequest::getAreaCodes() const {
 void CreateOrUpdateSilencePolicyRequest::setAreaCodes(const std::string &areaCodes) {
   areaCodes_ = areaCodes;
   setBodyParameter(std::string("AreaCodes"), areaCodes);
+}
+
+std::string CreateOrUpdateSilencePolicyRequest::getEffectiveTimeType() const {
+  return effectiveTimeType_;
+}
+
+void CreateOrUpdateSilencePolicyRequest::setEffectiveTimeType(const std::string &effectiveTimeType) {
+  effectiveTimeType_ = effectiveTimeType;
+  setParameter(std::string("EffectiveTimeType"), effectiveTimeType);
 }
 
 std::string CreateOrUpdateSilencePolicyRequest::getRegionId() const {
@@ -86,5 +104,14 @@ std::string CreateOrUpdateSilencePolicyRequest::getState() const {
 void CreateOrUpdateSilencePolicyRequest::setState(const std::string &state) {
   state_ = state;
   setBodyParameter(std::string("State"), state);
+}
+
+std::string CreateOrUpdateSilencePolicyRequest::getTimePeriod() const {
+  return timePeriod_;
+}
+
+void CreateOrUpdateSilencePolicyRequest::setTimePeriod(const std::string &timePeriod) {
+  timePeriod_ = timePeriod;
+  setParameter(std::string("TimePeriod"), timePeriod);
 }
 

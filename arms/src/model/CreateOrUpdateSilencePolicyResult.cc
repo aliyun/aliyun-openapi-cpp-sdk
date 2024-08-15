@@ -46,6 +46,12 @@ void CreateOrUpdateSilencePolicyResult::parse(const std::string &payload)
 		silencePolicy_.name = silencePolicyNode["Name"].asString();
 	if(!silencePolicyNode["State"].isNull())
 		silencePolicy_.state = silencePolicyNode["State"].asString();
+	if(!silencePolicyNode["EffectiveTimeType"].isNull())
+		silencePolicy_.effectiveTimeType = silencePolicyNode["EffectiveTimeType"].asString();
+	if(!silencePolicyNode["TimePeriod"].isNull())
+		silencePolicy_.timePeriod = silencePolicyNode["TimePeriod"].asString();
+	if(!silencePolicyNode["TimeSlots"].isNull())
+		silencePolicy_.timeSlots = silencePolicyNode["TimeSlots"].asString();
 	auto allMatchingRulesNode = silencePolicyNode["MatchingRules"]["matchingRulesItem"];
 	for (auto silencePolicyNodeMatchingRulesmatchingRulesItem : allMatchingRulesNode)
 	{

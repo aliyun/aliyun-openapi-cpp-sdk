@@ -44,9 +44,12 @@ namespace AlibabaCloud
 						};
 						std::vector<MatchingRulesItem::MatchingConditionsItem> matchingConditions;
 					};
+					std::string effectiveTimeType;
 					std::string state;
+					std::string timePeriod;
 					std::vector<MatchingRulesItem> matchingRules;
 					long id;
+					std::string timeSlots;
 					std::string name;
 				};
 

@@ -56,6 +56,12 @@ void ListSilencePoliciesResult::parse(const std::string &payload)
 			policiesObject.name = pageBeanNodeSilencePoliciespolicies["Name"].asString();
 		if(!pageBeanNodeSilencePoliciespolicies["State"].isNull())
 			policiesObject.state = pageBeanNodeSilencePoliciespolicies["State"].asString();
+		if(!pageBeanNodeSilencePoliciespolicies["TimeSlots"].isNull())
+			policiesObject.timeSlots = pageBeanNodeSilencePoliciespolicies["TimeSlots"].asString();
+		if(!pageBeanNodeSilencePoliciespolicies["TimePeriod"].isNull())
+			policiesObject.timePeriod = pageBeanNodeSilencePoliciespolicies["TimePeriod"].asString();
+		if(!pageBeanNodeSilencePoliciespolicies["EffectiveTimeType"].isNull())
+			policiesObject.effectiveTimeType = pageBeanNodeSilencePoliciespolicies["EffectiveTimeType"].asString();
 		auto allMatchingRulesNode = pageBeanNodeSilencePoliciespolicies["MatchingRules"]["matchingRulesItem"];
 		for (auto pageBeanNodeSilencePoliciespoliciesMatchingRulesmatchingRulesItem : allMatchingRulesNode)
 		{

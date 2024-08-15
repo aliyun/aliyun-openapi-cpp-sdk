@@ -106,9 +106,9 @@ void GetPrometheusInstanceResult::parse(const std::string &payload)
 			tagsItemObject.tagValue = dataNodeTagstagsItem["TagValue"].asString();
 		data_.tags.push_back(tagsItemObject);
 	}
-		auto allSurpportAuthTypes = dataNode["SurpportAuthTypes"]["SurpportAuthType"];
-		for (auto value : allSurpportAuthTypes)
-			data_.surpportAuthTypes.push_back(value.asString());
+		auto allSupportAuthTypes = dataNode["SupportAuthTypes"]["SupportAuthType"];
+		for (auto value : allSupportAuthTypes)
+			data_.supportAuthTypes.push_back(value.asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())

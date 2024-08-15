@@ -34,8 +34,12 @@ public:
 	void setProxyUserId(const std::string &proxyUserId);
 	std::string getMatchingRules() const;
 	void setMatchingRules(const std::string &matchingRules);
+	std::string getTimeSlots() const;
+	void setTimeSlots(const std::string &timeSlots);
 	std::string getAreaCodes() const;
 	void setAreaCodes(const std::string &areaCodes);
+	std::string getEffectiveTimeType() const;
+	void setEffectiveTimeType(const std::string &effectiveTimeType);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getName() const;
@@ -44,15 +48,20 @@ public:
 	void setId(long id);
 	std::string getState() const;
 	void setState(const std::string &state);
+	std::string getTimePeriod() const;
+	void setTimePeriod(const std::string &timePeriod);
 
 private:
 	std::string proxyUserId_;
 	std::string matchingRules_;
+	std::string timeSlots_;
 	std::string areaCodes_;
+	std::string effectiveTimeType_;
 	std::string regionId_;
 	std::string name_;
 	long id_;
 	std::string state_;
+	std::string timePeriod_;
 };
 } // namespace Model
 } // namespace ARMS
