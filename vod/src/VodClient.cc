@@ -1923,6 +1923,42 @@ VodClient::DescribeVodDomainLogOutcomeCallable VodClient::describeVodDomainLogCa
 	return task->get_future();
 }
 
+VodClient::DescribeVodDomainMax95BpsDataOutcome VodClient::describeVodDomainMax95BpsData(const DescribeVodDomainMax95BpsDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodDomainMax95BpsDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodDomainMax95BpsDataOutcome(DescribeVodDomainMax95BpsDataResult(outcome.result()));
+	else
+		return DescribeVodDomainMax95BpsDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodDomainMax95BpsDataAsync(const DescribeVodDomainMax95BpsDataRequest& request, const DescribeVodDomainMax95BpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodDomainMax95BpsData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodDomainMax95BpsDataOutcomeCallable VodClient::describeVodDomainMax95BpsDataCallable(const DescribeVodDomainMax95BpsDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodDomainMax95BpsDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodDomainMax95BpsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::DescribeVodDomainQpsDataOutcome VodClient::describeVodDomainQpsData(const DescribeVodDomainQpsDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

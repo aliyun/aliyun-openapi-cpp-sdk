@@ -126,6 +126,8 @@
 #include "model/DescribeVodDomainHitRateDataResult.h"
 #include "model/DescribeVodDomainLogRequest.h"
 #include "model/DescribeVodDomainLogResult.h"
+#include "model/DescribeVodDomainMax95BpsDataRequest.h"
+#include "model/DescribeVodDomainMax95BpsDataResult.h"
 #include "model/DescribeVodDomainQpsDataRequest.h"
 #include "model/DescribeVodDomainQpsDataResult.h"
 #include "model/DescribeVodDomainRealTimeBpsDataRequest.h"
@@ -527,6 +529,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVodDomainLogResult> DescribeVodDomainLogOutcome;
 			typedef std::future<DescribeVodDomainLogOutcome> DescribeVodDomainLogOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainLogRequest&, const DescribeVodDomainLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainLogAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodDomainMax95BpsDataResult> DescribeVodDomainMax95BpsDataOutcome;
+			typedef std::future<DescribeVodDomainMax95BpsDataOutcome> DescribeVodDomainMax95BpsDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainMax95BpsDataRequest&, const DescribeVodDomainMax95BpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainMax95BpsDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVodDomainQpsDataResult> DescribeVodDomainQpsDataOutcome;
 			typedef std::future<DescribeVodDomainQpsDataOutcome> DescribeVodDomainQpsDataOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainQpsDataRequest&, const DescribeVodDomainQpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainQpsDataAsyncHandler;
@@ -1042,6 +1047,9 @@ namespace AlibabaCloud
 			DescribeVodDomainLogOutcome describeVodDomainLog(const Model::DescribeVodDomainLogRequest &request)const;
 			void describeVodDomainLogAsync(const Model::DescribeVodDomainLogRequest& request, const DescribeVodDomainLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodDomainLogOutcomeCallable describeVodDomainLogCallable(const Model::DescribeVodDomainLogRequest& request) const;
+			DescribeVodDomainMax95BpsDataOutcome describeVodDomainMax95BpsData(const Model::DescribeVodDomainMax95BpsDataRequest &request)const;
+			void describeVodDomainMax95BpsDataAsync(const Model::DescribeVodDomainMax95BpsDataRequest& request, const DescribeVodDomainMax95BpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodDomainMax95BpsDataOutcomeCallable describeVodDomainMax95BpsDataCallable(const Model::DescribeVodDomainMax95BpsDataRequest& request) const;
 			DescribeVodDomainQpsDataOutcome describeVodDomainQpsData(const Model::DescribeVodDomainQpsDataRequest &request)const;
 			void describeVodDomainQpsDataAsync(const Model::DescribeVodDomainQpsDataRequest& request, const DescribeVodDomainQpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodDomainQpsDataOutcomeCallable describeVodDomainQpsDataCallable(const Model::DescribeVodDomainQpsDataRequest& request) const;
