@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_UPDATELIVETOPLEVELDOMAINRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_UPDATELIVETOPLEVELDOMAINRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_REMOVELIVEMESSAGEGROUPBANDRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_REMOVELIVEMESSAGEGROUPBANDRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT UpdateLiveTopLevelDomainResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT RemoveLiveMessageGroupBandResult : public ServiceResult
 			{
 			public:
 
 
-				UpdateLiveTopLevelDomainResult();
-				explicit UpdateLiveTopLevelDomainResult(const std::string &payload);
-				~UpdateLiveTopLevelDomainResult();
+				RemoveLiveMessageGroupBandResult();
+				explicit RemoveLiveMessageGroupBandResult(const std::string &payload);
+				~RemoveLiveMessageGroupBandResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_UPDATELIVETOPLEVELDOMAINRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_REMOVELIVEMESSAGEGROUPBANDRESULT_H_

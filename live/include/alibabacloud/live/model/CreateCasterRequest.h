@@ -32,6 +32,8 @@ public:
 	~CreateCasterRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getCasterName() const;
 	void setCasterName(const std::string &casterName);
 	std::string getCasterTemplate() const;
@@ -51,6 +53,7 @@ public:
 
 private:
 	std::string clientToken_;
+	std::string resourceGroupId_;
 	std::string casterName_;
 	std::string casterTemplate_;
 	std::string expireTime_;

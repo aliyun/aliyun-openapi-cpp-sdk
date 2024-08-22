@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					int status;
 					std::string casterTemplate;
 					int channelEnable;
+					int resourceGroupId;
 					std::string createTime;
 					std::string startTime;
 					int normType;
@@ -45,6 +46,7 @@ namespace AlibabaCloud
 					std::string lastModified;
 					std::string purchaseTime;
 					std::string casterName;
+					std::string clientTokenId;
 					std::string chargeType;
 					std::string expireTime;
 					std::string casterId;

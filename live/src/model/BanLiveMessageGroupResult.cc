@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/TagLiveResourcesResult.h>
+#include <alibabacloud/live/model/BanLiveMessageGroupResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-TagLiveResourcesResult::TagLiveResourcesResult() :
+BanLiveMessageGroupResult::BanLiveMessageGroupResult() :
 	ServiceResult()
 {}
 
-TagLiveResourcesResult::TagLiveResourcesResult(const std::string &payload) :
+BanLiveMessageGroupResult::BanLiveMessageGroupResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-TagLiveResourcesResult::~TagLiveResourcesResult()
+BanLiveMessageGroupResult::~BanLiveMessageGroupResult()
 {}
 
-void TagLiveResourcesResult::parse(const std::string &payload)
+void BanLiveMessageGroupResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

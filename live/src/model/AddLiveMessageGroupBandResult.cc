@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/UpdateLiveTopLevelDomainResult.h>
+#include <alibabacloud/live/model/AddLiveMessageGroupBandResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-UpdateLiveTopLevelDomainResult::UpdateLiveTopLevelDomainResult() :
+AddLiveMessageGroupBandResult::AddLiveMessageGroupBandResult() :
 	ServiceResult()
 {}
 
-UpdateLiveTopLevelDomainResult::UpdateLiveTopLevelDomainResult(const std::string &payload) :
+AddLiveMessageGroupBandResult::AddLiveMessageGroupBandResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-UpdateLiveTopLevelDomainResult::~UpdateLiveTopLevelDomainResult()
+AddLiveMessageGroupBandResult::~AddLiveMessageGroupBandResult()
 {}
 
-void UpdateLiveTopLevelDomainResult::parse(const std::string &payload)
+void AddLiveMessageGroupBandResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

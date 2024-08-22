@@ -34,6 +34,8 @@ public:
 	void setStartTime(const std::string &startTime);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getCasterName() const;
 	void setCasterName(const std::string &casterName);
 	int getPageSize() const;
@@ -56,6 +58,7 @@ public:
 private:
 	std::string startTime_;
 	int pageNum_;
+	std::string resourceGroupId_;
 	std::string casterName_;
 	int pageSize_;
 	std::string normType_;

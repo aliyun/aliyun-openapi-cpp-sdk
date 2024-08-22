@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/SetCasterTimedEventResult.h>
+#include <alibabacloud/live/model/UnbanLiveMessageGroupResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-SetCasterTimedEventResult::SetCasterTimedEventResult() :
+UnbanLiveMessageGroupResult::UnbanLiveMessageGroupResult() :
 	ServiceResult()
 {}
 
-SetCasterTimedEventResult::SetCasterTimedEventResult(const std::string &payload) :
+UnbanLiveMessageGroupResult::UnbanLiveMessageGroupResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SetCasterTimedEventResult::~SetCasterTimedEventResult()
+UnbanLiveMessageGroupResult::~UnbanLiveMessageGroupResult()
 {}
 
-void SetCasterTimedEventResult::parse(const std::string &payload)
+void UnbanLiveMessageGroupResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

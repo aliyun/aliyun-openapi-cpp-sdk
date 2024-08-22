@@ -43,6 +43,15 @@ void DescribeCastersRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
+std::string DescribeCastersRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeCastersRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeCastersRequest::getCasterName() const {
   return casterName_;
 }

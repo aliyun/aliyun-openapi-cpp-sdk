@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBEMETERLIVEINTERACTIONDAUREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBEMETERLIVEINTERACTIONDAUREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_REMOVELIVEMESSAGEGROUPBANDREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_REMOVELIVEMESSAGEGROUPBANDREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,26 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT DescribeMeterLiveInteractionDauRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT RemoveLiveMessageGroupBandRequest : public RpcServiceRequest {
 public:
-	DescribeMeterLiveInteractionDauRequest();
-	~DescribeMeterLiveInteractionDauRequest();
-	long getStartTs() const;
-	void setStartTs(long startTs);
-	std::string getServiceArea() const;
-	void setServiceArea(const std::string &serviceArea);
+	RemoveLiveMessageGroupBandRequest();
+	~RemoveLiveMessageGroupBandRequest();
+	std::string getGroupId() const;
+	void setGroupId(const std::string &groupId);
+	std::string getDataCenter() const;
+	void setDataCenter(const std::string &dataCenter);
+	std::vector<std::string> getUnbannedUsers() const;
+	void setUnbannedUsers(const std::vector<std::string> &unbannedUsers);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
-	long getEndTs() const;
-	void setEndTs(long endTs);
-	long getInterval() const;
-	void setInterval(long interval);
 
 private:
-	long startTs_;
-	std::string serviceArea_;
+	std::string groupId_;
+	std::string dataCenter_;
+	std::vector<std::string> unbannedUsers_;
 	std::string appId_;
-	long endTs_;
-	long interval_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBEMETERLIVEINTERACTIONDAUREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_REMOVELIVEMESSAGEGROUPBANDREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_SETCASTERTIMEDEVENTREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_SETCASTERTIMEDEVENTREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_BANLIVEMESSAGEGROUPREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_BANLIVEMESSAGEGROUPREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,26 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT SetCasterTimedEventRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT BanLiveMessageGroupRequest : public RpcServiceRequest {
 public:
-	SetCasterTimedEventRequest();
-	~SetCasterTimedEventRequest();
-	std::string getEventName() const;
-	void setEventName(const std::string &eventName);
-	std::string getStartTimeUTC() const;
-	void setStartTimeUTC(const std::string &startTimeUTC);
-	std::string getCasterId() const;
-	void setCasterId(const std::string &casterId);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
+	BanLiveMessageGroupRequest();
+	~BanLiveMessageGroupRequest();
+	std::string getGroupId() const;
+	void setGroupId(const std::string &groupId);
+	std::vector<std::string> getExceptUsers() const;
+	void setExceptUsers(const std::vector<std::string> &exceptUsers);
+	std::string getDataCenter() const;
+	void setDataCenter(const std::string &dataCenter);
+	std::string getAppId() const;
+	void setAppId(const std::string &appId);
 
 private:
-	std::string eventName_;
-	std::string startTimeUTC_;
-	std::string casterId_;
-	long ownerId_;
+	std::string groupId_;
+	std::vector<std::string> exceptUsers_;
+	std::string dataCenter_;
+	std::string appId_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_SETCASTERTIMEDEVENTREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_BANLIVEMESSAGEGROUPREQUEST_H_

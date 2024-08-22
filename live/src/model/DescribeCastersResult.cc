@@ -71,6 +71,10 @@ void DescribeCastersResult::parse(const std::string &payload)
 			casterListObject.startTime = valueCasterListCaster["StartTime"].asString();
 		if(!valueCasterListCaster["Status"].isNull())
 			casterListObject.status = std::stoi(valueCasterListCaster["Status"].asString());
+		if(!valueCasterListCaster["ResourceGroupId"].isNull())
+			casterListObject.resourceGroupId = std::stoi(valueCasterListCaster["ResourceGroupId"].asString());
+		if(!valueCasterListCaster["ClientTokenId"].isNull())
+			casterListObject.clientTokenId = valueCasterListCaster["ClientTokenId"].asString();
 		casterList_.push_back(casterListObject);
 	}
 	if(!value["Total"].isNull())

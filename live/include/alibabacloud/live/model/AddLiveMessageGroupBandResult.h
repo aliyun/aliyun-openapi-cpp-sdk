@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINTRANSCODEDATARESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINTRANSCODEDATARESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_ADDLIVEMESSAGEGROUPBANDRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_ADDLIVEMESSAGEGROUPBANDRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainTranscodeDataResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT AddLiveMessageGroupBandResult : public ServiceResult
 			{
 			public:
-				struct TranscodeDataInfo
-				{
-					int total;
-					std::string date;
-					std::string detail;
-				};
 
 
-				DescribeLiveDomainTranscodeDataResult();
-				explicit DescribeLiveDomainTranscodeDataResult(const std::string &payload);
-				~DescribeLiveDomainTranscodeDataResult();
-				std::vector<TranscodeDataInfo> getTranscodeDataInfos()const;
+				AddLiveMessageGroupBandResult();
+				explicit AddLiveMessageGroupBandResult(const std::string &payload);
+				~AddLiveMessageGroupBandResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<TranscodeDataInfo> transcodeDataInfos_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINTRANSCODEDATARESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_ADDLIVEMESSAGEGROUPBANDRESULT_H_

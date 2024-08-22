@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBEMETERLIVEINTERACTIONDAURESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBEMETERLIVEINTERACTIONDAURESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_UNBANLIVEMESSAGEGROUPRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_UNBANLIVEMESSAGEGROUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,30 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeMeterLiveInteractionDauResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT UnbanLiveMessageGroupResult : public ServiceResult
 			{
 			public:
-				struct DataItem
-				{
-					double dau;
-					long timestamp;
-				};
 
 
-				DescribeMeterLiveInteractionDauResult();
-				explicit DescribeMeterLiveInteractionDauResult(const std::string &payload);
-				~DescribeMeterLiveInteractionDauResult();
-				std::vector<DataItem> getData()const;
-				double getPeakDau()const;
+				UnbanLiveMessageGroupResult();
+				explicit UnbanLiveMessageGroupResult(const std::string &payload);
+				~UnbanLiveMessageGroupResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DataItem> data_;
-				double peakDau_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBEMETERLIVEINTERACTIONDAURESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_UNBANLIVEMESSAGEGROUPRESULT_H_

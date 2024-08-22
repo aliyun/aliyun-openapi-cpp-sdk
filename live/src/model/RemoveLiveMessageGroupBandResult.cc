@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/UnTagLiveResourcesResult.h>
+#include <alibabacloud/live/model/RemoveLiveMessageGroupBandResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-UnTagLiveResourcesResult::UnTagLiveResourcesResult() :
+RemoveLiveMessageGroupBandResult::RemoveLiveMessageGroupBandResult() :
 	ServiceResult()
 {}
 
-UnTagLiveResourcesResult::UnTagLiveResourcesResult(const std::string &payload) :
+RemoveLiveMessageGroupBandResult::RemoveLiveMessageGroupBandResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-UnTagLiveResourcesResult::~UnTagLiveResourcesResult()
+RemoveLiveMessageGroupBandResult::~RemoveLiveMessageGroupBandResult()
 {}
 
-void UnTagLiveResourcesResult::parse(const std::string &payload)
+void RemoveLiveMessageGroupBandResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

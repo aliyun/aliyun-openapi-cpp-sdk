@@ -34,6 +34,15 @@ void CreateCasterRequest::setClientToken(const std::string &clientToken) {
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string CreateCasterRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateCasterRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateCasterRequest::getCasterName() const {
   return casterName_;
 }

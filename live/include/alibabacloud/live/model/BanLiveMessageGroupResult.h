@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_SETCASTERSYNCGROUPRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_SETCASTERSYNCGROUPRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_BANLIVEMESSAGEGROUPRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_BANLIVEMESSAGEGROUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT SetCasterSyncGroupResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT BanLiveMessageGroupResult : public ServiceResult
 			{
 			public:
 
 
-				SetCasterSyncGroupResult();
-				explicit SetCasterSyncGroupResult(const std::string &payload);
-				~SetCasterSyncGroupResult();
+				BanLiveMessageGroupResult();
+				explicit BanLiveMessageGroupResult(const std::string &payload);
+				~BanLiveMessageGroupResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_SETCASTERSYNCGROUPRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_BANLIVEMESSAGEGROUPRESULT_H_

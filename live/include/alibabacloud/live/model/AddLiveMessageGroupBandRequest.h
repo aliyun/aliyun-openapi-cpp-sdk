@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_SETCASTERSYNCGROUPREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_SETCASTERSYNCGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_ADDLIVEMESSAGEGROUPBANDREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_ADDLIVEMESSAGEGROUPBANDREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,28 +26,26 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT SetCasterSyncGroupRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT AddLiveMessageGroupBandRequest : public RpcServiceRequest {
 public:
-	struct SyncGroup {
-		std::string hostResourceId;
-		int mode;
-		long syncDelayThreshold;
-	};
-	SetCasterSyncGroupRequest();
-	~SetCasterSyncGroupRequest();
-	std::string getCasterId() const;
-	void setCasterId(const std::string &casterId);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
-	std::vector<SyncGroup> getSyncGroup() const;
-	void setSyncGroup(const std::vector<SyncGroup> &syncGroup);
+	AddLiveMessageGroupBandRequest();
+	~AddLiveMessageGroupBandRequest();
+	std::vector<std::string> getBannedUsers() const;
+	void setBannedUsers(const std::vector<std::string> &bannedUsers);
+	std::string getGroupId() const;
+	void setGroupId(const std::string &groupId);
+	std::string getDataCenter() const;
+	void setDataCenter(const std::string &dataCenter);
+	std::string getAppId() const;
+	void setAppId(const std::string &appId);
 
 private:
-	std::string casterId_;
-	long ownerId_;
-	std::vector<SyncGroup> syncGroup_;
+	std::vector<std::string> bannedUsers_;
+	std::string groupId_;
+	std::string dataCenter_;
+	std::string appId_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_SETCASTERSYNCGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_ADDLIVEMESSAGEGROUPBANDREQUEST_H_
