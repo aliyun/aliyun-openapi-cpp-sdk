@@ -34,6 +34,15 @@ void SetLoadBalancerUDPListenerAttributeRequest::setProtocol(const std::string &
   setParameter(std::string("Protocol"), protocol);
 }
 
+int SetLoadBalancerUDPListenerAttributeRequest::getEstablishedTimeout() const {
+  return establishedTimeout_;
+}
+
+void SetLoadBalancerUDPListenerAttributeRequest::setEstablishedTimeout(int establishedTimeout) {
+  establishedTimeout_ = establishedTimeout;
+  setParameter(std::string("EstablishedTimeout"), std::to_string(establishedTimeout));
+}
+
 std::string SetLoadBalancerUDPListenerAttributeRequest::getLoadBalancerId() const {
   return loadBalancerId_;
 }

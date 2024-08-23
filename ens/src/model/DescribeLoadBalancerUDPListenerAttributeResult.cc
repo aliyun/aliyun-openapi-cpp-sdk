@@ -69,6 +69,8 @@ void DescribeLoadBalancerUDPListenerAttributeResult::parse(const std::string &pa
 		healthCheckExp_ = value["HealthCheckExp"].asString();
 	if(!value["EipTransmit"].isNull())
 		eipTransmit_ = value["EipTransmit"].asString();
+	if(!value["EstablishedTimeout"].isNull())
+		establishedTimeout_ = std::stoi(value["EstablishedTimeout"].asString());
 
 }
 
@@ -145,5 +147,10 @@ std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckExp()c
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getEipTransmit()const
 {
 	return eipTransmit_;
+}
+
+int DescribeLoadBalancerUDPListenerAttributeResult::getEstablishedTimeout()const
+{
+	return establishedTimeout_;
 }
 

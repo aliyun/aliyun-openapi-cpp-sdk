@@ -1599,6 +1599,78 @@ EnsClient::CreateSnatEntryOutcomeCallable EnsClient::createSnatEntryCallable(con
 	return task->get_future();
 }
 
+EnsClient::CreateStorageGatewayOutcome EnsClient::createStorageGateway(const CreateStorageGatewayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateStorageGatewayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateStorageGatewayOutcome(CreateStorageGatewayResult(outcome.result()));
+	else
+		return CreateStorageGatewayOutcome(outcome.error());
+}
+
+void EnsClient::createStorageGatewayAsync(const CreateStorageGatewayRequest& request, const CreateStorageGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createStorageGateway(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CreateStorageGatewayOutcomeCallable EnsClient::createStorageGatewayCallable(const CreateStorageGatewayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateStorageGatewayOutcome()>>(
+			[this, request]()
+			{
+			return this->createStorageGateway(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::CreateStorageVolumeOutcome EnsClient::createStorageVolume(const CreateStorageVolumeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateStorageVolumeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateStorageVolumeOutcome(CreateStorageVolumeResult(outcome.result()));
+	else
+		return CreateStorageVolumeOutcome(outcome.error());
+}
+
+void EnsClient::createStorageVolumeAsync(const CreateStorageVolumeRequest& request, const CreateStorageVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createStorageVolume(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CreateStorageVolumeOutcomeCallable EnsClient::createStorageVolumeCallable(const CreateStorageVolumeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateStorageVolumeOutcome()>>(
+			[this, request]()
+			{
+			return this->createStorageVolume(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::CreateVSwitchOutcome EnsClient::createVSwitch(const CreateVSwitchRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2529,6 +2601,78 @@ EnsClient::DeleteSnatIpForSnatEntryOutcomeCallable EnsClient::deleteSnatIpForSna
 			[this, request]()
 			{
 			return this->deleteSnatIpForSnatEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DeleteStorageGatewayOutcome EnsClient::deleteStorageGateway(const DeleteStorageGatewayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteStorageGatewayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteStorageGatewayOutcome(DeleteStorageGatewayResult(outcome.result()));
+	else
+		return DeleteStorageGatewayOutcome(outcome.error());
+}
+
+void EnsClient::deleteStorageGatewayAsync(const DeleteStorageGatewayRequest& request, const DeleteStorageGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteStorageGateway(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteStorageGatewayOutcomeCallable EnsClient::deleteStorageGatewayCallable(const DeleteStorageGatewayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteStorageGatewayOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteStorageGateway(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DeleteStorageVolumeOutcome EnsClient::deleteStorageVolume(const DeleteStorageVolumeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteStorageVolumeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteStorageVolumeOutcome(DeleteStorageVolumeResult(outcome.result()));
+	else
+		return DeleteStorageVolumeOutcome(outcome.error());
+}
+
+void EnsClient::deleteStorageVolumeAsync(const DeleteStorageVolumeRequest& request, const DeleteStorageVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteStorageVolume(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteStorageVolumeOutcomeCallable EnsClient::deleteStorageVolumeCallable(const DeleteStorageVolumeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteStorageVolumeOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteStorageVolume(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5595,6 +5739,78 @@ EnsClient::DescribeSnatTableEntriesOutcomeCallable EnsClient::describeSnatTableE
 	return task->get_future();
 }
 
+EnsClient::DescribeStorageGatewayOutcome EnsClient::describeStorageGateway(const DescribeStorageGatewayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeStorageGatewayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeStorageGatewayOutcome(DescribeStorageGatewayResult(outcome.result()));
+	else
+		return DescribeStorageGatewayOutcome(outcome.error());
+}
+
+void EnsClient::describeStorageGatewayAsync(const DescribeStorageGatewayRequest& request, const DescribeStorageGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeStorageGateway(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeStorageGatewayOutcomeCallable EnsClient::describeStorageGatewayCallable(const DescribeStorageGatewayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeStorageGatewayOutcome()>>(
+			[this, request]()
+			{
+			return this->describeStorageGateway(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeStorageVolumeOutcome EnsClient::describeStorageVolume(const DescribeStorageVolumeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeStorageVolumeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeStorageVolumeOutcome(DescribeStorageVolumeResult(outcome.result()));
+	else
+		return DescribeStorageVolumeOutcome(outcome.error());
+}
+
+void EnsClient::describeStorageVolumeAsync(const DescribeStorageVolumeRequest& request, const DescribeStorageVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeStorageVolume(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeStorageVolumeOutcomeCallable EnsClient::describeStorageVolumeCallable(const DescribeStorageVolumeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeStorageVolumeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeStorageVolume(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeUserBandWidthDataOutcome EnsClient::describeUserBandWidthData(const DescribeUserBandWidthDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6957,6 +7173,42 @@ EnsClient::PreloadRegionSDGOutcomeCallable EnsClient::preloadRegionSDGCallable(c
 			[this, request]()
 			{
 			return this->preloadRegionSDG(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::PrepareUploadOutcome EnsClient::prepareUpload(const PrepareUploadRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PrepareUploadOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PrepareUploadOutcome(PrepareUploadResult(outcome.result()));
+	else
+		return PrepareUploadOutcome(outcome.error());
+}
+
+void EnsClient::prepareUploadAsync(const PrepareUploadRequest& request, const PrepareUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, prepareUpload(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::PrepareUploadOutcomeCallable EnsClient::prepareUploadCallable(const PrepareUploadRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PrepareUploadOutcome()>>(
+			[this, request]()
+			{
+			return this->prepareUpload(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

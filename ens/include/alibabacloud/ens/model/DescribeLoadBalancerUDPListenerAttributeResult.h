@@ -52,6 +52,7 @@ namespace AlibabaCloud
 				int getHealthyThreshold()const;
 				std::string getHealthCheckExp()const;
 				std::string getEipTransmit()const;
+				int getEstablishedTimeout()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -71,6 +72,7 @@ namespace AlibabaCloud
 				int healthyThreshold_;
 				std::string healthCheckExp_;
 				std::string eipTransmit_;
+				int establishedTimeout_;
 
 			};
 		}

@@ -133,6 +133,15 @@ void CreateLoadBalancerHTTPListenerRequest::setHealthCheckInterval(int healthChe
   setParameter(std::string("HealthCheckInterval"), std::to_string(healthCheckInterval));
 }
 
+int CreateLoadBalancerHTTPListenerRequest::getBackendServerPort() const {
+  return backendServerPort_;
+}
+
+void CreateLoadBalancerHTTPListenerRequest::setBackendServerPort(int backendServerPort) {
+  backendServerPort_ = backendServerPort;
+  setParameter(std::string("BackendServerPort"), std::to_string(backendServerPort));
+}
+
 std::string CreateLoadBalancerHTTPListenerRequest::getDescription() const {
   return description_;
 }

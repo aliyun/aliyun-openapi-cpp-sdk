@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_PUTBUCKETLIFECYCLERESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_PUTBUCKETLIFECYCLERESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_CREATESTORAGEGATEWAYRESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_CREATESTORAGEGATEWAYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT PutBucketLifecycleResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT CreateStorageGatewayResult : public ServiceResult
 			{
 			public:
+				struct AllocationIdItem
+				{
+					std::string instanceId;
+					std::string ensRegionId;
+				};
+				struct UnAllocationIdItem
+				{
+					std::string instanceId;
+					std::string ensRegionId;
+				};
 
 
-				PutBucketLifecycleResult();
-				explicit PutBucketLifecycleResult(const std::string &payload);
-				~PutBucketLifecycleResult();
-				std::string getRuleId()const;
+				CreateStorageGatewayResult();
+				explicit CreateStorageGatewayResult(const std::string &payload);
+				~CreateStorageGatewayResult();
+				std::string getBizStatusCode()const;
+				std::vector<AllocationIdItem> getAllocationId()const;
+				std::vector<UnAllocationIdItem> getUnAllocationId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string ruleId_;
+				std::string bizStatusCode_;
+				std::vector<AllocationIdItem> allocationId_;
+				std::vector<UnAllocationIdItem> unAllocationId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_PUTBUCKETLIFECYCLERESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_CREATESTORAGEGATEWAYRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBESDGDEPLOYMENTSTATUSREQUEST_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBESDGDEPLOYMENTSTATUSREQUEST_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBESTORAGEVOLUMEREQUEST_H_
+#define ALIBABACLOUD_ENS_MODEL_DESCRIBESTORAGEVOLUMEREQUEST_H_
 
 #include <alibabacloud/ens/EnsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,35 @@
 namespace AlibabaCloud {
 namespace Ens {
 namespace Model {
-class ALIBABACLOUD_ENS_EXPORT DescribeSDGDeploymentStatusRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ENS_EXPORT DescribeStorageVolumeRequest : public RpcServiceRequest {
 public:
-	DescribeSDGDeploymentStatusRequest();
-	~DescribeSDGDeploymentStatusRequest();
-	std::vector<std::string> getRegionIds() const;
-	void setRegionIds(const std::vector<std::string> &regionIds);
-	std::vector<std::string> getInstanceIds() const;
-	void setInstanceIds(const std::vector<std::string> &instanceIds);
-	std::string getStatus() const;
-	void setStatus(const std::string &status);
-	std::string getDeploymentType() const;
-	void setDeploymentType(const std::string &deploymentType);
+	DescribeStorageVolumeRequest();
+	~DescribeStorageVolumeRequest();
+	std::string getEnsRegionId() const;
+	void setEnsRegionId(const std::string &ensRegionId);
+	std::string getGatewayId() const;
+	void setGatewayId(const std::string &gatewayId);
+	std::string getVolumeId() const;
+	void setVolumeId(const std::string &volumeId);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
-	std::string getSDGId() const;
-	void setSDGId(const std::string &sDGId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getIsEnable() const;
+	void setIsEnable(int isEnable);
+	std::string getStorageId() const;
+	void setStorageId(const std::string &storageId);
 
 private:
-	std::vector<std::string> regionIds_;
-	std::vector<std::string> instanceIds_;
-	std::string status_;
-	std::string deploymentType_;
+	std::string ensRegionId_;
+	std::string gatewayId_;
+	std::string volumeId_;
 	int pageNumber_;
-	std::string sDGId_;
 	int pageSize_;
+	int isEnable_;
+	std::string storageId_;
 };
 } // namespace Model
 } // namespace Ens
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBESDGDEPLOYMENTSTATUSREQUEST_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBESTORAGEVOLUMEREQUEST_H_

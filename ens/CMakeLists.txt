@@ -107,6 +107,10 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/CreateSnapshotResult.h
 	include/alibabacloud/ens/model/CreateSnatEntryRequest.h
 	include/alibabacloud/ens/model/CreateSnatEntryResult.h
+	include/alibabacloud/ens/model/CreateStorageGatewayRequest.h
+	include/alibabacloud/ens/model/CreateStorageGatewayResult.h
+	include/alibabacloud/ens/model/CreateStorageVolumeRequest.h
+	include/alibabacloud/ens/model/CreateStorageVolumeResult.h
 	include/alibabacloud/ens/model/CreateVSwitchRequest.h
 	include/alibabacloud/ens/model/CreateVSwitchResult.h
 	include/alibabacloud/ens/model/DeleteApplicationRequest.h
@@ -159,6 +163,10 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DeleteSnatEntryResult.h
 	include/alibabacloud/ens/model/DeleteSnatIpForSnatEntryRequest.h
 	include/alibabacloud/ens/model/DeleteSnatIpForSnatEntryResult.h
+	include/alibabacloud/ens/model/DeleteStorageGatewayRequest.h
+	include/alibabacloud/ens/model/DeleteStorageGatewayResult.h
+	include/alibabacloud/ens/model/DeleteStorageVolumeRequest.h
+	include/alibabacloud/ens/model/DeleteStorageVolumeResult.h
 	include/alibabacloud/ens/model/DeleteVSwitchRequest.h
 	include/alibabacloud/ens/model/DeleteVSwitchResult.h
 	include/alibabacloud/ens/model/DeployInstanceSDGRequest.h
@@ -329,6 +337,10 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeSnatAttributeResult.h
 	include/alibabacloud/ens/model/DescribeSnatTableEntriesRequest.h
 	include/alibabacloud/ens/model/DescribeSnatTableEntriesResult.h
+	include/alibabacloud/ens/model/DescribeStorageGatewayRequest.h
+	include/alibabacloud/ens/model/DescribeStorageGatewayResult.h
+	include/alibabacloud/ens/model/DescribeStorageVolumeRequest.h
+	include/alibabacloud/ens/model/DescribeStorageVolumeResult.h
 	include/alibabacloud/ens/model/DescribeUserBandWidthDataRequest.h
 	include/alibabacloud/ens/model/DescribeUserBandWidthDataResult.h
 	include/alibabacloud/ens/model/DescribeVSwitchesRequest.h
@@ -405,6 +417,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/ModifyVSwitchAttributeResult.h
 	include/alibabacloud/ens/model/PreloadRegionSDGRequest.h
 	include/alibabacloud/ens/model/PreloadRegionSDGResult.h
+	include/alibabacloud/ens/model/PrepareUploadRequest.h
+	include/alibabacloud/ens/model/PrepareUploadResult.h
 	include/alibabacloud/ens/model/PushApplicationDataRequest.h
 	include/alibabacloud/ens/model/PushApplicationDataResult.h
 	include/alibabacloud/ens/model/PutBucketRequest.h
@@ -618,6 +632,10 @@ set(ens_src
 	src/model/CreateSnapshotResult.cc
 	src/model/CreateSnatEntryRequest.cc
 	src/model/CreateSnatEntryResult.cc
+	src/model/CreateStorageGatewayRequest.cc
+	src/model/CreateStorageGatewayResult.cc
+	src/model/CreateStorageVolumeRequest.cc
+	src/model/CreateStorageVolumeResult.cc
 	src/model/CreateVSwitchRequest.cc
 	src/model/CreateVSwitchResult.cc
 	src/model/DeleteApplicationRequest.cc
@@ -670,6 +688,10 @@ set(ens_src
 	src/model/DeleteSnatEntryResult.cc
 	src/model/DeleteSnatIpForSnatEntryRequest.cc
 	src/model/DeleteSnatIpForSnatEntryResult.cc
+	src/model/DeleteStorageGatewayRequest.cc
+	src/model/DeleteStorageGatewayResult.cc
+	src/model/DeleteStorageVolumeRequest.cc
+	src/model/DeleteStorageVolumeResult.cc
 	src/model/DeleteVSwitchRequest.cc
 	src/model/DeleteVSwitchResult.cc
 	src/model/DeployInstanceSDGRequest.cc
@@ -840,6 +862,10 @@ set(ens_src
 	src/model/DescribeSnatAttributeResult.cc
 	src/model/DescribeSnatTableEntriesRequest.cc
 	src/model/DescribeSnatTableEntriesResult.cc
+	src/model/DescribeStorageGatewayRequest.cc
+	src/model/DescribeStorageGatewayResult.cc
+	src/model/DescribeStorageVolumeRequest.cc
+	src/model/DescribeStorageVolumeResult.cc
 	src/model/DescribeUserBandWidthDataRequest.cc
 	src/model/DescribeUserBandWidthDataResult.cc
 	src/model/DescribeVSwitchesRequest.cc
@@ -916,6 +942,8 @@ set(ens_src
 	src/model/ModifyVSwitchAttributeResult.cc
 	src/model/PreloadRegionSDGRequest.cc
 	src/model/PreloadRegionSDGResult.cc
+	src/model/PrepareUploadRequest.cc
+	src/model/PrepareUploadResult.cc
 	src/model/PushApplicationDataRequest.cc
 	src/model/PushApplicationDataResult.cc
 	src/model/PutBucketRequest.cc

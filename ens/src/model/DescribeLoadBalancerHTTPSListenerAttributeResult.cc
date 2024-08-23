@@ -87,37 +87,14 @@ void DescribeLoadBalancerHTTPSListenerAttributeResult::parse(const std::string &
 		serverCertificateId_ = value["ServerCertificateId"].asString();
 	if(!value["HealthCheckMethod"].isNull())
 		healthCheckMethod_ = value["HealthCheckMethod"].asString();
+	if(!value["BackendServerPort"].isNull())
+		backendServerPort_ = std::stoi(value["BackendServerPort"].asString());
 
-}
-
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getStatus()const
-{
-	return status_;
 }
 
 int DescribeLoadBalancerHTTPSListenerAttributeResult::getCookieTimeout()const
 {
 	return cookieTimeout_;
-}
-
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getCookie()const
-{
-	return cookie_;
-}
-
-int DescribeLoadBalancerHTTPSListenerAttributeResult::getListenerPort()const
-{
-	return listenerPort_;
-}
-
-int DescribeLoadBalancerHTTPSListenerAttributeResult::getRequestTimeout()const
-{
-	return requestTimeout_;
-}
-
-int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckInterval()const
-{
-	return healthCheckInterval_;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getDescription()const
@@ -150,29 +127,14 @@ int DescribeLoadBalancerHTTPSListenerAttributeResult::getIdleTimeout()const
 	return idleTimeout_;
 }
 
-int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckTimeout()const
+int DescribeLoadBalancerHTTPSListenerAttributeResult::getBackendServerPort()const
 {
-	return healthCheckTimeout_;
-}
-
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getListenerForward()const
-{
-	return listenerForward_;
-}
-
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getStickySession()const
-{
-	return stickySession_;
+	return backendServerPort_;
 }
 
 int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckConnectPort()const
 {
 	return healthCheckConnectPort_;
-}
-
-int DescribeLoadBalancerHTTPSListenerAttributeResult::getForwardPort()const
-{
-	return forwardPort_;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckMethod()const
@@ -183,16 +145,6 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckMeth
 int DescribeLoadBalancerHTTPSListenerAttributeResult::getBandwidth()const
 {
 	return bandwidth_;
-}
-
-int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthyThreshold()const
-{
-	return healthyThreshold_;
-}
-
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckDomain()const
-{
-	return healthCheckDomain_;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getServerCertificateId()const
@@ -208,5 +160,60 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getStickySessionTy
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckHttpCode()const
 {
 	return healthCheckHttpCode_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getStatus()const
+{
+	return status_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getCookie()const
+{
+	return cookie_;
+}
+
+int DescribeLoadBalancerHTTPSListenerAttributeResult::getListenerPort()const
+{
+	return listenerPort_;
+}
+
+int DescribeLoadBalancerHTTPSListenerAttributeResult::getRequestTimeout()const
+{
+	return requestTimeout_;
+}
+
+int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckInterval()const
+{
+	return healthCheckInterval_;
+}
+
+int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckTimeout()const
+{
+	return healthCheckTimeout_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getListenerForward()const
+{
+	return listenerForward_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getStickySession()const
+{
+	return stickySession_;
+}
+
+int DescribeLoadBalancerHTTPSListenerAttributeResult::getForwardPort()const
+{
+	return forwardPort_;
+}
+
+int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthyThreshold()const
+{
+	return healthyThreshold_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckDomain()const
+{
+	return healthCheckDomain_;
 }
 

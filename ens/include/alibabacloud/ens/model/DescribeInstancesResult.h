@@ -59,7 +59,9 @@ namespace AlibabaCloud
 						std::string uuid;
 						int storage;
 						std::string category;
+						std::string encryptKeyId;
 						int size;
+						bool encrypted;
 						int diskSize;
 						std::string diskName;
 						std::string diskId;

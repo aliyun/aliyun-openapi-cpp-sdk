@@ -14,38 +14,52 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ens/model/PutBucketLifecycleResult.h>
+#include <alibabacloud/ens/model/PrepareUploadResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ens;
 using namespace AlibabaCloud::Ens::Model;
 
-PutBucketLifecycleResult::PutBucketLifecycleResult() :
+PrepareUploadResult::PrepareUploadResult() :
 	ServiceResult()
 {}
 
-PutBucketLifecycleResult::PutBucketLifecycleResult(const std::string &payload) :
+PrepareUploadResult::PrepareUploadResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-PutBucketLifecycleResult::~PutBucketLifecycleResult()
+PrepareUploadResult::~PrepareUploadResult()
 {}
 
-void PutBucketLifecycleResult::parse(const std::string &payload)
+void PrepareUploadResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["RuleId"].isNull())
-		ruleId_ = value["RuleId"].asString();
+	if(!value["BucketName"].isNull())
+		bucketName_ = value["BucketName"].asString();
+	if(!value["Endpoint"].isNull())
+		endpoint_ = value["Endpoint"].asString();
+	if(!value["AdditionInfo"].isNull())
+		additionInfo_ = value["AdditionInfo"].asString();
 
 }
 
-std::string PutBucketLifecycleResult::getRuleId()const
+std::string PrepareUploadResult::getBucketName()const
 {
-	return ruleId_;
+	return bucketName_;
+}
+
+std::string PrepareUploadResult::getEndpoint()const
+{
+	return endpoint_;
+}
+
+std::string PrepareUploadResult::getAdditionInfo()const
+{
+	return additionInfo_;
 }
 

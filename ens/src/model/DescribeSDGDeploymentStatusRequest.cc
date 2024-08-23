@@ -20,18 +20,58 @@ using AlibabaCloud::Ens::Model::DescribeSDGDeploymentStatusRequest;
 
 DescribeSDGDeploymentStatusRequest::DescribeSDGDeploymentStatusRequest()
     : RpcServiceRequest("ens", "2017-11-10", "DescribeSDGDeploymentStatus") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 DescribeSDGDeploymentStatusRequest::~DescribeSDGDeploymentStatusRequest() {}
 
-std::string DescribeSDGDeploymentStatusRequest::getPageNumber() const {
+std::vector<DescribeSDGDeploymentStatusRequest::std::string> DescribeSDGDeploymentStatusRequest::getRegionIds() const {
+  return regionIds_;
+}
+
+void DescribeSDGDeploymentStatusRequest::setRegionIds(const std::vector<DescribeSDGDeploymentStatusRequest::std::string> &regionIds) {
+  regionIds_ = regionIds;
+  for(int dep1 = 0; dep1 != regionIds.size(); dep1++) {
+    setParameter(std::string("RegionIds") + "." + std::to_string(dep1 + 1), regionIds[dep1]);
+  }
+}
+
+std::vector<DescribeSDGDeploymentStatusRequest::std::string> DescribeSDGDeploymentStatusRequest::getInstanceIds() const {
+  return instanceIds_;
+}
+
+void DescribeSDGDeploymentStatusRequest::setInstanceIds(const std::vector<DescribeSDGDeploymentStatusRequest::std::string> &instanceIds) {
+  instanceIds_ = instanceIds;
+  for(int dep1 = 0; dep1 != instanceIds.size(); dep1++) {
+    setParameter(std::string("InstanceIds") + "." + std::to_string(dep1 + 1), instanceIds[dep1]);
+  }
+}
+
+std::string DescribeSDGDeploymentStatusRequest::getStatus() const {
+  return status_;
+}
+
+void DescribeSDGDeploymentStatusRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
+}
+
+std::string DescribeSDGDeploymentStatusRequest::getDeploymentType() const {
+  return deploymentType_;
+}
+
+void DescribeSDGDeploymentStatusRequest::setDeploymentType(const std::string &deploymentType) {
+  deploymentType_ = deploymentType;
+  setParameter(std::string("DeploymentType"), deploymentType);
+}
+
+int DescribeSDGDeploymentStatusRequest::getPageNumber() const {
   return pageNumber_;
 }
 
-void DescribeSDGDeploymentStatusRequest::setPageNumber(const std::string &pageNumber) {
+void DescribeSDGDeploymentStatusRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
-  setParameter(std::string("PageNumber"), pageNumber);
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
 std::string DescribeSDGDeploymentStatusRequest::getSDGId() const {
@@ -43,12 +83,12 @@ void DescribeSDGDeploymentStatusRequest::setSDGId(const std::string &sDGId) {
   setParameter(std::string("SDGId"), sDGId);
 }
 
-std::string DescribeSDGDeploymentStatusRequest::getPageSize() const {
+int DescribeSDGDeploymentStatusRequest::getPageSize() const {
   return pageSize_;
 }
 
-void DescribeSDGDeploymentStatusRequest::setPageSize(const std::string &pageSize) {
+void DescribeSDGDeploymentStatusRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), pageSize);
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

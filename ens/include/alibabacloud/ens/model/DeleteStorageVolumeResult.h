@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_PUTBUCKETLIFECYCLERESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_PUTBUCKETLIFECYCLERESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_DELETESTORAGEVOLUMERESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_DELETESTORAGEVOLUMERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT PutBucketLifecycleResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT DeleteStorageVolumeResult : public ServiceResult
 			{
 			public:
 
 
-				PutBucketLifecycleResult();
-				explicit PutBucketLifecycleResult(const std::string &payload);
-				~PutBucketLifecycleResult();
-				std::string getRuleId()const;
+				DeleteStorageVolumeResult();
+				explicit DeleteStorageVolumeResult(const std::string &payload);
+				~DeleteStorageVolumeResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string ruleId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_PUTBUCKETLIFECYCLERESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_DELETESTORAGEVOLUMERESULT_H_

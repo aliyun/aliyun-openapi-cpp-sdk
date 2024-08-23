@@ -14,38 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ens/model/PutBucketLifecycleResult.h>
+#include <alibabacloud/ens/model/DeleteStorageVolumeResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ens;
 using namespace AlibabaCloud::Ens::Model;
 
-PutBucketLifecycleResult::PutBucketLifecycleResult() :
+DeleteStorageVolumeResult::DeleteStorageVolumeResult() :
 	ServiceResult()
 {}
 
-PutBucketLifecycleResult::PutBucketLifecycleResult(const std::string &payload) :
+DeleteStorageVolumeResult::DeleteStorageVolumeResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-PutBucketLifecycleResult::~PutBucketLifecycleResult()
+DeleteStorageVolumeResult::~DeleteStorageVolumeResult()
 {}
 
-void PutBucketLifecycleResult::parse(const std::string &payload)
+void DeleteStorageVolumeResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["RuleId"].isNull())
-		ruleId_ = value["RuleId"].asString();
 
-}
-
-std::string PutBucketLifecycleResult::getRuleId()const
-{
-	return ruleId_;
 }
 

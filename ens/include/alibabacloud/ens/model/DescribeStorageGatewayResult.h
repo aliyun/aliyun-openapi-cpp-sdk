@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBESELFIMAGESRESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBESELFIMAGESRESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBESTORAGEGATEWAYRESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_DESCRIBESTORAGEGATEWAYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT DescribeSelfImagesResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT DescribeStorageGatewayResult : public ServiceResult
 			{
 			public:
-				struct Image
+				struct StorageGatewaysItem
 				{
-					std::string imageOwnerAlias;
+					std::string storageGatewayName;
 					std::string status;
-					std::string architecture;
-					std::string platform;
-					std::string imageSize;
-					std::string instanceId;
-					std::string osVersion;
-					std::string computeType;
-					std::string imageStorageSize;
-					std::string imageName;
-					std::string snapshotId;
+					std::string serviceIp;
+					std::string description;
+					int storageGatewayType;
+					std::string vpcId;
 					std::string creationTime;
-					std::string imageId;
+					std::string cidrBlock;
+					std::string ensRegionId;
+					std::string storageGatewayId;
 				};
 
 
-				DescribeSelfImagesResult();
-				explicit DescribeSelfImagesResult(const std::string &payload);
-				~DescribeSelfImagesResult();
-				std::vector<Image> getImages()const;
-				int getCode()const;
+				DescribeStorageGatewayResult();
+				explicit DescribeStorageGatewayResult(const std::string &payload);
+				~DescribeStorageGatewayResult();
+				std::vector<StorageGatewaysItem> getStorageGateways()const;
+				int getTotalCount()const;
+				int getPageSize()const;
+				int getPageNumber()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Image> images_;
-				int code_;
+				std::vector<StorageGatewaysItem> storageGateways_;
+				int totalCount_;
+				int pageSize_;
+				int pageNumber_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBESELFIMAGESRESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBESTORAGEGATEWAYRESULT_H_

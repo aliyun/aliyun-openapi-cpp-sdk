@@ -32,6 +32,8 @@ public:
 	~SetLoadBalancerUDPListenerAttributeRequest();
 	std::string getProtocol() const;
 	void setProtocol(const std::string &protocol);
+	int getEstablishedTimeout() const;
+	void setEstablishedTimeout(int establishedTimeout);
 	std::string getLoadBalancerId() const;
 	void setLoadBalancerId(const std::string &loadBalancerId);
 	std::string getHealthCheckReq() const;
@@ -59,6 +61,7 @@ public:
 
 private:
 	std::string protocol_;
+	int establishedTimeout_;
 	std::string loadBalancerId_;
 	std::string healthCheckReq_;
 	int healthCheckInterval_;

@@ -44,6 +44,7 @@ namespace AlibabaCloud
 				std::string getHealthCheckURI()const;
 				std::string getHealthCheck()const;
 				int getIdleTimeout()const;
+				int getBackendServerPort()const;
 				int getHealthCheckConnectPort()const;
 				std::string getHealthCheckMethod()const;
 				int getBandwidth()const;
@@ -73,6 +74,7 @@ namespace AlibabaCloud
 				std::string healthCheckURI_;
 				std::string healthCheck_;
 				int idleTimeout_;
+				int backendServerPort_;
 				int healthCheckConnectPort_;
 				std::string healthCheckMethod_;
 				int bandwidth_;

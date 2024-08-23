@@ -14,38 +14,39 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ens/model/PutBucketLifecycleResult.h>
+#include <alibabacloud/ens/model/CreateStorageVolumeResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ens;
 using namespace AlibabaCloud::Ens::Model;
 
-PutBucketLifecycleResult::PutBucketLifecycleResult() :
+CreateStorageVolumeResult::CreateStorageVolumeResult() :
 	ServiceResult()
 {}
 
-PutBucketLifecycleResult::PutBucketLifecycleResult(const std::string &payload) :
+CreateStorageVolumeResult::CreateStorageVolumeResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-PutBucketLifecycleResult::~PutBucketLifecycleResult()
+CreateStorageVolumeResult::~CreateStorageVolumeResult()
 {}
 
-void PutBucketLifecycleResult::parse(const std::string &payload)
+void CreateStorageVolumeResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["RuleId"].isNull())
-		ruleId_ = value["RuleId"].asString();
+	auto allVolumeId = value["VolumeId"]["VolumeId"];
+	for (const auto &item : allVolumeId)
+		volumeId_.push_back(item.asString());
 
 }
 
-std::string PutBucketLifecycleResult::getRuleId()const
+std::vector<std::string> CreateStorageVolumeResult::getVolumeId()const
 {
-	return ruleId_;
+	return volumeId_;
 }
 

@@ -54,6 +54,8 @@ public:
 	void setLoadBalancerId(const std::string &loadBalancerId);
 	int getHealthCheckInterval() const;
 	void setHealthCheckInterval(int healthCheckInterval);
+	int getBackendServerPort() const;
+	void setBackendServerPort(int backendServerPort);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	int getUnhealthyThreshold() const;
@@ -92,6 +94,7 @@ private:
 	int requestTimeout_;
 	std::string loadBalancerId_;
 	int healthCheckInterval_;
+	int backendServerPort_;
 	std::string description_;
 	int unhealthyThreshold_;
 	int healthyThreshold_;

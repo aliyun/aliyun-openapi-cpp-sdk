@@ -89,6 +89,8 @@ void DescribeLoadBalancerHTTPListenerAttributeResult::parse(const std::string &p
 		healthCheckMethod_ = value["HealthCheckMethod"].asString();
 	if(!value["XForwardedFor"].isNull())
 		xForwardedFor_ = value["XForwardedFor"].asString();
+	if(!value["BackendServerPort"].isNull())
+		backendServerPort_ = std::stoi(value["BackendServerPort"].asString());
 
 }
 
@@ -125,6 +127,11 @@ std::string DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheck()con
 int DescribeLoadBalancerHTTPListenerAttributeResult::getIdleTimeout()const
 {
 	return idleTimeout_;
+}
+
+int DescribeLoadBalancerHTTPListenerAttributeResult::getBackendServerPort()const
+{
+	return backendServerPort_;
 }
 
 int DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckConnectPort()const

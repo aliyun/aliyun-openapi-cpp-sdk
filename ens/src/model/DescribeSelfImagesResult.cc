@@ -67,6 +67,8 @@ void DescribeSelfImagesResult::parse(const std::string &payload)
 			imagesObject.computeType = valueImagesImage["ComputeType"].asString();
 		if(!valueImagesImage["SnapshotId"].isNull())
 			imagesObject.snapshotId = valueImagesImage["SnapshotId"].asString();
+		if(!valueImagesImage["ImageStorageSize"].isNull())
+			imagesObject.imageStorageSize = valueImagesImage["ImageStorageSize"].asString();
 		images_.push_back(imagesObject);
 	}
 	if(!value["Code"].isNull())

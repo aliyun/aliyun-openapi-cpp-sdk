@@ -108,6 +108,10 @@
 #include "model/CreateSnapshotResult.h"
 #include "model/CreateSnatEntryRequest.h"
 #include "model/CreateSnatEntryResult.h"
+#include "model/CreateStorageGatewayRequest.h"
+#include "model/CreateStorageGatewayResult.h"
+#include "model/CreateStorageVolumeRequest.h"
+#include "model/CreateStorageVolumeResult.h"
 #include "model/CreateVSwitchRequest.h"
 #include "model/CreateVSwitchResult.h"
 #include "model/DeleteApplicationRequest.h"
@@ -160,6 +164,10 @@
 #include "model/DeleteSnatEntryResult.h"
 #include "model/DeleteSnatIpForSnatEntryRequest.h"
 #include "model/DeleteSnatIpForSnatEntryResult.h"
+#include "model/DeleteStorageGatewayRequest.h"
+#include "model/DeleteStorageGatewayResult.h"
+#include "model/DeleteStorageVolumeRequest.h"
+#include "model/DeleteStorageVolumeResult.h"
 #include "model/DeleteVSwitchRequest.h"
 #include "model/DeleteVSwitchResult.h"
 #include "model/DeployInstanceSDGRequest.h"
@@ -330,6 +338,10 @@
 #include "model/DescribeSnatAttributeResult.h"
 #include "model/DescribeSnatTableEntriesRequest.h"
 #include "model/DescribeSnatTableEntriesResult.h"
+#include "model/DescribeStorageGatewayRequest.h"
+#include "model/DescribeStorageGatewayResult.h"
+#include "model/DescribeStorageVolumeRequest.h"
+#include "model/DescribeStorageVolumeResult.h"
 #include "model/DescribeUserBandWidthDataRequest.h"
 #include "model/DescribeUserBandWidthDataResult.h"
 #include "model/DescribeVSwitchesRequest.h"
@@ -406,6 +418,8 @@
 #include "model/ModifyVSwitchAttributeResult.h"
 #include "model/PreloadRegionSDGRequest.h"
 #include "model/PreloadRegionSDGResult.h"
+#include "model/PrepareUploadRequest.h"
+#include "model/PrepareUploadResult.h"
 #include "model/PushApplicationDataRequest.h"
 #include "model/PushApplicationDataResult.h"
 #include "model/PutBucketRequest.h"
@@ -668,6 +682,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateSnatEntryResult> CreateSnatEntryOutcome;
 			typedef std::future<CreateSnatEntryOutcome> CreateSnatEntryOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::CreateSnatEntryRequest&, const CreateSnatEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnatEntryAsyncHandler;
+			typedef Outcome<Error, Model::CreateStorageGatewayResult> CreateStorageGatewayOutcome;
+			typedef std::future<CreateStorageGatewayOutcome> CreateStorageGatewayOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::CreateStorageGatewayRequest&, const CreateStorageGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateStorageGatewayAsyncHandler;
+			typedef Outcome<Error, Model::CreateStorageVolumeResult> CreateStorageVolumeOutcome;
+			typedef std::future<CreateStorageVolumeOutcome> CreateStorageVolumeOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::CreateStorageVolumeRequest&, const CreateStorageVolumeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateStorageVolumeAsyncHandler;
 			typedef Outcome<Error, Model::CreateVSwitchResult> CreateVSwitchOutcome;
 			typedef std::future<CreateVSwitchOutcome> CreateVSwitchOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::CreateVSwitchRequest&, const CreateVSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVSwitchAsyncHandler;
@@ -746,6 +766,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteSnatIpForSnatEntryResult> DeleteSnatIpForSnatEntryOutcome;
 			typedef std::future<DeleteSnatIpForSnatEntryOutcome> DeleteSnatIpForSnatEntryOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DeleteSnatIpForSnatEntryRequest&, const DeleteSnatIpForSnatEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnatIpForSnatEntryAsyncHandler;
+			typedef Outcome<Error, Model::DeleteStorageGatewayResult> DeleteStorageGatewayOutcome;
+			typedef std::future<DeleteStorageGatewayOutcome> DeleteStorageGatewayOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::DeleteStorageGatewayRequest&, const DeleteStorageGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStorageGatewayAsyncHandler;
+			typedef Outcome<Error, Model::DeleteStorageVolumeResult> DeleteStorageVolumeOutcome;
+			typedef std::future<DeleteStorageVolumeOutcome> DeleteStorageVolumeOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::DeleteStorageVolumeRequest&, const DeleteStorageVolumeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStorageVolumeAsyncHandler;
 			typedef Outcome<Error, Model::DeleteVSwitchResult> DeleteVSwitchOutcome;
 			typedef std::future<DeleteVSwitchOutcome> DeleteVSwitchOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DeleteVSwitchRequest&, const DeleteVSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVSwitchAsyncHandler;
@@ -1001,6 +1027,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSnatTableEntriesResult> DescribeSnatTableEntriesOutcome;
 			typedef std::future<DescribeSnatTableEntriesOutcome> DescribeSnatTableEntriesOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DescribeSnatTableEntriesRequest&, const DescribeSnatTableEntriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnatTableEntriesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeStorageGatewayResult> DescribeStorageGatewayOutcome;
+			typedef std::future<DescribeStorageGatewayOutcome> DescribeStorageGatewayOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::DescribeStorageGatewayRequest&, const DescribeStorageGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStorageGatewayAsyncHandler;
+			typedef Outcome<Error, Model::DescribeStorageVolumeResult> DescribeStorageVolumeOutcome;
+			typedef std::future<DescribeStorageVolumeOutcome> DescribeStorageVolumeOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::DescribeStorageVolumeRequest&, const DescribeStorageVolumeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStorageVolumeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUserBandWidthDataResult> DescribeUserBandWidthDataOutcome;
 			typedef std::future<DescribeUserBandWidthDataOutcome> DescribeUserBandWidthDataOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DescribeUserBandWidthDataRequest&, const DescribeUserBandWidthDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserBandWidthDataAsyncHandler;
@@ -1115,6 +1147,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PreloadRegionSDGResult> PreloadRegionSDGOutcome;
 			typedef std::future<PreloadRegionSDGOutcome> PreloadRegionSDGOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::PreloadRegionSDGRequest&, const PreloadRegionSDGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PreloadRegionSDGAsyncHandler;
+			typedef Outcome<Error, Model::PrepareUploadResult> PrepareUploadOutcome;
+			typedef std::future<PrepareUploadOutcome> PrepareUploadOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::PrepareUploadRequest&, const PrepareUploadOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PrepareUploadAsyncHandler;
 			typedef Outcome<Error, Model::PushApplicationDataResult> PushApplicationDataOutcome;
 			typedef std::future<PushApplicationDataOutcome> PushApplicationDataOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::PushApplicationDataRequest&, const PushApplicationDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PushApplicationDataAsyncHandler;
@@ -1435,6 +1470,12 @@ namespace AlibabaCloud
 			CreateSnatEntryOutcome createSnatEntry(const Model::CreateSnatEntryRequest &request)const;
 			void createSnatEntryAsync(const Model::CreateSnatEntryRequest& request, const CreateSnatEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSnatEntryOutcomeCallable createSnatEntryCallable(const Model::CreateSnatEntryRequest& request) const;
+			CreateStorageGatewayOutcome createStorageGateway(const Model::CreateStorageGatewayRequest &request)const;
+			void createStorageGatewayAsync(const Model::CreateStorageGatewayRequest& request, const CreateStorageGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateStorageGatewayOutcomeCallable createStorageGatewayCallable(const Model::CreateStorageGatewayRequest& request) const;
+			CreateStorageVolumeOutcome createStorageVolume(const Model::CreateStorageVolumeRequest &request)const;
+			void createStorageVolumeAsync(const Model::CreateStorageVolumeRequest& request, const CreateStorageVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateStorageVolumeOutcomeCallable createStorageVolumeCallable(const Model::CreateStorageVolumeRequest& request) const;
 			CreateVSwitchOutcome createVSwitch(const Model::CreateVSwitchRequest &request)const;
 			void createVSwitchAsync(const Model::CreateVSwitchRequest& request, const CreateVSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVSwitchOutcomeCallable createVSwitchCallable(const Model::CreateVSwitchRequest& request) const;
@@ -1513,6 +1554,12 @@ namespace AlibabaCloud
 			DeleteSnatIpForSnatEntryOutcome deleteSnatIpForSnatEntry(const Model::DeleteSnatIpForSnatEntryRequest &request)const;
 			void deleteSnatIpForSnatEntryAsync(const Model::DeleteSnatIpForSnatEntryRequest& request, const DeleteSnatIpForSnatEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSnatIpForSnatEntryOutcomeCallable deleteSnatIpForSnatEntryCallable(const Model::DeleteSnatIpForSnatEntryRequest& request) const;
+			DeleteStorageGatewayOutcome deleteStorageGateway(const Model::DeleteStorageGatewayRequest &request)const;
+			void deleteStorageGatewayAsync(const Model::DeleteStorageGatewayRequest& request, const DeleteStorageGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteStorageGatewayOutcomeCallable deleteStorageGatewayCallable(const Model::DeleteStorageGatewayRequest& request) const;
+			DeleteStorageVolumeOutcome deleteStorageVolume(const Model::DeleteStorageVolumeRequest &request)const;
+			void deleteStorageVolumeAsync(const Model::DeleteStorageVolumeRequest& request, const DeleteStorageVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteStorageVolumeOutcomeCallable deleteStorageVolumeCallable(const Model::DeleteStorageVolumeRequest& request) const;
 			DeleteVSwitchOutcome deleteVSwitch(const Model::DeleteVSwitchRequest &request)const;
 			void deleteVSwitchAsync(const Model::DeleteVSwitchRequest& request, const DeleteVSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteVSwitchOutcomeCallable deleteVSwitchCallable(const Model::DeleteVSwitchRequest& request) const;
@@ -1768,6 +1815,12 @@ namespace AlibabaCloud
 			DescribeSnatTableEntriesOutcome describeSnatTableEntries(const Model::DescribeSnatTableEntriesRequest &request)const;
 			void describeSnatTableEntriesAsync(const Model::DescribeSnatTableEntriesRequest& request, const DescribeSnatTableEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSnatTableEntriesOutcomeCallable describeSnatTableEntriesCallable(const Model::DescribeSnatTableEntriesRequest& request) const;
+			DescribeStorageGatewayOutcome describeStorageGateway(const Model::DescribeStorageGatewayRequest &request)const;
+			void describeStorageGatewayAsync(const Model::DescribeStorageGatewayRequest& request, const DescribeStorageGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeStorageGatewayOutcomeCallable describeStorageGatewayCallable(const Model::DescribeStorageGatewayRequest& request) const;
+			DescribeStorageVolumeOutcome describeStorageVolume(const Model::DescribeStorageVolumeRequest &request)const;
+			void describeStorageVolumeAsync(const Model::DescribeStorageVolumeRequest& request, const DescribeStorageVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeStorageVolumeOutcomeCallable describeStorageVolumeCallable(const Model::DescribeStorageVolumeRequest& request) const;
 			DescribeUserBandWidthDataOutcome describeUserBandWidthData(const Model::DescribeUserBandWidthDataRequest &request)const;
 			void describeUserBandWidthDataAsync(const Model::DescribeUserBandWidthDataRequest& request, const DescribeUserBandWidthDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUserBandWidthDataOutcomeCallable describeUserBandWidthDataCallable(const Model::DescribeUserBandWidthDataRequest& request) const;
@@ -1882,6 +1935,9 @@ namespace AlibabaCloud
 			PreloadRegionSDGOutcome preloadRegionSDG(const Model::PreloadRegionSDGRequest &request)const;
 			void preloadRegionSDGAsync(const Model::PreloadRegionSDGRequest& request, const PreloadRegionSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PreloadRegionSDGOutcomeCallable preloadRegionSDGCallable(const Model::PreloadRegionSDGRequest& request) const;
+			PrepareUploadOutcome prepareUpload(const Model::PrepareUploadRequest &request)const;
+			void prepareUploadAsync(const Model::PrepareUploadRequest& request, const PrepareUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PrepareUploadOutcomeCallable prepareUploadCallable(const Model::PrepareUploadRequest& request) const;
 			PushApplicationDataOutcome pushApplicationData(const Model::PushApplicationDataRequest &request)const;
 			void pushApplicationDataAsync(const Model::PushApplicationDataRequest& request, const PushApplicationDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PushApplicationDataOutcomeCallable pushApplicationDataCallable(const Model::PushApplicationDataRequest& request) const;

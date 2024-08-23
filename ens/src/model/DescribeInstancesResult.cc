@@ -105,6 +105,10 @@ void DescribeInstancesResult::parse(const std::string &payload)
 				dataDiskObject.name = valueInstancesInstanceDataDiskDataDiskItem["name"].asString();
 			if(!valueInstancesInstanceDataDiskDataDiskItem["DiskSize"].isNull())
 				dataDiskObject.diskSize = std::stoi(valueInstancesInstanceDataDiskDataDiskItem["DiskSize"].asString());
+			if(!valueInstancesInstanceDataDiskDataDiskItem["EncryptKeyId"].isNull())
+				dataDiskObject.encryptKeyId = valueInstancesInstanceDataDiskDataDiskItem["EncryptKeyId"].asString();
+			if(!valueInstancesInstanceDataDiskDataDiskItem["Encrypted"].isNull())
+				dataDiskObject.encrypted = valueInstancesInstanceDataDiskDataDiskItem["Encrypted"].asString() == "true";
 			instancesObject.dataDisk.push_back(dataDiskObject);
 		}
 		auto allPublicIpAddressesNode = valueInstancesInstance["PublicIpAddresses"]["PublicIpAddress"];
