@@ -177,6 +177,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			DBInstance::MongosAttribute mongosListObject;
 			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["VpcCloudInstanceId"].isNull())
 				mongosListObject.vpcCloudInstanceId = valueDBInstancesDBInstanceMongosListMongosAttribute["VpcCloudInstanceId"].asString();
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["LockMode"].isNull())
+				mongosListObject.lockMode = valueDBInstancesDBInstanceMongosListMongosAttribute["LockMode"].asString();
 			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["MaxIOPS"].isNull())
 				mongosListObject.maxIOPS = std::stoi(valueDBInstancesDBInstanceMongosListMongosAttribute["MaxIOPS"].asString());
 			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["VSwitchId"].isNull())
@@ -203,6 +205,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 		for (auto valueDBInstancesDBInstanceShardListShardAttribute : allShardListNode)
 		{
 			DBInstance::ShardAttribute shardListObject;
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["LockMode"].isNull())
+				shardListObject.lockMode = valueDBInstancesDBInstanceShardListShardAttribute["LockMode"].asString();
 			if(!valueDBInstancesDBInstanceShardListShardAttribute["MaxIOPS"].isNull())
 				shardListObject.maxIOPS = std::stoi(valueDBInstancesDBInstanceShardListShardAttribute["MaxIOPS"].asString());
 			if(!valueDBInstancesDBInstanceShardListShardAttribute["ConnectString"].isNull())
@@ -233,6 +237,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			DBInstance::ConfigserverAttribute configserverListObject;
 			if(!valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["MaxIOPS"].isNull())
 				configserverListObject.maxIOPS = std::stoi(valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["MaxIOPS"].asString());
+			if(!valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["LockMode"].isNull())
+				configserverListObject.lockMode = valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["LockMode"].asString();
 			if(!valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["ConnectString"].isNull())
 				configserverListObject.connectString = valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["ConnectString"].asString();
 			if(!valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["NodeClass"].isNull())

@@ -61,6 +61,7 @@ namespace AlibabaCloud
 						int port;
 						std::string nodeId;
 						std::string vpcCloudInstanceId;
+						std::string lockMode;
 						int maxIOPS;
 					};
 					struct ShardAttribute
@@ -73,6 +74,7 @@ namespace AlibabaCloud
 						int port;
 						std::string nodeId;
 						int nodeStorage;
+						std::string lockMode;
 						std::string maxDiskMbps;
 						std::string connectString;
 						int maxIOPS;
@@ -86,6 +88,7 @@ namespace AlibabaCloud
 						int port;
 						std::string nodeId;
 						int nodeStorage;
+						std::string lockMode;
 						std::string connectString;
 						int maxIOPS;
 					};
