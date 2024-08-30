@@ -51,6 +51,42 @@ KmsClient::KmsClient(const std::string & accessKeyId, const std::string & access
 KmsClient::~KmsClient()
 {}
 
+KmsClient::AdvanceEncryptOutcome KmsClient::advanceEncrypt(const AdvanceEncryptRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AdvanceEncryptOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AdvanceEncryptOutcome(AdvanceEncryptResult(outcome.result()));
+	else
+		return AdvanceEncryptOutcome(outcome.error());
+}
+
+void KmsClient::advanceEncryptAsync(const AdvanceEncryptRequest& request, const AdvanceEncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, advanceEncrypt(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::AdvanceEncryptOutcomeCallable KmsClient::advanceEncryptCallable(const AdvanceEncryptRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AdvanceEncryptOutcome()>>(
+			[this, request]()
+			{
+			return this->advanceEncrypt(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::AsymmetricDecryptOutcome KmsClient::asymmetricDecrypt(const AsymmetricDecryptRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

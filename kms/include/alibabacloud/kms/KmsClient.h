@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "KmsExport.h"
+#include "model/AdvanceEncryptRequest.h"
+#include "model/AdvanceEncryptResult.h"
 #include "model/AsymmetricDecryptRequest.h"
 #include "model/AsymmetricDecryptResult.h"
 #include "model/AsymmetricEncryptRequest.h"
@@ -215,6 +217,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_KMS_EXPORT KmsClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AdvanceEncryptResult> AdvanceEncryptOutcome;
+			typedef std::future<AdvanceEncryptOutcome> AdvanceEncryptOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::AdvanceEncryptRequest&, const AdvanceEncryptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AdvanceEncryptAsyncHandler;
 			typedef Outcome<Error, Model::AsymmetricDecryptResult> AsymmetricDecryptOutcome;
 			typedef std::future<AsymmetricDecryptOutcome> AsymmetricDecryptOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::AsymmetricDecryptRequest&, const AsymmetricDecryptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AsymmetricDecryptAsyncHandler;
@@ -496,6 +501,9 @@ namespace AlibabaCloud
 			KmsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			KmsClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~KmsClient();
+			AdvanceEncryptOutcome advanceEncrypt(const Model::AdvanceEncryptRequest &request)const;
+			void advanceEncryptAsync(const Model::AdvanceEncryptRequest& request, const AdvanceEncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AdvanceEncryptOutcomeCallable advanceEncryptCallable(const Model::AdvanceEncryptRequest& request) const;
 			AsymmetricDecryptOutcome asymmetricDecrypt(const Model::AsymmetricDecryptRequest &request)const;
 			void asymmetricDecryptAsync(const Model::AsymmetricDecryptRequest& request, const AsymmetricDecryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AsymmetricDecryptOutcomeCallable asymmetricDecryptCallable(const Model::AsymmetricDecryptRequest& request) const;

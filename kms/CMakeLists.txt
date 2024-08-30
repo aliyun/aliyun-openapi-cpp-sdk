@@ -21,6 +21,8 @@ set(kms_public_header
 	include/alibabacloud/kms/KmsExport.h )
 
 set(kms_public_header_model 
+	include/alibabacloud/kms/model/AdvanceEncryptRequest.h
+	include/alibabacloud/kms/model/AdvanceEncryptResult.h
 	include/alibabacloud/kms/model/AsymmetricDecryptRequest.h
 	include/alibabacloud/kms/model/AsymmetricDecryptResult.h
 	include/alibabacloud/kms/model/AsymmetricEncryptRequest.h
@@ -208,6 +210,8 @@ set(kms_public_header_model
 
 set(kms_src 
 	src/KmsClient.cc
+	src/model/AdvanceEncryptRequest.cc
+	src/model/AdvanceEncryptResult.cc
 	src/model/AsymmetricDecryptRequest.cc
 	src/model/AsymmetricDecryptResult.cc
 	src/model/AsymmetricEncryptRequest.cc
