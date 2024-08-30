@@ -29,6 +29,8 @@ namespace Model {
 class ALIBABACLOUD_DOMAIN_EXPORT SaveBatchTaskForReserveDropListDomainRequest : public RpcServiceRequest {
 public:
 	struct Domains {
+		std::string dns2;
+		std::string dns1;
 		std::string domainName;
 	};
 	SaveBatchTaskForReserveDropListDomainRequest();

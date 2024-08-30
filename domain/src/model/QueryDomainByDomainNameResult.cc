@@ -39,6 +39,16 @@ void QueryDomainByDomainNameResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allTagNode = value["Tag"]["TagItem"];
+	for (auto valueTagTagItem : allTagNode)
+	{
+		TagItem tagObject;
+		if(!valueTagTagItem["Key"].isNull())
+			tagObject.key = valueTagTagItem["Key"].asString();
+		if(!valueTagTagItem["Vaue"].isNull())
+			tagObject.vaue = valueTagTagItem["Vaue"].asString();
+		tag_.push_back(tagObject);
+	}
 	auto allDnsList = value["DnsList"]["Dns"];
 	for (const auto &item : allDnsList)
 		dnsList_.push_back(item.asString());
@@ -100,8 +110,10 @@ void QueryDomainByDomainNameResult::parse(const std::string &payload)
 		expirationCurrDateDiff_ = std::stoi(value["ExpirationCurrDateDiff"].asString());
 	if(!value["DomainType"].isNull())
 		domainType_ = value["DomainType"].asString();
-	if(!value["domainStatus"].isNull())
-		domainStatus_ = value["domainStatus"].asString();
+	if(!value["DomainStatus"].isNull())
+		domainStatus_ = value["DomainStatus"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -118,6 +130,11 @@ std::string QueryDomainByDomainNameResult::getRegistrationDate()const
 long QueryDomainByDomainNameResult::getRegistrationDateLong()const
 {
 	return registrationDateLong_;
+}
+
+std::string QueryDomainByDomainNameResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string QueryDomainByDomainNameResult::getRealNameStatus()const
@@ -248,6 +265,11 @@ std::string QueryDomainByDomainNameResult::getRegistrantName()const
 std::string QueryDomainByDomainNameResult::getUserId()const
 {
 	return userId_;
+}
+
+std::vector<QueryDomainByDomainNameResult::TagItem> QueryDomainByDomainNameResult::getTag()const
+{
+	return tag_;
 }
 
 std::string QueryDomainByDomainNameResult::getUpdateProhibitionLock()const

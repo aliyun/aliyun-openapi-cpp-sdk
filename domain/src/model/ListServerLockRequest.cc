@@ -61,6 +61,15 @@ void ListServerLockRequest::setBeginStartDate(long beginStartDate) {
   setParameter(std::string("BeginStartDate"), std::to_string(beginStartDate));
 }
 
+std::string ListServerLockRequest::getOrderByType() const {
+  return orderByType_;
+}
+
+void ListServerLockRequest::setOrderByType(const std::string &orderByType) {
+  orderByType_ = orderByType;
+  setParameter(std::string("OrderByType"), orderByType);
+}
+
 int ListServerLockRequest::getServerLockStatus() const {
   return serverLockStatus_;
 }
@@ -104,6 +113,15 @@ std::string ListServerLockRequest::getDomainName() const {
 void ListServerLockRequest::setDomainName(const std::string &domainName) {
   domainName_ = domainName;
   setParameter(std::string("DomainName"), domainName);
+}
+
+std::string ListServerLockRequest::getOrderBy() const {
+  return orderBy_;
+}
+
+void ListServerLockRequest::setOrderBy(const std::string &orderBy) {
+  orderBy_ = orderBy;
+  setParameter(std::string("OrderBy"), orderBy);
 }
 
 long ListServerLockRequest::getEndStartDate() const {

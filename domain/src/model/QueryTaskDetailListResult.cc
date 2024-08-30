@@ -69,6 +69,8 @@ void QueryTaskDetailListResult::parse(const std::string &payload)
 			dataObject.tryCount = std::stoi(valueDataTaskDetail["TryCount"].asString());
 		if(!valueDataTaskDetail["ErrorMsg"].isNull())
 			dataObject.errorMsg = valueDataTaskDetail["ErrorMsg"].asString();
+		if(!valueDataTaskDetail["FailReason"].isNull())
+			dataObject.failReason = valueDataTaskDetail["FailReason"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["PrePage"].isNull())

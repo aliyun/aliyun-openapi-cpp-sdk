@@ -32,6 +32,11 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DOMAIN_EXPORT QueryDomainByInstanceIdResult : public ServiceResult
 			{
 			public:
+				struct TagItem
+				{
+					std::string value;
+					std::string key;
+				};
 
 
 				QueryDomainByInstanceIdResult();
@@ -40,6 +45,7 @@ namespace AlibabaCloud
 				std::string getEmail()const;
 				std::string getRegistrationDate()const;
 				long getRegistrationDateLong()const;
+				std::string getResourceGroupId()const;
 				std::string getRealNameStatus()const;
 				bool getPremium()const;
 				std::string getDomainNameVerificationStatus()const;
@@ -66,6 +72,7 @@ namespace AlibabaCloud
 				std::string getExpirationDate()const;
 				std::string getRegistrantName()const;
 				std::string getUserId()const;
+				std::vector<TagItem> getTag()const;
 				std::string getUpdateProhibitionLock()const;
 				std::string getDomainStatus()const;
 
@@ -75,6 +82,7 @@ namespace AlibabaCloud
 				std::string email_;
 				std::string registrationDate_;
 				long registrationDateLong_;
+				std::string resourceGroupId_;
 				std::string realNameStatus_;
 				bool premium_;
 				std::string domainNameVerificationStatus_;
@@ -101,6 +109,7 @@ namespace AlibabaCloud
 				std::string expirationDate_;
 				std::string registrantName_;
 				std::string userId_;
+				std::vector<TagItem> tag_;
 				std::string updateProhibitionLock_;
 				std::string domainStatus_;
 

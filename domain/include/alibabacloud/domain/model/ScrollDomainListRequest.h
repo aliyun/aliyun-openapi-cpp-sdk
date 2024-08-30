@@ -36,6 +36,8 @@ public:
 	void setExcluded(const std::string &excluded);
 	int getStartLength() const;
 	void setStartLength(int startLength);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	bool getExcludedSuffix() const;
 	void setExcludedSuffix(bool excludedSuffix);
 	int getPageSize() const;
@@ -79,6 +81,7 @@ private:
 	std::string productDomainType_;
 	std::string excluded_;
 	int startLength_;
+	std::string resourceGroupId_;
 	bool excludedSuffix_;
 	int pageSize_;
 	std::string lang_;

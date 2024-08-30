@@ -34,6 +34,15 @@ void QueryRegistrantProfilesRequest::setRegistrantProfileId(long registrantProfi
   setParameter(std::string("RegistrantProfileId"), std::to_string(registrantProfileId));
 }
 
+std::string QueryRegistrantProfilesRequest::getRemark() const {
+  return remark_;
+}
+
+void QueryRegistrantProfilesRequest::setRemark(const std::string &remark) {
+  remark_ = remark;
+  setParameter(std::string("Remark"), remark);
+}
+
 int QueryRegistrantProfilesRequest::getPageNum() const {
   return pageNum_;
 }

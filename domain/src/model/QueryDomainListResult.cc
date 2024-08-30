@@ -77,6 +77,22 @@ void QueryDomainListResult::parse(const std::string &payload)
 			dataObject.domainStatus = valueDataDomain["DomainStatus"].asString();
 		if(!valueDataDomain["DomainType"].isNull())
 			dataObject.domainType = valueDataDomain["DomainType"].asString();
+		if(!valueDataDomain["ResourceGroupId"].isNull())
+			dataObject.resourceGroupId = valueDataDomain["ResourceGroupId"].asString();
+		if(!valueDataDomain["Ccompany"].isNull())
+			dataObject.ccompany = valueDataDomain["Ccompany"].asString();
+		if(!valueDataDomain["ChgholderStatus"].isNull())
+			dataObject.chgholderStatus = valueDataDomain["ChgholderStatus"].asString();
+		auto allTagNode = valueDataDomain["Tag"]["TagItem"];
+		for (auto valueDataDomainTagTagItem : allTagNode)
+		{
+			Domain::TagItem tagObject;
+			if(!valueDataDomainTagTagItem["Key"].isNull())
+				tagObject.key = valueDataDomainTagTagItem["Key"].asString();
+			if(!valueDataDomainTagTagItem["Value"].isNull())
+				tagObject.value = valueDataDomainTagTagItem["Value"].asString();
+			dataObject.tag.push_back(tagObject);
+		}
 		data_.push_back(dataObject);
 	}
 	if(!value["PrePage"].isNull())

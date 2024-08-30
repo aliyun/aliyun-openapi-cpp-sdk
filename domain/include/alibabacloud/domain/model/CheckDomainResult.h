@@ -32,6 +32,12 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DOMAIN_EXPORT CheckDomainResult : public ServiceResult
 			{
 			public:
+				struct PriceInfo
+				{
+					double money;
+					std::string action;
+					long period;
+				};
 
 
 				CheckDomainResult();
@@ -41,6 +47,7 @@ namespace AlibabaCloud
 				long getPrice()const;
 				std::string getDomainName()const;
 				std::string getPremium()const;
+				std::vector<PriceInfo> getStaticPriceInfo()const;
 				bool getDynamicCheck()const;
 				std::string getReason()const;
 
@@ -51,6 +58,7 @@ namespace AlibabaCloud
 				long price_;
 				std::string domainName_;
 				std::string premium_;
+				std::vector<PriceInfo> staticPriceInfo_;
 				bool dynamicCheck_;
 				std::string reason_;
 

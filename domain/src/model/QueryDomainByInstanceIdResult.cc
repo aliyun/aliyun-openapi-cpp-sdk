@@ -39,6 +39,16 @@ void QueryDomainByInstanceIdResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allTagNode = value["Tag"]["TagItem"];
+	for (auto valueTagTagItem : allTagNode)
+	{
+		TagItem tagObject;
+		if(!valueTagTagItem["Key"].isNull())
+			tagObject.key = valueTagTagItem["Key"].asString();
+		if(!valueTagTagItem["Value"].isNull())
+			tagObject.value = valueTagTagItem["Value"].asString();
+		tag_.push_back(tagObject);
+	}
 	auto allDnsList = value["DnsList"]["Dns"];
 	for (const auto &item : allDnsList)
 		dnsList_.push_back(item.asString());
@@ -102,6 +112,8 @@ void QueryDomainByInstanceIdResult::parse(const std::string &payload)
 		domainType_ = value["DomainType"].asString();
 	if(!value["DomainStatus"].isNull())
 		domainStatus_ = value["DomainStatus"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -118,6 +130,11 @@ std::string QueryDomainByInstanceIdResult::getRegistrationDate()const
 long QueryDomainByInstanceIdResult::getRegistrationDateLong()const
 {
 	return registrationDateLong_;
+}
+
+std::string QueryDomainByInstanceIdResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string QueryDomainByInstanceIdResult::getRealNameStatus()const
@@ -248,6 +265,11 @@ std::string QueryDomainByInstanceIdResult::getRegistrantName()const
 std::string QueryDomainByInstanceIdResult::getUserId()const
 {
 	return userId_;
+}
+
+std::vector<QueryDomainByInstanceIdResult::TagItem> QueryDomainByInstanceIdResult::getTag()const
+{
+	return tag_;
 }
 
 std::string QueryDomainByInstanceIdResult::getUpdateProhibitionLock()const

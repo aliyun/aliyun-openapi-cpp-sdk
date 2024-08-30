@@ -91,6 +91,12 @@ void QueryRegistrantProfilesResult::parse(const std::string &payload)
 			registrantProfilesObject.zhAddress = valueRegistrantProfilesRegistrantProfile["ZhAddress"].asString();
 		if(!valueRegistrantProfilesRegistrantProfile["Province"].isNull())
 			registrantProfilesObject.province = valueRegistrantProfilesRegistrantProfile["Province"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["CredentialNo"].isNull())
+			registrantProfilesObject.credentialNo = valueRegistrantProfilesRegistrantProfile["CredentialNo"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["CredentialType"].isNull())
+			registrantProfilesObject.credentialType = valueRegistrantProfilesRegistrantProfile["CredentialType"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["Remark"].isNull())
+			registrantProfilesObject.remark = valueRegistrantProfilesRegistrantProfile["Remark"].asString();
 		registrantProfiles_.push_back(registrantProfilesObject);
 	}
 	if(!value["NextPage"].isNull())

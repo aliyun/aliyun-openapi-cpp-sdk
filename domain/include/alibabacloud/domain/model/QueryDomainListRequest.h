@@ -28,18 +28,28 @@ namespace Domain {
 namespace Model {
 class ALIBABACLOUD_DOMAIN_EXPORT QueryDomainListRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	QueryDomainListRequest();
 	~QueryDomainListRequest();
 	std::string getProductDomainType() const;
 	void setProductDomainType(const std::string &productDomainType);
+	std::string getCcompany() const;
+	void setCcompany(const std::string &ccompany);
 	std::string getOrderKeyType() const;
 	void setOrderKeyType(const std::string &orderKeyType);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
 	std::string getOrderByType() const;
 	void setOrderByType(const std::string &orderByType);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
 	std::string getQueryType() const;
@@ -61,10 +71,13 @@ public:
 
 private:
 	std::string productDomainType_;
+	std::string ccompany_;
 	std::string orderKeyType_;
 	int pageNum_;
 	std::string orderByType_;
+	std::string resourceGroupId_;
 	int pageSize_;
+	std::vector<Tag> tag_;
 	std::string lang_;
 	std::string queryType_;
 	long endExpirationDate_;

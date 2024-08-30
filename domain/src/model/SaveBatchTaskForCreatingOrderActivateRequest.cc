@@ -43,6 +43,7 @@ void SaveBatchTaskForCreatingOrderActivateRequest::setOrderActivateParam(const s
     setParameter(orderActivateParamObjStr + ".RegistrantProfileId", std::to_string(orderActivateParamObj.registrantProfileId));
     setParameter(orderActivateParamObjStr + ".AliyunDns", orderActivateParamObj.aliyunDns ? "true" : "false");
     setParameter(orderActivateParamObjStr + ".ZhCity", orderActivateParamObj.zhCity);
+    setParameter(orderActivateParamObjStr + ".ResourceGroupId", orderActivateParamObj.resourceGroupId);
     setParameter(orderActivateParamObjStr + ".TelExt", orderActivateParamObj.telExt);
     setParameter(orderActivateParamObjStr + ".ZhRegistrantName", orderActivateParamObj.zhRegistrantName);
     setParameter(orderActivateParamObjStr + ".Province", orderActivateParamObj.province);

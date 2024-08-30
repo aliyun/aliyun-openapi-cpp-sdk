@@ -34,6 +34,15 @@ void QueryDomainListRequest::setProductDomainType(const std::string &productDoma
   setParameter(std::string("ProductDomainType"), productDomainType);
 }
 
+std::string QueryDomainListRequest::getCcompany() const {
+  return ccompany_;
+}
+
+void QueryDomainListRequest::setCcompany(const std::string &ccompany) {
+  ccompany_ = ccompany;
+  setParameter(std::string("Ccompany"), ccompany);
+}
+
 std::string QueryDomainListRequest::getOrderKeyType() const {
   return orderKeyType_;
 }
@@ -61,6 +70,15 @@ void QueryDomainListRequest::setOrderByType(const std::string &orderByType) {
   setParameter(std::string("OrderByType"), orderByType);
 }
 
+std::string QueryDomainListRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void QueryDomainListRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 int QueryDomainListRequest::getPageSize() const {
   return pageSize_;
 }
@@ -68,6 +86,20 @@ int QueryDomainListRequest::getPageSize() const {
 void QueryDomainListRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::vector<QueryDomainListRequest::Tag> QueryDomainListRequest::getTag() const {
+  return tag_;
+}
+
+void QueryDomainListRequest::setTag(const std::vector<QueryDomainListRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
 std::string QueryDomainListRequest::getLang() const {

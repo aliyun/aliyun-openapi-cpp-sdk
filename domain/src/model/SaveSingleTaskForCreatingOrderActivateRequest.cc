@@ -34,6 +34,141 @@ void SaveSingleTaskForCreatingOrderActivateRequest::setCountry(const std::string
   setParameter(std::string("Country"), country);
 }
 
+std::string SaveSingleTaskForCreatingOrderActivateRequest::getDns2() const {
+  return dns2_;
+}
+
+void SaveSingleTaskForCreatingOrderActivateRequest::setDns2(const std::string &dns2) {
+  dns2_ = dns2;
+  setParameter(std::string("Dns2"), dns2);
+}
+
+std::string SaveSingleTaskForCreatingOrderActivateRequest::getDns1() const {
+  return dns1_;
+}
+
+void SaveSingleTaskForCreatingOrderActivateRequest::setDns1(const std::string &dns1) {
+  dns1_ = dns1;
+  setParameter(std::string("Dns1"), dns1);
+}
+
+std::string SaveSingleTaskForCreatingOrderActivateRequest::getCouponNo() const {
+  return couponNo_;
+}
+
+void SaveSingleTaskForCreatingOrderActivateRequest::setCouponNo(const std::string &couponNo) {
+  couponNo_ = couponNo;
+  setParameter(std::string("CouponNo"), couponNo);
+}
+
+std::string SaveSingleTaskForCreatingOrderActivateRequest::getZhCity() const {
+  return zhCity_;
+}
+
+void SaveSingleTaskForCreatingOrderActivateRequest::setZhCity(const std::string &zhCity) {
+  zhCity_ = zhCity;
+  setParameter(std::string("ZhCity"), zhCity);
+}
+
+std::string SaveSingleTaskForCreatingOrderActivateRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void SaveSingleTaskForCreatingOrderActivateRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string SaveSingleTaskForCreatingOrderActivateRequest::getTelExt() const {
+  return telExt_;
+}
+
+void SaveSingleTaskForCreatingOrderActivateRequest::setTelExt(const std::string &telExt) {
+  telExt_ = telExt;
+  setParameter(std::string("TelExt"), telExt);
+}
+
+std::string SaveSingleTaskForCreatingOrderActivateRequest::getProvince() const {
+  return province_;
+}
+
+void SaveSingleTaskForCreatingOrderActivateRequest::setProvince(const std::string &province) {
+  province_ = province;
+  setParameter(std::string("Province"), province);
+}
+
+std::string SaveSingleTaskForCreatingOrderActivateRequest::getDomainName() const {
+  return domainName_;
+}
+
+void SaveSingleTaskForCreatingOrderActivateRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
+}
+
+std::string SaveSingleTaskForCreatingOrderActivateRequest::getZhAddress() const {
+  return zhAddress_;
+}
+
+void SaveSingleTaskForCreatingOrderActivateRequest::setZhAddress(const std::string &zhAddress) {
+  zhAddress_ = zhAddress;
+  setParameter(std::string("ZhAddress"), zhAddress);
+}
+
+std::string SaveSingleTaskForCreatingOrderActivateRequest::getTelephone() const {
+  return telephone_;
+}
+
+void SaveSingleTaskForCreatingOrderActivateRequest::setTelephone(const std::string &telephone) {
+  telephone_ = telephone;
+  setParameter(std::string("Telephone"), telephone);
+}
+
+std::string SaveSingleTaskForCreatingOrderActivateRequest::getZhProvince() const {
+  return zhProvince_;
+}
+
+void SaveSingleTaskForCreatingOrderActivateRequest::setZhProvince(const std::string &zhProvince) {
+  zhProvince_ = zhProvince;
+  setParameter(std::string("ZhProvince"), zhProvince);
+}
+
+std::string SaveSingleTaskForCreatingOrderActivateRequest::getRegistrantOrganization() const {
+  return registrantOrganization_;
+}
+
+void SaveSingleTaskForCreatingOrderActivateRequest::setRegistrantOrganization(const std::string &registrantOrganization) {
+  registrantOrganization_ = registrantOrganization;
+  setParameter(std::string("RegistrantOrganization"), registrantOrganization);
+}
+
+std::string SaveSingleTaskForCreatingOrderActivateRequest::getPromotionNo() const {
+  return promotionNo_;
+}
+
+void SaveSingleTaskForCreatingOrderActivateRequest::setPromotionNo(const std::string &promotionNo) {
+  promotionNo_ = promotionNo;
+  setParameter(std::string("PromotionNo"), promotionNo);
+}
+
+std::string SaveSingleTaskForCreatingOrderActivateRequest::getRegistrantName() const {
+  return registrantName_;
+}
+
+void SaveSingleTaskForCreatingOrderActivateRequest::setRegistrantName(const std::string &registrantName) {
+  registrantName_ = registrantName;
+  setParameter(std::string("RegistrantName"), registrantName);
+}
+
+bool SaveSingleTaskForCreatingOrderActivateRequest::getUsePromotion() const {
+  return usePromotion_;
+}
+
+void SaveSingleTaskForCreatingOrderActivateRequest::setUsePromotion(bool usePromotion) {
+  usePromotion_ = usePromotion;
+  setParameter(std::string("UsePromotion"), usePromotion ? "true" : "false");
+}
+
 int SaveSingleTaskForCreatingOrderActivateRequest::getSubscriptionDuration() const {
   return subscriptionDuration_;
 }
@@ -61,24 +196,6 @@ void SaveSingleTaskForCreatingOrderActivateRequest::setCity(const std::string &c
   setParameter(std::string("City"), city);
 }
 
-std::string SaveSingleTaskForCreatingOrderActivateRequest::getDns2() const {
-  return dns2_;
-}
-
-void SaveSingleTaskForCreatingOrderActivateRequest::setDns2(const std::string &dns2) {
-  dns2_ = dns2;
-  setParameter(std::string("Dns2"), dns2);
-}
-
-std::string SaveSingleTaskForCreatingOrderActivateRequest::getDns1() const {
-  return dns1_;
-}
-
-void SaveSingleTaskForCreatingOrderActivateRequest::setDns1(const std::string &dns1) {
-  dns1_ = dns1;
-  setParameter(std::string("Dns1"), dns1);
-}
-
 long SaveSingleTaskForCreatingOrderActivateRequest::getRegistrantProfileId() const {
   return registrantProfileId_;
 }
@@ -86,15 +203,6 @@ long SaveSingleTaskForCreatingOrderActivateRequest::getRegistrantProfileId() con
 void SaveSingleTaskForCreatingOrderActivateRequest::setRegistrantProfileId(long registrantProfileId) {
   registrantProfileId_ = registrantProfileId;
   setParameter(std::string("RegistrantProfileId"), std::to_string(registrantProfileId));
-}
-
-std::string SaveSingleTaskForCreatingOrderActivateRequest::getCouponNo() const {
-  return couponNo_;
-}
-
-void SaveSingleTaskForCreatingOrderActivateRequest::setCouponNo(const std::string &couponNo) {
-  couponNo_ = couponNo;
-  setParameter(std::string("CouponNo"), couponNo);
 }
 
 bool SaveSingleTaskForCreatingOrderActivateRequest::getAliyunDns() const {
@@ -106,24 +214,6 @@ void SaveSingleTaskForCreatingOrderActivateRequest::setAliyunDns(bool aliyunDns)
   setParameter(std::string("AliyunDns"), aliyunDns ? "true" : "false");
 }
 
-std::string SaveSingleTaskForCreatingOrderActivateRequest::getZhCity() const {
-  return zhCity_;
-}
-
-void SaveSingleTaskForCreatingOrderActivateRequest::setZhCity(const std::string &zhCity) {
-  zhCity_ = zhCity;
-  setParameter(std::string("ZhCity"), zhCity);
-}
-
-std::string SaveSingleTaskForCreatingOrderActivateRequest::getTelExt() const {
-  return telExt_;
-}
-
-void SaveSingleTaskForCreatingOrderActivateRequest::setTelExt(const std::string &telExt) {
-  telExt_ = telExt;
-  setParameter(std::string("TelExt"), telExt);
-}
-
 std::string SaveSingleTaskForCreatingOrderActivateRequest::getZhRegistrantName() const {
   return zhRegistrantName_;
 }
@@ -131,15 +221,6 @@ std::string SaveSingleTaskForCreatingOrderActivateRequest::getZhRegistrantName()
 void SaveSingleTaskForCreatingOrderActivateRequest::setZhRegistrantName(const std::string &zhRegistrantName) {
   zhRegistrantName_ = zhRegistrantName;
   setParameter(std::string("ZhRegistrantName"), zhRegistrantName);
-}
-
-std::string SaveSingleTaskForCreatingOrderActivateRequest::getProvince() const {
-  return province_;
-}
-
-void SaveSingleTaskForCreatingOrderActivateRequest::setProvince(const std::string &province) {
-  province_ = province;
-  setParameter(std::string("Province"), province);
 }
 
 std::string SaveSingleTaskForCreatingOrderActivateRequest::getPostalCode() const {
@@ -196,24 +277,6 @@ void SaveSingleTaskForCreatingOrderActivateRequest::setTelArea(const std::string
   setParameter(std::string("TelArea"), telArea);
 }
 
-std::string SaveSingleTaskForCreatingOrderActivateRequest::getDomainName() const {
-  return domainName_;
-}
-
-void SaveSingleTaskForCreatingOrderActivateRequest::setDomainName(const std::string &domainName) {
-  domainName_ = domainName;
-  setParameter(std::string("DomainName"), domainName);
-}
-
-std::string SaveSingleTaskForCreatingOrderActivateRequest::getZhAddress() const {
-  return zhAddress_;
-}
-
-void SaveSingleTaskForCreatingOrderActivateRequest::setZhAddress(const std::string &zhAddress) {
-  zhAddress_ = zhAddress;
-  setParameter(std::string("ZhAddress"), zhAddress);
-}
-
 std::string SaveSingleTaskForCreatingOrderActivateRequest::getRegistrantType() const {
   return registrantType_;
 }
@@ -221,15 +284,6 @@ std::string SaveSingleTaskForCreatingOrderActivateRequest::getRegistrantType() c
 void SaveSingleTaskForCreatingOrderActivateRequest::setRegistrantType(const std::string &registrantType) {
   registrantType_ = registrantType;
   setParameter(std::string("RegistrantType"), registrantType);
-}
-
-std::string SaveSingleTaskForCreatingOrderActivateRequest::getTelephone() const {
-  return telephone_;
-}
-
-void SaveSingleTaskForCreatingOrderActivateRequest::setTelephone(const std::string &telephone) {
-  telephone_ = telephone;
-  setParameter(std::string("Telephone"), telephone);
 }
 
 bool SaveSingleTaskForCreatingOrderActivateRequest::getTrademarkDomainActivation() const {
@@ -250,33 +304,6 @@ void SaveSingleTaskForCreatingOrderActivateRequest::setUseCoupon(bool useCoupon)
   setParameter(std::string("UseCoupon"), useCoupon ? "true" : "false");
 }
 
-std::string SaveSingleTaskForCreatingOrderActivateRequest::getZhProvince() const {
-  return zhProvince_;
-}
-
-void SaveSingleTaskForCreatingOrderActivateRequest::setZhProvince(const std::string &zhProvince) {
-  zhProvince_ = zhProvince;
-  setParameter(std::string("ZhProvince"), zhProvince);
-}
-
-std::string SaveSingleTaskForCreatingOrderActivateRequest::getRegistrantOrganization() const {
-  return registrantOrganization_;
-}
-
-void SaveSingleTaskForCreatingOrderActivateRequest::setRegistrantOrganization(const std::string &registrantOrganization) {
-  registrantOrganization_ = registrantOrganization;
-  setParameter(std::string("RegistrantOrganization"), registrantOrganization);
-}
-
-std::string SaveSingleTaskForCreatingOrderActivateRequest::getPromotionNo() const {
-  return promotionNo_;
-}
-
-void SaveSingleTaskForCreatingOrderActivateRequest::setPromotionNo(const std::string &promotionNo) {
-  promotionNo_ = promotionNo;
-  setParameter(std::string("PromotionNo"), promotionNo);
-}
-
 bool SaveSingleTaskForCreatingOrderActivateRequest::getEnableDomainProxy() const {
   return enableDomainProxy_;
 }
@@ -293,23 +320,5 @@ std::string SaveSingleTaskForCreatingOrderActivateRequest::getUserClientIp() con
 void SaveSingleTaskForCreatingOrderActivateRequest::setUserClientIp(const std::string &userClientIp) {
   userClientIp_ = userClientIp;
   setParameter(std::string("UserClientIp"), userClientIp);
-}
-
-std::string SaveSingleTaskForCreatingOrderActivateRequest::getRegistrantName() const {
-  return registrantName_;
-}
-
-void SaveSingleTaskForCreatingOrderActivateRequest::setRegistrantName(const std::string &registrantName) {
-  registrantName_ = registrantName;
-  setParameter(std::string("RegistrantName"), registrantName);
-}
-
-bool SaveSingleTaskForCreatingOrderActivateRequest::getUsePromotion() const {
-  return usePromotion_;
-}
-
-void SaveSingleTaskForCreatingOrderActivateRequest::setUsePromotion(bool usePromotion) {
-  usePromotion_ = usePromotion;
-  setParameter(std::string("UsePromotion"), usePromotion ? "true" : "false");
 }
 

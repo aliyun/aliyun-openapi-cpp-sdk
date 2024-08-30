@@ -34,6 +34,8 @@ void SaveBatchTaskForReserveDropListDomainRequest::setDomains(const std::vector<
   for(int dep1 = 0; dep1 != domains.size(); dep1++) {
   auto domainsObj = domains.at(dep1);
   std::string domainsObjStr = std::string("Domains") + "." + std::to_string(dep1 + 1);
+    setParameter(domainsObjStr + ".Dns2", domainsObj.dns2);
+    setParameter(domainsObjStr + ".Dns1", domainsObj.dns1);
     setParameter(domainsObjStr + ".DomainName", domainsObj.domainName);
   }
 }

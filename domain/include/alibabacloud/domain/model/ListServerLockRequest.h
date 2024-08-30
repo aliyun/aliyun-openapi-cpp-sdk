@@ -38,6 +38,8 @@ public:
 	void setPageNum(int pageNum);
 	long getBeginStartDate() const;
 	void setBeginStartDate(long beginStartDate);
+	std::string getOrderByType() const;
+	void setOrderByType(const std::string &orderByType);
 	int getServerLockStatus() const;
 	void setServerLockStatus(int serverLockStatus);
 	long getStartExpireDate() const;
@@ -48,6 +50,8 @@ public:
 	void setLang(const std::string &lang);
 	std::string getDomainName() const;
 	void setDomainName(const std::string &domainName);
+	std::string getOrderBy() const;
+	void setOrderBy(const std::string &orderBy);
 	long getEndStartDate() const;
 	void setEndStartDate(long endStartDate);
 	std::string getUserClientIp() const;
@@ -58,11 +62,13 @@ private:
 	long endExpireDate_;
 	int pageNum_;
 	long beginStartDate_;
+	std::string orderByType_;
 	int serverLockStatus_;
 	long startExpireDate_;
 	int pageSize_;
 	std::string lang_;
 	std::string domainName_;
+	std::string orderBy_;
 	long endStartDate_;
 	std::string userClientIp_;
 };

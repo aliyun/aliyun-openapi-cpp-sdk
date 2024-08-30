@@ -28,6 +28,10 @@ namespace Domain {
 namespace Model {
 class ALIBABACLOUD_DOMAIN_EXPORT QueryAdvancedDomainListRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	QueryAdvancedDomainListRequest();
 	~QueryAdvancedDomainListRequest();
 	std::string getProductDomainType() const;
@@ -38,10 +42,14 @@ public:
 	void setExcluded(const std::string &excluded);
 	int getStartLength() const;
 	void setStartLength(int startLength);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	bool getExcludedSuffix() const;
 	void setExcludedSuffix(bool excludedSuffix);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
 	bool getExcludedPrefix() const;
@@ -74,6 +82,8 @@ public:
 	void setEndRegistrationDate(long endRegistrationDate);
 	int getForm() const;
 	void setForm(int form);
+	bool getIsPremiumDomain() const;
+	void setIsPremiumDomain(bool isPremiumDomain);
 	std::string getUserClientIp() const;
 	void setUserClientIp(const std::string &userClientIp);
 	bool getRegistrationDateSort() const;
@@ -88,8 +98,10 @@ private:
 	int pageNum_;
 	std::string excluded_;
 	int startLength_;
+	std::string resourceGroupId_;
 	bool excludedSuffix_;
 	int pageSize_;
+	std::vector<Tag> tag_;
 	std::string lang_;
 	bool excludedPrefix_;
 	std::string keyWord_;
@@ -106,6 +118,7 @@ private:
 	int tradeType_;
 	long endRegistrationDate_;
 	int form_;
+	bool isPremiumDomain_;
 	std::string userClientIp_;
 	bool registrationDateSort_;
 	long startRegistrationDate_;

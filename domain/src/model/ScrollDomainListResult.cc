@@ -83,6 +83,18 @@ void ScrollDomainListResult::parse(const std::string &payload)
 			dataObject.domainStatus = valueDataDomain["DomainStatus"].asString();
 		if(!valueDataDomain["DomainType"].isNull())
 			dataObject.domainType = valueDataDomain["DomainType"].asString();
+		if(!valueDataDomain["ResourceGroupId"].isNull())
+			dataObject.resourceGroupId = valueDataDomain["ResourceGroupId"].asString();
+		auto allTagNode = valueDataDomain["Tag"]["TagItem"];
+		for (auto valueDataDomainTagTagItem : allTagNode)
+		{
+			Domain::TagItem tagObject;
+			if(!valueDataDomainTagTagItem["Key"].isNull())
+				tagObject.key = valueDataDomainTagTagItem["Key"].asString();
+			if(!valueDataDomainTagTagItem["Value"].isNull())
+				tagObject.value = valueDataDomainTagTagItem["Value"].asString();
+			dataObject.tag.push_back(tagObject);
+		}
 		auto allDnsList = value["DnsList"]["Dns"];
 		for (auto value : allDnsList)
 			dataObject.dnsList.push_back(value.asString());

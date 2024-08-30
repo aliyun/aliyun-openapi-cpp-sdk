@@ -31,21 +31,21 @@ DomainClient::DomainClient(const Credentials &credentials, const ClientConfigura
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "domain");
 }
 
 DomainClient::DomainClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "domain");
 }
 
 DomainClient::DomainClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "domain");
 }
 
 DomainClient::~DomainClient()
@@ -267,6 +267,42 @@ DomainClient::CancelTaskOutcomeCallable DomainClient::cancelTaskCallable(const C
 	return task->get_future();
 }
 
+DomainClient::ChangeResourceGroupOutcome DomainClient::changeResourceGroup(const ChangeResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeResourceGroupOutcome(ChangeResourceGroupResult(outcome.result()));
+	else
+		return ChangeResourceGroupOutcome(outcome.error());
+}
+
+void DomainClient::changeResourceGroupAsync(const ChangeResourceGroupRequest& request, const ChangeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::ChangeResourceGroupOutcomeCallable DomainClient::changeResourceGroupCallable(const ChangeResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->changeResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::CheckDomainOutcome DomainClient::checkDomain(const CheckDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +369,42 @@ DomainClient::CheckDomainSunriseClaimOutcomeCallable DomainClient::checkDomainSu
 			[this, request]()
 			{
 			return this->checkDomainSunriseClaim(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::CheckIntlFixPriceDomainStatusOutcome DomainClient::checkIntlFixPriceDomainStatus(const CheckIntlFixPriceDomainStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckIntlFixPriceDomainStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckIntlFixPriceDomainStatusOutcome(CheckIntlFixPriceDomainStatusResult(outcome.result()));
+	else
+		return CheckIntlFixPriceDomainStatusOutcome(outcome.error());
+}
+
+void DomainClient::checkIntlFixPriceDomainStatusAsync(const CheckIntlFixPriceDomainStatusRequest& request, const CheckIntlFixPriceDomainStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkIntlFixPriceDomainStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::CheckIntlFixPriceDomainStatusOutcomeCallable DomainClient::checkIntlFixPriceDomainStatusCallable(const CheckIntlFixPriceDomainStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckIntlFixPriceDomainStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->checkIntlFixPriceDomainStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -483,6 +555,42 @@ DomainClient::ConfirmTransferInEmailOutcomeCallable DomainClient::confirmTransfe
 	return task->get_future();
 }
 
+DomainClient::CreateIntlFixedPriceDomainOrderOutcome DomainClient::createIntlFixedPriceDomainOrder(const CreateIntlFixedPriceDomainOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateIntlFixedPriceDomainOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateIntlFixedPriceDomainOrderOutcome(CreateIntlFixedPriceDomainOrderResult(outcome.result()));
+	else
+		return CreateIntlFixedPriceDomainOrderOutcome(outcome.error());
+}
+
+void DomainClient::createIntlFixedPriceDomainOrderAsync(const CreateIntlFixedPriceDomainOrderRequest& request, const CreateIntlFixedPriceDomainOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createIntlFixedPriceDomainOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::CreateIntlFixedPriceDomainOrderOutcomeCallable DomainClient::createIntlFixedPriceDomainOrderCallable(const CreateIntlFixedPriceDomainOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateIntlFixedPriceDomainOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->createIntlFixedPriceDomainOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::DeleteContactTemplatesOutcome DomainClient::deleteContactTemplates(const DeleteContactTemplatesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -627,6 +735,42 @@ DomainClient::DeleteRegistrantProfileOutcomeCallable DomainClient::deleteRegistr
 	return task->get_future();
 }
 
+DomainClient::DomainSpecialBizCancelOutcome DomainClient::domainSpecialBizCancel(const DomainSpecialBizCancelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DomainSpecialBizCancelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DomainSpecialBizCancelOutcome(DomainSpecialBizCancelResult(outcome.result()));
+	else
+		return DomainSpecialBizCancelOutcome(outcome.error());
+}
+
+void DomainClient::domainSpecialBizCancelAsync(const DomainSpecialBizCancelRequest& request, const DomainSpecialBizCancelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, domainSpecialBizCancel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::DomainSpecialBizCancelOutcomeCallable DomainClient::domainSpecialBizCancelCallable(const DomainSpecialBizCancelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DomainSpecialBizCancelOutcome()>>(
+			[this, request]()
+			{
+			return this->domainSpecialBizCancel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::EmailVerifiedOutcome DomainClient::emailVerified(const EmailVerifiedRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +837,42 @@ DomainClient::FuzzyMatchDomainSensitiveWordOutcomeCallable DomainClient::fuzzyMa
 			[this, request]()
 			{
 			return this->fuzzyMatchDomainSensitiveWord(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::GetIntlFixPriceDomainListUrlOutcome DomainClient::getIntlFixPriceDomainListUrl(const GetIntlFixPriceDomainListUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetIntlFixPriceDomainListUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetIntlFixPriceDomainListUrlOutcome(GetIntlFixPriceDomainListUrlResult(outcome.result()));
+	else
+		return GetIntlFixPriceDomainListUrlOutcome(outcome.error());
+}
+
+void DomainClient::getIntlFixPriceDomainListUrlAsync(const GetIntlFixPriceDomainListUrlRequest& request, const GetIntlFixPriceDomainListUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getIntlFixPriceDomainListUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::GetIntlFixPriceDomainListUrlOutcomeCallable DomainClient::getIntlFixPriceDomainListUrlCallable(const GetIntlFixPriceDomainListUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetIntlFixPriceDomainListUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->getIntlFixPriceDomainListUrl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1347,6 +1527,78 @@ DomainClient::QueryDomainRealNameVerificationInfoOutcomeCallable DomainClient::q
 	return task->get_future();
 }
 
+DomainClient::QueryDomainSpecialBizDetailOutcome DomainClient::queryDomainSpecialBizDetail(const QueryDomainSpecialBizDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDomainSpecialBizDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDomainSpecialBizDetailOutcome(QueryDomainSpecialBizDetailResult(outcome.result()));
+	else
+		return QueryDomainSpecialBizDetailOutcome(outcome.error());
+}
+
+void DomainClient::queryDomainSpecialBizDetailAsync(const QueryDomainSpecialBizDetailRequest& request, const QueryDomainSpecialBizDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDomainSpecialBizDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::QueryDomainSpecialBizDetailOutcomeCallable DomainClient::queryDomainSpecialBizDetailCallable(const QueryDomainSpecialBizDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDomainSpecialBizDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDomainSpecialBizDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::QueryDomainSpecialBizInfoByDomainOutcome DomainClient::queryDomainSpecialBizInfoByDomain(const QueryDomainSpecialBizInfoByDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDomainSpecialBizInfoByDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDomainSpecialBizInfoByDomainOutcome(QueryDomainSpecialBizInfoByDomainResult(outcome.result()));
+	else
+		return QueryDomainSpecialBizInfoByDomainOutcome(outcome.error());
+}
+
+void DomainClient::queryDomainSpecialBizInfoByDomainAsync(const QueryDomainSpecialBizInfoByDomainRequest& request, const QueryDomainSpecialBizInfoByDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDomainSpecialBizInfoByDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::QueryDomainSpecialBizInfoByDomainOutcomeCallable DomainClient::queryDomainSpecialBizInfoByDomainCallable(const QueryDomainSpecialBizInfoByDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDomainSpecialBizInfoByDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDomainSpecialBizInfoByDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::QueryDomainSuffixOutcome DomainClient::queryDomainSuffix(const QueryDomainSuffixRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1557,6 +1809,42 @@ DomainClient::QueryFailingReasonListForQualificationOutcomeCallable DomainClient
 			[this, request]()
 			{
 			return this->queryFailingReasonListForQualification(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::QueryIntlFixedPriceOrderListOutcome DomainClient::queryIntlFixedPriceOrderList(const QueryIntlFixedPriceOrderListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryIntlFixedPriceOrderListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryIntlFixedPriceOrderListOutcome(QueryIntlFixedPriceOrderListResult(outcome.result()));
+	else
+		return QueryIntlFixedPriceOrderListOutcome(outcome.error());
+}
+
+void DomainClient::queryIntlFixedPriceOrderListAsync(const QueryIntlFixedPriceOrderListRequest& request, const QueryIntlFixedPriceOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryIntlFixedPriceOrderList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::QueryIntlFixedPriceOrderListOutcomeCallable DomainClient::queryIntlFixedPriceOrderListCallable(const QueryIntlFixedPriceOrderListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryIntlFixedPriceOrderListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryIntlFixedPriceOrderList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2211,6 +2499,42 @@ DomainClient::SaveBatchDomainRemarkOutcomeCallable DomainClient::saveBatchDomain
 	return task->get_future();
 }
 
+DomainClient::SaveBatchTaskForApplyQuickTransferOutOpenlyOutcome DomainClient::saveBatchTaskForApplyQuickTransferOutOpenly(const SaveBatchTaskForApplyQuickTransferOutOpenlyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveBatchTaskForApplyQuickTransferOutOpenlyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveBatchTaskForApplyQuickTransferOutOpenlyOutcome(SaveBatchTaskForApplyQuickTransferOutOpenlyResult(outcome.result()));
+	else
+		return SaveBatchTaskForApplyQuickTransferOutOpenlyOutcome(outcome.error());
+}
+
+void DomainClient::saveBatchTaskForApplyQuickTransferOutOpenlyAsync(const SaveBatchTaskForApplyQuickTransferOutOpenlyRequest& request, const SaveBatchTaskForApplyQuickTransferOutOpenlyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveBatchTaskForApplyQuickTransferOutOpenly(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveBatchTaskForApplyQuickTransferOutOpenlyOutcomeCallable DomainClient::saveBatchTaskForApplyQuickTransferOutOpenlyCallable(const SaveBatchTaskForApplyQuickTransferOutOpenlyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveBatchTaskForApplyQuickTransferOutOpenlyOutcome()>>(
+			[this, request]()
+			{
+			return this->saveBatchTaskForApplyQuickTransferOutOpenly(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::SaveBatchTaskForCreatingOrderActivateOutcome DomainClient::saveBatchTaskForCreatingOrderActivate(const SaveBatchTaskForCreatingOrderActivateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2385,6 +2709,42 @@ DomainClient::SaveBatchTaskForDomainNameProxyServiceOutcomeCallable DomainClient
 			[this, request]()
 			{
 			return this->saveBatchTaskForDomainNameProxyService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SaveBatchTaskForGenerateDomainCertificateOutcome DomainClient::saveBatchTaskForGenerateDomainCertificate(const SaveBatchTaskForGenerateDomainCertificateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveBatchTaskForGenerateDomainCertificateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveBatchTaskForGenerateDomainCertificateOutcome(SaveBatchTaskForGenerateDomainCertificateResult(outcome.result()));
+	else
+		return SaveBatchTaskForGenerateDomainCertificateOutcome(outcome.error());
+}
+
+void DomainClient::saveBatchTaskForGenerateDomainCertificateAsync(const SaveBatchTaskForGenerateDomainCertificateRequest& request, const SaveBatchTaskForGenerateDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveBatchTaskForGenerateDomainCertificate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveBatchTaskForGenerateDomainCertificateOutcomeCallable DomainClient::saveBatchTaskForGenerateDomainCertificateCallable(const SaveBatchTaskForGenerateDomainCertificateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveBatchTaskForGenerateDomainCertificateOutcome()>>(
+			[this, request]()
+			{
+			return this->saveBatchTaskForGenerateDomainCertificate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2745,6 +3105,42 @@ DomainClient::SaveSingleTaskForAddingDSRecordOutcomeCallable DomainClient::saveS
 			[this, request]()
 			{
 			return this->saveSingleTaskForAddingDSRecord(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SaveSingleTaskForApplyQuickTransferOutOpenlyOutcome DomainClient::saveSingleTaskForApplyQuickTransferOutOpenly(const SaveSingleTaskForApplyQuickTransferOutOpenlyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveSingleTaskForApplyQuickTransferOutOpenlyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveSingleTaskForApplyQuickTransferOutOpenlyOutcome(SaveSingleTaskForApplyQuickTransferOutOpenlyResult(outcome.result()));
+	else
+		return SaveSingleTaskForApplyQuickTransferOutOpenlyOutcome(outcome.error());
+}
+
+void DomainClient::saveSingleTaskForApplyQuickTransferOutOpenlyAsync(const SaveSingleTaskForApplyQuickTransferOutOpenlyRequest& request, const SaveSingleTaskForApplyQuickTransferOutOpenlyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveSingleTaskForApplyQuickTransferOutOpenly(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveSingleTaskForApplyQuickTransferOutOpenlyOutcomeCallable DomainClient::saveSingleTaskForApplyQuickTransferOutOpenlyCallable(const SaveSingleTaskForApplyQuickTransferOutOpenlyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveSingleTaskForApplyQuickTransferOutOpenlyOutcome()>>(
+			[this, request]()
+			{
+			return this->saveSingleTaskForApplyQuickTransferOutOpenly(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3219,6 +3615,42 @@ DomainClient::SaveSingleTaskForDomainNameProxyServiceOutcomeCallable DomainClien
 	return task->get_future();
 }
 
+DomainClient::SaveSingleTaskForGenerateDomainCertificateOutcome DomainClient::saveSingleTaskForGenerateDomainCertificate(const SaveSingleTaskForGenerateDomainCertificateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveSingleTaskForGenerateDomainCertificateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveSingleTaskForGenerateDomainCertificateOutcome(SaveSingleTaskForGenerateDomainCertificateResult(outcome.result()));
+	else
+		return SaveSingleTaskForGenerateDomainCertificateOutcome(outcome.error());
+}
+
+void DomainClient::saveSingleTaskForGenerateDomainCertificateAsync(const SaveSingleTaskForGenerateDomainCertificateRequest& request, const SaveSingleTaskForGenerateDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveSingleTaskForGenerateDomainCertificate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveSingleTaskForGenerateDomainCertificateOutcomeCallable DomainClient::saveSingleTaskForGenerateDomainCertificateCallable(const SaveSingleTaskForGenerateDomainCertificateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveSingleTaskForGenerateDomainCertificateOutcome()>>(
+			[this, request]()
+			{
+			return this->saveSingleTaskForGenerateDomainCertificate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::SaveSingleTaskForModifyingDSRecordOutcome DomainClient::saveSingleTaskForModifyingDSRecord(const SaveSingleTaskForModifyingDSRecordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3321,6 +3753,42 @@ DomainClient::SaveSingleTaskForQueryingTransferAuthorizationCodeOutcomeCallable 
 			[this, request]()
 			{
 			return this->saveSingleTaskForQueryingTransferAuthorizationCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SaveSingleTaskForReserveDropListDomainOutcome DomainClient::saveSingleTaskForReserveDropListDomain(const SaveSingleTaskForReserveDropListDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveSingleTaskForReserveDropListDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveSingleTaskForReserveDropListDomainOutcome(SaveSingleTaskForReserveDropListDomainResult(outcome.result()));
+	else
+		return SaveSingleTaskForReserveDropListDomainOutcome(outcome.error());
+}
+
+void DomainClient::saveSingleTaskForReserveDropListDomainAsync(const SaveSingleTaskForReserveDropListDomainRequest& request, const SaveSingleTaskForReserveDropListDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveSingleTaskForReserveDropListDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveSingleTaskForReserveDropListDomainOutcomeCallable DomainClient::saveSingleTaskForReserveDropListDomainCallable(const SaveSingleTaskForReserveDropListDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveSingleTaskForReserveDropListDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->saveSingleTaskForReserveDropListDomain(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3789,6 +4257,78 @@ DomainClient::SetDefaultRegistrantProfileOutcomeCallable DomainClient::setDefaul
 			[this, request]()
 			{
 			return this->setDefaultRegistrantProfile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SetupDomainAutoRenewOutcome DomainClient::setupDomainAutoRenew(const SetupDomainAutoRenewRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetupDomainAutoRenewOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetupDomainAutoRenewOutcome(SetupDomainAutoRenewResult(outcome.result()));
+	else
+		return SetupDomainAutoRenewOutcome(outcome.error());
+}
+
+void DomainClient::setupDomainAutoRenewAsync(const SetupDomainAutoRenewRequest& request, const SetupDomainAutoRenewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setupDomainAutoRenew(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SetupDomainAutoRenewOutcomeCallable DomainClient::setupDomainAutoRenewCallable(const SetupDomainAutoRenewRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetupDomainAutoRenewOutcome()>>(
+			[this, request]()
+			{
+			return this->setupDomainAutoRenew(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SubmitDomainSpecialBizCredentialsOutcome DomainClient::submitDomainSpecialBizCredentials(const SubmitDomainSpecialBizCredentialsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitDomainSpecialBizCredentialsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitDomainSpecialBizCredentialsOutcome(SubmitDomainSpecialBizCredentialsResult(outcome.result()));
+	else
+		return SubmitDomainSpecialBizCredentialsOutcome(outcome.error());
+}
+
+void DomainClient::submitDomainSpecialBizCredentialsAsync(const SubmitDomainSpecialBizCredentialsRequest& request, const SubmitDomainSpecialBizCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitDomainSpecialBizCredentials(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SubmitDomainSpecialBizCredentialsOutcomeCallable DomainClient::submitDomainSpecialBizCredentialsCallable(const SubmitDomainSpecialBizCredentialsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitDomainSpecialBizCredentialsOutcome()>>(
+			[this, request]()
+			{
+			return this->submitDomainSpecialBizCredentials(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

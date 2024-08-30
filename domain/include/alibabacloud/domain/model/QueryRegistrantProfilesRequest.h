@@ -32,6 +32,8 @@ public:
 	~QueryRegistrantProfilesRequest();
 	long getRegistrantProfileId() const;
 	void setRegistrantProfileId(long registrantProfileId);
+	std::string getRemark() const;
+	void setRemark(const std::string &remark);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
 	int getPageSize() const;
@@ -57,6 +59,7 @@ public:
 
 private:
 	long registrantProfileId_;
+	std::string remark_;
 	int pageNum_;
 	int pageSize_;
 	std::string realNameStatus_;

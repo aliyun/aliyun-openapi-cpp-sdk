@@ -52,6 +52,15 @@ void ScrollDomainListRequest::setStartLength(int startLength) {
   setParameter(std::string("StartLength"), std::to_string(startLength));
 }
 
+std::string ScrollDomainListRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ScrollDomainListRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 bool ScrollDomainListRequest::getExcludedSuffix() const {
   return excludedSuffix_;
 }

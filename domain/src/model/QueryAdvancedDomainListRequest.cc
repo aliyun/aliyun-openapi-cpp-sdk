@@ -61,6 +61,15 @@ void QueryAdvancedDomainListRequest::setStartLength(int startLength) {
   setParameter(std::string("StartLength"), std::to_string(startLength));
 }
 
+std::string QueryAdvancedDomainListRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void QueryAdvancedDomainListRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 bool QueryAdvancedDomainListRequest::getExcludedSuffix() const {
   return excludedSuffix_;
 }
@@ -77,6 +86,20 @@ int QueryAdvancedDomainListRequest::getPageSize() const {
 void QueryAdvancedDomainListRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::vector<QueryAdvancedDomainListRequest::Tag> QueryAdvancedDomainListRequest::getTag() const {
+  return tag_;
+}
+
+void QueryAdvancedDomainListRequest::setTag(const std::vector<QueryAdvancedDomainListRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
 std::string QueryAdvancedDomainListRequest::getLang() const {
@@ -221,6 +244,15 @@ int QueryAdvancedDomainListRequest::getForm() const {
 void QueryAdvancedDomainListRequest::setForm(int form) {
   form_ = form;
   setParameter(std::string("Form"), std::to_string(form));
+}
+
+bool QueryAdvancedDomainListRequest::getIsPremiumDomain() const {
+  return isPremiumDomain_;
+}
+
+void QueryAdvancedDomainListRequest::setIsPremiumDomain(bool isPremiumDomain) {
+  isPremiumDomain_ = isPremiumDomain;
+  setParameter(std::string("IsPremiumDomain"), isPremiumDomain ? "true" : "false");
 }
 
 std::string QueryAdvancedDomainListRequest::getUserClientIp() const {

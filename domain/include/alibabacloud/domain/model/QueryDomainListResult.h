@@ -34,10 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct Domain
 				{
+					struct TagItem
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string registrantType;
 					std::string registrationDate;
 					int expirationCurrDateDiff;
 					long registrationDateLong;
+					std::string resourceGroupId;
 					std::string instanceId;
 					std::string domainName;
 					std::string domainGroupId;
@@ -45,11 +51,14 @@ namespace AlibabaCloud
 					std::string productId;
 					std::string domainAuditStatus;
 					std::string remark;
+					std::string ccompany;
 					long expirationDateLong;
 					std::string expirationDateStatus;
 					std::string domainType;
 					std::string domainGroupName;
 					std::string expirationDate;
+					std::string chgholderStatus;
+					std::vector<Domain::TagItem> tag;
 					std::string domainStatus;
 				};
 

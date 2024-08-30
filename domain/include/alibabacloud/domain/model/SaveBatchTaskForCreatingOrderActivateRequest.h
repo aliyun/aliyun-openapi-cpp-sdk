@@ -38,6 +38,7 @@ public:
 		long registrantProfileId;
 		bool aliyunDns;
 		std::string zhCity;
+		std::string resourceGroupId;
 		std::string telExt;
 		std::string zhRegistrantName;
 		std::string province;

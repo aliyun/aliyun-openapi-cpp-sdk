@@ -39,6 +39,18 @@ void CheckDomainResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allStaticPriceInfoNode = value["StaticPriceInfo"]["PriceInfo"];
+	for (auto valueStaticPriceInfoPriceInfo : allStaticPriceInfoNode)
+	{
+		PriceInfo staticPriceInfoObject;
+		if(!valueStaticPriceInfoPriceInfo["action"].isNull())
+			staticPriceInfoObject.action = valueStaticPriceInfoPriceInfo["action"].asString();
+		if(!valueStaticPriceInfoPriceInfo["money"].isNull())
+			staticPriceInfoObject.money = valueStaticPriceInfoPriceInfo["money"].asString();
+		if(!valueStaticPriceInfoPriceInfo["period"].isNull())
+			staticPriceInfoObject.period = std::stol(valueStaticPriceInfoPriceInfo["period"].asString());
+		staticPriceInfo_.push_back(staticPriceInfoObject);
+	}
 	if(!value["Avail"].isNull())
 		avail_ = value["Avail"].asString();
 	if(!value["Price"].isNull())
@@ -72,6 +84,11 @@ std::string CheckDomainResult::getDomainName()const
 std::string CheckDomainResult::getPremium()const
 {
 	return premium_;
+}
+
+std::vector<CheckDomainResult::PriceInfo> CheckDomainResult::getStaticPriceInfo()const
+{
+	return staticPriceInfo_;
 }
 
 bool CheckDomainResult::getDynamicCheck()const

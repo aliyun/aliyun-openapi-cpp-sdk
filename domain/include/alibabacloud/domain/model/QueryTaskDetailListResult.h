@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					int taskStatusCode;
 					std::string createTime;
 					std::string errorMsg;
+					std::string failReason;
 					std::string taskStatus;
 					std::string taskTypeDescription;
 					int tryCount;
