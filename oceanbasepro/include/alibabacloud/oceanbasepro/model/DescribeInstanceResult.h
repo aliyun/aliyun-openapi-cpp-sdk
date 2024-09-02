@@ -159,6 +159,7 @@ namespace AlibabaCloud
 					bool enableReadOnlyReplica;
 					std::string primaryInstance;
 					bool allowModifyInternetAddressConnectionLimit;
+					bool allowCreateProxySqlFirewallRule;
 					bool isTrustEcs;
 					std::string proxyClusterId;
 					bool isLatestObVersion;

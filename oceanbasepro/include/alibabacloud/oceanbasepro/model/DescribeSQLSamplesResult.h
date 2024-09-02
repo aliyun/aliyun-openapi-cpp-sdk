@@ -52,6 +52,7 @@ namespace AlibabaCloud
 					double waitCount;
 					std::string requestId;
 					std::string requestTime;
+					std::string paramsValue;
 					double ssstoreReadRows;
 					double scheduleTime;
 					double obUserId;

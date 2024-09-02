@@ -65,6 +65,12 @@ void DescribeOasSQLPlansResult::parse(const std::string &payload)
 			dataObject.querySql = valueDataDataItem["QuerySql"].asString();
 		if(!valueDataDataItem["Bounded"].isNull())
 			dataObject.bounded = valueDataDataItem["Bounded"].asString() == "true";
+		if(!valueDataDataItem["TableScan"].isNull())
+			dataObject.tableScan = valueDataDataItem["TableScan"].asString() == "true";
+		if(!valueDataDataItem["OutlineId"].isNull())
+			dataObject.outlineId = valueDataDataItem["OutlineId"].asString();
+		if(!valueDataDataItem["OutlineStatus"].isNull())
+			dataObject.outlineStatus = valueDataDataItem["OutlineStatus"].asString();
 		auto allPlansNode = valueDataDataItem["Plans"]["PlansItem"];
 		for (auto valueDataDataItemPlansPlansItem : allPlansNode)
 		{

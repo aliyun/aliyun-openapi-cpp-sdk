@@ -34,6 +34,15 @@ void DescribeOasSQLDetailsRequest::setStartTime(const std::string &startTime) {
   setBodyParameter(std::string("StartTime"), startTime);
 }
 
+bool DescribeOasSQLDetailsRequest::getParseTable() const {
+  return parseTable_;
+}
+
+void DescribeOasSQLDetailsRequest::setParseTable(bool parseTable) {
+  parseTable_ = parseTable;
+  setBodyParameter(std::string("ParseTable"), parseTable ? "true" : "false");
+}
+
 bool DescribeOasSQLDetailsRequest::getDynamicSql() const {
   return dynamicSql_;
 }

@@ -129,9 +129,11 @@ namespace AlibabaCloud
 						std::string intranetAddressMasterZoneId;
 						long internetMaxConnectionLimit;
 						int intranetRpcPort;
+						std::string odpVersion;
 						std::string intranetAddress;
 						std::string vpcId;
 						std::vector<std::string> connectionLogicalZones;
+						int intranetSqlPort;
 						std::string addressType;
 					};
 					struct TenantZonesItem
@@ -176,6 +178,7 @@ namespace AlibabaCloud
 					std::string clogServiceStatus;
 					std::string charset;
 					std::string payType;
+					std::string odpVersion;
 					std::string collation;
 					bool enableInternetAddressService;
 					bool enableReadWriteSplit;

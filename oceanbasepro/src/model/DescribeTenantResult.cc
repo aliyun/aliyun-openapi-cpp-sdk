@@ -102,6 +102,8 @@ void DescribeTenantResult::parse(const std::string &payload)
 		tenant_.lowerCaseTableNames = std::stoi(tenantNode["LowerCaseTableNames"].asString());
 	if(!tenantNode["Version"].isNull())
 		tenant_.version = tenantNode["Version"].asString();
+	if(!tenantNode["OdpVersion"].isNull())
+		tenant_.odpVersion = tenantNode["OdpVersion"].asString();
 	auto allTenantConnectionsNode = tenantNode["TenantConnections"]["TenantConnectionsItem"];
 	for (auto tenantNodeTenantConnectionsTenantConnectionsItem : allTenantConnectionsNode)
 	{
@@ -152,6 +154,10 @@ void DescribeTenantResult::parse(const std::string &payload)
 			tenantConnectionsItemObject.internetMaxConnectionNum = std::stol(tenantNodeTenantConnectionsTenantConnectionsItem["InternetMaxConnectionNum"].asString());
 		if(!tenantNodeTenantConnectionsTenantConnectionsItem["InternetRpcPort"].isNull())
 			tenantConnectionsItemObject.internetRpcPort = std::stoi(tenantNodeTenantConnectionsTenantConnectionsItem["InternetRpcPort"].asString());
+		if(!tenantNodeTenantConnectionsTenantConnectionsItem["IntranetSqlPort"].isNull())
+			tenantConnectionsItemObject.intranetSqlPort = std::stoi(tenantNodeTenantConnectionsTenantConnectionsItem["IntranetSqlPort"].asString());
+		if(!tenantNodeTenantConnectionsTenantConnectionsItem["OdpVersion"].isNull())
+			tenantConnectionsItemObject.odpVersion = tenantNodeTenantConnectionsTenantConnectionsItem["OdpVersion"].asString();
 		auto allConnectionZones = value["ConnectionZones"]["ConnectionZones"];
 		for (auto value : allConnectionZones)
 			tenantConnectionsItemObject.connectionZones.push_back(value.asString());

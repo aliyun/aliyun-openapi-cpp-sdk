@@ -92,6 +92,8 @@
 #include "model/DescribeAvailableSpecResult.h"
 #include "model/DescribeAvailableZoneRequest.h"
 #include "model/DescribeAvailableZoneResult.h"
+#include "model/DescribeBackupEncryptedStringRequest.h"
+#include "model/DescribeBackupEncryptedStringResult.h"
 #include "model/DescribeBackupSetDownloadLinkRequest.h"
 #include "model/DescribeBackupSetDownloadLinkResult.h"
 #include "model/DescribeCharsetRequest.h"
@@ -108,6 +110,8 @@
 #include "model/DescribeInstanceSSLResult.h"
 #include "model/DescribeInstanceSecurityConfigsRequest.h"
 #include "model/DescribeInstanceSecurityConfigsResult.h"
+#include "model/DescribeInstanceSummaryRequest.h"
+#include "model/DescribeInstanceSummaryResult.h"
 #include "model/DescribeInstanceTagsRequest.h"
 #include "model/DescribeInstanceTagsResult.h"
 #include "model/DescribeInstanceTenantModesRequest.h"
@@ -152,6 +156,8 @@
 #include "model/DescribeProjectStepsResult.h"
 #include "model/DescribeRecommendIndexRequest.h"
 #include "model/DescribeRecommendIndexResult.h"
+#include "model/DescribeRestorableTenantsRequest.h"
+#include "model/DescribeRestorableTenantsResult.h"
 #include "model/DescribeSQLDetailsRequest.h"
 #include "model/DescribeSQLDetailsResult.h"
 #include "model/DescribeSQLHistoryListRequest.h"
@@ -172,6 +178,8 @@
 #include "model/DescribeSlowSQLHistoryListResult.h"
 #include "model/DescribeSlowSQLListRequest.h"
 #include "model/DescribeSlowSQLListResult.h"
+#include "model/DescribeStandbyCreateModeRequest.h"
+#include "model/DescribeStandbyCreateModeResult.h"
 #include "model/DescribeTagValuesRequest.h"
 #include "model/DescribeTagValuesResult.h"
 #include "model/DescribeTenantRequest.h"
@@ -396,6 +404,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAvailableZoneResult> DescribeAvailableZoneOutcome;
 			typedef std::future<DescribeAvailableZoneOutcome> DescribeAvailableZoneOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeAvailableZoneRequest&, const DescribeAvailableZoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableZoneAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBackupEncryptedStringResult> DescribeBackupEncryptedStringOutcome;
+			typedef std::future<DescribeBackupEncryptedStringOutcome> DescribeBackupEncryptedStringOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeBackupEncryptedStringRequest&, const DescribeBackupEncryptedStringOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupEncryptedStringAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBackupSetDownloadLinkResult> DescribeBackupSetDownloadLinkOutcome;
 			typedef std::future<DescribeBackupSetDownloadLinkOutcome> DescribeBackupSetDownloadLinkOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeBackupSetDownloadLinkRequest&, const DescribeBackupSetDownloadLinkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupSetDownloadLinkAsyncHandler;
@@ -420,6 +431,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceSecurityConfigsResult> DescribeInstanceSecurityConfigsOutcome;
 			typedef std::future<DescribeInstanceSecurityConfigsOutcome> DescribeInstanceSecurityConfigsOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeInstanceSecurityConfigsRequest&, const DescribeInstanceSecurityConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSecurityConfigsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeInstanceSummaryResult> DescribeInstanceSummaryOutcome;
+			typedef std::future<DescribeInstanceSummaryOutcome> DescribeInstanceSummaryOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeInstanceSummaryRequest&, const DescribeInstanceSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSummaryAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceTagsResult> DescribeInstanceTagsOutcome;
 			typedef std::future<DescribeInstanceTagsOutcome> DescribeInstanceTagsOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeInstanceTagsRequest&, const DescribeInstanceTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceTagsAsyncHandler;
@@ -486,6 +500,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRecommendIndexResult> DescribeRecommendIndexOutcome;
 			typedef std::future<DescribeRecommendIndexOutcome> DescribeRecommendIndexOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeRecommendIndexRequest&, const DescribeRecommendIndexOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecommendIndexAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRestorableTenantsResult> DescribeRestorableTenantsOutcome;
+			typedef std::future<DescribeRestorableTenantsOutcome> DescribeRestorableTenantsOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeRestorableTenantsRequest&, const DescribeRestorableTenantsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestorableTenantsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSQLDetailsResult> DescribeSQLDetailsOutcome;
 			typedef std::future<DescribeSQLDetailsOutcome> DescribeSQLDetailsOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeSQLDetailsRequest&, const DescribeSQLDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLDetailsAsyncHandler;
@@ -516,6 +533,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSlowSQLListResult> DescribeSlowSQLListOutcome;
 			typedef std::future<DescribeSlowSQLListOutcome> DescribeSlowSQLListOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeSlowSQLListRequest&, const DescribeSlowSQLListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowSQLListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeStandbyCreateModeResult> DescribeStandbyCreateModeOutcome;
+			typedef std::future<DescribeStandbyCreateModeOutcome> DescribeStandbyCreateModeOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeStandbyCreateModeRequest&, const DescribeStandbyCreateModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStandbyCreateModeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTagValuesResult> DescribeTagValuesOutcome;
 			typedef std::future<DescribeTagValuesOutcome> DescribeTagValuesOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeTagValuesRequest&, const DescribeTagValuesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagValuesAsyncHandler;
@@ -791,6 +811,9 @@ namespace AlibabaCloud
 			DescribeAvailableZoneOutcome describeAvailableZone(const Model::DescribeAvailableZoneRequest &request)const;
 			void describeAvailableZoneAsync(const Model::DescribeAvailableZoneRequest& request, const DescribeAvailableZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAvailableZoneOutcomeCallable describeAvailableZoneCallable(const Model::DescribeAvailableZoneRequest& request) const;
+			DescribeBackupEncryptedStringOutcome describeBackupEncryptedString(const Model::DescribeBackupEncryptedStringRequest &request)const;
+			void describeBackupEncryptedStringAsync(const Model::DescribeBackupEncryptedStringRequest& request, const DescribeBackupEncryptedStringAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBackupEncryptedStringOutcomeCallable describeBackupEncryptedStringCallable(const Model::DescribeBackupEncryptedStringRequest& request) const;
 			DescribeBackupSetDownloadLinkOutcome describeBackupSetDownloadLink(const Model::DescribeBackupSetDownloadLinkRequest &request)const;
 			void describeBackupSetDownloadLinkAsync(const Model::DescribeBackupSetDownloadLinkRequest& request, const DescribeBackupSetDownloadLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBackupSetDownloadLinkOutcomeCallable describeBackupSetDownloadLinkCallable(const Model::DescribeBackupSetDownloadLinkRequest& request) const;
@@ -815,6 +838,9 @@ namespace AlibabaCloud
 			DescribeInstanceSecurityConfigsOutcome describeInstanceSecurityConfigs(const Model::DescribeInstanceSecurityConfigsRequest &request)const;
 			void describeInstanceSecurityConfigsAsync(const Model::DescribeInstanceSecurityConfigsRequest& request, const DescribeInstanceSecurityConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceSecurityConfigsOutcomeCallable describeInstanceSecurityConfigsCallable(const Model::DescribeInstanceSecurityConfigsRequest& request) const;
+			DescribeInstanceSummaryOutcome describeInstanceSummary(const Model::DescribeInstanceSummaryRequest &request)const;
+			void describeInstanceSummaryAsync(const Model::DescribeInstanceSummaryRequest& request, const DescribeInstanceSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeInstanceSummaryOutcomeCallable describeInstanceSummaryCallable(const Model::DescribeInstanceSummaryRequest& request) const;
 			DescribeInstanceTagsOutcome describeInstanceTags(const Model::DescribeInstanceTagsRequest &request)const;
 			void describeInstanceTagsAsync(const Model::DescribeInstanceTagsRequest& request, const DescribeInstanceTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceTagsOutcomeCallable describeInstanceTagsCallable(const Model::DescribeInstanceTagsRequest& request) const;
@@ -881,6 +907,9 @@ namespace AlibabaCloud
 			DescribeRecommendIndexOutcome describeRecommendIndex(const Model::DescribeRecommendIndexRequest &request)const;
 			void describeRecommendIndexAsync(const Model::DescribeRecommendIndexRequest& request, const DescribeRecommendIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRecommendIndexOutcomeCallable describeRecommendIndexCallable(const Model::DescribeRecommendIndexRequest& request) const;
+			DescribeRestorableTenantsOutcome describeRestorableTenants(const Model::DescribeRestorableTenantsRequest &request)const;
+			void describeRestorableTenantsAsync(const Model::DescribeRestorableTenantsRequest& request, const DescribeRestorableTenantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRestorableTenantsOutcomeCallable describeRestorableTenantsCallable(const Model::DescribeRestorableTenantsRequest& request) const;
 			DescribeSQLDetailsOutcome describeSQLDetails(const Model::DescribeSQLDetailsRequest &request)const;
 			void describeSQLDetailsAsync(const Model::DescribeSQLDetailsRequest& request, const DescribeSQLDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSQLDetailsOutcomeCallable describeSQLDetailsCallable(const Model::DescribeSQLDetailsRequest& request) const;
@@ -911,6 +940,9 @@ namespace AlibabaCloud
 			DescribeSlowSQLListOutcome describeSlowSQLList(const Model::DescribeSlowSQLListRequest &request)const;
 			void describeSlowSQLListAsync(const Model::DescribeSlowSQLListRequest& request, const DescribeSlowSQLListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSlowSQLListOutcomeCallable describeSlowSQLListCallable(const Model::DescribeSlowSQLListRequest& request) const;
+			DescribeStandbyCreateModeOutcome describeStandbyCreateMode(const Model::DescribeStandbyCreateModeRequest &request)const;
+			void describeStandbyCreateModeAsync(const Model::DescribeStandbyCreateModeRequest& request, const DescribeStandbyCreateModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeStandbyCreateModeOutcomeCallable describeStandbyCreateModeCallable(const Model::DescribeStandbyCreateModeRequest& request) const;
 			DescribeTagValuesOutcome describeTagValues(const Model::DescribeTagValuesRequest &request)const;
 			void describeTagValuesAsync(const Model::DescribeTagValuesRequest& request, const DescribeTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTagValuesOutcomeCallable describeTagValuesCallable(const Model::DescribeTagValuesRequest& request) const;

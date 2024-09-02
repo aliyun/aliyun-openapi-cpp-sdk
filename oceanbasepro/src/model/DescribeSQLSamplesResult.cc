@@ -149,6 +149,8 @@ void DescribeSQLSamplesResult::parse(const std::string &payload)
 			dataObject.fullSqlText = valueDataDataItem["FullSqlText"].asString();
 		if(!valueDataDataItem["SqlText"].isNull())
 			dataObject.sqlText = valueDataDataItem["SqlText"].asString();
+		if(!valueDataDataItem["ParamsValue"].isNull())
+			dataObject.paramsValue = valueDataDataItem["ParamsValue"].asString();
 		data_.push_back(dataObject);
 	}
 

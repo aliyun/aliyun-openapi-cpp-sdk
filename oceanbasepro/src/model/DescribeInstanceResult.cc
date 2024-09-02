@@ -120,6 +120,8 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		instance_.specType = instanceNode["SpecType"].asString();
 	if(!instanceNode["AllowModifyInternetAddressConnectionLimit"].isNull())
 		instance_.allowModifyInternetAddressConnectionLimit = instanceNode["AllowModifyInternetAddressConnectionLimit"].asString() == "true";
+	if(!instanceNode["AllowCreateProxySqlFirewallRule"].isNull())
+		instance_.allowCreateProxySqlFirewallRule = instanceNode["AllowCreateProxySqlFirewallRule"].asString() == "true";
 	auto resourceNode = instanceNode["Resource"];
 	if(!resourceNode["UnitCount"].isNull())
 		instance_.resource.unitCount = std::stol(resourceNode["UnitCount"].asString());

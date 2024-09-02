@@ -78,7 +78,9 @@ namespace AlibabaCloud
 					};
 					double avgCpuTime;
 					long executions;
+					bool tableScan;
 					std::string planHash;
+					std::string outlineStatus;
 					std::string firstLoadTime;
 					std::string planUnionHash;
 					long mergedVersion;
@@ -88,6 +90,7 @@ namespace AlibabaCloud
 					std::string querySql;
 					std::string planType;
 					double hitPercentage;
+					std::string outlineId;
 					PlanExplain planExplain;
 				};
 

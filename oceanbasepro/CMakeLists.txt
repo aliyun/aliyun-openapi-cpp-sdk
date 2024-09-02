@@ -91,6 +91,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeAvailableSpecResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeAvailableZoneRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeAvailableZoneResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeBackupEncryptedStringRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeBackupEncryptedStringResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeBackupSetDownloadLinkRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeBackupSetDownloadLinkResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeCharsetRequest.h
@@ -107,6 +109,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeInstanceSSLResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeInstanceSecurityConfigsRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeInstanceSecurityConfigsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceSummaryRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceSummaryResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeInstanceTagsRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeInstanceTagsResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeInstanceTenantModesRequest.h
@@ -151,6 +155,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeProjectStepsResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeRecommendIndexRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeRecommendIndexResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeRestorableTenantsRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeRestorableTenantsResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeSQLDetailsRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeSQLDetailsResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeSQLHistoryListRequest.h
@@ -171,6 +177,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLHistoryListResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLListRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLListResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeStandbyCreateModeRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeStandbyCreateModeResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeTagValuesRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeTagValuesResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeTenantRequest.h
@@ -354,6 +362,8 @@ set(oceanbasepro_src
 	src/model/DescribeAvailableSpecResult.cc
 	src/model/DescribeAvailableZoneRequest.cc
 	src/model/DescribeAvailableZoneResult.cc
+	src/model/DescribeBackupEncryptedStringRequest.cc
+	src/model/DescribeBackupEncryptedStringResult.cc
 	src/model/DescribeBackupSetDownloadLinkRequest.cc
 	src/model/DescribeBackupSetDownloadLinkResult.cc
 	src/model/DescribeCharsetRequest.cc
@@ -370,6 +380,8 @@ set(oceanbasepro_src
 	src/model/DescribeInstanceSSLResult.cc
 	src/model/DescribeInstanceSecurityConfigsRequest.cc
 	src/model/DescribeInstanceSecurityConfigsResult.cc
+	src/model/DescribeInstanceSummaryRequest.cc
+	src/model/DescribeInstanceSummaryResult.cc
 	src/model/DescribeInstanceTagsRequest.cc
 	src/model/DescribeInstanceTagsResult.cc
 	src/model/DescribeInstanceTenantModesRequest.cc
@@ -414,6 +426,8 @@ set(oceanbasepro_src
 	src/model/DescribeProjectStepsResult.cc
 	src/model/DescribeRecommendIndexRequest.cc
 	src/model/DescribeRecommendIndexResult.cc
+	src/model/DescribeRestorableTenantsRequest.cc
+	src/model/DescribeRestorableTenantsResult.cc
 	src/model/DescribeSQLDetailsRequest.cc
 	src/model/DescribeSQLDetailsResult.cc
 	src/model/DescribeSQLHistoryListRequest.cc
@@ -434,6 +448,8 @@ set(oceanbasepro_src
 	src/model/DescribeSlowSQLHistoryListResult.cc
 	src/model/DescribeSlowSQLListRequest.cc
 	src/model/DescribeSlowSQLListResult.cc
+	src/model/DescribeStandbyCreateModeRequest.cc
+	src/model/DescribeStandbyCreateModeResult.cc
 	src/model/DescribeTagValuesRequest.cc
 	src/model/DescribeTagValuesResult.cc
 	src/model/DescribeTenantRequest.cc

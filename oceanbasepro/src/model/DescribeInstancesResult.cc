@@ -99,6 +99,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.enableReadOnlyReplicaManagement = valueInstancesData["EnableReadOnlyReplicaManagement"].asString() == "true";
 		if(!valueInstancesData["SpecType"].isNull())
 			instancesObject.specType = valueInstancesData["SpecType"].asString();
+		if(!valueInstancesData["ObRpmVersion"].isNull())
+			instancesObject.obRpmVersion = valueInstancesData["ObRpmVersion"].asString();
 		auto resourceNode = value["Resource"];
 		if(!resourceNode["UnitCount"].isNull())
 			instancesObject.resource.unitCount = std::stol(resourceNode["UnitCount"].asString());

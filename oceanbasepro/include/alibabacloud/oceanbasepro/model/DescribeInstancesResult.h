@@ -97,6 +97,7 @@ namespace AlibabaCloud
 					std::string instanceRole;
 					std::string instanceType;
 					std::string maintainTime;
+					std::string obRpmVersion;
 					std::string instanceId;
 					std::string createTime;
 					Resource resource;

@@ -1311,6 +1311,42 @@ OceanBaseProClient::DescribeAvailableZoneOutcomeCallable OceanBaseProClient::des
 	return task->get_future();
 }
 
+OceanBaseProClient::DescribeBackupEncryptedStringOutcome OceanBaseProClient::describeBackupEncryptedString(const DescribeBackupEncryptedStringRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBackupEncryptedStringOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBackupEncryptedStringOutcome(DescribeBackupEncryptedStringResult(outcome.result()));
+	else
+		return DescribeBackupEncryptedStringOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeBackupEncryptedStringAsync(const DescribeBackupEncryptedStringRequest& request, const DescribeBackupEncryptedStringAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBackupEncryptedString(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeBackupEncryptedStringOutcomeCallable OceanBaseProClient::describeBackupEncryptedStringCallable(const DescribeBackupEncryptedStringRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBackupEncryptedStringOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBackupEncryptedString(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::DescribeBackupSetDownloadLinkOutcome OceanBaseProClient::describeBackupSetDownloadLink(const DescribeBackupSetDownloadLinkRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1593,6 +1629,42 @@ OceanBaseProClient::DescribeInstanceSecurityConfigsOutcomeCallable OceanBaseProC
 			[this, request]()
 			{
 			return this->describeInstanceSecurityConfigs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::DescribeInstanceSummaryOutcome OceanBaseProClient::describeInstanceSummary(const DescribeInstanceSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceSummaryOutcome(DescribeInstanceSummaryResult(outcome.result()));
+	else
+		return DescribeInstanceSummaryOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeInstanceSummaryAsync(const DescribeInstanceSummaryRequest& request, const DescribeInstanceSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeInstanceSummaryOutcomeCallable OceanBaseProClient::describeInstanceSummaryCallable(const DescribeInstanceSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceSummary(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2391,6 +2463,42 @@ OceanBaseProClient::DescribeRecommendIndexOutcomeCallable OceanBaseProClient::de
 	return task->get_future();
 }
 
+OceanBaseProClient::DescribeRestorableTenantsOutcome OceanBaseProClient::describeRestorableTenants(const DescribeRestorableTenantsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRestorableTenantsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRestorableTenantsOutcome(DescribeRestorableTenantsResult(outcome.result()));
+	else
+		return DescribeRestorableTenantsOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeRestorableTenantsAsync(const DescribeRestorableTenantsRequest& request, const DescribeRestorableTenantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRestorableTenants(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeRestorableTenantsOutcomeCallable OceanBaseProClient::describeRestorableTenantsCallable(const DescribeRestorableTenantsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRestorableTenantsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRestorableTenants(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::DescribeSQLDetailsOutcome OceanBaseProClient::describeSQLDetails(const DescribeSQLDetailsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2745,6 +2853,42 @@ OceanBaseProClient::DescribeSlowSQLListOutcomeCallable OceanBaseProClient::descr
 			[this, request]()
 			{
 			return this->describeSlowSQLList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::DescribeStandbyCreateModeOutcome OceanBaseProClient::describeStandbyCreateMode(const DescribeStandbyCreateModeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeStandbyCreateModeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeStandbyCreateModeOutcome(DescribeStandbyCreateModeResult(outcome.result()));
+	else
+		return DescribeStandbyCreateModeOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeStandbyCreateModeAsync(const DescribeStandbyCreateModeRequest& request, const DescribeStandbyCreateModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeStandbyCreateMode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeStandbyCreateModeOutcomeCallable OceanBaseProClient::describeStandbyCreateModeCallable(const DescribeStandbyCreateModeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeStandbyCreateModeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeStandbyCreateMode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

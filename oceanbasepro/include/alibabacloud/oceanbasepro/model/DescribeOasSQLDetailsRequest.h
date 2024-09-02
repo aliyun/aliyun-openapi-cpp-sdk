@@ -32,6 +32,8 @@ public:
 	~DescribeOasSQLDetailsRequest();
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	bool getParseTable() const;
+	void setParseTable(bool parseTable);
 	bool getDynamicSql() const;
 	void setDynamicSql(bool dynamicSql);
 	std::string getTenantId() const;
@@ -47,6 +49,7 @@ public:
 
 private:
 	std::string startTime_;
+	bool parseTable_;
 	bool dynamicSql_;
 	std::string tenantId_;
 	std::string sqlId_;
