@@ -42,6 +42,8 @@ void QueryChatappBindWabaResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["AuthInternationalRateEligibility"].isNull())
 		data_.authInternationalRateEligibility = dataNode["AuthInternationalRateEligibility"].asString();
+	if(!dataNode["BusinessName"].isNull())
+		data_.businessName = dataNode["BusinessName"].asString();
 	if(!dataNode["Currency"].isNull())
 		data_.currency = dataNode["Currency"].asString();
 	if(!dataNode["Id"].isNull())
@@ -50,6 +52,8 @@ void QueryChatappBindWabaResult::parse(const std::string &payload)
 		data_.accountReviewStatus = dataNode["AccountReviewStatus"].asString();
 	if(!dataNode["MessageTemplateNamespace"].isNull())
 		data_.messageTemplateNamespace = dataNode["MessageTemplateNamespace"].asString();
+	if(!dataNode["BusinessId"].isNull())
+		data_.businessId = dataNode["BusinessId"].asString();
 	if(!dataNode["Name"].isNull())
 		data_.name = dataNode["Name"].asString();
 	if(!dataNode["PrimaryBusinessLocation"].isNull())

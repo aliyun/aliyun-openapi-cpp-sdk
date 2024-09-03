@@ -35,10 +35,12 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::string authInternationalRateEligibility;
+					std::string businessName;
 					std::string currency;
 					std::string id;
 					std::string accountReviewStatus;
 					std::string messageTemplateNamespace;
+					std::string businessId;
 					std::string name;
 					std::string primaryBusinessLocation;
 				};
