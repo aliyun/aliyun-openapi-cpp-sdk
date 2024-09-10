@@ -59,6 +59,8 @@ void DescribeInstanceHistoryEventsResult::parse(const std::string &payload)
 			instanceSystemEventSetObject.instanceId = valueInstanceSystemEventSetInstanceSystemEventType["InstanceId"].asString();
 		if(!valueInstanceSystemEventSetInstanceSystemEventType["Reason"].isNull())
 			instanceSystemEventSetObject.reason = valueInstanceSystemEventSetInstanceSystemEventType["Reason"].asString();
+		if(!valueInstanceSystemEventSetInstanceSystemEventType["ReasonCode"].isNull())
+			instanceSystemEventSetObject.reasonCode = valueInstanceSystemEventSetInstanceSystemEventType["ReasonCode"].asString();
 		auto eventTypeNode = value["EventType"];
 		if(!eventTypeNode["Name"].isNull())
 			instanceSystemEventSetObject.eventType.name = eventTypeNode["Name"].asString();

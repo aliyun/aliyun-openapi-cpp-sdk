@@ -87,6 +87,8 @@ public:
 	void setParameters(std::map<std::string, std::string> parameters);
 	std::string getUsername() const;
 	void setUsername(const std::string &username);
+	std::string getLauncher() const;
+	void setLauncher(const std::string &launcher);
 
 private:
 	long resourceOwnerId_;
@@ -111,6 +113,7 @@ private:
 	std::string containerId_;
 	std::map<std::string, std::string> parameters_;
 	std::string username_;
+	std::string launcher_;
 };
 } // namespace Model
 } // namespace Ecs

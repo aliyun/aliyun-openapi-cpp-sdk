@@ -159,6 +159,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 					privateIpSetsObject.privateIpAddress = valueInstancesInstanceNetworkInterfacesNetworkInterfacePrivateIpSetsPrivateIpSet["PrivateIpAddress"].asString();
 				if(!valueInstancesInstanceNetworkInterfacesNetworkInterfacePrivateIpSetsPrivateIpSet["Primary"].isNull())
 					privateIpSetsObject.primary = valueInstancesInstanceNetworkInterfacesNetworkInterfacePrivateIpSetsPrivateIpSet["Primary"].asString() == "true";
+				if(!valueInstancesInstanceNetworkInterfacesNetworkInterfacePrivateIpSetsPrivateIpSet["PrivateDnsName"].isNull())
+					privateIpSetsObject.privateDnsName = valueInstancesInstanceNetworkInterfacesNetworkInterfacePrivateIpSetsPrivateIpSet["PrivateDnsName"].asString();
 				networkInterfacesObject.privateIpSets.push_back(privateIpSetsObject);
 			}
 			auto allIpv6SetsNode = valueInstancesInstanceNetworkInterfacesNetworkInterface["Ipv6Sets"]["Ipv6Set"];
@@ -267,6 +269,17 @@ void DescribeInstancesResult::parse(const std::string &payload)
 		auto imageOptionsNode = value["ImageOptions"];
 		if(!imageOptionsNode["LoginAsNonRoot"].isNull())
 			instancesObject.imageOptions.loginAsNonRoot = imageOptionsNode["LoginAsNonRoot"].asString() == "true";
+		auto privateDnsNameOptionsNode = value["PrivateDnsNameOptions"];
+		if(!privateDnsNameOptionsNode["EnableInstanceIdDnsARecord"].isNull())
+			instancesObject.privateDnsNameOptions.enableInstanceIdDnsARecord = privateDnsNameOptionsNode["EnableInstanceIdDnsARecord"].asString() == "true";
+		if(!privateDnsNameOptionsNode["EnableInstanceIdDnsAAAARecord"].isNull())
+			instancesObject.privateDnsNameOptions.enableInstanceIdDnsAAAARecord = privateDnsNameOptionsNode["EnableInstanceIdDnsAAAARecord"].asString() == "true";
+		if(!privateDnsNameOptionsNode["EnableIpDnsARecord"].isNull())
+			instancesObject.privateDnsNameOptions.enableIpDnsARecord = privateDnsNameOptionsNode["EnableIpDnsARecord"].asString() == "true";
+		if(!privateDnsNameOptionsNode["EnableIpDnsPtrRecord"].isNull())
+			instancesObject.privateDnsNameOptions.enableIpDnsPtrRecord = privateDnsNameOptionsNode["EnableIpDnsPtrRecord"].asString() == "true";
+		if(!privateDnsNameOptionsNode["HostnameType"].isNull())
+			instancesObject.privateDnsNameOptions.hostnameType = privateDnsNameOptionsNode["HostnameType"].asString();
 		auto allRdmaIpAddress = value["RdmaIpAddress"]["IpAddress"];
 		for (auto value : allRdmaIpAddress)
 			instancesObject.rdmaIpAddress.push_back(value.asString());

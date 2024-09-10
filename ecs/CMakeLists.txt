@@ -287,6 +287,10 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeDiagnosticReportAttributesResult.h
 	include/alibabacloud/ecs/model/DescribeDiagnosticReportsRequest.h
 	include/alibabacloud/ecs/model/DescribeDiagnosticReportsResult.h
+	include/alibabacloud/ecs/model/DescribeDiskDefaultKMSKeyIdRequest.h
+	include/alibabacloud/ecs/model/DescribeDiskDefaultKMSKeyIdResult.h
+	include/alibabacloud/ecs/model/DescribeDiskEncryptionByDefaultStatusRequest.h
+	include/alibabacloud/ecs/model/DescribeDiskEncryptionByDefaultStatusResult.h
 	include/alibabacloud/ecs/model/DescribeDiskMonitorDataRequest.h
 	include/alibabacloud/ecs/model/DescribeDiskMonitorDataResult.h
 	include/alibabacloud/ecs/model/DescribeDisksRequest.h
@@ -475,12 +479,16 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DetachNetworkInterfaceResult.h
 	include/alibabacloud/ecs/model/DisableActivationRequest.h
 	include/alibabacloud/ecs/model/DisableActivationResult.h
+	include/alibabacloud/ecs/model/DisableDiskEncryptionByDefaultRequest.h
+	include/alibabacloud/ecs/model/DisableDiskEncryptionByDefaultResult.h
 	include/alibabacloud/ecs/model/EipFillParamsRequest.h
 	include/alibabacloud/ecs/model/EipFillParamsResult.h
 	include/alibabacloud/ecs/model/EipFillProductRequest.h
 	include/alibabacloud/ecs/model/EipFillProductResult.h
 	include/alibabacloud/ecs/model/EipNotifyPaidRequest.h
 	include/alibabacloud/ecs/model/EipNotifyPaidResult.h
+	include/alibabacloud/ecs/model/EnableDiskEncryptionByDefaultRequest.h
+	include/alibabacloud/ecs/model/EnableDiskEncryptionByDefaultResult.h
 	include/alibabacloud/ecs/model/EnablePhysicalConnectionRequest.h
 	include/alibabacloud/ecs/model/EnablePhysicalConnectionResult.h
 	include/alibabacloud/ecs/model/ExportImageRequest.h
@@ -543,6 +551,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyDiskAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyDiskChargeTypeRequest.h
 	include/alibabacloud/ecs/model/ModifyDiskChargeTypeResult.h
+	include/alibabacloud/ecs/model/ModifyDiskDefaultKMSKeyIdRequest.h
+	include/alibabacloud/ecs/model/ModifyDiskDefaultKMSKeyIdResult.h
 	include/alibabacloud/ecs/model/ModifyDiskDeploymentRequest.h
 	include/alibabacloud/ecs/model/ModifyDiskDeploymentResult.h
 	include/alibabacloud/ecs/model/ModifyDiskSpecRequest.h
@@ -669,6 +679,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/RemoveTagsResult.h
 	include/alibabacloud/ecs/model/RenewDedicatedHostsRequest.h
 	include/alibabacloud/ecs/model/RenewDedicatedHostsResult.h
+	include/alibabacloud/ecs/model/RenewElasticityAssurancesRequest.h
+	include/alibabacloud/ecs/model/RenewElasticityAssurancesResult.h
 	include/alibabacloud/ecs/model/RenewInstanceRequest.h
 	include/alibabacloud/ecs/model/RenewInstanceResult.h
 	include/alibabacloud/ecs/model/RenewReservedInstancesRequest.h
@@ -679,6 +691,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ReportInstancesStatusResult.h
 	include/alibabacloud/ecs/model/ResetDiskRequest.h
 	include/alibabacloud/ecs/model/ResetDiskResult.h
+	include/alibabacloud/ecs/model/ResetDiskDefaultKMSKeyIdRequest.h
+	include/alibabacloud/ecs/model/ResetDiskDefaultKMSKeyIdResult.h
 	include/alibabacloud/ecs/model/ResetDisksRequest.h
 	include/alibabacloud/ecs/model/ResetDisksResult.h
 	include/alibabacloud/ecs/model/ResizeDiskRequest.h
@@ -693,8 +707,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/RunInstancesResult.h
 	include/alibabacloud/ecs/model/SendFileRequest.h
 	include/alibabacloud/ecs/model/SendFileResult.h
-	include/alibabacloud/ecs/model/StartElasticityAssuranceRequest.h
-	include/alibabacloud/ecs/model/StartElasticityAssuranceResult.h
 	include/alibabacloud/ecs/model/StartImagePipelineExecutionRequest.h
 	include/alibabacloud/ecs/model/StartImagePipelineExecutionResult.h
 	include/alibabacloud/ecs/model/StartInstanceRequest.h
@@ -994,6 +1006,10 @@ set(ecs_src
 	src/model/DescribeDiagnosticReportAttributesResult.cc
 	src/model/DescribeDiagnosticReportsRequest.cc
 	src/model/DescribeDiagnosticReportsResult.cc
+	src/model/DescribeDiskDefaultKMSKeyIdRequest.cc
+	src/model/DescribeDiskDefaultKMSKeyIdResult.cc
+	src/model/DescribeDiskEncryptionByDefaultStatusRequest.cc
+	src/model/DescribeDiskEncryptionByDefaultStatusResult.cc
 	src/model/DescribeDiskMonitorDataRequest.cc
 	src/model/DescribeDiskMonitorDataResult.cc
 	src/model/DescribeDisksRequest.cc
@@ -1182,12 +1198,16 @@ set(ecs_src
 	src/model/DetachNetworkInterfaceResult.cc
 	src/model/DisableActivationRequest.cc
 	src/model/DisableActivationResult.cc
+	src/model/DisableDiskEncryptionByDefaultRequest.cc
+	src/model/DisableDiskEncryptionByDefaultResult.cc
 	src/model/EipFillParamsRequest.cc
 	src/model/EipFillParamsResult.cc
 	src/model/EipFillProductRequest.cc
 	src/model/EipFillProductResult.cc
 	src/model/EipNotifyPaidRequest.cc
 	src/model/EipNotifyPaidResult.cc
+	src/model/EnableDiskEncryptionByDefaultRequest.cc
+	src/model/EnableDiskEncryptionByDefaultResult.cc
 	src/model/EnablePhysicalConnectionRequest.cc
 	src/model/EnablePhysicalConnectionResult.cc
 	src/model/ExportImageRequest.cc
@@ -1250,6 +1270,8 @@ set(ecs_src
 	src/model/ModifyDiskAttributeResult.cc
 	src/model/ModifyDiskChargeTypeRequest.cc
 	src/model/ModifyDiskChargeTypeResult.cc
+	src/model/ModifyDiskDefaultKMSKeyIdRequest.cc
+	src/model/ModifyDiskDefaultKMSKeyIdResult.cc
 	src/model/ModifyDiskDeploymentRequest.cc
 	src/model/ModifyDiskDeploymentResult.cc
 	src/model/ModifyDiskSpecRequest.cc
@@ -1376,6 +1398,8 @@ set(ecs_src
 	src/model/RemoveTagsResult.cc
 	src/model/RenewDedicatedHostsRequest.cc
 	src/model/RenewDedicatedHostsResult.cc
+	src/model/RenewElasticityAssurancesRequest.cc
+	src/model/RenewElasticityAssurancesResult.cc
 	src/model/RenewInstanceRequest.cc
 	src/model/RenewInstanceResult.cc
 	src/model/RenewReservedInstancesRequest.cc
@@ -1386,6 +1410,8 @@ set(ecs_src
 	src/model/ReportInstancesStatusResult.cc
 	src/model/ResetDiskRequest.cc
 	src/model/ResetDiskResult.cc
+	src/model/ResetDiskDefaultKMSKeyIdRequest.cc
+	src/model/ResetDiskDefaultKMSKeyIdResult.cc
 	src/model/ResetDisksRequest.cc
 	src/model/ResetDisksResult.cc
 	src/model/ResizeDiskRequest.cc
@@ -1400,8 +1426,6 @@ set(ecs_src
 	src/model/RunInstancesResult.cc
 	src/model/SendFileRequest.cc
 	src/model/SendFileResult.cc
-	src/model/StartElasticityAssuranceRequest.cc
-	src/model/StartElasticityAssuranceResult.cc
 	src/model/StartImagePipelineExecutionRequest.cc
 	src/model/StartImagePipelineExecutionResult.cc
 	src/model/StartInstanceRequest.cc

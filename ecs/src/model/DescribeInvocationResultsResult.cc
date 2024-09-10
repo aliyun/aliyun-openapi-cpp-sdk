@@ -88,6 +88,8 @@ void DescribeInvocationResultsResult::parse(const std::string &payload)
 			invocationResultObject.containerName = invocationNodeInvocationResultsInvocationResult["ContainerName"].asString();
 		if(!invocationNodeInvocationResultsInvocationResult["TerminationMode"].isNull())
 			invocationResultObject.terminationMode = invocationNodeInvocationResultsInvocationResult["TerminationMode"].asString();
+		if(!invocationNodeInvocationResultsInvocationResult["Launcher"].isNull())
+			invocationResultObject.launcher = invocationNodeInvocationResultsInvocationResult["Launcher"].asString();
 		auto allTagsNode = invocationNodeInvocationResultsInvocationResult["Tags"]["Tag"];
 		for (auto invocationNodeInvocationResultsInvocationResultTagsTag : allTagsNode)
 		{

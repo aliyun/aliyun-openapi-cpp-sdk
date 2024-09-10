@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct InstanceType
 				{
+					struct EnhancedNetwork
+					{
+						int vfQueueNumberPerEni;
+						bool sriovSupport;
+					};
 					struct NetworkCardInfo
 					{
 						int networkCardIndex;
@@ -49,6 +54,7 @@ namespace AlibabaCloud
 					bool networkEncryptionSupport;
 					int eriQuantity;
 					int instanceBandwidthRx;
+					EnhancedNetwork enhancedNetwork;
 					int instanceBandwidthTx;
 					int localStorageAmount;
 					int secondaryEniQueueNumber;

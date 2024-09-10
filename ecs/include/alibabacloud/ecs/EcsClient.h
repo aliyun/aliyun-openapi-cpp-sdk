@@ -288,6 +288,10 @@
 #include "model/DescribeDiagnosticReportAttributesResult.h"
 #include "model/DescribeDiagnosticReportsRequest.h"
 #include "model/DescribeDiagnosticReportsResult.h"
+#include "model/DescribeDiskDefaultKMSKeyIdRequest.h"
+#include "model/DescribeDiskDefaultKMSKeyIdResult.h"
+#include "model/DescribeDiskEncryptionByDefaultStatusRequest.h"
+#include "model/DescribeDiskEncryptionByDefaultStatusResult.h"
 #include "model/DescribeDiskMonitorDataRequest.h"
 #include "model/DescribeDiskMonitorDataResult.h"
 #include "model/DescribeDisksRequest.h"
@@ -476,12 +480,16 @@
 #include "model/DetachNetworkInterfaceResult.h"
 #include "model/DisableActivationRequest.h"
 #include "model/DisableActivationResult.h"
+#include "model/DisableDiskEncryptionByDefaultRequest.h"
+#include "model/DisableDiskEncryptionByDefaultResult.h"
 #include "model/EipFillParamsRequest.h"
 #include "model/EipFillParamsResult.h"
 #include "model/EipFillProductRequest.h"
 #include "model/EipFillProductResult.h"
 #include "model/EipNotifyPaidRequest.h"
 #include "model/EipNotifyPaidResult.h"
+#include "model/EnableDiskEncryptionByDefaultRequest.h"
+#include "model/EnableDiskEncryptionByDefaultResult.h"
 #include "model/EnablePhysicalConnectionRequest.h"
 #include "model/EnablePhysicalConnectionResult.h"
 #include "model/ExportImageRequest.h"
@@ -544,6 +552,8 @@
 #include "model/ModifyDiskAttributeResult.h"
 #include "model/ModifyDiskChargeTypeRequest.h"
 #include "model/ModifyDiskChargeTypeResult.h"
+#include "model/ModifyDiskDefaultKMSKeyIdRequest.h"
+#include "model/ModifyDiskDefaultKMSKeyIdResult.h"
 #include "model/ModifyDiskDeploymentRequest.h"
 #include "model/ModifyDiskDeploymentResult.h"
 #include "model/ModifyDiskSpecRequest.h"
@@ -670,6 +680,8 @@
 #include "model/RemoveTagsResult.h"
 #include "model/RenewDedicatedHostsRequest.h"
 #include "model/RenewDedicatedHostsResult.h"
+#include "model/RenewElasticityAssurancesRequest.h"
+#include "model/RenewElasticityAssurancesResult.h"
 #include "model/RenewInstanceRequest.h"
 #include "model/RenewInstanceResult.h"
 #include "model/RenewReservedInstancesRequest.h"
@@ -680,6 +692,8 @@
 #include "model/ReportInstancesStatusResult.h"
 #include "model/ResetDiskRequest.h"
 #include "model/ResetDiskResult.h"
+#include "model/ResetDiskDefaultKMSKeyIdRequest.h"
+#include "model/ResetDiskDefaultKMSKeyIdResult.h"
 #include "model/ResetDisksRequest.h"
 #include "model/ResetDisksResult.h"
 #include "model/ResizeDiskRequest.h"
@@ -694,8 +708,6 @@
 #include "model/RunInstancesResult.h"
 #include "model/SendFileRequest.h"
 #include "model/SendFileResult.h"
-#include "model/StartElasticityAssuranceRequest.h"
-#include "model/StartElasticityAssuranceResult.h"
 #include "model/StartImagePipelineExecutionRequest.h"
 #include "model/StartImagePipelineExecutionResult.h"
 #include "model/StartInstanceRequest.h"
@@ -1134,6 +1146,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDiagnosticReportsResult> DescribeDiagnosticReportsOutcome;
 			typedef std::future<DescribeDiagnosticReportsOutcome> DescribeDiagnosticReportsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeDiagnosticReportsRequest&, const DescribeDiagnosticReportsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnosticReportsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDiskDefaultKMSKeyIdResult> DescribeDiskDefaultKMSKeyIdOutcome;
+			typedef std::future<DescribeDiskDefaultKMSKeyIdOutcome> DescribeDiskDefaultKMSKeyIdOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeDiskDefaultKMSKeyIdRequest&, const DescribeDiskDefaultKMSKeyIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskDefaultKMSKeyIdAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDiskEncryptionByDefaultStatusResult> DescribeDiskEncryptionByDefaultStatusOutcome;
+			typedef std::future<DescribeDiskEncryptionByDefaultStatusOutcome> DescribeDiskEncryptionByDefaultStatusOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeDiskEncryptionByDefaultStatusRequest&, const DescribeDiskEncryptionByDefaultStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskEncryptionByDefaultStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDiskMonitorDataResult> DescribeDiskMonitorDataOutcome;
 			typedef std::future<DescribeDiskMonitorDataOutcome> DescribeDiskMonitorDataOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeDiskMonitorDataRequest&, const DescribeDiskMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskMonitorDataAsyncHandler;
@@ -1416,6 +1434,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DisableActivationResult> DisableActivationOutcome;
 			typedef std::future<DisableActivationOutcome> DisableActivationOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DisableActivationRequest&, const DisableActivationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableActivationAsyncHandler;
+			typedef Outcome<Error, Model::DisableDiskEncryptionByDefaultResult> DisableDiskEncryptionByDefaultOutcome;
+			typedef std::future<DisableDiskEncryptionByDefaultOutcome> DisableDiskEncryptionByDefaultOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DisableDiskEncryptionByDefaultRequest&, const DisableDiskEncryptionByDefaultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableDiskEncryptionByDefaultAsyncHandler;
 			typedef Outcome<Error, Model::EipFillParamsResult> EipFillParamsOutcome;
 			typedef std::future<EipFillParamsOutcome> EipFillParamsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::EipFillParamsRequest&, const EipFillParamsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EipFillParamsAsyncHandler;
@@ -1425,6 +1446,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EipNotifyPaidResult> EipNotifyPaidOutcome;
 			typedef std::future<EipNotifyPaidOutcome> EipNotifyPaidOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::EipNotifyPaidRequest&, const EipNotifyPaidOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EipNotifyPaidAsyncHandler;
+			typedef Outcome<Error, Model::EnableDiskEncryptionByDefaultResult> EnableDiskEncryptionByDefaultOutcome;
+			typedef std::future<EnableDiskEncryptionByDefaultOutcome> EnableDiskEncryptionByDefaultOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::EnableDiskEncryptionByDefaultRequest&, const EnableDiskEncryptionByDefaultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableDiskEncryptionByDefaultAsyncHandler;
 			typedef Outcome<Error, Model::EnablePhysicalConnectionResult> EnablePhysicalConnectionOutcome;
 			typedef std::future<EnablePhysicalConnectionOutcome> EnablePhysicalConnectionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::EnablePhysicalConnectionRequest&, const EnablePhysicalConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnablePhysicalConnectionAsyncHandler;
@@ -1518,6 +1542,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDiskChargeTypeResult> ModifyDiskChargeTypeOutcome;
 			typedef std::future<ModifyDiskChargeTypeOutcome> ModifyDiskChargeTypeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyDiskChargeTypeRequest&, const ModifyDiskChargeTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiskChargeTypeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDiskDefaultKMSKeyIdResult> ModifyDiskDefaultKMSKeyIdOutcome;
+			typedef std::future<ModifyDiskDefaultKMSKeyIdOutcome> ModifyDiskDefaultKMSKeyIdOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyDiskDefaultKMSKeyIdRequest&, const ModifyDiskDefaultKMSKeyIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiskDefaultKMSKeyIdAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDiskDeploymentResult> ModifyDiskDeploymentOutcome;
 			typedef std::future<ModifyDiskDeploymentOutcome> ModifyDiskDeploymentOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyDiskDeploymentRequest&, const ModifyDiskDeploymentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiskDeploymentAsyncHandler;
@@ -1707,6 +1734,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RenewDedicatedHostsResult> RenewDedicatedHostsOutcome;
 			typedef std::future<RenewDedicatedHostsOutcome> RenewDedicatedHostsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::RenewDedicatedHostsRequest&, const RenewDedicatedHostsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewDedicatedHostsAsyncHandler;
+			typedef Outcome<Error, Model::RenewElasticityAssurancesResult> RenewElasticityAssurancesOutcome;
+			typedef std::future<RenewElasticityAssurancesOutcome> RenewElasticityAssurancesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::RenewElasticityAssurancesRequest&, const RenewElasticityAssurancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewElasticityAssurancesAsyncHandler;
 			typedef Outcome<Error, Model::RenewInstanceResult> RenewInstanceOutcome;
 			typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::RenewInstanceRequest&, const RenewInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
@@ -1722,6 +1752,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ResetDiskResult> ResetDiskOutcome;
 			typedef std::future<ResetDiskOutcome> ResetDiskOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ResetDiskRequest&, const ResetDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetDiskAsyncHandler;
+			typedef Outcome<Error, Model::ResetDiskDefaultKMSKeyIdResult> ResetDiskDefaultKMSKeyIdOutcome;
+			typedef std::future<ResetDiskDefaultKMSKeyIdOutcome> ResetDiskDefaultKMSKeyIdOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ResetDiskDefaultKMSKeyIdRequest&, const ResetDiskDefaultKMSKeyIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetDiskDefaultKMSKeyIdAsyncHandler;
 			typedef Outcome<Error, Model::ResetDisksResult> ResetDisksOutcome;
 			typedef std::future<ResetDisksOutcome> ResetDisksOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ResetDisksRequest&, const ResetDisksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetDisksAsyncHandler;
@@ -1743,9 +1776,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SendFileResult> SendFileOutcome;
 			typedef std::future<SendFileOutcome> SendFileOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::SendFileRequest&, const SendFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendFileAsyncHandler;
-			typedef Outcome<Error, Model::StartElasticityAssuranceResult> StartElasticityAssuranceOutcome;
-			typedef std::future<StartElasticityAssuranceOutcome> StartElasticityAssuranceOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::StartElasticityAssuranceRequest&, const StartElasticityAssuranceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartElasticityAssuranceAsyncHandler;
 			typedef Outcome<Error, Model::StartImagePipelineExecutionResult> StartImagePipelineExecutionOutcome;
 			typedef std::future<StartImagePipelineExecutionOutcome> StartImagePipelineExecutionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::StartImagePipelineExecutionRequest&, const StartImagePipelineExecutionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartImagePipelineExecutionAsyncHandler;
@@ -2195,6 +2225,12 @@ namespace AlibabaCloud
 			DescribeDiagnosticReportsOutcome describeDiagnosticReports(const Model::DescribeDiagnosticReportsRequest &request)const;
 			void describeDiagnosticReportsAsync(const Model::DescribeDiagnosticReportsRequest& request, const DescribeDiagnosticReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDiagnosticReportsOutcomeCallable describeDiagnosticReportsCallable(const Model::DescribeDiagnosticReportsRequest& request) const;
+			DescribeDiskDefaultKMSKeyIdOutcome describeDiskDefaultKMSKeyId(const Model::DescribeDiskDefaultKMSKeyIdRequest &request)const;
+			void describeDiskDefaultKMSKeyIdAsync(const Model::DescribeDiskDefaultKMSKeyIdRequest& request, const DescribeDiskDefaultKMSKeyIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDiskDefaultKMSKeyIdOutcomeCallable describeDiskDefaultKMSKeyIdCallable(const Model::DescribeDiskDefaultKMSKeyIdRequest& request) const;
+			DescribeDiskEncryptionByDefaultStatusOutcome describeDiskEncryptionByDefaultStatus(const Model::DescribeDiskEncryptionByDefaultStatusRequest &request)const;
+			void describeDiskEncryptionByDefaultStatusAsync(const Model::DescribeDiskEncryptionByDefaultStatusRequest& request, const DescribeDiskEncryptionByDefaultStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDiskEncryptionByDefaultStatusOutcomeCallable describeDiskEncryptionByDefaultStatusCallable(const Model::DescribeDiskEncryptionByDefaultStatusRequest& request) const;
 			DescribeDiskMonitorDataOutcome describeDiskMonitorData(const Model::DescribeDiskMonitorDataRequest &request)const;
 			void describeDiskMonitorDataAsync(const Model::DescribeDiskMonitorDataRequest& request, const DescribeDiskMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDiskMonitorDataOutcomeCallable describeDiskMonitorDataCallable(const Model::DescribeDiskMonitorDataRequest& request) const;
@@ -2477,6 +2513,9 @@ namespace AlibabaCloud
 			DisableActivationOutcome disableActivation(const Model::DisableActivationRequest &request)const;
 			void disableActivationAsync(const Model::DisableActivationRequest& request, const DisableActivationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableActivationOutcomeCallable disableActivationCallable(const Model::DisableActivationRequest& request) const;
+			DisableDiskEncryptionByDefaultOutcome disableDiskEncryptionByDefault(const Model::DisableDiskEncryptionByDefaultRequest &request)const;
+			void disableDiskEncryptionByDefaultAsync(const Model::DisableDiskEncryptionByDefaultRequest& request, const DisableDiskEncryptionByDefaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DisableDiskEncryptionByDefaultOutcomeCallable disableDiskEncryptionByDefaultCallable(const Model::DisableDiskEncryptionByDefaultRequest& request) const;
 			EipFillParamsOutcome eipFillParams(const Model::EipFillParamsRequest &request)const;
 			void eipFillParamsAsync(const Model::EipFillParamsRequest& request, const EipFillParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EipFillParamsOutcomeCallable eipFillParamsCallable(const Model::EipFillParamsRequest& request) const;
@@ -2486,6 +2525,9 @@ namespace AlibabaCloud
 			EipNotifyPaidOutcome eipNotifyPaid(const Model::EipNotifyPaidRequest &request)const;
 			void eipNotifyPaidAsync(const Model::EipNotifyPaidRequest& request, const EipNotifyPaidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EipNotifyPaidOutcomeCallable eipNotifyPaidCallable(const Model::EipNotifyPaidRequest& request) const;
+			EnableDiskEncryptionByDefaultOutcome enableDiskEncryptionByDefault(const Model::EnableDiskEncryptionByDefaultRequest &request)const;
+			void enableDiskEncryptionByDefaultAsync(const Model::EnableDiskEncryptionByDefaultRequest& request, const EnableDiskEncryptionByDefaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableDiskEncryptionByDefaultOutcomeCallable enableDiskEncryptionByDefaultCallable(const Model::EnableDiskEncryptionByDefaultRequest& request) const;
 			EnablePhysicalConnectionOutcome enablePhysicalConnection(const Model::EnablePhysicalConnectionRequest &request)const;
 			void enablePhysicalConnectionAsync(const Model::EnablePhysicalConnectionRequest& request, const EnablePhysicalConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnablePhysicalConnectionOutcomeCallable enablePhysicalConnectionCallable(const Model::EnablePhysicalConnectionRequest& request) const;
@@ -2579,6 +2621,9 @@ namespace AlibabaCloud
 			ModifyDiskChargeTypeOutcome modifyDiskChargeType(const Model::ModifyDiskChargeTypeRequest &request)const;
 			void modifyDiskChargeTypeAsync(const Model::ModifyDiskChargeTypeRequest& request, const ModifyDiskChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDiskChargeTypeOutcomeCallable modifyDiskChargeTypeCallable(const Model::ModifyDiskChargeTypeRequest& request) const;
+			ModifyDiskDefaultKMSKeyIdOutcome modifyDiskDefaultKMSKeyId(const Model::ModifyDiskDefaultKMSKeyIdRequest &request)const;
+			void modifyDiskDefaultKMSKeyIdAsync(const Model::ModifyDiskDefaultKMSKeyIdRequest& request, const ModifyDiskDefaultKMSKeyIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDiskDefaultKMSKeyIdOutcomeCallable modifyDiskDefaultKMSKeyIdCallable(const Model::ModifyDiskDefaultKMSKeyIdRequest& request) const;
 			ModifyDiskDeploymentOutcome modifyDiskDeployment(const Model::ModifyDiskDeploymentRequest &request)const;
 			void modifyDiskDeploymentAsync(const Model::ModifyDiskDeploymentRequest& request, const ModifyDiskDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDiskDeploymentOutcomeCallable modifyDiskDeploymentCallable(const Model::ModifyDiskDeploymentRequest& request) const;
@@ -2768,6 +2813,9 @@ namespace AlibabaCloud
 			RenewDedicatedHostsOutcome renewDedicatedHosts(const Model::RenewDedicatedHostsRequest &request)const;
 			void renewDedicatedHostsAsync(const Model::RenewDedicatedHostsRequest& request, const RenewDedicatedHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenewDedicatedHostsOutcomeCallable renewDedicatedHostsCallable(const Model::RenewDedicatedHostsRequest& request) const;
+			RenewElasticityAssurancesOutcome renewElasticityAssurances(const Model::RenewElasticityAssurancesRequest &request)const;
+			void renewElasticityAssurancesAsync(const Model::RenewElasticityAssurancesRequest& request, const RenewElasticityAssurancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RenewElasticityAssurancesOutcomeCallable renewElasticityAssurancesCallable(const Model::RenewElasticityAssurancesRequest& request) const;
 			RenewInstanceOutcome renewInstance(const Model::RenewInstanceRequest &request)const;
 			void renewInstanceAsync(const Model::RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenewInstanceOutcomeCallable renewInstanceCallable(const Model::RenewInstanceRequest& request) const;
@@ -2783,6 +2831,9 @@ namespace AlibabaCloud
 			ResetDiskOutcome resetDisk(const Model::ResetDiskRequest &request)const;
 			void resetDiskAsync(const Model::ResetDiskRequest& request, const ResetDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetDiskOutcomeCallable resetDiskCallable(const Model::ResetDiskRequest& request) const;
+			ResetDiskDefaultKMSKeyIdOutcome resetDiskDefaultKMSKeyId(const Model::ResetDiskDefaultKMSKeyIdRequest &request)const;
+			void resetDiskDefaultKMSKeyIdAsync(const Model::ResetDiskDefaultKMSKeyIdRequest& request, const ResetDiskDefaultKMSKeyIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResetDiskDefaultKMSKeyIdOutcomeCallable resetDiskDefaultKMSKeyIdCallable(const Model::ResetDiskDefaultKMSKeyIdRequest& request) const;
 			ResetDisksOutcome resetDisks(const Model::ResetDisksRequest &request)const;
 			void resetDisksAsync(const Model::ResetDisksRequest& request, const ResetDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetDisksOutcomeCallable resetDisksCallable(const Model::ResetDisksRequest& request) const;
@@ -2804,9 +2855,6 @@ namespace AlibabaCloud
 			SendFileOutcome sendFile(const Model::SendFileRequest &request)const;
 			void sendFileAsync(const Model::SendFileRequest& request, const SendFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SendFileOutcomeCallable sendFileCallable(const Model::SendFileRequest& request) const;
-			StartElasticityAssuranceOutcome startElasticityAssurance(const Model::StartElasticityAssuranceRequest &request)const;
-			void startElasticityAssuranceAsync(const Model::StartElasticityAssuranceRequest& request, const StartElasticityAssuranceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			StartElasticityAssuranceOutcomeCallable startElasticityAssuranceCallable(const Model::StartElasticityAssuranceRequest& request) const;
 			StartImagePipelineExecutionOutcome startImagePipelineExecution(const Model::StartImagePipelineExecutionRequest &request)const;
 			void startImagePipelineExecutionAsync(const Model::StartImagePipelineExecutionRequest& request, const StartImagePipelineExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartImagePipelineExecutionOutcomeCallable startImagePipelineExecutionCallable(const Model::StartImagePipelineExecutionRequest& request) const;

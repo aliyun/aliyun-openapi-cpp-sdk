@@ -155,6 +155,15 @@ void RunCommandRequest::setParameters(std::map<std::string, std::string> paramet
   setParameter(std::string("Parameters"), parameters);
 }
 
+std::string RunCommandRequest::getLauncher() const {
+  return launcher_;
+}
+
+void RunCommandRequest::setLauncher(const std::string &launcher) {
+  launcher_ = launcher;
+  setParameter(std::string("Launcher"), launcher);
+}
+
 std::string RunCommandRequest::getContainerName() const {
   return containerName_;
 }

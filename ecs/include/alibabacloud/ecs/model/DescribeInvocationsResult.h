@@ -73,6 +73,7 @@ namespace AlibabaCloud
 					std::string containerName;
 					std::string creationTime;
 					std::string frequency;
+					std::string launcher;
 					std::string commandId;
 					std::string commandName;
 					std::vector<Invocation::Tag> tags;

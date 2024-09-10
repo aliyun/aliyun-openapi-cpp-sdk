@@ -238,3 +238,12 @@ void InvokeCommandRequest::setUsername(const std::string &username) {
   setParameter(std::string("Username"), username);
 }
 
+std::string InvokeCommandRequest::getLauncher() const {
+  return launcher_;
+}
+
+void InvokeCommandRequest::setLauncher(const std::string &launcher) {
+  launcher_ = launcher;
+  setParameter(std::string("Launcher"), launcher);
+}
+

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ecs/model/StartElasticityAssuranceResult.h>
+#include <alibabacloud/ecs/model/DisableDiskEncryptionByDefaultResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ecs;
 using namespace AlibabaCloud::Ecs::Model;
 
-StartElasticityAssuranceResult::StartElasticityAssuranceResult() :
+DisableDiskEncryptionByDefaultResult::DisableDiskEncryptionByDefaultResult() :
 	ServiceResult()
 {}
 
-StartElasticityAssuranceResult::StartElasticityAssuranceResult(const std::string &payload) :
+DisableDiskEncryptionByDefaultResult::DisableDiskEncryptionByDefaultResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-StartElasticityAssuranceResult::~StartElasticityAssuranceResult()
+DisableDiskEncryptionByDefaultResult::~DisableDiskEncryptionByDefaultResult()
 {}
 
-void StartElasticityAssuranceResult::parse(const std::string &payload)
+void DisableDiskEncryptionByDefaultResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

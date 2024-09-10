@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_STARTELASTICITYASSURANCERESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_STARTELASTICITYASSURANCERESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYDISKDEFAULTKMSKEYIDRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_MODIFYDISKDEFAULTKMSKEYIDRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT StartElasticityAssuranceResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT ModifyDiskDefaultKMSKeyIdResult : public ServiceResult
 			{
 			public:
 
 
-				StartElasticityAssuranceResult();
-				explicit StartElasticityAssuranceResult(const std::string &payload);
-				~StartElasticityAssuranceResult();
+				ModifyDiskDefaultKMSKeyIdResult();
+				explicit ModifyDiskDefaultKMSKeyIdResult(const std::string &payload);
+				~ModifyDiskDefaultKMSKeyIdResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_STARTELASTICITYASSURANCERESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYDISKDEFAULTKMSKEYIDRESULT_H_

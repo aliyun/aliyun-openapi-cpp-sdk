@@ -73,6 +73,15 @@ void ModifyNetworkInterfaceAttributeRequest::setNetworkInterfaceTrafficConfig(co
   setParameter(std::string("NetworkInterfaceTrafficConfig") + ".TxQueueSize", std::to_string(networkInterfaceTrafficConfig.txQueueSize));
 }
 
+ModifyNetworkInterfaceAttributeRequest::EnhancedNetwork ModifyNetworkInterfaceAttributeRequest::getEnhancedNetwork() const {
+  return enhancedNetwork_;
+}
+
+void ModifyNetworkInterfaceAttributeRequest::setEnhancedNetwork(const ModifyNetworkInterfaceAttributeRequest::EnhancedNetwork &enhancedNetwork) {
+  enhancedNetwork_ = enhancedNetwork;
+  setParameter(std::string("EnhancedNetwork") + ".EnableSriov", enhancedNetwork.enableSriov ? "true" : "false");
+}
+
 std::string ModifyNetworkInterfaceAttributeRequest::getRegionId() const {
   return regionId_;
 }

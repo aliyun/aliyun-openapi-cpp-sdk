@@ -35,6 +35,9 @@ public:
 		int txQueueSize;
 		int rxQueueSize;
 	};
+	struct EnhancedNetwork {
+		bool enableSriov;
+	};
 	struct Tag {
 		std::string key;
 		std::string value;
@@ -60,6 +63,8 @@ public:
 	void setBusinessType(const std::string &businessType);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	EnhancedNetwork getEnhancedNetwork() const;
+	void setEnhancedNetwork(const EnhancedNetwork &enhancedNetwork);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
 	std::string getNetworkInterfaceName() const;
@@ -121,6 +126,7 @@ private:
 	int secondaryPrivateIpAddressCount_;
 	std::string businessType_;
 	std::string resourceGroupId_;
+	EnhancedNetwork enhancedNetwork_;
 	std::vector<Tag> tag_;
 	std::string networkInterfaceName_;
 	bool visible_;

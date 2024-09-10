@@ -115,6 +115,15 @@ void DescribePriceRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+DescribePriceRequest::PromotionOptions DescribePriceRequest::getPromotionOptions() const {
+  return promotionOptions_;
+}
+
+void DescribePriceRequest::setPromotionOptions(const DescribePriceRequest::PromotionOptions &promotionOptions) {
+  promotionOptions_ = promotionOptions;
+  setParameter(std::string("PromotionOptions") + ".CouponNo", promotionOptions.couponNo);
+}
+
 int DescribePriceRequest::getInstanceCpuCoreCount() const {
   return instanceCpuCoreCount_;
 }

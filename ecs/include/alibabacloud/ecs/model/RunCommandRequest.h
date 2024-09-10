@@ -66,6 +66,8 @@ public:
 	void setContainerId(const std::string &containerId);
 	std::map<std::string, std::string> getParameters() const;
 	void setParameters(std::map<std::string, std::string> parameters);
+	std::string getLauncher() const;
+	void setLauncher(const std::string &launcher);
 	std::string getContainerName() const;
 	void setContainerName(const std::string &containerName);
 	std::string getClientToken() const;
@@ -110,6 +112,7 @@ private:
 	std::string name_;
 	std::string containerId_;
 	std::map<std::string, std::string> parameters_;
+	std::string launcher_;
 	std::string containerName_;
 	std::string clientToken_;
 	std::string description_;

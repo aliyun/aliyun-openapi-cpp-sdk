@@ -43,6 +43,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getSnapshotId() const;
 	void setSnapshotId(const std::string &snapshotId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getDestinationRegionId() const;
 	void setDestinationRegionId(const std::string &destinationRegionId);
 	std::string getResourceGroupId() const;
@@ -73,6 +75,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string snapshotId_;
+	std::string clientToken_;
 	std::string destinationRegionId_;
 	std::string resourceGroupId_;
 	std::string regionId_;

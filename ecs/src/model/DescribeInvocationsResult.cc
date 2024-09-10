@@ -81,6 +81,8 @@ void DescribeInvocationsResult::parse(const std::string &payload)
 			invocationsObject.containerName = valueInvocationsInvocation["ContainerName"].asString();
 		if(!valueInvocationsInvocation["TerminationMode"].isNull())
 			invocationsObject.terminationMode = valueInvocationsInvocation["TerminationMode"].asString();
+		if(!valueInvocationsInvocation["Launcher"].isNull())
+			invocationsObject.launcher = valueInvocationsInvocation["Launcher"].asString();
 		auto allInvokeInstancesNode = valueInvocationsInvocation["InvokeInstances"]["InvokeInstance"];
 		for (auto valueInvocationsInvocationInvokeInstancesInvokeInstance : allInvokeInstancesNode)
 		{

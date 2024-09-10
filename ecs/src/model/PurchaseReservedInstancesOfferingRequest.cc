@@ -52,6 +52,15 @@ void PurchaseReservedInstancesOfferingRequest::setDescription(const std::string 
   setParameter(std::string("Description"), description);
 }
 
+std::string PurchaseReservedInstancesOfferingRequest::getStartTime() const {
+  return startTime_;
+}
+
+void PurchaseReservedInstancesOfferingRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
+}
+
 std::string PurchaseReservedInstancesOfferingRequest::getPlatform() const {
   return platform_;
 }

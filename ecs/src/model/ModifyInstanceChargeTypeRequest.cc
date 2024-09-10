@@ -133,6 +133,15 @@ void ModifyInstanceChargeTypeRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+ModifyInstanceChargeTypeRequest::PromotionOptions ModifyInstanceChargeTypeRequest::getPromotionOptions() const {
+  return promotionOptions_;
+}
+
+void ModifyInstanceChargeTypeRequest::setPromotionOptions(const ModifyInstanceChargeTypeRequest::PromotionOptions &promotionOptions) {
+  promotionOptions_ = promotionOptions;
+  setParameter(std::string("PromotionOptions") + ".CouponNo", promotionOptions.couponNo);
+}
+
 std::string ModifyInstanceChargeTypeRequest::getPeriodUnit() const {
   return periodUnit_;
 }

@@ -148,6 +148,12 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 			launchTemplateVersionSetsObject.launchTemplateData.deletionProtection = launchTemplateDataNode["DeletionProtection"].asString() == "true";
 		if(!launchTemplateDataNode["CreditSpecification"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.creditSpecification = launchTemplateDataNode["CreditSpecification"].asString();
+		if(!launchTemplateDataNode["AutoRenew"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.autoRenew = launchTemplateDataNode["AutoRenew"].asString() == "true";
+		if(!launchTemplateDataNode["AutoRenewPeriod"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.autoRenewPeriod = std::stoi(launchTemplateDataNode["AutoRenewPeriod"].asString());
+		if(!launchTemplateDataNode["PeriodUnit"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.periodUnit = launchTemplateDataNode["PeriodUnit"].asString();
 		auto allDataDisksNode = launchTemplateDataNode["DataDisks"]["DataDisk"];
 		for (auto launchTemplateDataNodeDataDisksDataDisk : allDataDisksNode)
 		{

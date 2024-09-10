@@ -40,6 +40,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
 	std::string getPlatform() const;
 	void setPlatform(const std::string &platform);
 	std::string getResourceGroupId() const;
@@ -79,6 +81,7 @@ private:
 	long resourceOwnerId_;
 	std::string clientToken_;
 	std::string description_;
+	std::string startTime_;
 	std::string platform_;
 	std::string resourceGroupId_;
 	std::string regionId_;

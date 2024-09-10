@@ -89,6 +89,8 @@ public:
 	void setTag(const std::vector<Tag> &tag);
 	std::string getSystemDiskAutoSnapshotPolicyId() const;
 	void setSystemDiskAutoSnapshotPolicyId(const std::string &systemDiskAutoSnapshotPolicyId);
+	int getAutoRenewPeriod() const;
+	void setAutoRenewPeriod(int autoRenewPeriod);
 	int getPeriod() const;
 	void setPeriod(int period);
 	int getIpv6AddressCount() const;
@@ -105,8 +107,12 @@ public:
 	void setPrivateIpAddress(const std::string &privateIpAddress);
 	bool getSystemDiskBurstingEnabled() const;
 	void setSystemDiskBurstingEnabled(bool systemDiskBurstingEnabled);
+	std::string getPeriodUnit() const;
+	void setPeriodUnit(const std::string &periodUnit);
 	std::string getInstanceName() const;
 	void setInstanceName(const std::string &instanceName);
+	bool getAutoRenew() const;
+	void setAutoRenew(bool autoRenew);
 	std::string getInternetChargeType() const;
 	void setInternetChargeType(const std::string &internetChargeType);
 	std::string getZoneId() const;
@@ -191,6 +197,7 @@ private:
 	std::vector<TemplateTag> templateTag_;
 	std::vector<Tag> tag_;
 	std::string systemDiskAutoSnapshotPolicyId_;
+	int autoRenewPeriod_;
 	int period_;
 	int ipv6AddressCount_;
 	std::string templateResourceGroupId_;
@@ -199,7 +206,9 @@ private:
 	std::string spotStrategy_;
 	std::string privateIpAddress_;
 	bool systemDiskBurstingEnabled_;
+	std::string periodUnit_;
 	std::string instanceName_;
+	bool autoRenew_;
 	std::string internetChargeType_;
 	std::string zoneId_;
 	int internetMaxBandwidthIn_;

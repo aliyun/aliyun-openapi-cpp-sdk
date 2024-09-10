@@ -35,6 +35,9 @@ public:
 		int rxQueueSize;
 		int txQueueSize;
 	};
+	struct EnhancedNetwork {
+		bool enableSriov;
+	};
 	struct ConnectionTrackingConfiguration {
 		int tcpEstablishedTimeout;
 		int tcpClosedAndTimeWaitTimeout;
@@ -52,6 +55,8 @@ public:
 	void setDescription(const std::string &description);
 	NetworkInterfaceTrafficConfig getNetworkInterfaceTrafficConfig() const;
 	void setNetworkInterfaceTrafficConfig(const NetworkInterfaceTrafficConfig &networkInterfaceTrafficConfig);
+	EnhancedNetwork getEnhancedNetwork() const;
+	void setEnhancedNetwork(const EnhancedNetwork &enhancedNetwork);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNetworkInterfaceName() const;
@@ -79,6 +84,7 @@ private:
 	std::vector<std::string> securityGroupId_;
 	std::string description_;
 	NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig_;
+	EnhancedNetwork enhancedNetwork_;
 	std::string regionId_;
 	std::string networkInterfaceName_;
 	int txQueueSize_;

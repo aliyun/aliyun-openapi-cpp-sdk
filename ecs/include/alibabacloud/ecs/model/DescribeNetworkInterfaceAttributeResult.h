@@ -32,6 +32,18 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ECS_EXPORT DescribeNetworkInterfaceAttributeResult : public ServiceResult
 			{
 			public:
+				struct ConnectionTrackingConfiguration
+				{
+					int tcpClosedAndTimeWaitTimeout;
+					int udpTimeout;
+					int tcpEstablishedTimeout;
+				};
+				struct NetworkInterfaceTrafficConfig
+				{
+					std::string networkInterfaceTrafficMode;
+					int queueNumber;
+					int queuePairNumber;
+				};
 				struct AssociatedPublicIp
 				{
 					std::string publicIpAddress;
@@ -62,17 +74,9 @@ namespace AlibabaCloud
 					std::string workState;
 					std::string slaveNetworkInterfaceId;
 				};
-				struct NetworkInterfaceTrafficConfig
+				struct EnhancedNetwork
 				{
-					std::string networkInterfaceTrafficMode;
-					int queueNumber;
-					int queuePairNumber;
-				};
-				struct ConnectionTrackingConfiguration
-				{
-					int tcpClosedAndTimeWaitTimeout;
-					int udpTimeout;
-					int tcpEstablishedTimeout;
+					bool enableSriov;
 				};
 				struct PrivateIpSet
 				{
@@ -114,6 +118,7 @@ namespace AlibabaCloud
 				bool getDeleteOnRelease()const;
 				Attachment getAttachment()const;
 				std::string getNetworkInterfaceId()const;
+				EnhancedNetwork getEnhancedNetwork()const;
 				std::vector<Ipv6Set> getIpv6Sets()const;
 				std::string getOwnerId()const;
 				AssociatedPublicIp getAssociatedPublicIp()const;
@@ -151,6 +156,7 @@ namespace AlibabaCloud
 				bool deleteOnRelease_;
 				Attachment attachment_;
 				std::string networkInterfaceId_;
+				EnhancedNetwork enhancedNetwork_;
 				std::vector<Ipv6Set> ipv6Sets_;
 				std::string ownerId_;
 				AssociatedPublicIp associatedPublicIp_;

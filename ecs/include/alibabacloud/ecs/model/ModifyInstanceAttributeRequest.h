@@ -28,8 +28,16 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT ModifyInstanceAttributeRequest : public RpcServiceRequest {
 public:
+	struct PrivateDnsNameOptions {
+		std::string hostnameType;
+		bool enableInstanceIdDnsARecord;
+		bool enableInstanceIdDnsAAAARecord;
+		bool enableIpDnsARecord;
+		bool enableIpDnsPtrRecord;
+	};
 	struct AdditionalInfo {
 		std::string pvdConfig;
+		bool enableHighDensityMode;
 	};
 	struct RemoteConnectionOptions {
 		std::string password;
@@ -53,8 +61,12 @@ public:
 	void setPassword(const std::string &password);
 	std::string getHostName() const;
 	void setHostName(const std::string &hostName);
+	PrivateDnsNameOptions getPrivateDnsNameOptions() const;
+	void setPrivateDnsNameOptions(const PrivateDnsNameOptions &privateDnsNameOptions);
 	std::string getCpuOptionsTopologyType() const;
 	void setCpuOptionsTopologyType(const std::string &cpuOptionsTopologyType);
+	std::string getOSNameEn() const;
+	void setOSNameEn(const std::string &oSNameEn);
 	bool getEnableJumboFrame() const;
 	void setEnableJumboFrame(bool enableJumboFrame);
 	std::string getResourceOwnerAccount() const;
@@ -85,7 +97,9 @@ private:
 	std::string userData_;
 	std::string password_;
 	std::string hostName_;
+	PrivateDnsNameOptions privateDnsNameOptions_;
 	std::string cpuOptionsTopologyType_;
+	std::string oSNameEn_;
 	bool enableJumboFrame_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

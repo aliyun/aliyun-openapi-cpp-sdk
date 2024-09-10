@@ -43,6 +43,15 @@ void CopySnapshotRequest::setSnapshotId(const std::string &snapshotId) {
   setParameter(std::string("SnapshotId"), snapshotId);
 }
 
+std::string CopySnapshotRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void CopySnapshotRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
 std::string CopySnapshotRequest::getDestinationRegionId() const {
   return destinationRegionId_;
 }

@@ -333,6 +333,19 @@ void RunInstancesRequest::setPasswordInherit(bool passwordInherit) {
   setParameter(std::string("PasswordInherit"), passwordInherit ? "true" : "false");
 }
 
+RunInstancesRequest::PrivateDnsNameOptions RunInstancesRequest::getPrivateDnsNameOptions() const {
+  return privateDnsNameOptions_;
+}
+
+void RunInstancesRequest::setPrivateDnsNameOptions(const RunInstancesRequest::PrivateDnsNameOptions &privateDnsNameOptions) {
+  privateDnsNameOptions_ = privateDnsNameOptions;
+  setParameter(std::string("PrivateDnsNameOptions") + ".EnableInstanceIdDnsARecord", privateDnsNameOptions.enableInstanceIdDnsARecord ? "true" : "false");
+  setParameter(std::string("PrivateDnsNameOptions") + ".EnableInstanceIdDnsAAAARecord", privateDnsNameOptions.enableInstanceIdDnsAAAARecord ? "true" : "false");
+  setParameter(std::string("PrivateDnsNameOptions") + ".EnableIpDnsARecord", privateDnsNameOptions.enableIpDnsARecord ? "true" : "false");
+  setParameter(std::string("PrivateDnsNameOptions") + ".EnableIpDnsPtrRecord", privateDnsNameOptions.enableIpDnsPtrRecord ? "true" : "false");
+  setParameter(std::string("PrivateDnsNameOptions") + ".HostnameType", privateDnsNameOptions.hostnameType);
+}
+
 std::string RunInstancesRequest::getInstanceType() const {
   return instanceType_;
 }
@@ -592,6 +605,7 @@ RunInstancesRequest::AdditionalInfo RunInstancesRequest::getAdditionalInfo() con
 void RunInstancesRequest::setAdditionalInfo(const RunInstancesRequest::AdditionalInfo &additionalInfo) {
   additionalInfo_ = additionalInfo;
   setParameter(std::string("AdditionalInfo") + ".PvdConfig", additionalInfo.pvdConfig);
+  setParameter(std::string("AdditionalInfo") + ".EnableHighDensityMode", additionalInfo.enableHighDensityMode ? "true" : "false");
 }
 
 std::string RunInstancesRequest::getVSwitchId() const {

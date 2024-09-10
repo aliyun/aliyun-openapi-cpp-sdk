@@ -106,6 +106,18 @@ void AttachDiskRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+AttachDiskRequest::AdditionalInfo AttachDiskRequest::getAdditionalInfo() const {
+  return additionalInfo_;
+}
+
+void AttachDiskRequest::setAdditionalInfo(const AttachDiskRequest::AdditionalInfo &additionalInfo) {
+  additionalInfo_ = additionalInfo;
+  setParameter(std::string("AdditionalInfo") + ".EnableSRIOV", additionalInfo.enableSRIOV ? "true" : "false");
+  setParameter(std::string("AdditionalInfo") + ".Identifier", additionalInfo.identifier);
+  setParameter(std::string("AdditionalInfo") + ".SafeMode", additionalInfo.safeMode ? "true" : "false");
+  setParameter(std::string("AdditionalInfo") + ".TargetDevice", additionalInfo.targetDevice);
+}
+
 std::string AttachDiskRequest::getInstanceId() const {
   return instanceId_;
 }

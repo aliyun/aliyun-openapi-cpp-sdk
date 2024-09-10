@@ -91,6 +91,15 @@ void CreateNetworkInterfaceRequest::setResourceGroupId(const std::string &resour
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+CreateNetworkInterfaceRequest::EnhancedNetwork CreateNetworkInterfaceRequest::getEnhancedNetwork() const {
+  return enhancedNetwork_;
+}
+
+void CreateNetworkInterfaceRequest::setEnhancedNetwork(const CreateNetworkInterfaceRequest::EnhancedNetwork &enhancedNetwork) {
+  enhancedNetwork_ = enhancedNetwork;
+  setParameter(std::string("EnhancedNetwork") + ".EnableSriov", enhancedNetwork.enableSriov ? "true" : "false");
+}
+
 std::vector<CreateNetworkInterfaceRequest::Tag> CreateNetworkInterfaceRequest::getTag() const {
   return tag_;
 }

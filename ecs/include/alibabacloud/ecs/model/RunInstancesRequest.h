@@ -44,6 +44,13 @@ public:
 		std::string value;
 		std::string scope;
 	};
+	struct PrivateDnsNameOptions {
+		bool enableInstanceIdDnsARecord;
+		bool enableInstanceIdDnsAAAARecord;
+		bool enableIpDnsARecord;
+		bool enableIpDnsPtrRecord;
+		std::string hostnameType;
+	};
 	struct Arn {
 		std::string roleType;
 		std::string rolearn;
@@ -58,6 +65,7 @@ public:
 	};
 	struct AdditionalInfo {
 		std::string pvdConfig;
+		bool enableHighDensityMode;
 	};
 	struct NetworkInterface {
 		std::string vSwitchId;
@@ -161,6 +169,8 @@ public:
 	void setSystemDiskPerformanceLevel(const std::string &systemDiskPerformanceLevel);
 	bool getPasswordInherit() const;
 	void setPasswordInherit(bool passwordInherit);
+	PrivateDnsNameOptions getPrivateDnsNameOptions() const;
+	void setPrivateDnsNameOptions(const PrivateDnsNameOptions &privateDnsNameOptions);
 	std::string getInstanceType() const;
 	void setInstanceType(const std::string &instanceType);
 	std::vector<Arn> getArn() const;
@@ -314,6 +324,7 @@ private:
 	bool hibernationOptionsConfigured_;
 	std::string systemDiskPerformanceLevel_;
 	bool passwordInherit_;
+	PrivateDnsNameOptions privateDnsNameOptions_;
 	std::string instanceType_;
 	std::vector<Arn> arn_;
 	std::string resourceOwnerAccount_;

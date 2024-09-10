@@ -28,6 +28,12 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT AttachDiskRequest : public RpcServiceRequest {
 public:
+	struct AdditionalInfo {
+		bool enableSRIOV;
+		std::string identifier;
+		bool safeMode;
+		std::string targetDevice;
+	};
 	AttachDiskRequest();
 	~AttachDiskRequest();
 	long getResourceOwnerId() const;
@@ -48,6 +54,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	AdditionalInfo getAdditionalInfo() const;
+	void setAdditionalInfo(const AdditionalInfo &additionalInfo);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	bool getForce() const;
@@ -65,6 +73,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	AdditionalInfo additionalInfo_;
 	std::string instanceId_;
 	bool force_;
 	std::string device_;

@@ -79,6 +79,7 @@ namespace AlibabaCloud
 					std::string eventId;
 					std::string resourceType;
 					std::string notBefore;
+					std::string reasonCode;
 					std::string reason;
 				};
 

@@ -28,6 +28,9 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT ModifyInstanceChargeTypeRequest : public RpcServiceRequest {
 public:
+	struct PromotionOptions {
+		std::string couponNo;
+	};
 	ModifyInstanceChargeTypeRequest();
 	~ModifyInstanceChargeTypeRequest();
 	long getResourceOwnerId() const;
@@ -54,6 +57,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	PromotionOptions getPromotionOptions() const;
+	void setPromotionOptions(const PromotionOptions &promotionOptions);
 	std::string getPeriodUnit() const;
 	void setPeriodUnit(const std::string &periodUnit);
 	std::string getInstanceIds() const;
@@ -72,6 +77,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	PromotionOptions promotionOptions_;
 	std::string periodUnit_;
 	std::string instanceIds_;
 };

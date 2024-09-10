@@ -4839,6 +4839,78 @@ EcsClient::DescribeDiagnosticReportsOutcomeCallable EcsClient::describeDiagnosti
 	return task->get_future();
 }
 
+EcsClient::DescribeDiskDefaultKMSKeyIdOutcome EcsClient::describeDiskDefaultKMSKeyId(const DescribeDiskDefaultKMSKeyIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDiskDefaultKMSKeyIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDiskDefaultKMSKeyIdOutcome(DescribeDiskDefaultKMSKeyIdResult(outcome.result()));
+	else
+		return DescribeDiskDefaultKMSKeyIdOutcome(outcome.error());
+}
+
+void EcsClient::describeDiskDefaultKMSKeyIdAsync(const DescribeDiskDefaultKMSKeyIdRequest& request, const DescribeDiskDefaultKMSKeyIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDiskDefaultKMSKeyId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeDiskDefaultKMSKeyIdOutcomeCallable EcsClient::describeDiskDefaultKMSKeyIdCallable(const DescribeDiskDefaultKMSKeyIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDiskDefaultKMSKeyIdOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDiskDefaultKMSKeyId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeDiskEncryptionByDefaultStatusOutcome EcsClient::describeDiskEncryptionByDefaultStatus(const DescribeDiskEncryptionByDefaultStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDiskEncryptionByDefaultStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDiskEncryptionByDefaultStatusOutcome(DescribeDiskEncryptionByDefaultStatusResult(outcome.result()));
+	else
+		return DescribeDiskEncryptionByDefaultStatusOutcome(outcome.error());
+}
+
+void EcsClient::describeDiskEncryptionByDefaultStatusAsync(const DescribeDiskEncryptionByDefaultStatusRequest& request, const DescribeDiskEncryptionByDefaultStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDiskEncryptionByDefaultStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeDiskEncryptionByDefaultStatusOutcomeCallable EcsClient::describeDiskEncryptionByDefaultStatusCallable(const DescribeDiskEncryptionByDefaultStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDiskEncryptionByDefaultStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDiskEncryptionByDefaultStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeDiskMonitorDataOutcome EcsClient::describeDiskMonitorData(const DescribeDiskMonitorDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8223,6 +8295,42 @@ EcsClient::DisableActivationOutcomeCallable EcsClient::disableActivationCallable
 	return task->get_future();
 }
 
+EcsClient::DisableDiskEncryptionByDefaultOutcome EcsClient::disableDiskEncryptionByDefault(const DisableDiskEncryptionByDefaultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableDiskEncryptionByDefaultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableDiskEncryptionByDefaultOutcome(DisableDiskEncryptionByDefaultResult(outcome.result()));
+	else
+		return DisableDiskEncryptionByDefaultOutcome(outcome.error());
+}
+
+void EcsClient::disableDiskEncryptionByDefaultAsync(const DisableDiskEncryptionByDefaultRequest& request, const DisableDiskEncryptionByDefaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableDiskEncryptionByDefault(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DisableDiskEncryptionByDefaultOutcomeCallable EcsClient::disableDiskEncryptionByDefaultCallable(const DisableDiskEncryptionByDefaultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableDiskEncryptionByDefaultOutcome()>>(
+			[this, request]()
+			{
+			return this->disableDiskEncryptionByDefault(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::EipFillParamsOutcome EcsClient::eipFillParams(const EipFillParamsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8325,6 +8433,42 @@ EcsClient::EipNotifyPaidOutcomeCallable EcsClient::eipNotifyPaidCallable(const E
 			[this, request]()
 			{
 			return this->eipNotifyPaid(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::EnableDiskEncryptionByDefaultOutcome EcsClient::enableDiskEncryptionByDefault(const EnableDiskEncryptionByDefaultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableDiskEncryptionByDefaultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableDiskEncryptionByDefaultOutcome(EnableDiskEncryptionByDefaultResult(outcome.result()));
+	else
+		return EnableDiskEncryptionByDefaultOutcome(outcome.error());
+}
+
+void EcsClient::enableDiskEncryptionByDefaultAsync(const EnableDiskEncryptionByDefaultRequest& request, const EnableDiskEncryptionByDefaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableDiskEncryptionByDefault(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::EnableDiskEncryptionByDefaultOutcomeCallable EcsClient::enableDiskEncryptionByDefaultCallable(const EnableDiskEncryptionByDefaultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableDiskEncryptionByDefaultOutcome()>>(
+			[this, request]()
+			{
+			return this->enableDiskEncryptionByDefault(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9441,6 +9585,42 @@ EcsClient::ModifyDiskChargeTypeOutcomeCallable EcsClient::modifyDiskChargeTypeCa
 			[this, request]()
 			{
 			return this->modifyDiskChargeType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ModifyDiskDefaultKMSKeyIdOutcome EcsClient::modifyDiskDefaultKMSKeyId(const ModifyDiskDefaultKMSKeyIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDiskDefaultKMSKeyIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDiskDefaultKMSKeyIdOutcome(ModifyDiskDefaultKMSKeyIdResult(outcome.result()));
+	else
+		return ModifyDiskDefaultKMSKeyIdOutcome(outcome.error());
+}
+
+void EcsClient::modifyDiskDefaultKMSKeyIdAsync(const ModifyDiskDefaultKMSKeyIdRequest& request, const ModifyDiskDefaultKMSKeyIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDiskDefaultKMSKeyId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyDiskDefaultKMSKeyIdOutcomeCallable EcsClient::modifyDiskDefaultKMSKeyIdCallable(const ModifyDiskDefaultKMSKeyIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDiskDefaultKMSKeyIdOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDiskDefaultKMSKeyId(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -11715,6 +11895,42 @@ EcsClient::RenewDedicatedHostsOutcomeCallable EcsClient::renewDedicatedHostsCall
 	return task->get_future();
 }
 
+EcsClient::RenewElasticityAssurancesOutcome EcsClient::renewElasticityAssurances(const RenewElasticityAssurancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RenewElasticityAssurancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RenewElasticityAssurancesOutcome(RenewElasticityAssurancesResult(outcome.result()));
+	else
+		return RenewElasticityAssurancesOutcome(outcome.error());
+}
+
+void EcsClient::renewElasticityAssurancesAsync(const RenewElasticityAssurancesRequest& request, const RenewElasticityAssurancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, renewElasticityAssurances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::RenewElasticityAssurancesOutcomeCallable EcsClient::renewElasticityAssurancesCallable(const RenewElasticityAssurancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RenewElasticityAssurancesOutcome()>>(
+			[this, request]()
+			{
+			return this->renewElasticityAssurances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::RenewInstanceOutcome EcsClient::renewInstance(const RenewInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -11889,6 +12105,42 @@ EcsClient::ResetDiskOutcomeCallable EcsClient::resetDiskCallable(const ResetDisk
 			[this, request]()
 			{
 			return this->resetDisk(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ResetDiskDefaultKMSKeyIdOutcome EcsClient::resetDiskDefaultKMSKeyId(const ResetDiskDefaultKMSKeyIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResetDiskDefaultKMSKeyIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResetDiskDefaultKMSKeyIdOutcome(ResetDiskDefaultKMSKeyIdResult(outcome.result()));
+	else
+		return ResetDiskDefaultKMSKeyIdOutcome(outcome.error());
+}
+
+void EcsClient::resetDiskDefaultKMSKeyIdAsync(const ResetDiskDefaultKMSKeyIdRequest& request, const ResetDiskDefaultKMSKeyIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resetDiskDefaultKMSKeyId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ResetDiskDefaultKMSKeyIdOutcomeCallable EcsClient::resetDiskDefaultKMSKeyIdCallable(const ResetDiskDefaultKMSKeyIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResetDiskDefaultKMSKeyIdOutcome()>>(
+			[this, request]()
+			{
+			return this->resetDiskDefaultKMSKeyId(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -12141,42 +12393,6 @@ EcsClient::SendFileOutcomeCallable EcsClient::sendFileCallable(const SendFileReq
 			[this, request]()
 			{
 			return this->sendFile(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EcsClient::StartElasticityAssuranceOutcome EcsClient::startElasticityAssurance(const StartElasticityAssuranceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StartElasticityAssuranceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StartElasticityAssuranceOutcome(StartElasticityAssuranceResult(outcome.result()));
-	else
-		return StartElasticityAssuranceOutcome(outcome.error());
-}
-
-void EcsClient::startElasticityAssuranceAsync(const StartElasticityAssuranceRequest& request, const StartElasticityAssuranceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, startElasticityAssurance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::StartElasticityAssuranceOutcomeCallable EcsClient::startElasticityAssuranceCallable(const StartElasticityAssuranceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StartElasticityAssuranceOutcome()>>(
-			[this, request]()
-			{
-			return this->startElasticityAssurance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

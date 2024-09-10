@@ -124,6 +124,15 @@ void ModifyDedicatedHostsChargeTypeRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+ModifyDedicatedHostsChargeTypeRequest::PromotionOptions ModifyDedicatedHostsChargeTypeRequest::getPromotionOptions() const {
+  return promotionOptions_;
+}
+
+void ModifyDedicatedHostsChargeTypeRequest::setPromotionOptions(const ModifyDedicatedHostsChargeTypeRequest::PromotionOptions &promotionOptions) {
+  promotionOptions_ = promotionOptions;
+  setParameter(std::string("PromotionOptions") + ".CouponNo", promotionOptions.couponNo);
+}
+
 bool ModifyDedicatedHostsChargeTypeRequest::getDetailFee() const {
   return detailFee_;
 }

@@ -36,6 +36,8 @@ public:
 	~CreateSnapshotGroupRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	bool getInstantAccess() const;
 	void setInstantAccess(bool instantAccess);
 	std::vector<std::string> getExcludeDiskId() const;
@@ -67,6 +69,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string clientToken_;
 	bool instantAccess_;
 	std::vector<std::string> excludeDiskId_;
 	std::string description_;

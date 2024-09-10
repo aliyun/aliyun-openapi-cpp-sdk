@@ -125,6 +125,11 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 				networkCardsObject.networkCardIndex = std::stoi(valueInstanceTypesInstanceTypeNetworkCardsNetworkCardInfo["NetworkCardIndex"].asString());
 			instanceTypesObject.networkCards.push_back(networkCardsObject);
 		}
+		auto enhancedNetworkNode = value["EnhancedNetwork"];
+		if(!enhancedNetworkNode["SriovSupport"].isNull())
+			instanceTypesObject.enhancedNetwork.sriovSupport = enhancedNetworkNode["SriovSupport"].asString() == "true";
+		if(!enhancedNetworkNode["VfQueueNumberPerEni"].isNull())
+			instanceTypesObject.enhancedNetwork.vfQueueNumberPerEni = std::stoi(enhancedNetworkNode["VfQueueNumberPerEni"].asString());
 		auto allSupportedBootModes = value["SupportedBootModes"]["SupportedBootMode"];
 		for (auto value : allSupportedBootModes)
 			instanceTypesObject.supportedBootModes.push_back(value.asString());

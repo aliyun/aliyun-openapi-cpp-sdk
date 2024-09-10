@@ -28,6 +28,9 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT DescribePriceRequest : public RpcServiceRequest {
 public:
+	struct PromotionOptions {
+		std::string couponNo;
+	};
 	struct DataDisk {
 		long size;
 		std::string performanceLevel;
@@ -55,6 +58,8 @@ public:
 	void setAssuranceTimes(const std::string &assuranceTimes);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	PromotionOptions getPromotionOptions() const;
+	void setPromotionOptions(const PromotionOptions &promotionOptions);
 	int getInstanceCpuCoreCount() const;
 	void setInstanceCpuCoreCount(int instanceCpuCoreCount);
 	std::string getSpotStrategy() const;
@@ -137,6 +142,7 @@ private:
 	std::string dataDisk1PerformanceLevel_;
 	std::string assuranceTimes_;
 	long ownerId_;
+	PromotionOptions promotionOptions_;
 	int instanceCpuCoreCount_;
 	std::string spotStrategy_;
 	std::string internetChargeType_;

@@ -171,6 +171,16 @@ void DescribeDisksResult::parse(const std::string &payload)
 				attachmentsObject.device = valueDisksDiskAttachmentsAttachment["Device"].asString();
 			if(!valueDisksDiskAttachmentsAttachment["AttachedTime"].isNull())
 				attachmentsObject.attachedTime = valueDisksDiskAttachmentsAttachment["AttachedTime"].asString();
+			if(!valueDisksDiskAttachmentsAttachment["NsId"].isNull())
+				attachmentsObject.nsId = std::stol(valueDisksDiskAttachmentsAttachment["NsId"].asString());
+			if(!valueDisksDiskAttachmentsAttachment["Nguid"].isNull())
+				attachmentsObject.nguid = valueDisksDiskAttachmentsAttachment["Nguid"].asString();
+			if(!valueDisksDiskAttachmentsAttachment["Identifier"].isNull())
+				attachmentsObject.identifier = valueDisksDiskAttachmentsAttachment["Identifier"].asString();
+			if(!valueDisksDiskAttachmentsAttachment["TargetDevice"].isNull())
+				attachmentsObject.targetDevice = valueDisksDiskAttachmentsAttachment["TargetDevice"].asString();
+			if(!valueDisksDiskAttachmentsAttachment["AccessToken"].isNull())
+				attachmentsObject.accessToken = valueDisksDiskAttachmentsAttachment["AccessToken"].asString();
 			disksObject.attachments.push_back(attachmentsObject);
 		}
 		auto placementNode = value["Placement"];

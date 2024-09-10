@@ -86,11 +86,20 @@ namespace AlibabaCloud
 					{
 						bool loginAsNonRoot;
 					};
+					struct PrivateDnsNameOptions
+					{
+						bool enableInstanceIdDnsARecord;
+						std::string hostnameType;
+						bool enableIpDnsPtrRecord;
+						bool enableIpDnsARecord;
+						bool enableInstanceIdDnsAAAARecord;
+					};
 					struct NetworkInterface
 					{
 						struct PrivateIpSet
 						{
 							std::string privateIpAddress;
+							std::string privateDnsName;
 							bool primary;
 						};
 						struct Ipv6Set
@@ -145,6 +154,7 @@ namespace AlibabaCloud
 					std::string stoppedMode;
 					CpuOptions cpuOptions;
 					std::string startTime;
+					PrivateDnsNameOptions privateDnsNameOptions;
 					bool deletionProtection;
 					VpcAttributes vpcAttributes;
 					std::vector<std::string> securityGroupIds;

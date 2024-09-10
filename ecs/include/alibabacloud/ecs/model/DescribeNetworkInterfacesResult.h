@@ -55,6 +55,7 @@ namespace AlibabaCloud
 						};
 						AssociatedPublicIp1 associatedPublicIp1;
 						std::string privateIpAddress;
+						std::string privateDnsName;
 						bool primary;
 					};
 					struct Ipv6Set

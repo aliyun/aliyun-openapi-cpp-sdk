@@ -34,6 +34,15 @@ void CreateSnapshotGroupRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string CreateSnapshotGroupRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void CreateSnapshotGroupRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
 bool CreateSnapshotGroupRequest::getInstantAccess() const {
   return instantAccess_;
 }

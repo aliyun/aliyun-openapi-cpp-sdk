@@ -54,6 +54,7 @@ namespace AlibabaCloud
 						std::string containerId;
 						std::string containerName;
 						std::string output;
+						std::string launcher;
 						std::string commandId;
 						std::string errorCode;
 						std::vector<InvocationResult::Tag> tags;

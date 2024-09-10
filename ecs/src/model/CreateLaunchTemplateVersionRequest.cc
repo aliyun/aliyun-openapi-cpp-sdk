@@ -147,6 +147,15 @@ void CreateLaunchTemplateVersionRequest::setSystemDiskAutoSnapshotPolicyId(const
   setParameter(std::string("SystemDisk.AutoSnapshotPolicyId"), systemDiskAutoSnapshotPolicyId);
 }
 
+int CreateLaunchTemplateVersionRequest::getAutoRenewPeriod() const {
+  return autoRenewPeriod_;
+}
+
+void CreateLaunchTemplateVersionRequest::setAutoRenewPeriod(int autoRenewPeriod) {
+  autoRenewPeriod_ = autoRenewPeriod;
+  setParameter(std::string("AutoRenewPeriod"), std::to_string(autoRenewPeriod));
+}
+
 int CreateLaunchTemplateVersionRequest::getPeriod() const {
   return period_;
 }
@@ -219,6 +228,15 @@ void CreateLaunchTemplateVersionRequest::setSystemDiskBurstingEnabled(bool syste
   setParameter(std::string("SystemDisk.BurstingEnabled"), systemDiskBurstingEnabled ? "true" : "false");
 }
 
+std::string CreateLaunchTemplateVersionRequest::getPeriodUnit() const {
+  return periodUnit_;
+}
+
+void CreateLaunchTemplateVersionRequest::setPeriodUnit(const std::string &periodUnit) {
+  periodUnit_ = periodUnit;
+  setParameter(std::string("PeriodUnit"), periodUnit);
+}
+
 std::string CreateLaunchTemplateVersionRequest::getInstanceName() const {
   return instanceName_;
 }
@@ -226,6 +244,15 @@ std::string CreateLaunchTemplateVersionRequest::getInstanceName() const {
 void CreateLaunchTemplateVersionRequest::setInstanceName(const std::string &instanceName) {
   instanceName_ = instanceName;
   setParameter(std::string("InstanceName"), instanceName);
+}
+
+bool CreateLaunchTemplateVersionRequest::getAutoRenew() const {
+  return autoRenew_;
+}
+
+void CreateLaunchTemplateVersionRequest::setAutoRenew(bool autoRenew) {
+  autoRenew_ = autoRenew;
+  setParameter(std::string("AutoRenew"), autoRenew ? "true" : "false");
 }
 
 std::string CreateLaunchTemplateVersionRequest::getInternetChargeType() const {

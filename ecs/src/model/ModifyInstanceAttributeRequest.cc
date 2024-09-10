@@ -97,6 +97,19 @@ void ModifyInstanceAttributeRequest::setHostName(const std::string &hostName) {
   setParameter(std::string("HostName"), hostName);
 }
 
+ModifyInstanceAttributeRequest::PrivateDnsNameOptions ModifyInstanceAttributeRequest::getPrivateDnsNameOptions() const {
+  return privateDnsNameOptions_;
+}
+
+void ModifyInstanceAttributeRequest::setPrivateDnsNameOptions(const ModifyInstanceAttributeRequest::PrivateDnsNameOptions &privateDnsNameOptions) {
+  privateDnsNameOptions_ = privateDnsNameOptions;
+  setParameter(std::string("PrivateDnsNameOptions") + ".HostnameType", privateDnsNameOptions.hostnameType);
+  setParameter(std::string("PrivateDnsNameOptions") + ".EnableInstanceIdDnsARecord", privateDnsNameOptions.enableInstanceIdDnsARecord ? "true" : "false");
+  setParameter(std::string("PrivateDnsNameOptions") + ".EnableInstanceIdDnsAAAARecord", privateDnsNameOptions.enableInstanceIdDnsAAAARecord ? "true" : "false");
+  setParameter(std::string("PrivateDnsNameOptions") + ".EnableIpDnsARecord", privateDnsNameOptions.enableIpDnsARecord ? "true" : "false");
+  setParameter(std::string("PrivateDnsNameOptions") + ".EnableIpDnsPtrRecord", privateDnsNameOptions.enableIpDnsPtrRecord ? "true" : "false");
+}
+
 std::string ModifyInstanceAttributeRequest::getCpuOptionsTopologyType() const {
   return cpuOptionsTopologyType_;
 }
@@ -104,6 +117,15 @@ std::string ModifyInstanceAttributeRequest::getCpuOptionsTopologyType() const {
 void ModifyInstanceAttributeRequest::setCpuOptionsTopologyType(const std::string &cpuOptionsTopologyType) {
   cpuOptionsTopologyType_ = cpuOptionsTopologyType;
   setParameter(std::string("CpuOptions.TopologyType"), cpuOptionsTopologyType);
+}
+
+std::string ModifyInstanceAttributeRequest::getOSNameEn() const {
+  return oSNameEn_;
+}
+
+void ModifyInstanceAttributeRequest::setOSNameEn(const std::string &oSNameEn) {
+  oSNameEn_ = oSNameEn;
+  setParameter(std::string("OSNameEn"), oSNameEn);
 }
 
 bool ModifyInstanceAttributeRequest::getEnableJumboFrame() const {
@@ -166,6 +188,7 @@ ModifyInstanceAttributeRequest::AdditionalInfo ModifyInstanceAttributeRequest::g
 void ModifyInstanceAttributeRequest::setAdditionalInfo(const ModifyInstanceAttributeRequest::AdditionalInfo &additionalInfo) {
   additionalInfo_ = additionalInfo;
   setParameter(std::string("AdditionalInfo") + ".PvdConfig", additionalInfo.pvdConfig);
+  setParameter(std::string("AdditionalInfo") + ".EnableHighDensityMode", additionalInfo.enableHighDensityMode ? "true" : "false");
 }
 
 std::string ModifyInstanceAttributeRequest::getInstanceId() const {

@@ -56,8 +56,13 @@ namespace AlibabaCloud
 					struct Attachment
 					{
 						std::string attachedTime;
+						std::string identifier;
 						std::string instanceId;
+						long nsId;
 						std::string device;
+						std::string accessToken;
+						std::string nguid;
+						std::string targetDevice;
 					};
 					std::string kMSKeyId;
 					std::string resourceGroupId;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_STARTELASTICITYASSURANCEREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_STARTELASTICITYASSURANCEREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_ENABLEDISKENCRYPTIONBYDEFAULTREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_ENABLEDISKENCRYPTIONBYDEFAULTREQUEST_H_
 
 #include <alibabacloud/ecs/EcsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,29 @@
 namespace AlibabaCloud {
 namespace Ecs {
 namespace Model {
-class ALIBABACLOUD_ECS_EXPORT StartElasticityAssuranceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ECS_EXPORT EnableDiskEncryptionByDefaultRequest : public RpcServiceRequest {
 public:
-	StartElasticityAssuranceRequest();
-	~StartElasticityAssuranceRequest();
+	EnableDiskEncryptionByDefaultRequest();
+	~EnableDiskEncryptionByDefaultRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
-	std::string getPrivatePoolOptionsId() const;
-	void setPrivatePoolOptionsId(const std::string &privatePoolOptionsId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 
 private:
 	long resourceOwnerId_;
-	std::string regionId_;
-	std::string privatePoolOptionsId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string regionId_;
 };
 } // namespace Model
 } // namespace Ecs
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ECS_MODEL_STARTELASTICITYASSURANCEREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_ENABLEDISKENCRYPTIONBYDEFAULTREQUEST_H_
