@@ -57,6 +57,8 @@ public:
 	void setNetworkInterfaceTrafficConfig(const NetworkInterfaceTrafficConfig &networkInterfaceTrafficConfig);
 	EnhancedNetwork getEnhancedNetwork() const;
 	void setEnhancedNetwork(const EnhancedNetwork &enhancedNetwork);
+	bool getSourceDestCheck() const;
+	void setSourceDestCheck(bool sourceDestCheck);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNetworkInterfaceName() const;
@@ -85,6 +87,7 @@ private:
 	std::string description_;
 	NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig_;
 	EnhancedNetwork enhancedNetwork_;
+	bool sourceDestCheck_;
 	std::string regionId_;
 	std::string networkInterfaceName_;
 	int txQueueSize_;

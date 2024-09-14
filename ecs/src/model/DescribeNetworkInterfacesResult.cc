@@ -83,6 +83,8 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 			networkInterfaceSetsObject.queueNumber = std::stoi(valueNetworkInterfaceSetsNetworkInterfaceSet["QueueNumber"].asString());
 		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["DeleteOnRelease"].isNull())
 			networkInterfaceSetsObject.deleteOnRelease = valueNetworkInterfaceSetsNetworkInterfaceSet["DeleteOnRelease"].asString() == "true";
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["SourceDestCheck"].isNull())
+			networkInterfaceSetsObject.sourceDestCheck = valueNetworkInterfaceSetsNetworkInterfaceSet["SourceDestCheck"].asString() == "true";
 		auto allPrivateIpSetsNode = valueNetworkInterfaceSetsNetworkInterfaceSet["PrivateIpSets"]["PrivateIpSet"];
 		for (auto valueNetworkInterfaceSetsNetworkInterfaceSetPrivateIpSetsPrivateIpSet : allPrivateIpSetsNode)
 		{

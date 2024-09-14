@@ -95,6 +95,7 @@ namespace AlibabaCloud
 					std::string macAddress;
 					std::vector<std::string> securityGroupIds;
 					long serviceID;
+					bool sourceDestCheck;
 					std::string type;
 					int queuePairNumber;
 					int queueNumber;

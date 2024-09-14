@@ -32,18 +32,6 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ECS_EXPORT DescribeNetworkInterfaceAttributeResult : public ServiceResult
 			{
 			public:
-				struct ConnectionTrackingConfiguration
-				{
-					int tcpClosedAndTimeWaitTimeout;
-					int udpTimeout;
-					int tcpEstablishedTimeout;
-				};
-				struct NetworkInterfaceTrafficConfig
-				{
-					std::string networkInterfaceTrafficMode;
-					int queueNumber;
-					int queuePairNumber;
-				};
 				struct AssociatedPublicIp
 				{
 					std::string publicIpAddress;
@@ -73,6 +61,18 @@ namespace AlibabaCloud
 					std::string bondNetworkInterfaceId;
 					std::string workState;
 					std::string slaveNetworkInterfaceId;
+				};
+				struct NetworkInterfaceTrafficConfig
+				{
+					std::string networkInterfaceTrafficMode;
+					int queueNumber;
+					int queuePairNumber;
+				};
+				struct ConnectionTrackingConfiguration
+				{
+					int tcpClosedAndTimeWaitTimeout;
+					int udpTimeout;
+					int tcpEstablishedTimeout;
 				};
 				struct EnhancedNetwork
 				{
@@ -134,6 +134,7 @@ namespace AlibabaCloud
 				std::vector<std::string> getSecurityGroupIds()const;
 				long getServiceID()const;
 				std::string getTcpOptionAddressEnabled()const;
+				bool getSourceDestCheck()const;
 				std::string getType()const;
 				int getQueuePairNumber()const;
 				int getQueueNumber()const;
@@ -172,6 +173,7 @@ namespace AlibabaCloud
 				std::vector<std::string> securityGroupIds_;
 				long serviceID_;
 				std::string tcpOptionAddressEnabled_;
+				bool sourceDestCheck_;
 				std::string type_;
 				int queuePairNumber_;
 				int queueNumber_;

@@ -82,6 +82,15 @@ void ModifyNetworkInterfaceAttributeRequest::setEnhancedNetwork(const ModifyNetw
   setParameter(std::string("EnhancedNetwork") + ".EnableSriov", enhancedNetwork.enableSriov ? "true" : "false");
 }
 
+bool ModifyNetworkInterfaceAttributeRequest::getSourceDestCheck() const {
+  return sourceDestCheck_;
+}
+
+void ModifyNetworkInterfaceAttributeRequest::setSourceDestCheck(bool sourceDestCheck) {
+  sourceDestCheck_ = sourceDestCheck;
+  setParameter(std::string("SourceDestCheck"), sourceDestCheck ? "true" : "false");
+}
+
 std::string ModifyNetworkInterfaceAttributeRequest::getRegionId() const {
   return regionId_;
 }

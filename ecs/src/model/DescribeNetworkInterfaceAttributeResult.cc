@@ -88,20 +88,6 @@ void DescribeNetworkInterfaceAttributeResult::parse(const std::string &payload)
 			tagsObject.tagKey = valueTagsTag["TagKey"].asString();
 		tags_.push_back(tagsObject);
 	}
-	auto connectionTrackingConfigurationNode = value["ConnectionTrackingConfiguration"];
-	if(!connectionTrackingConfigurationNode["TcpClosedAndTimeWaitTimeout"].isNull())
-		connectionTrackingConfiguration_.tcpClosedAndTimeWaitTimeout = std::stoi(connectionTrackingConfigurationNode["TcpClosedAndTimeWaitTimeout"].asString());
-	if(!connectionTrackingConfigurationNode["TcpEstablishedTimeout"].isNull())
-		connectionTrackingConfiguration_.tcpEstablishedTimeout = std::stoi(connectionTrackingConfigurationNode["TcpEstablishedTimeout"].asString());
-	if(!connectionTrackingConfigurationNode["UdpTimeout"].isNull())
-		connectionTrackingConfiguration_.udpTimeout = std::stoi(connectionTrackingConfigurationNode["UdpTimeout"].asString());
-	auto networkInterfaceTrafficConfigNode = value["NetworkInterfaceTrafficConfig"];
-	if(!networkInterfaceTrafficConfigNode["NetworkInterfaceTrafficMode"].isNull())
-		networkInterfaceTrafficConfig_.networkInterfaceTrafficMode = networkInterfaceTrafficConfigNode["NetworkInterfaceTrafficMode"].asString();
-	if(!networkInterfaceTrafficConfigNode["QueueNumber"].isNull())
-		networkInterfaceTrafficConfig_.queueNumber = std::stoi(networkInterfaceTrafficConfigNode["QueueNumber"].asString());
-	if(!networkInterfaceTrafficConfigNode["QueuePairNumber"].isNull())
-		networkInterfaceTrafficConfig_.queuePairNumber = std::stoi(networkInterfaceTrafficConfigNode["QueuePairNumber"].asString());
 	auto associatedPublicIpNode = value["AssociatedPublicIp"];
 	if(!associatedPublicIpNode["PublicIpAddress"].isNull())
 		associatedPublicIp_.publicIpAddress = associatedPublicIpNode["PublicIpAddress"].asString();
@@ -141,6 +127,20 @@ void DescribeNetworkInterfaceAttributeResult::parse(const std::string &payload)
 		slaveInterfaceSpecification_.workState = slaveInterfaceSpecificationNode["WorkState"].asString();
 	if(!slaveInterfaceSpecificationNode["BondNetworkInterfaceId"].isNull())
 		slaveInterfaceSpecification_.bondNetworkInterfaceId = slaveInterfaceSpecificationNode["BondNetworkInterfaceId"].asString();
+	auto networkInterfaceTrafficConfigNode = value["NetworkInterfaceTrafficConfig"];
+	if(!networkInterfaceTrafficConfigNode["NetworkInterfaceTrafficMode"].isNull())
+		networkInterfaceTrafficConfig_.networkInterfaceTrafficMode = networkInterfaceTrafficConfigNode["NetworkInterfaceTrafficMode"].asString();
+	if(!networkInterfaceTrafficConfigNode["QueueNumber"].isNull())
+		networkInterfaceTrafficConfig_.queueNumber = std::stoi(networkInterfaceTrafficConfigNode["QueueNumber"].asString());
+	if(!networkInterfaceTrafficConfigNode["QueuePairNumber"].isNull())
+		networkInterfaceTrafficConfig_.queuePairNumber = std::stoi(networkInterfaceTrafficConfigNode["QueuePairNumber"].asString());
+	auto connectionTrackingConfigurationNode = value["ConnectionTrackingConfiguration"];
+	if(!connectionTrackingConfigurationNode["TcpEstablishedTimeout"].isNull())
+		connectionTrackingConfiguration_.tcpEstablishedTimeout = std::stoi(connectionTrackingConfigurationNode["TcpEstablishedTimeout"].asString());
+	if(!connectionTrackingConfigurationNode["TcpClosedAndTimeWaitTimeout"].isNull())
+		connectionTrackingConfiguration_.tcpClosedAndTimeWaitTimeout = std::stoi(connectionTrackingConfigurationNode["TcpClosedAndTimeWaitTimeout"].asString());
+	if(!connectionTrackingConfigurationNode["UdpTimeout"].isNull())
+		connectionTrackingConfiguration_.udpTimeout = std::stoi(connectionTrackingConfigurationNode["UdpTimeout"].asString());
 	auto enhancedNetworkNode = value["EnhancedNetwork"];
 	if(!enhancedNetworkNode["EnableSriov"].isNull())
 		enhancedNetwork_.enableSriov = enhancedNetworkNode["EnableSriov"].asString() == "true";
@@ -189,6 +189,8 @@ void DescribeNetworkInterfaceAttributeResult::parse(const std::string &payload)
 		deleteOnRelease_ = value["DeleteOnRelease"].asString() == "true";
 	if(!value["TcpOptionAddressEnabled"].isNull())
 		tcpOptionAddressEnabled_ = value["TcpOptionAddressEnabled"].asString();
+	if(!value["SourceDestCheck"].isNull())
+		sourceDestCheck_ = value["SourceDestCheck"].asString() == "true";
 
 }
 
@@ -305,6 +307,11 @@ long DescribeNetworkInterfaceAttributeResult::getServiceID()const
 std::string DescribeNetworkInterfaceAttributeResult::getTcpOptionAddressEnabled()const
 {
 	return tcpOptionAddressEnabled_;
+}
+
+bool DescribeNetworkInterfaceAttributeResult::getSourceDestCheck()const
+{
+	return sourceDestCheck_;
 }
 
 std::string DescribeNetworkInterfaceAttributeResult::getType()const
