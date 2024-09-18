@@ -43,8 +43,8 @@ namespace AlibabaCloud
 						float dataSize;
 						std::string gmtModified;
 						std::string apiId;
-						std::string showName;
 						std::string body;
+						std::string showName;
 						std::string jobId;
 					};
 					int totalNum;

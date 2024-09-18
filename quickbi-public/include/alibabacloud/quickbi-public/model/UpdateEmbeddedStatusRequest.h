@@ -30,20 +30,20 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT UpdateEmbeddedStatusRequest : public Rp
 public:
 	UpdateEmbeddedStatusRequest();
 	~UpdateEmbeddedStatusRequest();
-	std::string getWorksId() const;
-	void setWorksId(const std::string &worksId);
 	bool getThirdPartAuthFlag() const;
 	void setThirdPartAuthFlag(bool thirdPartAuthFlag);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
+	std::string getWorksId() const;
+	void setWorksId(const std::string &worksId);
 
 private:
-	std::string worksId_;
 	bool thirdPartAuthFlag_;
 	std::string accessPoint_;
 	std::string signType_;
+	std::string worksId_;
 };
 } // namespace Model
 } // namespace Quickbi_public

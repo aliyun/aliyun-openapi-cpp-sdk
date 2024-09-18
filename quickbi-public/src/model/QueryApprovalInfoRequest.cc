@@ -34,6 +34,15 @@ void QueryApprovalInfoRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
+std::string QueryApprovalInfoRequest::getUserId() const {
+  return userId_;
+}
+
+void QueryApprovalInfoRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
+}
+
 int QueryApprovalInfoRequest::getPageSize() const {
   return pageSize_;
 }
@@ -59,15 +68,6 @@ int QueryApprovalInfoRequest::getPage() const {
 void QueryApprovalInfoRequest::setPage(int page) {
   page_ = page;
   setParameter(std::string("Page"), std::to_string(page));
-}
-
-std::string QueryApprovalInfoRequest::getUserId() const {
-  return userId_;
-}
-
-void QueryApprovalInfoRequest::setUserId(const std::string &userId) {
-  userId_ = userId;
-  setParameter(std::string("UserId"), userId);
 }
 
 int QueryApprovalInfoRequest::getStatus() const {

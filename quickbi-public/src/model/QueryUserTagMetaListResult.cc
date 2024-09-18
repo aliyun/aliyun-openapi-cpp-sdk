@@ -43,12 +43,12 @@ void QueryUserTagMetaListResult::parse(const std::string &payload)
 	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["TagName"].isNull())
-			resultObject.tagName = valueResultResultItem["TagName"].asString();
 		if(!valueResultResultItem["TagDescription"].isNull())
 			resultObject.tagDescription = valueResultResultItem["TagDescription"].asString();
 		if(!valueResultResultItem["TagId"].isNull())
 			resultObject.tagId = valueResultResultItem["TagId"].asString();
+		if(!valueResultResultItem["TagName"].isNull())
+			resultObject.tagName = valueResultResultItem["TagName"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

@@ -40,40 +40,40 @@ void ListSharedReportsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["TotalNum"].isNull())
-		result_.totalNum = std::stoi(resultNode["TotalNum"].asString());
-	if(!resultNode["TotalPages"].isNull())
-		result_.totalPages = std::stoi(resultNode["TotalPages"].asString());
 	if(!resultNode["PageNum"].isNull())
 		result_.pageNum = std::stoi(resultNode["PageNum"].asString());
 	if(!resultNode["PageSize"].isNull())
 		result_.pageSize = std::stoi(resultNode["PageSize"].asString());
+	if(!resultNode["TotalNum"].isNull())
+		result_.totalNum = std::stoi(resultNode["TotalNum"].asString());
+	if(!resultNode["TotalPages"].isNull())
+		result_.totalPages = std::stoi(resultNode["TotalPages"].asString());
 	auto allDataNode = resultNode["Data"]["DataItem"];
 	for (auto resultNodeDataDataItem : allDataNode)
 	{
 		Result::DataItem dataItemObject;
-		if(!resultNodeDataDataItem["TreeId"].isNull())
-			dataItemObject.treeId = resultNodeDataDataItem["TreeId"].asString();
-		if(!resultNodeDataDataItem["Type"].isNull())
-			dataItemObject.type = resultNodeDataDataItem["Type"].asString();
-		if(!resultNodeDataDataItem["Name"].isNull())
-			dataItemObject.name = resultNodeDataDataItem["Name"].asString();
-		if(!resultNodeDataDataItem["OwnerNum"].isNull())
-			dataItemObject.ownerNum = resultNodeDataDataItem["OwnerNum"].asString();
-		if(!resultNodeDataDataItem["OwnerName"].isNull())
-			dataItemObject.ownerName = resultNodeDataDataItem["OwnerName"].asString();
+		if(!resultNodeDataDataItem["Favorite"].isNull())
+			dataItemObject.favorite = resultNodeDataDataItem["Favorite"].asString() == "true";
 		if(!resultNodeDataDataItem["GmtCreate"].isNull())
 			dataItemObject.gmtCreate = resultNodeDataDataItem["GmtCreate"].asString();
 		if(!resultNodeDataDataItem["GmtModified"].isNull())
 			dataItemObject.gmtModified = resultNodeDataDataItem["GmtModified"].asString();
-		if(!resultNodeDataDataItem["PublishStatus"].isNull())
-			dataItemObject.publishStatus = std::stoi(resultNodeDataDataItem["PublishStatus"].asString());
-		if(!resultNodeDataDataItem["Favorite"].isNull())
-			dataItemObject.favorite = resultNodeDataDataItem["Favorite"].asString() == "true";
-		if(!resultNodeDataDataItem["HasViewAuth"].isNull())
-			dataItemObject.hasViewAuth = resultNodeDataDataItem["HasViewAuth"].asString() == "true";
 		if(!resultNodeDataDataItem["HasEditAuth"].isNull())
 			dataItemObject.hasEditAuth = resultNodeDataDataItem["HasEditAuth"].asString() == "true";
+		if(!resultNodeDataDataItem["HasViewAuth"].isNull())
+			dataItemObject.hasViewAuth = resultNodeDataDataItem["HasViewAuth"].asString() == "true";
+		if(!resultNodeDataDataItem["Name"].isNull())
+			dataItemObject.name = resultNodeDataDataItem["Name"].asString();
+		if(!resultNodeDataDataItem["OwnerName"].isNull())
+			dataItemObject.ownerName = resultNodeDataDataItem["OwnerName"].asString();
+		if(!resultNodeDataDataItem["OwnerNum"].isNull())
+			dataItemObject.ownerNum = resultNodeDataDataItem["OwnerNum"].asString();
+		if(!resultNodeDataDataItem["PublishStatus"].isNull())
+			dataItemObject.publishStatus = std::stoi(resultNodeDataDataItem["PublishStatus"].asString());
+		if(!resultNodeDataDataItem["TreeId"].isNull())
+			dataItemObject.treeId = resultNodeDataDataItem["TreeId"].asString();
+		if(!resultNodeDataDataItem["Type"].isNull())
+			dataItemObject.type = resultNodeDataDataItem["Type"].asString();
 		if(!resultNodeDataDataItem["WorkspaceId"].isNull())
 			dataItemObject.workspaceId = resultNodeDataDataItem["WorkspaceId"].asString();
 		if(!resultNodeDataDataItem["WorkspaceName"].isNull())

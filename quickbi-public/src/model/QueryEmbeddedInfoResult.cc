@@ -47,10 +47,10 @@ void QueryEmbeddedInfoResult::parse(const std::string &payload)
 	auto detailNode = resultNode["Detail"];
 	if(!detailNode["DashboardOfflineQuery"].isNull())
 		result_.detail.dashboardOfflineQuery = std::stoi(detailNode["DashboardOfflineQuery"].asString());
-	if(!detailNode["Report"].isNull())
-		result_.detail.report = std::stoi(detailNode["Report"].asString());
 	if(!detailNode["Page"].isNull())
 		result_.detail.page = std::stoi(detailNode["Page"].asString());
+	if(!detailNode["Report"].isNull())
+		result_.detail.report = std::stoi(detailNode["Report"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

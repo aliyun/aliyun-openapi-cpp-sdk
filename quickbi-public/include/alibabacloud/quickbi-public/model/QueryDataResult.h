@@ -39,8 +39,8 @@ namespace AlibabaCloud
 						std::string type;
 						std::string column;
 						std::string label;
-						std::string dataType;
 						std::string aggregator;
+						std::string dataType;
 						std::string granularity;
 					};
 					std::vector<HeadersItem> headers;

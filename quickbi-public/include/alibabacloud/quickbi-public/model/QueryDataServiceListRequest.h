@@ -30,26 +30,26 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryDataServiceListRequest : public Rp
 public:
 	QueryDataServiceListRequest();
 	~QueryDataServiceListRequest();
-	int getPageNo() const;
-	void setPageNo(int pageNo);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getName() const;
-	void setName(const std::string &name);
+	std::string getUserId() const;
+	void setUserId(const std::string &userId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
-	std::string getUserId() const;
-	void setUserId(const std::string &userId);
+	int getPageNo() const;
+	void setPageNo(int pageNo);
+	std::string getName() const;
+	void setName(const std::string &name);
 
 private:
-	int pageNo_;
 	std::string accessPoint_;
-	std::string name_;
+	std::string userId_;
 	int pageSize_;
 	std::string signType_;
-	std::string userId_;
+	int pageNo_;
+	std::string name_;
 };
 } // namespace Model
 } // namespace Quickbi_public

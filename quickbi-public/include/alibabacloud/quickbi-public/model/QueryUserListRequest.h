@@ -30,26 +30,26 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryUserListRequest : public RpcServic
 public:
 	QueryUserListRequest();
 	~QueryUserListRequest();
-	int getPageSize() const;
-	void setPageSize(int pageSize);
 	int getAccountType() const;
 	void setAccountType(int accountType);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
-	std::string getKeyword() const;
-	void setKeyword(const std::string &keyword);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getKeyword() const;
+	void setKeyword(const std::string &keyword);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 
 private:
-	int pageSize_;
 	int accountType_;
 	std::string accessPoint_;
-	std::string signType_;
-	std::string keyword_;
 	int pageNum_;
+	int pageSize_;
+	std::string keyword_;
+	std::string signType_;
 };
 } // namespace Model
 } // namespace Quickbi_public

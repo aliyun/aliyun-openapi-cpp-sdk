@@ -43,54 +43,54 @@ void QueryReportPerformanceResult::parse(const std::string &payload)
 	for (auto valueResultData : allResultNode)
 	{
 		Data resultObject;
-		if(!valueResultData["ReportId"].isNull())
-			resultObject.reportId = valueResultData["ReportId"].asString();
-		if(!valueResultData["ReportName"].isNull())
-			resultObject.reportName = valueResultData["ReportName"].asString();
-		if(!valueResultData["ComponentQueryCount"].isNull())
-			resultObject.componentQueryCount = std::stoi(valueResultData["ComponentQueryCount"].asString());
-		if(!valueResultData["ComponentQueryCountAvg"].isNull())
-			resultObject.componentQueryCountAvg = valueResultData["ComponentQueryCountAvg"].asString();
-		if(!valueResultData["ReportType"].isNull())
-			resultObject.reportType = valueResultData["ReportType"].asString();
-		if(!valueResultData["QueryTimeoutCount"].isNull())
-			resultObject.queryTimeoutCount = std::stoi(valueResultData["QueryTimeoutCount"].asString());
-		if(!valueResultData["RepeatSqlQueryPercent"].isNull())
-			resultObject.repeatSqlQueryPercent = valueResultData["RepeatSqlQueryPercent"].asString();
-		if(!valueResultData["WorkspaceName"].isNull())
-			resultObject.workspaceName = valueResultData["WorkspaceName"].asString();
-		if(!valueResultData["WorkspaceId"].isNull())
-			resultObject.workspaceId = valueResultData["WorkspaceId"].asString();
-		if(!valueResultData["RepeatQueryPercentNum"].isNull())
-			resultObject.repeatQueryPercentNum = valueResultData["RepeatQueryPercentNum"].asString();
-		if(!valueResultData["RepeatQueryPercent"].isNull())
-			resultObject.repeatQueryPercent = valueResultData["RepeatQueryPercent"].asString();
-		if(!valueResultData["QuickIndexCostTimeAvg"].isNull())
-			resultObject.quickIndexCostTimeAvg = valueResultData["QuickIndexCostTimeAvg"].asString();
-		if(!valueResultData["QuickIndexQueryCount"].isNull())
-			resultObject.quickIndexQueryCount = std::stoi(valueResultData["QuickIndexQueryCount"].asString());
 		if(!valueResultData["CacheCostTimeAvg"].isNull())
 			resultObject.cacheCostTimeAvg = valueResultData["CacheCostTimeAvg"].asString();
 		if(!valueResultData["CacheQueryCount"].isNull())
 			resultObject.cacheQueryCount = std::stoi(valueResultData["CacheQueryCount"].asString());
-		if(!valueResultData["RepeatSqlQueryCount"].isNull())
-			resultObject.repeatSqlQueryCount = std::stoi(valueResultData["RepeatSqlQueryCount"].asString());
+		if(!valueResultData["ComponentQueryCount"].isNull())
+			resultObject.componentQueryCount = std::stoi(valueResultData["ComponentQueryCount"].asString());
+		if(!valueResultData["ComponentQueryCountAvg"].isNull())
+			resultObject.componentQueryCountAvg = valueResultData["ComponentQueryCountAvg"].asString();
 		if(!valueResultData["CostTimeAvg"].isNull())
 			resultObject.costTimeAvg = valueResultData["CostTimeAvg"].asString();
-		if(!valueResultData["QueryCountAvg"].isNull())
-			resultObject.queryCountAvg = valueResultData["QueryCountAvg"].asString();
 		if(!valueResultData["QueryCount"].isNull())
 			resultObject.queryCount = std::stoi(valueResultData["QueryCount"].asString());
-		if(!valueResultData["QueryTimeoutCountPercent"].isNull())
-			resultObject.queryTimeoutCountPercent = valueResultData["QueryTimeoutCountPercent"].asString();
-		if(!valueResultData["QueryOverTenSecPercentNum"].isNull())
-			resultObject.queryOverTenSecPercentNum = valueResultData["QueryOverTenSecPercentNum"].asString();
+		if(!valueResultData["QueryCountAvg"].isNull())
+			resultObject.queryCountAvg = valueResultData["QueryCountAvg"].asString();
 		if(!valueResultData["QueryOverFivePercentNum"].isNull())
 			resultObject.queryOverFivePercentNum = valueResultData["QueryOverFivePercentNum"].asString();
-		if(!valueResultData["QueryOverTenSecPercent"].isNull())
-			resultObject.queryOverTenSecPercent = valueResultData["QueryOverTenSecPercent"].asString();
 		if(!valueResultData["QueryOverFiveSecPercent"].isNull())
 			resultObject.queryOverFiveSecPercent = valueResultData["QueryOverFiveSecPercent"].asString();
+		if(!valueResultData["QueryOverTenSecPercent"].isNull())
+			resultObject.queryOverTenSecPercent = valueResultData["QueryOverTenSecPercent"].asString();
+		if(!valueResultData["QueryOverTenSecPercentNum"].isNull())
+			resultObject.queryOverTenSecPercentNum = valueResultData["QueryOverTenSecPercentNum"].asString();
+		if(!valueResultData["QueryTimeoutCount"].isNull())
+			resultObject.queryTimeoutCount = std::stoi(valueResultData["QueryTimeoutCount"].asString());
+		if(!valueResultData["QueryTimeoutCountPercent"].isNull())
+			resultObject.queryTimeoutCountPercent = valueResultData["QueryTimeoutCountPercent"].asString();
+		if(!valueResultData["QuickIndexCostTimeAvg"].isNull())
+			resultObject.quickIndexCostTimeAvg = valueResultData["QuickIndexCostTimeAvg"].asString();
+		if(!valueResultData["QuickIndexQueryCount"].isNull())
+			resultObject.quickIndexQueryCount = std::stoi(valueResultData["QuickIndexQueryCount"].asString());
+		if(!valueResultData["RepeatQueryPercent"].isNull())
+			resultObject.repeatQueryPercent = valueResultData["RepeatQueryPercent"].asString();
+		if(!valueResultData["RepeatQueryPercentNum"].isNull())
+			resultObject.repeatQueryPercentNum = valueResultData["RepeatQueryPercentNum"].asString();
+		if(!valueResultData["RepeatSqlQueryCount"].isNull())
+			resultObject.repeatSqlQueryCount = std::stoi(valueResultData["RepeatSqlQueryCount"].asString());
+		if(!valueResultData["RepeatSqlQueryPercent"].isNull())
+			resultObject.repeatSqlQueryPercent = valueResultData["RepeatSqlQueryPercent"].asString();
+		if(!valueResultData["ReportId"].isNull())
+			resultObject.reportId = valueResultData["ReportId"].asString();
+		if(!valueResultData["ReportName"].isNull())
+			resultObject.reportName = valueResultData["ReportName"].asString();
+		if(!valueResultData["ReportType"].isNull())
+			resultObject.reportType = valueResultData["ReportType"].asString();
+		if(!valueResultData["WorkspaceId"].isNull())
+			resultObject.workspaceId = valueResultData["WorkspaceId"].asString();
+		if(!valueResultData["WorkspaceName"].isNull())
+			resultObject.workspaceName = valueResultData["WorkspaceName"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

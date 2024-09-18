@@ -34,15 +34,6 @@ void QueryDatasetInfoRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string QueryDatasetInfoRequest::getDatasetId() const {
-  return datasetId_;
-}
-
-void QueryDatasetInfoRequest::setDatasetId(const std::string &datasetId) {
-  datasetId_ = datasetId;
-  setParameter(std::string("DatasetId"), datasetId);
-}
-
 std::string QueryDatasetInfoRequest::getSignType() const {
   return signType_;
 }
@@ -50,5 +41,14 @@ std::string QueryDatasetInfoRequest::getSignType() const {
 void QueryDatasetInfoRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
+}
+
+std::string QueryDatasetInfoRequest::getDatasetId() const {
+  return datasetId_;
+}
+
+void QueryDatasetInfoRequest::setDatasetId(const std::string &datasetId) {
+  datasetId_ = datasetId;
+  setParameter(std::string("DatasetId"), datasetId);
 }
 

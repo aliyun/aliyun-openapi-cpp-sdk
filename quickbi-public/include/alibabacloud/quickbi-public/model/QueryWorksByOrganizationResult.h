@@ -39,8 +39,8 @@ namespace AlibabaCloud
 						struct Directory
 						{
 							std::string pathId;
-							std::string pathName;
 							std::string id;
+							std::string pathName;
 							std::string name;
 						};
 						int status;

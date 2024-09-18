@@ -25,15 +25,6 @@ CancelCollectionRequest::CancelCollectionRequest()
 
 CancelCollectionRequest::~CancelCollectionRequest() {}
 
-std::string CancelCollectionRequest::getWorksId() const {
-  return worksId_;
-}
-
-void CancelCollectionRequest::setWorksId(const std::string &worksId) {
-  worksId_ = worksId;
-  setParameter(std::string("WorksId"), worksId);
-}
-
 std::string CancelCollectionRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -59,5 +50,14 @@ std::string CancelCollectionRequest::getUserId() const {
 void CancelCollectionRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+std::string CancelCollectionRequest::getWorksId() const {
+  return worksId_;
+}
+
+void CancelCollectionRequest::setWorksId(const std::string &worksId) {
+  worksId_ = worksId;
+  setParameter(std::string("WorksId"), worksId);
 }
 

@@ -25,15 +25,6 @@ AddWorkspaceUsersRequest::AddWorkspaceUsersRequest()
 
 AddWorkspaceUsersRequest::~AddWorkspaceUsersRequest() {}
 
-std::string AddWorkspaceUsersRequest::getUserIds() const {
-  return userIds_;
-}
-
-void AddWorkspaceUsersRequest::setUserIds(const std::string &userIds) {
-  userIds_ = userIds;
-  setParameter(std::string("UserIds"), userIds);
-}
-
 long AddWorkspaceUsersRequest::getRoleId() const {
   return roleId_;
 }
@@ -59,6 +50,15 @@ std::string AddWorkspaceUsersRequest::getSignType() const {
 void AddWorkspaceUsersRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
+}
+
+std::string AddWorkspaceUsersRequest::getUserIds() const {
+  return userIds_;
+}
+
+void AddWorkspaceUsersRequest::setUserIds(const std::string &userIds) {
+  userIds_ = userIds;
+  setParameter(std::string("UserIds"), userIds);
 }
 
 std::string AddWorkspaceUsersRequest::getWorkspaceId() const {

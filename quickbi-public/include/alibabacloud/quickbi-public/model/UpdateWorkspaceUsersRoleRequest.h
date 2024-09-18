@@ -30,22 +30,22 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT UpdateWorkspaceUsersRoleRequest : publi
 public:
 	UpdateWorkspaceUsersRoleRequest();
 	~UpdateWorkspaceUsersRoleRequest();
-	std::string getUserIds() const;
-	void setUserIds(const std::string &userIds);
 	long getRoleId() const;
 	void setRoleId(long roleId);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
+	std::string getUserIds() const;
+	void setUserIds(const std::string &userIds);
 	std::string getWorkspaceId() const;
 	void setWorkspaceId(const std::string &workspaceId);
 
 private:
-	std::string userIds_;
 	long roleId_;
 	std::string accessPoint_;
 	std::string signType_;
+	std::string userIds_;
 	std::string workspaceId_;
 };
 } // namespace Model

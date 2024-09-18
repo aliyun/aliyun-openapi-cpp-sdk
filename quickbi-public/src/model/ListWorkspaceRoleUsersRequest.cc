@@ -43,24 +43,6 @@ void ListWorkspaceRoleUsersRequest::setAccessPoint(const std::string &accessPoin
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-int ListWorkspaceRoleUsersRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListWorkspaceRoleUsersRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
-std::string ListWorkspaceRoleUsersRequest::getSignType() const {
-  return signType_;
-}
-
-void ListWorkspaceRoleUsersRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 int ListWorkspaceRoleUsersRequest::getPageNum() const {
   return pageNum_;
 }
@@ -70,6 +52,15 @@ void ListWorkspaceRoleUsersRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
+int ListWorkspaceRoleUsersRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListWorkspaceRoleUsersRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
 std::string ListWorkspaceRoleUsersRequest::getKeyword() const {
   return keyword_;
 }
@@ -77,6 +68,15 @@ std::string ListWorkspaceRoleUsersRequest::getKeyword() const {
 void ListWorkspaceRoleUsersRequest::setKeyword(const std::string &keyword) {
   keyword_ = keyword;
   setParameter(std::string("Keyword"), keyword);
+}
+
+std::string ListWorkspaceRoleUsersRequest::getSignType() const {
+  return signType_;
+}
+
+void ListWorkspaceRoleUsersRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 std::string ListWorkspaceRoleUsersRequest::getWorkspaceId() const {

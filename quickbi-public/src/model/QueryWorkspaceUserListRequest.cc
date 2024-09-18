@@ -34,6 +34,15 @@ void QueryWorkspaceUserListRequest::setAccessPoint(const std::string &accessPoin
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
+int QueryWorkspaceUserListRequest::getPageNum() const {
+  return pageNum_;
+}
+
+void QueryWorkspaceUserListRequest::setPageNum(int pageNum) {
+  pageNum_ = pageNum;
+  setParameter(std::string("PageNum"), std::to_string(pageNum));
+}
+
 int QueryWorkspaceUserListRequest::getPageSize() const {
   return pageSize_;
 }
@@ -41,15 +50,6 @@ int QueryWorkspaceUserListRequest::getPageSize() const {
 void QueryWorkspaceUserListRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
-std::string QueryWorkspaceUserListRequest::getSignType() const {
-  return signType_;
-}
-
-void QueryWorkspaceUserListRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
 }
 
 std::string QueryWorkspaceUserListRequest::getKeyword() const {
@@ -61,13 +61,13 @@ void QueryWorkspaceUserListRequest::setKeyword(const std::string &keyword) {
   setParameter(std::string("Keyword"), keyword);
 }
 
-int QueryWorkspaceUserListRequest::getPageNum() const {
-  return pageNum_;
+std::string QueryWorkspaceUserListRequest::getSignType() const {
+  return signType_;
 }
 
-void QueryWorkspaceUserListRequest::setPageNum(int pageNum) {
-  pageNum_ = pageNum;
-  setParameter(std::string("PageNum"), std::to_string(pageNum));
+void QueryWorkspaceUserListRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 std::string QueryWorkspaceUserListRequest::getWorkspaceId() const {

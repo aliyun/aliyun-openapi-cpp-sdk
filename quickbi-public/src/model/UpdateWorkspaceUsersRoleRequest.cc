@@ -25,15 +25,6 @@ UpdateWorkspaceUsersRoleRequest::UpdateWorkspaceUsersRoleRequest()
 
 UpdateWorkspaceUsersRoleRequest::~UpdateWorkspaceUsersRoleRequest() {}
 
-std::string UpdateWorkspaceUsersRoleRequest::getUserIds() const {
-  return userIds_;
-}
-
-void UpdateWorkspaceUsersRoleRequest::setUserIds(const std::string &userIds) {
-  userIds_ = userIds;
-  setParameter(std::string("UserIds"), userIds);
-}
-
 long UpdateWorkspaceUsersRoleRequest::getRoleId() const {
   return roleId_;
 }
@@ -59,6 +50,15 @@ std::string UpdateWorkspaceUsersRoleRequest::getSignType() const {
 void UpdateWorkspaceUsersRoleRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
+}
+
+std::string UpdateWorkspaceUsersRoleRequest::getUserIds() const {
+  return userIds_;
+}
+
+void UpdateWorkspaceUsersRoleRequest::setUserIds(const std::string &userIds) {
+  userIds_ = userIds;
+  setParameter(std::string("UserIds"), userIds);
 }
 
 std::string UpdateWorkspaceUsersRoleRequest::getWorkspaceId() const {

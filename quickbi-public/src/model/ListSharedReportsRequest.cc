@@ -25,15 +25,6 @@ ListSharedReportsRequest::ListSharedReportsRequest()
 
 ListSharedReportsRequest::~ListSharedReportsRequest() {}
 
-std::string ListSharedReportsRequest::getTreeType() const {
-  return treeType_;
-}
-
-void ListSharedReportsRequest::setTreeType(const std::string &treeType) {
-  treeType_ = treeType;
-  setParameter(std::string("TreeType"), treeType);
-}
-
 std::string ListSharedReportsRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -41,6 +32,15 @@ std::string ListSharedReportsRequest::getAccessPoint() const {
 void ListSharedReportsRequest::setAccessPoint(const std::string &accessPoint) {
   accessPoint_ = accessPoint;
   setParameter(std::string("AccessPoint"), accessPoint);
+}
+
+std::string ListSharedReportsRequest::getUserId() const {
+  return userId_;
+}
+
+void ListSharedReportsRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
 }
 
 int ListSharedReportsRequest::getPageSize() const {
@@ -52,15 +52,6 @@ void ListSharedReportsRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string ListSharedReportsRequest::getSignType() const {
-  return signType_;
-}
-
-void ListSharedReportsRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string ListSharedReportsRequest::getKeyword() const {
   return keyword_;
 }
@@ -70,12 +61,21 @@ void ListSharedReportsRequest::setKeyword(const std::string &keyword) {
   setParameter(std::string("Keyword"), keyword);
 }
 
-std::string ListSharedReportsRequest::getUserId() const {
-  return userId_;
+std::string ListSharedReportsRequest::getSignType() const {
+  return signType_;
 }
 
-void ListSharedReportsRequest::setUserId(const std::string &userId) {
-  userId_ = userId;
-  setParameter(std::string("UserId"), userId);
+void ListSharedReportsRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
+}
+
+std::string ListSharedReportsRequest::getTreeType() const {
+  return treeType_;
+}
+
+void ListSharedReportsRequest::setTreeType(const std::string &treeType) {
+  treeType_ = treeType;
+  setParameter(std::string("TreeType"), treeType);
 }
 

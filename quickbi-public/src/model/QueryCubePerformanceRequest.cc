@@ -34,15 +34,6 @@ void QueryCubePerformanceRequest::setAccessPoint(const std::string &accessPoint)
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string QueryCubePerformanceRequest::getSignType() const {
-  return signType_;
-}
-
-void QueryCubePerformanceRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 int QueryCubePerformanceRequest::getPageNum() const {
   return pageNum_;
 }
@@ -86,6 +77,15 @@ std::string QueryCubePerformanceRequest::getCubeId() const {
 void QueryCubePerformanceRequest::setCubeId(const std::string &cubeId) {
   cubeId_ = cubeId;
   setParameter(std::string("CubeId"), cubeId);
+}
+
+std::string QueryCubePerformanceRequest::getSignType() const {
+  return signType_;
+}
+
+void QueryCubePerformanceRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 std::string QueryCubePerformanceRequest::getWorkspaceId() const {

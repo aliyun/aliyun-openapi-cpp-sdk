@@ -44,34 +44,34 @@ void QueryDataRangeResult::parse(const std::string &payload)
 	for (auto resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem : allApiCopilotLlmCubeModelsNode)
 	{
 		Result::ApiCopilotLlmCubeModelsItem apiCopilotLlmCubeModelsItemObject;
-		if(!resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["LlmCubeId"].isNull())
-			apiCopilotLlmCubeModelsItemObject.llmCubeId = resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["LlmCubeId"].asString();
 		if(!resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["Alias"].isNull())
 			apiCopilotLlmCubeModelsItemObject.alias = resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["Alias"].asString();
 		if(!resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["CreateUser"].isNull())
 			apiCopilotLlmCubeModelsItemObject.createUser = resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["CreateUser"].asString();
+		if(!resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["LlmCubeId"].isNull())
+			apiCopilotLlmCubeModelsItemObject.llmCubeId = resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["LlmCubeId"].asString();
 		result_.apiCopilotLlmCubeModels.push_back(apiCopilotLlmCubeModelsItemObject);
 	}
 	auto allApiCopilotThemeModelsNode = resultNode["ApiCopilotThemeModels"]["ApiCopilotThemeModelsItem"];
 	for (auto resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem : allApiCopilotThemeModelsNode)
 	{
 		Result::ApiCopilotThemeModelsItem apiCopilotThemeModelsItemObject;
+		if(!resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["CreateUser"].isNull())
+			apiCopilotThemeModelsItemObject.createUser = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["CreateUser"].asString();
 		if(!resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["ThemeId"].isNull())
 			apiCopilotThemeModelsItemObject.themeId = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["ThemeId"].asString();
 		if(!resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["ThemeName"].isNull())
 			apiCopilotThemeModelsItemObject.themeName = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["ThemeName"].asString();
-		if(!resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["CreateUser"].isNull())
-			apiCopilotThemeModelsItemObject.createUser = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["CreateUser"].asString();
 		auto allApiCopilotLlmCubeModels1Node = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["ApiCopilotLlmCubeModels"]["ApiCopilotLlmCubeModelsItem"];
 		for (auto resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem : allApiCopilotLlmCubeModels1Node)
 		{
 			Result::ApiCopilotThemeModelsItem::ApiCopilotLlmCubeModelsItem2 apiCopilotLlmCubeModels1Object;
-			if(!resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["LlmCubeId"].isNull())
-				apiCopilotLlmCubeModels1Object.llmCubeId = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["LlmCubeId"].asString();
 			if(!resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["Alias"].isNull())
 				apiCopilotLlmCubeModels1Object.alias = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["Alias"].asString();
 			if(!resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["CreateUser"].isNull())
 				apiCopilotLlmCubeModels1Object.createUser = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["CreateUser"].asString();
+			if(!resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["LlmCubeId"].isNull())
+				apiCopilotLlmCubeModels1Object.llmCubeId = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["LlmCubeId"].asString();
 			apiCopilotThemeModelsItemObject.apiCopilotLlmCubeModels1.push_back(apiCopilotLlmCubeModels1Object);
 		}
 		result_.apiCopilotThemeModels.push_back(apiCopilotThemeModelsItemObject);

@@ -34,15 +34,6 @@ void ModifyCopilotEmbedConfigRequest::setCopilotId(const std::string &copilotId)
   setParameter(std::string("CopilotId"), copilotId);
 }
 
-std::string ModifyCopilotEmbedConfigRequest::getAgentName() const {
-  return agentName_;
-}
-
-void ModifyCopilotEmbedConfigRequest::setAgentName(const std::string &agentName) {
-  agentName_ = agentName;
-  setParameter(std::string("AgentName"), agentName);
-}
-
 std::string ModifyCopilotEmbedConfigRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -77,5 +68,14 @@ std::string ModifyCopilotEmbedConfigRequest::getSignType() const {
 void ModifyCopilotEmbedConfigRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
+}
+
+std::string ModifyCopilotEmbedConfigRequest::getAgentName() const {
+  return agentName_;
+}
+
+void ModifyCopilotEmbedConfigRequest::setAgentName(const std::string &agentName) {
+  agentName_ = agentName;
+  setParameter(std::string("AgentName"), agentName);
 }
 

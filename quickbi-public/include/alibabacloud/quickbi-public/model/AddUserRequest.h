@@ -38,39 +38,39 @@ public:
 	void setAccessPoint(const std::string &accessPoint);
 	int getAccountType() const;
 	void setAccountType(int accountType);
-	int getUserType() const;
-	void setUserType(int userType);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	std::string getAccountId() const;
 	void setAccountId(const std::string &accountId);
 	std::string getRoleIds() const;
 	void setRoleIds(const std::string &roleIds);
 	std::string getAccountName() const;
 	void setAccountName(const std::string &accountName);
-	std::string getPhone() const;
-	void setPhone(const std::string &phone);
 	std::string getNickName() const;
 	void setNickName(const std::string &nickName);
 	bool getAuthAdminUser() const;
 	void setAuthAdminUser(bool authAdminUser);
 	std::string getEmail() const;
 	void setEmail(const std::string &email);
+	int getUserType() const;
+	void setUserType(int userType);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
+	std::string getPhone() const;
+	void setPhone(const std::string &phone);
 
 private:
 	std::string clientToken_;
 	bool adminUser_;
 	std::string accessPoint_;
 	int accountType_;
-	int userType_;
-	std::string signType_;
 	std::string accountId_;
 	std::string roleIds_;
 	std::string accountName_;
-	std::string phone_;
 	std::string nickName_;
 	bool authAdminUser_;
 	std::string email_;
+	int userType_;
+	std::string signType_;
+	std::string phone_;
 };
 } // namespace Model
 } // namespace Quickbi_public

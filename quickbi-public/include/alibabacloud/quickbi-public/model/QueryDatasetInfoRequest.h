@@ -32,15 +32,15 @@ public:
 	~QueryDatasetInfoRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getDatasetId() const;
-	void setDatasetId(const std::string &datasetId);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
+	std::string getDatasetId() const;
+	void setDatasetId(const std::string &datasetId);
 
 private:
 	std::string accessPoint_;
-	std::string datasetId_;
 	std::string signType_;
+	std::string datasetId_;
 };
 } // namespace Model
 } // namespace Quickbi_public

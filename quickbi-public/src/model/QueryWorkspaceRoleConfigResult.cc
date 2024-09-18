@@ -40,12 +40,12 @@ void QueryWorkspaceRoleConfigResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
+	if(!resultNode["IsSystemRole"].isNull())
+		result_.isSystemRole = resultNode["IsSystemRole"].asString() == "true";
 	if(!resultNode["RoleId"].isNull())
 		result_.roleId = std::stol(resultNode["RoleId"].asString());
 	if(!resultNode["RoleName"].isNull())
 		result_.roleName = resultNode["RoleName"].asString();
-	if(!resultNode["IsSystemRole"].isNull())
-		result_.isSystemRole = resultNode["IsSystemRole"].asString() == "true";
 	auto allAuthConfigListNode = resultNode["AuthConfigList"]["authConfigListItem"];
 	for (auto resultNodeAuthConfigListauthConfigListItem : allAuthConfigListNode)
 	{

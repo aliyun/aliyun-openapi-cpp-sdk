@@ -43,6 +43,15 @@ void AddShareReportRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
+long AddShareReportRequest::getExpireDate() const {
+  return expireDate_;
+}
+
+void AddShareReportRequest::setExpireDate(long expireDate) {
+  expireDate_ = expireDate;
+  setParameter(std::string("ExpireDate"), std::to_string(expireDate));
+}
+
 int AddShareReportRequest::getAuthPoint() const {
   return authPoint_;
 }
@@ -59,15 +68,6 @@ std::string AddShareReportRequest::getSignType() const {
 void AddShareReportRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
-}
-
-long AddShareReportRequest::getExpireDate() const {
-  return expireDate_;
-}
-
-void AddShareReportRequest::setExpireDate(long expireDate) {
-  expireDate_ = expireDate;
-  setParameter(std::string("ExpireDate"), std::to_string(expireDate));
 }
 
 int AddShareReportRequest::getShareToType() const {

@@ -25,24 +25,6 @@ QueryWorksBloodRelationshipRequest::QueryWorksBloodRelationshipRequest()
 
 QueryWorksBloodRelationshipRequest::~QueryWorksBloodRelationshipRequest() {}
 
-std::string QueryWorksBloodRelationshipRequest::getApiLevel() const {
-  return apiLevel_;
-}
-
-void QueryWorksBloodRelationshipRequest::setApiLevel(const std::string &apiLevel) {
-  apiLevel_ = apiLevel;
-  setParameter(std::string("ApiLevel"), apiLevel);
-}
-
-std::string QueryWorksBloodRelationshipRequest::getWorksId() const {
-  return worksId_;
-}
-
-void QueryWorksBloodRelationshipRequest::setWorksId(const std::string &worksId) {
-  worksId_ = worksId;
-  setParameter(std::string("WorksId"), worksId);
-}
-
 std::string QueryWorksBloodRelationshipRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -59,5 +41,23 @@ std::string QueryWorksBloodRelationshipRequest::getSignType() const {
 void QueryWorksBloodRelationshipRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
+}
+
+std::string QueryWorksBloodRelationshipRequest::getApiLevel() const {
+  return apiLevel_;
+}
+
+void QueryWorksBloodRelationshipRequest::setApiLevel(const std::string &apiLevel) {
+  apiLevel_ = apiLevel;
+  setParameter(std::string("ApiLevel"), apiLevel);
+}
+
+std::string QueryWorksBloodRelationshipRequest::getWorksId() const {
+  return worksId_;
+}
+
+void QueryWorksBloodRelationshipRequest::setWorksId(const std::string &worksId) {
+  worksId_ = worksId;
+  setParameter(std::string("WorksId"), worksId);
 }
 

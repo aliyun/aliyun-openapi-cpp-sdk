@@ -32,30 +32,30 @@ public:
 	~ListRecentViewReportsRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	int getOffsetDay() const;
 	void setOffsetDay(int offsetDay);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
-	std::string getQueryMode() const;
-	void setQueryMode(const std::string &queryMode);
-	std::string getTreeType() const;
-	void setTreeType(const std::string &treeType);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getKeyword() const;
 	void setKeyword(const std::string &keyword);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
+	std::string getQueryMode() const;
+	void setQueryMode(const std::string &queryMode);
+	std::string getTreeType() const;
+	void setTreeType(const std::string &treeType);
 
 private:
 	std::string accessPoint_;
-	std::string signType_;
 	int offsetDay_;
 	std::string userId_;
-	std::string queryMode_;
-	std::string treeType_;
 	int pageSize_;
 	std::string keyword_;
+	std::string signType_;
+	std::string queryMode_;
+	std::string treeType_;
 };
 } // namespace Model
 } // namespace Quickbi_public

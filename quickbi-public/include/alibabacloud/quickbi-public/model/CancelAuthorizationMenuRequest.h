@@ -32,23 +32,23 @@ public:
 	~CancelAuthorizationMenuRequest();
 	std::string getDataPortalId() const;
 	void setDataPortalId(const std::string &dataPortalId);
-	std::string getUserIds() const;
-	void setUserIds(const std::string &userIds);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
 	std::string getUserGroupIds() const;
 	void setUserGroupIds(const std::string &userGroupIds);
+	std::string getUserIds() const;
+	void setUserIds(const std::string &userIds);
 	std::string getMenuIds() const;
 	void setMenuIds(const std::string &menuIds);
 
 private:
 	std::string dataPortalId_;
-	std::string userIds_;
 	std::string accessPoint_;
 	std::string signType_;
 	std::string userGroupIds_;
+	std::string userIds_;
 	std::string menuIds_;
 };
 } // namespace Model

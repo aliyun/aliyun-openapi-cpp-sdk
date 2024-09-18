@@ -43,12 +43,12 @@ void ListWorkspaceRolesResult::parse(const std::string &payload)
 	for (auto valueResultData : allResultNode)
 	{
 		Data resultObject;
+		if(!valueResultData["IsSystemRole"].isNull())
+			resultObject.isSystemRole = valueResultData["IsSystemRole"].asString() == "true";
 		if(!valueResultData["RoleId"].isNull())
 			resultObject.roleId = std::stol(valueResultData["RoleId"].asString());
 		if(!valueResultData["RoleName"].isNull())
 			resultObject.roleName = valueResultData["RoleName"].asString();
-		if(!valueResultData["IsSystemRole"].isNull())
-			resultObject.isSystemRole = valueResultData["IsSystemRole"].asString() == "true";
 		auto allAuthConfigListNode = valueResultData["AuthConfigList"]["authConfigListItem"];
 		for (auto valueResultDataAuthConfigListauthConfigListItem : allAuthConfigListNode)
 		{

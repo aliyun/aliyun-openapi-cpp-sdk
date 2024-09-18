@@ -34,15 +34,6 @@ void QueryDatasetListRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string QueryDatasetListRequest::getSignType() const {
-  return signType_;
-}
-
-void QueryDatasetListRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 int QueryDatasetListRequest::getPageNum() const {
   return pageNum_;
 }
@@ -86,6 +77,15 @@ std::string QueryDatasetListRequest::getKeyword() const {
 void QueryDatasetListRequest::setKeyword(const std::string &keyword) {
   keyword_ = keyword;
   setParameter(std::string("Keyword"), keyword);
+}
+
+std::string QueryDatasetListRequest::getSignType() const {
+  return signType_;
+}
+
+void QueryDatasetListRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 std::string QueryDatasetListRequest::getWorkspaceId() const {

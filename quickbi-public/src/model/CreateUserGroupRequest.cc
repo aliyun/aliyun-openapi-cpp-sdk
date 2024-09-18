@@ -43,6 +43,24 @@ void CreateUserGroupRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
+std::string CreateUserGroupRequest::getUserGroupName() const {
+  return userGroupName_;
+}
+
+void CreateUserGroupRequest::setUserGroupName(const std::string &userGroupName) {
+  userGroupName_ = userGroupName;
+  setParameter(std::string("UserGroupName"), userGroupName);
+}
+
+std::string CreateUserGroupRequest::getParentUserGroupId() const {
+  return parentUserGroupId_;
+}
+
+void CreateUserGroupRequest::setParentUserGroupId(const std::string &parentUserGroupId) {
+  parentUserGroupId_ = parentUserGroupId;
+  setParameter(std::string("ParentUserGroupId"), parentUserGroupId);
+}
+
 std::string CreateUserGroupRequest::getUserGroupId() const {
   return userGroupId_;
 }
@@ -61,15 +79,6 @@ void CreateUserGroupRequest::setSignType(const std::string &signType) {
   setParameter(std::string("SignType"), signType);
 }
 
-std::string CreateUserGroupRequest::getUserGroupName() const {
-  return userGroupName_;
-}
-
-void CreateUserGroupRequest::setUserGroupName(const std::string &userGroupName) {
-  userGroupName_ = userGroupName;
-  setParameter(std::string("UserGroupName"), userGroupName);
-}
-
 std::string CreateUserGroupRequest::getUserGroupDescription() const {
   return userGroupDescription_;
 }
@@ -77,14 +86,5 @@ std::string CreateUserGroupRequest::getUserGroupDescription() const {
 void CreateUserGroupRequest::setUserGroupDescription(const std::string &userGroupDescription) {
   userGroupDescription_ = userGroupDescription;
   setParameter(std::string("UserGroupDescription"), userGroupDescription);
-}
-
-std::string CreateUserGroupRequest::getParentUserGroupId() const {
-  return parentUserGroupId_;
-}
-
-void CreateUserGroupRequest::setParentUserGroupId(const std::string &parentUserGroupId) {
-  parentUserGroupId_ = parentUserGroupId;
-  setParameter(std::string("ParentUserGroupId"), parentUserGroupId);
 }
 

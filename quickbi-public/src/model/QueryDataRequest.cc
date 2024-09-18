@@ -25,15 +25,6 @@ QueryDataRequest::QueryDataRequest()
 
 QueryDataRequest::~QueryDataRequest() {}
 
-std::string QueryDataRequest::getReturnFields() const {
-  return returnFields_;
-}
-
-void QueryDataRequest::setReturnFields(const std::string &returnFields) {
-  returnFields_ = returnFields;
-  setParameter(std::string("ReturnFields"), returnFields);
-}
-
 std::string QueryDataRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -41,6 +32,15 @@ std::string QueryDataRequest::getAccessPoint() const {
 void QueryDataRequest::setAccessPoint(const std::string &accessPoint) {
   accessPoint_ = accessPoint;
   setParameter(std::string("AccessPoint"), accessPoint);
+}
+
+std::string QueryDataRequest::getUserId() const {
+  return userId_;
+}
+
+void QueryDataRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
 }
 
 std::string QueryDataRequest::getSignType() const {
@@ -52,6 +52,15 @@ void QueryDataRequest::setSignType(const std::string &signType) {
   setParameter(std::string("SignType"), signType);
 }
 
+std::string QueryDataRequest::getReturnFields() const {
+  return returnFields_;
+}
+
+void QueryDataRequest::setReturnFields(const std::string &returnFields) {
+  returnFields_ = returnFields;
+  setParameter(std::string("ReturnFields"), returnFields);
+}
+
 std::string QueryDataRequest::getConditions() const {
   return conditions_;
 }
@@ -59,15 +68,6 @@ std::string QueryDataRequest::getConditions() const {
 void QueryDataRequest::setConditions(const std::string &conditions) {
   conditions_ = conditions;
   setParameter(std::string("Conditions"), conditions);
-}
-
-std::string QueryDataRequest::getUserId() const {
-  return userId_;
-}
-
-void QueryDataRequest::setUserId(const std::string &userId) {
-  userId_ = userId;
-  setParameter(std::string("UserId"), userId);
 }
 
 std::string QueryDataRequest::getApiId() const {

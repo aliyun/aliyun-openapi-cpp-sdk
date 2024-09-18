@@ -34,15 +34,6 @@ void DataSourceBloodRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string DataSourceBloodRequest::getDataSourceId() const {
-  return dataSourceId_;
-}
-
-void DataSourceBloodRequest::setDataSourceId(const std::string &dataSourceId) {
-  dataSourceId_ = dataSourceId;
-  setParameter(std::string("DataSourceId"), dataSourceId);
-}
-
 std::string DataSourceBloodRequest::getSignType() const {
   return signType_;
 }
@@ -50,5 +41,14 @@ std::string DataSourceBloodRequest::getSignType() const {
 void DataSourceBloodRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
+}
+
+std::string DataSourceBloodRequest::getDataSourceId() const {
+  return dataSourceId_;
+}
+
+void DataSourceBloodRequest::setDataSourceId(const std::string &dataSourceId) {
+  dataSourceId_ = dataSourceId;
+  setParameter(std::string("DataSourceId"), dataSourceId);
 }
 

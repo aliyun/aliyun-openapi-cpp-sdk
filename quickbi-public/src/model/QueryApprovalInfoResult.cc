@@ -40,52 +40,52 @@ void QueryApprovalInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
+	if(!resultNode["Page"].isNull())
+		result_.page = std::stoi(resultNode["Page"].asString());
+	if(!resultNode["PageSize"].isNull())
+		result_.pageSize = std::stoi(resultNode["PageSize"].asString());
+	if(!resultNode["Start"].isNull())
+		result_.start = std::stoi(resultNode["Start"].asString());
 	if(!resultNode["Total"].isNull())
 		result_.total = std::stoi(resultNode["Total"].asString());
 	if(!resultNode["TotalPages"].isNull())
 		result_.totalPages = std::stoi(resultNode["TotalPages"].asString());
-	if(!resultNode["Start"].isNull())
-		result_.start = std::stoi(resultNode["Start"].asString());
-	if(!resultNode["PageSize"].isNull())
-		result_.pageSize = std::stoi(resultNode["PageSize"].asString());
-	if(!resultNode["Page"].isNull())
-		result_.page = std::stoi(resultNode["Page"].asString());
 	auto allDataNode = resultNode["Data"]["ApprovalsResultModel"];
 	for (auto resultNodeDataApprovalsResultModel : allDataNode)
 	{
 		Result::ApprovalsResultModel approvalsResultModelObject;
-		if(!resultNodeDataApprovalsResultModel["WorkspaceName"].isNull())
-			approvalsResultModelObject.workspaceName = resultNodeDataApprovalsResultModel["WorkspaceName"].asString();
-		if(!resultNodeDataApprovalsResultModel["ApplicationId"].isNull())
-			approvalsResultModelObject.applicationId = resultNodeDataApprovalsResultModel["ApplicationId"].asString();
 		if(!resultNodeDataApprovalsResultModel["ApplicantId"].isNull())
 			approvalsResultModelObject.applicantId = resultNodeDataApprovalsResultModel["ApplicantId"].asString();
 		if(!resultNodeDataApprovalsResultModel["ApplicantName"].isNull())
 			approvalsResultModelObject.applicantName = resultNodeDataApprovalsResultModel["ApplicantName"].asString();
+		if(!resultNodeDataApprovalsResultModel["ApplicationId"].isNull())
+			approvalsResultModelObject.applicationId = resultNodeDataApprovalsResultModel["ApplicationId"].asString();
+		if(!resultNodeDataApprovalsResultModel["ApplyReason"].isNull())
+			approvalsResultModelObject.applyReason = resultNodeDataApprovalsResultModel["ApplyReason"].asString();
 		if(!resultNodeDataApprovalsResultModel["ApproverId"].isNull())
 			approvalsResultModelObject.approverId = resultNodeDataApprovalsResultModel["ApproverId"].asString();
 		if(!resultNodeDataApprovalsResultModel["ApproverName"].isNull())
 			approvalsResultModelObject.approverName = resultNodeDataApprovalsResultModel["ApproverName"].asString();
+		if(!resultNodeDataApprovalsResultModel["DeleteFlag"].isNull())
+			approvalsResultModelObject.deleteFlag = resultNodeDataApprovalsResultModel["DeleteFlag"].asString() == "true";
+		if(!resultNodeDataApprovalsResultModel["ExpireDate"].isNull())
+			approvalsResultModelObject.expireDate = std::stol(resultNodeDataApprovalsResultModel["ExpireDate"].asString());
+		if(!resultNodeDataApprovalsResultModel["FlagStatus"].isNull())
+			approvalsResultModelObject.flagStatus = std::stoi(resultNodeDataApprovalsResultModel["FlagStatus"].asString());
+		if(!resultNodeDataApprovalsResultModel["GmtCreate"].isNull())
+			approvalsResultModelObject.gmtCreate = std::stol(resultNodeDataApprovalsResultModel["GmtCreate"].asString());
+		if(!resultNodeDataApprovalsResultModel["GmtModified"].isNull())
+			approvalsResultModelObject.gmtModified = std::stol(resultNodeDataApprovalsResultModel["GmtModified"].asString());
+		if(!resultNodeDataApprovalsResultModel["HandleReason"].isNull())
+			approvalsResultModelObject.handleReason = resultNodeDataApprovalsResultModel["HandleReason"].asString();
 		if(!resultNodeDataApprovalsResultModel["ResourceId"].isNull())
 			approvalsResultModelObject.resourceId = resultNodeDataApprovalsResultModel["ResourceId"].asString();
 		if(!resultNodeDataApprovalsResultModel["ResourceName"].isNull())
 			approvalsResultModelObject.resourceName = resultNodeDataApprovalsResultModel["ResourceName"].asString();
 		if(!resultNodeDataApprovalsResultModel["ResourceType"].isNull())
 			approvalsResultModelObject.resourceType = resultNodeDataApprovalsResultModel["ResourceType"].asString();
-		if(!resultNodeDataApprovalsResultModel["ApplyReason"].isNull())
-			approvalsResultModelObject.applyReason = resultNodeDataApprovalsResultModel["ApplyReason"].asString();
-		if(!resultNodeDataApprovalsResultModel["HandleReason"].isNull())
-			approvalsResultModelObject.handleReason = resultNodeDataApprovalsResultModel["HandleReason"].asString();
-		if(!resultNodeDataApprovalsResultModel["ExpireDate"].isNull())
-			approvalsResultModelObject.expireDate = std::stol(resultNodeDataApprovalsResultModel["ExpireDate"].asString());
-		if(!resultNodeDataApprovalsResultModel["GmtCreate"].isNull())
-			approvalsResultModelObject.gmtCreate = std::stol(resultNodeDataApprovalsResultModel["GmtCreate"].asString());
-		if(!resultNodeDataApprovalsResultModel["GmtModified"].isNull())
-			approvalsResultModelObject.gmtModified = std::stol(resultNodeDataApprovalsResultModel["GmtModified"].asString());
-		if(!resultNodeDataApprovalsResultModel["FlagStatus"].isNull())
-			approvalsResultModelObject.flagStatus = std::stoi(resultNodeDataApprovalsResultModel["FlagStatus"].asString());
-		if(!resultNodeDataApprovalsResultModel["DeleteFlag"].isNull())
-			approvalsResultModelObject.deleteFlag = resultNodeDataApprovalsResultModel["DeleteFlag"].asString() == "true";
+		if(!resultNodeDataApprovalsResultModel["WorkspaceName"].isNull())
+			approvalsResultModelObject.workspaceName = resultNodeDataApprovalsResultModel["WorkspaceName"].asString();
 		result_.data.push_back(approvalsResultModelObject);
 	}
 	if(!value["Success"].isNull())

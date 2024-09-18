@@ -38,18 +38,18 @@ namespace AlibabaCloud
 					{
 						bool favorite;
 						std::string ownerName;
-						std::string ownerNum;
 						std::string gmtModified;
+						std::string ownerNum;
 						std::string workspaceId;
 						std::string name;
-						std::string type;
 						std::string gmtCreate;
+						std::string type;
 						std::string treeId;
 						std::string workspaceName;
 						bool hasViewAuth;
 						std::string favoriteDate;
-						int publishStatus;
 						bool hasEditAuth;
+						int publishStatus;
 					};
 					int totalNum;
 					int pageNum;

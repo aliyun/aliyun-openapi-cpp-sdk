@@ -25,15 +25,6 @@ ListFavoriteReportsRequest::ListFavoriteReportsRequest()
 
 ListFavoriteReportsRequest::~ListFavoriteReportsRequest() {}
 
-std::string ListFavoriteReportsRequest::getTreeType() const {
-  return treeType_;
-}
-
-void ListFavoriteReportsRequest::setTreeType(const std::string &treeType) {
-  treeType_ = treeType;
-  setParameter(std::string("TreeType"), treeType);
-}
-
 std::string ListFavoriteReportsRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -41,6 +32,15 @@ std::string ListFavoriteReportsRequest::getAccessPoint() const {
 void ListFavoriteReportsRequest::setAccessPoint(const std::string &accessPoint) {
   accessPoint_ = accessPoint;
   setParameter(std::string("AccessPoint"), accessPoint);
+}
+
+std::string ListFavoriteReportsRequest::getUserId() const {
+  return userId_;
+}
+
+void ListFavoriteReportsRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
 }
 
 int ListFavoriteReportsRequest::getPageSize() const {
@@ -52,15 +52,6 @@ void ListFavoriteReportsRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string ListFavoriteReportsRequest::getSignType() const {
-  return signType_;
-}
-
-void ListFavoriteReportsRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string ListFavoriteReportsRequest::getKeyword() const {
   return keyword_;
 }
@@ -70,12 +61,21 @@ void ListFavoriteReportsRequest::setKeyword(const std::string &keyword) {
   setParameter(std::string("Keyword"), keyword);
 }
 
-std::string ListFavoriteReportsRequest::getUserId() const {
-  return userId_;
+std::string ListFavoriteReportsRequest::getSignType() const {
+  return signType_;
 }
 
-void ListFavoriteReportsRequest::setUserId(const std::string &userId) {
-  userId_ = userId;
-  setParameter(std::string("UserId"), userId);
+void ListFavoriteReportsRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
+}
+
+std::string ListFavoriteReportsRequest::getTreeType() const {
+  return treeType_;
+}
+
+void ListFavoriteReportsRequest::setTreeType(const std::string &treeType) {
+  treeType_ = treeType;
+  setParameter(std::string("TreeType"), treeType);
 }
 

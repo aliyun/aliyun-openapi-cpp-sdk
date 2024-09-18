@@ -25,15 +25,6 @@ SetDataLevelPermissionWhiteListRequest::SetDataLevelPermissionWhiteListRequest()
 
 SetDataLevelPermissionWhiteListRequest::~SetDataLevelPermissionWhiteListRequest() {}
 
-std::string SetDataLevelPermissionWhiteListRequest::getWhiteListModel() const {
-  return whiteListModel_;
-}
-
-void SetDataLevelPermissionWhiteListRequest::setWhiteListModel(const std::string &whiteListModel) {
-  whiteListModel_ = whiteListModel;
-  setParameter(std::string("WhiteListModel"), whiteListModel);
-}
-
 std::string SetDataLevelPermissionWhiteListRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -50,5 +41,14 @@ std::string SetDataLevelPermissionWhiteListRequest::getSignType() const {
 void SetDataLevelPermissionWhiteListRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
+}
+
+std::string SetDataLevelPermissionWhiteListRequest::getWhiteListModel() const {
+  return whiteListModel_;
+}
+
+void SetDataLevelPermissionWhiteListRequest::setWhiteListModel(const std::string &whiteListModel) {
+  whiteListModel_ = whiteListModel;
+  setParameter(std::string("WhiteListModel"), whiteListModel);
 }
 

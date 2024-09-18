@@ -46,8 +46,8 @@ namespace AlibabaCloud
 					std::string createUser;
 					DataRange dataRange;
 					std::string agentName;
-					std::string showName;
 					std::string createUserName;
+					std::string showName;
 					std::string copilotId;
 				};
 

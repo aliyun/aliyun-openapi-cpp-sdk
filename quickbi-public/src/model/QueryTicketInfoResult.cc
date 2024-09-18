@@ -42,26 +42,26 @@ void QueryTicketInfoResult::parse(const std::string &payload)
 	auto resultNode = value["Result"];
 	if(!resultNode["AccessTicket"].isNull())
 		result_.accessTicket = resultNode["AccessTicket"].asString();
-	if(!resultNode["OrganizationId"].isNull())
-		result_.organizationId = resultNode["OrganizationId"].asString();
-	if(!resultNode["UserId"].isNull())
-		result_.userId = resultNode["UserId"].asString();
-	if(!resultNode["UsedTicketNum"].isNull())
-		result_.usedTicketNum = std::stoi(resultNode["UsedTicketNum"].asString());
-	if(!resultNode["MaxTicketNum"].isNull())
-		result_.maxTicketNum = std::stoi(resultNode["MaxTicketNum"].asString());
-	if(!resultNode["RegisterTime"].isNull())
-		result_.registerTime = resultNode["RegisterTime"].asString();
-	if(!resultNode["InvalidTime"].isNull())
-		result_.invalidTime = resultNode["InvalidTime"].asString();
-	if(!resultNode["WorksId"].isNull())
-		result_.worksId = resultNode["WorksId"].asString();
 	if(!resultNode["CmptId"].isNull())
 		result_.cmptId = resultNode["CmptId"].asString();
 	if(!resultNode["GlobalParam"].isNull())
 		result_.globalParam = resultNode["GlobalParam"].asString();
+	if(!resultNode["InvalidTime"].isNull())
+		result_.invalidTime = resultNode["InvalidTime"].asString();
+	if(!resultNode["MaxTicketNum"].isNull())
+		result_.maxTicketNum = std::stoi(resultNode["MaxTicketNum"].asString());
+	if(!resultNode["OrganizationId"].isNull())
+		result_.organizationId = resultNode["OrganizationId"].asString();
+	if(!resultNode["RegisterTime"].isNull())
+		result_.registerTime = resultNode["RegisterTime"].asString();
+	if(!resultNode["UsedTicketNum"].isNull())
+		result_.usedTicketNum = std::stoi(resultNode["UsedTicketNum"].asString());
+	if(!resultNode["UserId"].isNull())
+		result_.userId = resultNode["UserId"].asString();
 	if(!resultNode["WatermarkParam"].isNull())
 		result_.watermarkParam = resultNode["WatermarkParam"].asString();
+	if(!resultNode["WorksId"].isNull())
+		result_.worksId = resultNode["WorksId"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

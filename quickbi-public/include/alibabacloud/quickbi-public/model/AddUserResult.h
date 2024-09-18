@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::vector<std::string> roleIdList;
 					std::string email;
-					std::string userId;
 					std::string phone;
+					std::string userId;
 					bool adminUser;
 					std::string nickName;
 					int userType;

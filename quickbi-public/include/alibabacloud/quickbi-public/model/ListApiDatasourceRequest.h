@@ -32,23 +32,23 @@ public:
 	~ListApiDatasourceRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	std::string getKeyWord() const;
 	void setKeyWord(const std::string &keyWord);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 	std::string getWorkspaceId() const;
 	void setWorkspaceId(const std::string &workspaceId);
 
 private:
 	std::string accessPoint_;
-	int pageSize_;
-	std::string signType_;
 	int pageNum_;
+	int pageSize_;
 	std::string keyWord_;
+	std::string signType_;
 	std::string workspaceId_;
 };
 } // namespace Model

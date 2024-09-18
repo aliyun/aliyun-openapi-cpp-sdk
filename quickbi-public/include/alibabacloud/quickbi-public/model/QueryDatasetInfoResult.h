@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					struct Directory
 					{
 						std::string pathId;
-						std::string pathName;
 						std::string id;
+						std::string pathName;
 						std::string name;
 					};
 					struct CubeTableListItem
@@ -62,6 +62,7 @@ namespace AlibabaCloud
 						std::string tableUniqueId;
 						std::string granularity;
 						std::string caption;
+						std::string fieldDescription;
 						std::string factColumn;
 					};
 					struct MeasureListItem
@@ -72,21 +73,22 @@ namespace AlibabaCloud
 						std::string measureType;
 						std::string tableUniqueId;
 						std::string caption;
+						std::string fieldDescription;
 						std::string factColumn;
 					};
 					bool openOfflineAcceleration;
 					std::string ownerName;
 					std::string workspaceId;
 					bool rowLevel;
-					std::string dsId;
 					bool custimzeSql;
-					std::string dsType;
+					std::string dsId;
 					std::string datasetId;
+					std::string dsType;
 					std::vector<MeasureListItem> measureList;
 					std::string gmtCreate;
 					std::string ownerId;
-					std::string gmtModify;
 					std::string datasetName;
+					std::string gmtModify;
 					std::vector<DimensionListItem> dimensionList;
 					std::string dsName;
 					std::string workspaceName;

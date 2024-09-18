@@ -43,16 +43,16 @@ void QueryUserGroupMemberResult::parse(const std::string &payload)
 	for (auto valueResultData : allResultNode)
 	{
 		Data resultObject;
-		if(!valueResultData["ParentUserGroupName"].isNull())
-			resultObject.parentUserGroupName = valueResultData["ParentUserGroupName"].asString();
+		if(!valueResultData["Id"].isNull())
+			resultObject.id = valueResultData["Id"].asString();
 		if(!valueResultData["IsUserGroup"].isNull())
 			resultObject.isUserGroup = valueResultData["IsUserGroup"].asString() == "true";
 		if(!valueResultData["Name"].isNull())
 			resultObject.name = valueResultData["Name"].asString();
 		if(!valueResultData["ParentUserGroupId"].isNull())
 			resultObject.parentUserGroupId = valueResultData["ParentUserGroupId"].asString();
-		if(!valueResultData["Id"].isNull())
-			resultObject.id = valueResultData["Id"].asString();
+		if(!valueResultData["ParentUserGroupName"].isNull())
+			resultObject.parentUserGroupName = valueResultData["ParentUserGroupName"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

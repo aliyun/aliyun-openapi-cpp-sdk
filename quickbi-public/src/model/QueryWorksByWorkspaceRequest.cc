@@ -25,15 +25,6 @@ QueryWorksByWorkspaceRequest::QueryWorksByWorkspaceRequest()
 
 QueryWorksByWorkspaceRequest::~QueryWorksByWorkspaceRequest() {}
 
-std::string QueryWorksByWorkspaceRequest::getWorksType() const {
-  return worksType_;
-}
-
-void QueryWorksByWorkspaceRequest::setWorksType(const std::string &worksType) {
-  worksType_ = worksType;
-  setParameter(std::string("WorksType"), worksType);
-}
-
 int QueryWorksByWorkspaceRequest::getThirdPartAuthFlag() const {
   return thirdPartAuthFlag_;
 }
@@ -52,15 +43,6 @@ void QueryWorksByWorkspaceRequest::setAccessPoint(const std::string &accessPoint
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string QueryWorksByWorkspaceRequest::getSignType() const {
-  return signType_;
-}
-
-void QueryWorksByWorkspaceRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 int QueryWorksByWorkspaceRequest::getPageNum() const {
   return pageNum_;
 }
@@ -77,6 +59,24 @@ int QueryWorksByWorkspaceRequest::getPageSize() const {
 void QueryWorksByWorkspaceRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string QueryWorksByWorkspaceRequest::getWorksType() const {
+  return worksType_;
+}
+
+void QueryWorksByWorkspaceRequest::setWorksType(const std::string &worksType) {
+  worksType_ = worksType;
+  setParameter(std::string("WorksType"), worksType);
+}
+
+std::string QueryWorksByWorkspaceRequest::getSignType() const {
+  return signType_;
+}
+
+void QueryWorksByWorkspaceRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 std::string QueryWorksByWorkspaceRequest::getWorkspaceId() const {

@@ -40,48 +40,48 @@ void QueryDataServiceListResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["TotalPages"].isNull())
-		result_.totalPages = std::stoi(resultNode["TotalPages"].asString());
-	if(!resultNode["TotalNum"].isNull())
-		result_.totalNum = std::stoi(resultNode["TotalNum"].asString());
 	if(!resultNode["PageNum"].isNull())
 		result_.pageNum = std::stoi(resultNode["PageNum"].asString());
 	if(!resultNode["PageSize"].isNull())
 		result_.pageSize = std::stoi(resultNode["PageSize"].asString());
+	if(!resultNode["TotalNum"].isNull())
+		result_.totalNum = std::stoi(resultNode["TotalNum"].asString());
+	if(!resultNode["TotalPages"].isNull())
+		result_.totalPages = std::stoi(resultNode["TotalPages"].asString());
 	auto allDataNode = resultNode["Data"]["QueryDataServiceModel"];
 	for (auto resultNodeDataQueryDataServiceModel : allDataNode)
 	{
 		Result::QueryDataServiceModel queryDataServiceModelObject;
-		if(!resultNodeDataQueryDataServiceModel["Sid"].isNull())
-			queryDataServiceModelObject.sid = resultNodeDataQueryDataServiceModel["Sid"].asString();
-		if(!resultNodeDataQueryDataServiceModel["Name"].isNull())
-			queryDataServiceModelObject.name = resultNodeDataQueryDataServiceModel["Name"].asString();
-		if(!resultNodeDataQueryDataServiceModel["Desc"].isNull())
-			queryDataServiceModelObject.desc = resultNodeDataQueryDataServiceModel["Desc"].asString();
-		if(!resultNodeDataQueryDataServiceModel["CubeId"].isNull())
-			queryDataServiceModelObject.cubeId = resultNodeDataQueryDataServiceModel["CubeId"].asString();
-		if(!resultNodeDataQueryDataServiceModel["CubeName"].isNull())
-			queryDataServiceModelObject.cubeName = resultNodeDataQueryDataServiceModel["CubeName"].asString();
-		if(!resultNodeDataQueryDataServiceModel["WorkspaceId"].isNull())
-			queryDataServiceModelObject.workspaceId = resultNodeDataQueryDataServiceModel["WorkspaceId"].asString();
-		if(!resultNodeDataQueryDataServiceModel["WorkspaceName"].isNull())
-			queryDataServiceModelObject.workspaceName = resultNodeDataQueryDataServiceModel["WorkspaceName"].asString();
-		if(!resultNodeDataQueryDataServiceModel["GmtCreate"].isNull())
-			queryDataServiceModelObject.gmtCreate = resultNodeDataQueryDataServiceModel["GmtCreate"].asString();
-		if(!resultNodeDataQueryDataServiceModel["GmtModified"].isNull())
-			queryDataServiceModelObject.gmtModified = resultNodeDataQueryDataServiceModel["GmtModified"].asString();
 		if(!resultNodeDataQueryDataServiceModel["CreatorId"].isNull())
 			queryDataServiceModelObject.creatorId = resultNodeDataQueryDataServiceModel["CreatorId"].asString();
 		if(!resultNodeDataQueryDataServiceModel["CreatorName"].isNull())
 			queryDataServiceModelObject.creatorName = resultNodeDataQueryDataServiceModel["CreatorName"].asString();
+		if(!resultNodeDataQueryDataServiceModel["CubeId"].isNull())
+			queryDataServiceModelObject.cubeId = resultNodeDataQueryDataServiceModel["CubeId"].asString();
+		if(!resultNodeDataQueryDataServiceModel["CubeName"].isNull())
+			queryDataServiceModelObject.cubeName = resultNodeDataQueryDataServiceModel["CubeName"].asString();
+		if(!resultNodeDataQueryDataServiceModel["Desc"].isNull())
+			queryDataServiceModelObject.desc = resultNodeDataQueryDataServiceModel["Desc"].asString();
+		if(!resultNodeDataQueryDataServiceModel["GmtCreate"].isNull())
+			queryDataServiceModelObject.gmtCreate = resultNodeDataQueryDataServiceModel["GmtCreate"].asString();
+		if(!resultNodeDataQueryDataServiceModel["GmtModified"].isNull())
+			queryDataServiceModelObject.gmtModified = resultNodeDataQueryDataServiceModel["GmtModified"].asString();
 		if(!resultNodeDataQueryDataServiceModel["ModifierId"].isNull())
 			queryDataServiceModelObject.modifierId = resultNodeDataQueryDataServiceModel["ModifierId"].asString();
 		if(!resultNodeDataQueryDataServiceModel["ModifierName"].isNull())
 			queryDataServiceModelObject.modifierName = resultNodeDataQueryDataServiceModel["ModifierName"].asString();
+		if(!resultNodeDataQueryDataServiceModel["Name"].isNull())
+			queryDataServiceModelObject.name = resultNodeDataQueryDataServiceModel["Name"].asString();
 		if(!resultNodeDataQueryDataServiceModel["OwnerId"].isNull())
 			queryDataServiceModelObject.ownerId = resultNodeDataQueryDataServiceModel["OwnerId"].asString();
 		if(!resultNodeDataQueryDataServiceModel["OwnerName"].isNull())
 			queryDataServiceModelObject.ownerName = resultNodeDataQueryDataServiceModel["OwnerName"].asString();
+		if(!resultNodeDataQueryDataServiceModel["Sid"].isNull())
+			queryDataServiceModelObject.sid = resultNodeDataQueryDataServiceModel["Sid"].asString();
+		if(!resultNodeDataQueryDataServiceModel["WorkspaceId"].isNull())
+			queryDataServiceModelObject.workspaceId = resultNodeDataQueryDataServiceModel["WorkspaceId"].asString();
+		if(!resultNodeDataQueryDataServiceModel["WorkspaceName"].isNull())
+			queryDataServiceModelObject.workspaceName = resultNodeDataQueryDataServiceModel["WorkspaceName"].asString();
 		auto contentNode = value["Content"];
 		if(!contentNode["CubeId"].isNull())
 			queryDataServiceModelObject.content.cubeId = contentNode["CubeId"].asString();
@@ -93,29 +93,29 @@ void QueryDataServiceListResult::parse(const std::string &payload)
 		for (auto contentNodeReturnFieldsSelectFieldModel : allReturnFieldsNode)
 		{
 			Result::QueryDataServiceModel::Content::SelectFieldModel selectFieldModelObject;
+			if(!contentNodeReturnFieldsSelectFieldModel["Aggregator"].isNull())
+				selectFieldModelObject.aggregator = contentNodeReturnFieldsSelectFieldModel["Aggregator"].asString();
 			if(!contentNodeReturnFieldsSelectFieldModel["Alias"].isNull())
 				selectFieldModelObject.alias = contentNodeReturnFieldsSelectFieldModel["Alias"].asString();
 			if(!contentNodeReturnFieldsSelectFieldModel["Desc"].isNull())
 				selectFieldModelObject.desc = contentNodeReturnFieldsSelectFieldModel["Desc"].asString();
-			if(!contentNodeReturnFieldsSelectFieldModel["Aggregator"].isNull())
-				selectFieldModelObject.aggregator = contentNodeReturnFieldsSelectFieldModel["Aggregator"].asString();
 			if(!contentNodeReturnFieldsSelectFieldModel["Orderby"].isNull())
 				selectFieldModelObject.orderby = contentNodeReturnFieldsSelectFieldModel["Orderby"].asString();
 			auto fieldNode = value["Field"];
-			if(!fieldNode["Fid"].isNull())
-				selectFieldModelObject.field.fid = fieldNode["Fid"].asString();
-			if(!fieldNode["Name"].isNull())
-				selectFieldModelObject.field.name = fieldNode["Name"].asString();
-			if(!fieldNode["Type"].isNull())
-				selectFieldModelObject.field.type = fieldNode["Type"].asString();
 			if(!fieldNode["Caption"].isNull())
 				selectFieldModelObject.field.caption = fieldNode["Caption"].asString();
 			if(!fieldNode["Column"].isNull())
 				selectFieldModelObject.field.column = fieldNode["Column"].asString();
 			if(!fieldNode["DataType"].isNull())
 				selectFieldModelObject.field.dataType = fieldNode["DataType"].asString();
+			if(!fieldNode["Fid"].isNull())
+				selectFieldModelObject.field.fid = fieldNode["Fid"].asString();
 			if(!fieldNode["Granularity"].isNull())
 				selectFieldModelObject.field.granularity = fieldNode["Granularity"].asString();
+			if(!fieldNode["Name"].isNull())
+				selectFieldModelObject.field.name = fieldNode["Name"].asString();
+			if(!fieldNode["Type"].isNull())
+				selectFieldModelObject.field.type = fieldNode["Type"].asString();
 			queryDataServiceModelObject.content.returnFields.push_back(selectFieldModelObject);
 		}
 		auto filterNode = contentNode["Filter"];

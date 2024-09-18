@@ -52,24 +52,24 @@ void ListApiDatasourceResult::parse(const std::string &payload)
 		Result::DataItem dataItemObject;
 		if(!resultNodeDataDataItem["ApiId"].isNull())
 			dataItemObject.apiId = resultNodeDataDataItem["ApiId"].asString();
-		if(!resultNodeDataDataItem["JobId"].isNull())
-			dataItemObject.jobId = resultNodeDataDataItem["JobId"].asString();
-		if(!resultNodeDataDataItem["ShowName"].isNull())
-			dataItemObject.showName = resultNodeDataDataItem["ShowName"].asString();
-		if(!resultNodeDataDataItem["DataSize"].isNull())
-			dataItemObject.dataSize = std::stof(resultNodeDataDataItem["DataSize"].asString());
-		if(!resultNodeDataDataItem["StatusType"].isNull())
-			dataItemObject.statusType = std::stoi(resultNodeDataDataItem["StatusType"].asString());
-		if(!resultNodeDataDataItem["Parameters"].isNull())
-			dataItemObject.parameters = resultNodeDataDataItem["Parameters"].asString();
 		if(!resultNodeDataDataItem["Body"].isNull())
 			dataItemObject.body = resultNodeDataDataItem["Body"].asString();
+		if(!resultNodeDataDataItem["DataSize"].isNull())
+			dataItemObject.dataSize = std::stof(resultNodeDataDataItem["DataSize"].asString());
 		if(!resultNodeDataDataItem["DateUpdateTime"].isNull())
 			dataItemObject.dateUpdateTime = resultNodeDataDataItem["DateUpdateTime"].asString();
 		if(!resultNodeDataDataItem["GmtCreate"].isNull())
 			dataItemObject.gmtCreate = resultNodeDataDataItem["GmtCreate"].asString();
 		if(!resultNodeDataDataItem["GmtModified"].isNull())
 			dataItemObject.gmtModified = resultNodeDataDataItem["GmtModified"].asString();
+		if(!resultNodeDataDataItem["JobId"].isNull())
+			dataItemObject.jobId = resultNodeDataDataItem["JobId"].asString();
+		if(!resultNodeDataDataItem["Parameters"].isNull())
+			dataItemObject.parameters = resultNodeDataDataItem["Parameters"].asString();
+		if(!resultNodeDataDataItem["ShowName"].isNull())
+			dataItemObject.showName = resultNodeDataDataItem["ShowName"].asString();
+		if(!resultNodeDataDataItem["StatusType"].isNull())
+			dataItemObject.statusType = std::stoi(resultNodeDataDataItem["StatusType"].asString());
 		result_.data.push_back(dataItemObject);
 	}
 	if(!value["Success"].isNull())

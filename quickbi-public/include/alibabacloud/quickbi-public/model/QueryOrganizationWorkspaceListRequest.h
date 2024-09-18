@@ -32,24 +32,24 @@ public:
 	~QueryOrganizationWorkspaceListRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
-	std::string getKeyword() const;
-	void setKeyword(const std::string &keyword);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getKeyword() const;
+	void setKeyword(const std::string &keyword);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 
 private:
 	std::string accessPoint_;
-	int pageSize_;
-	std::string signType_;
-	std::string keyword_;
 	int pageNum_;
 	std::string userId_;
+	int pageSize_;
+	std::string keyword_;
+	std::string signType_;
 };
 } // namespace Model
 } // namespace Quickbi_public

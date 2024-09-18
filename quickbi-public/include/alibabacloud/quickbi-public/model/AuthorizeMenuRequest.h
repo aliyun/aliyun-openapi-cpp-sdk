@@ -32,27 +32,27 @@ public:
 	~AuthorizeMenuRequest();
 	std::string getDataPortalId() const;
 	void setDataPortalId(const std::string &dataPortalId);
-	std::string getUserIds() const;
-	void setUserIds(const std::string &userIds);
 	int getAuthPointsValue() const;
 	void setAuthPointsValue(int authPointsValue);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
+	std::string getMenuIds() const;
+	void setMenuIds(const std::string &menuIds);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
 	std::string getUserGroupIds() const;
 	void setUserGroupIds(const std::string &userGroupIds);
-	std::string getMenuIds() const;
-	void setMenuIds(const std::string &menuIds);
+	std::string getUserIds() const;
+	void setUserIds(const std::string &userIds);
 
 private:
 	std::string dataPortalId_;
-	std::string userIds_;
 	int authPointsValue_;
 	std::string accessPoint_;
+	std::string menuIds_;
 	std::string signType_;
 	std::string userGroupIds_;
-	std::string menuIds_;
+	std::string userIds_;
 };
 } // namespace Model
 } // namespace Quickbi_public

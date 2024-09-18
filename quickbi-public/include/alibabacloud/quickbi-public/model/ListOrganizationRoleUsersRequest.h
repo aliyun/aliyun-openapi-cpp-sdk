@@ -34,22 +34,22 @@ public:
 	void setRoleId(long roleId);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	std::string getKeyword() const;
 	void setKeyword(const std::string &keyword);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 
 private:
 	long roleId_;
 	std::string accessPoint_;
-	int pageSize_;
-	std::string signType_;
 	int pageNum_;
+	int pageSize_;
 	std::string keyword_;
+	std::string signType_;
 };
 } // namespace Model
 } // namespace Quickbi_public

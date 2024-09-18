@@ -38,14 +38,14 @@ namespace AlibabaCloud
 					{
 						long lastLoginTime;
 						std::vector<std::string> roleIdList;
-						std::string email;
 						std::string accountId;
-						std::string userId;
+						std::string email;
 						std::string phone;
+						std::string userId;
 						bool adminUser;
 						std::string nickName;
-						int userType;
 						long joinedDate;
+						int userType;
 						bool authAdminUser;
 						std::string accountName;
 					};

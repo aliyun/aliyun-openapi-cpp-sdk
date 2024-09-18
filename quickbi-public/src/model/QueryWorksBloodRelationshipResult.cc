@@ -57,20 +57,20 @@ void QueryWorksBloodRelationshipResult::parse(const std::string &payload)
 		for (auto valueResultItemQueryParamsQueryParam : allQueryParamsNode)
 		{
 			Item::QueryParam queryParamsObject;
-			if(!valueResultItemQueryParamsQueryParam["Uid"].isNull())
-				queryParamsObject.uid = valueResultItemQueryParamsQueryParam["Uid"].asString();
-			if(!valueResultItemQueryParamsQueryParam["PathId"].isNull())
-				queryParamsObject.pathId = valueResultItemQueryParamsQueryParam["PathId"].asString();
+			if(!valueResultItemQueryParamsQueryParam["AreaId"].isNull())
+				queryParamsObject.areaId = valueResultItemQueryParamsQueryParam["AreaId"].asString();
+			if(!valueResultItemQueryParamsQueryParam["AreaName"].isNull())
+				queryParamsObject.areaName = valueResultItemQueryParamsQueryParam["AreaName"].asString();
 			if(!valueResultItemQueryParamsQueryParam["Caption"].isNull())
 				queryParamsObject.caption = valueResultItemQueryParamsQueryParam["Caption"].asString();
 			if(!valueResultItemQueryParamsQueryParam["DataType"].isNull())
 				queryParamsObject.dataType = valueResultItemQueryParamsQueryParam["DataType"].asString();
 			if(!valueResultItemQueryParamsQueryParam["IsMeasure"].isNull())
 				queryParamsObject.isMeasure = valueResultItemQueryParamsQueryParam["IsMeasure"].asString() == "true";
-			if(!valueResultItemQueryParamsQueryParam["AreaId"].isNull())
-				queryParamsObject.areaId = valueResultItemQueryParamsQueryParam["AreaId"].asString();
-			if(!valueResultItemQueryParamsQueryParam["AreaName"].isNull())
-				queryParamsObject.areaName = valueResultItemQueryParamsQueryParam["AreaName"].asString();
+			if(!valueResultItemQueryParamsQueryParam["PathId"].isNull())
+				queryParamsObject.pathId = valueResultItemQueryParamsQueryParam["PathId"].asString();
+			if(!valueResultItemQueryParamsQueryParam["Uid"].isNull())
+				queryParamsObject.uid = valueResultItemQueryParamsQueryParam["Uid"].asString();
 			resultObject.queryParams.push_back(queryParamsObject);
 		}
 		result_.push_back(resultObject);

@@ -30,28 +30,28 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryWorksByOrganizationRequest : publi
 public:
 	QueryWorksByOrganizationRequest();
 	~QueryWorksByOrganizationRequest();
-	std::string getWorksType() const;
-	void setWorksType(const std::string &worksType);
 	int getThirdPartAuthFlag() const;
 	void setThirdPartAuthFlag(int thirdPartAuthFlag);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getWorksType() const;
+	void setWorksType(const std::string &worksType);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 	int getStatus() const;
 	void setStatus(int status);
 
 private:
-	std::string worksType_;
 	int thirdPartAuthFlag_;
 	std::string accessPoint_;
-	int pageSize_;
-	std::string signType_;
 	int pageNum_;
+	int pageSize_;
+	std::string worksType_;
+	std::string signType_;
 	int status_;
 };
 } // namespace Model

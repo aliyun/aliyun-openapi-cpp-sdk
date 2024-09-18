@@ -43,10 +43,10 @@ void QueryCopilotEmbedConfigResult::parse(const std::string &payload)
 	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
+		if(!valueResultResultItem["AgentName"].isNull())
+			resultObject.agentName = valueResultResultItem["AgentName"].asString();
 		if(!valueResultResultItem["CopilotId"].isNull())
 			resultObject.copilotId = valueResultResultItem["CopilotId"].asString();
-		if(!valueResultResultItem["ShowName"].isNull())
-			resultObject.showName = valueResultResultItem["ShowName"].asString();
 		if(!valueResultResultItem["CreateUser"].isNull())
 			resultObject.createUser = valueResultResultItem["CreateUser"].asString();
 		if(!valueResultResultItem["CreateUserName"].isNull())
@@ -55,19 +55,19 @@ void QueryCopilotEmbedConfigResult::parse(const std::string &payload)
 			resultObject.modifyUser = valueResultResultItem["ModifyUser"].asString();
 		if(!valueResultResultItem["ModuleName"].isNull())
 			resultObject.moduleName = valueResultResultItem["ModuleName"].asString();
-		if(!valueResultResultItem["AgentName"].isNull())
-			resultObject.agentName = valueResultResultItem["AgentName"].asString();
+		if(!valueResultResultItem["ShowName"].isNull())
+			resultObject.showName = valueResultResultItem["ShowName"].asString();
 		auto dataRangeNode = value["DataRange"];
-		if(!dataRangeNode["AllTheme"].isNull())
-			resultObject.dataRange.allTheme = dataRangeNode["AllTheme"].asString() == "true";
 		if(!dataRangeNode["AllCube"].isNull())
 			resultObject.dataRange.allCube = dataRangeNode["AllCube"].asString() == "true";
-			auto allThemes = dataRangeNode["Themes"]["Themes"];
-			for (auto value : allThemes)
-				resultObject.dataRange.themes.push_back(value.asString());
+		if(!dataRangeNode["AllTheme"].isNull())
+			resultObject.dataRange.allTheme = dataRangeNode["AllTheme"].asString() == "true";
 			auto allLlmCubes = dataRangeNode["LlmCubes"]["LlmCubes"];
 			for (auto value : allLlmCubes)
 				resultObject.dataRange.llmCubes.push_back(value.asString());
+			auto allThemes = dataRangeNode["Themes"]["Themes"];
+			for (auto value : allThemes)
+				resultObject.dataRange.themes.push_back(value.asString());
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

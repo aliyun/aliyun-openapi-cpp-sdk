@@ -25,24 +25,6 @@ BatchAddFeishuUsersRequest::BatchAddFeishuUsersRequest()
 
 BatchAddFeishuUsersRequest::~BatchAddFeishuUsersRequest() {}
 
-bool BatchAddFeishuUsersRequest::getIsAdmin() const {
-  return isAdmin_;
-}
-
-void BatchAddFeishuUsersRequest::setIsAdmin(bool isAdmin) {
-  isAdmin_ = isAdmin;
-  setParameter(std::string("IsAdmin"), isAdmin ? "true" : "false");
-}
-
-std::string BatchAddFeishuUsersRequest::getFeishuUsers() const {
-  return feishuUsers_;
-}
-
-void BatchAddFeishuUsersRequest::setFeishuUsers(const std::string &feishuUsers) {
-  feishuUsers_ = feishuUsers;
-  setParameter(std::string("FeishuUsers"), feishuUsers);
-}
-
 std::string BatchAddFeishuUsersRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -50,6 +32,24 @@ std::string BatchAddFeishuUsersRequest::getAccessPoint() const {
 void BatchAddFeishuUsersRequest::setAccessPoint(const std::string &accessPoint) {
   accessPoint_ = accessPoint;
   setParameter(std::string("AccessPoint"), accessPoint);
+}
+
+bool BatchAddFeishuUsersRequest::getIsAuthAdmin() const {
+  return isAuthAdmin_;
+}
+
+void BatchAddFeishuUsersRequest::setIsAuthAdmin(bool isAuthAdmin) {
+  isAuthAdmin_ = isAuthAdmin;
+  setParameter(std::string("IsAuthAdmin"), isAuthAdmin ? "true" : "false");
+}
+
+bool BatchAddFeishuUsersRequest::getIsAdmin() const {
+  return isAdmin_;
+}
+
+void BatchAddFeishuUsersRequest::setIsAdmin(bool isAdmin) {
+  isAdmin_ = isAdmin;
+  setParameter(std::string("IsAdmin"), isAdmin ? "true" : "false");
 }
 
 int BatchAddFeishuUsersRequest::getUserType() const {
@@ -79,12 +79,12 @@ void BatchAddFeishuUsersRequest::setUserGroupIds(const std::string &userGroupIds
   setParameter(std::string("UserGroupIds"), userGroupIds);
 }
 
-bool BatchAddFeishuUsersRequest::getIsAuthAdmin() const {
-  return isAuthAdmin_;
+std::string BatchAddFeishuUsersRequest::getFeishuUsers() const {
+  return feishuUsers_;
 }
 
-void BatchAddFeishuUsersRequest::setIsAuthAdmin(bool isAuthAdmin) {
-  isAuthAdmin_ = isAuthAdmin;
-  setParameter(std::string("IsAuthAdmin"), isAuthAdmin ? "true" : "false");
+void BatchAddFeishuUsersRequest::setFeishuUsers(const std::string &feishuUsers) {
+  feishuUsers_ = feishuUsers;
+  setParameter(std::string("FeishuUsers"), feishuUsers);
 }
 

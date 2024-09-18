@@ -34,12 +34,12 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
+	long getExpireDate() const;
+	void setExpireDate(long expireDate);
 	int getAuthPoint() const;
 	void setAuthPoint(int authPoint);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
-	long getExpireDate() const;
-	void setExpireDate(long expireDate);
 	int getShareToType() const;
 	void setShareToType(int shareToType);
 	std::string getWorksId() const;
@@ -50,9 +50,9 @@ public:
 private:
 	std::string clientToken_;
 	std::string accessPoint_;
+	long expireDate_;
 	int authPoint_;
 	std::string signType_;
-	long expireDate_;
 	int shareToType_;
 	std::string worksId_;
 	std::string shareToId_;

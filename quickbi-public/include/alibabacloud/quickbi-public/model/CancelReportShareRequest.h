@@ -32,21 +32,21 @@ public:
 	~CancelReportShareRequest();
 	std::string getReportId() const;
 	void setReportId(const std::string &reportId);
-	int getShareToType() const;
-	void setShareToType(int shareToType);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
 	std::string getShareToIds() const;
 	void setShareToIds(const std::string &shareToIds);
+	int getShareToType() const;
+	void setShareToType(int shareToType);
 
 private:
 	std::string reportId_;
-	int shareToType_;
 	std::string accessPoint_;
 	std::string signType_;
 	std::string shareToIds_;
+	int shareToType_;
 };
 } // namespace Model
 } // namespace Quickbi_public

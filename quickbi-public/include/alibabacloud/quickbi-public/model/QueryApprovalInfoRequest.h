@@ -32,23 +32,23 @@ public:
 	~QueryApprovalInfoRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
+	std::string getUserId() const;
+	void setUserId(const std::string &userId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
 	int getPage() const;
 	void setPage(int page);
-	std::string getUserId() const;
-	void setUserId(const std::string &userId);
 	int getStatus() const;
 	void setStatus(int status);
 
 private:
 	std::string accessPoint_;
+	std::string userId_;
 	int pageSize_;
 	std::string signType_;
 	int page_;
-	std::string userId_;
 	int status_;
 };
 } // namespace Model

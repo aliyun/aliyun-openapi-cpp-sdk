@@ -34,15 +34,6 @@ void CreateTicket4CopilotRequest::setCopilotId(const std::string &copilotId) {
   setParameter(std::string("CopilotId"), copilotId);
 }
 
-int CreateTicket4CopilotRequest::getExpireTime() const {
-  return expireTime_;
-}
-
-void CreateTicket4CopilotRequest::setExpireTime(int expireTime) {
-  expireTime_ = expireTime;
-  setParameter(std::string("ExpireTime"), std::to_string(expireTime));
-}
-
 std::string CreateTicket4CopilotRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -61,15 +52,6 @@ void CreateTicket4CopilotRequest::setAccountType(int accountType) {
   setParameter(std::string("AccountType"), std::to_string(accountType));
 }
 
-std::string CreateTicket4CopilotRequest::getSignType() const {
-  return signType_;
-}
-
-void CreateTicket4CopilotRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string CreateTicket4CopilotRequest::getUserId() const {
   return userId_;
 }
@@ -86,6 +68,24 @@ std::string CreateTicket4CopilotRequest::getAccountName() const {
 void CreateTicket4CopilotRequest::setAccountName(const std::string &accountName) {
   accountName_ = accountName;
   setParameter(std::string("AccountName"), accountName);
+}
+
+int CreateTicket4CopilotRequest::getExpireTime() const {
+  return expireTime_;
+}
+
+void CreateTicket4CopilotRequest::setExpireTime(int expireTime) {
+  expireTime_ = expireTime;
+  setParameter(std::string("ExpireTime"), std::to_string(expireTime));
+}
+
+std::string CreateTicket4CopilotRequest::getSignType() const {
+  return signType_;
+}
+
+void CreateTicket4CopilotRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 int CreateTicket4CopilotRequest::getTicketNum() const {

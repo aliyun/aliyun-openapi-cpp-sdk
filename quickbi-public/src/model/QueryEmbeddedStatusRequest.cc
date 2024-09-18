@@ -25,15 +25,6 @@ QueryEmbeddedStatusRequest::QueryEmbeddedStatusRequest()
 
 QueryEmbeddedStatusRequest::~QueryEmbeddedStatusRequest() {}
 
-std::string QueryEmbeddedStatusRequest::getWorksId() const {
-  return worksId_;
-}
-
-void QueryEmbeddedStatusRequest::setWorksId(const std::string &worksId) {
-  worksId_ = worksId;
-  setParameter(std::string("WorksId"), worksId);
-}
-
 std::string QueryEmbeddedStatusRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -50,5 +41,14 @@ std::string QueryEmbeddedStatusRequest::getSignType() const {
 void QueryEmbeddedStatusRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
+}
+
+std::string QueryEmbeddedStatusRequest::getWorksId() const {
+  return worksId_;
+}
+
+void QueryEmbeddedStatusRequest::setWorksId(const std::string &worksId) {
+  worksId_ = worksId;
+  setParameter(std::string("WorksId"), worksId);
 }
 

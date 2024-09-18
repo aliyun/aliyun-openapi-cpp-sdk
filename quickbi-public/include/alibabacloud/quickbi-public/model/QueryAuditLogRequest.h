@@ -32,16 +32,16 @@ public:
 	~QueryAuditLogRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	std::string getStartDate() const;
 	void setStartDate(const std::string &startDate);
+	std::string getLogType() const;
+	void setLogType(const std::string &logType);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
 	std::string getOperatorTypes() const;
 	void setOperatorTypes(const std::string &operatorTypes);
-	std::string getLogType() const;
-	void setLogType(const std::string &logType);
 	std::string getEndDate() const;
 	void setEndDate(const std::string &endDate);
 	std::string getOperatorId() const;
@@ -51,11 +51,11 @@ public:
 
 private:
 	std::string accessPoint_;
-	std::string signType_;
 	std::string startDate_;
+	std::string logType_;
+	std::string signType_;
 	std::string resourceType_;
 	std::string operatorTypes_;
-	std::string logType_;
 	std::string endDate_;
 	std::string operatorId_;
 	std::string workspaceId_;

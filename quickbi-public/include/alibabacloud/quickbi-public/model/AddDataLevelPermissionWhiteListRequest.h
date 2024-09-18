@@ -32,30 +32,30 @@ public:
 	~AddDataLevelPermissionWhiteListRequest();
 	std::string getTargetType() const;
 	void setTargetType(const std::string &targetType);
-	std::string getTargetIds() const;
-	void setTargetIds(const std::string &targetIds);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getRuleType() const;
-	void setRuleType(const std::string &ruleType);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
+	std::string getCubeId() const;
+	void setCubeId(const std::string &cubeId);
+	std::string getTargetIds() const;
+	void setTargetIds(const std::string &targetIds);
+	std::string getRuleType() const;
+	void setRuleType(const std::string &ruleType);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
 	std::string getOperateType() const;
 	void setOperateType(const std::string &operateType);
-	std::string getCubeId() const;
-	void setCubeId(const std::string &cubeId);
 
 private:
 	std::string targetType_;
-	std::string targetIds_;
 	std::string clientToken_;
-	std::string ruleType_;
 	std::string accessPoint_;
+	std::string cubeId_;
+	std::string targetIds_;
+	std::string ruleType_;
 	std::string signType_;
 	std::string operateType_;
-	std::string cubeId_;
 };
 } // namespace Model
 } // namespace Quickbi_public

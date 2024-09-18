@@ -34,33 +34,6 @@ void QueryOrganizationWorkspaceListRequest::setAccessPoint(const std::string &ac
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-int QueryOrganizationWorkspaceListRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void QueryOrganizationWorkspaceListRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
-std::string QueryOrganizationWorkspaceListRequest::getSignType() const {
-  return signType_;
-}
-
-void QueryOrganizationWorkspaceListRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
-std::string QueryOrganizationWorkspaceListRequest::getKeyword() const {
-  return keyword_;
-}
-
-void QueryOrganizationWorkspaceListRequest::setKeyword(const std::string &keyword) {
-  keyword_ = keyword;
-  setParameter(std::string("Keyword"), keyword);
-}
-
 int QueryOrganizationWorkspaceListRequest::getPageNum() const {
   return pageNum_;
 }
@@ -77,5 +50,32 @@ std::string QueryOrganizationWorkspaceListRequest::getUserId() const {
 void QueryOrganizationWorkspaceListRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+int QueryOrganizationWorkspaceListRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void QueryOrganizationWorkspaceListRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string QueryOrganizationWorkspaceListRequest::getKeyword() const {
+  return keyword_;
+}
+
+void QueryOrganizationWorkspaceListRequest::setKeyword(const std::string &keyword) {
+  keyword_ = keyword;
+  setParameter(std::string("Keyword"), keyword);
+}
+
+std::string QueryOrganizationWorkspaceListRequest::getSignType() const {
+  return signType_;
+}
+
+void QueryOrganizationWorkspaceListRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 

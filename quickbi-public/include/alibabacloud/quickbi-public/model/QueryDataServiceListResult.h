@@ -72,10 +72,10 @@ namespace AlibabaCloud
 						std::string cubeId;
 						std::string creatorId;
 						std::string modifierName;
-						std::string workspaceId;
 						std::string gmtModified;
-						std::string sid;
+						std::string workspaceId;
 						std::string name;
+						std::string sid;
 						std::string desc;
 						std::string gmtCreate;
 						std::string ownerId;

@@ -25,15 +25,6 @@ QueryDataServiceRequest::QueryDataServiceRequest()
 
 QueryDataServiceRequest::~QueryDataServiceRequest() {}
 
-std::string QueryDataServiceRequest::getReturnFields() const {
-  return returnFields_;
-}
-
-void QueryDataServiceRequest::setReturnFields(const std::string &returnFields) {
-  returnFields_ = returnFields;
-  setParameter(std::string("ReturnFields"), returnFields);
-}
-
 std::string QueryDataServiceRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -50,6 +41,15 @@ std::string QueryDataServiceRequest::getSignType() const {
 void QueryDataServiceRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
+}
+
+std::string QueryDataServiceRequest::getReturnFields() const {
+  return returnFields_;
+}
+
+void QueryDataServiceRequest::setReturnFields(const std::string &returnFields) {
+  returnFields_ = returnFields;
+  setParameter(std::string("ReturnFields"), returnFields);
 }
 
 std::string QueryDataServiceRequest::getConditions() const {

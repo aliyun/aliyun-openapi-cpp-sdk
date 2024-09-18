@@ -43,10 +43,10 @@ void DataSetBloodResult::parse(const std::string &payload)
 	for (auto valueResultWorksModels : allResultNode)
 	{
 		WorksModels resultObject;
-		if(!valueResultWorksModels["WorksType"].isNull())
-			resultObject.worksType = valueResultWorksModels["WorksType"].asString();
 		if(!valueResultWorksModels["WorksId"].isNull())
 			resultObject.worksId = valueResultWorksModels["WorksId"].asString();
+		if(!valueResultWorksModels["WorksType"].isNull())
+			resultObject.worksType = valueResultWorksModels["WorksType"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

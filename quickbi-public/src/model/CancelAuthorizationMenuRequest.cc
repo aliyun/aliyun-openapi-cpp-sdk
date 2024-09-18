@@ -34,15 +34,6 @@ void CancelAuthorizationMenuRequest::setDataPortalId(const std::string &dataPort
   setParameter(std::string("DataPortalId"), dataPortalId);
 }
 
-std::string CancelAuthorizationMenuRequest::getUserIds() const {
-  return userIds_;
-}
-
-void CancelAuthorizationMenuRequest::setUserIds(const std::string &userIds) {
-  userIds_ = userIds;
-  setParameter(std::string("UserIds"), userIds);
-}
-
 std::string CancelAuthorizationMenuRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -68,6 +59,15 @@ std::string CancelAuthorizationMenuRequest::getUserGroupIds() const {
 void CancelAuthorizationMenuRequest::setUserGroupIds(const std::string &userGroupIds) {
   userGroupIds_ = userGroupIds;
   setParameter(std::string("UserGroupIds"), userGroupIds);
+}
+
+std::string CancelAuthorizationMenuRequest::getUserIds() const {
+  return userIds_;
+}
+
+void CancelAuthorizationMenuRequest::setUserIds(const std::string &userIds) {
+  userIds_ = userIds;
+  setParameter(std::string("UserIds"), userIds);
 }
 
 std::string CancelAuthorizationMenuRequest::getMenuIds() const {

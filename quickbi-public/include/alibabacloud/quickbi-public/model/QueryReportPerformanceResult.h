@@ -44,19 +44,19 @@ namespace AlibabaCloud
 					int queryTimeoutCount;
 					int cacheQueryCount;
 					double cacheCostTimeAvg;
-					double quickIndexCostTimeAvg;
 					double queryCountAvg;
+					double quickIndexCostTimeAvg;
 					std::string reportName;
 					int componentQueryCount;
 					double costTimeAvg;
 					int queryCount;
 					std::string workspaceName;
-					double repeatQueryPercentNum;
-					int repeatSqlQueryCount;
 					double queryOverFivePercentNum;
 					std::string queryOverFiveSecPercent;
-					std::string reportType;
+					double repeatQueryPercentNum;
+					int repeatSqlQueryCount;
 					std::string repeatQueryPercent;
+					std::string reportType;
 					double componentQueryCountAvg;
 				};
 

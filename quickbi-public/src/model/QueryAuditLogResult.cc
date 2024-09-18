@@ -43,20 +43,20 @@ void QueryAuditLogResult::parse(const std::string &payload)
 	for (auto valueResultLogApiResultModel : allResultNode)
 	{
 		LogApiResultModel resultObject;
-		if(!valueResultLogApiResultModel["WorkspaceId"].isNull())
-			resultObject.workspaceId = valueResultLogApiResultModel["WorkspaceId"].asString();
-		if(!valueResultLogApiResultModel["OperatorName"].isNull())
-			resultObject.operatorName = valueResultLogApiResultModel["OperatorName"].asString();
-		if(!valueResultLogApiResultModel["OperatorAccountName"].isNull())
-			resultObject.operatorAccountName = valueResultLogApiResultModel["OperatorAccountName"].asString();
-		if(!valueResultLogApiResultModel["OperatorType"].isNull())
-			resultObject.operatorType = valueResultLogApiResultModel["OperatorType"].asString();
-		if(!valueResultLogApiResultModel["TargetType"].isNull())
-			resultObject.targetType = valueResultLogApiResultModel["TargetType"].asString();
-		if(!valueResultLogApiResultModel["TargetName"].isNull())
-			resultObject.targetName = valueResultLogApiResultModel["TargetName"].asString();
 		if(!valueResultLogApiResultModel["GmtCreate"].isNull())
 			resultObject.gmtCreate = valueResultLogApiResultModel["GmtCreate"].asString();
+		if(!valueResultLogApiResultModel["OperatorAccountName"].isNull())
+			resultObject.operatorAccountName = valueResultLogApiResultModel["OperatorAccountName"].asString();
+		if(!valueResultLogApiResultModel["OperatorName"].isNull())
+			resultObject.operatorName = valueResultLogApiResultModel["OperatorName"].asString();
+		if(!valueResultLogApiResultModel["OperatorType"].isNull())
+			resultObject.operatorType = valueResultLogApiResultModel["OperatorType"].asString();
+		if(!valueResultLogApiResultModel["TargetName"].isNull())
+			resultObject.targetName = valueResultLogApiResultModel["TargetName"].asString();
+		if(!valueResultLogApiResultModel["TargetType"].isNull())
+			resultObject.targetType = valueResultLogApiResultModel["TargetType"].asString();
+		if(!valueResultLogApiResultModel["WorkspaceId"].isNull())
+			resultObject.workspaceId = valueResultLogApiResultModel["WorkspaceId"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

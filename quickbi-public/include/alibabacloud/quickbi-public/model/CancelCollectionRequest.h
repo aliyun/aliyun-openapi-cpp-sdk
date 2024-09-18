@@ -30,20 +30,20 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT CancelCollectionRequest : public RpcSer
 public:
 	CancelCollectionRequest();
 	~CancelCollectionRequest();
-	std::string getWorksId() const;
-	void setWorksId(const std::string &worksId);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
+	std::string getWorksId() const;
+	void setWorksId(const std::string &worksId);
 
 private:
-	std::string worksId_;
 	std::string accessPoint_;
 	std::string signType_;
 	std::string userId_;
+	std::string worksId_;
 };
 } // namespace Model
 } // namespace Quickbi_public

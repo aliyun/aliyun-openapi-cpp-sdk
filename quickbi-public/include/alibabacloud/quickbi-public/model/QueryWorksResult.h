@@ -52,8 +52,8 @@ namespace AlibabaCloud
 					std::string gmtCreate;
 					std::string ownerId;
 					std::string gmtModify;
-					std::string workName;
 					std::string securityLevel;
+					std::string workName;
 					std::string workspaceName;
 					bool publicFlag;
 					std::string worksId;

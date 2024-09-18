@@ -25,15 +25,6 @@ QueryDataServiceListRequest::QueryDataServiceListRequest()
 
 QueryDataServiceListRequest::~QueryDataServiceListRequest() {}
 
-int QueryDataServiceListRequest::getPageNo() const {
-  return pageNo_;
-}
-
-void QueryDataServiceListRequest::setPageNo(int pageNo) {
-  pageNo_ = pageNo;
-  setParameter(std::string("PageNo"), std::to_string(pageNo));
-}
-
 std::string QueryDataServiceListRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -43,13 +34,13 @@ void QueryDataServiceListRequest::setAccessPoint(const std::string &accessPoint)
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string QueryDataServiceListRequest::getName() const {
-  return name_;
+std::string QueryDataServiceListRequest::getUserId() const {
+  return userId_;
 }
 
-void QueryDataServiceListRequest::setName(const std::string &name) {
-  name_ = name;
-  setParameter(std::string("Name"), name);
+void QueryDataServiceListRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
 }
 
 int QueryDataServiceListRequest::getPageSize() const {
@@ -70,12 +61,21 @@ void QueryDataServiceListRequest::setSignType(const std::string &signType) {
   setParameter(std::string("SignType"), signType);
 }
 
-std::string QueryDataServiceListRequest::getUserId() const {
-  return userId_;
+int QueryDataServiceListRequest::getPageNo() const {
+  return pageNo_;
 }
 
-void QueryDataServiceListRequest::setUserId(const std::string &userId) {
-  userId_ = userId;
-  setParameter(std::string("UserId"), userId);
+void QueryDataServiceListRequest::setPageNo(int pageNo) {
+  pageNo_ = pageNo;
+  setParameter(std::string("PageNo"), std::to_string(pageNo));
+}
+
+std::string QueryDataServiceListRequest::getName() const {
+  return name_;
+}
+
+void QueryDataServiceListRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 

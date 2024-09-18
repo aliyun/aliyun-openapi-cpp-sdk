@@ -30,26 +30,26 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT ListFavoriteReportsRequest : public Rpc
 public:
 	ListFavoriteReportsRequest();
 	~ListFavoriteReportsRequest();
-	std::string getTreeType() const;
-	void setTreeType(const std::string &treeType);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
-	std::string getKeyword() const;
-	void setKeyword(const std::string &keyword);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getKeyword() const;
+	void setKeyword(const std::string &keyword);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
+	std::string getTreeType() const;
+	void setTreeType(const std::string &treeType);
 
 private:
-	std::string treeType_;
 	std::string accessPoint_;
-	int pageSize_;
-	std::string signType_;
-	std::string keyword_;
 	std::string userId_;
+	int pageSize_;
+	std::string keyword_;
+	std::string signType_;
+	std::string treeType_;
 };
 } // namespace Model
 } // namespace Quickbi_public

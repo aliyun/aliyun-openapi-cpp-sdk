@@ -43,10 +43,10 @@ namespace AlibabaCloud
 							long roleId;
 						};
 						Role role;
-						std::string email;
 						std::string accountId;
-						std::string userId;
+						std::string email;
 						std::string phone;
+						std::string userId;
 						std::string nickName;
 						std::string accountName;
 					};

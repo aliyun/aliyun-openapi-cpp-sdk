@@ -40,38 +40,38 @@ void QueryWorksResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["WorksId"].isNull())
-		result_.worksId = resultNode["WorksId"].asString();
-	if(!resultNode["WorkType"].isNull())
-		result_.workType = resultNode["WorkType"].asString();
-	if(!resultNode["WorkName"].isNull())
-		result_.workName = resultNode["WorkName"].asString();
-	if(!resultNode["WorkspaceId"].isNull())
-		result_.workspaceId = resultNode["WorkspaceId"].asString();
-	if(!resultNode["WorkspaceName"].isNull())
-		result_.workspaceName = resultNode["WorkspaceName"].asString();
-	if(!resultNode["SecurityLevel"].isNull())
-		result_.securityLevel = resultNode["SecurityLevel"].asString();
 	if(!resultNode["Auth3rdFlag"].isNull())
 		result_.auth3rdFlag = std::stoi(resultNode["Auth3rdFlag"].asString());
 	if(!resultNode["Description"].isNull())
 		result_.description = resultNode["Description"].asString();
-	if(!resultNode["OwnerId"].isNull())
-		result_.ownerId = resultNode["OwnerId"].asString();
-	if(!resultNode["OwnerName"].isNull())
-		result_.ownerName = resultNode["OwnerName"].asString();
-	if(!resultNode["ModifyName"].isNull())
-		result_.modifyName = resultNode["ModifyName"].asString();
 	if(!resultNode["GmtCreate"].isNull())
 		result_.gmtCreate = resultNode["GmtCreate"].asString();
 	if(!resultNode["GmtModify"].isNull())
 		result_.gmtModify = resultNode["GmtModify"].asString();
-	if(!resultNode["Status"].isNull())
-		result_.status = std::stoi(resultNode["Status"].asString());
+	if(!resultNode["ModifyName"].isNull())
+		result_.modifyName = resultNode["ModifyName"].asString();
+	if(!resultNode["OwnerId"].isNull())
+		result_.ownerId = resultNode["OwnerId"].asString();
+	if(!resultNode["OwnerName"].isNull())
+		result_.ownerName = resultNode["OwnerName"].asString();
 	if(!resultNode["PublicFlag"].isNull())
 		result_.publicFlag = resultNode["PublicFlag"].asString() == "true";
 	if(!resultNode["PublicInvalidTime"].isNull())
 		result_.publicInvalidTime = std::stol(resultNode["PublicInvalidTime"].asString());
+	if(!resultNode["SecurityLevel"].isNull())
+		result_.securityLevel = resultNode["SecurityLevel"].asString();
+	if(!resultNode["Status"].isNull())
+		result_.status = std::stoi(resultNode["Status"].asString());
+	if(!resultNode["WorkName"].isNull())
+		result_.workName = resultNode["WorkName"].asString();
+	if(!resultNode["WorkType"].isNull())
+		result_.workType = resultNode["WorkType"].asString();
+	if(!resultNode["WorksId"].isNull())
+		result_.worksId = resultNode["WorksId"].asString();
+	if(!resultNode["WorkspaceId"].isNull())
+		result_.workspaceId = resultNode["WorkspaceId"].asString();
+	if(!resultNode["WorkspaceName"].isNull())
+		result_.workspaceName = resultNode["WorkspaceName"].asString();
 	auto directoryNode = resultNode["Directory"];
 	if(!directoryNode["Id"].isNull())
 		result_.directory.id = directoryNode["Id"].asString();

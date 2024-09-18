@@ -34,15 +34,6 @@ void CancelReportShareRequest::setReportId(const std::string &reportId) {
   setParameter(std::string("ReportId"), reportId);
 }
 
-int CancelReportShareRequest::getShareToType() const {
-  return shareToType_;
-}
-
-void CancelReportShareRequest::setShareToType(int shareToType) {
-  shareToType_ = shareToType;
-  setParameter(std::string("ShareToType"), std::to_string(shareToType));
-}
-
 std::string CancelReportShareRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -68,5 +59,14 @@ std::string CancelReportShareRequest::getShareToIds() const {
 void CancelReportShareRequest::setShareToIds(const std::string &shareToIds) {
   shareToIds_ = shareToIds;
   setParameter(std::string("ShareToIds"), shareToIds);
+}
+
+int CancelReportShareRequest::getShareToType() const {
+  return shareToType_;
+}
+
+void CancelReportShareRequest::setShareToType(int shareToType) {
+  shareToType_ = shareToType;
+  setParameter(std::string("ShareToType"), std::to_string(shareToType));
 }
 

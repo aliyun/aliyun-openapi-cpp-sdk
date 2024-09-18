@@ -44,10 +44,10 @@ void UpdateWorkspaceUsersRoleResult::parse(const std::string &payload)
 		result_.failure = std::stoi(resultNode["Failure"].asString());
 	if(!resultNode["FailureDetail"].isNull())
 		result_.failureDetail = resultNode["FailureDetail"].asString();
-	if(!resultNode["Total"].isNull())
-		result_.total = std::stoi(resultNode["Total"].asString());
 	if(!resultNode["Success"].isNull())
 		result_.success = std::stoi(resultNode["Success"].asString());
+	if(!resultNode["Total"].isNull())
+		result_.total = std::stoi(resultNode["Total"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

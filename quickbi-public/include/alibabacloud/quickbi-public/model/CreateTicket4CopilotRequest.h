@@ -32,29 +32,29 @@ public:
 	~CreateTicket4CopilotRequest();
 	std::string getCopilotId() const;
 	void setCopilotId(const std::string &copilotId);
-	int getExpireTime() const;
-	void setExpireTime(int expireTime);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
 	int getAccountType() const;
 	void setAccountType(int accountType);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
 	std::string getAccountName() const;
 	void setAccountName(const std::string &accountName);
+	int getExpireTime() const;
+	void setExpireTime(int expireTime);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 	int getTicketNum() const;
 	void setTicketNum(int ticketNum);
 
 private:
 	std::string copilotId_;
-	int expireTime_;
 	std::string accessPoint_;
 	int accountType_;
-	std::string signType_;
 	std::string userId_;
 	std::string accountName_;
+	int expireTime_;
+	std::string signType_;
 	int ticketNum_;
 };
 } // namespace Model

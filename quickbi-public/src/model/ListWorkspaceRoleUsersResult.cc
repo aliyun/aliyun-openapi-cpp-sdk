@@ -40,26 +40,26 @@ void ListWorkspaceRoleUsersResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["TotalNum"].isNull())
-		result_.totalNum = std::stoi(resultNode["TotalNum"].asString());
-	if(!resultNode["TotalPages"].isNull())
-		result_.totalPages = std::stoi(resultNode["TotalPages"].asString());
 	if(!resultNode["PageNum"].isNull())
 		result_.pageNum = std::stoi(resultNode["PageNum"].asString());
 	if(!resultNode["PageSize"].isNull())
 		result_.pageSize = std::stoi(resultNode["PageSize"].asString());
+	if(!resultNode["TotalNum"].isNull())
+		result_.totalNum = std::stoi(resultNode["TotalNum"].asString());
+	if(!resultNode["TotalPages"].isNull())
+		result_.totalPages = std::stoi(resultNode["TotalPages"].asString());
 	auto allDataNode = resultNode["Data"]["DataItem"];
 	for (auto resultNodeDataDataItem : allDataNode)
 	{
 		Result::DataItem dataItemObject;
-		if(!resultNodeDataDataItem["UserId"].isNull())
-			dataItemObject.userId = resultNodeDataDataItem["UserId"].asString();
 		if(!resultNodeDataDataItem["NickName"].isNull())
 			dataItemObject.nickName = resultNodeDataDataItem["NickName"].asString();
-		if(!resultNodeDataDataItem["WorkspaceName"].isNull())
-			dataItemObject.workspaceName = resultNodeDataDataItem["WorkspaceName"].asString();
+		if(!resultNodeDataDataItem["UserId"].isNull())
+			dataItemObject.userId = resultNodeDataDataItem["UserId"].asString();
 		if(!resultNodeDataDataItem["WorkspaceId"].isNull())
 			dataItemObject.workspaceId = resultNodeDataDataItem["WorkspaceId"].asString();
+		if(!resultNodeDataDataItem["WorkspaceName"].isNull())
+			dataItemObject.workspaceName = resultNodeDataDataItem["WorkspaceName"].asString();
 		result_.data.push_back(dataItemObject);
 	}
 	if(!value["Success"].isNull())

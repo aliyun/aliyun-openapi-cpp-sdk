@@ -32,8 +32,6 @@ public:
 	~ModifyCopilotEmbedConfigRequest();
 	std::string getCopilotId() const;
 	void setCopilotId(const std::string &copilotId);
-	std::string getAgentName() const;
-	void setAgentName(const std::string &agentName);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
 	std::string getDataRange() const;
@@ -42,14 +40,16 @@ public:
 	void setModuleName(const std::string &moduleName);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
+	std::string getAgentName() const;
+	void setAgentName(const std::string &agentName);
 
 private:
 	std::string copilotId_;
-	std::string agentName_;
 	std::string accessPoint_;
 	std::string dataRange_;
 	std::string moduleName_;
 	std::string signType_;
+	std::string agentName_;
 };
 } // namespace Model
 } // namespace Quickbi_public

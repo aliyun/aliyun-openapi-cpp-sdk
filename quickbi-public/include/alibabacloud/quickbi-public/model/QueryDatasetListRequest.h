@@ -32,8 +32,6 @@ public:
 	~QueryDatasetListRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
 	int getPageSize() const;
@@ -44,17 +42,19 @@ public:
 	void setWithChildren(bool withChildren);
 	std::string getKeyword() const;
 	void setKeyword(const std::string &keyword);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 	std::string getWorkspaceId() const;
 	void setWorkspaceId(const std::string &workspaceId);
 
 private:
 	std::string accessPoint_;
-	std::string signType_;
 	int pageNum_;
 	int pageSize_;
 	std::string directoryId_;
 	bool withChildren_;
 	std::string keyword_;
+	std::string signType_;
 	std::string workspaceId_;
 };
 } // namespace Model

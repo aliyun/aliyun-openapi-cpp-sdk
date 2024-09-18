@@ -36,38 +36,38 @@ public:
 	void setAccountType(int accountType);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	int getUserType() const;
-	void setUserType(int userType);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
 	bool getIsDeleted() const;
 	void setIsDeleted(bool isDeleted);
 	std::string getRoleIds() const;
 	void setRoleIds(const std::string &roleIds);
-	std::string getPhone() const;
-	void setPhone(const std::string &phone);
 	std::string getNickName() const;
 	void setNickName(const std::string &nickName);
 	bool getAuthAdminUser() const;
 	void setAuthAdminUser(bool authAdminUser);
 	std::string getEmail() const;
 	void setEmail(const std::string &email);
+	int getUserType() const;
+	void setUserType(int userType);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
+	std::string getPhone() const;
+	void setPhone(const std::string &phone);
 
 private:
 	bool adminUser_;
 	int accountType_;
 	std::string accessPoint_;
-	int userType_;
-	std::string signType_;
 	std::string userId_;
 	bool isDeleted_;
 	std::string roleIds_;
-	std::string phone_;
 	std::string nickName_;
 	bool authAdminUser_;
 	std::string email_;
+	int userType_;
+	std::string signType_;
+	std::string phone_;
 };
 } // namespace Model
 } // namespace Quickbi_public

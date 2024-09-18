@@ -34,15 +34,6 @@ void ListRecentViewReportsRequest::setAccessPoint(const std::string &accessPoint
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string ListRecentViewReportsRequest::getSignType() const {
-  return signType_;
-}
-
-void ListRecentViewReportsRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 int ListRecentViewReportsRequest::getOffsetDay() const {
   return offsetDay_;
 }
@@ -61,24 +52,6 @@ void ListRecentViewReportsRequest::setUserId(const std::string &userId) {
   setParameter(std::string("UserId"), userId);
 }
 
-std::string ListRecentViewReportsRequest::getQueryMode() const {
-  return queryMode_;
-}
-
-void ListRecentViewReportsRequest::setQueryMode(const std::string &queryMode) {
-  queryMode_ = queryMode;
-  setParameter(std::string("QueryMode"), queryMode);
-}
-
-std::string ListRecentViewReportsRequest::getTreeType() const {
-  return treeType_;
-}
-
-void ListRecentViewReportsRequest::setTreeType(const std::string &treeType) {
-  treeType_ = treeType;
-  setParameter(std::string("TreeType"), treeType);
-}
-
 int ListRecentViewReportsRequest::getPageSize() const {
   return pageSize_;
 }
@@ -95,5 +68,32 @@ std::string ListRecentViewReportsRequest::getKeyword() const {
 void ListRecentViewReportsRequest::setKeyword(const std::string &keyword) {
   keyword_ = keyword;
   setParameter(std::string("Keyword"), keyword);
+}
+
+std::string ListRecentViewReportsRequest::getSignType() const {
+  return signType_;
+}
+
+void ListRecentViewReportsRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
+}
+
+std::string ListRecentViewReportsRequest::getQueryMode() const {
+  return queryMode_;
+}
+
+void ListRecentViewReportsRequest::setQueryMode(const std::string &queryMode) {
+  queryMode_ = queryMode;
+  setParameter(std::string("QueryMode"), queryMode);
+}
+
+std::string ListRecentViewReportsRequest::getTreeType() const {
+  return treeType_;
+}
+
+void ListRecentViewReportsRequest::setTreeType(const std::string &treeType) {
+  treeType_ = treeType;
+  setParameter(std::string("TreeType"), treeType);
 }
 

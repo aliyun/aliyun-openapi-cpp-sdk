@@ -32,15 +32,15 @@ public:
 	~DataSourceBloodRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getDataSourceId() const;
-	void setDataSourceId(const std::string &dataSourceId);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
+	std::string getDataSourceId() const;
+	void setDataSourceId(const std::string &dataSourceId);
 
 private:
 	std::string accessPoint_;
-	std::string dataSourceId_;
 	std::string signType_;
+	std::string dataSourceId_;
 };
 } // namespace Model
 } // namespace Quickbi_public

@@ -25,15 +25,6 @@ CreateTicketRequest::CreateTicketRequest()
 
 CreateTicketRequest::~CreateTicketRequest() {}
 
-int CreateTicketRequest::getExpireTime() const {
-  return expireTime_;
-}
-
-void CreateTicketRequest::setExpireTime(int expireTime) {
-  expireTime_ = expireTime;
-  setParameter(std::string("ExpireTime"), std::to_string(expireTime));
-}
-
 std::string CreateTicketRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -52,24 +43,6 @@ void CreateTicketRequest::setAccountType(int accountType) {
   setParameter(std::string("AccountType"), std::to_string(accountType));
 }
 
-std::string CreateTicketRequest::getSignType() const {
-  return signType_;
-}
-
-void CreateTicketRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
-std::string CreateTicketRequest::getCmptId() const {
-  return cmptId_;
-}
-
-void CreateTicketRequest::setCmptId(const std::string &cmptId) {
-  cmptId_ = cmptId;
-  setParameter(std::string("CmptId"), cmptId);
-}
-
 std::string CreateTicketRequest::getUserId() const {
   return userId_;
 }
@@ -86,6 +59,33 @@ std::string CreateTicketRequest::getAccountName() const {
 void CreateTicketRequest::setAccountName(const std::string &accountName) {
   accountName_ = accountName;
   setParameter(std::string("AccountName"), accountName);
+}
+
+int CreateTicketRequest::getExpireTime() const {
+  return expireTime_;
+}
+
+void CreateTicketRequest::setExpireTime(int expireTime) {
+  expireTime_ = expireTime;
+  setParameter(std::string("ExpireTime"), std::to_string(expireTime));
+}
+
+std::string CreateTicketRequest::getSignType() const {
+  return signType_;
+}
+
+void CreateTicketRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
+}
+
+std::string CreateTicketRequest::getCmptId() const {
+  return cmptId_;
+}
+
+void CreateTicketRequest::setCmptId(const std::string &cmptId) {
+  cmptId_ = cmptId;
+  setParameter(std::string("CmptId"), cmptId);
 }
 
 std::string CreateTicketRequest::getGlobalParam() const {

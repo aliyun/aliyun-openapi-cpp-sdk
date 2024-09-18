@@ -25,15 +25,6 @@ UpdateEmbeddedStatusRequest::UpdateEmbeddedStatusRequest()
 
 UpdateEmbeddedStatusRequest::~UpdateEmbeddedStatusRequest() {}
 
-std::string UpdateEmbeddedStatusRequest::getWorksId() const {
-  return worksId_;
-}
-
-void UpdateEmbeddedStatusRequest::setWorksId(const std::string &worksId) {
-  worksId_ = worksId;
-  setParameter(std::string("WorksId"), worksId);
-}
-
 bool UpdateEmbeddedStatusRequest::getThirdPartAuthFlag() const {
   return thirdPartAuthFlag_;
 }
@@ -59,5 +50,14 @@ std::string UpdateEmbeddedStatusRequest::getSignType() const {
 void UpdateEmbeddedStatusRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
+}
+
+std::string UpdateEmbeddedStatusRequest::getWorksId() const {
+  return worksId_;
+}
+
+void UpdateEmbeddedStatusRequest::setWorksId(const std::string &worksId) {
+  worksId_ = worksId;
+  setParameter(std::string("WorksId"), worksId);
 }
 

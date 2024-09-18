@@ -34,25 +34,25 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
+	std::string getUserGroupName() const;
+	void setUserGroupName(const std::string &userGroupName);
+	std::string getParentUserGroupId() const;
+	void setParentUserGroupId(const std::string &parentUserGroupId);
 	std::string getUserGroupId() const;
 	void setUserGroupId(const std::string &userGroupId);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
-	std::string getUserGroupName() const;
-	void setUserGroupName(const std::string &userGroupName);
 	std::string getUserGroupDescription() const;
 	void setUserGroupDescription(const std::string &userGroupDescription);
-	std::string getParentUserGroupId() const;
-	void setParentUserGroupId(const std::string &parentUserGroupId);
 
 private:
 	std::string clientToken_;
 	std::string accessPoint_;
+	std::string userGroupName_;
+	std::string parentUserGroupId_;
 	std::string userGroupId_;
 	std::string signType_;
-	std::string userGroupName_;
 	std::string userGroupDescription_;
-	std::string parentUserGroupId_;
 };
 } // namespace Model
 } // namespace Quickbi_public

@@ -34,30 +34,30 @@ public:
 	void setReportId(const std::string &reportId);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
-	std::string getResourceType() const;
-	void setResourceType(const std::string &resourceType);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	int getCostTimeAvgMin() const;
 	void setCostTimeAvgMin(int costTimeAvgMin);
 	std::string getQueryType() const;
 	void setQueryType(const std::string &queryType);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
 	std::string getWorkspaceId() const;
 	void setWorkspaceId(const std::string &workspaceId);
 
 private:
 	std::string reportId_;
 	std::string accessPoint_;
-	std::string signType_;
 	int pageNum_;
-	std::string resourceType_;
 	int pageSize_;
 	int costTimeAvgMin_;
 	std::string queryType_;
+	std::string signType_;
+	std::string resourceType_;
 	std::string workspaceId_;
 };
 } // namespace Model

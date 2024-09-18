@@ -35,10 +35,10 @@ namespace AlibabaCloud
 				struct LogApiResultModel
 				{
 					std::string operatorAccountName;
-					std::string operatorName;
 					std::string gmtCreate;
-					std::string workspaceId;
+					std::string operatorName;
 					std::string targetType;
+					std::string workspaceId;
 					std::string targetName;
 					std::string operatorType;
 				};

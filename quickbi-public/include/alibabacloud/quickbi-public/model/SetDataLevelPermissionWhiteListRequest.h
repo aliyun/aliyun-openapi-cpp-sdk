@@ -30,17 +30,17 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT SetDataLevelPermissionWhiteListRequest 
 public:
 	SetDataLevelPermissionWhiteListRequest();
 	~SetDataLevelPermissionWhiteListRequest();
-	std::string getWhiteListModel() const;
-	void setWhiteListModel(const std::string &whiteListModel);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
+	std::string getWhiteListModel() const;
+	void setWhiteListModel(const std::string &whiteListModel);
 
 private:
-	std::string whiteListModel_;
 	std::string accessPoint_;
 	std::string signType_;
+	std::string whiteListModel_;
 };
 } // namespace Model
 } // namespace Quickbi_public

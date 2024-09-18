@@ -43,15 +43,6 @@ void QueryReportPerformanceRequest::setAccessPoint(const std::string &accessPoin
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string QueryReportPerformanceRequest::getSignType() const {
-  return signType_;
-}
-
-void QueryReportPerformanceRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 int QueryReportPerformanceRequest::getPageNum() const {
   return pageNum_;
 }
@@ -59,15 +50,6 @@ int QueryReportPerformanceRequest::getPageNum() const {
 void QueryReportPerformanceRequest::setPageNum(int pageNum) {
   pageNum_ = pageNum;
   setParameter(std::string("PageNum"), std::to_string(pageNum));
-}
-
-std::string QueryReportPerformanceRequest::getResourceType() const {
-  return resourceType_;
-}
-
-void QueryReportPerformanceRequest::setResourceType(const std::string &resourceType) {
-  resourceType_ = resourceType;
-  setParameter(std::string("ResourceType"), resourceType);
 }
 
 int QueryReportPerformanceRequest::getPageSize() const {
@@ -95,6 +77,24 @@ std::string QueryReportPerformanceRequest::getQueryType() const {
 void QueryReportPerformanceRequest::setQueryType(const std::string &queryType) {
   queryType_ = queryType;
   setParameter(std::string("QueryType"), queryType);
+}
+
+std::string QueryReportPerformanceRequest::getSignType() const {
+  return signType_;
+}
+
+void QueryReportPerformanceRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
+}
+
+std::string QueryReportPerformanceRequest::getResourceType() const {
+  return resourceType_;
+}
+
+void QueryReportPerformanceRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
 }
 
 std::string QueryReportPerformanceRequest::getWorkspaceId() const {

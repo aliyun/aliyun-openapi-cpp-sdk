@@ -30,29 +30,29 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT BatchAddFeishuUsersRequest : public Rpc
 public:
 	BatchAddFeishuUsersRequest();
 	~BatchAddFeishuUsersRequest();
-	bool getIsAdmin() const;
-	void setIsAdmin(bool isAdmin);
-	std::string getFeishuUsers() const;
-	void setFeishuUsers(const std::string &feishuUsers);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
+	bool getIsAuthAdmin() const;
+	void setIsAuthAdmin(bool isAuthAdmin);
+	bool getIsAdmin() const;
+	void setIsAdmin(bool isAdmin);
 	int getUserType() const;
 	void setUserType(int userType);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
 	std::string getUserGroupIds() const;
 	void setUserGroupIds(const std::string &userGroupIds);
-	bool getIsAuthAdmin() const;
-	void setIsAuthAdmin(bool isAuthAdmin);
+	std::string getFeishuUsers() const;
+	void setFeishuUsers(const std::string &feishuUsers);
 
 private:
-	bool isAdmin_;
-	std::string feishuUsers_;
 	std::string accessPoint_;
+	bool isAuthAdmin_;
+	bool isAdmin_;
 	int userType_;
 	std::string signType_;
 	std::string userGroupIds_;
-	bool isAuthAdmin_;
+	std::string feishuUsers_;
 };
 } // namespace Model
 } // namespace Quickbi_public

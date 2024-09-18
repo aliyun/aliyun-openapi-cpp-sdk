@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					struct QueryParam
 					{
-						std::string pathId;
 						std::string areaName;
+						std::string pathId;
 						std::string uid;
 						bool isMeasure;
 						std::string areaId;

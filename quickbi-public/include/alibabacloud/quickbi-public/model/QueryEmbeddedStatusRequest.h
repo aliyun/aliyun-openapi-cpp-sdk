@@ -30,17 +30,17 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryEmbeddedStatusRequest : public Rpc
 public:
 	QueryEmbeddedStatusRequest();
 	~QueryEmbeddedStatusRequest();
-	std::string getWorksId() const;
-	void setWorksId(const std::string &worksId);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
+	std::string getWorksId() const;
+	void setWorksId(const std::string &worksId);
 
 private:
-	std::string worksId_;
 	std::string accessPoint_;
 	std::string signType_;
+	std::string worksId_;
 };
 } // namespace Model
 } // namespace Quickbi_public

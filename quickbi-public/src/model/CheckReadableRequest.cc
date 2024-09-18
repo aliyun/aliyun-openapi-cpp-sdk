@@ -25,15 +25,6 @@ CheckReadableRequest::CheckReadableRequest()
 
 CheckReadableRequest::~CheckReadableRequest() {}
 
-std::string CheckReadableRequest::getWorksId() const {
-  return worksId_;
-}
-
-void CheckReadableRequest::setWorksId(const std::string &worksId) {
-  worksId_ = worksId;
-  setParameter(std::string("WorksId"), worksId);
-}
-
 std::string CheckReadableRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -59,5 +50,14 @@ std::string CheckReadableRequest::getUserId() const {
 void CheckReadableRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+std::string CheckReadableRequest::getWorksId() const {
+  return worksId_;
+}
+
+void CheckReadableRequest::setWorksId(const std::string &worksId) {
+  worksId_ = worksId;
+  setParameter(std::string("WorksId"), worksId);
 }
 

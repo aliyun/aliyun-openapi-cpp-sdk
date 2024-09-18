@@ -43,20 +43,20 @@ void ListCollectionsResult::parse(const std::string &payload)
 	for (auto valueResultData : allResultNode)
 	{
 		Data resultObject;
-		if(!valueResultData["WorkspaceId"].isNull())
-			resultObject.workspaceId = valueResultData["WorkspaceId"].asString();
-		if(!valueResultData["WorksType"].isNull())
-			resultObject.worksType = valueResultData["WorksType"].asString();
 		if(!valueResultData["FavoriteId"].isNull())
 			resultObject.favoriteId = std::stoi(valueResultData["FavoriteId"].asString());
+		if(!valueResultData["OwnerId"].isNull())
+			resultObject.ownerId = valueResultData["OwnerId"].asString();
 		if(!valueResultData["WorksId"].isNull())
 			resultObject.worksId = valueResultData["WorksId"].asString();
 		if(!valueResultData["WorksName"].isNull())
 			resultObject.worksName = valueResultData["WorksName"].asString();
+		if(!valueResultData["WorksType"].isNull())
+			resultObject.worksType = valueResultData["WorksType"].asString();
+		if(!valueResultData["WorkspaceId"].isNull())
+			resultObject.workspaceId = valueResultData["WorkspaceId"].asString();
 		if(!valueResultData["WorkspaceName"].isNull())
 			resultObject.workspaceName = valueResultData["WorkspaceName"].asString();
-		if(!valueResultData["OwnerId"].isNull())
-			resultObject.ownerId = valueResultData["OwnerId"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

@@ -25,13 +25,22 @@ AddUserTagMetaRequest::AddUserTagMetaRequest()
 
 AddUserTagMetaRequest::~AddUserTagMetaRequest() {}
 
-std::string AddUserTagMetaRequest::getTagDescription() const {
-  return tagDescription_;
+std::string AddUserTagMetaRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void AddUserTagMetaRequest::setTagDescription(const std::string &tagDescription) {
-  tagDescription_ = tagDescription;
-  setParameter(std::string("TagDescription"), tagDescription);
+void AddUserTagMetaRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
+std::string AddUserTagMetaRequest::getAccessPoint() const {
+  return accessPoint_;
+}
+
+void AddUserTagMetaRequest::setAccessPoint(const std::string &accessPoint) {
+  accessPoint_ = accessPoint;
+  setParameter(std::string("AccessPoint"), accessPoint);
 }
 
 std::string AddUserTagMetaRequest::getTagName() const {
@@ -52,24 +61,6 @@ void AddUserTagMetaRequest::setTagId(const std::string &tagId) {
   setParameter(std::string("TagId"), tagId);
 }
 
-std::string AddUserTagMetaRequest::getClientToken() const {
-  return clientToken_;
-}
-
-void AddUserTagMetaRequest::setClientToken(const std::string &clientToken) {
-  clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), clientToken);
-}
-
-std::string AddUserTagMetaRequest::getAccessPoint() const {
-  return accessPoint_;
-}
-
-void AddUserTagMetaRequest::setAccessPoint(const std::string &accessPoint) {
-  accessPoint_ = accessPoint;
-  setParameter(std::string("AccessPoint"), accessPoint);
-}
-
 std::string AddUserTagMetaRequest::getSignType() const {
   return signType_;
 }
@@ -77,5 +68,14 @@ std::string AddUserTagMetaRequest::getSignType() const {
 void AddUserTagMetaRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
+}
+
+std::string AddUserTagMetaRequest::getTagDescription() const {
+  return tagDescription_;
+}
+
+void AddUserTagMetaRequest::setTagDescription(const std::string &tagDescription) {
+  tagDescription_ = tagDescription;
+  setParameter(std::string("TagDescription"), tagDescription);
 }
 

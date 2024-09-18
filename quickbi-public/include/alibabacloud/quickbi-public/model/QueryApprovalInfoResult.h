@@ -57,8 +57,8 @@ namespace AlibabaCloud
 					int start;
 					int total;
 					std::vector<ApprovalsResultModel> data;
-					int totalPages;
 					int page;
+					int totalPages;
 				};
 
 

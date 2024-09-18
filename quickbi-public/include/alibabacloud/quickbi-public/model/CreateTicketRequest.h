@@ -30,20 +30,20 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT CreateTicketRequest : public RpcService
 public:
 	CreateTicketRequest();
 	~CreateTicketRequest();
-	int getExpireTime() const;
-	void setExpireTime(int expireTime);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
 	int getAccountType() const;
 	void setAccountType(int accountType);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
-	std::string getCmptId() const;
-	void setCmptId(const std::string &cmptId);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
 	std::string getAccountName() const;
 	void setAccountName(const std::string &accountName);
+	int getExpireTime() const;
+	void setExpireTime(int expireTime);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
+	std::string getCmptId() const;
+	void setCmptId(const std::string &cmptId);
 	std::string getGlobalParam() const;
 	void setGlobalParam(const std::string &globalParam);
 	std::string getWorksId() const;
@@ -54,13 +54,13 @@ public:
 	void setWatermarkParam(const std::string &watermarkParam);
 
 private:
-	int expireTime_;
 	std::string accessPoint_;
 	int accountType_;
-	std::string signType_;
-	std::string cmptId_;
 	std::string userId_;
 	std::string accountName_;
+	int expireTime_;
+	std::string signType_;
+	std::string cmptId_;
 	std::string globalParam_;
 	std::string worksId_;
 	int ticketNum_;

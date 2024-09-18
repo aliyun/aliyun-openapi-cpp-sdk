@@ -25,24 +25,6 @@ QueryWorksRequest::QueryWorksRequest()
 
 QueryWorksRequest::~QueryWorksRequest() {}
 
-std::string QueryWorksRequest::getApiLevel() const {
-  return apiLevel_;
-}
-
-void QueryWorksRequest::setApiLevel(const std::string &apiLevel) {
-  apiLevel_ = apiLevel;
-  setParameter(std::string("ApiLevel"), apiLevel);
-}
-
-std::string QueryWorksRequest::getWorksId() const {
-  return worksId_;
-}
-
-void QueryWorksRequest::setWorksId(const std::string &worksId) {
-  worksId_ = worksId;
-  setParameter(std::string("WorksId"), worksId);
-}
-
 std::string QueryWorksRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -59,5 +41,23 @@ std::string QueryWorksRequest::getSignType() const {
 void QueryWorksRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
+}
+
+std::string QueryWorksRequest::getApiLevel() const {
+  return apiLevel_;
+}
+
+void QueryWorksRequest::setApiLevel(const std::string &apiLevel) {
+  apiLevel_ = apiLevel;
+  setParameter(std::string("ApiLevel"), apiLevel);
+}
+
+std::string QueryWorksRequest::getWorksId() const {
+  return worksId_;
+}
+
+void QueryWorksRequest::setWorksId(const std::string &worksId) {
+  worksId_ = worksId;
+  setParameter(std::string("WorksId"), worksId);
 }
 

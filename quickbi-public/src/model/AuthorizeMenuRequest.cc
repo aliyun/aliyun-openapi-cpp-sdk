@@ -34,15 +34,6 @@ void AuthorizeMenuRequest::setDataPortalId(const std::string &dataPortalId) {
   setParameter(std::string("DataPortalId"), dataPortalId);
 }
 
-std::string AuthorizeMenuRequest::getUserIds() const {
-  return userIds_;
-}
-
-void AuthorizeMenuRequest::setUserIds(const std::string &userIds) {
-  userIds_ = userIds;
-  setParameter(std::string("UserIds"), userIds);
-}
-
 int AuthorizeMenuRequest::getAuthPointsValue() const {
   return authPointsValue_;
 }
@@ -59,6 +50,15 @@ std::string AuthorizeMenuRequest::getAccessPoint() const {
 void AuthorizeMenuRequest::setAccessPoint(const std::string &accessPoint) {
   accessPoint_ = accessPoint;
   setParameter(std::string("AccessPoint"), accessPoint);
+}
+
+std::string AuthorizeMenuRequest::getMenuIds() const {
+  return menuIds_;
+}
+
+void AuthorizeMenuRequest::setMenuIds(const std::string &menuIds) {
+  menuIds_ = menuIds;
+  setParameter(std::string("MenuIds"), menuIds);
 }
 
 std::string AuthorizeMenuRequest::getSignType() const {
@@ -79,12 +79,12 @@ void AuthorizeMenuRequest::setUserGroupIds(const std::string &userGroupIds) {
   setParameter(std::string("UserGroupIds"), userGroupIds);
 }
 
-std::string AuthorizeMenuRequest::getMenuIds() const {
-  return menuIds_;
+std::string AuthorizeMenuRequest::getUserIds() const {
+  return userIds_;
 }
 
-void AuthorizeMenuRequest::setMenuIds(const std::string &menuIds) {
-  menuIds_ = menuIds;
-  setParameter(std::string("MenuIds"), menuIds);
+void AuthorizeMenuRequest::setUserIds(const std::string &userIds) {
+  userIds_ = userIds;
+  setParameter(std::string("UserIds"), userIds);
 }
 

@@ -25,15 +25,6 @@ QueryWorksByOrganizationRequest::QueryWorksByOrganizationRequest()
 
 QueryWorksByOrganizationRequest::~QueryWorksByOrganizationRequest() {}
 
-std::string QueryWorksByOrganizationRequest::getWorksType() const {
-  return worksType_;
-}
-
-void QueryWorksByOrganizationRequest::setWorksType(const std::string &worksType) {
-  worksType_ = worksType;
-  setParameter(std::string("WorksType"), worksType);
-}
-
 int QueryWorksByOrganizationRequest::getThirdPartAuthFlag() const {
   return thirdPartAuthFlag_;
 }
@@ -52,6 +43,15 @@ void QueryWorksByOrganizationRequest::setAccessPoint(const std::string &accessPo
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
+int QueryWorksByOrganizationRequest::getPageNum() const {
+  return pageNum_;
+}
+
+void QueryWorksByOrganizationRequest::setPageNum(int pageNum) {
+  pageNum_ = pageNum;
+  setParameter(std::string("PageNum"), std::to_string(pageNum));
+}
+
 int QueryWorksByOrganizationRequest::getPageSize() const {
   return pageSize_;
 }
@@ -61,6 +61,15 @@ void QueryWorksByOrganizationRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::string QueryWorksByOrganizationRequest::getWorksType() const {
+  return worksType_;
+}
+
+void QueryWorksByOrganizationRequest::setWorksType(const std::string &worksType) {
+  worksType_ = worksType;
+  setParameter(std::string("WorksType"), worksType);
+}
+
 std::string QueryWorksByOrganizationRequest::getSignType() const {
   return signType_;
 }
@@ -68,15 +77,6 @@ std::string QueryWorksByOrganizationRequest::getSignType() const {
 void QueryWorksByOrganizationRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
-}
-
-int QueryWorksByOrganizationRequest::getPageNum() const {
-  return pageNum_;
-}
-
-void QueryWorksByOrganizationRequest::setPageNum(int pageNum) {
-  pageNum_ = pageNum;
-  setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
 int QueryWorksByOrganizationRequest::getStatus() const {

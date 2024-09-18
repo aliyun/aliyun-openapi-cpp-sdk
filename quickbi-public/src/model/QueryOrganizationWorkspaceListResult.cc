@@ -40,46 +40,46 @@ void QueryOrganizationWorkspaceListResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["TotalPages"].isNull())
-		result_.totalPages = std::stoi(resultNode["TotalPages"].asString());
 	if(!resultNode["PageNum"].isNull())
 		result_.pageNum = std::stoi(resultNode["PageNum"].asString());
 	if(!resultNode["PageSize"].isNull())
 		result_.pageSize = std::stoi(resultNode["PageSize"].asString());
 	if(!resultNode["TotalNum"].isNull())
 		result_.totalNum = std::stoi(resultNode["TotalNum"].asString());
+	if(!resultNode["TotalPages"].isNull())
+		result_.totalPages = std::stoi(resultNode["TotalPages"].asString());
 	auto allDataNode = resultNode["Data"]["DataItem"];
 	for (auto resultNodeDataDataItem : allDataNode)
 	{
 		Result::DataItem dataItemObject;
-		if(!resultNodeDataDataItem["CreateUserAccountName"].isNull())
-			dataItemObject.createUserAccountName = resultNodeDataDataItem["CreateUserAccountName"].asString();
-		if(!resultNodeDataDataItem["Owner"].isNull())
-			dataItemObject.owner = resultNodeDataDataItem["Owner"].asString();
-		if(!resultNodeDataDataItem["CreateTime"].isNull())
-			dataItemObject.createTime = resultNodeDataDataItem["CreateTime"].asString();
-		if(!resultNodeDataDataItem["WorkspaceName"].isNull())
-			dataItemObject.workspaceName = resultNodeDataDataItem["WorkspaceName"].asString();
-		if(!resultNodeDataDataItem["OrganizationId"].isNull())
-			dataItemObject.organizationId = resultNodeDataDataItem["OrganizationId"].asString();
-		if(!resultNodeDataDataItem["WorkspaceId"].isNull())
-			dataItemObject.workspaceId = resultNodeDataDataItem["WorkspaceId"].asString();
-		if(!resultNodeDataDataItem["AllowShareOperation"].isNull())
-			dataItemObject.allowShareOperation = resultNodeDataDataItem["AllowShareOperation"].asString() == "true";
-		if(!resultNodeDataDataItem["CreateUser"].isNull())
-			dataItemObject.createUser = resultNodeDataDataItem["CreateUser"].asString();
-		if(!resultNodeDataDataItem["ModifiedTime"].isNull())
-			dataItemObject.modifiedTime = resultNodeDataDataItem["ModifiedTime"].asString();
-		if(!resultNodeDataDataItem["WorkspaceDescription"].isNull())
-			dataItemObject.workspaceDescription = resultNodeDataDataItem["WorkspaceDescription"].asString();
-		if(!resultNodeDataDataItem["ModifyUser"].isNull())
-			dataItemObject.modifyUser = resultNodeDataDataItem["ModifyUser"].asString();
 		if(!resultNodeDataDataItem["AllowPublishOperation"].isNull())
 			dataItemObject.allowPublishOperation = resultNodeDataDataItem["AllowPublishOperation"].asString() == "true";
-		if(!resultNodeDataDataItem["OwnerAccountName"].isNull())
-			dataItemObject.ownerAccountName = resultNodeDataDataItem["OwnerAccountName"].asString();
+		if(!resultNodeDataDataItem["AllowShareOperation"].isNull())
+			dataItemObject.allowShareOperation = resultNodeDataDataItem["AllowShareOperation"].asString() == "true";
+		if(!resultNodeDataDataItem["CreateTime"].isNull())
+			dataItemObject.createTime = resultNodeDataDataItem["CreateTime"].asString();
+		if(!resultNodeDataDataItem["CreateUser"].isNull())
+			dataItemObject.createUser = resultNodeDataDataItem["CreateUser"].asString();
+		if(!resultNodeDataDataItem["CreateUserAccountName"].isNull())
+			dataItemObject.createUserAccountName = resultNodeDataDataItem["CreateUserAccountName"].asString();
+		if(!resultNodeDataDataItem["ModifiedTime"].isNull())
+			dataItemObject.modifiedTime = resultNodeDataDataItem["ModifiedTime"].asString();
+		if(!resultNodeDataDataItem["ModifyUser"].isNull())
+			dataItemObject.modifyUser = resultNodeDataDataItem["ModifyUser"].asString();
 		if(!resultNodeDataDataItem["ModifyUserAccountName"].isNull())
 			dataItemObject.modifyUserAccountName = resultNodeDataDataItem["ModifyUserAccountName"].asString();
+		if(!resultNodeDataDataItem["OrganizationId"].isNull())
+			dataItemObject.organizationId = resultNodeDataDataItem["OrganizationId"].asString();
+		if(!resultNodeDataDataItem["Owner"].isNull())
+			dataItemObject.owner = resultNodeDataDataItem["Owner"].asString();
+		if(!resultNodeDataDataItem["OwnerAccountName"].isNull())
+			dataItemObject.ownerAccountName = resultNodeDataDataItem["OwnerAccountName"].asString();
+		if(!resultNodeDataDataItem["WorkspaceDescription"].isNull())
+			dataItemObject.workspaceDescription = resultNodeDataDataItem["WorkspaceDescription"].asString();
+		if(!resultNodeDataDataItem["WorkspaceId"].isNull())
+			dataItemObject.workspaceId = resultNodeDataDataItem["WorkspaceId"].asString();
+		if(!resultNodeDataDataItem["WorkspaceName"].isNull())
+			dataItemObject.workspaceName = resultNodeDataDataItem["WorkspaceName"].asString();
 		result_.data.push_back(dataItemObject);
 	}
 	if(!value["Success"].isNull())

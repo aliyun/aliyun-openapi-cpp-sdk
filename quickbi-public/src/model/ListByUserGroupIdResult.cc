@@ -44,24 +44,24 @@ void ListByUserGroupIdResult::parse(const std::string &payload)
 	for (auto resultNodeUserGroupModelsUserGroupModelsItem : allUserGroupModelsNode)
 	{
 		Result::UserGroupModelsItem userGroupModelsItemObject;
-		if(!resultNodeUserGroupModelsUserGroupModelsItem["IdentifiedPath"].isNull())
-			userGroupModelsItemObject.identifiedPath = resultNodeUserGroupModelsUserGroupModelsItem["IdentifiedPath"].asString();
-		if(!resultNodeUserGroupModelsUserGroupModelsItem["ParentUsergroupId"].isNull())
-			userGroupModelsItemObject.parentUsergroupId = resultNodeUserGroupModelsUserGroupModelsItem["ParentUsergroupId"].asString();
-		if(!resultNodeUserGroupModelsUserGroupModelsItem["ModifiedTime"].isNull())
-			userGroupModelsItemObject.modifiedTime = resultNodeUserGroupModelsUserGroupModelsItem["ModifiedTime"].asString();
-		if(!resultNodeUserGroupModelsUserGroupModelsItem["CreateUser"].isNull())
-			userGroupModelsItemObject.createUser = resultNodeUserGroupModelsUserGroupModelsItem["CreateUser"].asString();
-		if(!resultNodeUserGroupModelsUserGroupModelsItem["UsergroupName"].isNull())
-			userGroupModelsItemObject.usergroupName = resultNodeUserGroupModelsUserGroupModelsItem["UsergroupName"].asString();
 		if(!resultNodeUserGroupModelsUserGroupModelsItem["CreateTime"].isNull())
 			userGroupModelsItemObject.createTime = resultNodeUserGroupModelsUserGroupModelsItem["CreateTime"].asString();
+		if(!resultNodeUserGroupModelsUserGroupModelsItem["CreateUser"].isNull())
+			userGroupModelsItemObject.createUser = resultNodeUserGroupModelsUserGroupModelsItem["CreateUser"].asString();
+		if(!resultNodeUserGroupModelsUserGroupModelsItem["IdentifiedPath"].isNull())
+			userGroupModelsItemObject.identifiedPath = resultNodeUserGroupModelsUserGroupModelsItem["IdentifiedPath"].asString();
+		if(!resultNodeUserGroupModelsUserGroupModelsItem["ModifiedTime"].isNull())
+			userGroupModelsItemObject.modifiedTime = resultNodeUserGroupModelsUserGroupModelsItem["ModifiedTime"].asString();
+		if(!resultNodeUserGroupModelsUserGroupModelsItem["ModifyUser"].isNull())
+			userGroupModelsItemObject.modifyUser = resultNodeUserGroupModelsUserGroupModelsItem["ModifyUser"].asString();
+		if(!resultNodeUserGroupModelsUserGroupModelsItem["ParentUsergroupId"].isNull())
+			userGroupModelsItemObject.parentUsergroupId = resultNodeUserGroupModelsUserGroupModelsItem["ParentUsergroupId"].asString();
 		if(!resultNodeUserGroupModelsUserGroupModelsItem["UsergroupDesc"].isNull())
 			userGroupModelsItemObject.usergroupDesc = resultNodeUserGroupModelsUserGroupModelsItem["UsergroupDesc"].asString();
 		if(!resultNodeUserGroupModelsUserGroupModelsItem["UsergroupId"].isNull())
 			userGroupModelsItemObject.usergroupId = resultNodeUserGroupModelsUserGroupModelsItem["UsergroupId"].asString();
-		if(!resultNodeUserGroupModelsUserGroupModelsItem["ModifyUser"].isNull())
-			userGroupModelsItemObject.modifyUser = resultNodeUserGroupModelsUserGroupModelsItem["ModifyUser"].asString();
+		if(!resultNodeUserGroupModelsUserGroupModelsItem["UsergroupName"].isNull())
+			userGroupModelsItemObject.usergroupName = resultNodeUserGroupModelsUserGroupModelsItem["UsergroupName"].asString();
 		result_.userGroupModels.push_back(userGroupModelsItemObject);
 	}
 		auto allFailedUserGroupIds = resultNode["FailedUserGroupIds"]["FailedUserGroupIds"];

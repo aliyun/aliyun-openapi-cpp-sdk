@@ -32,8 +32,6 @@ public:
 	~QueryCubePerformanceRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
 	int getPageSize() const;
@@ -44,17 +42,19 @@ public:
 	void setQueryType(const std::string &queryType);
 	std::string getCubeId() const;
 	void setCubeId(const std::string &cubeId);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 	std::string getWorkspaceId() const;
 	void setWorkspaceId(const std::string &workspaceId);
 
 private:
 	std::string accessPoint_;
-	std::string signType_;
 	int pageNum_;
 	int pageSize_;
 	int costTimeAvgMin_;
 	std::string queryType_;
 	std::string cubeId_;
+	std::string signType_;
 	std::string workspaceId_;
 };
 } // namespace Model

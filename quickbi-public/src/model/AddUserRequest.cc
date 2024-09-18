@@ -61,24 +61,6 @@ void AddUserRequest::setAccountType(int accountType) {
   setParameter(std::string("AccountType"), std::to_string(accountType));
 }
 
-int AddUserRequest::getUserType() const {
-  return userType_;
-}
-
-void AddUserRequest::setUserType(int userType) {
-  userType_ = userType;
-  setParameter(std::string("UserType"), std::to_string(userType));
-}
-
-std::string AddUserRequest::getSignType() const {
-  return signType_;
-}
-
-void AddUserRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string AddUserRequest::getAccountId() const {
   return accountId_;
 }
@@ -106,15 +88,6 @@ void AddUserRequest::setAccountName(const std::string &accountName) {
   setParameter(std::string("AccountName"), accountName);
 }
 
-std::string AddUserRequest::getPhone() const {
-  return phone_;
-}
-
-void AddUserRequest::setPhone(const std::string &phone) {
-  phone_ = phone;
-  setParameter(std::string("Phone"), phone);
-}
-
 std::string AddUserRequest::getNickName() const {
   return nickName_;
 }
@@ -140,5 +113,32 @@ std::string AddUserRequest::getEmail() const {
 void AddUserRequest::setEmail(const std::string &email) {
   email_ = email;
   setParameter(std::string("Email"), email);
+}
+
+int AddUserRequest::getUserType() const {
+  return userType_;
+}
+
+void AddUserRequest::setUserType(int userType) {
+  userType_ = userType;
+  setParameter(std::string("UserType"), std::to_string(userType));
+}
+
+std::string AddUserRequest::getSignType() const {
+  return signType_;
+}
+
+void AddUserRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
+}
+
+std::string AddUserRequest::getPhone() const {
+  return phone_;
+}
+
+void AddUserRequest::setPhone(const std::string &phone) {
+  phone_ = phone;
+  setParameter(std::string("Phone"), phone);
 }
 

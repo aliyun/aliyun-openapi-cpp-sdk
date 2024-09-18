@@ -52,24 +52,6 @@ void UpdateUserRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-int UpdateUserRequest::getUserType() const {
-  return userType_;
-}
-
-void UpdateUserRequest::setUserType(int userType) {
-  userType_ = userType;
-  setParameter(std::string("UserType"), std::to_string(userType));
-}
-
-std::string UpdateUserRequest::getSignType() const {
-  return signType_;
-}
-
-void UpdateUserRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string UpdateUserRequest::getUserId() const {
   return userId_;
 }
@@ -97,15 +79,6 @@ void UpdateUserRequest::setRoleIds(const std::string &roleIds) {
   setParameter(std::string("RoleIds"), roleIds);
 }
 
-std::string UpdateUserRequest::getPhone() const {
-  return phone_;
-}
-
-void UpdateUserRequest::setPhone(const std::string &phone) {
-  phone_ = phone;
-  setParameter(std::string("Phone"), phone);
-}
-
 std::string UpdateUserRequest::getNickName() const {
   return nickName_;
 }
@@ -131,5 +104,32 @@ std::string UpdateUserRequest::getEmail() const {
 void UpdateUserRequest::setEmail(const std::string &email) {
   email_ = email;
   setParameter(std::string("Email"), email);
+}
+
+int UpdateUserRequest::getUserType() const {
+  return userType_;
+}
+
+void UpdateUserRequest::setUserType(int userType) {
+  userType_ = userType;
+  setParameter(std::string("UserType"), std::to_string(userType));
+}
+
+std::string UpdateUserRequest::getSignType() const {
+  return signType_;
+}
+
+void UpdateUserRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
+}
+
+std::string UpdateUserRequest::getPhone() const {
+  return phone_;
+}
+
+void UpdateUserRequest::setPhone(const std::string &phone) {
+  phone_ = phone;
+  setParameter(std::string("Phone"), phone);
 }
 

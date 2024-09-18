@@ -30,21 +30,21 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryDataServiceRequest : public RpcSer
 public:
 	QueryDataServiceRequest();
 	~QueryDataServiceRequest();
-	std::string getReturnFields() const;
-	void setReturnFields(const std::string &returnFields);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
+	std::string getReturnFields() const;
+	void setReturnFields(const std::string &returnFields);
 	std::string getConditions() const;
 	void setConditions(const std::string &conditions);
 	std::string getApiId() const;
 	void setApiId(const std::string &apiId);
 
 private:
-	std::string returnFields_;
 	std::string accessPoint_;
 	std::string signType_;
+	std::string returnFields_;
 	std::string conditions_;
 	std::string apiId_;
 };

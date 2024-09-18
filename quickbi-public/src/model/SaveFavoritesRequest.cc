@@ -25,15 +25,6 @@ SaveFavoritesRequest::SaveFavoritesRequest()
 
 SaveFavoritesRequest::~SaveFavoritesRequest() {}
 
-std::string SaveFavoritesRequest::getWorksId() const {
-  return worksId_;
-}
-
-void SaveFavoritesRequest::setWorksId(const std::string &worksId) {
-  worksId_ = worksId;
-  setParameter(std::string("WorksId"), worksId);
-}
-
 std::string SaveFavoritesRequest::getWorksType() const {
   return worksType_;
 }
@@ -68,5 +59,14 @@ std::string SaveFavoritesRequest::getUserId() const {
 void SaveFavoritesRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+std::string SaveFavoritesRequest::getWorksId() const {
+  return worksId_;
+}
+
+void SaveFavoritesRequest::setWorksId(const std::string &worksId) {
+  worksId_ = worksId;
+  setParameter(std::string("WorksId"), worksId);
 }
 

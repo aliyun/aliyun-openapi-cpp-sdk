@@ -34,24 +34,6 @@ void ListApiDatasourceRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-int ListApiDatasourceRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListApiDatasourceRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
-std::string ListApiDatasourceRequest::getSignType() const {
-  return signType_;
-}
-
-void ListApiDatasourceRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 int ListApiDatasourceRequest::getPageNum() const {
   return pageNum_;
 }
@@ -61,6 +43,15 @@ void ListApiDatasourceRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
+int ListApiDatasourceRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListApiDatasourceRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
 std::string ListApiDatasourceRequest::getKeyWord() const {
   return keyWord_;
 }
@@ -68,6 +59,15 @@ std::string ListApiDatasourceRequest::getKeyWord() const {
 void ListApiDatasourceRequest::setKeyWord(const std::string &keyWord) {
   keyWord_ = keyWord;
   setParameter(std::string("KeyWord"), keyWord);
+}
+
+std::string ListApiDatasourceRequest::getSignType() const {
+  return signType_;
+}
+
+void ListApiDatasourceRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 std::string ListApiDatasourceRequest::getWorkspaceId() const {

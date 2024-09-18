@@ -46,18 +46,18 @@ void QueryDataServiceResult::parse(const std::string &payload)
 	for (auto resultNodeHeadersHeadersItem : allHeadersNode)
 	{
 		Result::HeadersItem headersItemObject;
-		if(!resultNodeHeadersHeadersItem["Type"].isNull())
-			headersItemObject.type = resultNodeHeadersHeadersItem["Type"].asString();
+		if(!resultNodeHeadersHeadersItem["Aggregator"].isNull())
+			headersItemObject.aggregator = resultNodeHeadersHeadersItem["Aggregator"].asString();
+		if(!resultNodeHeadersHeadersItem["Column"].isNull())
+			headersItemObject.column = resultNodeHeadersHeadersItem["Column"].asString();
 		if(!resultNodeHeadersHeadersItem["DataType"].isNull())
 			headersItemObject.dataType = resultNodeHeadersHeadersItem["DataType"].asString();
 		if(!resultNodeHeadersHeadersItem["Granularity"].isNull())
 			headersItemObject.granularity = resultNodeHeadersHeadersItem["Granularity"].asString();
 		if(!resultNodeHeadersHeadersItem["Label"].isNull())
 			headersItemObject.label = resultNodeHeadersHeadersItem["Label"].asString();
-		if(!resultNodeHeadersHeadersItem["Column"].isNull())
-			headersItemObject.column = resultNodeHeadersHeadersItem["Column"].asString();
-		if(!resultNodeHeadersHeadersItem["Aggregator"].isNull())
-			headersItemObject.aggregator = resultNodeHeadersHeadersItem["Aggregator"].asString();
+		if(!resultNodeHeadersHeadersItem["Type"].isNull())
+			headersItemObject.type = resultNodeHeadersHeadersItem["Type"].asString();
 		result_.headers.push_back(headersItemObject);
 	}
 		auto allValues = resultNode["Values"]["Values"];

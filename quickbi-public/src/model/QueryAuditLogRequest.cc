@@ -34,15 +34,6 @@ void QueryAuditLogRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string QueryAuditLogRequest::getSignType() const {
-  return signType_;
-}
-
-void QueryAuditLogRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string QueryAuditLogRequest::getStartDate() const {
   return startDate_;
 }
@@ -50,6 +41,24 @@ std::string QueryAuditLogRequest::getStartDate() const {
 void QueryAuditLogRequest::setStartDate(const std::string &startDate) {
   startDate_ = startDate;
   setParameter(std::string("StartDate"), startDate);
+}
+
+std::string QueryAuditLogRequest::getLogType() const {
+  return logType_;
+}
+
+void QueryAuditLogRequest::setLogType(const std::string &logType) {
+  logType_ = logType;
+  setParameter(std::string("LogType"), logType);
+}
+
+std::string QueryAuditLogRequest::getSignType() const {
+  return signType_;
+}
+
+void QueryAuditLogRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 std::string QueryAuditLogRequest::getResourceType() const {
@@ -68,15 +77,6 @@ std::string QueryAuditLogRequest::getOperatorTypes() const {
 void QueryAuditLogRequest::setOperatorTypes(const std::string &operatorTypes) {
   operatorTypes_ = operatorTypes;
   setParameter(std::string("OperatorTypes"), operatorTypes);
-}
-
-std::string QueryAuditLogRequest::getLogType() const {
-  return logType_;
-}
-
-void QueryAuditLogRequest::setLogType(const std::string &logType) {
-  logType_ = logType;
-  setParameter(std::string("LogType"), logType);
 }
 
 std::string QueryAuditLogRequest::getEndDate() const {

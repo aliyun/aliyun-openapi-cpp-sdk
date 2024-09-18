@@ -25,15 +25,6 @@ QueryUserListRequest::QueryUserListRequest()
 
 QueryUserListRequest::~QueryUserListRequest() {}
 
-int QueryUserListRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void QueryUserListRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 int QueryUserListRequest::getAccountType() const {
   return accountType_;
 }
@@ -52,13 +43,22 @@ void QueryUserListRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string QueryUserListRequest::getSignType() const {
-  return signType_;
+int QueryUserListRequest::getPageNum() const {
+  return pageNum_;
 }
 
-void QueryUserListRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
+void QueryUserListRequest::setPageNum(int pageNum) {
+  pageNum_ = pageNum;
+  setParameter(std::string("PageNum"), std::to_string(pageNum));
+}
+
+int QueryUserListRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void QueryUserListRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
 std::string QueryUserListRequest::getKeyword() const {
@@ -70,12 +70,12 @@ void QueryUserListRequest::setKeyword(const std::string &keyword) {
   setParameter(std::string("Keyword"), keyword);
 }
 
-int QueryUserListRequest::getPageNum() const {
-  return pageNum_;
+std::string QueryUserListRequest::getSignType() const {
+  return signType_;
 }
 
-void QueryUserListRequest::setPageNum(int pageNum) {
-  pageNum_ = pageNum;
-  setParameter(std::string("PageNum"), std::to_string(pageNum));
+void QueryUserListRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 

@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Result
 				{
-					int usedTicketNum;
 					std::string cmptId;
+					int usedTicketNum;
 					int maxTicketNum;
 					std::string registerTime;
 					std::string accessTicket;
