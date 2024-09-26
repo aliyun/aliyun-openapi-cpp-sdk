@@ -36,6 +36,8 @@ public:
 	~DescribeLiveUserDomainsRequest();
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
 	int getPageSize() const;
@@ -57,6 +59,7 @@ public:
 
 private:
 	int pageNumber_;
+	std::string resourceGroupId_;
 	std::string securityToken_;
 	int pageSize_;
 	std::string regionName_;

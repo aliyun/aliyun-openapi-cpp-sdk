@@ -64,6 +64,8 @@ void DescribeLiveDomainDetailResult::parse(const std::string &payload)
 		domainDetail_.sSLPub = domainDetailNode["SSLPub"].asString();
 	if(!domainDetailNode["Scope"].isNull())
 		domainDetail_.scope = domainDetailNode["Scope"].asString();
+	if(!domainDetailNode["ResourceGroupId"].isNull())
+		domainDetail_.resourceGroupId = domainDetailNode["ResourceGroupId"].asString();
 
 }
 

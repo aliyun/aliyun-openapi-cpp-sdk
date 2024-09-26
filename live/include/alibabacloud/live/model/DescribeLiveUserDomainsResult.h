@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string description;
 					std::string liveDomainStatus;
+					std::string resourceGroupId;
 					std::string domainName;
 					std::string liveDomainType;
 					std::string regionName;

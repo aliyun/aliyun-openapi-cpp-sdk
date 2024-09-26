@@ -25,6 +25,15 @@ AddLiveDomainRequest::AddLiveDomainRequest()
 
 AddLiveDomainRequest::~AddLiveDomainRequest() {}
 
+std::string AddLiveDomainRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void AddLiveDomainRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string AddLiveDomainRequest::getSecurityToken() const {
   return securityToken_;
 }

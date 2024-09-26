@@ -34,6 +34,15 @@ void DescribeLiveUserDomainsRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeLiveUserDomainsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeLiveUserDomainsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeLiveUserDomainsRequest::getSecurityToken() const {
   return securityToken_;
 }

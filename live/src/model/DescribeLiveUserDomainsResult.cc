@@ -59,6 +59,8 @@ void DescribeLiveUserDomainsResult::parse(const std::string &payload)
 			domainsObject.liveDomainType = valueDomainsPageData["LiveDomainType"].asString();
 		if(!valueDomainsPageData["RegionName"].isNull())
 			domainsObject.regionName = valueDomainsPageData["RegionName"].asString();
+		if(!valueDomainsPageData["ResourceGroupId"].isNull())
+			domainsObject.resourceGroupId = valueDomainsPageData["ResourceGroupId"].asString();
 		domains_.push_back(domainsObject);
 	}
 	if(!value["PageNumber"].isNull())

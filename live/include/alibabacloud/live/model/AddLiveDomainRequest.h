@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT AddLiveDomainRequest : public RpcServiceRequest {
 public:
 	AddLiveDomainRequest();
 	~AddLiveDomainRequest();
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
 	std::string getScope() const;
@@ -50,6 +52,7 @@ public:
 	void setLiveDomainType(const std::string &liveDomainType);
 
 private:
+	std::string resourceGroupId_;
 	std::string securityToken_;
 	std::string scope_;
 	std::string topLevelDomain_;

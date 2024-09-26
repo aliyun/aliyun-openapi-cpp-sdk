@@ -13263,6 +13263,42 @@ LiveClient::UnbanLiveMessageGroupOutcomeCallable LiveClient::unbanLiveMessageGro
 	return task->get_future();
 }
 
+LiveClient::UpdateCasterResourceGroupOutcome LiveClient::updateCasterResourceGroup(const UpdateCasterResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateCasterResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateCasterResourceGroupOutcome(UpdateCasterResourceGroupResult(outcome.result()));
+	else
+		return UpdateCasterResourceGroupOutcome(outcome.error());
+}
+
+void LiveClient::updateCasterResourceGroupAsync(const UpdateCasterResourceGroupRequest& request, const UpdateCasterResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateCasterResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateCasterResourceGroupOutcomeCallable LiveClient::updateCasterResourceGroupCallable(const UpdateCasterResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateCasterResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->updateCasterResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::UpdateCasterSceneAudioOutcome LiveClient::updateCasterSceneAudio(const UpdateCasterSceneAudioRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -13329,6 +13365,42 @@ LiveClient::UpdateCasterSceneConfigOutcomeCallable LiveClient::updateCasterScene
 			[this, request]()
 			{
 			return this->updateCasterSceneConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::UpdateCustomLiveStreamTranscodeOutcome LiveClient::updateCustomLiveStreamTranscode(const UpdateCustomLiveStreamTranscodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateCustomLiveStreamTranscodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateCustomLiveStreamTranscodeOutcome(UpdateCustomLiveStreamTranscodeResult(outcome.result()));
+	else
+		return UpdateCustomLiveStreamTranscodeOutcome(outcome.error());
+}
+
+void LiveClient::updateCustomLiveStreamTranscodeAsync(const UpdateCustomLiveStreamTranscodeRequest& request, const UpdateCustomLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateCustomLiveStreamTranscode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateCustomLiveStreamTranscodeOutcomeCallable LiveClient::updateCustomLiveStreamTranscodeCallable(const UpdateCustomLiveStreamTranscodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateCustomLiveStreamTranscodeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateCustomLiveStreamTranscode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -14019,6 +14091,42 @@ LiveClient::UpdateLiveStreamMonitorOutcomeCallable LiveClient::updateLiveStreamM
 	return task->get_future();
 }
 
+LiveClient::UpdateLiveStreamTranscodeOutcome LiveClient::updateLiveStreamTranscode(const UpdateLiveStreamTranscodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLiveStreamTranscodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLiveStreamTranscodeOutcome(UpdateLiveStreamTranscodeResult(outcome.result()));
+	else
+		return UpdateLiveStreamTranscodeOutcome(outcome.error());
+}
+
+void LiveClient::updateLiveStreamTranscodeAsync(const UpdateLiveStreamTranscodeRequest& request, const UpdateLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLiveStreamTranscode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateLiveStreamTranscodeOutcomeCallable LiveClient::updateLiveStreamTranscodeCallable(const UpdateLiveStreamTranscodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLiveStreamTranscodeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLiveStreamTranscode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::UpdateLiveStreamWatermarkOutcome LiveClient::updateLiveStreamWatermark(const UpdateLiveStreamWatermarkRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -14229,6 +14337,42 @@ LiveClient::UpdateRtcMPUEventSubOutcomeCallable LiveClient::updateRtcMPUEventSub
 			[this, request]()
 			{
 			return this->updateRtcMPUEventSub(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::UpdateRtsLiveStreamTranscodeOutcome LiveClient::updateRtsLiveStreamTranscode(const UpdateRtsLiveStreamTranscodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateRtsLiveStreamTranscodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateRtsLiveStreamTranscodeOutcome(UpdateRtsLiveStreamTranscodeResult(outcome.result()));
+	else
+		return UpdateRtsLiveStreamTranscodeOutcome(outcome.error());
+}
+
+void LiveClient::updateRtsLiveStreamTranscodeAsync(const UpdateRtsLiveStreamTranscodeRequest& request, const UpdateRtsLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateRtsLiveStreamTranscode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateRtsLiveStreamTranscodeOutcomeCallable LiveClient::updateRtsLiveStreamTranscodeCallable(const UpdateRtsLiveStreamTranscodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateRtsLiveStreamTranscodeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateRtsLiveStreamTranscode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

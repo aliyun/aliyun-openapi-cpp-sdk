@@ -756,10 +756,14 @@
 #include "model/StopRtcAsrTaskResult.h"
 #include "model/UnbanLiveMessageGroupRequest.h"
 #include "model/UnbanLiveMessageGroupResult.h"
+#include "model/UpdateCasterResourceGroupRequest.h"
+#include "model/UpdateCasterResourceGroupResult.h"
 #include "model/UpdateCasterSceneAudioRequest.h"
 #include "model/UpdateCasterSceneAudioResult.h"
 #include "model/UpdateCasterSceneConfigRequest.h"
 #include "model/UpdateCasterSceneConfigResult.h"
+#include "model/UpdateCustomLiveStreamTranscodeRequest.h"
+#include "model/UpdateCustomLiveStreamTranscodeResult.h"
 #include "model/UpdateEdgeTranscodeJobRequest.h"
 #include "model/UpdateEdgeTranscodeJobResult.h"
 #include "model/UpdateEventSubRequest.h"
@@ -798,6 +802,8 @@
 #include "model/UpdateLiveSnapshotNotifyConfigResult.h"
 #include "model/UpdateLiveStreamMonitorRequest.h"
 #include "model/UpdateLiveStreamMonitorResult.h"
+#include "model/UpdateLiveStreamTranscodeRequest.h"
+#include "model/UpdateLiveStreamTranscodeResult.h"
 #include "model/UpdateLiveStreamWatermarkRequest.h"
 #include "model/UpdateLiveStreamWatermarkResult.h"
 #include "model/UpdateLiveStreamWatermarkRuleRequest.h"
@@ -810,6 +816,8 @@
 #include "model/UpdateMixStreamResult.h"
 #include "model/UpdateRtcMPUEventSubRequest.h"
 #include "model/UpdateRtcMPUEventSubResult.h"
+#include "model/UpdateRtsLiveStreamTranscodeRequest.h"
+#include "model/UpdateRtsLiveStreamTranscodeResult.h"
 #include "model/VerifyLiveDomainOwnerRequest.h"
 #include "model/VerifyLiveDomainOwnerResult.h"
 
@@ -1922,12 +1930,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnbanLiveMessageGroupResult> UnbanLiveMessageGroupOutcome;
 			typedef std::future<UnbanLiveMessageGroupOutcome> UnbanLiveMessageGroupOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UnbanLiveMessageGroupRequest&, const UnbanLiveMessageGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbanLiveMessageGroupAsyncHandler;
+			typedef Outcome<Error, Model::UpdateCasterResourceGroupResult> UpdateCasterResourceGroupOutcome;
+			typedef std::future<UpdateCasterResourceGroupOutcome> UpdateCasterResourceGroupOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateCasterResourceGroupRequest&, const UpdateCasterResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCasterResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::UpdateCasterSceneAudioResult> UpdateCasterSceneAudioOutcome;
 			typedef std::future<UpdateCasterSceneAudioOutcome> UpdateCasterSceneAudioOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UpdateCasterSceneAudioRequest&, const UpdateCasterSceneAudioOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCasterSceneAudioAsyncHandler;
 			typedef Outcome<Error, Model::UpdateCasterSceneConfigResult> UpdateCasterSceneConfigOutcome;
 			typedef std::future<UpdateCasterSceneConfigOutcome> UpdateCasterSceneConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UpdateCasterSceneConfigRequest&, const UpdateCasterSceneConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCasterSceneConfigAsyncHandler;
+			typedef Outcome<Error, Model::UpdateCustomLiveStreamTranscodeResult> UpdateCustomLiveStreamTranscodeOutcome;
+			typedef std::future<UpdateCustomLiveStreamTranscodeOutcome> UpdateCustomLiveStreamTranscodeOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateCustomLiveStreamTranscodeRequest&, const UpdateCustomLiveStreamTranscodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCustomLiveStreamTranscodeAsyncHandler;
 			typedef Outcome<Error, Model::UpdateEdgeTranscodeJobResult> UpdateEdgeTranscodeJobOutcome;
 			typedef std::future<UpdateEdgeTranscodeJobOutcome> UpdateEdgeTranscodeJobOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UpdateEdgeTranscodeJobRequest&, const UpdateEdgeTranscodeJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEdgeTranscodeJobAsyncHandler;
@@ -1985,6 +1999,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateLiveStreamMonitorResult> UpdateLiveStreamMonitorOutcome;
 			typedef std::future<UpdateLiveStreamMonitorOutcome> UpdateLiveStreamMonitorOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UpdateLiveStreamMonitorRequest&, const UpdateLiveStreamMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveStreamMonitorAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLiveStreamTranscodeResult> UpdateLiveStreamTranscodeOutcome;
+			typedef std::future<UpdateLiveStreamTranscodeOutcome> UpdateLiveStreamTranscodeOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateLiveStreamTranscodeRequest&, const UpdateLiveStreamTranscodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveStreamTranscodeAsyncHandler;
 			typedef Outcome<Error, Model::UpdateLiveStreamWatermarkResult> UpdateLiveStreamWatermarkOutcome;
 			typedef std::future<UpdateLiveStreamWatermarkOutcome> UpdateLiveStreamWatermarkOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UpdateLiveStreamWatermarkRequest&, const UpdateLiveStreamWatermarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveStreamWatermarkAsyncHandler;
@@ -2003,6 +2020,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateRtcMPUEventSubResult> UpdateRtcMPUEventSubOutcome;
 			typedef std::future<UpdateRtcMPUEventSubOutcome> UpdateRtcMPUEventSubOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UpdateRtcMPUEventSubRequest&, const UpdateRtcMPUEventSubOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRtcMPUEventSubAsyncHandler;
+			typedef Outcome<Error, Model::UpdateRtsLiveStreamTranscodeResult> UpdateRtsLiveStreamTranscodeOutcome;
+			typedef std::future<UpdateRtsLiveStreamTranscodeOutcome> UpdateRtsLiveStreamTranscodeOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateRtsLiveStreamTranscodeRequest&, const UpdateRtsLiveStreamTranscodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRtsLiveStreamTranscodeAsyncHandler;
 			typedef Outcome<Error, Model::VerifyLiveDomainOwnerResult> VerifyLiveDomainOwnerOutcome;
 			typedef std::future<VerifyLiveDomainOwnerOutcome> VerifyLiveDomainOwnerOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::VerifyLiveDomainOwnerRequest&, const VerifyLiveDomainOwnerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyLiveDomainOwnerAsyncHandler;
@@ -3112,12 +3132,18 @@ namespace AlibabaCloud
 			UnbanLiveMessageGroupOutcome unbanLiveMessageGroup(const Model::UnbanLiveMessageGroupRequest &request)const;
 			void unbanLiveMessageGroupAsync(const Model::UnbanLiveMessageGroupRequest& request, const UnbanLiveMessageGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnbanLiveMessageGroupOutcomeCallable unbanLiveMessageGroupCallable(const Model::UnbanLiveMessageGroupRequest& request) const;
+			UpdateCasterResourceGroupOutcome updateCasterResourceGroup(const Model::UpdateCasterResourceGroupRequest &request)const;
+			void updateCasterResourceGroupAsync(const Model::UpdateCasterResourceGroupRequest& request, const UpdateCasterResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateCasterResourceGroupOutcomeCallable updateCasterResourceGroupCallable(const Model::UpdateCasterResourceGroupRequest& request) const;
 			UpdateCasterSceneAudioOutcome updateCasterSceneAudio(const Model::UpdateCasterSceneAudioRequest &request)const;
 			void updateCasterSceneAudioAsync(const Model::UpdateCasterSceneAudioRequest& request, const UpdateCasterSceneAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateCasterSceneAudioOutcomeCallable updateCasterSceneAudioCallable(const Model::UpdateCasterSceneAudioRequest& request) const;
 			UpdateCasterSceneConfigOutcome updateCasterSceneConfig(const Model::UpdateCasterSceneConfigRequest &request)const;
 			void updateCasterSceneConfigAsync(const Model::UpdateCasterSceneConfigRequest& request, const UpdateCasterSceneConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateCasterSceneConfigOutcomeCallable updateCasterSceneConfigCallable(const Model::UpdateCasterSceneConfigRequest& request) const;
+			UpdateCustomLiveStreamTranscodeOutcome updateCustomLiveStreamTranscode(const Model::UpdateCustomLiveStreamTranscodeRequest &request)const;
+			void updateCustomLiveStreamTranscodeAsync(const Model::UpdateCustomLiveStreamTranscodeRequest& request, const UpdateCustomLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateCustomLiveStreamTranscodeOutcomeCallable updateCustomLiveStreamTranscodeCallable(const Model::UpdateCustomLiveStreamTranscodeRequest& request) const;
 			UpdateEdgeTranscodeJobOutcome updateEdgeTranscodeJob(const Model::UpdateEdgeTranscodeJobRequest &request)const;
 			void updateEdgeTranscodeJobAsync(const Model::UpdateEdgeTranscodeJobRequest& request, const UpdateEdgeTranscodeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateEdgeTranscodeJobOutcomeCallable updateEdgeTranscodeJobCallable(const Model::UpdateEdgeTranscodeJobRequest& request) const;
@@ -3175,6 +3201,9 @@ namespace AlibabaCloud
 			UpdateLiveStreamMonitorOutcome updateLiveStreamMonitor(const Model::UpdateLiveStreamMonitorRequest &request)const;
 			void updateLiveStreamMonitorAsync(const Model::UpdateLiveStreamMonitorRequest& request, const UpdateLiveStreamMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLiveStreamMonitorOutcomeCallable updateLiveStreamMonitorCallable(const Model::UpdateLiveStreamMonitorRequest& request) const;
+			UpdateLiveStreamTranscodeOutcome updateLiveStreamTranscode(const Model::UpdateLiveStreamTranscodeRequest &request)const;
+			void updateLiveStreamTranscodeAsync(const Model::UpdateLiveStreamTranscodeRequest& request, const UpdateLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLiveStreamTranscodeOutcomeCallable updateLiveStreamTranscodeCallable(const Model::UpdateLiveStreamTranscodeRequest& request) const;
 			UpdateLiveStreamWatermarkOutcome updateLiveStreamWatermark(const Model::UpdateLiveStreamWatermarkRequest &request)const;
 			void updateLiveStreamWatermarkAsync(const Model::UpdateLiveStreamWatermarkRequest& request, const UpdateLiveStreamWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLiveStreamWatermarkOutcomeCallable updateLiveStreamWatermarkCallable(const Model::UpdateLiveStreamWatermarkRequest& request) const;
@@ -3193,6 +3222,9 @@ namespace AlibabaCloud
 			UpdateRtcMPUEventSubOutcome updateRtcMPUEventSub(const Model::UpdateRtcMPUEventSubRequest &request)const;
 			void updateRtcMPUEventSubAsync(const Model::UpdateRtcMPUEventSubRequest& request, const UpdateRtcMPUEventSubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateRtcMPUEventSubOutcomeCallable updateRtcMPUEventSubCallable(const Model::UpdateRtcMPUEventSubRequest& request) const;
+			UpdateRtsLiveStreamTranscodeOutcome updateRtsLiveStreamTranscode(const Model::UpdateRtsLiveStreamTranscodeRequest &request)const;
+			void updateRtsLiveStreamTranscodeAsync(const Model::UpdateRtsLiveStreamTranscodeRequest& request, const UpdateRtsLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateRtsLiveStreamTranscodeOutcomeCallable updateRtsLiveStreamTranscodeCallable(const Model::UpdateRtsLiveStreamTranscodeRequest& request) const;
 			VerifyLiveDomainOwnerOutcome verifyLiveDomainOwner(const Model::VerifyLiveDomainOwnerRequest &request)const;
 			void verifyLiveDomainOwnerAsync(const Model::VerifyLiveDomainOwnerRequest& request, const VerifyLiveDomainOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VerifyLiveDomainOwnerOutcomeCallable verifyLiveDomainOwnerCallable(const Model::VerifyLiveDomainOwnerRequest& request) const;

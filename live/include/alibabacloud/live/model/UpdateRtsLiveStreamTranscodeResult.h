@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINDETAILRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINDETAILRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_UPDATERTSLIVESTREAMTRANSCODERESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_UPDATERTSLIVESTREAMTRANSCODERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainDetailResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT UpdateRtsLiveStreamTranscodeResult : public ServiceResult
 			{
 			public:
-				struct DomainDetail
-				{
-					std::string description;
-					std::string resourceGroupId;
-					std::string domainName;
-					std::string sSLPub;
-					std::string gmtModified;
-					std::string gmtCreated;
-					std::string cname;
-					std::string sSLProtocol;
-					std::string scope;
-					std::string liveDomainType;
-					std::string region;
-					std::string certName;
-					std::string domainStatus;
-				};
 
 
-				DescribeLiveDomainDetailResult();
-				explicit DescribeLiveDomainDetailResult(const std::string &payload);
-				~DescribeLiveDomainDetailResult();
-				DomainDetail getDomainDetail()const;
+				UpdateRtsLiveStreamTranscodeResult();
+				explicit UpdateRtsLiveStreamTranscodeResult(const std::string &payload);
+				~UpdateRtsLiveStreamTranscodeResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				DomainDetail domainDetail_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINDETAILRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_UPDATERTSLIVESTREAMTRANSCODERESULT_H_

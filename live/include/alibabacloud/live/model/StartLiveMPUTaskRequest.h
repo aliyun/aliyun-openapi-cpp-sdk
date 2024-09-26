@@ -29,6 +29,8 @@ namespace Model {
 class ALIBABACLOUD_LIVE_EXPORT StartLiveMPUTaskRequest : public RpcServiceRequest {
 public:
 	struct SingleSubParams {
+		std::string string;
+		std::vector<std::string> mixAudioUserIds;
 		std::string streamType;
 		std::string sourceType;
 		std::string userId;

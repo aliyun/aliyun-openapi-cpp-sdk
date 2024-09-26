@@ -755,10 +755,14 @@ set(live_public_header_model
 	include/alibabacloud/live/model/StopRtcAsrTaskResult.h
 	include/alibabacloud/live/model/UnbanLiveMessageGroupRequest.h
 	include/alibabacloud/live/model/UnbanLiveMessageGroupResult.h
+	include/alibabacloud/live/model/UpdateCasterResourceGroupRequest.h
+	include/alibabacloud/live/model/UpdateCasterResourceGroupResult.h
 	include/alibabacloud/live/model/UpdateCasterSceneAudioRequest.h
 	include/alibabacloud/live/model/UpdateCasterSceneAudioResult.h
 	include/alibabacloud/live/model/UpdateCasterSceneConfigRequest.h
 	include/alibabacloud/live/model/UpdateCasterSceneConfigResult.h
+	include/alibabacloud/live/model/UpdateCustomLiveStreamTranscodeRequest.h
+	include/alibabacloud/live/model/UpdateCustomLiveStreamTranscodeResult.h
 	include/alibabacloud/live/model/UpdateEdgeTranscodeJobRequest.h
 	include/alibabacloud/live/model/UpdateEdgeTranscodeJobResult.h
 	include/alibabacloud/live/model/UpdateEventSubRequest.h
@@ -797,6 +801,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/UpdateLiveSnapshotNotifyConfigResult.h
 	include/alibabacloud/live/model/UpdateLiveStreamMonitorRequest.h
 	include/alibabacloud/live/model/UpdateLiveStreamMonitorResult.h
+	include/alibabacloud/live/model/UpdateLiveStreamTranscodeRequest.h
+	include/alibabacloud/live/model/UpdateLiveStreamTranscodeResult.h
 	include/alibabacloud/live/model/UpdateLiveStreamWatermarkRequest.h
 	include/alibabacloud/live/model/UpdateLiveStreamWatermarkResult.h
 	include/alibabacloud/live/model/UpdateLiveStreamWatermarkRuleRequest.h
@@ -809,6 +815,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/UpdateMixStreamResult.h
 	include/alibabacloud/live/model/UpdateRtcMPUEventSubRequest.h
 	include/alibabacloud/live/model/UpdateRtcMPUEventSubResult.h
+	include/alibabacloud/live/model/UpdateRtsLiveStreamTranscodeRequest.h
+	include/alibabacloud/live/model/UpdateRtsLiveStreamTranscodeResult.h
 	include/alibabacloud/live/model/VerifyLiveDomainOwnerRequest.h
 	include/alibabacloud/live/model/VerifyLiveDomainOwnerResult.h )
 
@@ -1548,10 +1556,14 @@ set(live_src
 	src/model/StopRtcAsrTaskResult.cc
 	src/model/UnbanLiveMessageGroupRequest.cc
 	src/model/UnbanLiveMessageGroupResult.cc
+	src/model/UpdateCasterResourceGroupRequest.cc
+	src/model/UpdateCasterResourceGroupResult.cc
 	src/model/UpdateCasterSceneAudioRequest.cc
 	src/model/UpdateCasterSceneAudioResult.cc
 	src/model/UpdateCasterSceneConfigRequest.cc
 	src/model/UpdateCasterSceneConfigResult.cc
+	src/model/UpdateCustomLiveStreamTranscodeRequest.cc
+	src/model/UpdateCustomLiveStreamTranscodeResult.cc
 	src/model/UpdateEdgeTranscodeJobRequest.cc
 	src/model/UpdateEdgeTranscodeJobResult.cc
 	src/model/UpdateEventSubRequest.cc
@@ -1590,6 +1602,8 @@ set(live_src
 	src/model/UpdateLiveSnapshotNotifyConfigResult.cc
 	src/model/UpdateLiveStreamMonitorRequest.cc
 	src/model/UpdateLiveStreamMonitorResult.cc
+	src/model/UpdateLiveStreamTranscodeRequest.cc
+	src/model/UpdateLiveStreamTranscodeResult.cc
 	src/model/UpdateLiveStreamWatermarkRequest.cc
 	src/model/UpdateLiveStreamWatermarkResult.cc
 	src/model/UpdateLiveStreamWatermarkRuleRequest.cc
@@ -1602,6 +1616,8 @@ set(live_src
 	src/model/UpdateMixStreamResult.cc
 	src/model/UpdateRtcMPUEventSubRequest.cc
 	src/model/UpdateRtcMPUEventSubResult.cc
+	src/model/UpdateRtsLiveStreamTranscodeRequest.cc
+	src/model/UpdateRtsLiveStreamTranscodeResult.cc
 	src/model/VerifyLiveDomainOwnerRequest.cc
 	src/model/VerifyLiveDomainOwnerResult.cc )
 

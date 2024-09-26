@@ -42,6 +42,9 @@ UpdateLiveMPUTaskRequest::SingleSubParams UpdateLiveMPUTaskRequest::getSingleSub
 
 void UpdateLiveMPUTaskRequest::setSingleSubParams(const UpdateLiveMPUTaskRequest::SingleSubParams &singleSubParams) {
   singleSubParams_ = singleSubParams;
+  for(int dep1 = 0; dep1 != singleSubParams.mixAudioUserIds.size(); dep1++) {
+    setParameter(std::string("SingleSubParams") + ".MixAudioUserIds." + std::to_string(dep1 + 1), singleSubParams.mixAudioUserIds[dep1]);
+  }
   setParameter(std::string("SingleSubParams") + ".StreamType", singleSubParams.streamType);
   setParameter(std::string("SingleSubParams") + ".SourceType", singleSubParams.sourceType);
   setParameter(std::string("SingleSubParams") + ".UserId", singleSubParams.userId);

@@ -32,6 +32,8 @@ public:
 		std::string uRL;
 	};
 	struct SingleSubParams {
+		std::string string;
+		std::vector<std::string> mixAudioUserIds;
 		std::string streamType;
 		std::string sourceType;
 		std::string userId;
