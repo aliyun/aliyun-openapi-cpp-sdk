@@ -26,6 +26,8 @@
 #include "model/GetInstanceRecordConfigResult.h"
 #include "model/ListInstanceRecordsRequest.h"
 #include "model/ListInstanceRecordsResult.h"
+#include "model/ListTerminalCommandsRequest.h"
+#include "model/ListTerminalCommandsResult.h"
 #include "model/LoginInstanceRequest.h"
 #include "model/LoginInstanceResult.h"
 #include "model/SetInstanceRecordConfigRequest.h"
@@ -47,6 +49,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListInstanceRecordsResult> ListInstanceRecordsOutcome;
 			typedef std::future<ListInstanceRecordsOutcome> ListInstanceRecordsOutcomeCallable;
 			typedef std::function<void(const Ecs_workbenchClient*, const Model::ListInstanceRecordsRequest&, const ListInstanceRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstanceRecordsAsyncHandler;
+			typedef Outcome<Error, Model::ListTerminalCommandsResult> ListTerminalCommandsOutcome;
+			typedef std::future<ListTerminalCommandsOutcome> ListTerminalCommandsOutcomeCallable;
+			typedef std::function<void(const Ecs_workbenchClient*, const Model::ListTerminalCommandsRequest&, const ListTerminalCommandsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTerminalCommandsAsyncHandler;
 			typedef Outcome<Error, Model::LoginInstanceResult> LoginInstanceOutcome;
 			typedef std::future<LoginInstanceOutcome> LoginInstanceOutcomeCallable;
 			typedef std::function<void(const Ecs_workbenchClient*, const Model::LoginInstanceRequest&, const LoginInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LoginInstanceAsyncHandler;
@@ -67,6 +72,9 @@ namespace AlibabaCloud
 			ListInstanceRecordsOutcome listInstanceRecords(const Model::ListInstanceRecordsRequest &request)const;
 			void listInstanceRecordsAsync(const Model::ListInstanceRecordsRequest& request, const ListInstanceRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstanceRecordsOutcomeCallable listInstanceRecordsCallable(const Model::ListInstanceRecordsRequest& request) const;
+			ListTerminalCommandsOutcome listTerminalCommands(const Model::ListTerminalCommandsRequest &request)const;
+			void listTerminalCommandsAsync(const Model::ListTerminalCommandsRequest& request, const ListTerminalCommandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTerminalCommandsOutcomeCallable listTerminalCommandsCallable(const Model::ListTerminalCommandsRequest& request) const;
 			LoginInstanceOutcome loginInstance(const Model::LoginInstanceRequest &request)const;
 			void loginInstanceAsync(const Model::LoginInstanceRequest& request, const LoginInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			LoginInstanceOutcomeCallable loginInstanceCallable(const Model::LoginInstanceRequest& request) const;

@@ -123,6 +123,42 @@ Ecs_workbenchClient::ListInstanceRecordsOutcomeCallable Ecs_workbenchClient::lis
 	return task->get_future();
 }
 
+Ecs_workbenchClient::ListTerminalCommandsOutcome Ecs_workbenchClient::listTerminalCommands(const ListTerminalCommandsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTerminalCommandsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTerminalCommandsOutcome(ListTerminalCommandsResult(outcome.result()));
+	else
+		return ListTerminalCommandsOutcome(outcome.error());
+}
+
+void Ecs_workbenchClient::listTerminalCommandsAsync(const ListTerminalCommandsRequest& request, const ListTerminalCommandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTerminalCommands(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Ecs_workbenchClient::ListTerminalCommandsOutcomeCallable Ecs_workbenchClient::listTerminalCommandsCallable(const ListTerminalCommandsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTerminalCommandsOutcome()>>(
+			[this, request]()
+			{
+			return this->listTerminalCommands(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Ecs_workbenchClient::LoginInstanceOutcome Ecs_workbenchClient::loginInstance(const LoginInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

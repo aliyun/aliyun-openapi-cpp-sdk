@@ -25,6 +25,8 @@ set(ecs-workbench_public_header_model
 	include/alibabacloud/ecs-workbench/model/GetInstanceRecordConfigResult.h
 	include/alibabacloud/ecs-workbench/model/ListInstanceRecordsRequest.h
 	include/alibabacloud/ecs-workbench/model/ListInstanceRecordsResult.h
+	include/alibabacloud/ecs-workbench/model/ListTerminalCommandsRequest.h
+	include/alibabacloud/ecs-workbench/model/ListTerminalCommandsResult.h
 	include/alibabacloud/ecs-workbench/model/LoginInstanceRequest.h
 	include/alibabacloud/ecs-workbench/model/LoginInstanceResult.h
 	include/alibabacloud/ecs-workbench/model/SetInstanceRecordConfigRequest.h
@@ -38,6 +40,8 @@ set(ecs-workbench_src
 	src/model/GetInstanceRecordConfigResult.cc
 	src/model/ListInstanceRecordsRequest.cc
 	src/model/ListInstanceRecordsResult.cc
+	src/model/ListTerminalCommandsRequest.cc
+	src/model/ListTerminalCommandsResult.cc
 	src/model/LoginInstanceRequest.cc
 	src/model/LoginInstanceResult.cc
 	src/model/SetInstanceRecordConfigRequest.cc
