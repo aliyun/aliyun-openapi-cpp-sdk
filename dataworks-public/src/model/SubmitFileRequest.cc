@@ -25,6 +25,15 @@ SubmitFileRequest::SubmitFileRequest()
 
 SubmitFileRequest::~SubmitFileRequest() {}
 
+std::string SubmitFileRequest::getProjectIdentifier() const {
+  return projectIdentifier_;
+}
+
+void SubmitFileRequest::setProjectIdentifier(const std::string &projectIdentifier) {
+  projectIdentifier_ = projectIdentifier;
+  setBodyParameter(std::string("ProjectIdentifier"), projectIdentifier);
+}
+
 bool SubmitFileRequest::getSkipAllDeployFileExtensions() const {
   return skipAllDeployFileExtensions_;
 }
@@ -50,15 +59,6 @@ long SubmitFileRequest::getProjectId() const {
 void SubmitFileRequest::setProjectId(long projectId) {
   projectId_ = projectId;
   setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
-std::string SubmitFileRequest::getProjectIdentifier() const {
-  return projectIdentifier_;
-}
-
-void SubmitFileRequest::setProjectIdentifier(const std::string &projectIdentifier) {
-  projectIdentifier_ = projectIdentifier;
-  setBodyParameter(std::string("ProjectIdentifier"), projectIdentifier);
 }
 
 long SubmitFileRequest::getFileId() const {

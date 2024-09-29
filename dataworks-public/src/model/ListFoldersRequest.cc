@@ -25,15 +25,6 @@ ListFoldersRequest::ListFoldersRequest()
 
 ListFoldersRequest::~ListFoldersRequest() {}
 
-int ListFoldersRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListFoldersRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 std::string ListFoldersRequest::getParentFolderPath() const {
   return parentFolderPath_;
 }
@@ -41,15 +32,6 @@ std::string ListFoldersRequest::getParentFolderPath() const {
 void ListFoldersRequest::setParentFolderPath(const std::string &parentFolderPath) {
   parentFolderPath_ = parentFolderPath;
   setBodyParameter(std::string("ParentFolderPath"), parentFolderPath);
-}
-
-long ListFoldersRequest::getProjectId() const {
-  return projectId_;
-}
-
-void ListFoldersRequest::setProjectId(long projectId) {
-  projectId_ = projectId;
-  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 
 std::string ListFoldersRequest::getProjectIdentifier() const {
@@ -68,5 +50,23 @@ int ListFoldersRequest::getPageNumber() const {
 void ListFoldersRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+int ListFoldersRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListFoldersRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+long ListFoldersRequest::getProjectId() const {
+  return projectId_;
+}
+
+void ListFoldersRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 

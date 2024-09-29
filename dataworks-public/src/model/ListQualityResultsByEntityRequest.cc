@@ -34,11 +34,11 @@ void ListQualityResultsByEntityRequest::setProjectName(const std::string &projec
   setBodyParameter(std::string("ProjectName"), projectName);
 }
 
-int ListQualityResultsByEntityRequest::getEntityId() const {
+long ListQualityResultsByEntityRequest::getEntityId() const {
   return entityId_;
 }
 
-void ListQualityResultsByEntityRequest::setEntityId(int entityId) {
+void ListQualityResultsByEntityRequest::setEntityId(long entityId) {
   entityId_ = entityId;
   setBodyParameter(std::string("EntityId"), std::to_string(entityId));
 }

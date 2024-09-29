@@ -142,6 +142,15 @@ void UpdateFileRequest::setInputList(const std::string &inputList) {
   setBodyParameter(std::string("InputList"), inputList);
 }
 
+bool UpdateFileRequest::getApplyScheduleImmediately() const {
+  return applyScheduleImmediately_;
+}
+
+void UpdateFileRequest::setApplyScheduleImmediately(bool applyScheduleImmediately) {
+  applyScheduleImmediately_ = applyScheduleImmediately;
+  setBodyParameter(std::string("ApplyScheduleImmediately"), applyScheduleImmediately ? "true" : "false");
+}
+
 std::string UpdateFileRequest::getRerunMode() const {
   return rerunMode_;
 }

@@ -28,6 +28,8 @@
 #include "model/AddMetaCollectionEntityResult.h"
 #include "model/AddProjectMemberToRoleRequest.h"
 #include "model/AddProjectMemberToRoleResult.h"
+#include "model/AddRecognizeRuleRequest.h"
+#include "model/AddRecognizeRuleResult.h"
 #include "model/AddToMetaCategoryRequest.h"
 #include "model/AddToMetaCategoryResult.h"
 #include "model/ApprovePermissionApplyOrderRequest.h"
@@ -84,6 +86,8 @@
 #include "model/CreateMetaCollectionResult.h"
 #include "model/CreatePermissionApplyOrderRequest.h"
 #include "model/CreatePermissionApplyOrderResult.h"
+#include "model/CreateProjectRequest.h"
+#include "model/CreateProjectResult.h"
 #include "model/CreateProjectMemberRequest.h"
 #include "model/CreateProjectMemberResult.h"
 #include "model/CreateQualityEntityRequest.h"
@@ -148,6 +152,8 @@
 #include "model/DeleteQualityRelativeNodeResult.h"
 #include "model/DeleteQualityRuleRequest.h"
 #include "model/DeleteQualityRuleResult.h"
+#include "model/DeleteRecognizeRuleRequest.h"
+#include "model/DeleteRecognizeRuleResult.h"
 #include "model/DeleteRemindRequest.h"
 #include "model/DeleteRemindResult.h"
 #include "model/DeleteTableRequest.h"
@@ -162,6 +168,48 @@
 #include "model/DeployFileResult.h"
 #include "model/DesensitizeDataRequest.h"
 #include "model/DesensitizeDataResult.h"
+#include "model/DsgDesensPlanAddOrUpdateRequest.h"
+#include "model/DsgDesensPlanAddOrUpdateResult.h"
+#include "model/DsgDesensPlanDeleteRequest.h"
+#include "model/DsgDesensPlanDeleteResult.h"
+#include "model/DsgDesensPlanQueryListRequest.h"
+#include "model/DsgDesensPlanQueryListResult.h"
+#include "model/DsgDesensPlanUpdateStatusRequest.h"
+#include "model/DsgDesensPlanUpdateStatusResult.h"
+#include "model/DsgPlatformQueryProjectsAndSchemaFromMetaRequest.h"
+#include "model/DsgPlatformQueryProjectsAndSchemaFromMetaResult.h"
+#include "model/DsgQueryDefaultTemplatesRequest.h"
+#include "model/DsgQueryDefaultTemplatesResult.h"
+#include "model/DsgQuerySensResultRequest.h"
+#include "model/DsgQuerySensResultResult.h"
+#include "model/DsgRunSensIdentifyRequest.h"
+#include "model/DsgRunSensIdentifyResult.h"
+#include "model/DsgSceneAddOrUpdateSceneRequest.h"
+#include "model/DsgSceneAddOrUpdateSceneResult.h"
+#include "model/DsgSceneQuerySceneListByNameRequest.h"
+#include "model/DsgSceneQuerySceneListByNameResult.h"
+#include "model/DsgScenedDeleteSceneRequest.h"
+#include "model/DsgScenedDeleteSceneResult.h"
+#include "model/DsgStopSensIdentifyRequest.h"
+#include "model/DsgStopSensIdentifyResult.h"
+#include "model/DsgUserGroupAddOrUpdateRequest.h"
+#include "model/DsgUserGroupAddOrUpdateResult.h"
+#include "model/DsgUserGroupDeleteRequest.h"
+#include "model/DsgUserGroupDeleteResult.h"
+#include "model/DsgUserGroupGetOdpsRoleGroupsRequest.h"
+#include "model/DsgUserGroupGetOdpsRoleGroupsResult.h"
+#include "model/DsgUserGroupQueryListRequest.h"
+#include "model/DsgUserGroupQueryListResult.h"
+#include "model/DsgUserGroupQueryUserListRequest.h"
+#include "model/DsgUserGroupQueryUserListResult.h"
+#include "model/DsgWhiteListAddOrUpdateRequest.h"
+#include "model/DsgWhiteListAddOrUpdateResult.h"
+#include "model/DsgWhiteListDeleteListRequest.h"
+#include "model/DsgWhiteListDeleteListResult.h"
+#include "model/DsgWhiteListQueryListRequest.h"
+#include "model/DsgWhiteListQueryListResult.h"
+#include "model/EditRecognizeRuleRequest.h"
+#include "model/EditRecognizeRuleResult.h"
 #include "model/EstablishRelationTableToBusinessRequest.h"
 #include "model/EstablishRelationTableToBusinessResult.h"
 #include "model/ExportDataSourcesRequest.h"
@@ -170,6 +218,8 @@
 #include "model/GenerateDISyncTaskConfigForCreatingResult.h"
 #include "model/GenerateDISyncTaskConfigForUpdatingRequest.h"
 #include "model/GenerateDISyncTaskConfigForUpdatingResult.h"
+#include "model/GetAlertMessageRequest.h"
+#include "model/GetAlertMessageResult.h"
 #include "model/GetBaselineRequest.h"
 #include "model/GetBaselineResult.h"
 #include "model/GetBaselineConfigRequest.h"
@@ -326,6 +376,10 @@
 #include "model/ListBusinessResult.h"
 #include "model/ListCalcEnginesRequest.h"
 #include "model/ListCalcEnginesResult.h"
+#include "model/ListClusterConfigsRequest.h"
+#include "model/ListClusterConfigsResult.h"
+#include "model/ListClustersRequest.h"
+#include "model/ListClustersResult.h"
 #include "model/ListConnectionsRequest.h"
 #include "model/ListConnectionsResult.h"
 #include "model/ListDIAlarmRulesRequest.h"
@@ -384,6 +438,8 @@
 #include "model/ListLineageResult.h"
 #include "model/ListManualDagInstancesRequest.h"
 #include "model/ListManualDagInstancesResult.h"
+#include "model/ListMeasureDataRequest.h"
+#include "model/ListMeasureDataResult.h"
 #include "model/ListMetaCollectionEntitiesRequest.h"
 #include "model/ListMetaCollectionEntitiesResult.h"
 #include "model/ListMetaCollectionsRequest.h"
@@ -436,6 +492,8 @@
 #include "model/ListTableLevelResult.h"
 #include "model/ListTableThemeRequest.h"
 #include "model/ListTableThemeResult.h"
+#include "model/ListTablesRequest.h"
+#include "model/ListTablesResult.h"
 #include "model/ListTopicsRequest.h"
 #include "model/ListTopicsResult.h"
 #include "model/MountDirectoryRequest.h"
@@ -446,8 +504,22 @@
 #include "model/PublishDataServiceApiResult.h"
 #include "model/QueryDISyncTaskConfigProcessResultRequest.h"
 #include "model/QueryDISyncTaskConfigProcessResultResult.h"
+#include "model/QueryDefaultTemplateRequest.h"
+#include "model/QueryDefaultTemplateResult.h"
 #include "model/QueryPublicModelEngineRequest.h"
 #include "model/QueryPublicModelEngineResult.h"
+#include "model/QueryRecognizeDataByRuleTypeRequest.h"
+#include "model/QueryRecognizeDataByRuleTypeResult.h"
+#include "model/QueryRecognizeRuleDetailRequest.h"
+#include "model/QueryRecognizeRuleDetailResult.h"
+#include "model/QueryRecognizeRulesTypeRequest.h"
+#include "model/QueryRecognizeRulesTypeResult.h"
+#include "model/QuerySensClassificationRequest.h"
+#include "model/QuerySensClassificationResult.h"
+#include "model/QuerySensLevelRequest.h"
+#include "model/QuerySensLevelResult.h"
+#include "model/QuerySensNodeInfoRequest.h"
+#include "model/QuerySensNodeInfoResult.h"
 #include "model/RegisterLineageRelationRequest.h"
 #include "model/RegisterLineageRelationResult.h"
 #include "model/RemoveEntityTagsRequest.h"
@@ -518,6 +590,8 @@
 #include "model/UpdateBaselineResult.h"
 #include "model/UpdateBusinessRequest.h"
 #include "model/UpdateBusinessResult.h"
+#include "model/UpdateClusterConfigsRequest.h"
+#include "model/UpdateClusterConfigsResult.h"
 #include "model/UpdateConnectionRequest.h"
 #include "model/UpdateConnectionResult.h"
 #include "model/UpdateDIAlarmRuleRequest.h"
@@ -588,6 +662,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddProjectMemberToRoleResult> AddProjectMemberToRoleOutcome;
 			typedef std::future<AddProjectMemberToRoleOutcome> AddProjectMemberToRoleOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::AddProjectMemberToRoleRequest&, const AddProjectMemberToRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddProjectMemberToRoleAsyncHandler;
+			typedef Outcome<Error, Model::AddRecognizeRuleResult> AddRecognizeRuleOutcome;
+			typedef std::future<AddRecognizeRuleOutcome> AddRecognizeRuleOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::AddRecognizeRuleRequest&, const AddRecognizeRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddRecognizeRuleAsyncHandler;
 			typedef Outcome<Error, Model::AddToMetaCategoryResult> AddToMetaCategoryOutcome;
 			typedef std::future<AddToMetaCategoryOutcome> AddToMetaCategoryOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::AddToMetaCategoryRequest&, const AddToMetaCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddToMetaCategoryAsyncHandler;
@@ -672,6 +749,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreatePermissionApplyOrderResult> CreatePermissionApplyOrderOutcome;
 			typedef std::future<CreatePermissionApplyOrderOutcome> CreatePermissionApplyOrderOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::CreatePermissionApplyOrderRequest&, const CreatePermissionApplyOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePermissionApplyOrderAsyncHandler;
+			typedef Outcome<Error, Model::CreateProjectResult> CreateProjectOutcome;
+			typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateProjectRequest&, const CreateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
 			typedef Outcome<Error, Model::CreateProjectMemberResult> CreateProjectMemberOutcome;
 			typedef std::future<CreateProjectMemberOutcome> CreateProjectMemberOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateProjectMemberRequest&, const CreateProjectMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectMemberAsyncHandler;
@@ -768,6 +848,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteQualityRuleResult> DeleteQualityRuleOutcome;
 			typedef std::future<DeleteQualityRuleOutcome> DeleteQualityRuleOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::DeleteQualityRuleRequest&, const DeleteQualityRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQualityRuleAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRecognizeRuleResult> DeleteRecognizeRuleOutcome;
+			typedef std::future<DeleteRecognizeRuleOutcome> DeleteRecognizeRuleOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DeleteRecognizeRuleRequest&, const DeleteRecognizeRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecognizeRuleAsyncHandler;
 			typedef Outcome<Error, Model::DeleteRemindResult> DeleteRemindOutcome;
 			typedef std::future<DeleteRemindOutcome> DeleteRemindOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::DeleteRemindRequest&, const DeleteRemindOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRemindAsyncHandler;
@@ -789,6 +872,69 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DesensitizeDataResult> DesensitizeDataOutcome;
 			typedef std::future<DesensitizeDataOutcome> DesensitizeDataOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::DesensitizeDataRequest&, const DesensitizeDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DesensitizeDataAsyncHandler;
+			typedef Outcome<Error, Model::DsgDesensPlanAddOrUpdateResult> DsgDesensPlanAddOrUpdateOutcome;
+			typedef std::future<DsgDesensPlanAddOrUpdateOutcome> DsgDesensPlanAddOrUpdateOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgDesensPlanAddOrUpdateRequest&, const DsgDesensPlanAddOrUpdateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgDesensPlanAddOrUpdateAsyncHandler;
+			typedef Outcome<Error, Model::DsgDesensPlanDeleteResult> DsgDesensPlanDeleteOutcome;
+			typedef std::future<DsgDesensPlanDeleteOutcome> DsgDesensPlanDeleteOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgDesensPlanDeleteRequest&, const DsgDesensPlanDeleteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgDesensPlanDeleteAsyncHandler;
+			typedef Outcome<Error, Model::DsgDesensPlanQueryListResult> DsgDesensPlanQueryListOutcome;
+			typedef std::future<DsgDesensPlanQueryListOutcome> DsgDesensPlanQueryListOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgDesensPlanQueryListRequest&, const DsgDesensPlanQueryListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgDesensPlanQueryListAsyncHandler;
+			typedef Outcome<Error, Model::DsgDesensPlanUpdateStatusResult> DsgDesensPlanUpdateStatusOutcome;
+			typedef std::future<DsgDesensPlanUpdateStatusOutcome> DsgDesensPlanUpdateStatusOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgDesensPlanUpdateStatusRequest&, const DsgDesensPlanUpdateStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgDesensPlanUpdateStatusAsyncHandler;
+			typedef Outcome<Error, Model::DsgPlatformQueryProjectsAndSchemaFromMetaResult> DsgPlatformQueryProjectsAndSchemaFromMetaOutcome;
+			typedef std::future<DsgPlatformQueryProjectsAndSchemaFromMetaOutcome> DsgPlatformQueryProjectsAndSchemaFromMetaOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgPlatformQueryProjectsAndSchemaFromMetaRequest&, const DsgPlatformQueryProjectsAndSchemaFromMetaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgPlatformQueryProjectsAndSchemaFromMetaAsyncHandler;
+			typedef Outcome<Error, Model::DsgQueryDefaultTemplatesResult> DsgQueryDefaultTemplatesOutcome;
+			typedef std::future<DsgQueryDefaultTemplatesOutcome> DsgQueryDefaultTemplatesOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgQueryDefaultTemplatesRequest&, const DsgQueryDefaultTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgQueryDefaultTemplatesAsyncHandler;
+			typedef Outcome<Error, Model::DsgQuerySensResultResult> DsgQuerySensResultOutcome;
+			typedef std::future<DsgQuerySensResultOutcome> DsgQuerySensResultOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgQuerySensResultRequest&, const DsgQuerySensResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgQuerySensResultAsyncHandler;
+			typedef Outcome<Error, Model::DsgRunSensIdentifyResult> DsgRunSensIdentifyOutcome;
+			typedef std::future<DsgRunSensIdentifyOutcome> DsgRunSensIdentifyOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgRunSensIdentifyRequest&, const DsgRunSensIdentifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgRunSensIdentifyAsyncHandler;
+			typedef Outcome<Error, Model::DsgSceneAddOrUpdateSceneResult> DsgSceneAddOrUpdateSceneOutcome;
+			typedef std::future<DsgSceneAddOrUpdateSceneOutcome> DsgSceneAddOrUpdateSceneOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgSceneAddOrUpdateSceneRequest&, const DsgSceneAddOrUpdateSceneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgSceneAddOrUpdateSceneAsyncHandler;
+			typedef Outcome<Error, Model::DsgSceneQuerySceneListByNameResult> DsgSceneQuerySceneListByNameOutcome;
+			typedef std::future<DsgSceneQuerySceneListByNameOutcome> DsgSceneQuerySceneListByNameOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgSceneQuerySceneListByNameRequest&, const DsgSceneQuerySceneListByNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgSceneQuerySceneListByNameAsyncHandler;
+			typedef Outcome<Error, Model::DsgScenedDeleteSceneResult> DsgScenedDeleteSceneOutcome;
+			typedef std::future<DsgScenedDeleteSceneOutcome> DsgScenedDeleteSceneOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgScenedDeleteSceneRequest&, const DsgScenedDeleteSceneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgScenedDeleteSceneAsyncHandler;
+			typedef Outcome<Error, Model::DsgStopSensIdentifyResult> DsgStopSensIdentifyOutcome;
+			typedef std::future<DsgStopSensIdentifyOutcome> DsgStopSensIdentifyOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgStopSensIdentifyRequest&, const DsgStopSensIdentifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgStopSensIdentifyAsyncHandler;
+			typedef Outcome<Error, Model::DsgUserGroupAddOrUpdateResult> DsgUserGroupAddOrUpdateOutcome;
+			typedef std::future<DsgUserGroupAddOrUpdateOutcome> DsgUserGroupAddOrUpdateOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgUserGroupAddOrUpdateRequest&, const DsgUserGroupAddOrUpdateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgUserGroupAddOrUpdateAsyncHandler;
+			typedef Outcome<Error, Model::DsgUserGroupDeleteResult> DsgUserGroupDeleteOutcome;
+			typedef std::future<DsgUserGroupDeleteOutcome> DsgUserGroupDeleteOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgUserGroupDeleteRequest&, const DsgUserGroupDeleteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgUserGroupDeleteAsyncHandler;
+			typedef Outcome<Error, Model::DsgUserGroupGetOdpsRoleGroupsResult> DsgUserGroupGetOdpsRoleGroupsOutcome;
+			typedef std::future<DsgUserGroupGetOdpsRoleGroupsOutcome> DsgUserGroupGetOdpsRoleGroupsOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgUserGroupGetOdpsRoleGroupsRequest&, const DsgUserGroupGetOdpsRoleGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgUserGroupGetOdpsRoleGroupsAsyncHandler;
+			typedef Outcome<Error, Model::DsgUserGroupQueryListResult> DsgUserGroupQueryListOutcome;
+			typedef std::future<DsgUserGroupQueryListOutcome> DsgUserGroupQueryListOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgUserGroupQueryListRequest&, const DsgUserGroupQueryListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgUserGroupQueryListAsyncHandler;
+			typedef Outcome<Error, Model::DsgUserGroupQueryUserListResult> DsgUserGroupQueryUserListOutcome;
+			typedef std::future<DsgUserGroupQueryUserListOutcome> DsgUserGroupQueryUserListOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgUserGroupQueryUserListRequest&, const DsgUserGroupQueryUserListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgUserGroupQueryUserListAsyncHandler;
+			typedef Outcome<Error, Model::DsgWhiteListAddOrUpdateResult> DsgWhiteListAddOrUpdateOutcome;
+			typedef std::future<DsgWhiteListAddOrUpdateOutcome> DsgWhiteListAddOrUpdateOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgWhiteListAddOrUpdateRequest&, const DsgWhiteListAddOrUpdateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgWhiteListAddOrUpdateAsyncHandler;
+			typedef Outcome<Error, Model::DsgWhiteListDeleteListResult> DsgWhiteListDeleteListOutcome;
+			typedef std::future<DsgWhiteListDeleteListOutcome> DsgWhiteListDeleteListOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgWhiteListDeleteListRequest&, const DsgWhiteListDeleteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgWhiteListDeleteListAsyncHandler;
+			typedef Outcome<Error, Model::DsgWhiteListQueryListResult> DsgWhiteListQueryListOutcome;
+			typedef std::future<DsgWhiteListQueryListOutcome> DsgWhiteListQueryListOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DsgWhiteListQueryListRequest&, const DsgWhiteListQueryListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DsgWhiteListQueryListAsyncHandler;
+			typedef Outcome<Error, Model::EditRecognizeRuleResult> EditRecognizeRuleOutcome;
+			typedef std::future<EditRecognizeRuleOutcome> EditRecognizeRuleOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::EditRecognizeRuleRequest&, const EditRecognizeRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EditRecognizeRuleAsyncHandler;
 			typedef Outcome<Error, Model::EstablishRelationTableToBusinessResult> EstablishRelationTableToBusinessOutcome;
 			typedef std::future<EstablishRelationTableToBusinessOutcome> EstablishRelationTableToBusinessOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::EstablishRelationTableToBusinessRequest&, const EstablishRelationTableToBusinessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EstablishRelationTableToBusinessAsyncHandler;
@@ -801,6 +947,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GenerateDISyncTaskConfigForUpdatingResult> GenerateDISyncTaskConfigForUpdatingOutcome;
 			typedef std::future<GenerateDISyncTaskConfigForUpdatingOutcome> GenerateDISyncTaskConfigForUpdatingOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::GenerateDISyncTaskConfigForUpdatingRequest&, const GenerateDISyncTaskConfigForUpdatingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateDISyncTaskConfigForUpdatingAsyncHandler;
+			typedef Outcome<Error, Model::GetAlertMessageResult> GetAlertMessageOutcome;
+			typedef std::future<GetAlertMessageOutcome> GetAlertMessageOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::GetAlertMessageRequest&, const GetAlertMessageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAlertMessageAsyncHandler;
 			typedef Outcome<Error, Model::GetBaselineResult> GetBaselineOutcome;
 			typedef std::future<GetBaselineOutcome> GetBaselineOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::GetBaselineRequest&, const GetBaselineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetBaselineAsyncHandler;
@@ -1035,6 +1184,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListCalcEnginesResult> ListCalcEnginesOutcome;
 			typedef std::future<ListCalcEnginesOutcome> ListCalcEnginesOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListCalcEnginesRequest&, const ListCalcEnginesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCalcEnginesAsyncHandler;
+			typedef Outcome<Error, Model::ListClusterConfigsResult> ListClusterConfigsOutcome;
+			typedef std::future<ListClusterConfigsOutcome> ListClusterConfigsOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListClusterConfigsRequest&, const ListClusterConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterConfigsAsyncHandler;
+			typedef Outcome<Error, Model::ListClustersResult> ListClustersOutcome;
+			typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListClustersRequest&, const ListClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClustersAsyncHandler;
 			typedef Outcome<Error, Model::ListConnectionsResult> ListConnectionsOutcome;
 			typedef std::future<ListConnectionsOutcome> ListConnectionsOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListConnectionsRequest&, const ListConnectionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListConnectionsAsyncHandler;
@@ -1122,6 +1277,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListManualDagInstancesResult> ListManualDagInstancesOutcome;
 			typedef std::future<ListManualDagInstancesOutcome> ListManualDagInstancesOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListManualDagInstancesRequest&, const ListManualDagInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListManualDagInstancesAsyncHandler;
+			typedef Outcome<Error, Model::ListMeasureDataResult> ListMeasureDataOutcome;
+			typedef std::future<ListMeasureDataOutcome> ListMeasureDataOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListMeasureDataRequest&, const ListMeasureDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMeasureDataAsyncHandler;
 			typedef Outcome<Error, Model::ListMetaCollectionEntitiesResult> ListMetaCollectionEntitiesOutcome;
 			typedef std::future<ListMetaCollectionEntitiesOutcome> ListMetaCollectionEntitiesOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListMetaCollectionEntitiesRequest&, const ListMetaCollectionEntitiesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMetaCollectionEntitiesAsyncHandler;
@@ -1200,6 +1358,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTableThemeResult> ListTableThemeOutcome;
 			typedef std::future<ListTableThemeOutcome> ListTableThemeOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListTableThemeRequest&, const ListTableThemeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTableThemeAsyncHandler;
+			typedef Outcome<Error, Model::ListTablesResult> ListTablesOutcome;
+			typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListTablesRequest&, const ListTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTablesAsyncHandler;
 			typedef Outcome<Error, Model::ListTopicsResult> ListTopicsOutcome;
 			typedef std::future<ListTopicsOutcome> ListTopicsOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListTopicsRequest&, const ListTopicsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTopicsAsyncHandler;
@@ -1215,9 +1376,30 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryDISyncTaskConfigProcessResultResult> QueryDISyncTaskConfigProcessResultOutcome;
 			typedef std::future<QueryDISyncTaskConfigProcessResultOutcome> QueryDISyncTaskConfigProcessResultOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::QueryDISyncTaskConfigProcessResultRequest&, const QueryDISyncTaskConfigProcessResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDISyncTaskConfigProcessResultAsyncHandler;
+			typedef Outcome<Error, Model::QueryDefaultTemplateResult> QueryDefaultTemplateOutcome;
+			typedef std::future<QueryDefaultTemplateOutcome> QueryDefaultTemplateOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::QueryDefaultTemplateRequest&, const QueryDefaultTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDefaultTemplateAsyncHandler;
 			typedef Outcome<Error, Model::QueryPublicModelEngineResult> QueryPublicModelEngineOutcome;
 			typedef std::future<QueryPublicModelEngineOutcome> QueryPublicModelEngineOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::QueryPublicModelEngineRequest&, const QueryPublicModelEngineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryPublicModelEngineAsyncHandler;
+			typedef Outcome<Error, Model::QueryRecognizeDataByRuleTypeResult> QueryRecognizeDataByRuleTypeOutcome;
+			typedef std::future<QueryRecognizeDataByRuleTypeOutcome> QueryRecognizeDataByRuleTypeOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::QueryRecognizeDataByRuleTypeRequest&, const QueryRecognizeDataByRuleTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryRecognizeDataByRuleTypeAsyncHandler;
+			typedef Outcome<Error, Model::QueryRecognizeRuleDetailResult> QueryRecognizeRuleDetailOutcome;
+			typedef std::future<QueryRecognizeRuleDetailOutcome> QueryRecognizeRuleDetailOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::QueryRecognizeRuleDetailRequest&, const QueryRecognizeRuleDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryRecognizeRuleDetailAsyncHandler;
+			typedef Outcome<Error, Model::QueryRecognizeRulesTypeResult> QueryRecognizeRulesTypeOutcome;
+			typedef std::future<QueryRecognizeRulesTypeOutcome> QueryRecognizeRulesTypeOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::QueryRecognizeRulesTypeRequest&, const QueryRecognizeRulesTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryRecognizeRulesTypeAsyncHandler;
+			typedef Outcome<Error, Model::QuerySensClassificationResult> QuerySensClassificationOutcome;
+			typedef std::future<QuerySensClassificationOutcome> QuerySensClassificationOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::QuerySensClassificationRequest&, const QuerySensClassificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySensClassificationAsyncHandler;
+			typedef Outcome<Error, Model::QuerySensLevelResult> QuerySensLevelOutcome;
+			typedef std::future<QuerySensLevelOutcome> QuerySensLevelOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::QuerySensLevelRequest&, const QuerySensLevelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySensLevelAsyncHandler;
+			typedef Outcome<Error, Model::QuerySensNodeInfoResult> QuerySensNodeInfoOutcome;
+			typedef std::future<QuerySensNodeInfoOutcome> QuerySensNodeInfoOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::QuerySensNodeInfoRequest&, const QuerySensNodeInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySensNodeInfoAsyncHandler;
 			typedef Outcome<Error, Model::RegisterLineageRelationResult> RegisterLineageRelationOutcome;
 			typedef std::future<RegisterLineageRelationOutcome> RegisterLineageRelationOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::RegisterLineageRelationRequest&, const RegisterLineageRelationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegisterLineageRelationAsyncHandler;
@@ -1323,6 +1505,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateBusinessResult> UpdateBusinessOutcome;
 			typedef std::future<UpdateBusinessOutcome> UpdateBusinessOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::UpdateBusinessRequest&, const UpdateBusinessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateBusinessAsyncHandler;
+			typedef Outcome<Error, Model::UpdateClusterConfigsResult> UpdateClusterConfigsOutcome;
+			typedef std::future<UpdateClusterConfigsOutcome> UpdateClusterConfigsOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::UpdateClusterConfigsRequest&, const UpdateClusterConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateClusterConfigsAsyncHandler;
 			typedef Outcome<Error, Model::UpdateConnectionResult> UpdateConnectionOutcome;
 			typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::UpdateConnectionRequest&, const UpdateConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateConnectionAsyncHandler;
@@ -1415,6 +1600,9 @@ namespace AlibabaCloud
 			AddProjectMemberToRoleOutcome addProjectMemberToRole(const Model::AddProjectMemberToRoleRequest &request)const;
 			void addProjectMemberToRoleAsync(const Model::AddProjectMemberToRoleRequest& request, const AddProjectMemberToRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddProjectMemberToRoleOutcomeCallable addProjectMemberToRoleCallable(const Model::AddProjectMemberToRoleRequest& request) const;
+			AddRecognizeRuleOutcome addRecognizeRule(const Model::AddRecognizeRuleRequest &request)const;
+			void addRecognizeRuleAsync(const Model::AddRecognizeRuleRequest& request, const AddRecognizeRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddRecognizeRuleOutcomeCallable addRecognizeRuleCallable(const Model::AddRecognizeRuleRequest& request) const;
 			AddToMetaCategoryOutcome addToMetaCategory(const Model::AddToMetaCategoryRequest &request)const;
 			void addToMetaCategoryAsync(const Model::AddToMetaCategoryRequest& request, const AddToMetaCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddToMetaCategoryOutcomeCallable addToMetaCategoryCallable(const Model::AddToMetaCategoryRequest& request) const;
@@ -1499,6 +1687,9 @@ namespace AlibabaCloud
 			CreatePermissionApplyOrderOutcome createPermissionApplyOrder(const Model::CreatePermissionApplyOrderRequest &request)const;
 			void createPermissionApplyOrderAsync(const Model::CreatePermissionApplyOrderRequest& request, const CreatePermissionApplyOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatePermissionApplyOrderOutcomeCallable createPermissionApplyOrderCallable(const Model::CreatePermissionApplyOrderRequest& request) const;
+			CreateProjectOutcome createProject(const Model::CreateProjectRequest &request)const;
+			void createProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateProjectOutcomeCallable createProjectCallable(const Model::CreateProjectRequest& request) const;
 			CreateProjectMemberOutcome createProjectMember(const Model::CreateProjectMemberRequest &request)const;
 			void createProjectMemberAsync(const Model::CreateProjectMemberRequest& request, const CreateProjectMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateProjectMemberOutcomeCallable createProjectMemberCallable(const Model::CreateProjectMemberRequest& request) const;
@@ -1595,6 +1786,9 @@ namespace AlibabaCloud
 			DeleteQualityRuleOutcome deleteQualityRule(const Model::DeleteQualityRuleRequest &request)const;
 			void deleteQualityRuleAsync(const Model::DeleteQualityRuleRequest& request, const DeleteQualityRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteQualityRuleOutcomeCallable deleteQualityRuleCallable(const Model::DeleteQualityRuleRequest& request) const;
+			DeleteRecognizeRuleOutcome deleteRecognizeRule(const Model::DeleteRecognizeRuleRequest &request)const;
+			void deleteRecognizeRuleAsync(const Model::DeleteRecognizeRuleRequest& request, const DeleteRecognizeRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRecognizeRuleOutcomeCallable deleteRecognizeRuleCallable(const Model::DeleteRecognizeRuleRequest& request) const;
 			DeleteRemindOutcome deleteRemind(const Model::DeleteRemindRequest &request)const;
 			void deleteRemindAsync(const Model::DeleteRemindRequest& request, const DeleteRemindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRemindOutcomeCallable deleteRemindCallable(const Model::DeleteRemindRequest& request) const;
@@ -1616,6 +1810,69 @@ namespace AlibabaCloud
 			DesensitizeDataOutcome desensitizeData(const Model::DesensitizeDataRequest &request)const;
 			void desensitizeDataAsync(const Model::DesensitizeDataRequest& request, const DesensitizeDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DesensitizeDataOutcomeCallable desensitizeDataCallable(const Model::DesensitizeDataRequest& request) const;
+			DsgDesensPlanAddOrUpdateOutcome dsgDesensPlanAddOrUpdate(const Model::DsgDesensPlanAddOrUpdateRequest &request)const;
+			void dsgDesensPlanAddOrUpdateAsync(const Model::DsgDesensPlanAddOrUpdateRequest& request, const DsgDesensPlanAddOrUpdateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgDesensPlanAddOrUpdateOutcomeCallable dsgDesensPlanAddOrUpdateCallable(const Model::DsgDesensPlanAddOrUpdateRequest& request) const;
+			DsgDesensPlanDeleteOutcome dsgDesensPlanDelete(const Model::DsgDesensPlanDeleteRequest &request)const;
+			void dsgDesensPlanDeleteAsync(const Model::DsgDesensPlanDeleteRequest& request, const DsgDesensPlanDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgDesensPlanDeleteOutcomeCallable dsgDesensPlanDeleteCallable(const Model::DsgDesensPlanDeleteRequest& request) const;
+			DsgDesensPlanQueryListOutcome dsgDesensPlanQueryList(const Model::DsgDesensPlanQueryListRequest &request)const;
+			void dsgDesensPlanQueryListAsync(const Model::DsgDesensPlanQueryListRequest& request, const DsgDesensPlanQueryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgDesensPlanQueryListOutcomeCallable dsgDesensPlanQueryListCallable(const Model::DsgDesensPlanQueryListRequest& request) const;
+			DsgDesensPlanUpdateStatusOutcome dsgDesensPlanUpdateStatus(const Model::DsgDesensPlanUpdateStatusRequest &request)const;
+			void dsgDesensPlanUpdateStatusAsync(const Model::DsgDesensPlanUpdateStatusRequest& request, const DsgDesensPlanUpdateStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgDesensPlanUpdateStatusOutcomeCallable dsgDesensPlanUpdateStatusCallable(const Model::DsgDesensPlanUpdateStatusRequest& request) const;
+			DsgPlatformQueryProjectsAndSchemaFromMetaOutcome dsgPlatformQueryProjectsAndSchemaFromMeta(const Model::DsgPlatformQueryProjectsAndSchemaFromMetaRequest &request)const;
+			void dsgPlatformQueryProjectsAndSchemaFromMetaAsync(const Model::DsgPlatformQueryProjectsAndSchemaFromMetaRequest& request, const DsgPlatformQueryProjectsAndSchemaFromMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgPlatformQueryProjectsAndSchemaFromMetaOutcomeCallable dsgPlatformQueryProjectsAndSchemaFromMetaCallable(const Model::DsgPlatformQueryProjectsAndSchemaFromMetaRequest& request) const;
+			DsgQueryDefaultTemplatesOutcome dsgQueryDefaultTemplates(const Model::DsgQueryDefaultTemplatesRequest &request)const;
+			void dsgQueryDefaultTemplatesAsync(const Model::DsgQueryDefaultTemplatesRequest& request, const DsgQueryDefaultTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgQueryDefaultTemplatesOutcomeCallable dsgQueryDefaultTemplatesCallable(const Model::DsgQueryDefaultTemplatesRequest& request) const;
+			DsgQuerySensResultOutcome dsgQuerySensResult(const Model::DsgQuerySensResultRequest &request)const;
+			void dsgQuerySensResultAsync(const Model::DsgQuerySensResultRequest& request, const DsgQuerySensResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgQuerySensResultOutcomeCallable dsgQuerySensResultCallable(const Model::DsgQuerySensResultRequest& request) const;
+			DsgRunSensIdentifyOutcome dsgRunSensIdentify(const Model::DsgRunSensIdentifyRequest &request)const;
+			void dsgRunSensIdentifyAsync(const Model::DsgRunSensIdentifyRequest& request, const DsgRunSensIdentifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgRunSensIdentifyOutcomeCallable dsgRunSensIdentifyCallable(const Model::DsgRunSensIdentifyRequest& request) const;
+			DsgSceneAddOrUpdateSceneOutcome dsgSceneAddOrUpdateScene(const Model::DsgSceneAddOrUpdateSceneRequest &request)const;
+			void dsgSceneAddOrUpdateSceneAsync(const Model::DsgSceneAddOrUpdateSceneRequest& request, const DsgSceneAddOrUpdateSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgSceneAddOrUpdateSceneOutcomeCallable dsgSceneAddOrUpdateSceneCallable(const Model::DsgSceneAddOrUpdateSceneRequest& request) const;
+			DsgSceneQuerySceneListByNameOutcome dsgSceneQuerySceneListByName(const Model::DsgSceneQuerySceneListByNameRequest &request)const;
+			void dsgSceneQuerySceneListByNameAsync(const Model::DsgSceneQuerySceneListByNameRequest& request, const DsgSceneQuerySceneListByNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgSceneQuerySceneListByNameOutcomeCallable dsgSceneQuerySceneListByNameCallable(const Model::DsgSceneQuerySceneListByNameRequest& request) const;
+			DsgScenedDeleteSceneOutcome dsgScenedDeleteScene(const Model::DsgScenedDeleteSceneRequest &request)const;
+			void dsgScenedDeleteSceneAsync(const Model::DsgScenedDeleteSceneRequest& request, const DsgScenedDeleteSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgScenedDeleteSceneOutcomeCallable dsgScenedDeleteSceneCallable(const Model::DsgScenedDeleteSceneRequest& request) const;
+			DsgStopSensIdentifyOutcome dsgStopSensIdentify(const Model::DsgStopSensIdentifyRequest &request)const;
+			void dsgStopSensIdentifyAsync(const Model::DsgStopSensIdentifyRequest& request, const DsgStopSensIdentifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgStopSensIdentifyOutcomeCallable dsgStopSensIdentifyCallable(const Model::DsgStopSensIdentifyRequest& request) const;
+			DsgUserGroupAddOrUpdateOutcome dsgUserGroupAddOrUpdate(const Model::DsgUserGroupAddOrUpdateRequest &request)const;
+			void dsgUserGroupAddOrUpdateAsync(const Model::DsgUserGroupAddOrUpdateRequest& request, const DsgUserGroupAddOrUpdateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgUserGroupAddOrUpdateOutcomeCallable dsgUserGroupAddOrUpdateCallable(const Model::DsgUserGroupAddOrUpdateRequest& request) const;
+			DsgUserGroupDeleteOutcome dsgUserGroupDelete(const Model::DsgUserGroupDeleteRequest &request)const;
+			void dsgUserGroupDeleteAsync(const Model::DsgUserGroupDeleteRequest& request, const DsgUserGroupDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgUserGroupDeleteOutcomeCallable dsgUserGroupDeleteCallable(const Model::DsgUserGroupDeleteRequest& request) const;
+			DsgUserGroupGetOdpsRoleGroupsOutcome dsgUserGroupGetOdpsRoleGroups(const Model::DsgUserGroupGetOdpsRoleGroupsRequest &request)const;
+			void dsgUserGroupGetOdpsRoleGroupsAsync(const Model::DsgUserGroupGetOdpsRoleGroupsRequest& request, const DsgUserGroupGetOdpsRoleGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgUserGroupGetOdpsRoleGroupsOutcomeCallable dsgUserGroupGetOdpsRoleGroupsCallable(const Model::DsgUserGroupGetOdpsRoleGroupsRequest& request) const;
+			DsgUserGroupQueryListOutcome dsgUserGroupQueryList(const Model::DsgUserGroupQueryListRequest &request)const;
+			void dsgUserGroupQueryListAsync(const Model::DsgUserGroupQueryListRequest& request, const DsgUserGroupQueryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgUserGroupQueryListOutcomeCallable dsgUserGroupQueryListCallable(const Model::DsgUserGroupQueryListRequest& request) const;
+			DsgUserGroupQueryUserListOutcome dsgUserGroupQueryUserList(const Model::DsgUserGroupQueryUserListRequest &request)const;
+			void dsgUserGroupQueryUserListAsync(const Model::DsgUserGroupQueryUserListRequest& request, const DsgUserGroupQueryUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgUserGroupQueryUserListOutcomeCallable dsgUserGroupQueryUserListCallable(const Model::DsgUserGroupQueryUserListRequest& request) const;
+			DsgWhiteListAddOrUpdateOutcome dsgWhiteListAddOrUpdate(const Model::DsgWhiteListAddOrUpdateRequest &request)const;
+			void dsgWhiteListAddOrUpdateAsync(const Model::DsgWhiteListAddOrUpdateRequest& request, const DsgWhiteListAddOrUpdateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgWhiteListAddOrUpdateOutcomeCallable dsgWhiteListAddOrUpdateCallable(const Model::DsgWhiteListAddOrUpdateRequest& request) const;
+			DsgWhiteListDeleteListOutcome dsgWhiteListDeleteList(const Model::DsgWhiteListDeleteListRequest &request)const;
+			void dsgWhiteListDeleteListAsync(const Model::DsgWhiteListDeleteListRequest& request, const DsgWhiteListDeleteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgWhiteListDeleteListOutcomeCallable dsgWhiteListDeleteListCallable(const Model::DsgWhiteListDeleteListRequest& request) const;
+			DsgWhiteListQueryListOutcome dsgWhiteListQueryList(const Model::DsgWhiteListQueryListRequest &request)const;
+			void dsgWhiteListQueryListAsync(const Model::DsgWhiteListQueryListRequest& request, const DsgWhiteListQueryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DsgWhiteListQueryListOutcomeCallable dsgWhiteListQueryListCallable(const Model::DsgWhiteListQueryListRequest& request) const;
+			EditRecognizeRuleOutcome editRecognizeRule(const Model::EditRecognizeRuleRequest &request)const;
+			void editRecognizeRuleAsync(const Model::EditRecognizeRuleRequest& request, const EditRecognizeRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EditRecognizeRuleOutcomeCallable editRecognizeRuleCallable(const Model::EditRecognizeRuleRequest& request) const;
 			EstablishRelationTableToBusinessOutcome establishRelationTableToBusiness(const Model::EstablishRelationTableToBusinessRequest &request)const;
 			void establishRelationTableToBusinessAsync(const Model::EstablishRelationTableToBusinessRequest& request, const EstablishRelationTableToBusinessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EstablishRelationTableToBusinessOutcomeCallable establishRelationTableToBusinessCallable(const Model::EstablishRelationTableToBusinessRequest& request) const;
@@ -1628,6 +1885,9 @@ namespace AlibabaCloud
 			GenerateDISyncTaskConfigForUpdatingOutcome generateDISyncTaskConfigForUpdating(const Model::GenerateDISyncTaskConfigForUpdatingRequest &request)const;
 			void generateDISyncTaskConfigForUpdatingAsync(const Model::GenerateDISyncTaskConfigForUpdatingRequest& request, const GenerateDISyncTaskConfigForUpdatingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GenerateDISyncTaskConfigForUpdatingOutcomeCallable generateDISyncTaskConfigForUpdatingCallable(const Model::GenerateDISyncTaskConfigForUpdatingRequest& request) const;
+			GetAlertMessageOutcome getAlertMessage(const Model::GetAlertMessageRequest &request)const;
+			void getAlertMessageAsync(const Model::GetAlertMessageRequest& request, const GetAlertMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAlertMessageOutcomeCallable getAlertMessageCallable(const Model::GetAlertMessageRequest& request) const;
 			GetBaselineOutcome getBaseline(const Model::GetBaselineRequest &request)const;
 			void getBaselineAsync(const Model::GetBaselineRequest& request, const GetBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetBaselineOutcomeCallable getBaselineCallable(const Model::GetBaselineRequest& request) const;
@@ -1862,6 +2122,12 @@ namespace AlibabaCloud
 			ListCalcEnginesOutcome listCalcEngines(const Model::ListCalcEnginesRequest &request)const;
 			void listCalcEnginesAsync(const Model::ListCalcEnginesRequest& request, const ListCalcEnginesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCalcEnginesOutcomeCallable listCalcEnginesCallable(const Model::ListCalcEnginesRequest& request) const;
+			ListClusterConfigsOutcome listClusterConfigs(const Model::ListClusterConfigsRequest &request)const;
+			void listClusterConfigsAsync(const Model::ListClusterConfigsRequest& request, const ListClusterConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClusterConfigsOutcomeCallable listClusterConfigsCallable(const Model::ListClusterConfigsRequest& request) const;
+			ListClustersOutcome listClusters(const Model::ListClustersRequest &request)const;
+			void listClustersAsync(const Model::ListClustersRequest& request, const ListClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClustersOutcomeCallable listClustersCallable(const Model::ListClustersRequest& request) const;
 			ListConnectionsOutcome listConnections(const Model::ListConnectionsRequest &request)const;
 			void listConnectionsAsync(const Model::ListConnectionsRequest& request, const ListConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListConnectionsOutcomeCallable listConnectionsCallable(const Model::ListConnectionsRequest& request) const;
@@ -1949,6 +2215,9 @@ namespace AlibabaCloud
 			ListManualDagInstancesOutcome listManualDagInstances(const Model::ListManualDagInstancesRequest &request)const;
 			void listManualDagInstancesAsync(const Model::ListManualDagInstancesRequest& request, const ListManualDagInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListManualDagInstancesOutcomeCallable listManualDagInstancesCallable(const Model::ListManualDagInstancesRequest& request) const;
+			ListMeasureDataOutcome listMeasureData(const Model::ListMeasureDataRequest &request)const;
+			void listMeasureDataAsync(const Model::ListMeasureDataRequest& request, const ListMeasureDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListMeasureDataOutcomeCallable listMeasureDataCallable(const Model::ListMeasureDataRequest& request) const;
 			ListMetaCollectionEntitiesOutcome listMetaCollectionEntities(const Model::ListMetaCollectionEntitiesRequest &request)const;
 			void listMetaCollectionEntitiesAsync(const Model::ListMetaCollectionEntitiesRequest& request, const ListMetaCollectionEntitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMetaCollectionEntitiesOutcomeCallable listMetaCollectionEntitiesCallable(const Model::ListMetaCollectionEntitiesRequest& request) const;
@@ -2027,6 +2296,9 @@ namespace AlibabaCloud
 			ListTableThemeOutcome listTableTheme(const Model::ListTableThemeRequest &request)const;
 			void listTableThemeAsync(const Model::ListTableThemeRequest& request, const ListTableThemeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTableThemeOutcomeCallable listTableThemeCallable(const Model::ListTableThemeRequest& request) const;
+			ListTablesOutcome listTables(const Model::ListTablesRequest &request)const;
+			void listTablesAsync(const Model::ListTablesRequest& request, const ListTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTablesOutcomeCallable listTablesCallable(const Model::ListTablesRequest& request) const;
 			ListTopicsOutcome listTopics(const Model::ListTopicsRequest &request)const;
 			void listTopicsAsync(const Model::ListTopicsRequest& request, const ListTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTopicsOutcomeCallable listTopicsCallable(const Model::ListTopicsRequest& request) const;
@@ -2042,9 +2314,30 @@ namespace AlibabaCloud
 			QueryDISyncTaskConfigProcessResultOutcome queryDISyncTaskConfigProcessResult(const Model::QueryDISyncTaskConfigProcessResultRequest &request)const;
 			void queryDISyncTaskConfigProcessResultAsync(const Model::QueryDISyncTaskConfigProcessResultRequest& request, const QueryDISyncTaskConfigProcessResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDISyncTaskConfigProcessResultOutcomeCallable queryDISyncTaskConfigProcessResultCallable(const Model::QueryDISyncTaskConfigProcessResultRequest& request) const;
+			QueryDefaultTemplateOutcome queryDefaultTemplate(const Model::QueryDefaultTemplateRequest &request)const;
+			void queryDefaultTemplateAsync(const Model::QueryDefaultTemplateRequest& request, const QueryDefaultTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDefaultTemplateOutcomeCallable queryDefaultTemplateCallable(const Model::QueryDefaultTemplateRequest& request) const;
 			QueryPublicModelEngineOutcome queryPublicModelEngine(const Model::QueryPublicModelEngineRequest &request)const;
 			void queryPublicModelEngineAsync(const Model::QueryPublicModelEngineRequest& request, const QueryPublicModelEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryPublicModelEngineOutcomeCallable queryPublicModelEngineCallable(const Model::QueryPublicModelEngineRequest& request) const;
+			QueryRecognizeDataByRuleTypeOutcome queryRecognizeDataByRuleType(const Model::QueryRecognizeDataByRuleTypeRequest &request)const;
+			void queryRecognizeDataByRuleTypeAsync(const Model::QueryRecognizeDataByRuleTypeRequest& request, const QueryRecognizeDataByRuleTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryRecognizeDataByRuleTypeOutcomeCallable queryRecognizeDataByRuleTypeCallable(const Model::QueryRecognizeDataByRuleTypeRequest& request) const;
+			QueryRecognizeRuleDetailOutcome queryRecognizeRuleDetail(const Model::QueryRecognizeRuleDetailRequest &request)const;
+			void queryRecognizeRuleDetailAsync(const Model::QueryRecognizeRuleDetailRequest& request, const QueryRecognizeRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryRecognizeRuleDetailOutcomeCallable queryRecognizeRuleDetailCallable(const Model::QueryRecognizeRuleDetailRequest& request) const;
+			QueryRecognizeRulesTypeOutcome queryRecognizeRulesType(const Model::QueryRecognizeRulesTypeRequest &request)const;
+			void queryRecognizeRulesTypeAsync(const Model::QueryRecognizeRulesTypeRequest& request, const QueryRecognizeRulesTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryRecognizeRulesTypeOutcomeCallable queryRecognizeRulesTypeCallable(const Model::QueryRecognizeRulesTypeRequest& request) const;
+			QuerySensClassificationOutcome querySensClassification(const Model::QuerySensClassificationRequest &request)const;
+			void querySensClassificationAsync(const Model::QuerySensClassificationRequest& request, const QuerySensClassificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySensClassificationOutcomeCallable querySensClassificationCallable(const Model::QuerySensClassificationRequest& request) const;
+			QuerySensLevelOutcome querySensLevel(const Model::QuerySensLevelRequest &request)const;
+			void querySensLevelAsync(const Model::QuerySensLevelRequest& request, const QuerySensLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySensLevelOutcomeCallable querySensLevelCallable(const Model::QuerySensLevelRequest& request) const;
+			QuerySensNodeInfoOutcome querySensNodeInfo(const Model::QuerySensNodeInfoRequest &request)const;
+			void querySensNodeInfoAsync(const Model::QuerySensNodeInfoRequest& request, const QuerySensNodeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySensNodeInfoOutcomeCallable querySensNodeInfoCallable(const Model::QuerySensNodeInfoRequest& request) const;
 			RegisterLineageRelationOutcome registerLineageRelation(const Model::RegisterLineageRelationRequest &request)const;
 			void registerLineageRelationAsync(const Model::RegisterLineageRelationRequest& request, const RegisterLineageRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RegisterLineageRelationOutcomeCallable registerLineageRelationCallable(const Model::RegisterLineageRelationRequest& request) const;
@@ -2150,6 +2443,9 @@ namespace AlibabaCloud
 			UpdateBusinessOutcome updateBusiness(const Model::UpdateBusinessRequest &request)const;
 			void updateBusinessAsync(const Model::UpdateBusinessRequest& request, const UpdateBusinessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateBusinessOutcomeCallable updateBusinessCallable(const Model::UpdateBusinessRequest& request) const;
+			UpdateClusterConfigsOutcome updateClusterConfigs(const Model::UpdateClusterConfigsRequest &request)const;
+			void updateClusterConfigsAsync(const Model::UpdateClusterConfigsRequest& request, const UpdateClusterConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateClusterConfigsOutcomeCallable updateClusterConfigsCallable(const Model::UpdateClusterConfigsRequest& request) const;
 			UpdateConnectionOutcome updateConnection(const Model::UpdateConnectionRequest &request)const;
 			void updateConnectionAsync(const Model::UpdateConnectionRequest& request, const UpdateConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateConnectionOutcomeCallable updateConnectionCallable(const Model::UpdateConnectionRequest& request) const;

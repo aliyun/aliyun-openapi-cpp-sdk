@@ -30,23 +30,23 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListFoldersRequest : public RpcServic
 public:
 	ListFoldersRequest();
 	~ListFoldersRequest();
-	int getPageSize() const;
-	void setPageSize(int pageSize);
 	std::string getParentFolderPath() const;
 	void setParentFolderPath(const std::string &parentFolderPath);
-	long getProjectId() const;
-	void setProjectId(long projectId);
 	std::string getProjectIdentifier() const;
 	void setProjectIdentifier(const std::string &projectIdentifier);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
-	int pageSize_;
 	std::string parentFolderPath_;
-	long projectId_;
 	std::string projectIdentifier_;
 	int pageNumber_;
+	int pageSize_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

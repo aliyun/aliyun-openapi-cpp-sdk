@@ -34,7 +34,19 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					std::vector<std::string> collectionList;
+					struct CollectionListItem
+					{
+						std::string comment;
+						std::string ownerName;
+						std::string ownerId;
+						std::string qualifiedName;
+						std::string collectionType;
+						long createTime;
+						long updateTime;
+						int level;
+						std::string name;
+					};
+					std::vector<CollectionListItem> collectionList;
 					std::string nextToken;
 				};
 

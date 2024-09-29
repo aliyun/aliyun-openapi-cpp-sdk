@@ -34,12 +34,15 @@ public:
 	void setSrcEntityQualifiedName(const std::string &srcEntityQualifiedName);
 	std::string getDestEntityQualifiedName() const;
 	void setDestEntityQualifiedName(const std::string &destEntityQualifiedName);
+	std::string getRelationshipType() const;
+	void setRelationshipType(const std::string &relationshipType);
 	std::string getRelationshipGuid() const;
 	void setRelationshipGuid(const std::string &relationshipGuid);
 
 private:
 	std::string srcEntityQualifiedName_;
 	std::string destEntityQualifiedName_;
+	std::string relationshipType_;
 	std::string relationshipGuid_;
 };
 } // namespace Model

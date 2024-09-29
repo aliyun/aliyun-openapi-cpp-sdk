@@ -60,9 +60,15 @@ namespace AlibabaCloud
 						std::string bizProcessName;
 						long bizId;
 					};
+					struct ReceiversItem
+					{
+						std::vector<std::string> alertTargets1;
+						std::string alertUnit;
+					};
 					int alertInterval;
 					std::vector<BizProcessesItem> bizProcesses;
 					std::string dndStart;
+					std::vector<ReceiversItem> receivers;
 					std::string dndEnd;
 					std::string alertUnit;
 					std::vector<std::string> alertMethods;
@@ -71,6 +77,7 @@ namespace AlibabaCloud
 					std::string remindType;
 					std::vector<NodesItem> nodes;
 					std::vector<BaselinesItem> baselines;
+					std::vector<std::string> allowNodes;
 					long remindId;
 					std::vector<std::string> webhooks;
 					std::string remindUnit;

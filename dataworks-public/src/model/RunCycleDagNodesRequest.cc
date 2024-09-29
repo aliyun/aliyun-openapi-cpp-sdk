@@ -52,6 +52,15 @@ void RunCycleDagNodesRequest::setParallelism(bool parallelism) {
   setBodyParameter(std::string("Parallelism"), parallelism ? "true" : "false");
 }
 
+std::string RunCycleDagNodesRequest::getAlertNoticeType() const {
+  return alertNoticeType_;
+}
+
+void RunCycleDagNodesRequest::setAlertNoticeType(const std::string &alertNoticeType) {
+  alertNoticeType_ = alertNoticeType;
+  setBodyParameter(std::string("AlertNoticeType"), alertNoticeType);
+}
+
 long RunCycleDagNodesRequest::getRootNodeId() const {
   return rootNodeId_;
 }
@@ -86,6 +95,24 @@ bool RunCycleDagNodesRequest::getStartFutureInstanceImmediately() const {
 void RunCycleDagNodesRequest::setStartFutureInstanceImmediately(bool startFutureInstanceImmediately) {
   startFutureInstanceImmediately_ = startFutureInstanceImmediately;
   setBodyParameter(std::string("StartFutureInstanceImmediately"), startFutureInstanceImmediately ? "true" : "false");
+}
+
+int RunCycleDagNodesRequest::getConcurrentRuns() const {
+  return concurrentRuns_;
+}
+
+void RunCycleDagNodesRequest::setConcurrentRuns(int concurrentRuns) {
+  concurrentRuns_ = concurrentRuns;
+  setBodyParameter(std::string("ConcurrentRuns"), std::to_string(concurrentRuns));
+}
+
+std::string RunCycleDagNodesRequest::getAlertType() const {
+  return alertType_;
+}
+
+void RunCycleDagNodesRequest::setAlertType(const std::string &alertType) {
+  alertType_ = alertType;
+  setBodyParameter(std::string("AlertType"), alertType);
 }
 
 std::string RunCycleDagNodesRequest::getIncludeNodeIds() const {

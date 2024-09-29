@@ -52,14 +52,15 @@ void ListEntitiesByTagsRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::vector<ListEntitiesByTagsRequest::ObjectOfAny> ListEntitiesByTagsRequest::getTags() const {
+std::vector<ListEntitiesByTagsRequest::Tags> ListEntitiesByTagsRequest::getTags() const {
   return tags_;
 }
 
-void ListEntitiesByTagsRequest::setTags(const std::vector<ListEntitiesByTagsRequest::ObjectOfAny> &tags) {
+void ListEntitiesByTagsRequest::setTags(const std::vector<ListEntitiesByTagsRequest::Tags> &tags) {
   tags_ = tags;
   for(int dep1 = 0; dep1 != tags.size(); dep1++) {
-    setParameter(std::string("Tags") + "." + std::to_string(dep1 + 1), std::to_string(tags[dep1]));
+    setParameter(std::string("Tags") + "." + std::to_string(dep1 + 1) + ".TagValue", tags[dep1].tagValue);
+    setParameter(std::string("Tags") + "." + std::to_string(dep1 + 1) + ".TagKey", tags[dep1].tagKey);
   }
 }
 

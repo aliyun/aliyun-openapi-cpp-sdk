@@ -116,6 +116,8 @@ void GetFileResult::parse(const std::string &payload)
 		data_.nodeConfiguration.cronExpress = nodeConfigurationNode["CronExpress"].asString();
 	if(!nodeConfigurationNode["StartImmediately"].isNull())
 		data_.nodeConfiguration.startImmediately = nodeConfigurationNode["StartImmediately"].asString() == "true";
+	if(!nodeConfigurationNode["ApplyScheduleImmediately"].isNull())
+		data_.nodeConfiguration.applyScheduleImmediately = nodeConfigurationNode["ApplyScheduleImmediately"].asString();
 	auto allInputListNode = nodeConfigurationNode["InputList"]["NodeInputOutput"];
 	for (auto nodeConfigurationNodeInputListNodeInputOutput : allInputListNode)
 	{
@@ -160,6 +162,9 @@ void GetFileResult::parse(const std::string &payload)
 			outputContextParameterObject.description = nodeConfigurationNodeOutputParametersOutputContextParameter["Description"].asString();
 		data_.nodeConfiguration.outputParameters.push_back(outputContextParameterObject);
 	}
+	auto resourceDownloadLinkNode = dataNode["ResourceDownloadLink"];
+	if(!resourceDownloadLinkNode["downloadLink"].isNull())
+		data_.resourceDownloadLink.downloadLink = resourceDownloadLinkNode["downloadLink"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["ErrorMessage"].isNull())

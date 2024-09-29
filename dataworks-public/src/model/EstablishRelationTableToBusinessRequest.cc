@@ -25,15 +25,6 @@ EstablishRelationTableToBusinessRequest::EstablishRelationTableToBusinessRequest
 
 EstablishRelationTableToBusinessRequest::~EstablishRelationTableToBusinessRequest() {}
 
-std::string EstablishRelationTableToBusinessRequest::getTableGuid() const {
-  return tableGuid_;
-}
-
-void EstablishRelationTableToBusinessRequest::setTableGuid(const std::string &tableGuid) {
-  tableGuid_ = tableGuid;
-  setBodyParameter(std::string("TableGuid"), tableGuid);
-}
-
 std::string EstablishRelationTableToBusinessRequest::getBusinessId() const {
   return businessId_;
 }
@@ -41,15 +32,6 @@ std::string EstablishRelationTableToBusinessRequest::getBusinessId() const {
 void EstablishRelationTableToBusinessRequest::setBusinessId(const std::string &businessId) {
   businessId_ = businessId;
   setBodyParameter(std::string("BusinessId"), businessId);
-}
-
-long EstablishRelationTableToBusinessRequest::getProjectId() const {
-  return projectId_;
-}
-
-void EstablishRelationTableToBusinessRequest::setProjectId(long projectId) {
-  projectId_ = projectId;
-  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 
 std::string EstablishRelationTableToBusinessRequest::getProjectIdentifier() const {
@@ -68,5 +50,23 @@ std::string EstablishRelationTableToBusinessRequest::getFolderId() const {
 void EstablishRelationTableToBusinessRequest::setFolderId(const std::string &folderId) {
   folderId_ = folderId;
   setBodyParameter(std::string("FolderId"), folderId);
+}
+
+std::string EstablishRelationTableToBusinessRequest::getTableGuid() const {
+  return tableGuid_;
+}
+
+void EstablishRelationTableToBusinessRequest::setTableGuid(const std::string &tableGuid) {
+  tableGuid_ = tableGuid;
+  setBodyParameter(std::string("TableGuid"), tableGuid);
+}
+
+long EstablishRelationTableToBusinessRequest::getProjectId() const {
+  return projectId_;
+}
+
+void EstablishRelationTableToBusinessRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 

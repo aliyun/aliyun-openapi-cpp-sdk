@@ -32,8 +32,8 @@ public:
 	~ListQualityResultsByEntityRequest();
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
-	int getEntityId() const;
-	void setEntityId(int entityId);
+	long getEntityId() const;
+	void setEntityId(long entityId);
 	std::string getStartDate() const;
 	void setStartDate(const std::string &startDate);
 	int getPageNumber() const;
@@ -47,7 +47,7 @@ public:
 
 private:
 	std::string projectName_;
-	int entityId_;
+	long entityId_;
 	std::string startDate_;
 	int pageNumber_;
 	std::string endDate_;

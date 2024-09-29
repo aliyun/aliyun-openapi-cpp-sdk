@@ -58,6 +58,8 @@ public:
 	void setInputList(const std::string &inputList);
 	bool getCreateFolderIfNotExists() const;
 	void setCreateFolderIfNotExists(bool createFolderIfNotExists);
+	bool getApplyScheduleImmediately() const;
+	void setApplyScheduleImmediately(bool applyScheduleImmediately);
 	std::string getRerunMode() const;
 	void setRerunMode(const std::string &rerunMode);
 	std::string getConnectionName() const;
@@ -108,6 +110,7 @@ private:
 	int autoRerunIntervalMillis_;
 	std::string inputList_;
 	bool createFolderIfNotExists_;
+	bool applyScheduleImmediately_;
 	std::string rerunMode_;
 	std::string connectionName_;
 	std::string outputParameters_;

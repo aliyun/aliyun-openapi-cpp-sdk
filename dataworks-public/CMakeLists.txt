@@ -27,6 +27,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/AddMetaCollectionEntityResult.h
 	include/alibabacloud/dataworks-public/model/AddProjectMemberToRoleRequest.h
 	include/alibabacloud/dataworks-public/model/AddProjectMemberToRoleResult.h
+	include/alibabacloud/dataworks-public/model/AddRecognizeRuleRequest.h
+	include/alibabacloud/dataworks-public/model/AddRecognizeRuleResult.h
 	include/alibabacloud/dataworks-public/model/AddToMetaCategoryRequest.h
 	include/alibabacloud/dataworks-public/model/AddToMetaCategoryResult.h
 	include/alibabacloud/dataworks-public/model/ApprovePermissionApplyOrderRequest.h
@@ -83,6 +85,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/CreateMetaCollectionResult.h
 	include/alibabacloud/dataworks-public/model/CreatePermissionApplyOrderRequest.h
 	include/alibabacloud/dataworks-public/model/CreatePermissionApplyOrderResult.h
+	include/alibabacloud/dataworks-public/model/CreateProjectRequest.h
+	include/alibabacloud/dataworks-public/model/CreateProjectResult.h
 	include/alibabacloud/dataworks-public/model/CreateProjectMemberRequest.h
 	include/alibabacloud/dataworks-public/model/CreateProjectMemberResult.h
 	include/alibabacloud/dataworks-public/model/CreateQualityEntityRequest.h
@@ -147,6 +151,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/DeleteQualityRelativeNodeResult.h
 	include/alibabacloud/dataworks-public/model/DeleteQualityRuleRequest.h
 	include/alibabacloud/dataworks-public/model/DeleteQualityRuleResult.h
+	include/alibabacloud/dataworks-public/model/DeleteRecognizeRuleRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteRecognizeRuleResult.h
 	include/alibabacloud/dataworks-public/model/DeleteRemindRequest.h
 	include/alibabacloud/dataworks-public/model/DeleteRemindResult.h
 	include/alibabacloud/dataworks-public/model/DeleteTableRequest.h
@@ -161,6 +167,48 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/DeployFileResult.h
 	include/alibabacloud/dataworks-public/model/DesensitizeDataRequest.h
 	include/alibabacloud/dataworks-public/model/DesensitizeDataResult.h
+	include/alibabacloud/dataworks-public/model/DsgDesensPlanAddOrUpdateRequest.h
+	include/alibabacloud/dataworks-public/model/DsgDesensPlanAddOrUpdateResult.h
+	include/alibabacloud/dataworks-public/model/DsgDesensPlanDeleteRequest.h
+	include/alibabacloud/dataworks-public/model/DsgDesensPlanDeleteResult.h
+	include/alibabacloud/dataworks-public/model/DsgDesensPlanQueryListRequest.h
+	include/alibabacloud/dataworks-public/model/DsgDesensPlanQueryListResult.h
+	include/alibabacloud/dataworks-public/model/DsgDesensPlanUpdateStatusRequest.h
+	include/alibabacloud/dataworks-public/model/DsgDesensPlanUpdateStatusResult.h
+	include/alibabacloud/dataworks-public/model/DsgPlatformQueryProjectsAndSchemaFromMetaRequest.h
+	include/alibabacloud/dataworks-public/model/DsgPlatformQueryProjectsAndSchemaFromMetaResult.h
+	include/alibabacloud/dataworks-public/model/DsgQueryDefaultTemplatesRequest.h
+	include/alibabacloud/dataworks-public/model/DsgQueryDefaultTemplatesResult.h
+	include/alibabacloud/dataworks-public/model/DsgQuerySensResultRequest.h
+	include/alibabacloud/dataworks-public/model/DsgQuerySensResultResult.h
+	include/alibabacloud/dataworks-public/model/DsgRunSensIdentifyRequest.h
+	include/alibabacloud/dataworks-public/model/DsgRunSensIdentifyResult.h
+	include/alibabacloud/dataworks-public/model/DsgSceneAddOrUpdateSceneRequest.h
+	include/alibabacloud/dataworks-public/model/DsgSceneAddOrUpdateSceneResult.h
+	include/alibabacloud/dataworks-public/model/DsgSceneQuerySceneListByNameRequest.h
+	include/alibabacloud/dataworks-public/model/DsgSceneQuerySceneListByNameResult.h
+	include/alibabacloud/dataworks-public/model/DsgScenedDeleteSceneRequest.h
+	include/alibabacloud/dataworks-public/model/DsgScenedDeleteSceneResult.h
+	include/alibabacloud/dataworks-public/model/DsgStopSensIdentifyRequest.h
+	include/alibabacloud/dataworks-public/model/DsgStopSensIdentifyResult.h
+	include/alibabacloud/dataworks-public/model/DsgUserGroupAddOrUpdateRequest.h
+	include/alibabacloud/dataworks-public/model/DsgUserGroupAddOrUpdateResult.h
+	include/alibabacloud/dataworks-public/model/DsgUserGroupDeleteRequest.h
+	include/alibabacloud/dataworks-public/model/DsgUserGroupDeleteResult.h
+	include/alibabacloud/dataworks-public/model/DsgUserGroupGetOdpsRoleGroupsRequest.h
+	include/alibabacloud/dataworks-public/model/DsgUserGroupGetOdpsRoleGroupsResult.h
+	include/alibabacloud/dataworks-public/model/DsgUserGroupQueryListRequest.h
+	include/alibabacloud/dataworks-public/model/DsgUserGroupQueryListResult.h
+	include/alibabacloud/dataworks-public/model/DsgUserGroupQueryUserListRequest.h
+	include/alibabacloud/dataworks-public/model/DsgUserGroupQueryUserListResult.h
+	include/alibabacloud/dataworks-public/model/DsgWhiteListAddOrUpdateRequest.h
+	include/alibabacloud/dataworks-public/model/DsgWhiteListAddOrUpdateResult.h
+	include/alibabacloud/dataworks-public/model/DsgWhiteListDeleteListRequest.h
+	include/alibabacloud/dataworks-public/model/DsgWhiteListDeleteListResult.h
+	include/alibabacloud/dataworks-public/model/DsgWhiteListQueryListRequest.h
+	include/alibabacloud/dataworks-public/model/DsgWhiteListQueryListResult.h
+	include/alibabacloud/dataworks-public/model/EditRecognizeRuleRequest.h
+	include/alibabacloud/dataworks-public/model/EditRecognizeRuleResult.h
 	include/alibabacloud/dataworks-public/model/EstablishRelationTableToBusinessRequest.h
 	include/alibabacloud/dataworks-public/model/EstablishRelationTableToBusinessResult.h
 	include/alibabacloud/dataworks-public/model/ExportDataSourcesRequest.h
@@ -169,6 +217,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/GenerateDISyncTaskConfigForCreatingResult.h
 	include/alibabacloud/dataworks-public/model/GenerateDISyncTaskConfigForUpdatingRequest.h
 	include/alibabacloud/dataworks-public/model/GenerateDISyncTaskConfigForUpdatingResult.h
+	include/alibabacloud/dataworks-public/model/GetAlertMessageRequest.h
+	include/alibabacloud/dataworks-public/model/GetAlertMessageResult.h
 	include/alibabacloud/dataworks-public/model/GetBaselineRequest.h
 	include/alibabacloud/dataworks-public/model/GetBaselineResult.h
 	include/alibabacloud/dataworks-public/model/GetBaselineConfigRequest.h
@@ -325,6 +375,10 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListBusinessResult.h
 	include/alibabacloud/dataworks-public/model/ListCalcEnginesRequest.h
 	include/alibabacloud/dataworks-public/model/ListCalcEnginesResult.h
+	include/alibabacloud/dataworks-public/model/ListClusterConfigsRequest.h
+	include/alibabacloud/dataworks-public/model/ListClusterConfigsResult.h
+	include/alibabacloud/dataworks-public/model/ListClustersRequest.h
+	include/alibabacloud/dataworks-public/model/ListClustersResult.h
 	include/alibabacloud/dataworks-public/model/ListConnectionsRequest.h
 	include/alibabacloud/dataworks-public/model/ListConnectionsResult.h
 	include/alibabacloud/dataworks-public/model/ListDIAlarmRulesRequest.h
@@ -383,6 +437,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListLineageResult.h
 	include/alibabacloud/dataworks-public/model/ListManualDagInstancesRequest.h
 	include/alibabacloud/dataworks-public/model/ListManualDagInstancesResult.h
+	include/alibabacloud/dataworks-public/model/ListMeasureDataRequest.h
+	include/alibabacloud/dataworks-public/model/ListMeasureDataResult.h
 	include/alibabacloud/dataworks-public/model/ListMetaCollectionEntitiesRequest.h
 	include/alibabacloud/dataworks-public/model/ListMetaCollectionEntitiesResult.h
 	include/alibabacloud/dataworks-public/model/ListMetaCollectionsRequest.h
@@ -435,6 +491,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListTableLevelResult.h
 	include/alibabacloud/dataworks-public/model/ListTableThemeRequest.h
 	include/alibabacloud/dataworks-public/model/ListTableThemeResult.h
+	include/alibabacloud/dataworks-public/model/ListTablesRequest.h
+	include/alibabacloud/dataworks-public/model/ListTablesResult.h
 	include/alibabacloud/dataworks-public/model/ListTopicsRequest.h
 	include/alibabacloud/dataworks-public/model/ListTopicsResult.h
 	include/alibabacloud/dataworks-public/model/MountDirectoryRequest.h
@@ -445,8 +503,22 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/PublishDataServiceApiResult.h
 	include/alibabacloud/dataworks-public/model/QueryDISyncTaskConfigProcessResultRequest.h
 	include/alibabacloud/dataworks-public/model/QueryDISyncTaskConfigProcessResultResult.h
+	include/alibabacloud/dataworks-public/model/QueryDefaultTemplateRequest.h
+	include/alibabacloud/dataworks-public/model/QueryDefaultTemplateResult.h
 	include/alibabacloud/dataworks-public/model/QueryPublicModelEngineRequest.h
 	include/alibabacloud/dataworks-public/model/QueryPublicModelEngineResult.h
+	include/alibabacloud/dataworks-public/model/QueryRecognizeDataByRuleTypeRequest.h
+	include/alibabacloud/dataworks-public/model/QueryRecognizeDataByRuleTypeResult.h
+	include/alibabacloud/dataworks-public/model/QueryRecognizeRuleDetailRequest.h
+	include/alibabacloud/dataworks-public/model/QueryRecognizeRuleDetailResult.h
+	include/alibabacloud/dataworks-public/model/QueryRecognizeRulesTypeRequest.h
+	include/alibabacloud/dataworks-public/model/QueryRecognizeRulesTypeResult.h
+	include/alibabacloud/dataworks-public/model/QuerySensClassificationRequest.h
+	include/alibabacloud/dataworks-public/model/QuerySensClassificationResult.h
+	include/alibabacloud/dataworks-public/model/QuerySensLevelRequest.h
+	include/alibabacloud/dataworks-public/model/QuerySensLevelResult.h
+	include/alibabacloud/dataworks-public/model/QuerySensNodeInfoRequest.h
+	include/alibabacloud/dataworks-public/model/QuerySensNodeInfoResult.h
 	include/alibabacloud/dataworks-public/model/RegisterLineageRelationRequest.h
 	include/alibabacloud/dataworks-public/model/RegisterLineageRelationResult.h
 	include/alibabacloud/dataworks-public/model/RemoveEntityTagsRequest.h
@@ -517,6 +589,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/UpdateBaselineResult.h
 	include/alibabacloud/dataworks-public/model/UpdateBusinessRequest.h
 	include/alibabacloud/dataworks-public/model/UpdateBusinessResult.h
+	include/alibabacloud/dataworks-public/model/UpdateClusterConfigsRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateClusterConfigsResult.h
 	include/alibabacloud/dataworks-public/model/UpdateConnectionRequest.h
 	include/alibabacloud/dataworks-public/model/UpdateConnectionResult.h
 	include/alibabacloud/dataworks-public/model/UpdateDIAlarmRuleRequest.h
@@ -578,6 +652,8 @@ set(dataworks-public_src
 	src/model/AddMetaCollectionEntityResult.cc
 	src/model/AddProjectMemberToRoleRequest.cc
 	src/model/AddProjectMemberToRoleResult.cc
+	src/model/AddRecognizeRuleRequest.cc
+	src/model/AddRecognizeRuleResult.cc
 	src/model/AddToMetaCategoryRequest.cc
 	src/model/AddToMetaCategoryResult.cc
 	src/model/ApprovePermissionApplyOrderRequest.cc
@@ -634,6 +710,8 @@ set(dataworks-public_src
 	src/model/CreateMetaCollectionResult.cc
 	src/model/CreatePermissionApplyOrderRequest.cc
 	src/model/CreatePermissionApplyOrderResult.cc
+	src/model/CreateProjectRequest.cc
+	src/model/CreateProjectResult.cc
 	src/model/CreateProjectMemberRequest.cc
 	src/model/CreateProjectMemberResult.cc
 	src/model/CreateQualityEntityRequest.cc
@@ -698,6 +776,8 @@ set(dataworks-public_src
 	src/model/DeleteQualityRelativeNodeResult.cc
 	src/model/DeleteQualityRuleRequest.cc
 	src/model/DeleteQualityRuleResult.cc
+	src/model/DeleteRecognizeRuleRequest.cc
+	src/model/DeleteRecognizeRuleResult.cc
 	src/model/DeleteRemindRequest.cc
 	src/model/DeleteRemindResult.cc
 	src/model/DeleteTableRequest.cc
@@ -712,6 +792,48 @@ set(dataworks-public_src
 	src/model/DeployFileResult.cc
 	src/model/DesensitizeDataRequest.cc
 	src/model/DesensitizeDataResult.cc
+	src/model/DsgDesensPlanAddOrUpdateRequest.cc
+	src/model/DsgDesensPlanAddOrUpdateResult.cc
+	src/model/DsgDesensPlanDeleteRequest.cc
+	src/model/DsgDesensPlanDeleteResult.cc
+	src/model/DsgDesensPlanQueryListRequest.cc
+	src/model/DsgDesensPlanQueryListResult.cc
+	src/model/DsgDesensPlanUpdateStatusRequest.cc
+	src/model/DsgDesensPlanUpdateStatusResult.cc
+	src/model/DsgPlatformQueryProjectsAndSchemaFromMetaRequest.cc
+	src/model/DsgPlatformQueryProjectsAndSchemaFromMetaResult.cc
+	src/model/DsgQueryDefaultTemplatesRequest.cc
+	src/model/DsgQueryDefaultTemplatesResult.cc
+	src/model/DsgQuerySensResultRequest.cc
+	src/model/DsgQuerySensResultResult.cc
+	src/model/DsgRunSensIdentifyRequest.cc
+	src/model/DsgRunSensIdentifyResult.cc
+	src/model/DsgSceneAddOrUpdateSceneRequest.cc
+	src/model/DsgSceneAddOrUpdateSceneResult.cc
+	src/model/DsgSceneQuerySceneListByNameRequest.cc
+	src/model/DsgSceneQuerySceneListByNameResult.cc
+	src/model/DsgScenedDeleteSceneRequest.cc
+	src/model/DsgScenedDeleteSceneResult.cc
+	src/model/DsgStopSensIdentifyRequest.cc
+	src/model/DsgStopSensIdentifyResult.cc
+	src/model/DsgUserGroupAddOrUpdateRequest.cc
+	src/model/DsgUserGroupAddOrUpdateResult.cc
+	src/model/DsgUserGroupDeleteRequest.cc
+	src/model/DsgUserGroupDeleteResult.cc
+	src/model/DsgUserGroupGetOdpsRoleGroupsRequest.cc
+	src/model/DsgUserGroupGetOdpsRoleGroupsResult.cc
+	src/model/DsgUserGroupQueryListRequest.cc
+	src/model/DsgUserGroupQueryListResult.cc
+	src/model/DsgUserGroupQueryUserListRequest.cc
+	src/model/DsgUserGroupQueryUserListResult.cc
+	src/model/DsgWhiteListAddOrUpdateRequest.cc
+	src/model/DsgWhiteListAddOrUpdateResult.cc
+	src/model/DsgWhiteListDeleteListRequest.cc
+	src/model/DsgWhiteListDeleteListResult.cc
+	src/model/DsgWhiteListQueryListRequest.cc
+	src/model/DsgWhiteListQueryListResult.cc
+	src/model/EditRecognizeRuleRequest.cc
+	src/model/EditRecognizeRuleResult.cc
 	src/model/EstablishRelationTableToBusinessRequest.cc
 	src/model/EstablishRelationTableToBusinessResult.cc
 	src/model/ExportDataSourcesRequest.cc
@@ -720,6 +842,8 @@ set(dataworks-public_src
 	src/model/GenerateDISyncTaskConfigForCreatingResult.cc
 	src/model/GenerateDISyncTaskConfigForUpdatingRequest.cc
 	src/model/GenerateDISyncTaskConfigForUpdatingResult.cc
+	src/model/GetAlertMessageRequest.cc
+	src/model/GetAlertMessageResult.cc
 	src/model/GetBaselineRequest.cc
 	src/model/GetBaselineResult.cc
 	src/model/GetBaselineConfigRequest.cc
@@ -876,6 +1000,10 @@ set(dataworks-public_src
 	src/model/ListBusinessResult.cc
 	src/model/ListCalcEnginesRequest.cc
 	src/model/ListCalcEnginesResult.cc
+	src/model/ListClusterConfigsRequest.cc
+	src/model/ListClusterConfigsResult.cc
+	src/model/ListClustersRequest.cc
+	src/model/ListClustersResult.cc
 	src/model/ListConnectionsRequest.cc
 	src/model/ListConnectionsResult.cc
 	src/model/ListDIAlarmRulesRequest.cc
@@ -934,6 +1062,8 @@ set(dataworks-public_src
 	src/model/ListLineageResult.cc
 	src/model/ListManualDagInstancesRequest.cc
 	src/model/ListManualDagInstancesResult.cc
+	src/model/ListMeasureDataRequest.cc
+	src/model/ListMeasureDataResult.cc
 	src/model/ListMetaCollectionEntitiesRequest.cc
 	src/model/ListMetaCollectionEntitiesResult.cc
 	src/model/ListMetaCollectionsRequest.cc
@@ -986,6 +1116,8 @@ set(dataworks-public_src
 	src/model/ListTableLevelResult.cc
 	src/model/ListTableThemeRequest.cc
 	src/model/ListTableThemeResult.cc
+	src/model/ListTablesRequest.cc
+	src/model/ListTablesResult.cc
 	src/model/ListTopicsRequest.cc
 	src/model/ListTopicsResult.cc
 	src/model/MountDirectoryRequest.cc
@@ -996,8 +1128,22 @@ set(dataworks-public_src
 	src/model/PublishDataServiceApiResult.cc
 	src/model/QueryDISyncTaskConfigProcessResultRequest.cc
 	src/model/QueryDISyncTaskConfigProcessResultResult.cc
+	src/model/QueryDefaultTemplateRequest.cc
+	src/model/QueryDefaultTemplateResult.cc
 	src/model/QueryPublicModelEngineRequest.cc
 	src/model/QueryPublicModelEngineResult.cc
+	src/model/QueryRecognizeDataByRuleTypeRequest.cc
+	src/model/QueryRecognizeDataByRuleTypeResult.cc
+	src/model/QueryRecognizeRuleDetailRequest.cc
+	src/model/QueryRecognizeRuleDetailResult.cc
+	src/model/QueryRecognizeRulesTypeRequest.cc
+	src/model/QueryRecognizeRulesTypeResult.cc
+	src/model/QuerySensClassificationRequest.cc
+	src/model/QuerySensClassificationResult.cc
+	src/model/QuerySensLevelRequest.cc
+	src/model/QuerySensLevelResult.cc
+	src/model/QuerySensNodeInfoRequest.cc
+	src/model/QuerySensNodeInfoResult.cc
 	src/model/RegisterLineageRelationRequest.cc
 	src/model/RegisterLineageRelationResult.cc
 	src/model/RemoveEntityTagsRequest.cc
@@ -1068,6 +1214,8 @@ set(dataworks-public_src
 	src/model/UpdateBaselineResult.cc
 	src/model/UpdateBusinessRequest.cc
 	src/model/UpdateBusinessResult.cc
+	src/model/UpdateClusterConfigsRequest.cc
+	src/model/UpdateClusterConfigsResult.cc
 	src/model/UpdateConnectionRequest.cc
 	src/model/UpdateConnectionResult.cc
 	src/model/UpdateDIAlarmRuleRequest.cc

@@ -25,6 +25,24 @@ ListBusinessRequest::ListBusinessRequest()
 
 ListBusinessRequest::~ListBusinessRequest() {}
 
+std::string ListBusinessRequest::getProjectIdentifier() const {
+  return projectIdentifier_;
+}
+
+void ListBusinessRequest::setProjectIdentifier(const std::string &projectIdentifier) {
+  projectIdentifier_ = projectIdentifier;
+  setBodyParameter(std::string("ProjectIdentifier"), projectIdentifier);
+}
+
+int ListBusinessRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void ListBusinessRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
 int ListBusinessRequest::getPageSize() const {
   return pageSize_;
 }
@@ -50,23 +68,5 @@ long ListBusinessRequest::getProjectId() const {
 void ListBusinessRequest::setProjectId(long projectId) {
   projectId_ = projectId;
   setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
-std::string ListBusinessRequest::getProjectIdentifier() const {
-  return projectIdentifier_;
-}
-
-void ListBusinessRequest::setProjectIdentifier(const std::string &projectIdentifier) {
-  projectIdentifier_ = projectIdentifier;
-  setBodyParameter(std::string("ProjectIdentifier"), projectIdentifier);
-}
-
-int ListBusinessRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void ListBusinessRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 

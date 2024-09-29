@@ -30,22 +30,22 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListFileVersionsRequest : public RpcS
 public:
 	ListFileVersionsRequest();
 	~ListFileVersionsRequest();
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	long getProjectId() const;
-	void setProjectId(long projectId);
 	std::string getProjectIdentifier() const;
 	void setProjectIdentifier(const std::string &projectIdentifier);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 	long getFileId() const;
 	void setFileId(long fileId);
 
 private:
-	int pageSize_;
-	long projectId_;
 	std::string projectIdentifier_;
 	int pageNumber_;
+	int pageSize_;
+	long projectId_;
 	long fileId_;
 };
 } // namespace Model

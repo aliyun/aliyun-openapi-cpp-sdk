@@ -32,13 +32,18 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListEntityTagsResult : public ServiceResult
 			{
 			public:
+				struct DataItem
+				{
+					std::string tagKey;
+					std::string tagValue;
+				};
 
 
 				ListEntityTagsResult();
 				explicit ListEntityTagsResult(const std::string &payload);
 				~ListEntityTagsResult();
 				int getHttpStatusCode()const;
-				std::vector<std::string> getData()const;
+				std::vector<DataItem> getData()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -47,7 +52,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int httpStatusCode_;
-				std::vector<std::string> data_;
+				std::vector<DataItem> data_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;

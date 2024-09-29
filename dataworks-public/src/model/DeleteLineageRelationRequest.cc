@@ -43,6 +43,15 @@ void DeleteLineageRelationRequest::setDestEntityQualifiedName(const std::string 
   setParameter(std::string("DestEntityQualifiedName"), destEntityQualifiedName);
 }
 
+std::string DeleteLineageRelationRequest::getRelationshipType() const {
+  return relationshipType_;
+}
+
+void DeleteLineageRelationRequest::setRelationshipType(const std::string &relationshipType) {
+  relationshipType_ = relationshipType;
+  setParameter(std::string("RelationshipType"), relationshipType);
+}
+
 std::string DeleteLineageRelationRequest::getRelationshipGuid() const {
   return relationshipGuid_;
 }

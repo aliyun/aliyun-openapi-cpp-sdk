@@ -25,24 +25,6 @@ ListFileVersionsRequest::ListFileVersionsRequest()
 
 ListFileVersionsRequest::~ListFileVersionsRequest() {}
 
-int ListFileVersionsRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListFileVersionsRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
-long ListFileVersionsRequest::getProjectId() const {
-  return projectId_;
-}
-
-void ListFileVersionsRequest::setProjectId(long projectId) {
-  projectId_ = projectId;
-  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
 std::string ListFileVersionsRequest::getProjectIdentifier() const {
   return projectIdentifier_;
 }
@@ -59,6 +41,24 @@ int ListFileVersionsRequest::getPageNumber() const {
 void ListFileVersionsRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+int ListFileVersionsRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListFileVersionsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+long ListFileVersionsRequest::getProjectId() const {
+  return projectId_;
+}
+
+void ListFileVersionsRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 
 long ListFileVersionsRequest::getFileId() const {

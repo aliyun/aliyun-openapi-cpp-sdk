@@ -92,6 +92,16 @@ void ListNodesResult::parse(const std::string &payload)
 			nodesItemObject.resGroupIdentifier = dataNodeNodesNodesItem["ResGroupIdentifier"].asString();
 		if(!dataNodeNodesNodesItem["FileType"].isNull())
 			nodesItemObject.fileType = std::stoi(dataNodeNodesNodesItem["FileType"].asString());
+		if(!dataNodeNodesNodesItem["FileId"].isNull())
+			nodesItemObject.fileId = std::stol(dataNodeNodesNodesItem["FileId"].asString());
+		if(!dataNodeNodesNodesItem["FileVersion"].isNull())
+			nodesItemObject.fileVersion = std::stoi(dataNodeNodesNodesItem["FileVersion"].asString());
+		if(!dataNodeNodesNodesItem["DeployDate"].isNull())
+			nodesItemObject.deployDate = std::stol(dataNodeNodesNodesItem["DeployDate"].asString());
+		if(!dataNodeNodesNodesItem["CreateTime"].isNull())
+			nodesItemObject.createTime = std::stol(dataNodeNodesNodesItem["CreateTime"].asString());
+		if(!dataNodeNodesNodesItem["ModifyTime"].isNull())
+			nodesItemObject.modifyTime = std::stol(dataNodeNodesNodesItem["ModifyTime"].asString());
 		data_.nodes.push_back(nodesItemObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

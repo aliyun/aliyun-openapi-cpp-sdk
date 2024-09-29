@@ -116,6 +116,17 @@ void GetRemindResult::parse(const std::string &payload)
 			bizProcessesItemObject.bizId = std::stol(dataNodeBizProcessesBizProcessesItem["BizId"].asString());
 		data_.bizProcesses.push_back(bizProcessesItemObject);
 	}
+	auto allReceiversNode = dataNode["Receivers"]["ReceiversItem"];
+	for (auto dataNodeReceiversReceiversItem : allReceiversNode)
+	{
+		Data::ReceiversItem receiversItemObject;
+		if(!dataNodeReceiversReceiversItem["AlertUnit"].isNull())
+			receiversItemObject.alertUnit = dataNodeReceiversReceiversItem["AlertUnit"].asString();
+		auto allAlertTargets1 = value["AlertTargets"]["AlertTargets"];
+		for (auto value : allAlertTargets1)
+			receiversItemObject.alertTargets1.push_back(value.asString());
+		data_.receivers.push_back(receiversItemObject);
+	}
 		auto allAlertTargets = dataNode["AlertTargets"]["AlertTargets"];
 		for (auto value : allAlertTargets)
 			data_.alertTargets.push_back(value.asString());
@@ -125,6 +136,9 @@ void GetRemindResult::parse(const std::string &payload)
 		auto allWebhooks = dataNode["Webhooks"]["Webhooks"];
 		for (auto value : allWebhooks)
 			data_.webhooks.push_back(value.asString());
+		auto allAllowNodes = dataNode["AllowNodes"]["allowNodes"];
+		for (auto value : allAllowNodes)
+			data_.allowNodes.push_back(value.asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["ErrorMessage"].isNull())

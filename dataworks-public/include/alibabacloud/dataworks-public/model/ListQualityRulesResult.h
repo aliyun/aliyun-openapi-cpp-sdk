@@ -38,7 +38,7 @@ namespace AlibabaCloud
 					{
 						std::string historyCriticalThreshold;
 						std::string historyWarningThreshold;
-						int ruleCheckerRelationId;
+						long ruleCheckerRelationId;
 						std::string projectName;
 						std::string expectValue;
 						std::string warningThreshold;
@@ -55,12 +55,12 @@ namespace AlibabaCloud
 						std::string trend;
 						int ruleType;
 						int checkerId;
-						int entityId;
+						long entityId;
 						std::string tableName;
 						bool fixCheck;
 						int blockType;
 						std::string onDutyAccountName;
-						int id;
+						long id;
 						std::string propertyKey;
 					};
 					long totalCount;

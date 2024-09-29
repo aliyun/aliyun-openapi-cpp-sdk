@@ -34,8 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					struct EntityListItem
+					{
+						std::string entityContent;
+						long tenantId;
+						std::string qualifiedName;
+					};
 					std::string nextToken;
-					std::vector<std::string> entityList;
+					std::vector<EntityListItem> entityList;
 				};
 
 

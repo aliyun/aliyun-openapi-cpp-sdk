@@ -30,23 +30,23 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT EstablishRelationTableToBusinessReque
 public:
 	EstablishRelationTableToBusinessRequest();
 	~EstablishRelationTableToBusinessRequest();
-	std::string getTableGuid() const;
-	void setTableGuid(const std::string &tableGuid);
 	std::string getBusinessId() const;
 	void setBusinessId(const std::string &businessId);
-	long getProjectId() const;
-	void setProjectId(long projectId);
 	std::string getProjectIdentifier() const;
 	void setProjectIdentifier(const std::string &projectIdentifier);
 	std::string getFolderId() const;
 	void setFolderId(const std::string &folderId);
+	std::string getTableGuid() const;
+	void setTableGuid(const std::string &tableGuid);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
-	std::string tableGuid_;
 	std::string businessId_;
-	long projectId_;
 	std::string projectIdentifier_;
 	std::string folderId_;
+	std::string tableGuid_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

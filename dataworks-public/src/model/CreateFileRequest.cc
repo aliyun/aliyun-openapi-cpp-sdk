@@ -151,6 +151,15 @@ void CreateFileRequest::setCreateFolderIfNotExists(bool createFolderIfNotExists)
   setBodyParameter(std::string("CreateFolderIfNotExists"), createFolderIfNotExists ? "true" : "false");
 }
 
+bool CreateFileRequest::getApplyScheduleImmediately() const {
+  return applyScheduleImmediately_;
+}
+
+void CreateFileRequest::setApplyScheduleImmediately(bool applyScheduleImmediately) {
+  applyScheduleImmediately_ = applyScheduleImmediately;
+  setBodyParameter(std::string("ApplyScheduleImmediately"), applyScheduleImmediately ? "true" : "false");
+}
+
 std::string CreateFileRequest::getRerunMode() const {
   return rerunMode_;
 }

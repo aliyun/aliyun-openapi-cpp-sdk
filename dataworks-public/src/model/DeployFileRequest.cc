@@ -25,6 +25,15 @@ DeployFileRequest::DeployFileRequest()
 
 DeployFileRequest::~DeployFileRequest() {}
 
+std::string DeployFileRequest::getProjectIdentifier() const {
+  return projectIdentifier_;
+}
+
+void DeployFileRequest::setProjectIdentifier(const std::string &projectIdentifier) {
+  projectIdentifier_ = projectIdentifier;
+  setBodyParameter(std::string("ProjectIdentifier"), projectIdentifier);
+}
+
 std::string DeployFileRequest::getComment() const {
   return comment_;
 }
@@ -50,15 +59,6 @@ long DeployFileRequest::getNodeId() const {
 void DeployFileRequest::setNodeId(long nodeId) {
   nodeId_ = nodeId;
   setBodyParameter(std::string("NodeId"), std::to_string(nodeId));
-}
-
-std::string DeployFileRequest::getProjectIdentifier() const {
-  return projectIdentifier_;
-}
-
-void DeployFileRequest::setProjectIdentifier(const std::string &projectIdentifier) {
-  projectIdentifier_ = projectIdentifier;
-  setBodyParameter(std::string("ProjectIdentifier"), projectIdentifier);
 }
 
 long DeployFileRequest::getFileId() const {

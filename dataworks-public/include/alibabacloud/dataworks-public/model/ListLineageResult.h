@@ -36,6 +36,12 @@ namespace AlibabaCloud
 				{
 					struct DataEntityListItem
 					{
+						struct Entity
+						{
+							std::string entityContent;
+							long tenantId;
+							std::string qualifiedName;
+						};
 						struct RelationListItem
 						{
 							std::string datasource;
@@ -43,7 +49,7 @@ namespace AlibabaCloud
 							std::string channel;
 							std::string guid;
 						};
-						ObjectOfAny entity;
+						Entity entity;
 						std::vector<DataEntityListItem::RelationListItem> relationList;
 						long createTimestamp;
 					};

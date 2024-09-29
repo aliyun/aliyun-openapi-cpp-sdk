@@ -88,6 +88,15 @@ void ListNodesRequest::setPageSize(int pageSize) {
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::string ListNodesRequest::getSchedulerType() const {
+  return schedulerType_;
+}
+
+void ListNodesRequest::setSchedulerType(const std::string &schedulerType) {
+  schedulerType_ = schedulerType;
+  setBodyParameter(std::string("SchedulerType"), schedulerType);
+}
+
 long ListNodesRequest::getProjectId() const {
   return projectId_;
 }

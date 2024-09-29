@@ -135,6 +135,8 @@ void GetDIJobResult::parse(const std::string &payload)
 		data_.tableMappings.push_back(tableMappingObject);
 	}
 	auto resourceSettingsNode = dataNode["ResourceSettings"];
+	if(!resourceSettingsNode["RequestedCu"].isNull())
+		data_.resourceSettings.requestedCu = std::stof(resourceSettingsNode["RequestedCu"].asString());
 	auto offlineResourceSettingsNode = resourceSettingsNode["OfflineResourceSettings"];
 	if(!offlineResourceSettingsNode["ResourceGroupIdentifier"].isNull())
 		data_.resourceSettings.offlineResourceSettings.resourceGroupIdentifier = offlineResourceSettingsNode["ResourceGroupIdentifier"].asString();
@@ -142,6 +144,8 @@ void GetDIJobResult::parse(const std::string &payload)
 	if(!realtimeResourceSettingsNode["ResourceGroupIdentifier"].isNull())
 		data_.resourceSettings.realtimeResourceSettings.resourceGroupIdentifier = realtimeResourceSettingsNode["ResourceGroupIdentifier"].asString();
 	auto jobSettingsNode = dataNode["JobSettings"];
+	if(!jobSettingsNode["ChannelSettings"].isNull())
+		data_.jobSettings.channelSettings = jobSettingsNode["ChannelSettings"].asString();
 	auto allColumnDataTypeSettingsNode = jobSettingsNode["ColumnDataTypeSettings"]["ColumnDataTypeSetting"];
 	for (auto jobSettingsNodeColumnDataTypeSettingsColumnDataTypeSetting : allColumnDataTypeSettingsNode)
 	{
@@ -172,6 +176,11 @@ void GetDIJobResult::parse(const std::string &payload)
 			runtimeSettingObject.value = jobSettingsNodeRuntimeSettingsRuntimeSetting["Value"].asString();
 		data_.jobSettings.runtimeSettings.push_back(runtimeSettingObject);
 	}
+	auto cycleScheduleSettingsNode = jobSettingsNode["CycleScheduleSettings"];
+	if(!cycleScheduleSettingsNode["CycleMigrationType"].isNull())
+		data_.jobSettings.cycleScheduleSettings.cycleMigrationType = cycleScheduleSettingsNode["CycleMigrationType"].asString();
+	if(!cycleScheduleSettingsNode["ScheduleParameters"].isNull())
+		data_.jobSettings.cycleScheduleSettings.scheduleParameters = cycleScheduleSettingsNode["ScheduleParameters"].asString();
 
 }
 

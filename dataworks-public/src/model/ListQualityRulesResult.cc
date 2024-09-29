@@ -65,7 +65,7 @@ void ListQualityRulesResult::parse(const std::string &payload)
 		if(!dataNodeRulesRulesItem["Comment"].isNull())
 			rulesItemObject.comment = dataNodeRulesRulesItem["Comment"].asString();
 		if(!dataNodeRulesRulesItem["RuleCheckerRelationId"].isNull())
-			rulesItemObject.ruleCheckerRelationId = std::stoi(dataNodeRulesRulesItem["RuleCheckerRelationId"].asString());
+			rulesItemObject.ruleCheckerRelationId = std::stol(dataNodeRulesRulesItem["RuleCheckerRelationId"].asString());
 		if(!dataNodeRulesRulesItem["FixCheck"].isNull())
 			rulesItemObject.fixCheck = dataNodeRulesRulesItem["FixCheck"].asString() == "true";
 		if(!dataNodeRulesRulesItem["MethodId"].isNull())
@@ -93,13 +93,13 @@ void ListQualityRulesResult::parse(const std::string &payload)
 		if(!dataNodeRulesRulesItem["CheckerId"].isNull())
 			rulesItemObject.checkerId = std::stoi(dataNodeRulesRulesItem["CheckerId"].asString());
 		if(!dataNodeRulesRulesItem["EntityId"].isNull())
-			rulesItemObject.entityId = std::stoi(dataNodeRulesRulesItem["EntityId"].asString());
+			rulesItemObject.entityId = std::stol(dataNodeRulesRulesItem["EntityId"].asString());
 		if(!dataNodeRulesRulesItem["ExpectValue"].isNull())
 			rulesItemObject.expectValue = dataNodeRulesRulesItem["ExpectValue"].asString();
 		if(!dataNodeRulesRulesItem["TemplateId"].isNull())
 			rulesItemObject.templateId = std::stoi(dataNodeRulesRulesItem["TemplateId"].asString());
 		if(!dataNodeRulesRulesItem["Id"].isNull())
-			rulesItemObject.id = std::stoi(dataNodeRulesRulesItem["Id"].asString());
+			rulesItemObject.id = std::stol(dataNodeRulesRulesItem["Id"].asString());
 		if(!dataNodeRulesRulesItem["RuleName"].isNull())
 			rulesItemObject.ruleName = dataNodeRulesRulesItem["RuleName"].asString();
 		data_.rules.push_back(rulesItemObject);

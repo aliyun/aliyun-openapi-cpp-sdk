@@ -45,10 +45,16 @@ namespace AlibabaCloud
 							std::string resourceGroupIdentifier;
 						};
 						RealtimeResourceSettings realtimeResourceSettings;
+						float requestedCu;
 						OfflineResourceSettings offlineResourceSettings;
 					};
 					struct JobSettings
 					{
+						struct CycleScheduleSettings
+						{
+							std::string cycleMigrationType;
+							std::string scheduleParameters;
+						};
 						struct ColumnDataTypeSetting
 						{
 							std::string destinationDataType;
@@ -67,6 +73,8 @@ namespace AlibabaCloud
 						std::vector<DdlHandlingSetting> ddlHandlingSettings;
 						std::vector<ColumnDataTypeSetting> columnDataTypeSettings;
 						std::vector<RuntimeSetting> runtimeSettings;
+						CycleScheduleSettings cycleScheduleSettings;
+						std::string channelSettings;
 					};
 					struct SourceDataSourceSetting
 					{

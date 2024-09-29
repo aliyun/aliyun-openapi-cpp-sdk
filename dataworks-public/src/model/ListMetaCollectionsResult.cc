@@ -42,9 +42,30 @@ void ListMetaCollectionsResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["NextToken"].isNull())
 		data_.nextToken = dataNode["NextToken"].asString();
-		auto allCollectionList = dataNode["CollectionList"]["CollectionList"];
-		for (auto value : allCollectionList)
-			data_.collectionList.push_back(value.asString());
+	auto allCollectionListNode = dataNode["CollectionList"]["CollectionListItem"];
+	for (auto dataNodeCollectionListCollectionListItem : allCollectionListNode)
+	{
+		Data::CollectionListItem collectionListItemObject;
+		if(!dataNodeCollectionListCollectionListItem["QualifiedName"].isNull())
+			collectionListItemObject.qualifiedName = dataNodeCollectionListCollectionListItem["QualifiedName"].asString();
+		if(!dataNodeCollectionListCollectionListItem["CollectionType"].isNull())
+			collectionListItemObject.collectionType = dataNodeCollectionListCollectionListItem["CollectionType"].asString();
+		if(!dataNodeCollectionListCollectionListItem["Name"].isNull())
+			collectionListItemObject.name = dataNodeCollectionListCollectionListItem["Name"].asString();
+		if(!dataNodeCollectionListCollectionListItem["Comment"].isNull())
+			collectionListItemObject.comment = dataNodeCollectionListCollectionListItem["Comment"].asString();
+		if(!dataNodeCollectionListCollectionListItem["OwnerId"].isNull())
+			collectionListItemObject.ownerId = dataNodeCollectionListCollectionListItem["OwnerId"].asString();
+		if(!dataNodeCollectionListCollectionListItem["OwnerName"].isNull())
+			collectionListItemObject.ownerName = dataNodeCollectionListCollectionListItem["OwnerName"].asString();
+		if(!dataNodeCollectionListCollectionListItem["CreateTime"].isNull())
+			collectionListItemObject.createTime = std::stol(dataNodeCollectionListCollectionListItem["CreateTime"].asString());
+		if(!dataNodeCollectionListCollectionListItem["UpdateTime"].isNull())
+			collectionListItemObject.updateTime = std::stol(dataNodeCollectionListCollectionListItem["UpdateTime"].asString());
+		if(!dataNodeCollectionListCollectionListItem["Level"].isNull())
+			collectionListItemObject.level = std::stoi(dataNodeCollectionListCollectionListItem["Level"].asString());
+		data_.collectionList.push_back(collectionListItemObject);
+	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())

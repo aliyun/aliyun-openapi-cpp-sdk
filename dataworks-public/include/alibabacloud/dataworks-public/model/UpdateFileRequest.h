@@ -56,6 +56,8 @@ public:
 	void setOwner(const std::string &owner);
 	std::string getInputList() const;
 	void setInputList(const std::string &inputList);
+	bool getApplyScheduleImmediately() const;
+	void setApplyScheduleImmediately(bool applyScheduleImmediately);
 	std::string getRerunMode() const;
 	void setRerunMode(const std::string &rerunMode);
 	std::string getConnectionName() const;
@@ -105,6 +107,7 @@ private:
 	int autoRerunIntervalMillis_;
 	std::string owner_;
 	std::string inputList_;
+	bool applyScheduleImmediately_;
 	std::string rerunMode_;
 	std::string connectionName_;
 	std::string outputParameters_;

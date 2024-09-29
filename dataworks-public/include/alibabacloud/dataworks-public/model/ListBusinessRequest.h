@@ -30,23 +30,23 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListBusinessRequest : public RpcServi
 public:
 	ListBusinessRequest();
 	~ListBusinessRequest();
+	std::string getProjectIdentifier() const;
+	void setProjectIdentifier(const std::string &projectIdentifier);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getKeyword() const;
 	void setKeyword(const std::string &keyword);
 	long getProjectId() const;
 	void setProjectId(long projectId);
-	std::string getProjectIdentifier() const;
-	void setProjectIdentifier(const std::string &projectIdentifier);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
 
 private:
+	std::string projectIdentifier_;
+	int pageNumber_;
 	int pageSize_;
 	std::string keyword_;
 	long projectId_;
-	std::string projectIdentifier_;
-	int pageNumber_;
 };
 } // namespace Model
 } // namespace Dataworks_public

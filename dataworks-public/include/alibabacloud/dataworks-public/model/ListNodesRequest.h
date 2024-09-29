@@ -44,6 +44,8 @@ public:
 	void setProgramType(const std::string &programType);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getSchedulerType() const;
+	void setSchedulerType(const std::string &schedulerType);
 	long getProjectId() const;
 	void setProjectId(long projectId);
 
@@ -55,6 +57,7 @@ private:
 	std::string nodeName_;
 	std::string programType_;
 	int pageSize_;
+	std::string schedulerType_;
 	long projectId_;
 };
 } // namespace Model

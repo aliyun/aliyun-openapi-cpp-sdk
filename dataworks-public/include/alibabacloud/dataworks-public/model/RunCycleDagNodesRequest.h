@@ -36,6 +36,8 @@ public:
 	void setStartBizDate(const std::string &startBizDate);
 	bool getParallelism() const;
 	void setParallelism(bool parallelism);
+	std::string getAlertNoticeType() const;
+	void setAlertNoticeType(const std::string &alertNoticeType);
 	long getRootNodeId() const;
 	void setRootNodeId(long rootNodeId);
 	std::string getBizBeginTime() const;
@@ -44,6 +46,10 @@ public:
 	void setEndBizDate(const std::string &endBizDate);
 	bool getStartFutureInstanceImmediately() const;
 	void setStartFutureInstanceImmediately(bool startFutureInstanceImmediately);
+	int getConcurrentRuns() const;
+	void setConcurrentRuns(int concurrentRuns);
+	std::string getAlertType() const;
+	void setAlertType(const std::string &alertType);
 	std::string getIncludeNodeIds() const;
 	void setIncludeNodeIds(const std::string &includeNodeIds);
 	std::string getBizEndTime() const;
@@ -59,10 +65,13 @@ private:
 	std::string projectEnv_;
 	std::string startBizDate_;
 	bool parallelism_;
+	std::string alertNoticeType_;
 	long rootNodeId_;
 	std::string bizBeginTime_;
 	std::string endBizDate_;
 	bool startFutureInstanceImmediately_;
+	int concurrentRuns_;
+	std::string alertType_;
 	std::string includeNodeIds_;
 	std::string bizEndTime_;
 	std::string name_;

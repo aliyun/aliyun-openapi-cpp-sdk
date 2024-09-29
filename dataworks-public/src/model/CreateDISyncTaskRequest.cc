@@ -67,7 +67,7 @@ std::string CreateDISyncTaskRequest::getTaskContent() const {
 
 void CreateDISyncTaskRequest::setTaskContent(const std::string &taskContent) {
   taskContent_ = taskContent;
-  setParameter(std::string("TaskContent"), taskContent);
+  setBodyParameter(std::string("TaskContent"), taskContent);
 }
 
 long CreateDISyncTaskRequest::getProjectId() const {

@@ -34,30 +34,31 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					std::string comment;
 					bool openSwitch;
-					int checker;
-					std::string criticalThreshold;
 					std::string checkerName;
 					std::string expectValue;
 					std::string warningThreshold;
 					std::string onDuty;
-					std::string trend;
 					std::string whereCondition;
-					int ruleType;
 					std::string _operator;
-					long entityId;
 					int methodId;
-					bool fixCheck;
-					int blockType;
-					std::string onDutyAccountName;
 					int predictType;
 					std::string templateName;
 					std::string methodName;
-					long id;
 					std::string property;
 					std::string ruleName;
 					int templateId;
+					std::string comment;
+					int checker;
+					std::string criticalThreshold;
+					std::string trend;
+					int ruleType;
+					long entityId;
+					bool fixCheck;
+					int blockType;
+					std::string onDutyAccountName;
+					std::string taskSetting;
+					long id;
 				};
 
 

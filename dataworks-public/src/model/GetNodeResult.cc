@@ -46,6 +46,8 @@ void GetNodeResult::parse(const std::string &payload)
 		data_.repeatInterval = std::stol(dataNode["RepeatInterval"].asString());
 	if(!dataNode["Repeatability"].isNull())
 		data_.repeatability = dataNode["Repeatability"].asString();
+	if(!dataNode["RepeatMode"].isNull())
+		data_.repeatMode = std::stoi(dataNode["RepeatMode"].asString());
 	if(!dataNode["ProjectId"].isNull())
 		data_.projectId = std::stol(dataNode["ProjectId"].asString());
 	if(!dataNode["ProgramType"].isNull())
@@ -82,6 +84,16 @@ void GetNodeResult::parse(const std::string &payload)
 		data_.resGroupIdentifier = dataNode["ResGroupIdentifier"].asString();
 	if(!dataNode["FileType"].isNull())
 		data_.fileType = std::stoi(dataNode["FileType"].asString());
+	if(!dataNode["FileId"].isNull())
+		data_.fileId = std::stol(dataNode["FileId"].asString());
+	if(!dataNode["FileVersion"].isNull())
+		data_.fileVersion = std::stoi(dataNode["FileVersion"].asString());
+	if(!dataNode["DeployDate"].isNull())
+		data_.deployDate = std::stol(dataNode["DeployDate"].asString());
+	if(!dataNode["CreateTime"].isNull())
+		data_.createTime = std::stol(dataNode["CreateTime"].asString());
+	if(!dataNode["ModifyTime"].isNull())
+		data_.modifyTime = std::stol(dataNode["ModifyTime"].asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["ErrorMessage"].isNull())

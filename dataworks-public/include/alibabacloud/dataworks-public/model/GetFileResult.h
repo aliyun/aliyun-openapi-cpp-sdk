@@ -100,9 +100,15 @@ namespace AlibabaCloud
 						int autoRerunTimes;
 						std::string rerunMode;
 						std::string paraValue;
+						std::string applyScheduleImmediately;
 						std::vector<NodeInputOutput1> outputList;
 						std::vector<InputContextParameter> inputParameters;
 					};
+					struct ResourceDownloadLink
+					{
+						std::string downloadLink;
+					};
+					ResourceDownloadLink resourceDownloadLink;
 					File file;
 					NodeConfiguration nodeConfiguration;
 				};

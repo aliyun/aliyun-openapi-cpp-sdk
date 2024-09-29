@@ -32,15 +32,37 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetMetaCollectionDetailResult : public ServiceResult
 			{
 			public:
+				struct Collection
+				{
+					std::string comment;
+					std::string ownerName;
+					std::string ownerId;
+					std::string qualifiedName;
+					std::string collectionType;
+					long createTime;
+					long updateTime;
+					int level;
+					std::string name;
+				};
 
 
 				GetMetaCollectionDetailResult();
 				explicit GetMetaCollectionDetailResult(const std::string &payload);
 				~GetMetaCollectionDetailResult();
+				int getHttpStatusCode()const;
+				Collection getCollection()const;
+				std::string getErrorCode()const;
+				std::string getErrorMessage()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int httpStatusCode_;
+				Collection collection_;
+				std::string errorCode_;
+				std::string errorMessage_;
+				bool success_;
 
 			};
 		}

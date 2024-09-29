@@ -88,6 +88,8 @@ void GetQualityRuleResult::parse(const std::string &payload)
 		data_.id = std::stol(dataNode["Id"].asString());
 	if(!dataNode["OpenSwitch"].isNull())
 		data_.openSwitch = dataNode["OpenSwitch"].asString() == "true";
+	if(!dataNode["TaskSetting"].isNull())
+		data_.taskSetting = dataNode["TaskSetting"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["ErrorMessage"].isNull())

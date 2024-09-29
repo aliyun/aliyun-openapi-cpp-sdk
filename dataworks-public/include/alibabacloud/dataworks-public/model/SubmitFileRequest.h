@@ -30,22 +30,22 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT SubmitFileRequest : public RpcService
 public:
 	SubmitFileRequest();
 	~SubmitFileRequest();
+	std::string getProjectIdentifier() const;
+	void setProjectIdentifier(const std::string &projectIdentifier);
 	bool getSkipAllDeployFileExtensions() const;
 	void setSkipAllDeployFileExtensions(bool skipAllDeployFileExtensions);
 	std::string getComment() const;
 	void setComment(const std::string &comment);
 	long getProjectId() const;
 	void setProjectId(long projectId);
-	std::string getProjectIdentifier() const;
-	void setProjectIdentifier(const std::string &projectIdentifier);
 	long getFileId() const;
 	void setFileId(long fileId);
 
 private:
+	std::string projectIdentifier_;
 	bool skipAllDeployFileExtensions_;
 	std::string comment_;
 	long projectId_;
-	std::string projectIdentifier_;
 	long fileId_;
 };
 } // namespace Model

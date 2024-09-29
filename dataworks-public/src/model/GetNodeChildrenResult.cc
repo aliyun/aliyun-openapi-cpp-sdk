@@ -64,6 +64,8 @@ void GetNodeChildrenResult::parse(const std::string &payload)
 			nodesItemObject.cronExpress = dataNodeNodesNodesItem["CronExpress"].asString();
 		if(!dataNodeNodesNodesItem["NodeId"].isNull())
 			nodesItemObject.nodeId = std::stol(dataNodeNodesNodesItem["NodeId"].asString());
+		if(!dataNodeNodesNodesItem["StepType"].isNull())
+			nodesItemObject.stepType = dataNodeNodesNodesItem["StepType"].asString();
 		data_.nodes.push_back(nodesItemObject);
 	}
 	if(!value["HttpStatusCode"].isNull())
