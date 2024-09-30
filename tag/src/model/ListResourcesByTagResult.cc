@@ -49,12 +49,12 @@ void ListResourcesByTagResult::parse(const std::string &payload)
 		for (auto valueResourcesTagResourceTagsTag : allTagsNode)
 		{
 			TagResource::Tag tagsObject;
+			if(!valueResourcesTagResourceTagsTag["Category"].isNull())
+				tagsObject.category = valueResourcesTagResourceTagsTag["Category"].asString();
 			if(!valueResourcesTagResourceTagsTag["Key"].isNull())
 				tagsObject.key = valueResourcesTagResourceTagsTag["Key"].asString();
 			if(!valueResourcesTagResourceTagsTag["Value"].isNull())
 				tagsObject.value = valueResourcesTagResourceTagsTag["Value"].asString();
-			if(!valueResourcesTagResourceTagsTag["Category"].isNull())
-				tagsObject.category = valueResourcesTagResourceTagsTag["Category"].asString();
 			resourcesObject.tags.push_back(tagsObject);
 		}
 		resources_.push_back(resourcesObject);
