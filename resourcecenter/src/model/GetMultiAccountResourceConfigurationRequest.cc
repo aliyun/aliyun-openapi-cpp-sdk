@@ -25,24 +25,6 @@ GetMultiAccountResourceConfigurationRequest::GetMultiAccountResourceConfiguratio
 
 GetMultiAccountResourceConfigurationRequest::~GetMultiAccountResourceConfigurationRequest() {}
 
-std::string GetMultiAccountResourceConfigurationRequest::getResourceId() const {
-  return resourceId_;
-}
-
-void GetMultiAccountResourceConfigurationRequest::setResourceId(const std::string &resourceId) {
-  resourceId_ = resourceId;
-  setParameter(std::string("ResourceId"), resourceId);
-}
-
-std::string GetMultiAccountResourceConfigurationRequest::getResourceType() const {
-  return resourceType_;
-}
-
-void GetMultiAccountResourceConfigurationRequest::setResourceType(const std::string &resourceType) {
-  resourceType_ = resourceType;
-  setParameter(std::string("ResourceType"), resourceType);
-}
-
 std::string GetMultiAccountResourceConfigurationRequest::getAccountId() const {
   return accountId_;
 }
@@ -59,5 +41,23 @@ std::string GetMultiAccountResourceConfigurationRequest::getResourceRegionId() c
 void GetMultiAccountResourceConfigurationRequest::setResourceRegionId(const std::string &resourceRegionId) {
   resourceRegionId_ = resourceRegionId;
   setParameter(std::string("ResourceRegionId"), resourceRegionId);
+}
+
+std::string GetMultiAccountResourceConfigurationRequest::getResourceId() const {
+  return resourceId_;
+}
+
+void GetMultiAccountResourceConfigurationRequest::setResourceId(const std::string &resourceId) {
+  resourceId_ = resourceId;
+  setParameter(std::string("ResourceId"), resourceId);
+}
+
+std::string GetMultiAccountResourceConfigurationRequest::getResourceType() const {
+  return resourceType_;
+}
+
+void GetMultiAccountResourceConfigurationRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
 }
 

@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					};
 					std::string resourceTypeName;
 					std::string productName;
+					bool authorized;
 					std::vector<std::string> filterKeys;
 					CodeMapping codeMapping;
 					std::string resourceType;
@@ -58,8 +59,8 @@ namespace AlibabaCloud
 				~ListResourceTypesResult();
 				std::vector<ResourceType> getResourceTypes()const;
 				std::string getDynamicCode()const;
-				std::string getErrorCode()const;
 				std::string getDynamicMessage()const;
+				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
 
@@ -68,8 +69,8 @@ namespace AlibabaCloud
 			private:
 				std::vector<ResourceType> resourceTypes_;
 				std::string dynamicCode_;
-				std::string errorCode_;
 				std::string dynamicMessage_;
+				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
 

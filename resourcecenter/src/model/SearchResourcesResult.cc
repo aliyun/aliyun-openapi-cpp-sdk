@@ -72,6 +72,8 @@ void SearchResourcesResult::parse(const std::string &payload)
 			resourcesObject.resourceName = valueResourcesResource["ResourceName"].asString();
 		if(!valueResourcesResource["RegionId"].isNull())
 			resourcesObject.regionId = valueResourcesResource["RegionId"].asString();
+		if(!valueResourcesResource["ExpireTime"].isNull())
+			resourcesObject.expireTime = valueResourcesResource["ExpireTime"].asString();
 		auto allTagsNode = valueResourcesResource["Tags"]["Tag"];
 		for (auto valueResourcesResourceTagsTag : allTagsNode)
 		{
@@ -81,6 +83,18 @@ void SearchResourcesResult::parse(const std::string &payload)
 			if(!valueResourcesResourceTagsTag["Value"].isNull())
 				tagsObject.value = valueResourcesResourceTagsTag["Value"].asString();
 			resourcesObject.tags.push_back(tagsObject);
+		}
+		auto allIpAddressAttributesNode = valueResourcesResource["IpAddressAttributes"]["IpAddressAttribute"];
+		for (auto valueResourcesResourceIpAddressAttributesIpAddressAttribute : allIpAddressAttributesNode)
+		{
+			Resource::IpAddressAttribute ipAddressAttributesObject;
+			if(!valueResourcesResourceIpAddressAttributesIpAddressAttribute["IpAddress"].isNull())
+				ipAddressAttributesObject.ipAddress = valueResourcesResourceIpAddressAttributesIpAddressAttribute["IpAddress"].asString();
+			if(!valueResourcesResourceIpAddressAttributesIpAddressAttribute["NetworkType"].isNull())
+				ipAddressAttributesObject.networkType = valueResourcesResourceIpAddressAttributesIpAddressAttribute["NetworkType"].asString();
+			if(!valueResourcesResourceIpAddressAttributesIpAddressAttribute["Version"].isNull())
+				ipAddressAttributesObject.version = valueResourcesResourceIpAddressAttributesIpAddressAttribute["Version"].asString();
+			resourcesObject.ipAddressAttributes.push_back(ipAddressAttributesObject);
 		}
 		auto allIpAddresses = value["IpAddresses"]["IpAddress"];
 		for (auto value : allIpAddresses)

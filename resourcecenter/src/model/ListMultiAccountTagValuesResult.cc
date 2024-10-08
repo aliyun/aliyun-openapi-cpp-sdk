@@ -42,10 +42,6 @@ void ListMultiAccountTagValuesResult::parse(const std::string &payload)
 	auto allTagValues = value["TagValues"]["TagValue"];
 	for (const auto &item : allTagValues)
 		tagValues_.push_back(item.asString());
-	if(!value["NextToken"].isNull())
-		nextToken_ = value["NextToken"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["DynamicCode"].isNull())
 		dynamicCode_ = value["DynamicCode"].asString();
 	if(!value["DynamicMessage"].isNull())
@@ -54,6 +50,10 @@ void ListMultiAccountTagValuesResult::parse(const std::string &payload)
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

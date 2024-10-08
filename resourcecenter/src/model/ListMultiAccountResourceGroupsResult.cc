@@ -43,24 +43,20 @@ void ListMultiAccountResourceGroupsResult::parse(const std::string &payload)
 	for (auto valueResourceGroupsResourceGroup : allResourceGroupsNode)
 	{
 		ResourceGroup resourceGroupsObject;
-		if(!valueResourceGroupsResourceGroup["DisplayName"].isNull())
-			resourceGroupsObject.displayName = valueResourceGroupsResourceGroup["DisplayName"].asString();
-		if(!valueResourceGroupsResourceGroup["Status"].isNull())
-			resourceGroupsObject.status = valueResourceGroupsResourceGroup["Status"].asString();
 		if(!valueResourceGroupsResourceGroup["AccountId"].isNull())
 			resourceGroupsObject.accountId = valueResourceGroupsResourceGroup["AccountId"].asString();
-		if(!valueResourceGroupsResourceGroup["Name"].isNull())
-			resourceGroupsObject.name = valueResourceGroupsResourceGroup["Name"].asString();
 		if(!valueResourceGroupsResourceGroup["CreateDate"].isNull())
 			resourceGroupsObject.createDate = valueResourceGroupsResourceGroup["CreateDate"].asString();
+		if(!valueResourceGroupsResourceGroup["DisplayName"].isNull())
+			resourceGroupsObject.displayName = valueResourceGroupsResourceGroup["DisplayName"].asString();
 		if(!valueResourceGroupsResourceGroup["Id"].isNull())
 			resourceGroupsObject.id = valueResourceGroupsResourceGroup["Id"].asString();
+		if(!valueResourceGroupsResourceGroup["Name"].isNull())
+			resourceGroupsObject.name = valueResourceGroupsResourceGroup["Name"].asString();
+		if(!valueResourceGroupsResourceGroup["Status"].isNull())
+			resourceGroupsObject.status = valueResourceGroupsResourceGroup["Status"].asString();
 		resourceGroups_.push_back(resourceGroupsObject);
 	}
-	if(!value["NextToken"].isNull())
-		nextToken_ = value["NextToken"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["DynamicCode"].isNull())
 		dynamicCode_ = value["DynamicCode"].asString();
 	if(!value["DynamicMessage"].isNull())
@@ -69,6 +65,10 @@ void ListMultiAccountResourceGroupsResult::parse(const std::string &payload)
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

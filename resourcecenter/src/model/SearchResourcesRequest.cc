@@ -34,6 +34,15 @@ void SearchResourcesRequest::setResourceGroupId(const std::string &resourceGroup
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string SearchResourcesRequest::getView() const {
+  return view_;
+}
+
+void SearchResourcesRequest::setView(const std::string &view) {
+  view_ = view;
+  setParameter(std::string("View"), view);
+}
+
 std::string SearchResourcesRequest::getNextToken() const {
   return nextToken_;
 }

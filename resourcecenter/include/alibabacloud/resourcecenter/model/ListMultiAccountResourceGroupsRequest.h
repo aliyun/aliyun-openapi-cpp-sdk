@@ -32,17 +32,17 @@ public:
 	~ListMultiAccountResourceGroupsRequest();
 	std::string getAccountId() const;
 	void setAccountId(const std::string &accountId);
-	std::vector<std::string> getResourceGroupIds() const;
-	void setResourceGroupIds(const std::vector<std::string> &resourceGroupIds);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
+	std::vector<std::string> getResourceGroupIds() const;
+	void setResourceGroupIds(const std::vector<std::string> &resourceGroupIds);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
 
 private:
 	std::string accountId_;
-	std::vector<std::string> resourceGroupIds_;
 	std::string nextToken_;
+	std::vector<std::string> resourceGroupIds_;
 	int maxResults_;
 };
 } // namespace Model

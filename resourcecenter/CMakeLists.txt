@@ -21,14 +21,32 @@ set(resourcecenter_public_header
 	include/alibabacloud/resourcecenter/ResourceCenterExport.h )
 
 set(resourcecenter_public_header_model 
+	include/alibabacloud/resourcecenter/model/AssociateDefaultFilterRequest.h
+	include/alibabacloud/resourcecenter/model/AssociateDefaultFilterResult.h
+	include/alibabacloud/resourcecenter/model/CreateFilterRequest.h
+	include/alibabacloud/resourcecenter/model/CreateFilterResult.h
+	include/alibabacloud/resourcecenter/model/CreateSavedQueryRequest.h
+	include/alibabacloud/resourcecenter/model/CreateSavedQueryResult.h
+	include/alibabacloud/resourcecenter/model/DeleteFilterRequest.h
+	include/alibabacloud/resourcecenter/model/DeleteFilterResult.h
+	include/alibabacloud/resourcecenter/model/DeleteSavedQueryRequest.h
+	include/alibabacloud/resourcecenter/model/DeleteSavedQueryResult.h
 	include/alibabacloud/resourcecenter/model/DisableMultiAccountResourceCenterRequest.h
 	include/alibabacloud/resourcecenter/model/DisableMultiAccountResourceCenterResult.h
 	include/alibabacloud/resourcecenter/model/DisableResourceCenterRequest.h
 	include/alibabacloud/resourcecenter/model/DisableResourceCenterResult.h
+	include/alibabacloud/resourcecenter/model/DisassociateDefaultFilterRequest.h
+	include/alibabacloud/resourcecenter/model/DisassociateDefaultFilterResult.h
 	include/alibabacloud/resourcecenter/model/EnableMultiAccountResourceCenterRequest.h
 	include/alibabacloud/resourcecenter/model/EnableMultiAccountResourceCenterResult.h
 	include/alibabacloud/resourcecenter/model/EnableResourceCenterRequest.h
 	include/alibabacloud/resourcecenter/model/EnableResourceCenterResult.h
+	include/alibabacloud/resourcecenter/model/ExecuteMultiAccountSQLQueryRequest.h
+	include/alibabacloud/resourcecenter/model/ExecuteMultiAccountSQLQueryResult.h
+	include/alibabacloud/resourcecenter/model/ExecuteSQLQueryRequest.h
+	include/alibabacloud/resourcecenter/model/ExecuteSQLQueryResult.h
+	include/alibabacloud/resourcecenter/model/GetExampleQueryRequest.h
+	include/alibabacloud/resourcecenter/model/GetExampleQueryResult.h
 	include/alibabacloud/resourcecenter/model/GetMultiAccountResourceCenterServiceStatusRequest.h
 	include/alibabacloud/resourcecenter/model/GetMultiAccountResourceCenterServiceStatusResult.h
 	include/alibabacloud/resourcecenter/model/GetMultiAccountResourceConfigurationRequest.h
@@ -39,6 +57,12 @@ set(resourcecenter_public_header_model
 	include/alibabacloud/resourcecenter/model/GetResourceConfigurationResult.h
 	include/alibabacloud/resourcecenter/model/GetResourceCountsRequest.h
 	include/alibabacloud/resourcecenter/model/GetResourceCountsResult.h
+	include/alibabacloud/resourcecenter/model/GetSavedQueryRequest.h
+	include/alibabacloud/resourcecenter/model/GetSavedQueryResult.h
+	include/alibabacloud/resourcecenter/model/ListExampleQueriesRequest.h
+	include/alibabacloud/resourcecenter/model/ListExampleQueriesResult.h
+	include/alibabacloud/resourcecenter/model/ListFiltersRequest.h
+	include/alibabacloud/resourcecenter/model/ListFiltersResult.h
 	include/alibabacloud/resourcecenter/model/ListMultiAccountResourceGroupsRequest.h
 	include/alibabacloud/resourcecenter/model/ListMultiAccountResourceGroupsResult.h
 	include/alibabacloud/resourcecenter/model/ListMultiAccountTagKeysRequest.h
@@ -47,6 +71,8 @@ set(resourcecenter_public_header_model
 	include/alibabacloud/resourcecenter/model/ListMultiAccountTagValuesResult.h
 	include/alibabacloud/resourcecenter/model/ListResourceTypesRequest.h
 	include/alibabacloud/resourcecenter/model/ListResourceTypesResult.h
+	include/alibabacloud/resourcecenter/model/ListSavedQueriesRequest.h
+	include/alibabacloud/resourcecenter/model/ListSavedQueriesResult.h
 	include/alibabacloud/resourcecenter/model/ListTagKeysRequest.h
 	include/alibabacloud/resourcecenter/model/ListTagKeysResult.h
 	include/alibabacloud/resourcecenter/model/ListTagValuesRequest.h
@@ -54,18 +80,40 @@ set(resourcecenter_public_header_model
 	include/alibabacloud/resourcecenter/model/SearchMultiAccountResourcesRequest.h
 	include/alibabacloud/resourcecenter/model/SearchMultiAccountResourcesResult.h
 	include/alibabacloud/resourcecenter/model/SearchResourcesRequest.h
-	include/alibabacloud/resourcecenter/model/SearchResourcesResult.h )
+	include/alibabacloud/resourcecenter/model/SearchResourcesResult.h
+	include/alibabacloud/resourcecenter/model/UpdateFilterRequest.h
+	include/alibabacloud/resourcecenter/model/UpdateFilterResult.h
+	include/alibabacloud/resourcecenter/model/UpdateSavedQueryRequest.h
+	include/alibabacloud/resourcecenter/model/UpdateSavedQueryResult.h )
 
 set(resourcecenter_src 
 	src/ResourceCenterClient.cc
+	src/model/AssociateDefaultFilterRequest.cc
+	src/model/AssociateDefaultFilterResult.cc
+	src/model/CreateFilterRequest.cc
+	src/model/CreateFilterResult.cc
+	src/model/CreateSavedQueryRequest.cc
+	src/model/CreateSavedQueryResult.cc
+	src/model/DeleteFilterRequest.cc
+	src/model/DeleteFilterResult.cc
+	src/model/DeleteSavedQueryRequest.cc
+	src/model/DeleteSavedQueryResult.cc
 	src/model/DisableMultiAccountResourceCenterRequest.cc
 	src/model/DisableMultiAccountResourceCenterResult.cc
 	src/model/DisableResourceCenterRequest.cc
 	src/model/DisableResourceCenterResult.cc
+	src/model/DisassociateDefaultFilterRequest.cc
+	src/model/DisassociateDefaultFilterResult.cc
 	src/model/EnableMultiAccountResourceCenterRequest.cc
 	src/model/EnableMultiAccountResourceCenterResult.cc
 	src/model/EnableResourceCenterRequest.cc
 	src/model/EnableResourceCenterResult.cc
+	src/model/ExecuteMultiAccountSQLQueryRequest.cc
+	src/model/ExecuteMultiAccountSQLQueryResult.cc
+	src/model/ExecuteSQLQueryRequest.cc
+	src/model/ExecuteSQLQueryResult.cc
+	src/model/GetExampleQueryRequest.cc
+	src/model/GetExampleQueryResult.cc
 	src/model/GetMultiAccountResourceCenterServiceStatusRequest.cc
 	src/model/GetMultiAccountResourceCenterServiceStatusResult.cc
 	src/model/GetMultiAccountResourceConfigurationRequest.cc
@@ -76,6 +124,12 @@ set(resourcecenter_src
 	src/model/GetResourceConfigurationResult.cc
 	src/model/GetResourceCountsRequest.cc
 	src/model/GetResourceCountsResult.cc
+	src/model/GetSavedQueryRequest.cc
+	src/model/GetSavedQueryResult.cc
+	src/model/ListExampleQueriesRequest.cc
+	src/model/ListExampleQueriesResult.cc
+	src/model/ListFiltersRequest.cc
+	src/model/ListFiltersResult.cc
 	src/model/ListMultiAccountResourceGroupsRequest.cc
 	src/model/ListMultiAccountResourceGroupsResult.cc
 	src/model/ListMultiAccountTagKeysRequest.cc
@@ -84,6 +138,8 @@ set(resourcecenter_src
 	src/model/ListMultiAccountTagValuesResult.cc
 	src/model/ListResourceTypesRequest.cc
 	src/model/ListResourceTypesResult.cc
+	src/model/ListSavedQueriesRequest.cc
+	src/model/ListSavedQueriesResult.cc
 	src/model/ListTagKeysRequest.cc
 	src/model/ListTagKeysResult.cc
 	src/model/ListTagValuesRequest.cc
@@ -91,7 +147,11 @@ set(resourcecenter_src
 	src/model/SearchMultiAccountResourcesRequest.cc
 	src/model/SearchMultiAccountResourcesResult.cc
 	src/model/SearchResourcesRequest.cc
-	src/model/SearchResourcesResult.cc )
+	src/model/SearchResourcesResult.cc
+	src/model/UpdateFilterRequest.cc
+	src/model/UpdateFilterResult.cc
+	src/model/UpdateSavedQueryRequest.cc
+	src/model/UpdateSavedQueryResult.cc )
 
 add_library(resourcecenter ${LIB_TYPE}
 	${resourcecenter_public_header}

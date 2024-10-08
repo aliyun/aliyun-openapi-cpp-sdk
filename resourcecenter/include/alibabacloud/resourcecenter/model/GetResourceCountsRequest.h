@@ -36,11 +36,14 @@ public:
 	~GetResourceCountsRequest();
 	std::vector<Filter> getFilter() const;
 	void setFilter(const std::vector<Filter> &filter);
+	std::string getView() const;
+	void setView(const std::string &view);
 	std::string getGroupByKey() const;
 	void setGroupByKey(const std::string &groupByKey);
 
 private:
 	std::vector<Filter> filter_;
+	std::string view_;
 	std::string groupByKey_;
 };
 } // namespace Model

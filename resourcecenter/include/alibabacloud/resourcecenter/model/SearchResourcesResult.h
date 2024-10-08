@@ -45,6 +45,12 @@ namespace AlibabaCloud
 						std::string value;
 						std::string key;
 					};
+					struct IpAddressAttribute
+					{
+						std::string version;
+						std::string networkType;
+						std::string ipAddress;
+					};
 					std::vector<std::string> ipAddresses;
 					std::string accountId;
 					std::string resourceGroupId;
@@ -54,6 +60,8 @@ namespace AlibabaCloud
 					std::string createTime;
 					std::string resourceType;
 					std::string regionId;
+					std::vector<Resource::IpAddressAttribute> ipAddressAttributes;
+					std::string expireTime;
 					std::vector<Resource::Tag> tags;
 				};
 

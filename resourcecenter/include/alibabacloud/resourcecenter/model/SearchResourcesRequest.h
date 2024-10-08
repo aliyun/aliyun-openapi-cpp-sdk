@@ -40,6 +40,8 @@ public:
 	~SearchResourcesRequest();
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getView() const;
+	void setView(const std::string &view);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
 	SortCriterion getSortCriterion() const;
@@ -51,6 +53,7 @@ public:
 
 private:
 	std::string resourceGroupId_;
+	std::string view_;
 	std::string nextToken_;
 	SortCriterion sortCriterion_;
 	std::vector<Filter> filter_;

@@ -43,10 +43,12 @@ void ListResourceTypesResult::parse(const std::string &payload)
 	for (auto valueResourceTypesResourceType : allResourceTypesNode)
 	{
 		ResourceType resourceTypesObject;
-		if(!valueResourceTypesResourceType["ResourceType"].isNull())
-			resourceTypesObject.resourceType = valueResourceTypesResourceType["ResourceType"].asString();
+		if(!valueResourceTypesResourceType["Authorized"].isNull())
+			resourceTypesObject.authorized = valueResourceTypesResourceType["Authorized"].asString() == "true";
 		if(!valueResourceTypesResourceType["ProductName"].isNull())
 			resourceTypesObject.productName = valueResourceTypesResourceType["ProductName"].asString();
+		if(!valueResourceTypesResourceType["ResourceType"].isNull())
+			resourceTypesObject.resourceType = valueResourceTypesResourceType["ResourceType"].asString();
 		if(!valueResourceTypesResourceType["ResourceTypeName"].isNull())
 			resourceTypesObject.resourceTypeName = valueResourceTypesResourceType["ResourceTypeName"].asString();
 		auto codeMappingNode = value["CodeMapping"];
@@ -64,16 +66,16 @@ void ListResourceTypesResult::parse(const std::string &payload)
 			resourceTypesObject.filterKeys.push_back(value.asString());
 		resourceTypes_.push_back(resourceTypesObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["DynamicCode"].isNull())
 		dynamicCode_ = value["DynamicCode"].asString();
 	if(!value["DynamicMessage"].isNull())
 		dynamicMessage_ = value["DynamicMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -87,14 +89,14 @@ std::string ListResourceTypesResult::getDynamicCode()const
 	return dynamicCode_;
 }
 
-std::string ListResourceTypesResult::getErrorCode()const
-{
-	return errorCode_;
-}
-
 std::string ListResourceTypesResult::getDynamicMessage()const
 {
 	return dynamicMessage_;
+}
+
+std::string ListResourceTypesResult::getErrorCode()const
+{
+	return errorCode_;
 }
 
 std::string ListResourceTypesResult::getErrorMessage()const

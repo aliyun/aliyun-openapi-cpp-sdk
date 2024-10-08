@@ -40,6 +40,12 @@ namespace AlibabaCloud
 				};
 				struct Resource
 				{
+					struct IpAddressAttribute
+					{
+						std::string version;
+						std::string networkType;
+						std::string ipAddress;
+					};
 					struct Tag
 					{
 						std::string value;
@@ -54,6 +60,8 @@ namespace AlibabaCloud
 					std::string createTime;
 					std::string resourceType;
 					std::string regionId;
+					std::vector<Resource::IpAddressAttribute> ipAddressAttributes;
+					std::string expireTime;
 					std::vector<Resource::Tag> tags;
 				};
 

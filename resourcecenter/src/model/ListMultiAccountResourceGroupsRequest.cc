@@ -34,14 +34,6 @@ void ListMultiAccountResourceGroupsRequest::setAccountId(const std::string &acco
   setParameter(std::string("AccountId"), accountId);
 }
 
-std::vector<std::string> ListMultiAccountResourceGroupsRequest::getResourceGroupIds() const {
-  return resourceGroupIds_;
-}
-
-void ListMultiAccountResourceGroupsRequest::setResourceGroupIds(const std::vector<std::string> &resourceGroupIds) {
-  resourceGroupIds_ = resourceGroupIds;
-}
-
 std::string ListMultiAccountResourceGroupsRequest::getNextToken() const {
   return nextToken_;
 }
@@ -49,6 +41,14 @@ std::string ListMultiAccountResourceGroupsRequest::getNextToken() const {
 void ListMultiAccountResourceGroupsRequest::setNextToken(const std::string &nextToken) {
   nextToken_ = nextToken;
   setParameter(std::string("NextToken"), nextToken);
+}
+
+std::vector<std::string> ListMultiAccountResourceGroupsRequest::getResourceGroupIds() const {
+  return resourceGroupIds_;
+}
+
+void ListMultiAccountResourceGroupsRequest::setResourceGroupIds(const std::vector<std::string> &resourceGroupIds) {
+  resourceGroupIds_ = resourceGroupIds;
 }
 
 int ListMultiAccountResourceGroupsRequest::getMaxResults() const {

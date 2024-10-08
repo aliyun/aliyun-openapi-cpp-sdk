@@ -51,6 +51,186 @@ ResourceCenterClient::ResourceCenterClient(const std::string & accessKeyId, cons
 ResourceCenterClient::~ResourceCenterClient()
 {}
 
+ResourceCenterClient::AssociateDefaultFilterOutcome ResourceCenterClient::associateDefaultFilter(const AssociateDefaultFilterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AssociateDefaultFilterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AssociateDefaultFilterOutcome(AssociateDefaultFilterResult(outcome.result()));
+	else
+		return AssociateDefaultFilterOutcome(outcome.error());
+}
+
+void ResourceCenterClient::associateDefaultFilterAsync(const AssociateDefaultFilterRequest& request, const AssociateDefaultFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, associateDefaultFilter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::AssociateDefaultFilterOutcomeCallable ResourceCenterClient::associateDefaultFilterCallable(const AssociateDefaultFilterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AssociateDefaultFilterOutcome()>>(
+			[this, request]()
+			{
+			return this->associateDefaultFilter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceCenterClient::CreateFilterOutcome ResourceCenterClient::createFilter(const CreateFilterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFilterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFilterOutcome(CreateFilterResult(outcome.result()));
+	else
+		return CreateFilterOutcome(outcome.error());
+}
+
+void ResourceCenterClient::createFilterAsync(const CreateFilterRequest& request, const CreateFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFilter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::CreateFilterOutcomeCallable ResourceCenterClient::createFilterCallable(const CreateFilterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFilterOutcome()>>(
+			[this, request]()
+			{
+			return this->createFilter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceCenterClient::CreateSavedQueryOutcome ResourceCenterClient::createSavedQuery(const CreateSavedQueryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSavedQueryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSavedQueryOutcome(CreateSavedQueryResult(outcome.result()));
+	else
+		return CreateSavedQueryOutcome(outcome.error());
+}
+
+void ResourceCenterClient::createSavedQueryAsync(const CreateSavedQueryRequest& request, const CreateSavedQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSavedQuery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::CreateSavedQueryOutcomeCallable ResourceCenterClient::createSavedQueryCallable(const CreateSavedQueryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSavedQueryOutcome()>>(
+			[this, request]()
+			{
+			return this->createSavedQuery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceCenterClient::DeleteFilterOutcome ResourceCenterClient::deleteFilter(const DeleteFilterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteFilterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteFilterOutcome(DeleteFilterResult(outcome.result()));
+	else
+		return DeleteFilterOutcome(outcome.error());
+}
+
+void ResourceCenterClient::deleteFilterAsync(const DeleteFilterRequest& request, const DeleteFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteFilter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::DeleteFilterOutcomeCallable ResourceCenterClient::deleteFilterCallable(const DeleteFilterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteFilterOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteFilter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceCenterClient::DeleteSavedQueryOutcome ResourceCenterClient::deleteSavedQuery(const DeleteSavedQueryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSavedQueryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSavedQueryOutcome(DeleteSavedQueryResult(outcome.result()));
+	else
+		return DeleteSavedQueryOutcome(outcome.error());
+}
+
+void ResourceCenterClient::deleteSavedQueryAsync(const DeleteSavedQueryRequest& request, const DeleteSavedQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSavedQuery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::DeleteSavedQueryOutcomeCallable ResourceCenterClient::deleteSavedQueryCallable(const DeleteSavedQueryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSavedQueryOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSavedQuery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ResourceCenterClient::DisableMultiAccountResourceCenterOutcome ResourceCenterClient::disableMultiAccountResourceCenter(const DisableMultiAccountResourceCenterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -123,6 +303,42 @@ ResourceCenterClient::DisableResourceCenterOutcomeCallable ResourceCenterClient:
 	return task->get_future();
 }
 
+ResourceCenterClient::DisassociateDefaultFilterOutcome ResourceCenterClient::disassociateDefaultFilter(const DisassociateDefaultFilterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisassociateDefaultFilterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisassociateDefaultFilterOutcome(DisassociateDefaultFilterResult(outcome.result()));
+	else
+		return DisassociateDefaultFilterOutcome(outcome.error());
+}
+
+void ResourceCenterClient::disassociateDefaultFilterAsync(const DisassociateDefaultFilterRequest& request, const DisassociateDefaultFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disassociateDefaultFilter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::DisassociateDefaultFilterOutcomeCallable ResourceCenterClient::disassociateDefaultFilterCallable(const DisassociateDefaultFilterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisassociateDefaultFilterOutcome()>>(
+			[this, request]()
+			{
+			return this->disassociateDefaultFilter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ResourceCenterClient::EnableMultiAccountResourceCenterOutcome ResourceCenterClient::enableMultiAccountResourceCenter(const EnableMultiAccountResourceCenterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +405,114 @@ ResourceCenterClient::EnableResourceCenterOutcomeCallable ResourceCenterClient::
 			[this, request]()
 			{
 			return this->enableResourceCenter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceCenterClient::ExecuteMultiAccountSQLQueryOutcome ResourceCenterClient::executeMultiAccountSQLQuery(const ExecuteMultiAccountSQLQueryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExecuteMultiAccountSQLQueryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExecuteMultiAccountSQLQueryOutcome(ExecuteMultiAccountSQLQueryResult(outcome.result()));
+	else
+		return ExecuteMultiAccountSQLQueryOutcome(outcome.error());
+}
+
+void ResourceCenterClient::executeMultiAccountSQLQueryAsync(const ExecuteMultiAccountSQLQueryRequest& request, const ExecuteMultiAccountSQLQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, executeMultiAccountSQLQuery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::ExecuteMultiAccountSQLQueryOutcomeCallable ResourceCenterClient::executeMultiAccountSQLQueryCallable(const ExecuteMultiAccountSQLQueryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExecuteMultiAccountSQLQueryOutcome()>>(
+			[this, request]()
+			{
+			return this->executeMultiAccountSQLQuery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceCenterClient::ExecuteSQLQueryOutcome ResourceCenterClient::executeSQLQuery(const ExecuteSQLQueryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExecuteSQLQueryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExecuteSQLQueryOutcome(ExecuteSQLQueryResult(outcome.result()));
+	else
+		return ExecuteSQLQueryOutcome(outcome.error());
+}
+
+void ResourceCenterClient::executeSQLQueryAsync(const ExecuteSQLQueryRequest& request, const ExecuteSQLQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, executeSQLQuery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::ExecuteSQLQueryOutcomeCallable ResourceCenterClient::executeSQLQueryCallable(const ExecuteSQLQueryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExecuteSQLQueryOutcome()>>(
+			[this, request]()
+			{
+			return this->executeSQLQuery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceCenterClient::GetExampleQueryOutcome ResourceCenterClient::getExampleQuery(const GetExampleQueryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetExampleQueryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetExampleQueryOutcome(GetExampleQueryResult(outcome.result()));
+	else
+		return GetExampleQueryOutcome(outcome.error());
+}
+
+void ResourceCenterClient::getExampleQueryAsync(const GetExampleQueryRequest& request, const GetExampleQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getExampleQuery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::GetExampleQueryOutcomeCallable ResourceCenterClient::getExampleQueryCallable(const GetExampleQueryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetExampleQueryOutcome()>>(
+			[this, request]()
+			{
+			return this->getExampleQuery(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,6 +699,114 @@ ResourceCenterClient::GetResourceCountsOutcomeCallable ResourceCenterClient::get
 	return task->get_future();
 }
 
+ResourceCenterClient::GetSavedQueryOutcome ResourceCenterClient::getSavedQuery(const GetSavedQueryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSavedQueryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSavedQueryOutcome(GetSavedQueryResult(outcome.result()));
+	else
+		return GetSavedQueryOutcome(outcome.error());
+}
+
+void ResourceCenterClient::getSavedQueryAsync(const GetSavedQueryRequest& request, const GetSavedQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSavedQuery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::GetSavedQueryOutcomeCallable ResourceCenterClient::getSavedQueryCallable(const GetSavedQueryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSavedQueryOutcome()>>(
+			[this, request]()
+			{
+			return this->getSavedQuery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceCenterClient::ListExampleQueriesOutcome ResourceCenterClient::listExampleQueries(const ListExampleQueriesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListExampleQueriesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListExampleQueriesOutcome(ListExampleQueriesResult(outcome.result()));
+	else
+		return ListExampleQueriesOutcome(outcome.error());
+}
+
+void ResourceCenterClient::listExampleQueriesAsync(const ListExampleQueriesRequest& request, const ListExampleQueriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listExampleQueries(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::ListExampleQueriesOutcomeCallable ResourceCenterClient::listExampleQueriesCallable(const ListExampleQueriesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListExampleQueriesOutcome()>>(
+			[this, request]()
+			{
+			return this->listExampleQueries(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceCenterClient::ListFiltersOutcome ResourceCenterClient::listFilters(const ListFiltersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListFiltersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListFiltersOutcome(ListFiltersResult(outcome.result()));
+	else
+		return ListFiltersOutcome(outcome.error());
+}
+
+void ResourceCenterClient::listFiltersAsync(const ListFiltersRequest& request, const ListFiltersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listFilters(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::ListFiltersOutcomeCallable ResourceCenterClient::listFiltersCallable(const ListFiltersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListFiltersOutcome()>>(
+			[this, request]()
+			{
+			return this->listFilters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ResourceCenterClient::ListMultiAccountResourceGroupsOutcome ResourceCenterClient::listMultiAccountResourceGroups(const ListMultiAccountResourceGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,6 +951,42 @@ ResourceCenterClient::ListResourceTypesOutcomeCallable ResourceCenterClient::lis
 	return task->get_future();
 }
 
+ResourceCenterClient::ListSavedQueriesOutcome ResourceCenterClient::listSavedQueries(const ListSavedQueriesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSavedQueriesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSavedQueriesOutcome(ListSavedQueriesResult(outcome.result()));
+	else
+		return ListSavedQueriesOutcome(outcome.error());
+}
+
+void ResourceCenterClient::listSavedQueriesAsync(const ListSavedQueriesRequest& request, const ListSavedQueriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSavedQueries(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::ListSavedQueriesOutcomeCallable ResourceCenterClient::listSavedQueriesCallable(const ListSavedQueriesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSavedQueriesOutcome()>>(
+			[this, request]()
+			{
+			return this->listSavedQueries(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ResourceCenterClient::ListTagKeysOutcome ResourceCenterClient::listTagKeys(const ListTagKeysRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +1125,78 @@ ResourceCenterClient::SearchResourcesOutcomeCallable ResourceCenterClient::searc
 			[this, request]()
 			{
 			return this->searchResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceCenterClient::UpdateFilterOutcome ResourceCenterClient::updateFilter(const UpdateFilterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateFilterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateFilterOutcome(UpdateFilterResult(outcome.result()));
+	else
+		return UpdateFilterOutcome(outcome.error());
+}
+
+void ResourceCenterClient::updateFilterAsync(const UpdateFilterRequest& request, const UpdateFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateFilter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::UpdateFilterOutcomeCallable ResourceCenterClient::updateFilterCallable(const UpdateFilterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateFilterOutcome()>>(
+			[this, request]()
+			{
+			return this->updateFilter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceCenterClient::UpdateSavedQueryOutcome ResourceCenterClient::updateSavedQuery(const UpdateSavedQueryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateSavedQueryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateSavedQueryOutcome(UpdateSavedQueryResult(outcome.result()));
+	else
+		return UpdateSavedQueryOutcome(outcome.error());
+}
+
+void ResourceCenterClient::updateSavedQueryAsync(const UpdateSavedQueryRequest& request, const UpdateSavedQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateSavedQuery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::UpdateSavedQueryOutcomeCallable ResourceCenterClient::updateSavedQueryCallable(const UpdateSavedQueryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateSavedQueryOutcome()>>(
+			[this, request]()
+			{
+			return this->updateSavedQuery(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

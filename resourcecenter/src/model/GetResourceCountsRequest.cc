@@ -39,6 +39,15 @@ void GetResourceCountsRequest::setFilter(const std::vector<GetResourceCountsRequ
   }
 }
 
+std::string GetResourceCountsRequest::getView() const {
+  return view_;
+}
+
+void GetResourceCountsRequest::setView(const std::string &view) {
+  view_ = view;
+  setParameter(std::string("View"), view);
+}
+
 std::string GetResourceCountsRequest::getGroupByKey() const {
   return groupByKey_;
 }

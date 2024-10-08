@@ -30,20 +30,20 @@ class ALIBABACLOUD_RESOURCECENTER_EXPORT GetMultiAccountResourceConfigurationReq
 public:
 	GetMultiAccountResourceConfigurationRequest();
 	~GetMultiAccountResourceConfigurationRequest();
-	std::string getResourceId() const;
-	void setResourceId(const std::string &resourceId);
-	std::string getResourceType() const;
-	void setResourceType(const std::string &resourceType);
 	std::string getAccountId() const;
 	void setAccountId(const std::string &accountId);
 	std::string getResourceRegionId() const;
 	void setResourceRegionId(const std::string &resourceRegionId);
+	std::string getResourceId() const;
+	void setResourceId(const std::string &resourceId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
 
 private:
-	std::string resourceId_;
-	std::string resourceType_;
 	std::string accountId_;
 	std::string resourceRegionId_;
+	std::string resourceId_;
+	std::string resourceType_;
 };
 } // namespace Model
 } // namespace ResourceCenter
