@@ -43,15 +43,6 @@ void QueryPushRecordsRequest::setSource(const std::string &source) {
   setParameter(std::string("Source"), source);
 }
 
-std::string QueryPushRecordsRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void QueryPushRecordsRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string QueryPushRecordsRequest::getNextToken() const {
   return nextToken_;
 }

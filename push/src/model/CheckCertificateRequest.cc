@@ -25,15 +25,6 @@ CheckCertificateRequest::CheckCertificateRequest()
 
 CheckCertificateRequest::~CheckCertificateRequest() {}
 
-std::string CheckCertificateRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void CheckCertificateRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 long CheckCertificateRequest::getAppKey() const {
   return appKey_;
 }

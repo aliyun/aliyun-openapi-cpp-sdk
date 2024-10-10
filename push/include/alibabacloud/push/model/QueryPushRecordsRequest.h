@@ -34,8 +34,6 @@ public:
 	void setStartTime(const std::string &startTime);
 	std::string getSource() const;
 	void setSource(const std::string &source);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
 	int getPageSize() const;
@@ -56,7 +54,6 @@ public:
 private:
 	std::string startTime_;
 	std::string source_;
-	std::string accessKeyId_;
 	std::string nextToken_;
 	int pageSize_;
 	std::string keyword_;

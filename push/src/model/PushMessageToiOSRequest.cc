@@ -25,15 +25,6 @@ PushMessageToiOSRequest::PushMessageToiOSRequest()
 
 PushMessageToiOSRequest::~PushMessageToiOSRequest() {}
 
-bool PushMessageToiOSRequest::getStoreOffline() const {
-  return storeOffline_;
-}
-
-void PushMessageToiOSRequest::setStoreOffline(bool storeOffline) {
-  storeOffline_ = storeOffline;
-  setParameter(std::string("StoreOffline"), storeOffline ? "true" : "false");
-}
-
 std::string PushMessageToiOSRequest::getTitle() const {
   return title_;
 }
@@ -52,15 +43,6 @@ void PushMessageToiOSRequest::setBody(const std::string &body) {
   setParameter(std::string("Body"), body);
 }
 
-std::string PushMessageToiOSRequest::getJobKey() const {
-  return jobKey_;
-}
-
-void PushMessageToiOSRequest::setJobKey(const std::string &jobKey) {
-  jobKey_ = jobKey;
-  setParameter(std::string("JobKey"), jobKey);
-}
-
 std::string PushMessageToiOSRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -68,6 +50,24 @@ std::string PushMessageToiOSRequest::getAccessKeyId() const {
 void PushMessageToiOSRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+bool PushMessageToiOSRequest::getStoreOffline() const {
+  return storeOffline_;
+}
+
+void PushMessageToiOSRequest::setStoreOffline(bool storeOffline) {
+  storeOffline_ = storeOffline;
+  setParameter(std::string("StoreOffline"), storeOffline ? "true" : "false");
+}
+
+std::string PushMessageToiOSRequest::getJobKey() const {
+  return jobKey_;
+}
+
+void PushMessageToiOSRequest::setJobKey(const std::string &jobKey) {
+  jobKey_ = jobKey;
+  setParameter(std::string("JobKey"), jobKey);
 }
 
 std::string PushMessageToiOSRequest::getTarget() const {

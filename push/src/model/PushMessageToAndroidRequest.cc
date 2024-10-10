@@ -25,15 +25,6 @@ PushMessageToAndroidRequest::PushMessageToAndroidRequest()
 
 PushMessageToAndroidRequest::~PushMessageToAndroidRequest() {}
 
-bool PushMessageToAndroidRequest::getStoreOffline() const {
-  return storeOffline_;
-}
-
-void PushMessageToAndroidRequest::setStoreOffline(bool storeOffline) {
-  storeOffline_ = storeOffline;
-  setParameter(std::string("StoreOffline"), storeOffline ? "true" : "false");
-}
-
 std::string PushMessageToAndroidRequest::getTitle() const {
   return title_;
 }
@@ -52,15 +43,6 @@ void PushMessageToAndroidRequest::setBody(const std::string &body) {
   setParameter(std::string("Body"), body);
 }
 
-std::string PushMessageToAndroidRequest::getJobKey() const {
-  return jobKey_;
-}
-
-void PushMessageToAndroidRequest::setJobKey(const std::string &jobKey) {
-  jobKey_ = jobKey;
-  setParameter(std::string("JobKey"), jobKey);
-}
-
 std::string PushMessageToAndroidRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -68,6 +50,24 @@ std::string PushMessageToAndroidRequest::getAccessKeyId() const {
 void PushMessageToAndroidRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+bool PushMessageToAndroidRequest::getStoreOffline() const {
+  return storeOffline_;
+}
+
+void PushMessageToAndroidRequest::setStoreOffline(bool storeOffline) {
+  storeOffline_ = storeOffline;
+  setParameter(std::string("StoreOffline"), storeOffline ? "true" : "false");
+}
+
+std::string PushMessageToAndroidRequest::getJobKey() const {
+  return jobKey_;
+}
+
+void PushMessageToAndroidRequest::setJobKey(const std::string &jobKey) {
+  jobKey_ = jobKey;
+  setParameter(std::string("JobKey"), jobKey);
 }
 
 std::string PushMessageToAndroidRequest::getTarget() const {

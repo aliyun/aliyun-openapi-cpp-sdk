@@ -25,24 +25,6 @@ PushNoticeToiOSRequest::PushNoticeToiOSRequest()
 
 PushNoticeToiOSRequest::~PushNoticeToiOSRequest() {}
 
-std::string PushNoticeToiOSRequest::getExtParameters() const {
-  return extParameters_;
-}
-
-void PushNoticeToiOSRequest::setExtParameters(const std::string &extParameters) {
-  extParameters_ = extParameters;
-  setParameter(std::string("ExtParameters"), extParameters);
-}
-
-std::string PushNoticeToiOSRequest::getApnsEnv() const {
-  return apnsEnv_;
-}
-
-void PushNoticeToiOSRequest::setApnsEnv(const std::string &apnsEnv) {
-  apnsEnv_ = apnsEnv;
-  setParameter(std::string("ApnsEnv"), apnsEnv);
-}
-
 std::string PushNoticeToiOSRequest::getTitle() const {
   return title_;
 }
@@ -61,15 +43,6 @@ void PushNoticeToiOSRequest::setBody(const std::string &body) {
   setParameter(std::string("Body"), body);
 }
 
-std::string PushNoticeToiOSRequest::getJobKey() const {
-  return jobKey_;
-}
-
-void PushNoticeToiOSRequest::setJobKey(const std::string &jobKey) {
-  jobKey_ = jobKey;
-  setParameter(std::string("JobKey"), jobKey);
-}
-
 std::string PushNoticeToiOSRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -77,6 +50,33 @@ std::string PushNoticeToiOSRequest::getAccessKeyId() const {
 void PushNoticeToiOSRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string PushNoticeToiOSRequest::getExtParameters() const {
+  return extParameters_;
+}
+
+void PushNoticeToiOSRequest::setExtParameters(const std::string &extParameters) {
+  extParameters_ = extParameters;
+  setParameter(std::string("ExtParameters"), extParameters);
+}
+
+std::string PushNoticeToiOSRequest::getApnsEnv() const {
+  return apnsEnv_;
+}
+
+void PushNoticeToiOSRequest::setApnsEnv(const std::string &apnsEnv) {
+  apnsEnv_ = apnsEnv;
+  setParameter(std::string("ApnsEnv"), apnsEnv);
+}
+
+std::string PushNoticeToiOSRequest::getJobKey() const {
+  return jobKey_;
+}
+
+void PushNoticeToiOSRequest::setJobKey(const std::string &jobKey) {
+  jobKey_ = jobKey;
+  setParameter(std::string("JobKey"), jobKey);
 }
 
 std::string PushNoticeToiOSRequest::getTarget() const {

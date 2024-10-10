@@ -30,18 +30,18 @@ class ALIBABACLOUD_PUSH_EXPORT PushNoticeToiOSRequest : public RpcServiceRequest
 public:
 	PushNoticeToiOSRequest();
 	~PushNoticeToiOSRequest();
-	std::string getExtParameters() const;
-	void setExtParameters(const std::string &extParameters);
-	std::string getApnsEnv() const;
-	void setApnsEnv(const std::string &apnsEnv);
 	std::string getTitle() const;
 	void setTitle(const std::string &title);
 	std::string getBody() const;
 	void setBody(const std::string &body);
-	std::string getJobKey() const;
-	void setJobKey(const std::string &jobKey);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getExtParameters() const;
+	void setExtParameters(const std::string &extParameters);
+	std::string getApnsEnv() const;
+	void setApnsEnv(const std::string &apnsEnv);
+	std::string getJobKey() const;
+	void setJobKey(const std::string &jobKey);
 	std::string getTarget() const;
 	void setTarget(const std::string &target);
 	long getAppKey() const;
@@ -50,12 +50,12 @@ public:
 	void setTargetValue(const std::string &targetValue);
 
 private:
-	std::string extParameters_;
-	std::string apnsEnv_;
 	std::string title_;
 	std::string body_;
-	std::string jobKey_;
 	std::string accessKeyId_;
+	std::string extParameters_;
+	std::string apnsEnv_;
+	std::string jobKey_;
 	std::string target_;
 	long appKey_;
 	std::string targetValue_;

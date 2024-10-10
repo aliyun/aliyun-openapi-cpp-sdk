@@ -30,18 +30,18 @@ class ALIBABACLOUD_PUSH_EXPORT PushNoticeToAndroidRequest : public RpcServiceReq
 public:
 	PushNoticeToAndroidRequest();
 	~PushNoticeToAndroidRequest();
-	std::string getExtParameters() const;
-	void setExtParameters(const std::string &extParameters);
-	bool getStoreOffline() const;
-	void setStoreOffline(bool storeOffline);
 	std::string getTitle() const;
 	void setTitle(const std::string &title);
 	std::string getBody() const;
 	void setBody(const std::string &body);
-	std::string getJobKey() const;
-	void setJobKey(const std::string &jobKey);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getExtParameters() const;
+	void setExtParameters(const std::string &extParameters);
+	bool getStoreOffline() const;
+	void setStoreOffline(bool storeOffline);
+	std::string getJobKey() const;
+	void setJobKey(const std::string &jobKey);
 	std::string getTarget() const;
 	void setTarget(const std::string &target);
 	long getAppKey() const;
@@ -50,12 +50,12 @@ public:
 	void setTargetValue(const std::string &targetValue);
 
 private:
-	std::string extParameters_;
-	bool storeOffline_;
 	std::string title_;
 	std::string body_;
-	std::string jobKey_;
 	std::string accessKeyId_;
+	std::string extParameters_;
+	bool storeOffline_;
+	std::string jobKey_;
 	std::string target_;
 	long appKey_;
 	std::string targetValue_;

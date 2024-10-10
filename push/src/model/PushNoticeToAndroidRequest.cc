@@ -25,24 +25,6 @@ PushNoticeToAndroidRequest::PushNoticeToAndroidRequest()
 
 PushNoticeToAndroidRequest::~PushNoticeToAndroidRequest() {}
 
-std::string PushNoticeToAndroidRequest::getExtParameters() const {
-  return extParameters_;
-}
-
-void PushNoticeToAndroidRequest::setExtParameters(const std::string &extParameters) {
-  extParameters_ = extParameters;
-  setParameter(std::string("ExtParameters"), extParameters);
-}
-
-bool PushNoticeToAndroidRequest::getStoreOffline() const {
-  return storeOffline_;
-}
-
-void PushNoticeToAndroidRequest::setStoreOffline(bool storeOffline) {
-  storeOffline_ = storeOffline;
-  setParameter(std::string("StoreOffline"), storeOffline ? "true" : "false");
-}
-
 std::string PushNoticeToAndroidRequest::getTitle() const {
   return title_;
 }
@@ -61,15 +43,6 @@ void PushNoticeToAndroidRequest::setBody(const std::string &body) {
   setParameter(std::string("Body"), body);
 }
 
-std::string PushNoticeToAndroidRequest::getJobKey() const {
-  return jobKey_;
-}
-
-void PushNoticeToAndroidRequest::setJobKey(const std::string &jobKey) {
-  jobKey_ = jobKey;
-  setParameter(std::string("JobKey"), jobKey);
-}
-
 std::string PushNoticeToAndroidRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -77,6 +50,33 @@ std::string PushNoticeToAndroidRequest::getAccessKeyId() const {
 void PushNoticeToAndroidRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string PushNoticeToAndroidRequest::getExtParameters() const {
+  return extParameters_;
+}
+
+void PushNoticeToAndroidRequest::setExtParameters(const std::string &extParameters) {
+  extParameters_ = extParameters;
+  setParameter(std::string("ExtParameters"), extParameters);
+}
+
+bool PushNoticeToAndroidRequest::getStoreOffline() const {
+  return storeOffline_;
+}
+
+void PushNoticeToAndroidRequest::setStoreOffline(bool storeOffline) {
+  storeOffline_ = storeOffline;
+  setParameter(std::string("StoreOffline"), storeOffline ? "true" : "false");
+}
+
+std::string PushNoticeToAndroidRequest::getJobKey() const {
+  return jobKey_;
+}
+
+void PushNoticeToAndroidRequest::setJobKey(const std::string &jobKey) {
+  jobKey_ = jobKey;
+  setParameter(std::string("JobKey"), jobKey);
 }
 
 std::string PushNoticeToAndroidRequest::getTarget() const {
