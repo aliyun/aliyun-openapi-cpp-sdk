@@ -1203,6 +1203,42 @@ Quickbi_publicClient::DeleteUserTagMetaOutcomeCallable Quickbi_publicClient::del
 	return task->get_future();
 }
 
+Quickbi_publicClient::GetMailTaskStatusOutcome Quickbi_publicClient::getMailTaskStatus(const GetMailTaskStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMailTaskStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMailTaskStatusOutcome(GetMailTaskStatusResult(outcome.result()));
+	else
+		return GetMailTaskStatusOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::getMailTaskStatusAsync(const GetMailTaskStatusRequest& request, const GetMailTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMailTaskStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::GetMailTaskStatusOutcomeCallable Quickbi_publicClient::getMailTaskStatusCallable(const GetMailTaskStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMailTaskStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getMailTaskStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::GetUserGroupInfoOutcome Quickbi_publicClient::getUserGroupInfo(const GetUserGroupInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1233,6 +1269,42 @@ Quickbi_publicClient::GetUserGroupInfoOutcomeCallable Quickbi_publicClient::getU
 			[this, request]()
 			{
 			return this->getUserGroupInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::GetWorksEmbedListOutcome Quickbi_publicClient::getWorksEmbedList(const GetWorksEmbedListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetWorksEmbedListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetWorksEmbedListOutcome(GetWorksEmbedListResult(outcome.result()));
+	else
+		return GetWorksEmbedListOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::getWorksEmbedListAsync(const GetWorksEmbedListRequest& request, const GetWorksEmbedListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getWorksEmbedList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::GetWorksEmbedListOutcomeCallable Quickbi_publicClient::getWorksEmbedListCallable(const GetWorksEmbedListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetWorksEmbedListOutcome()>>(
+			[this, request]()
+			{
+			return this->getWorksEmbedList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1773,6 +1845,42 @@ Quickbi_publicClient::ListWorkspaceRolesOutcomeCallable Quickbi_publicClient::li
 			[this, request]()
 			{
 			return this->listWorkspaceRoles(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::ManualRunMailTaskOutcome Quickbi_publicClient::manualRunMailTask(const ManualRunMailTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ManualRunMailTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ManualRunMailTaskOutcome(ManualRunMailTaskResult(outcome.result()));
+	else
+		return ManualRunMailTaskOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::manualRunMailTaskAsync(const ManualRunMailTaskRequest& request, const ManualRunMailTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, manualRunMailTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ManualRunMailTaskOutcomeCallable Quickbi_publicClient::manualRunMailTaskCallable(const ManualRunMailTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ManualRunMailTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->manualRunMailTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

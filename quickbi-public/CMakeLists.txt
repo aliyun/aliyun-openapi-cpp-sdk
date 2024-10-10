@@ -85,8 +85,12 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/DeleteUserGroupMembersResult.h
 	include/alibabacloud/quickbi-public/model/DeleteUserTagMetaRequest.h
 	include/alibabacloud/quickbi-public/model/DeleteUserTagMetaResult.h
+	include/alibabacloud/quickbi-public/model/GetMailTaskStatusRequest.h
+	include/alibabacloud/quickbi-public/model/GetMailTaskStatusResult.h
 	include/alibabacloud/quickbi-public/model/GetUserGroupInfoRequest.h
 	include/alibabacloud/quickbi-public/model/GetUserGroupInfoResult.h
+	include/alibabacloud/quickbi-public/model/GetWorksEmbedListRequest.h
+	include/alibabacloud/quickbi-public/model/GetWorksEmbedListResult.h
 	include/alibabacloud/quickbi-public/model/ListApiDatasourceRequest.h
 	include/alibabacloud/quickbi-public/model/ListApiDatasourceResult.h
 	include/alibabacloud/quickbi-public/model/ListByUserGroupIdRequest.h
@@ -117,6 +121,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/ListWorkspaceRoleUsersResult.h
 	include/alibabacloud/quickbi-public/model/ListWorkspaceRolesRequest.h
 	include/alibabacloud/quickbi-public/model/ListWorkspaceRolesResult.h
+	include/alibabacloud/quickbi-public/model/ManualRunMailTaskRequest.h
+	include/alibabacloud/quickbi-public/model/ManualRunMailTaskResult.h
 	include/alibabacloud/quickbi-public/model/ModifyApiDatasourceParametersRequest.h
 	include/alibabacloud/quickbi-public/model/ModifyApiDatasourceParametersResult.h
 	include/alibabacloud/quickbi-public/model/ModifyCopilotEmbedConfigRequest.h
@@ -292,8 +298,12 @@ set(quickbi-public_src
 	src/model/DeleteUserGroupMembersResult.cc
 	src/model/DeleteUserTagMetaRequest.cc
 	src/model/DeleteUserTagMetaResult.cc
+	src/model/GetMailTaskStatusRequest.cc
+	src/model/GetMailTaskStatusResult.cc
 	src/model/GetUserGroupInfoRequest.cc
 	src/model/GetUserGroupInfoResult.cc
+	src/model/GetWorksEmbedListRequest.cc
+	src/model/GetWorksEmbedListResult.cc
 	src/model/ListApiDatasourceRequest.cc
 	src/model/ListApiDatasourceResult.cc
 	src/model/ListByUserGroupIdRequest.cc
@@ -324,6 +334,8 @@ set(quickbi-public_src
 	src/model/ListWorkspaceRoleUsersResult.cc
 	src/model/ListWorkspaceRolesRequest.cc
 	src/model/ListWorkspaceRolesResult.cc
+	src/model/ManualRunMailTaskRequest.cc
+	src/model/ManualRunMailTaskResult.cc
 	src/model/ModifyApiDatasourceParametersRequest.cc
 	src/model/ModifyApiDatasourceParametersResult.cc
 	src/model/ModifyCopilotEmbedConfigRequest.cc

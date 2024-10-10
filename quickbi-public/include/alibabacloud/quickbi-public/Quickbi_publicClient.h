@@ -86,8 +86,12 @@
 #include "model/DeleteUserGroupMembersResult.h"
 #include "model/DeleteUserTagMetaRequest.h"
 #include "model/DeleteUserTagMetaResult.h"
+#include "model/GetMailTaskStatusRequest.h"
+#include "model/GetMailTaskStatusResult.h"
 #include "model/GetUserGroupInfoRequest.h"
 #include "model/GetUserGroupInfoResult.h"
+#include "model/GetWorksEmbedListRequest.h"
+#include "model/GetWorksEmbedListResult.h"
 #include "model/ListApiDatasourceRequest.h"
 #include "model/ListApiDatasourceResult.h"
 #include "model/ListByUserGroupIdRequest.h"
@@ -118,6 +122,8 @@
 #include "model/ListWorkspaceRoleUsersResult.h"
 #include "model/ListWorkspaceRolesRequest.h"
 #include "model/ListWorkspaceRolesResult.h"
+#include "model/ManualRunMailTaskRequest.h"
+#include "model/ManualRunMailTaskResult.h"
 #include "model/ModifyApiDatasourceParametersRequest.h"
 #include "model/ModifyApiDatasourceParametersResult.h"
 #include "model/ModifyCopilotEmbedConfigRequest.h"
@@ -331,9 +337,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteUserTagMetaResult> DeleteUserTagMetaOutcome;
 			typedef std::future<DeleteUserTagMetaOutcome> DeleteUserTagMetaOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::DeleteUserTagMetaRequest&, const DeleteUserTagMetaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserTagMetaAsyncHandler;
+			typedef Outcome<Error, Model::GetMailTaskStatusResult> GetMailTaskStatusOutcome;
+			typedef std::future<GetMailTaskStatusOutcome> GetMailTaskStatusOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::GetMailTaskStatusRequest&, const GetMailTaskStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMailTaskStatusAsyncHandler;
 			typedef Outcome<Error, Model::GetUserGroupInfoResult> GetUserGroupInfoOutcome;
 			typedef std::future<GetUserGroupInfoOutcome> GetUserGroupInfoOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::GetUserGroupInfoRequest&, const GetUserGroupInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserGroupInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetWorksEmbedListResult> GetWorksEmbedListOutcome;
+			typedef std::future<GetWorksEmbedListOutcome> GetWorksEmbedListOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::GetWorksEmbedListRequest&, const GetWorksEmbedListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWorksEmbedListAsyncHandler;
 			typedef Outcome<Error, Model::ListApiDatasourceResult> ListApiDatasourceOutcome;
 			typedef std::future<ListApiDatasourceOutcome> ListApiDatasourceOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListApiDatasourceRequest&, const ListApiDatasourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApiDatasourceAsyncHandler;
@@ -379,6 +391,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListWorkspaceRolesResult> ListWorkspaceRolesOutcome;
 			typedef std::future<ListWorkspaceRolesOutcome> ListWorkspaceRolesOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListWorkspaceRolesRequest&, const ListWorkspaceRolesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkspaceRolesAsyncHandler;
+			typedef Outcome<Error, Model::ManualRunMailTaskResult> ManualRunMailTaskOutcome;
+			typedef std::future<ManualRunMailTaskOutcome> ManualRunMailTaskOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ManualRunMailTaskRequest&, const ManualRunMailTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ManualRunMailTaskAsyncHandler;
 			typedef Outcome<Error, Model::ModifyApiDatasourceParametersResult> ModifyApiDatasourceParametersOutcome;
 			typedef std::future<ModifyApiDatasourceParametersOutcome> ModifyApiDatasourceParametersOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ModifyApiDatasourceParametersRequest&, const ModifyApiDatasourceParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiDatasourceParametersAsyncHandler;
@@ -642,9 +657,15 @@ namespace AlibabaCloud
 			DeleteUserTagMetaOutcome deleteUserTagMeta(const Model::DeleteUserTagMetaRequest &request)const;
 			void deleteUserTagMetaAsync(const Model::DeleteUserTagMetaRequest& request, const DeleteUserTagMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUserTagMetaOutcomeCallable deleteUserTagMetaCallable(const Model::DeleteUserTagMetaRequest& request) const;
+			GetMailTaskStatusOutcome getMailTaskStatus(const Model::GetMailTaskStatusRequest &request)const;
+			void getMailTaskStatusAsync(const Model::GetMailTaskStatusRequest& request, const GetMailTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMailTaskStatusOutcomeCallable getMailTaskStatusCallable(const Model::GetMailTaskStatusRequest& request) const;
 			GetUserGroupInfoOutcome getUserGroupInfo(const Model::GetUserGroupInfoRequest &request)const;
 			void getUserGroupInfoAsync(const Model::GetUserGroupInfoRequest& request, const GetUserGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUserGroupInfoOutcomeCallable getUserGroupInfoCallable(const Model::GetUserGroupInfoRequest& request) const;
+			GetWorksEmbedListOutcome getWorksEmbedList(const Model::GetWorksEmbedListRequest &request)const;
+			void getWorksEmbedListAsync(const Model::GetWorksEmbedListRequest& request, const GetWorksEmbedListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetWorksEmbedListOutcomeCallable getWorksEmbedListCallable(const Model::GetWorksEmbedListRequest& request) const;
 			ListApiDatasourceOutcome listApiDatasource(const Model::ListApiDatasourceRequest &request)const;
 			void listApiDatasourceAsync(const Model::ListApiDatasourceRequest& request, const ListApiDatasourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListApiDatasourceOutcomeCallable listApiDatasourceCallable(const Model::ListApiDatasourceRequest& request) const;
@@ -690,6 +711,9 @@ namespace AlibabaCloud
 			ListWorkspaceRolesOutcome listWorkspaceRoles(const Model::ListWorkspaceRolesRequest &request)const;
 			void listWorkspaceRolesAsync(const Model::ListWorkspaceRolesRequest& request, const ListWorkspaceRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListWorkspaceRolesOutcomeCallable listWorkspaceRolesCallable(const Model::ListWorkspaceRolesRequest& request) const;
+			ManualRunMailTaskOutcome manualRunMailTask(const Model::ManualRunMailTaskRequest &request)const;
+			void manualRunMailTaskAsync(const Model::ManualRunMailTaskRequest& request, const ManualRunMailTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ManualRunMailTaskOutcomeCallable manualRunMailTaskCallable(const Model::ManualRunMailTaskRequest& request) const;
 			ModifyApiDatasourceParametersOutcome modifyApiDatasourceParameters(const Model::ModifyApiDatasourceParametersRequest &request)const;
 			void modifyApiDatasourceParametersAsync(const Model::ModifyApiDatasourceParametersRequest& request, const ModifyApiDatasourceParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyApiDatasourceParametersOutcomeCallable modifyApiDatasourceParametersCallable(const Model::ModifyApiDatasourceParametersRequest& request) const;
