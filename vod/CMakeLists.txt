@@ -49,6 +49,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/BatchStopVodDomainResult.h
 	include/alibabacloud/vod/model/CancelUrlUploadJobsRequest.h
 	include/alibabacloud/vod/model/CancelUrlUploadJobsResult.h
+	include/alibabacloud/vod/model/ChangeResourceGroupRequest.h
+	include/alibabacloud/vod/model/ChangeResourceGroupResult.h
 	include/alibabacloud/vod/model/CreateAppInfoRequest.h
 	include/alibabacloud/vod/model/CreateAppInfoResult.h
 	include/alibabacloud/vod/model/CreateAuditRequest.h
@@ -161,6 +163,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DescribeVodRefreshQuotaResult.h
 	include/alibabacloud/vod/model/DescribeVodRefreshTasksRequest.h
 	include/alibabacloud/vod/model/DescribeVodRefreshTasksResult.h
+	include/alibabacloud/vod/model/DescribeVodSSLCertificateListRequest.h
+	include/alibabacloud/vod/model/DescribeVodSSLCertificateListResult.h
 	include/alibabacloud/vod/model/DescribeVodStorageDataRequest.h
 	include/alibabacloud/vod/model/DescribeVodStorageDataResult.h
 	include/alibabacloud/vod/model/DescribeVodTieringStorageDataRequest.h
@@ -309,6 +313,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/SetMessageCallbackResult.h
 	include/alibabacloud/vod/model/SetVodDomainCertificateRequest.h
 	include/alibabacloud/vod/model/SetVodDomainCertificateResult.h
+	include/alibabacloud/vod/model/SetVodDomainSSLCertificateRequest.h
+	include/alibabacloud/vod/model/SetVodDomainSSLCertificateResult.h
 	include/alibabacloud/vod/model/SubmitAIImageAuditJobRequest.h
 	include/alibabacloud/vod/model/SubmitAIImageAuditJobResult.h
 	include/alibabacloud/vod/model/SubmitAIImageJobRequest.h
@@ -394,6 +400,8 @@ set(vod_src
 	src/model/BatchStopVodDomainResult.cc
 	src/model/CancelUrlUploadJobsRequest.cc
 	src/model/CancelUrlUploadJobsResult.cc
+	src/model/ChangeResourceGroupRequest.cc
+	src/model/ChangeResourceGroupResult.cc
 	src/model/CreateAppInfoRequest.cc
 	src/model/CreateAppInfoResult.cc
 	src/model/CreateAuditRequest.cc
@@ -506,6 +514,8 @@ set(vod_src
 	src/model/DescribeVodRefreshQuotaResult.cc
 	src/model/DescribeVodRefreshTasksRequest.cc
 	src/model/DescribeVodRefreshTasksResult.cc
+	src/model/DescribeVodSSLCertificateListRequest.cc
+	src/model/DescribeVodSSLCertificateListResult.cc
 	src/model/DescribeVodStorageDataRequest.cc
 	src/model/DescribeVodStorageDataResult.cc
 	src/model/DescribeVodTieringStorageDataRequest.cc
@@ -654,6 +664,8 @@ set(vod_src
 	src/model/SetMessageCallbackResult.cc
 	src/model/SetVodDomainCertificateRequest.cc
 	src/model/SetVodDomainCertificateResult.cc
+	src/model/SetVodDomainSSLCertificateRequest.cc
+	src/model/SetVodDomainSSLCertificateResult.cc
 	src/model/SubmitAIImageAuditJobRequest.cc
 	src/model/SubmitAIImageAuditJobResult.cc
 	src/model/SubmitAIImageJobRequest.cc

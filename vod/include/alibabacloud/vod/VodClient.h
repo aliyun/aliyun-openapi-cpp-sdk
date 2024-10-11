@@ -50,6 +50,8 @@
 #include "model/BatchStopVodDomainResult.h"
 #include "model/CancelUrlUploadJobsRequest.h"
 #include "model/CancelUrlUploadJobsResult.h"
+#include "model/ChangeResourceGroupRequest.h"
+#include "model/ChangeResourceGroupResult.h"
 #include "model/CreateAppInfoRequest.h"
 #include "model/CreateAppInfoResult.h"
 #include "model/CreateAuditRequest.h"
@@ -162,6 +164,8 @@
 #include "model/DescribeVodRefreshQuotaResult.h"
 #include "model/DescribeVodRefreshTasksRequest.h"
 #include "model/DescribeVodRefreshTasksResult.h"
+#include "model/DescribeVodSSLCertificateListRequest.h"
+#include "model/DescribeVodSSLCertificateListResult.h"
 #include "model/DescribeVodStorageDataRequest.h"
 #include "model/DescribeVodStorageDataResult.h"
 #include "model/DescribeVodTieringStorageDataRequest.h"
@@ -310,6 +314,8 @@
 #include "model/SetMessageCallbackResult.h"
 #include "model/SetVodDomainCertificateRequest.h"
 #include "model/SetVodDomainCertificateResult.h"
+#include "model/SetVodDomainSSLCertificateRequest.h"
+#include "model/SetVodDomainSSLCertificateResult.h"
 #include "model/SubmitAIImageAuditJobRequest.h"
 #include "model/SubmitAIImageAuditJobResult.h"
 #include "model/SubmitAIImageJobRequest.h"
@@ -415,6 +421,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CancelUrlUploadJobsResult> CancelUrlUploadJobsOutcome;
 			typedef std::future<CancelUrlUploadJobsOutcome> CancelUrlUploadJobsOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::CancelUrlUploadJobsRequest&, const CancelUrlUploadJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelUrlUploadJobsAsyncHandler;
+			typedef Outcome<Error, Model::ChangeResourceGroupResult> ChangeResourceGroupOutcome;
+			typedef std::future<ChangeResourceGroupOutcome> ChangeResourceGroupOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::ChangeResourceGroupRequest&, const ChangeResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::CreateAppInfoResult> CreateAppInfoOutcome;
 			typedef std::future<CreateAppInfoOutcome> CreateAppInfoOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::CreateAppInfoRequest&, const CreateAppInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppInfoAsyncHandler;
@@ -583,6 +592,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVodRefreshTasksResult> DescribeVodRefreshTasksOutcome;
 			typedef std::future<DescribeVodRefreshTasksOutcome> DescribeVodRefreshTasksOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodRefreshTasksRequest&, const DescribeVodRefreshTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodRefreshTasksAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodSSLCertificateListResult> DescribeVodSSLCertificateListOutcome;
+			typedef std::future<DescribeVodSSLCertificateListOutcome> DescribeVodSSLCertificateListOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodSSLCertificateListRequest&, const DescribeVodSSLCertificateListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodSSLCertificateListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVodStorageDataResult> DescribeVodStorageDataOutcome;
 			typedef std::future<DescribeVodStorageDataOutcome> DescribeVodStorageDataOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodStorageDataRequest&, const DescribeVodStorageDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodStorageDataAsyncHandler;
@@ -805,6 +817,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetVodDomainCertificateResult> SetVodDomainCertificateOutcome;
 			typedef std::future<SetVodDomainCertificateOutcome> SetVodDomainCertificateOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::SetVodDomainCertificateRequest&, const SetVodDomainCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetVodDomainCertificateAsyncHandler;
+			typedef Outcome<Error, Model::SetVodDomainSSLCertificateResult> SetVodDomainSSLCertificateOutcome;
+			typedef std::future<SetVodDomainSSLCertificateOutcome> SetVodDomainSSLCertificateOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::SetVodDomainSSLCertificateRequest&, const SetVodDomainSSLCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetVodDomainSSLCertificateAsyncHandler;
 			typedef Outcome<Error, Model::SubmitAIImageAuditJobResult> SubmitAIImageAuditJobOutcome;
 			typedef std::future<SubmitAIImageAuditJobOutcome> SubmitAIImageAuditJobOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::SubmitAIImageAuditJobRequest&, const SubmitAIImageAuditJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitAIImageAuditJobAsyncHandler;
@@ -933,6 +948,9 @@ namespace AlibabaCloud
 			CancelUrlUploadJobsOutcome cancelUrlUploadJobs(const Model::CancelUrlUploadJobsRequest &request)const;
 			void cancelUrlUploadJobsAsync(const Model::CancelUrlUploadJobsRequest& request, const CancelUrlUploadJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelUrlUploadJobsOutcomeCallable cancelUrlUploadJobsCallable(const Model::CancelUrlUploadJobsRequest& request) const;
+			ChangeResourceGroupOutcome changeResourceGroup(const Model::ChangeResourceGroupRequest &request)const;
+			void changeResourceGroupAsync(const Model::ChangeResourceGroupRequest& request, const ChangeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChangeResourceGroupOutcomeCallable changeResourceGroupCallable(const Model::ChangeResourceGroupRequest& request) const;
 			CreateAppInfoOutcome createAppInfo(const Model::CreateAppInfoRequest &request)const;
 			void createAppInfoAsync(const Model::CreateAppInfoRequest& request, const CreateAppInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAppInfoOutcomeCallable createAppInfoCallable(const Model::CreateAppInfoRequest& request) const;
@@ -1101,6 +1119,9 @@ namespace AlibabaCloud
 			DescribeVodRefreshTasksOutcome describeVodRefreshTasks(const Model::DescribeVodRefreshTasksRequest &request)const;
 			void describeVodRefreshTasksAsync(const Model::DescribeVodRefreshTasksRequest& request, const DescribeVodRefreshTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodRefreshTasksOutcomeCallable describeVodRefreshTasksCallable(const Model::DescribeVodRefreshTasksRequest& request) const;
+			DescribeVodSSLCertificateListOutcome describeVodSSLCertificateList(const Model::DescribeVodSSLCertificateListRequest &request)const;
+			void describeVodSSLCertificateListAsync(const Model::DescribeVodSSLCertificateListRequest& request, const DescribeVodSSLCertificateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodSSLCertificateListOutcomeCallable describeVodSSLCertificateListCallable(const Model::DescribeVodSSLCertificateListRequest& request) const;
 			DescribeVodStorageDataOutcome describeVodStorageData(const Model::DescribeVodStorageDataRequest &request)const;
 			void describeVodStorageDataAsync(const Model::DescribeVodStorageDataRequest& request, const DescribeVodStorageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodStorageDataOutcomeCallable describeVodStorageDataCallable(const Model::DescribeVodStorageDataRequest& request) const;
@@ -1323,6 +1344,9 @@ namespace AlibabaCloud
 			SetVodDomainCertificateOutcome setVodDomainCertificate(const Model::SetVodDomainCertificateRequest &request)const;
 			void setVodDomainCertificateAsync(const Model::SetVodDomainCertificateRequest& request, const SetVodDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetVodDomainCertificateOutcomeCallable setVodDomainCertificateCallable(const Model::SetVodDomainCertificateRequest& request) const;
+			SetVodDomainSSLCertificateOutcome setVodDomainSSLCertificate(const Model::SetVodDomainSSLCertificateRequest &request)const;
+			void setVodDomainSSLCertificateAsync(const Model::SetVodDomainSSLCertificateRequest& request, const SetVodDomainSSLCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetVodDomainSSLCertificateOutcomeCallable setVodDomainSSLCertificateCallable(const Model::SetVodDomainSSLCertificateRequest& request) const;
 			SubmitAIImageAuditJobOutcome submitAIImageAuditJob(const Model::SubmitAIImageAuditJobRequest &request)const;
 			void submitAIImageAuditJobAsync(const Model::SubmitAIImageAuditJobRequest& request, const SubmitAIImageAuditJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitAIImageAuditJobOutcomeCallable submitAIImageAuditJobCallable(const Model::SubmitAIImageAuditJobRequest& request) const;

@@ -76,6 +76,7 @@ namespace AlibabaCloud
 					std::string duration;
 					std::string bitrate;
 					long encrypt;
+					std::string encryptMode;
 					int jobType;
 					std::string encryptType;
 					std::string playURL;

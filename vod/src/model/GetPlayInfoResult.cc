@@ -69,6 +69,8 @@ void GetPlayInfoResult::parse(const std::string &payload)
 			playInfoListObject.rand = valuePlayInfoListPlayInfo["Rand"].asString();
 		if(!valuePlayInfoListPlayInfo["EncryptType"].isNull())
 			playInfoListObject.encryptType = valuePlayInfoListPlayInfo["EncryptType"].asString();
+		if(!valuePlayInfoListPlayInfo["EncryptMode"].isNull())
+			playInfoListObject.encryptMode = valuePlayInfoListPlayInfo["EncryptMode"].asString();
 		if(!valuePlayInfoListPlayInfo["PreprocessStatus"].isNull())
 			playInfoListObject.preprocessStatus = valuePlayInfoListPlayInfo["PreprocessStatus"].asString();
 		if(!valuePlayInfoListPlayInfo["StreamType"].isNull())

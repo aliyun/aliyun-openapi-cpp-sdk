@@ -555,6 +555,42 @@ VodClient::CancelUrlUploadJobsOutcomeCallable VodClient::cancelUrlUploadJobsCall
 	return task->get_future();
 }
 
+VodClient::ChangeResourceGroupOutcome VodClient::changeResourceGroup(const ChangeResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeResourceGroupOutcome(ChangeResourceGroupResult(outcome.result()));
+	else
+		return ChangeResourceGroupOutcome(outcome.error());
+}
+
+void VodClient::changeResourceGroupAsync(const ChangeResourceGroupRequest& request, const ChangeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::ChangeResourceGroupOutcomeCallable VodClient::changeResourceGroupCallable(const ChangeResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->changeResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::CreateAppInfoOutcome VodClient::createAppInfo(const CreateAppInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2565,6 +2601,42 @@ VodClient::DescribeVodRefreshTasksOutcomeCallable VodClient::describeVodRefreshT
 			[this, request]()
 			{
 			return this->describeVodRefreshTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DescribeVodSSLCertificateListOutcome VodClient::describeVodSSLCertificateList(const DescribeVodSSLCertificateListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodSSLCertificateListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodSSLCertificateListOutcome(DescribeVodSSLCertificateListResult(outcome.result()));
+	else
+		return DescribeVodSSLCertificateListOutcome(outcome.error());
+}
+
+void VodClient::describeVodSSLCertificateListAsync(const DescribeVodSSLCertificateListRequest& request, const DescribeVodSSLCertificateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodSSLCertificateList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodSSLCertificateListOutcomeCallable VodClient::describeVodSSLCertificateListCallable(const DescribeVodSSLCertificateListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodSSLCertificateListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodSSLCertificateList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5229,6 +5301,42 @@ VodClient::SetVodDomainCertificateOutcomeCallable VodClient::setVodDomainCertifi
 			[this, request]()
 			{
 			return this->setVodDomainCertificate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::SetVodDomainSSLCertificateOutcome VodClient::setVodDomainSSLCertificate(const SetVodDomainSSLCertificateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetVodDomainSSLCertificateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetVodDomainSSLCertificateOutcome(SetVodDomainSSLCertificateResult(outcome.result()));
+	else
+		return SetVodDomainSSLCertificateOutcome(outcome.error());
+}
+
+void VodClient::setVodDomainSSLCertificateAsync(const SetVodDomainSSLCertificateRequest& request, const SetVodDomainSSLCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setVodDomainSSLCertificate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::SetVodDomainSSLCertificateOutcomeCallable VodClient::setVodDomainSSLCertificateCallable(const SetVodDomainSSLCertificateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetVodDomainSSLCertificateOutcome()>>(
+			[this, request]()
+			{
+			return this->setVodDomainSSLCertificate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
