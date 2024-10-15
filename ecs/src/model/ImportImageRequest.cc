@@ -79,6 +79,15 @@ void ImportImageRequest::setResourceGroupId(const std::string &resourceGroupId) 
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+ImportImageRequest::Features ImportImageRequest::getFeatures() const {
+  return features_;
+}
+
+void ImportImageRequest::setFeatures(const ImportImageRequest::Features &features) {
+  features_ = features;
+  setParameter(std::string("Features") + ".NvmeSupport", features.nvmeSupport);
+}
+
 std::string ImportImageRequest::getBootMode() const {
   return bootMode_;
 }
@@ -154,6 +163,15 @@ std::string ImportImageRequest::getDetectionStrategy() const {
 void ImportImageRequest::setDetectionStrategy(const std::string &detectionStrategy) {
   detectionStrategy_ = detectionStrategy;
   setParameter(std::string("DetectionStrategy"), detectionStrategy);
+}
+
+bool ImportImageRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void ImportImageRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
 std::string ImportImageRequest::getResourceOwnerAccount() const {

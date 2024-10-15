@@ -65,6 +65,8 @@ public:
 	void setLaunchTemplateName(const std::string &launchTemplateName);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	int getHttpPutResponseHopLimit() const;
+	void setHttpPutResponseHopLimit(int httpPutResponseHopLimit);
 	std::string getSecurityEnhancementStrategy() const;
 	void setSecurityEnhancementStrategy(const std::string &securityEnhancementStrategy);
 	std::string getNetworkType() const;
@@ -143,6 +145,8 @@ public:
 	void setPasswordInherit(bool passwordInherit);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getHttpEndpoint() const;
+	void setHttpEndpoint(const std::string &httpEndpoint);
 	std::string getInstanceType() const;
 	void setInstanceType(const std::string &instanceType);
 	std::string getInstanceChargeType() const;
@@ -177,6 +181,8 @@ public:
 	void setSystemDiskSize(int systemDiskSize);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
+	std::string getHttpTokens() const;
+	void setHttpTokens(const std::string &httpTokens);
 	std::string getSystemDiskDescription() const;
 	void setSystemDiskDescription(const std::string &systemDiskDescription);
 	std::string getSystemDiskEncrypted() const;
@@ -185,6 +191,7 @@ public:
 private:
 	std::string launchTemplateName_;
 	long resourceOwnerId_;
+	int httpPutResponseHopLimit_;
 	std::string securityEnhancementStrategy_;
 	std::string networkType_;
 	std::string keyPairName_;
@@ -224,6 +231,7 @@ private:
 	std::string userData_;
 	bool passwordInherit_;
 	std::string regionId_;
+	std::string httpEndpoint_;
 	std::string instanceType_;
 	std::string instanceChargeType_;
 	bool enableVmOsConfig_;
@@ -241,6 +249,7 @@ private:
 	long systemDiskProvisionedIops_;
 	int systemDiskSize_;
 	std::string vpcId_;
+	std::string httpTokens_;
 	std::string systemDiskDescription_;
 	std::string systemDiskEncrypted_;
 };

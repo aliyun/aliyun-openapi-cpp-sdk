@@ -635,6 +635,14 @@ void RunInstancesRequest::setZoneId(const std::string &zoneId) {
   setParameter(std::string("ZoneId"), zoneId);
 }
 
+std::vector<std::string> RunInstancesRequest::getCpuOptionsAccelerators() const {
+  return cpuOptionsAccelerators_;
+}
+
+void RunInstancesRequest::setCpuOptionsAccelerators(const std::vector<std::string> &cpuOptionsAccelerators) {
+  cpuOptionsAccelerators_ = cpuOptionsAccelerators;
+}
+
 std::vector<std::string> RunInstancesRequest::getIpv6Address() const {
   return ipv6Address_;
 }

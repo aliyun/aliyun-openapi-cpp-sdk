@@ -32,6 +32,8 @@ public:
 	~ModifyElasticityAssuranceRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	std::string getRegionId() const;
@@ -48,9 +50,12 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getPackageType() const;
 	void setPackageType(const std::string &packageType);
+	int getInstanceAmount() const;
+	void setInstanceAmount(int instanceAmount);
 
 private:
 	long resourceOwnerId_;
+	std::string clientToken_;
 	std::string description_;
 	std::string regionId_;
 	std::string privatePoolOptionsId_;
@@ -59,6 +64,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string packageType_;
+	int instanceAmount_;
 };
 } // namespace Model
 } // namespace Ecs

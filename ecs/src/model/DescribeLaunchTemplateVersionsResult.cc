@@ -154,6 +154,12 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 			launchTemplateVersionSetsObject.launchTemplateData.autoRenewPeriod = std::stoi(launchTemplateDataNode["AutoRenewPeriod"].asString());
 		if(!launchTemplateDataNode["PeriodUnit"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.periodUnit = launchTemplateDataNode["PeriodUnit"].asString();
+		if(!launchTemplateDataNode["HttpEndpoint"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.httpEndpoint = launchTemplateDataNode["HttpEndpoint"].asString();
+		if(!launchTemplateDataNode["HttpTokens"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.httpTokens = launchTemplateDataNode["HttpTokens"].asString();
+		if(!launchTemplateDataNode["HttpPutResponseHopLimit"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.httpPutResponseHopLimit = std::stoi(launchTemplateDataNode["HttpPutResponseHopLimit"].asString());
 		auto allDataDisksNode = launchTemplateDataNode["DataDisks"]["DataDisk"];
 		for (auto launchTemplateDataNodeDataDisksDataDisk : allDataDisksNode)
 		{

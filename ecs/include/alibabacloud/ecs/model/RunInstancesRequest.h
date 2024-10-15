@@ -233,6 +233,8 @@ public:
 	void setInstanceName(const std::string &instanceName);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
+	std::vector<std::string> getCpuOptionsAccelerators() const;
+	void setCpuOptionsAccelerators(const std::vector<std::string> &cpuOptionsAccelerators);
 	std::vector<std::string> getIpv6Address() const;
 	void setIpv6Address(const std::vector<std::string> &ipv6Address);
 	std::string getSecurityOptionsConfidentialComputingMode() const;
@@ -356,6 +358,7 @@ private:
 	std::string vSwitchId_;
 	std::string instanceName_;
 	std::string zoneId_;
+	std::vector<std::string> cpuOptionsAccelerators_;
 	std::vector<std::string> ipv6Address_;
 	std::string securityOptionsConfidentialComputingMode_;
 	std::string clientToken_;

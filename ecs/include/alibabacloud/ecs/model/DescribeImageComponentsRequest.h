@@ -36,6 +36,10 @@ public:
 	~DescribeImageComponentsRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getSystemType() const;
+	void setSystemType(const std::string &systemType);
+	std::string getComponentVersion() const;
+	void setComponentVersion(const std::string &componentVersion);
 	std::vector<std::string> getImageComponentId() const;
 	void setImageComponentId(const std::vector<std::string> &imageComponentId);
 	std::string getResourceGroupId() const;
@@ -54,6 +58,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getComponentType() const;
+	void setComponentType(const std::string &componentType);
 	std::string getName() const;
 	void setName(const std::string &name);
 	int getMaxResults() const;
@@ -61,6 +67,8 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string systemType_;
+	std::string componentVersion_;
 	std::vector<std::string> imageComponentId_;
 	std::string resourceGroupId_;
 	std::string regionId_;
@@ -70,6 +78,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string componentType_;
 	std::string name_;
 	int maxResults_;
 };

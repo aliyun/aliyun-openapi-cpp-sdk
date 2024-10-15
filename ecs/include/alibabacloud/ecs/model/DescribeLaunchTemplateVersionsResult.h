@@ -67,6 +67,7 @@ namespace AlibabaCloud
 							std::string value;
 							std::string key;
 						};
+						int httpPutResponseHopLimit;
 						std::vector<DataDisk> dataDisks;
 						std::string resourceGroupId;
 						std::string systemDiskDescription;
@@ -81,6 +82,7 @@ namespace AlibabaCloud
 						std::string vSwitchId;
 						int period;
 						bool deletionProtection;
+						std::string httpEndpoint;
 						std::vector<std::string> securityGroupIds;
 						std::string internetChargeType;
 						std::string deploymentSetId;
@@ -116,6 +118,7 @@ namespace AlibabaCloud
 						std::string systemDiskCategory;
 						bool systemDiskBurstingEnabled;
 						bool enableVmOsConfig;
+						std::string httpTokens;
 						int internetMaxBandwidthIn;
 						std::string creditSpecification;
 					};

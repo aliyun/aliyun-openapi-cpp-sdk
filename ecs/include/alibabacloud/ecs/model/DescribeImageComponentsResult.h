@@ -39,8 +39,15 @@ namespace AlibabaCloud
 						std::string tagKey;
 						std::string tagValue;
 					};
+					struct _Parameter
+					{
+						std::string defaultValue;
+						std::string type;
+						std::string name;
+					};
 					std::string componentType;
 					std::string owner;
+					std::vector<ImageComponentSet::_Parameter> parameters;
 					std::string description;
 					std::string resourceGroupId;
 					std::string content;
@@ -49,6 +56,7 @@ namespace AlibabaCloud
 					std::string imageComponentId;
 					std::vector<ImageComponentSet::Tag> tags;
 					std::string name;
+					std::string componentVersion;
 				};
 
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_CREATEIMAGECOMPONENTREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_CREATEIMAGECOMPONENTREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_PURCHASEELASTICITYASSURANCEREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_PURCHASEELASTICITYASSURANCEREQUEST_H_
 
 #include <alibabacloud/ecs/EcsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,60 +26,56 @@
 namespace AlibabaCloud {
 namespace Ecs {
 namespace Model {
-class ALIBABACLOUD_ECS_EXPORT CreateImageComponentRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ECS_EXPORT PurchaseElasticityAssuranceRequest : public RpcServiceRequest {
 public:
-	struct Tag {
-		std::string key;
-		std::string value;
-	};
-	CreateImageComponentRequest();
-	~CreateImageComponentRequest();
+	PurchaseElasticityAssuranceRequest();
+	~PurchaseElasticityAssuranceRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getDescription() const;
-	void setDescription(const std::string &description);
-	std::string getSystemType() const;
-	void setSystemType(const std::string &systemType);
-	std::string getComponentVersion() const;
-	void setComponentVersion(const std::string &componentVersion);
-	std::string getContent() const;
-	void setContent(const std::string &content);
-	std::string getResourceGroupId() const;
-	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
+	std::string getPrivatePoolOptionsMatchCriteria() const;
+	void setPrivatePoolOptionsMatchCriteria(const std::string &privatePoolOptionsMatchCriteria);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
+	std::string getInstanceChargeType() const;
+	void setInstanceChargeType(const std::string &instanceChargeType);
+	std::string getPrivatePoolOptionsId() const;
+	void setPrivatePoolOptionsId(const std::string &privatePoolOptionsId);
+	int getPeriod() const;
+	void setPeriod(int period);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getComponentType() const;
-	void setComponentType(const std::string &componentType);
-	std::string getName() const;
-	void setName(const std::string &name);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::string getPeriodUnit() const;
+	void setPeriodUnit(const std::string &periodUnit);
+	std::string getPackageType() const;
+	void setPackageType(const std::string &packageType);
 
 private:
 	long resourceOwnerId_;
 	std::string clientToken_;
-	std::string description_;
-	std::string systemType_;
-	std::string componentVersion_;
-	std::string content_;
-	std::string resourceGroupId_;
+	std::string startTime_;
+	std::string privatePoolOptionsMatchCriteria_;
 	std::string regionId_;
-	std::vector<Tag> tag_;
+	std::string instanceChargeType_;
+	std::string privatePoolOptionsId_;
+	int period_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string componentType_;
-	std::string name_;
+	std::string resourceType_;
+	std::string periodUnit_;
+	std::string packageType_;
 };
 } // namespace Model
 } // namespace Ecs
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ECS_MODEL_CREATEIMAGECOMPONENTREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_PURCHASEELASTICITYASSURANCEREQUEST_H_

@@ -8331,114 +8331,6 @@ EcsClient::DisableDiskEncryptionByDefaultOutcomeCallable EcsClient::disableDiskE
 	return task->get_future();
 }
 
-EcsClient::EipFillParamsOutcome EcsClient::eipFillParams(const EipFillParamsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return EipFillParamsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return EipFillParamsOutcome(EipFillParamsResult(outcome.result()));
-	else
-		return EipFillParamsOutcome(outcome.error());
-}
-
-void EcsClient::eipFillParamsAsync(const EipFillParamsRequest& request, const EipFillParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, eipFillParams(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::EipFillParamsOutcomeCallable EcsClient::eipFillParamsCallable(const EipFillParamsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<EipFillParamsOutcome()>>(
-			[this, request]()
-			{
-			return this->eipFillParams(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EcsClient::EipFillProductOutcome EcsClient::eipFillProduct(const EipFillProductRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return EipFillProductOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return EipFillProductOutcome(EipFillProductResult(outcome.result()));
-	else
-		return EipFillProductOutcome(outcome.error());
-}
-
-void EcsClient::eipFillProductAsync(const EipFillProductRequest& request, const EipFillProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, eipFillProduct(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::EipFillProductOutcomeCallable EcsClient::eipFillProductCallable(const EipFillProductRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<EipFillProductOutcome()>>(
-			[this, request]()
-			{
-			return this->eipFillProduct(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EcsClient::EipNotifyPaidOutcome EcsClient::eipNotifyPaid(const EipNotifyPaidRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return EipNotifyPaidOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return EipNotifyPaidOutcome(EipNotifyPaidResult(outcome.result()));
-	else
-		return EipNotifyPaidOutcome(outcome.error());
-}
-
-void EcsClient::eipNotifyPaidAsync(const EipNotifyPaidRequest& request, const EipNotifyPaidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, eipNotifyPaid(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::EipNotifyPaidOutcomeCallable EcsClient::eipNotifyPaidCallable(const EipNotifyPaidRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<EipNotifyPaidOutcome()>>(
-			[this, request]()
-			{
-			return this->eipNotifyPaid(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EcsClient::EnableDiskEncryptionByDefaultOutcome EcsClient::enableDiskEncryptionByDefault(const EnableDiskEncryptionByDefaultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -11313,6 +11205,42 @@ EcsClient::ModifyVpcAttributeOutcomeCallable EcsClient::modifyVpcAttributeCallab
 			[this, request]()
 			{
 			return this->modifyVpcAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::PurchaseElasticityAssuranceOutcome EcsClient::purchaseElasticityAssurance(const PurchaseElasticityAssuranceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PurchaseElasticityAssuranceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PurchaseElasticityAssuranceOutcome(PurchaseElasticityAssuranceResult(outcome.result()));
+	else
+		return PurchaseElasticityAssuranceOutcome(outcome.error());
+}
+
+void EcsClient::purchaseElasticityAssuranceAsync(const PurchaseElasticityAssuranceRequest& request, const PurchaseElasticityAssuranceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, purchaseElasticityAssurance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::PurchaseElasticityAssuranceOutcomeCallable EcsClient::purchaseElasticityAssuranceCallable(const PurchaseElasticityAssuranceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PurchaseElasticityAssuranceOutcome()>>(
+			[this, request]()
+			{
+			return this->purchaseElasticityAssurance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

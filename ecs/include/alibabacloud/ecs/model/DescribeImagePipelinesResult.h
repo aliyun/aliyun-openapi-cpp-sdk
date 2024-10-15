@@ -45,7 +45,9 @@ namespace AlibabaCloud
 					int systemDiskSize;
 					std::string imagePipelineId;
 					std::string vSwitchId;
+					std::string imageFamily;
 					std::vector<std::string> toRegionIds;
+					std::string repairMode;
 					std::string name;
 					bool deleteInstanceOnFailure;
 					std::string imageName;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 					int internetMaxBandwidthOut;
 					std::string creationTime;
 					std::string instanceType;
+					std::string testContent;
 					std::vector<ImagePipelineSet::Tag> tags;
 					std::string baseImage;
 					std::string buildContent;

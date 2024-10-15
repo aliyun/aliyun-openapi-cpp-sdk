@@ -155,6 +155,15 @@ void CreateImagePipelineRequest::setOwnerAccount(const std::string &ownerAccount
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+std::string CreateImagePipelineRequest::getRepairMode() const {
+  return repairMode_;
+}
+
+void CreateImagePipelineRequest::setRepairMode(const std::string &repairMode) {
+  repairMode_ = repairMode;
+  setParameter(std::string("RepairMode"), repairMode);
+}
+
 long CreateImagePipelineRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -208,6 +217,15 @@ void CreateImagePipelineRequest::setName(const std::string &name) {
   setParameter(std::string("Name"), name);
 }
 
+std::string CreateImagePipelineRequest::getImageFamily() const {
+  return imageFamily_;
+}
+
+void CreateImagePipelineRequest::setImageFamily(const std::string &imageFamily) {
+  imageFamily_ = imageFamily;
+  setParameter(std::string("ImageFamily"), imageFamily);
+}
+
 std::string CreateImagePipelineRequest::getBuildContent() const {
   return buildContent_;
 }
@@ -215,5 +233,14 @@ std::string CreateImagePipelineRequest::getBuildContent() const {
 void CreateImagePipelineRequest::setBuildContent(const std::string &buildContent) {
   buildContent_ = buildContent;
   setParameter(std::string("BuildContent"), buildContent);
+}
+
+std::string CreateImagePipelineRequest::getTestContent() const {
+  return testContent_;
+}
+
+void CreateImagePipelineRequest::setTestContent(const std::string &testContent) {
+  testContent_ = testContent;
+  setParameter(std::string("TestContent"), testContent);
 }
 

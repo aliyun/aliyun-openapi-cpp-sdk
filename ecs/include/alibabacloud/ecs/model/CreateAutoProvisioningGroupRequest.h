@@ -65,6 +65,11 @@ public:
 		long provisionedIops;
 		bool burstingEnabled;
 	};
+	struct ResourcePoolOptions {
+		std::string strategy;
+		std::string string;
+		std::vector<std::string> privatePoolIds;
+	};
 	struct LaunchTemplateConfig {
 		std::string vSwitchId;
 		double maxPrice;
@@ -172,6 +177,8 @@ public:
 	void setLaunchConfigurationInstanceDescription(const std::string &launchConfigurationInstanceDescription);
 	std::string getSpotAllocationStrategy() const;
 	void setSpotAllocationStrategy(const std::string &spotAllocationStrategy);
+	ResourcePoolOptions getResourcePoolOptions() const;
+	void setResourcePoolOptions(const ResourcePoolOptions &resourcePoolOptions);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	bool getTerminateInstances() const;
@@ -266,6 +273,7 @@ private:
 	std::string launchConfigurationInstanceName_;
 	std::string launchConfigurationInstanceDescription_;
 	std::string spotAllocationStrategy_;
+	ResourcePoolOptions resourcePoolOptions_;
 	std::string regionId_;
 	bool terminateInstances_;
 	std::string launchConfigurationSystemDiskName_;

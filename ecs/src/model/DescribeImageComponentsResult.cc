@@ -61,6 +61,8 @@ void DescribeImageComponentsResult::parse(const std::string &payload)
 			imageComponentObject.content = valueImageComponentImageComponentSet["Content"].asString();
 		if(!valueImageComponentImageComponentSet["Owner"].isNull())
 			imageComponentObject.owner = valueImageComponentImageComponentSet["Owner"].asString();
+		if(!valueImageComponentImageComponentSet["ComponentVersion"].isNull())
+			imageComponentObject.componentVersion = valueImageComponentImageComponentSet["ComponentVersion"].asString();
 		auto allTagsNode = valueImageComponentImageComponentSet["Tags"]["Tag"];
 		for (auto valueImageComponentImageComponentSetTagsTag : allTagsNode)
 		{
@@ -70,6 +72,18 @@ void DescribeImageComponentsResult::parse(const std::string &payload)
 			if(!valueImageComponentImageComponentSetTagsTag["TagKey"].isNull())
 				tagsObject.tagKey = valueImageComponentImageComponentSetTagsTag["TagKey"].asString();
 			imageComponentObject.tags.push_back(tagsObject);
+		}
+		auto allParametersNode = valueImageComponentImageComponentSet["Parameters"]["Parameter"];
+		for (auto valueImageComponentImageComponentSetParametersParameter : allParametersNode)
+		{
+			ImageComponentSet::_Parameter parametersObject;
+			if(!valueImageComponentImageComponentSetParametersParameter["Name"].isNull())
+				parametersObject.name = valueImageComponentImageComponentSetParametersParameter["Name"].asString();
+			if(!valueImageComponentImageComponentSetParametersParameter["Type"].isNull())
+				parametersObject.type = valueImageComponentImageComponentSetParametersParameter["Type"].asString();
+			if(!valueImageComponentImageComponentSetParametersParameter["DefaultValue"].isNull())
+				parametersObject.defaultValue = valueImageComponentImageComponentSetParametersParameter["DefaultValue"].asString();
+			imageComponentObject.parameters.push_back(parametersObject);
 		}
 		imageComponent_.push_back(imageComponentObject);
 	}

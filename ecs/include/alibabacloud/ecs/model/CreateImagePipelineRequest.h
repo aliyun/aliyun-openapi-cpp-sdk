@@ -62,6 +62,8 @@ public:
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getRepairMode() const;
+	void setRepairMode(const std::string &repairMode);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getBaseImage() const;
@@ -74,8 +76,12 @@ public:
 	void setDeleteInstanceOnFailure(bool deleteInstanceOnFailure);
 	std::string getName() const;
 	void setName(const std::string &name);
+	std::string getImageFamily() const;
+	void setImageFamily(const std::string &imageFamily);
 	std::string getBuildContent() const;
 	void setBuildContent(const std::string &buildContent);
+	std::string getTestContent() const;
+	void setTestContent(const std::string &testContent);
 
 private:
 	std::string baseImageType_;
@@ -92,13 +98,16 @@ private:
 	std::vector<Tag> tag_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
+	std::string repairMode_;
 	long ownerId_;
 	std::string baseImage_;
 	std::string vSwitchId_;
 	std::vector<long> addAccount_;
 	bool deleteInstanceOnFailure_;
 	std::string name_;
+	std::string imageFamily_;
 	std::string buildContent_;
+	std::string testContent_;
 };
 } // namespace Model
 } // namespace Ecs

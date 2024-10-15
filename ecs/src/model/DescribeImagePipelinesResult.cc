@@ -71,6 +71,12 @@ void DescribeImagePipelinesResult::parse(const std::string &payload)
 			imagePipelineObject.name = valueImagePipelineImagePipelineSet["Name"].asString();
 		if(!valueImagePipelineImagePipelineSet["BuildContent"].isNull())
 			imagePipelineObject.buildContent = valueImagePipelineImagePipelineSet["BuildContent"].asString();
+		if(!valueImagePipelineImagePipelineSet["RepairMode"].isNull())
+			imagePipelineObject.repairMode = valueImagePipelineImagePipelineSet["RepairMode"].asString();
+		if(!valueImagePipelineImagePipelineSet["TestContent"].isNull())
+			imagePipelineObject.testContent = valueImagePipelineImagePipelineSet["TestContent"].asString();
+		if(!valueImagePipelineImagePipelineSet["ImageFamily"].isNull())
+			imagePipelineObject.imageFamily = valueImagePipelineImagePipelineSet["ImageFamily"].asString();
 		auto allTagsNode = valueImagePipelineImagePipelineSet["Tags"]["Tag"];
 		for (auto valueImagePipelineImagePipelineSetTagsTag : allTagsNode)
 		{

@@ -422,6 +422,18 @@ void CreateAutoProvisioningGroupRequest::setSpotAllocationStrategy(const std::st
   setParameter(std::string("SpotAllocationStrategy"), spotAllocationStrategy);
 }
 
+CreateAutoProvisioningGroupRequest::ResourcePoolOptions CreateAutoProvisioningGroupRequest::getResourcePoolOptions() const {
+  return resourcePoolOptions_;
+}
+
+void CreateAutoProvisioningGroupRequest::setResourcePoolOptions(const CreateAutoProvisioningGroupRequest::ResourcePoolOptions &resourcePoolOptions) {
+  resourcePoolOptions_ = resourcePoolOptions;
+  setParameter(std::string("ResourcePoolOptions") + ".Strategy", resourcePoolOptions.strategy);
+  for(int dep1 = 0; dep1 != resourcePoolOptions.privatePoolIds.size(); dep1++) {
+    setParameter(std::string("ResourcePoolOptions") + ".PrivatePoolIds." + std::to_string(dep1 + 1), resourcePoolOptions.privatePoolIds[dep1]);
+  }
+}
+
 std::string CreateAutoProvisioningGroupRequest::getRegionId() const {
   return regionId_;
 }

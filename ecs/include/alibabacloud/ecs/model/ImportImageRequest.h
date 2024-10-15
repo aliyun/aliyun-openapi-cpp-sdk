@@ -36,6 +36,9 @@ public:
 		std::string oSSObject;
 		int diskImageSize;
 	};
+	struct Features {
+		std::string nvmeSupport;
+	};
 	struct Tag {
 		std::string value;
 		std::string key;
@@ -52,6 +55,8 @@ public:
 	void setPlatform(const std::string &platform);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	Features getFeatures() const;
+	void setFeatures(const Features &features);
 	std::string getBootMode() const;
 	void setBootMode(const std::string &bootMode);
 	std::string getRegionId() const;
@@ -68,6 +73,8 @@ public:
 	void setLicenseType(const std::string &licenseType);
 	std::string getDetectionStrategy() const;
 	void setDetectionStrategy(const std::string &detectionStrategy);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getRoleName() const;
@@ -83,6 +90,7 @@ private:
 	std::string description_;
 	std::string platform_;
 	std::string resourceGroupId_;
+	Features features_;
 	std::string bootMode_;
 	std::string regionId_;
 	std::string imageName_;
@@ -91,6 +99,7 @@ private:
 	std::string architecture_;
 	std::string licenseType_;
 	std::string detectionStrategy_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string roleName_;
 	std::string oSType_;

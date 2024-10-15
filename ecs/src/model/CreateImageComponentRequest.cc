@@ -61,6 +61,15 @@ void CreateImageComponentRequest::setSystemType(const std::string &systemType) {
   setParameter(std::string("SystemType"), systemType);
 }
 
+std::string CreateImageComponentRequest::getComponentVersion() const {
+  return componentVersion_;
+}
+
+void CreateImageComponentRequest::setComponentVersion(const std::string &componentVersion) {
+  componentVersion_ = componentVersion;
+  setParameter(std::string("ComponentVersion"), componentVersion);
+}
+
 std::string CreateImageComponentRequest::getContent() const {
   return content_;
 }

@@ -39,18 +39,20 @@ namespace AlibabaCloud
 						std::string tagKey;
 						std::string tagValue;
 					};
+					int ruleCount;
 					int ecsCount;
 					std::string description;
 					std::string securityGroupName;
-					std::string vpcId;
 					std::string resourceGroupId;
 					bool serviceManaged;
 					std::string securityGroupId;
 					std::string securityGroupType;
-					std::string creationTime;
-					std::vector<SecurityGroup::Tag> tags;
 					int availableInstanceAmount;
 					long serviceID;
+					std::string vpcId;
+					int groupToGroupRuleCount;
+					std::string creationTime;
+					std::vector<SecurityGroup::Tag> tags;
 				};
 
 

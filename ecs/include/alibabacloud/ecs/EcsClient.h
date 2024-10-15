@@ -482,12 +482,6 @@
 #include "model/DisableActivationResult.h"
 #include "model/DisableDiskEncryptionByDefaultRequest.h"
 #include "model/DisableDiskEncryptionByDefaultResult.h"
-#include "model/EipFillParamsRequest.h"
-#include "model/EipFillParamsResult.h"
-#include "model/EipFillProductRequest.h"
-#include "model/EipFillProductResult.h"
-#include "model/EipNotifyPaidRequest.h"
-#include "model/EipNotifyPaidResult.h"
 #include "model/EnableDiskEncryptionByDefaultRequest.h"
 #include "model/EnableDiskEncryptionByDefaultResult.h"
 #include "model/EnablePhysicalConnectionRequest.h"
@@ -648,6 +642,8 @@
 #include "model/ModifyVirtualBorderRouterAttributeResult.h"
 #include "model/ModifyVpcAttributeRequest.h"
 #include "model/ModifyVpcAttributeResult.h"
+#include "model/PurchaseElasticityAssuranceRequest.h"
+#include "model/PurchaseElasticityAssuranceResult.h"
 #include "model/PurchaseReservedInstancesOfferingRequest.h"
 #include "model/PurchaseReservedInstancesOfferingResult.h"
 #include "model/PurchaseStorageCapacityUnitRequest.h"
@@ -1437,15 +1433,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DisableDiskEncryptionByDefaultResult> DisableDiskEncryptionByDefaultOutcome;
 			typedef std::future<DisableDiskEncryptionByDefaultOutcome> DisableDiskEncryptionByDefaultOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DisableDiskEncryptionByDefaultRequest&, const DisableDiskEncryptionByDefaultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableDiskEncryptionByDefaultAsyncHandler;
-			typedef Outcome<Error, Model::EipFillParamsResult> EipFillParamsOutcome;
-			typedef std::future<EipFillParamsOutcome> EipFillParamsOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::EipFillParamsRequest&, const EipFillParamsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EipFillParamsAsyncHandler;
-			typedef Outcome<Error, Model::EipFillProductResult> EipFillProductOutcome;
-			typedef std::future<EipFillProductOutcome> EipFillProductOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::EipFillProductRequest&, const EipFillProductOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EipFillProductAsyncHandler;
-			typedef Outcome<Error, Model::EipNotifyPaidResult> EipNotifyPaidOutcome;
-			typedef std::future<EipNotifyPaidOutcome> EipNotifyPaidOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::EipNotifyPaidRequest&, const EipNotifyPaidOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EipNotifyPaidAsyncHandler;
 			typedef Outcome<Error, Model::EnableDiskEncryptionByDefaultResult> EnableDiskEncryptionByDefaultOutcome;
 			typedef std::future<EnableDiskEncryptionByDefaultOutcome> EnableDiskEncryptionByDefaultOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::EnableDiskEncryptionByDefaultRequest&, const EnableDiskEncryptionByDefaultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableDiskEncryptionByDefaultAsyncHandler;
@@ -1686,6 +1673,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyVpcAttributeResult> ModifyVpcAttributeOutcome;
 			typedef std::future<ModifyVpcAttributeOutcome> ModifyVpcAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyVpcAttributeRequest&, const ModifyVpcAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpcAttributeAsyncHandler;
+			typedef Outcome<Error, Model::PurchaseElasticityAssuranceResult> PurchaseElasticityAssuranceOutcome;
+			typedef std::future<PurchaseElasticityAssuranceOutcome> PurchaseElasticityAssuranceOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::PurchaseElasticityAssuranceRequest&, const PurchaseElasticityAssuranceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PurchaseElasticityAssuranceAsyncHandler;
 			typedef Outcome<Error, Model::PurchaseReservedInstancesOfferingResult> PurchaseReservedInstancesOfferingOutcome;
 			typedef std::future<PurchaseReservedInstancesOfferingOutcome> PurchaseReservedInstancesOfferingOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::PurchaseReservedInstancesOfferingRequest&, const PurchaseReservedInstancesOfferingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PurchaseReservedInstancesOfferingAsyncHandler;
@@ -2516,15 +2506,6 @@ namespace AlibabaCloud
 			DisableDiskEncryptionByDefaultOutcome disableDiskEncryptionByDefault(const Model::DisableDiskEncryptionByDefaultRequest &request)const;
 			void disableDiskEncryptionByDefaultAsync(const Model::DisableDiskEncryptionByDefaultRequest& request, const DisableDiskEncryptionByDefaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableDiskEncryptionByDefaultOutcomeCallable disableDiskEncryptionByDefaultCallable(const Model::DisableDiskEncryptionByDefaultRequest& request) const;
-			EipFillParamsOutcome eipFillParams(const Model::EipFillParamsRequest &request)const;
-			void eipFillParamsAsync(const Model::EipFillParamsRequest& request, const EipFillParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			EipFillParamsOutcomeCallable eipFillParamsCallable(const Model::EipFillParamsRequest& request) const;
-			EipFillProductOutcome eipFillProduct(const Model::EipFillProductRequest &request)const;
-			void eipFillProductAsync(const Model::EipFillProductRequest& request, const EipFillProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			EipFillProductOutcomeCallable eipFillProductCallable(const Model::EipFillProductRequest& request) const;
-			EipNotifyPaidOutcome eipNotifyPaid(const Model::EipNotifyPaidRequest &request)const;
-			void eipNotifyPaidAsync(const Model::EipNotifyPaidRequest& request, const EipNotifyPaidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			EipNotifyPaidOutcomeCallable eipNotifyPaidCallable(const Model::EipNotifyPaidRequest& request) const;
 			EnableDiskEncryptionByDefaultOutcome enableDiskEncryptionByDefault(const Model::EnableDiskEncryptionByDefaultRequest &request)const;
 			void enableDiskEncryptionByDefaultAsync(const Model::EnableDiskEncryptionByDefaultRequest& request, const EnableDiskEncryptionByDefaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableDiskEncryptionByDefaultOutcomeCallable enableDiskEncryptionByDefaultCallable(const Model::EnableDiskEncryptionByDefaultRequest& request) const;
@@ -2765,6 +2746,9 @@ namespace AlibabaCloud
 			ModifyVpcAttributeOutcome modifyVpcAttribute(const Model::ModifyVpcAttributeRequest &request)const;
 			void modifyVpcAttributeAsync(const Model::ModifyVpcAttributeRequest& request, const ModifyVpcAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyVpcAttributeOutcomeCallable modifyVpcAttributeCallable(const Model::ModifyVpcAttributeRequest& request) const;
+			PurchaseElasticityAssuranceOutcome purchaseElasticityAssurance(const Model::PurchaseElasticityAssuranceRequest &request)const;
+			void purchaseElasticityAssuranceAsync(const Model::PurchaseElasticityAssuranceRequest& request, const PurchaseElasticityAssuranceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PurchaseElasticityAssuranceOutcomeCallable purchaseElasticityAssuranceCallable(const Model::PurchaseElasticityAssuranceRequest& request) const;
 			PurchaseReservedInstancesOfferingOutcome purchaseReservedInstancesOffering(const Model::PurchaseReservedInstancesOfferingRequest &request)const;
 			void purchaseReservedInstancesOfferingAsync(const Model::PurchaseReservedInstancesOfferingRequest& request, const PurchaseReservedInstancesOfferingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PurchaseReservedInstancesOfferingOutcomeCallable purchaseReservedInstancesOfferingCallable(const Model::PurchaseReservedInstancesOfferingRequest& request) const;

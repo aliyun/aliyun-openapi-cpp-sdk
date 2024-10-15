@@ -481,12 +481,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DisableActivationResult.h
 	include/alibabacloud/ecs/model/DisableDiskEncryptionByDefaultRequest.h
 	include/alibabacloud/ecs/model/DisableDiskEncryptionByDefaultResult.h
-	include/alibabacloud/ecs/model/EipFillParamsRequest.h
-	include/alibabacloud/ecs/model/EipFillParamsResult.h
-	include/alibabacloud/ecs/model/EipFillProductRequest.h
-	include/alibabacloud/ecs/model/EipFillProductResult.h
-	include/alibabacloud/ecs/model/EipNotifyPaidRequest.h
-	include/alibabacloud/ecs/model/EipNotifyPaidResult.h
 	include/alibabacloud/ecs/model/EnableDiskEncryptionByDefaultRequest.h
 	include/alibabacloud/ecs/model/EnableDiskEncryptionByDefaultResult.h
 	include/alibabacloud/ecs/model/EnablePhysicalConnectionRequest.h
@@ -647,6 +641,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyVirtualBorderRouterAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyVpcAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyVpcAttributeResult.h
+	include/alibabacloud/ecs/model/PurchaseElasticityAssuranceRequest.h
+	include/alibabacloud/ecs/model/PurchaseElasticityAssuranceResult.h
 	include/alibabacloud/ecs/model/PurchaseReservedInstancesOfferingRequest.h
 	include/alibabacloud/ecs/model/PurchaseReservedInstancesOfferingResult.h
 	include/alibabacloud/ecs/model/PurchaseStorageCapacityUnitRequest.h
@@ -1200,12 +1196,6 @@ set(ecs_src
 	src/model/DisableActivationResult.cc
 	src/model/DisableDiskEncryptionByDefaultRequest.cc
 	src/model/DisableDiskEncryptionByDefaultResult.cc
-	src/model/EipFillParamsRequest.cc
-	src/model/EipFillParamsResult.cc
-	src/model/EipFillProductRequest.cc
-	src/model/EipFillProductResult.cc
-	src/model/EipNotifyPaidRequest.cc
-	src/model/EipNotifyPaidResult.cc
 	src/model/EnableDiskEncryptionByDefaultRequest.cc
 	src/model/EnableDiskEncryptionByDefaultResult.cc
 	src/model/EnablePhysicalConnectionRequest.cc
@@ -1366,6 +1356,8 @@ set(ecs_src
 	src/model/ModifyVirtualBorderRouterAttributeResult.cc
 	src/model/ModifyVpcAttributeRequest.cc
 	src/model/ModifyVpcAttributeResult.cc
+	src/model/PurchaseElasticityAssuranceRequest.cc
+	src/model/PurchaseElasticityAssuranceResult.cc
 	src/model/PurchaseReservedInstancesOfferingRequest.cc
 	src/model/PurchaseReservedInstancesOfferingResult.cc
 	src/model/PurchaseStorageCapacityUnitRequest.cc

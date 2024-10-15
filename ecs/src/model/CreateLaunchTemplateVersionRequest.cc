@@ -43,6 +43,15 @@ void CreateLaunchTemplateVersionRequest::setResourceOwnerId(long resourceOwnerId
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+int CreateLaunchTemplateVersionRequest::getHttpPutResponseHopLimit() const {
+  return httpPutResponseHopLimit_;
+}
+
+void CreateLaunchTemplateVersionRequest::setHttpPutResponseHopLimit(int httpPutResponseHopLimit) {
+  httpPutResponseHopLimit_ = httpPutResponseHopLimit;
+  setParameter(std::string("HttpPutResponseHopLimit"), std::to_string(httpPutResponseHopLimit));
+}
+
 std::string CreateLaunchTemplateVersionRequest::getSecurityEnhancementStrategy() const {
   return securityEnhancementStrategy_;
 }
@@ -390,6 +399,15 @@ void CreateLaunchTemplateVersionRequest::setRegionId(const std::string &regionId
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string CreateLaunchTemplateVersionRequest::getHttpEndpoint() const {
+  return httpEndpoint_;
+}
+
+void CreateLaunchTemplateVersionRequest::setHttpEndpoint(const std::string &httpEndpoint) {
+  httpEndpoint_ = httpEndpoint;
+  setParameter(std::string("HttpEndpoint"), httpEndpoint);
+}
+
 std::string CreateLaunchTemplateVersionRequest::getInstanceType() const {
   return instanceType_;
 }
@@ -565,6 +583,15 @@ std::string CreateLaunchTemplateVersionRequest::getVpcId() const {
 void CreateLaunchTemplateVersionRequest::setVpcId(const std::string &vpcId) {
   vpcId_ = vpcId;
   setParameter(std::string("VpcId"), vpcId);
+}
+
+std::string CreateLaunchTemplateVersionRequest::getHttpTokens() const {
+  return httpTokens_;
+}
+
+void CreateLaunchTemplateVersionRequest::setHttpTokens(const std::string &httpTokens) {
+  httpTokens_ = httpTokens;
+  setParameter(std::string("HttpTokens"), httpTokens);
 }
 
 std::string CreateLaunchTemplateVersionRequest::getSystemDiskDescription() const {

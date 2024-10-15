@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_EIPFILLPRODUCTRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_EIPFILLPRODUCTRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_PURCHASEELASTICITYASSURANCERESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_PURCHASEELASTICITYASSURANCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT EipFillProductResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT PurchaseElasticityAssuranceResult : public ServiceResult
 			{
 			public:
 
 
-				EipFillProductResult();
-				explicit EipFillProductResult(const std::string &payload);
-				~EipFillProductResult();
-				std::string getMessage()const;
-				std::string getRequestId()const;
-				std::string getData()const;
-				std::string getCode()const;
-				bool getSuccess()const;
+				PurchaseElasticityAssuranceResult();
+				explicit PurchaseElasticityAssuranceResult(const std::string &payload);
+				~PurchaseElasticityAssuranceResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				std::string requestId_;
-				std::string data_;
-				std::string code_;
-				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_EIPFILLPRODUCTRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_PURCHASEELASTICITYASSURANCERESULT_H_

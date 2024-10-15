@@ -65,6 +65,10 @@ void DescribeSecurityGroupsResult::parse(const std::string &payload)
 			securityGroupsObject.serviceManaged = valueSecurityGroupsSecurityGroup["ServiceManaged"].asString() == "true";
 		if(!valueSecurityGroupsSecurityGroup["ServiceID"].isNull())
 			securityGroupsObject.serviceID = std::stol(valueSecurityGroupsSecurityGroup["ServiceID"].asString());
+		if(!valueSecurityGroupsSecurityGroup["RuleCount"].isNull())
+			securityGroupsObject.ruleCount = std::stoi(valueSecurityGroupsSecurityGroup["RuleCount"].asString());
+		if(!valueSecurityGroupsSecurityGroup["GroupToGroupRuleCount"].isNull())
+			securityGroupsObject.groupToGroupRuleCount = std::stoi(valueSecurityGroupsSecurityGroup["GroupToGroupRuleCount"].asString());
 		auto allTagsNode = valueSecurityGroupsSecurityGroup["Tags"]["Tag"];
 		for (auto valueSecurityGroupsSecurityGroupTagsTag : allTagsNode)
 		{

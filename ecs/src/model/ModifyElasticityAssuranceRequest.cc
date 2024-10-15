@@ -34,6 +34,15 @@ void ModifyElasticityAssuranceRequest::setResourceOwnerId(long resourceOwnerId) 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ModifyElasticityAssuranceRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void ModifyElasticityAssuranceRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
 std::string ModifyElasticityAssuranceRequest::getDescription() const {
   return description_;
 }
@@ -104,5 +113,14 @@ std::string ModifyElasticityAssuranceRequest::getPackageType() const {
 void ModifyElasticityAssuranceRequest::setPackageType(const std::string &packageType) {
   packageType_ = packageType;
   setParameter(std::string("PackageType"), packageType);
+}
+
+int ModifyElasticityAssuranceRequest::getInstanceAmount() const {
+  return instanceAmount_;
+}
+
+void ModifyElasticityAssuranceRequest::setInstanceAmount(int instanceAmount) {
+  instanceAmount_ = instanceAmount;
+  setParameter(std::string("InstanceAmount"), std::to_string(instanceAmount));
 }
 

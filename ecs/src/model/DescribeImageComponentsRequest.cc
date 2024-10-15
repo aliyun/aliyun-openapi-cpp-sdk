@@ -34,6 +34,24 @@ void DescribeImageComponentsRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeImageComponentsRequest::getSystemType() const {
+  return systemType_;
+}
+
+void DescribeImageComponentsRequest::setSystemType(const std::string &systemType) {
+  systemType_ = systemType;
+  setParameter(std::string("SystemType"), systemType);
+}
+
+std::string DescribeImageComponentsRequest::getComponentVersion() const {
+  return componentVersion_;
+}
+
+void DescribeImageComponentsRequest::setComponentVersion(const std::string &componentVersion) {
+  componentVersion_ = componentVersion;
+  setParameter(std::string("ComponentVersion"), componentVersion);
+}
+
 std::vector<std::string> DescribeImageComponentsRequest::getImageComponentId() const {
   return imageComponentId_;
 }
@@ -117,6 +135,15 @@ long DescribeImageComponentsRequest::getOwnerId() const {
 void DescribeImageComponentsRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DescribeImageComponentsRequest::getComponentType() const {
+  return componentType_;
+}
+
+void DescribeImageComponentsRequest::setComponentType(const std::string &componentType) {
+  componentType_ = componentType;
+  setParameter(std::string("ComponentType"), componentType);
 }
 
 std::string DescribeImageComponentsRequest::getName() const {
