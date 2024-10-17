@@ -40,22 +40,36 @@ void QueryIntlFixedPriceOrderListResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto moduleNode = value["Module"];
-	if(!moduleNode["CreateTime"].isNull())
-		module_.createTime = std::stol(moduleNode["CreateTime"].asString());
-	if(!moduleNode["UpdateTime"].isNull())
-		module_.updateTime = std::stol(moduleNode["UpdateTime"].asString());
-	if(!moduleNode["UserId"].isNull())
-		module_.userId = moduleNode["UserId"].asString();
-	if(!moduleNode["BizId"].isNull())
-		module_.bizId = moduleNode["BizId"].asString();
-	if(!moduleNode["Domain"].isNull())
-		module_.domain = moduleNode["Domain"].asString();
-	if(!moduleNode["Price"].isNull())
-		module_.price = std::stol(moduleNode["Price"].asString());
-	if(!moduleNode["Status"].isNull())
-		module_.status = std::stol(moduleNode["Status"].asString());
-	if(!moduleNode["OrderType"].isNull())
-		module_.orderType = std::stol(moduleNode["OrderType"].asString());
+	if(!moduleNode["TotalItemNum"].isNull())
+		module_.totalItemNum = std::stoi(moduleNode["TotalItemNum"].asString());
+	if(!moduleNode["CurrentPageNum"].isNull())
+		module_.currentPageNum = std::stoi(moduleNode["CurrentPageNum"].asString());
+	if(!moduleNode["PageSize"].isNull())
+		module_.pageSize = std::stoi(moduleNode["PageSize"].asString());
+	if(!moduleNode["TotalPageNum"].isNull())
+		module_.totalPageNum = std::stoi(moduleNode["TotalPageNum"].asString());
+	auto allDataNode = moduleNode["Data"]["OrderList"];
+	for (auto moduleNodeDataOrderList : allDataNode)
+	{
+		Module::OrderList orderListObject;
+		if(!moduleNodeDataOrderList["OrderType"].isNull())
+			orderListObject.orderType = std::stoi(moduleNodeDataOrderList["OrderType"].asString());
+		if(!moduleNodeDataOrderList["BizId"].isNull())
+			orderListObject.bizId = moduleNodeDataOrderList["BizId"].asString();
+		if(!moduleNodeDataOrderList["UserId"].isNull())
+			orderListObject.userId = moduleNodeDataOrderList["UserId"].asString();
+		if(!moduleNodeDataOrderList["Status"].isNull())
+			orderListObject.status = std::stoi(moduleNodeDataOrderList["Status"].asString());
+		if(!moduleNodeDataOrderList["Price"].isNull())
+			orderListObject.price = std::stol(moduleNodeDataOrderList["Price"].asString());
+		if(!moduleNodeDataOrderList["Domain"].isNull())
+			orderListObject.domain = moduleNodeDataOrderList["Domain"].asString();
+		if(!moduleNodeDataOrderList["CreateTime"].isNull())
+			orderListObject.createTime = std::stol(moduleNodeDataOrderList["CreateTime"].asString());
+		if(!moduleNodeDataOrderList["UpdateTime"].isNull())
+			orderListObject.updateTime = std::stol(moduleNodeDataOrderList["UpdateTime"].asString());
+		module_.data.push_back(orderListObject);
+	}
 
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DOMAIN_MODEL_QUERYINTLFIXEDPRICEORDERLISTRESULT_H_
-#define ALIBABACLOUD_DOMAIN_MODEL_QUERYINTLFIXEDPRICEORDERLISTRESULT_H_
+#ifndef ALIBABACLOUD_DOMAIN_MODEL_SAVESINGLETASKFORTRANSFEROUTBYAUTHORIZATIONCODERESULT_H_
+#define ALIBABACLOUD_DOMAIN_MODEL_SAVESINGLETASKFORTRANSFEROUTBYAUTHORIZATIONCODERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DOMAIN_EXPORT QueryIntlFixedPriceOrderListResult : public ServiceResult
+			class ALIBABACLOUD_DOMAIN_EXPORT SaveSingleTaskForTransferOutByAuthorizationCodeResult : public ServiceResult
 			{
 			public:
-				struct Module
-				{
-					struct OrderList
-					{
-						int status;
-						int orderType;
-						long price;
-						std::string userId;
-						long createTime;
-						long updateTime;
-						std::string domain;
-						std::string bizId;
-					};
-					int currentPageNum;
-					int pageSize;
-					int totalPageNum;
-					std::vector<OrderList> data;
-					int totalItemNum;
-				};
 
 
-				QueryIntlFixedPriceOrderListResult();
-				explicit QueryIntlFixedPriceOrderListResult(const std::string &payload);
-				~QueryIntlFixedPriceOrderListResult();
-				Module getModule()const;
+				SaveSingleTaskForTransferOutByAuthorizationCodeResult();
+				explicit SaveSingleTaskForTransferOutByAuthorizationCodeResult(const std::string &payload);
+				~SaveSingleTaskForTransferOutByAuthorizationCodeResult();
+				std::string getTaskNo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Module module_;
+				std::string taskNo_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DOMAIN_MODEL_QUERYINTLFIXEDPRICEORDERLISTRESULT_H_
+#endif // !ALIBABACLOUD_DOMAIN_MODEL_SAVESINGLETASKFORTRANSFEROUTBYAUTHORIZATIONCODERESULT_H_

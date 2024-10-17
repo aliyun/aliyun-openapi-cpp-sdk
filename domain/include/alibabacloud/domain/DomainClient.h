@@ -176,6 +176,8 @@
 #include "model/SaveBatchTaskForModifyingDomainDnsResult.h"
 #include "model/SaveBatchTaskForReserveDropListDomainRequest.h"
 #include "model/SaveBatchTaskForReserveDropListDomainResult.h"
+#include "model/SaveBatchTaskForTransferOutByAuthorizationCodeRequest.h"
+#include "model/SaveBatchTaskForTransferOutByAuthorizationCodeResult.h"
 #include "model/SaveBatchTaskForTransferProhibitionLockRequest.h"
 #include "model/SaveBatchTaskForTransferProhibitionLockResult.h"
 #include "model/SaveBatchTaskForUpdateProhibitionLockRequest.h"
@@ -236,6 +238,8 @@
 #include "model/SaveSingleTaskForSynchronizingDSRecordResult.h"
 #include "model/SaveSingleTaskForSynchronizingDnsHostRequest.h"
 #include "model/SaveSingleTaskForSynchronizingDnsHostResult.h"
+#include "model/SaveSingleTaskForTransferOutByAuthorizationCodeRequest.h"
+#include "model/SaveSingleTaskForTransferOutByAuthorizationCodeResult.h"
 #include "model/SaveSingleTaskForTransferProhibitionLockRequest.h"
 #include "model/SaveSingleTaskForTransferProhibitionLockResult.h"
 #include "model/SaveSingleTaskForUpdateProhibitionLockRequest.h"
@@ -520,6 +524,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SaveBatchTaskForReserveDropListDomainResult> SaveBatchTaskForReserveDropListDomainOutcome;
 			typedef std::future<SaveBatchTaskForReserveDropListDomainOutcome> SaveBatchTaskForReserveDropListDomainOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::SaveBatchTaskForReserveDropListDomainRequest&, const SaveBatchTaskForReserveDropListDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveBatchTaskForReserveDropListDomainAsyncHandler;
+			typedef Outcome<Error, Model::SaveBatchTaskForTransferOutByAuthorizationCodeResult> SaveBatchTaskForTransferOutByAuthorizationCodeOutcome;
+			typedef std::future<SaveBatchTaskForTransferOutByAuthorizationCodeOutcome> SaveBatchTaskForTransferOutByAuthorizationCodeOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::SaveBatchTaskForTransferOutByAuthorizationCodeRequest&, const SaveBatchTaskForTransferOutByAuthorizationCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveBatchTaskForTransferOutByAuthorizationCodeAsyncHandler;
 			typedef Outcome<Error, Model::SaveBatchTaskForTransferProhibitionLockResult> SaveBatchTaskForTransferProhibitionLockOutcome;
 			typedef std::future<SaveBatchTaskForTransferProhibitionLockOutcome> SaveBatchTaskForTransferProhibitionLockOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::SaveBatchTaskForTransferProhibitionLockRequest&, const SaveBatchTaskForTransferProhibitionLockOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveBatchTaskForTransferProhibitionLockAsyncHandler;
@@ -610,6 +617,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SaveSingleTaskForSynchronizingDnsHostResult> SaveSingleTaskForSynchronizingDnsHostOutcome;
 			typedef std::future<SaveSingleTaskForSynchronizingDnsHostOutcome> SaveSingleTaskForSynchronizingDnsHostOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::SaveSingleTaskForSynchronizingDnsHostRequest&, const SaveSingleTaskForSynchronizingDnsHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveSingleTaskForSynchronizingDnsHostAsyncHandler;
+			typedef Outcome<Error, Model::SaveSingleTaskForTransferOutByAuthorizationCodeResult> SaveSingleTaskForTransferOutByAuthorizationCodeOutcome;
+			typedef std::future<SaveSingleTaskForTransferOutByAuthorizationCodeOutcome> SaveSingleTaskForTransferOutByAuthorizationCodeOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::SaveSingleTaskForTransferOutByAuthorizationCodeRequest&, const SaveSingleTaskForTransferOutByAuthorizationCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveSingleTaskForTransferOutByAuthorizationCodeAsyncHandler;
 			typedef Outcome<Error, Model::SaveSingleTaskForTransferProhibitionLockResult> SaveSingleTaskForTransferProhibitionLockOutcome;
 			typedef std::future<SaveSingleTaskForTransferProhibitionLockOutcome> SaveSingleTaskForTransferProhibitionLockOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::SaveSingleTaskForTransferProhibitionLockRequest&, const SaveSingleTaskForTransferProhibitionLockOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveSingleTaskForTransferProhibitionLockAsyncHandler;
@@ -912,6 +922,9 @@ namespace AlibabaCloud
 			SaveBatchTaskForReserveDropListDomainOutcome saveBatchTaskForReserveDropListDomain(const Model::SaveBatchTaskForReserveDropListDomainRequest &request)const;
 			void saveBatchTaskForReserveDropListDomainAsync(const Model::SaveBatchTaskForReserveDropListDomainRequest& request, const SaveBatchTaskForReserveDropListDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveBatchTaskForReserveDropListDomainOutcomeCallable saveBatchTaskForReserveDropListDomainCallable(const Model::SaveBatchTaskForReserveDropListDomainRequest& request) const;
+			SaveBatchTaskForTransferOutByAuthorizationCodeOutcome saveBatchTaskForTransferOutByAuthorizationCode(const Model::SaveBatchTaskForTransferOutByAuthorizationCodeRequest &request)const;
+			void saveBatchTaskForTransferOutByAuthorizationCodeAsync(const Model::SaveBatchTaskForTransferOutByAuthorizationCodeRequest& request, const SaveBatchTaskForTransferOutByAuthorizationCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveBatchTaskForTransferOutByAuthorizationCodeOutcomeCallable saveBatchTaskForTransferOutByAuthorizationCodeCallable(const Model::SaveBatchTaskForTransferOutByAuthorizationCodeRequest& request) const;
 			SaveBatchTaskForTransferProhibitionLockOutcome saveBatchTaskForTransferProhibitionLock(const Model::SaveBatchTaskForTransferProhibitionLockRequest &request)const;
 			void saveBatchTaskForTransferProhibitionLockAsync(const Model::SaveBatchTaskForTransferProhibitionLockRequest& request, const SaveBatchTaskForTransferProhibitionLockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveBatchTaskForTransferProhibitionLockOutcomeCallable saveBatchTaskForTransferProhibitionLockCallable(const Model::SaveBatchTaskForTransferProhibitionLockRequest& request) const;
@@ -1002,6 +1015,9 @@ namespace AlibabaCloud
 			SaveSingleTaskForSynchronizingDnsHostOutcome saveSingleTaskForSynchronizingDnsHost(const Model::SaveSingleTaskForSynchronizingDnsHostRequest &request)const;
 			void saveSingleTaskForSynchronizingDnsHostAsync(const Model::SaveSingleTaskForSynchronizingDnsHostRequest& request, const SaveSingleTaskForSynchronizingDnsHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveSingleTaskForSynchronizingDnsHostOutcomeCallable saveSingleTaskForSynchronizingDnsHostCallable(const Model::SaveSingleTaskForSynchronizingDnsHostRequest& request) const;
+			SaveSingleTaskForTransferOutByAuthorizationCodeOutcome saveSingleTaskForTransferOutByAuthorizationCode(const Model::SaveSingleTaskForTransferOutByAuthorizationCodeRequest &request)const;
+			void saveSingleTaskForTransferOutByAuthorizationCodeAsync(const Model::SaveSingleTaskForTransferOutByAuthorizationCodeRequest& request, const SaveSingleTaskForTransferOutByAuthorizationCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveSingleTaskForTransferOutByAuthorizationCodeOutcomeCallable saveSingleTaskForTransferOutByAuthorizationCodeCallable(const Model::SaveSingleTaskForTransferOutByAuthorizationCodeRequest& request) const;
 			SaveSingleTaskForTransferProhibitionLockOutcome saveSingleTaskForTransferProhibitionLock(const Model::SaveSingleTaskForTransferProhibitionLockRequest &request)const;
 			void saveSingleTaskForTransferProhibitionLockAsync(const Model::SaveSingleTaskForTransferProhibitionLockRequest& request, const SaveSingleTaskForTransferProhibitionLockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveSingleTaskForTransferProhibitionLockOutcomeCallable saveSingleTaskForTransferProhibitionLockCallable(const Model::SaveSingleTaskForTransferProhibitionLockRequest& request) const;

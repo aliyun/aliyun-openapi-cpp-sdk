@@ -175,6 +175,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/SaveBatchTaskForModifyingDomainDnsResult.h
 	include/alibabacloud/domain/model/SaveBatchTaskForReserveDropListDomainRequest.h
 	include/alibabacloud/domain/model/SaveBatchTaskForReserveDropListDomainResult.h
+	include/alibabacloud/domain/model/SaveBatchTaskForTransferOutByAuthorizationCodeRequest.h
+	include/alibabacloud/domain/model/SaveBatchTaskForTransferOutByAuthorizationCodeResult.h
 	include/alibabacloud/domain/model/SaveBatchTaskForTransferProhibitionLockRequest.h
 	include/alibabacloud/domain/model/SaveBatchTaskForTransferProhibitionLockResult.h
 	include/alibabacloud/domain/model/SaveBatchTaskForUpdateProhibitionLockRequest.h
@@ -235,6 +237,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/SaveSingleTaskForSynchronizingDSRecordResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForSynchronizingDnsHostRequest.h
 	include/alibabacloud/domain/model/SaveSingleTaskForSynchronizingDnsHostResult.h
+	include/alibabacloud/domain/model/SaveSingleTaskForTransferOutByAuthorizationCodeRequest.h
+	include/alibabacloud/domain/model/SaveSingleTaskForTransferOutByAuthorizationCodeResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForTransferProhibitionLockRequest.h
 	include/alibabacloud/domain/model/SaveSingleTaskForTransferProhibitionLockResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForUpdateProhibitionLockRequest.h
@@ -436,6 +440,8 @@ set(domain_src
 	src/model/SaveBatchTaskForModifyingDomainDnsResult.cc
 	src/model/SaveBatchTaskForReserveDropListDomainRequest.cc
 	src/model/SaveBatchTaskForReserveDropListDomainResult.cc
+	src/model/SaveBatchTaskForTransferOutByAuthorizationCodeRequest.cc
+	src/model/SaveBatchTaskForTransferOutByAuthorizationCodeResult.cc
 	src/model/SaveBatchTaskForTransferProhibitionLockRequest.cc
 	src/model/SaveBatchTaskForTransferProhibitionLockResult.cc
 	src/model/SaveBatchTaskForUpdateProhibitionLockRequest.cc
@@ -496,6 +502,8 @@ set(domain_src
 	src/model/SaveSingleTaskForSynchronizingDSRecordResult.cc
 	src/model/SaveSingleTaskForSynchronizingDnsHostRequest.cc
 	src/model/SaveSingleTaskForSynchronizingDnsHostResult.cc
+	src/model/SaveSingleTaskForTransferOutByAuthorizationCodeRequest.cc
+	src/model/SaveSingleTaskForTransferOutByAuthorizationCodeResult.cc
 	src/model/SaveSingleTaskForTransferProhibitionLockRequest.cc
 	src/model/SaveSingleTaskForTransferProhibitionLockResult.cc
 	src/model/SaveSingleTaskForUpdateProhibitionLockRequest.cc

@@ -2823,6 +2823,42 @@ DomainClient::SaveBatchTaskForReserveDropListDomainOutcomeCallable DomainClient:
 	return task->get_future();
 }
 
+DomainClient::SaveBatchTaskForTransferOutByAuthorizationCodeOutcome DomainClient::saveBatchTaskForTransferOutByAuthorizationCode(const SaveBatchTaskForTransferOutByAuthorizationCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveBatchTaskForTransferOutByAuthorizationCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveBatchTaskForTransferOutByAuthorizationCodeOutcome(SaveBatchTaskForTransferOutByAuthorizationCodeResult(outcome.result()));
+	else
+		return SaveBatchTaskForTransferOutByAuthorizationCodeOutcome(outcome.error());
+}
+
+void DomainClient::saveBatchTaskForTransferOutByAuthorizationCodeAsync(const SaveBatchTaskForTransferOutByAuthorizationCodeRequest& request, const SaveBatchTaskForTransferOutByAuthorizationCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveBatchTaskForTransferOutByAuthorizationCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveBatchTaskForTransferOutByAuthorizationCodeOutcomeCallable DomainClient::saveBatchTaskForTransferOutByAuthorizationCodeCallable(const SaveBatchTaskForTransferOutByAuthorizationCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveBatchTaskForTransferOutByAuthorizationCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->saveBatchTaskForTransferOutByAuthorizationCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::SaveBatchTaskForTransferProhibitionLockOutcome DomainClient::saveBatchTaskForTransferProhibitionLock(const SaveBatchTaskForTransferProhibitionLockRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3897,6 +3933,42 @@ DomainClient::SaveSingleTaskForSynchronizingDnsHostOutcomeCallable DomainClient:
 			[this, request]()
 			{
 			return this->saveSingleTaskForSynchronizingDnsHost(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SaveSingleTaskForTransferOutByAuthorizationCodeOutcome DomainClient::saveSingleTaskForTransferOutByAuthorizationCode(const SaveSingleTaskForTransferOutByAuthorizationCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveSingleTaskForTransferOutByAuthorizationCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveSingleTaskForTransferOutByAuthorizationCodeOutcome(SaveSingleTaskForTransferOutByAuthorizationCodeResult(outcome.result()));
+	else
+		return SaveSingleTaskForTransferOutByAuthorizationCodeOutcome(outcome.error());
+}
+
+void DomainClient::saveSingleTaskForTransferOutByAuthorizationCodeAsync(const SaveSingleTaskForTransferOutByAuthorizationCodeRequest& request, const SaveSingleTaskForTransferOutByAuthorizationCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveSingleTaskForTransferOutByAuthorizationCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveSingleTaskForTransferOutByAuthorizationCodeOutcomeCallable DomainClient::saveSingleTaskForTransferOutByAuthorizationCodeCallable(const SaveSingleTaskForTransferOutByAuthorizationCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveSingleTaskForTransferOutByAuthorizationCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->saveSingleTaskForTransferOutByAuthorizationCode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
