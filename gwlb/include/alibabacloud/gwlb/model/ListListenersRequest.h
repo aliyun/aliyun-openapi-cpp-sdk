@@ -36,8 +36,8 @@ public:
 	~ListListenersRequest();
 	std::vector<std::string> getLoadBalancerIds() const;
 	void setLoadBalancerIds(const std::vector<std::string> &loadBalancerIds);
-	long getSkip() const;
-	void setSkip(long skip);
+	int getSkip() const;
+	void setSkip(int skip);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
 	std::vector<Tag> getTag() const;
@@ -49,7 +49,7 @@ public:
 
 private:
 	std::vector<std::string> loadBalancerIds_;
-	long skip_;
+	int skip_;
 	std::string nextToken_;
 	std::vector<Tag> tag_;
 	std::vector<std::string> listenerIds_;

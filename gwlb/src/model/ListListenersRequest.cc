@@ -36,11 +36,11 @@ void ListListenersRequest::setLoadBalancerIds(const std::vector<ListListenersReq
   }
 }
 
-long ListListenersRequest::getSkip() const {
+int ListListenersRequest::getSkip() const {
   return skip_;
 }
 
-void ListListenersRequest::setSkip(long skip) {
+void ListListenersRequest::setSkip(int skip) {
   skip_ = skip;
   setBodyParameter(std::string("Skip"), std::to_string(skip));
 }
