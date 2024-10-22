@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EAIS_MODEL_CREATEEAIALLRESULT_H_
-#define ALIBABACLOUD_EAIS_MODEL_CREATEEAIALLRESULT_H_
+#ifndef ALIBABACLOUD_EAIS_MODEL_UNTAGRESOURCESRESULT_H_
+#define ALIBABACLOUD_EAIS_MODEL_UNTAGRESOURCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EAIS_EXPORT CreateEaiAllResult : public ServiceResult
+			class ALIBABACLOUD_EAIS_EXPORT UntagResourcesResult : public ServiceResult
 			{
 			public:
 
 
-				CreateEaiAllResult();
-				explicit CreateEaiAllResult(const std::string &payload);
-				~CreateEaiAllResult();
-				std::string getClientInstanceId()const;
-				std::string getElasticAcceleratedInstanceId()const;
+				UntagResourcesResult();
+				explicit UntagResourcesResult(const std::string &payload);
+				~UntagResourcesResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string clientInstanceId_;
-				std::string elasticAcceleratedInstanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EAIS_MODEL_CREATEEAIALLRESULT_H_
+#endif // !ALIBABACLOUD_EAIS_MODEL_UNTAGRESOURCESRESULT_H_

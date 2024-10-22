@@ -195,42 +195,6 @@ EaisClient::CreateEaiOutcomeCallable EaisClient::createEaiCallable(const CreateE
 	return task->get_future();
 }
 
-EaisClient::CreateEaiAllOutcome EaisClient::createEaiAll(const CreateEaiAllRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateEaiAllOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateEaiAllOutcome(CreateEaiAllResult(outcome.result()));
-	else
-		return CreateEaiAllOutcome(outcome.error());
-}
-
-void EaisClient::createEaiAllAsync(const CreateEaiAllRequest& request, const CreateEaiAllAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createEaiAll(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EaisClient::CreateEaiAllOutcomeCallable EaisClient::createEaiAllCallable(const CreateEaiAllRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateEaiAllOutcome()>>(
-			[this, request]()
-			{
-			return this->createEaiAll(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EaisClient::CreateEaiEciOutcome EaisClient::createEaiEci(const CreateEaiEciRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -663,6 +627,78 @@ EaisClient::GetInstanceMetricsOutcomeCallable EaisClient::getInstanceMetricsCall
 	return task->get_future();
 }
 
+EaisClient::ListTagResourcesOutcome EaisClient::listTagResources(const ListTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
+	else
+		return ListTagResourcesOutcome(outcome.error());
+}
+
+void EaisClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EaisClient::ListTagResourcesOutcomeCallable EaisClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EaisClient::StartEaiJupyterOutcome EaisClient::startEaiJupyter(const StartEaiJupyterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartEaiJupyterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartEaiJupyterOutcome(StartEaiJupyterResult(outcome.result()));
+	else
+		return StartEaiJupyterOutcome(outcome.error());
+}
+
+void EaisClient::startEaiJupyterAsync(const StartEaiJupyterRequest& request, const StartEaiJupyterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startEaiJupyter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EaisClient::StartEaiJupyterOutcomeCallable EaisClient::startEaiJupyterCallable(const StartEaiJupyterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartEaiJupyterOutcome()>>(
+			[this, request]()
+			{
+			return this->startEaiJupyter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EaisClient::StartEaisEiOutcome EaisClient::startEaisEi(const StartEaisEiRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -699,6 +735,42 @@ EaisClient::StartEaisEiOutcomeCallable EaisClient::startEaisEiCallable(const Sta
 	return task->get_future();
 }
 
+EaisClient::StopEaiJupyterOutcome EaisClient::stopEaiJupyter(const StopEaiJupyterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopEaiJupyterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopEaiJupyterOutcome(StopEaiJupyterResult(outcome.result()));
+	else
+		return StopEaiJupyterOutcome(outcome.error());
+}
+
+void EaisClient::stopEaiJupyterAsync(const StopEaiJupyterRequest& request, const StopEaiJupyterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopEaiJupyter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EaisClient::StopEaiJupyterOutcomeCallable EaisClient::stopEaiJupyterCallable(const StopEaiJupyterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopEaiJupyterOutcome()>>(
+			[this, request]()
+			{
+			return this->stopEaiJupyter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EaisClient::StopEaisEiOutcome EaisClient::stopEaisEi(const StopEaisEiRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,6 +801,78 @@ EaisClient::StopEaisEiOutcomeCallable EaisClient::stopEaisEiCallable(const StopE
 			[this, request]()
 			{
 			return this->stopEaisEi(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EaisClient::TagResourcesOutcome EaisClient::tagResources(const TagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
+	else
+		return TagResourcesOutcome(outcome.error());
+}
+
+void EaisClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EaisClient::TagResourcesOutcomeCallable EaisClient::tagResourcesCallable(const TagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EaisClient::UntagResourcesOutcome EaisClient::untagResources(const UntagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UntagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UntagResourcesOutcome(UntagResourcesResult(outcome.result()));
+	else
+		return UntagResourcesOutcome(outcome.error());
+}
+
+void EaisClient::untagResourcesAsync(const UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, untagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EaisClient::UntagResourcesOutcomeCallable EaisClient::untagResourcesCallable(const UntagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UntagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->untagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

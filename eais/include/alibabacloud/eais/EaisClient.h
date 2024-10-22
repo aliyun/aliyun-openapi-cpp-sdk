@@ -30,8 +30,6 @@
 #include "model/ChangeResourceGroupResult.h"
 #include "model/CreateEaiRequest.h"
 #include "model/CreateEaiResult.h"
-#include "model/CreateEaiAllRequest.h"
-#include "model/CreateEaiAllResult.h"
 #include "model/CreateEaiEciRequest.h"
 #include "model/CreateEaiEciResult.h"
 #include "model/CreateEaiEcsRequest.h"
@@ -56,10 +54,20 @@
 #include "model/DetachEaisEiResult.h"
 #include "model/GetInstanceMetricsRequest.h"
 #include "model/GetInstanceMetricsResult.h"
+#include "model/ListTagResourcesRequest.h"
+#include "model/ListTagResourcesResult.h"
+#include "model/StartEaiJupyterRequest.h"
+#include "model/StartEaiJupyterResult.h"
 #include "model/StartEaisEiRequest.h"
 #include "model/StartEaisEiResult.h"
+#include "model/StopEaiJupyterRequest.h"
+#include "model/StopEaiJupyterResult.h"
 #include "model/StopEaisEiRequest.h"
 #include "model/StopEaisEiResult.h"
+#include "model/TagResourcesRequest.h"
+#include "model/TagResourcesResult.h"
+#include "model/UntagResourcesRequest.h"
+#include "model/UntagResourcesResult.h"
 
 
 namespace AlibabaCloud
@@ -81,9 +89,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateEaiResult> CreateEaiOutcome;
 			typedef std::future<CreateEaiOutcome> CreateEaiOutcomeCallable;
 			typedef std::function<void(const EaisClient*, const Model::CreateEaiRequest&, const CreateEaiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateEaiAsyncHandler;
-			typedef Outcome<Error, Model::CreateEaiAllResult> CreateEaiAllOutcome;
-			typedef std::future<CreateEaiAllOutcome> CreateEaiAllOutcomeCallable;
-			typedef std::function<void(const EaisClient*, const Model::CreateEaiAllRequest&, const CreateEaiAllOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateEaiAllAsyncHandler;
 			typedef Outcome<Error, Model::CreateEaiEciResult> CreateEaiEciOutcome;
 			typedef std::future<CreateEaiEciOutcome> CreateEaiEciOutcomeCallable;
 			typedef std::function<void(const EaisClient*, const Model::CreateEaiEciRequest&, const CreateEaiEciOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateEaiEciAsyncHandler;
@@ -120,12 +125,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetInstanceMetricsResult> GetInstanceMetricsOutcome;
 			typedef std::future<GetInstanceMetricsOutcome> GetInstanceMetricsOutcomeCallable;
 			typedef std::function<void(const EaisClient*, const Model::GetInstanceMetricsRequest&, const GetInstanceMetricsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceMetricsAsyncHandler;
+			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
+			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
+			typedef std::function<void(const EaisClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::StartEaiJupyterResult> StartEaiJupyterOutcome;
+			typedef std::future<StartEaiJupyterOutcome> StartEaiJupyterOutcomeCallable;
+			typedef std::function<void(const EaisClient*, const Model::StartEaiJupyterRequest&, const StartEaiJupyterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartEaiJupyterAsyncHandler;
 			typedef Outcome<Error, Model::StartEaisEiResult> StartEaisEiOutcome;
 			typedef std::future<StartEaisEiOutcome> StartEaisEiOutcomeCallable;
 			typedef std::function<void(const EaisClient*, const Model::StartEaisEiRequest&, const StartEaisEiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartEaisEiAsyncHandler;
+			typedef Outcome<Error, Model::StopEaiJupyterResult> StopEaiJupyterOutcome;
+			typedef std::future<StopEaiJupyterOutcome> StopEaiJupyterOutcomeCallable;
+			typedef std::function<void(const EaisClient*, const Model::StopEaiJupyterRequest&, const StopEaiJupyterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopEaiJupyterAsyncHandler;
 			typedef Outcome<Error, Model::StopEaisEiResult> StopEaisEiOutcome;
 			typedef std::future<StopEaisEiOutcome> StopEaisEiOutcomeCallable;
 			typedef std::function<void(const EaisClient*, const Model::StopEaisEiRequest&, const StopEaisEiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopEaisEiAsyncHandler;
+			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
+			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
+			typedef std::function<void(const EaisClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
+			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
+			typedef std::function<void(const EaisClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
 
 			EaisClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			EaisClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -143,9 +163,6 @@ namespace AlibabaCloud
 			CreateEaiOutcome createEai(const Model::CreateEaiRequest &request)const;
 			void createEaiAsync(const Model::CreateEaiRequest& request, const CreateEaiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateEaiOutcomeCallable createEaiCallable(const Model::CreateEaiRequest& request) const;
-			CreateEaiAllOutcome createEaiAll(const Model::CreateEaiAllRequest &request)const;
-			void createEaiAllAsync(const Model::CreateEaiAllRequest& request, const CreateEaiAllAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateEaiAllOutcomeCallable createEaiAllCallable(const Model::CreateEaiAllRequest& request) const;
 			CreateEaiEciOutcome createEaiEci(const Model::CreateEaiEciRequest &request)const;
 			void createEaiEciAsync(const Model::CreateEaiEciRequest& request, const CreateEaiEciAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateEaiEciOutcomeCallable createEaiEciCallable(const Model::CreateEaiEciRequest& request) const;
@@ -182,12 +199,27 @@ namespace AlibabaCloud
 			GetInstanceMetricsOutcome getInstanceMetrics(const Model::GetInstanceMetricsRequest &request)const;
 			void getInstanceMetricsAsync(const Model::GetInstanceMetricsRequest& request, const GetInstanceMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceMetricsOutcomeCallable getInstanceMetricsCallable(const Model::GetInstanceMetricsRequest& request) const;
+			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
+			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
+			StartEaiJupyterOutcome startEaiJupyter(const Model::StartEaiJupyterRequest &request)const;
+			void startEaiJupyterAsync(const Model::StartEaiJupyterRequest& request, const StartEaiJupyterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartEaiJupyterOutcomeCallable startEaiJupyterCallable(const Model::StartEaiJupyterRequest& request) const;
 			StartEaisEiOutcome startEaisEi(const Model::StartEaisEiRequest &request)const;
 			void startEaisEiAsync(const Model::StartEaisEiRequest& request, const StartEaisEiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartEaisEiOutcomeCallable startEaisEiCallable(const Model::StartEaisEiRequest& request) const;
+			StopEaiJupyterOutcome stopEaiJupyter(const Model::StopEaiJupyterRequest &request)const;
+			void stopEaiJupyterAsync(const Model::StopEaiJupyterRequest& request, const StopEaiJupyterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopEaiJupyterOutcomeCallable stopEaiJupyterCallable(const Model::StopEaiJupyterRequest& request) const;
 			StopEaisEiOutcome stopEaisEi(const Model::StopEaisEiRequest &request)const;
 			void stopEaisEiAsync(const Model::StopEaisEiRequest& request, const StopEaisEiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopEaisEiOutcomeCallable stopEaisEiCallable(const Model::StopEaisEiRequest& request) const;
+			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
+			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
+			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
+			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

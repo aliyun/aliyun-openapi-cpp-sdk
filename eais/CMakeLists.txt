@@ -29,8 +29,6 @@ set(eais_public_header_model
 	include/alibabacloud/eais/model/ChangeResourceGroupResult.h
 	include/alibabacloud/eais/model/CreateEaiRequest.h
 	include/alibabacloud/eais/model/CreateEaiResult.h
-	include/alibabacloud/eais/model/CreateEaiAllRequest.h
-	include/alibabacloud/eais/model/CreateEaiAllResult.h
 	include/alibabacloud/eais/model/CreateEaiEciRequest.h
 	include/alibabacloud/eais/model/CreateEaiEciResult.h
 	include/alibabacloud/eais/model/CreateEaiEcsRequest.h
@@ -55,10 +53,20 @@ set(eais_public_header_model
 	include/alibabacloud/eais/model/DetachEaisEiResult.h
 	include/alibabacloud/eais/model/GetInstanceMetricsRequest.h
 	include/alibabacloud/eais/model/GetInstanceMetricsResult.h
+	include/alibabacloud/eais/model/ListTagResourcesRequest.h
+	include/alibabacloud/eais/model/ListTagResourcesResult.h
+	include/alibabacloud/eais/model/StartEaiJupyterRequest.h
+	include/alibabacloud/eais/model/StartEaiJupyterResult.h
 	include/alibabacloud/eais/model/StartEaisEiRequest.h
 	include/alibabacloud/eais/model/StartEaisEiResult.h
+	include/alibabacloud/eais/model/StopEaiJupyterRequest.h
+	include/alibabacloud/eais/model/StopEaiJupyterResult.h
 	include/alibabacloud/eais/model/StopEaisEiRequest.h
-	include/alibabacloud/eais/model/StopEaisEiResult.h )
+	include/alibabacloud/eais/model/StopEaisEiResult.h
+	include/alibabacloud/eais/model/TagResourcesRequest.h
+	include/alibabacloud/eais/model/TagResourcesResult.h
+	include/alibabacloud/eais/model/UntagResourcesRequest.h
+	include/alibabacloud/eais/model/UntagResourcesResult.h )
 
 set(eais_src 
 	src/EaisClient.cc
@@ -70,8 +78,6 @@ set(eais_src
 	src/model/ChangeResourceGroupResult.cc
 	src/model/CreateEaiRequest.cc
 	src/model/CreateEaiResult.cc
-	src/model/CreateEaiAllRequest.cc
-	src/model/CreateEaiAllResult.cc
 	src/model/CreateEaiEciRequest.cc
 	src/model/CreateEaiEciResult.cc
 	src/model/CreateEaiEcsRequest.cc
@@ -96,10 +102,20 @@ set(eais_src
 	src/model/DetachEaisEiResult.cc
 	src/model/GetInstanceMetricsRequest.cc
 	src/model/GetInstanceMetricsResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
+	src/model/StartEaiJupyterRequest.cc
+	src/model/StartEaiJupyterResult.cc
 	src/model/StartEaisEiRequest.cc
 	src/model/StartEaisEiResult.cc
+	src/model/StopEaiJupyterRequest.cc
+	src/model/StopEaiJupyterResult.cc
 	src/model/StopEaisEiRequest.cc
-	src/model/StopEaisEiResult.cc )
+	src/model/StopEaisEiResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc )
 
 add_library(eais ${LIB_TYPE}
 	${eais_public_header}

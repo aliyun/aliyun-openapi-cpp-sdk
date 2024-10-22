@@ -14,45 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/eais/model/CreateEaiAllResult.h>
+#include <alibabacloud/eais/model/UntagResourcesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Eais;
 using namespace AlibabaCloud::Eais::Model;
 
-CreateEaiAllResult::CreateEaiAllResult() :
+UntagResourcesResult::UntagResourcesResult() :
 	ServiceResult()
 {}
 
-CreateEaiAllResult::CreateEaiAllResult(const std::string &payload) :
+UntagResourcesResult::UntagResourcesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateEaiAllResult::~CreateEaiAllResult()
+UntagResourcesResult::~UntagResourcesResult()
 {}
 
-void CreateEaiAllResult::parse(const std::string &payload)
+void UntagResourcesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ElasticAcceleratedInstanceId"].isNull())
-		elasticAcceleratedInstanceId_ = value["ElasticAcceleratedInstanceId"].asString();
-	if(!value["ClientInstanceId"].isNull())
-		clientInstanceId_ = value["ClientInstanceId"].asString();
 
-}
-
-std::string CreateEaiAllResult::getClientInstanceId()const
-{
-	return clientInstanceId_;
-}
-
-std::string CreateEaiAllResult::getElasticAcceleratedInstanceId()const
-{
-	return elasticAcceleratedInstanceId_;
 }
 
