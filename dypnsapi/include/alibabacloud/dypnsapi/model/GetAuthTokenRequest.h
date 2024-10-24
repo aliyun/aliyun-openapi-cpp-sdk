@@ -38,21 +38,36 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSceneCode() const;
 	void setSceneCode(const std::string &sceneCode);
+	int getCuApiCode() const;
+	void setCuApiCode(int cuApiCode);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	int getCtApiCode() const;
+	void setCtApiCode(int ctApiCode);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getUrl() const;
 	void setUrl(const std::string &url);
+	int getBizType() const;
+	void setBizType(int bizType);
+	int getCmApiCode() const;
+	void setCmApiCode(int cmApiCode);
 
 private:
 	long resourceOwnerId_;
 	std::string origin_;
 	std::string accessKeyId_;
 	std::string sceneCode_;
+	int cuApiCode_;
 	std::string resourceOwnerAccount_;
+	int ctApiCode_;
 	long ownerId_;
+	std::string version_;
 	std::string url_;
+	int bizType_;
+	int cmApiCode_;
 };
 } // namespace Model
 } // namespace Dypnsapi

@@ -106,6 +106,15 @@ void CreateVerifySchemeRequest::setEmail(const std::string &email) {
   setParameter(std::string("Email"), email);
 }
 
+std::string CreateVerifySchemeRequest::getHmSignName() const {
+  return hmSignName_;
+}
+
+void CreateVerifySchemeRequest::setHmSignName(const std::string &hmSignName) {
+  hmSignName_ = hmSignName;
+  setParameter(std::string("HmSignName"), hmSignName);
+}
+
 std::string CreateVerifySchemeRequest::getPackSign() const {
   return packSign_;
 }
@@ -122,6 +131,15 @@ std::string CreateVerifySchemeRequest::getPackName() const {
 void CreateVerifySchemeRequest::setPackName(const std::string &packName) {
   packName_ = packName;
   setParameter(std::string("PackName"), packName);
+}
+
+std::string CreateVerifySchemeRequest::getHmAppIdentifier() const {
+  return hmAppIdentifier_;
+}
+
+void CreateVerifySchemeRequest::setHmAppIdentifier(const std::string &hmAppIdentifier) {
+  hmAppIdentifier_ = hmAppIdentifier;
+  setParameter(std::string("HmAppIdentifier"), hmAppIdentifier);
 }
 
 long CreateVerifySchemeRequest::getCuApiCode() const {
@@ -212,5 +230,14 @@ std::string CreateVerifySchemeRequest::getSmsSignName() const {
 void CreateVerifySchemeRequest::setSmsSignName(const std::string &smsSignName) {
   smsSignName_ = smsSignName;
   setParameter(std::string("SmsSignName"), smsSignName);
+}
+
+std::string CreateVerifySchemeRequest::getHmPackageName() const {
+  return hmPackageName_;
+}
+
+void CreateVerifySchemeRequest::setHmPackageName(const std::string &hmPackageName) {
+  hmPackageName_ = hmPackageName;
+  setParameter(std::string("HmPackageName"), hmPackageName);
 }
 

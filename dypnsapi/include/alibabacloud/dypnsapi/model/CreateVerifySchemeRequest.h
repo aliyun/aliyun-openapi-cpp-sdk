@@ -48,10 +48,14 @@ public:
 	void setRouteName(const std::string &routeName);
 	std::string getEmail() const;
 	void setEmail(const std::string &email);
+	std::string getHmSignName() const;
+	void setHmSignName(const std::string &hmSignName);
 	std::string getPackSign() const;
 	void setPackSign(const std::string &packSign);
 	std::string getPackName() const;
 	void setPackName(const std::string &packName);
+	std::string getHmAppIdentifier() const;
+	void setHmAppIdentifier(const std::string &hmAppIdentifier);
 	long getCuApiCode() const;
 	void setCuApiCode(long cuApiCode);
 	std::string getSceneType() const;
@@ -72,6 +76,8 @@ public:
 	void setSchemeName(const std::string &schemeName);
 	std::string getSmsSignName() const;
 	void setSmsSignName(const std::string &smsSignName);
+	std::string getHmPackageName() const;
+	void setHmPackageName(const std::string &hmPackageName);
 
 private:
 	long resourceOwnerId_;
@@ -83,8 +89,10 @@ private:
 	std::string ipWhiteList_;
 	std::string routeName_;
 	std::string email_;
+	std::string hmSignName_;
 	std::string packSign_;
 	std::string packName_;
+	std::string hmAppIdentifier_;
 	long cuApiCode_;
 	std::string sceneType_;
 	std::string resourceOwnerAccount_;
@@ -95,6 +103,7 @@ private:
 	long cmApiCode_;
 	std::string schemeName_;
 	std::string smsSignName_;
+	std::string hmPackageName_;
 };
 } // namespace Model
 } // namespace Dypnsapi

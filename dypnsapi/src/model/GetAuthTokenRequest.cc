@@ -61,6 +61,15 @@ void GetAuthTokenRequest::setSceneCode(const std::string &sceneCode) {
   setParameter(std::string("SceneCode"), sceneCode);
 }
 
+int GetAuthTokenRequest::getCuApiCode() const {
+  return cuApiCode_;
+}
+
+void GetAuthTokenRequest::setCuApiCode(int cuApiCode) {
+  cuApiCode_ = cuApiCode;
+  setParameter(std::string("CuApiCode"), std::to_string(cuApiCode));
+}
+
 std::string GetAuthTokenRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -68,6 +77,15 @@ std::string GetAuthTokenRequest::getResourceOwnerAccount() const {
 void GetAuthTokenRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
   resourceOwnerAccount_ = resourceOwnerAccount;
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+int GetAuthTokenRequest::getCtApiCode() const {
+  return ctApiCode_;
+}
+
+void GetAuthTokenRequest::setCtApiCode(int ctApiCode) {
+  ctApiCode_ = ctApiCode;
+  setParameter(std::string("CtApiCode"), std::to_string(ctApiCode));
 }
 
 long GetAuthTokenRequest::getOwnerId() const {
@@ -79,6 +97,15 @@ void GetAuthTokenRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string GetAuthTokenRequest::getVersion() const {
+  return version_;
+}
+
+void GetAuthTokenRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string GetAuthTokenRequest::getUrl() const {
   return url_;
 }
@@ -86,5 +113,23 @@ std::string GetAuthTokenRequest::getUrl() const {
 void GetAuthTokenRequest::setUrl(const std::string &url) {
   url_ = url;
   setParameter(std::string("Url"), url);
+}
+
+int GetAuthTokenRequest::getBizType() const {
+  return bizType_;
+}
+
+void GetAuthTokenRequest::setBizType(int bizType) {
+  bizType_ = bizType;
+  setParameter(std::string("BizType"), std::to_string(bizType));
+}
+
+int GetAuthTokenRequest::getCmApiCode() const {
+  return cmApiCode_;
+}
+
+void GetAuthTokenRequest::setCmApiCode(int cmApiCode) {
+  cmApiCode_ = cmApiCode;
+  setParameter(std::string("CmApiCode"), std::to_string(cmApiCode));
 }
 
