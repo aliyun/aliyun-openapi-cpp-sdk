@@ -20,7 +20,7 @@ using AlibabaCloud::Ens::Model::GetBucketAclRequest;
 
 GetBucketAclRequest::GetBucketAclRequest()
     : RpcServiceRequest("ens", "2017-11-10", "GetBucketAcl") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 GetBucketAclRequest::~GetBucketAclRequest() {}

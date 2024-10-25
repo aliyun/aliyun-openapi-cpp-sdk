@@ -43,6 +43,20 @@ void CreateDiskRequest::setEnsRegionId(const std::string &ensRegionId) {
   setParameter(std::string("EnsRegionId"), ensRegionId);
 }
 
+std::vector<CreateDiskRequest::Tag> CreateDiskRequest::getTag() const {
+  return tag_;
+}
+
+void CreateDiskRequest::setTag(const std::vector<CreateDiskRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 std::string CreateDiskRequest::getSize() const {
   return size_;
 }

@@ -57,6 +57,20 @@ void DescribeImageInfosResult::parse(const std::string &payload)
 			imagesObject.oSType = valueImagesImage["OSType"].asString();
 		if(!valueImagesImage["ComputeType"].isNull())
 			imagesObject.computeType = valueImagesImage["ComputeType"].asString();
+		auto allDiskDeviceMappingsNode = valueImagesImage["DiskDeviceMappings"]["DiskDeviceMapping"];
+		for (auto valueImagesImageDiskDeviceMappingsDiskDeviceMapping : allDiskDeviceMappingsNode)
+		{
+			Image::DiskDeviceMapping diskDeviceMappingsObject;
+			if(!valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Type"].isNull())
+				diskDeviceMappingsObject.type = valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Type"].asString();
+			if(!valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Size"].isNull())
+				diskDeviceMappingsObject.size = valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Size"].asString();
+			if(!valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Format"].isNull())
+				diskDeviceMappingsObject.format = valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Format"].asString();
+			if(!valueImagesImageDiskDeviceMappingsDiskDeviceMapping["imageId"].isNull())
+				diskDeviceMappingsObject.imageId = valueImagesImageDiskDeviceMappingsDiskDeviceMapping["imageId"].asString();
+			imagesObject.diskDeviceMappings.push_back(diskDeviceMappingsObject);
+		}
 		images_.push_back(imagesObject);
 	}
 	if(!value["Code"].isNull())

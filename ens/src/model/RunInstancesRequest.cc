@@ -328,6 +328,15 @@ void RunInstancesRequest::setIpType(const std::string &ipType) {
   setParameter(std::string("IpType"), ipType);
 }
 
+int RunInstancesRequest::getSpotDuration() const {
+  return spotDuration_;
+}
+
+void RunInstancesRequest::setSpotDuration(int spotDuration) {
+  spotDuration_ = spotDuration;
+  setParameter(std::string("SpotDuration"), std::to_string(spotDuration));
+}
+
 std::vector<RunInstancesRequest::DataDisk> RunInstancesRequest::getDataDisk() const {
   return dataDisk_;
 }

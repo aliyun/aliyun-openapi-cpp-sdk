@@ -84,6 +84,24 @@ namespace AlibabaCloud
 						std::string tagKey;
 						std::string tagValue;
 					};
+					struct NetworkInterfacesItem
+					{
+						struct PrivateIpSet
+						{
+							std::string privateIpAddress;
+							bool primary;
+						};
+						struct Ipv6Set
+						{
+							std::string ipv6Address;
+						};
+						std::string type;
+						std::vector<NetworkInterfacesItem::Ipv6Set> ipv6Sets;
+						std::string primaryIpAddress;
+						std::string macAddress;
+						std::string networkInterfaceId;
+						std::vector<NetworkInterfacesItem::PrivateIpSet> privateIpSets;
+					};
 					std::vector<Instance::PrivateIpAddress> privateIpAddresses;
 					std::string instanceTypeFamily;
 					int memory;
@@ -93,6 +111,7 @@ namespace AlibabaCloud
 					std::vector<std::string> publicIpAddress;
 					NetworkAttributes networkAttributes;
 					std::vector<std::string> innerIpAddress;
+					std::vector<Instance::NetworkInterfacesItem> networkInterfaces;
 					std::string expiredTime;
 					std::string imageId;
 					std::vector<Instance::PublicIpAddress> publicIpAddresses;
@@ -101,6 +120,7 @@ namespace AlibabaCloud
 					std::string hostName;
 					std::string spotStrategy;
 					std::string status;
+					std::string keyPairName;
 					std::string instanceId;
 					std::string specName;
 					std::vector<std::string> securityGroupIds;

@@ -303,6 +303,42 @@ EnsClient::AssociateEnsEipAddressOutcomeCallable EnsClient::associateEnsEipAddre
 	return task->get_future();
 }
 
+EnsClient::AssociateHaVipOutcome EnsClient::associateHaVip(const AssociateHaVipRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AssociateHaVipOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AssociateHaVipOutcome(AssociateHaVipResult(outcome.result()));
+	else
+		return AssociateHaVipOutcome(outcome.error());
+}
+
+void EnsClient::associateHaVipAsync(const AssociateHaVipRequest& request, const AssociateHaVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, associateHaVip(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::AssociateHaVipOutcomeCallable EnsClient::associateHaVipCallable(const AssociateHaVipRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AssociateHaVipOutcome()>>(
+			[this, request]()
+			{
+			return this->associateHaVip(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::AttachDiskOutcome EnsClient::attachDisk(const AttachDiskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,6 +405,42 @@ EnsClient::AttachEnsInstancesOutcomeCallable EnsClient::attachEnsInstancesCallab
 			[this, request]()
 			{
 			return this->attachEnsInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::AttachNetworkInterfaceOutcome EnsClient::attachNetworkInterface(const AttachNetworkInterfaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AttachNetworkInterfaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AttachNetworkInterfaceOutcome(AttachNetworkInterfaceResult(outcome.result()));
+	else
+		return AttachNetworkInterfaceOutcome(outcome.error());
+}
+
+void EnsClient::attachNetworkInterfaceAsync(const AttachNetworkInterfaceRequest& request, const AttachNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, attachNetworkInterface(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::AttachNetworkInterfaceOutcomeCallable EnsClient::attachNetworkInterfaceCallable(const AttachNetworkInterfaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AttachNetworkInterfaceOutcome()>>(
+			[this, request]()
+			{
+			return this->attachNetworkInterface(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -657,6 +729,42 @@ EnsClient::CreateClassicNetworkOutcomeCallable EnsClient::createClassicNetworkCa
 			[this, request]()
 			{
 			return this->createClassicNetwork(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::CreateClusterOutcome EnsClient::createCluster(const CreateClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateClusterOutcome(CreateClusterResult(outcome.result()));
+	else
+		return CreateClusterOutcome(outcome.error());
+}
+
+void EnsClient::createClusterAsync(const CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CreateClusterOutcomeCallable EnsClient::createClusterCallable(const CreateClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->createCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2895,42 +3003,6 @@ EnsClient::DescribeApplicationOutcomeCallable EnsClient::describeApplicationCall
 	return task->get_future();
 }
 
-EnsClient::DescribeApplicationResourceSummaryOutcome EnsClient::describeApplicationResourceSummary(const DescribeApplicationResourceSummaryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeApplicationResourceSummaryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeApplicationResourceSummaryOutcome(DescribeApplicationResourceSummaryResult(outcome.result()));
-	else
-		return DescribeApplicationResourceSummaryOutcome(outcome.error());
-}
-
-void EnsClient::describeApplicationResourceSummaryAsync(const DescribeApplicationResourceSummaryRequest& request, const DescribeApplicationResourceSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeApplicationResourceSummary(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::DescribeApplicationResourceSummaryOutcomeCallable EnsClient::describeApplicationResourceSummaryCallable(const DescribeApplicationResourceSummaryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeApplicationResourceSummaryOutcome()>>(
-			[this, request]()
-			{
-			return this->describeApplicationResourceSummary(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EnsClient::DescribeAvailableResourceOutcome EnsClient::describeAvailableResource(const DescribeAvailableResourceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3147,6 +3219,78 @@ EnsClient::DescribeCloudDiskTypesOutcomeCallable EnsClient::describeCloudDiskTyp
 	return task->get_future();
 }
 
+EnsClient::DescribeClusterOutcome EnsClient::describeCluster(const DescribeClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClusterOutcome(DescribeClusterResult(outcome.result()));
+	else
+		return DescribeClusterOutcome(outcome.error());
+}
+
+void EnsClient::describeClusterAsync(const DescribeClusterRequest& request, const DescribeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeClusterOutcomeCallable EnsClient::describeClusterCallable(const DescribeClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeClusterKubeConfigOutcome EnsClient::describeClusterKubeConfig(const DescribeClusterKubeConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClusterKubeConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClusterKubeConfigOutcome(DescribeClusterKubeConfigResult(outcome.result()));
+	else
+		return DescribeClusterKubeConfigOutcome(outcome.error());
+}
+
+void EnsClient::describeClusterKubeConfigAsync(const DescribeClusterKubeConfigRequest& request, const DescribeClusterKubeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeClusterKubeConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeClusterKubeConfigOutcomeCallable EnsClient::describeClusterKubeConfigCallable(const DescribeClusterKubeConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClusterKubeConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeClusterKubeConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeCreatePrePaidInstanceResultOutcome EnsClient::describeCreatePrePaidInstanceResult(const DescribeCreatePrePaidInstanceResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3327,6 +3471,42 @@ EnsClient::DescribeDeviceServiceOutcomeCallable EnsClient::describeDeviceService
 	return task->get_future();
 }
 
+EnsClient::DescribeDiskIopsListOutcome EnsClient::describeDiskIopsList(const DescribeDiskIopsListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDiskIopsListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDiskIopsListOutcome(DescribeDiskIopsListResult(outcome.result()));
+	else
+		return DescribeDiskIopsListOutcome(outcome.error());
+}
+
+void EnsClient::describeDiskIopsListAsync(const DescribeDiskIopsListRequest& request, const DescribeDiskIopsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDiskIopsList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeDiskIopsListOutcomeCallable EnsClient::describeDiskIopsListCallable(const DescribeDiskIopsListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDiskIopsListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDiskIopsList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeDisksOutcome EnsClient::describeDisks(const DescribeDisksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3357,42 +3537,6 @@ EnsClient::DescribeDisksOutcomeCallable EnsClient::describeDisksCallable(const D
 			[this, request]()
 			{
 			return this->describeDisks(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EnsClient::DescribeEipAddressesOutcome EnsClient::describeEipAddresses(const DescribeEipAddressesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeEipAddressesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeEipAddressesOutcome(DescribeEipAddressesResult(outcome.result()));
-	else
-		return DescribeEipAddressesOutcome(outcome.error());
-}
-
-void EnsClient::describeEipAddressesAsync(const DescribeEipAddressesRequest& request, const DescribeEipAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeEipAddresses(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::DescribeEipAddressesOutcomeCallable EnsClient::describeEipAddressesCallable(const DescribeEipAddressesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeEipAddressesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeEipAddresses(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4263,6 +4407,42 @@ EnsClient::DescribeForwardTableEntriesOutcomeCallable EnsClient::describeForward
 	return task->get_future();
 }
 
+EnsClient::DescribeHaVipsOutcome EnsClient::describeHaVips(const DescribeHaVipsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeHaVipsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeHaVipsOutcome(DescribeHaVipsResult(outcome.result()));
+	else
+		return DescribeHaVipsOutcome(outcome.error());
+}
+
+void EnsClient::describeHaVipsAsync(const DescribeHaVipsRequest& request, const DescribeHaVipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeHaVips(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeHaVipsOutcomeCallable EnsClient::describeHaVipsCallable(const DescribeHaVipsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeHaVipsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeHaVips(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeImageInfosOutcome EnsClient::describeImageInfos(const DescribeImageInfosRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4401,6 +4581,42 @@ EnsClient::DescribeInstanceAutoRenewAttributeOutcomeCallable EnsClient::describe
 			[this, request]()
 			{
 			return this->describeInstanceAutoRenewAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeInstanceBandwidthDetailOutcome EnsClient::describeInstanceBandwidthDetail(const DescribeInstanceBandwidthDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceBandwidthDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceBandwidthDetailOutcome(DescribeInstanceBandwidthDetailResult(outcome.result()));
+	else
+		return DescribeInstanceBandwidthDetailOutcome(outcome.error());
+}
+
+void EnsClient::describeInstanceBandwidthDetailAsync(const DescribeInstanceBandwidthDetailRequest& request, const DescribeInstanceBandwidthDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceBandwidthDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeInstanceBandwidthDetailOutcomeCallable EnsClient::describeInstanceBandwidthDetailCallable(const DescribeInstanceBandwidthDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceBandwidthDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceBandwidthDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4725,6 +4941,78 @@ EnsClient::DescribeLoadBalancerHTTPSListenerAttributeOutcomeCallable EnsClient::
 			[this, request]()
 			{
 			return this->describeLoadBalancerHTTPSListenerAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeLoadBalancerListenMonitorOutcome EnsClient::describeLoadBalancerListenMonitor(const DescribeLoadBalancerListenMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLoadBalancerListenMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLoadBalancerListenMonitorOutcome(DescribeLoadBalancerListenMonitorResult(outcome.result()));
+	else
+		return DescribeLoadBalancerListenMonitorOutcome(outcome.error());
+}
+
+void EnsClient::describeLoadBalancerListenMonitorAsync(const DescribeLoadBalancerListenMonitorRequest& request, const DescribeLoadBalancerListenMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLoadBalancerListenMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeLoadBalancerListenMonitorOutcomeCallable EnsClient::describeLoadBalancerListenMonitorCallable(const DescribeLoadBalancerListenMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerListenMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLoadBalancerListenMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeLoadBalancerListenersOutcome EnsClient::describeLoadBalancerListeners(const DescribeLoadBalancerListenersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLoadBalancerListenersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLoadBalancerListenersOutcome(DescribeLoadBalancerListenersResult(outcome.result()));
+	else
+		return DescribeLoadBalancerListenersOutcome(outcome.error());
+}
+
+void EnsClient::describeLoadBalancerListenersAsync(const DescribeLoadBalancerListenersRequest& request, const DescribeLoadBalancerListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLoadBalancerListeners(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeLoadBalancerListenersOutcomeCallable EnsClient::describeLoadBalancerListenersCallable(const DescribeLoadBalancerListenersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerListenersOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLoadBalancerListeners(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5487,6 +5775,42 @@ EnsClient::DescribeSDGsOutcomeCallable EnsClient::describeSDGsCallable(const Des
 	return task->get_future();
 }
 
+EnsClient::DescribeSecondaryPublicIpAddressesOutcome EnsClient::describeSecondaryPublicIpAddresses(const DescribeSecondaryPublicIpAddressesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSecondaryPublicIpAddressesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSecondaryPublicIpAddressesOutcome(DescribeSecondaryPublicIpAddressesResult(outcome.result()));
+	else
+		return DescribeSecondaryPublicIpAddressesOutcome(outcome.error());
+}
+
+void EnsClient::describeSecondaryPublicIpAddressesAsync(const DescribeSecondaryPublicIpAddressesRequest& request, const DescribeSecondaryPublicIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSecondaryPublicIpAddresses(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeSecondaryPublicIpAddressesOutcomeCallable EnsClient::describeSecondaryPublicIpAddressesCallable(const DescribeSecondaryPublicIpAddressesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSecondaryPublicIpAddressesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSecondaryPublicIpAddresses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeSecurityGroupAttributeOutcome EnsClient::describeSecurityGroupAttribute(const DescribeSecurityGroupAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5625,6 +5949,78 @@ EnsClient::DescribeServcieScheduleOutcomeCallable EnsClient::describeServcieSche
 			[this, request]()
 			{
 			return this->describeServcieSchedule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeServerLoadBalancerListenMonitorOutcome EnsClient::describeServerLoadBalancerListenMonitor(const DescribeServerLoadBalancerListenMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeServerLoadBalancerListenMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeServerLoadBalancerListenMonitorOutcome(DescribeServerLoadBalancerListenMonitorResult(outcome.result()));
+	else
+		return DescribeServerLoadBalancerListenMonitorOutcome(outcome.error());
+}
+
+void EnsClient::describeServerLoadBalancerListenMonitorAsync(const DescribeServerLoadBalancerListenMonitorRequest& request, const DescribeServerLoadBalancerListenMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeServerLoadBalancerListenMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeServerLoadBalancerListenMonitorOutcomeCallable EnsClient::describeServerLoadBalancerListenMonitorCallable(const DescribeServerLoadBalancerListenMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeServerLoadBalancerListenMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->describeServerLoadBalancerListenMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeServerLoadBalancerMonitorOutcome EnsClient::describeServerLoadBalancerMonitor(const DescribeServerLoadBalancerMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeServerLoadBalancerMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeServerLoadBalancerMonitorOutcome(DescribeServerLoadBalancerMonitorResult(outcome.result()));
+	else
+		return DescribeServerLoadBalancerMonitorOutcome(outcome.error());
+}
+
+void EnsClient::describeServerLoadBalancerMonitorAsync(const DescribeServerLoadBalancerMonitorRequest& request, const DescribeServerLoadBalancerMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeServerLoadBalancerMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeServerLoadBalancerMonitorOutcomeCallable EnsClient::describeServerLoadBalancerMonitorCallable(const DescribeServerLoadBalancerMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeServerLoadBalancerMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->describeServerLoadBalancerMonitor(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5913,6 +6309,42 @@ EnsClient::DetachDiskOutcomeCallable EnsClient::detachDiskCallable(const DetachD
 			[this, request]()
 			{
 			return this->detachDisk(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DetachNetworkInterfaceOutcome EnsClient::detachNetworkInterface(const DetachNetworkInterfaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetachNetworkInterfaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetachNetworkInterfaceOutcome(DetachNetworkInterfaceResult(outcome.result()));
+	else
+		return DetachNetworkInterfaceOutcome(outcome.error());
+}
+
+void EnsClient::detachNetworkInterfaceAsync(const DetachNetworkInterfaceRequest& request, const DetachNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detachNetworkInterface(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DetachNetworkInterfaceOutcomeCallable EnsClient::detachNetworkInterfaceCallable(const DetachNetworkInterfaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetachNetworkInterfaceOutcome()>>(
+			[this, request]()
+			{
+			return this->detachNetworkInterface(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6747,6 +7179,42 @@ EnsClient::ModifyForwardEntryOutcomeCallable EnsClient::modifyForwardEntryCallab
 	return task->get_future();
 }
 
+EnsClient::ModifyHaVipAttributeOutcome EnsClient::modifyHaVipAttribute(const ModifyHaVipAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyHaVipAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyHaVipAttributeOutcome(ModifyHaVipAttributeResult(outcome.result()));
+	else
+		return ModifyHaVipAttributeOutcome(outcome.error());
+}
+
+void EnsClient::modifyHaVipAttributeAsync(const ModifyHaVipAttributeRequest& request, const ModifyHaVipAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyHaVipAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ModifyHaVipAttributeOutcomeCallable EnsClient::modifyHaVipAttributeCallable(const ModifyHaVipAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyHaVipAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyHaVipAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::ModifyImageAttributeOutcome EnsClient::modifyImageAttribute(const ModifyImageAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6891,6 +7359,42 @@ EnsClient::ModifyInstanceAutoRenewAttributeOutcomeCallable EnsClient::modifyInst
 	return task->get_future();
 }
 
+EnsClient::ModifyInstanceBootConfigurationOutcome EnsClient::modifyInstanceBootConfiguration(const ModifyInstanceBootConfigurationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInstanceBootConfigurationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInstanceBootConfigurationOutcome(ModifyInstanceBootConfigurationResult(outcome.result()));
+	else
+		return ModifyInstanceBootConfigurationOutcome(outcome.error());
+}
+
+void EnsClient::modifyInstanceBootConfigurationAsync(const ModifyInstanceBootConfigurationRequest& request, const ModifyInstanceBootConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInstanceBootConfiguration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ModifyInstanceBootConfigurationOutcomeCallable EnsClient::modifyInstanceBootConfigurationCallable(const ModifyInstanceBootConfigurationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInstanceBootConfigurationOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInstanceBootConfiguration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::ModifyInstanceChargeTypeOutcome EnsClient::modifyInstanceChargeType(const ModifyInstanceChargeTypeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6993,6 +7497,42 @@ EnsClient::ModifyNetworkAttributeOutcomeCallable EnsClient::modifyNetworkAttribu
 			[this, request]()
 			{
 			return this->modifyNetworkAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::ModifyNetworkInterfaceAttributeOutcome EnsClient::modifyNetworkInterfaceAttribute(const ModifyNetworkInterfaceAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyNetworkInterfaceAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyNetworkInterfaceAttributeOutcome(ModifyNetworkInterfaceAttributeResult(outcome.result()));
+	else
+		return ModifyNetworkInterfaceAttributeOutcome(outcome.error());
+}
+
+void EnsClient::modifyNetworkInterfaceAttributeAsync(const ModifyNetworkInterfaceAttributeRequest& request, const ModifyNetworkInterfaceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyNetworkInterfaceAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ModifyNetworkInterfaceAttributeOutcomeCallable EnsClient::modifyNetworkInterfaceAttributeCallable(const ModifyNetworkInterfaceAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyNetworkInterfaceAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyNetworkInterfaceAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9225,6 +9765,42 @@ EnsClient::UnassignPrivateIpAddressesOutcomeCallable EnsClient::unassignPrivateI
 			[this, request]()
 			{
 			return this->unassignPrivateIpAddresses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::UnassociateHaVipOutcome EnsClient::unassociateHaVip(const UnassociateHaVipRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnassociateHaVipOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnassociateHaVipOutcome(UnassociateHaVipResult(outcome.result()));
+	else
+		return UnassociateHaVipOutcome(outcome.error());
+}
+
+void EnsClient::unassociateHaVipAsync(const UnassociateHaVipRequest& request, const UnassociateHaVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unassociateHaVip(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::UnassociateHaVipOutcomeCallable EnsClient::unassociateHaVipCallable(const UnassociateHaVipRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnassociateHaVipOutcome()>>(
+			[this, request]()
+			{
+			return this->unassociateHaVip(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

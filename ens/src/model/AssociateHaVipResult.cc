@@ -14,38 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ens/model/DescribeApplicationResourceSummaryResult.h>
+#include <alibabacloud/ens/model/AssociateHaVipResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ens;
 using namespace AlibabaCloud::Ens::Model;
 
-DescribeApplicationResourceSummaryResult::DescribeApplicationResourceSummaryResult() :
+AssociateHaVipResult::AssociateHaVipResult() :
 	ServiceResult()
 {}
 
-DescribeApplicationResourceSummaryResult::DescribeApplicationResourceSummaryResult(const std::string &payload) :
+AssociateHaVipResult::AssociateHaVipResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeApplicationResourceSummaryResult::~DescribeApplicationResourceSummaryResult()
+AssociateHaVipResult::~AssociateHaVipResult()
 {}
 
-void DescribeApplicationResourceSummaryResult::parse(const std::string &payload)
+void AssociateHaVipResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ApplicationResource"].isNull())
-		applicationResource_ = value["ApplicationResource"].asString();
 
-}
-
-std::string DescribeApplicationResourceSummaryResult::getApplicationResource()const
-{
-	return applicationResource_;
 }
 

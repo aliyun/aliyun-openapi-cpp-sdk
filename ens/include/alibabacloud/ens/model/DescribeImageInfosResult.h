@@ -34,6 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct Image
 				{
+					struct DiskDeviceMapping
+					{
+						std::string type;
+						std::string format;
+						std::string size;
+						std::string imageId;
+					};
+					std::vector<Image::DiskDeviceMapping> diskDeviceMappings;
 					std::string description;
 					std::string imageVersion;
 					std::string imageSize;

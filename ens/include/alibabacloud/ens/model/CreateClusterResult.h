@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBEAPPLICATIONRESOURCESUMMARYRESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBEAPPLICATIONRESOURCESUMMARYRESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_CREATECLUSTERRESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_CREATECLUSTERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT DescribeApplicationResourceSummaryResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT CreateClusterResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeApplicationResourceSummaryResult();
-				explicit DescribeApplicationResourceSummaryResult(const std::string &payload);
-				~DescribeApplicationResourceSummaryResult();
-				std::string getApplicationResource()const;
+				CreateClusterResult();
+				explicit CreateClusterResult(const std::string &payload);
+				~CreateClusterResult();
+				std::string getClusterId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string applicationResource_;
+				std::string clusterId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBEAPPLICATIONRESOURCESUMMARYRESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_CREATECLUSTERRESULT_H_

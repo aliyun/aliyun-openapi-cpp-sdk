@@ -110,6 +110,8 @@ public:
 	void setAutoReleaseTime(const std::string &autoReleaseTime);
 	std::string getIpType() const;
 	void setIpType(const std::string &ipType);
+	int getSpotDuration() const;
+	void setSpotDuration(int spotDuration);
 	std::vector<DataDisk> getDataDisk() const;
 	void setDataDisk(const std::vector<DataDisk> &dataDisk);
 	std::string getSchedulingStrategy() const;
@@ -151,6 +153,7 @@ private:
 	long amount_;
 	std::string autoReleaseTime_;
 	std::string ipType_;
+	int spotDuration_;
 	std::vector<DataDisk> dataDisk_;
 	std::string schedulingStrategy_;
 	std::string carrier_;

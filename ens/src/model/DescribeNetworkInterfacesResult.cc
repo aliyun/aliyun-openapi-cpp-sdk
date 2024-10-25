@@ -81,6 +81,14 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 				privateIpSetsObject.primary = valueNetworkInterfaceSetsNetworkInterfaceSetPrivateIpSetsPrivateIpSet["Primary"].asString() == "true";
 			networkInterfaceSetsObject.privateIpSets.push_back(privateIpSetsObject);
 		}
+		auto allIpv6SetsNode = valueNetworkInterfaceSetsNetworkInterfaceSet["Ipv6Sets"]["Ipv6Set"];
+		for (auto valueNetworkInterfaceSetsNetworkInterfaceSetIpv6SetsIpv6Set : allIpv6SetsNode)
+		{
+			NetworkInterfaceSet::Ipv6Set ipv6SetsObject;
+			if(!valueNetworkInterfaceSetsNetworkInterfaceSetIpv6SetsIpv6Set["Ipv6Address"].isNull())
+				ipv6SetsObject.ipv6Address = valueNetworkInterfaceSetsNetworkInterfaceSetIpv6SetsIpv6Set["Ipv6Address"].asString();
+			networkInterfaceSetsObject.ipv6Sets.push_back(ipv6SetsObject);
+		}
 		auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroup"];
 		for (auto value : allSecurityGroupIds)
 			networkInterfaceSetsObject.securityGroupIds.push_back(value.asString());

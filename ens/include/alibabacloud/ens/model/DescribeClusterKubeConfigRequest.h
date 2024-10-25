@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBEAPPLICATIONRESOURCESUMMARYREQUEST_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBEAPPLICATIONRESOURCESUMMARYREQUEST_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBECLUSTERKUBECONFIGREQUEST_H_
+#define ALIBABACLOUD_ENS_MODEL_DESCRIBECLUSTERKUBECONFIGREQUEST_H_
 
 #include <alibabacloud/ens/EnsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,17 @@
 namespace AlibabaCloud {
 namespace Ens {
 namespace Model {
-class ALIBABACLOUD_ENS_EXPORT DescribeApplicationResourceSummaryRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ENS_EXPORT DescribeClusterKubeConfigRequest : public RpcServiceRequest {
 public:
-	DescribeApplicationResourceSummaryRequest();
-	~DescribeApplicationResourceSummaryRequest();
-	std::string getLevel() const;
-	void setLevel(const std::string &level);
-	std::string getResourceType() const;
-	void setResourceType(const std::string &resourceType);
+	DescribeClusterKubeConfigRequest();
+	~DescribeClusterKubeConfigRequest();
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 
 private:
-	std::string level_;
-	std::string resourceType_;
+	std::string clusterId_;
 };
 } // namespace Model
 } // namespace Ens
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBEAPPLICATIONRESOURCESUMMARYREQUEST_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBECLUSTERKUBECONFIGREQUEST_H_

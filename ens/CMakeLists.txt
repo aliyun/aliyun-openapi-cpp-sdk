@@ -35,10 +35,14 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/AssignPrivateIpAddressesResult.h
 	include/alibabacloud/ens/model/AssociateEnsEipAddressRequest.h
 	include/alibabacloud/ens/model/AssociateEnsEipAddressResult.h
+	include/alibabacloud/ens/model/AssociateHaVipRequest.h
+	include/alibabacloud/ens/model/AssociateHaVipResult.h
 	include/alibabacloud/ens/model/AttachDiskRequest.h
 	include/alibabacloud/ens/model/AttachDiskResult.h
 	include/alibabacloud/ens/model/AttachEnsInstancesRequest.h
 	include/alibabacloud/ens/model/AttachEnsInstancesResult.h
+	include/alibabacloud/ens/model/AttachNetworkInterfaceRequest.h
+	include/alibabacloud/ens/model/AttachNetworkInterfaceResult.h
 	include/alibabacloud/ens/model/AuthorizeSecurityGroupRequest.h
 	include/alibabacloud/ens/model/AuthorizeSecurityGroupResult.h
 	include/alibabacloud/ens/model/AuthorizeSecurityGroupEgressRequest.h
@@ -55,6 +59,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/CreateApplicationResult.h
 	include/alibabacloud/ens/model/CreateClassicNetworkRequest.h
 	include/alibabacloud/ens/model/CreateClassicNetworkResult.h
+	include/alibabacloud/ens/model/CreateClusterRequest.h
+	include/alibabacloud/ens/model/CreateClusterResult.h
 	include/alibabacloud/ens/model/CreateDiskRequest.h
 	include/alibabacloud/ens/model/CreateDiskResult.h
 	include/alibabacloud/ens/model/CreateEipInstanceRequest.h
@@ -179,8 +185,6 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeARMServerInstancesResult.h
 	include/alibabacloud/ens/model/DescribeApplicationRequest.h
 	include/alibabacloud/ens/model/DescribeApplicationResult.h
-	include/alibabacloud/ens/model/DescribeApplicationResourceSummaryRequest.h
-	include/alibabacloud/ens/model/DescribeApplicationResourceSummaryResult.h
 	include/alibabacloud/ens/model/DescribeAvailableResourceRequest.h
 	include/alibabacloud/ens/model/DescribeAvailableResourceResult.h
 	include/alibabacloud/ens/model/DescribeAvailableResourceInfoRequest.h
@@ -193,6 +197,10 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeCloudDiskAvailableResourceInfoResult.h
 	include/alibabacloud/ens/model/DescribeCloudDiskTypesRequest.h
 	include/alibabacloud/ens/model/DescribeCloudDiskTypesResult.h
+	include/alibabacloud/ens/model/DescribeClusterRequest.h
+	include/alibabacloud/ens/model/DescribeClusterResult.h
+	include/alibabacloud/ens/model/DescribeClusterKubeConfigRequest.h
+	include/alibabacloud/ens/model/DescribeClusterKubeConfigResult.h
 	include/alibabacloud/ens/model/DescribeCreatePrePaidInstanceResultRequest.h
 	include/alibabacloud/ens/model/DescribeCreatePrePaidInstanceResultResult.h
 	include/alibabacloud/ens/model/DescribeDataDistResultRequest.h
@@ -203,10 +211,10 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeDataPushResultResult.h
 	include/alibabacloud/ens/model/DescribeDeviceServiceRequest.h
 	include/alibabacloud/ens/model/DescribeDeviceServiceResult.h
+	include/alibabacloud/ens/model/DescribeDiskIopsListRequest.h
+	include/alibabacloud/ens/model/DescribeDiskIopsListResult.h
 	include/alibabacloud/ens/model/DescribeDisksRequest.h
 	include/alibabacloud/ens/model/DescribeDisksResult.h
-	include/alibabacloud/ens/model/DescribeEipAddressesRequest.h
-	include/alibabacloud/ens/model/DescribeEipAddressesResult.h
 	include/alibabacloud/ens/model/DescribeElbAvailableResourceInfoRequest.h
 	include/alibabacloud/ens/model/DescribeElbAvailableResourceInfoResult.h
 	include/alibabacloud/ens/model/DescribeEnsCommodityCodeRequest.h
@@ -255,6 +263,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeFileSystemsResult.h
 	include/alibabacloud/ens/model/DescribeForwardTableEntriesRequest.h
 	include/alibabacloud/ens/model/DescribeForwardTableEntriesResult.h
+	include/alibabacloud/ens/model/DescribeHaVipsRequest.h
+	include/alibabacloud/ens/model/DescribeHaVipsResult.h
 	include/alibabacloud/ens/model/DescribeImageInfosRequest.h
 	include/alibabacloud/ens/model/DescribeImageInfosResult.h
 	include/alibabacloud/ens/model/DescribeImageSharePermissionRequest.h
@@ -263,6 +273,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeImagesResult.h
 	include/alibabacloud/ens/model/DescribeInstanceAutoRenewAttributeRequest.h
 	include/alibabacloud/ens/model/DescribeInstanceAutoRenewAttributeResult.h
+	include/alibabacloud/ens/model/DescribeInstanceBandwidthDetailRequest.h
+	include/alibabacloud/ens/model/DescribeInstanceBandwidthDetailResult.h
 	include/alibabacloud/ens/model/DescribeInstanceMonitorDataRequest.h
 	include/alibabacloud/ens/model/DescribeInstanceMonitorDataResult.h
 	include/alibabacloud/ens/model/DescribeInstanceSpecRequest.h
@@ -281,6 +293,10 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeLoadBalancerHTTPListenerAttributeResult.h
 	include/alibabacloud/ens/model/DescribeLoadBalancerHTTPSListenerAttributeRequest.h
 	include/alibabacloud/ens/model/DescribeLoadBalancerHTTPSListenerAttributeResult.h
+	include/alibabacloud/ens/model/DescribeLoadBalancerListenMonitorRequest.h
+	include/alibabacloud/ens/model/DescribeLoadBalancerListenMonitorResult.h
+	include/alibabacloud/ens/model/DescribeLoadBalancerListenersRequest.h
+	include/alibabacloud/ens/model/DescribeLoadBalancerListenersResult.h
 	include/alibabacloud/ens/model/DescribeLoadBalancerSpecRequest.h
 	include/alibabacloud/ens/model/DescribeLoadBalancerSpecResult.h
 	include/alibabacloud/ens/model/DescribeLoadBalancerTCPListenerAttributeRequest.h
@@ -323,6 +339,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeSDGDeploymentStatusResult.h
 	include/alibabacloud/ens/model/DescribeSDGsRequest.h
 	include/alibabacloud/ens/model/DescribeSDGsResult.h
+	include/alibabacloud/ens/model/DescribeSecondaryPublicIpAddressesRequest.h
+	include/alibabacloud/ens/model/DescribeSecondaryPublicIpAddressesResult.h
 	include/alibabacloud/ens/model/DescribeSecurityGroupAttributeRequest.h
 	include/alibabacloud/ens/model/DescribeSecurityGroupAttributeResult.h
 	include/alibabacloud/ens/model/DescribeSecurityGroupsRequest.h
@@ -331,6 +349,10 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeSelfImagesResult.h
 	include/alibabacloud/ens/model/DescribeServcieScheduleRequest.h
 	include/alibabacloud/ens/model/DescribeServcieScheduleResult.h
+	include/alibabacloud/ens/model/DescribeServerLoadBalancerListenMonitorRequest.h
+	include/alibabacloud/ens/model/DescribeServerLoadBalancerListenMonitorResult.h
+	include/alibabacloud/ens/model/DescribeServerLoadBalancerMonitorRequest.h
+	include/alibabacloud/ens/model/DescribeServerLoadBalancerMonitorResult.h
 	include/alibabacloud/ens/model/DescribeSnapshotsRequest.h
 	include/alibabacloud/ens/model/DescribeSnapshotsResult.h
 	include/alibabacloud/ens/model/DescribeSnatAttributeRequest.h
@@ -347,6 +369,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeVSwitchesResult.h
 	include/alibabacloud/ens/model/DetachDiskRequest.h
 	include/alibabacloud/ens/model/DetachDiskResult.h
+	include/alibabacloud/ens/model/DetachNetworkInterfaceRequest.h
+	include/alibabacloud/ens/model/DetachNetworkInterfaceResult.h
 	include/alibabacloud/ens/model/DistApplicationDataRequest.h
 	include/alibabacloud/ens/model/DistApplicationDataResult.h
 	include/alibabacloud/ens/model/ExportBillDetailDataRequest.h
@@ -393,6 +417,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/ModifyFileSystemResult.h
 	include/alibabacloud/ens/model/ModifyForwardEntryRequest.h
 	include/alibabacloud/ens/model/ModifyForwardEntryResult.h
+	include/alibabacloud/ens/model/ModifyHaVipAttributeRequest.h
+	include/alibabacloud/ens/model/ModifyHaVipAttributeResult.h
 	include/alibabacloud/ens/model/ModifyImageAttributeRequest.h
 	include/alibabacloud/ens/model/ModifyImageAttributeResult.h
 	include/alibabacloud/ens/model/ModifyImageSharePermissionRequest.h
@@ -401,12 +427,16 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/ModifyInstanceAttributeResult.h
 	include/alibabacloud/ens/model/ModifyInstanceAutoRenewAttributeRequest.h
 	include/alibabacloud/ens/model/ModifyInstanceAutoRenewAttributeResult.h
+	include/alibabacloud/ens/model/ModifyInstanceBootConfigurationRequest.h
+	include/alibabacloud/ens/model/ModifyInstanceBootConfigurationResult.h
 	include/alibabacloud/ens/model/ModifyInstanceChargeTypeRequest.h
 	include/alibabacloud/ens/model/ModifyInstanceChargeTypeResult.h
 	include/alibabacloud/ens/model/ModifyLoadBalancerAttributeRequest.h
 	include/alibabacloud/ens/model/ModifyLoadBalancerAttributeResult.h
 	include/alibabacloud/ens/model/ModifyNetworkAttributeRequest.h
 	include/alibabacloud/ens/model/ModifyNetworkAttributeResult.h
+	include/alibabacloud/ens/model/ModifyNetworkInterfaceAttributeRequest.h
+	include/alibabacloud/ens/model/ModifyNetworkInterfaceAttributeResult.h
 	include/alibabacloud/ens/model/ModifyPrepayInstanceSpecRequest.h
 	include/alibabacloud/ens/model/ModifyPrepayInstanceSpecResult.h
 	include/alibabacloud/ens/model/ModifySecurityGroupAttributeRequest.h
@@ -531,6 +561,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/UnAssociateEnsEipAddressResult.h
 	include/alibabacloud/ens/model/UnassignPrivateIpAddressesRequest.h
 	include/alibabacloud/ens/model/UnassignPrivateIpAddressesResult.h
+	include/alibabacloud/ens/model/UnassociateHaVipRequest.h
+	include/alibabacloud/ens/model/UnassociateHaVipResult.h
 	include/alibabacloud/ens/model/UnassociateNetworkAclRequest.h
 	include/alibabacloud/ens/model/UnassociateNetworkAclResult.h
 	include/alibabacloud/ens/model/UnloadRegionSDGRequest.h
@@ -560,10 +592,14 @@ set(ens_src
 	src/model/AssignPrivateIpAddressesResult.cc
 	src/model/AssociateEnsEipAddressRequest.cc
 	src/model/AssociateEnsEipAddressResult.cc
+	src/model/AssociateHaVipRequest.cc
+	src/model/AssociateHaVipResult.cc
 	src/model/AttachDiskRequest.cc
 	src/model/AttachDiskResult.cc
 	src/model/AttachEnsInstancesRequest.cc
 	src/model/AttachEnsInstancesResult.cc
+	src/model/AttachNetworkInterfaceRequest.cc
+	src/model/AttachNetworkInterfaceResult.cc
 	src/model/AuthorizeSecurityGroupRequest.cc
 	src/model/AuthorizeSecurityGroupResult.cc
 	src/model/AuthorizeSecurityGroupEgressRequest.cc
@@ -580,6 +616,8 @@ set(ens_src
 	src/model/CreateApplicationResult.cc
 	src/model/CreateClassicNetworkRequest.cc
 	src/model/CreateClassicNetworkResult.cc
+	src/model/CreateClusterRequest.cc
+	src/model/CreateClusterResult.cc
 	src/model/CreateDiskRequest.cc
 	src/model/CreateDiskResult.cc
 	src/model/CreateEipInstanceRequest.cc
@@ -704,8 +742,6 @@ set(ens_src
 	src/model/DescribeARMServerInstancesResult.cc
 	src/model/DescribeApplicationRequest.cc
 	src/model/DescribeApplicationResult.cc
-	src/model/DescribeApplicationResourceSummaryRequest.cc
-	src/model/DescribeApplicationResourceSummaryResult.cc
 	src/model/DescribeAvailableResourceRequest.cc
 	src/model/DescribeAvailableResourceResult.cc
 	src/model/DescribeAvailableResourceInfoRequest.cc
@@ -718,6 +754,10 @@ set(ens_src
 	src/model/DescribeCloudDiskAvailableResourceInfoResult.cc
 	src/model/DescribeCloudDiskTypesRequest.cc
 	src/model/DescribeCloudDiskTypesResult.cc
+	src/model/DescribeClusterRequest.cc
+	src/model/DescribeClusterResult.cc
+	src/model/DescribeClusterKubeConfigRequest.cc
+	src/model/DescribeClusterKubeConfigResult.cc
 	src/model/DescribeCreatePrePaidInstanceResultRequest.cc
 	src/model/DescribeCreatePrePaidInstanceResultResult.cc
 	src/model/DescribeDataDistResultRequest.cc
@@ -728,10 +768,10 @@ set(ens_src
 	src/model/DescribeDataPushResultResult.cc
 	src/model/DescribeDeviceServiceRequest.cc
 	src/model/DescribeDeviceServiceResult.cc
+	src/model/DescribeDiskIopsListRequest.cc
+	src/model/DescribeDiskIopsListResult.cc
 	src/model/DescribeDisksRequest.cc
 	src/model/DescribeDisksResult.cc
-	src/model/DescribeEipAddressesRequest.cc
-	src/model/DescribeEipAddressesResult.cc
 	src/model/DescribeElbAvailableResourceInfoRequest.cc
 	src/model/DescribeElbAvailableResourceInfoResult.cc
 	src/model/DescribeEnsCommodityCodeRequest.cc
@@ -780,6 +820,8 @@ set(ens_src
 	src/model/DescribeFileSystemsResult.cc
 	src/model/DescribeForwardTableEntriesRequest.cc
 	src/model/DescribeForwardTableEntriesResult.cc
+	src/model/DescribeHaVipsRequest.cc
+	src/model/DescribeHaVipsResult.cc
 	src/model/DescribeImageInfosRequest.cc
 	src/model/DescribeImageInfosResult.cc
 	src/model/DescribeImageSharePermissionRequest.cc
@@ -788,6 +830,8 @@ set(ens_src
 	src/model/DescribeImagesResult.cc
 	src/model/DescribeInstanceAutoRenewAttributeRequest.cc
 	src/model/DescribeInstanceAutoRenewAttributeResult.cc
+	src/model/DescribeInstanceBandwidthDetailRequest.cc
+	src/model/DescribeInstanceBandwidthDetailResult.cc
 	src/model/DescribeInstanceMonitorDataRequest.cc
 	src/model/DescribeInstanceMonitorDataResult.cc
 	src/model/DescribeInstanceSpecRequest.cc
@@ -806,6 +850,10 @@ set(ens_src
 	src/model/DescribeLoadBalancerHTTPListenerAttributeResult.cc
 	src/model/DescribeLoadBalancerHTTPSListenerAttributeRequest.cc
 	src/model/DescribeLoadBalancerHTTPSListenerAttributeResult.cc
+	src/model/DescribeLoadBalancerListenMonitorRequest.cc
+	src/model/DescribeLoadBalancerListenMonitorResult.cc
+	src/model/DescribeLoadBalancerListenersRequest.cc
+	src/model/DescribeLoadBalancerListenersResult.cc
 	src/model/DescribeLoadBalancerSpecRequest.cc
 	src/model/DescribeLoadBalancerSpecResult.cc
 	src/model/DescribeLoadBalancerTCPListenerAttributeRequest.cc
@@ -848,6 +896,8 @@ set(ens_src
 	src/model/DescribeSDGDeploymentStatusResult.cc
 	src/model/DescribeSDGsRequest.cc
 	src/model/DescribeSDGsResult.cc
+	src/model/DescribeSecondaryPublicIpAddressesRequest.cc
+	src/model/DescribeSecondaryPublicIpAddressesResult.cc
 	src/model/DescribeSecurityGroupAttributeRequest.cc
 	src/model/DescribeSecurityGroupAttributeResult.cc
 	src/model/DescribeSecurityGroupsRequest.cc
@@ -856,6 +906,10 @@ set(ens_src
 	src/model/DescribeSelfImagesResult.cc
 	src/model/DescribeServcieScheduleRequest.cc
 	src/model/DescribeServcieScheduleResult.cc
+	src/model/DescribeServerLoadBalancerListenMonitorRequest.cc
+	src/model/DescribeServerLoadBalancerListenMonitorResult.cc
+	src/model/DescribeServerLoadBalancerMonitorRequest.cc
+	src/model/DescribeServerLoadBalancerMonitorResult.cc
 	src/model/DescribeSnapshotsRequest.cc
 	src/model/DescribeSnapshotsResult.cc
 	src/model/DescribeSnatAttributeRequest.cc
@@ -872,6 +926,8 @@ set(ens_src
 	src/model/DescribeVSwitchesResult.cc
 	src/model/DetachDiskRequest.cc
 	src/model/DetachDiskResult.cc
+	src/model/DetachNetworkInterfaceRequest.cc
+	src/model/DetachNetworkInterfaceResult.cc
 	src/model/DistApplicationDataRequest.cc
 	src/model/DistApplicationDataResult.cc
 	src/model/ExportBillDetailDataRequest.cc
@@ -918,6 +974,8 @@ set(ens_src
 	src/model/ModifyFileSystemResult.cc
 	src/model/ModifyForwardEntryRequest.cc
 	src/model/ModifyForwardEntryResult.cc
+	src/model/ModifyHaVipAttributeRequest.cc
+	src/model/ModifyHaVipAttributeResult.cc
 	src/model/ModifyImageAttributeRequest.cc
 	src/model/ModifyImageAttributeResult.cc
 	src/model/ModifyImageSharePermissionRequest.cc
@@ -926,12 +984,16 @@ set(ens_src
 	src/model/ModifyInstanceAttributeResult.cc
 	src/model/ModifyInstanceAutoRenewAttributeRequest.cc
 	src/model/ModifyInstanceAutoRenewAttributeResult.cc
+	src/model/ModifyInstanceBootConfigurationRequest.cc
+	src/model/ModifyInstanceBootConfigurationResult.cc
 	src/model/ModifyInstanceChargeTypeRequest.cc
 	src/model/ModifyInstanceChargeTypeResult.cc
 	src/model/ModifyLoadBalancerAttributeRequest.cc
 	src/model/ModifyLoadBalancerAttributeResult.cc
 	src/model/ModifyNetworkAttributeRequest.cc
 	src/model/ModifyNetworkAttributeResult.cc
+	src/model/ModifyNetworkInterfaceAttributeRequest.cc
+	src/model/ModifyNetworkInterfaceAttributeResult.cc
 	src/model/ModifyPrepayInstanceSpecRequest.cc
 	src/model/ModifyPrepayInstanceSpecResult.cc
 	src/model/ModifySecurityGroupAttributeRequest.cc
@@ -1056,6 +1118,8 @@ set(ens_src
 	src/model/UnAssociateEnsEipAddressResult.cc
 	src/model/UnassignPrivateIpAddressesRequest.cc
 	src/model/UnassignPrivateIpAddressesResult.cc
+	src/model/UnassociateHaVipRequest.cc
+	src/model/UnassociateHaVipResult.cc
 	src/model/UnassociateNetworkAclRequest.cc
 	src/model/UnassociateNetworkAclResult.cc
 	src/model/UnloadRegionSDGRequest.cc

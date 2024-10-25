@@ -28,12 +28,18 @@ namespace Ens {
 namespace Model {
 class ALIBABACLOUD_ENS_EXPORT CreateNatGatewayRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateNatGatewayRequest();
 	~CreateNatGatewayRequest();
 	std::string getEnsRegionId() const;
 	void setEnsRegionId(const std::string &ensRegionId);
 	std::string getInstanceType() const;
 	void setInstanceType(const std::string &instanceType);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getName() const;
@@ -44,6 +50,7 @@ public:
 private:
 	std::string ensRegionId_;
 	std::string instanceType_;
+	std::vector<Tag> tag_;
 	std::string vSwitchId_;
 	std::string name_;
 	std::string networkId_;

@@ -81,6 +81,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.autoReleaseTime = valueInstancesInstance["AutoReleaseTime"].asString();
 		if(!valueInstancesInstance["SpotStrategy"].isNull())
 			instancesObject.spotStrategy = valueInstancesInstance["SpotStrategy"].asString();
+		if(!valueInstancesInstance["KeyPairName"].isNull())
+			instancesObject.keyPairName = valueInstancesInstance["KeyPairName"].asString();
 		auto allDataDiskNode = valueInstancesInstance["DataDisk"]["DataDiskItem"];
 		for (auto valueInstancesInstanceDataDiskDataDiskItem : allDataDiskNode)
 		{
@@ -144,6 +146,38 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			if(!valueInstancesInstanceTagsTagsItem["TagKey"].isNull())
 				tagsObject.tagKey = valueInstancesInstanceTagsTagsItem["TagKey"].asString();
 			instancesObject.tags.push_back(tagsObject);
+		}
+		auto allNetworkInterfacesNode = valueInstancesInstance["NetworkInterfaces"]["NetworkInterfacesItem"];
+		for (auto valueInstancesInstanceNetworkInterfacesNetworkInterfacesItem : allNetworkInterfacesNode)
+		{
+			Instance::NetworkInterfacesItem networkInterfacesObject;
+			if(!valueInstancesInstanceNetworkInterfacesNetworkInterfacesItem["Type"].isNull())
+				networkInterfacesObject.type = valueInstancesInstanceNetworkInterfacesNetworkInterfacesItem["Type"].asString();
+			if(!valueInstancesInstanceNetworkInterfacesNetworkInterfacesItem["MacAddress"].isNull())
+				networkInterfacesObject.macAddress = valueInstancesInstanceNetworkInterfacesNetworkInterfacesItem["MacAddress"].asString();
+			if(!valueInstancesInstanceNetworkInterfacesNetworkInterfacesItem["PrimaryIpAddress"].isNull())
+				networkInterfacesObject.primaryIpAddress = valueInstancesInstanceNetworkInterfacesNetworkInterfacesItem["PrimaryIpAddress"].asString();
+			if(!valueInstancesInstanceNetworkInterfacesNetworkInterfacesItem["NetworkInterfaceId"].isNull())
+				networkInterfacesObject.networkInterfaceId = valueInstancesInstanceNetworkInterfacesNetworkInterfacesItem["NetworkInterfaceId"].asString();
+			auto allPrivateIpSetsNode = valueInstancesInstanceNetworkInterfacesNetworkInterfacesItem["PrivateIpSets"]["PrivateIpSet"];
+			for (auto valueInstancesInstanceNetworkInterfacesNetworkInterfacesItemPrivateIpSetsPrivateIpSet : allPrivateIpSetsNode)
+			{
+				Instance::NetworkInterfacesItem::PrivateIpSet privateIpSetsObject;
+				if(!valueInstancesInstanceNetworkInterfacesNetworkInterfacesItemPrivateIpSetsPrivateIpSet["PrivateIpAddress"].isNull())
+					privateIpSetsObject.privateIpAddress = valueInstancesInstanceNetworkInterfacesNetworkInterfacesItemPrivateIpSetsPrivateIpSet["PrivateIpAddress"].asString();
+				if(!valueInstancesInstanceNetworkInterfacesNetworkInterfacesItemPrivateIpSetsPrivateIpSet["Primary"].isNull())
+					privateIpSetsObject.primary = valueInstancesInstanceNetworkInterfacesNetworkInterfacesItemPrivateIpSetsPrivateIpSet["Primary"].asString() == "true";
+				networkInterfacesObject.privateIpSets.push_back(privateIpSetsObject);
+			}
+			auto allIpv6SetsNode = valueInstancesInstanceNetworkInterfacesNetworkInterfacesItem["Ipv6Sets"]["Ipv6Set"];
+			for (auto valueInstancesInstanceNetworkInterfacesNetworkInterfacesItemIpv6SetsIpv6Set : allIpv6SetsNode)
+			{
+				Instance::NetworkInterfacesItem::Ipv6Set ipv6SetsObject;
+				if(!valueInstancesInstanceNetworkInterfacesNetworkInterfacesItemIpv6SetsIpv6Set["Ipv6Address"].isNull())
+					ipv6SetsObject.ipv6Address = valueInstancesInstanceNetworkInterfacesNetworkInterfacesItemIpv6SetsIpv6Set["Ipv6Address"].asString();
+				networkInterfacesObject.ipv6Sets.push_back(ipv6SetsObject);
+			}
+			instancesObject.networkInterfaces.push_back(networkInterfacesObject);
 		}
 		auto systemDiskNode = value["SystemDisk"];
 		if(!systemDiskNode["device_type"].isNull())

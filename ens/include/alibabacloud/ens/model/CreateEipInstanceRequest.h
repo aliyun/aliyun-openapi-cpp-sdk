@@ -28,12 +28,18 @@ namespace Ens {
 namespace Model {
 class ALIBABACLOUD_ENS_EXPORT CreateEipInstanceRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateEipInstanceRequest();
 	~CreateEipInstanceRequest();
 	std::string getIsp() const;
 	void setIsp(const std::string &isp);
 	std::string getEnsRegionId() const;
 	void setEnsRegionId(const std::string &ensRegionId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getInternetChargeType() const;
 	void setInternetChargeType(const std::string &internetChargeType);
 	std::string getName() const;
@@ -48,6 +54,7 @@ public:
 private:
 	std::string isp_;
 	std::string ensRegionId_;
+	std::vector<Tag> tag_;
 	std::string internetChargeType_;
 	std::string name_;
 	std::string description_;

@@ -43,6 +43,20 @@ void CreateVSwitchRequest::setEnsRegionId(const std::string &ensRegionId) {
   setParameter(std::string("EnsRegionId"), ensRegionId);
 }
 
+std::vector<CreateVSwitchRequest::Tag> CreateVSwitchRequest::getTag() const {
+  return tag_;
+}
+
+void CreateVSwitchRequest::setTag(const std::vector<CreateVSwitchRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 std::string CreateVSwitchRequest::getVSwitchName() const {
   return vSwitchName_;
 }

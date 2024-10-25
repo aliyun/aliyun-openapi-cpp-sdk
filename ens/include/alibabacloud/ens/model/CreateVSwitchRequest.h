@@ -28,12 +28,18 @@ namespace Ens {
 namespace Model {
 class ALIBABACLOUD_ENS_EXPORT CreateVSwitchRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateVSwitchRequest();
 	~CreateVSwitchRequest();
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	std::string getEnsRegionId() const;
 	void setEnsRegionId(const std::string &ensRegionId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getVSwitchName() const;
 	void setVSwitchName(const std::string &vSwitchName);
 	std::string getCidrBlock() const;
@@ -44,6 +50,7 @@ public:
 private:
 	std::string description_;
 	std::string ensRegionId_;
+	std::vector<Tag> tag_;
 	std::string vSwitchName_;
 	std::string cidrBlock_;
 	std::string networkId_;

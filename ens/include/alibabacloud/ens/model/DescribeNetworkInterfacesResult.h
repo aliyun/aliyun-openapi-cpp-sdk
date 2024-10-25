@@ -39,6 +39,10 @@ namespace AlibabaCloud
 						std::string privateIpAddress;
 						bool primary;
 					};
+					struct Ipv6Set
+					{
+						std::string ipv6Address;
+					};
 					std::string status;
 					std::string description;
 					std::string instanceId;
@@ -52,6 +56,7 @@ namespace AlibabaCloud
 					std::vector<std::string> securityGroupIds;
 					std::string instanceName;
 					std::string type;
+					std::vector<NetworkInterfaceSet::Ipv6Set> ipv6Sets;
 					std::string creationTime;
 					std::string ensRegionId;
 					std::vector<NetworkInterfaceSet::PrivateIpSet> privateIpSets;

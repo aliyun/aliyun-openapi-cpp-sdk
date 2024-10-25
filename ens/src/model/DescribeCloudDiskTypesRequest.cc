@@ -34,3 +34,14 @@ void DescribeCloudDiskTypesRequest::setEnsRegionId(const std::string &ensRegionI
   setParameter(std::string("EnsRegionId"), ensRegionId);
 }
 
+std::vector<DescribeCloudDiskTypesRequest::std::string> DescribeCloudDiskTypesRequest::getEnsRegionIds() const {
+  return ensRegionIds_;
+}
+
+void DescribeCloudDiskTypesRequest::setEnsRegionIds(const std::vector<DescribeCloudDiskTypesRequest::std::string> &ensRegionIds) {
+  ensRegionIds_ = ensRegionIds;
+  for(int dep1 = 0; dep1 != ensRegionIds.size(); dep1++) {
+    setParameter(std::string("EnsRegionIds") + "." + std::to_string(dep1 + 1), ensRegionIds[dep1]);
+  }
+}
+

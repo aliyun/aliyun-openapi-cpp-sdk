@@ -42,6 +42,8 @@ public:
 	void setInstanceId(const std::string &instanceId);
 	std::string getNetworkId() const;
 	void setNetworkId(const std::string &networkId);
+	std::vector<std::string> getIpv6Address() const;
+	void setIpv6Address(const std::vector<std::string> &ipv6Address);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
 	std::string getSecurityGroupId() const;
@@ -64,6 +66,7 @@ private:
 	std::string vSwitchId_;
 	std::string instanceId_;
 	std::string networkId_;
+	std::vector<std::string> ipv6Address_;
 	std::string status_;
 	std::string securityGroupId_;
 	std::string pageNumber_;

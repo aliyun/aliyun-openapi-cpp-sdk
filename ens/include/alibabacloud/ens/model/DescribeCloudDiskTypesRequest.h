@@ -32,9 +32,12 @@ public:
 	~DescribeCloudDiskTypesRequest();
 	std::string getEnsRegionId() const;
 	void setEnsRegionId(const std::string &ensRegionId);
+	std::vector<std::string> getEnsRegionIds() const;
+	void setEnsRegionIds(const std::vector<std::string> &ensRegionIds);
 
 private:
 	std::string ensRegionId_;
+	std::vector<std::string> ensRegionIds_;
 };
 } // namespace Model
 } // namespace Ens

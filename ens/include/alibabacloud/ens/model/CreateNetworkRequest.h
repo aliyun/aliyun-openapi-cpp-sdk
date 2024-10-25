@@ -28,6 +28,10 @@ namespace Ens {
 namespace Model {
 class ALIBABACLOUD_ENS_EXPORT CreateNetworkRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateNetworkRequest();
 	~CreateNetworkRequest();
 	std::string getDescription() const;
@@ -36,6 +40,8 @@ public:
 	void setEnsRegionId(const std::string &ensRegionId);
 	std::string getNetworkName() const;
 	void setNetworkName(const std::string &networkName);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getCidrBlock() const;
 	void setCidrBlock(const std::string &cidrBlock);
 
@@ -43,6 +49,7 @@ private:
 	std::string description_;
 	std::string ensRegionId_;
 	std::string networkName_;
+	std::vector<Tag> tag_;
 	std::string cidrBlock_;
 };
 } // namespace Model

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBEEIPADDRESSESRESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBEEIPADDRESSESRESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_MODIFYHAVIPATTRIBUTERESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_MODIFYHAVIPATTRIBUTERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,28 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT DescribeEipAddressesResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT ModifyHaVipAttributeResult : public ServiceResult
 			{
 			public:
-				struct EipAddress
-				{
-					std::string instanceIdInternetIp;
-					std::string eip;
-				};
 
 
-				DescribeEipAddressesResult();
-				explicit DescribeEipAddressesResult(const std::string &payload);
-				~DescribeEipAddressesResult();
-				std::vector<EipAddress> getEipAddresses()const;
+				ModifyHaVipAttributeResult();
+				explicit ModifyHaVipAttributeResult(const std::string &payload);
+				~ModifyHaVipAttributeResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<EipAddress> eipAddresses_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBEEIPADDRESSESRESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_MODIFYHAVIPATTRIBUTERESULT_H_

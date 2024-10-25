@@ -28,12 +28,18 @@ namespace Ens {
 namespace Model {
 class ALIBABACLOUD_ENS_EXPORT CreateDiskRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateDiskRequest();
 	~CreateDiskRequest();
 	std::string getDiskName() const;
 	void setDiskName(const std::string &diskName);
 	std::string getEnsRegionId() const;
 	void setEnsRegionId(const std::string &ensRegionId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getSize() const;
 	void setSize(const std::string &size);
 	std::string getSnapshotId() const;
@@ -50,6 +56,7 @@ public:
 private:
 	std::string diskName_;
 	std::string ensRegionId_;
+	std::vector<Tag> tag_;
 	std::string size_;
 	std::string snapshotId_;
 	std::string instanceChargeType_;
