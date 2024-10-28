@@ -52,6 +52,15 @@ void ModifyFilesetRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
+bool ModifyFilesetRequest::getDeletionProtection() const {
+  return deletionProtection_;
+}
+
+void ModifyFilesetRequest::setDeletionProtection(bool deletionProtection) {
+  deletionProtection_ = deletionProtection;
+  setParameter(std::string("DeletionProtection"), deletionProtection ? "true" : "false");
+}
+
 std::string ModifyFilesetRequest::getFileSystemId() const {
   return fileSystemId_;
 }

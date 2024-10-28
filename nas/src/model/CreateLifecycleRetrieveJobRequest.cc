@@ -25,6 +25,15 @@ CreateLifecycleRetrieveJobRequest::CreateLifecycleRetrieveJobRequest()
 
 CreateLifecycleRetrieveJobRequest::~CreateLifecycleRetrieveJobRequest() {}
 
+std::string CreateLifecycleRetrieveJobRequest::getStorageType() const {
+  return storageType_;
+}
+
+void CreateLifecycleRetrieveJobRequest::setStorageType(const std::string &storageType) {
+  storageType_ = storageType;
+  setParameter(std::string("StorageType"), storageType);
+}
+
 std::string CreateLifecycleRetrieveJobRequest::getFileSystemId() const {
   return fileSystemId_;
 }

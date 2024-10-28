@@ -30,12 +30,15 @@ class ALIBABACLOUD_NAS_EXPORT CreateLifecycleRetrieveJobRequest : public RpcServ
 public:
 	CreateLifecycleRetrieveJobRequest();
 	~CreateLifecycleRetrieveJobRequest();
+	std::string getStorageType() const;
+	void setStorageType(const std::string &storageType);
 	std::string getFileSystemId() const;
 	void setFileSystemId(const std::string &fileSystemId);
 	std::vector<std::string> getPaths() const;
 	void setPaths(const std::vector<std::string> &paths);
 
 private:
+	std::string storageType_;
 	std::string fileSystemId_;
 	std::vector<std::string> paths_;
 };

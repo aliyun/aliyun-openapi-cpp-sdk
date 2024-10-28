@@ -43,6 +43,25 @@ void CreateFilesetRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
+bool CreateFilesetRequest::getDeletionProtection() const {
+  return deletionProtection_;
+}
+
+void CreateFilesetRequest::setDeletionProtection(bool deletionProtection) {
+  deletionProtection_ = deletionProtection;
+  setParameter(std::string("DeletionProtection"), deletionProtection ? "true" : "false");
+}
+
+CreateFilesetRequest::Quota CreateFilesetRequest::getQuota() const {
+  return quota_;
+}
+
+void CreateFilesetRequest::setQuota(const CreateFilesetRequest::Quota &quota) {
+  quota_ = quota;
+  setParameter(std::string("Quota") + ".SizeLimit", std::to_string(quota.sizeLimit));
+  setParameter(std::string("Quota") + ".FileCountLimit", std::to_string(quota.fileCountLimit));
+}
+
 std::string CreateFilesetRequest::getFileSystemId() const {
   return fileSystemId_;
 }

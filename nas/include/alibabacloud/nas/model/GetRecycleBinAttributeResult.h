@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					long reservedDays;
+					long archiveSize;
 					long size;
 					long secondarySize;
 					std::string enableTime;

@@ -33,24 +33,36 @@ set(nas_public_header_model
 	include/alibabacloud/nas/model/CancelAutoSnapshotPolicyResult.h
 	include/alibabacloud/nas/model/CancelDataFlowAutoRefreshRequest.h
 	include/alibabacloud/nas/model/CancelDataFlowAutoRefreshResult.h
+	include/alibabacloud/nas/model/CancelDataFlowSubTaskRequest.h
+	include/alibabacloud/nas/model/CancelDataFlowSubTaskResult.h
 	include/alibabacloud/nas/model/CancelDataFlowTaskRequest.h
 	include/alibabacloud/nas/model/CancelDataFlowTaskResult.h
 	include/alibabacloud/nas/model/CancelDirQuotaRequest.h
 	include/alibabacloud/nas/model/CancelDirQuotaResult.h
+	include/alibabacloud/nas/model/CancelFilesetQuotaRequest.h
+	include/alibabacloud/nas/model/CancelFilesetQuotaResult.h
 	include/alibabacloud/nas/model/CancelLifecycleRetrieveJobRequest.h
 	include/alibabacloud/nas/model/CancelLifecycleRetrieveJobResult.h
 	include/alibabacloud/nas/model/CancelRecycleBinJobRequest.h
 	include/alibabacloud/nas/model/CancelRecycleBinJobResult.h
+	include/alibabacloud/nas/model/ChangeResourceGroupRequest.h
+	include/alibabacloud/nas/model/ChangeResourceGroupResult.h
 	include/alibabacloud/nas/model/CreateAccessGroupRequest.h
 	include/alibabacloud/nas/model/CreateAccessGroupResult.h
+	include/alibabacloud/nas/model/CreateAccessPointRequest.h
+	include/alibabacloud/nas/model/CreateAccessPointResult.h
 	include/alibabacloud/nas/model/CreateAccessRuleRequest.h
 	include/alibabacloud/nas/model/CreateAccessRuleResult.h
 	include/alibabacloud/nas/model/CreateAutoSnapshotPolicyRequest.h
 	include/alibabacloud/nas/model/CreateAutoSnapshotPolicyResult.h
 	include/alibabacloud/nas/model/CreateDataFlowRequest.h
 	include/alibabacloud/nas/model/CreateDataFlowResult.h
+	include/alibabacloud/nas/model/CreateDataFlowSubTaskRequest.h
+	include/alibabacloud/nas/model/CreateDataFlowSubTaskResult.h
 	include/alibabacloud/nas/model/CreateDataFlowTaskRequest.h
 	include/alibabacloud/nas/model/CreateDataFlowTaskResult.h
+	include/alibabacloud/nas/model/CreateDirRequest.h
+	include/alibabacloud/nas/model/CreateDirResult.h
 	include/alibabacloud/nas/model/CreateFileRequest.h
 	include/alibabacloud/nas/model/CreateFileResult.h
 	include/alibabacloud/nas/model/CreateFileSystemRequest.h
@@ -63,6 +75,8 @@ set(nas_public_header_model
 	include/alibabacloud/nas/model/CreateLifecyclePolicyResult.h
 	include/alibabacloud/nas/model/CreateLifecycleRetrieveJobRequest.h
 	include/alibabacloud/nas/model/CreateLifecycleRetrieveJobResult.h
+	include/alibabacloud/nas/model/CreateLogAnalysisRequest.h
+	include/alibabacloud/nas/model/CreateLogAnalysisResult.h
 	include/alibabacloud/nas/model/CreateMountTargetRequest.h
 	include/alibabacloud/nas/model/CreateMountTargetResult.h
 	include/alibabacloud/nas/model/CreateProtocolMountTargetRequest.h
@@ -77,6 +91,8 @@ set(nas_public_header_model
 	include/alibabacloud/nas/model/CreateSnapshotResult.h
 	include/alibabacloud/nas/model/DeleteAccessGroupRequest.h
 	include/alibabacloud/nas/model/DeleteAccessGroupResult.h
+	include/alibabacloud/nas/model/DeleteAccessPointRequest.h
+	include/alibabacloud/nas/model/DeleteAccessPointResult.h
 	include/alibabacloud/nas/model/DeleteAccessRuleRequest.h
 	include/alibabacloud/nas/model/DeleteAccessRuleResult.h
 	include/alibabacloud/nas/model/DeleteAutoSnapshotPolicyRequest.h
@@ -91,6 +107,8 @@ set(nas_public_header_model
 	include/alibabacloud/nas/model/DeleteLDAPConfigResult.h
 	include/alibabacloud/nas/model/DeleteLifecyclePolicyRequest.h
 	include/alibabacloud/nas/model/DeleteLifecyclePolicyResult.h
+	include/alibabacloud/nas/model/DeleteLogAnalysisRequest.h
+	include/alibabacloud/nas/model/DeleteLogAnalysisResult.h
 	include/alibabacloud/nas/model/DeleteMountTargetRequest.h
 	include/alibabacloud/nas/model/DeleteMountTargetResult.h
 	include/alibabacloud/nas/model/DeleteProtocolMountTargetRequest.h
@@ -101,6 +119,10 @@ set(nas_public_header_model
 	include/alibabacloud/nas/model/DeleteSnapshotResult.h
 	include/alibabacloud/nas/model/DescribeAccessGroupsRequest.h
 	include/alibabacloud/nas/model/DescribeAccessGroupsResult.h
+	include/alibabacloud/nas/model/DescribeAccessPointRequest.h
+	include/alibabacloud/nas/model/DescribeAccessPointResult.h
+	include/alibabacloud/nas/model/DescribeAccessPointsRequest.h
+	include/alibabacloud/nas/model/DescribeAccessPointsResult.h
 	include/alibabacloud/nas/model/DescribeAccessRulesRequest.h
 	include/alibabacloud/nas/model/DescribeAccessRulesResult.h
 	include/alibabacloud/nas/model/DescribeAutoSnapshotPoliciesRequest.h
@@ -109,6 +131,8 @@ set(nas_public_header_model
 	include/alibabacloud/nas/model/DescribeAutoSnapshotTasksResult.h
 	include/alibabacloud/nas/model/DescribeBlackListClientsRequest.h
 	include/alibabacloud/nas/model/DescribeBlackListClientsResult.h
+	include/alibabacloud/nas/model/DescribeDataFlowSubTasksRequest.h
+	include/alibabacloud/nas/model/DescribeDataFlowSubTasksResult.h
 	include/alibabacloud/nas/model/DescribeDataFlowTasksRequest.h
 	include/alibabacloud/nas/model/DescribeDataFlowTasksResult.h
 	include/alibabacloud/nas/model/DescribeDataFlowsRequest.h
@@ -121,8 +145,6 @@ set(nas_public_header_model
 	include/alibabacloud/nas/model/DescribeFileSystemsResult.h
 	include/alibabacloud/nas/model/DescribeFilesetsRequest.h
 	include/alibabacloud/nas/model/DescribeFilesetsResult.h
-	include/alibabacloud/nas/model/DescribeLDAPConfigRequest.h
-	include/alibabacloud/nas/model/DescribeLDAPConfigResult.h
 	include/alibabacloud/nas/model/DescribeLifecyclePoliciesRequest.h
 	include/alibabacloud/nas/model/DescribeLifecyclePoliciesResult.h
 	include/alibabacloud/nas/model/DescribeLogAnalysisRequest.h
@@ -131,6 +153,8 @@ set(nas_public_header_model
 	include/alibabacloud/nas/model/DescribeMountTargetsResult.h
 	include/alibabacloud/nas/model/DescribeMountedClientsRequest.h
 	include/alibabacloud/nas/model/DescribeMountedClientsResult.h
+	include/alibabacloud/nas/model/DescribeNfsAclRequest.h
+	include/alibabacloud/nas/model/DescribeNfsAclResult.h
 	include/alibabacloud/nas/model/DescribeProtocolMountTargetRequest.h
 	include/alibabacloud/nas/model/DescribeProtocolMountTargetResult.h
 	include/alibabacloud/nas/model/DescribeProtocolServiceRequest.h
@@ -143,14 +167,16 @@ set(nas_public_header_model
 	include/alibabacloud/nas/model/DescribeSnapshotsResult.h
 	include/alibabacloud/nas/model/DescribeStoragePackagesRequest.h
 	include/alibabacloud/nas/model/DescribeStoragePackagesResult.h
-	include/alibabacloud/nas/model/DescribeTagsRequest.h
-	include/alibabacloud/nas/model/DescribeTagsResult.h
 	include/alibabacloud/nas/model/DescribeZonesRequest.h
 	include/alibabacloud/nas/model/DescribeZonesResult.h
 	include/alibabacloud/nas/model/DisableAndCleanRecycleBinRequest.h
 	include/alibabacloud/nas/model/DisableAndCleanRecycleBinResult.h
+	include/alibabacloud/nas/model/DisableNfsAclRequest.h
+	include/alibabacloud/nas/model/DisableNfsAclResult.h
 	include/alibabacloud/nas/model/DisableSmbAclRequest.h
 	include/alibabacloud/nas/model/DisableSmbAclResult.h
+	include/alibabacloud/nas/model/EnableNfsAclRequest.h
+	include/alibabacloud/nas/model/EnableNfsAclResult.h
 	include/alibabacloud/nas/model/EnableRecycleBinRequest.h
 	include/alibabacloud/nas/model/EnableRecycleBinResult.h
 	include/alibabacloud/nas/model/EnableSmbAclRequest.h
@@ -173,6 +199,8 @@ set(nas_public_header_model
 	include/alibabacloud/nas/model/ListTagResourcesResult.h
 	include/alibabacloud/nas/model/ModifyAccessGroupRequest.h
 	include/alibabacloud/nas/model/ModifyAccessGroupResult.h
+	include/alibabacloud/nas/model/ModifyAccessPointRequest.h
+	include/alibabacloud/nas/model/ModifyAccessPointResult.h
 	include/alibabacloud/nas/model/ModifyAccessRuleRequest.h
 	include/alibabacloud/nas/model/ModifyAccessRuleResult.h
 	include/alibabacloud/nas/model/ModifyAutoSnapshotPolicyRequest.h
@@ -209,6 +237,8 @@ set(nas_public_header_model
 	include/alibabacloud/nas/model/RetryLifecycleRetrieveJobResult.h
 	include/alibabacloud/nas/model/SetDirQuotaRequest.h
 	include/alibabacloud/nas/model/SetDirQuotaResult.h
+	include/alibabacloud/nas/model/SetFilesetQuotaRequest.h
+	include/alibabacloud/nas/model/SetFilesetQuotaResult.h
 	include/alibabacloud/nas/model/StartDataFlowRequest.h
 	include/alibabacloud/nas/model/StartDataFlowResult.h
 	include/alibabacloud/nas/model/StopDataFlowRequest.h
@@ -236,24 +266,36 @@ set(nas_src
 	src/model/CancelAutoSnapshotPolicyResult.cc
 	src/model/CancelDataFlowAutoRefreshRequest.cc
 	src/model/CancelDataFlowAutoRefreshResult.cc
+	src/model/CancelDataFlowSubTaskRequest.cc
+	src/model/CancelDataFlowSubTaskResult.cc
 	src/model/CancelDataFlowTaskRequest.cc
 	src/model/CancelDataFlowTaskResult.cc
 	src/model/CancelDirQuotaRequest.cc
 	src/model/CancelDirQuotaResult.cc
+	src/model/CancelFilesetQuotaRequest.cc
+	src/model/CancelFilesetQuotaResult.cc
 	src/model/CancelLifecycleRetrieveJobRequest.cc
 	src/model/CancelLifecycleRetrieveJobResult.cc
 	src/model/CancelRecycleBinJobRequest.cc
 	src/model/CancelRecycleBinJobResult.cc
+	src/model/ChangeResourceGroupRequest.cc
+	src/model/ChangeResourceGroupResult.cc
 	src/model/CreateAccessGroupRequest.cc
 	src/model/CreateAccessGroupResult.cc
+	src/model/CreateAccessPointRequest.cc
+	src/model/CreateAccessPointResult.cc
 	src/model/CreateAccessRuleRequest.cc
 	src/model/CreateAccessRuleResult.cc
 	src/model/CreateAutoSnapshotPolicyRequest.cc
 	src/model/CreateAutoSnapshotPolicyResult.cc
 	src/model/CreateDataFlowRequest.cc
 	src/model/CreateDataFlowResult.cc
+	src/model/CreateDataFlowSubTaskRequest.cc
+	src/model/CreateDataFlowSubTaskResult.cc
 	src/model/CreateDataFlowTaskRequest.cc
 	src/model/CreateDataFlowTaskResult.cc
+	src/model/CreateDirRequest.cc
+	src/model/CreateDirResult.cc
 	src/model/CreateFileRequest.cc
 	src/model/CreateFileResult.cc
 	src/model/CreateFileSystemRequest.cc
@@ -266,6 +308,8 @@ set(nas_src
 	src/model/CreateLifecyclePolicyResult.cc
 	src/model/CreateLifecycleRetrieveJobRequest.cc
 	src/model/CreateLifecycleRetrieveJobResult.cc
+	src/model/CreateLogAnalysisRequest.cc
+	src/model/CreateLogAnalysisResult.cc
 	src/model/CreateMountTargetRequest.cc
 	src/model/CreateMountTargetResult.cc
 	src/model/CreateProtocolMountTargetRequest.cc
@@ -280,6 +324,8 @@ set(nas_src
 	src/model/CreateSnapshotResult.cc
 	src/model/DeleteAccessGroupRequest.cc
 	src/model/DeleteAccessGroupResult.cc
+	src/model/DeleteAccessPointRequest.cc
+	src/model/DeleteAccessPointResult.cc
 	src/model/DeleteAccessRuleRequest.cc
 	src/model/DeleteAccessRuleResult.cc
 	src/model/DeleteAutoSnapshotPolicyRequest.cc
@@ -294,6 +340,8 @@ set(nas_src
 	src/model/DeleteLDAPConfigResult.cc
 	src/model/DeleteLifecyclePolicyRequest.cc
 	src/model/DeleteLifecyclePolicyResult.cc
+	src/model/DeleteLogAnalysisRequest.cc
+	src/model/DeleteLogAnalysisResult.cc
 	src/model/DeleteMountTargetRequest.cc
 	src/model/DeleteMountTargetResult.cc
 	src/model/DeleteProtocolMountTargetRequest.cc
@@ -304,6 +352,10 @@ set(nas_src
 	src/model/DeleteSnapshotResult.cc
 	src/model/DescribeAccessGroupsRequest.cc
 	src/model/DescribeAccessGroupsResult.cc
+	src/model/DescribeAccessPointRequest.cc
+	src/model/DescribeAccessPointResult.cc
+	src/model/DescribeAccessPointsRequest.cc
+	src/model/DescribeAccessPointsResult.cc
 	src/model/DescribeAccessRulesRequest.cc
 	src/model/DescribeAccessRulesResult.cc
 	src/model/DescribeAutoSnapshotPoliciesRequest.cc
@@ -312,6 +364,8 @@ set(nas_src
 	src/model/DescribeAutoSnapshotTasksResult.cc
 	src/model/DescribeBlackListClientsRequest.cc
 	src/model/DescribeBlackListClientsResult.cc
+	src/model/DescribeDataFlowSubTasksRequest.cc
+	src/model/DescribeDataFlowSubTasksResult.cc
 	src/model/DescribeDataFlowTasksRequest.cc
 	src/model/DescribeDataFlowTasksResult.cc
 	src/model/DescribeDataFlowsRequest.cc
@@ -324,8 +378,6 @@ set(nas_src
 	src/model/DescribeFileSystemsResult.cc
 	src/model/DescribeFilesetsRequest.cc
 	src/model/DescribeFilesetsResult.cc
-	src/model/DescribeLDAPConfigRequest.cc
-	src/model/DescribeLDAPConfigResult.cc
 	src/model/DescribeLifecyclePoliciesRequest.cc
 	src/model/DescribeLifecyclePoliciesResult.cc
 	src/model/DescribeLogAnalysisRequest.cc
@@ -334,6 +386,8 @@ set(nas_src
 	src/model/DescribeMountTargetsResult.cc
 	src/model/DescribeMountedClientsRequest.cc
 	src/model/DescribeMountedClientsResult.cc
+	src/model/DescribeNfsAclRequest.cc
+	src/model/DescribeNfsAclResult.cc
 	src/model/DescribeProtocolMountTargetRequest.cc
 	src/model/DescribeProtocolMountTargetResult.cc
 	src/model/DescribeProtocolServiceRequest.cc
@@ -346,14 +400,16 @@ set(nas_src
 	src/model/DescribeSnapshotsResult.cc
 	src/model/DescribeStoragePackagesRequest.cc
 	src/model/DescribeStoragePackagesResult.cc
-	src/model/DescribeTagsRequest.cc
-	src/model/DescribeTagsResult.cc
 	src/model/DescribeZonesRequest.cc
 	src/model/DescribeZonesResult.cc
 	src/model/DisableAndCleanRecycleBinRequest.cc
 	src/model/DisableAndCleanRecycleBinResult.cc
+	src/model/DisableNfsAclRequest.cc
+	src/model/DisableNfsAclResult.cc
 	src/model/DisableSmbAclRequest.cc
 	src/model/DisableSmbAclResult.cc
+	src/model/EnableNfsAclRequest.cc
+	src/model/EnableNfsAclResult.cc
 	src/model/EnableRecycleBinRequest.cc
 	src/model/EnableRecycleBinResult.cc
 	src/model/EnableSmbAclRequest.cc
@@ -376,6 +432,8 @@ set(nas_src
 	src/model/ListTagResourcesResult.cc
 	src/model/ModifyAccessGroupRequest.cc
 	src/model/ModifyAccessGroupResult.cc
+	src/model/ModifyAccessPointRequest.cc
+	src/model/ModifyAccessPointResult.cc
 	src/model/ModifyAccessRuleRequest.cc
 	src/model/ModifyAccessRuleResult.cc
 	src/model/ModifyAutoSnapshotPolicyRequest.cc
@@ -412,6 +470,8 @@ set(nas_src
 	src/model/RetryLifecycleRetrieveJobResult.cc
 	src/model/SetDirQuotaRequest.cc
 	src/model/SetDirQuotaResult.cc
+	src/model/SetFilesetQuotaRequest.cc
+	src/model/SetFilesetQuotaResult.cc
 	src/model/StartDataFlowRequest.cc
 	src/model/StartDataFlowResult.cc
 	src/model/StopDataFlowRequest.cc

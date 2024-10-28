@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct LifecycleRetrieveJob
 				{
 					std::string status;
+					std::string storageType;
 					std::string createTime;
 					std::string updateTime;
 					long retrievedFileCount;

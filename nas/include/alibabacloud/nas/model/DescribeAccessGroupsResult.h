@@ -44,6 +44,8 @@ namespace AlibabaCloud
 					std::string description;
 					std::string accessGroupName;
 					std::string createTime;
+					std::string fileSystemType;
+					std::string regionId;
 					int mountTargetCount;
 					std::vector<AccessGroup::Tag> tags;
 				};

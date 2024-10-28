@@ -88,6 +88,15 @@ void DescribeFileSystemsRequest::setStorageType(const std::string &storageType) 
   setParameter(std::string("StorageType"), storageType);
 }
 
+std::string DescribeFileSystemsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeFileSystemsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 int DescribeFileSystemsRequest::getPageSize() const {
   return pageSize_;
 }

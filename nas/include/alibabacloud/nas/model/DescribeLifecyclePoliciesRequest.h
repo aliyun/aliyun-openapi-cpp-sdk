@@ -32,6 +32,10 @@ public:
 	~DescribeLifecyclePoliciesRequest();
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getStorageType() const;
+	void setStorageType(const std::string &storageType);
+	std::string getLifecyclePolicyName() const;
+	void setLifecyclePolicyName(const std::string &lifecyclePolicyName);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getFileSystemId() const;
@@ -39,6 +43,8 @@ public:
 
 private:
 	int pageNumber_;
+	std::string storageType_;
+	std::string lifecyclePolicyName_;
 	int pageSize_;
 	std::string fileSystemId_;
 };

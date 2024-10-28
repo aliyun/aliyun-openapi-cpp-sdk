@@ -73,6 +73,41 @@ void DescribeDataFlowTasksResult::parse(const std::string &payload)
 			taskInfoObject.endTime = valueTaskInfoTask["EndTime"].asString();
 		if(!valueTaskInfoTask["FsPath"].isNull())
 			taskInfoObject.fsPath = valueTaskInfoTask["FsPath"].asString();
+		if(!valueTaskInfoTask["ConflictPolicy"].isNull())
+			taskInfoObject.conflictPolicy = valueTaskInfoTask["ConflictPolicy"].asString();
+		if(!valueTaskInfoTask["Directory"].isNull())
+			taskInfoObject.directory = valueTaskInfoTask["Directory"].asString();
+		if(!valueTaskInfoTask["DstDirectory"].isNull())
+			taskInfoObject.dstDirectory = valueTaskInfoTask["DstDirectory"].asString();
+		if(!valueTaskInfoTask["ErrorMsg"].isNull())
+			taskInfoObject.errorMsg = valueTaskInfoTask["ErrorMsg"].asString();
+		auto allReportsNode = valueTaskInfoTask["Reports"]["Report"];
+		for (auto valueTaskInfoTaskReportsReport : allReportsNode)
+		{
+			Task::Report reportsObject;
+			if(!valueTaskInfoTaskReportsReport["Name"].isNull())
+				reportsObject.name = valueTaskInfoTaskReportsReport["Name"].asString();
+			if(!valueTaskInfoTaskReportsReport["Path"].isNull())
+				reportsObject.path = valueTaskInfoTaskReportsReport["Path"].asString();
+			taskInfoObject.reports.push_back(reportsObject);
+		}
+		auto progressStatsNode = value["ProgressStats"];
+		if(!progressStatsNode["FilesTotal"].isNull())
+			taskInfoObject.progressStats.filesTotal = std::stol(progressStatsNode["FilesTotal"].asString());
+		if(!progressStatsNode["FilesDone"].isNull())
+			taskInfoObject.progressStats.filesDone = std::stol(progressStatsNode["FilesDone"].asString());
+		if(!progressStatsNode["ActualFiles"].isNull())
+			taskInfoObject.progressStats.actualFiles = std::stol(progressStatsNode["ActualFiles"].asString());
+		if(!progressStatsNode["BytesTotal"].isNull())
+			taskInfoObject.progressStats.bytesTotal = std::stol(progressStatsNode["BytesTotal"].asString());
+		if(!progressStatsNode["BytesDone"].isNull())
+			taskInfoObject.progressStats.bytesDone = std::stol(progressStatsNode["BytesDone"].asString());
+		if(!progressStatsNode["ActualBytes"].isNull())
+			taskInfoObject.progressStats.actualBytes = std::stol(progressStatsNode["ActualBytes"].asString());
+		if(!progressStatsNode["RemainTime"].isNull())
+			taskInfoObject.progressStats.remainTime = std::stol(progressStatsNode["RemainTime"].asString());
+		if(!progressStatsNode["AverageSpeed"].isNull())
+			taskInfoObject.progressStats.averageSpeed = std::stol(progressStatsNode["AverageSpeed"].asString());
 		taskInfo_.push_back(taskInfoObject);
 	}
 	if(!value["NextToken"].isNull())

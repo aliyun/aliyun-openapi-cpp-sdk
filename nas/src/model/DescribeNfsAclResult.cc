@@ -14,43 +14,39 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/nas/model/DescribeLDAPConfigResult.h>
+#include <alibabacloud/nas/model/DescribeNfsAclResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::NAS;
 using namespace AlibabaCloud::NAS::Model;
 
-DescribeLDAPConfigResult::DescribeLDAPConfigResult() :
+DescribeNfsAclResult::DescribeNfsAclResult() :
 	ServiceResult()
 {}
 
-DescribeLDAPConfigResult::DescribeLDAPConfigResult(const std::string &payload) :
+DescribeNfsAclResult::DescribeNfsAclResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeLDAPConfigResult::~DescribeLDAPConfigResult()
+DescribeNfsAclResult::~DescribeNfsAclResult()
 {}
 
-void DescribeLDAPConfigResult::parse(const std::string &payload)
+void DescribeNfsAclResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto ldapNode = value["Ldap"];
-	if(!ldapNode["BindDN"].isNull())
-		ldap_.bindDN = ldapNode["BindDN"].asString();
-	if(!ldapNode["SearchBase"].isNull())
-		ldap_.searchBase = ldapNode["SearchBase"].asString();
-	if(!ldapNode["URI"].isNull())
-		ldap_.uRI = ldapNode["URI"].asString();
+	auto aclNode = value["Acl"];
+	if(!aclNode["Enabled"].isNull())
+		acl_.enabled = aclNode["Enabled"].asString() == "true";
 
 }
 
-DescribeLDAPConfigResult::Ldap DescribeLDAPConfigResult::getLdap()const
+DescribeNfsAclResult::Acl DescribeNfsAclResult::getAcl()const
 {
-	return ldap_;
+	return acl_;
 }
 

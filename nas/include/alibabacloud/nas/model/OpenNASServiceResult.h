@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				OpenNASServiceResult();
 				explicit OpenNASServiceResult(const std::string &payload);
 				~OpenNASServiceResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string orderId_;
 
 			};

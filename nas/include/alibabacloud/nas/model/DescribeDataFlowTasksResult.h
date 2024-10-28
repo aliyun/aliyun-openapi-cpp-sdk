@@ -34,6 +34,22 @@ namespace AlibabaCloud
 			public:
 				struct Task
 				{
+					struct ProgressStats
+					{
+						long averageSpeed;
+						long filesTotal;
+						long filesDone;
+						long bytesDone;
+						long actualBytes;
+						long remainTime;
+						long actualFiles;
+						long bytesTotal;
+					};
+					struct Report
+					{
+						std::string path;
+						std::string name;
+					};
 					std::string fileSystemPath;
 					std::string status;
 					std::string filesystemId;
@@ -43,12 +59,18 @@ namespace AlibabaCloud
 					std::string taskAction;
 					std::string createTime;
 					std::string startTime;
+					std::string errorMsg;
+					std::vector<Task::Report> reports;
+					std::string dstDirectory;
 					std::string sourceStorage;
+					std::string conflictPolicy;
 					std::string originator;
+					ProgressStats progressStats;
 					std::string reportPath;
 					std::string dataType;
 					std::string dataFlowId;
 					std::string fsPath;
+					std::string directory;
 				};
 
 

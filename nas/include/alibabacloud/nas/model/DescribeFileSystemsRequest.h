@@ -48,6 +48,8 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getStorageType() const;
 	void setStorageType(const std::string &storageType);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getSortOrder() const;
@@ -71,6 +73,7 @@ private:
 	std::string packageIds_;
 	int pageNumber_;
 	std::string storageType_;
+	std::string resourceGroupId_;
 	int pageSize_;
 	std::string sortOrder_;
 	std::vector<Tag> tag_;

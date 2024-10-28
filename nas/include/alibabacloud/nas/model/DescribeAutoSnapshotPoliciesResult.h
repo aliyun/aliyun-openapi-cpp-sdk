@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string timePoints;
 					std::string createTime;
 					int fileSystemNums;
+					std::string fileSystemType;
 					std::string autoSnapshotPolicyId;
 					int retentionDays;
 					std::string repeatWeekdays;

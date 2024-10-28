@@ -46,6 +46,8 @@ public:
 	void setEncryptType(int encryptType);
 	int getDuration() const;
 	void setDuration(int duration);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
 	long getBandwidth() const;
@@ -72,6 +74,7 @@ private:
 	long capacity_;
 	int encryptType_;
 	int duration_;
+	std::string resourceGroupId_;
 	bool dryRun_;
 	long bandwidth_;
 	std::string vSwitchId_;

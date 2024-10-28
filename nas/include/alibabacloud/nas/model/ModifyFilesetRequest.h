@@ -36,6 +36,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	bool getDeletionProtection() const;
+	void setDeletionProtection(bool deletionProtection);
 	std::string getFileSystemId() const;
 	void setFileSystemId(const std::string &fileSystemId);
 	bool getDryRun() const;
@@ -45,6 +47,7 @@ private:
 	std::string fsetId_;
 	std::string clientToken_;
 	std::string description_;
+	bool deletionProtection_;
 	std::string fileSystemId_;
 	bool dryRun_;
 };

@@ -28,12 +28,20 @@ namespace NAS {
 namespace Model {
 class ALIBABACLOUD_NAS_EXPORT CreateFilesetRequest : public RpcServiceRequest {
 public:
+	struct Quota {
+		long sizeLimit;
+		long fileCountLimit;
+	};
 	CreateFilesetRequest();
 	~CreateFilesetRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	bool getDeletionProtection() const;
+	void setDeletionProtection(bool deletionProtection);
+	Quota getQuota() const;
+	void setQuota(const Quota &quota);
 	std::string getFileSystemId() const;
 	void setFileSystemId(const std::string &fileSystemId);
 	bool getDryRun() const;
@@ -44,6 +52,8 @@ public:
 private:
 	std::string clientToken_;
 	std::string description_;
+	bool deletionProtection_;
+	Quota quota_;
 	std::string fileSystemId_;
 	bool dryRun_;
 	std::string fileSystemPath_;

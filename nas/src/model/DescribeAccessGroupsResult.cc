@@ -55,6 +55,10 @@ void DescribeAccessGroupsResult::parse(const std::string &payload)
 			accessGroupsObject.ruleCount = std::stoi(valueAccessGroupsAccessGroup["RuleCount"].asString());
 		if(!valueAccessGroupsAccessGroup["MountTargetCount"].isNull())
 			accessGroupsObject.mountTargetCount = std::stoi(valueAccessGroupsAccessGroup["MountTargetCount"].asString());
+		if(!valueAccessGroupsAccessGroup["FileSystemType"].isNull())
+			accessGroupsObject.fileSystemType = valueAccessGroupsAccessGroup["FileSystemType"].asString();
+		if(!valueAccessGroupsAccessGroup["RegionId"].isNull())
+			accessGroupsObject.regionId = valueAccessGroupsAccessGroup["RegionId"].asString();
 		auto allTagsNode = valueAccessGroupsAccessGroup["Tags"]["Tag"];
 		for (auto valueAccessGroupsAccessGroupTagsTag : allTagsNode)
 		{

@@ -34,6 +34,15 @@ void ModifyFileSystemRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
+ModifyFileSystemRequest::Options ModifyFileSystemRequest::getOptions() const {
+  return options_;
+}
+
+void ModifyFileSystemRequest::setOptions(const ModifyFileSystemRequest::Options &options) {
+  options_ = options;
+  setParameter(std::string("Options") + ".EnableOplock", options.enableOplock ? "true" : "false");
+}
+
 std::string ModifyFileSystemRequest::getFileSystemId() const {
   return fileSystemId_;
 }

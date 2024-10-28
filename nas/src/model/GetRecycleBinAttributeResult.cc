@@ -50,6 +50,8 @@ void GetRecycleBinAttributeResult::parse(const std::string &payload)
 		recycleBinAttribute_.reservedDays = std::stol(recycleBinAttributeNode["ReservedDays"].asString());
 	if(!recycleBinAttributeNode["EnableTime"].isNull())
 		recycleBinAttribute_.enableTime = recycleBinAttributeNode["EnableTime"].asString();
+	if(!recycleBinAttributeNode["ArchiveSize"].isNull())
+		recycleBinAttribute_.archiveSize = std::stol(recycleBinAttributeNode["ArchiveSize"].asString());
 
 }
 

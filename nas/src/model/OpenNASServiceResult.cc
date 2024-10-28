@@ -41,7 +41,14 @@ void OpenNASServiceResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["OrderId"].isNull())
 		orderId_ = value["OrderId"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string OpenNASServiceResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string OpenNASServiceResult::getOrderId()const

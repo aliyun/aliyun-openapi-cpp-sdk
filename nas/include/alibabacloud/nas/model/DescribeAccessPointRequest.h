@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_NAS_MODEL_DESCRIBETAGSREQUEST_H_
-#define ALIBABACLOUD_NAS_MODEL_DESCRIBETAGSREQUEST_H_
+#ifndef ALIBABACLOUD_NAS_MODEL_DESCRIBEACCESSPOINTREQUEST_H_
+#define ALIBABACLOUD_NAS_MODEL_DESCRIBEACCESSPOINTREQUEST_H_
 
 #include <alibabacloud/nas/NASExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,30 +26,20 @@
 namespace AlibabaCloud {
 namespace NAS {
 namespace Model {
-class ALIBABACLOUD_NAS_EXPORT DescribeTagsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_NAS_EXPORT DescribeAccessPointRequest : public RpcServiceRequest {
 public:
-	struct Tag {
-		std::string value;
-		std::string key;
-	};
-	DescribeTagsRequest();
-	~DescribeTagsRequest();
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
+	DescribeAccessPointRequest();
+	~DescribeAccessPointRequest();
+	std::string getAccessPointId() const;
+	void setAccessPointId(const std::string &accessPointId);
 	std::string getFileSystemId() const;
 	void setFileSystemId(const std::string &fileSystemId);
 
 private:
-	int pageNumber_;
-	int pageSize_;
-	std::vector<Tag> tag_;
+	std::string accessPointId_;
 	std::string fileSystemId_;
 };
 } // namespace Model
 } // namespace NAS
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_NAS_MODEL_DESCRIBETAGSREQUEST_H_
+#endif // !ALIBABACLOUD_NAS_MODEL_DESCRIBEACCESSPOINTREQUEST_H_

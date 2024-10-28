@@ -30,6 +30,8 @@ class ALIBABACLOUD_NAS_EXPORT DescribeLogAnalysisRequest : public RpcServiceRequ
 public:
 	DescribeLogAnalysisRequest();
 	~DescribeLogAnalysisRequest();
+	std::string getFileSystemType() const;
+	void setFileSystemType(const std::string &fileSystemType);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getRegionId() const;
@@ -38,6 +40,7 @@ public:
 	void setPageSize(int pageSize);
 
 private:
+	std::string fileSystemType_;
 	int pageNumber_;
 	std::string regionId_;
 	int pageSize_;

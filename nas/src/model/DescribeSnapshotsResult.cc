@@ -67,6 +67,10 @@ void DescribeSnapshotsResult::parse(const std::string &payload)
 			snapshotsObject.description = valueSnapshotsSnapshot["Description"].asString();
 		if(!valueSnapshotsSnapshot["SnapshotId"].isNull())
 			snapshotsObject.snapshotId = valueSnapshotsSnapshot["SnapshotId"].asString();
+		if(!valueSnapshotsSnapshot["FileSystemType"].isNull())
+			snapshotsObject.fileSystemType = valueSnapshotsSnapshot["FileSystemType"].asString();
+		if(!valueSnapshotsSnapshot["SnapshotType"].isNull())
+			snapshotsObject.snapshotType = valueSnapshotsSnapshot["SnapshotType"].asString();
 		snapshots_.push_back(snapshotsObject);
 	}
 	if(!value["TotalCount"].isNull())

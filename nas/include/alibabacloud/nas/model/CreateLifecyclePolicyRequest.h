@@ -40,6 +40,8 @@ public:
 	void setFileSystemId(const std::string &fileSystemId);
 	std::string getLifecycleRuleName() const;
 	void setLifecycleRuleName(const std::string &lifecycleRuleName);
+	int getLifecycleRuleInactiveDays() const;
+	void setLifecycleRuleInactiveDays(int lifecycleRuleInactiveDays);
 	std::vector<std::string> getPaths() const;
 	void setPaths(const std::vector<std::string> &paths);
 
@@ -49,6 +51,7 @@ private:
 	std::string lifecyclePolicyName_;
 	std::string fileSystemId_;
 	std::string lifecycleRuleName_;
+	int lifecycleRuleInactiveDays_;
 	std::vector<std::string> paths_;
 };
 } // namespace Model

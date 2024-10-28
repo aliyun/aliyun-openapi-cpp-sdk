@@ -55,6 +55,10 @@ public:
 	void setDryRun(bool dryRun);
 	long getAutoRefreshInterval() const;
 	void setAutoRefreshInterval(long autoRefreshInterval);
+	std::string getSourceStoragePath() const;
+	void setSourceStoragePath(const std::string &sourceStoragePath);
+	std::string getFileSystemPath() const;
+	void setFileSystemPath(const std::string &fileSystemPath);
 
 private:
 	std::string autoRefreshPolicy_;
@@ -68,6 +72,8 @@ private:
 	std::string fileSystemId_;
 	bool dryRun_;
 	long autoRefreshInterval_;
+	std::string sourceStoragePath_;
+	std::string fileSystemPath_;
 };
 } // namespace Model
 } // namespace NAS

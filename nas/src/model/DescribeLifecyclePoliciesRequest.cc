@@ -34,6 +34,24 @@ void DescribeLifecyclePoliciesRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeLifecyclePoliciesRequest::getStorageType() const {
+  return storageType_;
+}
+
+void DescribeLifecyclePoliciesRequest::setStorageType(const std::string &storageType) {
+  storageType_ = storageType;
+  setParameter(std::string("StorageType"), storageType);
+}
+
+std::string DescribeLifecyclePoliciesRequest::getLifecyclePolicyName() const {
+  return lifecyclePolicyName_;
+}
+
+void DescribeLifecyclePoliciesRequest::setLifecyclePolicyName(const std::string &lifecyclePolicyName) {
+  lifecyclePolicyName_ = lifecyclePolicyName;
+  setParameter(std::string("LifecyclePolicyName"), lifecyclePolicyName);
+}
+
 int DescribeLifecyclePoliciesRequest::getPageSize() const {
   return pageSize_;
 }

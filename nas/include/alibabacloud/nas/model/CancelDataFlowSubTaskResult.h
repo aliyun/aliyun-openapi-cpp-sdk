@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_NAS_MODEL_DESCRIBELDAPCONFIGRESULT_H_
-#define ALIBABACLOUD_NAS_MODEL_DESCRIBELDAPCONFIGRESULT_H_
+#ifndef ALIBABACLOUD_NAS_MODEL_CANCELDATAFLOWSUBTASKRESULT_H_
+#define ALIBABACLOUD_NAS_MODEL_CANCELDATAFLOWSUBTASKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_NAS_EXPORT DescribeLDAPConfigResult : public ServiceResult
+			class ALIBABACLOUD_NAS_EXPORT CancelDataFlowSubTaskResult : public ServiceResult
 			{
 			public:
-				struct Ldap
-				{
-					std::string searchBase;
-					std::string bindDN;
-					std::string uRI;
-				};
 
 
-				DescribeLDAPConfigResult();
-				explicit DescribeLDAPConfigResult(const std::string &payload);
-				~DescribeLDAPConfigResult();
-				Ldap getLdap()const;
+				CancelDataFlowSubTaskResult();
+				explicit CancelDataFlowSubTaskResult(const std::string &payload);
+				~CancelDataFlowSubTaskResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Ldap ldap_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_NAS_MODEL_DESCRIBELDAPCONFIGRESULT_H_
+#endif // !ALIBABACLOUD_NAS_MODEL_CANCELDATAFLOWSUBTASKRESULT_H_

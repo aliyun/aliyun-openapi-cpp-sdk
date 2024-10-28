@@ -40,6 +40,16 @@ namespace AlibabaCloud
 						std::string bindDN;
 						std::string uRI;
 					};
+					struct GuiInfo
+					{
+						std::string user;
+						std::string endpoint;
+						std::string password;
+					};
+					struct Options
+					{
+						bool enableOplock;
+					};
 					struct Tag
 					{
 						std::string value;
@@ -66,6 +76,7 @@ namespace AlibabaCloud
 						std::string mountTargetDomain;
 						std::string networkType;
 						std::string accessGroupName;
+						std::string mountTargetIp;
 						std::vector<MountTarget::ClientMasterNode> clientMasterNodes;
 					};
 					struct Package
@@ -76,9 +87,14 @@ namespace AlibabaCloud
 						std::string startTime;
 						std::string packageId;
 					};
+					Options options;
+					GuiInfo guiInfo;
 					long mountTargetCountLimit;
 					std::string description;
 					std::string kMSKeyId;
+					int nodeNum;
+					std::string resourceGroupId;
+					std::string hpnZone;
 					long meteredSize;
 					std::vector<std::string> vswIds;
 					long capacity;
@@ -87,8 +103,11 @@ namespace AlibabaCloud
 					long bandwidth;
 					std::string expiredTime;
 					std::string fileSystemId;
+					long meteredArchiveSize;
+					std::string quorumVswId;
 					std::vector<FileSystem::Tag> tags;
 					std::string status;
+					std::string accessPointCount;
 					Ldap ldap;
 					std::string storageType;
 					std::string zoneId;

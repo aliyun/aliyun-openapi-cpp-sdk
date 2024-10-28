@@ -128,3 +128,21 @@ void CreateDataFlowRequest::setAutoRefreshInterval(long autoRefreshInterval) {
   setParameter(std::string("AutoRefreshInterval"), std::to_string(autoRefreshInterval));
 }
 
+std::string CreateDataFlowRequest::getSourceStoragePath() const {
+  return sourceStoragePath_;
+}
+
+void CreateDataFlowRequest::setSourceStoragePath(const std::string &sourceStoragePath) {
+  sourceStoragePath_ = sourceStoragePath;
+  setParameter(std::string("SourceStoragePath"), sourceStoragePath);
+}
+
+std::string CreateDataFlowRequest::getFileSystemPath() const {
+  return fileSystemPath_;
+}
+
+void CreateDataFlowRequest::setFileSystemPath(const std::string &fileSystemPath) {
+  fileSystemPath_ = fileSystemPath;
+  setParameter(std::string("FileSystemPath"), fileSystemPath);
+}
+

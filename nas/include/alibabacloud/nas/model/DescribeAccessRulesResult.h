@@ -38,7 +38,10 @@ namespace AlibabaCloud
 					std::string userAccess;
 					int priority;
 					std::string sourceCidrIp;
+					std::string fileSystemType;
+					std::string accessGroupName;
 					std::string ipv6SourceCidrIp;
+					std::string regionId;
 					std::string accessRuleId;
 				};
 

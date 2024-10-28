@@ -60,6 +60,8 @@ void GetDirectoryOrFilePropertiesResult::parse(const std::string &payload)
 		entry_.retrieveTime = entryNode["RetrieveTime"].asString();
 	if(!entryNode["Inode"].isNull())
 		entry_.inode = entryNode["Inode"].asString();
+	if(!entryNode["HasArchiveFile"].isNull())
+		entry_.hasArchiveFile = entryNode["HasArchiveFile"].asString() == "true";
 
 }
 

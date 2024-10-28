@@ -31,21 +31,21 @@ NASClient::NASClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "NAS");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "nas");
 }
 
 NASClient::NASClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "NAS");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "nas");
 }
 
 NASClient::NASClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "NAS");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "nas");
 }
 
 NASClient::~NASClient()
@@ -267,6 +267,42 @@ NASClient::CancelDataFlowAutoRefreshOutcomeCallable NASClient::cancelDataFlowAut
 	return task->get_future();
 }
 
+NASClient::CancelDataFlowSubTaskOutcome NASClient::cancelDataFlowSubTask(const CancelDataFlowSubTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelDataFlowSubTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelDataFlowSubTaskOutcome(CancelDataFlowSubTaskResult(outcome.result()));
+	else
+		return CancelDataFlowSubTaskOutcome(outcome.error());
+}
+
+void NASClient::cancelDataFlowSubTaskAsync(const CancelDataFlowSubTaskRequest& request, const CancelDataFlowSubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelDataFlowSubTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::CancelDataFlowSubTaskOutcomeCallable NASClient::cancelDataFlowSubTaskCallable(const CancelDataFlowSubTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelDataFlowSubTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelDataFlowSubTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 NASClient::CancelDataFlowTaskOutcome NASClient::cancelDataFlowTask(const CancelDataFlowTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +369,42 @@ NASClient::CancelDirQuotaOutcomeCallable NASClient::cancelDirQuotaCallable(const
 			[this, request]()
 			{
 			return this->cancelDirQuota(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::CancelFilesetQuotaOutcome NASClient::cancelFilesetQuota(const CancelFilesetQuotaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelFilesetQuotaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelFilesetQuotaOutcome(CancelFilesetQuotaResult(outcome.result()));
+	else
+		return CancelFilesetQuotaOutcome(outcome.error());
+}
+
+void NASClient::cancelFilesetQuotaAsync(const CancelFilesetQuotaRequest& request, const CancelFilesetQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelFilesetQuota(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::CancelFilesetQuotaOutcomeCallable NASClient::cancelFilesetQuotaCallable(const CancelFilesetQuotaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelFilesetQuotaOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelFilesetQuota(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -411,6 +483,42 @@ NASClient::CancelRecycleBinJobOutcomeCallable NASClient::cancelRecycleBinJobCall
 	return task->get_future();
 }
 
+NASClient::ChangeResourceGroupOutcome NASClient::changeResourceGroup(const ChangeResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeResourceGroupOutcome(ChangeResourceGroupResult(outcome.result()));
+	else
+		return ChangeResourceGroupOutcome(outcome.error());
+}
+
+void NASClient::changeResourceGroupAsync(const ChangeResourceGroupRequest& request, const ChangeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::ChangeResourceGroupOutcomeCallable NASClient::changeResourceGroupCallable(const ChangeResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->changeResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 NASClient::CreateAccessGroupOutcome NASClient::createAccessGroup(const CreateAccessGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +549,42 @@ NASClient::CreateAccessGroupOutcomeCallable NASClient::createAccessGroupCallable
 			[this, request]()
 			{
 			return this->createAccessGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::CreateAccessPointOutcome NASClient::createAccessPoint(const CreateAccessPointRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAccessPointOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAccessPointOutcome(CreateAccessPointResult(outcome.result()));
+	else
+		return CreateAccessPointOutcome(outcome.error());
+}
+
+void NASClient::createAccessPointAsync(const CreateAccessPointRequest& request, const CreateAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAccessPoint(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::CreateAccessPointOutcomeCallable NASClient::createAccessPointCallable(const CreateAccessPointRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAccessPointOutcome()>>(
+			[this, request]()
+			{
+			return this->createAccessPoint(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -555,6 +699,42 @@ NASClient::CreateDataFlowOutcomeCallable NASClient::createDataFlowCallable(const
 	return task->get_future();
 }
 
+NASClient::CreateDataFlowSubTaskOutcome NASClient::createDataFlowSubTask(const CreateDataFlowSubTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDataFlowSubTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDataFlowSubTaskOutcome(CreateDataFlowSubTaskResult(outcome.result()));
+	else
+		return CreateDataFlowSubTaskOutcome(outcome.error());
+}
+
+void NASClient::createDataFlowSubTaskAsync(const CreateDataFlowSubTaskRequest& request, const CreateDataFlowSubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDataFlowSubTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::CreateDataFlowSubTaskOutcomeCallable NASClient::createDataFlowSubTaskCallable(const CreateDataFlowSubTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDataFlowSubTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createDataFlowSubTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 NASClient::CreateDataFlowTaskOutcome NASClient::createDataFlowTask(const CreateDataFlowTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +765,42 @@ NASClient::CreateDataFlowTaskOutcomeCallable NASClient::createDataFlowTaskCallab
 			[this, request]()
 			{
 			return this->createDataFlowTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::CreateDirOutcome NASClient::createDir(const CreateDirRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDirOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDirOutcome(CreateDirResult(outcome.result()));
+	else
+		return CreateDirOutcome(outcome.error());
+}
+
+void NASClient::createDirAsync(const CreateDirRequest& request, const CreateDirAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDir(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::CreateDirOutcomeCallable NASClient::createDirCallable(const CreateDirRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDirOutcome()>>(
+			[this, request]()
+			{
+			return this->createDir(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -801,6 +1017,42 @@ NASClient::CreateLifecycleRetrieveJobOutcomeCallable NASClient::createLifecycleR
 			[this, request]()
 			{
 			return this->createLifecycleRetrieveJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::CreateLogAnalysisOutcome NASClient::createLogAnalysis(const CreateLogAnalysisRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateLogAnalysisOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateLogAnalysisOutcome(CreateLogAnalysisResult(outcome.result()));
+	else
+		return CreateLogAnalysisOutcome(outcome.error());
+}
+
+void NASClient::createLogAnalysisAsync(const CreateLogAnalysisRequest& request, const CreateLogAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createLogAnalysis(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::CreateLogAnalysisOutcomeCallable NASClient::createLogAnalysisCallable(const CreateLogAnalysisRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateLogAnalysisOutcome()>>(
+			[this, request]()
+			{
+			return this->createLogAnalysis(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1059,6 +1311,42 @@ NASClient::DeleteAccessGroupOutcomeCallable NASClient::deleteAccessGroupCallable
 	return task->get_future();
 }
 
+NASClient::DeleteAccessPointOutcome NASClient::deleteAccessPoint(const DeleteAccessPointRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAccessPointOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAccessPointOutcome(DeleteAccessPointResult(outcome.result()));
+	else
+		return DeleteAccessPointOutcome(outcome.error());
+}
+
+void NASClient::deleteAccessPointAsync(const DeleteAccessPointRequest& request, const DeleteAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAccessPoint(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::DeleteAccessPointOutcomeCallable NASClient::deleteAccessPointCallable(const DeleteAccessPointRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAccessPointOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAccessPoint(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 NASClient::DeleteAccessRuleOutcome NASClient::deleteAccessRule(const DeleteAccessRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1311,6 +1599,42 @@ NASClient::DeleteLifecyclePolicyOutcomeCallable NASClient::deleteLifecyclePolicy
 	return task->get_future();
 }
 
+NASClient::DeleteLogAnalysisOutcome NASClient::deleteLogAnalysis(const DeleteLogAnalysisRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLogAnalysisOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLogAnalysisOutcome(DeleteLogAnalysisResult(outcome.result()));
+	else
+		return DeleteLogAnalysisOutcome(outcome.error());
+}
+
+void NASClient::deleteLogAnalysisAsync(const DeleteLogAnalysisRequest& request, const DeleteLogAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLogAnalysis(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::DeleteLogAnalysisOutcomeCallable NASClient::deleteLogAnalysisCallable(const DeleteLogAnalysisRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLogAnalysisOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLogAnalysis(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 NASClient::DeleteMountTargetOutcome NASClient::deleteMountTarget(const DeleteMountTargetRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1491,6 +1815,78 @@ NASClient::DescribeAccessGroupsOutcomeCallable NASClient::describeAccessGroupsCa
 	return task->get_future();
 }
 
+NASClient::DescribeAccessPointOutcome NASClient::describeAccessPoint(const DescribeAccessPointRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAccessPointOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAccessPointOutcome(DescribeAccessPointResult(outcome.result()));
+	else
+		return DescribeAccessPointOutcome(outcome.error());
+}
+
+void NASClient::describeAccessPointAsync(const DescribeAccessPointRequest& request, const DescribeAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAccessPoint(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::DescribeAccessPointOutcomeCallable NASClient::describeAccessPointCallable(const DescribeAccessPointRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAccessPointOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAccessPoint(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::DescribeAccessPointsOutcome NASClient::describeAccessPoints(const DescribeAccessPointsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAccessPointsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAccessPointsOutcome(DescribeAccessPointsResult(outcome.result()));
+	else
+		return DescribeAccessPointsOutcome(outcome.error());
+}
+
+void NASClient::describeAccessPointsAsync(const DescribeAccessPointsRequest& request, const DescribeAccessPointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAccessPoints(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::DescribeAccessPointsOutcomeCallable NASClient::describeAccessPointsCallable(const DescribeAccessPointsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAccessPointsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAccessPoints(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 NASClient::DescribeAccessRulesOutcome NASClient::describeAccessRules(const DescribeAccessRulesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1629,6 +2025,42 @@ NASClient::DescribeBlackListClientsOutcomeCallable NASClient::describeBlackListC
 			[this, request]()
 			{
 			return this->describeBlackListClients(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::DescribeDataFlowSubTasksOutcome NASClient::describeDataFlowSubTasks(const DescribeDataFlowSubTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDataFlowSubTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDataFlowSubTasksOutcome(DescribeDataFlowSubTasksResult(outcome.result()));
+	else
+		return DescribeDataFlowSubTasksOutcome(outcome.error());
+}
+
+void NASClient::describeDataFlowSubTasksAsync(const DescribeDataFlowSubTasksRequest& request, const DescribeDataFlowSubTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDataFlowSubTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::DescribeDataFlowSubTasksOutcomeCallable NASClient::describeDataFlowSubTasksCallable(const DescribeDataFlowSubTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDataFlowSubTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDataFlowSubTasks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1851,42 +2283,6 @@ NASClient::DescribeFilesetsOutcomeCallable NASClient::describeFilesetsCallable(c
 	return task->get_future();
 }
 
-NASClient::DescribeLDAPConfigOutcome NASClient::describeLDAPConfig(const DescribeLDAPConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLDAPConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLDAPConfigOutcome(DescribeLDAPConfigResult(outcome.result()));
-	else
-		return DescribeLDAPConfigOutcome(outcome.error());
-}
-
-void NASClient::describeLDAPConfigAsync(const DescribeLDAPConfigRequest& request, const DescribeLDAPConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLDAPConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-NASClient::DescribeLDAPConfigOutcomeCallable NASClient::describeLDAPConfigCallable(const DescribeLDAPConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLDAPConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLDAPConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 NASClient::DescribeLifecyclePoliciesOutcome NASClient::describeLifecyclePolicies(const DescribeLifecyclePoliciesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2025,6 +2421,42 @@ NASClient::DescribeMountedClientsOutcomeCallable NASClient::describeMountedClien
 			[this, request]()
 			{
 			return this->describeMountedClients(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::DescribeNfsAclOutcome NASClient::describeNfsAcl(const DescribeNfsAclRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNfsAclOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNfsAclOutcome(DescribeNfsAclResult(outcome.result()));
+	else
+		return DescribeNfsAclOutcome(outcome.error());
+}
+
+void NASClient::describeNfsAclAsync(const DescribeNfsAclRequest& request, const DescribeNfsAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNfsAcl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::DescribeNfsAclOutcomeCallable NASClient::describeNfsAclCallable(const DescribeNfsAclRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNfsAclOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNfsAcl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2247,42 +2679,6 @@ NASClient::DescribeStoragePackagesOutcomeCallable NASClient::describeStoragePack
 	return task->get_future();
 }
 
-NASClient::DescribeTagsOutcome NASClient::describeTags(const DescribeTagsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeTagsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeTagsOutcome(DescribeTagsResult(outcome.result()));
-	else
-		return DescribeTagsOutcome(outcome.error());
-}
-
-void NASClient::describeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeTags(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-NASClient::DescribeTagsOutcomeCallable NASClient::describeTagsCallable(const DescribeTagsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeTagsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeTags(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 NASClient::DescribeZonesOutcome NASClient::describeZones(const DescribeZonesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2355,6 +2751,42 @@ NASClient::DisableAndCleanRecycleBinOutcomeCallable NASClient::disableAndCleanRe
 	return task->get_future();
 }
 
+NASClient::DisableNfsAclOutcome NASClient::disableNfsAcl(const DisableNfsAclRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableNfsAclOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableNfsAclOutcome(DisableNfsAclResult(outcome.result()));
+	else
+		return DisableNfsAclOutcome(outcome.error());
+}
+
+void NASClient::disableNfsAclAsync(const DisableNfsAclRequest& request, const DisableNfsAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableNfsAcl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::DisableNfsAclOutcomeCallable NASClient::disableNfsAclCallable(const DisableNfsAclRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableNfsAclOutcome()>>(
+			[this, request]()
+			{
+			return this->disableNfsAcl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 NASClient::DisableSmbAclOutcome NASClient::disableSmbAcl(const DisableSmbAclRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2385,6 +2817,42 @@ NASClient::DisableSmbAclOutcomeCallable NASClient::disableSmbAclCallable(const D
 			[this, request]()
 			{
 			return this->disableSmbAcl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::EnableNfsAclOutcome NASClient::enableNfsAcl(const EnableNfsAclRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableNfsAclOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableNfsAclOutcome(EnableNfsAclResult(outcome.result()));
+	else
+		return EnableNfsAclOutcome(outcome.error());
+}
+
+void NASClient::enableNfsAclAsync(const EnableNfsAclRequest& request, const EnableNfsAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableNfsAcl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::EnableNfsAclOutcomeCallable NASClient::enableNfsAclCallable(const EnableNfsAclRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableNfsAclOutcome()>>(
+			[this, request]()
+			{
+			return this->enableNfsAcl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2781,6 +3249,42 @@ NASClient::ModifyAccessGroupOutcomeCallable NASClient::modifyAccessGroupCallable
 			[this, request]()
 			{
 			return this->modifyAccessGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::ModifyAccessPointOutcome NASClient::modifyAccessPoint(const ModifyAccessPointRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyAccessPointOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyAccessPointOutcome(ModifyAccessPointResult(outcome.result()));
+	else
+		return ModifyAccessPointOutcome(outcome.error());
+}
+
+void NASClient::modifyAccessPointAsync(const ModifyAccessPointRequest& request, const ModifyAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyAccessPoint(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::ModifyAccessPointOutcomeCallable NASClient::modifyAccessPointCallable(const ModifyAccessPointRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyAccessPointOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyAccessPoint(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3429,6 +3933,42 @@ NASClient::SetDirQuotaOutcomeCallable NASClient::setDirQuotaCallable(const SetDi
 			[this, request]()
 			{
 			return this->setDirQuota(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::SetFilesetQuotaOutcome NASClient::setFilesetQuota(const SetFilesetQuotaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetFilesetQuotaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetFilesetQuotaOutcome(SetFilesetQuotaResult(outcome.result()));
+	else
+		return SetFilesetQuotaOutcome(outcome.error());
+}
+
+void NASClient::setFilesetQuotaAsync(const SetFilesetQuotaRequest& request, const SetFilesetQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setFilesetQuota(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::SetFilesetQuotaOutcomeCallable NASClient::setFilesetQuotaCallable(const SetFilesetQuotaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetFilesetQuotaOutcome()>>(
+			[this, request]()
+			{
+			return this->setFilesetQuota(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

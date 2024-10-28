@@ -97,6 +97,15 @@ void CreateFileSystemRequest::setDuration(int duration) {
   setParameter(std::string("Duration"), std::to_string(duration));
 }
 
+std::string CreateFileSystemRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateFileSystemRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 bool CreateFileSystemRequest::getDryRun() const {
   return dryRun_;
 }

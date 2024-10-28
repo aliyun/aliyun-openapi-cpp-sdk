@@ -35,17 +35,19 @@ namespace AlibabaCloud
 				struct Snapshot
 				{
 					std::string status;
-					std::string snapshotId;
 					std::string progress;
-					long sourceFileSystemSize;
 					std::string description;
-					int encryptType;
 					std::string sourceFileSystemVersion;
 					std::string createTime;
 					std::string sourceFileSystemId;
 					int retentionDays;
-					int remainTime;
 					std::string snapshotName;
+					std::string snapshotId;
+					long sourceFileSystemSize;
+					int encryptType;
+					std::string fileSystemType;
+					std::string snapshotType;
+					int remainTime;
 				};
 
 

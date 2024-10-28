@@ -73,6 +73,8 @@ void DescribeDataFlowsResult::parse(const std::string &payload)
 			dataFlowInfoObject.autoRefreshInterval = std::stol(valueDataFlowInfoDataFlow["AutoRefreshInterval"].asString());
 		if(!valueDataFlowInfoDataFlow["AutoRefreshPolicy"].isNull())
 			dataFlowInfoObject.autoRefreshPolicy = valueDataFlowInfoDataFlow["AutoRefreshPolicy"].asString();
+		if(!valueDataFlowInfoDataFlow["SourceStoragePath"].isNull())
+			dataFlowInfoObject.sourceStoragePath = valueDataFlowInfoDataFlow["SourceStoragePath"].asString();
 		auto allAutoRefreshNode = valueDataFlowInfoDataFlow["AutoRefresh"]["AutoRefreshItem"];
 		for (auto valueDataFlowInfoDataFlowAutoRefreshAutoRefreshItem : allAutoRefreshNode)
 		{

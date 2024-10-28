@@ -57,6 +57,8 @@ void ListLifecycleRetrieveJobsResult::parse(const std::string &payload)
 			lifecycleRetrieveJobsObject.jobId = valueLifecycleRetrieveJobsLifecycleRetrieveJob["JobId"].asString();
 		if(!valueLifecycleRetrieveJobsLifecycleRetrieveJob["CreateTime"].isNull())
 			lifecycleRetrieveJobsObject.createTime = valueLifecycleRetrieveJobsLifecycleRetrieveJob["CreateTime"].asString();
+		if(!valueLifecycleRetrieveJobsLifecycleRetrieveJob["StorageType"].isNull())
+			lifecycleRetrieveJobsObject.storageType = valueLifecycleRetrieveJobsLifecycleRetrieveJob["StorageType"].asString();
 		auto allPaths = value["Paths"]["Path"];
 		for (auto value : allPaths)
 			lifecycleRetrieveJobsObject.paths.push_back(value.asString());

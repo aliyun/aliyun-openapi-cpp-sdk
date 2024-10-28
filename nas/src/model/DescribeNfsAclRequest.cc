@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/nas/model/DescribeLDAPConfigRequest.h>
+#include <alibabacloud/nas/model/DescribeNfsAclRequest.h>
 
-using AlibabaCloud::NAS::Model::DescribeLDAPConfigRequest;
+using AlibabaCloud::NAS::Model::DescribeNfsAclRequest;
 
-DescribeLDAPConfigRequest::DescribeLDAPConfigRequest()
-    : RpcServiceRequest("nas", "2017-06-26", "DescribeLDAPConfig") {
+DescribeNfsAclRequest::DescribeNfsAclRequest()
+    : RpcServiceRequest("nas", "2017-06-26", "DescribeNfsAcl") {
   setMethod(HttpRequest::Method::Post);
 }
 
-DescribeLDAPConfigRequest::~DescribeLDAPConfigRequest() {}
+DescribeNfsAclRequest::~DescribeNfsAclRequest() {}
 
-std::string DescribeLDAPConfigRequest::getFileSystemId() const {
+std::string DescribeNfsAclRequest::getFileSystemId() const {
   return fileSystemId_;
 }
 
-void DescribeLDAPConfigRequest::setFileSystemId(const std::string &fileSystemId) {
+void DescribeNfsAclRequest::setFileSystemId(const std::string &fileSystemId) {
   fileSystemId_ = fileSystemId;
   setParameter(std::string("FileSystemId"), fileSystemId);
 }

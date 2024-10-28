@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_NAS_MODEL_DESCRIBELDAPCONFIGREQUEST_H_
-#define ALIBABACLOUD_NAS_MODEL_DESCRIBELDAPCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_NAS_MODEL_DESCRIBEACCESSPOINTSREQUEST_H_
+#define ALIBABACLOUD_NAS_MODEL_DESCRIBEACCESSPOINTSREQUEST_H_
 
 #include <alibabacloud/nas/NASExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,17 +26,26 @@
 namespace AlibabaCloud {
 namespace NAS {
 namespace Model {
-class ALIBABACLOUD_NAS_EXPORT DescribeLDAPConfigRequest : public RpcServiceRequest {
+class ALIBABACLOUD_NAS_EXPORT DescribeAccessPointsRequest : public RpcServiceRequest {
 public:
-	DescribeLDAPConfigRequest();
-	~DescribeLDAPConfigRequest();
+	DescribeAccessPointsRequest();
+	~DescribeAccessPointsRequest();
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	std::string getFileSystemId() const;
 	void setFileSystemId(const std::string &fileSystemId);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
+	std::string getAccessGroup() const;
+	void setAccessGroup(const std::string &accessGroup);
 
 private:
+	std::string nextToken_;
 	std::string fileSystemId_;
+	int maxResults_;
+	std::string accessGroup_;
 };
 } // namespace Model
 } // namespace NAS
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_NAS_MODEL_DESCRIBELDAPCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_NAS_MODEL_DESCRIBEACCESSPOINTSREQUEST_H_

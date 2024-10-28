@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_NAS_MODEL_DESCRIBETAGSRESULT_H_
-#define ALIBABACLOUD_NAS_MODEL_DESCRIBETAGSRESULT_H_
+#ifndef ALIBABACLOUD_NAS_MODEL_DESCRIBENFSACLRESULT_H_
+#define ALIBABACLOUD_NAS_MODEL_DESCRIBENFSACLRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_NAS_EXPORT DescribeTagsResult : public ServiceResult
+			class ALIBABACLOUD_NAS_EXPORT DescribeNfsAclResult : public ServiceResult
 			{
 			public:
-				struct Tag
+				struct Acl
 				{
-					std::string value;
-					std::vector<std::string> fileSystemIds;
-					std::string key;
+					bool enabled;
 				};
 
 
-				DescribeTagsResult();
-				explicit DescribeTagsResult(const std::string &payload);
-				~DescribeTagsResult();
-				int getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<Tag> getTags()const;
+				DescribeNfsAclResult();
+				explicit DescribeNfsAclResult(const std::string &payload);
+				~DescribeNfsAclResult();
+				Acl getAcl()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				int pageSize_;
-				int pageNumber_;
-				std::vector<Tag> tags_;
+				Acl acl_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_NAS_MODEL_DESCRIBETAGSRESULT_H_
+#endif // !ALIBABACLOUD_NAS_MODEL_DESCRIBENFSACLRESULT_H_

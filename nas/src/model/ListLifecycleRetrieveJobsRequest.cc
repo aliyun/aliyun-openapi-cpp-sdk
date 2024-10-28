@@ -34,6 +34,15 @@ void ListLifecycleRetrieveJobsRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string ListLifecycleRetrieveJobsRequest::getStorageType() const {
+  return storageType_;
+}
+
+void ListLifecycleRetrieveJobsRequest::setStorageType(const std::string &storageType) {
+  storageType_ = storageType;
+  setParameter(std::string("StorageType"), storageType);
+}
+
 int ListLifecycleRetrieveJobsRequest::getPageSize() const {
   return pageSize_;
 }

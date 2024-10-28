@@ -43,6 +43,7 @@ namespace AlibabaCloud
 						long fileCountReal;
 						long sizeReal;
 						std::string userType;
+						long sizeRealInByte;
 					};
 					std::string status;
 					std::string path;

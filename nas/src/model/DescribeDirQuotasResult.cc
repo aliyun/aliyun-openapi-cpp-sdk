@@ -67,6 +67,8 @@ void DescribeDirQuotasResult::parse(const std::string &payload)
 				userQuotaInfosObject.quotaType = valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["QuotaType"].asString();
 			if(!valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["SizeReal"].isNull())
 				userQuotaInfosObject.sizeReal = std::stol(valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["SizeReal"].asString());
+			if(!valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["SizeRealInByte"].isNull())
+				userQuotaInfosObject.sizeRealInByte = std::stol(valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["SizeRealInByte"].asString());
 			dirQuotaInfosObject.userQuotaInfos.push_back(userQuotaInfosObject);
 		}
 		dirQuotaInfos_.push_back(dirQuotaInfosObject);

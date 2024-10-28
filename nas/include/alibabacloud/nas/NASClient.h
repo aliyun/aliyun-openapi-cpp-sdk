@@ -34,24 +34,36 @@
 #include "model/CancelAutoSnapshotPolicyResult.h"
 #include "model/CancelDataFlowAutoRefreshRequest.h"
 #include "model/CancelDataFlowAutoRefreshResult.h"
+#include "model/CancelDataFlowSubTaskRequest.h"
+#include "model/CancelDataFlowSubTaskResult.h"
 #include "model/CancelDataFlowTaskRequest.h"
 #include "model/CancelDataFlowTaskResult.h"
 #include "model/CancelDirQuotaRequest.h"
 #include "model/CancelDirQuotaResult.h"
+#include "model/CancelFilesetQuotaRequest.h"
+#include "model/CancelFilesetQuotaResult.h"
 #include "model/CancelLifecycleRetrieveJobRequest.h"
 #include "model/CancelLifecycleRetrieveJobResult.h"
 #include "model/CancelRecycleBinJobRequest.h"
 #include "model/CancelRecycleBinJobResult.h"
+#include "model/ChangeResourceGroupRequest.h"
+#include "model/ChangeResourceGroupResult.h"
 #include "model/CreateAccessGroupRequest.h"
 #include "model/CreateAccessGroupResult.h"
+#include "model/CreateAccessPointRequest.h"
+#include "model/CreateAccessPointResult.h"
 #include "model/CreateAccessRuleRequest.h"
 #include "model/CreateAccessRuleResult.h"
 #include "model/CreateAutoSnapshotPolicyRequest.h"
 #include "model/CreateAutoSnapshotPolicyResult.h"
 #include "model/CreateDataFlowRequest.h"
 #include "model/CreateDataFlowResult.h"
+#include "model/CreateDataFlowSubTaskRequest.h"
+#include "model/CreateDataFlowSubTaskResult.h"
 #include "model/CreateDataFlowTaskRequest.h"
 #include "model/CreateDataFlowTaskResult.h"
+#include "model/CreateDirRequest.h"
+#include "model/CreateDirResult.h"
 #include "model/CreateFileRequest.h"
 #include "model/CreateFileResult.h"
 #include "model/CreateFileSystemRequest.h"
@@ -64,6 +76,8 @@
 #include "model/CreateLifecyclePolicyResult.h"
 #include "model/CreateLifecycleRetrieveJobRequest.h"
 #include "model/CreateLifecycleRetrieveJobResult.h"
+#include "model/CreateLogAnalysisRequest.h"
+#include "model/CreateLogAnalysisResult.h"
 #include "model/CreateMountTargetRequest.h"
 #include "model/CreateMountTargetResult.h"
 #include "model/CreateProtocolMountTargetRequest.h"
@@ -78,6 +92,8 @@
 #include "model/CreateSnapshotResult.h"
 #include "model/DeleteAccessGroupRequest.h"
 #include "model/DeleteAccessGroupResult.h"
+#include "model/DeleteAccessPointRequest.h"
+#include "model/DeleteAccessPointResult.h"
 #include "model/DeleteAccessRuleRequest.h"
 #include "model/DeleteAccessRuleResult.h"
 #include "model/DeleteAutoSnapshotPolicyRequest.h"
@@ -92,6 +108,8 @@
 #include "model/DeleteLDAPConfigResult.h"
 #include "model/DeleteLifecyclePolicyRequest.h"
 #include "model/DeleteLifecyclePolicyResult.h"
+#include "model/DeleteLogAnalysisRequest.h"
+#include "model/DeleteLogAnalysisResult.h"
 #include "model/DeleteMountTargetRequest.h"
 #include "model/DeleteMountTargetResult.h"
 #include "model/DeleteProtocolMountTargetRequest.h"
@@ -102,6 +120,10 @@
 #include "model/DeleteSnapshotResult.h"
 #include "model/DescribeAccessGroupsRequest.h"
 #include "model/DescribeAccessGroupsResult.h"
+#include "model/DescribeAccessPointRequest.h"
+#include "model/DescribeAccessPointResult.h"
+#include "model/DescribeAccessPointsRequest.h"
+#include "model/DescribeAccessPointsResult.h"
 #include "model/DescribeAccessRulesRequest.h"
 #include "model/DescribeAccessRulesResult.h"
 #include "model/DescribeAutoSnapshotPoliciesRequest.h"
@@ -110,6 +132,8 @@
 #include "model/DescribeAutoSnapshotTasksResult.h"
 #include "model/DescribeBlackListClientsRequest.h"
 #include "model/DescribeBlackListClientsResult.h"
+#include "model/DescribeDataFlowSubTasksRequest.h"
+#include "model/DescribeDataFlowSubTasksResult.h"
 #include "model/DescribeDataFlowTasksRequest.h"
 #include "model/DescribeDataFlowTasksResult.h"
 #include "model/DescribeDataFlowsRequest.h"
@@ -122,8 +146,6 @@
 #include "model/DescribeFileSystemsResult.h"
 #include "model/DescribeFilesetsRequest.h"
 #include "model/DescribeFilesetsResult.h"
-#include "model/DescribeLDAPConfigRequest.h"
-#include "model/DescribeLDAPConfigResult.h"
 #include "model/DescribeLifecyclePoliciesRequest.h"
 #include "model/DescribeLifecyclePoliciesResult.h"
 #include "model/DescribeLogAnalysisRequest.h"
@@ -132,6 +154,8 @@
 #include "model/DescribeMountTargetsResult.h"
 #include "model/DescribeMountedClientsRequest.h"
 #include "model/DescribeMountedClientsResult.h"
+#include "model/DescribeNfsAclRequest.h"
+#include "model/DescribeNfsAclResult.h"
 #include "model/DescribeProtocolMountTargetRequest.h"
 #include "model/DescribeProtocolMountTargetResult.h"
 #include "model/DescribeProtocolServiceRequest.h"
@@ -144,14 +168,16 @@
 #include "model/DescribeSnapshotsResult.h"
 #include "model/DescribeStoragePackagesRequest.h"
 #include "model/DescribeStoragePackagesResult.h"
-#include "model/DescribeTagsRequest.h"
-#include "model/DescribeTagsResult.h"
 #include "model/DescribeZonesRequest.h"
 #include "model/DescribeZonesResult.h"
 #include "model/DisableAndCleanRecycleBinRequest.h"
 #include "model/DisableAndCleanRecycleBinResult.h"
+#include "model/DisableNfsAclRequest.h"
+#include "model/DisableNfsAclResult.h"
 #include "model/DisableSmbAclRequest.h"
 #include "model/DisableSmbAclResult.h"
+#include "model/EnableNfsAclRequest.h"
+#include "model/EnableNfsAclResult.h"
 #include "model/EnableRecycleBinRequest.h"
 #include "model/EnableRecycleBinResult.h"
 #include "model/EnableSmbAclRequest.h"
@@ -174,6 +200,8 @@
 #include "model/ListTagResourcesResult.h"
 #include "model/ModifyAccessGroupRequest.h"
 #include "model/ModifyAccessGroupResult.h"
+#include "model/ModifyAccessPointRequest.h"
+#include "model/ModifyAccessPointResult.h"
 #include "model/ModifyAccessRuleRequest.h"
 #include "model/ModifyAccessRuleResult.h"
 #include "model/ModifyAutoSnapshotPolicyRequest.h"
@@ -210,6 +238,8 @@
 #include "model/RetryLifecycleRetrieveJobResult.h"
 #include "model/SetDirQuotaRequest.h"
 #include "model/SetDirQuotaResult.h"
+#include "model/SetFilesetQuotaRequest.h"
+#include "model/SetFilesetQuotaResult.h"
 #include "model/StartDataFlowRequest.h"
 #include "model/StartDataFlowResult.h"
 #include "model/StopDataFlowRequest.h"
@@ -249,21 +279,33 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CancelDataFlowAutoRefreshResult> CancelDataFlowAutoRefreshOutcome;
 			typedef std::future<CancelDataFlowAutoRefreshOutcome> CancelDataFlowAutoRefreshOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::CancelDataFlowAutoRefreshRequest&, const CancelDataFlowAutoRefreshOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelDataFlowAutoRefreshAsyncHandler;
+			typedef Outcome<Error, Model::CancelDataFlowSubTaskResult> CancelDataFlowSubTaskOutcome;
+			typedef std::future<CancelDataFlowSubTaskOutcome> CancelDataFlowSubTaskOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::CancelDataFlowSubTaskRequest&, const CancelDataFlowSubTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelDataFlowSubTaskAsyncHandler;
 			typedef Outcome<Error, Model::CancelDataFlowTaskResult> CancelDataFlowTaskOutcome;
 			typedef std::future<CancelDataFlowTaskOutcome> CancelDataFlowTaskOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::CancelDataFlowTaskRequest&, const CancelDataFlowTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelDataFlowTaskAsyncHandler;
 			typedef Outcome<Error, Model::CancelDirQuotaResult> CancelDirQuotaOutcome;
 			typedef std::future<CancelDirQuotaOutcome> CancelDirQuotaOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::CancelDirQuotaRequest&, const CancelDirQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelDirQuotaAsyncHandler;
+			typedef Outcome<Error, Model::CancelFilesetQuotaResult> CancelFilesetQuotaOutcome;
+			typedef std::future<CancelFilesetQuotaOutcome> CancelFilesetQuotaOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::CancelFilesetQuotaRequest&, const CancelFilesetQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelFilesetQuotaAsyncHandler;
 			typedef Outcome<Error, Model::CancelLifecycleRetrieveJobResult> CancelLifecycleRetrieveJobOutcome;
 			typedef std::future<CancelLifecycleRetrieveJobOutcome> CancelLifecycleRetrieveJobOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::CancelLifecycleRetrieveJobRequest&, const CancelLifecycleRetrieveJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelLifecycleRetrieveJobAsyncHandler;
 			typedef Outcome<Error, Model::CancelRecycleBinJobResult> CancelRecycleBinJobOutcome;
 			typedef std::future<CancelRecycleBinJobOutcome> CancelRecycleBinJobOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::CancelRecycleBinJobRequest&, const CancelRecycleBinJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelRecycleBinJobAsyncHandler;
+			typedef Outcome<Error, Model::ChangeResourceGroupResult> ChangeResourceGroupOutcome;
+			typedef std::future<ChangeResourceGroupOutcome> ChangeResourceGroupOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::ChangeResourceGroupRequest&, const ChangeResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::CreateAccessGroupResult> CreateAccessGroupOutcome;
 			typedef std::future<CreateAccessGroupOutcome> CreateAccessGroupOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::CreateAccessGroupRequest&, const CreateAccessGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateAccessPointResult> CreateAccessPointOutcome;
+			typedef std::future<CreateAccessPointOutcome> CreateAccessPointOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::CreateAccessPointRequest&, const CreateAccessPointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessPointAsyncHandler;
 			typedef Outcome<Error, Model::CreateAccessRuleResult> CreateAccessRuleOutcome;
 			typedef std::future<CreateAccessRuleOutcome> CreateAccessRuleOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::CreateAccessRuleRequest&, const CreateAccessRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessRuleAsyncHandler;
@@ -273,9 +315,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDataFlowResult> CreateDataFlowOutcome;
 			typedef std::future<CreateDataFlowOutcome> CreateDataFlowOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::CreateDataFlowRequest&, const CreateDataFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataFlowAsyncHandler;
+			typedef Outcome<Error, Model::CreateDataFlowSubTaskResult> CreateDataFlowSubTaskOutcome;
+			typedef std::future<CreateDataFlowSubTaskOutcome> CreateDataFlowSubTaskOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::CreateDataFlowSubTaskRequest&, const CreateDataFlowSubTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataFlowSubTaskAsyncHandler;
 			typedef Outcome<Error, Model::CreateDataFlowTaskResult> CreateDataFlowTaskOutcome;
 			typedef std::future<CreateDataFlowTaskOutcome> CreateDataFlowTaskOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::CreateDataFlowTaskRequest&, const CreateDataFlowTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataFlowTaskAsyncHandler;
+			typedef Outcome<Error, Model::CreateDirResult> CreateDirOutcome;
+			typedef std::future<CreateDirOutcome> CreateDirOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::CreateDirRequest&, const CreateDirOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDirAsyncHandler;
 			typedef Outcome<Error, Model::CreateFileResult> CreateFileOutcome;
 			typedef std::future<CreateFileOutcome> CreateFileOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::CreateFileRequest&, const CreateFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileAsyncHandler;
@@ -294,6 +342,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateLifecycleRetrieveJobResult> CreateLifecycleRetrieveJobOutcome;
 			typedef std::future<CreateLifecycleRetrieveJobOutcome> CreateLifecycleRetrieveJobOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::CreateLifecycleRetrieveJobRequest&, const CreateLifecycleRetrieveJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLifecycleRetrieveJobAsyncHandler;
+			typedef Outcome<Error, Model::CreateLogAnalysisResult> CreateLogAnalysisOutcome;
+			typedef std::future<CreateLogAnalysisOutcome> CreateLogAnalysisOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::CreateLogAnalysisRequest&, const CreateLogAnalysisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLogAnalysisAsyncHandler;
 			typedef Outcome<Error, Model::CreateMountTargetResult> CreateMountTargetOutcome;
 			typedef std::future<CreateMountTargetOutcome> CreateMountTargetOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::CreateMountTargetRequest&, const CreateMountTargetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMountTargetAsyncHandler;
@@ -315,6 +366,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteAccessGroupResult> DeleteAccessGroupOutcome;
 			typedef std::future<DeleteAccessGroupOutcome> DeleteAccessGroupOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DeleteAccessGroupRequest&, const DeleteAccessGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccessGroupAsyncHandler;
+			typedef Outcome<Error, Model::DeleteAccessPointResult> DeleteAccessPointOutcome;
+			typedef std::future<DeleteAccessPointOutcome> DeleteAccessPointOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::DeleteAccessPointRequest&, const DeleteAccessPointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccessPointAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAccessRuleResult> DeleteAccessRuleOutcome;
 			typedef std::future<DeleteAccessRuleOutcome> DeleteAccessRuleOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DeleteAccessRuleRequest&, const DeleteAccessRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccessRuleAsyncHandler;
@@ -336,6 +390,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteLifecyclePolicyResult> DeleteLifecyclePolicyOutcome;
 			typedef std::future<DeleteLifecyclePolicyOutcome> DeleteLifecyclePolicyOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DeleteLifecyclePolicyRequest&, const DeleteLifecyclePolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLifecyclePolicyAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLogAnalysisResult> DeleteLogAnalysisOutcome;
+			typedef std::future<DeleteLogAnalysisOutcome> DeleteLogAnalysisOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::DeleteLogAnalysisRequest&, const DeleteLogAnalysisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLogAnalysisAsyncHandler;
 			typedef Outcome<Error, Model::DeleteMountTargetResult> DeleteMountTargetOutcome;
 			typedef std::future<DeleteMountTargetOutcome> DeleteMountTargetOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DeleteMountTargetRequest&, const DeleteMountTargetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMountTargetAsyncHandler;
@@ -351,6 +408,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAccessGroupsResult> DescribeAccessGroupsOutcome;
 			typedef std::future<DescribeAccessGroupsOutcome> DescribeAccessGroupsOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DescribeAccessGroupsRequest&, const DescribeAccessGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessGroupsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAccessPointResult> DescribeAccessPointOutcome;
+			typedef std::future<DescribeAccessPointOutcome> DescribeAccessPointOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::DescribeAccessPointRequest&, const DescribeAccessPointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessPointAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAccessPointsResult> DescribeAccessPointsOutcome;
+			typedef std::future<DescribeAccessPointsOutcome> DescribeAccessPointsOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::DescribeAccessPointsRequest&, const DescribeAccessPointsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessPointsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAccessRulesResult> DescribeAccessRulesOutcome;
 			typedef std::future<DescribeAccessRulesOutcome> DescribeAccessRulesOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DescribeAccessRulesRequest&, const DescribeAccessRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessRulesAsyncHandler;
@@ -363,6 +426,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeBlackListClientsResult> DescribeBlackListClientsOutcome;
 			typedef std::future<DescribeBlackListClientsOutcome> DescribeBlackListClientsOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DescribeBlackListClientsRequest&, const DescribeBlackListClientsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlackListClientsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDataFlowSubTasksResult> DescribeDataFlowSubTasksOutcome;
+			typedef std::future<DescribeDataFlowSubTasksOutcome> DescribeDataFlowSubTasksOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::DescribeDataFlowSubTasksRequest&, const DescribeDataFlowSubTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataFlowSubTasksAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDataFlowTasksResult> DescribeDataFlowTasksOutcome;
 			typedef std::future<DescribeDataFlowTasksOutcome> DescribeDataFlowTasksOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DescribeDataFlowTasksRequest&, const DescribeDataFlowTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataFlowTasksAsyncHandler;
@@ -381,9 +447,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeFilesetsResult> DescribeFilesetsOutcome;
 			typedef std::future<DescribeFilesetsOutcome> DescribeFilesetsOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DescribeFilesetsRequest&, const DescribeFilesetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFilesetsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLDAPConfigResult> DescribeLDAPConfigOutcome;
-			typedef std::future<DescribeLDAPConfigOutcome> DescribeLDAPConfigOutcomeCallable;
-			typedef std::function<void(const NASClient*, const Model::DescribeLDAPConfigRequest&, const DescribeLDAPConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLDAPConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLifecyclePoliciesResult> DescribeLifecyclePoliciesOutcome;
 			typedef std::future<DescribeLifecyclePoliciesOutcome> DescribeLifecyclePoliciesOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DescribeLifecyclePoliciesRequest&, const DescribeLifecyclePoliciesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLifecyclePoliciesAsyncHandler;
@@ -396,6 +459,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeMountedClientsResult> DescribeMountedClientsOutcome;
 			typedef std::future<DescribeMountedClientsOutcome> DescribeMountedClientsOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DescribeMountedClientsRequest&, const DescribeMountedClientsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMountedClientsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeNfsAclResult> DescribeNfsAclOutcome;
+			typedef std::future<DescribeNfsAclOutcome> DescribeNfsAclOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::DescribeNfsAclRequest&, const DescribeNfsAclOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNfsAclAsyncHandler;
 			typedef Outcome<Error, Model::DescribeProtocolMountTargetResult> DescribeProtocolMountTargetOutcome;
 			typedef std::future<DescribeProtocolMountTargetOutcome> DescribeProtocolMountTargetOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DescribeProtocolMountTargetRequest&, const DescribeProtocolMountTargetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtocolMountTargetAsyncHandler;
@@ -414,18 +480,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeStoragePackagesResult> DescribeStoragePackagesOutcome;
 			typedef std::future<DescribeStoragePackagesOutcome> DescribeStoragePackagesOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DescribeStoragePackagesRequest&, const DescribeStoragePackagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStoragePackagesAsyncHandler;
-			typedef Outcome<Error, Model::DescribeTagsResult> DescribeTagsOutcome;
-			typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
-			typedef std::function<void(const NASClient*, const Model::DescribeTagsRequest&, const DescribeTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeZonesResult> DescribeZonesOutcome;
 			typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DescribeZonesRequest&, const DescribeZonesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
 			typedef Outcome<Error, Model::DisableAndCleanRecycleBinResult> DisableAndCleanRecycleBinOutcome;
 			typedef std::future<DisableAndCleanRecycleBinOutcome> DisableAndCleanRecycleBinOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DisableAndCleanRecycleBinRequest&, const DisableAndCleanRecycleBinOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableAndCleanRecycleBinAsyncHandler;
+			typedef Outcome<Error, Model::DisableNfsAclResult> DisableNfsAclOutcome;
+			typedef std::future<DisableNfsAclOutcome> DisableNfsAclOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::DisableNfsAclRequest&, const DisableNfsAclOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableNfsAclAsyncHandler;
 			typedef Outcome<Error, Model::DisableSmbAclResult> DisableSmbAclOutcome;
 			typedef std::future<DisableSmbAclOutcome> DisableSmbAclOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DisableSmbAclRequest&, const DisableSmbAclOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableSmbAclAsyncHandler;
+			typedef Outcome<Error, Model::EnableNfsAclResult> EnableNfsAclOutcome;
+			typedef std::future<EnableNfsAclOutcome> EnableNfsAclOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::EnableNfsAclRequest&, const EnableNfsAclOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableNfsAclAsyncHandler;
 			typedef Outcome<Error, Model::EnableRecycleBinResult> EnableRecycleBinOutcome;
 			typedef std::future<EnableRecycleBinOutcome> EnableRecycleBinOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::EnableRecycleBinRequest&, const EnableRecycleBinOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableRecycleBinAsyncHandler;
@@ -459,6 +528,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyAccessGroupResult> ModifyAccessGroupOutcome;
 			typedef std::future<ModifyAccessGroupOutcome> ModifyAccessGroupOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::ModifyAccessGroupRequest&, const ModifyAccessGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessGroupAsyncHandler;
+			typedef Outcome<Error, Model::ModifyAccessPointResult> ModifyAccessPointOutcome;
+			typedef std::future<ModifyAccessPointOutcome> ModifyAccessPointOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::ModifyAccessPointRequest&, const ModifyAccessPointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessPointAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAccessRuleResult> ModifyAccessRuleOutcome;
 			typedef std::future<ModifyAccessRuleOutcome> ModifyAccessRuleOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::ModifyAccessRuleRequest&, const ModifyAccessRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessRuleAsyncHandler;
@@ -513,6 +585,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetDirQuotaResult> SetDirQuotaOutcome;
 			typedef std::future<SetDirQuotaOutcome> SetDirQuotaOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::SetDirQuotaRequest&, const SetDirQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDirQuotaAsyncHandler;
+			typedef Outcome<Error, Model::SetFilesetQuotaResult> SetFilesetQuotaOutcome;
+			typedef std::future<SetFilesetQuotaOutcome> SetFilesetQuotaOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::SetFilesetQuotaRequest&, const SetFilesetQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetFilesetQuotaAsyncHandler;
 			typedef Outcome<Error, Model::StartDataFlowResult> StartDataFlowOutcome;
 			typedef std::future<StartDataFlowOutcome> StartDataFlowOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::StartDataFlowRequest&, const StartDataFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartDataFlowAsyncHandler;
@@ -554,21 +629,33 @@ namespace AlibabaCloud
 			CancelDataFlowAutoRefreshOutcome cancelDataFlowAutoRefresh(const Model::CancelDataFlowAutoRefreshRequest &request)const;
 			void cancelDataFlowAutoRefreshAsync(const Model::CancelDataFlowAutoRefreshRequest& request, const CancelDataFlowAutoRefreshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelDataFlowAutoRefreshOutcomeCallable cancelDataFlowAutoRefreshCallable(const Model::CancelDataFlowAutoRefreshRequest& request) const;
+			CancelDataFlowSubTaskOutcome cancelDataFlowSubTask(const Model::CancelDataFlowSubTaskRequest &request)const;
+			void cancelDataFlowSubTaskAsync(const Model::CancelDataFlowSubTaskRequest& request, const CancelDataFlowSubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelDataFlowSubTaskOutcomeCallable cancelDataFlowSubTaskCallable(const Model::CancelDataFlowSubTaskRequest& request) const;
 			CancelDataFlowTaskOutcome cancelDataFlowTask(const Model::CancelDataFlowTaskRequest &request)const;
 			void cancelDataFlowTaskAsync(const Model::CancelDataFlowTaskRequest& request, const CancelDataFlowTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelDataFlowTaskOutcomeCallable cancelDataFlowTaskCallable(const Model::CancelDataFlowTaskRequest& request) const;
 			CancelDirQuotaOutcome cancelDirQuota(const Model::CancelDirQuotaRequest &request)const;
 			void cancelDirQuotaAsync(const Model::CancelDirQuotaRequest& request, const CancelDirQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelDirQuotaOutcomeCallable cancelDirQuotaCallable(const Model::CancelDirQuotaRequest& request) const;
+			CancelFilesetQuotaOutcome cancelFilesetQuota(const Model::CancelFilesetQuotaRequest &request)const;
+			void cancelFilesetQuotaAsync(const Model::CancelFilesetQuotaRequest& request, const CancelFilesetQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelFilesetQuotaOutcomeCallable cancelFilesetQuotaCallable(const Model::CancelFilesetQuotaRequest& request) const;
 			CancelLifecycleRetrieveJobOutcome cancelLifecycleRetrieveJob(const Model::CancelLifecycleRetrieveJobRequest &request)const;
 			void cancelLifecycleRetrieveJobAsync(const Model::CancelLifecycleRetrieveJobRequest& request, const CancelLifecycleRetrieveJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelLifecycleRetrieveJobOutcomeCallable cancelLifecycleRetrieveJobCallable(const Model::CancelLifecycleRetrieveJobRequest& request) const;
 			CancelRecycleBinJobOutcome cancelRecycleBinJob(const Model::CancelRecycleBinJobRequest &request)const;
 			void cancelRecycleBinJobAsync(const Model::CancelRecycleBinJobRequest& request, const CancelRecycleBinJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelRecycleBinJobOutcomeCallable cancelRecycleBinJobCallable(const Model::CancelRecycleBinJobRequest& request) const;
+			ChangeResourceGroupOutcome changeResourceGroup(const Model::ChangeResourceGroupRequest &request)const;
+			void changeResourceGroupAsync(const Model::ChangeResourceGroupRequest& request, const ChangeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChangeResourceGroupOutcomeCallable changeResourceGroupCallable(const Model::ChangeResourceGroupRequest& request) const;
 			CreateAccessGroupOutcome createAccessGroup(const Model::CreateAccessGroupRequest &request)const;
 			void createAccessGroupAsync(const Model::CreateAccessGroupRequest& request, const CreateAccessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAccessGroupOutcomeCallable createAccessGroupCallable(const Model::CreateAccessGroupRequest& request) const;
+			CreateAccessPointOutcome createAccessPoint(const Model::CreateAccessPointRequest &request)const;
+			void createAccessPointAsync(const Model::CreateAccessPointRequest& request, const CreateAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateAccessPointOutcomeCallable createAccessPointCallable(const Model::CreateAccessPointRequest& request) const;
 			CreateAccessRuleOutcome createAccessRule(const Model::CreateAccessRuleRequest &request)const;
 			void createAccessRuleAsync(const Model::CreateAccessRuleRequest& request, const CreateAccessRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAccessRuleOutcomeCallable createAccessRuleCallable(const Model::CreateAccessRuleRequest& request) const;
@@ -578,9 +665,15 @@ namespace AlibabaCloud
 			CreateDataFlowOutcome createDataFlow(const Model::CreateDataFlowRequest &request)const;
 			void createDataFlowAsync(const Model::CreateDataFlowRequest& request, const CreateDataFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDataFlowOutcomeCallable createDataFlowCallable(const Model::CreateDataFlowRequest& request) const;
+			CreateDataFlowSubTaskOutcome createDataFlowSubTask(const Model::CreateDataFlowSubTaskRequest &request)const;
+			void createDataFlowSubTaskAsync(const Model::CreateDataFlowSubTaskRequest& request, const CreateDataFlowSubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDataFlowSubTaskOutcomeCallable createDataFlowSubTaskCallable(const Model::CreateDataFlowSubTaskRequest& request) const;
 			CreateDataFlowTaskOutcome createDataFlowTask(const Model::CreateDataFlowTaskRequest &request)const;
 			void createDataFlowTaskAsync(const Model::CreateDataFlowTaskRequest& request, const CreateDataFlowTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDataFlowTaskOutcomeCallable createDataFlowTaskCallable(const Model::CreateDataFlowTaskRequest& request) const;
+			CreateDirOutcome createDir(const Model::CreateDirRequest &request)const;
+			void createDirAsync(const Model::CreateDirRequest& request, const CreateDirAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDirOutcomeCallable createDirCallable(const Model::CreateDirRequest& request) const;
 			CreateFileOutcome createFile(const Model::CreateFileRequest &request)const;
 			void createFileAsync(const Model::CreateFileRequest& request, const CreateFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateFileOutcomeCallable createFileCallable(const Model::CreateFileRequest& request) const;
@@ -599,6 +692,9 @@ namespace AlibabaCloud
 			CreateLifecycleRetrieveJobOutcome createLifecycleRetrieveJob(const Model::CreateLifecycleRetrieveJobRequest &request)const;
 			void createLifecycleRetrieveJobAsync(const Model::CreateLifecycleRetrieveJobRequest& request, const CreateLifecycleRetrieveJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLifecycleRetrieveJobOutcomeCallable createLifecycleRetrieveJobCallable(const Model::CreateLifecycleRetrieveJobRequest& request) const;
+			CreateLogAnalysisOutcome createLogAnalysis(const Model::CreateLogAnalysisRequest &request)const;
+			void createLogAnalysisAsync(const Model::CreateLogAnalysisRequest& request, const CreateLogAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateLogAnalysisOutcomeCallable createLogAnalysisCallable(const Model::CreateLogAnalysisRequest& request) const;
 			CreateMountTargetOutcome createMountTarget(const Model::CreateMountTargetRequest &request)const;
 			void createMountTargetAsync(const Model::CreateMountTargetRequest& request, const CreateMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMountTargetOutcomeCallable createMountTargetCallable(const Model::CreateMountTargetRequest& request) const;
@@ -620,6 +716,9 @@ namespace AlibabaCloud
 			DeleteAccessGroupOutcome deleteAccessGroup(const Model::DeleteAccessGroupRequest &request)const;
 			void deleteAccessGroupAsync(const Model::DeleteAccessGroupRequest& request, const DeleteAccessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAccessGroupOutcomeCallable deleteAccessGroupCallable(const Model::DeleteAccessGroupRequest& request) const;
+			DeleteAccessPointOutcome deleteAccessPoint(const Model::DeleteAccessPointRequest &request)const;
+			void deleteAccessPointAsync(const Model::DeleteAccessPointRequest& request, const DeleteAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteAccessPointOutcomeCallable deleteAccessPointCallable(const Model::DeleteAccessPointRequest& request) const;
 			DeleteAccessRuleOutcome deleteAccessRule(const Model::DeleteAccessRuleRequest &request)const;
 			void deleteAccessRuleAsync(const Model::DeleteAccessRuleRequest& request, const DeleteAccessRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAccessRuleOutcomeCallable deleteAccessRuleCallable(const Model::DeleteAccessRuleRequest& request) const;
@@ -641,6 +740,9 @@ namespace AlibabaCloud
 			DeleteLifecyclePolicyOutcome deleteLifecyclePolicy(const Model::DeleteLifecyclePolicyRequest &request)const;
 			void deleteLifecyclePolicyAsync(const Model::DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLifecyclePolicyOutcomeCallable deleteLifecyclePolicyCallable(const Model::DeleteLifecyclePolicyRequest& request) const;
+			DeleteLogAnalysisOutcome deleteLogAnalysis(const Model::DeleteLogAnalysisRequest &request)const;
+			void deleteLogAnalysisAsync(const Model::DeleteLogAnalysisRequest& request, const DeleteLogAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLogAnalysisOutcomeCallable deleteLogAnalysisCallable(const Model::DeleteLogAnalysisRequest& request) const;
 			DeleteMountTargetOutcome deleteMountTarget(const Model::DeleteMountTargetRequest &request)const;
 			void deleteMountTargetAsync(const Model::DeleteMountTargetRequest& request, const DeleteMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteMountTargetOutcomeCallable deleteMountTargetCallable(const Model::DeleteMountTargetRequest& request) const;
@@ -656,6 +758,12 @@ namespace AlibabaCloud
 			DescribeAccessGroupsOutcome describeAccessGroups(const Model::DescribeAccessGroupsRequest &request)const;
 			void describeAccessGroupsAsync(const Model::DescribeAccessGroupsRequest& request, const DescribeAccessGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccessGroupsOutcomeCallable describeAccessGroupsCallable(const Model::DescribeAccessGroupsRequest& request) const;
+			DescribeAccessPointOutcome describeAccessPoint(const Model::DescribeAccessPointRequest &request)const;
+			void describeAccessPointAsync(const Model::DescribeAccessPointRequest& request, const DescribeAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAccessPointOutcomeCallable describeAccessPointCallable(const Model::DescribeAccessPointRequest& request) const;
+			DescribeAccessPointsOutcome describeAccessPoints(const Model::DescribeAccessPointsRequest &request)const;
+			void describeAccessPointsAsync(const Model::DescribeAccessPointsRequest& request, const DescribeAccessPointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAccessPointsOutcomeCallable describeAccessPointsCallable(const Model::DescribeAccessPointsRequest& request) const;
 			DescribeAccessRulesOutcome describeAccessRules(const Model::DescribeAccessRulesRequest &request)const;
 			void describeAccessRulesAsync(const Model::DescribeAccessRulesRequest& request, const DescribeAccessRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccessRulesOutcomeCallable describeAccessRulesCallable(const Model::DescribeAccessRulesRequest& request) const;
@@ -668,6 +776,9 @@ namespace AlibabaCloud
 			DescribeBlackListClientsOutcome describeBlackListClients(const Model::DescribeBlackListClientsRequest &request)const;
 			void describeBlackListClientsAsync(const Model::DescribeBlackListClientsRequest& request, const DescribeBlackListClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBlackListClientsOutcomeCallable describeBlackListClientsCallable(const Model::DescribeBlackListClientsRequest& request) const;
+			DescribeDataFlowSubTasksOutcome describeDataFlowSubTasks(const Model::DescribeDataFlowSubTasksRequest &request)const;
+			void describeDataFlowSubTasksAsync(const Model::DescribeDataFlowSubTasksRequest& request, const DescribeDataFlowSubTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDataFlowSubTasksOutcomeCallable describeDataFlowSubTasksCallable(const Model::DescribeDataFlowSubTasksRequest& request) const;
 			DescribeDataFlowTasksOutcome describeDataFlowTasks(const Model::DescribeDataFlowTasksRequest &request)const;
 			void describeDataFlowTasksAsync(const Model::DescribeDataFlowTasksRequest& request, const DescribeDataFlowTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDataFlowTasksOutcomeCallable describeDataFlowTasksCallable(const Model::DescribeDataFlowTasksRequest& request) const;
@@ -686,9 +797,6 @@ namespace AlibabaCloud
 			DescribeFilesetsOutcome describeFilesets(const Model::DescribeFilesetsRequest &request)const;
 			void describeFilesetsAsync(const Model::DescribeFilesetsRequest& request, const DescribeFilesetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeFilesetsOutcomeCallable describeFilesetsCallable(const Model::DescribeFilesetsRequest& request) const;
-			DescribeLDAPConfigOutcome describeLDAPConfig(const Model::DescribeLDAPConfigRequest &request)const;
-			void describeLDAPConfigAsync(const Model::DescribeLDAPConfigRequest& request, const DescribeLDAPConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLDAPConfigOutcomeCallable describeLDAPConfigCallable(const Model::DescribeLDAPConfigRequest& request) const;
 			DescribeLifecyclePoliciesOutcome describeLifecyclePolicies(const Model::DescribeLifecyclePoliciesRequest &request)const;
 			void describeLifecyclePoliciesAsync(const Model::DescribeLifecyclePoliciesRequest& request, const DescribeLifecyclePoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLifecyclePoliciesOutcomeCallable describeLifecyclePoliciesCallable(const Model::DescribeLifecyclePoliciesRequest& request) const;
@@ -701,6 +809,9 @@ namespace AlibabaCloud
 			DescribeMountedClientsOutcome describeMountedClients(const Model::DescribeMountedClientsRequest &request)const;
 			void describeMountedClientsAsync(const Model::DescribeMountedClientsRequest& request, const DescribeMountedClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMountedClientsOutcomeCallable describeMountedClientsCallable(const Model::DescribeMountedClientsRequest& request) const;
+			DescribeNfsAclOutcome describeNfsAcl(const Model::DescribeNfsAclRequest &request)const;
+			void describeNfsAclAsync(const Model::DescribeNfsAclRequest& request, const DescribeNfsAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeNfsAclOutcomeCallable describeNfsAclCallable(const Model::DescribeNfsAclRequest& request) const;
 			DescribeProtocolMountTargetOutcome describeProtocolMountTarget(const Model::DescribeProtocolMountTargetRequest &request)const;
 			void describeProtocolMountTargetAsync(const Model::DescribeProtocolMountTargetRequest& request, const DescribeProtocolMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeProtocolMountTargetOutcomeCallable describeProtocolMountTargetCallable(const Model::DescribeProtocolMountTargetRequest& request) const;
@@ -719,18 +830,21 @@ namespace AlibabaCloud
 			DescribeStoragePackagesOutcome describeStoragePackages(const Model::DescribeStoragePackagesRequest &request)const;
 			void describeStoragePackagesAsync(const Model::DescribeStoragePackagesRequest& request, const DescribeStoragePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeStoragePackagesOutcomeCallable describeStoragePackagesCallable(const Model::DescribeStoragePackagesRequest& request) const;
-			DescribeTagsOutcome describeTags(const Model::DescribeTagsRequest &request)const;
-			void describeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeTagsOutcomeCallable describeTagsCallable(const Model::DescribeTagsRequest& request) const;
 			DescribeZonesOutcome describeZones(const Model::DescribeZonesRequest &request)const;
 			void describeZonesAsync(const Model::DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeZonesOutcomeCallable describeZonesCallable(const Model::DescribeZonesRequest& request) const;
 			DisableAndCleanRecycleBinOutcome disableAndCleanRecycleBin(const Model::DisableAndCleanRecycleBinRequest &request)const;
 			void disableAndCleanRecycleBinAsync(const Model::DisableAndCleanRecycleBinRequest& request, const DisableAndCleanRecycleBinAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableAndCleanRecycleBinOutcomeCallable disableAndCleanRecycleBinCallable(const Model::DisableAndCleanRecycleBinRequest& request) const;
+			DisableNfsAclOutcome disableNfsAcl(const Model::DisableNfsAclRequest &request)const;
+			void disableNfsAclAsync(const Model::DisableNfsAclRequest& request, const DisableNfsAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DisableNfsAclOutcomeCallable disableNfsAclCallable(const Model::DisableNfsAclRequest& request) const;
 			DisableSmbAclOutcome disableSmbAcl(const Model::DisableSmbAclRequest &request)const;
 			void disableSmbAclAsync(const Model::DisableSmbAclRequest& request, const DisableSmbAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableSmbAclOutcomeCallable disableSmbAclCallable(const Model::DisableSmbAclRequest& request) const;
+			EnableNfsAclOutcome enableNfsAcl(const Model::EnableNfsAclRequest &request)const;
+			void enableNfsAclAsync(const Model::EnableNfsAclRequest& request, const EnableNfsAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableNfsAclOutcomeCallable enableNfsAclCallable(const Model::EnableNfsAclRequest& request) const;
 			EnableRecycleBinOutcome enableRecycleBin(const Model::EnableRecycleBinRequest &request)const;
 			void enableRecycleBinAsync(const Model::EnableRecycleBinRequest& request, const EnableRecycleBinAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableRecycleBinOutcomeCallable enableRecycleBinCallable(const Model::EnableRecycleBinRequest& request) const;
@@ -764,6 +878,9 @@ namespace AlibabaCloud
 			ModifyAccessGroupOutcome modifyAccessGroup(const Model::ModifyAccessGroupRequest &request)const;
 			void modifyAccessGroupAsync(const Model::ModifyAccessGroupRequest& request, const ModifyAccessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAccessGroupOutcomeCallable modifyAccessGroupCallable(const Model::ModifyAccessGroupRequest& request) const;
+			ModifyAccessPointOutcome modifyAccessPoint(const Model::ModifyAccessPointRequest &request)const;
+			void modifyAccessPointAsync(const Model::ModifyAccessPointRequest& request, const ModifyAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyAccessPointOutcomeCallable modifyAccessPointCallable(const Model::ModifyAccessPointRequest& request) const;
 			ModifyAccessRuleOutcome modifyAccessRule(const Model::ModifyAccessRuleRequest &request)const;
 			void modifyAccessRuleAsync(const Model::ModifyAccessRuleRequest& request, const ModifyAccessRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAccessRuleOutcomeCallable modifyAccessRuleCallable(const Model::ModifyAccessRuleRequest& request) const;
@@ -818,6 +935,9 @@ namespace AlibabaCloud
 			SetDirQuotaOutcome setDirQuota(const Model::SetDirQuotaRequest &request)const;
 			void setDirQuotaAsync(const Model::SetDirQuotaRequest& request, const SetDirQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDirQuotaOutcomeCallable setDirQuotaCallable(const Model::SetDirQuotaRequest& request) const;
+			SetFilesetQuotaOutcome setFilesetQuota(const Model::SetFilesetQuotaRequest &request)const;
+			void setFilesetQuotaAsync(const Model::SetFilesetQuotaRequest& request, const SetFilesetQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetFilesetQuotaOutcomeCallable setFilesetQuotaCallable(const Model::SetFilesetQuotaRequest& request) const;
 			StartDataFlowOutcome startDataFlow(const Model::StartDataFlowRequest &request)const;
 			void startDataFlowAsync(const Model::StartDataFlowRequest& request, const StartDataFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartDataFlowOutcomeCallable startDataFlowCallable(const Model::StartDataFlowRequest& request) const;

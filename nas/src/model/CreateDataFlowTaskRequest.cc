@@ -25,6 +25,15 @@ CreateDataFlowTaskRequest::CreateDataFlowTaskRequest()
 
 CreateDataFlowTaskRequest::~CreateDataFlowTaskRequest() {}
 
+std::string CreateDataFlowTaskRequest::getDstDirectory() const {
+  return dstDirectory_;
+}
+
+void CreateDataFlowTaskRequest::setDstDirectory(const std::string &dstDirectory) {
+  dstDirectory_ = dstDirectory;
+  setParameter(std::string("DstDirectory"), dstDirectory);
+}
+
 std::string CreateDataFlowTaskRequest::getClientToken() const {
   return clientToken_;
 }
@@ -61,6 +70,15 @@ void CreateDataFlowTaskRequest::setDataType(const std::string &dataType) {
   setParameter(std::string("DataType"), dataType);
 }
 
+bool CreateDataFlowTaskRequest::getCreateDirIfNotExist() const {
+  return createDirIfNotExist_;
+}
+
+void CreateDataFlowTaskRequest::setCreateDirIfNotExist(bool createDirIfNotExist) {
+  createDirIfNotExist_ = createDirIfNotExist;
+  setParameter(std::string("CreateDirIfNotExist"), createDirIfNotExist ? "true" : "false");
+}
+
 std::string CreateDataFlowTaskRequest::getFileSystemId() const {
   return fileSystemId_;
 }
@@ -95,6 +113,15 @@ std::string CreateDataFlowTaskRequest::getEntryList() const {
 void CreateDataFlowTaskRequest::setEntryList(const std::string &entryList) {
   entryList_ = entryList;
   setParameter(std::string("EntryList"), entryList);
+}
+
+std::string CreateDataFlowTaskRequest::getConflictPolicy() const {
+  return conflictPolicy_;
+}
+
+void CreateDataFlowTaskRequest::setConflictPolicy(const std::string &conflictPolicy) {
+  conflictPolicy_ = conflictPolicy;
+  setParameter(std::string("ConflictPolicy"), conflictPolicy);
 }
 
 std::string CreateDataFlowTaskRequest::getTaskAction() const {

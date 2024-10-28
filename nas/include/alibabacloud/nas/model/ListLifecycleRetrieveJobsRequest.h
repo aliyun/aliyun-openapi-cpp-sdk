@@ -32,6 +32,8 @@ public:
 	~ListLifecycleRetrieveJobsRequest();
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getStorageType() const;
+	void setStorageType(const std::string &storageType);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getFileSystemId() const;
@@ -41,6 +43,7 @@ public:
 
 private:
 	int pageNumber_;
+	std::string storageType_;
 	int pageSize_;
 	std::string fileSystemId_;
 	std::string status_;

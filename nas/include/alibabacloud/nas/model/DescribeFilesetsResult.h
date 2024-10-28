@@ -34,12 +34,22 @@ namespace AlibabaCloud
 			public:
 				struct Entrie
 				{
+					struct Quota
+					{
+						long fileCountLimit;
+						long sizeLimit;
+					};
 					std::string fileSystemPath;
 					std::string fsetId;
 					std::string status;
 					std::string description;
+					long spaceUsage;
+					Quota quota;
 					std::string createTime;
 					std::string updateTime;
+					std::string fileSystemId;
+					bool deletionProtection;
+					long fileCountUsage;
 				};
 
 

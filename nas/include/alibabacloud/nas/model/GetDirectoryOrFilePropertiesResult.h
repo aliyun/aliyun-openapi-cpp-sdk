@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Entry
 				{
+					bool hasArchiveFile;
 					std::string type;
 					std::string storageType;
 					std::string inode;

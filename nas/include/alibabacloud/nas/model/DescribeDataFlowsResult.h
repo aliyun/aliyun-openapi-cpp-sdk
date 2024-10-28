@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					long autoRefreshInterval;
 					std::string fsetDescription;
 					std::string sourceStorage;
+					std::string sourceStoragePath;
 					std::string sourceSecurityType;
 					std::string updateTime;
 					std::string fileSystemId;

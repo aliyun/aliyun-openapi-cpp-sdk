@@ -55,6 +55,12 @@ void DescribeAccessRulesResult::parse(const std::string &payload)
 			accessRulesObject.userAccess = valueAccessRulesAccessRule["UserAccess"].asString();
 		if(!valueAccessRulesAccessRule["Priority"].isNull())
 			accessRulesObject.priority = std::stoi(valueAccessRulesAccessRule["Priority"].asString());
+		if(!valueAccessRulesAccessRule["FileSystemType"].isNull())
+			accessRulesObject.fileSystemType = valueAccessRulesAccessRule["FileSystemType"].asString();
+		if(!valueAccessRulesAccessRule["AccessGroupName"].isNull())
+			accessRulesObject.accessGroupName = valueAccessRulesAccessRule["AccessGroupName"].asString();
+		if(!valueAccessRulesAccessRule["RegionId"].isNull())
+			accessRulesObject.regionId = valueAccessRulesAccessRule["RegionId"].asString();
 		accessRules_.push_back(accessRulesObject);
 	}
 	if(!value["TotalCount"].isNull())

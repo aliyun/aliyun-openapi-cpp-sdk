@@ -25,6 +25,15 @@ DescribeLogAnalysisRequest::DescribeLogAnalysisRequest()
 
 DescribeLogAnalysisRequest::~DescribeLogAnalysisRequest() {}
 
+std::string DescribeLogAnalysisRequest::getFileSystemType() const {
+  return fileSystemType_;
+}
+
+void DescribeLogAnalysisRequest::setFileSystemType(const std::string &fileSystemType) {
+  fileSystemType_ = fileSystemType;
+  setParameter(std::string("FileSystemType"), fileSystemType);
+}
+
 int DescribeLogAnalysisRequest::getPageNumber() const {
   return pageNumber_;
 }

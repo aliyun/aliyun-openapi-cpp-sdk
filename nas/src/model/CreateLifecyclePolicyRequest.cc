@@ -70,6 +70,15 @@ void CreateLifecyclePolicyRequest::setLifecycleRuleName(const std::string &lifec
   setParameter(std::string("LifecycleRuleName"), lifecycleRuleName);
 }
 
+int CreateLifecyclePolicyRequest::getLifecycleRuleInactiveDays() const {
+  return lifecycleRuleInactiveDays_;
+}
+
+void CreateLifecyclePolicyRequest::setLifecycleRuleInactiveDays(int lifecycleRuleInactiveDays) {
+  lifecycleRuleInactiveDays_ = lifecycleRuleInactiveDays;
+  setParameter(std::string("LifecycleRuleInactiveDays"), std::to_string(lifecycleRuleInactiveDays));
+}
+
 std::vector<std::string> CreateLifecyclePolicyRequest::getPaths() const {
   return paths_;
 }

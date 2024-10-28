@@ -28,15 +28,21 @@ namespace NAS {
 namespace Model {
 class ALIBABACLOUD_NAS_EXPORT ModifyFileSystemRequest : public RpcServiceRequest {
 public:
+	struct Options {
+		bool enableOplock;
+	};
 	ModifyFileSystemRequest();
 	~ModifyFileSystemRequest();
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	Options getOptions() const;
+	void setOptions(const Options &options);
 	std::string getFileSystemId() const;
 	void setFileSystemId(const std::string &fileSystemId);
 
 private:
 	std::string description_;
+	Options options_;
 	std::string fileSystemId_;
 };
 } // namespace Model

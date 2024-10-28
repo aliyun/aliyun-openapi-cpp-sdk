@@ -61,6 +61,8 @@ void DescribeAutoSnapshotPoliciesResult::parse(const std::string &payload)
 			autoSnapshotPoliciesObject.fileSystemNums = std::stoi(valueAutoSnapshotPoliciesAutoSnapshotPolicy["FileSystemNums"].asString());
 		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["RegionId"].isNull())
 			autoSnapshotPoliciesObject.regionId = valueAutoSnapshotPoliciesAutoSnapshotPolicy["RegionId"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["FileSystemType"].isNull())
+			autoSnapshotPoliciesObject.fileSystemType = valueAutoSnapshotPoliciesAutoSnapshotPolicy["FileSystemType"].asString();
 		autoSnapshotPolicies_.push_back(autoSnapshotPoliciesObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -87,6 +87,18 @@ void DescribeFileSystemsResult::parse(const std::string &payload)
 			fileSystemsObject.zoneId = valueFileSystemsFileSystem["ZoneId"].asString();
 		if(!valueFileSystemsFileSystem["VpcId"].isNull())
 			fileSystemsObject.vpcId = valueFileSystemsFileSystem["VpcId"].asString();
+		if(!valueFileSystemsFileSystem["NodeNum"].isNull())
+			fileSystemsObject.nodeNum = std::stoi(valueFileSystemsFileSystem["NodeNum"].asString());
+		if(!valueFileSystemsFileSystem["HpnZone"].isNull())
+			fileSystemsObject.hpnZone = valueFileSystemsFileSystem["HpnZone"].asString();
+		if(!valueFileSystemsFileSystem["AccessPointCount"].isNull())
+			fileSystemsObject.accessPointCount = valueFileSystemsFileSystem["AccessPointCount"].asString();
+		if(!valueFileSystemsFileSystem["ResourceGroupId"].isNull())
+			fileSystemsObject.resourceGroupId = valueFileSystemsFileSystem["ResourceGroupId"].asString();
+		if(!valueFileSystemsFileSystem["MeteredArchiveSize"].isNull())
+			fileSystemsObject.meteredArchiveSize = std::stol(valueFileSystemsFileSystem["MeteredArchiveSize"].asString());
+		if(!valueFileSystemsFileSystem["QuorumVswId"].isNull())
+			fileSystemsObject.quorumVswId = valueFileSystemsFileSystem["QuorumVswId"].asString();
 		auto allTagsNode = valueFileSystemsFileSystem["Tags"]["Tag"];
 		for (auto valueFileSystemsFileSystemTagsTag : allTagsNode)
 		{
@@ -115,6 +127,8 @@ void DescribeFileSystemsResult::parse(const std::string &payload)
 				mountTargetsObject.vswId = valueFileSystemsFileSystemMountTargetsMountTarget["VswId"].asString();
 			if(!valueFileSystemsFileSystemMountTargetsMountTarget["NetworkType"].isNull())
 				mountTargetsObject.networkType = valueFileSystemsFileSystemMountTargetsMountTarget["NetworkType"].asString();
+			if(!valueFileSystemsFileSystemMountTargetsMountTarget["MountTargetIp"].isNull())
+				mountTargetsObject.mountTargetIp = valueFileSystemsFileSystemMountTargetsMountTarget["MountTargetIp"].asString();
 			auto allClientMasterNodesNode = valueFileSystemsFileSystemMountTargetsMountTarget["ClientMasterNodes"]["ClientMasterNode"];
 			for (auto valueFileSystemsFileSystemMountTargetsMountTargetClientMasterNodesClientMasterNode : allClientMasterNodesNode)
 			{
@@ -162,6 +176,16 @@ void DescribeFileSystemsResult::parse(const std::string &payload)
 			fileSystemsObject.ldap.searchBase = ldapNode["SearchBase"].asString();
 		if(!ldapNode["URI"].isNull())
 			fileSystemsObject.ldap.uRI = ldapNode["URI"].asString();
+		auto guiInfoNode = value["GuiInfo"];
+		if(!guiInfoNode["Endpoint"].isNull())
+			fileSystemsObject.guiInfo.endpoint = guiInfoNode["Endpoint"].asString();
+		if(!guiInfoNode["Password"].isNull())
+			fileSystemsObject.guiInfo.password = guiInfoNode["Password"].asString();
+		if(!guiInfoNode["User"].isNull())
+			fileSystemsObject.guiInfo.user = guiInfoNode["User"].asString();
+		auto optionsNode = value["Options"];
+		if(!optionsNode["EnableOplock"].isNull())
+			fileSystemsObject.options.enableOplock = optionsNode["EnableOplock"].asString() == "true";
 		auto allSupportedFeatures = value["SupportedFeatures"]["SupportedFeature"];
 		for (auto value : allSupportedFeatures)
 			fileSystemsObject.supportedFeatures.push_back(value.asString());

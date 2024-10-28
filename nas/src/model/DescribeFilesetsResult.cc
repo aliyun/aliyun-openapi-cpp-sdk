@@ -55,6 +55,19 @@ void DescribeFilesetsResult::parse(const std::string &payload)
 			entriesObject.createTime = valueEntriesEntrie["CreateTime"].asString();
 		if(!valueEntriesEntrie["UpdateTime"].isNull())
 			entriesObject.updateTime = valueEntriesEntrie["UpdateTime"].asString();
+		if(!valueEntriesEntrie["DeletionProtection"].isNull())
+			entriesObject.deletionProtection = valueEntriesEntrie["DeletionProtection"].asString() == "true";
+		if(!valueEntriesEntrie["FileCountUsage"].isNull())
+			entriesObject.fileCountUsage = std::stol(valueEntriesEntrie["FileCountUsage"].asString());
+		if(!valueEntriesEntrie["SpaceUsage"].isNull())
+			entriesObject.spaceUsage = std::stol(valueEntriesEntrie["SpaceUsage"].asString());
+		if(!valueEntriesEntrie["FileSystemId"].isNull())
+			entriesObject.fileSystemId = valueEntriesEntrie["FileSystemId"].asString();
+		auto quotaNode = value["Quota"];
+		if(!quotaNode["SizeLimit"].isNull())
+			entriesObject.quota.sizeLimit = std::stol(quotaNode["SizeLimit"].asString());
+		if(!quotaNode["FileCountLimit"].isNull())
+			entriesObject.quota.fileCountLimit = std::stol(quotaNode["FileCountLimit"].asString());
 		entries_.push_back(entriesObject);
 	}
 	if(!value["NextToken"].isNull())
