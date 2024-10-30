@@ -61,6 +61,8 @@ void ListRtcMPUTaskDetailResult::parse(const std::string &payload)
 			MpuTask::MultiStreamURLItem multiStreamURLObject;
 			if(!valueMPUTasksmpuTaskMultiStreamURLMultiStreamURLItem["URL"].isNull())
 				multiStreamURLObject.uRL = valueMPUTasksmpuTaskMultiStreamURLMultiStreamURLItem["URL"].asString();
+			if(!valueMPUTasksmpuTaskMultiStreamURLMultiStreamURLItem["IsAliCdn"].isNull())
+				multiStreamURLObject.isAliCdn = valueMPUTasksmpuTaskMultiStreamURLMultiStreamURLItem["IsAliCdn"].asString() == "true";
 			mPUTasksObject.multiStreamURL.push_back(multiStreamURLObject);
 		}
 		auto singleSubParamsNode = value["SingleSubParams"];

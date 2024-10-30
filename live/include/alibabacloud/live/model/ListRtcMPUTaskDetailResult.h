@@ -123,6 +123,7 @@ namespace AlibabaCloud
 					};
 					struct MultiStreamURLItem
 					{
+						bool isAliCdn;
 						std::string uRL;
 					};
 					std::string taskId;
