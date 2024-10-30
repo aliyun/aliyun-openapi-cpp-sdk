@@ -28,6 +28,11 @@ namespace Csas {
 namespace Model {
 class ALIBABACLOUD_CSAS_EXPORT CreateWmExtractTaskRequest : public RpcServiceRequest {
 public:
+	struct CsvControl {
+		std::string method;
+		long embedColumn;
+		long embedPrecision;
+	};
 	CreateWmExtractTaskRequest();
 	~CreateWmExtractTaskRequest();
 	bool getVideoIsLong() const;
@@ -44,6 +49,8 @@ public:
 	void setWmType(const std::string &wmType);
 	int getImageDetectLevel() const;
 	void setImageDetectLevel(int imageDetectLevel);
+	CsvControl getCsvControl() const;
+	void setCsvControl(const CsvControl &csvControl);
 	std::string getFilename() const;
 	void setFilename(const std::string &filename);
 	long getWmInfoSize() const;
@@ -59,6 +66,7 @@ private:
 	std::string sourceIp_;
 	std::string wmType_;
 	int imageDetectLevel_;
+	CsvControl csvControl_;
 	std::string filename_;
 	long wmInfoSize_;
 	std::string fileUrl_;

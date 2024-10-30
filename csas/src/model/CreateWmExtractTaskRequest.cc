@@ -88,6 +88,17 @@ void CreateWmExtractTaskRequest::setImageDetectLevel(int imageDetectLevel) {
   setBodyParameter(std::string("ImageDetectLevel"), std::to_string(imageDetectLevel));
 }
 
+CreateWmExtractTaskRequest::CsvControl CreateWmExtractTaskRequest::getCsvControl() const {
+  return csvControl_;
+}
+
+void CreateWmExtractTaskRequest::setCsvControl(const CreateWmExtractTaskRequest::CsvControl &csvControl) {
+  csvControl_ = csvControl;
+  setParameter(std::string("CsvControl") + ".Method", csvControl.method);
+  setParameter(std::string("CsvControl") + ".EmbedColumn", std::to_string(csvControl.embedColumn));
+  setParameter(std::string("CsvControl") + ".EmbedPrecision", std::to_string(csvControl.embedPrecision));
+}
+
 std::string CreateWmExtractTaskRequest::getFilename() const {
   return filename_;
 }

@@ -57,6 +57,11 @@ public:
 		BackgroundControl backgroundControl;
 		bool invisibleAntiTextCopy;
 	};
+	struct CsvControl {
+		std::string method;
+		long embedColumn;
+		long embedPrecision;
+	};
 	CreateWmEmbedTaskRequest();
 	~CreateWmEmbedTaskRequest();
 	bool getVideoIsLong() const;
@@ -77,6 +82,8 @@ public:
 	void setWatermarkInfoUint(long watermarkInfoUint);
 	std::string getWmInfoUint() const;
 	void setWmInfoUint(const std::string &wmInfoUint);
+	CsvControl getCsvControl() const;
+	void setCsvControl(const CsvControl &csvControl);
 	std::string getFilename() const;
 	void setFilename(const std::string &filename);
 	long getWmInfoSize() const;
@@ -98,6 +105,7 @@ private:
 	long imageEmbedJpegQuality_;
 	long watermarkInfoUint_;
 	std::string wmInfoUint_;
+	CsvControl csvControl_;
 	std::string filename_;
 	long wmInfoSize_;
 	std::string wmInfoBytesB64_;

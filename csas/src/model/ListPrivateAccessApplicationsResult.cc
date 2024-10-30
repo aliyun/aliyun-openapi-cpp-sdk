@@ -55,6 +55,12 @@ void ListPrivateAccessApplicationsResult::parse(const std::string &payload)
 			applicationsObject.status = valueApplicationsapplication["Status"].asString();
 		if(!valueApplicationsapplication["CreateTime"].isNull())
 			applicationsObject.createTime = valueApplicationsapplication["CreateTime"].asString();
+		if(!valueApplicationsapplication["BrowserAccessStatus"].isNull())
+			applicationsObject.browserAccessStatus = valueApplicationsapplication["BrowserAccessStatus"].asString();
+		if(!valueApplicationsapplication["L7ProxyDomainAutomatic"].isNull())
+			applicationsObject.l7ProxyDomainAutomatic = valueApplicationsapplication["L7ProxyDomainAutomatic"].asString();
+		if(!valueApplicationsapplication["L7ProxyDomainCustom"].isNull())
+			applicationsObject.l7ProxyDomainCustom = valueApplicationsapplication["L7ProxyDomainCustom"].asString();
 		auto allPortRangesNode = valueApplicationsapplication["PortRanges"]["portRange"];
 		for (auto valueApplicationsapplicationPortRangesportRange : allPortRangesNode)
 		{

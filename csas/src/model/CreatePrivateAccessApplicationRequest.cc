@@ -63,6 +63,33 @@ void CreatePrivateAccessApplicationRequest::setSourceIp(const std::string &sourc
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string CreatePrivateAccessApplicationRequest::getL7ProxyDomainCustom() const {
+  return l7ProxyDomainCustom_;
+}
+
+void CreatePrivateAccessApplicationRequest::setL7ProxyDomainCustom(const std::string &l7ProxyDomainCustom) {
+  l7ProxyDomainCustom_ = l7ProxyDomainCustom;
+  setBodyParameter(std::string("L7ProxyDomainCustom"), l7ProxyDomainCustom);
+}
+
+std::string CreatePrivateAccessApplicationRequest::getL7ProxyDomainPrivate() const {
+  return l7ProxyDomainPrivate_;
+}
+
+void CreatePrivateAccessApplicationRequest::setL7ProxyDomainPrivate(const std::string &l7ProxyDomainPrivate) {
+  l7ProxyDomainPrivate_ = l7ProxyDomainPrivate;
+  setBodyParameter(std::string("L7ProxyDomainPrivate"), l7ProxyDomainPrivate);
+}
+
+std::string CreatePrivateAccessApplicationRequest::getBrowserAccessStatus() const {
+  return browserAccessStatus_;
+}
+
+void CreatePrivateAccessApplicationRequest::setBrowserAccessStatus(const std::string &browserAccessStatus) {
+  browserAccessStatus_ = browserAccessStatus;
+  setBodyParameter(std::string("BrowserAccessStatus"), browserAccessStatus);
+}
+
 std::vector<CreatePrivateAccessApplicationRequest::std::string> CreatePrivateAccessApplicationRequest::getTagIds() const {
   return tagIds_;
 }
@@ -72,6 +99,15 @@ void CreatePrivateAccessApplicationRequest::setTagIds(const std::vector<CreatePr
   for(int dep1 = 0; dep1 != tagIds.size(); dep1++) {
     setBodyParameter(std::string("TagIds") + "." + std::to_string(dep1 + 1), tagIds[dep1]);
   }
+}
+
+std::string CreatePrivateAccessApplicationRequest::getL7ProxyDomainAutomaticPrefix() const {
+  return l7ProxyDomainAutomaticPrefix_;
+}
+
+void CreatePrivateAccessApplicationRequest::setL7ProxyDomainAutomaticPrefix(const std::string &l7ProxyDomainAutomaticPrefix) {
+  l7ProxyDomainAutomaticPrefix_ = l7ProxyDomainAutomaticPrefix;
+  setBodyParameter(std::string("L7ProxyDomainAutomaticPrefix"), l7ProxyDomainAutomaticPrefix);
 }
 
 std::vector<CreatePrivateAccessApplicationRequest::PortRanges> CreatePrivateAccessApplicationRequest::getPortRanges() const {

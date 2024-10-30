@@ -46,6 +46,8 @@ public:
 	void setCurrentPage(int currentPage);
 	std::vector<std::string> getApplicationIds() const;
 	void setApplicationIds(const std::vector<std::string> &applicationIds);
+	std::string getAccessModes() const;
+	void setAccessModes(const std::string &accessModes);
 	std::string getName() const;
 	void setName(const std::string &name);
 	std::string getStatus() const;
@@ -60,6 +62,7 @@ private:
 	std::string connectorId_;
 	int currentPage_;
 	std::vector<std::string> applicationIds_;
+	std::string accessModes_;
 	std::string name_;
 	std::string status_;
 };

@@ -72,6 +72,24 @@ void UpdatePrivateAccessApplicationRequest::setApplicationId(const std::string &
   setBodyParameter(std::string("ApplicationId"), applicationId);
 }
 
+std::string UpdatePrivateAccessApplicationRequest::getL7ProxyDomainCustom() const {
+  return l7ProxyDomainCustom_;
+}
+
+void UpdatePrivateAccessApplicationRequest::setL7ProxyDomainCustom(const std::string &l7ProxyDomainCustom) {
+  l7ProxyDomainCustom_ = l7ProxyDomainCustom;
+  setBodyParameter(std::string("L7ProxyDomainCustom"), l7ProxyDomainCustom);
+}
+
+std::string UpdatePrivateAccessApplicationRequest::getL7ProxyDomainPrivate() const {
+  return l7ProxyDomainPrivate_;
+}
+
+void UpdatePrivateAccessApplicationRequest::setL7ProxyDomainPrivate(const std::string &l7ProxyDomainPrivate) {
+  l7ProxyDomainPrivate_ = l7ProxyDomainPrivate;
+  setBodyParameter(std::string("L7ProxyDomainPrivate"), l7ProxyDomainPrivate);
+}
+
 std::vector<UpdatePrivateAccessApplicationRequest::std::string> UpdatePrivateAccessApplicationRequest::getTagIds() const {
   return tagIds_;
 }
@@ -81,6 +99,15 @@ void UpdatePrivateAccessApplicationRequest::setTagIds(const std::vector<UpdatePr
   for(int dep1 = 0; dep1 != tagIds.size(); dep1++) {
     setBodyParameter(std::string("TagIds") + "." + std::to_string(dep1 + 1), tagIds[dep1]);
   }
+}
+
+std::string UpdatePrivateAccessApplicationRequest::getL7ProxyDomainAutomaticPrefix() const {
+  return l7ProxyDomainAutomaticPrefix_;
+}
+
+void UpdatePrivateAccessApplicationRequest::setL7ProxyDomainAutomaticPrefix(const std::string &l7ProxyDomainAutomaticPrefix) {
+  l7ProxyDomainAutomaticPrefix_ = l7ProxyDomainAutomaticPrefix;
+  setBodyParameter(std::string("L7ProxyDomainAutomaticPrefix"), l7ProxyDomainAutomaticPrefix);
 }
 
 std::vector<UpdatePrivateAccessApplicationRequest::PortRanges> UpdatePrivateAccessApplicationRequest::getPortRanges() const {

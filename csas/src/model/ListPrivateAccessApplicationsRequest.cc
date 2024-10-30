@@ -99,6 +99,15 @@ void ListPrivateAccessApplicationsRequest::setApplicationIds(const std::vector<L
   }
 }
 
+std::string ListPrivateAccessApplicationsRequest::getAccessModes() const {
+  return accessModes_;
+}
+
+void ListPrivateAccessApplicationsRequest::setAccessModes(const std::string &accessModes) {
+  accessModes_ = accessModes;
+  setParameter(std::string("AccessModes"), accessModes);
+}
+
 std::string ListPrivateAccessApplicationsRequest::getName() const {
   return name_;
 }

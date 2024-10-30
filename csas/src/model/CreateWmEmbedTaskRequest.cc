@@ -123,6 +123,17 @@ void CreateWmEmbedTaskRequest::setWmInfoUint(const std::string &wmInfoUint) {
   setBodyParameter(std::string("WmInfoUint"), wmInfoUint);
 }
 
+CreateWmEmbedTaskRequest::CsvControl CreateWmEmbedTaskRequest::getCsvControl() const {
+  return csvControl_;
+}
+
+void CreateWmEmbedTaskRequest::setCsvControl(const CreateWmEmbedTaskRequest::CsvControl &csvControl) {
+  csvControl_ = csvControl;
+  setParameter(std::string("CsvControl") + ".Method", csvControl.method);
+  setParameter(std::string("CsvControl") + ".EmbedColumn", std::to_string(csvControl.embedColumn));
+  setParameter(std::string("CsvControl") + ".EmbedPrecision", std::to_string(csvControl.embedPrecision));
+}
+
 std::string CreateWmEmbedTaskRequest::getFilename() const {
   return filename_;
 }

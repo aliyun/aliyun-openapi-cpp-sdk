@@ -42,8 +42,16 @@ public:
 	void setProtocol(const std::string &protocol);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getL7ProxyDomainCustom() const;
+	void setL7ProxyDomainCustom(const std::string &l7ProxyDomainCustom);
+	std::string getL7ProxyDomainPrivate() const;
+	void setL7ProxyDomainPrivate(const std::string &l7ProxyDomainPrivate);
+	std::string getBrowserAccessStatus() const;
+	void setBrowserAccessStatus(const std::string &browserAccessStatus);
 	std::vector<std::string> getTagIds() const;
 	void setTagIds(const std::vector<std::string> &tagIds);
+	std::string getL7ProxyDomainAutomaticPrefix() const;
+	void setL7ProxyDomainAutomaticPrefix(const std::string &l7ProxyDomainAutomaticPrefix);
 	std::vector<PortRanges> getPortRanges() const;
 	void setPortRanges(const std::vector<PortRanges> &portRanges);
 	std::string getName() const;
@@ -56,7 +64,11 @@ private:
 	std::string description_;
 	std::string protocol_;
 	std::string sourceIp_;
+	std::string l7ProxyDomainCustom_;
+	std::string l7ProxyDomainPrivate_;
+	std::string browserAccessStatus_;
 	std::vector<std::string> tagIds_;
+	std::string l7ProxyDomainAutomaticPrefix_;
 	std::vector<PortRanges> portRanges_;
 	std::string name_;
 	std::string status_;

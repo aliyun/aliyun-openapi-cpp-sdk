@@ -44,8 +44,14 @@ public:
 	void setSourceIp(const std::string &sourceIp);
 	std::string getApplicationId() const;
 	void setApplicationId(const std::string &applicationId);
+	std::string getL7ProxyDomainCustom() const;
+	void setL7ProxyDomainCustom(const std::string &l7ProxyDomainCustom);
+	std::string getL7ProxyDomainPrivate() const;
+	void setL7ProxyDomainPrivate(const std::string &l7ProxyDomainPrivate);
 	std::vector<std::string> getTagIds() const;
 	void setTagIds(const std::vector<std::string> &tagIds);
+	std::string getL7ProxyDomainAutomaticPrefix() const;
+	void setL7ProxyDomainAutomaticPrefix(const std::string &l7ProxyDomainAutomaticPrefix);
 	std::vector<PortRanges> getPortRanges() const;
 	void setPortRanges(const std::vector<PortRanges> &portRanges);
 	std::string getModifyType() const;
@@ -59,7 +65,10 @@ private:
 	std::string protocol_;
 	std::string sourceIp_;
 	std::string applicationId_;
+	std::string l7ProxyDomainCustom_;
+	std::string l7ProxyDomainPrivate_;
 	std::vector<std::string> tagIds_;
+	std::string l7ProxyDomainAutomaticPrefix_;
 	std::vector<PortRanges> portRanges_;
 	std::string modifyType_;
 	std::string status_;

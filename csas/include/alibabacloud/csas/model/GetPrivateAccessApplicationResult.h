@@ -40,16 +40,19 @@ namespace AlibabaCloud
 						int end;
 					};
 					std::string status;
-					std::vector<std::string> addresses;
+					std::string browserAccessStatus;
 					std::string description;
 					std::vector<std::string> tagIds;
 					std::vector<PortRange> portRanges;
 					std::string createTime;
-					std::vector<std::string> policyIds;
 					std::vector<std::string> connectorIds;
+					std::string name;
+					std::vector<std::string> addresses;
+					std::string l7ProxyDomainAutomatic;
+					std::string l7ProxyDomainCustom;
+					std::vector<std::string> policyIds;
 					std::string applicationId;
 					std::string protocol;
-					std::string name;
 				};
 
 
