@@ -28,6 +28,10 @@ namespace Live {
 namespace Model {
 class ALIBABACLOUD_LIVE_EXPORT CreateCasterRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	CreateCasterRequest();
 	~CreateCasterRequest();
 	std::string getClientToken() const;
@@ -36,6 +40,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getCasterName() const;
 	void setCasterName(const std::string &casterName);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getCasterTemplate() const;
 	void setCasterTemplate(const std::string &casterTemplate);
 	std::string getExpireTime() const;
@@ -55,6 +61,7 @@ private:
 	std::string clientToken_;
 	std::string resourceGroupId_;
 	std::string casterName_;
+	std::vector<Tag> tag_;
 	std::string casterTemplate_;
 	std::string expireTime_;
 	int normType_;

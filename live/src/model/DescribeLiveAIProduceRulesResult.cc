@@ -61,6 +61,8 @@ void DescribeLiveAIProduceRulesResult::parse(const std::string &payload)
 			ruleInfoListObject.gmtModifyTime = valueRuleInfoListRuleInfo["GmtModifyTime"].asString();
 		if(!valueRuleInfoListRuleInfo["SuffixName"].isNull())
 			ruleInfoListObject.suffixName = valueRuleInfoListRuleInfo["SuffixName"].asString();
+		if(!valueRuleInfoListRuleInfo["StudioName"].isNull())
+			ruleInfoListObject.studioName = valueRuleInfoListRuleInfo["StudioName"].asString();
 		if(!valueRuleInfoListRuleInfo["Description"].isNull())
 			ruleInfoListObject.description = valueRuleInfoListRuleInfo["Description"].asString();
 		ruleInfoList_.push_back(ruleInfoListObject);

@@ -103,6 +103,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/CancelMuteAllGroupUserResult.h
 	include/alibabacloud/live/model/CancelMuteGroupUserRequest.h
 	include/alibabacloud/live/model/CancelMuteGroupUserResult.h
+	include/alibabacloud/live/model/ChangeLiveDomainResourceGroupRequest.h
+	include/alibabacloud/live/model/ChangeLiveDomainResourceGroupResult.h
 	include/alibabacloud/live/model/CheckLiveMessageUsersInGroupRequest.h
 	include/alibabacloud/live/model/CheckLiveMessageUsersInGroupResult.h
 	include/alibabacloud/live/model/CheckLiveMessageUsersOnlineRequest.h
@@ -487,6 +489,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveStreamsTotalCountResult.h
 	include/alibabacloud/live/model/DescribeLiveTopDomainsByFlowRequest.h
 	include/alibabacloud/live/model/DescribeLiveTopDomainsByFlowResult.h
+	include/alibabacloud/live/model/DescribeLiveTrafficDomainLogRequest.h
+	include/alibabacloud/live/model/DescribeLiveTrafficDomainLogResult.h
 	include/alibabacloud/live/model/DescribeLiveUpVideoAudioInfoRequest.h
 	include/alibabacloud/live/model/DescribeLiveUpVideoAudioInfoResult.h
 	include/alibabacloud/live/model/DescribeLiveUserBillPredictionRequest.h
@@ -904,6 +908,8 @@ set(live_src
 	src/model/CancelMuteAllGroupUserResult.cc
 	src/model/CancelMuteGroupUserRequest.cc
 	src/model/CancelMuteGroupUserResult.cc
+	src/model/ChangeLiveDomainResourceGroupRequest.cc
+	src/model/ChangeLiveDomainResourceGroupResult.cc
 	src/model/CheckLiveMessageUsersInGroupRequest.cc
 	src/model/CheckLiveMessageUsersInGroupResult.cc
 	src/model/CheckLiveMessageUsersOnlineRequest.cc
@@ -1288,6 +1294,8 @@ set(live_src
 	src/model/DescribeLiveStreamsTotalCountResult.cc
 	src/model/DescribeLiveTopDomainsByFlowRequest.cc
 	src/model/DescribeLiveTopDomainsByFlowResult.cc
+	src/model/DescribeLiveTrafficDomainLogRequest.cc
+	src/model/DescribeLiveTrafficDomainLogResult.cc
 	src/model/DescribeLiveUpVideoAudioInfoRequest.cc
 	src/model/DescribeLiveUpVideoAudioInfoResult.cc
 	src/model/DescribeLiveUserBillPredictionRequest.cc

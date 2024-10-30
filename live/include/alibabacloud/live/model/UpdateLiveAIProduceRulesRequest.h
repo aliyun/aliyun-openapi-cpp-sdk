@@ -32,6 +32,8 @@ public:
 	~UpdateLiveAIProduceRulesRequest();
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	std::string getSuffix() const;
+	void setSuffix(const std::string &suffix);
 	std::string getSubtitleName() const;
 	void setSubtitleName(const std::string &subtitleName);
 	std::string getRulesId() const;
@@ -42,6 +44,8 @@ public:
 	void setOwnerId(long ownerId);
 	bool getIsLazy() const;
 	void setIsLazy(bool isLazy);
+	std::string getStudioName() const;
+	void setStudioName(const std::string &studioName);
 	std::string getLiveTemplate() const;
 	void setLiveTemplate(const std::string &liveTemplate);
 	std::string getDomain() const;
@@ -53,11 +57,13 @@ public:
 
 private:
 	std::string description_;
+	std::string suffix_;
 	std::string subtitleName_;
 	std::string rulesId_;
 	std::string app_;
 	long ownerId_;
 	bool isLazy_;
+	std::string studioName_;
 	std::string liveTemplate_;
 	std::string domain_;
 	bool isOrigin_;

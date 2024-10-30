@@ -34,6 +34,15 @@ void UpdateLiveAIProduceRulesRequest::setDescription(const std::string &descript
   setParameter(std::string("Description"), description);
 }
 
+std::string UpdateLiveAIProduceRulesRequest::getSuffix() const {
+  return suffix_;
+}
+
+void UpdateLiveAIProduceRulesRequest::setSuffix(const std::string &suffix) {
+  suffix_ = suffix;
+  setParameter(std::string("Suffix"), suffix);
+}
+
 std::string UpdateLiveAIProduceRulesRequest::getSubtitleName() const {
   return subtitleName_;
 }
@@ -77,6 +86,15 @@ bool UpdateLiveAIProduceRulesRequest::getIsLazy() const {
 void UpdateLiveAIProduceRulesRequest::setIsLazy(bool isLazy) {
   isLazy_ = isLazy;
   setParameter(std::string("IsLazy"), isLazy ? "true" : "false");
+}
+
+std::string UpdateLiveAIProduceRulesRequest::getStudioName() const {
+  return studioName_;
+}
+
+void UpdateLiveAIProduceRulesRequest::setStudioName(const std::string &studioName) {
+  studioName_ = studioName;
+  setParameter(std::string("StudioName"), studioName);
 }
 
 std::string UpdateLiveAIProduceRulesRequest::getLiveTemplate() const {

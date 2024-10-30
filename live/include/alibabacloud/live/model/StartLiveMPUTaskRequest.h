@@ -36,6 +36,7 @@ public:
 		std::string userId;
 	};
 	struct MultiStreamURL {
+		bool isAliCdn;
 		std::string uRL;
 	};
 	struct SeiParams {

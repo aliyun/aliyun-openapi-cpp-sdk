@@ -28,6 +28,10 @@ namespace Live {
 namespace Model {
 class ALIBABACLOUD_LIVE_EXPORT AddLiveDomainRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	AddLiveDomainRequest();
 	~AddLiveDomainRequest();
 	std::string getResourceGroupId() const;
@@ -36,6 +40,8 @@ public:
 	void setSecurityToken(const std::string &securityToken);
 	std::string getScope() const;
 	void setScope(const std::string &scope);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getTopLevelDomain() const;
 	void setTopLevelDomain(const std::string &topLevelDomain);
 	std::string getOwnerAccount() const;
@@ -55,6 +61,7 @@ private:
 	std::string resourceGroupId_;
 	std::string securityToken_;
 	std::string scope_;
+	std::vector<Tag> tag_;
 	std::string topLevelDomain_;
 	std::string ownerAccount_;
 	std::string domainName_;

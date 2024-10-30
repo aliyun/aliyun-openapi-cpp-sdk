@@ -104,6 +104,8 @@
 #include "model/CancelMuteAllGroupUserResult.h"
 #include "model/CancelMuteGroupUserRequest.h"
 #include "model/CancelMuteGroupUserResult.h"
+#include "model/ChangeLiveDomainResourceGroupRequest.h"
+#include "model/ChangeLiveDomainResourceGroupResult.h"
 #include "model/CheckLiveMessageUsersInGroupRequest.h"
 #include "model/CheckLiveMessageUsersInGroupResult.h"
 #include "model/CheckLiveMessageUsersOnlineRequest.h"
@@ -488,6 +490,8 @@
 #include "model/DescribeLiveStreamsTotalCountResult.h"
 #include "model/DescribeLiveTopDomainsByFlowRequest.h"
 #include "model/DescribeLiveTopDomainsByFlowResult.h"
+#include "model/DescribeLiveTrafficDomainLogRequest.h"
+#include "model/DescribeLiveTrafficDomainLogResult.h"
 #include "model/DescribeLiveUpVideoAudioInfoRequest.h"
 #include "model/DescribeLiveUpVideoAudioInfoResult.h"
 #include "model/DescribeLiveUserBillPredictionRequest.h"
@@ -952,6 +956,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CancelMuteGroupUserResult> CancelMuteGroupUserOutcome;
 			typedef std::future<CancelMuteGroupUserOutcome> CancelMuteGroupUserOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::CancelMuteGroupUserRequest&, const CancelMuteGroupUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelMuteGroupUserAsyncHandler;
+			typedef Outcome<Error, Model::ChangeLiveDomainResourceGroupResult> ChangeLiveDomainResourceGroupOutcome;
+			typedef std::future<ChangeLiveDomainResourceGroupOutcome> ChangeLiveDomainResourceGroupOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ChangeLiveDomainResourceGroupRequest&, const ChangeLiveDomainResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeLiveDomainResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::CheckLiveMessageUsersInGroupResult> CheckLiveMessageUsersInGroupOutcome;
 			typedef std::future<CheckLiveMessageUsersInGroupOutcome> CheckLiveMessageUsersInGroupOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::CheckLiveMessageUsersInGroupRequest&, const CheckLiveMessageUsersInGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckLiveMessageUsersInGroupAsyncHandler;
@@ -1528,6 +1535,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveTopDomainsByFlowResult> DescribeLiveTopDomainsByFlowOutcome;
 			typedef std::future<DescribeLiveTopDomainsByFlowOutcome> DescribeLiveTopDomainsByFlowOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveTopDomainsByFlowRequest&, const DescribeLiveTopDomainsByFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveTopDomainsByFlowAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveTrafficDomainLogResult> DescribeLiveTrafficDomainLogOutcome;
+			typedef std::future<DescribeLiveTrafficDomainLogOutcome> DescribeLiveTrafficDomainLogOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveTrafficDomainLogRequest&, const DescribeLiveTrafficDomainLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveTrafficDomainLogAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveUpVideoAudioInfoResult> DescribeLiveUpVideoAudioInfoOutcome;
 			typedef std::future<DescribeLiveUpVideoAudioInfoOutcome> DescribeLiveUpVideoAudioInfoOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveUpVideoAudioInfoRequest&, const DescribeLiveUpVideoAudioInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveUpVideoAudioInfoAsyncHandler;
@@ -2154,6 +2164,9 @@ namespace AlibabaCloud
 			CancelMuteGroupUserOutcome cancelMuteGroupUser(const Model::CancelMuteGroupUserRequest &request)const;
 			void cancelMuteGroupUserAsync(const Model::CancelMuteGroupUserRequest& request, const CancelMuteGroupUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelMuteGroupUserOutcomeCallable cancelMuteGroupUserCallable(const Model::CancelMuteGroupUserRequest& request) const;
+			ChangeLiveDomainResourceGroupOutcome changeLiveDomainResourceGroup(const Model::ChangeLiveDomainResourceGroupRequest &request)const;
+			void changeLiveDomainResourceGroupAsync(const Model::ChangeLiveDomainResourceGroupRequest& request, const ChangeLiveDomainResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChangeLiveDomainResourceGroupOutcomeCallable changeLiveDomainResourceGroupCallable(const Model::ChangeLiveDomainResourceGroupRequest& request) const;
 			CheckLiveMessageUsersInGroupOutcome checkLiveMessageUsersInGroup(const Model::CheckLiveMessageUsersInGroupRequest &request)const;
 			void checkLiveMessageUsersInGroupAsync(const Model::CheckLiveMessageUsersInGroupRequest& request, const CheckLiveMessageUsersInGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckLiveMessageUsersInGroupOutcomeCallable checkLiveMessageUsersInGroupCallable(const Model::CheckLiveMessageUsersInGroupRequest& request) const;
@@ -2730,6 +2743,9 @@ namespace AlibabaCloud
 			DescribeLiveTopDomainsByFlowOutcome describeLiveTopDomainsByFlow(const Model::DescribeLiveTopDomainsByFlowRequest &request)const;
 			void describeLiveTopDomainsByFlowAsync(const Model::DescribeLiveTopDomainsByFlowRequest& request, const DescribeLiveTopDomainsByFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveTopDomainsByFlowOutcomeCallable describeLiveTopDomainsByFlowCallable(const Model::DescribeLiveTopDomainsByFlowRequest& request) const;
+			DescribeLiveTrafficDomainLogOutcome describeLiveTrafficDomainLog(const Model::DescribeLiveTrafficDomainLogRequest &request)const;
+			void describeLiveTrafficDomainLogAsync(const Model::DescribeLiveTrafficDomainLogRequest& request, const DescribeLiveTrafficDomainLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveTrafficDomainLogOutcomeCallable describeLiveTrafficDomainLogCallable(const Model::DescribeLiveTrafficDomainLogRequest& request) const;
 			DescribeLiveUpVideoAudioInfoOutcome describeLiveUpVideoAudioInfo(const Model::DescribeLiveUpVideoAudioInfoRequest &request)const;
 			void describeLiveUpVideoAudioInfoAsync(const Model::DescribeLiveUpVideoAudioInfoRequest& request, const DescribeLiveUpVideoAudioInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveUpVideoAudioInfoOutcomeCallable describeLiveUpVideoAudioInfoCallable(const Model::DescribeLiveUpVideoAudioInfoRequest& request) const;

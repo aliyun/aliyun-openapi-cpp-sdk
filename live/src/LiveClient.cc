@@ -1527,6 +1527,42 @@ LiveClient::CancelMuteGroupUserOutcomeCallable LiveClient::cancelMuteGroupUserCa
 	return task->get_future();
 }
 
+LiveClient::ChangeLiveDomainResourceGroupOutcome LiveClient::changeLiveDomainResourceGroup(const ChangeLiveDomainResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeLiveDomainResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeLiveDomainResourceGroupOutcome(ChangeLiveDomainResourceGroupResult(outcome.result()));
+	else
+		return ChangeLiveDomainResourceGroupOutcome(outcome.error());
+}
+
+void LiveClient::changeLiveDomainResourceGroupAsync(const ChangeLiveDomainResourceGroupRequest& request, const ChangeLiveDomainResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeLiveDomainResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ChangeLiveDomainResourceGroupOutcomeCallable LiveClient::changeLiveDomainResourceGroupCallable(const ChangeLiveDomainResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeLiveDomainResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->changeLiveDomainResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::CheckLiveMessageUsersInGroupOutcome LiveClient::checkLiveMessageUsersInGroup(const CheckLiveMessageUsersInGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8433,6 +8469,42 @@ LiveClient::DescribeLiveTopDomainsByFlowOutcomeCallable LiveClient::describeLive
 			[this, request]()
 			{
 			return this->describeLiveTopDomainsByFlow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveTrafficDomainLogOutcome LiveClient::describeLiveTrafficDomainLog(const DescribeLiveTrafficDomainLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveTrafficDomainLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveTrafficDomainLogOutcome(DescribeLiveTrafficDomainLogResult(outcome.result()));
+	else
+		return DescribeLiveTrafficDomainLogOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveTrafficDomainLogAsync(const DescribeLiveTrafficDomainLogRequest& request, const DescribeLiveTrafficDomainLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveTrafficDomainLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveTrafficDomainLogOutcomeCallable LiveClient::describeLiveTrafficDomainLogCallable(const DescribeLiveTrafficDomainLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveTrafficDomainLogOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveTrafficDomainLog(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

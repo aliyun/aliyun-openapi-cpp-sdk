@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEAIPRODUCERULESRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEAIPRODUCERULESRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_CHANGELIVEDOMAINRESOURCEGROUPRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_CHANGELIVEDOMAINRESOURCEGROUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveAIProduceRulesResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT ChangeLiveDomainResourceGroupResult : public ServiceResult
 			{
 			public:
-				struct RuleInfo
-				{
-					std::string app;
-					std::string description;
-					bool isLazy;
-					std::string gmtModifyTime;
-					std::string rulesId;
-					std::string subtitleName;
-					bool isOrigin;
-					std::string studioName;
-					std::string suffixName;
-					std::string domain;
-					std::string liveTemplate;
-				};
 
 
-				DescribeLiveAIProduceRulesResult();
-				explicit DescribeLiveAIProduceRulesResult(const std::string &payload);
-				~DescribeLiveAIProduceRulesResult();
-				std::vector<RuleInfo> getRuleInfoList()const;
+				ChangeLiveDomainResourceGroupResult();
+				explicit ChangeLiveDomainResourceGroupResult(const std::string &payload);
+				~ChangeLiveDomainResourceGroupResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<RuleInfo> ruleInfoList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEAIPRODUCERULESRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_CHANGELIVEDOMAINRESOURCEGROUPRESULT_H_

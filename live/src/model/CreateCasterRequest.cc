@@ -52,6 +52,20 @@ void CreateCasterRequest::setCasterName(const std::string &casterName) {
   setParameter(std::string("CasterName"), casterName);
 }
 
+std::vector<CreateCasterRequest::Tag> CreateCasterRequest::getTag() const {
+  return tag_;
+}
+
+void CreateCasterRequest::setTag(const std::vector<CreateCasterRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+
 std::string CreateCasterRequest::getCasterTemplate() const {
   return casterTemplate_;
 }

@@ -28,6 +28,10 @@ namespace Live {
 namespace Model {
 class ALIBABACLOUD_LIVE_EXPORT DescribeCastersRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	DescribeCastersRequest();
 	~DescribeCastersRequest();
 	std::string getStartTime() const;
@@ -40,6 +44,8 @@ public:
 	void setCasterName(const std::string &casterName);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getNormType() const;
 	void setNormType(const std::string &normType);
 	std::string getCasterId() const;
@@ -61,6 +67,7 @@ private:
 	std::string resourceGroupId_;
 	std::string casterName_;
 	int pageSize_;
+	std::vector<Tag> tag_;
 	std::string normType_;
 	std::string casterId_;
 	std::string endTime_;

@@ -75,6 +75,16 @@ void DescribeCastersResult::parse(const std::string &payload)
 			casterListObject.resourceGroupId = std::stoi(valueCasterListCaster["ResourceGroupId"].asString());
 		if(!valueCasterListCaster["ClientTokenId"].isNull())
 			casterListObject.clientTokenId = valueCasterListCaster["ClientTokenId"].asString();
+		auto allTagsNode = valueCasterListCaster["Tags"]["tag"];
+		for (auto valueCasterListCasterTagstag : allTagsNode)
+		{
+			Caster::Tag tagsObject;
+			if(!valueCasterListCasterTagstag["TagKey"].isNull())
+				tagsObject.tagKey = valueCasterListCasterTagstag["TagKey"].asString();
+			if(!valueCasterListCasterTagstag["TagValue"].isNull())
+				tagsObject.tagValue = valueCasterListCasterTagstag["TagValue"].asString();
+			casterListObject.tags.push_back(tagsObject);
+		}
 		casterList_.push_back(casterListObject);
 	}
 	if(!value["Total"].isNull())

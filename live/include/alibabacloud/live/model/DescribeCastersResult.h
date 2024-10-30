@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct Caster
 				{
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					int status;
 					std::string casterTemplate;
 					int channelEnable;
@@ -50,6 +55,7 @@ namespace AlibabaCloud
 					std::string chargeType;
 					std::string expireTime;
 					std::string casterId;
+					std::vector<Caster::Tag> tags;
 				};
 
 

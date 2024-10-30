@@ -29,6 +29,7 @@ namespace Model {
 class ALIBABACLOUD_LIVE_EXPORT UpdateLiveMPUTaskRequest : public RpcServiceRequest {
 public:
 	struct MultiStreamURL {
+		bool isAliCdn;
 		std::string uRL;
 	};
 	struct SingleSubParams {
