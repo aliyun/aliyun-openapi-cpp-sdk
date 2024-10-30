@@ -36,8 +36,16 @@ namespace AlibabaCloud
 				{
 					struct AllocatedResource
 					{
+						struct ElasticityAssuranceUsage
+						{
+							int usedAmount;
+							std::string accountId;
+							std::string serviceName;
+						};
 						int usedAmount;
 						std::string zoneId;
+						std::vector<AllocatedResource::ElasticityAssuranceUsage> elasticityAssuranceUsages;
+						int availableAmount;
 						int totalAmount;
 						std::string instanceType;
 					};
@@ -54,6 +62,7 @@ namespace AlibabaCloud
 					std::string latestStartTime;
 					std::string privatePoolOptionsName;
 					std::string instanceChargeType;
+					std::string elasticityAssuranceOwnerId;
 					std::string startTime;
 					std::string startTimeType;
 					std::string privatePoolOptionsMatchCriteria;

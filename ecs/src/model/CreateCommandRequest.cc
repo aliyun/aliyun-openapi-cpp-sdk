@@ -180,3 +180,12 @@ void CreateCommandRequest::setEnableParameter(bool enableParameter) {
   setParameter(std::string("EnableParameter"), enableParameter ? "true" : "false");
 }
 
+std::string CreateCommandRequest::getLauncher() const {
+  return launcher_;
+}
+
+void CreateCommandRequest::setLauncher(const std::string &launcher) {
+  launcher_ = launcher;
+  setParameter(std::string("Launcher"), launcher);
+}
+

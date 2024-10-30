@@ -71,6 +71,8 @@ void DescribeElasticityAssurancesResult::parse(const std::string &payload)
 			elasticityAssuranceSetObject.instanceChargeType = valueElasticityAssuranceSetElasticityAssuranceItem["InstanceChargeType"].asString();
 		if(!valueElasticityAssuranceSetElasticityAssuranceItem["StartTimeType"].isNull())
 			elasticityAssuranceSetObject.startTimeType = valueElasticityAssuranceSetElasticityAssuranceItem["StartTimeType"].asString();
+		if(!valueElasticityAssuranceSetElasticityAssuranceItem["ElasticityAssuranceOwnerId"].isNull())
+			elasticityAssuranceSetObject.elasticityAssuranceOwnerId = valueElasticityAssuranceSetElasticityAssuranceItem["ElasticityAssuranceOwnerId"].asString();
 		auto allAllocatedResourcesNode = valueElasticityAssuranceSetElasticityAssuranceItem["AllocatedResources"]["AllocatedResource"];
 		for (auto valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource : allAllocatedResourcesNode)
 		{
@@ -79,10 +81,24 @@ void DescribeElasticityAssurancesResult::parse(const std::string &payload)
 				allocatedResourcesObject.usedAmount = std::stoi(valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["UsedAmount"].asString());
 			if(!valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["TotalAmount"].isNull())
 				allocatedResourcesObject.totalAmount = std::stoi(valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["TotalAmount"].asString());
+			if(!valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["AvailableAmount"].isNull())
+				allocatedResourcesObject.availableAmount = std::stoi(valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["AvailableAmount"].asString());
 			if(!valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["zoneId"].isNull())
 				allocatedResourcesObject.zoneId = valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["zoneId"].asString();
 			if(!valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["InstanceType"].isNull())
 				allocatedResourcesObject.instanceType = valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["InstanceType"].asString();
+			auto allElasticityAssuranceUsagesNode = valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["ElasticityAssuranceUsages"]["ElasticityAssuranceUsage"];
+			for (auto valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResourceElasticityAssuranceUsagesElasticityAssuranceUsage : allElasticityAssuranceUsagesNode)
+			{
+				ElasticityAssuranceItem::AllocatedResource::ElasticityAssuranceUsage elasticityAssuranceUsagesObject;
+				if(!valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResourceElasticityAssuranceUsagesElasticityAssuranceUsage["AccountId"].isNull())
+					elasticityAssuranceUsagesObject.accountId = valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResourceElasticityAssuranceUsagesElasticityAssuranceUsage["AccountId"].asString();
+				if(!valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResourceElasticityAssuranceUsagesElasticityAssuranceUsage["ServiceName"].isNull())
+					elasticityAssuranceUsagesObject.serviceName = valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResourceElasticityAssuranceUsagesElasticityAssuranceUsage["ServiceName"].asString();
+				if(!valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResourceElasticityAssuranceUsagesElasticityAssuranceUsage["UsedAmount"].isNull())
+					elasticityAssuranceUsagesObject.usedAmount = std::stoi(valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResourceElasticityAssuranceUsagesElasticityAssuranceUsage["UsedAmount"].asString());
+				allocatedResourcesObject.elasticityAssuranceUsages.push_back(elasticityAssuranceUsagesObject);
+			}
 			elasticityAssuranceSetObject.allocatedResources.push_back(allocatedResourcesObject);
 		}
 		auto allTagsNode = valueElasticityAssuranceSetElasticityAssuranceItem["Tags"]["Tag"];

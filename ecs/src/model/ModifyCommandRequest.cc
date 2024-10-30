@@ -124,3 +124,12 @@ void ModifyCommandRequest::setName(const std::string &name) {
   setParameter(std::string("Name"), name);
 }
 
+std::string ModifyCommandRequest::getLauncher() const {
+  return launcher_;
+}
+
+void ModifyCommandRequest::setLauncher(const std::string &launcher) {
+  launcher_ = launcher;
+  setParameter(std::string("Launcher"), launcher);
+}
+

@@ -52,6 +52,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getName() const;
 	void setName(const std::string &name);
+	std::string getLauncher() const;
+	void setLauncher(const std::string &launcher);
 
 private:
 	long resourceOwnerId_;
@@ -65,6 +67,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string name_;
+	std::string launcher_;
 };
 } // namespace Model
 } // namespace Ecs

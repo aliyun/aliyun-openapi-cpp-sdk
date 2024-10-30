@@ -85,6 +85,7 @@ namespace AlibabaCloud
 					struct ImageOptions
 					{
 						bool loginAsNonRoot;
+						bool currentOSNVMeSupported;
 					};
 					struct PrivateDnsNameOptions
 					{

@@ -71,6 +71,8 @@ public:
 	void setName(const std::string &name);
 	bool getEnableParameter() const;
 	void setEnableParameter(bool enableParameter);
+	std::string getLauncher() const;
+	void setLauncher(const std::string &launcher);
 
 private:
 	long resourceOwnerId_;
@@ -89,6 +91,7 @@ private:
 	long ownerId_;
 	std::string name_;
 	bool enableParameter_;
+	std::string launcher_;
 };
 } // namespace Model
 } // namespace Ecs

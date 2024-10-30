@@ -35,6 +35,9 @@ public:
 		bool enableIpDnsARecord;
 		bool enableIpDnsPtrRecord;
 	};
+	struct ImageOptions {
+		bool currentOSNVMeSupported;
+	};
 	struct AdditionalInfo {
 		std::string pvdConfig;
 		bool enableHighDensityMode;
@@ -65,6 +68,8 @@ public:
 	void setPrivateDnsNameOptions(const PrivateDnsNameOptions &privateDnsNameOptions);
 	std::string getCpuOptionsTopologyType() const;
 	void setCpuOptionsTopologyType(const std::string &cpuOptionsTopologyType);
+	ImageOptions getImageOptions() const;
+	void setImageOptions(const ImageOptions &imageOptions);
 	std::string getOSNameEn() const;
 	void setOSNameEn(const std::string &oSNameEn);
 	bool getEnableJumboFrame() const;
@@ -99,6 +104,7 @@ private:
 	std::string hostName_;
 	PrivateDnsNameOptions privateDnsNameOptions_;
 	std::string cpuOptionsTopologyType_;
+	ImageOptions imageOptions_;
 	std::string oSNameEn_;
 	bool enableJumboFrame_;
 	std::string resourceOwnerAccount_;

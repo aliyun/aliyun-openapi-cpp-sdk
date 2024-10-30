@@ -119,6 +119,15 @@ void ModifyInstanceAttributeRequest::setCpuOptionsTopologyType(const std::string
   setParameter(std::string("CpuOptions.TopologyType"), cpuOptionsTopologyType);
 }
 
+ModifyInstanceAttributeRequest::ImageOptions ModifyInstanceAttributeRequest::getImageOptions() const {
+  return imageOptions_;
+}
+
+void ModifyInstanceAttributeRequest::setImageOptions(const ModifyInstanceAttributeRequest::ImageOptions &imageOptions) {
+  imageOptions_ = imageOptions;
+  setParameter(std::string("ImageOptions") + ".CurrentOSNVMeSupported", imageOptions.currentOSNVMeSupported ? "true" : "false");
+}
+
 std::string ModifyInstanceAttributeRequest::getOSNameEn() const {
   return oSNameEn_;
 }

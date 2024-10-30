@@ -269,6 +269,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 		auto imageOptionsNode = value["ImageOptions"];
 		if(!imageOptionsNode["LoginAsNonRoot"].isNull())
 			instancesObject.imageOptions.loginAsNonRoot = imageOptionsNode["LoginAsNonRoot"].asString() == "true";
+		if(!imageOptionsNode["CurrentOSNVMeSupported"].isNull())
+			instancesObject.imageOptions.currentOSNVMeSupported = imageOptionsNode["CurrentOSNVMeSupported"].asString() == "true";
 		auto privateDnsNameOptionsNode = value["PrivateDnsNameOptions"];
 		if(!privateDnsNameOptionsNode["EnableInstanceIdDnsARecord"].isNull())
 			instancesObject.privateDnsNameOptions.enableInstanceIdDnsARecord = privateDnsNameOptionsNode["EnableInstanceIdDnsARecord"].asString() == "true";

@@ -61,6 +61,7 @@ namespace AlibabaCloud
 					int version;
 					int invokeTimes;
 					std::string creationTime;
+					std::string launcher;
 					bool latest;
 					bool enableParameter;
 					std::string commandId;
