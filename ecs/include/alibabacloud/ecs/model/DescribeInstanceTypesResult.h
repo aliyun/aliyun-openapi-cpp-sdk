@@ -39,6 +39,10 @@ namespace AlibabaCloud
 						int vfQueueNumberPerEni;
 						bool sriovSupport;
 					};
+					struct CpuOptions
+					{
+						std::vector<std::string> supportedTopologyTypes;
+					};
 					struct NetworkCardInfo
 					{
 						int networkCardIndex;
@@ -70,6 +74,7 @@ namespace AlibabaCloud
 					float gPUMemorySize;
 					int eniTotalQuantity;
 					int cpuCoreCount;
+					CpuOptions cpuOptions;
 					int initialCredit;
 					int networkCardQuantity;
 					std::string instanceCategory;

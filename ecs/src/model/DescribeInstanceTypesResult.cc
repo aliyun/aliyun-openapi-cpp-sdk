@@ -130,6 +130,10 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 			instanceTypesObject.enhancedNetwork.sriovSupport = enhancedNetworkNode["SriovSupport"].asString() == "true";
 		if(!enhancedNetworkNode["VfQueueNumberPerEni"].isNull())
 			instanceTypesObject.enhancedNetwork.vfQueueNumberPerEni = std::stoi(enhancedNetworkNode["VfQueueNumberPerEni"].asString());
+		auto cpuOptionsNode = value["CpuOptions"];
+			auto allSupportedTopologyTypes = cpuOptionsNode["SupportedTopologyTypes"]["SupportedTopologyType"];
+			for (auto value : allSupportedTopologyTypes)
+				instanceTypesObject.cpuOptions.supportedTopologyTypes.push_back(value.asString());
 		auto allSupportedBootModes = value["SupportedBootModes"]["SupportedBootMode"];
 		for (auto value : allSupportedBootModes)
 			instanceTypesObject.supportedBootModes.push_back(value.asString());
