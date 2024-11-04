@@ -28,12 +28,18 @@ namespace Alb {
 namespace Model {
 class ALIBABACLOUD_ALB_EXPORT ListListenersRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	ListListenersRequest();
 	~ListListenersRequest();
 	std::vector<std::string> getLoadBalancerIds() const;
 	void setLoadBalancerIds(const std::vector<std::string> &loadBalancerIds);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	bool getAccessLogRecordCustomizedHeadersEnabled() const;
 	void setAccessLogRecordCustomizedHeadersEnabled(bool accessLogRecordCustomizedHeadersEnabled);
 	std::string getListenerProtocol() const;
@@ -42,16 +48,20 @@ public:
 	void setListenerIds(const std::vector<std::string> &listenerIds);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
+	bool getIsAssociatedAcl() const;
+	void setIsAssociatedAcl(bool isAssociatedAcl);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
 
 private:
 	std::vector<std::string> loadBalancerIds_;
 	std::string nextToken_;
+	std::vector<Tag> tag_;
 	bool accessLogRecordCustomizedHeadersEnabled_;
 	std::string listenerProtocol_;
 	std::vector<std::string> listenerIds_;
 	int maxResults_;
+	bool isAssociatedAcl_;
 	std::string status_;
 };
 } // namespace Model

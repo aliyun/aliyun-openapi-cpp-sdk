@@ -130,6 +130,16 @@ void ListServerGroupsResult::parse(const std::string &payload)
 			serverGroupsObject.uchConfig.type = uchConfigNode["Type"].asString();
 		if(!uchConfigNode["Value"].isNull())
 			serverGroupsObject.uchConfig.value = uchConfigNode["Value"].asString();
+		auto connectionDrainConfigNode = value["ConnectionDrainConfig"];
+		if(!connectionDrainConfigNode["ConnectionDrainEnabled"].isNull())
+			serverGroupsObject.connectionDrainConfig.connectionDrainEnabled = connectionDrainConfigNode["ConnectionDrainEnabled"].asString() == "true";
+		if(!connectionDrainConfigNode["ConnectionDrainTimeout"].isNull())
+			serverGroupsObject.connectionDrainConfig.connectionDrainTimeout = std::stoi(connectionDrainConfigNode["ConnectionDrainTimeout"].asString());
+		auto slowStartConfigNode = value["SlowStartConfig"];
+		if(!slowStartConfigNode["SlowStartEnabled"].isNull())
+			serverGroupsObject.slowStartConfig.slowStartEnabled = slowStartConfigNode["SlowStartEnabled"].asString() == "true";
+		if(!slowStartConfigNode["SlowStartDuration"].isNull())
+			serverGroupsObject.slowStartConfig.slowStartDuration = std::stoi(slowStartConfigNode["SlowStartDuration"].asString());
 		auto allRelatedLoadBalancerIds = value["RelatedLoadBalancerIds"]["RelatedLoadBalancerId"];
 		for (auto value : allRelatedLoadBalancerIds)
 			serverGroupsObject.relatedLoadBalancerIds.push_back(value.asString());

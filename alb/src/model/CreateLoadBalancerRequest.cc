@@ -110,6 +110,18 @@ void CreateLoadBalancerRequest::setAddressType(const std::string &addressType) {
   setParameter(std::string("AddressType"), addressType);
 }
 
+std::vector<CreateLoadBalancerRequest::Tag> CreateLoadBalancerRequest::getTag() const {
+  return tag_;
+}
+
+void CreateLoadBalancerRequest::setTag(const std::vector<CreateLoadBalancerRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
+  }
+}
+
 std::string CreateLoadBalancerRequest::getAddressAllocatedMode() const {
   return addressAllocatedMode_;
 }
@@ -139,6 +151,7 @@ void CreateLoadBalancerRequest::setZoneMappings(const std::vector<CreateLoadBala
     setParameter(std::string("ZoneMappings") + "." + std::to_string(dep1 + 1) + ".EipType", zoneMappings[dep1].eipType);
     setParameter(std::string("ZoneMappings") + "." + std::to_string(dep1 + 1) + ".ZoneId", zoneMappings[dep1].zoneId);
     setParameter(std::string("ZoneMappings") + "." + std::to_string(dep1 + 1) + ".AllocationId", zoneMappings[dep1].allocationId);
+    setParameter(std::string("ZoneMappings") + "." + std::to_string(dep1 + 1) + ".IntranetAddress", zoneMappings[dep1].intranetAddress);
   }
 }
 

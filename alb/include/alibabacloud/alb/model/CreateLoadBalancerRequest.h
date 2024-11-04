@@ -38,11 +38,16 @@ public:
 		int internetBandwidth;
 		std::string payType;
 	};
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	struct ZoneMappings {
 		std::string vSwitchId;
 		std::string eipType;
 		std::string zoneId;
 		std::string allocationId;
+		std::string intranetAddress;
 	};
 	CreateLoadBalancerRequest();
 	~CreateLoadBalancerRequest();
@@ -64,6 +69,8 @@ public:
 	void setLoadBalancerName(const std::string &loadBalancerName);
 	std::string getAddressType() const;
 	void setAddressType(const std::string &addressType);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getAddressAllocatedMode() const;
 	void setAddressAllocatedMode(const std::string &addressAllocatedMode);
 	bool getDryRun() const;
@@ -83,6 +90,7 @@ private:
 	std::string resourceGroupId_;
 	std::string loadBalancerName_;
 	std::string addressType_;
+	std::vector<Tag> tag_;
 	std::string addressAllocatedMode_;
 	bool dryRun_;
 	std::vector<ZoneMappings> zoneMappings_;

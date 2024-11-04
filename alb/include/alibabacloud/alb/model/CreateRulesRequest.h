@@ -90,6 +90,12 @@ public:
 		RuleConditionsItem ruleConditionsItem;
 		std::vector<RuleConditionsItem> ruleConditions;
 		std::string ruleName;
+		struct TagItem {
+			std::string value;
+			std::string key;
+		};
+		TagItem tagItem;
+		std::vector<TagItem> tag;
 		int priority;
 		struct RuleActionsItem {
 			struct FixedResponseConfig {

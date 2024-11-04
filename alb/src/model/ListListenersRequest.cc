@@ -45,6 +45,18 @@ void ListListenersRequest::setNextToken(const std::string &nextToken) {
   setParameter(std::string("NextToken"), nextToken);
 }
 
+std::vector<ListListenersRequest::Tag> ListListenersRequest::getTag() const {
+  return tag_;
+}
+
+void ListListenersRequest::setTag(const std::vector<ListListenersRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
+  }
+}
+
 bool ListListenersRequest::getAccessLogRecordCustomizedHeadersEnabled() const {
   return accessLogRecordCustomizedHeadersEnabled_;
 }
@@ -81,6 +93,15 @@ int ListListenersRequest::getMaxResults() const {
 void ListListenersRequest::setMaxResults(int maxResults) {
   maxResults_ = maxResults;
   setParameter(std::string("MaxResults"), std::to_string(maxResults));
+}
+
+bool ListListenersRequest::getIsAssociatedAcl() const {
+  return isAssociatedAcl_;
+}
+
+void ListListenersRequest::setIsAssociatedAcl(bool isAssociatedAcl) {
+  isAssociatedAcl_ = isAssociatedAcl;
+  setParameter(std::string("IsAssociatedAcl"), isAssociatedAcl ? "true" : "false");
 }
 
 std::string ListListenersRequest::getStatus() const {

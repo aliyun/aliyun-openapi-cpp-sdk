@@ -48,6 +48,8 @@ public:
 	void setNextToken(const std::string &nextToken);
 	std::string getLoadBalancerBussinessStatus() const;
 	void setLoadBalancerBussinessStatus(const std::string &loadBalancerBussinessStatus);
+	std::string getDNSName() const;
+	void setDNSName(const std::string &dNSName);
 	std::string getAddressType() const;
 	void setAddressType(const std::string &addressType);
 	std::vector<std::string> getVpcIds() const;
@@ -77,6 +79,7 @@ private:
 	std::string resourceGroupId_;
 	std::string nextToken_;
 	std::string loadBalancerBussinessStatus_;
+	std::string dNSName_;
 	std::string addressType_;
 	std::vector<std::string> vpcIds_;
 	std::vector<Tag> tag_;

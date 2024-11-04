@@ -28,6 +28,10 @@ namespace Alb {
 namespace Model {
 class ALIBABACLOUD_ALB_EXPORT CreateHealthCheckTemplateRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateHealthCheckTemplateRequest();
 	~CreateHealthCheckTemplateRequest();
 	int getHealthCheckTimeout() const;
@@ -44,6 +48,8 @@ public:
 	void setHealthCheckTcpFastCloseEnabled(bool healthCheckTcpFastCloseEnabled);
 	std::string getHealthCheckPath() const;
 	void setHealthCheckPath(const std::string &healthCheckPath);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::vector<std::string> getHealthCheckCodes() const;
 	void setHealthCheckCodes(const std::vector<std::string> &healthCheckCodes);
 	bool getDryRun() const;
@@ -71,6 +77,7 @@ private:
 	int healthyThreshold_;
 	bool healthCheckTcpFastCloseEnabled_;
 	std::string healthCheckPath_;
+	std::vector<Tag> tag_;
 	std::vector<std::string> healthCheckCodes_;
 	bool dryRun_;
 	std::string healthCheckMethod_;

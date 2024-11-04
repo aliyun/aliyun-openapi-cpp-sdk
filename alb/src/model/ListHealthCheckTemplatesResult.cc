@@ -73,6 +73,16 @@ void ListHealthCheckTemplatesResult::parse(const std::string &payload)
 			healthCheckTemplatesObject.serviceManagedEnabled = valueHealthCheckTemplatesHealthCheckTemplate["ServiceManagedEnabled"].asString() == "true";
 		if(!valueHealthCheckTemplatesHealthCheckTemplate["ServiceManagedMode"].isNull())
 			healthCheckTemplatesObject.serviceManagedMode = valueHealthCheckTemplatesHealthCheckTemplate["ServiceManagedMode"].asString();
+		auto allTagsNode = valueHealthCheckTemplatesHealthCheckTemplate["Tags"]["Tag"];
+		for (auto valueHealthCheckTemplatesHealthCheckTemplateTagsTag : allTagsNode)
+		{
+			HealthCheckTemplate::Tag tagsObject;
+			if(!valueHealthCheckTemplatesHealthCheckTemplateTagsTag["Key"].isNull())
+				tagsObject.key = valueHealthCheckTemplatesHealthCheckTemplateTagsTag["Key"].asString();
+			if(!valueHealthCheckTemplatesHealthCheckTemplateTagsTag["Value"].isNull())
+				tagsObject.value = valueHealthCheckTemplatesHealthCheckTemplateTagsTag["Value"].asString();
+			healthCheckTemplatesObject.tags.push_back(tagsObject);
+		}
 		auto allHealthCheckHttpCodes = value["HealthCheckHttpCodes"]["httpCode"];
 		for (auto value : allHealthCheckHttpCodes)
 			healthCheckTemplatesObject.healthCheckHttpCodes.push_back(value.asString());

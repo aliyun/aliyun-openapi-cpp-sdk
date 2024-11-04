@@ -86,6 +86,32 @@ void ListListenersResult::parse(const std::string &payload)
 			}
 			listenersObject.defaultActions.push_back(defaultActionsObject);
 		}
+		auto allTagsNode = valueListenerslistener["Tags"]["Tag"];
+		for (auto valueListenerslistenerTagsTag : allTagsNode)
+		{
+			Listener::Tag tagsObject;
+			if(!valueListenerslistenerTagsTag["Key"].isNull())
+				tagsObject.key = valueListenerslistenerTagsTag["Key"].asString();
+			if(!valueListenerslistenerTagsTag["Value"].isNull())
+				tagsObject.value = valueListenerslistenerTagsTag["Value"].asString();
+			listenersObject.tags.push_back(tagsObject);
+		}
+		auto allAssociatedResourcesNode = valueListenerslistener["AssociatedResources"]["AssociatedResource"];
+		for (auto valueListenerslistenerAssociatedResourcesAssociatedResource : allAssociatedResourcesNode)
+		{
+			Listener::AssociatedResource associatedResourcesObject;
+			if(!valueListenerslistenerAssociatedResourcesAssociatedResource["AssociatedResourceType"].isNull())
+				associatedResourcesObject.associatedResourceType = valueListenerslistenerAssociatedResourcesAssociatedResource["AssociatedResourceType"].asString();
+			if(!valueListenerslistenerAssociatedResourcesAssociatedResource["AssociatedResourceId"].isNull())
+				associatedResourcesObject.associatedResourceId = valueListenerslistenerAssociatedResourcesAssociatedResource["AssociatedResourceId"].asString();
+			if(!valueListenerslistenerAssociatedResourcesAssociatedResource["PolicyId"].isNull())
+				associatedResourcesObject.policyId = valueListenerslistenerAssociatedResourcesAssociatedResource["PolicyId"].asString();
+			if(!valueListenerslistenerAssociatedResourcesAssociatedResource["Status"].isNull())
+				associatedResourcesObject.status = valueListenerslistenerAssociatedResourcesAssociatedResource["Status"].asString();
+			if(!valueListenerslistenerAssociatedResourcesAssociatedResource["AssociatedMode"].isNull())
+				associatedResourcesObject.associatedMode = valueListenerslistenerAssociatedResourcesAssociatedResource["AssociatedMode"].asString();
+			listenersObject.associatedResources.push_back(associatedResourcesObject);
+		}
 		auto logConfigNode = value["LogConfig"];
 		if(!logConfigNode["AccessLogRecordCustomizedHeadersEnabled"].isNull())
 			listenersObject.logConfig.accessLogRecordCustomizedHeadersEnabled = logConfigNode["AccessLogRecordCustomizedHeadersEnabled"].asString() == "true";

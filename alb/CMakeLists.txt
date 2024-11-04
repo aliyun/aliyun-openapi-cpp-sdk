@@ -33,6 +33,8 @@ set(alb_public_header_model
 	include/alibabacloud/alb/model/AssociateAdditionalCertificatesWithListenerResult.h
 	include/alibabacloud/alb/model/AttachCommonBandwidthPackageToLoadBalancerRequest.h
 	include/alibabacloud/alb/model/AttachCommonBandwidthPackageToLoadBalancerResult.h
+	include/alibabacloud/alb/model/CancelShiftLoadBalancerZonesRequest.h
+	include/alibabacloud/alb/model/CancelShiftLoadBalancerZonesResult.h
 	include/alibabacloud/alb/model/CreateAScriptsRequest.h
 	include/alibabacloud/alb/model/CreateAScriptsResult.h
 	include/alibabacloud/alb/model/CreateAclRequest.h
@@ -135,6 +137,10 @@ set(alb_public_header_model
 	include/alibabacloud/alb/model/ListTagResourcesResult.h
 	include/alibabacloud/alb/model/ListTagValuesRequest.h
 	include/alibabacloud/alb/model/ListTagValuesResult.h
+	include/alibabacloud/alb/model/LoadBalancerJoinSecurityGroupRequest.h
+	include/alibabacloud/alb/model/LoadBalancerJoinSecurityGroupResult.h
+	include/alibabacloud/alb/model/LoadBalancerLeaveSecurityGroupRequest.h
+	include/alibabacloud/alb/model/LoadBalancerLeaveSecurityGroupResult.h
 	include/alibabacloud/alb/model/MoveResourceGroupRequest.h
 	include/alibabacloud/alb/model/MoveResourceGroupResult.h
 	include/alibabacloud/alb/model/RemoveEntriesFromAclRequest.h
@@ -145,6 +151,8 @@ set(alb_public_header_model
 	include/alibabacloud/alb/model/ReplaceServersInServerGroupResult.h
 	include/alibabacloud/alb/model/StartListenerRequest.h
 	include/alibabacloud/alb/model/StartListenerResult.h
+	include/alibabacloud/alb/model/StartShiftLoadBalancerZonesRequest.h
+	include/alibabacloud/alb/model/StartShiftLoadBalancerZonesResult.h
 	include/alibabacloud/alb/model/StopListenerRequest.h
 	include/alibabacloud/alb/model/StopListenerResult.h
 	include/alibabacloud/alb/model/TagResourcesRequest.h
@@ -194,6 +202,8 @@ set(alb_src
 	src/model/AssociateAdditionalCertificatesWithListenerResult.cc
 	src/model/AttachCommonBandwidthPackageToLoadBalancerRequest.cc
 	src/model/AttachCommonBandwidthPackageToLoadBalancerResult.cc
+	src/model/CancelShiftLoadBalancerZonesRequest.cc
+	src/model/CancelShiftLoadBalancerZonesResult.cc
 	src/model/CreateAScriptsRequest.cc
 	src/model/CreateAScriptsResult.cc
 	src/model/CreateAclRequest.cc
@@ -296,6 +306,10 @@ set(alb_src
 	src/model/ListTagResourcesResult.cc
 	src/model/ListTagValuesRequest.cc
 	src/model/ListTagValuesResult.cc
+	src/model/LoadBalancerJoinSecurityGroupRequest.cc
+	src/model/LoadBalancerJoinSecurityGroupResult.cc
+	src/model/LoadBalancerLeaveSecurityGroupRequest.cc
+	src/model/LoadBalancerLeaveSecurityGroupResult.cc
 	src/model/MoveResourceGroupRequest.cc
 	src/model/MoveResourceGroupResult.cc
 	src/model/RemoveEntriesFromAclRequest.cc
@@ -306,6 +320,8 @@ set(alb_src
 	src/model/ReplaceServersInServerGroupResult.cc
 	src/model/StartListenerRequest.cc
 	src/model/StartListenerResult.cc
+	src/model/StartShiftLoadBalancerZonesRequest.cc
+	src/model/StartShiftLoadBalancerZonesResult.cc
 	src/model/StopListenerRequest.cc
 	src/model/StopListenerResult.cc
 	src/model/TagResourcesRequest.cc

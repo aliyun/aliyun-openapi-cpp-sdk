@@ -88,6 +88,18 @@ void CreateHealthCheckTemplateRequest::setHealthCheckPath(const std::string &hea
   setParameter(std::string("HealthCheckPath"), healthCheckPath);
 }
 
+std::vector<CreateHealthCheckTemplateRequest::Tag> CreateHealthCheckTemplateRequest::getTag() const {
+  return tag_;
+}
+
+void CreateHealthCheckTemplateRequest::setTag(const std::vector<CreateHealthCheckTemplateRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
+  }
+}
+
 std::vector<CreateHealthCheckTemplateRequest::std::string> CreateHealthCheckTemplateRequest::getHealthCheckCodes() const {
   return healthCheckCodes_;
 }

@@ -46,11 +46,19 @@ public:
 		std::string healthCheckHttpVersion;
 		int healthCheckConnectPort;
 	};
+	struct SlowStartConfig {
+		int slowStartDuration;
+		bool slowStartEnabled;
+	};
 	struct StickySessionConfig {
 		bool stickySessionEnabled;
 		std::string cookie;
 		int cookieTimeout;
 		std::string stickySessionType;
+	};
+	struct ConnectionDrainConfig {
+		bool connectionDrainEnabled;
+		int connectionDrainTimeout;
 	};
 	struct UchConfig {
 		std::string type;
@@ -64,6 +72,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	HealthCheckConfig getHealthCheckConfig() const;
 	void setHealthCheckConfig(const HealthCheckConfig &healthCheckConfig);
+	SlowStartConfig getSlowStartConfig() const;
+	void setSlowStartConfig(const SlowStartConfig &slowStartConfig);
 	std::string getScheduler() const;
 	void setScheduler(const std::string &scheduler);
 	std::string getServerGroupId() const;
@@ -76,6 +86,8 @@ public:
 	void setStickySessionConfig(const StickySessionConfig &stickySessionConfig);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
+	ConnectionDrainConfig getConnectionDrainConfig() const;
+	void setConnectionDrainConfig(const ConnectionDrainConfig &connectionDrainConfig);
 	UchConfig getUchConfig() const;
 	void setUchConfig(const UchConfig &uchConfig);
 
@@ -83,12 +95,14 @@ private:
 	std::string serverGroupName_;
 	std::string clientToken_;
 	HealthCheckConfig healthCheckConfig_;
+	SlowStartConfig slowStartConfig_;
 	std::string scheduler_;
 	std::string serverGroupId_;
 	bool upstreamKeepaliveEnabled_;
 	std::string serviceName_;
 	StickySessionConfig stickySessionConfig_;
 	bool dryRun_;
+	ConnectionDrainConfig connectionDrainConfig_;
 	UchConfig uchConfig_;
 };
 } // namespace Model

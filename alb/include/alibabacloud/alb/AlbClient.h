@@ -34,6 +34,8 @@
 #include "model/AssociateAdditionalCertificatesWithListenerResult.h"
 #include "model/AttachCommonBandwidthPackageToLoadBalancerRequest.h"
 #include "model/AttachCommonBandwidthPackageToLoadBalancerResult.h"
+#include "model/CancelShiftLoadBalancerZonesRequest.h"
+#include "model/CancelShiftLoadBalancerZonesResult.h"
 #include "model/CreateAScriptsRequest.h"
 #include "model/CreateAScriptsResult.h"
 #include "model/CreateAclRequest.h"
@@ -136,6 +138,10 @@
 #include "model/ListTagResourcesResult.h"
 #include "model/ListTagValuesRequest.h"
 #include "model/ListTagValuesResult.h"
+#include "model/LoadBalancerJoinSecurityGroupRequest.h"
+#include "model/LoadBalancerJoinSecurityGroupResult.h"
+#include "model/LoadBalancerLeaveSecurityGroupRequest.h"
+#include "model/LoadBalancerLeaveSecurityGroupResult.h"
 #include "model/MoveResourceGroupRequest.h"
 #include "model/MoveResourceGroupResult.h"
 #include "model/RemoveEntriesFromAclRequest.h"
@@ -146,6 +152,8 @@
 #include "model/ReplaceServersInServerGroupResult.h"
 #include "model/StartListenerRequest.h"
 #include "model/StartListenerResult.h"
+#include "model/StartShiftLoadBalancerZonesRequest.h"
+#include "model/StartShiftLoadBalancerZonesResult.h"
 #include "model/StopListenerRequest.h"
 #include "model/StopListenerResult.h"
 #include "model/TagResourcesRequest.h"
@@ -207,6 +215,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AttachCommonBandwidthPackageToLoadBalancerResult> AttachCommonBandwidthPackageToLoadBalancerOutcome;
 			typedef std::future<AttachCommonBandwidthPackageToLoadBalancerOutcome> AttachCommonBandwidthPackageToLoadBalancerOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::AttachCommonBandwidthPackageToLoadBalancerRequest&, const AttachCommonBandwidthPackageToLoadBalancerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachCommonBandwidthPackageToLoadBalancerAsyncHandler;
+			typedef Outcome<Error, Model::CancelShiftLoadBalancerZonesResult> CancelShiftLoadBalancerZonesOutcome;
+			typedef std::future<CancelShiftLoadBalancerZonesOutcome> CancelShiftLoadBalancerZonesOutcomeCallable;
+			typedef std::function<void(const AlbClient*, const Model::CancelShiftLoadBalancerZonesRequest&, const CancelShiftLoadBalancerZonesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelShiftLoadBalancerZonesAsyncHandler;
 			typedef Outcome<Error, Model::CreateAScriptsResult> CreateAScriptsOutcome;
 			typedef std::future<CreateAScriptsOutcome> CreateAScriptsOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::CreateAScriptsRequest&, const CreateAScriptsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAScriptsAsyncHandler;
@@ -360,6 +371,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTagValuesResult> ListTagValuesOutcome;
 			typedef std::future<ListTagValuesOutcome> ListTagValuesOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::ListTagValuesRequest&, const ListTagValuesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagValuesAsyncHandler;
+			typedef Outcome<Error, Model::LoadBalancerJoinSecurityGroupResult> LoadBalancerJoinSecurityGroupOutcome;
+			typedef std::future<LoadBalancerJoinSecurityGroupOutcome> LoadBalancerJoinSecurityGroupOutcomeCallable;
+			typedef std::function<void(const AlbClient*, const Model::LoadBalancerJoinSecurityGroupRequest&, const LoadBalancerJoinSecurityGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LoadBalancerJoinSecurityGroupAsyncHandler;
+			typedef Outcome<Error, Model::LoadBalancerLeaveSecurityGroupResult> LoadBalancerLeaveSecurityGroupOutcome;
+			typedef std::future<LoadBalancerLeaveSecurityGroupOutcome> LoadBalancerLeaveSecurityGroupOutcomeCallable;
+			typedef std::function<void(const AlbClient*, const Model::LoadBalancerLeaveSecurityGroupRequest&, const LoadBalancerLeaveSecurityGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LoadBalancerLeaveSecurityGroupAsyncHandler;
 			typedef Outcome<Error, Model::MoveResourceGroupResult> MoveResourceGroupOutcome;
 			typedef std::future<MoveResourceGroupOutcome> MoveResourceGroupOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::MoveResourceGroupRequest&, const MoveResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoveResourceGroupAsyncHandler;
@@ -375,6 +392,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StartListenerResult> StartListenerOutcome;
 			typedef std::future<StartListenerOutcome> StartListenerOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::StartListenerRequest&, const StartListenerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartListenerAsyncHandler;
+			typedef Outcome<Error, Model::StartShiftLoadBalancerZonesResult> StartShiftLoadBalancerZonesOutcome;
+			typedef std::future<StartShiftLoadBalancerZonesOutcome> StartShiftLoadBalancerZonesOutcomeCallable;
+			typedef std::function<void(const AlbClient*, const Model::StartShiftLoadBalancerZonesRequest&, const StartShiftLoadBalancerZonesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartShiftLoadBalancerZonesAsyncHandler;
 			typedef Outcome<Error, Model::StopListenerResult> StopListenerOutcome;
 			typedef std::future<StopListenerOutcome> StopListenerOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::StopListenerRequest&, const StopListenerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopListenerAsyncHandler;
@@ -449,6 +469,9 @@ namespace AlibabaCloud
 			AttachCommonBandwidthPackageToLoadBalancerOutcome attachCommonBandwidthPackageToLoadBalancer(const Model::AttachCommonBandwidthPackageToLoadBalancerRequest &request)const;
 			void attachCommonBandwidthPackageToLoadBalancerAsync(const Model::AttachCommonBandwidthPackageToLoadBalancerRequest& request, const AttachCommonBandwidthPackageToLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachCommonBandwidthPackageToLoadBalancerOutcomeCallable attachCommonBandwidthPackageToLoadBalancerCallable(const Model::AttachCommonBandwidthPackageToLoadBalancerRequest& request) const;
+			CancelShiftLoadBalancerZonesOutcome cancelShiftLoadBalancerZones(const Model::CancelShiftLoadBalancerZonesRequest &request)const;
+			void cancelShiftLoadBalancerZonesAsync(const Model::CancelShiftLoadBalancerZonesRequest& request, const CancelShiftLoadBalancerZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelShiftLoadBalancerZonesOutcomeCallable cancelShiftLoadBalancerZonesCallable(const Model::CancelShiftLoadBalancerZonesRequest& request) const;
 			CreateAScriptsOutcome createAScripts(const Model::CreateAScriptsRequest &request)const;
 			void createAScriptsAsync(const Model::CreateAScriptsRequest& request, const CreateAScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAScriptsOutcomeCallable createAScriptsCallable(const Model::CreateAScriptsRequest& request) const;
@@ -602,6 +625,12 @@ namespace AlibabaCloud
 			ListTagValuesOutcome listTagValues(const Model::ListTagValuesRequest &request)const;
 			void listTagValuesAsync(const Model::ListTagValuesRequest& request, const ListTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagValuesOutcomeCallable listTagValuesCallable(const Model::ListTagValuesRequest& request) const;
+			LoadBalancerJoinSecurityGroupOutcome loadBalancerJoinSecurityGroup(const Model::LoadBalancerJoinSecurityGroupRequest &request)const;
+			void loadBalancerJoinSecurityGroupAsync(const Model::LoadBalancerJoinSecurityGroupRequest& request, const LoadBalancerJoinSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			LoadBalancerJoinSecurityGroupOutcomeCallable loadBalancerJoinSecurityGroupCallable(const Model::LoadBalancerJoinSecurityGroupRequest& request) const;
+			LoadBalancerLeaveSecurityGroupOutcome loadBalancerLeaveSecurityGroup(const Model::LoadBalancerLeaveSecurityGroupRequest &request)const;
+			void loadBalancerLeaveSecurityGroupAsync(const Model::LoadBalancerLeaveSecurityGroupRequest& request, const LoadBalancerLeaveSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			LoadBalancerLeaveSecurityGroupOutcomeCallable loadBalancerLeaveSecurityGroupCallable(const Model::LoadBalancerLeaveSecurityGroupRequest& request) const;
 			MoveResourceGroupOutcome moveResourceGroup(const Model::MoveResourceGroupRequest &request)const;
 			void moveResourceGroupAsync(const Model::MoveResourceGroupRequest& request, const MoveResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MoveResourceGroupOutcomeCallable moveResourceGroupCallable(const Model::MoveResourceGroupRequest& request) const;
@@ -617,6 +646,9 @@ namespace AlibabaCloud
 			StartListenerOutcome startListener(const Model::StartListenerRequest &request)const;
 			void startListenerAsync(const Model::StartListenerRequest& request, const StartListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartListenerOutcomeCallable startListenerCallable(const Model::StartListenerRequest& request) const;
+			StartShiftLoadBalancerZonesOutcome startShiftLoadBalancerZones(const Model::StartShiftLoadBalancerZonesRequest &request)const;
+			void startShiftLoadBalancerZonesAsync(const Model::StartShiftLoadBalancerZonesRequest& request, const StartShiftLoadBalancerZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartShiftLoadBalancerZonesOutcomeCallable startShiftLoadBalancerZonesCallable(const Model::StartShiftLoadBalancerZonesRequest& request) const;
 			StopListenerOutcome stopListener(const Model::StopListenerRequest &request)const;
 			void stopListenerAsync(const Model::StopListenerRequest& request, const StopListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopListenerOutcomeCallable stopListenerCallable(const Model::StopListenerRequest& request) const;

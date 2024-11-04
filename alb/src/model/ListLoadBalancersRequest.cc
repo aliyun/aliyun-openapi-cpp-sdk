@@ -94,6 +94,15 @@ void ListLoadBalancersRequest::setLoadBalancerBussinessStatus(const std::string 
   setParameter(std::string("LoadBalancerBussinessStatus"), loadBalancerBussinessStatus);
 }
 
+std::string ListLoadBalancersRequest::getDNSName() const {
+  return dNSName_;
+}
+
+void ListLoadBalancersRequest::setDNSName(const std::string &dNSName) {
+  dNSName_ = dNSName;
+  setParameter(std::string("DNSName"), dNSName);
+}
+
 std::string ListLoadBalancersRequest::getAddressType() const {
   return addressType_;
 }

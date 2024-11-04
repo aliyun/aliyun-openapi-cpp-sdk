@@ -69,6 +69,16 @@ void UpdateServerGroupAttributeRequest::setHealthCheckConfig(const UpdateServerG
   setParameter(std::string("HealthCheckConfig") + ".HealthCheckConnectPort", std::to_string(healthCheckConfig.healthCheckConnectPort));
 }
 
+UpdateServerGroupAttributeRequest::SlowStartConfig UpdateServerGroupAttributeRequest::getSlowStartConfig() const {
+  return slowStartConfig_;
+}
+
+void UpdateServerGroupAttributeRequest::setSlowStartConfig(const UpdateServerGroupAttributeRequest::SlowStartConfig &slowStartConfig) {
+  slowStartConfig_ = slowStartConfig;
+  setParameter(std::string("SlowStartConfig") + ".SlowStartDuration", std::to_string(slowStartConfig.slowStartDuration));
+  setParameter(std::string("SlowStartConfig") + ".SlowStartEnabled", slowStartConfig.slowStartEnabled ? "true" : "false");
+}
+
 std::string UpdateServerGroupAttributeRequest::getScheduler() const {
   return scheduler_;
 }
@@ -124,6 +134,16 @@ bool UpdateServerGroupAttributeRequest::getDryRun() const {
 void UpdateServerGroupAttributeRequest::setDryRun(bool dryRun) {
   dryRun_ = dryRun;
   setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
+UpdateServerGroupAttributeRequest::ConnectionDrainConfig UpdateServerGroupAttributeRequest::getConnectionDrainConfig() const {
+  return connectionDrainConfig_;
+}
+
+void UpdateServerGroupAttributeRequest::setConnectionDrainConfig(const UpdateServerGroupAttributeRequest::ConnectionDrainConfig &connectionDrainConfig) {
+  connectionDrainConfig_ = connectionDrainConfig;
+  setParameter(std::string("ConnectionDrainConfig") + ".ConnectionDrainEnabled", connectionDrainConfig.connectionDrainEnabled ? "true" : "false");
+  setParameter(std::string("ConnectionDrainConfig") + ".ConnectionDrainTimeout", std::to_string(connectionDrainConfig.connectionDrainTimeout));
 }
 
 UpdateServerGroupAttributeRequest::UchConfig UpdateServerGroupAttributeRequest::getUchConfig() const {

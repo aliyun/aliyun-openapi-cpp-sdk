@@ -224,6 +224,16 @@ void ListRulesResult::parse(const std::string &payload)
 					ruleConditionsObject.responseHeaderConfig.values11.push_back(value.asString());
 			rulesObject.ruleConditions.push_back(ruleConditionsObject);
 		}
+		auto allTagsNode = valueRulesRule["Tags"]["Tag"];
+		for (auto valueRulesRuleTagsTag : allTagsNode)
+		{
+			Rule::Tag tagsObject;
+			if(!valueRulesRuleTagsTag["Key"].isNull())
+				tagsObject.key = valueRulesRuleTagsTag["Key"].asString();
+			if(!valueRulesRuleTagsTag["Value"].isNull())
+				tagsObject.value = valueRulesRuleTagsTag["Value"].asString();
+			rulesObject.tags.push_back(tagsObject);
+		}
 		rules_.push_back(rulesObject);
 	}
 	if(!value["MaxResults"].isNull())

@@ -54,6 +54,18 @@ void CreateSecurityPolicyRequest::setCiphers(const std::vector<CreateSecurityPol
   }
 }
 
+std::vector<CreateSecurityPolicyRequest::Tag> CreateSecurityPolicyRequest::getTag() const {
+  return tag_;
+}
+
+void CreateSecurityPolicyRequest::setTag(const std::vector<CreateSecurityPolicyRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
+  }
+}
+
 std::vector<CreateSecurityPolicyRequest::std::string> CreateSecurityPolicyRequest::getTLSVersions() const {
   return tLSVersions_;
 }

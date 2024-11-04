@@ -61,6 +61,16 @@ void ListAclsResult::parse(const std::string &payload)
 			aclsObject.configManagedEnabled = valueAclsAcl["ConfigManagedEnabled"].asString() == "true";
 		if(!valueAclsAcl["CreateTime"].isNull())
 			aclsObject.createTime = valueAclsAcl["CreateTime"].asString();
+		auto allTagsNode = valueAclsAcl["Tags"]["Tag"];
+		for (auto valueAclsAclTagsTag : allTagsNode)
+		{
+			Acl::Tag tagsObject;
+			if(!valueAclsAclTagsTag["Key"].isNull())
+				tagsObject.key = valueAclsAclTagsTag["Key"].asString();
+			if(!valueAclsAclTagsTag["Value"].isNull())
+				tagsObject.value = valueAclsAclTagsTag["Value"].asString();
+			aclsObject.tags.push_back(tagsObject);
+		}
 		acls_.push_back(aclsObject);
 	}
 	if(!value["MaxResults"].isNull())

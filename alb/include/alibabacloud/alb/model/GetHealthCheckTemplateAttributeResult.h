@@ -32,6 +32,11 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ALB_EXPORT GetHealthCheckTemplateAttributeResult : public ServiceResult
 			{
 			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 
 				GetHealthCheckTemplateAttributeResult();
@@ -54,6 +59,7 @@ namespace AlibabaCloud
 				int getHealthyThreshold()const;
 				std::string getServiceManagedMode()const;
 				std::string getHealthCheckProtocol()const;
+				std::vector<Tag> getTags()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -75,6 +81,7 @@ namespace AlibabaCloud
 				int healthyThreshold_;
 				std::string serviceManagedMode_;
 				std::string healthCheckProtocol_;
+				std::vector<Tag> tags_;
 
 			};
 		}

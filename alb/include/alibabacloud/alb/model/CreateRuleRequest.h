@@ -28,6 +28,10 @@ namespace Alb {
 namespace Model {
 class ALIBABACLOUD_ALB_EXPORT CreateRuleRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	struct RuleActions {
 		struct FixedResponseConfig {
 			std::string httpCode;
@@ -174,6 +178,8 @@ public:
 	void setRuleName(const std::string &ruleName);
 	std::string getListenerId() const;
 	void setListenerId(const std::string &listenerId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getDirection() const;
 	void setDirection(const std::string &direction);
 	std::vector<RuleActions> getRuleActions() const;
@@ -189,6 +195,7 @@ private:
 	std::string clientToken_;
 	std::string ruleName_;
 	std::string listenerId_;
+	std::vector<Tag> tag_;
 	std::string direction_;
 	std::vector<RuleActions> ruleActions_;
 	std::vector<RuleConditions> ruleConditions_;

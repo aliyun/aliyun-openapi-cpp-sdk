@@ -65,29 +65,38 @@ namespace AlibabaCloud
 						std::string value;
 						std::string key;
 					};
+					struct AssociatedResource
+					{
+						std::string status;
+						std::string associatedResourceId;
+						std::string associatedMode;
+						std::string associatedResourceType;
+						std::string policyId;
+					};
 					bool serviceManagedEnabled;
-					std::string loadBalancerEdition;
 					std::string addressIpVersion;
 					std::string resourceGroupId;
-					LoadBalancerBillingConfig loadBalancerBillingConfig;
-					std::string createTime;
 					std::string loadBalancerId;
 					std::string dNSName;
-					ModificationProtectionConfig modificationProtectionConfig;
 					std::string ipv6AddressType;
-					std::string loadBalancerName;
-					AccessLogConfig accessLogConfig;
 					int bandwidthCapacity;
-					bool configManagedEnabled;
 					DeletionProtectionConfig deletionProtectionConfig;
-					std::string loadBalancerBussinessStatus;
-					std::string vpcId;
 					std::string serviceManagedMode;
 					std::string bandwidthPackageId;
+					std::vector<LoadBalancer::Tag> tags;
+					std::string loadBalancerEdition;
+					LoadBalancerBillingConfig loadBalancerBillingConfig;
+					std::vector<LoadBalancer::AssociatedResource> associatedResources;
+					std::string createTime;
+					ModificationProtectionConfig modificationProtectionConfig;
+					std::string loadBalancerName;
+					AccessLogConfig accessLogConfig;
+					bool configManagedEnabled;
+					std::string loadBalancerBussinessStatus;
+					std::string vpcId;
 					std::string addressAllocatedMode;
 					std::string addressType;
 					std::string loadBalancerStatus;
-					std::vector<LoadBalancer::Tag> tags;
 					std::vector<LoadBalancer::LoadBalancerOperationLock> loadBalancerOperationLocks;
 				};
 

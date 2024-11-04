@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALB_MODEL_ENABLELOADBALANCERACCESSLOGRESULT_H_
-#define ALIBABACLOUD_ALB_MODEL_ENABLELOADBALANCERACCESSLOGRESULT_H_
+#ifndef ALIBABACLOUD_ALB_MODEL_LOADBALANCERJOINSECURITYGROUPRESULT_H_
+#define ALIBABACLOUD_ALB_MODEL_LOADBALANCERJOINSECURITYGROUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALB_EXPORT EnableLoadBalancerAccessLogResult : public ServiceResult
+			class ALIBABACLOUD_ALB_EXPORT LoadBalancerJoinSecurityGroupResult : public ServiceResult
 			{
 			public:
 
 
-				EnableLoadBalancerAccessLogResult();
-				explicit EnableLoadBalancerAccessLogResult(const std::string &payload);
-				~EnableLoadBalancerAccessLogResult();
+				LoadBalancerJoinSecurityGroupResult();
+				explicit LoadBalancerJoinSecurityGroupResult(const std::string &payload);
+				~LoadBalancerJoinSecurityGroupResult();
 				std::string getJobId()const;
 
 			protected:
@@ -48,4 +48,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALB_MODEL_ENABLELOADBALANCERACCESSLOGRESULT_H_
+#endif // !ALIBABACLOUD_ALB_MODEL_LOADBALANCERJOINSECURITYGROUPRESULT_H_

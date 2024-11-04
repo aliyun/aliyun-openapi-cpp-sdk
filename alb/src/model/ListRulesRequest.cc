@@ -54,6 +54,18 @@ void ListRulesRequest::setNextToken(const std::string &nextToken) {
   setParameter(std::string("NextToken"), nextToken);
 }
 
+std::vector<ListRulesRequest::Tag> ListRulesRequest::getTag() const {
+  return tag_;
+}
+
+void ListRulesRequest::setTag(const std::vector<ListRulesRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
+  }
+}
+
 std::string ListRulesRequest::getDirection() const {
   return direction_;
 }

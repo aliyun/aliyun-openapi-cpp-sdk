@@ -34,6 +34,8 @@ public:
 	void setCertificateType(const std::string &certificateType);
 	std::string getListenerId() const;
 	void setListenerId(const std::string &listenerId);
+	std::vector<std::string> getCertificateIds() const;
+	void setCertificateIds(const std::vector<std::string> &certificateIds);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
 	int getMaxResults() const;
@@ -42,6 +44,7 @@ public:
 private:
 	std::string certificateType_;
 	std::string listenerId_;
+	std::vector<std::string> certificateIds_;
 	std::string nextToken_;
 	int maxResults_;
 };

@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct SecurityPolicy
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					bool serviceManagedEnabled;
 					std::vector<std::string> ciphers;
 					std::string securityPolicyId;
@@ -43,6 +48,7 @@ namespace AlibabaCloud
 					std::string createTime;
 					std::vector<std::string> tLSVersions;
 					std::string securityPolicyName;
+					std::vector<SecurityPolicy::Tag> tags;
 				};
 
 

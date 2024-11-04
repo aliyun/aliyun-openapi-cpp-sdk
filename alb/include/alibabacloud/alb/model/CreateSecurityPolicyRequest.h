@@ -28,6 +28,10 @@ namespace Alb {
 namespace Model {
 class ALIBABACLOUD_ALB_EXPORT CreateSecurityPolicyRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateSecurityPolicyRequest();
 	~CreateSecurityPolicyRequest();
 	std::string getClientToken() const;
@@ -36,6 +40,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::vector<std::string> getCiphers() const;
 	void setCiphers(const std::vector<std::string> &ciphers);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::vector<std::string> getTLSVersions() const;
 	void setTLSVersions(const std::vector<std::string> &tLSVersions);
 	std::string getSecurityPolicyName() const;
@@ -47,6 +53,7 @@ private:
 	std::string clientToken_;
 	std::string resourceGroupId_;
 	std::vector<std::string> ciphers_;
+	std::vector<Tag> tag_;
 	std::vector<std::string> tLSVersions_;
 	std::string securityPolicyName_;
 	bool dryRun_;

@@ -43,6 +43,17 @@ void ListListenerCertificatesRequest::setListenerId(const std::string &listenerI
   setParameter(std::string("ListenerId"), listenerId);
 }
 
+std::vector<ListListenerCertificatesRequest::std::string> ListListenerCertificatesRequest::getCertificateIds() const {
+  return certificateIds_;
+}
+
+void ListListenerCertificatesRequest::setCertificateIds(const std::vector<ListListenerCertificatesRequest::std::string> &certificateIds) {
+  certificateIds_ = certificateIds;
+  for(int dep1 = 0; dep1 != certificateIds.size(); dep1++) {
+    setParameter(std::string("CertificateIds") + "." + std::to_string(dep1 + 1), certificateIds[dep1]);
+  }
+}
+
 std::string ListListenerCertificatesRequest::getNextToken() const {
   return nextToken_;
 }

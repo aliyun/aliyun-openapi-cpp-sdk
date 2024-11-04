@@ -99,6 +99,22 @@ void ListLoadBalancersResult::parse(const std::string &payload)
 				tagsObject.value = valueLoadBalancersloadBalancerTagsTag["Value"].asString();
 			loadBalancersObject.tags.push_back(tagsObject);
 		}
+		auto allAssociatedResourcesNode = valueLoadBalancersloadBalancer["AssociatedResources"]["AssociatedResource"];
+		for (auto valueLoadBalancersloadBalancerAssociatedResourcesAssociatedResource : allAssociatedResourcesNode)
+		{
+			LoadBalancer::AssociatedResource associatedResourcesObject;
+			if(!valueLoadBalancersloadBalancerAssociatedResourcesAssociatedResource["AssociatedResourceType"].isNull())
+				associatedResourcesObject.associatedResourceType = valueLoadBalancersloadBalancerAssociatedResourcesAssociatedResource["AssociatedResourceType"].asString();
+			if(!valueLoadBalancersloadBalancerAssociatedResourcesAssociatedResource["AssociatedResourceId"].isNull())
+				associatedResourcesObject.associatedResourceId = valueLoadBalancersloadBalancerAssociatedResourcesAssociatedResource["AssociatedResourceId"].asString();
+			if(!valueLoadBalancersloadBalancerAssociatedResourcesAssociatedResource["PolicyId"].isNull())
+				associatedResourcesObject.policyId = valueLoadBalancersloadBalancerAssociatedResourcesAssociatedResource["PolicyId"].asString();
+			if(!valueLoadBalancersloadBalancerAssociatedResourcesAssociatedResource["Status"].isNull())
+				associatedResourcesObject.status = valueLoadBalancersloadBalancerAssociatedResourcesAssociatedResource["Status"].asString();
+			if(!valueLoadBalancersloadBalancerAssociatedResourcesAssociatedResource["AssociatedMode"].isNull())
+				associatedResourcesObject.associatedMode = valueLoadBalancersloadBalancerAssociatedResourcesAssociatedResource["AssociatedMode"].asString();
+			loadBalancersObject.associatedResources.push_back(associatedResourcesObject);
+		}
 		auto accessLogConfigNode = value["AccessLogConfig"];
 		if(!accessLogConfigNode["LogProject"].isNull())
 			loadBalancersObject.accessLogConfig.logProject = accessLogConfigNode["LogProject"].asString();

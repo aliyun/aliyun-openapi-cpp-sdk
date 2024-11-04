@@ -28,6 +28,10 @@ namespace Alb {
 namespace Model {
 class ALIBABACLOUD_ALB_EXPORT ListSecurityPoliciesRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	ListSecurityPoliciesRequest();
 	~ListSecurityPoliciesRequest();
 	std::vector<std::string> getSecurityPolicyNames() const;
@@ -36,6 +40,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::vector<std::string> getSecurityPolicyIds() const;
 	void setSecurityPolicyIds(const std::vector<std::string> &securityPolicyIds);
 	int getMaxResults() const;
@@ -45,6 +51,7 @@ private:
 	std::vector<std::string> securityPolicyNames_;
 	std::string resourceGroupId_;
 	std::string nextToken_;
+	std::vector<Tag> tag_;
 	std::vector<std::string> securityPolicyIds_;
 	int maxResults_;
 };

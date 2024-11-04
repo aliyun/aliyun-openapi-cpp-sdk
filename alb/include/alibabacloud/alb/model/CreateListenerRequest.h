@@ -32,6 +32,10 @@ public:
 		bool quicUpgradeEnabled;
 		std::string quicListenerId;
 	};
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	struct DefaultActions {
 		struct ForwardGroupConfig {
 			struct ServerGroupTuplesItem {
@@ -76,6 +80,8 @@ public:
 	void setQuicConfig(const QuicConfig &quicConfig);
 	bool getHttp2Enabled() const;
 	void setHttp2Enabled(bool http2Enabled);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::vector<DefaultActions> getDefaultActions() const;
 	void setDefaultActions(const std::vector<DefaultActions> &defaultActions);
 	int getListenerPort() const;
@@ -108,6 +114,7 @@ private:
 	bool gzipEnabled_;
 	QuicConfig quicConfig_;
 	bool http2Enabled_;
+	std::vector<Tag> tag_;
 	std::vector<DefaultActions> defaultActions_;
 	int listenerPort_;
 	bool dryRun_;

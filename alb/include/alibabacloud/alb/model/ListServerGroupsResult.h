@@ -63,34 +63,46 @@ namespace AlibabaCloud
 						std::string type;
 						std::string value;
 					};
+					struct ConnectionDrainConfig
+					{
+						bool connectionDrainEnabled;
+						int connectionDrainTimeout;
+					};
+					struct SlowStartConfig
+					{
+						bool slowStartEnabled;
+						int slowStartDuration;
+					};
 					struct Tag
 					{
 						std::string value;
 						std::string key;
 					};
 					bool serviceManagedEnabled;
-					std::vector<std::string> relatedLoadBalancerIds;
 					std::vector<std::string> relatedListenerIds;
 					std::string resourceGroupId;
-					UchConfig uchConfig;
 					std::string scheduler;
-					bool upstreamKeepaliveEnabled;
-					StickySessionConfig stickySessionConfig;
-					std::string createTime;
 					std::vector<std::string> relatedRuleIds;
-					std::string serverGroupId;
 					int serverCount;
-					std::string serverGroupType;
-					std::string serverGroupStatus;
 					bool ipv6Enabled;
-					bool configManagedEnabled;
-					std::string vpcId;
-					std::string serviceName;
+					SlowStartConfig slowStartConfig;
 					std::string serviceManagedMode;
-					HealthCheckConfig healthCheckConfig;
 					std::string protocol;
 					std::vector<ServerGroup::Tag> tags;
 					std::string serverGroupName;
+					ConnectionDrainConfig connectionDrainConfig;
+					std::vector<std::string> relatedLoadBalancerIds;
+					UchConfig uchConfig;
+					bool upstreamKeepaliveEnabled;
+					StickySessionConfig stickySessionConfig;
+					std::string createTime;
+					std::string serverGroupId;
+					std::string serverGroupType;
+					std::string serverGroupStatus;
+					bool configManagedEnabled;
+					std::string vpcId;
+					std::string serviceName;
+					HealthCheckConfig healthCheckConfig;
 				};
 
 

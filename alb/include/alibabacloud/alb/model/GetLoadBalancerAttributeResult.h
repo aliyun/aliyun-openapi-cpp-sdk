@@ -67,9 +67,11 @@ namespace AlibabaCloud
 				{
 					struct LoadBalancerAddress
 					{
+						std::vector<std::string> ipv6LocalAddresses;
 						std::string intranetAddress;
 						std::string intranetAddressHcStatus;
 						std::string address;
+						std::vector<std::string> ipv4LocalAddresses;
 						std::string allocationId;
 						std::string ipv6AddressHcStatus;
 						std::string eipType;
@@ -81,6 +83,14 @@ namespace AlibabaCloud
 					std::string allocationId;
 					std::string eipType;
 					std::vector<ZoneMapping::LoadBalancerAddress> loadBalancerAddresses;
+				};
+				struct AssociatedResource
+				{
+					std::string status;
+					std::string associatedResourceId;
+					std::string associatedMode;
+					std::string associatedResourceType;
+					std::string policyId;
 				};
 
 
@@ -105,6 +115,7 @@ namespace AlibabaCloud
 				bool getBackToOriginRouteEnabled()const;
 				std::string getLoadBalancerEdition()const;
 				LoadBalancerBillingConfig getLoadBalancerBillingConfig()const;
+				std::vector<AssociatedResource> getAssociatedResources()const;
 				std::string getCreateTime()const;
 				ModificationProtectionConfig getModificationProtectionConfig()const;
 				std::vector<std::string> getSecurityGroupIds()const;
@@ -140,6 +151,7 @@ namespace AlibabaCloud
 				bool backToOriginRouteEnabled_;
 				std::string loadBalancerEdition_;
 				LoadBalancerBillingConfig loadBalancerBillingConfig_;
+				std::vector<AssociatedResource> associatedResources_;
 				std::string createTime_;
 				ModificationProtectionConfig modificationProtectionConfig_;
 				std::vector<std::string> securityGroupIds_;

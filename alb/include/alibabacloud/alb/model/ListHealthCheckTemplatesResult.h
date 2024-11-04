@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct HealthCheckTemplate
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string healthCheckTemplateId;
 					bool serviceManagedEnabled;
 					int healthCheckInterval;
@@ -51,6 +56,7 @@ namespace AlibabaCloud
 					int healthyThreshold;
 					std::string serviceManagedMode;
 					std::string healthCheckProtocol;
+					std::vector<HealthCheckTemplate::Tag> tags;
 				};
 
 

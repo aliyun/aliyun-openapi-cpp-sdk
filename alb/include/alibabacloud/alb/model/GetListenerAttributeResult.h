@@ -99,6 +99,19 @@ namespace AlibabaCloud
 					std::string type;
 					ForwardGroupConfig forwardGroupConfig;
 				};
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
+				struct AssociatedResource
+				{
+					std::string status;
+					std::string associatedResourceId;
+					std::string associatedMode;
+					std::string associatedResourceType;
+					std::string policyId;
+				};
 
 
 				GetListenerAttributeResult();
@@ -109,6 +122,7 @@ namespace AlibabaCloud
 				int getListenerPort()const;
 				int getRequestTimeout()const;
 				bool getHttp2Enabled()const;
+				std::vector<AssociatedResource> getAssociatedResources()const;
 				std::vector<DefaultAction> getDefaultActions()const;
 				std::vector<Certificate> getCertificates()const;
 				int getIdleTimeout()const;
@@ -122,6 +136,7 @@ namespace AlibabaCloud
 				AclConfig getAclConfig()const;
 				std::string getServiceManagedMode()const;
 				XForwardedForConfig getXForwardedForConfig()const;
+				std::vector<Tag> getTags()const;
 				LogConfig getLogConfig()const;
 				std::vector<Certificate1> getCaCertificates()const;
 				std::string getListenerId()const;
@@ -134,6 +149,7 @@ namespace AlibabaCloud
 				int listenerPort_;
 				int requestTimeout_;
 				bool http2Enabled_;
+				std::vector<AssociatedResource> associatedResources_;
 				std::vector<DefaultAction> defaultActions_;
 				std::vector<Certificate> certificates_;
 				int idleTimeout_;
@@ -147,6 +163,7 @@ namespace AlibabaCloud
 				AclConfig aclConfig_;
 				std::string serviceManagedMode_;
 				XForwardedForConfig xForwardedForConfig_;
+				std::vector<Tag> tags_;
 				LogConfig logConfig_;
 				std::vector<Certificate1> caCertificates_;
 				std::string listenerId_;

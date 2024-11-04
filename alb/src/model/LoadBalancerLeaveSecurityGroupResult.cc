@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/alb/model/EnableLoadBalancerAccessLogResult.h>
+#include <alibabacloud/alb/model/LoadBalancerLeaveSecurityGroupResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Alb;
 using namespace AlibabaCloud::Alb::Model;
 
-EnableLoadBalancerAccessLogResult::EnableLoadBalancerAccessLogResult() :
+LoadBalancerLeaveSecurityGroupResult::LoadBalancerLeaveSecurityGroupResult() :
 	ServiceResult()
 {}
 
-EnableLoadBalancerAccessLogResult::EnableLoadBalancerAccessLogResult(const std::string &payload) :
+LoadBalancerLeaveSecurityGroupResult::LoadBalancerLeaveSecurityGroupResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-EnableLoadBalancerAccessLogResult::~EnableLoadBalancerAccessLogResult()
+LoadBalancerLeaveSecurityGroupResult::~LoadBalancerLeaveSecurityGroupResult()
 {}
 
-void EnableLoadBalancerAccessLogResult::parse(const std::string &payload)
+void LoadBalancerLeaveSecurityGroupResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -44,7 +44,7 @@ void EnableLoadBalancerAccessLogResult::parse(const std::string &payload)
 
 }
 
-std::string EnableLoadBalancerAccessLogResult::getJobId()const
+std::string LoadBalancerLeaveSecurityGroupResult::getJobId()const
 {
 	return jobId_;
 }

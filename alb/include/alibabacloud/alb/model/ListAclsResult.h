@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct Acl
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					bool serviceManagedEnabled;
 					bool configManagedEnabled;
 					std::string aclStatus;
@@ -42,6 +47,7 @@ namespace AlibabaCloud
 					std::string addressIPVersion;
 					std::string serviceManagedMode;
 					std::string createTime;
+					std::vector<Acl::Tag> tags;
 					std::string aclName;
 				};
 

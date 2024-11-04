@@ -28,6 +28,10 @@ namespace Alb {
 namespace Model {
 class ALIBABACLOUD_ALB_EXPORT ListRulesRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	ListRulesRequest();
 	~ListRulesRequest();
 	std::vector<std::string> getLoadBalancerIds() const;
@@ -36,6 +40,8 @@ public:
 	void setListenerId(const std::string &listenerId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getDirection() const;
 	void setDirection(const std::string &direction);
 	std::vector<std::string> getRuleIds() const;
@@ -49,6 +55,7 @@ private:
 	std::vector<std::string> loadBalancerIds_;
 	std::string listenerId_;
 	std::string nextToken_;
+	std::vector<Tag> tag_;
 	std::string direction_;
 	std::vector<std::string> ruleIds_;
 	std::vector<std::string> listenerIds_;

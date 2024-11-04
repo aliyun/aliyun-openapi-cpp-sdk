@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALB_MODEL_CREATEACLREQUEST_H_
-#define ALIBABACLOUD_ALB_MODEL_CREATEACLREQUEST_H_
+#ifndef ALIBABACLOUD_ALB_MODEL_STARTSHIFTLOADBALANCERZONESREQUEST_H_
+#define ALIBABACLOUD_ALB_MODEL_STARTSHIFTLOADBALANCERZONESREQUEST_H_
 
 #include <alibabacloud/alb/AlbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,36 +26,30 @@
 namespace AlibabaCloud {
 namespace Alb {
 namespace Model {
-class ALIBABACLOUD_ALB_EXPORT CreateAclRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ALB_EXPORT StartShiftLoadBalancerZonesRequest : public RpcServiceRequest {
 public:
-	struct Tag {
-		std::string value;
-		std::string key;
+	struct ZoneMappings {
+		std::string vSwitchId;
+		std::string zoneId;
 	};
-	CreateAclRequest();
-	~CreateAclRequest();
-	std::string getAclName() const;
-	void setAclName(const std::string &aclName);
+	StartShiftLoadBalancerZonesRequest();
+	~StartShiftLoadBalancerZonesRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getAddressIpVersion() const;
-	void setAddressIpVersion(const std::string &addressIpVersion);
-	std::string getResourceGroupId() const;
-	void setResourceGroupId(const std::string &resourceGroupId);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
+	std::vector<ZoneMappings> getZoneMappings() const;
+	void setZoneMappings(const std::vector<ZoneMappings> &zoneMappings);
+	std::string getLoadBalancerId() const;
+	void setLoadBalancerId(const std::string &loadBalancerId);
 
 private:
-	std::string aclName_;
 	std::string clientToken_;
-	std::string addressIpVersion_;
-	std::string resourceGroupId_;
-	std::vector<Tag> tag_;
 	bool dryRun_;
+	std::vector<ZoneMappings> zoneMappings_;
+	std::string loadBalancerId_;
 };
 } // namespace Model
 } // namespace Alb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ALB_MODEL_CREATEACLREQUEST_H_
+#endif // !ALIBABACLOUD_ALB_MODEL_STARTSHIFTLOADBALANCERZONESREQUEST_H_

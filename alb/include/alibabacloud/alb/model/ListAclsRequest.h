@@ -28,6 +28,10 @@ namespace Alb {
 namespace Model {
 class ALIBABACLOUD_ALB_EXPORT ListAclsRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	ListAclsRequest();
 	~ListAclsRequest();
 	std::vector<std::string> getAclIds() const;
@@ -38,6 +42,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::vector<std::string> getAclNames() const;
 	void setAclNames(const std::vector<std::string> &aclNames);
 	int getMaxResults() const;
@@ -48,6 +54,7 @@ private:
 	std::string addressIPVersion_;
 	std::string resourceGroupId_;
 	std::string nextToken_;
+	std::vector<Tag> tag_;
 	std::vector<std::string> aclNames_;
 	int maxResults_;
 };

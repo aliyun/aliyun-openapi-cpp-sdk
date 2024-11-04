@@ -184,6 +184,11 @@ namespace AlibabaCloud
 						HeaderConfig headerConfig;
 						SourceIpConfig sourceIpConfig;
 					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::vector<Rule::Action> ruleActions;
 					bool serviceManagedEnabled;
 					int priority;
@@ -193,6 +198,7 @@ namespace AlibabaCloud
 					std::string loadBalancerId;
 					std::string ruleStatus;
 					std::string direction;
+					std::vector<Rule::Tag> tags;
 					std::string ruleName;
 					std::string listenerId;
 				};

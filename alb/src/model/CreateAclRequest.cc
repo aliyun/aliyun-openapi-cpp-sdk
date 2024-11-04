@@ -61,6 +61,18 @@ void CreateAclRequest::setResourceGroupId(const std::string &resourceGroupId) {
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::vector<CreateAclRequest::Tag> CreateAclRequest::getTag() const {
+  return tag_;
+}
+
+void CreateAclRequest::setTag(const std::vector<CreateAclRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
+  }
+}
+
 bool CreateAclRequest::getDryRun() const {
   return dryRun_;
 }

@@ -69,6 +69,16 @@ void CreateServerGroupRequest::setHealthCheckConfig(const CreateServerGroupReque
   setParameter(std::string("HealthCheckConfig") + ".HealthCheckConnectPort", std::to_string(healthCheckConfig.healthCheckConnectPort));
 }
 
+CreateServerGroupRequest::SlowStartConfig CreateServerGroupRequest::getSlowStartConfig() const {
+  return slowStartConfig_;
+}
+
+void CreateServerGroupRequest::setSlowStartConfig(const CreateServerGroupRequest::SlowStartConfig &slowStartConfig) {
+  slowStartConfig_ = slowStartConfig;
+  setParameter(std::string("SlowStartConfig") + ".SlowStartDuration", std::to_string(slowStartConfig.slowStartDuration));
+  setParameter(std::string("SlowStartConfig") + ".SlowStartEnabled", slowStartConfig.slowStartEnabled ? "true" : "false");
+}
+
 std::string CreateServerGroupRequest::getScheduler() const {
   return scheduler_;
 }
@@ -114,6 +124,18 @@ void CreateServerGroupRequest::setServiceName(const std::string &serviceName) {
   setParameter(std::string("ServiceName"), serviceName);
 }
 
+std::vector<CreateServerGroupRequest::Tag> CreateServerGroupRequest::getTag() const {
+  return tag_;
+}
+
+void CreateServerGroupRequest::setTag(const std::vector<CreateServerGroupRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
+  }
+}
+
 CreateServerGroupRequest::StickySessionConfig CreateServerGroupRequest::getStickySessionConfig() const {
   return stickySessionConfig_;
 }
@@ -142,6 +164,16 @@ bool CreateServerGroupRequest::getIpv6Enabled() const {
 void CreateServerGroupRequest::setIpv6Enabled(bool ipv6Enabled) {
   ipv6Enabled_ = ipv6Enabled;
   setParameter(std::string("Ipv6Enabled"), ipv6Enabled ? "true" : "false");
+}
+
+CreateServerGroupRequest::ConnectionDrainConfig CreateServerGroupRequest::getConnectionDrainConfig() const {
+  return connectionDrainConfig_;
+}
+
+void CreateServerGroupRequest::setConnectionDrainConfig(const CreateServerGroupRequest::ConnectionDrainConfig &connectionDrainConfig) {
+  connectionDrainConfig_ = connectionDrainConfig;
+  setParameter(std::string("ConnectionDrainConfig") + ".ConnectionDrainEnabled", connectionDrainConfig.connectionDrainEnabled ? "true" : "false");
+  setParameter(std::string("ConnectionDrainConfig") + ".ConnectionDrainTimeout", std::to_string(connectionDrainConfig.connectionDrainTimeout));
 }
 
 std::string CreateServerGroupRequest::getServerGroupType() const {

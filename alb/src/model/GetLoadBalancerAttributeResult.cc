@@ -67,12 +67,12 @@ void GetLoadBalancerAttributeResult::parse(const std::string &payload)
 			zoneMappingsObject.vSwitchId = valueZoneMappingsZoneMapping["VSwitchId"].asString();
 		if(!valueZoneMappingsZoneMapping["ZoneId"].isNull())
 			zoneMappingsObject.zoneId = valueZoneMappingsZoneMapping["ZoneId"].asString();
-		if(!valueZoneMappingsZoneMapping["Status"].isNull())
-			zoneMappingsObject.status = valueZoneMappingsZoneMapping["Status"].asString();
 		if(!valueZoneMappingsZoneMapping["AllocationId"].isNull())
 			zoneMappingsObject.allocationId = valueZoneMappingsZoneMapping["AllocationId"].asString();
 		if(!valueZoneMappingsZoneMapping["EipType"].isNull())
 			zoneMappingsObject.eipType = valueZoneMappingsZoneMapping["EipType"].asString();
+		if(!valueZoneMappingsZoneMapping["Status"].isNull())
+			zoneMappingsObject.status = valueZoneMappingsZoneMapping["Status"].asString();
 		auto allLoadBalancerAddressesNode = valueZoneMappingsZoneMapping["LoadBalancerAddresses"]["LoadBalancerAddress"];
 		for (auto valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress : allLoadBalancerAddressesNode)
 		{
@@ -81,19 +81,41 @@ void GetLoadBalancerAttributeResult::parse(const std::string &payload)
 				loadBalancerAddressesObject.address = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["Address"].asString();
 			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["Ipv6Address"].isNull())
 				loadBalancerAddressesObject.ipv6Address = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["Ipv6Address"].asString();
-			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["Ipv6AddressHcStatus"].isNull())
-				loadBalancerAddressesObject.ipv6AddressHcStatus = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["Ipv6AddressHcStatus"].asString();
 			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["IntranetAddress"].isNull())
 				loadBalancerAddressesObject.intranetAddress = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["IntranetAddress"].asString();
-			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["IntranetAddressHcStatus"].isNull())
-				loadBalancerAddressesObject.intranetAddressHcStatus = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["IntranetAddressHcStatus"].asString();
 			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["AllocationId"].isNull())
 				loadBalancerAddressesObject.allocationId = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["AllocationId"].asString();
 			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["EipType"].isNull())
 				loadBalancerAddressesObject.eipType = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["EipType"].asString();
+			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["IntranetAddressHcStatus"].isNull())
+				loadBalancerAddressesObject.intranetAddressHcStatus = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["IntranetAddressHcStatus"].asString();
+			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["Ipv6AddressHcStatus"].isNull())
+				loadBalancerAddressesObject.ipv6AddressHcStatus = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["Ipv6AddressHcStatus"].asString();
+			auto allIpv4LocalAddresses = value["Ipv4LocalAddresses"]["Ipv4LocalAddress"];
+			for (auto value : allIpv4LocalAddresses)
+				loadBalancerAddressesObject.ipv4LocalAddresses.push_back(value.asString());
+			auto allIpv6LocalAddresses = value["Ipv6LocalAddresses"]["ipv6LocalAddress"];
+			for (auto value : allIpv6LocalAddresses)
+				loadBalancerAddressesObject.ipv6LocalAddresses.push_back(value.asString());
 			zoneMappingsObject.loadBalancerAddresses.push_back(loadBalancerAddressesObject);
 		}
 		zoneMappings_.push_back(zoneMappingsObject);
+	}
+	auto allAssociatedResourcesNode = value["AssociatedResources"]["AssociatedResource"];
+	for (auto valueAssociatedResourcesAssociatedResource : allAssociatedResourcesNode)
+	{
+		AssociatedResource associatedResourcesObject;
+		if(!valueAssociatedResourcesAssociatedResource["AssociatedResourceType"].isNull())
+			associatedResourcesObject.associatedResourceType = valueAssociatedResourcesAssociatedResource["AssociatedResourceType"].asString();
+		if(!valueAssociatedResourcesAssociatedResource["AssociatedResourceId"].isNull())
+			associatedResourcesObject.associatedResourceId = valueAssociatedResourcesAssociatedResource["AssociatedResourceId"].asString();
+		if(!valueAssociatedResourcesAssociatedResource["PolicyId"].isNull())
+			associatedResourcesObject.policyId = valueAssociatedResourcesAssociatedResource["PolicyId"].asString();
+		if(!valueAssociatedResourcesAssociatedResource["Status"].isNull())
+			associatedResourcesObject.status = valueAssociatedResourcesAssociatedResource["Status"].asString();
+		if(!valueAssociatedResourcesAssociatedResource["AssociatedMode"].isNull())
+			associatedResourcesObject.associatedMode = valueAssociatedResourcesAssociatedResource["AssociatedMode"].asString();
+		associatedResources_.push_back(associatedResourcesObject);
 	}
 	auto accessLogConfigNode = value["AccessLogConfig"];
 	if(!accessLogConfigNode["LogProject"].isNull())
@@ -258,6 +280,11 @@ std::string GetLoadBalancerAttributeResult::getLoadBalancerEdition()const
 GetLoadBalancerAttributeResult::LoadBalancerBillingConfig GetLoadBalancerAttributeResult::getLoadBalancerBillingConfig()const
 {
 	return loadBalancerBillingConfig_;
+}
+
+std::vector<GetLoadBalancerAttributeResult::AssociatedResource> GetLoadBalancerAttributeResult::getAssociatedResources()const
+{
+	return associatedResources_;
 }
 
 std::string GetLoadBalancerAttributeResult::getCreateTime()const

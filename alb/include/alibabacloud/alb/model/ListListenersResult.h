@@ -81,10 +81,24 @@ namespace AlibabaCloud
 						std::string type;
 						ForwardGroupConfig forwardGroupConfig;
 					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
+					struct AssociatedResource
+					{
+						std::string status;
+						std::string associatedResourceId;
+						std::string associatedMode;
+						std::string associatedResourceType;
+						std::string policyId;
+					};
 					int listenerPort;
 					bool serviceManagedEnabled;
 					int requestTimeout;
 					bool http2Enabled;
+					std::vector<Listener::AssociatedResource> associatedResources;
 					std::vector<Listener::DefaultAction> defaultActions;
 					int idleTimeout;
 					std::string loadBalancerId;
@@ -96,6 +110,7 @@ namespace AlibabaCloud
 					std::string listenerDescription;
 					std::string serviceManagedMode;
 					XForwardedForConfig xForwardedForConfig;
+					std::vector<Listener::Tag> tags;
 					LogConfig logConfig;
 					std::string listenerId;
 				};

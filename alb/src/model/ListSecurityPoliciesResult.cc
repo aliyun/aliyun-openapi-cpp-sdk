@@ -57,6 +57,16 @@ void ListSecurityPoliciesResult::parse(const std::string &payload)
 			securityPoliciesObject.serviceManagedMode = valueSecurityPoliciesSecurityPolicy["ServiceManagedMode"].asString();
 		if(!valueSecurityPoliciesSecurityPolicy["CreateTime"].isNull())
 			securityPoliciesObject.createTime = valueSecurityPoliciesSecurityPolicy["CreateTime"].asString();
+		auto allTagsNode = valueSecurityPoliciesSecurityPolicy["Tags"]["Tag"];
+		for (auto valueSecurityPoliciesSecurityPolicyTagsTag : allTagsNode)
+		{
+			SecurityPolicy::Tag tagsObject;
+			if(!valueSecurityPoliciesSecurityPolicyTagsTag["Key"].isNull())
+				tagsObject.key = valueSecurityPoliciesSecurityPolicyTagsTag["Key"].asString();
+			if(!valueSecurityPoliciesSecurityPolicyTagsTag["Value"].isNull())
+				tagsObject.value = valueSecurityPoliciesSecurityPolicyTagsTag["Value"].asString();
+			securityPoliciesObject.tags.push_back(tagsObject);
+		}
 		auto allCiphers = value["Ciphers"]["Cipher"];
 		for (auto value : allCiphers)
 			securityPoliciesObject.ciphers.push_back(value.asString());

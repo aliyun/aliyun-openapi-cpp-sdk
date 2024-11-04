@@ -28,10 +28,16 @@ namespace Alb {
 namespace Model {
 class ALIBABACLOUD_ALB_EXPORT ListHealthCheckTemplatesRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	ListHealthCheckTemplatesRequest();
 	~ListHealthCheckTemplatesRequest();
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::vector<std::string> getHealthCheckTemplateNames() const;
 	void setHealthCheckTemplateNames(const std::vector<std::string> &healthCheckTemplateNames);
 	int getMaxResults() const;
@@ -41,6 +47,7 @@ public:
 
 private:
 	std::string nextToken_;
+	std::vector<Tag> tag_;
 	std::vector<std::string> healthCheckTemplateNames_;
 	int maxResults_;
 	std::vector<std::string> healthCheckTemplateIds_;

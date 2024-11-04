@@ -76,6 +76,32 @@ void GetListenerAttributeResult::parse(const std::string &payload)
 		}
 		defaultActions_.push_back(defaultActionsObject);
 	}
+	auto allTagsNode = value["Tags"]["Tag"];
+	for (auto valueTagsTag : allTagsNode)
+	{
+		Tag tagsObject;
+		if(!valueTagsTag["Key"].isNull())
+			tagsObject.key = valueTagsTag["Key"].asString();
+		if(!valueTagsTag["Value"].isNull())
+			tagsObject.value = valueTagsTag["Value"].asString();
+		tags_.push_back(tagsObject);
+	}
+	auto allAssociatedResourcesNode = value["AssociatedResources"]["AssociatedResource"];
+	for (auto valueAssociatedResourcesAssociatedResource : allAssociatedResourcesNode)
+	{
+		AssociatedResource associatedResourcesObject;
+		if(!valueAssociatedResourcesAssociatedResource["AssociatedResourceType"].isNull())
+			associatedResourcesObject.associatedResourceType = valueAssociatedResourcesAssociatedResource["AssociatedResourceType"].asString();
+		if(!valueAssociatedResourcesAssociatedResource["AssociatedResourceId"].isNull())
+			associatedResourcesObject.associatedResourceId = valueAssociatedResourcesAssociatedResource["AssociatedResourceId"].asString();
+		if(!valueAssociatedResourcesAssociatedResource["PolicyId"].isNull())
+			associatedResourcesObject.policyId = valueAssociatedResourcesAssociatedResource["PolicyId"].asString();
+		if(!valueAssociatedResourcesAssociatedResource["Status"].isNull())
+			associatedResourcesObject.status = valueAssociatedResourcesAssociatedResource["Status"].asString();
+		if(!valueAssociatedResourcesAssociatedResource["AssociatedMode"].isNull())
+			associatedResourcesObject.associatedMode = valueAssociatedResourcesAssociatedResource["AssociatedMode"].asString();
+		associatedResources_.push_back(associatedResourcesObject);
+	}
 	auto aclConfigNode = value["AclConfig"];
 	if(!aclConfigNode["AclType"].isNull())
 		aclConfig_.aclType = aclConfigNode["AclType"].asString();
@@ -191,6 +217,11 @@ bool GetListenerAttributeResult::getHttp2Enabled()const
 	return http2Enabled_;
 }
 
+std::vector<GetListenerAttributeResult::AssociatedResource> GetListenerAttributeResult::getAssociatedResources()const
+{
+	return associatedResources_;
+}
+
 std::vector<GetListenerAttributeResult::DefaultAction> GetListenerAttributeResult::getDefaultActions()const
 {
 	return defaultActions_;
@@ -254,6 +285,11 @@ std::string GetListenerAttributeResult::getServiceManagedMode()const
 GetListenerAttributeResult::XForwardedForConfig GetListenerAttributeResult::getXForwardedForConfig()const
 {
 	return xForwardedForConfig_;
+}
+
+std::vector<GetListenerAttributeResult::Tag> GetListenerAttributeResult::getTags()const
+{
+	return tags_;
 }
 
 std::vector<GetListenerAttributeResult::Certificate1> GetListenerAttributeResult::getCaCertificates()const

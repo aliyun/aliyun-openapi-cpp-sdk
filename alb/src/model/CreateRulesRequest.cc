@@ -76,6 +76,10 @@ void CreateRulesRequest::setRules(const std::vector<CreateRulesRequest::Rules> &
       setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleConditions." + std::to_string(dep2 + 1) + ".ResponseHeaderConfig.Key", rules[dep1].ruleConditions[dep2].responseHeaderConfig.key);
     }
     setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleName", rules[dep1].ruleName);
+    for(int dep2 = 0; dep2 != rules[dep1].tag.size(); dep2++) {
+      setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".Tag." + std::to_string(dep2 + 1) + ".Value", rules[dep1].tag[dep2].value);
+      setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".Tag." + std::to_string(dep2 + 1) + ".Key", rules[dep1].tag[dep2].key);
+    }
     setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".Priority", std::to_string(rules[dep1].priority));
     for(int dep2 = 0; dep2 != rules[dep1].ruleActions.size(); dep2++) {
       setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".FixedResponseConfig.HttpCode", rules[dep1].ruleActions[dep2].fixedResponseConfig.httpCode);

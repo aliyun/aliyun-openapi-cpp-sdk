@@ -39,6 +39,16 @@ void GetHealthCheckTemplateAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allTagsNode = value["Tags"]["Tag"];
+	for (auto valueTagsTag : allTagsNode)
+	{
+		Tag tagsObject;
+		if(!valueTagsTag["Key"].isNull())
+			tagsObject.key = valueTagsTag["Key"].asString();
+		if(!valueTagsTag["Value"].isNull())
+			tagsObject.value = valueTagsTag["Value"].asString();
+		tags_.push_back(tagsObject);
+	}
 	auto allHealthCheckHttpCodes = value["HealthCheckHttpCodes"]["httpCode"];
 	for (const auto &item : allHealthCheckHttpCodes)
 		healthCheckHttpCodes_.push_back(item.asString());
@@ -161,5 +171,10 @@ std::string GetHealthCheckTemplateAttributeResult::getServiceManagedMode()const
 std::string GetHealthCheckTemplateAttributeResult::getHealthCheckProtocol()const
 {
 	return healthCheckProtocol_;
+}
+
+std::vector<GetHealthCheckTemplateAttributeResult::Tag> GetHealthCheckTemplateAttributeResult::getTags()const
+{
+	return tags_;
 }
 

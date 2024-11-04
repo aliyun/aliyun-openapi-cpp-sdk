@@ -63,6 +63,18 @@ void ListAclsRequest::setNextToken(const std::string &nextToken) {
   setParameter(std::string("NextToken"), nextToken);
 }
 
+std::vector<ListAclsRequest::Tag> ListAclsRequest::getTag() const {
+  return tag_;
+}
+
+void ListAclsRequest::setTag(const std::vector<ListAclsRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
+  }
+}
+
 std::vector<ListAclsRequest::std::string> ListAclsRequest::getAclNames() const {
   return aclNames_;
 }

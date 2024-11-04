@@ -14,38 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/alb/model/EnableLoadBalancerAccessLogResult.h>
+#include <alibabacloud/alb/model/CancelShiftLoadBalancerZonesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Alb;
 using namespace AlibabaCloud::Alb::Model;
 
-EnableLoadBalancerAccessLogResult::EnableLoadBalancerAccessLogResult() :
+CancelShiftLoadBalancerZonesResult::CancelShiftLoadBalancerZonesResult() :
 	ServiceResult()
 {}
 
-EnableLoadBalancerAccessLogResult::EnableLoadBalancerAccessLogResult(const std::string &payload) :
+CancelShiftLoadBalancerZonesResult::CancelShiftLoadBalancerZonesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-EnableLoadBalancerAccessLogResult::~EnableLoadBalancerAccessLogResult()
+CancelShiftLoadBalancerZonesResult::~CancelShiftLoadBalancerZonesResult()
 {}
 
-void EnableLoadBalancerAccessLogResult::parse(const std::string &payload)
+void CancelShiftLoadBalancerZonesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["JobId"].isNull())
-		jobId_ = value["JobId"].asString();
 
-}
-
-std::string EnableLoadBalancerAccessLogResult::getJobId()const
-{
-	return jobId_;
 }
 

@@ -14,55 +14,52 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/alb/model/UpdateLoadBalancerZonesRequest.h>
+#include <alibabacloud/alb/model/CancelShiftLoadBalancerZonesRequest.h>
 
-using AlibabaCloud::Alb::Model::UpdateLoadBalancerZonesRequest;
+using AlibabaCloud::Alb::Model::CancelShiftLoadBalancerZonesRequest;
 
-UpdateLoadBalancerZonesRequest::UpdateLoadBalancerZonesRequest()
-    : RpcServiceRequest("alb", "2020-06-16", "UpdateLoadBalancerZones") {
+CancelShiftLoadBalancerZonesRequest::CancelShiftLoadBalancerZonesRequest()
+    : RpcServiceRequest("alb", "2020-06-16", "CancelShiftLoadBalancerZones") {
   setMethod(HttpRequest::Method::Post);
 }
 
-UpdateLoadBalancerZonesRequest::~UpdateLoadBalancerZonesRequest() {}
+CancelShiftLoadBalancerZonesRequest::~CancelShiftLoadBalancerZonesRequest() {}
 
-std::string UpdateLoadBalancerZonesRequest::getClientToken() const {
+std::string CancelShiftLoadBalancerZonesRequest::getClientToken() const {
   return clientToken_;
 }
 
-void UpdateLoadBalancerZonesRequest::setClientToken(const std::string &clientToken) {
+void CancelShiftLoadBalancerZonesRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
   setParameter(std::string("ClientToken"), clientToken);
 }
 
-bool UpdateLoadBalancerZonesRequest::getDryRun() const {
+bool CancelShiftLoadBalancerZonesRequest::getDryRun() const {
   return dryRun_;
 }
 
-void UpdateLoadBalancerZonesRequest::setDryRun(bool dryRun) {
+void CancelShiftLoadBalancerZonesRequest::setDryRun(bool dryRun) {
   dryRun_ = dryRun;
   setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
-std::vector<UpdateLoadBalancerZonesRequest::ZoneMappings> UpdateLoadBalancerZonesRequest::getZoneMappings() const {
+std::vector<CancelShiftLoadBalancerZonesRequest::ZoneMappings> CancelShiftLoadBalancerZonesRequest::getZoneMappings() const {
   return zoneMappings_;
 }
 
-void UpdateLoadBalancerZonesRequest::setZoneMappings(const std::vector<UpdateLoadBalancerZonesRequest::ZoneMappings> &zoneMappings) {
+void CancelShiftLoadBalancerZonesRequest::setZoneMappings(const std::vector<CancelShiftLoadBalancerZonesRequest::ZoneMappings> &zoneMappings) {
   zoneMappings_ = zoneMappings;
   for(int dep1 = 0; dep1 != zoneMappings.size(); dep1++) {
     setParameter(std::string("ZoneMappings") + "." + std::to_string(dep1 + 1) + ".VSwitchId", zoneMappings[dep1].vSwitchId);
-    setParameter(std::string("ZoneMappings") + "." + std::to_string(dep1 + 1) + ".EipType", zoneMappings[dep1].eipType);
     setParameter(std::string("ZoneMappings") + "." + std::to_string(dep1 + 1) + ".ZoneId", zoneMappings[dep1].zoneId);
-    setParameter(std::string("ZoneMappings") + "." + std::to_string(dep1 + 1) + ".AllocationId", zoneMappings[dep1].allocationId);
-    setParameter(std::string("ZoneMappings") + "." + std::to_string(dep1 + 1) + ".IntranetAddress", zoneMappings[dep1].intranetAddress);
   }
 }
 
-std::string UpdateLoadBalancerZonesRequest::getLoadBalancerId() const {
+std::string CancelShiftLoadBalancerZonesRequest::getLoadBalancerId() const {
   return loadBalancerId_;
 }
 
-void UpdateLoadBalancerZonesRequest::setLoadBalancerId(const std::string &loadBalancerId) {
+void CancelShiftLoadBalancerZonesRequest::setLoadBalancerId(const std::string &loadBalancerId) {
   loadBalancerId_ = loadBalancerId;
   setParameter(std::string("LoadBalancerId"), loadBalancerId);
 }

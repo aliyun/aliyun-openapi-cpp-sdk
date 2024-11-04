@@ -33,6 +33,7 @@ public:
 		std::string eipType;
 		std::string zoneId;
 		std::string allocationId;
+		std::string intranetAddress;
 	};
 	UpdateLoadBalancerZonesRequest();
 	~UpdateLoadBalancerZonesRequest();

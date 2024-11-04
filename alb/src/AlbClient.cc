@@ -267,6 +267,42 @@ AlbClient::AttachCommonBandwidthPackageToLoadBalancerOutcomeCallable AlbClient::
 	return task->get_future();
 }
 
+AlbClient::CancelShiftLoadBalancerZonesOutcome AlbClient::cancelShiftLoadBalancerZones(const CancelShiftLoadBalancerZonesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelShiftLoadBalancerZonesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelShiftLoadBalancerZonesOutcome(CancelShiftLoadBalancerZonesResult(outcome.result()));
+	else
+		return CancelShiftLoadBalancerZonesOutcome(outcome.error());
+}
+
+void AlbClient::cancelShiftLoadBalancerZonesAsync(const CancelShiftLoadBalancerZonesRequest& request, const CancelShiftLoadBalancerZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelShiftLoadBalancerZones(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlbClient::CancelShiftLoadBalancerZonesOutcomeCallable AlbClient::cancelShiftLoadBalancerZonesCallable(const CancelShiftLoadBalancerZonesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelShiftLoadBalancerZonesOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelShiftLoadBalancerZones(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlbClient::CreateAScriptsOutcome AlbClient::createAScripts(const CreateAScriptsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2103,6 +2139,78 @@ AlbClient::ListTagValuesOutcomeCallable AlbClient::listTagValuesCallable(const L
 	return task->get_future();
 }
 
+AlbClient::LoadBalancerJoinSecurityGroupOutcome AlbClient::loadBalancerJoinSecurityGroup(const LoadBalancerJoinSecurityGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return LoadBalancerJoinSecurityGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return LoadBalancerJoinSecurityGroupOutcome(LoadBalancerJoinSecurityGroupResult(outcome.result()));
+	else
+		return LoadBalancerJoinSecurityGroupOutcome(outcome.error());
+}
+
+void AlbClient::loadBalancerJoinSecurityGroupAsync(const LoadBalancerJoinSecurityGroupRequest& request, const LoadBalancerJoinSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, loadBalancerJoinSecurityGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlbClient::LoadBalancerJoinSecurityGroupOutcomeCallable AlbClient::loadBalancerJoinSecurityGroupCallable(const LoadBalancerJoinSecurityGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<LoadBalancerJoinSecurityGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->loadBalancerJoinSecurityGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlbClient::LoadBalancerLeaveSecurityGroupOutcome AlbClient::loadBalancerLeaveSecurityGroup(const LoadBalancerLeaveSecurityGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return LoadBalancerLeaveSecurityGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return LoadBalancerLeaveSecurityGroupOutcome(LoadBalancerLeaveSecurityGroupResult(outcome.result()));
+	else
+		return LoadBalancerLeaveSecurityGroupOutcome(outcome.error());
+}
+
+void AlbClient::loadBalancerLeaveSecurityGroupAsync(const LoadBalancerLeaveSecurityGroupRequest& request, const LoadBalancerLeaveSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, loadBalancerLeaveSecurityGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlbClient::LoadBalancerLeaveSecurityGroupOutcomeCallable AlbClient::loadBalancerLeaveSecurityGroupCallable(const LoadBalancerLeaveSecurityGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<LoadBalancerLeaveSecurityGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->loadBalancerLeaveSecurityGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlbClient::MoveResourceGroupOutcome AlbClient::moveResourceGroup(const MoveResourceGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2277,6 +2385,42 @@ AlbClient::StartListenerOutcomeCallable AlbClient::startListenerCallable(const S
 			[this, request]()
 			{
 			return this->startListener(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlbClient::StartShiftLoadBalancerZonesOutcome AlbClient::startShiftLoadBalancerZones(const StartShiftLoadBalancerZonesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartShiftLoadBalancerZonesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartShiftLoadBalancerZonesOutcome(StartShiftLoadBalancerZonesResult(outcome.result()));
+	else
+		return StartShiftLoadBalancerZonesOutcome(outcome.error());
+}
+
+void AlbClient::startShiftLoadBalancerZonesAsync(const StartShiftLoadBalancerZonesRequest& request, const StartShiftLoadBalancerZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startShiftLoadBalancerZones(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlbClient::StartShiftLoadBalancerZonesOutcomeCallable AlbClient::startShiftLoadBalancerZonesCallable(const StartShiftLoadBalancerZonesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartShiftLoadBalancerZonesOutcome()>>(
+			[this, request]()
+			{
+			return this->startShiftLoadBalancerZones(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
