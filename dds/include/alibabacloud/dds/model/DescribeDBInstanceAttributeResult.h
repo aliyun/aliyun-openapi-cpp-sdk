@@ -53,31 +53,33 @@ namespace AlibabaCloud
 					{
 						std::string connectSting;
 						std::string status;
-						std::string nodeClass;
-						std::string nodeDescription;
 						int maxConnections;
 						std::string vPCId;
 						std::string vSwitchId;
 						int port;
-						std::string nodeId;
-						std::string vpcCloudInstanceId;
 						std::string lockMode;
 						int maxIOPS;
+						std::string nodeClass;
+						std::string nodeDescription;
+						std::string currentKernelVersion;
+						std::string nodeId;
+						std::string vpcCloudInstanceId;
 					};
 					struct ShardAttribute
 					{
 						std::string status;
-						std::string nodeClass;
-						std::string nodeDescription;
 						int maxConnections;
 						int readonlyReplicas;
 						int port;
-						std::string nodeId;
-						int nodeStorage;
 						std::string lockMode;
 						std::string maxDiskMbps;
-						std::string connectString;
 						int maxIOPS;
+						std::string nodeClass;
+						std::string nodeDescription;
+						std::string currentKernelVersion;
+						std::string nodeId;
+						int nodeStorage;
+						std::string connectString;
 					};
 					struct ConfigserverAttribute
 					{
@@ -85,6 +87,7 @@ namespace AlibabaCloud
 						std::string nodeClass;
 						std::string nodeDescription;
 						int maxConnections;
+						std::string currentKernelVersion;
 						int port;
 						std::string nodeId;
 						int nodeStorage;

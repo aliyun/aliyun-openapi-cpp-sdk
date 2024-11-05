@@ -136,6 +136,8 @@
 #include "model/DescribeRenewalPriceResult.h"
 #include "model/DescribeReplicaSetRoleRequest.h"
 #include "model/DescribeReplicaSetRoleResult.h"
+#include "model/DescribeRestoreDBInstanceListRequest.h"
+#include "model/DescribeRestoreDBInstanceListResult.h"
 #include "model/DescribeRoleZoneInfoRequest.h"
 #include "model/DescribeRoleZoneInfoResult.h"
 #include "model/DescribeRunningLogRecordsRequest.h"
@@ -424,6 +426,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeReplicaSetRoleResult> DescribeReplicaSetRoleOutcome;
 			typedef std::future<DescribeReplicaSetRoleOutcome> DescribeReplicaSetRoleOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeReplicaSetRoleRequest&, const DescribeReplicaSetRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReplicaSetRoleAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRestoreDBInstanceListResult> DescribeRestoreDBInstanceListOutcome;
+			typedef std::future<DescribeRestoreDBInstanceListOutcome> DescribeRestoreDBInstanceListOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::DescribeRestoreDBInstanceListRequest&, const DescribeRestoreDBInstanceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreDBInstanceListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRoleZoneInfoResult> DescribeRoleZoneInfoOutcome;
 			typedef std::future<DescribeRoleZoneInfoOutcome> DescribeRoleZoneInfoOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeRoleZoneInfoRequest&, const DescribeRoleZoneInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoleZoneInfoAsyncHandler;
@@ -762,6 +767,9 @@ namespace AlibabaCloud
 			DescribeReplicaSetRoleOutcome describeReplicaSetRole(const Model::DescribeReplicaSetRoleRequest &request)const;
 			void describeReplicaSetRoleAsync(const Model::DescribeReplicaSetRoleRequest& request, const DescribeReplicaSetRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeReplicaSetRoleOutcomeCallable describeReplicaSetRoleCallable(const Model::DescribeReplicaSetRoleRequest& request) const;
+			DescribeRestoreDBInstanceListOutcome describeRestoreDBInstanceList(const Model::DescribeRestoreDBInstanceListRequest &request)const;
+			void describeRestoreDBInstanceListAsync(const Model::DescribeRestoreDBInstanceListRequest& request, const DescribeRestoreDBInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRestoreDBInstanceListOutcomeCallable describeRestoreDBInstanceListCallable(const Model::DescribeRestoreDBInstanceListRequest& request) const;
 			DescribeRoleZoneInfoOutcome describeRoleZoneInfo(const Model::DescribeRoleZoneInfoRequest &request)const;
 			void describeRoleZoneInfoAsync(const Model::DescribeRoleZoneInfoRequest& request, const DescribeRoleZoneInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRoleZoneInfoOutcomeCallable describeRoleZoneInfoCallable(const Model::DescribeRoleZoneInfoRequest& request) const;

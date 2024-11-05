@@ -34,6 +34,15 @@ void CheckRecoveryConditionRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string CheckRecoveryConditionRequest::getEngineVersion() const {
+  return engineVersion_;
+}
+
+void CheckRecoveryConditionRequest::setEngineVersion(const std::string &engineVersion) {
+  engineVersion_ = engineVersion;
+  setParameter(std::string("EngineVersion"), engineVersion);
+}
+
 std::string CheckRecoveryConditionRequest::getSrcRegion() const {
   return srcRegion_;
 }

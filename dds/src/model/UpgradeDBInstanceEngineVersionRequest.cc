@@ -52,6 +52,15 @@ void UpgradeDBInstanceEngineVersionRequest::setAccessKeyId(const std::string &ac
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+int UpgradeDBInstanceEngineVersionRequest::getSwitchMode() const {
+  return switchMode_;
+}
+
+void UpgradeDBInstanceEngineVersionRequest::setSwitchMode(int switchMode) {
+  switchMode_ = switchMode;
+  setParameter(std::string("SwitchMode"), std::to_string(switchMode));
+}
+
 std::string UpgradeDBInstanceEngineVersionRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

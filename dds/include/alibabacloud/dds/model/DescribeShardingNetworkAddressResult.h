@@ -46,6 +46,7 @@ namespace AlibabaCloud
 				{
 					std::string role;
 					std::string networkAddress;
+					std::string connectionType;
 					std::string vPCId;
 					std::string networkType;
 					std::string nodeType;
@@ -54,6 +55,7 @@ namespace AlibabaCloud
 					std::string nodeId;
 					std::string iPAddress;
 					std::string vswitchId;
+					std::string txtRecord;
 				};
 
 

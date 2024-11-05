@@ -2103,6 +2103,42 @@ DdsClient::DescribeReplicaSetRoleOutcomeCallable DdsClient::describeReplicaSetRo
 	return task->get_future();
 }
 
+DdsClient::DescribeRestoreDBInstanceListOutcome DdsClient::describeRestoreDBInstanceList(const DescribeRestoreDBInstanceListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRestoreDBInstanceListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRestoreDBInstanceListOutcome(DescribeRestoreDBInstanceListResult(outcome.result()));
+	else
+		return DescribeRestoreDBInstanceListOutcome(outcome.error());
+}
+
+void DdsClient::describeRestoreDBInstanceListAsync(const DescribeRestoreDBInstanceListRequest& request, const DescribeRestoreDBInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRestoreDBInstanceList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeRestoreDBInstanceListOutcomeCallable DdsClient::describeRestoreDBInstanceListCallable(const DescribeRestoreDBInstanceListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRestoreDBInstanceListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRestoreDBInstanceList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::DescribeRoleZoneInfoOutcome DdsClient::describeRoleZoneInfo(const DescribeRoleZoneInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

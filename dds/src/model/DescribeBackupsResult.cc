@@ -73,6 +73,8 @@ void DescribeBackupsResult::parse(const std::string &payload)
 			backupsObject.backupScale = valueBackupsBackup["BackupScale"].asString();
 		if(!valueBackupsBackup["IsAvail"].isNull())
 			backupsObject.isAvail = valueBackupsBackup["IsAvail"].asString() == "true";
+		if(!valueBackupsBackup["EngineVersion"].isNull())
+			backupsObject.engineVersion = valueBackupsBackup["EngineVersion"].asString();
 		backups_.push_back(backupsObject);
 	}
 	if(!value["TotalCount"].isNull())

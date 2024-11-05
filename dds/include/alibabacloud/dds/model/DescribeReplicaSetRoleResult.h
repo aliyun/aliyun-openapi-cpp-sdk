@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string replicaSetRole;
 					std::string connectionDomain;
+					std::string connectionType;
 					std::string connectionPort;
 					std::string networkType;
 					std::string expiredTime;

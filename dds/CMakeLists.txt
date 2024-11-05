@@ -135,6 +135,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeRenewalPriceResult.h
 	include/alibabacloud/dds/model/DescribeReplicaSetRoleRequest.h
 	include/alibabacloud/dds/model/DescribeReplicaSetRoleResult.h
+	include/alibabacloud/dds/model/DescribeRestoreDBInstanceListRequest.h
+	include/alibabacloud/dds/model/DescribeRestoreDBInstanceListResult.h
 	include/alibabacloud/dds/model/DescribeRoleZoneInfoRequest.h
 	include/alibabacloud/dds/model/DescribeRoleZoneInfoResult.h
 	include/alibabacloud/dds/model/DescribeRunningLogRecordsRequest.h
@@ -360,6 +362,8 @@ set(dds_src
 	src/model/DescribeRenewalPriceResult.cc
 	src/model/DescribeReplicaSetRoleRequest.cc
 	src/model/DescribeReplicaSetRoleResult.cc
+	src/model/DescribeRestoreDBInstanceListRequest.cc
+	src/model/DescribeRestoreDBInstanceListResult.cc
 	src/model/DescribeRoleZoneInfoRequest.cc
 	src/model/DescribeRoleZoneInfoResult.cc
 	src/model/DescribeRunningLogRecordsRequest.cc

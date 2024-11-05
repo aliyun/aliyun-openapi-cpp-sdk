@@ -83,6 +83,10 @@ void DescribeShardingNetworkAddressResult::parse(const std::string &payload)
 			networkAddressesObject.nodeId = valueNetworkAddressesNetworkAddress["NodeId"].asString();
 		if(!valueNetworkAddressesNetworkAddress["IPAddress"].isNull())
 			networkAddressesObject.iPAddress = valueNetworkAddressesNetworkAddress["IPAddress"].asString();
+		if(!valueNetworkAddressesNetworkAddress["ConnectionType"].isNull())
+			networkAddressesObject.connectionType = valueNetworkAddressesNetworkAddress["ConnectionType"].asString();
+		if(!valueNetworkAddressesNetworkAddress["TxtRecord"].isNull())
+			networkAddressesObject.txtRecord = valueNetworkAddressesNetworkAddress["TxtRecord"].asString();
 		networkAddresses_.push_back(networkAddressesObject);
 	}
 

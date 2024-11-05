@@ -55,6 +55,8 @@ void DescribeReplicaSetRoleResult::parse(const std::string &payload)
 			replicaSetsObject.networkType = valueReplicaSetsReplicaSet["NetworkType"].asString();
 		if(!valueReplicaSetsReplicaSet["RoleId"].isNull())
 			replicaSetsObject.roleId = valueReplicaSetsReplicaSet["RoleId"].asString();
+		if(!valueReplicaSetsReplicaSet["ConnectionType"].isNull())
+			replicaSetsObject.connectionType = valueReplicaSetsReplicaSet["ConnectionType"].asString();
 		replicaSets_.push_back(replicaSetsObject);
 	}
 	if(!value["DBInstanceId"].isNull())

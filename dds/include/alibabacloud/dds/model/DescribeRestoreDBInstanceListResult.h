@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBEBACKUPSRESULT_H_
-#define ALIBABACLOUD_DDS_MODEL_DESCRIBEBACKUPSRESULT_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBERESTOREDBINSTANCELISTRESULT_H_
+#define ALIBABACLOUD_DDS_MODEL_DESCRIBERESTOREDBINSTANCELISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT DescribeBackupsResult : public ServiceResult
+			class ALIBABACLOUD_DDS_EXPORT DescribeRestoreDBInstanceListResult : public ServiceResult
 			{
 			public:
-				struct Backup
+				struct DBInstance
 				{
-					std::string backupMethod;
+					int isDeleted;
 					std::string engineVersion;
-					std::string backupIntranetDownloadURL;
-					long backupSize;
-					std::string backupMode;
-					std::string backupId;
-					bool isAvail;
-					std::string backupJobId;
-					std::string backupDBNames;
-					std::string backupName;
-					std::string backupDownloadURL;
-					std::string backupEndTime;
-					std::string backupStartTime;
-					std::string backupType;
-					std::string backupScale;
-					std::string backupStatus;
+					std::string dBInstanceStatus;
+					std::string zoneId;
+					std::string dBInstanceId;
+					std::string hiddenZoneId;
+					std::string creationTime;
+					std::string dBInstanceType;
+					std::string lockMode;
+					std::string regionId;
+					std::string dBInstanceDescription;
+					std::string secondaryZoneId;
 				};
 
 
-				DescribeBackupsResult();
-				explicit DescribeBackupsResult(const std::string &payload);
-				~DescribeBackupsResult();
+				DescribeRestoreDBInstanceListResult();
+				explicit DescribeRestoreDBInstanceListResult(const std::string &payload);
+				~DescribeRestoreDBInstanceListResult();
 				int getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
-				std::vector<Backup> getBackups()const;
+				std::vector<DBInstance> getDBInstances()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -67,10 +63,10 @@ namespace AlibabaCloud
 				int totalCount_;
 				int pageSize_;
 				int pageNumber_;
-				std::vector<Backup> backups_;
+				std::vector<DBInstance> dBInstances_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBEBACKUPSRESULT_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBERESTOREDBINSTANCELISTRESULT_H_

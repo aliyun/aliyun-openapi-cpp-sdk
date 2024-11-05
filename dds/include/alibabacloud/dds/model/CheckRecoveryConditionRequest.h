@@ -32,6 +32,8 @@ public:
 	~CheckRecoveryConditionRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getEngineVersion() const;
+	void setEngineVersion(const std::string &engineVersion);
 	std::string getSrcRegion() const;
 	void setSrcRegion(const std::string &srcRegion);
 	std::string getAccessKeyId() const;
@@ -61,6 +63,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string engineVersion_;
 	std::string srcRegion_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;

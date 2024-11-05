@@ -199,6 +199,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 				mongosListObject.nodeId = valueDBInstancesDBInstanceMongosListMongosAttribute["NodeId"].asString();
 			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["Status"].isNull())
 				mongosListObject.status = valueDBInstancesDBInstanceMongosListMongosAttribute["Status"].asString();
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["CurrentKernelVersion"].isNull())
+				mongosListObject.currentKernelVersion = valueDBInstancesDBInstanceMongosListMongosAttribute["CurrentKernelVersion"].asString();
 			dBInstancesObject.mongosList.push_back(mongosListObject);
 		}
 		auto allShardListNode = valueDBInstancesDBInstance["ShardList"]["ShardAttribute"];
@@ -229,6 +231,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 				shardListObject.status = valueDBInstancesDBInstanceShardListShardAttribute["Status"].asString();
 			if(!valueDBInstancesDBInstanceShardListShardAttribute["MaxDiskMbps"].isNull())
 				shardListObject.maxDiskMbps = valueDBInstancesDBInstanceShardListShardAttribute["MaxDiskMbps"].asString();
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["CurrentKernelVersion"].isNull())
+				shardListObject.currentKernelVersion = valueDBInstancesDBInstanceShardListShardAttribute["CurrentKernelVersion"].asString();
 			dBInstancesObject.shardList.push_back(shardListObject);
 		}
 		auto allConfigserverListNode = valueDBInstancesDBInstance["ConfigserverList"]["ConfigserverAttribute"];
@@ -255,6 +259,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 				configserverListObject.nodeStorage = std::stoi(valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["NodeStorage"].asString());
 			if(!valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["Status"].isNull())
 				configserverListObject.status = valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["Status"].asString();
+			if(!valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["CurrentKernelVersion"].isNull())
+				configserverListObject.currentKernelVersion = valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["CurrentKernelVersion"].asString();
 			dBInstancesObject.configserverList.push_back(configserverListObject);
 		}
 		auto allNetworkAddressesNode = valueDBInstancesDBInstance["NetworkAddresses"]["NetworkAddress"];

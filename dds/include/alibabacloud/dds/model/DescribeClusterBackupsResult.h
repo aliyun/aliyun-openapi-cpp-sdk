@@ -64,6 +64,7 @@ namespace AlibabaCloud
 					std::string progress;
 					std::string attachLogStatus;
 					std::string clusterBackupStatus;
+					std::string engineVersion;
 					std::string clusterBackupSize;
 					std::vector<ClusterBackup::Backup> backups;
 					std::string clusterBackupEndTime;

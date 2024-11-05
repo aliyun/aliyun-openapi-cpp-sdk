@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_UPGRADEDBINSTANCEKERNELVERSIONREQUEST_H_
-#define ALIBABACLOUD_DDS_MODEL_UPGRADEDBINSTANCEKERNELVERSIONREQUEST_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBERESTOREDBINSTANCELISTREQUEST_H_
+#define ALIBABACLOUD_DDS_MODEL_DESCRIBERESTOREDBINSTANCELISTREQUEST_H_
 
 #include <alibabacloud/dds/DdsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,16 +26,20 @@
 namespace AlibabaCloud {
 namespace Dds {
 namespace Model {
-class ALIBABACLOUD_DDS_EXPORT UpgradeDBInstanceKernelVersionRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DDS_EXPORT DescribeRestoreDBInstanceListRequest : public RpcServiceRequest {
 public:
-	UpgradeDBInstanceKernelVersionRequest();
-	~UpgradeDBInstanceKernelVersionRequest();
+	DescribeRestoreDBInstanceListRequest();
+	~DescribeRestoreDBInstanceListRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getCreationTimeAfter() const;
+	void setCreationTimeAfter(const std::string &creationTimeAfter);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSwitchMode() const;
-	void setSwitchMode(const std::string &switchMode);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getResourceOwnerAccount() const;
@@ -47,8 +51,10 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string creationTimeAfter_;
+	int pageNumber_;
 	std::string accessKeyId_;
-	std::string switchMode_;
+	int pageSize_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
@@ -57,4 +63,4 @@ private:
 } // namespace Model
 } // namespace Dds
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DDS_MODEL_UPGRADEDBINSTANCEKERNELVERSIONREQUEST_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBERESTOREDBINSTANCELISTREQUEST_H_
