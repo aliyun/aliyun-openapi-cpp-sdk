@@ -34,15 +34,12 @@ public:
 	void setPhoneNumber(const std::string &phoneNumber);
 	std::string getDeviceId() const;
 	void setDeviceId(const std::string &deviceId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	long getAppKey() const;
 	void setAppKey(long appKey);
 
 private:
 	std::string phoneNumber_;
 	std::string deviceId_;
-	std::string accessKeyId_;
 	long appKey_;
 };
 } // namespace Model

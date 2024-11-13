@@ -25,12 +25,3 @@ ListSummaryAppsRequest::ListSummaryAppsRequest()
 
 ListSummaryAppsRequest::~ListSummaryAppsRequest() {}
 
-std::string ListSummaryAppsRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void ListSummaryAppsRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-

@@ -34,15 +34,6 @@ void CompleteContinuouslyPushRequest::setMessageId(const std::string &messageId)
   setParameter(std::string("MessageId"), messageId);
 }
 
-std::string CompleteContinuouslyPushRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void CompleteContinuouslyPushRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 long CompleteContinuouslyPushRequest::getAppKey() const {
   return appKey_;
 }

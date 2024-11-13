@@ -43,15 +43,6 @@ void BindPhoneRequest::setDeviceId(const std::string &deviceId) {
   setParameter(std::string("DeviceId"), deviceId);
 }
 
-std::string BindPhoneRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void BindPhoneRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 long BindPhoneRequest::getAppKey() const {
   return appKey_;
 }

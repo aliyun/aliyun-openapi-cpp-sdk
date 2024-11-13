@@ -42,28 +42,28 @@ void QueryDeviceInfoResult::parse(const std::string &payload)
 	auto deviceInfoNode = value["DeviceInfo"];
 	if(!deviceInfoNode["Account"].isNull())
 		deviceInfo_.account = deviceInfoNode["Account"].asString();
-	if(!deviceInfoNode["LastOnlineTime"].isNull())
-		deviceInfo_.lastOnlineTime = deviceInfoNode["LastOnlineTime"].asString();
-	if(!deviceInfoNode["PhoneNumber"].isNull())
-		deviceInfo_.phoneNumber = deviceInfoNode["PhoneNumber"].asString();
-	if(!deviceInfoNode["PushEnabled"].isNull())
-		deviceInfo_.pushEnabled = deviceInfoNode["PushEnabled"].asString() == "true";
-	if(!deviceInfoNode["DeviceType"].isNull())
-		deviceInfo_.deviceType = deviceInfoNode["DeviceType"].asString();
-	if(!deviceInfoNode["DeviceId"].isNull())
-		deviceInfo_.deviceId = deviceInfoNode["DeviceId"].asString();
-	if(!deviceInfoNode["Online"].isNull())
-		deviceInfo_.online = deviceInfoNode["Online"].asString() == "true";
-	if(!deviceInfoNode["Tags"].isNull())
-		deviceInfo_.tags = deviceInfoNode["Tags"].asString();
-	if(!deviceInfoNode["DeviceToken"].isNull())
-		deviceInfo_.deviceToken = deviceInfoNode["DeviceToken"].asString();
 	if(!deviceInfoNode["Alias"].isNull())
 		deviceInfo_.alias = deviceInfoNode["Alias"].asString();
 	if(!deviceInfoNode["Brand"].isNull())
 		deviceInfo_.brand = deviceInfoNode["Brand"].asString();
+	if(!deviceInfoNode["DeviceId"].isNull())
+		deviceInfo_.deviceId = deviceInfoNode["DeviceId"].asString();
+	if(!deviceInfoNode["DeviceToken"].isNull())
+		deviceInfo_.deviceToken = deviceInfoNode["DeviceToken"].asString();
+	if(!deviceInfoNode["DeviceType"].isNull())
+		deviceInfo_.deviceType = deviceInfoNode["DeviceType"].asString();
+	if(!deviceInfoNode["LastOnlineTime"].isNull())
+		deviceInfo_.lastOnlineTime = deviceInfoNode["LastOnlineTime"].asString();
 	if(!deviceInfoNode["Model"].isNull())
 		deviceInfo_.model = deviceInfoNode["Model"].asString();
+	if(!deviceInfoNode["Online"].isNull())
+		deviceInfo_.online = deviceInfoNode["Online"].asString() == "true";
+	if(!deviceInfoNode["PhoneNumber"].isNull())
+		deviceInfo_.phoneNumber = deviceInfoNode["PhoneNumber"].asString();
+	if(!deviceInfoNode["PushEnabled"].isNull())
+		deviceInfo_.pushEnabled = deviceInfoNode["PushEnabled"].asString() == "true";
+	if(!deviceInfoNode["Tags"].isNull())
+		deviceInfo_.tags = deviceInfoNode["Tags"].asString();
 
 }
 

@@ -52,15 +52,6 @@ void QueryDeviceStatRequest::setDeviceType(const std::string &deviceType) {
   setParameter(std::string("DeviceType"), deviceType);
 }
 
-std::string QueryDeviceStatRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void QueryDeviceStatRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 long QueryDeviceStatRequest::getAppKey() const {
   return appKey_;
 }

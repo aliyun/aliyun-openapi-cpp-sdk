@@ -25,15 +25,6 @@ RemoveTagRequest::RemoveTagRequest()
 
 RemoveTagRequest::~RemoveTagRequest() {}
 
-std::string RemoveTagRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void RemoveTagRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string RemoveTagRequest::getTagName() const {
   return tagName_;
 }

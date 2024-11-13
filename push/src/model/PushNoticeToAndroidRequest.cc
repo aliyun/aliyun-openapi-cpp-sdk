@@ -43,15 +43,6 @@ void PushNoticeToAndroidRequest::setBody(const std::string &body) {
   setParameter(std::string("Body"), body);
 }
 
-std::string PushNoticeToAndroidRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void PushNoticeToAndroidRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string PushNoticeToAndroidRequest::getExtParameters() const {
   return extParameters_;
 }

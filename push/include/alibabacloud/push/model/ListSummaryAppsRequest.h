@@ -30,11 +30,8 @@ class ALIBABACLOUD_PUSH_EXPORT ListSummaryAppsRequest : public RpcServiceRequest
 public:
 	ListSummaryAppsRequest();
 	~ListSummaryAppsRequest();
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 
 private:
-	std::string accessKeyId_;
 };
 } // namespace Model
 } // namespace Push

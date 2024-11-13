@@ -36,8 +36,6 @@ public:
 	void setStartTime(const std::string &startTime);
 	std::string getDeviceType() const;
 	void setDeviceType(const std::string &deviceType);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	long getAppKey() const;
 	void setAppKey(long appKey);
 	std::string getQueryType() const;
@@ -47,7 +45,6 @@ private:
 	std::string endTime_;
 	std::string startTime_;
 	std::string deviceType_;
-	std::string accessKeyId_;
 	long appKey_;
 	std::string queryType_;
 };

@@ -43,15 +43,6 @@ void QueryPushStatByAppRequest::setStartTime(const std::string &startTime) {
   setParameter(std::string("StartTime"), startTime);
 }
 
-std::string QueryPushStatByAppRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void QueryPushStatByAppRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string QueryPushStatByAppRequest::getGranularity() const {
   return granularity_;
 }

@@ -25,15 +25,6 @@ ListTagsRequest::ListTagsRequest()
 
 ListTagsRequest::~ListTagsRequest() {}
 
-std::string ListTagsRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void ListTagsRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 long ListTagsRequest::getAppKey() const {
   return appKey_;
 }

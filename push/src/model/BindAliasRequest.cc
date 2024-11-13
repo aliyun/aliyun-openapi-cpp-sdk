@@ -34,15 +34,6 @@ void BindAliasRequest::setDeviceId(const std::string &deviceId) {
   setParameter(std::string("DeviceId"), deviceId);
 }
 
-std::string BindAliasRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void BindAliasRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string BindAliasRequest::getAliasName() const {
   return aliasName_;
 }

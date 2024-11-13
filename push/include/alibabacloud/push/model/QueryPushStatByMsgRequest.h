@@ -32,14 +32,11 @@ public:
 	~QueryPushStatByMsgRequest();
 	long getMessageId() const;
 	void setMessageId(long messageId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	long getAppKey() const;
 	void setAppKey(long appKey);
 
 private:
 	long messageId_;
-	std::string accessKeyId_;
 	long appKey_;
 };
 } // namespace Model

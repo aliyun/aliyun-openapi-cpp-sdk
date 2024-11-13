@@ -30,6 +30,7 @@ class ALIBABACLOUD_PUSH_EXPORT MassPushRequest : public RpcServiceRequest {
 public:
 	struct PushTask {
 		int androidNotificationBarType;
+		int androidMessageOppoNotifyLevel;
 		std::string body;
 		std::string deviceType;
 		std::string pushTime;
@@ -50,6 +51,7 @@ public:
 		int androidNotificationBarPriority;
 		std::string expireTime;
 		std::string androidImageUrl;
+		std::string androidNotificationThreadId;
 		int androidHonorTargetUserType;
 		std::string harmonyRemindBody;
 		std::string androidNotificationVivoChannel;
@@ -113,6 +115,7 @@ public:
 		bool androidRemind;
 		std::string harmonyInboxContent;
 		std::string androidActivity;
+		std::string androidMessageOppoCategory;
 		int androidNotificationNotifyId;
 		std::string targetValue;
 		int harmonyBadgeSetNum;
@@ -121,15 +124,12 @@ public:
 	};
 	MassPushRequest();
 	~MassPushRequest();
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	std::vector<PushTask> getPushTask() const;
 	void setPushTask(const std::vector<PushTask> &pushTask);
 	long getAppKey() const;
 	void setAppKey(long appKey);
 
 private:
-	std::string accessKeyId_;
 	std::vector<PushTask> pushTask_;
 	long appKey_;
 };

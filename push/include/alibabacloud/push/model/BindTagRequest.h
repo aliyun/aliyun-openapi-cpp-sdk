@@ -32,8 +32,6 @@ public:
 	~BindTagRequest();
 	std::string getKeyType() const;
 	void setKeyType(const std::string &keyType);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getTagName() const;
 	void setTagName(const std::string &tagName);
 	std::string getClientKey() const;
@@ -43,7 +41,6 @@ public:
 
 private:
 	std::string keyType_;
-	std::string accessKeyId_;
 	std::string tagName_;
 	std::string clientKey_;
 	long appKey_;

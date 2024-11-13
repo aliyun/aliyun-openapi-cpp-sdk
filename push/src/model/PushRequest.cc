@@ -34,6 +34,15 @@ void PushRequest::setAndroidNotificationBarType(int androidNotificationBarType) 
   setParameter(std::string("AndroidNotificationBarType"), std::to_string(androidNotificationBarType));
 }
 
+int PushRequest::getAndroidMessageOppoNotifyLevel() const {
+  return androidMessageOppoNotifyLevel_;
+}
+
+void PushRequest::setAndroidMessageOppoNotifyLevel(int androidMessageOppoNotifyLevel) {
+  androidMessageOppoNotifyLevel_ = androidMessageOppoNotifyLevel;
+  setParameter(std::string("AndroidMessageOppoNotifyLevel"), std::to_string(androidMessageOppoNotifyLevel));
+}
+
 std::string PushRequest::getDeviceType() const {
   return deviceType_;
 }
@@ -295,15 +304,6 @@ void PushRequest::setAndroidXiaomiImageUrl(const std::string &androidXiaomiImage
   setParameter(std::string("AndroidXiaomiImageUrl"), androidXiaomiImageUrl);
 }
 
-std::string PushRequest::getSmsTemplateName() const {
-  return smsTemplateName_;
-}
-
-void PushRequest::setSmsTemplateName(const std::string &smsTemplateName) {
-  smsTemplateName_ = smsTemplateName;
-  setParameter(std::string("SmsTemplateName"), smsTemplateName);
-}
-
 std::string PushRequest::getHarmonyUri() const {
   return harmonyUri_;
 }
@@ -311,6 +311,15 @@ std::string PushRequest::getHarmonyUri() const {
 void PushRequest::setHarmonyUri(const std::string &harmonyUri) {
   harmonyUri_ = harmonyUri;
   setParameter(std::string("HarmonyUri"), harmonyUri);
+}
+
+std::string PushRequest::getSmsTemplateName() const {
+  return smsTemplateName_;
+}
+
+void PushRequest::setSmsTemplateName(const std::string &smsTemplateName) {
+  smsTemplateName_ = smsTemplateName;
+  setParameter(std::string("SmsTemplateName"), smsTemplateName);
 }
 
 std::string PushRequest::getHarmonyExtParameters() const {
@@ -538,6 +547,15 @@ void PushRequest::setIOSMutableContent(bool iOSMutableContent) {
   setParameter(std::string("iOSMutableContent"), iOSMutableContent ? "true" : "false");
 }
 
+std::string PushRequest::getAndroidNotificationThreadId() const {
+  return androidNotificationThreadId_;
+}
+
+void PushRequest::setAndroidNotificationThreadId(const std::string &androidNotificationThreadId) {
+  androidNotificationThreadId_ = androidNotificationThreadId;
+  setParameter(std::string("AndroidNotificationThreadId"), androidNotificationThreadId);
+}
+
 int PushRequest::getAndroidHonorTargetUserType() const {
   return androidHonorTargetUserType_;
 }
@@ -763,15 +781,6 @@ void PushRequest::setTitle(const std::string &title) {
   setParameter(std::string("Title"), title);
 }
 
-std::string PushRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void PushRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 int PushRequest::getHarmonyBadgeAddNum() const {
   return harmonyBadgeAddNum_;
 }
@@ -878,6 +887,15 @@ std::string PushRequest::getHarmonyInboxContent() const {
 void PushRequest::setHarmonyInboxContent(const std::string &harmonyInboxContent) {
   harmonyInboxContent_ = harmonyInboxContent;
   setParameter(std::string("HarmonyInboxContent"), harmonyInboxContent);
+}
+
+std::string PushRequest::getAndroidMessageOppoCategory() const {
+  return androidMessageOppoCategory_;
+}
+
+void PushRequest::setAndroidMessageOppoCategory(const std::string &androidMessageOppoCategory) {
+  androidMessageOppoCategory_ = androidMessageOppoCategory;
+  setParameter(std::string("AndroidMessageOppoCategory"), androidMessageOppoCategory);
 }
 
 std::string PushRequest::getAndroidXiaoMiActivity() const {

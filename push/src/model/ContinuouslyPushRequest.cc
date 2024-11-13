@@ -34,15 +34,6 @@ void ContinuouslyPushRequest::setMessageId(const std::string &messageId) {
   setParameter(std::string("MessageId"), messageId);
 }
 
-std::string ContinuouslyPushRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void ContinuouslyPushRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string ContinuouslyPushRequest::getTarget() const {
   return target_;
 }

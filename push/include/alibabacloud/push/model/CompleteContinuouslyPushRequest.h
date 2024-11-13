@@ -32,14 +32,11 @@ public:
 	~CompleteContinuouslyPushRequest();
 	std::string getMessageId() const;
 	void setMessageId(const std::string &messageId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	long getAppKey() const;
 	void setAppKey(long appKey);
 
 private:
 	std::string messageId_;
-	std::string accessKeyId_;
 	long appKey_;
 };
 } // namespace Model

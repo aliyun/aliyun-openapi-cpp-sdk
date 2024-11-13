@@ -43,15 +43,6 @@ void PushMessageToiOSRequest::setBody(const std::string &body) {
   setParameter(std::string("Body"), body);
 }
 
-std::string PushMessageToiOSRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void PushMessageToiOSRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 bool PushMessageToiOSRequest::getStoreOffline() const {
   return storeOffline_;
 }

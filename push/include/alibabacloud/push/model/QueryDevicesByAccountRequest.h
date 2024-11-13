@@ -30,15 +30,12 @@ class ALIBABACLOUD_PUSH_EXPORT QueryDevicesByAccountRequest : public RpcServiceR
 public:
 	QueryDevicesByAccountRequest();
 	~QueryDevicesByAccountRequest();
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	long getAppKey() const;
 	void setAppKey(long appKey);
 	std::string getAccount() const;
 	void setAccount(const std::string &account);
 
 private:
-	std::string accessKeyId_;
 	long appKey_;
 	std::string account_;
 };

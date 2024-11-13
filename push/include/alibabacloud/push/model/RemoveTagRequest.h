@@ -30,15 +30,12 @@ class ALIBABACLOUD_PUSH_EXPORT RemoveTagRequest : public RpcServiceRequest {
 public:
 	RemoveTagRequest();
 	~RemoveTagRequest();
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getTagName() const;
 	void setTagName(const std::string &tagName);
 	long getAppKey() const;
 	void setAppKey(long appKey);
 
 private:
-	std::string accessKeyId_;
 	std::string tagName_;
 	long appKey_;
 };

@@ -34,15 +34,6 @@ void UnbindAliasRequest::setDeviceId(const std::string &deviceId) {
   setParameter(std::string("DeviceId"), deviceId);
 }
 
-std::string UnbindAliasRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void UnbindAliasRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string UnbindAliasRequest::getAliasName() const {
   return aliasName_;
 }

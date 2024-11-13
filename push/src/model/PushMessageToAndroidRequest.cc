@@ -43,15 +43,6 @@ void PushMessageToAndroidRequest::setBody(const std::string &body) {
   setParameter(std::string("Body"), body);
 }
 
-std::string PushMessageToAndroidRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void PushMessageToAndroidRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 bool PushMessageToAndroidRequest::getStoreOffline() const {
   return storeOffline_;
 }

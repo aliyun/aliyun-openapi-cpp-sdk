@@ -43,10 +43,10 @@ void ListSummaryAppsResult::parse(const std::string &payload)
 	for (auto valueSummaryAppInfosSummaryAppInfo : allSummaryAppInfosNode)
 	{
 		SummaryAppInfo summaryAppInfosObject;
-		if(!valueSummaryAppInfosSummaryAppInfo["AppName"].isNull())
-			summaryAppInfosObject.appName = valueSummaryAppInfosSummaryAppInfo["AppName"].asString();
 		if(!valueSummaryAppInfosSummaryAppInfo["AppKey"].isNull())
 			summaryAppInfosObject.appKey = std::stol(valueSummaryAppInfosSummaryAppInfo["AppKey"].asString());
+		if(!valueSummaryAppInfosSummaryAppInfo["AppName"].isNull())
+			summaryAppInfosObject.appName = valueSummaryAppInfosSummaryAppInfo["AppName"].asString();
 		summaryAppInfos_.push_back(summaryAppInfosObject);
 	}
 

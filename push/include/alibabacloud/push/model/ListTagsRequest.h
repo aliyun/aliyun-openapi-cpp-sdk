@@ -30,13 +30,10 @@ class ALIBABACLOUD_PUSH_EXPORT ListTagsRequest : public RpcServiceRequest {
 public:
 	ListTagsRequest();
 	~ListTagsRequest();
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	long getAppKey() const;
 	void setAppKey(long appKey);
 
 private:
-	std::string accessKeyId_;
 	long appKey_;
 };
 } // namespace Model

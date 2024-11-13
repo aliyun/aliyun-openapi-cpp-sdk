@@ -32,8 +32,6 @@ public:
 	~ContinuouslyPushRequest();
 	std::string getMessageId() const;
 	void setMessageId(const std::string &messageId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getTarget() const;
 	void setTarget(const std::string &target);
 	long getAppKey() const;
@@ -43,7 +41,6 @@ public:
 
 private:
 	std::string messageId_;
-	std::string accessKeyId_;
 	std::string target_;
 	long appKey_;
 	std::string targetValue_;

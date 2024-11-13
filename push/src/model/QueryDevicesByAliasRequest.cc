@@ -25,15 +25,6 @@ QueryDevicesByAliasRequest::QueryDevicesByAliasRequest()
 
 QueryDevicesByAliasRequest::~QueryDevicesByAliasRequest() {}
 
-std::string QueryDevicesByAliasRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void QueryDevicesByAliasRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string QueryDevicesByAliasRequest::getAlias() const {
   return alias_;
 }

@@ -25,15 +25,6 @@ QueryDevicesByAccountRequest::QueryDevicesByAccountRequest()
 
 QueryDevicesByAccountRequest::~QueryDevicesByAccountRequest() {}
 
-std::string QueryDevicesByAccountRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void QueryDevicesByAccountRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 long QueryDevicesByAccountRequest::getAppKey() const {
   return appKey_;
 }

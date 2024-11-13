@@ -34,8 +34,6 @@ public:
 	void setEndTime(const std::string &endTime);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getGranularity() const;
 	void setGranularity(const std::string &granularity);
 	long getAppKey() const;
@@ -44,7 +42,6 @@ public:
 private:
 	std::string endTime_;
 	std::string startTime_;
-	std::string accessKeyId_;
 	std::string granularity_;
 	long appKey_;
 };

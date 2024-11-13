@@ -43,15 +43,6 @@ void PushNoticeToiOSRequest::setBody(const std::string &body) {
   setParameter(std::string("Body"), body);
 }
 
-std::string PushNoticeToiOSRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void PushNoticeToiOSRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string PushNoticeToiOSRequest::getExtParameters() const {
   return extParameters_;
 }

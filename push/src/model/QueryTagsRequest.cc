@@ -34,15 +34,6 @@ void QueryTagsRequest::setKeyType(const std::string &keyType) {
   setParameter(std::string("KeyType"), keyType);
 }
 
-std::string QueryTagsRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void QueryTagsRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string QueryTagsRequest::getClientKey() const {
   return clientKey_;
 }

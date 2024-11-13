@@ -25,15 +25,6 @@ MassPushRequest::MassPushRequest()
 
 MassPushRequest::~MassPushRequest() {}
 
-std::string MassPushRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void MassPushRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::vector<MassPushRequest::PushTask> MassPushRequest::getPushTask() const {
   return pushTask_;
 }
@@ -44,6 +35,7 @@ void MassPushRequest::setPushTask(const std::vector<MassPushRequest::PushTask> &
   auto pushTaskObj = pushTask.at(dep1);
   std::string pushTaskObjStr = std::string("PushTask") + "." + std::to_string(dep1 + 1);
     setBodyParameter(pushTaskObjStr + ".AndroidNotificationBarType", std::to_string(pushTaskObj.androidNotificationBarType));
+    setBodyParameter(pushTaskObjStr + ".AndroidMessageOppoNotifyLevel", std::to_string(pushTaskObj.androidMessageOppoNotifyLevel));
     setBodyParameter(pushTaskObjStr + ".Body", pushTaskObj.body);
     setBodyParameter(pushTaskObjStr + ".DeviceType", pushTaskObj.deviceType);
     setBodyParameter(pushTaskObjStr + ".PushTime", pushTaskObj.pushTime);
@@ -64,6 +56,7 @@ void MassPushRequest::setPushTask(const std::vector<MassPushRequest::PushTask> &
     setBodyParameter(pushTaskObjStr + ".AndroidNotificationBarPriority", std::to_string(pushTaskObj.androidNotificationBarPriority));
     setBodyParameter(pushTaskObjStr + ".ExpireTime", pushTaskObj.expireTime);
     setBodyParameter(pushTaskObjStr + ".AndroidImageUrl", pushTaskObj.androidImageUrl);
+    setBodyParameter(pushTaskObjStr + ".AndroidNotificationThreadId", pushTaskObj.androidNotificationThreadId);
     setBodyParameter(pushTaskObjStr + ".AndroidHonorTargetUserType", std::to_string(pushTaskObj.androidHonorTargetUserType));
     setBodyParameter(pushTaskObjStr + ".HarmonyRemindBody", pushTaskObj.harmonyRemindBody);
     setBodyParameter(pushTaskObjStr + ".AndroidNotificationVivoChannel", pushTaskObj.androidNotificationVivoChannel);
@@ -127,6 +120,7 @@ void MassPushRequest::setPushTask(const std::vector<MassPushRequest::PushTask> &
     setBodyParameter(pushTaskObjStr + ".AndroidRemind", pushTaskObj.androidRemind ? "true" : "false");
     setBodyParameter(pushTaskObjStr + ".HarmonyInboxContent", pushTaskObj.harmonyInboxContent);
     setBodyParameter(pushTaskObjStr + ".AndroidActivity", pushTaskObj.androidActivity);
+    setBodyParameter(pushTaskObjStr + ".AndroidMessageOppoCategory", pushTaskObj.androidMessageOppoCategory);
     setBodyParameter(pushTaskObjStr + ".AndroidNotificationNotifyId", std::to_string(pushTaskObj.androidNotificationNotifyId));
     setBodyParameter(pushTaskObjStr + ".TargetValue", pushTaskObj.targetValue);
     setBodyParameter(pushTaskObjStr + ".HarmonyBadgeSetNum", std::to_string(pushTaskObj.harmonyBadgeSetNum));

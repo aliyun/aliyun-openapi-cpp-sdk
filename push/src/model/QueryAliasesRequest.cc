@@ -34,15 +34,6 @@ void QueryAliasesRequest::setDeviceId(const std::string &deviceId) {
   setParameter(std::string("DeviceId"), deviceId);
 }
 
-std::string QueryAliasesRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void QueryAliasesRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 long QueryAliasesRequest::getAppKey() const {
   return appKey_;
 }

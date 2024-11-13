@@ -34,15 +34,6 @@ void QueryPushStatByMsgRequest::setMessageId(long messageId) {
   setParameter(std::string("MessageId"), std::to_string(messageId));
 }
 
-std::string QueryPushStatByMsgRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void QueryPushStatByMsgRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 long QueryPushStatByMsgRequest::getAppKey() const {
   return appKey_;
 }

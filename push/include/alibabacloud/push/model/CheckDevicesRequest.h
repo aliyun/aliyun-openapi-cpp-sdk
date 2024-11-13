@@ -32,14 +32,11 @@ public:
 	~CheckDevicesRequest();
 	std::string getDeviceIds() const;
 	void setDeviceIds(const std::string &deviceIds);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	long getAppKey() const;
 	void setAppKey(long appKey);
 
 private:
 	std::string deviceIds_;
-	std::string accessKeyId_;
 	long appKey_;
 };
 } // namespace Model

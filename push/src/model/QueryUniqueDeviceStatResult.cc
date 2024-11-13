@@ -43,10 +43,10 @@ void QueryUniqueDeviceStatResult::parse(const std::string &payload)
 	for (auto valueAppDeviceStatsAppDeviceStat : allAppDeviceStatsNode)
 	{
 		AppDeviceStat appDeviceStatsObject;
-		if(!valueAppDeviceStatsAppDeviceStat["Time"].isNull())
-			appDeviceStatsObject.time = valueAppDeviceStatsAppDeviceStat["Time"].asString();
 		if(!valueAppDeviceStatsAppDeviceStat["Count"].isNull())
 			appDeviceStatsObject.count = std::stol(valueAppDeviceStatsAppDeviceStat["Count"].asString());
+		if(!valueAppDeviceStatsAppDeviceStat["Time"].isNull())
+			appDeviceStatsObject.time = valueAppDeviceStatsAppDeviceStat["Time"].asString();
 		appDeviceStats_.push_back(appDeviceStatsObject);
 	}
 

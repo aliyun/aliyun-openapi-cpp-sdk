@@ -34,15 +34,6 @@ void BindTagRequest::setKeyType(const std::string &keyType) {
   setParameter(std::string("KeyType"), keyType);
 }
 
-std::string BindTagRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void BindTagRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string BindTagRequest::getTagName() const {
   return tagName_;
 }

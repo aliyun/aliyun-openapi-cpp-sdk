@@ -34,8 +34,6 @@ public:
 	void setTitle(const std::string &title);
 	std::string getBody() const;
 	void setBody(const std::string &body);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getExtParameters() const;
 	void setExtParameters(const std::string &extParameters);
 	bool getStoreOffline() const;
@@ -52,7 +50,6 @@ public:
 private:
 	std::string title_;
 	std::string body_;
-	std::string accessKeyId_;
 	std::string extParameters_;
 	bool storeOffline_;
 	std::string jobKey_;

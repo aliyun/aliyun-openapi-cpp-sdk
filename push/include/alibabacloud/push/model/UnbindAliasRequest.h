@@ -32,8 +32,6 @@ public:
 	~UnbindAliasRequest();
 	std::string getDeviceId() const;
 	void setDeviceId(const std::string &deviceId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getAliasName() const;
 	void setAliasName(const std::string &aliasName);
 	long getAppKey() const;
@@ -43,7 +41,6 @@ public:
 
 private:
 	std::string deviceId_;
-	std::string accessKeyId_;
 	std::string aliasName_;
 	long appKey_;
 	bool unbindAll_;

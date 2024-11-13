@@ -34,15 +34,6 @@ void CheckDevicesRequest::setDeviceIds(const std::string &deviceIds) {
   setParameter(std::string("DeviceIds"), deviceIds);
 }
 
-std::string CheckDevicesRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void CheckDevicesRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 long CheckDevicesRequest::getAppKey() const {
   return appKey_;
 }

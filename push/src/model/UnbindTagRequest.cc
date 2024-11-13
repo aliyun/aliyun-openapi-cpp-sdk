@@ -34,15 +34,6 @@ void UnbindTagRequest::setKeyType(const std::string &keyType) {
   setParameter(std::string("KeyType"), keyType);
 }
 
-std::string UnbindTagRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void UnbindTagRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string UnbindTagRequest::getTagName() const {
   return tagName_;
 }

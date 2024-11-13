@@ -32,6 +32,8 @@ public:
 	~PushRequest();
 	int getAndroidNotificationBarType() const;
 	void setAndroidNotificationBarType(int androidNotificationBarType);
+	int getAndroidMessageOppoNotifyLevel() const;
+	void setAndroidMessageOppoNotifyLevel(int androidMessageOppoNotifyLevel);
 	std::string getDeviceType() const;
 	void setDeviceType(const std::string &deviceType);
 	std::string getPushTime() const;
@@ -90,10 +92,10 @@ public:
 	void setIOSExtParameters(const std::string &iOSExtParameters);
 	std::string getAndroidXiaomiImageUrl() const;
 	void setAndroidXiaomiImageUrl(const std::string &androidXiaomiImageUrl);
-	std::string getSmsTemplateName() const;
-	void setSmsTemplateName(const std::string &smsTemplateName);
 	std::string getHarmonyUri() const;
 	void setHarmonyUri(const std::string &harmonyUri);
+	std::string getSmsTemplateName() const;
+	void setSmsTemplateName(const std::string &smsTemplateName);
 	std::string getHarmonyExtParameters() const;
 	void setHarmonyExtParameters(const std::string &harmonyExtParameters);
 	std::string getAndroidBigPictureUrl() const;
@@ -144,6 +146,8 @@ public:
 	void setIOSMusic(const std::string &iOSMusic);
 	bool getIOSMutableContent() const;
 	void setIOSMutableContent(bool iOSMutableContent);
+	std::string getAndroidNotificationThreadId() const;
+	void setAndroidNotificationThreadId(const std::string &androidNotificationThreadId);
 	int getAndroidHonorTargetUserType() const;
 	void setAndroidHonorTargetUserType(int androidHonorTargetUserType);
 	std::string getHarmonyRemindBody() const;
@@ -194,8 +198,6 @@ public:
 	void setAndroidBigBody(const std::string &androidBigBody);
 	std::string getTitle() const;
 	void setTitle(const std::string &title);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	int getHarmonyBadgeAddNum() const;
 	void setHarmonyBadgeAddNum(int harmonyBadgeAddNum);
 	bool getHarmonyTestMessage() const;
@@ -220,11 +222,14 @@ public:
 	void setTarget(const std::string &target);
 	std::string getHarmonyInboxContent() const;
 	void setHarmonyInboxContent(const std::string &harmonyInboxContent);
+	std::string getAndroidMessageOppoCategory() const;
+	void setAndroidMessageOppoCategory(const std::string &androidMessageOppoCategory);
 	std::string getAndroidXiaoMiActivity() const;
 	void setAndroidXiaoMiActivity(const std::string &androidXiaoMiActivity);
 
 private:
 	int androidNotificationBarType_;
+	int androidMessageOppoNotifyLevel_;
 	std::string deviceType_;
 	std::string pushTime_;
 	int sendSpeed_;
@@ -254,8 +259,8 @@ private:
 	int androidRenderStyle_;
 	std::string iOSExtParameters_;
 	std::string androidXiaomiImageUrl_;
-	std::string smsTemplateName_;
 	std::string harmonyUri_;
+	std::string smsTemplateName_;
 	std::string harmonyExtParameters_;
 	std::string androidBigPictureUrl_;
 	bool iOSSilentNotification_;
@@ -281,6 +286,7 @@ private:
 	std::string androidMessageHuaweiCategory_;
 	std::string iOSMusic_;
 	bool iOSMutableContent_;
+	std::string androidNotificationThreadId_;
 	int androidHonorTargetUserType_;
 	std::string harmonyRemindBody_;
 	std::string androidNotificationVivoChannel_;
@@ -306,7 +312,6 @@ private:
 	std::string harmonyImageUrl_;
 	std::string androidBigBody_;
 	std::string title_;
-	std::string accessKeyId_;
 	int harmonyBadgeAddNum_;
 	bool harmonyTestMessage_;
 	int androidBadgeAddNum_;
@@ -319,6 +324,7 @@ private:
 	std::string harmonyActionType_;
 	std::string target_;
 	std::string harmonyInboxContent_;
+	std::string androidMessageOppoCategory_;
 	std::string androidXiaoMiActivity_;
 };
 } // namespace Model

@@ -43,15 +43,6 @@ void QueryUniqueDeviceStatRequest::setStartTime(const std::string &startTime) {
   setParameter(std::string("StartTime"), startTime);
 }
 
-std::string QueryUniqueDeviceStatRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void QueryUniqueDeviceStatRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string QueryUniqueDeviceStatRequest::getGranularity() const {
   return granularity_;
 }

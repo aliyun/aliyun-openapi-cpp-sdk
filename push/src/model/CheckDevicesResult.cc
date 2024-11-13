@@ -43,10 +43,10 @@ void CheckDevicesResult::parse(const std::string &payload)
 	for (auto valueDeviceCheckInfosDeviceCheckInfo : allDeviceCheckInfosNode)
 	{
 		DeviceCheckInfo deviceCheckInfosObject;
-		if(!valueDeviceCheckInfosDeviceCheckInfo["DeviceId"].isNull())
-			deviceCheckInfosObject.deviceId = valueDeviceCheckInfosDeviceCheckInfo["DeviceId"].asString();
 		if(!valueDeviceCheckInfosDeviceCheckInfo["Available"].isNull())
 			deviceCheckInfosObject.available = valueDeviceCheckInfosDeviceCheckInfo["Available"].asString() == "true";
+		if(!valueDeviceCheckInfosDeviceCheckInfo["DeviceId"].isNull())
+			deviceCheckInfosObject.deviceId = valueDeviceCheckInfosDeviceCheckInfo["DeviceId"].asString();
 		deviceCheckInfos_.push_back(deviceCheckInfosObject);
 	}
 
