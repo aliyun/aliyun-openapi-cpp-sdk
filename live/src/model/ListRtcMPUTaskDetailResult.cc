@@ -55,6 +55,8 @@ void ListRtcMPUTaskDetailResult::parse(const std::string &payload)
 			mPUTasksObject.streamURL = valueMPUTasksmpuTask["StreamURL"].asString();
 		if(!valueMPUTasksmpuTask["Region"].isNull())
 			mPUTasksObject.region = valueMPUTasksmpuTask["Region"].asString();
+		if(!valueMPUTasksmpuTask["MaxIdleTime"].isNull())
+			mPUTasksObject.maxIdleTime = valueMPUTasksmpuTask["MaxIdleTime"].asString();
 		auto allMultiStreamURLNode = valueMPUTasksmpuTask["MultiStreamURL"]["MultiStreamURLItem"];
 		for (auto valueMPUTasksmpuTaskMultiStreamURLMultiStreamURLItem : allMultiStreamURLNode)
 		{

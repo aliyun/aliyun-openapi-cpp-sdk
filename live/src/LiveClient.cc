@@ -1887,6 +1887,42 @@ LiveClient::CreateEventSubOutcomeCallable LiveClient::createEventSubCallable(con
 	return task->get_future();
 }
 
+LiveClient::CreateLiveAIStudioOutcome LiveClient::createLiveAIStudio(const CreateLiveAIStudioRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateLiveAIStudioOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateLiveAIStudioOutcome(CreateLiveAIStudioResult(outcome.result()));
+	else
+		return CreateLiveAIStudioOutcome(outcome.error());
+}
+
+void LiveClient::createLiveAIStudioAsync(const CreateLiveAIStudioRequest& request, const CreateLiveAIStudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createLiveAIStudio(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::CreateLiveAIStudioOutcomeCallable LiveClient::createLiveAIStudioCallable(const CreateLiveAIStudioRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateLiveAIStudioOutcome()>>(
+			[this, request]()
+			{
+			return this->createLiveAIStudio(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::CreateLiveDelayConfigOutcome LiveClient::createLiveDelayConfig(const CreateLiveDelayConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2817,6 +2853,42 @@ LiveClient::DeleteLiveAIProduceRulesOutcomeCallable LiveClient::deleteLiveAIProd
 			[this, request]()
 			{
 			return this->deleteLiveAIProduceRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DeleteLiveAIStudioOutcome LiveClient::deleteLiveAIStudio(const DeleteLiveAIStudioRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveAIStudioOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveAIStudioOutcome(DeleteLiveAIStudioResult(outcome.result()));
+	else
+		return DeleteLiveAIStudioOutcome(outcome.error());
+}
+
+void LiveClient::deleteLiveAIStudioAsync(const DeleteLiveAIStudioRequest& request, const DeleteLiveAIStudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLiveAIStudio(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveAIStudioOutcomeCallable LiveClient::deleteLiveAIStudioCallable(const DeleteLiveAIStudioRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveAIStudioOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLiveAIStudio(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4977,6 +5049,42 @@ LiveClient::DescribeLiveAIProduceRulesOutcomeCallable LiveClient::describeLiveAI
 			[this, request]()
 			{
 			return this->describeLiveAIProduceRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveAIStudioOutcome LiveClient::describeLiveAIStudio(const DescribeLiveAIStudioRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveAIStudioOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveAIStudioOutcome(DescribeLiveAIStudioResult(outcome.result()));
+	else
+		return DescribeLiveAIStudioOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveAIStudioAsync(const DescribeLiveAIStudioRequest& request, const DescribeLiveAIStudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveAIStudio(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveAIStudioOutcomeCallable LiveClient::describeLiveAIStudioCallable(const DescribeLiveAIStudioRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveAIStudioOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveAIStudio(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -11097,6 +11205,42 @@ LiveClient::ModifyCasterVideoResourceOutcomeCallable LiveClient::modifyCasterVid
 			[this, request]()
 			{
 			return this->modifyCasterVideoResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::ModifyLiveAIStudioOutcome LiveClient::modifyLiveAIStudio(const ModifyLiveAIStudioRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyLiveAIStudioOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyLiveAIStudioOutcome(ModifyLiveAIStudioResult(outcome.result()));
+	else
+		return ModifyLiveAIStudioOutcome(outcome.error());
+}
+
+void LiveClient::modifyLiveAIStudioAsync(const ModifyLiveAIStudioRequest& request, const ModifyLiveAIStudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyLiveAIStudio(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ModifyLiveAIStudioOutcomeCallable LiveClient::modifyLiveAIStudioCallable(const ModifyLiveAIStudioRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyLiveAIStudioOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyLiveAIStudio(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

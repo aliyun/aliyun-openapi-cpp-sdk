@@ -121,6 +121,8 @@ public:
 	void setStreamURL(const std::string &streamURL);
 	std::vector<MultiStreamURL> getMultiStreamURL() const;
 	void setMultiStreamURL(const std::vector<MultiStreamURL> &multiStreamURL);
+	std::string getMaxIdleTime() const;
+	void setMaxIdleTime(const std::string &maxIdleTime);
 	SeiParams getSeiParams() const;
 	void setSeiParams(const SeiParams &seiParams);
 	TranscodeParams getTranscodeParams() const;
@@ -139,6 +141,7 @@ private:
 	std::string taskId_;
 	std::string streamURL_;
 	std::vector<MultiStreamURL> multiStreamURL_;
+	std::string maxIdleTime_;
 	SeiParams seiParams_;
 	TranscodeParams transcodeParams_;
 	std::string appId_;

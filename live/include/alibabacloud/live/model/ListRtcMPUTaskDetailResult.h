@@ -134,6 +134,7 @@ namespace AlibabaCloud
 					SingleSubParams singleSubParams;
 					TranscodeParams transcodeParams;
 					std::string channelId;
+					std::string maxIdleTime;
 					std::vector<MpuTask::MultiStreamURLItem> multiStreamURL;
 					std::string streamURL;
 				};

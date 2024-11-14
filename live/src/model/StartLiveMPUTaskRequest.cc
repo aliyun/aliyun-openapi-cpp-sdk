@@ -69,6 +69,15 @@ void StartLiveMPUTaskRequest::setMultiStreamURL(const std::vector<StartLiveMPUTa
   }
 }
 
+std::string StartLiveMPUTaskRequest::getMaxIdleTime() const {
+  return maxIdleTime_;
+}
+
+void StartLiveMPUTaskRequest::setMaxIdleTime(const std::string &maxIdleTime) {
+  maxIdleTime_ = maxIdleTime;
+  setParameter(std::string("MaxIdleTime"), maxIdleTime);
+}
+
 StartLiveMPUTaskRequest::SeiParams StartLiveMPUTaskRequest::getSeiParams() const {
   return seiParams_;
 }

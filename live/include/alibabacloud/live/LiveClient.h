@@ -124,6 +124,8 @@
 #include "model/CreateEdgeTranscodeJobResult.h"
 #include "model/CreateEventSubRequest.h"
 #include "model/CreateEventSubResult.h"
+#include "model/CreateLiveAIStudioRequest.h"
+#include "model/CreateLiveAIStudioResult.h"
 #include "model/CreateLiveDelayConfigRequest.h"
 #include "model/CreateLiveDelayConfigResult.h"
 #include "model/CreateLiveMessageAppRequest.h"
@@ -176,6 +178,8 @@
 #include "model/DeleteEventSubResult.h"
 #include "model/DeleteLiveAIProduceRulesRequest.h"
 #include "model/DeleteLiveAIProduceRulesResult.h"
+#include "model/DeleteLiveAIStudioRequest.h"
+#include "model/DeleteLiveAIStudioResult.h"
 #include "model/DeleteLiveAISubtitleRequest.h"
 #include "model/DeleteLiveAISubtitleResult.h"
 #include "model/DeleteLiveAppRecordConfigRequest.h"
@@ -296,6 +300,8 @@
 #include "model/DescribeHlsLiveStreamRealTimeBpsDataResult.h"
 #include "model/DescribeLiveAIProduceRulesRequest.h"
 #include "model/DescribeLiveAIProduceRulesResult.h"
+#include "model/DescribeLiveAIStudioRequest.h"
+#include "model/DescribeLiveAIStudioResult.h"
 #include "model/DescribeLiveAISubtitleRequest.h"
 #include "model/DescribeLiveAISubtitleResult.h"
 #include "model/DescribeLiveAudioAuditConfigRequest.h"
@@ -636,6 +642,8 @@
 #include "model/ModifyCasterProgramResult.h"
 #include "model/ModifyCasterVideoResourceRequest.h"
 #include "model/ModifyCasterVideoResourceResult.h"
+#include "model/ModifyLiveAIStudioRequest.h"
+#include "model/ModifyLiveAIStudioResult.h"
 #include "model/ModifyLiveDomainSchdmByPropertyRequest.h"
 #include "model/ModifyLiveDomainSchdmByPropertyResult.h"
 #include "model/ModifyLiveMessageAppAuditRequest.h"
@@ -986,6 +994,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateEventSubResult> CreateEventSubOutcome;
 			typedef std::future<CreateEventSubOutcome> CreateEventSubOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::CreateEventSubRequest&, const CreateEventSubOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateEventSubAsyncHandler;
+			typedef Outcome<Error, Model::CreateLiveAIStudioResult> CreateLiveAIStudioOutcome;
+			typedef std::future<CreateLiveAIStudioOutcome> CreateLiveAIStudioOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::CreateLiveAIStudioRequest&, const CreateLiveAIStudioOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveAIStudioAsyncHandler;
 			typedef Outcome<Error, Model::CreateLiveDelayConfigResult> CreateLiveDelayConfigOutcome;
 			typedef std::future<CreateLiveDelayConfigOutcome> CreateLiveDelayConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::CreateLiveDelayConfigRequest&, const CreateLiveDelayConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveDelayConfigAsyncHandler;
@@ -1064,6 +1075,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteLiveAIProduceRulesResult> DeleteLiveAIProduceRulesOutcome;
 			typedef std::future<DeleteLiveAIProduceRulesOutcome> DeleteLiveAIProduceRulesOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveAIProduceRulesRequest&, const DeleteLiveAIProduceRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveAIProduceRulesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveAIStudioResult> DeleteLiveAIStudioOutcome;
+			typedef std::future<DeleteLiveAIStudioOutcome> DeleteLiveAIStudioOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveAIStudioRequest&, const DeleteLiveAIStudioOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveAIStudioAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLiveAISubtitleResult> DeleteLiveAISubtitleOutcome;
 			typedef std::future<DeleteLiveAISubtitleOutcome> DeleteLiveAISubtitleOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveAISubtitleRequest&, const DeleteLiveAISubtitleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveAISubtitleAsyncHandler;
@@ -1244,6 +1258,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveAIProduceRulesResult> DescribeLiveAIProduceRulesOutcome;
 			typedef std::future<DescribeLiveAIProduceRulesOutcome> DescribeLiveAIProduceRulesOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveAIProduceRulesRequest&, const DescribeLiveAIProduceRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveAIProduceRulesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveAIStudioResult> DescribeLiveAIStudioOutcome;
+			typedef std::future<DescribeLiveAIStudioOutcome> DescribeLiveAIStudioOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveAIStudioRequest&, const DescribeLiveAIStudioOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveAIStudioAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveAISubtitleResult> DescribeLiveAISubtitleOutcome;
 			typedef std::future<DescribeLiveAISubtitleOutcome> DescribeLiveAISubtitleOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveAISubtitleRequest&, const DescribeLiveAISubtitleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveAISubtitleAsyncHandler;
@@ -1754,6 +1771,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyCasterVideoResourceResult> ModifyCasterVideoResourceOutcome;
 			typedef std::future<ModifyCasterVideoResourceOutcome> ModifyCasterVideoResourceOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ModifyCasterVideoResourceRequest&, const ModifyCasterVideoResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterVideoResourceAsyncHandler;
+			typedef Outcome<Error, Model::ModifyLiveAIStudioResult> ModifyLiveAIStudioOutcome;
+			typedef std::future<ModifyLiveAIStudioOutcome> ModifyLiveAIStudioOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ModifyLiveAIStudioRequest&, const ModifyLiveAIStudioOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveAIStudioAsyncHandler;
 			typedef Outcome<Error, Model::ModifyLiveDomainSchdmByPropertyResult> ModifyLiveDomainSchdmByPropertyOutcome;
 			typedef std::future<ModifyLiveDomainSchdmByPropertyOutcome> ModifyLiveDomainSchdmByPropertyOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ModifyLiveDomainSchdmByPropertyRequest&, const ModifyLiveDomainSchdmByPropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveDomainSchdmByPropertyAsyncHandler;
@@ -2194,6 +2214,9 @@ namespace AlibabaCloud
 			CreateEventSubOutcome createEventSub(const Model::CreateEventSubRequest &request)const;
 			void createEventSubAsync(const Model::CreateEventSubRequest& request, const CreateEventSubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateEventSubOutcomeCallable createEventSubCallable(const Model::CreateEventSubRequest& request) const;
+			CreateLiveAIStudioOutcome createLiveAIStudio(const Model::CreateLiveAIStudioRequest &request)const;
+			void createLiveAIStudioAsync(const Model::CreateLiveAIStudioRequest& request, const CreateLiveAIStudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateLiveAIStudioOutcomeCallable createLiveAIStudioCallable(const Model::CreateLiveAIStudioRequest& request) const;
 			CreateLiveDelayConfigOutcome createLiveDelayConfig(const Model::CreateLiveDelayConfigRequest &request)const;
 			void createLiveDelayConfigAsync(const Model::CreateLiveDelayConfigRequest& request, const CreateLiveDelayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLiveDelayConfigOutcomeCallable createLiveDelayConfigCallable(const Model::CreateLiveDelayConfigRequest& request) const;
@@ -2272,6 +2295,9 @@ namespace AlibabaCloud
 			DeleteLiveAIProduceRulesOutcome deleteLiveAIProduceRules(const Model::DeleteLiveAIProduceRulesRequest &request)const;
 			void deleteLiveAIProduceRulesAsync(const Model::DeleteLiveAIProduceRulesRequest& request, const DeleteLiveAIProduceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveAIProduceRulesOutcomeCallable deleteLiveAIProduceRulesCallable(const Model::DeleteLiveAIProduceRulesRequest& request) const;
+			DeleteLiveAIStudioOutcome deleteLiveAIStudio(const Model::DeleteLiveAIStudioRequest &request)const;
+			void deleteLiveAIStudioAsync(const Model::DeleteLiveAIStudioRequest& request, const DeleteLiveAIStudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveAIStudioOutcomeCallable deleteLiveAIStudioCallable(const Model::DeleteLiveAIStudioRequest& request) const;
 			DeleteLiveAISubtitleOutcome deleteLiveAISubtitle(const Model::DeleteLiveAISubtitleRequest &request)const;
 			void deleteLiveAISubtitleAsync(const Model::DeleteLiveAISubtitleRequest& request, const DeleteLiveAISubtitleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveAISubtitleOutcomeCallable deleteLiveAISubtitleCallable(const Model::DeleteLiveAISubtitleRequest& request) const;
@@ -2452,6 +2478,9 @@ namespace AlibabaCloud
 			DescribeLiveAIProduceRulesOutcome describeLiveAIProduceRules(const Model::DescribeLiveAIProduceRulesRequest &request)const;
 			void describeLiveAIProduceRulesAsync(const Model::DescribeLiveAIProduceRulesRequest& request, const DescribeLiveAIProduceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveAIProduceRulesOutcomeCallable describeLiveAIProduceRulesCallable(const Model::DescribeLiveAIProduceRulesRequest& request) const;
+			DescribeLiveAIStudioOutcome describeLiveAIStudio(const Model::DescribeLiveAIStudioRequest &request)const;
+			void describeLiveAIStudioAsync(const Model::DescribeLiveAIStudioRequest& request, const DescribeLiveAIStudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveAIStudioOutcomeCallable describeLiveAIStudioCallable(const Model::DescribeLiveAIStudioRequest& request) const;
 			DescribeLiveAISubtitleOutcome describeLiveAISubtitle(const Model::DescribeLiveAISubtitleRequest &request)const;
 			void describeLiveAISubtitleAsync(const Model::DescribeLiveAISubtitleRequest& request, const DescribeLiveAISubtitleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveAISubtitleOutcomeCallable describeLiveAISubtitleCallable(const Model::DescribeLiveAISubtitleRequest& request) const;
@@ -2962,6 +2991,9 @@ namespace AlibabaCloud
 			ModifyCasterVideoResourceOutcome modifyCasterVideoResource(const Model::ModifyCasterVideoResourceRequest &request)const;
 			void modifyCasterVideoResourceAsync(const Model::ModifyCasterVideoResourceRequest& request, const ModifyCasterVideoResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyCasterVideoResourceOutcomeCallable modifyCasterVideoResourceCallable(const Model::ModifyCasterVideoResourceRequest& request) const;
+			ModifyLiveAIStudioOutcome modifyLiveAIStudio(const Model::ModifyLiveAIStudioRequest &request)const;
+			void modifyLiveAIStudioAsync(const Model::ModifyLiveAIStudioRequest& request, const ModifyLiveAIStudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyLiveAIStudioOutcomeCallable modifyLiveAIStudioCallable(const Model::ModifyLiveAIStudioRequest& request) const;
 			ModifyLiveDomainSchdmByPropertyOutcome modifyLiveDomainSchdmByProperty(const Model::ModifyLiveDomainSchdmByPropertyRequest &request)const;
 			void modifyLiveDomainSchdmByPropertyAsync(const Model::ModifyLiveDomainSchdmByPropertyRequest& request, const ModifyLiveDomainSchdmByPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyLiveDomainSchdmByPropertyOutcomeCallable modifyLiveDomainSchdmByPropertyCallable(const Model::ModifyLiveDomainSchdmByPropertyRequest& request) const;

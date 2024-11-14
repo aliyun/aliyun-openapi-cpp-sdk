@@ -123,6 +123,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/CreateEdgeTranscodeJobResult.h
 	include/alibabacloud/live/model/CreateEventSubRequest.h
 	include/alibabacloud/live/model/CreateEventSubResult.h
+	include/alibabacloud/live/model/CreateLiveAIStudioRequest.h
+	include/alibabacloud/live/model/CreateLiveAIStudioResult.h
 	include/alibabacloud/live/model/CreateLiveDelayConfigRequest.h
 	include/alibabacloud/live/model/CreateLiveDelayConfigResult.h
 	include/alibabacloud/live/model/CreateLiveMessageAppRequest.h
@@ -175,6 +177,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteEventSubResult.h
 	include/alibabacloud/live/model/DeleteLiveAIProduceRulesRequest.h
 	include/alibabacloud/live/model/DeleteLiveAIProduceRulesResult.h
+	include/alibabacloud/live/model/DeleteLiveAIStudioRequest.h
+	include/alibabacloud/live/model/DeleteLiveAIStudioResult.h
 	include/alibabacloud/live/model/DeleteLiveAISubtitleRequest.h
 	include/alibabacloud/live/model/DeleteLiveAISubtitleResult.h
 	include/alibabacloud/live/model/DeleteLiveAppRecordConfigRequest.h
@@ -295,6 +299,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeHlsLiveStreamRealTimeBpsDataResult.h
 	include/alibabacloud/live/model/DescribeLiveAIProduceRulesRequest.h
 	include/alibabacloud/live/model/DescribeLiveAIProduceRulesResult.h
+	include/alibabacloud/live/model/DescribeLiveAIStudioRequest.h
+	include/alibabacloud/live/model/DescribeLiveAIStudioResult.h
 	include/alibabacloud/live/model/DescribeLiveAISubtitleRequest.h
 	include/alibabacloud/live/model/DescribeLiveAISubtitleResult.h
 	include/alibabacloud/live/model/DescribeLiveAudioAuditConfigRequest.h
@@ -635,6 +641,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/ModifyCasterProgramResult.h
 	include/alibabacloud/live/model/ModifyCasterVideoResourceRequest.h
 	include/alibabacloud/live/model/ModifyCasterVideoResourceResult.h
+	include/alibabacloud/live/model/ModifyLiveAIStudioRequest.h
+	include/alibabacloud/live/model/ModifyLiveAIStudioResult.h
 	include/alibabacloud/live/model/ModifyLiveDomainSchdmByPropertyRequest.h
 	include/alibabacloud/live/model/ModifyLiveDomainSchdmByPropertyResult.h
 	include/alibabacloud/live/model/ModifyLiveMessageAppAuditRequest.h
@@ -928,6 +936,8 @@ set(live_src
 	src/model/CreateEdgeTranscodeJobResult.cc
 	src/model/CreateEventSubRequest.cc
 	src/model/CreateEventSubResult.cc
+	src/model/CreateLiveAIStudioRequest.cc
+	src/model/CreateLiveAIStudioResult.cc
 	src/model/CreateLiveDelayConfigRequest.cc
 	src/model/CreateLiveDelayConfigResult.cc
 	src/model/CreateLiveMessageAppRequest.cc
@@ -980,6 +990,8 @@ set(live_src
 	src/model/DeleteEventSubResult.cc
 	src/model/DeleteLiveAIProduceRulesRequest.cc
 	src/model/DeleteLiveAIProduceRulesResult.cc
+	src/model/DeleteLiveAIStudioRequest.cc
+	src/model/DeleteLiveAIStudioResult.cc
 	src/model/DeleteLiveAISubtitleRequest.cc
 	src/model/DeleteLiveAISubtitleResult.cc
 	src/model/DeleteLiveAppRecordConfigRequest.cc
@@ -1100,6 +1112,8 @@ set(live_src
 	src/model/DescribeHlsLiveStreamRealTimeBpsDataResult.cc
 	src/model/DescribeLiveAIProduceRulesRequest.cc
 	src/model/DescribeLiveAIProduceRulesResult.cc
+	src/model/DescribeLiveAIStudioRequest.cc
+	src/model/DescribeLiveAIStudioResult.cc
 	src/model/DescribeLiveAISubtitleRequest.cc
 	src/model/DescribeLiveAISubtitleResult.cc
 	src/model/DescribeLiveAudioAuditConfigRequest.cc
@@ -1440,6 +1454,8 @@ set(live_src
 	src/model/ModifyCasterProgramResult.cc
 	src/model/ModifyCasterVideoResourceRequest.cc
 	src/model/ModifyCasterVideoResourceResult.cc
+	src/model/ModifyLiveAIStudioRequest.cc
+	src/model/ModifyLiveAIStudioResult.cc
 	src/model/ModifyLiveDomainSchdmByPropertyRequest.cc
 	src/model/ModifyLiveDomainSchdmByPropertyResult.cc
 	src/model/ModifyLiveMessageAppAuditRequest.cc
