@@ -212,6 +212,8 @@
 #include "model/SetDataLevelPermissionRuleConfigResult.h"
 #include "model/SetDataLevelPermissionWhiteListRequest.h"
 #include "model/SetDataLevelPermissionWhiteListResult.h"
+#include "model/SmartqQueryAbilityRequest.h"
+#include "model/SmartqQueryAbilityResult.h"
 #include "model/UpdateDataLevelPermissionStatusRequest.h"
 #include "model/UpdateDataLevelPermissionStatusResult.h"
 #include "model/UpdateEmbeddedStatusRequest.h"
@@ -526,6 +528,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetDataLevelPermissionWhiteListResult> SetDataLevelPermissionWhiteListOutcome;
 			typedef std::future<SetDataLevelPermissionWhiteListOutcome> SetDataLevelPermissionWhiteListOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::SetDataLevelPermissionWhiteListRequest&, const SetDataLevelPermissionWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDataLevelPermissionWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::SmartqQueryAbilityResult> SmartqQueryAbilityOutcome;
+			typedef std::future<SmartqQueryAbilityOutcome> SmartqQueryAbilityOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::SmartqQueryAbilityRequest&, const SmartqQueryAbilityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SmartqQueryAbilityAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDataLevelPermissionStatusResult> UpdateDataLevelPermissionStatusOutcome;
 			typedef std::future<UpdateDataLevelPermissionStatusOutcome> UpdateDataLevelPermissionStatusOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::UpdateDataLevelPermissionStatusRequest&, const UpdateDataLevelPermissionStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDataLevelPermissionStatusAsyncHandler;
@@ -846,6 +851,9 @@ namespace AlibabaCloud
 			SetDataLevelPermissionWhiteListOutcome setDataLevelPermissionWhiteList(const Model::SetDataLevelPermissionWhiteListRequest &request)const;
 			void setDataLevelPermissionWhiteListAsync(const Model::SetDataLevelPermissionWhiteListRequest& request, const SetDataLevelPermissionWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDataLevelPermissionWhiteListOutcomeCallable setDataLevelPermissionWhiteListCallable(const Model::SetDataLevelPermissionWhiteListRequest& request) const;
+			SmartqQueryAbilityOutcome smartqQueryAbility(const Model::SmartqQueryAbilityRequest &request)const;
+			void smartqQueryAbilityAsync(const Model::SmartqQueryAbilityRequest& request, const SmartqQueryAbilityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SmartqQueryAbilityOutcomeCallable smartqQueryAbilityCallable(const Model::SmartqQueryAbilityRequest& request) const;
 			UpdateDataLevelPermissionStatusOutcome updateDataLevelPermissionStatus(const Model::UpdateDataLevelPermissionStatusRequest &request)const;
 			void updateDataLevelPermissionStatusAsync(const Model::UpdateDataLevelPermissionStatusRequest& request, const UpdateDataLevelPermissionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDataLevelPermissionStatusOutcomeCallable updateDataLevelPermissionStatusCallable(const Model::UpdateDataLevelPermissionStatusRequest& request) const;

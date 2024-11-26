@@ -211,6 +211,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/SetDataLevelPermissionRuleConfigResult.h
 	include/alibabacloud/quickbi-public/model/SetDataLevelPermissionWhiteListRequest.h
 	include/alibabacloud/quickbi-public/model/SetDataLevelPermissionWhiteListResult.h
+	include/alibabacloud/quickbi-public/model/SmartqQueryAbilityRequest.h
+	include/alibabacloud/quickbi-public/model/SmartqQueryAbilityResult.h
 	include/alibabacloud/quickbi-public/model/UpdateDataLevelPermissionStatusRequest.h
 	include/alibabacloud/quickbi-public/model/UpdateDataLevelPermissionStatusResult.h
 	include/alibabacloud/quickbi-public/model/UpdateEmbeddedStatusRequest.h
@@ -424,6 +426,8 @@ set(quickbi-public_src
 	src/model/SetDataLevelPermissionRuleConfigResult.cc
 	src/model/SetDataLevelPermissionWhiteListRequest.cc
 	src/model/SetDataLevelPermissionWhiteListResult.cc
+	src/model/SmartqQueryAbilityRequest.cc
+	src/model/SmartqQueryAbilityResult.cc
 	src/model/UpdateDataLevelPermissionStatusRequest.cc
 	src/model/UpdateDataLevelPermissionStatusResult.cc
 	src/model/UpdateEmbeddedStatusRequest.cc

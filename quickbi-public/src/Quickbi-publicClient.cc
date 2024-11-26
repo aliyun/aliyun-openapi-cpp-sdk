@@ -3471,6 +3471,42 @@ Quickbi_publicClient::SetDataLevelPermissionWhiteListOutcomeCallable Quickbi_pub
 	return task->get_future();
 }
 
+Quickbi_publicClient::SmartqQueryAbilityOutcome Quickbi_publicClient::smartqQueryAbility(const SmartqQueryAbilityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SmartqQueryAbilityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SmartqQueryAbilityOutcome(SmartqQueryAbilityResult(outcome.result()));
+	else
+		return SmartqQueryAbilityOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::smartqQueryAbilityAsync(const SmartqQueryAbilityRequest& request, const SmartqQueryAbilityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, smartqQueryAbility(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::SmartqQueryAbilityOutcomeCallable Quickbi_publicClient::smartqQueryAbilityCallable(const SmartqQueryAbilityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SmartqQueryAbilityOutcome()>>(
+			[this, request]()
+			{
+			return this->smartqQueryAbility(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::UpdateDataLevelPermissionStatusOutcome Quickbi_publicClient::updateDataLevelPermissionStatus(const UpdateDataLevelPermissionStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
