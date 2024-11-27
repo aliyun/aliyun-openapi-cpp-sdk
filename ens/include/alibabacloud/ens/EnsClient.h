@@ -42,6 +42,8 @@
 #include "model/AttachDiskResult.h"
 #include "model/AttachEnsInstancesRequest.h"
 #include "model/AttachEnsInstancesResult.h"
+#include "model/AttachInstanceSDGRequest.h"
+#include "model/AttachInstanceSDGResult.h"
 #include "model/AttachNetworkInterfaceRequest.h"
 #include "model/AttachNetworkInterfaceResult.h"
 #include "model/AuthorizeSecurityGroupRequest.h"
@@ -78,6 +80,8 @@
 #include "model/CreateFileSystemResult.h"
 #include "model/CreateForwardEntryRequest.h"
 #include "model/CreateForwardEntryResult.h"
+#include "model/CreateHaVipRequest.h"
+#include "model/CreateHaVipResult.h"
 #include "model/CreateImageRequest.h"
 #include "model/CreateImageResult.h"
 #include "model/CreateInstanceRequest.h"
@@ -106,6 +110,8 @@
 #include "model/CreateNetworkAclResult.h"
 #include "model/CreateNetworkAclEntryRequest.h"
 #include "model/CreateNetworkAclEntryResult.h"
+#include "model/CreateNetworkInterfaceRequest.h"
+#include "model/CreateNetworkInterfaceResult.h"
 #include "model/CreateSDGRequest.h"
 #include "model/CreateSDGResult.h"
 #include "model/CreateSecurityGroupRequest.h"
@@ -142,6 +148,8 @@
 #include "model/DeleteFileSystemResult.h"
 #include "model/DeleteForwardEntryRequest.h"
 #include "model/DeleteForwardEntryResult.h"
+#include "model/DeleteHaVipsRequest.h"
+#include "model/DeleteHaVipsResult.h"
 #include "model/DeleteImageRequest.h"
 #include "model/DeleteImageResult.h"
 #include "model/DeleteKeyPairsRequest.h"
@@ -158,6 +166,8 @@
 #include "model/DeleteNetworkAclResult.h"
 #include "model/DeleteNetworkAclEntryRequest.h"
 #include "model/DeleteNetworkAclEntryResult.h"
+#include "model/DeleteNetworkInterfacesRequest.h"
+#include "model/DeleteNetworkInterfacesResult.h"
 #include "model/DeleteObjectRequest.h"
 #include "model/DeleteObjectResult.h"
 #include "model/DeleteSDGRequest.h"
@@ -240,6 +250,8 @@
 #include "model/DescribeEnsResourceUsageResult.h"
 #include "model/DescribeEnsRouteEntryListRequest.h"
 #include "model/DescribeEnsRouteEntryListResult.h"
+#include "model/DescribeEnsRouteTablesRequest.h"
+#include "model/DescribeEnsRouteTablesResult.h"
 #include "model/DescribeEnsSaleControlRequest.h"
 #include "model/DescribeEnsSaleControlResult.h"
 #include "model/DescribeEnsSaleControlAvailableResourceRequest.h"
@@ -278,6 +290,8 @@
 #include "model/DescribeInstanceBandwidthDetailResult.h"
 #include "model/DescribeInstanceMonitorDataRequest.h"
 #include "model/DescribeInstanceMonitorDataResult.h"
+#include "model/DescribeInstanceSDGStatusRequest.h"
+#include "model/DescribeInstanceSDGStatusResult.h"
 #include "model/DescribeInstanceSpecRequest.h"
 #include "model/DescribeInstanceSpecResult.h"
 #include "model/DescribeInstanceTypesRequest.h"
@@ -370,6 +384,8 @@
 #include "model/DescribeVSwitchesResult.h"
 #include "model/DetachDiskRequest.h"
 #include "model/DetachDiskResult.h"
+#include "model/DetachInstanceSDGRequest.h"
+#include "model/DetachInstanceSDGResult.h"
 #include "model/DetachNetworkInterfaceRequest.h"
 #include "model/DetachNetworkInterfaceResult.h"
 #include "model/DistApplicationDataRequest.h"
@@ -446,6 +462,8 @@
 #include "model/ModifySnapshotAttributeResult.h"
 #include "model/ModifyVSwitchAttributeRequest.h"
 #include "model/ModifyVSwitchAttributeResult.h"
+#include "model/MountInstanceSDGRequest.h"
+#include "model/MountInstanceSDGResult.h"
 #include "model/PreloadRegionSDGRequest.h"
 #include "model/PreloadRegionSDGResult.h"
 #include "model/PrepareUploadRequest.h"
@@ -568,6 +586,8 @@
 #include "model/UnassociateNetworkAclResult.h"
 #include "model/UnloadRegionSDGRequest.h"
 #include "model/UnloadRegionSDGResult.h"
+#include "model/UnmountInstanceSDGRequest.h"
+#include "model/UnmountInstanceSDGResult.h"
 #include "model/UntagResourcesRequest.h"
 #include "model/UntagResourcesResult.h"
 #include "model/UpdateEnsSaleControlRequest.h"
@@ -615,6 +635,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AttachEnsInstancesResult> AttachEnsInstancesOutcome;
 			typedef std::future<AttachEnsInstancesOutcome> AttachEnsInstancesOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::AttachEnsInstancesRequest&, const AttachEnsInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachEnsInstancesAsyncHandler;
+			typedef Outcome<Error, Model::AttachInstanceSDGResult> AttachInstanceSDGOutcome;
+			typedef std::future<AttachInstanceSDGOutcome> AttachInstanceSDGOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::AttachInstanceSDGRequest&, const AttachInstanceSDGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachInstanceSDGAsyncHandler;
 			typedef Outcome<Error, Model::AttachNetworkInterfaceResult> AttachNetworkInterfaceOutcome;
 			typedef std::future<AttachNetworkInterfaceOutcome> AttachNetworkInterfaceOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::AttachNetworkInterfaceRequest&, const AttachNetworkInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachNetworkInterfaceAsyncHandler;
@@ -669,6 +692,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateForwardEntryResult> CreateForwardEntryOutcome;
 			typedef std::future<CreateForwardEntryOutcome> CreateForwardEntryOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::CreateForwardEntryRequest&, const CreateForwardEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateForwardEntryAsyncHandler;
+			typedef Outcome<Error, Model::CreateHaVipResult> CreateHaVipOutcome;
+			typedef std::future<CreateHaVipOutcome> CreateHaVipOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::CreateHaVipRequest&, const CreateHaVipOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateHaVipAsyncHandler;
 			typedef Outcome<Error, Model::CreateImageResult> CreateImageOutcome;
 			typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::CreateImageRequest&, const CreateImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageAsyncHandler;
@@ -711,6 +737,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateNetworkAclEntryResult> CreateNetworkAclEntryOutcome;
 			typedef std::future<CreateNetworkAclEntryOutcome> CreateNetworkAclEntryOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::CreateNetworkAclEntryRequest&, const CreateNetworkAclEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkAclEntryAsyncHandler;
+			typedef Outcome<Error, Model::CreateNetworkInterfaceResult> CreateNetworkInterfaceOutcome;
+			typedef std::future<CreateNetworkInterfaceOutcome> CreateNetworkInterfaceOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::CreateNetworkInterfaceRequest&, const CreateNetworkInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkInterfaceAsyncHandler;
 			typedef Outcome<Error, Model::CreateSDGResult> CreateSDGOutcome;
 			typedef std::future<CreateSDGOutcome> CreateSDGOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::CreateSDGRequest&, const CreateSDGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSDGAsyncHandler;
@@ -765,6 +794,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteForwardEntryResult> DeleteForwardEntryOutcome;
 			typedef std::future<DeleteForwardEntryOutcome> DeleteForwardEntryOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DeleteForwardEntryRequest&, const DeleteForwardEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteForwardEntryAsyncHandler;
+			typedef Outcome<Error, Model::DeleteHaVipsResult> DeleteHaVipsOutcome;
+			typedef std::future<DeleteHaVipsOutcome> DeleteHaVipsOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::DeleteHaVipsRequest&, const DeleteHaVipsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHaVipsAsyncHandler;
 			typedef Outcome<Error, Model::DeleteImageResult> DeleteImageOutcome;
 			typedef std::future<DeleteImageOutcome> DeleteImageOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DeleteImageRequest&, const DeleteImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageAsyncHandler;
@@ -789,6 +821,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteNetworkAclEntryResult> DeleteNetworkAclEntryOutcome;
 			typedef std::future<DeleteNetworkAclEntryOutcome> DeleteNetworkAclEntryOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DeleteNetworkAclEntryRequest&, const DeleteNetworkAclEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetworkAclEntryAsyncHandler;
+			typedef Outcome<Error, Model::DeleteNetworkInterfacesResult> DeleteNetworkInterfacesOutcome;
+			typedef std::future<DeleteNetworkInterfacesOutcome> DeleteNetworkInterfacesOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::DeleteNetworkInterfacesRequest&, const DeleteNetworkInterfacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetworkInterfacesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteObjectResult> DeleteObjectOutcome;
 			typedef std::future<DeleteObjectOutcome> DeleteObjectOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DeleteObjectRequest&, const DeleteObjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteObjectAsyncHandler;
@@ -912,6 +947,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeEnsRouteEntryListResult> DescribeEnsRouteEntryListOutcome;
 			typedef std::future<DescribeEnsRouteEntryListOutcome> DescribeEnsRouteEntryListOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DescribeEnsRouteEntryListRequest&, const DescribeEnsRouteEntryListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnsRouteEntryListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeEnsRouteTablesResult> DescribeEnsRouteTablesOutcome;
+			typedef std::future<DescribeEnsRouteTablesOutcome> DescribeEnsRouteTablesOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::DescribeEnsRouteTablesRequest&, const DescribeEnsRouteTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnsRouteTablesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeEnsSaleControlResult> DescribeEnsSaleControlOutcome;
 			typedef std::future<DescribeEnsSaleControlOutcome> DescribeEnsSaleControlOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DescribeEnsSaleControlRequest&, const DescribeEnsSaleControlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnsSaleControlAsyncHandler;
@@ -969,6 +1007,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceMonitorDataResult> DescribeInstanceMonitorDataOutcome;
 			typedef std::future<DescribeInstanceMonitorDataOutcome> DescribeInstanceMonitorDataOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DescribeInstanceMonitorDataRequest&, const DescribeInstanceMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceMonitorDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeInstanceSDGStatusResult> DescribeInstanceSDGStatusOutcome;
+			typedef std::future<DescribeInstanceSDGStatusOutcome> DescribeInstanceSDGStatusOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::DescribeInstanceSDGStatusRequest&, const DescribeInstanceSDGStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSDGStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceSpecResult> DescribeInstanceSpecOutcome;
 			typedef std::future<DescribeInstanceSpecOutcome> DescribeInstanceSpecOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DescribeInstanceSpecRequest&, const DescribeInstanceSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSpecAsyncHandler;
@@ -1107,6 +1148,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetachDiskResult> DetachDiskOutcome;
 			typedef std::future<DetachDiskOutcome> DetachDiskOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DetachDiskRequest&, const DetachDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachDiskAsyncHandler;
+			typedef Outcome<Error, Model::DetachInstanceSDGResult> DetachInstanceSDGOutcome;
+			typedef std::future<DetachInstanceSDGOutcome> DetachInstanceSDGOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::DetachInstanceSDGRequest&, const DetachInstanceSDGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachInstanceSDGAsyncHandler;
 			typedef Outcome<Error, Model::DetachNetworkInterfaceResult> DetachNetworkInterfaceOutcome;
 			typedef std::future<DetachNetworkInterfaceOutcome> DetachNetworkInterfaceOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DetachNetworkInterfaceRequest&, const DetachNetworkInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachNetworkInterfaceAsyncHandler;
@@ -1221,6 +1265,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyVSwitchAttributeResult> ModifyVSwitchAttributeOutcome;
 			typedef std::future<ModifyVSwitchAttributeOutcome> ModifyVSwitchAttributeOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::ModifyVSwitchAttributeRequest&, const ModifyVSwitchAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVSwitchAttributeAsyncHandler;
+			typedef Outcome<Error, Model::MountInstanceSDGResult> MountInstanceSDGOutcome;
+			typedef std::future<MountInstanceSDGOutcome> MountInstanceSDGOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::MountInstanceSDGRequest&, const MountInstanceSDGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MountInstanceSDGAsyncHandler;
 			typedef Outcome<Error, Model::PreloadRegionSDGResult> PreloadRegionSDGOutcome;
 			typedef std::future<PreloadRegionSDGOutcome> PreloadRegionSDGOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::PreloadRegionSDGRequest&, const PreloadRegionSDGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PreloadRegionSDGAsyncHandler;
@@ -1404,6 +1451,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnloadRegionSDGResult> UnloadRegionSDGOutcome;
 			typedef std::future<UnloadRegionSDGOutcome> UnloadRegionSDGOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::UnloadRegionSDGRequest&, const UnloadRegionSDGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnloadRegionSDGAsyncHandler;
+			typedef Outcome<Error, Model::UnmountInstanceSDGResult> UnmountInstanceSDGOutcome;
+			typedef std::future<UnmountInstanceSDGOutcome> UnmountInstanceSDGOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::UnmountInstanceSDGRequest&, const UnmountInstanceSDGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnmountInstanceSDGAsyncHandler;
 			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
 			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
@@ -1451,6 +1501,9 @@ namespace AlibabaCloud
 			AttachEnsInstancesOutcome attachEnsInstances(const Model::AttachEnsInstancesRequest &request)const;
 			void attachEnsInstancesAsync(const Model::AttachEnsInstancesRequest& request, const AttachEnsInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachEnsInstancesOutcomeCallable attachEnsInstancesCallable(const Model::AttachEnsInstancesRequest& request) const;
+			AttachInstanceSDGOutcome attachInstanceSDG(const Model::AttachInstanceSDGRequest &request)const;
+			void attachInstanceSDGAsync(const Model::AttachInstanceSDGRequest& request, const AttachInstanceSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AttachInstanceSDGOutcomeCallable attachInstanceSDGCallable(const Model::AttachInstanceSDGRequest& request) const;
 			AttachNetworkInterfaceOutcome attachNetworkInterface(const Model::AttachNetworkInterfaceRequest &request)const;
 			void attachNetworkInterfaceAsync(const Model::AttachNetworkInterfaceRequest& request, const AttachNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachNetworkInterfaceOutcomeCallable attachNetworkInterfaceCallable(const Model::AttachNetworkInterfaceRequest& request) const;
@@ -1505,6 +1558,9 @@ namespace AlibabaCloud
 			CreateForwardEntryOutcome createForwardEntry(const Model::CreateForwardEntryRequest &request)const;
 			void createForwardEntryAsync(const Model::CreateForwardEntryRequest& request, const CreateForwardEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateForwardEntryOutcomeCallable createForwardEntryCallable(const Model::CreateForwardEntryRequest& request) const;
+			CreateHaVipOutcome createHaVip(const Model::CreateHaVipRequest &request)const;
+			void createHaVipAsync(const Model::CreateHaVipRequest& request, const CreateHaVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateHaVipOutcomeCallable createHaVipCallable(const Model::CreateHaVipRequest& request) const;
 			CreateImageOutcome createImage(const Model::CreateImageRequest &request)const;
 			void createImageAsync(const Model::CreateImageRequest& request, const CreateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateImageOutcomeCallable createImageCallable(const Model::CreateImageRequest& request) const;
@@ -1547,6 +1603,9 @@ namespace AlibabaCloud
 			CreateNetworkAclEntryOutcome createNetworkAclEntry(const Model::CreateNetworkAclEntryRequest &request)const;
 			void createNetworkAclEntryAsync(const Model::CreateNetworkAclEntryRequest& request, const CreateNetworkAclEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateNetworkAclEntryOutcomeCallable createNetworkAclEntryCallable(const Model::CreateNetworkAclEntryRequest& request) const;
+			CreateNetworkInterfaceOutcome createNetworkInterface(const Model::CreateNetworkInterfaceRequest &request)const;
+			void createNetworkInterfaceAsync(const Model::CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateNetworkInterfaceOutcomeCallable createNetworkInterfaceCallable(const Model::CreateNetworkInterfaceRequest& request) const;
 			CreateSDGOutcome createSDG(const Model::CreateSDGRequest &request)const;
 			void createSDGAsync(const Model::CreateSDGRequest& request, const CreateSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSDGOutcomeCallable createSDGCallable(const Model::CreateSDGRequest& request) const;
@@ -1601,6 +1660,9 @@ namespace AlibabaCloud
 			DeleteForwardEntryOutcome deleteForwardEntry(const Model::DeleteForwardEntryRequest &request)const;
 			void deleteForwardEntryAsync(const Model::DeleteForwardEntryRequest& request, const DeleteForwardEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteForwardEntryOutcomeCallable deleteForwardEntryCallable(const Model::DeleteForwardEntryRequest& request) const;
+			DeleteHaVipsOutcome deleteHaVips(const Model::DeleteHaVipsRequest &request)const;
+			void deleteHaVipsAsync(const Model::DeleteHaVipsRequest& request, const DeleteHaVipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteHaVipsOutcomeCallable deleteHaVipsCallable(const Model::DeleteHaVipsRequest& request) const;
 			DeleteImageOutcome deleteImage(const Model::DeleteImageRequest &request)const;
 			void deleteImageAsync(const Model::DeleteImageRequest& request, const DeleteImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteImageOutcomeCallable deleteImageCallable(const Model::DeleteImageRequest& request) const;
@@ -1625,6 +1687,9 @@ namespace AlibabaCloud
 			DeleteNetworkAclEntryOutcome deleteNetworkAclEntry(const Model::DeleteNetworkAclEntryRequest &request)const;
 			void deleteNetworkAclEntryAsync(const Model::DeleteNetworkAclEntryRequest& request, const DeleteNetworkAclEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteNetworkAclEntryOutcomeCallable deleteNetworkAclEntryCallable(const Model::DeleteNetworkAclEntryRequest& request) const;
+			DeleteNetworkInterfacesOutcome deleteNetworkInterfaces(const Model::DeleteNetworkInterfacesRequest &request)const;
+			void deleteNetworkInterfacesAsync(const Model::DeleteNetworkInterfacesRequest& request, const DeleteNetworkInterfacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteNetworkInterfacesOutcomeCallable deleteNetworkInterfacesCallable(const Model::DeleteNetworkInterfacesRequest& request) const;
 			DeleteObjectOutcome deleteObject(const Model::DeleteObjectRequest &request)const;
 			void deleteObjectAsync(const Model::DeleteObjectRequest& request, const DeleteObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteObjectOutcomeCallable deleteObjectCallable(const Model::DeleteObjectRequest& request) const;
@@ -1748,6 +1813,9 @@ namespace AlibabaCloud
 			DescribeEnsRouteEntryListOutcome describeEnsRouteEntryList(const Model::DescribeEnsRouteEntryListRequest &request)const;
 			void describeEnsRouteEntryListAsync(const Model::DescribeEnsRouteEntryListRequest& request, const DescribeEnsRouteEntryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEnsRouteEntryListOutcomeCallable describeEnsRouteEntryListCallable(const Model::DescribeEnsRouteEntryListRequest& request) const;
+			DescribeEnsRouteTablesOutcome describeEnsRouteTables(const Model::DescribeEnsRouteTablesRequest &request)const;
+			void describeEnsRouteTablesAsync(const Model::DescribeEnsRouteTablesRequest& request, const DescribeEnsRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeEnsRouteTablesOutcomeCallable describeEnsRouteTablesCallable(const Model::DescribeEnsRouteTablesRequest& request) const;
 			DescribeEnsSaleControlOutcome describeEnsSaleControl(const Model::DescribeEnsSaleControlRequest &request)const;
 			void describeEnsSaleControlAsync(const Model::DescribeEnsSaleControlRequest& request, const DescribeEnsSaleControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEnsSaleControlOutcomeCallable describeEnsSaleControlCallable(const Model::DescribeEnsSaleControlRequest& request) const;
@@ -1805,6 +1873,9 @@ namespace AlibabaCloud
 			DescribeInstanceMonitorDataOutcome describeInstanceMonitorData(const Model::DescribeInstanceMonitorDataRequest &request)const;
 			void describeInstanceMonitorDataAsync(const Model::DescribeInstanceMonitorDataRequest& request, const DescribeInstanceMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceMonitorDataOutcomeCallable describeInstanceMonitorDataCallable(const Model::DescribeInstanceMonitorDataRequest& request) const;
+			DescribeInstanceSDGStatusOutcome describeInstanceSDGStatus(const Model::DescribeInstanceSDGStatusRequest &request)const;
+			void describeInstanceSDGStatusAsync(const Model::DescribeInstanceSDGStatusRequest& request, const DescribeInstanceSDGStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeInstanceSDGStatusOutcomeCallable describeInstanceSDGStatusCallable(const Model::DescribeInstanceSDGStatusRequest& request) const;
 			DescribeInstanceSpecOutcome describeInstanceSpec(const Model::DescribeInstanceSpecRequest &request)const;
 			void describeInstanceSpecAsync(const Model::DescribeInstanceSpecRequest& request, const DescribeInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceSpecOutcomeCallable describeInstanceSpecCallable(const Model::DescribeInstanceSpecRequest& request) const;
@@ -1943,6 +2014,9 @@ namespace AlibabaCloud
 			DetachDiskOutcome detachDisk(const Model::DetachDiskRequest &request)const;
 			void detachDiskAsync(const Model::DetachDiskRequest& request, const DetachDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachDiskOutcomeCallable detachDiskCallable(const Model::DetachDiskRequest& request) const;
+			DetachInstanceSDGOutcome detachInstanceSDG(const Model::DetachInstanceSDGRequest &request)const;
+			void detachInstanceSDGAsync(const Model::DetachInstanceSDGRequest& request, const DetachInstanceSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetachInstanceSDGOutcomeCallable detachInstanceSDGCallable(const Model::DetachInstanceSDGRequest& request) const;
 			DetachNetworkInterfaceOutcome detachNetworkInterface(const Model::DetachNetworkInterfaceRequest &request)const;
 			void detachNetworkInterfaceAsync(const Model::DetachNetworkInterfaceRequest& request, const DetachNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachNetworkInterfaceOutcomeCallable detachNetworkInterfaceCallable(const Model::DetachNetworkInterfaceRequest& request) const;
@@ -2057,6 +2131,9 @@ namespace AlibabaCloud
 			ModifyVSwitchAttributeOutcome modifyVSwitchAttribute(const Model::ModifyVSwitchAttributeRequest &request)const;
 			void modifyVSwitchAttributeAsync(const Model::ModifyVSwitchAttributeRequest& request, const ModifyVSwitchAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyVSwitchAttributeOutcomeCallable modifyVSwitchAttributeCallable(const Model::ModifyVSwitchAttributeRequest& request) const;
+			MountInstanceSDGOutcome mountInstanceSDG(const Model::MountInstanceSDGRequest &request)const;
+			void mountInstanceSDGAsync(const Model::MountInstanceSDGRequest& request, const MountInstanceSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MountInstanceSDGOutcomeCallable mountInstanceSDGCallable(const Model::MountInstanceSDGRequest& request) const;
 			PreloadRegionSDGOutcome preloadRegionSDG(const Model::PreloadRegionSDGRequest &request)const;
 			void preloadRegionSDGAsync(const Model::PreloadRegionSDGRequest& request, const PreloadRegionSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PreloadRegionSDGOutcomeCallable preloadRegionSDGCallable(const Model::PreloadRegionSDGRequest& request) const;
@@ -2240,6 +2317,9 @@ namespace AlibabaCloud
 			UnloadRegionSDGOutcome unloadRegionSDG(const Model::UnloadRegionSDGRequest &request)const;
 			void unloadRegionSDGAsync(const Model::UnloadRegionSDGRequest& request, const UnloadRegionSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnloadRegionSDGOutcomeCallable unloadRegionSDGCallable(const Model::UnloadRegionSDGRequest& request) const;
+			UnmountInstanceSDGOutcome unmountInstanceSDG(const Model::UnmountInstanceSDGRequest &request)const;
+			void unmountInstanceSDGAsync(const Model::UnmountInstanceSDGRequest& request, const UnmountInstanceSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnmountInstanceSDGOutcomeCallable unmountInstanceSDGCallable(const Model::UnmountInstanceSDGRequest& request) const;
 			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
 			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;

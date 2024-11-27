@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBEDISKSRESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBEDISKSRESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBEENSROUTETABLESRESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_DESCRIBEENSROUTETABLESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT DescribeDisksResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT DescribeEnsRouteTablesResult : public ServiceResult
 			{
 			public:
-				struct DisksItem
+				struct RouteTable
 				{
 					std::string status;
-					std::string category;
-					std::string description;
-					std::string instanceId;
-					int size;
-					bool encrypted;
-					bool deleteWithInstance;
-					std::string diskChargeType;
-					std::string diskName;
-					std::string encryptedKeyId;
-					std::string instanceName;
-					bool portable;
-					std::string snapshotId;
 					std::string type;
+					std::string networkName;
+					std::string routeTableId;
+					std::vector<std::string> vSwitchIds;
 					std::string creationTime;
-					std::string serialId;
+					std::string networkId;
 					std::string ensRegionId;
-					std::string diskId;
+					std::string routeTableName;
 				};
 
 
-				DescribeDisksResult();
-				explicit DescribeDisksResult(const std::string &payload);
-				~DescribeDisksResult();
+				DescribeEnsRouteTablesResult();
+				explicit DescribeEnsRouteTablesResult(const std::string &payload);
+				~DescribeEnsRouteTablesResult();
 				int getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
-				std::vector<DisksItem> getDisks()const;
-				int getCode()const;
+				std::vector<RouteTable> getRouteTables()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -70,11 +60,10 @@ namespace AlibabaCloud
 				int totalCount_;
 				int pageSize_;
 				int pageNumber_;
-				std::vector<DisksItem> disks_;
-				int code_;
+				std::vector<RouteTable> routeTables_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBEDISKSRESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBEENSROUTETABLESRESULT_H_

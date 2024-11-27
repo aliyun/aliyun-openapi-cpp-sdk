@@ -41,6 +41,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/AttachDiskResult.h
 	include/alibabacloud/ens/model/AttachEnsInstancesRequest.h
 	include/alibabacloud/ens/model/AttachEnsInstancesResult.h
+	include/alibabacloud/ens/model/AttachInstanceSDGRequest.h
+	include/alibabacloud/ens/model/AttachInstanceSDGResult.h
 	include/alibabacloud/ens/model/AttachNetworkInterfaceRequest.h
 	include/alibabacloud/ens/model/AttachNetworkInterfaceResult.h
 	include/alibabacloud/ens/model/AuthorizeSecurityGroupRequest.h
@@ -77,6 +79,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/CreateFileSystemResult.h
 	include/alibabacloud/ens/model/CreateForwardEntryRequest.h
 	include/alibabacloud/ens/model/CreateForwardEntryResult.h
+	include/alibabacloud/ens/model/CreateHaVipRequest.h
+	include/alibabacloud/ens/model/CreateHaVipResult.h
 	include/alibabacloud/ens/model/CreateImageRequest.h
 	include/alibabacloud/ens/model/CreateImageResult.h
 	include/alibabacloud/ens/model/CreateInstanceRequest.h
@@ -105,6 +109,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/CreateNetworkAclResult.h
 	include/alibabacloud/ens/model/CreateNetworkAclEntryRequest.h
 	include/alibabacloud/ens/model/CreateNetworkAclEntryResult.h
+	include/alibabacloud/ens/model/CreateNetworkInterfaceRequest.h
+	include/alibabacloud/ens/model/CreateNetworkInterfaceResult.h
 	include/alibabacloud/ens/model/CreateSDGRequest.h
 	include/alibabacloud/ens/model/CreateSDGResult.h
 	include/alibabacloud/ens/model/CreateSecurityGroupRequest.h
@@ -141,6 +147,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DeleteFileSystemResult.h
 	include/alibabacloud/ens/model/DeleteForwardEntryRequest.h
 	include/alibabacloud/ens/model/DeleteForwardEntryResult.h
+	include/alibabacloud/ens/model/DeleteHaVipsRequest.h
+	include/alibabacloud/ens/model/DeleteHaVipsResult.h
 	include/alibabacloud/ens/model/DeleteImageRequest.h
 	include/alibabacloud/ens/model/DeleteImageResult.h
 	include/alibabacloud/ens/model/DeleteKeyPairsRequest.h
@@ -157,6 +165,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DeleteNetworkAclResult.h
 	include/alibabacloud/ens/model/DeleteNetworkAclEntryRequest.h
 	include/alibabacloud/ens/model/DeleteNetworkAclEntryResult.h
+	include/alibabacloud/ens/model/DeleteNetworkInterfacesRequest.h
+	include/alibabacloud/ens/model/DeleteNetworkInterfacesResult.h
 	include/alibabacloud/ens/model/DeleteObjectRequest.h
 	include/alibabacloud/ens/model/DeleteObjectResult.h
 	include/alibabacloud/ens/model/DeleteSDGRequest.h
@@ -239,6 +249,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeEnsResourceUsageResult.h
 	include/alibabacloud/ens/model/DescribeEnsRouteEntryListRequest.h
 	include/alibabacloud/ens/model/DescribeEnsRouteEntryListResult.h
+	include/alibabacloud/ens/model/DescribeEnsRouteTablesRequest.h
+	include/alibabacloud/ens/model/DescribeEnsRouteTablesResult.h
 	include/alibabacloud/ens/model/DescribeEnsSaleControlRequest.h
 	include/alibabacloud/ens/model/DescribeEnsSaleControlResult.h
 	include/alibabacloud/ens/model/DescribeEnsSaleControlAvailableResourceRequest.h
@@ -277,6 +289,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeInstanceBandwidthDetailResult.h
 	include/alibabacloud/ens/model/DescribeInstanceMonitorDataRequest.h
 	include/alibabacloud/ens/model/DescribeInstanceMonitorDataResult.h
+	include/alibabacloud/ens/model/DescribeInstanceSDGStatusRequest.h
+	include/alibabacloud/ens/model/DescribeInstanceSDGStatusResult.h
 	include/alibabacloud/ens/model/DescribeInstanceSpecRequest.h
 	include/alibabacloud/ens/model/DescribeInstanceSpecResult.h
 	include/alibabacloud/ens/model/DescribeInstanceTypesRequest.h
@@ -369,6 +383,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeVSwitchesResult.h
 	include/alibabacloud/ens/model/DetachDiskRequest.h
 	include/alibabacloud/ens/model/DetachDiskResult.h
+	include/alibabacloud/ens/model/DetachInstanceSDGRequest.h
+	include/alibabacloud/ens/model/DetachInstanceSDGResult.h
 	include/alibabacloud/ens/model/DetachNetworkInterfaceRequest.h
 	include/alibabacloud/ens/model/DetachNetworkInterfaceResult.h
 	include/alibabacloud/ens/model/DistApplicationDataRequest.h
@@ -445,6 +461,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/ModifySnapshotAttributeResult.h
 	include/alibabacloud/ens/model/ModifyVSwitchAttributeRequest.h
 	include/alibabacloud/ens/model/ModifyVSwitchAttributeResult.h
+	include/alibabacloud/ens/model/MountInstanceSDGRequest.h
+	include/alibabacloud/ens/model/MountInstanceSDGResult.h
 	include/alibabacloud/ens/model/PreloadRegionSDGRequest.h
 	include/alibabacloud/ens/model/PreloadRegionSDGResult.h
 	include/alibabacloud/ens/model/PrepareUploadRequest.h
@@ -567,6 +585,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/UnassociateNetworkAclResult.h
 	include/alibabacloud/ens/model/UnloadRegionSDGRequest.h
 	include/alibabacloud/ens/model/UnloadRegionSDGResult.h
+	include/alibabacloud/ens/model/UnmountInstanceSDGRequest.h
+	include/alibabacloud/ens/model/UnmountInstanceSDGResult.h
 	include/alibabacloud/ens/model/UntagResourcesRequest.h
 	include/alibabacloud/ens/model/UntagResourcesResult.h
 	include/alibabacloud/ens/model/UpdateEnsSaleControlRequest.h
@@ -598,6 +618,8 @@ set(ens_src
 	src/model/AttachDiskResult.cc
 	src/model/AttachEnsInstancesRequest.cc
 	src/model/AttachEnsInstancesResult.cc
+	src/model/AttachInstanceSDGRequest.cc
+	src/model/AttachInstanceSDGResult.cc
 	src/model/AttachNetworkInterfaceRequest.cc
 	src/model/AttachNetworkInterfaceResult.cc
 	src/model/AuthorizeSecurityGroupRequest.cc
@@ -634,6 +656,8 @@ set(ens_src
 	src/model/CreateFileSystemResult.cc
 	src/model/CreateForwardEntryRequest.cc
 	src/model/CreateForwardEntryResult.cc
+	src/model/CreateHaVipRequest.cc
+	src/model/CreateHaVipResult.cc
 	src/model/CreateImageRequest.cc
 	src/model/CreateImageResult.cc
 	src/model/CreateInstanceRequest.cc
@@ -662,6 +686,8 @@ set(ens_src
 	src/model/CreateNetworkAclResult.cc
 	src/model/CreateNetworkAclEntryRequest.cc
 	src/model/CreateNetworkAclEntryResult.cc
+	src/model/CreateNetworkInterfaceRequest.cc
+	src/model/CreateNetworkInterfaceResult.cc
 	src/model/CreateSDGRequest.cc
 	src/model/CreateSDGResult.cc
 	src/model/CreateSecurityGroupRequest.cc
@@ -698,6 +724,8 @@ set(ens_src
 	src/model/DeleteFileSystemResult.cc
 	src/model/DeleteForwardEntryRequest.cc
 	src/model/DeleteForwardEntryResult.cc
+	src/model/DeleteHaVipsRequest.cc
+	src/model/DeleteHaVipsResult.cc
 	src/model/DeleteImageRequest.cc
 	src/model/DeleteImageResult.cc
 	src/model/DeleteKeyPairsRequest.cc
@@ -714,6 +742,8 @@ set(ens_src
 	src/model/DeleteNetworkAclResult.cc
 	src/model/DeleteNetworkAclEntryRequest.cc
 	src/model/DeleteNetworkAclEntryResult.cc
+	src/model/DeleteNetworkInterfacesRequest.cc
+	src/model/DeleteNetworkInterfacesResult.cc
 	src/model/DeleteObjectRequest.cc
 	src/model/DeleteObjectResult.cc
 	src/model/DeleteSDGRequest.cc
@@ -796,6 +826,8 @@ set(ens_src
 	src/model/DescribeEnsResourceUsageResult.cc
 	src/model/DescribeEnsRouteEntryListRequest.cc
 	src/model/DescribeEnsRouteEntryListResult.cc
+	src/model/DescribeEnsRouteTablesRequest.cc
+	src/model/DescribeEnsRouteTablesResult.cc
 	src/model/DescribeEnsSaleControlRequest.cc
 	src/model/DescribeEnsSaleControlResult.cc
 	src/model/DescribeEnsSaleControlAvailableResourceRequest.cc
@@ -834,6 +866,8 @@ set(ens_src
 	src/model/DescribeInstanceBandwidthDetailResult.cc
 	src/model/DescribeInstanceMonitorDataRequest.cc
 	src/model/DescribeInstanceMonitorDataResult.cc
+	src/model/DescribeInstanceSDGStatusRequest.cc
+	src/model/DescribeInstanceSDGStatusResult.cc
 	src/model/DescribeInstanceSpecRequest.cc
 	src/model/DescribeInstanceSpecResult.cc
 	src/model/DescribeInstanceTypesRequest.cc
@@ -926,6 +960,8 @@ set(ens_src
 	src/model/DescribeVSwitchesResult.cc
 	src/model/DetachDiskRequest.cc
 	src/model/DetachDiskResult.cc
+	src/model/DetachInstanceSDGRequest.cc
+	src/model/DetachInstanceSDGResult.cc
 	src/model/DetachNetworkInterfaceRequest.cc
 	src/model/DetachNetworkInterfaceResult.cc
 	src/model/DistApplicationDataRequest.cc
@@ -1002,6 +1038,8 @@ set(ens_src
 	src/model/ModifySnapshotAttributeResult.cc
 	src/model/ModifyVSwitchAttributeRequest.cc
 	src/model/ModifyVSwitchAttributeResult.cc
+	src/model/MountInstanceSDGRequest.cc
+	src/model/MountInstanceSDGResult.cc
 	src/model/PreloadRegionSDGRequest.cc
 	src/model/PreloadRegionSDGResult.cc
 	src/model/PrepareUploadRequest.cc
@@ -1124,6 +1162,8 @@ set(ens_src
 	src/model/UnassociateNetworkAclResult.cc
 	src/model/UnloadRegionSDGRequest.cc
 	src/model/UnloadRegionSDGResult.cc
+	src/model/UnmountInstanceSDGRequest.cc
+	src/model/UnmountInstanceSDGResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc
 	src/model/UpdateEnsSaleControlRequest.cc

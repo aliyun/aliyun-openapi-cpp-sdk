@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ens/model/DescribeSDGDeploymentStatusResult.h>
+#include <alibabacloud/ens/model/DescribeInstanceSDGStatusResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ens;
 using namespace AlibabaCloud::Ens::Model;
 
-DescribeSDGDeploymentStatusResult::DescribeSDGDeploymentStatusResult() :
+DescribeInstanceSDGStatusResult::DescribeInstanceSDGStatusResult() :
 	ServiceResult()
 {}
 
-DescribeSDGDeploymentStatusResult::DescribeSDGDeploymentStatusResult(const std::string &payload) :
+DescribeInstanceSDGStatusResult::DescribeInstanceSDGStatusResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeSDGDeploymentStatusResult::~DescribeSDGDeploymentStatusResult()
+DescribeInstanceSDGStatusResult::~DescribeInstanceSDGStatusResult()
 {}
 
-void DescribeSDGDeploymentStatusResult::parse(const std::string &payload)
+void DescribeInstanceSDGStatusResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -45,10 +45,12 @@ void DescribeSDGDeploymentStatusResult::parse(const std::string &payload)
 		DeploymentStatusItem deploymentStatusObject;
 		if(!valueDeploymentStatusDeploymentStatusItem["InstanceId"].isNull())
 			deploymentStatusObject.instanceId = valueDeploymentStatusDeploymentStatusItem["InstanceId"].asString();
+		if(!valueDeploymentStatusDeploymentStatusItem["SDGId"].isNull())
+			deploymentStatusObject.sDGId = valueDeploymentStatusDeploymentStatusItem["SDGId"].asString();
 		if(!valueDeploymentStatusDeploymentStatusItem["MountType"].isNull())
 			deploymentStatusObject.mountType = valueDeploymentStatusDeploymentStatusItem["MountType"].asString();
-		if(!valueDeploymentStatusDeploymentStatusItem["RegionId"].isNull())
-			deploymentStatusObject.regionId = valueDeploymentStatusDeploymentStatusItem["RegionId"].asString();
+		if(!valueDeploymentStatusDeploymentStatusItem["EnsRegionId"].isNull())
+			deploymentStatusObject.ensRegionId = valueDeploymentStatusDeploymentStatusItem["EnsRegionId"].asString();
 		if(!valueDeploymentStatusDeploymentStatusItem["Status"].isNull())
 			deploymentStatusObject.status = valueDeploymentStatusDeploymentStatusItem["Status"].asString();
 		if(!valueDeploymentStatusDeploymentStatusItem["Phase"].isNull())
@@ -60,28 +62,28 @@ void DescribeSDGDeploymentStatusResult::parse(const std::string &payload)
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
-		pageSize_ = std::stol(value["PageSize"].asString());
+		pageSize_ = value["PageSize"].asString();
 	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stol(value["TotalCount"].asString());
+		totalCount_ = value["TotalCount"].asString();
 
 }
 
-long DescribeSDGDeploymentStatusResult::getTotalCount()const
+std::string DescribeInstanceSDGStatusResult::getTotalCount()const
 {
 	return totalCount_;
 }
 
-long DescribeSDGDeploymentStatusResult::getPageSize()const
+std::string DescribeInstanceSDGStatusResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-long DescribeSDGDeploymentStatusResult::getPageNumber()const
+long DescribeInstanceSDGStatusResult::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-std::vector<DescribeSDGDeploymentStatusResult::DeploymentStatusItem> DescribeSDGDeploymentStatusResult::getDeploymentStatus()const
+std::vector<DescribeInstanceSDGStatusResult::DeploymentStatusItem> DescribeInstanceSDGStatusResult::getDeploymentStatus()const
 {
 	return deploymentStatus_;
 }

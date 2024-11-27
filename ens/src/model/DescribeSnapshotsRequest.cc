@@ -25,6 +25,24 @@ DescribeSnapshotsRequest::DescribeSnapshotsRequest()
 
 DescribeSnapshotsRequest::~DescribeSnapshotsRequest() {}
 
+std::string DescribeSnapshotsRequest::getEnsRegionId() const {
+  return ensRegionId_;
+}
+
+void DescribeSnapshotsRequest::setEnsRegionId(const std::string &ensRegionId) {
+  ensRegionId_ = ensRegionId;
+  setParameter(std::string("EnsRegionId"), ensRegionId);
+}
+
+std::string DescribeSnapshotsRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void DescribeSnapshotsRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
 std::string DescribeSnapshotsRequest::getSnapshotId() const {
   return snapshotId_;
 }
@@ -34,6 +52,15 @@ void DescribeSnapshotsRequest::setSnapshotId(const std::string &snapshotId) {
   setParameter(std::string("SnapshotId"), snapshotId);
 }
 
+std::string DescribeSnapshotsRequest::getSnapshotName() const {
+  return snapshotName_;
+}
+
+void DescribeSnapshotsRequest::setSnapshotName(const std::string &snapshotName) {
+  snapshotName_ = snapshotName;
+  setParameter(std::string("SnapshotName"), snapshotName);
+}
+
 int DescribeSnapshotsRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -41,15 +68,6 @@ int DescribeSnapshotsRequest::getPageNumber() const {
 void DescribeSnapshotsRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
-}
-
-std::string DescribeSnapshotsRequest::getEnsRegionId() const {
-  return ensRegionId_;
-}
-
-void DescribeSnapshotsRequest::setEnsRegionId(const std::string &ensRegionId) {
-  ensRegionId_ = ensRegionId;
-  setParameter(std::string("EnsRegionId"), ensRegionId);
 }
 
 int DescribeSnapshotsRequest::getPageSize() const {
@@ -70,12 +88,12 @@ void DescribeSnapshotsRequest::setDiskId(const std::string &diskId) {
   setParameter(std::string("DiskId"), diskId);
 }
 
-std::string DescribeSnapshotsRequest::getInstanceId() const {
-  return instanceId_;
+std::string DescribeSnapshotsRequest::getEnsRegionIds() const {
+  return ensRegionIds_;
 }
 
-void DescribeSnapshotsRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
+void DescribeSnapshotsRequest::setEnsRegionIds(const std::string &ensRegionIds) {
+  ensRegionIds_ = ensRegionIds;
+  setParameter(std::string("EnsRegionIds"), ensRegionIds);
 }
 

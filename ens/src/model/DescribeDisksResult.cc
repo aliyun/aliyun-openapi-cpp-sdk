@@ -59,6 +59,8 @@ void DescribeDisksResult::parse(const std::string &payload)
 			disksObject.instanceId = valueDisksDisksItem["InstanceId"].asString();
 		if(!valueDisksDisksItem["InstanceName"].isNull())
 			disksObject.instanceName = valueDisksDisksItem["InstanceName"].asString();
+		if(!valueDisksDisksItem["Description"].isNull())
+			disksObject.description = valueDisksDisksItem["Description"].asString();
 		if(!valueDisksDisksItem["Size"].isNull())
 			disksObject.size = std::stoi(valueDisksDisksItem["Size"].asString());
 		if(!valueDisksDisksItem["Status"].isNull())
@@ -75,6 +77,8 @@ void DescribeDisksResult::parse(const std::string &payload)
 			disksObject.encrypted = valueDisksDisksItem["Encrypted"].asString() == "true";
 		if(!valueDisksDisksItem["EncryptedKeyId"].isNull())
 			disksObject.encryptedKeyId = valueDisksDisksItem["EncryptedKeyId"].asString();
+		if(!valueDisksDisksItem["DeleteWithInstance"].isNull())
+			disksObject.deleteWithInstance = valueDisksDisksItem["DeleteWithInstance"].asString() == "true";
 		disks_.push_back(disksObject);
 	}
 	if(!value["Code"].isNull())

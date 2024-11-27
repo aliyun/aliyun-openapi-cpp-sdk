@@ -54,6 +54,8 @@ public:
 	void setInstanceType(const std::string &instanceType);
 	int getAmount() const;
 	void setAmount(int amount);
+	std::string getEnvironmentVar() const;
+	void setEnvironmentVar(const std::string &environmentVar);
 	std::string get_NameSpace() const;
 	void set_NameSpace(const std::string &_nameSpace);
 	std::string getServerName() const;
@@ -74,6 +76,7 @@ private:
 	bool autoUseCoupon_;
 	std::string instanceType_;
 	int amount_;
+	std::string environmentVar_;
 	std::string _nameSpace_;
 	std::string serverName_;
 	std::string payType_;

@@ -411,6 +411,42 @@ EnsClient::AttachEnsInstancesOutcomeCallable EnsClient::attachEnsInstancesCallab
 	return task->get_future();
 }
 
+EnsClient::AttachInstanceSDGOutcome EnsClient::attachInstanceSDG(const AttachInstanceSDGRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AttachInstanceSDGOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AttachInstanceSDGOutcome(AttachInstanceSDGResult(outcome.result()));
+	else
+		return AttachInstanceSDGOutcome(outcome.error());
+}
+
+void EnsClient::attachInstanceSDGAsync(const AttachInstanceSDGRequest& request, const AttachInstanceSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, attachInstanceSDG(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::AttachInstanceSDGOutcomeCallable EnsClient::attachInstanceSDGCallable(const AttachInstanceSDGRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AttachInstanceSDGOutcome()>>(
+			[this, request]()
+			{
+			return this->attachInstanceSDG(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::AttachNetworkInterfaceOutcome EnsClient::attachNetworkInterface(const AttachNetworkInterfaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1059,6 +1095,42 @@ EnsClient::CreateForwardEntryOutcomeCallable EnsClient::createForwardEntryCallab
 	return task->get_future();
 }
 
+EnsClient::CreateHaVipOutcome EnsClient::createHaVip(const CreateHaVipRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateHaVipOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateHaVipOutcome(CreateHaVipResult(outcome.result()));
+	else
+		return CreateHaVipOutcome(outcome.error());
+}
+
+void EnsClient::createHaVipAsync(const CreateHaVipRequest& request, const CreateHaVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createHaVip(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CreateHaVipOutcomeCallable EnsClient::createHaVipCallable(const CreateHaVipRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateHaVipOutcome()>>(
+			[this, request]()
+			{
+			return this->createHaVip(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::CreateImageOutcome EnsClient::createImage(const CreateImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1557,6 +1629,42 @@ EnsClient::CreateNetworkAclEntryOutcomeCallable EnsClient::createNetworkAclEntry
 			[this, request]()
 			{
 			return this->createNetworkAclEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::CreateNetworkInterfaceOutcome EnsClient::createNetworkInterface(const CreateNetworkInterfaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateNetworkInterfaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateNetworkInterfaceOutcome(CreateNetworkInterfaceResult(outcome.result()));
+	else
+		return CreateNetworkInterfaceOutcome(outcome.error());
+}
+
+void EnsClient::createNetworkInterfaceAsync(const CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createNetworkInterface(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CreateNetworkInterfaceOutcomeCallable EnsClient::createNetworkInterfaceCallable(const CreateNetworkInterfaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateNetworkInterfaceOutcome()>>(
+			[this, request]()
+			{
+			return this->createNetworkInterface(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2211,6 +2319,42 @@ EnsClient::DeleteForwardEntryOutcomeCallable EnsClient::deleteForwardEntryCallab
 	return task->get_future();
 }
 
+EnsClient::DeleteHaVipsOutcome EnsClient::deleteHaVips(const DeleteHaVipsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteHaVipsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteHaVipsOutcome(DeleteHaVipsResult(outcome.result()));
+	else
+		return DeleteHaVipsOutcome(outcome.error());
+}
+
+void EnsClient::deleteHaVipsAsync(const DeleteHaVipsRequest& request, const DeleteHaVipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteHaVips(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteHaVipsOutcomeCallable EnsClient::deleteHaVipsCallable(const DeleteHaVipsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteHaVipsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteHaVips(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DeleteImageOutcome EnsClient::deleteImage(const DeleteImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2493,6 +2637,42 @@ EnsClient::DeleteNetworkAclEntryOutcomeCallable EnsClient::deleteNetworkAclEntry
 			[this, request]()
 			{
 			return this->deleteNetworkAclEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DeleteNetworkInterfacesOutcome EnsClient::deleteNetworkInterfaces(const DeleteNetworkInterfacesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteNetworkInterfacesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteNetworkInterfacesOutcome(DeleteNetworkInterfacesResult(outcome.result()));
+	else
+		return DeleteNetworkInterfacesOutcome(outcome.error());
+}
+
+void EnsClient::deleteNetworkInterfacesAsync(const DeleteNetworkInterfacesRequest& request, const DeleteNetworkInterfacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteNetworkInterfaces(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteNetworkInterfacesOutcomeCallable EnsClient::deleteNetworkInterfacesCallable(const DeleteNetworkInterfacesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteNetworkInterfacesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteNetworkInterfaces(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3975,6 +4155,42 @@ EnsClient::DescribeEnsRouteEntryListOutcomeCallable EnsClient::describeEnsRouteE
 	return task->get_future();
 }
 
+EnsClient::DescribeEnsRouteTablesOutcome EnsClient::describeEnsRouteTables(const DescribeEnsRouteTablesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEnsRouteTablesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEnsRouteTablesOutcome(DescribeEnsRouteTablesResult(outcome.result()));
+	else
+		return DescribeEnsRouteTablesOutcome(outcome.error());
+}
+
+void EnsClient::describeEnsRouteTablesAsync(const DescribeEnsRouteTablesRequest& request, const DescribeEnsRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEnsRouteTables(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeEnsRouteTablesOutcomeCallable EnsClient::describeEnsRouteTablesCallable(const DescribeEnsRouteTablesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEnsRouteTablesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEnsRouteTables(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeEnsSaleControlOutcome EnsClient::describeEnsSaleControl(const DescribeEnsSaleControlRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4653,6 +4869,42 @@ EnsClient::DescribeInstanceMonitorDataOutcomeCallable EnsClient::describeInstanc
 			[this, request]()
 			{
 			return this->describeInstanceMonitorData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeInstanceSDGStatusOutcome EnsClient::describeInstanceSDGStatus(const DescribeInstanceSDGStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceSDGStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceSDGStatusOutcome(DescribeInstanceSDGStatusResult(outcome.result()));
+	else
+		return DescribeInstanceSDGStatusOutcome(outcome.error());
+}
+
+void EnsClient::describeInstanceSDGStatusAsync(const DescribeInstanceSDGStatusRequest& request, const DescribeInstanceSDGStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceSDGStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeInstanceSDGStatusOutcomeCallable EnsClient::describeInstanceSDGStatusCallable(const DescribeInstanceSDGStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceSDGStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceSDGStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6315,6 +6567,42 @@ EnsClient::DetachDiskOutcomeCallable EnsClient::detachDiskCallable(const DetachD
 	return task->get_future();
 }
 
+EnsClient::DetachInstanceSDGOutcome EnsClient::detachInstanceSDG(const DetachInstanceSDGRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetachInstanceSDGOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetachInstanceSDGOutcome(DetachInstanceSDGResult(outcome.result()));
+	else
+		return DetachInstanceSDGOutcome(outcome.error());
+}
+
+void EnsClient::detachInstanceSDGAsync(const DetachInstanceSDGRequest& request, const DetachInstanceSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detachInstanceSDG(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DetachInstanceSDGOutcomeCallable EnsClient::detachInstanceSDGCallable(const DetachInstanceSDGRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetachInstanceSDGOutcome()>>(
+			[this, request]()
+			{
+			return this->detachInstanceSDG(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DetachNetworkInterfaceOutcome EnsClient::detachNetworkInterface(const DetachNetworkInterfaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7677,6 +7965,42 @@ EnsClient::ModifyVSwitchAttributeOutcomeCallable EnsClient::modifyVSwitchAttribu
 			[this, request]()
 			{
 			return this->modifyVSwitchAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::MountInstanceSDGOutcome EnsClient::mountInstanceSDG(const MountInstanceSDGRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MountInstanceSDGOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MountInstanceSDGOutcome(MountInstanceSDGResult(outcome.result()));
+	else
+		return MountInstanceSDGOutcome(outcome.error());
+}
+
+void EnsClient::mountInstanceSDGAsync(const MountInstanceSDGRequest& request, const MountInstanceSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, mountInstanceSDG(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::MountInstanceSDGOutcomeCallable EnsClient::mountInstanceSDGCallable(const MountInstanceSDGRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MountInstanceSDGOutcome()>>(
+			[this, request]()
+			{
+			return this->mountInstanceSDG(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9873,6 +10197,42 @@ EnsClient::UnloadRegionSDGOutcomeCallable EnsClient::unloadRegionSDGCallable(con
 			[this, request]()
 			{
 			return this->unloadRegionSDG(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::UnmountInstanceSDGOutcome EnsClient::unmountInstanceSDG(const UnmountInstanceSDGRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnmountInstanceSDGOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnmountInstanceSDGOutcome(UnmountInstanceSDGResult(outcome.result()));
+	else
+		return UnmountInstanceSDGOutcome(outcome.error());
+}
+
+void EnsClient::unmountInstanceSDGAsync(const UnmountInstanceSDGRequest& request, const UnmountInstanceSDGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unmountInstanceSDG(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::UnmountInstanceSDGOutcomeCallable EnsClient::unmountInstanceSDGCallable(const UnmountInstanceSDGRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnmountInstanceSDGOutcome()>>(
+			[this, request]()
+			{
+			return this->unmountInstanceSDG(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

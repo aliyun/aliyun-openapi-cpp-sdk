@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBESDGDEPLOYMENTSTATUSRESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBESDGDEPLOYMENTSTATUSRESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBEINSTANCESDGSTATUSRESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_DESCRIBEINSTANCESDGSTATUSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,34 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT DescribeSDGDeploymentStatusResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT DescribeInstanceSDGStatusResult : public ServiceResult
 			{
 			public:
 				struct DeploymentStatusItem
 				{
+					std::string sDGId;
 					std::string status;
 					std::string mountType;
 					std::string phase;
 					std::string instanceId;
 					std::string updateTime;
-					std::string regionId;
+					std::string ensRegionId;
 				};
 
 
-				DescribeSDGDeploymentStatusResult();
-				explicit DescribeSDGDeploymentStatusResult(const std::string &payload);
-				~DescribeSDGDeploymentStatusResult();
-				long getTotalCount()const;
-				long getPageSize()const;
+				DescribeInstanceSDGStatusResult();
+				explicit DescribeInstanceSDGStatusResult(const std::string &payload);
+				~DescribeInstanceSDGStatusResult();
+				std::string getTotalCount()const;
+				std::string getPageSize()const;
 				long getPageNumber()const;
 				std::vector<DeploymentStatusItem> getDeploymentStatus()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalCount_;
-				long pageSize_;
+				std::string totalCount_;
+				std::string pageSize_;
 				long pageNumber_;
 				std::vector<DeploymentStatusItem> deploymentStatus_;
 
@@ -63,4 +64,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBESDGDEPLOYMENTSTATUSRESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBEINSTANCESDGSTATUSRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBESNAPSHOTSREQUEST_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBESNAPSHOTSREQUEST_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBEINSTANCESDGSTATUSREQUEST_H_
+#define ALIBABACLOUD_ENS_MODEL_DESCRIBEINSTANCESDGSTATUSREQUEST_H_
 
 #include <alibabacloud/ens/EnsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,38 +26,29 @@
 namespace AlibabaCloud {
 namespace Ens {
 namespace Model {
-class ALIBABACLOUD_ENS_EXPORT DescribeSnapshotsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ENS_EXPORT DescribeInstanceSDGStatusRequest : public RpcServiceRequest {
 public:
-	DescribeSnapshotsRequest();
-	~DescribeSnapshotsRequest();
-	std::string getEnsRegionId() const;
-	void setEnsRegionId(const std::string &ensRegionId);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
-	std::string getSnapshotId() const;
-	void setSnapshotId(const std::string &snapshotId);
-	std::string getSnapshotName() const;
-	void setSnapshotName(const std::string &snapshotName);
+	DescribeInstanceSDGStatusRequest();
+	~DescribeInstanceSDGStatusRequest();
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	std::string getDiskId() const;
-	void setDiskId(const std::string &diskId);
-	std::string getEnsRegionIds() const;
-	void setEnsRegionIds(const std::string &ensRegionIds);
+	std::vector<std::string> getSDGIds() const;
+	void setSDGIds(const std::vector<std::string> &sDGIds);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getStatus() const;
+	void setStatus(const std::string &status);
 
 private:
-	std::string ensRegionId_;
-	std::string instanceId_;
-	std::string snapshotId_;
-	std::string snapshotName_;
 	int pageNumber_;
 	int pageSize_;
-	std::string diskId_;
-	std::string ensRegionIds_;
+	std::vector<std::string> sDGIds_;
+	std::string instanceId_;
+	std::string status_;
 };
 } // namespace Model
 } // namespace Ens
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBESNAPSHOTSREQUEST_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBEINSTANCESDGSTATUSREQUEST_H_

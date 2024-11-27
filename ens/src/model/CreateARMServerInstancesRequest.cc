@@ -133,6 +133,15 @@ void CreateARMServerInstancesRequest::setAmount(int amount) {
   setParameter(std::string("Amount"), std::to_string(amount));
 }
 
+std::string CreateARMServerInstancesRequest::getEnvironmentVar() const {
+  return environmentVar_;
+}
+
+void CreateARMServerInstancesRequest::setEnvironmentVar(const std::string &environmentVar) {
+  environmentVar_ = environmentVar;
+  setParameter(std::string("EnvironmentVar"), environmentVar);
+}
+
 std::string CreateARMServerInstancesRequest::get_NameSpace() const {
   return _nameSpace_;
 }
