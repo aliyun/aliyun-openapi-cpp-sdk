@@ -30,6 +30,8 @@ class ALIBABACLOUD_VOD_EXPORT SubmitTranscodeJobsRequest : public RpcServiceRequ
 public:
 	SubmitTranscodeJobsRequest();
 	~SubmitTranscodeJobsRequest();
+	std::string getSessionId() const;
+	void setSessionId(const std::string &sessionId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getUserData() const;
@@ -50,6 +52,7 @@ public:
 	void setEncryptConfig(const std::string &encryptConfig);
 
 private:
+	std::string sessionId_;
 	std::string accessKeyId_;
 	std::string userData_;
 	std::string videoId_;

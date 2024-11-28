@@ -52,6 +52,15 @@ void UpdateVideoInfoRequest::setCoverURL(const std::string &coverURL) {
   setParameter(std::string("CoverURL"), coverURL);
 }
 
+std::string UpdateVideoInfoRequest::getUserData() const {
+  return userData_;
+}
+
+void UpdateVideoInfoRequest::setUserData(const std::string &userData) {
+  userData_ = userData;
+  setParameter(std::string("UserData"), userData);
+}
+
 std::string UpdateVideoInfoRequest::getDownloadSwitch() const {
   return downloadSwitch_;
 }

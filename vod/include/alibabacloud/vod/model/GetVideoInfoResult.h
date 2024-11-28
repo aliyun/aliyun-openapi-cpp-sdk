@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					};
 					std::string modifyTime;
 					std::string description;
+					std::string userData;
 					long size;
 					std::string modificationTime;
 					long cateId;

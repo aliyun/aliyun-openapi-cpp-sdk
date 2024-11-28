@@ -25,6 +25,15 @@ SubmitTranscodeJobsRequest::SubmitTranscodeJobsRequest()
 
 SubmitTranscodeJobsRequest::~SubmitTranscodeJobsRequest() {}
 
+std::string SubmitTranscodeJobsRequest::getSessionId() const {
+  return sessionId_;
+}
+
+void SubmitTranscodeJobsRequest::setSessionId(const std::string &sessionId) {
+  sessionId_ = sessionId;
+  setParameter(std::string("SessionId"), sessionId);
+}
+
 std::string SubmitTranscodeJobsRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

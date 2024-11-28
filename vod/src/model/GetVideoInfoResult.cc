@@ -90,6 +90,8 @@ void GetVideoInfoResult::parse(const std::string &payload)
 		video_.restoreStatus = videoNode["RestoreStatus"].asString();
 	if(!videoNode["RestoreExpiration"].isNull())
 		video_.restoreExpiration = videoNode["RestoreExpiration"].asString();
+	if(!videoNode["UserData"].isNull())
+		video_.userData = videoNode["UserData"].asString();
 	auto allThumbnailListNode = videoNode["ThumbnailList"]["Thumbnail"];
 	for (auto videoNodeThumbnailListThumbnail : allThumbnailListNode)
 	{

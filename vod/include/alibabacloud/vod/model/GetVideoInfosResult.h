@@ -38,30 +38,31 @@ namespace AlibabaCloud
 					{
 						std::string uRL;
 					};
-					std::string status;
-					std::string videoId;
 					std::string description;
+					std::string userData;
 					long size;
-					std::string storageClass;
-					std::string downloadSwitch;
-					std::string title;
 					std::string modificationTime;
-					float duration;
 					long cateId;
 					std::string cateName;
 					std::string restoreStatus;
-					std::vector<Video::Thumbnail> thumbnailList;
 					std::string preprocessStatus;
+					std::string storageLocation;
+					std::vector<std::string> snapshots;
+					std::string tags;
+					std::string templateGroupId;
+					std::string status;
+					std::string videoId;
+					std::string storageClass;
+					std::string downloadSwitch;
+					std::string title;
+					float duration;
+					std::vector<Video::Thumbnail> thumbnailList;
 					std::string restoreExpiration;
 					std::string customMediaInfo;
 					std::string appId;
 					std::string creationTime;
 					std::string coverURL;
 					std::string regionId;
-					std::string storageLocation;
-					std::vector<std::string> snapshots;
-					std::string tags;
-					std::string templateGroupId;
 				};
 
 

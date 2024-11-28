@@ -36,6 +36,8 @@ public:
 	void setTitle(const std::string &title);
 	std::string getCoverURL() const;
 	void setCoverURL(const std::string &coverURL);
+	std::string getUserData() const;
+	void setUserData(const std::string &userData);
 	std::string getDownloadSwitch() const;
 	void setDownloadSwitch(const std::string &downloadSwitch);
 	long getCateId() const;
@@ -53,6 +55,7 @@ private:
 	std::string description_;
 	std::string title_;
 	std::string coverURL_;
+	std::string userData_;
 	std::string downloadSwitch_;
 	long cateId_;
 	std::string customMediaInfo_;
