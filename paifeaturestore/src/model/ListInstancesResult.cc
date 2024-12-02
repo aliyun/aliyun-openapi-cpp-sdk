@@ -55,6 +55,9 @@ void ListInstancesResult::parse(const std::string &payload)
 			instancesObject.gmtCreateTime = valueInstancesInstancesItem["GmtCreateTime"].asString();
 		if(!valueInstancesInstancesItem["GmtModifiedTime"].isNull())
 			instancesObject.gmtModifiedTime = valueInstancesInstancesItem["GmtModifiedTime"].asString();
+		auto featureDBInstanceInfoNode = value["FeatureDBInstanceInfo"];
+		if(!featureDBInstanceInfoNode["Status"].isNull())
+			instancesObject.featureDBInstanceInfo.status = featureDBInstanceInfoNode["Status"].asString();
 		instances_.push_back(instancesObject);
 	}
 	if(!value["TotalCount"].isNull())

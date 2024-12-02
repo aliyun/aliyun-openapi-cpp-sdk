@@ -70,6 +70,7 @@ namespace AlibabaCloud
 				std::string getTrainingSetFGTable()const;
 				std::string getName()const;
 				std::string getTrainingSetTable()const;
+				long getLabelPriorityLevel()const;
 				std::string getExportTrainingSetTableScript()const;
 				std::string getLabelTableName()const;
 				std::vector<FeaturesItem> getFeatures()const;
@@ -87,6 +88,7 @@ namespace AlibabaCloud
 				std::string trainingSetFGTable_;
 				std::string name_;
 				std::string trainingSetTable_;
+				long labelPriorityLevel_;
 				std::string exportTrainingSetTableScript_;
 				std::string labelTableName_;
 				std::vector<FeaturesItem> features_;

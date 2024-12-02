@@ -22,8 +22,6 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RoaServiceClient.h>
 #include "PaiFeatureStoreExport.h"
-#include "model/ChangeProjectFeatureEntityHotIdVersionRequest.h"
-#include "model/ChangeProjectFeatureEntityHotIdVersionResult.h"
 #include "model/CheckInstanceDatasourceRequest.h"
 #include "model/CheckInstanceDatasourceResult.h"
 #include "model/CreateDatasourceRequest.h"
@@ -38,8 +36,6 @@
 #include "model/CreateLabelTableResult.h"
 #include "model/CreateModelFeatureRequest.h"
 #include "model/CreateModelFeatureResult.h"
-#include "model/CreateModelFeatureTrainingSetFGTableRequest.h"
-#include "model/CreateModelFeatureTrainingSetFGTableResult.h"
 #include "model/CreateProjectRequest.h"
 #include "model/CreateProjectResult.h"
 #include "model/CreateServiceIdentityRoleRequest.h"
@@ -56,8 +52,6 @@
 #include "model/DeleteModelFeatureResult.h"
 #include "model/DeleteProjectRequest.h"
 #include "model/DeleteProjectResult.h"
-#include "model/ExportModelFeatureTrainingSetFGTableRequest.h"
-#include "model/ExportModelFeatureTrainingSetFGTableResult.h"
 #include "model/ExportModelFeatureTrainingSetTableRequest.h"
 #include "model/ExportModelFeatureTrainingSetTableResult.h"
 #include "model/GetDatasourceRequest.h"
@@ -82,12 +76,6 @@
 #include "model/GetProjectResult.h"
 #include "model/GetProjectFeatureEntityRequest.h"
 #include "model/GetProjectFeatureEntityResult.h"
-#include "model/GetProjectFeatureEntityHotIdsRequest.h"
-#include "model/GetProjectFeatureEntityHotIdsResult.h"
-#include "model/GetProjectFeatureViewRequest.h"
-#include "model/GetProjectFeatureViewResult.h"
-#include "model/GetProjectModelFeatureRequest.h"
-#include "model/GetProjectModelFeatureResult.h"
 #include "model/GetServiceIdentityRoleRequest.h"
 #include "model/GetServiceIdentityRoleResult.h"
 #include "model/GetTaskRequest.h"
@@ -114,10 +102,6 @@
 #include "model/ListModelFeatureAvailableFeaturesResult.h"
 #include "model/ListModelFeaturesRequest.h"
 #include "model/ListModelFeaturesResult.h"
-#include "model/ListProjectFeatureViewOwnersRequest.h"
-#include "model/ListProjectFeatureViewOwnersResult.h"
-#include "model/ListProjectFeatureViewTagsRequest.h"
-#include "model/ListProjectFeatureViewTagsResult.h"
 #include "model/ListProjectFeatureViewsRequest.h"
 #include "model/ListProjectFeatureViewsResult.h"
 #include "model/ListProjectsRequest.h"
@@ -136,14 +120,10 @@
 #include "model/UpdateModelFeatureResult.h"
 #include "model/UpdateModelFeatureFGFeatureRequest.h"
 #include "model/UpdateModelFeatureFGFeatureResult.h"
-#include "model/UpdateModelFeatureFGInfoRequest.h"
-#include "model/UpdateModelFeatureFGInfoResult.h"
 #include "model/UpdateProjectRequest.h"
 #include "model/UpdateProjectResult.h"
 #include "model/WriteFeatureViewTableRequest.h"
 #include "model/WriteFeatureViewTableResult.h"
-#include "model/WriteProjectFeatureEntityHotIdsRequest.h"
-#include "model/WriteProjectFeatureEntityHotIdsResult.h"
 
 
 namespace AlibabaCloud
@@ -153,9 +133,6 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_PAIFEATURESTORE_EXPORT PaiFeatureStoreClient : public RoaServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::ChangeProjectFeatureEntityHotIdVersionResult> ChangeProjectFeatureEntityHotIdVersionOutcome;
-			typedef std::future<ChangeProjectFeatureEntityHotIdVersionOutcome> ChangeProjectFeatureEntityHotIdVersionOutcomeCallable;
-			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ChangeProjectFeatureEntityHotIdVersionRequest&, const ChangeProjectFeatureEntityHotIdVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeProjectFeatureEntityHotIdVersionAsyncHandler;
 			typedef Outcome<Error, Model::CheckInstanceDatasourceResult> CheckInstanceDatasourceOutcome;
 			typedef std::future<CheckInstanceDatasourceOutcome> CheckInstanceDatasourceOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::CheckInstanceDatasourceRequest&, const CheckInstanceDatasourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckInstanceDatasourceAsyncHandler;
@@ -177,9 +154,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateModelFeatureResult> CreateModelFeatureOutcome;
 			typedef std::future<CreateModelFeatureOutcome> CreateModelFeatureOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::CreateModelFeatureRequest&, const CreateModelFeatureOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateModelFeatureAsyncHandler;
-			typedef Outcome<Error, Model::CreateModelFeatureTrainingSetFGTableResult> CreateModelFeatureTrainingSetFGTableOutcome;
-			typedef std::future<CreateModelFeatureTrainingSetFGTableOutcome> CreateModelFeatureTrainingSetFGTableOutcomeCallable;
-			typedef std::function<void(const PaiFeatureStoreClient*, const Model::CreateModelFeatureTrainingSetFGTableRequest&, const CreateModelFeatureTrainingSetFGTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateModelFeatureTrainingSetFGTableAsyncHandler;
 			typedef Outcome<Error, Model::CreateProjectResult> CreateProjectOutcome;
 			typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::CreateProjectRequest&, const CreateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
@@ -204,9 +178,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteProjectResult> DeleteProjectOutcome;
 			typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::DeleteProjectRequest&, const DeleteProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectAsyncHandler;
-			typedef Outcome<Error, Model::ExportModelFeatureTrainingSetFGTableResult> ExportModelFeatureTrainingSetFGTableOutcome;
-			typedef std::future<ExportModelFeatureTrainingSetFGTableOutcome> ExportModelFeatureTrainingSetFGTableOutcomeCallable;
-			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ExportModelFeatureTrainingSetFGTableRequest&, const ExportModelFeatureTrainingSetFGTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExportModelFeatureTrainingSetFGTableAsyncHandler;
 			typedef Outcome<Error, Model::ExportModelFeatureTrainingSetTableResult> ExportModelFeatureTrainingSetTableOutcome;
 			typedef std::future<ExportModelFeatureTrainingSetTableOutcome> ExportModelFeatureTrainingSetTableOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ExportModelFeatureTrainingSetTableRequest&, const ExportModelFeatureTrainingSetTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExportModelFeatureTrainingSetTableAsyncHandler;
@@ -243,15 +214,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetProjectFeatureEntityResult> GetProjectFeatureEntityOutcome;
 			typedef std::future<GetProjectFeatureEntityOutcome> GetProjectFeatureEntityOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::GetProjectFeatureEntityRequest&, const GetProjectFeatureEntityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProjectFeatureEntityAsyncHandler;
-			typedef Outcome<Error, Model::GetProjectFeatureEntityHotIdsResult> GetProjectFeatureEntityHotIdsOutcome;
-			typedef std::future<GetProjectFeatureEntityHotIdsOutcome> GetProjectFeatureEntityHotIdsOutcomeCallable;
-			typedef std::function<void(const PaiFeatureStoreClient*, const Model::GetProjectFeatureEntityHotIdsRequest&, const GetProjectFeatureEntityHotIdsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProjectFeatureEntityHotIdsAsyncHandler;
-			typedef Outcome<Error, Model::GetProjectFeatureViewResult> GetProjectFeatureViewOutcome;
-			typedef std::future<GetProjectFeatureViewOutcome> GetProjectFeatureViewOutcomeCallable;
-			typedef std::function<void(const PaiFeatureStoreClient*, const Model::GetProjectFeatureViewRequest&, const GetProjectFeatureViewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProjectFeatureViewAsyncHandler;
-			typedef Outcome<Error, Model::GetProjectModelFeatureResult> GetProjectModelFeatureOutcome;
-			typedef std::future<GetProjectModelFeatureOutcome> GetProjectModelFeatureOutcomeCallable;
-			typedef std::function<void(const PaiFeatureStoreClient*, const Model::GetProjectModelFeatureRequest&, const GetProjectModelFeatureOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProjectModelFeatureAsyncHandler;
 			typedef Outcome<Error, Model::GetServiceIdentityRoleResult> GetServiceIdentityRoleOutcome;
 			typedef std::future<GetServiceIdentityRoleOutcome> GetServiceIdentityRoleOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::GetServiceIdentityRoleRequest&, const GetServiceIdentityRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceIdentityRoleAsyncHandler;
@@ -291,12 +253,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListModelFeaturesResult> ListModelFeaturesOutcome;
 			typedef std::future<ListModelFeaturesOutcome> ListModelFeaturesOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ListModelFeaturesRequest&, const ListModelFeaturesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListModelFeaturesAsyncHandler;
-			typedef Outcome<Error, Model::ListProjectFeatureViewOwnersResult> ListProjectFeatureViewOwnersOutcome;
-			typedef std::future<ListProjectFeatureViewOwnersOutcome> ListProjectFeatureViewOwnersOutcomeCallable;
-			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ListProjectFeatureViewOwnersRequest&, const ListProjectFeatureViewOwnersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProjectFeatureViewOwnersAsyncHandler;
-			typedef Outcome<Error, Model::ListProjectFeatureViewTagsResult> ListProjectFeatureViewTagsOutcome;
-			typedef std::future<ListProjectFeatureViewTagsOutcome> ListProjectFeatureViewTagsOutcomeCallable;
-			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ListProjectFeatureViewTagsRequest&, const ListProjectFeatureViewTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProjectFeatureViewTagsAsyncHandler;
 			typedef Outcome<Error, Model::ListProjectFeatureViewsResult> ListProjectFeatureViewsOutcome;
 			typedef std::future<ListProjectFeatureViewsOutcome> ListProjectFeatureViewsOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ListProjectFeatureViewsRequest&, const ListProjectFeatureViewsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProjectFeatureViewsAsyncHandler;
@@ -324,26 +280,17 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateModelFeatureFGFeatureResult> UpdateModelFeatureFGFeatureOutcome;
 			typedef std::future<UpdateModelFeatureFGFeatureOutcome> UpdateModelFeatureFGFeatureOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::UpdateModelFeatureFGFeatureRequest&, const UpdateModelFeatureFGFeatureOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateModelFeatureFGFeatureAsyncHandler;
-			typedef Outcome<Error, Model::UpdateModelFeatureFGInfoResult> UpdateModelFeatureFGInfoOutcome;
-			typedef std::future<UpdateModelFeatureFGInfoOutcome> UpdateModelFeatureFGInfoOutcomeCallable;
-			typedef std::function<void(const PaiFeatureStoreClient*, const Model::UpdateModelFeatureFGInfoRequest&, const UpdateModelFeatureFGInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateModelFeatureFGInfoAsyncHandler;
 			typedef Outcome<Error, Model::UpdateProjectResult> UpdateProjectOutcome;
 			typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::UpdateProjectRequest&, const UpdateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProjectAsyncHandler;
 			typedef Outcome<Error, Model::WriteFeatureViewTableResult> WriteFeatureViewTableOutcome;
 			typedef std::future<WriteFeatureViewTableOutcome> WriteFeatureViewTableOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::WriteFeatureViewTableRequest&, const WriteFeatureViewTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> WriteFeatureViewTableAsyncHandler;
-			typedef Outcome<Error, Model::WriteProjectFeatureEntityHotIdsResult> WriteProjectFeatureEntityHotIdsOutcome;
-			typedef std::future<WriteProjectFeatureEntityHotIdsOutcome> WriteProjectFeatureEntityHotIdsOutcomeCallable;
-			typedef std::function<void(const PaiFeatureStoreClient*, const Model::WriteProjectFeatureEntityHotIdsRequest&, const WriteProjectFeatureEntityHotIdsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> WriteProjectFeatureEntityHotIdsAsyncHandler;
 
 			PaiFeatureStoreClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			PaiFeatureStoreClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			PaiFeatureStoreClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~PaiFeatureStoreClient();
-			ChangeProjectFeatureEntityHotIdVersionOutcome changeProjectFeatureEntityHotIdVersion(const Model::ChangeProjectFeatureEntityHotIdVersionRequest &request)const;
-			void changeProjectFeatureEntityHotIdVersionAsync(const Model::ChangeProjectFeatureEntityHotIdVersionRequest& request, const ChangeProjectFeatureEntityHotIdVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ChangeProjectFeatureEntityHotIdVersionOutcomeCallable changeProjectFeatureEntityHotIdVersionCallable(const Model::ChangeProjectFeatureEntityHotIdVersionRequest& request) const;
 			CheckInstanceDatasourceOutcome checkInstanceDatasource(const Model::CheckInstanceDatasourceRequest &request)const;
 			void checkInstanceDatasourceAsync(const Model::CheckInstanceDatasourceRequest& request, const CheckInstanceDatasourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckInstanceDatasourceOutcomeCallable checkInstanceDatasourceCallable(const Model::CheckInstanceDatasourceRequest& request) const;
@@ -365,9 +312,6 @@ namespace AlibabaCloud
 			CreateModelFeatureOutcome createModelFeature(const Model::CreateModelFeatureRequest &request)const;
 			void createModelFeatureAsync(const Model::CreateModelFeatureRequest& request, const CreateModelFeatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateModelFeatureOutcomeCallable createModelFeatureCallable(const Model::CreateModelFeatureRequest& request) const;
-			CreateModelFeatureTrainingSetFGTableOutcome createModelFeatureTrainingSetFGTable(const Model::CreateModelFeatureTrainingSetFGTableRequest &request)const;
-			void createModelFeatureTrainingSetFGTableAsync(const Model::CreateModelFeatureTrainingSetFGTableRequest& request, const CreateModelFeatureTrainingSetFGTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateModelFeatureTrainingSetFGTableOutcomeCallable createModelFeatureTrainingSetFGTableCallable(const Model::CreateModelFeatureTrainingSetFGTableRequest& request) const;
 			CreateProjectOutcome createProject(const Model::CreateProjectRequest &request)const;
 			void createProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateProjectOutcomeCallable createProjectCallable(const Model::CreateProjectRequest& request) const;
@@ -392,9 +336,6 @@ namespace AlibabaCloud
 			DeleteProjectOutcome deleteProject(const Model::DeleteProjectRequest &request)const;
 			void deleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteProjectOutcomeCallable deleteProjectCallable(const Model::DeleteProjectRequest& request) const;
-			ExportModelFeatureTrainingSetFGTableOutcome exportModelFeatureTrainingSetFGTable(const Model::ExportModelFeatureTrainingSetFGTableRequest &request)const;
-			void exportModelFeatureTrainingSetFGTableAsync(const Model::ExportModelFeatureTrainingSetFGTableRequest& request, const ExportModelFeatureTrainingSetFGTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ExportModelFeatureTrainingSetFGTableOutcomeCallable exportModelFeatureTrainingSetFGTableCallable(const Model::ExportModelFeatureTrainingSetFGTableRequest& request) const;
 			ExportModelFeatureTrainingSetTableOutcome exportModelFeatureTrainingSetTable(const Model::ExportModelFeatureTrainingSetTableRequest &request)const;
 			void exportModelFeatureTrainingSetTableAsync(const Model::ExportModelFeatureTrainingSetTableRequest& request, const ExportModelFeatureTrainingSetTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExportModelFeatureTrainingSetTableOutcomeCallable exportModelFeatureTrainingSetTableCallable(const Model::ExportModelFeatureTrainingSetTableRequest& request) const;
@@ -431,15 +372,6 @@ namespace AlibabaCloud
 			GetProjectFeatureEntityOutcome getProjectFeatureEntity(const Model::GetProjectFeatureEntityRequest &request)const;
 			void getProjectFeatureEntityAsync(const Model::GetProjectFeatureEntityRequest& request, const GetProjectFeatureEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetProjectFeatureEntityOutcomeCallable getProjectFeatureEntityCallable(const Model::GetProjectFeatureEntityRequest& request) const;
-			GetProjectFeatureEntityHotIdsOutcome getProjectFeatureEntityHotIds(const Model::GetProjectFeatureEntityHotIdsRequest &request)const;
-			void getProjectFeatureEntityHotIdsAsync(const Model::GetProjectFeatureEntityHotIdsRequest& request, const GetProjectFeatureEntityHotIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetProjectFeatureEntityHotIdsOutcomeCallable getProjectFeatureEntityHotIdsCallable(const Model::GetProjectFeatureEntityHotIdsRequest& request) const;
-			GetProjectFeatureViewOutcome getProjectFeatureView(const Model::GetProjectFeatureViewRequest &request)const;
-			void getProjectFeatureViewAsync(const Model::GetProjectFeatureViewRequest& request, const GetProjectFeatureViewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetProjectFeatureViewOutcomeCallable getProjectFeatureViewCallable(const Model::GetProjectFeatureViewRequest& request) const;
-			GetProjectModelFeatureOutcome getProjectModelFeature(const Model::GetProjectModelFeatureRequest &request)const;
-			void getProjectModelFeatureAsync(const Model::GetProjectModelFeatureRequest& request, const GetProjectModelFeatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetProjectModelFeatureOutcomeCallable getProjectModelFeatureCallable(const Model::GetProjectModelFeatureRequest& request) const;
 			GetServiceIdentityRoleOutcome getServiceIdentityRole(const Model::GetServiceIdentityRoleRequest &request)const;
 			void getServiceIdentityRoleAsync(const Model::GetServiceIdentityRoleRequest& request, const GetServiceIdentityRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetServiceIdentityRoleOutcomeCallable getServiceIdentityRoleCallable(const Model::GetServiceIdentityRoleRequest& request) const;
@@ -479,12 +411,6 @@ namespace AlibabaCloud
 			ListModelFeaturesOutcome listModelFeatures(const Model::ListModelFeaturesRequest &request)const;
 			void listModelFeaturesAsync(const Model::ListModelFeaturesRequest& request, const ListModelFeaturesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListModelFeaturesOutcomeCallable listModelFeaturesCallable(const Model::ListModelFeaturesRequest& request) const;
-			ListProjectFeatureViewOwnersOutcome listProjectFeatureViewOwners(const Model::ListProjectFeatureViewOwnersRequest &request)const;
-			void listProjectFeatureViewOwnersAsync(const Model::ListProjectFeatureViewOwnersRequest& request, const ListProjectFeatureViewOwnersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListProjectFeatureViewOwnersOutcomeCallable listProjectFeatureViewOwnersCallable(const Model::ListProjectFeatureViewOwnersRequest& request) const;
-			ListProjectFeatureViewTagsOutcome listProjectFeatureViewTags(const Model::ListProjectFeatureViewTagsRequest &request)const;
-			void listProjectFeatureViewTagsAsync(const Model::ListProjectFeatureViewTagsRequest& request, const ListProjectFeatureViewTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListProjectFeatureViewTagsOutcomeCallable listProjectFeatureViewTagsCallable(const Model::ListProjectFeatureViewTagsRequest& request) const;
 			ListProjectFeatureViewsOutcome listProjectFeatureViews(const Model::ListProjectFeatureViewsRequest &request)const;
 			void listProjectFeatureViewsAsync(const Model::ListProjectFeatureViewsRequest& request, const ListProjectFeatureViewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListProjectFeatureViewsOutcomeCallable listProjectFeatureViewsCallable(const Model::ListProjectFeatureViewsRequest& request) const;
@@ -512,18 +438,12 @@ namespace AlibabaCloud
 			UpdateModelFeatureFGFeatureOutcome updateModelFeatureFGFeature(const Model::UpdateModelFeatureFGFeatureRequest &request)const;
 			void updateModelFeatureFGFeatureAsync(const Model::UpdateModelFeatureFGFeatureRequest& request, const UpdateModelFeatureFGFeatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateModelFeatureFGFeatureOutcomeCallable updateModelFeatureFGFeatureCallable(const Model::UpdateModelFeatureFGFeatureRequest& request) const;
-			UpdateModelFeatureFGInfoOutcome updateModelFeatureFGInfo(const Model::UpdateModelFeatureFGInfoRequest &request)const;
-			void updateModelFeatureFGInfoAsync(const Model::UpdateModelFeatureFGInfoRequest& request, const UpdateModelFeatureFGInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateModelFeatureFGInfoOutcomeCallable updateModelFeatureFGInfoCallable(const Model::UpdateModelFeatureFGInfoRequest& request) const;
 			UpdateProjectOutcome updateProject(const Model::UpdateProjectRequest &request)const;
 			void updateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateProjectOutcomeCallable updateProjectCallable(const Model::UpdateProjectRequest& request) const;
 			WriteFeatureViewTableOutcome writeFeatureViewTable(const Model::WriteFeatureViewTableRequest &request)const;
 			void writeFeatureViewTableAsync(const Model::WriteFeatureViewTableRequest& request, const WriteFeatureViewTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			WriteFeatureViewTableOutcomeCallable writeFeatureViewTableCallable(const Model::WriteFeatureViewTableRequest& request) const;
-			WriteProjectFeatureEntityHotIdsOutcome writeProjectFeatureEntityHotIds(const Model::WriteProjectFeatureEntityHotIdsRequest &request)const;
-			void writeProjectFeatureEntityHotIdsAsync(const Model::WriteProjectFeatureEntityHotIdsRequest& request, const WriteProjectFeatureEntityHotIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			WriteProjectFeatureEntityHotIdsOutcomeCallable writeProjectFeatureEntityHotIdsCallable(const Model::WriteProjectFeatureEntityHotIdsRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

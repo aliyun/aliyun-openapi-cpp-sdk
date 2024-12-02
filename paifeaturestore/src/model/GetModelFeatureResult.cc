@@ -102,6 +102,8 @@ void GetModelFeatureResult::parse(const std::string &payload)
 		trainingSetFGTable_ = value["TrainingSetFGTable"].asString();
 	if(!value["ExportTrainingSetTableScript"].isNull())
 		exportTrainingSetTableScript_ = value["ExportTrainingSetTableScript"].asString();
+	if(!value["LabelPriorityLevel"].isNull())
+		labelPriorityLevel_ = std::stol(value["LabelPriorityLevel"].asString());
 
 }
 
@@ -143,6 +145,11 @@ std::string GetModelFeatureResult::getName()const
 std::string GetModelFeatureResult::getTrainingSetTable()const
 {
 	return trainingSetTable_;
+}
+
+long GetModelFeatureResult::getLabelPriorityLevel()const
+{
+	return labelPriorityLevel_;
 }
 
 std::string GetModelFeatureResult::getExportTrainingSetTableScript()const

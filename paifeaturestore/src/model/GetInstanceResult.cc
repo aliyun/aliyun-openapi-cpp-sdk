@@ -39,6 +39,9 @@ void GetInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto featureDBInstanceInfoNode = value["FeatureDBInstanceInfo"];
+	if(!featureDBInstanceInfoNode["Status"].isNull())
+		featureDBInstanceInfo_.status = featureDBInstanceInfoNode["Status"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
 	if(!value["RegionId"].isNull())
@@ -74,6 +77,11 @@ std::string GetInstanceResult::getType()const
 std::string GetInstanceResult::getMessage()const
 {
 	return message_;
+}
+
+GetInstanceResult::FeatureDBInstanceInfo GetInstanceResult::getFeatureDBInstanceInfo()const
+{
+	return featureDBInstanceInfo_;
 }
 
 std::string GetInstanceResult::getRegionId()const

@@ -51,42 +51,6 @@ PaiFeatureStoreClient::PaiFeatureStoreClient(const std::string & accessKeyId, co
 PaiFeatureStoreClient::~PaiFeatureStoreClient()
 {}
 
-PaiFeatureStoreClient::ChangeProjectFeatureEntityHotIdVersionOutcome PaiFeatureStoreClient::changeProjectFeatureEntityHotIdVersion(const ChangeProjectFeatureEntityHotIdVersionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ChangeProjectFeatureEntityHotIdVersionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ChangeProjectFeatureEntityHotIdVersionOutcome(ChangeProjectFeatureEntityHotIdVersionResult(outcome.result()));
-	else
-		return ChangeProjectFeatureEntityHotIdVersionOutcome(outcome.error());
-}
-
-void PaiFeatureStoreClient::changeProjectFeatureEntityHotIdVersionAsync(const ChangeProjectFeatureEntityHotIdVersionRequest& request, const ChangeProjectFeatureEntityHotIdVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, changeProjectFeatureEntityHotIdVersion(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PaiFeatureStoreClient::ChangeProjectFeatureEntityHotIdVersionOutcomeCallable PaiFeatureStoreClient::changeProjectFeatureEntityHotIdVersionCallable(const ChangeProjectFeatureEntityHotIdVersionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ChangeProjectFeatureEntityHotIdVersionOutcome()>>(
-			[this, request]()
-			{
-			return this->changeProjectFeatureEntityHotIdVersion(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 PaiFeatureStoreClient::CheckInstanceDatasourceOutcome PaiFeatureStoreClient::checkInstanceDatasource(const CheckInstanceDatasourceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,42 +297,6 @@ PaiFeatureStoreClient::CreateModelFeatureOutcomeCallable PaiFeatureStoreClient::
 			[this, request]()
 			{
 			return this->createModelFeature(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PaiFeatureStoreClient::CreateModelFeatureTrainingSetFGTableOutcome PaiFeatureStoreClient::createModelFeatureTrainingSetFGTable(const CreateModelFeatureTrainingSetFGTableRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateModelFeatureTrainingSetFGTableOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateModelFeatureTrainingSetFGTableOutcome(CreateModelFeatureTrainingSetFGTableResult(outcome.result()));
-	else
-		return CreateModelFeatureTrainingSetFGTableOutcome(outcome.error());
-}
-
-void PaiFeatureStoreClient::createModelFeatureTrainingSetFGTableAsync(const CreateModelFeatureTrainingSetFGTableRequest& request, const CreateModelFeatureTrainingSetFGTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createModelFeatureTrainingSetFGTable(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PaiFeatureStoreClient::CreateModelFeatureTrainingSetFGTableOutcomeCallable PaiFeatureStoreClient::createModelFeatureTrainingSetFGTableCallable(const CreateModelFeatureTrainingSetFGTableRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateModelFeatureTrainingSetFGTableOutcome()>>(
-			[this, request]()
-			{
-			return this->createModelFeatureTrainingSetFGTable(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -657,42 +585,6 @@ PaiFeatureStoreClient::DeleteProjectOutcomeCallable PaiFeatureStoreClient::delet
 			[this, request]()
 			{
 			return this->deleteProject(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PaiFeatureStoreClient::ExportModelFeatureTrainingSetFGTableOutcome PaiFeatureStoreClient::exportModelFeatureTrainingSetFGTable(const ExportModelFeatureTrainingSetFGTableRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ExportModelFeatureTrainingSetFGTableOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ExportModelFeatureTrainingSetFGTableOutcome(ExportModelFeatureTrainingSetFGTableResult(outcome.result()));
-	else
-		return ExportModelFeatureTrainingSetFGTableOutcome(outcome.error());
-}
-
-void PaiFeatureStoreClient::exportModelFeatureTrainingSetFGTableAsync(const ExportModelFeatureTrainingSetFGTableRequest& request, const ExportModelFeatureTrainingSetFGTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, exportModelFeatureTrainingSetFGTable(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PaiFeatureStoreClient::ExportModelFeatureTrainingSetFGTableOutcomeCallable PaiFeatureStoreClient::exportModelFeatureTrainingSetFGTableCallable(const ExportModelFeatureTrainingSetFGTableRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ExportModelFeatureTrainingSetFGTableOutcome()>>(
-			[this, request]()
-			{
-			return this->exportModelFeatureTrainingSetFGTable(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1125,114 +1017,6 @@ PaiFeatureStoreClient::GetProjectFeatureEntityOutcomeCallable PaiFeatureStoreCli
 			[this, request]()
 			{
 			return this->getProjectFeatureEntity(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PaiFeatureStoreClient::GetProjectFeatureEntityHotIdsOutcome PaiFeatureStoreClient::getProjectFeatureEntityHotIds(const GetProjectFeatureEntityHotIdsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetProjectFeatureEntityHotIdsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetProjectFeatureEntityHotIdsOutcome(GetProjectFeatureEntityHotIdsResult(outcome.result()));
-	else
-		return GetProjectFeatureEntityHotIdsOutcome(outcome.error());
-}
-
-void PaiFeatureStoreClient::getProjectFeatureEntityHotIdsAsync(const GetProjectFeatureEntityHotIdsRequest& request, const GetProjectFeatureEntityHotIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getProjectFeatureEntityHotIds(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PaiFeatureStoreClient::GetProjectFeatureEntityHotIdsOutcomeCallable PaiFeatureStoreClient::getProjectFeatureEntityHotIdsCallable(const GetProjectFeatureEntityHotIdsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetProjectFeatureEntityHotIdsOutcome()>>(
-			[this, request]()
-			{
-			return this->getProjectFeatureEntityHotIds(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PaiFeatureStoreClient::GetProjectFeatureViewOutcome PaiFeatureStoreClient::getProjectFeatureView(const GetProjectFeatureViewRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetProjectFeatureViewOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetProjectFeatureViewOutcome(GetProjectFeatureViewResult(outcome.result()));
-	else
-		return GetProjectFeatureViewOutcome(outcome.error());
-}
-
-void PaiFeatureStoreClient::getProjectFeatureViewAsync(const GetProjectFeatureViewRequest& request, const GetProjectFeatureViewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getProjectFeatureView(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PaiFeatureStoreClient::GetProjectFeatureViewOutcomeCallable PaiFeatureStoreClient::getProjectFeatureViewCallable(const GetProjectFeatureViewRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetProjectFeatureViewOutcome()>>(
-			[this, request]()
-			{
-			return this->getProjectFeatureView(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PaiFeatureStoreClient::GetProjectModelFeatureOutcome PaiFeatureStoreClient::getProjectModelFeature(const GetProjectModelFeatureRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetProjectModelFeatureOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetProjectModelFeatureOutcome(GetProjectModelFeatureResult(outcome.result()));
-	else
-		return GetProjectModelFeatureOutcome(outcome.error());
-}
-
-void PaiFeatureStoreClient::getProjectModelFeatureAsync(const GetProjectModelFeatureRequest& request, const GetProjectModelFeatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getProjectModelFeature(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PaiFeatureStoreClient::GetProjectModelFeatureOutcomeCallable PaiFeatureStoreClient::getProjectModelFeatureCallable(const GetProjectModelFeatureRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetProjectModelFeatureOutcome()>>(
-			[this, request]()
-			{
-			return this->getProjectModelFeature(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1707,78 +1491,6 @@ PaiFeatureStoreClient::ListModelFeaturesOutcomeCallable PaiFeatureStoreClient::l
 	return task->get_future();
 }
 
-PaiFeatureStoreClient::ListProjectFeatureViewOwnersOutcome PaiFeatureStoreClient::listProjectFeatureViewOwners(const ListProjectFeatureViewOwnersRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListProjectFeatureViewOwnersOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListProjectFeatureViewOwnersOutcome(ListProjectFeatureViewOwnersResult(outcome.result()));
-	else
-		return ListProjectFeatureViewOwnersOutcome(outcome.error());
-}
-
-void PaiFeatureStoreClient::listProjectFeatureViewOwnersAsync(const ListProjectFeatureViewOwnersRequest& request, const ListProjectFeatureViewOwnersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listProjectFeatureViewOwners(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PaiFeatureStoreClient::ListProjectFeatureViewOwnersOutcomeCallable PaiFeatureStoreClient::listProjectFeatureViewOwnersCallable(const ListProjectFeatureViewOwnersRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListProjectFeatureViewOwnersOutcome()>>(
-			[this, request]()
-			{
-			return this->listProjectFeatureViewOwners(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PaiFeatureStoreClient::ListProjectFeatureViewTagsOutcome PaiFeatureStoreClient::listProjectFeatureViewTags(const ListProjectFeatureViewTagsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListProjectFeatureViewTagsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListProjectFeatureViewTagsOutcome(ListProjectFeatureViewTagsResult(outcome.result()));
-	else
-		return ListProjectFeatureViewTagsOutcome(outcome.error());
-}
-
-void PaiFeatureStoreClient::listProjectFeatureViewTagsAsync(const ListProjectFeatureViewTagsRequest& request, const ListProjectFeatureViewTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listProjectFeatureViewTags(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PaiFeatureStoreClient::ListProjectFeatureViewTagsOutcomeCallable PaiFeatureStoreClient::listProjectFeatureViewTagsCallable(const ListProjectFeatureViewTagsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListProjectFeatureViewTagsOutcome()>>(
-			[this, request]()
-			{
-			return this->listProjectFeatureViewTags(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 PaiFeatureStoreClient::ListProjectFeatureViewsOutcome PaiFeatureStoreClient::listProjectFeatureViews(const ListProjectFeatureViewsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2103,42 +1815,6 @@ PaiFeatureStoreClient::UpdateModelFeatureFGFeatureOutcomeCallable PaiFeatureStor
 	return task->get_future();
 }
 
-PaiFeatureStoreClient::UpdateModelFeatureFGInfoOutcome PaiFeatureStoreClient::updateModelFeatureFGInfo(const UpdateModelFeatureFGInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateModelFeatureFGInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateModelFeatureFGInfoOutcome(UpdateModelFeatureFGInfoResult(outcome.result()));
-	else
-		return UpdateModelFeatureFGInfoOutcome(outcome.error());
-}
-
-void PaiFeatureStoreClient::updateModelFeatureFGInfoAsync(const UpdateModelFeatureFGInfoRequest& request, const UpdateModelFeatureFGInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateModelFeatureFGInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PaiFeatureStoreClient::UpdateModelFeatureFGInfoOutcomeCallable PaiFeatureStoreClient::updateModelFeatureFGInfoCallable(const UpdateModelFeatureFGInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateModelFeatureFGInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->updateModelFeatureFGInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 PaiFeatureStoreClient::UpdateProjectOutcome PaiFeatureStoreClient::updateProject(const UpdateProjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2205,42 +1881,6 @@ PaiFeatureStoreClient::WriteFeatureViewTableOutcomeCallable PaiFeatureStoreClien
 			[this, request]()
 			{
 			return this->writeFeatureViewTable(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PaiFeatureStoreClient::WriteProjectFeatureEntityHotIdsOutcome PaiFeatureStoreClient::writeProjectFeatureEntityHotIds(const WriteProjectFeatureEntityHotIdsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return WriteProjectFeatureEntityHotIdsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return WriteProjectFeatureEntityHotIdsOutcome(WriteProjectFeatureEntityHotIdsResult(outcome.result()));
-	else
-		return WriteProjectFeatureEntityHotIdsOutcome(outcome.error());
-}
-
-void PaiFeatureStoreClient::writeProjectFeatureEntityHotIdsAsync(const WriteProjectFeatureEntityHotIdsRequest& request, const WriteProjectFeatureEntityHotIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, writeProjectFeatureEntityHotIds(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PaiFeatureStoreClient::WriteProjectFeatureEntityHotIdsOutcomeCallable PaiFeatureStoreClient::writeProjectFeatureEntityHotIdsCallable(const WriteProjectFeatureEntityHotIdsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<WriteProjectFeatureEntityHotIdsOutcome()>>(
-			[this, request]()
-			{
-			return this->writeProjectFeatureEntityHotIds(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

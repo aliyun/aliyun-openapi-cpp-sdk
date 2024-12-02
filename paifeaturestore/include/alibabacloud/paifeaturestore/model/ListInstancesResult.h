@@ -34,9 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct InstancesItem
 				{
+					struct FeatureDBInstanceInfo
+					{
+						std::string status;
+					};
 					std::string status;
 					std::string type;
 					std::string instanceId;
+					FeatureDBInstanceInfo featureDBInstanceInfo;
 					std::string regionId;
 					std::string gmtCreateTime;
 					std::string gmtModifiedTime;

@@ -32,6 +32,10 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_PAIFEATURESTORE_EXPORT GetInstanceResult : public ServiceResult
 			{
 			public:
+				struct FeatureDBInstanceInfo
+				{
+					std::string status;
+				};
 
 
 				GetInstanceResult();
@@ -41,6 +45,7 @@ namespace AlibabaCloud
 				double getProgress()const;
 				std::string getType()const;
 				std::string getMessage()const;
+				FeatureDBInstanceInfo getFeatureDBInstanceInfo()const;
 				std::string getRegionId()const;
 				std::string getGmtCreateTime()const;
 				std::string getGmtModifiedTime()const;
@@ -52,6 +57,7 @@ namespace AlibabaCloud
 				double progress_;
 				std::string type_;
 				std::string message_;
+				FeatureDBInstanceInfo featureDBInstanceInfo_;
 				std::string regionId_;
 				std::string gmtCreateTime_;
 				std::string gmtModifiedTime_;

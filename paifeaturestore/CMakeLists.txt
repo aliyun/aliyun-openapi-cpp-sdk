@@ -21,8 +21,6 @@ set(paifeaturestore_public_header
 	include/alibabacloud/paifeaturestore/PaiFeatureStoreExport.h )
 
 set(paifeaturestore_public_header_model 
-	include/alibabacloud/paifeaturestore/model/ChangeProjectFeatureEntityHotIdVersionRequest.h
-	include/alibabacloud/paifeaturestore/model/ChangeProjectFeatureEntityHotIdVersionResult.h
 	include/alibabacloud/paifeaturestore/model/CheckInstanceDatasourceRequest.h
 	include/alibabacloud/paifeaturestore/model/CheckInstanceDatasourceResult.h
 	include/alibabacloud/paifeaturestore/model/CreateDatasourceRequest.h
@@ -37,8 +35,6 @@ set(paifeaturestore_public_header_model
 	include/alibabacloud/paifeaturestore/model/CreateLabelTableResult.h
 	include/alibabacloud/paifeaturestore/model/CreateModelFeatureRequest.h
 	include/alibabacloud/paifeaturestore/model/CreateModelFeatureResult.h
-	include/alibabacloud/paifeaturestore/model/CreateModelFeatureTrainingSetFGTableRequest.h
-	include/alibabacloud/paifeaturestore/model/CreateModelFeatureTrainingSetFGTableResult.h
 	include/alibabacloud/paifeaturestore/model/CreateProjectRequest.h
 	include/alibabacloud/paifeaturestore/model/CreateProjectResult.h
 	include/alibabacloud/paifeaturestore/model/CreateServiceIdentityRoleRequest.h
@@ -55,8 +51,6 @@ set(paifeaturestore_public_header_model
 	include/alibabacloud/paifeaturestore/model/DeleteModelFeatureResult.h
 	include/alibabacloud/paifeaturestore/model/DeleteProjectRequest.h
 	include/alibabacloud/paifeaturestore/model/DeleteProjectResult.h
-	include/alibabacloud/paifeaturestore/model/ExportModelFeatureTrainingSetFGTableRequest.h
-	include/alibabacloud/paifeaturestore/model/ExportModelFeatureTrainingSetFGTableResult.h
 	include/alibabacloud/paifeaturestore/model/ExportModelFeatureTrainingSetTableRequest.h
 	include/alibabacloud/paifeaturestore/model/ExportModelFeatureTrainingSetTableResult.h
 	include/alibabacloud/paifeaturestore/model/GetDatasourceRequest.h
@@ -81,12 +75,6 @@ set(paifeaturestore_public_header_model
 	include/alibabacloud/paifeaturestore/model/GetProjectResult.h
 	include/alibabacloud/paifeaturestore/model/GetProjectFeatureEntityRequest.h
 	include/alibabacloud/paifeaturestore/model/GetProjectFeatureEntityResult.h
-	include/alibabacloud/paifeaturestore/model/GetProjectFeatureEntityHotIdsRequest.h
-	include/alibabacloud/paifeaturestore/model/GetProjectFeatureEntityHotIdsResult.h
-	include/alibabacloud/paifeaturestore/model/GetProjectFeatureViewRequest.h
-	include/alibabacloud/paifeaturestore/model/GetProjectFeatureViewResult.h
-	include/alibabacloud/paifeaturestore/model/GetProjectModelFeatureRequest.h
-	include/alibabacloud/paifeaturestore/model/GetProjectModelFeatureResult.h
 	include/alibabacloud/paifeaturestore/model/GetServiceIdentityRoleRequest.h
 	include/alibabacloud/paifeaturestore/model/GetServiceIdentityRoleResult.h
 	include/alibabacloud/paifeaturestore/model/GetTaskRequest.h
@@ -113,10 +101,6 @@ set(paifeaturestore_public_header_model
 	include/alibabacloud/paifeaturestore/model/ListModelFeatureAvailableFeaturesResult.h
 	include/alibabacloud/paifeaturestore/model/ListModelFeaturesRequest.h
 	include/alibabacloud/paifeaturestore/model/ListModelFeaturesResult.h
-	include/alibabacloud/paifeaturestore/model/ListProjectFeatureViewOwnersRequest.h
-	include/alibabacloud/paifeaturestore/model/ListProjectFeatureViewOwnersResult.h
-	include/alibabacloud/paifeaturestore/model/ListProjectFeatureViewTagsRequest.h
-	include/alibabacloud/paifeaturestore/model/ListProjectFeatureViewTagsResult.h
 	include/alibabacloud/paifeaturestore/model/ListProjectFeatureViewsRequest.h
 	include/alibabacloud/paifeaturestore/model/ListProjectFeatureViewsResult.h
 	include/alibabacloud/paifeaturestore/model/ListProjectsRequest.h
@@ -135,19 +119,13 @@ set(paifeaturestore_public_header_model
 	include/alibabacloud/paifeaturestore/model/UpdateModelFeatureResult.h
 	include/alibabacloud/paifeaturestore/model/UpdateModelFeatureFGFeatureRequest.h
 	include/alibabacloud/paifeaturestore/model/UpdateModelFeatureFGFeatureResult.h
-	include/alibabacloud/paifeaturestore/model/UpdateModelFeatureFGInfoRequest.h
-	include/alibabacloud/paifeaturestore/model/UpdateModelFeatureFGInfoResult.h
 	include/alibabacloud/paifeaturestore/model/UpdateProjectRequest.h
 	include/alibabacloud/paifeaturestore/model/UpdateProjectResult.h
 	include/alibabacloud/paifeaturestore/model/WriteFeatureViewTableRequest.h
-	include/alibabacloud/paifeaturestore/model/WriteFeatureViewTableResult.h
-	include/alibabacloud/paifeaturestore/model/WriteProjectFeatureEntityHotIdsRequest.h
-	include/alibabacloud/paifeaturestore/model/WriteProjectFeatureEntityHotIdsResult.h )
+	include/alibabacloud/paifeaturestore/model/WriteFeatureViewTableResult.h )
 
 set(paifeaturestore_src 
 	src/PaiFeatureStoreClient.cc
-	src/model/ChangeProjectFeatureEntityHotIdVersionRequest.cc
-	src/model/ChangeProjectFeatureEntityHotIdVersionResult.cc
 	src/model/CheckInstanceDatasourceRequest.cc
 	src/model/CheckInstanceDatasourceResult.cc
 	src/model/CreateDatasourceRequest.cc
@@ -162,8 +140,6 @@ set(paifeaturestore_src
 	src/model/CreateLabelTableResult.cc
 	src/model/CreateModelFeatureRequest.cc
 	src/model/CreateModelFeatureResult.cc
-	src/model/CreateModelFeatureTrainingSetFGTableRequest.cc
-	src/model/CreateModelFeatureTrainingSetFGTableResult.cc
 	src/model/CreateProjectRequest.cc
 	src/model/CreateProjectResult.cc
 	src/model/CreateServiceIdentityRoleRequest.cc
@@ -180,8 +156,6 @@ set(paifeaturestore_src
 	src/model/DeleteModelFeatureResult.cc
 	src/model/DeleteProjectRequest.cc
 	src/model/DeleteProjectResult.cc
-	src/model/ExportModelFeatureTrainingSetFGTableRequest.cc
-	src/model/ExportModelFeatureTrainingSetFGTableResult.cc
 	src/model/ExportModelFeatureTrainingSetTableRequest.cc
 	src/model/ExportModelFeatureTrainingSetTableResult.cc
 	src/model/GetDatasourceRequest.cc
@@ -206,12 +180,6 @@ set(paifeaturestore_src
 	src/model/GetProjectResult.cc
 	src/model/GetProjectFeatureEntityRequest.cc
 	src/model/GetProjectFeatureEntityResult.cc
-	src/model/GetProjectFeatureEntityHotIdsRequest.cc
-	src/model/GetProjectFeatureEntityHotIdsResult.cc
-	src/model/GetProjectFeatureViewRequest.cc
-	src/model/GetProjectFeatureViewResult.cc
-	src/model/GetProjectModelFeatureRequest.cc
-	src/model/GetProjectModelFeatureResult.cc
 	src/model/GetServiceIdentityRoleRequest.cc
 	src/model/GetServiceIdentityRoleResult.cc
 	src/model/GetTaskRequest.cc
@@ -238,10 +206,6 @@ set(paifeaturestore_src
 	src/model/ListModelFeatureAvailableFeaturesResult.cc
 	src/model/ListModelFeaturesRequest.cc
 	src/model/ListModelFeaturesResult.cc
-	src/model/ListProjectFeatureViewOwnersRequest.cc
-	src/model/ListProjectFeatureViewOwnersResult.cc
-	src/model/ListProjectFeatureViewTagsRequest.cc
-	src/model/ListProjectFeatureViewTagsResult.cc
 	src/model/ListProjectFeatureViewsRequest.cc
 	src/model/ListProjectFeatureViewsResult.cc
 	src/model/ListProjectsRequest.cc
@@ -260,14 +224,10 @@ set(paifeaturestore_src
 	src/model/UpdateModelFeatureResult.cc
 	src/model/UpdateModelFeatureFGFeatureRequest.cc
 	src/model/UpdateModelFeatureFGFeatureResult.cc
-	src/model/UpdateModelFeatureFGInfoRequest.cc
-	src/model/UpdateModelFeatureFGInfoResult.cc
 	src/model/UpdateProjectRequest.cc
 	src/model/UpdateProjectResult.cc
 	src/model/WriteFeatureViewTableRequest.cc
-	src/model/WriteFeatureViewTableResult.cc
-	src/model/WriteProjectFeatureEntityHotIdsRequest.cc
-	src/model/WriteProjectFeatureEntityHotIdsResult.cc )
+	src/model/WriteFeatureViewTableResult.cc )
 
 add_library(paifeaturestore ${LIB_TYPE}
 	${paifeaturestore_public_header}
