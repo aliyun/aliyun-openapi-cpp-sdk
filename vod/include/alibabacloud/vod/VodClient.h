@@ -212,6 +212,8 @@
 #include "model/GetImageInfoResult.h"
 #include "model/GetImageInfosRequest.h"
 #include "model/GetImageInfosResult.h"
+#include "model/GetJobDetailRequest.h"
+#include "model/GetJobDetailResult.h"
 #include "model/GetMediaAuditAudioResultDetailRequest.h"
 #include "model/GetMediaAuditAudioResultDetailResult.h"
 #include "model/GetMediaAuditResultRequest.h"
@@ -266,6 +268,8 @@
 #include "model/ListAuditSecurityIpResult.h"
 #include "model/ListDynamicImageRequest.h"
 #include "model/ListDynamicImageResult.h"
+#include "model/ListJobInfoRequest.h"
+#include "model/ListJobInfoResult.h"
 #include "model/ListLiveRecordVideoRequest.h"
 #include "model/ListLiveRecordVideoResult.h"
 #include "model/ListSnapshotsRequest.h"
@@ -664,6 +668,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetImageInfosResult> GetImageInfosOutcome;
 			typedef std::future<GetImageInfosOutcome> GetImageInfosOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetImageInfosRequest&, const GetImageInfosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetImageInfosAsyncHandler;
+			typedef Outcome<Error, Model::GetJobDetailResult> GetJobDetailOutcome;
+			typedef std::future<GetJobDetailOutcome> GetJobDetailOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::GetJobDetailRequest&, const GetJobDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobDetailAsyncHandler;
 			typedef Outcome<Error, Model::GetMediaAuditAudioResultDetailResult> GetMediaAuditAudioResultDetailOutcome;
 			typedef std::future<GetMediaAuditAudioResultDetailOutcome> GetMediaAuditAudioResultDetailOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetMediaAuditAudioResultDetailRequest&, const GetMediaAuditAudioResultDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMediaAuditAudioResultDetailAsyncHandler;
@@ -745,6 +752,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDynamicImageResult> ListDynamicImageOutcome;
 			typedef std::future<ListDynamicImageOutcome> ListDynamicImageOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::ListDynamicImageRequest&, const ListDynamicImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDynamicImageAsyncHandler;
+			typedef Outcome<Error, Model::ListJobInfoResult> ListJobInfoOutcome;
+			typedef std::future<ListJobInfoOutcome> ListJobInfoOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::ListJobInfoRequest&, const ListJobInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListJobInfoAsyncHandler;
 			typedef Outcome<Error, Model::ListLiveRecordVideoResult> ListLiveRecordVideoOutcome;
 			typedef std::future<ListLiveRecordVideoOutcome> ListLiveRecordVideoOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::ListLiveRecordVideoRequest&, const ListLiveRecordVideoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListLiveRecordVideoAsyncHandler;
@@ -1191,6 +1201,9 @@ namespace AlibabaCloud
 			GetImageInfosOutcome getImageInfos(const Model::GetImageInfosRequest &request)const;
 			void getImageInfosAsync(const Model::GetImageInfosRequest& request, const GetImageInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetImageInfosOutcomeCallable getImageInfosCallable(const Model::GetImageInfosRequest& request) const;
+			GetJobDetailOutcome getJobDetail(const Model::GetJobDetailRequest &request)const;
+			void getJobDetailAsync(const Model::GetJobDetailRequest& request, const GetJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetJobDetailOutcomeCallable getJobDetailCallable(const Model::GetJobDetailRequest& request) const;
 			GetMediaAuditAudioResultDetailOutcome getMediaAuditAudioResultDetail(const Model::GetMediaAuditAudioResultDetailRequest &request)const;
 			void getMediaAuditAudioResultDetailAsync(const Model::GetMediaAuditAudioResultDetailRequest& request, const GetMediaAuditAudioResultDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMediaAuditAudioResultDetailOutcomeCallable getMediaAuditAudioResultDetailCallable(const Model::GetMediaAuditAudioResultDetailRequest& request) const;
@@ -1272,6 +1285,9 @@ namespace AlibabaCloud
 			ListDynamicImageOutcome listDynamicImage(const Model::ListDynamicImageRequest &request)const;
 			void listDynamicImageAsync(const Model::ListDynamicImageRequest& request, const ListDynamicImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDynamicImageOutcomeCallable listDynamicImageCallable(const Model::ListDynamicImageRequest& request) const;
+			ListJobInfoOutcome listJobInfo(const Model::ListJobInfoRequest &request)const;
+			void listJobInfoAsync(const Model::ListJobInfoRequest& request, const ListJobInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListJobInfoOutcomeCallable listJobInfoCallable(const Model::ListJobInfoRequest& request) const;
 			ListLiveRecordVideoOutcome listLiveRecordVideo(const Model::ListLiveRecordVideoRequest &request)const;
 			void listLiveRecordVideoAsync(const Model::ListLiveRecordVideoRequest& request, const ListLiveRecordVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListLiveRecordVideoOutcomeCallable listLiveRecordVideoCallable(const Model::ListLiveRecordVideoRequest& request) const;

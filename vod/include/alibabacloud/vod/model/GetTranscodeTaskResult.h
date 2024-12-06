@@ -34,9 +34,9 @@ namespace AlibabaCloud
 			public:
 				struct TranscodeTask
 				{
-					struct TranscodeJobInfo
+					struct TranscodeJobInfo2
 					{
-						struct OutputFile
+						struct OutputFile3
 						{
 							std::string outputFileUrl;
 							std::string fps;
@@ -46,14 +46,14 @@ namespace AlibabaCloud
 							std::string audioStreamList;
 							long filesize;
 							std::string bitrate;
-							std::vector<std::string> watermarkIdList;
+							std::vector<std::string> watermarkIdList4;
 							std::string format;
 							std::string height;
 							std::string subtitleStreamList;
 							std::string width;
 						};
-						OutputFile outputFile;
 						std::string transcodeTemplateId;
+						OutputFile3 outputFile3;
 						std::string inputFileUrl;
 						std::string priority;
 						std::string definition;
@@ -65,25 +65,60 @@ namespace AlibabaCloud
 						std::string errorMessage;
 						std::string completeTime;
 					};
-					std::vector<TranscodeJobInfo> transcodeJobInfoList;
 					std::string trigger;
 					std::string videoId;
 					std::string transcodeTemplateGroupId;
+					std::vector<TranscodeJobInfo2> transcodeJobInfoList1;
 					std::string creationTime;
 					std::string taskStatus;
 					std::string completeTime;
 					std::string transcodeTaskId;
+				};
+				struct TranscodeJobInfo
+				{
+					struct OutputFile
+					{
+						std::string outputFileUrl;
+						std::string fps;
+						std::string videoStreamList;
+						std::string duration;
+						std::string encryption;
+						std::string audioStreamList;
+						long filesize;
+						std::string bitrate;
+						std::vector<std::string> watermarkIdList;
+						std::string format;
+						std::string height;
+						std::string subtitleStreamList;
+						std::string width;
+					};
+					OutputFile outputFile;
+					std::string transcodeTemplateId;
+					std::string inputFileUrl;
+					std::string priority;
+					std::string definition;
+					std::string creationTime;
+					std::string transcodeJobStatus;
+					std::string transcodeJobId;
+					std::string errorCode;
+					long transcodeProgress;
+					std::string errorMessage;
+					std::string completeTime;
 				};
 
 
 				GetTranscodeTaskResult();
 				explicit GetTranscodeTaskResult(const std::string &payload);
 				~GetTranscodeTaskResult();
+				std::vector<std::string> getNonExistJobIds()const;
+				std::vector<TranscodeJobInfo> getTranscodeJobInfoList()const;
 				TranscodeTask getTranscodeTask()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<std::string> nonExistJobIds_;
+				std::vector<TranscodeJobInfo> transcodeJobInfoList_;
 				TranscodeTask transcodeTask_;
 
 			};

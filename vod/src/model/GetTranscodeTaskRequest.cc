@@ -43,3 +43,12 @@ void GetTranscodeTaskRequest::setTranscodeTaskId(const std::string &transcodeTas
   setParameter(std::string("TranscodeTaskId"), transcodeTaskId);
 }
 
+std::string GetTranscodeTaskRequest::getJobIds() const {
+  return jobIds_;
+}
+
+void GetTranscodeTaskRequest::setJobIds(const std::string &jobIds) {
+  jobIds_ = jobIds;
+  setParameter(std::string("JobIds"), jobIds);
+}
+

@@ -3471,6 +3471,42 @@ VodClient::GetImageInfosOutcomeCallable VodClient::getImageInfosCallable(const G
 	return task->get_future();
 }
 
+VodClient::GetJobDetailOutcome VodClient::getJobDetail(const GetJobDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetJobDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetJobDetailOutcome(GetJobDetailResult(outcome.result()));
+	else
+		return GetJobDetailOutcome(outcome.error());
+}
+
+void VodClient::getJobDetailAsync(const GetJobDetailRequest& request, const GetJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getJobDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::GetJobDetailOutcomeCallable VodClient::getJobDetailCallable(const GetJobDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetJobDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getJobDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::GetMediaAuditAudioResultDetailOutcome VodClient::getMediaAuditAudioResultDetail(const GetMediaAuditAudioResultDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4437,6 +4473,42 @@ VodClient::ListDynamicImageOutcomeCallable VodClient::listDynamicImageCallable(c
 			[this, request]()
 			{
 			return this->listDynamicImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::ListJobInfoOutcome VodClient::listJobInfo(const ListJobInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListJobInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListJobInfoOutcome(ListJobInfoResult(outcome.result()));
+	else
+		return ListJobInfoOutcome(outcome.error());
+}
+
+void VodClient::listJobInfoAsync(const ListJobInfoRequest& request, const ListJobInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listJobInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::ListJobInfoOutcomeCallable VodClient::listJobInfoCallable(const ListJobInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListJobInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->listJobInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -211,6 +211,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/GetImageInfoResult.h
 	include/alibabacloud/vod/model/GetImageInfosRequest.h
 	include/alibabacloud/vod/model/GetImageInfosResult.h
+	include/alibabacloud/vod/model/GetJobDetailRequest.h
+	include/alibabacloud/vod/model/GetJobDetailResult.h
 	include/alibabacloud/vod/model/GetMediaAuditAudioResultDetailRequest.h
 	include/alibabacloud/vod/model/GetMediaAuditAudioResultDetailResult.h
 	include/alibabacloud/vod/model/GetMediaAuditResultRequest.h
@@ -265,6 +267,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/ListAuditSecurityIpResult.h
 	include/alibabacloud/vod/model/ListDynamicImageRequest.h
 	include/alibabacloud/vod/model/ListDynamicImageResult.h
+	include/alibabacloud/vod/model/ListJobInfoRequest.h
+	include/alibabacloud/vod/model/ListJobInfoResult.h
 	include/alibabacloud/vod/model/ListLiveRecordVideoRequest.h
 	include/alibabacloud/vod/model/ListLiveRecordVideoResult.h
 	include/alibabacloud/vod/model/ListSnapshotsRequest.h
@@ -562,6 +566,8 @@ set(vod_src
 	src/model/GetImageInfoResult.cc
 	src/model/GetImageInfosRequest.cc
 	src/model/GetImageInfosResult.cc
+	src/model/GetJobDetailRequest.cc
+	src/model/GetJobDetailResult.cc
 	src/model/GetMediaAuditAudioResultDetailRequest.cc
 	src/model/GetMediaAuditAudioResultDetailResult.cc
 	src/model/GetMediaAuditResultRequest.cc
@@ -616,6 +622,8 @@ set(vod_src
 	src/model/ListAuditSecurityIpResult.cc
 	src/model/ListDynamicImageRequest.cc
 	src/model/ListDynamicImageResult.cc
+	src/model/ListJobInfoRequest.cc
+	src/model/ListJobInfoResult.cc
 	src/model/ListLiveRecordVideoRequest.cc
 	src/model/ListLiveRecordVideoResult.cc
 	src/model/ListSnapshotsRequest.cc

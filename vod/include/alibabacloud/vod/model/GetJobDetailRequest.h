@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_GETTRANSCODETASKREQUEST_H_
-#define ALIBABACLOUD_VOD_MODEL_GETTRANSCODETASKREQUEST_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_GETJOBDETAILREQUEST_H_
+#define ALIBABACLOUD_VOD_MODEL_GETJOBDETAILREQUEST_H_
 
 #include <alibabacloud/vod/VodExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,20 @@
 namespace AlibabaCloud {
 namespace Vod {
 namespace Model {
-class ALIBABACLOUD_VOD_EXPORT GetTranscodeTaskRequest : public RpcServiceRequest {
+class ALIBABACLOUD_VOD_EXPORT GetJobDetailRequest : public RpcServiceRequest {
 public:
-	GetTranscodeTaskRequest();
-	~GetTranscodeTaskRequest();
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getTranscodeTaskId() const;
-	void setTranscodeTaskId(const std::string &transcodeTaskId);
-	std::string getJobIds() const;
-	void setJobIds(const std::string &jobIds);
+	GetJobDetailRequest();
+	~GetJobDetailRequest();
+	std::string getJobType() const;
+	void setJobType(const std::string &jobType);
+	std::string getJobId() const;
+	void setJobId(const std::string &jobId);
 
 private:
-	std::string accessKeyId_;
-	std::string transcodeTaskId_;
-	std::string jobIds_;
+	std::string jobType_;
+	std::string jobId_;
 };
 } // namespace Model
 } // namespace Vod
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_VOD_MODEL_GETTRANSCODETASKREQUEST_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_GETJOBDETAILREQUEST_H_
