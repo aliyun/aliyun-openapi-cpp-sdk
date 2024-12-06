@@ -8763,6 +8763,42 @@ LiveClient::DescribeLiveUserTagsOutcomeCallable LiveClient::describeLiveUserTags
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveVerifyContentOutcome LiveClient::describeLiveVerifyContent(const DescribeLiveVerifyContentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveVerifyContentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveVerifyContentOutcome(DescribeLiveVerifyContentResult(outcome.result()));
+	else
+		return DescribeLiveVerifyContentOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveVerifyContentAsync(const DescribeLiveVerifyContentRequest& request, const DescribeLiveVerifyContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveVerifyContent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveVerifyContentOutcomeCallable LiveClient::describeLiveVerifyContentCallable(const DescribeLiveVerifyContentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveVerifyContentOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveVerifyContent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeMeterLiveBypassDurationOutcome LiveClient::describeMeterLiveBypassDuration(const DescribeMeterLiveBypassDurationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -10953,6 +10989,42 @@ LiveClient::ListRtcMPUTaskDetailOutcomeCallable LiveClient::listRtcMPUTaskDetail
 			[this, request]()
 			{
 			return this->listRtcMPUTaskDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::LiveUpstreamQosDataOutcome LiveClient::liveUpstreamQosData(const LiveUpstreamQosDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return LiveUpstreamQosDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return LiveUpstreamQosDataOutcome(LiveUpstreamQosDataResult(outcome.result()));
+	else
+		return LiveUpstreamQosDataOutcome(outcome.error());
+}
+
+void LiveClient::liveUpstreamQosDataAsync(const LiveUpstreamQosDataRequest& request, const LiveUpstreamQosDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, liveUpstreamQosData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::LiveUpstreamQosDataOutcomeCallable LiveClient::liveUpstreamQosDataCallable(const LiveUpstreamQosDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<LiveUpstreamQosDataOutcome()>>(
+			[this, request]()
+			{
+			return this->liveUpstreamQosData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -13437,6 +13509,42 @@ LiveClient::StopRtcAsrTaskOutcomeCallable LiveClient::stopRtcAsrTaskCallable(con
 			[this, request]()
 			{
 			return this->stopRtcAsrTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::TagLiveResourcesOutcome LiveClient::tagLiveResources(const TagLiveResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagLiveResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagLiveResourcesOutcome(TagLiveResourcesResult(outcome.result()));
+	else
+		return TagLiveResourcesOutcome(outcome.error());
+}
+
+void LiveClient::tagLiveResourcesAsync(const TagLiveResourcesRequest& request, const TagLiveResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagLiveResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::TagLiveResourcesOutcomeCallable LiveClient::tagLiveResourcesCallable(const TagLiveResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagLiveResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->tagLiveResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

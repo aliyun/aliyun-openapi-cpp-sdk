@@ -505,6 +505,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveUserDomainsResult.h
 	include/alibabacloud/live/model/DescribeLiveUserTagsRequest.h
 	include/alibabacloud/live/model/DescribeLiveUserTagsResult.h
+	include/alibabacloud/live/model/DescribeLiveVerifyContentRequest.h
+	include/alibabacloud/live/model/DescribeLiveVerifyContentResult.h
 	include/alibabacloud/live/model/DescribeMeterLiveBypassDurationRequest.h
 	include/alibabacloud/live/model/DescribeMeterLiveBypassDurationResult.h
 	include/alibabacloud/live/model/DescribeMixStreamListRequest.h
@@ -627,6 +629,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/ListRtcMPUEventSubRecordResult.h
 	include/alibabacloud/live/model/ListRtcMPUTaskDetailRequest.h
 	include/alibabacloud/live/model/ListRtcMPUTaskDetailResult.h
+	include/alibabacloud/live/model/LiveUpstreamQosDataRequest.h
+	include/alibabacloud/live/model/LiveUpstreamQosDataResult.h
 	include/alibabacloud/live/model/MiguLivePullToPushStartRequest.h
 	include/alibabacloud/live/model/MiguLivePullToPushStartResult.h
 	include/alibabacloud/live/model/MiguLivePullToPushStatusRequest.h
@@ -765,6 +769,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/StopPlaylistResult.h
 	include/alibabacloud/live/model/StopRtcAsrTaskRequest.h
 	include/alibabacloud/live/model/StopRtcAsrTaskResult.h
+	include/alibabacloud/live/model/TagLiveResourcesRequest.h
+	include/alibabacloud/live/model/TagLiveResourcesResult.h
 	include/alibabacloud/live/model/UnbanLiveMessageGroupRequest.h
 	include/alibabacloud/live/model/UnbanLiveMessageGroupResult.h
 	include/alibabacloud/live/model/UpdateCasterResourceGroupRequest.h
@@ -1318,6 +1324,8 @@ set(live_src
 	src/model/DescribeLiveUserDomainsResult.cc
 	src/model/DescribeLiveUserTagsRequest.cc
 	src/model/DescribeLiveUserTagsResult.cc
+	src/model/DescribeLiveVerifyContentRequest.cc
+	src/model/DescribeLiveVerifyContentResult.cc
 	src/model/DescribeMeterLiveBypassDurationRequest.cc
 	src/model/DescribeMeterLiveBypassDurationResult.cc
 	src/model/DescribeMixStreamListRequest.cc
@@ -1440,6 +1448,8 @@ set(live_src
 	src/model/ListRtcMPUEventSubRecordResult.cc
 	src/model/ListRtcMPUTaskDetailRequest.cc
 	src/model/ListRtcMPUTaskDetailResult.cc
+	src/model/LiveUpstreamQosDataRequest.cc
+	src/model/LiveUpstreamQosDataResult.cc
 	src/model/MiguLivePullToPushStartRequest.cc
 	src/model/MiguLivePullToPushStartResult.cc
 	src/model/MiguLivePullToPushStatusRequest.cc
@@ -1578,6 +1588,8 @@ set(live_src
 	src/model/StopPlaylistResult.cc
 	src/model/StopRtcAsrTaskRequest.cc
 	src/model/StopRtcAsrTaskResult.cc
+	src/model/TagLiveResourcesRequest.cc
+	src/model/TagLiveResourcesResult.cc
 	src/model/UnbanLiveMessageGroupRequest.cc
 	src/model/UnbanLiveMessageGroupResult.cc
 	src/model/UpdateCasterResourceGroupRequest.cc
