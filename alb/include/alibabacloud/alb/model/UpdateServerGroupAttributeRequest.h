@@ -66,6 +66,8 @@ public:
 	};
 	UpdateServerGroupAttributeRequest();
 	~UpdateServerGroupAttributeRequest();
+	bool getCrossZoneEnabled() const;
+	void setCrossZoneEnabled(bool crossZoneEnabled);
 	std::string getServerGroupName() const;
 	void setServerGroupName(const std::string &serverGroupName);
 	std::string getClientToken() const;
@@ -92,6 +94,7 @@ public:
 	void setUchConfig(const UchConfig &uchConfig);
 
 private:
+	bool crossZoneEnabled_;
 	std::string serverGroupName_;
 	std::string clientToken_;
 	HealthCheckConfig healthCheckConfig_;

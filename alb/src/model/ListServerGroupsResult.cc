@@ -75,6 +75,8 @@ void ListServerGroupsResult::parse(const std::string &payload)
 			serverGroupsObject.serviceName = valueServerGroupsServerGroup["ServiceName"].asString();
 		if(!valueServerGroupsServerGroup["CreateTime"].isNull())
 			serverGroupsObject.createTime = valueServerGroupsServerGroup["CreateTime"].asString();
+		if(!valueServerGroupsServerGroup["CrossZoneEnabled"].isNull())
+			serverGroupsObject.crossZoneEnabled = valueServerGroupsServerGroup["CrossZoneEnabled"].asString() == "true";
 		auto allTagsNode = valueServerGroupsServerGroup["Tags"]["Tag"];
 		for (auto valueServerGroupsServerGroupTagsTag : allTagsNode)
 		{

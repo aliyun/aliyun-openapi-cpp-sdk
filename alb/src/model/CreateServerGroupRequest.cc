@@ -25,6 +25,15 @@ CreateServerGroupRequest::CreateServerGroupRequest()
 
 CreateServerGroupRequest::~CreateServerGroupRequest() {}
 
+bool CreateServerGroupRequest::getCrossZoneEnabled() const {
+  return crossZoneEnabled_;
+}
+
+void CreateServerGroupRequest::setCrossZoneEnabled(bool crossZoneEnabled) {
+  crossZoneEnabled_ = crossZoneEnabled;
+  setParameter(std::string("CrossZoneEnabled"), crossZoneEnabled ? "true" : "false");
+}
+
 std::string CreateServerGroupRequest::getServerGroupName() const {
   return serverGroupName_;
 }

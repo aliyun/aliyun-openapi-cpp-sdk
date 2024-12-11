@@ -25,6 +25,15 @@ UpdateServerGroupAttributeRequest::UpdateServerGroupAttributeRequest()
 
 UpdateServerGroupAttributeRequest::~UpdateServerGroupAttributeRequest() {}
 
+bool UpdateServerGroupAttributeRequest::getCrossZoneEnabled() const {
+  return crossZoneEnabled_;
+}
+
+void UpdateServerGroupAttributeRequest::setCrossZoneEnabled(bool crossZoneEnabled) {
+  crossZoneEnabled_ = crossZoneEnabled;
+  setParameter(std::string("CrossZoneEnabled"), crossZoneEnabled ? "true" : "false");
+}
+
 std::string UpdateServerGroupAttributeRequest::getServerGroupName() const {
   return serverGroupName_;
 }

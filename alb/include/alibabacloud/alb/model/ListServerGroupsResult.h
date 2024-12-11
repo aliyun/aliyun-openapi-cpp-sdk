@@ -84,6 +84,7 @@ namespace AlibabaCloud
 					std::string scheduler;
 					std::vector<std::string> relatedRuleIds;
 					int serverCount;
+					bool crossZoneEnabled;
 					bool ipv6Enabled;
 					SlowStartConfig slowStartConfig;
 					std::string serviceManagedMode;
