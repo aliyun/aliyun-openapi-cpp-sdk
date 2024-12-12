@@ -79,6 +79,15 @@ void ApproveOrderRequest::setOldApprover(long oldApprover) {
   setParameter(std::string("OldApprover"), std::to_string(oldApprover));
 }
 
+std::string ApproveOrderRequest::getRealLoginUserUid() const {
+  return realLoginUserUid_;
+}
+
+void ApproveOrderRequest::setRealLoginUserUid(const std::string &realLoginUserUid) {
+  realLoginUserUid_ = realLoginUserUid;
+  setParameter(std::string("RealLoginUserUid"), realLoginUserUid);
+}
+
 std::string ApproveOrderRequest::getComment() const {
   return comment_;
 }
@@ -95,5 +104,14 @@ std::string ApproveOrderRequest::getApprovalNodePos() const {
 void ApproveOrderRequest::setApprovalNodePos(const std::string &approvalNodePos) {
   approvalNodePos_ = approvalNodePos;
   setParameter(std::string("ApprovalNodePos"), approvalNodePos);
+}
+
+std::string ApproveOrderRequest::getNewApproverList() const {
+  return newApproverList_;
+}
+
+void ApproveOrderRequest::setNewApproverList(const std::string &newApproverList) {
+  newApproverList_ = newApproverList;
+  setParameter(std::string("NewApproverList"), newApproverList);
 }
 

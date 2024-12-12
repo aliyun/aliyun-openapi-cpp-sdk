@@ -95,6 +95,45 @@ void GetDataCorrectOrderDetailResult::parse(const std::string &payload)
 		dataCorrectOrderDetail_.orderDetail.sqlType = orderDetailNode["SqlType"].asString();
 	if(!orderDetailNode["IgnoreAffectRowsReason"].isNull())
 		dataCorrectOrderDetail_.orderDetail.ignoreAffectRowsReason = orderDetailNode["IgnoreAffectRowsReason"].asString();
+	auto configDetailNode = dataCorrectOrderDetailNode["ConfigDetail"];
+	if(!configDetailNode["DetailType"].isNull())
+		dataCorrectOrderDetail_.configDetail.detailType = configDetailNode["DetailType"].asString();
+	if(!configDetailNode["FileType"].isNull())
+		dataCorrectOrderDetail_.configDetail.fileType = configDetailNode["FileType"].asString();
+	if(!configDetailNode["CsvTableName"].isNull())
+		dataCorrectOrderDetail_.configDetail.csvTableName = configDetailNode["CsvTableName"].asString();
+	if(!configDetailNode["FileEncoding"].isNull())
+		dataCorrectOrderDetail_.configDetail.fileEncoding = configDetailNode["FileEncoding"].asString();
+	if(!configDetailNode["Cron"].isNull())
+		dataCorrectOrderDetail_.configDetail.cron = configDetailNode["Cron"].asString() == "true";
+	if(!configDetailNode["CronCallTimes"].isNull())
+		dataCorrectOrderDetail_.configDetail.cronCallTimes = std::stoi(configDetailNode["CronCallTimes"].asString());
+	if(!configDetailNode["CronFormat"].isNull())
+		dataCorrectOrderDetail_.configDetail.cronFormat = configDetailNode["CronFormat"].asString();
+	if(!configDetailNode["Duration"].isNull())
+		dataCorrectOrderDetail_.configDetail.duration = std::stoi(configDetailNode["Duration"].asString());
+	if(!configDetailNode["CronStatus"].isNull())
+		dataCorrectOrderDetail_.configDetail.cronStatus = configDetailNode["CronStatus"].asString();
+	if(!configDetailNode["CronLastCallStartTime"].isNull())
+		dataCorrectOrderDetail_.configDetail.cronLastCallStartTime = configDetailNode["CronLastCallStartTime"].asString();
+	if(!configDetailNode["CronNextCallTime"].isNull())
+		dataCorrectOrderDetail_.configDetail.cronNextCallTime = configDetailNode["CronNextCallTime"].asString();
+	if(!configDetailNode["CurrentTaskId"].isNull())
+		dataCorrectOrderDetail_.configDetail.currentTaskId = std::stol(configDetailNode["CurrentTaskId"].asString());
+	auto importExtConfigNode = configDetailNode["ImportExtConfig"];
+	if(!importExtConfigNode["InsertType"].isNull())
+		dataCorrectOrderDetail_.configDetail.importExtConfig.insertType = importExtConfigNode["InsertType"].asString();
+	if(!importExtConfigNode["CsvFirstRowIsColumnDef"].isNull())
+		dataCorrectOrderDetail_.configDetail.importExtConfig.csvFirstRowIsColumnDef = importExtConfigNode["CsvFirstRowIsColumnDef"].asString() == "true";
+	if(!importExtConfigNode["IgnoreError"].isNull())
+		dataCorrectOrderDetail_.configDetail.importExtConfig.ignoreError = importExtConfigNode["IgnoreError"].asString() == "true";
+	if(!importExtConfigNode["ImportMode"].isNull())
+		dataCorrectOrderDetail_.configDetail.importExtConfig.importMode = importExtConfigNode["ImportMode"].asString();
+	auto cronExtConfigNode = configDetailNode["CronExtConfig"];
+	if(!cronExtConfigNode["OptimizeTableAfterEveryClearTimes"].isNull())
+		dataCorrectOrderDetail_.configDetail.cronExtConfig.optimizeTableAfterEveryClearTimes = std::stoi(cronExtConfigNode["OptimizeTableAfterEveryClearTimes"].asString());
+	if(!cronExtConfigNode["CurrentClearTaskCount"].isNull())
+		dataCorrectOrderDetail_.configDetail.cronExtConfig.currentClearTaskCount = std::stoi(cronExtConfigNode["CurrentClearTaskCount"].asString());
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())

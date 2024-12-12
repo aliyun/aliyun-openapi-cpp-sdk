@@ -66,6 +66,15 @@ void CreateDataCorrectOrderRequest::setRelatedUserList(const std::vector<CreateD
   }
 }
 
+std::string CreateDataCorrectOrderRequest::getRealLoginUserUid() const {
+  return realLoginUserUid_;
+}
+
+void CreateDataCorrectOrderRequest::setRealLoginUserUid(const std::string &realLoginUserUid) {
+  realLoginUserUid_ = realLoginUserUid;
+  setParameter(std::string("RealLoginUserUid"), realLoginUserUid);
+}
+
 std::string CreateDataCorrectOrderRequest::getAttachmentKey() const {
   return attachmentKey_;
 }

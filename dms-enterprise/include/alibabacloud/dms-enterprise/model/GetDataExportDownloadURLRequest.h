@@ -36,11 +36,14 @@ public:
 	void setOrderId(long orderId);
 	std::string getActionName() const;
 	void setActionName(const std::string &actionName);
+	std::string getRealLoginUserUid() const;
+	void setRealLoginUserUid(const std::string &realLoginUserUid);
 
 private:
 	long tid_;
 	long orderId_;
 	std::string actionName_;
+	std::string realLoginUserUid_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

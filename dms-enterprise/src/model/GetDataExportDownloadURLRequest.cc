@@ -52,3 +52,12 @@ void GetDataExportDownloadURLRequest::setActionName(const std::string &actionNam
   setParameter(std::string("ActionName"), actionName);
 }
 
+std::string GetDataExportDownloadURLRequest::getRealLoginUserUid() const {
+  return realLoginUserUid_;
+}
+
+void GetDataExportDownloadURLRequest::setRealLoginUserUid(const std::string &realLoginUserUid) {
+  realLoginUserUid_ = realLoginUserUid;
+  setParameter(std::string("RealLoginUserUid"), realLoginUserUid);
+}
+

@@ -41,18 +41,19 @@ public:
 		std::vector<std::string> tableMapping;
 		std::string string;
 		std::vector<std::string> orderAfter;
-		std::string sourceCatalogName;
-		std::string runMethod;
 		std::string targetInstanceHost;
-		bool logic;
-		std::string sourceSchemaName;
-		std::string archiveMethod;
 		struct TableIncludesItem {
 			std::string tableWhere;
 			std::string tableName;
 		};
 		TableIncludesItem tableIncludesItem;
 		std::vector<TableIncludesItem> tableIncludes;
+		std::string sourceCatalogName;
+		std::string runMethod;
+		bool logic;
+		std::string sourceSchemaName;
+		std::string archiveMethod;
+		std::string databaseId;
 	};
 	CreateDataArchiveOrderRequest();
 	~CreateDataArchiveOrderRequest();

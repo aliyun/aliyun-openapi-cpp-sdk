@@ -58,6 +58,8 @@ public:
 	void setRelatedUserList(const std::vector<long> &relatedUserList);
 	PluginParam getPluginParam() const;
 	void setPluginParam(const PluginParam &pluginParam);
+	std::string getRealLoginUserUid() const;
+	void setRealLoginUserUid(const std::string &realLoginUserUid);
 	std::string getAttachmentKey() const;
 	void setAttachmentKey(const std::string &attachmentKey);
 	std::string getComment() const;
@@ -68,6 +70,7 @@ private:
 	long tid_;
 	std::vector<long> relatedUserList_;
 	PluginParam pluginParam_;
+	std::string realLoginUserUid_;
 	std::string attachmentKey_;
 	std::string comment_;
 };

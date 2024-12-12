@@ -21,8 +21,12 @@ set(dms-enterprise_public_header
 	include/alibabacloud/dms-enterprise/Dms_enterpriseExport.h )
 
 set(dms-enterprise_public_header_model 
+	include/alibabacloud/dms-enterprise/model/AddAuthorityTemplateItemsRequest.h
+	include/alibabacloud/dms-enterprise/model/AddAuthorityTemplateItemsResult.h
 	include/alibabacloud/dms-enterprise/model/AddDesensitizationRuleRequest.h
 	include/alibabacloud/dms-enterprise/model/AddDesensitizationRuleResult.h
+	include/alibabacloud/dms-enterprise/model/AddInstanceRequest.h
+	include/alibabacloud/dms-enterprise/model/AddInstanceResult.h
 	include/alibabacloud/dms-enterprise/model/AddLhMembersRequest.h
 	include/alibabacloud/dms-enterprise/model/AddLhMembersResult.h
 	include/alibabacloud/dms-enterprise/model/AddLogicTableRouteConfigRequest.h
@@ -45,6 +49,10 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ChangeLhDagOwnerResult.h
 	include/alibabacloud/dms-enterprise/model/CloseOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CloseOrderResult.h
+	include/alibabacloud/dms-enterprise/model/CreateAbacAuthorizationRequest.h
+	include/alibabacloud/dms-enterprise/model/CreateAbacAuthorizationResult.h
+	include/alibabacloud/dms-enterprise/model/CreateAbacPolicyRequest.h
+	include/alibabacloud/dms-enterprise/model/CreateAbacPolicyResult.h
 	include/alibabacloud/dms-enterprise/model/CreateAuthorityTemplateRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateAuthorityTemplateResult.h
 	include/alibabacloud/dms-enterprise/model/CreateDataArchiveOrderRequest.h
@@ -93,6 +101,10 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/CreateUploadFileJobResult.h
 	include/alibabacloud/dms-enterprise/model/CreateUploadOSSFileJobRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateUploadOSSFileJobResult.h
+	include/alibabacloud/dms-enterprise/model/DeleteAbacAuthorizationRequest.h
+	include/alibabacloud/dms-enterprise/model/DeleteAbacAuthorizationResult.h
+	include/alibabacloud/dms-enterprise/model/DeleteAbacPolicyRequest.h
+	include/alibabacloud/dms-enterprise/model/DeleteAbacPolicyResult.h
 	include/alibabacloud/dms-enterprise/model/DeleteAuthorityTemplateRequest.h
 	include/alibabacloud/dms-enterprise/model/DeleteAuthorityTemplateResult.h
 	include/alibabacloud/dms-enterprise/model/DeleteInstanceRequest.h
@@ -111,6 +123,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/DeleteProxyAccessResult.h
 	include/alibabacloud/dms-enterprise/model/DeleteScenarioRequest.h
 	include/alibabacloud/dms-enterprise/model/DeleteScenarioResult.h
+	include/alibabacloud/dms-enterprise/model/DeleteStandardGroupRequest.h
+	include/alibabacloud/dms-enterprise/model/DeleteStandardGroupResult.h
 	include/alibabacloud/dms-enterprise/model/DeleteTaskRequest.h
 	include/alibabacloud/dms-enterprise/model/DeleteTaskResult.h
 	include/alibabacloud/dms-enterprise/model/DeleteTaskFlowRequest.h
@@ -135,6 +149,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ExecuteScriptResult.h
 	include/alibabacloud/dms-enterprise/model/ExecuteStructSyncRequest.h
 	include/alibabacloud/dms-enterprise/model/ExecuteStructSyncResult.h
+	include/alibabacloud/dms-enterprise/model/GetAbacPolicyRequest.h
+	include/alibabacloud/dms-enterprise/model/GetAbacPolicyResult.h
 	include/alibabacloud/dms-enterprise/model/GetApprovalDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetApprovalDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetAuthorityTemplateRequest.h
@@ -173,6 +189,12 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetDataExportPreCheckDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataImportSQLRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDataImportSQLResult.h
+	include/alibabacloud/dms-enterprise/model/GetDataLakeCatalogRequest.h
+	include/alibabacloud/dms-enterprise/model/GetDataLakeCatalogResult.h
+	include/alibabacloud/dms-enterprise/model/GetDataLakeDatabaseRequest.h
+	include/alibabacloud/dms-enterprise/model/GetDataLakeDatabaseResult.h
+	include/alibabacloud/dms-enterprise/model/GetDataLakeTableRequest.h
+	include/alibabacloud/dms-enterprise/model/GetDataLakeTableResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataTrackJobDegreeRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDataTrackJobDegreeResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataTrackJobTableMetaRequest.h
@@ -223,6 +245,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetSQLReviewCheckResultStatusResult.h
 	include/alibabacloud/dms-enterprise/model/GetSQLReviewOptimizeDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetSQLReviewOptimizeDetailResult.h
+	include/alibabacloud/dms-enterprise/model/GetStandardGroupRequest.h
+	include/alibabacloud/dms-enterprise/model/GetStandardGroupResult.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncExecSqlDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncExecSqlDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncJobAnalyzeResultRequest.h
@@ -233,6 +257,10 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetStructSyncOrderDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetTableDBTopologyRequest.h
 	include/alibabacloud/dms-enterprise/model/GetTableDBTopologyResult.h
+	include/alibabacloud/dms-enterprise/model/GetTableDesignProjectFlowRequest.h
+	include/alibabacloud/dms-enterprise/model/GetTableDesignProjectFlowResult.h
+	include/alibabacloud/dms-enterprise/model/GetTableDesignProjectInfoRequest.h
+	include/alibabacloud/dms-enterprise/model/GetTableDesignProjectInfoResult.h
 	include/alibabacloud/dms-enterprise/model/GetTableTopologyRequest.h
 	include/alibabacloud/dms-enterprise/model/GetTableTopologyResult.h
 	include/alibabacloud/dms-enterprise/model/GetTaskRequest.h
@@ -255,8 +283,20 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GrantUserPermissionResult.h
 	include/alibabacloud/dms-enterprise/model/InspectProxyAccessSecretRequest.h
 	include/alibabacloud/dms-enterprise/model/InspectProxyAccessSecretResult.h
+	include/alibabacloud/dms-enterprise/model/ListAbacAuthorizationsRequest.h
+	include/alibabacloud/dms-enterprise/model/ListAbacAuthorizationsResult.h
+	include/alibabacloud/dms-enterprise/model/ListAbacPoliciesRequest.h
+	include/alibabacloud/dms-enterprise/model/ListAbacPoliciesResult.h
 	include/alibabacloud/dms-enterprise/model/ListAuthorityTemplateRequest.h
 	include/alibabacloud/dms-enterprise/model/ListAuthorityTemplateResult.h
+	include/alibabacloud/dms-enterprise/model/ListAuthorizedDatabasesForUserRequest.h
+	include/alibabacloud/dms-enterprise/model/ListAuthorizedDatabasesForUserResult.h
+	include/alibabacloud/dms-enterprise/model/ListAuthorizedInstancesForUserRequest.h
+	include/alibabacloud/dms-enterprise/model/ListAuthorizedInstancesForUserResult.h
+	include/alibabacloud/dms-enterprise/model/ListAuthorizedUsersForDatabaseRequest.h
+	include/alibabacloud/dms-enterprise/model/ListAuthorizedUsersForDatabaseResult.h
+	include/alibabacloud/dms-enterprise/model/ListAuthorizedUsersForInstanceRequest.h
+	include/alibabacloud/dms-enterprise/model/ListAuthorizedUsersForInstanceResult.h
 	include/alibabacloud/dms-enterprise/model/ListClassificationTemplatesRequest.h
 	include/alibabacloud/dms-enterprise/model/ListClassificationTemplatesResult.h
 	include/alibabacloud/dms-enterprise/model/ListColumnsRequest.h
@@ -277,6 +317,12 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ListDataImportSQLPreCheckDetailResult.h
 	include/alibabacloud/dms-enterprise/model/ListDataImportSQLTypeRequest.h
 	include/alibabacloud/dms-enterprise/model/ListDataImportSQLTypeResult.h
+	include/alibabacloud/dms-enterprise/model/ListDataLakeCatalogRequest.h
+	include/alibabacloud/dms-enterprise/model/ListDataLakeCatalogResult.h
+	include/alibabacloud/dms-enterprise/model/ListDataLakeDatabaseRequest.h
+	include/alibabacloud/dms-enterprise/model/ListDataLakeDatabaseResult.h
+	include/alibabacloud/dms-enterprise/model/ListDataLakeTablebaseInfoRequest.h
+	include/alibabacloud/dms-enterprise/model/ListDataLakeTablebaseInfoResult.h
 	include/alibabacloud/dms-enterprise/model/ListDatabaseUserPermssionsRequest.h
 	include/alibabacloud/dms-enterprise/model/ListDatabaseUserPermssionsResult.h
 	include/alibabacloud/dms-enterprise/model/ListDatabasesRequest.h
@@ -319,6 +365,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ListSQLReviewOriginSQLResult.h
 	include/alibabacloud/dms-enterprise/model/ListScenariosRequest.h
 	include/alibabacloud/dms-enterprise/model/ListScenariosResult.h
+	include/alibabacloud/dms-enterprise/model/ListSensitiveColumnInfoRequest.h
+	include/alibabacloud/dms-enterprise/model/ListSensitiveColumnInfoResult.h
 	include/alibabacloud/dms-enterprise/model/ListSensitiveColumnsRequest.h
 	include/alibabacloud/dms-enterprise/model/ListSensitiveColumnsResult.h
 	include/alibabacloud/dms-enterprise/model/ListSensitiveColumnsDetailRequest.h
@@ -363,12 +411,16 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ModifyDataCorrectExecSQLResult.h
 	include/alibabacloud/dms-enterprise/model/ModifyDesensitizationStrategyRequest.h
 	include/alibabacloud/dms-enterprise/model/ModifyDesensitizationStrategyResult.h
+	include/alibabacloud/dms-enterprise/model/ModifyInstanceRequest.h
+	include/alibabacloud/dms-enterprise/model/ModifyInstanceResult.h
 	include/alibabacloud/dms-enterprise/model/MoveTaskFlowToScenarioRequest.h
 	include/alibabacloud/dms-enterprise/model/MoveTaskFlowToScenarioResult.h
 	include/alibabacloud/dms-enterprise/model/OfflineTaskFlowRequest.h
 	include/alibabacloud/dms-enterprise/model/OfflineTaskFlowResult.h
 	include/alibabacloud/dms-enterprise/model/PauseDataCorrectSQLJobRequest.h
 	include/alibabacloud/dms-enterprise/model/PauseDataCorrectSQLJobResult.h
+	include/alibabacloud/dms-enterprise/model/PauseDataExportJobRequest.h
+	include/alibabacloud/dms-enterprise/model/PauseDataExportJobResult.h
 	include/alibabacloud/dms-enterprise/model/PreviewWorkflowRequest.h
 	include/alibabacloud/dms-enterprise/model/PreviewWorkflowResult.h
 	include/alibabacloud/dms-enterprise/model/PublishAndDeployTaskFlowRequest.h
@@ -385,8 +437,12 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/RegisterInstanceResult.h
 	include/alibabacloud/dms-enterprise/model/RegisterUserRequest.h
 	include/alibabacloud/dms-enterprise/model/RegisterUserResult.h
+	include/alibabacloud/dms-enterprise/model/RemoveDataExportJobRequest.h
+	include/alibabacloud/dms-enterprise/model/RemoveDataExportJobResult.h
 	include/alibabacloud/dms-enterprise/model/RestartDataCorrectSQLJobRequest.h
 	include/alibabacloud/dms-enterprise/model/RestartDataCorrectSQLJobResult.h
+	include/alibabacloud/dms-enterprise/model/RestartDataExportJobRequest.h
+	include/alibabacloud/dms-enterprise/model/RestartDataExportJobResult.h
 	include/alibabacloud/dms-enterprise/model/ResumeTaskFlowInstanceRequest.h
 	include/alibabacloud/dms-enterprise/model/ResumeTaskFlowInstanceResult.h
 	include/alibabacloud/dms-enterprise/model/RetryDataCorrectPreCheckRequest.h
@@ -403,6 +459,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/SearchTableResult.h
 	include/alibabacloud/dms-enterprise/model/SetOwnersRequest.h
 	include/alibabacloud/dms-enterprise/model/SetOwnersResult.h
+	include/alibabacloud/dms-enterprise/model/SetWorkflowExtraInfoRequest.h
+	include/alibabacloud/dms-enterprise/model/SetWorkflowExtraInfoResult.h
 	include/alibabacloud/dms-enterprise/model/SkipDataCorrectRowCheckRequest.h
 	include/alibabacloud/dms-enterprise/model/SkipDataCorrectRowCheckResult.h
 	include/alibabacloud/dms-enterprise/model/StopTaskFlowInstanceRequest.h
@@ -411,12 +469,16 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/SubmitOrderApprovalResult.h
 	include/alibabacloud/dms-enterprise/model/SubmitStructSyncOrderApprovalRequest.h
 	include/alibabacloud/dms-enterprise/model/SubmitStructSyncOrderApprovalResult.h
+	include/alibabacloud/dms-enterprise/model/SuspendDataExportJobRequest.h
+	include/alibabacloud/dms-enterprise/model/SuspendDataExportJobResult.h
 	include/alibabacloud/dms-enterprise/model/SuspendTaskFlowInstanceRequest.h
 	include/alibabacloud/dms-enterprise/model/SuspendTaskFlowInstanceResult.h
 	include/alibabacloud/dms-enterprise/model/SyncDatabaseMetaRequest.h
 	include/alibabacloud/dms-enterprise/model/SyncDatabaseMetaResult.h
 	include/alibabacloud/dms-enterprise/model/SyncInstanceMetaRequest.h
 	include/alibabacloud/dms-enterprise/model/SyncInstanceMetaResult.h
+	include/alibabacloud/dms-enterprise/model/UpdateAbacPolicyRequest.h
+	include/alibabacloud/dms-enterprise/model/UpdateAbacPolicyResult.h
 	include/alibabacloud/dms-enterprise/model/UpdateAuthorityTemplateRequest.h
 	include/alibabacloud/dms-enterprise/model/UpdateAuthorityTemplateResult.h
 	include/alibabacloud/dms-enterprise/model/UpdateInstanceRequest.h
@@ -425,6 +487,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/UpdateSLARulesResult.h
 	include/alibabacloud/dms-enterprise/model/UpdateScenarioRequest.h
 	include/alibabacloud/dms-enterprise/model/UpdateScenarioResult.h
+	include/alibabacloud/dms-enterprise/model/UpdateStandardGroupRequest.h
+	include/alibabacloud/dms-enterprise/model/UpdateStandardGroupResult.h
 	include/alibabacloud/dms-enterprise/model/UpdateTaskConfigRequest.h
 	include/alibabacloud/dms-enterprise/model/UpdateTaskConfigResult.h
 	include/alibabacloud/dms-enterprise/model/UpdateTaskContentRequest.h
@@ -458,8 +522,12 @@ set(dms-enterprise_public_header_model
 
 set(dms-enterprise_src 
 	src/Dms-enterpriseClient.cc
+	src/model/AddAuthorityTemplateItemsRequest.cc
+	src/model/AddAuthorityTemplateItemsResult.cc
 	src/model/AddDesensitizationRuleRequest.cc
 	src/model/AddDesensitizationRuleResult.cc
+	src/model/AddInstanceRequest.cc
+	src/model/AddInstanceResult.cc
 	src/model/AddLhMembersRequest.cc
 	src/model/AddLhMembersResult.cc
 	src/model/AddLogicTableRouteConfigRequest.cc
@@ -482,6 +550,10 @@ set(dms-enterprise_src
 	src/model/ChangeLhDagOwnerResult.cc
 	src/model/CloseOrderRequest.cc
 	src/model/CloseOrderResult.cc
+	src/model/CreateAbacAuthorizationRequest.cc
+	src/model/CreateAbacAuthorizationResult.cc
+	src/model/CreateAbacPolicyRequest.cc
+	src/model/CreateAbacPolicyResult.cc
 	src/model/CreateAuthorityTemplateRequest.cc
 	src/model/CreateAuthorityTemplateResult.cc
 	src/model/CreateDataArchiveOrderRequest.cc
@@ -530,6 +602,10 @@ set(dms-enterprise_src
 	src/model/CreateUploadFileJobResult.cc
 	src/model/CreateUploadOSSFileJobRequest.cc
 	src/model/CreateUploadOSSFileJobResult.cc
+	src/model/DeleteAbacAuthorizationRequest.cc
+	src/model/DeleteAbacAuthorizationResult.cc
+	src/model/DeleteAbacPolicyRequest.cc
+	src/model/DeleteAbacPolicyResult.cc
 	src/model/DeleteAuthorityTemplateRequest.cc
 	src/model/DeleteAuthorityTemplateResult.cc
 	src/model/DeleteInstanceRequest.cc
@@ -548,6 +624,8 @@ set(dms-enterprise_src
 	src/model/DeleteProxyAccessResult.cc
 	src/model/DeleteScenarioRequest.cc
 	src/model/DeleteScenarioResult.cc
+	src/model/DeleteStandardGroupRequest.cc
+	src/model/DeleteStandardGroupResult.cc
 	src/model/DeleteTaskRequest.cc
 	src/model/DeleteTaskResult.cc
 	src/model/DeleteTaskFlowRequest.cc
@@ -572,6 +650,8 @@ set(dms-enterprise_src
 	src/model/ExecuteScriptResult.cc
 	src/model/ExecuteStructSyncRequest.cc
 	src/model/ExecuteStructSyncResult.cc
+	src/model/GetAbacPolicyRequest.cc
+	src/model/GetAbacPolicyResult.cc
 	src/model/GetApprovalDetailRequest.cc
 	src/model/GetApprovalDetailResult.cc
 	src/model/GetAuthorityTemplateRequest.cc
@@ -610,6 +690,12 @@ set(dms-enterprise_src
 	src/model/GetDataExportPreCheckDetailResult.cc
 	src/model/GetDataImportSQLRequest.cc
 	src/model/GetDataImportSQLResult.cc
+	src/model/GetDataLakeCatalogRequest.cc
+	src/model/GetDataLakeCatalogResult.cc
+	src/model/GetDataLakeDatabaseRequest.cc
+	src/model/GetDataLakeDatabaseResult.cc
+	src/model/GetDataLakeTableRequest.cc
+	src/model/GetDataLakeTableResult.cc
 	src/model/GetDataTrackJobDegreeRequest.cc
 	src/model/GetDataTrackJobDegreeResult.cc
 	src/model/GetDataTrackJobTableMetaRequest.cc
@@ -660,6 +746,8 @@ set(dms-enterprise_src
 	src/model/GetSQLReviewCheckResultStatusResult.cc
 	src/model/GetSQLReviewOptimizeDetailRequest.cc
 	src/model/GetSQLReviewOptimizeDetailResult.cc
+	src/model/GetStandardGroupRequest.cc
+	src/model/GetStandardGroupResult.cc
 	src/model/GetStructSyncExecSqlDetailRequest.cc
 	src/model/GetStructSyncExecSqlDetailResult.cc
 	src/model/GetStructSyncJobAnalyzeResultRequest.cc
@@ -670,6 +758,10 @@ set(dms-enterprise_src
 	src/model/GetStructSyncOrderDetailResult.cc
 	src/model/GetTableDBTopologyRequest.cc
 	src/model/GetTableDBTopologyResult.cc
+	src/model/GetTableDesignProjectFlowRequest.cc
+	src/model/GetTableDesignProjectFlowResult.cc
+	src/model/GetTableDesignProjectInfoRequest.cc
+	src/model/GetTableDesignProjectInfoResult.cc
 	src/model/GetTableTopologyRequest.cc
 	src/model/GetTableTopologyResult.cc
 	src/model/GetTaskRequest.cc
@@ -692,8 +784,20 @@ set(dms-enterprise_src
 	src/model/GrantUserPermissionResult.cc
 	src/model/InspectProxyAccessSecretRequest.cc
 	src/model/InspectProxyAccessSecretResult.cc
+	src/model/ListAbacAuthorizationsRequest.cc
+	src/model/ListAbacAuthorizationsResult.cc
+	src/model/ListAbacPoliciesRequest.cc
+	src/model/ListAbacPoliciesResult.cc
 	src/model/ListAuthorityTemplateRequest.cc
 	src/model/ListAuthorityTemplateResult.cc
+	src/model/ListAuthorizedDatabasesForUserRequest.cc
+	src/model/ListAuthorizedDatabasesForUserResult.cc
+	src/model/ListAuthorizedInstancesForUserRequest.cc
+	src/model/ListAuthorizedInstancesForUserResult.cc
+	src/model/ListAuthorizedUsersForDatabaseRequest.cc
+	src/model/ListAuthorizedUsersForDatabaseResult.cc
+	src/model/ListAuthorizedUsersForInstanceRequest.cc
+	src/model/ListAuthorizedUsersForInstanceResult.cc
 	src/model/ListClassificationTemplatesRequest.cc
 	src/model/ListClassificationTemplatesResult.cc
 	src/model/ListColumnsRequest.cc
@@ -714,6 +818,12 @@ set(dms-enterprise_src
 	src/model/ListDataImportSQLPreCheckDetailResult.cc
 	src/model/ListDataImportSQLTypeRequest.cc
 	src/model/ListDataImportSQLTypeResult.cc
+	src/model/ListDataLakeCatalogRequest.cc
+	src/model/ListDataLakeCatalogResult.cc
+	src/model/ListDataLakeDatabaseRequest.cc
+	src/model/ListDataLakeDatabaseResult.cc
+	src/model/ListDataLakeTablebaseInfoRequest.cc
+	src/model/ListDataLakeTablebaseInfoResult.cc
 	src/model/ListDatabaseUserPermssionsRequest.cc
 	src/model/ListDatabaseUserPermssionsResult.cc
 	src/model/ListDatabasesRequest.cc
@@ -756,6 +866,8 @@ set(dms-enterprise_src
 	src/model/ListSQLReviewOriginSQLResult.cc
 	src/model/ListScenariosRequest.cc
 	src/model/ListScenariosResult.cc
+	src/model/ListSensitiveColumnInfoRequest.cc
+	src/model/ListSensitiveColumnInfoResult.cc
 	src/model/ListSensitiveColumnsRequest.cc
 	src/model/ListSensitiveColumnsResult.cc
 	src/model/ListSensitiveColumnsDetailRequest.cc
@@ -800,12 +912,16 @@ set(dms-enterprise_src
 	src/model/ModifyDataCorrectExecSQLResult.cc
 	src/model/ModifyDesensitizationStrategyRequest.cc
 	src/model/ModifyDesensitizationStrategyResult.cc
+	src/model/ModifyInstanceRequest.cc
+	src/model/ModifyInstanceResult.cc
 	src/model/MoveTaskFlowToScenarioRequest.cc
 	src/model/MoveTaskFlowToScenarioResult.cc
 	src/model/OfflineTaskFlowRequest.cc
 	src/model/OfflineTaskFlowResult.cc
 	src/model/PauseDataCorrectSQLJobRequest.cc
 	src/model/PauseDataCorrectSQLJobResult.cc
+	src/model/PauseDataExportJobRequest.cc
+	src/model/PauseDataExportJobResult.cc
 	src/model/PreviewWorkflowRequest.cc
 	src/model/PreviewWorkflowResult.cc
 	src/model/PublishAndDeployTaskFlowRequest.cc
@@ -822,8 +938,12 @@ set(dms-enterprise_src
 	src/model/RegisterInstanceResult.cc
 	src/model/RegisterUserRequest.cc
 	src/model/RegisterUserResult.cc
+	src/model/RemoveDataExportJobRequest.cc
+	src/model/RemoveDataExportJobResult.cc
 	src/model/RestartDataCorrectSQLJobRequest.cc
 	src/model/RestartDataCorrectSQLJobResult.cc
+	src/model/RestartDataExportJobRequest.cc
+	src/model/RestartDataExportJobResult.cc
 	src/model/ResumeTaskFlowInstanceRequest.cc
 	src/model/ResumeTaskFlowInstanceResult.cc
 	src/model/RetryDataCorrectPreCheckRequest.cc
@@ -840,6 +960,8 @@ set(dms-enterprise_src
 	src/model/SearchTableResult.cc
 	src/model/SetOwnersRequest.cc
 	src/model/SetOwnersResult.cc
+	src/model/SetWorkflowExtraInfoRequest.cc
+	src/model/SetWorkflowExtraInfoResult.cc
 	src/model/SkipDataCorrectRowCheckRequest.cc
 	src/model/SkipDataCorrectRowCheckResult.cc
 	src/model/StopTaskFlowInstanceRequest.cc
@@ -848,12 +970,16 @@ set(dms-enterprise_src
 	src/model/SubmitOrderApprovalResult.cc
 	src/model/SubmitStructSyncOrderApprovalRequest.cc
 	src/model/SubmitStructSyncOrderApprovalResult.cc
+	src/model/SuspendDataExportJobRequest.cc
+	src/model/SuspendDataExportJobResult.cc
 	src/model/SuspendTaskFlowInstanceRequest.cc
 	src/model/SuspendTaskFlowInstanceResult.cc
 	src/model/SyncDatabaseMetaRequest.cc
 	src/model/SyncDatabaseMetaResult.cc
 	src/model/SyncInstanceMetaRequest.cc
 	src/model/SyncInstanceMetaResult.cc
+	src/model/UpdateAbacPolicyRequest.cc
+	src/model/UpdateAbacPolicyResult.cc
 	src/model/UpdateAuthorityTemplateRequest.cc
 	src/model/UpdateAuthorityTemplateResult.cc
 	src/model/UpdateInstanceRequest.cc
@@ -862,6 +988,8 @@ set(dms-enterprise_src
 	src/model/UpdateSLARulesResult.cc
 	src/model/UpdateScenarioRequest.cc
 	src/model/UpdateScenarioResult.cc
+	src/model/UpdateStandardGroupRequest.cc
+	src/model/UpdateStandardGroupResult.cc
 	src/model/UpdateTaskConfigRequest.cc
 	src/model/UpdateTaskConfigResult.cc
 	src/model/UpdateTaskContentRequest.cc

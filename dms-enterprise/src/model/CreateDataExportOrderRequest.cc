@@ -79,6 +79,15 @@ void CreateDataExportOrderRequest::setPluginParam(const CreateDataExportOrderReq
   setParameter(std::string("PluginParam") + ".IgnoreAffectRows", pluginParam.ignoreAffectRows ? "true" : "false");
 }
 
+std::string CreateDataExportOrderRequest::getRealLoginUserUid() const {
+  return realLoginUserUid_;
+}
+
+void CreateDataExportOrderRequest::setRealLoginUserUid(const std::string &realLoginUserUid) {
+  realLoginUserUid_ = realLoginUserUid;
+  setParameter(std::string("RealLoginUserUid"), realLoginUserUid);
+}
+
 std::string CreateDataExportOrderRequest::getAttachmentKey() const {
   return attachmentKey_;
 }

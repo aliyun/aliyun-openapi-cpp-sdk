@@ -50,6 +50,8 @@ void CreateStandardGroupResult::parse(const std::string &payload)
 		standardGroup_.lastMenderId = std::stol(standardGroupNode["LastMenderId"].asString());
 	if(!standardGroupNode["GroupMode"].isNull())
 		standardGroup_.groupMode = standardGroupNode["GroupMode"].asString();
+	if(!standardGroupNode["GroupId"].isNull())
+		standardGroup_.groupId = std::stol(standardGroupNode["GroupId"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorMessage"].isNull())

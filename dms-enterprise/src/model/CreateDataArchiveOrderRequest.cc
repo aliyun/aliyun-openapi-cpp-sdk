@@ -70,16 +70,17 @@ void CreateDataArchiveOrderRequest::setParam(const CreateDataArchiveOrderRequest
   for(int dep1 = 0; dep1 != param.orderAfter.size(); dep1++) {
     setParameter(std::string("Param") + ".OrderAfter." + std::to_string(dep1 + 1), param.orderAfter[dep1]);
   }
-  setParameter(std::string("Param") + ".SourceCatalogName", param.sourceCatalogName);
-  setParameter(std::string("Param") + ".RunMethod", param.runMethod);
   setParameter(std::string("Param") + ".TargetInstanceHost", param.targetInstanceHost);
-  setParameter(std::string("Param") + ".Logic", param.logic ? "true" : "false");
-  setParameter(std::string("Param") + ".SourceSchemaName", param.sourceSchemaName);
-  setParameter(std::string("Param") + ".ArchiveMethod", param.archiveMethod);
   for(int dep1 = 0; dep1 != param.tableIncludes.size(); dep1++) {
     setParameter(std::string("Param") + ".TableIncludes." + std::to_string(dep1 + 1) + ".TableWhere", param.tableIncludes[dep1].tableWhere);
     setParameter(std::string("Param") + ".TableIncludes." + std::to_string(dep1 + 1) + ".TableName", param.tableIncludes[dep1].tableName);
   }
+  setParameter(std::string("Param") + ".SourceCatalogName", param.sourceCatalogName);
+  setParameter(std::string("Param") + ".RunMethod", param.runMethod);
+  setParameter(std::string("Param") + ".Logic", param.logic ? "true" : "false");
+  setParameter(std::string("Param") + ".SourceSchemaName", param.sourceSchemaName);
+  setParameter(std::string("Param") + ".ArchiveMethod", param.archiveMethod);
+  setParameter(std::string("Param") + ".DatabaseId", param.databaseId);
 }
 
 std::vector<CreateDataArchiveOrderRequest::std::string> CreateDataArchiveOrderRequest::getRelatedUserList() const {

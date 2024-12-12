@@ -45,6 +45,8 @@ void GetDataExportOrderDetailResult::parse(const std::string &payload)
 		dataExportOrderDetail_.keyInfo.preCheckId = std::stol(keyInfoNode["PreCheckId"].asString());
 	if(!keyInfoNode["JobStatus"].isNull())
 		dataExportOrderDetail_.keyInfo.jobStatus = keyInfoNode["JobStatus"].asString();
+	if(!keyInfoNode["JobId"].isNull())
+		dataExportOrderDetail_.keyInfo.jobId = std::stol(keyInfoNode["JobId"].asString());
 	auto orderDetailNode = dataExportOrderDetailNode["OrderDetail"];
 	if(!orderDetailNode["DbId"].isNull())
 		dataExportOrderDetail_.orderDetail.dbId = std::stoi(orderDetailNode["DbId"].asString());

@@ -56,6 +56,10 @@ void GetApprovalDetailResult::parse(const std::string &payload)
 		approvalDetail_.workflowInsCode = approvalDetailNode["WorkflowInsCode"].asString();
 	if(!approvalDetailNode["TemplateId"].isNull())
 		approvalDetail_.templateId = std::stol(approvalDetailNode["TemplateId"].asString());
+	if(!approvalDetailNode["ThirdpartyWorkflowUrl"].isNull())
+		approvalDetail_.thirdpartyWorkflowUrl = approvalDetailNode["ThirdpartyWorkflowUrl"].asString();
+	if(!approvalDetailNode["ThirdpartyWorkflowComment"].isNull())
+		approvalDetail_.thirdpartyWorkflowComment = approvalDetailNode["ThirdpartyWorkflowComment"].asString();
 	auto allWorkflowNodesNode = approvalDetailNode["WorkflowNodes"]["WorkflowNode"];
 	for (auto approvalDetailNodeWorkflowNodesWorkflowNode : allWorkflowNodesNode)
 	{

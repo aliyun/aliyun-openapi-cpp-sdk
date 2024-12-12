@@ -61,3 +61,12 @@ void ExecuteDataExportRequest::setActionName(const std::string &actionName) {
   setParameter(std::string("ActionName"), actionName);
 }
 
+std::string ExecuteDataExportRequest::getRealLoginUserUid() const {
+  return realLoginUserUid_;
+}
+
+void ExecuteDataExportRequest::setRealLoginUserUid(const std::string &realLoginUserUid) {
+  realLoginUserUid_ = realLoginUserUid;
+  setParameter(std::string("RealLoginUserUid"), realLoginUserUid);
+}
+

@@ -42,10 +42,14 @@ public:
 	void setApprovalNodeId(long approvalNodeId);
 	long getOldApprover() const;
 	void setOldApprover(long oldApprover);
+	std::string getRealLoginUserUid() const;
+	void setRealLoginUserUid(const std::string &realLoginUserUid);
 	std::string getComment() const;
 	void setComment(const std::string &comment);
 	std::string getApprovalNodePos() const;
 	void setApprovalNodePos(const std::string &approvalNodePos);
+	std::string getNewApproverList() const;
+	void setNewApproverList(const std::string &newApproverList);
 
 private:
 	long tid_;
@@ -54,8 +58,10 @@ private:
 	long newApprover_;
 	long approvalNodeId_;
 	long oldApprover_;
+	std::string realLoginUserUid_;
 	std::string comment_;
 	std::string approvalNodePos_;
+	std::string newApproverList_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

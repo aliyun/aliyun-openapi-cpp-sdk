@@ -48,6 +48,35 @@ namespace AlibabaCloud
 						std::string rbAttachmentName;
 						std::string rbSQL;
 					};
+					struct ConfigDetail
+					{
+						struct ImportExtConfig
+						{
+							std::string importMode;
+							bool csvFirstRowIsColumnDef;
+							bool ignoreError;
+							std::string insertType;
+						};
+						struct CronExtConfig
+						{
+							int currentClearTaskCount;
+							int optimizeTableAfterEveryClearTimes;
+						};
+						CronExtConfig cronExtConfig;
+						std::string cronFormat;
+						std::string detailType;
+						long currentTaskId;
+						std::string cronLastCallStartTime;
+						int duration;
+						int cronCallTimes;
+						std::string csvTableName;
+						bool cron;
+						ImportExtConfig importExtConfig;
+						std::string cronStatus;
+						std::string fileType;
+						std::string cronNextCallTime;
+						std::string fileEncoding;
+					};
 					struct TaskCheckDO
 					{
 						std::string userTip;
@@ -65,6 +94,7 @@ namespace AlibabaCloud
 					OrderDetail orderDetail;
 					std::string status;
 					std::vector<Database> databaseList;
+					ConfigDetail configDetail;
 					std::vector<TaskCheckDO> preCheckDetail;
 					std::string execMode;
 				};

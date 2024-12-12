@@ -53,6 +53,8 @@ public:
 	void setParam(const Param &param);
 	std::vector<long> getRelatedUserList() const;
 	void setRelatedUserList(const std::vector<long> &relatedUserList);
+	std::string getRealLoginUserUid() const;
+	void setRealLoginUserUid(const std::string &realLoginUserUid);
 	std::string getAttachmentKey() const;
 	void setAttachmentKey(const std::string &attachmentKey);
 	std::string getComment() const;
@@ -62,6 +64,7 @@ private:
 	long tid_;
 	Param param_;
 	std::vector<long> relatedUserList_;
+	std::string realLoginUserUid_;
 	std::string attachmentKey_;
 	std::string comment_;
 };

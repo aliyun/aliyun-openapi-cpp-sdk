@@ -61,3 +61,12 @@ void ExecuteDataCorrectRequest::setActionName(const std::string &actionName) {
   setParameter(std::string("ActionName"), actionName);
 }
 
+std::string ExecuteDataCorrectRequest::getRealLoginUserUid() const {
+  return realLoginUserUid_;
+}
+
+void ExecuteDataCorrectRequest::setRealLoginUserUid(const std::string &realLoginUserUid) {
+  realLoginUserUid_ = realLoginUserUid;
+  setParameter(std::string("RealLoginUserUid"), realLoginUserUid);
+}
+

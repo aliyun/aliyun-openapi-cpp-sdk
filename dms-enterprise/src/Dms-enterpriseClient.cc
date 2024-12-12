@@ -51,6 +51,42 @@ Dms_enterpriseClient::Dms_enterpriseClient(const std::string & accessKeyId, cons
 Dms_enterpriseClient::~Dms_enterpriseClient()
 {}
 
+Dms_enterpriseClient::AddAuthorityTemplateItemsOutcome Dms_enterpriseClient::addAuthorityTemplateItems(const AddAuthorityTemplateItemsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddAuthorityTemplateItemsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddAuthorityTemplateItemsOutcome(AddAuthorityTemplateItemsResult(outcome.result()));
+	else
+		return AddAuthorityTemplateItemsOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::addAuthorityTemplateItemsAsync(const AddAuthorityTemplateItemsRequest& request, const AddAuthorityTemplateItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addAuthorityTemplateItems(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::AddAuthorityTemplateItemsOutcomeCallable Dms_enterpriseClient::addAuthorityTemplateItemsCallable(const AddAuthorityTemplateItemsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddAuthorityTemplateItemsOutcome()>>(
+			[this, request]()
+			{
+			return this->addAuthorityTemplateItems(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::AddDesensitizationRuleOutcome Dms_enterpriseClient::addDesensitizationRule(const AddDesensitizationRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -81,6 +117,42 @@ Dms_enterpriseClient::AddDesensitizationRuleOutcomeCallable Dms_enterpriseClient
 			[this, request]()
 			{
 			return this->addDesensitizationRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::AddInstanceOutcome Dms_enterpriseClient::addInstance(const AddInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddInstanceOutcome(AddInstanceResult(outcome.result()));
+	else
+		return AddInstanceOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::addInstanceAsync(const AddInstanceRequest& request, const AddInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::AddInstanceOutcomeCallable Dms_enterpriseClient::addInstanceCallable(const AddInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->addInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -477,6 +549,78 @@ Dms_enterpriseClient::CloseOrderOutcomeCallable Dms_enterpriseClient::closeOrder
 			[this, request]()
 			{
 			return this->closeOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::CreateAbacAuthorizationOutcome Dms_enterpriseClient::createAbacAuthorization(const CreateAbacAuthorizationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAbacAuthorizationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAbacAuthorizationOutcome(CreateAbacAuthorizationResult(outcome.result()));
+	else
+		return CreateAbacAuthorizationOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createAbacAuthorizationAsync(const CreateAbacAuthorizationRequest& request, const CreateAbacAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAbacAuthorization(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateAbacAuthorizationOutcomeCallable Dms_enterpriseClient::createAbacAuthorizationCallable(const CreateAbacAuthorizationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAbacAuthorizationOutcome()>>(
+			[this, request]()
+			{
+			return this->createAbacAuthorization(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::CreateAbacPolicyOutcome Dms_enterpriseClient::createAbacPolicy(const CreateAbacPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAbacPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAbacPolicyOutcome(CreateAbacPolicyResult(outcome.result()));
+	else
+		return CreateAbacPolicyOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createAbacPolicyAsync(const CreateAbacPolicyRequest& request, const CreateAbacPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAbacPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateAbacPolicyOutcomeCallable Dms_enterpriseClient::createAbacPolicyCallable(const CreateAbacPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAbacPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->createAbacPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1347,6 +1491,78 @@ Dms_enterpriseClient::CreateUploadOSSFileJobOutcomeCallable Dms_enterpriseClient
 	return task->get_future();
 }
 
+Dms_enterpriseClient::DeleteAbacAuthorizationOutcome Dms_enterpriseClient::deleteAbacAuthorization(const DeleteAbacAuthorizationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAbacAuthorizationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAbacAuthorizationOutcome(DeleteAbacAuthorizationResult(outcome.result()));
+	else
+		return DeleteAbacAuthorizationOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::deleteAbacAuthorizationAsync(const DeleteAbacAuthorizationRequest& request, const DeleteAbacAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAbacAuthorization(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::DeleteAbacAuthorizationOutcomeCallable Dms_enterpriseClient::deleteAbacAuthorizationCallable(const DeleteAbacAuthorizationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAbacAuthorizationOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAbacAuthorization(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::DeleteAbacPolicyOutcome Dms_enterpriseClient::deleteAbacPolicy(const DeleteAbacPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAbacPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAbacPolicyOutcome(DeleteAbacPolicyResult(outcome.result()));
+	else
+		return DeleteAbacPolicyOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::deleteAbacPolicyAsync(const DeleteAbacPolicyRequest& request, const DeleteAbacPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAbacPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::DeleteAbacPolicyOutcomeCallable Dms_enterpriseClient::deleteAbacPolicyCallable(const DeleteAbacPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAbacPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAbacPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::DeleteAuthorityTemplateOutcome Dms_enterpriseClient::deleteAuthorityTemplate(const DeleteAuthorityTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1665,6 +1881,42 @@ Dms_enterpriseClient::DeleteScenarioOutcomeCallable Dms_enterpriseClient::delete
 			[this, request]()
 			{
 			return this->deleteScenario(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::DeleteStandardGroupOutcome Dms_enterpriseClient::deleteStandardGroup(const DeleteStandardGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteStandardGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteStandardGroupOutcome(DeleteStandardGroupResult(outcome.result()));
+	else
+		return DeleteStandardGroupOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::deleteStandardGroupAsync(const DeleteStandardGroupRequest& request, const DeleteStandardGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteStandardGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::DeleteStandardGroupOutcomeCallable Dms_enterpriseClient::deleteStandardGroupCallable(const DeleteStandardGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteStandardGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteStandardGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2097,6 +2349,42 @@ Dms_enterpriseClient::ExecuteStructSyncOutcomeCallable Dms_enterpriseClient::exe
 			[this, request]()
 			{
 			return this->executeStructSync(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetAbacPolicyOutcome Dms_enterpriseClient::getAbacPolicy(const GetAbacPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAbacPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAbacPolicyOutcome(GetAbacPolicyResult(outcome.result()));
+	else
+		return GetAbacPolicyOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getAbacPolicyAsync(const GetAbacPolicyRequest& request, const GetAbacPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAbacPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetAbacPolicyOutcomeCallable Dms_enterpriseClient::getAbacPolicyCallable(const GetAbacPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAbacPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->getAbacPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2781,6 +3069,114 @@ Dms_enterpriseClient::GetDataImportSQLOutcomeCallable Dms_enterpriseClient::getD
 			[this, request]()
 			{
 			return this->getDataImportSQL(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetDataLakeCatalogOutcome Dms_enterpriseClient::getDataLakeCatalog(const GetDataLakeCatalogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataLakeCatalogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataLakeCatalogOutcome(GetDataLakeCatalogResult(outcome.result()));
+	else
+		return GetDataLakeCatalogOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDataLakeCatalogAsync(const GetDataLakeCatalogRequest& request, const GetDataLakeCatalogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataLakeCatalog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDataLakeCatalogOutcomeCallable Dms_enterpriseClient::getDataLakeCatalogCallable(const GetDataLakeCatalogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataLakeCatalogOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataLakeCatalog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetDataLakeDatabaseOutcome Dms_enterpriseClient::getDataLakeDatabase(const GetDataLakeDatabaseRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataLakeDatabaseOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataLakeDatabaseOutcome(GetDataLakeDatabaseResult(outcome.result()));
+	else
+		return GetDataLakeDatabaseOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDataLakeDatabaseAsync(const GetDataLakeDatabaseRequest& request, const GetDataLakeDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataLakeDatabase(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDataLakeDatabaseOutcomeCallable Dms_enterpriseClient::getDataLakeDatabaseCallable(const GetDataLakeDatabaseRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataLakeDatabaseOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataLakeDatabase(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetDataLakeTableOutcome Dms_enterpriseClient::getDataLakeTable(const GetDataLakeTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataLakeTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataLakeTableOutcome(GetDataLakeTableResult(outcome.result()));
+	else
+		return GetDataLakeTableOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDataLakeTableAsync(const GetDataLakeTableRequest& request, const GetDataLakeTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataLakeTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDataLakeTableOutcomeCallable Dms_enterpriseClient::getDataLakeTableCallable(const GetDataLakeTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataLakeTableOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataLakeTable(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3687,6 +4083,42 @@ Dms_enterpriseClient::GetSQLReviewOptimizeDetailOutcomeCallable Dms_enterpriseCl
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GetStandardGroupOutcome Dms_enterpriseClient::getStandardGroup(const GetStandardGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetStandardGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetStandardGroupOutcome(GetStandardGroupResult(outcome.result()));
+	else
+		return GetStandardGroupOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getStandardGroupAsync(const GetStandardGroupRequest& request, const GetStandardGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getStandardGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetStandardGroupOutcomeCallable Dms_enterpriseClient::getStandardGroupCallable(const GetStandardGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetStandardGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->getStandardGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GetStructSyncExecSqlDetailOutcome Dms_enterpriseClient::getStructSyncExecSqlDetail(const GetStructSyncExecSqlDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3861,6 +4293,78 @@ Dms_enterpriseClient::GetTableDBTopologyOutcomeCallable Dms_enterpriseClient::ge
 			[this, request]()
 			{
 			return this->getTableDBTopology(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetTableDesignProjectFlowOutcome Dms_enterpriseClient::getTableDesignProjectFlow(const GetTableDesignProjectFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTableDesignProjectFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTableDesignProjectFlowOutcome(GetTableDesignProjectFlowResult(outcome.result()));
+	else
+		return GetTableDesignProjectFlowOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getTableDesignProjectFlowAsync(const GetTableDesignProjectFlowRequest& request, const GetTableDesignProjectFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTableDesignProjectFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetTableDesignProjectFlowOutcomeCallable Dms_enterpriseClient::getTableDesignProjectFlowCallable(const GetTableDesignProjectFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTableDesignProjectFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->getTableDesignProjectFlow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetTableDesignProjectInfoOutcome Dms_enterpriseClient::getTableDesignProjectInfo(const GetTableDesignProjectInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTableDesignProjectInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTableDesignProjectInfoOutcome(GetTableDesignProjectInfoResult(outcome.result()));
+	else
+		return GetTableDesignProjectInfoOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getTableDesignProjectInfoAsync(const GetTableDesignProjectInfoRequest& request, const GetTableDesignProjectInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTableDesignProjectInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetTableDesignProjectInfoOutcomeCallable Dms_enterpriseClient::getTableDesignProjectInfoCallable(const GetTableDesignProjectInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTableDesignProjectInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getTableDesignProjectInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4263,6 +4767,78 @@ Dms_enterpriseClient::InspectProxyAccessSecretOutcomeCallable Dms_enterpriseClie
 	return task->get_future();
 }
 
+Dms_enterpriseClient::ListAbacAuthorizationsOutcome Dms_enterpriseClient::listAbacAuthorizations(const ListAbacAuthorizationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAbacAuthorizationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAbacAuthorizationsOutcome(ListAbacAuthorizationsResult(outcome.result()));
+	else
+		return ListAbacAuthorizationsOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listAbacAuthorizationsAsync(const ListAbacAuthorizationsRequest& request, const ListAbacAuthorizationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAbacAuthorizations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListAbacAuthorizationsOutcomeCallable Dms_enterpriseClient::listAbacAuthorizationsCallable(const ListAbacAuthorizationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAbacAuthorizationsOutcome()>>(
+			[this, request]()
+			{
+			return this->listAbacAuthorizations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListAbacPoliciesOutcome Dms_enterpriseClient::listAbacPolicies(const ListAbacPoliciesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAbacPoliciesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAbacPoliciesOutcome(ListAbacPoliciesResult(outcome.result()));
+	else
+		return ListAbacPoliciesOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listAbacPoliciesAsync(const ListAbacPoliciesRequest& request, const ListAbacPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAbacPolicies(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListAbacPoliciesOutcomeCallable Dms_enterpriseClient::listAbacPoliciesCallable(const ListAbacPoliciesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAbacPoliciesOutcome()>>(
+			[this, request]()
+			{
+			return this->listAbacPolicies(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::ListAuthorityTemplateOutcome Dms_enterpriseClient::listAuthorityTemplate(const ListAuthorityTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4293,6 +4869,150 @@ Dms_enterpriseClient::ListAuthorityTemplateOutcomeCallable Dms_enterpriseClient:
 			[this, request]()
 			{
 			return this->listAuthorityTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListAuthorizedDatabasesForUserOutcome Dms_enterpriseClient::listAuthorizedDatabasesForUser(const ListAuthorizedDatabasesForUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAuthorizedDatabasesForUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAuthorizedDatabasesForUserOutcome(ListAuthorizedDatabasesForUserResult(outcome.result()));
+	else
+		return ListAuthorizedDatabasesForUserOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listAuthorizedDatabasesForUserAsync(const ListAuthorizedDatabasesForUserRequest& request, const ListAuthorizedDatabasesForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAuthorizedDatabasesForUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListAuthorizedDatabasesForUserOutcomeCallable Dms_enterpriseClient::listAuthorizedDatabasesForUserCallable(const ListAuthorizedDatabasesForUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAuthorizedDatabasesForUserOutcome()>>(
+			[this, request]()
+			{
+			return this->listAuthorizedDatabasesForUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListAuthorizedInstancesForUserOutcome Dms_enterpriseClient::listAuthorizedInstancesForUser(const ListAuthorizedInstancesForUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAuthorizedInstancesForUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAuthorizedInstancesForUserOutcome(ListAuthorizedInstancesForUserResult(outcome.result()));
+	else
+		return ListAuthorizedInstancesForUserOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listAuthorizedInstancesForUserAsync(const ListAuthorizedInstancesForUserRequest& request, const ListAuthorizedInstancesForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAuthorizedInstancesForUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListAuthorizedInstancesForUserOutcomeCallable Dms_enterpriseClient::listAuthorizedInstancesForUserCallable(const ListAuthorizedInstancesForUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAuthorizedInstancesForUserOutcome()>>(
+			[this, request]()
+			{
+			return this->listAuthorizedInstancesForUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListAuthorizedUsersForDatabaseOutcome Dms_enterpriseClient::listAuthorizedUsersForDatabase(const ListAuthorizedUsersForDatabaseRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAuthorizedUsersForDatabaseOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAuthorizedUsersForDatabaseOutcome(ListAuthorizedUsersForDatabaseResult(outcome.result()));
+	else
+		return ListAuthorizedUsersForDatabaseOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listAuthorizedUsersForDatabaseAsync(const ListAuthorizedUsersForDatabaseRequest& request, const ListAuthorizedUsersForDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAuthorizedUsersForDatabase(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListAuthorizedUsersForDatabaseOutcomeCallable Dms_enterpriseClient::listAuthorizedUsersForDatabaseCallable(const ListAuthorizedUsersForDatabaseRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAuthorizedUsersForDatabaseOutcome()>>(
+			[this, request]()
+			{
+			return this->listAuthorizedUsersForDatabase(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListAuthorizedUsersForInstanceOutcome Dms_enterpriseClient::listAuthorizedUsersForInstance(const ListAuthorizedUsersForInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAuthorizedUsersForInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAuthorizedUsersForInstanceOutcome(ListAuthorizedUsersForInstanceResult(outcome.result()));
+	else
+		return ListAuthorizedUsersForInstanceOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listAuthorizedUsersForInstanceAsync(const ListAuthorizedUsersForInstanceRequest& request, const ListAuthorizedUsersForInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAuthorizedUsersForInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListAuthorizedUsersForInstanceOutcomeCallable Dms_enterpriseClient::listAuthorizedUsersForInstanceCallable(const ListAuthorizedUsersForInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAuthorizedUsersForInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->listAuthorizedUsersForInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4653,6 +5373,114 @@ Dms_enterpriseClient::ListDataImportSQLTypeOutcomeCallable Dms_enterpriseClient:
 			[this, request]()
 			{
 			return this->listDataImportSQLType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListDataLakeCatalogOutcome Dms_enterpriseClient::listDataLakeCatalog(const ListDataLakeCatalogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDataLakeCatalogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDataLakeCatalogOutcome(ListDataLakeCatalogResult(outcome.result()));
+	else
+		return ListDataLakeCatalogOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listDataLakeCatalogAsync(const ListDataLakeCatalogRequest& request, const ListDataLakeCatalogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDataLakeCatalog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListDataLakeCatalogOutcomeCallable Dms_enterpriseClient::listDataLakeCatalogCallable(const ListDataLakeCatalogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDataLakeCatalogOutcome()>>(
+			[this, request]()
+			{
+			return this->listDataLakeCatalog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListDataLakeDatabaseOutcome Dms_enterpriseClient::listDataLakeDatabase(const ListDataLakeDatabaseRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDataLakeDatabaseOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDataLakeDatabaseOutcome(ListDataLakeDatabaseResult(outcome.result()));
+	else
+		return ListDataLakeDatabaseOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listDataLakeDatabaseAsync(const ListDataLakeDatabaseRequest& request, const ListDataLakeDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDataLakeDatabase(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListDataLakeDatabaseOutcomeCallable Dms_enterpriseClient::listDataLakeDatabaseCallable(const ListDataLakeDatabaseRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDataLakeDatabaseOutcome()>>(
+			[this, request]()
+			{
+			return this->listDataLakeDatabase(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListDataLakeTablebaseInfoOutcome Dms_enterpriseClient::listDataLakeTablebaseInfo(const ListDataLakeTablebaseInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDataLakeTablebaseInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDataLakeTablebaseInfoOutcome(ListDataLakeTablebaseInfoResult(outcome.result()));
+	else
+		return ListDataLakeTablebaseInfoOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listDataLakeTablebaseInfoAsync(const ListDataLakeTablebaseInfoRequest& request, const ListDataLakeTablebaseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDataLakeTablebaseInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListDataLakeTablebaseInfoOutcomeCallable Dms_enterpriseClient::listDataLakeTablebaseInfoCallable(const ListDataLakeTablebaseInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDataLakeTablebaseInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->listDataLakeTablebaseInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5409,6 +6237,42 @@ Dms_enterpriseClient::ListScenariosOutcomeCallable Dms_enterpriseClient::listSce
 			[this, request]()
 			{
 			return this->listScenarios(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListSensitiveColumnInfoOutcome Dms_enterpriseClient::listSensitiveColumnInfo(const ListSensitiveColumnInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSensitiveColumnInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSensitiveColumnInfoOutcome(ListSensitiveColumnInfoResult(outcome.result()));
+	else
+		return ListSensitiveColumnInfoOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listSensitiveColumnInfoAsync(const ListSensitiveColumnInfoRequest& request, const ListSensitiveColumnInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSensitiveColumnInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListSensitiveColumnInfoOutcomeCallable Dms_enterpriseClient::listSensitiveColumnInfoCallable(const ListSensitiveColumnInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSensitiveColumnInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->listSensitiveColumnInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6207,6 +7071,42 @@ Dms_enterpriseClient::ModifyDesensitizationStrategyOutcomeCallable Dms_enterpris
 	return task->get_future();
 }
 
+Dms_enterpriseClient::ModifyInstanceOutcome Dms_enterpriseClient::modifyInstance(const ModifyInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInstanceOutcome(ModifyInstanceResult(outcome.result()));
+	else
+		return ModifyInstanceOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::modifyInstanceAsync(const ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ModifyInstanceOutcomeCallable Dms_enterpriseClient::modifyInstanceCallable(const ModifyInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::MoveTaskFlowToScenarioOutcome Dms_enterpriseClient::moveTaskFlowToScenario(const MoveTaskFlowToScenarioRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6309,6 +7209,42 @@ Dms_enterpriseClient::PauseDataCorrectSQLJobOutcomeCallable Dms_enterpriseClient
 			[this, request]()
 			{
 			return this->pauseDataCorrectSQLJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::PauseDataExportJobOutcome Dms_enterpriseClient::pauseDataExportJob(const PauseDataExportJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PauseDataExportJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PauseDataExportJobOutcome(PauseDataExportJobResult(outcome.result()));
+	else
+		return PauseDataExportJobOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::pauseDataExportJobAsync(const PauseDataExportJobRequest& request, const PauseDataExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, pauseDataExportJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::PauseDataExportJobOutcomeCallable Dms_enterpriseClient::pauseDataExportJobCallable(const PauseDataExportJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PauseDataExportJobOutcome()>>(
+			[this, request]()
+			{
+			return this->pauseDataExportJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6603,6 +7539,42 @@ Dms_enterpriseClient::RegisterUserOutcomeCallable Dms_enterpriseClient::register
 	return task->get_future();
 }
 
+Dms_enterpriseClient::RemoveDataExportJobOutcome Dms_enterpriseClient::removeDataExportJob(const RemoveDataExportJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveDataExportJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveDataExportJobOutcome(RemoveDataExportJobResult(outcome.result()));
+	else
+		return RemoveDataExportJobOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::removeDataExportJobAsync(const RemoveDataExportJobRequest& request, const RemoveDataExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeDataExportJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::RemoveDataExportJobOutcomeCallable Dms_enterpriseClient::removeDataExportJobCallable(const RemoveDataExportJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveDataExportJobOutcome()>>(
+			[this, request]()
+			{
+			return this->removeDataExportJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::RestartDataCorrectSQLJobOutcome Dms_enterpriseClient::restartDataCorrectSQLJob(const RestartDataCorrectSQLJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6633,6 +7605,42 @@ Dms_enterpriseClient::RestartDataCorrectSQLJobOutcomeCallable Dms_enterpriseClie
 			[this, request]()
 			{
 			return this->restartDataCorrectSQLJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::RestartDataExportJobOutcome Dms_enterpriseClient::restartDataExportJob(const RestartDataExportJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RestartDataExportJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RestartDataExportJobOutcome(RestartDataExportJobResult(outcome.result()));
+	else
+		return RestartDataExportJobOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::restartDataExportJobAsync(const RestartDataExportJobRequest& request, const RestartDataExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, restartDataExportJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::RestartDataExportJobOutcomeCallable Dms_enterpriseClient::restartDataExportJobCallable(const RestartDataExportJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RestartDataExportJobOutcome()>>(
+			[this, request]()
+			{
+			return this->restartDataExportJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6927,6 +7935,42 @@ Dms_enterpriseClient::SetOwnersOutcomeCallable Dms_enterpriseClient::setOwnersCa
 	return task->get_future();
 }
 
+Dms_enterpriseClient::SetWorkflowExtraInfoOutcome Dms_enterpriseClient::setWorkflowExtraInfo(const SetWorkflowExtraInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetWorkflowExtraInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetWorkflowExtraInfoOutcome(SetWorkflowExtraInfoResult(outcome.result()));
+	else
+		return SetWorkflowExtraInfoOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::setWorkflowExtraInfoAsync(const SetWorkflowExtraInfoRequest& request, const SetWorkflowExtraInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setWorkflowExtraInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::SetWorkflowExtraInfoOutcomeCallable Dms_enterpriseClient::setWorkflowExtraInfoCallable(const SetWorkflowExtraInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetWorkflowExtraInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->setWorkflowExtraInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::SkipDataCorrectRowCheckOutcome Dms_enterpriseClient::skipDataCorrectRowCheck(const SkipDataCorrectRowCheckRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7071,6 +8115,42 @@ Dms_enterpriseClient::SubmitStructSyncOrderApprovalOutcomeCallable Dms_enterpris
 	return task->get_future();
 }
 
+Dms_enterpriseClient::SuspendDataExportJobOutcome Dms_enterpriseClient::suspendDataExportJob(const SuspendDataExportJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SuspendDataExportJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SuspendDataExportJobOutcome(SuspendDataExportJobResult(outcome.result()));
+	else
+		return SuspendDataExportJobOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::suspendDataExportJobAsync(const SuspendDataExportJobRequest& request, const SuspendDataExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, suspendDataExportJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::SuspendDataExportJobOutcomeCallable Dms_enterpriseClient::suspendDataExportJobCallable(const SuspendDataExportJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SuspendDataExportJobOutcome()>>(
+			[this, request]()
+			{
+			return this->suspendDataExportJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::SuspendTaskFlowInstanceOutcome Dms_enterpriseClient::suspendTaskFlowInstance(const SuspendTaskFlowInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7173,6 +8253,42 @@ Dms_enterpriseClient::SyncInstanceMetaOutcomeCallable Dms_enterpriseClient::sync
 			[this, request]()
 			{
 			return this->syncInstanceMeta(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateAbacPolicyOutcome Dms_enterpriseClient::updateAbacPolicy(const UpdateAbacPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAbacPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAbacPolicyOutcome(UpdateAbacPolicyResult(outcome.result()));
+	else
+		return UpdateAbacPolicyOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateAbacPolicyAsync(const UpdateAbacPolicyRequest& request, const UpdateAbacPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAbacPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateAbacPolicyOutcomeCallable Dms_enterpriseClient::updateAbacPolicyCallable(const UpdateAbacPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAbacPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAbacPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7317,6 +8433,42 @@ Dms_enterpriseClient::UpdateScenarioOutcomeCallable Dms_enterpriseClient::update
 			[this, request]()
 			{
 			return this->updateScenario(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateStandardGroupOutcome Dms_enterpriseClient::updateStandardGroup(const UpdateStandardGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateStandardGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateStandardGroupOutcome(UpdateStandardGroupResult(outcome.result()));
+	else
+		return UpdateStandardGroupOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateStandardGroupAsync(const UpdateStandardGroupRequest& request, const UpdateStandardGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateStandardGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateStandardGroupOutcomeCallable Dms_enterpriseClient::updateStandardGroupCallable(const UpdateStandardGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateStandardGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->updateStandardGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

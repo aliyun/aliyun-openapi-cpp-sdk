@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					{
 						std::string jobStatus;
 						long preCheckId;
+						long jobId;
 					};
 					struct OrderDetail
 					{

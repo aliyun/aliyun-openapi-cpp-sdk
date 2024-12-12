@@ -34,10 +34,13 @@ public:
 	void setTid(long tid);
 	long getOrderId() const;
 	void setOrderId(long orderId);
+	std::string getRealLoginUserUid() const;
+	void setRealLoginUserUid(const std::string &realLoginUserUid);
 
 private:
 	long tid_;
 	long orderId_;
+	std::string realLoginUserUid_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

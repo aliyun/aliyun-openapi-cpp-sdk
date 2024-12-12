@@ -43,3 +43,12 @@ void SubmitOrderApprovalRequest::setOrderId(long orderId) {
   setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 
+std::string SubmitOrderApprovalRequest::getRealLoginUserUid() const {
+  return realLoginUserUid_;
+}
+
+void SubmitOrderApprovalRequest::setRealLoginUserUid(const std::string &realLoginUserUid) {
+  realLoginUserUid_ = realLoginUserUid;
+  setParameter(std::string("RealLoginUserUid"), realLoginUserUid);
+}
+
