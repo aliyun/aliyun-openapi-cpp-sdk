@@ -97,6 +97,8 @@ void GetFeatureViewResult::parse(const std::string &payload)
 		lastSyncConfig_ = value["LastSyncConfig"].asString();
 	if(!value["PublishTableScript"].isNull())
 		publishTableScript_ = value["PublishTableScript"].asString();
+	if(!value["MockTableName"].isNull())
+		mockTableName_ = value["MockTableName"].asString();
 
 }
 
@@ -188,6 +190,11 @@ std::string GetFeatureViewResult::getType()const
 std::vector<GetFeatureViewResult::FieldsItem> GetFeatureViewResult::getFields()const
 {
 	return fields_;
+}
+
+std::string GetFeatureViewResult::getMockTableName()const
+{
+	return mockTableName_;
 }
 
 std::string GetFeatureViewResult::getRegisterDatasourceName()const

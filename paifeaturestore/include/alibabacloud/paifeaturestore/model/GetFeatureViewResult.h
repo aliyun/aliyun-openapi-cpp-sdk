@@ -61,6 +61,7 @@ namespace AlibabaCloud
 				std::string getLastSyncConfig()const;
 				std::string getType()const;
 				std::vector<FieldsItem> getFields()const;
+				std::string getMockTableName()const;
 				std::string getRegisterDatasourceName()const;
 				std::string getFeatureEntityId()const;
 				std::vector<std::string> getTags()const;
@@ -88,6 +89,7 @@ namespace AlibabaCloud
 				std::string lastSyncConfig_;
 				std::string type_;
 				std::vector<FieldsItem> fields_;
+				std::string mockTableName_;
 				std::string registerDatasourceName_;
 				std::string featureEntityId_;
 				std::vector<std::string> tags_;
