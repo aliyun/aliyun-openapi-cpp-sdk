@@ -99,6 +99,8 @@ void GetPlayInfoResult::parse(const std::string &payload)
 			playInfoListObject.jobType = std::stoi(valuePlayInfoListPlayInfo["JobType"].asString());
 		if(!valuePlayInfoListPlayInfo["JobExt"].isNull())
 			playInfoListObject.jobExt = valuePlayInfoListPlayInfo["JobExt"].asString();
+		if(!valuePlayInfoListPlayInfo["CodecName"].isNull())
+			playInfoListObject.codecName = valuePlayInfoListPlayInfo["CodecName"].asString();
 		playInfoList_.push_back(playInfoListObject);
 	}
 	auto videoBaseNode = value["VideoBase"];

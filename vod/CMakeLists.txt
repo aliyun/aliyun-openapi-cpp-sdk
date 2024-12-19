@@ -41,6 +41,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/AddWatermarkResult.h
 	include/alibabacloud/vod/model/AttachAppPolicyToIdentityRequest.h
 	include/alibabacloud/vod/model/AttachAppPolicyToIdentityResult.h
+	include/alibabacloud/vod/model/BatchGetMediaInfosRequest.h
+	include/alibabacloud/vod/model/BatchGetMediaInfosResult.h
 	include/alibabacloud/vod/model/BatchSetVodDomainConfigsRequest.h
 	include/alibabacloud/vod/model/BatchSetVodDomainConfigsResult.h
 	include/alibabacloud/vod/model/BatchStartVodDomainRequest.h
@@ -101,6 +103,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DeleteVodTemplateResult.h
 	include/alibabacloud/vod/model/DeleteWatermarkRequest.h
 	include/alibabacloud/vod/model/DeleteWatermarkResult.h
+	include/alibabacloud/vod/model/DescribeMediaDistributionRequest.h
+	include/alibabacloud/vod/model/DescribeMediaDistributionResult.h
 	include/alibabacloud/vod/model/DescribePlayTopVideosRequest.h
 	include/alibabacloud/vod/model/DescribePlayTopVideosResult.h
 	include/alibabacloud/vod/model/DescribePlayUserAvgRequest.h
@@ -396,6 +400,8 @@ set(vod_src
 	src/model/AddWatermarkResult.cc
 	src/model/AttachAppPolicyToIdentityRequest.cc
 	src/model/AttachAppPolicyToIdentityResult.cc
+	src/model/BatchGetMediaInfosRequest.cc
+	src/model/BatchGetMediaInfosResult.cc
 	src/model/BatchSetVodDomainConfigsRequest.cc
 	src/model/BatchSetVodDomainConfigsResult.cc
 	src/model/BatchStartVodDomainRequest.cc
@@ -456,6 +462,8 @@ set(vod_src
 	src/model/DeleteVodTemplateResult.cc
 	src/model/DeleteWatermarkRequest.cc
 	src/model/DeleteWatermarkResult.cc
+	src/model/DescribeMediaDistributionRequest.cc
+	src/model/DescribeMediaDistributionResult.cc
 	src/model/DescribePlayTopVideosRequest.cc
 	src/model/DescribePlayTopVideosResult.cc
 	src/model/DescribePlayUserAvgRequest.cc

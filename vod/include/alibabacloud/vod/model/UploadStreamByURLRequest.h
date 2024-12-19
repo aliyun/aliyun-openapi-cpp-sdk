@@ -42,6 +42,8 @@ public:
 	void setStreamURL(const std::string &streamURL);
 	std::string getMediaId() const;
 	void setMediaId(const std::string &mediaId);
+	std::string getUploadMetadata() const;
+	void setUploadMetadata(const std::string &uploadMetadata);
 
 private:
 	std::string fileExtension_;
@@ -50,6 +52,7 @@ private:
 	std::string definition_;
 	std::string streamURL_;
 	std::string mediaId_;
+	std::string uploadMetadata_;
 };
 } // namespace Model
 } // namespace Vod

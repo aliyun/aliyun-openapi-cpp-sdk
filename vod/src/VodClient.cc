@@ -411,6 +411,42 @@ VodClient::AttachAppPolicyToIdentityOutcomeCallable VodClient::attachAppPolicyTo
 	return task->get_future();
 }
 
+VodClient::BatchGetMediaInfosOutcome VodClient::batchGetMediaInfos(const BatchGetMediaInfosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchGetMediaInfosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchGetMediaInfosOutcome(BatchGetMediaInfosResult(outcome.result()));
+	else
+		return BatchGetMediaInfosOutcome(outcome.error());
+}
+
+void VodClient::batchGetMediaInfosAsync(const BatchGetMediaInfosRequest& request, const BatchGetMediaInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchGetMediaInfos(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::BatchGetMediaInfosOutcomeCallable VodClient::batchGetMediaInfosCallable(const BatchGetMediaInfosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchGetMediaInfosOutcome()>>(
+			[this, request]()
+			{
+			return this->batchGetMediaInfos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::BatchSetVodDomainConfigsOutcome VodClient::batchSetVodDomainConfigs(const BatchSetVodDomainConfigsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1485,6 +1521,42 @@ VodClient::DeleteWatermarkOutcomeCallable VodClient::deleteWatermarkCallable(con
 			[this, request]()
 			{
 			return this->deleteWatermark(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DescribeMediaDistributionOutcome VodClient::describeMediaDistribution(const DescribeMediaDistributionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMediaDistributionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMediaDistributionOutcome(DescribeMediaDistributionResult(outcome.result()));
+	else
+		return DescribeMediaDistributionOutcome(outcome.error());
+}
+
+void VodClient::describeMediaDistributionAsync(const DescribeMediaDistributionRequest& request, const DescribeMediaDistributionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMediaDistribution(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeMediaDistributionOutcomeCallable VodClient::describeMediaDistributionCallable(const DescribeMediaDistributionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMediaDistributionOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMediaDistribution(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

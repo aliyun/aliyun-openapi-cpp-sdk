@@ -42,6 +42,8 @@
 #include "model/AddWatermarkResult.h"
 #include "model/AttachAppPolicyToIdentityRequest.h"
 #include "model/AttachAppPolicyToIdentityResult.h"
+#include "model/BatchGetMediaInfosRequest.h"
+#include "model/BatchGetMediaInfosResult.h"
 #include "model/BatchSetVodDomainConfigsRequest.h"
 #include "model/BatchSetVodDomainConfigsResult.h"
 #include "model/BatchStartVodDomainRequest.h"
@@ -102,6 +104,8 @@
 #include "model/DeleteVodTemplateResult.h"
 #include "model/DeleteWatermarkRequest.h"
 #include "model/DeleteWatermarkResult.h"
+#include "model/DescribeMediaDistributionRequest.h"
+#include "model/DescribeMediaDistributionResult.h"
 #include "model/DescribePlayTopVideosRequest.h"
 #include "model/DescribePlayTopVideosResult.h"
 #include "model/DescribePlayUserAvgRequest.h"
@@ -413,6 +417,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AttachAppPolicyToIdentityResult> AttachAppPolicyToIdentityOutcome;
 			typedef std::future<AttachAppPolicyToIdentityOutcome> AttachAppPolicyToIdentityOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::AttachAppPolicyToIdentityRequest&, const AttachAppPolicyToIdentityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachAppPolicyToIdentityAsyncHandler;
+			typedef Outcome<Error, Model::BatchGetMediaInfosResult> BatchGetMediaInfosOutcome;
+			typedef std::future<BatchGetMediaInfosOutcome> BatchGetMediaInfosOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::BatchGetMediaInfosRequest&, const BatchGetMediaInfosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchGetMediaInfosAsyncHandler;
 			typedef Outcome<Error, Model::BatchSetVodDomainConfigsResult> BatchSetVodDomainConfigsOutcome;
 			typedef std::future<BatchSetVodDomainConfigsOutcome> BatchSetVodDomainConfigsOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::BatchSetVodDomainConfigsRequest&, const BatchSetVodDomainConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchSetVodDomainConfigsAsyncHandler;
@@ -503,6 +510,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteWatermarkResult> DeleteWatermarkOutcome;
 			typedef std::future<DeleteWatermarkOutcome> DeleteWatermarkOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DeleteWatermarkRequest&, const DeleteWatermarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWatermarkAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMediaDistributionResult> DescribeMediaDistributionOutcome;
+			typedef std::future<DescribeMediaDistributionOutcome> DescribeMediaDistributionOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeMediaDistributionRequest&, const DescribeMediaDistributionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMediaDistributionAsyncHandler;
 			typedef Outcome<Error, Model::DescribePlayTopVideosResult> DescribePlayTopVideosOutcome;
 			typedef std::future<DescribePlayTopVideosOutcome> DescribePlayTopVideosOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribePlayTopVideosRequest&, const DescribePlayTopVideosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlayTopVideosAsyncHandler;
@@ -946,6 +956,9 @@ namespace AlibabaCloud
 			AttachAppPolicyToIdentityOutcome attachAppPolicyToIdentity(const Model::AttachAppPolicyToIdentityRequest &request)const;
 			void attachAppPolicyToIdentityAsync(const Model::AttachAppPolicyToIdentityRequest& request, const AttachAppPolicyToIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachAppPolicyToIdentityOutcomeCallable attachAppPolicyToIdentityCallable(const Model::AttachAppPolicyToIdentityRequest& request) const;
+			BatchGetMediaInfosOutcome batchGetMediaInfos(const Model::BatchGetMediaInfosRequest &request)const;
+			void batchGetMediaInfosAsync(const Model::BatchGetMediaInfosRequest& request, const BatchGetMediaInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchGetMediaInfosOutcomeCallable batchGetMediaInfosCallable(const Model::BatchGetMediaInfosRequest& request) const;
 			BatchSetVodDomainConfigsOutcome batchSetVodDomainConfigs(const Model::BatchSetVodDomainConfigsRequest &request)const;
 			void batchSetVodDomainConfigsAsync(const Model::BatchSetVodDomainConfigsRequest& request, const BatchSetVodDomainConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchSetVodDomainConfigsOutcomeCallable batchSetVodDomainConfigsCallable(const Model::BatchSetVodDomainConfigsRequest& request) const;
@@ -1036,6 +1049,9 @@ namespace AlibabaCloud
 			DeleteWatermarkOutcome deleteWatermark(const Model::DeleteWatermarkRequest &request)const;
 			void deleteWatermarkAsync(const Model::DeleteWatermarkRequest& request, const DeleteWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteWatermarkOutcomeCallable deleteWatermarkCallable(const Model::DeleteWatermarkRequest& request) const;
+			DescribeMediaDistributionOutcome describeMediaDistribution(const Model::DescribeMediaDistributionRequest &request)const;
+			void describeMediaDistributionAsync(const Model::DescribeMediaDistributionRequest& request, const DescribeMediaDistributionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMediaDistributionOutcomeCallable describeMediaDistributionCallable(const Model::DescribeMediaDistributionRequest& request) const;
 			DescribePlayTopVideosOutcome describePlayTopVideos(const Model::DescribePlayTopVideosRequest &request)const;
 			void describePlayTopVideosAsync(const Model::DescribePlayTopVideosRequest& request, const DescribePlayTopVideosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePlayTopVideosOutcomeCallable describePlayTopVideosCallable(const Model::DescribePlayTopVideosRequest& request) const;

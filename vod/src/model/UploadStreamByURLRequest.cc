@@ -79,3 +79,12 @@ void UploadStreamByURLRequest::setMediaId(const std::string &mediaId) {
   setParameter(std::string("MediaId"), mediaId);
 }
 
+std::string UploadStreamByURLRequest::getUploadMetadata() const {
+  return uploadMetadata_;
+}
+
+void UploadStreamByURLRequest::setUploadMetadata(const std::string &uploadMetadata) {
+  uploadMetadata_ = uploadMetadata;
+  setParameter(std::string("UploadMetadata"), uploadMetadata);
+}
+
