@@ -124,6 +124,8 @@ void UpdateListenerAttributeRequest::setXForwardedForConfig(const UpdateListener
   setParameter(std::string("XForwardedForConfig") + ".XForwardedForClientCertSubjectDNAlias", xForwardedForConfig.xForwardedForClientCertSubjectDNAlias);
   setParameter(std::string("XForwardedForConfig") + ".XForwardedForClientSourceIpsEnabled", xForwardedForConfig.xForwardedForClientSourceIpsEnabled ? "true" : "false");
   setParameter(std::string("XForwardedForConfig") + ".XForwardedForClientCertIssuerDNEnabled", xForwardedForConfig.xForwardedForClientCertIssuerDNEnabled ? "true" : "false");
+  setParameter(std::string("XForwardedForConfig") + ".XForwardedForHostEnabled", xForwardedForConfig.xForwardedForHostEnabled ? "true" : "false");
+  setParameter(std::string("XForwardedForConfig") + ".XForwardedForProcessingMode", xForwardedForConfig.xForwardedForProcessingMode);
   setParameter(std::string("XForwardedForConfig") + ".XForwardedForClientCertFingerprintEnabled", xForwardedForConfig.xForwardedForClientCertFingerprintEnabled ? "true" : "false");
   setParameter(std::string("XForwardedForConfig") + ".XForwardedForClientCertIssuerDNAlias", xForwardedForConfig.xForwardedForClientCertIssuerDNAlias);
   setParameter(std::string("XForwardedForConfig") + ".XForwardedForProtoEnabled", xForwardedForConfig.xForwardedForProtoEnabled ? "true" : "false");

@@ -51,6 +51,8 @@ public:
 		std::string xForwardedForClientCertSubjectDNAlias;
 		bool xForwardedForClientSourceIpsEnabled;
 		bool xForwardedForClientCertIssuerDNEnabled;
+		bool xForwardedForHostEnabled;
+		std::string xForwardedForProcessingMode;
 		bool xForwardedForClientCertFingerprintEnabled;
 		std::string xForwardedForClientCertIssuerDNAlias;
 		bool xForwardedForProtoEnabled;

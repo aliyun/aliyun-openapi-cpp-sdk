@@ -148,6 +148,8 @@ void ListListenersResult::parse(const std::string &payload)
 			listenersObject.xForwardedForConfig.xForwardedForClientSrcPortEnabled = xForwardedForConfigNode["XForwardedForClientSrcPortEnabled"].asString() == "true";
 		if(!xForwardedForConfigNode["XForwardedForEnabled"].isNull())
 			listenersObject.xForwardedForConfig.xForwardedForEnabled = xForwardedForConfigNode["XForwardedForEnabled"].asString() == "true";
+		if(!xForwardedForConfigNode["XForwardedForProcessingMode"].isNull())
+			listenersObject.xForwardedForConfig.xForwardedForProcessingMode = xForwardedForConfigNode["XForwardedForProcessingMode"].asString();
 		if(!xForwardedForConfigNode["XForwardedForProtoEnabled"].isNull())
 			listenersObject.xForwardedForConfig.xForwardedForProtoEnabled = xForwardedForConfigNode["XForwardedForProtoEnabled"].asString() == "true";
 		if(!xForwardedForConfigNode["XForwardedForSLBIdEnabled"].isNull())
@@ -158,6 +160,8 @@ void ListListenersResult::parse(const std::string &payload)
 			listenersObject.xForwardedForConfig.xForwardedForClientSourceIpsEnabled = xForwardedForConfigNode["XForwardedForClientSourceIpsEnabled"].asString() == "true";
 		if(!xForwardedForConfigNode["XForwardedForClientSourceIpsTrusted"].isNull())
 			listenersObject.xForwardedForConfig.xForwardedForClientSourceIpsTrusted = xForwardedForConfigNode["XForwardedForClientSourceIpsTrusted"].asString();
+		if(!xForwardedForConfigNode["XForwardedForHostEnabled"].isNull())
+			listenersObject.xForwardedForConfig.xForwardedForHostEnabled = xForwardedForConfigNode["XForwardedForHostEnabled"].asString() == "true";
 		listeners_.push_back(listenersObject);
 	}
 	if(!value["MaxResults"].isNull())

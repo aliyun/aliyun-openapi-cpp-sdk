@@ -63,6 +63,7 @@ namespace AlibabaCloud
 					bool xForwardedForClientSourceIpsEnabled;
 					std::string xForwardedForClientCertFingerprintAlias;
 					bool xForwardedForClientCertFingerprintEnabled;
+					bool xForwardedForHostEnabled;
 					std::string xForwardedForClientSourceIpsTrusted;
 					std::string xForwardedForClientCertIssuerDNAlias;
 					std::string xForwardedForClientCertClientVerifyAlias;
@@ -72,6 +73,7 @@ namespace AlibabaCloud
 					bool xForwardedForProtoEnabled;
 					bool xForwardedForClientSrcPortEnabled;
 					bool xForwardedForEnabled;
+					std::string xForwardedForProcessingMode;
 					bool xForwardedForSLBPortEnabled;
 					bool xForwardedForClientCertIssuerDNEnabled;
 					bool xForwardedForClientCertClientVerifyEnabled;

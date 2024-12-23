@@ -151,6 +151,8 @@ void GetListenerAttributeResult::parse(const std::string &payload)
 		xForwardedForConfig_.xForwardedForClientSrcPortEnabled = xForwardedForConfigNode["XForwardedForClientSrcPortEnabled"].asString() == "true";
 	if(!xForwardedForConfigNode["XForwardedForEnabled"].isNull())
 		xForwardedForConfig_.xForwardedForEnabled = xForwardedForConfigNode["XForwardedForEnabled"].asString() == "true";
+	if(!xForwardedForConfigNode["XForwardedForProcessingMode"].isNull())
+		xForwardedForConfig_.xForwardedForProcessingMode = xForwardedForConfigNode["XForwardedForProcessingMode"].asString();
 	if(!xForwardedForConfigNode["XForwardedForProtoEnabled"].isNull())
 		xForwardedForConfig_.xForwardedForProtoEnabled = xForwardedForConfigNode["XForwardedForProtoEnabled"].asString() == "true";
 	if(!xForwardedForConfigNode["XForwardedForSLBIdEnabled"].isNull())
@@ -161,6 +163,8 @@ void GetListenerAttributeResult::parse(const std::string &payload)
 		xForwardedForConfig_.xForwardedForClientSourceIpsEnabled = xForwardedForConfigNode["XForwardedForClientSourceIpsEnabled"].asString() == "true";
 	if(!xForwardedForConfigNode["XForwardedForClientSourceIpsTrusted"].isNull())
 		xForwardedForConfig_.xForwardedForClientSourceIpsTrusted = xForwardedForConfigNode["XForwardedForClientSourceIpsTrusted"].asString();
+	if(!xForwardedForConfigNode["XForwardedForHostEnabled"].isNull())
+		xForwardedForConfig_.xForwardedForHostEnabled = xForwardedForConfigNode["XForwardedForHostEnabled"].asString() == "true";
 	if(!value["CaEnabled"].isNull())
 		caEnabled_ = value["CaEnabled"].asString() == "true";
 	if(!value["GzipEnabled"].isNull())
