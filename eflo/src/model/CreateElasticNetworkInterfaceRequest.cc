@@ -70,6 +70,15 @@ void CreateElasticNetworkInterfaceRequest::setNodeId(const std::string &nodeId) 
   setBodyParameter(std::string("NodeId"), nodeId);
 }
 
+bool CreateElasticNetworkInterfaceRequest::getEnableJumboFrame() const {
+  return enableJumboFrame_;
+}
+
+void CreateElasticNetworkInterfaceRequest::setEnableJumboFrame(bool enableJumboFrame) {
+  enableJumboFrame_ = enableJumboFrame;
+  setBodyParameter(std::string("EnableJumboFrame"), enableJumboFrame ? "true" : "false");
+}
+
 std::string CreateElasticNetworkInterfaceRequest::getVSwitchId() const {
   return vSwitchId_;
 }

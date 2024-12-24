@@ -42,6 +42,8 @@ public:
 	void setDescription(const std::string &description);
 	std::string getCenOwnerId() const;
 	void setCenOwnerId(const std::string &cenOwnerId);
+	long getBgpAsn() const;
+	void setBgpAsn(long bgpAsn);
 	bool getAccessCouldService() const;
 	void setAccessCouldService(bool accessCouldService);
 	std::string getResourceGroupId() const;
@@ -72,6 +74,7 @@ private:
 	std::string cenId_;
 	std::string description_;
 	std::string cenOwnerId_;
+	long bgpAsn_;
 	bool accessCouldService_;
 	std::string resourceGroupId_;
 	std::string vccName_;

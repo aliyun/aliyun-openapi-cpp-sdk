@@ -1923,6 +1923,42 @@ EfloClient::ListSubnetsOutcomeCallable EfloClient::listSubnetsCallable(const Lis
 	return task->get_future();
 }
 
+EfloClient::ListVccFlowInfosOutcome EfloClient::listVccFlowInfos(const ListVccFlowInfosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListVccFlowInfosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListVccFlowInfosOutcome(ListVccFlowInfosResult(outcome.result()));
+	else
+		return ListVccFlowInfosOutcome(outcome.error());
+}
+
+void EfloClient::listVccFlowInfosAsync(const ListVccFlowInfosRequest& request, const ListVccFlowInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listVccFlowInfos(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EfloClient::ListVccFlowInfosOutcomeCallable EfloClient::listVccFlowInfosCallable(const ListVccFlowInfosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListVccFlowInfosOutcome()>>(
+			[this, request]()
+			{
+			return this->listVccFlowInfos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EfloClient::ListVccGrantRulesOutcome EfloClient::listVccGrantRules(const ListVccGrantRulesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

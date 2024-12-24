@@ -98,6 +98,8 @@ void ListVccsResult::parse(const std::string &payload)
 			dataItemObject.connectionType = contentNodeDataDataItem["ConnectionType"].asString();
 		if(!contentNodeDataDataItem["CenOwnerId"].isNull())
 			dataItemObject.cenOwnerId = contentNodeDataDataItem["CenOwnerId"].asString();
+		if(!contentNodeDataDataItem["BgpAsn"].isNull())
+			dataItemObject.bgpAsn = contentNodeDataDataItem["BgpAsn"].asString();
 		auto allErInfosNode = contentNodeDataDataItem["ErInfos"]["ErInfo"];
 		for (auto contentNodeDataDataItemErInfosErInfo : allErInfosNode)
 		{

@@ -61,6 +61,15 @@ void CreateVccRequest::setCenOwnerId(const std::string &cenOwnerId) {
   setBodyParameter(std::string("CenOwnerId"), cenOwnerId);
 }
 
+long CreateVccRequest::getBgpAsn() const {
+  return bgpAsn_;
+}
+
+void CreateVccRequest::setBgpAsn(long bgpAsn) {
+  bgpAsn_ = bgpAsn;
+  setBodyParameter(std::string("BgpAsn"), std::to_string(bgpAsn));
+}
+
 bool CreateVccRequest::getAccessCouldService() const {
   return accessCouldService_;
 }

@@ -74,6 +74,8 @@ void GetElasticNetworkInterfaceResult::parse(const std::string &payload)
 		content_.description = contentNode["Description"].asString();
 	if(!contentNode["SecurityGroupId"].isNull())
 		content_.securityGroupId = contentNode["SecurityGroupId"].asString();
+	if(!contentNode["EnableJumboFrame"].isNull())
+		content_.enableJumboFrame = contentNode["EnableJumboFrame"].asString() == "true";
 	auto allPrivateIpAddressesNode = contentNode["PrivateIpAddresses"]["PrivateIpAddress"];
 	for (auto contentNodePrivateIpAddressesPrivateIpAddress : allPrivateIpAddressesNode)
 	{
@@ -97,6 +99,30 @@ void GetElasticNetworkInterfaceResult::parse(const std::string &payload)
 		if(!contentNodePrivateIpAddressesPrivateIpAddress["Message"].isNull())
 			privateIpAddressObject.message = contentNodePrivateIpAddressesPrivateIpAddress["Message"].asString();
 		content_.privateIpAddresses.push_back(privateIpAddressObject);
+	}
+	auto allIpv6AddressesNode = contentNode["Ipv6Addresses"]["Ipv6Addresse"];
+	for (auto contentNodeIpv6AddressesIpv6Addresse : allIpv6AddressesNode)
+	{
+		Content::Ipv6Addresse ipv6AddresseObject;
+		if(!contentNodeIpv6AddressesIpv6Addresse["ElasticNetworkInterfaceId"].isNull())
+			ipv6AddresseObject.elasticNetworkInterfaceId = contentNodeIpv6AddressesIpv6Addresse["ElasticNetworkInterfaceId"].asString();
+		if(!contentNodeIpv6AddressesIpv6Addresse["IpName"].isNull())
+			ipv6AddresseObject.ipName = contentNodeIpv6AddressesIpv6Addresse["IpName"].asString();
+		if(!contentNodeIpv6AddressesIpv6Addresse["Ipv6Address"].isNull())
+			ipv6AddresseObject.ipv6Address = contentNodeIpv6AddressesIpv6Addresse["Ipv6Address"].asString();
+		if(!contentNodeIpv6AddressesIpv6Addresse["Status"].isNull())
+			ipv6AddresseObject.status = contentNodeIpv6AddressesIpv6Addresse["Status"].asString();
+		if(!contentNodeIpv6AddressesIpv6Addresse["Description"].isNull())
+			ipv6AddresseObject.description = contentNodeIpv6AddressesIpv6Addresse["Description"].asString();
+		if(!contentNodeIpv6AddressesIpv6Addresse["Message"].isNull())
+			ipv6AddresseObject.message = contentNodeIpv6AddressesIpv6Addresse["Message"].asString();
+		if(!contentNodeIpv6AddressesIpv6Addresse["RegionId"].isNull())
+			ipv6AddresseObject.regionId = contentNodeIpv6AddressesIpv6Addresse["RegionId"].asString();
+		if(!contentNodeIpv6AddressesIpv6Addresse["GmtCreate"].isNull())
+			ipv6AddresseObject.gmtCreate = contentNodeIpv6AddressesIpv6Addresse["GmtCreate"].asString();
+		if(!contentNodeIpv6AddressesIpv6Addresse["GmtModified"].isNull())
+			ipv6AddresseObject.gmtModified = contentNodeIpv6AddressesIpv6Addresse["GmtModified"].asString();
+		content_.ipv6Addresses.push_back(ipv6AddresseObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());

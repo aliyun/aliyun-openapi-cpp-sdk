@@ -40,6 +40,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getNodeId() const;
 	void setNodeId(const std::string &nodeId);
+	bool getEnableJumboFrame() const;
+	void setEnableJumboFrame(bool enableJumboFrame);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getVpcId() const;
@@ -53,6 +55,7 @@ private:
 	std::string description_;
 	std::string regionId_;
 	std::string nodeId_;
+	bool enableJumboFrame_;
 	std::string vSwitchId_;
 	std::string vpcId_;
 	std::string zoneId_;

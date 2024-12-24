@@ -46,6 +46,18 @@ namespace AlibabaCloud
 						std::string gmtModified;
 						std::string regionId;
 					};
+					struct Ipv6Addresse
+					{
+						std::string status;
+						std::string elasticNetworkInterfaceId;
+						std::string ipName;
+						std::string gmtCreate;
+						std::string description;
+						std::string message;
+						std::string gmtModified;
+						std::string regionId;
+						std::string ipv6Address;
+					};
 					std::string status;
 					std::string description;
 					std::vector<PrivateIpAddress> privateIpAddresses;
@@ -57,10 +69,12 @@ namespace AlibabaCloud
 					std::string securityGroupId;
 					std::string mask;
 					std::string gmtModified;
+					std::vector<Ipv6Addresse> ipv6Addresses;
 					std::string mac;
 					std::string elasticNetworkInterfaceId;
 					std::string type;
 					std::string vpcId;
+					bool enableJumboFrame;
 					std::string gateway;
 					std::string nodeId;
 					std::string regionId;

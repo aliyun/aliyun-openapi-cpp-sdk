@@ -125,6 +125,8 @@ set(eflo_public_header_model
 	include/alibabacloud/eflo/model/ListNodeInfosForPodResult.h
 	include/alibabacloud/eflo/model/ListSubnetsRequest.h
 	include/alibabacloud/eflo/model/ListSubnetsResult.h
+	include/alibabacloud/eflo/model/ListVccFlowInfosRequest.h
+	include/alibabacloud/eflo/model/ListVccFlowInfosResult.h
 	include/alibabacloud/eflo/model/ListVccGrantRulesRequest.h
 	include/alibabacloud/eflo/model/ListVccGrantRulesResult.h
 	include/alibabacloud/eflo/model/ListVccRouteEntriesRequest.h
@@ -268,6 +270,8 @@ set(eflo_src
 	src/model/ListNodeInfosForPodResult.cc
 	src/model/ListSubnetsRequest.cc
 	src/model/ListSubnetsResult.cc
+	src/model/ListVccFlowInfosRequest.cc
+	src/model/ListVccFlowInfosResult.cc
 	src/model/ListVccGrantRulesRequest.cc
 	src/model/ListVccGrantRulesResult.cc
 	src/model/ListVccRouteEntriesRequest.cc

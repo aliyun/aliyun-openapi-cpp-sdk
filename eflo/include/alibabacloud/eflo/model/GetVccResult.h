@@ -120,6 +120,7 @@ namespace AlibabaCloud
 					std::string duration;
 					std::string payType;
 					std::vector<AliyunRouterInfoItem> aliyunRouterInfo;
+					std::string bgpAsn;
 					std::string internetChargeType;
 					std::string bandwidthStr;
 					std::vector<CisRouterInfoItem> cisRouterInfo;

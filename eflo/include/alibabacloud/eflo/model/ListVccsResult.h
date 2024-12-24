@@ -79,6 +79,7 @@ namespace AlibabaCloud
 						std::string connectionType;
 						double rate;
 						std::string createTime;
+						std::string bgpAsn;
 						std::string bandwidthStr;
 						std::string tenantId;
 						std::string vpcId;

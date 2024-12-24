@@ -100,6 +100,8 @@ void GetVccResult::parse(const std::string &payload)
 		content_.connectionType = contentNode["ConnectionType"].asString();
 	if(!contentNode["CenOwnerId"].isNull())
 		content_.cenOwnerId = contentNode["CenOwnerId"].asString();
+	if(!contentNode["BgpAsn"].isNull())
+		content_.bgpAsn = contentNode["BgpAsn"].asString();
 	auto allErInfosNode = contentNode["ErInfos"]["ErInfo"];
 	for (auto contentNodeErInfosErInfo : allErInfosNode)
 	{
