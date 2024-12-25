@@ -2103,6 +2103,42 @@ EnsClient::DeleteDiskOutcomeCallable EnsClient::deleteDiskCallable(const DeleteD
 	return task->get_future();
 }
 
+EnsClient::DeleteEipOutcome EnsClient::deleteEip(const DeleteEipRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteEipOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteEipOutcome(DeleteEipResult(outcome.result()));
+	else
+		return DeleteEipOutcome(outcome.error());
+}
+
+void EnsClient::deleteEipAsync(const DeleteEipRequest& request, const DeleteEipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteEip(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteEipOutcomeCallable EnsClient::deleteEipCallable(const DeleteEipRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteEipOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteEip(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DeleteEnsRouteEntryOutcome EnsClient::deleteEnsRouteEntry(const DeleteEnsRouteEntryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7929,6 +7965,42 @@ EnsClient::ModifySnapshotAttributeOutcomeCallable EnsClient::modifySnapshotAttri
 			[this, request]()
 			{
 			return this->modifySnapshotAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::ModifySnatEntryOutcome EnsClient::modifySnatEntry(const ModifySnatEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifySnatEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifySnatEntryOutcome(ModifySnatEntryResult(outcome.result()));
+	else
+		return ModifySnatEntryOutcome(outcome.error());
+}
+
+void EnsClient::modifySnatEntryAsync(const ModifySnatEntryRequest& request, const ModifySnatEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifySnatEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ModifySnatEntryOutcomeCallable EnsClient::modifySnatEntryCallable(const ModifySnatEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifySnatEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->modifySnatEntry(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

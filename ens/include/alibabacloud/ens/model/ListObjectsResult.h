@@ -40,6 +40,11 @@ namespace AlibabaCloud
 					long size;
 					std::string key;
 				};
+				struct CommonPrefixInfo
+				{
+					std::string lastModified;
+					std::string prefix;
+				};
 
 
 				ListObjectsResult();
@@ -53,6 +58,7 @@ namespace AlibabaCloud
 				bool getIsTruncated()const;
 				std::string getPrefix()const;
 				std::string getMarker()const;
+				std::vector<CommonPrefixInfo> getCommonPrefixInfos()const;
 				std::vector<Content> getContents()const;
 				std::string getBucketName()const;
 				long getKeyCount()const;
@@ -70,6 +76,7 @@ namespace AlibabaCloud
 				bool isTruncated_;
 				std::string prefix_;
 				std::string marker_;
+				std::vector<CommonPrefixInfo> commonPrefixInfos_;
 				std::vector<Content> contents_;
 				std::string bucketName_;
 				long keyCount_;

@@ -75,6 +75,8 @@ void DescribeSnatAttributeResult::parse(const std::string &payload)
 		idleTimeout_ = std::stoi(value["IdleTimeout"].asString());
 	if(!value["DestCIDR"].isNull())
 		destCIDR_ = value["DestCIDR"].asString();
+	if(!value["IspAffinity"].isNull())
+		ispAffinity_ = value["IspAffinity"].asString() == "true";
 
 }
 
@@ -121,6 +123,11 @@ std::string DescribeSnatAttributeResult::getSnatEntryName()const
 std::string DescribeSnatAttributeResult::getCreationTime()const
 {
 	return creationTime_;
+}
+
+bool DescribeSnatAttributeResult::getIspAffinity()const
+{
+	return ispAffinity_;
 }
 
 std::vector<DescribeSnatAttributeResult::Snatip> DescribeSnatAttributeResult::getSnatIps()const

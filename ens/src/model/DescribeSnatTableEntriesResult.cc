@@ -65,6 +65,8 @@ void DescribeSnatTableEntriesResult::parse(const std::string &payload)
 			snatTableEntriesObject.idleTimeout = std::stoi(valueSnatTableEntriesSnatTableEntry["IdleTimeout"].asString());
 		if(!valueSnatTableEntriesSnatTableEntry["DestCIDR"].isNull())
 			snatTableEntriesObject.destCIDR = valueSnatTableEntriesSnatTableEntry["DestCIDR"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["IspAffinity"].isNull())
+			snatTableEntriesObject.ispAffinity = valueSnatTableEntriesSnatTableEntry["IspAffinity"].asString() == "true";
 		auto allSnatIpsNode = valueSnatTableEntriesSnatTableEntry["SnatIps"]["snatIp"];
 		for (auto valueSnatTableEntriesSnatTableEntrySnatIpssnatIp : allSnatIpsNode)
 		{

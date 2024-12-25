@@ -50,6 +50,8 @@ public:
 	void setIdleTimeout(int idleTimeout);
 	std::string getSnatEntryName() const;
 	void setSnatEntryName(const std::string &snatEntryName);
+	bool getIspAffinity() const;
+	void setIspAffinity(bool ispAffinity);
 
 private:
 	std::string snatIp_;
@@ -62,6 +64,7 @@ private:
 	std::string natGatewayId_;
 	int idleTimeout_;
 	std::string snatEntryName_;
+	bool ispAffinity_;
 };
 } // namespace Model
 } // namespace Ens

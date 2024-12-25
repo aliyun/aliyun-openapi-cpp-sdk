@@ -55,6 +55,16 @@ void ListObjectsResult::parse(const std::string &payload)
 			contentsObject.size = std::stol(valueContentsContent["Size"].asString());
 		contents_.push_back(contentsObject);
 	}
+	auto allCommonPrefixInfosNode = value["CommonPrefixInfos"]["CommonPrefixInfo"];
+	for (auto valueCommonPrefixInfosCommonPrefixInfo : allCommonPrefixInfosNode)
+	{
+		CommonPrefixInfo commonPrefixInfosObject;
+		if(!valueCommonPrefixInfosCommonPrefixInfo["Prefix"].isNull())
+			commonPrefixInfosObject.prefix = valueCommonPrefixInfosCommonPrefixInfo["Prefix"].asString();
+		if(!valueCommonPrefixInfosCommonPrefixInfo["LastModified"].isNull())
+			commonPrefixInfosObject.lastModified = valueCommonPrefixInfosCommonPrefixInfo["LastModified"].asString();
+		commonPrefixInfos_.push_back(commonPrefixInfosObject);
+	}
 	auto allCommonPrefixes = value["CommonPrefixes"]["Prefix"];
 	for (const auto &item : allCommonPrefixes)
 		commonPrefixes_.push_back(item.asString());
@@ -121,6 +131,11 @@ std::string ListObjectsResult::getPrefix()const
 std::string ListObjectsResult::getMarker()const
 {
 	return marker_;
+}
+
+std::vector<ListObjectsResult::CommonPrefixInfo> ListObjectsResult::getCommonPrefixInfos()const
+{
+	return commonPrefixInfos_;
 }
 
 std::vector<ListObjectsResult::Content> ListObjectsResult::getContents()const

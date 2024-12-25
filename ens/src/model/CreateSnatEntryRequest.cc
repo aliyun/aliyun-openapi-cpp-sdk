@@ -115,3 +115,12 @@ void CreateSnatEntryRequest::setSnatEntryName(const std::string &snatEntryName) 
   setParameter(std::string("SnatEntryName"), snatEntryName);
 }
 
+bool CreateSnatEntryRequest::getIspAffinity() const {
+  return ispAffinity_;
+}
+
+void CreateSnatEntryRequest::setIspAffinity(bool ispAffinity) {
+  ispAffinity_ = ispAffinity;
+  setParameter(std::string("IspAffinity"), ispAffinity ? "true" : "false");
+}
+

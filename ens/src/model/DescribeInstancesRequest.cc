@@ -25,6 +25,17 @@ DescribeInstancesRequest::DescribeInstancesRequest()
 
 DescribeInstancesRequest::~DescribeInstancesRequest() {}
 
+std::vector<DescribeInstancesRequest::std::string> DescribeInstancesRequest::getServiceStatus() const {
+  return serviceStatus_;
+}
+
+void DescribeInstancesRequest::setServiceStatus(const std::vector<DescribeInstancesRequest::std::string> &serviceStatus) {
+  serviceStatus_ = serviceStatus;
+  for(int dep1 = 0; dep1 != serviceStatus.size(); dep1++) {
+    setParameter(std::string("ServiceStatus") + "." + std::to_string(dep1 + 1), serviceStatus[dep1]);
+  }
+}
+
 std::string DescribeInstancesRequest::getOrderByParams() const {
   return orderByParams_;
 }

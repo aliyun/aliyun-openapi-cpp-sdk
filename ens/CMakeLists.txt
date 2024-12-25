@@ -135,6 +135,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DeleteDeviceInternetPortResult.h
 	include/alibabacloud/ens/model/DeleteDiskRequest.h
 	include/alibabacloud/ens/model/DeleteDiskResult.h
+	include/alibabacloud/ens/model/DeleteEipRequest.h
+	include/alibabacloud/ens/model/DeleteEipResult.h
 	include/alibabacloud/ens/model/DeleteEnsRouteEntryRequest.h
 	include/alibabacloud/ens/model/DeleteEnsRouteEntryResult.h
 	include/alibabacloud/ens/model/DeleteEnsSaleConditionControlRequest.h
@@ -459,6 +461,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/ModifySecurityGroupAttributeResult.h
 	include/alibabacloud/ens/model/ModifySnapshotAttributeRequest.h
 	include/alibabacloud/ens/model/ModifySnapshotAttributeResult.h
+	include/alibabacloud/ens/model/ModifySnatEntryRequest.h
+	include/alibabacloud/ens/model/ModifySnatEntryResult.h
 	include/alibabacloud/ens/model/ModifyVSwitchAttributeRequest.h
 	include/alibabacloud/ens/model/ModifyVSwitchAttributeResult.h
 	include/alibabacloud/ens/model/MountInstanceSDGRequest.h
@@ -712,6 +716,8 @@ set(ens_src
 	src/model/DeleteDeviceInternetPortResult.cc
 	src/model/DeleteDiskRequest.cc
 	src/model/DeleteDiskResult.cc
+	src/model/DeleteEipRequest.cc
+	src/model/DeleteEipResult.cc
 	src/model/DeleteEnsRouteEntryRequest.cc
 	src/model/DeleteEnsRouteEntryResult.cc
 	src/model/DeleteEnsSaleConditionControlRequest.cc
@@ -1036,6 +1042,8 @@ set(ens_src
 	src/model/ModifySecurityGroupAttributeResult.cc
 	src/model/ModifySnapshotAttributeRequest.cc
 	src/model/ModifySnapshotAttributeResult.cc
+	src/model/ModifySnatEntryRequest.cc
+	src/model/ModifySnatEntryResult.cc
 	src/model/ModifyVSwitchAttributeRequest.cc
 	src/model/ModifyVSwitchAttributeResult.cc
 	src/model/MountInstanceSDGRequest.cc

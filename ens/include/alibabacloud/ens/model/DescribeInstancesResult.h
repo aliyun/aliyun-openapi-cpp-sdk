@@ -111,6 +111,7 @@ namespace AlibabaCloud
 					std::vector<std::string> publicIpAddress;
 					NetworkAttributes networkAttributes;
 					std::vector<std::string> innerIpAddress;
+					std::string serviceStatus;
 					std::vector<Instance::NetworkInterfacesItem> networkInterfaces;
 					std::string expiredTime;
 					std::string imageId;

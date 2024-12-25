@@ -52,6 +52,7 @@ namespace AlibabaCloud
 				std::string getDestCIDR()const;
 				std::string getSnatEntryName()const;
 				std::string getCreationTime()const;
+				bool getIspAffinity()const;
 				std::vector<Snatip> getSnatIps()const;
 				std::string getSnatEntryId()const;
 				std::string getStandbyStatus()const;
@@ -69,6 +70,7 @@ namespace AlibabaCloud
 				std::string destCIDR_;
 				std::string snatEntryName_;
 				std::string creationTime_;
+				bool ispAffinity_;
 				std::vector<Snatip> snatIps_;
 				std::string snatEntryId_;
 				std::string standbyStatus_;

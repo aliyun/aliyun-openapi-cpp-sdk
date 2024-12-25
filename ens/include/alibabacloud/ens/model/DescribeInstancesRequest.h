@@ -34,6 +34,8 @@ public:
 	};
 	DescribeInstancesRequest();
 	~DescribeInstancesRequest();
+	std::vector<std::string> getServiceStatus() const;
+	void setServiceStatus(const std::vector<std::string> &serviceStatus);
 	std::string getOrderByParams() const;
 	void setOrderByParams(const std::string &orderByParams);
 	std::string getEnsRegionId() const;
@@ -74,6 +76,7 @@ public:
 	void setEnsRegionIds(const std::string &ensRegionIds);
 
 private:
+	std::vector<std::string> serviceStatus_;
 	std::string orderByParams_;
 	std::string ensRegionId_;
 	std::string instanceResourceType_;

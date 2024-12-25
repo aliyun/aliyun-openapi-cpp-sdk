@@ -83,6 +83,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.spotStrategy = valueInstancesInstance["SpotStrategy"].asString();
 		if(!valueInstancesInstance["KeyPairName"].isNull())
 			instancesObject.keyPairName = valueInstancesInstance["KeyPairName"].asString();
+		if(!valueInstancesInstance["ServiceStatus"].isNull())
+			instancesObject.serviceStatus = valueInstancesInstance["ServiceStatus"].asString();
 		auto allDataDiskNode = valueInstancesInstance["DataDisk"]["DataDiskItem"];
 		for (auto valueInstancesInstanceDataDiskDataDiskItem : allDataDiskNode)
 		{

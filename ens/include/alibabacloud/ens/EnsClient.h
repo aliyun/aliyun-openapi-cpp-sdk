@@ -136,6 +136,8 @@
 #include "model/DeleteDeviceInternetPortResult.h"
 #include "model/DeleteDiskRequest.h"
 #include "model/DeleteDiskResult.h"
+#include "model/DeleteEipRequest.h"
+#include "model/DeleteEipResult.h"
 #include "model/DeleteEnsRouteEntryRequest.h"
 #include "model/DeleteEnsRouteEntryResult.h"
 #include "model/DeleteEnsSaleConditionControlRequest.h"
@@ -460,6 +462,8 @@
 #include "model/ModifySecurityGroupAttributeResult.h"
 #include "model/ModifySnapshotAttributeRequest.h"
 #include "model/ModifySnapshotAttributeResult.h"
+#include "model/ModifySnatEntryRequest.h"
+#include "model/ModifySnatEntryResult.h"
 #include "model/ModifyVSwitchAttributeRequest.h"
 #include "model/ModifyVSwitchAttributeResult.h"
 #include "model/MountInstanceSDGRequest.h"
@@ -776,6 +780,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDiskResult> DeleteDiskOutcome;
 			typedef std::future<DeleteDiskOutcome> DeleteDiskOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DeleteDiskRequest&, const DeleteDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDiskAsyncHandler;
+			typedef Outcome<Error, Model::DeleteEipResult> DeleteEipOutcome;
+			typedef std::future<DeleteEipOutcome> DeleteEipOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::DeleteEipRequest&, const DeleteEipOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEipAsyncHandler;
 			typedef Outcome<Error, Model::DeleteEnsRouteEntryResult> DeleteEnsRouteEntryOutcome;
 			typedef std::future<DeleteEnsRouteEntryOutcome> DeleteEnsRouteEntryOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DeleteEnsRouteEntryRequest&, const DeleteEnsRouteEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEnsRouteEntryAsyncHandler;
@@ -1262,6 +1269,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifySnapshotAttributeResult> ModifySnapshotAttributeOutcome;
 			typedef std::future<ModifySnapshotAttributeOutcome> ModifySnapshotAttributeOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::ModifySnapshotAttributeRequest&, const ModifySnapshotAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifySnatEntryResult> ModifySnatEntryOutcome;
+			typedef std::future<ModifySnatEntryOutcome> ModifySnatEntryOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::ModifySnatEntryRequest&, const ModifySnatEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnatEntryAsyncHandler;
 			typedef Outcome<Error, Model::ModifyVSwitchAttributeResult> ModifyVSwitchAttributeOutcome;
 			typedef std::future<ModifyVSwitchAttributeOutcome> ModifyVSwitchAttributeOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::ModifyVSwitchAttributeRequest&, const ModifyVSwitchAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVSwitchAttributeAsyncHandler;
@@ -1642,6 +1652,9 @@ namespace AlibabaCloud
 			DeleteDiskOutcome deleteDisk(const Model::DeleteDiskRequest &request)const;
 			void deleteDiskAsync(const Model::DeleteDiskRequest& request, const DeleteDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDiskOutcomeCallable deleteDiskCallable(const Model::DeleteDiskRequest& request) const;
+			DeleteEipOutcome deleteEip(const Model::DeleteEipRequest &request)const;
+			void deleteEipAsync(const Model::DeleteEipRequest& request, const DeleteEipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteEipOutcomeCallable deleteEipCallable(const Model::DeleteEipRequest& request) const;
 			DeleteEnsRouteEntryOutcome deleteEnsRouteEntry(const Model::DeleteEnsRouteEntryRequest &request)const;
 			void deleteEnsRouteEntryAsync(const Model::DeleteEnsRouteEntryRequest& request, const DeleteEnsRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteEnsRouteEntryOutcomeCallable deleteEnsRouteEntryCallable(const Model::DeleteEnsRouteEntryRequest& request) const;
@@ -2128,6 +2141,9 @@ namespace AlibabaCloud
 			ModifySnapshotAttributeOutcome modifySnapshotAttribute(const Model::ModifySnapshotAttributeRequest &request)const;
 			void modifySnapshotAttributeAsync(const Model::ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySnapshotAttributeOutcomeCallable modifySnapshotAttributeCallable(const Model::ModifySnapshotAttributeRequest& request) const;
+			ModifySnatEntryOutcome modifySnatEntry(const Model::ModifySnatEntryRequest &request)const;
+			void modifySnatEntryAsync(const Model::ModifySnatEntryRequest& request, const ModifySnatEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifySnatEntryOutcomeCallable modifySnatEntryCallable(const Model::ModifySnatEntryRequest& request) const;
 			ModifyVSwitchAttributeOutcome modifyVSwitchAttribute(const Model::ModifyVSwitchAttributeRequest &request)const;
 			void modifyVSwitchAttributeAsync(const Model::ModifyVSwitchAttributeRequest& request, const ModifyVSwitchAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyVSwitchAttributeOutcomeCallable modifyVSwitchAttributeCallable(const Model::ModifyVSwitchAttributeRequest& request) const;
