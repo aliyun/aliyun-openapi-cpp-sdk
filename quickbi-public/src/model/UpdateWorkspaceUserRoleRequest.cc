@@ -43,15 +43,6 @@ void UpdateWorkspaceUserRoleRequest::setAccessPoint(const std::string &accessPoi
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string UpdateWorkspaceUserRoleRequest::getSignType() const {
-  return signType_;
-}
-
-void UpdateWorkspaceUserRoleRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string UpdateWorkspaceUserRoleRequest::getUserId() const {
   return userId_;
 }
@@ -59,6 +50,24 @@ std::string UpdateWorkspaceUserRoleRequest::getUserId() const {
 void UpdateWorkspaceUserRoleRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+std::string UpdateWorkspaceUserRoleRequest::getRoleIds() const {
+  return roleIds_;
+}
+
+void UpdateWorkspaceUserRoleRequest::setRoleIds(const std::string &roleIds) {
+  roleIds_ = roleIds;
+  setParameter(std::string("RoleIds"), roleIds);
+}
+
+std::string UpdateWorkspaceUserRoleRequest::getSignType() const {
+  return signType_;
+}
+
+void UpdateWorkspaceUserRoleRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 std::string UpdateWorkspaceUserRoleRequest::getWorkspaceId() const {

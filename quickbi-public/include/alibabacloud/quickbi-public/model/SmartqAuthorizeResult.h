@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYAUDITLOGRESULT_H_
-#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYAUDITLOGRESULT_H_
+#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQAUTHORIZERESULT_H_
+#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQAUTHORIZERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryAuditLogResult : public ServiceResult
+			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT SmartqAuthorizeResult : public ServiceResult
 			{
 			public:
-				struct LogApiResultModel
+				struct Data
 				{
-					std::string operatorAccountName;
-					std::string gmtCreate;
-					std::string operatorName;
-					std::string targetType;
-					std::string workspaceId;
-					std::string targetName;
-					std::string operatorType;
-					std::string targetId;
+					std::string userId;
+					std::string llmCube;
+					std::string detailMessage;
+					std::string llmCubeTheme;
 				};
 
 
-				QueryAuditLogResult();
-				explicit QueryAuditLogResult(const std::string &payload);
-				~QueryAuditLogResult();
+				SmartqAuthorizeResult();
+				explicit SmartqAuthorizeResult(const std::string &payload);
+				~SmartqAuthorizeResult();
 				bool getSuccess()const;
-				std::vector<LogApiResultModel> getResult()const;
+				std::vector<Data> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				bool success_;
-				std::vector<LogApiResultModel> result_;
+				std::vector<Data> result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYAUDITLOGRESULT_H_
+#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQAUTHORIZERESULT_H_

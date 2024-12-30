@@ -43,6 +43,15 @@ void CancelAuthorizationMenuRequest::setAccessPoint(const std::string &accessPoi
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
+std::string CancelAuthorizationMenuRequest::getMenuIds() const {
+  return menuIds_;
+}
+
+void CancelAuthorizationMenuRequest::setMenuIds(const std::string &menuIds) {
+  menuIds_ = menuIds;
+  setParameter(std::string("MenuIds"), menuIds);
+}
+
 std::string CancelAuthorizationMenuRequest::getSignType() const {
   return signType_;
 }
@@ -68,14 +77,5 @@ std::string CancelAuthorizationMenuRequest::getUserIds() const {
 void CancelAuthorizationMenuRequest::setUserIds(const std::string &userIds) {
   userIds_ = userIds;
   setParameter(std::string("UserIds"), userIds);
-}
-
-std::string CancelAuthorizationMenuRequest::getMenuIds() const {
-  return menuIds_;
-}
-
-void CancelAuthorizationMenuRequest::setMenuIds(const std::string &menuIds) {
-  menuIds_ = menuIds;
-  setParameter(std::string("MenuIds"), menuIds);
 }
 

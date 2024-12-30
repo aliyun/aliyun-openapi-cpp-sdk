@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string pathId;
 						std::string uid;
 						bool isMeasure;
+						std::string expression;
 						std::string areaId;
 						std::string dataType;
 						std::string caption;
@@ -48,6 +49,7 @@ namespace AlibabaCloud
 					std::string componentTypeName;
 					std::vector<Item::QueryParam> queryParams;
 					std::string componentName;
+					std::string componentTypeCnName;
 					std::string componentId;
 					std::string datasetId;
 				};

@@ -1203,6 +1203,42 @@ Quickbi_publicClient::DeleteUserTagMetaOutcomeCallable Quickbi_publicClient::del
 	return task->get_future();
 }
 
+Quickbi_publicClient::GetDataSourceConnectionInfoOutcome Quickbi_publicClient::getDataSourceConnectionInfo(const GetDataSourceConnectionInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataSourceConnectionInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataSourceConnectionInfoOutcome(GetDataSourceConnectionInfoResult(outcome.result()));
+	else
+		return GetDataSourceConnectionInfoOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::getDataSourceConnectionInfoAsync(const GetDataSourceConnectionInfoRequest& request, const GetDataSourceConnectionInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataSourceConnectionInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::GetDataSourceConnectionInfoOutcomeCallable Quickbi_publicClient::getDataSourceConnectionInfoCallable(const GetDataSourceConnectionInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataSourceConnectionInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataSourceConnectionInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::GetMailTaskStatusOutcome Quickbi_publicClient::getMailTaskStatus(const GetMailTaskStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1485,6 +1521,42 @@ Quickbi_publicClient::ListDataLevelPermissionWhiteListOutcomeCallable Quickbi_pu
 			[this, request]()
 			{
 			return this->listDataLevelPermissionWhiteList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::ListDataSourceOutcome Quickbi_publicClient::listDataSource(const ListDataSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDataSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDataSourceOutcome(ListDataSourceResult(outcome.result()));
+	else
+		return ListDataSourceOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::listDataSourceAsync(const ListDataSourceRequest& request, const ListDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDataSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ListDataSourceOutcomeCallable Quickbi_publicClient::listDataSourceCallable(const ListDataSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDataSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->listDataSource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2427,6 +2499,42 @@ Quickbi_publicClient::QueryDatasetListOutcomeCallable Quickbi_publicClient::quer
 	return task->get_future();
 }
 
+Quickbi_publicClient::QueryDatasetSmartqStatusOutcome Quickbi_publicClient::queryDatasetSmartqStatus(const QueryDatasetSmartqStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDatasetSmartqStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDatasetSmartqStatusOutcome(QueryDatasetSmartqStatusResult(outcome.result()));
+	else
+		return QueryDatasetSmartqStatusOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryDatasetSmartqStatusAsync(const QueryDatasetSmartqStatusRequest& request, const QueryDatasetSmartqStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDatasetSmartqStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryDatasetSmartqStatusOutcomeCallable Quickbi_publicClient::queryDatasetSmartqStatusCallable(const QueryDatasetSmartqStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDatasetSmartqStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDatasetSmartqStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::QueryDatasetSwitchInfoOutcome Quickbi_publicClient::queryDatasetSwitchInfo(const QueryDatasetSwitchInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2529,6 +2637,42 @@ Quickbi_publicClient::QueryEmbeddedStatusOutcomeCallable Quickbi_publicClient::q
 			[this, request]()
 			{
 			return this->queryEmbeddedStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::QueryLlmCubeWithThemeListByUserIdOutcome Quickbi_publicClient::queryLlmCubeWithThemeListByUserId(const QueryLlmCubeWithThemeListByUserIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryLlmCubeWithThemeListByUserIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryLlmCubeWithThemeListByUserIdOutcome(QueryLlmCubeWithThemeListByUserIdResult(outcome.result()));
+	else
+		return QueryLlmCubeWithThemeListByUserIdOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryLlmCubeWithThemeListByUserIdAsync(const QueryLlmCubeWithThemeListByUserIdRequest& request, const QueryLlmCubeWithThemeListByUserIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryLlmCubeWithThemeListByUserId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryLlmCubeWithThemeListByUserIdOutcomeCallable Quickbi_publicClient::queryLlmCubeWithThemeListByUserIdCallable(const QueryLlmCubeWithThemeListByUserIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryLlmCubeWithThemeListByUserIdOutcome()>>(
+			[this, request]()
+			{
+			return this->queryLlmCubeWithThemeListByUserId(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2745,6 +2889,42 @@ Quickbi_publicClient::QuerySharesToUserListOutcomeCallable Quickbi_publicClient:
 			[this, request]()
 			{
 			return this->querySharesToUserList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::QuerySmartqPermissionByCubeIdOutcome Quickbi_publicClient::querySmartqPermissionByCubeId(const QuerySmartqPermissionByCubeIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySmartqPermissionByCubeIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySmartqPermissionByCubeIdOutcome(QuerySmartqPermissionByCubeIdResult(outcome.result()));
+	else
+		return QuerySmartqPermissionByCubeIdOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::querySmartqPermissionByCubeIdAsync(const QuerySmartqPermissionByCubeIdRequest& request, const QuerySmartqPermissionByCubeIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySmartqPermissionByCubeId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QuerySmartqPermissionByCubeIdOutcomeCallable Quickbi_publicClient::querySmartqPermissionByCubeIdCallable(const QuerySmartqPermissionByCubeIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySmartqPermissionByCubeIdOutcome()>>(
+			[this, request]()
+			{
+			return this->querySmartqPermissionByCubeId(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3465,6 +3645,78 @@ Quickbi_publicClient::SetDataLevelPermissionWhiteListOutcomeCallable Quickbi_pub
 			[this, request]()
 			{
 			return this->setDataLevelPermissionWhiteList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::SmartqAuthTransferOutcome Quickbi_publicClient::smartqAuthTransfer(const SmartqAuthTransferRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SmartqAuthTransferOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SmartqAuthTransferOutcome(SmartqAuthTransferResult(outcome.result()));
+	else
+		return SmartqAuthTransferOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::smartqAuthTransferAsync(const SmartqAuthTransferRequest& request, const SmartqAuthTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, smartqAuthTransfer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::SmartqAuthTransferOutcomeCallable Quickbi_publicClient::smartqAuthTransferCallable(const SmartqAuthTransferRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SmartqAuthTransferOutcome()>>(
+			[this, request]()
+			{
+			return this->smartqAuthTransfer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::SmartqAuthorizeOutcome Quickbi_publicClient::smartqAuthorize(const SmartqAuthorizeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SmartqAuthorizeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SmartqAuthorizeOutcome(SmartqAuthorizeResult(outcome.result()));
+	else
+		return SmartqAuthorizeOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::smartqAuthorizeAsync(const SmartqAuthorizeRequest& request, const SmartqAuthorizeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, smartqAuthorize(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::SmartqAuthorizeOutcomeCallable Quickbi_publicClient::smartqAuthorizeCallable(const SmartqAuthorizeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SmartqAuthorizeOutcome()>>(
+			[this, request]()
+			{
+			return this->smartqAuthorize(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -51,6 +51,8 @@ void QueryWorksBloodRelationshipResult::parse(const std::string &payload)
 			resultObject.componentType = std::stoi(valueResultItem["ComponentType"].asString());
 		if(!valueResultItem["ComponentTypeName"].isNull())
 			resultObject.componentTypeName = valueResultItem["ComponentTypeName"].asString();
+		if(!valueResultItem["ComponentTypeCnName"].isNull())
+			resultObject.componentTypeCnName = valueResultItem["ComponentTypeCnName"].asString();
 		if(!valueResultItem["DatasetId"].isNull())
 			resultObject.datasetId = valueResultItem["DatasetId"].asString();
 		auto allQueryParamsNode = valueResultItem["QueryParams"]["QueryParam"];
@@ -71,6 +73,8 @@ void QueryWorksBloodRelationshipResult::parse(const std::string &payload)
 				queryParamsObject.pathId = valueResultItemQueryParamsQueryParam["PathId"].asString();
 			if(!valueResultItemQueryParamsQueryParam["Uid"].isNull())
 				queryParamsObject.uid = valueResultItemQueryParamsQueryParam["Uid"].asString();
+			if(!valueResultItemQueryParamsQueryParam["Expression"].isNull())
+				queryParamsObject.expression = valueResultItemQueryParamsQueryParam["Expression"].asString();
 			resultObject.queryParams.push_back(queryParamsObject);
 		}
 		result_.push_back(resultObject);

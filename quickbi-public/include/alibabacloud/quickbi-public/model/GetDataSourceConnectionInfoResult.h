@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYAUDITLOGRESULT_H_
-#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYAUDITLOGRESULT_H_
+#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_GETDATASOURCECONNECTIONINFORESULT_H_
+#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_GETDATASOURCECONNECTIONINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,44 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryAuditLogResult : public ServiceResult
+			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT GetDataSourceConnectionInfoResult : public ServiceResult
 			{
 			public:
-				struct LogApiResultModel
+				struct Result
 				{
-					std::string operatorAccountName;
-					std::string gmtCreate;
-					std::string operatorName;
-					std::string targetType;
+					std::string modifyUser;
+					std::string address;
+					std::string instance;
+					std::string instanceId;
+					std::string creatorId;
+					std::string port;
+					std::string schema;
 					std::string workspaceId;
-					std::string targetName;
-					std::string operatorType;
-					std::string targetId;
+					std::string dsId;
+					std::string parentDsType;
+					std::string dsVersion;
+					std::string showName;
+					std::string authLevel;
+					std::string dsType;
+					std::string project;
+					bool noSasl;
 				};
 
 
-				QueryAuditLogResult();
-				explicit QueryAuditLogResult(const std::string &payload);
-				~QueryAuditLogResult();
+				GetDataSourceConnectionInfoResult();
+				explicit GetDataSourceConnectionInfoResult(const std::string &payload);
+				~GetDataSourceConnectionInfoResult();
 				bool getSuccess()const;
-				std::vector<LogApiResultModel> getResult()const;
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				bool success_;
-				std::vector<LogApiResultModel> result_;
+				Result result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYAUDITLOGRESULT_H_
+#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_GETDATASOURCECONNECTIONINFORESULT_H_

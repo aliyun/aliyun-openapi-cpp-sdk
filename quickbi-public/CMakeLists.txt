@@ -85,6 +85,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/DeleteUserGroupMembersResult.h
 	include/alibabacloud/quickbi-public/model/DeleteUserTagMetaRequest.h
 	include/alibabacloud/quickbi-public/model/DeleteUserTagMetaResult.h
+	include/alibabacloud/quickbi-public/model/GetDataSourceConnectionInfoRequest.h
+	include/alibabacloud/quickbi-public/model/GetDataSourceConnectionInfoResult.h
 	include/alibabacloud/quickbi-public/model/GetMailTaskStatusRequest.h
 	include/alibabacloud/quickbi-public/model/GetMailTaskStatusResult.h
 	include/alibabacloud/quickbi-public/model/GetUserGroupInfoRequest.h
@@ -101,6 +103,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/ListCubeDataLevelPermissionConfigResult.h
 	include/alibabacloud/quickbi-public/model/ListDataLevelPermissionWhiteListRequest.h
 	include/alibabacloud/quickbi-public/model/ListDataLevelPermissionWhiteListResult.h
+	include/alibabacloud/quickbi-public/model/ListDataSourceRequest.h
+	include/alibabacloud/quickbi-public/model/ListDataSourceResult.h
 	include/alibabacloud/quickbi-public/model/ListFavoriteReportsRequest.h
 	include/alibabacloud/quickbi-public/model/ListFavoriteReportsResult.h
 	include/alibabacloud/quickbi-public/model/ListOrganizationRoleUsersRequest.h
@@ -153,12 +157,16 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/QueryDatasetInfoResult.h
 	include/alibabacloud/quickbi-public/model/QueryDatasetListRequest.h
 	include/alibabacloud/quickbi-public/model/QueryDatasetListResult.h
+	include/alibabacloud/quickbi-public/model/QueryDatasetSmartqStatusRequest.h
+	include/alibabacloud/quickbi-public/model/QueryDatasetSmartqStatusResult.h
 	include/alibabacloud/quickbi-public/model/QueryDatasetSwitchInfoRequest.h
 	include/alibabacloud/quickbi-public/model/QueryDatasetSwitchInfoResult.h
 	include/alibabacloud/quickbi-public/model/QueryEmbeddedInfoRequest.h
 	include/alibabacloud/quickbi-public/model/QueryEmbeddedInfoResult.h
 	include/alibabacloud/quickbi-public/model/QueryEmbeddedStatusRequest.h
 	include/alibabacloud/quickbi-public/model/QueryEmbeddedStatusResult.h
+	include/alibabacloud/quickbi-public/model/QueryLlmCubeWithThemeListByUserIdRequest.h
+	include/alibabacloud/quickbi-public/model/QueryLlmCubeWithThemeListByUserIdResult.h
 	include/alibabacloud/quickbi-public/model/QueryOrganizationRoleConfigRequest.h
 	include/alibabacloud/quickbi-public/model/QueryOrganizationRoleConfigResult.h
 	include/alibabacloud/quickbi-public/model/QueryOrganizationWorkspaceListRequest.h
@@ -171,6 +179,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/QueryShareListResult.h
 	include/alibabacloud/quickbi-public/model/QuerySharesToUserListRequest.h
 	include/alibabacloud/quickbi-public/model/QuerySharesToUserListResult.h
+	include/alibabacloud/quickbi-public/model/QuerySmartqPermissionByCubeIdRequest.h
+	include/alibabacloud/quickbi-public/model/QuerySmartqPermissionByCubeIdResult.h
 	include/alibabacloud/quickbi-public/model/QueryTicketInfoRequest.h
 	include/alibabacloud/quickbi-public/model/QueryTicketInfoResult.h
 	include/alibabacloud/quickbi-public/model/QueryUserGroupListByParentIdRequest.h
@@ -211,6 +221,10 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/SetDataLevelPermissionRuleConfigResult.h
 	include/alibabacloud/quickbi-public/model/SetDataLevelPermissionWhiteListRequest.h
 	include/alibabacloud/quickbi-public/model/SetDataLevelPermissionWhiteListResult.h
+	include/alibabacloud/quickbi-public/model/SmartqAuthTransferRequest.h
+	include/alibabacloud/quickbi-public/model/SmartqAuthTransferResult.h
+	include/alibabacloud/quickbi-public/model/SmartqAuthorizeRequest.h
+	include/alibabacloud/quickbi-public/model/SmartqAuthorizeResult.h
 	include/alibabacloud/quickbi-public/model/SmartqQueryAbilityRequest.h
 	include/alibabacloud/quickbi-public/model/SmartqQueryAbilityResult.h
 	include/alibabacloud/quickbi-public/model/UpdateDataLevelPermissionStatusRequest.h
@@ -300,6 +314,8 @@ set(quickbi-public_src
 	src/model/DeleteUserGroupMembersResult.cc
 	src/model/DeleteUserTagMetaRequest.cc
 	src/model/DeleteUserTagMetaResult.cc
+	src/model/GetDataSourceConnectionInfoRequest.cc
+	src/model/GetDataSourceConnectionInfoResult.cc
 	src/model/GetMailTaskStatusRequest.cc
 	src/model/GetMailTaskStatusResult.cc
 	src/model/GetUserGroupInfoRequest.cc
@@ -316,6 +332,8 @@ set(quickbi-public_src
 	src/model/ListCubeDataLevelPermissionConfigResult.cc
 	src/model/ListDataLevelPermissionWhiteListRequest.cc
 	src/model/ListDataLevelPermissionWhiteListResult.cc
+	src/model/ListDataSourceRequest.cc
+	src/model/ListDataSourceResult.cc
 	src/model/ListFavoriteReportsRequest.cc
 	src/model/ListFavoriteReportsResult.cc
 	src/model/ListOrganizationRoleUsersRequest.cc
@@ -368,12 +386,16 @@ set(quickbi-public_src
 	src/model/QueryDatasetInfoResult.cc
 	src/model/QueryDatasetListRequest.cc
 	src/model/QueryDatasetListResult.cc
+	src/model/QueryDatasetSmartqStatusRequest.cc
+	src/model/QueryDatasetSmartqStatusResult.cc
 	src/model/QueryDatasetSwitchInfoRequest.cc
 	src/model/QueryDatasetSwitchInfoResult.cc
 	src/model/QueryEmbeddedInfoRequest.cc
 	src/model/QueryEmbeddedInfoResult.cc
 	src/model/QueryEmbeddedStatusRequest.cc
 	src/model/QueryEmbeddedStatusResult.cc
+	src/model/QueryLlmCubeWithThemeListByUserIdRequest.cc
+	src/model/QueryLlmCubeWithThemeListByUserIdResult.cc
 	src/model/QueryOrganizationRoleConfigRequest.cc
 	src/model/QueryOrganizationRoleConfigResult.cc
 	src/model/QueryOrganizationWorkspaceListRequest.cc
@@ -386,6 +408,8 @@ set(quickbi-public_src
 	src/model/QueryShareListResult.cc
 	src/model/QuerySharesToUserListRequest.cc
 	src/model/QuerySharesToUserListResult.cc
+	src/model/QuerySmartqPermissionByCubeIdRequest.cc
+	src/model/QuerySmartqPermissionByCubeIdResult.cc
 	src/model/QueryTicketInfoRequest.cc
 	src/model/QueryTicketInfoResult.cc
 	src/model/QueryUserGroupListByParentIdRequest.cc
@@ -426,6 +450,10 @@ set(quickbi-public_src
 	src/model/SetDataLevelPermissionRuleConfigResult.cc
 	src/model/SetDataLevelPermissionWhiteListRequest.cc
 	src/model/SetDataLevelPermissionWhiteListResult.cc
+	src/model/SmartqAuthTransferRequest.cc
+	src/model/SmartqAuthTransferResult.cc
+	src/model/SmartqAuthorizeRequest.cc
+	src/model/SmartqAuthorizeResult.cc
 	src/model/SmartqQueryAbilityRequest.cc
 	src/model/SmartqQueryAbilityResult.cc
 	src/model/UpdateDataLevelPermissionStatusRequest.cc

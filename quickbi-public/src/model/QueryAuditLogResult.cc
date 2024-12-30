@@ -57,6 +57,8 @@ void QueryAuditLogResult::parse(const std::string &payload)
 			resultObject.targetType = valueResultLogApiResultModel["TargetType"].asString();
 		if(!valueResultLogApiResultModel["WorkspaceId"].isNull())
 			resultObject.workspaceId = valueResultLogApiResultModel["WorkspaceId"].asString();
+		if(!valueResultLogApiResultModel["TargetId"].isNull())
+			resultObject.targetId = valueResultLogApiResultModel["TargetId"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

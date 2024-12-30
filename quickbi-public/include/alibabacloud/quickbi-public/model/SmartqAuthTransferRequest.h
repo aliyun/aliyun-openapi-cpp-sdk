@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_UPDATEWORKSPACEUSERROLEREQUEST_H_
-#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_UPDATEWORKSPACEUSERROLEREQUEST_H_
+#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQAUTHTRANSFERREQUEST_H_
+#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQAUTHTRANSFERREQUEST_H_
 
 #include <alibabacloud/quickbi-public/Quickbi_publicExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,26 @@
 namespace AlibabaCloud {
 namespace Quickbi_public {
 namespace Model {
-class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT UpdateWorkspaceUserRoleRequest : public RpcServiceRequest {
+class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT SmartqAuthTransferRequest : public RpcServiceRequest {
 public:
-	UpdateWorkspaceUserRoleRequest();
-	~UpdateWorkspaceUserRoleRequest();
-	long getRoleId() const;
-	void setRoleId(long roleId);
+	SmartqAuthTransferRequest();
+	~SmartqAuthTransferRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getUserId() const;
-	void setUserId(const std::string &userId);
-	std::string getRoleIds() const;
-	void setRoleIds(const std::string &roleIds);
+	std::string getTargetUserIds() const;
+	void setTargetUserIds(const std::string &targetUserIds);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
-	std::string getWorkspaceId() const;
-	void setWorkspaceId(const std::string &workspaceId);
+	std::string getOriginUserId() const;
+	void setOriginUserId(const std::string &originUserId);
 
 private:
-	long roleId_;
 	std::string accessPoint_;
-	std::string userId_;
-	std::string roleIds_;
+	std::string targetUserIds_;
 	std::string signType_;
-	std::string workspaceId_;
+	std::string originUserId_;
 };
 } // namespace Model
 } // namespace Quickbi_public
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_UPDATEWORKSPACEUSERROLEREQUEST_H_
+#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQAUTHTRANSFERREQUEST_H_
