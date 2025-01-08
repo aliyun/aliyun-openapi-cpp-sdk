@@ -45,6 +45,74 @@ void BatchGetMediaInfosResult::parse(const std::string &payload)
 		MediaBasicInfo mediaInfosObject;
 		if(!valueMediaInfosMediaBasicInfo["MediaId"].isNull())
 			mediaInfosObject.mediaId = valueMediaInfosMediaBasicInfo["MediaId"].asString();
+		auto allPlayInfoListNode = valueMediaInfosMediaBasicInfo["PlayInfoList"]["PlayInfo"];
+		for (auto valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo : allPlayInfoListNode)
+		{
+			MediaBasicInfo::PlayInfo playInfoListObject;
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["CreationTime"].isNull())
+				playInfoListObject.creationTime = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["CreationTime"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Status"].isNull())
+				playInfoListObject.status = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Status"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Specification"].isNull())
+				playInfoListObject.specification = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Specification"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Complexity"].isNull())
+				playInfoListObject.complexity = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Complexity"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["NarrowBandType"].isNull())
+				playInfoListObject.narrowBandType = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["NarrowBandType"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Height"].isNull())
+				playInfoListObject.height = std::stol(valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Height"].asString());
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Bitrate"].isNull())
+				playInfoListObject.bitrate = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Bitrate"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["ModificationTime"].isNull())
+				playInfoListObject.modificationTime = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["ModificationTime"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["WatermarkId"].isNull())
+				playInfoListObject.watermarkId = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["WatermarkId"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Encrypt"].isNull())
+				playInfoListObject.encrypt = std::stol(valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Encrypt"].asString());
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Definition"].isNull())
+				playInfoListObject.definition = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Definition"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Rand"].isNull())
+				playInfoListObject.rand = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Rand"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["EncryptType"].isNull())
+				playInfoListObject.encryptType = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["EncryptType"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["EncryptMode"].isNull())
+				playInfoListObject.encryptMode = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["EncryptMode"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["PreprocessStatus"].isNull())
+				playInfoListObject.preprocessStatus = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["PreprocessStatus"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["StreamType"].isNull())
+				playInfoListObject.streamType = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["StreamType"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["JobId"].isNull())
+				playInfoListObject.jobId = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["JobId"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Plaintext"].isNull())
+				playInfoListObject.plaintext = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Plaintext"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Size"].isNull())
+				playInfoListObject.size = std::stol(valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Size"].asString());
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Width"].isNull())
+				playInfoListObject.width = std::stol(valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Width"].asString());
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Fps"].isNull())
+				playInfoListObject.fps = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Fps"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Duration"].isNull())
+				playInfoListObject.duration = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Duration"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["PlayURL"].isNull())
+				playInfoListObject.playURL = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["PlayURL"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Format"].isNull())
+				playInfoListObject.format = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["Format"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["HDRType"].isNull())
+				playInfoListObject.hDRType = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["HDRType"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["BitDepth"].isNull())
+				playInfoListObject.bitDepth = std::stoi(valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["BitDepth"].asString());
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["JobType"].isNull())
+				playInfoListObject.jobType = std::stoi(valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["JobType"].asString());
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["JobExt"].isNull())
+				playInfoListObject.jobExt = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["JobExt"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["CodecName"].isNull())
+				playInfoListObject.codecName = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["CodecName"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["TemplateId"].isNull())
+				playInfoListObject.templateId = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["TemplateId"].asString();
+			if(!valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["TemplateGroupId"].isNull())
+				playInfoListObject.templateGroupId = valueMediaInfosMediaBasicInfoPlayInfoListPlayInfo["TemplateGroupId"].asString();
+			mediaInfosObject.playInfoList.push_back(playInfoListObject);
+		}
 		auto mediaInfoNode = value["MediaInfo"];
 		if(!mediaInfoNode["StorageLocation"].isNull())
 			mediaInfosObject.mediaInfo.storageLocation = mediaInfoNode["StorageLocation"].asString();

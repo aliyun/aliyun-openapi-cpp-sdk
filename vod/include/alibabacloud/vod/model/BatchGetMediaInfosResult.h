@@ -121,9 +121,44 @@ namespace AlibabaCloud
 						long height;
 						long width;
 					};
+					struct PlayInfo
+					{
+						std::string hDRType;
+						long size;
+						std::string watermarkId;
+						std::string fps;
+						std::string modificationTime;
+						int bitDepth;
+						std::string codecName;
+						std::string preprocessStatus;
+						std::string complexity;
+						std::string format;
+						std::string jobExt;
+						std::string narrowBandType;
+						std::string plaintext;
+						long height;
+						long width;
+						std::string jobId;
+						std::string templateId;
+						std::string templateGroupId;
+						std::string status;
+						std::string streamType;
+						std::string rand;
+						std::string definition;
+						std::string specification;
+						std::string duration;
+						std::string bitrate;
+						long encrypt;
+						std::string encryptMode;
+						int jobType;
+						std::string encryptType;
+						std::string playURL;
+						std::string creationTime;
+					};
 					MediaInfo mediaInfo;
 					std::string mediaId;
 					MezzanineInfo mezzanineInfo;
+					std::vector<MediaBasicInfo::PlayInfo> playInfoList;
 				};
 
 
