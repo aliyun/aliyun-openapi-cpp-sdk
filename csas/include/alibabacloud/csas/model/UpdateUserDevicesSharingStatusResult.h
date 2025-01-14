@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					struct NetInterfaceInfoItem
+					{
+						std::string mac;
+						std::string name;
+					};
 					std::string appStatus;
 					std::string dlpStatus;
 					std::string innerIP;
@@ -41,6 +46,7 @@ namespace AlibabaCloud
 					std::string cPU;
 					std::string appVersion;
 					std::string department;
+					std::vector<Data::NetInterfaceInfoItem> netInterfaceInfo;
 					std::string disk;
 					std::string deviceModel;
 					std::string nacStatus;

@@ -87,6 +87,78 @@ CsasClient::AttachApplication2ConnectorOutcomeCallable CsasClient::attachApplica
 	return task->get_future();
 }
 
+CsasClient::AttachPolicy2ApprovalProcessOutcome CsasClient::attachPolicy2ApprovalProcess(const AttachPolicy2ApprovalProcessRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AttachPolicy2ApprovalProcessOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AttachPolicy2ApprovalProcessOutcome(AttachPolicy2ApprovalProcessResult(outcome.result()));
+	else
+		return AttachPolicy2ApprovalProcessOutcome(outcome.error());
+}
+
+void CsasClient::attachPolicy2ApprovalProcessAsync(const AttachPolicy2ApprovalProcessRequest& request, const AttachPolicy2ApprovalProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, attachPolicy2ApprovalProcess(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::AttachPolicy2ApprovalProcessOutcomeCallable CsasClient::attachPolicy2ApprovalProcessCallable(const AttachPolicy2ApprovalProcessRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AttachPolicy2ApprovalProcessOutcome()>>(
+			[this, request]()
+			{
+			return this->attachPolicy2ApprovalProcess(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::CreateApprovalProcessOutcome CsasClient::createApprovalProcess(const CreateApprovalProcessRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateApprovalProcessOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateApprovalProcessOutcome(CreateApprovalProcessResult(outcome.result()));
+	else
+		return CreateApprovalProcessOutcome(outcome.error());
+}
+
+void CsasClient::createApprovalProcessAsync(const CreateApprovalProcessRequest& request, const CreateApprovalProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createApprovalProcess(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::CreateApprovalProcessOutcomeCallable CsasClient::createApprovalProcessCallable(const CreateApprovalProcessRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateApprovalProcessOutcome()>>(
+			[this, request]()
+			{
+			return this->createApprovalProcess(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::CreateClientUserOutcome CsasClient::createClientUser(const CreateClientUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,6 +591,42 @@ CsasClient::CreateWmInfoMappingOutcomeCallable CsasClient::createWmInfoMappingCa
 	return task->get_future();
 }
 
+CsasClient::DeleteApprovalProcessesOutcome CsasClient::deleteApprovalProcesses(const DeleteApprovalProcessesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteApprovalProcessesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteApprovalProcessesOutcome(DeleteApprovalProcessesResult(outcome.result()));
+	else
+		return DeleteApprovalProcessesOutcome(outcome.error());
+}
+
+void CsasClient::deleteApprovalProcessesAsync(const DeleteApprovalProcessesRequest& request, const DeleteApprovalProcessesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteApprovalProcesses(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::DeleteApprovalProcessesOutcomeCallable CsasClient::deleteApprovalProcessesCallable(const DeleteApprovalProcessesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteApprovalProcessesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteApprovalProcesses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::DeleteClientUserOutcome CsasClient::deleteClientUser(const DeleteClientUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -879,6 +987,42 @@ CsasClient::DetachApplication2ConnectorOutcomeCallable CsasClient::detachApplica
 	return task->get_future();
 }
 
+CsasClient::DetachPolicy2ApprovalProcessOutcome CsasClient::detachPolicy2ApprovalProcess(const DetachPolicy2ApprovalProcessRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetachPolicy2ApprovalProcessOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetachPolicy2ApprovalProcessOutcome(DetachPolicy2ApprovalProcessResult(outcome.result()));
+	else
+		return DetachPolicy2ApprovalProcessOutcome(outcome.error());
+}
+
+void CsasClient::detachPolicy2ApprovalProcessAsync(const DetachPolicy2ApprovalProcessRequest& request, const DetachPolicy2ApprovalProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detachPolicy2ApprovalProcess(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::DetachPolicy2ApprovalProcessOutcomeCallable CsasClient::detachPolicy2ApprovalProcessCallable(const DetachPolicy2ApprovalProcessRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetachPolicy2ApprovalProcessOutcome()>>(
+			[this, request]()
+			{
+			return this->detachPolicy2ApprovalProcess(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::ExportUserDevicesOutcome CsasClient::exportUserDevices(const ExportUserDevicesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -945,6 +1089,150 @@ CsasClient::GetActiveIdpConfigOutcomeCallable CsasClient::getActiveIdpConfigCall
 			[this, request]()
 			{
 			return this->getActiveIdpConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::GetApprovalOutcome CsasClient::getApproval(const GetApprovalRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetApprovalOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetApprovalOutcome(GetApprovalResult(outcome.result()));
+	else
+		return GetApprovalOutcome(outcome.error());
+}
+
+void CsasClient::getApprovalAsync(const GetApprovalRequest& request, const GetApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getApproval(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::GetApprovalOutcomeCallable CsasClient::getApprovalCallable(const GetApprovalRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetApprovalOutcome()>>(
+			[this, request]()
+			{
+			return this->getApproval(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::GetApprovalProcessOutcome CsasClient::getApprovalProcess(const GetApprovalProcessRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetApprovalProcessOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetApprovalProcessOutcome(GetApprovalProcessResult(outcome.result()));
+	else
+		return GetApprovalProcessOutcome(outcome.error());
+}
+
+void CsasClient::getApprovalProcessAsync(const GetApprovalProcessRequest& request, const GetApprovalProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getApprovalProcess(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::GetApprovalProcessOutcomeCallable CsasClient::getApprovalProcessCallable(const GetApprovalProcessRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetApprovalProcessOutcome()>>(
+			[this, request]()
+			{
+			return this->getApprovalProcess(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::GetApprovalSchemaOutcome CsasClient::getApprovalSchema(const GetApprovalSchemaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetApprovalSchemaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetApprovalSchemaOutcome(GetApprovalSchemaResult(outcome.result()));
+	else
+		return GetApprovalSchemaOutcome(outcome.error());
+}
+
+void CsasClient::getApprovalSchemaAsync(const GetApprovalSchemaRequest& request, const GetApprovalSchemaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getApprovalSchema(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::GetApprovalSchemaOutcomeCallable CsasClient::getApprovalSchemaCallable(const GetApprovalSchemaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetApprovalSchemaOutcome()>>(
+			[this, request]()
+			{
+			return this->getApprovalSchema(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::GetBootAndAntiUninstallPolicyOutcome CsasClient::getBootAndAntiUninstallPolicy(const GetBootAndAntiUninstallPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetBootAndAntiUninstallPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetBootAndAntiUninstallPolicyOutcome(GetBootAndAntiUninstallPolicyResult(outcome.result()));
+	else
+		return GetBootAndAntiUninstallPolicyOutcome(outcome.error());
+}
+
+void CsasClient::getBootAndAntiUninstallPolicyAsync(const GetBootAndAntiUninstallPolicyRequest& request, const GetBootAndAntiUninstallPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getBootAndAntiUninstallPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::GetBootAndAntiUninstallPolicyOutcomeCallable CsasClient::getBootAndAntiUninstallPolicyCallable(const GetBootAndAntiUninstallPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetBootAndAntiUninstallPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->getBootAndAntiUninstallPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1377,6 +1665,186 @@ CsasClient::ListApplicationsForPrivateAccessTagOutcomeCallable CsasClient::listA
 			[this, request]()
 			{
 			return this->listApplicationsForPrivateAccessTag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::ListApprovalProcessesOutcome CsasClient::listApprovalProcesses(const ListApprovalProcessesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApprovalProcessesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApprovalProcessesOutcome(ListApprovalProcessesResult(outcome.result()));
+	else
+		return ListApprovalProcessesOutcome(outcome.error());
+}
+
+void CsasClient::listApprovalProcessesAsync(const ListApprovalProcessesRequest& request, const ListApprovalProcessesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApprovalProcesses(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListApprovalProcessesOutcomeCallable CsasClient::listApprovalProcessesCallable(const ListApprovalProcessesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApprovalProcessesOutcome()>>(
+			[this, request]()
+			{
+			return this->listApprovalProcesses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::ListApprovalProcessesForApprovalSchemasOutcome CsasClient::listApprovalProcessesForApprovalSchemas(const ListApprovalProcessesForApprovalSchemasRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApprovalProcessesForApprovalSchemasOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApprovalProcessesForApprovalSchemasOutcome(ListApprovalProcessesForApprovalSchemasResult(outcome.result()));
+	else
+		return ListApprovalProcessesForApprovalSchemasOutcome(outcome.error());
+}
+
+void CsasClient::listApprovalProcessesForApprovalSchemasAsync(const ListApprovalProcessesForApprovalSchemasRequest& request, const ListApprovalProcessesForApprovalSchemasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApprovalProcessesForApprovalSchemas(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListApprovalProcessesForApprovalSchemasOutcomeCallable CsasClient::listApprovalProcessesForApprovalSchemasCallable(const ListApprovalProcessesForApprovalSchemasRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApprovalProcessesForApprovalSchemasOutcome()>>(
+			[this, request]()
+			{
+			return this->listApprovalProcessesForApprovalSchemas(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::ListApprovalSchemasOutcome CsasClient::listApprovalSchemas(const ListApprovalSchemasRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApprovalSchemasOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApprovalSchemasOutcome(ListApprovalSchemasResult(outcome.result()));
+	else
+		return ListApprovalSchemasOutcome(outcome.error());
+}
+
+void CsasClient::listApprovalSchemasAsync(const ListApprovalSchemasRequest& request, const ListApprovalSchemasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApprovalSchemas(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListApprovalSchemasOutcomeCallable CsasClient::listApprovalSchemasCallable(const ListApprovalSchemasRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApprovalSchemasOutcome()>>(
+			[this, request]()
+			{
+			return this->listApprovalSchemas(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::ListApprovalSchemasForApprovalProcessesOutcome CsasClient::listApprovalSchemasForApprovalProcesses(const ListApprovalSchemasForApprovalProcessesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApprovalSchemasForApprovalProcessesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApprovalSchemasForApprovalProcessesOutcome(ListApprovalSchemasForApprovalProcessesResult(outcome.result()));
+	else
+		return ListApprovalSchemasForApprovalProcessesOutcome(outcome.error());
+}
+
+void CsasClient::listApprovalSchemasForApprovalProcessesAsync(const ListApprovalSchemasForApprovalProcessesRequest& request, const ListApprovalSchemasForApprovalProcessesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApprovalSchemasForApprovalProcesses(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListApprovalSchemasForApprovalProcessesOutcomeCallable CsasClient::listApprovalSchemasForApprovalProcessesCallable(const ListApprovalSchemasForApprovalProcessesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApprovalSchemasForApprovalProcessesOutcome()>>(
+			[this, request]()
+			{
+			return this->listApprovalSchemasForApprovalProcesses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::ListApprovalsOutcome CsasClient::listApprovals(const ListApprovalsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApprovalsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApprovalsOutcome(ListApprovalsResult(outcome.result()));
+	else
+		return ListApprovalsOutcome(outcome.error());
+}
+
+void CsasClient::listApprovalsAsync(const ListApprovalsRequest& request, const ListApprovalsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApprovals(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListApprovalsOutcomeCallable CsasClient::listApprovalsCallable(const ListApprovalsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApprovalsOutcome()>>(
+			[this, request]()
+			{
+			return this->listApprovals(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2175,6 +2643,78 @@ CsasClient::ListTagsForPrivateAccessPolicyOutcomeCallable CsasClient::listTagsFo
 	return task->get_future();
 }
 
+CsasClient::ListUninstallApplicationsOutcome CsasClient::listUninstallApplications(const ListUninstallApplicationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListUninstallApplicationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListUninstallApplicationsOutcome(ListUninstallApplicationsResult(outcome.result()));
+	else
+		return ListUninstallApplicationsOutcome(outcome.error());
+}
+
+void CsasClient::listUninstallApplicationsAsync(const ListUninstallApplicationsRequest& request, const ListUninstallApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listUninstallApplications(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListUninstallApplicationsOutcomeCallable CsasClient::listUninstallApplicationsCallable(const ListUninstallApplicationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListUninstallApplicationsOutcome()>>(
+			[this, request]()
+			{
+			return this->listUninstallApplications(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::ListUserApplicationsOutcome CsasClient::listUserApplications(const ListUserApplicationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListUserApplicationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListUserApplicationsOutcome(ListUserApplicationsResult(outcome.result()));
+	else
+		return ListUserApplicationsOutcome(outcome.error());
+}
+
+void CsasClient::listUserApplicationsAsync(const ListUserApplicationsRequest& request, const ListUserApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listUserApplications(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListUserApplicationsOutcomeCallable CsasClient::listUserApplicationsCallable(const ListUserApplicationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListUserApplicationsOutcome()>>(
+			[this, request]()
+			{
+			return this->listUserApplications(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::ListUserDevicesOutcome CsasClient::listUserDevices(const ListUserDevicesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2319,6 +2859,42 @@ CsasClient::ListUserGroupsForRegistrationPolicyOutcomeCallable CsasClient::listU
 	return task->get_future();
 }
 
+CsasClient::ListUserPrivateAccessPoliciesOutcome CsasClient::listUserPrivateAccessPolicies(const ListUserPrivateAccessPoliciesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListUserPrivateAccessPoliciesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListUserPrivateAccessPoliciesOutcome(ListUserPrivateAccessPoliciesResult(outcome.result()));
+	else
+		return ListUserPrivateAccessPoliciesOutcome(outcome.error());
+}
+
+void CsasClient::listUserPrivateAccessPoliciesAsync(const ListUserPrivateAccessPoliciesRequest& request, const ListUserPrivateAccessPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listUserPrivateAccessPolicies(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::ListUserPrivateAccessPoliciesOutcomeCallable CsasClient::listUserPrivateAccessPoliciesCallable(const ListUserPrivateAccessPoliciesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListUserPrivateAccessPoliciesOutcome()>>(
+			[this, request]()
+			{
+			return this->listUserPrivateAccessPolicies(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CsasClient::ListUsersOutcome CsasClient::listUsers(const ListUsersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2421,6 +2997,114 @@ CsasClient::RevokeUserSessionOutcomeCallable CsasClient::revokeUserSessionCallab
 			[this, request]()
 			{
 			return this->revokeUserSession(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::UpdateApprovalProcessOutcome CsasClient::updateApprovalProcess(const UpdateApprovalProcessRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateApprovalProcessOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateApprovalProcessOutcome(UpdateApprovalProcessResult(outcome.result()));
+	else
+		return UpdateApprovalProcessOutcome(outcome.error());
+}
+
+void CsasClient::updateApprovalProcessAsync(const UpdateApprovalProcessRequest& request, const UpdateApprovalProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateApprovalProcess(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::UpdateApprovalProcessOutcomeCallable CsasClient::updateApprovalProcessCallable(const UpdateApprovalProcessRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateApprovalProcessOutcome()>>(
+			[this, request]()
+			{
+			return this->updateApprovalProcess(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::UpdateApprovalStatusOutcome CsasClient::updateApprovalStatus(const UpdateApprovalStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateApprovalStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateApprovalStatusOutcome(UpdateApprovalStatusResult(outcome.result()));
+	else
+		return UpdateApprovalStatusOutcome(outcome.error());
+}
+
+void CsasClient::updateApprovalStatusAsync(const UpdateApprovalStatusRequest& request, const UpdateApprovalStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateApprovalStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::UpdateApprovalStatusOutcomeCallable CsasClient::updateApprovalStatusCallable(const UpdateApprovalStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateApprovalStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->updateApprovalStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::UpdateBootAndAntiUninstallPolicyOutcome CsasClient::updateBootAndAntiUninstallPolicy(const UpdateBootAndAntiUninstallPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateBootAndAntiUninstallPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateBootAndAntiUninstallPolicyOutcome(UpdateBootAndAntiUninstallPolicyResult(outcome.result()));
+	else
+		return UpdateBootAndAntiUninstallPolicyOutcome(outcome.error());
+}
+
+void CsasClient::updateBootAndAntiUninstallPolicyAsync(const UpdateBootAndAntiUninstallPolicyRequest& request, const UpdateBootAndAntiUninstallPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateBootAndAntiUninstallPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::UpdateBootAndAntiUninstallPolicyOutcomeCallable CsasClient::updateBootAndAntiUninstallPolicyCallable(const UpdateBootAndAntiUninstallPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateBootAndAntiUninstallPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->updateBootAndAntiUninstallPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2781,6 +3465,42 @@ CsasClient::UpdateRegistrationPolicyOutcomeCallable CsasClient::updateRegistrati
 			[this, request]()
 			{
 			return this->updateRegistrationPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CsasClient::UpdateUninstallApplicationsStatusOutcome CsasClient::updateUninstallApplicationsStatus(const UpdateUninstallApplicationsStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateUninstallApplicationsStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateUninstallApplicationsStatusOutcome(UpdateUninstallApplicationsStatusResult(outcome.result()));
+	else
+		return UpdateUninstallApplicationsStatusOutcome(outcome.error());
+}
+
+void CsasClient::updateUninstallApplicationsStatusAsync(const UpdateUninstallApplicationsStatusRequest& request, const UpdateUninstallApplicationsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateUninstallApplicationsStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CsasClient::UpdateUninstallApplicationsStatusOutcomeCallable CsasClient::updateUninstallApplicationsStatusCallable(const UpdateUninstallApplicationsStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateUninstallApplicationsStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->updateUninstallApplicationsStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

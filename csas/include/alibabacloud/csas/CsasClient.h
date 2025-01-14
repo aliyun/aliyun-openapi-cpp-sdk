@@ -24,6 +24,10 @@
 #include "CsasExport.h"
 #include "model/AttachApplication2ConnectorRequest.h"
 #include "model/AttachApplication2ConnectorResult.h"
+#include "model/AttachPolicy2ApprovalProcessRequest.h"
+#include "model/AttachPolicy2ApprovalProcessResult.h"
+#include "model/CreateApprovalProcessRequest.h"
+#include "model/CreateApprovalProcessResult.h"
 #include "model/CreateClientUserRequest.h"
 #include "model/CreateClientUserResult.h"
 #include "model/CreateDynamicRouteRequest.h"
@@ -48,6 +52,8 @@
 #include "model/CreateWmExtractTaskResult.h"
 #include "model/CreateWmInfoMappingRequest.h"
 #include "model/CreateWmInfoMappingResult.h"
+#include "model/DeleteApprovalProcessesRequest.h"
+#include "model/DeleteApprovalProcessesResult.h"
 #include "model/DeleteClientUserRequest.h"
 #include "model/DeleteClientUserResult.h"
 #include "model/DeleteDynamicRouteRequest.h"
@@ -68,10 +74,20 @@
 #include "model/DeleteUserGroupResult.h"
 #include "model/DetachApplication2ConnectorRequest.h"
 #include "model/DetachApplication2ConnectorResult.h"
+#include "model/DetachPolicy2ApprovalProcessRequest.h"
+#include "model/DetachPolicy2ApprovalProcessResult.h"
 #include "model/ExportUserDevicesRequest.h"
 #include "model/ExportUserDevicesResult.h"
 #include "model/GetActiveIdpConfigRequest.h"
 #include "model/GetActiveIdpConfigResult.h"
+#include "model/GetApprovalRequest.h"
+#include "model/GetApprovalResult.h"
+#include "model/GetApprovalProcessRequest.h"
+#include "model/GetApprovalProcessResult.h"
+#include "model/GetApprovalSchemaRequest.h"
+#include "model/GetApprovalSchemaResult.h"
+#include "model/GetBootAndAntiUninstallPolicyRequest.h"
+#include "model/GetBootAndAntiUninstallPolicyResult.h"
 #include "model/GetClientUserRequest.h"
 #include "model/GetClientUserResult.h"
 #include "model/GetDynamicRouteRequest.h"
@@ -96,6 +112,16 @@
 #include "model/ListApplicationsForPrivateAccessPolicyResult.h"
 #include "model/ListApplicationsForPrivateAccessTagRequest.h"
 #include "model/ListApplicationsForPrivateAccessTagResult.h"
+#include "model/ListApprovalProcessesRequest.h"
+#include "model/ListApprovalProcessesResult.h"
+#include "model/ListApprovalProcessesForApprovalSchemasRequest.h"
+#include "model/ListApprovalProcessesForApprovalSchemasResult.h"
+#include "model/ListApprovalSchemasRequest.h"
+#include "model/ListApprovalSchemasResult.h"
+#include "model/ListApprovalSchemasForApprovalProcessesRequest.h"
+#include "model/ListApprovalSchemasForApprovalProcessesResult.h"
+#include "model/ListApprovalsRequest.h"
+#include "model/ListApprovalsResult.h"
 #include "model/ListClientUsersRequest.h"
 #include "model/ListClientUsersResult.h"
 #include "model/ListConnectorsRequest.h"
@@ -140,6 +166,10 @@
 #include "model/ListTagsForPrivateAccessApplicationResult.h"
 #include "model/ListTagsForPrivateAccessPolicyRequest.h"
 #include "model/ListTagsForPrivateAccessPolicyResult.h"
+#include "model/ListUninstallApplicationsRequest.h"
+#include "model/ListUninstallApplicationsResult.h"
+#include "model/ListUserApplicationsRequest.h"
+#include "model/ListUserApplicationsResult.h"
 #include "model/ListUserDevicesRequest.h"
 #include "model/ListUserDevicesResult.h"
 #include "model/ListUserGroupsRequest.h"
@@ -148,12 +178,20 @@
 #include "model/ListUserGroupsForPrivateAccessPolicyResult.h"
 #include "model/ListUserGroupsForRegistrationPolicyRequest.h"
 #include "model/ListUserGroupsForRegistrationPolicyResult.h"
+#include "model/ListUserPrivateAccessPoliciesRequest.h"
+#include "model/ListUserPrivateAccessPoliciesResult.h"
 #include "model/ListUsersRequest.h"
 #include "model/ListUsersResult.h"
 #include "model/LookupWmInfoMappingRequest.h"
 #include "model/LookupWmInfoMappingResult.h"
 #include "model/RevokeUserSessionRequest.h"
 #include "model/RevokeUserSessionResult.h"
+#include "model/UpdateApprovalProcessRequest.h"
+#include "model/UpdateApprovalProcessResult.h"
+#include "model/UpdateApprovalStatusRequest.h"
+#include "model/UpdateApprovalStatusResult.h"
+#include "model/UpdateBootAndAntiUninstallPolicyRequest.h"
+#include "model/UpdateBootAndAntiUninstallPolicyResult.h"
 #include "model/UpdateClientUserRequest.h"
 #include "model/UpdateClientUserResult.h"
 #include "model/UpdateClientUserPasswordRequest.h"
@@ -174,6 +212,8 @@
 #include "model/UpdatePrivateAccessPolicyResult.h"
 #include "model/UpdateRegistrationPolicyRequest.h"
 #include "model/UpdateRegistrationPolicyResult.h"
+#include "model/UpdateUninstallApplicationsStatusRequest.h"
+#include "model/UpdateUninstallApplicationsStatusResult.h"
 #include "model/UpdateUserDevicesSharingStatusRequest.h"
 #include "model/UpdateUserDevicesSharingStatusResult.h"
 #include "model/UpdateUserDevicesStatusRequest.h"
@@ -194,6 +234,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AttachApplication2ConnectorResult> AttachApplication2ConnectorOutcome;
 			typedef std::future<AttachApplication2ConnectorOutcome> AttachApplication2ConnectorOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::AttachApplication2ConnectorRequest&, const AttachApplication2ConnectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachApplication2ConnectorAsyncHandler;
+			typedef Outcome<Error, Model::AttachPolicy2ApprovalProcessResult> AttachPolicy2ApprovalProcessOutcome;
+			typedef std::future<AttachPolicy2ApprovalProcessOutcome> AttachPolicy2ApprovalProcessOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::AttachPolicy2ApprovalProcessRequest&, const AttachPolicy2ApprovalProcessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachPolicy2ApprovalProcessAsyncHandler;
+			typedef Outcome<Error, Model::CreateApprovalProcessResult> CreateApprovalProcessOutcome;
+			typedef std::future<CreateApprovalProcessOutcome> CreateApprovalProcessOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::CreateApprovalProcessRequest&, const CreateApprovalProcessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateApprovalProcessAsyncHandler;
 			typedef Outcome<Error, Model::CreateClientUserResult> CreateClientUserOutcome;
 			typedef std::future<CreateClientUserOutcome> CreateClientUserOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::CreateClientUserRequest&, const CreateClientUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateClientUserAsyncHandler;
@@ -230,6 +276,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateWmInfoMappingResult> CreateWmInfoMappingOutcome;
 			typedef std::future<CreateWmInfoMappingOutcome> CreateWmInfoMappingOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::CreateWmInfoMappingRequest&, const CreateWmInfoMappingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateWmInfoMappingAsyncHandler;
+			typedef Outcome<Error, Model::DeleteApprovalProcessesResult> DeleteApprovalProcessesOutcome;
+			typedef std::future<DeleteApprovalProcessesOutcome> DeleteApprovalProcessesOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::DeleteApprovalProcessesRequest&, const DeleteApprovalProcessesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApprovalProcessesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteClientUserResult> DeleteClientUserOutcome;
 			typedef std::future<DeleteClientUserOutcome> DeleteClientUserOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::DeleteClientUserRequest&, const DeleteClientUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClientUserAsyncHandler;
@@ -260,12 +309,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetachApplication2ConnectorResult> DetachApplication2ConnectorOutcome;
 			typedef std::future<DetachApplication2ConnectorOutcome> DetachApplication2ConnectorOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::DetachApplication2ConnectorRequest&, const DetachApplication2ConnectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachApplication2ConnectorAsyncHandler;
+			typedef Outcome<Error, Model::DetachPolicy2ApprovalProcessResult> DetachPolicy2ApprovalProcessOutcome;
+			typedef std::future<DetachPolicy2ApprovalProcessOutcome> DetachPolicy2ApprovalProcessOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::DetachPolicy2ApprovalProcessRequest&, const DetachPolicy2ApprovalProcessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachPolicy2ApprovalProcessAsyncHandler;
 			typedef Outcome<Error, Model::ExportUserDevicesResult> ExportUserDevicesOutcome;
 			typedef std::future<ExportUserDevicesOutcome> ExportUserDevicesOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ExportUserDevicesRequest&, const ExportUserDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExportUserDevicesAsyncHandler;
 			typedef Outcome<Error, Model::GetActiveIdpConfigResult> GetActiveIdpConfigOutcome;
 			typedef std::future<GetActiveIdpConfigOutcome> GetActiveIdpConfigOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::GetActiveIdpConfigRequest&, const GetActiveIdpConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetActiveIdpConfigAsyncHandler;
+			typedef Outcome<Error, Model::GetApprovalResult> GetApprovalOutcome;
+			typedef std::future<GetApprovalOutcome> GetApprovalOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::GetApprovalRequest&, const GetApprovalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetApprovalAsyncHandler;
+			typedef Outcome<Error, Model::GetApprovalProcessResult> GetApprovalProcessOutcome;
+			typedef std::future<GetApprovalProcessOutcome> GetApprovalProcessOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::GetApprovalProcessRequest&, const GetApprovalProcessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetApprovalProcessAsyncHandler;
+			typedef Outcome<Error, Model::GetApprovalSchemaResult> GetApprovalSchemaOutcome;
+			typedef std::future<GetApprovalSchemaOutcome> GetApprovalSchemaOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::GetApprovalSchemaRequest&, const GetApprovalSchemaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetApprovalSchemaAsyncHandler;
+			typedef Outcome<Error, Model::GetBootAndAntiUninstallPolicyResult> GetBootAndAntiUninstallPolicyOutcome;
+			typedef std::future<GetBootAndAntiUninstallPolicyOutcome> GetBootAndAntiUninstallPolicyOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::GetBootAndAntiUninstallPolicyRequest&, const GetBootAndAntiUninstallPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetBootAndAntiUninstallPolicyAsyncHandler;
 			typedef Outcome<Error, Model::GetClientUserResult> GetClientUserOutcome;
 			typedef std::future<GetClientUserOutcome> GetClientUserOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::GetClientUserRequest&, const GetClientUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetClientUserAsyncHandler;
@@ -302,6 +366,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListApplicationsForPrivateAccessTagResult> ListApplicationsForPrivateAccessTagOutcome;
 			typedef std::future<ListApplicationsForPrivateAccessTagOutcome> ListApplicationsForPrivateAccessTagOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListApplicationsForPrivateAccessTagRequest&, const ListApplicationsForPrivateAccessTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApplicationsForPrivateAccessTagAsyncHandler;
+			typedef Outcome<Error, Model::ListApprovalProcessesResult> ListApprovalProcessesOutcome;
+			typedef std::future<ListApprovalProcessesOutcome> ListApprovalProcessesOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListApprovalProcessesRequest&, const ListApprovalProcessesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApprovalProcessesAsyncHandler;
+			typedef Outcome<Error, Model::ListApprovalProcessesForApprovalSchemasResult> ListApprovalProcessesForApprovalSchemasOutcome;
+			typedef std::future<ListApprovalProcessesForApprovalSchemasOutcome> ListApprovalProcessesForApprovalSchemasOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListApprovalProcessesForApprovalSchemasRequest&, const ListApprovalProcessesForApprovalSchemasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApprovalProcessesForApprovalSchemasAsyncHandler;
+			typedef Outcome<Error, Model::ListApprovalSchemasResult> ListApprovalSchemasOutcome;
+			typedef std::future<ListApprovalSchemasOutcome> ListApprovalSchemasOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListApprovalSchemasRequest&, const ListApprovalSchemasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApprovalSchemasAsyncHandler;
+			typedef Outcome<Error, Model::ListApprovalSchemasForApprovalProcessesResult> ListApprovalSchemasForApprovalProcessesOutcome;
+			typedef std::future<ListApprovalSchemasForApprovalProcessesOutcome> ListApprovalSchemasForApprovalProcessesOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListApprovalSchemasForApprovalProcessesRequest&, const ListApprovalSchemasForApprovalProcessesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApprovalSchemasForApprovalProcessesAsyncHandler;
+			typedef Outcome<Error, Model::ListApprovalsResult> ListApprovalsOutcome;
+			typedef std::future<ListApprovalsOutcome> ListApprovalsOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListApprovalsRequest&, const ListApprovalsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApprovalsAsyncHandler;
 			typedef Outcome<Error, Model::ListClientUsersResult> ListClientUsersOutcome;
 			typedef std::future<ListClientUsersOutcome> ListClientUsersOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListClientUsersRequest&, const ListClientUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClientUsersAsyncHandler;
@@ -368,6 +447,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTagsForPrivateAccessPolicyResult> ListTagsForPrivateAccessPolicyOutcome;
 			typedef std::future<ListTagsForPrivateAccessPolicyOutcome> ListTagsForPrivateAccessPolicyOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListTagsForPrivateAccessPolicyRequest&, const ListTagsForPrivateAccessPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagsForPrivateAccessPolicyAsyncHandler;
+			typedef Outcome<Error, Model::ListUninstallApplicationsResult> ListUninstallApplicationsOutcome;
+			typedef std::future<ListUninstallApplicationsOutcome> ListUninstallApplicationsOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListUninstallApplicationsRequest&, const ListUninstallApplicationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUninstallApplicationsAsyncHandler;
+			typedef Outcome<Error, Model::ListUserApplicationsResult> ListUserApplicationsOutcome;
+			typedef std::future<ListUserApplicationsOutcome> ListUserApplicationsOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListUserApplicationsRequest&, const ListUserApplicationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserApplicationsAsyncHandler;
 			typedef Outcome<Error, Model::ListUserDevicesResult> ListUserDevicesOutcome;
 			typedef std::future<ListUserDevicesOutcome> ListUserDevicesOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListUserDevicesRequest&, const ListUserDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserDevicesAsyncHandler;
@@ -380,6 +465,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListUserGroupsForRegistrationPolicyResult> ListUserGroupsForRegistrationPolicyOutcome;
 			typedef std::future<ListUserGroupsForRegistrationPolicyOutcome> ListUserGroupsForRegistrationPolicyOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListUserGroupsForRegistrationPolicyRequest&, const ListUserGroupsForRegistrationPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserGroupsForRegistrationPolicyAsyncHandler;
+			typedef Outcome<Error, Model::ListUserPrivateAccessPoliciesResult> ListUserPrivateAccessPoliciesOutcome;
+			typedef std::future<ListUserPrivateAccessPoliciesOutcome> ListUserPrivateAccessPoliciesOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::ListUserPrivateAccessPoliciesRequest&, const ListUserPrivateAccessPoliciesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserPrivateAccessPoliciesAsyncHandler;
 			typedef Outcome<Error, Model::ListUsersResult> ListUsersOutcome;
 			typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::ListUsersRequest&, const ListUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersAsyncHandler;
@@ -389,6 +477,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RevokeUserSessionResult> RevokeUserSessionOutcome;
 			typedef std::future<RevokeUserSessionOutcome> RevokeUserSessionOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::RevokeUserSessionRequest&, const RevokeUserSessionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RevokeUserSessionAsyncHandler;
+			typedef Outcome<Error, Model::UpdateApprovalProcessResult> UpdateApprovalProcessOutcome;
+			typedef std::future<UpdateApprovalProcessOutcome> UpdateApprovalProcessOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::UpdateApprovalProcessRequest&, const UpdateApprovalProcessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateApprovalProcessAsyncHandler;
+			typedef Outcome<Error, Model::UpdateApprovalStatusResult> UpdateApprovalStatusOutcome;
+			typedef std::future<UpdateApprovalStatusOutcome> UpdateApprovalStatusOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::UpdateApprovalStatusRequest&, const UpdateApprovalStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateApprovalStatusAsyncHandler;
+			typedef Outcome<Error, Model::UpdateBootAndAntiUninstallPolicyResult> UpdateBootAndAntiUninstallPolicyOutcome;
+			typedef std::future<UpdateBootAndAntiUninstallPolicyOutcome> UpdateBootAndAntiUninstallPolicyOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::UpdateBootAndAntiUninstallPolicyRequest&, const UpdateBootAndAntiUninstallPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateBootAndAntiUninstallPolicyAsyncHandler;
 			typedef Outcome<Error, Model::UpdateClientUserResult> UpdateClientUserOutcome;
 			typedef std::future<UpdateClientUserOutcome> UpdateClientUserOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::UpdateClientUserRequest&, const UpdateClientUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateClientUserAsyncHandler;
@@ -419,6 +516,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateRegistrationPolicyResult> UpdateRegistrationPolicyOutcome;
 			typedef std::future<UpdateRegistrationPolicyOutcome> UpdateRegistrationPolicyOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::UpdateRegistrationPolicyRequest&, const UpdateRegistrationPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRegistrationPolicyAsyncHandler;
+			typedef Outcome<Error, Model::UpdateUninstallApplicationsStatusResult> UpdateUninstallApplicationsStatusOutcome;
+			typedef std::future<UpdateUninstallApplicationsStatusOutcome> UpdateUninstallApplicationsStatusOutcomeCallable;
+			typedef std::function<void(const CsasClient*, const Model::UpdateUninstallApplicationsStatusRequest&, const UpdateUninstallApplicationsStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUninstallApplicationsStatusAsyncHandler;
 			typedef Outcome<Error, Model::UpdateUserDevicesSharingStatusResult> UpdateUserDevicesSharingStatusOutcome;
 			typedef std::future<UpdateUserDevicesSharingStatusOutcome> UpdateUserDevicesSharingStatusOutcomeCallable;
 			typedef std::function<void(const CsasClient*, const Model::UpdateUserDevicesSharingStatusRequest&, const UpdateUserDevicesSharingStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserDevicesSharingStatusAsyncHandler;
@@ -439,6 +539,12 @@ namespace AlibabaCloud
 			AttachApplication2ConnectorOutcome attachApplication2Connector(const Model::AttachApplication2ConnectorRequest &request)const;
 			void attachApplication2ConnectorAsync(const Model::AttachApplication2ConnectorRequest& request, const AttachApplication2ConnectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachApplication2ConnectorOutcomeCallable attachApplication2ConnectorCallable(const Model::AttachApplication2ConnectorRequest& request) const;
+			AttachPolicy2ApprovalProcessOutcome attachPolicy2ApprovalProcess(const Model::AttachPolicy2ApprovalProcessRequest &request)const;
+			void attachPolicy2ApprovalProcessAsync(const Model::AttachPolicy2ApprovalProcessRequest& request, const AttachPolicy2ApprovalProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AttachPolicy2ApprovalProcessOutcomeCallable attachPolicy2ApprovalProcessCallable(const Model::AttachPolicy2ApprovalProcessRequest& request) const;
+			CreateApprovalProcessOutcome createApprovalProcess(const Model::CreateApprovalProcessRequest &request)const;
+			void createApprovalProcessAsync(const Model::CreateApprovalProcessRequest& request, const CreateApprovalProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateApprovalProcessOutcomeCallable createApprovalProcessCallable(const Model::CreateApprovalProcessRequest& request) const;
 			CreateClientUserOutcome createClientUser(const Model::CreateClientUserRequest &request)const;
 			void createClientUserAsync(const Model::CreateClientUserRequest& request, const CreateClientUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateClientUserOutcomeCallable createClientUserCallable(const Model::CreateClientUserRequest& request) const;
@@ -475,6 +581,9 @@ namespace AlibabaCloud
 			CreateWmInfoMappingOutcome createWmInfoMapping(const Model::CreateWmInfoMappingRequest &request)const;
 			void createWmInfoMappingAsync(const Model::CreateWmInfoMappingRequest& request, const CreateWmInfoMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateWmInfoMappingOutcomeCallable createWmInfoMappingCallable(const Model::CreateWmInfoMappingRequest& request) const;
+			DeleteApprovalProcessesOutcome deleteApprovalProcesses(const Model::DeleteApprovalProcessesRequest &request)const;
+			void deleteApprovalProcessesAsync(const Model::DeleteApprovalProcessesRequest& request, const DeleteApprovalProcessesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteApprovalProcessesOutcomeCallable deleteApprovalProcessesCallable(const Model::DeleteApprovalProcessesRequest& request) const;
 			DeleteClientUserOutcome deleteClientUser(const Model::DeleteClientUserRequest &request)const;
 			void deleteClientUserAsync(const Model::DeleteClientUserRequest& request, const DeleteClientUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteClientUserOutcomeCallable deleteClientUserCallable(const Model::DeleteClientUserRequest& request) const;
@@ -505,12 +614,27 @@ namespace AlibabaCloud
 			DetachApplication2ConnectorOutcome detachApplication2Connector(const Model::DetachApplication2ConnectorRequest &request)const;
 			void detachApplication2ConnectorAsync(const Model::DetachApplication2ConnectorRequest& request, const DetachApplication2ConnectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachApplication2ConnectorOutcomeCallable detachApplication2ConnectorCallable(const Model::DetachApplication2ConnectorRequest& request) const;
+			DetachPolicy2ApprovalProcessOutcome detachPolicy2ApprovalProcess(const Model::DetachPolicy2ApprovalProcessRequest &request)const;
+			void detachPolicy2ApprovalProcessAsync(const Model::DetachPolicy2ApprovalProcessRequest& request, const DetachPolicy2ApprovalProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetachPolicy2ApprovalProcessOutcomeCallable detachPolicy2ApprovalProcessCallable(const Model::DetachPolicy2ApprovalProcessRequest& request) const;
 			ExportUserDevicesOutcome exportUserDevices(const Model::ExportUserDevicesRequest &request)const;
 			void exportUserDevicesAsync(const Model::ExportUserDevicesRequest& request, const ExportUserDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExportUserDevicesOutcomeCallable exportUserDevicesCallable(const Model::ExportUserDevicesRequest& request) const;
 			GetActiveIdpConfigOutcome getActiveIdpConfig(const Model::GetActiveIdpConfigRequest &request)const;
 			void getActiveIdpConfigAsync(const Model::GetActiveIdpConfigRequest& request, const GetActiveIdpConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetActiveIdpConfigOutcomeCallable getActiveIdpConfigCallable(const Model::GetActiveIdpConfigRequest& request) const;
+			GetApprovalOutcome getApproval(const Model::GetApprovalRequest &request)const;
+			void getApprovalAsync(const Model::GetApprovalRequest& request, const GetApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetApprovalOutcomeCallable getApprovalCallable(const Model::GetApprovalRequest& request) const;
+			GetApprovalProcessOutcome getApprovalProcess(const Model::GetApprovalProcessRequest &request)const;
+			void getApprovalProcessAsync(const Model::GetApprovalProcessRequest& request, const GetApprovalProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetApprovalProcessOutcomeCallable getApprovalProcessCallable(const Model::GetApprovalProcessRequest& request) const;
+			GetApprovalSchemaOutcome getApprovalSchema(const Model::GetApprovalSchemaRequest &request)const;
+			void getApprovalSchemaAsync(const Model::GetApprovalSchemaRequest& request, const GetApprovalSchemaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetApprovalSchemaOutcomeCallable getApprovalSchemaCallable(const Model::GetApprovalSchemaRequest& request) const;
+			GetBootAndAntiUninstallPolicyOutcome getBootAndAntiUninstallPolicy(const Model::GetBootAndAntiUninstallPolicyRequest &request)const;
+			void getBootAndAntiUninstallPolicyAsync(const Model::GetBootAndAntiUninstallPolicyRequest& request, const GetBootAndAntiUninstallPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetBootAndAntiUninstallPolicyOutcomeCallable getBootAndAntiUninstallPolicyCallable(const Model::GetBootAndAntiUninstallPolicyRequest& request) const;
 			GetClientUserOutcome getClientUser(const Model::GetClientUserRequest &request)const;
 			void getClientUserAsync(const Model::GetClientUserRequest& request, const GetClientUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetClientUserOutcomeCallable getClientUserCallable(const Model::GetClientUserRequest& request) const;
@@ -547,6 +671,21 @@ namespace AlibabaCloud
 			ListApplicationsForPrivateAccessTagOutcome listApplicationsForPrivateAccessTag(const Model::ListApplicationsForPrivateAccessTagRequest &request)const;
 			void listApplicationsForPrivateAccessTagAsync(const Model::ListApplicationsForPrivateAccessTagRequest& request, const ListApplicationsForPrivateAccessTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListApplicationsForPrivateAccessTagOutcomeCallable listApplicationsForPrivateAccessTagCallable(const Model::ListApplicationsForPrivateAccessTagRequest& request) const;
+			ListApprovalProcessesOutcome listApprovalProcesses(const Model::ListApprovalProcessesRequest &request)const;
+			void listApprovalProcessesAsync(const Model::ListApprovalProcessesRequest& request, const ListApprovalProcessesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListApprovalProcessesOutcomeCallable listApprovalProcessesCallable(const Model::ListApprovalProcessesRequest& request) const;
+			ListApprovalProcessesForApprovalSchemasOutcome listApprovalProcessesForApprovalSchemas(const Model::ListApprovalProcessesForApprovalSchemasRequest &request)const;
+			void listApprovalProcessesForApprovalSchemasAsync(const Model::ListApprovalProcessesForApprovalSchemasRequest& request, const ListApprovalProcessesForApprovalSchemasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListApprovalProcessesForApprovalSchemasOutcomeCallable listApprovalProcessesForApprovalSchemasCallable(const Model::ListApprovalProcessesForApprovalSchemasRequest& request) const;
+			ListApprovalSchemasOutcome listApprovalSchemas(const Model::ListApprovalSchemasRequest &request)const;
+			void listApprovalSchemasAsync(const Model::ListApprovalSchemasRequest& request, const ListApprovalSchemasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListApprovalSchemasOutcomeCallable listApprovalSchemasCallable(const Model::ListApprovalSchemasRequest& request) const;
+			ListApprovalSchemasForApprovalProcessesOutcome listApprovalSchemasForApprovalProcesses(const Model::ListApprovalSchemasForApprovalProcessesRequest &request)const;
+			void listApprovalSchemasForApprovalProcessesAsync(const Model::ListApprovalSchemasForApprovalProcessesRequest& request, const ListApprovalSchemasForApprovalProcessesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListApprovalSchemasForApprovalProcessesOutcomeCallable listApprovalSchemasForApprovalProcessesCallable(const Model::ListApprovalSchemasForApprovalProcessesRequest& request) const;
+			ListApprovalsOutcome listApprovals(const Model::ListApprovalsRequest &request)const;
+			void listApprovalsAsync(const Model::ListApprovalsRequest& request, const ListApprovalsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListApprovalsOutcomeCallable listApprovalsCallable(const Model::ListApprovalsRequest& request) const;
 			ListClientUsersOutcome listClientUsers(const Model::ListClientUsersRequest &request)const;
 			void listClientUsersAsync(const Model::ListClientUsersRequest& request, const ListClientUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListClientUsersOutcomeCallable listClientUsersCallable(const Model::ListClientUsersRequest& request) const;
@@ -613,6 +752,12 @@ namespace AlibabaCloud
 			ListTagsForPrivateAccessPolicyOutcome listTagsForPrivateAccessPolicy(const Model::ListTagsForPrivateAccessPolicyRequest &request)const;
 			void listTagsForPrivateAccessPolicyAsync(const Model::ListTagsForPrivateAccessPolicyRequest& request, const ListTagsForPrivateAccessPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagsForPrivateAccessPolicyOutcomeCallable listTagsForPrivateAccessPolicyCallable(const Model::ListTagsForPrivateAccessPolicyRequest& request) const;
+			ListUninstallApplicationsOutcome listUninstallApplications(const Model::ListUninstallApplicationsRequest &request)const;
+			void listUninstallApplicationsAsync(const Model::ListUninstallApplicationsRequest& request, const ListUninstallApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUninstallApplicationsOutcomeCallable listUninstallApplicationsCallable(const Model::ListUninstallApplicationsRequest& request) const;
+			ListUserApplicationsOutcome listUserApplications(const Model::ListUserApplicationsRequest &request)const;
+			void listUserApplicationsAsync(const Model::ListUserApplicationsRequest& request, const ListUserApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUserApplicationsOutcomeCallable listUserApplicationsCallable(const Model::ListUserApplicationsRequest& request) const;
 			ListUserDevicesOutcome listUserDevices(const Model::ListUserDevicesRequest &request)const;
 			void listUserDevicesAsync(const Model::ListUserDevicesRequest& request, const ListUserDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUserDevicesOutcomeCallable listUserDevicesCallable(const Model::ListUserDevicesRequest& request) const;
@@ -625,6 +770,9 @@ namespace AlibabaCloud
 			ListUserGroupsForRegistrationPolicyOutcome listUserGroupsForRegistrationPolicy(const Model::ListUserGroupsForRegistrationPolicyRequest &request)const;
 			void listUserGroupsForRegistrationPolicyAsync(const Model::ListUserGroupsForRegistrationPolicyRequest& request, const ListUserGroupsForRegistrationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUserGroupsForRegistrationPolicyOutcomeCallable listUserGroupsForRegistrationPolicyCallable(const Model::ListUserGroupsForRegistrationPolicyRequest& request) const;
+			ListUserPrivateAccessPoliciesOutcome listUserPrivateAccessPolicies(const Model::ListUserPrivateAccessPoliciesRequest &request)const;
+			void listUserPrivateAccessPoliciesAsync(const Model::ListUserPrivateAccessPoliciesRequest& request, const ListUserPrivateAccessPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUserPrivateAccessPoliciesOutcomeCallable listUserPrivateAccessPoliciesCallable(const Model::ListUserPrivateAccessPoliciesRequest& request) const;
 			ListUsersOutcome listUsers(const Model::ListUsersRequest &request)const;
 			void listUsersAsync(const Model::ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUsersOutcomeCallable listUsersCallable(const Model::ListUsersRequest& request) const;
@@ -634,6 +782,15 @@ namespace AlibabaCloud
 			RevokeUserSessionOutcome revokeUserSession(const Model::RevokeUserSessionRequest &request)const;
 			void revokeUserSessionAsync(const Model::RevokeUserSessionRequest& request, const RevokeUserSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RevokeUserSessionOutcomeCallable revokeUserSessionCallable(const Model::RevokeUserSessionRequest& request) const;
+			UpdateApprovalProcessOutcome updateApprovalProcess(const Model::UpdateApprovalProcessRequest &request)const;
+			void updateApprovalProcessAsync(const Model::UpdateApprovalProcessRequest& request, const UpdateApprovalProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateApprovalProcessOutcomeCallable updateApprovalProcessCallable(const Model::UpdateApprovalProcessRequest& request) const;
+			UpdateApprovalStatusOutcome updateApprovalStatus(const Model::UpdateApprovalStatusRequest &request)const;
+			void updateApprovalStatusAsync(const Model::UpdateApprovalStatusRequest& request, const UpdateApprovalStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateApprovalStatusOutcomeCallable updateApprovalStatusCallable(const Model::UpdateApprovalStatusRequest& request) const;
+			UpdateBootAndAntiUninstallPolicyOutcome updateBootAndAntiUninstallPolicy(const Model::UpdateBootAndAntiUninstallPolicyRequest &request)const;
+			void updateBootAndAntiUninstallPolicyAsync(const Model::UpdateBootAndAntiUninstallPolicyRequest& request, const UpdateBootAndAntiUninstallPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateBootAndAntiUninstallPolicyOutcomeCallable updateBootAndAntiUninstallPolicyCallable(const Model::UpdateBootAndAntiUninstallPolicyRequest& request) const;
 			UpdateClientUserOutcome updateClientUser(const Model::UpdateClientUserRequest &request)const;
 			void updateClientUserAsync(const Model::UpdateClientUserRequest& request, const UpdateClientUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateClientUserOutcomeCallable updateClientUserCallable(const Model::UpdateClientUserRequest& request) const;
@@ -664,6 +821,9 @@ namespace AlibabaCloud
 			UpdateRegistrationPolicyOutcome updateRegistrationPolicy(const Model::UpdateRegistrationPolicyRequest &request)const;
 			void updateRegistrationPolicyAsync(const Model::UpdateRegistrationPolicyRequest& request, const UpdateRegistrationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateRegistrationPolicyOutcomeCallable updateRegistrationPolicyCallable(const Model::UpdateRegistrationPolicyRequest& request) const;
+			UpdateUninstallApplicationsStatusOutcome updateUninstallApplicationsStatus(const Model::UpdateUninstallApplicationsStatusRequest &request)const;
+			void updateUninstallApplicationsStatusAsync(const Model::UpdateUninstallApplicationsStatusRequest& request, const UpdateUninstallApplicationsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateUninstallApplicationsStatusOutcomeCallable updateUninstallApplicationsStatusCallable(const Model::UpdateUninstallApplicationsStatusRequest& request) const;
 			UpdateUserDevicesSharingStatusOutcome updateUserDevicesSharingStatus(const Model::UpdateUserDevicesSharingStatusRequest &request)const;
 			void updateUserDevicesSharingStatusAsync(const Model::UpdateUserDevicesSharingStatusRequest& request, const UpdateUserDevicesSharingStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateUserDevicesSharingStatusOutcomeCallable updateUserDevicesSharingStatusCallable(const Model::UpdateUserDevicesSharingStatusRequest& request) const;

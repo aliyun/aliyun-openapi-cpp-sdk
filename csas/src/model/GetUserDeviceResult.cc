@@ -100,6 +100,16 @@ void GetUserDeviceResult::parse(const std::string &payload)
 			historyUsersItemObject.saseUserId = deviceNodeHistoryUsershistoryUsersItem["SaseUserId"].asString();
 		device_.historyUsers.push_back(historyUsersItemObject);
 	}
+	auto allNetInterfaceInfoNode = deviceNode["NetInterfaceInfo"]["netInterfaceInfoItem"];
+	for (auto deviceNodeNetInterfaceInfonetInterfaceInfoItem : allNetInterfaceInfoNode)
+	{
+		Device::NetInterfaceInfoItem netInterfaceInfoItemObject;
+		if(!deviceNodeNetInterfaceInfonetInterfaceInfoItem["Name"].isNull())
+			netInterfaceInfoItemObject.name = deviceNodeNetInterfaceInfonetInterfaceInfoItem["Name"].asString();
+		if(!deviceNodeNetInterfaceInfonetInterfaceInfoItem["Mac"].isNull())
+			netInterfaceInfoItemObject.mac = deviceNodeNetInterfaceInfonetInterfaceInfoItem["Mac"].asString();
+		device_.netInterfaceInfo.push_back(netInterfaceInfoItemObject);
+	}
 
 }
 

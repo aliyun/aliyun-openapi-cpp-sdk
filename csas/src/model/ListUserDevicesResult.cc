@@ -93,6 +93,16 @@ void ListUserDevicesResult::parse(const std::string &payload)
 			devicesObject.createTime = valueDevicesdataList["CreateTime"].asString();
 		if(!valueDevicesdataList["UpdateTime"].isNull())
 			devicesObject.updateTime = valueDevicesdataList["UpdateTime"].asString();
+		auto allNetInterfaceInfoNode = valueDevicesdataList["NetInterfaceInfo"]["netInterfaceInfoItem"];
+		for (auto valueDevicesdataListNetInterfaceInfonetInterfaceInfoItem : allNetInterfaceInfoNode)
+		{
+			DataList::NetInterfaceInfoItem netInterfaceInfoObject;
+			if(!valueDevicesdataListNetInterfaceInfonetInterfaceInfoItem["Name"].isNull())
+				netInterfaceInfoObject.name = valueDevicesdataListNetInterfaceInfonetInterfaceInfoItem["Name"].asString();
+			if(!valueDevicesdataListNetInterfaceInfonetInterfaceInfoItem["Mac"].isNull())
+				netInterfaceInfoObject.mac = valueDevicesdataListNetInterfaceInfonetInterfaceInfoItem["Mac"].asString();
+			devicesObject.netInterfaceInfo.push_back(netInterfaceInfoObject);
+		}
 		devices_.push_back(devicesObject);
 	}
 	if(!value["TotalNum"].isNull())

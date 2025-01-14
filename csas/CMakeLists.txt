@@ -23,6 +23,10 @@ set(csas_public_header
 set(csas_public_header_model 
 	include/alibabacloud/csas/model/AttachApplication2ConnectorRequest.h
 	include/alibabacloud/csas/model/AttachApplication2ConnectorResult.h
+	include/alibabacloud/csas/model/AttachPolicy2ApprovalProcessRequest.h
+	include/alibabacloud/csas/model/AttachPolicy2ApprovalProcessResult.h
+	include/alibabacloud/csas/model/CreateApprovalProcessRequest.h
+	include/alibabacloud/csas/model/CreateApprovalProcessResult.h
 	include/alibabacloud/csas/model/CreateClientUserRequest.h
 	include/alibabacloud/csas/model/CreateClientUserResult.h
 	include/alibabacloud/csas/model/CreateDynamicRouteRequest.h
@@ -47,6 +51,8 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/CreateWmExtractTaskResult.h
 	include/alibabacloud/csas/model/CreateWmInfoMappingRequest.h
 	include/alibabacloud/csas/model/CreateWmInfoMappingResult.h
+	include/alibabacloud/csas/model/DeleteApprovalProcessesRequest.h
+	include/alibabacloud/csas/model/DeleteApprovalProcessesResult.h
 	include/alibabacloud/csas/model/DeleteClientUserRequest.h
 	include/alibabacloud/csas/model/DeleteClientUserResult.h
 	include/alibabacloud/csas/model/DeleteDynamicRouteRequest.h
@@ -67,10 +73,20 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/DeleteUserGroupResult.h
 	include/alibabacloud/csas/model/DetachApplication2ConnectorRequest.h
 	include/alibabacloud/csas/model/DetachApplication2ConnectorResult.h
+	include/alibabacloud/csas/model/DetachPolicy2ApprovalProcessRequest.h
+	include/alibabacloud/csas/model/DetachPolicy2ApprovalProcessResult.h
 	include/alibabacloud/csas/model/ExportUserDevicesRequest.h
 	include/alibabacloud/csas/model/ExportUserDevicesResult.h
 	include/alibabacloud/csas/model/GetActiveIdpConfigRequest.h
 	include/alibabacloud/csas/model/GetActiveIdpConfigResult.h
+	include/alibabacloud/csas/model/GetApprovalRequest.h
+	include/alibabacloud/csas/model/GetApprovalResult.h
+	include/alibabacloud/csas/model/GetApprovalProcessRequest.h
+	include/alibabacloud/csas/model/GetApprovalProcessResult.h
+	include/alibabacloud/csas/model/GetApprovalSchemaRequest.h
+	include/alibabacloud/csas/model/GetApprovalSchemaResult.h
+	include/alibabacloud/csas/model/GetBootAndAntiUninstallPolicyRequest.h
+	include/alibabacloud/csas/model/GetBootAndAntiUninstallPolicyResult.h
 	include/alibabacloud/csas/model/GetClientUserRequest.h
 	include/alibabacloud/csas/model/GetClientUserResult.h
 	include/alibabacloud/csas/model/GetDynamicRouteRequest.h
@@ -95,6 +111,16 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/ListApplicationsForPrivateAccessPolicyResult.h
 	include/alibabacloud/csas/model/ListApplicationsForPrivateAccessTagRequest.h
 	include/alibabacloud/csas/model/ListApplicationsForPrivateAccessTagResult.h
+	include/alibabacloud/csas/model/ListApprovalProcessesRequest.h
+	include/alibabacloud/csas/model/ListApprovalProcessesResult.h
+	include/alibabacloud/csas/model/ListApprovalProcessesForApprovalSchemasRequest.h
+	include/alibabacloud/csas/model/ListApprovalProcessesForApprovalSchemasResult.h
+	include/alibabacloud/csas/model/ListApprovalSchemasRequest.h
+	include/alibabacloud/csas/model/ListApprovalSchemasResult.h
+	include/alibabacloud/csas/model/ListApprovalSchemasForApprovalProcessesRequest.h
+	include/alibabacloud/csas/model/ListApprovalSchemasForApprovalProcessesResult.h
+	include/alibabacloud/csas/model/ListApprovalsRequest.h
+	include/alibabacloud/csas/model/ListApprovalsResult.h
 	include/alibabacloud/csas/model/ListClientUsersRequest.h
 	include/alibabacloud/csas/model/ListClientUsersResult.h
 	include/alibabacloud/csas/model/ListConnectorsRequest.h
@@ -139,6 +165,10 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/ListTagsForPrivateAccessApplicationResult.h
 	include/alibabacloud/csas/model/ListTagsForPrivateAccessPolicyRequest.h
 	include/alibabacloud/csas/model/ListTagsForPrivateAccessPolicyResult.h
+	include/alibabacloud/csas/model/ListUninstallApplicationsRequest.h
+	include/alibabacloud/csas/model/ListUninstallApplicationsResult.h
+	include/alibabacloud/csas/model/ListUserApplicationsRequest.h
+	include/alibabacloud/csas/model/ListUserApplicationsResult.h
 	include/alibabacloud/csas/model/ListUserDevicesRequest.h
 	include/alibabacloud/csas/model/ListUserDevicesResult.h
 	include/alibabacloud/csas/model/ListUserGroupsRequest.h
@@ -147,12 +177,20 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/ListUserGroupsForPrivateAccessPolicyResult.h
 	include/alibabacloud/csas/model/ListUserGroupsForRegistrationPolicyRequest.h
 	include/alibabacloud/csas/model/ListUserGroupsForRegistrationPolicyResult.h
+	include/alibabacloud/csas/model/ListUserPrivateAccessPoliciesRequest.h
+	include/alibabacloud/csas/model/ListUserPrivateAccessPoliciesResult.h
 	include/alibabacloud/csas/model/ListUsersRequest.h
 	include/alibabacloud/csas/model/ListUsersResult.h
 	include/alibabacloud/csas/model/LookupWmInfoMappingRequest.h
 	include/alibabacloud/csas/model/LookupWmInfoMappingResult.h
 	include/alibabacloud/csas/model/RevokeUserSessionRequest.h
 	include/alibabacloud/csas/model/RevokeUserSessionResult.h
+	include/alibabacloud/csas/model/UpdateApprovalProcessRequest.h
+	include/alibabacloud/csas/model/UpdateApprovalProcessResult.h
+	include/alibabacloud/csas/model/UpdateApprovalStatusRequest.h
+	include/alibabacloud/csas/model/UpdateApprovalStatusResult.h
+	include/alibabacloud/csas/model/UpdateBootAndAntiUninstallPolicyRequest.h
+	include/alibabacloud/csas/model/UpdateBootAndAntiUninstallPolicyResult.h
 	include/alibabacloud/csas/model/UpdateClientUserRequest.h
 	include/alibabacloud/csas/model/UpdateClientUserResult.h
 	include/alibabacloud/csas/model/UpdateClientUserPasswordRequest.h
@@ -173,6 +211,8 @@ set(csas_public_header_model
 	include/alibabacloud/csas/model/UpdatePrivateAccessPolicyResult.h
 	include/alibabacloud/csas/model/UpdateRegistrationPolicyRequest.h
 	include/alibabacloud/csas/model/UpdateRegistrationPolicyResult.h
+	include/alibabacloud/csas/model/UpdateUninstallApplicationsStatusRequest.h
+	include/alibabacloud/csas/model/UpdateUninstallApplicationsStatusResult.h
 	include/alibabacloud/csas/model/UpdateUserDevicesSharingStatusRequest.h
 	include/alibabacloud/csas/model/UpdateUserDevicesSharingStatusResult.h
 	include/alibabacloud/csas/model/UpdateUserDevicesStatusRequest.h
@@ -186,6 +226,10 @@ set(csas_src
 	src/CsasClient.cc
 	src/model/AttachApplication2ConnectorRequest.cc
 	src/model/AttachApplication2ConnectorResult.cc
+	src/model/AttachPolicy2ApprovalProcessRequest.cc
+	src/model/AttachPolicy2ApprovalProcessResult.cc
+	src/model/CreateApprovalProcessRequest.cc
+	src/model/CreateApprovalProcessResult.cc
 	src/model/CreateClientUserRequest.cc
 	src/model/CreateClientUserResult.cc
 	src/model/CreateDynamicRouteRequest.cc
@@ -210,6 +254,8 @@ set(csas_src
 	src/model/CreateWmExtractTaskResult.cc
 	src/model/CreateWmInfoMappingRequest.cc
 	src/model/CreateWmInfoMappingResult.cc
+	src/model/DeleteApprovalProcessesRequest.cc
+	src/model/DeleteApprovalProcessesResult.cc
 	src/model/DeleteClientUserRequest.cc
 	src/model/DeleteClientUserResult.cc
 	src/model/DeleteDynamicRouteRequest.cc
@@ -230,10 +276,20 @@ set(csas_src
 	src/model/DeleteUserGroupResult.cc
 	src/model/DetachApplication2ConnectorRequest.cc
 	src/model/DetachApplication2ConnectorResult.cc
+	src/model/DetachPolicy2ApprovalProcessRequest.cc
+	src/model/DetachPolicy2ApprovalProcessResult.cc
 	src/model/ExportUserDevicesRequest.cc
 	src/model/ExportUserDevicesResult.cc
 	src/model/GetActiveIdpConfigRequest.cc
 	src/model/GetActiveIdpConfigResult.cc
+	src/model/GetApprovalRequest.cc
+	src/model/GetApprovalResult.cc
+	src/model/GetApprovalProcessRequest.cc
+	src/model/GetApprovalProcessResult.cc
+	src/model/GetApprovalSchemaRequest.cc
+	src/model/GetApprovalSchemaResult.cc
+	src/model/GetBootAndAntiUninstallPolicyRequest.cc
+	src/model/GetBootAndAntiUninstallPolicyResult.cc
 	src/model/GetClientUserRequest.cc
 	src/model/GetClientUserResult.cc
 	src/model/GetDynamicRouteRequest.cc
@@ -258,6 +314,16 @@ set(csas_src
 	src/model/ListApplicationsForPrivateAccessPolicyResult.cc
 	src/model/ListApplicationsForPrivateAccessTagRequest.cc
 	src/model/ListApplicationsForPrivateAccessTagResult.cc
+	src/model/ListApprovalProcessesRequest.cc
+	src/model/ListApprovalProcessesResult.cc
+	src/model/ListApprovalProcessesForApprovalSchemasRequest.cc
+	src/model/ListApprovalProcessesForApprovalSchemasResult.cc
+	src/model/ListApprovalSchemasRequest.cc
+	src/model/ListApprovalSchemasResult.cc
+	src/model/ListApprovalSchemasForApprovalProcessesRequest.cc
+	src/model/ListApprovalSchemasForApprovalProcessesResult.cc
+	src/model/ListApprovalsRequest.cc
+	src/model/ListApprovalsResult.cc
 	src/model/ListClientUsersRequest.cc
 	src/model/ListClientUsersResult.cc
 	src/model/ListConnectorsRequest.cc
@@ -302,6 +368,10 @@ set(csas_src
 	src/model/ListTagsForPrivateAccessApplicationResult.cc
 	src/model/ListTagsForPrivateAccessPolicyRequest.cc
 	src/model/ListTagsForPrivateAccessPolicyResult.cc
+	src/model/ListUninstallApplicationsRequest.cc
+	src/model/ListUninstallApplicationsResult.cc
+	src/model/ListUserApplicationsRequest.cc
+	src/model/ListUserApplicationsResult.cc
 	src/model/ListUserDevicesRequest.cc
 	src/model/ListUserDevicesResult.cc
 	src/model/ListUserGroupsRequest.cc
@@ -310,12 +380,20 @@ set(csas_src
 	src/model/ListUserGroupsForPrivateAccessPolicyResult.cc
 	src/model/ListUserGroupsForRegistrationPolicyRequest.cc
 	src/model/ListUserGroupsForRegistrationPolicyResult.cc
+	src/model/ListUserPrivateAccessPoliciesRequest.cc
+	src/model/ListUserPrivateAccessPoliciesResult.cc
 	src/model/ListUsersRequest.cc
 	src/model/ListUsersResult.cc
 	src/model/LookupWmInfoMappingRequest.cc
 	src/model/LookupWmInfoMappingResult.cc
 	src/model/RevokeUserSessionRequest.cc
 	src/model/RevokeUserSessionResult.cc
+	src/model/UpdateApprovalProcessRequest.cc
+	src/model/UpdateApprovalProcessResult.cc
+	src/model/UpdateApprovalStatusRequest.cc
+	src/model/UpdateApprovalStatusResult.cc
+	src/model/UpdateBootAndAntiUninstallPolicyRequest.cc
+	src/model/UpdateBootAndAntiUninstallPolicyResult.cc
 	src/model/UpdateClientUserRequest.cc
 	src/model/UpdateClientUserResult.cc
 	src/model/UpdateClientUserPasswordRequest.cc
@@ -336,6 +414,8 @@ set(csas_src
 	src/model/UpdatePrivateAccessPolicyResult.cc
 	src/model/UpdateRegistrationPolicyRequest.cc
 	src/model/UpdateRegistrationPolicyResult.cc
+	src/model/UpdateUninstallApplicationsStatusRequest.cc
+	src/model/UpdateUninstallApplicationsStatusResult.cc
 	src/model/UpdateUserDevicesSharingStatusRequest.cc
 	src/model/UpdateUserDevicesSharingStatusResult.cc
 	src/model/UpdateUserDevicesStatusRequest.cc
