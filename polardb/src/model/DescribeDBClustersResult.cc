@@ -99,6 +99,22 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 			itemsObject.category = valueItemsDBCluster["Category"].asString();
 		if(!valueItemsDBCluster["AiType"].isNull())
 			itemsObject.aiType = valueItemsDBCluster["AiType"].asString();
+		if(!valueItemsDBCluster["CpuCores"].isNull())
+			itemsObject.cpuCores = valueItemsDBCluster["CpuCores"].asString();
+		if(!valueItemsDBCluster["MemorySize"].isNull())
+			itemsObject.memorySize = valueItemsDBCluster["MemorySize"].asString();
+		if(!valueItemsDBCluster["RemoteMemorySize"].isNull())
+			itemsObject.remoteMemorySize = valueItemsDBCluster["RemoteMemorySize"].asString();
+		if(!valueItemsDBCluster["SubCategory"].isNull())
+			itemsObject.subCategory = valueItemsDBCluster["SubCategory"].asString();
+		if(!valueItemsDBCluster["DeployUnit"].isNull())
+			itemsObject.deployUnit = valueItemsDBCluster["DeployUnit"].asString();
+		if(!valueItemsDBCluster["StorageType"].isNull())
+			itemsObject.storageType = valueItemsDBCluster["StorageType"].asString();
+		if(!valueItemsDBCluster["HotStandbyCluster"].isNull())
+			itemsObject.hotStandbyCluster = valueItemsDBCluster["HotStandbyCluster"].asString();
+		if(!valueItemsDBCluster["EngineMigrationStatus"].isNull())
+			itemsObject.engineMigrationStatus = valueItemsDBCluster["EngineMigrationStatus"].asString();
 		auto allTagsNode = valueItemsDBCluster["Tags"]["Tag"];
 		for (auto valueItemsDBClusterTagsTag : allTagsNode)
 		{

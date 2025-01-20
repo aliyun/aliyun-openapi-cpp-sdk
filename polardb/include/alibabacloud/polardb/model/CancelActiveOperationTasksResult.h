@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_UPGRADEDBCLUSTERMINORVERSIONRESULT_H_
-#define ALIBABACLOUD_POLARDB_MODEL_UPGRADEDBCLUSTERMINORVERSIONRESULT_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_CANCELACTIVEOPERATIONTASKSRESULT_H_
+#define ALIBABACLOUD_POLARDB_MODEL_CANCELACTIVEOPERATIONTASKSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT UpgradeDBClusterMinorVersionResult : public ServiceResult
+			class ALIBABACLOUD_POLARDB_EXPORT CancelActiveOperationTasksResult : public ServiceResult
 			{
 			public:
 
 
-				UpgradeDBClusterMinorVersionResult();
-				explicit UpgradeDBClusterMinorVersionResult(const std::string &payload);
-				~UpgradeDBClusterMinorVersionResult();
+				CancelActiveOperationTasksResult();
+				explicit CancelActiveOperationTasksResult(const std::string &payload);
+				~CancelActiveOperationTasksResult();
+				std::string getTaskIds()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string taskIds_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_UPGRADEDBCLUSTERMINORVERSIONRESULT_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_CANCELACTIVEOPERATIONTASKSRESULT_H_

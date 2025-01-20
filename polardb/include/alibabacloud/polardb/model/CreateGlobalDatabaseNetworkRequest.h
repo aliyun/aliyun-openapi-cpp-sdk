@@ -36,6 +36,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getAccountName() const;
+	void setAccountName(const std::string &accountName);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
 	std::string getGDNDescription() const;
@@ -46,19 +48,29 @@ public:
 	void setDBClusterId(const std::string &dBClusterId);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	bool getEnableGlobalDomainName() const;
+	void setEnableGlobalDomainName(bool enableGlobalDomainName);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getAccountPassword() const;
+	void setAccountPassword(const std::string &accountPassword);
+	std::string getDBName() const;
+	void setDBName(const std::string &dBName);
 
 private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
+	std::string accountName_;
 	std::string securityToken_;
 	std::string gDNDescription_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;
+	bool enableGlobalDomainName_;
 	long ownerId_;
+	std::string accountPassword_;
+	std::string dBName_;
 };
 } // namespace Model
 } // namespace Polardb

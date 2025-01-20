@@ -36,12 +36,20 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::string getPolarSccWaitTimeout() const;
+	void setPolarSccWaitTimeout(const std::string &polarSccWaitTimeout);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getReadWriteMode() const;
 	void setReadWriteMode(const std::string &readWriteMode);
 	std::string getEndpointType() const;
 	void setEndpointType(const std::string &endpointType);
+	std::string getPolarSccTimeoutAction() const;
+	void setPolarSccTimeoutAction(const std::string &polarSccTimeoutAction);
+	std::string getEndpointSubCluster() const;
+	void setEndpointSubCluster(const std::string &endpointSubCluster);
+	std::string getStandbyVSwitchId() const;
+	void setStandbyVSwitchId(const std::string &standbyVSwitchId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getDBClusterId() const;
@@ -58,6 +66,8 @@ public:
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getNodes() const;
 	void setNodes(const std::string &nodes);
+	std::string getSccMode() const;
+	void setSccMode(const std::string &sccMode);
 	std::string getVPCId() const;
 	void setVPCId(const std::string &vPCId);
 
@@ -65,9 +75,13 @@ private:
 	std::string autoAddNewNodes_;
 	long resourceOwnerId_;
 	std::string clientToken_;
+	std::string polarSccWaitTimeout_;
 	std::string accessKeyId_;
 	std::string readWriteMode_;
 	std::string endpointType_;
+	std::string polarSccTimeoutAction_;
+	std::string endpointSubCluster_;
+	std::string standbyVSwitchId_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;
@@ -76,6 +90,7 @@ private:
 	long ownerId_;
 	std::string vSwitchId_;
 	std::string nodes_;
+	std::string sccMode_;
 	std::string vPCId_;
 };
 } // namespace Model

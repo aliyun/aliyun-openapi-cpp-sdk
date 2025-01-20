@@ -79,8 +79,14 @@ void DescribeGlobalDatabaseNetworkResult::parse(const std::string &payload)
 			dBClustersObject.storageUsed = valueDBClustersDBCluster["StorageUsed"].asString();
 		if(!valueDBClustersDBCluster["DBClusterDescription"].isNull())
 			dBClustersObject.dBClusterDescription = valueDBClustersDBCluster["DBClusterDescription"].asString();
+		if(!valueDBClustersDBCluster["Category"].isNull())
+			dBClustersObject.category = valueDBClustersDBCluster["Category"].asString();
 		if(!valueDBClustersDBCluster["Role"].isNull())
 			dBClustersObject.role = valueDBClustersDBCluster["Role"].asString();
+		if(!valueDBClustersDBCluster["ServerlessType"].isNull())
+			dBClustersObject.serverlessType = valueDBClustersDBCluster["ServerlessType"].asString();
+		if(!valueDBClustersDBCluster["MemberStatus"].isNull())
+			dBClustersObject.memberStatus = valueDBClustersDBCluster["MemberStatus"].asString();
 		auto allDBNodesNode = valueDBClustersDBCluster["DBNodes"]["DBNode"];
 		for (auto valueDBClustersDBClusterDBNodesDBNode : allDBNodesNode)
 		{
@@ -119,6 +125,8 @@ void DescribeGlobalDatabaseNetworkResult::parse(const std::string &payload)
 		dBType_ = value["DBType"].asString();
 	if(!value["GDNDescription"].isNull())
 		gDNDescription_ = value["GDNDescription"].asString();
+	if(!value["GlobalDomainName"].isNull())
+		globalDomainName_ = value["GlobalDomainName"].asString();
 	if(!value["DBClusterId"].isNull())
 		dBClusterId_ = value["DBClusterId"].asString();
 	if(!value["ResourceGroupId"].isNull())
@@ -174,5 +182,10 @@ std::string DescribeGlobalDatabaseNetworkResult::getGDNDescription()const
 std::vector<DescribeGlobalDatabaseNetworkResult::DBCluster> DescribeGlobalDatabaseNetworkResult::getDBClusters()const
 {
 	return dBClusters_;
+}
+
+std::string DescribeGlobalDatabaseNetworkResult::getGlobalDomainName()const
+{
+	return globalDomainName_;
 }
 

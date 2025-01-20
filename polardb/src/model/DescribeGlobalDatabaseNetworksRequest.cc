@@ -142,3 +142,12 @@ void DescribeGlobalDatabaseNetworksRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeGlobalDatabaseNetworksRequest::getDBType() const {
+  return dBType_;
+}
+
+void DescribeGlobalDatabaseNetworksRequest::setDBType(const std::string &dBType) {
+  dBType_ = dBType;
+  setParameter(std::string("DBType"), dBType);
+}
+

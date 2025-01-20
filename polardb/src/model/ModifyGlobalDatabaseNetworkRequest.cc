@@ -97,6 +97,15 @@ void ModifyGlobalDatabaseNetworkRequest::setOwnerAccount(const std::string &owne
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+bool ModifyGlobalDatabaseNetworkRequest::getEnableGlobalDomainName() const {
+  return enableGlobalDomainName_;
+}
+
+void ModifyGlobalDatabaseNetworkRequest::setEnableGlobalDomainName(bool enableGlobalDomainName) {
+  enableGlobalDomainName_ = enableGlobalDomainName;
+  setParameter(std::string("EnableGlobalDomainName"), enableGlobalDomainName ? "true" : "false");
+}
+
 long ModifyGlobalDatabaseNetworkRequest::getOwnerId() const {
   return ownerId_;
 }

@@ -34,6 +34,15 @@ void ModifyAccountPasswordRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ModifyAccountPasswordRequest::getPasswordType() const {
+  return passwordType_;
+}
+
+void ModifyAccountPasswordRequest::setPasswordType(const std::string &passwordType) {
+  passwordType_ = passwordType;
+  setParameter(std::string("PasswordType"), passwordType);
+}
+
 std::string ModifyAccountPasswordRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

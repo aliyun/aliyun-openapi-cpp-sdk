@@ -39,12 +39,14 @@ void DescribeAITaskStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
 	if(!value["DBClusterId"].isNull())
 		dBClusterId_ = value["DBClusterId"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
 	if(!value["StatusName"].isNull())
 		statusName_ = value["StatusName"].asString();
+	if(!value["AccountName"].isNull())
+		accountName_ = value["AccountName"].asString();
 
 }
 
@@ -61,5 +63,10 @@ std::string DescribeAITaskStatusResult::getDBClusterId()const
 std::string DescribeAITaskStatusResult::getStatusName()const
 {
 	return statusName_;
+}
+
+std::string DescribeAITaskStatusResult::getAccountName()const
+{
+	return accountName_;
 }
 

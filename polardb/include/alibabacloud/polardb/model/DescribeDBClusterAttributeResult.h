@@ -43,26 +43,32 @@ namespace AlibabaCloud
 				};
 				struct DBNode
 				{
-					std::string memorySize;
 					std::string dBNodeStatus;
-					std::string zoneId;
-					int maxConnections;
 					std::string addedCpuCores;
+					std::string orca;
 					std::string dBNodeRole;
 					std::string subCluster;
 					std::string imciSwitch;
 					std::string dBNodeId;
+					std::string remoteMemorySize;
+					std::string tair;
+					std::string multiMasterLocalStandby;
+					std::string multiMasterPrimaryNode;
+					std::string sccMode;
+					int failoverPriority;
+					std::string serverWeight;
+					std::string dBNodeDescription;
+					std::string memorySize;
+					std::string mirrorInsName;
+					std::string zoneId;
+					int maxConnections;
 					int maxIOPS;
 					std::string dBNodeClass;
-					std::string tair;
 					std::string serverlessType;
 					std::string creationTime;
 					std::string cpuCores;
-					std::string sccMode;
 					std::string masterId;
-					int failoverPriority;
 					std::string hotReplicaMode;
-					std::string serverWeight;
 				};
 				struct Tag
 				{
@@ -76,6 +82,7 @@ namespace AlibabaCloud
 				~DescribeDBClusterAttributeResult();
 				std::string getResourceGroupId()const;
 				long getCompressStorageUsed()const;
+				std::string getOrca()const;
 				std::string getStoragePayType()const;
 				long getDataLevel1BackupChainSize()const;
 				std::string getProxyStatus()const;
@@ -85,6 +92,7 @@ namespace AlibabaCloud
 				std::string getProxyStandardCpuCores()const;
 				std::string getDBVersion()const;
 				std::vector<DBNode> getDBNodes()const;
+				std::string getImciAutoIndex()const;
 				std::string getFeatureHTAPSupported()const;
 				std::vector<Tag> getTags()const;
 				std::string getEngine()const;
@@ -99,26 +107,36 @@ namespace AlibabaCloud
 				std::string getProvisionedIops()const;
 				long getStorageUsed()const;
 				long getInodeTotal()const;
+				std::string getRestoreDataPoint()const;
 				std::string getCompressStorageMode()const;
 				std::string getDBVersionStatus()const;
 				std::string getProxyServerlessType()const;
 				std::string getCreationTime()const;
+				std::string getImperceptibleSwitch()const;
 				std::string getProxyType()const;
 				std::string getExpireTime()const;
 				int getDeletionLock()const;
 				std::string getCategory()const;
+				std::string getAiCreatingTime()const;
+				bool getStorageTypeWhiteListSwitch()const;
 				std::string getDBClusterId()const;
 				std::string getHotStandbyCluster()const;
 				std::string getDeployUnit()const;
+				std::string getAiFreeMode()const;
 				std::string getDBClusterNetworkType()const;
 				bool getIsLatestVersion()const;
+				std::string getSourceRegionId()const;
 				long getStorageMax()const;
 				std::string getZoneIds()const;
+				bool getHotStandbyWhiteListSwitch()const;
 				long getInodeUsed()const;
+				std::string getRestoreType()const;
 				std::string getMaintainTime()const;
+				std::string getBurstingEnabled()const;
 				std::string getHotStandbyClusterStatus()const;
 				long getBlktagTotal()const;
 				std::string getDataSyncMode()const;
+				std::string getSourceDBCluster()const;
 				std::string getDBClusterStatus()const;
 				std::string getProxyCpuCores()const;
 				std::string getStrictConsistency()const;
@@ -128,9 +146,11 @@ namespace AlibabaCloud
 				std::string getSubCategory()const;
 				std::string getAiType()const;
 				bool getHasCompleteStandbyRes()const;
+				std::string getSupportInstantSwitchWithImci()const;
 				RelatedAPInstance getRelatedAPInstance()const;
 				long getSQLSize()const;
 				std::string getRegionId()const;
+				std::string getRowCompression()const;
 				bool getHotStandbyHealthy()const;
 
 			protected:
@@ -138,6 +158,7 @@ namespace AlibabaCloud
 			private:
 				std::string resourceGroupId_;
 				long compressStorageUsed_;
+				std::string orca_;
 				std::string storagePayType_;
 				long dataLevel1BackupChainSize_;
 				std::string proxyStatus_;
@@ -147,6 +168,7 @@ namespace AlibabaCloud
 				std::string proxyStandardCpuCores_;
 				std::string dBVersion_;
 				std::vector<DBNode> dBNodes_;
+				std::string imciAutoIndex_;
 				std::string featureHTAPSupported_;
 				std::vector<Tag> tags_;
 				std::string engine_;
@@ -161,26 +183,36 @@ namespace AlibabaCloud
 				std::string provisionedIops_;
 				long storageUsed_;
 				long inodeTotal_;
+				std::string restoreDataPoint_;
 				std::string compressStorageMode_;
 				std::string dBVersionStatus_;
 				std::string proxyServerlessType_;
 				std::string creationTime_;
+				std::string imperceptibleSwitch_;
 				std::string proxyType_;
 				std::string expireTime_;
 				int deletionLock_;
 				std::string category_;
+				std::string aiCreatingTime_;
+				bool storageTypeWhiteListSwitch_;
 				std::string dBClusterId_;
 				std::string hotStandbyCluster_;
 				std::string deployUnit_;
+				std::string aiFreeMode_;
 				std::string dBClusterNetworkType_;
 				bool isLatestVersion_;
+				std::string sourceRegionId_;
 				long storageMax_;
 				std::string zoneIds_;
+				bool hotStandbyWhiteListSwitch_;
 				long inodeUsed_;
+				std::string restoreType_;
 				std::string maintainTime_;
+				std::string burstingEnabled_;
 				std::string hotStandbyClusterStatus_;
 				long blktagTotal_;
 				std::string dataSyncMode_;
+				std::string sourceDBCluster_;
 				std::string dBClusterStatus_;
 				std::string proxyCpuCores_;
 				std::string strictConsistency_;
@@ -190,9 +222,11 @@ namespace AlibabaCloud
 				std::string subCategory_;
 				std::string aiType_;
 				bool hasCompleteStandbyRes_;
+				std::string supportInstantSwitchWithImci_;
 				RelatedAPInstance relatedAPInstance_;
 				long sQLSize_;
 				std::string regionId_;
+				std::string rowCompression_;
 				bool hotStandbyHealthy_;
 
 			};

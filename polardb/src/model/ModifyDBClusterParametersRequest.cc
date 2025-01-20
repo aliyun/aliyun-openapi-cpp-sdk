@@ -52,6 +52,15 @@ void ModifyDBClusterParametersRequest::setAccessKeyId(const std::string &accessK
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+bool ModifyDBClusterParametersRequest::getClearBinlog() const {
+  return clearBinlog_;
+}
+
+void ModifyDBClusterParametersRequest::setClearBinlog(bool clearBinlog) {
+  clearBinlog_ = clearBinlog;
+  setParameter(std::string("ClearBinlog"), clearBinlog ? "true" : "false");
+}
+
 std::string ModifyDBClusterParametersRequest::getParameterGroupId() const {
   return parameterGroupId_;
 }

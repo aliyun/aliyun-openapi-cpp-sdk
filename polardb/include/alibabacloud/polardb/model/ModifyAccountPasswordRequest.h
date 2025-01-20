@@ -32,6 +32,8 @@ public:
 	~ModifyAccountPasswordRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getPasswordType() const;
+	void setPasswordType(const std::string &passwordType);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getAccountName() const;
@@ -49,6 +51,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string passwordType_;
 	std::string accessKeyId_;
 	std::string accountName_;
 	std::string newAccountPassword_;

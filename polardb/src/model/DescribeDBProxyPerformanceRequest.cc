@@ -34,6 +34,24 @@ void DescribeDBProxyPerformanceRequest::setResourceOwnerId(long resourceOwnerId)
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeDBProxyPerformanceRequest::getDBNodeId() const {
+  return dBNodeId_;
+}
+
+void DescribeDBProxyPerformanceRequest::setDBNodeId(const std::string &dBNodeId) {
+  dBNodeId_ = dBNodeId;
+  setParameter(std::string("DBNodeId"), dBNodeId);
+}
+
+std::string DescribeDBProxyPerformanceRequest::getDBEndpointId() const {
+  return dBEndpointId_;
+}
+
+void DescribeDBProxyPerformanceRequest::setDBEndpointId(const std::string &dBEndpointId) {
+  dBEndpointId_ = dBEndpointId;
+  setParameter(std::string("DBEndpointId"), dBEndpointId);
+}
+
 std::string DescribeDBProxyPerformanceRequest::getStartTime() const {
   return startTime_;
 }
@@ -41,6 +59,15 @@ std::string DescribeDBProxyPerformanceRequest::getStartTime() const {
 void DescribeDBProxyPerformanceRequest::setStartTime(const std::string &startTime) {
   startTime_ = startTime;
   setParameter(std::string("StartTime"), startTime);
+}
+
+std::string DescribeDBProxyPerformanceRequest::getType() const {
+  return type_;
+}
+
+void DescribeDBProxyPerformanceRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
 }
 
 std::string DescribeDBProxyPerformanceRequest::getKey() const {
@@ -104,5 +131,14 @@ std::string DescribeDBProxyPerformanceRequest::getMetric() const {
 void DescribeDBProxyPerformanceRequest::setMetric(const std::string &metric) {
   metric_ = metric;
   setParameter(std::string("Metric"), metric);
+}
+
+std::string DescribeDBProxyPerformanceRequest::getInterval() const {
+  return interval_;
+}
+
+void DescribeDBProxyPerformanceRequest::setInterval(const std::string &interval) {
+  interval_ = interval;
+  setParameter(std::string("Interval"), interval);
 }
 

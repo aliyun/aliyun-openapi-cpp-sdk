@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::string getDataLevel2BackupRetentionPeriod() const;
+	void setDataLevel2BackupRetentionPeriod(const std::string &dataLevel2BackupRetentionPeriod);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceOwnerAccount() const;
@@ -48,6 +50,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string clientToken_;
+	std::string dataLevel2BackupRetentionPeriod_;
 	std::string accessKeyId_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;

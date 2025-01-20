@@ -36,6 +36,8 @@ public:
 	void setDBNodeId(const std::string &dBNodeId);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	std::string getType() const;
+	void setType(const std::string &type);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getKey() const;
@@ -52,11 +54,14 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getMetric() const;
 	void setMetric(const std::string &metric);
+	std::string getInterval() const;
+	void setInterval(const std::string &interval);
 
 private:
 	long resourceOwnerId_;
 	std::string dBNodeId_;
 	std::string startTime_;
+	std::string type_;
 	std::string accessKeyId_;
 	std::string key_;
 	std::string resourceOwnerAccount_;
@@ -65,6 +70,7 @@ private:
 	std::string endTime_;
 	long ownerId_;
 	std::string metric_;
+	std::string interval_;
 };
 } // namespace Model
 } // namespace Polardb

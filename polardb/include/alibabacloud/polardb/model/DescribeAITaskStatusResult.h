@@ -40,6 +40,7 @@ namespace AlibabaCloud
 				std::string getStatus()const;
 				std::string getDBClusterId()const;
 				std::string getStatusName()const;
+				std::string getAccountName()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -47,6 +48,7 @@ namespace AlibabaCloud
 				std::string status_;
 				std::string dBClusterId_;
 				std::string statusName_;
+				std::string accountName_;
 
 			};
 		}

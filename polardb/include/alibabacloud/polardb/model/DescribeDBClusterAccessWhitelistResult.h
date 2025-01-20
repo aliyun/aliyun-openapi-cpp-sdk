@@ -32,16 +32,16 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_POLARDB_EXPORT DescribeDBClusterAccessWhitelistResult : public ServiceResult
 			{
 			public:
+				struct DBClusterSecurityGroup
+				{
+					std::string securityGroupName;
+					std::string securityGroupId;
+				};
 				struct DBClusterIPArray
 				{
 					std::string securityIps;
 					std::string dBClusterIPArrayName;
 					std::string dBClusterIPArrayAttribute;
-				};
-				struct DBClusterSecurityGroup
-				{
-					std::string securityGroupName;
-					std::string securityGroupId;
 				};
 
 

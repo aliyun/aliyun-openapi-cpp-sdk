@@ -34,6 +34,24 @@ void ModifyDBClusterSSLRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ModifyDBClusterSSLRequest::getServerKey() const {
+  return serverKey_;
+}
+
+void ModifyDBClusterSSLRequest::setServerKey(const std::string &serverKey) {
+  serverKey_ = serverKey;
+  setParameter(std::string("ServerKey"), serverKey);
+}
+
+std::string ModifyDBClusterSSLRequest::getClientCrlEnabled() const {
+  return clientCrlEnabled_;
+}
+
+void ModifyDBClusterSSLRequest::setClientCrlEnabled(const std::string &clientCrlEnabled) {
+  clientCrlEnabled_ = clientCrlEnabled;
+  setParameter(std::string("ClientCrlEnabled"), clientCrlEnabled);
+}
+
 std::string ModifyDBClusterSSLRequest::getDBEndpointId() const {
   return dBEndpointId_;
 }
@@ -43,6 +61,15 @@ void ModifyDBClusterSSLRequest::setDBEndpointId(const std::string &dBEndpointId)
   setParameter(std::string("DBEndpointId"), dBEndpointId);
 }
 
+std::string ModifyDBClusterSSLRequest::getACL() const {
+  return aCL_;
+}
+
+void ModifyDBClusterSSLRequest::setACL(const std::string &aCL) {
+  aCL_ = aCL;
+  setParameter(std::string("ACL"), aCL);
+}
+
 std::string ModifyDBClusterSSLRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -50,6 +77,24 @@ std::string ModifyDBClusterSSLRequest::getAccessKeyId() const {
 void ModifyDBClusterSSLRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string ModifyDBClusterSSLRequest::getServerCert() const {
+  return serverCert_;
+}
+
+void ModifyDBClusterSSLRequest::setServerCert(const std::string &serverCert) {
+  serverCert_ = serverCert;
+  setParameter(std::string("ServerCert"), serverCert);
+}
+
+std::string ModifyDBClusterSSLRequest::getClientCACert() const {
+  return clientCACert_;
+}
+
+void ModifyDBClusterSSLRequest::setClientCACert(const std::string &clientCACert) {
+  clientCACert_ = clientCACert;
+  setParameter(std::string("ClientCACert"), clientCACert);
 }
 
 std::string ModifyDBClusterSSLRequest::getSSLAutoRotate() const {
@@ -68,6 +113,15 @@ std::string ModifyDBClusterSSLRequest::getResourceOwnerAccount() const {
 void ModifyDBClusterSSLRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
   resourceOwnerAccount_ = resourceOwnerAccount;
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string ModifyDBClusterSSLRequest::getCAType() const {
+  return cAType_;
+}
+
+void ModifyDBClusterSSLRequest::setCAType(const std::string &cAType) {
+  cAType_ = cAType;
+  setParameter(std::string("CAType"), cAType);
 }
 
 std::string ModifyDBClusterSSLRequest::getDBClusterId() const {
@@ -95,6 +149,24 @@ long ModifyDBClusterSSLRequest::getOwnerId() const {
 void ModifyDBClusterSSLRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string ModifyDBClusterSSLRequest::getClientCACertEnabled() const {
+  return clientCACertEnabled_;
+}
+
+void ModifyDBClusterSSLRequest::setClientCACertEnabled(const std::string &clientCACertEnabled) {
+  clientCACertEnabled_ = clientCACertEnabled;
+  setParameter(std::string("ClientCACertEnabled"), clientCACertEnabled);
+}
+
+std::string ModifyDBClusterSSLRequest::getClientCrl() const {
+  return clientCrl_;
+}
+
+void ModifyDBClusterSSLRequest::setClientCrl(const std::string &clientCrl) {
+  clientCrl_ = clientCrl;
+  setParameter(std::string("ClientCrl"), clientCrl);
 }
 
 std::string ModifyDBClusterSSLRequest::getNetType() const {

@@ -46,12 +46,16 @@ public:
 	void setUpgradeLabel(const std::string &upgradeLabel);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getPlannedFlashingOffTime() const;
+	void setPlannedFlashingOffTime(const std::string &plannedFlashingOffTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getPlannedStartTime() const;
 	void setPlannedStartTime(const std::string &plannedStartTime);
 	std::string getTargetDBRevisionVersionCode() const;
 	void setTargetDBRevisionVersionCode(const std::string &targetDBRevisionVersionCode);
+	std::string getTargetProxyRevisionVersionCode() const;
+	void setTargetProxyRevisionVersionCode(const std::string &targetProxyRevisionVersionCode);
 	std::string getUpgradePolicy() const;
 	void setUpgradePolicy(const std::string &upgradePolicy);
 	bool getFromTimeService() const;
@@ -66,9 +70,11 @@ private:
 	std::string dBClusterId_;
 	std::string upgradeLabel_;
 	std::string ownerAccount_;
+	std::string plannedFlashingOffTime_;
 	long ownerId_;
 	std::string plannedStartTime_;
 	std::string targetDBRevisionVersionCode_;
+	std::string targetProxyRevisionVersionCode_;
 	std::string upgradePolicy_;
 	bool fromTimeService_;
 };

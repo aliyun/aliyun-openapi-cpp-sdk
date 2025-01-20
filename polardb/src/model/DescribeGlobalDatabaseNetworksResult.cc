@@ -55,6 +55,8 @@ void DescribeGlobalDatabaseNetworksResult::parse(const std::string &payload)
 			itemsObject.dBType = valueItemsGlobalDatabaseNetwork["DBType"].asString();
 		if(!valueItemsGlobalDatabaseNetwork["GDNDescription"].isNull())
 			itemsObject.gDNDescription = valueItemsGlobalDatabaseNetwork["GDNDescription"].asString();
+		if(!valueItemsGlobalDatabaseNetwork["ZoneId"].isNull())
+			itemsObject.zoneId = valueItemsGlobalDatabaseNetwork["ZoneId"].asString();
 		auto allDBClustersNode = valueItemsGlobalDatabaseNetwork["DBClusters"]["DBCluster"];
 		for (auto valueItemsGlobalDatabaseNetworkDBClustersDBCluster : allDBClustersNode)
 		{
@@ -66,6 +68,20 @@ void DescribeGlobalDatabaseNetworksResult::parse(const std::string &payload)
 			if(!valueItemsGlobalDatabaseNetworkDBClustersDBCluster["RegionId"].isNull())
 				dBClustersObject.regionId = valueItemsGlobalDatabaseNetworkDBClustersDBCluster["RegionId"].asString();
 			itemsObject.dBClusters.push_back(dBClustersObject);
+		}
+		auto allOutCloudDBClustersNode = valueItemsGlobalDatabaseNetwork["OutCloudDBClusters"]["OutCloudDBCluster"];
+		for (auto valueItemsGlobalDatabaseNetworkOutCloudDBClustersOutCloudDBCluster : allOutCloudDBClustersNode)
+		{
+			GlobalDatabaseNetwork::OutCloudDBCluster outCloudDBClustersObject;
+			if(!valueItemsGlobalDatabaseNetworkOutCloudDBClustersOutCloudDBCluster["OutCloudType"].isNull())
+				outCloudDBClustersObject.outCloudType = valueItemsGlobalDatabaseNetworkOutCloudDBClustersOutCloudDBCluster["OutCloudType"].asString();
+			if(!valueItemsGlobalDatabaseNetworkOutCloudDBClustersOutCloudDBCluster["DBClusterId"].isNull())
+				outCloudDBClustersObject.dBClusterId = valueItemsGlobalDatabaseNetworkOutCloudDBClustersOutCloudDBCluster["DBClusterId"].asString();
+			if(!valueItemsGlobalDatabaseNetworkOutCloudDBClustersOutCloudDBCluster["Role"].isNull())
+				outCloudDBClustersObject.role = valueItemsGlobalDatabaseNetworkOutCloudDBClustersOutCloudDBCluster["Role"].asString();
+			if(!valueItemsGlobalDatabaseNetworkOutCloudDBClustersOutCloudDBCluster["RegionId"].isNull())
+				outCloudDBClustersObject.regionId = valueItemsGlobalDatabaseNetworkOutCloudDBClustersOutCloudDBCluster["RegionId"].asString();
+			itemsObject.outCloudDBClusters.push_back(outCloudDBClustersObject);
 		}
 		items_.push_back(itemsObject);
 	}

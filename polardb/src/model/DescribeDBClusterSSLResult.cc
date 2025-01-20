@@ -51,11 +51,36 @@ void DescribeDBClusterSSLResult::parse(const std::string &payload)
 			itemsObject.sSLConnectionString = valueItemsItem["SSLConnectionString"].asString();
 		if(!valueItemsItem["DBEndpointId"].isNull())
 			itemsObject.dBEndpointId = valueItemsItem["DBEndpointId"].asString();
+		if(!valueItemsItem["CAType"].isNull())
+			itemsObject.cAType = valueItemsItem["CAType"].asString();
+		if(!valueItemsItem["ServerCert"].isNull())
+			itemsObject.serverCert = valueItemsItem["ServerCert"].asString();
+		if(!valueItemsItem["ServerKey"].isNull())
+			itemsObject.serverKey = valueItemsItem["ServerKey"].asString();
+		if(!valueItemsItem["ClientCACert"].isNull())
+			itemsObject.clientCACert = valueItemsItem["ClientCACert"].asString();
+		if(!valueItemsItem["ClientCrl"].isNull())
+			itemsObject.clientCrl = valueItemsItem["ClientCrl"].asString();
+		if(!valueItemsItem["ACL"].isNull())
+			itemsObject.aCL = valueItemsItem["ACL"].asString();
+		if(!valueItemsItem["SSLAutoRotate"].isNull())
+			itemsObject.sSLAutoRotate = valueItemsItem["SSLAutoRotate"].asString();
+		auto allAllowedACLs = value["AllowedACLs"]["allowedACLs"];
+		for (auto value : allAllowedACLs)
+			itemsObject.allowedACLs.push_back(value.asString());
 		items_.push_back(itemsObject);
 	}
+	auto allSupportAdvancedSSLFeatureEndpointTypes = value["SupportAdvancedSSLFeatureEndpointTypes"]["supportAdvancedSSLFeatureEndpointType"];
+	for (const auto &item : allSupportAdvancedSSLFeatureEndpointTypes)
+		supportAdvancedSSLFeatureEndpointTypes_.push_back(item.asString());
 	if(!value["SSLAutoRotate"].isNull())
 		sSLAutoRotate_ = value["SSLAutoRotate"].asString();
 
+}
+
+std::vector<std::string> DescribeDBClusterSSLResult::getSupportAdvancedSSLFeatureEndpointTypes()const
+{
+	return supportAdvancedSSLFeatureEndpointTypes_;
 }
 
 std::string DescribeDBClusterSSLResult::getSSLAutoRotate()const

@@ -61,6 +61,12 @@ void DescribeDBClusterEndpointsResult::parse(const std::string &payload)
 			itemsObject.autoAddNewNodes = valueItemsDBEndpoint["AutoAddNewNodes"].asString();
 		if(!valueItemsDBEndpoint["DBClusterId"].isNull())
 			itemsObject.dBClusterId = valueItemsDBEndpoint["DBClusterId"].asString();
+		if(!valueItemsDBEndpoint["SccMode"].isNull())
+			itemsObject.sccMode = valueItemsDBEndpoint["SccMode"].asString();
+		if(!valueItemsDBEndpoint["PolarSccTimeoutAction"].isNull())
+			itemsObject.polarSccTimeoutAction = valueItemsDBEndpoint["PolarSccTimeoutAction"].asString();
+		if(!valueItemsDBEndpoint["PolarSccWaitTimeout"].isNull())
+			itemsObject.polarSccWaitTimeout = valueItemsDBEndpoint["PolarSccWaitTimeout"].asString();
 		auto allAddressItemsNode = valueItemsDBEndpoint["AddressItems"]["Address"];
 		for (auto valueItemsDBEndpointAddressItemsAddress : allAddressItemsNode)
 		{

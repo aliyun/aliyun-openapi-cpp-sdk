@@ -36,6 +36,8 @@ public:
 	void setPlannedEndTime(const std::string &plannedEndTime);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	bool getClearBinlog() const;
+	void setClearBinlog(bool clearBinlog);
 	std::string getParameterGroupId() const;
 	void setParameterGroupId(const std::string &parameterGroupId);
 	std::string getResourceOwnerAccount() const;
@@ -57,6 +59,7 @@ private:
 	long resourceOwnerId_;
 	std::string plannedEndTime_;
 	std::string accessKeyId_;
+	bool clearBinlog_;
 	std::string parameterGroupId_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;

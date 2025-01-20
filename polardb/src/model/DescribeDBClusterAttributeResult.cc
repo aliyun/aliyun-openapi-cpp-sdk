@@ -83,6 +83,18 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 			dBNodesObject.subCluster = valueDBNodesDBNode["SubCluster"].asString();
 		if(!valueDBNodesDBNode["Tair"].isNull())
 			dBNodesObject.tair = valueDBNodesDBNode["Tair"].asString();
+		if(!valueDBNodesDBNode["RemoteMemorySize"].isNull())
+			dBNodesObject.remoteMemorySize = valueDBNodesDBNode["RemoteMemorySize"].asString();
+		if(!valueDBNodesDBNode["Orca"].isNull())
+			dBNodesObject.orca = valueDBNodesDBNode["Orca"].asString();
+		if(!valueDBNodesDBNode["MirrorInsName"].isNull())
+			dBNodesObject.mirrorInsName = valueDBNodesDBNode["MirrorInsName"].asString();
+		if(!valueDBNodesDBNode["MultiMasterLocalStandby"].isNull())
+			dBNodesObject.multiMasterLocalStandby = valueDBNodesDBNode["MultiMasterLocalStandby"].asString();
+		if(!valueDBNodesDBNode["MultiMasterPrimaryNode"].isNull())
+			dBNodesObject.multiMasterPrimaryNode = valueDBNodesDBNode["MultiMasterPrimaryNode"].asString();
+		if(!valueDBNodesDBNode["DBNodeDescription"].isNull())
+			dBNodesObject.dBNodeDescription = valueDBNodesDBNode["DBNodeDescription"].asString();
 		dBNodes_.push_back(dBNodesObject);
 	}
 	auto allTagsNode = value["Tags"]["Tag"];
@@ -218,6 +230,34 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		provisionedIops_ = value["ProvisionedIops"].asString();
 	if(!value["HotStandbyHealthy"].isNull())
 		hotStandbyHealthy_ = value["HotStandbyHealthy"].asString() == "true";
+	if(!value["HotStandbyWhiteListSwitch"].isNull())
+		hotStandbyWhiteListSwitch_ = value["HotStandbyWhiteListSwitch"].asString() == "true";
+	if(!value["StorageTypeWhiteListSwitch"].isNull())
+		storageTypeWhiteListSwitch_ = value["StorageTypeWhiteListSwitch"].asString() == "true";
+	if(!value["AiFreeMode"].isNull())
+		aiFreeMode_ = value["AiFreeMode"].asString();
+	if(!value["AiCreatingTime"].isNull())
+		aiCreatingTime_ = value["AiCreatingTime"].asString();
+	if(!value["SupportInstantSwitchWithImci"].isNull())
+		supportInstantSwitchWithImci_ = value["SupportInstantSwitchWithImci"].asString();
+	if(!value["Orca"].isNull())
+		orca_ = value["Orca"].asString();
+	if(!value["SourceDBCluster"].isNull())
+		sourceDBCluster_ = value["SourceDBCluster"].asString();
+	if(!value["RestoreType"].isNull())
+		restoreType_ = value["RestoreType"].asString();
+	if(!value["RestoreDataPoint"].isNull())
+		restoreDataPoint_ = value["RestoreDataPoint"].asString();
+	if(!value["SourceRegionId"].isNull())
+		sourceRegionId_ = value["SourceRegionId"].asString();
+	if(!value["ImciAutoIndex"].isNull())
+		imciAutoIndex_ = value["ImciAutoIndex"].asString();
+	if(!value["BurstingEnabled"].isNull())
+		burstingEnabled_ = value["BurstingEnabled"].asString();
+	if(!value["RowCompression"].isNull())
+		rowCompression_ = value["RowCompression"].asString();
+	if(!value["ImperceptibleSwitch"].isNull())
+		imperceptibleSwitch_ = value["ImperceptibleSwitch"].asString();
 
 }
 
@@ -229,6 +269,11 @@ std::string DescribeDBClusterAttributeResult::getResourceGroupId()const
 long DescribeDBClusterAttributeResult::getCompressStorageUsed()const
 {
 	return compressStorageUsed_;
+}
+
+std::string DescribeDBClusterAttributeResult::getOrca()const
+{
+	return orca_;
 }
 
 std::string DescribeDBClusterAttributeResult::getStoragePayType()const
@@ -274,6 +319,11 @@ std::string DescribeDBClusterAttributeResult::getDBVersion()const
 std::vector<DescribeDBClusterAttributeResult::DBNode> DescribeDBClusterAttributeResult::getDBNodes()const
 {
 	return dBNodes_;
+}
+
+std::string DescribeDBClusterAttributeResult::getImciAutoIndex()const
+{
+	return imciAutoIndex_;
 }
 
 std::string DescribeDBClusterAttributeResult::getFeatureHTAPSupported()const
@@ -346,6 +396,11 @@ long DescribeDBClusterAttributeResult::getInodeTotal()const
 	return inodeTotal_;
 }
 
+std::string DescribeDBClusterAttributeResult::getRestoreDataPoint()const
+{
+	return restoreDataPoint_;
+}
+
 std::string DescribeDBClusterAttributeResult::getCompressStorageMode()const
 {
 	return compressStorageMode_;
@@ -364,6 +419,11 @@ std::string DescribeDBClusterAttributeResult::getProxyServerlessType()const
 std::string DescribeDBClusterAttributeResult::getCreationTime()const
 {
 	return creationTime_;
+}
+
+std::string DescribeDBClusterAttributeResult::getImperceptibleSwitch()const
+{
+	return imperceptibleSwitch_;
 }
 
 std::string DescribeDBClusterAttributeResult::getProxyType()const
@@ -386,6 +446,16 @@ std::string DescribeDBClusterAttributeResult::getCategory()const
 	return category_;
 }
 
+std::string DescribeDBClusterAttributeResult::getAiCreatingTime()const
+{
+	return aiCreatingTime_;
+}
+
+bool DescribeDBClusterAttributeResult::getStorageTypeWhiteListSwitch()const
+{
+	return storageTypeWhiteListSwitch_;
+}
+
 std::string DescribeDBClusterAttributeResult::getDBClusterId()const
 {
 	return dBClusterId_;
@@ -401,6 +471,11 @@ std::string DescribeDBClusterAttributeResult::getDeployUnit()const
 	return deployUnit_;
 }
 
+std::string DescribeDBClusterAttributeResult::getAiFreeMode()const
+{
+	return aiFreeMode_;
+}
+
 std::string DescribeDBClusterAttributeResult::getDBClusterNetworkType()const
 {
 	return dBClusterNetworkType_;
@@ -409,6 +484,11 @@ std::string DescribeDBClusterAttributeResult::getDBClusterNetworkType()const
 bool DescribeDBClusterAttributeResult::getIsLatestVersion()const
 {
 	return isLatestVersion_;
+}
+
+std::string DescribeDBClusterAttributeResult::getSourceRegionId()const
+{
+	return sourceRegionId_;
 }
 
 long DescribeDBClusterAttributeResult::getStorageMax()const
@@ -421,14 +501,29 @@ std::string DescribeDBClusterAttributeResult::getZoneIds()const
 	return zoneIds_;
 }
 
+bool DescribeDBClusterAttributeResult::getHotStandbyWhiteListSwitch()const
+{
+	return hotStandbyWhiteListSwitch_;
+}
+
 long DescribeDBClusterAttributeResult::getInodeUsed()const
 {
 	return inodeUsed_;
 }
 
+std::string DescribeDBClusterAttributeResult::getRestoreType()const
+{
+	return restoreType_;
+}
+
 std::string DescribeDBClusterAttributeResult::getMaintainTime()const
 {
 	return maintainTime_;
+}
+
+std::string DescribeDBClusterAttributeResult::getBurstingEnabled()const
+{
+	return burstingEnabled_;
 }
 
 std::string DescribeDBClusterAttributeResult::getHotStandbyClusterStatus()const
@@ -444,6 +539,11 @@ long DescribeDBClusterAttributeResult::getBlktagTotal()const
 std::string DescribeDBClusterAttributeResult::getDataSyncMode()const
 {
 	return dataSyncMode_;
+}
+
+std::string DescribeDBClusterAttributeResult::getSourceDBCluster()const
+{
+	return sourceDBCluster_;
 }
 
 std::string DescribeDBClusterAttributeResult::getDBClusterStatus()const
@@ -491,6 +591,11 @@ bool DescribeDBClusterAttributeResult::getHasCompleteStandbyRes()const
 	return hasCompleteStandbyRes_;
 }
 
+std::string DescribeDBClusterAttributeResult::getSupportInstantSwitchWithImci()const
+{
+	return supportInstantSwitchWithImci_;
+}
+
 DescribeDBClusterAttributeResult::RelatedAPInstance DescribeDBClusterAttributeResult::getRelatedAPInstance()const
 {
 	return relatedAPInstance_;
@@ -504,6 +609,11 @@ long DescribeDBClusterAttributeResult::getSQLSize()const
 std::string DescribeDBClusterAttributeResult::getRegionId()const
 {
 	return regionId_;
+}
+
+std::string DescribeDBClusterAttributeResult::getRowCompression()const
+{
+	return rowCompression_;
 }
 
 bool DescribeDBClusterAttributeResult::getHotStandbyHealthy()const

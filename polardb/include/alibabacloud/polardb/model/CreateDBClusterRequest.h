@@ -90,6 +90,8 @@ public:
 	void setAllowShutDown(const std::string &allowShutDown);
 	std::string getLowerCaseTableNames() const;
 	void setLowerCaseTableNames(const std::string &lowerCaseTableNames);
+	bool getStorageEncryption() const;
+	void setStorageEncryption(bool storageEncryption);
 	std::string getScaleRoNumMax() const;
 	void setScaleRoNumMax(const std::string &scaleRoNumMax);
 	std::string getStandbyAZ() const;
@@ -102,6 +104,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getClusterNetworkType() const;
 	void setClusterNetworkType(const std::string &clusterNetworkType);
+	std::string getStorageEncryptionKey() const;
+	void setStorageEncryptionKey(const std::string &storageEncryptionKey);
 	std::string getParameterGroupId() const;
 	void setParameterGroupId(const std::string &parameterGroupId);
 	std::string getRegionId() const;
@@ -124,6 +128,10 @@ public:
 	void setLooseXEngineUseMemoryPct(const std::string &looseXEngineUseMemoryPct);
 	std::string getUsedTime() const;
 	void setUsedTime(const std::string &usedTime);
+	std::string getBurstingEnabled() const;
+	void setBurstingEnabled(const std::string &burstingEnabled);
+	std::string getTargetMinorVersion() const;
+	void setTargetMinorVersion(const std::string &targetMinorVersion);
 	int getDBNodeNum() const;
 	void setDBNodeNum(int dBNodeNum);
 	long getStorageUpperBound() const;
@@ -176,12 +184,14 @@ private:
 	bool tDEStatus_;
 	std::string allowShutDown_;
 	std::string lowerCaseTableNames_;
+	bool storageEncryption_;
 	std::string scaleRoNumMax_;
 	std::string standbyAZ_;
 	std::string clientToken_;
 	std::string defaultTimeZone_;
 	std::string accessKeyId_;
 	std::string clusterNetworkType_;
+	std::string storageEncryptionKey_;
 	std::string parameterGroupId_;
 	std::string regionId_;
 	std::string engine_;
@@ -193,6 +203,8 @@ private:
 	std::string ownerAccount_;
 	std::string looseXEngineUseMemoryPct_;
 	std::string usedTime_;
+	std::string burstingEnabled_;
+	std::string targetMinorVersion_;
 	int dBNodeNum_;
 	long storageUpperBound_;
 	std::string vPCId_;

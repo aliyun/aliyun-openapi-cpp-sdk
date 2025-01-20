@@ -59,6 +59,7 @@ namespace AlibabaCloud
 				std::string getPageRecordCount()const;
 				std::string getPageNumber()const;
 				std::vector<Backup> getItems()const;
+				std::string getTotalLevel2BackupSize()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -67,6 +68,7 @@ namespace AlibabaCloud
 				std::string pageRecordCount_;
 				std::string pageNumber_;
 				std::vector<Backup> items_;
+				std::string totalLevel2BackupSize_;
 
 			};
 		}

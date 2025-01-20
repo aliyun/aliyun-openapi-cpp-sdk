@@ -38,19 +38,25 @@ namespace AlibabaCloud
 				explicit DescribeDBClusterTDEResult(const std::string &payload);
 				~DescribeDBClusterTDEResult();
 				std::string getTDEStatus()const;
+				std::string getRotationInterval()const;
+				std::string getEncryptionKeyStatus()const;
 				std::string getEncryptNewTables()const;
 				std::string getTDERegion()const;
 				std::string getDBClusterId()const;
 				std::string getEncryptionKey()const;
+				std::string getAutomaticRotation()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string tDEStatus_;
+				std::string rotationInterval_;
+				std::string encryptionKeyStatus_;
 				std::string encryptNewTables_;
 				std::string tDERegion_;
 				std::string dBClusterId_;
 				std::string encryptionKey_;
+				std::string automaticRotation_;
 
 			};
 		}

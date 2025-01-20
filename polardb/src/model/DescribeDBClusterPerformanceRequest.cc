@@ -43,6 +43,15 @@ void DescribeDBClusterPerformanceRequest::setStartTime(const std::string &startT
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeDBClusterPerformanceRequest::getType() const {
+  return type_;
+}
+
+void DescribeDBClusterPerformanceRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
+}
+
 std::string DescribeDBClusterPerformanceRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -113,5 +122,14 @@ std::string DescribeDBClusterPerformanceRequest::getMetric() const {
 void DescribeDBClusterPerformanceRequest::setMetric(const std::string &metric) {
   metric_ = metric;
   setParameter(std::string("Metric"), metric);
+}
+
+std::string DescribeDBClusterPerformanceRequest::getInterval() const {
+  return interval_;
+}
+
+void DescribeDBClusterPerformanceRequest::setInterval(const std::string &interval) {
+  interval_ = interval;
+  setParameter(std::string("Interval"), interval);
 }
 

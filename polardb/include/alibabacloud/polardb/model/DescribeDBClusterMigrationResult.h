@@ -66,40 +66,74 @@ namespace AlibabaCloud
 					std::string endpointType;
 					std::vector<RdsEndpoint::Address2> addressItems1;
 				};
+				struct SrcDtsJob
+				{
+					std::string status;
+					std::string dtsJobId;
+					std::string dtsJobDirection;
+					std::string destinationEndpoint;
+					std::string sourceEndpoint;
+					std::string dtsJobName;
+					std::string dtsInstanceID;
+				};
+				struct DstDtsJob
+				{
+					std::string status;
+					std::string dtsJobId;
+					std::string dtsJobDirection;
+					std::string destinationEndpoint;
+					std::string sourceEndpoint;
+					std::string dtsJobName;
+					std::string dtsInstanceId;
+				};
 
 
 				DescribeDBClusterMigrationResult();
 				explicit DescribeDBClusterMigrationResult(const std::string &payload);
 				~DescribeDBClusterMigrationResult();
 				std::string getComment()const;
+				std::string getSrcBinlogPosition()const;
+				std::string getMigrationDtsJobEndpoint()const;
 				std::string getDBClusterId()const;
 				std::string getSrcDbType()const;
 				std::string getSourceRDSDBInstanceId()const;
 				std::string getDBClusterReadWriteMode()const;
+				std::string getMigrationProgress()const;
 				std::string getMigrationStatus()const;
 				std::string getDtsInstanceId()const;
 				std::vector<RdsEndpoint> getRdsEndpointList()const;
+				std::vector<SrcDtsJob> getSrcDtsJobList()const;
 				std::vector<DBClusterEndpoint> getDBClusterEndpointList()const;
+				std::string getDstBinlogPosition()const;
 				std::string getExpiredTime()const;
+				std::string getMigrationSwitch()const;
 				std::string getTopologies()const;
 				std::string getRdsReadWriteMode()const;
+				std::vector<DstDtsJob> getDstDtsJobList()const;
 				int getDelayedSeconds()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string comment_;
+				std::string srcBinlogPosition_;
+				std::string migrationDtsJobEndpoint_;
 				std::string dBClusterId_;
 				std::string srcDbType_;
 				std::string sourceRDSDBInstanceId_;
 				std::string dBClusterReadWriteMode_;
+				std::string migrationProgress_;
 				std::string migrationStatus_;
 				std::string dtsInstanceId_;
 				std::vector<RdsEndpoint> rdsEndpointList_;
+				std::vector<SrcDtsJob> srcDtsJobList_;
 				std::vector<DBClusterEndpoint> dBClusterEndpointList_;
+				std::string dstBinlogPosition_;
 				std::string expiredTime_;
+				std::string migrationSwitch_;
 				std::string topologies_;
 				std::string rdsReadWriteMode_;
+				std::vector<DstDtsJob> dstDtsJobList_;
 				int delayedSeconds_;
 
 			};

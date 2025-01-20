@@ -21,6 +21,8 @@ set(polardb_public_header
 	include/alibabacloud/polardb/PolardbExport.h )
 
 set(polardb_public_header_model 
+	include/alibabacloud/polardb/model/CancelActiveOperationTasksRequest.h
+	include/alibabacloud/polardb/model/CancelActiveOperationTasksResult.h
 	include/alibabacloud/polardb/model/CancelScheduleTasksRequest.h
 	include/alibabacloud/polardb/model/CancelScheduleTasksResult.h
 	include/alibabacloud/polardb/model/CheckAccountNameRequest.h
@@ -37,6 +39,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/CloseDBClusterMigrationResult.h
 	include/alibabacloud/polardb/model/CreateAccountRequest.h
 	include/alibabacloud/polardb/model/CreateAccountResult.h
+	include/alibabacloud/polardb/model/CreateActivationCodeRequest.h
+	include/alibabacloud/polardb/model/CreateActivationCodeResult.h
 	include/alibabacloud/polardb/model/CreateBackupRequest.h
 	include/alibabacloud/polardb/model/CreateBackupResult.h
 	include/alibabacloud/polardb/model/CreateColdStorageInstanceRequest.h
@@ -57,6 +61,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/CreateGlobalDatabaseNetworkResult.h
 	include/alibabacloud/polardb/model/CreateGlobalSecurityIPGroupRequest.h
 	include/alibabacloud/polardb/model/CreateGlobalSecurityIPGroupResult.h
+	include/alibabacloud/polardb/model/CreateOrGetVirtualLicenseOrderRequest.h
+	include/alibabacloud/polardb/model/CreateOrGetVirtualLicenseOrderResult.h
 	include/alibabacloud/polardb/model/CreateParameterGroupRequest.h
 	include/alibabacloud/polardb/model/CreateParameterGroupResult.h
 	include/alibabacloud/polardb/model/CreateServiceLinkedRoleRequest.h
@@ -91,6 +97,12 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeAITaskStatusResult.h
 	include/alibabacloud/polardb/model/DescribeAccountsRequest.h
 	include/alibabacloud/polardb/model/DescribeAccountsResult.h
+	include/alibabacloud/polardb/model/DescribeActivationCodeDetailsRequest.h
+	include/alibabacloud/polardb/model/DescribeActivationCodeDetailsResult.h
+	include/alibabacloud/polardb/model/DescribeActivationCodesRequest.h
+	include/alibabacloud/polardb/model/DescribeActivationCodesResult.h
+	include/alibabacloud/polardb/model/DescribeActiveOperationTasksRequest.h
+	include/alibabacloud/polardb/model/DescribeActiveOperationTasksResult.h
 	include/alibabacloud/polardb/model/DescribeAutoRenewAttributeRequest.h
 	include/alibabacloud/polardb/model/DescribeAutoRenewAttributeResult.h
 	include/alibabacloud/polardb/model/DescribeBackupLogsRequest.h
@@ -161,6 +173,10 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeGlobalSecurityIPGroupResult.h
 	include/alibabacloud/polardb/model/DescribeGlobalSecurityIPGroupRelationRequest.h
 	include/alibabacloud/polardb/model/DescribeGlobalSecurityIPGroupRelationResult.h
+	include/alibabacloud/polardb/model/DescribeLicenseOrderDetailsRequest.h
+	include/alibabacloud/polardb/model/DescribeLicenseOrderDetailsResult.h
+	include/alibabacloud/polardb/model/DescribeLicenseOrdersRequest.h
+	include/alibabacloud/polardb/model/DescribeLicenseOrdersResult.h
 	include/alibabacloud/polardb/model/DescribeLogBackupPolicyRequest.h
 	include/alibabacloud/polardb/model/DescribeLogBackupPolicyResult.h
 	include/alibabacloud/polardb/model/DescribeMaskingRulesRequest.h
@@ -213,6 +229,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyAccountDescriptionResult.h
 	include/alibabacloud/polardb/model/ModifyAccountPasswordRequest.h
 	include/alibabacloud/polardb/model/ModifyAccountPasswordResult.h
+	include/alibabacloud/polardb/model/ModifyActiveOperationTasksRequest.h
+	include/alibabacloud/polardb/model/ModifyActiveOperationTasksResult.h
 	include/alibabacloud/polardb/model/ModifyAutoRenewAttributeRequest.h
 	include/alibabacloud/polardb/model/ModifyAutoRenewAttributeResult.h
 	include/alibabacloud/polardb/model/ModifyBackupPolicyRequest.h
@@ -247,6 +265,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyDBClusterSSLResult.h
 	include/alibabacloud/polardb/model/ModifyDBClusterServerlessConfRequest.h
 	include/alibabacloud/polardb/model/ModifyDBClusterServerlessConfResult.h
+	include/alibabacloud/polardb/model/ModifyDBClusterStoragePerformanceRequest.h
+	include/alibabacloud/polardb/model/ModifyDBClusterStoragePerformanceResult.h
 	include/alibabacloud/polardb/model/ModifyDBClusterStorageSpaceRequest.h
 	include/alibabacloud/polardb/model/ModifyDBClusterStorageSpaceResult.h
 	include/alibabacloud/polardb/model/ModifyDBClusterTDERequest.h
@@ -287,6 +307,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ResetAccountResult.h
 	include/alibabacloud/polardb/model/ResetGlobalDatabaseNetworkRequest.h
 	include/alibabacloud/polardb/model/ResetGlobalDatabaseNetworkResult.h
+	include/alibabacloud/polardb/model/RestartDBLinkRequest.h
+	include/alibabacloud/polardb/model/RestartDBLinkResult.h
 	include/alibabacloud/polardb/model/RestartDBNodeRequest.h
 	include/alibabacloud/polardb/model/RestartDBNodeResult.h
 	include/alibabacloud/polardb/model/RestoreTableRequest.h
@@ -303,13 +325,13 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/TransformDBClusterPayTypeResult.h
 	include/alibabacloud/polardb/model/UntagResourcesRequest.h
 	include/alibabacloud/polardb/model/UntagResourcesResult.h
-	include/alibabacloud/polardb/model/UpgradeDBClusterMinorVersionRequest.h
-	include/alibabacloud/polardb/model/UpgradeDBClusterMinorVersionResult.h
 	include/alibabacloud/polardb/model/UpgradeDBClusterVersionRequest.h
 	include/alibabacloud/polardb/model/UpgradeDBClusterVersionResult.h )
 
 set(polardb_src 
 	src/PolardbClient.cc
+	src/model/CancelActiveOperationTasksRequest.cc
+	src/model/CancelActiveOperationTasksResult.cc
 	src/model/CancelScheduleTasksRequest.cc
 	src/model/CancelScheduleTasksResult.cc
 	src/model/CheckAccountNameRequest.cc
@@ -326,6 +348,8 @@ set(polardb_src
 	src/model/CloseDBClusterMigrationResult.cc
 	src/model/CreateAccountRequest.cc
 	src/model/CreateAccountResult.cc
+	src/model/CreateActivationCodeRequest.cc
+	src/model/CreateActivationCodeResult.cc
 	src/model/CreateBackupRequest.cc
 	src/model/CreateBackupResult.cc
 	src/model/CreateColdStorageInstanceRequest.cc
@@ -346,6 +370,8 @@ set(polardb_src
 	src/model/CreateGlobalDatabaseNetworkResult.cc
 	src/model/CreateGlobalSecurityIPGroupRequest.cc
 	src/model/CreateGlobalSecurityIPGroupResult.cc
+	src/model/CreateOrGetVirtualLicenseOrderRequest.cc
+	src/model/CreateOrGetVirtualLicenseOrderResult.cc
 	src/model/CreateParameterGroupRequest.cc
 	src/model/CreateParameterGroupResult.cc
 	src/model/CreateServiceLinkedRoleRequest.cc
@@ -380,6 +406,12 @@ set(polardb_src
 	src/model/DescribeAITaskStatusResult.cc
 	src/model/DescribeAccountsRequest.cc
 	src/model/DescribeAccountsResult.cc
+	src/model/DescribeActivationCodeDetailsRequest.cc
+	src/model/DescribeActivationCodeDetailsResult.cc
+	src/model/DescribeActivationCodesRequest.cc
+	src/model/DescribeActivationCodesResult.cc
+	src/model/DescribeActiveOperationTasksRequest.cc
+	src/model/DescribeActiveOperationTasksResult.cc
 	src/model/DescribeAutoRenewAttributeRequest.cc
 	src/model/DescribeAutoRenewAttributeResult.cc
 	src/model/DescribeBackupLogsRequest.cc
@@ -450,6 +482,10 @@ set(polardb_src
 	src/model/DescribeGlobalSecurityIPGroupResult.cc
 	src/model/DescribeGlobalSecurityIPGroupRelationRequest.cc
 	src/model/DescribeGlobalSecurityIPGroupRelationResult.cc
+	src/model/DescribeLicenseOrderDetailsRequest.cc
+	src/model/DescribeLicenseOrderDetailsResult.cc
+	src/model/DescribeLicenseOrdersRequest.cc
+	src/model/DescribeLicenseOrdersResult.cc
 	src/model/DescribeLogBackupPolicyRequest.cc
 	src/model/DescribeLogBackupPolicyResult.cc
 	src/model/DescribeMaskingRulesRequest.cc
@@ -502,6 +538,8 @@ set(polardb_src
 	src/model/ModifyAccountDescriptionResult.cc
 	src/model/ModifyAccountPasswordRequest.cc
 	src/model/ModifyAccountPasswordResult.cc
+	src/model/ModifyActiveOperationTasksRequest.cc
+	src/model/ModifyActiveOperationTasksResult.cc
 	src/model/ModifyAutoRenewAttributeRequest.cc
 	src/model/ModifyAutoRenewAttributeResult.cc
 	src/model/ModifyBackupPolicyRequest.cc
@@ -536,6 +574,8 @@ set(polardb_src
 	src/model/ModifyDBClusterSSLResult.cc
 	src/model/ModifyDBClusterServerlessConfRequest.cc
 	src/model/ModifyDBClusterServerlessConfResult.cc
+	src/model/ModifyDBClusterStoragePerformanceRequest.cc
+	src/model/ModifyDBClusterStoragePerformanceResult.cc
 	src/model/ModifyDBClusterStorageSpaceRequest.cc
 	src/model/ModifyDBClusterStorageSpaceResult.cc
 	src/model/ModifyDBClusterTDERequest.cc
@@ -576,6 +616,8 @@ set(polardb_src
 	src/model/ResetAccountResult.cc
 	src/model/ResetGlobalDatabaseNetworkRequest.cc
 	src/model/ResetGlobalDatabaseNetworkResult.cc
+	src/model/RestartDBLinkRequest.cc
+	src/model/RestartDBLinkResult.cc
 	src/model/RestartDBNodeRequest.cc
 	src/model/RestartDBNodeResult.cc
 	src/model/RestoreTableRequest.cc
@@ -592,8 +634,6 @@ set(polardb_src
 	src/model/TransformDBClusterPayTypeResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc
-	src/model/UpgradeDBClusterMinorVersionRequest.cc
-	src/model/UpgradeDBClusterMinorVersionResult.cc
 	src/model/UpgradeDBClusterVersionRequest.cc
 	src/model/UpgradeDBClusterVersionResult.cc )
 

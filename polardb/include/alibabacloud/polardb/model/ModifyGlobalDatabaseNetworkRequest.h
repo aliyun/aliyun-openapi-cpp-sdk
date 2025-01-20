@@ -46,6 +46,8 @@ public:
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	bool getEnableGlobalDomainName() const;
+	void setEnableGlobalDomainName(bool enableGlobalDomainName);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 
@@ -58,6 +60,7 @@ private:
 	std::string gDNDescription_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
+	bool enableGlobalDomainName_;
 	long ownerId_;
 };
 } // namespace Model

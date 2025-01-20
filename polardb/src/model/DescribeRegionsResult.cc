@@ -49,10 +49,10 @@ void DescribeRegionsResult::parse(const std::string &payload)
 		for (auto valueRegionsRegionZonesZone : allZonesNode)
 		{
 			Region::Zone zonesObject;
-			if(!valueRegionsRegionZonesZone["ZoneId"].isNull())
-				zonesObject.zoneId = valueRegionsRegionZonesZone["ZoneId"].asString();
 			if(!valueRegionsRegionZonesZone["VpcEnabled"].isNull())
 				zonesObject.vpcEnabled = valueRegionsRegionZonesZone["VpcEnabled"].asString() == "true";
+			if(!valueRegionsRegionZonesZone["ZoneId"].isNull())
+				zonesObject.zoneId = valueRegionsRegionZonesZone["ZoneId"].asString();
 			regionsObject.zones.push_back(zonesObject);
 		}
 		regions_.push_back(regionsObject);

@@ -39,12 +39,20 @@ namespace AlibabaCloud
 					std::string releaseNote;
 					std::string revisionVersionCode;
 				};
+				struct ProxyRevisionVersionListItem
+				{
+					std::string releaseType;
+					std::string revisionVersionName;
+					std::string releaseNote;
+					std::string revisionVersionCode;
+				};
 
 
 				DescribeDBClusterVersionResult();
 				explicit DescribeDBClusterVersionResult(const std::string &payload);
 				~DescribeDBClusterVersionResult();
 				std::string getDBRevisionVersion()const;
+				std::vector<ProxyRevisionVersionListItem> getProxyRevisionVersionList()const;
 				std::string getProxyLatestVersionAfterDBEngineUpgraded()const;
 				std::string getDBClusterId()const;
 				std::string getProxyRevisionVersion()const;
@@ -57,11 +65,13 @@ namespace AlibabaCloud
 				std::string getDBVersionStatus()const;
 				std::string getDBMinorVersion()const;
 				std::vector<DBRevisionVersionListItem> getDBRevisionVersionList()const;
+				std::string getDBInnerRevisionVersion()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string dBRevisionVersion_;
+				std::vector<ProxyRevisionVersionListItem> proxyRevisionVersionList_;
 				std::string proxyLatestVersionAfterDBEngineUpgraded_;
 				std::string dBClusterId_;
 				std::string proxyRevisionVersion_;
@@ -74,6 +84,7 @@ namespace AlibabaCloud
 				std::string dBVersionStatus_;
 				std::string dBMinorVersion_;
 				std::vector<DBRevisionVersionListItem> dBRevisionVersionList_;
+				std::string dBInnerRevisionVersion_;
 
 			};
 		}

@@ -43,6 +43,15 @@ void ModifyDBClusterServerlessConfRequest::setResourceOwnerId(long resourceOwner
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ModifyDBClusterServerlessConfRequest::getServerlessRuleMode() const {
+  return serverlessRuleMode_;
+}
+
+void ModifyDBClusterServerlessConfRequest::setServerlessRuleMode(const std::string &serverlessRuleMode) {
+  serverlessRuleMode_ = serverlessRuleMode;
+  setParameter(std::string("ServerlessRuleMode"), serverlessRuleMode);
+}
+
 std::string ModifyDBClusterServerlessConfRequest::getScaleApRoNumMax() const {
   return scaleApRoNumMax_;
 }
@@ -79,6 +88,15 @@ void ModifyDBClusterServerlessConfRequest::setAccessKeyId(const std::string &acc
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBClusterServerlessConfRequest::getServerlessRuleCpuEnlargeThreshold() const {
+  return serverlessRuleCpuEnlargeThreshold_;
+}
+
+void ModifyDBClusterServerlessConfRequest::setServerlessRuleCpuEnlargeThreshold(const std::string &serverlessRuleCpuEnlargeThreshold) {
+  serverlessRuleCpuEnlargeThreshold_ = serverlessRuleCpuEnlargeThreshold;
+  setParameter(std::string("ServerlessRuleCpuEnlargeThreshold"), serverlessRuleCpuEnlargeThreshold);
+}
+
 std::string ModifyDBClusterServerlessConfRequest::getSecondsUntilAutoPause() const {
   return secondsUntilAutoPause_;
 }
@@ -97,6 +115,15 @@ void ModifyDBClusterServerlessConfRequest::setScaleApRoNumMin(const std::string 
   setParameter(std::string("ScaleApRoNumMin"), scaleApRoNumMin);
 }
 
+std::string ModifyDBClusterServerlessConfRequest::getTaskId() const {
+  return taskId_;
+}
+
+void ModifyDBClusterServerlessConfRequest::setTaskId(const std::string &taskId) {
+  taskId_ = taskId;
+  setParameter(std::string("TaskId"), taskId);
+}
+
 std::string ModifyDBClusterServerlessConfRequest::getScaleMin() const {
   return scaleMin_;
 }
@@ -104,6 +131,15 @@ std::string ModifyDBClusterServerlessConfRequest::getScaleMin() const {
 void ModifyDBClusterServerlessConfRequest::setScaleMin(const std::string &scaleMin) {
   scaleMin_ = scaleMin;
   setParameter(std::string("ScaleMin"), scaleMin);
+}
+
+std::string ModifyDBClusterServerlessConfRequest::getCrontabJobId() const {
+  return crontabJobId_;
+}
+
+void ModifyDBClusterServerlessConfRequest::setCrontabJobId(const std::string &crontabJobId) {
+  crontabJobId_ = crontabJobId;
+  setParameter(std::string("CrontabJobId"), crontabJobId);
 }
 
 std::string ModifyDBClusterServerlessConfRequest::getResourceOwnerAccount() const {
@@ -131,6 +167,15 @@ std::string ModifyDBClusterServerlessConfRequest::getOwnerAccount() const {
 void ModifyDBClusterServerlessConfRequest::setOwnerAccount(const std::string &ownerAccount) {
   ownerAccount_ = ownerAccount;
   setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+std::string ModifyDBClusterServerlessConfRequest::getServerlessRuleCpuShrinkThreshold() const {
+  return serverlessRuleCpuShrinkThreshold_;
+}
+
+void ModifyDBClusterServerlessConfRequest::setServerlessRuleCpuShrinkThreshold(const std::string &serverlessRuleCpuShrinkThreshold) {
+  serverlessRuleCpuShrinkThreshold_ = serverlessRuleCpuShrinkThreshold;
+  setParameter(std::string("ServerlessRuleCpuShrinkThreshold"), serverlessRuleCpuShrinkThreshold);
 }
 
 long ModifyDBClusterServerlessConfRequest::getOwnerId() const {

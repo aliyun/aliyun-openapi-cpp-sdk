@@ -52,6 +52,15 @@ void DescribeDBNodePerformanceRequest::setStartTime(const std::string &startTime
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeDBNodePerformanceRequest::getType() const {
+  return type_;
+}
+
+void DescribeDBNodePerformanceRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
+}
+
 std::string DescribeDBNodePerformanceRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -122,5 +131,14 @@ std::string DescribeDBNodePerformanceRequest::getMetric() const {
 void DescribeDBNodePerformanceRequest::setMetric(const std::string &metric) {
   metric_ = metric;
   setParameter(std::string("Metric"), metric);
+}
+
+std::string DescribeDBNodePerformanceRequest::getInterval() const {
+  return interval_;
+}
+
+void DescribeDBNodePerformanceRequest::setInterval(const std::string &interval) {
+  interval_ = interval;
+  setParameter(std::string("Interval"), interval);
 }
 

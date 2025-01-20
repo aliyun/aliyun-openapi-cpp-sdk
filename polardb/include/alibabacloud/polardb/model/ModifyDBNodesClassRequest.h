@@ -48,6 +48,8 @@ public:
 	void setDBClusterId(const std::string &dBClusterId);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getPlannedFlashingOffTime() const;
+	void setPlannedFlashingOffTime(const std::string &plannedFlashingOffTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getPlannedStartTime() const;
@@ -67,6 +69,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;
+	std::string plannedFlashingOffTime_;
 	long ownerId_;
 	std::string plannedStartTime_;
 	std::string modifyType_;

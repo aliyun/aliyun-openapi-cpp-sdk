@@ -36,20 +36,30 @@ namespace AlibabaCloud
 				{
 					std::string sSLConnectionString;
 					std::string sSLExpireTime;
+					std::string serverKey;
+					std::string clientCrl;
 					std::string dBEndpointId;
+					std::string serverCert;
 					std::string sSLEnabled;
+					std::string sSLAutoRotate;
+					std::string cAType;
+					std::string clientCACert;
+					std::string aCL;
+					std::vector<std::string> allowedACLs;
 				};
 
 
 				DescribeDBClusterSSLResult();
 				explicit DescribeDBClusterSSLResult(const std::string &payload);
 				~DescribeDBClusterSSLResult();
+				std::vector<std::string> getSupportAdvancedSSLFeatureEndpointTypes()const;
 				std::string getSSLAutoRotate()const;
 				std::vector<Item> getItems()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<std::string> supportAdvancedSSLFeatureEndpointTypes_;
 				std::string sSLAutoRotate_;
 				std::vector<Item> items_;
 

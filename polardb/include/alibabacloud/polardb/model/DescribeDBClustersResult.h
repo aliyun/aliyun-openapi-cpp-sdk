@@ -56,12 +56,18 @@ namespace AlibabaCloud
 					long compressStorageUsed;
 					std::string storagePayType;
 					std::string dBClusterId;
+					std::string hotStandbyCluster;
+					std::string deployUnit;
 					std::string dBType;
 					std::string dBClusterNetworkType;
+					std::string remoteMemorySize;
 					std::string dBVersion;
 					std::vector<DBCluster::DBNode> dBNodes;
 					std::vector<DBCluster::Tag> tags;
 					std::string engine;
+					std::string engineMigrationStatus;
+					std::string memorySize;
+					std::string storageType;
 					std::string zoneId;
 					std::string dBClusterStatus;
 					std::string createTime;
@@ -78,6 +84,8 @@ namespace AlibabaCloud
 					long storageSpace;
 					std::string serverlessType;
 					std::string aiType;
+					std::string cpuCores;
+					std::string subCategory;
 					std::string regionId;
 					std::string expireTime;
 				};

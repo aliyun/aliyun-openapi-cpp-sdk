@@ -38,6 +38,8 @@ public:
 	void setDBNodeIds(const std::string &dBNodeIds);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	bool getClearBinlog() const;
+	void setClearBinlog(bool clearBinlog);
 	std::string getParameterGroupId() const;
 	void setParameterGroupId(const std::string &parameterGroupId);
 	std::string getResourceOwnerAccount() const;
@@ -50,6 +52,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getPlannedStartTime() const;
 	void setPlannedStartTime(const std::string &plannedStartTime);
+	std::string getStandbyClusterIdListNeedToSync() const;
+	void setStandbyClusterIdListNeedToSync(const std::string &standbyClusterIdListNeedToSync);
 	std::string getParameters() const;
 	void setParameters(const std::string &parameters);
 	bool getFromTimeService() const;
@@ -60,12 +64,14 @@ private:
 	std::string plannedEndTime_;
 	std::string dBNodeIds_;
 	std::string accessKeyId_;
+	bool clearBinlog_;
 	std::string parameterGroupId_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string plannedStartTime_;
+	std::string standbyClusterIdListNeedToSync_;
 	std::string parameters_;
 	bool fromTimeService_;
 };

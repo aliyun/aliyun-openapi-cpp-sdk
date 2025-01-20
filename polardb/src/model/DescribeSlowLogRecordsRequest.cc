@@ -79,6 +79,15 @@ void DescribeSlowLogRecordsRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::string DescribeSlowLogRecordsRequest::getNodeId() const {
+  return nodeId_;
+}
+
+void DescribeSlowLogRecordsRequest::setNodeId(const std::string &nodeId) {
+  nodeId_ = nodeId;
+  setParameter(std::string("NodeId"), nodeId);
+}
+
 std::string DescribeSlowLogRecordsRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

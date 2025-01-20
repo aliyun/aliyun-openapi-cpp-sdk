@@ -91,6 +91,14 @@ void DescribeDBClusterParametersResult::parse(const std::string &payload)
 			parametersObject.distParameterDescription = valueParametersParametersItem["distParameterDescription"].asString();
 		if(!valueParametersParametersItem["rdsParameterDescription"].isNull())
 			parametersObject.rdsParameterDescription = valueParametersParametersItem["rdsParameterDescription"].asString();
+		if(!valueParametersParametersItem["IsRdsKey"].isNull())
+			parametersObject.isRdsKey = valueParametersParametersItem["IsRdsKey"].asString();
+		if(!valueParametersParametersItem["IsPolarDBKey"].isNull())
+			parametersObject.isPolarDBKey = valueParametersParametersItem["IsPolarDBKey"].asString();
+		if(!valueParametersParametersItem["IsInstancePolarDBKey"].isNull())
+			parametersObject.isInstancePolarDBKey = valueParametersParametersItem["IsInstancePolarDBKey"].asString();
+		if(!valueParametersParametersItem["IsInstanceRdsKey"].isNull())
+			parametersObject.isInstanceRdsKey = valueParametersParametersItem["IsInstanceRdsKey"].asString();
 		parameters_.push_back(parametersObject);
 	}
 	if(!value["DBVersion"].isNull())

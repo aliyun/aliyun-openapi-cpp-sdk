@@ -43,26 +43,26 @@ void DescribeAutoRenewAttributeResult::parse(const std::string &payload)
 	for (auto valueItemsAutoRenewAttribute : allItemsNode)
 	{
 		AutoRenewAttribute itemsObject;
-		if(!valueItemsAutoRenewAttribute["DBClusterId"].isNull())
-			itemsObject.dBClusterId = valueItemsAutoRenewAttribute["DBClusterId"].asString();
-		if(!valueItemsAutoRenewAttribute["PeriodUnit"].isNull())
-			itemsObject.periodUnit = valueItemsAutoRenewAttribute["PeriodUnit"].asString();
-		if(!valueItemsAutoRenewAttribute["Duration"].isNull())
-			itemsObject.duration = std::stoi(valueItemsAutoRenewAttribute["Duration"].asString());
-		if(!valueItemsAutoRenewAttribute["RenewalStatus"].isNull())
-			itemsObject.renewalStatus = valueItemsAutoRenewAttribute["RenewalStatus"].asString();
 		if(!valueItemsAutoRenewAttribute["AutoRenewEnabled"].isNull())
 			itemsObject.autoRenewEnabled = valueItemsAutoRenewAttribute["AutoRenewEnabled"].asString() == "true";
+		if(!valueItemsAutoRenewAttribute["DBClusterId"].isNull())
+			itemsObject.dBClusterId = valueItemsAutoRenewAttribute["DBClusterId"].asString();
+		if(!valueItemsAutoRenewAttribute["Duration"].isNull())
+			itemsObject.duration = std::stoi(valueItemsAutoRenewAttribute["Duration"].asString());
+		if(!valueItemsAutoRenewAttribute["PeriodUnit"].isNull())
+			itemsObject.periodUnit = valueItemsAutoRenewAttribute["PeriodUnit"].asString();
 		if(!valueItemsAutoRenewAttribute["RegionId"].isNull())
 			itemsObject.regionId = valueItemsAutoRenewAttribute["RegionId"].asString();
+		if(!valueItemsAutoRenewAttribute["RenewalStatus"].isNull())
+			itemsObject.renewalStatus = valueItemsAutoRenewAttribute["RenewalStatus"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	if(!value["PageRecordCount"].isNull())
-		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
 }
 

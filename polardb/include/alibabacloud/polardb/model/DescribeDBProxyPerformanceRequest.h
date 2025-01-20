@@ -32,8 +32,14 @@ public:
 	~DescribeDBProxyPerformanceRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getDBNodeId() const;
+	void setDBNodeId(const std::string &dBNodeId);
+	std::string getDBEndpointId() const;
+	void setDBEndpointId(const std::string &dBEndpointId);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	std::string getType() const;
+	void setType(const std::string &type);
 	std::string getKey() const;
 	void setKey(const std::string &key);
 	std::string getResourceOwnerAccount() const;
@@ -48,10 +54,15 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getMetric() const;
 	void setMetric(const std::string &metric);
+	std::string getInterval() const;
+	void setInterval(const std::string &interval);
 
 private:
 	long resourceOwnerId_;
+	std::string dBNodeId_;
+	std::string dBEndpointId_;
 	std::string startTime_;
+	std::string type_;
 	std::string key_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
@@ -59,6 +70,7 @@ private:
 	std::string endTime_;
 	long ownerId_;
 	std::string metric_;
+	std::string interval_;
 };
 } // namespace Model
 } // namespace Polardb

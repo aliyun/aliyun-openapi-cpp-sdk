@@ -282,6 +282,15 @@ void CreateDBClusterRequest::setLowerCaseTableNames(const std::string &lowerCase
   setParameter(std::string("LowerCaseTableNames"), lowerCaseTableNames);
 }
 
+bool CreateDBClusterRequest::getStorageEncryption() const {
+  return storageEncryption_;
+}
+
+void CreateDBClusterRequest::setStorageEncryption(bool storageEncryption) {
+  storageEncryption_ = storageEncryption;
+  setParameter(std::string("StorageEncryption"), storageEncryption ? "true" : "false");
+}
+
 std::string CreateDBClusterRequest::getScaleRoNumMax() const {
   return scaleRoNumMax_;
 }
@@ -334,6 +343,15 @@ std::string CreateDBClusterRequest::getClusterNetworkType() const {
 void CreateDBClusterRequest::setClusterNetworkType(const std::string &clusterNetworkType) {
   clusterNetworkType_ = clusterNetworkType;
   setParameter(std::string("ClusterNetworkType"), clusterNetworkType);
+}
+
+std::string CreateDBClusterRequest::getStorageEncryptionKey() const {
+  return storageEncryptionKey_;
+}
+
+void CreateDBClusterRequest::setStorageEncryptionKey(const std::string &storageEncryptionKey) {
+  storageEncryptionKey_ = storageEncryptionKey;
+  setParameter(std::string("StorageEncryptionKey"), storageEncryptionKey);
 }
 
 std::string CreateDBClusterRequest::getParameterGroupId() const {
@@ -433,6 +451,24 @@ std::string CreateDBClusterRequest::getUsedTime() const {
 void CreateDBClusterRequest::setUsedTime(const std::string &usedTime) {
   usedTime_ = usedTime;
   setParameter(std::string("UsedTime"), usedTime);
+}
+
+std::string CreateDBClusterRequest::getBurstingEnabled() const {
+  return burstingEnabled_;
+}
+
+void CreateDBClusterRequest::setBurstingEnabled(const std::string &burstingEnabled) {
+  burstingEnabled_ = burstingEnabled;
+  setParameter(std::string("BurstingEnabled"), burstingEnabled);
+}
+
+std::string CreateDBClusterRequest::getTargetMinorVersion() const {
+  return targetMinorVersion_;
+}
+
+void CreateDBClusterRequest::setTargetMinorVersion(const std::string &targetMinorVersion) {
+  targetMinorVersion_ = targetMinorVersion;
+  setParameter(std::string("TargetMinorVersion"), targetMinorVersion);
 }
 
 int CreateDBClusterRequest::getDBNodeNum() const {

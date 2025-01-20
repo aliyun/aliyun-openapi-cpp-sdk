@@ -40,9 +40,18 @@ namespace AlibabaCloud
 						std::string dBClusterId;
 						std::string regionId;
 					};
+					struct OutCloudDBCluster
+					{
+						std::string role;
+						std::string dBClusterId;
+						std::string outCloudType;
+						std::string regionId;
+					};
 					std::string gDNStatus;
+					std::vector<GlobalDatabaseNetwork::OutCloudDBCluster> outCloudDBClusters;
 					std::string dBVersion;
 					std::string gDNId;
+					std::string zoneId;
 					std::string createTime;
 					std::string dBType;
 					std::string gDNDescription;

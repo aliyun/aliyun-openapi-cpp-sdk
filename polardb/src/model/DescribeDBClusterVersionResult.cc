@@ -53,6 +53,20 @@ void DescribeDBClusterVersionResult::parse(const std::string &payload)
 			dBRevisionVersionListObject.releaseNote = valueDBRevisionVersionListDBRevisionVersionListItem["ReleaseNote"].asString();
 		dBRevisionVersionList_.push_back(dBRevisionVersionListObject);
 	}
+	auto allProxyRevisionVersionListNode = value["ProxyRevisionVersionList"]["ProxyRevisionVersionListItem"];
+	for (auto valueProxyRevisionVersionListProxyRevisionVersionListItem : allProxyRevisionVersionListNode)
+	{
+		ProxyRevisionVersionListItem proxyRevisionVersionListObject;
+		if(!valueProxyRevisionVersionListProxyRevisionVersionListItem["ReleaseType"].isNull())
+			proxyRevisionVersionListObject.releaseType = valueProxyRevisionVersionListProxyRevisionVersionListItem["ReleaseType"].asString();
+		if(!valueProxyRevisionVersionListProxyRevisionVersionListItem["RevisionVersionCode"].isNull())
+			proxyRevisionVersionListObject.revisionVersionCode = valueProxyRevisionVersionListProxyRevisionVersionListItem["RevisionVersionCode"].asString();
+		if(!valueProxyRevisionVersionListProxyRevisionVersionListItem["RevisionVersionName"].isNull())
+			proxyRevisionVersionListObject.revisionVersionName = valueProxyRevisionVersionListProxyRevisionVersionListItem["RevisionVersionName"].asString();
+		if(!valueProxyRevisionVersionListProxyRevisionVersionListItem["ReleaseNote"].isNull())
+			proxyRevisionVersionListObject.releaseNote = valueProxyRevisionVersionListProxyRevisionVersionListItem["ReleaseNote"].asString();
+		proxyRevisionVersionList_.push_back(proxyRevisionVersionListObject);
+	}
 	if(!value["IsLatestVersion"].isNull())
 		isLatestVersion_ = value["IsLatestVersion"].asString();
 	if(!value["IsProxyLatestVersion"].isNull())
@@ -77,12 +91,19 @@ void DescribeDBClusterVersionResult::parse(const std::string &payload)
 		dBLatestVersion_ = value["DBLatestVersion"].asString();
 	if(!value["ProxyLatestVersionAfterDBEngineUpgraded"].isNull())
 		proxyLatestVersionAfterDBEngineUpgraded_ = value["ProxyLatestVersionAfterDBEngineUpgraded"].asString();
+	if(!value["DBInnerRevisionVersion"].isNull())
+		dBInnerRevisionVersion_ = value["DBInnerRevisionVersion"].asString();
 
 }
 
 std::string DescribeDBClusterVersionResult::getDBRevisionVersion()const
 {
 	return dBRevisionVersion_;
+}
+
+std::vector<DescribeDBClusterVersionResult::ProxyRevisionVersionListItem> DescribeDBClusterVersionResult::getProxyRevisionVersionList()const
+{
+	return proxyRevisionVersionList_;
 }
 
 std::string DescribeDBClusterVersionResult::getProxyLatestVersionAfterDBEngineUpgraded()const
@@ -143,5 +164,10 @@ std::string DescribeDBClusterVersionResult::getDBMinorVersion()const
 std::vector<DescribeDBClusterVersionResult::DBRevisionVersionListItem> DescribeDBClusterVersionResult::getDBRevisionVersionList()const
 {
 	return dBRevisionVersionList_;
+}
+
+std::string DescribeDBClusterVersionResult::getDBInnerRevisionVersion()const
+{
+	return dBInnerRevisionVersion_;
 }
 

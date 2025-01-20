@@ -52,6 +52,15 @@ void ModifyDBClusterEndpointRequest::setDBEndpointId(const std::string &dBEndpoi
   setParameter(std::string("DBEndpointId"), dBEndpointId);
 }
 
+std::string ModifyDBClusterEndpointRequest::getPolarSccWaitTimeout() const {
+  return polarSccWaitTimeout_;
+}
+
+void ModifyDBClusterEndpointRequest::setPolarSccWaitTimeout(const std::string &polarSccWaitTimeout) {
+  polarSccWaitTimeout_ = polarSccWaitTimeout;
+  setParameter(std::string("PolarSccWaitTimeout"), polarSccWaitTimeout);
+}
+
 std::string ModifyDBClusterEndpointRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -68,6 +77,15 @@ std::string ModifyDBClusterEndpointRequest::getReadWriteMode() const {
 void ModifyDBClusterEndpointRequest::setReadWriteMode(const std::string &readWriteMode) {
   readWriteMode_ = readWriteMode;
   setParameter(std::string("ReadWriteMode"), readWriteMode);
+}
+
+std::string ModifyDBClusterEndpointRequest::getPolarSccTimeoutAction() const {
+  return polarSccTimeoutAction_;
+}
+
+void ModifyDBClusterEndpointRequest::setPolarSccTimeoutAction(const std::string &polarSccTimeoutAction) {
+  polarSccTimeoutAction_ = polarSccTimeoutAction;
+  setParameter(std::string("PolarSccTimeoutAction"), polarSccTimeoutAction);
 }
 
 std::string ModifyDBClusterEndpointRequest::getResourceOwnerAccount() const {
@@ -131,5 +149,14 @@ std::string ModifyDBClusterEndpointRequest::getNodes() const {
 void ModifyDBClusterEndpointRequest::setNodes(const std::string &nodes) {
   nodes_ = nodes;
   setParameter(std::string("Nodes"), nodes);
+}
+
+std::string ModifyDBClusterEndpointRequest::getSccMode() const {
+  return sccMode_;
+}
+
+void ModifyDBClusterEndpointRequest::setSccMode(const std::string &sccMode) {
+  sccMode_ = sccMode;
+  setParameter(std::string("SccMode"), sccMode);
 }
 

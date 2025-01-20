@@ -43,6 +43,15 @@ void CreateBackupRequest::setClientToken(const std::string &clientToken) {
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string CreateBackupRequest::getDataLevel2BackupRetentionPeriod() const {
+  return dataLevel2BackupRetentionPeriod_;
+}
+
+void CreateBackupRequest::setDataLevel2BackupRetentionPeriod(const std::string &dataLevel2BackupRetentionPeriod) {
+  dataLevel2BackupRetentionPeriod_ = dataLevel2BackupRetentionPeriod;
+  setParameter(std::string("DataLevel2BackupRetentionPeriod"), dataLevel2BackupRetentionPeriod);
+}
+
 std::string CreateBackupRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

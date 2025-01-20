@@ -52,6 +52,15 @@ void CreateGlobalDatabaseNetworkRequest::setResourceGroupId(const std::string &r
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string CreateGlobalDatabaseNetworkRequest::getAccountName() const {
+  return accountName_;
+}
+
+void CreateGlobalDatabaseNetworkRequest::setAccountName(const std::string &accountName) {
+  accountName_ = accountName;
+  setParameter(std::string("AccountName"), accountName);
+}
+
 std::string CreateGlobalDatabaseNetworkRequest::getSecurityToken() const {
   return securityToken_;
 }
@@ -97,6 +106,15 @@ void CreateGlobalDatabaseNetworkRequest::setOwnerAccount(const std::string &owne
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+bool CreateGlobalDatabaseNetworkRequest::getEnableGlobalDomainName() const {
+  return enableGlobalDomainName_;
+}
+
+void CreateGlobalDatabaseNetworkRequest::setEnableGlobalDomainName(bool enableGlobalDomainName) {
+  enableGlobalDomainName_ = enableGlobalDomainName;
+  setParameter(std::string("EnableGlobalDomainName"), enableGlobalDomainName ? "true" : "false");
+}
+
 long CreateGlobalDatabaseNetworkRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -104,5 +122,23 @@ long CreateGlobalDatabaseNetworkRequest::getOwnerId() const {
 void CreateGlobalDatabaseNetworkRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string CreateGlobalDatabaseNetworkRequest::getAccountPassword() const {
+  return accountPassword_;
+}
+
+void CreateGlobalDatabaseNetworkRequest::setAccountPassword(const std::string &accountPassword) {
+  accountPassword_ = accountPassword;
+  setParameter(std::string("AccountPassword"), accountPassword);
+}
+
+std::string CreateGlobalDatabaseNetworkRequest::getDBName() const {
+  return dBName_;
+}
+
+void CreateGlobalDatabaseNetworkRequest::setDBName(const std::string &dBName) {
+  dBName_ = dBName;
+  setParameter(std::string("DBName"), dBName);
 }
 

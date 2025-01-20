@@ -39,22 +39,38 @@ void DescribeDBClusterTDEResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TDEStatus"].isNull())
-		tDEStatus_ = value["TDEStatus"].asString();
+	if(!value["AutomaticRotation"].isNull())
+		automaticRotation_ = value["AutomaticRotation"].asString();
 	if(!value["DBClusterId"].isNull())
 		dBClusterId_ = value["DBClusterId"].asString();
-	if(!value["EncryptionKey"].isNull())
-		encryptionKey_ = value["EncryptionKey"].asString();
 	if(!value["EncryptNewTables"].isNull())
 		encryptNewTables_ = value["EncryptNewTables"].asString();
+	if(!value["EncryptionKey"].isNull())
+		encryptionKey_ = value["EncryptionKey"].asString();
+	if(!value["RotationInterval"].isNull())
+		rotationInterval_ = value["RotationInterval"].asString();
 	if(!value["TDERegion"].isNull())
 		tDERegion_ = value["TDERegion"].asString();
+	if(!value["TDEStatus"].isNull())
+		tDEStatus_ = value["TDEStatus"].asString();
+	if(!value["EncryptionKeyStatus"].isNull())
+		encryptionKeyStatus_ = value["EncryptionKeyStatus"].asString();
 
 }
 
 std::string DescribeDBClusterTDEResult::getTDEStatus()const
 {
 	return tDEStatus_;
+}
+
+std::string DescribeDBClusterTDEResult::getRotationInterval()const
+{
+	return rotationInterval_;
+}
+
+std::string DescribeDBClusterTDEResult::getEncryptionKeyStatus()const
+{
+	return encryptionKeyStatus_;
 }
 
 std::string DescribeDBClusterTDEResult::getEncryptNewTables()const
@@ -75,5 +91,10 @@ std::string DescribeDBClusterTDEResult::getDBClusterId()const
 std::string DescribeDBClusterTDEResult::getEncryptionKey()const
 {
 	return encryptionKey_;
+}
+
+std::string DescribeDBClusterTDEResult::getAutomaticRotation()const
+{
+	return automaticRotation_;
 }
 

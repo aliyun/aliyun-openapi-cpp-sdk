@@ -81,6 +81,8 @@ void DescribeBackupsResult::parse(const std::string &payload)
 		pageRecordCount_ = value["PageRecordCount"].asString();
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = value["PageNumber"].asString();
+	if(!value["TotalLevel2BackupSize"].isNull())
+		totalLevel2BackupSize_ = value["TotalLevel2BackupSize"].asString();
 
 }
 
@@ -102,5 +104,10 @@ std::string DescribeBackupsResult::getPageNumber()const
 std::vector<DescribeBackupsResult::Backup> DescribeBackupsResult::getItems()const
 {
 	return items_;
+}
+
+std::string DescribeBackupsResult::getTotalLevel2BackupSize()const
+{
+	return totalLevel2BackupSize_;
 }
 

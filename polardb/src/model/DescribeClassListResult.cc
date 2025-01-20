@@ -73,6 +73,10 @@ void DescribeClassListResult::parse(const std::string &payload)
 			itemsObject.pl2MaxIOPS = valueItemsItemsItem["Pl2MaxIOPS"].asString();
 		if(!valueItemsItemsItem["Pl3MaxIOPS"].isNull())
 			itemsObject.pl3MaxIOPS = valueItemsItemsItem["Pl3MaxIOPS"].asString();
+		if(!valueItemsItemsItem["EssdMaxStorageCapacity"].isNull())
+			itemsObject.essdMaxStorageCapacity = valueItemsItemsItem["EssdMaxStorageCapacity"].asString();
+		if(!valueItemsItemsItem["PolarStoreMaxStorageCapacity"].isNull())
+			itemsObject.polarStoreMaxStorageCapacity = valueItemsItemsItem["PolarStoreMaxStorageCapacity"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["RegionId"].isNull())

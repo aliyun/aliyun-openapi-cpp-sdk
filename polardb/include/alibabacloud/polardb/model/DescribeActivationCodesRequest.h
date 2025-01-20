@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_UPGRADEDBCLUSTERMINORVERSIONREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_UPGRADEDBCLUSTERMINORVERSIONREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACTIVATIONCODESREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACTIVATIONCODESREQUEST_H_
 
 #include <alibabacloud/polardb/PolardbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,41 +26,38 @@
 namespace AlibabaCloud {
 namespace Polardb {
 namespace Model {
-class ALIBABACLOUD_POLARDB_EXPORT UpgradeDBClusterMinorVersionRequest : public RpcServiceRequest {
+class ALIBABACLOUD_POLARDB_EXPORT DescribeActivationCodesRequest : public RpcServiceRequest {
 public:
-	UpgradeDBClusterMinorVersionRequest();
-	~UpgradeDBClusterMinorVersionRequest();
+	DescribeActivationCodesRequest();
+	~DescribeActivationCodesRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getPlannedEndTime() const;
-	void setPlannedEndTime(const std::string &plannedEndTime);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getAliyunOrderId() const;
+	void setAliyunOrderId(const std::string &aliyunOrderId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	std::string getDBClusterId() const;
-	void setDBClusterId(const std::string &dBClusterId);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getPlannedStartTime() const;
-	void setPlannedStartTime(const std::string &plannedStartTime);
-	bool getFromTimeService() const;
-	void setFromTimeService(bool fromTimeService);
 
 private:
 	long resourceOwnerId_;
-	std::string plannedEndTime_;
+	int pageNumber_;
 	std::string accessKeyId_;
+	int pageSize_;
+	std::string aliyunOrderId_;
 	std::string resourceOwnerAccount_;
-	std::string dBClusterId_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string plannedStartTime_;
-	bool fromTimeService_;
 };
 } // namespace Model
 } // namespace Polardb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_POLARDB_MODEL_UPGRADEDBCLUSTERMINORVERSIONREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACTIVATIONCODESREQUEST_H_

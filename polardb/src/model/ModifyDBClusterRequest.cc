@@ -25,6 +25,15 @@ ModifyDBClusterRequest::ModifyDBClusterRequest()
 
 ModifyDBClusterRequest::~ModifyDBClusterRequest() {}
 
+std::string ModifyDBClusterRequest::getModifyRowCompression() const {
+  return modifyRowCompression_;
+}
+
+void ModifyDBClusterRequest::setModifyRowCompression(const std::string &modifyRowCompression) {
+  modifyRowCompression_ = modifyRowCompression;
+  setParameter(std::string("ModifyRowCompression"), modifyRowCompression);
+}
+
 long ModifyDBClusterRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
@@ -41,6 +50,15 @@ std::string ModifyDBClusterRequest::getAccessKeyId() const {
 void ModifyDBClusterRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string ModifyDBClusterRequest::getTableMeta() const {
+  return tableMeta_;
+}
+
+void ModifyDBClusterRequest::setTableMeta(const std::string &tableMeta) {
+  tableMeta_ = tableMeta;
+  setParameter(std::string("TableMeta"), tableMeta);
 }
 
 std::string ModifyDBClusterRequest::getStandbyHAMode() const {
@@ -79,6 +97,15 @@ void ModifyDBClusterRequest::setOwnerAccount(const std::string &ownerAccount) {
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+std::string ModifyDBClusterRequest::getDBNodeCrashList() const {
+  return dBNodeCrashList_;
+}
+
+void ModifyDBClusterRequest::setDBNodeCrashList(const std::string &dBNodeCrashList) {
+  dBNodeCrashList_ = dBNodeCrashList;
+  setParameter(std::string("DBNodeCrashList"), dBNodeCrashList);
+}
+
 std::string ModifyDBClusterRequest::getFaultSimulateMode() const {
   return faultSimulateMode_;
 }
@@ -115,6 +142,24 @@ void ModifyDBClusterRequest::setStorageUpperBound(long storageUpperBound) {
   setParameter(std::string("StorageUpperBound"), std::to_string(storageUpperBound));
 }
 
+std::string ModifyDBClusterRequest::getPreferredSimulateStartTime() const {
+  return preferredSimulateStartTime_;
+}
+
+void ModifyDBClusterRequest::setPreferredSimulateStartTime(const std::string &preferredSimulateStartTime) {
+  preferredSimulateStartTime_ = preferredSimulateStartTime;
+  setParameter(std::string("PreferredSimulateStartTime"), preferredSimulateStartTime);
+}
+
+std::string ModifyDBClusterRequest::getImciAutoIndex() const {
+  return imciAutoIndex_;
+}
+
+void ModifyDBClusterRequest::setImciAutoIndex(const std::string &imciAutoIndex) {
+  imciAutoIndex_ = imciAutoIndex;
+  setParameter(std::string("ImciAutoIndex"), imciAutoIndex);
+}
+
 std::string ModifyDBClusterRequest::getStorageAutoScale() const {
   return storageAutoScale_;
 }
@@ -122,6 +167,15 @@ std::string ModifyDBClusterRequest::getStorageAutoScale() const {
 void ModifyDBClusterRequest::setStorageAutoScale(const std::string &storageAutoScale) {
   storageAutoScale_ = storageAutoScale;
   setParameter(std::string("StorageAutoScale"), storageAutoScale);
+}
+
+std::string ModifyDBClusterRequest::getFaultInjectionType() const {
+  return faultInjectionType_;
+}
+
+void ModifyDBClusterRequest::setFaultInjectionType(const std::string &faultInjectionType) {
+  faultInjectionType_ = faultInjectionType;
+  setParameter(std::string("FaultInjectionType"), faultInjectionType);
 }
 
 std::string ModifyDBClusterRequest::getDataSyncMode() const {

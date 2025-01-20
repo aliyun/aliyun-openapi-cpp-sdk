@@ -30,10 +30,14 @@ class ALIBABACLOUD_POLARDB_EXPORT ModifyDBClusterRequest : public RpcServiceRequ
 public:
 	ModifyDBClusterRequest();
 	~ModifyDBClusterRequest();
+	std::string getModifyRowCompression() const;
+	void setModifyRowCompression(const std::string &modifyRowCompression);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getTableMeta() const;
+	void setTableMeta(const std::string &tableMeta);
 	std::string getStandbyHAMode() const;
 	void setStandbyHAMode(const std::string &standbyHAMode);
 	std::string getResourceOwnerAccount() const;
@@ -42,6 +46,8 @@ public:
 	void setDBClusterId(const std::string &dBClusterId);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getDBNodeCrashList() const;
+	void setDBNodeCrashList(const std::string &dBNodeCrashList);
 	std::string getFaultSimulateMode() const;
 	void setFaultSimulateMode(const std::string &faultSimulateMode);
 	long getOwnerId() const;
@@ -50,23 +56,35 @@ public:
 	void setCompressStorage(const std::string &compressStorage);
 	long getStorageUpperBound() const;
 	void setStorageUpperBound(long storageUpperBound);
+	std::string getPreferredSimulateStartTime() const;
+	void setPreferredSimulateStartTime(const std::string &preferredSimulateStartTime);
+	std::string getImciAutoIndex() const;
+	void setImciAutoIndex(const std::string &imciAutoIndex);
 	std::string getStorageAutoScale() const;
 	void setStorageAutoScale(const std::string &storageAutoScale);
+	std::string getFaultInjectionType() const;
+	void setFaultInjectionType(const std::string &faultInjectionType);
 	std::string getDataSyncMode() const;
 	void setDataSyncMode(const std::string &dataSyncMode);
 
 private:
+	std::string modifyRowCompression_;
 	long resourceOwnerId_;
 	std::string accessKeyId_;
+	std::string tableMeta_;
 	std::string standbyHAMode_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;
+	std::string dBNodeCrashList_;
 	std::string faultSimulateMode_;
 	long ownerId_;
 	std::string compressStorage_;
 	long storageUpperBound_;
+	std::string preferredSimulateStartTime_;
+	std::string imciAutoIndex_;
 	std::string storageAutoScale_;
+	std::string faultInjectionType_;
 	std::string dataSyncMode_;
 };
 } // namespace Model

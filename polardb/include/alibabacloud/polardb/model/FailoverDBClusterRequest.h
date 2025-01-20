@@ -44,10 +44,14 @@ public:
 	void setDBClusterId(const std::string &dBClusterId);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getTargetZoneType() const;
+	void setTargetZoneType(const std::string &targetZoneType);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getTargetDBNodeId() const;
 	void setTargetDBNodeId(const std::string &targetDBNodeId);
+	bool getIsForce() const;
+	void setIsForce(bool isForce);
 
 private:
 	long resourceOwnerId_;
@@ -57,8 +61,10 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;
+	std::string targetZoneType_;
 	long ownerId_;
 	std::string targetDBNodeId_;
+	bool isForce_;
 };
 } // namespace Model
 } // namespace Polardb

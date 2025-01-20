@@ -97,6 +97,15 @@ void UpgradeDBClusterVersionRequest::setOwnerAccount(const std::string &ownerAcc
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+std::string UpgradeDBClusterVersionRequest::getPlannedFlashingOffTime() const {
+  return plannedFlashingOffTime_;
+}
+
+void UpgradeDBClusterVersionRequest::setPlannedFlashingOffTime(const std::string &plannedFlashingOffTime) {
+  plannedFlashingOffTime_ = plannedFlashingOffTime;
+  setParameter(std::string("PlannedFlashingOffTime"), plannedFlashingOffTime);
+}
+
 long UpgradeDBClusterVersionRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -122,6 +131,15 @@ std::string UpgradeDBClusterVersionRequest::getTargetDBRevisionVersionCode() con
 void UpgradeDBClusterVersionRequest::setTargetDBRevisionVersionCode(const std::string &targetDBRevisionVersionCode) {
   targetDBRevisionVersionCode_ = targetDBRevisionVersionCode;
   setParameter(std::string("TargetDBRevisionVersionCode"), targetDBRevisionVersionCode);
+}
+
+std::string UpgradeDBClusterVersionRequest::getTargetProxyRevisionVersionCode() const {
+  return targetProxyRevisionVersionCode_;
+}
+
+void UpgradeDBClusterVersionRequest::setTargetProxyRevisionVersionCode(const std::string &targetProxyRevisionVersionCode) {
+  targetProxyRevisionVersionCode_ = targetProxyRevisionVersionCode;
+  setParameter(std::string("TargetProxyRevisionVersionCode"), targetProxyRevisionVersionCode);
 }
 
 std::string UpgradeDBClusterVersionRequest::getUpgradePolicy() const {

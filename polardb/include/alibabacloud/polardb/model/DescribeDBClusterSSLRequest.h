@@ -32,6 +32,8 @@ public:
 	~DescribeDBClusterSSLRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getEndpointId() const;
+	void setEndpointId(const std::string &endpointId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceOwnerAccount() const;
@@ -45,6 +47,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string endpointId_;
 	std::string accessKeyId_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;

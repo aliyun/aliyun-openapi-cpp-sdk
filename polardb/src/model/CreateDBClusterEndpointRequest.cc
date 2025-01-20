@@ -52,6 +52,15 @@ void CreateDBClusterEndpointRequest::setClientToken(const std::string &clientTok
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string CreateDBClusterEndpointRequest::getPolarSccWaitTimeout() const {
+  return polarSccWaitTimeout_;
+}
+
+void CreateDBClusterEndpointRequest::setPolarSccWaitTimeout(const std::string &polarSccWaitTimeout) {
+  polarSccWaitTimeout_ = polarSccWaitTimeout;
+  setParameter(std::string("PolarSccWaitTimeout"), polarSccWaitTimeout);
+}
+
 std::string CreateDBClusterEndpointRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -77,6 +86,33 @@ std::string CreateDBClusterEndpointRequest::getEndpointType() const {
 void CreateDBClusterEndpointRequest::setEndpointType(const std::string &endpointType) {
   endpointType_ = endpointType;
   setParameter(std::string("EndpointType"), endpointType);
+}
+
+std::string CreateDBClusterEndpointRequest::getPolarSccTimeoutAction() const {
+  return polarSccTimeoutAction_;
+}
+
+void CreateDBClusterEndpointRequest::setPolarSccTimeoutAction(const std::string &polarSccTimeoutAction) {
+  polarSccTimeoutAction_ = polarSccTimeoutAction;
+  setParameter(std::string("PolarSccTimeoutAction"), polarSccTimeoutAction);
+}
+
+std::string CreateDBClusterEndpointRequest::getEndpointSubCluster() const {
+  return endpointSubCluster_;
+}
+
+void CreateDBClusterEndpointRequest::setEndpointSubCluster(const std::string &endpointSubCluster) {
+  endpointSubCluster_ = endpointSubCluster;
+  setParameter(std::string("EndpointSubCluster"), endpointSubCluster);
+}
+
+std::string CreateDBClusterEndpointRequest::getStandbyVSwitchId() const {
+  return standbyVSwitchId_;
+}
+
+void CreateDBClusterEndpointRequest::setStandbyVSwitchId(const std::string &standbyVSwitchId) {
+  standbyVSwitchId_ = standbyVSwitchId;
+  setParameter(std::string("StandbyVSwitchId"), standbyVSwitchId);
 }
 
 std::string CreateDBClusterEndpointRequest::getResourceOwnerAccount() const {
@@ -149,6 +185,15 @@ std::string CreateDBClusterEndpointRequest::getNodes() const {
 void CreateDBClusterEndpointRequest::setNodes(const std::string &nodes) {
   nodes_ = nodes;
   setParameter(std::string("Nodes"), nodes);
+}
+
+std::string CreateDBClusterEndpointRequest::getSccMode() const {
+  return sccMode_;
+}
+
+void CreateDBClusterEndpointRequest::setSccMode(const std::string &sccMode) {
+  sccMode_ = sccMode;
+  setParameter(std::string("SccMode"), sccMode);
 }
 
 std::string CreateDBClusterEndpointRequest::getVPCId() const {

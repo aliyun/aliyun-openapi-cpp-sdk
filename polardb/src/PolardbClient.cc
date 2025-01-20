@@ -51,6 +51,42 @@ PolardbClient::PolardbClient(const std::string & accessKeyId, const std::string 
 PolardbClient::~PolardbClient()
 {}
 
+PolardbClient::CancelActiveOperationTasksOutcome PolardbClient::cancelActiveOperationTasks(const CancelActiveOperationTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelActiveOperationTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelActiveOperationTasksOutcome(CancelActiveOperationTasksResult(outcome.result()));
+	else
+		return CancelActiveOperationTasksOutcome(outcome.error());
+}
+
+void PolardbClient::cancelActiveOperationTasksAsync(const CancelActiveOperationTasksRequest& request, const CancelActiveOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelActiveOperationTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::CancelActiveOperationTasksOutcomeCallable PolardbClient::cancelActiveOperationTasksCallable(const CancelActiveOperationTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelActiveOperationTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelActiveOperationTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::CancelScheduleTasksOutcome PolardbClient::cancelScheduleTasks(const CancelScheduleTasksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +369,42 @@ PolardbClient::CreateAccountOutcomeCallable PolardbClient::createAccountCallable
 			[this, request]()
 			{
 			return this->createAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::CreateActivationCodeOutcome PolardbClient::createActivationCode(const CreateActivationCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateActivationCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateActivationCodeOutcome(CreateActivationCodeResult(outcome.result()));
+	else
+		return CreateActivationCodeOutcome(outcome.error());
+}
+
+void PolardbClient::createActivationCodeAsync(const CreateActivationCodeRequest& request, const CreateActivationCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createActivationCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::CreateActivationCodeOutcomeCallable PolardbClient::createActivationCodeCallable(const CreateActivationCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateActivationCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->createActivationCode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -693,6 +765,42 @@ PolardbClient::CreateGlobalSecurityIPGroupOutcomeCallable PolardbClient::createG
 			[this, request]()
 			{
 			return this->createGlobalSecurityIPGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::CreateOrGetVirtualLicenseOrderOutcome PolardbClient::createOrGetVirtualLicenseOrder(const CreateOrGetVirtualLicenseOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateOrGetVirtualLicenseOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateOrGetVirtualLicenseOrderOutcome(CreateOrGetVirtualLicenseOrderResult(outcome.result()));
+	else
+		return CreateOrGetVirtualLicenseOrderOutcome(outcome.error());
+}
+
+void PolardbClient::createOrGetVirtualLicenseOrderAsync(const CreateOrGetVirtualLicenseOrderRequest& request, const CreateOrGetVirtualLicenseOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createOrGetVirtualLicenseOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::CreateOrGetVirtualLicenseOrderOutcomeCallable PolardbClient::createOrGetVirtualLicenseOrderCallable(const CreateOrGetVirtualLicenseOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateOrGetVirtualLicenseOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->createOrGetVirtualLicenseOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1305,6 +1413,114 @@ PolardbClient::DescribeAccountsOutcomeCallable PolardbClient::describeAccountsCa
 			[this, request]()
 			{
 			return this->describeAccounts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeActivationCodeDetailsOutcome PolardbClient::describeActivationCodeDetails(const DescribeActivationCodeDetailsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeActivationCodeDetailsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeActivationCodeDetailsOutcome(DescribeActivationCodeDetailsResult(outcome.result()));
+	else
+		return DescribeActivationCodeDetailsOutcome(outcome.error());
+}
+
+void PolardbClient::describeActivationCodeDetailsAsync(const DescribeActivationCodeDetailsRequest& request, const DescribeActivationCodeDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeActivationCodeDetails(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeActivationCodeDetailsOutcomeCallable PolardbClient::describeActivationCodeDetailsCallable(const DescribeActivationCodeDetailsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeActivationCodeDetailsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeActivationCodeDetails(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeActivationCodesOutcome PolardbClient::describeActivationCodes(const DescribeActivationCodesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeActivationCodesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeActivationCodesOutcome(DescribeActivationCodesResult(outcome.result()));
+	else
+		return DescribeActivationCodesOutcome(outcome.error());
+}
+
+void PolardbClient::describeActivationCodesAsync(const DescribeActivationCodesRequest& request, const DescribeActivationCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeActivationCodes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeActivationCodesOutcomeCallable PolardbClient::describeActivationCodesCallable(const DescribeActivationCodesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeActivationCodesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeActivationCodes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeActiveOperationTasksOutcome PolardbClient::describeActiveOperationTasks(const DescribeActiveOperationTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeActiveOperationTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeActiveOperationTasksOutcome(DescribeActiveOperationTasksResult(outcome.result()));
+	else
+		return DescribeActiveOperationTasksOutcome(outcome.error());
+}
+
+void PolardbClient::describeActiveOperationTasksAsync(const DescribeActiveOperationTasksRequest& request, const DescribeActiveOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeActiveOperationTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeActiveOperationTasksOutcomeCallable PolardbClient::describeActiveOperationTasksCallable(const DescribeActiveOperationTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeActiveOperationTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeActiveOperationTasks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2571,6 +2787,78 @@ PolardbClient::DescribeGlobalSecurityIPGroupRelationOutcomeCallable PolardbClien
 	return task->get_future();
 }
 
+PolardbClient::DescribeLicenseOrderDetailsOutcome PolardbClient::describeLicenseOrderDetails(const DescribeLicenseOrderDetailsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLicenseOrderDetailsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLicenseOrderDetailsOutcome(DescribeLicenseOrderDetailsResult(outcome.result()));
+	else
+		return DescribeLicenseOrderDetailsOutcome(outcome.error());
+}
+
+void PolardbClient::describeLicenseOrderDetailsAsync(const DescribeLicenseOrderDetailsRequest& request, const DescribeLicenseOrderDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLicenseOrderDetails(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeLicenseOrderDetailsOutcomeCallable PolardbClient::describeLicenseOrderDetailsCallable(const DescribeLicenseOrderDetailsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLicenseOrderDetailsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLicenseOrderDetails(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeLicenseOrdersOutcome PolardbClient::describeLicenseOrders(const DescribeLicenseOrdersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLicenseOrdersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLicenseOrdersOutcome(DescribeLicenseOrdersResult(outcome.result()));
+	else
+		return DescribeLicenseOrdersOutcome(outcome.error());
+}
+
+void PolardbClient::describeLicenseOrdersAsync(const DescribeLicenseOrdersRequest& request, const DescribeLicenseOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLicenseOrders(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeLicenseOrdersOutcomeCallable PolardbClient::describeLicenseOrdersCallable(const DescribeLicenseOrdersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLicenseOrdersOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLicenseOrders(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DescribeLogBackupPolicyOutcome PolardbClient::describeLogBackupPolicy(const DescribeLogBackupPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3507,6 +3795,42 @@ PolardbClient::ModifyAccountPasswordOutcomeCallable PolardbClient::modifyAccount
 	return task->get_future();
 }
 
+PolardbClient::ModifyActiveOperationTasksOutcome PolardbClient::modifyActiveOperationTasks(const ModifyActiveOperationTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyActiveOperationTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyActiveOperationTasksOutcome(ModifyActiveOperationTasksResult(outcome.result()));
+	else
+		return ModifyActiveOperationTasksOutcome(outcome.error());
+}
+
+void PolardbClient::modifyActiveOperationTasksAsync(const ModifyActiveOperationTasksRequest& request, const ModifyActiveOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyActiveOperationTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::ModifyActiveOperationTasksOutcomeCallable PolardbClient::modifyActiveOperationTasksCallable(const ModifyActiveOperationTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyActiveOperationTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyActiveOperationTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::ModifyAutoRenewAttributeOutcome PolardbClient::modifyAutoRenewAttribute(const ModifyAutoRenewAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4113,6 +4437,42 @@ PolardbClient::ModifyDBClusterServerlessConfOutcomeCallable PolardbClient::modif
 			[this, request]()
 			{
 			return this->modifyDBClusterServerlessConf(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::ModifyDBClusterStoragePerformanceOutcome PolardbClient::modifyDBClusterStoragePerformance(const ModifyDBClusterStoragePerformanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDBClusterStoragePerformanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDBClusterStoragePerformanceOutcome(ModifyDBClusterStoragePerformanceResult(outcome.result()));
+	else
+		return ModifyDBClusterStoragePerformanceOutcome(outcome.error());
+}
+
+void PolardbClient::modifyDBClusterStoragePerformanceAsync(const ModifyDBClusterStoragePerformanceRequest& request, const ModifyDBClusterStoragePerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDBClusterStoragePerformance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::ModifyDBClusterStoragePerformanceOutcomeCallable PolardbClient::modifyDBClusterStoragePerformanceCallable(const ModifyDBClusterStoragePerformanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDBClusterStoragePerformanceOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDBClusterStoragePerformance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4839,6 +5199,42 @@ PolardbClient::ResetGlobalDatabaseNetworkOutcomeCallable PolardbClient::resetGlo
 	return task->get_future();
 }
 
+PolardbClient::RestartDBLinkOutcome PolardbClient::restartDBLink(const RestartDBLinkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RestartDBLinkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RestartDBLinkOutcome(RestartDBLinkResult(outcome.result()));
+	else
+		return RestartDBLinkOutcome(outcome.error());
+}
+
+void PolardbClient::restartDBLinkAsync(const RestartDBLinkRequest& request, const RestartDBLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, restartDBLink(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::RestartDBLinkOutcomeCallable PolardbClient::restartDBLinkCallable(const RestartDBLinkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RestartDBLinkOutcome()>>(
+			[this, request]()
+			{
+			return this->restartDBLink(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::RestartDBNodeOutcome PolardbClient::restartDBNode(const RestartDBNodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5121,42 +5517,6 @@ PolardbClient::UntagResourcesOutcomeCallable PolardbClient::untagResourcesCallab
 			[this, request]()
 			{
 			return this->untagResources(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PolardbClient::UpgradeDBClusterMinorVersionOutcome PolardbClient::upgradeDBClusterMinorVersion(const UpgradeDBClusterMinorVersionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpgradeDBClusterMinorVersionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpgradeDBClusterMinorVersionOutcome(UpgradeDBClusterMinorVersionResult(outcome.result()));
-	else
-		return UpgradeDBClusterMinorVersionOutcome(outcome.error());
-}
-
-void PolardbClient::upgradeDBClusterMinorVersionAsync(const UpgradeDBClusterMinorVersionRequest& request, const UpgradeDBClusterMinorVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, upgradeDBClusterMinorVersion(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PolardbClient::UpgradeDBClusterMinorVersionOutcomeCallable PolardbClient::upgradeDBClusterMinorVersionCallable(const UpgradeDBClusterMinorVersionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpgradeDBClusterMinorVersionOutcome()>>(
-			[this, request]()
-			{
-			return this->upgradeDBClusterMinorVersion(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

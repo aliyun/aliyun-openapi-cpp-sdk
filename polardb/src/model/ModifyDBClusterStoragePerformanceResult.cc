@@ -14,31 +14,45 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/polardb/model/UpgradeDBClusterMinorVersionResult.h>
+#include <alibabacloud/polardb/model/ModifyDBClusterStoragePerformanceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Polardb;
 using namespace AlibabaCloud::Polardb::Model;
 
-UpgradeDBClusterMinorVersionResult::UpgradeDBClusterMinorVersionResult() :
+ModifyDBClusterStoragePerformanceResult::ModifyDBClusterStoragePerformanceResult() :
 	ServiceResult()
 {}
 
-UpgradeDBClusterMinorVersionResult::UpgradeDBClusterMinorVersionResult(const std::string &payload) :
+ModifyDBClusterStoragePerformanceResult::ModifyDBClusterStoragePerformanceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-UpgradeDBClusterMinorVersionResult::~UpgradeDBClusterMinorVersionResult()
+ModifyDBClusterStoragePerformanceResult::~ModifyDBClusterStoragePerformanceResult()
 {}
 
-void UpgradeDBClusterMinorVersionResult::parse(const std::string &payload)
+void ModifyDBClusterStoragePerformanceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = value["OrderId"].asString();
 
+}
+
+std::string ModifyDBClusterStoragePerformanceResult::getDBClusterId()const
+{
+	return dBClusterId_;
+}
+
+std::string ModifyDBClusterStoragePerformanceResult::getOrderId()const
+{
+	return orderId_;
 }
 

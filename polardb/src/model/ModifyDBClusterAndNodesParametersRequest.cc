@@ -61,6 +61,15 @@ void ModifyDBClusterAndNodesParametersRequest::setAccessKeyId(const std::string 
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+bool ModifyDBClusterAndNodesParametersRequest::getClearBinlog() const {
+  return clearBinlog_;
+}
+
+void ModifyDBClusterAndNodesParametersRequest::setClearBinlog(bool clearBinlog) {
+  clearBinlog_ = clearBinlog;
+  setParameter(std::string("ClearBinlog"), clearBinlog ? "true" : "false");
+}
+
 std::string ModifyDBClusterAndNodesParametersRequest::getParameterGroupId() const {
   return parameterGroupId_;
 }
@@ -113,6 +122,15 @@ std::string ModifyDBClusterAndNodesParametersRequest::getPlannedStartTime() cons
 void ModifyDBClusterAndNodesParametersRequest::setPlannedStartTime(const std::string &plannedStartTime) {
   plannedStartTime_ = plannedStartTime;
   setParameter(std::string("PlannedStartTime"), plannedStartTime);
+}
+
+std::string ModifyDBClusterAndNodesParametersRequest::getStandbyClusterIdListNeedToSync() const {
+  return standbyClusterIdListNeedToSync_;
+}
+
+void ModifyDBClusterAndNodesParametersRequest::setStandbyClusterIdListNeedToSync(const std::string &standbyClusterIdListNeedToSync) {
+  standbyClusterIdListNeedToSync_ = standbyClusterIdListNeedToSync;
+  setParameter(std::string("StandbyClusterIdListNeedToSync"), standbyClusterIdListNeedToSync);
 }
 
 std::string ModifyDBClusterAndNodesParametersRequest::getParameters() const {

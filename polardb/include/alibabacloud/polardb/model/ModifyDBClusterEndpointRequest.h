@@ -36,10 +36,14 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getDBEndpointId() const;
 	void setDBEndpointId(const std::string &dBEndpointId);
+	std::string getPolarSccWaitTimeout() const;
+	void setPolarSccWaitTimeout(const std::string &polarSccWaitTimeout);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getReadWriteMode() const;
 	void setReadWriteMode(const std::string &readWriteMode);
+	std::string getPolarSccTimeoutAction() const;
+	void setPolarSccTimeoutAction(const std::string &polarSccTimeoutAction);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getDBClusterId() const;
@@ -54,13 +58,17 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getNodes() const;
 	void setNodes(const std::string &nodes);
+	std::string getSccMode() const;
+	void setSccMode(const std::string &sccMode);
 
 private:
 	std::string autoAddNewNodes_;
 	long resourceOwnerId_;
 	std::string dBEndpointId_;
+	std::string polarSccWaitTimeout_;
 	std::string accessKeyId_;
 	std::string readWriteMode_;
+	std::string polarSccTimeoutAction_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;
@@ -68,6 +76,7 @@ private:
 	std::string dBEndpointDescription_;
 	long ownerId_;
 	std::string nodes_;
+	std::string sccMode_;
 };
 } // namespace Model
 } // namespace Polardb

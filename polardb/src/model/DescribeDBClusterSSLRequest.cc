@@ -34,6 +34,15 @@ void DescribeDBClusterSSLRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeDBClusterSSLRequest::getEndpointId() const {
+  return endpointId_;
+}
+
+void DescribeDBClusterSSLRequest::setEndpointId(const std::string &endpointId) {
+  endpointId_ = endpointId;
+  setParameter(std::string("EndpointId"), endpointId);
+}
+
 std::string DescribeDBClusterSSLRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

@@ -44,6 +44,8 @@ public:
 	void setEncryptionKey(const std::string &encryptionKey);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getEnableAutomaticRotation() const;
+	void setEnableAutomaticRotation(const std::string &enableAutomaticRotation);
 	std::string getRoleArn() const;
 	void setRoleArn(const std::string &roleArn);
 	std::string getEncryptNewTables() const;
@@ -59,6 +61,7 @@ private:
 	std::string ownerAccount_;
 	std::string encryptionKey_;
 	long ownerId_;
+	std::string enableAutomaticRotation_;
 	std::string roleArn_;
 	std::string encryptNewTables_;
 	std::string tDEStatus_;

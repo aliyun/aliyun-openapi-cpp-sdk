@@ -61,12 +61,17 @@ void DescribeDBClusterServerlessConfResult::parse(const std::string &payload)
 		switchs_ = value["Switchs"].asString();
 	if(!value["DBMaxscaleId"].isNull())
 		dBMaxscaleId_ = value["DBMaxscaleId"].asString();
+	if(!value["ServerlessRuleMode"].isNull())
+		serverlessRuleMode_ = value["ServerlessRuleMode"].asString();
+	if(!value["ServerlessRuleCpuEnlargeThreshold"].isNull())
+		serverlessRuleCpuEnlargeThreshold_ = value["ServerlessRuleCpuEnlargeThreshold"].asString();
+	if(!value["ServerlessRuleCpuShrinkThreshold"].isNull())
+		serverlessRuleCpuShrinkThreshold_ = value["ServerlessRuleCpuShrinkThreshold"].asString();
+	if(!value["TraditionalScaleMaxThreshold"].isNull())
+		traditionalScaleMaxThreshold_ = value["TraditionalScaleMaxThreshold"].asString();
+	if(!value["AgileScaleMax"].isNull())
+		agileScaleMax_ = value["AgileScaleMax"].asString();
 
-}
-
-std::string DescribeDBClusterServerlessConfResult::getScaleRoNumMin()const
-{
-	return scaleRoNumMin_;
 }
 
 std::string DescribeDBClusterServerlessConfResult::getDBMaxscaleId()const
@@ -74,19 +79,9 @@ std::string DescribeDBClusterServerlessConfResult::getDBMaxscaleId()const
 	return dBMaxscaleId_;
 }
 
-std::string DescribeDBClusterServerlessConfResult::getAllowShutDown()const
-{
-	return allowShutDown_;
-}
-
 std::string DescribeDBClusterServerlessConfResult::getScaleApRoNumMin()const
 {
 	return scaleApRoNumMin_;
-}
-
-std::string DescribeDBClusterServerlessConfResult::getScaleApRoNumMax()const
-{
-	return scaleApRoNumMax_;
 }
 
 std::string DescribeDBClusterServerlessConfResult::getScaleRoNumMax()const
@@ -94,14 +89,14 @@ std::string DescribeDBClusterServerlessConfResult::getScaleRoNumMax()const
 	return scaleRoNumMax_;
 }
 
+std::string DescribeDBClusterServerlessConfResult::getTraditionalScaleMaxThreshold()const
+{
+	return traditionalScaleMaxThreshold_;
+}
+
 std::string DescribeDBClusterServerlessConfResult::getDBClusterId()const
 {
 	return dBClusterId_;
-}
-
-std::string DescribeDBClusterServerlessConfResult::getScaleMin()const
-{
-	return scaleMin_;
 }
 
 std::string DescribeDBClusterServerlessConfResult::getScaleMax()const
@@ -109,13 +104,53 @@ std::string DescribeDBClusterServerlessConfResult::getScaleMax()const
 	return scaleMax_;
 }
 
-std::string DescribeDBClusterServerlessConfResult::getSecondsUntilAutoPause()const
-{
-	return secondsUntilAutoPause_;
-}
-
 std::string DescribeDBClusterServerlessConfResult::getSwitchs()const
 {
 	return switchs_;
+}
+
+std::string DescribeDBClusterServerlessConfResult::getAgileScaleMax()const
+{
+	return agileScaleMax_;
+}
+
+std::string DescribeDBClusterServerlessConfResult::getServerlessRuleCpuShrinkThreshold()const
+{
+	return serverlessRuleCpuShrinkThreshold_;
+}
+
+std::string DescribeDBClusterServerlessConfResult::getScaleRoNumMin()const
+{
+	return scaleRoNumMin_;
+}
+
+std::string DescribeDBClusterServerlessConfResult::getServerlessRuleCpuEnlargeThreshold()const
+{
+	return serverlessRuleCpuEnlargeThreshold_;
+}
+
+std::string DescribeDBClusterServerlessConfResult::getAllowShutDown()const
+{
+	return allowShutDown_;
+}
+
+std::string DescribeDBClusterServerlessConfResult::getScaleApRoNumMax()const
+{
+	return scaleApRoNumMax_;
+}
+
+std::string DescribeDBClusterServerlessConfResult::getScaleMin()const
+{
+	return scaleMin_;
+}
+
+std::string DescribeDBClusterServerlessConfResult::getServerlessRuleMode()const
+{
+	return serverlessRuleMode_;
+}
+
+std::string DescribeDBClusterServerlessConfResult::getSecondsUntilAutoPause()const
+{
+	return secondsUntilAutoPause_;
 }
 

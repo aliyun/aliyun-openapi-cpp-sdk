@@ -88,6 +88,15 @@ void ModifyDBNodesClassRequest::setOwnerAccount(const std::string &ownerAccount)
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+std::string ModifyDBNodesClassRequest::getPlannedFlashingOffTime() const {
+  return plannedFlashingOffTime_;
+}
+
+void ModifyDBNodesClassRequest::setPlannedFlashingOffTime(const std::string &plannedFlashingOffTime) {
+  plannedFlashingOffTime_ = plannedFlashingOffTime;
+  setParameter(std::string("PlannedFlashingOffTime"), plannedFlashingOffTime);
+}
+
 long ModifyDBNodesClassRequest::getOwnerId() const {
   return ownerId_;
 }

@@ -39,6 +39,16 @@ void DescribeDBClusterAccessWhitelistResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allDBClusterSecurityGroupsNode = value["DBClusterSecurityGroups"]["DBClusterSecurityGroup"];
+	for (auto valueDBClusterSecurityGroupsDBClusterSecurityGroup : allDBClusterSecurityGroupsNode)
+	{
+		DBClusterSecurityGroup dBClusterSecurityGroupsObject;
+		if(!valueDBClusterSecurityGroupsDBClusterSecurityGroup["SecurityGroupId"].isNull())
+			dBClusterSecurityGroupsObject.securityGroupId = valueDBClusterSecurityGroupsDBClusterSecurityGroup["SecurityGroupId"].asString();
+		if(!valueDBClusterSecurityGroupsDBClusterSecurityGroup["SecurityGroupName"].isNull())
+			dBClusterSecurityGroupsObject.securityGroupName = valueDBClusterSecurityGroupsDBClusterSecurityGroup["SecurityGroupName"].asString();
+		dBClusterSecurityGroups_.push_back(dBClusterSecurityGroupsObject);
+	}
 	auto allItemsNode = value["Items"]["DBClusterIPArray"];
 	for (auto valueItemsDBClusterIPArray : allItemsNode)
 	{
@@ -50,16 +60,6 @@ void DescribeDBClusterAccessWhitelistResult::parse(const std::string &payload)
 		if(!valueItemsDBClusterIPArray["SecurityIps"].isNull())
 			itemsObject.securityIps = valueItemsDBClusterIPArray["SecurityIps"].asString();
 		items_.push_back(itemsObject);
-	}
-	auto allDBClusterSecurityGroupsNode = value["DBClusterSecurityGroups"]["DBClusterSecurityGroup"];
-	for (auto valueDBClusterSecurityGroupsDBClusterSecurityGroup : allDBClusterSecurityGroupsNode)
-	{
-		DBClusterSecurityGroup dBClusterSecurityGroupsObject;
-		if(!valueDBClusterSecurityGroupsDBClusterSecurityGroup["SecurityGroupId"].isNull())
-			dBClusterSecurityGroupsObject.securityGroupId = valueDBClusterSecurityGroupsDBClusterSecurityGroup["SecurityGroupId"].asString();
-		if(!valueDBClusterSecurityGroupsDBClusterSecurityGroup["SecurityGroupName"].isNull())
-			dBClusterSecurityGroupsObject.securityGroupName = valueDBClusterSecurityGroupsDBClusterSecurityGroup["SecurityGroupName"].asString();
-		dBClusterSecurityGroups_.push_back(dBClusterSecurityGroupsObject);
 	}
 
 }

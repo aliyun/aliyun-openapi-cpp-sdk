@@ -49,15 +49,19 @@ namespace AlibabaCloud
 				};
 				struct ParametersItem
 				{
-					std::string rdsParameterDescription;
 					std::string distParameterValue;
-					std::string rdsParameterOptional;
 					std::string rdsParameterValue;
 					std::string distParameterDescription;
-					std::string distParameterOptional;
-					std::string rdsParameterName;
+					std::string isPolarDBKey;
+					std::string isRdsKey;
 					std::string distParameterName;
 					std::string isEqual;
+					std::string rdsParameterDescription;
+					std::string isInstanceRdsKey;
+					std::string rdsParameterOptional;
+					std::string distParameterOptional;
+					std::string isInstancePolarDBKey;
+					std::string rdsParameterName;
 				};
 
 

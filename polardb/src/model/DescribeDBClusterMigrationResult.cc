@@ -103,6 +103,46 @@ void DescribeDBClusterMigrationResult::parse(const std::string &payload)
 		}
 		rdsEndpointList_.push_back(rdsEndpointListObject);
 	}
+	auto allSrcDtsJobListNode = value["SrcDtsJobList"]["SrcDtsJob"];
+	for (auto valueSrcDtsJobListSrcDtsJob : allSrcDtsJobListNode)
+	{
+		SrcDtsJob srcDtsJobListObject;
+		if(!valueSrcDtsJobListSrcDtsJob["DtsJobId"].isNull())
+			srcDtsJobListObject.dtsJobId = valueSrcDtsJobListSrcDtsJob["DtsJobId"].asString();
+		if(!valueSrcDtsJobListSrcDtsJob["DtsJobName"].isNull())
+			srcDtsJobListObject.dtsJobName = valueSrcDtsJobListSrcDtsJob["DtsJobName"].asString();
+		if(!valueSrcDtsJobListSrcDtsJob["DtsInstanceID"].isNull())
+			srcDtsJobListObject.dtsInstanceID = valueSrcDtsJobListSrcDtsJob["DtsInstanceID"].asString();
+		if(!valueSrcDtsJobListSrcDtsJob["DtsJobDirection"].isNull())
+			srcDtsJobListObject.dtsJobDirection = valueSrcDtsJobListSrcDtsJob["DtsJobDirection"].asString();
+		if(!valueSrcDtsJobListSrcDtsJob["Status"].isNull())
+			srcDtsJobListObject.status = valueSrcDtsJobListSrcDtsJob["Status"].asString();
+		if(!valueSrcDtsJobListSrcDtsJob["SourceEndpoint"].isNull())
+			srcDtsJobListObject.sourceEndpoint = valueSrcDtsJobListSrcDtsJob["SourceEndpoint"].asString();
+		if(!valueSrcDtsJobListSrcDtsJob["DestinationEndpoint"].isNull())
+			srcDtsJobListObject.destinationEndpoint = valueSrcDtsJobListSrcDtsJob["DestinationEndpoint"].asString();
+		srcDtsJobList_.push_back(srcDtsJobListObject);
+	}
+	auto allDstDtsJobListNode = value["DstDtsJobList"]["DstDtsJob"];
+	for (auto valueDstDtsJobListDstDtsJob : allDstDtsJobListNode)
+	{
+		DstDtsJob dstDtsJobListObject;
+		if(!valueDstDtsJobListDstDtsJob["DtsJobId"].isNull())
+			dstDtsJobListObject.dtsJobId = valueDstDtsJobListDstDtsJob["DtsJobId"].asString();
+		if(!valueDstDtsJobListDstDtsJob["DtsJobName"].isNull())
+			dstDtsJobListObject.dtsJobName = valueDstDtsJobListDstDtsJob["DtsJobName"].asString();
+		if(!valueDstDtsJobListDstDtsJob["DtsInstanceId"].isNull())
+			dstDtsJobListObject.dtsInstanceId = valueDstDtsJobListDstDtsJob["DtsInstanceId"].asString();
+		if(!valueDstDtsJobListDstDtsJob["DtsJobDirection"].isNull())
+			dstDtsJobListObject.dtsJobDirection = valueDstDtsJobListDstDtsJob["DtsJobDirection"].asString();
+		if(!valueDstDtsJobListDstDtsJob["Status"].isNull())
+			dstDtsJobListObject.status = valueDstDtsJobListDstDtsJob["Status"].asString();
+		if(!valueDstDtsJobListDstDtsJob["SourceEndpoint"].isNull())
+			dstDtsJobListObject.sourceEndpoint = valueDstDtsJobListDstDtsJob["SourceEndpoint"].asString();
+		if(!valueDstDtsJobListDstDtsJob["DestinationEndpoint"].isNull())
+			dstDtsJobListObject.destinationEndpoint = valueDstDtsJobListDstDtsJob["DestinationEndpoint"].asString();
+		dstDtsJobList_.push_back(dstDtsJobListObject);
+	}
 	if(!value["Comment"].isNull())
 		comment_ = value["Comment"].asString();
 	if(!value["ExpiredTime"].isNull())
@@ -125,12 +165,32 @@ void DescribeDBClusterMigrationResult::parse(const std::string &payload)
 		dtsInstanceId_ = value["DtsInstanceId"].asString();
 	if(!value["SrcDbType"].isNull())
 		srcDbType_ = value["SrcDbType"].asString();
+	if(!value["MigrationSwitch"].isNull())
+		migrationSwitch_ = value["MigrationSwitch"].asString();
+	if(!value["MigrationDtsJobEndpoint"].isNull())
+		migrationDtsJobEndpoint_ = value["MigrationDtsJobEndpoint"].asString();
+	if(!value["DstBinlogPosition"].isNull())
+		dstBinlogPosition_ = value["DstBinlogPosition"].asString();
+	if(!value["SrcBinlogPosition"].isNull())
+		srcBinlogPosition_ = value["SrcBinlogPosition"].asString();
+	if(!value["MigrationProgress"].isNull())
+		migrationProgress_ = value["MigrationProgress"].asString();
 
 }
 
 std::string DescribeDBClusterMigrationResult::getComment()const
 {
 	return comment_;
+}
+
+std::string DescribeDBClusterMigrationResult::getSrcBinlogPosition()const
+{
+	return srcBinlogPosition_;
+}
+
+std::string DescribeDBClusterMigrationResult::getMigrationDtsJobEndpoint()const
+{
+	return migrationDtsJobEndpoint_;
 }
 
 std::string DescribeDBClusterMigrationResult::getDBClusterId()const
@@ -153,6 +213,11 @@ std::string DescribeDBClusterMigrationResult::getDBClusterReadWriteMode()const
 	return dBClusterReadWriteMode_;
 }
 
+std::string DescribeDBClusterMigrationResult::getMigrationProgress()const
+{
+	return migrationProgress_;
+}
+
 std::string DescribeDBClusterMigrationResult::getMigrationStatus()const
 {
 	return migrationStatus_;
@@ -168,14 +233,29 @@ std::vector<DescribeDBClusterMigrationResult::RdsEndpoint> DescribeDBClusterMigr
 	return rdsEndpointList_;
 }
 
+std::vector<DescribeDBClusterMigrationResult::SrcDtsJob> DescribeDBClusterMigrationResult::getSrcDtsJobList()const
+{
+	return srcDtsJobList_;
+}
+
 std::vector<DescribeDBClusterMigrationResult::DBClusterEndpoint> DescribeDBClusterMigrationResult::getDBClusterEndpointList()const
 {
 	return dBClusterEndpointList_;
 }
 
+std::string DescribeDBClusterMigrationResult::getDstBinlogPosition()const
+{
+	return dstBinlogPosition_;
+}
+
 std::string DescribeDBClusterMigrationResult::getExpiredTime()const
 {
 	return expiredTime_;
+}
+
+std::string DescribeDBClusterMigrationResult::getMigrationSwitch()const
+{
+	return migrationSwitch_;
 }
 
 std::string DescribeDBClusterMigrationResult::getTopologies()const
@@ -186,6 +266,11 @@ std::string DescribeDBClusterMigrationResult::getTopologies()const
 std::string DescribeDBClusterMigrationResult::getRdsReadWriteMode()const
 {
 	return rdsReadWriteMode_;
+}
+
+std::vector<DescribeDBClusterMigrationResult::DstDtsJob> DescribeDBClusterMigrationResult::getDstDtsJobList()const
+{
+	return dstDtsJobList_;
 }
 
 int DescribeDBClusterMigrationResult::getDelayedSeconds()const

@@ -88,6 +88,15 @@ void ModifyDBClusterTDERequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string ModifyDBClusterTDERequest::getEnableAutomaticRotation() const {
+  return enableAutomaticRotation_;
+}
+
+void ModifyDBClusterTDERequest::setEnableAutomaticRotation(const std::string &enableAutomaticRotation) {
+  enableAutomaticRotation_ = enableAutomaticRotation;
+  setParameter(std::string("EnableAutomaticRotation"), enableAutomaticRotation);
+}
+
 std::string ModifyDBClusterTDERequest::getRoleArn() const {
   return roleArn_;
 }

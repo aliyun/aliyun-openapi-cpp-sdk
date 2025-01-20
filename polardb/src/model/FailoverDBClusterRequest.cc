@@ -88,6 +88,15 @@ void FailoverDBClusterRequest::setOwnerAccount(const std::string &ownerAccount) 
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+std::string FailoverDBClusterRequest::getTargetZoneType() const {
+  return targetZoneType_;
+}
+
+void FailoverDBClusterRequest::setTargetZoneType(const std::string &targetZoneType) {
+  targetZoneType_ = targetZoneType;
+  setParameter(std::string("TargetZoneType"), targetZoneType);
+}
+
 long FailoverDBClusterRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -104,5 +113,14 @@ std::string FailoverDBClusterRequest::getTargetDBNodeId() const {
 void FailoverDBClusterRequest::setTargetDBNodeId(const std::string &targetDBNodeId) {
   targetDBNodeId_ = targetDBNodeId;
   setParameter(std::string("TargetDBNodeId"), targetDBNodeId);
+}
+
+bool FailoverDBClusterRequest::getIsForce() const {
+  return isForce_;
+}
+
+void FailoverDBClusterRequest::setIsForce(bool isForce) {
+  isForce_ = isForce;
+  setParameter(std::string("IsForce"), isForce ? "true" : "false");
 }
 

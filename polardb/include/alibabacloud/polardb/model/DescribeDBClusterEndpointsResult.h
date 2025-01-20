@@ -46,15 +46,18 @@ namespace AlibabaCloud
 						std::string netType;
 					};
 					std::string dBEndpointId;
+					std::string polarSccTimeoutAction;
+					std::string dBClusterId;
+					std::string nodes;
+					std::string readWriteMode;
+					std::string dBEndpointDescription;
+					std::string polarSccWaitTimeout;
 					std::string nodeWithRoles;
 					std::string autoAddNewNodes;
 					std::string endpointType;
-					std::string dBClusterId;
 					std::vector<DBEndpoint::Address> addressItems;
-					std::string nodes;
-					std::string readWriteMode;
+					std::string sccMode;
 					std::string endpointConfig;
-					std::string dBEndpointDescription;
 				};
 
 

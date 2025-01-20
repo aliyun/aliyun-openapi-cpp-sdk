@@ -52,6 +52,7 @@ namespace AlibabaCloud
 						std::string dBNodeClass;
 						int maxIOPS;
 					};
+					std::string category;
 					std::string dBClusterStatus;
 					std::string dBClusterId;
 					std::string dBClusterDescription;
@@ -64,8 +65,10 @@ namespace AlibabaCloud
 					std::string role;
 					std::string dBVersion;
 					std::vector<DBCluster::DBNode> dBNodes;
+					std::string serverlessType;
 					std::string regionId;
 					std::string expireTime;
+					std::string memberStatus;
 				};
 
 
@@ -82,6 +85,7 @@ namespace AlibabaCloud
 				std::string getDBType()const;
 				std::string getGDNDescription()const;
 				std::vector<DBCluster> getDBClusters()const;
+				std::string getGlobalDomainName()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -96,6 +100,7 @@ namespace AlibabaCloud
 				std::string dBType_;
 				std::string gDNDescription_;
 				std::vector<DBCluster> dBClusters_;
+				std::string globalDomainName_;
 
 			};
 		}
