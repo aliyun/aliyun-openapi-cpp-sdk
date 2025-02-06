@@ -43,15 +43,6 @@ void CreateEaisEiRequest::setSecurityGroupId(const std::string &securityGroupId)
   setParameter(std::string("SecurityGroupId"), securityGroupId);
 }
 
-std::string CreateEaisEiRequest::getVSwitchId() const {
-  return vSwitchId_;
-}
-
-void CreateEaisEiRequest::setVSwitchId(const std::string &vSwitchId) {
-  vSwitchId_ = vSwitchId;
-  setParameter(std::string("VSwitchId"), vSwitchId);
-}
-
 std::string CreateEaisEiRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }
@@ -59,15 +50,6 @@ std::string CreateEaisEiRequest::getResourceGroupId() const {
 void CreateEaisEiRequest::setResourceGroupId(const std::string &resourceGroupId) {
   resourceGroupId_ = resourceGroupId;
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
-}
-
-std::string CreateEaisEiRequest::getInstanceName() const {
-  return instanceName_;
-}
-
-void CreateEaisEiRequest::setInstanceName(const std::string &instanceName) {
-  instanceName_ = instanceName;
-  setParameter(std::string("InstanceName"), instanceName);
 }
 
 std::string CreateEaisEiRequest::getRegionId() const {
@@ -86,5 +68,37 @@ std::string CreateEaisEiRequest::getInstanceType() const {
 void CreateEaisEiRequest::setInstanceType(const std::string &instanceType) {
   instanceType_ = instanceType;
   setParameter(std::string("InstanceType"), instanceType);
+}
+
+std::vector<CreateEaisEiRequest::Tag> CreateEaisEiRequest::getTag() const {
+  return tag_;
+}
+
+void CreateEaisEiRequest::setTag(const std::vector<CreateEaisEiRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
+std::string CreateEaisEiRequest::getVSwitchId() const {
+  return vSwitchId_;
+}
+
+void CreateEaisEiRequest::setVSwitchId(const std::string &vSwitchId) {
+  vSwitchId_ = vSwitchId;
+  setParameter(std::string("VSwitchId"), vSwitchId);
+}
+
+std::string CreateEaisEiRequest::getInstanceName() const {
+  return instanceName_;
+}
+
+void CreateEaisEiRequest::setInstanceName(const std::string &instanceName) {
+  instanceName_ = instanceName;
+  setParameter(std::string("InstanceName"), instanceName);
 }
 

@@ -25,15 +25,6 @@ CreateEaiRequest::CreateEaiRequest()
 
 CreateEaiRequest::~CreateEaiRequest() {}
 
-std::string CreateEaiRequest::getImage() const {
-  return image_;
-}
-
-void CreateEaiRequest::setImage(const std::string &image) {
-  image_ = image;
-  setParameter(std::string("Image"), image);
-}
-
 std::string CreateEaiRequest::getClientToken() const {
   return clientToken_;
 }
@@ -52,15 +43,6 @@ void CreateEaiRequest::setSecurityGroupId(const std::string &securityGroupId) {
   setParameter(std::string("SecurityGroupId"), securityGroupId);
 }
 
-std::string CreateEaiRequest::getVSwitchId() const {
-  return vSwitchId_;
-}
-
-void CreateEaiRequest::setVSwitchId(const std::string &vSwitchId) {
-  vSwitchId_ = vSwitchId;
-  setParameter(std::string("VSwitchId"), vSwitchId);
-}
-
 std::string CreateEaiRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }
@@ -68,15 +50,6 @@ std::string CreateEaiRequest::getResourceGroupId() const {
 void CreateEaiRequest::setResourceGroupId(const std::string &resourceGroupId) {
   resourceGroupId_ = resourceGroupId;
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
-}
-
-std::string CreateEaiRequest::getInstanceName() const {
-  return instanceName_;
-}
-
-void CreateEaiRequest::setInstanceName(const std::string &instanceName) {
-  instanceName_ = instanceName;
-  setParameter(std::string("InstanceName"), instanceName);
 }
 
 std::string CreateEaiRequest::getRegionId() const {
@@ -95,5 +68,46 @@ std::string CreateEaiRequest::getInstanceType() const {
 void CreateEaiRequest::setInstanceType(const std::string &instanceType) {
   instanceType_ = instanceType;
   setParameter(std::string("InstanceType"), instanceType);
+}
+
+std::vector<CreateEaiRequest::Tag> CreateEaiRequest::getTag() const {
+  return tag_;
+}
+
+void CreateEaiRequest::setTag(const std::vector<CreateEaiRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
+std::string CreateEaiRequest::getImage() const {
+  return image_;
+}
+
+void CreateEaiRequest::setImage(const std::string &image) {
+  image_ = image;
+  setParameter(std::string("Image"), image);
+}
+
+std::string CreateEaiRequest::getVSwitchId() const {
+  return vSwitchId_;
+}
+
+void CreateEaiRequest::setVSwitchId(const std::string &vSwitchId) {
+  vSwitchId_ = vSwitchId;
+  setParameter(std::string("VSwitchId"), vSwitchId);
+}
+
+std::string CreateEaiRequest::getInstanceName() const {
+  return instanceName_;
+}
+
+void CreateEaiRequest::setInstanceName(const std::string &instanceName) {
+  instanceName_ = instanceName;
+  setParameter(std::string("InstanceName"), instanceName);
 }
 

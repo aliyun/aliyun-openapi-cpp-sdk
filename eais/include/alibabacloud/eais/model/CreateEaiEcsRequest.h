@@ -39,6 +39,10 @@ public:
 		std::string type;
 		std::string internetMaxBandwidthIn;
 	};
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateEaiEcsRequest();
 	~CreateEaiEcsRequest();
 	std::string getClientToken() const;
@@ -47,8 +51,6 @@ public:
 	void setSecurityGroupId(const std::string &securityGroupId);
 	std::string getEaisType() const;
 	void setEaisType(const std::string &eaisType);
-	std::string getVSwitchId() const;
-	void setVSwitchId(const std::string &vSwitchId);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	Ecs getEcs() const;
@@ -57,16 +59,21 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getEaisName() const;
 	void setEaisName(const std::string &eaisName);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
+	std::string getVSwitchId() const;
+	void setVSwitchId(const std::string &vSwitchId);
 
 private:
 	std::string clientToken_;
 	std::string securityGroupId_;
 	std::string eaisType_;
-	std::string vSwitchId_;
 	std::string resourceGroupId_;
 	Ecs ecs_;
 	std::string regionId_;
 	std::string eaisName_;
+	std::vector<Tag> tag_;
+	std::string vSwitchId_;
 };
 } // namespace Model
 } // namespace Eais

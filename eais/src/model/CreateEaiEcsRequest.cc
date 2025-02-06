@@ -52,15 +52,6 @@ void CreateEaiEcsRequest::setEaisType(const std::string &eaisType) {
   setParameter(std::string("EaisType"), eaisType);
 }
 
-std::string CreateEaiEcsRequest::getVSwitchId() const {
-  return vSwitchId_;
-}
-
-void CreateEaiEcsRequest::setVSwitchId(const std::string &vSwitchId) {
-  vSwitchId_ = vSwitchId;
-  setParameter(std::string("VSwitchId"), vSwitchId);
-}
-
 std::string CreateEaiEcsRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }
@@ -103,5 +94,28 @@ std::string CreateEaiEcsRequest::getEaisName() const {
 void CreateEaiEcsRequest::setEaisName(const std::string &eaisName) {
   eaisName_ = eaisName;
   setParameter(std::string("EaisName"), eaisName);
+}
+
+std::vector<CreateEaiEcsRequest::Tag> CreateEaiEcsRequest::getTag() const {
+  return tag_;
+}
+
+void CreateEaiEcsRequest::setTag(const std::vector<CreateEaiEcsRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
+std::string CreateEaiEcsRequest::getVSwitchId() const {
+  return vSwitchId_;
+}
+
+void CreateEaiEcsRequest::setVSwitchId(const std::string &vSwitchId) {
+  vSwitchId_ = vSwitchId;
+  setParameter(std::string("VSwitchId"), vSwitchId);
 }
 

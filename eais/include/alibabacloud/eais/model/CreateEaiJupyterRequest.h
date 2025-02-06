@@ -28,6 +28,10 @@ namespace Eais {
 namespace Model {
 class ALIBABACLOUD_EAIS_EXPORT CreateEaiJupyterRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	struct EnvironmentVar {
 		std::string value;
 		std::string key;
@@ -40,26 +44,29 @@ public:
 	void setSecurityGroupId(const std::string &securityGroupId);
 	std::string getEaisType() const;
 	void setEaisType(const std::string &eaisType);
-	std::string getVSwitchId() const;
-	void setVSwitchId(const std::string &vSwitchId);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::vector<EnvironmentVar> getEnvironmentVar() const;
-	void setEnvironmentVar(const std::vector<EnvironmentVar> &environmentVar);
 	std::string getEaisName() const;
 	void setEaisName(const std::string &eaisName);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
+	std::string getVSwitchId() const;
+	void setVSwitchId(const std::string &vSwitchId);
+	std::vector<EnvironmentVar> getEnvironmentVar() const;
+	void setEnvironmentVar(const std::vector<EnvironmentVar> &environmentVar);
 
 private:
 	std::string clientToken_;
 	std::string securityGroupId_;
 	std::string eaisType_;
-	std::string vSwitchId_;
 	std::string resourceGroupId_;
 	std::string regionId_;
-	std::vector<EnvironmentVar> environmentVar_;
 	std::string eaisName_;
+	std::vector<Tag> tag_;
+	std::string vSwitchId_;
+	std::vector<EnvironmentVar> environmentVar_;
 };
 } // namespace Model
 } // namespace Eais

@@ -42,6 +42,10 @@ public:
 		std::string name;
 		std::string type;
 	};
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateEaiEciRequest();
 	~CreateEaiEciRequest();
 	std::string getClientToken() const;
@@ -52,24 +56,27 @@ public:
 	void setEci(const Eci &eci);
 	std::string getEaisType() const;
 	void setEaisType(const std::string &eaisType);
-	std::string getVSwitchId() const;
-	void setVSwitchId(const std::string &vSwitchId);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getEaisName() const;
 	void setEaisName(const std::string &eaisName);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
+	std::string getVSwitchId() const;
+	void setVSwitchId(const std::string &vSwitchId);
 
 private:
 	std::string clientToken_;
 	std::string securityGroupId_;
 	Eci eci_;
 	std::string eaisType_;
-	std::string vSwitchId_;
 	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string eaisName_;
+	std::vector<Tag> tag_;
+	std::string vSwitchId_;
 };
 } // namespace Model
 } // namespace Eais
