@@ -79,6 +79,10 @@ void DescribePackageDeductionsResult::parse(const std::string &payload)
 		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["TotalUsedTime"].isNull())
+		totalUsedTime_ = std::stol(value["TotalUsedTime"].asString());
+	if(!value["TotalUsedCoreTime"].isNull())
+		totalUsedCoreTime_ = std::stof(value["TotalUsedCoreTime"].asString());
 
 }
 
@@ -97,8 +101,18 @@ int DescribePackageDeductionsResult::getPageSize()const
 	return pageSize_;
 }
 
+long DescribePackageDeductionsResult::getTotalUsedTime()const
+{
+	return totalUsedTime_;
+}
+
 std::vector<DescribePackageDeductionsResult::Deduction> DescribePackageDeductionsResult::getDeductions()const
 {
 	return deductions_;
+}
+
+float DescribePackageDeductionsResult::getTotalUsedCoreTime()const
+{
+	return totalUsedCoreTime_;
 }
 

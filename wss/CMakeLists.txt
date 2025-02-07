@@ -24,14 +24,18 @@ set(wss_public_header_model
 	include/alibabacloud/wss/model/DescribeDeliveryAddressRequest.h
 	include/alibabacloud/wss/model/DescribeDeliveryAddressResult.h
 	include/alibabacloud/wss/model/DescribePackageDeductionsRequest.h
-	include/alibabacloud/wss/model/DescribePackageDeductionsResult.h )
+	include/alibabacloud/wss/model/DescribePackageDeductionsResult.h
+	include/alibabacloud/wss/model/ModifyInstancePropertiesRequest.h
+	include/alibabacloud/wss/model/ModifyInstancePropertiesResult.h )
 
 set(wss_src 
 	src/WssClient.cc
 	src/model/DescribeDeliveryAddressRequest.cc
 	src/model/DescribeDeliveryAddressResult.cc
 	src/model/DescribePackageDeductionsRequest.cc
-	src/model/DescribePackageDeductionsResult.cc )
+	src/model/DescribePackageDeductionsResult.cc
+	src/model/ModifyInstancePropertiesRequest.cc
+	src/model/ModifyInstancePropertiesResult.cc )
 
 add_library(wss ${LIB_TYPE}
 	${wss_public_header}

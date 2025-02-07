@@ -25,6 +25,24 @@ DescribePackageDeductionsRequest::DescribePackageDeductionsRequest()
 
 DescribePackageDeductionsRequest::~DescribePackageDeductionsRequest() {}
 
+long DescribePackageDeductionsRequest::getEndTime() const {
+  return endTime_;
+}
+
+void DescribePackageDeductionsRequest::setEndTime(long endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), std::to_string(endTime));
+}
+
+long DescribePackageDeductionsRequest::getStartTime() const {
+  return startTime_;
+}
+
+void DescribePackageDeductionsRequest::setStartTime(long startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), std::to_string(startTime));
+}
+
 int DescribePackageDeductionsRequest::getPageNum() const {
   return pageNum_;
 }

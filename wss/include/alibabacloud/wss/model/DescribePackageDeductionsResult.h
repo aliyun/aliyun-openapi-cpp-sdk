@@ -57,7 +57,9 @@ namespace AlibabaCloud
 				long getTotalCount()const;
 				int getPageNum()const;
 				int getPageSize()const;
+				long getTotalUsedTime()const;
 				std::vector<Deduction> getDeductions()const;
+				float getTotalUsedCoreTime()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -65,7 +67,9 @@ namespace AlibabaCloud
 				long totalCount_;
 				int pageNum_;
 				int pageSize_;
+				long totalUsedTime_;
 				std::vector<Deduction> deductions_;
+				float totalUsedCoreTime_;
 
 			};
 		}

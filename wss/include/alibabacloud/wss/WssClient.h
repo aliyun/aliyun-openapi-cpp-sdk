@@ -26,6 +26,8 @@
 #include "model/DescribeDeliveryAddressResult.h"
 #include "model/DescribePackageDeductionsRequest.h"
 #include "model/DescribePackageDeductionsResult.h"
+#include "model/ModifyInstancePropertiesRequest.h"
+#include "model/ModifyInstancePropertiesResult.h"
 
 
 namespace AlibabaCloud
@@ -41,6 +43,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribePackageDeductionsResult> DescribePackageDeductionsOutcome;
 			typedef std::future<DescribePackageDeductionsOutcome> DescribePackageDeductionsOutcomeCallable;
 			typedef std::function<void(const WssClient*, const Model::DescribePackageDeductionsRequest&, const DescribePackageDeductionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackageDeductionsAsyncHandler;
+			typedef Outcome<Error, Model::ModifyInstancePropertiesResult> ModifyInstancePropertiesOutcome;
+			typedef std::future<ModifyInstancePropertiesOutcome> ModifyInstancePropertiesOutcomeCallable;
+			typedef std::function<void(const WssClient*, const Model::ModifyInstancePropertiesRequest&, const ModifyInstancePropertiesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancePropertiesAsyncHandler;
 
 			WssClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			WssClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -52,6 +57,9 @@ namespace AlibabaCloud
 			DescribePackageDeductionsOutcome describePackageDeductions(const Model::DescribePackageDeductionsRequest &request)const;
 			void describePackageDeductionsAsync(const Model::DescribePackageDeductionsRequest& request, const DescribePackageDeductionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePackageDeductionsOutcomeCallable describePackageDeductionsCallable(const Model::DescribePackageDeductionsRequest& request) const;
+			ModifyInstancePropertiesOutcome modifyInstanceProperties(const Model::ModifyInstancePropertiesRequest &request)const;
+			void modifyInstancePropertiesAsync(const Model::ModifyInstancePropertiesRequest& request, const ModifyInstancePropertiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyInstancePropertiesOutcomeCallable modifyInstancePropertiesCallable(const Model::ModifyInstancePropertiesRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

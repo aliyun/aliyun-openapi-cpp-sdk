@@ -123,3 +123,39 @@ WssClient::DescribePackageDeductionsOutcomeCallable WssClient::describePackageDe
 	return task->get_future();
 }
 
+WssClient::ModifyInstancePropertiesOutcome WssClient::modifyInstanceProperties(const ModifyInstancePropertiesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInstancePropertiesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInstancePropertiesOutcome(ModifyInstancePropertiesResult(outcome.result()));
+	else
+		return ModifyInstancePropertiesOutcome(outcome.error());
+}
+
+void WssClient::modifyInstancePropertiesAsync(const ModifyInstancePropertiesRequest& request, const ModifyInstancePropertiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInstanceProperties(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WssClient::ModifyInstancePropertiesOutcomeCallable WssClient::modifyInstancePropertiesCallable(const ModifyInstancePropertiesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInstancePropertiesOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInstanceProperties(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+

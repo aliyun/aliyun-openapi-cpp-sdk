@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_WSS_MODEL_DESCRIBEPACKAGEDEDUCTIONSREQUEST_H_
-#define ALIBABACLOUD_WSS_MODEL_DESCRIBEPACKAGEDEDUCTIONSREQUEST_H_
+#ifndef ALIBABACLOUD_WSS_MODEL_MODIFYINSTANCEPROPERTIESREQUEST_H_
+#define ALIBABACLOUD_WSS_MODEL_MODIFYINSTANCEPROPERTIESREQUEST_H_
 
 #include <alibabacloud/wss/WssExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,29 @@
 namespace AlibabaCloud {
 namespace Wss {
 namespace Model {
-class ALIBABACLOUD_WSS_EXPORT DescribePackageDeductionsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_WSS_EXPORT ModifyInstancePropertiesRequest : public RpcServiceRequest {
 public:
-	DescribePackageDeductionsRequest();
-	~DescribePackageDeductionsRequest();
-	long getEndTime() const;
-	void setEndTime(long endTime);
-	long getStartTime() const;
-	void setStartTime(long startTime);
-	int getPageNum() const;
-	void setPageNum(int pageNum);
+	ModifyInstancePropertiesRequest();
+	~ModifyInstancePropertiesRequest();
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
-	std::vector<std::string> getPackageIds() const;
-	void setPackageIds(const std::vector<std::string> &packageIds);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	std::vector<std::string> getInstanceIds() const;
 	void setInstanceIds(const std::vector<std::string> &instanceIds);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
+	std::string getValue() const;
+	void setValue(const std::string &value);
+	std::string getKey() const;
+	void setKey(const std::string &key);
 
 private:
-	long endTime_;
-	long startTime_;
-	int pageNum_;
 	std::string resourceType_;
-	std::vector<std::string> packageIds_;
+	std::string instanceId_;
 	std::vector<std::string> instanceIds_;
-	int pageSize_;
+	std::string value_;
+	std::string key_;
 };
 } // namespace Model
 } // namespace Wss
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_WSS_MODEL_DESCRIBEPACKAGEDEDUCTIONSREQUEST_H_
+#endif // !ALIBABACLOUD_WSS_MODEL_MODIFYINSTANCEPROPERTIESREQUEST_H_
