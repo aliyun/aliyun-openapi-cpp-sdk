@@ -31,7 +31,7 @@ std::string Mobile3MetaSimpleVerifyRequest::getParamType() const {
 
 void Mobile3MetaSimpleVerifyRequest::setParamType(const std::string &paramType) {
   paramType_ = paramType;
-  setParameter(std::string("ParamType"), paramType);
+  setBodyParameter(std::string("ParamType"), paramType);
 }
 
 std::string Mobile3MetaSimpleVerifyRequest::getMobile() const {
@@ -40,7 +40,7 @@ std::string Mobile3MetaSimpleVerifyRequest::getMobile() const {
 
 void Mobile3MetaSimpleVerifyRequest::setMobile(const std::string &mobile) {
   mobile_ = mobile;
-  setParameter(std::string("Mobile"), mobile);
+  setBodyParameter(std::string("Mobile"), mobile);
 }
 
 std::string Mobile3MetaSimpleVerifyRequest::getIdentifyNum() const {
@@ -49,7 +49,7 @@ std::string Mobile3MetaSimpleVerifyRequest::getIdentifyNum() const {
 
 void Mobile3MetaSimpleVerifyRequest::setIdentifyNum(const std::string &identifyNum) {
   identifyNum_ = identifyNum;
-  setParameter(std::string("IdentifyNum"), identifyNum);
+  setBodyParameter(std::string("IdentifyNum"), identifyNum);
 }
 
 std::string Mobile3MetaSimpleVerifyRequest::getUserName() const {
@@ -58,6 +58,6 @@ std::string Mobile3MetaSimpleVerifyRequest::getUserName() const {
 
 void Mobile3MetaSimpleVerifyRequest::setUserName(const std::string &userName) {
   userName_ = userName;
-  setParameter(std::string("UserName"), userName);
+  setBodyParameter(std::string("UserName"), userName);
 }
 

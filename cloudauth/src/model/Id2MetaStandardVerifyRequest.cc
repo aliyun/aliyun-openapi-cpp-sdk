@@ -14,40 +14,40 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cloudauth/model/Id2MetaVerifyRequest.h>
+#include <alibabacloud/cloudauth/model/Id2MetaStandardVerifyRequest.h>
 
-using AlibabaCloud::Cloudauth::Model::Id2MetaVerifyRequest;
+using AlibabaCloud::Cloudauth::Model::Id2MetaStandardVerifyRequest;
 
-Id2MetaVerifyRequest::Id2MetaVerifyRequest()
-    : RpcServiceRequest("cloudauth", "2019-03-07", "Id2MetaVerify") {
+Id2MetaStandardVerifyRequest::Id2MetaStandardVerifyRequest()
+    : RpcServiceRequest("cloudauth", "2019-03-07", "Id2MetaStandardVerify") {
   setMethod(HttpRequest::Method::Post);
 }
 
-Id2MetaVerifyRequest::~Id2MetaVerifyRequest() {}
+Id2MetaStandardVerifyRequest::~Id2MetaStandardVerifyRequest() {}
 
-std::string Id2MetaVerifyRequest::getParamType() const {
+std::string Id2MetaStandardVerifyRequest::getParamType() const {
   return paramType_;
 }
 
-void Id2MetaVerifyRequest::setParamType(const std::string &paramType) {
+void Id2MetaStandardVerifyRequest::setParamType(const std::string &paramType) {
   paramType_ = paramType;
   setBodyParameter(std::string("ParamType"), paramType);
 }
 
-std::string Id2MetaVerifyRequest::getIdentifyNum() const {
+std::string Id2MetaStandardVerifyRequest::getIdentifyNum() const {
   return identifyNum_;
 }
 
-void Id2MetaVerifyRequest::setIdentifyNum(const std::string &identifyNum) {
+void Id2MetaStandardVerifyRequest::setIdentifyNum(const std::string &identifyNum) {
   identifyNum_ = identifyNum;
   setBodyParameter(std::string("IdentifyNum"), identifyNum);
 }
 
-std::string Id2MetaVerifyRequest::getUserName() const {
+std::string Id2MetaStandardVerifyRequest::getUserName() const {
   return userName_;
 }
 
-void Id2MetaVerifyRequest::setUserName(const std::string &userName) {
+void Id2MetaStandardVerifyRequest::setUserName(const std::string &userName) {
   userName_ = userName;
   setBodyParameter(std::string("UserName"), userName);
 }

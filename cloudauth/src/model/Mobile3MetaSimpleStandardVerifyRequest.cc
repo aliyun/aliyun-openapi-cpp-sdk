@@ -14,49 +14,49 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cloudauth/model/Mobile3MetaDetailVerifyRequest.h>
+#include <alibabacloud/cloudauth/model/Mobile3MetaSimpleStandardVerifyRequest.h>
 
-using AlibabaCloud::Cloudauth::Model::Mobile3MetaDetailVerifyRequest;
+using AlibabaCloud::Cloudauth::Model::Mobile3MetaSimpleStandardVerifyRequest;
 
-Mobile3MetaDetailVerifyRequest::Mobile3MetaDetailVerifyRequest()
-    : RpcServiceRequest("cloudauth", "2019-03-07", "Mobile3MetaDetailVerify") {
+Mobile3MetaSimpleStandardVerifyRequest::Mobile3MetaSimpleStandardVerifyRequest()
+    : RpcServiceRequest("cloudauth", "2019-03-07", "Mobile3MetaSimpleStandardVerify") {
   setMethod(HttpRequest::Method::Post);
 }
 
-Mobile3MetaDetailVerifyRequest::~Mobile3MetaDetailVerifyRequest() {}
+Mobile3MetaSimpleStandardVerifyRequest::~Mobile3MetaSimpleStandardVerifyRequest() {}
 
-std::string Mobile3MetaDetailVerifyRequest::getParamType() const {
+std::string Mobile3MetaSimpleStandardVerifyRequest::getParamType() const {
   return paramType_;
 }
 
-void Mobile3MetaDetailVerifyRequest::setParamType(const std::string &paramType) {
+void Mobile3MetaSimpleStandardVerifyRequest::setParamType(const std::string &paramType) {
   paramType_ = paramType;
   setBodyParameter(std::string("ParamType"), paramType);
 }
 
-std::string Mobile3MetaDetailVerifyRequest::getMobile() const {
+std::string Mobile3MetaSimpleStandardVerifyRequest::getMobile() const {
   return mobile_;
 }
 
-void Mobile3MetaDetailVerifyRequest::setMobile(const std::string &mobile) {
+void Mobile3MetaSimpleStandardVerifyRequest::setMobile(const std::string &mobile) {
   mobile_ = mobile;
   setBodyParameter(std::string("Mobile"), mobile);
 }
 
-std::string Mobile3MetaDetailVerifyRequest::getIdentifyNum() const {
+std::string Mobile3MetaSimpleStandardVerifyRequest::getIdentifyNum() const {
   return identifyNum_;
 }
 
-void Mobile3MetaDetailVerifyRequest::setIdentifyNum(const std::string &identifyNum) {
+void Mobile3MetaSimpleStandardVerifyRequest::setIdentifyNum(const std::string &identifyNum) {
   identifyNum_ = identifyNum;
   setBodyParameter(std::string("IdentifyNum"), identifyNum);
 }
 
-std::string Mobile3MetaDetailVerifyRequest::getUserName() const {
+std::string Mobile3MetaSimpleStandardVerifyRequest::getUserName() const {
   return userName_;
 }
 
-void Mobile3MetaDetailVerifyRequest::setUserName(const std::string &userName) {
+void Mobile3MetaSimpleStandardVerifyRequest::setUserName(const std::string &userName) {
   userName_ = userName;
   setBodyParameter(std::string("UserName"), userName);
 }
