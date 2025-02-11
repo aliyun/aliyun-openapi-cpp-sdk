@@ -63,6 +63,8 @@ void ListPlansResult::parse(const std::string &payload)
 			plansObject.currency = valuePlansPlan["Currency"].asString();
 		if(!valuePlansPlan["SupportPlatform"].isNull())
 			plansObject.supportPlatform = valuePlansPlan["SupportPlatform"].asString();
+		if(!valuePlansPlan["PlanType"].isNull())
+			plansObject.planType = valuePlansPlan["PlanType"].asString();
 		plans_.push_back(plansObject);
 	}
 

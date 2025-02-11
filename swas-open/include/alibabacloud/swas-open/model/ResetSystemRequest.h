@@ -28,12 +28,18 @@ namespace SWAS_OPEN {
 namespace Model {
 class ALIBABACLOUD_SWAS_OPEN_EXPORT ResetSystemRequest : public RpcServiceRequest {
 public:
+	struct LoginCredentials {
+		std::string password;
+		std::string keyPairName;
+	};
 	ResetSystemRequest();
 	~ResetSystemRequest();
 	std::string getImageId() const;
 	void setImageId(const std::string &imageId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	LoginCredentials getLoginCredentials() const;
+	void setLoginCredentials(const LoginCredentials &loginCredentials);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getRegionId() const;
@@ -42,6 +48,7 @@ public:
 private:
 	std::string imageId_;
 	std::string clientToken_;
+	LoginCredentials loginCredentials_;
 	std::string instanceId_;
 	std::string regionId_;
 };

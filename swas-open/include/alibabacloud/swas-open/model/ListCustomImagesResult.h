@@ -44,10 +44,14 @@ namespace AlibabaCloud
 					bool inShare;
 					std::string resourceGroupId;
 					std::string instanceId;
+					int requiredDataDiskSize;
+					std::string sourceImageName;
 					bool inShareUser;
 					std::string systemSnapshotId;
 					std::string systemSnapshotName;
+					std::string sourceImageVersion;
 					std::string dataSnapshotId;
+					int requiredSystemDiskSize;
 					std::string name;
 					std::string dataSnapshotName;
 					std::string instanceName;

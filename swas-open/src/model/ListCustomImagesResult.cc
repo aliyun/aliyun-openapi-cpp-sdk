@@ -77,6 +77,14 @@ void ListCustomImagesResult::parse(const std::string &payload)
 			customImagesObject.userId = std::stol(valueCustomImagesCustomImage["UserId"].asString());
 		if(!valueCustomImagesCustomImage["OsType"].isNull())
 			customImagesObject.osType = valueCustomImagesCustomImage["OsType"].asString();
+		if(!valueCustomImagesCustomImage["RequiredSystemDiskSize"].isNull())
+			customImagesObject.requiredSystemDiskSize = std::stoi(valueCustomImagesCustomImage["RequiredSystemDiskSize"].asString());
+		if(!valueCustomImagesCustomImage["RequiredDataDiskSize"].isNull())
+			customImagesObject.requiredDataDiskSize = std::stoi(valueCustomImagesCustomImage["RequiredDataDiskSize"].asString());
+		if(!valueCustomImagesCustomImage["SourceImageName"].isNull())
+			customImagesObject.sourceImageName = valueCustomImagesCustomImage["SourceImageName"].asString();
+		if(!valueCustomImagesCustomImage["SourceImageVersion"].isNull())
+			customImagesObject.sourceImageVersion = valueCustomImagesCustomImage["SourceImageVersion"].asString();
 		auto allTagsNode = valueCustomImagesCustomImage["Tags"]["tag"];
 		for (auto valueCustomImagesCustomImageTagstag : allTagsNode)
 		{

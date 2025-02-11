@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					std::string planId;
 					std::string currency;
 					int diskSize;
+					std::string planType;
 					int core;
 					int flow;
 				};

@@ -43,6 +43,16 @@ void ResetSystemRequest::setClientToken(const std::string &clientToken) {
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+ResetSystemRequest::LoginCredentials ResetSystemRequest::getLoginCredentials() const {
+  return loginCredentials_;
+}
+
+void ResetSystemRequest::setLoginCredentials(const ResetSystemRequest::LoginCredentials &loginCredentials) {
+  loginCredentials_ = loginCredentials;
+  setParameter(std::string("LoginCredentials") + ".Password", loginCredentials.password);
+  setParameter(std::string("LoginCredentials") + ".KeyPairName", loginCredentials.keyPairName);
+}
+
 std::string ResetSystemRequest::getInstanceId() const {
   return instanceId_;
 }
