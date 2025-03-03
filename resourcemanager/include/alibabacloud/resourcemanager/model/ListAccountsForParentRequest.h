@@ -34,26 +34,26 @@ public:
 	};
 	ListAccountsForParentRequest();
 	~ListAccountsForParentRequest();
-	std::string getQueryKeyword() const;
-	void setQueryKeyword(const std::string &queryKeyword);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
-	std::string getParentFolderId() const;
-	void setParentFolderId(const std::string &parentFolderId);
-	bool getIncludeTags() const;
-	void setIncludeTags(bool includeTags);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
+	std::string getQueryKeyword() const;
+	void setQueryKeyword(const std::string &queryKeyword);
+	std::string getParentFolderId() const;
+	void setParentFolderId(const std::string &parentFolderId);
+	bool getIncludeTags() const;
+	void setIncludeTags(bool includeTags);
 
 private:
-	std::string queryKeyword_;
 	int pageNumber_;
-	std::string parentFolderId_;
-	bool includeTags_;
 	int pageSize_;
 	std::vector<Tag> tag_;
+	std::string queryKeyword_;
+	std::string parentFolderId_;
+	bool includeTags_;
 };
 } // namespace Model
 } // namespace ResourceManager

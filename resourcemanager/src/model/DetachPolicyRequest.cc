@@ -25,6 +25,15 @@ DetachPolicyRequest::DetachPolicyRequest()
 
 DetachPolicyRequest::~DetachPolicyRequest() {}
 
+std::string DetachPolicyRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DetachPolicyRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DetachPolicyRequest::getPolicyType() const {
   return policyType_;
 }
@@ -41,15 +50,6 @@ std::string DetachPolicyRequest::getPrincipalType() const {
 void DetachPolicyRequest::setPrincipalType(const std::string &principalType) {
   principalType_ = principalType;
   setParameter(std::string("PrincipalType"), principalType);
-}
-
-std::string DetachPolicyRequest::getResourceGroupId() const {
-  return resourceGroupId_;
-}
-
-void DetachPolicyRequest::setResourceGroupId(const std::string &resourceGroupId) {
-  resourceGroupId_ = resourceGroupId;
-  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string DetachPolicyRequest::getPolicyName() const {

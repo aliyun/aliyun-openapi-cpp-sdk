@@ -34,23 +34,23 @@ public:
 	};
 	ListTagResourcesRequest();
 	~ListTagResourcesRequest();
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::vector<std::string> getResourceId() const;
 	void setResourceId(const std::vector<std::string> &resourceId);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
-	std::string getNextToken() const;
-	void setNextToken(const std::string &nextToken);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
 
 private:
+	std::string nextToken_;
+	std::vector<Tag> tag_;
 	std::vector<std::string> resourceId_;
 	std::string resourceType_;
-	std::string nextToken_;
 	int maxResults_;
-	std::vector<Tag> tag_;
 };
 } // namespace Model
 } // namespace ResourceManager

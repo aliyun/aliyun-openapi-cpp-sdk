@@ -43,28 +43,28 @@ void ListPolicyAttachmentsResult::parse(const std::string &payload)
 	for (auto valuePolicyAttachmentsPolicyAttachment : allPolicyAttachmentsNode)
 	{
 		PolicyAttachment policyAttachmentsObject;
-		if(!valuePolicyAttachmentsPolicyAttachment["Description"].isNull())
-			policyAttachmentsObject.description = valuePolicyAttachmentsPolicyAttachment["Description"].asString();
-		if(!valuePolicyAttachmentsPolicyAttachment["ResourceGroupId"].isNull())
-			policyAttachmentsObject.resourceGroupId = valuePolicyAttachmentsPolicyAttachment["ResourceGroupId"].asString();
-		if(!valuePolicyAttachmentsPolicyAttachment["PolicyName"].isNull())
-			policyAttachmentsObject.policyName = valuePolicyAttachmentsPolicyAttachment["PolicyName"].asString();
-		if(!valuePolicyAttachmentsPolicyAttachment["PrincipalName"].isNull())
-			policyAttachmentsObject.principalName = valuePolicyAttachmentsPolicyAttachment["PrincipalName"].asString();
 		if(!valuePolicyAttachmentsPolicyAttachment["AttachDate"].isNull())
 			policyAttachmentsObject.attachDate = valuePolicyAttachmentsPolicyAttachment["AttachDate"].asString();
+		if(!valuePolicyAttachmentsPolicyAttachment["Description"].isNull())
+			policyAttachmentsObject.description = valuePolicyAttachmentsPolicyAttachment["Description"].asString();
+		if(!valuePolicyAttachmentsPolicyAttachment["PolicyName"].isNull())
+			policyAttachmentsObject.policyName = valuePolicyAttachmentsPolicyAttachment["PolicyName"].asString();
 		if(!valuePolicyAttachmentsPolicyAttachment["PolicyType"].isNull())
 			policyAttachmentsObject.policyType = valuePolicyAttachmentsPolicyAttachment["PolicyType"].asString();
+		if(!valuePolicyAttachmentsPolicyAttachment["PrincipalName"].isNull())
+			policyAttachmentsObject.principalName = valuePolicyAttachmentsPolicyAttachment["PrincipalName"].asString();
 		if(!valuePolicyAttachmentsPolicyAttachment["PrincipalType"].isNull())
 			policyAttachmentsObject.principalType = valuePolicyAttachmentsPolicyAttachment["PrincipalType"].asString();
+		if(!valuePolicyAttachmentsPolicyAttachment["ResourceGroupId"].isNull())
+			policyAttachmentsObject.resourceGroupId = valuePolicyAttachmentsPolicyAttachment["ResourceGroupId"].asString();
 		policyAttachments_.push_back(policyAttachmentsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

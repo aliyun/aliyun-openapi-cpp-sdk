@@ -42,6 +42,8 @@
 #include "model/ChangeAccountEmailResult.h"
 #include "model/CheckAccountDeleteRequest.h"
 #include "model/CheckAccountDeleteResult.h"
+#include "model/CreateAutoGroupingRuleRequest.h"
+#include "model/CreateAutoGroupingRuleResult.h"
 #include "model/CreateCloudAccountRequest.h"
 #include "model/CreateCloudAccountResult.h"
 #include "model/CreateControlPolicyRequest.h"
@@ -64,6 +66,8 @@
 #include "model/DeclineHandshakeResult.h"
 #include "model/DeleteAccountRequest.h"
 #include "model/DeleteAccountResult.h"
+#include "model/DeleteAutoGroupingRuleRequest.h"
+#include "model/DeleteAutoGroupingRuleResult.h"
 #include "model/DeleteControlPolicyRequest.h"
 #include "model/DeleteControlPolicyResult.h"
 #include "model/DeleteFolderRequest.h"
@@ -86,8 +90,16 @@
 #include "model/DetachControlPolicyResult.h"
 #include "model/DetachPolicyRequest.h"
 #include "model/DetachPolicyResult.h"
+#include "model/DisableAssociatedTransferRequest.h"
+#include "model/DisableAssociatedTransferResult.h"
+#include "model/DisableAutoGroupingRequest.h"
+#include "model/DisableAutoGroupingResult.h"
 #include "model/DisableControlPolicyRequest.h"
 #include "model/DisableControlPolicyResult.h"
+#include "model/EnableAssociatedTransferRequest.h"
+#include "model/EnableAssociatedTransferResult.h"
+#include "model/EnableAutoGroupingRequest.h"
+#include "model/EnableAutoGroupingResult.h"
 #include "model/EnableControlPolicyRequest.h"
 #include "model/EnableControlPolicyResult.h"
 #include "model/EnableResourceDirectoryRequest.h"
@@ -98,6 +110,10 @@
 #include "model/GetAccountDeletionCheckResultResult.h"
 #include "model/GetAccountDeletionStatusRequest.h"
 #include "model/GetAccountDeletionStatusResult.h"
+#include "model/GetAutoGroupingRuleRequest.h"
+#include "model/GetAutoGroupingRuleResult.h"
+#include "model/GetAutoGroupingStatusRequest.h"
+#include "model/GetAutoGroupingStatusResult.h"
 #include "model/GetControlPolicyRequest.h"
 #include "model/GetControlPolicyResult.h"
 #include "model/GetControlPolicyEnablementStatusRequest.h"
@@ -130,6 +146,10 @@
 #include "model/ListAccountsForParentResult.h"
 #include "model/ListAncestorsRequest.h"
 #include "model/ListAncestorsResult.h"
+#include "model/ListAssociatedTransferSettingRequest.h"
+#include "model/ListAssociatedTransferSettingResult.h"
+#include "model/ListAutoGroupingRulesRequest.h"
+#include "model/ListAutoGroupingRulesResult.h"
 #include "model/ListControlPoliciesRequest.h"
 #include "model/ListControlPoliciesResult.h"
 #include "model/ListControlPolicyAttachmentsForTargetRequest.h"
@@ -196,6 +216,12 @@
 #include "model/UntagResourcesResult.h"
 #include "model/UpdateAccountRequest.h"
 #include "model/UpdateAccountResult.h"
+#include "model/UpdateAssociatedTransferSettingRequest.h"
+#include "model/UpdateAssociatedTransferSettingResult.h"
+#include "model/UpdateAutoGroupingConfigRequest.h"
+#include "model/UpdateAutoGroupingConfigResult.h"
+#include "model/UpdateAutoGroupingRuleRequest.h"
+#include "model/UpdateAutoGroupingRuleResult.h"
 #include "model/UpdateControlPolicyRequest.h"
 #include "model/UpdateControlPolicyResult.h"
 #include "model/UpdateFolderRequest.h"
@@ -243,6 +269,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckAccountDeleteResult> CheckAccountDeleteOutcome;
 			typedef std::future<CheckAccountDeleteOutcome> CheckAccountDeleteOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::CheckAccountDeleteRequest&, const CheckAccountDeleteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckAccountDeleteAsyncHandler;
+			typedef Outcome<Error, Model::CreateAutoGroupingRuleResult> CreateAutoGroupingRuleOutcome;
+			typedef std::future<CreateAutoGroupingRuleOutcome> CreateAutoGroupingRuleOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::CreateAutoGroupingRuleRequest&, const CreateAutoGroupingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoGroupingRuleAsyncHandler;
 			typedef Outcome<Error, Model::CreateCloudAccountResult> CreateCloudAccountOutcome;
 			typedef std::future<CreateCloudAccountOutcome> CreateCloudAccountOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::CreateCloudAccountRequest&, const CreateCloudAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudAccountAsyncHandler;
@@ -276,6 +305,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteAccountResult> DeleteAccountOutcome;
 			typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::DeleteAccountRequest&, const DeleteAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
+			typedef Outcome<Error, Model::DeleteAutoGroupingRuleResult> DeleteAutoGroupingRuleOutcome;
+			typedef std::future<DeleteAutoGroupingRuleOutcome> DeleteAutoGroupingRuleOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::DeleteAutoGroupingRuleRequest&, const DeleteAutoGroupingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAutoGroupingRuleAsyncHandler;
 			typedef Outcome<Error, Model::DeleteControlPolicyResult> DeleteControlPolicyOutcome;
 			typedef std::future<DeleteControlPolicyOutcome> DeleteControlPolicyOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::DeleteControlPolicyRequest&, const DeleteControlPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteControlPolicyAsyncHandler;
@@ -309,9 +341,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetachPolicyResult> DetachPolicyOutcome;
 			typedef std::future<DetachPolicyOutcome> DetachPolicyOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::DetachPolicyRequest&, const DetachPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachPolicyAsyncHandler;
+			typedef Outcome<Error, Model::DisableAssociatedTransferResult> DisableAssociatedTransferOutcome;
+			typedef std::future<DisableAssociatedTransferOutcome> DisableAssociatedTransferOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::DisableAssociatedTransferRequest&, const DisableAssociatedTransferOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableAssociatedTransferAsyncHandler;
+			typedef Outcome<Error, Model::DisableAutoGroupingResult> DisableAutoGroupingOutcome;
+			typedef std::future<DisableAutoGroupingOutcome> DisableAutoGroupingOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::DisableAutoGroupingRequest&, const DisableAutoGroupingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableAutoGroupingAsyncHandler;
 			typedef Outcome<Error, Model::DisableControlPolicyResult> DisableControlPolicyOutcome;
 			typedef std::future<DisableControlPolicyOutcome> DisableControlPolicyOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::DisableControlPolicyRequest&, const DisableControlPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableControlPolicyAsyncHandler;
+			typedef Outcome<Error, Model::EnableAssociatedTransferResult> EnableAssociatedTransferOutcome;
+			typedef std::future<EnableAssociatedTransferOutcome> EnableAssociatedTransferOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::EnableAssociatedTransferRequest&, const EnableAssociatedTransferOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableAssociatedTransferAsyncHandler;
+			typedef Outcome<Error, Model::EnableAutoGroupingResult> EnableAutoGroupingOutcome;
+			typedef std::future<EnableAutoGroupingOutcome> EnableAutoGroupingOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::EnableAutoGroupingRequest&, const EnableAutoGroupingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableAutoGroupingAsyncHandler;
 			typedef Outcome<Error, Model::EnableControlPolicyResult> EnableControlPolicyOutcome;
 			typedef std::future<EnableControlPolicyOutcome> EnableControlPolicyOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::EnableControlPolicyRequest&, const EnableControlPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableControlPolicyAsyncHandler;
@@ -327,6 +371,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAccountDeletionStatusResult> GetAccountDeletionStatusOutcome;
 			typedef std::future<GetAccountDeletionStatusOutcome> GetAccountDeletionStatusOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::GetAccountDeletionStatusRequest&, const GetAccountDeletionStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAccountDeletionStatusAsyncHandler;
+			typedef Outcome<Error, Model::GetAutoGroupingRuleResult> GetAutoGroupingRuleOutcome;
+			typedef std::future<GetAutoGroupingRuleOutcome> GetAutoGroupingRuleOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::GetAutoGroupingRuleRequest&, const GetAutoGroupingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAutoGroupingRuleAsyncHandler;
+			typedef Outcome<Error, Model::GetAutoGroupingStatusResult> GetAutoGroupingStatusOutcome;
+			typedef std::future<GetAutoGroupingStatusOutcome> GetAutoGroupingStatusOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::GetAutoGroupingStatusRequest&, const GetAutoGroupingStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAutoGroupingStatusAsyncHandler;
 			typedef Outcome<Error, Model::GetControlPolicyResult> GetControlPolicyOutcome;
 			typedef std::future<GetControlPolicyOutcome> GetControlPolicyOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::GetControlPolicyRequest&, const GetControlPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetControlPolicyAsyncHandler;
@@ -375,6 +425,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListAncestorsResult> ListAncestorsOutcome;
 			typedef std::future<ListAncestorsOutcome> ListAncestorsOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::ListAncestorsRequest&, const ListAncestorsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAncestorsAsyncHandler;
+			typedef Outcome<Error, Model::ListAssociatedTransferSettingResult> ListAssociatedTransferSettingOutcome;
+			typedef std::future<ListAssociatedTransferSettingOutcome> ListAssociatedTransferSettingOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::ListAssociatedTransferSettingRequest&, const ListAssociatedTransferSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAssociatedTransferSettingAsyncHandler;
+			typedef Outcome<Error, Model::ListAutoGroupingRulesResult> ListAutoGroupingRulesOutcome;
+			typedef std::future<ListAutoGroupingRulesOutcome> ListAutoGroupingRulesOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::ListAutoGroupingRulesRequest&, const ListAutoGroupingRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAutoGroupingRulesAsyncHandler;
 			typedef Outcome<Error, Model::ListControlPoliciesResult> ListControlPoliciesOutcome;
 			typedef std::future<ListControlPoliciesOutcome> ListControlPoliciesOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::ListControlPoliciesRequest&, const ListControlPoliciesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListControlPoliciesAsyncHandler;
@@ -474,6 +530,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateAccountResult> UpdateAccountOutcome;
 			typedef std::future<UpdateAccountOutcome> UpdateAccountOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::UpdateAccountRequest&, const UpdateAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAccountAsyncHandler;
+			typedef Outcome<Error, Model::UpdateAssociatedTransferSettingResult> UpdateAssociatedTransferSettingOutcome;
+			typedef std::future<UpdateAssociatedTransferSettingOutcome> UpdateAssociatedTransferSettingOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::UpdateAssociatedTransferSettingRequest&, const UpdateAssociatedTransferSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAssociatedTransferSettingAsyncHandler;
+			typedef Outcome<Error, Model::UpdateAutoGroupingConfigResult> UpdateAutoGroupingConfigOutcome;
+			typedef std::future<UpdateAutoGroupingConfigOutcome> UpdateAutoGroupingConfigOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::UpdateAutoGroupingConfigRequest&, const UpdateAutoGroupingConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAutoGroupingConfigAsyncHandler;
+			typedef Outcome<Error, Model::UpdateAutoGroupingRuleResult> UpdateAutoGroupingRuleOutcome;
+			typedef std::future<UpdateAutoGroupingRuleOutcome> UpdateAutoGroupingRuleOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::UpdateAutoGroupingRuleRequest&, const UpdateAutoGroupingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAutoGroupingRuleAsyncHandler;
 			typedef Outcome<Error, Model::UpdateControlPolicyResult> UpdateControlPolicyOutcome;
 			typedef std::future<UpdateControlPolicyOutcome> UpdateControlPolicyOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::UpdateControlPolicyRequest&, const UpdateControlPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateControlPolicyAsyncHandler;
@@ -521,6 +586,9 @@ namespace AlibabaCloud
 			CheckAccountDeleteOutcome checkAccountDelete(const Model::CheckAccountDeleteRequest &request)const;
 			void checkAccountDeleteAsync(const Model::CheckAccountDeleteRequest& request, const CheckAccountDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckAccountDeleteOutcomeCallable checkAccountDeleteCallable(const Model::CheckAccountDeleteRequest& request) const;
+			CreateAutoGroupingRuleOutcome createAutoGroupingRule(const Model::CreateAutoGroupingRuleRequest &request)const;
+			void createAutoGroupingRuleAsync(const Model::CreateAutoGroupingRuleRequest& request, const CreateAutoGroupingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateAutoGroupingRuleOutcomeCallable createAutoGroupingRuleCallable(const Model::CreateAutoGroupingRuleRequest& request) const;
 			CreateCloudAccountOutcome createCloudAccount(const Model::CreateCloudAccountRequest &request)const;
 			void createCloudAccountAsync(const Model::CreateCloudAccountRequest& request, const CreateCloudAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCloudAccountOutcomeCallable createCloudAccountCallable(const Model::CreateCloudAccountRequest& request) const;
@@ -554,6 +622,9 @@ namespace AlibabaCloud
 			DeleteAccountOutcome deleteAccount(const Model::DeleteAccountRequest &request)const;
 			void deleteAccountAsync(const Model::DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAccountOutcomeCallable deleteAccountCallable(const Model::DeleteAccountRequest& request) const;
+			DeleteAutoGroupingRuleOutcome deleteAutoGroupingRule(const Model::DeleteAutoGroupingRuleRequest &request)const;
+			void deleteAutoGroupingRuleAsync(const Model::DeleteAutoGroupingRuleRequest& request, const DeleteAutoGroupingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteAutoGroupingRuleOutcomeCallable deleteAutoGroupingRuleCallable(const Model::DeleteAutoGroupingRuleRequest& request) const;
 			DeleteControlPolicyOutcome deleteControlPolicy(const Model::DeleteControlPolicyRequest &request)const;
 			void deleteControlPolicyAsync(const Model::DeleteControlPolicyRequest& request, const DeleteControlPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteControlPolicyOutcomeCallable deleteControlPolicyCallable(const Model::DeleteControlPolicyRequest& request) const;
@@ -587,9 +658,21 @@ namespace AlibabaCloud
 			DetachPolicyOutcome detachPolicy(const Model::DetachPolicyRequest &request)const;
 			void detachPolicyAsync(const Model::DetachPolicyRequest& request, const DetachPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachPolicyOutcomeCallable detachPolicyCallable(const Model::DetachPolicyRequest& request) const;
+			DisableAssociatedTransferOutcome disableAssociatedTransfer(const Model::DisableAssociatedTransferRequest &request)const;
+			void disableAssociatedTransferAsync(const Model::DisableAssociatedTransferRequest& request, const DisableAssociatedTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DisableAssociatedTransferOutcomeCallable disableAssociatedTransferCallable(const Model::DisableAssociatedTransferRequest& request) const;
+			DisableAutoGroupingOutcome disableAutoGrouping(const Model::DisableAutoGroupingRequest &request)const;
+			void disableAutoGroupingAsync(const Model::DisableAutoGroupingRequest& request, const DisableAutoGroupingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DisableAutoGroupingOutcomeCallable disableAutoGroupingCallable(const Model::DisableAutoGroupingRequest& request) const;
 			DisableControlPolicyOutcome disableControlPolicy(const Model::DisableControlPolicyRequest &request)const;
 			void disableControlPolicyAsync(const Model::DisableControlPolicyRequest& request, const DisableControlPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableControlPolicyOutcomeCallable disableControlPolicyCallable(const Model::DisableControlPolicyRequest& request) const;
+			EnableAssociatedTransferOutcome enableAssociatedTransfer(const Model::EnableAssociatedTransferRequest &request)const;
+			void enableAssociatedTransferAsync(const Model::EnableAssociatedTransferRequest& request, const EnableAssociatedTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableAssociatedTransferOutcomeCallable enableAssociatedTransferCallable(const Model::EnableAssociatedTransferRequest& request) const;
+			EnableAutoGroupingOutcome enableAutoGrouping(const Model::EnableAutoGroupingRequest &request)const;
+			void enableAutoGroupingAsync(const Model::EnableAutoGroupingRequest& request, const EnableAutoGroupingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableAutoGroupingOutcomeCallable enableAutoGroupingCallable(const Model::EnableAutoGroupingRequest& request) const;
 			EnableControlPolicyOutcome enableControlPolicy(const Model::EnableControlPolicyRequest &request)const;
 			void enableControlPolicyAsync(const Model::EnableControlPolicyRequest& request, const EnableControlPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableControlPolicyOutcomeCallable enableControlPolicyCallable(const Model::EnableControlPolicyRequest& request) const;
@@ -605,6 +688,12 @@ namespace AlibabaCloud
 			GetAccountDeletionStatusOutcome getAccountDeletionStatus(const Model::GetAccountDeletionStatusRequest &request)const;
 			void getAccountDeletionStatusAsync(const Model::GetAccountDeletionStatusRequest& request, const GetAccountDeletionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAccountDeletionStatusOutcomeCallable getAccountDeletionStatusCallable(const Model::GetAccountDeletionStatusRequest& request) const;
+			GetAutoGroupingRuleOutcome getAutoGroupingRule(const Model::GetAutoGroupingRuleRequest &request)const;
+			void getAutoGroupingRuleAsync(const Model::GetAutoGroupingRuleRequest& request, const GetAutoGroupingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAutoGroupingRuleOutcomeCallable getAutoGroupingRuleCallable(const Model::GetAutoGroupingRuleRequest& request) const;
+			GetAutoGroupingStatusOutcome getAutoGroupingStatus(const Model::GetAutoGroupingStatusRequest &request)const;
+			void getAutoGroupingStatusAsync(const Model::GetAutoGroupingStatusRequest& request, const GetAutoGroupingStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAutoGroupingStatusOutcomeCallable getAutoGroupingStatusCallable(const Model::GetAutoGroupingStatusRequest& request) const;
 			GetControlPolicyOutcome getControlPolicy(const Model::GetControlPolicyRequest &request)const;
 			void getControlPolicyAsync(const Model::GetControlPolicyRequest& request, const GetControlPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetControlPolicyOutcomeCallable getControlPolicyCallable(const Model::GetControlPolicyRequest& request) const;
@@ -653,6 +742,12 @@ namespace AlibabaCloud
 			ListAncestorsOutcome listAncestors(const Model::ListAncestorsRequest &request)const;
 			void listAncestorsAsync(const Model::ListAncestorsRequest& request, const ListAncestorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAncestorsOutcomeCallable listAncestorsCallable(const Model::ListAncestorsRequest& request) const;
+			ListAssociatedTransferSettingOutcome listAssociatedTransferSetting(const Model::ListAssociatedTransferSettingRequest &request)const;
+			void listAssociatedTransferSettingAsync(const Model::ListAssociatedTransferSettingRequest& request, const ListAssociatedTransferSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAssociatedTransferSettingOutcomeCallable listAssociatedTransferSettingCallable(const Model::ListAssociatedTransferSettingRequest& request) const;
+			ListAutoGroupingRulesOutcome listAutoGroupingRules(const Model::ListAutoGroupingRulesRequest &request)const;
+			void listAutoGroupingRulesAsync(const Model::ListAutoGroupingRulesRequest& request, const ListAutoGroupingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAutoGroupingRulesOutcomeCallable listAutoGroupingRulesCallable(const Model::ListAutoGroupingRulesRequest& request) const;
 			ListControlPoliciesOutcome listControlPolicies(const Model::ListControlPoliciesRequest &request)const;
 			void listControlPoliciesAsync(const Model::ListControlPoliciesRequest& request, const ListControlPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListControlPoliciesOutcomeCallable listControlPoliciesCallable(const Model::ListControlPoliciesRequest& request) const;
@@ -752,6 +847,15 @@ namespace AlibabaCloud
 			UpdateAccountOutcome updateAccount(const Model::UpdateAccountRequest &request)const;
 			void updateAccountAsync(const Model::UpdateAccountRequest& request, const UpdateAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAccountOutcomeCallable updateAccountCallable(const Model::UpdateAccountRequest& request) const;
+			UpdateAssociatedTransferSettingOutcome updateAssociatedTransferSetting(const Model::UpdateAssociatedTransferSettingRequest &request)const;
+			void updateAssociatedTransferSettingAsync(const Model::UpdateAssociatedTransferSettingRequest& request, const UpdateAssociatedTransferSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateAssociatedTransferSettingOutcomeCallable updateAssociatedTransferSettingCallable(const Model::UpdateAssociatedTransferSettingRequest& request) const;
+			UpdateAutoGroupingConfigOutcome updateAutoGroupingConfig(const Model::UpdateAutoGroupingConfigRequest &request)const;
+			void updateAutoGroupingConfigAsync(const Model::UpdateAutoGroupingConfigRequest& request, const UpdateAutoGroupingConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateAutoGroupingConfigOutcomeCallable updateAutoGroupingConfigCallable(const Model::UpdateAutoGroupingConfigRequest& request) const;
+			UpdateAutoGroupingRuleOutcome updateAutoGroupingRule(const Model::UpdateAutoGroupingRuleRequest &request)const;
+			void updateAutoGroupingRuleAsync(const Model::UpdateAutoGroupingRuleRequest& request, const UpdateAutoGroupingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateAutoGroupingRuleOutcomeCallable updateAutoGroupingRuleCallable(const Model::UpdateAutoGroupingRuleRequest& request) const;
 			UpdateControlPolicyOutcome updateControlPolicy(const Model::UpdateControlPolicyRequest &request)const;
 			void updateControlPolicyAsync(const Model::UpdateControlPolicyRequest& request, const UpdateControlPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateControlPolicyOutcomeCallable updateControlPolicyCallable(const Model::UpdateControlPolicyRequest& request) const;

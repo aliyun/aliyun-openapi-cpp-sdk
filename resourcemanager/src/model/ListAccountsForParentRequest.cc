@@ -25,15 +25,6 @@ ListAccountsForParentRequest::ListAccountsForParentRequest()
 
 ListAccountsForParentRequest::~ListAccountsForParentRequest() {}
 
-std::string ListAccountsForParentRequest::getQueryKeyword() const {
-  return queryKeyword_;
-}
-
-void ListAccountsForParentRequest::setQueryKeyword(const std::string &queryKeyword) {
-  queryKeyword_ = queryKeyword;
-  setParameter(std::string("QueryKeyword"), queryKeyword);
-}
-
 int ListAccountsForParentRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -41,24 +32,6 @@ int ListAccountsForParentRequest::getPageNumber() const {
 void ListAccountsForParentRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
-}
-
-std::string ListAccountsForParentRequest::getParentFolderId() const {
-  return parentFolderId_;
-}
-
-void ListAccountsForParentRequest::setParentFolderId(const std::string &parentFolderId) {
-  parentFolderId_ = parentFolderId;
-  setParameter(std::string("ParentFolderId"), parentFolderId);
-}
-
-bool ListAccountsForParentRequest::getIncludeTags() const {
-  return includeTags_;
-}
-
-void ListAccountsForParentRequest::setIncludeTags(bool includeTags) {
-  includeTags_ = includeTags;
-  setParameter(std::string("IncludeTags"), includeTags ? "true" : "false");
 }
 
 int ListAccountsForParentRequest::getPageSize() const {
@@ -80,5 +53,32 @@ void ListAccountsForParentRequest::setTag(const std::vector<ListAccountsForParen
     setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
     setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
   }
+}
+
+std::string ListAccountsForParentRequest::getQueryKeyword() const {
+  return queryKeyword_;
+}
+
+void ListAccountsForParentRequest::setQueryKeyword(const std::string &queryKeyword) {
+  queryKeyword_ = queryKeyword;
+  setParameter(std::string("QueryKeyword"), queryKeyword);
+}
+
+std::string ListAccountsForParentRequest::getParentFolderId() const {
+  return parentFolderId_;
+}
+
+void ListAccountsForParentRequest::setParentFolderId(const std::string &parentFolderId) {
+  parentFolderId_ = parentFolderId;
+  setParameter(std::string("ParentFolderId"), parentFolderId);
+}
+
+bool ListAccountsForParentRequest::getIncludeTags() const {
+  return includeTags_;
+}
+
+void ListAccountsForParentRequest::setIncludeTags(bool includeTags) {
+  includeTags_ = includeTags;
+  setParameter(std::string("IncludeTags"), includeTags ? "true" : "false");
 }
 

@@ -36,11 +36,11 @@ namespace AlibabaCloud
 				{
 					struct LatestDeletionTask
 					{
-						std::string deletionTaskId;
 						std::string createDate;
+						std::string deletionTaskId;
 					};
-					std::string updateDate;
 					long maxSessionDuration;
+					std::string updateDate;
 					std::string roleName;
 					std::string description;
 					std::string assumeRolePolicyDocument;

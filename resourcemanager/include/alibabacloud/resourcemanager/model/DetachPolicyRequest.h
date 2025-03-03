@@ -30,21 +30,21 @@ class ALIBABACLOUD_RESOURCEMANAGER_EXPORT DetachPolicyRequest : public RpcServic
 public:
 	DetachPolicyRequest();
 	~DetachPolicyRequest();
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getPolicyType() const;
 	void setPolicyType(const std::string &policyType);
 	std::string getPrincipalType() const;
 	void setPrincipalType(const std::string &principalType);
-	std::string getResourceGroupId() const;
-	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getPolicyName() const;
 	void setPolicyName(const std::string &policyName);
 	std::string getPrincipalName() const;
 	void setPrincipalName(const std::string &principalName);
 
 private:
+	std::string resourceGroupId_;
 	std::string policyType_;
 	std::string principalType_;
-	std::string resourceGroupId_;
 	std::string policyName_;
 	std::string principalName_;
 };

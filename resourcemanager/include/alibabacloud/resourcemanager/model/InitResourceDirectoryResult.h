@@ -35,9 +35,9 @@ namespace AlibabaCloud
 				struct ResourceDirectory
 				{
 					std::string resourceDirectoryId;
-					std::string rootFolderId;
 					std::string createTime;
 					std::string masterAccountName;
+					std::string rootFolderId;
 					std::string masterAccountId;
 				};
 

@@ -43,37 +43,37 @@ void ListRolesResult::parse(const std::string &payload)
 	for (auto valueRolesRole : allRolesNode)
 	{
 		Role rolesObject;
+		if(!valueRolesRole["Arn"].isNull())
+			rolesObject.arn = valueRolesRole["Arn"].asString();
+		if(!valueRolesRole["CreateDate"].isNull())
+			rolesObject.createDate = valueRolesRole["CreateDate"].asString();
+		if(!valueRolesRole["Description"].isNull())
+			rolesObject.description = valueRolesRole["Description"].asString();
+		if(!valueRolesRole["IsServiceLinkedRole"].isNull())
+			rolesObject.isServiceLinkedRole = valueRolesRole["IsServiceLinkedRole"].asString() == "true";
+		if(!valueRolesRole["MaxSessionDuration"].isNull())
+			rolesObject.maxSessionDuration = std::stol(valueRolesRole["MaxSessionDuration"].asString());
+		if(!valueRolesRole["RoleId"].isNull())
+			rolesObject.roleId = valueRolesRole["RoleId"].asString();
+		if(!valueRolesRole["RoleName"].isNull())
+			rolesObject.roleName = valueRolesRole["RoleName"].asString();
 		if(!valueRolesRole["RolePrincipalName"].isNull())
 			rolesObject.rolePrincipalName = valueRolesRole["RolePrincipalName"].asString();
 		if(!valueRolesRole["UpdateDate"].isNull())
 			rolesObject.updateDate = valueRolesRole["UpdateDate"].asString();
-		if(!valueRolesRole["Description"].isNull())
-			rolesObject.description = valueRolesRole["Description"].asString();
-		if(!valueRolesRole["MaxSessionDuration"].isNull())
-			rolesObject.maxSessionDuration = std::stol(valueRolesRole["MaxSessionDuration"].asString());
-		if(!valueRolesRole["RoleName"].isNull())
-			rolesObject.roleName = valueRolesRole["RoleName"].asString();
-		if(!valueRolesRole["CreateDate"].isNull())
-			rolesObject.createDate = valueRolesRole["CreateDate"].asString();
-		if(!valueRolesRole["RoleId"].isNull())
-			rolesObject.roleId = valueRolesRole["RoleId"].asString();
-		if(!valueRolesRole["Arn"].isNull())
-			rolesObject.arn = valueRolesRole["Arn"].asString();
-		if(!valueRolesRole["IsServiceLinkedRole"].isNull())
-			rolesObject.isServiceLinkedRole = valueRolesRole["IsServiceLinkedRole"].asString() == "true";
 		auto latestDeletionTaskNode = value["LatestDeletionTask"];
-		if(!latestDeletionTaskNode["DeletionTaskId"].isNull())
-			rolesObject.latestDeletionTask.deletionTaskId = latestDeletionTaskNode["DeletionTaskId"].asString();
 		if(!latestDeletionTaskNode["CreateDate"].isNull())
 			rolesObject.latestDeletionTask.createDate = latestDeletionTaskNode["CreateDate"].asString();
+		if(!latestDeletionTaskNode["DeletionTaskId"].isNull())
+			rolesObject.latestDeletionTask.deletionTaskId = latestDeletionTaskNode["DeletionTaskId"].asString();
 		roles_.push_back(rolesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

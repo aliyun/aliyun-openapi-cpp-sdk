@@ -38,9 +38,9 @@ namespace AlibabaCloud
 					std::string resourceDirectoryId;
 					std::string scpStatus;
 					std::string memberDeletionStatus;
-					std::string rootFolderId;
 					std::string createTime;
 					std::string masterAccountName;
+					std::string rootFolderId;
 					std::string controlPolicyStatus;
 					std::string masterAccountId;
 				};

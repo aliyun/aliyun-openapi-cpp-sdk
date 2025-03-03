@@ -25,6 +25,27 @@ ListTagResourcesRequest::ListTagResourcesRequest()
 
 ListTagResourcesRequest::~ListTagResourcesRequest() {}
 
+std::string ListTagResourcesRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void ListTagResourcesRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
+std::vector<ListTagResourcesRequest::Tag> ListTagResourcesRequest::getTag() const {
+  return tag_;
+}
+
+void ListTagResourcesRequest::setTag(const std::vector<ListTagResourcesRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
+  }
+}
+
 std::vector<ListTagResourcesRequest::std::string> ListTagResourcesRequest::getResourceId() const {
   return resourceId_;
 }
@@ -45,15 +66,6 @@ void ListTagResourcesRequest::setResourceType(const std::string &resourceType) {
   setParameter(std::string("ResourceType"), resourceType);
 }
 
-std::string ListTagResourcesRequest::getNextToken() const {
-  return nextToken_;
-}
-
-void ListTagResourcesRequest::setNextToken(const std::string &nextToken) {
-  nextToken_ = nextToken;
-  setParameter(std::string("NextToken"), nextToken);
-}
-
 int ListTagResourcesRequest::getMaxResults() const {
   return maxResults_;
 }
@@ -61,17 +73,5 @@ int ListTagResourcesRequest::getMaxResults() const {
 void ListTagResourcesRequest::setMaxResults(int maxResults) {
   maxResults_ = maxResults;
   setParameter(std::string("MaxResults"), std::to_string(maxResults));
-}
-
-std::vector<ListTagResourcesRequest::Tag> ListTagResourcesRequest::getTag() const {
-  return tag_;
-}
-
-void ListTagResourcesRequest::setTag(const std::vector<ListTagResourcesRequest::Tag> &tag) {
-  tag_ = tag;
-  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
-    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
-    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
-  }
 }
 

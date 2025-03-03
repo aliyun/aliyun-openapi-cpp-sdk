@@ -31,21 +31,21 @@ ResourceManagerClient::ResourceManagerClient(const Credentials &credentials, con
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "resourcemanager");
 }
 
 ResourceManagerClient::ResourceManagerClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "resourcemanager");
 }
 
 ResourceManagerClient::ResourceManagerClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "resourcemanager");
 }
 
 ResourceManagerClient::~ResourceManagerClient()
@@ -405,6 +405,42 @@ ResourceManagerClient::CheckAccountDeleteOutcomeCallable ResourceManagerClient::
 			[this, request]()
 			{
 			return this->checkAccountDelete(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::CreateAutoGroupingRuleOutcome ResourceManagerClient::createAutoGroupingRule(const CreateAutoGroupingRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAutoGroupingRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAutoGroupingRuleOutcome(CreateAutoGroupingRuleResult(outcome.result()));
+	else
+		return CreateAutoGroupingRuleOutcome(outcome.error());
+}
+
+void ResourceManagerClient::createAutoGroupingRuleAsync(const CreateAutoGroupingRuleRequest& request, const CreateAutoGroupingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAutoGroupingRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::CreateAutoGroupingRuleOutcomeCallable ResourceManagerClient::createAutoGroupingRuleCallable(const CreateAutoGroupingRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAutoGroupingRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->createAutoGroupingRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -807,6 +843,42 @@ ResourceManagerClient::DeleteAccountOutcomeCallable ResourceManagerClient::delet
 	return task->get_future();
 }
 
+ResourceManagerClient::DeleteAutoGroupingRuleOutcome ResourceManagerClient::deleteAutoGroupingRule(const DeleteAutoGroupingRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAutoGroupingRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAutoGroupingRuleOutcome(DeleteAutoGroupingRuleResult(outcome.result()));
+	else
+		return DeleteAutoGroupingRuleOutcome(outcome.error());
+}
+
+void ResourceManagerClient::deleteAutoGroupingRuleAsync(const DeleteAutoGroupingRuleRequest& request, const DeleteAutoGroupingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAutoGroupingRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::DeleteAutoGroupingRuleOutcomeCallable ResourceManagerClient::deleteAutoGroupingRuleCallable(const DeleteAutoGroupingRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAutoGroupingRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAutoGroupingRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ResourceManagerClient::DeleteControlPolicyOutcome ResourceManagerClient::deleteControlPolicy(const DeleteControlPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1203,6 +1275,78 @@ ResourceManagerClient::DetachPolicyOutcomeCallable ResourceManagerClient::detach
 	return task->get_future();
 }
 
+ResourceManagerClient::DisableAssociatedTransferOutcome ResourceManagerClient::disableAssociatedTransfer(const DisableAssociatedTransferRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableAssociatedTransferOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableAssociatedTransferOutcome(DisableAssociatedTransferResult(outcome.result()));
+	else
+		return DisableAssociatedTransferOutcome(outcome.error());
+}
+
+void ResourceManagerClient::disableAssociatedTransferAsync(const DisableAssociatedTransferRequest& request, const DisableAssociatedTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableAssociatedTransfer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::DisableAssociatedTransferOutcomeCallable ResourceManagerClient::disableAssociatedTransferCallable(const DisableAssociatedTransferRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableAssociatedTransferOutcome()>>(
+			[this, request]()
+			{
+			return this->disableAssociatedTransfer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::DisableAutoGroupingOutcome ResourceManagerClient::disableAutoGrouping(const DisableAutoGroupingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableAutoGroupingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableAutoGroupingOutcome(DisableAutoGroupingResult(outcome.result()));
+	else
+		return DisableAutoGroupingOutcome(outcome.error());
+}
+
+void ResourceManagerClient::disableAutoGroupingAsync(const DisableAutoGroupingRequest& request, const DisableAutoGroupingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableAutoGrouping(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::DisableAutoGroupingOutcomeCallable ResourceManagerClient::disableAutoGroupingCallable(const DisableAutoGroupingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableAutoGroupingOutcome()>>(
+			[this, request]()
+			{
+			return this->disableAutoGrouping(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ResourceManagerClient::DisableControlPolicyOutcome ResourceManagerClient::disableControlPolicy(const DisableControlPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1233,6 +1377,78 @@ ResourceManagerClient::DisableControlPolicyOutcomeCallable ResourceManagerClient
 			[this, request]()
 			{
 			return this->disableControlPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::EnableAssociatedTransferOutcome ResourceManagerClient::enableAssociatedTransfer(const EnableAssociatedTransferRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableAssociatedTransferOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableAssociatedTransferOutcome(EnableAssociatedTransferResult(outcome.result()));
+	else
+		return EnableAssociatedTransferOutcome(outcome.error());
+}
+
+void ResourceManagerClient::enableAssociatedTransferAsync(const EnableAssociatedTransferRequest& request, const EnableAssociatedTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableAssociatedTransfer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::EnableAssociatedTransferOutcomeCallable ResourceManagerClient::enableAssociatedTransferCallable(const EnableAssociatedTransferRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableAssociatedTransferOutcome()>>(
+			[this, request]()
+			{
+			return this->enableAssociatedTransfer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::EnableAutoGroupingOutcome ResourceManagerClient::enableAutoGrouping(const EnableAutoGroupingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableAutoGroupingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableAutoGroupingOutcome(EnableAutoGroupingResult(outcome.result()));
+	else
+		return EnableAutoGroupingOutcome(outcome.error());
+}
+
+void ResourceManagerClient::enableAutoGroupingAsync(const EnableAutoGroupingRequest& request, const EnableAutoGroupingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableAutoGrouping(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::EnableAutoGroupingOutcomeCallable ResourceManagerClient::enableAutoGroupingCallable(const EnableAutoGroupingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableAutoGroupingOutcome()>>(
+			[this, request]()
+			{
+			return this->enableAutoGrouping(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1413,6 +1629,78 @@ ResourceManagerClient::GetAccountDeletionStatusOutcomeCallable ResourceManagerCl
 			[this, request]()
 			{
 			return this->getAccountDeletionStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::GetAutoGroupingRuleOutcome ResourceManagerClient::getAutoGroupingRule(const GetAutoGroupingRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAutoGroupingRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAutoGroupingRuleOutcome(GetAutoGroupingRuleResult(outcome.result()));
+	else
+		return GetAutoGroupingRuleOutcome(outcome.error());
+}
+
+void ResourceManagerClient::getAutoGroupingRuleAsync(const GetAutoGroupingRuleRequest& request, const GetAutoGroupingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAutoGroupingRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::GetAutoGroupingRuleOutcomeCallable ResourceManagerClient::getAutoGroupingRuleCallable(const GetAutoGroupingRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAutoGroupingRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->getAutoGroupingRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::GetAutoGroupingStatusOutcome ResourceManagerClient::getAutoGroupingStatus(const GetAutoGroupingStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAutoGroupingStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAutoGroupingStatusOutcome(GetAutoGroupingStatusResult(outcome.result()));
+	else
+		return GetAutoGroupingStatusOutcome(outcome.error());
+}
+
+void ResourceManagerClient::getAutoGroupingStatusAsync(const GetAutoGroupingStatusRequest& request, const GetAutoGroupingStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAutoGroupingStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::GetAutoGroupingStatusOutcomeCallable ResourceManagerClient::getAutoGroupingStatusCallable(const GetAutoGroupingStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAutoGroupingStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getAutoGroupingStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1989,6 +2277,78 @@ ResourceManagerClient::ListAncestorsOutcomeCallable ResourceManagerClient::listA
 			[this, request]()
 			{
 			return this->listAncestors(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::ListAssociatedTransferSettingOutcome ResourceManagerClient::listAssociatedTransferSetting(const ListAssociatedTransferSettingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAssociatedTransferSettingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAssociatedTransferSettingOutcome(ListAssociatedTransferSettingResult(outcome.result()));
+	else
+		return ListAssociatedTransferSettingOutcome(outcome.error());
+}
+
+void ResourceManagerClient::listAssociatedTransferSettingAsync(const ListAssociatedTransferSettingRequest& request, const ListAssociatedTransferSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAssociatedTransferSetting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::ListAssociatedTransferSettingOutcomeCallable ResourceManagerClient::listAssociatedTransferSettingCallable(const ListAssociatedTransferSettingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAssociatedTransferSettingOutcome()>>(
+			[this, request]()
+			{
+			return this->listAssociatedTransferSetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::ListAutoGroupingRulesOutcome ResourceManagerClient::listAutoGroupingRules(const ListAutoGroupingRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAutoGroupingRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAutoGroupingRulesOutcome(ListAutoGroupingRulesResult(outcome.result()));
+	else
+		return ListAutoGroupingRulesOutcome(outcome.error());
+}
+
+void ResourceManagerClient::listAutoGroupingRulesAsync(const ListAutoGroupingRulesRequest& request, const ListAutoGroupingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAutoGroupingRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::ListAutoGroupingRulesOutcomeCallable ResourceManagerClient::listAutoGroupingRulesCallable(const ListAutoGroupingRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAutoGroupingRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->listAutoGroupingRules(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3177,6 +3537,114 @@ ResourceManagerClient::UpdateAccountOutcomeCallable ResourceManagerClient::updat
 			[this, request]()
 			{
 			return this->updateAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::UpdateAssociatedTransferSettingOutcome ResourceManagerClient::updateAssociatedTransferSetting(const UpdateAssociatedTransferSettingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAssociatedTransferSettingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAssociatedTransferSettingOutcome(UpdateAssociatedTransferSettingResult(outcome.result()));
+	else
+		return UpdateAssociatedTransferSettingOutcome(outcome.error());
+}
+
+void ResourceManagerClient::updateAssociatedTransferSettingAsync(const UpdateAssociatedTransferSettingRequest& request, const UpdateAssociatedTransferSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAssociatedTransferSetting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::UpdateAssociatedTransferSettingOutcomeCallable ResourceManagerClient::updateAssociatedTransferSettingCallable(const UpdateAssociatedTransferSettingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAssociatedTransferSettingOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAssociatedTransferSetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::UpdateAutoGroupingConfigOutcome ResourceManagerClient::updateAutoGroupingConfig(const UpdateAutoGroupingConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAutoGroupingConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAutoGroupingConfigOutcome(UpdateAutoGroupingConfigResult(outcome.result()));
+	else
+		return UpdateAutoGroupingConfigOutcome(outcome.error());
+}
+
+void ResourceManagerClient::updateAutoGroupingConfigAsync(const UpdateAutoGroupingConfigRequest& request, const UpdateAutoGroupingConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAutoGroupingConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::UpdateAutoGroupingConfigOutcomeCallable ResourceManagerClient::updateAutoGroupingConfigCallable(const UpdateAutoGroupingConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAutoGroupingConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAutoGroupingConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::UpdateAutoGroupingRuleOutcome ResourceManagerClient::updateAutoGroupingRule(const UpdateAutoGroupingRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAutoGroupingRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAutoGroupingRuleOutcome(UpdateAutoGroupingRuleResult(outcome.result()));
+	else
+		return UpdateAutoGroupingRuleOutcome(outcome.error());
+}
+
+void ResourceManagerClient::updateAutoGroupingRuleAsync(const UpdateAutoGroupingRuleRequest& request, const UpdateAutoGroupingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAutoGroupingRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::UpdateAutoGroupingRuleOutcomeCallable ResourceManagerClient::updateAutoGroupingRuleCallable(const UpdateAutoGroupingRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAutoGroupingRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAutoGroupingRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

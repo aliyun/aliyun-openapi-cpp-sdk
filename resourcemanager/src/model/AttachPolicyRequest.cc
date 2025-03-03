@@ -25,6 +25,15 @@ AttachPolicyRequest::AttachPolicyRequest()
 
 AttachPolicyRequest::~AttachPolicyRequest() {}
 
+std::string AttachPolicyRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void AttachPolicyRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string AttachPolicyRequest::getPolicyType() const {
   return policyType_;
 }
@@ -41,15 +50,6 @@ std::string AttachPolicyRequest::getPrincipalType() const {
 void AttachPolicyRequest::setPrincipalType(const std::string &principalType) {
   principalType_ = principalType;
   setParameter(std::string("PrincipalType"), principalType);
-}
-
-std::string AttachPolicyRequest::getResourceGroupId() const {
-  return resourceGroupId_;
-}
-
-void AttachPolicyRequest::setResourceGroupId(const std::string &resourceGroupId) {
-  resourceGroupId_ = resourceGroupId;
-  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string AttachPolicyRequest::getPolicyName() const {

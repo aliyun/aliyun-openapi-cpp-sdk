@@ -40,16 +40,16 @@ void InitResourceDirectoryResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resourceDirectoryNode = value["ResourceDirectory"];
-	if(!resourceDirectoryNode["RootFolderId"].isNull())
-		resourceDirectory_.rootFolderId = resourceDirectoryNode["RootFolderId"].asString();
-	if(!resourceDirectoryNode["ResourceDirectoryId"].isNull())
-		resourceDirectory_.resourceDirectoryId = resourceDirectoryNode["ResourceDirectoryId"].asString();
 	if(!resourceDirectoryNode["CreateTime"].isNull())
 		resourceDirectory_.createTime = resourceDirectoryNode["CreateTime"].asString();
 	if(!resourceDirectoryNode["MasterAccountId"].isNull())
 		resourceDirectory_.masterAccountId = resourceDirectoryNode["MasterAccountId"].asString();
 	if(!resourceDirectoryNode["MasterAccountName"].isNull())
 		resourceDirectory_.masterAccountName = resourceDirectoryNode["MasterAccountName"].asString();
+	if(!resourceDirectoryNode["ResourceDirectoryId"].isNull())
+		resourceDirectory_.resourceDirectoryId = resourceDirectoryNode["ResourceDirectoryId"].asString();
+	if(!resourceDirectoryNode["RootFolderId"].isNull())
+		resourceDirectory_.rootFolderId = resourceDirectoryNode["RootFolderId"].asString();
 
 }
 

@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Policy
 				{
-					std::string updateDate;
 					std::string policyType;
+					std::string updateDate;
 					std::string description;
 					int attachmentCount;
 					std::string defaultVersion;

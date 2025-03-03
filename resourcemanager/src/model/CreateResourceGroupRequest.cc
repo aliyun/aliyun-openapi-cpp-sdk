@@ -43,3 +43,15 @@ void CreateResourceGroupRequest::setName(const std::string &name) {
   setParameter(std::string("Name"), name);
 }
 
+std::vector<CreateResourceGroupRequest::Tag> CreateResourceGroupRequest::getTag() const {
+  return tag_;
+}
+
+void CreateResourceGroupRequest::setTag(const std::vector<CreateResourceGroupRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
+  }
+}
+

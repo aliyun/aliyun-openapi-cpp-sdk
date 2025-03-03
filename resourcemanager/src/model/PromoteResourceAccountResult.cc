@@ -40,28 +40,28 @@ void PromoteResourceAccountResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto accountNode = value["Account"];
-	if(!accountNode["Status"].isNull())
-		account_.status = accountNode["Status"].asString();
-	if(!accountNode["Type"].isNull())
-		account_.type = accountNode["Type"].asString();
+	if(!accountNode["AccountId"].isNull())
+		account_.accountId = accountNode["AccountId"].asString();
+	if(!accountNode["AccountName"].isNull())
+		account_.accountName = accountNode["AccountName"].asString();
 	if(!accountNode["DisplayName"].isNull())
 		account_.displayName = accountNode["DisplayName"].asString();
 	if(!accountNode["FolderId"].isNull())
 		account_.folderId = accountNode["FolderId"].asString();
-	if(!accountNode["ResourceDirectoryId"].isNull())
-		account_.resourceDirectoryId = accountNode["ResourceDirectoryId"].asString();
-	if(!accountNode["RecordId"].isNull())
-		account_.recordId = accountNode["RecordId"].asString();
-	if(!accountNode["JoinTime"].isNull())
-		account_.joinTime = accountNode["JoinTime"].asString();
-	if(!accountNode["AccountId"].isNull())
-		account_.accountId = accountNode["AccountId"].asString();
 	if(!accountNode["JoinMethod"].isNull())
 		account_.joinMethod = accountNode["JoinMethod"].asString();
-	if(!accountNode["AccountName"].isNull())
-		account_.accountName = accountNode["AccountName"].asString();
+	if(!accountNode["JoinTime"].isNull())
+		account_.joinTime = accountNode["JoinTime"].asString();
 	if(!accountNode["ModifyTime"].isNull())
 		account_.modifyTime = accountNode["ModifyTime"].asString();
+	if(!accountNode["RecordId"].isNull())
+		account_.recordId = accountNode["RecordId"].asString();
+	if(!accountNode["ResourceDirectoryId"].isNull())
+		account_.resourceDirectoryId = accountNode["ResourceDirectoryId"].asString();
+	if(!accountNode["Status"].isNull())
+		account_.status = accountNode["Status"].asString();
+	if(!accountNode["Type"].isNull())
+		account_.type = accountNode["Type"].asString();
 
 }
 

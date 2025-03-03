@@ -28,16 +28,23 @@ namespace ResourceManager {
 namespace Model {
 class ALIBABACLOUD_RESOURCEMANAGER_EXPORT CreateResourceGroupRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateResourceGroupRequest();
 	~CreateResourceGroupRequest();
 	std::string getDisplayName() const;
 	void setDisplayName(const std::string &displayName);
 	std::string getName() const;
 	void setName(const std::string &name);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 
 private:
 	std::string displayName_;
 	std::string name_;
+	std::vector<Tag> tag_;
 };
 } // namespace Model
 } // namespace ResourceManager

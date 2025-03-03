@@ -41,6 +41,8 @@ set(resourcemanager_public_header_model
 	include/alibabacloud/resourcemanager/model/ChangeAccountEmailResult.h
 	include/alibabacloud/resourcemanager/model/CheckAccountDeleteRequest.h
 	include/alibabacloud/resourcemanager/model/CheckAccountDeleteResult.h
+	include/alibabacloud/resourcemanager/model/CreateAutoGroupingRuleRequest.h
+	include/alibabacloud/resourcemanager/model/CreateAutoGroupingRuleResult.h
 	include/alibabacloud/resourcemanager/model/CreateCloudAccountRequest.h
 	include/alibabacloud/resourcemanager/model/CreateCloudAccountResult.h
 	include/alibabacloud/resourcemanager/model/CreateControlPolicyRequest.h
@@ -63,6 +65,8 @@ set(resourcemanager_public_header_model
 	include/alibabacloud/resourcemanager/model/DeclineHandshakeResult.h
 	include/alibabacloud/resourcemanager/model/DeleteAccountRequest.h
 	include/alibabacloud/resourcemanager/model/DeleteAccountResult.h
+	include/alibabacloud/resourcemanager/model/DeleteAutoGroupingRuleRequest.h
+	include/alibabacloud/resourcemanager/model/DeleteAutoGroupingRuleResult.h
 	include/alibabacloud/resourcemanager/model/DeleteControlPolicyRequest.h
 	include/alibabacloud/resourcemanager/model/DeleteControlPolicyResult.h
 	include/alibabacloud/resourcemanager/model/DeleteFolderRequest.h
@@ -85,8 +89,16 @@ set(resourcemanager_public_header_model
 	include/alibabacloud/resourcemanager/model/DetachControlPolicyResult.h
 	include/alibabacloud/resourcemanager/model/DetachPolicyRequest.h
 	include/alibabacloud/resourcemanager/model/DetachPolicyResult.h
+	include/alibabacloud/resourcemanager/model/DisableAssociatedTransferRequest.h
+	include/alibabacloud/resourcemanager/model/DisableAssociatedTransferResult.h
+	include/alibabacloud/resourcemanager/model/DisableAutoGroupingRequest.h
+	include/alibabacloud/resourcemanager/model/DisableAutoGroupingResult.h
 	include/alibabacloud/resourcemanager/model/DisableControlPolicyRequest.h
 	include/alibabacloud/resourcemanager/model/DisableControlPolicyResult.h
+	include/alibabacloud/resourcemanager/model/EnableAssociatedTransferRequest.h
+	include/alibabacloud/resourcemanager/model/EnableAssociatedTransferResult.h
+	include/alibabacloud/resourcemanager/model/EnableAutoGroupingRequest.h
+	include/alibabacloud/resourcemanager/model/EnableAutoGroupingResult.h
 	include/alibabacloud/resourcemanager/model/EnableControlPolicyRequest.h
 	include/alibabacloud/resourcemanager/model/EnableControlPolicyResult.h
 	include/alibabacloud/resourcemanager/model/EnableResourceDirectoryRequest.h
@@ -97,6 +109,10 @@ set(resourcemanager_public_header_model
 	include/alibabacloud/resourcemanager/model/GetAccountDeletionCheckResultResult.h
 	include/alibabacloud/resourcemanager/model/GetAccountDeletionStatusRequest.h
 	include/alibabacloud/resourcemanager/model/GetAccountDeletionStatusResult.h
+	include/alibabacloud/resourcemanager/model/GetAutoGroupingRuleRequest.h
+	include/alibabacloud/resourcemanager/model/GetAutoGroupingRuleResult.h
+	include/alibabacloud/resourcemanager/model/GetAutoGroupingStatusRequest.h
+	include/alibabacloud/resourcemanager/model/GetAutoGroupingStatusResult.h
 	include/alibabacloud/resourcemanager/model/GetControlPolicyRequest.h
 	include/alibabacloud/resourcemanager/model/GetControlPolicyResult.h
 	include/alibabacloud/resourcemanager/model/GetControlPolicyEnablementStatusRequest.h
@@ -129,6 +145,10 @@ set(resourcemanager_public_header_model
 	include/alibabacloud/resourcemanager/model/ListAccountsForParentResult.h
 	include/alibabacloud/resourcemanager/model/ListAncestorsRequest.h
 	include/alibabacloud/resourcemanager/model/ListAncestorsResult.h
+	include/alibabacloud/resourcemanager/model/ListAssociatedTransferSettingRequest.h
+	include/alibabacloud/resourcemanager/model/ListAssociatedTransferSettingResult.h
+	include/alibabacloud/resourcemanager/model/ListAutoGroupingRulesRequest.h
+	include/alibabacloud/resourcemanager/model/ListAutoGroupingRulesResult.h
 	include/alibabacloud/resourcemanager/model/ListControlPoliciesRequest.h
 	include/alibabacloud/resourcemanager/model/ListControlPoliciesResult.h
 	include/alibabacloud/resourcemanager/model/ListControlPolicyAttachmentsForTargetRequest.h
@@ -195,6 +215,12 @@ set(resourcemanager_public_header_model
 	include/alibabacloud/resourcemanager/model/UntagResourcesResult.h
 	include/alibabacloud/resourcemanager/model/UpdateAccountRequest.h
 	include/alibabacloud/resourcemanager/model/UpdateAccountResult.h
+	include/alibabacloud/resourcemanager/model/UpdateAssociatedTransferSettingRequest.h
+	include/alibabacloud/resourcemanager/model/UpdateAssociatedTransferSettingResult.h
+	include/alibabacloud/resourcemanager/model/UpdateAutoGroupingConfigRequest.h
+	include/alibabacloud/resourcemanager/model/UpdateAutoGroupingConfigResult.h
+	include/alibabacloud/resourcemanager/model/UpdateAutoGroupingRuleRequest.h
+	include/alibabacloud/resourcemanager/model/UpdateAutoGroupingRuleResult.h
 	include/alibabacloud/resourcemanager/model/UpdateControlPolicyRequest.h
 	include/alibabacloud/resourcemanager/model/UpdateControlPolicyResult.h
 	include/alibabacloud/resourcemanager/model/UpdateFolderRequest.h
@@ -226,6 +252,8 @@ set(resourcemanager_src
 	src/model/ChangeAccountEmailResult.cc
 	src/model/CheckAccountDeleteRequest.cc
 	src/model/CheckAccountDeleteResult.cc
+	src/model/CreateAutoGroupingRuleRequest.cc
+	src/model/CreateAutoGroupingRuleResult.cc
 	src/model/CreateCloudAccountRequest.cc
 	src/model/CreateCloudAccountResult.cc
 	src/model/CreateControlPolicyRequest.cc
@@ -248,6 +276,8 @@ set(resourcemanager_src
 	src/model/DeclineHandshakeResult.cc
 	src/model/DeleteAccountRequest.cc
 	src/model/DeleteAccountResult.cc
+	src/model/DeleteAutoGroupingRuleRequest.cc
+	src/model/DeleteAutoGroupingRuleResult.cc
 	src/model/DeleteControlPolicyRequest.cc
 	src/model/DeleteControlPolicyResult.cc
 	src/model/DeleteFolderRequest.cc
@@ -270,8 +300,16 @@ set(resourcemanager_src
 	src/model/DetachControlPolicyResult.cc
 	src/model/DetachPolicyRequest.cc
 	src/model/DetachPolicyResult.cc
+	src/model/DisableAssociatedTransferRequest.cc
+	src/model/DisableAssociatedTransferResult.cc
+	src/model/DisableAutoGroupingRequest.cc
+	src/model/DisableAutoGroupingResult.cc
 	src/model/DisableControlPolicyRequest.cc
 	src/model/DisableControlPolicyResult.cc
+	src/model/EnableAssociatedTransferRequest.cc
+	src/model/EnableAssociatedTransferResult.cc
+	src/model/EnableAutoGroupingRequest.cc
+	src/model/EnableAutoGroupingResult.cc
 	src/model/EnableControlPolicyRequest.cc
 	src/model/EnableControlPolicyResult.cc
 	src/model/EnableResourceDirectoryRequest.cc
@@ -282,6 +320,10 @@ set(resourcemanager_src
 	src/model/GetAccountDeletionCheckResultResult.cc
 	src/model/GetAccountDeletionStatusRequest.cc
 	src/model/GetAccountDeletionStatusResult.cc
+	src/model/GetAutoGroupingRuleRequest.cc
+	src/model/GetAutoGroupingRuleResult.cc
+	src/model/GetAutoGroupingStatusRequest.cc
+	src/model/GetAutoGroupingStatusResult.cc
 	src/model/GetControlPolicyRequest.cc
 	src/model/GetControlPolicyResult.cc
 	src/model/GetControlPolicyEnablementStatusRequest.cc
@@ -314,6 +356,10 @@ set(resourcemanager_src
 	src/model/ListAccountsForParentResult.cc
 	src/model/ListAncestorsRequest.cc
 	src/model/ListAncestorsResult.cc
+	src/model/ListAssociatedTransferSettingRequest.cc
+	src/model/ListAssociatedTransferSettingResult.cc
+	src/model/ListAutoGroupingRulesRequest.cc
+	src/model/ListAutoGroupingRulesResult.cc
 	src/model/ListControlPoliciesRequest.cc
 	src/model/ListControlPoliciesResult.cc
 	src/model/ListControlPolicyAttachmentsForTargetRequest.cc
@@ -380,6 +426,12 @@ set(resourcemanager_src
 	src/model/UntagResourcesResult.cc
 	src/model/UpdateAccountRequest.cc
 	src/model/UpdateAccountResult.cc
+	src/model/UpdateAssociatedTransferSettingRequest.cc
+	src/model/UpdateAssociatedTransferSettingResult.cc
+	src/model/UpdateAutoGroupingConfigRequest.cc
+	src/model/UpdateAutoGroupingConfigResult.cc
+	src/model/UpdateAutoGroupingRuleRequest.cc
+	src/model/UpdateAutoGroupingRuleResult.cc
 	src/model/UpdateControlPolicyRequest.cc
 	src/model/UpdateControlPolicyResult.cc
 	src/model/UpdateFolderRequest.cc

@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string status;
 					std::string joinMethod;
 					std::string modifyTime;
-					std::string type;
 					std::string resourceDirectoryId;
+					std::string type;
 					std::string accountId;
 					std::string displayName;
 					std::string folderId;
