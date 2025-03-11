@@ -43,10 +43,10 @@ void DescribeDbInstanceDbsResult::parse(const std::string &payload)
 	for (auto valueDatabasesDatabase : allDatabasesNode)
 	{
 		Database databasesObject;
-		if(!valueDatabasesDatabase["DbName"].isNull())
-			databasesObject.dbName = valueDatabasesDatabase["DbName"].asString();
 		if(!valueDatabasesDatabase["Status"].isNull())
 			databasesObject.status = std::stoi(valueDatabasesDatabase["Status"].asString());
+		if(!valueDatabasesDatabase["DbName"].isNull())
+			databasesObject.dbName = valueDatabasesDatabase["DbName"].asString();
 		if(!valueDatabasesDatabase["Description"].isNull())
 			databasesObject.description = valueDatabasesDatabase["Description"].asString();
 		databases_.push_back(databasesObject);

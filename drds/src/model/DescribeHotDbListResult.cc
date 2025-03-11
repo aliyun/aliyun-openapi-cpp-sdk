@@ -53,10 +53,10 @@ void DescribeHotDbListResult::parse(const std::string &payload)
 			instanceDbObject.hotDbList.push_back(value.asString());
 		data_.list.push_back(instanceDbObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Msg"].isNull())
 		msg_ = value["Msg"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

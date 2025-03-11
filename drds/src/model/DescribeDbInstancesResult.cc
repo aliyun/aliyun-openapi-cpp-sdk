@@ -43,24 +43,26 @@ void DescribeDbInstancesResult::parse(const std::string &payload)
 	for (auto valueItemsDBInstance : allItemsNode)
 	{
 		DBInstance itemsObject;
-		if(!valueItemsDBInstance["DBInstanceId"].isNull())
-			itemsObject.dBInstanceId = valueItemsDBInstance["DBInstanceId"].asString();
-		if(!valueItemsDBInstance["DBInstanceStatus"].isNull())
-			itemsObject.dBInstanceStatus = std::stoi(valueItemsDBInstance["DBInstanceStatus"].asString());
+		if(!valueItemsDBInstance["InstanceNetworkType"].isNull())
+			itemsObject.instanceNetworkType = valueItemsDBInstance["InstanceNetworkType"].asString();
 		if(!valueItemsDBInstance["DBInstanceType"].isNull())
 			itemsObject.dBInstanceType = valueItemsDBInstance["DBInstanceType"].asString();
+		if(!valueItemsDBInstance["ZoneId"].isNull())
+			itemsObject.zoneId = valueItemsDBInstance["ZoneId"].asString();
+		if(!valueItemsDBInstance["DBInstanceStatus"].isNull())
+			itemsObject.dBInstanceStatus = std::stoi(valueItemsDBInstance["DBInstanceStatus"].asString());
+		if(!valueItemsDBInstance["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = valueItemsDBInstance["DBInstanceId"].asString();
 		if(!valueItemsDBInstance["Engine"].isNull())
 			itemsObject.engine = valueItemsDBInstance["Engine"].asString();
+		if(!valueItemsDBInstance["DBInstanceDescription"].isNull())
+			itemsObject.dBInstanceDescription = valueItemsDBInstance["DBInstanceDescription"].asString();
 		if(!valueItemsDBInstance["EngineVersion"].isNull())
 			itemsObject.engineVersion = valueItemsDBInstance["EngineVersion"].asString();
 		if(!valueItemsDBInstance["RegionId"].isNull())
 			itemsObject.regionId = valueItemsDBInstance["RegionId"].asString();
-		if(!valueItemsDBInstance["ZoneId"].isNull())
-			itemsObject.zoneId = valueItemsDBInstance["ZoneId"].asString();
-		if(!valueItemsDBInstance["DBInstanceDescription"].isNull())
-			itemsObject.dBInstanceDescription = valueItemsDBInstance["DBInstanceDescription"].asString();
-		if(!valueItemsDBInstance["InstanceNetworkType"].isNull())
-			itemsObject.instanceNetworkType = valueItemsDBInstance["InstanceNetworkType"].asString();
+		if(!valueItemsDBInstance["AllowAllCategory"].isNull())
+			itemsObject.allowAllCategory = valueItemsDBInstance["AllowAllCategory"].asString() == "true";
 		auto allReadOnlyDBInstanceId = value["ReadOnlyDBInstanceId"]["ReadOnlyDBInstanceId"];
 		for (auto value : allReadOnlyDBInstanceId)
 			itemsObject.readOnlyDBInstanceId.push_back(value.asString());

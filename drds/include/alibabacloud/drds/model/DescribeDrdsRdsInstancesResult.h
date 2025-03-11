@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string dBInstanceStatus;
 					int port;
 					std::string payType;
+					int lockMode;
 					std::string dBInstanceCPU;
 					std::string dBInstanceClassType;
 					std::string connectUrl;
@@ -48,10 +49,11 @@ namespace AlibabaCloud
 					std::string networkType;
 					long dBInstanceStorage;
 					std::string rdsInstType;
-					std::string dmInstanceId;
 					std::string expireTime;
-					std::string engine;
+					std::string dmInstanceId;
+					std::string lockReason;
 					int remainDays;
+					std::string engine;
 				};
 
 

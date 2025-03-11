@@ -43,20 +43,20 @@ void ListTagResourcesResult::parse(const std::string &payload)
 	for (auto valueTagResourcesTagResource : allTagResourcesNode)
 	{
 		TagResource tagResourcesObject;
-		if(!valueTagResourcesTagResource["TagKey"].isNull())
-			tagResourcesObject.tagKey = valueTagResourcesTagResource["TagKey"].asString();
+		if(!valueTagResourcesTagResource["ResourceType"].isNull())
+			tagResourcesObject.resourceType = valueTagResourcesTagResource["ResourceType"].asString();
 		if(!valueTagResourcesTagResource["TagValue"].isNull())
 			tagResourcesObject.tagValue = valueTagResourcesTagResource["TagValue"].asString();
 		if(!valueTagResourcesTagResource["ResourceId"].isNull())
 			tagResourcesObject.resourceId = valueTagResourcesTagResource["ResourceId"].asString();
-		if(!valueTagResourcesTagResource["ResourceType"].isNull())
-			tagResourcesObject.resourceType = valueTagResourcesTagResource["ResourceType"].asString();
+		if(!valueTagResourcesTagResource["TagKey"].isNull())
+			tagResourcesObject.tagKey = valueTagResourcesTagResource["TagKey"].asString();
 		tagResources_.push_back(tagResourcesObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

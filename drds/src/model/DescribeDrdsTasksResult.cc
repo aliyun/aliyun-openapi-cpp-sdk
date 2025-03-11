@@ -43,12 +43,12 @@ void DescribeDrdsTasksResult::parse(const std::string &payload)
 	for (auto valueTasksTask : allTasksNode)
 	{
 		Task tasksObject;
-		if(!valueTasksTask["Id"].isNull())
-			tasksObject.id = std::stol(valueTasksTask["Id"].asString());
 		if(!valueTasksTask["State"].isNull())
 			tasksObject.state = valueTasksTask["State"].asString();
 		if(!valueTasksTask["Content"].isNull())
 			tasksObject.content = valueTasksTask["Content"].asString();
+		if(!valueTasksTask["Id"].isNull())
+			tasksObject.id = std::stol(valueTasksTask["Id"].asString());
 		tasks_.push_back(tasksObject);
 	}
 	if(!value["Success"].isNull())

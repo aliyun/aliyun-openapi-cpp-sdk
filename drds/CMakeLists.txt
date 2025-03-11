@@ -21,6 +21,10 @@ set(drds_public_header
 	include/alibabacloud/drds/DrdsExport.h )
 
 set(drds_public_header_model 
+	include/alibabacloud/drds/model/ChangeAccountPasswordRequest.h
+	include/alibabacloud/drds/model/ChangeAccountPasswordResult.h
+	include/alibabacloud/drds/model/ChangeInstanceAzoneRequest.h
+	include/alibabacloud/drds/model/ChangeInstanceAzoneResult.h
 	include/alibabacloud/drds/model/CheckDrdsDbNameRequest.h
 	include/alibabacloud/drds/model/CheckDrdsDbNameResult.h
 	include/alibabacloud/drds/model/CheckExpandStatusRequest.h
@@ -71,8 +75,6 @@ set(drds_public_header_model
 	include/alibabacloud/drds/model/DescribeDrdsDbInstancesResult.h
 	include/alibabacloud/drds/model/DescribeDrdsDbRdsNameListRequest.h
 	include/alibabacloud/drds/model/DescribeDrdsDbRdsNameListResult.h
-	include/alibabacloud/drds/model/DescribeDrdsDbTasksRequest.h
-	include/alibabacloud/drds/model/DescribeDrdsDbTasksResult.h
 	include/alibabacloud/drds/model/DescribeDrdsInstanceRequest.h
 	include/alibabacloud/drds/model/DescribeDrdsInstanceResult.h
 	include/alibabacloud/drds/model/DescribeDrdsInstanceDbMonitorRequest.h
@@ -99,8 +101,6 @@ set(drds_public_header_model
 	include/alibabacloud/drds/model/DescribeDrdsTasksResult.h
 	include/alibabacloud/drds/model/DescribeExpandLogicTableInfoListRequest.h
 	include/alibabacloud/drds/model/DescribeExpandLogicTableInfoListResult.h
-	include/alibabacloud/drds/model/DescribeHiStoreInstanceInfoRequest.h
-	include/alibabacloud/drds/model/DescribeHiStoreInstanceInfoResult.h
 	include/alibabacloud/drds/model/DescribeHotDbListRequest.h
 	include/alibabacloud/drds/model/DescribeHotDbListResult.h
 	include/alibabacloud/drds/model/DescribeInstDbLogInfoRequest.h
@@ -109,8 +109,6 @@ set(drds_public_header_model
 	include/alibabacloud/drds/model/DescribeInstDbSlsInfoResult.h
 	include/alibabacloud/drds/model/DescribeInstanceAccountsRequest.h
 	include/alibabacloud/drds/model/DescribeInstanceAccountsResult.h
-	include/alibabacloud/drds/model/DescribeInstanceMenuSwitchRequest.h
-	include/alibabacloud/drds/model/DescribeInstanceMenuSwitchResult.h
 	include/alibabacloud/drds/model/DescribeInstanceSwitchAzoneRequest.h
 	include/alibabacloud/drds/model/DescribeInstanceSwitchAzoneResult.h
 	include/alibabacloud/drds/model/DescribeInstanceSwitchNetworkRequest.h
@@ -125,12 +123,14 @@ set(drds_public_header_model
 	include/alibabacloud/drds/model/DescribeRdsPerformanceSummaryResult.h
 	include/alibabacloud/drds/model/DescribeRdsSuperAccountInstancesRequest.h
 	include/alibabacloud/drds/model/DescribeRdsSuperAccountInstancesResult.h
+	include/alibabacloud/drds/model/DescribeRecycleBinStatusRequest.h
+	include/alibabacloud/drds/model/DescribeRecycleBinStatusResult.h
+	include/alibabacloud/drds/model/DescribeRecycleBinTablesRequest.h
+	include/alibabacloud/drds/model/DescribeRecycleBinTablesResult.h
 	include/alibabacloud/drds/model/DescribeRestoreOrderRequest.h
 	include/alibabacloud/drds/model/DescribeRestoreOrderResult.h
 	include/alibabacloud/drds/model/DescribeShardTaskInfoRequest.h
 	include/alibabacloud/drds/model/DescribeShardTaskInfoResult.h
-	include/alibabacloud/drds/model/DescribeShardTaskListRequest.h
-	include/alibabacloud/drds/model/DescribeShardTaskListResult.h
 	include/alibabacloud/drds/model/DescribeSqlFlashbakTaskRequest.h
 	include/alibabacloud/drds/model/DescribeSqlFlashbakTaskResult.h
 	include/alibabacloud/drds/model/DescribeTableRequest.h
@@ -141,24 +141,36 @@ set(drds_public_header_model
 	include/alibabacloud/drds/model/DescribeTablesResult.h
 	include/alibabacloud/drds/model/DisableSqlAuditRequest.h
 	include/alibabacloud/drds/model/DisableSqlAuditResult.h
+	include/alibabacloud/drds/model/EnableInstanceIpv6AddressRequest.h
+	include/alibabacloud/drds/model/EnableInstanceIpv6AddressResult.h
 	include/alibabacloud/drds/model/EnableSqlAuditRequest.h
 	include/alibabacloud/drds/model/EnableSqlAuditResult.h
 	include/alibabacloud/drds/model/EnableSqlFlashbackMatchSwitchRequest.h
 	include/alibabacloud/drds/model/EnableSqlFlashbackMatchSwitchResult.h
+	include/alibabacloud/drds/model/FlashbackRecycleBinTableRequest.h
+	include/alibabacloud/drds/model/FlashbackRecycleBinTableResult.h
 	include/alibabacloud/drds/model/GetDrdsDbRdsRelationInfoRequest.h
 	include/alibabacloud/drds/model/GetDrdsDbRdsRelationInfoResult.h
 	include/alibabacloud/drds/model/ListTagResourcesRequest.h
 	include/alibabacloud/drds/model/ListTagResourcesResult.h
 	include/alibabacloud/drds/model/ManagePrivateRdsRequest.h
 	include/alibabacloud/drds/model/ManagePrivateRdsResult.h
+	include/alibabacloud/drds/model/ModifyAccountDescriptionRequest.h
+	include/alibabacloud/drds/model/ModifyAccountDescriptionResult.h
+	include/alibabacloud/drds/model/ModifyAccountPrivilegeRequest.h
+	include/alibabacloud/drds/model/ModifyAccountPrivilegeResult.h
 	include/alibabacloud/drds/model/ModifyDrdsInstanceDescriptionRequest.h
 	include/alibabacloud/drds/model/ModifyDrdsInstanceDescriptionResult.h
 	include/alibabacloud/drds/model/ModifyDrdsIpWhiteListRequest.h
 	include/alibabacloud/drds/model/ModifyDrdsIpWhiteListResult.h
+	include/alibabacloud/drds/model/ModifyPolarDbReadWeightRequest.h
+	include/alibabacloud/drds/model/ModifyPolarDbReadWeightResult.h
 	include/alibabacloud/drds/model/ModifyRdsReadWeightRequest.h
 	include/alibabacloud/drds/model/ModifyRdsReadWeightResult.h
 	include/alibabacloud/drds/model/PutStartBackupRequest.h
 	include/alibabacloud/drds/model/PutStartBackupResult.h
+	include/alibabacloud/drds/model/RefreshDrdsAtomUrlRequest.h
+	include/alibabacloud/drds/model/RefreshDrdsAtomUrlResult.h
 	include/alibabacloud/drds/model/ReleaseInstanceInternetAddressRequest.h
 	include/alibabacloud/drds/model/ReleaseInstanceInternetAddressResult.h
 	include/alibabacloud/drds/model/RemoveBackupsSetRequest.h
@@ -171,6 +183,12 @@ set(drds_public_header_model
 	include/alibabacloud/drds/model/RemoveDrdsInstanceResult.h
 	include/alibabacloud/drds/model/RemoveInstanceAccountRequest.h
 	include/alibabacloud/drds/model/RemoveInstanceAccountResult.h
+	include/alibabacloud/drds/model/RemoveRecycleBinTableRequest.h
+	include/alibabacloud/drds/model/RemoveRecycleBinTableResult.h
+	include/alibabacloud/drds/model/RestartDrdsInstanceRequest.h
+	include/alibabacloud/drds/model/RestartDrdsInstanceResult.h
+	include/alibabacloud/drds/model/RollbackInstanceVersionRequest.h
+	include/alibabacloud/drds/model/RollbackInstanceVersionResult.h
 	include/alibabacloud/drds/model/SetBackupLocalRequest.h
 	include/alibabacloud/drds/model/SetBackupLocalResult.h
 	include/alibabacloud/drds/model/SetBackupPolicyRequest.h
@@ -179,6 +197,8 @@ set(drds_public_header_model
 	include/alibabacloud/drds/model/SetupBroadcastTablesResult.h
 	include/alibabacloud/drds/model/SetupDrdsParamsRequest.h
 	include/alibabacloud/drds/model/SetupDrdsParamsResult.h
+	include/alibabacloud/drds/model/SetupRecycleBinStatusRequest.h
+	include/alibabacloud/drds/model/SetupRecycleBinStatusResult.h
 	include/alibabacloud/drds/model/SetupTableRequest.h
 	include/alibabacloud/drds/model/SetupTableResult.h
 	include/alibabacloud/drds/model/StartRestoreRequest.h
@@ -193,12 +213,8 @@ set(drds_public_header_model
 	include/alibabacloud/drds/model/SubmitSmoothExpandPreCheckResult.h
 	include/alibabacloud/drds/model/SubmitSmoothExpandPreCheckTaskRequest.h
 	include/alibabacloud/drds/model/SubmitSmoothExpandPreCheckTaskResult.h
-	include/alibabacloud/drds/model/SubmitSmoothExpandTaskRequest.h
-	include/alibabacloud/drds/model/SubmitSmoothExpandTaskResult.h
 	include/alibabacloud/drds/model/SubmitSqlFlashbackTaskRequest.h
 	include/alibabacloud/drds/model/SubmitSqlFlashbackTaskResult.h
-	include/alibabacloud/drds/model/SubmitSwitchTaskRequest.h
-	include/alibabacloud/drds/model/SubmitSwitchTaskResult.h
 	include/alibabacloud/drds/model/SwitchGlobalBroadcastTypeRequest.h
 	include/alibabacloud/drds/model/SwitchGlobalBroadcastTypeResult.h
 	include/alibabacloud/drds/model/TagResourcesRequest.h
@@ -220,6 +236,10 @@ set(drds_public_header_model
 
 set(drds_src 
 	src/DrdsClient.cc
+	src/model/ChangeAccountPasswordRequest.cc
+	src/model/ChangeAccountPasswordResult.cc
+	src/model/ChangeInstanceAzoneRequest.cc
+	src/model/ChangeInstanceAzoneResult.cc
 	src/model/CheckDrdsDbNameRequest.cc
 	src/model/CheckDrdsDbNameResult.cc
 	src/model/CheckExpandStatusRequest.cc
@@ -270,8 +290,6 @@ set(drds_src
 	src/model/DescribeDrdsDbInstancesResult.cc
 	src/model/DescribeDrdsDbRdsNameListRequest.cc
 	src/model/DescribeDrdsDbRdsNameListResult.cc
-	src/model/DescribeDrdsDbTasksRequest.cc
-	src/model/DescribeDrdsDbTasksResult.cc
 	src/model/DescribeDrdsInstanceRequest.cc
 	src/model/DescribeDrdsInstanceResult.cc
 	src/model/DescribeDrdsInstanceDbMonitorRequest.cc
@@ -298,8 +316,6 @@ set(drds_src
 	src/model/DescribeDrdsTasksResult.cc
 	src/model/DescribeExpandLogicTableInfoListRequest.cc
 	src/model/DescribeExpandLogicTableInfoListResult.cc
-	src/model/DescribeHiStoreInstanceInfoRequest.cc
-	src/model/DescribeHiStoreInstanceInfoResult.cc
 	src/model/DescribeHotDbListRequest.cc
 	src/model/DescribeHotDbListResult.cc
 	src/model/DescribeInstDbLogInfoRequest.cc
@@ -308,8 +324,6 @@ set(drds_src
 	src/model/DescribeInstDbSlsInfoResult.cc
 	src/model/DescribeInstanceAccountsRequest.cc
 	src/model/DescribeInstanceAccountsResult.cc
-	src/model/DescribeInstanceMenuSwitchRequest.cc
-	src/model/DescribeInstanceMenuSwitchResult.cc
 	src/model/DescribeInstanceSwitchAzoneRequest.cc
 	src/model/DescribeInstanceSwitchAzoneResult.cc
 	src/model/DescribeInstanceSwitchNetworkRequest.cc
@@ -324,12 +338,14 @@ set(drds_src
 	src/model/DescribeRdsPerformanceSummaryResult.cc
 	src/model/DescribeRdsSuperAccountInstancesRequest.cc
 	src/model/DescribeRdsSuperAccountInstancesResult.cc
+	src/model/DescribeRecycleBinStatusRequest.cc
+	src/model/DescribeRecycleBinStatusResult.cc
+	src/model/DescribeRecycleBinTablesRequest.cc
+	src/model/DescribeRecycleBinTablesResult.cc
 	src/model/DescribeRestoreOrderRequest.cc
 	src/model/DescribeRestoreOrderResult.cc
 	src/model/DescribeShardTaskInfoRequest.cc
 	src/model/DescribeShardTaskInfoResult.cc
-	src/model/DescribeShardTaskListRequest.cc
-	src/model/DescribeShardTaskListResult.cc
 	src/model/DescribeSqlFlashbakTaskRequest.cc
 	src/model/DescribeSqlFlashbakTaskResult.cc
 	src/model/DescribeTableRequest.cc
@@ -340,24 +356,36 @@ set(drds_src
 	src/model/DescribeTablesResult.cc
 	src/model/DisableSqlAuditRequest.cc
 	src/model/DisableSqlAuditResult.cc
+	src/model/EnableInstanceIpv6AddressRequest.cc
+	src/model/EnableInstanceIpv6AddressResult.cc
 	src/model/EnableSqlAuditRequest.cc
 	src/model/EnableSqlAuditResult.cc
 	src/model/EnableSqlFlashbackMatchSwitchRequest.cc
 	src/model/EnableSqlFlashbackMatchSwitchResult.cc
+	src/model/FlashbackRecycleBinTableRequest.cc
+	src/model/FlashbackRecycleBinTableResult.cc
 	src/model/GetDrdsDbRdsRelationInfoRequest.cc
 	src/model/GetDrdsDbRdsRelationInfoResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ManagePrivateRdsRequest.cc
 	src/model/ManagePrivateRdsResult.cc
+	src/model/ModifyAccountDescriptionRequest.cc
+	src/model/ModifyAccountDescriptionResult.cc
+	src/model/ModifyAccountPrivilegeRequest.cc
+	src/model/ModifyAccountPrivilegeResult.cc
 	src/model/ModifyDrdsInstanceDescriptionRequest.cc
 	src/model/ModifyDrdsInstanceDescriptionResult.cc
 	src/model/ModifyDrdsIpWhiteListRequest.cc
 	src/model/ModifyDrdsIpWhiteListResult.cc
+	src/model/ModifyPolarDbReadWeightRequest.cc
+	src/model/ModifyPolarDbReadWeightResult.cc
 	src/model/ModifyRdsReadWeightRequest.cc
 	src/model/ModifyRdsReadWeightResult.cc
 	src/model/PutStartBackupRequest.cc
 	src/model/PutStartBackupResult.cc
+	src/model/RefreshDrdsAtomUrlRequest.cc
+	src/model/RefreshDrdsAtomUrlResult.cc
 	src/model/ReleaseInstanceInternetAddressRequest.cc
 	src/model/ReleaseInstanceInternetAddressResult.cc
 	src/model/RemoveBackupsSetRequest.cc
@@ -370,6 +398,12 @@ set(drds_src
 	src/model/RemoveDrdsInstanceResult.cc
 	src/model/RemoveInstanceAccountRequest.cc
 	src/model/RemoveInstanceAccountResult.cc
+	src/model/RemoveRecycleBinTableRequest.cc
+	src/model/RemoveRecycleBinTableResult.cc
+	src/model/RestartDrdsInstanceRequest.cc
+	src/model/RestartDrdsInstanceResult.cc
+	src/model/RollbackInstanceVersionRequest.cc
+	src/model/RollbackInstanceVersionResult.cc
 	src/model/SetBackupLocalRequest.cc
 	src/model/SetBackupLocalResult.cc
 	src/model/SetBackupPolicyRequest.cc
@@ -378,6 +412,8 @@ set(drds_src
 	src/model/SetupBroadcastTablesResult.cc
 	src/model/SetupDrdsParamsRequest.cc
 	src/model/SetupDrdsParamsResult.cc
+	src/model/SetupRecycleBinStatusRequest.cc
+	src/model/SetupRecycleBinStatusResult.cc
 	src/model/SetupTableRequest.cc
 	src/model/SetupTableResult.cc
 	src/model/StartRestoreRequest.cc
@@ -392,12 +428,8 @@ set(drds_src
 	src/model/SubmitSmoothExpandPreCheckResult.cc
 	src/model/SubmitSmoothExpandPreCheckTaskRequest.cc
 	src/model/SubmitSmoothExpandPreCheckTaskResult.cc
-	src/model/SubmitSmoothExpandTaskRequest.cc
-	src/model/SubmitSmoothExpandTaskResult.cc
 	src/model/SubmitSqlFlashbackTaskRequest.cc
 	src/model/SubmitSqlFlashbackTaskResult.cc
-	src/model/SubmitSwitchTaskRequest.cc
-	src/model/SubmitSwitchTaskResult.cc
 	src/model/SwitchGlobalBroadcastTypeRequest.cc
 	src/model/SwitchGlobalBroadcastTypeResult.cc
 	src/model/TagResourcesRequest.cc

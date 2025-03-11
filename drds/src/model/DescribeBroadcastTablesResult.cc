@@ -43,18 +43,18 @@ void DescribeBroadcastTablesResult::parse(const std::string &payload)
 	for (auto valueListListItem : allListNode)
 	{
 		ListItem listObject;
-		if(!valueListListItem["Table"].isNull())
-			listObject.table = valueListListItem["Table"].asString();
-		if(!valueListListItem["BroadcastType"].isNull())
-			listObject.broadcastType = valueListListItem["BroadcastType"].asString();
-		if(!valueListListItem["IsShard"].isNull())
-			listObject.isShard = valueListListItem["IsShard"].asString() == "true";
-		if(!valueListListItem["DbInstType"].isNull())
-			listObject.dbInstType = std::stoi(valueListListItem["DbInstType"].asString());
-		if(!valueListListItem["Broadcast"].isNull())
-			listObject.broadcast = valueListListItem["Broadcast"].asString() == "true";
 		if(!valueListListItem["Status"].isNull())
 			listObject.status = std::stoi(valueListListItem["Status"].asString());
+		if(!valueListListItem["IsShard"].isNull())
+			listObject.isShard = valueListListItem["IsShard"].asString() == "true";
+		if(!valueListListItem["Broadcast"].isNull())
+			listObject.broadcast = valueListListItem["Broadcast"].asString() == "true";
+		if(!valueListListItem["Table"].isNull())
+			listObject.table = valueListListItem["Table"].asString();
+		if(!valueListListItem["DbInstType"].isNull())
+			listObject.dbInstType = std::stoi(valueListListItem["DbInstType"].asString());
+		if(!valueListListItem["BroadcastType"].isNull())
+			listObject.broadcastType = valueListListItem["BroadcastType"].asString();
 		list_.push_back(listObject);
 	}
 	if(!value["Success"].isNull())

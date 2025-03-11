@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Drds::Model::DescribeInstanceSwitchAzoneRequest;
 
-DescribeInstanceSwitchAzoneRequest::DescribeInstanceSwitchAzoneRequest() :
-	RpcServiceRequest("drds", "2019-01-23", "DescribeInstanceSwitchAzone")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeInstanceSwitchAzoneRequest::DescribeInstanceSwitchAzoneRequest()
+    : RpcServiceRequest("drds", "2019-01-23", "DescribeInstanceSwitchAzone") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeInstanceSwitchAzoneRequest::~DescribeInstanceSwitchAzoneRequest()
-{}
+DescribeInstanceSwitchAzoneRequest::~DescribeInstanceSwitchAzoneRequest() {}
 
-std::string DescribeInstanceSwitchAzoneRequest::getDrdsInstanceId()const
-{
-	return drdsInstanceId_;
+std::string DescribeInstanceSwitchAzoneRequest::getDrdsInstanceId() const {
+  return drdsInstanceId_;
 }
 
-void DescribeInstanceSwitchAzoneRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
-{
-	drdsInstanceId_ = drdsInstanceId;
-	setParameter("DrdsInstanceId", drdsInstanceId);
+void DescribeInstanceSwitchAzoneRequest::setDrdsInstanceId(const std::string &drdsInstanceId) {
+  drdsInstanceId_ = drdsInstanceId;
+  setParameter(std::string("DrdsInstanceId"), drdsInstanceId);
 }
 
-std::string DescribeInstanceSwitchAzoneRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeInstanceSwitchAzoneRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeInstanceSwitchAzoneRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeInstanceSwitchAzoneRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 

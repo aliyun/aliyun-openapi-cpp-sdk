@@ -43,10 +43,10 @@ void ValidateShardTaskResult::parse(const std::string &payload)
 	for (auto valueListListItem : allListNode)
 	{
 		ListItem listObject;
-		if(!valueListListItem["Item"].isNull())
-			listObject.item = valueListListItem["Item"].asString();
 		if(!valueListListItem["Result"].isNull())
 			listObject.result = std::stoi(valueListListItem["Result"].asString());
+		if(!valueListListItem["Item"].isNull())
+			listObject.item = valueListListItem["Item"].asString();
 		list_.push_back(listObject);
 	}
 	if(!value["Success"].isNull())

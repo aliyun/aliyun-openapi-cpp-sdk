@@ -43,12 +43,12 @@ void DescribeExpandLogicTableInfoListResult::parse(const std::string &payload)
 	for (auto valueDatadataItem : allDataNode)
 	{
 		DataItem dataObject;
+		if(!valueDatadataItem["ShardTbKey"].isNull())
+			dataObject.shardTbKey = valueDatadataItem["ShardTbKey"].asString();
 		if(!valueDatadataItem["TableName"].isNull())
 			dataObject.tableName = valueDatadataItem["TableName"].asString();
 		if(!valueDatadataItem["ShardDbKey"].isNull())
 			dataObject.shardDbKey = valueDatadataItem["ShardDbKey"].asString();
-		if(!valueDatadataItem["ShardTbKey"].isNull())
-			dataObject.shardTbKey = valueDatadataItem["ShardTbKey"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

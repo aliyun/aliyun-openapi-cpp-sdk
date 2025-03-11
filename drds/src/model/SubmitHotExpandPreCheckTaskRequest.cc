@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,69 +18,54 @@
 
 using AlibabaCloud::Drds::Model::SubmitHotExpandPreCheckTaskRequest;
 
-SubmitHotExpandPreCheckTaskRequest::SubmitHotExpandPreCheckTaskRequest() :
-	RpcServiceRequest("drds", "2019-01-23", "SubmitHotExpandPreCheckTask")
-{
-	setMethod(HttpRequest::Method::Post);
+SubmitHotExpandPreCheckTaskRequest::SubmitHotExpandPreCheckTaskRequest()
+    : RpcServiceRequest("drds", "2019-01-23", "SubmitHotExpandPreCheckTask") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SubmitHotExpandPreCheckTaskRequest::~SubmitHotExpandPreCheckTaskRequest()
-{}
+SubmitHotExpandPreCheckTaskRequest::~SubmitHotExpandPreCheckTaskRequest() {}
 
-std::vector<std::string> SubmitHotExpandPreCheckTaskRequest::getTableList()const
-{
-	return tableList_;
+std::vector<std::string> SubmitHotExpandPreCheckTaskRequest::getTableList() const {
+  return tableList_;
 }
 
-void SubmitHotExpandPreCheckTaskRequest::setTableList(const std::vector<std::string>& tableList)
-{
-	tableList_ = tableList;
-	for(int dep1 = 0; dep1!= tableList.size(); dep1++) {
-		setParameter("TableList."+ std::to_string(dep1), tableList.at(dep1));
-	}
+void SubmitHotExpandPreCheckTaskRequest::setTableList(const std::vector<std::string> &tableList) {
+  tableList_ = tableList;
 }
 
-std::string SubmitHotExpandPreCheckTaskRequest::getDrdsInstanceId()const
-{
-	return drdsInstanceId_;
+std::string SubmitHotExpandPreCheckTaskRequest::getDrdsInstanceId() const {
+  return drdsInstanceId_;
 }
 
-void SubmitHotExpandPreCheckTaskRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
-{
-	drdsInstanceId_ = drdsInstanceId;
-	setParameter("DrdsInstanceId", drdsInstanceId);
+void SubmitHotExpandPreCheckTaskRequest::setDrdsInstanceId(const std::string &drdsInstanceId) {
+  drdsInstanceId_ = drdsInstanceId;
+  setParameter(std::string("DrdsInstanceId"), drdsInstanceId);
 }
 
-std::string SubmitHotExpandPreCheckTaskRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string SubmitHotExpandPreCheckTaskRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void SubmitHotExpandPreCheckTaskRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void SubmitHotExpandPreCheckTaskRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string SubmitHotExpandPreCheckTaskRequest::getDbName()const
-{
-	return dbName_;
+std::string SubmitHotExpandPreCheckTaskRequest::getDbName() const {
+  return dbName_;
 }
 
-void SubmitHotExpandPreCheckTaskRequest::setDbName(const std::string& dbName)
-{
-	dbName_ = dbName;
-	setParameter("DbName", dbName);
+void SubmitHotExpandPreCheckTaskRequest::setDbName(const std::string &dbName) {
+  dbName_ = dbName;
+  setParameter(std::string("DbName"), dbName);
 }
 
-std::string SubmitHotExpandPreCheckTaskRequest::getDbInstType()const
-{
-	return dbInstType_;
+std::string SubmitHotExpandPreCheckTaskRequest::getDbInstType() const {
+  return dbInstType_;
 }
 
-void SubmitHotExpandPreCheckTaskRequest::setDbInstType(const std::string& dbInstType)
-{
-	dbInstType_ = dbInstType;
-	setParameter("DbInstType", dbInstType);
+void SubmitHotExpandPreCheckTaskRequest::setDbInstType(const std::string &dbInstType) {
+  dbInstType_ = dbInstType;
+  setParameter(std::string("DbInstType"), dbInstType);
 }
 

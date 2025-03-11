@@ -42,10 +42,10 @@ void DescribeInstanceSwitchAzoneResult::parse(const std::string &payload)
 	auto resultNode = value["Result"];
 	if(!resultNode["OriginAzoneId"].isNull())
 		result_.originAzoneId = resultNode["OriginAzoneId"].asString();
-	if(!resultNode["RegionId"].isNull())
-		result_.regionId = resultNode["RegionId"].asString();
 	if(!resultNode["SwitchAble"].isNull())
 		result_.switchAble = resultNode["SwitchAble"].asString() == "true";
+	if(!resultNode["RegionId"].isNull())
+		result_.regionId = resultNode["RegionId"].asString();
 		auto allTargetAzones = resultNode["TargetAzones"]["TargetAzone"];
 		for (auto value : allTargetAzones)
 			result_.targetAzones.push_back(value.asString());

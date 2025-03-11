@@ -22,6 +22,10 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "DrdsExport.h"
+#include "model/ChangeAccountPasswordRequest.h"
+#include "model/ChangeAccountPasswordResult.h"
+#include "model/ChangeInstanceAzoneRequest.h"
+#include "model/ChangeInstanceAzoneResult.h"
 #include "model/CheckDrdsDbNameRequest.h"
 #include "model/CheckDrdsDbNameResult.h"
 #include "model/CheckExpandStatusRequest.h"
@@ -72,8 +76,6 @@
 #include "model/DescribeDrdsDbInstancesResult.h"
 #include "model/DescribeDrdsDbRdsNameListRequest.h"
 #include "model/DescribeDrdsDbRdsNameListResult.h"
-#include "model/DescribeDrdsDbTasksRequest.h"
-#include "model/DescribeDrdsDbTasksResult.h"
 #include "model/DescribeDrdsInstanceRequest.h"
 #include "model/DescribeDrdsInstanceResult.h"
 #include "model/DescribeDrdsInstanceDbMonitorRequest.h"
@@ -100,8 +102,6 @@
 #include "model/DescribeDrdsTasksResult.h"
 #include "model/DescribeExpandLogicTableInfoListRequest.h"
 #include "model/DescribeExpandLogicTableInfoListResult.h"
-#include "model/DescribeHiStoreInstanceInfoRequest.h"
-#include "model/DescribeHiStoreInstanceInfoResult.h"
 #include "model/DescribeHotDbListRequest.h"
 #include "model/DescribeHotDbListResult.h"
 #include "model/DescribeInstDbLogInfoRequest.h"
@@ -110,8 +110,6 @@
 #include "model/DescribeInstDbSlsInfoResult.h"
 #include "model/DescribeInstanceAccountsRequest.h"
 #include "model/DescribeInstanceAccountsResult.h"
-#include "model/DescribeInstanceMenuSwitchRequest.h"
-#include "model/DescribeInstanceMenuSwitchResult.h"
 #include "model/DescribeInstanceSwitchAzoneRequest.h"
 #include "model/DescribeInstanceSwitchAzoneResult.h"
 #include "model/DescribeInstanceSwitchNetworkRequest.h"
@@ -126,12 +124,14 @@
 #include "model/DescribeRdsPerformanceSummaryResult.h"
 #include "model/DescribeRdsSuperAccountInstancesRequest.h"
 #include "model/DescribeRdsSuperAccountInstancesResult.h"
+#include "model/DescribeRecycleBinStatusRequest.h"
+#include "model/DescribeRecycleBinStatusResult.h"
+#include "model/DescribeRecycleBinTablesRequest.h"
+#include "model/DescribeRecycleBinTablesResult.h"
 #include "model/DescribeRestoreOrderRequest.h"
 #include "model/DescribeRestoreOrderResult.h"
 #include "model/DescribeShardTaskInfoRequest.h"
 #include "model/DescribeShardTaskInfoResult.h"
-#include "model/DescribeShardTaskListRequest.h"
-#include "model/DescribeShardTaskListResult.h"
 #include "model/DescribeSqlFlashbakTaskRequest.h"
 #include "model/DescribeSqlFlashbakTaskResult.h"
 #include "model/DescribeTableRequest.h"
@@ -142,24 +142,36 @@
 #include "model/DescribeTablesResult.h"
 #include "model/DisableSqlAuditRequest.h"
 #include "model/DisableSqlAuditResult.h"
+#include "model/EnableInstanceIpv6AddressRequest.h"
+#include "model/EnableInstanceIpv6AddressResult.h"
 #include "model/EnableSqlAuditRequest.h"
 #include "model/EnableSqlAuditResult.h"
 #include "model/EnableSqlFlashbackMatchSwitchRequest.h"
 #include "model/EnableSqlFlashbackMatchSwitchResult.h"
+#include "model/FlashbackRecycleBinTableRequest.h"
+#include "model/FlashbackRecycleBinTableResult.h"
 #include "model/GetDrdsDbRdsRelationInfoRequest.h"
 #include "model/GetDrdsDbRdsRelationInfoResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
 #include "model/ManagePrivateRdsRequest.h"
 #include "model/ManagePrivateRdsResult.h"
+#include "model/ModifyAccountDescriptionRequest.h"
+#include "model/ModifyAccountDescriptionResult.h"
+#include "model/ModifyAccountPrivilegeRequest.h"
+#include "model/ModifyAccountPrivilegeResult.h"
 #include "model/ModifyDrdsInstanceDescriptionRequest.h"
 #include "model/ModifyDrdsInstanceDescriptionResult.h"
 #include "model/ModifyDrdsIpWhiteListRequest.h"
 #include "model/ModifyDrdsIpWhiteListResult.h"
+#include "model/ModifyPolarDbReadWeightRequest.h"
+#include "model/ModifyPolarDbReadWeightResult.h"
 #include "model/ModifyRdsReadWeightRequest.h"
 #include "model/ModifyRdsReadWeightResult.h"
 #include "model/PutStartBackupRequest.h"
 #include "model/PutStartBackupResult.h"
+#include "model/RefreshDrdsAtomUrlRequest.h"
+#include "model/RefreshDrdsAtomUrlResult.h"
 #include "model/ReleaseInstanceInternetAddressRequest.h"
 #include "model/ReleaseInstanceInternetAddressResult.h"
 #include "model/RemoveBackupsSetRequest.h"
@@ -172,6 +184,12 @@
 #include "model/RemoveDrdsInstanceResult.h"
 #include "model/RemoveInstanceAccountRequest.h"
 #include "model/RemoveInstanceAccountResult.h"
+#include "model/RemoveRecycleBinTableRequest.h"
+#include "model/RemoveRecycleBinTableResult.h"
+#include "model/RestartDrdsInstanceRequest.h"
+#include "model/RestartDrdsInstanceResult.h"
+#include "model/RollbackInstanceVersionRequest.h"
+#include "model/RollbackInstanceVersionResult.h"
 #include "model/SetBackupLocalRequest.h"
 #include "model/SetBackupLocalResult.h"
 #include "model/SetBackupPolicyRequest.h"
@@ -180,6 +198,8 @@
 #include "model/SetupBroadcastTablesResult.h"
 #include "model/SetupDrdsParamsRequest.h"
 #include "model/SetupDrdsParamsResult.h"
+#include "model/SetupRecycleBinStatusRequest.h"
+#include "model/SetupRecycleBinStatusResult.h"
 #include "model/SetupTableRequest.h"
 #include "model/SetupTableResult.h"
 #include "model/StartRestoreRequest.h"
@@ -194,12 +214,8 @@
 #include "model/SubmitSmoothExpandPreCheckResult.h"
 #include "model/SubmitSmoothExpandPreCheckTaskRequest.h"
 #include "model/SubmitSmoothExpandPreCheckTaskResult.h"
-#include "model/SubmitSmoothExpandTaskRequest.h"
-#include "model/SubmitSmoothExpandTaskResult.h"
 #include "model/SubmitSqlFlashbackTaskRequest.h"
 #include "model/SubmitSqlFlashbackTaskResult.h"
-#include "model/SubmitSwitchTaskRequest.h"
-#include "model/SubmitSwitchTaskResult.h"
 #include "model/SwitchGlobalBroadcastTypeRequest.h"
 #include "model/SwitchGlobalBroadcastTypeResult.h"
 #include "model/TagResourcesRequest.h"
@@ -227,6 +243,12 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_DRDS_EXPORT DrdsClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::ChangeAccountPasswordResult> ChangeAccountPasswordOutcome;
+			typedef std::future<ChangeAccountPasswordOutcome> ChangeAccountPasswordOutcomeCallable;
+			typedef std::function<void(const DrdsClient*, const Model::ChangeAccountPasswordRequest&, const ChangeAccountPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeAccountPasswordAsyncHandler;
+			typedef Outcome<Error, Model::ChangeInstanceAzoneResult> ChangeInstanceAzoneOutcome;
+			typedef std::future<ChangeInstanceAzoneOutcome> ChangeInstanceAzoneOutcomeCallable;
+			typedef std::function<void(const DrdsClient*, const Model::ChangeInstanceAzoneRequest&, const ChangeInstanceAzoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeInstanceAzoneAsyncHandler;
 			typedef Outcome<Error, Model::CheckDrdsDbNameResult> CheckDrdsDbNameOutcome;
 			typedef std::future<CheckDrdsDbNameOutcome> CheckDrdsDbNameOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::CheckDrdsDbNameRequest&, const CheckDrdsDbNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDrdsDbNameAsyncHandler;
@@ -302,9 +324,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDrdsDbRdsNameListResult> DescribeDrdsDbRdsNameListOutcome;
 			typedef std::future<DescribeDrdsDbRdsNameListOutcome> DescribeDrdsDbRdsNameListOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::DescribeDrdsDbRdsNameListRequest&, const DescribeDrdsDbRdsNameListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDrdsDbRdsNameListAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDrdsDbTasksResult> DescribeDrdsDbTasksOutcome;
-			typedef std::future<DescribeDrdsDbTasksOutcome> DescribeDrdsDbTasksOutcomeCallable;
-			typedef std::function<void(const DrdsClient*, const Model::DescribeDrdsDbTasksRequest&, const DescribeDrdsDbTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDrdsDbTasksAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDrdsInstanceResult> DescribeDrdsInstanceOutcome;
 			typedef std::future<DescribeDrdsInstanceOutcome> DescribeDrdsInstanceOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::DescribeDrdsInstanceRequest&, const DescribeDrdsInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDrdsInstanceAsyncHandler;
@@ -344,9 +363,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeExpandLogicTableInfoListResult> DescribeExpandLogicTableInfoListOutcome;
 			typedef std::future<DescribeExpandLogicTableInfoListOutcome> DescribeExpandLogicTableInfoListOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::DescribeExpandLogicTableInfoListRequest&, const DescribeExpandLogicTableInfoListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExpandLogicTableInfoListAsyncHandler;
-			typedef Outcome<Error, Model::DescribeHiStoreInstanceInfoResult> DescribeHiStoreInstanceInfoOutcome;
-			typedef std::future<DescribeHiStoreInstanceInfoOutcome> DescribeHiStoreInstanceInfoOutcomeCallable;
-			typedef std::function<void(const DrdsClient*, const Model::DescribeHiStoreInstanceInfoRequest&, const DescribeHiStoreInstanceInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHiStoreInstanceInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeHotDbListResult> DescribeHotDbListOutcome;
 			typedef std::future<DescribeHotDbListOutcome> DescribeHotDbListOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::DescribeHotDbListRequest&, const DescribeHotDbListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHotDbListAsyncHandler;
@@ -359,9 +375,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceAccountsResult> DescribeInstanceAccountsOutcome;
 			typedef std::future<DescribeInstanceAccountsOutcome> DescribeInstanceAccountsOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::DescribeInstanceAccountsRequest&, const DescribeInstanceAccountsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAccountsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeInstanceMenuSwitchResult> DescribeInstanceMenuSwitchOutcome;
-			typedef std::future<DescribeInstanceMenuSwitchOutcome> DescribeInstanceMenuSwitchOutcomeCallable;
-			typedef std::function<void(const DrdsClient*, const Model::DescribeInstanceMenuSwitchRequest&, const DescribeInstanceMenuSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceMenuSwitchAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceSwitchAzoneResult> DescribeInstanceSwitchAzoneOutcome;
 			typedef std::future<DescribeInstanceSwitchAzoneOutcome> DescribeInstanceSwitchAzoneOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::DescribeInstanceSwitchAzoneRequest&, const DescribeInstanceSwitchAzoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSwitchAzoneAsyncHandler;
@@ -383,15 +396,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRdsSuperAccountInstancesResult> DescribeRdsSuperAccountInstancesOutcome;
 			typedef std::future<DescribeRdsSuperAccountInstancesOutcome> DescribeRdsSuperAccountInstancesOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::DescribeRdsSuperAccountInstancesRequest&, const DescribeRdsSuperAccountInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRdsSuperAccountInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRecycleBinStatusResult> DescribeRecycleBinStatusOutcome;
+			typedef std::future<DescribeRecycleBinStatusOutcome> DescribeRecycleBinStatusOutcomeCallable;
+			typedef std::function<void(const DrdsClient*, const Model::DescribeRecycleBinStatusRequest&, const DescribeRecycleBinStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecycleBinStatusAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRecycleBinTablesResult> DescribeRecycleBinTablesOutcome;
+			typedef std::future<DescribeRecycleBinTablesOutcome> DescribeRecycleBinTablesOutcomeCallable;
+			typedef std::function<void(const DrdsClient*, const Model::DescribeRecycleBinTablesRequest&, const DescribeRecycleBinTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecycleBinTablesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRestoreOrderResult> DescribeRestoreOrderOutcome;
 			typedef std::future<DescribeRestoreOrderOutcome> DescribeRestoreOrderOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::DescribeRestoreOrderRequest&, const DescribeRestoreOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreOrderAsyncHandler;
 			typedef Outcome<Error, Model::DescribeShardTaskInfoResult> DescribeShardTaskInfoOutcome;
 			typedef std::future<DescribeShardTaskInfoOutcome> DescribeShardTaskInfoOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::DescribeShardTaskInfoRequest&, const DescribeShardTaskInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeShardTaskInfoAsyncHandler;
-			typedef Outcome<Error, Model::DescribeShardTaskListResult> DescribeShardTaskListOutcome;
-			typedef std::future<DescribeShardTaskListOutcome> DescribeShardTaskListOutcomeCallable;
-			typedef std::function<void(const DrdsClient*, const Model::DescribeShardTaskListRequest&, const DescribeShardTaskListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeShardTaskListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSqlFlashbakTaskResult> DescribeSqlFlashbakTaskOutcome;
 			typedef std::future<DescribeSqlFlashbakTaskOutcome> DescribeSqlFlashbakTaskOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::DescribeSqlFlashbakTaskRequest&, const DescribeSqlFlashbakTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSqlFlashbakTaskAsyncHandler;
@@ -407,12 +423,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DisableSqlAuditResult> DisableSqlAuditOutcome;
 			typedef std::future<DisableSqlAuditOutcome> DisableSqlAuditOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::DisableSqlAuditRequest&, const DisableSqlAuditOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableSqlAuditAsyncHandler;
+			typedef Outcome<Error, Model::EnableInstanceIpv6AddressResult> EnableInstanceIpv6AddressOutcome;
+			typedef std::future<EnableInstanceIpv6AddressOutcome> EnableInstanceIpv6AddressOutcomeCallable;
+			typedef std::function<void(const DrdsClient*, const Model::EnableInstanceIpv6AddressRequest&, const EnableInstanceIpv6AddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableInstanceIpv6AddressAsyncHandler;
 			typedef Outcome<Error, Model::EnableSqlAuditResult> EnableSqlAuditOutcome;
 			typedef std::future<EnableSqlAuditOutcome> EnableSqlAuditOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::EnableSqlAuditRequest&, const EnableSqlAuditOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableSqlAuditAsyncHandler;
 			typedef Outcome<Error, Model::EnableSqlFlashbackMatchSwitchResult> EnableSqlFlashbackMatchSwitchOutcome;
 			typedef std::future<EnableSqlFlashbackMatchSwitchOutcome> EnableSqlFlashbackMatchSwitchOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::EnableSqlFlashbackMatchSwitchRequest&, const EnableSqlFlashbackMatchSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableSqlFlashbackMatchSwitchAsyncHandler;
+			typedef Outcome<Error, Model::FlashbackRecycleBinTableResult> FlashbackRecycleBinTableOutcome;
+			typedef std::future<FlashbackRecycleBinTableOutcome> FlashbackRecycleBinTableOutcomeCallable;
+			typedef std::function<void(const DrdsClient*, const Model::FlashbackRecycleBinTableRequest&, const FlashbackRecycleBinTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FlashbackRecycleBinTableAsyncHandler;
 			typedef Outcome<Error, Model::GetDrdsDbRdsRelationInfoResult> GetDrdsDbRdsRelationInfoOutcome;
 			typedef std::future<GetDrdsDbRdsRelationInfoOutcome> GetDrdsDbRdsRelationInfoOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::GetDrdsDbRdsRelationInfoRequest&, const GetDrdsDbRdsRelationInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDrdsDbRdsRelationInfoAsyncHandler;
@@ -422,18 +444,30 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ManagePrivateRdsResult> ManagePrivateRdsOutcome;
 			typedef std::future<ManagePrivateRdsOutcome> ManagePrivateRdsOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::ManagePrivateRdsRequest&, const ManagePrivateRdsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ManagePrivateRdsAsyncHandler;
+			typedef Outcome<Error, Model::ModifyAccountDescriptionResult> ModifyAccountDescriptionOutcome;
+			typedef std::future<ModifyAccountDescriptionOutcome> ModifyAccountDescriptionOutcomeCallable;
+			typedef std::function<void(const DrdsClient*, const Model::ModifyAccountDescriptionRequest&, const ModifyAccountDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountDescriptionAsyncHandler;
+			typedef Outcome<Error, Model::ModifyAccountPrivilegeResult> ModifyAccountPrivilegeOutcome;
+			typedef std::future<ModifyAccountPrivilegeOutcome> ModifyAccountPrivilegeOutcomeCallable;
+			typedef std::function<void(const DrdsClient*, const Model::ModifyAccountPrivilegeRequest&, const ModifyAccountPrivilegeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountPrivilegeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDrdsInstanceDescriptionResult> ModifyDrdsInstanceDescriptionOutcome;
 			typedef std::future<ModifyDrdsInstanceDescriptionOutcome> ModifyDrdsInstanceDescriptionOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::ModifyDrdsInstanceDescriptionRequest&, const ModifyDrdsInstanceDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDrdsInstanceDescriptionAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDrdsIpWhiteListResult> ModifyDrdsIpWhiteListOutcome;
 			typedef std::future<ModifyDrdsIpWhiteListOutcome> ModifyDrdsIpWhiteListOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::ModifyDrdsIpWhiteListRequest&, const ModifyDrdsIpWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDrdsIpWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::ModifyPolarDbReadWeightResult> ModifyPolarDbReadWeightOutcome;
+			typedef std::future<ModifyPolarDbReadWeightOutcome> ModifyPolarDbReadWeightOutcomeCallable;
+			typedef std::function<void(const DrdsClient*, const Model::ModifyPolarDbReadWeightRequest&, const ModifyPolarDbReadWeightOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPolarDbReadWeightAsyncHandler;
 			typedef Outcome<Error, Model::ModifyRdsReadWeightResult> ModifyRdsReadWeightOutcome;
 			typedef std::future<ModifyRdsReadWeightOutcome> ModifyRdsReadWeightOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::ModifyRdsReadWeightRequest&, const ModifyRdsReadWeightOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRdsReadWeightAsyncHandler;
 			typedef Outcome<Error, Model::PutStartBackupResult> PutStartBackupOutcome;
 			typedef std::future<PutStartBackupOutcome> PutStartBackupOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::PutStartBackupRequest&, const PutStartBackupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutStartBackupAsyncHandler;
+			typedef Outcome<Error, Model::RefreshDrdsAtomUrlResult> RefreshDrdsAtomUrlOutcome;
+			typedef std::future<RefreshDrdsAtomUrlOutcome> RefreshDrdsAtomUrlOutcomeCallable;
+			typedef std::function<void(const DrdsClient*, const Model::RefreshDrdsAtomUrlRequest&, const RefreshDrdsAtomUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefreshDrdsAtomUrlAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseInstanceInternetAddressResult> ReleaseInstanceInternetAddressOutcome;
 			typedef std::future<ReleaseInstanceInternetAddressOutcome> ReleaseInstanceInternetAddressOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::ReleaseInstanceInternetAddressRequest&, const ReleaseInstanceInternetAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseInstanceInternetAddressAsyncHandler;
@@ -452,6 +486,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RemoveInstanceAccountResult> RemoveInstanceAccountOutcome;
 			typedef std::future<RemoveInstanceAccountOutcome> RemoveInstanceAccountOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::RemoveInstanceAccountRequest&, const RemoveInstanceAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveInstanceAccountAsyncHandler;
+			typedef Outcome<Error, Model::RemoveRecycleBinTableResult> RemoveRecycleBinTableOutcome;
+			typedef std::future<RemoveRecycleBinTableOutcome> RemoveRecycleBinTableOutcomeCallable;
+			typedef std::function<void(const DrdsClient*, const Model::RemoveRecycleBinTableRequest&, const RemoveRecycleBinTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveRecycleBinTableAsyncHandler;
+			typedef Outcome<Error, Model::RestartDrdsInstanceResult> RestartDrdsInstanceOutcome;
+			typedef std::future<RestartDrdsInstanceOutcome> RestartDrdsInstanceOutcomeCallable;
+			typedef std::function<void(const DrdsClient*, const Model::RestartDrdsInstanceRequest&, const RestartDrdsInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartDrdsInstanceAsyncHandler;
+			typedef Outcome<Error, Model::RollbackInstanceVersionResult> RollbackInstanceVersionOutcome;
+			typedef std::future<RollbackInstanceVersionOutcome> RollbackInstanceVersionOutcomeCallable;
+			typedef std::function<void(const DrdsClient*, const Model::RollbackInstanceVersionRequest&, const RollbackInstanceVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RollbackInstanceVersionAsyncHandler;
 			typedef Outcome<Error, Model::SetBackupLocalResult> SetBackupLocalOutcome;
 			typedef std::future<SetBackupLocalOutcome> SetBackupLocalOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::SetBackupLocalRequest&, const SetBackupLocalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetBackupLocalAsyncHandler;
@@ -464,6 +507,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetupDrdsParamsResult> SetupDrdsParamsOutcome;
 			typedef std::future<SetupDrdsParamsOutcome> SetupDrdsParamsOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::SetupDrdsParamsRequest&, const SetupDrdsParamsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetupDrdsParamsAsyncHandler;
+			typedef Outcome<Error, Model::SetupRecycleBinStatusResult> SetupRecycleBinStatusOutcome;
+			typedef std::future<SetupRecycleBinStatusOutcome> SetupRecycleBinStatusOutcomeCallable;
+			typedef std::function<void(const DrdsClient*, const Model::SetupRecycleBinStatusRequest&, const SetupRecycleBinStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetupRecycleBinStatusAsyncHandler;
 			typedef Outcome<Error, Model::SetupTableResult> SetupTableOutcome;
 			typedef std::future<SetupTableOutcome> SetupTableOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::SetupTableRequest&, const SetupTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetupTableAsyncHandler;
@@ -485,15 +531,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SubmitSmoothExpandPreCheckTaskResult> SubmitSmoothExpandPreCheckTaskOutcome;
 			typedef std::future<SubmitSmoothExpandPreCheckTaskOutcome> SubmitSmoothExpandPreCheckTaskOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::SubmitSmoothExpandPreCheckTaskRequest&, const SubmitSmoothExpandPreCheckTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitSmoothExpandPreCheckTaskAsyncHandler;
-			typedef Outcome<Error, Model::SubmitSmoothExpandTaskResult> SubmitSmoothExpandTaskOutcome;
-			typedef std::future<SubmitSmoothExpandTaskOutcome> SubmitSmoothExpandTaskOutcomeCallable;
-			typedef std::function<void(const DrdsClient*, const Model::SubmitSmoothExpandTaskRequest&, const SubmitSmoothExpandTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitSmoothExpandTaskAsyncHandler;
 			typedef Outcome<Error, Model::SubmitSqlFlashbackTaskResult> SubmitSqlFlashbackTaskOutcome;
 			typedef std::future<SubmitSqlFlashbackTaskOutcome> SubmitSqlFlashbackTaskOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::SubmitSqlFlashbackTaskRequest&, const SubmitSqlFlashbackTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitSqlFlashbackTaskAsyncHandler;
-			typedef Outcome<Error, Model::SubmitSwitchTaskResult> SubmitSwitchTaskOutcome;
-			typedef std::future<SubmitSwitchTaskOutcome> SubmitSwitchTaskOutcomeCallable;
-			typedef std::function<void(const DrdsClient*, const Model::SubmitSwitchTaskRequest&, const SubmitSwitchTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitSwitchTaskAsyncHandler;
 			typedef Outcome<Error, Model::SwitchGlobalBroadcastTypeResult> SwitchGlobalBroadcastTypeOutcome;
 			typedef std::future<SwitchGlobalBroadcastTypeOutcome> SwitchGlobalBroadcastTypeOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::SwitchGlobalBroadcastTypeRequest&, const SwitchGlobalBroadcastTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchGlobalBroadcastTypeAsyncHandler;
@@ -526,6 +566,12 @@ namespace AlibabaCloud
 			DrdsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			DrdsClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~DrdsClient();
+			ChangeAccountPasswordOutcome changeAccountPassword(const Model::ChangeAccountPasswordRequest &request)const;
+			void changeAccountPasswordAsync(const Model::ChangeAccountPasswordRequest& request, const ChangeAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChangeAccountPasswordOutcomeCallable changeAccountPasswordCallable(const Model::ChangeAccountPasswordRequest& request) const;
+			ChangeInstanceAzoneOutcome changeInstanceAzone(const Model::ChangeInstanceAzoneRequest &request)const;
+			void changeInstanceAzoneAsync(const Model::ChangeInstanceAzoneRequest& request, const ChangeInstanceAzoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChangeInstanceAzoneOutcomeCallable changeInstanceAzoneCallable(const Model::ChangeInstanceAzoneRequest& request) const;
 			CheckDrdsDbNameOutcome checkDrdsDbName(const Model::CheckDrdsDbNameRequest &request)const;
 			void checkDrdsDbNameAsync(const Model::CheckDrdsDbNameRequest& request, const CheckDrdsDbNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckDrdsDbNameOutcomeCallable checkDrdsDbNameCallable(const Model::CheckDrdsDbNameRequest& request) const;
@@ -601,9 +647,6 @@ namespace AlibabaCloud
 			DescribeDrdsDbRdsNameListOutcome describeDrdsDbRdsNameList(const Model::DescribeDrdsDbRdsNameListRequest &request)const;
 			void describeDrdsDbRdsNameListAsync(const Model::DescribeDrdsDbRdsNameListRequest& request, const DescribeDrdsDbRdsNameListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDrdsDbRdsNameListOutcomeCallable describeDrdsDbRdsNameListCallable(const Model::DescribeDrdsDbRdsNameListRequest& request) const;
-			DescribeDrdsDbTasksOutcome describeDrdsDbTasks(const Model::DescribeDrdsDbTasksRequest &request)const;
-			void describeDrdsDbTasksAsync(const Model::DescribeDrdsDbTasksRequest& request, const DescribeDrdsDbTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDrdsDbTasksOutcomeCallable describeDrdsDbTasksCallable(const Model::DescribeDrdsDbTasksRequest& request) const;
 			DescribeDrdsInstanceOutcome describeDrdsInstance(const Model::DescribeDrdsInstanceRequest &request)const;
 			void describeDrdsInstanceAsync(const Model::DescribeDrdsInstanceRequest& request, const DescribeDrdsInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDrdsInstanceOutcomeCallable describeDrdsInstanceCallable(const Model::DescribeDrdsInstanceRequest& request) const;
@@ -643,9 +686,6 @@ namespace AlibabaCloud
 			DescribeExpandLogicTableInfoListOutcome describeExpandLogicTableInfoList(const Model::DescribeExpandLogicTableInfoListRequest &request)const;
 			void describeExpandLogicTableInfoListAsync(const Model::DescribeExpandLogicTableInfoListRequest& request, const DescribeExpandLogicTableInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeExpandLogicTableInfoListOutcomeCallable describeExpandLogicTableInfoListCallable(const Model::DescribeExpandLogicTableInfoListRequest& request) const;
-			DescribeHiStoreInstanceInfoOutcome describeHiStoreInstanceInfo(const Model::DescribeHiStoreInstanceInfoRequest &request)const;
-			void describeHiStoreInstanceInfoAsync(const Model::DescribeHiStoreInstanceInfoRequest& request, const DescribeHiStoreInstanceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeHiStoreInstanceInfoOutcomeCallable describeHiStoreInstanceInfoCallable(const Model::DescribeHiStoreInstanceInfoRequest& request) const;
 			DescribeHotDbListOutcome describeHotDbList(const Model::DescribeHotDbListRequest &request)const;
 			void describeHotDbListAsync(const Model::DescribeHotDbListRequest& request, const DescribeHotDbListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeHotDbListOutcomeCallable describeHotDbListCallable(const Model::DescribeHotDbListRequest& request) const;
@@ -658,9 +698,6 @@ namespace AlibabaCloud
 			DescribeInstanceAccountsOutcome describeInstanceAccounts(const Model::DescribeInstanceAccountsRequest &request)const;
 			void describeInstanceAccountsAsync(const Model::DescribeInstanceAccountsRequest& request, const DescribeInstanceAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceAccountsOutcomeCallable describeInstanceAccountsCallable(const Model::DescribeInstanceAccountsRequest& request) const;
-			DescribeInstanceMenuSwitchOutcome describeInstanceMenuSwitch(const Model::DescribeInstanceMenuSwitchRequest &request)const;
-			void describeInstanceMenuSwitchAsync(const Model::DescribeInstanceMenuSwitchRequest& request, const DescribeInstanceMenuSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeInstanceMenuSwitchOutcomeCallable describeInstanceMenuSwitchCallable(const Model::DescribeInstanceMenuSwitchRequest& request) const;
 			DescribeInstanceSwitchAzoneOutcome describeInstanceSwitchAzone(const Model::DescribeInstanceSwitchAzoneRequest &request)const;
 			void describeInstanceSwitchAzoneAsync(const Model::DescribeInstanceSwitchAzoneRequest& request, const DescribeInstanceSwitchAzoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceSwitchAzoneOutcomeCallable describeInstanceSwitchAzoneCallable(const Model::DescribeInstanceSwitchAzoneRequest& request) const;
@@ -682,15 +719,18 @@ namespace AlibabaCloud
 			DescribeRdsSuperAccountInstancesOutcome describeRdsSuperAccountInstances(const Model::DescribeRdsSuperAccountInstancesRequest &request)const;
 			void describeRdsSuperAccountInstancesAsync(const Model::DescribeRdsSuperAccountInstancesRequest& request, const DescribeRdsSuperAccountInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRdsSuperAccountInstancesOutcomeCallable describeRdsSuperAccountInstancesCallable(const Model::DescribeRdsSuperAccountInstancesRequest& request) const;
+			DescribeRecycleBinStatusOutcome describeRecycleBinStatus(const Model::DescribeRecycleBinStatusRequest &request)const;
+			void describeRecycleBinStatusAsync(const Model::DescribeRecycleBinStatusRequest& request, const DescribeRecycleBinStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRecycleBinStatusOutcomeCallable describeRecycleBinStatusCallable(const Model::DescribeRecycleBinStatusRequest& request) const;
+			DescribeRecycleBinTablesOutcome describeRecycleBinTables(const Model::DescribeRecycleBinTablesRequest &request)const;
+			void describeRecycleBinTablesAsync(const Model::DescribeRecycleBinTablesRequest& request, const DescribeRecycleBinTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRecycleBinTablesOutcomeCallable describeRecycleBinTablesCallable(const Model::DescribeRecycleBinTablesRequest& request) const;
 			DescribeRestoreOrderOutcome describeRestoreOrder(const Model::DescribeRestoreOrderRequest &request)const;
 			void describeRestoreOrderAsync(const Model::DescribeRestoreOrderRequest& request, const DescribeRestoreOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRestoreOrderOutcomeCallable describeRestoreOrderCallable(const Model::DescribeRestoreOrderRequest& request) const;
 			DescribeShardTaskInfoOutcome describeShardTaskInfo(const Model::DescribeShardTaskInfoRequest &request)const;
 			void describeShardTaskInfoAsync(const Model::DescribeShardTaskInfoRequest& request, const DescribeShardTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeShardTaskInfoOutcomeCallable describeShardTaskInfoCallable(const Model::DescribeShardTaskInfoRequest& request) const;
-			DescribeShardTaskListOutcome describeShardTaskList(const Model::DescribeShardTaskListRequest &request)const;
-			void describeShardTaskListAsync(const Model::DescribeShardTaskListRequest& request, const DescribeShardTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeShardTaskListOutcomeCallable describeShardTaskListCallable(const Model::DescribeShardTaskListRequest& request) const;
 			DescribeSqlFlashbakTaskOutcome describeSqlFlashbakTask(const Model::DescribeSqlFlashbakTaskRequest &request)const;
 			void describeSqlFlashbakTaskAsync(const Model::DescribeSqlFlashbakTaskRequest& request, const DescribeSqlFlashbakTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSqlFlashbakTaskOutcomeCallable describeSqlFlashbakTaskCallable(const Model::DescribeSqlFlashbakTaskRequest& request) const;
@@ -706,12 +746,18 @@ namespace AlibabaCloud
 			DisableSqlAuditOutcome disableSqlAudit(const Model::DisableSqlAuditRequest &request)const;
 			void disableSqlAuditAsync(const Model::DisableSqlAuditRequest& request, const DisableSqlAuditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableSqlAuditOutcomeCallable disableSqlAuditCallable(const Model::DisableSqlAuditRequest& request) const;
+			EnableInstanceIpv6AddressOutcome enableInstanceIpv6Address(const Model::EnableInstanceIpv6AddressRequest &request)const;
+			void enableInstanceIpv6AddressAsync(const Model::EnableInstanceIpv6AddressRequest& request, const EnableInstanceIpv6AddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableInstanceIpv6AddressOutcomeCallable enableInstanceIpv6AddressCallable(const Model::EnableInstanceIpv6AddressRequest& request) const;
 			EnableSqlAuditOutcome enableSqlAudit(const Model::EnableSqlAuditRequest &request)const;
 			void enableSqlAuditAsync(const Model::EnableSqlAuditRequest& request, const EnableSqlAuditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableSqlAuditOutcomeCallable enableSqlAuditCallable(const Model::EnableSqlAuditRequest& request) const;
 			EnableSqlFlashbackMatchSwitchOutcome enableSqlFlashbackMatchSwitch(const Model::EnableSqlFlashbackMatchSwitchRequest &request)const;
 			void enableSqlFlashbackMatchSwitchAsync(const Model::EnableSqlFlashbackMatchSwitchRequest& request, const EnableSqlFlashbackMatchSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableSqlFlashbackMatchSwitchOutcomeCallable enableSqlFlashbackMatchSwitchCallable(const Model::EnableSqlFlashbackMatchSwitchRequest& request) const;
+			FlashbackRecycleBinTableOutcome flashbackRecycleBinTable(const Model::FlashbackRecycleBinTableRequest &request)const;
+			void flashbackRecycleBinTableAsync(const Model::FlashbackRecycleBinTableRequest& request, const FlashbackRecycleBinTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FlashbackRecycleBinTableOutcomeCallable flashbackRecycleBinTableCallable(const Model::FlashbackRecycleBinTableRequest& request) const;
 			GetDrdsDbRdsRelationInfoOutcome getDrdsDbRdsRelationInfo(const Model::GetDrdsDbRdsRelationInfoRequest &request)const;
 			void getDrdsDbRdsRelationInfoAsync(const Model::GetDrdsDbRdsRelationInfoRequest& request, const GetDrdsDbRdsRelationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDrdsDbRdsRelationInfoOutcomeCallable getDrdsDbRdsRelationInfoCallable(const Model::GetDrdsDbRdsRelationInfoRequest& request) const;
@@ -721,18 +767,30 @@ namespace AlibabaCloud
 			ManagePrivateRdsOutcome managePrivateRds(const Model::ManagePrivateRdsRequest &request)const;
 			void managePrivateRdsAsync(const Model::ManagePrivateRdsRequest& request, const ManagePrivateRdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ManagePrivateRdsOutcomeCallable managePrivateRdsCallable(const Model::ManagePrivateRdsRequest& request) const;
+			ModifyAccountDescriptionOutcome modifyAccountDescription(const Model::ModifyAccountDescriptionRequest &request)const;
+			void modifyAccountDescriptionAsync(const Model::ModifyAccountDescriptionRequest& request, const ModifyAccountDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyAccountDescriptionOutcomeCallable modifyAccountDescriptionCallable(const Model::ModifyAccountDescriptionRequest& request) const;
+			ModifyAccountPrivilegeOutcome modifyAccountPrivilege(const Model::ModifyAccountPrivilegeRequest &request)const;
+			void modifyAccountPrivilegeAsync(const Model::ModifyAccountPrivilegeRequest& request, const ModifyAccountPrivilegeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyAccountPrivilegeOutcomeCallable modifyAccountPrivilegeCallable(const Model::ModifyAccountPrivilegeRequest& request) const;
 			ModifyDrdsInstanceDescriptionOutcome modifyDrdsInstanceDescription(const Model::ModifyDrdsInstanceDescriptionRequest &request)const;
 			void modifyDrdsInstanceDescriptionAsync(const Model::ModifyDrdsInstanceDescriptionRequest& request, const ModifyDrdsInstanceDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDrdsInstanceDescriptionOutcomeCallable modifyDrdsInstanceDescriptionCallable(const Model::ModifyDrdsInstanceDescriptionRequest& request) const;
 			ModifyDrdsIpWhiteListOutcome modifyDrdsIpWhiteList(const Model::ModifyDrdsIpWhiteListRequest &request)const;
 			void modifyDrdsIpWhiteListAsync(const Model::ModifyDrdsIpWhiteListRequest& request, const ModifyDrdsIpWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDrdsIpWhiteListOutcomeCallable modifyDrdsIpWhiteListCallable(const Model::ModifyDrdsIpWhiteListRequest& request) const;
+			ModifyPolarDbReadWeightOutcome modifyPolarDbReadWeight(const Model::ModifyPolarDbReadWeightRequest &request)const;
+			void modifyPolarDbReadWeightAsync(const Model::ModifyPolarDbReadWeightRequest& request, const ModifyPolarDbReadWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyPolarDbReadWeightOutcomeCallable modifyPolarDbReadWeightCallable(const Model::ModifyPolarDbReadWeightRequest& request) const;
 			ModifyRdsReadWeightOutcome modifyRdsReadWeight(const Model::ModifyRdsReadWeightRequest &request)const;
 			void modifyRdsReadWeightAsync(const Model::ModifyRdsReadWeightRequest& request, const ModifyRdsReadWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyRdsReadWeightOutcomeCallable modifyRdsReadWeightCallable(const Model::ModifyRdsReadWeightRequest& request) const;
 			PutStartBackupOutcome putStartBackup(const Model::PutStartBackupRequest &request)const;
 			void putStartBackupAsync(const Model::PutStartBackupRequest& request, const PutStartBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutStartBackupOutcomeCallable putStartBackupCallable(const Model::PutStartBackupRequest& request) const;
+			RefreshDrdsAtomUrlOutcome refreshDrdsAtomUrl(const Model::RefreshDrdsAtomUrlRequest &request)const;
+			void refreshDrdsAtomUrlAsync(const Model::RefreshDrdsAtomUrlRequest& request, const RefreshDrdsAtomUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RefreshDrdsAtomUrlOutcomeCallable refreshDrdsAtomUrlCallable(const Model::RefreshDrdsAtomUrlRequest& request) const;
 			ReleaseInstanceInternetAddressOutcome releaseInstanceInternetAddress(const Model::ReleaseInstanceInternetAddressRequest &request)const;
 			void releaseInstanceInternetAddressAsync(const Model::ReleaseInstanceInternetAddressRequest& request, const ReleaseInstanceInternetAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseInstanceInternetAddressOutcomeCallable releaseInstanceInternetAddressCallable(const Model::ReleaseInstanceInternetAddressRequest& request) const;
@@ -751,6 +809,15 @@ namespace AlibabaCloud
 			RemoveInstanceAccountOutcome removeInstanceAccount(const Model::RemoveInstanceAccountRequest &request)const;
 			void removeInstanceAccountAsync(const Model::RemoveInstanceAccountRequest& request, const RemoveInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveInstanceAccountOutcomeCallable removeInstanceAccountCallable(const Model::RemoveInstanceAccountRequest& request) const;
+			RemoveRecycleBinTableOutcome removeRecycleBinTable(const Model::RemoveRecycleBinTableRequest &request)const;
+			void removeRecycleBinTableAsync(const Model::RemoveRecycleBinTableRequest& request, const RemoveRecycleBinTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveRecycleBinTableOutcomeCallable removeRecycleBinTableCallable(const Model::RemoveRecycleBinTableRequest& request) const;
+			RestartDrdsInstanceOutcome restartDrdsInstance(const Model::RestartDrdsInstanceRequest &request)const;
+			void restartDrdsInstanceAsync(const Model::RestartDrdsInstanceRequest& request, const RestartDrdsInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RestartDrdsInstanceOutcomeCallable restartDrdsInstanceCallable(const Model::RestartDrdsInstanceRequest& request) const;
+			RollbackInstanceVersionOutcome rollbackInstanceVersion(const Model::RollbackInstanceVersionRequest &request)const;
+			void rollbackInstanceVersionAsync(const Model::RollbackInstanceVersionRequest& request, const RollbackInstanceVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RollbackInstanceVersionOutcomeCallable rollbackInstanceVersionCallable(const Model::RollbackInstanceVersionRequest& request) const;
 			SetBackupLocalOutcome setBackupLocal(const Model::SetBackupLocalRequest &request)const;
 			void setBackupLocalAsync(const Model::SetBackupLocalRequest& request, const SetBackupLocalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetBackupLocalOutcomeCallable setBackupLocalCallable(const Model::SetBackupLocalRequest& request) const;
@@ -763,6 +830,9 @@ namespace AlibabaCloud
 			SetupDrdsParamsOutcome setupDrdsParams(const Model::SetupDrdsParamsRequest &request)const;
 			void setupDrdsParamsAsync(const Model::SetupDrdsParamsRequest& request, const SetupDrdsParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetupDrdsParamsOutcomeCallable setupDrdsParamsCallable(const Model::SetupDrdsParamsRequest& request) const;
+			SetupRecycleBinStatusOutcome setupRecycleBinStatus(const Model::SetupRecycleBinStatusRequest &request)const;
+			void setupRecycleBinStatusAsync(const Model::SetupRecycleBinStatusRequest& request, const SetupRecycleBinStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetupRecycleBinStatusOutcomeCallable setupRecycleBinStatusCallable(const Model::SetupRecycleBinStatusRequest& request) const;
 			SetupTableOutcome setupTable(const Model::SetupTableRequest &request)const;
 			void setupTableAsync(const Model::SetupTableRequest& request, const SetupTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetupTableOutcomeCallable setupTableCallable(const Model::SetupTableRequest& request) const;
@@ -784,15 +854,9 @@ namespace AlibabaCloud
 			SubmitSmoothExpandPreCheckTaskOutcome submitSmoothExpandPreCheckTask(const Model::SubmitSmoothExpandPreCheckTaskRequest &request)const;
 			void submitSmoothExpandPreCheckTaskAsync(const Model::SubmitSmoothExpandPreCheckTaskRequest& request, const SubmitSmoothExpandPreCheckTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitSmoothExpandPreCheckTaskOutcomeCallable submitSmoothExpandPreCheckTaskCallable(const Model::SubmitSmoothExpandPreCheckTaskRequest& request) const;
-			SubmitSmoothExpandTaskOutcome submitSmoothExpandTask(const Model::SubmitSmoothExpandTaskRequest &request)const;
-			void submitSmoothExpandTaskAsync(const Model::SubmitSmoothExpandTaskRequest& request, const SubmitSmoothExpandTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SubmitSmoothExpandTaskOutcomeCallable submitSmoothExpandTaskCallable(const Model::SubmitSmoothExpandTaskRequest& request) const;
 			SubmitSqlFlashbackTaskOutcome submitSqlFlashbackTask(const Model::SubmitSqlFlashbackTaskRequest &request)const;
 			void submitSqlFlashbackTaskAsync(const Model::SubmitSqlFlashbackTaskRequest& request, const SubmitSqlFlashbackTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitSqlFlashbackTaskOutcomeCallable submitSqlFlashbackTaskCallable(const Model::SubmitSqlFlashbackTaskRequest& request) const;
-			SubmitSwitchTaskOutcome submitSwitchTask(const Model::SubmitSwitchTaskRequest &request)const;
-			void submitSwitchTaskAsync(const Model::SubmitSwitchTaskRequest& request, const SubmitSwitchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SubmitSwitchTaskOutcomeCallable submitSwitchTaskCallable(const Model::SubmitSwitchTaskRequest& request) const;
 			SwitchGlobalBroadcastTypeOutcome switchGlobalBroadcastType(const Model::SwitchGlobalBroadcastTypeRequest &request)const;
 			void switchGlobalBroadcastTypeAsync(const Model::SwitchGlobalBroadcastTypeRequest& request, const SwitchGlobalBroadcastTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SwitchGlobalBroadcastTypeOutcomeCallable switchGlobalBroadcastTypeCallable(const Model::SwitchGlobalBroadcastTypeRequest& request) const;

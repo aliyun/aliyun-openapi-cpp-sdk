@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Drds::Model::DescribeInstDbLogInfoRequest;
 
-DescribeInstDbLogInfoRequest::DescribeInstDbLogInfoRequest() :
-	RpcServiceRequest("drds", "2019-01-23", "DescribeInstDbLogInfo")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeInstDbLogInfoRequest::DescribeInstDbLogInfoRequest()
+    : RpcServiceRequest("drds", "2019-01-23", "DescribeInstDbLogInfo") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeInstDbLogInfoRequest::~DescribeInstDbLogInfoRequest()
-{}
+DescribeInstDbLogInfoRequest::~DescribeInstDbLogInfoRequest() {}
 
-std::string DescribeInstDbLogInfoRequest::getDrdsInstanceId()const
-{
-	return drdsInstanceId_;
+std::string DescribeInstDbLogInfoRequest::getDrdsInstanceId() const {
+  return drdsInstanceId_;
 }
 
-void DescribeInstDbLogInfoRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
-{
-	drdsInstanceId_ = drdsInstanceId;
-	setParameter("DrdsInstanceId", drdsInstanceId);
+void DescribeInstDbLogInfoRequest::setDrdsInstanceId(const std::string &drdsInstanceId) {
+  drdsInstanceId_ = drdsInstanceId;
+  setParameter(std::string("DrdsInstanceId"), drdsInstanceId);
 }
 
-std::string DescribeInstDbLogInfoRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeInstDbLogInfoRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeInstDbLogInfoRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeInstDbLogInfoRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeInstDbLogInfoRequest::getDbName()const
-{
-	return dbName_;
+std::string DescribeInstDbLogInfoRequest::getDbName() const {
+  return dbName_;
 }
 
-void DescribeInstDbLogInfoRequest::setDbName(const std::string& dbName)
-{
-	dbName_ = dbName;
-	setParameter("DbName", dbName);
+void DescribeInstDbLogInfoRequest::setDbName(const std::string &dbName) {
+  dbName_ = dbName;
+  setParameter(std::string("DbName"), dbName);
 }
 

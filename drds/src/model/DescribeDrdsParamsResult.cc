@@ -43,30 +43,30 @@ void DescribeDrdsParamsResult::parse(const std::string &payload)
 	for (auto valueListListItem : allListNode)
 	{
 		ListItem listObject;
-		if(!valueListListItem["ParamName"].isNull())
-			listObject.paramName = valueListListItem["ParamName"].asString();
-		if(!valueListListItem["ParamEnglishName"].isNull())
-			listObject.paramEnglishName = valueListListItem["ParamEnglishName"].asString();
-		if(!valueListListItem["ParamVariableName"].isNull())
-			listObject.paramVariableName = valueListListItem["ParamVariableName"].asString();
-		if(!valueListListItem["ParamDesc"].isNull())
-			listObject.paramDesc = valueListListItem["ParamDesc"].asString();
-		if(!valueListListItem["ParamValue"].isNull())
-			listObject.paramValue = valueListListItem["ParamValue"].asString();
-		if(!valueListListItem["DbName"].isNull())
-			listObject.dbName = valueListListItem["DbName"].asString();
 		if(!valueListListItem["ParamDefaultValue"].isNull())
 			listObject.paramDefaultValue = valueListListItem["ParamDefaultValue"].asString();
-		if(!valueListListItem["ParamRanges"].isNull())
-			listObject.paramRanges = valueListListItem["ParamRanges"].asString();
 		if(!valueListListItem["ParamLevel"].isNull())
 			listObject.paramLevel = valueListListItem["ParamLevel"].asString();
+		if(!valueListListItem["ParamName"].isNull())
+			listObject.paramName = valueListListItem["ParamName"].asString();
 		if(!valueListListItem["ParamType"].isNull())
 			listObject.paramType = valueListListItem["ParamType"].asString();
+		if(!valueListListItem["ParamValue"].isNull())
+			listObject.paramValue = valueListListItem["ParamValue"].asString();
 		if(!valueListListItem["NeedRestart"].isNull())
 			listObject.needRestart = valueListListItem["NeedRestart"].asString() == "true";
+		if(!valueListListItem["ParamRanges"].isNull())
+			listObject.paramRanges = valueListListItem["ParamRanges"].asString();
 		if(!valueListListItem["UserVisible"].isNull())
 			listObject.userVisible = valueListListItem["UserVisible"].asString() == "true";
+		if(!valueListListItem["DbName"].isNull())
+			listObject.dbName = valueListListItem["DbName"].asString();
+		if(!valueListListItem["ParamEnglishName"].isNull())
+			listObject.paramEnglishName = valueListListItem["ParamEnglishName"].asString();
+		if(!valueListListItem["ParamDesc"].isNull())
+			listObject.paramDesc = valueListListItem["ParamDesc"].asString();
+		if(!valueListListItem["ParamVariableName"].isNull())
+			listObject.paramVariableName = valueListListItem["ParamVariableName"].asString();
 		list_.push_back(listObject);
 	}
 	if(!value["Success"].isNull())

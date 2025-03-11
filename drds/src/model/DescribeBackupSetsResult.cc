@@ -43,26 +43,26 @@ void DescribeBackupSetsResult::parse(const std::string &payload)
 	for (auto valueBackupSetsbackupSet : allBackupSetsNode)
 	{
 		BackupSet backupSetsObject;
-		if(!valueBackupSetsbackupSet["Id"].isNull())
-			backupSetsObject.id = valueBackupSetsbackupSet["Id"].asString();
-		if(!valueBackupSetsbackupSet["BackupStartTime"].isNull())
-			backupSetsObject.backupStartTime = std::stol(valueBackupSetsbackupSet["BackupStartTime"].asString());
-		if(!valueBackupSetsbackupSet["BackupEndTime"].isNull())
-			backupSetsObject.backupEndTime = std::stol(valueBackupSetsbackupSet["BackupEndTime"].asString());
-		if(!valueBackupSetsbackupSet["BackupMode"].isNull())
-			backupSetsObject.backupMode = valueBackupSetsbackupSet["BackupMode"].asString();
-		if(!valueBackupSetsbackupSet["BackupLevel"].isNull())
-			backupSetsObject.backupLevel = valueBackupSetsbackupSet["BackupLevel"].asString();
-		if(!valueBackupSetsbackupSet["BackupType"].isNull())
-			backupSetsObject.backupType = valueBackupSetsbackupSet["BackupType"].asString();
-		if(!valueBackupSetsbackupSet["Status"].isNull())
-			backupSetsObject.status = std::stol(valueBackupSetsbackupSet["Status"].asString());
 		if(!valueBackupSetsbackupSet["EnableRecovery"].isNull())
 			backupSetsObject.enableRecovery = valueBackupSetsbackupSet["EnableRecovery"].asString() == "true";
-		if(!valueBackupSetsbackupSet["BackupTotalSize"].isNull())
-			backupSetsObject.backupTotalSize = valueBackupSetsbackupSet["BackupTotalSize"].asString();
+		if(!valueBackupSetsbackupSet["Status"].isNull())
+			backupSetsObject.status = std::stol(valueBackupSetsbackupSet["Status"].asString());
 		if(!valueBackupSetsbackupSet["BackupConsitentTime"].isNull())
 			backupSetsObject.backupConsitentTime = valueBackupSetsbackupSet["BackupConsitentTime"].asString();
+		if(!valueBackupSetsbackupSet["BackupType"].isNull())
+			backupSetsObject.backupType = valueBackupSetsbackupSet["BackupType"].asString();
+		if(!valueBackupSetsbackupSet["BackupStartTime"].isNull())
+			backupSetsObject.backupStartTime = std::stol(valueBackupSetsbackupSet["BackupStartTime"].asString());
+		if(!valueBackupSetsbackupSet["BackupLevel"].isNull())
+			backupSetsObject.backupLevel = valueBackupSetsbackupSet["BackupLevel"].asString();
+		if(!valueBackupSetsbackupSet["BackupMode"].isNull())
+			backupSetsObject.backupMode = valueBackupSetsbackupSet["BackupMode"].asString();
+		if(!valueBackupSetsbackupSet["BackupEndTime"].isNull())
+			backupSetsObject.backupEndTime = std::stol(valueBackupSetsbackupSet["BackupEndTime"].asString());
+		if(!valueBackupSetsbackupSet["Id"].isNull())
+			backupSetsObject.id = valueBackupSetsbackupSet["Id"].asString();
+		if(!valueBackupSetsbackupSet["BackupTotalSize"].isNull())
+			backupSetsObject.backupTotalSize = valueBackupSetsbackupSet["BackupTotalSize"].asString();
 		auto allBackupDbs = value["BackupDbs"]["backupDb"];
 		for (auto value : allBackupDbs)
 			backupSetsObject.backupDbs.push_back(value.asString());

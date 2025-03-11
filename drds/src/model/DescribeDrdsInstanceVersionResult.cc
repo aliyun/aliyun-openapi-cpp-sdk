@@ -40,10 +40,10 @@ void DescribeDrdsInstanceVersionResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["InstanceVersion"].isNull())
-		data_.instanceVersion = dataNode["InstanceVersion"].asString();
 	if(!dataNode["NewestVersion"].isNull())
 		data_.newestVersion = dataNode["NewestVersion"].asString();
+	if(!dataNode["InstanceVersion"].isNull())
+		data_.instanceVersion = dataNode["InstanceVersion"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

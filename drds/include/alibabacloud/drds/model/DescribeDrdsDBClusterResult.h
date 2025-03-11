@@ -59,8 +59,8 @@ namespace AlibabaCloud
 					std::string readMode;
 					std::string rdsInstType;
 					std::string expireTime;
-					std::string engine;
 					std::string remainDays;
+					std::string engine;
 				};
 
 

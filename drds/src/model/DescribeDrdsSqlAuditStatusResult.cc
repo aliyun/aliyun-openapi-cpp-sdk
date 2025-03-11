@@ -43,20 +43,20 @@ void DescribeDrdsSqlAuditStatusResult::parse(const std::string &payload)
 	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
+		if(!valueDataDataItem["ExtraSlsLogStore"].isNull())
+			dataObject.extraSlsLogStore = valueDataDataItem["ExtraSlsLogStore"].asString();
 		if(!valueDataDataItem["DbName"].isNull())
 			dataObject.dbName = valueDataDataItem["DbName"].asString();
-		if(!valueDataDataItem["Enabled"].isNull())
-			dataObject.enabled = valueDataDataItem["Enabled"].asString();
 		if(!valueDataDataItem["Detailed"].isNull())
 			dataObject.detailed = valueDataDataItem["Detailed"].asString();
 		if(!valueDataDataItem["ExtraWriteEnabled"].isNull())
 			dataObject.extraWriteEnabled = valueDataDataItem["ExtraWriteEnabled"].asString() == "true";
+		if(!valueDataDataItem["Enabled"].isNull())
+			dataObject.enabled = valueDataDataItem["Enabled"].asString();
 		if(!valueDataDataItem["ExtraAliUid"].isNull())
 			dataObject.extraAliUid = std::stol(valueDataDataItem["ExtraAliUid"].asString());
 		if(!valueDataDataItem["ExtraSlsProject"].isNull())
 			dataObject.extraSlsProject = valueDataDataItem["ExtraSlsProject"].asString();
-		if(!valueDataDataItem["ExtraSlsLogStore"].isNull())
-			dataObject.extraSlsLogStore = valueDataDataItem["ExtraSlsLogStore"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

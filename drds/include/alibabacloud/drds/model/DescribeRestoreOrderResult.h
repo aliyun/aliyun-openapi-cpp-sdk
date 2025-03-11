@@ -39,9 +39,9 @@ namespace AlibabaCloud
 						std::string vSwtichId;
 						std::string vpcId;
 						std::string network;
-						std::string regionId;
-						std::string azoneId;
 						std::string instSpec;
+						std::string azoneId;
+						std::string regionId;
 					};
 					struct RdsOrderDOListItem
 					{
@@ -50,8 +50,8 @@ namespace AlibabaCloud
 						std::string network;
 						long num;
 						std::string instanceClass;
-						std::string regionId;
 						std::string azoneId;
+						std::string regionId;
 						std::string engine;
 					};
 					struct PolarOrderDOListItem
@@ -61,8 +61,8 @@ namespace AlibabaCloud
 						std::string network;
 						long num;
 						std::string instanceClass;
-						std::string regionId;
 						std::string azoneId;
+						std::string regionId;
 						std::string engine;
 					};
 					std::vector<DrdsOrderDOListItem> drdsOrderDOList;

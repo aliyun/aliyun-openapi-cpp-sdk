@@ -37,16 +37,16 @@ namespace AlibabaCloud
 					std::string backupAppName;
 					std::string nextBackupActuallyTime;
 					long dataBackupRetentionPeriod;
-					std::string backupPolicyMode;
 					std::string backupDbName;
+					std::string backupPolicyMode;
 					std::string preferredBackupTime;
 					std::string backupMode;
 					long gmtModified;
 					long localLogRetentionHours;
 					long highSpaceUsageProtection;
 					std::string preferredBackupPeriod;
-					long gmtCreate;
 					long logBackupRetentionPeriod;
+					long gmtCreate;
 					std::string backupLevel;
 					std::string backupLog;
 					std::string backupType;

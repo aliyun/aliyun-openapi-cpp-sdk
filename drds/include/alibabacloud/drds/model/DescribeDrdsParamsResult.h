@@ -34,15 +34,15 @@ namespace AlibabaCloud
 			public:
 				struct ListItem
 				{
-					std::string paramRanges;
 					std::string paramLevel;
+					std::string paramRanges;
 					std::string paramVariableName;
 					std::string paramEnglishName;
-					std::string paramValue;
 					std::string paramDefaultValue;
+					std::string paramValue;
 					bool needRestart;
-					std::string dbName;
 					bool userVisible;
+					std::string dbName;
 					std::string paramName;
 					std::string paramType;
 					std::string paramDesc;

@@ -34,9 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct DBInstance
 				{
+					bool allowAllCategory;
 					std::string engineVersion;
-					int dBInstanceStatus;
 					std::string zoneId;
+					int dBInstanceStatus;
 					std::string dBInstanceId;
 					std::vector<std::string> readOnlyDBInstanceId;
 					std::string dBInstanceType;

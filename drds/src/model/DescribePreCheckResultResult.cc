@@ -48,12 +48,12 @@ void DescribePreCheckResultResult::parse(const std::string &payload)
 	for (auto preCheckResultNodeSubCheckItemsSubCheckItemsItem : allSubCheckItemsNode)
 	{
 		PreCheckResult::SubCheckItemsItem subCheckItemsItemObject;
+		if(!preCheckResultNodeSubCheckItemsSubCheckItemsItem["ErrorMsgCode"].isNull())
+			subCheckItemsItemObject.errorMsgCode = preCheckResultNodeSubCheckItemsSubCheckItemsItem["ErrorMsgCode"].asString();
 		if(!preCheckResultNodeSubCheckItemsSubCheckItemsItem["PreCheckItemName"].isNull())
 			subCheckItemsItemObject.preCheckItemName = preCheckResultNodeSubCheckItemsSubCheckItemsItem["PreCheckItemName"].asString();
 		if(!preCheckResultNodeSubCheckItemsSubCheckItemsItem["State"].isNull())
 			subCheckItemsItemObject.state = preCheckResultNodeSubCheckItemsSubCheckItemsItem["State"].asString();
-		if(!preCheckResultNodeSubCheckItemsSubCheckItemsItem["ErrorMsgCode"].isNull())
-			subCheckItemsItemObject.errorMsgCode = preCheckResultNodeSubCheckItemsSubCheckItemsItem["ErrorMsgCode"].asString();
 		auto allErrorMsgParams = value["ErrorMsgParams"]["ErrorMsgParams"];
 		for (auto value : allErrorMsgParams)
 			subCheckItemsItemObject.errorMsgParams.push_back(value.asString());

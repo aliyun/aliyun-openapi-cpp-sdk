@@ -43,26 +43,26 @@ void DescribeDrdsSlowSqlsResult::parse(const std::string &payload)
 	for (auto valueItemsItem : allItemsNode)
 	{
 		Item itemsObject;
-		if(!valueItemsItem["Schema"].isNull())
-			itemsObject.schema = valueItemsItem["Schema"].asString();
-		if(!valueItemsItem["Sql"].isNull())
-			itemsObject.sql = valueItemsItem["Sql"].asString();
 		if(!valueItemsItem["SendTime"].isNull())
 			itemsObject.sendTime = std::stol(valueItemsItem["SendTime"].asString());
-		if(!valueItemsItem["ResponseTime"].isNull())
-			itemsObject.responseTime = std::stol(valueItemsItem["ResponseTime"].asString());
 		if(!valueItemsItem["Host"].isNull())
 			itemsObject.host = valueItemsItem["Host"].asString();
+		if(!valueItemsItem["Sql"].isNull())
+			itemsObject.sql = valueItemsItem["Sql"].asString();
+		if(!valueItemsItem["ResponseTime"].isNull())
+			itemsObject.responseTime = std::stol(valueItemsItem["ResponseTime"].asString());
+		if(!valueItemsItem["Schema"].isNull())
+			itemsObject.schema = valueItemsItem["Schema"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Total"].isNull())
-		total_ = std::stoi(value["Total"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["Total"].isNull())
+		total_ = std::stoi(value["Total"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

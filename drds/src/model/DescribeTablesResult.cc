@@ -43,32 +43,32 @@ void DescribeTablesResult::parse(const std::string &payload)
 	for (auto valueListListItem : allListNode)
 	{
 		ListItem listObject;
-		if(!valueListListItem["Table"].isNull())
-			listObject.table = valueListListItem["Table"].asString();
+		if(!valueListListItem["Status"].isNull())
+			listObject.status = std::stoi(valueListListItem["Status"].asString());
+		if(!valueListListItem["IsLocked"].isNull())
+			listObject.isLocked = valueListListItem["IsLocked"].asString() == "true";
 		if(!valueListListItem["ShardKey"].isNull())
 			listObject.shardKey = valueListListItem["ShardKey"].asString();
 		if(!valueListListItem["IsShard"].isNull())
 			listObject.isShard = valueListListItem["IsShard"].asString() == "true";
-		if(!valueListListItem["IsLocked"].isNull())
-			listObject.isLocked = valueListListItem["IsLocked"].asString() == "true";
-		if(!valueListListItem["DbInstType"].isNull())
-			listObject.dbInstType = std::stoi(valueListListItem["DbInstType"].asString());
 		if(!valueListListItem["Broadcast"].isNull())
 			listObject.broadcast = valueListListItem["Broadcast"].asString() == "true";
 		if(!valueListListItem["AllowFullTableScan"].isNull())
 			listObject.allowFullTableScan = valueListListItem["AllowFullTableScan"].asString() == "true";
-		if(!valueListListItem["Status"].isNull())
-			listObject.status = std::stoi(valueListListItem["Status"].asString());
+		if(!valueListListItem["Table"].isNull())
+			listObject.table = valueListListItem["Table"].asString();
+		if(!valueListListItem["DbInstType"].isNull())
+			listObject.dbInstType = std::stoi(valueListListItem["DbInstType"].asString());
 		list_.push_back(listObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["Total"].isNull())
 		total_ = std::stoi(value["Total"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

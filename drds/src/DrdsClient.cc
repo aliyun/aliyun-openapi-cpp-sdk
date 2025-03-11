@@ -51,6 +51,78 @@ DrdsClient::DrdsClient(const std::string & accessKeyId, const std::string & acce
 DrdsClient::~DrdsClient()
 {}
 
+DrdsClient::ChangeAccountPasswordOutcome DrdsClient::changeAccountPassword(const ChangeAccountPasswordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeAccountPasswordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeAccountPasswordOutcome(ChangeAccountPasswordResult(outcome.result()));
+	else
+		return ChangeAccountPasswordOutcome(outcome.error());
+}
+
+void DrdsClient::changeAccountPasswordAsync(const ChangeAccountPasswordRequest& request, const ChangeAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeAccountPassword(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DrdsClient::ChangeAccountPasswordOutcomeCallable DrdsClient::changeAccountPasswordCallable(const ChangeAccountPasswordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeAccountPasswordOutcome()>>(
+			[this, request]()
+			{
+			return this->changeAccountPassword(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DrdsClient::ChangeInstanceAzoneOutcome DrdsClient::changeInstanceAzone(const ChangeInstanceAzoneRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeInstanceAzoneOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeInstanceAzoneOutcome(ChangeInstanceAzoneResult(outcome.result()));
+	else
+		return ChangeInstanceAzoneOutcome(outcome.error());
+}
+
+void DrdsClient::changeInstanceAzoneAsync(const ChangeInstanceAzoneRequest& request, const ChangeInstanceAzoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeInstanceAzone(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DrdsClient::ChangeInstanceAzoneOutcomeCallable DrdsClient::changeInstanceAzoneCallable(const ChangeInstanceAzoneRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeInstanceAzoneOutcome()>>(
+			[this, request]()
+			{
+			return this->changeInstanceAzone(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DrdsClient::CheckDrdsDbNameOutcome DrdsClient::checkDrdsDbName(const CheckDrdsDbNameRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -951,42 +1023,6 @@ DrdsClient::DescribeDrdsDbRdsNameListOutcomeCallable DrdsClient::describeDrdsDbR
 	return task->get_future();
 }
 
-DrdsClient::DescribeDrdsDbTasksOutcome DrdsClient::describeDrdsDbTasks(const DescribeDrdsDbTasksRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDrdsDbTasksOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDrdsDbTasksOutcome(DescribeDrdsDbTasksResult(outcome.result()));
-	else
-		return DescribeDrdsDbTasksOutcome(outcome.error());
-}
-
-void DrdsClient::describeDrdsDbTasksAsync(const DescribeDrdsDbTasksRequest& request, const DescribeDrdsDbTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDrdsDbTasks(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DrdsClient::DescribeDrdsDbTasksOutcomeCallable DrdsClient::describeDrdsDbTasksCallable(const DescribeDrdsDbTasksRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDrdsDbTasksOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDrdsDbTasks(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DrdsClient::DescribeDrdsInstanceOutcome DrdsClient::describeDrdsInstance(const DescribeDrdsInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1455,42 +1491,6 @@ DrdsClient::DescribeExpandLogicTableInfoListOutcomeCallable DrdsClient::describe
 	return task->get_future();
 }
 
-DrdsClient::DescribeHiStoreInstanceInfoOutcome DrdsClient::describeHiStoreInstanceInfo(const DescribeHiStoreInstanceInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeHiStoreInstanceInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeHiStoreInstanceInfoOutcome(DescribeHiStoreInstanceInfoResult(outcome.result()));
-	else
-		return DescribeHiStoreInstanceInfoOutcome(outcome.error());
-}
-
-void DrdsClient::describeHiStoreInstanceInfoAsync(const DescribeHiStoreInstanceInfoRequest& request, const DescribeHiStoreInstanceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeHiStoreInstanceInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DrdsClient::DescribeHiStoreInstanceInfoOutcomeCallable DrdsClient::describeHiStoreInstanceInfoCallable(const DescribeHiStoreInstanceInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeHiStoreInstanceInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describeHiStoreInstanceInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DrdsClient::DescribeHotDbListOutcome DrdsClient::describeHotDbList(const DescribeHotDbListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1629,42 +1629,6 @@ DrdsClient::DescribeInstanceAccountsOutcomeCallable DrdsClient::describeInstance
 			[this, request]()
 			{
 			return this->describeInstanceAccounts(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DrdsClient::DescribeInstanceMenuSwitchOutcome DrdsClient::describeInstanceMenuSwitch(const DescribeInstanceMenuSwitchRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeInstanceMenuSwitchOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeInstanceMenuSwitchOutcome(DescribeInstanceMenuSwitchResult(outcome.result()));
-	else
-		return DescribeInstanceMenuSwitchOutcome(outcome.error());
-}
-
-void DrdsClient::describeInstanceMenuSwitchAsync(const DescribeInstanceMenuSwitchRequest& request, const DescribeInstanceMenuSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeInstanceMenuSwitch(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DrdsClient::DescribeInstanceMenuSwitchOutcomeCallable DrdsClient::describeInstanceMenuSwitchCallable(const DescribeInstanceMenuSwitchRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeInstanceMenuSwitchOutcome()>>(
-			[this, request]()
-			{
-			return this->describeInstanceMenuSwitch(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1923,6 +1887,78 @@ DrdsClient::DescribeRdsSuperAccountInstancesOutcomeCallable DrdsClient::describe
 	return task->get_future();
 }
 
+DrdsClient::DescribeRecycleBinStatusOutcome DrdsClient::describeRecycleBinStatus(const DescribeRecycleBinStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRecycleBinStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRecycleBinStatusOutcome(DescribeRecycleBinStatusResult(outcome.result()));
+	else
+		return DescribeRecycleBinStatusOutcome(outcome.error());
+}
+
+void DrdsClient::describeRecycleBinStatusAsync(const DescribeRecycleBinStatusRequest& request, const DescribeRecycleBinStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRecycleBinStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DrdsClient::DescribeRecycleBinStatusOutcomeCallable DrdsClient::describeRecycleBinStatusCallable(const DescribeRecycleBinStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRecycleBinStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRecycleBinStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DrdsClient::DescribeRecycleBinTablesOutcome DrdsClient::describeRecycleBinTables(const DescribeRecycleBinTablesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRecycleBinTablesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRecycleBinTablesOutcome(DescribeRecycleBinTablesResult(outcome.result()));
+	else
+		return DescribeRecycleBinTablesOutcome(outcome.error());
+}
+
+void DrdsClient::describeRecycleBinTablesAsync(const DescribeRecycleBinTablesRequest& request, const DescribeRecycleBinTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRecycleBinTables(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DrdsClient::DescribeRecycleBinTablesOutcomeCallable DrdsClient::describeRecycleBinTablesCallable(const DescribeRecycleBinTablesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRecycleBinTablesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRecycleBinTables(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DrdsClient::DescribeRestoreOrderOutcome DrdsClient::describeRestoreOrder(const DescribeRestoreOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1989,42 +2025,6 @@ DrdsClient::DescribeShardTaskInfoOutcomeCallable DrdsClient::describeShardTaskIn
 			[this, request]()
 			{
 			return this->describeShardTaskInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DrdsClient::DescribeShardTaskListOutcome DrdsClient::describeShardTaskList(const DescribeShardTaskListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeShardTaskListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeShardTaskListOutcome(DescribeShardTaskListResult(outcome.result()));
-	else
-		return DescribeShardTaskListOutcome(outcome.error());
-}
-
-void DrdsClient::describeShardTaskListAsync(const DescribeShardTaskListRequest& request, const DescribeShardTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeShardTaskList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DrdsClient::DescribeShardTaskListOutcomeCallable DrdsClient::describeShardTaskListCallable(const DescribeShardTaskListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeShardTaskListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeShardTaskList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2211,6 +2211,42 @@ DrdsClient::DisableSqlAuditOutcomeCallable DrdsClient::disableSqlAuditCallable(c
 	return task->get_future();
 }
 
+DrdsClient::EnableInstanceIpv6AddressOutcome DrdsClient::enableInstanceIpv6Address(const EnableInstanceIpv6AddressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableInstanceIpv6AddressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableInstanceIpv6AddressOutcome(EnableInstanceIpv6AddressResult(outcome.result()));
+	else
+		return EnableInstanceIpv6AddressOutcome(outcome.error());
+}
+
+void DrdsClient::enableInstanceIpv6AddressAsync(const EnableInstanceIpv6AddressRequest& request, const EnableInstanceIpv6AddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableInstanceIpv6Address(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DrdsClient::EnableInstanceIpv6AddressOutcomeCallable DrdsClient::enableInstanceIpv6AddressCallable(const EnableInstanceIpv6AddressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableInstanceIpv6AddressOutcome()>>(
+			[this, request]()
+			{
+			return this->enableInstanceIpv6Address(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DrdsClient::EnableSqlAuditOutcome DrdsClient::enableSqlAudit(const EnableSqlAuditRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2277,6 +2313,42 @@ DrdsClient::EnableSqlFlashbackMatchSwitchOutcomeCallable DrdsClient::enableSqlFl
 			[this, request]()
 			{
 			return this->enableSqlFlashbackMatchSwitch(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DrdsClient::FlashbackRecycleBinTableOutcome DrdsClient::flashbackRecycleBinTable(const FlashbackRecycleBinTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FlashbackRecycleBinTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FlashbackRecycleBinTableOutcome(FlashbackRecycleBinTableResult(outcome.result()));
+	else
+		return FlashbackRecycleBinTableOutcome(outcome.error());
+}
+
+void DrdsClient::flashbackRecycleBinTableAsync(const FlashbackRecycleBinTableRequest& request, const FlashbackRecycleBinTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, flashbackRecycleBinTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DrdsClient::FlashbackRecycleBinTableOutcomeCallable DrdsClient::flashbackRecycleBinTableCallable(const FlashbackRecycleBinTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FlashbackRecycleBinTableOutcome()>>(
+			[this, request]()
+			{
+			return this->flashbackRecycleBinTable(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2391,6 +2463,78 @@ DrdsClient::ManagePrivateRdsOutcomeCallable DrdsClient::managePrivateRdsCallable
 	return task->get_future();
 }
 
+DrdsClient::ModifyAccountDescriptionOutcome DrdsClient::modifyAccountDescription(const ModifyAccountDescriptionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyAccountDescriptionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyAccountDescriptionOutcome(ModifyAccountDescriptionResult(outcome.result()));
+	else
+		return ModifyAccountDescriptionOutcome(outcome.error());
+}
+
+void DrdsClient::modifyAccountDescriptionAsync(const ModifyAccountDescriptionRequest& request, const ModifyAccountDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyAccountDescription(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DrdsClient::ModifyAccountDescriptionOutcomeCallable DrdsClient::modifyAccountDescriptionCallable(const ModifyAccountDescriptionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyAccountDescriptionOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyAccountDescription(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DrdsClient::ModifyAccountPrivilegeOutcome DrdsClient::modifyAccountPrivilege(const ModifyAccountPrivilegeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyAccountPrivilegeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyAccountPrivilegeOutcome(ModifyAccountPrivilegeResult(outcome.result()));
+	else
+		return ModifyAccountPrivilegeOutcome(outcome.error());
+}
+
+void DrdsClient::modifyAccountPrivilegeAsync(const ModifyAccountPrivilegeRequest& request, const ModifyAccountPrivilegeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyAccountPrivilege(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DrdsClient::ModifyAccountPrivilegeOutcomeCallable DrdsClient::modifyAccountPrivilegeCallable(const ModifyAccountPrivilegeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyAccountPrivilegeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyAccountPrivilege(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DrdsClient::ModifyDrdsInstanceDescriptionOutcome DrdsClient::modifyDrdsInstanceDescription(const ModifyDrdsInstanceDescriptionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2463,6 +2607,42 @@ DrdsClient::ModifyDrdsIpWhiteListOutcomeCallable DrdsClient::modifyDrdsIpWhiteLi
 	return task->get_future();
 }
 
+DrdsClient::ModifyPolarDbReadWeightOutcome DrdsClient::modifyPolarDbReadWeight(const ModifyPolarDbReadWeightRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyPolarDbReadWeightOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyPolarDbReadWeightOutcome(ModifyPolarDbReadWeightResult(outcome.result()));
+	else
+		return ModifyPolarDbReadWeightOutcome(outcome.error());
+}
+
+void DrdsClient::modifyPolarDbReadWeightAsync(const ModifyPolarDbReadWeightRequest& request, const ModifyPolarDbReadWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyPolarDbReadWeight(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DrdsClient::ModifyPolarDbReadWeightOutcomeCallable DrdsClient::modifyPolarDbReadWeightCallable(const ModifyPolarDbReadWeightRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyPolarDbReadWeightOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyPolarDbReadWeight(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DrdsClient::ModifyRdsReadWeightOutcome DrdsClient::modifyRdsReadWeight(const ModifyRdsReadWeightRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2529,6 +2709,42 @@ DrdsClient::PutStartBackupOutcomeCallable DrdsClient::putStartBackupCallable(con
 			[this, request]()
 			{
 			return this->putStartBackup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DrdsClient::RefreshDrdsAtomUrlOutcome DrdsClient::refreshDrdsAtomUrl(const RefreshDrdsAtomUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefreshDrdsAtomUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefreshDrdsAtomUrlOutcome(RefreshDrdsAtomUrlResult(outcome.result()));
+	else
+		return RefreshDrdsAtomUrlOutcome(outcome.error());
+}
+
+void DrdsClient::refreshDrdsAtomUrlAsync(const RefreshDrdsAtomUrlRequest& request, const RefreshDrdsAtomUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refreshDrdsAtomUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DrdsClient::RefreshDrdsAtomUrlOutcomeCallable DrdsClient::refreshDrdsAtomUrlCallable(const RefreshDrdsAtomUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefreshDrdsAtomUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->refreshDrdsAtomUrl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2751,6 +2967,114 @@ DrdsClient::RemoveInstanceAccountOutcomeCallable DrdsClient::removeInstanceAccou
 	return task->get_future();
 }
 
+DrdsClient::RemoveRecycleBinTableOutcome DrdsClient::removeRecycleBinTable(const RemoveRecycleBinTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveRecycleBinTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveRecycleBinTableOutcome(RemoveRecycleBinTableResult(outcome.result()));
+	else
+		return RemoveRecycleBinTableOutcome(outcome.error());
+}
+
+void DrdsClient::removeRecycleBinTableAsync(const RemoveRecycleBinTableRequest& request, const RemoveRecycleBinTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeRecycleBinTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DrdsClient::RemoveRecycleBinTableOutcomeCallable DrdsClient::removeRecycleBinTableCallable(const RemoveRecycleBinTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveRecycleBinTableOutcome()>>(
+			[this, request]()
+			{
+			return this->removeRecycleBinTable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DrdsClient::RestartDrdsInstanceOutcome DrdsClient::restartDrdsInstance(const RestartDrdsInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RestartDrdsInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RestartDrdsInstanceOutcome(RestartDrdsInstanceResult(outcome.result()));
+	else
+		return RestartDrdsInstanceOutcome(outcome.error());
+}
+
+void DrdsClient::restartDrdsInstanceAsync(const RestartDrdsInstanceRequest& request, const RestartDrdsInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, restartDrdsInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DrdsClient::RestartDrdsInstanceOutcomeCallable DrdsClient::restartDrdsInstanceCallable(const RestartDrdsInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RestartDrdsInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->restartDrdsInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DrdsClient::RollbackInstanceVersionOutcome DrdsClient::rollbackInstanceVersion(const RollbackInstanceVersionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RollbackInstanceVersionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RollbackInstanceVersionOutcome(RollbackInstanceVersionResult(outcome.result()));
+	else
+		return RollbackInstanceVersionOutcome(outcome.error());
+}
+
+void DrdsClient::rollbackInstanceVersionAsync(const RollbackInstanceVersionRequest& request, const RollbackInstanceVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rollbackInstanceVersion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DrdsClient::RollbackInstanceVersionOutcomeCallable DrdsClient::rollbackInstanceVersionCallable(const RollbackInstanceVersionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RollbackInstanceVersionOutcome()>>(
+			[this, request]()
+			{
+			return this->rollbackInstanceVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DrdsClient::SetBackupLocalOutcome DrdsClient::setBackupLocal(const SetBackupLocalRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2889,6 +3213,42 @@ DrdsClient::SetupDrdsParamsOutcomeCallable DrdsClient::setupDrdsParamsCallable(c
 			[this, request]()
 			{
 			return this->setupDrdsParams(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DrdsClient::SetupRecycleBinStatusOutcome DrdsClient::setupRecycleBinStatus(const SetupRecycleBinStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetupRecycleBinStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetupRecycleBinStatusOutcome(SetupRecycleBinStatusResult(outcome.result()));
+	else
+		return SetupRecycleBinStatusOutcome(outcome.error());
+}
+
+void DrdsClient::setupRecycleBinStatusAsync(const SetupRecycleBinStatusRequest& request, const SetupRecycleBinStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setupRecycleBinStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DrdsClient::SetupRecycleBinStatusOutcomeCallable DrdsClient::setupRecycleBinStatusCallable(const SetupRecycleBinStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetupRecycleBinStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->setupRecycleBinStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3147,42 +3507,6 @@ DrdsClient::SubmitSmoothExpandPreCheckTaskOutcomeCallable DrdsClient::submitSmoo
 	return task->get_future();
 }
 
-DrdsClient::SubmitSmoothExpandTaskOutcome DrdsClient::submitSmoothExpandTask(const SubmitSmoothExpandTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SubmitSmoothExpandTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SubmitSmoothExpandTaskOutcome(SubmitSmoothExpandTaskResult(outcome.result()));
-	else
-		return SubmitSmoothExpandTaskOutcome(outcome.error());
-}
-
-void DrdsClient::submitSmoothExpandTaskAsync(const SubmitSmoothExpandTaskRequest& request, const SubmitSmoothExpandTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, submitSmoothExpandTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DrdsClient::SubmitSmoothExpandTaskOutcomeCallable DrdsClient::submitSmoothExpandTaskCallable(const SubmitSmoothExpandTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SubmitSmoothExpandTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->submitSmoothExpandTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DrdsClient::SubmitSqlFlashbackTaskOutcome DrdsClient::submitSqlFlashbackTask(const SubmitSqlFlashbackTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3213,42 +3537,6 @@ DrdsClient::SubmitSqlFlashbackTaskOutcomeCallable DrdsClient::submitSqlFlashback
 			[this, request]()
 			{
 			return this->submitSqlFlashbackTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DrdsClient::SubmitSwitchTaskOutcome DrdsClient::submitSwitchTask(const SubmitSwitchTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SubmitSwitchTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SubmitSwitchTaskOutcome(SubmitSwitchTaskResult(outcome.result()));
-	else
-		return SubmitSwitchTaskOutcome(outcome.error());
-}
-
-void DrdsClient::submitSwitchTaskAsync(const SubmitSwitchTaskRequest& request, const SubmitSwitchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, submitSwitchTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DrdsClient::SubmitSwitchTaskOutcomeCallable DrdsClient::submitSwitchTaskCallable(const SubmitSwitchTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SubmitSwitchTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->submitSwitchTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

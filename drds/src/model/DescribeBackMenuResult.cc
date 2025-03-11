@@ -43,10 +43,10 @@ void DescribeBackMenuResult::parse(const std::string &payload)
 	for (auto valueListlistItem : allListNode)
 	{
 		ListItem listObject;
-		if(!valueListlistItem["MenuName"].isNull())
-			listObject.menuName = valueListlistItem["MenuName"].asString();
 		if(!valueListlistItem["Support"].isNull())
 			listObject.support = valueListlistItem["Support"].asString() == "true";
+		if(!valueListlistItem["MenuName"].isNull())
+			listObject.menuName = valueListlistItem["MenuName"].asString();
 		list_.push_back(listObject);
 	}
 	if(!value["Success"].isNull())

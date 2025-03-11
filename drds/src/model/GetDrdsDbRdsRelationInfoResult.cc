@@ -45,10 +45,10 @@ void GetDrdsDbRdsRelationInfoResult::parse(const std::string &payload)
 		DataItem dataObject;
 		if(!valueDataDataItem["RdsInstanceId"].isNull())
 			dataObject.rdsInstanceId = valueDataDataItem["RdsInstanceId"].asString();
-		if(!valueDataDataItem["UsedInstanceId"].isNull())
-			dataObject.usedInstanceId = valueDataDataItem["UsedInstanceId"].asString();
 		if(!valueDataDataItem["UsedInstanceType"].isNull())
 			dataObject.usedInstanceType = valueDataDataItem["UsedInstanceType"].asString();
+		if(!valueDataDataItem["UsedInstanceId"].isNull())
+			dataObject.usedInstanceId = valueDataDataItem["UsedInstanceId"].asString();
 		auto allReadOnlyInstanceInfo = value["ReadOnlyInstanceInfo"]["ReadOnlyInstanceIds"];
 		for (auto value : allReadOnlyInstanceInfo)
 			dataObject.readOnlyInstanceInfo.push_back(value.asString());

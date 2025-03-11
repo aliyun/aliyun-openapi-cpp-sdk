@@ -35,9 +35,9 @@ namespace AlibabaCloud
 				struct Task
 				{
 					bool allowCancel;
-					long gmtCreate;
 					int progress;
 					bool showProgress;
+					long gmtCreate;
 					std::string progressDescription;
 					std::string taskName;
 					std::string errMsg;

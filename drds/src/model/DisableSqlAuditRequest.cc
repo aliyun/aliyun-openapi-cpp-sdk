@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Drds::Model::DisableSqlAuditRequest;
 
-DisableSqlAuditRequest::DisableSqlAuditRequest() :
-	RpcServiceRequest("drds", "2019-01-23", "DisableSqlAudit")
-{
-	setMethod(HttpRequest::Method::Post);
+DisableSqlAuditRequest::DisableSqlAuditRequest()
+    : RpcServiceRequest("drds", "2019-01-23", "DisableSqlAudit") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DisableSqlAuditRequest::~DisableSqlAuditRequest()
-{}
+DisableSqlAuditRequest::~DisableSqlAuditRequest() {}
 
-std::string DisableSqlAuditRequest::getDrdsInstanceId()const
-{
-	return drdsInstanceId_;
+std::string DisableSqlAuditRequest::getDrdsInstanceId() const {
+  return drdsInstanceId_;
 }
 
-void DisableSqlAuditRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
-{
-	drdsInstanceId_ = drdsInstanceId;
-	setParameter("DrdsInstanceId", drdsInstanceId);
+void DisableSqlAuditRequest::setDrdsInstanceId(const std::string &drdsInstanceId) {
+  drdsInstanceId_ = drdsInstanceId;
+  setParameter(std::string("DrdsInstanceId"), drdsInstanceId);
 }
 
-std::string DisableSqlAuditRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DisableSqlAuditRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DisableSqlAuditRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DisableSqlAuditRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DisableSqlAuditRequest::getDbName()const
-{
-	return dbName_;
+std::string DisableSqlAuditRequest::getDbName() const {
+  return dbName_;
 }
 
-void DisableSqlAuditRequest::setDbName(const std::string& dbName)
-{
-	dbName_ = dbName;
-	setParameter("DbName", dbName);
+void DisableSqlAuditRequest::setDbName(const std::string &dbName) {
+  dbName_ = dbName;
+  setParameter(std::string("DbName"), dbName);
 }
 

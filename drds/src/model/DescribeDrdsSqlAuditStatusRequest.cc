@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Drds::Model::DescribeDrdsSqlAuditStatusRequest;
 
-DescribeDrdsSqlAuditStatusRequest::DescribeDrdsSqlAuditStatusRequest() :
-	RpcServiceRequest("drds", "2019-01-23", "DescribeDrdsSqlAuditStatus")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDrdsSqlAuditStatusRequest::DescribeDrdsSqlAuditStatusRequest()
+    : RpcServiceRequest("drds", "2019-01-23", "DescribeDrdsSqlAuditStatus") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDrdsSqlAuditStatusRequest::~DescribeDrdsSqlAuditStatusRequest()
-{}
+DescribeDrdsSqlAuditStatusRequest::~DescribeDrdsSqlAuditStatusRequest() {}
 
-std::string DescribeDrdsSqlAuditStatusRequest::getDrdsInstanceId()const
-{
-	return drdsInstanceId_;
+std::string DescribeDrdsSqlAuditStatusRequest::getDrdsInstanceId() const {
+  return drdsInstanceId_;
 }
 
-void DescribeDrdsSqlAuditStatusRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
-{
-	drdsInstanceId_ = drdsInstanceId;
-	setParameter("DrdsInstanceId", drdsInstanceId);
+void DescribeDrdsSqlAuditStatusRequest::setDrdsInstanceId(const std::string &drdsInstanceId) {
+  drdsInstanceId_ = drdsInstanceId;
+  setParameter(std::string("DrdsInstanceId"), drdsInstanceId);
 }
 
-std::string DescribeDrdsSqlAuditStatusRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeDrdsSqlAuditStatusRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeDrdsSqlAuditStatusRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeDrdsSqlAuditStatusRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 

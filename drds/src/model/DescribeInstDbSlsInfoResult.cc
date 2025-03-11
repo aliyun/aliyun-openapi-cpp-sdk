@@ -40,10 +40,10 @@ void DescribeInstDbSlsInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto auditInfoNode = value["AuditInfo"];
-	if(!auditInfoNode["Project"].isNull())
-		auditInfo_.project = auditInfoNode["Project"].asString();
 	if(!auditInfoNode["LogStore"].isNull())
 		auditInfo_.logStore = auditInfoNode["LogStore"].asString();
+	if(!auditInfoNode["Project"].isNull())
+		auditInfo_.project = auditInfoNode["Project"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

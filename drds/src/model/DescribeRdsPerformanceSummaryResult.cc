@@ -43,16 +43,16 @@ void DescribeRdsPerformanceSummaryResult::parse(const std::string &payload)
 	for (auto valueRdsPerformanceInfosRdsPerformanceInfo : allRdsPerformanceInfosNode)
 	{
 		RdsPerformanceInfo rdsPerformanceInfosObject;
-		if(!valueRdsPerformanceInfosRdsPerformanceInfo["RdsId"].isNull())
-			rdsPerformanceInfosObject.rdsId = valueRdsPerformanceInfosRdsPerformanceInfo["RdsId"].asString();
 		if(!valueRdsPerformanceInfosRdsPerformanceInfo["Cpu"].isNull())
 			rdsPerformanceInfosObject.cpu = std::stof(valueRdsPerformanceInfosRdsPerformanceInfo["Cpu"].asString());
-		if(!valueRdsPerformanceInfosRdsPerformanceInfo["Iops"].isNull())
-			rdsPerformanceInfosObject.iops = std::stof(valueRdsPerformanceInfosRdsPerformanceInfo["Iops"].asString());
 		if(!valueRdsPerformanceInfosRdsPerformanceInfo["ActiveSessions"].isNull())
 			rdsPerformanceInfosObject.activeSessions = std::stoi(valueRdsPerformanceInfosRdsPerformanceInfo["ActiveSessions"].asString());
 		if(!valueRdsPerformanceInfosRdsPerformanceInfo["TotalSessions"].isNull())
 			rdsPerformanceInfosObject.totalSessions = std::stoi(valueRdsPerformanceInfosRdsPerformanceInfo["TotalSessions"].asString());
+		if(!valueRdsPerformanceInfosRdsPerformanceInfo["RdsId"].isNull())
+			rdsPerformanceInfosObject.rdsId = valueRdsPerformanceInfosRdsPerformanceInfo["RdsId"].asString();
+		if(!valueRdsPerformanceInfosRdsPerformanceInfo["Iops"].isNull())
+			rdsPerformanceInfosObject.iops = std::stof(valueRdsPerformanceInfosRdsPerformanceInfo["Iops"].asString());
 		if(!valueRdsPerformanceInfosRdsPerformanceInfo["SpaceUsage"].isNull())
 			rdsPerformanceInfosObject.spaceUsage = std::stol(valueRdsPerformanceInfosRdsPerformanceInfo["SpaceUsage"].asString());
 		rdsPerformanceInfos_.push_back(rdsPerformanceInfosObject);

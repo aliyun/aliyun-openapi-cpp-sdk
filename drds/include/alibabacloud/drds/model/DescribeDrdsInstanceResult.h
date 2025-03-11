@@ -38,13 +38,14 @@ namespace AlibabaCloud
 					{
 						std::string type;
 						std::string vpcId;
+						bool removeWeight;
 						std::string port;
 						std::string dns;
 						std::string vswitchId;
 						long expireDays;
 					};
-					std::string description;
 					std::string instanceSpec;
+					std::string description;
 					long expireDate;
 					std::string resourceGroupId;
 					std::string label;

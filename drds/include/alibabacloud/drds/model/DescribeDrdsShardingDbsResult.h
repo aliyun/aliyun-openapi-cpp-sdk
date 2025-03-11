@@ -43,8 +43,8 @@ namespace AlibabaCloud
 					std::string dbType;
 					std::string shardingDbName;
 					int blockingTimeout;
-					int preparedStatementCacheSize;
 					std::string connectUrl;
+					int preparedStatementCacheSize;
 					std::string dbStatus;
 					std::string dbInstanceId;
 				};
@@ -53,12 +53,18 @@ namespace AlibabaCloud
 				DescribeDrdsShardingDbsResult();
 				explicit DescribeDrdsShardingDbsResult(const std::string &payload);
 				~DescribeDrdsShardingDbsResult();
+				std::string getPageSize()const;
+				std::string getPageNumber()const;
+				std::string getTotal()const;
 				std::vector<ShardingDb> getShardingDbs()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string pageSize_;
+				std::string pageNumber_;
+				std::string total_;
 				std::vector<ShardingDb> shardingDbs_;
 				bool success_;
 

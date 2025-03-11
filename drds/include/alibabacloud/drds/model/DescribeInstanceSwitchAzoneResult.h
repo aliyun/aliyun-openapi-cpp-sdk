@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string originAzoneId;
 					std::vector<std::string> targetAzones;
-					std::string regionId;
 					bool switchAble;
+					std::string regionId;
 				};
 
 

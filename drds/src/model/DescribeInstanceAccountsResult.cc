@@ -43,14 +43,14 @@ void DescribeInstanceAccountsResult::parse(const std::string &payload)
 	for (auto valueInstanceAccountsInstanceAccount : allInstanceAccountsNode)
 	{
 		InstanceAccount instanceAccountsObject;
-		if(!valueInstanceAccountsInstanceAccount["AccountName"].isNull())
-			instanceAccountsObject.accountName = valueInstanceAccountsInstanceAccount["AccountName"].asString();
 		if(!valueInstanceAccountsInstanceAccount["Host"].isNull())
 			instanceAccountsObject.host = valueInstanceAccountsInstanceAccount["Host"].asString();
-		if(!valueInstanceAccountsInstanceAccount["AccountType"].isNull())
-			instanceAccountsObject.accountType = std::stoi(valueInstanceAccountsInstanceAccount["AccountType"].asString());
 		if(!valueInstanceAccountsInstanceAccount["Description"].isNull())
 			instanceAccountsObject.description = valueInstanceAccountsInstanceAccount["Description"].asString();
+		if(!valueInstanceAccountsInstanceAccount["AccountType"].isNull())
+			instanceAccountsObject.accountType = std::stoi(valueInstanceAccountsInstanceAccount["AccountType"].asString());
+		if(!valueInstanceAccountsInstanceAccount["AccountName"].isNull())
+			instanceAccountsObject.accountName = valueInstanceAccountsInstanceAccount["AccountName"].asString();
 		auto allDbPrivilegesNode = valueInstanceAccountsInstanceAccount["DbPrivileges"]["DbPrivilege"];
 		for (auto valueInstanceAccountsInstanceAccountDbPrivilegesDbPrivilege : allDbPrivilegesNode)
 		{

@@ -39,12 +39,12 @@ void SubmitHotExpandPreCheckTaskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Msg"].isNull())
 		msg_ = value["Msg"].asString();
 	if(!value["TaskId"].isNull())
 		taskId_ = std::stol(value["TaskId"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -72,8 +72,8 @@ namespace AlibabaCloud
 						std::string startTime;
 						int delay;
 					};
-					std::string sourceTableName;
 					std::string status;
+					std::string sourceTableName;
 					std::string progress;
 					FullCheck fullCheck;
 					Increment increment;

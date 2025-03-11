@@ -43,20 +43,20 @@ void DescribeTableListByTypeResult::parse(const std::string &payload)
 	for (auto valueListListItem : allListNode)
 	{
 		ListItem listObject;
-		if(!valueListListItem["TableName"].isNull())
-			listObject.tableName = valueListListItem["TableName"].asString();
 		if(!valueListListItem["Property"].isNull())
 			listObject.property = valueListListItem["Property"].asString();
+		if(!valueListListItem["TableName"].isNull())
+			listObject.tableName = valueListListItem["TableName"].asString();
 		list_.push_back(listObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["Total"].isNull())
 		total_ = std::stoi(value["Total"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

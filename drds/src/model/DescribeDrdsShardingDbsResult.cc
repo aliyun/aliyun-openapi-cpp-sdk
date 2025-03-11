@@ -43,37 +43,58 @@ void DescribeDrdsShardingDbsResult::parse(const std::string &payload)
 	for (auto valueShardingDbsShardingDb : allShardingDbsNode)
 	{
 		ShardingDb shardingDbsObject;
-		if(!valueShardingDbsShardingDb["ShardingDbName"].isNull())
-			shardingDbsObject.shardingDbName = valueShardingDbsShardingDb["ShardingDbName"].asString();
-		if(!valueShardingDbsShardingDb["DbInstanceId"].isNull())
-			shardingDbsObject.dbInstanceId = valueShardingDbsShardingDb["DbInstanceId"].asString();
-		if(!valueShardingDbsShardingDb["GroupName"].isNull())
-			shardingDbsObject.groupName = valueShardingDbsShardingDb["GroupName"].asString();
-		if(!valueShardingDbsShardingDb["DbStatus"].isNull())
-			shardingDbsObject.dbStatus = valueShardingDbsShardingDb["DbStatus"].asString();
-		if(!valueShardingDbsShardingDb["DbType"].isNull())
-			shardingDbsObject.dbType = valueShardingDbsShardingDb["DbType"].asString();
 		if(!valueShardingDbsShardingDb["MinPoolSize"].isNull())
 			shardingDbsObject.minPoolSize = std::stoi(valueShardingDbsShardingDb["MinPoolSize"].asString());
 		if(!valueShardingDbsShardingDb["MaxPoolSize"].isNull())
 			shardingDbsObject.maxPoolSize = std::stoi(valueShardingDbsShardingDb["MaxPoolSize"].asString());
-		if(!valueShardingDbsShardingDb["IdleTimeOut"].isNull())
-			shardingDbsObject.idleTimeOut = std::stoi(valueShardingDbsShardingDb["IdleTimeOut"].asString());
-		if(!valueShardingDbsShardingDb["BlockingTimeout"].isNull())
-			shardingDbsObject.blockingTimeout = std::stoi(valueShardingDbsShardingDb["BlockingTimeout"].asString());
-		if(!valueShardingDbsShardingDb["ConnectionProperties"].isNull())
-			shardingDbsObject.connectionProperties = valueShardingDbsShardingDb["ConnectionProperties"].asString();
-		if(!valueShardingDbsShardingDb["PreparedStatementCacheSize"].isNull())
-			shardingDbsObject.preparedStatementCacheSize = std::stoi(valueShardingDbsShardingDb["PreparedStatementCacheSize"].asString());
-		if(!valueShardingDbsShardingDb["UserName"].isNull())
-			shardingDbsObject.userName = valueShardingDbsShardingDb["UserName"].asString();
+		if(!valueShardingDbsShardingDb["DbInstanceId"].isNull())
+			shardingDbsObject.dbInstanceId = valueShardingDbsShardingDb["DbInstanceId"].asString();
 		if(!valueShardingDbsShardingDb["ConnectUrl"].isNull())
 			shardingDbsObject.connectUrl = valueShardingDbsShardingDb["ConnectUrl"].asString();
+		if(!valueShardingDbsShardingDb["GroupName"].isNull())
+			shardingDbsObject.groupName = valueShardingDbsShardingDb["GroupName"].asString();
+		if(!valueShardingDbsShardingDb["DbType"].isNull())
+			shardingDbsObject.dbType = valueShardingDbsShardingDb["DbType"].asString();
+		if(!valueShardingDbsShardingDb["IdleTimeOut"].isNull())
+			shardingDbsObject.idleTimeOut = std::stoi(valueShardingDbsShardingDb["IdleTimeOut"].asString());
+		if(!valueShardingDbsShardingDb["ShardingDbName"].isNull())
+			shardingDbsObject.shardingDbName = valueShardingDbsShardingDb["ShardingDbName"].asString();
+		if(!valueShardingDbsShardingDb["BlockingTimeout"].isNull())
+			shardingDbsObject.blockingTimeout = std::stoi(valueShardingDbsShardingDb["BlockingTimeout"].asString());
+		if(!valueShardingDbsShardingDb["PreparedStatementCacheSize"].isNull())
+			shardingDbsObject.preparedStatementCacheSize = std::stoi(valueShardingDbsShardingDb["PreparedStatementCacheSize"].asString());
+		if(!valueShardingDbsShardingDb["ConnectionProperties"].isNull())
+			shardingDbsObject.connectionProperties = valueShardingDbsShardingDb["ConnectionProperties"].asString();
+		if(!valueShardingDbsShardingDb["UserName"].isNull())
+			shardingDbsObject.userName = valueShardingDbsShardingDb["UserName"].asString();
+		if(!valueShardingDbsShardingDb["DbStatus"].isNull())
+			shardingDbsObject.dbStatus = valueShardingDbsShardingDb["DbStatus"].asString();
 		shardingDbs_.push_back(shardingDbsObject);
 	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = value["PageNumber"].asString();
+	if(!value["PageSize"].isNull())
+		pageSize_ = value["PageSize"].asString();
+	if(!value["Total"].isNull())
+		total_ = value["Total"].asString();
 
+}
+
+std::string DescribeDrdsShardingDbsResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+std::string DescribeDrdsShardingDbsResult::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+std::string DescribeDrdsShardingDbsResult::getTotal()const
+{
+	return total_;
 }
 
 std::vector<DescribeDrdsShardingDbsResult::ShardingDb> DescribeDrdsShardingDbsResult::getShardingDbs()const

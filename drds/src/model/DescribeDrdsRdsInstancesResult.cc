@@ -43,52 +43,56 @@ void DescribeDrdsRdsInstancesResult::parse(const std::string &payload)
 	for (auto valueDbInstancesDbInstance : allDbInstancesNode)
 	{
 		DbInstance dbInstancesObject;
-		if(!valueDbInstancesDbInstance["DBInstanceId"].isNull())
-			dbInstancesObject.dBInstanceId = valueDbInstancesDbInstance["DBInstanceId"].asString();
-		if(!valueDbInstancesDbInstance["DmInstanceId"].isNull())
-			dbInstancesObject.dmInstanceId = valueDbInstancesDbInstance["DmInstanceId"].asString();
-		if(!valueDbInstancesDbInstance["ConnectUrl"].isNull())
-			dbInstancesObject.connectUrl = valueDbInstancesDbInstance["ConnectUrl"].asString();
-		if(!valueDbInstancesDbInstance["Port"].isNull())
-			dbInstancesObject.port = std::stoi(valueDbInstancesDbInstance["Port"].asString());
-		if(!valueDbInstancesDbInstance["DBInstanceStatus"].isNull())
-			dbInstancesObject.dBInstanceStatus = valueDbInstancesDbInstance["DBInstanceStatus"].asString();
-		if(!valueDbInstancesDbInstance["DbInstType"].isNull())
-			dbInstancesObject.dbInstType = valueDbInstancesDbInstance["DbInstType"].asString();
-		if(!valueDbInstancesDbInstance["ReadWeight"].isNull())
-			dbInstancesObject.readWeight = std::stoi(valueDbInstancesDbInstance["ReadWeight"].asString());
-		if(!valueDbInstancesDbInstance["NetworkType"].isNull())
-			dbInstancesObject.networkType = valueDbInstancesDbInstance["NetworkType"].asString();
-		if(!valueDbInstancesDbInstance["Engine"].isNull())
-			dbInstancesObject.engine = valueDbInstancesDbInstance["Engine"].asString();
-		if(!valueDbInstancesDbInstance["EngineVersion"].isNull())
-			dbInstancesObject.engineVersion = valueDbInstancesDbInstance["EngineVersion"].asString();
-		if(!valueDbInstancesDbInstance["RdsInstType"].isNull())
-			dbInstancesObject.rdsInstType = valueDbInstancesDbInstance["RdsInstType"].asString();
-		if(!valueDbInstancesDbInstance["PayType"].isNull())
-			dbInstancesObject.payType = valueDbInstancesDbInstance["PayType"].asString();
+		if(!valueDbInstancesDbInstance["DBInstanceCPU"].isNull())
+			dbInstancesObject.dBInstanceCPU = valueDbInstancesDbInstance["DBInstanceCPU"].asString();
 		if(!valueDbInstancesDbInstance["ExpireTime"].isNull())
 			dbInstancesObject.expireTime = valueDbInstancesDbInstance["ExpireTime"].asString();
+		if(!valueDbInstancesDbInstance["DBInstanceMemory"].isNull())
+			dbInstancesObject.dBInstanceMemory = std::stol(valueDbInstancesDbInstance["DBInstanceMemory"].asString());
+		if(!valueDbInstancesDbInstance["PayType"].isNull())
+			dbInstancesObject.payType = valueDbInstancesDbInstance["PayType"].asString();
+		if(!valueDbInstancesDbInstance["DBInstanceStatus"].isNull())
+			dbInstancesObject.dBInstanceStatus = valueDbInstancesDbInstance["DBInstanceStatus"].asString();
+		if(!valueDbInstancesDbInstance["NetworkType"].isNull())
+			dbInstancesObject.networkType = valueDbInstancesDbInstance["NetworkType"].asString();
+		if(!valueDbInstancesDbInstance["Port"].isNull())
+			dbInstancesObject.port = std::stoi(valueDbInstancesDbInstance["Port"].asString());
+		if(!valueDbInstancesDbInstance["EngineVersion"].isNull())
+			dbInstancesObject.engineVersion = valueDbInstancesDbInstance["EngineVersion"].asString();
+		if(!valueDbInstancesDbInstance["DmInstanceId"].isNull())
+			dbInstancesObject.dmInstanceId = valueDbInstancesDbInstance["DmInstanceId"].asString();
+		if(!valueDbInstancesDbInstance["DBInstanceStorage"].isNull())
+			dbInstancesObject.dBInstanceStorage = std::stol(valueDbInstancesDbInstance["DBInstanceStorage"].asString());
+		if(!valueDbInstancesDbInstance["ConnectUrl"].isNull())
+			dbInstancesObject.connectUrl = valueDbInstancesDbInstance["ConnectUrl"].asString();
+		if(!valueDbInstancesDbInstance["ReadWeight"].isNull())
+			dbInstancesObject.readWeight = std::stoi(valueDbInstancesDbInstance["ReadWeight"].asString());
+		if(!valueDbInstancesDbInstance["RdsInstType"].isNull())
+			dbInstancesObject.rdsInstType = valueDbInstancesDbInstance["RdsInstType"].asString();
 		if(!valueDbInstancesDbInstance["RemainDays"].isNull())
 			dbInstancesObject.remainDays = std::stoi(valueDbInstancesDbInstance["RemainDays"].asString());
 		if(!valueDbInstancesDbInstance["DBInstanceClassType"].isNull())
 			dbInstancesObject.dBInstanceClassType = valueDbInstancesDbInstance["DBInstanceClassType"].asString();
-		if(!valueDbInstancesDbInstance["DBInstanceCPU"].isNull())
-			dbInstancesObject.dBInstanceCPU = valueDbInstancesDbInstance["DBInstanceCPU"].asString();
-		if(!valueDbInstancesDbInstance["DBInstanceMemory"].isNull())
-			dbInstancesObject.dBInstanceMemory = std::stol(valueDbInstancesDbInstance["DBInstanceMemory"].asString());
-		if(!valueDbInstancesDbInstance["DBInstanceStorage"].isNull())
-			dbInstancesObject.dBInstanceStorage = std::stol(valueDbInstancesDbInstance["DBInstanceStorage"].asString());
+		if(!valueDbInstancesDbInstance["DBInstanceId"].isNull())
+			dbInstancesObject.dBInstanceId = valueDbInstancesDbInstance["DBInstanceId"].asString();
+		if(!valueDbInstancesDbInstance["Engine"].isNull())
+			dbInstancesObject.engine = valueDbInstancesDbInstance["Engine"].asString();
+		if(!valueDbInstancesDbInstance["DbInstType"].isNull())
+			dbInstancesObject.dbInstType = valueDbInstancesDbInstance["DbInstType"].asString();
+		if(!valueDbInstancesDbInstance["LockMode"].isNull())
+			dbInstancesObject.lockMode = std::stoi(valueDbInstancesDbInstance["LockMode"].asString());
+		if(!valueDbInstancesDbInstance["LockReason"].isNull())
+			dbInstancesObject.lockReason = valueDbInstancesDbInstance["LockReason"].asString();
 		dbInstances_.push_back(dbInstancesObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = value["PageNumber"].asString();
 	if(!value["PageSize"].isNull())
 		pageSize_ = value["PageSize"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = value["PageNumber"].asString();
 	if(!value["Total"].isNull())
 		total_ = value["Total"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,69 +18,54 @@
 
 using AlibabaCloud::Drds::Model::SetupBroadcastTablesRequest;
 
-SetupBroadcastTablesRequest::SetupBroadcastTablesRequest() :
-	RpcServiceRequest("drds", "2019-01-23", "SetupBroadcastTables")
-{
-	setMethod(HttpRequest::Method::Post);
+SetupBroadcastTablesRequest::SetupBroadcastTablesRequest()
+    : RpcServiceRequest("drds", "2019-01-23", "SetupBroadcastTables") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SetupBroadcastTablesRequest::~SetupBroadcastTablesRequest()
-{}
+SetupBroadcastTablesRequest::~SetupBroadcastTablesRequest() {}
 
-bool SetupBroadcastTablesRequest::getActive()const
-{
-	return active_;
+bool SetupBroadcastTablesRequest::getActive() const {
+  return active_;
 }
 
-void SetupBroadcastTablesRequest::setActive(bool active)
-{
-	active_ = active;
-	setParameter("Active", active ? "true" : "false");
+void SetupBroadcastTablesRequest::setActive(bool active) {
+  active_ = active;
+  setParameter(std::string("Active"), active ? "true" : "false");
 }
 
-std::string SetupBroadcastTablesRequest::getDrdsInstanceId()const
-{
-	return drdsInstanceId_;
+std::string SetupBroadcastTablesRequest::getDrdsInstanceId() const {
+  return drdsInstanceId_;
 }
 
-void SetupBroadcastTablesRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
-{
-	drdsInstanceId_ = drdsInstanceId;
-	setParameter("DrdsInstanceId", drdsInstanceId);
+void SetupBroadcastTablesRequest::setDrdsInstanceId(const std::string &drdsInstanceId) {
+  drdsInstanceId_ = drdsInstanceId;
+  setParameter(std::string("DrdsInstanceId"), drdsInstanceId);
 }
 
-std::string SetupBroadcastTablesRequest::getDbName()const
-{
-	return dbName_;
+std::string SetupBroadcastTablesRequest::getDbName() const {
+  return dbName_;
 }
 
-void SetupBroadcastTablesRequest::setDbName(const std::string& dbName)
-{
-	dbName_ = dbName;
-	setParameter("DbName", dbName);
+void SetupBroadcastTablesRequest::setDbName(const std::string &dbName) {
+  dbName_ = dbName;
+  setParameter(std::string("DbName"), dbName);
 }
 
-std::string SetupBroadcastTablesRequest::getRegionId()const
-{
-	return regionId_;
+std::string SetupBroadcastTablesRequest::getRegionId() const {
+  return regionId_;
 }
 
-void SetupBroadcastTablesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void SetupBroadcastTablesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::vector<std::string> SetupBroadcastTablesRequest::getTableName()const
-{
-	return tableName_;
+std::vector<std::string> SetupBroadcastTablesRequest::getTableName() const {
+  return tableName_;
 }
 
-void SetupBroadcastTablesRequest::setTableName(const std::vector<std::string>& tableName)
-{
-	tableName_ = tableName;
-	for(int dep1 = 0; dep1!= tableName.size(); dep1++) {
-		setParameter("TableName."+ std::to_string(dep1), tableName.at(dep1));
-	}
+void SetupBroadcastTablesRequest::setTableName(const std::vector<std::string> &tableName) {
+  tableName_ = tableName;
 }
 

@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					long sendTime;
 					std::string schema;
-					long responseTime;
 					std::string host;
+					long responseTime;
 					std::string sql;
 				};
 

@@ -35,11 +35,11 @@ namespace AlibabaCloud
 				struct BackupSet
 				{
 					long status;
-					std::string backupTotalSize;
 					std::string backupConsitentTime;
-					long backupEndTime;
-					std::string backupMode;
+					std::string backupTotalSize;
 					std::string backupLevel;
+					std::string backupMode;
+					long backupEndTime;
 					long backupStartTime;
 					std::string backupType;
 					std::vector<std::string> backupDbs;

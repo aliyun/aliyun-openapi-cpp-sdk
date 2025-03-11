@@ -40,10 +40,10 @@ void DescribeBackupTimesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto restoreTimeNode = value["RestoreTime"];
-	if(!restoreTimeNode["StartTime"].isNull())
-		restoreTime_.startTime = restoreTimeNode["StartTime"].asString();
 	if(!restoreTimeNode["EndTime"].isNull())
 		restoreTime_.endTime = restoreTimeNode["EndTime"].asString();
+	if(!restoreTimeNode["StartTime"].isNull())
+		restoreTime_.startTime = restoreTimeNode["StartTime"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

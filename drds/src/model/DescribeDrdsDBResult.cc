@@ -40,16 +40,16 @@ void DescribeDrdsDBResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["DbName"].isNull())
-		data_.dbName = dataNode["DbName"].asString();
 	if(!dataNode["Status"].isNull())
 		data_.status = dataNode["Status"].asString();
+	if(!dataNode["DbName"].isNull())
+		data_.dbName = dataNode["DbName"].asString();
+	if(!dataNode["Schema"].isNull())
+		data_.schema = dataNode["Schema"].asString();
 	if(!dataNode["CreateTime"].isNull())
 		data_.createTime = dataNode["CreateTime"].asString();
 	if(!dataNode["Mode"].isNull())
 		data_.mode = dataNode["Mode"].asString();
-	if(!dataNode["Schema"].isNull())
-		data_.schema = dataNode["Schema"].asString();
 	if(!dataNode["DbInstType"].isNull())
 		data_.dbInstType = dataNode["DbInstType"].asString();
 	if(!dataNode["InstRole"].isNull())

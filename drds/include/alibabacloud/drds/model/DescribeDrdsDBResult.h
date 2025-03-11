@@ -37,9 +37,9 @@ namespace AlibabaCloud
 					std::string status;
 					std::string dbInstType;
 					std::string instRole;
+					std::string schema;
 					std::string createTime;
 					std::string mode;
-					std::string schema;
 					std::string dbName;
 				};
 

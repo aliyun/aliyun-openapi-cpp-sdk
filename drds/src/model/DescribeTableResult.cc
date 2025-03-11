@@ -44,18 +44,18 @@ void DescribeTableResult::parse(const std::string &payload)
 	for (auto dataNodeListColumnInfo : allListNode)
 	{
 		Data::ColumnInfo columnInfoObject;
-		if(!dataNodeListColumnInfo["ColumnName"].isNull())
-			columnInfoObject.columnName = dataNodeListColumnInfo["ColumnName"].asString();
-		if(!dataNodeListColumnInfo["ColumnType"].isNull())
-			columnInfoObject.columnType = dataNodeListColumnInfo["ColumnType"].asString();
-		if(!dataNodeListColumnInfo["Extra"].isNull())
-			columnInfoObject.extra = dataNodeListColumnInfo["Extra"].asString();
 		if(!dataNodeListColumnInfo["Index"].isNull())
 			columnInfoObject.index = dataNodeListColumnInfo["Index"].asString();
 		if(!dataNodeListColumnInfo["IsAllowNull"].isNull())
 			columnInfoObject.isAllowNull = dataNodeListColumnInfo["IsAllowNull"].asString();
+		if(!dataNodeListColumnInfo["ColumnName"].isNull())
+			columnInfoObject.columnName = dataNodeListColumnInfo["ColumnName"].asString();
 		if(!dataNodeListColumnInfo["IsPk"].isNull())
 			columnInfoObject.isPk = dataNodeListColumnInfo["IsPk"].asString();
+		if(!dataNodeListColumnInfo["ColumnType"].isNull())
+			columnInfoObject.columnType = dataNodeListColumnInfo["ColumnType"].asString();
+		if(!dataNodeListColumnInfo["Extra"].isNull())
+			columnInfoObject.extra = dataNodeListColumnInfo["Extra"].asString();
 		data_.list.push_back(columnInfoObject);
 	}
 	if(!value["Success"].isNull())

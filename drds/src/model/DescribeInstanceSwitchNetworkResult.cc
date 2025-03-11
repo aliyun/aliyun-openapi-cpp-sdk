@@ -45,24 +45,24 @@ void DescribeInstanceSwitchNetworkResult::parse(const std::string &payload)
 		VpcInfo vpcInfosObject;
 		if(!valueVpcInfosVpcInfo["VpcId"].isNull())
 			vpcInfosObject.vpcId = valueVpcInfosVpcInfo["VpcId"].asString();
-		if(!valueVpcInfosVpcInfo["RegionId"].isNull())
-			vpcInfosObject.regionId = valueVpcInfosVpcInfo["RegionId"].asString();
 		if(!valueVpcInfosVpcInfo["VpcName"].isNull())
 			vpcInfosObject.vpcName = valueVpcInfosVpcInfo["VpcName"].asString();
+		if(!valueVpcInfosVpcInfo["RegionId"].isNull())
+			vpcInfosObject.regionId = valueVpcInfosVpcInfo["RegionId"].asString();
 		auto allVswitchInfosNode = valueVpcInfosVpcInfo["VswitchInfos"]["VswitchInfo"];
 		for (auto valueVpcInfosVpcInfoVswitchInfosVswitchInfo : allVswitchInfosNode)
 		{
 			VpcInfo::VswitchInfo vswitchInfosObject;
-			if(!valueVpcInfosVpcInfoVswitchInfosVswitchInfo["VswitchId"].isNull())
-				vswitchInfosObject.vswitchId = valueVpcInfosVpcInfoVswitchInfosVswitchInfo["VswitchId"].asString();
 			if(!valueVpcInfosVpcInfoVswitchInfosVswitchInfo["VpcId"].isNull())
 				vswitchInfosObject.vpcId = valueVpcInfosVpcInfoVswitchInfosVswitchInfo["VpcId"].asString();
-			if(!valueVpcInfosVpcInfoVswitchInfosVswitchInfo["VswitchName"].isNull())
-				vswitchInfosObject.vswitchName = valueVpcInfosVpcInfoVswitchInfosVswitchInfo["VswitchName"].asString();
-			if(!valueVpcInfosVpcInfoVswitchInfosVswitchInfo["AzoneId"].isNull())
-				vswitchInfosObject.azoneId = valueVpcInfosVpcInfoVswitchInfosVswitchInfo["AzoneId"].asString();
 			if(!valueVpcInfosVpcInfoVswitchInfosVswitchInfo["DrdsSupported"].isNull())
 				vswitchInfosObject.drdsSupported = valueVpcInfosVpcInfoVswitchInfosVswitchInfo["DrdsSupported"].asString() == "true";
+			if(!valueVpcInfosVpcInfoVswitchInfosVswitchInfo["VswitchId"].isNull())
+				vswitchInfosObject.vswitchId = valueVpcInfosVpcInfoVswitchInfosVswitchInfo["VswitchId"].asString();
+			if(!valueVpcInfosVpcInfoVswitchInfosVswitchInfo["AzoneId"].isNull())
+				vswitchInfosObject.azoneId = valueVpcInfosVpcInfoVswitchInfosVswitchInfo["AzoneId"].asString();
+			if(!valueVpcInfosVpcInfoVswitchInfosVswitchInfo["VswitchName"].isNull())
+				vswitchInfosObject.vswitchName = valueVpcInfosVpcInfoVswitchInfosVswitchInfo["VswitchName"].asString();
 			vpcInfosObject.vswitchInfos.push_back(vswitchInfosObject);
 		}
 		vpcInfos_.push_back(vpcInfosObject);

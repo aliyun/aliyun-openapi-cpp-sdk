@@ -47,10 +47,10 @@ namespace AlibabaCloud
 						std::string dBInstanceId;
 						std::string networkType;
 						std::string rdsInstType;
-						std::string dmInstanceId;
 						std::string expireTime;
-						std::string engine;
+						std::string dmInstanceId;
 						std::string remainDays;
+						std::string engine;
 					};
 					std::string dbInstType;
 					std::vector<ReadOnlyInstance> readOnlyInstances;
@@ -63,10 +63,10 @@ namespace AlibabaCloud
 					std::string dBInstanceId;
 					std::string networkType;
 					std::string rdsInstType;
-					std::string dmInstanceId;
 					std::string expireTime;
-					std::string engine;
+					std::string dmInstanceId;
 					std::string remainDays;
+					std::string engine;
 				};
 
 

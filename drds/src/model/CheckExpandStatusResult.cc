@@ -40,10 +40,10 @@ void CheckExpandStatusResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["IsActive"].isNull())
-		data_.isActive = dataNode["IsActive"].asString() == "true";
 	if(!dataNode["Msg"].isNull())
 		data_.msg = dataNode["Msg"].asString();
+	if(!dataNode["IsActive"].isNull())
+		data_.isActive = dataNode["IsActive"].asString() == "true";
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

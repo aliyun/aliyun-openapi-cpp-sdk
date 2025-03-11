@@ -43,28 +43,28 @@ void DescribeDrdsInstanceLevelTasksResult::parse(const std::string &payload)
 	for (auto valueTasksTask : allTasksNode)
 	{
 		Task tasksObject;
-		if(!valueTasksTask["TaskName"].isNull())
-			tasksObject.taskName = valueTasksTask["TaskName"].asString();
-		if(!valueTasksTask["GmtCreate"].isNull())
-			tasksObject.gmtCreate = std::stol(valueTasksTask["GmtCreate"].asString());
 		if(!valueTasksTask["TaskType"].isNull())
 			tasksObject.taskType = std::stoi(valueTasksTask["TaskType"].asString());
-		if(!valueTasksTask["TargetId"].isNull())
-			tasksObject.targetId = std::stol(valueTasksTask["TargetId"].asString());
-		if(!valueTasksTask["TaskStatus"].isNull())
-			tasksObject.taskStatus = std::stoi(valueTasksTask["TaskStatus"].asString());
-		if(!valueTasksTask["Progress"].isNull())
-			tasksObject.progress = std::stoi(valueTasksTask["Progress"].asString());
-		if(!valueTasksTask["ProgressDescription"].isNull())
-			tasksObject.progressDescription = valueTasksTask["ProgressDescription"].asString();
 		if(!valueTasksTask["TaskPhase"].isNull())
 			tasksObject.taskPhase = valueTasksTask["TaskPhase"].asString();
-		if(!valueTasksTask["ErrMsg"].isNull())
-			tasksObject.errMsg = valueTasksTask["ErrMsg"].asString();
-		if(!valueTasksTask["ShowProgress"].isNull())
-			tasksObject.showProgress = valueTasksTask["ShowProgress"].asString() == "true";
+		if(!valueTasksTask["Progress"].isNull())
+			tasksObject.progress = std::stoi(valueTasksTask["Progress"].asString());
 		if(!valueTasksTask["AllowCancel"].isNull())
 			tasksObject.allowCancel = valueTasksTask["AllowCancel"].asString() == "true";
+		if(!valueTasksTask["TaskStatus"].isNull())
+			tasksObject.taskStatus = std::stoi(valueTasksTask["TaskStatus"].asString());
+		if(!valueTasksTask["ShowProgress"].isNull())
+			tasksObject.showProgress = valueTasksTask["ShowProgress"].asString() == "true";
+		if(!valueTasksTask["TaskName"].isNull())
+			tasksObject.taskName = valueTasksTask["TaskName"].asString();
+		if(!valueTasksTask["ProgressDescription"].isNull())
+			tasksObject.progressDescription = valueTasksTask["ProgressDescription"].asString();
+		if(!valueTasksTask["GmtCreate"].isNull())
+			tasksObject.gmtCreate = std::stol(valueTasksTask["GmtCreate"].asString());
+		if(!valueTasksTask["TargetId"].isNull())
+			tasksObject.targetId = std::stol(valueTasksTask["TargetId"].asString());
+		if(!valueTasksTask["ErrMsg"].isNull())
+			tasksObject.errMsg = valueTasksTask["ErrMsg"].asString();
 		tasks_.push_back(tasksObject);
 	}
 	if(!value["Success"].isNull())
