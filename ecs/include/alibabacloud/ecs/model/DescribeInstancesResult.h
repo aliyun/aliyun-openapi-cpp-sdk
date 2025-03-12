@@ -95,6 +95,10 @@ namespace AlibabaCloud
 						bool enableIpDnsARecord;
 						bool enableInstanceIdDnsAAAARecord;
 					};
+					struct AdditionalInfo
+					{
+						bool enableHighDensityMode;
+					};
 					struct NetworkInterface
 					{
 						struct PrivateIpSet
@@ -150,6 +154,7 @@ namespace AlibabaCloud
 					std::string hostName;
 					std::string status;
 					HibernationOptions hibernationOptions;
+					AdditionalInfo additionalInfo;
 					MetadataOptions metadataOptions;
 					std::string instanceId;
 					std::string stoppedMode;

@@ -38,6 +38,7 @@ public:
 	};
 	struct Features {
 		std::string nvmeSupport;
+		std::string imdsSupport;
 	};
 	struct Tag {
 		std::string value;
@@ -49,6 +50,8 @@ public:
 	void setDiskDeviceMapping(const std::vector<DiskDeviceMapping> &diskDeviceMapping);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	std::string getPlatform() const;
@@ -87,6 +90,7 @@ public:
 private:
 	std::vector<DiskDeviceMapping> diskDeviceMapping_;
 	long resourceOwnerId_;
+	std::string clientToken_;
 	std::string description_;
 	std::string platform_;
 	std::string resourceGroupId_;

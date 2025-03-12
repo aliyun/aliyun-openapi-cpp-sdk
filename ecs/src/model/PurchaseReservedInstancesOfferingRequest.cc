@@ -138,6 +138,15 @@ void PurchaseReservedInstancesOfferingRequest::setPeriod(int period) {
   setParameter(std::string("Period"), std::to_string(period));
 }
 
+bool PurchaseReservedInstancesOfferingRequest::getAutoPay() const {
+  return autoPay_;
+}
+
+void PurchaseReservedInstancesOfferingRequest::setAutoPay(bool autoPay) {
+  autoPay_ = autoPay;
+  setParameter(std::string("AutoPay"), autoPay ? "true" : "false");
+}
+
 std::string PurchaseReservedInstancesOfferingRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -163,6 +172,15 @@ long PurchaseReservedInstancesOfferingRequest::getOwnerId() const {
 void PurchaseReservedInstancesOfferingRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+PurchaseReservedInstancesOfferingRequest::PromotionOptions PurchaseReservedInstancesOfferingRequest::getPromotionOptions() const {
+  return promotionOptions_;
+}
+
+void PurchaseReservedInstancesOfferingRequest::setPromotionOptions(const PurchaseReservedInstancesOfferingRequest::PromotionOptions &promotionOptions) {
+  promotionOptions_ = promotionOptions;
+  setParameter(std::string("PromotionOptions") + ".CouponNo", promotionOptions.couponNo);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getPeriodUnit() const {

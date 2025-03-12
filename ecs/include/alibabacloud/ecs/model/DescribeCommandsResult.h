@@ -41,6 +41,7 @@ namespace AlibabaCloud
 						bool required;
 						std::string parameterName;
 						std::vector<std::string> possibleValues;
+						std::string patternRegex;
 					};
 					struct Tag
 					{

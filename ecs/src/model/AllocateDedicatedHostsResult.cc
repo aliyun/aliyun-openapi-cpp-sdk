@@ -42,11 +42,18 @@ void AllocateDedicatedHostsResult::parse(const std::string &payload)
 	auto allDedicatedHostIdSets = value["DedicatedHostIdSets"]["DedicatedHostId"];
 	for (const auto &item : allDedicatedHostIdSets)
 		dedicatedHostIdSets_.push_back(item.asString());
+	if(!value["OrderId"].isNull())
+		orderId_ = value["OrderId"].asString();
 
 }
 
 std::vector<std::string> AllocateDedicatedHostsResult::getDedicatedHostIdSets()const
 {
 	return dedicatedHostIdSets_;
+}
+
+std::string AllocateDedicatedHostsResult::getOrderId()const
+{
+	return orderId_;
 }
 

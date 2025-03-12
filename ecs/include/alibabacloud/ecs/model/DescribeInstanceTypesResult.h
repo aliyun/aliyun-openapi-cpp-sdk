@@ -37,11 +37,16 @@ namespace AlibabaCloud
 					struct EnhancedNetwork
 					{
 						int vfQueueNumberPerEni;
+						bool rssSupport;
 						bool sriovSupport;
 					};
 					struct CpuOptions
 					{
 						std::vector<std::string> supportedTopologyTypes;
+						int coreFactor;
+						int threadsPerCore;
+						bool hyperThreadingAdjustable;
+						int core;
 					};
 					struct NetworkCardInfo
 					{
@@ -86,6 +91,7 @@ namespace AlibabaCloud
 					int baselineCredit;
 					std::string instanceFamilyLevel;
 					std::vector<InstanceType::NetworkCardInfo> networkCards;
+					bool jumboFrameSupport;
 					float cpuTurboFrequency;
 					int eniPrivateIpAddressQuantity;
 				};

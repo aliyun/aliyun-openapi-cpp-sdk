@@ -97,6 +97,8 @@ namespace AlibabaCloud
 						{
 							float discountOff;
 							std::vector<std::string> ruleIds3;
+							std::string type;
+							float remainQuota;
 							std::string name;
 						};
 						float spotInstanceTypeOriginalPrice;

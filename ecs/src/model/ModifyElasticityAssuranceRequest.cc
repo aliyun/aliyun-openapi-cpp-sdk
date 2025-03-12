@@ -106,6 +106,22 @@ void ModifyElasticityAssuranceRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::vector<ModifyElasticityAssuranceRequest::RecurrenceRules> ModifyElasticityAssuranceRequest::getRecurrenceRules() const {
+  return recurrenceRules_;
+}
+
+void ModifyElasticityAssuranceRequest::setRecurrenceRules(const std::vector<ModifyElasticityAssuranceRequest::RecurrenceRules> &recurrenceRules) {
+  recurrenceRules_ = recurrenceRules;
+  for(int dep1 = 0; dep1 != recurrenceRules.size(); dep1++) {
+  auto recurrenceRulesObj = recurrenceRules.at(dep1);
+  std::string recurrenceRulesObjStr = std::string("RecurrenceRules") + "." + std::to_string(dep1 + 1);
+    setParameter(recurrenceRulesObjStr + ".RecurrenceType", recurrenceRulesObj.recurrenceType);
+    setParameter(recurrenceRulesObjStr + ".RecurrenceValue", recurrenceRulesObj.recurrenceValue);
+    setParameter(recurrenceRulesObjStr + ".StartHour", std::to_string(recurrenceRulesObj.startHour));
+    setParameter(recurrenceRulesObjStr + ".EndHour", std::to_string(recurrenceRulesObj.endHour));
+  }
+}
+
 std::string ModifyElasticityAssuranceRequest::getPackageType() const {
   return packageType_;
 }

@@ -44,6 +44,7 @@ namespace AlibabaCloud
 				std::string getCurrency()const;
 				std::string getPlanType()const;
 				int getPeriod()const;
+				std::string getInstanceTypeFamilyGroup()const;
 				std::string getPeriodUnit()const;
 
 			protected:
@@ -56,6 +57,7 @@ namespace AlibabaCloud
 				std::string currency_;
 				std::string planType_;
 				int period_;
+				std::string instanceTypeFamilyGroup_;
 				std::string periodUnit_;
 
 			};

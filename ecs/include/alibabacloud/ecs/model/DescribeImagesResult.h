@@ -48,7 +48,12 @@ namespace AlibabaCloud
 					};
 					struct Features
 					{
+						std::string memoryOnlineUpgrade;
 						std::string nvmeSupport;
+						std::string cpuOnlineDowngrade;
+						std::string imdsSupport;
+						std::string cpuOnlineUpgrade;
+						std::string memoryOnlineDowngrade;
 					};
 					struct DiskDeviceMapping
 					{
@@ -58,6 +63,7 @@ namespace AlibabaCloud
 						std::string format;
 						std::string device;
 						std::string size;
+						bool encrypted;
 						std::string importOSSBucket;
 						std::string importOSSObject;
 						int remainTime;

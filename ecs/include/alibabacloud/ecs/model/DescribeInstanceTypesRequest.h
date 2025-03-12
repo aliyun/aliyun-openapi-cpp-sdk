@@ -40,6 +40,8 @@ public:
 	void setMaximumGPUAmount(int maximumGPUAmount);
 	std::string getLocalStorageCategory() const;
 	void setLocalStorageCategory(const std::string &localStorageCategory);
+	bool getSupportHotModify() const;
+	void setSupportHotModify(bool supportHotModify);
 	float getMaximumMemorySize() const;
 	void setMaximumMemorySize(float maximumMemorySize);
 	std::string getInstanceCategory() const;
@@ -131,6 +133,7 @@ private:
 	int maximumCpuCoreCount_;
 	int maximumGPUAmount_;
 	std::string localStorageCategory_;
+	bool supportHotModify_;
 	float maximumMemorySize_;
 	std::string instanceCategory_;
 	long minimumInstancePpsTx_;

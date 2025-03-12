@@ -32,6 +32,12 @@ public:
 		std::string key;
 		std::string value;
 	};
+	struct RecurrenceRules {
+		std::string recurrenceType;
+		std::string recurrenceValue;
+		int startHour;
+		int endHour;
+	};
 	CreateElasticityAssuranceRequest();
 	~CreateElasticityAssuranceRequest();
 	long getResourceOwnerId() const;
@@ -56,6 +62,8 @@ public:
 	void setTag(const std::vector<Tag> &tag);
 	std::string getInstanceChargeType() const;
 	void setInstanceChargeType(const std::string &instanceChargeType);
+	int getAutoRenewPeriod() const;
+	void setAutoRenewPeriod(int autoRenewPeriod);
 	int getPeriod() const;
 	void setPeriod(int period);
 	std::string getResourceOwnerAccount() const;
@@ -74,8 +82,12 @@ public:
 	void setInstanceCpuCoreCount(int instanceCpuCoreCount);
 	std::string getPeriodUnit() const;
 	void setPeriodUnit(const std::string &periodUnit);
+	bool getAutoRenew() const;
+	void setAutoRenew(bool autoRenew);
 	std::vector<std::string> getZoneId() const;
 	void setZoneId(const std::vector<std::string> &zoneId);
+	std::vector<RecurrenceRules> getRecurrenceRules() const;
+	void setRecurrenceRules(const std::vector<RecurrenceRules> &recurrenceRules);
 	std::string getChargeType() const;
 	void setChargeType(const std::string &chargeType);
 	std::string getPackageType() const;
@@ -95,6 +107,7 @@ private:
 	std::vector<std::string> instanceType_;
 	std::vector<Tag> tag_;
 	std::string instanceChargeType_;
+	int autoRenewPeriod_;
 	int period_;
 	std::string resourceOwnerAccount_;
 	std::string privatePoolOptionsName_;
@@ -104,7 +117,9 @@ private:
 	std::string resourceType_;
 	int instanceCpuCoreCount_;
 	std::string periodUnit_;
+	bool autoRenew_;
 	std::vector<std::string> zoneId_;
+	std::vector<RecurrenceRules> recurrenceRules_;
 	std::string chargeType_;
 	std::string packageType_;
 	int instanceAmount_;

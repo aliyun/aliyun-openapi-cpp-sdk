@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYAUTOSNAPSHOTPOLICYRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_MODIFYAUTOSNAPSHOTPOLICYRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYSNAPSHOTCATEGORYRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_MODIFYSNAPSHOTCATEGORYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT ModifyAutoSnapshotPolicyResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT ModifySnapshotCategoryResult : public ServiceResult
 			{
 			public:
 
 
-				ModifyAutoSnapshotPolicyResult();
-				explicit ModifyAutoSnapshotPolicyResult(const std::string &payload);
-				~ModifyAutoSnapshotPolicyResult();
+				ModifySnapshotCategoryResult();
+				explicit ModifySnapshotCategoryResult(const std::string &payload);
+				~ModifySnapshotCategoryResult();
+				std::string getTaskId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string taskId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYAUTOSNAPSHOTPOLICYRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYSNAPSHOTCATEGORYRESULT_H_

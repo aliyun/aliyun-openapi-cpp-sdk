@@ -33,6 +33,9 @@ public:
 		int size;
 		std::string category;
 	};
+	struct PromotionOptions {
+		std::string couponNo;
+	};
 	DescribeInstanceModificationPriceRequest();
 	~DescribeInstanceModificationPriceRequest();
 	long getResourceOwnerId() const;
@@ -51,6 +54,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::vector<DataDisk> getDataDisk() const;
 	void setDataDisk(const std::vector<DataDisk> &dataDisk);
+	PromotionOptions getPromotionOptions() const;
+	void setPromotionOptions(const PromotionOptions &promotionOptions);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 
@@ -63,6 +68,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::vector<DataDisk> dataDisk_;
+	PromotionOptions promotionOptions_;
 	std::string instanceId_;
 };
 } // namespace Model

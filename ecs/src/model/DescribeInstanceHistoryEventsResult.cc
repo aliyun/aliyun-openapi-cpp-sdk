@@ -123,6 +123,8 @@ void DescribeInstanceHistoryEventsResult::parse(const std::string &payload)
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
 }
 
@@ -134,6 +136,11 @@ int DescribeInstanceHistoryEventsResult::getTotalCount()const
 int DescribeInstanceHistoryEventsResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+std::string DescribeInstanceHistoryEventsResult::getNextToken()const
+{
+	return nextToken_;
 }
 
 int DescribeInstanceHistoryEventsResult::getPageNumber()const

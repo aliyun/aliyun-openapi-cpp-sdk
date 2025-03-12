@@ -28,6 +28,9 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT RenewDedicatedHostsRequest : public RpcServiceRequest {
 public:
+	struct PromotionOptions {
+		std::string couponNo;
+	};
 	RenewDedicatedHostsRequest();
 	~RenewDedicatedHostsRequest();
 	std::string getDedicatedHostIds() const;
@@ -40,12 +43,16 @@ public:
 	void setRegionId(const std::string &regionId);
 	int getPeriod() const;
 	void setPeriod(int period);
+	bool getAutoPay() const;
+	void setAutoPay(bool autoPay);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	PromotionOptions getPromotionOptions() const;
+	void setPromotionOptions(const PromotionOptions &promotionOptions);
 	std::string getPeriodUnit() const;
 	void setPeriodUnit(const std::string &periodUnit);
 
@@ -55,9 +62,11 @@ private:
 	std::string clientToken_;
 	std::string regionId_;
 	int period_;
+	bool autoPay_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	PromotionOptions promotionOptions_;
 	std::string periodUnit_;
 };
 } // namespace Model

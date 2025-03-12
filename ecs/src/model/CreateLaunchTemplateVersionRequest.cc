@@ -460,6 +460,7 @@ void CreateLaunchTemplateVersionRequest::setNetworkInterface(const std::vector<C
     setParameter(networkInterfaceObjStr + ".PrimaryIpAddress", networkInterfaceObj.primaryIpAddress);
     setParameter(networkInterfaceObjStr + ".InstanceType", networkInterfaceObj.instanceType);
     setParameter(networkInterfaceObjStr + ".NetworkInterfaceTrafficMode", networkInterfaceObj.networkInterfaceTrafficMode);
+    setParameter(networkInterfaceObjStr + ".DeleteOnRelease", networkInterfaceObj.deleteOnRelease ? "true" : "false");
   }
 }
 

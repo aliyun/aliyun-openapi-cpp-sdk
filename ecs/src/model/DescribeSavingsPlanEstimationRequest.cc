@@ -52,6 +52,15 @@ void DescribeSavingsPlanEstimationRequest::setPlanType(const std::string &planTy
   setParameter(std::string("PlanType"), planType);
 }
 
+std::string DescribeSavingsPlanEstimationRequest::getInstanceTypeScope() const {
+  return instanceTypeScope_;
+}
+
+void DescribeSavingsPlanEstimationRequest::setInstanceTypeScope(const std::string &instanceTypeScope) {
+  instanceTypeScope_ = instanceTypeScope;
+  setParameter(std::string("InstanceTypeScope"), instanceTypeScope);
+}
+
 std::string DescribeSavingsPlanEstimationRequest::getPeriodUnit() const {
   return periodUnit_;
 }
@@ -77,5 +86,14 @@ std::string DescribeSavingsPlanEstimationRequest::getRegionId() const {
 void DescribeSavingsPlanEstimationRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeSavingsPlanEstimationRequest::getEstimationResource() const {
+  return estimationResource_;
+}
+
+void DescribeSavingsPlanEstimationRequest::setEstimationResource(const std::string &estimationResource) {
+  estimationResource_ = estimationResource;
+  setParameter(std::string("EstimationResource"), estimationResource);
 }
 

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ecs/model/ModifyAutoSnapshotPolicyResult.h>
+#include <alibabacloud/ecs/model/ModifyElasticityAssuranceAutoRenewAttributeResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ecs;
 using namespace AlibabaCloud::Ecs::Model;
 
-ModifyAutoSnapshotPolicyResult::ModifyAutoSnapshotPolicyResult() :
+ModifyElasticityAssuranceAutoRenewAttributeResult::ModifyElasticityAssuranceAutoRenewAttributeResult() :
 	ServiceResult()
 {}
 
-ModifyAutoSnapshotPolicyResult::ModifyAutoSnapshotPolicyResult(const std::string &payload) :
+ModifyElasticityAssuranceAutoRenewAttributeResult::ModifyElasticityAssuranceAutoRenewAttributeResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ModifyAutoSnapshotPolicyResult::~ModifyAutoSnapshotPolicyResult()
+ModifyElasticityAssuranceAutoRenewAttributeResult::~ModifyElasticityAssuranceAutoRenewAttributeResult()
 {}
 
-void ModifyAutoSnapshotPolicyResult::parse(const std::string &payload)
+void ModifyElasticityAssuranceAutoRenewAttributeResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

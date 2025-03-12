@@ -55,6 +55,7 @@ namespace AlibabaCloud
 						{
 							std::string networkInterfaceTrafficMode;
 							std::string description;
+							bool deleteOnRelease;
 							std::vector<std::string> securityGroupIds1;
 							std::string vSwitchId;
 							std::string securityGroupId;

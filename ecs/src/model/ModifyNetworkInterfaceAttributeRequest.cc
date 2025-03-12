@@ -80,6 +80,7 @@ ModifyNetworkInterfaceAttributeRequest::EnhancedNetwork ModifyNetworkInterfaceAt
 void ModifyNetworkInterfaceAttributeRequest::setEnhancedNetwork(const ModifyNetworkInterfaceAttributeRequest::EnhancedNetwork &enhancedNetwork) {
   enhancedNetwork_ = enhancedNetwork;
   setParameter(std::string("EnhancedNetwork") + ".EnableSriov", enhancedNetwork.enableSriov ? "true" : "false");
+  setParameter(std::string("EnhancedNetwork") + ".EnableRss", enhancedNetwork.enableRss ? "true" : "false");
 }
 
 bool ModifyNetworkInterfaceAttributeRequest::getSourceDestCheck() const {

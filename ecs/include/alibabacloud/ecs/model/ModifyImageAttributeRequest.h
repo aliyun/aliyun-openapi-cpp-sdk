@@ -30,6 +30,7 @@ class ALIBABACLOUD_ECS_EXPORT ModifyImageAttributeRequest : public RpcServiceReq
 public:
 	struct Features {
 		std::string nvmeSupport;
+		std::string imdsSupport;
 	};
 	ModifyImageAttributeRequest();
 	~ModifyImageAttributeRequest();

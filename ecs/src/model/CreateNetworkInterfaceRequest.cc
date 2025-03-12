@@ -98,6 +98,7 @@ CreateNetworkInterfaceRequest::EnhancedNetwork CreateNetworkInterfaceRequest::ge
 void CreateNetworkInterfaceRequest::setEnhancedNetwork(const CreateNetworkInterfaceRequest::EnhancedNetwork &enhancedNetwork) {
   enhancedNetwork_ = enhancedNetwork;
   setParameter(std::string("EnhancedNetwork") + ".EnableSriov", enhancedNetwork.enableSriov ? "true" : "false");
+  setParameter(std::string("EnhancedNetwork") + ".EnableRss", enhancedNetwork.enableRss ? "true" : "false");
 }
 
 std::vector<CreateNetworkInterfaceRequest::Tag> CreateNetworkInterfaceRequest::getTag() const {
@@ -226,6 +227,15 @@ int CreateNetworkInterfaceRequest::getIpv6PrefixCount() const {
 void CreateNetworkInterfaceRequest::setIpv6PrefixCount(int ipv6PrefixCount) {
   ipv6PrefixCount_ = ipv6PrefixCount;
   setParameter(std::string("Ipv6PrefixCount"), std::to_string(ipv6PrefixCount));
+}
+
+bool CreateNetworkInterfaceRequest::getSourceDestCheck() const {
+  return sourceDestCheck_;
+}
+
+void CreateNetworkInterfaceRequest::setSourceDestCheck(bool sourceDestCheck) {
+  sourceDestCheck_ = sourceDestCheck;
+  setParameter(std::string("SourceDestCheck"), sourceDestCheck ? "true" : "false");
 }
 
 std::string CreateNetworkInterfaceRequest::getRegionId() const {

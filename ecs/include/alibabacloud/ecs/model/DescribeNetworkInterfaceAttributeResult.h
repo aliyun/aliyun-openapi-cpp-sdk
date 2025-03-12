@@ -76,6 +76,7 @@ namespace AlibabaCloud
 				};
 				struct EnhancedNetwork
 				{
+					bool enableRss;
 					bool enableSriov;
 				};
 				struct PrivateIpSet

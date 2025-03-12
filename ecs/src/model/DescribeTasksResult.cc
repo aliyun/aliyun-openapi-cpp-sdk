@@ -57,6 +57,15 @@ void DescribeTasksResult::parse(const std::string &payload)
 			taskSetObject.taskAction = valueTaskSetTask["TaskAction"].asString();
 		if(!valueTaskSetTask["ResourceId"].isNull())
 			taskSetObject.resourceId = valueTaskSetTask["ResourceId"].asString();
+		if(!valueTaskSetTask["Source"].isNull())
+			taskSetObject.source = valueTaskSetTask["Source"].asString();
+		if(!valueTaskSetTask["FailedReason"].isNull())
+			taskSetObject.failedReason = valueTaskSetTask["FailedReason"].asString();
+		if(!valueTaskSetTask["TaskGroupId"].isNull())
+			taskSetObject.taskGroupId = valueTaskSetTask["TaskGroupId"].asString();
+		auto allResourceIds = value["ResourceIds"]["resourceId"];
+		for (auto value : allResourceIds)
+			taskSetObject.resourceIds.push_back(value.asString());
 		taskSet_.push_back(taskSetObject);
 	}
 	if(!value["PageSize"].isNull())

@@ -61,6 +61,15 @@ void ModifyInstanceAttributeRequest::setDescription(const std::string &descripti
   setParameter(std::string("Description"), description);
 }
 
+int ModifyInstanceAttributeRequest::getCpuOptionsThreadsPerCore() const {
+  return cpuOptionsThreadsPerCore_;
+}
+
+void ModifyInstanceAttributeRequest::setCpuOptionsThreadsPerCore(int cpuOptionsThreadsPerCore) {
+  cpuOptionsThreadsPerCore_ = cpuOptionsThreadsPerCore;
+  setParameter(std::string("CpuOptions.ThreadsPerCore"), std::to_string(cpuOptionsThreadsPerCore));
+}
+
 bool ModifyInstanceAttributeRequest::getDeletionProtection() const {
   return deletionProtection_;
 }
@@ -144,6 +153,15 @@ bool ModifyInstanceAttributeRequest::getEnableJumboFrame() const {
 void ModifyInstanceAttributeRequest::setEnableJumboFrame(bool enableJumboFrame) {
   enableJumboFrame_ = enableJumboFrame;
   setParameter(std::string("EnableJumboFrame"), enableJumboFrame ? "true" : "false");
+}
+
+int ModifyInstanceAttributeRequest::getCpuOptionsCore() const {
+  return cpuOptionsCore_;
+}
+
+void ModifyInstanceAttributeRequest::setCpuOptionsCore(int cpuOptionsCore) {
+  cpuOptionsCore_ = cpuOptionsCore;
+  setParameter(std::string("CpuOptions.Core"), std::to_string(cpuOptionsCore));
 }
 
 std::string ModifyInstanceAttributeRequest::getResourceOwnerAccount() const {

@@ -77,6 +77,8 @@ void DescribeImagePipelinesResult::parse(const std::string &payload)
 			imagePipelineObject.testContent = valueImagePipelineImagePipelineSet["TestContent"].asString();
 		if(!valueImagePipelineImagePipelineSet["ImageFamily"].isNull())
 			imagePipelineObject.imageFamily = valueImagePipelineImagePipelineSet["ImageFamily"].asString();
+		if(!valueImagePipelineImagePipelineSet["NvmeSupport"].isNull())
+			imagePipelineObject.nvmeSupport = valueImagePipelineImagePipelineSet["NvmeSupport"].asString();
 		auto allTagsNode = valueImagePipelineImagePipelineSet["Tags"]["Tag"];
 		for (auto valueImagePipelineImagePipelineSetTagsTag : allTagsNode)
 		{
@@ -87,6 +89,65 @@ void DescribeImagePipelinesResult::parse(const std::string &payload)
 				tagsObject.tagKey = valueImagePipelineImagePipelineSetTagsTag["TagKey"].asString();
 			imagePipelineObject.tags.push_back(tagsObject);
 		}
+		auto importImageOptionsNode = value["ImportImageOptions"];
+		if(!importImageOptionsNode["Architecture"].isNull())
+			imagePipelineObject.importImageOptions.architecture = importImageOptionsNode["Architecture"].asString();
+		if(!importImageOptionsNode["OSType"].isNull())
+			imagePipelineObject.importImageOptions.oSType = importImageOptionsNode["OSType"].asString();
+		if(!importImageOptionsNode["Platform"].isNull())
+			imagePipelineObject.importImageOptions.platform = importImageOptionsNode["Platform"].asString();
+		if(!importImageOptionsNode["BootMode"].isNull())
+			imagePipelineObject.importImageOptions.bootMode = importImageOptionsNode["BootMode"].asString();
+		if(!importImageOptionsNode["LicenseType"].isNull())
+			imagePipelineObject.importImageOptions.licenseType = importImageOptionsNode["LicenseType"].asString();
+		if(!importImageOptionsNode["RetainImportedImage"].isNull())
+			imagePipelineObject.importImageOptions.retainImportedImage = importImageOptionsNode["RetainImportedImage"].asString() == "true";
+		auto allDiskDeviceMappingsNode = importImageOptionsNode["DiskDeviceMappings"]["DiskDeviceMapping"];
+		for (auto importImageOptionsNodeDiskDeviceMappingsDiskDeviceMapping : allDiskDeviceMappingsNode)
+		{
+			ImagePipelineSet::ImportImageOptions::DiskDeviceMapping diskDeviceMappingObject;
+			if(!importImageOptionsNodeDiskDeviceMappingsDiskDeviceMapping["OSSBucket"].isNull())
+				diskDeviceMappingObject.oSSBucket = importImageOptionsNodeDiskDeviceMappingsDiskDeviceMapping["OSSBucket"].asString();
+			if(!importImageOptionsNodeDiskDeviceMappingsDiskDeviceMapping["OSSObject"].isNull())
+				diskDeviceMappingObject.oSSObject = importImageOptionsNodeDiskDeviceMappingsDiskDeviceMapping["OSSObject"].asString();
+			if(!importImageOptionsNodeDiskDeviceMappingsDiskDeviceMapping["Format"].isNull())
+				diskDeviceMappingObject.format = importImageOptionsNodeDiskDeviceMappingsDiskDeviceMapping["Format"].asString();
+			if(!importImageOptionsNodeDiskDeviceMappingsDiskDeviceMapping["DiskImageSize"].isNull())
+				diskDeviceMappingObject.diskImageSize = std::stoi(importImageOptionsNodeDiskDeviceMappingsDiskDeviceMapping["DiskImageSize"].asString());
+			imagePipelineObject.importImageOptions.diskDeviceMappings.push_back(diskDeviceMappingObject);
+		}
+		auto featuresNode = importImageOptionsNode["Features"];
+		if(!featuresNode["NvmeSupport"].isNull())
+			imagePipelineObject.importImageOptions.features.nvmeSupport = featuresNode["NvmeSupport"].asString();
+		auto advancedOptionsNode = value["AdvancedOptions"];
+		if(!advancedOptionsNode["RetainCloudAssistant"].isNull())
+			imagePipelineObject.advancedOptions.retainCloudAssistant = advancedOptionsNode["RetainCloudAssistant"].asString() == "true";
+		if(!advancedOptionsNode["SkipBuildImage"].isNull())
+			imagePipelineObject.advancedOptions.skipBuildImage = advancedOptionsNode["SkipBuildImage"].asString() == "true";
+		if(!advancedOptionsNode["SkipCheckImage"].isNull())
+			imagePipelineObject.advancedOptions.skipCheckImage = advancedOptionsNode["SkipCheckImage"].asString() == "true";
+		if(!advancedOptionsNode["ImageNameSuffix"].isNull())
+			imagePipelineObject.advancedOptions.imageNameSuffix = advancedOptionsNode["ImageNameSuffix"].asString();
+		auto imageOptionsNode = value["ImageOptions"];
+		if(!imageOptionsNode["ImageName"].isNull())
+			imagePipelineObject.imageOptions.imageName = imageOptionsNode["ImageName"].asString();
+		if(!imageOptionsNode["ImageFamily"].isNull())
+			imagePipelineObject.imageOptions.imageFamily = imageOptionsNode["ImageFamily"].asString();
+		if(!imageOptionsNode["Description"].isNull())
+			imagePipelineObject.imageOptions.description = imageOptionsNode["Description"].asString();
+		auto allImageTagsNode = imageOptionsNode["ImageTags"]["ImageTag"];
+		for (auto imageOptionsNodeImageTagsImageTag : allImageTagsNode)
+		{
+			ImagePipelineSet::ImageOptions::ImageTag imageTagObject;
+			if(!imageOptionsNodeImageTagsImageTag["TagKey"].isNull())
+				imageTagObject.tagKey = imageOptionsNodeImageTagsImageTag["TagKey"].asString();
+			if(!imageOptionsNodeImageTagsImageTag["TagValue"].isNull())
+				imageTagObject.tagValue = imageOptionsNodeImageTagsImageTag["TagValue"].asString();
+			imagePipelineObject.imageOptions.imageTags.push_back(imageTagObject);
+		}
+		auto imageFeaturesNode = imageOptionsNode["ImageFeatures"];
+		if(!imageFeaturesNode["NvmeSupport"].isNull())
+			imagePipelineObject.imageOptions.imageFeatures.nvmeSupport = imageFeaturesNode["NvmeSupport"].asString();
 		auto allToRegionIds = value["ToRegionIds"]["ToRegionId"];
 		for (auto value : allToRegionIds)
 			imagePipelineObject.toRegionIds.push_back(value.asString());

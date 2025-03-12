@@ -37,6 +37,7 @@ public:
 	};
 	struct EnhancedNetwork {
 		bool enableSriov;
+		bool enableRss;
 	};
 	struct ConnectionTrackingConfiguration {
 		int tcpEstablishedTimeout;

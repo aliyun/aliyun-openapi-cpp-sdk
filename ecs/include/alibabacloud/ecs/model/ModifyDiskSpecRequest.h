@@ -37,6 +37,8 @@ public:
 	~ModifyDiskSpecRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getDestinationZoneId() const;
+	void setDestinationZoneId(const std::string &destinationZoneId);
 	std::string getDiskCategory() const;
 	void setDiskCategory(const std::string &diskCategory);
 	std::string getDiskId() const;
@@ -58,6 +60,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string destinationZoneId_;
 	std::string diskCategory_;
 	std::string diskId_;
 	bool dryRun_;

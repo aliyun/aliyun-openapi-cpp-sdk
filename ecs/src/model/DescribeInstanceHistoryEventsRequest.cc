@@ -87,6 +87,15 @@ void DescribeInstanceHistoryEventsRequest::setRegionId(const std::string &region
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string DescribeInstanceHistoryEventsRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void DescribeInstanceHistoryEventsRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
 int DescribeInstanceHistoryEventsRequest::getPageSize() const {
   return pageSize_;
 }
@@ -213,6 +222,15 @@ std::string DescribeInstanceHistoryEventsRequest::getNotBeforeEnd() const {
 void DescribeInstanceHistoryEventsRequest::setNotBeforeEnd(const std::string &notBeforeEnd) {
   notBeforeEnd_ = notBeforeEnd;
   setParameter(std::string("NotBefore.End"), notBeforeEnd);
+}
+
+long DescribeInstanceHistoryEventsRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void DescribeInstanceHistoryEventsRequest::setMaxResults(long maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getEventType() const {

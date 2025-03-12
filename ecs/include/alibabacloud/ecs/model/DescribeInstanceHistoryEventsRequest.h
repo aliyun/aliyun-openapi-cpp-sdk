@@ -48,6 +48,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::vector<std::string> getInstanceEventCycleStatus() const;
@@ -76,6 +78,8 @@ public:
 	void setInstanceId(const std::string &instanceId);
 	std::string getNotBeforeEnd() const;
 	void setNotBeforeEnd(const std::string &notBeforeEnd);
+	long getMaxResults() const;
+	void setMaxResults(long maxResults);
 	std::string getEventType() const;
 	void setEventType(const std::string &eventType);
 
@@ -87,6 +91,7 @@ private:
 	std::string impactLevel_;
 	std::string resourceGroupId_;
 	std::string regionId_;
+	std::string nextToken_;
 	int pageSize_;
 	std::vector<std::string> instanceEventCycleStatus_;
 	std::vector<Tag> tag_;
@@ -101,6 +106,7 @@ private:
 	std::string eventPublishTimeStart_;
 	std::string instanceId_;
 	std::string notBeforeEnd_;
+	long maxResults_;
 	std::string eventType_;
 };
 } // namespace Model

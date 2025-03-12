@@ -128,6 +128,15 @@ void CreateElasticityAssuranceRequest::setInstanceChargeType(const std::string &
   setParameter(std::string("InstanceChargeType"), instanceChargeType);
 }
 
+int CreateElasticityAssuranceRequest::getAutoRenewPeriod() const {
+  return autoRenewPeriod_;
+}
+
+void CreateElasticityAssuranceRequest::setAutoRenewPeriod(int autoRenewPeriod) {
+  autoRenewPeriod_ = autoRenewPeriod;
+  setParameter(std::string("AutoRenewPeriod"), std::to_string(autoRenewPeriod));
+}
+
 int CreateElasticityAssuranceRequest::getPeriod() const {
   return period_;
 }
@@ -209,12 +218,37 @@ void CreateElasticityAssuranceRequest::setPeriodUnit(const std::string &periodUn
   setParameter(std::string("PeriodUnit"), periodUnit);
 }
 
+bool CreateElasticityAssuranceRequest::getAutoRenew() const {
+  return autoRenew_;
+}
+
+void CreateElasticityAssuranceRequest::setAutoRenew(bool autoRenew) {
+  autoRenew_ = autoRenew;
+  setParameter(std::string("AutoRenew"), autoRenew ? "true" : "false");
+}
+
 std::vector<std::string> CreateElasticityAssuranceRequest::getZoneId() const {
   return zoneId_;
 }
 
 void CreateElasticityAssuranceRequest::setZoneId(const std::vector<std::string> &zoneId) {
   zoneId_ = zoneId;
+}
+
+std::vector<CreateElasticityAssuranceRequest::RecurrenceRules> CreateElasticityAssuranceRequest::getRecurrenceRules() const {
+  return recurrenceRules_;
+}
+
+void CreateElasticityAssuranceRequest::setRecurrenceRules(const std::vector<CreateElasticityAssuranceRequest::RecurrenceRules> &recurrenceRules) {
+  recurrenceRules_ = recurrenceRules;
+  for(int dep1 = 0; dep1 != recurrenceRules.size(); dep1++) {
+  auto recurrenceRulesObj = recurrenceRules.at(dep1);
+  std::string recurrenceRulesObjStr = std::string("RecurrenceRules") + "." + std::to_string(dep1 + 1);
+    setParameter(recurrenceRulesObjStr + ".RecurrenceType", recurrenceRulesObj.recurrenceType);
+    setParameter(recurrenceRulesObjStr + ".RecurrenceValue", recurrenceRulesObj.recurrenceValue);
+    setParameter(recurrenceRulesObjStr + ".StartHour", std::to_string(recurrenceRulesObj.startHour));
+    setParameter(recurrenceRulesObjStr + ".EndHour", std::to_string(recurrenceRulesObj.endHour));
+  }
 }
 
 std::string CreateElasticityAssuranceRequest::getChargeType() const {

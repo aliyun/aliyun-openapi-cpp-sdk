@@ -39,6 +39,13 @@ void DeleteInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["TaskGroupId"].isNull())
+		taskGroupId_ = value["TaskGroupId"].asString();
 
+}
+
+std::string DeleteInstancesResult::getTaskGroupId()const
+{
+	return taskGroupId_;
 }
 

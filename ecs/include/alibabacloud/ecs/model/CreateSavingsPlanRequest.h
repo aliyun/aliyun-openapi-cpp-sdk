@@ -30,35 +30,38 @@ class ALIBABACLOUD_ECS_EXPORT CreateSavingsPlanRequest : public RpcServiceReques
 public:
 	CreateSavingsPlanRequest();
 	~CreateSavingsPlanRequest();
+	std::string getInstanceTypeFamilyGroup() const;
+	void setInstanceTypeFamilyGroup(const std::string &instanceTypeFamilyGroup);
+	std::string getPlanType() const;
+	void setPlanType(const std::string &planType);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getCommittedAmount() const;
+	void setCommittedAmount(const std::string &committedAmount);
 	std::string getPeriod() const;
 	void setPeriod(const std::string &period);
 	std::vector<std::string> getResourceId() const;
 	void setResourceId(const std::vector<std::string> &resourceId);
 	std::string getInstanceTypeFamily() const;
 	void setInstanceTypeFamily(const std::string &instanceTypeFamily);
-	std::string getPlanType() const;
-	void setPlanType(const std::string &planType);
 	std::string getPeriodUnit() const;
 	void setPeriodUnit(const std::string &periodUnit);
 	std::string getOfferingType() const;
 	void setOfferingType(const std::string &offeringType);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	std::string getChargeType() const;
 	void setChargeType(const std::string &chargeType);
-	std::string getCommittedAmount() const;
-	void setCommittedAmount(const std::string &committedAmount);
 
 private:
+	std::string instanceTypeFamilyGroup_;
+	std::string planType_;
+	std::string regionId_;
+	std::string committedAmount_;
 	std::string period_;
 	std::vector<std::string> resourceId_;
 	std::string instanceTypeFamily_;
-	std::string planType_;
 	std::string periodUnit_;
 	std::string offeringType_;
-	std::string regionId_;
 	std::string chargeType_;
-	std::string committedAmount_;
 };
 } // namespace Model
 } // namespace Ecs

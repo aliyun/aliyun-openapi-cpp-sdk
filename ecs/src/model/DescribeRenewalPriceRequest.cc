@@ -115,3 +115,12 @@ void DescribeRenewalPriceRequest::setResourceType(const std::string &resourceTyp
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+DescribeRenewalPriceRequest::PromotionOptions DescribeRenewalPriceRequest::getPromotionOptions() const {
+  return promotionOptions_;
+}
+
+void DescribeRenewalPriceRequest::setPromotionOptions(const DescribeRenewalPriceRequest::PromotionOptions &promotionOptions) {
+  promotionOptions_ = promotionOptions;
+  setParameter(std::string("PromotionOptions") + ".CouponNo", promotionOptions.couponNo);
+}
+

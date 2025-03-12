@@ -32,6 +32,9 @@ public:
 		std::string key;
 		std::string value;
 	};
+	struct PromotionOptions {
+		std::string couponNo;
+	};
 	PurchaseStorageCapacityUnitRequest();
 	~PurchaseStorageCapacityUnitRequest();
 	long getResourceOwnerId() const;
@@ -44,6 +47,8 @@ public:
 	void setStartTime(const std::string &startTime);
 	int getCapacity() const;
 	void setCapacity(int capacity);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::vector<Tag> getTag() const;
@@ -52,6 +57,8 @@ public:
 	void setPeriod(int period);
 	int getAmount() const;
 	void setAmount(int amount);
+	bool getAutoPay() const;
+	void setAutoPay(bool autoPay);
 	std::string getFromApp() const;
 	void setFromApp(const std::string &fromApp);
 	std::string getResourceOwnerAccount() const;
@@ -60,6 +67,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	PromotionOptions getPromotionOptions() const;
+	void setPromotionOptions(const PromotionOptions &promotionOptions);
 	std::string getPeriodUnit() const;
 	void setPeriodUnit(const std::string &periodUnit);
 	std::string getName() const;
@@ -71,14 +80,17 @@ private:
 	std::string description_;
 	std::string startTime_;
 	int capacity_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::vector<Tag> tag_;
 	int period_;
 	int amount_;
+	bool autoPay_;
 	std::string fromApp_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	PromotionOptions promotionOptions_;
 	std::string periodUnit_;
 	std::string name_;
 };

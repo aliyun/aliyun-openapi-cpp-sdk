@@ -30,6 +30,8 @@ class ALIBABACLOUD_ECS_EXPORT DescribeSavingsPlanPriceRequest : public RpcServic
 public:
 	DescribeSavingsPlanPriceRequest();
 	~DescribeSavingsPlanPriceRequest();
+	std::string getInstanceTypeFamilyGroup() const;
+	void setInstanceTypeFamilyGroup(const std::string &instanceTypeFamilyGroup);
 	int getPeriod() const;
 	void setPeriod(int period);
 	std::vector<std::string> getResourceId() const;
@@ -48,6 +50,7 @@ public:
 	void setCommittedAmount(const std::string &committedAmount);
 
 private:
+	std::string instanceTypeFamilyGroup_;
 	int period_;
 	std::vector<std::string> resourceId_;
 	std::string instanceTypeFamily_;

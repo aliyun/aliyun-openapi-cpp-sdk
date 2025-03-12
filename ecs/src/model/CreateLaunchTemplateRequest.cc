@@ -474,6 +474,7 @@ void CreateLaunchTemplateRequest::setNetworkInterface(const std::vector<CreateLa
     setParameter(networkInterfaceObjStr + ".PrimaryIpAddress", networkInterfaceObj.primaryIpAddress);
     setParameter(networkInterfaceObjStr + ".InstanceType", networkInterfaceObj.instanceType);
     setParameter(networkInterfaceObjStr + ".NetworkInterfaceTrafficMode", networkInterfaceObj.networkInterfaceTrafficMode);
+    setParameter(networkInterfaceObjStr + ".DeleteOnRelease", networkInterfaceObj.deleteOnRelease ? "true" : "false");
   }
 }
 

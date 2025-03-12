@@ -71,6 +71,7 @@ namespace AlibabaCloud
 				std::string getNetworkInterfaceId()const;
 				std::vector<std::string> getSecurityGroupIds()const;
 				long getServiceID()const;
+				bool getSourceDestCheck()const;
 				std::string getType()const;
 				std::vector<Ipv6Set> getIpv6Sets()const;
 				std::string getVpcId()const;
@@ -95,6 +96,7 @@ namespace AlibabaCloud
 				std::string networkInterfaceId_;
 				std::vector<std::string> securityGroupIds_;
 				long serviceID_;
+				bool sourceDestCheck_;
 				std::string type_;
 				std::vector<Ipv6Set> ipv6Sets_;
 				std::string vpcId_;

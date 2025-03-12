@@ -70,6 +70,15 @@ void PurchaseStorageCapacityUnitRequest::setCapacity(int capacity) {
   setParameter(std::string("Capacity"), std::to_string(capacity));
 }
 
+std::string PurchaseStorageCapacityUnitRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void PurchaseStorageCapacityUnitRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string PurchaseStorageCapacityUnitRequest::getRegionId() const {
   return regionId_;
 }
@@ -111,6 +120,15 @@ void PurchaseStorageCapacityUnitRequest::setAmount(int amount) {
   setParameter(std::string("Amount"), std::to_string(amount));
 }
 
+bool PurchaseStorageCapacityUnitRequest::getAutoPay() const {
+  return autoPay_;
+}
+
+void PurchaseStorageCapacityUnitRequest::setAutoPay(bool autoPay) {
+  autoPay_ = autoPay;
+  setParameter(std::string("AutoPay"), autoPay ? "true" : "false");
+}
+
 std::string PurchaseStorageCapacityUnitRequest::getFromApp() const {
   return fromApp_;
 }
@@ -145,6 +163,15 @@ long PurchaseStorageCapacityUnitRequest::getOwnerId() const {
 void PurchaseStorageCapacityUnitRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+PurchaseStorageCapacityUnitRequest::PromotionOptions PurchaseStorageCapacityUnitRequest::getPromotionOptions() const {
+  return promotionOptions_;
+}
+
+void PurchaseStorageCapacityUnitRequest::setPromotionOptions(const PurchaseStorageCapacityUnitRequest::PromotionOptions &promotionOptions) {
+  promotionOptions_ = promotionOptions;
+  setParameter(std::string("PromotionOptions") + ".CouponNo", promotionOptions.couponNo);
 }
 
 std::string PurchaseStorageCapacityUnitRequest::getPeriodUnit() const {

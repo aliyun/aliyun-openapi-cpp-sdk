@@ -28,6 +28,12 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT ModifyElasticityAssuranceRequest : public RpcServiceRequest {
 public:
+	struct RecurrenceRules {
+		std::string recurrenceType;
+		std::string recurrenceValue;
+		int startHour;
+		int endHour;
+	};
 	ModifyElasticityAssuranceRequest();
 	~ModifyElasticityAssuranceRequest();
 	long getResourceOwnerId() const;
@@ -48,6 +54,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::vector<RecurrenceRules> getRecurrenceRules() const;
+	void setRecurrenceRules(const std::vector<RecurrenceRules> &recurrenceRules);
 	std::string getPackageType() const;
 	void setPackageType(const std::string &packageType);
 	int getInstanceAmount() const;
@@ -63,6 +71,7 @@ private:
 	std::string privatePoolOptionsName_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::vector<RecurrenceRules> recurrenceRules_;
 	std::string packageType_;
 	int instanceAmount_;
 };

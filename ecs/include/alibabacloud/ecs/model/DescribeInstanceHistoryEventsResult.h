@@ -89,6 +89,7 @@ namespace AlibabaCloud
 				~DescribeInstanceHistoryEventsResult();
 				int getTotalCount()const;
 				int getPageSize()const;
+				std::string getNextToken()const;
 				int getPageNumber()const;
 				std::vector<InstanceSystemEventType> getInstanceSystemEventSet()const;
 
@@ -97,6 +98,7 @@ namespace AlibabaCloud
 			private:
 				int totalCount_;
 				int pageSize_;
+				std::string nextToken_;
 				int pageNumber_;
 				std::vector<InstanceSystemEventType> instanceSystemEventSet_;
 

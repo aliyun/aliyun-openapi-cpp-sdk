@@ -241,6 +241,20 @@ void CreateAutoProvisioningGroupRequest::setLaunchTemplateId(const std::string &
   setParameter(std::string("LaunchTemplateId"), launchTemplateId);
 }
 
+CreateAutoProvisioningGroupRequest::PrePaidOptions CreateAutoProvisioningGroupRequest::getPrePaidOptions() const {
+  return prePaidOptions_;
+}
+
+void CreateAutoProvisioningGroupRequest::setPrePaidOptions(const CreateAutoProvisioningGroupRequest::PrePaidOptions &prePaidOptions) {
+  prePaidOptions_ = prePaidOptions;
+  for(int dep1 = 0; dep1 != prePaidOptions.specifyCapacityDistribution.size(); dep1++) {
+    for(int dep2 = 0; dep2 != prePaidOptions.specifyCapacityDistribution[dep1].instanceTypes.size(); dep2++) {
+      setParameter(std::string("PrePaidOptions") + ".SpecifyCapacityDistribution." + std::to_string(dep1 + 1) + ".InstanceTypes." + std::to_string(dep2 + 1), prePaidOptions.specifyCapacityDistribution[dep1].instanceTypes[dep2]);
+    }
+    setParameter(std::string("PrePaidOptions") + ".SpecifyCapacityDistribution." + std::to_string(dep1 + 1) + ".MinTargetCapacity", std::to_string(prePaidOptions.specifyCapacityDistribution[dep1].minTargetCapacity));
+  }
+}
+
 long CreateAutoProvisioningGroupRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -302,6 +316,18 @@ float CreateAutoProvisioningGroupRequest::getMaxSpotPrice() const {
 void CreateAutoProvisioningGroupRequest::setMaxSpotPrice(float maxSpotPrice) {
   maxSpotPrice_ = maxSpotPrice;
   setParameter(std::string("MaxSpotPrice"), std::to_string(maxSpotPrice));
+}
+
+CreateAutoProvisioningGroupRequest::LaunchConfiguration CreateAutoProvisioningGroupRequest::getLaunchConfiguration() const {
+  return launchConfiguration_;
+}
+
+void CreateAutoProvisioningGroupRequest::setLaunchConfiguration(const CreateAutoProvisioningGroupRequest::LaunchConfiguration &launchConfiguration) {
+  launchConfiguration_ = launchConfiguration;
+  setParameter(std::string("LaunchConfiguration") + ".Period", std::to_string(launchConfiguration.period));
+  setParameter(std::string("LaunchConfiguration") + ".PeriodUnit", launchConfiguration.periodUnit);
+  setParameter(std::string("LaunchConfiguration") + ".AutoRenew", launchConfiguration.autoRenew ? "true" : "false");
+  setParameter(std::string("LaunchConfiguration") + ".AutoRenewPeriod", std::to_string(launchConfiguration.autoRenewPeriod));
 }
 
 std::vector<CreateAutoProvisioningGroupRequest::LaunchConfigurationArn> CreateAutoProvisioningGroupRequest::getLaunchConfigurationArn() const {
@@ -501,6 +527,7 @@ void CreateAutoProvisioningGroupRequest::setLaunchTemplateConfig(const std::vect
     std::string secondaryNetworkInterfaceObjStr = launchTemplateConfigObjStr + ".SecondaryNetworkInterface" + "." + std::to_string(dep2 + 1);
       setParameter(secondaryNetworkInterfaceObjStr + ".VSwitchId", secondaryNetworkInterfaceObj.vSwitchId);
     }
+    setParameter(launchTemplateConfigObjStr + ".ImageId", launchTemplateConfigObj.imageId);
   }
 }
 

@@ -56,6 +56,8 @@ public:
 	void setNetworkInterfaceQueueNumber(int networkInterfaceQueueNumber);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	int getCpuOptionsThreadsPerCore() const;
+	void setCpuOptionsThreadsPerCore(int cpuOptionsThreadsPerCore);
 	bool getDeletionProtection() const;
 	void setDeletionProtection(bool deletionProtection);
 	std::string getUserData() const;
@@ -74,6 +76,8 @@ public:
 	void setOSNameEn(const std::string &oSNameEn);
 	bool getEnableJumboFrame() const;
 	void setEnableJumboFrame(bool enableJumboFrame);
+	int getCpuOptionsCore() const;
+	void setCpuOptionsCore(int cpuOptionsCore);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -98,6 +102,7 @@ private:
 	bool recyclable_;
 	int networkInterfaceQueueNumber_;
 	std::string description_;
+	int cpuOptionsThreadsPerCore_;
 	bool deletionProtection_;
 	std::string userData_;
 	std::string password_;
@@ -107,6 +112,7 @@ private:
 	ImageOptions imageOptions_;
 	std::string oSNameEn_;
 	bool enableJumboFrame_;
+	int cpuOptionsCore_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string creditSpecification_;

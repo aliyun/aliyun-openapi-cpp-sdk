@@ -117,6 +117,8 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 			instanceTypesObject.gPUMemorySize = std::stof(valueInstanceTypesInstanceType["GPUMemorySize"].asString());
 		if(!valueInstanceTypesInstanceType["NetworkCardQuantity"].isNull())
 			instanceTypesObject.networkCardQuantity = std::stoi(valueInstanceTypesInstanceType["NetworkCardQuantity"].asString());
+		if(!valueInstanceTypesInstanceType["JumboFrameSupport"].isNull())
+			instanceTypesObject.jumboFrameSupport = valueInstanceTypesInstanceType["JumboFrameSupport"].asString() == "true";
 		auto allNetworkCardsNode = valueInstanceTypesInstanceType["NetworkCards"]["NetworkCardInfo"];
 		for (auto valueInstanceTypesInstanceTypeNetworkCardsNetworkCardInfo : allNetworkCardsNode)
 		{
@@ -130,7 +132,17 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 			instanceTypesObject.enhancedNetwork.sriovSupport = enhancedNetworkNode["SriovSupport"].asString() == "true";
 		if(!enhancedNetworkNode["VfQueueNumberPerEni"].isNull())
 			instanceTypesObject.enhancedNetwork.vfQueueNumberPerEni = std::stoi(enhancedNetworkNode["VfQueueNumberPerEni"].asString());
+		if(!enhancedNetworkNode["RssSupport"].isNull())
+			instanceTypesObject.enhancedNetwork.rssSupport = enhancedNetworkNode["RssSupport"].asString() == "true";
 		auto cpuOptionsNode = value["CpuOptions"];
+		if(!cpuOptionsNode["ThreadsPerCore"].isNull())
+			instanceTypesObject.cpuOptions.threadsPerCore = std::stoi(cpuOptionsNode["ThreadsPerCore"].asString());
+		if(!cpuOptionsNode["Core"].isNull())
+			instanceTypesObject.cpuOptions.core = std::stoi(cpuOptionsNode["Core"].asString());
+		if(!cpuOptionsNode["CoreFactor"].isNull())
+			instanceTypesObject.cpuOptions.coreFactor = std::stoi(cpuOptionsNode["CoreFactor"].asString());
+		if(!cpuOptionsNode["HyperThreadingAdjustable"].isNull())
+			instanceTypesObject.cpuOptions.hyperThreadingAdjustable = cpuOptionsNode["HyperThreadingAdjustable"].asString() == "true";
 			auto allSupportedTopologyTypes = cpuOptionsNode["SupportedTopologyTypes"]["SupportedTopologyType"];
 			for (auto value : allSupportedTopologyTypes)
 				instanceTypesObject.cpuOptions.supportedTopologyTypes.push_back(value.asString());

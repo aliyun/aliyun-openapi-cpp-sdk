@@ -302,6 +302,8 @@
 #include "model/DescribeEipAddressesResult.h"
 #include "model/DescribeEipMonitorDataRequest.h"
 #include "model/DescribeEipMonitorDataResult.h"
+#include "model/DescribeElasticityAssuranceAutoRenewAttributeRequest.h"
+#include "model/DescribeElasticityAssuranceAutoRenewAttributeResult.h"
 #include "model/DescribeElasticityAssuranceInstancesRequest.h"
 #include "model/DescribeElasticityAssuranceInstancesResult.h"
 #include "model/DescribeElasticityAssurancesRequest.h"
@@ -486,6 +488,8 @@
 #include "model/EnableDiskEncryptionByDefaultResult.h"
 #include "model/EnablePhysicalConnectionRequest.h"
 #include "model/EnablePhysicalConnectionResult.h"
+#include "model/EndTerminalSessionRequest.h"
+#include "model/EndTerminalSessionResult.h"
 #include "model/ExportImageRequest.h"
 #include "model/ExportImageResult.h"
 #include "model/ExportSnapshotRequest.h"
@@ -514,8 +518,6 @@
 #include "model/ListTagResourcesResult.h"
 #include "model/ModifyAutoProvisioningGroupRequest.h"
 #include "model/ModifyAutoProvisioningGroupResult.h"
-#include "model/ModifyAutoSnapshotPolicyRequest.h"
-#include "model/ModifyAutoSnapshotPolicyResult.h"
 #include "model/ModifyAutoSnapshotPolicyExRequest.h"
 #include "model/ModifyAutoSnapshotPolicyExResult.h"
 #include "model/ModifyBandwidthPackageSpecRequest.h"
@@ -556,6 +558,8 @@
 #include "model/ModifyEipAddressAttributeResult.h"
 #include "model/ModifyElasticityAssuranceRequest.h"
 #include "model/ModifyElasticityAssuranceResult.h"
+#include "model/ModifyElasticityAssuranceAutoRenewAttributeRequest.h"
+#include "model/ModifyElasticityAssuranceAutoRenewAttributeResult.h"
 #include "model/ModifyForwardEntryRequest.h"
 #include "model/ModifyForwardEntryResult.h"
 #include "model/ModifyHaVipAttributeRequest.h"
@@ -626,6 +630,8 @@
 #include "model/ModifySecurityGroupRuleResult.h"
 #include "model/ModifySnapshotAttributeRequest.h"
 #include "model/ModifySnapshotAttributeResult.h"
+#include "model/ModifySnapshotCategoryRequest.h"
+#include "model/ModifySnapshotCategoryResult.h"
 #include "model/ModifySnapshotGroupRequest.h"
 #include "model/ModifySnapshotGroupResult.h"
 #include "model/ModifyStorageCapacityUnitAttributeRequest.h"
@@ -1163,6 +1169,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeEipMonitorDataResult> DescribeEipMonitorDataOutcome;
 			typedef std::future<DescribeEipMonitorDataOutcome> DescribeEipMonitorDataOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeEipMonitorDataRequest&, const DescribeEipMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEipMonitorDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeElasticityAssuranceAutoRenewAttributeResult> DescribeElasticityAssuranceAutoRenewAttributeOutcome;
+			typedef std::future<DescribeElasticityAssuranceAutoRenewAttributeOutcome> DescribeElasticityAssuranceAutoRenewAttributeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeElasticityAssuranceAutoRenewAttributeRequest&, const DescribeElasticityAssuranceAutoRenewAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeElasticityAssuranceAutoRenewAttributeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeElasticityAssuranceInstancesResult> DescribeElasticityAssuranceInstancesOutcome;
 			typedef std::future<DescribeElasticityAssuranceInstancesOutcome> DescribeElasticityAssuranceInstancesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeElasticityAssuranceInstancesRequest&, const DescribeElasticityAssuranceInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeElasticityAssuranceInstancesAsyncHandler;
@@ -1439,6 +1448,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnablePhysicalConnectionResult> EnablePhysicalConnectionOutcome;
 			typedef std::future<EnablePhysicalConnectionOutcome> EnablePhysicalConnectionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::EnablePhysicalConnectionRequest&, const EnablePhysicalConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnablePhysicalConnectionAsyncHandler;
+			typedef Outcome<Error, Model::EndTerminalSessionResult> EndTerminalSessionOutcome;
+			typedef std::future<EndTerminalSessionOutcome> EndTerminalSessionOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::EndTerminalSessionRequest&, const EndTerminalSessionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EndTerminalSessionAsyncHandler;
 			typedef Outcome<Error, Model::ExportImageResult> ExportImageOutcome;
 			typedef std::future<ExportImageOutcome> ExportImageOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ExportImageRequest&, const ExportImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExportImageAsyncHandler;
@@ -1481,9 +1493,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyAutoProvisioningGroupResult> ModifyAutoProvisioningGroupOutcome;
 			typedef std::future<ModifyAutoProvisioningGroupOutcome> ModifyAutoProvisioningGroupOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyAutoProvisioningGroupRequest&, const ModifyAutoProvisioningGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoProvisioningGroupAsyncHandler;
-			typedef Outcome<Error, Model::ModifyAutoSnapshotPolicyResult> ModifyAutoSnapshotPolicyOutcome;
-			typedef std::future<ModifyAutoSnapshotPolicyOutcome> ModifyAutoSnapshotPolicyOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::ModifyAutoSnapshotPolicyRequest&, const ModifyAutoSnapshotPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoSnapshotPolicyAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAutoSnapshotPolicyExResult> ModifyAutoSnapshotPolicyExOutcome;
 			typedef std::future<ModifyAutoSnapshotPolicyExOutcome> ModifyAutoSnapshotPolicyExOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyAutoSnapshotPolicyExRequest&, const ModifyAutoSnapshotPolicyExOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoSnapshotPolicyExAsyncHandler;
@@ -1544,6 +1553,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyElasticityAssuranceResult> ModifyElasticityAssuranceOutcome;
 			typedef std::future<ModifyElasticityAssuranceOutcome> ModifyElasticityAssuranceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyElasticityAssuranceRequest&, const ModifyElasticityAssuranceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyElasticityAssuranceAsyncHandler;
+			typedef Outcome<Error, Model::ModifyElasticityAssuranceAutoRenewAttributeResult> ModifyElasticityAssuranceAutoRenewAttributeOutcome;
+			typedef std::future<ModifyElasticityAssuranceAutoRenewAttributeOutcome> ModifyElasticityAssuranceAutoRenewAttributeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyElasticityAssuranceAutoRenewAttributeRequest&, const ModifyElasticityAssuranceAutoRenewAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyElasticityAssuranceAutoRenewAttributeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyForwardEntryResult> ModifyForwardEntryOutcome;
 			typedef std::future<ModifyForwardEntryOutcome> ModifyForwardEntryOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyForwardEntryRequest&, const ModifyForwardEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyForwardEntryAsyncHandler;
@@ -1649,6 +1661,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifySnapshotAttributeResult> ModifySnapshotAttributeOutcome;
 			typedef std::future<ModifySnapshotAttributeOutcome> ModifySnapshotAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifySnapshotAttributeRequest&, const ModifySnapshotAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifySnapshotCategoryResult> ModifySnapshotCategoryOutcome;
+			typedef std::future<ModifySnapshotCategoryOutcome> ModifySnapshotCategoryOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifySnapshotCategoryRequest&, const ModifySnapshotCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotCategoryAsyncHandler;
 			typedef Outcome<Error, Model::ModifySnapshotGroupResult> ModifySnapshotGroupOutcome;
 			typedef std::future<ModifySnapshotGroupOutcome> ModifySnapshotGroupOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifySnapshotGroupRequest&, const ModifySnapshotGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotGroupAsyncHandler;
@@ -2236,6 +2251,9 @@ namespace AlibabaCloud
 			DescribeEipMonitorDataOutcome describeEipMonitorData(const Model::DescribeEipMonitorDataRequest &request)const;
 			void describeEipMonitorDataAsync(const Model::DescribeEipMonitorDataRequest& request, const DescribeEipMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEipMonitorDataOutcomeCallable describeEipMonitorDataCallable(const Model::DescribeEipMonitorDataRequest& request) const;
+			DescribeElasticityAssuranceAutoRenewAttributeOutcome describeElasticityAssuranceAutoRenewAttribute(const Model::DescribeElasticityAssuranceAutoRenewAttributeRequest &request)const;
+			void describeElasticityAssuranceAutoRenewAttributeAsync(const Model::DescribeElasticityAssuranceAutoRenewAttributeRequest& request, const DescribeElasticityAssuranceAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeElasticityAssuranceAutoRenewAttributeOutcomeCallable describeElasticityAssuranceAutoRenewAttributeCallable(const Model::DescribeElasticityAssuranceAutoRenewAttributeRequest& request) const;
 			DescribeElasticityAssuranceInstancesOutcome describeElasticityAssuranceInstances(const Model::DescribeElasticityAssuranceInstancesRequest &request)const;
 			void describeElasticityAssuranceInstancesAsync(const Model::DescribeElasticityAssuranceInstancesRequest& request, const DescribeElasticityAssuranceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeElasticityAssuranceInstancesOutcomeCallable describeElasticityAssuranceInstancesCallable(const Model::DescribeElasticityAssuranceInstancesRequest& request) const;
@@ -2512,6 +2530,9 @@ namespace AlibabaCloud
 			EnablePhysicalConnectionOutcome enablePhysicalConnection(const Model::EnablePhysicalConnectionRequest &request)const;
 			void enablePhysicalConnectionAsync(const Model::EnablePhysicalConnectionRequest& request, const EnablePhysicalConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnablePhysicalConnectionOutcomeCallable enablePhysicalConnectionCallable(const Model::EnablePhysicalConnectionRequest& request) const;
+			EndTerminalSessionOutcome endTerminalSession(const Model::EndTerminalSessionRequest &request)const;
+			void endTerminalSessionAsync(const Model::EndTerminalSessionRequest& request, const EndTerminalSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EndTerminalSessionOutcomeCallable endTerminalSessionCallable(const Model::EndTerminalSessionRequest& request) const;
 			ExportImageOutcome exportImage(const Model::ExportImageRequest &request)const;
 			void exportImageAsync(const Model::ExportImageRequest& request, const ExportImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExportImageOutcomeCallable exportImageCallable(const Model::ExportImageRequest& request) const;
@@ -2554,9 +2575,6 @@ namespace AlibabaCloud
 			ModifyAutoProvisioningGroupOutcome modifyAutoProvisioningGroup(const Model::ModifyAutoProvisioningGroupRequest &request)const;
 			void modifyAutoProvisioningGroupAsync(const Model::ModifyAutoProvisioningGroupRequest& request, const ModifyAutoProvisioningGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAutoProvisioningGroupOutcomeCallable modifyAutoProvisioningGroupCallable(const Model::ModifyAutoProvisioningGroupRequest& request) const;
-			ModifyAutoSnapshotPolicyOutcome modifyAutoSnapshotPolicy(const Model::ModifyAutoSnapshotPolicyRequest &request)const;
-			void modifyAutoSnapshotPolicyAsync(const Model::ModifyAutoSnapshotPolicyRequest& request, const ModifyAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyAutoSnapshotPolicyOutcomeCallable modifyAutoSnapshotPolicyCallable(const Model::ModifyAutoSnapshotPolicyRequest& request) const;
 			ModifyAutoSnapshotPolicyExOutcome modifyAutoSnapshotPolicyEx(const Model::ModifyAutoSnapshotPolicyExRequest &request)const;
 			void modifyAutoSnapshotPolicyExAsync(const Model::ModifyAutoSnapshotPolicyExRequest& request, const ModifyAutoSnapshotPolicyExAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAutoSnapshotPolicyExOutcomeCallable modifyAutoSnapshotPolicyExCallable(const Model::ModifyAutoSnapshotPolicyExRequest& request) const;
@@ -2617,6 +2635,9 @@ namespace AlibabaCloud
 			ModifyElasticityAssuranceOutcome modifyElasticityAssurance(const Model::ModifyElasticityAssuranceRequest &request)const;
 			void modifyElasticityAssuranceAsync(const Model::ModifyElasticityAssuranceRequest& request, const ModifyElasticityAssuranceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyElasticityAssuranceOutcomeCallable modifyElasticityAssuranceCallable(const Model::ModifyElasticityAssuranceRequest& request) const;
+			ModifyElasticityAssuranceAutoRenewAttributeOutcome modifyElasticityAssuranceAutoRenewAttribute(const Model::ModifyElasticityAssuranceAutoRenewAttributeRequest &request)const;
+			void modifyElasticityAssuranceAutoRenewAttributeAsync(const Model::ModifyElasticityAssuranceAutoRenewAttributeRequest& request, const ModifyElasticityAssuranceAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyElasticityAssuranceAutoRenewAttributeOutcomeCallable modifyElasticityAssuranceAutoRenewAttributeCallable(const Model::ModifyElasticityAssuranceAutoRenewAttributeRequest& request) const;
 			ModifyForwardEntryOutcome modifyForwardEntry(const Model::ModifyForwardEntryRequest &request)const;
 			void modifyForwardEntryAsync(const Model::ModifyForwardEntryRequest& request, const ModifyForwardEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyForwardEntryOutcomeCallable modifyForwardEntryCallable(const Model::ModifyForwardEntryRequest& request) const;
@@ -2722,6 +2743,9 @@ namespace AlibabaCloud
 			ModifySnapshotAttributeOutcome modifySnapshotAttribute(const Model::ModifySnapshotAttributeRequest &request)const;
 			void modifySnapshotAttributeAsync(const Model::ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySnapshotAttributeOutcomeCallable modifySnapshotAttributeCallable(const Model::ModifySnapshotAttributeRequest& request) const;
+			ModifySnapshotCategoryOutcome modifySnapshotCategory(const Model::ModifySnapshotCategoryRequest &request)const;
+			void modifySnapshotCategoryAsync(const Model::ModifySnapshotCategoryRequest& request, const ModifySnapshotCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifySnapshotCategoryOutcomeCallable modifySnapshotCategoryCallable(const Model::ModifySnapshotCategoryRequest& request) const;
 			ModifySnapshotGroupOutcome modifySnapshotGroup(const Model::ModifySnapshotGroupRequest &request)const;
 			void modifySnapshotGroupAsync(const Model::ModifySnapshotGroupRequest& request, const ModifySnapshotGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySnapshotGroupOutcomeCallable modifySnapshotGroupCallable(const Model::ModifySnapshotGroupRequest& request) const;

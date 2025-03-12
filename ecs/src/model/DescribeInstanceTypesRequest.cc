@@ -70,6 +70,15 @@ void DescribeInstanceTypesRequest::setLocalStorageCategory(const std::string &lo
   setParameter(std::string("LocalStorageCategory"), localStorageCategory);
 }
 
+bool DescribeInstanceTypesRequest::getSupportHotModify() const {
+  return supportHotModify_;
+}
+
+void DescribeInstanceTypesRequest::setSupportHotModify(bool supportHotModify) {
+  supportHotModify_ = supportHotModify;
+  setParameter(std::string("SupportHotModify"), supportHotModify ? "true" : "false");
+}
+
 float DescribeInstanceTypesRequest::getMaximumMemorySize() const {
   return maximumMemorySize_;
 }

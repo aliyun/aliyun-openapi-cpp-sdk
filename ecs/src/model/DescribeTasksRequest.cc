@@ -124,6 +124,15 @@ void DescribeTasksRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeTasksRequest::getTaskGroupId() const {
+  return taskGroupId_;
+}
+
+void DescribeTasksRequest::setTaskGroupId(const std::string &taskGroupId) {
+  taskGroupId_ = taskGroupId;
+  setParameter(std::string("TaskGroupId"), taskGroupId);
+}
+
 std::string DescribeTasksRequest::getTaskAction() const {
   return taskAction_;
 }

@@ -5091,6 +5091,42 @@ EcsClient::DescribeEipMonitorDataOutcomeCallable EcsClient::describeEipMonitorDa
 	return task->get_future();
 }
 
+EcsClient::DescribeElasticityAssuranceAutoRenewAttributeOutcome EcsClient::describeElasticityAssuranceAutoRenewAttribute(const DescribeElasticityAssuranceAutoRenewAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeElasticityAssuranceAutoRenewAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeElasticityAssuranceAutoRenewAttributeOutcome(DescribeElasticityAssuranceAutoRenewAttributeResult(outcome.result()));
+	else
+		return DescribeElasticityAssuranceAutoRenewAttributeOutcome(outcome.error());
+}
+
+void EcsClient::describeElasticityAssuranceAutoRenewAttributeAsync(const DescribeElasticityAssuranceAutoRenewAttributeRequest& request, const DescribeElasticityAssuranceAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeElasticityAssuranceAutoRenewAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeElasticityAssuranceAutoRenewAttributeOutcomeCallable EcsClient::describeElasticityAssuranceAutoRenewAttributeCallable(const DescribeElasticityAssuranceAutoRenewAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeElasticityAssuranceAutoRenewAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeElasticityAssuranceAutoRenewAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeElasticityAssuranceInstancesOutcome EcsClient::describeElasticityAssuranceInstances(const DescribeElasticityAssuranceInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8403,6 +8439,42 @@ EcsClient::EnablePhysicalConnectionOutcomeCallable EcsClient::enablePhysicalConn
 	return task->get_future();
 }
 
+EcsClient::EndTerminalSessionOutcome EcsClient::endTerminalSession(const EndTerminalSessionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EndTerminalSessionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EndTerminalSessionOutcome(EndTerminalSessionResult(outcome.result()));
+	else
+		return EndTerminalSessionOutcome(outcome.error());
+}
+
+void EcsClient::endTerminalSessionAsync(const EndTerminalSessionRequest& request, const EndTerminalSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, endTerminalSession(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::EndTerminalSessionOutcomeCallable EcsClient::endTerminalSessionCallable(const EndTerminalSessionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EndTerminalSessionOutcome()>>(
+			[this, request]()
+			{
+			return this->endTerminalSession(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::ExportImageOutcome EcsClient::exportImage(const ExportImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8901,42 +8973,6 @@ EcsClient::ModifyAutoProvisioningGroupOutcomeCallable EcsClient::modifyAutoProvi
 			[this, request]()
 			{
 			return this->modifyAutoProvisioningGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EcsClient::ModifyAutoSnapshotPolicyOutcome EcsClient::modifyAutoSnapshotPolicy(const ModifyAutoSnapshotPolicyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyAutoSnapshotPolicyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyAutoSnapshotPolicyOutcome(ModifyAutoSnapshotPolicyResult(outcome.result()));
-	else
-		return ModifyAutoSnapshotPolicyOutcome(outcome.error());
-}
-
-void EcsClient::modifyAutoSnapshotPolicyAsync(const ModifyAutoSnapshotPolicyRequest& request, const ModifyAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyAutoSnapshotPolicy(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::ModifyAutoSnapshotPolicyOutcomeCallable EcsClient::modifyAutoSnapshotPolicyCallable(const ModifyAutoSnapshotPolicyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyAutoSnapshotPolicyOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyAutoSnapshotPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9657,6 +9693,42 @@ EcsClient::ModifyElasticityAssuranceOutcomeCallable EcsClient::modifyElasticityA
 			[this, request]()
 			{
 			return this->modifyElasticityAssurance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ModifyElasticityAssuranceAutoRenewAttributeOutcome EcsClient::modifyElasticityAssuranceAutoRenewAttribute(const ModifyElasticityAssuranceAutoRenewAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyElasticityAssuranceAutoRenewAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyElasticityAssuranceAutoRenewAttributeOutcome(ModifyElasticityAssuranceAutoRenewAttributeResult(outcome.result()));
+	else
+		return ModifyElasticityAssuranceAutoRenewAttributeOutcome(outcome.error());
+}
+
+void EcsClient::modifyElasticityAssuranceAutoRenewAttributeAsync(const ModifyElasticityAssuranceAutoRenewAttributeRequest& request, const ModifyElasticityAssuranceAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyElasticityAssuranceAutoRenewAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyElasticityAssuranceAutoRenewAttributeOutcomeCallable EcsClient::modifyElasticityAssuranceAutoRenewAttributeCallable(const ModifyElasticityAssuranceAutoRenewAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyElasticityAssuranceAutoRenewAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyElasticityAssuranceAutoRenewAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -10917,6 +10989,42 @@ EcsClient::ModifySnapshotAttributeOutcomeCallable EcsClient::modifySnapshotAttri
 			[this, request]()
 			{
 			return this->modifySnapshotAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ModifySnapshotCategoryOutcome EcsClient::modifySnapshotCategory(const ModifySnapshotCategoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifySnapshotCategoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifySnapshotCategoryOutcome(ModifySnapshotCategoryResult(outcome.result()));
+	else
+		return ModifySnapshotCategoryOutcome(outcome.error());
+}
+
+void EcsClient::modifySnapshotCategoryAsync(const ModifySnapshotCategoryRequest& request, const ModifySnapshotCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifySnapshotCategory(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifySnapshotCategoryOutcomeCallable EcsClient::modifySnapshotCategoryCallable(const ModifySnapshotCategoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifySnapshotCategoryOutcome()>>(
+			[this, request]()
+			{
+			return this->modifySnapshotCategory(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

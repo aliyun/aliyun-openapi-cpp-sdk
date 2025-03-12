@@ -208,6 +208,8 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 				networkInterfaceObject.instanceType = launchTemplateDataNodeNetworkInterfacesNetworkInterface["InstanceType"].asString();
 			if(!launchTemplateDataNodeNetworkInterfacesNetworkInterface["NetworkInterfaceTrafficMode"].isNull())
 				networkInterfaceObject.networkInterfaceTrafficMode = launchTemplateDataNodeNetworkInterfacesNetworkInterface["NetworkInterfaceTrafficMode"].asString();
+			if(!launchTemplateDataNodeNetworkInterfacesNetworkInterface["DeleteOnRelease"].isNull())
+				networkInterfaceObject.deleteOnRelease = launchTemplateDataNodeNetworkInterfacesNetworkInterface["DeleteOnRelease"].asString() == "true";
 			auto allSecurityGroupIds1 = value["SecurityGroupIds"]["SecurityGroupId"];
 			for (auto value : allSecurityGroupIds1)
 				networkInterfaceObject.securityGroupIds1.push_back(value.asString());

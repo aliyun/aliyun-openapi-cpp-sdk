@@ -163,6 +163,10 @@ void DescribePriceResult::parse(const std::string &payload)
 			promotionObject.name = priceNodePromotionsPromotion["Name"].asString();
 		if(!priceNodePromotionsPromotion["DiscountOff"].isNull())
 			promotionObject.discountOff = std::stof(priceNodePromotionsPromotion["DiscountOff"].asString());
+		if(!priceNodePromotionsPromotion["Type"].isNull())
+			promotionObject.type = priceNodePromotionsPromotion["Type"].asString();
+		if(!priceNodePromotionsPromotion["RemainQuota"].isNull())
+			promotionObject.remainQuota = std::stof(priceNodePromotionsPromotion["RemainQuota"].asString());
 		auto allRuleIds3 = value["RuleIds"]["RuleId"];
 		for (auto value : allRuleIds3)
 			promotionObject.ruleIds3.push_back(value.asString());

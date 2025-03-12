@@ -52,6 +52,8 @@ public:
 	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getTaskGroupId() const;
+	void setTaskGroupId(const std::string &taskGroupId);
 	std::string getTaskAction() const;
 	void setTaskAction(const std::string &taskAction);
 	std::vector<std::string> getResourceIds() const;
@@ -69,6 +71,7 @@ private:
 	std::string ownerAccount_;
 	std::string endTime_;
 	long ownerId_;
+	std::string taskGroupId_;
 	std::string taskAction_;
 	std::vector<std::string> resourceIds_;
 };

@@ -42,6 +42,8 @@ public:
 	void setDedicatedHostId(const std::string &dedicatedHostId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getMigrationType() const;
+	void setMigrationType(const std::string &migrationType);
 
 private:
 	long resourceOwnerId_;
@@ -50,6 +52,7 @@ private:
 	std::string ownerAccount_;
 	std::string dedicatedHostId_;
 	long ownerId_;
+	std::string migrationType_;
 };
 } // namespace Model
 } // namespace Ecs

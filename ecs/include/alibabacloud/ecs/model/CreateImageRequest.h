@@ -39,6 +39,9 @@ public:
 		std::string value;
 		std::string key;
 	};
+	struct Features {
+		std::string imdsSupport;
+	};
 	struct Tag {
 		std::string value;
 		std::string key;
@@ -61,6 +64,8 @@ public:
 	void setPlatform(const std::string &platform);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	Features getFeatures() const;
+	void setFeatures(const Features &features);
 	std::string getBootMode() const;
 	void setBootMode(const std::string &bootMode);
 	std::string getRegionId() const;
@@ -97,6 +102,7 @@ private:
 	std::string description_;
 	std::string platform_;
 	std::string resourceGroupId_;
+	Features features_;
 	std::string bootMode_;
 	std::string regionId_;
 	std::string imageName_;

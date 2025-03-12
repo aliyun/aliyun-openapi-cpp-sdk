@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				ModifyInstanceSpecResult();
 				explicit ModifyInstanceSpecResult(const std::string &payload);
 				~ModifyInstanceSpecResult();
+				std::string getTaskId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string taskId_;
 
 			};
 		}

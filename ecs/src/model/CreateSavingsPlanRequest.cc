@@ -25,6 +25,42 @@ CreateSavingsPlanRequest::CreateSavingsPlanRequest()
 
 CreateSavingsPlanRequest::~CreateSavingsPlanRequest() {}
 
+std::string CreateSavingsPlanRequest::getInstanceTypeFamilyGroup() const {
+  return instanceTypeFamilyGroup_;
+}
+
+void CreateSavingsPlanRequest::setInstanceTypeFamilyGroup(const std::string &instanceTypeFamilyGroup) {
+  instanceTypeFamilyGroup_ = instanceTypeFamilyGroup;
+  setParameter(std::string("InstanceTypeFamilyGroup"), instanceTypeFamilyGroup);
+}
+
+std::string CreateSavingsPlanRequest::getPlanType() const {
+  return planType_;
+}
+
+void CreateSavingsPlanRequest::setPlanType(const std::string &planType) {
+  planType_ = planType;
+  setParameter(std::string("PlanType"), planType);
+}
+
+std::string CreateSavingsPlanRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateSavingsPlanRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string CreateSavingsPlanRequest::getCommittedAmount() const {
+  return committedAmount_;
+}
+
+void CreateSavingsPlanRequest::setCommittedAmount(const std::string &committedAmount) {
+  committedAmount_ = committedAmount;
+  setParameter(std::string("CommittedAmount"), committedAmount);
+}
+
 std::string CreateSavingsPlanRequest::getPeriod() const {
   return period_;
 }
@@ -51,15 +87,6 @@ void CreateSavingsPlanRequest::setInstanceTypeFamily(const std::string &instance
   setParameter(std::string("InstanceTypeFamily"), instanceTypeFamily);
 }
 
-std::string CreateSavingsPlanRequest::getPlanType() const {
-  return planType_;
-}
-
-void CreateSavingsPlanRequest::setPlanType(const std::string &planType) {
-  planType_ = planType;
-  setParameter(std::string("PlanType"), planType);
-}
-
 std::string CreateSavingsPlanRequest::getPeriodUnit() const {
   return periodUnit_;
 }
@@ -78,15 +105,6 @@ void CreateSavingsPlanRequest::setOfferingType(const std::string &offeringType) 
   setParameter(std::string("OfferingType"), offeringType);
 }
 
-std::string CreateSavingsPlanRequest::getRegionId() const {
-  return regionId_;
-}
-
-void CreateSavingsPlanRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string CreateSavingsPlanRequest::getChargeType() const {
   return chargeType_;
 }
@@ -94,14 +112,5 @@ std::string CreateSavingsPlanRequest::getChargeType() const {
 void CreateSavingsPlanRequest::setChargeType(const std::string &chargeType) {
   chargeType_ = chargeType;
   setParameter(std::string("ChargeType"), chargeType);
-}
-
-std::string CreateSavingsPlanRequest::getCommittedAmount() const {
-  return committedAmount_;
-}
-
-void CreateSavingsPlanRequest::setCommittedAmount(const std::string &committedAmount) {
-  committedAmount_ = committedAmount;
-  setParameter(std::string("CommittedAmount"), committedAmount);
 }
 

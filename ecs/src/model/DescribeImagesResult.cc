@@ -121,6 +121,8 @@ void DescribeImagesResult::parse(const std::string &payload)
 				diskDeviceMappingsObject.remainTime = std::stoi(valueImagesImageDiskDeviceMappingsDiskDeviceMapping["RemainTime"].asString());
 			if(!valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Format"].isNull())
 				diskDeviceMappingsObject.format = valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Format"].asString();
+			if(!valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Encrypted"].isNull())
+				diskDeviceMappingsObject.encrypted = valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Encrypted"].asString() == "true";
 			imagesObject.diskDeviceMappings.push_back(diskDeviceMappingsObject);
 		}
 		auto allTagsNode = valueImagesImage["Tags"]["Tag"];
@@ -153,6 +155,16 @@ void DescribeImagesResult::parse(const std::string &payload)
 		auto featuresNode = value["Features"];
 		if(!featuresNode["NvmeSupport"].isNull())
 			imagesObject.features.nvmeSupport = featuresNode["NvmeSupport"].asString();
+		if(!featuresNode["ImdsSupport"].isNull())
+			imagesObject.features.imdsSupport = featuresNode["ImdsSupport"].asString();
+		if(!featuresNode["CpuOnlineUpgrade"].isNull())
+			imagesObject.features.cpuOnlineUpgrade = featuresNode["CpuOnlineUpgrade"].asString();
+		if(!featuresNode["CpuOnlineDowngrade"].isNull())
+			imagesObject.features.cpuOnlineDowngrade = featuresNode["CpuOnlineDowngrade"].asString();
+		if(!featuresNode["MemoryOnlineUpgrade"].isNull())
+			imagesObject.features.memoryOnlineUpgrade = featuresNode["MemoryOnlineUpgrade"].asString();
+		if(!featuresNode["MemoryOnlineDowngrade"].isNull())
+			imagesObject.features.memoryOnlineDowngrade = featuresNode["MemoryOnlineDowngrade"].asString();
 		images_.push_back(imagesObject);
 	}
 	if(!value["PageSize"].isNull())

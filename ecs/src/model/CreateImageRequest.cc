@@ -110,6 +110,15 @@ void CreateImageRequest::setResourceGroupId(const std::string &resourceGroupId) 
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+CreateImageRequest::Features CreateImageRequest::getFeatures() const {
+  return features_;
+}
+
+void CreateImageRequest::setFeatures(const CreateImageRequest::Features &features) {
+  features_ = features;
+  setParameter(std::string("Features") + ".ImdsSupport", features.imdsSupport);
+}
+
 std::string CreateImageRequest::getBootMode() const {
   return bootMode_;
 }

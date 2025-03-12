@@ -87,6 +87,8 @@ void DescribeCommandsResult::parse(const std::string &payload)
 				parameterDefinitionsObject.defaultValue = valueCommandsCommandParameterDefinitionsParameterDefinition["DefaultValue"].asString();
 			if(!valueCommandsCommandParameterDefinitionsParameterDefinition["ParameterName"].isNull())
 				parameterDefinitionsObject.parameterName = valueCommandsCommandParameterDefinitionsParameterDefinition["ParameterName"].asString();
+			if(!valueCommandsCommandParameterDefinitionsParameterDefinition["PatternRegex"].isNull())
+				parameterDefinitionsObject.patternRegex = valueCommandsCommandParameterDefinitionsParameterDefinition["PatternRegex"].asString();
 			auto allPossibleValues = value["PossibleValues"]["PossibleValue"];
 			for (auto value : allPossibleValues)
 				parameterDefinitionsObject.possibleValues.push_back(value.asString());

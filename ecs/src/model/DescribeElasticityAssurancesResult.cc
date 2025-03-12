@@ -73,6 +73,8 @@ void DescribeElasticityAssurancesResult::parse(const std::string &payload)
 			elasticityAssuranceSetObject.startTimeType = valueElasticityAssuranceSetElasticityAssuranceItem["StartTimeType"].asString();
 		if(!valueElasticityAssuranceSetElasticityAssuranceItem["ElasticityAssuranceOwnerId"].isNull())
 			elasticityAssuranceSetObject.elasticityAssuranceOwnerId = valueElasticityAssuranceSetElasticityAssuranceItem["ElasticityAssuranceOwnerId"].asString();
+		if(!valueElasticityAssuranceSetElasticityAssuranceItem["PackageType"].isNull())
+			elasticityAssuranceSetObject.packageType = valueElasticityAssuranceSetElasticityAssuranceItem["PackageType"].asString();
 		auto allAllocatedResourcesNode = valueElasticityAssuranceSetElasticityAssuranceItem["AllocatedResources"]["AllocatedResource"];
 		for (auto valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource : allAllocatedResourcesNode)
 		{
@@ -110,6 +112,20 @@ void DescribeElasticityAssurancesResult::parse(const std::string &payload)
 			if(!valueElasticityAssuranceSetElasticityAssuranceItemTagsTag["TagKey"].isNull())
 				tagsObject.tagKey = valueElasticityAssuranceSetElasticityAssuranceItemTagsTag["TagKey"].asString();
 			elasticityAssuranceSetObject.tags.push_back(tagsObject);
+		}
+		auto allRecurrenceRulesNode = valueElasticityAssuranceSetElasticityAssuranceItem["RecurrenceRules"]["RecurrenceRule"];
+		for (auto valueElasticityAssuranceSetElasticityAssuranceItemRecurrenceRulesRecurrenceRule : allRecurrenceRulesNode)
+		{
+			ElasticityAssuranceItem::RecurrenceRule recurrenceRulesObject;
+			if(!valueElasticityAssuranceSetElasticityAssuranceItemRecurrenceRulesRecurrenceRule["RecurrenceType"].isNull())
+				recurrenceRulesObject.recurrenceType = valueElasticityAssuranceSetElasticityAssuranceItemRecurrenceRulesRecurrenceRule["RecurrenceType"].asString();
+			if(!valueElasticityAssuranceSetElasticityAssuranceItemRecurrenceRulesRecurrenceRule["RecurrenceValue"].isNull())
+				recurrenceRulesObject.recurrenceValue = valueElasticityAssuranceSetElasticityAssuranceItemRecurrenceRulesRecurrenceRule["RecurrenceValue"].asString();
+			if(!valueElasticityAssuranceSetElasticityAssuranceItemRecurrenceRulesRecurrenceRule["StartHour"].isNull())
+				recurrenceRulesObject.startHour = std::stoi(valueElasticityAssuranceSetElasticityAssuranceItemRecurrenceRulesRecurrenceRule["StartHour"].asString());
+			if(!valueElasticityAssuranceSetElasticityAssuranceItemRecurrenceRulesRecurrenceRule["EndHour"].isNull())
+				recurrenceRulesObject.endHour = std::stoi(valueElasticityAssuranceSetElasticityAssuranceItemRecurrenceRulesRecurrenceRule["EndHour"].asString());
+			elasticityAssuranceSetObject.recurrenceRules.push_back(recurrenceRulesObject);
 		}
 		elasticityAssuranceSet_.push_back(elasticityAssuranceSetObject);
 	}

@@ -55,6 +55,8 @@ void DescribeSavingsPlanEstimationResult::parse(const std::string &payload)
 		period_ = std::stoi(value["Period"].asString());
 	if(!value["PlanType"].isNull())
 		planType_ = value["PlanType"].asString();
+	if(!value["InstanceTypeFamilyGroup"].isNull())
+		instanceTypeFamilyGroup_ = value["InstanceTypeFamilyGroup"].asString();
 
 }
 
@@ -91,6 +93,11 @@ std::string DescribeSavingsPlanEstimationResult::getPlanType()const
 int DescribeSavingsPlanEstimationResult::getPeriod()const
 {
 	return period_;
+}
+
+std::string DescribeSavingsPlanEstimationResult::getInstanceTypeFamilyGroup()const
+{
+	return instanceTypeFamilyGroup_;
 }
 
 std::string DescribeSavingsPlanEstimationResult::getPeriodUnit()const

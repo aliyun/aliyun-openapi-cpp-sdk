@@ -301,6 +301,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeEipAddressesResult.h
 	include/alibabacloud/ecs/model/DescribeEipMonitorDataRequest.h
 	include/alibabacloud/ecs/model/DescribeEipMonitorDataResult.h
+	include/alibabacloud/ecs/model/DescribeElasticityAssuranceAutoRenewAttributeRequest.h
+	include/alibabacloud/ecs/model/DescribeElasticityAssuranceAutoRenewAttributeResult.h
 	include/alibabacloud/ecs/model/DescribeElasticityAssuranceInstancesRequest.h
 	include/alibabacloud/ecs/model/DescribeElasticityAssuranceInstancesResult.h
 	include/alibabacloud/ecs/model/DescribeElasticityAssurancesRequest.h
@@ -485,6 +487,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/EnableDiskEncryptionByDefaultResult.h
 	include/alibabacloud/ecs/model/EnablePhysicalConnectionRequest.h
 	include/alibabacloud/ecs/model/EnablePhysicalConnectionResult.h
+	include/alibabacloud/ecs/model/EndTerminalSessionRequest.h
+	include/alibabacloud/ecs/model/EndTerminalSessionResult.h
 	include/alibabacloud/ecs/model/ExportImageRequest.h
 	include/alibabacloud/ecs/model/ExportImageResult.h
 	include/alibabacloud/ecs/model/ExportSnapshotRequest.h
@@ -513,8 +517,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ListTagResourcesResult.h
 	include/alibabacloud/ecs/model/ModifyAutoProvisioningGroupRequest.h
 	include/alibabacloud/ecs/model/ModifyAutoProvisioningGroupResult.h
-	include/alibabacloud/ecs/model/ModifyAutoSnapshotPolicyRequest.h
-	include/alibabacloud/ecs/model/ModifyAutoSnapshotPolicyResult.h
 	include/alibabacloud/ecs/model/ModifyAutoSnapshotPolicyExRequest.h
 	include/alibabacloud/ecs/model/ModifyAutoSnapshotPolicyExResult.h
 	include/alibabacloud/ecs/model/ModifyBandwidthPackageSpecRequest.h
@@ -555,6 +557,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyEipAddressAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyElasticityAssuranceRequest.h
 	include/alibabacloud/ecs/model/ModifyElasticityAssuranceResult.h
+	include/alibabacloud/ecs/model/ModifyElasticityAssuranceAutoRenewAttributeRequest.h
+	include/alibabacloud/ecs/model/ModifyElasticityAssuranceAutoRenewAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyForwardEntryRequest.h
 	include/alibabacloud/ecs/model/ModifyForwardEntryResult.h
 	include/alibabacloud/ecs/model/ModifyHaVipAttributeRequest.h
@@ -625,6 +629,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifySecurityGroupRuleResult.h
 	include/alibabacloud/ecs/model/ModifySnapshotAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifySnapshotAttributeResult.h
+	include/alibabacloud/ecs/model/ModifySnapshotCategoryRequest.h
+	include/alibabacloud/ecs/model/ModifySnapshotCategoryResult.h
 	include/alibabacloud/ecs/model/ModifySnapshotGroupRequest.h
 	include/alibabacloud/ecs/model/ModifySnapshotGroupResult.h
 	include/alibabacloud/ecs/model/ModifyStorageCapacityUnitAttributeRequest.h
@@ -1016,6 +1022,8 @@ set(ecs_src
 	src/model/DescribeEipAddressesResult.cc
 	src/model/DescribeEipMonitorDataRequest.cc
 	src/model/DescribeEipMonitorDataResult.cc
+	src/model/DescribeElasticityAssuranceAutoRenewAttributeRequest.cc
+	src/model/DescribeElasticityAssuranceAutoRenewAttributeResult.cc
 	src/model/DescribeElasticityAssuranceInstancesRequest.cc
 	src/model/DescribeElasticityAssuranceInstancesResult.cc
 	src/model/DescribeElasticityAssurancesRequest.cc
@@ -1200,6 +1208,8 @@ set(ecs_src
 	src/model/EnableDiskEncryptionByDefaultResult.cc
 	src/model/EnablePhysicalConnectionRequest.cc
 	src/model/EnablePhysicalConnectionResult.cc
+	src/model/EndTerminalSessionRequest.cc
+	src/model/EndTerminalSessionResult.cc
 	src/model/ExportImageRequest.cc
 	src/model/ExportImageResult.cc
 	src/model/ExportSnapshotRequest.cc
@@ -1228,8 +1238,6 @@ set(ecs_src
 	src/model/ListTagResourcesResult.cc
 	src/model/ModifyAutoProvisioningGroupRequest.cc
 	src/model/ModifyAutoProvisioningGroupResult.cc
-	src/model/ModifyAutoSnapshotPolicyRequest.cc
-	src/model/ModifyAutoSnapshotPolicyResult.cc
 	src/model/ModifyAutoSnapshotPolicyExRequest.cc
 	src/model/ModifyAutoSnapshotPolicyExResult.cc
 	src/model/ModifyBandwidthPackageSpecRequest.cc
@@ -1270,6 +1278,8 @@ set(ecs_src
 	src/model/ModifyEipAddressAttributeResult.cc
 	src/model/ModifyElasticityAssuranceRequest.cc
 	src/model/ModifyElasticityAssuranceResult.cc
+	src/model/ModifyElasticityAssuranceAutoRenewAttributeRequest.cc
+	src/model/ModifyElasticityAssuranceAutoRenewAttributeResult.cc
 	src/model/ModifyForwardEntryRequest.cc
 	src/model/ModifyForwardEntryResult.cc
 	src/model/ModifyHaVipAttributeRequest.cc
@@ -1340,6 +1350,8 @@ set(ecs_src
 	src/model/ModifySecurityGroupRuleResult.cc
 	src/model/ModifySnapshotAttributeRequest.cc
 	src/model/ModifySnapshotAttributeResult.cc
+	src/model/ModifySnapshotCategoryRequest.cc
+	src/model/ModifySnapshotCategoryResult.cc
 	src/model/ModifySnapshotGroupRequest.cc
 	src/model/ModifySnapshotGroupResult.cc
 	src/model/ModifyStorageCapacityUnitAttributeRequest.cc

@@ -37,6 +37,7 @@ public:
 	};
 	struct EnhancedNetwork {
 		bool enableSriov;
+		bool enableRss;
 	};
 	struct Tag {
 		std::string key;
@@ -93,6 +94,8 @@ public:
 	void setDescription(const std::string &description);
 	int getIpv6PrefixCount() const;
 	void setIpv6PrefixCount(int ipv6PrefixCount);
+	bool getSourceDestCheck() const;
+	void setSourceDestCheck(bool sourceDestCheck);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getInstanceType() const;
@@ -141,6 +144,7 @@ private:
 	std::string securityGroupId_;
 	std::string description_;
 	int ipv6PrefixCount_;
+	bool sourceDestCheck_;
 	std::string regionId_;
 	std::string instanceType_;
 	int txQueueSize_;

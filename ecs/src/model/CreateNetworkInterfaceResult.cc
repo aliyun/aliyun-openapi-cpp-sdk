@@ -114,6 +114,8 @@ void CreateNetworkInterfaceResult::parse(const std::string &payload)
 		zoneId_ = value["ZoneId"].asString();
 	if(!value["PrivateIpAddress"].isNull())
 		privateIpAddress_ = value["PrivateIpAddress"].asString();
+	if(!value["SourceDestCheck"].isNull())
+		sourceDestCheck_ = value["SourceDestCheck"].asString() == "true";
 
 }
 
@@ -175,6 +177,11 @@ std::vector<std::string> CreateNetworkInterfaceResult::getSecurityGroupIds()cons
 long CreateNetworkInterfaceResult::getServiceID()const
 {
 	return serviceID_;
+}
+
+bool CreateNetworkInterfaceResult::getSourceDestCheck()const
+{
+	return sourceDestCheck_;
 }
 
 std::string CreateNetworkInterfaceResult::getType()const

@@ -144,6 +144,8 @@ void DescribeNetworkInterfaceAttributeResult::parse(const std::string &payload)
 	auto enhancedNetworkNode = value["EnhancedNetwork"];
 	if(!enhancedNetworkNode["EnableSriov"].isNull())
 		enhancedNetwork_.enableSriov = enhancedNetworkNode["EnableSriov"].asString() == "true";
+	if(!enhancedNetworkNode["EnableRss"].isNull())
+		enhancedNetwork_.enableRss = enhancedNetworkNode["EnableRss"].asString() == "true";
 	auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 	for (const auto &item : allSecurityGroupIds)
 		securityGroupIds_.push_back(item.asString());

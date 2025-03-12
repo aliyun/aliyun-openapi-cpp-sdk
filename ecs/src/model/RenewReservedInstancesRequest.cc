@@ -70,6 +70,15 @@ void RenewReservedInstancesRequest::setPeriod(int period) {
   setParameter(std::string("Period"), std::to_string(period));
 }
 
+bool RenewReservedInstancesRequest::getAutoPay() const {
+  return autoPay_;
+}
+
+void RenewReservedInstancesRequest::setAutoPay(bool autoPay) {
+  autoPay_ = autoPay;
+  setParameter(std::string("AutoPay"), autoPay ? "true" : "false");
+}
+
 std::string RenewReservedInstancesRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -95,6 +104,15 @@ long RenewReservedInstancesRequest::getOwnerId() const {
 void RenewReservedInstancesRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+RenewReservedInstancesRequest::PromotionOptions RenewReservedInstancesRequest::getPromotionOptions() const {
+  return promotionOptions_;
+}
+
+void RenewReservedInstancesRequest::setPromotionOptions(const RenewReservedInstancesRequest::PromotionOptions &promotionOptions) {
+  promotionOptions_ = promotionOptions;
+  setParameter(std::string("PromotionOptions") + ".CouponNo", promotionOptions.couponNo);
 }
 
 std::string RenewReservedInstancesRequest::getPeriodUnit() const {

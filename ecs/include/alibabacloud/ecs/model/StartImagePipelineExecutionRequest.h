@@ -32,6 +32,10 @@ public:
 		std::string key;
 		std::string value;
 	};
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	StartImagePipelineExecutionRequest();
 	~StartImagePipelineExecutionRequest();
 	std::string getImagePipelineId() const;
@@ -44,6 +48,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::vector<TemplateTag> getTemplateTag() const;
 	void setTemplateTag(const std::vector<TemplateTag> &templateTag);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -57,6 +63,7 @@ private:
 	std::string clientToken_;
 	std::string regionId_;
 	std::vector<TemplateTag> templateTag_;
+	std::vector<Tag> tag_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

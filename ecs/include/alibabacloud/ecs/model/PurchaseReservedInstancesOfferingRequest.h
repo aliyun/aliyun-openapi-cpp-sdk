@@ -32,6 +32,9 @@ public:
 		std::string key;
 		std::string value;
 	};
+	struct PromotionOptions {
+		std::string couponNo;
+	};
 	PurchaseReservedInstancesOfferingRequest();
 	~PurchaseReservedInstancesOfferingRequest();
 	long getResourceOwnerId() const;
@@ -58,12 +61,16 @@ public:
 	void setAutoRenewPeriod(int autoRenewPeriod);
 	int getPeriod() const;
 	void setPeriod(int period);
+	bool getAutoPay() const;
+	void setAutoPay(bool autoPay);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	PromotionOptions getPromotionOptions() const;
+	void setPromotionOptions(const PromotionOptions &promotionOptions);
 	std::string getPeriodUnit() const;
 	void setPeriodUnit(const std::string &periodUnit);
 	std::string getOfferingType() const;
@@ -90,9 +97,11 @@ private:
 	std::vector<Tag> tag_;
 	int autoRenewPeriod_;
 	int period_;
+	bool autoPay_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	PromotionOptions promotionOptions_;
 	std::string periodUnit_;
 	std::string offeringType_;
 	bool autoRenew_;

@@ -70,6 +70,15 @@ void RenewDedicatedHostsRequest::setPeriod(int period) {
   setParameter(std::string("Period"), std::to_string(period));
 }
 
+bool RenewDedicatedHostsRequest::getAutoPay() const {
+  return autoPay_;
+}
+
+void RenewDedicatedHostsRequest::setAutoPay(bool autoPay) {
+  autoPay_ = autoPay;
+  setParameter(std::string("AutoPay"), autoPay ? "true" : "false");
+}
+
 std::string RenewDedicatedHostsRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -95,6 +104,15 @@ long RenewDedicatedHostsRequest::getOwnerId() const {
 void RenewDedicatedHostsRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+RenewDedicatedHostsRequest::PromotionOptions RenewDedicatedHostsRequest::getPromotionOptions() const {
+  return promotionOptions_;
+}
+
+void RenewDedicatedHostsRequest::setPromotionOptions(const RenewDedicatedHostsRequest::PromotionOptions &promotionOptions) {
+  promotionOptions_ = promotionOptions;
+  setParameter(std::string("PromotionOptions") + ".CouponNo", promotionOptions.couponNo);
 }
 
 std::string RenewDedicatedHostsRequest::getPeriodUnit() const {

@@ -282,6 +282,9 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.privateDnsNameOptions.enableIpDnsPtrRecord = privateDnsNameOptionsNode["EnableIpDnsPtrRecord"].asString() == "true";
 		if(!privateDnsNameOptionsNode["HostnameType"].isNull())
 			instancesObject.privateDnsNameOptions.hostnameType = privateDnsNameOptionsNode["HostnameType"].asString();
+		auto additionalInfoNode = value["AdditionalInfo"];
+		if(!additionalInfoNode["EnableHighDensityMode"].isNull())
+			instancesObject.additionalInfo.enableHighDensityMode = additionalInfoNode["EnableHighDensityMode"].asString() == "true";
 		auto allRdmaIpAddress = value["RdmaIpAddress"]["IpAddress"];
 		for (auto value : allRdmaIpAddress)
 			instancesObject.rdmaIpAddress.push_back(value.asString());

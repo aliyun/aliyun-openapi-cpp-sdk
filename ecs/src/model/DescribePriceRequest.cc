@@ -61,6 +61,15 @@ void DescribePriceRequest::setIsp(const std::string &isp) {
   setParameter(std::string("Isp"), isp);
 }
 
+std::string DescribePriceRequest::getStartTime() const {
+  return startTime_;
+}
+
+void DescribePriceRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
+}
+
 int DescribePriceRequest::getDataDisk4Size() const {
   return dataDisk4Size_;
 }
@@ -402,6 +411,7 @@ void DescribePriceRequest::setDataDisk(const std::vector<DescribePriceRequest::D
   for(int dep1 = 0; dep1 != dataDisk.size(); dep1++) {
   auto dataDiskObj = dataDisk.at(dep1);
   std::string dataDiskObjStr = std::string("DataDisk") + "." + std::to_string(dep1 + 1);
+    setParameter(dataDiskObjStr + ".ProvisionedIops", std::to_string(dataDiskObj.provisionedIops));
     setParameter(dataDiskObjStr + ".Size", std::to_string(dataDiskObj.size));
     setParameter(dataDiskObjStr + ".PerformanceLevel", dataDiskObj.performanceLevel);
     setParameter(dataDiskObjStr + ".Category", dataDiskObj.category);
@@ -442,5 +452,21 @@ std::string DescribePriceRequest::getOfferingType() const {
 void DescribePriceRequest::setOfferingType(const std::string &offeringType) {
   offeringType_ = offeringType;
   setParameter(std::string("OfferingType"), offeringType);
+}
+
+std::vector<DescribePriceRequest::RecurrenceRules> DescribePriceRequest::getRecurrenceRules() const {
+  return recurrenceRules_;
+}
+
+void DescribePriceRequest::setRecurrenceRules(const std::vector<DescribePriceRequest::RecurrenceRules> &recurrenceRules) {
+  recurrenceRules_ = recurrenceRules;
+  for(int dep1 = 0; dep1 != recurrenceRules.size(); dep1++) {
+  auto recurrenceRulesObj = recurrenceRules.at(dep1);
+  std::string recurrenceRulesObjStr = std::string("RecurrenceRules") + "." + std::to_string(dep1 + 1);
+    setParameter(recurrenceRulesObjStr + ".EndHour", std::to_string(recurrenceRulesObj.endHour));
+    setParameter(recurrenceRulesObjStr + ".StartHour", std::to_string(recurrenceRulesObj.startHour));
+    setParameter(recurrenceRulesObjStr + ".RecurrenceValue", recurrenceRulesObj.recurrenceValue);
+    setParameter(recurrenceRulesObjStr + ".RecurrenceType", recurrenceRulesObj.recurrenceType);
+  }
 }
 

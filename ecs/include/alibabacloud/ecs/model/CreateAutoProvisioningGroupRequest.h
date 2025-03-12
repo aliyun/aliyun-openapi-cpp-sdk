@@ -53,6 +53,21 @@ public:
 	struct DataDiskConfig {
 		std::string diskCategory;
 	};
+	struct PrePaidOptions {
+		struct SpecifyCapacityDistributionItem {
+			std::string string;
+			std::vector<std::string> instanceTypes;
+			int minTargetCapacity;
+		};
+		SpecifyCapacityDistributionItem specifyCapacityDistributionItem;
+		std::vector<SpecifyCapacityDistributionItem> specifyCapacityDistribution;
+	};
+	struct LaunchConfiguration {
+		int period;
+		std::string periodUnit;
+		bool autoRenew;
+		int autoRenewPeriod;
+	};
 	struct LaunchConfigurationArn {
 		std::string rolearn;
 		std::string roleType;
@@ -83,6 +98,7 @@ public:
 			std::string vSwitchId;
 		};
 		std::vector<SecondaryNetworkInterface> secondaryNetworkInterface;
+		std::string imageId;
 	};
 	struct LaunchConfigurationTag {
 		std::string key;
@@ -139,6 +155,8 @@ public:
 	void setValidUntil(const std::string &validUntil);
 	std::string getLaunchTemplateId() const;
 	void setLaunchTemplateId(const std::string &launchTemplateId);
+	PrePaidOptions getPrePaidOptions() const;
+	void setPrePaidOptions(const PrePaidOptions &prePaidOptions);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getLaunchConfigurationImageFamily() const;
@@ -153,6 +171,8 @@ public:
 	void setMinTargetCapacity(const std::string &minTargetCapacity);
 	float getMaxSpotPrice() const;
 	void setMaxSpotPrice(float maxSpotPrice);
+	LaunchConfiguration getLaunchConfiguration() const;
+	void setLaunchConfiguration(const LaunchConfiguration &launchConfiguration);
 	std::vector<LaunchConfigurationArn> getLaunchConfigurationArn() const;
 	void setLaunchConfigurationArn(const std::vector<LaunchConfigurationArn> &launchConfigurationArn);
 	bool getLaunchConfigurationPasswordInherit() const;
@@ -254,6 +274,7 @@ private:
 	std::vector<DataDiskConfig> dataDiskConfig_;
 	std::string validUntil_;
 	std::string launchTemplateId_;
+	PrePaidOptions prePaidOptions_;
 	long ownerId_;
 	std::string launchConfigurationImageFamily_;
 	int launchConfigurationSystemDiskSize_;
@@ -261,6 +282,7 @@ private:
 	std::string launchConfigurationHostName_;
 	std::string minTargetCapacity_;
 	float maxSpotPrice_;
+	LaunchConfiguration launchConfiguration_;
 	std::vector<LaunchConfigurationArn> launchConfigurationArn_;
 	bool launchConfigurationPasswordInherit_;
 	std::string clientToken_;

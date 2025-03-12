@@ -28,6 +28,9 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT DescribeRenewalPriceRequest : public RpcServiceRequest {
 public:
+	struct PromotionOptions {
+		std::string couponNo;
+	};
 	DescribeRenewalPriceRequest();
 	~DescribeRenewalPriceRequest();
 	long getResourceOwnerId() const;
@@ -50,6 +53,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
+	PromotionOptions getPromotionOptions() const;
+	void setPromotionOptions(const PromotionOptions &promotionOptions);
 
 private:
 	long resourceOwnerId_;
@@ -62,6 +67,7 @@ private:
 	int expectedRenewDay_;
 	long ownerId_;
 	std::string resourceType_;
+	PromotionOptions promotionOptions_;
 };
 } // namespace Model
 } // namespace Ecs

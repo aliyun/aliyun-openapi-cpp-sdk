@@ -792,6 +792,7 @@ void RunInstancesRequest::setNetworkInterface(const std::vector<RunInstancesRequ
     setParameter(networkInterfaceObjStr + ".NetworkInterfaceId", networkInterfaceObj.networkInterfaceId);
     setParameter(networkInterfaceObjStr + ".RxQueueSize", std::to_string(networkInterfaceObj.rxQueueSize));
     setParameter(networkInterfaceObjStr + ".TxQueueSize", std::to_string(networkInterfaceObj.txQueueSize));
+    setParameter(networkInterfaceObjStr + ".SourceDestCheck", networkInterfaceObj.sourceDestCheck ? "true" : "false");
   }
 }
 

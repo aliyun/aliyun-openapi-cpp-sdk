@@ -38,11 +38,13 @@ namespace AlibabaCloud
 				explicit AllocateDedicatedHostsResult(const std::string &payload);
 				~AllocateDedicatedHostsResult();
 				std::vector<std::string> getDedicatedHostIdSets()const;
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<std::string> dedicatedHostIdSets_;
+				std::string orderId_;
 
 			};
 		}

@@ -34,24 +34,6 @@ void AllocateDedicatedHostsRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string AllocateDedicatedHostsRequest::getClientToken() const {
-  return clientToken_;
-}
-
-void AllocateDedicatedHostsRequest::setClientToken(const std::string &clientToken) {
-  clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), clientToken);
-}
-
-std::string AllocateDedicatedHostsRequest::getDescription() const {
-  return description_;
-}
-
-void AllocateDedicatedHostsRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setParameter(std::string("Description"), description);
-}
-
 float AllocateDedicatedHostsRequest::getCpuOverCommitRatio() const {
   return cpuOverCommitRatio_;
 }
@@ -79,15 +61,6 @@ void AllocateDedicatedHostsRequest::setMinQuantity(int minQuantity) {
   setParameter(std::string("MinQuantity"), std::to_string(minQuantity));
 }
 
-std::string AllocateDedicatedHostsRequest::getRegionId() const {
-  return regionId_;
-}
-
-void AllocateDedicatedHostsRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string AllocateDedicatedHostsRequest::getActionOnMaintenance() const {
   return actionOnMaintenance_;
 }
@@ -95,15 +68,6 @@ std::string AllocateDedicatedHostsRequest::getActionOnMaintenance() const {
 void AllocateDedicatedHostsRequest::setActionOnMaintenance(const std::string &actionOnMaintenance) {
   actionOnMaintenance_ = actionOnMaintenance;
   setParameter(std::string("ActionOnMaintenance"), actionOnMaintenance);
-}
-
-std::string AllocateDedicatedHostsRequest::getDedicatedHostClusterId() const {
-  return dedicatedHostClusterId_;
-}
-
-void AllocateDedicatedHostsRequest::setDedicatedHostClusterId(const std::string &dedicatedHostClusterId) {
-  dedicatedHostClusterId_ = dedicatedHostClusterId;
-  setParameter(std::string("DedicatedHostClusterId"), dedicatedHostClusterId);
 }
 
 std::vector<AllocateDedicatedHostsRequest::Tag> AllocateDedicatedHostsRequest::getTag() const {
@@ -118,15 +82,6 @@ void AllocateDedicatedHostsRequest::setTag(const std::vector<AllocateDedicatedHo
     setParameter(tagObjStr + ".Key", tagObj.key);
     setParameter(tagObjStr + ".Value", tagObj.value);
   }
-}
-
-std::string AllocateDedicatedHostsRequest::getDedicatedHostType() const {
-  return dedicatedHostType_;
-}
-
-void AllocateDedicatedHostsRequest::setDedicatedHostType(const std::string &dedicatedHostType) {
-  dedicatedHostType_ = dedicatedHostType;
-  setParameter(std::string("DedicatedHostType"), dedicatedHostType);
 }
 
 int AllocateDedicatedHostsRequest::getAutoRenewPeriod() const {
@@ -147,15 +102,6 @@ void AllocateDedicatedHostsRequest::setPeriod(int period) {
   setParameter(std::string("Period"), std::to_string(period));
 }
 
-int AllocateDedicatedHostsRequest::getQuantity() const {
-  return quantity_;
-}
-
-void AllocateDedicatedHostsRequest::setQuantity(int quantity) {
-  quantity_ = quantity;
-  setParameter(std::string("Quantity"), std::to_string(quantity));
-}
-
 std::string AllocateDedicatedHostsRequest::getDedicatedHostName() const {
   return dedicatedHostName_;
 }
@@ -163,33 +109,6 @@ std::string AllocateDedicatedHostsRequest::getDedicatedHostName() const {
 void AllocateDedicatedHostsRequest::setDedicatedHostName(const std::string &dedicatedHostName) {
   dedicatedHostName_ = dedicatedHostName;
   setParameter(std::string("DedicatedHostName"), dedicatedHostName);
-}
-
-std::string AllocateDedicatedHostsRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void AllocateDedicatedHostsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string AllocateDedicatedHostsRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void AllocateDedicatedHostsRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
-}
-
-std::string AllocateDedicatedHostsRequest::getAutoReleaseTime() const {
-  return autoReleaseTime_;
-}
-
-void AllocateDedicatedHostsRequest::setAutoReleaseTime(const std::string &autoReleaseTime) {
-  autoReleaseTime_ = autoReleaseTime;
-  setParameter(std::string("AutoReleaseTime"), autoReleaseTime);
 }
 
 long AllocateDedicatedHostsRequest::getOwnerId() const {
@@ -201,13 +120,13 @@ void AllocateDedicatedHostsRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string AllocateDedicatedHostsRequest::getSchedulerOptionsFenceId() const {
-  return schedulerOptionsFenceId_;
+AllocateDedicatedHostsRequest::PromotionOptions AllocateDedicatedHostsRequest::getPromotionOptions() const {
+  return promotionOptions_;
 }
 
-void AllocateDedicatedHostsRequest::setSchedulerOptionsFenceId(const std::string &schedulerOptionsFenceId) {
-  schedulerOptionsFenceId_ = schedulerOptionsFenceId;
-  setParameter(std::string("SchedulerOptions.FenceId"), schedulerOptionsFenceId);
+void AllocateDedicatedHostsRequest::setPromotionOptions(const AllocateDedicatedHostsRequest::PromotionOptions &promotionOptions) {
+  promotionOptions_ = promotionOptions;
+  setParameter(std::string("PromotionOptions") + ".CouponNo", promotionOptions.couponNo);
 }
 
 std::string AllocateDedicatedHostsRequest::getPeriodUnit() const {
@@ -255,15 +174,6 @@ void AllocateDedicatedHostsRequest::setAutoPlacement(const std::string &autoPlac
   setParameter(std::string("AutoPlacement"), autoPlacement);
 }
 
-std::string AllocateDedicatedHostsRequest::getChargeType() const {
-  return chargeType_;
-}
-
-void AllocateDedicatedHostsRequest::setChargeType(const std::string &chargeType) {
-  chargeType_ = chargeType;
-  setParameter(std::string("ChargeType"), chargeType);
-}
-
 int AllocateDedicatedHostsRequest::getNetworkAttributesUdpTimeout() const {
   return networkAttributesUdpTimeout_;
 }
@@ -271,5 +181,113 @@ int AllocateDedicatedHostsRequest::getNetworkAttributesUdpTimeout() const {
 void AllocateDedicatedHostsRequest::setNetworkAttributesUdpTimeout(int networkAttributesUdpTimeout) {
   networkAttributesUdpTimeout_ = networkAttributesUdpTimeout;
   setParameter(std::string("NetworkAttributes.UdpTimeout"), std::to_string(networkAttributesUdpTimeout));
+}
+
+std::string AllocateDedicatedHostsRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void AllocateDedicatedHostsRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
+std::string AllocateDedicatedHostsRequest::getDescription() const {
+  return description_;
+}
+
+void AllocateDedicatedHostsRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
+}
+
+std::string AllocateDedicatedHostsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AllocateDedicatedHostsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string AllocateDedicatedHostsRequest::getDedicatedHostClusterId() const {
+  return dedicatedHostClusterId_;
+}
+
+void AllocateDedicatedHostsRequest::setDedicatedHostClusterId(const std::string &dedicatedHostClusterId) {
+  dedicatedHostClusterId_ = dedicatedHostClusterId;
+  setParameter(std::string("DedicatedHostClusterId"), dedicatedHostClusterId);
+}
+
+std::string AllocateDedicatedHostsRequest::getDedicatedHostType() const {
+  return dedicatedHostType_;
+}
+
+void AllocateDedicatedHostsRequest::setDedicatedHostType(const std::string &dedicatedHostType) {
+  dedicatedHostType_ = dedicatedHostType;
+  setParameter(std::string("DedicatedHostType"), dedicatedHostType);
+}
+
+int AllocateDedicatedHostsRequest::getQuantity() const {
+  return quantity_;
+}
+
+void AllocateDedicatedHostsRequest::setQuantity(int quantity) {
+  quantity_ = quantity;
+  setParameter(std::string("Quantity"), std::to_string(quantity));
+}
+
+bool AllocateDedicatedHostsRequest::getAutoPay() const {
+  return autoPay_;
+}
+
+void AllocateDedicatedHostsRequest::setAutoPay(bool autoPay) {
+  autoPay_ = autoPay;
+  setParameter(std::string("AutoPay"), autoPay ? "true" : "false");
+}
+
+std::string AllocateDedicatedHostsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void AllocateDedicatedHostsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string AllocateDedicatedHostsRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void AllocateDedicatedHostsRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+std::string AllocateDedicatedHostsRequest::getAutoReleaseTime() const {
+  return autoReleaseTime_;
+}
+
+void AllocateDedicatedHostsRequest::setAutoReleaseTime(const std::string &autoReleaseTime) {
+  autoReleaseTime_ = autoReleaseTime;
+  setParameter(std::string("AutoReleaseTime"), autoReleaseTime);
+}
+
+std::string AllocateDedicatedHostsRequest::getSchedulerOptionsFenceId() const {
+  return schedulerOptionsFenceId_;
+}
+
+void AllocateDedicatedHostsRequest::setSchedulerOptionsFenceId(const std::string &schedulerOptionsFenceId) {
+  schedulerOptionsFenceId_ = schedulerOptionsFenceId;
+  setParameter(std::string("SchedulerOptions.FenceId"), schedulerOptionsFenceId);
+}
+
+std::string AllocateDedicatedHostsRequest::getChargeType() const {
+  return chargeType_;
+}
+
+void AllocateDedicatedHostsRequest::setChargeType(const std::string &chargeType) {
+  chargeType_ = chargeType;
+  setParameter(std::string("ChargeType"), chargeType);
 }
 

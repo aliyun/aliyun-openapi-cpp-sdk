@@ -40,6 +40,7 @@ public:
 		std::string primaryIpAddress;
 		std::string instanceType;
 		std::string networkInterfaceTrafficMode;
+		bool deleteOnRelease;
 	};
 	struct DataDisk {
 		std::string performanceLevel;

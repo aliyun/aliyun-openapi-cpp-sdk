@@ -34,6 +34,15 @@ void ModifyDiskSpecRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ModifyDiskSpecRequest::getDestinationZoneId() const {
+  return destinationZoneId_;
+}
+
+void ModifyDiskSpecRequest::setDestinationZoneId(const std::string &destinationZoneId) {
+  destinationZoneId_ = destinationZoneId;
+  setParameter(std::string("DestinationZoneId"), destinationZoneId);
+}
+
 std::string ModifyDiskSpecRequest::getDiskCategory() const {
   return diskCategory_;
 }

@@ -103,6 +103,15 @@ void DescribeInstanceModificationPriceRequest::setDataDisk(const std::vector<Des
   }
 }
 
+DescribeInstanceModificationPriceRequest::PromotionOptions DescribeInstanceModificationPriceRequest::getPromotionOptions() const {
+  return promotionOptions_;
+}
+
+void DescribeInstanceModificationPriceRequest::setPromotionOptions(const DescribeInstanceModificationPriceRequest::PromotionOptions &promotionOptions) {
+  promotionOptions_ = promotionOptions;
+  setParameter(std::string("PromotionOptions") + ".CouponNo", promotionOptions.couponNo);
+}
+
 std::string DescribeInstanceModificationPriceRequest::getInstanceId() const {
   return instanceId_;
 }

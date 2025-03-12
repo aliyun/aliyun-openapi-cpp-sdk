@@ -34,11 +34,58 @@ namespace AlibabaCloud
 			public:
 				struct ImagePipelineSet
 				{
+					struct ImportImageOptions
+					{
+						struct Features
+						{
+							std::string nvmeSupport;
+						};
+						struct DiskDeviceMapping
+						{
+							std::string format;
+							std::string oSSObject;
+							int diskImageSize;
+							std::string oSSBucket;
+						};
+						std::vector<DiskDeviceMapping> diskDeviceMappings;
+						std::string architecture;
+						std::string platform;
+						std::string oSType;
+						bool retainImportedImage;
+						std::string bootMode;
+						Features features;
+						std::string licenseType;
+					};
+					struct AdvancedOptions
+					{
+						bool retainCloudAssistant;
+						std::string imageNameSuffix;
+						bool skipCheckImage;
+						bool skipBuildImage;
+					};
+					struct ImageOptions
+					{
+						struct ImageFeatures
+						{
+							std::string nvmeSupport;
+						};
+						struct ImageTag
+						{
+							std::string tagKey;
+							std::string tagValue;
+						};
+						std::string imageName;
+						ImageFeatures imageFeatures;
+						std::string description;
+						std::string imageFamily;
+						std::vector<ImageTag> imageTags;
+					};
 					struct Tag
 					{
 						std::string tagKey;
 						std::string tagValue;
 					};
+					std::string nvmeSupport;
 					std::string description;
 					std::string baseImageType;
 					std::string resourceGroupId;
@@ -49,11 +96,14 @@ namespace AlibabaCloud
 					std::vector<std::string> toRegionIds;
 					std::string repairMode;
 					std::string name;
+					AdvancedOptions advancedOptions;
 					bool deleteInstanceOnFailure;
 					std::string imageName;
 					std::vector<std::string> addAccounts;
 					int internetMaxBandwidthOut;
+					ImportImageOptions importImageOptions;
 					std::string creationTime;
+					ImageOptions imageOptions;
 					std::string instanceType;
 					std::string testContent;
 					std::vector<ImagePipelineSet::Tag> tags;

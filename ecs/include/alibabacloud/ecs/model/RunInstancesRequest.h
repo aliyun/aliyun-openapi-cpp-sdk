@@ -83,6 +83,7 @@ public:
 		std::string networkInterfaceId;
 		int rxQueueSize;
 		int txQueueSize;
+		bool sourceDestCheck;
 	};
 	struct DataDisk {
 		std::string performanceLevel;

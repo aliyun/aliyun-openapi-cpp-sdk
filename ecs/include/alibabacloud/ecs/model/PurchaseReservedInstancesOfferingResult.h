@@ -38,11 +38,13 @@ namespace AlibabaCloud
 				explicit PurchaseReservedInstancesOfferingResult(const std::string &payload);
 				~PurchaseReservedInstancesOfferingResult();
 				std::vector<std::string> getReservedInstanceIdSets()const;
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<std::string> reservedInstanceIdSets_;
+				std::string orderId_;
 
 			};
 		}

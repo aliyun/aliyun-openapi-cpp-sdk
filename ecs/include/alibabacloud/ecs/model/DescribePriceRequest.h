@@ -32,9 +32,16 @@ public:
 		std::string couponNo;
 	};
 	struct DataDisk {
+		long provisionedIops;
 		long size;
 		std::string performanceLevel;
 		std::string category;
+	};
+	struct RecurrenceRules {
+		int endHour;
+		int startHour;
+		std::string recurrenceValue;
+		std::string recurrenceType;
 	};
 	DescribePriceRequest();
 	~DescribePriceRequest();
@@ -46,6 +53,8 @@ public:
 	void setDataDisk3Category(const std::string &dataDisk3Category);
 	std::string getIsp() const;
 	void setIsp(const std::string &isp);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
 	int getDataDisk4Size() const;
 	void setDataDisk4Size(int dataDisk4Size);
 	std::string getPriceUnit() const;
@@ -130,12 +139,15 @@ public:
 	void setSystemDiskSize(int systemDiskSize);
 	std::string getOfferingType() const;
 	void setOfferingType(const std::string &offeringType);
+	std::vector<RecurrenceRules> getRecurrenceRules() const;
+	void setRecurrenceRules(const std::vector<RecurrenceRules> &recurrenceRules);
 
 private:
 	int dataDisk3Size_;
 	long resourceOwnerId_;
 	std::string dataDisk3Category_;
 	std::string isp_;
+	std::string startTime_;
 	int dataDisk4Size_;
 	std::string priceUnit_;
 	int period_;
@@ -178,6 +190,7 @@ private:
 	std::string dataDisk2PerformanceLevel_;
 	int systemDiskSize_;
 	std::string offeringType_;
+	std::vector<RecurrenceRules> recurrenceRules_;
 };
 } // namespace Model
 } // namespace Ecs

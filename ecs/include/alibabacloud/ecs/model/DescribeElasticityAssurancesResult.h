@@ -54,6 +54,13 @@ namespace AlibabaCloud
 						std::string tagKey;
 						std::string tagValue;
 					};
+					struct RecurrenceRule
+					{
+						int startHour;
+						std::string recurrenceType;
+						int endHour;
+						std::string recurrenceValue;
+					};
 					std::string status;
 					int usedAssuranceTimes;
 					std::string description;
@@ -64,11 +71,13 @@ namespace AlibabaCloud
 					std::string instanceChargeType;
 					std::string elasticityAssuranceOwnerId;
 					std::string startTime;
+					std::vector<ElasticityAssuranceItem::RecurrenceRule> recurrenceRules;
 					std::string startTimeType;
 					std::string privatePoolOptionsMatchCriteria;
 					std::vector<ElasticityAssuranceItem::AllocatedResource> allocatedResources;
 					std::string privatePoolOptionsId;
 					std::string totalAssuranceTimes;
+					std::string packageType;
 					std::string regionId;
 					std::vector<ElasticityAssuranceItem::Tag> tags;
 				};

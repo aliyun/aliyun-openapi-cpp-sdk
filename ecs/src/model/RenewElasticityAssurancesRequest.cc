@@ -60,6 +60,15 @@ void RenewElasticityAssurancesRequest::setPrivatePoolOptionsId(const std::vector
   privatePoolOptionsId_ = privatePoolOptionsId;
 }
 
+int RenewElasticityAssurancesRequest::getAutoRenewPeriod() const {
+  return autoRenewPeriod_;
+}
+
+void RenewElasticityAssurancesRequest::setAutoRenewPeriod(int autoRenewPeriod) {
+  autoRenewPeriod_ = autoRenewPeriod;
+  setParameter(std::string("AutoRenewPeriod"), std::to_string(autoRenewPeriod));
+}
+
 int RenewElasticityAssurancesRequest::getPeriod() const {
   return period_;
 }
@@ -112,5 +121,14 @@ std::string RenewElasticityAssurancesRequest::getPeriodUnit() const {
 void RenewElasticityAssurancesRequest::setPeriodUnit(const std::string &periodUnit) {
   periodUnit_ = periodUnit;
   setParameter(std::string("PeriodUnit"), periodUnit);
+}
+
+bool RenewElasticityAssurancesRequest::getAutoRenew() const {
+  return autoRenew_;
+}
+
+void RenewElasticityAssurancesRequest::setAutoRenew(bool autoRenew) {
+  autoRenew_ = autoRenew;
+  setParameter(std::string("AutoRenew"), autoRenew ? "true" : "false");
 }
 

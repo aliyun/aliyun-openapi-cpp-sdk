@@ -79,3 +79,12 @@ void RedeployDedicatedHostRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string RedeployDedicatedHostRequest::getMigrationType() const {
+  return migrationType_;
+}
+
+void RedeployDedicatedHostRequest::setMigrationType(const std::string &migrationType) {
+  migrationType_ = migrationType;
+  setParameter(std::string("MigrationType"), migrationType);
+}
+

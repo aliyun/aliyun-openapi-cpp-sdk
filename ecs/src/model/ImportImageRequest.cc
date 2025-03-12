@@ -52,6 +52,15 @@ void ImportImageRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ImportImageRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void ImportImageRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
 std::string ImportImageRequest::getDescription() const {
   return description_;
 }
@@ -86,6 +95,7 @@ ImportImageRequest::Features ImportImageRequest::getFeatures() const {
 void ImportImageRequest::setFeatures(const ImportImageRequest::Features &features) {
   features_ = features;
   setParameter(std::string("Features") + ".NvmeSupport", features.nvmeSupport);
+  setParameter(std::string("Features") + ".ImdsSupport", features.imdsSupport);
 }
 
 std::string ImportImageRequest::getBootMode() const {

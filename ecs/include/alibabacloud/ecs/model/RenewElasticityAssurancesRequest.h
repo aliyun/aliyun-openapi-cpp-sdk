@@ -38,6 +38,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::vector<std::string> getPrivatePoolOptionsId() const;
 	void setPrivatePoolOptionsId(const std::vector<std::string> &privatePoolOptionsId);
+	int getAutoRenewPeriod() const;
+	void setAutoRenewPeriod(int autoRenewPeriod);
 	int getPeriod() const;
 	void setPeriod(int period);
 	bool getAutoPay() const;
@@ -50,18 +52,22 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getPeriodUnit() const;
 	void setPeriodUnit(const std::string &periodUnit);
+	bool getAutoRenew() const;
+	void setAutoRenew(bool autoRenew);
 
 private:
 	long resourceOwnerId_;
 	std::string clientToken_;
 	std::string regionId_;
 	std::vector<std::string> privatePoolOptionsId_;
+	int autoRenewPeriod_;
 	int period_;
 	bool autoPay_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string periodUnit_;
+	bool autoRenew_;
 };
 } // namespace Model
 } // namespace Ecs

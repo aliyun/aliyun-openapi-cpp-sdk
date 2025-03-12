@@ -42,11 +42,18 @@ void PurchaseReservedInstancesOfferingResult::parse(const std::string &payload)
 	auto allReservedInstanceIdSets = value["ReservedInstanceIdSets"]["ReservedInstanceId"];
 	for (const auto &item : allReservedInstanceIdSets)
 		reservedInstanceIdSets_.push_back(item.asString());
+	if(!value["OrderId"].isNull())
+		orderId_ = value["OrderId"].asString();
 
 }
 
 std::vector<std::string> PurchaseReservedInstancesOfferingResult::getReservedInstanceIdSets()const
 {
 	return reservedInstanceIdSets_;
+}
+
+std::string PurchaseReservedInstancesOfferingResult::getOrderId()const
+{
+	return orderId_;
 }
 

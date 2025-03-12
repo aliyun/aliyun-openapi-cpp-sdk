@@ -36,10 +36,88 @@ namespace AlibabaCloud
 				{
 					struct Price
 					{
+						struct DepreciateInfo
+						{
+							float cheapStandardPrice;
+							float cheapRate;
+							std::string differentialName;
+							float monthPrice;
+							float originalStandardPrice;
+							float differentialPrice;
+							std::string startTime;
+							bool isShow;
+							float listPrice;
+						};
+						struct Coupon
+						{
+							std::string couponNo;
+							float discountOff;
+							std::string description;
+							bool isSelected;
+							std::vector<std::string> ruleIds;
+							std::string optionCode;
+							std::string name;
+						};
+						struct DetailInfo
+						{
+							struct DepreciateInfo1
+							{
+								float cheapStandardPrice;
+								float cheapRate;
+								std::string differentialName;
+								float monthPrice;
+								float originalStandardPrice;
+								float differentialPrice;
+								std::string startTime;
+								bool isShow;
+								float listPrice;
+							};
+							struct Rule2
+							{
+								std::string description;
+								long ruleId;
+							};
+							struct Attribute
+							{
+								std::string value;
+								std::string code;
+							};
+							float originalPrice;
+							float discountPrice;
+							std::vector<DetailInfo::Rule2> subRules;
+							std::vector<DetailInfo::Attribute> attributes;
+							std::string resource;
+							DepreciateInfo1 depreciateInfo1;
+							float standardPrice;
+							float standardDiscountPrice;
+							float tradePrice;
+							bool isContractPromotion;
+						};
+						struct Promotion
+						{
+							float discountOff;
+							std::vector<std::string> ruleIds3;
+							std::string type;
+							float remainQuota;
+							std::string name;
+						};
 						float originalPrice;
+						std::vector<Promotion> promotions;
 						float discountPrice;
 						std::string currency;
+						float standardPrice;
+						float standardDiscountPrice;
+						std::vector<std::string> ruleIdSet;
+						std::vector<DetailInfo> detailInfos;
 						float tradePrice;
+						std::vector<Coupon> coupons;
+						bool isContractPromotion;
+						DepreciateInfo depreciateInfo;
+					};
+					struct PriceWarning
+					{
+						std::string msg;
+						std::string code;
 					};
 					struct Rule
 					{
@@ -47,6 +125,7 @@ namespace AlibabaCloud
 						long ruleId;
 					};
 					Price price;
+					PriceWarning priceWarning;
 					std::vector<Rule> rules;
 				};
 

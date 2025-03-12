@@ -25,6 +25,15 @@ DescribeSavingsPlanPriceRequest::DescribeSavingsPlanPriceRequest()
 
 DescribeSavingsPlanPriceRequest::~DescribeSavingsPlanPriceRequest() {}
 
+std::string DescribeSavingsPlanPriceRequest::getInstanceTypeFamilyGroup() const {
+  return instanceTypeFamilyGroup_;
+}
+
+void DescribeSavingsPlanPriceRequest::setInstanceTypeFamilyGroup(const std::string &instanceTypeFamilyGroup) {
+  instanceTypeFamilyGroup_ = instanceTypeFamilyGroup;
+  setParameter(std::string("InstanceTypeFamilyGroup"), instanceTypeFamilyGroup);
+}
+
 int DescribeSavingsPlanPriceRequest::getPeriod() const {
   return period_;
 }
