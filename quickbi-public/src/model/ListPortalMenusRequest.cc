@@ -43,15 +43,6 @@ void ListPortalMenusRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string ListPortalMenusRequest::getSignType() const {
-  return signType_;
-}
-
-void ListPortalMenusRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string ListPortalMenusRequest::getUserId() const {
   return userId_;
 }
@@ -59,5 +50,14 @@ std::string ListPortalMenusRequest::getUserId() const {
 void ListPortalMenusRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+std::string ListPortalMenusRequest::getSignType() const {
+  return signType_;
+}
+
+void ListPortalMenusRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 

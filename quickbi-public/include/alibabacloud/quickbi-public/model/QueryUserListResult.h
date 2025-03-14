@@ -36,14 +36,15 @@ namespace AlibabaCloud
 				{
 					struct DataItem
 					{
-						long lastLoginTime;
-						std::vector<std::string> roleIdList;
+						bool isDeleted;
 						std::string accountId;
 						std::string email;
+						std::string nickName;
+						long lastLoginTime;
+						std::vector<std::string> roleIdList;
 						std::string phone;
 						std::string userId;
 						bool adminUser;
-						std::string nickName;
 						long joinedDate;
 						int userType;
 						bool authAdminUser;

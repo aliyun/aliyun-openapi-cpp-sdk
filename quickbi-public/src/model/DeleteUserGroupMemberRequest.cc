@@ -34,6 +34,15 @@ void DeleteUserGroupMemberRequest::setAccessPoint(const std::string &accessPoint
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
+std::string DeleteUserGroupMemberRequest::getUserId() const {
+  return userId_;
+}
+
+void DeleteUserGroupMemberRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
+}
+
 std::string DeleteUserGroupMemberRequest::getUserGroupId() const {
   return userGroupId_;
 }
@@ -50,14 +59,5 @@ std::string DeleteUserGroupMemberRequest::getSignType() const {
 void DeleteUserGroupMemberRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
-}
-
-std::string DeleteUserGroupMemberRequest::getUserId() const {
-  return userId_;
-}
-
-void DeleteUserGroupMemberRequest::setUserId(const std::string &userId) {
-  userId_ = userId;
-  setParameter(std::string("UserId"), userId);
 }
 

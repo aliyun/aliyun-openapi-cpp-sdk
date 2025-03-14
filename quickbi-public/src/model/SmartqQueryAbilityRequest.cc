@@ -34,15 +34,6 @@ void SmartqQueryAbilityRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string SmartqQueryAbilityRequest::getSignType() const {
-  return signType_;
-}
-
-void SmartqQueryAbilityRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string SmartqQueryAbilityRequest::getUserId() const {
   return userId_;
 }
@@ -68,5 +59,14 @@ std::string SmartqQueryAbilityRequest::getCubeId() const {
 void SmartqQueryAbilityRequest::setCubeId(const std::string &cubeId) {
   cubeId_ = cubeId;
   setParameter(std::string("CubeId"), cubeId);
+}
+
+std::string SmartqQueryAbilityRequest::getSignType() const {
+  return signType_;
+}
+
+void SmartqQueryAbilityRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 

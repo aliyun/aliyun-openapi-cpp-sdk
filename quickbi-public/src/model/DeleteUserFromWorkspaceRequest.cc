@@ -34,15 +34,6 @@ void DeleteUserFromWorkspaceRequest::setAccessPoint(const std::string &accessPoi
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string DeleteUserFromWorkspaceRequest::getSignType() const {
-  return signType_;
-}
-
-void DeleteUserFromWorkspaceRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string DeleteUserFromWorkspaceRequest::getUserId() const {
   return userId_;
 }
@@ -50,6 +41,15 @@ std::string DeleteUserFromWorkspaceRequest::getUserId() const {
 void DeleteUserFromWorkspaceRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+std::string DeleteUserFromWorkspaceRequest::getSignType() const {
+  return signType_;
+}
+
+void DeleteUserFromWorkspaceRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 std::string DeleteUserFromWorkspaceRequest::getWorkspaceId() const {

@@ -30,23 +30,23 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT UpdateUserTagValueRequest : public RpcS
 public:
 	UpdateUserTagValueRequest();
 	~UpdateUserTagValueRequest();
+	std::string getAccessPoint() const;
+	void setAccessPoint(const std::string &accessPoint);
+	std::string getUserId() const;
+	void setUserId(const std::string &userId);
 	std::string getTagValue() const;
 	void setTagValue(const std::string &tagValue);
 	std::string getTagId() const;
 	void setTagId(const std::string &tagId);
-	std::string getAccessPoint() const;
-	void setAccessPoint(const std::string &accessPoint);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
-	std::string getUserId() const;
-	void setUserId(const std::string &userId);
 
 private:
+	std::string accessPoint_;
+	std::string userId_;
 	std::string tagValue_;
 	std::string tagId_;
-	std::string accessPoint_;
 	std::string signType_;
-	std::string userId_;
 };
 } // namespace Model
 } // namespace Quickbi_public

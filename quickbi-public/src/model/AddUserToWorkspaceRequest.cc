@@ -43,15 +43,6 @@ void AddUserToWorkspaceRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string AddUserToWorkspaceRequest::getSignType() const {
-  return signType_;
-}
-
-void AddUserToWorkspaceRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string AddUserToWorkspaceRequest::getUserId() const {
   return userId_;
 }
@@ -59,6 +50,15 @@ std::string AddUserToWorkspaceRequest::getUserId() const {
 void AddUserToWorkspaceRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+std::string AddUserToWorkspaceRequest::getSignType() const {
+  return signType_;
+}
+
+void AddUserToWorkspaceRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 std::string AddUserToWorkspaceRequest::getWorkspaceId() const {

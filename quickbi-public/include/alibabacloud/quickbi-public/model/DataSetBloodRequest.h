@@ -30,23 +30,23 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT DataSetBloodRequest : public RpcService
 public:
 	DataSetBloodRequest();
 	~DataSetBloodRequest();
+	std::string getAccessPoint() const;
+	void setAccessPoint(const std::string &accessPoint);
+	std::string getUserId() const;
+	void setUserId(const std::string &userId);
 	std::string getDataSetIds() const;
 	void setDataSetIds(const std::string &dataSetIds);
 	std::string getWorksType() const;
 	void setWorksType(const std::string &worksType);
-	std::string getAccessPoint() const;
-	void setAccessPoint(const std::string &accessPoint);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
-	std::string getUserId() const;
-	void setUserId(const std::string &userId);
 
 private:
+	std::string accessPoint_;
+	std::string userId_;
 	std::string dataSetIds_;
 	std::string worksType_;
-	std::string accessPoint_;
 	std::string signType_;
-	std::string userId_;
 };
 } // namespace Model
 } // namespace Quickbi_public

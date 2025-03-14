@@ -32,21 +32,21 @@ public:
 	~SetDataLevelPermissionExtraConfigRequest();
 	std::string getMissHitPolicy() const;
 	void setMissHitPolicy(const std::string &missHitPolicy);
-	std::string getRuleType() const;
-	void setRuleType(const std::string &ruleType);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	std::string getCubeId() const;
 	void setCubeId(const std::string &cubeId);
+	std::string getRuleType() const;
+	void setRuleType(const std::string &ruleType);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 
 private:
 	std::string missHitPolicy_;
-	std::string ruleType_;
 	std::string accessPoint_;
-	std::string signType_;
 	std::string cubeId_;
+	std::string ruleType_;
+	std::string signType_;
 };
 } // namespace Model
 } // namespace Quickbi_public

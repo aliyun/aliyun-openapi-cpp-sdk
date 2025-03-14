@@ -32,21 +32,21 @@ public:
 	~SmartqQueryAbilityRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
 	std::string getUserQuestion() const;
 	void setUserQuestion(const std::string &userQuestion);
 	std::string getCubeId() const;
 	void setCubeId(const std::string &cubeId);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 
 private:
 	std::string accessPoint_;
-	std::string signType_;
 	std::string userId_;
 	std::string userQuestion_;
 	std::string cubeId_;
+	std::string signType_;
 };
 } // namespace Model
 } // namespace Quickbi_public

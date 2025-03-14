@@ -25,15 +25,6 @@ DeleteUserRequest::DeleteUserRequest()
 
 DeleteUserRequest::~DeleteUserRequest() {}
 
-std::string DeleteUserRequest::getTransferUserId() const {
-  return transferUserId_;
-}
-
-void DeleteUserRequest::setTransferUserId(const std::string &transferUserId) {
-  transferUserId_ = transferUserId;
-  setParameter(std::string("TransferUserId"), transferUserId);
-}
-
 std::string DeleteUserRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -43,15 +34,6 @@ void DeleteUserRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string DeleteUserRequest::getSignType() const {
-  return signType_;
-}
-
-void DeleteUserRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string DeleteUserRequest::getUserId() const {
   return userId_;
 }
@@ -59,5 +41,23 @@ std::string DeleteUserRequest::getUserId() const {
 void DeleteUserRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+std::string DeleteUserRequest::getTransferUserId() const {
+  return transferUserId_;
+}
+
+void DeleteUserRequest::setTransferUserId(const std::string &transferUserId) {
+  transferUserId_ = transferUserId;
+  setParameter(std::string("TransferUserId"), transferUserId);
+}
+
+std::string DeleteUserRequest::getSignType() const {
+  return signType_;
+}
+
+void DeleteUserRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 

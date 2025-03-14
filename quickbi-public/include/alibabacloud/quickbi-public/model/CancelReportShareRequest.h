@@ -34,18 +34,18 @@ public:
 	void setReportId(const std::string &reportId);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	std::string getShareToIds() const;
 	void setShareToIds(const std::string &shareToIds);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 	int getShareToType() const;
 	void setShareToType(int shareToType);
 
 private:
 	std::string reportId_;
 	std::string accessPoint_;
-	std::string signType_;
 	std::string shareToIds_;
+	std::string signType_;
 	int shareToType_;
 };
 } // namespace Model

@@ -25,6 +25,24 @@ UpdateUserTagValueRequest::UpdateUserTagValueRequest()
 
 UpdateUserTagValueRequest::~UpdateUserTagValueRequest() {}
 
+std::string UpdateUserTagValueRequest::getAccessPoint() const {
+  return accessPoint_;
+}
+
+void UpdateUserTagValueRequest::setAccessPoint(const std::string &accessPoint) {
+  accessPoint_ = accessPoint;
+  setParameter(std::string("AccessPoint"), accessPoint);
+}
+
+std::string UpdateUserTagValueRequest::getUserId() const {
+  return userId_;
+}
+
+void UpdateUserTagValueRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
+}
+
 std::string UpdateUserTagValueRequest::getTagValue() const {
   return tagValue_;
 }
@@ -43,15 +61,6 @@ void UpdateUserTagValueRequest::setTagId(const std::string &tagId) {
   setParameter(std::string("TagId"), tagId);
 }
 
-std::string UpdateUserTagValueRequest::getAccessPoint() const {
-  return accessPoint_;
-}
-
-void UpdateUserTagValueRequest::setAccessPoint(const std::string &accessPoint) {
-  accessPoint_ = accessPoint;
-  setParameter(std::string("AccessPoint"), accessPoint);
-}
-
 std::string UpdateUserTagValueRequest::getSignType() const {
   return signType_;
 }
@@ -59,14 +68,5 @@ std::string UpdateUserTagValueRequest::getSignType() const {
 void UpdateUserTagValueRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
-}
-
-std::string UpdateUserTagValueRequest::getUserId() const {
-  return userId_;
-}
-
-void UpdateUserTagValueRequest::setUserId(const std::string &userId) {
-  userId_ = userId;
-  setParameter(std::string("UserId"), userId);
 }
 

@@ -32,20 +32,20 @@ public:
 	~ResultCallbackRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	std::string getHandleReason() const;
 	void setHandleReason(const std::string &handleReason);
 	std::string getApplicationId() const;
 	void setApplicationId(const std::string &applicationId);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 	int getStatus() const;
 	void setStatus(int status);
 
 private:
 	std::string accessPoint_;
-	std::string signType_;
 	std::string handleReason_;
 	std::string applicationId_;
+	std::string signType_;
 	int status_;
 };
 } // namespace Model

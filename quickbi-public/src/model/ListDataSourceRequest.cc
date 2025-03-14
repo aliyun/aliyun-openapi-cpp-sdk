@@ -25,15 +25,6 @@ ListDataSourceRequest::ListDataSourceRequest()
 
 ListDataSourceRequest::~ListDataSourceRequest() {}
 
-std::string ListDataSourceRequest::getDsType() const {
-  return dsType_;
-}
-
-void ListDataSourceRequest::setDsType(const std::string &dsType) {
-  dsType_ = dsType;
-  setParameter(std::string("DsType"), dsType);
-}
-
 std::string ListDataSourceRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -41,6 +32,15 @@ std::string ListDataSourceRequest::getAccessPoint() const {
 void ListDataSourceRequest::setAccessPoint(const std::string &accessPoint) {
   accessPoint_ = accessPoint;
   setParameter(std::string("AccessPoint"), accessPoint);
+}
+
+std::string ListDataSourceRequest::getDsType() const {
+  return dsType_;
+}
+
+void ListDataSourceRequest::setDsType(const std::string &dsType) {
+  dsType_ = dsType;
+  setParameter(std::string("DsType"), dsType);
 }
 
 std::string ListDataSourceRequest::getSignType() const {

@@ -32,21 +32,21 @@ public:
 	~ChangeVisibilityModelRequest();
 	std::string getDataPortalId() const;
 	void setDataPortalId(const std::string &dataPortalId);
-	bool getShowOnlyWithAccess() const;
-	void setShowOnlyWithAccess(bool showOnlyWithAccess);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	std::string getMenuIds() const;
 	void setMenuIds(const std::string &menuIds);
+	bool getShowOnlyWithAccess() const;
+	void setShowOnlyWithAccess(bool showOnlyWithAccess);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 
 private:
 	std::string dataPortalId_;
-	bool showOnlyWithAccess_;
 	std::string accessPoint_;
-	std::string signType_;
 	std::string menuIds_;
+	bool showOnlyWithAccess_;
+	std::string signType_;
 };
 } // namespace Model
 } // namespace Quickbi_public

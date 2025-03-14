@@ -34,15 +34,6 @@ void GetMailTaskStatusRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string GetMailTaskStatusRequest::getSignType() const {
-  return signType_;
-}
-
-void GetMailTaskStatusRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string GetMailTaskStatusRequest::getMailId() const {
   return mailId_;
 }
@@ -59,5 +50,14 @@ long GetMailTaskStatusRequest::getTaskId() const {
 void GetMailTaskStatusRequest::setTaskId(long taskId) {
   taskId_ = taskId;
   setParameter(std::string("TaskId"), std::to_string(taskId));
+}
+
+std::string GetMailTaskStatusRequest::getSignType() const {
+  return signType_;
+}
+
+void GetMailTaskStatusRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 

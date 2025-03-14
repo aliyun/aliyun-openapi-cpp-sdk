@@ -74,6 +74,8 @@ void QueryUserListResult::parse(const std::string &payload)
 			dataItemObject.userId = resultNodeDataDataItem["UserId"].asString();
 		if(!resultNodeDataDataItem["UserType"].isNull())
 			dataItemObject.userType = std::stoi(resultNodeDataDataItem["UserType"].asString());
+		if(!resultNodeDataDataItem["IsDeleted"].isNull())
+			dataItemObject.isDeleted = resultNodeDataDataItem["IsDeleted"].asString() == "true";
 		auto allRoleIdList = value["RoleIdList"]["roleIdList"];
 		for (auto value : allRoleIdList)
 			dataItemObject.roleIdList.push_back(value.asString());

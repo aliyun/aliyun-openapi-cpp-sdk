@@ -34,6 +34,15 @@ void QueryUserGroupMemberRequest::setAccessPoint(const std::string &accessPoint)
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
+std::string QueryUserGroupMemberRequest::getKeyword() const {
+  return keyword_;
+}
+
+void QueryUserGroupMemberRequest::setKeyword(const std::string &keyword) {
+  keyword_ = keyword;
+  setParameter(std::string("Keyword"), keyword);
+}
+
 std::string QueryUserGroupMemberRequest::getUserGroupId() const {
   return userGroupId_;
 }
@@ -50,14 +59,5 @@ std::string QueryUserGroupMemberRequest::getSignType() const {
 void QueryUserGroupMemberRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
-}
-
-std::string QueryUserGroupMemberRequest::getKeyword() const {
-  return keyword_;
-}
-
-void QueryUserGroupMemberRequest::setKeyword(const std::string &keyword) {
-  keyword_ = keyword;
-  setParameter(std::string("Keyword"), keyword);
 }
 

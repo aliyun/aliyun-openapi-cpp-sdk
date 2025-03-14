@@ -25,6 +25,15 @@ DelayTicketExpireTimeRequest::DelayTicketExpireTimeRequest()
 
 DelayTicketExpireTimeRequest::~DelayTicketExpireTimeRequest() {}
 
+std::string DelayTicketExpireTimeRequest::getAccessPoint() const {
+  return accessPoint_;
+}
+
+void DelayTicketExpireTimeRequest::setAccessPoint(const std::string &accessPoint) {
+  accessPoint_ = accessPoint;
+  setParameter(std::string("AccessPoint"), accessPoint);
+}
+
 int DelayTicketExpireTimeRequest::getExpireTime() const {
   return expireTime_;
 }
@@ -41,15 +50,6 @@ std::string DelayTicketExpireTimeRequest::getTicket() const {
 void DelayTicketExpireTimeRequest::setTicket(const std::string &ticket) {
   ticket_ = ticket;
   setParameter(std::string("Ticket"), ticket);
-}
-
-std::string DelayTicketExpireTimeRequest::getAccessPoint() const {
-  return accessPoint_;
-}
-
-void DelayTicketExpireTimeRequest::setAccessPoint(const std::string &accessPoint) {
-  accessPoint_ = accessPoint;
-  setParameter(std::string("AccessPoint"), accessPoint);
 }
 
 std::string DelayTicketExpireTimeRequest::getSignType() const {

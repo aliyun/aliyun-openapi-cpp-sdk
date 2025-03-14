@@ -32,18 +32,18 @@ public:
 	~DeleteDataLevelRuleConfigRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
+	std::string getCubeId() const;
+	void setCubeId(const std::string &cubeId);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
 	std::string getRuleId() const;
 	void setRuleId(const std::string &ruleId);
-	std::string getCubeId() const;
-	void setCubeId(const std::string &cubeId);
 
 private:
 	std::string accessPoint_;
+	std::string cubeId_;
 	std::string signType_;
 	std::string ruleId_;
-	std::string cubeId_;
 };
 } // namespace Model
 } // namespace Quickbi_public

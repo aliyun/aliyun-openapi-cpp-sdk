@@ -32,18 +32,18 @@ public:
 	~QueryDataRangeRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	std::string getType() const;
 	void setType(const std::string &type);
 	std::string getKeyword() const;
 	void setKeyword(const std::string &keyword);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 
 private:
 	std::string accessPoint_;
-	std::string signType_;
 	std::string type_;
 	std::string keyword_;
+	std::string signType_;
 };
 } // namespace Model
 } // namespace Quickbi_public

@@ -34,16 +34,16 @@ public:
 	void setDataPortalId(const std::string &dataPortalId);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 
 private:
 	std::string dataPortalId_;
 	std::string accessPoint_;
-	std::string signType_;
 	std::string userId_;
+	std::string signType_;
 };
 } // namespace Model
 } // namespace Quickbi_public

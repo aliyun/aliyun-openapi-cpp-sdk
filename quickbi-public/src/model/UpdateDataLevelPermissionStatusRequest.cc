@@ -34,15 +34,6 @@ void UpdateDataLevelPermissionStatusRequest::setIsOpen(int isOpen) {
   setParameter(std::string("IsOpen"), std::to_string(isOpen));
 }
 
-std::string UpdateDataLevelPermissionStatusRequest::getRuleType() const {
-  return ruleType_;
-}
-
-void UpdateDataLevelPermissionStatusRequest::setRuleType(const std::string &ruleType) {
-  ruleType_ = ruleType;
-  setParameter(std::string("RuleType"), ruleType);
-}
-
 std::string UpdateDataLevelPermissionStatusRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -52,15 +43,6 @@ void UpdateDataLevelPermissionStatusRequest::setAccessPoint(const std::string &a
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string UpdateDataLevelPermissionStatusRequest::getSignType() const {
-  return signType_;
-}
-
-void UpdateDataLevelPermissionStatusRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string UpdateDataLevelPermissionStatusRequest::getCubeId() const {
   return cubeId_;
 }
@@ -68,5 +50,23 @@ std::string UpdateDataLevelPermissionStatusRequest::getCubeId() const {
 void UpdateDataLevelPermissionStatusRequest::setCubeId(const std::string &cubeId) {
   cubeId_ = cubeId;
   setParameter(std::string("CubeId"), cubeId);
+}
+
+std::string UpdateDataLevelPermissionStatusRequest::getRuleType() const {
+  return ruleType_;
+}
+
+void UpdateDataLevelPermissionStatusRequest::setRuleType(const std::string &ruleType) {
+  ruleType_ = ruleType;
+  setParameter(std::string("RuleType"), ruleType);
+}
+
+std::string UpdateDataLevelPermissionStatusRequest::getSignType() const {
+  return signType_;
+}
+
+void UpdateDataLevelPermissionStatusRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 

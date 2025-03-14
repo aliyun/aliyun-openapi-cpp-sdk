@@ -32,18 +32,18 @@ public:
 	~DeleteUserGroupMemberRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
+	std::string getUserId() const;
+	void setUserId(const std::string &userId);
 	std::string getUserGroupId() const;
 	void setUserGroupId(const std::string &userGroupId);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
-	std::string getUserId() const;
-	void setUserId(const std::string &userId);
 
 private:
 	std::string accessPoint_;
+	std::string userId_;
 	std::string userGroupId_;
 	std::string signType_;
-	std::string userId_;
 };
 } // namespace Model
 } // namespace Quickbi_public

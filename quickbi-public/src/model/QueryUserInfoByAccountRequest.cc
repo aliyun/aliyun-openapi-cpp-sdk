@@ -43,15 +43,6 @@ void QueryUserInfoByAccountRequest::setAccountType(int accountType) {
   setParameter(std::string("AccountType"), std::to_string(accountType));
 }
 
-std::string QueryUserInfoByAccountRequest::getSignType() const {
-  return signType_;
-}
-
-void QueryUserInfoByAccountRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string QueryUserInfoByAccountRequest::getParentAccountName() const {
   return parentAccountName_;
 }
@@ -59,6 +50,15 @@ std::string QueryUserInfoByAccountRequest::getParentAccountName() const {
 void QueryUserInfoByAccountRequest::setParentAccountName(const std::string &parentAccountName) {
   parentAccountName_ = parentAccountName;
   setParameter(std::string("ParentAccountName"), parentAccountName);
+}
+
+std::string QueryUserInfoByAccountRequest::getSignType() const {
+  return signType_;
+}
+
+void QueryUserInfoByAccountRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 std::string QueryUserInfoByAccountRequest::getAccount() const {

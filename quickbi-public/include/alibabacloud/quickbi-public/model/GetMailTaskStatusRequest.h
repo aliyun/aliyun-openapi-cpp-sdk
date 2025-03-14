@@ -32,18 +32,18 @@ public:
 	~GetMailTaskStatusRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	std::string getMailId() const;
 	void setMailId(const std::string &mailId);
 	long getTaskId() const;
 	void setTaskId(long taskId);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 
 private:
 	std::string accessPoint_;
-	std::string signType_;
 	std::string mailId_;
 	long taskId_;
+	std::string signType_;
 };
 } // namespace Model
 } // namespace Quickbi_public

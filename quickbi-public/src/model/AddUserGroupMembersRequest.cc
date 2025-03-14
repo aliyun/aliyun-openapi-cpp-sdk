@@ -34,6 +34,15 @@ void AddUserGroupMembersRequest::setAccessPoint(const std::string &accessPoint) 
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
+std::string AddUserGroupMembersRequest::getUserId() const {
+  return userId_;
+}
+
+void AddUserGroupMembersRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
+}
+
 std::string AddUserGroupMembersRequest::getSignType() const {
   return signType_;
 }
@@ -50,14 +59,5 @@ std::string AddUserGroupMembersRequest::getUserGroupIds() const {
 void AddUserGroupMembersRequest::setUserGroupIds(const std::string &userGroupIds) {
   userGroupIds_ = userGroupIds;
   setParameter(std::string("UserGroupIds"), userGroupIds);
-}
-
-std::string AddUserGroupMembersRequest::getUserId() const {
-  return userId_;
-}
-
-void AddUserGroupMembersRequest::setUserId(const std::string &userId) {
-  userId_ = userId;
-  setParameter(std::string("UserId"), userId);
 }
 

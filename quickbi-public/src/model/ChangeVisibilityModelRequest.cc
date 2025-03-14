@@ -34,15 +34,6 @@ void ChangeVisibilityModelRequest::setDataPortalId(const std::string &dataPortal
   setParameter(std::string("DataPortalId"), dataPortalId);
 }
 
-bool ChangeVisibilityModelRequest::getShowOnlyWithAccess() const {
-  return showOnlyWithAccess_;
-}
-
-void ChangeVisibilityModelRequest::setShowOnlyWithAccess(bool showOnlyWithAccess) {
-  showOnlyWithAccess_ = showOnlyWithAccess;
-  setParameter(std::string("ShowOnlyWithAccess"), showOnlyWithAccess ? "true" : "false");
-}
-
 std::string ChangeVisibilityModelRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -52,15 +43,6 @@ void ChangeVisibilityModelRequest::setAccessPoint(const std::string &accessPoint
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string ChangeVisibilityModelRequest::getSignType() const {
-  return signType_;
-}
-
-void ChangeVisibilityModelRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string ChangeVisibilityModelRequest::getMenuIds() const {
   return menuIds_;
 }
@@ -68,5 +50,23 @@ std::string ChangeVisibilityModelRequest::getMenuIds() const {
 void ChangeVisibilityModelRequest::setMenuIds(const std::string &menuIds) {
   menuIds_ = menuIds;
   setParameter(std::string("MenuIds"), menuIds);
+}
+
+bool ChangeVisibilityModelRequest::getShowOnlyWithAccess() const {
+  return showOnlyWithAccess_;
+}
+
+void ChangeVisibilityModelRequest::setShowOnlyWithAccess(bool showOnlyWithAccess) {
+  showOnlyWithAccess_ = showOnlyWithAccess;
+  setParameter(std::string("ShowOnlyWithAccess"), showOnlyWithAccess ? "true" : "false");
+}
+
+std::string ChangeVisibilityModelRequest::getSignType() const {
+  return signType_;
+}
+
+void ChangeVisibilityModelRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 

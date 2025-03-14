@@ -32,20 +32,20 @@ public:
 	~UpdateUserGroupRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
+	std::string getUserGroupName() const;
+	void setUserGroupName(const std::string &userGroupName);
 	std::string getUserGroupId() const;
 	void setUserGroupId(const std::string &userGroupId);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
-	std::string getUserGroupName() const;
-	void setUserGroupName(const std::string &userGroupName);
 	std::string getUserGroupDescription() const;
 	void setUserGroupDescription(const std::string &userGroupDescription);
 
 private:
 	std::string accessPoint_;
+	std::string userGroupName_;
 	std::string userGroupId_;
 	std::string signType_;
-	std::string userGroupName_;
 	std::string userGroupDescription_;
 };
 } // namespace Model

@@ -30,19 +30,19 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT DelayTicketExpireTimeRequest : public R
 public:
 	DelayTicketExpireTimeRequest();
 	~DelayTicketExpireTimeRequest();
+	std::string getAccessPoint() const;
+	void setAccessPoint(const std::string &accessPoint);
 	int getExpireTime() const;
 	void setExpireTime(int expireTime);
 	std::string getTicket() const;
 	void setTicket(const std::string &ticket);
-	std::string getAccessPoint() const;
-	void setAccessPoint(const std::string &accessPoint);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
 
 private:
+	std::string accessPoint_;
 	int expireTime_;
 	std::string ticket_;
-	std::string accessPoint_;
 	std::string signType_;
 };
 } // namespace Model

@@ -34,15 +34,6 @@ void CheckReadableRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string CheckReadableRequest::getSignType() const {
-  return signType_;
-}
-
-void CheckReadableRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string CheckReadableRequest::getUserId() const {
   return userId_;
 }
@@ -50,6 +41,15 @@ std::string CheckReadableRequest::getUserId() const {
 void CheckReadableRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+std::string CheckReadableRequest::getSignType() const {
+  return signType_;
+}
+
+void CheckReadableRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 std::string CheckReadableRequest::getWorksId() const {

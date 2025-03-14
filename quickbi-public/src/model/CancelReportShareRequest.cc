@@ -43,15 +43,6 @@ void CancelReportShareRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string CancelReportShareRequest::getSignType() const {
-  return signType_;
-}
-
-void CancelReportShareRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string CancelReportShareRequest::getShareToIds() const {
   return shareToIds_;
 }
@@ -59,6 +50,15 @@ std::string CancelReportShareRequest::getShareToIds() const {
 void CancelReportShareRequest::setShareToIds(const std::string &shareToIds) {
   shareToIds_ = shareToIds;
   setParameter(std::string("ShareToIds"), shareToIds);
+}
+
+std::string CancelReportShareRequest::getSignType() const {
+  return signType_;
+}
+
+void CancelReportShareRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 int CancelReportShareRequest::getShareToType() const {

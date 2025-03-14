@@ -30,18 +30,18 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT ListDataSourceRequest : public RpcServi
 public:
 	ListDataSourceRequest();
 	~ListDataSourceRequest();
-	std::string getDsType() const;
-	void setDsType(const std::string &dsType);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
+	std::string getDsType() const;
+	void setDsType(const std::string &dsType);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
 	std::string getWorkspaceId() const;
 	void setWorkspaceId(const std::string &workspaceId);
 
 private:
-	std::string dsType_;
 	std::string accessPoint_;
+	std::string dsType_;
 	std::string signType_;
 	std::string workspaceId_;
 };

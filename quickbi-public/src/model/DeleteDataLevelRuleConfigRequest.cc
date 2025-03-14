@@ -34,6 +34,15 @@ void DeleteDataLevelRuleConfigRequest::setAccessPoint(const std::string &accessP
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
+std::string DeleteDataLevelRuleConfigRequest::getCubeId() const {
+  return cubeId_;
+}
+
+void DeleteDataLevelRuleConfigRequest::setCubeId(const std::string &cubeId) {
+  cubeId_ = cubeId;
+  setParameter(std::string("CubeId"), cubeId);
+}
+
 std::string DeleteDataLevelRuleConfigRequest::getSignType() const {
   return signType_;
 }
@@ -50,14 +59,5 @@ std::string DeleteDataLevelRuleConfigRequest::getRuleId() const {
 void DeleteDataLevelRuleConfigRequest::setRuleId(const std::string &ruleId) {
   ruleId_ = ruleId;
   setParameter(std::string("RuleId"), ruleId);
-}
-
-std::string DeleteDataLevelRuleConfigRequest::getCubeId() const {
-  return cubeId_;
-}
-
-void DeleteDataLevelRuleConfigRequest::setCubeId(const std::string &cubeId) {
-  cubeId_ = cubeId;
-  setParameter(std::string("CubeId"), cubeId);
 }
 

@@ -25,15 +25,6 @@ ListDataLevelPermissionWhiteListRequest::ListDataLevelPermissionWhiteListRequest
 
 ListDataLevelPermissionWhiteListRequest::~ListDataLevelPermissionWhiteListRequest() {}
 
-std::string ListDataLevelPermissionWhiteListRequest::getRuleType() const {
-  return ruleType_;
-}
-
-void ListDataLevelPermissionWhiteListRequest::setRuleType(const std::string &ruleType) {
-  ruleType_ = ruleType;
-  setParameter(std::string("RuleType"), ruleType);
-}
-
 std::string ListDataLevelPermissionWhiteListRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -43,15 +34,6 @@ void ListDataLevelPermissionWhiteListRequest::setAccessPoint(const std::string &
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string ListDataLevelPermissionWhiteListRequest::getSignType() const {
-  return signType_;
-}
-
-void ListDataLevelPermissionWhiteListRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string ListDataLevelPermissionWhiteListRequest::getCubeId() const {
   return cubeId_;
 }
@@ -59,5 +41,23 @@ std::string ListDataLevelPermissionWhiteListRequest::getCubeId() const {
 void ListDataLevelPermissionWhiteListRequest::setCubeId(const std::string &cubeId) {
   cubeId_ = cubeId;
   setParameter(std::string("CubeId"), cubeId);
+}
+
+std::string ListDataLevelPermissionWhiteListRequest::getRuleType() const {
+  return ruleType_;
+}
+
+void ListDataLevelPermissionWhiteListRequest::setRuleType(const std::string &ruleType) {
+  ruleType_ = ruleType;
+  setParameter(std::string("RuleType"), ruleType);
+}
+
+std::string ListDataLevelPermissionWhiteListRequest::getSignType() const {
+  return signType_;
+}
+
+void ListDataLevelPermissionWhiteListRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 

@@ -34,15 +34,6 @@ void QueryDataRangeRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string QueryDataRangeRequest::getSignType() const {
-  return signType_;
-}
-
-void QueryDataRangeRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string QueryDataRangeRequest::getType() const {
   return type_;
 }
@@ -59,5 +50,14 @@ std::string QueryDataRangeRequest::getKeyword() const {
 void QueryDataRangeRequest::setKeyword(const std::string &keyword) {
   keyword_ = keyword;
   setParameter(std::string("Keyword"), keyword);
+}
+
+std::string QueryDataRangeRequest::getSignType() const {
+  return signType_;
+}
+
+void QueryDataRangeRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 

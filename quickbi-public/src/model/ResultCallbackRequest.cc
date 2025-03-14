@@ -34,15 +34,6 @@ void ResultCallbackRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string ResultCallbackRequest::getSignType() const {
-  return signType_;
-}
-
-void ResultCallbackRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string ResultCallbackRequest::getHandleReason() const {
   return handleReason_;
 }
@@ -59,6 +50,15 @@ std::string ResultCallbackRequest::getApplicationId() const {
 void ResultCallbackRequest::setApplicationId(const std::string &applicationId) {
   applicationId_ = applicationId;
   setParameter(std::string("ApplicationId"), applicationId);
+}
+
+std::string ResultCallbackRequest::getSignType() const {
+  return signType_;
+}
+
+void ResultCallbackRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 int ResultCallbackRequest::getStatus() const {

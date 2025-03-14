@@ -30,20 +30,20 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT DeleteUserRequest : public RpcServiceRe
 public:
 	DeleteUserRequest();
 	~DeleteUserRequest();
-	std::string getTransferUserId() const;
-	void setTransferUserId(const std::string &transferUserId);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getSignType() const;
-	void setSignType(const std::string &signType);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
+	std::string getTransferUserId() const;
+	void setTransferUserId(const std::string &transferUserId);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 
 private:
-	std::string transferUserId_;
 	std::string accessPoint_;
-	std::string signType_;
 	std::string userId_;
+	std::string transferUserId_;
+	std::string signType_;
 };
 } // namespace Model
 } // namespace Quickbi_public

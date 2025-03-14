@@ -34,15 +34,6 @@ void SetDataLevelPermissionExtraConfigRequest::setMissHitPolicy(const std::strin
   setParameter(std::string("MissHitPolicy"), missHitPolicy);
 }
 
-std::string SetDataLevelPermissionExtraConfigRequest::getRuleType() const {
-  return ruleType_;
-}
-
-void SetDataLevelPermissionExtraConfigRequest::setRuleType(const std::string &ruleType) {
-  ruleType_ = ruleType;
-  setParameter(std::string("RuleType"), ruleType);
-}
-
 std::string SetDataLevelPermissionExtraConfigRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -52,15 +43,6 @@ void SetDataLevelPermissionExtraConfigRequest::setAccessPoint(const std::string 
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string SetDataLevelPermissionExtraConfigRequest::getSignType() const {
-  return signType_;
-}
-
-void SetDataLevelPermissionExtraConfigRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string SetDataLevelPermissionExtraConfigRequest::getCubeId() const {
   return cubeId_;
 }
@@ -68,5 +50,23 @@ std::string SetDataLevelPermissionExtraConfigRequest::getCubeId() const {
 void SetDataLevelPermissionExtraConfigRequest::setCubeId(const std::string &cubeId) {
   cubeId_ = cubeId;
   setParameter(std::string("CubeId"), cubeId);
+}
+
+std::string SetDataLevelPermissionExtraConfigRequest::getRuleType() const {
+  return ruleType_;
+}
+
+void SetDataLevelPermissionExtraConfigRequest::setRuleType(const std::string &ruleType) {
+  ruleType_ = ruleType;
+  setParameter(std::string("RuleType"), ruleType);
+}
+
+std::string SetDataLevelPermissionExtraConfigRequest::getSignType() const {
+  return signType_;
+}
+
+void SetDataLevelPermissionExtraConfigRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 

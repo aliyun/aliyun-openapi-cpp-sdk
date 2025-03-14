@@ -34,15 +34,6 @@ void QueryUserRoleInfoInWorkspaceRequest::setAccessPoint(const std::string &acce
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string QueryUserRoleInfoInWorkspaceRequest::getSignType() const {
-  return signType_;
-}
-
-void QueryUserRoleInfoInWorkspaceRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string QueryUserRoleInfoInWorkspaceRequest::getUserId() const {
   return userId_;
 }
@@ -50,6 +41,15 @@ std::string QueryUserRoleInfoInWorkspaceRequest::getUserId() const {
 void QueryUserRoleInfoInWorkspaceRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+std::string QueryUserRoleInfoInWorkspaceRequest::getSignType() const {
+  return signType_;
+}
+
+void QueryUserRoleInfoInWorkspaceRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 std::string QueryUserRoleInfoInWorkspaceRequest::getWorkspaceId() const {

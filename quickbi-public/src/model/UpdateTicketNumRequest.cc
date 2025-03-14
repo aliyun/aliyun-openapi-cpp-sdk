@@ -25,15 +25,6 @@ UpdateTicketNumRequest::UpdateTicketNumRequest()
 
 UpdateTicketNumRequest::~UpdateTicketNumRequest() {}
 
-std::string UpdateTicketNumRequest::getTicket() const {
-  return ticket_;
-}
-
-void UpdateTicketNumRequest::setTicket(const std::string &ticket) {
-  ticket_ = ticket;
-  setParameter(std::string("Ticket"), ticket);
-}
-
 std::string UpdateTicketNumRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -41,6 +32,15 @@ std::string UpdateTicketNumRequest::getAccessPoint() const {
 void UpdateTicketNumRequest::setAccessPoint(const std::string &accessPoint) {
   accessPoint_ = accessPoint;
   setParameter(std::string("AccessPoint"), accessPoint);
+}
+
+std::string UpdateTicketNumRequest::getTicket() const {
+  return ticket_;
+}
+
+void UpdateTicketNumRequest::setTicket(const std::string &ticket) {
+  ticket_ = ticket;
+  setParameter(std::string("Ticket"), ticket);
 }
 
 std::string UpdateTicketNumRequest::getSignType() const {

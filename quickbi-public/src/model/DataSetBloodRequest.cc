@@ -25,6 +25,24 @@ DataSetBloodRequest::DataSetBloodRequest()
 
 DataSetBloodRequest::~DataSetBloodRequest() {}
 
+std::string DataSetBloodRequest::getAccessPoint() const {
+  return accessPoint_;
+}
+
+void DataSetBloodRequest::setAccessPoint(const std::string &accessPoint) {
+  accessPoint_ = accessPoint;
+  setParameter(std::string("AccessPoint"), accessPoint);
+}
+
+std::string DataSetBloodRequest::getUserId() const {
+  return userId_;
+}
+
+void DataSetBloodRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
+}
+
 std::string DataSetBloodRequest::getDataSetIds() const {
   return dataSetIds_;
 }
@@ -43,15 +61,6 @@ void DataSetBloodRequest::setWorksType(const std::string &worksType) {
   setParameter(std::string("WorksType"), worksType);
 }
 
-std::string DataSetBloodRequest::getAccessPoint() const {
-  return accessPoint_;
-}
-
-void DataSetBloodRequest::setAccessPoint(const std::string &accessPoint) {
-  accessPoint_ = accessPoint;
-  setParameter(std::string("AccessPoint"), accessPoint);
-}
-
 std::string DataSetBloodRequest::getSignType() const {
   return signType_;
 }
@@ -59,14 +68,5 @@ std::string DataSetBloodRequest::getSignType() const {
 void DataSetBloodRequest::setSignType(const std::string &signType) {
   signType_ = signType;
   setParameter(std::string("SignType"), signType);
-}
-
-std::string DataSetBloodRequest::getUserId() const {
-  return userId_;
-}
-
-void DataSetBloodRequest::setUserId(const std::string &userId) {
-  userId_ = userId;
-  setParameter(std::string("UserId"), userId);
 }
 

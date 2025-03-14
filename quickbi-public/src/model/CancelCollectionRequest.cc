@@ -34,15 +34,6 @@ void CancelCollectionRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string CancelCollectionRequest::getSignType() const {
-  return signType_;
-}
-
-void CancelCollectionRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string CancelCollectionRequest::getUserId() const {
   return userId_;
 }
@@ -50,6 +41,15 @@ std::string CancelCollectionRequest::getUserId() const {
 void CancelCollectionRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+std::string CancelCollectionRequest::getSignType() const {
+  return signType_;
+}
+
+void CancelCollectionRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 std::string CancelCollectionRequest::getWorksId() const {

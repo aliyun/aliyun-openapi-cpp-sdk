@@ -25,15 +25,6 @@ SaveFavoritesRequest::SaveFavoritesRequest()
 
 SaveFavoritesRequest::~SaveFavoritesRequest() {}
 
-std::string SaveFavoritesRequest::getWorksType() const {
-  return worksType_;
-}
-
-void SaveFavoritesRequest::setWorksType(const std::string &worksType) {
-  worksType_ = worksType;
-  setParameter(std::string("WorksType"), worksType);
-}
-
 std::string SaveFavoritesRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -43,15 +34,6 @@ void SaveFavoritesRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string SaveFavoritesRequest::getSignType() const {
-  return signType_;
-}
-
-void SaveFavoritesRequest::setSignType(const std::string &signType) {
-  signType_ = signType;
-  setParameter(std::string("SignType"), signType);
-}
-
 std::string SaveFavoritesRequest::getUserId() const {
   return userId_;
 }
@@ -59,6 +41,24 @@ std::string SaveFavoritesRequest::getUserId() const {
 void SaveFavoritesRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+std::string SaveFavoritesRequest::getWorksType() const {
+  return worksType_;
+}
+
+void SaveFavoritesRequest::setWorksType(const std::string &worksType) {
+  worksType_ = worksType;
+  setParameter(std::string("WorksType"), worksType);
+}
+
+std::string SaveFavoritesRequest::getSignType() const {
+  return signType_;
+}
+
+void SaveFavoritesRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
 std::string SaveFavoritesRequest::getWorksId() const {

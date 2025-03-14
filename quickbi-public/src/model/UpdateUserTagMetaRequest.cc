@@ -25,15 +25,6 @@ UpdateUserTagMetaRequest::UpdateUserTagMetaRequest()
 
 UpdateUserTagMetaRequest::~UpdateUserTagMetaRequest() {}
 
-std::string UpdateUserTagMetaRequest::getTagId() const {
-  return tagId_;
-}
-
-void UpdateUserTagMetaRequest::setTagId(const std::string &tagId) {
-  tagId_ = tagId;
-  setParameter(std::string("TagId"), tagId);
-}
-
 std::string UpdateUserTagMetaRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -41,6 +32,24 @@ std::string UpdateUserTagMetaRequest::getAccessPoint() const {
 void UpdateUserTagMetaRequest::setAccessPoint(const std::string &accessPoint) {
   accessPoint_ = accessPoint;
   setParameter(std::string("AccessPoint"), accessPoint);
+}
+
+std::string UpdateUserTagMetaRequest::getTagName() const {
+  return tagName_;
+}
+
+void UpdateUserTagMetaRequest::setTagName(const std::string &tagName) {
+  tagName_ = tagName;
+  setParameter(std::string("TagName"), tagName);
+}
+
+std::string UpdateUserTagMetaRequest::getTagId() const {
+  return tagId_;
+}
+
+void UpdateUserTagMetaRequest::setTagId(const std::string &tagId) {
+  tagId_ = tagId;
+  setParameter(std::string("TagId"), tagId);
 }
 
 std::string UpdateUserTagMetaRequest::getSignType() const {
@@ -59,14 +68,5 @@ std::string UpdateUserTagMetaRequest::getTagDescription() const {
 void UpdateUserTagMetaRequest::setTagDescription(const std::string &tagDescription) {
   tagDescription_ = tagDescription;
   setParameter(std::string("TagDescription"), tagDescription);
-}
-
-std::string UpdateUserTagMetaRequest::getTagName() const {
-  return tagName_;
-}
-
-void UpdateUserTagMetaRequest::setTagName(const std::string &tagName) {
-  tagName_ = tagName;
-  setParameter(std::string("TagName"), tagName);
 }
 
