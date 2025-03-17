@@ -62,7 +62,7 @@ ServiceRequest &ServiceRequest::operator=(ServiceRequest &&other) {
 
 ServiceRequest::~ServiceRequest() {
   if (content_)
-    delete content_;
+    delete[] content_;
 }
 
 const char *ServiceRequest::content() const { return content_; }
@@ -73,7 +73,7 @@ bool ServiceRequest::hasContent() const { return (contentSize_ != 0); }
 
 void ServiceRequest::setContent(const char *data, size_t size) {
   if (content_)
-    delete content_;
+    delete[] content_;
   content_ = nullptr;
   contentSize_ = 0;
   if (size) {

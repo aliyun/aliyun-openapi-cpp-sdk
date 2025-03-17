@@ -89,7 +89,7 @@ std::string AlibabaCloud::ComputeContentMD5(const char *data, size_t size) {
                       CRYPT_STRING_BASE64 | CRYPT_STRING_NOCRLF, dest, &dlen);
 
   std::string ret = std::string(dest, dlen);
-  delete dest;
+  delete[] dest;
   return ret;
 #else
   unsigned char md[MD5_DIGEST_LENGTH];

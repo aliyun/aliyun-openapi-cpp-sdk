@@ -79,7 +79,7 @@ std::string HmacSha1Signer::generate(const std::string &src,
                       CRYPT_STRING_BASE64 | CRYPT_STRING_NOCRLF, dest, &dlen);
 
   std::string ret = std::string(dest, dlen);
-  delete dest;
+  delete[] dest;
   return ret;
 #else
   unsigned char md[EVP_MAX_BLOCK_LENGTH];
