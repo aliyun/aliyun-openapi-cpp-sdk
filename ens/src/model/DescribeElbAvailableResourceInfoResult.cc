@@ -58,6 +58,9 @@ void DescribeElbAvailableResourceInfoResult::parse(const std::string &payload)
 		auto allLoadBalancerSpec = value["LoadBalancerSpec"]["LoadBalancerSpec"];
 		for (auto value : allLoadBalancerSpec)
 			elbAvailableResourceInfoObject.loadBalancerSpec.push_back(value.asString());
+		auto allAbility = value["Ability"]["Ability"];
+		for (auto value : allAbility)
+			elbAvailableResourceInfoObject.ability.push_back(value.asString());
 		elbAvailableResourceInfo_.push_back(elbAvailableResourceInfoObject);
 	}
 

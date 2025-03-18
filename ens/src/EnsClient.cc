@@ -6531,6 +6531,42 @@ EnsClient::DescribeUserBandWidthDataOutcomeCallable EnsClient::describeUserBandW
 	return task->get_future();
 }
 
+EnsClient::DescribeVSwitchAttributesOutcome EnsClient::describeVSwitchAttributes(const DescribeVSwitchAttributesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVSwitchAttributesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVSwitchAttributesOutcome(DescribeVSwitchAttributesResult(outcome.result()));
+	else
+		return DescribeVSwitchAttributesOutcome(outcome.error());
+}
+
+void EnsClient::describeVSwitchAttributesAsync(const DescribeVSwitchAttributesRequest& request, const DescribeVSwitchAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVSwitchAttributes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeVSwitchAttributesOutcomeCallable EnsClient::describeVSwitchAttributesCallable(const DescribeVSwitchAttributesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVSwitchAttributesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVSwitchAttributes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeVSwitchesOutcome EnsClient::describeVSwitches(const DescribeVSwitchesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7323,6 +7359,42 @@ EnsClient::ListObjectsOutcomeCallable EnsClient::listObjectsCallable(const ListO
 	return task->get_future();
 }
 
+EnsClient::ListProductAbilitiesOutcome EnsClient::listProductAbilities(const ListProductAbilitiesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListProductAbilitiesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListProductAbilitiesOutcome(ListProductAbilitiesResult(outcome.result()));
+	else
+		return ListProductAbilitiesOutcome(outcome.error());
+}
+
+void EnsClient::listProductAbilitiesAsync(const ListProductAbilitiesRequest& request, const ListProductAbilitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listProductAbilities(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ListProductAbilitiesOutcomeCallable EnsClient::listProductAbilitiesCallable(const ListProductAbilitiesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListProductAbilitiesOutcome()>>(
+			[this, request]()
+			{
+			return this->listProductAbilities(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::ListTagResourcesOutcome EnsClient::listTagResources(const ListTagResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7389,6 +7461,42 @@ EnsClient::ModifyEnsEipAddressAttributeOutcomeCallable EnsClient::modifyEnsEipAd
 			[this, request]()
 			{
 			return this->modifyEnsEipAddressAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::ModifyEnsRouteEntryOutcome EnsClient::modifyEnsRouteEntry(const ModifyEnsRouteEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyEnsRouteEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyEnsRouteEntryOutcome(ModifyEnsRouteEntryResult(outcome.result()));
+	else
+		return ModifyEnsRouteEntryOutcome(outcome.error());
+}
+
+void EnsClient::modifyEnsRouteEntryAsync(const ModifyEnsRouteEntryRequest& request, const ModifyEnsRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyEnsRouteEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ModifyEnsRouteEntryOutcomeCallable EnsClient::modifyEnsRouteEntryCallable(const ModifyEnsRouteEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyEnsRouteEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyEnsRouteEntry(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

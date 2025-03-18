@@ -30,16 +30,22 @@ class ALIBABACLOUD_ENS_EXPORT DescribeLoadBalancerListenersRequest : public RpcS
 public:
 	DescribeLoadBalancerListenersRequest();
 	~DescribeLoadBalancerListenersRequest();
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getListenerPort() const;
+	void setListenerPort(int listenerPort);
 	std::string getLoadBalancerId() const;
 	void setLoadBalancerId(const std::string &loadBalancerId);
 
 private:
+	std::string description_;
 	int pageNumber_;
 	int pageSize_;
+	int listenerPort_;
 	std::string loadBalancerId_;
 };
 } // namespace Model

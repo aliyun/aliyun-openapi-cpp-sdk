@@ -25,6 +25,15 @@ DescribeLoadBalancerListenersRequest::DescribeLoadBalancerListenersRequest()
 
 DescribeLoadBalancerListenersRequest::~DescribeLoadBalancerListenersRequest() {}
 
+std::string DescribeLoadBalancerListenersRequest::getDescription() const {
+  return description_;
+}
+
+void DescribeLoadBalancerListenersRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
+}
+
 int DescribeLoadBalancerListenersRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -41,6 +50,15 @@ int DescribeLoadBalancerListenersRequest::getPageSize() const {
 void DescribeLoadBalancerListenersRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+int DescribeLoadBalancerListenersRequest::getListenerPort() const {
+  return listenerPort_;
+}
+
+void DescribeLoadBalancerListenersRequest::setListenerPort(int listenerPort) {
+  listenerPort_ = listenerPort;
+  setParameter(std::string("ListenerPort"), std::to_string(listenerPort));
 }
 
 std::string DescribeLoadBalancerListenersRequest::getLoadBalancerId() const {

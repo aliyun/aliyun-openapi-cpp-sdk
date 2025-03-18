@@ -30,23 +30,35 @@ class ALIBABACLOUD_ENS_EXPORT DescribeEnsRouteTablesRequest : public RpcServiceR
 public:
 	DescribeEnsRouteTablesRequest();
 	~DescribeEnsRouteTablesRequest();
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
+	std::string getType() const;
+	void setType(const std::string &type);
+	std::string getAssociateType() const;
+	void setAssociateType(const std::string &associateType);
 	std::string getEnsRegionId() const;
 	void setEnsRegionId(const std::string &ensRegionId);
 	std::string getRouteTableId() const;
 	void setRouteTableId(const std::string &routeTableId);
 	std::string getNetworkId() const;
 	void setNetworkId(const std::string &networkId);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
+	std::string getRouteTableName() const;
+	void setRouteTableName(const std::string &routeTableName);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::vector<std::string> getEnsRegionIds() const;
+	void setEnsRegionIds(const std::vector<std::string> &ensRegionIds);
 
 private:
-	int pageNumber_;
-	int pageSize_;
+	std::string type_;
+	std::string associateType_;
 	std::string ensRegionId_;
 	std::string routeTableId_;
 	std::string networkId_;
+	int pageNumber_;
+	std::string routeTableName_;
+	int pageSize_;
+	std::vector<std::string> ensRegionIds_;
 };
 } // namespace Model
 } // namespace Ens

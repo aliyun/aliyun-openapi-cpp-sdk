@@ -34,6 +34,8 @@ public:
 	void setSnatIp(const std::string &snatIp);
 	std::string getSnatEntryId() const;
 	void setSnatEntryId(const std::string &snatEntryId);
+	std::vector<std::string> getSnatIps() const;
+	void setSnatIps(const std::vector<std::string> &snatIps);
 	std::string getSourceCIDR() const;
 	void setSourceCIDR(const std::string &sourceCIDR);
 	int getPageNumber() const;
@@ -50,6 +52,7 @@ public:
 private:
 	std::string snatIp_;
 	std::string snatEntryId_;
+	std::vector<std::string> snatIps_;
 	std::string sourceCIDR_;
 	int pageNumber_;
 	bool showDetail_;

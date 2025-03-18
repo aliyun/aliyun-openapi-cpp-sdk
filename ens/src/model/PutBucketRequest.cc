@@ -31,7 +31,7 @@ std::string PutBucketRequest::getEnsRegionId() const {
 
 void PutBucketRequest::setEnsRegionId(const std::string &ensRegionId) {
   ensRegionId_ = ensRegionId;
-  setBodyParameter(std::string("EnsRegionId"), ensRegionId);
+  setParameter(std::string("EnsRegionId"), ensRegionId);
 }
 
 std::string PutBucketRequest::getLogicalBucketType() const {
@@ -40,7 +40,7 @@ std::string PutBucketRequest::getLogicalBucketType() const {
 
 void PutBucketRequest::setLogicalBucketType(const std::string &logicalBucketType) {
   logicalBucketType_ = logicalBucketType;
-  setBodyParameter(std::string("LogicalBucketType"), logicalBucketType);
+  setParameter(std::string("LogicalBucketType"), logicalBucketType);
 }
 
 std::string PutBucketRequest::getCity() const {
@@ -49,7 +49,7 @@ std::string PutBucketRequest::getCity() const {
 
 void PutBucketRequest::setCity(const std::string &city) {
   city_ = city;
-  setBodyParameter(std::string("City"), city);
+  setParameter(std::string("City"), city);
 }
 
 std::string PutBucketRequest::getDataRedundancyType() const {
@@ -58,7 +58,7 @@ std::string PutBucketRequest::getDataRedundancyType() const {
 
 void PutBucketRequest::setDataRedundancyType(const std::string &dataRedundancyType) {
   dataRedundancyType_ = dataRedundancyType;
-  setBodyParameter(std::string("DataRedundancyType"), dataRedundancyType);
+  setParameter(std::string("DataRedundancyType"), dataRedundancyType);
 }
 
 std::string PutBucketRequest::getEndpoint() const {
@@ -67,7 +67,7 @@ std::string PutBucketRequest::getEndpoint() const {
 
 void PutBucketRequest::setEndpoint(const std::string &endpoint) {
   endpoint_ = endpoint;
-  setBodyParameter(std::string("Endpoint"), endpoint);
+  setParameter(std::string("Endpoint"), endpoint);
 }
 
 std::string PutBucketRequest::getBucketName() const {
@@ -76,7 +76,7 @@ std::string PutBucketRequest::getBucketName() const {
 
 void PutBucketRequest::setBucketName(const std::string &bucketName) {
   bucketName_ = bucketName;
-  setBodyParameter(std::string("BucketName"), bucketName);
+  setParameter(std::string("BucketName"), bucketName);
 }
 
 std::string PutBucketRequest::getStorageDomainId() const {
@@ -85,7 +85,7 @@ std::string PutBucketRequest::getStorageDomainId() const {
 
 void PutBucketRequest::setStorageDomainId(const std::string &storageDomainId) {
   storageDomainId_ = storageDomainId;
-  setBodyParameter(std::string("StorageDomainId"), storageDomainId);
+  setParameter(std::string("StorageDomainId"), storageDomainId);
 }
 
 std::string PutBucketRequest::getEngineId() const {
@@ -94,7 +94,7 @@ std::string PutBucketRequest::getEngineId() const {
 
 void PutBucketRequest::setEngineId(const std::string &engineId) {
   engineId_ = engineId;
-  setBodyParameter(std::string("EngineId"), engineId);
+  setParameter(std::string("EngineId"), engineId);
 }
 
 std::string PutBucketRequest::getBucketAcl() const {
@@ -103,7 +103,7 @@ std::string PutBucketRequest::getBucketAcl() const {
 
 void PutBucketRequest::setBucketAcl(const std::string &bucketAcl) {
   bucketAcl_ = bucketAcl;
-  setBodyParameter(std::string("BucketAcl"), bucketAcl);
+  setParameter(std::string("BucketAcl"), bucketAcl);
 }
 
 std::string PutBucketRequest::getDispatcherType() const {
@@ -112,7 +112,7 @@ std::string PutBucketRequest::getDispatcherType() const {
 
 void PutBucketRequest::setDispatcherType(const std::string &dispatcherType) {
   dispatcherType_ = dispatcherType;
-  setBodyParameter(std::string("DispatcherType"), dispatcherType);
+  setParameter(std::string("DispatcherType"), dispatcherType);
 }
 
 std::string PutBucketRequest::getResourceType() const {
@@ -121,7 +121,7 @@ std::string PutBucketRequest::getResourceType() const {
 
 void PutBucketRequest::setResourceType(const std::string &resourceType) {
   resourceType_ = resourceType;
-  setBodyParameter(std::string("ResourceType"), resourceType);
+  setParameter(std::string("ResourceType"), resourceType);
 }
 
 std::string PutBucketRequest::getStorageClass() const {
@@ -130,7 +130,7 @@ std::string PutBucketRequest::getStorageClass() const {
 
 void PutBucketRequest::setStorageClass(const std::string &storageClass) {
   storageClass_ = storageClass;
-  setBodyParameter(std::string("StorageClass"), storageClass);
+  setParameter(std::string("StorageClass"), storageClass);
 }
 
 std::string PutBucketRequest::getDispatchScope() const {
@@ -139,7 +139,7 @@ std::string PutBucketRequest::getDispatchScope() const {
 
 void PutBucketRequest::setDispatchScope(const std::string &dispatchScope) {
   dispatchScope_ = dispatchScope;
-  setBodyParameter(std::string("DispatchScope"), dispatchScope);
+  setParameter(std::string("DispatchScope"), dispatchScope);
 }
 
 std::string PutBucketRequest::getComment() const {
@@ -148,6 +148,6 @@ std::string PutBucketRequest::getComment() const {
 
 void PutBucketRequest::setComment(const std::string &comment) {
   comment_ = comment;
-  setBodyParameter(std::string("Comment"), comment);
+  setParameter(std::string("Comment"), comment);
 }
 

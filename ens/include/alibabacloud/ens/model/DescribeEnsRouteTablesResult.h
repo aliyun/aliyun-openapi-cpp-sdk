@@ -34,13 +34,23 @@ namespace AlibabaCloud
 			public:
 				struct RouteTable
 				{
+					struct AssociatedResource
+					{
+						std::string resourceId;
+						std::string resourceName;
+						std::string resourceType;
+					};
 					std::string status;
-					std::string type;
 					std::string networkName;
 					std::string routeTableId;
+					std::string description;
 					std::vector<std::string> vSwitchIds;
-					std::string creationTime;
+					std::vector<RouteTable::AssociatedResource> associatedResources;
+					std::string associateType;
 					std::string networkId;
+					std::string type;
+					std::string creationTime;
+					bool isDefaultGatewayRouteTable;
 					std::string ensRegionId;
 					std::string routeTableName;
 				};

@@ -30,8 +30,8 @@ class ALIBABACLOUD_ENS_EXPORT DescribeVSwitchesRequest : public RpcServiceReques
 public:
 	DescribeVSwitchesRequest();
 	~DescribeVSwitchesRequest();
-	std::string getOrderByParams() const;
-	void setOrderByParams(const std::string &orderByParams);
+	std::vector<std::string> getVSwitchIds() const;
+	void setVSwitchIds(const std::vector<std::string> &vSwitchIds);
 	std::string getEnsRegionId() const;
 	void setEnsRegionId(const std::string &ensRegionId);
 	std::string getVSwitchId() const;
@@ -42,16 +42,19 @@ public:
 	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::vector<std::string> getEnsRegionIds() const;
+	void setEnsRegionIds(const std::vector<std::string> &ensRegionIds);
 	std::string getVSwitchName() const;
 	void setVSwitchName(const std::string &vSwitchName);
 
 private:
-	std::string orderByParams_;
+	std::vector<std::string> vSwitchIds_;
 	std::string ensRegionId_;
 	std::string vSwitchId_;
 	std::string networkId_;
 	int pageNumber_;
 	int pageSize_;
+	std::vector<std::string> ensRegionIds_;
 	std::string vSwitchName_;
 };
 } // namespace Model

@@ -25,13 +25,15 @@ DescribeVSwitchesRequest::DescribeVSwitchesRequest()
 
 DescribeVSwitchesRequest::~DescribeVSwitchesRequest() {}
 
-std::string DescribeVSwitchesRequest::getOrderByParams() const {
-  return orderByParams_;
+std::vector<DescribeVSwitchesRequest::std::string> DescribeVSwitchesRequest::getVSwitchIds() const {
+  return vSwitchIds_;
 }
 
-void DescribeVSwitchesRequest::setOrderByParams(const std::string &orderByParams) {
-  orderByParams_ = orderByParams;
-  setParameter(std::string("OrderByParams"), orderByParams);
+void DescribeVSwitchesRequest::setVSwitchIds(const std::vector<DescribeVSwitchesRequest::std::string> &vSwitchIds) {
+  vSwitchIds_ = vSwitchIds;
+  for(int dep1 = 0; dep1 != vSwitchIds.size(); dep1++) {
+    setParameter(std::string("VSwitchIds") + "." + std::to_string(dep1 + 1), vSwitchIds[dep1]);
+  }
 }
 
 std::string DescribeVSwitchesRequest::getEnsRegionId() const {
@@ -77,6 +79,17 @@ int DescribeVSwitchesRequest::getPageSize() const {
 void DescribeVSwitchesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::vector<DescribeVSwitchesRequest::std::string> DescribeVSwitchesRequest::getEnsRegionIds() const {
+  return ensRegionIds_;
+}
+
+void DescribeVSwitchesRequest::setEnsRegionIds(const std::vector<DescribeVSwitchesRequest::std::string> &ensRegionIds) {
+  ensRegionIds_ = ensRegionIds;
+  for(int dep1 = 0; dep1 != ensRegionIds.size(); dep1++) {
+    setParameter(std::string("EnsRegionIds") + "." + std::to_string(dep1 + 1), ensRegionIds[dep1]);
+  }
 }
 
 std::string DescribeVSwitchesRequest::getVSwitchName() const {

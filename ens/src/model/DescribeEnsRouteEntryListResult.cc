@@ -57,6 +57,10 @@ void DescribeEnsRouteEntryListResult::parse(const std::string &payload)
 			routeEntrysObject.routeEntryId = valueRouteEntrysRouteEntry["RouteEntryId"].asString();
 		if(!valueRouteEntrysRouteEntry["RouteTableId"].isNull())
 			routeEntrysObject.routeTableId = valueRouteEntrysRouteEntry["RouteTableId"].asString();
+		if(!valueRouteEntrysRouteEntry["SourceCidrBlock"].isNull())
+			routeEntrysObject.sourceCidrBlock = valueRouteEntrysRouteEntry["SourceCidrBlock"].asString();
+		if(!valueRouteEntrysRouteEntry["CreationTime"].isNull())
+			routeEntrysObject.creationTime = valueRouteEntrysRouteEntry["CreationTime"].asString();
 		auto allNextHopsNode = valueRouteEntrysRouteEntry["NextHops"]["NextHop"];
 		for (auto valueRouteEntrysRouteEntryNextHopsNextHop : allNextHopsNode)
 		{
@@ -65,6 +69,8 @@ void DescribeEnsRouteEntryListResult::parse(const std::string &payload)
 				nextHopsObject.nextHopId = valueRouteEntrysRouteEntryNextHopsNextHop["NextHopId"].asString();
 			if(!valueRouteEntrysRouteEntryNextHopsNextHop["NextHopType"].isNull())
 				nextHopsObject.nextHopType = valueRouteEntrysRouteEntryNextHopsNextHop["NextHopType"].asString();
+			if(!valueRouteEntrysRouteEntryNextHopsNextHop["NextHopName"].isNull())
+				nextHopsObject.nextHopName = valueRouteEntrysRouteEntryNextHopsNextHop["NextHopName"].asString();
 			routeEntrysObject.nextHops.push_back(nextHopsObject);
 		}
 		routeEntrys_.push_back(routeEntrysObject);

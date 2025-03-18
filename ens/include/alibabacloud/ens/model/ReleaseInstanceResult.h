@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				ReleaseInstanceResult();
 				explicit ReleaseInstanceResult(const std::string &payload);
 				~ReleaseInstanceResult();
+				std::string getResourceType()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string resourceType_;
 
 			};
 		}

@@ -46,6 +46,8 @@ public:
 	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::vector<std::string> getEnsRegionIds() const;
+	void setEnsRegionIds(const std::vector<std::string> &ensRegionIds);
 	std::string getAddress() const;
 	void setAddress(const std::string &address);
 	std::string getLoadBalancerStatus() const;
@@ -60,6 +62,7 @@ private:
 	std::string networkId_;
 	int pageNumber_;
 	int pageSize_;
+	std::vector<std::string> ensRegionIds_;
 	std::string address_;
 	std::string loadBalancerStatus_;
 };

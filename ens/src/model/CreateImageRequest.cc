@@ -52,6 +52,15 @@ void CreateImageRequest::setImageName(const std::string &imageName) {
   setParameter(std::string("ImageName"), imageName);
 }
 
+std::string CreateImageRequest::getTargetOSSRegionId() const {
+  return targetOSSRegionId_;
+}
+
+void CreateImageRequest::setTargetOSSRegionId(const std::string &targetOSSRegionId) {
+  targetOSSRegionId_ = targetOSSRegionId;
+  setParameter(std::string("TargetOSSRegionId"), targetOSSRegionId);
+}
+
 std::string CreateImageRequest::getInstanceId() const {
   return instanceId_;
 }

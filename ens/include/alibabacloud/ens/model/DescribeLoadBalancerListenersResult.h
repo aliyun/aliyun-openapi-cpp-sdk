@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					std::string createTime;
 					std::string loadBalancerId;
 					std::string protocol;
+					int backendServerPort;
 				};
 
 

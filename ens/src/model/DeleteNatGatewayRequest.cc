@@ -25,6 +25,15 @@ DeleteNatGatewayRequest::DeleteNatGatewayRequest()
 
 DeleteNatGatewayRequest::~DeleteNatGatewayRequest() {}
 
+bool DeleteNatGatewayRequest::getForceDelete() const {
+  return forceDelete_;
+}
+
+void DeleteNatGatewayRequest::setForceDelete(bool forceDelete) {
+  forceDelete_ = forceDelete;
+  setParameter(std::string("ForceDelete"), forceDelete ? "true" : "false");
+}
+
 std::string DeleteNatGatewayRequest::getNatGatewayId() const {
   return natGatewayId_;
 }

@@ -14,38 +14,39 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ens/model/ReleaseInstanceResult.h>
+#include <alibabacloud/ens/model/ListProductAbilitiesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ens;
 using namespace AlibabaCloud::Ens::Model;
 
-ReleaseInstanceResult::ReleaseInstanceResult() :
+ListProductAbilitiesResult::ListProductAbilitiesResult() :
 	ServiceResult()
 {}
 
-ReleaseInstanceResult::ReleaseInstanceResult(const std::string &payload) :
+ListProductAbilitiesResult::ListProductAbilitiesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ReleaseInstanceResult::~ReleaseInstanceResult()
+ListProductAbilitiesResult::~ListProductAbilitiesResult()
 {}
 
-void ReleaseInstanceResult::parse(const std::string &payload)
+void ListProductAbilitiesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ResourceType"].isNull())
-		resourceType_ = value["ResourceType"].asString();
+	auto allProductAbilities = value["ProductAbilities"]["ProductAbilities"];
+	for (const auto &item : allProductAbilities)
+		productAbilities_.push_back(item.asString());
 
 }
 
-std::string ReleaseInstanceResult::getResourceType()const
+std::vector<std::string> ListProductAbilitiesResult::getProductAbilities()const
 {
-	return resourceType_;
+	return productAbilities_;
 }
 

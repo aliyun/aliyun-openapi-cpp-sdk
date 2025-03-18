@@ -38,6 +38,8 @@ public:
 	void setDestCIDR(const std::string &destCIDR);
 	std::string getSourceVSwitchId() const;
 	void setSourceVSwitchId(const std::string &sourceVSwitchId);
+	bool getEipAffinity() const;
+	void setEipAffinity(bool eipAffinity);
 	std::string getSourceNetworkId() const;
 	void setSourceNetworkId(const std::string &sourceNetworkId);
 	std::string getStandbySnatIp() const;
@@ -58,6 +60,7 @@ private:
 	std::string type_;
 	std::string destCIDR_;
 	std::string sourceVSwitchId_;
+	bool eipAffinity_;
 	std::string sourceNetworkId_;
 	std::string standbySnatIp_;
 	std::string sourceCIDR_;

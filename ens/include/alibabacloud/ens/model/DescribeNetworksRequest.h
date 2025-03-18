@@ -30,23 +30,29 @@ class ALIBABACLOUD_ENS_EXPORT DescribeNetworksRequest : public RpcServiceRequest
 public:
 	DescribeNetworksRequest();
 	~DescribeNetworksRequest();
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
 	std::string getEnsRegionId() const;
 	void setEnsRegionId(const std::string &ensRegionId);
+	std::vector<std::string> getNetworkIds() const;
+	void setNetworkIds(const std::vector<std::string> &networkIds);
+	std::string getNetworkId() const;
+	void setNetworkId(const std::string &networkId);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getNetworkName() const;
 	void setNetworkName(const std::string &networkName);
-	std::string getNetworkId() const;
-	void setNetworkId(const std::string &networkId);
+	std::vector<std::string> getEnsRegionIds() const;
+	void setEnsRegionIds(const std::vector<std::string> &ensRegionIds);
 
 private:
-	int pageNumber_;
 	std::string ensRegionId_;
+	std::vector<std::string> networkIds_;
+	std::string networkId_;
+	int pageNumber_;
 	int pageSize_;
 	std::string networkName_;
-	std::string networkId_;
+	std::vector<std::string> ensRegionIds_;
 };
 } // namespace Model
 } // namespace Ens

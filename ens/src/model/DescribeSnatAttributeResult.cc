@@ -77,6 +77,8 @@ void DescribeSnatAttributeResult::parse(const std::string &payload)
 		destCIDR_ = value["DestCIDR"].asString();
 	if(!value["IspAffinity"].isNull())
 		ispAffinity_ = value["IspAffinity"].asString() == "true";
+	if(!value["EipAffinity"].isNull())
+		eipAffinity_ = value["EipAffinity"].asString() == "true";
 
 }
 
@@ -103,6 +105,11 @@ std::string DescribeSnatAttributeResult::getSnatIp()const
 std::string DescribeSnatAttributeResult::getStandbySnatIp()const
 {
 	return standbySnatIp_;
+}
+
+bool DescribeSnatAttributeResult::getEipAffinity()const
+{
+	return eipAffinity_;
 }
 
 std::string DescribeSnatAttributeResult::getType()const

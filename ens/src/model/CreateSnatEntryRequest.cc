@@ -61,6 +61,15 @@ void CreateSnatEntryRequest::setSourceVSwitchId(const std::string &sourceVSwitch
   setParameter(std::string("SourceVSwitchId"), sourceVSwitchId);
 }
 
+bool CreateSnatEntryRequest::getEipAffinity() const {
+  return eipAffinity_;
+}
+
+void CreateSnatEntryRequest::setEipAffinity(bool eipAffinity) {
+  eipAffinity_ = eipAffinity;
+  setParameter(std::string("EipAffinity"), eipAffinity ? "true" : "false");
+}
+
 std::string CreateSnatEntryRequest::getSourceNetworkId() const {
   return sourceNetworkId_;
 }

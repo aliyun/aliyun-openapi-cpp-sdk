@@ -48,6 +48,7 @@ namespace AlibabaCloud
 					std::string oSType;
 					std::string imageId;
 					std::string oSName;
+					std::string regionId;
 					std::string computeType;
 				};
 

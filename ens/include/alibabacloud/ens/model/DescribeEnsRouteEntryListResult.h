@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					{
 						std::string nextHopType;
 						std::string nextHopId;
+						std::string nextHopName;
 					};
 					std::string status;
 					std::string routeEntryId;
@@ -46,6 +47,8 @@ namespace AlibabaCloud
 					std::string routeTableId;
 					std::vector<RouteEntry::NextHop> nextHops;
 					std::string routeEntryName;
+					std::string creationTime;
+					std::string sourceCidrBlock;
 					std::string destinationCidrBlock;
 				};
 

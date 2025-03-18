@@ -30,17 +30,32 @@ class ALIBABACLOUD_ENS_EXPORT ModifyForwardEntryRequest : public RpcServiceReque
 public:
 	ModifyForwardEntryRequest();
 	~ModifyForwardEntryRequest();
+	std::string getInternalIp() const;
+	void setInternalIp(const std::string &internalIp);
+	std::string getExternalIp() const;
+	void setExternalIp(const std::string &externalIp);
+	std::string getIpProtocol() const;
+	void setIpProtocol(const std::string &ipProtocol);
+	int getHealthCheckPort() const;
+	void setHealthCheckPort(int healthCheckPort);
+	std::string getExternalPort() const;
+	void setExternalPort(const std::string &externalPort);
 	std::string getForwardEntryId() const;
 	void setForwardEntryId(const std::string &forwardEntryId);
 	std::string getForwardEntryName() const;
 	void setForwardEntryName(const std::string &forwardEntryName);
-	int getHealthCheckPort() const;
-	void setHealthCheckPort(int healthCheckPort);
+	std::string getInternalPort() const;
+	void setInternalPort(const std::string &internalPort);
 
 private:
+	std::string internalIp_;
+	std::string externalIp_;
+	std::string ipProtocol_;
+	int healthCheckPort_;
+	std::string externalPort_;
 	std::string forwardEntryId_;
 	std::string forwardEntryName_;
-	int healthCheckPort_;
+	std::string internalPort_;
 };
 } // namespace Model
 } // namespace Ens

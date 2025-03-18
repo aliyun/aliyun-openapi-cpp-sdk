@@ -50,6 +50,7 @@ namespace AlibabaCloud
 					std::string imageSize;
 					std::string creationTime;
 					std::string imageId;
+					std::string regionId;
 				};
 
 

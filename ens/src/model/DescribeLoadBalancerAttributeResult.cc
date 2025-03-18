@@ -69,6 +69,8 @@ void DescribeLoadBalancerAttributeResult::parse(const std::string &payload)
 			listenerPortsAndProtocolsObject.listenerForward = valueListenerPortsAndProtocolslistener["ListenerForward"].asString();
 		if(!valueListenerPortsAndProtocolslistener["ForwardPort"].isNull())
 			listenerPortsAndProtocolsObject.forwardPort = std::stoi(valueListenerPortsAndProtocolslistener["ForwardPort"].asString());
+		if(!valueListenerPortsAndProtocolslistener["BackendServerPort"].isNull())
+			listenerPortsAndProtocolsObject.backendServerPort = std::stoi(valueListenerPortsAndProtocolslistener["BackendServerPort"].asString());
 		listenerPortsAndProtocols_.push_back(listenerPortsAndProtocolsObject);
 	}
 	auto allListenerPorts = value["ListenerPorts"]["listenerPort"];

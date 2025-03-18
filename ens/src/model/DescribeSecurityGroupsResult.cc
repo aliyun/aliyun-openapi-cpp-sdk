@@ -53,6 +53,12 @@ void DescribeSecurityGroupsResult::parse(const std::string &payload)
 			securityGroupsObject.securityGroupId = valueSecurityGroupsSecurityGroup["SecurityGroupId"].asString();
 		if(!valueSecurityGroupsSecurityGroup["SecurityGroupName"].isNull())
 			securityGroupsObject.securityGroupName = valueSecurityGroupsSecurityGroup["SecurityGroupName"].asString();
+		auto allInstanceIds = value["InstanceIds"]["InstanceId"];
+		for (auto value : allInstanceIds)
+			securityGroupsObject.instanceIds.push_back(value.asString());
+		auto allNetworkInterfaceIds = value["NetworkInterfaceIds"]["NetworkInterfaceId"];
+		for (auto value : allNetworkInterfaceIds)
+			securityGroupsObject.networkInterfaceIds.push_back(value.asString());
 		securityGroups_.push_back(securityGroupsObject);
 	}
 	if(!value["PageSize"].isNull())

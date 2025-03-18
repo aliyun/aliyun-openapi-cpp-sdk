@@ -34,15 +34,6 @@ void CreateEnsRouteEntryRequest::setRouteEntryName(const std::string &routeEntry
   setParameter(std::string("RouteEntryName"), routeEntryName);
 }
 
-std::string CreateEnsRouteEntryRequest::getDescription() const {
-  return description_;
-}
-
-void CreateEnsRouteEntryRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setParameter(std::string("Description"), description);
-}
-
 std::string CreateEnsRouteEntryRequest::getNextHopId() const {
   return nextHopId_;
 }
@@ -77,5 +68,23 @@ std::string CreateEnsRouteEntryRequest::getDestinationCidrBlock() const {
 void CreateEnsRouteEntryRequest::setDestinationCidrBlock(const std::string &destinationCidrBlock) {
   destinationCidrBlock_ = destinationCidrBlock;
   setParameter(std::string("DestinationCidrBlock"), destinationCidrBlock);
+}
+
+std::string CreateEnsRouteEntryRequest::getDescription() const {
+  return description_;
+}
+
+void CreateEnsRouteEntryRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
+}
+
+std::string CreateEnsRouteEntryRequest::getSourceCidrBlock() const {
+  return sourceCidrBlock_;
+}
+
+void CreateEnsRouteEntryRequest::setSourceCidrBlock(const std::string &sourceCidrBlock) {
+  sourceCidrBlock_ = sourceCidrBlock;
+  setParameter(std::string("SourceCidrBlock"), sourceCidrBlock);
 }
 

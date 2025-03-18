@@ -36,14 +36,17 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string networkName;
+					std::string gatewayRouteTableId;
 					std::string description;
 					std::string createdTime;
+					std::string routeTableId;
 					std::string networkAclId;
 					std::vector<std::string> vSwitchIds;
 					std::string cidrBlock;
+					std::string networkId;
+					std::vector<std::string> routeTableIds;
 					std::string routerTableId;
 					std::string ensRegionId;
-					std::string networkId;
 				};
 
 

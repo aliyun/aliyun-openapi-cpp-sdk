@@ -46,6 +46,8 @@ public:
 	void setIpv6Address(const std::vector<std::string> &ipv6Address);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
+	std::vector<std::string> getNetworkInterfaceIds() const;
+	void setNetworkInterfaceIds(const std::vector<std::string> &networkInterfaceIds);
 	std::string getSecurityGroupId() const;
 	void setSecurityGroupId(const std::string &securityGroupId);
 	std::string getPageNumber() const;
@@ -54,6 +56,8 @@ public:
 	void setShowDetail(bool showDetail);
 	std::string getPageSize() const;
 	void setPageSize(const std::string &pageSize);
+	std::vector<std::string> getEnsRegionIds() const;
+	void setEnsRegionIds(const std::vector<std::string> &ensRegionIds);
 	std::string getPrimaryIpAddress() const;
 	void setPrimaryIpAddress(const std::string &primaryIpAddress);
 	std::string getNetworkInterfaceId() const;
@@ -68,10 +72,12 @@ private:
 	std::string networkId_;
 	std::vector<std::string> ipv6Address_;
 	std::string status_;
+	std::vector<std::string> networkInterfaceIds_;
 	std::string securityGroupId_;
 	std::string pageNumber_;
 	bool showDetail_;
 	std::string pageSize_;
+	std::vector<std::string> ensRegionIds_;
 	std::string primaryIpAddress_;
 	std::string networkInterfaceId_;
 };

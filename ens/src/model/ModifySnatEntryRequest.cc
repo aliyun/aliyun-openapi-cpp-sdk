@@ -25,6 +25,24 @@ ModifySnatEntryRequest::ModifySnatEntryRequest()
 
 ModifySnatEntryRequest::~ModifySnatEntryRequest() {}
 
+std::string ModifySnatEntryRequest::getSnatIp() const {
+  return snatIp_;
+}
+
+void ModifySnatEntryRequest::setSnatIp(const std::string &snatIp) {
+  snatIp_ = snatIp;
+  setParameter(std::string("SnatIp"), snatIp);
+}
+
+bool ModifySnatEntryRequest::getEipAffinity() const {
+  return eipAffinity_;
+}
+
+void ModifySnatEntryRequest::setEipAffinity(bool eipAffinity) {
+  eipAffinity_ = eipAffinity;
+  setParameter(std::string("EipAffinity"), eipAffinity ? "true" : "false");
+}
+
 std::string ModifySnatEntryRequest::getSnatEntryId() const {
   return snatEntryId_;
 }

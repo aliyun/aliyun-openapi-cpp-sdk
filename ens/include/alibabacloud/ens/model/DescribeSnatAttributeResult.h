@@ -48,6 +48,7 @@ namespace AlibabaCloud
 				int getIdleTimeout()const;
 				std::string getSnatIp()const;
 				std::string getStandbySnatIp()const;
+				bool getEipAffinity()const;
 				std::string getType()const;
 				std::string getDestCIDR()const;
 				std::string getSnatEntryName()const;
@@ -66,6 +67,7 @@ namespace AlibabaCloud
 				int idleTimeout_;
 				std::string snatIp_;
 				std::string standbySnatIp_;
+				bool eipAffinity_;
 				std::string type_;
 				std::string destCIDR_;
 				std::string snatEntryName_;

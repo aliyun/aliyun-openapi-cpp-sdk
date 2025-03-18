@@ -52,6 +52,24 @@ void DescribeNetworkAttributeResult::parse(const std::string &payload)
 	auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 	for (const auto &item : allVSwitchIds)
 		vSwitchIds_.push_back(item.asString());
+	auto allInstanceIds = value["InstanceIds"]["InstanceId"];
+	for (const auto &item : allInstanceIds)
+		instanceIds_.push_back(item.asString());
+	auto allRouteTableIds = value["RouteTableIds"]["RouteTableId"];
+	for (const auto &item : allRouteTableIds)
+		routeTableIds_.push_back(item.asString());
+	auto allNetworkInterfaceIds = value["NetworkInterfaceIds"]["NetworkInterfaceId"];
+	for (const auto &item : allNetworkInterfaceIds)
+		networkInterfaceIds_.push_back(item.asString());
+	auto allLoadBalancerIds = value["LoadBalancerIds"]["LoadBalancerId"];
+	for (const auto &item : allLoadBalancerIds)
+		loadBalancerIds_.push_back(item.asString());
+	auto allNatGatewayIds = value["NatGatewayIds"]["NatGatewayId"];
+	for (const auto &item : allNatGatewayIds)
+		natGatewayIds_.push_back(item.asString());
+	auto allHaVipIds = value["HaVipIds"]["HaVipId"];
+	for (const auto &item : allHaVipIds)
+		haVipIds_.push_back(item.asString());
 	if(!value["EnsRegionId"].isNull())
 		ensRegionId_ = value["EnsRegionId"].asString();
 	if(!value["NetworkId"].isNull())
@@ -70,6 +88,10 @@ void DescribeNetworkAttributeResult::parse(const std::string &payload)
 		routerTableId_ = value["RouterTableId"].asString();
 	if(!value["NetworkAclId"].isNull())
 		networkAclId_ = value["NetworkAclId"].asString();
+	if(!value["RouteTableId"].isNull())
+		routeTableId_ = value["RouteTableId"].asString();
+	if(!value["GatewayRouteTableId"].isNull())
+		gatewayRouteTableId_ = value["GatewayRouteTableId"].asString();
 
 }
 
@@ -83,6 +105,11 @@ std::string DescribeNetworkAttributeResult::getNetworkName()const
 	return networkName_;
 }
 
+std::string DescribeNetworkAttributeResult::getGatewayRouteTableId()const
+{
+	return gatewayRouteTableId_;
+}
+
 std::string DescribeNetworkAttributeResult::getDescription()const
 {
 	return description_;
@@ -91,6 +118,11 @@ std::string DescribeNetworkAttributeResult::getDescription()const
 std::string DescribeNetworkAttributeResult::getCreatedTime()const
 {
 	return createdTime_;
+}
+
+std::string DescribeNetworkAttributeResult::getRouteTableId()const
+{
+	return routeTableId_;
 }
 
 std::string DescribeNetworkAttributeResult::getNetworkAclId()const
@@ -103,9 +135,39 @@ std::vector<std::string> DescribeNetworkAttributeResult::getVSwitchIds()const
 	return vSwitchIds_;
 }
 
+std::vector<std::string> DescribeNetworkAttributeResult::getLoadBalancerIds()const
+{
+	return loadBalancerIds_;
+}
+
 std::string DescribeNetworkAttributeResult::getCidrBlock()const
 {
 	return cidrBlock_;
+}
+
+std::vector<std::string> DescribeNetworkAttributeResult::getNetworkInterfaceIds()const
+{
+	return networkInterfaceIds_;
+}
+
+std::string DescribeNetworkAttributeResult::getNetworkId()const
+{
+	return networkId_;
+}
+
+std::vector<std::string> DescribeNetworkAttributeResult::getNatGatewayIds()const
+{
+	return natGatewayIds_;
+}
+
+std::vector<std::string> DescribeNetworkAttributeResult::getRouteTableIds()const
+{
+	return routeTableIds_;
+}
+
+std::vector<std::string> DescribeNetworkAttributeResult::getHaVipIds()const
+{
+	return haVipIds_;
 }
 
 std::string DescribeNetworkAttributeResult::getRouterTableId()const
@@ -113,14 +175,14 @@ std::string DescribeNetworkAttributeResult::getRouterTableId()const
 	return routerTableId_;
 }
 
+std::vector<std::string> DescribeNetworkAttributeResult::getInstanceIds()const
+{
+	return instanceIds_;
+}
+
 std::string DescribeNetworkAttributeResult::getEnsRegionId()const
 {
 	return ensRegionId_;
-}
-
-std::string DescribeNetworkAttributeResult::getNetworkId()const
-{
-	return networkId_;
 }
 
 std::vector<DescribeNetworkAttributeResult::CloudResourceSetType> DescribeNetworkAttributeResult::getCloudResources()const

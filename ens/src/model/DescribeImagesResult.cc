@@ -59,6 +59,8 @@ void DescribeImagesResult::parse(const std::string &payload)
 			imagesObject.platform = valueImagesImage["Platform"].asString();
 		if(!valueImagesImage["SnapshotId"].isNull())
 			imagesObject.snapshotId = valueImagesImage["SnapshotId"].asString();
+		if(!valueImagesImage["RegionId"].isNull())
+			imagesObject.regionId = valueImagesImage["RegionId"].asString();
 		auto allDiskDeviceMappingsNode = valueImagesImage["DiskDeviceMappings"]["DiskDeviceMapping"];
 		for (auto valueImagesImageDiskDeviceMappingsDiskDeviceMapping : allDiskDeviceMappingsNode)
 		{

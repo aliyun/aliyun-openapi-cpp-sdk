@@ -88,3 +88,25 @@ void DescribeNatGatewaysRequest::setNatGatewayId(const std::string &natGatewayId
   setParameter(std::string("NatGatewayId"), natGatewayId);
 }
 
+std::vector<DescribeNatGatewaysRequest::std::string> DescribeNatGatewaysRequest::getEnsRegionIds() const {
+  return ensRegionIds_;
+}
+
+void DescribeNatGatewaysRequest::setEnsRegionIds(const std::vector<DescribeNatGatewaysRequest::std::string> &ensRegionIds) {
+  ensRegionIds_ = ensRegionIds;
+  for(int dep1 = 0; dep1 != ensRegionIds.size(); dep1++) {
+    setParameter(std::string("EnsRegionIds") + "." + std::to_string(dep1 + 1), ensRegionIds[dep1]);
+  }
+}
+
+std::vector<DescribeNatGatewaysRequest::std::string> DescribeNatGatewaysRequest::getNatGatewayIds() const {
+  return natGatewayIds_;
+}
+
+void DescribeNatGatewaysRequest::setNatGatewayIds(const std::vector<DescribeNatGatewaysRequest::std::string> &natGatewayIds) {
+  natGatewayIds_ = natGatewayIds;
+  for(int dep1 = 0; dep1 != natGatewayIds.size(); dep1++) {
+    setParameter(std::string("NatGatewayIds") + "." + std::to_string(dep1 + 1), natGatewayIds[dep1]);
+  }
+}
+

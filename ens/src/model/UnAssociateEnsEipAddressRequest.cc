@@ -34,3 +34,12 @@ void UnAssociateEnsEipAddressRequest::setAllocationId(const std::string &allocat
   setParameter(std::string("AllocationId"), allocationId);
 }
 
+bool UnAssociateEnsEipAddressRequest::getForce() const {
+  return force_;
+}
+
+void UnAssociateEnsEipAddressRequest::setForce(bool force) {
+  force_ = force;
+  setParameter(std::string("Force"), force ? "true" : "false");
+}
+

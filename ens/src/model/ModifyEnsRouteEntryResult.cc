@@ -14,38 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ens/model/ReleaseInstanceResult.h>
+#include <alibabacloud/ens/model/ModifyEnsRouteEntryResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ens;
 using namespace AlibabaCloud::Ens::Model;
 
-ReleaseInstanceResult::ReleaseInstanceResult() :
+ModifyEnsRouteEntryResult::ModifyEnsRouteEntryResult() :
 	ServiceResult()
 {}
 
-ReleaseInstanceResult::ReleaseInstanceResult(const std::string &payload) :
+ModifyEnsRouteEntryResult::ModifyEnsRouteEntryResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ReleaseInstanceResult::~ReleaseInstanceResult()
+ModifyEnsRouteEntryResult::~ModifyEnsRouteEntryResult()
 {}
 
-void ReleaseInstanceResult::parse(const std::string &payload)
+void ModifyEnsRouteEntryResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ResourceType"].isNull())
-		resourceType_ = value["ResourceType"].asString();
 
-}
-
-std::string ReleaseInstanceResult::getResourceType()const
-{
-	return resourceType_;
 }
 

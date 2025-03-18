@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct ElbAvailableResourceInfoItem
 				{
+					std::vector<std::string> ability;
 					std::string area;
 					std::string canBuyCount;
 					std::string enName;

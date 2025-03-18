@@ -25,6 +25,51 @@ ModifyForwardEntryRequest::ModifyForwardEntryRequest()
 
 ModifyForwardEntryRequest::~ModifyForwardEntryRequest() {}
 
+std::string ModifyForwardEntryRequest::getInternalIp() const {
+  return internalIp_;
+}
+
+void ModifyForwardEntryRequest::setInternalIp(const std::string &internalIp) {
+  internalIp_ = internalIp;
+  setParameter(std::string("InternalIp"), internalIp);
+}
+
+std::string ModifyForwardEntryRequest::getExternalIp() const {
+  return externalIp_;
+}
+
+void ModifyForwardEntryRequest::setExternalIp(const std::string &externalIp) {
+  externalIp_ = externalIp;
+  setParameter(std::string("ExternalIp"), externalIp);
+}
+
+std::string ModifyForwardEntryRequest::getIpProtocol() const {
+  return ipProtocol_;
+}
+
+void ModifyForwardEntryRequest::setIpProtocol(const std::string &ipProtocol) {
+  ipProtocol_ = ipProtocol;
+  setParameter(std::string("IpProtocol"), ipProtocol);
+}
+
+int ModifyForwardEntryRequest::getHealthCheckPort() const {
+  return healthCheckPort_;
+}
+
+void ModifyForwardEntryRequest::setHealthCheckPort(int healthCheckPort) {
+  healthCheckPort_ = healthCheckPort;
+  setParameter(std::string("HealthCheckPort"), std::to_string(healthCheckPort));
+}
+
+std::string ModifyForwardEntryRequest::getExternalPort() const {
+  return externalPort_;
+}
+
+void ModifyForwardEntryRequest::setExternalPort(const std::string &externalPort) {
+  externalPort_ = externalPort;
+  setParameter(std::string("ExternalPort"), externalPort);
+}
+
 std::string ModifyForwardEntryRequest::getForwardEntryId() const {
   return forwardEntryId_;
 }
@@ -43,12 +88,12 @@ void ModifyForwardEntryRequest::setForwardEntryName(const std::string &forwardEn
   setParameter(std::string("ForwardEntryName"), forwardEntryName);
 }
 
-int ModifyForwardEntryRequest::getHealthCheckPort() const {
-  return healthCheckPort_;
+std::string ModifyForwardEntryRequest::getInternalPort() const {
+  return internalPort_;
 }
 
-void ModifyForwardEntryRequest::setHealthCheckPort(int healthCheckPort) {
-  healthCheckPort_ = healthCheckPort;
-  setParameter(std::string("HealthCheckPort"), std::to_string(healthCheckPort));
+void ModifyForwardEntryRequest::setInternalPort(const std::string &internalPort) {
+  internalPort_ = internalPort;
+  setParameter(std::string("InternalPort"), internalPort);
 }
 

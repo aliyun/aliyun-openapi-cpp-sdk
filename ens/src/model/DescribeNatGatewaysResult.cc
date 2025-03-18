@@ -57,6 +57,20 @@ void DescribeNatGatewaysResult::parse(const std::string &payload)
 			natGatewaysObject.creationTime = valueNatGatewaysNatGateway["CreationTime"].asString();
 		if(!valueNatGatewaysNatGateway["Spec"].isNull())
 			natGatewaysObject.spec = valueNatGatewaysNatGateway["Spec"].asString();
+		if(!valueNatGatewaysNatGateway["Status"].isNull())
+			natGatewaysObject.status = valueNatGatewaysNatGateway["Status"].asString();
+		auto allIpListsNode = valueNatGatewaysNatGateway["IpLists"]["IpList"];
+		for (auto valueNatGatewaysNatGatewayIpListsIpList : allIpListsNode)
+		{
+			NatGateway::IpList ipListsObject;
+			if(!valueNatGatewaysNatGatewayIpListsIpList["UsingStatus"].isNull())
+				ipListsObject.usingStatus = valueNatGatewaysNatGatewayIpListsIpList["UsingStatus"].asString();
+			if(!valueNatGatewaysNatGatewayIpListsIpList["IpAddress"].isNull())
+				ipListsObject.ipAddress = valueNatGatewaysNatGatewayIpListsIpList["IpAddress"].asString();
+			if(!valueNatGatewaysNatGatewayIpListsIpList["AllocationId"].isNull())
+				ipListsObject.allocationId = valueNatGatewaysNatGatewayIpListsIpList["AllocationId"].asString();
+			natGatewaysObject.ipLists.push_back(ipListsObject);
+		}
 		natGateways_.push_back(natGatewaysObject);
 	}
 	if(!value["PageNumber"].isNull())

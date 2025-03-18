@@ -381,6 +381,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeStorageVolumeResult.h
 	include/alibabacloud/ens/model/DescribeUserBandWidthDataRequest.h
 	include/alibabacloud/ens/model/DescribeUserBandWidthDataResult.h
+	include/alibabacloud/ens/model/DescribeVSwitchAttributesRequest.h
+	include/alibabacloud/ens/model/DescribeVSwitchAttributesResult.h
 	include/alibabacloud/ens/model/DescribeVSwitchesRequest.h
 	include/alibabacloud/ens/model/DescribeVSwitchesResult.h
 	include/alibabacloud/ens/model/DetachDiskRequest.h
@@ -425,10 +427,14 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/ListBucketsResult.h
 	include/alibabacloud/ens/model/ListObjectsRequest.h
 	include/alibabacloud/ens/model/ListObjectsResult.h
+	include/alibabacloud/ens/model/ListProductAbilitiesRequest.h
+	include/alibabacloud/ens/model/ListProductAbilitiesResult.h
 	include/alibabacloud/ens/model/ListTagResourcesRequest.h
 	include/alibabacloud/ens/model/ListTagResourcesResult.h
 	include/alibabacloud/ens/model/ModifyEnsEipAddressAttributeRequest.h
 	include/alibabacloud/ens/model/ModifyEnsEipAddressAttributeResult.h
+	include/alibabacloud/ens/model/ModifyEnsRouteEntryRequest.h
+	include/alibabacloud/ens/model/ModifyEnsRouteEntryResult.h
 	include/alibabacloud/ens/model/ModifyEpnInstanceRequest.h
 	include/alibabacloud/ens/model/ModifyEpnInstanceResult.h
 	include/alibabacloud/ens/model/ModifyFileSystemRequest.h
@@ -962,6 +968,8 @@ set(ens_src
 	src/model/DescribeStorageVolumeResult.cc
 	src/model/DescribeUserBandWidthDataRequest.cc
 	src/model/DescribeUserBandWidthDataResult.cc
+	src/model/DescribeVSwitchAttributesRequest.cc
+	src/model/DescribeVSwitchAttributesResult.cc
 	src/model/DescribeVSwitchesRequest.cc
 	src/model/DescribeVSwitchesResult.cc
 	src/model/DetachDiskRequest.cc
@@ -1006,10 +1014,14 @@ set(ens_src
 	src/model/ListBucketsResult.cc
 	src/model/ListObjectsRequest.cc
 	src/model/ListObjectsResult.cc
+	src/model/ListProductAbilitiesRequest.cc
+	src/model/ListProductAbilitiesResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ModifyEnsEipAddressAttributeRequest.cc
 	src/model/ModifyEnsEipAddressAttributeResult.cc
+	src/model/ModifyEnsRouteEntryRequest.cc
+	src/model/ModifyEnsRouteEntryResult.cc
 	src/model/ModifyEpnInstanceRequest.cc
 	src/model/ModifyEpnInstanceResult.cc
 	src/model/ModifyFileSystemRequest.cc

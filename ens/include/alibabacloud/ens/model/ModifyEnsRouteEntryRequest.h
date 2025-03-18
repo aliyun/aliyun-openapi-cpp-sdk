@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_CREATESECURITYGROUPREQUEST_H_
-#define ALIBABACLOUD_ENS_MODEL_CREATESECURITYGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_MODIFYENSROUTEENTRYREQUEST_H_
+#define ALIBABACLOUD_ENS_MODEL_MODIFYENSROUTEENTRYREQUEST_H_
 
 #include <alibabacloud/ens/EnsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,34 +26,23 @@
 namespace AlibabaCloud {
 namespace Ens {
 namespace Model {
-class ALIBABACLOUD_ENS_EXPORT CreateSecurityGroupRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ENS_EXPORT ModifyEnsRouteEntryRequest : public RpcServiceRequest {
 public:
-	struct Permissions {
-		std::string sourcePortRange;
-		std::string portRange;
-		std::string ipProtocol;
-		std::string sourceCidrIp;
-		std::string description;
-		int priority;
-		std::string destCidrIp;
-		std::string direction;
-		std::string policy;
-	};
-	CreateSecurityGroupRequest();
-	~CreateSecurityGroupRequest();
+	ModifyEnsRouteEntryRequest();
+	~ModifyEnsRouteEntryRequest();
+	std::string getRouteEntryName() const;
+	void setRouteEntryName(const std::string &routeEntryName);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
-	std::string getSecurityGroupName() const;
-	void setSecurityGroupName(const std::string &securityGroupName);
-	std::vector<Permissions> getPermissions() const;
-	void setPermissions(const std::vector<Permissions> &permissions);
+	std::string getRouteEntryId() const;
+	void setRouteEntryId(const std::string &routeEntryId);
 
 private:
+	std::string routeEntryName_;
 	std::string description_;
-	std::string securityGroupName_;
-	std::vector<Permissions> permissions_;
+	std::string routeEntryId_;
 };
 } // namespace Model
 } // namespace Ens
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ENS_MODEL_CREATESECURITYGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_MODIFYENSROUTEENTRYREQUEST_H_

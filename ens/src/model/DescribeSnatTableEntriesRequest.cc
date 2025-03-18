@@ -43,6 +43,17 @@ void DescribeSnatTableEntriesRequest::setSnatEntryId(const std::string &snatEntr
   setParameter(std::string("SnatEntryId"), snatEntryId);
 }
 
+std::vector<DescribeSnatTableEntriesRequest::std::string> DescribeSnatTableEntriesRequest::getSnatIps() const {
+  return snatIps_;
+}
+
+void DescribeSnatTableEntriesRequest::setSnatIps(const std::vector<DescribeSnatTableEntriesRequest::std::string> &snatIps) {
+  snatIps_ = snatIps;
+  for(int dep1 = 0; dep1 != snatIps.size(); dep1++) {
+    setParameter(std::string("SnatIps") + "." + std::to_string(dep1 + 1), snatIps[dep1]);
+  }
+}
+
 std::string DescribeSnatTableEntriesRequest::getSourceCIDR() const {
   return sourceCIDR_;
 }

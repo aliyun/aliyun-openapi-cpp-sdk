@@ -59,6 +59,24 @@ void DescribeEnsRouteTablesResult::parse(const std::string &payload)
 			routeTablesObject.routeTableName = valueRouteTablesRouteTable["RouteTableName"].asString();
 		if(!valueRouteTablesRouteTable["NetworkName"].isNull())
 			routeTablesObject.networkName = valueRouteTablesRouteTable["NetworkName"].asString();
+		if(!valueRouteTablesRouteTable["AssociateType"].isNull())
+			routeTablesObject.associateType = valueRouteTablesRouteTable["AssociateType"].asString();
+		if(!valueRouteTablesRouteTable["Description"].isNull())
+			routeTablesObject.description = valueRouteTablesRouteTable["Description"].asString();
+		if(!valueRouteTablesRouteTable["IsDefaultGatewayRouteTable"].isNull())
+			routeTablesObject.isDefaultGatewayRouteTable = valueRouteTablesRouteTable["IsDefaultGatewayRouteTable"].asString() == "true";
+		auto allAssociatedResourcesNode = valueRouteTablesRouteTable["AssociatedResources"]["AssociatedResource"];
+		for (auto valueRouteTablesRouteTableAssociatedResourcesAssociatedResource : allAssociatedResourcesNode)
+		{
+			RouteTable::AssociatedResource associatedResourcesObject;
+			if(!valueRouteTablesRouteTableAssociatedResourcesAssociatedResource["ResourceType"].isNull())
+				associatedResourcesObject.resourceType = valueRouteTablesRouteTableAssociatedResourcesAssociatedResource["ResourceType"].asString();
+			if(!valueRouteTablesRouteTableAssociatedResourcesAssociatedResource["ResourceId"].isNull())
+				associatedResourcesObject.resourceId = valueRouteTablesRouteTableAssociatedResourcesAssociatedResource["ResourceId"].asString();
+			if(!valueRouteTablesRouteTableAssociatedResourcesAssociatedResource["ResourceName"].isNull())
+				associatedResourcesObject.resourceName = valueRouteTablesRouteTableAssociatedResourcesAssociatedResource["ResourceName"].asString();
+			routeTablesObject.associatedResources.push_back(associatedResourcesObject);
+		}
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitch"];
 		for (auto value : allVSwitchIds)
 			routeTablesObject.vSwitchIds.push_back(value.asString());

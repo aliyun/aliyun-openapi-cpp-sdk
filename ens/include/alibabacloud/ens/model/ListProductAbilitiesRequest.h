@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DELETENATGATEWAYREQUEST_H_
-#define ALIBABACLOUD_ENS_MODEL_DELETENATGATEWAYREQUEST_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_LISTPRODUCTABILITIESREQUEST_H_
+#define ALIBABACLOUD_ENS_MODEL_LISTPRODUCTABILITIESREQUEST_H_
 
 #include <alibabacloud/ens/EnsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,14 @@
 namespace AlibabaCloud {
 namespace Ens {
 namespace Model {
-class ALIBABACLOUD_ENS_EXPORT DeleteNatGatewayRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ENS_EXPORT ListProductAbilitiesRequest : public RpcServiceRequest {
 public:
-	DeleteNatGatewayRequest();
-	~DeleteNatGatewayRequest();
-	bool getForceDelete() const;
-	void setForceDelete(bool forceDelete);
-	std::string getNatGatewayId() const;
-	void setNatGatewayId(const std::string &natGatewayId);
+	ListProductAbilitiesRequest();
+	~ListProductAbilitiesRequest();
 
 private:
-	bool forceDelete_;
-	std::string natGatewayId_;
 };
 } // namespace Model
 } // namespace Ens
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ENS_MODEL_DELETENATGATEWAYREQUEST_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_LISTPRODUCTABILITIESREQUEST_H_

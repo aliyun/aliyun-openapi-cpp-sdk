@@ -75,6 +75,15 @@ void CreateEipInstanceRequest::setName(const std::string &name) {
   setParameter(std::string("Name"), name);
 }
 
+std::string CreateEipInstanceRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void CreateEipInstanceRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
 std::string CreateEipInstanceRequest::getDescription() const {
   return description_;
 }

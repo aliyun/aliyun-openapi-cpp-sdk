@@ -32,9 +32,12 @@ public:
 	~UnAssociateEnsEipAddressRequest();
 	std::string getAllocationId() const;
 	void setAllocationId(const std::string &allocationId);
+	bool getForce() const;
+	void setForce(bool force);
 
 private:
 	std::string allocationId_;
+	bool force_;
 };
 } // namespace Model
 } // namespace Ens

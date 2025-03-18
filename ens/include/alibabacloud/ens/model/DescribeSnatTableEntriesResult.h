@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					int idleTimeout;
 					std::string snatIp;
 					std::string standbySnatIp;
+					bool eipAffinity;
 					std::string type;
 					std::string destCIDR;
 					std::string snatEntryName;

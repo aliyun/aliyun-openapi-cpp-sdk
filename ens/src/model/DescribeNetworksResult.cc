@@ -61,9 +61,16 @@ void DescribeNetworksResult::parse(const std::string &payload)
 			networksObject.routerTableId = valueNetworksNetwork["RouterTableId"].asString();
 		if(!valueNetworksNetwork["NetworkAclId"].isNull())
 			networksObject.networkAclId = valueNetworksNetwork["NetworkAclId"].asString();
+		if(!valueNetworksNetwork["RouteTableId"].isNull())
+			networksObject.routeTableId = valueNetworksNetwork["RouteTableId"].asString();
+		if(!valueNetworksNetwork["GatewayRouteTableId"].isNull())
+			networksObject.gatewayRouteTableId = valueNetworksNetwork["GatewayRouteTableId"].asString();
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 		for (auto value : allVSwitchIds)
 			networksObject.vSwitchIds.push_back(value.asString());
+		auto allRouteTableIds = value["RouteTableIds"]["RouteTableId"];
+		for (auto value : allRouteTableIds)
+			networksObject.routeTableIds.push_back(value.asString());
 		networks_.push_back(networksObject);
 	}
 	if(!value["TotalCount"].isNull())

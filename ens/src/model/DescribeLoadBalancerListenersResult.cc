@@ -59,6 +59,8 @@ void DescribeLoadBalancerListenersResult::parse(const std::string &payload)
 			listenersObject.forwardPort = valueListenersListener["ForwardPort"].asString();
 		if(!valueListenersListener["CreateTime"].isNull())
 			listenersObject.createTime = valueListenersListener["CreateTime"].asString();
+		if(!valueListenersListener["BackendServerPort"].isNull())
+			listenersObject.backendServerPort = std::stoi(valueListenersListener["BackendServerPort"].asString());
 		listeners_.push_back(listenersObject);
 	}
 	if(!value["PageNumber"].isNull())

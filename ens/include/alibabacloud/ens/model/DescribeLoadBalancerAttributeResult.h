@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					std::string description;
 					int forwardPort;
 					std::string listenerProtocol;
+					int backendServerPort;
 				};
 
 

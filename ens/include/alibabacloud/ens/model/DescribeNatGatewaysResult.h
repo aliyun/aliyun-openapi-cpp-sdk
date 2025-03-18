@@ -34,7 +34,15 @@ namespace AlibabaCloud
 			public:
 				struct NatGateway
 				{
+					struct IpList
+					{
+						std::string usingStatus;
+						std::string allocationId;
+						std::string ipAddress;
+					};
+					std::string status;
 					std::string vSwitchId;
+					std::vector<NatGateway::IpList> ipLists;
 					std::string creationTime;
 					std::string ensRegionId;
 					std::string networkId;

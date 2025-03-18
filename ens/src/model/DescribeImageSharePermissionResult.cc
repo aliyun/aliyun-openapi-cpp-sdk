@@ -39,9 +39,14 @@ void DescribeImageSharePermissionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAccounts = value["Accounts"]["Account"];
-	for (const auto &item : allAccounts)
-		accounts_.push_back(item.asString());
+	auto allAccountsNode = value["Accounts"]["Account"];
+	for (auto valueAccountsAccount : allAccountsNode)
+	{
+		Account accountsObject;
+		if(!valueAccountsAccount["AliyunUid"].isNull())
+			accountsObject.aliyunUid = valueAccountsAccount["AliyunUid"].asString();
+		accounts_.push_back(accountsObject);
+	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["PageSize"].isNull())
@@ -73,7 +78,7 @@ std::string DescribeImageSharePermissionResult::getImageId()const
 	return imageId_;
 }
 
-std::vector<std::string> DescribeImageSharePermissionResult::getAccounts()const
+std::vector<DescribeImageSharePermissionResult::Account> DescribeImageSharePermissionResult::getAccounts()const
 {
 	return accounts_;
 }

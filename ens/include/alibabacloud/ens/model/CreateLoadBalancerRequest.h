@@ -40,6 +40,8 @@ public:
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getNetworkId() const;
 	void setNetworkId(const std::string &networkId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getPayType() const;
 	void setPayType(const std::string &payType);
 
@@ -49,6 +51,7 @@ private:
 	std::string loadBalancerSpec_;
 	std::string vSwitchId_;
 	std::string networkId_;
+	std::string clientToken_;
 	std::string payType_;
 };
 } // namespace Model

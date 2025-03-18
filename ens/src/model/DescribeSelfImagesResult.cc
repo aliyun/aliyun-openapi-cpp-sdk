@@ -69,6 +69,8 @@ void DescribeSelfImagesResult::parse(const std::string &payload)
 			imagesObject.snapshotId = valueImagesImage["SnapshotId"].asString();
 		if(!valueImagesImage["ImageStorageSize"].isNull())
 			imagesObject.imageStorageSize = valueImagesImage["ImageStorageSize"].asString();
+		if(!valueImagesImage["RegionId"].isNull())
+			imagesObject.regionId = valueImagesImage["RegionId"].asString();
 		auto allDiskDeviceMappingsNode = valueImagesImage["DiskDeviceMappings"]["DiskDeviceMapping"];
 		for (auto valueImagesImageDiskDeviceMappingsDiskDeviceMapping : allDiskDeviceMappingsNode)
 		{
@@ -87,7 +89,28 @@ void DescribeSelfImagesResult::parse(const std::string &payload)
 	}
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = value["PageSize"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = value["PageNumber"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = value["TotalCount"].asString();
 
+}
+
+std::string DescribeSelfImagesResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
+std::string DescribeSelfImagesResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+std::string DescribeSelfImagesResult::getPageNumber()const
+{
+	return pageNumber_;
 }
 
 std::vector<DescribeSelfImagesResult::Image> DescribeSelfImagesResult::getImages()const

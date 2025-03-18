@@ -44,6 +44,8 @@ public:
 	void setInternetChargeType(const std::string &internetChargeType);
 	std::string getName() const;
 	void setName(const std::string &name);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	std::string getInstanceChargeType() const;
@@ -57,6 +59,7 @@ private:
 	std::vector<Tag> tag_;
 	std::string internetChargeType_;
 	std::string name_;
+	std::string clientToken_;
 	std::string description_;
 	std::string instanceChargeType_;
 	long bandwidth_;

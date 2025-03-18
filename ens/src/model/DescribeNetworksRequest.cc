@@ -25,15 +25,6 @@ DescribeNetworksRequest::DescribeNetworksRequest()
 
 DescribeNetworksRequest::~DescribeNetworksRequest() {}
 
-int DescribeNetworksRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void DescribeNetworksRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
-}
-
 std::string DescribeNetworksRequest::getEnsRegionId() const {
   return ensRegionId_;
 }
@@ -41,6 +32,35 @@ std::string DescribeNetworksRequest::getEnsRegionId() const {
 void DescribeNetworksRequest::setEnsRegionId(const std::string &ensRegionId) {
   ensRegionId_ = ensRegionId;
   setParameter(std::string("EnsRegionId"), ensRegionId);
+}
+
+std::vector<DescribeNetworksRequest::std::string> DescribeNetworksRequest::getNetworkIds() const {
+  return networkIds_;
+}
+
+void DescribeNetworksRequest::setNetworkIds(const std::vector<DescribeNetworksRequest::std::string> &networkIds) {
+  networkIds_ = networkIds;
+  for(int dep1 = 0; dep1 != networkIds.size(); dep1++) {
+    setParameter(std::string("NetworkIds") + "." + std::to_string(dep1 + 1), networkIds[dep1]);
+  }
+}
+
+std::string DescribeNetworksRequest::getNetworkId() const {
+  return networkId_;
+}
+
+void DescribeNetworksRequest::setNetworkId(const std::string &networkId) {
+  networkId_ = networkId;
+  setParameter(std::string("NetworkId"), networkId);
+}
+
+int DescribeNetworksRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void DescribeNetworksRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
 int DescribeNetworksRequest::getPageSize() const {
@@ -61,12 +81,14 @@ void DescribeNetworksRequest::setNetworkName(const std::string &networkName) {
   setParameter(std::string("NetworkName"), networkName);
 }
 
-std::string DescribeNetworksRequest::getNetworkId() const {
-  return networkId_;
+std::vector<DescribeNetworksRequest::std::string> DescribeNetworksRequest::getEnsRegionIds() const {
+  return ensRegionIds_;
 }
 
-void DescribeNetworksRequest::setNetworkId(const std::string &networkId) {
-  networkId_ = networkId;
-  setParameter(std::string("NetworkId"), networkId);
+void DescribeNetworksRequest::setEnsRegionIds(const std::vector<DescribeNetworksRequest::std::string> &ensRegionIds) {
+  ensRegionIds_ = ensRegionIds;
+  for(int dep1 = 0; dep1 != ensRegionIds.size(); dep1++) {
+    setParameter(std::string("EnsRegionIds") + "." + std::to_string(dep1 + 1), ensRegionIds[dep1]);
+  }
 }
 

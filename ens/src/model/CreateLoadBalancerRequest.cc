@@ -70,6 +70,15 @@ void CreateLoadBalancerRequest::setNetworkId(const std::string &networkId) {
   setParameter(std::string("NetworkId"), networkId);
 }
 
+std::string CreateLoadBalancerRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void CreateLoadBalancerRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
 std::string CreateLoadBalancerRequest::getPayType() const {
   return payType_;
 }

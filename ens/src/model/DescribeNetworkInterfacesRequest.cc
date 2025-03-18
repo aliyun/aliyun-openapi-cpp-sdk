@@ -99,6 +99,17 @@ void DescribeNetworkInterfacesRequest::setStatus(const std::string &status) {
   setParameter(std::string("Status"), status);
 }
 
+std::vector<DescribeNetworkInterfacesRequest::std::string> DescribeNetworkInterfacesRequest::getNetworkInterfaceIds() const {
+  return networkInterfaceIds_;
+}
+
+void DescribeNetworkInterfacesRequest::setNetworkInterfaceIds(const std::vector<DescribeNetworkInterfacesRequest::std::string> &networkInterfaceIds) {
+  networkInterfaceIds_ = networkInterfaceIds;
+  for(int dep1 = 0; dep1 != networkInterfaceIds.size(); dep1++) {
+    setParameter(std::string("NetworkInterfaceIds") + "." + std::to_string(dep1 + 1), networkInterfaceIds[dep1]);
+  }
+}
+
 std::string DescribeNetworkInterfacesRequest::getSecurityGroupId() const {
   return securityGroupId_;
 }
@@ -133,6 +144,17 @@ std::string DescribeNetworkInterfacesRequest::getPageSize() const {
 void DescribeNetworkInterfacesRequest::setPageSize(const std::string &pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), pageSize);
+}
+
+std::vector<DescribeNetworkInterfacesRequest::std::string> DescribeNetworkInterfacesRequest::getEnsRegionIds() const {
+  return ensRegionIds_;
+}
+
+void DescribeNetworkInterfacesRequest::setEnsRegionIds(const std::vector<DescribeNetworkInterfacesRequest::std::string> &ensRegionIds) {
+  ensRegionIds_ = ensRegionIds;
+  for(int dep1 = 0; dep1 != ensRegionIds.size(); dep1++) {
+    setParameter(std::string("EnsRegionIds") + "." + std::to_string(dep1 + 1), ensRegionIds[dep1]);
+  }
 }
 
 std::string DescribeNetworkInterfacesRequest::getPrimaryIpAddress() const {

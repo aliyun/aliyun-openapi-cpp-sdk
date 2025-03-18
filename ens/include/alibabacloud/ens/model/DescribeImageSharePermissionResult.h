@@ -32,6 +32,10 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ENS_EXPORT DescribeImageSharePermissionResult : public ServiceResult
 			{
 			public:
+				struct Account
+				{
+					std::string aliyunUid;
+				};
 
 
 				DescribeImageSharePermissionResult();
@@ -41,7 +45,7 @@ namespace AlibabaCloud
 				int getPageSize()const;
 				int getPageNumber()const;
 				std::string getImageId()const;
-				std::vector<std::string> getAccounts()const;
+				std::vector<Account> getAccounts()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -50,7 +54,7 @@ namespace AlibabaCloud
 				int pageSize_;
 				int pageNumber_;
 				std::string imageId_;
-				std::vector<std::string> accounts_;
+				std::vector<Account> accounts_;
 
 			};
 		}

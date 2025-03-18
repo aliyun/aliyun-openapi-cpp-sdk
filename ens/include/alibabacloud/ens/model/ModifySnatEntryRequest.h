@@ -30,6 +30,10 @@ class ALIBABACLOUD_ENS_EXPORT ModifySnatEntryRequest : public RpcServiceRequest 
 public:
 	ModifySnatEntryRequest();
 	~ModifySnatEntryRequest();
+	std::string getSnatIp() const;
+	void setSnatIp(const std::string &snatIp);
+	bool getEipAffinity() const;
+	void setEipAffinity(bool eipAffinity);
 	std::string getSnatEntryId() const;
 	void setSnatEntryId(const std::string &snatEntryId);
 	std::string getSnatEntryName() const;
@@ -38,6 +42,8 @@ public:
 	void setIspAffinity(bool ispAffinity);
 
 private:
+	std::string snatIp_;
+	bool eipAffinity_;
 	std::string snatEntryId_;
 	std::string snatEntryName_;
 	bool ispAffinity_;

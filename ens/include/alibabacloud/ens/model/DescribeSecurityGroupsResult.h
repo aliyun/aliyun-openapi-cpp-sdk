@@ -39,6 +39,8 @@ namespace AlibabaCloud
 					std::string securityGroupName;
 					std::string securityGroupId;
 					std::string creationTime;
+					std::vector<std::string> networkInterfaceIds;
+					std::vector<std::string> instanceIds;
 				};
 
 

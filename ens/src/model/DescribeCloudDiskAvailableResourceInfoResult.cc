@@ -57,6 +57,9 @@ void DescribeCloudDiskAvailableResourceInfoResult::parse(const std::string &payl
 			supportResourcesObject.category = valueSupportResourcesSupportResource["Category"].asString();
 		if(!valueSupportResourcesSupportResource["DefaultDiskSize"].isNull())
 			supportResourcesObject.defaultDiskSize = std::stol(valueSupportResourcesSupportResource["DefaultDiskSize"].asString());
+		auto allAbility = value["Ability"]["Ability"];
+		for (auto value : allAbility)
+			supportResourcesObject.ability.push_back(value.asString());
 		supportResources_.push_back(supportResourcesObject);
 	}
 

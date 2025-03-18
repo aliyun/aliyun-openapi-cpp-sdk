@@ -36,6 +36,8 @@ public:
 	void setDeleteAfterImageUpload(const std::string &deleteAfterImageUpload);
 	std::string getImageName() const;
 	void setImageName(const std::string &imageName);
+	std::string getTargetOSSRegionId() const;
+	void setTargetOSSRegionId(const std::string &targetOSSRegionId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 
@@ -43,6 +45,7 @@ private:
 	std::string snapshotId_;
 	std::string deleteAfterImageUpload_;
 	std::string imageName_;
+	std::string targetOSSRegionId_;
 	std::string instanceId_;
 };
 } // namespace Model

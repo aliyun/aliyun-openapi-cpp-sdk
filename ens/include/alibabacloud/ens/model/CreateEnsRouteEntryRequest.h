@@ -32,8 +32,6 @@ public:
 	~CreateEnsRouteEntryRequest();
 	std::string getRouteEntryName() const;
 	void setRouteEntryName(const std::string &routeEntryName);
-	std::string getDescription() const;
-	void setDescription(const std::string &description);
 	std::string getNextHopId() const;
 	void setNextHopId(const std::string &nextHopId);
 	std::string getNextHopType() const;
@@ -42,14 +40,19 @@ public:
 	void setRouteTableId(const std::string &routeTableId);
 	std::string getDestinationCidrBlock() const;
 	void setDestinationCidrBlock(const std::string &destinationCidrBlock);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
+	std::string getSourceCidrBlock() const;
+	void setSourceCidrBlock(const std::string &sourceCidrBlock);
 
 private:
 	std::string routeEntryName_;
-	std::string description_;
 	std::string nextHopId_;
 	std::string nextHopType_;
 	std::string routeTableId_;
 	std::string destinationCidrBlock_;
+	std::string description_;
+	std::string sourceCidrBlock_;
 };
 } // namespace Model
 } // namespace Ens

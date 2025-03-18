@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBECLOUDDISKAVAILABLERESOURCEINFORESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBECLOUDDISKAVAILABLERESOURCEINFORESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_LISTPRODUCTABILITIESRESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_LISTPRODUCTABILITIESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT DescribeCloudDiskAvailableResourceInfoResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT ListProductAbilitiesResult : public ServiceResult
 			{
 			public:
-				struct SupportResource
-				{
-					std::vector<std::string> ability;
-					long canBuyCount;
-					std::string category;
-					std::string ensRegionName;
-					long defaultDiskSize;
-					long diskMinSize;
-					long diskMaxSize;
-					std::string ensRegionId;
-				};
 
 
-				DescribeCloudDiskAvailableResourceInfoResult();
-				explicit DescribeCloudDiskAvailableResourceInfoResult(const std::string &payload);
-				~DescribeCloudDiskAvailableResourceInfoResult();
-				std::vector<SupportResource> getSupportResources()const;
+				ListProductAbilitiesResult();
+				explicit ListProductAbilitiesResult(const std::string &payload);
+				~ListProductAbilitiesResult();
+				std::vector<std::string> getProductAbilities()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<SupportResource> supportResources_;
+				std::vector<std::string> productAbilities_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBECLOUDDISKAVAILABLERESOURCEINFORESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_LISTPRODUCTABILITIESRESULT_H_

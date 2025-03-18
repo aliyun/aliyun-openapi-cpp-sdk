@@ -55,18 +55,25 @@ namespace AlibabaCloud
 					std::vector<Image::DiskDeviceMapping> diskDeviceMappings;
 					std::string creationTime;
 					std::string imageId;
+					std::string regionId;
 				};
 
 
 				DescribeSelfImagesResult();
 				explicit DescribeSelfImagesResult(const std::string &payload);
 				~DescribeSelfImagesResult();
+				std::string getTotalCount()const;
+				std::string getPageSize()const;
+				std::string getPageNumber()const;
 				std::vector<Image> getImages()const;
 				int getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string totalCount_;
+				std::string pageSize_;
+				std::string pageNumber_;
 				std::vector<Image> images_;
 				int code_;
 

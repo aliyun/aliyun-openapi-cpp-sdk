@@ -57,6 +57,8 @@ void DescribeImageInfosResult::parse(const std::string &payload)
 			imagesObject.oSType = valueImagesImage["OSType"].asString();
 		if(!valueImagesImage["ComputeType"].isNull())
 			imagesObject.computeType = valueImagesImage["ComputeType"].asString();
+		if(!valueImagesImage["RegionId"].isNull())
+			imagesObject.regionId = valueImagesImage["RegionId"].asString();
 		auto allDiskDeviceMappingsNode = valueImagesImage["DiskDeviceMappings"]["DiskDeviceMapping"];
 		for (auto valueImagesImageDiskDeviceMappingsDiskDeviceMapping : allDiskDeviceMappingsNode)
 		{

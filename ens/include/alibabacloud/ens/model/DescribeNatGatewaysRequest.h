@@ -44,6 +44,10 @@ public:
 	void setPageSize(int pageSize);
 	std::string getNatGatewayId() const;
 	void setNatGatewayId(const std::string &natGatewayId);
+	std::vector<std::string> getEnsRegionIds() const;
+	void setEnsRegionIds(const std::vector<std::string> &ensRegionIds);
+	std::vector<std::string> getNatGatewayIds() const;
+	void setNatGatewayIds(const std::vector<std::string> &natGatewayIds);
 
 private:
 	std::string ensRegionId_;
@@ -53,6 +57,8 @@ private:
 	int pageNumber_;
 	int pageSize_;
 	std::string natGatewayId_;
+	std::vector<std::string> ensRegionIds_;
+	std::vector<std::string> natGatewayIds_;
 };
 } // namespace Model
 } // namespace Ens
