@@ -159,6 +159,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DescribeVodDomainTrafficDataResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainUsageDataRequest.h
 	include/alibabacloud/vod/model/DescribeVodDomainUsageDataResult.h
+	include/alibabacloud/vod/model/DescribeVodEditingUsageDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodEditingUsageDataResult.h
 	include/alibabacloud/vod/model/DescribeVodMediaPlayDataRequest.h
 	include/alibabacloud/vod/model/DescribeVodMediaPlayDataResult.h
 	include/alibabacloud/vod/model/DescribeVodRangeDataByLocateAndIspServiceRequest.h
@@ -203,6 +205,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/GetAuditHistoryResult.h
 	include/alibabacloud/vod/model/GetCategoriesRequest.h
 	include/alibabacloud/vod/model/GetCategoriesResult.h
+	include/alibabacloud/vod/model/GetDailyPlayRegionStatisRequest.h
+	include/alibabacloud/vod/model/GetDailyPlayRegionStatisResult.h
 	include/alibabacloud/vod/model/GetDefaultAITemplateRequest.h
 	include/alibabacloud/vod/model/GetDefaultAITemplateResult.h
 	include/alibabacloud/vod/model/GetDigitalWatermarkExtractResultRequest.h
@@ -518,6 +522,8 @@ set(vod_src
 	src/model/DescribeVodDomainTrafficDataResult.cc
 	src/model/DescribeVodDomainUsageDataRequest.cc
 	src/model/DescribeVodDomainUsageDataResult.cc
+	src/model/DescribeVodEditingUsageDataRequest.cc
+	src/model/DescribeVodEditingUsageDataResult.cc
 	src/model/DescribeVodMediaPlayDataRequest.cc
 	src/model/DescribeVodMediaPlayDataResult.cc
 	src/model/DescribeVodRangeDataByLocateAndIspServiceRequest.cc
@@ -562,6 +568,8 @@ set(vod_src
 	src/model/GetAuditHistoryResult.cc
 	src/model/GetCategoriesRequest.cc
 	src/model/GetCategoriesResult.cc
+	src/model/GetDailyPlayRegionStatisRequest.cc
+	src/model/GetDailyPlayRegionStatisResult.cc
 	src/model/GetDefaultAITemplateRequest.cc
 	src/model/GetDefaultAITemplateResult.cc
 	src/model/GetDigitalWatermarkExtractResultRequest.cc

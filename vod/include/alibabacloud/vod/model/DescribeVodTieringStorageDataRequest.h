@@ -40,6 +40,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getStorageClass() const;
 	void setStorageClass(const std::string &storageClass);
+	std::string getAppId() const;
+	void setAppId(const std::string &appId);
 	std::string getRegion() const;
 	void setRegion(const std::string &region);
 
@@ -49,6 +51,7 @@ private:
 	std::string endTime_;
 	long ownerId_;
 	std::string storageClass_;
+	std::string appId_;
 	std::string region_;
 };
 } // namespace Model

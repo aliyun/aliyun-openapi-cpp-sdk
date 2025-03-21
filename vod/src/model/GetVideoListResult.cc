@@ -81,6 +81,8 @@ void GetVideoListResult::parse(const std::string &payload)
 			videoListObject.restoreStatus = valueVideoListVideo["RestoreStatus"].asString();
 		if(!valueVideoListVideo["RestoreExpiration"].isNull())
 			videoListObject.restoreExpiration = valueVideoListVideo["RestoreExpiration"].asString();
+		if(!valueVideoListVideo["UserData"].isNull())
+			videoListObject.userData = valueVideoListVideo["UserData"].asString();
 		auto allSnapshots = value["Snapshots"]["Snapshot"];
 		for (auto value : allSnapshots)
 			videoListObject.snapshots.push_back(value.asString());

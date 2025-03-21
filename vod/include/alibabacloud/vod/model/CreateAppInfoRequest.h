@@ -28,6 +28,10 @@ namespace Vod {
 namespace Model {
 class ALIBABACLOUD_VOD_EXPORT CreateAppInfoRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateAppInfoRequest();
 	~CreateAppInfoRequest();
 	std::string getDescription() const;
@@ -40,6 +44,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	Tag getTag() const;
+	void setTag(const Tag &tag);
 
 private:
 	std::string description_;
@@ -47,6 +53,7 @@ private:
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	std::string appName_;
+	Tag tag_;
 };
 } // namespace Model
 } // namespace Vod

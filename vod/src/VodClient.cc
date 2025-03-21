@@ -2535,6 +2535,42 @@ VodClient::DescribeVodDomainUsageDataOutcomeCallable VodClient::describeVodDomai
 	return task->get_future();
 }
 
+VodClient::DescribeVodEditingUsageDataOutcome VodClient::describeVodEditingUsageData(const DescribeVodEditingUsageDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodEditingUsageDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodEditingUsageDataOutcome(DescribeVodEditingUsageDataResult(outcome.result()));
+	else
+		return DescribeVodEditingUsageDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodEditingUsageDataAsync(const DescribeVodEditingUsageDataRequest& request, const DescribeVodEditingUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodEditingUsageData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodEditingUsageDataOutcomeCallable VodClient::describeVodEditingUsageDataCallable(const DescribeVodEditingUsageDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodEditingUsageDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodEditingUsageData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::DescribeVodMediaPlayDataOutcome VodClient::describeVodMediaPlayData(const DescribeVodMediaPlayDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3321,6 +3357,42 @@ VodClient::GetCategoriesOutcomeCallable VodClient::getCategoriesCallable(const G
 			[this, request]()
 			{
 			return this->getCategories(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::GetDailyPlayRegionStatisOutcome VodClient::getDailyPlayRegionStatis(const GetDailyPlayRegionStatisRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDailyPlayRegionStatisOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDailyPlayRegionStatisOutcome(GetDailyPlayRegionStatisResult(outcome.result()));
+	else
+		return GetDailyPlayRegionStatisOutcome(outcome.error());
+}
+
+void VodClient::getDailyPlayRegionStatisAsync(const GetDailyPlayRegionStatisRequest& request, const GetDailyPlayRegionStatisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDailyPlayRegionStatis(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::GetDailyPlayRegionStatisOutcomeCallable VodClient::getDailyPlayRegionStatisCallable(const GetDailyPlayRegionStatisRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDailyPlayRegionStatisOutcome()>>(
+			[this, request]()
+			{
+			return this->getDailyPlayRegionStatis(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

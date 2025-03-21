@@ -70,6 +70,15 @@ void DescribeVodTieringStorageDataRequest::setStorageClass(const std::string &st
   setParameter(std::string("StorageClass"), storageClass);
 }
 
+std::string DescribeVodTieringStorageDataRequest::getAppId() const {
+  return appId_;
+}
+
+void DescribeVodTieringStorageDataRequest::setAppId(const std::string &appId) {
+  appId_ = appId;
+  setParameter(std::string("AppId"), appId);
+}
+
 std::string DescribeVodTieringStorageDataRequest::getRegion() const {
   return region_;
 }

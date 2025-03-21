@@ -70,3 +70,13 @@ void CreateAppInfoRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+CreateAppInfoRequest::Tag CreateAppInfoRequest::getTag() const {
+  return tag_;
+}
+
+void CreateAppInfoRequest::setTag(const CreateAppInfoRequest::Tag &tag) {
+  tag_ = tag;
+  setParameter(std::string("Tag") + ".Value", tag.value);
+  setParameter(std::string("Tag") + ".Key", tag.key);
+}
+

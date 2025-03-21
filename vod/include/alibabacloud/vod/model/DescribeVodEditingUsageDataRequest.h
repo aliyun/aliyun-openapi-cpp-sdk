@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_DESCRIBEVODTIERINGSTORAGERETRIEVALDATAREQUEST_H_
-#define ALIBABACLOUD_VOD_MODEL_DESCRIBEVODTIERINGSTORAGERETRIEVALDATAREQUEST_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_DESCRIBEVODEDITINGUSAGEDATAREQUEST_H_
+#define ALIBABACLOUD_VOD_MODEL_DESCRIBEVODEDITINGUSAGEDATAREQUEST_H_
 
 #include <alibabacloud/vod/VodExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,22 @@
 namespace AlibabaCloud {
 namespace Vod {
 namespace Model {
-class ALIBABACLOUD_VOD_EXPORT DescribeVodTieringStorageRetrievalDataRequest : public RpcServiceRequest {
+class ALIBABACLOUD_VOD_EXPORT DescribeVodEditingUsageDataRequest : public RpcServiceRequest {
 public:
-	DescribeVodTieringStorageRetrievalDataRequest();
-	~DescribeVodTieringStorageRetrievalDataRequest();
+	DescribeVodEditingUsageDataRequest();
+	~DescribeVodEditingUsageDataRequest();
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
 	std::string getSplitBy() const;
 	void setSplitBy(const std::string &splitBy);
+	std::string getProduct() const;
+	void setProduct(const std::string &product);
 	std::string getEndTime() const;
 	void setEndTime(const std::string &endTime);
+	std::string getSpecification() const;
+	void setSpecification(const std::string &specification);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getStorageClass() const;
-	void setStorageClass(const std::string &storageClass);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
 	std::string getRegion() const;
@@ -48,13 +50,14 @@ public:
 private:
 	std::string startTime_;
 	std::string splitBy_;
+	std::string product_;
 	std::string endTime_;
+	std::string specification_;
 	long ownerId_;
-	std::string storageClass_;
 	std::string appId_;
 	std::string region_;
 };
 } // namespace Model
 } // namespace Vod
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_VOD_MODEL_DESCRIBEVODTIERINGSTORAGERETRIEVALDATAREQUEST_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_DESCRIBEVODEDITINGUSAGEDATAREQUEST_H_

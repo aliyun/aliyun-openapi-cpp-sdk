@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string modifyTime;
 					std::string videoId;
 					std::string description;
+					std::string userData;
 					long size;
 					std::string storageClass;
 					std::string createTime;

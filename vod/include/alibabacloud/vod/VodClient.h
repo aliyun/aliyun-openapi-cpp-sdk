@@ -160,6 +160,8 @@
 #include "model/DescribeVodDomainTrafficDataResult.h"
 #include "model/DescribeVodDomainUsageDataRequest.h"
 #include "model/DescribeVodDomainUsageDataResult.h"
+#include "model/DescribeVodEditingUsageDataRequest.h"
+#include "model/DescribeVodEditingUsageDataResult.h"
 #include "model/DescribeVodMediaPlayDataRequest.h"
 #include "model/DescribeVodMediaPlayDataResult.h"
 #include "model/DescribeVodRangeDataByLocateAndIspServiceRequest.h"
@@ -204,6 +206,8 @@
 #include "model/GetAuditHistoryResult.h"
 #include "model/GetCategoriesRequest.h"
 #include "model/GetCategoriesResult.h"
+#include "model/GetDailyPlayRegionStatisRequest.h"
+#include "model/GetDailyPlayRegionStatisResult.h"
 #include "model/GetDefaultAITemplateRequest.h"
 #include "model/GetDefaultAITemplateResult.h"
 #include "model/GetDigitalWatermarkExtractResultRequest.h"
@@ -594,6 +598,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVodDomainUsageDataResult> DescribeVodDomainUsageDataOutcome;
 			typedef std::future<DescribeVodDomainUsageDataOutcome> DescribeVodDomainUsageDataOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainUsageDataRequest&, const DescribeVodDomainUsageDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainUsageDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodEditingUsageDataResult> DescribeVodEditingUsageDataOutcome;
+			typedef std::future<DescribeVodEditingUsageDataOutcome> DescribeVodEditingUsageDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodEditingUsageDataRequest&, const DescribeVodEditingUsageDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodEditingUsageDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVodMediaPlayDataResult> DescribeVodMediaPlayDataOutcome;
 			typedef std::future<DescribeVodMediaPlayDataOutcome> DescribeVodMediaPlayDataOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodMediaPlayDataRequest&, const DescribeVodMediaPlayDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodMediaPlayDataAsyncHandler;
@@ -660,6 +667,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetCategoriesResult> GetCategoriesOutcome;
 			typedef std::future<GetCategoriesOutcome> GetCategoriesOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetCategoriesRequest&, const GetCategoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCategoriesAsyncHandler;
+			typedef Outcome<Error, Model::GetDailyPlayRegionStatisResult> GetDailyPlayRegionStatisOutcome;
+			typedef std::future<GetDailyPlayRegionStatisOutcome> GetDailyPlayRegionStatisOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::GetDailyPlayRegionStatisRequest&, const GetDailyPlayRegionStatisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDailyPlayRegionStatisAsyncHandler;
 			typedef Outcome<Error, Model::GetDefaultAITemplateResult> GetDefaultAITemplateOutcome;
 			typedef std::future<GetDefaultAITemplateOutcome> GetDefaultAITemplateOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetDefaultAITemplateRequest&, const GetDefaultAITemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDefaultAITemplateAsyncHandler;
@@ -1133,6 +1143,9 @@ namespace AlibabaCloud
 			DescribeVodDomainUsageDataOutcome describeVodDomainUsageData(const Model::DescribeVodDomainUsageDataRequest &request)const;
 			void describeVodDomainUsageDataAsync(const Model::DescribeVodDomainUsageDataRequest& request, const DescribeVodDomainUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodDomainUsageDataOutcomeCallable describeVodDomainUsageDataCallable(const Model::DescribeVodDomainUsageDataRequest& request) const;
+			DescribeVodEditingUsageDataOutcome describeVodEditingUsageData(const Model::DescribeVodEditingUsageDataRequest &request)const;
+			void describeVodEditingUsageDataAsync(const Model::DescribeVodEditingUsageDataRequest& request, const DescribeVodEditingUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodEditingUsageDataOutcomeCallable describeVodEditingUsageDataCallable(const Model::DescribeVodEditingUsageDataRequest& request) const;
 			DescribeVodMediaPlayDataOutcome describeVodMediaPlayData(const Model::DescribeVodMediaPlayDataRequest &request)const;
 			void describeVodMediaPlayDataAsync(const Model::DescribeVodMediaPlayDataRequest& request, const DescribeVodMediaPlayDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodMediaPlayDataOutcomeCallable describeVodMediaPlayDataCallable(const Model::DescribeVodMediaPlayDataRequest& request) const;
@@ -1199,6 +1212,9 @@ namespace AlibabaCloud
 			GetCategoriesOutcome getCategories(const Model::GetCategoriesRequest &request)const;
 			void getCategoriesAsync(const Model::GetCategoriesRequest& request, const GetCategoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCategoriesOutcomeCallable getCategoriesCallable(const Model::GetCategoriesRequest& request) const;
+			GetDailyPlayRegionStatisOutcome getDailyPlayRegionStatis(const Model::GetDailyPlayRegionStatisRequest &request)const;
+			void getDailyPlayRegionStatisAsync(const Model::GetDailyPlayRegionStatisRequest& request, const GetDailyPlayRegionStatisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDailyPlayRegionStatisOutcomeCallable getDailyPlayRegionStatisCallable(const Model::GetDailyPlayRegionStatisRequest& request) const;
 			GetDefaultAITemplateOutcome getDefaultAITemplate(const Model::GetDefaultAITemplateRequest &request)const;
 			void getDefaultAITemplateAsync(const Model::GetDefaultAITemplateRequest& request, const GetDefaultAITemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDefaultAITemplateOutcomeCallable getDefaultAITemplateCallable(const Model::GetDefaultAITemplateRequest& request) const;
