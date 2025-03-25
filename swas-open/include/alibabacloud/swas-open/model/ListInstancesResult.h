@@ -78,6 +78,13 @@ namespace AlibabaCloud
 						std::string regionId;
 						std::string diskId;
 					};
+					struct NetworkAttribute
+					{
+						std::string publicIpAddress;
+						std::string privateIpAddress;
+						int peakBandwidth;
+						std::string publicIpDdosStatus;
+					};
 					std::string status;
 					std::string disableReason;
 					std::string resourceGroupId;
@@ -90,6 +97,7 @@ namespace AlibabaCloud
 					std::string businessStatus;
 					std::string publicIpAddress;
 					std::string instanceName;
+					std::vector<Instance::NetworkAttribute> networkAttributes;
 					std::string innerIpAddress;
 					std::string uuid;
 					std::string chargeType;
@@ -97,6 +105,7 @@ namespace AlibabaCloud
 					std::string expiredTime;
 					std::string creationTime;
 					std::string imageId;
+					std::string planType;
 					std::vector<Instance::Disk> disks;
 					std::string regionId;
 					std::vector<Instance::Tag> tags;

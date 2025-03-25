@@ -25,6 +25,15 @@ ListInstancesRequest::ListInstancesRequest()
 
 ListInstancesRequest::~ListInstancesRequest() {}
 
+std::string ListInstancesRequest::getPlanType() const {
+  return planType_;
+}
+
+void ListInstancesRequest::setPlanType(const std::string &planType) {
+  planType_ = planType;
+  setParameter(std::string("PlanType"), planType);
+}
+
 int ListInstancesRequest::getPageNumber() const {
   return pageNumber_;
 }

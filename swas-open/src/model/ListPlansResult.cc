@@ -51,20 +51,36 @@ void ListPlansResult::parse(const std::string &payload)
 			plansObject.diskSize = std::stoi(valuePlansPlan["DiskSize"].asString());
 		if(!valuePlansPlan["Flow"].isNull())
 			plansObject.flow = std::stoi(valuePlansPlan["Flow"].asString());
-		if(!valuePlansPlan["Memory"].isNull())
-			plansObject.memory = std::stoi(valuePlansPlan["Memory"].asString());
 		if(!valuePlansPlan["PlanId"].isNull())
 			plansObject.planId = valuePlansPlan["PlanId"].asString();
 		if(!valuePlansPlan["DiskType"].isNull())
 			plansObject.diskType = valuePlansPlan["DiskType"].asString();
-		if(!valuePlansPlan["OriginPrice"].isNull())
-			plansObject.originPrice = valuePlansPlan["OriginPrice"].asString();
 		if(!valuePlansPlan["Currency"].isNull())
 			plansObject.currency = valuePlansPlan["Currency"].asString();
 		if(!valuePlansPlan["SupportPlatform"].isNull())
 			plansObject.supportPlatform = valuePlansPlan["SupportPlatform"].asString();
 		if(!valuePlansPlan["PlanType"].isNull())
 			plansObject.planType = valuePlansPlan["PlanType"].asString();
+		if(!valuePlansPlan["PublicIpNum"].isNull())
+			plansObject.publicIpNum = valuePlansPlan["PublicIpNum"].asString();
+		if(!valuePlansPlan["IspType"].isNull())
+			plansObject.ispType = valuePlansPlan["IspType"].asString();
+		if(!valuePlansPlan["Memory"].isNull())
+			plansObject.memory = std::stof(valuePlansPlan["Memory"].asString());
+		if(!valuePlansPlan["OriginPrice"].isNull())
+			plansObject.originPrice = valuePlansPlan["OriginPrice"].asString();
+		auto allTagsNode = valuePlansPlan["Tags"]["Tag"];
+		for (auto valuePlansPlanTagsTag : allTagsNode)
+		{
+			Plan::Tag tagsObject;
+			if(!valuePlansPlanTagsTag["CnTitle"].isNull())
+				tagsObject.cnTitle = valuePlansPlanTagsTag["CnTitle"].asString();
+			if(!valuePlansPlanTagsTag["EnTitle"].isNull())
+				tagsObject.enTitle = valuePlansPlanTagsTag["EnTitle"].asString();
+			if(!valuePlansPlanTagsTag["Color"].isNull())
+				tagsObject.color = valuePlansPlanTagsTag["Color"].asString();
+			plansObject.tags.push_back(tagsObject);
+		}
 		plans_.push_back(plansObject);
 	}
 

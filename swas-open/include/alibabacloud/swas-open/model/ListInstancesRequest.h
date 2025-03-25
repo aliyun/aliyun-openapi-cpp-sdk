@@ -34,6 +34,8 @@ public:
 	};
 	ListInstancesRequest();
 	~ListInstancesRequest();
+	std::string getPlanType() const;
+	void setPlanType(const std::string &planType);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getResourceGroupId() const;
@@ -56,6 +58,7 @@ public:
 	void setStatus(const std::string &status);
 
 private:
+	std::string planType_;
 	int pageNumber_;
 	std::string resourceGroupId_;
 	std::string regionId_;

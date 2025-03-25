@@ -34,17 +34,26 @@ namespace AlibabaCloud
 			public:
 				struct Plan
 				{
-					std::string diskType;
-					double originPrice;
+					struct Tag
+					{
+						std::string color;
+						std::string cnTitle;
+						std::string enTitle;
+					};
 					std::string supportPlatform;
-					int memory;
-					int bandwidth;
+					std::string publicIpNum;
+					float memory;
 					std::string planId;
+					int flow;
+					std::string diskType;
+					std::string originPrice;
+					std::string ispType;
+					int bandwidth;
 					std::string currency;
 					int diskSize;
 					std::string planType;
+					std::vector<Plan::Tag> tags;
 					int core;
-					int flow;
 				};
 
 

@@ -79,6 +79,8 @@ void ListInstancesResult::parse(const std::string &payload)
 			instancesObject.uuid = valueInstancesInstance["Uuid"].asString();
 		if(!valueInstancesInstance["ResourceGroupId"].isNull())
 			instancesObject.resourceGroupId = valueInstancesInstance["ResourceGroupId"].asString();
+		if(!valueInstancesInstance["PlanType"].isNull())
+			instancesObject.planType = valueInstancesInstance["PlanType"].asString();
 		auto allTagsNode = valueInstancesInstance["Tags"]["tag"];
 		for (auto valueInstancesInstanceTagstag : allTagsNode)
 		{
@@ -128,6 +130,20 @@ void ListInstancesResult::parse(const std::string &payload)
 				disksObject.diskTags.push_back(diskTagsObject);
 			}
 			instancesObject.disks.push_back(disksObject);
+		}
+		auto allNetworkAttributesNode = valueInstancesInstance["NetworkAttributes"]["networkAttribute"];
+		for (auto valueInstancesInstanceNetworkAttributesnetworkAttribute : allNetworkAttributesNode)
+		{
+			Instance::NetworkAttribute networkAttributesObject;
+			if(!valueInstancesInstanceNetworkAttributesnetworkAttribute["PublicIpAddress"].isNull())
+				networkAttributesObject.publicIpAddress = valueInstancesInstanceNetworkAttributesnetworkAttribute["PublicIpAddress"].asString();
+			if(!valueInstancesInstanceNetworkAttributesnetworkAttribute["PrivateIpAddress"].isNull())
+				networkAttributesObject.privateIpAddress = valueInstancesInstanceNetworkAttributesnetworkAttribute["PrivateIpAddress"].asString();
+			if(!valueInstancesInstanceNetworkAttributesnetworkAttribute["PeakBandwidth"].isNull())
+				networkAttributesObject.peakBandwidth = std::stoi(valueInstancesInstanceNetworkAttributesnetworkAttribute["PeakBandwidth"].asString());
+			if(!valueInstancesInstanceNetworkAttributesnetworkAttribute["PublicIpDdosStatus"].isNull())
+				networkAttributesObject.publicIpDdosStatus = valueInstancesInstanceNetworkAttributesnetworkAttribute["PublicIpDdosStatus"].asString();
+			instancesObject.networkAttributes.push_back(networkAttributesObject);
 		}
 		auto resourceSpecNode = value["ResourceSpec"];
 		if(!resourceSpecNode["DiskCategory"].isNull())
