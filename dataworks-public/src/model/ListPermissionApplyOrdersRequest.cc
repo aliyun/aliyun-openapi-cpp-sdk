@@ -88,6 +88,15 @@ void ListPermissionApplyOrdersRequest::setMaxComputeProjectName(const std::strin
   setParameter(std::string("MaxComputeProjectName"), maxComputeProjectName);
 }
 
+std::string ListPermissionApplyOrdersRequest::getCatalogName() const {
+  return catalogName_;
+}
+
+void ListPermissionApplyOrdersRequest::setCatalogName(const std::string &catalogName) {
+  catalogName_ = catalogName;
+  setParameter(std::string("CatalogName"), catalogName);
+}
+
 long ListPermissionApplyOrdersRequest::getEndTime() const {
   return endTime_;
 }
@@ -104,6 +113,15 @@ int ListPermissionApplyOrdersRequest::getFlowStatus() const {
 void ListPermissionApplyOrdersRequest::setFlowStatus(int flowStatus) {
   flowStatus_ = flowStatus;
   setParameter(std::string("FlowStatus"), std::to_string(flowStatus));
+}
+
+std::string ListPermissionApplyOrdersRequest::getApplyType() const {
+  return applyType_;
+}
+
+void ListPermissionApplyOrdersRequest::setApplyType(const std::string &applyType) {
+  applyType_ = applyType;
+  setParameter(std::string("ApplyType"), applyType);
 }
 
 int ListPermissionApplyOrdersRequest::getWorkspaceId() const {

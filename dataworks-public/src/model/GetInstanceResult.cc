@@ -72,6 +72,8 @@ void GetInstanceResult::parse(const std::string &payload)
 		data_.businessId = std::stol(dataNode["BusinessId"].asString());
 	if(!dataNode["TaskRerunTime"].isNull())
 		data_.taskRerunTime = std::stoi(dataNode["TaskRerunTime"].asString());
+	if(!dataNode["PeriodNumber"].isNull())
+		data_.periodNumber = std::stoi(dataNode["PeriodNumber"].asString());
 	if(!dataNode["ModifyTime"].isNull())
 		data_.modifyTime = std::stol(dataNode["ModifyTime"].asString());
 	if(!dataNode["Repeatability"].isNull())
@@ -96,6 +98,8 @@ void GetInstanceResult::parse(const std::string &payload)
 		data_.nodeId = std::stol(dataNode["NodeId"].asString());
 	if(!dataNode["CreateUser"].isNull())
 		data_.createUser = dataNode["CreateUser"].asString();
+	if(!dataNode["Owner"].isNull())
+		data_.owner = dataNode["Owner"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["ErrorMessage"].isNull())

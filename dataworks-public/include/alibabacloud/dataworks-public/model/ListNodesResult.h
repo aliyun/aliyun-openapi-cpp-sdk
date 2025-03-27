@@ -43,6 +43,7 @@ namespace AlibabaCloud
 						std::string paramValues;
 						long deployDate;
 						std::string cronExpress;
+						int repeatMode;
 						std::string ownerId;
 						std::string dqcDescription;
 						int fileVersion;

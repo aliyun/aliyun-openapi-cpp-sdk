@@ -48,8 +48,33 @@ namespace AlibabaCloud
 						std::string processExtra;
 						std::string name;
 					};
+					struct AlarmListItem
+					{
+						struct NotifyRule
+						{
+							std::vector<std::string> warning;
+							std::vector<std::string> critical;
+							long interval;
+						};
+						struct AlarmRuleListItem
+						{
+							std::string aggregator;
+							std::string level;
+							long duration;
+							std::string comparator;
+							long threshold;
+						};
+						std::string description;
+						NotifyRule notifyRule;
+						std::vector<AlarmListItem::AlarmRuleListItem> alarmRuleList;
+						bool enabled;
+						std::string metric;
+						long id;
+						std::string ruleName;
+					};
 					std::string status;
 					std::string message;
+					std::vector<AlarmListItem> alarmList;
 					SolutionDetail solutionDetail;
 					std::string code;
 				};

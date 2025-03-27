@@ -88,6 +88,15 @@ void ListFilesRequest::setFileIdIn(const std::string &fileIdIn) {
   setBodyParameter(std::string("FileIdIn"), fileIdIn);
 }
 
+std::string ListFilesRequest::getLastEditUser() const {
+  return lastEditUser_;
+}
+
+void ListFilesRequest::setLastEditUser(const std::string &lastEditUser) {
+  lastEditUser_ = lastEditUser;
+  setBodyParameter(std::string("LastEditUser"), lastEditUser);
+}
+
 std::string ListFilesRequest::getFileFolderPath() const {
   return fileFolderPath_;
 }

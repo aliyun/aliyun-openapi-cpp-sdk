@@ -47,6 +47,7 @@ namespace AlibabaCloud
 						long bizdate;
 						long expTime;
 						long finishTime;
+						std::string baselineType;
 						std::string baselineName;
 						long slaTime;
 						long endCast;

@@ -46,6 +46,47 @@ void GetDISyncTaskResult::parse(const std::string &payload)
 		data_.status = dataNode["Status"].asString();
 	if(!dataNode["Message"].isNull())
 		data_.message = dataNode["Message"].asString();
+	auto allAlarmListNode = dataNode["AlarmList"]["alarmListItem"];
+	for (auto dataNodeAlarmListalarmListItem : allAlarmListNode)
+	{
+		Data::AlarmListItem alarmListItemObject;
+		if(!dataNodeAlarmListalarmListItem["Id"].isNull())
+			alarmListItemObject.id = std::stol(dataNodeAlarmListalarmListItem["Id"].asString());
+		if(!dataNodeAlarmListalarmListItem["Enabled"].isNull())
+			alarmListItemObject.enabled = dataNodeAlarmListalarmListItem["Enabled"].asString() == "true";
+		if(!dataNodeAlarmListalarmListItem["RuleName"].isNull())
+			alarmListItemObject.ruleName = dataNodeAlarmListalarmListItem["RuleName"].asString();
+		if(!dataNodeAlarmListalarmListItem["Metric"].isNull())
+			alarmListItemObject.metric = dataNodeAlarmListalarmListItem["Metric"].asString();
+		if(!dataNodeAlarmListalarmListItem["Description"].isNull())
+			alarmListItemObject.description = dataNodeAlarmListalarmListItem["Description"].asString();
+		auto allAlarmRuleListNode = dataNodeAlarmListalarmListItem["AlarmRuleList"]["alarmRuleListItem"];
+		for (auto dataNodeAlarmListalarmListItemAlarmRuleListalarmRuleListItem : allAlarmRuleListNode)
+		{
+			Data::AlarmListItem::AlarmRuleListItem alarmRuleListObject;
+			if(!dataNodeAlarmListalarmListItemAlarmRuleListalarmRuleListItem["Level"].isNull())
+				alarmRuleListObject.level = dataNodeAlarmListalarmListItemAlarmRuleListalarmRuleListItem["Level"].asString();
+			if(!dataNodeAlarmListalarmListItemAlarmRuleListalarmRuleListItem["Comparator"].isNull())
+				alarmRuleListObject.comparator = dataNodeAlarmListalarmListItemAlarmRuleListalarmRuleListItem["Comparator"].asString();
+			if(!dataNodeAlarmListalarmListItemAlarmRuleListalarmRuleListItem["Threshold"].isNull())
+				alarmRuleListObject.threshold = std::stol(dataNodeAlarmListalarmListItemAlarmRuleListalarmRuleListItem["Threshold"].asString());
+			if(!dataNodeAlarmListalarmListItemAlarmRuleListalarmRuleListItem["Duration"].isNull())
+				alarmRuleListObject.duration = std::stol(dataNodeAlarmListalarmListItemAlarmRuleListalarmRuleListItem["Duration"].asString());
+			if(!dataNodeAlarmListalarmListItemAlarmRuleListalarmRuleListItem["Aggregator"].isNull())
+				alarmRuleListObject.aggregator = dataNodeAlarmListalarmListItemAlarmRuleListalarmRuleListItem["Aggregator"].asString();
+			alarmListItemObject.alarmRuleList.push_back(alarmRuleListObject);
+		}
+		auto notifyRuleNode = value["NotifyRule"];
+		if(!notifyRuleNode["Interval"].isNull())
+			alarmListItemObject.notifyRule.interval = std::stol(notifyRuleNode["Interval"].asString());
+			auto allWarning = notifyRuleNode["Warning"]["warning"];
+			for (auto value : allWarning)
+				alarmListItemObject.notifyRule.warning.push_back(value.asString());
+			auto allCritical = notifyRuleNode["Critical"]["critical"];
+			for (auto value : allCritical)
+				alarmListItemObject.notifyRule.critical.push_back(value.asString());
+		data_.alarmList.push_back(alarmListItemObject);
+	}
 	auto solutionDetailNode = dataNode["SolutionDetail"];
 	if(!solutionDetailNode["Status"].isNull())
 		data_.solutionDetail.status = solutionDetailNode["Status"].asString();

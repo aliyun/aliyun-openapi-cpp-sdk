@@ -31,6 +31,7 @@ public:
 	struct ApplyObject {
 		struct ColumnMetaList {
 			std::string name;
+			std::string actions;
 		};
 		std::vector<ColumnMetaList> columnMetaList;
 		std::string name;
@@ -38,32 +39,38 @@ public:
 	};
 	CreatePermissionApplyOrderRequest();
 	~CreatePermissionApplyOrderRequest();
+	std::string getApplyUserIds() const;
+	void setApplyUserIds(const std::string &applyUserIds);
+	long getDeadline() const;
+	void setDeadline(long deadline);
+	std::string getEngineType() const;
+	void setEngineType(const std::string &engineType);
 	std::string getApplyReason() const;
 	void setApplyReason(const std::string &applyReason);
 	std::string getMaxComputeProjectName() const;
 	void setMaxComputeProjectName(const std::string &maxComputeProjectName);
 	std::vector<ApplyObject> getApplyObject() const;
 	void setApplyObject(const std::vector<ApplyObject> &applyObject);
-	std::string getApplyUserIds() const;
-	void setApplyUserIds(const std::string &applyUserIds);
-	long getDeadline() const;
-	void setDeadline(long deadline);
+	std::string getCatalogName() const;
+	void setCatalogName(const std::string &catalogName);
+	std::string getApplyType() const;
+	void setApplyType(const std::string &applyType);
 	int getWorkspaceId() const;
 	void setWorkspaceId(int workspaceId);
 	int getOrderType() const;
 	void setOrderType(int orderType);
-	std::string getEngineType() const;
-	void setEngineType(const std::string &engineType);
 
 private:
+	std::string applyUserIds_;
+	long deadline_;
+	std::string engineType_;
 	std::string applyReason_;
 	std::string maxComputeProjectName_;
 	std::vector<ApplyObject> applyObject_;
-	std::string applyUserIds_;
-	long deadline_;
+	std::string catalogName_;
+	std::string applyType_;
 	int workspaceId_;
 	int orderType_;
-	std::string engineType_;
 };
 } // namespace Model
 } // namespace Dataworks_public

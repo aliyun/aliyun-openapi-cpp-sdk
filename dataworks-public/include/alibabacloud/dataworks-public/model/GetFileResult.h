@@ -88,6 +88,7 @@ namespace AlibabaCloud
 						std::vector<NodeInputOutput> inputList;
 						long resourceGroupId;
 						bool stop;
+						int timeout;
 						std::string dependentType;
 						std::string schedulerType;
 						bool startImmediately;
@@ -98,11 +99,13 @@ namespace AlibabaCloud
 						int autoRerunIntervalMillis;
 						long startEffectDate;
 						int autoRerunTimes;
+						std::string imageId;
 						std::string rerunMode;
 						std::string paraValue;
 						std::string applyScheduleImmediately;
 						std::vector<NodeInputOutput1> outputList;
 						std::vector<InputContextParameter> inputParameters;
+						std::string ignoreParentSkipRunningProperty;
 					};
 					struct ResourceDownloadLink
 					{

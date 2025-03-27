@@ -375,6 +375,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListBusinessResult.h
 	include/alibabacloud/dataworks-public/model/ListCalcEnginesRequest.h
 	include/alibabacloud/dataworks-public/model/ListCalcEnginesResult.h
+	include/alibabacloud/dataworks-public/model/ListCheckProcessesRequest.h
+	include/alibabacloud/dataworks-public/model/ListCheckProcessesResult.h
 	include/alibabacloud/dataworks-public/model/ListClusterConfigsRequest.h
 	include/alibabacloud/dataworks-public/model/ListClusterConfigsResult.h
 	include/alibabacloud/dataworks-public/model/ListClustersRequest.h
@@ -495,8 +497,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListTablesResult.h
 	include/alibabacloud/dataworks-public/model/ListTopicsRequest.h
 	include/alibabacloud/dataworks-public/model/ListTopicsResult.h
-	include/alibabacloud/dataworks-public/model/MountDirectoryRequest.h
-	include/alibabacloud/dataworks-public/model/MountDirectoryResult.h
 	include/alibabacloud/dataworks-public/model/OfflineNodeRequest.h
 	include/alibabacloud/dataworks-public/model/OfflineNodeResult.h
 	include/alibabacloud/dataworks-public/model/PublishDataServiceApiRequest.h
@@ -529,8 +529,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/RestartInstanceResult.h
 	include/alibabacloud/dataworks-public/model/ResumeInstanceRequest.h
 	include/alibabacloud/dataworks-public/model/ResumeInstanceResult.h
-	include/alibabacloud/dataworks-public/model/RevokeColumnPermissionRequest.h
-	include/alibabacloud/dataworks-public/model/RevokeColumnPermissionResult.h
 	include/alibabacloud/dataworks-public/model/RevokeTablePermissionRequest.h
 	include/alibabacloud/dataworks-public/model/RevokeTablePermissionResult.h
 	include/alibabacloud/dataworks-public/model/RunCycleDagNodesRequest.h
@@ -583,8 +581,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/TopTenElapsedTimeInstanceResult.h
 	include/alibabacloud/dataworks-public/model/TopTenErrorTimesInstanceRequest.h
 	include/alibabacloud/dataworks-public/model/TopTenErrorTimesInstanceResult.h
-	include/alibabacloud/dataworks-public/model/UmountDirectoryRequest.h
-	include/alibabacloud/dataworks-public/model/UmountDirectoryResult.h
 	include/alibabacloud/dataworks-public/model/UpdateBaselineRequest.h
 	include/alibabacloud/dataworks-public/model/UpdateBaselineResult.h
 	include/alibabacloud/dataworks-public/model/UpdateBusinessRequest.h
@@ -1000,6 +996,8 @@ set(dataworks-public_src
 	src/model/ListBusinessResult.cc
 	src/model/ListCalcEnginesRequest.cc
 	src/model/ListCalcEnginesResult.cc
+	src/model/ListCheckProcessesRequest.cc
+	src/model/ListCheckProcessesResult.cc
 	src/model/ListClusterConfigsRequest.cc
 	src/model/ListClusterConfigsResult.cc
 	src/model/ListClustersRequest.cc
@@ -1120,8 +1118,6 @@ set(dataworks-public_src
 	src/model/ListTablesResult.cc
 	src/model/ListTopicsRequest.cc
 	src/model/ListTopicsResult.cc
-	src/model/MountDirectoryRequest.cc
-	src/model/MountDirectoryResult.cc
 	src/model/OfflineNodeRequest.cc
 	src/model/OfflineNodeResult.cc
 	src/model/PublishDataServiceApiRequest.cc
@@ -1154,8 +1150,6 @@ set(dataworks-public_src
 	src/model/RestartInstanceResult.cc
 	src/model/ResumeInstanceRequest.cc
 	src/model/ResumeInstanceResult.cc
-	src/model/RevokeColumnPermissionRequest.cc
-	src/model/RevokeColumnPermissionResult.cc
 	src/model/RevokeTablePermissionRequest.cc
 	src/model/RevokeTablePermissionResult.cc
 	src/model/RunCycleDagNodesRequest.cc
@@ -1208,8 +1202,6 @@ set(dataworks-public_src
 	src/model/TopTenElapsedTimeInstanceResult.cc
 	src/model/TopTenErrorTimesInstanceRequest.cc
 	src/model/TopTenErrorTimesInstanceResult.cc
-	src/model/UmountDirectoryRequest.cc
-	src/model/UmountDirectoryResult.cc
 	src/model/UpdateBaselineRequest.cc
 	src/model/UpdateBaselineResult.cc
 	src/model/UpdateBusinessRequest.cc

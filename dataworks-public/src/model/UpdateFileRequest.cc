@@ -34,6 +34,15 @@ void UpdateFileRequest::setOutputList(const std::string &outputList) {
   setBodyParameter(std::string("OutputList"), outputList);
 }
 
+std::string UpdateFileRequest::getImageId() const {
+  return imageId_;
+}
+
+void UpdateFileRequest::setImageId(const std::string &imageId) {
+  imageId_ = imageId;
+  setBodyParameter(std::string("ImageId"), imageId);
+}
+
 std::string UpdateFileRequest::getDependentNodeIdList() const {
   return dependentNodeIdList_;
 }
@@ -59,6 +68,15 @@ std::string UpdateFileRequest::getProjectIdentifier() const {
 void UpdateFileRequest::setProjectIdentifier(const std::string &projectIdentifier) {
   projectIdentifier_ = projectIdentifier;
   setBodyParameter(std::string("ProjectIdentifier"), projectIdentifier);
+}
+
+int UpdateFileRequest::getTimeout() const {
+  return timeout_;
+}
+
+void UpdateFileRequest::setTimeout(int timeout) {
+  timeout_ = timeout;
+  setBodyParameter(std::string("Timeout"), std::to_string(timeout));
 }
 
 bool UpdateFileRequest::getStartImmediately() const {

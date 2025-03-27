@@ -44,10 +44,14 @@ public:
 	void setEngineType(const std::string &engineType);
 	std::string getMaxComputeProjectName() const;
 	void setMaxComputeProjectName(const std::string &maxComputeProjectName);
+	std::string getCatalogName() const;
+	void setCatalogName(const std::string &catalogName);
 	long getEndTime() const;
 	void setEndTime(long endTime);
 	int getFlowStatus() const;
 	void setFlowStatus(int flowStatus);
+	std::string getApplyType() const;
+	void setApplyType(const std::string &applyType);
 	int getWorkspaceId() const;
 	void setWorkspaceId(int workspaceId);
 	int getOrderType() const;
@@ -61,8 +65,10 @@ private:
 	int queryType_;
 	std::string engineType_;
 	std::string maxComputeProjectName_;
+	std::string catalogName_;
 	long endTime_;
 	int flowStatus_;
+	std::string applyType_;
 	int workspaceId_;
 	int orderType_;
 };

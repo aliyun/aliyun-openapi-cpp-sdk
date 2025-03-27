@@ -45,8 +45,10 @@ namespace AlibabaCloud
 									std::string columnName;
 									std::string securityLevel;
 									std::string columnComment;
+									std::vector<std::string> columnActions;
 								};
 								std::vector<ObjectMetaListItem::ColumnMetaListItem> columnMetaList;
+								std::vector<std::string> actions;
 								std::string objectName;
 							};
 							std::string maxComputeProjectName;

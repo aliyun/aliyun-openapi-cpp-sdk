@@ -44,6 +44,8 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getFileIdIn() const;
 	void setFileIdIn(const std::string &fileIdIn);
+	std::string getLastEditUser() const;
+	void setLastEditUser(const std::string &lastEditUser);
 	std::string getFileFolderPath() const;
 	void setFileFolderPath(const std::string &fileFolderPath);
 	int getPageSize() const;
@@ -67,6 +69,7 @@ private:
 	std::string projectIdentifier_;
 	int pageNumber_;
 	std::string fileIdIn_;
+	std::string lastEditUser_;
 	std::string fileFolderPath_;
 	int pageSize_;
 	std::string exactFileName_;

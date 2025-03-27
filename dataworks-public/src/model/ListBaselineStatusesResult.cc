@@ -78,6 +78,8 @@ void ListBaselineStatusesResult::parse(const std::string &payload)
 			baselineStatusesItemObject.slaTime = std::stol(dataNodeBaselineStatusesBaselineStatusesItem["SlaTime"].asString());
 		if(!dataNodeBaselineStatusesBaselineStatusesItem["ExpTime"].isNull())
 			baselineStatusesItemObject.expTime = std::stol(dataNodeBaselineStatusesBaselineStatusesItem["ExpTime"].asString());
+		if(!dataNodeBaselineStatusesBaselineStatusesItem["BaselineType"].isNull())
+			baselineStatusesItemObject.baselineType = dataNodeBaselineStatusesBaselineStatusesItem["BaselineType"].asString();
 		data_.baselineStatuses.push_back(baselineStatusesItemObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

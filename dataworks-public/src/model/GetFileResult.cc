@@ -118,6 +118,12 @@ void GetFileResult::parse(const std::string &payload)
 		data_.nodeConfiguration.startImmediately = nodeConfigurationNode["StartImmediately"].asString() == "true";
 	if(!nodeConfigurationNode["ApplyScheduleImmediately"].isNull())
 		data_.nodeConfiguration.applyScheduleImmediately = nodeConfigurationNode["ApplyScheduleImmediately"].asString();
+	if(!nodeConfigurationNode["IgnoreParentSkipRunningProperty"].isNull())
+		data_.nodeConfiguration.ignoreParentSkipRunningProperty = nodeConfigurationNode["IgnoreParentSkipRunningProperty"].asString();
+	if(!nodeConfigurationNode["Timeout"].isNull())
+		data_.nodeConfiguration.timeout = std::stoi(nodeConfigurationNode["Timeout"].asString());
+	if(!nodeConfigurationNode["ImageId"].isNull())
+		data_.nodeConfiguration.imageId = nodeConfigurationNode["ImageId"].asString();
 	auto allInputListNode = nodeConfigurationNode["InputList"]["NodeInputOutput"];
 	for (auto nodeConfigurationNodeInputListNodeInputOutput : allInputListNode)
 	{

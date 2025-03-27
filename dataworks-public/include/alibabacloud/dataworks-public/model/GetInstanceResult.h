@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					long baselineId;
 					long modifyTime;
+					std::string owner;
 					std::string dagType;
 					std::string nodeName;
 					std::string paramValues;
@@ -45,6 +46,7 @@ namespace AlibabaCloud
 					long finishTime;
 					std::string taskType;
 					std::string dqcDescription;
+					int periodNumber;
 					long businessId;
 					std::string status;
 					int taskRerunTime;

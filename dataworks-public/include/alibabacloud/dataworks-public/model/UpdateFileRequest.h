@@ -32,12 +32,16 @@ public:
 	~UpdateFileRequest();
 	std::string getOutputList() const;
 	void setOutputList(const std::string &outputList);
+	std::string getImageId() const;
+	void setImageId(const std::string &imageId);
 	std::string getDependentNodeIdList() const;
 	void setDependentNodeIdList(const std::string &dependentNodeIdList);
 	std::string getContent() const;
 	void setContent(const std::string &content);
 	std::string getProjectIdentifier() const;
 	void setProjectIdentifier(const std::string &projectIdentifier);
+	int getTimeout() const;
+	void setTimeout(int timeout);
 	bool getStartImmediately() const;
 	void setStartImmediately(bool startImmediately);
 	long getProjectId() const;
@@ -95,9 +99,11 @@ public:
 
 private:
 	std::string outputList_;
+	std::string imageId_;
 	std::string dependentNodeIdList_;
 	std::string content_;
 	std::string projectIdentifier_;
+	int timeout_;
 	bool startImmediately_;
 	long projectId_;
 	std::string advancedSettings_;

@@ -32,12 +32,16 @@ public:
 	~CreateFileRequest();
 	int getFileType() const;
 	void setFileType(int fileType);
+	std::string getImageId() const;
+	void setImageId(const std::string &imageId);
 	std::string getDependentNodeIdList() const;
 	void setDependentNodeIdList(const std::string &dependentNodeIdList);
 	std::string getContent() const;
 	void setContent(const std::string &content);
 	std::string getProjectIdentifier() const;
 	void setProjectIdentifier(const std::string &projectIdentifier);
+	int getTimeout() const;
+	void setTimeout(int timeout);
 	long getResourceGroupId() const;
 	void setResourceGroupId(long resourceGroupId);
 	bool getStartImmediately() const;
@@ -97,9 +101,11 @@ public:
 
 private:
 	int fileType_;
+	std::string imageId_;
 	std::string dependentNodeIdList_;
 	std::string content_;
 	std::string projectIdentifier_;
+	int timeout_;
 	long resourceGroupId_;
 	bool startImmediately_;
 	long projectId_;

@@ -25,6 +25,33 @@ CreatePermissionApplyOrderRequest::CreatePermissionApplyOrderRequest()
 
 CreatePermissionApplyOrderRequest::~CreatePermissionApplyOrderRequest() {}
 
+std::string CreatePermissionApplyOrderRequest::getApplyUserIds() const {
+  return applyUserIds_;
+}
+
+void CreatePermissionApplyOrderRequest::setApplyUserIds(const std::string &applyUserIds) {
+  applyUserIds_ = applyUserIds;
+  setParameter(std::string("ApplyUserIds"), applyUserIds);
+}
+
+long CreatePermissionApplyOrderRequest::getDeadline() const {
+  return deadline_;
+}
+
+void CreatePermissionApplyOrderRequest::setDeadline(long deadline) {
+  deadline_ = deadline;
+  setParameter(std::string("Deadline"), std::to_string(deadline));
+}
+
+std::string CreatePermissionApplyOrderRequest::getEngineType() const {
+  return engineType_;
+}
+
+void CreatePermissionApplyOrderRequest::setEngineType(const std::string &engineType) {
+  engineType_ = engineType;
+  setParameter(std::string("EngineType"), engineType);
+}
+
 std::string CreatePermissionApplyOrderRequest::getApplyReason() const {
   return applyReason_;
 }
@@ -56,28 +83,29 @@ void CreatePermissionApplyOrderRequest::setApplyObject(const std::vector<CreateP
     auto columnMetaListObj = applyObjectObj.columnMetaList.at(dep2);
     std::string columnMetaListObjStr = applyObjectObjStr + ".ColumnMetaList" + "." + std::to_string(dep2 + 1);
       setParameter(columnMetaListObjStr + ".Name", columnMetaListObj.name);
+      setParameter(columnMetaListObjStr + ".Actions", columnMetaListObj.actions);
     }
     setParameter(applyObjectObjStr + ".Name", applyObjectObj.name);
     setParameter(applyObjectObjStr + ".Actions", applyObjectObj.actions);
   }
 }
 
-std::string CreatePermissionApplyOrderRequest::getApplyUserIds() const {
-  return applyUserIds_;
+std::string CreatePermissionApplyOrderRequest::getCatalogName() const {
+  return catalogName_;
 }
 
-void CreatePermissionApplyOrderRequest::setApplyUserIds(const std::string &applyUserIds) {
-  applyUserIds_ = applyUserIds;
-  setParameter(std::string("ApplyUserIds"), applyUserIds);
+void CreatePermissionApplyOrderRequest::setCatalogName(const std::string &catalogName) {
+  catalogName_ = catalogName;
+  setParameter(std::string("CatalogName"), catalogName);
 }
 
-long CreatePermissionApplyOrderRequest::getDeadline() const {
-  return deadline_;
+std::string CreatePermissionApplyOrderRequest::getApplyType() const {
+  return applyType_;
 }
 
-void CreatePermissionApplyOrderRequest::setDeadline(long deadline) {
-  deadline_ = deadline;
-  setParameter(std::string("Deadline"), std::to_string(deadline));
+void CreatePermissionApplyOrderRequest::setApplyType(const std::string &applyType) {
+  applyType_ = applyType;
+  setParameter(std::string("ApplyType"), applyType);
 }
 
 int CreatePermissionApplyOrderRequest::getWorkspaceId() const {
@@ -96,14 +124,5 @@ int CreatePermissionApplyOrderRequest::getOrderType() const {
 void CreatePermissionApplyOrderRequest::setOrderType(int orderType) {
   orderType_ = orderType;
   setParameter(std::string("OrderType"), std::to_string(orderType));
-}
-
-std::string CreatePermissionApplyOrderRequest::getEngineType() const {
-  return engineType_;
-}
-
-void CreatePermissionApplyOrderRequest::setEngineType(const std::string &engineType) {
-  engineType_ = engineType;
-  setParameter(std::string("EngineType"), engineType);
 }
 

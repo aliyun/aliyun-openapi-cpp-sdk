@@ -56,6 +56,8 @@ void ListNodesResult::parse(const std::string &payload)
 			nodesItemObject.repeatInterval = std::stol(dataNodeNodesNodesItem["RepeatInterval"].asString());
 		if(!dataNodeNodesNodesItem["Repeatability"].isNull())
 			nodesItemObject.repeatability = dataNodeNodesNodesItem["Repeatability"].asString() == "true";
+		if(!dataNodeNodesNodesItem["RepeatMode"].isNull())
+			nodesItemObject.repeatMode = std::stoi(dataNodeNodesNodesItem["RepeatMode"].asString());
 		if(!dataNodeNodesNodesItem["ProjectId"].isNull())
 			nodesItemObject.projectId = std::stol(dataNodeNodesNodesItem["ProjectId"].asString());
 		if(!dataNodeNodesNodesItem["ProgramType"].isNull())

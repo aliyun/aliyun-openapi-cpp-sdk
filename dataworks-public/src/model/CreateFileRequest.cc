@@ -34,6 +34,15 @@ void CreateFileRequest::setFileType(int fileType) {
   setBodyParameter(std::string("FileType"), std::to_string(fileType));
 }
 
+std::string CreateFileRequest::getImageId() const {
+  return imageId_;
+}
+
+void CreateFileRequest::setImageId(const std::string &imageId) {
+  imageId_ = imageId;
+  setBodyParameter(std::string("ImageId"), imageId);
+}
+
 std::string CreateFileRequest::getDependentNodeIdList() const {
   return dependentNodeIdList_;
 }
@@ -59,6 +68,15 @@ std::string CreateFileRequest::getProjectIdentifier() const {
 void CreateFileRequest::setProjectIdentifier(const std::string &projectIdentifier) {
   projectIdentifier_ = projectIdentifier;
   setBodyParameter(std::string("ProjectIdentifier"), projectIdentifier);
+}
+
+int CreateFileRequest::getTimeout() const {
+  return timeout_;
+}
+
+void CreateFileRequest::setTimeout(int timeout) {
+  timeout_ = timeout;
+  setBodyParameter(std::string("Timeout"), std::to_string(timeout));
 }
 
 long CreateFileRequest::getResourceGroupId() const {

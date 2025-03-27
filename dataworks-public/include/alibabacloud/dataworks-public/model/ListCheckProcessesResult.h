@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_REVOKECOLUMNPERMISSIONRESULT_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_REVOKECOLUMNPERMISSIONRESULT_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTCHECKPROCESSESRESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTCHECKPROCESSESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT RevokeColumnPermissionResult : public ServiceResult
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListCheckProcessesResult : public ServiceResult
 			{
 			public:
+				struct PagingInfo
+				{
+					struct CheckProcessesItem
+					{
+						std::string status;
+						std::string processName;
+						long projectId;
+						std::string eventNameEn;
+						std::string _operator;
+						std::string eventName;
+						std::string processId;
+						std::string eventCode;
+						std::string messageId;
+					};
+					int totalCount;
+					std::vector<CheckProcessesItem> checkProcesses;
+					int pageSize;
+					int pageNumber;
+				};
 
 
-				RevokeColumnPermissionResult();
-				explicit RevokeColumnPermissionResult(const std::string &payload);
-				~RevokeColumnPermissionResult();
-				bool getRevokeSuccess()const;
+				ListCheckProcessesResult();
+				explicit ListCheckProcessesResult(const std::string &payload);
+				~ListCheckProcessesResult();
+				PagingInfo getPagingInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				bool revokeSuccess_;
+				PagingInfo pagingInfo_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_REVOKECOLUMNPERMISSIONRESULT_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTCHECKPROCESSESRESULT_H_
