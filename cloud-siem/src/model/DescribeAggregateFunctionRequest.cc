@@ -25,6 +25,15 @@ DescribeAggregateFunctionRequest::DescribeAggregateFunctionRequest()
 
 DescribeAggregateFunctionRequest::~DescribeAggregateFunctionRequest() {}
 
+long DescribeAggregateFunctionRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeAggregateFunctionRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DescribeAggregateFunctionRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,5 +41,14 @@ std::string DescribeAggregateFunctionRequest::getRegionId() const {
 void DescribeAggregateFunctionRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeAggregateFunctionRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeAggregateFunctionRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 

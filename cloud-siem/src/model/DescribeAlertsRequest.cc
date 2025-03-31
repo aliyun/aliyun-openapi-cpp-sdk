@@ -25,6 +25,51 @@ DescribeAlertsRequest::DescribeAlertsRequest()
 
 DescribeAlertsRequest::~DescribeAlertsRequest() {}
 
+long DescribeAlertsRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeAlertsRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
+std::string DescribeAlertsRequest::getAlertName() const {
+  return alertName_;
+}
+
+void DescribeAlertsRequest::setAlertName(const std::string &alertName) {
+  alertName_ = alertName;
+  setBodyParameter(std::string("AlertName"), alertName);
+}
+
+std::string DescribeAlertsRequest::getEntityName() const {
+  return entityName_;
+}
+
+void DescribeAlertsRequest::setEntityName(const std::string &entityName) {
+  entityName_ = entityName;
+  setBodyParameter(std::string("EntityName"), entityName);
+}
+
+std::string DescribeAlertsRequest::getAssetName() const {
+  return assetName_;
+}
+
+void DescribeAlertsRequest::setAssetName(const std::string &assetName) {
+  assetName_ = assetName;
+  setBodyParameter(std::string("AssetName"), assetName);
+}
+
+std::string DescribeAlertsRequest::getEntityId() const {
+  return entityId_;
+}
+
+void DescribeAlertsRequest::setEntityId(const std::string &entityId) {
+  entityId_ = entityId;
+  setBodyParameter(std::string("EntityId"), entityId);
+}
+
 std::string DescribeAlertsRequest::getSource() const {
   return source_;
 }
@@ -79,6 +124,15 @@ void DescribeAlertsRequest::setPageSize(int pageSize) {
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+int DescribeAlertsRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeAlertsRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
+}
+
 std::vector<std::string> DescribeAlertsRequest::getLevel() const {
   return level_;
 }
@@ -114,6 +168,15 @@ void DescribeAlertsRequest::setCurrentPage(int currentPage) {
   setBodyParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
+std::string DescribeAlertsRequest::getAlertType() const {
+  return alertType_;
+}
+
+void DescribeAlertsRequest::setAlertType(const std::string &alertType) {
+  alertType_ = alertType;
+  setBodyParameter(std::string("AlertType"), alertType);
+}
+
 std::string DescribeAlertsRequest::getAlertUuid() const {
   return alertUuid_;
 }
@@ -121,5 +184,23 @@ std::string DescribeAlertsRequest::getAlertUuid() const {
 void DescribeAlertsRequest::setAlertUuid(const std::string &alertUuid) {
   alertUuid_ = alertUuid;
   setBodyParameter(std::string("AlertUuid"), alertUuid);
+}
+
+std::string DescribeAlertsRequest::getAssetId() const {
+  return assetId_;
+}
+
+void DescribeAlertsRequest::setAssetId(const std::string &assetId) {
+  assetId_ = assetId;
+  setBodyParameter(std::string("AssetId"), assetId);
+}
+
+std::string DescribeAlertsRequest::getLabelType() const {
+  return labelType_;
+}
+
+void DescribeAlertsRequest::setLabelType(const std::string &labelType) {
+  labelType_ = labelType;
+  setBodyParameter(std::string("LabelType"), labelType);
 }
 

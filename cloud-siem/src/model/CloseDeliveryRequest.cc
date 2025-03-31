@@ -34,6 +34,15 @@ void CloseDeliveryRequest::setProductCode(const std::string &productCode) {
   setBodyParameter(std::string("ProductCode"), productCode);
 }
 
+long CloseDeliveryRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void CloseDeliveryRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string CloseDeliveryRequest::getLogCode() const {
   return logCode_;
 }
@@ -50,5 +59,14 @@ std::string CloseDeliveryRequest::getRegionId() const {
 void CloseDeliveryRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int CloseDeliveryRequest::getRoleType() const {
+  return roleType_;
+}
+
+void CloseDeliveryRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 

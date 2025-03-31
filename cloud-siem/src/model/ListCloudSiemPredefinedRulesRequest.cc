@@ -25,6 +25,24 @@ ListCloudSiemPredefinedRulesRequest::ListCloudSiemPredefinedRulesRequest()
 
 ListCloudSiemPredefinedRulesRequest::~ListCloudSiemPredefinedRulesRequest() {}
 
+long ListCloudSiemPredefinedRulesRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void ListCloudSiemPredefinedRulesRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
+std::string ListCloudSiemPredefinedRulesRequest::getAttCk() const {
+  return attCk_;
+}
+
+void ListCloudSiemPredefinedRulesRequest::setAttCk(const std::string &attCk) {
+  attCk_ = attCk;
+  setBodyParameter(std::string("AttCk"), attCk);
+}
+
 std::string ListCloudSiemPredefinedRulesRequest::getRuleName() const {
   return ruleName_;
 }
@@ -61,6 +79,15 @@ void ListCloudSiemPredefinedRulesRequest::setPageSize(int pageSize) {
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+int ListCloudSiemPredefinedRulesRequest::getRoleType() const {
+  return roleType_;
+}
+
+void ListCloudSiemPredefinedRulesRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
+}
+
 std::string ListCloudSiemPredefinedRulesRequest::getId() const {
   return id_;
 }
@@ -68,6 +95,24 @@ std::string ListCloudSiemPredefinedRulesRequest::getId() const {
 void ListCloudSiemPredefinedRulesRequest::setId(const std::string &id) {
   id_ = id;
   setBodyParameter(std::string("Id"), id);
+}
+
+std::string ListCloudSiemPredefinedRulesRequest::getOrderField() const {
+  return orderField_;
+}
+
+void ListCloudSiemPredefinedRulesRequest::setOrderField(const std::string &orderField) {
+  orderField_ = orderField;
+  setBodyParameter(std::string("OrderField"), orderField);
+}
+
+std::string ListCloudSiemPredefinedRulesRequest::getOrder() const {
+  return order_;
+}
+
+void ListCloudSiemPredefinedRulesRequest::setOrder(const std::string &order) {
+  order_ = order;
+  setBodyParameter(std::string("Order"), order);
 }
 
 std::string ListCloudSiemPredefinedRulesRequest::getRuleType() const {
@@ -97,6 +142,15 @@ void ListCloudSiemPredefinedRulesRequest::setCurrentPage(int currentPage) {
   setBodyParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
+std::string ListCloudSiemPredefinedRulesRequest::getLogSource() const {
+  return logSource_;
+}
+
+void ListCloudSiemPredefinedRulesRequest::setLogSource(const std::string &logSource) {
+  logSource_ = logSource;
+  setBodyParameter(std::string("LogSource"), logSource);
+}
+
 std::string ListCloudSiemPredefinedRulesRequest::getAlertType() const {
   return alertType_;
 }
@@ -104,6 +158,15 @@ std::string ListCloudSiemPredefinedRulesRequest::getAlertType() const {
 void ListCloudSiemPredefinedRulesRequest::setAlertType(const std::string &alertType) {
   alertType_ = alertType;
   setBodyParameter(std::string("AlertType"), alertType);
+}
+
+std::string ListCloudSiemPredefinedRulesRequest::getEventTransferType() const {
+  return eventTransferType_;
+}
+
+void ListCloudSiemPredefinedRulesRequest::setEventTransferType(const std::string &eventTransferType) {
+  eventTransferType_ = eventTransferType;
+  setBodyParameter(std::string("EventTransferType"), eventTransferType);
 }
 
 std::vector<std::string> ListCloudSiemPredefinedRulesRequest::getThreatLevel() const {

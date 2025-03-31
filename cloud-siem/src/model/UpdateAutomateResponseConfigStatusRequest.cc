@@ -25,6 +25,15 @@ UpdateAutomateResponseConfigStatusRequest::UpdateAutomateResponseConfigStatusReq
 
 UpdateAutomateResponseConfigStatusRequest::~UpdateAutomateResponseConfigStatusRequest() {}
 
+long UpdateAutomateResponseConfigStatusRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void UpdateAutomateResponseConfigStatusRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string UpdateAutomateResponseConfigStatusRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,6 +41,15 @@ std::string UpdateAutomateResponseConfigStatusRequest::getRegionId() const {
 void UpdateAutomateResponseConfigStatusRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int UpdateAutomateResponseConfigStatusRequest::getRoleType() const {
+  return roleType_;
+}
+
+void UpdateAutomateResponseConfigStatusRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 std::string UpdateAutomateResponseConfigStatusRequest::getIds() const {

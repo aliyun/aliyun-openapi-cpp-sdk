@@ -48,6 +48,22 @@ void DescribeCustomizeRuleCountResult::parse(const std::string &payload)
 		data_.mediumRuleNum = std::stoi(dataNode["MediumRuleNum"].asString());
 	if(!dataNode["LowRuleNum"].isNull())
 		data_.lowRuleNum = std::stoi(dataNode["LowRuleNum"].asString());
+	if(!dataNode["TotalRuleNum"].isNull())
+		data_.totalRuleNum = std::stoi(dataNode["TotalRuleNum"].asString());
+	if(!dataNode["CustomizeRuleNum"].isNull())
+		data_.customizeRuleNum = std::stoi(dataNode["CustomizeRuleNum"].asString());
+	if(!dataNode["PredefinedRuleNum"].isNull())
+		data_.predefinedRuleNum = std::stoi(dataNode["PredefinedRuleNum"].asString());
+	if(!dataNode["UnEventRuleNum"].isNull())
+		data_.unEventRuleNum = std::stoi(dataNode["UnEventRuleNum"].asString());
+	if(!dataNode["ExpertRuleNum"].isNull())
+		data_.expertRuleNum = std::stoi(dataNode["ExpertRuleNum"].asString());
+	if(!dataNode["GraphComputingRuleNum"].isNull())
+		data_.graphComputingRuleNum = std::stoi(dataNode["GraphComputingRuleNum"].asString());
+	if(!dataNode["SingleAlertRuleNum"].isNull())
+		data_.singleAlertRuleNum = std::stoi(dataNode["SingleAlertRuleNum"].asString());
+	if(!dataNode["AggregationRuleNum"].isNull())
+		data_.aggregationRuleNum = std::stoi(dataNode["AggregationRuleNum"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

@@ -30,15 +30,21 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT PostEventWhiteruleListRequest : public RpcS
 public:
 	PostEventWhiteruleListRequest();
 	~PostEventWhiteruleListRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	std::string getWhiteruleList() const;
 	void setWhiteruleList(const std::string &whiteruleList);
 	std::string getIncidentUuid() const;
 	void setIncidentUuid(const std::string &incidentUuid);
 
 private:
+	long roleFor_;
 	std::string regionId_;
+	int roleType_;
 	std::string whiteruleList_;
 	std::string incidentUuid_;
 };

@@ -25,6 +25,15 @@ DescribeWhiteRuleListRequest::DescribeWhiteRuleListRequest()
 
 DescribeWhiteRuleListRequest::~DescribeWhiteRuleListRequest() {}
 
+long DescribeWhiteRuleListRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeWhiteRuleListRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DescribeWhiteRuleListRequest::getAlertName() const {
   return alertName_;
 }
@@ -50,6 +59,15 @@ int DescribeWhiteRuleListRequest::getPageSize() const {
 void DescribeWhiteRuleListRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+int DescribeWhiteRuleListRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeWhiteRuleListRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 int DescribeWhiteRuleListRequest::getCurrentPage() const {

@@ -25,6 +25,15 @@ DescribeStorageRequest::DescribeStorageRequest()
 
 DescribeStorageRequest::~DescribeStorageRequest() {}
 
+long DescribeStorageRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeStorageRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DescribeStorageRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,5 +41,14 @@ std::string DescribeStorageRequest::getRegionId() const {
 void DescribeStorageRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeStorageRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeStorageRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 

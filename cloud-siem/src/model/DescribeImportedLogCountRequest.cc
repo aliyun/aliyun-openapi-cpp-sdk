@@ -25,6 +25,15 @@ DescribeImportedLogCountRequest::DescribeImportedLogCountRequest()
 
 DescribeImportedLogCountRequest::~DescribeImportedLogCountRequest() {}
 
+std::string DescribeImportedLogCountRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeImportedLogCountRequest::setRoleFor(const std::string &roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), roleFor);
+}
+
 std::string DescribeImportedLogCountRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,5 +41,14 @@ std::string DescribeImportedLogCountRequest::getRegionId() const {
 void DescribeImportedLogCountRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeImportedLogCountRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeImportedLogCountRequest::setRoleType(const std::string &roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), roleType);
 }
 

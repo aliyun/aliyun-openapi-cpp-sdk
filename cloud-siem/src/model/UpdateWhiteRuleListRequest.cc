@@ -34,6 +34,15 @@ void UpdateWhiteRuleListRequest::setWhiteRuleId(long whiteRuleId) {
   setBodyParameter(std::string("WhiteRuleId"), std::to_string(whiteRuleId));
 }
 
+long UpdateWhiteRuleListRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void UpdateWhiteRuleListRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string UpdateWhiteRuleListRequest::getRegionId() const {
   return regionId_;
 }
@@ -41,6 +50,15 @@ std::string UpdateWhiteRuleListRequest::getRegionId() const {
 void UpdateWhiteRuleListRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int UpdateWhiteRuleListRequest::getRoleType() const {
+  return roleType_;
+}
+
+void UpdateWhiteRuleListRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 std::string UpdateWhiteRuleListRequest::getExpression() const {

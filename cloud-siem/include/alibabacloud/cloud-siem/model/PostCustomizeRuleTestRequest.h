@@ -30,8 +30,12 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT PostCustomizeRuleTestRequest : public RpcSe
 public:
 	PostCustomizeRuleTestRequest();
 	~PostCustomizeRuleTestRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	long getId() const;
 	void setId(long id);
 	std::string getSimulatedData() const;
@@ -40,7 +44,9 @@ public:
 	void setTestType(const std::string &testType);
 
 private:
+	long roleFor_;
 	std::string regionId_;
+	int roleType_;
 	long id_;
 	std::string simulatedData_;
 	std::string testType_;

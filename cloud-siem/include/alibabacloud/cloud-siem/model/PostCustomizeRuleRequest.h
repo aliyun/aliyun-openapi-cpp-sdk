@@ -30,6 +30,10 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT PostCustomizeRuleRequest : public RpcServic
 public:
 	PostCustomizeRuleRequest();
 	~PostCustomizeRuleRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
+	std::string getAttCk() const;
+	void setAttCk(const std::string &attCk);
 	std::string getRuleDesc() const;
 	void setRuleDesc(const std::string &ruleDesc);
 	std::string getRuleName() const;
@@ -46,6 +50,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getLogTypeMds() const;
 	void setLogTypeMds(const std::string &logTypeMds);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	long getId() const;
 	void setId(long id);
 	int getEventTransferSwitch() const;
@@ -68,6 +74,8 @@ public:
 	void setRuleGroup(const std::string &ruleGroup);
 
 private:
+	long roleFor_;
+	std::string attCk_;
 	std::string ruleDesc_;
 	std::string ruleName_;
 	std::string alertTypeMds_;
@@ -76,6 +84,7 @@ private:
 	std::string logType_;
 	std::string regionId_;
 	std::string logTypeMds_;
+	int roleType_;
 	long id_;
 	int eventTransferSwitch_;
 	std::string queryCycle_;

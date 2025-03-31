@@ -32,15 +32,21 @@ public:
 	~OpenDeliveryRequest();
 	std::string getProductCode() const;
 	void setProductCode(const std::string &productCode);
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getLogCode() const;
 	void setLogCode(const std::string &logCode);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 
 private:
 	std::string productCode_;
+	long roleFor_;
 	std::string logCode_;
 	std::string regionId_;
+	int roleType_;
 };
 } // namespace Model
 } // namespace Cloud_siem

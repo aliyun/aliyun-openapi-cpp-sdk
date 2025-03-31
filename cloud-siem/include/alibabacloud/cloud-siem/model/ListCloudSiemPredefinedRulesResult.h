@@ -43,15 +43,19 @@ namespace AlibabaCloud
 					struct ResponseDataItem
 					{
 						int status;
+						std::string attCk;
+						std::string ruleDescMds;
+						std::string gmtModified;
+						std::string source;
 						std::string alertType;
 						std::string gmtCreate;
-						std::string ruleDescMds;
 						std::string threatLevel;
+						std::string ruleNameEn;
+						std::string eventTransferType;
+						std::string ruleNameCn;
 						std::string ruleNameMds;
-						std::string gmtModified;
 						long id;
 						std::string ruleName;
-						std::string source;
 					};
 					PageInfo pageInfo;
 					std::vector<ResponseDataItem> responseData;

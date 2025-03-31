@@ -52,6 +52,10 @@ void ListCloudSiemPredefinedRulesResult::parse(const std::string &payload)
 			responseDataItemObject.gmtModified = dataNodeResponseDataResponseDataItem["GmtModified"].asString();
 		if(!dataNodeResponseDataResponseDataItem["RuleName"].isNull())
 			responseDataItemObject.ruleName = dataNodeResponseDataResponseDataItem["RuleName"].asString();
+		if(!dataNodeResponseDataResponseDataItem["RuleNameCn"].isNull())
+			responseDataItemObject.ruleNameCn = dataNodeResponseDataResponseDataItem["RuleNameCn"].asString();
+		if(!dataNodeResponseDataResponseDataItem["RuleNameEn"].isNull())
+			responseDataItemObject.ruleNameEn = dataNodeResponseDataResponseDataItem["RuleNameEn"].asString();
 		if(!dataNodeResponseDataResponseDataItem["RuleNameMds"].isNull())
 			responseDataItemObject.ruleNameMds = dataNodeResponseDataResponseDataItem["RuleNameMds"].asString();
 		if(!dataNodeResponseDataResponseDataItem["RuleDescMds"].isNull())
@@ -62,6 +66,10 @@ void ListCloudSiemPredefinedRulesResult::parse(const std::string &payload)
 			responseDataItemObject.alertType = dataNodeResponseDataResponseDataItem["AlertType"].asString();
 		if(!dataNodeResponseDataResponseDataItem["Source"].isNull())
 			responseDataItemObject.source = dataNodeResponseDataResponseDataItem["Source"].asString();
+		if(!dataNodeResponseDataResponseDataItem["EventTransferType"].isNull())
+			responseDataItemObject.eventTransferType = dataNodeResponseDataResponseDataItem["EventTransferType"].asString();
+		if(!dataNodeResponseDataResponseDataItem["AttCk"].isNull())
+			responseDataItemObject.attCk = dataNodeResponseDataResponseDataItem["AttCk"].asString();
 		if(!dataNodeResponseDataResponseDataItem["Status"].isNull())
 			responseDataItemObject.status = std::stoi(dataNodeResponseDataResponseDataItem["Status"].asString());
 		data_.responseData.push_back(responseDataItemObject);

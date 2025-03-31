@@ -25,13 +25,13 @@ DescribeOperatorsRequest::DescribeOperatorsRequest()
 
 DescribeOperatorsRequest::~DescribeOperatorsRequest() {}
 
-std::string DescribeOperatorsRequest::getSceneType() const {
-  return sceneType_;
+long DescribeOperatorsRequest::getRoleFor() const {
+  return roleFor_;
 }
 
-void DescribeOperatorsRequest::setSceneType(const std::string &sceneType) {
-  sceneType_ = sceneType;
-  setBodyParameter(std::string("SceneType"), sceneType);
+void DescribeOperatorsRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
 }
 
 std::string DescribeOperatorsRequest::getRegionId() const {
@@ -41,5 +41,23 @@ std::string DescribeOperatorsRequest::getRegionId() const {
 void DescribeOperatorsRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeOperatorsRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeOperatorsRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
+}
+
+std::string DescribeOperatorsRequest::getSceneType() const {
+  return sceneType_;
+}
+
+void DescribeOperatorsRequest::setSceneType(const std::string &sceneType) {
+  sceneType_ = sceneType;
+  setBodyParameter(std::string("SceneType"), sceneType);
 }
 

@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						long totalCount;
 						int pageSize;
 						int currentPage;
+						long verifiedCount;
 					};
 					struct ResponseDataItem
 					{
@@ -52,6 +53,7 @@ namespace AlibabaCloud
 						std::string onlineStatus;
 						std::string subUserId;
 						std::string eventName;
+						std::string verifyType;
 						std::string alertDesc;
 						std::string uuid;
 						std::string logSource;

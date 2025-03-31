@@ -25,6 +25,15 @@ DescribeAlertTypeRequest::DescribeAlertTypeRequest()
 
 DescribeAlertTypeRequest::~DescribeAlertTypeRequest() {}
 
+long DescribeAlertTypeRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeAlertTypeRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DescribeAlertTypeRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,5 +41,23 @@ std::string DescribeAlertTypeRequest::getRegionId() const {
 void DescribeAlertTypeRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeAlertTypeRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeAlertTypeRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
+}
+
+std::string DescribeAlertTypeRequest::getRuleType() const {
+  return ruleType_;
+}
+
+void DescribeAlertTypeRequest::setRuleType(const std::string &ruleType) {
+  ruleType_ = ruleType;
+  setBodyParameter(std::string("RuleType"), ruleType);
 }
 

@@ -30,11 +30,20 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT EnableAccessForCloudSiemRequest : public Rp
 public:
 	EnableAccessForCloudSiemRequest();
 	~EnableAccessForCloudSiemRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
+	int getAutoSubmit() const;
+	void setAutoSubmit(int autoSubmit);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 
 private:
+	long roleFor_;
+	int autoSubmit_;
 	std::string regionId_;
+	int roleType_;
 };
 } // namespace Model
 } // namespace Cloud_siem

@@ -46,6 +46,8 @@ void DescribeDisposeAndPlaybookResult::parse(const std::string &payload)
 		Data::ResponseDataItem responseDataItemObject;
 		if(!dataNodeResponseDataResponseDataItem["EntityId"].isNull())
 			responseDataItemObject.entityId = std::stol(dataNodeResponseDataResponseDataItem["EntityId"].asString());
+		if(!dataNodeResponseDataResponseDataItem["EntityType"].isNull())
+			responseDataItemObject.entityType = dataNodeResponseDataResponseDataItem["EntityType"].asString();
 		if(!dataNodeResponseDataResponseDataItem["OpcodeMap"].isNull())
 			responseDataItemObject.opcodeMap = dataNodeResponseDataResponseDataItem["OpcodeMap"].asString();
 		if(!dataNodeResponseDataResponseDataItem["EntityInfo"].isNull())
@@ -70,8 +72,15 @@ void DescribeDisposeAndPlaybookResult::parse(const std::string &payload)
 				playbookListObject.taskConfig = dataNodeResponseDataResponseDataItemPlaybookListPlaybookListItem["TaskConfig"].asString();
 			if(!dataNodeResponseDataResponseDataItemPlaybookListPlaybookListItem["Name"].isNull())
 				playbookListObject.name = dataNodeResponseDataResponseDataItemPlaybookListPlaybookListItem["Name"].asString();
+			if(!dataNodeResponseDataResponseDataItemPlaybookListPlaybookListItem["Uuid"].isNull())
+				playbookListObject.uuid = dataNodeResponseDataResponseDataItemPlaybookListPlaybookListItem["Uuid"].asString();
 			if(!dataNodeResponseDataResponseDataItemPlaybookListPlaybookListItem["WafPlaybook"].isNull())
 				playbookListObject.wafPlaybook = dataNodeResponseDataResponseDataItemPlaybookListPlaybookListItem["WafPlaybook"].asString() == "true";
+			if(!dataNodeResponseDataResponseDataItemPlaybookListPlaybookListItem["Available"].isNull())
+				playbookListObject.available = dataNodeResponseDataResponseDataItemPlaybookListPlaybookListItem["Available"].asString();
+			auto allParamConfig = value["ParamConfig"]["ParamConfig"];
+			for (auto value : allParamConfig)
+				playbookListObject.paramConfig.push_back(value.asString());
 			responseDataItemObject.playbookList.push_back(playbookListObject);
 		}
 		auto allOpcodeSet = value["OpcodeSet"]["OpcodeSet"];

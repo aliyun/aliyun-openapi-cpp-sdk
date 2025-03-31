@@ -30,16 +30,22 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT DescribeLogFieldsRequest : public RpcServic
 public:
 	DescribeLogFieldsRequest();
 	~DescribeLogFieldsRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getLogType() const;
 	void setLogType(const std::string &logType);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	std::string getLogSource() const;
 	void setLogSource(const std::string &logSource);
 
 private:
+	long roleFor_;
 	std::string logType_;
 	std::string regionId_;
+	int roleType_;
 	std::string logSource_;
 };
 } // namespace Model

@@ -52,6 +52,7 @@ namespace AlibabaCloud
 						int effectiveStatus;
 						std::string incidentName;
 						std::string gmtCreate;
+						std::string taskUrl;
 						std::string finishTime;
 						std::vector<std::string> scope;
 						std::string taskParam;

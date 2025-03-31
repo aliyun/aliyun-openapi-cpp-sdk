@@ -32,6 +32,8 @@ public:
 	~PostAutomateResponseConfigRequest();
 	std::string getActionType() const;
 	void setActionType(const std::string &actionType);
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getRuleName() const;
 	void setRuleName(const std::string &ruleName);
 	std::string getExecutionCondition() const;
@@ -44,17 +46,21 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getAutoResponseType() const;
 	void setAutoResponseType(const std::string &autoResponseType);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	long getId() const;
 	void setId(long id);
 
 private:
 	std::string actionType_;
+	long roleFor_;
 	std::string ruleName_;
 	std::string executionCondition_;
 	std::string actionConfig_;
 	long subUserId_;
 	std::string regionId_;
 	std::string autoResponseType_;
+	int roleType_;
 	long id_;
 };
 } // namespace Model

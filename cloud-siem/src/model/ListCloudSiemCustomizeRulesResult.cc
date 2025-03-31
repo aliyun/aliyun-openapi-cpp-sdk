@@ -80,6 +80,8 @@ void ListCloudSiemCustomizeRulesResult::parse(const std::string &payload)
 			responseDataItemObject.ruleThreshold = dataNodeResponseDataResponseDataItem["RuleThreshold"].asString();
 		if(!dataNodeResponseDataResponseDataItem["QueryCycle"].isNull())
 			responseDataItemObject.queryCycle = dataNodeResponseDataResponseDataItem["QueryCycle"].asString();
+		if(!dataNodeResponseDataResponseDataItem["AttCk"].isNull())
+			responseDataItemObject.attCk = dataNodeResponseDataResponseDataItem["AttCk"].asString();
 		if(!dataNodeResponseDataResponseDataItem["EventTransferSwitch"].isNull())
 			responseDataItemObject.eventTransferSwitch = std::stoi(dataNodeResponseDataResponseDataItem["EventTransferSwitch"].asString());
 		if(!dataNodeResponseDataResponseDataItem["EventTransferType"].isNull())
@@ -88,6 +90,8 @@ void ListCloudSiemCustomizeRulesResult::parse(const std::string &payload)
 			responseDataItemObject.eventTransferExt = dataNodeResponseDataResponseDataItem["EventTransferExt"].asString();
 		if(!dataNodeResponseDataResponseDataItem["Status"].isNull())
 			responseDataItemObject.status = std::stoi(dataNodeResponseDataResponseDataItem["Status"].asString());
+		if(!dataNodeResponseDataResponseDataItem["DataType"].isNull())
+			responseDataItemObject.dataType = std::stoi(dataNodeResponseDataResponseDataItem["DataType"].asString());
 		data_.responseData.push_back(responseDataItemObject);
 	}
 	auto pageInfoNode = dataNode["PageInfo"];

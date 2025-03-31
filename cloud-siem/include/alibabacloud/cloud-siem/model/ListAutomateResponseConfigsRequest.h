@@ -32,6 +32,8 @@ public:
 	~ListAutomateResponseConfigsRequest();
 	std::string getActionType() const;
 	void setActionType(const std::string &actionType);
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getRuleName() const;
 	void setRuleName(const std::string &ruleName);
 	long getSubUserId() const;
@@ -42,6 +44,8 @@ public:
 	void setPageSize(int pageSize);
 	std::string getAutoResponseType() const;
 	void setAutoResponseType(const std::string &autoResponseType);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	long getId() const;
 	void setId(long id);
 	int getCurrentPage() const;
@@ -53,11 +57,13 @@ public:
 
 private:
 	std::string actionType_;
+	long roleFor_;
 	std::string ruleName_;
 	long subUserId_;
 	std::string regionId_;
 	int pageSize_;
 	std::string autoResponseType_;
+	int roleType_;
 	long id_;
 	int currentPage_;
 	std::string playbookUuid_;

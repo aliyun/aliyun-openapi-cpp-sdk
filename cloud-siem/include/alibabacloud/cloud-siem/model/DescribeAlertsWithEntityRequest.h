@@ -30,25 +30,40 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT DescribeAlertsWithEntityRequest : public Rp
 public:
 	DescribeAlertsWithEntityRequest();
 	~DescribeAlertsWithEntityRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	long getEntityId() const;
 	void setEntityId(long entityId);
+	long getStartTime() const;
+	void setStartTime(long startTime);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	std::string getSophonTaskId() const;
 	void setSophonTaskId(const std::string &sophonTaskId);
+	long getEndTime() const;
+	void setEndTime(long endTime);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
+	std::string getEntityUuid() const;
+	void setEntityUuid(const std::string &entityUuid);
 	std::string getIncidentUuid() const;
 	void setIncidentUuid(const std::string &incidentUuid);
 
 private:
+	long roleFor_;
 	long entityId_;
+	long startTime_;
 	std::string regionId_;
 	int pageSize_;
+	int roleType_;
 	std::string sophonTaskId_;
+	long endTime_;
 	int currentPage_;
+	std::string entityUuid_;
 	std::string incidentUuid_;
 };
 } // namespace Model

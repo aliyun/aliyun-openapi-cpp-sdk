@@ -45,14 +45,18 @@ namespace AlibabaCloud
 						struct PlaybookListItem
 						{
 							std::string description;
+							std::string uuid;
 							bool wafPlaybook;
 							std::string opCode;
 							std::string displayName;
 							std::string opLevel;
 							std::string taskConfig;
+							std::string available;
+							std::vector<std::string> paramConfig;
 							std::string name;
 						};
 						long entityId;
+						std::string entityType;
 						std::vector<std::string> opcodeSet;
 						std::string dispose;
 						std::vector<std::string> scope;

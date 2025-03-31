@@ -25,6 +25,33 @@ ListCustomizeRuleTestResultRequest::ListCustomizeRuleTestResultRequest()
 
 ListCustomizeRuleTestResultRequest::~ListCustomizeRuleTestResultRequest() {}
 
+long ListCustomizeRuleTestResultRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void ListCustomizeRuleTestResultRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
+long ListCustomizeRuleTestResultRequest::getStartTime() const {
+  return startTime_;
+}
+
+void ListCustomizeRuleTestResultRequest::setStartTime(long startTime) {
+  startTime_ = startTime;
+  setBodyParameter(std::string("StartTime"), std::to_string(startTime));
+}
+
+std::string ListCustomizeRuleTestResultRequest::getVerifyType() const {
+  return verifyType_;
+}
+
+void ListCustomizeRuleTestResultRequest::setVerifyType(const std::string &verifyType) {
+  verifyType_ = verifyType;
+  setBodyParameter(std::string("VerifyType"), verifyType);
+}
+
 std::string ListCustomizeRuleTestResultRequest::getRegionId() const {
   return regionId_;
 }
@@ -43,6 +70,15 @@ void ListCustomizeRuleTestResultRequest::setPageSize(int pageSize) {
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+int ListCustomizeRuleTestResultRequest::getRoleType() const {
+  return roleType_;
+}
+
+void ListCustomizeRuleTestResultRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
+}
+
 long ListCustomizeRuleTestResultRequest::getId() const {
   return id_;
 }
@@ -52,6 +88,15 @@ void ListCustomizeRuleTestResultRequest::setId(long id) {
   setBodyParameter(std::string("Id"), std::to_string(id));
 }
 
+long ListCustomizeRuleTestResultRequest::getEndTime() const {
+  return endTime_;
+}
+
+void ListCustomizeRuleTestResultRequest::setEndTime(long endTime) {
+  endTime_ = endTime;
+  setBodyParameter(std::string("EndTime"), std::to_string(endTime));
+}
+
 int ListCustomizeRuleTestResultRequest::getCurrentPage() const {
   return currentPage_;
 }
@@ -59,5 +104,14 @@ int ListCustomizeRuleTestResultRequest::getCurrentPage() const {
 void ListCustomizeRuleTestResultRequest::setCurrentPage(int currentPage) {
   currentPage_ = currentPage;
   setBodyParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string ListCustomizeRuleTestResultRequest::getDetectionRuleId() const {
+  return detectionRuleId_;
+}
+
+void ListCustomizeRuleTestResultRequest::setDetectionRuleId(const std::string &detectionRuleId) {
+  detectionRuleId_ = detectionRuleId;
+  setBodyParameter(std::string("DetectionRuleId"), detectionRuleId);
 }
 

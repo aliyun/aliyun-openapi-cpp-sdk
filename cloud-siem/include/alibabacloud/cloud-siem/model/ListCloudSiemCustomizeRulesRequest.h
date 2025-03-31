@@ -30,6 +30,8 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT ListCloudSiemCustomizeRulesRequest : public
 public:
 	ListCloudSiemCustomizeRulesRequest();
 	~ListCloudSiemCustomizeRulesRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getRuleName() const;
 	void setRuleName(const std::string &ruleName);
 	long getStartTime() const;
@@ -38,8 +40,14 @@ public:
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	std::string getId() const;
 	void setId(const std::string &id);
+	std::string getOrderField() const;
+	void setOrderField(const std::string &orderField);
+	std::string getOrder() const;
+	void setOrder(const std::string &order);
 	std::string getRuleType() const;
 	void setRuleType(const std::string &ruleType);
 	long getEndTime() const;
@@ -54,11 +62,15 @@ public:
 	void setStatus(int status);
 
 private:
+	long roleFor_;
 	std::string ruleName_;
 	long startTime_;
 	std::string regionId_;
 	int pageSize_;
+	int roleType_;
 	std::string id_;
+	std::string orderField_;
+	std::string order_;
 	std::string ruleType_;
 	long endTime_;
 	int currentPage_;

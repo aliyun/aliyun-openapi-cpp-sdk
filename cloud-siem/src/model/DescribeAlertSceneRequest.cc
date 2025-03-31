@@ -25,6 +25,15 @@ DescribeAlertSceneRequest::DescribeAlertSceneRequest()
 
 DescribeAlertSceneRequest::~DescribeAlertSceneRequest() {}
 
+long DescribeAlertSceneRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeAlertSceneRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DescribeAlertSceneRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,5 +41,14 @@ std::string DescribeAlertSceneRequest::getRegionId() const {
 void DescribeAlertSceneRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeAlertSceneRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeAlertSceneRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 

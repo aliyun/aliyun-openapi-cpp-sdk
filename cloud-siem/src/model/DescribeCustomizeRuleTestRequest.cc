@@ -25,6 +25,15 @@ DescribeCustomizeRuleTestRequest::DescribeCustomizeRuleTestRequest()
 
 DescribeCustomizeRuleTestRequest::~DescribeCustomizeRuleTestRequest() {}
 
+long DescribeCustomizeRuleTestRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeCustomizeRuleTestRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DescribeCustomizeRuleTestRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,6 +41,15 @@ std::string DescribeCustomizeRuleTestRequest::getRegionId() const {
 void DescribeCustomizeRuleTestRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeCustomizeRuleTestRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeCustomizeRuleTestRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 long DescribeCustomizeRuleTestRequest::getId() const {

@@ -25,6 +25,15 @@ DescribeAlertSourceWithEventRequest::DescribeAlertSourceWithEventRequest()
 
 DescribeAlertSourceWithEventRequest::~DescribeAlertSourceWithEventRequest() {}
 
+long DescribeAlertSourceWithEventRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeAlertSourceWithEventRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DescribeAlertSourceWithEventRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,6 +41,15 @@ std::string DescribeAlertSourceWithEventRequest::getRegionId() const {
 void DescribeAlertSourceWithEventRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeAlertSourceWithEventRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeAlertSourceWithEventRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 std::string DescribeAlertSourceWithEventRequest::getIncidentUuid() const {

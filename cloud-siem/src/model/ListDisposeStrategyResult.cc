@@ -68,6 +68,8 @@ void ListDisposeStrategyResult::parse(const std::string &payload)
 			responseDataItemObject.playbookUuid = dataNodeResponseDataResponseDataItem["PlaybookUuid"].asString();
 		if(!dataNodeResponseDataResponseDataItem["PlaybookType"].isNull())
 			responseDataItemObject.playbookType = dataNodeResponseDataResponseDataItem["PlaybookType"].asString();
+		if(!dataNodeResponseDataResponseDataItem["TaskUrl"].isNull())
+			responseDataItemObject.taskUrl = dataNodeResponseDataResponseDataItem["TaskUrl"].asString();
 		if(!dataNodeResponseDataResponseDataItem["EntityId"].isNull())
 			responseDataItemObject.entityId = std::stol(dataNodeResponseDataResponseDataItem["EntityId"].asString());
 		if(!dataNodeResponseDataResponseDataItem["EntityType"].isNull())

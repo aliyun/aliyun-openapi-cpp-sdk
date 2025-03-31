@@ -25,6 +25,15 @@ DescribeAlertsWithEntityRequest::DescribeAlertsWithEntityRequest()
 
 DescribeAlertsWithEntityRequest::~DescribeAlertsWithEntityRequest() {}
 
+long DescribeAlertsWithEntityRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeAlertsWithEntityRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 long DescribeAlertsWithEntityRequest::getEntityId() const {
   return entityId_;
 }
@@ -32,6 +41,15 @@ long DescribeAlertsWithEntityRequest::getEntityId() const {
 void DescribeAlertsWithEntityRequest::setEntityId(long entityId) {
   entityId_ = entityId;
   setBodyParameter(std::string("EntityId"), std::to_string(entityId));
+}
+
+long DescribeAlertsWithEntityRequest::getStartTime() const {
+  return startTime_;
+}
+
+void DescribeAlertsWithEntityRequest::setStartTime(long startTime) {
+  startTime_ = startTime;
+  setBodyParameter(std::string("StartTime"), std::to_string(startTime));
 }
 
 std::string DescribeAlertsWithEntityRequest::getRegionId() const {
@@ -52,6 +70,15 @@ void DescribeAlertsWithEntityRequest::setPageSize(int pageSize) {
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+int DescribeAlertsWithEntityRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeAlertsWithEntityRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
+}
+
 std::string DescribeAlertsWithEntityRequest::getSophonTaskId() const {
   return sophonTaskId_;
 }
@@ -61,6 +88,15 @@ void DescribeAlertsWithEntityRequest::setSophonTaskId(const std::string &sophonT
   setBodyParameter(std::string("SophonTaskId"), sophonTaskId);
 }
 
+long DescribeAlertsWithEntityRequest::getEndTime() const {
+  return endTime_;
+}
+
+void DescribeAlertsWithEntityRequest::setEndTime(long endTime) {
+  endTime_ = endTime;
+  setBodyParameter(std::string("EndTime"), std::to_string(endTime));
+}
+
 int DescribeAlertsWithEntityRequest::getCurrentPage() const {
   return currentPage_;
 }
@@ -68,6 +104,15 @@ int DescribeAlertsWithEntityRequest::getCurrentPage() const {
 void DescribeAlertsWithEntityRequest::setCurrentPage(int currentPage) {
   currentPage_ = currentPage;
   setBodyParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string DescribeAlertsWithEntityRequest::getEntityUuid() const {
+  return entityUuid_;
+}
+
+void DescribeAlertsWithEntityRequest::setEntityUuid(const std::string &entityUuid) {
+  entityUuid_ = entityUuid;
+  setBodyParameter(std::string("EntityUuid"), entityUuid);
 }
 
 std::string DescribeAlertsWithEntityRequest::getIncidentUuid() const {

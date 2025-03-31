@@ -76,6 +76,8 @@ void PostCustomizeRuleResult::parse(const std::string &payload)
 		data_.ruleThreshold = dataNode["RuleThreshold"].asString();
 	if(!dataNode["QueryCycle"].isNull())
 		data_.queryCycle = dataNode["QueryCycle"].asString();
+	if(!dataNode["AttCk"].isNull())
+		data_.attCk = dataNode["AttCk"].asString();
 	if(!dataNode["EventTransferSwitch"].isNull())
 		data_.eventTransferSwitch = std::stoi(dataNode["EventTransferSwitch"].asString());
 	if(!dataNode["EventTransferType"].isNull())
@@ -84,6 +86,8 @@ void PostCustomizeRuleResult::parse(const std::string &payload)
 		data_.eventTransferExt = dataNode["EventTransferExt"].asString();
 	if(!dataNode["Status"].isNull())
 		data_.status = std::stoi(dataNode["Status"].asString());
+	if(!dataNode["DataType"].isNull())
+		data_.dataType = std::stoi(dataNode["DataType"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

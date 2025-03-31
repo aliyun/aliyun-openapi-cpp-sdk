@@ -46,6 +46,16 @@ void DescribeProdCountResult::parse(const std::string &payload)
 		data_.hcloudProdCount = std::stoi(dataNode["HcloudProdCount"].asString());
 	if(!dataNode["QcloudProdCount"].isNull())
 		data_.qcloudProdCount = std::stoi(dataNode["QcloudProdCount"].asString());
+	if(!dataNode["IdcProdCount"].isNull())
+		data_.idcProdCount = std::stoi(dataNode["IdcProdCount"].asString());
+	if(!dataNode["AliyunImportedCount"].isNull())
+		data_.aliyunImportedCount = std::stoi(dataNode["AliyunImportedCount"].asString());
+	if(!dataNode["HcloudImportedCount"].isNull())
+		data_.hcloudImportedCount = std::stoi(dataNode["HcloudImportedCount"].asString());
+	if(!dataNode["QcloudImportedCount"].isNull())
+		data_.qcloudImportedCount = std::stoi(dataNode["QcloudImportedCount"].asString());
+	if(!dataNode["IdcImportedCount"].isNull())
+		data_.idcImportedCount = std::stoi(dataNode["IdcImportedCount"].asString());
 
 }
 

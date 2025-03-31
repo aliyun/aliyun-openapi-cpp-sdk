@@ -34,6 +34,15 @@ void DescribeEntityInfoRequest::setEntityIdentity(const std::string &entityIdent
   setBodyParameter(std::string("EntityIdentity"), entityIdentity);
 }
 
+long DescribeEntityInfoRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeEntityInfoRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 long DescribeEntityInfoRequest::getEntityId() const {
   return entityId_;
 }
@@ -50,6 +59,15 @@ std::string DescribeEntityInfoRequest::getRegionId() const {
 void DescribeEntityInfoRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeEntityInfoRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeEntityInfoRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 std::string DescribeEntityInfoRequest::getSophonTaskId() const {

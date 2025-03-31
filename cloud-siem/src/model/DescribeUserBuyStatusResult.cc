@@ -62,6 +62,8 @@ void DescribeUserBuyStatusResult::parse(const std::string &payload)
 		data_.endTime = std::stol(dataNode["EndTime"].asString());
 	if(!dataNode["DurationDays"].isNull())
 		data_.durationDays = std::stol(dataNode["DurationDays"].asString());
+	if(!dataNode["RdOrder"].isNull())
+		data_.rdOrder = std::stoi(dataNode["RdOrder"].asString());
 
 }
 

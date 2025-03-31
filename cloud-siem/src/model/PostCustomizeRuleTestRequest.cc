@@ -25,6 +25,15 @@ PostCustomizeRuleTestRequest::PostCustomizeRuleTestRequest()
 
 PostCustomizeRuleTestRequest::~PostCustomizeRuleTestRequest() {}
 
+long PostCustomizeRuleTestRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void PostCustomizeRuleTestRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string PostCustomizeRuleTestRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,6 +41,15 @@ std::string PostCustomizeRuleTestRequest::getRegionId() const {
 void PostCustomizeRuleTestRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int PostCustomizeRuleTestRequest::getRoleType() const {
+  return roleType_;
+}
+
+void PostCustomizeRuleTestRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 long PostCustomizeRuleTestRequest::getId() const {

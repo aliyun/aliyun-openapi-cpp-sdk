@@ -25,6 +25,15 @@ ListAllProdsRequest::ListAllProdsRequest()
 
 ListAllProdsRequest::~ListAllProdsRequest() {}
 
+long ListAllProdsRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void ListAllProdsRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string ListAllProdsRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,5 +41,14 @@ std::string ListAllProdsRequest::getRegionId() const {
 void ListAllProdsRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int ListAllProdsRequest::getRoleType() const {
+  return roleType_;
+}
+
+void ListAllProdsRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 

@@ -34,6 +34,15 @@ void ListAccountAccessIdRequest::setCloudCode(const std::string &cloudCode) {
   setBodyParameter(std::string("CloudCode"), cloudCode);
 }
 
+long ListAccountAccessIdRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void ListAccountAccessIdRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string ListAccountAccessIdRequest::getRegionId() const {
   return regionId_;
 }
@@ -41,5 +50,14 @@ std::string ListAccountAccessIdRequest::getRegionId() const {
 void ListAccountAccessIdRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int ListAccountAccessIdRequest::getRoleType() const {
+  return roleType_;
+}
+
+void ListAccountAccessIdRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 

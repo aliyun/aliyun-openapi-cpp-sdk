@@ -48,6 +48,7 @@ namespace AlibabaCloud
 						std::string actionType;
 						std::string executionCondition;
 						std::string gmtModified;
+						int dataType;
 						long subUserId;
 						long id;
 						long aliuid;

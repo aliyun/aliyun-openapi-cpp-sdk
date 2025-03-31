@@ -30,6 +30,8 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT PostEventDisposeAndWhiteruleListRequest : p
 public:
 	PostEventDisposeAndWhiteruleListRequest();
 	~PostEventDisposeAndWhiteruleListRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getRemark() const;
 	void setRemark(const std::string &remark);
 	std::string getEventDispose() const;
@@ -38,16 +40,23 @@ public:
 	void setReceiverInfo(const std::string &receiverInfo);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
+	std::string getThreatLevel() const;
+	void setThreatLevel(const std::string &threatLevel);
 	std::string getIncidentUuid() const;
 	void setIncidentUuid(const std::string &incidentUuid);
 	int getStatus() const;
 	void setStatus(int status);
 
 private:
+	long roleFor_;
 	std::string remark_;
 	std::string eventDispose_;
 	std::string receiverInfo_;
 	std::string regionId_;
+	int roleType_;
+	std::string threatLevel_;
 	std::string incidentUuid_;
 	int status_;
 };

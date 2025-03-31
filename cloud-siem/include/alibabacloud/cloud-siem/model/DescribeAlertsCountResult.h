@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					long high;
 					long all;
+					std::string countMap;
 					long low;
 					long medium;
 					int productNum;

@@ -30,20 +30,38 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT ListCustomizeRuleTestResultRequest : public
 public:
 	ListCustomizeRuleTestResultRequest();
 	~ListCustomizeRuleTestResultRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
+	long getStartTime() const;
+	void setStartTime(long startTime);
+	std::string getVerifyType() const;
+	void setVerifyType(const std::string &verifyType);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	long getId() const;
 	void setId(long id);
+	long getEndTime() const;
+	void setEndTime(long endTime);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
+	std::string getDetectionRuleId() const;
+	void setDetectionRuleId(const std::string &detectionRuleId);
 
 private:
+	long roleFor_;
+	long startTime_;
+	std::string verifyType_;
 	std::string regionId_;
 	int pageSize_;
+	int roleType_;
 	long id_;
+	long endTime_;
 	int currentPage_;
+	std::string detectionRuleId_;
 };
 } // namespace Model
 } // namespace Cloud_siem

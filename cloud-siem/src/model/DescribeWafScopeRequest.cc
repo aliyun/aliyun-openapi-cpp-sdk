@@ -25,6 +25,15 @@ DescribeWafScopeRequest::DescribeWafScopeRequest()
 
 DescribeWafScopeRequest::~DescribeWafScopeRequest() {}
 
+long DescribeWafScopeRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeWafScopeRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 long DescribeWafScopeRequest::getEntityId() const {
   return entityId_;
 }
@@ -41,5 +50,14 @@ std::string DescribeWafScopeRequest::getRegionId() const {
 void DescribeWafScopeRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeWafScopeRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeWafScopeRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 

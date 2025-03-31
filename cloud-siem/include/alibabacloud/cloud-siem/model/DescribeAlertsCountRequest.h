@@ -30,16 +30,25 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT DescribeAlertsCountRequest : public RpcServ
 public:
 	DescribeAlertsCountRequest();
 	~DescribeAlertsCountRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	long getStartTime() const;
 	void setStartTime(long startTime);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
+	std::string getQueryType() const;
+	void setQueryType(const std::string &queryType);
 	long getEndTime() const;
 	void setEndTime(long endTime);
 
 private:
+	long roleFor_;
 	long startTime_;
 	std::string regionId_;
+	int roleType_;
+	std::string queryType_;
 	long endTime_;
 };
 } // namespace Model

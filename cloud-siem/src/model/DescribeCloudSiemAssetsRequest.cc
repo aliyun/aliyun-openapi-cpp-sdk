@@ -25,6 +25,24 @@ DescribeCloudSiemAssetsRequest::DescribeCloudSiemAssetsRequest()
 
 DescribeCloudSiemAssetsRequest::~DescribeCloudSiemAssetsRequest() {}
 
+long DescribeCloudSiemAssetsRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeCloudSiemAssetsRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
+std::string DescribeCloudSiemAssetsRequest::getAssetName() const {
+  return assetName_;
+}
+
+void DescribeCloudSiemAssetsRequest::setAssetName(const std::string &assetName) {
+  assetName_ = assetName;
+  setBodyParameter(std::string("AssetName"), assetName);
+}
+
 std::string DescribeCloudSiemAssetsRequest::getRegionId() const {
   return regionId_;
 }
@@ -43,6 +61,15 @@ void DescribeCloudSiemAssetsRequest::setPageSize(int pageSize) {
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+int DescribeCloudSiemAssetsRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeCloudSiemAssetsRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
+}
+
 std::string DescribeCloudSiemAssetsRequest::getAssetType() const {
   return assetType_;
 }
@@ -50,6 +77,15 @@ std::string DescribeCloudSiemAssetsRequest::getAssetType() const {
 void DescribeCloudSiemAssetsRequest::setAssetType(const std::string &assetType) {
   assetType_ = assetType;
   setBodyParameter(std::string("AssetType"), assetType);
+}
+
+std::string DescribeCloudSiemAssetsRequest::getAssetUuid() const {
+  return assetUuid_;
+}
+
+void DescribeCloudSiemAssetsRequest::setAssetUuid(const std::string &assetUuid) {
+  assetUuid_ = assetUuid;
+  setBodyParameter(std::string("AssetUuid"), assetUuid);
 }
 
 int DescribeCloudSiemAssetsRequest::getCurrentPage() const {

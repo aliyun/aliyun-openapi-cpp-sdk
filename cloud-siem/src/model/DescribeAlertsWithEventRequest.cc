@@ -25,6 +25,51 @@ DescribeAlertsWithEventRequest::DescribeAlertsWithEventRequest()
 
 DescribeAlertsWithEventRequest::~DescribeAlertsWithEventRequest() {}
 
+long DescribeAlertsWithEventRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeAlertsWithEventRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
+std::string DescribeAlertsWithEventRequest::getAlertName() const {
+  return alertName_;
+}
+
+void DescribeAlertsWithEventRequest::setAlertName(const std::string &alertName) {
+  alertName_ = alertName;
+  setBodyParameter(std::string("AlertName"), alertName);
+}
+
+std::string DescribeAlertsWithEventRequest::getEntityName() const {
+  return entityName_;
+}
+
+void DescribeAlertsWithEventRequest::setEntityName(const std::string &entityName) {
+  entityName_ = entityName;
+  setBodyParameter(std::string("EntityName"), entityName);
+}
+
+std::string DescribeAlertsWithEventRequest::getAssetName() const {
+  return assetName_;
+}
+
+void DescribeAlertsWithEventRequest::setAssetName(const std::string &assetName) {
+  assetName_ = assetName;
+  setBodyParameter(std::string("AssetName"), assetName);
+}
+
+std::string DescribeAlertsWithEventRequest::getEntityId() const {
+  return entityId_;
+}
+
+void DescribeAlertsWithEventRequest::setEntityId(const std::string &entityId) {
+  entityId_ = entityId;
+  setBodyParameter(std::string("EntityId"), entityId);
+}
+
 std::string DescribeAlertsWithEventRequest::getSource() const {
   return source_;
 }
@@ -41,6 +86,15 @@ std::string DescribeAlertsWithEventRequest::getIsDefend() const {
 void DescribeAlertsWithEventRequest::setIsDefend(const std::string &isDefend) {
   isDefend_ = isDefend;
   setBodyParameter(std::string("IsDefend"), isDefend);
+}
+
+long DescribeAlertsWithEventRequest::getStartTime() const {
+  return startTime_;
+}
+
+void DescribeAlertsWithEventRequest::setStartTime(long startTime) {
+  startTime_ = startTime;
+  setBodyParameter(std::string("StartTime"), std::to_string(startTime));
 }
 
 long DescribeAlertsWithEventRequest::getSubUserId() const {
@@ -70,12 +124,30 @@ void DescribeAlertsWithEventRequest::setPageSize(int pageSize) {
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+int DescribeAlertsWithEventRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeAlertsWithEventRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
+}
+
 std::vector<std::string> DescribeAlertsWithEventRequest::getLevel() const {
   return level_;
 }
 
 void DescribeAlertsWithEventRequest::setLevel(const std::vector<std::string> &level) {
   level_ = level;
+}
+
+long DescribeAlertsWithEventRequest::getEndTime() const {
+  return endTime_;
+}
+
+void DescribeAlertsWithEventRequest::setEndTime(long endTime) {
+  endTime_ = endTime;
+  setBodyParameter(std::string("EndTime"), std::to_string(endTime));
 }
 
 std::string DescribeAlertsWithEventRequest::getAlertTitle() const {
@@ -94,6 +166,24 @@ int DescribeAlertsWithEventRequest::getCurrentPage() const {
 void DescribeAlertsWithEventRequest::setCurrentPage(int currentPage) {
   currentPage_ = currentPage;
   setBodyParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string DescribeAlertsWithEventRequest::getAlertType() const {
+  return alertType_;
+}
+
+void DescribeAlertsWithEventRequest::setAlertType(const std::string &alertType) {
+  alertType_ = alertType;
+  setBodyParameter(std::string("AlertType"), alertType);
+}
+
+std::string DescribeAlertsWithEventRequest::getAssetId() const {
+  return assetId_;
+}
+
+void DescribeAlertsWithEventRequest::setAssetId(const std::string &assetId) {
+  assetId_ = assetId;
+  setBodyParameter(std::string("AssetId"), assetId);
 }
 
 std::string DescribeAlertsWithEventRequest::getIncidentUuid() const {

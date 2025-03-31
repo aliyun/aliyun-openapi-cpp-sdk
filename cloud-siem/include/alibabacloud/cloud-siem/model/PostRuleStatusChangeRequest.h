@@ -30,8 +30,12 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT PostRuleStatusChangeRequest : public RpcSer
 public:
 	PostRuleStatusChangeRequest();
 	~PostRuleStatusChangeRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	std::string getRuleType() const;
 	void setRuleType(const std::string &ruleType);
 	std::string getIds() const;
@@ -40,7 +44,9 @@ public:
 	void setInUse(bool inUse);
 
 private:
+	long roleFor_;
 	std::string regionId_;
+	int roleType_;
 	std::string ruleType_;
 	std::string ids_;
 	bool inUse_;

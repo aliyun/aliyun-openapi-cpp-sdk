@@ -34,10 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					int customizeRuleNum;
 					int inUseRuleNum;
 					int highRuleNum;
+					int unEventRuleNum;
+					int expertRuleNum;
 					int mediumRuleNum;
+					int graphComputingRuleNum;
+					int totalRuleNum;
 					int lowRuleNum;
+					int predefinedRuleNum;
+					int aggregationRuleNum;
+					int singleAlertRuleNum;
 				};
 
 

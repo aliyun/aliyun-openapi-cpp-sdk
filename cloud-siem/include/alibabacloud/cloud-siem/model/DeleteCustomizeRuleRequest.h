@@ -30,13 +30,19 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT DeleteCustomizeRuleRequest : public RpcServ
 public:
 	DeleteCustomizeRuleRequest();
 	~DeleteCustomizeRuleRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	long getRuleId() const;
 	void setRuleId(long ruleId);
 
 private:
+	long roleFor_;
 	std::string regionId_;
+	int roleType_;
 	long ruleId_;
 };
 } // namespace Model

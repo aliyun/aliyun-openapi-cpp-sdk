@@ -25,6 +25,24 @@ EnableAccessForCloudSiemRequest::EnableAccessForCloudSiemRequest()
 
 EnableAccessForCloudSiemRequest::~EnableAccessForCloudSiemRequest() {}
 
+long EnableAccessForCloudSiemRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void EnableAccessForCloudSiemRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
+int EnableAccessForCloudSiemRequest::getAutoSubmit() const {
+  return autoSubmit_;
+}
+
+void EnableAccessForCloudSiemRequest::setAutoSubmit(int autoSubmit) {
+  autoSubmit_ = autoSubmit;
+  setBodyParameter(std::string("AutoSubmit"), std::to_string(autoSubmit));
+}
+
 std::string EnableAccessForCloudSiemRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,5 +50,14 @@ std::string EnableAccessForCloudSiemRequest::getRegionId() const {
 void EnableAccessForCloudSiemRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int EnableAccessForCloudSiemRequest::getRoleType() const {
+  return roleType_;
+}
+
+void EnableAccessForCloudSiemRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 

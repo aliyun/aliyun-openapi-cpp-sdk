@@ -25,14 +25,8 @@ set(cloud-siem_public_header_model
 	include/alibabacloud/cloud-siem/model/AddDataSourceResult.h
 	include/alibabacloud/cloud-siem/model/AddDataSourceLogRequest.h
 	include/alibabacloud/cloud-siem/model/AddDataSourceLogResult.h
-	include/alibabacloud/cloud-siem/model/AddUserRequest.h
-	include/alibabacloud/cloud-siem/model/AddUserResult.h
 	include/alibabacloud/cloud-siem/model/AddUserSourceLogConfigRequest.h
 	include/alibabacloud/cloud-siem/model/AddUserSourceLogConfigResult.h
-	include/alibabacloud/cloud-siem/model/BatchJobCheckRequest.h
-	include/alibabacloud/cloud-siem/model/BatchJobCheckResult.h
-	include/alibabacloud/cloud-siem/model/BatchJobSubmitRequest.h
-	include/alibabacloud/cloud-siem/model/BatchJobSubmitResult.h
 	include/alibabacloud/cloud-siem/model/BindAccountRequest.h
 	include/alibabacloud/cloud-siem/model/BindAccountResult.h
 	include/alibabacloud/cloud-siem/model/CloseDeliveryRequest.h
@@ -47,10 +41,6 @@ set(cloud-siem_public_header_model
 	include/alibabacloud/cloud-siem/model/DeleteDataSourceResult.h
 	include/alibabacloud/cloud-siem/model/DeleteDataSourceLogRequest.h
 	include/alibabacloud/cloud-siem/model/DeleteDataSourceLogResult.h
-	include/alibabacloud/cloud-siem/model/DeleteQuickQueryRequest.h
-	include/alibabacloud/cloud-siem/model/DeleteQuickQueryResult.h
-	include/alibabacloud/cloud-siem/model/DeleteUserRequest.h
-	include/alibabacloud/cloud-siem/model/DeleteUserResult.h
 	include/alibabacloud/cloud-siem/model/DeleteWhiteRuleListRequest.h
 	include/alibabacloud/cloud-siem/model/DeleteWhiteRuleListResult.h
 	include/alibabacloud/cloud-siem/model/DescribeAggregateFunctionRequest.h
@@ -73,8 +63,6 @@ set(cloud-siem_public_header_model
 	include/alibabacloud/cloud-siem/model/DescribeAlertsWithEntityResult.h
 	include/alibabacloud/cloud-siem/model/DescribeAlertsWithEventRequest.h
 	include/alibabacloud/cloud-siem/model/DescribeAlertsWithEventResult.h
-	include/alibabacloud/cloud-siem/model/DescribeAttackTimeLineRequest.h
-	include/alibabacloud/cloud-siem/model/DescribeAttackTimeLineResult.h
 	include/alibabacloud/cloud-siem/model/DescribeAuthRequest.h
 	include/alibabacloud/cloud-siem/model/DescribeAuthResult.h
 	include/alibabacloud/cloud-siem/model/DescribeAutomateResponseConfigCounterRequest.h
@@ -91,10 +79,6 @@ set(cloud-siem_public_header_model
 	include/alibabacloud/cloud-siem/model/DescribeCloudSiemEventDetailResult.h
 	include/alibabacloud/cloud-siem/model/DescribeCloudSiemEventsRequest.h
 	include/alibabacloud/cloud-siem/model/DescribeCloudSiemEventsResult.h
-	include/alibabacloud/cloud-siem/model/DescribeCsImportedProdStatusByUserRequest.h
-	include/alibabacloud/cloud-siem/model/DescribeCsImportedProdStatusByUserResult.h
-	include/alibabacloud/cloud-siem/model/DescribeCustomizeRuleRequest.h
-	include/alibabacloud/cloud-siem/model/DescribeCustomizeRuleResult.h
 	include/alibabacloud/cloud-siem/model/DescribeCustomizeRuleCountRequest.h
 	include/alibabacloud/cloud-siem/model/DescribeCustomizeRuleCountResult.h
 	include/alibabacloud/cloud-siem/model/DescribeCustomizeRuleTestRequest.h
@@ -117,14 +101,10 @@ set(cloud-siem_public_header_model
 	include/alibabacloud/cloud-siem/model/DescribeEventDisposeResult.h
 	include/alibabacloud/cloud-siem/model/DescribeImportedLogCountRequest.h
 	include/alibabacloud/cloud-siem/model/DescribeImportedLogCountResult.h
-	include/alibabacloud/cloud-siem/model/DescribeJobStatusRequest.h
-	include/alibabacloud/cloud-siem/model/DescribeJobStatusResult.h
 	include/alibabacloud/cloud-siem/model/DescribeLogFieldsRequest.h
 	include/alibabacloud/cloud-siem/model/DescribeLogFieldsResult.h
 	include/alibabacloud/cloud-siem/model/DescribeLogSourceRequest.h
 	include/alibabacloud/cloud-siem/model/DescribeLogSourceResult.h
-	include/alibabacloud/cloud-siem/model/DescribeLogStoreRequest.h
-	include/alibabacloud/cloud-siem/model/DescribeLogStoreResult.h
 	include/alibabacloud/cloud-siem/model/DescribeLogTypeRequest.h
 	include/alibabacloud/cloud-siem/model/DescribeLogTypeResult.h
 	include/alibabacloud/cloud-siem/model/DescribeOperatorsRequest.h
@@ -143,22 +123,12 @@ set(cloud-siem_public_header_model
 	include/alibabacloud/cloud-siem/model/DescribeWafScopeResult.h
 	include/alibabacloud/cloud-siem/model/DescribeWhiteRuleListRequest.h
 	include/alibabacloud/cloud-siem/model/DescribeWhiteRuleListResult.h
-	include/alibabacloud/cloud-siem/model/DoQuickFieldRequest.h
-	include/alibabacloud/cloud-siem/model/DoQuickFieldResult.h
-	include/alibabacloud/cloud-siem/model/DoSelfDelegateRequest.h
-	include/alibabacloud/cloud-siem/model/DoSelfDelegateResult.h
 	include/alibabacloud/cloud-siem/model/EnableAccessForCloudSiemRequest.h
 	include/alibabacloud/cloud-siem/model/EnableAccessForCloudSiemResult.h
 	include/alibabacloud/cloud-siem/model/EnableServiceForCloudSiemRequest.h
 	include/alibabacloud/cloud-siem/model/EnableServiceForCloudSiemResult.h
 	include/alibabacloud/cloud-siem/model/GetCapacityRequest.h
 	include/alibabacloud/cloud-siem/model/GetCapacityResult.h
-	include/alibabacloud/cloud-siem/model/GetHistogramsRequest.h
-	include/alibabacloud/cloud-siem/model/GetHistogramsResult.h
-	include/alibabacloud/cloud-siem/model/GetLogsRequest.h
-	include/alibabacloud/cloud-siem/model/GetLogsResult.h
-	include/alibabacloud/cloud-siem/model/GetQuickQueryRequest.h
-	include/alibabacloud/cloud-siem/model/GetQuickQueryResult.h
 	include/alibabacloud/cloud-siem/model/GetStorageRequest.h
 	include/alibabacloud/cloud-siem/model/GetStorageResult.h
 	include/alibabacloud/cloud-siem/model/ListAccountAccessIdRequest.h
@@ -187,20 +157,14 @@ set(cloud-siem_public_header_model
 	include/alibabacloud/cloud-siem/model/ListDeliveryResult.h
 	include/alibabacloud/cloud-siem/model/ListDisposeStrategyRequest.h
 	include/alibabacloud/cloud-siem/model/ListDisposeStrategyResult.h
+	include/alibabacloud/cloud-siem/model/ListEntitiesRequest.h
+	include/alibabacloud/cloud-siem/model/ListEntitiesResult.h
 	include/alibabacloud/cloud-siem/model/ListImportedLogsByProdRequest.h
 	include/alibabacloud/cloud-siem/model/ListImportedLogsByProdResult.h
-	include/alibabacloud/cloud-siem/model/ListOperationRequest.h
-	include/alibabacloud/cloud-siem/model/ListOperationResult.h
 	include/alibabacloud/cloud-siem/model/ListProjectLogStoresRequest.h
 	include/alibabacloud/cloud-siem/model/ListProjectLogStoresResult.h
-	include/alibabacloud/cloud-siem/model/ListQuickQueryRequest.h
-	include/alibabacloud/cloud-siem/model/ListQuickQueryResult.h
 	include/alibabacloud/cloud-siem/model/ListRdUsersRequest.h
 	include/alibabacloud/cloud-siem/model/ListRdUsersResult.h
-	include/alibabacloud/cloud-siem/model/ListUserProdLogsRequest.h
-	include/alibabacloud/cloud-siem/model/ListUserProdLogsResult.h
-	include/alibabacloud/cloud-siem/model/ListUsersByProdRequest.h
-	include/alibabacloud/cloud-siem/model/ListUsersByProdResult.h
 	include/alibabacloud/cloud-siem/model/ModifyBindAccountRequest.h
 	include/alibabacloud/cloud-siem/model/ModifyBindAccountResult.h
 	include/alibabacloud/cloud-siem/model/ModifyDataSourceRequest.h
@@ -225,16 +189,10 @@ set(cloud-siem_public_header_model
 	include/alibabacloud/cloud-siem/model/PostRuleStatusChangeResult.h
 	include/alibabacloud/cloud-siem/model/RestoreCapacityRequest.h
 	include/alibabacloud/cloud-siem/model/RestoreCapacityResult.h
-	include/alibabacloud/cloud-siem/model/SaveQuickQueryRequest.h
-	include/alibabacloud/cloud-siem/model/SaveQuickQueryResult.h
 	include/alibabacloud/cloud-siem/model/SetStorageRequest.h
 	include/alibabacloud/cloud-siem/model/SetStorageResult.h
-	include/alibabacloud/cloud-siem/model/ShowQuickAnalysisRequest.h
-	include/alibabacloud/cloud-siem/model/ShowQuickAnalysisResult.h
 	include/alibabacloud/cloud-siem/model/SubmitImportLogTasksRequest.h
 	include/alibabacloud/cloud-siem/model/SubmitImportLogTasksResult.h
-	include/alibabacloud/cloud-siem/model/SubmitJobsRequest.h
-	include/alibabacloud/cloud-siem/model/SubmitJobsResult.h
 	include/alibabacloud/cloud-siem/model/UpdateAutomateResponseConfigStatusRequest.h
 	include/alibabacloud/cloud-siem/model/UpdateAutomateResponseConfigStatusResult.h
 	include/alibabacloud/cloud-siem/model/UpdateWhiteRuleListRequest.h
@@ -246,14 +204,8 @@ set(cloud-siem_src
 	src/model/AddDataSourceResult.cc
 	src/model/AddDataSourceLogRequest.cc
 	src/model/AddDataSourceLogResult.cc
-	src/model/AddUserRequest.cc
-	src/model/AddUserResult.cc
 	src/model/AddUserSourceLogConfigRequest.cc
 	src/model/AddUserSourceLogConfigResult.cc
-	src/model/BatchJobCheckRequest.cc
-	src/model/BatchJobCheckResult.cc
-	src/model/BatchJobSubmitRequest.cc
-	src/model/BatchJobSubmitResult.cc
 	src/model/BindAccountRequest.cc
 	src/model/BindAccountResult.cc
 	src/model/CloseDeliveryRequest.cc
@@ -268,10 +220,6 @@ set(cloud-siem_src
 	src/model/DeleteDataSourceResult.cc
 	src/model/DeleteDataSourceLogRequest.cc
 	src/model/DeleteDataSourceLogResult.cc
-	src/model/DeleteQuickQueryRequest.cc
-	src/model/DeleteQuickQueryResult.cc
-	src/model/DeleteUserRequest.cc
-	src/model/DeleteUserResult.cc
 	src/model/DeleteWhiteRuleListRequest.cc
 	src/model/DeleteWhiteRuleListResult.cc
 	src/model/DescribeAggregateFunctionRequest.cc
@@ -294,8 +242,6 @@ set(cloud-siem_src
 	src/model/DescribeAlertsWithEntityResult.cc
 	src/model/DescribeAlertsWithEventRequest.cc
 	src/model/DescribeAlertsWithEventResult.cc
-	src/model/DescribeAttackTimeLineRequest.cc
-	src/model/DescribeAttackTimeLineResult.cc
 	src/model/DescribeAuthRequest.cc
 	src/model/DescribeAuthResult.cc
 	src/model/DescribeAutomateResponseConfigCounterRequest.cc
@@ -312,10 +258,6 @@ set(cloud-siem_src
 	src/model/DescribeCloudSiemEventDetailResult.cc
 	src/model/DescribeCloudSiemEventsRequest.cc
 	src/model/DescribeCloudSiemEventsResult.cc
-	src/model/DescribeCsImportedProdStatusByUserRequest.cc
-	src/model/DescribeCsImportedProdStatusByUserResult.cc
-	src/model/DescribeCustomizeRuleRequest.cc
-	src/model/DescribeCustomizeRuleResult.cc
 	src/model/DescribeCustomizeRuleCountRequest.cc
 	src/model/DescribeCustomizeRuleCountResult.cc
 	src/model/DescribeCustomizeRuleTestRequest.cc
@@ -338,14 +280,10 @@ set(cloud-siem_src
 	src/model/DescribeEventDisposeResult.cc
 	src/model/DescribeImportedLogCountRequest.cc
 	src/model/DescribeImportedLogCountResult.cc
-	src/model/DescribeJobStatusRequest.cc
-	src/model/DescribeJobStatusResult.cc
 	src/model/DescribeLogFieldsRequest.cc
 	src/model/DescribeLogFieldsResult.cc
 	src/model/DescribeLogSourceRequest.cc
 	src/model/DescribeLogSourceResult.cc
-	src/model/DescribeLogStoreRequest.cc
-	src/model/DescribeLogStoreResult.cc
 	src/model/DescribeLogTypeRequest.cc
 	src/model/DescribeLogTypeResult.cc
 	src/model/DescribeOperatorsRequest.cc
@@ -364,22 +302,12 @@ set(cloud-siem_src
 	src/model/DescribeWafScopeResult.cc
 	src/model/DescribeWhiteRuleListRequest.cc
 	src/model/DescribeWhiteRuleListResult.cc
-	src/model/DoQuickFieldRequest.cc
-	src/model/DoQuickFieldResult.cc
-	src/model/DoSelfDelegateRequest.cc
-	src/model/DoSelfDelegateResult.cc
 	src/model/EnableAccessForCloudSiemRequest.cc
 	src/model/EnableAccessForCloudSiemResult.cc
 	src/model/EnableServiceForCloudSiemRequest.cc
 	src/model/EnableServiceForCloudSiemResult.cc
 	src/model/GetCapacityRequest.cc
 	src/model/GetCapacityResult.cc
-	src/model/GetHistogramsRequest.cc
-	src/model/GetHistogramsResult.cc
-	src/model/GetLogsRequest.cc
-	src/model/GetLogsResult.cc
-	src/model/GetQuickQueryRequest.cc
-	src/model/GetQuickQueryResult.cc
 	src/model/GetStorageRequest.cc
 	src/model/GetStorageResult.cc
 	src/model/ListAccountAccessIdRequest.cc
@@ -408,20 +336,14 @@ set(cloud-siem_src
 	src/model/ListDeliveryResult.cc
 	src/model/ListDisposeStrategyRequest.cc
 	src/model/ListDisposeStrategyResult.cc
+	src/model/ListEntitiesRequest.cc
+	src/model/ListEntitiesResult.cc
 	src/model/ListImportedLogsByProdRequest.cc
 	src/model/ListImportedLogsByProdResult.cc
-	src/model/ListOperationRequest.cc
-	src/model/ListOperationResult.cc
 	src/model/ListProjectLogStoresRequest.cc
 	src/model/ListProjectLogStoresResult.cc
-	src/model/ListQuickQueryRequest.cc
-	src/model/ListQuickQueryResult.cc
 	src/model/ListRdUsersRequest.cc
 	src/model/ListRdUsersResult.cc
-	src/model/ListUserProdLogsRequest.cc
-	src/model/ListUserProdLogsResult.cc
-	src/model/ListUsersByProdRequest.cc
-	src/model/ListUsersByProdResult.cc
 	src/model/ModifyBindAccountRequest.cc
 	src/model/ModifyBindAccountResult.cc
 	src/model/ModifyDataSourceRequest.cc
@@ -446,16 +368,10 @@ set(cloud-siem_src
 	src/model/PostRuleStatusChangeResult.cc
 	src/model/RestoreCapacityRequest.cc
 	src/model/RestoreCapacityResult.cc
-	src/model/SaveQuickQueryRequest.cc
-	src/model/SaveQuickQueryResult.cc
 	src/model/SetStorageRequest.cc
 	src/model/SetStorageResult.cc
-	src/model/ShowQuickAnalysisRequest.cc
-	src/model/ShowQuickAnalysisResult.cc
 	src/model/SubmitImportLogTasksRequest.cc
 	src/model/SubmitImportLogTasksResult.cc
-	src/model/SubmitJobsRequest.cc
-	src/model/SubmitJobsResult.cc
 	src/model/UpdateAutomateResponseConfigStatusRequest.cc
 	src/model/UpdateAutomateResponseConfigStatusResult.cc
 	src/model/UpdateWhiteRuleListRequest.cc

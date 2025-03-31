@@ -32,10 +32,14 @@ public:
 	~DescribeEntityInfoRequest();
 	std::string getEntityIdentity() const;
 	void setEntityIdentity(const std::string &entityIdentity);
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	long getEntityId() const;
 	void setEntityId(long entityId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	std::string getSophonTaskId() const;
 	void setSophonTaskId(const std::string &sophonTaskId);
 	std::string getIncidentUuid() const;
@@ -43,8 +47,10 @@ public:
 
 private:
 	std::string entityIdentity_;
+	long roleFor_;
 	long entityId_;
 	std::string regionId_;
+	int roleType_;
 	std::string sophonTaskId_;
 	std::string incidentUuid_;
 };

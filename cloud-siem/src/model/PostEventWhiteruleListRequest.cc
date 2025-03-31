@@ -25,6 +25,15 @@ PostEventWhiteruleListRequest::PostEventWhiteruleListRequest()
 
 PostEventWhiteruleListRequest::~PostEventWhiteruleListRequest() {}
 
+long PostEventWhiteruleListRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void PostEventWhiteruleListRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string PostEventWhiteruleListRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,6 +41,15 @@ std::string PostEventWhiteruleListRequest::getRegionId() const {
 void PostEventWhiteruleListRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int PostEventWhiteruleListRequest::getRoleType() const {
+  return roleType_;
+}
+
+void PostEventWhiteruleListRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 std::string PostEventWhiteruleListRequest::getWhiteruleList() const {

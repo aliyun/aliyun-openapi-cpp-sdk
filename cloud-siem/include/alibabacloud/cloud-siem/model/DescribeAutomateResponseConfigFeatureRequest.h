@@ -30,14 +30,20 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT DescribeAutomateResponseConfigFeatureReques
 public:
 	DescribeAutomateResponseConfigFeatureRequest();
 	~DescribeAutomateResponseConfigFeatureRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getAutoResponseType() const;
 	void setAutoResponseType(const std::string &autoResponseType);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 
 private:
+	long roleFor_;
 	std::string regionId_;
 	std::string autoResponseType_;
+	int roleType_;
 };
 } // namespace Model
 } // namespace Cloud_siem

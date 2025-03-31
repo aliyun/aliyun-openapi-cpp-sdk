@@ -52,6 +52,15 @@ void ListDisposeStrategyRequest::setPlaybookTypes(const std::string &playbookTyp
   setBodyParameter(std::string("PlaybookTypes"), playbookTypes);
 }
 
+long ListDisposeStrategyRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void ListDisposeStrategyRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 long ListDisposeStrategyRequest::getStartTime() const {
   return startTime_;
 }
@@ -77,6 +86,15 @@ int ListDisposeStrategyRequest::getPageSize() const {
 void ListDisposeStrategyRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+int ListDisposeStrategyRequest::getRoleType() const {
+  return roleType_;
+}
+
+void ListDisposeStrategyRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 std::string ListDisposeStrategyRequest::getOrderField() const {
@@ -149,5 +167,14 @@ std::string ListDisposeStrategyRequest::getEntityType() const {
 void ListDisposeStrategyRequest::setEntityType(const std::string &entityType) {
   entityType_ = entityType;
   setBodyParameter(std::string("EntityType"), entityType);
+}
+
+std::string ListDisposeStrategyRequest::getIncidentUuid() const {
+  return incidentUuid_;
+}
+
+void ListDisposeStrategyRequest::setIncidentUuid(const std::string &incidentUuid) {
+  incidentUuid_ = incidentUuid;
+  setBodyParameter(std::string("IncidentUuid"), incidentUuid);
 }
 

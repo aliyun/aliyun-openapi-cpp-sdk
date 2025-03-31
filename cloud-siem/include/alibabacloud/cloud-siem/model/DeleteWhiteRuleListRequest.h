@@ -30,13 +30,19 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT DeleteWhiteRuleListRequest : public RpcServ
 public:
 	DeleteWhiteRuleListRequest();
 	~DeleteWhiteRuleListRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	long getId() const;
 	void setId(long id);
 
 private:
+	long roleFor_;
 	std::string regionId_;
+	int roleType_;
 	long id_;
 };
 } // namespace Model

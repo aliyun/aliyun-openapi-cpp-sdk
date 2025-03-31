@@ -25,6 +25,15 @@ DescribeAutomateResponseConfigPlayBooksRequest::DescribeAutomateResponseConfigPl
 
 DescribeAutomateResponseConfigPlayBooksRequest::~DescribeAutomateResponseConfigPlayBooksRequest() {}
 
+long DescribeAutomateResponseConfigPlayBooksRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeAutomateResponseConfigPlayBooksRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DescribeAutomateResponseConfigPlayBooksRequest::getRegionId() const {
   return regionId_;
 }
@@ -41,6 +50,15 @@ std::string DescribeAutomateResponseConfigPlayBooksRequest::getAutoResponseType(
 void DescribeAutomateResponseConfigPlayBooksRequest::setAutoResponseType(const std::string &autoResponseType) {
   autoResponseType_ = autoResponseType;
   setBodyParameter(std::string("AutoResponseType"), autoResponseType);
+}
+
+int DescribeAutomateResponseConfigPlayBooksRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeAutomateResponseConfigPlayBooksRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 std::string DescribeAutomateResponseConfigPlayBooksRequest::getEntityType() const {

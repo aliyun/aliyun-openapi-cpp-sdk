@@ -34,10 +34,19 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					struct AttckStage
+					{
+						std::string tacticName;
+						std::string tacticId;
+						int alertNum;
+					};
 					int status;
+					std::vector<AttckStage> attckStages;
 					std::string description;
+					std::string incidentType;
 					std::string descriptionEn;
 					float threatScore;
+					std::string ruleId;
 					std::string gmtModified;
 					int alertNum;
 					int assetNum;
@@ -49,6 +58,7 @@ namespace AlibabaCloud
 					std::vector<std::string> dataSources;
 					std::string threatLevel;
 					std::string incidentNameEn;
+					std::string referAccount;
 					long aliuid;
 					std::string incidentUuid;
 				};

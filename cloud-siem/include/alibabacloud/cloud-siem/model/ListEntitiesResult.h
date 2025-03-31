@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUD_SIEM_MODEL_DESCRIBEJOBSTATUSRESULT_H_
-#define ALIBABACLOUD_CLOUD_SIEM_MODEL_DESCRIBEJOBSTATUSRESULT_H_
+#ifndef ALIBABACLOUD_CLOUD_SIEM_MODEL_LISTENTITIESRESULT_H_
+#define ALIBABACLOUD_CLOUD_SIEM_MODEL_LISTENTITIESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,48 +29,48 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUD_SIEM_EXPORT DescribeJobStatusResult : public ServiceResult
+			class ALIBABACLOUD_CLOUD_SIEM_EXPORT ListEntitiesResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct ErrTaskListItem
+					struct PageInfo
 					{
-						struct ProductListItem
-						{
-							struct LogListItem
-							{
-								std::string projectNamePattern;
-								std::string regionCode;
-								std::string logStoreNamePattern;
-								std::string productCode;
-								std::string errorCode;
-								std::string logCode;
-							};
-							std::vector<ProductListItem::LogListItem> logList;
-							std::string productCode;
-						};
-						std::vector<ErrTaskListItem::ProductListItem> productList;
-						long userId;
+						long totalCount;
+						int pageSize;
+						int currentPage;
 					};
-					int taskCount;
-					int finishCount;
-					int failedCount;
-					std::string configId;
-					std::string folderId;
-					std::string taskStatus;
-					std::vector<ErrTaskListItem> errTaskList;
+					struct ResponseDataItem
+					{
+						int eventNum;
+						std::string cloudCode;
+						std::string entityName;
+						std::string gmtModified;
+						int alertNum;
+						long subUserId;
+						std::string malwareType;
+						std::string entityType;
+						std::string entityId;
+						std::string gmtCreate;
+						std::string entityUuid;
+						std::string entityInfo;
+						long id;
+						long aliuid;
+						std::string incidentUuid;
+						std::string alertUuid;
+					};
+					PageInfo pageInfo;
+					std::vector<ResponseDataItem> responseData;
 				};
 
 
-				DescribeJobStatusResult();
-				explicit DescribeJobStatusResult(const std::string &payload);
-				~DescribeJobStatusResult();
+				ListEntitiesResult();
+				explicit ListEntitiesResult(const std::string &payload);
+				~ListEntitiesResult();
 				std::string getMessage()const;
 				Data getData()const;
 				int getCode()const;
 				bool getSuccess()const;
-				std::string getErrCode()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -79,10 +79,9 @@ namespace AlibabaCloud
 				Data data_;
 				int code_;
 				bool success_;
-				std::string errCode_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUD_SIEM_MODEL_DESCRIBEJOBSTATUSRESULT_H_
+#endif // !ALIBABACLOUD_CLOUD_SIEM_MODEL_LISTENTITIESRESULT_H_

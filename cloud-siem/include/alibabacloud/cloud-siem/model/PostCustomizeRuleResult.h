@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					int status;
 					int eventTransferSwitch;
+					std::string attCk;
 					std::string ruleCondition;
 					std::string gmtModified;
 					std::string logType;
@@ -51,6 +52,7 @@ namespace AlibabaCloud
 					std::string alertTypeMds;
 					std::string eventTransferType;
 					std::string ruleDesc;
+					int dataType;
 					long id;
 					long aliuid;
 					std::string queryCycle;

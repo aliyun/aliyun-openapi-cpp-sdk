@@ -32,20 +32,26 @@ public:
 	~BindAccountRequest();
 	std::string getCloudCode() const;
 	void setCloudCode(const std::string &cloudCode);
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getAccountId() const;
 	void setAccountId(const std::string &accountId);
 	std::string getAccountName() const;
 	void setAccountName(const std::string &accountName);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	std::string getAccessId() const;
 	void setAccessId(const std::string &accessId);
 
 private:
 	std::string cloudCode_;
+	long roleFor_;
 	std::string accountId_;
 	std::string accountName_;
 	std::string regionId_;
+	int roleType_;
 	std::string accessId_;
 };
 } // namespace Model

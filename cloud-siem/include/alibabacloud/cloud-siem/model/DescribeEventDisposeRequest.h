@@ -30,18 +30,24 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT DescribeEventDisposeRequest : public RpcSer
 public:
 	DescribeEventDisposeRequest();
 	~DescribeEventDisposeRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
 	std::string getIncidentUuid() const;
 	void setIncidentUuid(const std::string &incidentUuid);
 
 private:
+	long roleFor_;
 	std::string regionId_;
 	int pageSize_;
+	int roleType_;
 	int currentPage_;
 	std::string incidentUuid_;
 };

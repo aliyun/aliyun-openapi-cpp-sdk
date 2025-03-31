@@ -30,16 +30,22 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT DescribeDisposeStrategyPlaybookRequest : pu
 public:
 	DescribeDisposeStrategyPlaybookRequest();
 	~DescribeDisposeStrategyPlaybookRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	long getStartTime() const;
 	void setStartTime(long startTime);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	long getEndTime() const;
 	void setEndTime(long endTime);
 
 private:
+	long roleFor_;
 	long startTime_;
 	std::string regionId_;
+	int roleType_;
 	long endTime_;
 };
 } // namespace Model

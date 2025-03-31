@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					long masterUserId;
 					long durationDays;
 					std::string mainUserName;
+					int rdOrder;
 				};
 
 

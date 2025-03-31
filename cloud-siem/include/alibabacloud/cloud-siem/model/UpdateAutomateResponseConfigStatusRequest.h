@@ -30,15 +30,21 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT UpdateAutomateResponseConfigStatusRequest :
 public:
 	UpdateAutomateResponseConfigStatusRequest();
 	~UpdateAutomateResponseConfigStatusRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	std::string getIds() const;
 	void setIds(const std::string &ids);
 	bool getInUse() const;
 	void setInUse(bool inUse);
 
 private:
+	long roleFor_;
 	std::string regionId_;
+	int roleType_;
 	std::string ids_;
 	bool inUse_;
 };

@@ -30,18 +30,24 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT DescribeAlertSourceRequest : public RpcServ
 public:
 	DescribeAlertSourceRequest();
 	~DescribeAlertSourceRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	long getStartTime() const;
 	void setStartTime(long startTime);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	std::vector<std::string> getLevel() const;
 	void setLevel(const std::vector<std::string> &level);
 	long getEndTime() const;
 	void setEndTime(long endTime);
 
 private:
+	long roleFor_;
 	long startTime_;
 	std::string regionId_;
+	int roleType_;
 	std::vector<std::string> level_;
 	long endTime_;
 };

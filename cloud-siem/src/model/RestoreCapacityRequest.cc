@@ -25,6 +25,15 @@ RestoreCapacityRequest::RestoreCapacityRequest()
 
 RestoreCapacityRequest::~RestoreCapacityRequest() {}
 
+long RestoreCapacityRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void RestoreCapacityRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string RestoreCapacityRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,5 +41,14 @@ std::string RestoreCapacityRequest::getRegionId() const {
 void RestoreCapacityRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int RestoreCapacityRequest::getRoleType() const {
+  return roleType_;
+}
+
+void RestoreCapacityRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 

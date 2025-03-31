@@ -25,6 +25,15 @@ GetStorageRequest::GetStorageRequest()
 
 GetStorageRequest::~GetStorageRequest() {}
 
+long GetStorageRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void GetStorageRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string GetStorageRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,5 +41,14 @@ std::string GetStorageRequest::getRegionId() const {
 void GetStorageRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int GetStorageRequest::getRoleType() const {
+  return roleType_;
+}
+
+void GetStorageRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 

@@ -25,6 +25,15 @@ DescribeAlertsCountRequest::DescribeAlertsCountRequest()
 
 DescribeAlertsCountRequest::~DescribeAlertsCountRequest() {}
 
+long DescribeAlertsCountRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeAlertsCountRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 long DescribeAlertsCountRequest::getStartTime() const {
   return startTime_;
 }
@@ -41,6 +50,24 @@ std::string DescribeAlertsCountRequest::getRegionId() const {
 void DescribeAlertsCountRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeAlertsCountRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeAlertsCountRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
+}
+
+std::string DescribeAlertsCountRequest::getQueryType() const {
+  return queryType_;
+}
+
+void DescribeAlertsCountRequest::setQueryType(const std::string &queryType) {
+  queryType_ = queryType;
+  setBodyParameter(std::string("QueryType"), queryType);
 }
 
 long DescribeAlertsCountRequest::getEndTime() const {

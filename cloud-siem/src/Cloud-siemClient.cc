@@ -123,42 +123,6 @@ Cloud_siemClient::AddDataSourceLogOutcomeCallable Cloud_siemClient::addDataSourc
 	return task->get_future();
 }
 
-Cloud_siemClient::AddUserOutcome Cloud_siemClient::addUser(const AddUserRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddUserOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddUserOutcome(AddUserResult(outcome.result()));
-	else
-		return AddUserOutcome(outcome.error());
-}
-
-void Cloud_siemClient::addUserAsync(const AddUserRequest& request, const AddUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addUser(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::AddUserOutcomeCallable Cloud_siemClient::addUserCallable(const AddUserRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddUserOutcome()>>(
-			[this, request]()
-			{
-			return this->addUser(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Cloud_siemClient::AddUserSourceLogConfigOutcome Cloud_siemClient::addUserSourceLogConfig(const AddUserSourceLogConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,78 +153,6 @@ Cloud_siemClient::AddUserSourceLogConfigOutcomeCallable Cloud_siemClient::addUse
 			[this, request]()
 			{
 			return this->addUserSourceLogConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cloud_siemClient::BatchJobCheckOutcome Cloud_siemClient::batchJobCheck(const BatchJobCheckRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return BatchJobCheckOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return BatchJobCheckOutcome(BatchJobCheckResult(outcome.result()));
-	else
-		return BatchJobCheckOutcome(outcome.error());
-}
-
-void Cloud_siemClient::batchJobCheckAsync(const BatchJobCheckRequest& request, const BatchJobCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, batchJobCheck(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::BatchJobCheckOutcomeCallable Cloud_siemClient::batchJobCheckCallable(const BatchJobCheckRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<BatchJobCheckOutcome()>>(
-			[this, request]()
-			{
-			return this->batchJobCheck(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cloud_siemClient::BatchJobSubmitOutcome Cloud_siemClient::batchJobSubmit(const BatchJobSubmitRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return BatchJobSubmitOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return BatchJobSubmitOutcome(BatchJobSubmitResult(outcome.result()));
-	else
-		return BatchJobSubmitOutcome(outcome.error());
-}
-
-void Cloud_siemClient::batchJobSubmitAsync(const BatchJobSubmitRequest& request, const BatchJobSubmitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, batchJobSubmit(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::BatchJobSubmitOutcomeCallable Cloud_siemClient::batchJobSubmitCallable(const BatchJobSubmitRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<BatchJobSubmitOutcome()>>(
-			[this, request]()
-			{
-			return this->batchJobSubmit(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -513,78 +405,6 @@ Cloud_siemClient::DeleteDataSourceLogOutcomeCallable Cloud_siemClient::deleteDat
 			[this, request]()
 			{
 			return this->deleteDataSourceLog(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cloud_siemClient::DeleteQuickQueryOutcome Cloud_siemClient::deleteQuickQuery(const DeleteQuickQueryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteQuickQueryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteQuickQueryOutcome(DeleteQuickQueryResult(outcome.result()));
-	else
-		return DeleteQuickQueryOutcome(outcome.error());
-}
-
-void Cloud_siemClient::deleteQuickQueryAsync(const DeleteQuickQueryRequest& request, const DeleteQuickQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteQuickQuery(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::DeleteQuickQueryOutcomeCallable Cloud_siemClient::deleteQuickQueryCallable(const DeleteQuickQueryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteQuickQueryOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteQuickQuery(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cloud_siemClient::DeleteUserOutcome Cloud_siemClient::deleteUser(const DeleteUserRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteUserOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteUserOutcome(DeleteUserResult(outcome.result()));
-	else
-		return DeleteUserOutcome(outcome.error());
-}
-
-void Cloud_siemClient::deleteUserAsync(const DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteUser(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::DeleteUserOutcomeCallable Cloud_siemClient::deleteUserCallable(const DeleteUserRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteUserOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteUser(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -987,42 +807,6 @@ Cloud_siemClient::DescribeAlertsWithEventOutcomeCallable Cloud_siemClient::descr
 	return task->get_future();
 }
 
-Cloud_siemClient::DescribeAttackTimeLineOutcome Cloud_siemClient::describeAttackTimeLine(const DescribeAttackTimeLineRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAttackTimeLineOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAttackTimeLineOutcome(DescribeAttackTimeLineResult(outcome.result()));
-	else
-		return DescribeAttackTimeLineOutcome(outcome.error());
-}
-
-void Cloud_siemClient::describeAttackTimeLineAsync(const DescribeAttackTimeLineRequest& request, const DescribeAttackTimeLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAttackTimeLine(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::DescribeAttackTimeLineOutcomeCallable Cloud_siemClient::describeAttackTimeLineCallable(const DescribeAttackTimeLineRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAttackTimeLineOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAttackTimeLine(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Cloud_siemClient::DescribeAuthOutcome Cloud_siemClient::describeAuth(const DescribeAuthRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1305,78 +1089,6 @@ Cloud_siemClient::DescribeCloudSiemEventsOutcomeCallable Cloud_siemClient::descr
 			[this, request]()
 			{
 			return this->describeCloudSiemEvents(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cloud_siemClient::DescribeCsImportedProdStatusByUserOutcome Cloud_siemClient::describeCsImportedProdStatusByUser(const DescribeCsImportedProdStatusByUserRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeCsImportedProdStatusByUserOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeCsImportedProdStatusByUserOutcome(DescribeCsImportedProdStatusByUserResult(outcome.result()));
-	else
-		return DescribeCsImportedProdStatusByUserOutcome(outcome.error());
-}
-
-void Cloud_siemClient::describeCsImportedProdStatusByUserAsync(const DescribeCsImportedProdStatusByUserRequest& request, const DescribeCsImportedProdStatusByUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeCsImportedProdStatusByUser(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::DescribeCsImportedProdStatusByUserOutcomeCallable Cloud_siemClient::describeCsImportedProdStatusByUserCallable(const DescribeCsImportedProdStatusByUserRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeCsImportedProdStatusByUserOutcome()>>(
-			[this, request]()
-			{
-			return this->describeCsImportedProdStatusByUser(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cloud_siemClient::DescribeCustomizeRuleOutcome Cloud_siemClient::describeCustomizeRule(const DescribeCustomizeRuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeCustomizeRuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeCustomizeRuleOutcome(DescribeCustomizeRuleResult(outcome.result()));
-	else
-		return DescribeCustomizeRuleOutcome(outcome.error());
-}
-
-void Cloud_siemClient::describeCustomizeRuleAsync(const DescribeCustomizeRuleRequest& request, const DescribeCustomizeRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeCustomizeRule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::DescribeCustomizeRuleOutcomeCallable Cloud_siemClient::describeCustomizeRuleCallable(const DescribeCustomizeRuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeCustomizeRuleOutcome()>>(
-			[this, request]()
-			{
-			return this->describeCustomizeRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1779,42 +1491,6 @@ Cloud_siemClient::DescribeImportedLogCountOutcomeCallable Cloud_siemClient::desc
 	return task->get_future();
 }
 
-Cloud_siemClient::DescribeJobStatusOutcome Cloud_siemClient::describeJobStatus(const DescribeJobStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeJobStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeJobStatusOutcome(DescribeJobStatusResult(outcome.result()));
-	else
-		return DescribeJobStatusOutcome(outcome.error());
-}
-
-void Cloud_siemClient::describeJobStatusAsync(const DescribeJobStatusRequest& request, const DescribeJobStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeJobStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::DescribeJobStatusOutcomeCallable Cloud_siemClient::describeJobStatusCallable(const DescribeJobStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeJobStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->describeJobStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Cloud_siemClient::DescribeLogFieldsOutcome Cloud_siemClient::describeLogFields(const DescribeLogFieldsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1881,42 +1557,6 @@ Cloud_siemClient::DescribeLogSourceOutcomeCallable Cloud_siemClient::describeLog
 			[this, request]()
 			{
 			return this->describeLogSource(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cloud_siemClient::DescribeLogStoreOutcome Cloud_siemClient::describeLogStore(const DescribeLogStoreRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLogStoreOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLogStoreOutcome(DescribeLogStoreResult(outcome.result()));
-	else
-		return DescribeLogStoreOutcome(outcome.error());
-}
-
-void Cloud_siemClient::describeLogStoreAsync(const DescribeLogStoreRequest& request, const DescribeLogStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLogStore(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::DescribeLogStoreOutcomeCallable Cloud_siemClient::describeLogStoreCallable(const DescribeLogStoreRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLogStoreOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLogStore(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2247,78 +1887,6 @@ Cloud_siemClient::DescribeWhiteRuleListOutcomeCallable Cloud_siemClient::describ
 	return task->get_future();
 }
 
-Cloud_siemClient::DoQuickFieldOutcome Cloud_siemClient::doQuickField(const DoQuickFieldRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DoQuickFieldOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DoQuickFieldOutcome(DoQuickFieldResult(outcome.result()));
-	else
-		return DoQuickFieldOutcome(outcome.error());
-}
-
-void Cloud_siemClient::doQuickFieldAsync(const DoQuickFieldRequest& request, const DoQuickFieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, doQuickField(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::DoQuickFieldOutcomeCallable Cloud_siemClient::doQuickFieldCallable(const DoQuickFieldRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DoQuickFieldOutcome()>>(
-			[this, request]()
-			{
-			return this->doQuickField(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cloud_siemClient::DoSelfDelegateOutcome Cloud_siemClient::doSelfDelegate(const DoSelfDelegateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DoSelfDelegateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DoSelfDelegateOutcome(DoSelfDelegateResult(outcome.result()));
-	else
-		return DoSelfDelegateOutcome(outcome.error());
-}
-
-void Cloud_siemClient::doSelfDelegateAsync(const DoSelfDelegateRequest& request, const DoSelfDelegateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, doSelfDelegate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::DoSelfDelegateOutcomeCallable Cloud_siemClient::doSelfDelegateCallable(const DoSelfDelegateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DoSelfDelegateOutcome()>>(
-			[this, request]()
-			{
-			return this->doSelfDelegate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Cloud_siemClient::EnableAccessForCloudSiemOutcome Cloud_siemClient::enableAccessForCloudSiem(const EnableAccessForCloudSiemRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2421,114 +1989,6 @@ Cloud_siemClient::GetCapacityOutcomeCallable Cloud_siemClient::getCapacityCallab
 			[this, request]()
 			{
 			return this->getCapacity(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cloud_siemClient::GetHistogramsOutcome Cloud_siemClient::getHistograms(const GetHistogramsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetHistogramsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetHistogramsOutcome(GetHistogramsResult(outcome.result()));
-	else
-		return GetHistogramsOutcome(outcome.error());
-}
-
-void Cloud_siemClient::getHistogramsAsync(const GetHistogramsRequest& request, const GetHistogramsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getHistograms(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::GetHistogramsOutcomeCallable Cloud_siemClient::getHistogramsCallable(const GetHistogramsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetHistogramsOutcome()>>(
-			[this, request]()
-			{
-			return this->getHistograms(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cloud_siemClient::GetLogsOutcome Cloud_siemClient::getLogs(const GetLogsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetLogsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetLogsOutcome(GetLogsResult(outcome.result()));
-	else
-		return GetLogsOutcome(outcome.error());
-}
-
-void Cloud_siemClient::getLogsAsync(const GetLogsRequest& request, const GetLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getLogs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::GetLogsOutcomeCallable Cloud_siemClient::getLogsCallable(const GetLogsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetLogsOutcome()>>(
-			[this, request]()
-			{
-			return this->getLogs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cloud_siemClient::GetQuickQueryOutcome Cloud_siemClient::getQuickQuery(const GetQuickQueryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetQuickQueryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetQuickQueryOutcome(GetQuickQueryResult(outcome.result()));
-	else
-		return GetQuickQueryOutcome(outcome.error());
-}
-
-void Cloud_siemClient::getQuickQueryAsync(const GetQuickQueryRequest& request, const GetQuickQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getQuickQuery(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::GetQuickQueryOutcomeCallable Cloud_siemClient::getQuickQueryCallable(const GetQuickQueryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetQuickQueryOutcome()>>(
-			[this, request]()
-			{
-			return this->getQuickQuery(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3039,6 +2499,42 @@ Cloud_siemClient::ListDisposeStrategyOutcomeCallable Cloud_siemClient::listDispo
 	return task->get_future();
 }
 
+Cloud_siemClient::ListEntitiesOutcome Cloud_siemClient::listEntities(const ListEntitiesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListEntitiesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListEntitiesOutcome(ListEntitiesResult(outcome.result()));
+	else
+		return ListEntitiesOutcome(outcome.error());
+}
+
+void Cloud_siemClient::listEntitiesAsync(const ListEntitiesRequest& request, const ListEntitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listEntities(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cloud_siemClient::ListEntitiesOutcomeCallable Cloud_siemClient::listEntitiesCallable(const ListEntitiesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListEntitiesOutcome()>>(
+			[this, request]()
+			{
+			return this->listEntities(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cloud_siemClient::ListImportedLogsByProdOutcome Cloud_siemClient::listImportedLogsByProd(const ListImportedLogsByProdRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3069,42 +2565,6 @@ Cloud_siemClient::ListImportedLogsByProdOutcomeCallable Cloud_siemClient::listIm
 			[this, request]()
 			{
 			return this->listImportedLogsByProd(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cloud_siemClient::ListOperationOutcome Cloud_siemClient::listOperation(const ListOperationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListOperationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListOperationOutcome(ListOperationResult(outcome.result()));
-	else
-		return ListOperationOutcome(outcome.error());
-}
-
-void Cloud_siemClient::listOperationAsync(const ListOperationRequest& request, const ListOperationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listOperation(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::ListOperationOutcomeCallable Cloud_siemClient::listOperationCallable(const ListOperationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListOperationOutcome()>>(
-			[this, request]()
-			{
-			return this->listOperation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3147,42 +2607,6 @@ Cloud_siemClient::ListProjectLogStoresOutcomeCallable Cloud_siemClient::listProj
 	return task->get_future();
 }
 
-Cloud_siemClient::ListQuickQueryOutcome Cloud_siemClient::listQuickQuery(const ListQuickQueryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListQuickQueryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListQuickQueryOutcome(ListQuickQueryResult(outcome.result()));
-	else
-		return ListQuickQueryOutcome(outcome.error());
-}
-
-void Cloud_siemClient::listQuickQueryAsync(const ListQuickQueryRequest& request, const ListQuickQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listQuickQuery(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::ListQuickQueryOutcomeCallable Cloud_siemClient::listQuickQueryCallable(const ListQuickQueryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListQuickQueryOutcome()>>(
-			[this, request]()
-			{
-			return this->listQuickQuery(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Cloud_siemClient::ListRdUsersOutcome Cloud_siemClient::listRdUsers(const ListRdUsersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3213,78 +2637,6 @@ Cloud_siemClient::ListRdUsersOutcomeCallable Cloud_siemClient::listRdUsersCallab
 			[this, request]()
 			{
 			return this->listRdUsers(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cloud_siemClient::ListUserProdLogsOutcome Cloud_siemClient::listUserProdLogs(const ListUserProdLogsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListUserProdLogsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListUserProdLogsOutcome(ListUserProdLogsResult(outcome.result()));
-	else
-		return ListUserProdLogsOutcome(outcome.error());
-}
-
-void Cloud_siemClient::listUserProdLogsAsync(const ListUserProdLogsRequest& request, const ListUserProdLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listUserProdLogs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::ListUserProdLogsOutcomeCallable Cloud_siemClient::listUserProdLogsCallable(const ListUserProdLogsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListUserProdLogsOutcome()>>(
-			[this, request]()
-			{
-			return this->listUserProdLogs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cloud_siemClient::ListUsersByProdOutcome Cloud_siemClient::listUsersByProd(const ListUsersByProdRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListUsersByProdOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListUsersByProdOutcome(ListUsersByProdResult(outcome.result()));
-	else
-		return ListUsersByProdOutcome(outcome.error());
-}
-
-void Cloud_siemClient::listUsersByProdAsync(const ListUsersByProdRequest& request, const ListUsersByProdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listUsersByProd(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::ListUsersByProdOutcomeCallable Cloud_siemClient::listUsersByProdCallable(const ListUsersByProdRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListUsersByProdOutcome()>>(
-			[this, request]()
-			{
-			return this->listUsersByProd(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3723,42 +3075,6 @@ Cloud_siemClient::RestoreCapacityOutcomeCallable Cloud_siemClient::restoreCapaci
 	return task->get_future();
 }
 
-Cloud_siemClient::SaveQuickQueryOutcome Cloud_siemClient::saveQuickQuery(const SaveQuickQueryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SaveQuickQueryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SaveQuickQueryOutcome(SaveQuickQueryResult(outcome.result()));
-	else
-		return SaveQuickQueryOutcome(outcome.error());
-}
-
-void Cloud_siemClient::saveQuickQueryAsync(const SaveQuickQueryRequest& request, const SaveQuickQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, saveQuickQuery(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::SaveQuickQueryOutcomeCallable Cloud_siemClient::saveQuickQueryCallable(const SaveQuickQueryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SaveQuickQueryOutcome()>>(
-			[this, request]()
-			{
-			return this->saveQuickQuery(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Cloud_siemClient::SetStorageOutcome Cloud_siemClient::setStorage(const SetStorageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3795,42 +3111,6 @@ Cloud_siemClient::SetStorageOutcomeCallable Cloud_siemClient::setStorageCallable
 	return task->get_future();
 }
 
-Cloud_siemClient::ShowQuickAnalysisOutcome Cloud_siemClient::showQuickAnalysis(const ShowQuickAnalysisRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ShowQuickAnalysisOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ShowQuickAnalysisOutcome(ShowQuickAnalysisResult(outcome.result()));
-	else
-		return ShowQuickAnalysisOutcome(outcome.error());
-}
-
-void Cloud_siemClient::showQuickAnalysisAsync(const ShowQuickAnalysisRequest& request, const ShowQuickAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, showQuickAnalysis(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::ShowQuickAnalysisOutcomeCallable Cloud_siemClient::showQuickAnalysisCallable(const ShowQuickAnalysisRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ShowQuickAnalysisOutcome()>>(
-			[this, request]()
-			{
-			return this->showQuickAnalysis(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Cloud_siemClient::SubmitImportLogTasksOutcome Cloud_siemClient::submitImportLogTasks(const SubmitImportLogTasksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3861,42 +3141,6 @@ Cloud_siemClient::SubmitImportLogTasksOutcomeCallable Cloud_siemClient::submitIm
 			[this, request]()
 			{
 			return this->submitImportLogTasks(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cloud_siemClient::SubmitJobsOutcome Cloud_siemClient::submitJobs(const SubmitJobsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SubmitJobsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SubmitJobsOutcome(SubmitJobsResult(outcome.result()));
-	else
-		return SubmitJobsOutcome(outcome.error());
-}
-
-void Cloud_siemClient::submitJobsAsync(const SubmitJobsRequest& request, const SubmitJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, submitJobs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::SubmitJobsOutcomeCallable Cloud_siemClient::submitJobsCallable(const SubmitJobsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SubmitJobsOutcome()>>(
-			[this, request]()
-			{
-			return this->submitJobs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

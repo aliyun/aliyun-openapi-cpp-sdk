@@ -74,6 +74,8 @@ void ListCustomizeRuleTestResultResult::parse(const std::string &payload)
 			responseDataItemObject.alertDetail = dataNodeResponseDataResponseDataItem["AlertDetail"].asString();
 		if(!dataNodeResponseDataResponseDataItem["LogTime"].isNull())
 			responseDataItemObject.logTime = dataNodeResponseDataResponseDataItem["LogTime"].asString();
+		if(!dataNodeResponseDataResponseDataItem["VerifyType"].isNull())
+			responseDataItemObject.verifyType = dataNodeResponseDataResponseDataItem["VerifyType"].asString();
 		data_.responseData.push_back(responseDataItemObject);
 	}
 	auto pageInfoNode = dataNode["PageInfo"];
@@ -83,6 +85,8 @@ void ListCustomizeRuleTestResultResult::parse(const std::string &payload)
 		data_.pageInfo.pageSize = std::stoi(pageInfoNode["PageSize"].asString());
 	if(!pageInfoNode["TotalCount"].isNull())
 		data_.pageInfo.totalCount = std::stol(pageInfoNode["TotalCount"].asString());
+	if(!pageInfoNode["VerifiedCount"].isNull())
+		data_.pageInfo.verifiedCount = std::stol(pageInfoNode["VerifiedCount"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

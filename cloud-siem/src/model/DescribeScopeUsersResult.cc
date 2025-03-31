@@ -47,6 +47,10 @@ void DescribeScopeUsersResult::parse(const std::string &payload)
 			dataObject.aliUid = std::stol(valueDataDataItem["AliUid"].asString());
 		if(!valueDataDataItem["UserName"].isNull())
 			dataObject.userName = valueDataDataItem["UserName"].asString();
+		if(!valueDataDataItem["UserId"].isNull())
+			dataObject.userId = valueDataDataItem["UserId"].asString();
+		if(!valueDataDataItem["CloudCode"].isNull())
+			dataObject.cloudCode = valueDataDataItem["CloudCode"].asString();
 		if(!valueDataDataItem["InstanceId"].isNull())
 			dataObject.instanceId = valueDataDataItem["InstanceId"].asString();
 		auto allDomains = value["Domains"]["Domain"];

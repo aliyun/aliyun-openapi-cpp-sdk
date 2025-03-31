@@ -25,6 +25,15 @@ DescribeAutomateResponseConfigCounterRequest::DescribeAutomateResponseConfigCoun
 
 DescribeAutomateResponseConfigCounterRequest::~DescribeAutomateResponseConfigCounterRequest() {}
 
+long DescribeAutomateResponseConfigCounterRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeAutomateResponseConfigCounterRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DescribeAutomateResponseConfigCounterRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,5 +41,14 @@ std::string DescribeAutomateResponseConfigCounterRequest::getRegionId() const {
 void DescribeAutomateResponseConfigCounterRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeAutomateResponseConfigCounterRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeAutomateResponseConfigCounterRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 

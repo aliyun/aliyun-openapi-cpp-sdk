@@ -25,6 +25,15 @@ DeleteWhiteRuleListRequest::DeleteWhiteRuleListRequest()
 
 DeleteWhiteRuleListRequest::~DeleteWhiteRuleListRequest() {}
 
+long DeleteWhiteRuleListRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DeleteWhiteRuleListRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DeleteWhiteRuleListRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,6 +41,15 @@ std::string DeleteWhiteRuleListRequest::getRegionId() const {
 void DeleteWhiteRuleListRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DeleteWhiteRuleListRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DeleteWhiteRuleListRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 long DeleteWhiteRuleListRequest::getId() const {

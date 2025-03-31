@@ -72,8 +72,26 @@ void DescribeCloudSiemEventsResult::parse(const std::string &payload)
 			responseDataItemObject.extContent = dataNodeResponseDataResponseDataItem["ExtContent"].asString();
 		if(!dataNodeResponseDataResponseDataItem["Status"].isNull())
 			responseDataItemObject.status = std::stoi(dataNodeResponseDataResponseDataItem["Status"].asString());
+		if(!dataNodeResponseDataResponseDataItem["ReferAccount"].isNull())
+			responseDataItemObject.referAccount = dataNodeResponseDataResponseDataItem["ReferAccount"].asString();
+		if(!dataNodeResponseDataResponseDataItem["IncidentType"].isNull())
+			responseDataItemObject.incidentType = dataNodeResponseDataResponseDataItem["IncidentType"].asString();
+		if(!dataNodeResponseDataResponseDataItem["RuleId"].isNull())
+			responseDataItemObject.ruleId = dataNodeResponseDataResponseDataItem["RuleId"].asString();
 		if(!dataNodeResponseDataResponseDataItem["Remark"].isNull())
 			responseDataItemObject.remark = dataNodeResponseDataResponseDataItem["Remark"].asString();
+		auto allAttckStagesNode = dataNodeResponseDataResponseDataItem["AttckStages"]["AttckStage"];
+		for (auto dataNodeResponseDataResponseDataItemAttckStagesAttckStage : allAttckStagesNode)
+		{
+			Data::ResponseDataItem::AttckStage attckStagesObject;
+			if(!dataNodeResponseDataResponseDataItemAttckStagesAttckStage["TacticId"].isNull())
+				attckStagesObject.tacticId = dataNodeResponseDataResponseDataItemAttckStagesAttckStage["TacticId"].asString();
+			if(!dataNodeResponseDataResponseDataItemAttckStagesAttckStage["TacticName"].isNull())
+				attckStagesObject.tacticName = dataNodeResponseDataResponseDataItemAttckStagesAttckStage["TacticName"].asString();
+			if(!dataNodeResponseDataResponseDataItemAttckStagesAttckStage["AlertNum"].isNull())
+				attckStagesObject.alertNum = std::stoi(dataNodeResponseDataResponseDataItemAttckStagesAttckStage["AlertNum"].asString());
+			responseDataItemObject.attckStages.push_back(attckStagesObject);
+		}
 		auto allDataSources = value["DataSources"]["DataSource"];
 		for (auto value : allDataSources)
 			responseDataItemObject.dataSources.push_back(value.asString());

@@ -30,12 +30,16 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT DescribeWhiteRuleListRequest : public RpcSe
 public:
 	DescribeWhiteRuleListRequest();
 	~DescribeWhiteRuleListRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getAlertName() const;
 	void setAlertName(const std::string &alertName);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
 	std::string getAlertType() const;
@@ -44,9 +48,11 @@ public:
 	void setIncidentUuid(const std::string &incidentUuid);
 
 private:
+	long roleFor_;
 	std::string alertName_;
 	std::string regionId_;
 	int pageSize_;
+	int roleType_;
 	int currentPage_;
 	std::string alertType_;
 	std::string incidentUuid_;

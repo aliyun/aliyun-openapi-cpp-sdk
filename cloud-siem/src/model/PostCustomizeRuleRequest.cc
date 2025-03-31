@@ -25,6 +25,24 @@ PostCustomizeRuleRequest::PostCustomizeRuleRequest()
 
 PostCustomizeRuleRequest::~PostCustomizeRuleRequest() {}
 
+long PostCustomizeRuleRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void PostCustomizeRuleRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
+std::string PostCustomizeRuleRequest::getAttCk() const {
+  return attCk_;
+}
+
+void PostCustomizeRuleRequest::setAttCk(const std::string &attCk) {
+  attCk_ = attCk;
+  setBodyParameter(std::string("AttCk"), attCk);
+}
+
 std::string PostCustomizeRuleRequest::getRuleDesc() const {
   return ruleDesc_;
 }
@@ -95,6 +113,15 @@ std::string PostCustomizeRuleRequest::getLogTypeMds() const {
 void PostCustomizeRuleRequest::setLogTypeMds(const std::string &logTypeMds) {
   logTypeMds_ = logTypeMds;
   setBodyParameter(std::string("LogTypeMds"), logTypeMds);
+}
+
+int PostCustomizeRuleRequest::getRoleType() const {
+  return roleType_;
+}
+
+void PostCustomizeRuleRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 long PostCustomizeRuleRequest::getId() const {

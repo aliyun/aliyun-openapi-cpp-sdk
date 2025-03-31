@@ -50,6 +50,8 @@ void DescribeAlertsCountResult::parse(const std::string &payload)
 		data_.all = std::stol(dataNode["All"].asString());
 	if(!dataNode["ProductNum"].isNull())
 		data_.productNum = std::stoi(dataNode["ProductNum"].asString());
+	if(!dataNode["CountMap"].isNull())
+		data_.countMap = dataNode["CountMap"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

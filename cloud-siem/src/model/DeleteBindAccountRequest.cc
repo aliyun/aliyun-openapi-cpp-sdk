@@ -34,6 +34,15 @@ void DeleteBindAccountRequest::setCloudCode(const std::string &cloudCode) {
   setBodyParameter(std::string("CloudCode"), cloudCode);
 }
 
+long DeleteBindAccountRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DeleteBindAccountRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DeleteBindAccountRequest::getAccountId() const {
   return accountId_;
 }
@@ -50,6 +59,15 @@ std::string DeleteBindAccountRequest::getRegionId() const {
 void DeleteBindAccountRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DeleteBindAccountRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DeleteBindAccountRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 long DeleteBindAccountRequest::getBindId() const {

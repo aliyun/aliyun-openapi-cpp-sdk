@@ -25,6 +25,15 @@ PostRuleStatusChangeRequest::PostRuleStatusChangeRequest()
 
 PostRuleStatusChangeRequest::~PostRuleStatusChangeRequest() {}
 
+long PostRuleStatusChangeRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void PostRuleStatusChangeRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string PostRuleStatusChangeRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,6 +41,15 @@ std::string PostRuleStatusChangeRequest::getRegionId() const {
 void PostRuleStatusChangeRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int PostRuleStatusChangeRequest::getRoleType() const {
+  return roleType_;
+}
+
+void PostRuleStatusChangeRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 std::string PostRuleStatusChangeRequest::getRuleType() const {

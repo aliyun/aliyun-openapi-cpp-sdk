@@ -74,6 +74,8 @@ namespace AlibabaCloud
 						std::string alertDescCode;
 						std::string startTime;
 						std::string logUuid;
+						std::string entityList;
+						std::string subUserName;
 						std::string occurTime;
 						std::string alertDesc;
 						std::string gmtCreate;

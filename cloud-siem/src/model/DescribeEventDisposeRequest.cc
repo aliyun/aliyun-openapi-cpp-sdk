@@ -25,6 +25,15 @@ DescribeEventDisposeRequest::DescribeEventDisposeRequest()
 
 DescribeEventDisposeRequest::~DescribeEventDisposeRequest() {}
 
+long DescribeEventDisposeRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeEventDisposeRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DescribeEventDisposeRequest::getRegionId() const {
   return regionId_;
 }
@@ -41,6 +50,15 @@ int DescribeEventDisposeRequest::getPageSize() const {
 void DescribeEventDisposeRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+int DescribeEventDisposeRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeEventDisposeRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 int DescribeEventDisposeRequest::getCurrentPage() const {

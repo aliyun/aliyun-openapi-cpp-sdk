@@ -25,6 +25,15 @@ DescribeAlertSourceRequest::DescribeAlertSourceRequest()
 
 DescribeAlertSourceRequest::~DescribeAlertSourceRequest() {}
 
+long DescribeAlertSourceRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeAlertSourceRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 long DescribeAlertSourceRequest::getStartTime() const {
   return startTime_;
 }
@@ -41,6 +50,15 @@ std::string DescribeAlertSourceRequest::getRegionId() const {
 void DescribeAlertSourceRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeAlertSourceRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeAlertSourceRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 std::vector<std::string> DescribeAlertSourceRequest::getLevel() const {

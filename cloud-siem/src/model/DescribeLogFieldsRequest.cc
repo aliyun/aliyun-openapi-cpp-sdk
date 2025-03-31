@@ -25,6 +25,15 @@ DescribeLogFieldsRequest::DescribeLogFieldsRequest()
 
 DescribeLogFieldsRequest::~DescribeLogFieldsRequest() {}
 
+long DescribeLogFieldsRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeLogFieldsRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DescribeLogFieldsRequest::getLogType() const {
   return logType_;
 }
@@ -41,6 +50,15 @@ std::string DescribeLogFieldsRequest::getRegionId() const {
 void DescribeLogFieldsRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeLogFieldsRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeLogFieldsRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 std::string DescribeLogFieldsRequest::getLogSource() const {

@@ -30,6 +30,16 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT DescribeAlertsRequest : public RpcServiceRe
 public:
 	DescribeAlertsRequest();
 	~DescribeAlertsRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
+	std::string getAlertName() const;
+	void setAlertName(const std::string &alertName);
+	std::string getEntityName() const;
+	void setEntityName(const std::string &entityName);
+	std::string getAssetName() const;
+	void setAssetName(const std::string &assetName);
+	std::string getEntityId() const;
+	void setEntityId(const std::string &entityId);
 	std::string getSource() const;
 	void setSource(const std::string &source);
 	std::string getIsDefend() const;
@@ -42,6 +52,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	std::vector<std::string> getLevel() const;
 	void setLevel(const std::vector<std::string> &level);
 	long getEndTime() const;
@@ -50,21 +62,36 @@ public:
 	void setAlertTitle(const std::string &alertTitle);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
+	std::string getAlertType() const;
+	void setAlertType(const std::string &alertType);
 	std::string getAlertUuid() const;
 	void setAlertUuid(const std::string &alertUuid);
+	std::string getAssetId() const;
+	void setAssetId(const std::string &assetId);
+	std::string getLabelType() const;
+	void setLabelType(const std::string &labelType);
 
 private:
+	long roleFor_;
+	std::string alertName_;
+	std::string entityName_;
+	std::string assetName_;
+	std::string entityId_;
 	std::string source_;
 	std::string isDefend_;
 	long startTime_;
 	std::string subUserId_;
 	std::string regionId_;
 	int pageSize_;
+	int roleType_;
 	std::vector<std::string> level_;
 	long endTime_;
 	std::string alertTitle_;
 	int currentPage_;
+	std::string alertType_;
 	std::string alertUuid_;
+	std::string assetId_;
+	std::string labelType_;
 };
 } // namespace Model
 } // namespace Cloud_siem

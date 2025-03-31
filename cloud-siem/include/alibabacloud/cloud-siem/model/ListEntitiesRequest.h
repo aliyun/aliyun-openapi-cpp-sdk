@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUD_SIEM_MODEL_LISTDISPOSESTRATEGYREQUEST_H_
-#define ALIBABACLOUD_CLOUD_SIEM_MODEL_LISTDISPOSESTRATEGYREQUEST_H_
+#ifndef ALIBABACLOUD_CLOUD_SIEM_MODEL_LISTENTITIESREQUEST_H_
+#define ALIBABACLOUD_CLOUD_SIEM_MODEL_LISTENTITIESREQUEST_H_
 
 #include <alibabacloud/cloud-siem/Cloud_siemExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,65 +26,56 @@
 namespace AlibabaCloud {
 namespace Cloud_siem {
 namespace Model {
-class ALIBABACLOUD_CLOUD_SIEM_EXPORT ListDisposeStrategyRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CLOUD_SIEM_EXPORT ListEntitiesRequest : public RpcServiceRequest {
 public:
-	ListDisposeStrategyRequest();
-	~ListDisposeStrategyRequest();
-	std::string getEntityIdentity() const;
-	void setEntityIdentity(const std::string &entityIdentity);
-	std::string getPlaybookName() const;
-	void setPlaybookName(const std::string &playbookName);
-	std::string getPlaybookTypes() const;
-	void setPlaybookTypes(const std::string &playbookTypes);
+	ListEntitiesRequest();
+	~ListEntitiesRequest();
 	long getRoleFor() const;
 	void setRoleFor(long roleFor);
-	long getStartTime() const;
-	void setStartTime(long startTime);
+	std::string getMalwareType() const;
+	void setMalwareType(const std::string &malwareType);
+	std::string getEntityName() const;
+	void setEntityName(const std::string &entityName);
+	std::string getAssetName() const;
+	void setAssetName(const std::string &assetName);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	int getRoleType() const;
 	void setRoleType(int roleType);
-	std::string getOrderField() const;
-	void setOrderField(const std::string &orderField);
-	std::string getOrder() const;
-	void setOrder(const std::string &order);
-	std::string getSophonTaskId() const;
-	void setSophonTaskId(const std::string &sophonTaskId);
-	int getEffectiveStatus() const;
-	void setEffectiveStatus(int effectiveStatus);
-	long getEndTime() const;
-	void setEndTime(long endTime);
+	std::string getAssetUuid() const;
+	void setAssetUuid(const std::string &assetUuid);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
-	std::string getPlaybookUuid() const;
-	void setPlaybookUuid(const std::string &playbookUuid);
+	std::string getIsMalwareEntity() const;
+	void setIsMalwareEntity(const std::string &isMalwareEntity);
 	std::string getEntityType() const;
 	void setEntityType(const std::string &entityType);
+	std::string getEntityUuid() const;
+	void setEntityUuid(const std::string &entityUuid);
 	std::string getIncidentUuid() const;
 	void setIncidentUuid(const std::string &incidentUuid);
+	std::string getIsAsset() const;
+	void setIsAsset(const std::string &isAsset);
 
 private:
-	std::string entityIdentity_;
-	std::string playbookName_;
-	std::string playbookTypes_;
 	long roleFor_;
-	long startTime_;
+	std::string malwareType_;
+	std::string entityName_;
+	std::string assetName_;
 	std::string regionId_;
 	int pageSize_;
 	int roleType_;
-	std::string orderField_;
-	std::string order_;
-	std::string sophonTaskId_;
-	int effectiveStatus_;
-	long endTime_;
+	std::string assetUuid_;
 	int currentPage_;
-	std::string playbookUuid_;
+	std::string isMalwareEntity_;
 	std::string entityType_;
+	std::string entityUuid_;
 	std::string incidentUuid_;
+	std::string isAsset_;
 };
 } // namespace Model
 } // namespace Cloud_siem
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CLOUD_SIEM_MODEL_LISTDISPOSESTRATEGYREQUEST_H_
+#endif // !ALIBABACLOUD_CLOUD_SIEM_MODEL_LISTENTITIESREQUEST_H_

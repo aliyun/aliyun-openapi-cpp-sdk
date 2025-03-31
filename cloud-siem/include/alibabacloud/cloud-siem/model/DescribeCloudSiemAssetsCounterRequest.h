@@ -30,13 +30,19 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT DescribeCloudSiemAssetsCounterRequest : pub
 public:
 	DescribeCloudSiemAssetsCounterRequest();
 	~DescribeCloudSiemAssetsCounterRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	std::string getIncidentUuid() const;
 	void setIncidentUuid(const std::string &incidentUuid);
 
 private:
+	long roleFor_;
 	std::string regionId_;
+	int roleType_;
 	std::string incidentUuid_;
 };
 } // namespace Model

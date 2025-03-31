@@ -34,6 +34,15 @@ void ListImportedLogsByProdRequest::setCloudCode(const std::string &cloudCode) {
   setBodyParameter(std::string("CloudCode"), cloudCode);
 }
 
+long ListImportedLogsByProdRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void ListImportedLogsByProdRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string ListImportedLogsByProdRequest::getRegionId() const {
   return regionId_;
 }
@@ -41,6 +50,15 @@ std::string ListImportedLogsByProdRequest::getRegionId() const {
 void ListImportedLogsByProdRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int ListImportedLogsByProdRequest::getRoleType() const {
+  return roleType_;
+}
+
+void ListImportedLogsByProdRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 std::string ListImportedLogsByProdRequest::getProdCode() const {

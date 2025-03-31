@@ -32,12 +32,16 @@ public:
 	~ModifyBindAccountRequest();
 	std::string getCloudCode() const;
 	void setCloudCode(const std::string &cloudCode);
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getAccountId() const;
 	void setAccountId(const std::string &accountId);
 	std::string getAccountName() const;
 	void setAccountName(const std::string &accountName);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	long getBindId() const;
 	void setBindId(long bindId);
 	std::string getAccessId() const;
@@ -45,9 +49,11 @@ public:
 
 private:
 	std::string cloudCode_;
+	long roleFor_;
 	std::string accountId_;
 	std::string accountName_;
 	std::string regionId_;
+	int roleType_;
 	long bindId_;
 	std::string accessId_;
 };

@@ -30,6 +30,8 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT DescribeCloudSiemEventsRequest : public Rpc
 public:
 	DescribeCloudSiemEventsRequest();
 	~DescribeCloudSiemEventsRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	long getStartTime() const;
 	void setStartTime(long startTime);
 	std::string getEventName() const;
@@ -38,6 +40,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	std::string getOrderField() const;
 	void setOrderField(const std::string &orderField);
 	std::string getOrder() const;
@@ -48,6 +52,8 @@ public:
 	void setCurrentPage(int currentPage);
 	std::vector<std::string> getThreadLevel() const;
 	void setThreadLevel(const std::vector<std::string> &threadLevel);
+	std::string getEntityUuid() const;
+	void setEntityUuid(const std::string &entityUuid);
 	std::string getAssetId() const;
 	void setAssetId(const std::string &assetId);
 	std::string getIncidentUuid() const;
@@ -56,15 +62,18 @@ public:
 	void setStatus(int status);
 
 private:
+	long roleFor_;
 	long startTime_;
 	std::string eventName_;
 	std::string regionId_;
 	int pageSize_;
+	int roleType_;
 	std::string orderField_;
 	std::string order_;
 	long endTime_;
 	int currentPage_;
 	std::vector<std::string> threadLevel_;
+	std::string entityUuid_;
 	std::string assetId_;
 	std::string incidentUuid_;
 	int status_;

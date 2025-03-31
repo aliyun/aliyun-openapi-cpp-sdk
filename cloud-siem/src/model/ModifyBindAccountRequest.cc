@@ -34,6 +34,15 @@ void ModifyBindAccountRequest::setCloudCode(const std::string &cloudCode) {
   setBodyParameter(std::string("CloudCode"), cloudCode);
 }
 
+long ModifyBindAccountRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void ModifyBindAccountRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string ModifyBindAccountRequest::getAccountId() const {
   return accountId_;
 }
@@ -59,6 +68,15 @@ std::string ModifyBindAccountRequest::getRegionId() const {
 void ModifyBindAccountRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int ModifyBindAccountRequest::getRoleType() const {
+  return roleType_;
+}
+
+void ModifyBindAccountRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 long ModifyBindAccountRequest::getBindId() const {

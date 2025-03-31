@@ -35,8 +35,10 @@ namespace AlibabaCloud
 				struct DataItem
 				{
 					std::vector<std::string> domains;
+					std::string cloudCode;
 					std::string userName;
 					std::string instanceId;
+					std::string userId;
 					long aliUid;
 				};
 

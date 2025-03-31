@@ -25,6 +25,15 @@ ListCloudSiemCustomizeRulesRequest::ListCloudSiemCustomizeRulesRequest()
 
 ListCloudSiemCustomizeRulesRequest::~ListCloudSiemCustomizeRulesRequest() {}
 
+long ListCloudSiemCustomizeRulesRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void ListCloudSiemCustomizeRulesRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string ListCloudSiemCustomizeRulesRequest::getRuleName() const {
   return ruleName_;
 }
@@ -61,6 +70,15 @@ void ListCloudSiemCustomizeRulesRequest::setPageSize(int pageSize) {
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+int ListCloudSiemCustomizeRulesRequest::getRoleType() const {
+  return roleType_;
+}
+
+void ListCloudSiemCustomizeRulesRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
+}
+
 std::string ListCloudSiemCustomizeRulesRequest::getId() const {
   return id_;
 }
@@ -68,6 +86,24 @@ std::string ListCloudSiemCustomizeRulesRequest::getId() const {
 void ListCloudSiemCustomizeRulesRequest::setId(const std::string &id) {
   id_ = id;
   setBodyParameter(std::string("Id"), id);
+}
+
+std::string ListCloudSiemCustomizeRulesRequest::getOrderField() const {
+  return orderField_;
+}
+
+void ListCloudSiemCustomizeRulesRequest::setOrderField(const std::string &orderField) {
+  orderField_ = orderField;
+  setBodyParameter(std::string("OrderField"), orderField);
+}
+
+std::string ListCloudSiemCustomizeRulesRequest::getOrder() const {
+  return order_;
+}
+
+void ListCloudSiemCustomizeRulesRequest::setOrder(const std::string &order) {
+  order_ = order;
+  setBodyParameter(std::string("Order"), order);
 }
 
 std::string ListCloudSiemCustomizeRulesRequest::getRuleType() const {

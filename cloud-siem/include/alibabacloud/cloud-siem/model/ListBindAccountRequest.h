@@ -32,12 +32,18 @@ public:
 	~ListBindAccountRequest();
 	std::string getCloudCode() const;
 	void setCloudCode(const std::string &cloudCode);
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 
 private:
 	std::string cloudCode_;
+	long roleFor_;
 	std::string regionId_;
+	int roleType_;
 };
 } // namespace Model
 } // namespace Cloud_siem

@@ -25,6 +25,15 @@ DeleteAutomateResponseConfigRequest::DeleteAutomateResponseConfigRequest()
 
 DeleteAutomateResponseConfigRequest::~DeleteAutomateResponseConfigRequest() {}
 
+long DeleteAutomateResponseConfigRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DeleteAutomateResponseConfigRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DeleteAutomateResponseConfigRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,6 +41,15 @@ std::string DeleteAutomateResponseConfigRequest::getRegionId() const {
 void DeleteAutomateResponseConfigRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DeleteAutomateResponseConfigRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DeleteAutomateResponseConfigRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 long DeleteAutomateResponseConfigRequest::getId() const {

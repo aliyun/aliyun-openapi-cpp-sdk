@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cloud-siem/model/ListAutomateResponseConfigsResult.h>
+#include <alibabacloud/cloud-siem/model/ListEntitiesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Cloud_siem;
 using namespace AlibabaCloud::Cloud_siem::Model;
 
-ListAutomateResponseConfigsResult::ListAutomateResponseConfigsResult() :
+ListEntitiesResult::ListEntitiesResult() :
 	ServiceResult()
 {}
 
-ListAutomateResponseConfigsResult::ListAutomateResponseConfigsResult(const std::string &payload) :
+ListEntitiesResult::ListEntitiesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ListAutomateResponseConfigsResult::~ListAutomateResponseConfigsResult()
+ListEntitiesResult::~ListEntitiesResult()
 {}
 
-void ListAutomateResponseConfigsResult::parse(const std::string &payload)
+void ListEntitiesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -52,22 +52,30 @@ void ListAutomateResponseConfigsResult::parse(const std::string &payload)
 			responseDataItemObject.gmtModified = dataNodeResponseDataResponseDataItem["GmtModified"].asString();
 		if(!dataNodeResponseDataResponseDataItem["Aliuid"].isNull())
 			responseDataItemObject.aliuid = std::stol(dataNodeResponseDataResponseDataItem["Aliuid"].asString());
+		if(!dataNodeResponseDataResponseDataItem["IncidentUuid"].isNull())
+			responseDataItemObject.incidentUuid = dataNodeResponseDataResponseDataItem["IncidentUuid"].asString();
+		if(!dataNodeResponseDataResponseDataItem["AlertUuid"].isNull())
+			responseDataItemObject.alertUuid = dataNodeResponseDataResponseDataItem["AlertUuid"].asString();
+		if(!dataNodeResponseDataResponseDataItem["AlertNum"].isNull())
+			responseDataItemObject.alertNum = std::stoi(dataNodeResponseDataResponseDataItem["AlertNum"].asString());
+		if(!dataNodeResponseDataResponseDataItem["EventNum"].isNull())
+			responseDataItemObject.eventNum = std::stoi(dataNodeResponseDataResponseDataItem["EventNum"].asString());
+		if(!dataNodeResponseDataResponseDataItem["CloudCode"].isNull())
+			responseDataItemObject.cloudCode = dataNodeResponseDataResponseDataItem["CloudCode"].asString();
+		if(!dataNodeResponseDataResponseDataItem["EntityType"].isNull())
+			responseDataItemObject.entityType = dataNodeResponseDataResponseDataItem["EntityType"].asString();
+		if(!dataNodeResponseDataResponseDataItem["EntityName"].isNull())
+			responseDataItemObject.entityName = dataNodeResponseDataResponseDataItem["EntityName"].asString();
+		if(!dataNodeResponseDataResponseDataItem["EntityInfo"].isNull())
+			responseDataItemObject.entityInfo = dataNodeResponseDataResponseDataItem["EntityInfo"].asString();
 		if(!dataNodeResponseDataResponseDataItem["SubUserId"].isNull())
 			responseDataItemObject.subUserId = std::stol(dataNodeResponseDataResponseDataItem["SubUserId"].asString());
-		if(!dataNodeResponseDataResponseDataItem["RuleName"].isNull())
-			responseDataItemObject.ruleName = dataNodeResponseDataResponseDataItem["RuleName"].asString();
-		if(!dataNodeResponseDataResponseDataItem["AutoResponseType"].isNull())
-			responseDataItemObject.autoResponseType = dataNodeResponseDataResponseDataItem["AutoResponseType"].asString();
-		if(!dataNodeResponseDataResponseDataItem["ExecutionCondition"].isNull())
-			responseDataItemObject.executionCondition = dataNodeResponseDataResponseDataItem["ExecutionCondition"].asString();
-		if(!dataNodeResponseDataResponseDataItem["ActionType"].isNull())
-			responseDataItemObject.actionType = dataNodeResponseDataResponseDataItem["ActionType"].asString();
-		if(!dataNodeResponseDataResponseDataItem["ActionConfig"].isNull())
-			responseDataItemObject.actionConfig = dataNodeResponseDataResponseDataItem["ActionConfig"].asString();
-		if(!dataNodeResponseDataResponseDataItem["Status"].isNull())
-			responseDataItemObject.status = std::stoi(dataNodeResponseDataResponseDataItem["Status"].asString());
-		if(!dataNodeResponseDataResponseDataItem["DataType"].isNull())
-			responseDataItemObject.dataType = std::stoi(dataNodeResponseDataResponseDataItem["DataType"].asString());
+		if(!dataNodeResponseDataResponseDataItem["EntityId"].isNull())
+			responseDataItemObject.entityId = dataNodeResponseDataResponseDataItem["EntityId"].asString();
+		if(!dataNodeResponseDataResponseDataItem["EntityUuid"].isNull())
+			responseDataItemObject.entityUuid = dataNodeResponseDataResponseDataItem["EntityUuid"].asString();
+		if(!dataNodeResponseDataResponseDataItem["MalwareType"].isNull())
+			responseDataItemObject.malwareType = dataNodeResponseDataResponseDataItem["MalwareType"].asString();
 		data_.responseData.push_back(responseDataItemObject);
 	}
 	auto pageInfoNode = dataNode["PageInfo"];
@@ -86,22 +94,22 @@ void ListAutomateResponseConfigsResult::parse(const std::string &payload)
 
 }
 
-std::string ListAutomateResponseConfigsResult::getMessage()const
+std::string ListEntitiesResult::getMessage()const
 {
 	return message_;
 }
 
-ListAutomateResponseConfigsResult::Data ListAutomateResponseConfigsResult::getData()const
+ListEntitiesResult::Data ListEntitiesResult::getData()const
 {
 	return data_;
 }
 
-int ListAutomateResponseConfigsResult::getCode()const
+int ListEntitiesResult::getCode()const
 {
 	return code_;
 }
 
-bool ListAutomateResponseConfigsResult::getSuccess()const
+bool ListEntitiesResult::getSuccess()const
 {
 	return success_;
 }

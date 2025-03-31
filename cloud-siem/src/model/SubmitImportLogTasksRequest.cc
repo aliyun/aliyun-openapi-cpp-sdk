@@ -34,6 +34,15 @@ void SubmitImportLogTasksRequest::setCloudCode(const std::string &cloudCode) {
   setBodyParameter(std::string("CloudCode"), cloudCode);
 }
 
+long SubmitImportLogTasksRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void SubmitImportLogTasksRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string SubmitImportLogTasksRequest::getRegionId() const {
   return regionId_;
 }
@@ -41,6 +50,15 @@ std::string SubmitImportLogTasksRequest::getRegionId() const {
 void SubmitImportLogTasksRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int SubmitImportLogTasksRequest::getRoleType() const {
+  return roleType_;
+}
+
+void SubmitImportLogTasksRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 std::string SubmitImportLogTasksRequest::getLogCodes() const {

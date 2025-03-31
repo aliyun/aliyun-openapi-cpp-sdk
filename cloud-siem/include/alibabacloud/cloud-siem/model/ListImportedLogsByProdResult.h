@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string modifyTime;
 					std::string cloudCode;
 					int autoImported;
+					int logType;
 					int importedUserCount;
 					int imported;
 					int totalUserCount;

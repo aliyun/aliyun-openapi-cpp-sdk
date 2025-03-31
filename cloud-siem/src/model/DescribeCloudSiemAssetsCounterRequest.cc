@@ -25,6 +25,15 @@ DescribeCloudSiemAssetsCounterRequest::DescribeCloudSiemAssetsCounterRequest()
 
 DescribeCloudSiemAssetsCounterRequest::~DescribeCloudSiemAssetsCounterRequest() {}
 
+long DescribeCloudSiemAssetsCounterRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeCloudSiemAssetsCounterRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DescribeCloudSiemAssetsCounterRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,6 +41,15 @@ std::string DescribeCloudSiemAssetsCounterRequest::getRegionId() const {
 void DescribeCloudSiemAssetsCounterRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeCloudSiemAssetsCounterRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeCloudSiemAssetsCounterRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 std::string DescribeCloudSiemAssetsCounterRequest::getIncidentUuid() const {

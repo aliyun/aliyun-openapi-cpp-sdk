@@ -25,6 +25,15 @@ DescribeProdCountRequest::DescribeProdCountRequest()
 
 DescribeProdCountRequest::~DescribeProdCountRequest() {}
 
+long DescribeProdCountRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeProdCountRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DescribeProdCountRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,5 +41,14 @@ std::string DescribeProdCountRequest::getRegionId() const {
 void DescribeProdCountRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeProdCountRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeProdCountRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 

@@ -34,6 +34,15 @@ void PostAutomateResponseConfigRequest::setActionType(const std::string &actionT
   setBodyParameter(std::string("ActionType"), actionType);
 }
 
+long PostAutomateResponseConfigRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void PostAutomateResponseConfigRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string PostAutomateResponseConfigRequest::getRuleName() const {
   return ruleName_;
 }
@@ -86,6 +95,15 @@ std::string PostAutomateResponseConfigRequest::getAutoResponseType() const {
 void PostAutomateResponseConfigRequest::setAutoResponseType(const std::string &autoResponseType) {
   autoResponseType_ = autoResponseType;
   setBodyParameter(std::string("AutoResponseType"), autoResponseType);
+}
+
+int PostAutomateResponseConfigRequest::getRoleType() const {
+  return roleType_;
+}
+
+void PostAutomateResponseConfigRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 long PostAutomateResponseConfigRequest::getId() const {

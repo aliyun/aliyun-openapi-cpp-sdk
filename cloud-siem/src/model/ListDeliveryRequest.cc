@@ -25,6 +25,15 @@ ListDeliveryRequest::ListDeliveryRequest()
 
 ListDeliveryRequest::~ListDeliveryRequest() {}
 
+long ListDeliveryRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void ListDeliveryRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string ListDeliveryRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,5 +41,14 @@ std::string ListDeliveryRequest::getRegionId() const {
 void ListDeliveryRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int ListDeliveryRequest::getRoleType() const {
+  return roleType_;
+}
+
+void ListDeliveryRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 

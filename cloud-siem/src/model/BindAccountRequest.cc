@@ -34,6 +34,15 @@ void BindAccountRequest::setCloudCode(const std::string &cloudCode) {
   setBodyParameter(std::string("CloudCode"), cloudCode);
 }
 
+long BindAccountRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void BindAccountRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string BindAccountRequest::getAccountId() const {
   return accountId_;
 }
@@ -59,6 +68,15 @@ std::string BindAccountRequest::getRegionId() const {
 void BindAccountRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int BindAccountRequest::getRoleType() const {
+  return roleType_;
+}
+
+void BindAccountRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 std::string BindAccountRequest::getAccessId() const {

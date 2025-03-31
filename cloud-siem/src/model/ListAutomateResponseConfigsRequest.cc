@@ -34,6 +34,15 @@ void ListAutomateResponseConfigsRequest::setActionType(const std::string &action
   setBodyParameter(std::string("ActionType"), actionType);
 }
 
+long ListAutomateResponseConfigsRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void ListAutomateResponseConfigsRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string ListAutomateResponseConfigsRequest::getRuleName() const {
   return ruleName_;
 }
@@ -77,6 +86,15 @@ std::string ListAutomateResponseConfigsRequest::getAutoResponseType() const {
 void ListAutomateResponseConfigsRequest::setAutoResponseType(const std::string &autoResponseType) {
   autoResponseType_ = autoResponseType;
   setBodyParameter(std::string("AutoResponseType"), autoResponseType);
+}
+
+int ListAutomateResponseConfigsRequest::getRoleType() const {
+  return roleType_;
+}
+
+void ListAutomateResponseConfigsRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 long ListAutomateResponseConfigsRequest::getId() const {

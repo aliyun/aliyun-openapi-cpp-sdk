@@ -30,15 +30,21 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT SetStorageRequest : public RpcServiceReques
 public:
 	SetStorageRequest();
 	~SetStorageRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	int getTtl() const;
 	void setTtl(int ttl);
 	std::string getRegion() const;
 	void setRegion(const std::string &region);
 
 private:
+	long roleFor_;
 	std::string regionId_;
+	int roleType_;
 	int ttl_;
 	std::string region_;
 };

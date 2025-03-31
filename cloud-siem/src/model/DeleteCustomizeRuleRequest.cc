@@ -25,6 +25,15 @@ DeleteCustomizeRuleRequest::DeleteCustomizeRuleRequest()
 
 DeleteCustomizeRuleRequest::~DeleteCustomizeRuleRequest() {}
 
+long DeleteCustomizeRuleRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DeleteCustomizeRuleRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DeleteCustomizeRuleRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,6 +41,15 @@ std::string DeleteCustomizeRuleRequest::getRegionId() const {
 void DeleteCustomizeRuleRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DeleteCustomizeRuleRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DeleteCustomizeRuleRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 long DeleteCustomizeRuleRequest::getRuleId() const {

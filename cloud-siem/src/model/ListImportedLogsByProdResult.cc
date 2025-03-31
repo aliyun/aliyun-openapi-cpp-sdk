@@ -61,6 +61,8 @@ void ListImportedLogsByProdResult::parse(const std::string &payload)
 			dataObject.imported = std::stoi(valueDataDataItem["Imported"].asString());
 		if(!valueDataDataItem["AutoImported"].isNull())
 			dataObject.autoImported = std::stoi(valueDataDataItem["AutoImported"].asString());
+		if(!valueDataDataItem["LogType"].isNull())
+			dataObject.logType = std::stoi(valueDataDataItem["LogType"].asString());
 		if(!valueDataDataItem["CloudCode"].isNull())
 			dataObject.cloudCode = valueDataDataItem["CloudCode"].asString();
 		data_.push_back(dataObject);

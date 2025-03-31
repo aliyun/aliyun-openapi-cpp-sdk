@@ -98,10 +98,14 @@ void DescribeAlertsWithEventResult::parse(const std::string &payload)
 			responseDataItemObject.alertDetail = dataNodeResponseDataResponseDataItem["AlertDetail"].asString();
 		if(!dataNodeResponseDataResponseDataItem["LogUuid"].isNull())
 			responseDataItemObject.logUuid = dataNodeResponseDataResponseDataItem["LogUuid"].asString();
+		if(!dataNodeResponseDataResponseDataItem["EntityList"].isNull())
+			responseDataItemObject.entityList = dataNodeResponseDataResponseDataItem["EntityList"].asString();
 		if(!dataNodeResponseDataResponseDataItem["AttCk"].isNull())
 			responseDataItemObject.attCk = dataNodeResponseDataResponseDataItem["AttCk"].asString();
 		if(!dataNodeResponseDataResponseDataItem["SubUserId"].isNull())
 			responseDataItemObject.subUserId = std::stol(dataNodeResponseDataResponseDataItem["SubUserId"].asString());
+		if(!dataNodeResponseDataResponseDataItem["SubUserName"].isNull())
+			responseDataItemObject.subUserName = dataNodeResponseDataResponseDataItem["SubUserName"].asString();
 		if(!dataNodeResponseDataResponseDataItem["CloudCode"].isNull())
 			responseDataItemObject.cloudCode = dataNodeResponseDataResponseDataItem["CloudCode"].asString();
 		if(!dataNodeResponseDataResponseDataItem["IsDefend"].isNull())

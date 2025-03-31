@@ -30,11 +30,17 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT DescribeImportedLogCountRequest : public Rp
 public:
 	DescribeImportedLogCountRequest();
 	~DescribeImportedLogCountRequest();
+	std::string getRoleFor() const;
+	void setRoleFor(const std::string &roleFor);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getRoleType() const;
+	void setRoleType(const std::string &roleType);
 
 private:
+	std::string roleFor_;
 	std::string regionId_;
+	std::string roleType_;
 };
 } // namespace Model
 } // namespace Cloud_siem

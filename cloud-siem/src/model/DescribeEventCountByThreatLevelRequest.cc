@@ -25,6 +25,24 @@ DescribeEventCountByThreatLevelRequest::DescribeEventCountByThreatLevelRequest()
 
 DescribeEventCountByThreatLevelRequest::~DescribeEventCountByThreatLevelRequest() {}
 
+long DescribeEventCountByThreatLevelRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeEventCountByThreatLevelRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
+long DescribeEventCountByThreatLevelRequest::getStartTime() const {
+  return startTime_;
+}
+
+void DescribeEventCountByThreatLevelRequest::setStartTime(long startTime) {
+  startTime_ = startTime;
+  setBodyParameter(std::string("StartTime"), std::to_string(startTime));
+}
+
 std::string DescribeEventCountByThreatLevelRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,5 +50,23 @@ std::string DescribeEventCountByThreatLevelRequest::getRegionId() const {
 void DescribeEventCountByThreatLevelRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeEventCountByThreatLevelRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeEventCountByThreatLevelRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
+}
+
+long DescribeEventCountByThreatLevelRequest::getEndTime() const {
+  return endTime_;
+}
+
+void DescribeEventCountByThreatLevelRequest::setEndTime(long endTime) {
+  endTime_ = endTime;
+  setBodyParameter(std::string("EndTime"), std::to_string(endTime));
 }
 

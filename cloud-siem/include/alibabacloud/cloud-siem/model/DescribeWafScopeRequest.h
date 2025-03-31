@@ -30,14 +30,20 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT DescribeWafScopeRequest : public RpcService
 public:
 	DescribeWafScopeRequest();
 	~DescribeWafScopeRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	long getEntityId() const;
 	void setEntityId(long entityId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 
 private:
+	long roleFor_;
 	long entityId_;
 	std::string regionId_;
+	int roleType_;
 };
 } // namespace Model
 } // namespace Cloud_siem

@@ -25,6 +25,15 @@ DescribeCloudSiemEventsRequest::DescribeCloudSiemEventsRequest()
 
 DescribeCloudSiemEventsRequest::~DescribeCloudSiemEventsRequest() {}
 
+long DescribeCloudSiemEventsRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeCloudSiemEventsRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 long DescribeCloudSiemEventsRequest::getStartTime() const {
   return startTime_;
 }
@@ -59,6 +68,15 @@ int DescribeCloudSiemEventsRequest::getPageSize() const {
 void DescribeCloudSiemEventsRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+int DescribeCloudSiemEventsRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeCloudSiemEventsRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 std::string DescribeCloudSiemEventsRequest::getOrderField() const {
@@ -103,6 +121,15 @@ std::vector<std::string> DescribeCloudSiemEventsRequest::getThreadLevel() const 
 
 void DescribeCloudSiemEventsRequest::setThreadLevel(const std::vector<std::string> &threadLevel) {
   threadLevel_ = threadLevel;
+}
+
+std::string DescribeCloudSiemEventsRequest::getEntityUuid() const {
+  return entityUuid_;
+}
+
+void DescribeCloudSiemEventsRequest::setEntityUuid(const std::string &entityUuid) {
+  entityUuid_ = entityUuid;
+  setBodyParameter(std::string("EntityUuid"), entityUuid);
 }
 
 std::string DescribeCloudSiemEventsRequest::getAssetId() const {

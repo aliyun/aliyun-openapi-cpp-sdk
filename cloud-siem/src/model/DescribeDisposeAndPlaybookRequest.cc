@@ -25,6 +25,15 @@ DescribeDisposeAndPlaybookRequest::DescribeDisposeAndPlaybookRequest()
 
 DescribeDisposeAndPlaybookRequest::~DescribeDisposeAndPlaybookRequest() {}
 
+long DescribeDisposeAndPlaybookRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeDisposeAndPlaybookRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DescribeDisposeAndPlaybookRequest::getRegionId() const {
   return regionId_;
 }
@@ -43,6 +52,15 @@ void DescribeDisposeAndPlaybookRequest::setPageSize(int pageSize) {
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+int DescribeDisposeAndPlaybookRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeDisposeAndPlaybookRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
+}
+
 int DescribeDisposeAndPlaybookRequest::getCurrentPage() const {
   return currentPage_;
 }
@@ -59,6 +77,15 @@ std::string DescribeDisposeAndPlaybookRequest::getEntityType() const {
 void DescribeDisposeAndPlaybookRequest::setEntityType(const std::string &entityType) {
   entityType_ = entityType;
   setBodyParameter(std::string("EntityType"), entityType);
+}
+
+std::string DescribeDisposeAndPlaybookRequest::getEntityUuid() const {
+  return entityUuid_;
+}
+
+void DescribeDisposeAndPlaybookRequest::setEntityUuid(const std::string &entityUuid) {
+  entityUuid_ = entityUuid;
+  setBodyParameter(std::string("EntityUuid"), entityUuid);
 }
 
 std::string DescribeDisposeAndPlaybookRequest::getIncidentUuid() const {

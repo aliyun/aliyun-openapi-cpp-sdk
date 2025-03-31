@@ -25,6 +25,15 @@ DescribeDisposeStrategyPlaybookRequest::DescribeDisposeStrategyPlaybookRequest()
 
 DescribeDisposeStrategyPlaybookRequest::~DescribeDisposeStrategyPlaybookRequest() {}
 
+long DescribeDisposeStrategyPlaybookRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeDisposeStrategyPlaybookRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 long DescribeDisposeStrategyPlaybookRequest::getStartTime() const {
   return startTime_;
 }
@@ -41,6 +50,15 @@ std::string DescribeDisposeStrategyPlaybookRequest::getRegionId() const {
 void DescribeDisposeStrategyPlaybookRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeDisposeStrategyPlaybookRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeDisposeStrategyPlaybookRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 long DescribeDisposeStrategyPlaybookRequest::getEndTime() const {

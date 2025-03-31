@@ -32,8 +32,12 @@ public:
 	~UpdateWhiteRuleListRequest();
 	long getWhiteRuleId() const;
 	void setWhiteRuleId(long whiteRuleId);
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	std::string getExpression() const;
 	void setExpression(const std::string &expression);
 	std::string getIncidentUuid() const;
@@ -41,7 +45,9 @@ public:
 
 private:
 	long whiteRuleId_;
+	long roleFor_;
 	std::string regionId_;
+	int roleType_;
 	std::string expression_;
 	std::string incidentUuid_;
 };

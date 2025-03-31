@@ -68,8 +68,26 @@ void DescribeCloudSiemEventDetailResult::parse(const std::string &payload)
 		data_.extContent = dataNode["ExtContent"].asString();
 	if(!dataNode["Status"].isNull())
 		data_.status = std::stoi(dataNode["Status"].asString());
+	if(!dataNode["ReferAccount"].isNull())
+		data_.referAccount = dataNode["ReferAccount"].asString();
+	if(!dataNode["IncidentType"].isNull())
+		data_.incidentType = dataNode["IncidentType"].asString();
+	if(!dataNode["RuleId"].isNull())
+		data_.ruleId = dataNode["RuleId"].asString();
 	if(!dataNode["Remark"].isNull())
 		data_.remark = dataNode["Remark"].asString();
+	auto allAttckStagesNode = dataNode["AttckStages"]["AttckStage"];
+	for (auto dataNodeAttckStagesAttckStage : allAttckStagesNode)
+	{
+		Data::AttckStage attckStageObject;
+		if(!dataNodeAttckStagesAttckStage["TacticId"].isNull())
+			attckStageObject.tacticId = dataNodeAttckStagesAttckStage["TacticId"].asString();
+		if(!dataNodeAttckStagesAttckStage["TacticName"].isNull())
+			attckStageObject.tacticName = dataNodeAttckStagesAttckStage["TacticName"].asString();
+		if(!dataNodeAttckStagesAttckStage["AlertNum"].isNull())
+			attckStageObject.alertNum = std::stoi(dataNodeAttckStagesAttckStage["AlertNum"].asString());
+		data_.attckStages.push_back(attckStageObject);
+	}
 		auto allDataSources = dataNode["DataSources"]["DataSource"];
 		for (auto value : allDataSources)
 			data_.dataSources.push_back(value.asString());

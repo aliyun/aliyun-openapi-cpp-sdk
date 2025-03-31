@@ -35,7 +35,12 @@ namespace AlibabaCloud
 				struct Data
 				{
 					int aliyunProdCount;
+					int aliyunImportedCount;
+					int hcloudImportedCount;
 					int hcloudProdCount;
+					int idcProdCount;
+					int qcloudImportedCount;
+					int idcImportedCount;
 					int qcloudProdCount;
 				};
 

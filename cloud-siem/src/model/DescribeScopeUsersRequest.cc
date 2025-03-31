@@ -25,6 +25,15 @@ DescribeScopeUsersRequest::DescribeScopeUsersRequest()
 
 DescribeScopeUsersRequest::~DescribeScopeUsersRequest() {}
 
+long DescribeScopeUsersRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeScopeUsersRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DescribeScopeUsersRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,5 +41,14 @@ std::string DescribeScopeUsersRequest::getRegionId() const {
 void DescribeScopeUsersRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeScopeUsersRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeScopeUsersRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 

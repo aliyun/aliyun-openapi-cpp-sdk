@@ -34,6 +34,15 @@ void OpenDeliveryRequest::setProductCode(const std::string &productCode) {
   setBodyParameter(std::string("ProductCode"), productCode);
 }
 
+long OpenDeliveryRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void OpenDeliveryRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string OpenDeliveryRequest::getLogCode() const {
   return logCode_;
 }
@@ -50,5 +59,14 @@ std::string OpenDeliveryRequest::getRegionId() const {
 void OpenDeliveryRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int OpenDeliveryRequest::getRoleType() const {
+  return roleType_;
+}
+
+void OpenDeliveryRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 

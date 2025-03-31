@@ -30,21 +30,33 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT DescribeCloudSiemAssetsRequest : public Rpc
 public:
 	DescribeCloudSiemAssetsRequest();
 	~DescribeCloudSiemAssetsRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
+	std::string getAssetName() const;
+	void setAssetName(const std::string &assetName);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 	std::string getAssetType() const;
 	void setAssetType(const std::string &assetType);
+	std::string getAssetUuid() const;
+	void setAssetUuid(const std::string &assetUuid);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
 	std::string getIncidentUuid() const;
 	void setIncidentUuid(const std::string &incidentUuid);
 
 private:
+	long roleFor_;
+	std::string assetName_;
 	std::string regionId_;
 	int pageSize_;
+	int roleType_;
 	std::string assetType_;
+	std::string assetUuid_;
 	int currentPage_;
 	std::string incidentUuid_;
 };

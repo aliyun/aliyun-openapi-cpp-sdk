@@ -25,6 +25,15 @@ DescribeCustomizeRuleTestHistogramRequest::DescribeCustomizeRuleTestHistogramReq
 
 DescribeCustomizeRuleTestHistogramRequest::~DescribeCustomizeRuleTestHistogramRequest() {}
 
+long DescribeCustomizeRuleTestHistogramRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void DescribeCustomizeRuleTestHistogramRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string DescribeCustomizeRuleTestHistogramRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,6 +41,15 @@ std::string DescribeCustomizeRuleTestHistogramRequest::getRegionId() const {
 void DescribeCustomizeRuleTestHistogramRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int DescribeCustomizeRuleTestHistogramRequest::getRoleType() const {
+  return roleType_;
+}
+
+void DescribeCustomizeRuleTestHistogramRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
 long DescribeCustomizeRuleTestHistogramRequest::getId() const {

@@ -30,11 +30,17 @@ class ALIBABACLOUD_CLOUD_SIEM_EXPORT ListAllProdsRequest : public RpcServiceRequ
 public:
 	ListAllProdsRequest();
 	~ListAllProdsRequest();
+	long getRoleFor() const;
+	void setRoleFor(long roleFor);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getRoleType() const;
+	void setRoleType(int roleType);
 
 private:
+	long roleFor_;
 	std::string regionId_;
+	int roleType_;
 };
 } // namespace Model
 } // namespace Cloud_siem

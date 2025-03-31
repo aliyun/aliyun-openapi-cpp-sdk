@@ -25,6 +25,15 @@ GetCapacityRequest::GetCapacityRequest()
 
 GetCapacityRequest::~GetCapacityRequest() {}
 
+long GetCapacityRequest::getRoleFor() const {
+  return roleFor_;
+}
+
+void GetCapacityRequest::setRoleFor(long roleFor) {
+  roleFor_ = roleFor;
+  setBodyParameter(std::string("RoleFor"), std::to_string(roleFor));
+}
+
 std::string GetCapacityRequest::getRegionId() const {
   return regionId_;
 }
@@ -32,5 +41,14 @@ std::string GetCapacityRequest::getRegionId() const {
 void GetCapacityRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+int GetCapacityRequest::getRoleType() const {
+  return roleType_;
+}
+
+void GetCapacityRequest::setRoleType(int roleType) {
+  roleType_ = roleType;
+  setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
